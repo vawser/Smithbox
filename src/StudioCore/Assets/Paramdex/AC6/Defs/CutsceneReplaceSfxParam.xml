@@ -6,6 +6,6 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
+    <Field Def="s32 sfxId"></Field>
   </Fields>
 </PARAMDEF>

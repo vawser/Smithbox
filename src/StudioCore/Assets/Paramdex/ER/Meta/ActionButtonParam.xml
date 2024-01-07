@@ -23,11 +23,11 @@
         <Option Value="14" Name="Category 14" />
     </Enum>
     <Enum Name="ACTION_BUTTON_ANGLE_CHECK_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
+        <Option Value="0" Name="Point" />
+        <Option Value="1" Name="Line" />
     </Enum>
     <Enum Name="ACTION_BUTTON_TEXT_BOX_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
+        <Option Value="0" Name="Action Button" />
     </Enum>
   </Enums>
   <Field>

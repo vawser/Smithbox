@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="BLADE_HOMING_MOVE_UP_DOWN_TYPE" type="u8">
+      <Option Value="0" Name="Correct to match target height" />
+      <Option Value="1" Name="Correct for model orientation" />
+    </Enum>
+  </Enums>
   <Field></Field>
   <Self />
 </PARAMMETA>

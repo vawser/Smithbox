@@ -2,21 +2,21 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="AI_SOUND_RATE_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="1" Name="Default" />
-        <Option Value="2" Name="Collision Based" />
+        <Option Value="0" Name="Direct Sound" />
+        <Option Value="1" Name="Moving Sound" />
+        <Option Value="2" Name="Attack Sound" />
     </Enum>
     <Enum Name="AI_SOUND_RANK" type="u8">
-        <Option Value="0" Name="Rank 0" />
-        <Option Value="1" Name="Rank 1" />
-        <Option Value="2" Name="Rank 2" />
-        <Option Value="3" Name="Rank 3" />
-        <Option Value="4" Name="Rank 4" />
-        <Option Value="5" Name="Rank 5" />
-        <Option Value="6" Name="Rank 6" />
-        <Option Value="7" Name="Rank 7" />
-        <Option Value="8" Name="Rank 8" />
-        <Option Value="9" Name="Rank 9" />
+        <Option Value="0" Name="Normal Sound" />
+        <Option Value="1" Name="Important Sound" />
+        <Option Value="2" Name="Threat Sound" />
+        <Option Value="3" Name="Auditory Hallucination" />
+        <Option Value="4" Name="Soul Coin" />
+        <Option Value="5" Name="Soul Coin (Immortality)" />
+        <Option Value="6" Name="Soul Coin (Beast Type)" />
+        <Option Value="7" Name="Weak Soul Coin" />
+        <Option Value="8" Name="Behavior ID Reference" />
+        <Option Value="9" Name="Unknown" />
     </Enum>
     <Enum Name="AI_SOUND_REPLANNING_STATE_TYPE" type="u8">
         <Option Value="0" Name="Type 0" />

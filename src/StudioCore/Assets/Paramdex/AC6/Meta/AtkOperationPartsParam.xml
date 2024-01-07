@@ -1,5 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <UnkByte0x00 AltName="Operation: Lower Body" IsBool="" />
+    <UnkByte0x01 AltName="Operation: Upper Body" IsBool="" />
+    <UnkByte0x02 AltName="Operation: Upper Body" IsBool="" />
+    <UnkByte0x03 AltName="Operation: Shoulder" IsBool="" />
+    <UnkByte0x04 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x05 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x06 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x07 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x08 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x09 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x0A AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x0B AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x0C AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x0D AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x0E AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x0F AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x10 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x11 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x12 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x13 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x14 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x15 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x16 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x17 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x18 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x19 AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x1A AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x1B AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x1C AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x1D AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x1E AltName="Operation: Unknown" IsBool="" />
+    <UnkByte0x1F AltName="Operation: Unknown" IsBool="" />
+  </Field>
   <Self />
 </PARAMMETA>

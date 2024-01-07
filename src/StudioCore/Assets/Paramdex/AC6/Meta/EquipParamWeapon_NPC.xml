@@ -1,5 +1,234 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <variationId AltName="Behavior Variation ID" Wiki="Used to link weapon with BehaviorParam, and from there projectiles/attacks. Corresponds with variationId in BehaviorParam." />
+    <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect) (7 digits is the limit in s32 to add the enhancement level in the program)" />
+    <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
+    <weight AltName="Weight" Wiki="Weight [kg]." />
+    <weaponWeightRate AltName="Weapon Weight %" Wiki="Equipment weight ratio" />
+    <fixPrice AltName="Repair Price" Wiki="Basic repair price" />
+    <basicPrice AltName="Basic Price" Wiki="Enhanced price" />
+    <sellValue AltName="Sell Price" Wiki="Selling price" />
+    <correctStrength AltName="Correction: STR" Wiki="Charapara correction value." />
+    <correctAgility AltName="Correction: DEX" Wiki="Charapara correction value." />
+    <corretMagic AltName="Correction: INT" Wiki="Charapara correction value." />
+    <corretFaith AltName="Correction: FTH" Wiki="Charapara correction value." />
+    <damageMitigation_Kinetic AltName="Damage Mitigation: Kinetic" />
+    <damageMitigation_Energy AltName="Damage Mitigation: Energy" />
+    <damageMitigation_Explosive AltName="Damage Mitigation: Explosive" />
+    <damageMitigation_Coral AltName="Damage Mitigation: Coral" />
+    <spEffectBehaviorId0 AltName="Behavior SpEffect 1" Wiki="Register when adding special effects to weapons" Refs="SpEffectParam" />
+    <spEffectBehaviorId1 AltName="Behavior SpEffect 2" Wiki="Register when adding special effects to weapons" Refs="SpEffectParam"/>
+    <spEffectBehaviorId2 AltName="Behavior SpEffect 3" Wiki="Register when adding special effects to weapons" Refs="SpEffectParam"/>
+    <residentSpEffectId0 AltName="Passive SpEffect 1" Wiki="Resident special effect ID0" Refs="SpEffectParam"/>
+    <residentSpEffectId1 AltName="Passive SpEffect 2" Wiki="Resident special effect ID1" Refs="SpEffectParam"/>
+    <residentSpEffectId2 AltName="Passive SpEffect 3" Wiki="Resident special effect ID2" Refs="SpEffectParam"/>
+    <materialSetId AltName="Reinforcement Material Set ID" Wiki="Material parameter ID required for weapon enhancement" Refs="EquipMtrlSetParam"/>
+    <originEquipWep0 AltName="Origin Weapon +0" Wiki="This weapon's enhancement source weapon ID" Refs="EquipParamWeapon"/>
+    <originEquipWep1 AltName="Origin Weapon +1" Wiki="This weapon's enhancement source weapon ID1" Refs="EquipParamWeapon"/>
+    <originEquipWep2 AltName="Origin Weapon +2" Wiki="This weapon's enhancement source weapon ID2" Refs="EquipParamWeapon"/>
+    <originEquipWep3 AltName="Origin Weapon +3" Wiki="This weapon's enhancement source weapon ID3" Refs="EquipParamWeapon"/>
+    <originEquipWep4 AltName="Origin Weapon +4" Wiki="This weapon's enhancement source weapon ID 4" Refs="EquipParamWeapon"/>
+    <originEquipWep5 AltName="Origin Weapon +5" Wiki="This weapon's enhancement source weapon ID 5" Refs="EquipParamWeapon"/>
+    <originEquipWep6 AltName="Origin Weapon +6" Wiki="This weapon's enhancement source weapon ID 6" Refs="EquipParamWeapon"/>
+    <originEquipWep7 AltName="Origin Weapon +7" Wiki="This weapon's enhancement source weapon ID 7" Refs="EquipParamWeapon"/>
+    <originEquipWep8 AltName="Origin Weapon +8" Wiki="This weapon's enhancement source weapon ID8" Refs="EquipParamWeapon"/>
+    <originEquipWep9 AltName="Origin Weapon +9" Wiki="This weapon's enhancement source weapon ID 9" Refs="EquipParamWeapon"/>
+    <originEquipWep10 AltName="Origin Weapon +10" Wiki="This weapon's enhancement source weapon ID 10" Refs="EquipParamWeapon"/>
+    <originEquipWep11 AltName="Origin Weapon +11" Wiki="This weapon's enhancement source weapon ID 11" Refs="EquipParamWeapon"/>
+    <originEquipWep12 AltName="Origin Weapon +12" Wiki="This weapon's enhancement source weapon ID 12" Refs="EquipParamWeapon"/>
+    <originEquipWep13 AltName="Origin Weapon +13" Wiki="This weapon's enhancement source weapon ID 13" Refs="EquipParamWeapon"/>
+    <originEquipWep14 AltName="Origin Weapon +14" Wiki="This weapon's enhancement source weapon ID14" Refs="EquipParamWeapon" />
+    <originEquipWep15 AltName="Origin Weapon +15" Wiki="This weapon's enhancement source weapon ID 15" Refs="EquipParamWeapon"/>
+    <shieldPart_DamageRate AltName="Damage Multiplier %: Shield Part" Wiki="Damage multiplier for shield parts" />
+    <weakB_DamageRate AltName="Damage Multiplier %: Type B" Wiki="Damage multiplier for special attack B" />
+    <weakC_DamageRate AltName="Damage Multiplier %: Type C" Wiki="Damage multiplier for special attack C" />
+    <weakD_DamageRate AltName="Damage Multiplier %: Type D" Wiki="Damage multiplier for special attack D" />
+    <vagrantItemLotId AltName="Vagrant: Item Lot ID" />
+    <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Enemy: Item Lot ID" />
+    <vagrantItemEneDropItemLotId AltName="Vagrant Item Enemy: Item Lot ID" />
+    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." />
+    <durability AltName="Durability" Wiki="Initial durability." />
+    <durabilityMax AltName="Max Durability" Wiki="New durability." />
+    <attackThrowEscape AltName="Throw Escape Damage" Wiki="Basic value of throw-through attack power" />
+    <parryDamageLife AltName="Parry Occurrence Duration" Wiki="Limit the life of parry damage. It does not last longer than it is set in TimeAct." />
+    <baseAttack_Kinetic AltName="Damage: Kinetic" />
+    <baseAttack_Energy AltName="Damage: Energy" />
+    <baseAttack_Explosive AltName="Damage: Explosive" />
+    <baseAttack_Coral AltName="Damage: Coral" />
+    <baseAttack_Stamina AltName="Damage: Stamina" />
+    <baseAttack_Poise AltName="Damage: Poise" />
+    <guardAngle AltName="Guard Angle" Wiki="Defense occurrence range angle when guarding weapons" />
+    <poiseDurability AltName="Poise Durability" Wiki="Additional SA durability used during attack motion" />
+    <staminaGuardDef AltName="Guard Stability" Wiki="Defense against enemy stamina attacks when guarding successfully" />
+    <reinforceTypeId AltName="Reinforce Type ID" Wiki="Enhanced type ID" Refs="ReinforceParamWeapon" />
+    <trophySGradeId AltName="Achievement ID [1]" Wiki="Is it related to the trophy system?" />
+    <trophySeqId AltName="Achievement ID [2]" Wiki="Trophy SEQ number (13-29)" />
+    <throwAtkRate AltName="Critical Multiplier" Wiki="Throw attack power multiplier" />
+    <bowDistRate AltName="Bow Distance %" Wiki="Up% to extend the flight distance" />
+    <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type."/>
+    <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model." />
+    <weaponCategory AltName="Weapon Category" Wiki="Weapon category." />
+    <wepmotionCategory AltName="Weapon Motion Category" Wiki="Weapon motion category."  />
+    <guardmotionCategory AltName="Guard Motion Category" Wiki="Guard motion category"  />
+    <atkMaterial AltName="Attack Material" Wiki="Attack material used from attack param" />
+    <defMaterial AltName="Defence Material" Wiki="Defense material used from attack para 1"/>
+    <defSfxMaterial AltName="Defence SFX Material" />
+    <correctType_Kinetic AltName="Correction Type: Kinetic" Wiki="Correcting attack power by primary parameters Determines the type of graph" Refs="CalcCorrectGraph" />
+    <spAttribute AltName="Special Attribute" Wiki="Weapon special attribute value" />
+    <spAtkCategory AltName="Special Motion Category" Wiki="Special attack category (possible from 50 to 999)" />
+    <wepmotionOneHandId AltName="Weapon Motion Position - 1H" Wiki="Basic motion ID when equipped with one hand." />
+    <wepmotionBothHandId AltName="Weapon Motion Position - 2H" Wiki="Basic motion ID when equipped with both hands." />
+    <properStrength AltName="Requirement: STR" Wiki="Equipment appropriate value." />
+    <properAgility AltName="Requirement: DEX" Wiki="Equipment appropriate value." />
+    <properMagic AltName="Requirement: INT" Wiki="Equipment appropriate value." />
+    <properFaith AltName="Requirement: FTH" Wiki="Equipment appropriate value." />
+    <overStrength AltName="Strength over Start Value" Wiki="Strength over start value" />
+    <attackBaseParry AltName="Base Parry Attack" Wiki="Basic value to defeat the enemy's parry" />
+    <defenseBaseParry AltName="Base Parry Defens" Wiki="Used to judge whether to be a parry or a guard at the time of parry judgment" />
+    <guardBaseRepel AltName="Base Guard Repel" Wiki="Used to determine if it will pop when guarding an enemy attack" />
+    <attackBaseRepel AltName="Base Attack Repel" Wiki="Guard Used to determine whether or not to be repelled when attacking an enemy" />
+    <guardCutCancelRate AltName="Guard Bypass %" Wiki="Magnification that invalidates the opponent's guard cut. -100 is completely invalid. Double the defense effect of the opponent at 100." />
+    <guardLevel AltName="Guard Level" Wiki="When guarding, which guard motion will the enemy attack? Decide" />
+    <slashGuardCutRate AltName="Guard Absorption: Slash" Wiki="Looking at the attack type, what percentage of the damage of the slashing attribute is cut? Specify" />
+    <blowGuardCutRate AltName="Guard Absorption: Strike" Wiki="Looking at the attack type, what percentage of the damage of the hit attribute is cut? Specify" />
+    <thrustGuardCutRate AltName="Guard Absorption: Thrust" Wiki="Looking at the attack type, what percentage of the damage of the piercing attribute is cut? Specify" />
+    <guardResist_Shock AltName="Guard Resist: Shock" Wiki="How much to cut the attack power to poison (set to the special effect parameter)" />
+    <guardResist_AcsFailure AltName="Guard Resist: ACS Failure" Wiki="How much to cut the attack power (set as a special effect parameter)" />
+    <guardResist_CameraDisruption AltName="Guard Resist: Camera Disruption" Wiki="How much to cut the attack power (set as a special effect parameter)" />
+    <guardResist_Curse_Unknown AltName="Guard Resist: Unknown" Wiki="How much to cut the attack power (set as a special effect parameter)" />
+    <isDurabilityDivergence AltName="Is Durability Divergence" IsBool="" />
+    <equipFrontRightSlot AltName="Equipped in Front Right Slot" IsBool="" />
+    <equipFrontLeftSlot AltName="Equipped in Front Left Slot" IsBool="" />
+    <bothHandEquipable AltName="Equipped in either Front Slot" IsBool="" />
+    <equipBackRightSlot AltName="Equipped in Back Right Slot" IsBool="" />
+    <equipBackLeftSlot AltName="Equipped in Back Left Slot" IsBool="" />
+    <enableGuard AltName="Enables Guard" Wiki="Guard with L1 when equipped with left hand" IsBool="" />
+    <enableParry AltName="Enables Parry" Wiki="Parry with L2 when equipped with left hand" IsBool="" />
+    <enableMagic AltName="Enables Magic" Wiki="Activates magic when attacking" IsBool="" />
+    <enablePyromancy AltName="Enables Pyromancy" Wiki="Cast magic when attacking" IsBool="" />
+    <enableMiracle AltName="Enables Miracle" Wiki="Miracle activated when attacking" IsBool="" />
+    <enableVowMagic AltName="Enables Vow Magic" Wiki="Activates pledge magic when attacking" IsBool="" />
+    <isNormalAttackType AltName="Type Display: Normal" Wiki="Attack type for menu display. Is it normal?" IsBool="" />
+    <isBlowAttackType AltName="Type Display: Strike" Wiki="Attack type for menu display. Is it a blow?" IsBool="" />
+    <isSlashAttackType AltName="Type Display: Slash" Wiki="Attack type for menu display. Is it a slash?" IsBool="" />
+    <isThrustAttackType AltName="Type Display: Thrust" Wiki="Attack type for menu display. Is it a piercing?" IsBool="" />
+    <isEnhance AltName="Is Buffable" Wiki="Can it be strengthened with pine fat?" IsBool="" />
+    <isLuckCorrect AltName="Is Luck Correction" Wiki="Is there an attack power correction by human nature?" IsBool="" />
+    <isCustom AltName="Is Reinforcable" Wiki="Listed in the enhancement target list at the enhancement shop (may be deleted due to specification changes?)" IsBool="" />
+    <disableBaseChangeReset AltName="Disable Base Change Reset" Wiki="Is job change reset prohibited?" IsBool="" />
+    <disableRepair AltName="Repair is Disabled" Wiki="Is repair prohibited?" IsBool="" />
+    <isDarkHand AltName="Is Dark Hand" Wiki="Is it a dark hand?" IsBool="" />
+    <simpleModelForDlc AltName="Is Simple Model for DLC" Wiki="Is there a simple model for DLC?" IsBool="" />
+    <lanternWep AltName="Is a Light Source" Wiki="Is it a lantern weapon?" IsBool="" />
+    <isVersusGhostWep AltName="Can Hit Ghost Enemy" Wiki="NPC Para's spirit body will now hit the opponent of . Also, the attack para Is it a ghost attack? Will be able to guard the attack of ." IsBool="" />
+    <baseChangeCategory AltName="Base Change Category" Wiki="Weapon career change category. Used to display the attribute icon." Enum="WEP_BASE_CHANGE_CATEGORY" />
+    <isDragonSlayer AltName="Is Dragonslayer" Wiki="Is it a dragon hunting weapon?" IsBool="" />
+    <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
+    <disableMultiDropShare AltName="Cannot Drop in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
+    <isDiscard AltName="Can Discard" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
+    <isDrop AltName="Can Drop" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
+    <enableThrow AltName="Enable Throw" Wiki="Whether it is a throwable weapon" IsBool="" />
+    <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
+    <disableGemAttr AltName="Prevent Affinity Change" Wiki="Is it prohibited to change the magic stone attribute?" IsBool="" />
+    <defSfxMaterial1 AltName="Defence SFX Material [1]" Wiki="Defensive SFX material used from attack para 1" Enum="WEP_MATERIAL_DEF_SFX" />
+    <wepCollidableType0 AltName="Weapon Collidable Type [0]" Wiki="Weapon collaborative setting"  />
+    <wepCollidableType1 AltName="Weapon Collidable Type [1]" Wiki="Weapon 1 collaborative setting" />
+    <postureControlId_Right AltName="Posture Control ID - Weapon Right" Wiki="Attitude control ID (right hand)" />
+    <postureControlId_Left AltName="Posture Control ID - Weapon Left" Wiki="Attitude control ID (left hand)" />
+    <traceSfxId0 AltName="Trace SFX ID [0]" Wiki="Sword flash SfxID_0 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceDmyIdHead0 AltName="Trace SFX ID [0] - Dummy Poly ID - Head" Wiki="Sword flash root Damipoli ID_0 (-1 invalid)" />
+    <traceDmyIdTail0 AltName="Trace SFX ID [0] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_0" />
+    <traceSfxId1 AltName="Trace SFX ID [1]" Wiki="Sword flash SfxID_1 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceDmyIdHead1 AltName="Trace SFX ID [1] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_1 (-1 invalid)" />
+    <traceDmyIdTail1 AltName="Trace SFX ID [1] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_1" />
+    <traceSfxId2 AltName="Trace SFX ID [2]" Wiki="Sword flash SfxID_2 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceDmyIdHead2 AltName="Trace SFX ID [2] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_2 (-1 invalid)" />
+    <traceDmyIdTail2 AltName="Trace SFX ID [2] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_2" />
+    <traceSfxId3 AltName="Trace SFX ID [3]" Wiki="Sword Flash SfxID_3 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceDmyIdHead3 AltName="Trace SFX ID [3] - Dummy Poly ID - Head" Wiki="Sword flash root Damipoli ID_3 (-1 invalid)" />
+    <traceDmyIdTail3 AltName="Trace SFX ID [3] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_3" />
+    <traceSfxId4 AltName="Trace SFX ID [4]" Wiki="Sword Flash SfxID_4 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceDmyIdHead4 AltName="Trace SFX ID [4] - Dummy Poly ID - Head" Wiki="Sword flash root Damipoli ID_4 (-1 invalid)" />
+    <traceDmyIdTail4 AltName="Trace SFX ID [4] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_4" />
+    <traceSfxId5 AltName="Trace SFX ID [5]" Wiki="Sword Flash SfxID_5 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceDmyIdHead5 AltName="Trace SFX ID [5] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_5 (-1 invalid)" />
+    <traceDmyIdTail5 AltName="Trace SFX ID [5] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_5" />
+    <traceSfxId6 AltName="Trace SFX ID [6]" Wiki="Sword Flash SfxID_6 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceDmyIdHead6 AltName="Trace SFX ID [6] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_6 (-1 invalid)" />
+    <traceDmyIdTail6 AltName="Trace SFX ID [6] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_6" />
+    <traceSfxId7 AltName="Trace SFX ID [7]" Wiki="Sword Flash SfxID_7 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceDmyIdHead7 AltName="Trace SFX ID [7] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_7 (-1 invalid)" />
+    <traceDmyIdTail7 AltName="Trace SFX ID [7] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_7" />
+    <defSfxMaterial2 AltName="Defence SFX Material [2]" Wiki="Defensive SFX material used from attack para 2" />
+    <defSeMaterial2 AltName="Defence SE Material [2]" Wiki="Defense SE material used from attack para 2" />
+    <absorpParamId AltName="Weapon Sheath Position ID" Wiki="Weapon adsorption position parameter Id. This value determines the position where the weapon is attracted (-1: Refer to the value written directly in the old source code)." Refs="WepAbsorpPosParam" />
+    <toughnessCorrectRate AltName="Toughness Correction" Wiki="It is a magnification that corrects the basic value of toughness." />
+    <isValidTough_ProtSADmg AltName="Is Toughness Perfomed if Poise is Initial Value" Wiki="Whether the toughness calculation is performed even if the armor SA is the initial value. Check the toughness specification .xlsx for details" IsBool="" />
+    <isDualBlade AltName="Is Dual Weapon" Wiki="Is this weapon a twin sword?" IsBool="" />
+    <isAutoEquip AltName="Is Auto Equipped" Wiki="Only valid for arrows and bolts. Whether to automatically equip this weapon if the target equipment slot is empty when picking up this weapon" IsBool="" />
+    <isEnableEmergencyStep AltName="Is Emergency Avoidance Possible" Wiki="Is it an emergency avoidable weapon? Pass it to the behavior script." IsBool="" />
+    <invisibleOnRemo AltName="Is Hidden in Cutscene" Wiki="Is it hidden during cutscenes?" IsBool="" />
+    <pad2 AltName=""/>
+    <correctType_Magic AltName="Correction Type: Energy" Wiki="Determining the type of attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
+    <correctType_Fire AltName="Correction Type: Explosive" Wiki="Determine the type of attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
+    <correctType_Thunder AltName="Correction Type: Coral" Wiki="Determine the type of attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
+    <weakE_DamageRate AltName="Damage Multiplier %: Type E" Wiki="Damage multiplier for special attack E" />
+    <weakF_DamageRate AltName="Damage Multiplier %: Type F" Wiki="Damage multiplier for special attack F" />
+    <darkGuardCutRate AltName="Guard Absorption: Dark" Wiki="How much to cut the dark attack?" />
+    <attackBaseDark AltName="Damage: Dark" Wiki="Basic value of darkness attack that damages the enemy's HP" />
+    <correctType_Dark AltName="Correction Type: Dark" Wiki="Determine the type of darkness attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
+    <correctType_Poison AltName="Correction Type: Shock" Wiki="Determining the type of poison attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
+    <sortGroupIdOld AltName="Sort Group ID (Obsolete)" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." />
+    <atkAttribute2 AltName="Attack Attribute [2]" Wiki="Physical attribute 2" />
+    <properLuck AltName="Requirement: LCK" Wiki="Equipment appropriate value." />
+    <freezeGuardResist AltName="Guard Resist: Unknown" Wiki="How much to cut the attack power (set to the special effect parameter) to cool down" />
+    <autoReplenishType AltName="Auto Replenish Type" Wiki="Controls whether or not to automatically replenish and default settings" />
+    <swordArtsParamId AltName="Sword Arts Param ID" Wiki="Arts parameter ID"/>
+    <correctLuck AltName="Correction: LCK" Wiki="Charapara correction value." />
+    <arrowBoltEquipId AltName="Ammunition Equip ID" Wiki="Equipment number of the quiver (magazine) display model. In the case of a bow, it is displayed as a quiver, and in the case of a crossbow, it is displayed as a magazine." />
+    <DerivationLevelType AltName="Derivation Level Type" Wiki="Type of how to set the enhancement level when returning or deriving a weapon" />
+    <enchantSfxSize AltName="Enchantment SFX Size" Wiki="Value offset to enchantment SfxId" />
+    <wepType AltName="Weapon Type" Wiki="Weapon type. Used for linking text and magic stones (* It is now used for other than text)" />
+    <isBackSwapWeapon AltName="Is Back Swap Weapon" IsBool="" Wiki="If true, this weapon will swap to hands from back instead of firing from back." />
+    <thrustersParamId AltName="Thruster Param ID" Refs="ThrustersParam_PC" />
+    <residentSfxId_1 AltName="Resident SFX [1]" />
+    <residentSfxId_2 AltName="Resident SFX [2]" />
+    <residentSfxId_3 AltName="Resident SFX [3]" />
+    <residentSfxId_4 AltName="Resident SFX [4]" />
+    <residentSfx_DmyId_1 AltName="Resident SFX Dummy Poly [1]" />
+    <residentSfx_DmyId_2 AltName="Resident SFX Dummy Poly [2]" />
+    <residentSfx_DmyId_3 AltName="Resident SFX Dummy Poly [3]" />
+    <residentSfx_DmyId_4 AltName="Resident SFX Dummy Poly [4]" />
+    <staminaConsumptionRate AltName="Stamina Consumption Rate" />
+    <vsPlayerDmgCorrectRate_Physics AltName="Vs. Player - Kinetic Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Magic AltName="Vs. Player - Energy Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Fire AltName="Vs. Player - Explosive Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Thunder AltName="Vs. Player - Coral Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Dark AltName="Vs. Player - Dark Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Poison AltName="Vs. Player - Shock Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Blood AltName="Vs. Player - ACS Failure Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Freeze AltName="Vs. Player - Unknown Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <attainmentWepStatusStr AltName="Unique R2 Attack - STR Requirement" Wiki="To change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
+    <attainmentWepStatusDex AltName="Unique R2 Attack - DEX Requirement" Wiki="To change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
+    <attainmentWepStatusMag AltName="Unique R2 Attack - INT Requirement" Wiki="To change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
+    <attainmentWepStatusFai AltName="Unique R2 Attack - FTH Requirement" Wiki="This is to change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
+    <attainmentWepStatusLuc AltName="Unique R2 Attack - ARC Requirement" Wiki="This is to change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
+    <attackElementCorrectId AltName="Attack Element Correct ID" Wiki="ID of the parameter that corrects the attack attribute" Refs="AttackElementCorrectParam" />
+    <saleValue AltName="Sale Value" Wiki="Selling price" />
+    <reinforceShopCategory AltName="Reinforcement Menu Type" Wiki="Enhanced shop category" />
+    <maxArrowQuantity AltName="Max Ammunition Held" Wiki="Maximum number of arrows" />
+    <residentSfx_1_IsVisibleForHang AltName="Hide Resident SFX [1] when Sheathed" Wiki="If Do you want to display when resident SFX1 is delivered? Is true, hide the SFX set to resident SFX ID1 when the weapon is delivered." IsBool="" />
+    <residentSfx_2_IsVisibleForHang AltName="Hide Resident SFX [2] when Sheathed" Wiki="If Do you want to display when resident SFX2 is delivered? Is true, hide the SFX set to resident SFX ID2 when the weapon is delivered." IsBool="" />
+    <residentSfx_3_IsVisibleForHang AltName="Hide Resident SFX [3] when Sheathed" Wiki="If Do you want to display when resident SFX3 is delivered? Is true, hide the SFX set to resident SFX ID3 when the weapon is delivered." IsBool="" />
+    <residentSfx_4_IsVisibleForHang AltName="Hide Resident SFX [4] when Sheathed" Wiki="If Do you want to display when resident SFX4 is delivered? Is true, hide the SFX set to resident SFX ID 4 when the weapon is delivered." IsBool="" />
+    <isSoulParamIdChange_model0 AltName="Apply Weapon VFX Parameters [0]" Wiki="Whether the vfx parameter Soul Param ID for Weapon Enchantment and Invisible Weapon for Weapon Enchantment settings are applied" IsBool="" />
+    <isSoulParamIdChange_model1 AltName="Apply Weapon VFX Parameters [1]" Wiki="Whether the vfx parameter Soul Param ID for Weapon Enchantment and Invisible Weapon for Weapon Enchantment settings are applied" IsBool="" />
+    <isSoulParamIdChange_model2 AltName="Apply Weapon VFX Parameters [2]" Wiki="Whether the vfx parameter Soul Param ID for Weapon Enchantment and Invisible Weapon for Weapon Enchantment settings are applied" IsBool="" />
+    <isSoulParamIdChange_model3 AltName="Apply Weapon VFX Parameters [3]" Wiki="Whether the vfx parameter Soul Param ID for Weapon Enchantment and Invisible Weapon for Weapon Enchantment settings are applied" IsBool="" />
+    <wepSeIdOffset AltName="Weapon SE ID Offset" Wiki="SEID offset value" />
+    <baseChangePrice AltName="Affinity Price" Wiki="Evolution price" />
+  </Field>
   <Self />
 </PARAMMETA>

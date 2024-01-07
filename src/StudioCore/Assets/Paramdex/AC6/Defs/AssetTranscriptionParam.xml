@@ -6,12 +6,19 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="u8 Unk0x00"></Field>
+    <Field Def="u8 Unk0x01"></Field>
+    <Field Def="u8 Unk0x02"></Field>
+    <Field Def="u8 Unk0x03"></Field>
     <Field Def="s32 assetEnvironmentGeometryParamID"></Field>
     <Field Def="f32 Unk0x08"></Field>
-    <Field Def="u16 Unk0x0C"></Field>
-    <Field Def="u16 Unk0x0E"></Field>
+    <Field Def="u16 assetSlodTexSizeType"></Field>
+    <Field Def="u8 assetSlodCapDirNumType"></Field>
+    <Field Def="u8 Unk0x0F"></Field>
     <Field Def="f32 Unk0x10"></Field>
-    <Field Def="s32 Unk0x14"></Field>
+    <Field Def="u8 Unk0x11"></Field>
+    <Field Def="u8 Unk0x12"></Field>
+    <Field Def="u8 assetSlodCapAngleType"></Field>
+    <Field Def="u8 Unk0x14"></Field>
   </Fields>
 </PARAMDEF>

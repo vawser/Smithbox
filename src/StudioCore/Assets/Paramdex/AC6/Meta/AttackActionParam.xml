@@ -14,7 +14,9 @@
   </Enums>
   
   <Field>
-    <triggerActionType Enum="TRIGGER_ACTION_TYPE_TYPE" Wiki="Decides how controller inputs affect weapon firing behavior, such as holding down R2 to continuously shoot vs only shoot once."/>
-  </Field>
+    <unkTriggerActionState AltName="Trigger Action State" />
+    <triggerActionType AltName="Trigger Action Type" Enum="TRIGGER_ACTION_TYPE_TYPE" Wiki="Decides how controller inputs affect weapon firing behavior, such as holding down R2 to continuously shoot vs only shoot once."/>
+    <lookAtParamId AltName="Look-at Param ID" Refs="LookAtParam,LookAtParam_Npc" />
+,  </Field>
   <Self />
 </PARAMMETA>

@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <overlayMapId AltName="Overlay Map ID" Wiki="The overlay map that is used during this cutscene." />
+    <soundCutsceneParamId AltName="Sound Cutscene ID" Refs="SoundCutsceneParam" />
+  </Field>
   <Self />
 </PARAMMETA>

@@ -6,15 +6,61 @@
       <Option Value="1" Name="Bullet" />
       <Option Value="2" Name="SpEffect" />
     </Enum>
+    <Enum Name="BEHAVIOR_ATK_STYLE" type="u8">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Charge" />
+      <Option Value="2" Name="2H Normal" />
+      <Option Value="3" Name="2H Charge" />
+      <Option Value="4" Name="Weak" />
+      <Option Value="5" Name="Guard" />
+      <Option Value="6" Name="Parry" />
+      <Option Value="7" Name="Close Range" />
+      <Option Value="8" Name="Long Range" />
+      <Option Value="9" Name="2H Close Range" />
+      <Option Value="10" Name="2H Long Range" />
+      <Option Value="11" Name="After Parry" />
+    </Enum>
+    <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
+      <Option Value="0" Name="Slash" />
+      <Option Value="1" Name="Strike" />
+      <Option Value="2" Name="Thrust" />
+      <Option Value="3" Name="Blast" />
+      <Option Value="4" Name="Bullet" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Normal Attack" />
+      <Option Value="2" Name="Left-hand Attack" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Miracle" />
+      <Option Value="5" Name="Body" />
+      <Option Value="6" Name="Energy Attack 1" />
+      <Option Value="7" Name="Energy Attack 2" />
+      <Option Value="7" Name="Energy Attack 3" />
+      <Option Value="9" Name="Kick" />
+    </Enum>
   </Enums>
   <Field>
-    <variationId AltName="Behavior Variation ID" Wiki="Used to link BehaviorParam entries to a weapon or enemy." />
+    <variationId AltName="Behavior Variation ID" Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." />
+    <behaviorJudgeId AltName="Behavior Judge ID" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine." VRef="behaviorVariation" />
     <refType AltName="Reference Type" Wiki="Which param type to reference for attack behavior." Enum="BEHAVIOR_REF_TYPE" />
     <refId AltName="Reference ID" Wiki="ID of param to use for attack behavior. Param used determined by refType" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
     <bulletShotgunParamId1 AltName="BulletShotgunParam ID (1)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
     <bulletShotgunParamId2 AltName="BulletShotgunParam ID (2)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
-    <dummyPolyRange_Min AltName="DummyPoly Range (Min)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the start of a range that ends with dummyPolyRange_Max. If max is -1, then a single dummypoly will be used." />
-    <dummyPolyRange_Max AltName="DummyPoly Range (Max)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the end of a range that starts with dummyPolyRange_Min. If max is -1, then a single dummypoly will be used." />
+    <dummyPolyRange_Min AltName="Bullet Spawn - DummyPoly Range (Min)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the start of a range that ends with dummyPolyRange_Max. If max is -1, then a single dummypoly will be used." />
+    <dummyPolyRange_Max AltName="Bullet Spawn - DummyPoly Range (Max)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the end of a range that starts with dummyPolyRange_Min. If max is -1, then a single dummypoly will be used." />
+    <weaponBulletNum AltName="Bullet Count" />
+    <burstFireInterval AltName="Burst Fire Interval" />
+    <rapidFireInterval AltName="Rapid Fire Interval" />
+    <weaponChargedAmmunitionConsumption AltName="Charged Ammunition Consumption" />
+    <weaponRecoil AltName="Recoil" />
+    <missileHomingLockTime AltName="Missile Homing Lock Time" />
+    <missileMaxLockCount AltName="Missile Max Lock Count" />
+    <unkBulletSpreadFocalDist AltName="Bullet Spread Focal Distance" />
+    <weaponAttackHeatBuildup AltName="Heat Build-up on Attack" />
+    <channelAttackHeatBuildup AltName="Heat Build-up on Channeled Attack" />
+    <heatBuildup AltName="Heat Build-up" />
+    <burstFireAmount AltName="Burst Fire Amount" />
   </Field>
   <Self />
 </PARAMMETA>

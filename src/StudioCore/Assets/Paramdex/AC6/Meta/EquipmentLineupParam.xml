@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <equipId AltName="Part ID" Refs="EquipParamBooster,EquipParamFcs,EquipParamGenerator,EquipParamProtector,EquipParamWeapon" />
+    <purchasePrice AltName="Purchase Cost" />
+    <unlockFlag AltName="Unlock Flag" />
+    <equipCategory AltName="Part Category" />
+    <logHunterRankUnlockValue AltName="Log Hunter Rank - Unlock Value" />
+  </Field>
   <Self />
 </PARAMMETA>

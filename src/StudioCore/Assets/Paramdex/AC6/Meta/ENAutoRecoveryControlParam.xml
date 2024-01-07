@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <concurrentEnergyUseMinimumTime AltName="Concurrent Energy Use - Minimum Time" />
+    <concurrentEnergyUseNoConsumeTime AltName="Concurrent Energy Use - No Consumption Time" />
+    <fallingEnergyRecoveryRate AltName="Energy Recovery Rate - Falling" />
+    <boostFallingEnergyRecoveryRate AltName="Energy Recovery Rate - Boost Falling" />
+  </Field>
   <Self />
 </PARAMMETA>

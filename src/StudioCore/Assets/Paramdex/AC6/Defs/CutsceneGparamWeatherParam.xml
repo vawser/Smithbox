@@ -7,13 +7,20 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
+    <Field Def="s16 DstWeather_Sunny"></Field>
+    <Field Def="s16 DstWeather_ClearSky"></Field>
+    <Field Def="s16 DstWeather_WeakCloudy"></Field>
+    <Field Def="s16 DstWeather_Cloud"></Field>
+    <Field Def="s16 DstWeather_Rain"></Field>
+    <Field Def="s16 DstWeather_HeavyRain"></Field>
+    <Field Def="s16 DstWeather_Storm"></Field>
+    <Field Def="s16 DstWeather_StormForBattle"></Field>
+    <Field Def="s16 DstWeather_Snow"></Field>
+    <Field Def="s16 DstWeather_HeavySnow"></Field>
+    <Field Def="s16 DstWeather_Fog"></Field>
+    <Field Def="s16 DstWeather_HeavyFog"></Field>
+    <Field Def="s16 DstWeather_SandStorm"></Field>
+    <Field Def="s16 DstWeather_HeavyFogRain"></Field>
     <Field Def="s32 UnkInt0x20"></Field>
   </Fields>
 </PARAMDEF>

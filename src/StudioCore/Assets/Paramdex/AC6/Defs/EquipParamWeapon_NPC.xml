@@ -88,7 +88,7 @@
     <Field Def="u8 atkMaterial"></Field>
     <Field Def="u8 defMaterial"></Field>
     <Field Def="u8 defSfxMaterial"></Field>
-    <Field Def="u8 correctType"></Field>
+    <Field Def="u8 correctType_Kinetic"></Field>
     <Field Def="u8 spAttribute"></Field>
     <Field Def="s16 spAtkCategory"></Field>
     <Field Def="u8 wepmotionOneHandId"></Field>
@@ -112,11 +112,11 @@
     <Field Def="u8 guardResist_CameraDisruption"></Field>
     <Field Def="u8 guardResist_Curse_Unknown"></Field>
     <Field Def="u8 isDurabilityDivergence"></Field>
-    <Field Def="u8 rightHandEquipable:1"></Field>
-    <Field Def="u8 leftHandEquipable:1"></Field>
+    <Field Def="u8 equipFrontRightSlot:1"></Field>
+    <Field Def="u8 equipFrontLeftSlot:1"></Field>
     <Field Def="u8 bothHandEquipable:1"></Field>
-    <Field Def="u8 arrowSlotEquipable:1"></Field>
-    <Field Def="u8 boltSlotEquipable:1"></Field>
+    <Field Def="u8 equipBackRightSlot:1"></Field>
+    <Field Def="u8 equipBackLeftSlot:1"></Field>
     <Field Def="u8 enableGuard:1"></Field>
     <Field Def="u8 enableParry:1"></Field>
     <Field Def="u8 enableMagic:1"></Field>
@@ -194,7 +194,7 @@
     <Field Def="u16 attackBaseDark"></Field>
     <Field Def="u8 correctType_Dark"></Field>
     <Field Def="u8 correctType_Poison"></Field>
-    <Field Def="u8 sortGroupId"></Field>
+    <Field Def="u8 sortGroupIdOld"></Field>
     <Field Def="u8 atkAttribute2"></Field>
     <Field Def="s8 Unk0x192"></Field>
     <Field Def="s8 Unk0x193"></Field>
@@ -263,7 +263,7 @@
     <Field Def="u8 Unk0x23F"></Field>
     <Field Def="s32 Unk0x240"></Field>
     <Field Def="s32 Unk0x244"></Field>
-    <Field Def="f32 Unk0x248"></Field>
+    <Field Def="f32 Unk0x248"></Field> 
     <Field Def="s32 Unk0x24C"></Field>
     <Field Def="s32 Unk0x250"></Field>
     <Field Def="s32 Unk0x254"></Field>

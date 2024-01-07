@@ -2,6 +2,11 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="AI_ATK_DIST_TYPE" type="u8">
+        <Option Value="0" Name="Short Distance" />
+        <Option Value="1" Name="Medium Distance" />
+        <Option Value="2" Name="Long Distance" />
+        <Option Value="3" Name="Out of Range" />
+        <Option Value="4" Name="Infinite" />
     </Enum>
   </Enums>
   <Field>

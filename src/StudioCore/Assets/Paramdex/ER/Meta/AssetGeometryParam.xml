@@ -2,9 +2,9 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="ASSET_HIT_CREATE_TYPE_ENUM" type="s8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+      <Option Value="0" Name="LO Only" />
+      <Option Value="1" Name="HI Only" />
+      <Option Value="2" Name="None" />
     </Enum>
     <Enum Name="ASSET_BEHAVIOR_TYPE" type="u8">
         <Option Value="0" Name="Dynamic" />
@@ -12,18 +12,27 @@
         <Option Value="2" Name="Partial Static" />
     </Enum>
     <Enum Name="ASSET_COLLISION_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="11" Name="Type 11" />
-        <Option Value="12" Name="Type 12" />
-        <Option Value="13" Name="Type 13" />
-        <Option Value="14" Name="Type 14" />
-        <Option Value="15" Name="Type 15" />
-        <Option Value="16" Name="Type 16" />
+      <Option Value="0" Name="Default" />
+      <Option Value="2" Name="Ignore Large Enemy Hit" />
+      <Option Value="3" Name="Ignore Boss Hit" />
+      <Option Value="11" Name="Type 11" />
+      <Option Value="12" Name="Type 12" />
+      <Option Value="13" Name="Type 13" />
+      <Option Value="14" Name="Type 14" />
+      <Option Value="15" Name="Type 15" />
+      <Option Value="16" Name="Type 16" />
+      <Option Value="51" Name="Ignore Camera Hit" />
+      <Option Value="52" Name="Ignore Camera and Damage Hit" />
+      <Option Value="53" Name="Only Camera Hit" />
+      <Option Value="54" Name="Only Damage Hit" />
+      <Option Value="55" Name="Only Boss Hit" />
+      <Option Value="56" Name="Only Character Hit" />
+      <Option Value="57" Name="Ignore Player and Camera Hit" />
     </Enum>
     <Enum Name="RAIN_BLOCKING_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="No cut-off" />
+        <Option Value="1" Name="Block short distance" />
+        <Option Value="2" Name="Block long distance" />
     </Enum>
     <Enum Name="ASSET_BREAK_ITEM_LOT_TYPE_ENUM" type="s8">
         <Option Value="0" Name="Type 0" />
@@ -35,30 +44,30 @@
         <Option Value="2" Name="Type 2" />
     </Enum>
     <Enum Name="ASSET_NAVIMESH_FLAG" type="u8">
-        <Option Value="0" Name="Flag 0" />
-        <Option Value="1" Name="Flag 1" />
-        <Option Value="2" Name="Flag 2" />
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Obstacle" />
+        <Option Value="2" Name="Impassable" />
+        <Option Value="3" Name="High Cost" />
     </Enum>
     <Enum Name="ASSET_WIND_EFFECT_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+      <Option Value="0" Name="Disabled" />
+      <Option Value="1" Name="Enabled" />
+      <Option Value="2" Name="Valid (Individual Judgment)" />
     </Enum>
     <Enum Name="ASSET_CAM_NEAR_BEHAVIOR_TYPE" type="s8">
-        <Option Value="-1" Name="Type -1" />
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="Never disappear" />
+        <Option Value="1" Name="Assets (higher than Player)" />
+        <Option Value="2" Name="Assets (lower than Player)" />
     </Enum>
     <Enum Name="ASSET_AUTO_DRAW_GROUP_BACKFACE_CHECK_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="Ignore dynamic asset" />
+        <Option Value="1" Name="No" />
+        <Option Value="2" Name="Yes" />
     </Enum>
     <Enum Name="ASSET_AUTO_DRAW_GROUP_DEPTH_WRITE_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="Only if destroyed" />
+        <Option Value="1" Name="No" />
+        <Option Value="2" Name="Yes" />
     </Enum>
     <Enum Name="ASSET_AUTO_DRAW_GROUP_SHADOW_TEST_TYPE" type="u8">
         <Option Value="0" Name="Type 0" />

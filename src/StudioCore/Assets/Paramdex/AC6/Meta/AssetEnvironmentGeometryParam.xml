@@ -1,5 +1,200 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Enums>
+    <Enum Name="ASSET_BEHAVIOR_TYPE" type="u8">
+        <Option Value="0" Name="Dynamic" />
+        <Option Value="1" Name="Static" />
+        <Option Value="2" Name="Partial Static" />
+    </Enum>
+    <Enum Name="ASSET_WIND_EFFECT_TYPE" type="u8">
+      <Option Value="0" Name="Disabled" />
+      <Option Value="1" Name="Enabled" />
+      <Option Value="2" Name="Valid (Individual Judgment)" />
+    </Enum>
+    <Enum Name="ASSET_NAVIMESH_FLAG" type="s8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Obstacle" />
+      <Option Value="2" Name="Impassable" />
+      <Option Value="3" Name="High Cost" />
+    </Enum>
+    <Enum Name="ASSET_MINI_MAP_DISP_TYPE" type="u8">
+      <Option Value="0" Name="Do not show" />
+      <Option Value="1" Name="Large asset" />
+      <Option Value="2" Name="Asset in progress" />
+      <Option Value="3" Name="Small asset" />
+      <Option Value="4" Name="Model usage of assets" />
+    </Enum>
+    <Enum Name="ASSET_IMPOSTER_TYPE" type="u8">
+      <Option Value="0" Name="LockCam Billboard" />
+      <Option Value="1" Name="Cross Billboard" />
+    </Enum>
+    <Enum Name="ASSET_HIT_CREATE_TYPE_ENUM" type="u8">
+      <Option Value="0" Name="LO Only" />
+      <Option Value="1" Name="HI Only" />
+      <Option Value="2" Name="None" />
+    </Enum>
+    <Enum Name="ASSET_COLLISION_TYPE" type="u8">
+      <Option Value="0" Name="Default" />
+      <Option Value="2" Name="Ignore Large Enemy Hit" />
+      <Option Value="3" Name="Ignore Boss Hit" />
+      <Option Value="51" Name="Ignore Camera Hit" />
+      <Option Value="52" Name="Ignore Camera and Damage Hit" />
+      <Option Value="53" Name="Only Camera Hit" />
+      <Option Value="54" Name="Only Damage Hit" />
+      <Option Value="55" Name="Only Boss Hit" />
+      <Option Value="56" Name="Only Character Hit" />
+      <Option Value="57" Name="Ignore Player and Camera Hit" />
+    </Enum>
+    <Enum Name="ASSET_AUTO_DRAW_GROUP_BACKFACE_CHECK_TYPE" type="u8">
+        <Option Value="0" Name="Ignore dynamic asset" />
+        <Option Value="1" Name="No" />
+        <Option Value="2" Name="Yes" />
+    </Enum>
+    <Enum Name="ASSET_AUTO_DRAW_GROUP_DEPTH_WRITE_TYPE" type="u8">
+        <Option Value="0" Name="Only if destroyed" />
+        <Option Value="1" Name="No" />
+        <Option Value="2" Name="Yes" />
+    </Enum>
+    <Enum Name="RAIN_BLOCKING_TYPE" type="u8">
+        <Option Value="0" Name="No cut-off" />
+        <Option Value="1" Name="Block short distance" />
+        <Option Value="2" Name="Block long distance" />
+    </Enum>
+    <Enum Name="ASSET_CAM_NEAR_BEHAVIOR_TYPE" type="s8">
+        <Option Value="0" Name="Never disappear" />
+        <Option Value="1" Name="Assets (higher than Player)" />
+        <Option Value="2" Name="Assets (lower than Player)" />
+    </Enum>
+    <Enum Name="ASSET_SLIDING_BULLET_HIT_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+    <Enum Name="ASSET_PENETRATION_BULLET_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="4" Name="Type 4" />
+    </Enum>
+    <Enum Name="ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="ASSET_BREAK_ITEM_LOT_TYPE_ENUM" type="s8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="ASSET_BREAK_ATTRIBUTE_DAMAGE_TYPE" type="s8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+    <Enum Name="ASSET_AUTO_DRAW_GROUP_SHADOW_TEST_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+  </Enums>
+  <Field>
+    <soundBankId AltName="Sound Bank ID" Wiki="Sound bank ID (-1: no bank, other: bank with specified ID)" ExtRefs="bnk,sound\aeg{0:000'_'000}.bnk" />
+    <soundBreakSEId AltName="Sound Break SE ID" Wiki="Destruction sound SEID (9 digits) -1: Generated from assetId" />
+    <refDrawParamId AltName="Draw Param Reference ID" Wiki="Drawing parameter reference ID. The reference ID for the part drawing parameter .xlsm." Refs="PartsDrawParam" />
+    <hitCreateType AltName="Hit Create Type" Wiki="Sets the hit build type for static assets. Ignored for dynamic assets." Enum="ASSET_HIT_CREATE_TYPE_ENUM" />
+    <behaviorType AltName="Asset Behavior Type" Wiki="Dynamic (all asset features available), static (light assets with limited functionality treated as old maps), partially static (partially destroyed assets)" Enum="ASSET_BEHAVIOR_TYPE" />
+    <collisionType AltName="Collision Detection Type" Wiki="Collision detection type. You can set what the asset will hit." Enum="ASSET_COLLISION_TYPE" />
+    <rainBlockingType AltName="Rain Blocking Type" Wiki="It is a type of rain blocking. You can set the blocking of SFX and wet expression." Enum="RAIN_BLOCKING_TYPE" />
+    <hp AltName="HP" Wiki="Durability until destruction (-1: Indestructible)" />
+    <defense AltName="Defence" Wiki="Attack power below this value is no damage" />
+    <breakStopTime AltName="Destruction Stop Time" Wiki="Time from destruction to forced stop of rigid body (do not force stop at 0)" />
+    <breakSfxId AltName="Destruction SFX ID" Wiki="SFX ID on destruction (-1: default (810030))" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <breakSfxCpId AltName="Destruction SFX Dummy Poly ID" Wiki="SFX generation position at the time of destruction Damipoly ID (-1: placement position)" />
+    <breakLandingSfxId AltName="Destruction Landing SFX ID" Wiki="Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1: does not occur)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <breakBulletBehaviorId AltName="Destruction Bullet Behavior ID" Wiki="Action parameter of [bullet] at the time of destruction (-1: does not occur). Please note that there is an offset specification due to laps. ([GR] SEQ35556)" />
+    <breakBulletCpId AltName="Destruction Bullet Dummy Poly ID" Wiki="Location of [bullet] at the time of destruction Damipoli ID (-1: placement position)" />
+    <FragmentInvisibleWaitTime AltName="Hidden Debris - Wait Time" Wiki="Hidden debris Waiting time (seconds)" />
+    <FragmentInvisibleTime AltName="Hidden Debris - Time to Hide" Wiki="Time to hide debris (seconds)" />
+    <BreakAiSoundID AltName="Destruction AI Sound ID" Wiki="AI sound ID generated at the time of destruction" Refs="AiSoundParam" />
+    <breakItemLotType AltName="Destruction Item Lot Type" Wiki="A type that decides how to obtain items drawn at the time of destruction" Enum="ASSET_BREAK_ITEM_LOT_TYPE_ENUM" />
+    <animBreakIdMax AltName="Anim Break ID Max" Wiki="What is the animation destruction ID from 0 to what?" />
+    <breakBulletAttributeDamageType AltName="Destruction Bullet Attribute Damage Type" Wiki="Generates a bullet if the last damage received when destroying an asset meets the conditions of this setting." Enum="ASSET_BREAK_ATTRIBUTE_DAMAGE_TYPE" />
+    <isBreakByPlayerCollide AltName="Is Destroyed on Player Collision" Wiki="Broken when the player touches (0: no, 1:)" />
+    <isBreakByEnemyCollide AltName="Is Destroyed on Enemy Collision" Wiki="Broken when an enemy character touches (0: No, 1: Ru)" />
+    <isBreak_ByChrRide AltName="Is Destroyed by Riding" Wiki="Will it break if the character gets on (0: it won't break 1: it will break)" />
+    <isDisableBreakForFirstAppear AltName="Is Destroyed by Default" Wiki="Broken at the initial appearance of the player (0: ru, 1: no)" />
+    <isAnimBreak AltName="Is Animated Destruction" Wiki="Is it animation destruction (0: physical destruction, 1: animation destruction)" />
+    <isDamageCover AltName="Is Damage Transferred" Wiki="Whether to pass the damage to the other side when receiving damage (0: pass, 1: do not pass)" />
+    <isAttackBacklash AltName="Is Attack Backlash" Wiki="Do you play the attack (0: do not play, 1: play)" />
+    <Reserve_2 AltName=""/>
+    <isLadder AltName="Is Ladder" Wiki="Is it a ladder (0: different, 1: yes)" />
+    <isMoveObj AltName="Is Moving Object" Wiki="Is it a moving object? It is a flag used for branching of movement processing at the time of multi (0: different, 1: yes)" />
+    <isSkydomeFlag AltName="Is Celestial Sphere" Wiki="Processing that treats the celestial sphere (player tracking, etc.) is performed (0: different, 1: yes)" />
+    <isAnimPauseOnRemoPlay AltName="Is Paused during Cutscene" Wiki="Do you want to stop the animation during the poly play (0: not, 1: do)" />
+    <isBurn AltName="Is Flammable" Wiki="Will it burn (0: not, 1:)" />
+    <isEnableRepick AltName="Is Repicked" Wiki="If this flag is , the parameter At the time of recollection _ *** will be used for the assets to be collected again in units of placement." IsBool="" />
+    <isBreakOnPickUp AltName="Is Destroyed on Pickup" Wiki="If , play the animation at the time of collection, if , destroy at the time of collection (destroy in all cases including replacement)" IsBool="" />
+    <isBreakByHugeenemyCollide AltName="Is Destroyed by Giant Collision" Wiki="Broken when a giant enemy touches (0: No, 1:)" />
+    <navimeshFlag AltName="Pre-destruction Navmesh Flag" Wiki="Navigation mesh flag set from assets before destruction" Enum="ASSET_NAVIMESH_FLAG" />
+    <burnBulletInterval AltName="Burn Bullet Interval" Wiki="Interval (frame) to generate bullets for spreading fire" />
+    <clothUpdateDist AltName="Camera Distance to Update Cloth" Wiki="Distance from the camera to update havokCloth (0: always update)" />
+    <lifeTime_forRuntimeCreate AltName="Duration after Creation until Disappearance" Wiki="Runtime-generated time after creation until disappearance (0: does not disappear)" />
+    <contactSeId AltName="Contact SE ID" Wiki="SE ID to play when touched by a local player operated by you (-1: Do not play)" />
+    <repickAnimIdOffset AltName="Repick Anim ID Offset" Wiki="When recollecting assets with Is there a change at the time of recollection? In units of placement, play the uncollected / collected animation with the anime ID offset by this value." />
+    <windEffectRate_0 AltName="Wind Effect Rate - Before Destruction" Wiki="Wind coefficient (before destruction)" />
+    <windEffectRate_1 AltName="Wind Effect Rate - After Destruction" Wiki="Wind coefficient (after destruction)" />
+    <windEffectType_0 AltName="Wind Effect Type - Before Destruction" Wiki="Wind effect type (before destruction)" Enum="ASSET_WIND_EFFECT_TYPE" />
+    <windEffectType_1 AltName="Wind Effect Type - After Destruction" Wiki="Wind effect type (after destruction)" Enum="ASSET_WIND_EFFECT_TYPE" />
+    <overrideMaterialId AltName="Override Material ID" Wiki="Asset material ID overwrite setting (-1: Do not overwrite model material ID 0 or more: Material ID overwrite) On the ladder, the material ID is reflected only with this setting" />
+    <autoCreateOffsetHeight AltName="Automatic Generation Height Offset" Wiki="Height offset of how much it floats from where the raycast hits the map when it is automatically generated [m]" />
+    <burnTime AltName="Burn Time" Wiki="Burning time (seconds) (continues to burn at 0)" />
+    <burnBraekRate AltName="Burn Destroy Rate" Wiki="Burnup threshold for switching to the ruptured state" />
+    <burnSfxId AltName="Burn SFX ID [0]" Wiki="SFX ID at the time of combustion: 0 (-1: No SFX)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <burnSfxId_1 AltName="Burn SFX ID [1]" Wiki="SFX ID at the time of combustion: 1 (-1: No SFX)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <burnSfxId_2 AltName="Burn SFX ID [2]" Wiki="SFX ID at the time of combustion: 2 (-1: No SFX)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <burnSfxId_3 AltName="Burn SFX ID [3]" Wiki="SFX ID at the time of combustion: 3 (-1: No SFX)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <burnSfxDelayTimeMin AltName="Burn SFX Minimum Delay Time [0]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMin_1 AltName="Burn SFX Minimum Delay Time [1]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMin_2 AltName="Burn SFX Minimum Delay Time [2]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMin_3 AltName="Burn SFX Minimum Delay Time [3]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMax AltName="Burn SFX Maximum Delay Time [0]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMax_1 AltName="Burn SFX Maximum Delay Time [1]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMax_2 AltName="Burn SFX Maximum Delay Time [2]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMax_3 AltName="Burn SFX Maximum Delay Time [3]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnBulletBehaviorId AltName="Burn Bullet Behavior ID [0]" Wiki="Bullet generation behavior parameter at the time of burning: 0 (-1: does not occur)" />
+    <burnBulletBehaviorId_1 AltName="Burn Bullet Behavior ID [1]" Wiki="Bullet generation behavior parameter at the time of burning: 1 (-1: does not occur)" />
+    <burnBulletBehaviorId_2 AltName="Burn Bullet Behavior ID [2]" Wiki="Bullet generation behavior parameter at the time of burning: 2 (-1: does not occur)" />
+    <burnBulletBehaviorId_3 AltName="Burn Bullet Behavior ID [3]" Wiki="Bullet generation behavior parameter at the time of burning: 3 (-1: does not occur)" />
+    <burnBulletDelayTime AltName="Burn Bullet Delay Time" Wiki="Time to delay the generation of bullets for fire spread (seconds)" />
+    <paintDecalTargetTextureSize AltName="Paint Decal Target Texture Size" Wiki="Paint decal target size 0: Decal disabled (0 to 4096 power of 2 0, 2, 4, 8, 2048 only valid)" />
+    <navimeshFlag_after AltName="Post-destruction Navmesh Flag" Wiki="Navimesh flag set from the destroyed asset" Enum="ASSET_NAVIMESH_FLAG" />
+    <camNearBehaviorType AltName="Near Camera Behavior Type" Wiki="Drawing settings when approaching the camera. [GR] SEQ07529" Enum="ASSET_CAM_NEAR_BEHAVIOR_TYPE" />
+    <breakItemLotParamId AltName="Destroyed Item Lot Param ID" Wiki="Item to be drawn at the time of destruction Lottery ID_for map-1: No lottery" Refs="ItemLotParam_map" />
+    <pickUpActionButtonParamId AltName="Pickup Action Button Param ID" Wiki="Action button ID issued for collection-1: Collection function is disabled" Refs="ActionButtonParam" />
+    <pickUpItemLotParamId AltName="Pickup Item Lot Param ID" Wiki="Item to be drawn at the time of collection For lottery ID_map-1: Collection function is invalid" Refs="ItemLotParam_map" />
+    <autoDrawGroupBackFaceCheck AltName="Auto Draw Group: Backface Check" Wiki="Automatic drawing group_Back side check" Enum="ASSET_AUTO_DRAW_GROUP_BACKFACE_CHECK_TYPE" />
+    <autoDrawGroupDepthWrite AltName="Auto Draw Group: Depth Write" Wiki="Auto drawing group_shield" Enum="ASSET_AUTO_DRAW_GROUP_DEPTH_WRITE_TYPE" />
+    <autoDrawGroupShadowTest AltName="Auto Draw Group: Shadow Test" Wiki="Automatic drawing group_shadow test" Enum="ASSET_AUTO_DRAW_GROUP_SHADOW_TEST_TYPE" />
+    <debug_isHeightCheckEnable AltName="Is Height Check Enabled" Wiki="Debug_Allow Ground Height Check See SEQ07876 for details" IsBool="" />
+    <autoDrawGroupPassPixelNum AltName="Auto Draw Group: Pass Pixel Number" Wiki="Automatic drawing group_Pass pixel (set to 0.0-1.0 to enlarge at the time of shooting)" />
+    <pickUpReplacementEventFlag AltName="Pickup Replacement - Event Flag" Wiki="When this event flag is ON, use the ID of the subsequent replacement 0: Do not always replace" />
+    <pickUpReplacementAnimIdOffset AltName="Pickup Replacement - Anim ID Offset" Wiki="When Collecting_replacement flag condition is ON, play the uncollected / collected animation with the animation ID offset by this value." />
+    <pickUpReplacementActionButtonParamId AltName="Pickup Replacement - Action Button Param ID" Wiki="This action button ID is used when Collecting_replacement flag condition is ON." Refs="ActionButtonParam" />
+    <pickUpReplacementItemLotParamId AltName="Pickup Replacement - Item Lot Param ID" Wiki="When Collecting_replacement flag condition is ON, this item lottery ID_map is used." Refs="ItemLotParam_map" />
+    <slidingBulletHitType AltName="Sliding Bullet Hit Type" Wiki="When a bullet of the follow-up type Crawling on the ground even if it collides collides with an asset, does it bend in the direction along the landing point? Behavior" Enum="ASSET_SLIDING_BULLET_HIT_TYPE" />
+    <isBushesForDamage AltName="Is Damaged by Special Attacks" Wiki=" Assets can only be damaged by damage to bushes  and object attack power> defense power attacks [GR] SEQ20617" IsBool="" />
+    <penetrationBulletType AltName="Penetration Bullet Type" Wiki="Will the bullet hit and land? Which bullet para to refer to when deciding? The value that determines." Enum="ASSET_PENETRATION_BULLET_TYPE" />
+    
+    <soundBreakSECpId AltName="Destruction - Sound SE Dummy Poly ID" Wiki="Damipoli ID of the place where the destruction sound is played (-1: Placement position)" />
+    <debug_HeightCheckCapacityMin AltName="Debug - Height Check Minimum" Wiki="Debug_Allowable ground height_Minimum [m] See SEQ07876 for details. Must be smaller than maximum" />
+    <debug_HeightCheckCapacityMax AltName="Debug - Height Check Maximum" Wiki="Debug_Allowable ground height_Max [m] See SEQ07876 for details. Must be larger than minimum" />
+    <repickActionButtonParamId AltName="Repick - Action Button ID" Wiki="This action button ID is used when recollecting assets whose Is there a change at the time of recollection?" Refs="ActionButtonParam" />
+    <repickItemLotParamId AltName="Repick - Item Lot Param ID" Wiki="Assets with Is there a change at the time of recollection? Are used for this item lottery ID_map when recollecting in units of placement." Refs="ItemLotParam_map" />
+    <repickReplacementAnimIdOffset AltName="Repick Replacement - Anim ID Offset" Wiki="Use this parameter instead of At the time of collection_replacement animation offset at the time of recollection for assets whose Is there a change at the time of recollection?" />
+    <repickReplacementActionButtonParamId AltName="Repick Replacement - Action Button Param ID" Wiki="Use this parameter instead of At the time of collection_replacement action button ID when recollecting assets whose Is there a change at the time of recollection?" Refs="ActionButtonParam" />
+    <repickReplacementItemLotParamId AltName="Repick Replacement - Item Lot ID" Wiki="Use this parameter instead of At the time of collection_Replacement item lottery ID_For map when recollecting assets whose Is there a change at the time of recollection?" Refs="ItemLotParam_map" />
+    
+    <excludeActivateRatio_Xboxone_Grid AltName="Exclude Activate Ratio - Xbox One Grid" Wiki="Open_XB1 exclusion rate [GR] SEQ25310" Enum="ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE" />
+    <excludeActivateRatio_Xboxone_Legacy AltName="Exclude Activate Ratio - Xbox One Legacy" Wiki="Legacy_XB1 exclusion rate [GR] SEQ25310" Enum="ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE" />
+    <excludeActivateRatio_PS4_Grid AltName="Exclude Activate Ratio - PS4 Grid" Wiki="Open_PS4 exclusion rate [GR] SEQ25310" Enum="ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE" />
+    <excludeActivateRatio_PS4_Legacy AltName="Exclude Activate Ratio - PS4 Legacy" Wiki="Legacy_PS4 exclusion rate [GR] SEQ25310" Enum="ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE" />
+    <Reserve_0 AltName=""/>
+  </Field>
   <Self />
 </PARAMMETA>

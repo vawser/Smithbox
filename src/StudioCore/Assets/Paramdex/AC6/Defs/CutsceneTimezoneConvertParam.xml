@@ -7,7 +7,7 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     <Field Def="s32 Unk0x00"></Field>
-    <Field Def="f32 UnkFloat0x04"></Field>
-    <Field Def="f32 UnkFloat0x08"></Field>
+    <Field Def="f32 SrcTimezoneStart"></Field>
+    <Field Def="f32 DstCutscenTime"></Field>
   </Fields>
 </PARAMDEF>

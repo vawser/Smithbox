@@ -1,5 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Enums>
+    <Enum Name="ACTION_BUTTON_REGION_TYPE" type="u8">
+        <Option Value="0" Name="Cylinder" />
+        <Option Value="1" Name="Prism" />
+        <Option Value="2" Name="Capsule" />
+    </Enum> 
+    
+    <Enum Name="ACTION_BUTTON_CATEGORY" type="u8">
+        <Option Value="0" Name="Category 0" />
+        <Option Value="1" Name="Category 1" />
+        <Option Value="2" Name="Category 2" />
+        <Option Value="3" Name="Category 3" />
+        <Option Value="4" Name="Category 4" />
+        <Option Value="5" Name="Category 5" />
+        <Option Value="6" Name="Category 6" />
+        <Option Value="7" Name="Category 7" />
+        <Option Value="8" Name="Category 8" />
+        <Option Value="9" Name="Category 9" />
+        <Option Value="10" Name="Category 10" />
+        <Option Value="11" Name="Category 11" />
+        <Option Value="12" Name="Category 12" />
+        <Option Value="14" Name="Category 14" />
+    </Enum>
+    
+    <Enum Name="ACTION_BUTTON_ANGLE_CHECK_TYPE" type="u8">
+      <Option Value="0" Name="Point" />
+      <Option Value="1" Name="Line" />
+    </Enum> 
+    
+    <Enum Name="ACTION_BUTTON_TEXT_BOX_TYPE" type="u8">
+      <Option Value="0" Name="Action Button" />
+    </Enum>
+    
+    <Enum Name="ACTION_BUTTON_EXEC_CIRCLE" type="u8">
+      <Option Value="0" Name="No" />
+      <Option Value="1" Name="Yes" />
+    </Enum>
+    
+    <Enum Name="ACTION_BUTTON_ICON_ID" type="s32">
+      <Option Value="1" Name="Default" />
+      <Option Value="2" Name="Hacking Level 1" />
+      <Option Value="3" Name="Supply" />
+      <Option Value="4" Name="Container" />
+      <Option Value="5" Name="Hacking Level 2" />
+      <Option Value="6" Name="Hacking Level 3" />
+    </Enum>
+    
+  </Enums>
+  
+  <Field>
+    <regionType AltName="Region Type" Wiki="Range shape (cylinder, prism, capsule)" Enum="ACTION_BUTTON_REGION_TYPE" />
+    <category AltName="Category" Wiki="category. The number on the left side of the name is the priority when multiple action buttons overlap (the closer it is to 0, the higher the priority is displayed)." Enum="ACTION_BUTTON_CATEGORY" />
+    <padding1 AltName=""/>
+    <dummyPoly1 AltName="Dummy Poly [1]" Wiki="Specify the Damipoli ID that is the center of the bottom of the range. If there is no Damipoly or -1 is entered, the center coordinates will be the reference." />
+    <dummyPoly2 AltName="Dummy Poly [2]" Wiki="Used only when the range type is a capsule. Additional Damipoly (capsule) that creates a line segment with two Damipoly" />
+    <radius AltName="Radius" Wiki="Radius (cylinder / capsule)" />
+    <angle AltName="Angle" Wiki="Angle (cylinder)" />
+    <depth AltName="Depth" Wiki="Depth (prism)" />
+    <width AltName="Width" Wiki="Width (prism)" />
+    <height AltName="Height" Wiki="Height (cylinder / prism)" />
+    <baseHeightOffset AltName="Bottom Height Offset" Wiki="How much to raise or lower the Y coordinate of the bottom (cylinder / prism)" />
+    <angleCheckType AltName="Angle Difference Check Type" Wiki="Angle difference judgment type (cylinder / prism)" Enum="ACTION_BUTTON_ANGLE_CHECK_TYPE" />
+    <padding2 AltName=""/>
+    <allowAngle AltName="Allowable Angle Difference" Wiki="Allowable angle difference (cylinder / prism)" />
+    <spotDummyPoly AltName="Action Spot Dummy Poly" Wiki="If there is no Damipoli that specifies the Damipoli ID that will be the position of the action spot, or if -1 is entered, the center coordinates will be the reference." />
+    <textBoxType AltName="Textbox Type" Wiki="Text box type" Enum="ACTION_BUTTON_TEXT_BOX_TYPE" />
+    <padding3 AltName=""/>
+    <padding5 AltName=""/>
+    <isInvalidForRide AltName="Invalid for Ride" Wiki="If this item is YES, the action button will not appear when riding and no judgment will be made." IsBool="" />
+    <isGrayoutForRide AltName="Greyout for Ride" Wiki="If this item is YES, the action button will be grayed out when riding and no judgment will be made." IsBool="" />
+    <isInvalidForCrouching AltName="Invalid for Crouching" Wiki="If this item is YES, the action button will not appear when crouching, and no judgment will be made." IsBool="" />
+    <isGrayoutForCrouching AltName="Greyout for Crouching" Wiki="If this item is YES, the action button will be grayed out when crouching and no judgment will be made." IsBool="" />
+    <padding4 AltName=""/>
+    <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="Event" />
+    <invalidFlag AltName="Invalid Flag" Wiki="If this flag is ON, the action button will not appear and no judgment will be made." />
+    <grayoutFlag AltName="Grayout Flag" Wiki="If this flag is ON, the action button will be grayed out and no judgment will be made." />
+    <overrideActionButtonIdForRide AltName="Override Button ID for Ride" Wiki="Replace with this action button ID parameter while riding (-1: No replacement)" Refs="ActionButtonParam" />
+    <execInvalidTime AltName="Execution Invalid Time" Wiki="Invalid time after execution (-infinite by value)" />
+    <useExecCircle AltName="Use Exec Circle" Enum="ACTION_BUTTON_EXEC_CIRCLE" />
+    <actionButtonIconId AltName="Action Button Icon ID" Enum="ACTION_BUTTON_ICON_ID" />
+  </Field>
   <Self />
 </PARAMMETA>

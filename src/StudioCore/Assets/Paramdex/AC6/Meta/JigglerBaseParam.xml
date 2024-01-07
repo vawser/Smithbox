@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <jigglerBehaviorParamId_1 Refs="JigglerBehaviorParam" />
+    <jigglerBehaviorParamId_2 Refs="JigglerBehaviorParam" />
+  </Field>
   <Self />
 </PARAMMETA>

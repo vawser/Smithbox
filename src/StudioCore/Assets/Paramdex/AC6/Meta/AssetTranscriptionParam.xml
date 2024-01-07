@@ -1,5 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+   <Enums>
+    <Enum Name="ASSET_SLOD_TEX_SIZE_TYPE" type="u16">
+      <Option Value="64" Name="64x64" />
+      <Option Value="128" Name="128x128" />
+      <Option Value="256" Name="256x256" />
+      <Option Value="512" Name="512x512" />
+      <Option Value="1024" Name="1024x1024" />
+      <Option Value="2048" Name="2048x2048" />
+      <Option Value="4096" Name="4096x4096" />
+    </Enum>
+    
+    <Enum Name="ASSET_SLOD_CAP_DIR_NUM_TYPE" type="u8">
+      <Option Value="16" Name="16 Directions" />
+      <Option Value="36" Name="32 Directions" />
+      <Option Value="64" Name="64 Directions" />
+    </Enum>
+    
+    <Enum Name="ASSET_SLOD_CAP_ANGLE_TYPE" type="u8">
+      <Option Value="20" Name="20 Degrees" />
+      <Option Value="30" Name="30 Degrees" />
+      <Option Value="45" Name="45 Degrees" />
+      <Option Value="90" Name="90 Degrees" />
+    </Enum>
+    
+  </Enums>
+  <Field>
+    <assetEnvironmentGeometryParamID AltName="Asset Environment Geometry Param ID" Refs="AssetEnvironmentGeometryParam" />
+    <assetSlodTexSizeType AltName="Asset SLOD Texture Size" Enum="ASSET_SLOD_TEX_SIZE_TYPE" />
+    <assetSlodCapDirNumType AltName="Asset SLOD Directions" Enum="ASSET_SLOD_CAP_DIR_NUM_TYPE" />
+    <assetSlodCapAngleType AltName="Asset SLOD Angle Cap"  Enum="ASSET_SLOD_CAP_ANGLE_TYPE" />
+  </Field>
   <Self />
 </PARAMMETA>

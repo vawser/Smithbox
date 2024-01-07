@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
+    <menuModelId AltName="Menu Model ID" />
+    <sortId AltName="Sort ID" />
+    <weight AltName="Weight" />
+    <energyCapacity AltName="Energy Capacity" />
+    <energyOutput AltName="Energy Output" />
+    <energyLoad AltName="Energy Load" />
+    <energyRechargeDelay AltName="Energy Recharge Delay" />
+    <aimAssistMaxDist AltName="Aim Assist: Max Distance" />
+    <missileLockCorrection AltName="Missile Lock Correction" />
+    <multiLockCorrection AltName="Multi-Lock Correction" />
     <targetTrackingCorrection AltName="Target Tracking Multiplier" Wiki="Affects Target Tracking stat, which affects aim assist ability."/>
     <aimAssistMaxDist AltName="Aim Assist: Max Distance (Red Lock)" Wiki="Determines maximum distance before aim assist will no longer occur."/>
     <aimAssistInputTargetDist_Stage0 AltName="Aim Assist: Input Target Distance (Stage 0)" Wiki="Determines which target distance ranges will use which aim assist values."/>

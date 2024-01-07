@@ -1,5 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Enums>
+    <Enum Name="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" type="u8">
+        <Option Value="0" Name="Independent" />
+        <Option Value="1" Name="Not possible" />
+        <Option Value="2" Name="Interruption" />
+        <Option Value="3" Name="Simultaneous" />
+    </Enum>
+  </Enums>
+  <Field>
+    <UnkByte0x00 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x01 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x02 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x03 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x04 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x05 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x06 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x07 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x08 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x09 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x0A AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x0B AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x0C AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x0D AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x0E AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x0F AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x10 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x11 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x12 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x13 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x14 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x15 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x16 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x17 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x18 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x19 AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x1A AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x1B AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x1C AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x1D AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x1E AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+    <UnkByte0x1F AltName="Enable Type" Enum="ATK_OPERATION_PARTS_PARAM_ENABLE_TYPE" />
+  </Field>
   <Self />
 </PARAMMETA>

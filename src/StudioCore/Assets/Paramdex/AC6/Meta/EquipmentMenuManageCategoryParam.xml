@@ -2,6 +2,7 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <menuLayout AltName="Menu Layout" Refs="MenuPropertyLayoutParam" Wiki="" />
+    <textId AltName="Text ID" FMGRef="Modern_MenuText" />
   </Field>
   <Self />
 </PARAMMETA>

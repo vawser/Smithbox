@@ -7,13 +7,13 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     <Field Def="s32 Unk0x00"></Field>
-    <Field Def="u8 UnkByte0x04"></Field>
-    <Field Def="u8 UnkByte0x05"></Field>
-    <Field Def="u8 UnkByte0x06"></Field>
-    <Field Def="u8 UnkByte0x07"></Field>
-    <Field Def="u8 UnkByte0x08"></Field>
-    <Field Def="u8 UnkByte0x09"></Field>
-    <Field Def="u8 UnkByte0x0A"></Field>
+    <Field Def="u8 DstTimezone_Morning"></Field>
+    <Field Def="u8 DstTimezone_Noon"></Field>
+    <Field Def="u8 DstTimezone_AfterNoon"></Field>
+    <Field Def="u8 DstTimezone_Evening"></Field>
+    <Field Def="u8 DstTimezone_Night"></Field>
+    <Field Def="u8 DstTimezone_DeepNightA"></Field>
+    <Field Def="u8 DstTimezone_DeepNightB"></Field>
     <Field Def="u8 Unk0x0B"></Field>
   </Fields>
 </PARAMDEF>

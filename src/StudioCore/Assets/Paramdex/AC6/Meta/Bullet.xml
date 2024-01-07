@@ -32,41 +32,233 @@
       <Option Value="9" Name="Follow parent bullet (except for direction)" />
       <Option Value="10" Name="Follow parent bullet position" />
     </Enum>
-    <Enum Name="BULLET_CHARA_PENETRATE_TYPE" type="u8">
-      <Option Value="0" Name="No characters" />
-      <Option Value="1" Name="Low penetrate defense" />
-      <Option Value="2" Name="All characters" />
-    </Enum>
     <Enum Name="BULLET_HOMING_TYPE" type="u8">
       <Option Value="0" Name="Normal" />
       <Option Value="1" Name="Maintain altitude" />
     </Enum>
+    <Enum Name="BULLET_ALERT_SHOW_TYPE" type="u8">
+      <Option Value="0" Name="Do not issue" />
+      <Option Value="1" Name="Tracking" />
+      <Option Value="2" Name="Alive" />
+    </Enum>
+    <Enum Name="BULLET_ATTACH_EFFECT_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Force" />
+      <Option Value="2" Name="Missile Protection" />
+      <Option Value="3" Name="Dark Force" />
+      <Option Value="10" Name="FNR Barrier" />
+      <Option Value="20" Name="FNR Blade" />
+      <Option Value="30" Name="FNR Flare" />
+    </Enum>
+    <Enum Name="BULLET_BARRIER_HIT_TYPE" type="u8">
+      <Option Value="0" Name="No Hit" />
+      <Option Value="1" Name="Follow" />
+      <Option Value="2" Name="Landing" />
+    </Enum>
+    <Enum Name="BULLET_BLUR_RAND_EXPRESS_TYPE" type="u8">
+      <Option Value="0" Name="Uniform Distribution" />
+      <Option Value="1" Name="Normal Distribution" />
+    </Enum>
+    <Enum Name="BULLET_BLUR_RAND_TYPE" type="u8">
+      <Option Value="0" Name="Rectangle" />
+      <Option Value="1" Name="Oblong" />
+    </Enum>
+    <Enum Name="BULLET_CHARA_PENETRATE_TYPE" type="u8">
+      <Option Value="0" Name="No Penetration" />
+      <Option Value="1" Name="Low Penetration" />
+      <Option Value="2" Name="Normal Penetration" />
+    </Enum>
+    <Enum Name="BULLET_CHILDREN_EMITTE_POS_TYPE" type="u8">
+      <Option Value="0" Name="Impact Position" />
+      <Option Value="1" Name="Bullet Position" />
+    </Enum>
+    <Enum Name="BULLET_CHILDREN_EMITTE_PURPOSE_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Impact" />
+      <Option Value="2" Name="Small Bullet" />
+    </Enum>
+    <Enum Name="BULLET_DEFLECT_TYPE" type="u8">
+      <Option Value="0" Name="No Deflect" />
+      <Option Value="1" Name="Simple" />
+      <Option Value="2" Name="Detail" />
+    </Enum>
+    <Enum Name="BULLET_DIST_ATK_POWER_RATE_CALC_GRAPH_PARAM_TYPE" type="s8">
+      <Option Value="-1" Name="None" />
+      <Option Value="0" Name="Self 0" />
+      <Option Value="1" Name="Self 1" />
+      <Option Value="2" Name="Self 2" />
+      <Option Value="3" Name="Self 3" />
+      <Option Value="4" Name="Self 4" />
+      <Option Value="5" Name="Self 5" />
+      <Option Value="6" Name="Self 6" />
+      <Option Value="7" Name="Self 7" />
+      <Option Value="8" Name="Self 8" />
+      <Option Value="9" Name="Self 9" />
+      <Option Value="50" Name="Enemy 0" />
+      <Option Value="51" Name="Enemy 1" />
+      <Option Value="52" Name="Enemy 2" />
+      <Option Value="53" Name="Enemy 3" />
+      <Option Value="54" Name="Enemy 4" />
+      <Option Value="55" Name="Enemy 5" />
+      <Option Value="56" Name="Enemy 6" />
+      <Option Value="57" Name="Enemy 7" />
+      <Option Value="58" Name="Enemy 8" />
+      <Option Value="59" Name="Enemy 9" />
+    </Enum>
+    <Enum Name="BULLET_FLARE_HIT_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Target Overwrite" />
+    </Enum>
+    <Enum Name="BULLET_GUARD_RANGE_TYPE" type="u8">
+      <Option Value="0" Name="Bullet position" />
+      <Option Value="1" Name="Shooter position" />
+    </Enum>
+    <Enum Name="BULLET_HOMING_CORRECT_AXIS" type="u8">
+      <Option Value="0" Name="X-axis homing correction" />
+      <Option Value="1" Name="Y-axis homing correction" />
+      <Option Value="10" Name="X-axis limit only" />
+      <Option Value="11" Name="Y-axis limit only" />
+      <Option Value="20" Name="X-axis completion only" />
+      <Option Value="21" Name="Y-axis completion only" />
+    </Enum>
+    <Enum Name="BULLET_LAUNCH_CONDITION_GUARD_TYPE" type="u8">
+      <Option Value="0" Name="Always" />
+      <Option Value="1" Name="Only if not guarded" />
+    </Enum>
+    <Enum Name="BULLET_SHOTGUN_COORD_ERROR_TYPE" type="u8">
+      <Option Value="0" Name="Up/Down/Left/Right" />
+      <Option Value="1" Name="Front/Back/Left/Right" />
+      <Option Value="2" Name="Up/Down" />
+      <Option Value="3" Name="Omnidirectional" />
+    </Enum>
+    <Enum Name="BULLET_OBJ_GENERATE_TIMING" type="u8">
+      <Option Value="0" Name="On Shoot" />
+      <Option Value="1" Name="On Hit" />
+    </Enum>
+    <Enum Name="BULLET_SFX_CREATE_POSTURE_TYPE" type="s8">
+      <Option Value="0" Name="Parent" />
+      <Option Value="1" Name="Global Y Axis" />
+      <Option Value="2" Name="Impact" />
+    </Enum>
+    <Enum Name="BULLET_SFX_DELETE_TYPE" type="s8">
+      <Option Value="0" Name="Emitter Stopped" />
+      <Option Value="1" Name="Deletion" />
+    </Enum>
+    <Enum Name="BULLET_SHAPE_TYPE" type="u8">
+      <Option Value="0" Name="Sphere" />
+      <Option Value="1" Name="Capsule" />
+      <Option Value="2" Name="Horizontal Capsule" />
+      <Option Value="3" Name="Fan" />
+      <Option Value="4" Name="Capsule (opposite direction)" />
+    </Enum>
+    <Enum Name="BULLET_SHOOT_TARGET_TYPE" type="u8">
+      <Option Value="0" Name="Lock Target" />
+      <Option Value="1" Name="Point Specification" />
+      <Option Value="2" Name="Shooter" />
+    </Enum>
   </Enums>
   <Field>
     <atkId_Bullet AltName="AtkParam ID" Wiki="References AtkParam. Used to apply the damage characteristics to a project." Refs="AtkParam_Pc,AtkParam_Npc" />
-    <sfxId_Bullet AltName="Projectile FFX ID" Wiki="Visual effect for projectile in transit." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <sfxId_Hit AltName="Impact FFX ID" Wiki="Visual effect when projectile hits something." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <sfxId_Flick AltName="Repel FFX ID" Wiki="Visual effect when projectile is deflected off of a shield." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <sfxId_Muzzle AltName="Muzzle FFX ID" Wiki="Visual effect when producing projectile." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Bullet AltName="Projectile FFX ID" Wiki="Visual effect for projectile in transit." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Hit AltName="Impact FFX ID" Wiki="Visual effect when projectile hits something." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Flick AltName="Repel FFX ID" Wiki="Visual effect when projectile is deflected off of a shield." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Muzzle AltName="Muzzle FFX ID" Wiki="Visual effect when producing projectile." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <life AltName="Duration" Wiki="Time for missiles to continue to exist (-1 is infinite)." />
+    <distance AltName="Attenuation Range" Wiki="Distance at which attenuation begins (not actual flight distance)." />
+    <shootInterval AltName="Shoot Interval" Wiki="Specify how many seconds the missile will be fired." />
+    <gravityInRange AltName="Gravity: In Range" Wiki="Downward gravity within range." />
+    <gravityOutRange AltName="Gravity: Out of Range" Wiki="Gravity applied downward when damping begins (expresses the feeling of falling down." />
+    <homingStopRange AltName="Homing Stop Range" Wiki="The distance to the target to stop the guidance. A parameter that prevents you from hitting too much with a guided bullet." />
+    <initVelocity AltName="Initial Velocity" Wiki="Initial speed of SFX." />
+    <accelInRange AltName="Acceleration: In Range" Wiki="Acceleration within SFX range." />
+    <accelOutRange AltName="Acceleration: Out of Range" Wiki="Acceleration when SFX goes out of range." />
+    <maxVelocity AltName="Max Velocity" Wiki="maximum speed." />
+    <minVelocity AltName="Min Velocity" Wiki="Minimum guaranteed speed." />
+    <accelTime AltName="Acceleration Duration" Wiki="Until this time, do not accelerate (make sure you can shoot magic like rockets)." />
+    <homingBeginDist AltName="Homing Start Distance" Wiki="How many meters should the guidance start?" />
+    <unkCanCreateAsset AltName="Can Create Asset" IsBool="" />
     <hitRadius AltName="Hitbox Radius (initial)" Wiki="Initial radius of the hitbox." />
     <hitRadiusMax AltName="Hitbox Radius (max)" Wiki="Maximum radius of the hitbox, time hitbox changes from initial to max is determined by spreadTime. (If -1, radius is same as initial hitbox radius)." />
     <spreadTime AltName="Hitbox Radius Spread Time" Wiki="Amount of time (in seconds) it takes for hitbox radius to grow from hitRadius to hitRadiusMax." />
+    <expDelay AltName="Explosion Delay" Wiki="Time from landing to explosion (if 0, it explodes immediately)." />
+    <hormingOffsetRange AltName="Homing Offset Range" Wiki="It is accurate if it is 0. At the time of shooting, each component of XYZ should be aimed by shifting this amount." />
+    <dmgHitRecordLifeTime AltName="Damage Hit Duration" Wiki="Damage hit history survival time [sec] ( 0.0f: indefinite)" />
+    <externalForce AltName="External Force in Bullet Direction" Wiki="External force applied in the direction of shooting. (Y-axis is removed)" />
     <spEffectIDForShooter AltName="Shooter SpEffect ID" Wiki="SpEffect applied to owner of bullet." Refs="SpEffectParam" />
+    <autoSearchNPCThinkID AltName="Bullet AI" Wiki="Parameters used by the funnel to search for the target" Refs="NpcThinkParam" />
     <hitBulletID AltName="Hit Bullet ID" Wiki="Bullet to generate when projectile expires." Refs="Bullet" />
+    <spEffectId0 AltName="Target SpEffect ID [0]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
+    <spEffectId1 AltName="Target SpEffect ID [1]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
+    <spEffectId2 AltName="Target SpEffect ID [2]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
+    <spEffectId3 AltName="Target SpEffect ID [3]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
+    <spEffectId4 AltName="Target SpEffect ID [4]" Wiki="Register each special effect parameter ID.  General special effects." Refs="SpEffectParam" />
+    <numShoot AltName="Bullet Count" Wiki="The number of missiles fired at one time." />
+    <homingAngle AltName="Homing Angle" Wiki="How many corrections per second? .." />
+    <shootAngle AltName="Launch Angle" Wiki="Specify how many times the missile is fired forward." />
+    <shootAngleInterval AltName="Launch Angle Interval" Wiki="When firing multiple missiles, specify how often to fire them. (Y-axis)" />
+    <shootAngleXInterval AltName="Launch Elevation Interval" Wiki="When firing multiple missiles, specify how often to fire them. (X-axis)" />
+    <damageDamp_Kinetic AltName="Damage Falloff %: Kinetic" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
+    <damageDamp_Energy AltName="Damage Falloff %: Energy" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
+    <damageDamp_Explosive AltName="Damage Falloff %: Explosive" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
+    <damageDamp_Coral AltName="Damage Falloff %: Coral" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
+    <damageDamp_Stamina AltName="Damage Falloff %: Stamina" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
+    <damageDamp_Knockback AltName="Damage Falloff %: Knockback" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
+    <damageDamp_Unknown AltName="Damage Falloff %: Unknown" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
+    <shootAngleXZ AltName="Launch Elevation Angle" Wiki="Additional elevation angle from the horizontal." />
+    <lockShootLimitAng AltName="Lock Direction Limit Angle" Wiki="Limit angle when facing the lock direction" />
+    <pad2 AltName=""/>
+    <prevVelocityDirRate AltName="Previous Velocity Direction Rate" Wiki="Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall" />
+    <atkAttribute AltName="Attack Attribute" Wiki="Set the physical attributes to set for the bullet" Enum="ATKPARAM_ATKATTR_TYPE" />
+    <spAttribute AltName="Special Attribute" Wiki="Set special attributes to set for bullets" Enum="ATKPARAM_SPATTR_TYPE" />
+    <Material_AttackType AltName="Material Attack Type" Wiki="Specify what the attack attribute is" Enum="BEHAVIOR_ATK_TYPE" />
+    <Material_AttackMaterial AltName="Material Attack Material" Wiki="Used for SFX / SE during attack" Enum="WEP_MATERIAL_ATK" />
+    <isPenetrateChr AltName="Is Penetrate Character" Wiki="If it is ON, it will penetrate without landing when it hits the character." IsBool="" />
+    <isPenetrateObj AltName="Is Penetrate Object" Wiki="If it is ON, it will penetrate without landing when hitting a dynamic / partial destruction asset." IsBool="" />
+    <pad AltName=""/>
     <launchConditionType AltName="Hit Bullet Condition" Enum="BULLET_LAUNCH_CONDITION_TYPE" Wiki="Conditions required for HitBulletID to generate." />
-    <chrPenetrateType AltName="Penetration Type (characters)" Enum="BULLET_CHARA_PENETRATE_TYPE" Wiki="Which characters bullets will penetrate through. See NpcParam penetrateDefense." />
-    <emittePosType AltName="Emit Position" Enum="BULLET_EMITTE_POS_TYPE" Wiki="Where bullet appears when created." />
     <followType AltName="Follow Type" Enum="BULLET_FOLLOW_TYPE" Wiki="Affects bullet position and behavior." />
+    <emittePosType AltName="Emit Position" Enum="BULLET_EMITTE_POS_TYPE" Wiki="Where bullet appears when created." />
+    <isAttackSFX AltName="Is Persistent Attack SFX" Wiki="Set whether bullets such as arrows will remain stuck in the character" IsBool="" />
+    <isEndlessHit AltName="Is Continuous Hit" Wiki="Do you keep hitting?" IsBool="" />
+    <isPenetrateMap AltName="Is Penetrate Map" Wiki="If it is ON, it will penetrate without landing when hitting a hit / static asset." IsBool="" />
+    <isHitBothTeam AltName="Is Hit Both Teams" Wiki="Are you an enemy or an ally? (Not a wandering ghost)" IsBool="" />
+    <isUseSharedHitList AltName="Is Use Shared Hit List" Wiki="Specify whether to share the hit list" IsBool="" />
+    <isUseMultiDmyPolyIfPlace AltName="Use Multiple Dummy Polys for Placement" Wiki="Do you use the same Damipoly ID more than once when placing bullets?" IsBool="" />
+    <isHitOtherBulletForceEraseA AltName="Force Erase Bullet A if Hit by Other Bullet" Wiki="Does it hit other bullets forced erasure A?" IsBool="" />
+    <isHitOtherBulletForceEraseB AltName="Force Erase Bullet B if Hit by Other Bullet" Wiki="Does it hit the other bullet forced erasure B?" IsBool="" />
+    <isHitForceMagic AltName="Is Bullet deflected by Magic" Wiki="Do you hit the force magic?" IsBool="" />
+    <isIgnoreSfxIfHitWater AltName="Is SFX ignored on Water Hit" Wiki="Should I ignore the effect if it hits the surface of the water?" IsBool="" />
+    <isIgnoreMoveStateIfHitWater AltName="Is Move State Ignored on Water Hit" Wiki="Whether to ignore the state transition even if it hits water" IsBool="" />
+    <isHitDarkForceMagic AltName="Is Bullet deflected by Bullet Deflection" Wiki="Do you hit the dark force magic?" IsBool="" />
+    <dmgCalcSide AltName="Damage Calculation Side" Wiki="Damage calculation side. During multiplayer, the damage calculation is for switching between the giving side and the receiving side." Enum="DMG_CALC_SIDE_TYPE" />
+    <isEnableAutoHoming AltName="Is Auto Homing Enabled" Wiki="Whether to automatically follow when not locked on" IsBool="" />
+    <isSyncBulletCulcDumypolyPos AltName="Is Emitter Source Synced with Bullet" Wiki="In the case of a synchronously generated bullet, the emitter attitude at the time of synchronization is used without recalculating the attitude due to the Damipoli position when the bullet is generated." IsBool="" />
+    <isOwnerOverrideInitAngle AltName="Is Direction Inherited by Child Bullet" Wiki="Only valid for sub-bullets. If it is ON, the reference direction is the owner." IsBool="" />
+    <isInheritSfxToChild AltName="Is SFX Inherited by Child Bullet" Wiki="Take over the SFX of the parent bullet. Ignore the SFX ID set for the sub bullet" IsBool="" />
+    <darkDamageDamp AltName="Damage Falloff %: Holy" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
+    <bulletSfxDeleteType_byHit AltName="Bullet SFX Delete Type - By Hit" Wiki="Bullet SFX extinction type when landing or playing" Enum="BULLET_SFX_DELETE_TYPE" />
+    <bulletSfxDeleteType_byLifeDead AltName="Bullet SFX Delete Type - By Expiration" Wiki="Bullet SFX extinction type at the end of life" Enum="BULLET_SFX_DELETE_TYPE" />
+    <targetYOffsetRange AltName="Target Vertical Offset" Wiki="Vertical offset of landing position. Shift the target position up and down at the time of launch and during homing. (-N ~ n)" />
+    <shootAngleHorizontalMaxRandom AltName="Horizontal Launch Angle - Max Random" Wiki="Upper limit of random number of firing angle (0 to 360)" />
+    <shootAngleVerticalMaxRandom AltName="Vertical Launch Angle - Max Random" Wiki="Upper limit of firing elevation random number (0 to 360)" />
     <intervalCreateBulletId  AltName="Interval Create (Bullet ID)" Wiki="Bullet ID to generate for Interval Create Bullet." Refs="Bullet" />
     <intervalCreateShootMax  AltName="Interval Create (Bullet Shoot Max)" Wiki="Maximum number of times Interval Create Bullet can be generated." />
-    <spEffectId0 AltName="Target SpEffect ID [0]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
-    <spEffectId1 AltName="Target SpEffect ID [1]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
-    <spEffectId2 AltName="Target SpEffect ID [2]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
-    <spEffectId3 AltName="Target SpEffect ID [3]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
-    <spEffectId4 AltName="Target SpEffect ID [4]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
+    <intervalCreateTimeMin AltName="Bullet Emitter: Minimum Shoot Interval" Wiki="Minimum interval for making bullets at regular intervals (0 to n)" />
+    <intervalCreateTimeMax AltName="Bullet Emitter: Maximum Shoot Interval" Wiki="Maximum interval for making bullets at regular intervals (function is disabled if 0 to n 0)" />
+    <predictionShootObserveTime AltName="Prediction Shoot Observe Time" Wiki="Average speed observation time of predicted shooting function (function is invalid if 0 to 40)" />
+    <intervalCreateWaitTime AltName="Bullet Emitter: Initial Wait Time" Wiki="Waiting time to start making bullets at regular intervals" />
+    <sfxPostureType AltName="SFX Posture Type" Wiki="Set the initial attitude of an SFX or sub-bullet created from a bullet" Enum="BULLET_SFX_CREATE_POSTURE_TYPE" />
+    <chrPenetrateType AltName="Penetration Type (characters)" Enum="BULLET_CHARA_PENETRATE_TYPE" Wiki="Which characters bullets will penetrate through. See NpcParam penetrateDefense." />
     <lifeDist AltName="Expire Distance" Wiki="Distance travelled before bullet expires." />
     <hitChrProximityDistance AltName="Hit Character Proximity Distance" Wiki="Distance to an enemy for bullet to expire." />
     <assetCreationAssetId AltName="Asset Created (Asset ID)" Refs="AssetEnvironmentGeometryParam" Wiki="ID of asset to spawn." />
+    <lifeRandomRange AltName="Duration - Random Range" />
+    <randomMoveAngle_Horizontal AltName="Random Move Angle - Horizontal" />
+    <unkLoseHomingLineupTime AltName="Homing Lineup Time" />
+    <unkRandomMoveAngleCondition AltName="Random Move Angle Condition" />
+    <bulletShotgunParamId_1 AltName="Bullet Shotgun Param ID [1]" Refs="BulletShotgunParam_PC,BulletShotgunParam_NPC" />
+    <bulletShotgunParamId_2 AltName="Bullet Shotgun Param ID [2]" Refs="BulletShotgunParam_PC,BulletShotgunParam_NPC" />
+    <randomMoveAngle_Vertical AltName="Random Move Angle - Vertical" />
     <UnkFlag0x48_0 IsBool="" />
     <UnkFlag0x48_1 IsBool="" />
     <enableCreateAsset IsBool="" />
@@ -78,8 +270,16 @@
     <homingType AltName="Homing Type" Enum="BULLET_HOMING_TYPE" />
     <recoilShootAngleHorizontalStart AltName="Horizontal Shoot Angle: 0% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
     <recoilShootAngleHorizontalEnd AltName="Horizontal Shoot Angle: 100% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
-    <recoilShootAngleVerticallStart AltName="Vertical Shoot Angle: 0% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
+    <recoilShootAngleVerticalStart AltName="Vertical Shoot Angle: 0% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
     <recoilShootAngleVerticalEnd AltName="Vertical Shoot Angle: 100% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
+    <bulletAttachEffectType AltName="Bullet Attach Effect Type" Enum="BULLET_ATTACH_EFFECT_TYPE" />
+    <sfxPostureType AltName="SFX Creation Position Type" Enum="BULLET_SFX_CREATE_POSTURE_TYPE" />
+    <bulletShapeType AltName="Bullet Shape Type" Enum="BULLET_SHAPE_TYPE" />
+    <weaponIdealRange AltName="Weapon Ideal Range" />
+    <weaponEffectiveRange AltName="Weapon Effective Range" />
+    <homingOffsetRate AltName="Homing Offset Rate" />
+    <cartridgeBehaviorParamId AltName="Cartridge Behavior Param ID" Refs="CartridgeBehaviorParam" />
+    <padRumbleParamId AltName="Pad Rumble ID" Refs="PadRumble" />
   </Field>
   <Self />
 </PARAMMETA>

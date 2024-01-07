@@ -9,6 +9,16 @@
     </Enum>
   </Enums>
   <Field>
+    <menuModelId AltName="Menu Model ID" />
+    <weight AltName="Weight" />
+    <energyCapacity AltName="Energy Capacity" />
+    <energyOutput AltName="Energy Output" />
+    <enLoad AltName="Energy Load" />
+    <enRecharge AltName="Energy Load Recharge" />
+    <supplyRecovery AltName="Energy Supply Recovery" />
+    <postRecoveryEnSupply AltName="Post Recovery Energy Supply" />
+    <energyFirearmSpec AltName="Energy Firearm Specialization" />
+    <corporationTextureId AltName="Corporation Texture ID" />
     <colorSfxType AltName="Color SFX Type" Enum="GeneratorColorSfxTypeEnum" Wiki="Determines SFX used by boosters. Coral also affects core expansion SFX."/> 
   </Field>
   <Self />

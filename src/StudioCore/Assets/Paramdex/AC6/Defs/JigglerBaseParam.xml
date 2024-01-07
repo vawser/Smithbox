@@ -42,8 +42,8 @@
     <Field Def="s8 UnkSbyte0x2D"></Field>
     <Field Def="s8 UnkSbyte0x2E"></Field>
     <Field Def="s8 UnkSbyte0x2F"></Field>
-    <Field Def="s32 UnkInt0x30"></Field>
-    <Field Def="s32 UnkInt0x34"></Field>
+    <Field Def="s32 jigglerBehaviorParamId_1"></Field>
+    <Field Def="s32 jigglerBehaviorParamId_2"></Field>
     <Field Def="f32 UnkFloat0x38"></Field>
     <Field Def="f32 UnkFloat0x3C"></Field>
     <Field Def="f32 UnkFloat0x40"></Field>

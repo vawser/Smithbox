@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <fmgId AltName="FMG ID" Wiki="Base FMG ID in NPC名 for the range of 10 strings determining character name and AC name." />
+    <menuDecalId AltName="Menu Decal ID" Wiki="ID of the MENU_Decal texture in 00_Solo to use for the character's emblem." />
+    
+  </Field>
   <Self />
 </PARAMMETA>

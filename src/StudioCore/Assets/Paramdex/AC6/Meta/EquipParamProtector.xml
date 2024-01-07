@@ -12,38 +12,215 @@
     </Enum>
   </Enums>
   <Field>
-    <knockbackParamId AltName="knockbackParamId" Refs="KnockbackParam" />
-    <legsType AltName="Legs Type" Enum="LegTypeEnum" Wiki="Determines basic leg behavior. Value references are unknown." />
-    <thrusterParamId AltName="thrusterParamId" Refs="ThrustersParam_PC" />
+    <sortId AltName="Sort ID" Wiki="Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)" />
+    <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
+    <resistSleep AltName="Resist - Sleep" Wiki="Difficulty in getting sleep abnormalities" />
+    <resistMadness AltName="Resist - Madness" Wiki="Difficulty in getting mad" />
+    <saDurability AltName="Poise Durability" Wiki="Super armor endurance" />
+    <toughnessCorrectRate AltName="Toughness Correction" Wiki="It is a magnification that corrects the basic value of toughness." />
+    <fixPrice AltName="Repair Price" Wiki="Basic repair price" />
+    <basicPrice AltName="Basic Price" Wiki="Basic price" />
+    <sellValue AltName="Sell Value" Wiki="Selling price" />
+    <weight AltName="Weight" Wiki="Weight [kg]." />
+    <residentSpEffectId AltName="Resident SpEffect ID [1]" Wiki="Resident special effect ID1" Refs="SpEffectParam" />
+    <residentSpEffectId2 AltName="Resident SpEffect ID [2]" Wiki="Resident special effect ID2" Refs="SpEffectParam" />
+    <residentSpEffectId3 AltName="Resident SpEffect ID [3]" Wiki="Resident special effect ID3" Refs="SpEffectParam" />
+    <materialSetId AltName="Upgrade Material ID" Wiki="Material parameter ID required for weapon enhancement" Refs="EquipMtrlSetParam" />
+    <partsDamageRate AltName="Weak Parts Damage %" Wiki="Part damage rate" />
+    <corectSARecover AltName="Poise Recovery Correction" Wiki="Super Armor Recovery Time Correction Value" />
+    <originEquipPro AltName="Origin Armor +0" Wiki="Strengthening of this armor Original armor ID" Refs="EquipParamProtector" />
+    <originEquipPro1 AltName="Origin Armor +1" Wiki="Strengthening this armor Original armor ID1" Refs="EquipParamProtector" />
+    <originEquipPro2 AltName="Origin Armor +2" Wiki="Strengthening this armor Original armor ID2" Refs="EquipParamProtector"/>
+    <originEquipPro3 AltName="Origin Armor +3" Wiki="Strengthening this armor Original armor ID3" Refs="EquipParamProtector"/>
+    <originEquipPro4 AltName="Origin Armor +4" Wiki="Strengthening this armor Original armor ID4" Refs="EquipParamProtector"/>
+    <originEquipPro5 AltName="Origin Armor +5" Wiki="Strengthening this armor Original armor ID5" Refs="EquipParamProtector"/>
+    <originEquipPro6 AltName="Origin Armor +6" Wiki="Strengthening this armor Original armor ID6" Refs="EquipParamProtector"/>
+    <originEquipPro7 AltName="Origin Armor +7" Wiki="Strengthening this armor Original armor ID7" Refs="EquipParamProtector"/>
+    <originEquipPro8 AltName="Origin Armor +8" Wiki="Strengthening this armor Original armor ID8" Refs="EquipParamProtector"/>
+    <originEquipPro9 AltName="Origin Armor +9" Wiki="Strengthening this armor Original armor ID9" Refs="EquipParamProtector"/>
+    <originEquipPro10 AltName="Origin Armor +10" Wiki="Strengthening this armor Original armor ID10" Refs="EquipParamProtector"/>
+    <originEquipPro11 AltName="Origin Armor +11" Wiki="Strengthening this armor Original armor ID11" Refs="EquipParamProtector"/>
+    <originEquipPro12 AltName="Origin Armor +12" Wiki="Strengthening this armor Original armor ID12" Refs="EquipParamProtector"/>
+    <originEquipPro13 AltName="Origin Armor +13" Wiki="Strengthening this armor Original armor ID13" Refs="EquipParamProtector"/>
+    <originEquipPro14 AltName="Origin Armor +14" Wiki="Strengthening this armor Original armor ID14" Refs="EquipParamProtector"/>
+    <originEquipPro15 AltName="Origin Armor +15" Wiki="Strengthening this armor Original armor ID15" Refs="EquipParamProtector"/>
+    <faceScaleM_ScaleX AltName="Facescale - Male - Scale X" Wiki="" />
+    <faceScaleM_ScaleZ AltName="Facescale - Male - Scale Z" Wiki="" />
+    <faceScaleM_MaxX AltName="Facescale - Male - Max X" Wiki="" />
+    <faceScaleM_MaxZ AltName="Facescale - Male - Max Z" Wiki="" />
+    <faceScaleF_ScaleX AltName="Facescale - Female - Scale X" Wiki="" />
+    <faceScaleF_ScaleZ AltName="Facescale - Female - Scale Z" Wiki="" />
+    <faceScaleF_MaxX AltName="Facescale - Female - Max X" Wiki="" />
+    <faceScaleF_MaxZ AltName="Facescale - Female - Max Z" Wiki="" />
+    <qwcId AltName="QWC ID" Wiki="QWC parameter ID" />
+    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." />
+    <iconIdM AltName="Icon ID - Male" Wiki="Men's menu icon ID." ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
+    <iconIdF AltName="Icon ID - Female" Wiki="Women's menu icon ID." ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
+    <knockBack AltName="Knockback" Wiki="Knockback reduction value." />
+    <knockbackBounceRate AltName="Knockback Bounce Rate" Wiki="Knockback repulsion rate." />
+    <durability AltName="Durability" Wiki="Initial durability." />
+    <durabilityMax AltName="Max Durability" Wiki="New durability." />
+    <pad03 AltName=""/>
+    <defFlickPower AltName="Weapon Repel Power" Wiki="Used to determine the repulsion of enemy attacks." />
+    <defensePhysics AltName="Defence - Physical" Wiki="Physical attack damage protection." />
+    <defenseMagic AltName="Defence - Magic" Wiki="Magic attack damage protection." />
+    <defenseFire AltName="Defence - Fire" Wiki="Fire attack damage protection." />
+    <defenseThunder AltName="Defence - Lightning" Wiki="Damage protection for electric shock attacks." />
+    <defenseSlash AltName="Defence - Slash" Wiki="Look at the attack type, and if it is a slashing attribute, reduce the defense power" />
+    <defenseBlow AltName="Defence - Strike" Wiki="Look at the attack attribute, and if it is a hit attribute, reduce the defense power." />
+    <defenseThrust AltName="Defence - Thrust" Wiki="Look at the attack attribute, and if it is a hit attribute, reduce the defense power." />
+    <resistPoison AltName="Resist - Poison" Wiki="Difficulty in getting poisonous" />
+    <resistDisease AltName="Resist - Scarlet Rot" Wiki="Difficulty in getting sick" />
+    <resistBlood AltName="Resist - Hemorrhage" Wiki="Difficulty in getting bleeding abnormalities" />
+    <resistCurse AltName="Resist - Blight" Wiki="Difficulty in getting a curse condition" />
+    <reinforceTypeId AltName="Reinforce Type ID" Wiki="Enhanced type ID" Refs="ReinforceParamProtector"/>
+    <trophySGradeId AltName="Achievement ID" Wiki="Is it related to the trophy system?" />
+    <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
+    <knockbackParamId AltName="Knockback Param ID" Wiki="ID of the parameter used for knockback" />
+    <flickDamageCutRate AltName="Weapon Repel Damage %" Wiki="Used for damage attenuation rate when repelling" />
+    <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type." Enum="EQUIP_MODEL_CATEGORY" />
+    <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model." Enum="EQUIP_MODEL_GENDER" />
+    <protectorCategory AltName="Armor Category" Wiki="Armor category." Enum="PROTECTOR_CATEGORY" />
+    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
+    <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
+    <partsDmgType AltName="Parts Damage Type" Wiki="Set the attack type to judge the part damage" Enum="ATK_PARAM_PARTSDMGTYPE" />
+    <legsType AltName="Legs Type" Enum="LegTypeEnum" Wiki="Determines leg type and behavior, such as reverse joints, tetrapod, and tank legs." />
+    <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
+    <headEquip AltName="Is Head Equipment" Wiki="Is it head equipment?" IsBool="" />
+    <bodyEquip AltName="Is Body Equipment" Wiki="Is it torso equipment?" IsBool="" />
+    <armEquip AltName="Is Arm Equipment" Wiki="Is it arm equipment?" IsBool="" />
+    <legEquip AltName="Is Leg Equipment" Wiki="Is it leg equipment?" IsBool="" />
+    <useFaceScale AltName="Use Facescale" Wiki="Whether to use a face scale" IsBool="" />
+    <isSkipWeakDamageAnim AltName="Skip Weak Damage Anim" Wiki="Weakness damage Whether to skip animation playback. Part damage rate and defense material are treated as weak points just by not playing the animation." IsBool="" />
+    <pad06 AltName=""/>
+    <defenseMaterialVariationValue_Weak AltName="Defence Material - Variation Value - Weak" Wiki="It is a value used for variation of abnormal condition, damage SFX, SE in combination with weak point defense material. SEQ16473" />
+    <autoFootEffectDecalBaseId2 AltName="Auto Foot Effect Decal Base ID [2]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
+    <autoFootEffectDecalBaseId3 AltName="Auto Foot Effect Decal Base ID [3]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
+    <defenseMaterialVariationValue AltName="Defence Material - Variation Value" Wiki="It is a value used in combination with the defense material to classify abnormal conditions, damage SFX, and SE. SEQ16473" />
+    <isDiscard AltName="Can Discard" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
+    <isDrop AltName="Can Drop" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <disableMultiDropShare AltName="Cannot Drop in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
+    <simpleModelForDlc AltName="Simple Model for DLC1" Wiki="Is there a simple model for DLC?" IsBool="" />
+    <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
+    <showDialogCondType AltName="Item Acquisition Dialog Condition Type " Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
+    <pad AltName=""/>
+    <neutralDamageCutRate AltName="Absorption - Physical" Wiki="Non-attribute damage multiplier" />
+    <slashDamageCutRate AltName="Absorption - Slash" Wiki="Slash damage multiplier" />
+    <blowDamageCutRate AltName="Absorption - Strike" Wiki="Batter damage multiplier" />
+    <thrustDamageCutRate AltName="Absorption - Thrust" Wiki="Puncture damage ratio" />
+    <magicDamageCutRate AltName="Absorption - Magic" Wiki="Magic damage multiplier" />
+    <fireDamageCutRate AltName="Absorption - Fire" Wiki="Flame damage multiplier" />
+    <thunderDamageCutRate AltName="Absorption - Lightning" Wiki="Electric shock damage ratio" />
+    <defenseMaterialSfx1 AltName="Defence Material SFX [1]" Wiki="For SFX when moving / defending. 1" Enum="WEP_MATERIAL_DEF_SFX" />
+    <defenseMaterialSfx_Weak1 AltName="Defence Material SFX - Weakness [1]" Wiki="For SFX when weak points are damaged 1" Enum="WEP_MATERIAL_DEF_SFX" />
+    <defenseMaterial1 AltName="Defence Material - SE [1]" Wiki="For SE when moving / defending. 1" Enum="WEP_MATERIAL_DEF" />
+    <defenseMaterial_Weak1 AltName="Defence Material SE - Weakness [1]" Wiki="For SE when weak points are damaged 1" Enum="WEP_MATERIAL_DEF" />
+    <defenseMaterialSfx2 AltName="Defence Material SFX [2]" Wiki="For SFX when moving / defending. 2" Enum="WEP_MATERIAL_DEF_SFX" />
+    <defenseMaterialSfx_Weak2 AltName="Defence Material SFX - Weakness [2]" Wiki="2 for SFX when weak points are damaged" Enum="WEP_MATERIAL_DEF_SFX" />
+    <footMaterialSe AltName="Foot Material SE" Wiki="Material for foot equipment SE. Only foot equipment is referenced. ([GR] SEQ10061) In the case of 139: None, the defense material 1 [SE] is referred to." Enum="WEP_MATERIAL_DEF" />
+    <defenseMaterial_Weak2 AltName="Defence Material SE - Weakness [2]" Wiki="2 for SE when weak points are damaged" Enum="WEP_MATERIAL_DEF" />
+    <autoFootEffectDecalBaseId1 AltName="Auto Foot Effect Decal Base ID [1]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
+    <toughnessDamageCutRate AltName="Toughness Absorption" Wiki="Toughness version cut rate" />
+    <toughnessRecoverCorrection AltName="Toughness Recovery Correction" Wiki="Correction value for toughness recovery time" />
+    <darkDamageCutRate AltName="Absorption - Holy" Wiki="Dark damage multiplier" />
+    <defenseDark AltName="Defence - Holy" Wiki="Dark attack damage protection." />
+    <invisibleFlag48 IsBool="" AltName=""/>
+    <invisibleFlag49 IsBool="" AltName=""/>
+    <invisibleFlag50 IsBool="" AltName=""/>
+    <invisibleFlag51 IsBool="" AltName=""/>
+    <invisibleFlag52 IsBool="" AltName=""/>
+    <invisibleFlag53 IsBool="" AltName=""/>
+    <invisibleFlag54 IsBool="" AltName=""/>
+    <invisibleFlag55 IsBool="" AltName=""/>
+    <invisibleFlag56 IsBool="" AltName=""/>
+    <invisibleFlag57 IsBool="" AltName=""/>
+    <invisibleFlag58 IsBool="" AltName=""/>
+    <invisibleFlag59 IsBool="" AltName=""/>
+    <invisibleFlag60 IsBool="" AltName=""/>
+    <invisibleFlag61 IsBool="" AltName=""/>
+    <invisibleFlag62 IsBool="" AltName=""/>
+    <invisibleFlag63 IsBool="" AltName=""/>
+    <invisibleFlag64 IsBool="" AltName=""/>
+    <invisibleFlag65 IsBool="" AltName=""/>
+    <invisibleFlag66 IsBool="" AltName=""/>
+    <invisibleFlag67 IsBool="" AltName=""/>
+    <invisibleFlag68 IsBool="" AltName=""/>
+    <invisibleFlag69 IsBool="" AltName=""/>
+    <invisibleFlag70 IsBool="" AltName=""/>
+    <invisibleFlag71 IsBool="" AltName=""/>
+    <invisibleFlag72 IsBool="" AltName=""/>
+    <invisibleFlag73 IsBool="" AltName=""/>
+    <invisibleFlag74 IsBool="" AltName=""/>
+    <invisibleFlag75 IsBool="" AltName=""/>
+    <invisibleFlag76 IsBool="" AltName=""/>
+    <invisibleFlag77 IsBool="" AltName=""/>
+    <invisibleFlag78 IsBool="" AltName=""/>
+    <invisibleFlag79 IsBool="" AltName=""/>
+    <invisibleFlag80 IsBool="" AltName=""/>
+    <padbit AltName=""/>
+    <postureControlId AltName="Posture Control ID" Wiki="Attitude control ID (torso)" />
+    <pad2 AltName=""/>
+    <saleValue AltName="Shop Price" Wiki="Selling price" />
+    <resistFreeze AltName="Resist - Frost" Wiki="Difficulty in getting cold air condition abnormal" />
+    <lockCamParamId AltName="Lock Camera Param ID" />
+    <energyLoad AltName="Energy Load" />
+    <armorPoints AltName="Armor Points" />
+    <menuTextId AltName="Menu Text ID" FmgRef="Modern_MenuText" />
+    <legsAnimOffset AltName="Legs Animation Offset" Wiki="TAE ID used for overriding animations.\nValue of 1 utilizes TAE a010, 3 uses a030, etc.\nUsed with Lammergeier for hovering and assault boost animations." />
+    <energyCapacity AltName="Energy Capacity" />
+    <energyOutput AltName="Energy Output" />
+    <energyRechargeDelay AltName="Energy Recharge Delay" />
+    <thrusterParamId AltName="Thruster Param ID" Refs="ThrustersParam_PC" />
     <weaponParamId AltName="Weapon Param ID" Refs="EquipParamWeapon" Wiki="Refers to EquipParamWeapon. Used to define scanner for with head parts, unknown usage with core parts."/>
-    <quickBoostVelocity AltName="Quick boost velocity (&quot;Jump Distance&quot;)" Wiki="Referred to in-game as &quot;Jump Distance&quot;. Does not affect jump distance."/>
-    <movementAcTypeParamId AltName="movementAcTypeParamId" Refs="MovementAcTypeParam" />
-    <chrActTurnParamId AltName="chrActTurnParamId" Refs="ChrActTurnParam" />
+    <legsBrakingCorrection AltName="Grounded Deceleration Multiplier" Wiki="Affects velocity lost during grounded deceleration." />
+    <quickBoostVelocity AltName="Quick Boost Velocity" Wiki="Referred to in-game as Jump Distance. Does not affect jump distance."/>
+    <firearmSpecialization AltName="Firearm Specialization" />
+    <attitudeStability AltName="Attitude Stability" />
+    <recoilControl AltName="Arms: Recoil Control" Wiki="Affects how quickly weapon spread grows and shrinks while firing." />
+    <tetrapodHoverDrainRate AltName="Tetrapod: Hover Drain Rate" />
+    <tetrapodHoverQuickBoostVelocity AltName="Tetrapod: Hover Quick Boost Velocity" />
+    <corporationTextureId AltName="Corporation Texture ID" />
+    <equipmentMenuManageCategoryParamId AltName="Equipment Menu Management Category" Refs="EquipmentMenuManageCategoryParam" />
+    <demonstrationVideoBinkId AltName="Demonstration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" />
+    <recoilKnockbackVelocityCorrection_Grounded AltName="Recoil Knockback % (Grounded)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon on the ground.\nApplies conditionally, such as not applying when AC has tank legs."/>
+    <recoilKnockbackVelocityCorrection_Airborne AltName="Recoil Knockback % (Airborne)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon in the air."/>
+    <armsLoadLimit AltName="Arms Load Limit" Wiki="Maximum weapon weight arms can handle before being overloaded." />
+    <meleeSpecialization AltName="Arms: Melee Specialization" Wiki="Increases melee weapon damage. Minimum of 0 (+0% damage), maximum of 200 (+200% damage)." />
+    <loadLimit AltName="Load Limit" />
+    <legsPartBoosterParamId AltName="Leg Part Booster Param ID" Refs="EquipParamBooster" />
+    <movementAcTypeParamId AltName="Movement Type Param ID" Refs="MovementAcTypeParam" />
+    <chrActTurnParamId AltName="Character Act Turn Param ID" Refs="ChrActTurnParam" />
+    <antiKineticDefense AltName="Defense: Anti-Kinetic" />
+    <antiEnergyDefense AltName="Defense: Anti-Energy" />
+    <antiExplosiveDefense AltName="Defense: Anti-Explosive" />
+    <antiCoralDefense AltName="Defense: Anti-Coral" />
+    <antiDarkDefense AltName="Defense: Anti-Dark" />
+    <systemRecovery AltName="System Recovery" Wiki="Actual effects of System Recovery stat, which increases resistance to status effects." />
+    <systemRecovery_Display AltName="System Recovery (Displayed)" Wiki="UI value of System Recovery stat. See systemRecovery for actual effects." />
     <quickBoostVerticalVelocity_Grounded AltName="Quick Boost: Vertical Velocity (Grounded)" Wiki="Vertical velocity gained from quick boosting while on the ground." />
     <boostModeJumpHorizontalSpeedBonus AltName="Boost Mode Jump: Horizontal Speed Bonus" Wiki="When boosting then jumping, takes current speed and multiplies it by this value then adds it to current speed." />
     <jumpVelocityVertical AltName="Jump Velocity: Vertical" Wiki="Amount of vertical velocity when jumping." />
     <jumpVelocityAcceleration AltName="Jump Velocity: Acceleration" Wiki="How quickly jump reaches max velocity and velocity ends. Interrupted by boosting." />
     <jumpVelocityHorizontal AltName="Jump Velocity: Horizontal" Wiki="Amount of horizontal velocity when jumping and before aerial boosting.\nDoes not affect baby boost." />
     <jumpVelocityHorizontalTransferred AltName="Jump Velocity: Horizontal Transfer Rate" Wiki="Amount of vertical jump velocity to transfer into horizontal velocity." />
-    <unkDisplayLegsJumpDistance AltName="" Wiki="Seemingly does nothing. UI element for &quot;Jump Distance&quot; is governed by quickBoostVelocity." />
-    <displayLegsJumpHeight AltName="Displayed Jump Height" Wiki=">Only affects value displayed in UI. Use jumpVelocityAcceleration for actual effects." />
+    <unkAttitudeStability AltName="Unknown Attitude Stability" />
+    <cameraDisruptionResistance AltName="Camera Disruption Resistance" />
+    <unkLoadLimit AltName="Unknown Load Limit" />
+    <unkDisplayJumpDistance AltName="Unknown Displayed Jump Distance" Wiki="Seemingly does nothing. UI element for Jump Distance; is governed by quickBoostVelocity." />
+    <displayJumpHeight AltName="Displayed Jump Height" Wiki="Only affects value displayed in UI. Use jumpVelocityAcceleration for actual effects." />
+    <scanAngle AltName="Scan Angle" />
+    <scanDistance AltName="Scan Distance" />
+    <scanEffectDuration AltName="Scan Effect Duration" />
+    <altCalcCorrectType AltName="Conditional Calc Correction Type" Wiki="Affects which CalcCorrects are used for various actions.\nExample: value of 2 on tank legs utilizes 22X calcCorrects instead of 27X for movement." />
+    <walkOverburdenedAnimationSpeedMultiplier AltName="Animation Multiplier: Overburdened Walk" />
+    <walkAnimationSpeedMultiplier AltName="Animation Multiplier: Walk" />
+    <babyBoostSlowWalkVelocity_Grounded AltName="Baby Boost Slow Walk Velocity (Grounded)" Wiki="Velocity when baby boost state is active, which replaces walk animations (requires SpEffect 9080)." />
+    <babyBoostWalkVelocity_Grounded AltName="Baby Boost Walk Velocity (Grounded)" Wiki="Velocity when baby boost state is active, which replaces walk animations (requires SpEffect 9080)." />
+     <backWeaponHeightAdjustment AltName="Back Weapon Height Adjustment" Wiki="Affects how high back weapons are placed, larger values are higher. Values range from 0 to 2." />
     <protectorParamId AltName="protectorParamId" Refs="EquipParamProtector" />
-    <legsPartBoosterParamId AltName="legPartBoosterParamId" Refs="EquipParamBooster" />
-    <menuTextId AltName="MenuText ID" FmgRef="Modern_MenuText" />
-    <equipmentMenuManageCategoryParamId AltName="" Refs="EquipmentMenuManageCategoryParam" />
-    <armsLoadLimit AltName="Arms Load Limit" Wiki="Maximum weapon weight arms can handle before being overloaded." />
-    <armRecoilControl AltName="Recoil Control" Wiki="Affects how quickly weapon spread grows and shrinks while firing." />
-    <armsMeleeSpecialization AltName="Melee Specialization" Wiki="Increases melee weapon damage. Minimum of 0 (+0% damage), maximum of 200 (+200% damage)." />
-    <systemRecovery AltName="System Recovery" Wiki="Actual effects of System Recovery stat, which increases resistance to status effects." />
-    <systemRecovery_Display AltName="System Recovery (Displayed)" Wiki="UI value of System Recovery stat. See systemRecovery for actual effects." />
-    <babyBoostSlowWalkVelocity_Grounded Name="Baby Boost Slow Walk Velocity (Grounded)" Wiki="Velocity when baby boost state is active, which replaces walk animations (requires SpEffect 9080)." />
-    <babyBoostWalkVelocity_Grounded Name="Baby Boost Walk Velocity (Grounded)" Wiki="Velocity when baby boost state is active, which replaces walk animations (requires SpEffect 9080)." />
-    <legsBrakingCorrection AltName="Grounded Deceleration Multiplier" Wiki="Affects velocity lost during grounded deceleration." />
-    <recoilKnockbackVelocityCorrection_Grounded AltName="Recoil Knockback % (Grounded)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon on the ground.\nApplies conditionally, such as not applying when AC has tank legs."/>
-    <recoilKnockbackVelocityCorrection_Airborne AltName="Recoil Knockback % (Airborne)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon in the air."/>
-    <backWeaponHeightAdjustment AltName="Back Weapon Height Adjustment" Wiki="Affects how high back weapons are placed, larger values are higher. Values range from 0 to 2." />
-    <legsAnimOffset AltName="Legs Animation Offset" Wiki="TAE ID used for overriding animations.\nValue of 1 utilizes TAE a010, 3 uses a030, etc.\nUsed with Lammergeier for hovering and assault boost animations." />
-    <altCalcCorrectType Wiki="Affects which CalcCorrects are used for various actions.\nExample: value of 2 on tank legs utilizes 22X calcCorrects instead of 27X for movement." />
+    <boostEfficiencyAdj AltName="Boost Efficiency Adjustment" Wiki="Affects energy consumption of quick boost." />
+    <generatorOutputAdj AltName="Generator Output Adjustment" Wiki="Affects generator energy output." />
+    <generatorSupplyAdj AltName="Generator Supply Adjustment" Wiki="Affects the delay before energy supply resumes after energy consuming actions." />
   </Field>
   <Self />
 </PARAMMETA>

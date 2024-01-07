@@ -90,11 +90,11 @@
     <Field Def="u8 weaponCategory"></Field>
     <Field Def="u8 wepmotionCategory"></Field>
     <Field Def="u8 guardmotionCategory"></Field>
-    <Field Def="u8 atkMaterial0xEA"></Field>
+    <Field Def="u8 atkMaterial"></Field>
     <Field Def="u16 defMaterial"></Field>
-    <Field Def="u8 correctType"></Field>
+    <Field Def="u8 correctType_Kinetic"></Field>
     <Field Def="u8 spAttribute"></Field>
-    <Field Def="u16 UnkUshort0xEE"></Field>
+    <Field Def="u16 spAtkcategory"></Field>
     <Field Def="u8 wepmotionOneHandId"></Field>
     <Field Def="u8 wepmotionBothHandId"></Field>
     <Field Def="u8 properStrength"></Field>
@@ -198,7 +198,7 @@
     <Field Def="u16 attackBaseDark"></Field>
     <Field Def="u8 correctType_Dark"></Field>
     <Field Def="u8 correctType_Poison"></Field>
-    <Field Def="u8 sortGroupId"></Field>
+    <Field Def="u8 sortGroupIdOld"></Field>
     <Field Def="u8 atkAttribute2"></Field>
     <Field Def="s16 Unk0x192"></Field>
     <Field Def="u8 Unk0x194"></Field>
@@ -235,14 +235,14 @@
     <Field Def="s32 Unk0x1C8"></Field>
     <Field Def="s32 thrustersParamId"></Field>
     <Field Def="s32 Unk0x1D0"></Field>
-    <Field Def="s32 Unk0x1D4"></Field>
-    <Field Def="s32 Unk0x1D8"></Field>
-    <Field Def="s32 Unk0x1DC"></Field>
-    <Field Def="s32 Unk0x1E0"></Field>
-    <Field Def="s32 Unk0x1E4"></Field>
-    <Field Def="s32 Unk0x1E8"></Field>
-    <Field Def="s32 Unk0x1EC"></Field>
-    <Field Def="s32 Unk0x1F0"></Field>
+    <Field Def="s32 residentSfxId_1"></Field>
+    <Field Def="s32 residentSfxId_2"></Field>
+    <Field Def="s32 residentSfxId_3"></Field>
+    <Field Def="s32 residentSfxId_4"></Field>
+    <Field Def="s32 residentSfx_DmyId_1"></Field>
+    <Field Def="s32 residentSfx_DmyId_2"></Field>
+    <Field Def="s32 residentSfx_DmyId_3"></Field>
+    <Field Def="s32 residentSfx_DmyId_4"></Field>
     <Field Def="f32 staminaConsumptionRate"></Field>
     <Field Def="f32 vsPlayerDmgCorrectRate_Physics"></Field>
     <Field Def="f32 vsPlayerDmgCorrectRate_Magic"></Field>
@@ -313,7 +313,7 @@
     <Field Def="u8 unkSameAsProtectorParam0xD8_Byte0x2C8"></Field>
     <Field Def="u8 Unk0x2C9"></Field>
     <Field Def="u8 Unk0x2CA"></Field>
-    <Field Def="u8 unkSortGroupI_SameAsGoodsParam0x73_Byte0x2CB"></Field>
+    <Field Def="u8 sortGroupId"></Field>
     <Field Def="s32 energyLoad">
       <Description>EN Load of the part.</Description>
     </Field>

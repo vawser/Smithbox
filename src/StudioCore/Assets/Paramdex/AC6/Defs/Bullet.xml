@@ -112,7 +112,7 @@
     <Field Def="f32 intervalCreateWaitTime"></Field>
     <Field Def="s8 sfxPostureType"></Field>
     <Field Def="u8 UnkByte0xD1"></Field>
-    <Field Def="u8 unkBulletFollowType0xD2"></Field>
+    <Field Def="u8 bulletAttachEffectType"></Field>
     <Field Def="u8 UnkByte0xD3"></Field>
     <Field Def="s32 Unk0xD4"></Field>
     <Field Def="s32 assetCreationAssetId"></Field>
@@ -125,7 +125,7 @@
     <Field Def="f32 unkRandomMoveAngleCondition"></Field>
     <Field Def="f32 UnkFloat0xF4"></Field>
     <Field Def="u8 UnkByte0xF8"></Field>
-    <Field Def="u8 UnkByte0xF9"></Field>
+    <Field Def="u8 bulletShapeType"></Field>
     <Field Def="u8 UnkByte0xFA"></Field>
     <Field Def="u8 UnkByte0xFB"></Field>
     <Field Def="s32 Unk0xFC"></Field>
@@ -248,7 +248,7 @@
     <Field Def="s16 UnkShort0x294"></Field>
     <Field Def="s16 UnkShort0x296"></Field>
     <Field Def="f32 UnkFloat0x298"></Field>
-    <Field Def="s32 UnkInt0x29C"></Field>
+    <Field Def="s32 padRumbleParamId"></Field>
     <Field Def="s32 UnkInt0x2A0"></Field>
     <Field Def="s32 Unk0x2A4"></Field>
     <Field Def="f32 weaponIdealRange">
@@ -257,7 +257,7 @@
     <Field Def="f32 weaponEffectiveRange">
       <Description>Range at which attacks are effective. This is based on the armor of standard ACs and can vary depending on the defenses of the target.</Description>
     </Field>
-    <Field Def="s32 UnkInt0x2B0"></Field>
+    <Field Def="s32 UnkInt0x2B0"></Field> <!-- SFX related? -->
     <Field Def="s16 UnkShort0x2B4"></Field>
     <Field Def="s8 UnkSbyte0x2B6"></Field>
     <Field Def="u8 UnkByte0x2B7"></Field>
@@ -293,20 +293,20 @@
     <Field Def="f32 UnkFloat0x30C"></Field>
     <Field Def="f32 UnkFloat0x310"></Field>
     <Field Def="f32 UnkFloat0x314"></Field>
-    <Field Def="s32 UnkInt0x318"></Field>
+    <Field Def="s32 cartridgeBehaviorParamId"></Field>
     <Field Def="f32 UnkFloat0x31C"></Field>
     <Field Def="u8 UnkByte0x320"></Field>
     <Field Def="s8 UnkSbyte0x321"></Field>
     <Field Def="u8 UnkByte0x322"></Field>
     <Field Def="u8 UnkByte0x323"></Field>
     <Field Def="f32 UnkFloat0x324"></Field>
-    <Field Def="s32 UnkInt0x328"></Field>
+    <Field Def="s32 UnkInt0x328"></Field> <!-- SFX related? -->
     <Field Def="s32 UnkInt0x32C"></Field>
     <Field Def="f32 UnkFloat0x330"></Field>
     <Field Def="f32 UnkFloat0x334"></Field>
     <Field Def="f32 UnkFloat0x338"></Field>
     <Field Def="s32 UnkInt0x33C"></Field>
-    <Field Def="s32 UnkInt0x340"></Field>
+    <Field Def="s32 UnkInt0x340"></Field> <!-- SFX related? -->
     <Field Def="s32 UnkInt0x344"></Field>
     <Field Def="f32 UnkFloat0x348"></Field>
     <Field Def="u8 homingType"></Field>

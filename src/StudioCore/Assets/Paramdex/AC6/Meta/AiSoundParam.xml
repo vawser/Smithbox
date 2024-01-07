@@ -1,5 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Enums>
+    <Enum Name="AI_SOUND_RANK" type="u8">
+      <Option Value="0" Name="Normal Sound" />
+      <Option Value="1" Name="Important Sound" />
+      <Option Value="2" Name="Threat Sound" />
+      <Option Value="3" Name="Auditory Hallucination" />
+      <Option Value="4" Name="Soul Coin" />
+      <Option Value="5" Name="Soul Coin (Immortality)" />
+      <Option Value="6" Name="Soul Coin (Beast Type)" />
+      <Option Value="7" Name="Weak Soul Coin" />
+      <Option Value="8" Name="Behavior ID Reference" />
+    </Enum>
+    
+    <Enum Name="AI_SOUND_RATE_TYPE" type="u8">
+      <Option Value="0" Name="Direct Sound" />
+      <Option Value="1" Name="Moving Sound" />
+      <Option Value="2" Name="Attack Sound" />
+    </Enum>
+    
+    <Enum Name="AI_SOUND_REPLANNING_STATE_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+    
+  </Enums>
+  <Field>
+    <radius AltName="Radius" Wiki="AI sound radius" />
+    <lifeFrame AltName="Duration" Wiki="Time for AI sound to remain" />
+    <bSpEffectEnable AltName="Is Affected by Sound Radius Magnification" Wiki="Whether it is affected by the special effect Sound Radius Magnification" IsBool="" />
+    <type AltName="Rate Type" Wiki="AI sound type" Enum="AI_SOUND_RATE_TYPE" />
+    <opposeTarget AltName="Target: Hostile" Wiki="Target:  Hostile" IsBool="" />
+    <friendlyTarget AltName="Target: Friendly" Wiki="Target:  Allies" IsBool="" />
+    <selfTarget AltName="Target: Self" Wiki="Target: myself" IsBool="" />
+    <disableOnTargetPCompany AltName="Disable on Targeting Player" Wiki="You can't listen while targeting your PC" IsBool="" />
+    <rank AltName="Rank" Wiki="Character behavior (former: sound type)" Enum="AI_SOUND_RANK" />
+    <forgetTime AltName="Forget Time" Wiki="Time to forget the sound target (overwrite) [sec]" />
+    <priority AltName="Priority" Wiki="AI sound priority" />
+    <soundBehaviorId AltName="Sound Behavior ID" Wiki="Behavior ID" />
+    <aiSoundLevel AltName="AI Sound Level" Wiki="How hard it is to hear" />
+    <replaningState AltName="Replanning State" Wiki="AI state setting to run replanning when listening to AI sound" Enum="AI_SOUND_REPLANNING_STATE_TYPE" />
+    <pad1 AltName=""/>
+    
+  </Field>
   <Self />
 </PARAMMETA>

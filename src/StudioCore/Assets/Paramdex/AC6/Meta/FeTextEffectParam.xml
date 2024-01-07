@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <textId1 AltName="Text ID [1]" FmgRef="Event" />
+    <textId2 AltName="Text ID [2]" FmgRef="Event" />
+  </Field>
   <Self />
 </PARAMMETA>

@@ -7,6 +7,7 @@
       <Option Value="2" Name="Lower values are better" />
     </Enum>
   </Enums>
+  
   <Field>
     <compareType Name="Compare Type" Enum="MENU_PROPERTY_CMP_TYPE" Wiki="Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)." />
   </Field>

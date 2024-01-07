@@ -47,8 +47,10 @@
       <Option Value="118" Name="Ammunition On-Hit Attack" />
     </Enum>
     <Enum Name="ATK_PARAM_HIT_TYPE" type="u8">
-        <Option Value="0" Name="Ignore Collision" />
-        <Option Value="2" Name="Invoke Collision" />
+        <Option Value="0" Name="Normal (tip)" />
+        <Option Value="1" Name="Middle" />
+        <Option Value="2" Name="Root" />
+        <Option Value="3" Name="Map Collision Detection" />
     </Enum>
     <Enum Name="ATKPARAM_REP_DMGTYPE_UINT" type="u8">
         <Option Value="0" Name="None" />
@@ -66,9 +68,10 @@
         <Option Value="12" Name="Stagger Backwards" />
     </Enum>
     <Enum Name="ATK_PARAM_MAP_HIT" type="u8">
-        <Option Value="0" Name="Default" />
-        <Option Value="1" Name="Projectile" />
-        <Option Value="2" Name="Hazard" />
+        <Option Value="0" Name="Normal" />
+        <Option Value="1" Name="Precision" />
+        <Option Value="2" Name="Not on the map" />
+        <Option Value="3" Name="Map, not an asset" />
     </Enum>
     <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
         <Option Value="0" Name="Slash" />
@@ -164,43 +167,79 @@
         <Option Value="255" Name="Type 255" />
     </Enum>
     <Enum Name="ATK_PARAM_HIT_SOURCE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Body" />
+        <Option Value="2" Name="Part 0" />
+        <Option Value="3" Name="Part 1" />
+        <Option Value="4" Name="Part 2" />
+        <Option Value="5" Name="Part 3" />
+        <Option Value="6" Name="Part 4" />
+        <Option Value="7" Name="Part 5" />
+        <Option Value="8" Name="Part 6" />
+        <Option Value="9" Name="Part 7" />
+        <Option Value="10" Name="Part 8" />
+        <Option Value="11" Name="Part 9" />
+        <Option Value="12" Name="Part 10" />
+        <Option Value="13" Name="Part 11" />
+        <Option Value="14" Name="Part 12" />
+        <Option Value="15" Name="Part 13" />
+        <Option Value="16" Name="Part 14" />
+        <Option Value="17" Name="Part 15" />
+        <Option Value="18" Name="Part 16" />
+        <Option Value="19" Name="Part 17" />
+        <Option Value="20" Name="Part 18" />
+        <Option Value="21" Name="Part 19" />
+        <Option Value="22" Name="Part 20" />
+        <Option Value="23" Name="Part 21" />
+        <Option Value="24" Name="Part 22" />
+        <Option Value="25" Name="Part 23" />
+        <Option Value="26" Name="Part 24" />
+        <Option Value="27" Name="Part 25" />
+        <Option Value="28" Name="Part 26" />
+        <Option Value="29" Name="Part 27" />
+        <Option Value="30" Name="Part 28" />
+        <Option Value="31" Name="Part 29" />
+        <Option Value="32" Name="Part 30" />
+        <Option Value="33" Name="Part 31" />
     </Enum>
     <Enum Name="ATK_PATAM_THROWFLAG_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
-        <Option Value="3" Name="Type 3" />
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Throw transition" />
+        <Option Value="2" Name="Throw" />
+        <Option Value="3" Name="Throw transition (with dmgLevel" />
     </Enum>
     <Enum Name="ATKPARAM_SFX_ATK_POW" type="s8">
-        <Option Value="0" Name="Power 0" />
-        <Option Value="1" Name="Power 1" />
-        <Option Value="2" Name="Power 2" />
-        <Option Value="4" Name="Power 4" />
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Medium" />
+        <Option Value="2" Name="Large" />
+        <Option Value="3" Name="Extra Large" />
+        <Option Value="4" Name="Very Large" />
     </Enum>
     <Enum Name="ATKPARAM_SFX_ATK_DIR" type="s8">
-        <Option Value="0" Name="Dir 0" />
-        <Option Value="1" Name="Dir 1" />
-        <Option Value="2" Name="Dir 2" />
-        <Option Value="3" Name="Dir 3" />
-        <Option Value="4" Name="Dir 4" />
+        <Option Value="0" Name="Front" />
+        <Option Value="1" Name="Top" />
+        <Option Value="2" Name="Bottom" />
+        <Option Value="3" Name="Left" />
+        <Option Value="4" Name="Right" />
     </Enum>
     <Enum Name="ATKPARAM_BEHAVIOR_ID" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
-        <Option Value="3" Name="Type 3" />
-        <Option Value="4" Name="Type 4" />
-        <Option Value="5" Name="Type 5" />
-        <Option Value="6" Name="Type 6" />
-        <Option Value="7" Name="Type 7" />
-        <Option Value="8" Name="Type 8" />
-        <Option Value="9" Name="Type 9" />
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Continuous Attack" />
+        <Option Value="2" Name="Super huge blowout" />
+        <Option Value="3" Name="Delayed damage reaction" />
+        <Option Value="4" Name="Damage only FE" />
+        <Option Value="5" Name="Small stagger guarantee" />
+        <Option Value="6" Name="Unknown" />
+        <Option Value="7" Name="Unknown" />
+        <Option Value="8" Name="Unknown" />
+        <Option Value="9" Name="Unknown" />
+        <Option Value="10" Name="Start Grab" />
+        <Option Value="11" Name="Finish Grab" />
     </Enum>
     <Enum Name="ATKPARAM_SE_ATK_POW" type="s8">
-        <Option Value="0" Name="Power 0" />
-        <Option Value="1" Name="Power 1" />
+        <Option Value="0" Name="Small" />
+        <Option Value="1" Name="Large" />
+        <Option Value="2" Name="Extra Large" />
     </Enum>
     <Enum Name="WEP_MATERIAL_DEF_SFX" type="u16">
         <Option Value="0" Name="Type 0" />
@@ -257,7 +296,7 @@
         <Option Value="255" Name="Type 255" />
     </Enum>
     <Enum Name="ATKPARAM_REP_DMGTYPE" type="s8">
-        <Option Value="0" Name="None" />
+        <Option Value="0" Name="Default" />
         <Option Value="1" Name="No Stagger" />
         <Option Value="2" Name="Short Stagger" />
         <Option Value="3" Name="Long Stagger" />

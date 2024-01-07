@@ -1,5 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <refId_default AltName="Reference ID" Wiki="ID0 called from the item (default)" Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    <sfxVariationId AltName="SFX Variation ID" Wiki="Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)" />
+    <weight AltName="Weight" Wiki="Weight [kg]" />
+    <basicPrice AltName="Basic Price" Wiki="Basic price" />
+    <sellValue AltName="Sell Value" Wiki="Selling price" />
+    <behaviorId AltName="Behavior ID" Wiki="Set the effect that occurs when using a tool" />
+    <replaceItemId AltName="Replace Item ID" Wiki="Item ID when replacing" />
+    <sortId AltName="Sort ID" Wiki="Sort ID (-1 Do not collect)" />
+    <appearanceReplaceItemId AltName="Appearance Replace Item ID" Wiki="Conditionally replace the display with another tool ID. The tool ID on the game data side does not change" />
+    <yesNoDialogMessageId AltName="Dialog Message ID" Wiki="YesNo Message ID used when displaying the dialog" />
+    <useEnableSpEffectType AltName="Use Enable SpEffect Type" Wiki="Allow to use only when the special effect of the set state change type is applied"  />
+    <potGroupId AltName="Pot Group ID" Wiki="Consumable items for which 0 or more is set for the pot group ID can be possessed by the number of pots with the same pot group ID." />
+    <pad AltName=""/>
+
+    <iconId AltName="Icon ID" Wiki="Menu icon ID" ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
+    <modelId AltName="Model ID" Wiki="Model ID" />
+    <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
+    <compTrophySedId AltName="Achivement ID" Wiki="SEQ number of complete trophy" />
+    <trophySeqId AltName="Achivement Sequential ID" Wiki="Trophy SEQ number" />
+    <maxNum AltName="Max Amount" Wiki="Maximum number of possessions" />
+    <consumeHeroPoint AltName="Consume Humanity" Wiki="Consumer nature" />
+    <overDexterity AltName="Over Dexterity" Wiki="Skill over start value" />
+    <goodsType AltName="Goods Type" Wiki="Types of tools"/>
+    <refCategory AltName="Reference Type" Wiki=" ID category - Attack, Projectile, Special" />
+    <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." />
+    <pad3 AltName=""/>
+    <goodsUseAnim AltName="Goods Use Animation" Wiki="Set the animation to play when using the tool" />
+    <opmeMenuType AltName="Interaction Menu Type" Wiki="Menu type that opens when using an item" />
+    <useLimitCategory AltName="Use Limit Category" Wiki="Specified to control whether it can be used by the special effect applied" />
+    <replaceCategory AltName="Replace Category" Wiki="Condition category to add to call ID" />
+    <reserve4 AltName=""/>
+    
+    <enable_live AltName="Enable Host Player" Wiki="Is it possible to use a surviving player?" IsBool="" />
+    <enable_gray AltName="Enable as Gray Phantom" Wiki="Can Gray Ghost be used?" IsBool="" />
+    <enable_white AltName="Enable as White Phantom" Wiki="Can white ghost be used?" IsBool="" />
+    <enable_black AltName="Enable as Black Phantom" Wiki="Is it possible to do a black ghost?" IsBool="" />
+    <enable_multi AltName="Enable in Multiplayer" Wiki="Can it be used during multiplayer?" IsBool="" />
+    <disable_offline AltName="Enable Online Only" Wiki="Is it unavailable while offline?" IsBool="" />
+    <isEquip AltName="Is Equippable" Wiki="Whether it can be equipped" IsBool="" />
+    <isConsume AltName="Is Consumed" Wiki="Will it be consumed when used (whether the number of possessions will decrease)" IsBool="" />
+    <isAutoEquip AltName="Is Auto Equipped" Wiki="Will it be equipped automatically when picked up?" IsBool="" />
+    <isEstablishment AltName="Is Guidance Item" Wiki="Is it a stationary item?" IsBool="" />
+    <isOnlyOne AltName="Is Unique Item" Wiki="Is it an item that you can only have one?" IsBool="" />
+    <isDiscard AltName="Can Discard" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
+    <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
+    <isDisableHand AltName="Disable if Right Hand is Empty" Wiki="Can't be used when the right-handed weapon is bare-handed?" IsBool="" />
+    <isRemoveItem_forGameClear AltName="Remove Item on Game Clear" Wiki="Whether to delete at the time of lap" IsBool="" />
+    <isSuppleItem AltName="Is Regenerative Item" Wiki="Used to determine replenishable items" IsBool="" />
+    <isFullSuppleItem AltName="Is Full Regenerative Item" Wiki="Used to determine replenished items" IsBool="" />
+    <isEnhance AltName="Is Enhancement Item" Wiki="Do you want to enchant your weapon?" IsBool="" />
+    <isFixItem AltName="Can Repair Item" Wiki="Is it an item to repair?" IsBool="" />
+    <disableMultiDropShare AltName="Disable Dropping in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
+    <disableUseAtColiseum AltName="Disable Usage in Multiplayer Arena" Wiki="Is it prohibited to use in the arena?" IsBool="" />
+    <disableUseAtOutOfColiseum AltName="Disable Usage outside of Multiplayer Arena" Wiki="Is it prohibited to use outside the arena?" IsBool="" />
+    <isEnableFastUseItem AltName="Can Cancel Application Early" Wiki="Is it possible to cancel early?" IsBool="" />
+    <isApplySpecialEffect AltName="Apply SpEffect Modifiers" Wiki="Whether to reflect special effects (such as ability value correction)" IsBool="" />
+    <syncNumVaryId AltName="Synchronized Item Usage ID" Wiki="When the number of items is changed, the items with the same ID will be changed at the same time. 0 Not synchronized" />
+    <refId_1 AltName="Reference ID - Left Hand" Wiki="ID1 called from the item" Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    <refVirtualWepId AltName="Weapon Reference ID" Wiki="Weapon ID to refer to when using the tool" Refs="EquipParamWeapon" />
+    <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1 No vagrant 0 No lottery 1  With lottery" />
+    <vagrantBonusEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
+    <vagrantItemEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
+    <castSfxId AltName="Usage VFX - Cast" Wiki="SFXID until the effect is activated when you try to use the item" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <fireSfxId AltName="Usage VFX  - Activate" Wiki="SFX ID when the item is activated" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <effectSfxId AltName="Usage VFX - Effect" Wiki="After the item is activated, the SFX ID in effect" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <enable_ActiveBigRune AltName="Usable with Great Rune Active" Wiki="Can it be used with a large rune activated?" IsBool="" />
+    <isBonfireWarpItem AltName="Is Bonfire Warp Item" Wiki="If the state change type Warp Prohibition is applied when TRUE, remove the function to disable the item." IsBool="" />
+    <enable_Ladder AltName="Enable on Ladder" Wiki="Check here for items available in the ladder" IsBool="" />
+    <isUseMultiPlayPreparation AltName="Usable before Multiplayer Session" Wiki="Whether items can be used between session probability and initial synchronization" IsBool="" />
+    <canMultiUse AltName="Usable in Multiplayer" Wiki="Can it be used together?" IsBool="" />
+    <isShieldEnchant AltName="Is Shield Enchantment" Wiki="Is it a shield enchantment?" IsBool="" />
+    <isWarpProhibited AltName="Is Warp Prohibited" Wiki="When this is TRUE, disable the item if the state change type Warp Prohibition is applied." IsBool="" />
+    <isUseMultiPenaltyOnly AltName="Usable if Disconnect Penalty is Active" Wiki="A flag that allows you to determine if an item is only available when a client disconnect penalty is incurred." IsBool="" />
+    <suppleType AltName="Regenerative Item Type" Wiki="Replenishment item / Replenishment type when replenishing a replenished item." />
+    <autoReplenishType AltName="Auto Replenishment Type" Wiki="Controls whether or not to automatically replenish and default settings" />
+    <isDrop AltName="Can be Dropped" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered )" IsBool="" />
+    <isSummonHorse AltName="Is Horse Summon" Wiki="Is it an item that summons a horse? Cannot be used if the horse died or the PC is in a horse-prohibited area" IsBool="" />
+    <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered new only)" />
+    <isSleepCollectionItem AltName="Is Sleep Collection Item" Wiki="Is it a Nemuri collection item?" IsBool="" />
+    <enableRiding AltName="Enabled while Riding" Wiki="Can it be used while riding?" IsBool="" />
+    <disableRiding AltName="Disabled while Riding" Wiki="Is it prohibited to use while not riding?" IsBool="" />
+    <maxRepositoryNum AltName="Max Number Stored in Itembox" Wiki="Number of warehouses" />
+    <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." />
+    <isUseNoAttackRegion AltName="Enabled in No Attack Region" Wiki="Can it be used in an attack-prohibited area?" IsBool="" />
+  </Field>
   <Self />
 </PARAMMETA>

@@ -1,17 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="NPC_TYPE" type="u8">
+        <Option Value="0" Name="Standard" />
+        <Option Value="1" Name="Boss" />
+    </Enum>
+    <Enum Name="NPC_DRAW_TYPE" type="s8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="CHARACTER_INIT_SEX" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="VOW_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="CHARA_INIT_WEP_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
   <Field>
-    <equipWeaponRight Refs="EquipParamWeapon" />
-    <equipWeaponLeft Refs="EquipParamWeapon" />
-    <equipPartHead Refs="EquipParamProtector" />
-    <equipPartCore Refs="EquipParamProtector" />
-    <equipPartArms Refs="EquipParamProtector" />
-    <equipPartLegs Refs="EquipParamProtector" />
-    <equipPartBackRight Refs="EquipParamWeapon" />
-    <equipPartBackLeft Refs="EquipParamWeapon" />
-    <equipPartBooster Refs="EquipParamBooster" />
-    <equipPartGenerator Refs="EquipParamGenerator" />
-    <equipPartFcs Refs="EquipParamFcs" />
+    <equipWeaponRight AltName="Equipped Weapon: Front Right" Refs="EquipParamWeapon" />
+    <equipWeaponLeft AltName="Equipped Weapon: Front Left" Refs="EquipParamWeapon" />
+    <equipPartHead AltName="Equipped Part: Head" Refs="EquipParamProtector" />
+    <equipPartCore AltName="Equipped Part: Core" Refs="EquipParamProtector" />
+    <equipPartArms AltName="Equipped Part: Arms" Refs="EquipParamProtector" />
+    <equipPartLegs AltName="Equipped Part: Legs" Refs="EquipParamProtector" />
+    <equipPartBackRight AltName="Equipped Weapon: Back Right" Refs="EquipParamWeapon" />
+    <equipPartBackLeft AltName="Equipped Weapon: Back Right" Refs="EquipParamWeapon" />
+    <equipPartBooster AltName="Equipped Part: Booster" Refs="EquipParamBooster" />
+    <equipPartGenerator AltName="Equipped Part: Generator" Refs="EquipParamGenerator" />
+    <equipPartFcs AltName="Equipped Part: FCS" Refs="EquipParamFcs" />
+    <equipPartCoreExpansion AltName="Equipped Part: Core Expansion" />
+    <repairKitAmount AltName="Repair Kit Amount" />
   </Field>
   <Self />
 </PARAMMETA>

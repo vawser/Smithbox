@@ -74,7 +74,7 @@
     <Field Def="u8 autoReplenishType"></Field>
     <Field Def="u8 isDrop"></Field>
     <Field Def="s16 maxRepositoryNum"></Field>
-    <Field Def="u8 unkSortGroupId_SameAsWeaponParam0x2CB_0x73"></Field>
+    <Field Def="u8 sortGroupId"></Field>
     <Field Def="u8 isUseNoAttackRegion"></Field>
     <Field Def="s32 Unk0x74"></Field>
     <Field Def="f32 UnkFloat0x78"></Field>

@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <attitudeStabilityThreshold_Stage0 AltName="Attitude Stability - Threshold [0]" />
+    <attitudeStabilityThreshold_Stage1 AltName="Attitude Stability - Threshold [1]" />
+    <attitudeStabilityThreshold_Stage2 AltName="Attitude Stability - Threshold [2]" />
+    <attitudeStabilityThreshold_Stage3 AltName="Attitude Stability - Threshold [3]" />
+    <attitudeStabilityThreshold_Stage4 AltName="Attitude Stability - Threshold [4]" />
+    <attitudeStabilityThreshold_Stage5 AltName="Attitude Stability - Threshold [5]" />
+    <attitudeStabilityThreshold_Stage6 AltName="Attitude Stability - Threshold [6]" />
+    <attitudeStabilityThreshold_Stage7 AltName="Attitude Stability - Threshold [7]" />
+    <attitudeStabilityThreshold_Stage8 AltName="Attitude Stability - Threshold [8]" />
+    <attitudeStabilityThreshold_Stage9 AltName="Attitude Stability - Threshold [9]" />
+    <attitudeStabilityThreshold_Stage10 AltName="Attitude Stability - Threshold [10]" />
+  </Field>
   <Self Wiki="Defines parameters regarding attitude stability." />
 </PARAMMETA>

@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <DstWeather_Sunny AltName="Destination Weather: Sunny" Wiki="Sunny" Refs="WeatherParam" />
+    <DstWeather_ClearSky AltName="Destination Weather: Clear Sky" Wiki="Sunny" Refs="WeatherParam" />
+    <DstWeather_WeakCloudy AltName="Destination Weather: Light Cloud" Wiki="Light cloudy" Refs="WeatherParam" />
+    <DstWeather_Cloud AltName="Destination Weather: Cloud" Wiki="cloudy" Refs="WeatherParam" />
+    <DstWeather_Rain AltName="Destination Weather: Rain" Wiki="rain" Refs="WeatherParam" />
+    <DstWeather_HeavyRain AltName="Destination Weather: Heavy Rain" Wiki="Heavy rain" Refs="WeatherParam" />
+    <DstWeather_Storm AltName="Destination Weather: Storm" Wiki="storm" Refs="WeatherParam" />
+    <DstWeather_StormForBattle AltName="Destination Weather: Storm for Battle" Wiki="Storm (for combat with the descendants of the guardian)" Refs="WeatherParam" />
+    <DstWeather_Snow AltName="Destination Weather: Snow" Wiki="snow" Refs="WeatherParam" />
+    <DstWeather_HeavySnow AltName="Destination Weather: Heavy Snow" Wiki="heavy snow" Refs="WeatherParam" />
+    <DstWeather_Fog AltName="Destination Weather: Fog" Wiki="fog" Refs="WeatherParam" />
+    <DstWeather_HeavyFog AltName="Destination Weather: Heavy Fog" Wiki="Thick fog" Refs="WeatherParam" />
+    <DstWeather_SandStorm AltName="Destination Weather: Sandstorm" Wiki="Sandstorm" Refs="WeatherParam" />
+    <DstWeather_HeavyFogRain AltName="Destination Weather: Heavy Fog and Rain" Wiki="Thick fog (rain)" Refs="WeatherParam" />
+  </Field>
   <Self />
 </PARAMMETA>

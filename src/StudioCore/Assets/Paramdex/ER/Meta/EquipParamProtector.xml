@@ -31,7 +31,8 @@
       <Option Value="3" Name="Legendary" />
     </Enum>
     <Enum Name="ATK_PARAM_PARTSDMGTYPE" type="u8">
-      <Option Value="0" Name="Type 0" />
+      <Option Value="0" Name="Arrow Only" />
+      <Option Value="1" Name="All" />
     </Enum>
     <Enum Name="GET_DIALOG_CONDITION_TYPE" type="u8">
       <Option Value="0" Name="Type 0" />

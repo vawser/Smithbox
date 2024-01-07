@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Enums>
+    <Enum Name="ATK_PARAM_PARTSDMGTYPE" type="u8">
+      <Option Value="0" Name="Arrow Only" />
+      <Option Value="1" Name="All" />
+    </Enum>
     <Enum Name="NPC_BULLET_PENETRATE_DEF_TYPE" type="u8">
       <Option Value="0" Name="Low" />
       <Option Value="1" Name="Normal" />

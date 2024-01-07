@@ -7,7 +7,7 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     <Field Def="s32 Unk0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
+    <Field Def="s32 overlayMapId"></Field>
     <Field Def="s32 Unk0x08"></Field>
     <Field Def="s32 Unk0x0C"></Field>
     <Field Def="s32 Unk0x10"></Field>
@@ -15,7 +15,7 @@
     <Field Def="s32 Unk0x18"></Field>
     <Field Def="s32 Unk0x1C"></Field>
     <Field Def="s32 Unk0x20"></Field>
-    <Field Def="s32 Unk0x24"></Field>
+    <Field Def="s32 soundCutsceneParamId"></Field>
     <Field Def="u8 UnkByte0x28"></Field>
     <Field Def="u8 UnkByte0x29"></Field>
     <Field Def="s8 UnkSbyte0x2A"></Field>
