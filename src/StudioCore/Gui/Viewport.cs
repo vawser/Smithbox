@@ -1,8 +1,11 @@
 ﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.DebugPrimitives;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using StudioCore.Settings;
+using StudioCore.Utilities;
 using System;
 using System.Drawing;
 using System.Numerics;

@@ -1,6 +1,7 @@
 ﻿using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 using StudioCore.Editor;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Veldrid;

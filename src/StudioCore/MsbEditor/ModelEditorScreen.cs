@@ -11,7 +11,10 @@ using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
 using Viewport = StudioCore.Gui.Viewport;
-using StudioCore.Assetdex;
+using StudioCore.Settings;
+using StudioCore.Utilities;
+using StudioCore.Configuration;
+using StudioCore.JSON.Assetdex;
 
 namespace StudioCore.MsbEditor;
 

@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.ParamEditor;
 using StudioCore.Scene;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

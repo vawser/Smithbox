@@ -421,6 +421,7 @@
     <None Update="Assets\GameOffsets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Upgrader\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Assetdex\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -469,13 +470,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="DDSDeswizzler.cs">
+    <Compile Update="Utilities\DDSDeswizzler.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="MapStudioNew.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="NewAnimSkeleton.cs">
+    <Compile Update="Havok\NewAnimSkeleton.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>

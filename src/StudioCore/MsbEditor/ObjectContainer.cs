@@ -2,6 +2,8 @@
 using SoulsFormats;
 using StudioCore.Platform;
 using StudioCore.Scene;
+using StudioCore.Settings;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

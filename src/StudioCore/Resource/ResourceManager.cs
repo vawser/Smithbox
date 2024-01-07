@@ -2,6 +2,9 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Scene;
+using StudioCore.Settings;
+using StudioCore.Tasks;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -12,7 +15,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
-using System.Threading.Tasks.Schedulers;
 
 namespace StudioCore.Resource;
 

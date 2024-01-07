@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Numerics;
 using ImGuiNET;
-using StudioCore.Assetdex;
+using StudioCore.Configuration;
+using StudioCore.JSON.Assetdex;
 using StudioCore.Scene;
+using StudioCore.Settings;
+using StudioCore.Utilities;
 using Veldrid;
 
 namespace StudioCore.MsbEditor

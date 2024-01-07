@@ -1,5 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Settings;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

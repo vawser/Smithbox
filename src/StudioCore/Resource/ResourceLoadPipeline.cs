@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Settings;
 using System;
 using System.IO;
 using System.Threading.Tasks.Dataflow;

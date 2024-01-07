@@ -2,6 +2,7 @@
 using HKX2;
 using SoulsFormats;
 using StudioCore.Scene;
+using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;

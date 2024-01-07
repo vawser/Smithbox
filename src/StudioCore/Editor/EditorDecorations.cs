@@ -2,8 +2,11 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.ParamEditor;
+using StudioCore.Settings;
 using StudioCore.TextEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

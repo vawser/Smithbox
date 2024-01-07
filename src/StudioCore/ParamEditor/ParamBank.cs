@@ -3,7 +3,9 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Platform;
+using StudioCore.Settings;
 using StudioCore.TextEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -206,7 +208,7 @@ public class ParamBank
         if (File.Exists(tentativeMappingPath))
         {
             // No proper CSV library is used currently, and all CSV parsing is in the context of param files.
-            // If a CSV library is introduced in DSMapStudio, use it here.
+            // If a CSV library is introduced in Smithbox, use it here.
             foreach (var line in File.ReadAllLines(tentativeMappingPath).Skip(1))
             {
                 var parts = line.Split(',');

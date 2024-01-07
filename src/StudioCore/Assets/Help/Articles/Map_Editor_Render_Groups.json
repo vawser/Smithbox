@@ -13,7 +13,7 @@
         "If a Map Object uses the CollisionName field, they will",
         "inherit Draw Groups from the referenced Map Object.",
         "",
-        "CollisionName references will be targeted by DSMapStudio when",
+        "CollisionName references will be targeted by Smithbox when",
         "using 'Set Selection'/'Get Selection' instead of your actual selection.",
         "When a character walks on top of a piece of collision, they will use",
         "its DispGroups and DrawGroups.",

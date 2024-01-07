@@ -6,8 +6,10 @@ using System.Text;
 using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using SoulsFormats.KF4;
-using StudioCore.Assetdex;
+using StudioCore.JSON.Assetdex;
 using StudioCore.Platform;
+using StudioCore.Settings;
+using StudioCore.Utilities;
 using Veldrid;
 
 namespace StudioCore.MsbEditor
@@ -40,7 +42,7 @@ namespace StudioCore.MsbEditor
         private string _searchStrInput = "";
         private string _searchStrInputCache = "";
 
-        private StudioCore.Assetdex.AssetdexCore _assetdex;
+        private AssetdexCore _assetdex;
 
         public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator, AssetdexCore assetdex)
         {

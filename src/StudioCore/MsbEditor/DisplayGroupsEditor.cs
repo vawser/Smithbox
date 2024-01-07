@@ -1,5 +1,7 @@
 ﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Scene;
+using StudioCore.Settings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -170,7 +172,7 @@ public class DisplayGroupsEditor
                     "When a Display Group is active, Map Objects with that Draw Group will render.\n" +
                     "\n" +
                     "If a Map Object uses the CollisionName field, they will inherit Draw Groups from the referenced Map Object.\n" +
-                    "Also, CollisionName references will be targeted by DSMapStudio when using `Set Selection`/`Get Selection` instead of your actual selection.\n" +
+                    "Also, CollisionName references will be targeted by Smithbox when using `Set Selection`/`Get Selection` instead of your actual selection.\n" +
                     "When a character walks on top of a piece of collision, they will use its DispGroups and DrawGroups.\n" +
                     "\n" +
                     "Color indicates which Render Groups selected Map Object is using.\n" +

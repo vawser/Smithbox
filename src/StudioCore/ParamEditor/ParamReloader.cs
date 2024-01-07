@@ -5,6 +5,8 @@ using ProcessMemoryUtilities.Managed;
 using ProcessMemoryUtilities.Native;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Settings;
+using StudioCore.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;

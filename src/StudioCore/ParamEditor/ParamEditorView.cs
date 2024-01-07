@@ -1,7 +1,9 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Platform;
+using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;

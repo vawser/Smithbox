@@ -4,6 +4,8 @@ using SoulsFormats;
 using StudioCore.ParamEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using StudioCore.Settings;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

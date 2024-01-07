@@ -2,10 +2,13 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
+using StudioCore.Settings;
 using StudioCore.TextEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -464,7 +467,7 @@ public class ParamEditorScreen : EditorScreen
                 void ImportRowNames(bool currentParamOnly, string title)
                 {
                     const string importRowQuestion =
-                        "Would you like to replace row names with default names defined within DSMapStudio?";
+                        "Would you like to replace row names with default names defined within Smithbox?";
                     var currentParam = currentParamOnly ? _activeView._selection.GetActiveParam() : null;
                     DialogResult question = PlatformUtils.Instance.MessageBox(importRowQuestion, title,
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -1240,7 +1243,7 @@ public class ParamEditorScreen : EditorScreen
                 {
                     ImGui.PopStyleColor();
                     ImGui.Text(
-                        "Param version unsupported, DSMapStudio must be updated first.\nDownload update if available, wait for update otherwise.");
+                        "Param version unsupported, Smithbox must be updated first.\nDownload update if available, wait for update otherwise.");
                     ImGui.EndMenu();
                 }
                 else

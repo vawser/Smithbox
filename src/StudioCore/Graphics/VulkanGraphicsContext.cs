@@ -1,5 +1,6 @@
 ﻿using StudioCore.Editor;
 using StudioCore.Scene;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Veldrid;

@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
+using StudioCore.Editor;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -3,17 +3,20 @@ using Microsoft.Extensions.Logging;
 using Octokit;
 using SoapstoneLib;
 using SoulsFormats;
-using StudioCore.Assetdex;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Graphics;
-using StudioCore.Help;
+using StudioCore.JSON.Assetdex;
+using StudioCore.JSON.Helpdex;
 using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using StudioCore.Settings;
 using StudioCore.Tests;
 using StudioCore.TextEditor;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -80,7 +83,7 @@ public class MapStudioNew
     public unsafe MapStudioNew(IGraphicsContext context, string version)
     {
         _version = version;
-        _programTitle = $"Dark Souls Map Studio version {_version}";
+        _programTitle = $"Smithbox - Version {_version}";
 
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
@@ -265,8 +268,8 @@ public class MapStudioNew
 
     private void CheckProgramUpdate()
     {
-        GitHubClient gitHubClient = new(new ProductHeaderValue("DSMapStudio"));
-        Release release = gitHubClient.Repository.Release.GetLatest("soulsmods", "DSMapStudio").Result;
+        GitHubClient gitHubClient = new(new ProductHeaderValue("Smithbox"));
+        Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
         var isVer = false;
         var verstring = "";
         foreach (var c in release.TagName)
@@ -643,7 +646,7 @@ public class MapStudioNew
             catch (Exception e)
             {
                 PlatformUtils.Instance.MessageBox($"Unable to save config during crash recovery.\n" +
-                                                  $"If you continue to crash on startup, delete config in AppData\\Local\\DSMapStudio\n\n" +
+                                                  $"If you continue to crash on startup, delete config in AppData\\Local\\Smithbox\n\n" +
                                                   $"{e.Message} {e.StackTrace}",
                     "Error",
                     MessageBoxButtons.OK,

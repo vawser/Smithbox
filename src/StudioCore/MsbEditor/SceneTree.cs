@@ -1,9 +1,11 @@
 ﻿using ImGuiNET;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.ParamEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
+using StudioCore.Settings;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

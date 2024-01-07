@@ -2,8 +2,11 @@
 using HKX2.Builders;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Havok;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using StudioCore.Settings;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
