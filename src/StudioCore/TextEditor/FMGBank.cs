@@ -1428,6 +1428,16 @@ public static class FMGBank
         public FMGInfo PatchParent;
         public FmgUICategory UICategory;
 
+        private string _patchPrefix = null;
+        public string PatchPrefix
+        {
+            get
+            {
+                _patchPrefix ??= Name.Replace(RemovePatchStrings(Name), "");
+                return _patchPrefix;
+            }
+        }
+
         public void AddParent(FMGInfo parent)
         {
             if (CFG.Current.FMG_NoFmgPatching)
@@ -1464,6 +1474,7 @@ public static class FMGBank
                     EntryFMGInfoPair match = list.Find(e => e.Entry.ID == entry.ID);
                     if (match != null)
                     {
+                        // This is a patch entry
                         // Only non-null text will overrwrite
                         if (entry.Text != null)
                         {
@@ -1508,10 +1519,12 @@ public static class FMGBank
                     FMG.Entry match = list.Find(e => e.ID == entry.ID);
                     if (match != null)
                     {
-                        // Only non-null text will overrwrite
+                        // This is a patch entry
                         if (entry.Text != null)
                         {
-                            match = entry;
+                            // Text is not null, so it will overwrite non-patch entries.
+                            list.Remove(match);
+                            list.Add(entry);
                         }
                     }
                     else
@@ -1527,6 +1540,22 @@ public static class FMGBank
             }
 
             return list;
+        }
+
+        /// <summary>
+        ///     Returns title FMGInfo that shares this FMGInfo's EntryCategory.
+        ///     If none are found, an exception will be thrown.
+        /// </summary>
+        public FMGInfo GetTitleFmgInfo()
+        {
+            foreach (var info in FMGBank.FmgInfoBank)
+            {
+                if (info.EntryCategory == EntryCategory && info.EntryType == FmgEntryTextType.Title && info.PatchPrefix == PatchPrefix)
+                {
+                    return info;
+                }
+            }
+            throw new InvalidOperationException($"Couldn't find title FMGInfo for {this.Name}");
         }
 
         /// <summary>
