@@ -1,15 +1,6 @@
-# DSMapStudio
+# Smithbox
 
-Suite of modding tools for Elden Ring, Sekiro, the Dark Souls series, Bloodborne, and Demon's Souls (PS3)
-
-[![GitHub release](https://img.shields.io/github/release/soulsmods/DSMapStudio.svg)](https://github.com/soulsmods/DSMapStudio/releases/latest)
-[![Github All Releases](https://img.shields.io/github/downloads/soulsmods/DSMapStudio/total.svg)](https://github.com/soulsmods/DSMapStudio/releases/latest)
-[![Discord](https://img.shields.io/badge/Discord%20-%237289DA.svg?&logo=discord&logoColor=white)](https://discord.com/invite/CKDBCUFhB3)
-
-## About DS Map Studio:
-DS Map Studio is a standalone integrated modding tool for modern FromSoft games, which include Demon's Souls (PS3), the Dark Souls series, Bloodborne, Sekiro, and Elden Ring. It currently includes a map editor, a game param editor, and a text editor for editing in game text.
-
-![msb-editor-screenshot](https://user-images.githubusercontent.com/44953920/209740902-ab75c7fb-e281-4833-aeab-4c2ea41da815.png)
+A personal version of DSMapStudio, which is a standalone integrated modding tool for modern FromSoft games, which include Demon's Souls (PS3), the Dark Souls series, Bloodborne, Sekiro, and Elden Ring. It currently includes a map editor, a game param editor, and a text editor for editing in game text.
 
 ## Requirements
 * Windows 7/8/8.1/10/11 (64-bit only)
@@ -40,36 +31,6 @@ Map studio operates on top of something I call mod projects. These are typically
 * **Sekiro**: Cannot render map collision and navmesh in the viewport at this time.
 * **Elden Ring**: Cannot render map collision and navmesh in the viewport at this time.
 
-## FAQ
-
-### Q: Can DSMapStudio be used to export models/maps to FBX like you could with DSTools?
-A: Unfortunately not at the moment. Currently DSMapStudio doesn't have functionality for importing or exporting any assets, though an asset pipeline is planned to be implemented eventually.
-
-### Q: Why are graphics requirements so steep? Will you ever support DX11 again?
-A: Given the high requirements of rendering maps from DS3, Sekiro, and Elden Ring at good performance, DSMapStudio is designed around modern Vulkan and using newer GPU features centered around GPU driven rendering. Unfortunately, this means that DSMapStudio requires a relatively modern GPU that supports newer Vulkan features (NVIDIA Maxwell or AMD Polaris or newer). We realize that this is not ideal for people who want to only use the param editor though, and may look into a fallback renderer to support just the param editor if there is enough demand.
-
-### Q: Will true custom maps be possible?
-A: True custom maps are an eventual goal, but there's a lot of hurdles to overcome until we get there. Currently DSMapStudio doesn't have any kind of asset pipeline to import custom assets, but other community tools may be able to create assets that can be used in DSMapStudio and the games.
-
-### Q: Why did you abandon DSTools?
-A: DSTools worked well for the creation of many mods, and is still actively used today. However, the bindings of Unity data structures to Souls ones grew very messy and buggy, and led to a very unintuitive user experience (i.e. most users can't intuitively know what Unity operations are actually supported by DSTools for export). Unity also doesn't provide sufficiently low level APIs for many of its useful subsystems like its lightmapper and navmesh generator, so making these subsystems work for Dark Souls range from painful to impossible.
-
-By far the biggest issue though is how heavyweight Unity is and how bad performance is when importing assets. All the Dark Souls assets have to be imported into Unity which takes a large amount of space and imports themselves can take 10s of minutes for a map. All these lead me to decide to make an editor from scratch that is A) heavily focused on the Souls games and have the user interface designed for editing them and B) has super fast load times by loading the game assets directly with no intermediate conversions needing to be stored. Map Studio still lacks some of the more advanced features supported by DSTools + Unity, but currently the core experience is much nicer to use with loading times for maps being measured in seconds rather than minutes.
-
-## Credits
-* Katalash - Project lead and original author
-* philiquaz - Primary maintainer of integrated param editor
-* george - Core maintainer and contributor
-* thefifthmatt - Author of SoapstoneLib which allows cross-tool features
-
-## Special Thanks
-* TKGP - Made Soulsformats
-* [Pav](https://github.com/JohrnaJohrna)
-* [Meowmaritus](https://github.com/meowmaritus) - Made DSAnimStudio, which DSMapStudio is loosely based on
-* [PredatorCZ](https://github.com/PredatorCZ) - Reverse engineered Spline-Compressed Animation entirely.
-* [Horkrux](https://github.com/horkrux) - Reverse engineered the header and swizzling used on non-PC platform textures.
-* [Vawser](https://github.com/vawser) - DS2/3 Documentation
-
 ## Libraries Utilized
 * Soulsformats
 * [Newtonsoft Json.NET](https://www.newtonsoft.com/json)
@@ -79,3 +40,21 @@ By far the biggest issue though is how heavyweight Unity is and how bad performa
 * A small portion of [HavokLib](https://github.com/PredatorCZ/HavokLib), specifically the spline-compressed animation decompressor, adapted for C#
 * Recast for navigation mesh generation
 * Fork Awesome font for icons
+
+## Original Credits for DSMapStudio
+* Katalash - Project lead and original author
+* philiquaz - Primary maintainer of integrated param editor
+* george - Core maintainer and contributor
+* thefifthmatt - Author of SoapstoneLib which allows cross-tool features
+
+### Special Thanks
+* TKGP - Made Soulsformats
+* [Pav](https://github.com/JohrnaJohrna)
+* [Meowmaritus](https://github.com/meowmaritus) - Made DSAnimStudio, which DSMapStudio is loosely based on
+* [PredatorCZ](https://github.com/PredatorCZ) - Reverse engineered Spline-Compressed Animation entirely.
+* [Horkrux](https://github.com/horkrux) - Reverse engineered the header and swizzling used on non-PC platform textures.
+* [Vawser](https://github.com/vawser) - DS2/3 Documentation
+
+## Credits for Smithbox
+* Vawser
+  
