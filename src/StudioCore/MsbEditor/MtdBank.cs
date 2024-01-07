@@ -74,6 +74,7 @@ public class MtdBank
                 }
                 catch (Exception e) when (e is FileNotFoundException or DirectoryNotFoundException)
                 {
+                    TaskLogs.AddLog("Material files cannot not be found", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low);
                     _mtds = new Dictionary<string, MTD>();
                     _matbins = new Dictionary<string, MATBIN>();
                 }

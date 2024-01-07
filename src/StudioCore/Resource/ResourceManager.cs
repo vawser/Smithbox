@@ -65,8 +65,8 @@ public static class ResourceManager
         {
             case ResourceType.Flver:
                 return new ResourceHandle<FlverResource>(path);
-            //case ResourceType.Texture:
-            //    return new ResourceHandle<TextureResource>(path);
+                //case ResourceType.Texture:
+                //    return new ResourceHandle<TextureResource>(path);
         }
 
         return null;
@@ -895,12 +895,13 @@ public static class ResourceManager
                         var aetid = splits[1];
                         var aetname = splits[2];
                         var fullaetid = aetname.Substring(0, 10);
-                        path =
-                            $@"{Locator.GameRootDirectory}\asset\aet\{aetid.Substring(0, 6)}\{fullaetid}.tpf.dcx";
+
                         if (assetTpfs.Contains(fullaetid))
                         {
                             continue;
                         }
+
+                        path = Locator.GetAetTexture(fullaetid).AssetPath;
 
                         assetTpfs.Add(fullaetid);
                     }

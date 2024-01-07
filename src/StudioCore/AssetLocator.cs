@@ -1224,7 +1224,7 @@ public class AssetLocator
         }
         else if (Type == GameType.ArmoredCoreVI)
         {
-            // TODO ER
+            // TODO AC6
         }
         else if (Type == GameType.DemonsSouls)
         {
@@ -1353,7 +1353,7 @@ public class AssetLocator
 
         if (Type is GameType.ArmoredCoreVI)
         {
-            // TODO AC6
+            return GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
         }
 
         return null;
@@ -1428,7 +1428,7 @@ public class AssetLocator
                 ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
             }
         }
-        else if (Type is GameType.EldenRing)
+        else if (Type is GameType.EldenRing or GameType.ArmoredCoreVI)
         {
             var path = GetChrTexturePath(chrid);
             if (path != null)
@@ -1436,10 +1436,6 @@ public class AssetLocator
                 ad.AssetPath = path;
                 ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
             }
-        }
-        else if (Type is GameType.ArmoredCoreVI)
-        {
-            // TODO AC6
         }
 
         return ad;
@@ -1688,6 +1684,33 @@ public class AssetLocator
         return ad;
     }
 
+    public AssetDescription GetAetTexture(string aetid)
+    {
+        AssetDescription ad = new();
+        ad.AssetPath = null;
+        ad.AssetArchiveVirtualPath = null;
+        string path;
+        if (Type == GameType.EldenRing)
+        {
+            path = GetOverridenFilePath($@"asset\aet\{aetid.Substring(3, 6)}\{aetid}.tpf.dcx");
+        }
+        else if (Type is GameType.ArmoredCoreVI)
+        {
+            path = GetOverridenFilePath($@"\asset\environment\texture\{aetid}.tpf.dcx");
+        }
+        else
+        {
+            throw new NotSupportedException();
+        }
+
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetArchiveVirtualPath = $@"aet/{aetid}/tex";
+        }
+
+        return ad;
+    }
     public List<string> GetPartsModels()
     {
         try
@@ -2203,4 +2226,6 @@ public class AssetLocator
 
         return filename;
     }
+
+
 }

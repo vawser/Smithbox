@@ -68,10 +68,10 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
                     _loadedResources.Post(new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res));
                 }
             }
-            catch (FileNotFoundException) { }
-            catch (DirectoryNotFoundException) { }
+            catch (FileNotFoundException e1) { TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e1); }
+            catch (DirectoryNotFoundException e2) { TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e2); }
             // Some DSR FLVERS can't be read due to mismatching layout and vertex sizes
-            catch (InvalidDataException) { }
+            catch (InvalidDataException e3) { TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e3); }
         }, options);
     }
 

@@ -90,20 +90,41 @@ internal class ParamReloader
     private static void ReloadMemoryParamsThreads(ParamBank bank, GameOffsets offsets, string[] paramNames,
         SoulsMemoryHandler handler)
     {
+        nint soloParamRepositoryPtr;
+        if (offsets.ParamBaseAobPattern != null)
+        {
+            if (!handler.TryFindOffsetFromAOB("ParamBase", offsets.ParamBaseAobPattern, offsets.ParamBaseAobRelativeOffsets, out int paramBase))
+            {
+                return;
+            }
+
+            soloParamRepositoryPtr = IntPtr.Add(handler.GetBaseAddress(), paramBase);
+        }
+        else
+        {
+            soloParamRepositoryPtr = IntPtr.Add(handler.GetBaseAddress(), offsets.ParamBaseOffset);
+        }
+
         List<Task> tasks = new();
         foreach (var param in paramNames)
         {
+            if (!offsets.paramOffsets.TryGetValue(param, out var pOffset) || param == null)
+            {
+                TaskLogs.AddLog($"Hot reload: cannot find param offset for {param}", LogLevel.Warning, TaskLogs.LogPriority.Normal);
+                continue;
+            }
+
             if ((offsets.type is GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered) &&
-                param == "ThrowParam" && offsets.paramOffsets.ContainsKey(param))
+                param == "ThrowParam")
             {
                 // DS1 ThrowParam requires an additional offset.
                 tasks.Add(new Task(() =>
-                    WriteMemoryPARAM(offsets, bank.Params[param], offsets.paramOffsets[param], handler, 0x41C0)));
+                    WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, IntPtr.Add(soloParamRepositoryPtr, 0x41C0))));
             }
-            else if (param != null && offsets.paramOffsets.ContainsKey(param))
+            else
             {
                 tasks.Add(new Task(() =>
-                    WriteMemoryPARAM(offsets, bank.Params[param], offsets.paramOffsets[param], handler)));
+                    WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, soloParamRepositoryPtr)));
             }
         }
 
@@ -183,23 +204,10 @@ internal class ParamReloader
     }
 
     private static void WriteMemoryPARAM(GameOffsets offsets, Param param, int paramOffset,
-        SoulsMemoryHandler memoryHandler, int paramBaseExtraOffset = 0)
+        SoulsMemoryHandler memoryHandler, nint soloParamRepositoryPtr)
     {
-        if (offsets.ParamBaseAobPattern != null)
-        {
-            if (memoryHandler.TryFindOffsetFromAOB("ParamBase", offsets.ParamBaseAobPattern, offsets.ParamBaseAobRelativeOffsets, out int paramBase))
-            {
-                var soloParamRepositoryPtr = IntPtr.Add(memoryHandler.GetBaseAddress(), paramBase + paramBaseExtraOffset);
-                var BasePtr = memoryHandler.GetParamPtr(soloParamRepositoryPtr, offsets, paramOffset);
-                WriteMemoryPARAM(offsets, param, BasePtr, memoryHandler);
-            }
-        }
-        else
-        {
-            var soloParamRepositoryPtr = IntPtr.Add(memoryHandler.GetBaseAddress(), offsets.ParamBaseOffset + paramBaseExtraOffset);
-            var BasePtr = memoryHandler.GetParamPtr(soloParamRepositoryPtr, offsets, paramOffset);
-            WriteMemoryPARAM(offsets, param, BasePtr, memoryHandler);
-        }
+        var BasePtr = memoryHandler.GetParamPtr(soloParamRepositoryPtr, offsets, paramOffset);
+        WriteMemoryPARAM(offsets, param, BasePtr, memoryHandler);
     }
 
     private static void WriteMemoryPARAM(GameOffsets offsets, Param param, IntPtr BasePtr,
@@ -207,6 +215,12 @@ internal class ParamReloader
     {
         var BaseDataPtr = memoryHandler.GetToRowPtr(offsets, BasePtr);
         var RowCount = memoryHandler.GetRowCount(offsets, BasePtr);
+
+        if (RowCount <= 0)
+        {
+            TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType} has invalid offset or no rows", LogLevel.Warning, TaskLogs.LogPriority.Low);
+            return;
+        }
 
         IntPtr DataSectionPtr;
 
@@ -237,7 +251,8 @@ internal class ParamReloader
             }
             else
             {
-                throw new InvalidOperationException("Param row in memory cannot be found in editor. Try saving params and restarting game.");
+                TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor. Try saving params and restarting game.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
+                return;
             }
         }
     }
@@ -575,7 +590,7 @@ internal class GameOffsets
             foreach (var relativeOffset in paramBaseAobRelativeOffsetStr.Split(','))
             {
                 var split = relativeOffset.Split('/');
-                ParamBaseAobRelativeOffsets.Add(new (Utils.ParseHexFromString(split[0]), Utils.ParseHexFromString(split[1])));
+                ParamBaseAobRelativeOffsets.Add(new(Utils.ParseHexFromString(split[0]), Utils.ParseHexFromString(split[1])));
             }
         }
 
@@ -706,7 +721,7 @@ public class SoulsMemoryHandler
         {
             return true;
         }
-        
+
         GenerateAobPattern(aobPattern, out byte[] pattern, out bool[] wildcard);
 
         int memSize = gameProcess.MainModule.ModuleMemorySize;
