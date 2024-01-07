@@ -1,0 +1,7 @@
+<class name='hkRefCountedPropertiesEntry' version='1' signature='0x28ef93ed' size='16'>
+  <members>
+    <member name='object' offset='0' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='key' offset='8' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='10' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

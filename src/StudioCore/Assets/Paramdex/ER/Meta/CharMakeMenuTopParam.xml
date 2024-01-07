@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="CHARMAKEMENU_CMD_TYPE" type="s32">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="10" Name="Type 10" />
+        <Option Value="11" Name="Type 11" />
+        <Option Value="12" Name="Type 12" />
+        <Option Value="14" Name="Type 14" />
+        <Option Value="15" Name="Type 15" />
+        <Option Value="20" Name="Type 20" />
+        <Option Value="21" Name="Type 21" />
+        <Option Value="22" Name="Type 22" />
+        <Option Value="23" Name="Type 23" />
+        <Option Value="24" Name="Type 24" />
+        <Option Value="25" Name="Type 25" />
+        <Option Value="26" Name="Type 26" />
+        <Option Value="99" Name="Type 99" />
+    </Enum>
+    <Enum Name="CHARMAKEMENU_VIEW_CONDITION" type="s32">
+        <Option Value="0" Name="Condition 0" />
+        <Option Value="3" Name="Condition 3" />
+        <Option Value="4" Name="Condition 4" />
+        <Option Value="5" Name="Condition 5" />
+        <Option Value="6" Name="Condition 6" />
+    </Enum>
+    <Enum Name="CHARMAKEMENU_PREVIEW_MODE" type="s8">
+        <Option Value="0" Name="Mode 0" />
+        <Option Value="1" Name="Mode 1" />
+        <Option Value="2" Name="Mode 2" />
+    </Enum>
+  </Enums>
+  <Field>
+    <commandType AltName="Command Type" Wiki="Command type" Enum="CHARMAKEMENU_CMD_TYPE" />
+    <captionId AltName="Caption ID" Wiki="ID of the text to be displayed" FmgRef="Modern_MenuText" />
+    <faceParamId AltName="Face Param ID" Wiki="Face Param ID" Refs="FaceParam" />
+    <tableId AltName="Table ID - Male" Wiki="First ID (male) in the list of items to select. The command type is [Slider: Text ID of minimum label (n) and maximum label (n + 1), Color: ID of color table, Grid or text: First ID of character make list item, Other: Ignore]" />
+    <viewCondition AltName="View Condition" Wiki="Conditions for displaying this command" Enum="CHARMAKEMENU_VIEW_CONDITION" />
+    <previewMode AltName="Preview Mode" Wiki="Display mode of the character model displayed in preview" Enum="CHARMAKEMENU_PREVIEW_MODE" />
+    <reserved2 AltName=""/>
+    <tableId2 AltName="Table ID - Female" Wiki="For women with table ID. If -1, refer to for men" />
+    <refFaceParamId AltName="Reference Face Param ID" Wiki="Face param ID of the matching destination for matching to XX" Enum="FACE_PARAM" />
+    <refTextId AltName="Reference Text ID" Wiki="Display text ID for fit to XX" FmgRef="Modern_MenuText" />
+    <helpTextId AltName="Help Text ID" Wiki="1-line help text ID (-1: Get 1-line help with item text ID). Basically, item text ID = 1 line help text ID, but if you want to overwrite part of it, specify it with this parameter." FmgRef="Modern_LineHelp" />
+    <unlockEventFlagId AltName="Unlock Event Flag ID" Wiki="Event flag to unlock this item (0: invalid value). Invalid value will always be unlocked" />
+    <reserved AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

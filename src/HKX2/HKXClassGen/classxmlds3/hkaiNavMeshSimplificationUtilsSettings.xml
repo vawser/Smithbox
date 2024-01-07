@@ -1,0 +1,29 @@
+<class name='hkaiNavMeshSimplificationUtilsSettings' version='1' signature='0xdb60153e' size='160'>
+  <members>
+    <member name='maxBorderSimplifyArea' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxConcaveBorderSimplifyArea' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minCorridorWidth' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxCorridorWidth' offset='12' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='holeReplacementArea' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aabbReplacementAreaFraction' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxLoopShrinkFraction' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxBorderHeightError' offset='28' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxBorderDistanceError' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxPartitionSize' offset='36' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useHeightPartitioning' offset='40' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxPartitionHeightError' offset='44' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useConservativeHeightPartitioning' offset='48' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hertelMehlhornHeightError' offset='52' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cosPlanarityThreshold' offset='56' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nonconvexityThreshold' offset='60' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boundaryEdgeFilterThreshold' offset='64' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxSharedVertexHorizontalError' offset='68' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxSharedVertexVerticalError' offset='72' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxBoundaryVertexHorizontalError' offset='76' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxBoundaryVertexVerticalError' offset='80' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mergeLongestEdgesFirst' offset='84' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extraVertexSettings' offset='88' ctype='hkaiNavMeshSimplificationUtilsExtraVertexSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='saveInputSnapshot' offset='144' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='snapshotFilename' offset='152' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

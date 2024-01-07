@@ -1,0 +1,8 @@
+<class name='hkcdDynamicTreeCodecInt16' version='1' signature='0x24482a44' size='32'>
+  <members>
+    <member name='aabb' offset='0' ctype='hkcdDynamicTreeCodecInt16IntAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='parent' offset='16' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='children' offset='20' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='pad' offset='28' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

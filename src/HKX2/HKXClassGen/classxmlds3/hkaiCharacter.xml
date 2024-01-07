@@ -1,0 +1,49 @@
+<class name='hkaiCharacter' version='1' signature='0x1eedaf86' size='208' parent='hkReferencedObject'>
+  <enums>
+    <enum name='State' flags='00000000'>
+      <enumitem name='STATE_NEEDS_NEW_PATH' value='0'/>
+      <enumitem name='STATE_FOLLOWING_PATH' value='1'/>
+      <enumitem name='STATE_SLOWING_TO_GOAL' value='2'/>
+      <enumitem name='STATE_GOAL_REACHED' value='3'/>
+      <enumitem name='STATE_PATH_FAILED' value='4'/>
+      <enumitem name='STATE_WANDERED_OFF_PATH' value='5'/>
+      <enumitem name='STATE_REPATHING_INCOMPLETE_PATH' value='6'/>
+      <enumitem name='STATE_MANUAL_CONTROL' value='7'/>
+    </enum>
+    <enum name='AvoidanceEnabledMaskBits' flags='00000000'>
+      <enumitem name='AVOID_BOUNDARIES' value='1'/>
+      <enumitem name='AVOID_CHARACTERS' value='2'/>
+      <enumitem name='AVOID_OBSTACLES' value='4'/>
+      <enumitem name='AVOID_NONE' value='0'/>
+      <enumitem name='AVOID_ALL' value='7'/>
+    </enum>
+    <enum name='AvoidanceState' flags='00000000'>
+      <enumitem name='AVOIDANCE_SUCCESS' value='0'/>
+      <enumitem name='AVOIDANCE_FAILURE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='userData' offset='16' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='position' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='forward' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='velocity' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='up' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='currentNavMeshFace' offset='96' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='radius' offset='100' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='desiredSpeed' offset='104' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='adaptiveRanger' offset='108' ctype='hkaiAdaptiveRanger' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='costModifier' offset='112' ctype='hkaiAstarCostModifier' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeFilter' offset='120' ctype='hkaiAstarEdgeFilter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hitFilter' offset='128' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='steeringFilter' offset='136' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='agentFilterInfo' offset='144' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='avoidanceProperties' offset='152' ctype='hkaiAvoidanceProperties' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='avoidanceState' offset='160' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='agentPriority' offset='164' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='avoidanceType' offset='168' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='avoidanceEnabledMask' offset='170' etype='AvoidanceEnabledMaskBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='state' offset='172' etype='State' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='behaviorListeners' offset='176' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='layer' offset='192' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

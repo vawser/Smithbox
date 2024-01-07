@@ -1,0 +1,73 @@
+90 [GEN:90] Lucatiel of Mirrah
+91 [GEN:91] Lucatiel of Mirrah
+160 [GEN:160] Royal Sorcerer Navlaan
+161 [GEN:161] Royal Sorcerer Navlaan
+205 [GEN:205] Emerald Herald
+530 [GEN:530] Royal Sorcerer Navlaan
+531 [GEN:531] Aslatiel of Mirrah
+532 [GEN:532] Painting Guardian Phantom
+540 [GEN:540] Sellsword Luet
+800 [GEN:800] Guardian Dragon [Boss]
+1000 [GEN:1000] Syan Knight
+1010 [GEN:1010] Kobold
+1011 [GEN:1011] Kobold
+1012 [GEN:1012] Kobold
+1013 [GEN:1013] Kobold
+1014 [GEN:1014] Kobold
+1400 [GEN:1400] Basilisk
+1700 [GEN:1700] Red Crystal Lizard
+1850 [GEN:1850] Mimic
+2000 [GEN:2000] Poison Moth
+2500 [GEN:2500] Ogre
+3100 [GEN:3100] Ogre
+3200 [GEN:3200] Basilisk
+3220 [GEN:3220] Basilisk
+3300 [GEN:3300] Basilisk
+3301 [GEN:3301] Basilisk
+3302 [GEN:3302] Basilisk
+3303 [GEN:3303] Basilisk
+3304 [GEN:3304] Basilisk
+3801 [GEN:3801] Dragon Acolyte
+3802 [GEN:3802] Dragon Acolyte
+4030 [GEN:4030] Giant Acid Horn Beetle
+4060 [GEN:4060] Dragon Acolyte
+4061 [GEN:4061] Dragon Acolyte
+4062 [GEN:4062] Dragon Acolyte
+4063 [GEN:4063] Dragon Acolyte
+4200 [GEN:4200] Dragon Acolyte
+4300 [GEN:4300] Dragon Acolyte
+4301 [GEN:4301] Dragon Acolyte
+4302 [GEN:4302] Dragon Acolyte
+4303 [GEN:4303] Dragon Acolyte
+4304 [GEN:4304] Dragon Acolyte
+5000 [GEN:5000] Dragon Skeleton
+6000 [GEN:6000] Ogre
+6010 [GEN:6010] Ogre
+7000 [GEN:7000] Forlorn
+7001 [GEN:7001] Forlorn
+7002 [GEN:7002] Forlorn
+7003 [GEN:7003] Forlorn
+7100 [GEN:7100] Invisible Hollow
+7101 [GEN:7101] Invisible Hollow
+7102 [GEN:7102] Invisible Hollow
+8000 [GEN:8000] Belfry Gargoyle
+8010 [GEN:8010] Mimic
+8011 [GEN:8011] Mimic
+8012 [GEN:8012] Mimic
+8013 [GEN:8013] Mimic
+8014 [GEN:8014] Mimic
+8020 [GEN:8020] Undead Aberration
+8030 [GEN:8030] Ogre
+8040 [GEN:8040] Basilisk
+8500 [GEN:8500] Dragon Acolyte
+8600 [GEN:8600] Undead Traveler
+8601 [GEN:8601] Undead Traveler
+9000 [GEN:9000] Looking Glass Phantom
+9001 [GEN:9001] Looking Glass Phantom
+9004 [GEN:9004] Looking Glass Phantom
+9010 [GEN:9010] Giant Basilisk
+9011 [GEN:9011] Giant Basilisk
+9012 [GEN:9012] Giant Basilisk
+9013 [GEN:9013] Giant Basilisk
+9100 [GEN:9100] Hunting Dog
+9101 [GEN:9101] Hunting Dog

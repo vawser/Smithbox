@@ -1,0 +1,12 @@
+<class name='hknpExternMeshShape' version='1' signature='0x4458e295' size='112' parent='hknpCompositeShape'>
+  <enums>
+    <enum name='RebuildFlagsEnum' flags='00000000'>
+      <enumitem name='REBUILD_USE_DOUBLE_BUFFERING' value='1'/>
+      <enumitem name='REBUILD_REFIT_ONLY' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='geometry' offset='96' ctype='hknpExternMeshShapeGeometry' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boundingVolumeData' offset='104' ctype='hknpExternMeshShapeData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

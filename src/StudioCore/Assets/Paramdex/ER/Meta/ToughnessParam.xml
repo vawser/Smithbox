@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <correctionRate AltName="Toughness Correction" Wiki="It is a correction magnification applied to the toughness correction magnification of the weapon when calculating the toughness." />
+    <minToughness AltName="Minimum Toughness" Wiki="The lower limit of current toughness applied at the beginning of the toughness period. If the toughness falls below this value at the start of toughness, it will recover to this value." />
+    <isNonEffectiveCorrectionForMin AltName="Minimum Toughness not affected by Toughness Multiplier" Wiki="The toughness correction factor will no longer be applied to the minimum toughness." />
+    <pad2 AltName=""/>
+    <spEffectId AltName="Damage Level Replacement - SpEffect ID" Wiki="Replacement special effect Id that takes place during the toughness period. If -1, the normal replacement rule applies. Only used by player characters" Refs="SpEffectParam"/>
+    <proCorrectionRate AltName="Armor - Toughness Correction" Wiki="This is the correction factor applied to the toughness correction factor of the armor when determining the toughness." />
+    <pad1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,7 @@
+<class name='hkaSkeletonMapperDataSimpleMapping' version='1' signature='0x3405deca' size='64'>
+  <members>
+    <member name='boneA' offset='0' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneB' offset='2' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aFromBTransform' offset='16' vtype='TYPE_QSTRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

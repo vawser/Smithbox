@@ -1,0 +1,5 @@
+<class name='hkpConvexTranslateShape' version='1' signature='0xa3f8bf6a' size='80' parent='hkpConvexTransformShapeBase'>
+  <members>
+    <member name='translation' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

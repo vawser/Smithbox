@@ -1,0 +1,5 @@
+<class name='hkpSerializedDisplayMarker' version='1' signature='0x4c35bac1' size='80' parent='hkReferencedObject'>
+  <members>
+    <member name='transform' offset='16' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

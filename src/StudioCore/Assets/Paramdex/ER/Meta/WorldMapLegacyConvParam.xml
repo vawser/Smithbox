@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <srcAreaNo AltName="Source Map Area" Wiki="Conversion source map ID: Area number" />
+    <srcGridXNo AltName="Source Map Block" Wiki="Source map ID: Grid X" />
+    <srcGridZNo AltName="Source Map Region" Wiki="Source map ID: Grid Z" />
+    <pad1 AltName=""/>
+    <srcPosX AltName="Source Map Coordinate: X" Wiki="Source map reference coordinates X" />
+    <srcPosY AltName="Source Map Coordinate: Y" Wiki="Source map reference coordinates Y" />
+    <srcPosZ AltName="Source Map Coordinate: Z" Wiki="Source map reference coordinates Z" />
+    <dstAreaNo AltName="Destination Map Area" Wiki="Conversion destination map ID: Area number" />
+    <dstGridXNo AltName="Destination Map Block" Wiki="Destination map ID: Grid X" />
+    <dstGridZNo AltName="Destination Map Region" Wiki="Destination map ID: Grid Z" />
+    <pad2 AltName=""/>
+    <dstPosX AltName="Destination Map Coordinate: X" Wiki="Destination map reference coordinates X" />
+    <dstPosY AltName="Destination Map Coordinate: Y" Wiki="Destination map reference coordinates Y" />
+    <dstPosZ AltName="Destination Map Coordinate: Z" Wiki="Destination map reference coordinates Z" />
+    <isBasePoint AltName="Is Reference Connection Point" Wiki="Is it a reference connection point? One reference connection point is always set for one conversion source map ID." IsBool="" />
+    <pad3 AltName=""/>
+    <pad4 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

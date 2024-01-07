@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <atkChrId AltName="Rider - Character ID" Wiki="It is a parameter that identifies the character of the riding side when riding." />
+    <defChrId AltName="Mount - Character ID" Wiki="It is a parameter that identifies the character of the riding side when riding." />
+    <rideCamParamId AltName="Ride - Camera Param ID" Wiki="It is a parameter to change the camera parameter at the time of riding to a dedicated camera. It is a parameter for PC only, and it does not work even if it is set to the enemy." />
+    <atkChrAnimId AltName="Rider - Character Animation ID" Wiki="It is a parameter to rewrite the value of variable RideOnAnimId set in RideOn (playback during riding) state of the tool HavokAnimationTool (HAT) that controls character animation playback." />
+    <defChrAnimId AltName="Mount - Character Animation ID" Wiki="It is a parameter to rewrite the value of variable RiddenOnAnimId set in RiddenOn (playback when riding) state of the tool HavokAnimationTool (HAT) that controls character animation playback." />
+    <defAdjustDmyId AltName="Mount - Adjust Dummy Poly ID" Wiki="This is a Damipoli setting that is required only for the rider (the rider's character does not need to be set)." />
+    <defCheckDmyId AltName="Mount - Check Dummy Poly ID" Wiki="There is no need to set Damipoli for the character on the riding side." />
+    <diffAngMyToDef AltName="Rider/Mount - Ride Angle Tolerance" Wiki="Judgment is made by the angle difference between the [direction] on the riding side and the front judgment Damipoly ID on the riding side. The higher the value, the more you can ride even if you are facing away." />
+    <dist AltName="Mount Distance" Wiki="It is a parameter that determines the mountable distance to the target" />
+    <upperYRange AltName="Mount Distance - Max Height" Wiki="Is it possible to ride even if the target to be ridden is above the target to be ridden? Is set in meters" />
+    <lowerYRange AltName="Mount Distance - Min Height" Wiki="Is it possible to ride even if the target to be ridden is below the target to be ridden? Is set in meters" />
+    <diffAngMin AltName="Ride Angle Tolerance - Min" Wiki="In what range (angle) of the rider can ride? Set the minimum value of" />
+    <diffAngMax AltName="Ride Angle Tolerance - Max" Wiki="In what range (angle) of the rider can ride? Set the maximum value of" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

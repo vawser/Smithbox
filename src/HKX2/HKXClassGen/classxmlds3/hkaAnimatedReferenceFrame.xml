@@ -1,0 +1,12 @@
+<class name='hkaAnimatedReferenceFrame' version='1' signature='0x985e4297' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='hkaReferenceFrameTypeEnum' flags='00000000'>
+      <enumitem name='REFERENCE_FRAME_UNKNOWN' value='0'/>
+      <enumitem name='REFERENCE_FRAME_DEFAULT' value='1'/>
+      <enumitem name='REFERENCE_FRAME_PARAMETRIC' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='frameType' offset='16' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

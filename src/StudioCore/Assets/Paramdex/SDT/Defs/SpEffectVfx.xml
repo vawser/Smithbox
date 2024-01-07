@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SP_EFFECT_VFX_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 midstSfxId = -1">
+      <DisplayName>効果中SfxID</DisplayName>
+      <Description>効果中SfxID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s32 midstSeId = -1">
+      <DisplayName>効果中SeID</DisplayName>
+      <Description>効果中SeID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="s32 initSfxId = -1">
+      <DisplayName>発動時SfxID</DisplayName>
+      <Description>発動時SfxID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="s32 initSeId = -1">
+      <DisplayName>発動時SeID</DisplayName>
+      <Description>発動時SeID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="s32 finishSfxId = -1">
+      <DisplayName>解除時SfxID</DisplayName>
+      <Description>解除時SfxID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="s32 finishSeId = -1">
+      <DisplayName>解除時SeID</DisplayName>
+      <Description>解除時SeID(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 camouflageBeginDist = -1">
+      <DisplayName>姿隠し開始距離[m]</DisplayName>
+      <Description>カムフラージュ開始距離です</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 camouflageEndDist = -1">
+      <DisplayName>姿隠し終了距離[m]</DisplayName>
+      <Description>カムフラージュ終了距離です</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="s32 transformProtectorId = -1">
+      <DisplayName>変身防具ID</DisplayName>
+      <Description>変身防具ID(-1：なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="s16 midstDmyId = -1">
+      <DisplayName>効果中ダミポリID</DisplayName>
+      <Description>効果中ダミポリID(-1：ルート)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s16 initDmyId = -1">
+      <DisplayName>発動時ダミポリID</DisplayName>
+      <Description>発動時ダミポリID(-1：ルート)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="s16 finishDmyId = -1">
+      <DisplayName>解除時ダミポリID</DisplayName>
+      <Description>解除時ダミポリID(-1：ルート)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="u8 effectType">
+      <DisplayName>エフェクトタイプ</DisplayName>
+      <Enum>SP_EFFECT_VFX_EFFECT_TYPE</Enum>
+      <Description>エフェクトタイプ</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 soulParamIdForWepEnchant">
+      <DisplayName>武器エンチャント用ソウルパラムID</DisplayName>
+      <Enum>SP_EFFECT_VFX_SOUL_PARAM_TYPE</Enum>
+      <Description>武器エンチャント用ソウルパラムID(-1：なし).適用されるファントムパラムを変更します。</Description>
+      <Maximum>7</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 playCategory">
+      <DisplayName>VFX再生カテゴリ</DisplayName>
+      <Enum>SP_EFFECT_VFX_PLAYCATEGORY</Enum>
+      <Description>重複効果によるエフェクト再生を制御します</Description>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u8 playPriority">
+      <DisplayName>カテゴリ内優先度</DisplayName>
+      <Description>カテゴリ一致した場合の再生優先度を設定(低い方が優先)</Description>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u8 existEffectForLarge:1">
+      <DisplayName>大型用エフェクトがあるか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>大型用エフェクトがあるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 existEffectForSoul:1">
+      <DisplayName>ソウル体用エフェクトがあるか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>ソウル体用エフェクトがあるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 effectInvisibleAtCamouflage:1">
+      <DisplayName>姿隠し時にエフェクトを非表示にするか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>姿隠し時にエフェクトを非表示にするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u8 useCamouflage:1">
+      <DisplayName>姿隠しするか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>姿隠しするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 invisibleAtFriendCamouflage:1">
+      <DisplayName>姿隠し時に味方でも非表示か</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>姿隠し時に味方でも非表示か</Description>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="dummy8 addMapAreaBlockOffset:1">
+      <DisplayName>移行した(SfxIDにマップ番号を足すか→SfxIDオフセットタイプ)</DisplayName>
+      <Description>移行した(SfxIDにマップ番号を足すか→SfxIDオフセットタイプ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>1</Maximum>
+      <Increment>1</Increment>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u8 halfCamouflage:1">
+      <DisplayName>半透明の姿隠しか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>半透明の姿隠しか</Description>
+      <Maximum>1</Maximum>
+      <SortID>750</SortID>
+    </Field>
+    <Field Def="u8 isFullBodyTransformProtectorId:1">
+      <DisplayName>変身防具IDが全身用か</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>変身防具IDが全身用か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2310</SortID>
+    </Field>
+    <Field Def="u8 isInvisibleWeapon:1">
+      <DisplayName>武器エンチャント用インビジブルウェポンか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>武器エンチャント用インビジブルウェポンか(0:武器表示, 1:武器非表示)</Description>
+      <Maximum>1</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="u8 isSilence:1">
+      <DisplayName>サイレンスか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>サイレンスか(0:ちがう, 1:そう)</Description>
+      <Maximum>1</Maximum>
+      <SortID>775</SortID>
+    </Field>
+    <Field Def="u8 isMidstFullbody:1">
+      <DisplayName>全身か（効果中）</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>効果中SFXを装備用全身ダミポリを使用するか。1の時に胴:190,頭:191,手:192,脚:193からSFXを再生する</Description>
+      <Maximum>1</Maximum>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="u8 isInitFullbody:1">
+      <DisplayName>全身か（発動時）</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>発動中SFXを装備用全身ダミポリを使用するか。1の時に胴:190,頭:191,手:192,脚:193からSFXを再生する</Description>
+      <Maximum>1</Maximum>
+      <SortID>1401</SortID>
+    </Field>
+    <Field Def="u8 isFinishFullbody:1">
+      <DisplayName>全身か（解除時）</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>解除時SFXを装備用全身ダミポリを使用するか。1の時に胴:190,頭:191,手:192,脚:193からSFXを再生する</Description>
+      <Maximum>1</Maximum>
+      <SortID>1801</SortID>
+    </Field>
+    <Field Def="u8 isVisibleDeadChr:1">
+      <DisplayName>死体時でも表示を行うか</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>○の場合、死体時でもVFXが表示されるようになります。</Description>
+      <Maximum>1</Maximum>
+      <SortID>2350</SortID>
+    </Field>
+    <Field Def="u8 isUseOffsetEnchantSfxSize:1">
+      <DisplayName>エンチャントSFXサイズオフセット適応か</DisplayName>
+      <Enum>SP_EFFECT_BOOL</Enum>
+      <Description>武器パラの「エンチャントSfxサイズ」に従ってSfxIdをオフセットするか</Description>
+      <Maximum>1</Maximum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="dummy8 pad_1:1">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+      <SortID>8021</SortID>
+    </Field>
+    <Field Def="s32 decalId1 = -1">
+      <DisplayName>デカールID1</DisplayName>
+      <Description>デカールID1(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="s32 decalId2 = -1">
+      <DisplayName>デカールID2</DisplayName>
+      <Description>デカールID2(-1：無効)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="u8 footEffectPriority">
+      <DisplayName>フットエフェクト優先度</DisplayName>
+      <Description>フットエフェクトオフセットの優先度(低いほうが優先)</Description>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="u8 footEffectOffset">
+      <DisplayName>フットエフェクトオフセット</DisplayName>
+      <Description>この特殊効果がかかっている場合にフットエフェクトIDにオフセットする量</Description>
+      <Maximum>99</Maximum>
+      <SortID>2610</SortID>
+    </Field>
+    <Field Def="u8 traceSfxIdOffsetType">
+      <DisplayName>剣閃SFXIDオフセットタイプ</DisplayName>
+      <Enum>SP_EFFECT_VFX_SOUL_PARAM_TYPE</Enum>
+      <Description>剣閃SFXIDにかけるオフセット値です。エンチャントと剣の軌跡エフェクトに使われる</Description>
+      <Maximum>7</Maximum>
+      <SortID>260</SortID>
+    </Field>
+    <Field Def="u8 forceDeceasedType">
+      <DisplayName>プレイヤー見た目強制上書き</DisplayName>
+      <Enum>PLAYER_DISP_FORCE_DECEASED_TYPE</Enum>
+      <Description>キャラクターの見た目を強制的に生者/亡者にできる機能</Description>
+      <SortID>7100</SortID>
+    </Field>
+    <Field Def="s32 enchantStartDmyId_0 = -1">
+      <DisplayName>エンチャント時根元ダミポリID＿０</DisplayName>
+      <Description>エンチャント時の根元に発生させるダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="s32 enchantEndDmyId_0 = -1">
+      <DisplayName>エンチャント時剣先ダミポリID＿０</DisplayName>
+      <Description>エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2011</SortID>
+    </Field>
+    <Field Def="s32 enchantStartDmyId_1 = -1">
+      <DisplayName>エンチャント時根元ダミポリID＿１</DisplayName>
+      <Description>エンチャント時の根元に発生させるダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2012</SortID>
+    </Field>
+    <Field Def="s32 enchantEndDmyId_1 = -1">
+      <DisplayName>エンチャント時剣先ダミポリID＿１</DisplayName>
+      <Description>エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2013</SortID>
+    </Field>
+    <Field Def="s32 enchantStartDmyId_2 = -1">
+      <DisplayName>エンチャント時根元ダミポリID＿２</DisplayName>
+      <Description>エンチャント時の根元に発生させるダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2014</SortID>
+    </Field>
+    <Field Def="s32 enchantEndDmyId_2 = -1">
+      <DisplayName>エンチャント時剣先ダミポリID＿２</DisplayName>
+      <Description>エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2015</SortID>
+    </Field>
+    <Field Def="s32 enchantStartDmyId_3 = -1">
+      <DisplayName>エンチャント時根元ダミポリID＿３</DisplayName>
+      <Description>エンチャント時の根元に発生させるダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2016</SortID>
+    </Field>
+    <Field Def="s32 enchantEndDmyId_3 = -1">
+      <DisplayName>エンチャント時剣先ダミポリID＿３</DisplayName>
+      <Description>エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2017</SortID>
+    </Field>
+    <Field Def="s32 enchantStartDmyId_4 = -1">
+      <DisplayName>エンチャント時根元ダミポリID＿４</DisplayName>
+      <Description>エンチャント時の根元に発生させるダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2018</SortID>
+    </Field>
+    <Field Def="s32 enchantEndDmyId_4 = -1">
+      <DisplayName>エンチャント時剣先ダミポリID＿４</DisplayName>
+      <Description>エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2019</SortID>
+    </Field>
+    <Field Def="s32 enchantStartDmyId_5 = -1">
+      <DisplayName>エンチャント時根元ダミポリID＿５</DisplayName>
+      <Description>エンチャント時の根元に発生させるダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2020</SortID>
+    </Field>
+    <Field Def="s32 enchantEndDmyId_5 = -1">
+      <DisplayName>エンチャント時剣先ダミポリID＿５</DisplayName>
+      <Description>エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2021</SortID>
+    </Field>
+    <Field Def="s32 enchantStartDmyId_6 = -1">
+      <DisplayName>エンチャント時根元ダミポリID＿６</DisplayName>
+      <Description>エンチャント時の根元に発生させるダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2022</SortID>
+    </Field>
+    <Field Def="s32 enchantEndDmyId_6 = -1">
+      <DisplayName>エンチャント時剣先ダミポリID＿６</DisplayName>
+      <Description>エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2023</SortID>
+    </Field>
+    <Field Def="s32 enchantStartDmyId_7 = -1">
+      <DisplayName>エンチャント時根元ダミポリID＿７</DisplayName>
+      <Description>エンチャント時の根元に発生させるダミポリID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2024</SortID>
+    </Field>
+    <Field Def="s32 enchantEndDmyId_7 = -1">
+      <DisplayName>エンチャント時剣先ダミポリID＿７</DisplayName>
+      <Description>エンチャント時の剣先に発生させるダミポリID。-1指定で自動的に連番になってるところまで出す。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>2025</SortID>
+    </Field>
+    <Field Def="u8 SfxIdOffsetType">
+      <DisplayName>SfxIDオフセットタイプ</DisplayName>
+      <Enum>SP_EFFECT_VFX_SFX_ID_OFFSET_TYPE</Enum>
+      <Description>SfxIDオフセットタイプ</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>100</Maximum>
+      <SortID>799</SortID>
+    </Field>
+    <Field Def="u8 phantomParamOverwriteType">
+      <DisplayName>ファントムパラメータ強制指定</DisplayName>
+      <Enum>SP_EFFECT_OVERWRITE_PHANTOM_PARAM_TYPE</Enum>
+      <Description>ファントムパラメータの強制上書きタイプ</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>270</SortID>
+    </Field>
+    <Field Def="u8 camouflageMinAlpha">
+      <DisplayName>姿隠し時最小α値[%]</DisplayName>
+      <Description>姿隠し時最小α値[%]</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>760</SortID>
+    </Field>
+    <Field Def="u8 staminaFeExpressionType">
+      <DisplayName>体幹回復速度減少演出</DisplayName>
+      <Enum>SP_EFFECT_FE_EXPRESSION_TYPE</Enum>
+      <Description>指定された演出を体幹ゲージ上で表示します</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <SortID>8020</SortID>
+    </Field>
+    <Field Def="s32 phantomParamOverwriteId">
+      <DisplayName>ファントムパラメータ上書きID</DisplayName>
+      <Description>ファントムパラメータの強制Id</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>280</SortID>
+    </Field>
+    <Field Def="f32 emissiveIntensity = -1">
+      <DisplayName>マテリアルのエミッシブ値</DisplayName>
+      <Description>マテリアルのEmissiveIntensityを書き換える。-1は何もしない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="f32 emissiveFadeTime">
+      <DisplayName>マテリアルエミッシブ値のフェード時間</DisplayName>
+      <Description>マテリアルエミッシブ値のフェード時間。この時間かけて徐々に目標値へ行く</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="s16 footDecalMaterialOffsetOverwriteId = -1">
+      <DisplayName>フットデカール材質オフセット強制上書きID </DisplayName>
+      <Description>フットデカールの床材質IDオフセットを強制的に書き換える（-1未使用）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="dummy8 pad4[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Increment>1</Increment>
+      <SortID>8022</SortID>
+    </Field>
+    <Field Def="f32 cinderIntensityScale = -1">
+      <DisplayName>CinderIntensityScale値</DisplayName>
+      <Description>マテリアルのCinderIntensityScaleを書き換える。-1は何もしない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>5900</SortID>
+    </Field>
+    <Field Def="u8 ninsatuVisible">
+      <DisplayName>表示するFE</DisplayName>
+      <Enum>SP_EFFECT_VFX_FE_DISPLAY_TYPE</Enum>
+      <Description>表示するFE。旧「忍殺FEの表示」。汎用的に扱うため名称を変更しました。</Description>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="dummy8 pad5[1]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>8023</SortID>
+    </Field>
+    <Field Def="s16 ninsatuDmyId = -1">
+      <DisplayName>FE表示先のダミポリID</DisplayName>
+      <Description>FE表示先のダミポリID(-1：ルート)。旧「忍殺FEのダミポリID」。汎用的に扱うため名称を変更しました。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>8010</SortID>
+    </Field>
+    <Field Def="s16 footSfxMaterialOffsetOverwriteId = -1">
+      <DisplayName>フットSFX材質オフセット強制上書きID</DisplayName>
+      <Description>フットSFX、材質考慮SFXの床材質IDを強制的に書き換える（-1：未使用）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6700</SortID>
+    </Field>
+    <Field Def="s16 footSeMaterialOffsetOverwriteId = -1">
+      <DisplayName>フットSE材質オフセット強制上書きID</DisplayName>
+      <Description>フットSEの床材質IDを強制的に書き換える（-1：未使用）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>6800</SortID>
+    </Field>
+    <Field Def="s32 materialParamId = -1">
+      <DisplayName>マテリアルパラメータID</DisplayName>
+      <Description>マテリアルパラメータID。-1は何もしない</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="f32 materialParamInitValue">
+      <DisplayName>マテリアルパラメータの初期値</DisplayName>
+      <Description>マテリアルパラメータのフェード開始時の値。対象はマテリアルパラメータIDで指定する。マテリアルパラメータIDが -1 なら何もしない</Description>
+      <Minimum>0</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>6300</SortID>
+    </Field>
+    <Field Def="f32 materialParamTargetValue">
+      <DisplayName>マテリアルパラメータの目標値</DisplayName>
+      <Description>マテリアルパラメータのフェード終了時の値。対象はマテリアルパラメータIDで指定する。マテリアルパラメータIDが -1 なら何もしない</Description>
+      <Minimum>0</Minimum>
+      <Maximum>16</Maximum>
+      <SortID>6400</SortID>
+    </Field>
+    <Field Def="f32 materialParamFadeTime">
+      <DisplayName>マテリアルパラメータ値のフェード時間</DisplayName>
+      <Description>マテリアルパラメータ値のフェード時間。この時間かけて徐々に目標値へ行く。マテリアルパラメータIDが -1 なら何もしない</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>6500</SortID>
+    </Field>
+    <Field Def="u16 fadeOutRateCamouflage = 67">
+      <DisplayName>姿隠しフェードアウト時の秒間のα値変化量[%]</DisplayName>
+      <Description>姿隠し特殊効果がかかった時に行われるフェードアウト処理で、秒間に変化させるα値。</Description>
+      <Maximum>9999</Maximum>
+      <SortID>2210</SortID>
+    </Field>
+    <Field Def="u16 fadeInRateCamouflage = 67">
+      <DisplayName>姿隠しフェードイン時の秒間のα値変化量[%]</DisplayName>
+      <Description>姿隠し特殊効果が消えた時に行われるフェードイン処理で、秒間に変化させるα値。</Description>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2220</SortID>
+    </Field>
+    <Field Def="dummy8 pad6[8]">
+      <DisplayName>CinderIntensityScale値</DisplayName>
+      <Description>パディング</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>255</Maximum>
+      <Increment>1</Increment>
+      <SortID>8024</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

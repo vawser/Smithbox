@@ -1,0 +1,8 @@
+<class name='hclVertexCopySetupObject' version='1' signature='0xe2cd9a15' size='48' parent='hclOperatorSetupObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='inputBufferSetupObject' offset='24' ctype='hclBufferSetupObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputBufferSetupObject' offset='32' ctype='hclBufferSetupObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='copyNormals' offset='40' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

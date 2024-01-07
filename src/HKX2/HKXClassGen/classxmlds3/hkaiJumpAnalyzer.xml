@@ -1,0 +1,8 @@
+<class name='hkaiJumpAnalyzer' version='1' signature='0xa4189905' size='48' parent='hkaiTraversalAnalyzer'>
+  <members>
+    <member name='maxHorizontalDistance' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxUpHeight' offset='36' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxDownHeight' offset='40' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='verticalApex' offset='44' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

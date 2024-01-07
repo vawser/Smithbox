@@ -1,0 +1,21 @@
+<class name='hkxMaterialShader' version='1' signature='0x4fd20af0' size='72' parent='hkReferencedObject'>
+  <enums>
+    <enum name='ShaderType' flags='00000000'>
+      <enumitem name='EFFECT_TYPE_INVALID' value='0'/>
+      <enumitem name='EFFECT_TYPE_UNKNOWN' value='1'/>
+      <enumitem name='EFFECT_TYPE_HLSL_INLINE' value='2'/>
+      <enumitem name='EFFECT_TYPE_CG_INLINE' value='3'/>
+      <enumitem name='EFFECT_TYPE_HLSL_FILENAME' value='4'/>
+      <enumitem name='EFFECT_TYPE_CG_FILENAME' value='5'/>
+      <enumitem name='EFFECT_TYPE_MAX_ID' value='6'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='24' etype='ShaderType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexEntryName' offset='32' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='geomEntryName' offset='40' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pixelEntryName' offset='48' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='data' offset='56' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

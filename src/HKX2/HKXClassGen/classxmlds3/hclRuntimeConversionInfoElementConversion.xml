@@ -1,0 +1,7 @@
+<class name='hclRuntimeConversionInfoElementConversion' version='1' signature='0xa19a443a' size='3'>
+  <members>
+    <member name='index' offset='0' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='offset' offset='1' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='conversion' offset='2' etype='VectorConversion' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

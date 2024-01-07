@@ -1,0 +1,15 @@
+<class name='hkLinkAttribute' version='1' signature='0x62ca5ac0' size='1'>
+  <enums>
+    <enum name='Link' flags='00000000'>
+      <enumitem name='NONE' value='0'/>
+      <enumitem name='DIRECT_LINK' value='1'/>
+      <enumitem name='CHILD' value='2'/>
+      <enumitem name='MESH' value='3'/>
+      <enumitem name='PARENT_NAME' value='4'/>
+      <enumitem name='IMGSELECT' value='5'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='0' etype='Link' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

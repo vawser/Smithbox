@@ -1,0 +1,7 @@
+<class name='hknpTyremarksInfo' version='1' signature='0xf484d193' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='minTyremarkEnergy' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxTyremarkEnergy' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tyremarksWheel' offset='24' ctype='hknpTyremarksWheel' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

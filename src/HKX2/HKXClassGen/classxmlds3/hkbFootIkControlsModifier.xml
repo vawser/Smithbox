@@ -1,0 +1,6 @@
+<class name='hkbFootIkControlsModifier' version='1' signature='0x253054a2' size='288' parent='hkbModifier'>
+  <members>
+    <member name='controlData' offset='96' ctype='hkbFootIkControlData' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='legs' offset='272' ctype='hkbFootIkControlsModifierLeg' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,13 @@
+<class name='hkxNode' version='1' signature='0x1aea49b0' size='128' parent='hkxAttributeHolder'>
+  <members>
+    <member name='name' offset='32' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='object' offset='40' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='keyFrames' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_MATRIX4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='children' offset='64' ctype='hkxNode' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='annotations' offset='80' ctype='hkxNodeAnnotationData' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='linearKeyFrameHints' offset='96' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userProperties' offset='112' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='selected' offset='120' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bone' offset='121' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

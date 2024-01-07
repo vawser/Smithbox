@@ -1,0 +1,16 @@
+<class name='hkxAttribute' version='1' signature='0x7375cae3' size='16'>
+  <enums>
+    <enum name='Hint' flags='00000000'>
+      <enumitem name='HINT_NONE' value='0'/>
+      <enumitem name='HINT_IGNORE' value='1'/>
+      <enumitem name='HINT_TRANSFORM' value='2'/>
+      <enumitem name='HINT_SCALE' value='4'/>
+      <enumitem name='HINT_TRANSFORM_AND_SCALE' value='6'/>
+      <enumitem name='HINT_FLIP' value='8'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='value' offset='8' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

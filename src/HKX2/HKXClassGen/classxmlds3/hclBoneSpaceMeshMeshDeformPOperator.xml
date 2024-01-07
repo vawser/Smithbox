@@ -1,0 +1,6 @@
+<class name='hclBoneSpaceMeshMeshDeformPOperator' version='1' signature='0xc9311cbd' size='184' parent='hclBoneSpaceMeshMeshDeformOperator'>
+  <members>
+    <member name='localPs' offset='152' ctype='hclBoneSpaceDeformerLocalBlockP' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localUnpackedPs' offset='168' ctype='hclBoneSpaceDeformerLocalBlockUnpackedP' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

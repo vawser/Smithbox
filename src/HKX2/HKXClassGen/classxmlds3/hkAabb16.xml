@@ -1,0 +1,8 @@
+<class name='hkAabb16' version='1' signature='0x59d7896d' size='16'>
+  <members>
+    <member name='min' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+    <member name='key' offset='6' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='max' offset='8' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+    <member name='key1' offset='14' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

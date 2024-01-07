@@ -1,0 +1,12 @@
+<class name='hkcdSimdTreeNode' version='1' signature='0xc4e406c7' size='112' parent='hkcdFourAabb'>
+  <enums>
+    <enum name='Flags' flags='00000000'>
+      <enumitem name='HAS_INTERNALS' value='1'/>
+      <enumitem name='HAS_LEAVES' value='2'/>
+      <enumitem name='HAS_NULLS' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='data' offset='96' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

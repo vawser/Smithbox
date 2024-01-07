@@ -1,0 +1,6 @@
+<class name='hclCompressibleLinkConstraintSetMx' version='1' signature='0x42b303d5' size='64' parent='hclConstraintSet'>
+  <members>
+    <member name='batches' offset='32' ctype='hclCompressibleLinkConstraintSetMxBatch' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='singles' offset='48' ctype='hclCompressibleLinkConstraintSetMxSingle' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name='hkaAngularReferenceFrame' version='1' signature='0xbcd33474' size='112' parent='hkaParameterizedReferenceFrame'>
+  <members>
+    <member name='topAngle' offset='96' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='radius' offset='100' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

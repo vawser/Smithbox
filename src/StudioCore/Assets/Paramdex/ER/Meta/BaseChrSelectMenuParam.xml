@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <chrInitParam AltName="Chr Init Param ID - Class" Wiki="Specify the initial parameter ID for each architype for which face para is set." Refs="CharaInitParam"/>
+    <originChrInitParam AltName="Chr Init Param ID - Origin" Wiki="Specify the initial parameter ID for each feature archetype" Refs="CharaInitParam"/>
+    <imageId AltName="Image ID" Wiki="Images lined up on the base character selection screen. Specify the number of frames of resources embedded in Fla" />
+    <textId AltName="Text ID" Wiki="Occupation name menu text ID" FmgRef="Modern_MenuText" />
+    <reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

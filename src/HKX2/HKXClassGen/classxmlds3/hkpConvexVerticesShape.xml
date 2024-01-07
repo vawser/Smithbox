@@ -1,0 +1,11 @@
+<class name='hkpConvexVerticesShape' version='1' signature='0xc21c8b5a' size='128' parent='hkpConvexShape'>
+  <members>
+    <member name='aabbHalfExtents' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aabbCenter' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotatedVertices' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_MATRIX3' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numVertices' offset='96' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useSpuBuffer' offset='100' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='planeEquations' offset='104' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='connectivity' offset='120' ctype='hkpConvexVerticesConnectivity' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,6 @@
+1000 Step avoidance (right front) left foot ⇒ right foot -- ステップ回避(右前) 左足⇒右足
+1001 Step avoidance (left front) left foot ⇒ right foot -- ステップ回避(左前) 左足⇒右足
+1002 Step avoidance (left after) left foot ⇒ right foot -- ステップ回避(左後) 左足⇒右足
+1003 Step avoidance (right front) right foot ⇒ left foot -- ステップ回避(右前) 右足⇒左足
+1004 Step avoidance (right after) right foot ⇒ left foot -- ステップ回避(右後) 右足⇒左足
+1005 Step avoidance (left after) right foot ⇒ left foot -- ステップ回避(左後) 右足⇒左足

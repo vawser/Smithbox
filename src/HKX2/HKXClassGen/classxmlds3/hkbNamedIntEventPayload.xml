@@ -1,0 +1,5 @@
+<class name='hkbNamedIntEventPayload' version='1' signature='0xa5260eaa' size='32' parent='hkbNamedEventPayload'>
+  <members>
+    <member name='data' offset='24' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

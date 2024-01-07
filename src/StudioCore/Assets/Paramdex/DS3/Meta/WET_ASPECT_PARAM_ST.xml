@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <baseColorR AltName="Base Color: R" Wiki="Base color color R." />
+    <baseColorG AltName="Base Color: G" Wiki="Base color color G." />
+    <baseColorB AltName="Base Color: B" Wiki="Base color color B." />
+    <reserve_0 AltName=""/>
+    <baseColorA AltName="Base Color: Alpha" Wiki="Base color override rate." />
+    <metallic AltName="Metallic: R" Wiki="It's metallic." />
+    <reserve_1 AltName="Metallic: G"/>
+    <reserve_2 AltName="Metallic: B"/>
+    <reserve_3 AltName=""/>
+    <metallicRate AltName="Metallic Override Rate" Wiki="Metallic override rate." />
+    <shininessRate AltName="Shininess Override Rate" Wiki="Shininess override rate." />
+    <shininess AltName="Shininess" Wiki="Shininess." />
+    <reserve_4 AltName=""/>
+  </Field>
+  <Self Wiki="Character Wetness Color"/>
+</PARAMMETA>

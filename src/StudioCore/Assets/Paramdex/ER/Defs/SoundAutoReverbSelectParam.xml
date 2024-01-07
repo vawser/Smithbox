@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>SOUND_AUTO_REVERB_SELECT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 reverbType">
+      <DisplayName>リバーブタイプ</DisplayName>
+      <Description>リバーブタイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>16</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 AreaNo = -1">
+      <DisplayName>エリアNo</DisplayName>
+      <Description>条件：エリアNo(-1:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s8 IndoorOutdoor = -1">
+      <DisplayName>屋内外</DisplayName>
+      <Description>条件：屋内外指定(0:屋外,1:屋内)(-1:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s8 useDistNoA = -1">
+      <DisplayName>使用評価距離番号A</DisplayName>
+      <Description>条件：使用する評価距離の番号A(-1:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>8</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s8 useDistNoB = -1">
+      <DisplayName>使用評価距離番号B</DisplayName>
+      <Description>条件：使用する評価距離の番号B(-1:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>8</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 pad0[1]">
+      <Description>pad0</Description>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="f32 DistMinA = -1">
+      <DisplayName>距離MinA[m]</DisplayName>
+      <Description>条件：評価距離最小指定A用(0より小さい:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>512</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="f32 DistMaxA = -1">
+      <DisplayName>距離MaxA[m]</DisplayName>
+      <Description>条件：評価距離最大指定A用(0より小さい:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>512</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="f32 DistMinB = -1">
+      <DisplayName>距離MinB[m]</DisplayName>
+      <Description>条件：評価距離最小指定A用(0より小さい:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>512</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="f32 DistMaxB = -1">
+      <DisplayName>距離MaxB[m]</DisplayName>
+      <Description>条件：評価距離最大指定A用(0より小さい:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>512</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="s32 NoHitNumMin = -1">
+      <DisplayName>衝突点NoHit数最小数</DisplayName>
+      <Description>条件：NoHit数(-1:無効)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>4096</Maximum>
+      <SortID>300</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

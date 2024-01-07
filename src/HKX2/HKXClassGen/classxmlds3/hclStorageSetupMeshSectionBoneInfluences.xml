@@ -1,0 +1,6 @@
+<class name='hclStorageSetupMeshSectionBoneInfluences' version='1' signature='0xdcbced79' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='boneIndices' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weights' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

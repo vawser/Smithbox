@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>NPC_INFO_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 deathstone_spawn_delay" />
+    <Field Def="s32 Unk00" />
+    <Field Def="s32 npc_death_flag" />
+    <Field Def="s32 revival_cost" />
+    <Field Def="s32 Unk01" />
+    <Field Def="s32 Unk02" />
+    <Field Def="s32 souls_for_gift_goods_vendor" />
+    <Field Def="s32 souls_for_gift_blacksmith" />
+    <Field Def="s32 int_requirement_for_gift" />
+    <Field Def="s32 fth_requirement_for_gift" />
+    <Field Def="s32 shop_lineup_souls_for_update_1" />
+    <Field Def="s32 shop_lineup_souls_for_update_2" />
+  </Fields>
+</PARAMDEF>

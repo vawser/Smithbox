@@ -1,0 +1,7 @@
+<class name='hknpVehicleSuspensionSuspensionWheelParameters' version='1' signature='0x358bfe9c' size='48'>
+  <members>
+    <member name='hardpointChassisSpace' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='directionChassisSpace' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='length' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

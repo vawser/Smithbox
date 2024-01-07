@@ -1,0 +1,15 @@
+<class name='hkGizmoAttribute' version='1' signature='0x23aadfb6' size='24'>
+  <enums>
+    <enum name='GizmoType' flags='00000000'>
+      <enumitem name='POINT' value='0'/>
+      <enumitem name='SPHERE' value='1'/>
+      <enumitem name='PLANE' value='2'/>
+      <enumitem name='ARROW' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='visible' offset='0' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='label' offset='8' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='16' etype='GizmoType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

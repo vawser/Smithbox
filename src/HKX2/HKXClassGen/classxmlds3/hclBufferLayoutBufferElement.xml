@@ -1,0 +1,8 @@
+<class name='hclBufferLayoutBufferElement' version='1' signature='0x3e0b1ef4' size='4'>
+  <members>
+    <member name='vectorConversion' offset='0' etype='VectorConversion' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vectorSize' offset='1' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='slotId' offset='2' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='slotStart' offset='3' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

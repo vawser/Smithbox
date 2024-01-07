@@ -1,0 +1,19 @@
+<class name='hkpPhysicsSystem' version='1' signature='0xb3cc6e64' size='104' parent='hkReferencedObject'>
+  <enums>
+    <enum name='CloneConstraintMode' flags='00000000'>
+      <enumitem name='CLONE_SHALLOW_IF_NOT_CONSTRAINED_TO_WORLD' value='0'/>
+      <enumitem name='CLONE_DEEP_WITH_MOTORS' value='1'/>
+      <enumitem name='CLONE_FORCE_SHALLOW' value='2'/>
+      <enumitem name='CLONE_DEFAULT' value='0'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='rigidBodies' offset='16' ctype='hkpRigidBody' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraints' offset='32' ctype='hkpConstraintInstance' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='actions' offset='48' ctype='hkpAction' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='phantoms' offset='64' ctype='hkpPhantom' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='80' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData' offset='88' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='active' offset='96' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

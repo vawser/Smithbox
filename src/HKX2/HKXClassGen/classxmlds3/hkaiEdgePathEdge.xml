@@ -1,0 +1,12 @@
+<class name='hkaiEdgePathEdge' version='1' signature='0x9f925aeb' size='144'>
+  <members>
+    <member name='left' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='right' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='up' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='followingTransform' offset='48' vtype='TYPE_MATRIX4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edge' offset='112' ctype='hkaiPersistentEdgeKey' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='leftFollowingCorner' offset='124' ctype='hkaiEdgePathFollowingCornerInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rightFollowingCorner' offset='126' ctype='hkaiEdgePathFollowingCornerInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='128' etype='EdgeFlagBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>AI_ATTACK_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 attackTableId">
+      <DisplayName>参照ID</DisplayName>
+      <Description>NPC思考パラメータで指定するID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 attackId">
+      <DisplayName>攻撃ID</DisplayName>
+      <Description>攻撃の番号</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 successDistance">
+      <DisplayName>成功判定距離</DisplayName>
+      <Description>Common_Attack系のサブゴールの引数用</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="f32 turnTimeBeforeAttack">
+      <DisplayName>攻撃前旋回時間</DisplayName>
+      <Description>Common_Attack系のサブゴールの引数用</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="s16 frontAngleRange">
+      <DisplayName>正面判定角度</DisplayName>
+      <Description>Common_Attack系のサブゴールの引数用</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="s16 upAngleThreshold">
+      <DisplayName>上方実行閾値</DisplayName>
+      <Description>Common_Attack系のサブゴールの引数用</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="s16 downAngleThershold">
+      <DisplayName>下方実行閾値</DisplayName>
+      <Description>Common_Attack系のサブゴールの引数用</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="u8 isFirstAttack">
+      <DisplayName>始動技か</DisplayName>
+      <Enum>AI_ATTACK_BOOL</Enum>
+      <Description>コンボの2段目以降の攻撃は×</Description>
+      <Maximum>1</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="u8 doesSelectOnOutRange">
+      <DisplayName>適正距離外で選択するか</DisplayName>
+      <Enum>AI_ATTACK_BOOL</Enum>
+      <Description>適正距離外の時に選択対象にするかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="f32 minOptimalDistance">
+      <DisplayName>最小適正距離</DisplayName>
+      <Description>攻撃の適正距離の最小値</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 maxOptimalDistance">
+      <DisplayName>最大適正距離</DisplayName>
+      <Description>攻撃の適性距離の最大値</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s16 baseDirectionForOptimalAngle1">
+      <DisplayName>適正角度基準方向1</DisplayName>
+      <Description>攻撃の適正角度の基準となる方向（XZ平面）</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s16 optimalAttackAngleRange1">
+      <DisplayName>適正角度基準範囲1</DisplayName>
+      <Description>攻撃の適性角度の範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s16 baseDirectionForOptimalAngle2">
+      <DisplayName>適正角度基準方向2</DisplayName>
+      <Description>攻撃の適性確度の基準となる方向（XZ平面）</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s16 optimalAttackAngleRange2">
+      <DisplayName>適正角度基準範囲2</DisplayName>
+      <Description>攻撃の適性角度の範囲</Description>
+      <Minimum>0</Minimum>
+      <Maximum>360</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 intervalForExec = 1">
+      <DisplayName>実行可能インターバル</DisplayName>
+      <Description>一度攻撃を行ってから再度使うために必要な時間</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 selectionTendency = -1">
+      <DisplayName>選択レート</DisplayName>
+      <Description>選択されやすさを倍率で指定する</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 shortRangeTendency = -1">
+      <DisplayName>近距離選択レート</DisplayName>
+      <Description>近距離での選択レート</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 middleRangeTendency = -1">
+      <DisplayName>中距離選択レート</DisplayName>
+      <Description>中距離での選択レート</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 farRangeTendency = -1">
+      <DisplayName>遠距離選択レート</DisplayName>
+      <Description>遠距離での選択レート</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 outRangeTendency = -1">
+      <DisplayName>範囲外レート</DisplayName>
+      <Description>範囲外での選択レート</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId1 = -1">
+      <DisplayName>派生攻撃1</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId2 = -1">
+      <DisplayName>派生攻撃2</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId3 = -1">
+      <DisplayName>派生攻撃3</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId4 = -1">
+      <DisplayName>派生攻撃4</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId5 = -1">
+      <DisplayName>派生攻撃5</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>104</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId6 = -1">
+      <DisplayName>派生攻撃6</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>105</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId7 = -1">
+      <DisplayName>派生攻撃7</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>106</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId8 = -1">
+      <DisplayName>派生攻撃8</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>107</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId9 = -1">
+      <DisplayName>派生攻撃9</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>108</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId10 = -1">
+      <DisplayName>派生攻撃10</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>109</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId11 = -1">
+      <DisplayName>派生攻撃11</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId12 = -1">
+      <DisplayName>派生攻撃12</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>111</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId13 = -1">
+      <DisplayName>派生攻撃13</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>112</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId14 = -1">
+      <DisplayName>派生攻撃14</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>113</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId15 = -1">
+      <DisplayName>派生攻撃15</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>114</SortID>
+    </Field>
+    <Field Def="s32 deriveAttackId16 = -1">
+      <DisplayName>派生攻撃16</DisplayName>
+      <Description>派生可能な攻撃の番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999999</Maximum>
+      <SortID>115</SortID>
+    </Field>
+    <Field Def="f32 goalLifeMin">
+      <DisplayName>ゴールの最小寿命</DisplayName>
+      <Description>ゴールの最小寿命</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="f32 goalLifeMax">
+      <DisplayName>ゴールの最大寿命</DisplayName>
+      <Description>ゴールの最大寿命</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>203</SortID>
+    </Field>
+    <Field Def="u8 doesSelectOnInnerRange">
+      <DisplayName>適正距離内で選択するか</DisplayName>
+      <Enum>AI_ATTACK_BOOL</Enum>
+      <Description>適正距離内の時に選択対象にするかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 enableAttackOnBattleStart = 1">
+      <DisplayName>初撃として使用するか</DisplayName>
+      <Enum>AI_ATTACK_BOOL</Enum>
+      <Description>初撃として使用するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u8 doesSelectOnTargetDown = 1">
+      <DisplayName>ターゲットダウン時選択するか</DisplayName>
+      <Enum>AI_ATTACK_BOOL</Enum>
+      <Description>ターゲットダウン時選択するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[1]">
+      <DisplayName>pad</DisplayName>
+      <SortID>204</SortID>
+    </Field>
+    <Field Def="f32 minArriveDistance">
+      <DisplayName>最小到達判定距離</DisplayName>
+      <Description>最小到達判定距離</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="f32 maxArriveDistance">
+      <DisplayName>最大到達判定距離</DisplayName>
+      <Description>最大到達判定距離</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 comboExecDistance = 4">
+      <DisplayName>連続攻撃実行距離</DisplayName>
+      <Description>二段目以降の攻撃の実行判定に使用する距離</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="f32 comboExecRange = 180">
+      <DisplayName>連続攻撃実行角度</DisplayName>
+      <Description>二段目以降の攻撃の実行判定に使用する距離</Description>
+      <Minimum>-999999</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>33</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

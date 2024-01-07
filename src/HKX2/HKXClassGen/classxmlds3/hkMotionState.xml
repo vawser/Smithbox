@@ -1,0 +1,14 @@
+<class name='hkMotionState' version='1' signature='0x6c4bed59' size='176'>
+  <members>
+    <member name='transform' offset='0' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sweptTransform' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='5' flags='FLAGS_NONE' default='0'/>
+    <member name='deltaAngle' offset='144' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='objectRadius' offset='160' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='linearDamping' offset='164' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='angularDamping' offset='166' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='timeFactor' offset='168' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxLinearVelocity' offset='170' ctype='hkUFloat8' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAngularVelocity' offset='171' ctype='hkUFloat8' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationClass' offset='172' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

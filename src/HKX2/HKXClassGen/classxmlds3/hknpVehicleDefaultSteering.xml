@@ -1,0 +1,7 @@
+<class name='hknpVehicleDefaultSteering' version='1' signature='0xf3ddcde' size='40' parent='hknpVehicleSteering'>
+  <members>
+    <member name='maxSteeringAngle' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxSpeedFullSteeringAngle' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='doesWheelSteer' offset='24' vtype='TYPE_ARRAY' vsubtype='TYPE_BOOL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>NPC_AI_ACTION_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 moveDir"></Field>
+    <Field Def="u8 key1"></Field>
+    <Field Def="u8 key2"></Field>
+    <Field Def="u8 key3"></Field>
+    <Field Def="u8 bMoveDirHold"></Field>
+    <Field Def="u8 bKeyHold1"></Field>
+    <Field Def="u8 bKeyHold2"></Field>
+    <Field Def="u8 bKeyHold3"></Field>
+    <Field Def="s32 gestureId"></Field>
+    <Field Def="u8 bLifeEndSuccess"></Field>
+    <Field Def="dummy8 pad1[7]"></Field>
+  </Fields>
+</PARAMDEF>

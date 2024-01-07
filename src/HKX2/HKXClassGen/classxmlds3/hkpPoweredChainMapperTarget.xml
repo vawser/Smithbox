@@ -1,0 +1,6 @@
+<class name='hkpPoweredChainMapperTarget' version='1' signature='0xf651c74d' size='16'>
+  <members>
+    <member name='chain' offset='0' ctype='hkpPoweredChainData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='infoIndex' offset='8' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

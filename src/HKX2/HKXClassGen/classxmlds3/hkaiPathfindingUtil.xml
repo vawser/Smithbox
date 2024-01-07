@@ -1,0 +1,10 @@
+<class name='hkaiPathfindingUtil' version='1' signature='0x6eba2ace' size='1'>
+  <enums>
+    <enum name='NearestFeatureType' flags='00000000'>
+      <enumitem name='CALLBACK_EDGE' value='0'/>
+      <enumitem name='CALLBACK_FACE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

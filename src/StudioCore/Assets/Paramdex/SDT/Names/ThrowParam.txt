@@ -1,0 +1,2414 @@
+0 Don&#39;t erase it! -- 消すな！
+11010000 Breaking start (far) PC → Ochimusha -- 崩し始動（遠）　PC→落武者
+11011000 Breaking start (far) PC → Ochimusha (Varier) -- 崩し始動（遠）　PC→落武者（バリエ）
+11012000 Breaking start (far) PC → Ochimusha (tutorial) -- 崩し始動（遠）　PC→落武者（チュートリアル）
+11020000 Breaking start PC → General Samurai -- 崩し始動　PC→侍大将
+11021000 Breaking start PC → Samurai General_Large Spear -- 崩し始動　PC→侍大将_大槍
+11030000 Breaking start PC → Centipede (small) -- 崩し始動　PC→ムカデ（小）
+11040000 Breaking start PC → Centipede (Large) -- 崩し始動　PC→ムカデ（大）
+11050000 Breaking start (far) PC → Spear monk soldier -- 崩し始動（遠）　PC→槍僧兵
+11060000 Breaking start (far) PC → Rotating spearman -- 崩し始動（遠）　PC→回転槍術師
+11070000 Breaking start PC → Shura Samurai -- 崩し始動　PC→修羅侍
+11080000 Breaking start PC → Seven-sided warrior -- 崩し始動　PC→七面武者
+11100000 Breaking start PC → gecko -- 崩し始動　PC→ヤモリ
+11110000 Breaking start PC → Handmaiden aunt -- 崩し始動　PC→侍女おば
+11111000 Breaking start PC → Handmaiden Aunt (Varier) -- 崩し始動　PC→侍女おば（バリエ）
+11120000 Breaking start PC → Watchman -- 崩し始動　PC→見張り番
+11130000 Breaking start PC → Nanban armor -- 崩し始動　PC→南蛮甲冑
+11140000 Breaking start PC → Earthen wall soldier -- 崩し始動　PC→土塀兵
+11150000 Breaking start (far) PC → dog -- 崩し始動（遠）　PC→イヌ
+11151000 Breaking start (far) PC → dog (Innsmouth) -- 崩し始動（遠）　PC→イヌ（インスマス）
+11180000 Breaking start PC → younger man -- 崩し始動　PC→下男
+11181000 Breaking start PC → younger man zombie -- 崩し始動　PC→下男ゾンビ
+11190000 Breaking start (far) PC → Valley enemy -- 崩し始動（遠）　PC→谷敵
+11191000 Breaking start PC → Valley enemy (female) -- 崩し始動　PC→谷敵(女)
+11200000 Breaking start PC → Sokushinbutsu (strong enemy, with bugs) -- 崩し始動　PC→即身仏(強敵・蟲有り)
+11210000 Breaking start PC → Sokushinbutsu (no small fish or bugs) -- 崩し始動　PC→即身仏(雑魚・蟲無し)
+11220000 Breaking start (far) PC → Temple miscellaneous fish -- 崩し始動（遠）　PC→寺雑魚
+11240000 Breaking start (far) PC → Shamo chicken -- 崩し始動（遠）　PC→軍鶏
+11250000 Breaking start (far) PC → small fish monkey -- 崩し始動（遠）　PC→雑魚猿
+11260000 Breaking start (far) PC → Chigo monkey -- 崩し始動（遠）　PC→稚児猿
+11300000 Breaking start (far) PC → Japanese style Innsmouth -- 崩し始動（遠）　PC→和風インスマス
+11310000 Breaking start (far) PC → Genpei warrior -- 崩し始動（遠）　PC→源平武者
+11350000 Breaking start PC → No neck -- 崩し始動　PC→首なし
+11360000 Breaking start (far) PC → Rappa -- 崩し始動（遠）　PC→らっぱ
+11361000 Breaking start (far) PC → Rappa (Tokugawa) -- 崩し始動（遠）　PC→らっぱ（徳川）
+11370000 Breaking start PC → Fire cow -- 崩し始動　PC→火牛
+11380000 Breaking start PC → Fire cow (Innsmouth) -- 崩し始動　PC→火牛（インスマス）
+11400000 Breaking start (far) PC → Swordsman -- 崩し始動（遠）　PC→剣客
+11450000 Breaking start (far) PC → Nightjars -- 崩し始動（遠）　PC→夜鷹衆
+11470000 Breaking start (far) PC → lonely people -- 崩し始動（遠）　PC→孤影衆
+11500000 Breaking start (far) PC → Villager Zombie -- 崩し始動（遠）　PC→村人ゾンビ
+11501000 Breaking start (far) PC → Villager zombie (female) -- 崩し始動（遠）　PC→村人ゾンビ（女）
+11520000 Breaking start (far) PC → Villager zombie (prisoner) -- 崩し始動（遠）　PC→村人ゾンビ（囚人）
+11550000 Breaking start (far) PC → bandit -- 崩し始動（遠）　PC→野盗
+11700000 Breaking start (far) PC → Samurai Tokugawa -- 崩し始動（遠）　PC→徳川侍
+15000000 Breaking start PC → Haunting monk -- 崩し始動　PC→破戒僧
+15020000 Breaking start PC → Akaoni -- 崩し始動　PC→赤鬼
+15021000 Breaking start PC → Giants Innsmouth -- 崩し始動　PC→巨人インスマス
+15060000 Breaking start PC → Chief of Ninja Army -- 崩し始動　PC→忍軍の長
+15080000 Breaking start PC → Cavalry warrior -- 崩し始動　PC→騎馬武者
+15090000 Breaking start PC → Butterfly -- 崩し始動　PC→お蝶
+15090500 Breaking start PC → Butterfly (HU) -- 崩し始動　PC→お蝶（HU）
+15100000 Breaking start PC → Yasha Ape -- 崩し始動　PC→夜叉猿
+15100500 Breaking start PC → Yasha Ape (HU) -- 崩し始動　PC→夜叉猿（HU）
+15300000 Breaking start PC → Okiryu -- 崩し始動　PC→翁竜
+15400000 Breaking start PC → Kensei -- 崩し始動　PC→剣聖
+15400500 Breaking start PC → Kensei (HU) -- 崩し始動　PC→剣聖（HU）
+15430000 Breaking start PC → Kensei (bed) -- 崩し始動　PC→剣聖（病床）
+17000000 Breaking start PC → Female player -- 崩し始動　PC→女奏者
+17020000 Breaking start PC → Buddhist master (demon) -- 崩し始動　PC→仏師(鬼)
+17100000 Breaking start PC → Rival -- 崩し始動　PC→ライバル
+17110000 Breaking start PC → Rival naked -- 崩し始動　PC→ライバル裸
+17400000 Breaking start PC → Daughter of Isei -- 崩し始動　PC→医聖の娘
+17410000 Breaking start PC → Fascinated samurai -- 崩し始動　PC→魅了された侍
+17420000 Breaking start (far) PC → Selling bandits -- 崩し始動（遠）　PC→物売り野盗
+17430000 Breaking start PC → Araji shop clerk -- 崩し始動　PC→荒れ寺ショップ店員
+17440000 Breaking start PC → Yayobioka Nun -- 崩し始動　PC→八百比丘尼
+17450000 Breaking start PC → Suzu Auntie -- 崩し始動　PC→鈴婆
+17460000 Breaking start (far) PC → Suzu&#39;s son -- 崩し始動（遠）　PC→鈴婆の息子
+17470000 Breaking start PC → kidnapped younger man -- 崩し始動　PC→さらわれ下男
+17480000 Breaking start (far) PC → Sick village priest -- 崩し始動（遠）　PC→病み村神主
+17490000 Breaking start (far) PC → Immortal experiment doctor -- 崩し始動（遠）　PC→不死実験の医僧
+17500000 Breaking start (far) PC → decent villager -- 崩し始動（遠）　PC→まともな村人
+17510000 Breaking start (far) PC → White -- 崩し始動（遠）　PC→白らっぱ
+17520000 Breaking start PC → Submerged maid aunt sister -- 崩し始動　PC→水没侍女おば姉妹
+17530000 Breaking start PC → Shura maid aunt -- 崩し始動　PC→修羅侍女おば
+17540000 Breaking start PC → Shop clerk (valley) -- 崩し始動　PC→ショップ店員(渓谷)
+17550000 Breaking start PC → Shop clerk (temple) -- 崩し始動　PC→ショップ店員(寺)
+17560000 Breaking start PC → Shop clerk (dungeon) -- 崩し始動　PC→ショップ店員(地下牢)
+17580000 Breaking start PC → Shop clerk (Honjo) -- 崩し始動　PC→ショップ店員(本城)
+17590000 Breaking start PC → Shop clerk (sick village) -- 崩し始動　PC→ショップ店員(病み村)
+17600000 Breaking start PC → Shop clerk (castle) -- 崩し始動　PC→ショップ店員(城下)
+11010001 Breaking body (far) PC → Ochimusha -- 崩し本体（遠）　PC→落武者
+11011001 Breaking body (far) PC → Ochimusha (Varier) -- 崩し本体（遠）　PC→落武者（バリエ）
+11012001 Breaking body (far) PC → Ochimusha (tutorial) -- 崩し本体（遠）　PC→落武者（チュートリアル）
+11020001 Breaking body PC → General Samurai -- 崩し本体　PC→侍大将
+11021001 Breaking body PC → Samurai General_Large Spear -- 崩し本体　PC→侍大将_大槍
+11030001 Breaking body PC → Centipede (small) -- 崩し本体　PC→ムカデ（小）
+11040001 Breaking body PC → Centipede (Large) -- 崩し本体　PC→ムカデ（大）
+11050001 Breaking body (far) PC → Spear monk soldier -- 崩し本体（遠）　PC→槍僧兵
+11060001 Breaking body PC → Rotating spearman -- 崩し本体　PC→回転槍術師
+11070001 Breaking body PC → Shura Samurai -- 崩し本体　PC→修羅侍
+11080001 Breaking body PC → Seven-sided warrior -- 崩し本体　PC→七面武者
+11100001 Breaking body PC → gecko -- 崩し本体　PC→ヤモリ
+11110001 Breaking body PC → Handmaiden Aunt -- 崩し本体　PC→侍女おば
+11111001 Breaking body PC → Handmaiden Aunt (Varier) -- 崩し本体　PC→侍女おば（バリエ）
+11120001 Breaking body PC → Lookout number -- 崩し本体　PC→見張り番
+11130001 Breaking body PC → Nanban armor -- 崩し本体　PC→南蛮甲冑
+11140001 Breaking body PC → Earthen wall soldier -- 崩し本体　PC→土塀兵
+11150001 Breaking body (far) PC → dog -- 崩し本体（遠）　PC→イヌ
+11151001 Breaking body (far) PC → dog (Innsmouth) -- 崩し本体（遠）　PC→イヌ（インスマス）
+11180001 Breaking body PC → younger man -- 崩し本体　PC→下男
+11181001 Breaking body PC → Lower man zombie -- 崩し本体　PC→下男ゾンビ
+11190001 Breaking body (far) PC → Valley enemy -- 崩し本体（遠）　PC→谷敵
+11191001 Breaking body PC → Valley enemy (female) -- 崩し本体　PC→谷敵(女)
+11200001 Breaking body PC → Sokushinbutsu (strong enemy, with bugs) -- 崩し本体　PC→即身仏(強敵・蟲有り)
+11210001 Breaking body PC → Sokushinbutsu (no small fish or bugs) -- 崩し本体　PC→即身仏(雑魚・蟲無し)
+11220001 Breaking body (far) PC → Temple miscellaneous fish -- 崩し本体（遠）　PC→寺雑魚
+11240001 Breaking body (far) PC → Shamo chicken -- 崩し本体（遠）　PC→軍鶏
+11250001 Breaking body (far) PC → Small fish monkey -- 崩し本体（遠）　PC→雑魚猿
+11260001 Breaking body (far) PC → Chigo monkey -- 崩し本体（遠）　PC→稚児猿
+11300001 Breaking body (far) PC → Japanese style Innsmouth -- 崩し本体（遠）　PC→和風インスマス
+11310001 Breaking body (far) PC → Genpei warrior -- 崩し本体（遠）　PC→源平武者
+11350001 Breaking body PC → No neck -- 崩し本体　PC→首なし
+11360001 Breaking body (far) PC → Rappa -- 崩し本体（遠）　PC→らっぱ
+11361001 Breaking body (far) PC → Rappa (Tokugawa) -- 崩し本体（遠）　PC→らっぱ（徳川）
+11370001 Breaking body PC → Fire cow -- 崩し本体　PC→火牛
+11380001 Breaking body PC → Fire cow (Innsmouth) -- 崩し本体　PC→火牛（インスマス）
+11400001 Breaking body (far) PC → Swordsman -- 崩し本体（遠）　PC→剣客
+11450001 Breaking body (far) PC → Nightjars -- 崩し本体（遠）　PC→夜鷹衆
+11470001 Breaking body (far) PC → lonely people -- 崩し本体（遠）　PC→孤影衆
+11500001 Breaking body (far) PC → Villager zombie -- 崩し本体（遠）　PC→村人ゾンビ
+11501001 Breaking body (far) PC → Villager zombie (female) -- 崩し本体（遠）　PC→村人ゾンビ（女）
+11520001 Breaking body (far) PC → Villager zombie (prisoner) -- 崩し本体（遠）　PC→村人ゾンビ（囚人）
+11550001 Breaking body (far) PC → Bandit -- 崩し本体（遠）　PC→野盗
+11700001 Breaking body (far) PC → Samurai Tokugawa -- 崩し本体（遠）　PC→徳川侍
+15000001 Breaking body PC → Haunting monk -- 崩し本体　PC→破戒僧
+15020001 Breaking body PC → Akaoni -- 崩し本体　PC→赤鬼
+15021001 Breaking body PC → Giant Innsmouth -- 崩し本体　PC→巨人インスマス
+15060001 Breaking body PC → Chief of Ninja Army -- 崩し本体　PC→忍軍の長
+15080001 Breaking body PC → Horse-riding warrior -- 崩し本体　PC→騎馬武者
+15090001 Breaking body PC → Butterfly -- 崩し本体　PC→お蝶
+15090501 Breaking body PC → Butterfly (HU) -- 崩し本体　PC→お蝶（HU）
+15100001 Breaking body PC → Yasha Ape -- 崩し本体　PC→夜叉猿
+15100501 Breaking body PC → Yasha Ape (HU) -- 崩し本体　PC→夜叉猿（HU）
+15300001 Breaking body PC → Okiryu -- 崩し本体　PC→翁竜
+15400001 Breaking body PC → Kensei -- 崩し本体　PC→剣聖
+15400501 Breaking body PC → Kensei (HU) -- 崩し本体　PC→剣聖（HU）
+15430001 Breaking body PC → Kensei (bed) -- 崩し本体　PC→剣聖（病床）
+17000001 Breaking body PC → Female player -- 崩し本体　PC→女奏者
+17020001 Breaking body PC → Buddhist master (demon) -- 崩し本体　PC→仏師(鬼)
+17100001 Breaking body PC → Rival -- 崩し本体　PC→ライバル
+17110001 Breaking body PC → Rival naked -- 崩し本体　PC→ライバル裸
+17400001 Breaking body PC → Daughter of Isei -- 崩し本体　PC→医聖の娘
+17410001 Breaking body PC → Fascinated samurai -- 崩し本体　PC→魅了された侍
+17420001 Breaking body (far) PC → Selling bandits -- 崩し本体（遠）　PC→物売り野盗
+17430001 Breaking body PC → Araji shop clerk -- 崩し本体　PC→荒れ寺ショップ店員
+17440001 Breaking body PC → Yayobioka Nun -- 崩し本体　PC→八百比丘尼
+17450001 Breaking body PC → Suzu Auntie -- 崩し本体　PC→鈴婆
+17460001 Breaking body (far) PC → Suzu&#39;s son -- 崩し本体（遠）　PC→鈴婆の息子
+17470001 Breaking body PC → kidnapped younger man -- 崩し本体　PC→さらわれ下男
+17480001 Breaking body (far) PC → Sick village priest -- 崩し本体（遠）　PC→病み村神主
+17490001 Breaking body (far) PC → Immortal experiment doctor -- 崩し本体（遠）　PC→不死実験の医僧
+17500001 Breaking body (far) PC → A decent villager -- 崩し本体（遠）　PC→まともな村人
+17510001 Breaking body (far) PC → White -- 崩し本体（遠）　PC→白らっぱ
+17520001 Breaking body PC → Submerged maid aunt sister -- 崩し本体　PC→水没侍女おば姉妹
+17530001 Breaking body PC → Shura maid aunt -- 崩し本体　PC→修羅侍女おば
+17540001 Breaking body PC → Shop clerk (valley) -- 崩し本体　PC→ショップ店員(渓谷)
+17550001 Breaking body PC → Shop clerk (temple) -- 崩し本体　PC→ショップ店員(寺)
+17560001 Breaking body PC → Shop clerk (dungeon) -- 崩し本体　PC→ショップ店員(地下牢)
+17580001 Breaking body PC → Shop clerk (Honjo) -- 崩し本体　PC→ショップ店員(本城)
+17590001 Breaking body PC → Shop clerk (sick village) -- 崩し本体　PC→ショップ店員(病み村)
+17600001 Breaking body PC → Shop clerk (castle) -- 崩し本体　PC→ショップ店員(城下)
+11010005 Breaking start (near) PC → Ochimusha -- 崩し始動（近）　PC→落武者
+11011005 Breaking start (near) PC → Ochimusha (Varier) -- 崩し始動（近）　PC→落武者（バリエ）
+11012005 Breaking start (near) PC → Ochimusha (tutorial) -- 崩し始動（近）　PC→落武者（チュートリアル）
+11050005 Breaking start (near) PC → Spear monk soldier -- 崩し始動（近）　PC→槍僧兵
+11060005 Breaking start (near) PC → Rotating spearman -- 崩し始動（近）　PC→回転槍術師
+11150005 Breaking start (near) PC → dog -- 崩し始動（近）　PC→イヌ
+11151005 Breaking start (near) PC → dog (Innsmouth) -- 崩し始動（近）　PC→イヌ（インスマス）
+11190005 Breaking start (near) PC → Valley enemy -- 崩し始動（近）　PC→谷敵
+11220005 Breaking start (near) PC → Temple miscellaneous fish -- 崩し始動（近）　PC→寺雑魚
+11240005 Breaking start (near) PC → Shamo chicken -- 崩し始動（近）　PC→軍鶏
+11250005 Breaking start (near) PC → Small fish monkey -- 崩し始動（近）　PC→雑魚猿
+11260005 Breaking start (near) PC → Chigo monkey -- 崩し始動（近）　PC→稚児猿
+11300005 Breaking start (near) PC → Japanese style Innsmouth -- 崩し始動（近）　PC→和風インスマス
+11310005 Breaking start (near) PC → Genpei warrior -- 崩し始動（近）　PC→源平武者
+11360005 Breaking start (near) PC → Rappa -- 崩し始動（近）　PC→らっぱ
+11361005 Breaking start (near) PC → Rappa (Tokugawa) -- 崩し始動（近）　PC→らっぱ（徳川）
+11400005 Breaking start (near) PC → swordsman (middle boss) -- 崩し始動（近）　PC→剣客（中ボス）
+11450005 Breaking start (near) PC → Nightjars -- 崩し始動（近）　PC→夜鷹衆
+11470005 Breaking start (near) PC → Kokageshu (middle boss) -- 崩し始動（近）　PC→孤影衆（中ボス）
+11500005 Breaking start (near) PC → Villager Zombie -- 崩し始動（近）　PC→村人ゾンビ
+11501005 Breaking start (near) PC → Villager zombie (female) -- 崩し始動（近）　PC→村人ゾンビ（女）
+11520005 Crushing start (near) PC → Villager Zombie (Prisoner) -- 崩し始動（近）　PC→村人ゾンビ（囚人）
+11550005 Breaking start (near) PC → Bandit -- 崩し始動（近）　PC→野盗
+11700005 Breaking start (near) PC → Samurai Tokugawa -- 崩し始動（近）　PC→徳川侍
+17420005 Breaking start (near) PC → Selling bandits -- 崩し始動（近）　PC→物売り野盗
+17430005 Crushing start (near) PC → Araji shop clerk -- 崩し始動（近）　PC→荒れ寺ショップ店員
+17460005 Breaking start (near) PC → Suzu&#39;s son -- 崩し始動（近）　PC→鈴婆の息子
+17480005 Breaking start (near) PC → Sick village priest -- 崩し始動（近）　PC→病み村神主
+17490005 Breaking start (near) PC → Immortal experiment doctor -- 崩し始動（近）　PC→不死実験の医僧
+17500005 Breaking start (near) PC → decent villagers -- 崩し始動（近）　PC→まともな村人
+17510005 Breaking start (near) PC → White -- 崩し始動（近）　PC→白らっぱ
+11010006 Breaking body (near) PC → Ochimusha -- 崩し本体（近）　PC→落武者
+11011006 Breaking body (near) PC → Ochimusha (Varier) -- 崩し本体（近）　PC→落武者（バリエ）
+11012006 Breaking body (near) PC → Ochimusha (tutorial) -- 崩し本体（近）　PC→落武者（チュートリアル）
+11050006 Breaking body (near) PC → Spear monk soldier (middle boss) -- 崩し本体（近）　PC→槍僧兵（中ボス）
+11060006 Breaking body (near) PC → Rotating spearman -- 崩し本体（近）　PC→回転槍術師
+11150006 Breaking body (near) PC → dog -- 崩し本体（近）　PC→イヌ
+11151006 Breaking body (near) PC → dog (Innsmouth) -- 崩し本体（近）　PC→イヌ（インスマス）
+11190006 Breaking body (near) PC → Valley enemy -- 崩し本体（近）　PC→谷敵
+11220006 Breaking body (near) PC → Temple miscellaneous fish -- 崩し本体（近）　PC→寺雑魚
+11240006 Breaking body (near) PC → Shamo chicken -- 崩し本体（近）　PC→軍鶏
+11250006 Breaking body (near) PC → Small fish monkey -- 崩し本体（近）　PC→雑魚猿
+11260006 Breaking body (near) PC → Chigo monkey -- 崩し本体（近）　PC→稚児猿
+11300006 Breaking body (near) PC → Japanese style Innsmouth -- 崩し本体（近）　PC→和風インスマス
+11310006 Breaking body (near) PC → Genpei warrior -- 崩し本体（近）　PC→源平武者
+11360006 Breaking body (near) PC → Rappa -- 崩し本体（近）　PC→らっぱ
+11361006 Breaking body (near) PC → Rappa (Tokugawa) -- 崩し本体（近）　PC→らっぱ（徳川）
+11400006 Breaking body (near) PC → Swordsman -- 崩し本体（近）　PC→剣客
+11450006 Breaking body (near) PC → Nightjars -- 崩し本体（近）　PC→夜鷹衆
+11470006 Breaking body (near) PC → Kokageshu -- 崩し本体（近）　PC→孤影衆
+11500006 Breaking body (near) PC → Villager zombie -- 崩し本体（近）　PC→村人ゾンビ
+11501006 Breaking body (near) PC → Villager zombie (female) -- 崩し本体（近）　PC→村人ゾンビ（女）
+11520006 Breaking body (near) PC → Villager zombie (prisoner) -- 崩し本体（近）　PC→村人ゾンビ（囚人）
+11550006 Breaking body (near) PC → Bandit -- 崩し本体（近）　PC→野盗
+11700006 Breaking body (near) PC → Samurai Tokugawa -- 崩し本体（近）　PC→徳川侍
+17420006 Breaking body (near) PC → Selling bandits -- 崩し本体（近）　PC→物売り野盗
+17430006 Breaking body (near) PC → Araji shop clerk -- 崩し本体（近）　PC→荒れ寺ショップ店員
+17460006 Breaking body (near) PC → Suzu&#39;s son -- 崩し本体（近）　PC→鈴婆の息子
+17480006 Breaking body (near) PC → Sick village priest -- 崩し本体（近）　PC→病み村神主
+17490006 Breaking body (near) PC → Immortal experiment doctor -- 崩し本体（近）　PC→不死実験の医僧
+17500006 Breaking body (near) PC → A decent villager -- 崩し本体（近）　PC→まともな村人
+17510006 Breaking body (near) PC → White -- 崩し本体（近）　PC→白らっぱ
+15080009 Breaking Todome PC → Horseman Warrior -- 崩しトドメ　PC→騎馬武者
+15100509 Breaking Todome PC → Yasha Ape (HU) -- 崩しトドメ　PC→夜叉猿（HU）
+11010010 Playing 0 PC → Ochimusha -- 弾き0　PC→落武者
+11011010 Playing 0 PC → Ochimusha (Varier) -- 弾き0　PC→落武者（バリエ）
+11012010 Playing 0 PC → Ochimusha (Tutorial) -- 弾き0　PC→落武者（チュートリアル）
+11020010 Playing 0 PC → General Samurai -- 弾き0　PC→侍大将
+11021010 Play 0 PC → Samurai General_Large Spear -- 弾き0　PC→侍大将_大槍
+11030010 Playing 0 PC → Centipede (small) -- 弾き0　PC→ムカデ（小）
+11040010 Playing 0 PC → Centipede (Large) -- 弾き0　PC→ムカデ（大）
+11050010 Playing 0 PC → Spear Monk Soldier -- 弾き0　PC→槍僧兵
+11060010 Playing 0 PC → Rotating Spearman -- 弾き0　PC→回転槍術師
+11070010 Playing 0 PC → Shura Samurai -- 弾き0　PC→修羅侍
+11080010 Playing 0 PC → Seven-sided warrior -- 弾き0　PC→七面武者
+11120010 Play 0 PC → Lookout -- 弾き0　PC→見張り番
+11140010 Playing 0 PC → Earthen wall soldier -- 弾き0　PC→土塀兵
+11150010 Playing 0 PC → dog -- 弾き0　PC→イヌ
+11151010 Playing 0 PC → Dog (Innsmouth) -- 弾き0　PC→イヌ（インスマス）
+11190010 Play 0 PC → Valley enemy -- 弾き0　PC→谷敵
+11191010 Play 0 PC → Valley enemy (female) -- 弾き0　PC→谷敵(女)
+11200010 Play 0 PC → Sokushinbutsu (strong enemy, with bugs) -- 弾き0　PC→即身仏(強敵・蟲有り)
+11210010 Play 0 PC → Sokushinbutsu (no bugs) -- 弾き0　PC→即身仏（蟲無し）
+11220010 Play 0 PC → Temple miscellaneous fish -- 弾き0　PC→寺雑魚
+11240010 Playing 0 PC → Shamo chicken -- 弾き0　PC→軍鶏
+11250010 Playing 0 PC → Small fish monkey -- 弾き0　PC→雑魚猿
+11260010 Playing 0 PC → Chigo Monkey -- 弾き0　PC→稚児猿
+11300010 Play 0 PC → Japanese style Innsmouth -- 弾き0　PC→和風インスマス
+11310010 Playing 0 PC → Genpei Samurai -- 弾き0　PC→源平武者
+11350010 Play 0 PC → No neck -- 弾き0　PC→首なし
+11360010 Play 0 PC → Rappa -- 弾き0　PC→らっぱ
+11361010 Playing 0 PC → Rappa (Tokugawa) -- 弾き0　PC→らっぱ（徳川）
+11400010 Play 0 PC → Swordsman -- 弾き0　PC→剣客
+11450010 Playing 0 PC → Nightjars -- 弾き0　PC→夜鷹衆
+11470010 Playing 0 PC → Lonely crowd -- 弾き0　PC→孤影衆
+11500010 Play 0 PC → Villager Zombie -- 弾き0　PC→村人ゾンビ
+11501010 Play 0 PC → Villager Zombie (female) -- 弾き0　PC→村人ゾンビ（女）
+11520010 Play 0 PC → Villager Zombie (Prisoner) -- 弾き0　PC→村人ゾンビ（囚人）
+11550010 Play 0 PC → Bandit -- 弾き0　PC→野盗
+11700010 Playing 0 PC → Samurai Tokugawa -- 弾き0　PC→徳川侍
+15000010 Playing 0 PC → Haunting Monk -- 弾き0　PC→破戒僧
+15060010 Play 0 PC → Chief of Ninja Army -- 弾き0　PC→忍軍の長
+15080010 Playing 0 PC → Horse-riding warrior -- 弾き0　PC→騎馬武者
+15090010 Play 0 PC → Butterfly -- 弾き0　PC→お蝶
+15090510 Playing 0 PC → Butterfly (HU) -- 弾き0　PC→お蝶（HU）
+15300010 Playing 0 PC → Okiryu -- 弾き0　PC→翁竜
+15400010 Play 0 PC → Kensei -- 弾き0　PC→剣聖
+15400510 Play 0 PC → Kensei (HU) -- 弾き0　PC→剣聖（HU）
+15430010 Playing 0 PC → Kensei (bed) -- 弾き0　PC→剣聖（病床）
+17000010 Playing 0 PC → Female player -- 弾き0　PC→女奏者
+17100010 Play 0 PC → Rival -- 弾き0　PC→ライバル
+17110010 Play 0 PC → Rival Naked -- 弾き0　PC→ライバル裸
+17400010 Playing 0 PC → Daughter of Isei -- 弾き0　PC→医聖の娘
+17410010 Playing 0 PC → Fascinated samurai -- 弾き0　PC→魅了された侍
+17420010 Playing 0 PC → Selling bandits -- 弾き0　PC→物売り野盗
+17430010 Play 0 PC → Araji shop clerk -- 弾き0　PC→荒れ寺ショップ店員
+17460010 Playing 0 PC → Son of Suzu Auntie -- 弾き0　PC→鈴婆の息子
+17480010 Playing 0 PC → Sick village priest -- 弾き0　PC→病み村神主
+17490010 Playing 0 PC → Immortal experiment doctor -- 弾き0　PC→不死実験の医僧
+17500010 Playing 0 PC → A decent villager -- 弾き0　PC→まともな村人
+17510010 Play 0 PC → White -- 弾き0　PC→白らっぱ
+17540010 Play 0 PC → Shop clerk (valley) -- 弾き0　PC→ショップ店員(渓谷)
+17550010 Play 0 PC → Shop clerk (temple) -- 弾き0　PC→ショップ店員(寺)
+17560010 Play 0 PC → Shop clerk (dungeon) -- 弾き0　PC→ショップ店員(地下牢)
+17580010 Play 0 PC → Shop clerk (Honjo) -- 弾き0　PC→ショップ店員(本城)
+17590010 Play 0 PC → Shop clerk (sick village) -- 弾き0　PC→ショップ店員(病み村)
+17600010 Play 0 PC → Shop clerk (castle) -- 弾き0　PC→ショップ店員(城下)
+11010011 Playing 1 PC → Ochimusha -- 弾き1　PC→落武者
+11011011 Playing 1 PC → Ochimusha (Varier) -- 弾き1　PC→落武者（バリエ）
+11012011 Playing 1 PC → Ochimusha (Tutorial) -- 弾き1　PC→落武者（チュートリアル）
+11020011 Playing 1 PC → General Samurai -- 弾き1　PC→侍大将
+11021011 Playing 1 PC → Samurai General_Large Spear -- 弾き1　PC→侍大将_大槍
+11030011 Playing 1 PC → Centipede (small) -- 弾き1　PC→ムカデ（小）
+11040011 Playing 1 PC → Centipede (Large) -- 弾き1　PC→ムカデ（大）
+11050011 Playing 1 PC → Spear Monk Soldier -- 弾き1　PC→槍僧兵
+11060011 Playing 1 PC → Rotating Spearman -- 弾き1　PC→回転槍術師
+11070011 Playing 1 PC → Shura Samurai -- 弾き1　PC→修羅侍
+11080011 Playing 1 PC → Seven-sided warrior -- 弾き1　PC→七面武者
+11120011 Playing 1 PC → Watchman -- 弾き1　PC→見張り番
+11140011 Playing 1 PC → Earthen wall soldier -- 弾き1　PC→土塀兵
+11150011 Playing 1 PC → Dog -- 弾き1　PC→イヌ
+11151011 Playing 1 PC → Dog (Innsmouth) -- 弾き1　PC→イヌ（インスマス）
+11190011 Play 1 PC → Valley enemy -- 弾き1　PC→谷敵
+11191011 Playing 1 PC → Valley enemy (female) -- 弾き1　PC→谷敵(女)
+11200011 Playing 1 PC → Sokushinbutsu (strong enemy, with bugs) -- 弾き1　PC→即身仏(強敵・蟲有り)
+11210011 Playing 1 PC → Sokushinbutsu (no bugs) -- 弾き1　PC→即身仏（蟲無し）
+11220011 Playing 1 PC → Temple miscellaneous fish -- 弾き1　PC→寺雑魚
+11240011 Playing 1 PC → Shamo chicken -- 弾き1　PC→軍鶏
+11250011 Playing 1 PC → Small fish monkey -- 弾き1　PC→雑魚猿
+11260011 Playing 1 PC → Chigo Monkey -- 弾き1　PC→稚児猿
+11300011 Playing 1 PC → Japanese style Innsmouth -- 弾き1　PC→和風インスマス
+11310011 Playing 1 PC → Genpei Samurai -- 弾き1　PC→源平武者
+11350011 Playing 1 PC → No neck -- 弾き1　PC→首なし
+11360011 Playing 1 PC → Rappa -- 弾き1　PC→らっぱ
+11361011 Playing 1 PC → Rappa (Tokugawa) -- 弾き1　PC→らっぱ（徳川）
+11400011 Playing 1 PC → Swordsman -- 弾き1　PC→剣客
+11450011 Playing 1 PC → Nightjars -- 弾き1　PC→夜鷹衆
+11470011 Playing 1 PC → Lonely crowd -- 弾き1　PC→孤影衆
+11500011 Play 1 PC → Villager Zombie -- 弾き1　PC→村人ゾンビ
+11501011 Playing 1 PC → Villager Zombie (female) -- 弾き1　PC→村人ゾンビ（女）
+11520011 Playing 1 PC → Villager Zombie (Prisoner) -- 弾き1　PC→村人ゾンビ（囚人）
+11550011 Playing 1 PC → Bandit -- 弾き1　PC→野盗
+11700011 Playing 1 PC → Samurai Tokugawa -- 弾き1　PC→徳川侍
+15000011 Playing 1 PC → Haunting Monk -- 弾き1　PC→破戒僧
+15060011 Playing 1 PC → Chief of Ninja Army -- 弾き1　PC→忍軍の長
+15080011 Playing 1 PC → Horse-riding warrior -- 弾き1　PC→騎馬武者
+15090011 Playing 1 PC → Butterfly -- 弾き1　PC→お蝶
+15090511 Playing 1 PC → Butterfly (HU) -- 弾き1　PC→お蝶（HU）
+15300011 Playing 1 PC → Okiryu -- 弾き1　PC→翁竜
+15400011 Playing 1 PC → Kensei -- 弾き1　PC→剣聖
+15400511 Playing 1 PC → Kensei (HU) -- 弾き1　PC→剣聖（HU）
+15430011 Playing 1 PC → Kensei (bed) -- 弾き1　PC→剣聖（病床）
+17000011 Playing 1 PC → Female player -- 弾き1　PC→女奏者
+17100011 Playing 1 PC → Rival -- 弾き1　PC→ライバル
+17110011 Playing 1 PC → Rival Naked -- 弾き1　PC→ライバル裸
+17400011 Playing 1 PC → Daughter of Isei -- 弾き1　PC→医聖の娘
+17410011 Playing 1 PC → Fascinated Samurai -- 弾き1　PC→魅了された侍
+17420011 Playing 1 PC → Selling bandits -- 弾き1　PC→物売り野盗
+17430011 Playing 1 PC → Araji shop clerk -- 弾き1　PC→荒れ寺ショップ店員
+17460011 Playing 1 PC → Son of Suzu Auntie -- 弾き1　PC→鈴婆の息子
+17480011 Playing 1 PC → Sick village priest -- 弾き1　PC→病み村神主
+17490011 Playing 1 PC → Immortal experiment doctor -- 弾き1　PC→不死実験の医僧
+17500011 Playing 1 PC → A decent villager -- 弾き1　PC→まともな村人
+17510011 Playing 1 PC → White -- 弾き1　PC→白らっぱ
+17540011 Play 1 PC → Shop clerk (valley) -- 弾き1　PC→ショップ店員(渓谷)
+17550011 Playing 1 PC → Shop clerk (temple) -- 弾き1　PC→ショップ店員(寺)
+17560011 Playing 1 PC → Shop clerk (dungeon) -- 弾き1　PC→ショップ店員(地下牢)
+17580011 Playing 1 PC → Shop clerk (Honjo) -- 弾き1　PC→ショップ店員(本城)
+17590011 Playing 1 PC → Shop clerk (sick village) -- 弾き1　PC→ショップ店員(病み村)
+17600011 Playing 1 PC → Shop clerk (castle) -- 弾き1　PC→ショップ店員(城下)
+15080019 Play 1A_Attack Todome PC → Cavalry Warrior -- 弾き1A_攻撃トドメ　PC→騎馬武者
+11010012 Playing 1B_Jump PC → Ochimusha -- 弾き1B_ジャンプ　PC→落武者
+11011012 Playing 1B_Jump PC → Ochimusha (Varier) -- 弾き1B_ジャンプ　PC→落武者（バリエ）
+11012012 Playing 1B_Jump PC → Ochimusha (Tutorial) -- 弾き1B_ジャンプ　PC→落武者（チュートリアル）
+11020012 Playing 1B_Jump PC → General Samurai -- 弾き1B_ジャンプ　PC→侍大将
+11021012 Playing 1B_Jump PC → Samurai General_Large Spear -- 弾き1B_ジャンプ　PC→侍大将_大槍
+11030012 Playing 1B_Jump PC → Centipede (Small) -- 弾き1B_ジャンプ　PC→ムカデ(小)
+11040012 Playing 1B_Jump PC → Centipede (Large) -- 弾き1B_ジャンプ　PC→ムカデ(大)
+11050012 Playing 1B_Jump PC → Spear Monk Soldier -- 弾き1B_ジャンプ　PC→槍僧兵
+11060012 Playing 1B_Jump PC → Rotating Spearman -- 弾き1B_ジャンプ　PC→回転槍術師
+11070012 Playing 1B_Jump PC → Shura Samurai -- 弾き1B_ジャンプ　PC→修羅侍
+11080012 Playing 1B_Jump PC → Seven-sided warrior -- 弾き1B_ジャンプ　PC→七面武者
+11120012 Playing 1B_Jump PC → Watchman -- 弾き1B_ジャンプ　PC→見張り番
+11140012 Playing 1B_Jump PC → Earthen wall soldier -- 弾き1B_ジャンプ　PC→土塀兵
+11150012 Playing 1B_Jump PC → Dog -- 弾き1B_ジャンプ　PC→イヌ
+11151012 Playing 1B_Jump PC → Dog (Innsmouth) -- 弾き1B_ジャンプ　PC→イヌ（インスマス）
+11190012 Play 1B_Jump PC → Valley enemy -- 弾き1B_ジャンプ　PC→谷敵
+11191012 Playing 1B_Jump PC → Valley enemy (female) -- 弾き1B_ジャンプ　PC→谷敵(女)
+11200012 Playing 1B_Jump PC → Sokushinbutsu (strong enemy, with bugs) -- 弾き1B_ジャンプ　PC→即身仏(強敵・蟲有り)
+11210012 Playing 1B_Jump PC → Sokushinbutsu (no bugs) -- 弾き1B_ジャンプ　PC→即身仏（蟲無し）
+11220012 Playing 1B_Jump PC → Temple miscellaneous fish -- 弾き1B_ジャンプ　PC→寺雑魚
+11240012 Playing 1B_Jump PC → Shamo chicken -- 弾き1B_ジャンプ　PC→軍鶏
+11250012 Playing 1B_Jump PC → Small fish monkey -- 弾き1B_ジャンプ　PC→雑魚猿
+11260012 Playing 1B_Jump PC → Chigo Monkey -- 弾き1B_ジャンプ　PC→稚児猿
+11300012 Playing 1B_Jump PC → Japanese style Innsmouth -- 弾き1B_ジャンプ　PC→和風インスマス
+11310012 Playing 1B_Jump PC → Genpei Samurai -- 弾き1B_ジャンプ　PC→源平武者
+11350012 Play 1B_Jump PC → No neck -- 弾き1B_ジャンプ　PC→首なし
+11360012 Playing 1B_Jump PC → Rappa -- 弾き1B_ジャンプ　PC→らっぱ
+11361012 Playing 1B_Jump PC → Rappa (Tokugawa) -- 弾き1B_ジャンプ　PC→らっぱ（徳川）
+11400012 Playing 1B_Jump PC → Swordsman -- 弾き1B_ジャンプ　PC→剣客
+11450012 Playing 1B_Jump PC → Nightjars -- 弾き1B_ジャンプ　PC→夜鷹衆
+11470012 Playing 1B_Jump PC → Kokageshu -- 弾き1B_ジャンプ　PC→孤影衆
+11500012 Play 1B_Jump PC → Villager Zombie -- 弾き1B_ジャンプ　PC→村人ゾンビ
+11501012 Playing 1B_Jump PC → Villager Zombie (female) -- 弾き1B_ジャンプ　PC→村人ゾンビ（女）
+11520012 Play 1B_Jump PC → Villager Zombie (Prisoner) -- 弾き1B_ジャンプ　PC→村人ゾンビ（囚人）
+11550012 Playing 1B_Jump PC → Bandit -- 弾き1B_ジャンプ　PC→野盗
+11700012 Playing 1B_Jump PC → Samurai Tokugawa -- 弾き1B_ジャンプ　PC→徳川侍
+15000012 Playing 1B_Jump PC → Haunting Monk -- 弾き1B_ジャンプ　PC→破戒僧
+15060012 Playing 1B_Jump PC → Chief of Ninja Army -- 弾き1B_ジャンプ　PC→忍軍の長
+15080012 Playing 1B_Jump PC → Horseman Warrior -- 弾き1B_ジャンプ　PC→騎馬武者
+15090012 Playing 1B_Jump PC → Butterfly -- 弾き1B_ジャンプ　PC→お蝶
+15090512 Playing 1B_Jump PC → Butterfly (HU) -- 弾き1B_ジャンプ　PC→お蝶（HU）
+15300012 Playing 1B_Jump PC → Okiryu -- 弾き1B_ジャンプ　PC→翁竜
+15400012 Play 1B_Jump PC → Kensei -- 弾き1B_ジャンプ　PC→剣聖
+15400512 Playing 1B_Jump PC → Kensei (HU) -- 弾き1B_ジャンプ　PC→剣聖（HU）
+15430012 Playing 1B_Jump PC → Kensei (bed) -- 弾き1B_ジャンプ　PC→剣聖（病床）
+17000012 Playing 1B_Jump PC → Female player -- 弾き1B_ジャンプ　PC→女奏者
+17100012 Playing 1B_Jump PC → Rival -- 弾き1B_ジャンプ　PC→ライバル
+17110012 Playing 1B_Jump PC → Rival Naked -- 弾き1B_ジャンプ　PC→ライバル裸
+17400012 Playing 1B_Jump PC → Daughter of Isei -- 弾き1B_ジャンプ　PC→医聖の娘
+17410012 Playing 1B_Jump PC → Fascinated Samurai -- 弾き1B_ジャンプ　PC→魅了された侍
+17420012 Playing 1B_Jump PC → Selling bandits -- 弾き1B_ジャンプ　PC→物売り野盗
+17430012 Playing 1B_Jump PC → Araji shop clerk -- 弾き1B_ジャンプ　PC→荒れ寺ショップ店員
+17460012 Playing 1B_Jump PC → Suzuma&#39;s son -- 弾き1B_ジャンプ　PC→鈴婆の息子
+17480012 Playing 1B_Jump PC → Sick village priest -- 弾き1B_ジャンプ　PC→病み村神主
+17490012 Playing 1B_Jump PC → Immortal Experiment Doctor -- 弾き1B_ジャンプ　PC→不死実験の医僧
+17500012 Playing 1B_Jump PC → A decent villager -- 弾き1B_ジャンプ　PC→まともな村人
+17510012 Play 1B_Jump PC → White Rappa -- 弾き1B_ジャンプ　PC→白らっぱ
+17540012 Play 1B_Jump PC → Shop clerk (valley) -- 弾き1B_ジャンプ　PC→ショップ店員(渓谷)
+17550012 Play 1B_Jump PC → Shop clerk (temple) -- 弾き1B_ジャンプ　PC→ショップ店員(寺)
+17560012 Play 1B_Jump PC → Shop clerk (dungeon) -- 弾き1B_ジャンプ　PC→ショップ店員(地下牢)
+17580012 Playing 1B_Jump PC → Shop clerk (Honjo) -- 弾き1B_ジャンプ　PC→ショップ店員(本城)
+17590012 Playing 1B_Jump PC → Shop clerk (Sick Village) -- 弾き1B_ジャンプ　PC→ショップ店員(病み村)
+17600012 Playing 1B_Jump PC → Shop clerk (castle) -- 弾き1B_ジャンプ　PC→ショップ店員(城下)
+11010020 Behind-the-scenes PC → Ochimusha -- 背後始動　PC→落武者
+11011020 Behind-the-scenes PC → Ochimusha (Varier) -- 背後始動　PC→落武者（バリエ）
+11012020 Behind-the-scenes PC → Ochimusha (Tutorial) -- 背後始動　PC→落武者（チュートリアル）
+11020020 Behind-the-scenes PC → General Samurai -- 背後始動　PC→侍大将
+11021020 Behind-the-scenes start PC → Samurai General_Large Spear -- 背後始動　PC→侍大将_大槍
+11030020 Behind-the-scenes PC → Centipede (small) -- 背後始動　PC→ムカデ（小）
+11040020 Behind-the-scenes PC → Centipede (Large) -- 背後始動　PC→ムカデ（大）
+11050020 Behind-the-scenes PC → Spear monk soldier -- 背後始動　PC→槍僧兵
+11060020 Behind-the-scenes start PC → Rotating spearman -- 背後始動　PC→回転槍術師
+11070020 Behind-the-scenes start PC → Shura Samurai -- 背後始動　PC→修羅侍
+11080020 Behind-the-scenes start PC → Seven-sided warrior -- 背後始動　PC→七面武者
+11100020 Behind start PC → gecko -- 背後始動　PC→ヤモリ
+11110020 Behind-the-scenes PC → Handmaiden Aunt -- 背後始動　PC→侍女おば
+11111020 Behind-the-scenes PC → Handmaiden Aunt (Varier) -- 背後始動　PC→侍女おば（バリエ）
+11120020 Behind-the-scenes start PC → Lookout -- 背後始動　PC→見張り番
+11130020 Behind-the-scenes start PC → Nanban armor -- 背後始動　PC→南蛮甲冑
+11150020 Behind-the-scenes start PC → dog -- 背後始動　PC→イヌ
+11151020 Behind-the-scenes PC → Dog (Innsmouth) -- 背後始動　PC→イヌ（インスマス）
+11180020 Behind-the-scenes PC → younger man -- 背後始動　PC→下男
+11181020 Behind-the-scenes PC → Lower man zombie -- 背後始動　PC→下男ゾンビ
+11190020 Behind-the-scenes PC → Valley enemy -- 背後始動　PC→谷敵
+11191020 Behind-the-scenes PC → Valley enemy (female) -- 背後始動　PC→谷敵(女)
+11200020 Behind-the-scenes PC → Sokushinbutsu (strong enemy, with bugs) -- 背後始動　PC→即身仏(強敵・蟲有り)
+11210020 Behind-the-scenes PC → Sokushinbutsu (no small fish or bugs) -- 背後始動　PC→即身仏(雑魚・蟲無し)
+11220020 Behind-the-scenes start PC → Temple miscellaneous fish -- 背後始動　PC→寺雑魚
+11240020 Behind-the-scenes PC → Shamo chicken -- 背後始動　PC→軍鶏
+11250020 Behind-the-scenes start PC → Small fish monkey -- 背後始動　PC→雑魚猿
+11260020 Behind-the-scenes start PC → Chigo monkey -- 背後始動　PC→稚児猿
+11300020 Behind-the-scenes PC → Japanese-style Innsmouth -- 背後始動　PC→和風インスマス
+11310020 Behind-the-scenes start PC → Genpei warrior -- 背後始動　PC→源平武者
+11360020 Behind-the-scenes PC → Rappa -- 背後始動　PC→らっぱ
+11361020 Behind-the-scenes PC → Rappa (Tokugawa) -- 背後始動　PC→らっぱ（徳川）
+11400020 Behind-the-scenes PC → Swordsman -- 背後始動　PC→剣客
+11450020 Behind-the-scenes PC → Nightjars -- 背後始動　PC→夜鷹衆
+11470020 Behind-the-scenes PC → Kokageshu -- 背後始動　PC→孤影衆
+11500020 Behind-the-scenes PC → Villager Zombie -- 背後始動　PC→村人ゾンビ
+11501020 Behind-the-scenes PC → Villager Zombie (female) -- 背後始動　PC→村人ゾンビ（女）
+11520020 Behind-the-scenes PC → Villager Zombie (Prisoner) -- 背後始動　PC→村人ゾンビ（囚人）
+11550020 Behind-the-scenes PC → Bandit -- 背後始動　PC→野盗
+11700020 Behind-the-scenes PC → Samurai Tokugawa -- 背後始動　PC→徳川侍
+15020020 Behind-the-scenes PC → Akaoni -- 背後始動　PC→赤鬼
+15021020 Behind-the-scenes PC → Giants Innsmouth -- 背後始動　PC→巨人インスマス
+17000020 Behind-the-scenes start PC → female player -- 背後始動　PC→女奏者
+17410020 Behind-the-scenes PC → Fascinated samurai -- 背後始動　PC→魅了された侍
+17420020 Behind-the-scenes PC → Selling bandits -- 背後始動　PC→物売り野盗
+17470020 Behind-the-scenes PC → kidnapped younger man -- 背後始動　PC→さらわれ下男
+17490020 Behind-the-scenes PC → Immortal experiment doctor -- 背後始動　PC→不死実験の医僧
+17500020 Behind-the-scenes PC → A decent villager -- 背後始動　PC→まともな村人
+17510020 Behind-the-scenes start PC → White -- 背後始動　PC→白らっぱ
+11010021 Behind the main body PC → Ochimusha -- 背後本体　PC→落武者
+11011021 Behind the main body PC → Ochimusha (Varier) -- 背後本体　PC→落武者（バリエ）
+11012021 Behind the main body PC → Ochimusha (tutorial) -- 背後本体　PC→落武者（チュートリアル）
+11020021 Behind the main body PC → General Samurai -- 背後本体　PC→侍大将
+11021021 Behind the main body PC → Samurai General_Large Spear -- 背後本体　PC→侍大将_大槍
+11030021 Back body PC → Centipede (small) -- 背後本体　PC→ムカデ（小）
+11040021 Behind the main body PC → Centipede (Large) -- 背後本体　PC→ムカデ（大）
+11050021 Behind body PC → Spear monk soldier -- 背後本体　PC→槍僧兵
+11060021 Behind body PC → Rotating spearman -- 背後本体　PC→回転槍術師
+11070021 Behind the main body PC → Shura Samurai -- 背後本体　PC→修羅侍
+11080021 Behind the main body PC → Seven-sided warrior -- 背後本体　PC→七面武者
+11100021 Behind body PC → gecko -- 背後本体　PC→ヤモリ
+11110021 Behind the body PC → Handmaiden Aunt -- 背後本体　PC→侍女おば
+11111021 Behind the main body PC → Handmaiden Aunt (Varier) -- 背後本体　PC→侍女おば（バリエ）
+11120021 Behind the main body PC → Lookout number -- 背後本体　PC→見張り番
+11130021 Behind the main body PC → Nanban armor -- 背後本体　PC→南蛮甲冑
+11150021 Behind body PC → dog -- 背後本体　PC→イヌ
+11151021 Behind body PC → Dog (Innsmouth) -- 背後本体　PC→イヌ（インスマス）
+11180021 Behind the main body PC → younger man -- 背後本体　PC→下男
+11181021 Behind body PC → Lower man zombie -- 背後本体　PC→下男ゾンビ
+11190021 Behind body PC → Valley enemy -- 背後本体　PC→谷敵
+11191021 Behind body PC → Valley enemy (female) -- 背後本体　PC→谷敵(女)
+11200021 Behind the main body PC → Sokushinbutsu (strong enemy, with bugs) -- 背後本体　PC→即身仏(強敵・蟲有り)
+11210021 Behind the main body PC → Sokushinbutsu (no small fish or bugs) -- 背後本体　PC→即身仏(雑魚・蟲無し)
+11220021 Behind body PC → Temple miscellaneous fish -- 背後本体　PC→寺雑魚
+11240021 Back body PC → Shamo chicken -- 背後本体　PC→軍鶏
+11250021 Behind body PC → Small fish monkey -- 背後本体　PC→雑魚猿
+11260021 Behind body PC → Chigo monkey -- 背後本体　PC→稚児猿
+11300021 Behind the main body PC → Japanese style Innsmouth -- 背後本体　PC→和風インスマス
+11310021 Behind the main body PC → Genpei warrior -- 背後本体　PC→源平武者
+11360021 Behind the main body PC → Rappa -- 背後本体　PC→らっぱ
+11361021 Behind the main body PC → Rappa (Tokugawa) -- 背後本体　PC→らっぱ（徳川）
+11400021 Behind the main body PC → Swordsman -- 背後本体　PC→剣客
+11450021 Behind the main body PC → Nightjars -- 背後本体　PC→夜鷹衆
+11470021 Behind the main body PC → lonely people -- 背後本体　PC→孤影衆
+11500021 Behind the main body PC → Villager Zombie -- 背後本体　PC→村人ゾンビ
+11501021 Behind the main body PC → Villager zombie (female) -- 背後本体　PC→村人ゾンビ（女）
+11520021 Behind the main body PC → Villager Zombie (Prisoner) -- 背後本体　PC→村人ゾンビ（囚人）
+11550021 Behind the main body PC → bandit -- 背後本体　PC→野盗
+11700021 Behind the main body PC → Samurai Tokugawa -- 背後本体　PC→徳川侍
+15020021 Behind the main body PC → Akaoni -- 背後本体　PC→赤鬼
+15021021 Behind the main body PC → Giants Innsmouth -- 背後本体　PC→巨人インスマス
+17000021 Behind the body PC → Female player -- 背後本体　PC→女奏者
+17410021 Behind the main body PC → Fascinated samurai -- 背後本体　PC→魅了された侍
+17420021 Behind the main body PC → Selling bandits -- 背後本体　PC→物売り野盗
+17470021 Behind the main body PC → kidnapped younger man -- 背後本体　PC→さらわれ下男
+17490021 Behind the body PC → Immortal experiment doctor -- 背後本体　PC→不死実験の医僧
+17500021 Behind the body PC → A decent villager -- 背後本体　PC→まともな村人
+17510021 Behind the main body PC → White -- 背後本体　PC→白らっぱ
+11010022 Behind Ninjutsu (Blood Smoke) PC → Ochimusha -- 背後忍術（血煙）　PC→落武者
+11011022 Behind Ninjutsu (Blood Smoke) PC → Ochimusha (Varier) -- 背後忍術（血煙）　PC→落武者（バリエ）
+11012022 Behind Ninjutsu (Blood Smoke) PC → Ochimusha (Tutorial) -- 背後忍術（血煙）　PC→落武者（チュートリアル）
+11020022 Behind Ninjutsu (Blood Smoke) PC → General Samurai -- 背後忍術（血煙）　PC→侍大将
+11021022 Behind Ninjutsu (Blood Smoke) PC → Samurai General_Large Spear -- 背後忍術（血煙）　PC→侍大将_大槍
+11030022 Behind Ninjutsu (Blood Smoke) PC → Centipede (Small) -- 背後忍術（血煙）　PC→ムカデ（小）
+11040022 Behind Ninjutsu (Blood Smoke) PC → Centipede (Large) -- 背後忍術（血煙）　PC→ムカデ（大）
+11050022 Behind Ninjutsu (Blood Smoke) PC → Spear Monk Soldier -- 背後忍術（血煙）　PC→槍僧兵
+11060022 Behind Ninjutsu (Blood Smoke) PC → Rotating Spearman -- 背後忍術（血煙）　PC→回転槍術師
+11070022 Behind Ninjutsu (Blood Smoke) PC → Shura Samurai -- 背後忍術（血煙）　PC→修羅侍
+11080022 Behind Ninjutsu (Blood Smoke) PC → Seven-sided Warrior -- 背後忍術（血煙）　PC→七面武者
+11100022 Behind Ninjutsu (Blood Smoke) PC → Gecko -- 背後忍術（血煙）　PC→ヤモリ
+11110022 Behind Ninjutsu (Blood Smoke) PC → Handmaiden Aunt -- 背後忍術（血煙）　PC→侍女おば
+11111022 Behind Ninjutsu (Blood Smoke) PC → Handmaiden Aunt (Varier) -- 背後忍術（血煙）　PC→侍女おば（バリエ）
+11120022 Behind Ninjutsu (Blood Smoke) PC → Lookout -- 背後忍術（血煙）　PC→見張り番
+11150022 Behind Ninjutsu (Blood Smoke) PC → Dog -- 背後忍術（血煙）　PC→イヌ
+11151022 Behind Ninjutsu (Blood Smoke) PC → Dog (Innsmouth) -- 背後忍術（血煙）　PC→イヌ（インスマス）
+11180022 Behind Ninjutsu (Blood Smoke) PC → Younger Man -- 背後忍術（血煙）　PC→下男
+11181022 Behind Ninjutsu (Blood Smoke) PC → Younger Zombie -- 背後忍術（血煙）　PC→下男ゾンビ
+11190022 Behind Ninjutsu (Blood Smoke) PC → Valley Enemy -- 背後忍術（血煙）　PC→谷敵
+11191022 Behind Ninjutsu (Blood Smoke) PC → Valley Enemy (Female) -- 背後忍術（血煙）　PC→谷敵(女)
+11220022 Behind Ninjutsu (Blood Smoke) PC → Temple miscellaneous fish -- 背後忍術（血煙）　PC→寺雑魚
+11240022 Behind Ninjutsu (Blood Smoke) PC → Shamo Chicken -- 背後忍術（血煙）　PC→軍鶏
+11250022 Behind Ninjutsu (Blood Smoke) PC → Small Fish Monkey -- 背後忍術（血煙）　PC→雑魚猿
+11260022 Behind Ninjutsu (Blood Smoke) PC → Chigo Monkey -- 背後忍術（血煙）　PC→稚児猿
+11300022 Behind Ninjutsu (Blood Smoke) PC → Japanese Style Innsmouth -- 背後忍術（血煙）　PC→和風インスマス
+11310022 Behind Ninjutsu (Blood Smoke) PC → Genpei Samurai -- 背後忍術（血煙）　PC→源平武者
+11360022 Behind Ninjutsu (Blood Smoke) PC → Rappa -- 背後忍術（血煙）　PC→らっぱ
+11361022 Behind Ninjutsu (Blood Smoke) PC → Rappa (Tokugawa) -- 背後忍術（血煙）　PC→らっぱ（徳川）
+11400022 Behind Ninjutsu (Blood Smoke) PC → Swordsman -- 背後忍術（血煙）　PC→剣客
+11450022 Behind Ninjutsu (Blood Smoke) PC → Nightjars -- 背後忍術（血煙）　PC→夜鷹衆
+11470022 Behind Ninjutsu (Blood Smoke) PC → Solitary People -- 背後忍術（血煙）　PC→孤影衆
+11500022 Behind Ninjutsu (Blood Smoke) PC → Villager Zombie -- 背後忍術（血煙）　PC→村人ゾンビ
+11501022 Behind Ninjutsu (Blood Smoke) PC → Villager Zombie (Female) -- 背後忍術（血煙）　PC→村人ゾンビ（女）
+11520022 Behind Ninjutsu (Blood Smoke) PC → Villager Zombie (Prisoner) -- 背後忍術（血煙）　PC→村人ゾンビ（囚人）
+11550022 Behind Ninjutsu (Blood Smoke) PC → Bandit -- 背後忍術（血煙）　PC→野盗
+11700022 Behind Ninjutsu (Blood Smoke) PC → Samurai Tokugawa -- 背後忍術（血煙）　PC→徳川侍
+15020022 Behind Ninjutsu (Blood Smoke) PC → Red Demon -- 背後忍術（血煙）　PC→赤鬼
+15021022 Behind Ninjutsu (Blood Smoke) PC → Giant Innsmouth -- 背後忍術（血煙）　PC→巨人インスマス
+17000022 Behind Ninjutsu (Blood Smoke) PC → Female Player -- 背後忍術（血煙）　PC→女奏者
+17410022 Behind Ninjutsu (Blood Smoke) PC → Fascinated Samurai -- 背後忍術（血煙）　PC→魅了された侍
+17420022 Behind Ninjutsu (Blood Smoke) PC → Selling Bandits -- 背後忍術（血煙）　PC→物売り野盗
+17470022 Behind the scenes ninjutsu (blood smoke) PC → kidnapped younger man -- 背後忍術（血煙）　PC→さらわれ下男
+17490022 Behind Ninjutsu (Blood Smoke) PC → Immortal Experiment Doctor -- 背後忍術（血煙）　PC→不死実験の医僧
+17500022 Behind Ninjutsu (Blood Smoke) PC → A decent villager -- 背後忍術（血煙）　PC→まともな村人
+17510022 Behind Ninjutsu (Blood Smoke) PC → White Rappa -- 背後忍術（血煙）　PC→白らっぱ
+11010023 Behind-the-scenes ninjutsu (puppet) PC → Ochimusha -- 背後忍術（傀儡）　PC→落武者
+11011023 Behind-the-scenes Ninjutsu (puppet) PC → Ochimusha (Varier) -- 背後忍術（傀儡）　PC→落武者（バリエ）
+11012023 Behind-the-scenes ninjutsu (puppet) PC → Ochimusha (tutorial) -- 背後忍術（傀儡）　PC→落武者（チュートリアル）
+11020023 Behind-the-scenes ninjutsu (puppet) PC → Samurai General -- 背後忍術（傀儡）　PC→侍大将
+11021023 Behind Ninjutsu (Puppet) PC → Samurai General_Large Spear -- 背後忍術（傀儡）　PC→侍大将_大槍
+11030023 Behind-the-scenes ninjutsu (puppet) PC → Centipede (small) -- 背後忍術（傀儡）　PC→ムカデ（小）
+11040023 Behind-the-scenes ninjutsu (puppet) PC → Centipede (large) -- 背後忍術（傀儡）　PC→ムカデ（大）
+11050023 Behind Ninjutsu (Puppet) PC → Spear Monk Soldier -- 背後忍術（傀儡）　PC→槍僧兵
+11060023 Behind Ninjutsu (Puppet) PC → Rotating Spearman -- 背後忍術（傀儡）　PC→回転槍術師
+11070023 Behind-the-scenes ninjutsu (puppet) PC → Shura Samurai -- 背後忍術（傀儡）　PC→修羅侍
+11080023 Behind-the-scenes ninjutsu (puppet) PC → Seven-sided warrior -- 背後忍術（傀儡）　PC→七面武者
+11100023 Behind-the-scenes ninjutsu (puppet) PC → gecko -- 背後忍術（傀儡）　PC→ヤモリ
+11110023 Behind-the-scenes ninjutsu (puppet) PC → Handmaiden aunt -- 背後忍術（傀儡）　PC→侍女おば
+11111023 Behind-the-scenes ninjutsu (puppet) PC → Handmaiden aunt (varie) -- 背後忍術（傀儡）　PC→侍女おば（バリエ）
+11150023 Behind-the-scenes ninjutsu (puppet) PC → dog -- 背後忍術（傀儡）　PC→イヌ
+11151023 Behind-the-scenes ninjutsu (puppet) PC → dog (Innsmouth) -- 背後忍術（傀儡）　PC→イヌ（インスマス）
+11120023 Behind-the-scenes ninjutsu (puppet) PC → Watchman -- 背後忍術（傀儡）　PC→見張り番
+11180023 Behind-the-scenes ninjutsu (puppet) PC → younger man -- 背後忍術（傀儡）　PC→下男
+11181023 Behind-the-scenes ninjutsu (puppet) PC → younger man zombie -- 背後忍術（傀儡）　PC→下男ゾンビ
+11190023 Behind-the-scenes ninjutsu (puppet) PC → Valley enemy -- 背後忍術（傀儡）　PC→谷敵
+11191023 Behind-the-scenes ninjutsu (puppet) PC → Valley enemy (female) -- 背後忍術（傀儡）　PC→谷敵(女)
+11220023 Behind-the-scenes ninjutsu (puppet) PC → Temple miscellaneous fish -- 背後忍術（傀儡）　PC→寺雑魚
+11240023 Behind-the-scenes ninjutsu (puppet) PC → Shamo chicken -- 背後忍術（傀儡）　PC→軍鶏
+11250023 Behind-the-scenes ninjutsu (puppet) PC → Small fish monkey -- 背後忍術（傀儡）　PC→雑魚猿
+11260023 Behind-the-scenes ninjutsu (puppet) PC → Chigo monkey -- 背後忍術（傀儡）　PC→稚児猿
+11300023 Behind-the-scenes ninjutsu (puppet) PC → Japanese style Innsmouth -- 背後忍術（傀儡）　PC→和風インスマス
+11310023 Behind-the-scenes ninjutsu (puppet) PC → Genpei warrior -- 背後忍術（傀儡）　PC→源平武者
+11360023 Behind-the-scenes ninjutsu (puppet) PC → Rappa -- 背後忍術（傀儡）　PC→らっぱ
+11361023 Behind-the-scenes ninjutsu (puppet) PC → Rappa (Tokugawa) -- 背後忍術（傀儡）　PC→らっぱ（徳川）
+11400023 Behind-the-scenes ninjutsu (puppet) PC → Swordsman -- 背後忍術（傀儡）　PC→剣客
+11450023 Behind-the-scenes ninjutsu (puppet) PC → Nightjars -- 背後忍術（傀儡）　PC→夜鷹衆
+11470023 Behind-the-scenes ninjutsu (puppet) PC → lonely people -- 背後忍術（傀儡）　PC→孤影衆
+11500023 Behind-the-scenes ninjutsu (puppet) PC → Villager Zombie -- 背後忍術（傀儡）　PC→村人ゾンビ
+11501023 Behind-the-scenes ninjutsu (puppet) PC → Villager zombie (female) -- 背後忍術（傀儡）　PC→村人ゾンビ（女）
+11520023 Behind-the-scenes ninjutsu (puppet) PC → Villager zombie (prisoner) -- 背後忍術（傀儡）　PC→村人ゾンビ（囚人）
+11550023 Behind-the-scenes ninjutsu (puppet) PC → bandit -- 背後忍術（傀儡）　PC→野盗
+11700023 Behind-the-scenes ninjutsu (puppet) PC → Samurai Tokugawa -- 背後忍術（傀儡）　PC→徳川侍
+15020023 Behind-the-scenes ninjutsu (puppet) PC → Akaoni -- 背後忍術（傀儡）　PC→赤鬼
+15021023 Behind-the-scenes ninjutsu (puppet) PC → Giants Innsmouth -- 背後忍術（傀儡）　PC→巨人インスマス
+17000023 Behind-the-scenes ninjutsu (puppet) PC → Female player -- 背後忍術（傀儡）　PC→女奏者
+17410023 Behind-the-scenes ninjutsu (puppet) PC → Fascinated samurai -- 背後忍術（傀儡）　PC→魅了された侍
+17420023 Behind-the-scenes ninjutsu (puppet) PC → Merchandise bandit -- 背後忍術（傀儡）　PC→物売り野盗
+17470023 Behind-the-scenes ninjutsu (puppet) PC → kidnapped younger man -- 背後忍術（傀儡）　PC→さらわれ下男
+17490023 Behind-the-scenes ninjutsu (puppet) PC → Immortal experiment doctor -- 背後忍術（傀儡）　PC→不死実験の医僧
+17500023 Behind-the-scenes ninjutsu (puppet) PC → A decent villager -- 背後忍術（傀儡）　PC→まともな村人
+17510023 Behind-the-scenes ninjutsu (puppet) PC → White Rappa -- 背後忍術（傀儡）　PC→白らっぱ
+11010024 Behind Ninjutsu (Grant) PC → Ochimusha -- 背後忍術（付与）　PC→落武者
+11011024 Behind Ninjutsu (Grant) PC → Ochimusha (Varier) -- 背後忍術（付与）　PC→落武者（バリエ）
+11012024 Behind-the-scenes ninjutsu (grant) PC → Ochimusha (tutorial) -- 背後忍術（付与）　PC→落武者（チュートリアル）
+11020024 Behind Ninjutsu (Grant) PC → General Samurai -- 背後忍術（付与）　PC→侍大将
+11021024 Behind Ninjutsu (Grant) PC → Samurai General_Large Spear -- 背後忍術（付与）　PC→侍大将_大槍
+11030024 Behind Ninjutsu (Grant) PC → Centipede (Small) -- 背後忍術（付与）　PC→ムカデ(小)
+11040024 Behind Ninjutsu (Grant) PC → Centipede (Large) -- 背後忍術（付与）　PC→ムカデ(大)
+11050024 Behind Ninjutsu (Grant) PC → Spear Monk Soldier -- 背後忍術（付与）　PC→槍僧兵
+11060024 Behind Ninjutsu (Grant) PC → Rotating Spearman -- 背後忍術（付与）　PC→回転槍術師
+11070024 Behind Ninjutsu (Grant) PC → Shura Samurai -- 背後忍術（付与）　PC→修羅侍
+11080024 Behind Ninjutsu (Grant) PC → Seven-sided Warrior -- 背後忍術（付与）　PC→七面武者
+11100024 Behind Ninjutsu (Grant) PC → Gecko -- 背後忍術（付与）　PC→ヤモリ
+11110024 Behind Ninjutsu (Grant) PC → Handmaiden Aunt -- 背後忍術（付与）　PC→侍女おば
+11111024 Behind Ninjutsu (Grant) PC → Handmaiden Aunt (Varier) -- 背後忍術（付与）　PC→侍女おば（バリエ）
+11120024 Behind Ninjutsu (Grant) PC → Lookout -- 背後忍術（付与）　PC→見張り番
+11150024 Behind Ninjutsu (Grant) PC → Dog -- 背後忍術（付与）　PC→イヌ
+11151024 Behind Ninjutsu (Grant) PC → Dog (Innsmouth) -- 背後忍術（付与）　PC→イヌ（インスマス）
+11180024 Behind-the-scenes ninjutsu (grant) PC → younger man -- 背後忍術（付与）　PC→下男
+11181024 Behind Ninjutsu (Grant) PC → Younger Zombie -- 背後忍術（付与）　PC→下男ゾンビ
+11190024 Behind Ninjutsu (Grant) PC → Valley Enemy -- 背後忍術（付与）　PC→谷敵
+11191024 Behind Ninjutsu (Grant) PC → Valley Enemy (Female) -- 背後忍術（付与）　PC→谷敵(女)
+11220024 Behind Ninjutsu (Grant) PC → Temple miscellaneous fish -- 背後忍術（付与）　PC→寺雑魚
+11240024 Behind-the-scenes ninjutsu (grant) PC → Shamo chicken -- 背後忍術（付与）　PC→軍鶏
+11250024 Behind Ninjutsu (Grant) PC → Small Fish Monkey -- 背後忍術（付与）　PC→雑魚猿
+11260024 Behind Ninjutsu (Grant) PC → Chigo Monkey -- 背後忍術（付与）　PC→稚児猿
+11300024 Behind Ninjutsu (Grant) PC → Japanese Style Innsmouth -- 背後忍術（付与）　PC→和風インスマス
+11310024 Behind Ninjutsu (Grant) PC → Genpei Samurai -- 背後忍術（付与）　PC→源平武者
+11360024 Behind Ninjutsu (Grant) PC → Rappa -- 背後忍術（付与）　PC→らっぱ
+11361024 Behind Ninjutsu (Grant) PC → Rappa (Tokugawa) -- 背後忍術（付与）　PC→らっぱ（徳川）
+11400024 Behind Ninjutsu (Grant) PC → Swordsman -- 背後忍術（付与）　PC→剣客
+11450024 Behind Ninjutsu (Grant) PC → Nightjars -- 背後忍術（付与）　PC→夜鷹衆
+11470024 Behind Ninjutsu (Grant) PC → Kokageshu -- 背後忍術（付与）　PC→孤影衆
+11500024 Behind Ninjutsu (Grant) PC → Villager Zombie -- 背後忍術（付与）　PC→村人ゾンビ
+11501024 Behind Ninjutsu (Grant) PC → Villager Zombie (Female) -- 背後忍術（付与）　PC→村人ゾンビ（女）
+11520024 Behind Ninjutsu (Grant) PC → Villager Zombie (Prisoner) -- 背後忍術（付与）　PC→村人ゾンビ（囚人）
+11550024 Behind Ninjutsu (Grant) PC → Bandit -- 背後忍術（付与）　PC→野盗
+11700024 Behind Ninjutsu (Grant) PC → Samurai Tokugawa -- 背後忍術（付与）　PC→徳川侍
+15020024 Behind Ninjutsu (Grant) PC → Akaoni -- 背後忍術（付与）　PC→赤鬼
+15021024 Behind Ninjutsu (Grant) PC → Giant Innsmouth -- 背後忍術（付与）　PC→巨人インスマス
+17000024 Behind-the-scenes ninjutsu (grant) PC → Female player -- 背後忍術（付与）　PC→女奏者
+17410024 Behind Ninjutsu (Grant) PC → Fascinated Samurai -- 背後忍術（付与）　PC→魅了された侍
+17420024 Behind-the-scenes ninjutsu (granted) PC -- 背後忍術（付与）　PC→物売り野盗
+17470024 Behind-the-scenes ninjutsu (grant) PC → kidnapped younger man -- 背後忍術（付与）　PC→さらわれ下男
+17490024 Behind Ninjutsu (Grant) PC → Immortal Experiment Doctor -- 背後忍術（付与）　PC→不死実験の医僧
+17500024 Behind Ninjutsu (Grant) PC → A decent villager -- 背後忍術（付与）　PC→まともな村人
+17510024 Behind Ninjutsu (Grant) PC → White Rappa -- 背後忍術（付与）　PC→白らっぱ
+11010030 Fall 0 PC → Ochimusha -- 落下0　PC→落武者
+11011030 Fall 0 PC → Ochimusha (Varier) -- 落下0　PC→落武者（バリエ）
+11012030 Fall 0 PC → Ochimusha (Tutorial) -- 落下0　PC→落武者（チュートリアル）
+11020030 Fall 0 PC → General Samurai -- 落下0　PC→侍大将
+11021030 Fall 0 PC → Samurai General_Large Spear -- 落下0　PC→侍大将_大槍
+11030030 Fall 0 PC → Centipede (small) -- 落下0　PC→ムカデ（小）
+11040030 Fall 0 PC → Centipede (Large) -- 落下0　PC→ムカデ（大）
+11050030 Fall 0 PC → Spear Monk Soldier -- 落下0　PC→槍僧兵
+11060030 Fall 0 PC → Rotating Spearman -- 落下0　PC→回転槍術師
+11070030 Fall 0 PC → Shura Samurai -- 落下0　PC→修羅侍
+11080030 Fall 0 PC → Seven-sided warrior -- 落下0　PC→七面武者
+11100030 Fall 0 PC → gecko -- 落下0　PC→ヤモリ
+11110030 Fall 0 PC → Handmaiden Aunt -- 落下0　PC→侍女おば
+11111030 Fall 0 PC → Handmaiden Aunt (Varier) -- 落下0　PC→侍女おば（バリエ）
+11120030 Fall 0 PC → Lookout -- 落下0　PC→見張り番
+11150030 Fall 0 PC → dog -- 落下0　PC→イヌ
+11151030 Fall 0 PC → Dog (Innsmouth) -- 落下0　PC→イヌ（インスマス）
+11180030 Fall 0 PC → younger man -- 落下0　PC→下男
+11181030 Fall 0 PC → Lower man zombie -- 落下0　PC→下男ゾンビ
+11190030 Fall 0 PC → Valley enemy -- 落下0　PC→谷敵
+11191030 Fall 0 PC → Valley enemy (female) -- 落下0　PC→谷敵(女)
+11200030 Fall 0 PC → Sokushinbutsu (strong enemy, with bugs) -- 落下0　PC→即身仏(強敵・蟲有り)
+11210030 Fall 0 PC → Sokushinbutsu (no small fish or bugs) -- 落下0　PC→即身仏(雑魚・蟲無し)
+11220030 Fall 0 PC → Temple miscellaneous fish -- 落下0　PC→寺雑魚
+11240030 Fall 0 PC → Shamo chicken -- 落下0　PC→軍鶏
+11250030 Fall 0 PC → Small fish monkey -- 落下0　PC→雑魚猿
+11260030 Fall 0 PC → Chigo monkey -- 落下0　PC→稚児猿
+11300030 Fall 0 PC → Japanese style Innsmouth -- 落下0　PC→和風インスマス
+11310030 Fall 0 PC → Genpei Samurai -- 落下0　PC→源平武者
+11360030 Fall 0 PC → Rappa -- 落下0　PC→らっぱ
+11361030 Fall 0 PC → Rappa (Tokugawa) -- 落下0　PC→らっぱ（徳川）
+11370030 Fall 0 PC → Fire cow -- 落下0　PC→火牛
+11380030 Fall 0 PC → Fire cow (Innsmouth) -- 落下0　PC→火牛（インスマス）
+11400030 Fall 0 PC → Swordsman -- 落下0　PC→剣客
+11450030 Fall 0 PC → Nightjars -- 落下0　PC→夜鷹衆
+11470030 Fall 0 PC → Lonely crowd -- 落下0　PC→孤影衆
+11500030 Fall 0 PC → Villager Zombie -- 落下0　PC→村人ゾンビ
+11501030 Fall 0 PC → Villager Zombie (female) -- 落下0　PC→村人ゾンビ（女）
+11520030 Fall 0 PC → Villager Zombie (Prisoner) -- 落下0　PC→村人ゾンビ（囚人）
+11550030 Fall 0 PC → Bandit -- 落下0　PC→野盗
+11700030 Fall 0 PC → Samurai Tokugawa -- 落下0　PC→徳川侍
+15000030 Fall 0 PC → Haunting Monk -- 落下0　PC→破戒僧
+15010030 Fall 0 PC → Large snake -- 落下0　PC→大蛇
+15020030 Fall 0 PC → Red Demon -- 落下0　PC→赤鬼
+15021030 Fall 0 PC → Giants Innsmouth -- 落下0　PC→巨人インスマス
+17000030 Fall 0 PC → Female player -- 落下0　PC→女奏者
+17410030 Fall 0 PC → Fascinated Samurai -- 落下0　PC→魅了された侍
+17420030 Fall 0 PC → Selling bandits -- 落下0　PC→物売り野盗
+17430030 Fall 0 PC → Araji shop clerk -- 落下0　PC→荒れ寺ショップ店員
+17440030 Fall 0 PC → Yayobioka Nun -- 落下0　PC→八百比丘尼
+17450030 Fall 0 PC → Suzu Auntie -- 落下0　PC→鈴婆
+17460030 Fall 0 PC → Son of Suzu Auntie -- 落下0　PC→鈴婆の息子
+17470030 Fall 0 PC → kidnapped younger man -- 落下0　PC→さらわれ下男
+17480030 Fall 0 PC → Sick village priest -- 落下0　PC→病み村神主
+17490030 Fall 0 PC → Immortal Experiment Doctor -- 落下0　PC→不死実験の医僧
+17500030 Fall 0 PC → decent villager -- 落下0　PC→まともな村人
+17510030 Fall 0 PC → White -- 落下0　PC→白らっぱ
+17520030 Fall 0 PC → Submerged Handmaiden Aunt Sisters -- 落下0　PC→水没侍女おば姉妹
+17530030 Fall 0 PC → Shura Handmaiden Aunt -- 落下0　PC→修羅侍女おば
+17540030 Fall 0 PC → Shop clerk (valley) -- 落下0　PC→ショップ店員(渓谷)
+17550030 Fall 0 PC → Shop clerk (temple) -- 落下0　PC→ショップ店員(寺)
+17560030 Fall 0 PC → Shop clerk (dungeon) -- 落下0　PC→ショップ店員(地下牢)
+17580030 Fall 0 PC → Shop clerk (Honjo) -- 落下0　PC→ショップ店員(本城)
+17590030 Fall 0 PC → Shop clerk (sick village) -- 落下0　PC→ショップ店員(病み村)
+17600030 Fall 0 PC → Shop clerk (castle) -- 落下0　PC→ショップ店員(城下)
+11010031 Fall 1 PC → Ochimusha -- 落下1　PC→落武者
+11011031 Fall 1 PC → Ochimusha (Varier) -- 落下1　PC→落武者（バリエ）
+11012031 Fall 1 PC → Fallen Warrior (Tutorial) -- 落下1　PC→落武者（チュートリアル）
+11020031 Fall 1 PC → General Samurai -- 落下1　PC→侍大将
+11021031 Fall 1 PC → Samurai General_Large Spear -- 落下1　PC→侍大将_大槍
+11030031 Fall 1 PC → Centipede (small) -- 落下1　PC→ムカデ（小）
+11040031 Fall 1 PC → Centipede (Large) -- 落下1　PC→ムカデ（大）
+11050031 Fall 1 PC → Spear Monk Soldier -- 落下1　PC→槍僧兵
+11060031 Fall 1 PC → Rotating Spearman -- 落下1　PC→回転槍術師
+11070031 Fall 1 PC → Shura Samurai -- 落下1　PC→修羅侍
+11080031 Fall 1 PC → Seven-sided warrior -- 落下1　PC→七面武者
+11100031 Fall 1 PC → gecko -- 落下1　PC→ヤモリ
+11110031 Fall 1 PC → Handmaiden Aunt -- 落下1　PC→侍女おば
+11111031 Fall 1 PC → Handmaiden Aunt (Varier) -- 落下1　PC→侍女おば（バリエ）
+11120031 Fall 1 PC → Lookout -- 落下1　PC→見張り番
+11150031 Fall 1 PC → dog -- 落下1　PC→イヌ
+11151031 Fall 1 PC → Dog (Innsmouth) -- 落下1　PC→イヌ（インスマス）
+11180031 Fall 1 PC → younger man -- 落下1　PC→下男
+11181031 Fall 1 PC → Lower man zombie -- 落下1　PC→下男ゾンビ
+11190031 Fall 1 PC → Valley enemy -- 落下1　PC→谷敵
+11191031 Fall 1 PC → Valley enemy (female) -- 落下1　PC→谷敵(女)
+11200031 Fall 1 PC → Sokushinbutsu (strong enemy, with bugs) -- 落下1　PC→即身仏(強敵・蟲有り)
+11210031 Fall 1 PC → Sokushinbutsu (no small fish or bugs) -- 落下1　PC→即身仏(雑魚・蟲無し)
+11220031 Fall 1 PC → Temple miscellaneous fish -- 落下1　PC→寺雑魚
+11240031 Fall 1 PC → Shamo chicken -- 落下1　PC→軍鶏
+11250031 Fall 1 PC → Small fish monkey -- 落下1　PC→雑魚猿
+11260031 Fall 1 PC → Chigo Monkey -- 落下1　PC→稚児猿
+11300031 Fall 1 PC → Japanese style Innsmouth -- 落下1　PC→和風インスマス
+11310031 Fall 1 PC → Genpei Samurai -- 落下1　PC→源平武者
+11360031 Fall 1 PC → Rappa -- 落下1　PC→らっぱ
+11361031 Fall 1 PC → Rappa (Tokugawa) -- 落下1　PC→らっぱ（徳川）
+11370031 Fall 1 PC → Fire cow -- 落下1　PC→火牛
+11380031 Fall 1 PC → Fire cow (Innsmouth) -- 落下1　PC→火牛（インスマス）
+11400031 Fall 1 PC → Swordsman -- 落下1　PC→剣客
+11450031 Fall 1 PC → Nightjars -- 落下1　PC→夜鷹衆
+11470031 Fall 1 PC → Lonely crowd -- 落下1　PC→孤影衆
+11500031 Fall 1 PC → Villager Zombie -- 落下1　PC→村人ゾンビ
+11501031 Fall 1 PC → Villager Zombie (female) -- 落下1　PC→村人ゾンビ（女）
+11520031 Fall 1 PC → Villager Zombie (Prisoner) -- 落下1　PC→村人ゾンビ（囚人）
+11550031 Fall 1 PC → Bandit -- 落下1　PC→野盗
+11700031 Fall 1 PC → Samurai Tokugawa -- 落下1　PC→徳川侍
+15000031 Fall 1 PC → Haunting Monk -- 落下1　PC→破戒僧
+15010031 Fall 1 PC → Large snake -- 落下1　PC→大蛇
+15020031 Fall 1 PC → Red Demon -- 落下1　PC→赤鬼
+15021031 Fall 1 PC → Giants Innsmouth -- 落下1　PC→巨人インスマス
+17000031 Fall 1 PC → Female player -- 落下1　PC→女奏者
+17410031 Fall 1 PC → Fascinated Samurai -- 落下1　PC→魅了された侍
+17420031 Fall 1 PC → Selling bandits -- 落下1　PC→物売り野盗
+17430031 Fall 1 PC → Araji shop clerk -- 落下1　PC→荒れ寺ショップ店員
+17440031 Fall 1 PC → Yaohioka Nun -- 落下1　PC→八百比丘尼
+17450031 Fall 1 PC → Suzu Auntie -- 落下1　PC→鈴婆
+17460031 Fall 1 PC → Son of Suzu Auntie -- 落下1　PC→鈴婆の息子
+17470031 Fall 1 PC → kidnapped younger man -- 落下1　PC→さらわれ下男
+17480031 Fall 1 PC → Sick village priest -- 落下1　PC→病み村神主
+17490031 Fall 1 PC → Immortal Experiment Doctor -- 落下1　PC→不死実験の医僧
+17500031 Fall 1 PC → decent villager -- 落下1　PC→まともな村人
+17510031 Fall 1 PC → White -- 落下1　PC→白らっぱ
+17520031 Fall 1 PC → Submerged Handmaiden Aunt Sisters -- 落下1　PC→水没侍女おば姉妹
+17530031 Fall 1 PC → Shura Handmaiden Aunt -- 落下1　PC→修羅侍女おば
+17540031 Fall 1 PC → Shop clerk (valley) -- 落下1　PC→ショップ店員(渓谷)
+17550031 Fall 1 PC → Shop clerk (temple) -- 落下1　PC→ショップ店員(寺)
+17560031 Fall 1 PC → Shop clerk (dungeon) -- 落下1　PC→ショップ店員(地下牢)
+17580031 Fall 1 PC → Shop clerk (Honjo) -- 落下1　PC→ショップ店員(本城)
+17590031 Fall 1 PC → Shop clerk (sick village) -- 落下1　PC→ショップ店員(病み村)
+17600031 Fall 1 PC → Shop clerk (castle) -- 落下1　PC→ショップ店員(城下)
+15010032 Fall 2 PC → Large Snake -- 落下2　PC→大蛇
+11030040 Unlimited Fall 0 PC → Centipede (Small) -- 制限なし落下0　PC→ムカデ（小）
+11100040 Unlimited fall 0 PC → gecko -- 制限なし落下0　PC→ヤモリ
+11120040 Unlimited Fall 0 PC → Lookout -- 制限なし落下0　PC→見張り番
+15300040 Unlimited Fall 0 PC → Okiryu -- 制限なし落下0　PC→翁竜
+17540040 No limit Fall 0 PC → Shop clerk (valley) -- 制限なし落下0　PC→ショップ店員(渓谷)
+17550040 No limit Fall 0 PC → Shop clerk (temple) -- 制限なし落下0　PC→ショップ店員(寺)
+17560040 No limit Fall 0 PC → Shop clerk (dungeon) -- 制限なし落下0　PC→ショップ店員(地下牢)
+17580040 No limit Fall 0 PC → Shop clerk (Honjo) -- 制限なし落下0　PC→ショップ店員(本城)
+17590040 No limit Fall 0 PC → Shop clerk (sick village) -- 制限なし落下0　PC→ショップ店員(病み村)
+17600040 No limit Fall 0 PC → Shop clerk (castle) -- 制限なし落下0　PC→ショップ店員(城下)
+11030041 Unlimited Fall 1 PC → Centipede (Small) -- 制限なし落下1　PC→ムカデ（小）
+11100041 Unlimited fall 1 PC → gecko -- 制限なし落下1　PC→ヤモリ
+11120041 Unlimited Fall 1 PC → Lookout -- 制限なし落下1　PC→見張り番
+15300041 Unlimited Fall 1 PC → Okiryu -- 制限なし落下1　PC→翁竜
+17540041 Unlimited Fall 1 PC → Shop Clerk (Valley) -- 制限なし落下1　PC→ショップ店員(渓谷)
+17550041 Unlimited Fall 1 PC → Shop clerk (temple) -- 制限なし落下1　PC→ショップ店員(寺)
+17560041 Unlimited Fall 1 PC → Shop Clerk (Dungeon) -- 制限なし落下1　PC→ショップ店員(地下牢)
+17580041 Unlimited Fall 1 PC → Shop clerk (Honjo) -- 制限なし落下1　PC→ショップ店員(本城)
+17590041 Unlimited Fall 1 PC → Shop Clerk (Sick Village) -- 制限なし落下1　PC→ショップ店員(病み村)
+17600041 Unlimited Fall 1 PC → Shop clerk (castle) -- 制限なし落下1　PC→ショップ店員(城下)
+11010060 Wall-mounted (left) Start PC → Ochimusha -- 壁張り付き（左）始動　PC→落武者
+11011060 Wall-mounted (left) Start PC → Ochimusha (Varier) -- 壁張り付き（左）始動　PC→落武者（バリエ）
+11012060 Wall-mounted (left) Start PC → Ochimusha (Tutorial) -- 壁張り付き（左）始動　PC→落武者（チュートリアル）
+11030060 Wall-mounted (left) Start PC → Centipede (small) -- 壁張り付き（左）始動　PC→ムカデ（小）
+11050060 Wall-mounted (left) Start PC → Spear monk soldier -- 壁張り付き（左）始動　PC→槍僧兵
+11060060 Wall-mounted (left) Start PC → Rotating spearman -- 壁張り付き（左）始動　PC→回転槍術師
+11100060 Wall-mounted (left) start PC → gecko -- 壁張り付き（左）始動　PC→ヤモリ
+11110060 Wall-mounted (left) Start PC → Handmaiden Aunt -- 壁張り付き（左）始動　PC→侍女おば
+11111060 Wall-mounted (left) Start PC → Handmaiden Aunt (Varier) -- 壁張り付き（左）始動　PC→侍女おば（バリエ）
+11120060 Wall-mounted (left) Start PC → Lookout number -- 壁張り付き（左）始動　PC→見張り番
+11150060 Wall-mounted (left) Start PC → Dog -- 壁張り付き（左）始動　PC→イヌ
+11151060 Wall-mounted (left) Start PC → Dog (Innsmouth) -- 壁張り付き（左）始動　PC→イヌ（インスマス）
+11190060 Wall-mounted (left) Start PC → Valley enemy -- 壁張り付き（左）始動　PC→谷敵
+11191060 Wall-mounted (left) Start PC → Valley enemy (female) -- 壁張り付き（左）始動　PC→谷敵(女)
+11200060 Wall-mounted (left) Start PC → Sokushinbutsu (strong enemy, with bugs) -- 壁張り付き（左）始動　PC→即身仏(強敵・蟲有り)
+11210060 Wall-mounted (left) Start PC → Sokushinbutsu (no small fish or bugs) -- 壁張り付き（左）始動　PC→即身仏(雑魚・蟲無し)
+11220060 Wall-mounted (left) Start PC → Temple miscellaneous fish -- 壁張り付き（左）始動　PC→寺雑魚
+11240060 Wall-mounted (left) Start PC → Shamo chicken -- 壁張り付き（左）始動　PC→軍鶏
+11250060 Wall-mounted (left) Start PC → Small fish monkey -- 壁張り付き（左）始動　PC→雑魚猿
+11260060 Wall-mounted (left) Start PC → Chigo monkey -- 壁張り付き（左）始動　PC→稚児猿
+11300060 Wall-mounted (left) Start PC → Japanese-style Innsmouth -- 壁張り付き（左）始動　PC→和風インスマス
+11310060 Wall-mounted (left) Start PC → Genpei Samurai -- 壁張り付き（左）始動　PC→源平武者
+11360060 Wall-mounted (left) Start PC → Rappa -- 壁張り付き（左）始動　PC→らっぱ
+11361060 Wall-mounted (left) Start PC → Rappa (Tokugawa) -- 壁張り付き（左）始動　PC→らっぱ（徳川）
+11400060 Wall-mounted (left) Start PC → Swordsman -- 壁張り付き（左）始動　PC→剣客
+11450060 Wall-mounted (left) Start PC → Nightjars -- 壁張り付き（左）始動　PC→夜鷹衆
+11470060 Wall-mounted (left) Start PC → Lonely crowd -- 壁張り付き（左）始動　PC→孤影衆
+11500060 Wall-mounted (left) Start PC → Villager Zombie -- 壁張り付き（左）始動　PC→村人ゾンビ
+11501060 Wall-mounted (left) Start PC → Villager Zombie (female) -- 壁張り付き（左）始動　PC→村人ゾンビ（女）
+11520060 Wall-mounted (left) Start PC → Villager Zombie (Prisoner) -- 壁張り付き（左）始動　PC→村人ゾンビ（囚人）
+11550060 Wall-mounted (left) Start PC → Bandit -- 壁張り付き（左）始動　PC→野盗
+11700060 Wall-mounted (left) Start PC → Samurai Tokugawa -- 壁張り付き（左）始動　PC→徳川侍
+17420060 Wall-mounted (left) Start PC → Merchandise bandit -- 壁張り付き（左）始動　PC→物売り野盗
+17430060 Wall-mounted (left) Start PC → Araji shop clerk -- 壁張り付き（左）始動　PC→荒れ寺ショップ店員
+17440060 Wall-mounted (left) Start PC → Yayobioka Nun -- 壁張り付き（左）始動　PC→八百比丘尼
+17450060 Wall-mounted (left) Start PC → Suzu Auntie -- 壁張り付き（左）始動　PC→鈴婆
+17460060 Wall-mounted (left) Start PC → Suzu&#39;s son -- 壁張り付き（左）始動　PC→鈴婆の息子
+17480060 Wall-mounted (left) Start PC → Sick village priest -- 壁張り付き（左）始動　PC→病み村神主
+17490060 Wall-mounted (left) Start PC → Immortal experiment doctor -- 壁張り付き（左）始動　PC→不死実験の医僧
+17500060 Wall-mounted (left) Start PC → Decent villager -- 壁張り付き（左）始動　PC→まともな村人
+17510060 Wall-mounted (left) Start PC → White -- 壁張り付き（左）始動　PC→白らっぱ
+17520060 Wall-mounted (left) Start PC → Submerged Handmaiden Aunt Sisters -- 壁張り付き（左）始動　PC→水没侍女おば姉妹
+17530060 Wall-mounted (left) Start PC → Shura Samurai Aunt -- 壁張り付き（左）始動　PC→修羅侍女おば
+17540060 Wall-mounted (left) Start PC → Shop clerk (valley) -- 壁張り付き（左）始動　PC→ショップ店員(渓谷)
+17550060 Wall-mounted (left) Start PC → Shop clerk (temple) -- 壁張り付き（左）始動　PC→ショップ店員(寺)
+17560060 Wall-mounted (left) Start PC → Shop clerk (dungeon) -- 壁張り付き（左）始動　PC→ショップ店員(地下牢)
+17580060 Wall-mounted (left) Start PC → Shop clerk (Honjo) -- 壁張り付き（左）始動　PC→ショップ店員(本城)
+17590060 Wall-mounted (left) Start PC → Shop clerk (sick village) -- 壁張り付き（左）始動　PC→ショップ店員(病み村)
+17600060 Wall-mounted (left) Start PC → Shop clerk (castle) -- 壁張り付き（左）始動　PC→ショップ店員(城下)
+11010061 With wall (left) Main body PC → Ochimusha -- 壁張り付き（左）本体　PC→落武者
+11011061 With wall (left) Main body PC → Ochimusha (Varier) -- 壁張り付き（左）本体　PC→落武者（バリエ）
+11012061 With wall (left) Main body PC → Ochimusha (tutorial) -- 壁張り付き（左）本体　PC→落武者（チュートリアル）
+11030061 With wall (left) Main body PC → Centipede (small) -- 壁張り付き（左）本体　PC→ムカデ（小）
+11050061 With wall (left) Main body PC → Spear monk soldier -- 壁張り付き（左）本体　PC→槍僧兵
+11060061 With wall (left) Main body PC → Rotating spearman -- 壁張り付き（左）本体　PC→回転槍術師
+11100061 With wall (left) Main body PC → gecko -- 壁張り付き（左）本体　PC→ヤモリ
+11110061 With wall (left) Main body PC → Handmaiden Aunt -- 壁張り付き（左）本体　PC→侍女おば
+11111061 With wall (left) Main body PC → Aunt Samurai (Varier) -- 壁張り付き（左）本体　PC→侍女おば（バリエ）
+11120061 With wall (left) Main body PC → Lookout number -- 壁張り付き（左）本体　PC→見張り番
+11150061 With wall (left) Main body PC → Dog -- 壁張り付き（左）本体　PC→イヌ
+11151061 With wall (left) Main body PC → Dog (Innsmouth) -- 壁張り付き（左）本体　PC→イヌ（インスマス）
+11190061 With wall (left) Main body PC → Valley enemy -- 壁張り付き（左）本体　PC→谷敵
+11191061 With wall (left) Main body PC → Valley enemy (female) -- 壁張り付き（左）本体　PC→谷敵(女)
+11200061 With wall (left) Main body PC → Sokushinbutsu (strong enemy, with bugs) -- 壁張り付き（左）本体　PC→即身仏(強敵・蟲有り)
+11210061 With wall (left) Main body PC → Sokushinbutsu (no small fish or bugs) -- 壁張り付き（左）本体　PC→即身仏(雑魚・蟲無し)
+11220061 With wall (left) Main body PC → Temple miscellaneous fish -- 壁張り付き（左）本体　PC→寺雑魚
+11240061 With wall (left) Main body PC → Shamo chicken -- 壁張り付き（左）本体　PC→軍鶏
+11250061 With wall (left) Main body PC → Small fish monkey -- 壁張り付き（左）本体　PC→雑魚猿
+11260061 With wall (left) Main body PC → Chigo monkey -- 壁張り付き（左）本体　PC→稚児猿
+11300061 With wall (left) Main body PC → Japanese style Innsmouth -- 壁張り付き（左）本体　PC→和風インスマス
+11310061 With wall (left) Main body PC → Genpei Samurai -- 壁張り付き（左）本体　PC→源平武者
+11360061 With wall (left) Main body PC → Rappa -- 壁張り付き（左）本体　PC→らっぱ
+11361061 With wall (left) Main body PC → Rappa (Tokugawa) -- 壁張り付き（左）本体　PC→らっぱ（徳川）
+11400061 With wall (left) Main body PC → Swordsman -- 壁張り付き（左）本体　PC→剣客
+11450061 With wall (left) Main body PC → Nightjars -- 壁張り付き（左）本体　PC→夜鷹衆
+11470061 With wall (left) Main body PC → Kokageshu -- 壁張り付き（左）本体　PC→孤影衆
+11500061 With wall (left) Main body PC → Villager zombie -- 壁張り付き（左）本体　PC→村人ゾンビ
+11501061 With wall (left) Main body PC → Villager zombie (female) -- 壁張り付き（左）本体　PC→村人ゾンビ（女）
+11520061 With wall (left) Main body PC → Villager zombie (prisoner) -- 壁張り付き（左）本体　PC→村人ゾンビ（囚人）
+11550061 With wall (left) Main body PC → Bandit -- 壁張り付き（左）本体　PC→野盗
+11700061 With wall (left) Main body PC → Samurai Tokugawa -- 壁張り付き（左）本体　PC→徳川侍
+17420061 Wall-mounted (left) PC → Selling bandits -- 壁張り付き（左）本体　PC→物売り野盗
+17430061 With wall (left) Main body PC → Araji shop clerk -- 壁張り付き（左）本体　PC→荒れ寺ショップ店員
+17440061 With wall (left) Main body PC → Yayobioka Nun -- 壁張り付き（左）本体　PC→八百比丘尼
+17450061 With wall (left) Main body PC → Suzu -- 壁張り付き（左）本体　PC→鈴婆
+17460061 With wall (left) Main body PC → Son of Suzu -- 壁張り付き（左）本体　PC→鈴婆の息子
+17480061 With wall (left) Main body PC → Sick village priest -- 壁張り付き（左）本体　PC→病み村神主
+17490061 Wall-mounted (left) Main body PC → Immortal experiment doctor -- 壁張り付き（左）本体　PC→不死実験の医僧
+17500061 Wall-mounted (left) PC → A decent villager -- 壁張り付き（左）本体　PC→まともな村人
+17510061 With wall (left) Main unit PC → White -- 壁張り付き（左）本体　PC→白らっぱ
+17520061 With wall (left) Main body PC → Submerged maid aunt sister -- 壁張り付き（左）本体　PC→水没侍女おば姉妹
+17530061 With wall (left) Main body PC → Aunt Shura Samurai -- 壁張り付き（左）本体　PC→修羅侍女おば
+17540061 With wall (left) Main body PC → Shop clerk (valley) -- 壁張り付き（左）本体　PC→ショップ店員(渓谷)
+17550061 With wall (left) Main body PC → Shop clerk (temple) -- 壁張り付き（左）本体　PC→ショップ店員(寺)
+17560061 With wall (left) Main body PC → Shop clerk (dungeon) -- 壁張り付き（左）本体　PC→ショップ店員(地下牢)
+17580061 With wall (left) Main body PC → Shop clerk (Honjo) -- 壁張り付き（左）本体　PC→ショップ店員(本城)
+17590061 With wall (left) Main body PC → Shop clerk (sick village) -- 壁張り付き（左）本体　PC→ショップ店員(病み村)
+17600061 With wall (left) Main body PC → Shop clerk (castle) -- 壁張り付き（左）本体　PC→ショップ店員(城下)
+11010070 Wall-mounted (right) Start PC → Ochimusha -- 壁張り付き（右）始動　PC→落武者
+11011070 Wall-mounted (right) Start PC → Ochimusha (Varier) -- 壁張り付き（右）始動　PC→落武者（バリエ）
+11012070 Wall-mounted (right) Start PC → Ochimusha (Tutorial) -- 壁張り付き（右）始動　PC→落武者（チュートリアル）
+11030070 Wall-mounted (right) Start PC → Centipede (small) -- 壁張り付き（右）始動　PC→ムカデ（小）
+11050070 Wall-mounted (right) Start PC → Spear monk soldier -- 壁張り付き（右）始動　PC→槍僧兵
+11060070 Wall-mounted (right) Start PC → Rotating spearman -- 壁張り付き（右）始動　PC→回転槍術師
+11100070 Wall-mounted (right) start PC → gecko -- 壁張り付き（右）始動　PC→ヤモリ
+11110070 Wall-mounted (right) Start PC → Handmaiden Aunt -- 壁張り付き（右）始動　PC→侍女おば
+11111070 Wall-mounted (right) Start PC → Handmaiden Aunt (Varier) -- 壁張り付き（右）始動　PC→侍女おば（バリエ）
+11120070 Wall-mounted (right) Start PC → Lookout number -- 壁張り付き（右）始動　PC→見張り番
+11150070 Wall-mounted (right) Start PC → Dog -- 壁張り付き（右）始動　PC→イヌ
+11151070 Wall-mounted (right) Start PC → Dog (Innsmouth) -- 壁張り付き（右）始動　PC→イヌ（インスマス）
+11190070 Wall-mounted (right) Start PC → Valley enemy -- 壁張り付き（右）始動　PC→谷敵
+11191070 Wall-mounted (right) Start PC → Valley enemy (female) -- 壁張り付き（右）始動　PC→谷敵(女)
+11200070 Wall-mounted (right) Start PC → Sokushinbutsu (strong enemy, with bugs) -- 壁張り付き（右）始動　PC→即身仏(強敵・蟲有り)
+11210070 Wall-mounted (right) Start PC → Sokushinbutsu (no small fish or bugs) -- 壁張り付き（右）始動　PC→即身仏(雑魚・蟲無し)
+11220070 With wall (right) Start PC → Temple miscellaneous fish -- 壁張り付き（右）始動　PC→寺雑魚
+11240070 Wall-mounted (right) Start PC → Shamo chicken -- 壁張り付き（右）始動　PC→軍鶏
+11250070 Wall-mounted (right) Start PC → Small fish monkey -- 壁張り付き（右）始動　PC→雑魚猿
+11260070 Wall-mounted (right) Start PC → Chigo monkey -- 壁張り付き（右）始動　PC→稚児猿
+11300070 Wall-mounted (right) Start PC → Japanese-style Innsmouth -- 壁張り付き（右）始動　PC→和風インスマス
+11310070 Wall-mounted (right) Start PC → Genpei Samurai -- 壁張り付き（右）始動　PC→源平武者
+11360070 Wall-mounted (right) Start PC → Rappa -- 壁張り付き（右）始動　PC→らっぱ
+11361070 Wall-mounted (right) Start PC → Rappa (Tokugawa) -- 壁張り付き（右）始動　PC→らっぱ（徳川）
+11400070 Wall-mounted (right) Start PC → Swordsman -- 壁張り付き（右）始動　PC→剣客
+11450070 Wall-mounted (right) Start PC → Nightjars -- 壁張り付き（右）始動　PC→夜鷹衆
+11470070 Wall-mounted (right) Start PC → Lonely crowd -- 壁張り付き（右）始動　PC→孤影衆
+11500070 Wall-mounted (right) Start PC → Villager Zombie -- 壁張り付き（右）始動　PC→村人ゾンビ
+11501070 Wall-mounted (right) Start PC → Villager Zombie (female) -- 壁張り付き（右）始動　PC→村人ゾンビ（女）
+11520070 Wall-mounted (right) Start PC → Villager Zombie (Prisoner) -- 壁張り付き（右）始動　PC→村人ゾンビ（囚人）
+11550070 Wall-mounted (right) Start PC → Bandit -- 壁張り付き（右）始動　PC→野盗
+11700070 Wall-mounted (right) Start PC → Samurai Tokugawa -- 壁張り付き（右）始動　PC→徳川侍
+17420070 Wall-mounted (right) Start PC → Selling bandits -- 壁張り付き（右）始動　PC→物売り野盗
+17430070 Wall-mounted (right) start PC → Araji shop clerk -- 壁張り付き（右）始動　PC→荒れ寺ショップ店員
+17440070 Wall-mounted (right) Start PC → Yayobioka Nun -- 壁張り付き（右）始動　PC→八百比丘尼
+17450070 Wall-mounted (right) Start PC → Suzu Auntie -- 壁張り付き（右）始動　PC→鈴婆
+17460070 Wall-mounted (right) Start PC → Suzu&#39;s son -- 壁張り付き（右）始動　PC→鈴婆の息子
+17480070 Wall-mounted (right) Start PC → Sick village priest -- 壁張り付き（右）始動　PC→病み村神主
+17490070 Wall-mounted (right) Start PC → Immortal experiment doctor -- 壁張り付き（右）始動　PC→不死実験の医僧
+17500070 Wall-mounted (right) start PC → decent villager -- 壁張り付き（右）始動　PC→まともな村人
+17510070 Wall-mounted (right) Start PC → White -- 壁張り付き（右）始動　PC→白らっぱ
+17520070 Wall-mounted (right) Start PC → Submerged Handmaiden Aunt Sisters -- 壁張り付き（右）始動　PC→水没侍女おば姉妹
+17530070 Wall-mounted (right) Start PC → Shura Samurai Aunt -- 壁張り付き（右）始動　PC→修羅侍女おば
+17540070 Wall-mounted (right) Start PC → Shop clerk (valley) -- 壁張り付き（右）始動　PC→ショップ店員(渓谷)
+17550070 Wall-mounted (right) Start PC → Shop clerk (temple) -- 壁張り付き（右）始動　PC→ショップ店員(寺)
+17560070 Wall-mounted (right) Start PC → Shop clerk (dungeon) -- 壁張り付き（右）始動　PC→ショップ店員(地下牢)
+17580070 Wall-mounted (right) Start PC → Shop clerk (Honjo) -- 壁張り付き（右）始動　PC→ショップ店員(本城)
+17590070 Wall-mounted (right) Start PC → Shop clerk (sick village) -- 壁張り付き（右）始動　PC→ショップ店員(病み村)
+17600070 Wall-mounted (right) Start PC → Shop clerk (castle) -- 壁張り付き（右）始動　PC→ショップ店員(城下)
+11010071 With wall (right) Main body PC → Ochimusha -- 壁張り付き（右）本体　PC→落武者
+11011071 With wall (right) Main body PC → Ochimusha (Varier) -- 壁張り付き（右）本体　PC→落武者（バリエ）
+11012071 With wall (right) Main body PC → Ochimusha (tutorial) -- 壁張り付き（右）本体　PC→落武者（チュートリアル）
+11030071 With wall (right) Main body PC → Centipede (small) -- 壁張り付き（右）本体　PC→ムカデ（小）
+11050071 With wall (right) Main body PC → Spear monk soldier -- 壁張り付き（右）本体　PC→槍僧兵
+11060071 With wall (right) Main body PC → Rotating spearman -- 壁張り付き（右）本体　PC→回転槍術師
+11100071 With wall (right) Main body PC → gecko -- 壁張り付き（右）本体　PC→ヤモリ
+11110071 With wall (right) Main body PC → Handmaiden Aunt -- 壁張り付き（右）本体　PC→侍女おば
+11111071 With wall (right) Main body PC → Aunt Samurai (Varier) -- 壁張り付き（右）本体　PC→侍女おば（バリエ）
+11120071 With wall (right) Main body PC → Lookout number -- 壁張り付き（右）本体　PC→見張り番
+11150071 With wall (right) Main body PC → Dog -- 壁張り付き（右）本体　PC→イヌ
+11151071 With wall (right) Main body PC → Dog (Innsmouth) -- 壁張り付き（右）本体　PC→イヌ（インスマス）
+11190071 With wall (right) Main body PC → Valley enemy -- 壁張り付き（右）本体　PC→谷敵
+11191071 With wall (right) Main body PC → Valley enemy (female) -- 壁張り付き（右）本体　PC→谷敵(女)
+11200071 With wall (right) Main body PC → Sokushinbutsu (strong enemy, with bugs) -- 壁張り付き（右）本体　PC→即身仏(強敵・蟲有り)
+11210071 With wall (right) Main body PC → Sokushinbutsu (no small fish or bugs) -- 壁張り付き（右）本体　PC→即身仏(雑魚・蟲無し)
+11220071 With wall (right) Main body PC → Temple miscellaneous fish -- 壁張り付き（右）本体　PC→寺雑魚
+11240071 With wall (right) Main body PC → Shamo chicken -- 壁張り付き（右）本体　PC→軍鶏
+11250071 With wall (right) Main body PC → Small fish monkey -- 壁張り付き（右）本体　PC→雑魚猿
+11260071 With wall (right) Main body PC → Chigo monkey -- 壁張り付き（右）本体　PC→稚児猿
+11300071 With wall (right) Main body PC → Japanese style Innsmouth -- 壁張り付き（右）本体　PC→和風インスマス
+11310071 With wall (right) Main body PC → Genpei Samurai -- 壁張り付き（右）本体　PC→源平武者
+11360071 With wall (right) Main body PC → Rappa -- 壁張り付き（右）本体　PC→らっぱ
+11361071 With wall (right) Main body PC → Rappa (Tokugawa) -- 壁張り付き（右）本体　PC→らっぱ（徳川）
+11400071 With wall (right) Main body PC → Swordsman -- 壁張り付き（右）本体　PC→剣客
+11450071 With wall (right) Main body PC → Nightjars -- 壁張り付き（右）本体　PC→夜鷹衆
+11470071 With wall (right) Main body PC → Kokageshu -- 壁張り付き（右）本体　PC→孤影衆
+11500071 With wall (right) Main body PC → Villager zombie -- 壁張り付き（右）本体　PC→村人ゾンビ
+11501071 With wall (right) Main body PC → Villager zombie (female) -- 壁張り付き（右）本体　PC→村人ゾンビ（女）
+11520071 With wall (right) Main body PC → Villager zombie (prisoner) -- 壁張り付き（右）本体　PC→村人ゾンビ（囚人）
+11550071 With wall (right) Main body PC → Bandit -- 壁張り付き（右）本体　PC→野盗
+11700071 With wall (right) Main body PC → Samurai Tokugawa -- 壁張り付き（右）本体　PC→徳川侍
+17420071 Wall-mounted (right) PC → Selling bandits -- 壁張り付き（右）本体　PC→物売り野盗
+17430071 With wall (right) Main body PC → Araji shop clerk -- 壁張り付き（右）本体　PC→荒れ寺ショップ店員
+17440071 With wall (right) Main body PC → Yayobioka Nun -- 壁張り付き（右）本体　PC→八百比丘尼
+17450071 With wall (right) Main body PC → Suzu -- 壁張り付き（右）本体　PC→鈴婆
+17460071 With wall (right) Main body PC → Son of Suzu -- 壁張り付き（右）本体　PC→鈴婆の息子
+17480071 With wall (right) Main body PC → Sick village priest -- 壁張り付き（右）本体　PC→病み村神主
+17490071 With wall (right) Main body PC → Immortal experiment doctor -- 壁張り付き（右）本体　PC→不死実験の医僧
+17500071 Wall-mounted (right) PC → A decent villager -- 壁張り付き（右）本体　PC→まともな村人
+17510071 With wall (right) Main unit PC → White -- 壁張り付き（右）本体　PC→白らっぱ
+17520071 With wall (right) Main body PC → Submerged maid aunt sister -- 壁張り付き（右）本体　PC→水没侍女おば姉妹
+17530071 With wall (right) Main body PC → Shura Samurai Aunt -- 壁張り付き（右）本体　PC→修羅侍女おば
+17540071 With wall (right) Main body PC → Shop clerk (valley) -- 壁張り付き（右）本体　PC→ショップ店員(渓谷)
+17550071 With wall (right) Main body PC → Shop clerk (temple) -- 壁張り付き（右）本体　PC→ショップ店員(寺)
+17560071 With wall (right) Main body PC → Shop clerk (dungeon) -- 壁張り付き（右）本体　PC→ショップ店員(地下牢)
+17580071 With wall (right) Main body PC → Shop clerk (Honjo) -- 壁張り付き（右）本体　PC→ショップ店員(本城)
+17590071 With wall (right) Main body PC → Shop clerk (sick village) -- 壁張り付き（右）本体　PC→ショップ店員(病み村)
+17600071 With wall (right) Main body PC → Shop clerk (castle) -- 壁張り付き（右）本体　PC→ショップ店員(城下)
+11010080 Hanging (after) start PC → Ochimusha -- ぶら下がり（後）始動　PC→落武者
+11011080 Hanging (rear) start PC → Ochimusha (Varier) -- ぶら下がり（後）始動　PC→落武者（バリエ）
+11012080 Hanging (after) start PC → Ochimusha (tutorial) -- ぶら下がり（後）始動　PC→落武者（チュートリアル）
+11030080 Hanging (rear) start PC → Centipede (small) -- ぶら下がり（後）始動　PC→ムカデ（小）
+11050080 Hanging (rear) start PC → Spear monk soldier -- ぶら下がり（後）始動　PC→槍僧兵
+11060080 Hanging (rear) start PC → Rotating spearman -- ぶら下がり（後）始動　PC→回転槍術師
+11100080 Hanging (rear) start PC → gecko -- ぶら下がり（後）始動　PC→ヤモリ
+11110080 Hanging (rear) start PC → Handmaiden Aunt -- ぶら下がり（後）始動　PC→侍女おば
+11111080 Hanging (rear) start PC → Handmaiden Aunt (Varier) -- ぶら下がり（後）始動　PC→侍女おば（バリエ）
+11120080 Hanging (rear) start PC → Lookout number -- ぶら下がり（後）始動　PC→見張り番
+11150080 Hanging (rear) start PC → dog -- ぶら下がり（後）始動　PC→イヌ
+11151080 Hanging (rear) start PC → dog (Innsmouth) -- ぶら下がり（後）始動　PC→イヌ（インスマス）
+11190080 Hanging (after) start PC → valley enemy -- ぶら下がり（後）始動　PC→谷敵
+11191080 Hanging (after) start PC → valley enemy (female) -- ぶら下がり（後）始動　PC→谷敵(女)
+11200080 Hanging (after) start PC → Sokushinbutsu (strong enemy, with bugs) -- ぶら下がり（後）始動　PC→即身仏(強敵・蟲有り)
+11210080 Hanging (rear) start PC → Sokushinbutsu (no small fish or bugs) -- ぶら下がり（後）始動　PC→即身仏(雑魚・蟲無し)
+11220080 Hanging (after) start PC → Temple miscellaneous fish -- ぶら下がり（後）始動　PC→寺雑魚
+11240080 Hanging (rear) start PC → Shamo chicken -- ぶら下がり（後）始動　PC→軍鶏
+11250080 Hanging (after) start PC → small fish monkey -- ぶら下がり（後）始動　PC→雑魚猿
+11260080 Hanging (rear) start PC → Chigo monkey -- ぶら下がり（後）始動　PC→稚児猿
+11300080 Hanging (rear) start PC → Japanese style Innsmouth -- ぶら下がり（後）始動　PC→和風インスマス
+11310080 Hanging (rear) start PC → Genpei Samurai -- ぶら下がり（後）始動　PC→源平武者
+11360080 Hanging (rear) start PC → Rappa -- ぶら下がり（後）始動　PC→らっぱ
+11361080 Hanging (after) start PC → Rappa (Tokugawa) -- ぶら下がり（後）始動　PC→らっぱ（徳川）
+11400080 Hanging (after) start PC → swordsman -- ぶら下がり（後）始動　PC→剣客
+11450080 Hanging (after) start PC → Nightjars -- ぶら下がり（後）始動　PC→夜鷹衆
+11470080 Hanging (after) start PC → lonely people -- ぶら下がり（後）始動　PC→孤影衆
+11500080 Hanging (after) start PC → Villager Zombie -- ぶら下がり（後）始動　PC→村人ゾンビ
+11501080 Hanging (after) start PC → Villager Zombie (female) -- ぶら下がり（後）始動　PC→村人ゾンビ（女）
+11520080 Hanging (after) start PC → Villager Zombie (Prisoner) -- ぶら下がり（後）始動　PC→村人ゾンビ（囚人）
+11550080 Hanging (after) start PC → bandit -- ぶら下がり（後）始動　PC→野盗
+11700080 Hanging (after) start PC → Samurai Tokugawa -- ぶら下がり（後）始動　PC→徳川侍
+17420080 Hanging (after) start PC → product sales bandit -- ぶら下がり（後）始動　PC→物売り野盗
+17430080 Hanging (after) start PC → Araji shop clerk -- ぶら下がり（後）始動　PC→荒れ寺ショップ店員
+17440080 Hanging (rear) start PC → Yayobioka Nun -- ぶら下がり（後）始動　PC→八百比丘尼
+17450080 Hanging (rear) start PC → Suzu Auntie -- ぶら下がり（後）始動　PC→鈴婆
+17460080 Hanging (after) start PC → Suzu&#39;s son -- ぶら下がり（後）始動　PC→鈴婆の息子
+17480080 Hanging (after) start PC → Sick village priest -- ぶら下がり（後）始動　PC→病み村神主
+17490080 Hanging (after) start PC → Immortal experiment doctor -- ぶら下がり（後）始動　PC→不死実験の医僧
+17500080 Hanging (after) start PC → decent villager -- ぶら下がり（後）始動　PC→まともな村人
+17510080 Hanging (rear) start PC → White Rappa -- ぶら下がり（後）始動　PC→白らっぱ
+17520080 Hanging (after) start PC → Submerged maid aunt sister -- ぶら下がり（後）始動　PC→水没侍女おば姉妹
+17530080 Hanging (after) start PC → Shura Handmaiden Aunt -- ぶら下がり（後）始動　PC→修羅侍女おば
+17540080 Hanging (after) start PC → shop clerk (valley) -- ぶら下がり（後）始動　PC→ショップ店員(渓谷)
+17550080 Hanging (after) start PC → shop clerk (temple) -- ぶら下がり（後）始動　PC→ショップ店員(寺)
+17560080 Hanging (after) start PC → shop clerk (dungeon) -- ぶら下がり（後）始動　PC→ショップ店員(地下牢)
+17580080 Hanging (after) start PC → shop clerk (Honjo) -- ぶら下がり（後）始動　PC→ショップ店員(本城)
+17590080 Hanging (after) start PC → shop clerk (sick village) -- ぶら下がり（後）始動　PC→ショップ店員(病み村)
+17600080 Hanging (after) start PC → shop clerk (castle) -- ぶら下がり（後）始動　PC→ショップ店員(城下)
+11010081 Hanging (rear) main body PC → Ochimusha -- ぶら下がり（後）本体　PC→落武者
+11011081 Hanging (rear) Main PC → Ochimusha (Varier) -- ぶら下がり（後）本体　PC→落武者（バリエ）
+11012081 Hanging (rear) Main PC → Ochimusha (Tutorial) -- ぶら下がり（後）本体　PC→落武者（チュートリアル）
+11030081 Hanging (rear) Main unit PC → Centipede (small) -- ぶら下がり（後）本体　PC→ムカデ（小）
+11050081 Hanging (rear) body PC → Spear monk soldier -- ぶら下がり（後）本体　PC→槍僧兵
+11060081 Hanging (rear) body PC → Rotating spearman -- ぶら下がり（後）本体　PC→回転槍術師
+11100081 Hanging (rear) main unit PC → gecko -- ぶら下がり（後）本体　PC→ヤモリ
+11110081 Hanging (rear) body PC → Handmaiden Aunt -- ぶら下がり（後）本体　PC→侍女おば
+11111081 Hanging (rear) Main body PC → Handmaiden Aunt (Varier) -- ぶら下がり（後）本体　PC→侍女おば（バリエ）
+11120081 Hanging (rear) main unit PC → Lookout number -- ぶら下がり（後）本体　PC→見張り番
+11150081 Hanging (rear) body PC → dog -- ぶら下がり（後）本体　PC→イヌ
+11151081 Hanging (rear) body PC → dog (Innsmouth) -- ぶら下がり（後）本体　PC→イヌ（インスマス）
+11190081 Hanging (rear) main unit PC → valley enemy -- ぶら下がり（後）本体　PC→谷敵
+11191081 Hanging (rear) body PC → valley enemy (female) -- ぶら下がり（後）本体　PC→谷敵(女)
+11200081 Hanging (rear) Main body PC → Sokushinbutsu (strong enemy, with bugs) -- ぶら下がり（後）本体　PC→即身仏(強敵・蟲有り)
+11210081 Hanging (rear) Main body PC → Sokushinbutsu (no small fish or bugs) -- ぶら下がり（後）本体　PC→即身仏(雑魚・蟲無し)
+11220081 Hanging (rear) main body PC → temple miscellaneous fish -- ぶら下がり（後）本体　PC→寺雑魚
+11240081 Hanging (rear) body PC → Shamo chicken -- ぶら下がり（後）本体　PC→軍鶏
+11250081 Hanging (rear) main body PC → small fish monkey -- ぶら下がり（後）本体　PC→雑魚猿
+11260081 Hanging (rear) body PC → Chigo monkey -- ぶら下がり（後）本体　PC→稚児猿
+11300081 Hanging (rear) body PC → Japanese style Innsmouth -- ぶら下がり（後）本体　PC→和風インスマス
+11310081 Hanging (rear) main body PC → Genpei warrior -- ぶら下がり（後）本体　PC→源平武者
+11360081 Hanging (rear) main unit PC → Rappa -- ぶら下がり（後）本体　PC→らっぱ
+11361081 Hanging (rear) Main PC → Rappa (Tokugawa) -- ぶら下がり（後）本体　PC→らっぱ（徳川）
+11400081 Hanging (rear) main body PC → swordsman -- ぶら下がり（後）本体　PC→剣客
+11450081 Hanging (rear) main body PC → Nightjars -- ぶら下がり（後）本体　PC→夜鷹衆
+11470081 Hanging (rear) main body PC → lonely people -- ぶら下がり（後）本体　PC→孤影衆
+11500081 Hanging (rear) body PC → Villager Zombie -- ぶら下がり（後）本体　PC→村人ゾンビ
+11501081 Hanging (rear) Body PC → Villager Zombie (female) -- ぶら下がり（後）本体　PC→村人ゾンビ（女）
+11520081 Hanging (rear) Main PC → Villager Zombie (Prisoner) -- ぶら下がり（後）本体　PC→村人ゾンビ（囚人）
+11550081 Hanging (rear) main unit PC → bandit -- ぶら下がり（後）本体　PC→野盗
+11700081 Hanging (rear) body PC → Samurai Tokugawa -- ぶら下がり（後）本体　PC→徳川侍
+17420081 Hanging (rear) main unit PC → product sales bandit -- ぶら下がり（後）本体　PC→物売り野盗
+17430081 Hanging (rear) main body PC → Araji shop clerk -- ぶら下がり（後）本体　PC→荒れ寺ショップ店員
+17440081 Hanging (rear) main PC → Yayobioka Nun -- ぶら下がり（後）本体　PC→八百比丘尼
+17450081 Hanging (rear) main body PC → Suzu Auntie -- ぶら下がり（後）本体　PC→鈴婆
+17460081 Hanging (rear) body PC → Suzu&#39;s son -- ぶら下がり（後）本体　PC→鈴婆の息子
+17480081 Hanging (rear) main body PC → Sick village priest -- ぶら下がり（後）本体　PC→病み村神主
+17490081 Hanging (rear) body PC → Immortal experiment doctor -- ぶら下がり（後）本体　PC→不死実験の医僧
+17500081 Hanging (rear) body PC → decent villager -- ぶら下がり（後）本体　PC→まともな村人
+17510081 Hanging (rear) main unit PC → white -- ぶら下がり（後）本体　PC→白らっぱ
+17520081 Hanging (rear) body PC → Submerged maid aunt sister -- ぶら下がり（後）本体　PC→水没侍女おば姉妹
+17530081 Hanging (rear) main body PC → Shura maid aunt -- ぶら下がり（後）本体　PC→修羅侍女おば
+17540081 Hanging (rear) Main unit PC → Shop clerk (valley) -- ぶら下がり（後）本体　PC→ショップ店員(渓谷)
+17550081 Hanging (rear) Main unit PC → Shop clerk (temple) -- ぶら下がり（後）本体　PC→ショップ店員(寺)
+17560081 Hanging (rear) Main unit PC → Shop clerk (dungeon) -- ぶら下がり（後）本体　PC→ショップ店員(地下牢)
+17580081 Hanging (rear) Main unit PC → Shop clerk (Honjo) -- ぶら下がり（後）本体　PC→ショップ店員(本城)
+17590081 Hanging (rear) Main PC → Shop clerk (sick village) -- ぶら下がり（後）本体　PC→ショップ店員(病み村)
+17600081 Hanging (rear) Main PC → Shop clerk (castle) -- ぶら下がり（後）本体　PC→ショップ店員(城下)
+11012090 Enemy Special State A PC → Ochimusha (Tutorial) -- 敵特殊状態A　PC→落ち武者（チュートリアル）
+11140090 Enemy special state A PC → Earthen wall soldier -- 敵特殊状態A　PC→土塀兵
+11200090 Enemy special state A PC → Sokushinbutsu (with bugs) -- 敵特殊状態A　PC→即身仏（蟲有り）
+11210090 Enemy special state A PC → Sokushinbutsu (no bugs) -- 敵特殊状態A　PC→即身仏（蟲無し）
+15100590 Enemy special state A PC → Yasha Ape (HU) -- 敵特殊状態A　PC→夜叉猿（HU）
+15200090 Enemy special state A PC → Mermaid Dragon -- 敵特殊状態A　PC→人魚竜
+15400590 Enemy special state A PC → Kensei (HU) -- 敵特殊状態A　PC→剣聖（HU）
+11010110 Breaking behind PC → Ochimusha -- 崩し背後始動　PC→落武者
+11011110 Breaking behind PC → Ochimusha (Varier) -- 崩し背後始動　PC→落武者（バリエ）
+11012110 Breaking behind PC → Ochimusha (tutorial) -- 崩し背後始動　PC→落武者（チュートリアル）
+11020110 Breaking behind PC → General Samurai -- 崩し背後始動　PC→侍大将
+11021110 Breaking behind PC → Samurai General_Large Spear -- 崩し背後始動　PC→侍大将_大槍
+11030110 Breaking behind PC → Centipede (small) -- 崩し背後始動　PC→ムカデ（小）
+11040110 Breaking behind PC → Centipede (Large) -- 崩し背後始動　PC→ムカデ（大）
+11050110 Breaking behind PC → Spear monk soldier -- 崩し背後始動　PC→槍僧兵
+11060110 Breaking behind PC → Rotating spearman -- 崩し背後始動　PC→回転槍術師
+11070110 Breaking behind PC → Shura Samurai -- 崩し背後始動　PC→修羅侍
+11080110 Breaking behind PC → Seven-sided warrior -- 崩し背後始動　PC→七面武者
+11100110 Breaking behind PC → gecko -- 崩し背後始動　PC→ヤモリ
+11110110 Breaking behind the start PC → Aunt Samurai -- 崩し背後始動　PC→侍女おば
+11111110 Breaking behind the start PC → Handmaiden Aunt (Varier) -- 崩し背後始動　PC→侍女おば（バリエ）
+11120110 Breaking behind PC → Watchman -- 崩し背後始動　PC→見張り番
+11130110 Breaking behind PC → Nanban armor -- 崩し背後始動　PC→南蛮甲冑
+11150110 Breaking behind PC → dog -- 崩し背後始動　PC→イヌ
+11151110 Breaking behind PC → Dog (Innsmouth) -- 崩し背後始動　PC→イヌ（インスマス）
+11180110 Breaking behind PC → younger man -- 崩し背後始動　PC→下男
+11181110 Breaking behind PC → younger man zombie -- 崩し背後始動　PC→下男ゾンビ
+11190110 Breaking behind PC → Valley enemy -- 崩し背後始動　PC→谷敵
+11191110 Breaking behind PC → Valley enemy (female) -- 崩し背後始動　PC→谷敵(女)
+11200110 Breaking behind PC → Sokushinbutsu (strong enemy, with bugs) -- 崩し背後始動　PC→即身仏(強敵・蟲有り)
+11210110 Breaking behind PC → Sokushinbutsu (no small fish or bugs) -- 崩し背後始動　PC→即身仏(雑魚・蟲無し)
+11220110 Breaking behind PC → Temple miscellaneous fish -- 崩し背後始動　PC→寺雑魚
+11240110 Breaking behind PC → Shamo chicken -- 崩し背後始動　PC→軍鶏
+11250110 Breaking behind PC → Small fish monkey -- 崩し背後始動　PC→雑魚猿
+11260110 Breaking behind PC → Chigo monkey -- 崩し背後始動　PC→稚児猿
+11300110 Breaking behind PC → Japanese style Innsmouth -- 崩し背後始動　PC→和風インスマス
+11310110 Breaking behind PC → Genpei Samurai -- 崩し背後始動　PC→源平武者
+11350110 Breaking behind PC → No neck -- 崩し背後始動　PC→首なし
+11360110 Breaking behind PC → Rappa -- 崩し背後始動　PC→らっぱ
+11361110 Breaking behind PC → Rappa (Tokugawa) -- 崩し背後始動　PC→らっぱ（徳川）
+11370110 Breaking behind PC → Fire cow -- 崩し背後始動　PC→火牛
+11380110 Breaking behind PC → Fire cow (Innsmouth) -- 崩し背後始動　PC→火牛（インスマス）
+11400110 Breaking behind PC → Swordsman -- 崩し背後始動　PC→剣客
+11450110 Breaking behind the start PC → Nightjars -- 崩し背後始動　PC→夜鷹衆
+11470110 Breaking behind the start PC → Kokageshu -- 崩し背後始動　PC→孤影衆
+11500110 Breaking behind PC → Villager Zombie -- 崩し背後始動　PC→村人ゾンビ
+11501110 Breaking behind PC → Villager Zombie (female) -- 崩し背後始動　PC→村人ゾンビ（女）
+11520110 Breaking behind PC → Villager Zombie (Prisoner) -- 崩し背後始動　PC→村人ゾンビ（囚人）
+11550110 Breaking behind the start PC → Bandit -- 崩し背後始動　PC→野盗
+11700110 Breaking behind PC → Samurai Tokugawa -- 崩し背後始動　PC→徳川侍
+15000110 Breaking behind the start PC → Haunting Monk -- 崩し背後始動　PC→破戒僧
+15020110 Breaking behind PC → Akaoni -- 崩し背後始動　PC→赤鬼
+15021110 Breaking behind PC → Giants Innsmouth -- 崩し背後始動　PC→巨人インスマス
+15060110 Breaking behind PC → Chief of Ninja Army -- 崩し背後始動　PC→忍軍の長
+15080110 Breaking behind PC → Cavalry warrior -- 崩し背後始動　PC→騎馬武者
+15090110 Breaking behind PC → Butterfly -- 崩し背後始動　PC→お蝶
+15090610 Breaking behind PC → Butterfly (HU) -- 崩し背後始動　PC→お蝶（HU）
+15100110 Breaking behind PC → Yasha Ape -- 崩し背後始動　PC→夜叉猿
+15100610 Breaking behind PC → Yasha Ape (HU) -- 崩し背後始動　PC→夜叉猿（HU）
+15300110 Breaking behind PC → Okiryu -- 崩し背後始動　PC→翁竜
+15400110 Breaking behind PC → Kensei -- 崩し背後始動　PC→剣聖
+15400610 Breaking behind PC → Kensei (HU) -- 崩し背後始動　PC→剣聖（HU）
+15430110 Breaking behind PC → Kensei (bed) -- 崩し背後始動　PC→剣聖（病床）
+17000110 Breaking behind PC → Female player -- 崩し背後始動　PC→女奏者
+17020110 Breaking behind PC → Buddhist priest (demon) -- 崩し背後始動　PC→仏師(鬼)
+17100110 Breaking behind PC → Rival -- 崩し背後始動　PC→ライバル
+17110110 Breaking behind PC → Rival naked -- 崩し背後始動　PC→ライバル裸
+17400110 Breaking behind PC → Isei&#39;s daughter -- 崩し背後始動　PC→医聖の娘
+17410110 Breaking behind the start PC → Fascinated samurai -- 崩し背後始動　PC→魅了された侍
+17420110 Breaking behind the start PC → Selling bandits -- 崩し背後始動　PC→物売り野盗
+17430110 Breaking behind the start PC → Araji shop clerk -- 崩し背後始動　PC→荒れ寺ショップ店員
+17440110 Breaking behind PC → Yayobioka Nun -- 崩し背後始動　PC→八百比丘尼
+17450110 Breaking behind PC → Suzu Auntie -- 崩し背後始動　PC→鈴婆
+17460110 Breaking behind the start PC → Suzu&#39;s son -- 崩し背後始動　PC→鈴婆の息子
+17470110 Breaking behind the start PC → kidnapped younger man -- 崩し背後始動　PC→さらわれ下男
+17480110 Breaking behind the start PC → Sick village priest -- 崩し背後始動　PC→病み村神主
+17490110 Breaking behind PC → Immortal experiment doctor -- 崩し背後始動　PC→不死実験の医僧
+17500110 Breaking behind the start PC → A decent villager -- 崩し背後始動　PC→まともな村人
+17510110 Breaking behind PC → White Rappa -- 崩し背後始動　PC→白らっぱ
+17520110 Breaking behind the start PC → Submerged maid aunt sister -- 崩し背後始動　PC→水没侍女おば姉妹
+17530110 Breaking behind the start PC → Shura Samurai Aunt -- 崩し背後始動　PC→修羅侍女おば
+17540110 Breaking behind PC → Shop clerk (valley) -- 崩し背後始動　PC→ショップ店員(渓谷)
+17550110 Breaking behind PC → Shop clerk (temple) -- 崩し背後始動　PC→ショップ店員(寺)
+17560110 Breaking behind PC → Shop clerk (dungeon) -- 崩し背後始動　PC→ショップ店員(地下牢)
+17580110 Breaking behind PC → Shop clerk (Honjo) -- 崩し背後始動　PC→ショップ店員(本城)
+17590110 Breaking behind PC → Shop clerk (sick village) -- 崩し背後始動　PC→ショップ店員(病み村)
+17600110 Breaking behind PC → Shop clerk (castle) -- 崩し背後始動　PC→ショップ店員(城下)
+11010111 The main body behind the collapse PC → Ochimusha -- 崩し背後本体　PC→落武者
+11011111 The main body behind the collapse PC → Ochimusha (Varier) -- 崩し背後本体　PC→落武者（バリエ）
+11012111 The main body behind the collapse PC → Ochimusha (Tutorial) -- 崩し背後本体　PC→落武者（チュートリアル）
+11020111 The main body behind the collapse PC → General Samurai -- 崩し背後本体　PC→侍大将
+11021111 The main body behind the collapse PC → Samurai General_Large Spear -- 崩し背後本体　PC→侍大将_大槍
+11030111 Breaking back body PC → Centipede (small) -- 崩し背後本体　PC→ムカデ（小）
+11040111 Breaking back body PC → Centipede (Large) -- 崩し背後本体　PC→ムカデ（大）
+11050111 Breaking back body PC → Spear monk soldier -- 崩し背後本体　PC→槍僧兵
+11060111 Breaking back body PC → Rotating spearman -- 崩し背後本体　PC→回転槍術師
+11070111 Breaking back body PC → Shura Samurai -- 崩し背後本体　PC→修羅侍
+11080111 Breaking back body PC → Seven-sided warrior -- 崩し背後本体　PC→七面武者
+11100111 Breaking back body PC → gecko -- 崩し背後本体　PC→ヤモリ
+11110111 The main body behind the collapse PC → Aunt Samurai -- 崩し背後本体　PC→侍女おば
+11111111 The main body behind the collapse PC → Aunt Samurai (Varier) -- 崩し背後本体　PC→侍女おば（バリエ）
+11120111 Breaking back body PC → Watchman -- 崩し背後本体　PC→見張り番
+11130111 Breaking back body PC → Nanban armor -- 崩し背後本体　PC→南蛮甲冑
+11150111 Breaking back body PC → dog -- 崩し背後本体　PC→イヌ
+11151111 Breaking back body PC → dog (Innsmouth) -- 崩し背後本体　PC→イヌ（インスマス）
+11180111 Breaking back body PC → younger man -- 崩し背後本体　PC→下男
+11181111 Breaking back body PC → younger man zombie -- 崩し背後本体　PC→下男ゾンビ
+11190111 The main body behind the collapse PC → Valley enemy -- 崩し背後本体　PC→谷敵
+11191111 Breaking back body PC → Valley enemy (female) -- 崩し背後本体　PC→谷敵(女)
+11200111 Breaking back body PC → Sokushinbutsu (strong enemy, with bugs) -- 崩し背後本体　PC→即身仏(強敵・蟲有り)
+11210111 Breaking back body PC → Sokushinbutsu (no small fish or bugs) -- 崩し背後本体　PC→即身仏(雑魚・蟲無し)
+11220111 The main body behind the collapse PC → Temple miscellaneous fish -- 崩し背後本体　PC→寺雑魚
+11240111 Breaking back body PC → Shamo chicken -- 崩し背後本体　PC→軍鶏
+11250111 Breaking back body PC → small fish monkey -- 崩し背後本体　PC→雑魚猿
+11260111 Breaking back body PC → Chigo monkey -- 崩し背後本体　PC→稚児猿
+11300111 Breaking back body PC → Japanese style Innsmouth -- 崩し背後本体　PC→和風インスマス
+11310111 The main body behind the collapse PC → Genpei Samurai -- 崩し背後本体　PC→源平武者
+11350111 Breaking back body PC → No neck -- 崩し背後本体　PC→首なし
+11360111 Breaking back body PC → Rappa -- 崩し背後本体　PC→らっぱ
+11361111 The main body behind the collapse PC → Rappa (Tokugawa) -- 崩し背後本体　PC→らっぱ（徳川）
+11370111 Breaking back body PC → Fire cow -- 崩し背後本体　PC→火牛
+11380111 Breaking back body PC → Fire cow (Innsmouth) -- 崩し背後本体　PC→火牛（インスマス）
+11400111 The main body behind the collapse PC → Swordsman -- 崩し背後本体　PC→剣客
+11450111 Breaking back body PC → Nightjars -- 崩し背後本体　PC→夜鷹衆
+11470111 Breaking back main body PC → lone shadow people -- 崩し背後本体　PC→孤影衆
+11500111 The main body behind the collapse PC → Villager Zombie -- 崩し背後本体　PC→村人ゾンビ
+11501111 The main body behind the collapse PC → Villager Zombie (female) -- 崩し背後本体　PC→村人ゾンビ（女）
+11520111 The main body behind the collapse PC → Villager Zombie (Prisoner) -- 崩し背後本体　PC→村人ゾンビ（囚人）
+11550111 The main body behind the collapse PC → Bandit -- 崩し背後本体　PC→野盗
+11700111 The main body behind the collapse PC → Samurai Tokugawa -- 崩し背後本体　PC→徳川侍
+15000111 Breaking back body PC → Haunting monk -- 崩し背後本体　PC→破戒僧
+15020111 Breaking back body PC → Akaoni -- 崩し背後本体　PC→赤鬼
+15021111 Breaking back body PC → Giant Innsmouth -- 崩し背後本体　PC→巨人インスマス
+15060111 Breaking back body PC → Chief of Ninja Army -- 崩し背後本体　PC→忍軍の長
+15080111 The main body behind the collapse PC → Cavalry warrior -- 崩し背後本体　PC→騎馬武者
+15090111 Breaking back body PC → Butterfly -- 崩し背後本体　PC→お蝶
+15090611 Breaking back body PC → Butterfly (HU) -- 崩し背後本体　PC→お蝶（HU）
+15100111 Breaking back body PC → Yasha Ape -- 崩し背後本体　PC→夜叉猿
+15100611 Breaking back body PC → Yasha Ape (HU) -- 崩し背後本体　PC→夜叉猿（HU）
+15300111 Breaking back body PC → Okiryu -- 崩し背後本体　PC→翁竜
+15400111 The main body behind the collapse PC → Kensei -- 崩し背後本体　PC→剣聖
+15400611 The main body behind the collapse PC → Kensei (HU) -- 崩し背後本体　PC→剣聖（HU）
+15430111 The main body behind the collapse PC → Kensei (bed) -- 崩し背後本体　PC→剣聖（病床）
+17000111 Breaking back body PC → female player -- 崩し背後本体　PC→女奏者
+17020111 The main body behind the collapse PC → Buddhist master (demon) -- 崩し背後本体　PC→仏師(鬼)
+17100111 Breaking back body PC → rival -- 崩し背後本体　PC→ライバル
+17110111 Breaking back body PC → rival naked -- 崩し背後本体　PC→ライバル裸
+17400111 The main body behind the collapse PC → Daughter of Isei -- 崩し背後本体　PC→医聖の娘
+17410111 The main body behind the collapse PC → Fascinated samurai -- 崩し背後本体　PC→魅了された侍
+17420111 The main body behind the collapse PC → Selling bandits -- 崩し背後本体　PC→物売り野盗
+17430111 The main body behind the collapse PC → Araji shop clerk -- 崩し背後本体　PC→荒れ寺ショップ店員
+17440111 The main body behind the collapse PC → Yayobioka Nun -- 崩し背後本体　PC→八百比丘尼
+17450111 The main body behind the collapse PC → Suzu -- 崩し背後本体　PC→鈴婆
+17460111 The main body behind the collapse PC → Suzu&#39;s son -- 崩し背後本体　PC→鈴婆の息子
+17470111 Breaking back body PC → kidnapped younger man -- 崩し背後本体　PC→さらわれ下男
+17480111 The main body behind the collapse PC → Sick village priest -- 崩し背後本体　PC→病み村神主
+17490111 The main body behind the collapse PC → Immortal experiment doctor -- 崩し背後本体　PC→不死実験の医僧
+17500111 The main body behind the collapse PC → A decent villager -- 崩し背後本体　PC→まともな村人
+17510111 Breaking back body PC → White -- 崩し背後本体　PC→白らっぱ
+17520111 Breaking back body PC → Submerged maid aunt sister -- 崩し背後本体　PC→水没侍女おば姉妹
+17530111 Breaking back body PC → Shura maid aunt -- 崩し背後本体　PC→修羅侍女おば
+17540111 The main body behind the collapse PC → Shop clerk (valley) -- 崩し背後本体　PC→ショップ店員(渓谷)
+17550111 The main body behind the collapse PC → Shop clerk (temple) -- 崩し背後本体　PC→ショップ店員(寺)
+17560111 The main body behind the collapse PC → Shop clerk (dungeon) -- 崩し背後本体　PC→ショップ店員(地下牢)
+17580111 The main body behind the collapse PC → Shop clerk (Honjo) -- 崩し背後本体　PC→ショップ店員(本城)
+17590111 The main body behind the collapse PC → Shop clerk (sick village) -- 崩し背後本体　PC→ショップ店員(病み村)
+17600111 The main body behind the collapse PC → Shop clerk (castle) -- 崩し背後本体　PC→ショップ店員(城下)
+11010112 Ninjutsu behind the collapse (blood smoke) PC → Ochimusha -- 崩し背後忍術（血煙）　PC→落武者
+11011112 Ninjutsu behind the collapse (blood smoke) PC → Ochimusha (Varier) -- 崩し背後忍術（血煙）　PC→落武者（バリエ）
+11012112 Breaking Behind Ninjutsu (Blood Smoke) PC → Ochimusha (Tutorial) -- 崩し背後忍術（血煙）　PC→落武者（チュートリアル）
+11020112 Breaking Behind Ninjutsu (Blood Smoke) PC → General Samurai -- 崩し背後忍術（血煙）　PC→侍大将
+11021112 Breaking Behind Ninjutsu (Blood Smoke) PC → Samurai General_Large Spear -- 崩し背後忍術（血煙）　PC→侍大将_大槍
+11030112 Ninjutsu behind the collapse (blood smoke) PC → Centipede (small) -- 崩し背後忍術（血煙）　PC→ムカデ（小）
+11040112 Ninjutsu behind the collapse (blood smoke) PC → Centipede (Large) -- 崩し背後忍術（血煙）　PC→ムカデ（大）
+11050112 Breaking Behind Ninjutsu (Blood Smoke) PC → Spear Monk Soldier -- 崩し背後忍術（血煙）　PC→槍僧兵
+11060112 Breaking Behind Ninjutsu (Blood Smoke) PC → Rotating Spearman -- 崩し背後忍術（血煙）　PC→回転槍術師
+11070112 Breaking Behind Ninjutsu (Blood Smoke) PC → Shura Samurai -- 崩し背後忍術（血煙）　PC→修羅侍
+11080112 Breaking Behind Ninjutsu (Blood Smoke) PC → Seven-sided Warrior -- 崩し背後忍術（血煙）　PC→七面武者
+11100112 Breaking behind ninjutsu (blood smoke) PC → gecko -- 崩し背後忍術（血煙）　PC→ヤモリ
+11110112 Breaking Behind Ninjutsu (Blood Smoke) PC → Handmaiden Aunt -- 崩し背後忍術（血煙）　PC→侍女おば
+11111112 Breaking behind Ninjutsu (blood smoke) PC → Handmaiden Aunt (Varier) -- 崩し背後忍術（血煙）　PC→侍女おば（バリエ）
+11120112 Breaking behind ninjutsu (blood smoke) PC → Watchman -- 崩し背後忍術（血煙）　PC→見張り番
+11150112 Breaking behind ninjutsu (blood smoke) PC → dog -- 崩し背後忍術（血煙）　PC→イヌ
+11151112 Breaking Behind Ninjutsu (Blood Smoke) PC → Dog (Innsmouth) -- 崩し背後忍術（血煙）　PC→イヌ（インスマス）
+11180112 Breaking behind ninjutsu (blood smoke) PC → younger man -- 崩し背後忍術（血煙）　PC→下男
+11181112 Breaking Behind Ninjutsu (Blood Smoke) PC → Younger Zombie -- 崩し背後忍術（血煙）　PC→下男ゾンビ
+11190112 Breaking behind Ninjutsu (blood smoke) PC → Valley enemy -- 崩し背後忍術（血煙）　PC→谷敵
+11191112 Breaking Behind Ninjutsu (Blood Smoke) PC → Valley Enemy (Female) -- 崩し背後忍術（血煙）　PC→谷敵(女)
+11220112 Ninjutsu behind the collapse (blood smoke) PC → Temple miscellaneous fish -- 崩し背後忍術（血煙）　PC→寺雑魚
+11240112 Breaking behind ninjutsu (blood smoke) PC → Shamo chicken -- 崩し背後忍術（血煙）　PC→軍鶏
+11250112 Breaking behind ninjutsu (blood smoke) PC → Small fish monkey -- 崩し背後忍術（血煙）　PC→雑魚猿
+11260112 Breaking Behind Ninjutsu (Blood Smoke) PC → Chigo Monkey -- 崩し背後忍術（血煙）　PC→稚児猿
+11300112 Breaking Behind Ninjutsu (Blood Smoke) PC → Japanese Style Innsmouth -- 崩し背後忍術（血煙）　PC→和風インスマス
+11310112 Breaking Behind Ninjutsu (Blood Smoke) PC → Genpei Samurai -- 崩し背後忍術（血煙）　PC→源平武者
+11360112 Breaking Behind Ninjutsu (Blood Smoke) PC → Rappa -- 崩し背後忍術（血煙）　PC→らっぱ
+11361112 Breaking behind ninjutsu (blood smoke) PC → Rappa (Tokugawa) -- 崩し背後忍術（血煙）　PC→らっぱ（徳川）
+11400112 Breaking Behind Ninjutsu (Blood Smoke) PC → Swordsman -- 崩し背後忍術（血煙）　PC→剣客
+11450112 Breaking Behind Ninjutsu (Blood Smoke) PC → Nightjars -- 崩し背後忍術（血煙）　PC→夜鷹衆
+11470112 Breaking Behind Ninjutsu (Blood Smoke) PC → Lonely People -- 崩し背後忍術（血煙）　PC→孤影衆
+11500112 Breaking Behind Ninjutsu (Blood Smoke) PC → Villager Zombie -- 崩し背後忍術（血煙）　PC→村人ゾンビ
+11501112 Breaking Behind Ninjutsu (Blood Smoke) PC → Villager Zombie (Female) -- 崩し背後忍術（血煙）　PC→村人ゾンビ（女）
+11520112 Breaking behind ninjutsu (blood smoke) PC → Villager zombie (prisoner) -- 崩し背後忍術（血煙）　PC→村人ゾンビ（囚人）
+11550112 Breaking Behind Ninjutsu (Blood Smoke) PC → Bandit -- 崩し背後忍術（血煙）　PC→野盗
+11700112 Breaking Behind Ninjutsu (Blood Smoke) PC → Samurai Tokugawa -- 崩し背後忍術（血煙）　PC→徳川侍
+15020112 Breaking Behind Ninjutsu (Blood Smoke) PC → Red Demon -- 崩し背後忍術（血煙）　PC→赤鬼
+15021112 Breaking Behind Ninjutsu (Blood Smoke) PC → Giant Innsmouth -- 崩し背後忍術（血煙）　PC→巨人インスマス
+17000112 Breaking behind ninjutsu (blood smoke) PC → Female player -- 崩し背後忍術（血煙）　PC→女奏者
+17410112 Breaking Behind Ninjutsu (Blood Smoke) PC → Fascinated Samurai -- 崩し背後忍術（血煙）　PC→魅了された侍
+17420112 Breaking Behind Ninjutsu (Blood Smoke) PC → Selling Bandits -- 崩し背後忍術（血煙）　PC→物売り野盗
+17470112 Breaking behind ninjutsu (blood smoke) PC → kidnapped younger man -- 崩し背後忍術（血煙）　PC→さらわれ下男
+17490112 Breaking Behind Ninjutsu (Blood Smoke) PC → Immortal Experiment Doctor -- 崩し背後忍術（血煙）　PC→不死実験の医僧
+17500112 Breaking Behind Ninjutsu (Blood Smoke) PC → Decent Villager -- 崩し背後忍術（血煙）　PC→まともな村人
+17510112 Breaking Behind Ninjutsu (Blood Smoke) PC → White Rappa -- 崩し背後忍術（血煙）　PC→白らっぱ
+11010113 Ninjutsu behind the collapse (puppet) PC → Ochimusha -- 崩し背後忍術（傀儡）　PC→落武者
+11011113 Ninjutsu behind the collapse (puppet) PC → Ochimusha (Varier) -- 崩し背後忍術（傀儡）　PC→落武者（バリエ）
+11012113 Ninjutsu behind the collapse (puppet) PC → Ochimusha (tutorial) -- 崩し背後忍術（傀儡）　PC→落武者（チュートリアル）
+11020113 Ninjutsu behind the collapse (puppet) PC → General Samurai -- 崩し背後忍術（傀儡）　PC→侍大将
+11021113 Breaking Behind Ninjutsu (Puppet) PC → Samurai General_Large Spear -- 崩し背後忍術（傀儡）　PC→侍大将_大槍
+11030113 Ninjutsu behind the collapse (puppet) PC → Centipede (small) -- 崩し背後忍術（傀儡）　PC→ムカデ（小）
+11040113 Breaking Behind Ninjutsu (Puppet) PC → Centipede (Large) -- 崩し背後忍術（傀儡）　PC→ムカデ（大）
+11050113 Breaking Behind Ninjutsu (Puppet) PC → Spear Monk Soldier -- 崩し背後忍術（傀儡）　PC→槍僧兵
+11060113 Breaking Behind Ninjutsu (Puppet) PC → Rotating Spearman -- 崩し背後忍術（傀儡）　PC→回転槍術師
+11070113 Breaking Behind Ninjutsu (Puppet) PC → Shura Samurai -- 崩し背後忍術（傀儡）　PC→修羅侍
+11080113 Breaking behind ninjutsu (puppet) PC → Seven-sided warrior -- 崩し背後忍術（傀儡）　PC→七面武者
+11100113 Breaking behind ninjutsu (puppet) PC → gecko -- 崩し背後忍術（傀儡）　PC→ヤモリ
+11110113 Breaking Behind Ninjutsu (Puppet) PC → Handmaiden Aunt -- 崩し背後忍術（傀儡）　PC→侍女おば
+11111113 Breaking Behind Ninjutsu (Puppet) PC → Handmaiden Aunt (Varier) -- 崩し背後忍術（傀儡）　PC→侍女おば（バリエ）
+11120113 Breaking behind ninjutsu (puppet) PC → Watchman -- 崩し背後忍術（傀儡）　PC→見張り番
+11150113 Breaking Behind Ninjutsu (Puppet) PC → Dog -- 崩し背後忍術（傀儡）　PC→イヌ
+11151113 Breaking Behind Ninjutsu (Puppet) PC → Dog (Innsmouth) -- 崩し背後忍術（傀儡）　PC→イヌ（インスマス）
+11180113 Breaking behind ninjutsu (puppet) PC → younger man -- 崩し背後忍術（傀儡）　PC→下男
+11181113 Breaking behind ninjutsu (puppet) PC → younger man zombie -- 崩し背後忍術（傀儡）　PC→下男ゾンビ
+11190113 Breaking Behind Ninjutsu (Puppet) PC → Valley Enemy -- 崩し背後忍術（傀儡）　PC→谷敵
+11191113 Ninjutsu behind the collapse (puppet) PC → Valley enemy (female) -- 崩し背後忍術（傀儡）　PC→谷敵(女)
+11220113 Ninjutsu behind the collapse (puppet) PC → Temple miscellaneous fish -- 崩し背後忍術（傀儡）　PC→寺雑魚
+11240113 Breaking behind ninjutsu (puppet) PC → Shamo chicken -- 崩し背後忍術（傀儡）　PC→軍鶏
+11250113 Breaking Behind Ninjutsu (Puppet) PC → Small Fish Monkey -- 崩し背後忍術（傀儡）　PC→雑魚猿
+11260113 Breaking Behind Ninjutsu (Puppet) PC → Chigo Monkey -- 崩し背後忍術（傀儡）　PC→稚児猿
+11300113 Breaking behind ninjutsu (puppet) PC → Japanese style Innsmouth -- 崩し背後忍術（傀儡）　PC→和風インスマス
+11310113 Breaking Behind Ninjutsu (Puppet) PC → Genpei Samurai -- 崩し背後忍術（傀儡）　PC→源平武者
+11360113 Breaking Behind Ninjutsu (Puppet) PC → Rappa -- 崩し背後忍術（傀儡）　PC→らっぱ
+11361113 Ninjutsu behind the collapse (puppet) PC → Rappa (Tokugawa) -- 崩し背後忍術（傀儡）　PC→らっぱ（徳川）
+11400113 Breaking Behind Ninjutsu (Puppet) PC → Swordsman -- 崩し背後忍術（傀儡）　PC→剣客
+11450113 Breaking Behind Ninjutsu (Puppet) PC → Nightjars -- 崩し背後忍術（傀儡）　PC→夜鷹衆
+11470113 Breaking Behind Ninjutsu (Puppet) PC → Lonely People -- 崩し背後忍術（傀儡）　PC→孤影衆
+11500113 Breaking Behind Ninjutsu (Puppet) PC → Villager Zombie -- 崩し背後忍術（傀儡）　PC→村人ゾンビ
+11501113 Breaking behind ninjutsu (puppet) PC → Villager zombie (female) -- 崩し背後忍術（傀儡）　PC→村人ゾンビ（女）
+11520113 Breaking Behind Ninjutsu (Puppet) PC → Villager Zombie (Prisoner) -- 崩し背後忍術（傀儡）　PC→村人ゾンビ（囚人）
+11550113 Breaking Behind Ninjutsu (Puppet) PC → Bandit -- 崩し背後忍術（傀儡）　PC→野盗
+11700113 Ninjutsu behind the collapse (puppet) PC → Samurai Tokugawa -- 崩し背後忍術（傀儡）　PC→徳川侍
+15020113 Breaking Behind Ninjutsu (Puppet) PC → Akaoni -- 崩し背後忍術（傀儡）　PC→赤鬼
+15021113 Breaking Behind Ninjutsu (Puppet) PC → Giant Innsmouth -- 崩し背後忍術（傀儡）　PC→巨人インスマス
+17000113 Breaking behind ninjutsu (puppet) PC → female player -- 崩し背後忍術（傀儡）　PC→女奏者
+17410113 Breaking Behind Ninjutsu (Puppet) PC → Fascinated Samurai -- 崩し背後忍術（傀儡）　PC→魅了された侍
+17420113 Breaking Behind Ninjutsu (Puppet) PC → Selling Bandits -- 崩し背後忍術（傀儡）　PC→物売り野盗
+17470113 Breaking behind ninjutsu (puppet) PC → kidnapped younger man -- 崩し背後忍術（傀儡）　PC→さらわれ下男
+17490113 Breaking Behind Ninjutsu (Puppet) PC → Immortal Experiment Doctor -- 崩し背後忍術（傀儡）　PC→不死実験の医僧
+17500113 Breaking Behind Ninjutsu (Puppet) PC → A decent villager -- 崩し背後忍術（傀儡）　PC→まともな村人
+17510113 Breaking Behind Ninjutsu (Puppet) PC → White Rappa -- 崩し背後忍術（傀儡）　PC→白らっぱ
+11010114 Ninjutsu behind the collapse (grant) PC → Ochimusha -- 崩し背後忍術（付与）　PC→落武者
+11011114 Ninjutsu behind the collapse (grant) PC → Ochimusha (Varier) -- 崩し背後忍術（付与）　PC→落武者（バリエ）
+11012114 Breaking Behind Ninjutsu (Grant) PC → Ochimusha (Tutorial) -- 崩し背後忍術（付与）　PC→落武者（チュートリアル）
+11020114 Breaking Behind Ninjutsu (Grant) PC → General Samurai -- 崩し背後忍術（付与）　PC→侍大将
+11021114 Breaking Behind Ninjutsu (Grant) PC → Samurai General_Large Spear -- 崩し背後忍術（付与）　PC→侍大将_大槍
+11030114 Breaking behind ninjutsu (grant) PC → Centipede (small) -- 崩し背後忍術（付与）　PC→ムカデ(小)
+11040114 Breaking Behind Ninjutsu (Grant) PC → Centipede (Large) -- 崩し背後忍術（付与）　PC→ムカデ(大)
+11050114 Breaking Behind Ninjutsu (Grant) PC → Spear Monk Soldier -- 崩し背後忍術（付与）　PC→槍僧兵
+11060114 Breaking Behind Ninjutsu (Grant) PC → Rotating Spearman -- 崩し背後忍術（付与）　PC→回転槍術師
+11070114 Breaking Behind Ninjutsu (Grant) PC → Shura Samurai -- 崩し背後忍術（付与）　PC→修羅侍
+11080114 Breaking behind ninjutsu (grant) PC → Seven-sided warrior -- 崩し背後忍術（付与）　PC→七面武者
+11100114 Breaking behind ninjutsu (grant) PC → gecko -- 崩し背後忍術（付与）　PC→ヤモリ
+11110114 Breaking Behind Ninjutsu (Grant) PC → Handmaiden Aunt -- 崩し背後忍術（付与）　PC→侍女おば
+11111114 Breaking Behind Ninjutsu (Grant) PC → Handmaiden Aunt (Varier) -- 崩し背後忍術（付与）　PC→侍女おば（バリエ）
+11120114 Breaking behind ninjutsu (granting) PC → Watchman -- 崩し背後忍術（付与）　PC→見張り番
+11150114 Breaking Behind Ninjutsu (Grant) PC → Dog -- 崩し背後忍術（付与）　PC→イヌ
+11151114 Breaking Behind Ninjutsu (Grant) PC → Dog (Innsmouth) -- 崩し背後忍術（付与）　PC→イヌ（インスマス）
+11180114 Breaking behind ninjutsu (grant) PC → younger man -- 崩し背後忍術（付与）　PC→下男
+11181114 Breaking behind ninjutsu (grant) PC → younger man zombie -- 崩し背後忍術（付与）　PC→下男ゾンビ
+11190114 Ninjutsu behind the collapse (grant) PC → Valley enemy -- 崩し背後忍術（付与）　PC→谷敵
+11191114 Ninjutsu behind the collapse (grant) PC → Valley enemy (female) -- 崩し背後忍術（付与）　PC→谷敵(女)
+11220114 Ninjutsu behind the collapse (grant) PC → Temple miscellaneous fish -- 崩し背後忍術（付与）　PC→寺雑魚
+11240114 Breaking behind ninjutsu (grant) PC → Shamo chicken -- 崩し背後忍術（付与）　PC→軍鶏
+11250114 Ninjutsu behind the collapse (grant) PC → Small fish monkey -- 崩し背後忍術（付与）　PC→雑魚猿
+11260114 Breaking Behind Ninjutsu (Grant) PC → Chigo Monkey -- 崩し背後忍術（付与）　PC→稚児猿
+11300114 Breaking Behind Ninjutsu (Grant) PC → Japanese Style Innsmouth -- 崩し背後忍術（付与）　PC→和風インスマス
+11310114 Breaking Behind Ninjutsu (Grant) PC → Genpei Samurai -- 崩し背後忍術（付与）　PC→源平武者
+11360114 Breaking Behind Ninjutsu (Grant) PC → Rappa -- 崩し背後忍術（付与）　PC→らっぱ
+11361114 Ninjutsu behind the collapse (grant) PC → Rappa (Tokugawa) -- 崩し背後忍術（付与）　PC→らっぱ（徳川）
+11400114 Ninjutsu behind the collapse (grant) PC → Swordsman -- 崩し背後忍術（付与）　PC→剣客
+11450114 Breaking Behind Ninjutsu (Grant) PC → Nightjars -- 崩し背後忍術（付与）　PC→夜鷹衆
+11470114 Breaking Behind Ninjutsu (Grant) PC → Kokageshu -- 崩し背後忍術（付与）　PC→孤影衆
+11500114 Breaking Behind Ninjutsu (Grant) PC → Villager Zombie -- 崩し背後忍術（付与）　PC→村人ゾンビ
+11501114 Breaking Behind Ninjutsu (Grant) PC → Villager Zombie (Female) -- 崩し背後忍術（付与）　PC→村人ゾンビ（女）
+11520114 Breaking Behind Ninjutsu (Grant) PC → Villager Zombie (Prisoner) -- 崩し背後忍術（付与）　PC→村人ゾンビ（囚人）
+11550114 Ninjutsu behind the collapse (grant) PC → Bandit -- 崩し背後忍術（付与）　PC→野盗
+11700114 Breaking Behind Ninjutsu (Grant) PC → Samurai Tokugawa -- 崩し背後忍術（付与）　PC→徳川侍
+15020114 Breaking Behind Ninjutsu (Grant) PC → Akaoni -- 崩し背後忍術（付与）　PC→赤鬼
+15021114 Breaking Behind Ninjutsu (Grant) PC → Giant Innsmouth -- 崩し背後忍術（付与）　PC→巨人インスマス
+17000114 Ninjutsu behind the break (grant) PC → Female player -- 崩し背後忍術（付与）　PC→女奏者
+17410114 Breaking Behind Ninjutsu (Grant) PC → Fascinated Samurai -- 崩し背後忍術（付与）　PC→魅了された侍
+17420114 Breaking Behind Ninjutsu (Grant) PC → Selling Bandits -- 崩し背後忍術（付与）　PC→物売り野盗
+17470114 Breaking behind ninjutsu (granting) PC → kidnapped younger man -- 崩し背後忍術（付与）　PC→さらわれ下男
+17490114 Breaking Behind Ninjutsu (Grant) PC → Immortal Experiment Doctor -- 崩し背後忍術（付与）　PC→不死実験の医僧
+17500114 Breaking Behind Ninjutsu (Grant) PC → A decent villager -- 崩し背後忍術（付与）　PC→まともな村人
+17510114 Breaking Behind Ninjutsu (Grant) PC → White Rappa -- 崩し背後忍術（付与）　PC→白らっぱ
+15080119 Breaking behind Todome PC → Horse-riding warrior -- 崩し背後トドメ　PC→騎馬武者
+15100619 Breaking behind Todome PC → Yasha Ape (HU) -- 崩し背後トドメ　PC→夜叉猿（HU）
+11010120 Close-up PC → Ochimusha -- 見切り崩し　PC→落武者
+11011120 Close-up PC → Ochimusha (Varier) -- 見切り崩し　PC→落武者（バリエ）
+11012120 Close-up PC → Ochimusha (Tutorial) -- 見切り崩し　PC→落武者（チュートリアル）
+11020120 Close-out PC → General Samurai -- 見切り崩し　PC→侍大将
+11021120 Close-out PC → Samurai General_Large Spear -- 見切り崩し　PC→侍大将_大槍
+11050120 Close-up PC → Spear monk soldier -- 見切り崩し　PC→槍僧兵
+11130120 Close-out PC → Nanban armor -- 見切り崩し　PC→南蛮甲冑
+11140120 Close-out PC → Earthen wall soldier -- 見切り崩し　PC→土塀兵
+11190120 Close-out PC → Valley enemy -- 見切り崩し　PC→谷敵
+11191120 Close-out PC → Valley enemy (female) -- 見切り崩し　PC→谷敵(女)
+11220120 Close-out PC → Temple miscellaneous fish -- 見切り崩し　PC→寺雑魚
+11310120 Close-up PC → Genpei Samurai -- 見切り崩し　PC→源平武者
+11400120 Close-out PC → Swordsman -- 見切り崩し　PC→剣客
+11470120 Close-out PC → Arc Shadows -- 見切り崩し　PC→弧影衆
+11500120 Close-up PC → Villager Zombie -- 見切り崩し　PC→村人ゾンビ
+11501120 Close-up PC → Villager Zombie (female) -- 見切り崩し　PC→村人ゾンビ（女）
+11520120 Close-up PC → Villager Zombie (Prisoner) -- 見切り崩し　PC→村人ゾンビ（囚人）
+11550120 Close-up PC → Bandit -- 見切り崩し　PC→野盗
+11700120 Close-up PC → Samurai Tokugawa -- 見切り崩し　PC→徳川侍
+15000120 Close-up PC → Haunting Monk -- 見切り崩し　PC→破戒僧
+15060120 Close-out PC → Chief of Ninja Army -- 見切り崩し　PC→忍軍の長
+15400120 Close-out PC → Kensei -- 見切り崩し　PC→剣聖
+15400620 Close-out PC → Kensei (HU) -- 見切り崩し　PC→剣聖（HU）
+15430120 Close-out PC → Kensei (bed) -- 見切り崩し　PC→剣聖（病床）
+17100120 Close-up PC → Rival -- 見切り崩し　PC→ライバル
+17110120 Close-up PC → Rival naked -- 見切り崩し　PC→ライバル裸
+17400120 Close-up PC → Daughter of Isei -- 見切り崩し　PC→医聖の娘
+17410120 Close-up PC → Fascinated samurai -- 見切り崩し　PC→魅了された侍
+17420120 Close-out PC → Selling bandits -- 見切り崩し　PC→物売り野盗
+17460120 Close-up PC → Suzu&#39;s son -- 見切り崩し　PC→鈴婆の息子
+17480120 Close-up PC → Sick village priest -- 見切り崩し　PC→病み村神主
+17490120 Close-up PC → Immortal experiment doctor -- 見切り崩し　PC→不死実験の医僧
+17500120 Close-up PC → A decent villager -- 見切り崩し　PC→まともな村人
+11010121 Close-up attack PC → Ochimusha -- 見切り崩し攻撃　PC→落武者
+11011121 Close-out attack PC → Ochimusha (Varier) -- 見切り崩し攻撃　PC→落武者（バリエ）
+11012121 Close-out attack PC → Ochimusha (tutorial) -- 見切り崩し攻撃　PC→落武者（チュートリアル）
+11020121 Close-out attack PC → General Samurai -- 見切り崩し攻撃　PC→侍大将
+11021121 Close-out attack PC → Samurai General_Large Spear -- 見切り崩し攻撃　PC→侍大将_大槍
+11050121 Parting off attack PC → Spear monk soldier -- 見切り崩し攻撃　PC→槍僧兵
+11130121 Close-out attack PC → Nanban armor -- 見切り崩し攻撃　PC→南蛮甲冑
+11140121 Close-out attack PC → Earthen wall soldier -- 見切り崩し攻撃　PC→土塀兵
+11190121 Close-out attack PC → Valley enemy -- 見切り崩し攻撃　PC→谷敵
+11191121 Close-out attack PC → Valley enemy (female) -- 見切り崩し攻撃　PC→谷敵(女)
+11220121 Close-out attack PC → Temple miscellaneous fish -- 見切り崩し攻撃　PC→寺雑魚
+11310121 Close-out attack PC → Genpei warrior -- 見切り崩し攻撃　PC→源平武者
+11400121 Close-out attack PC → Swordsman -- 見切り崩し攻撃　PC→剣客
+11470121 Close-out attack PC → Arc shadow crowd -- 見切り崩し攻撃　PC→弧影衆
+11500121 Close-out attack PC → Villager Zombie -- 見切り崩し攻撃　PC→村人ゾンビ
+11501121 Close-out attack PC → Villager zombie (female) -- 見切り崩し攻撃　PC→村人ゾンビ（女）
+11520121 Close-out attack PC → Villager Zombie (Prisoner) -- 見切り崩し攻撃　PC→村人ゾンビ（囚人）
+11550121 Breakdown attack PC → Bandit -- 見切り崩し攻撃　PC→野盗
+11700121 Close-out attack PC → Samurai Tokugawa -- 見切り崩し攻撃　PC→徳川侍
+15000121 Break-through attack PC → Haunting monk -- 見切り崩し攻撃　PC→破戒僧
+15060121 Close-out attack PC → Chief of Ninja Army -- 見切り崩し攻撃　PC→忍軍の長
+15400121 Close-out attack PC → Kensei -- 見切り崩し攻撃　PC→剣聖
+15400621 Close-out attack PC → Kensei (HU) -- 見切り崩し攻撃　PC→剣聖（HU）
+15430121 Close-out attack PC → Kensei (bed) -- 見切り崩し攻撃　PC→剣聖（病床）
+17100121 Close-up attack PC → Rival -- 見切り崩し攻撃　PC→ライバル
+17110121 Close-up attack PC → Rival naked -- 見切り崩し攻撃　PC→ライバル裸
+17400121 Close-up attack PC → Daughter of Isei -- 見切り崩し攻撃　PC→医聖の娘
+17410121 Close-up attack PC → Fascinated samurai -- 見切り崩し攻撃　PC→魅了された侍
+17420121 Close-out attack PC → Selling bandits -- 見切り崩し攻撃　PC→物売り野盗
+17460121 Close-up attack PC → Suzu&#39;s son -- 見切り崩し攻撃　PC→鈴婆の息子
+17480121 Close-out attack PC → Sick village priest -- 見切り崩し攻撃　PC→病み村神主
+17490121 Close-up attack PC → Immortal experiment doctor -- 見切り崩し攻撃　PC→不死実験の医僧
+17500121 Close-up attack PC → A decent villager -- 見切り崩し攻撃　PC→まともな村人
+11010122 Close-up jump PC → Ochimusha -- 見切り崩しジャンプ　PC→落武者
+11011122 Break-through jump PC → Ochimusha (Varier) -- 見切り崩しジャンプ　PC→落武者（バリエ）
+11012122 Breakdown Jump PC → Ochimusha (Tutorial) -- 見切り崩しジャンプ　PC→落武者（チュートリアル）
+11020122 Close-up jump PC → General Samurai -- 見切り崩しジャンプ　PC→侍大将
+11021122 Break-through jump PC → Samurai General_Large Spear -- 見切り崩しジャンプ　PC→侍大将_大槍
+11050122 Breakthrough Jump PC → Spear Monk Soldier -- 見切り崩しジャンプ　PC→槍僧兵
+11130122 Close-up jump PC → Nanban armor -- 見切り崩しジャンプ　PC→南蛮甲冑
+11140122 Close-up jump PC → Earthen wall soldier -- 見切り崩しジャンプ　PC→土塀兵
+11190122 Break-through jump PC → Valley enemy -- 見切り崩しジャンプ　PC→谷敵
+11191122 Break-through jump PC → Valley enemy (female) -- 見切り崩しジャンプ　PC→谷敵(女)
+11220122 Close-up jump PC → Temple miscellaneous fish -- 見切り崩しジャンプ　PC→寺雑魚
+11310122 Close-up jump PC → Genpei warrior -- 見切り崩しジャンプ　PC→源平武者
+11400122 Breakthrough Jump PC → Swordsman -- 見切り崩しジャンプ　PC→剣客
+11470122 Close-up jump PC → Arc shadow crowd -- 見切り崩しジャンプ　PC→弧影衆
+11500122 Close-up jump PC → Villager Zombie -- 見切り崩しジャンプ　PC→村人ゾンビ
+11501122 Close-up jump PC → Villager zombie (female) -- 見切り崩しジャンプ　PC→村人ゾンビ（女）
+11520122 Breakdown Jump PC → Villager Zombie (Prisoner) -- 見切り崩しジャンプ　PC→村人ゾンビ（囚人）
+11550122 Breakthrough Jump PC → Bandit -- 見切り崩しジャンプ　PC→野盗
+11700122 Close-up jump PC → Samurai Tokugawa -- 見切り崩しジャンプ　PC→徳川侍
+15000122 Breakthrough Jump PC → Haunting Monk -- 見切り崩しジャンプ　PC→破戒僧
+15060122 Breakthrough Jump PC → Chief of Ninja Army -- 見切り崩しジャンプ　PC→忍軍の長
+15400122 Close-up jump PC → Kensei -- 見切り崩しジャンプ　PC→剣聖
+15400622 Break-through jump PC → Kensei (HU) -- 見切り崩しジャンプ　PC→剣聖（HU）
+15430122 Break-through jump PC → Kensei (bed) -- 見切り崩しジャンプ　PC→剣聖（病床）
+17100122 Close-up jump PC → rival -- 見切り崩しジャンプ　PC→ライバル
+17110122 Breakthrough Jump PC → Rival Naked -- 見切り崩しジャンプ　PC→ライバル裸
+17400122 Close-up jump PC → Daughter of Isei -- 見切り崩しジャンプ　PC→医聖の娘
+17410122 Close-up jump PC → Fascinated samurai -- 見切り崩しジャンプ　PC→魅了された侍
+17420122 Break-through jump PC → Selling bandits -- 見切り崩しジャンプ　PC→物売り野盗
+17460122 Close-up jump PC → Suzu&#39;s son -- 見切り崩しジャンプ　PC→鈴婆の息子
+17480122 Close-up jump PC → Sick village priest -- 見切り崩しジャンプ　PC→病み村神主
+17490122 Breakdown Jump PC → Immortal Experiment Doctor -- 見切り崩しジャンプ　PC→不死実験の医僧
+17500122 Close-up jump PC → A decent villager -- 見切り崩しジャンプ　PC→まともな村人
+11010130 Hanging (front) start PC → Ochimusha -- ぶら下がり（前）始動　PC→落武者
+11011130 Hanging (front) start PC → Ochimusha (Varier) -- ぶら下がり（前）始動　PC→落武者（バリエ）
+11012130 Hanging (front) start PC → Ochimusha (tutorial) -- ぶら下がり（前）始動　PC→落武者（チュートリアル）
+11030130 Hanging (front) start PC → centipede (small) -- ぶら下がり（前）始動　PC→ムカデ（小）
+11050130 Hanging (front) start PC → Spear monk soldier -- ぶら下がり（前）始動　PC→槍僧兵
+11060130 Hanging (front) start PC → Rotating spearman -- ぶら下がり（前）始動　PC→回転槍術師
+11100130 Hanging (front) start PC → gecko -- ぶら下がり（前）始動　PC→ヤモリ
+11110130 Hanging (front) start PC → Handmaiden Aunt -- ぶら下がり（前）始動　PC→侍女おば
+11111130 Hanging (front) start PC → Handmaiden Aunt (Varier) -- ぶら下がり（前）始動　PC→侍女おば（バリエ）
+11120130 Hanging (front) start PC → Lookout number -- ぶら下がり（前）始動　PC→見張り番
+11150130 Hanging (front) start PC → dog -- ぶら下がり（前）始動　PC→イヌ
+11151130 Hanging (front) start PC → dog (Innsmouth) -- ぶら下がり（前）始動　PC→イヌ（インスマス）
+11190130 Hanging (front) start PC → Valley enemy -- ぶら下がり（前）始動　PC→谷敵
+11191130 Hanging (front) start PC → valley enemy (female) -- ぶら下がり（前）始動　PC→谷敵(女)
+11200130 Hanging (front) start PC → Sokushinbutsu (strong enemy, with bugs) -- ぶら下がり（前）始動　PC→即身仏(強敵・蟲有り)
+11210130 Hanging (front) start PC → Sokushinbutsu (no small fish or bugs) -- ぶら下がり（前）始動　PC→即身仏(雑魚・蟲無し)
+11220130 Hanging (front) start PC → Temple miscellaneous fish -- ぶら下がり（前）始動　PC→寺雑魚
+11240130 Hanging (front) start PC → Shamo chicken -- ぶら下がり（前）始動　PC→軍鶏
+11250130 Hanging (front) start PC → small fish monkey -- ぶら下がり（前）始動　PC→雑魚猿
+11260130 Hanging (front) start PC → Chigo monkey -- ぶら下がり（前）始動　PC→稚児猿
+11300130 Hanging (front) start PC → Japanese style Innsmouth -- ぶら下がり（前）始動　PC→和風インスマス
+11310130 Hanging (front) start PC → Genpei Samurai -- ぶら下がり（前）始動　PC→源平武者
+11360130 Hanging (front) start PC → Rappa -- ぶら下がり（前）始動　PC→らっぱ
+11361130 Hanging (front) start PC → Rappa (Tokugawa) -- ぶら下がり（前）始動　PC→らっぱ（徳川）
+11400130 Hanging (front) start PC → swordsman -- ぶら下がり（前）始動　PC→剣客
+11450130 Hanging (front) start PC → Nightjars -- ぶら下がり（前）始動　PC→夜鷹衆
+11470130 Hanging (front) start PC → lonely people -- ぶら下がり（前）始動　PC→孤影衆
+11500130 Hanging (front) start PC → Villager Zombie -- ぶら下がり（前）始動　PC→村人ゾンビ
+11501130 Hanging (front) start PC → Villager Zombie (female) -- ぶら下がり（前）始動　PC→村人ゾンビ（女）
+11520130 Hanging (front) start PC → Villager Zombie (Prisoner) -- ぶら下がり（前）始動　PC→村人ゾンビ（囚人）
+11550130 Hanging (front) start PC → bandit -- ぶら下がり（前）始動　PC→野盗
+11700130 Hanging (front) start PC → Samurai Tokugawa -- ぶら下がり（前）始動　PC→徳川侍
+17420130 Hanging (front) start PC → Merchandise bandit -- ぶら下がり（前）始動　PC→物売り野盗
+17430130 Hanging (front) start PC → Araji shop clerk -- ぶら下がり（前）始動　PC→荒れ寺ショップ店員
+17440130 Hanging (front) start PC → Yaohioka Nun -- ぶら下がり（前）始動　PC→八百比丘尼
+17450130 Hanging (front) start PC → Suzu Auntie -- ぶら下がり（前）始動　PC→鈴婆
+17460130 Hanging (front) start PC → Suzu&#39;s son -- ぶら下がり（前）始動　PC→鈴婆の息子
+17480130 Hanging (front) start PC → Sick village priest -- ぶら下がり（前）始動　PC→病み村神主
+17490130 Hanging (front) start PC → Immortal experiment doctor -- ぶら下がり（前）始動　PC→不死実験の医僧
+17500130 Hanging (front) start PC → decent villager -- ぶら下がり（前）始動　PC→まともな村人
+17510130 Hanging (front) start PC → White Rappa -- ぶら下がり（前）始動　PC→白らっぱ
+17520130 Hanging (front) start PC → Submerged maid aunt sister -- ぶら下がり（前）始動　PC→水没侍女おば姉妹
+17530130 Hanging (front) start PC → Shura maid aunt -- ぶら下がり（前）始動　PC→修羅侍女おば
+17540130 Hanging (front) start PC → shop clerk (valley) -- ぶら下がり（前）始動　PC→ショップ店員(渓谷)
+17550130 Hanging (front) start PC → shop clerk (temple) -- ぶら下がり（前）始動　PC→ショップ店員(寺)
+17560130 Hanging (front) start PC → shop clerk (dungeon) -- ぶら下がり（前）始動　PC→ショップ店員(地下牢)
+17580130 Hanging (front) start PC → Shop clerk (Honjo) -- ぶら下がり（前）始動　PC→ショップ店員(本城)
+17590130 Hanging (front) start PC → shop clerk (sick village) -- ぶら下がり（前）始動　PC→ショップ店員(病み村)
+17600130 Hanging (front) start PC → shop clerk (castle) -- ぶら下がり（前）始動　PC→ショップ店員(城下)
+11010131 Hanging (front) main unit PC → Ochimusha -- ぶら下がり（前）本体　PC→落武者
+11011131 Hanging (front) Main PC → Ochimusha (Varier) -- ぶら下がり（前）本体　PC→落武者（バリエ）
+11012131 Hanging (front) Main unit PC → Ochimusha (tutorial) -- ぶら下がり（前）本体　PC→落武者（チュートリアル）
+11030131 Hanging (front) Main unit PC → Centipede (small) -- ぶら下がり（前）本体　PC→ムカデ（小）
+11050131 Hanging (front) body PC → Spear monk soldier -- ぶら下がり（前）本体　PC→槍僧兵
+11060131 Hanging (front) body PC → Rotating spearman -- ぶら下がり（前）本体　PC→回転槍術師
+11100131 Hanging (front) main unit PC → gecko -- ぶら下がり（前）本体　PC→ヤモリ
+11110131 Hanging (front) body PC → Handmaiden Aunt -- ぶら下がり（前）本体　PC→侍女おば
+11111131 Hanging (front) Main body PC → Handmaiden Aunt (Varier) -- ぶら下がり（前）本体　PC→侍女おば（バリエ）
+11120131 Hanging (front) main unit PC → Lookout number -- ぶら下がり（前）本体　PC→見張り番
+11150131 Hanging (front) body PC → dog -- ぶら下がり（前）本体　PC→イヌ
+11151131 Hanging (front) body PC → dog (Innsmouth) -- ぶら下がり（前）本体　PC→イヌ（インスマス）
+11190131 Hanging (front) main unit PC → valley enemy -- ぶら下がり（前）本体　PC→谷敵
+11191131 Hanging (front) body PC → valley enemy (female) -- ぶら下がり（前）本体　PC→谷敵(女)
+11200131 Hanging (front) PC → Sokushinbutsu (strong enemy, with bugs) -- ぶら下がり（前）本体　PC→即身仏(強敵・蟲有り)
+11210131 Hanging (front) PC → Sokushinbutsu (no small fish or bugs) -- ぶら下がり（前）本体　PC→即身仏(雑魚・蟲無し)
+11220131 Hanging (front) body PC → Temple miscellaneous fish -- ぶら下がり（前）本体　PC→寺雑魚
+11240131 Hanging (front) body PC → Shamo chicken -- ぶら下がり（前）本体　PC→軍鶏
+11250131 Hanging (front) main body PC → small fish monkey -- ぶら下がり（前）本体　PC→雑魚猿
+11260131 Hanging (front) body PC → Chigo monkey -- ぶら下がり（前）本体　PC→稚児猿
+11300131 Hanging (front) body PC → Japanese style Innsmouth -- ぶら下がり（前）本体　PC→和風インスマス
+11310131 Hanging (front) main body PC → Genpei warrior -- ぶら下がり（前）本体　PC→源平武者
+11360131 Hanging (front) main unit PC → Rappa -- ぶら下がり（前）本体　PC→らっぱ
+11361131 Hanging (front) Main PC → Rappa (Tokugawa) -- ぶら下がり（前）本体　PC→らっぱ（徳川）
+11400131 Hanging (front) main body PC → swordsman -- ぶら下がり（前）本体　PC→剣客
+11450131 Hanging (front) main unit PC → Nightjars -- ぶら下がり（前）本体　PC→夜鷹衆
+11470131 Hanging (front) main body PC → lonely people -- ぶら下がり（前）本体　PC→孤影衆
+11500131 Hanging (front) body PC → Villager Zombie -- ぶら下がり（前）本体　PC→村人ゾンビ
+11501131 Hanging (front) Main unit PC → Villager zombie (female) -- ぶら下がり（前）本体　PC→村人ゾンビ（女）
+11520131 Hanging (front) Main PC → Villager Zombie (Prisoner) -- ぶら下がり（前）本体　PC→村人ゾンビ（囚人）
+11550131 Hanging (front) main unit PC → bandit -- ぶら下がり（前）本体　PC→野盗
+11700131 Hanging (front) body PC → Samurai Tokugawa -- ぶら下がり（前）本体　PC→徳川侍
+17420131 Hanging (front) PC → Selling bandits -- ぶら下がり（前）本体　PC→物売り野盗
+17430131 Hanging (front) main body PC → Araji shop clerk -- ぶら下がり（前）本体　PC→荒れ寺ショップ店員
+17440131 Hanging (front) main unit PC → Yaohioka Nun -- ぶら下がり（前）本体　PC→八百比丘尼
+17450131 Hanging (front) main body PC → Suzu Auntie -- ぶら下がり（前）本体　PC→鈴婆
+17460131 Hanging (front) body PC → Suzu&#39;s son -- ぶら下がり（前）本体　PC→鈴婆の息子
+17480131 Hanging (front) main body PC → sick village priest -- ぶら下がり（前）本体　PC→病み村神主
+17490131 Hanging (front) body PC → Immortal experiment doctor -- ぶら下がり（前）本体　PC→不死実験の医僧
+17500131 Hanging (front) body PC → decent villager -- ぶら下がり（前）本体　PC→まともな村人
+17510131 Hanging (front) main unit PC → white -- ぶら下がり（前）本体　PC→白らっぱ
+17520131 Hanging (front) body PC → Submerged maid aunt sister -- ぶら下がり（前）本体　PC→水没侍女おば姉妹
+17530131 Hanging (front) main body PC → Shura maid aunt -- ぶら下がり（前）本体　PC→修羅侍女おば
+17540131 Hanging (front) Main unit PC → Shop clerk (valley) -- ぶら下がり（前）本体　PC→ショップ店員(渓谷)
+17550131 Hanging (front) Main unit PC → Shop clerk (temple) -- ぶら下がり（前）本体　PC→ショップ店員(寺)
+17560131 Hanging (front) Main unit PC → Shop clerk (dungeon) -- ぶら下がり（前）本体　PC→ショップ店員(地下牢)
+17580131 Hanging (front) Main unit PC → Shop clerk (Honjo) -- ぶら下がり（前）本体　PC→ショップ店員(本城)
+17590131 Hanging (front) Main PC → Shop clerk (sick village) -- ぶら下がり（前）本体　PC→ショップ店員(病み村)
+17600131 Hanging (front) Main PC → Shop clerk (castle) -- ぶら下がり（前）本体　PC→ショップ店員(城下)
+11060140 Anti-aircraft 0 PC → Rotating spearman -- 対空0　PC→回転槍術師
+11080140 Anti-aircraft 0 PC → Seven-sided warrior -- 対空0　PC→七面武者
+11240140 Anti-aircraft 0 PC → Shamo chicken -- 対空0　PC→軍鶏
+11250140 Anti-aircraft 0 PC → Small fish monkey -- 対空0　PC→雑魚猿
+11260140 Anti-aircraft 0 PC → Chigo monkey -- 対空0　PC→稚児猿
+11310140 Anti-aircraft 0 PC → Genpei warrior -- 対空0　PC→源平武者
+11060141 Anti-aircraft 1 PC → Rotating spearman -- 対空1　PC→回転槍術師
+11080141 Anti-aircraft 1 PC → Seven-sided warrior -- 対空1　PC→七面武者
+11240141 Anti-aircraft 1 PC → Shamo chicken -- 対空1　PC→軍鶏
+11250141 Anti-aircraft 1 PC → Small fish monkey -- 対空1　PC→雑魚猿
+11260141 Anti-aircraft 1 PC → Chigo monkey -- 対空1　PC→稚児猿
+11310141 Anti-aircraft 1 PC → Genpei warrior -- 対空1　PC→源平武者
+11010150 Crush and fall 0 PC → Ochimusha -- 崩し落下0　PC→落武者
+11011150 Crush and fall 0 PC → Ochimusha (Varier) -- 崩し落下0　PC→落武者（バリエ）
+11012150 Crushing Fall 0 PC → Ochimusha (Tutorial) -- 崩し落下0　PC→落武者（チュートリアル）
+11020150 Breaking down 0 PC → General Samurai -- 崩し落下0　PC→侍大将
+11021150 Crushing Fall 0 PC → Samurai General_Large Spear -- 崩し落下0　PC→侍大将_大槍
+11030150 Breaking down 0 PC → Centipede (small) -- 崩し落下0　PC→ムカデ（小）
+11040150 Crush and fall 0 PC → Centipede (Large) -- 崩し落下0　PC→ムカデ（大）
+11050150 Crushing Fall 0 PC → Spear Monk Soldier -- 崩し落下0　PC→槍僧兵
+11060150 Crushing Fall 0 PC → Rotating Spearman -- 崩し落下0　PC→回転槍術師
+11070150 Crush and fall 0 PC → Shura Samurai -- 崩し落下0　PC→修羅侍
+11080150 Breaking down 0 PC → Seven-sided warrior -- 崩し落下0　PC→七面武者
+11100150 Crush and fall 0 PC → gecko -- 崩し落下0　PC→ヤモリ
+11110150 Crush and fall 0 PC → Handmaiden Aunt -- 崩し落下0　PC→侍女おば
+11111150 Breaking down 0 PC → Handmaiden Aunt (Varier) -- 崩し落下0　PC→侍女おば（バリエ）
+11120150 Breaking down 0 PC → Watchman -- 崩し落下0　PC→見張り番
+11150150 Crush and fall 0 PC → dog -- 崩し落下0　PC→イヌ
+11151150 Crush and fall 0 PC → dog (Innsmouth) -- 崩し落下0　PC→イヌ（インスマス）
+11180150 Breaking down 0 PC → younger man -- 崩し落下0　PC→下男
+11181150 Crush and fall 0 PC → younger man zombie -- 崩し落下0　PC→下男ゾンビ
+11190150 Crush and fall 0 PC → Valley enemy -- 崩し落下0　PC→谷敵
+11191150 Crush and fall 0 PC → Valley enemy (female) -- 崩し落下0　PC→谷敵(女)
+11200150 Crush and fall 0 PC → Sokushinbutsu (strong enemy, with bugs) -- 崩し落下0　PC→即身仏(強敵・蟲有り)
+11210150 Crush and fall 0 PC → Sokushinbutsu (no small fish or bugs) -- 崩し落下0　PC→即身仏(雑魚・蟲無し)
+11220150 Crushing fall 0 PC → Temple miscellaneous fish -- 崩し落下0　PC→寺雑魚
+11240150 Breaking down 0 PC → Shamo chicken -- 崩し落下0　PC→軍鶏
+11250150 Crushing fall 0 PC → Small fish monkey -- 崩し落下0　PC→雑魚猿
+11260150 Crushing fall 0 PC → Chigo monkey -- 崩し落下0　PC→稚児猿
+11300150 Breaking down 0 PC → Japanese style Innsmouth -- 崩し落下0　PC→和風インスマス
+11310150 Breaking down 0 PC → Genpei warrior -- 崩し落下0　PC→源平武者
+11350150 Breaking down 0 PC → No neck -- 崩し落下0　PC→首なし
+11360150 Crush and fall 0 PC → Rappa -- 崩し落下0　PC→らっぱ
+11361150 Breaking down 0 PC → Rappa (Tokugawa) -- 崩し落下0　PC→らっぱ（徳川）
+11370150 Crush and fall 0 PC → Fire cow -- 崩し落下0　PC→火牛
+11380150 Crush and fall 0 PC → Fire cow (Innsmouth) -- 崩し落下0　PC→火牛（インスマス）
+11400150 Crush and fall 0 PC → Swordsman -- 崩し落下0　PC→剣客
+11450150 Breaking down 0 PC → Nightjars -- 崩し落下0　PC→夜鷹衆
+11470150 Crush and fall 0 PC → lonely people -- 崩し落下0　PC→孤影衆
+11500150 Crush and fall 0 PC → Villager Zombie -- 崩し落下0　PC→村人ゾンビ
+11501150 Crush and fall 0 PC → Villager Zombie (female) -- 崩し落下0　PC→村人ゾンビ（女）
+11520150 Crush and fall 0 PC → Villager Zombie (Prisoner) -- 崩し落下0　PC→村人ゾンビ（囚人）
+11550150 Breaking down 0 PC → Bandit -- 崩し落下0　PC→野盗
+11700150 Breaking down 0 PC → Samurai Tokugawa -- 崩し落下0　PC→徳川侍
+15000150 Crushing Fall 0 PC → Haunting Monk -- 崩し落下0　PC→破戒僧
+15010150 Breaking down 0 PC → Large snake -- 崩し落下0　PC→大蛇
+15020150 Crushing Fall 0 PC → Red Demon -- 崩し落下0　PC→赤鬼
+15021150 Crush and fall 0 PC → Giants Innsmouth -- 崩し落下0　PC→巨人インスマス
+15060150 Crush and fall 0 PC → Chief of Ninja Army -- 崩し落下0　PC→忍軍の長
+15090150 Breaking down 0 PC → Butterfly -- 崩し落下0　PC→お蝶
+15090650 Breaking down 0 PC → Butterfly (HU) -- 崩し落下0　PC→お蝶（HU）
+15400150 Crush and fall 0 PC → Kensei -- 崩し落下0　PC→剣聖
+15400650 Crush and fall 0 PC → Kensei (HU) -- 崩し落下0　PC→剣聖（HU）
+15430150 Crush and fall 0 PC → Kensei (bed) -- 崩し落下0　PC→剣聖（病床）
+17000150 Breaking down 0 PC → Female player -- 崩し落下0　PC→女奏者
+17100150 Crush and fall 0 PC → rival -- 崩し落下0　PC→ライバル
+17110150 Breaking down 0 PC → Rival naked -- 崩し落下0　PC→ライバル裸
+17400150 Crush and fall 0 PC → Daughter of Isei -- 崩し落下0　PC→医聖の娘
+17410150 Breaking down 0 PC → Fascinated samurai -- 崩し落下0　PC→魅了された侍
+17420150 Breaking down 0 PC → Selling bandits -- 崩し落下0　PC→物売り野盗
+17430150 Crush and fall 0 PC → Araji shop clerk -- 崩し落下0　PC→荒れ寺ショップ店員
+17440150 Crush and fall 0 PC → Yayobioka Nun -- 崩し落下0　PC→八百比丘尼
+17450150 Breaking down 0 PC → Suzu Auntie -- 崩し落下0　PC→鈴婆
+17460150 Crush and fall 0 PC → Suzu&#39;s son -- 崩し落下0　PC→鈴婆の息子
+17470150 Crush and fall 0 PC → kidnapped younger man -- 崩し落下0　PC→さらわれ下男
+17480150 Crush and fall 0 PC → Sick village priest -- 崩し落下0　PC→病み村神主
+17490150 Crush and fall 0 PC → Immortal experiment doctor -- 崩し落下0　PC→不死実験の医僧
+17500150 Crush and fall 0 PC → decent villagers -- 崩し落下0　PC→まともな村人
+17510150 Crush and fall 0 PC → White -- 崩し落下0　PC→白らっぱ
+17520150 Crushing Fall 0 PC → Submerged Handmaiden Aunt Sisters -- 崩し落下0　PC→水没侍女おば姉妹
+17530150 Crushing Fall 0 PC → Shura Handmaiden Aunt -- 崩し落下0　PC→修羅侍女おば
+17540150 Crush and fall 0 PC → Shop clerk (valley) -- 崩し落下0　PC→ショップ店員(渓谷)
+17550150 Breaking down 0 PC → Shop clerk (temple) -- 崩し落下0　PC→ショップ店員(寺)
+17560150 Crush and fall 0 PC → Shop clerk (dungeon) -- 崩し落下0　PC→ショップ店員(地下牢)
+17580150 Breaking down 0 PC → Shop clerk (Honjo) -- 崩し落下0　PC→ショップ店員(本城)
+17590150 Breaking down 0 PC → Shop clerk (sick village) -- 崩し落下0　PC→ショップ店員(病み村)
+17600150 Breaking down 0 PC → Shop clerk (castle) -- 崩し落下0　PC→ショップ店員(城下)
+11010151 Crush and fall 1 PC → Ochimusha -- 崩し落下1　PC→落武者
+11011151 Crushing Fall 1 PC → Ochimusha (Varier) -- 崩し落下1　PC→落武者（バリエ）
+11012151 Crushing Fall 1 PC → Ochimusha (Tutorial) -- 崩し落下1　PC→落武者（チュートリアル）
+11020151 Crush and fall 1 PC → General Samurai -- 崩し落下1　PC→侍大将
+11021151 Crushing Fall 1 PC → Samurai General_Large Spear -- 崩し落下1　PC→侍大将_大槍
+11030151 Crush and fall 1 PC → Centipede (small) -- 崩し落下1　PC→ムカデ（小）
+11040151 Crush and fall 1 PC → Centipede (Large) -- 崩し落下1　PC→ムカデ（大）
+11050151 Crushing Fall 1 PC → Spear Monk Soldier -- 崩し落下1　PC→槍僧兵
+11060151 Crushing Fall 1 PC → Rotating Spearman -- 崩し落下1　PC→回転槍術師
+11070151 Crush and fall 1 PC → Shura Samurai -- 崩し落下1　PC→修羅侍
+11080151 Crush and fall 1 PC → Seven-sided warrior -- 崩し落下1　PC→七面武者
+11100151 Crush and fall 1 PC → gecko -- 崩し落下1　PC→ヤモリ
+11110151 Crushing Fall 1 PC → Handmaiden Aunt -- 崩し落下1　PC→侍女おば
+11111151 Crushing Fall 1 PC → Handmaiden Aunt (Varier) -- 崩し落下1　PC→侍女おば（バリエ）
+11120151 Breaking down 1 PC → Watchman -- 崩し落下1　PC→見張り番
+11150151 Crush and fall 1 PC → dog -- 崩し落下1　PC→イヌ
+11151151 Crush and fall 1 PC → dog (Innsmouth) -- 崩し落下1　PC→イヌ（インスマス）
+11180151 Breaking down 1 PC → younger man -- 崩し落下1　PC→下男
+11181151 Crush and fall 1 PC → younger man zombie -- 崩し落下1　PC→下男ゾンビ
+11190151 Crush and fall 1 PC → Valley enemy -- 崩し落下1　PC→谷敵
+11191151 Crush and fall 1 PC → Valley enemy (female) -- 崩し落下1　PC→谷敵(女)
+11200151 Crush and fall 1 PC → Sokushinbutsu (strong enemy, with bugs) -- 崩し落下1　PC→即身仏(強敵・蟲有り)
+11210151 Crush and fall 1 PC → Sokushinbutsu (no small fish or bugs) -- 崩し落下1　PC→即身仏(雑魚・蟲無し)
+11220151 Crush and fall 1 PC → Temple miscellaneous fish -- 崩し落下1　PC→寺雑魚
+11240151 Breaking down 1 PC → Shamo chicken -- 崩し落下1　PC→軍鶏
+11250151 Crush and fall 1 PC → Small fish monkey -- 崩し落下1　PC→雑魚猿
+11260151 Crush and fall 1 PC → Chigo monkey -- 崩し落下1　PC→稚児猿
+11300151 Breaking down 1 PC → Japanese style Innsmouth -- 崩し落下1　PC→和風インスマス
+11310151 Crushing Fall 1 PC → Genpei Samurai -- 崩し落下1　PC→源平武者
+11350151 Crush and fall 1 PC → No neck -- 崩し落下1　PC→首なし
+11360151 Crush and fall 1 PC → Rappa -- 崩し落下1　PC→らっぱ
+11361151 Crush and fall 1 PC → Rappa (Tokugawa) -- 崩し落下1　PC→らっぱ（徳川）
+11370151 Crush and fall 1 PC → Fire cow -- 崩し落下1　PC→火牛
+11380151 Crush and fall 1 PC → Fire cow (Innsmouth) -- 崩し落下1　PC→火牛（インスマス）
+11400151 Crush and fall 1 PC → Swordsman -- 崩し落下1　PC→剣客
+11450151 Breaking down 1 PC → Nightjars -- 崩し落下1　PC→夜鷹衆
+11470151 Crush and fall 1 PC → lonely people -- 崩し落下1　PC→孤影衆
+11500151 Crushing Fall 1 PC → Villager Zombie -- 崩し落下1　PC→村人ゾンビ
+11501151 Crushing Fall 1 PC → Villager Zombie (female) -- 崩し落下1　PC→村人ゾンビ（女）
+11520151 Crushing Fall 1 PC → Villager Zombie (Prisoner) -- 崩し落下1　PC→村人ゾンビ（囚人）
+11550151 Crush and fall 1 PC → Bandit -- 崩し落下1　PC→野盗
+11700151 Crush and fall 1 PC → Samurai Tokugawa -- 崩し落下1　PC→徳川侍
+15000151 Crushing Fall 1 PC → Haunting Monk -- 崩し落下1　PC→破戒僧
+15010151 Crush and fall 1 PC → Large snake -- 崩し落下1　PC→大蛇
+15020151 Crushing Fall 1 PC → Red Demon -- 崩し落下1　PC→赤鬼
+15021151 Crushing Fall 1 PC → Giant Innsmouth -- 崩し落下1　PC→巨人インスマス
+15060151 Crushing Fall 1 PC → Chief of Ninja Army -- 崩し落下1　PC→忍軍の長
+15090151 Crush and fall 1 PC → Butterfly -- 崩し落下1　PC→お蝶
+15090651 Crush and fall 1 PC → Butterfly (HU) -- 崩し落下1　PC→お蝶（HU）
+15400151 Crushing Fall 1 PC → Kensei -- 崩し落下1　PC→剣聖
+15400651 Crush and fall 1 PC → Kensei (HU) -- 崩し落下1　PC→剣聖（HU）
+15430151 Crush and fall 1 PC → Kensei (bed) -- 崩し落下1　PC→剣聖（病床）
+17000151 Breaking down 1 PC → Female player -- 崩し落下1　PC→女奏者
+17100151 Crush and fall 1 PC → rival -- 崩し落下1　PC→ライバル
+17110151 Crushing Fall 1 PC → Rival Naked -- 崩し落下1　PC→ライバル裸
+17400151 Crushing Fall 1 PC → Daughter of Isei -- 崩し落下1　PC→医聖の娘
+17410151 Crushing Fall 1 PC → Fascinated Samurai -- 崩し落下1　PC→魅了された侍
+17420151 Crushing and falling 1 PC → Selling bandits -- 崩し落下1　PC→物売り野盗
+17430151 Crush and fall 1 PC → Araji shop clerk -- 崩し落下1　PC→荒れ寺ショップ店員
+17440151 Crush and fall 1 PC → Yayobioka Nun -- 崩し落下1　PC→八百比丘尼
+17450151 Crush and fall 1 PC → Suzu -- 崩し落下1　PC→鈴婆
+17460151 Crushing Fall 1 PC → Suzu Auntie&#39;s Son -- 崩し落下1　PC→鈴婆の息子
+17470151 Crush and fall 1 PC → kidnapped younger man -- 崩し落下1　PC→さらわれ下男
+17480151 Crush and fall 1 PC → Sick village priest -- 崩し落下1　PC→病み村神主
+17490151 Crushing Fall 1 PC → Immortal Experiment Doctor -- 崩し落下1　PC→不死実験の医僧
+17500151 Breaking down 1 PC → A decent villager -- 崩し落下1　PC→まともな村人
+17510151 Crush and fall 1 PC → White -- 崩し落下1　PC→白らっぱ
+17520151 Crushing Fall 1 PC → Submerged Handmaiden Aunt Sisters -- 崩し落下1　PC→水没侍女おば姉妹
+17530151 Crushing Fall 1 PC → Shura Handmaiden Aunt -- 崩し落下1　PC→修羅侍女おば
+17540151 Crush and fall 1 PC → Shop clerk (valley) -- 崩し落下1　PC→ショップ店員(渓谷)
+17550151 Crush and fall 1 PC → Shop clerk (temple) -- 崩し落下1　PC→ショップ店員(寺)
+17560151 Crush and fall 1 PC → Shop clerk (dungeon) -- 崩し落下1　PC→ショップ店員(地下牢)
+17580151 Crush and fall 1 PC → Shop clerk (Honjo) -- 崩し落下1　PC→ショップ店員(本城)
+17590151 Breaking down 1 PC → Shop clerk (sick village) -- 崩し落下1　PC→ショップ店員(病み村)
+17600151 Crush and fall 1 PC → Shop clerk (castle) -- 崩し落下1　PC→ショップ店員(城下)
+11010160 Kicking down 0 PC → Ochimusha -- 蹴り崩し0　PC→落武者
+11011160 Kicking down 0 PC → Ochimusha (Varier) -- 蹴り崩し0　PC→落武者（バリエ）
+11012160 Kicking 0 PC → Ochimusha (Tutorial) -- 蹴り崩し0　PC→落武者（チュートリアル）
+11020160 Kicking down 0 PC → General Samurai -- 蹴り崩し0　PC→侍大将
+11021160 Kicking down 0 PC → Samurai General_Large Spear -- 蹴り崩し0　PC→侍大将_大槍
+11040160 Kicking down 0 PC → Centipede (Large) -- 蹴り崩し0　PC→ムカデ（大）
+11050160 Kicking down 0 PC → Spear monk soldier -- 蹴り崩し0　PC→槍僧兵
+11060160 Kicking 0 PC → Rotating Spearman -- 蹴り崩し0　PC→回転槍術師
+11070160 Kicking down 0 PC → Shura Samurai -- 蹴り崩し0　PC→修羅侍
+11080160 Kicking down 0 PC → Seven-sided warrior -- 蹴り崩し0　PC→七面武者
+11110160 Kicking down 0 PC → Handmaiden Aunt -- 蹴り崩し0　PC→侍女おば
+11111160 Kicking down 0 PC → Handmaiden Aunt (Varier) -- 蹴り崩し0　PC→侍女おば（バリエ）
+11150160 Kicking down 0 PC → dog -- 蹴り崩し0　PC→イヌ
+11151160 Kicking 0 PC → Dog (Innsmouth) -- 蹴り崩し0　PC→イヌ（インスマス）
+11180160 Kicking down 0 PC → younger man -- 蹴り崩し0　PC→下男
+11181160 Kicking down 0 PC → younger man zombie -- 蹴り崩し0　PC→下男ゾンビ
+11190160 Kicking down 0 PC → Valley enemy -- 蹴り崩し0　PC→谷敵
+11191160 Kicking down 0 PC → Valley enemy (female) -- 蹴り崩し0　PC→谷敵(女)
+11200160 Kicking down 0 PC → Sokushinbutsu (strong enemy, with bugs) -- 蹴り崩し0　PC→即身仏(強敵・蟲有り)
+11210160 Kicking down 0 PC → Sokushinbutsu (no small fish or bugs) -- 蹴り崩し0　PC→即身仏(雑魚・蟲無し)
+11220160 Kicking down 0 PC → Temple miscellaneous fish -- 蹴り崩し0　PC→寺雑魚
+11240160 Kicking down 0 PC → Shamo chicken -- 蹴り崩し0　PC→軍鶏
+11250160 Kicking down 0 PC → Small fish monkey -- 蹴り崩し0　PC→雑魚猿
+11260160 Kicking down 0 PC → Chigo monkey -- 蹴り崩し0　PC→稚児猿
+11300160 Kicking down 0 PC → Japanese style Innsmouth -- 蹴り崩し0　PC→和風インスマス
+11310160 Kicking down 0 PC → Genpei Samurai -- 蹴り崩し0　PC→源平武者
+11350160 Kicking 0 PC → No neck -- 蹴り崩し0　PC→首なし
+11360160 Kicking down 0 PC → Rappa -- 蹴り崩し0　PC→らっぱ
+11361160 Kicking down 0 PC → Rappa (Tokugawa) -- 蹴り崩し0　PC→らっぱ（徳川）
+11400160 Kicking down 0 PC → Swordsman -- 蹴り崩し0　PC→剣客
+11450160 Kicking down 0 PC → Nightjars -- 蹴り崩し0　PC→夜鷹衆
+11470160 Kicking down 0 PC → lonely people -- 蹴り崩し0　PC→孤影衆
+11500160 Kicking down 0 PC → Villager Zombie -- 蹴り崩し0　PC→村人ゾンビ
+11501160 Kicking down 0 PC → Villager Zombie (female) -- 蹴り崩し0　PC→村人ゾンビ（女）
+11520160 Kicking down 0 PC → Villager Zombie (Prisoner) -- 蹴り崩し0　PC→村人ゾンビ（囚人）
+11550160 Kicking down 0 PC → Bandit -- 蹴り崩し0　PC→野盗
+11700160 Kicking down 0 PC → Samurai Tokugawa -- 蹴り崩し0　PC→徳川侍
+15000160 Kicking down 0 PC → Haunting Monk -- 蹴り崩し0　PC→破戒僧
+15020160 Kicking down 0 PC → Akaoni -- 蹴り崩し0　PC→赤鬼
+15021160 Kicking down 0 PC → Giants Innsmouth -- 蹴り崩し0　PC→巨人インスマス
+15060160 Kicking down 0 PC → Chief of Ninja Army -- 蹴り崩し0　PC→忍軍の長
+15090160 Kicking 0 PC → Butterfly -- 蹴り崩し0　PC→お蝶
+15090660 Kicking 0 PC → Butterfly (HU) -- 蹴り崩し0　PC→お蝶（HU）
+15400160 Kicking down 0 PC → Kensei -- 蹴り崩し0　PC→剣聖
+15400660 Kicking down 0 PC → Kensei (HU) -- 蹴り崩し0　PC→剣聖（HU）
+15430160 Kicking down 0 PC → Kensei (bed) -- 蹴り崩し0　PC→剣聖（病床）
+17000160 Kicking down 0 PC → Female player -- 蹴り崩し0　PC→女奏者
+17100160 Kicking 0 PC → Rival -- 蹴り崩し0　PC→ライバル
+17110160 Kicking 0 PC → Rival Naked -- 蹴り崩し0　PC→ライバル裸
+17400160 Kicking down 0 PC → Daughter of Isei -- 蹴り崩し0　PC→医聖の娘
+17410160 Kicking down 0 PC → Fascinated samurai -- 蹴り崩し0　PC→魅了された侍
+17420160 Kicking down 0 PC → Selling bandits -- 蹴り崩し0　PC→物売り野盗
+17430160 Kicking down 0 PC → Araji shop clerk -- 蹴り崩し0　PC→荒れ寺ショップ店員
+17440160 Kicking down 0 PC → Yayobioka Nun -- 蹴り崩し0　PC→八百比丘尼
+17450160 Kicking down 0 PC → Suzu Auntie -- 蹴り崩し0　PC→鈴婆
+17460160 Kicking down 0 PC → Suzu&#39;s son -- 蹴り崩し0　PC→鈴婆の息子
+17470160 Kicking down 0 PC → kidnapped younger man -- 蹴り崩し0　PC→さらわれ下男
+17480160 Kicking down 0 PC → Sick village priest -- 蹴り崩し0　PC→病み村神主
+17490160 Kicking down 0 PC → Immortal experiment doctor -- 蹴り崩し0　PC→不死実験の医僧
+17500160 Kicking down 0 PC → A decent villager -- 蹴り崩し0　PC→まともな村人
+17510160 Kicking down 0 PC → White -- 蹴り崩し0　PC→白らっぱ
+17520160 Kicking 0 PC → Submerged Handmaiden Aunt Sisters -- 蹴り崩し0　PC→水没侍女おば姉妹
+17530160 Kicking down 0 PC → Shura Handmaiden Aunt -- 蹴り崩し0　PC→修羅侍女おば
+11010161 Kicking down 1 PC → Ochimusha -- 蹴り崩し1　PC→落武者
+11011161 Kicking down 1 PC → Ochimusha (Varier) -- 蹴り崩し1　PC→落武者（バリエ）
+11012161 Kicking 1 PC → Ochimusha (Tutorial) -- 蹴り崩し1　PC→落武者（チュートリアル）
+11020161 Kicking down 1 PC → General Samurai -- 蹴り崩し1　PC→侍大将
+11021161 Kicking down 1 PC → General Samurai -- 蹴り崩し1　PC→侍大将
+11040161 Kicking down 1 PC → Centipede (Large) -- 蹴り崩し1　PC→ムカデ（大）
+11050161 Kicking 1 PC → Spear Monk Soldier -- 蹴り崩し1　PC→槍僧兵
+11060161 Kicking 1 PC → Rotating Spearman -- 蹴り崩し1　PC→回転槍術師
+11070161 Kicking down 1 PC → Shura Samurai -- 蹴り崩し1　PC→修羅侍
+11080161 Kicking down 1 PC → Seven-sided warrior -- 蹴り崩し1　PC→七面武者
+11110161 Kicking down 1 PC → Handmaiden Aunt -- 蹴り崩し1　PC→侍女おば
+11111161 Kicking down 1 PC → Handmaiden Aunt (Varier) -- 蹴り崩し1　PC→侍女おば（バリエ）
+11150161 Kicking 1 PC → Dog -- 蹴り崩し1　PC→イヌ
+11151161 Kicking 1 PC → Dog (Innsmouth) -- 蹴り崩し1　PC→イヌ（インスマス）
+11180161 Kicking down 1 PC → younger man -- 蹴り崩し1　PC→下男
+11181161 Kicking down 1 PC → Lower man zombie -- 蹴り崩し1　PC→下男ゾンビ
+11190161 Kicking down 1 PC → Valley enemy -- 蹴り崩し1　PC→谷敵
+11191161 Kicking down 1 PC → Valley enemy (female) -- 蹴り崩し1　PC→谷敵(女)
+11200161 Kicking down 1 PC → Sokushinbutsu (strong enemy, with bugs) -- 蹴り崩し1　PC→即身仏(強敵・蟲有り)
+11210161 Kicking down 1 PC → Sokushinbutsu (no small fish or bugs) -- 蹴り崩し1　PC→即身仏(雑魚・蟲無し)
+11220161 Kicking down 1 PC → Temple miscellaneous fish -- 蹴り崩し1　PC→寺雑魚
+11240161 Kicking 1 PC → Shamo chicken -- 蹴り崩し1　PC→軍鶏
+11250161 Kicking down 1 PC → Small fish monkey -- 蹴り崩し1　PC→雑魚猿
+11260161 Kicking down 1 PC → Chigo monkey -- 蹴り崩し1　PC→稚児猿
+11300161 Kicking 1 PC → Japanese style Innsmouth -- 蹴り崩し1　PC→和風インスマス
+11310161 Kicking 1 PC → Genpei Samurai -- 蹴り崩し1　PC→源平武者
+11350161 Kicking 1 PC → No neck -- 蹴り崩し1　PC→首なし
+11360161 Kicking down 1 PC → Rappa -- 蹴り崩し1　PC→らっぱ
+11361161 Kicking down 1 PC → Rappa (Tokugawa) -- 蹴り崩し1　PC→らっぱ（徳川）
+11400161 Kicking down 1 PC → Swordsman -- 蹴り崩し1　PC→剣客
+11450161 Kicking down 1 PC → Nightjars -- 蹴り崩し1　PC→夜鷹衆
+11470161 Kicking down 1 PC → Lonely crowd -- 蹴り崩し1　PC→孤影衆
+11500161 Kicking 1 PC → Villager Zombie -- 蹴り崩し1　PC→村人ゾンビ
+11501161 Kicking down 1 PC → Villager Zombie (female) -- 蹴り崩し1　PC→村人ゾンビ（女）
+11520161 Kicking down 1 PC → Villager Zombie (Prisoner) -- 蹴り崩し1　PC→村人ゾンビ（囚人）
+11550161 Kicking 1 PC → Bandit -- 蹴り崩し1　PC→野盗
+11700161 Kicking down 1 PC → Samurai Tokugawa -- 蹴り崩し1　PC→徳川侍
+15000161 Kicking down 1 PC → Haunting Monk -- 蹴り崩し1　PC→破戒僧
+15020161 Kicking down 1 PC → Akaoni -- 蹴り崩し1　PC→赤鬼
+15021161 Kicking 1 PC → Giant Innsmouth -- 蹴り崩し1　PC→巨人インスマス
+15060161 Kicking down 1 PC → Chief of Ninja Army -- 蹴り崩し1　PC→忍軍の長
+15090161 Kicking 1 PC → Butterfly -- 蹴り崩し1　PC→お蝶
+15090661 Kicking 1 PC → Butterfly (HU) -- 蹴り崩し1　PC→お蝶（HU）
+15400161 Kicking down 1 PC → Kensei -- 蹴り崩し1　PC→剣聖
+15400661 Kicking down 1 PC → Kensei (HU) -- 蹴り崩し1　PC→剣聖（HU）
+15430161 Kicking down 1 PC → Kensei (bed) -- 蹴り崩し1　PC→剣聖（病床）
+17000161 Kicking 1 PC → Female player -- 蹴り崩し1　PC→女奏者
+17100161 Kicking 1 PC → Rival -- 蹴り崩し1　PC→ライバル
+17110161 Kicking 1 PC → Rival Naked -- 蹴り崩し1　PC→ライバル裸
+17400161 Kicking down 1 PC → Daughter of Isei -- 蹴り崩し1　PC→医聖の娘
+17410161 Kicking down 1 PC → Fascinated samurai -- 蹴り崩し1　PC→魅了された侍
+17420161 Kicking down 1 PC → Selling bandits -- 蹴り崩し1　PC→物売り野盗
+17430161 Kicking down 1 PC → Araji shop clerk -- 蹴り崩し1　PC→荒れ寺ショップ店員
+17440161 Kicking down 1 PC → Yayobioka Nun -- 蹴り崩し1　PC→八百比丘尼
+17450161 Kicking down 1 PC → Suzu Auntie -- 蹴り崩し1　PC→鈴婆
+17460161 Kicking down 1 PC → Suzu&#39;s son -- 蹴り崩し1　PC→鈴婆の息子
+17470161 Kicking down 1 PC → kidnapped younger man -- 蹴り崩し1　PC→さらわれ下男
+17480161 Kicking down 1 PC → Sick village priest -- 蹴り崩し1　PC→病み村神主
+17490161 Kicking down 1 PC → Immortal experiment doctor -- 蹴り崩し1　PC→不死実験の医僧
+17500161 Kicking 1 PC → A decent villager -- 蹴り崩し1　PC→まともな村人
+17510161 Kicking 1 PC → White Rappa -- 蹴り崩し1　PC→白らっぱ
+17520161 Kicking 1 PC → Submerged Handmaiden Aunt Sisters -- 蹴り崩し1　PC→水没侍女おば姉妹
+17530161 Kicking down 1 PC → Shura Handmaiden Aunt -- 蹴り崩し1　PC→修羅侍女おば
+15020170 Breaking wire 0 PC → Akaoni -- 崩しワイヤー0　PC→赤鬼
+15021170 Breaking Wire 0 PC → Giant Innsmouth -- 崩しワイヤー0　PC→巨人インスマス
+15080170 Breaking wire 0 PC → Horse-riding warrior -- 崩しワイヤー0　PC→騎馬武者
+15020171 Breaking Wire 1 PC → Akaoni -- 崩しワイヤー1　PC→赤鬼
+15021171 Breaking Wire 1 PC → Giant Innsmouth -- 崩しワイヤー1　PC→巨人インスマス
+15080171 Breaking Wire 1 PC → Horseman Warrior -- 崩しワイヤー1　PC→騎馬武者
+15080179 Breaking Wire Todome PC → Horseman Warrior -- 崩しワイヤートドメ　PC→騎馬武者
+15000180 Todome Start PC → Haunting Monk -- トドメ始動　PC→破戒僧
+15060180 Todome start PC → Chief of Ninja Army -- トドメ始動　PC→忍軍の長
+15090680 Todome start PC → Butterfly (HU) -- トドメ始動　PC→お蝶（HU）
+15100180 Todome start PC → Yasha Ape -- トドメ始動　PC→夜叉猿
+15400180 Todome start PC → Kensei -- トドメ始動　PC→剣聖
+15400680 Todome start PC → Kensei (HU) -- トドメ始動　PC→剣聖（HU）
+15430180 Todome start PC → Kensei (bed) -- トドメ始動　PC→剣聖（病床）
+17020180 Todome start PC → Buddhist master (demon) -- トドメ始動　PC→仏師（鬼）
+17110180 Todome start PC → rival naked -- トドメ始動　PC→ライバル裸
+15000181 Todome main body PC → Haunting monk -- トドメ本体　PC→破戒僧
+15060181 Todome body PC → Chief of Ninja Army -- トドメ本体　PC→忍軍の長
+15090681 Todome body PC → Butterfly (HU) -- トドメ本体　PC→お蝶（HU）
+15100181 Todome body PC → Yasha monkey -- トドメ本体　PC→夜叉猿
+15400181 Todome body PC → Kensei -- トドメ本体　PC→剣聖
+15400681 Todome body PC → Kensei (HU) -- トドメ本体　PC→剣聖（HU）
+15430181 Todome body PC → Kensei (bed) -- トドメ本体　PC→剣聖（病床）
+17020181 Todome main body PC → Buddhist master (demon) -- トドメ本体　PC→仏師（鬼）
+17110181 Todome body PC → rival naked -- トドメ本体　PC→ライバル裸
+11010190 Close-out PC → Ochimusha -- 見切り　PC→落武者
+11011190 Close-out PC → Ochimusha (Varier) -- 見切り　PC→落武者（バリエ）
+11012190 Close-out PC → Ochimusha (Tutorial) -- 見切り　PC→落武者（チュートリアル）
+11020190 Close-out PC → General Samurai -- 見切り　PC→侍大将
+11021690 Close-out PC → Samurai General_Large Spear -- 見切り　PC→侍大将_大槍
+11050190 Parting PC → Spear Monk Soldier -- 見切り　PC→槍僧兵
+11130190 Close-out PC → Nanban armor -- 見切り　PC→南蛮甲冑
+11140190 Close-out PC → Earthen wall soldier -- 見切り　PC→土塀兵
+11190190 Close-out PC → Valley enemy -- 見切り　PC→谷敵
+11191190 Close-out PC → Valley enemy (female) -- 見切り　PC→谷敵(女)
+11220190 Close-out PC → Temple miscellaneous fish -- 見切り　PC→寺雑魚
+11310190 Close-out PC → Genpei Samurai -- 見切り　PC→源平武者
+11400190 Close-out PC → Swordsman -- 見切り　PC→剣客
+11470190 Parting PC → Arc Shadows -- 見切り　PC→弧影衆
+11500190 Close-out PC → Villager Zombie -- 見切り　PC→村人ゾンビ
+11501190 Close-out PC → Villager Zombie (female) -- 見切り　PC→村人ゾンビ（女）
+11520190 Close-out PC → Villager Zombie (Prisoner) -- 見切り　PC→村人ゾンビ（囚人）
+11550190 Close-out PC → Bandit -- 見切り　PC→野盗
+11700190 Close-out PC → Samurai Tokugawa -- 見切り　PC→徳川侍
+15000190 Parting PC → Haunting Monk -- 見切り　PC→破戒僧
+15060190 Close-out PC → Chief of Ninja Army -- 見切り　PC→忍軍の長
+15400190 Close-out PC → Kensei -- 見切り　PC→剣聖
+15400690 Close-out PC → Kensei (HU) -- 見切り　PC→剣聖（HU）
+15430190 Close-out PC → Kensei (bed) -- 見切り　PC→剣聖（病床）
+17100190 Close-out PC → Rival -- 見切り　PC→ライバル
+17110190 Closeout PC → Rival Naked -- 見切り　PC→ライバル裸
+17400190 Close-out PC → Daughter of Isei -- 見切り　PC→医聖の娘
+17410690 Close-out PC → Fascinated samurai -- 見切り　PC→魅了された侍
+17420190 Close-out PC → Selling bandits -- 見切り　PC→物売り野盗
+17460190 Close-out PC → Son of Suzu Auntie -- 見切り　PC→鈴婆の息子
+17480190 Close-out PC → Sick village priest -- 見切り　PC→病み村神主
+17490190 Close-out PC → Immortal experiment doctor -- 見切り　PC→不死実験の医僧
+17500190 Close-out PC → A decent villager -- 見切り　PC→まともな村人
+11010200 Breaking kick jump start PC → Ochimusha -- 崩し蹴りジャンプ始動　PC→落武者
+11011200 Breaking kick jump start PC → Ochimusha (Varier) -- 崩し蹴りジャンプ始動　PC→落武者（バリエ）
+11012200 Breaking kick jump start PC → Ochimusha (tutorial) -- 崩し蹴りジャンプ始動　PC→落武者（チュートリアル）
+11020200 Breaking kick jump start PC → General Samurai -- 崩し蹴りジャンプ始動　PC→侍大将
+11021200 Breaking kick jump start PC → Samurai General_Large Spear -- 崩し蹴りジャンプ始動　PC→侍大将_大槍
+11030200 Breaking kick jump start PC → Centipede (small) -- 崩し蹴りジャンプ始動　PC→ムカデ(小)
+11040200 Breaking kick jump start PC → Centipede (Large) -- 崩し蹴りジャンプ始動　PC→ムカデ(大)
+11050200 Breaking kick jump start PC → Spear monk soldier -- 崩し蹴りジャンプ始動　PC→槍僧兵
+11060200 Breaking kick jump start PC → Rotating spearman -- 崩し蹴りジャンプ始動　PC→回転槍術師
+11070200 Breaking kick jump start PC → Shura Samurai -- 崩し蹴りジャンプ始動　PC→修羅侍
+11080200 Breaking kick jump start PC → Seven-sided warrior -- 崩し蹴りジャンプ始動　PC→七面武者
+11100200 Breaking kick jump start PC → gecko -- 崩し蹴りジャンプ始動　PC→ヤモリ
+11110200 Breaking kick jump start PC → Handmaiden aunt -- 崩し蹴りジャンプ始動　PC→侍女おば
+11111200 Breaking kick jump start PC → Handmaiden Aunt (Varier) -- 崩し蹴りジャンプ始動　PC→侍女おば（バリエ）
+11120200 Breaking kick jump start PC → Watchman -- 崩し蹴りジャンプ始動　PC→見張り番
+11130200 Breaking kick jump start PC → Nanban armor -- 崩し蹴りジャンプ始動　PC→南蛮甲冑
+11150200 Breaking kick jump start PC → dog -- 崩し蹴りジャンプ始動　PC→イヌ
+11151200 Breaking kick jump start PC → dog (Innsmouth) -- 崩し蹴りジャンプ始動　PC→イヌ（インスマス）
+11180200 Breaking kick jump start PC → younger man -- 崩し蹴りジャンプ始動　PC→下男
+11181200 Breaking kick jump start PC → younger man zombie -- 崩し蹴りジャンプ始動　PC→下男ゾンビ
+11190200 Breaking kick jump start PC → Valley enemy -- 崩し蹴りジャンプ始動　PC→谷敵
+11191200 Breaking kick jump start PC → Valley enemy (female) -- 崩し蹴りジャンプ始動　PC→谷敵(女)
+11200200 Breaking kick jump start PC → Sokushinbutsu (with bugs) -- 崩し蹴りジャンプ始動　PC→即身仏(蟲有り)
+11210200 Breaking kick jump start PC → Sokushinbutsu (no bugs) -- 崩し蹴りジャンプ始動　PC→即身仏(蟲無し)
+11220200 Breaking kick jump start PC → Temple miscellaneous fish -- 崩し蹴りジャンプ始動　PC→寺雑魚
+11240200 Breaking kick jump start PC → Shamo chicken -- 崩し蹴りジャンプ始動　PC→軍鶏
+11250200 Breaking kick jump start PC → small fish monkey -- 崩し蹴りジャンプ始動　PC→雑魚猿
+11260200 Breaking kick jump start PC → Chigo monkey -- 崩し蹴りジャンプ始動　PC→稚児猿
+11300200 Breaking kick jump start PC → Japanese style Innsmouth -- 崩し蹴りジャンプ始動　PC→和風インスマス
+11310200 Breaking kick jump start PC → Genpei warrior -- 崩し蹴りジャンプ始動　PC→源平武者
+11350200 Breaking kick jump start PC → No neck -- 崩し蹴りジャンプ始動　PC→首なし
+11360200 Breaking kick jump start PC → Rappa -- 崩し蹴りジャンプ始動　PC→らっぱ
+11361200 Breaking kick jump start PC → Rappa (Tokugawa) -- 崩し蹴りジャンプ始動　PC→らっぱ（徳川）
+11400200 Breaking kick jump start PC → swordsman -- 崩し蹴りジャンプ始動　PC→剣客
+11450200 Breaking kick jump start PC → Nightjars -- 崩し蹴りジャンプ始動　PC→夜鷹衆
+11470200 Breaking kick jump start PC → lone shadow people -- 崩し蹴りジャンプ始動　PC→孤影衆
+11500200 Breaking kick jump start PC → Villager zombie -- 崩し蹴りジャンプ始動　PC→村人ゾンビ
+11501200 Breaking kick jump start PC → Villager zombie (female) -- 崩し蹴りジャンプ始動　PC→村人ゾンビ（女）
+11520200 Breaking kick jump start PC → Villager zombie (prisoner) -- 崩し蹴りジャンプ始動　PC→村人ゾンビ（囚人）
+11550200 Breaking kick jump start PC → bandit -- 崩し蹴りジャンプ始動　PC→野盗
+11700200 Breaking kick jump start PC → Samurai Tokugawa -- 崩し蹴りジャンプ始動　PC→徳川侍
+15020200 Breaking kick jump start PC → Akaoni -- 崩し蹴りジャンプ始動　PC→赤鬼
+15021200 Breaking kick jump start PC → Giant Innsmouth -- 崩し蹴りジャンプ始動　PC→巨人インスマス
+17000200 Breaking kick jump start PC → female player -- 崩し蹴りジャンプ始動　PC→女奏者
+17410200 Breaking kick jump start PC → Fascinated samurai -- 崩し蹴りジャンプ始動　PC→魅了された侍
+17420200 Breaking kick jump start PC → Selling bandit -- 崩し蹴りジャンプ始動　PC→物売り野盗
+17430200 Breaking kick jump start PC → Araji shop clerk -- 崩し蹴りジャンプ始動　PC→荒れ寺ショップ店員
+17440200 Breaking kick jump start PC → Yayobioka Nun -- 崩し蹴りジャンプ始動　PC→八百比丘尼
+17450200 Breaking kick jump start PC → Suzu Auntie -- 崩し蹴りジャンプ始動　PC→鈴婆
+17460200 Breaking kick jump start PC → Suzu&#39;s son -- 崩し蹴りジャンプ始動　PC→鈴婆の息子
+17470200 Breaking kick jump start PC → kidnapped younger man -- 崩し蹴りジャンプ始動　PC→さらわれ下男
+17480200 Breaking kick jump start PC → Sick village priest -- 崩し蹴りジャンプ始動　PC→病み村神主
+17490200 Breaking kick jump start PC → Immortal experiment doctor -- 崩し蹴りジャンプ始動　PC→不死実験の医僧
+17500200 Breaking kick jump start PC → decent villager -- 崩し蹴りジャンプ始動　PC→まともな村人
+17510200 Breaking kick jump start PC → White Rappa -- 崩し蹴りジャンプ始動　PC→白らっぱ
+17520200 Breaking kick jump start PC → Submerged maid aunt sister -- 崩し蹴りジャンプ始動　PC→水没侍女おば姉妹
+17530200 Breaking kick jump start PC → Shura maid aunt -- 崩し蹴りジャンプ始動　PC→修羅侍女おば
+17540200 Breaking kick jump start PC → Shop clerk (valley) -- 崩し蹴りジャンプ始動　PC→ショップ店員(渓谷)
+17550200 Breaking kick jump start PC → Shop clerk (temple) -- 崩し蹴りジャンプ始動　PC→ショップ店員(寺)
+17560200 Breaking kick jump start PC → Shop clerk (dungeon) -- 崩し蹴りジャンプ始動　PC→ショップ店員(地下牢)
+17580200 Breaking kick jump start PC → Shop clerk (Honjo) -- 崩し蹴りジャンプ始動　PC→ショップ店員(本城)
+17590200 Breaking kick jump start PC → Shop clerk (sick village) -- 崩し蹴りジャンプ始動　PC→ショップ店員(病み村)
+17600200 Breaking kick jump start PC → Shop clerk (castle) -- 崩し蹴りジャンプ始動　PC→ショップ店員(城下)
+11010201 Breaking kick jump PC → Ochimusha -- 崩し蹴りジャンプ　PC→落武者
+11011201 Breaking kick jump PC → Ochimusha (Varier) -- 崩し蹴りジャンプ　PC→落武者（バリエ）
+11012201 Breaking kick jump PC → Ochimusha (tutorial) -- 崩し蹴りジャンプ　PC→落武者（チュートリアル）
+11020201 Breaking kick jump PC → General Samurai -- 崩し蹴りジャンプ　PC→侍大将
+11021201 Breaking kick jump PC → Samurai General_Large Spear -- 崩し蹴りジャンプ　PC→侍大将_大槍
+11030201 Breaking kick jump PC → Centipede (small) -- 崩し蹴りジャンプ　PC→ムカデ(小)
+11040201 Breaking kick jump PC → Centipede (Large) -- 崩し蹴りジャンプ　PC→ムカデ(大)
+11050201 Breaking kick jump PC → Spear monk soldier -- 崩し蹴りジャンプ　PC→槍僧兵
+11060201 Breaking kick jump PC → Rotating spearman -- 崩し蹴りジャンプ　PC→回転槍術師
+11070201 Breaking kick jump PC → Shura Samurai -- 崩し蹴りジャンプ　PC→修羅侍
+11080201 Breaking kick jump PC → Seven-sided warrior -- 崩し蹴りジャンプ　PC→七面武者
+11100201 Breaking kick jump PC → gecko -- 崩し蹴りジャンプ　PC→ヤモリ
+11110201 Breaking kick jump PC → Handmaiden aunt -- 崩し蹴りジャンプ　PC→侍女おば
+11111201 Breaking kick jump PC → Handmaiden Aunt (Varier) -- 崩し蹴りジャンプ　PC→侍女おば（バリエ）
+11120201 Breaking kick jump PC → Watchman -- 崩し蹴りジャンプ　PC→見張り番
+11130201 Breaking kick jump PC → Nanban armor -- 崩し蹴りジャンプ　PC→南蛮甲冑
+11150201 Breaking kick jump PC → dog -- 崩し蹴りジャンプ　PC→イヌ
+11151201 Breaking kick jump PC → dog (Innsmouth) -- 崩し蹴りジャンプ　PC→イヌ（インスマス）
+11180201 Breaking kick jump PC → younger man -- 崩し蹴りジャンプ　PC→下男
+11181201 Breaking kick jump PC → younger man zombie -- 崩し蹴りジャンプ　PC→下男ゾンビ
+11190201 Breaking kick jump PC → Valley enemy -- 崩し蹴りジャンプ　PC→谷敵
+11191201 Breaking kick jump PC → Valley enemy (female) -- 崩し蹴りジャンプ　PC→谷敵(女)
+11200201 Breaking kick jump PC → Sokushinbutsu (with bugs) -- 崩し蹴りジャンプ　PC→即身仏(蟲有り)
+11210201 Breaking kick jump PC → Sokushinbutsu (no bugs) -- 崩し蹴りジャンプ　PC→即身仏(蟲無し)
+11220201 Breaking kick jump PC → Temple miscellaneous fish -- 崩し蹴りジャンプ　PC→寺雑魚
+11240201 Breaking kick jump PC → Shamo chicken -- 崩し蹴りジャンプ　PC→軍鶏
+11250201 Breaking kick jump PC → small fish monkey -- 崩し蹴りジャンプ　PC→雑魚猿
+11260201 Breaking kick jump PC → Chigo monkey -- 崩し蹴りジャンプ　PC→稚児猿
+11300201 Breaking kick jump PC → Japanese style Innsmouth -- 崩し蹴りジャンプ　PC→和風インスマス
+11310201 Breaking kick jump PC → Genpei warrior -- 崩し蹴りジャンプ　PC→源平武者
+11350201 Breaking kick jump PC → no neck -- 崩し蹴りジャンプ　PC→首なし
+11360201 Breaking kick jump PC → Rappa -- 崩し蹴りジャンプ　PC→らっぱ
+11361201 Breaking kick jump PC → Rappa (Tokugawa) -- 崩し蹴りジャンプ　PC→らっぱ（徳川）
+11400201 Breaking kick jump PC → swordsman -- 崩し蹴りジャンプ　PC→剣客
+11450201 Breaking kick jump PC → Nightjars -- 崩し蹴りジャンプ　PC→夜鷹衆
+11470201 Breaking kick jump PC → lonely people -- 崩し蹴りジャンプ　PC→孤影衆
+11500201 Breaking Kick Jump PC → Villager Zombie -- 崩し蹴りジャンプ　PC→村人ゾンビ
+11501201 Breaking kick jump PC → Villager zombie (female) -- 崩し蹴りジャンプ　PC→村人ゾンビ（女）
+11520201 Crushing Kick Jump PC → Villager Zombie (Prisoner) -- 崩し蹴りジャンプ　PC→村人ゾンビ（囚人）
+11550201 Breaking kick jump PC → bandit -- 崩し蹴りジャンプ　PC→野盗
+11700201 Breaking kick jump PC → Samurai Tokugawa -- 崩し蹴りジャンプ　PC→徳川侍
+15020201 Breaking kick jump PC → Akaoni -- 崩し蹴りジャンプ　PC→赤鬼
+15021201 Breaking kick jump PC → Giant Innsmouth -- 崩し蹴りジャンプ　PC→巨人インスマス
+17000201 Breaking kick jump PC → female player -- 崩し蹴りジャンプ　PC→女奏者
+17410201 Breaking kick jump PC → Fascinated samurai -- 崩し蹴りジャンプ　PC→魅了された侍
+17420201 Breaking kick jump PC → Selling bandits -- 崩し蹴りジャンプ　PC→物売り野盗
+17430201 Crushing kick jump PC → Araji shop clerk -- 崩し蹴りジャンプ　PC→荒れ寺ショップ店員
+17440201 Breaking kick jump PC → Yayobioka Nun -- 崩し蹴りジャンプ　PC→八百比丘尼
+17450201 Breaking kick jump PC → Suzu Auntie -- 崩し蹴りジャンプ　PC→鈴婆
+17460201 Breaking kick jump PC → Suzu&#39;s son -- 崩し蹴りジャンプ　PC→鈴婆の息子
+17470201 Breaking kick jump PC → kidnapped younger man -- 崩し蹴りジャンプ　PC→さらわれ下男
+17480201 Breaking kick jump PC → Sick village priest -- 崩し蹴りジャンプ　PC→病み村神主
+17490201 Crushing Kick Jump PC → Immortal Experiment Doctor -- 崩し蹴りジャンプ　PC→不死実験の医僧
+17500201 Breaking kick jump PC → decent villager -- 崩し蹴りジャンプ　PC→まともな村人
+17510201 Breaking kick jump PC → White Rappa -- 崩し蹴りジャンプ　PC→白らっぱ
+17520201 Breaking Kick Jump PC → Submerged Handmaiden Aunt Sisters -- 崩し蹴りジャンプ　PC→水没侍女おば姉妹
+17530201 Breaking kick jump PC → Shura maid aunt -- 崩し蹴りジャンプ　PC→修羅侍女おば
+17540201 Breaking kick jump PC → Shop clerk (valley) -- 崩し蹴りジャンプ　PC→ショップ店員(渓谷)
+17550201 Breaking kick jump PC → Shop clerk (temple) -- 崩し蹴りジャンプ　PC→ショップ店員(寺)
+17560201 Breaking kick jump PC → Shop clerk (dungeon) -- 崩し蹴りジャンプ　PC→ショップ店員(地下牢)
+17580201 Breaking kick jump PC → Shop clerk (Honjo) -- 崩し蹴りジャンプ　PC→ショップ店員(本城)
+17590201 Breaking kick jump PC → Shop clerk (sick village) -- 崩し蹴りジャンプ　PC→ショップ店員(病み村)
+17600201 Breaking kick jump PC → Shop clerk (castle) -- 崩し蹴りジャンプ　PC→ショップ店員(城下)
+11010240 Useless push-down kick jump start PC → Ochimusha -- ダメ押し崩し蹴りジャンプ始動　PC→落武者
+11011240 Useless push-down kick jump start PC → Ochimusha (Varier) -- ダメ押し崩し蹴りジャンプ始動　PC→落武者（バリエ）
+11012240 Useless push-down kick jump start PC → Ochimusha (tutorial) -- ダメ押し崩し蹴りジャンプ始動　PC→落武者（チュートリアル）
+11020240 Useless push-down kick jump start PC → Samurai General -- ダメ押し崩し蹴りジャンプ始動　PC→侍大将
+11021240 Useless push-down kick jump start PC → Samurai General_Large Spear -- ダメ押し崩し蹴りジャンプ始動　PC→侍大将_大槍
+11030240 Useless push-down kick jump start PC → Centipede (small) -- ダメ押し崩し蹴りジャンプ始動　PC→ムカデ(小)
+11040240 Useless push-down kick jump start PC → Centipede (Large) -- ダメ押し崩し蹴りジャンプ始動　PC→ムカデ(大)
+11050240 Useless push-down kick jump start PC → spear monk soldier -- ダメ押し崩し蹴りジャンプ始動　PC→槍僧兵
+11060240 Useless push-down kick jump start PC → Rotating spearman -- ダメ押し崩し蹴りジャンプ始動　PC→回転槍術師
+11070240 Useless push-down kick jump start PC → Shura Samurai -- ダメ押し崩し蹴りジャンプ始動　PC→修羅侍
+11080240 Useless push-down kick jump start PC → Seven-sided warrior -- ダメ押し崩し蹴りジャンプ始動　PC→七面武者
+11100240 Useless push-down kick jump start PC → gecko -- ダメ押し崩し蹴りジャンプ始動　PC→ヤモリ
+11110240 Useless push-down kick jump start PC → Handmaiden aunt -- ダメ押し崩し蹴りジャンプ始動　PC→侍女おば
+11111240 Useless push-down kick jump start PC → Handmaiden Aunt (Varier) -- ダメ押し崩し蹴りジャンプ始動　PC→侍女おば（バリエ）
+11120240 Useless push-down kick jump start PC → Watchman -- ダメ押し崩し蹴りジャンプ始動　PC→見張り番
+11130240 Useless push-down kick jump start PC → Nanban armor -- ダメ押し崩し蹴りジャンプ始動　PC→南蛮甲冑
+11150240 Useless push-down kick jump start PC → dog -- ダメ押し崩し蹴りジャンプ始動　PC→イヌ
+11151240 Useless push-down kick jump start PC → dog (Innsmouth) -- ダメ押し崩し蹴りジャンプ始動　PC→イヌ（インスマス）
+11180240 Useless push-down kick jump start PC → younger man -- ダメ押し崩し蹴りジャンプ始動　PC→下男
+11181240 Useless push-down kick jump start PC → younger man zombie -- ダメ押し崩し蹴りジャンプ始動　PC→下男ゾンビ
+11190240 Useless push-down kick jump start PC → valley enemy -- ダメ押し崩し蹴りジャンプ始動　PC→谷敵
+11191240 Useless push-down kick jump start PC → valley enemy (female) -- ダメ押し崩し蹴りジャンプ始動　PC→谷敵(女)
+11200240 Useless push-down kick jump start PC → Sokushinbutsu (with bugs) -- ダメ押し崩し蹴りジャンプ始動　PC→即身仏(蟲有り)
+11210240 Useless push-down kick jump start PC → Sokushinbutsu (no bugs) -- ダメ押し崩し蹴りジャンプ始動　PC→即身仏(蟲無し)
+11220240 Useless push-down kick jump start PC → Temple miscellaneous fish -- ダメ押し崩し蹴りジャンプ始動　PC→寺雑魚
+11240240 Useless push-down kick jump start PC → Shamo chicken -- ダメ押し崩し蹴りジャンプ始動　PC→軍鶏
+11250240 Useless push-down kick jump start PC → small fish monkey -- ダメ押し崩し蹴りジャンプ始動　PC→雑魚猿
+11260240 Useless push-down kick jump start PC → Chigo monkey -- ダメ押し崩し蹴りジャンプ始動　PC→稚児猿
+11300240 Useless push-down kick jump start PC → Japanese style Innsmouth -- ダメ押し崩し蹴りジャンプ始動　PC→和風インスマス
+11310240 Useless push-down kick jump start PC → Genpei warrior -- ダメ押し崩し蹴りジャンプ始動　PC→源平武者
+11350240 Useless push-down kick jump start PC → no neck -- ダメ押し崩し蹴りジャンプ始動　PC→首なし
+11360240 Useless push-down kick jump start PC → Rappa -- ダメ押し崩し蹴りジャンプ始動　PC→らっぱ
+11361240 Useless push-down kick jump start PC → Rappa (Tokugawa) -- ダメ押し崩し蹴りジャンプ始動　PC→らっぱ（徳川）
+11400240 Useless push-down kick jump start PC → swordsman -- ダメ押し崩し蹴りジャンプ始動　PC→剣客
+11450240 Useless push-down kick jump start PC → Nightjars -- ダメ押し崩し蹴りジャンプ始動　PC→夜鷹衆
+11470240 Useless push-down kick jump start PC → Arc shadow crowd -- ダメ押し崩し蹴りジャンプ始動　PC→弧影衆
+11500240 Useless push-down kick jump start PC → Villager Zombie -- ダメ押し崩し蹴りジャンプ始動　PC→村人ゾンビ
+11501240 Useless push-down kick jump start PC → Villager zombie (female) -- ダメ押し崩し蹴りジャンプ始動　PC→村人ゾンビ（女）
+11520240 Useless push-down kick jump start PC → Villager zombie (prisoner) -- ダメ押し崩し蹴りジャンプ始動　PC→村人ゾンビ（囚人）
+11550240 Useless push-down kick jump start PC → bandit -- ダメ押し崩し蹴りジャンプ始動　PC→野盗
+11700240 Useless push-down kick jump start PC → Tokugawa Samurai -- ダメ押し崩し蹴りジャンプ始動　PC→徳川侍
+15020240 Useless push-down kick jump start PC → Akaoni -- ダメ押し崩し蹴りジャンプ始動　PC→赤鬼
+15021240 Useless push-down kick jump start PC → Giants Innsmouth -- ダメ押し崩し蹴りジャンプ始動　PC→巨人インスマス
+17000240 Useless push-down kick jump start PC → female player -- ダメ押し崩し蹴りジャンプ始動　PC→女奏者
+17410240 Useless push-down kick jump start PC → Fascinated samurai -- ダメ押し崩し蹴りジャンプ始動　PC→魅了された侍
+17420240 Useless push-down kick jump start PC → Merchandise bandit -- ダメ押し崩し蹴りジャンプ始動　PC→物売り野盗
+17430240 Useless push-down kick jump start PC → Arajera shop clerk -- ダメ押し崩し蹴りジャンプ始動　PC→荒れ寺ショップ店員
+17440240 Useless push-down kick jump start PC → Yaohioka Nun -- ダメ押し崩し蹴りジャンプ始動　PC→八百比丘尼
+17450240 Useless push-down kick jump start PC → Suzu -- ダメ押し崩し蹴りジャンプ始動　PC→鈴婆
+17460240 Useless push-down kick jump start PC → Suzu&#39;s son -- ダメ押し崩し蹴りジャンプ始動　PC→鈴婆の息子
+17470240 Useless push-down kick jump start PC → kidnapped younger man -- ダメ押し崩し蹴りジャンプ始動　PC→さらわれ下男
+17480240 Useless push-down kick jump start PC → Sick village priest -- ダメ押し崩し蹴りジャンプ始動　PC→病み村神主
+17490240 Useless push-down kick jump start PC → Immortal experiment doctor monk -- ダメ押し崩し蹴りジャンプ始動　PC→不死実験の医僧
+17500240 Useless push-down kick jump start PC → decent villager -- ダメ押し崩し蹴りジャンプ始動　PC→まともな村人
+17510240 Useless push-down kick jump start PC → White Rappa -- ダメ押し崩し蹴りジャンプ始動　PC→白らっぱ
+17520240 Useless push-down kick jump start PC → Submerged maid aunt sister -- ダメ押し崩し蹴りジャンプ始動　PC→水没侍女おば姉妹
+17530240 Useless push-down kick jump start PC → Shura maid aunt -- ダメ押し崩し蹴りジャンプ始動　PC→修羅侍女おば
+17540240 Useless push-down kick jump start PC → Shop clerk (valley) -- ダメ押し崩し蹴りジャンプ始動　PC→ショップ店員(渓谷)
+17550240 Useless push-down kick jump start PC → Shop clerk (temple) -- ダメ押し崩し蹴りジャンプ始動　PC→ショップ店員(寺)
+17560240 Useless push-down kick jump start PC → Shop clerk (dungeon) -- ダメ押し崩し蹴りジャンプ始動　PC→ショップ店員(地下牢)
+17580240 Useless push-down kick jump start PC → Shop clerk (Honjo) -- ダメ押し崩し蹴りジャンプ始動　PC→ショップ店員(本城)
+17590240 Useless push-down kick jump start PC → Shop clerk (sick village) -- ダメ押し崩し蹴りジャンプ始動　PC→ショップ店員(病み村)
+17600240 Useless push-down kick jump start PC → Shop clerk (castle) -- ダメ押し崩し蹴りジャンプ始動　PC→ショップ店員(城下)
+11010241 Useless push-down kick jump PC → Ochimusha -- ダメ押し崩し蹴りジャンプ　PC→落武者
+11011241 Useless push-down kick jump PC → Ochimusha (Varier) -- ダメ押し崩し蹴りジャンプ　PC→落武者（バリエ）
+11012241 Useless push-down kick jump PC → Ochimusha (tutorial) -- ダメ押し崩し蹴りジャンプ　PC→落武者（チュートリアル）
+11020241 Useless push-down kick jump PC → Samurai General -- ダメ押し崩し蹴りジャンプ　PC→侍大将
+11021241 Useless push-down kick jump PC → Samurai General_Large Spear -- ダメ押し崩し蹴りジャンプ　PC→侍大将_大槍
+11030241 Useless push-down kick jump PC → Centipede (small) -- ダメ押し崩し蹴りジャンプ　PC→ムカデ(小)
+11040241 Useless push-down kick jump PC → Centipede (Large) -- ダメ押し崩し蹴りジャンプ　PC→ムカデ(大)
+11050241 Useless push-down kick jump PC → spear monk soldier -- ダメ押し崩し蹴りジャンプ　PC→槍僧兵
+11060241 Useless push-down kick jump PC → Rotating spearman -- ダメ押し崩し蹴りジャンプ　PC→回転槍術師
+11070241 Useless push-down kick jump PC → Shura Samurai -- ダメ押し崩し蹴りジャンプ　PC→修羅侍
+11080241 Useless push-down kick jump PC → Seven-sided warrior -- ダメ押し崩し蹴りジャンプ　PC→七面武者
+11100241 Useless push-down kick jump PC → gecko -- ダメ押し崩し蹴りジャンプ　PC→ヤモリ
+11110241 Useless push-down kick jump PC → Handmaiden aunt -- ダメ押し崩し蹴りジャンプ　PC→侍女おば
+11111241 Useless push-down kick jump PC → Handmaiden Aunt (Varier) -- ダメ押し崩し蹴りジャンプ　PC→侍女おば（バリエ）
+11120241 Useless push-down kick jump PC → Watchman -- ダメ押し崩し蹴りジャンプ　PC→見張り番
+11130241 Useless push-down kick jump PC → Nanban armor -- ダメ押し崩し蹴りジャンプ　PC→南蛮甲冑
+11150241 Useless push-down kick jump PC → dog -- ダメ押し崩し蹴りジャンプ　PC→イヌ
+11151241 Useless push-down kick jump PC → dog (Innsmouth) -- ダメ押し崩し蹴りジャンプ　PC→イヌ（インスマス）
+11180241 Useless push-down kick jump PC → younger man -- ダメ押し崩し蹴りジャンプ　PC→下男
+11181241 Useless push-down kick jump PC → younger man zombie -- ダメ押し崩し蹴りジャンプ　PC→下男ゾンビ
+11190241 Useless push-down kick jump PC → valley enemy -- ダメ押し崩し蹴りジャンプ　PC→谷敵
+11191241 Useless push-down kick jump PC → Valley enemy (female) -- ダメ押し崩し蹴りジャンプ　PC→谷敵(女)
+11200241 Useless push-down kick jump PC → Sokushinbutsu (with bugs) -- ダメ押し崩し蹴りジャンプ　PC→即身仏(蟲有り)
+11210241 Useless push-down kick jump PC → Sokushinbutsu (no bugs) -- ダメ押し崩し蹴りジャンプ　PC→即身仏(蟲無し)
+11220241 Useless push-down kick jump PC → Temple miscellaneous fish -- ダメ押し崩し蹴りジャンプ　PC→寺雑魚
+11240241 Useless push-down kick jump PC → Shamo chicken -- ダメ押し崩し蹴りジャンプ　PC→軍鶏
+11250241 Useless push-down kick jump PC → small fish monkey -- ダメ押し崩し蹴りジャンプ　PC→雑魚猿
+11260241 Useless push-down kick jump PC → Chigo monkey -- ダメ押し崩し蹴りジャンプ　PC→稚児猿
+11300241 Useless push-down kick jump PC → Japanese-style Innsmouth -- ダメ押し崩し蹴りジャンプ　PC→和風インスマス
+11310241 Useless push-down kick jump PC → Genpei warrior -- ダメ押し崩し蹴りジャンプ　PC→源平武者
+11350241 Useless push-down kick jump PC → no neck -- ダメ押し崩し蹴りジャンプ　PC→首なし
+11360241 Useless push-down kick jump PC → Rappa -- ダメ押し崩し蹴りジャンプ　PC→らっぱ
+11361241 Useless push-down kick jump PC → Rappa (Tokugawa) -- ダメ押し崩し蹴りジャンプ　PC→らっぱ（徳川）
+11400241 Useless push-down kick jump PC → swordsman -- ダメ押し崩し蹴りジャンプ　PC→剣客
+11450241 Useless push-down kick jump PC → Nightjars -- ダメ押し崩し蹴りジャンプ　PC→夜鷹衆
+11470241 Useless push-down kick jump PC → Arc shadow crowd -- ダメ押し崩し蹴りジャンプ　PC→弧影衆
+11500241 Useless push-down kick jump PC → Villager Zombie -- ダメ押し崩し蹴りジャンプ　PC→村人ゾンビ
+11501241 Useless push-down kick jump PC → Villager zombie (female) -- ダメ押し崩し蹴りジャンプ　PC→村人ゾンビ（女）
+11520241 Useless push-down kick jump PC → Villager Zombie (Prisoner) -- ダメ押し崩し蹴りジャンプ　PC→村人ゾンビ（囚人）
+11550241 Useless push-down kick jump PC → bandit -- ダメ押し崩し蹴りジャンプ　PC→野盗
+11700241 Useless push-down kick jump PC → Samurai Tokugawa -- ダメ押し崩し蹴りジャンプ　PC→徳川侍
+15020241 Useless push-down kick jump PC → Akaoni -- ダメ押し崩し蹴りジャンプ　PC→赤鬼
+15021241 Useless push-down kick jump PC → Giant Innsmouth -- ダメ押し崩し蹴りジャンプ　PC→巨人インスマス
+17000241 Useless push-down kick jump PC → female player -- ダメ押し崩し蹴りジャンプ　PC→女奏者
+17410241 Useless push-down kick jump PC → Fascinated samurai -- ダメ押し崩し蹴りジャンプ　PC→魅了された侍
+17420241 Useless push-down kick jump PC → Merchandise bandit -- ダメ押し崩し蹴りジャンプ　PC→物売り野盗
+17430241 Useless push-down kick jump PC → Ara-ji shop clerk -- ダメ押し崩し蹴りジャンプ　PC→荒れ寺ショップ店員
+17440241 Useless push-down kick jump PC → Yayobioka Nun -- ダメ押し崩し蹴りジャンプ　PC→八百比丘尼
+17450241 Useless push-down kick jump PC → Suzu Auntie -- ダメ押し崩し蹴りジャンプ　PC→鈴婆
+17460241 Useless push-down kick jump PC → Suzu&#39;s son -- ダメ押し崩し蹴りジャンプ　PC→鈴婆の息子
+17470241 Useless push-down kick jump PC → kidnapped younger man -- ダメ押し崩し蹴りジャンプ　PC→さらわれ下男
+17480241 Useless push-down kick jump PC → Sick village priest -- ダメ押し崩し蹴りジャンプ　PC→病み村神主
+17490241 Useless push-down kick jump PC → Immortal experiment doctor monk -- ダメ押し崩し蹴りジャンプ　PC→不死実験の医僧
+17500241 Useless push-down kick jump PC → decent villager -- ダメ押し崩し蹴りジャンプ　PC→まともな村人
+17510241 Useless push-down kick jump PC → White Rappa -- ダメ押し崩し蹴りジャンプ　PC→白らっぱ
+17520241 Useless Pushing Kicking Jump PC → Submerged Handmaiden Aunt Sisters -- ダメ押し崩し蹴りジャンプ　PC→水没侍女おば姉妹
+17530241 Useless push-down kick jump PC → Shura maid aunt -- ダメ押し崩し蹴りジャンプ　PC→修羅侍女おば
+17540241 Useless push-down kick jump PC → Shop clerk (valley) -- ダメ押し崩し蹴りジャンプ　PC→ショップ店員(渓谷)
+17550241 Useless push-down kick jump PC → Shop clerk (temple) -- ダメ押し崩し蹴りジャンプ　PC→ショップ店員(寺)
+17560241 Useless push-down kick jump PC → Shop clerk (dungeon) -- ダメ押し崩し蹴りジャンプ　PC→ショップ店員(地下牢)
+17580241 Useless push-down kick jump PC → Shop clerk (Honjo) -- ダメ押し崩し蹴りジャンプ　PC→ショップ店員(本城)
+17590241 Useless push-down kick jump PC → Shop clerk (sick village) -- ダメ押し崩し蹴りジャンプ　PC→ショップ店員(病み村)
+17600241 Useless push-down kick jump PC → Shop clerk (castle) -- ダメ押し崩し蹴りジャンプ　PC→ショップ店員(城下)
+11340250 Underwater collapse start PC → No underwater neck -- 水中崩し始動 PC→水中首なし
+11340251 Underwater collapse body PC → No underwater neck -- 水中崩し本体　PC→水中首なし
+11300260 Aging-breaking start PC → Japanese-style Innsmouth -- 老化崩し始動　PC→和風インスマス
+11300261 Aging-breaking body PC → Japanese-style Innsmouth -- 老化崩し本体　PC→和風インスマス
+11300270 Aging Behind-the-scenes PC → Japanese-style Innsmouth -- 老化背後始動　PC→和風インスマス
+11300271 Aging back body PC → Japanese style Innsmouth -- 老化背後本体　PC→和風インスマス
+11300280 Aging breaks back start PC → Japanese style Innsmouth -- 老化崩し背後始動　PC→和風インスマス
+11300281 Aging collapse back body PC → Japanese style Innsmouth -- 老化崩し背後本体　PC→和風インスマス
+15010900 Event Large Litter_Castle -- イベント 大蛇輿_城下
+11240505 [On the roof] Breaking (far) start PC → Shamo chicken -- 【屋根上】崩し（遠）始動　PC→軍鶏
+11250505 [On the roof] Breaking (far) start PC → Small fish monkey -- 【屋根上】崩し（遠）始動　PC→雑魚猿
+11310505 [On the roof] Breaking (far) start PC → Genpei Samurai -- 【屋根上】崩し（遠）始動　PC→源平武者
+11360505 [On the roof] Break (far) start PC → Rappa -- 【屋根上】崩し（遠）始動　PC→らっぱ
+11361505 [On the roof] Break (far) start PC → Rappa (Tokugawa) -- 【屋根上】崩し（遠）始動　PC→らっぱ（徳川）
+11450505 [On the roof] Breaking (far) start PC → Nightjars -- 【屋根上】崩し（遠）始動　PC→夜鷹衆
+11470505 [On the roof] Breaking (far) start PC → Kokageshu -- 【屋根上】崩し（遠）始動　PC→孤影衆
+17510505 [On the roof] Break (far) start PC → White -- 【屋根上】崩し（遠）始動　PC→白らっぱ
+11240506 [On the roof] Breaking (far) main body PC → Shamo chicken -- 【屋根上】崩し（遠）本体　PC→軍鶏
+11250506 [On the roof] Breaking (far) main body PC → Small fish monkey -- 【屋根上】崩し（遠）本体　PC→雑魚猿
+11260506 [On the roof] Breaking (far) main body PC → Chigo monkey -- 【屋根上】崩し（遠）本体　PC→稚児猿
+11310506 [On the roof] Collapse (far) Main body PC → Genpei Samurai -- 【屋根上】崩し（遠）本体　PC→源平武者
+11360506 [On the roof] Collapse (far) Main body PC → Rappa -- 【屋根上】崩し（遠）本体　PC→らっぱ
+11361506 [On the roof] Collapse (far) Main body PC → Rappa (Tokugawa) -- 【屋根上】崩し（遠）本体　PC→らっぱ（徳川）
+11450506 [On the roof] Breaking (far) main body PC → Nightjars -- 【屋根上】崩し（遠）本体　PC→夜鷹衆
+11470506 [On the roof] Collapsed (far) main body PC → lonely people -- 【屋根上】崩し（遠）本体　PC→孤影衆
+17510506 [On the roof] Collapse (far) Main body PC → White -- 【屋根上】崩し（遠）本体　PC→白らっぱ
+11240520 [On the roof] Start behind PC → Shamo chicken -- 【屋根上】背後始動　PC→軍鶏
+11250520 [On the roof] Start behind PC → Small fish monkey -- 【屋根上】背後始動　PC→雑魚猿
+11260520 [On the roof] Start behind PC → Chigo monkey -- 【屋根上】背後始動　PC→稚児猿
+11310520 [On the roof] Start behind PC → Samurai Genpei -- 【屋根上】背後始動　PC→源平武者
+11360520 [On the roof] Start behind PC → Rappa -- 【屋根上】背後始動　PC→らっぱ
+11361520 [On the roof] Start behind PC → Rappa (Tokugawa) -- 【屋根上】背後始動　PC→らっぱ（徳川）
+11450520 [On the roof] Start behind PC → Nightjars -- 【屋根上】背後始動　PC→夜鷹衆
+11470520 [On the roof] Starting behind the PC → Kokageshu -- 【屋根上】背後始動　PC→孤影衆
+17510520 [On the roof] Start behind PC → White -- 【屋根上】背後始動　PC→白らっぱ
+11240521 [On the roof] Back body PC → Shamo chicken -- 【屋根上】背後本体　PC→軍鶏
+11250521 [On the roof] Back body PC → Small fish monkey -- 【屋根上】背後本体　PC→雑魚猿
+11260521 [On the roof] Back body PC → Chigo monkey -- 【屋根上】背後本体　PC→稚児猿
+11310521 [On the roof] Behind the main body PC → Genpei Samurai -- 【屋根上】背後本体　PC→源平武者
+11360521 [On the roof] Back body PC → Rappa -- 【屋根上】背後本体　PC→らっぱ
+11361521 [On the roof] Back body PC → Rappa (Tokugawa) -- 【屋根上】背後本体　PC→らっぱ（徳川）
+11450521 [On the roof] Back body PC → Nightjars -- 【屋根上】背後本体　PC→夜鷹衆
+11470521 [On the roof] Behind the main body PC → Kokageshu -- 【屋根上】背後本体　PC→孤影衆
+17510521 [On the roof] Back body PC → White -- 【屋根上】背後本体　PC→白らっぱ
+11240522 [Roof] Behind Ninjutsu (Blood Smoke) PC → Shamo Chicken -- 【屋根上】背後忍術（血煙）　PC→軍鶏
+11250522 [Roof] Behind Ninjutsu (Blood Smoke) PC → Small Fish Monkey -- 【屋根上】背後忍術（血煙）　PC→雑魚猿
+11260522 [Roof] Behind Ninjutsu (Blood Smoke) PC → Chigo Monkey -- 【屋根上】背後忍術（血煙）　PC→稚児猿
+11310522 [Roof] Back Ninjutsu (Blood Smoke) PC → Genpei Samurai -- 【屋根上】背後忍術（血煙）　PC→源平武者
+11360522 [Roof] Behind Ninjutsu (Blood Smoke) PC → Rappa -- 【屋根上】背後忍術（血煙）　PC→らっぱ
+11361522 [Roof] Behind Ninjutsu (Blood Smoke) PC → Rappa (Tokugawa) -- 【屋根上】背後忍術（血煙）　PC→らっぱ（徳川）
+11450522 [Roof] Behind Ninjutsu (Blood Smoke) PC → Nightjars -- 【屋根上】背後忍術（血煙）　PC→夜鷹衆
+11470522 [Roof] Behind Ninjutsu (Blood Smoke) PC → Kokageshu -- 【屋根上】背後忍術（血煙）　PC→孤影衆
+17510522 [Roof] Behind Ninjutsu (Blood Smoke) PC → White Rappa -- 【屋根上】背後忍術（血煙）　PC→白らっぱ
+11240523 [On the roof] Behind-the-scenes ninjutsu (puppet) PC → Shamo chicken -- 【屋根上】背後忍術（傀儡）　PC→軍鶏
+11250523 [On the roof] Behind-the-scenes ninjutsu (puppet) PC → Small fish monkey -- 【屋根上】背後忍術（傀儡）　PC→雑魚猿
+11260523 [On the roof] Behind-the-scenes ninjutsu (puppet) PC → Chigo monkey -- 【屋根上】背後忍術（傀儡）　PC→稚児猿
+11310523 [On the roof] Behind-the-scenes ninjutsu (puppet) PC → Genpei warrior -- 【屋根上】背後忍術（傀儡）　PC→源平武者
+11360523 [On the roof] Behind-the-scenes ninjutsu (puppet) PC → Rappa -- 【屋根上】背後忍術（傀儡）　PC→らっぱ
+11361523 [On the roof] Behind-the-scenes ninjutsu (puppet) PC → Rappa (Tokugawa) -- 【屋根上】背後忍術（傀儡）　PC→らっぱ（徳川）
+11450523 [On the roof] Behind-the-scenes ninjutsu (puppet) PC → Nightjars -- 【屋根上】背後忍術（傀儡）　PC→夜鷹衆
+11470523 [On the roof] Behind-the-scenes ninjutsu (puppet) PC → Kokageshu -- 【屋根上】背後忍術（傀儡）　PC→孤影衆
+17510523 [On the roof] Behind Ninjutsu (puppet) PC → White Rappa -- 【屋根上】背後忍術（傀儡）　PC→白らっぱ
+11240524 [On the roof] Behind-the-scenes ninjutsu (granted) PC → Shamo chicken -- 【屋根上】背後忍術（付与）　PC→軍鶏
+11250524 [Roof] Behind Ninjutsu (Grant) PC → Small Fish Monkey -- 【屋根上】背後忍術（付与）　PC→雑魚猿
+11260524 [Roof] Behind Ninjutsu (Grant) PC → Chigo Monkey -- 【屋根上】背後忍術（付与）　PC→稚児猿
+11310524 [Roof] Behind Ninjutsu (Grant) PC → Genpei Samurai -- 【屋根上】背後忍術（付与）　PC→源平武者
+11360524 [Roof] Behind Ninjutsu (Grant) PC → Rappa -- 【屋根上】背後忍術（付与）　PC→らっぱ
+11361524 [Roof] Behind Ninjutsu (Grant) PC → Rappa (Tokugawa) -- 【屋根上】背後忍術（付与）　PC→らっぱ（徳川）
+11450524 [Roof] Behind Ninjutsu (Grant) PC → Nightjars -- 【屋根上】背後忍術（付与）　PC→夜鷹衆
+11470524 [Roof] Behind Ninjutsu (Grant) PC → Kokageshu -- 【屋根上】背後忍術（付与）　PC→孤影衆
+17510524 [Roof] Behind Ninjutsu (Grant) PC → White Rappa -- 【屋根上】背後忍術（付与）　PC→白らっぱ
+11240530 [On the roof] Fall 0 PC → Shamo chicken -- 【屋根上】落下0　PC→軍鶏
+11250530 [On the roof] Fall 0 PC → Small fish monkey -- 【屋根上】落下0　PC→雑魚猿
+11260530 [On the roof] Fall 0 PC → Chigo monkey -- 【屋根上】落下0　PC→稚児猿
+11310530 [On the roof] Fall 0 PC → Genpei Samurai -- 【屋根上】落下0　PC→源平武者
+11360530 [On the roof] Fall 0 PC → Rappa -- 【屋根上】落下0　PC→らっぱ
+11361530 [On the roof] Fall 0 PC → Rappa (Tokugawa) -- 【屋根上】落下0　PC→らっぱ（徳川）
+11450530 [On the roof] Fall 0 PC → Nightjars -- 【屋根上】落下0　PC→夜鷹衆
+11470530 [On the roof] Fall 0 PC → Lonely crowd -- 【屋根上】落下0　PC→孤影衆
+17510530 [On the roof] Fall 0 PC → White -- 【屋根上】落下0　PC→白らっぱ
+11240531 [On the roof] Fall 1 PC → Shamo chicken -- 【屋根上】落下1　PC→軍鶏
+11250531 [On the roof] Fall 1 PC → Small fish monkey -- 【屋根上】落下1　PC→雑魚猿
+11260531 [On the roof] Falling 1 PC → Chigo monkey -- 【屋根上】落下1　PC→稚児猿
+11310531 [On the roof] Fall 1 PC → Genpei Samurai -- 【屋根上】落下1　PC→源平武者
+11360531 [On the roof] Fall 1 PC → Rappa -- 【屋根上】落下1　PC→らっぱ
+11361531 [On the roof] Fall 1 PC → Rappa (Tokugawa) -- 【屋根上】落下1　PC→らっぱ（徳川）
+11450531 [On the roof] Fall 1 PC → Nightjars -- 【屋根上】落下1　PC→夜鷹衆
+11470531 [On the roof] Fall 1 PC → Lonely crowd -- 【屋根上】落下1　PC→孤影衆
+17510531 [On the roof] Fall 1 PC → White -- 【屋根上】落下1　PC→白らっぱ
+11240610 [On the roof] Breaking behind PC → Shamo chicken -- 【屋根上】崩し背後始動　PC→軍鶏
+11250610 [On the roof] Start behind the collapse PC → Small fish monkey -- 【屋根上】崩し背後始動　PC→雑魚猿
+11260610 [On the roof] Breaking behind PC → Chigo monkey -- 【屋根上】崩し背後始動　PC→稚児猿
+11310610 [On the roof] Start behind the collapse PC → Genpei Samurai -- 【屋根上】崩し背後始動　PC→源平武者
+11360610 [On the roof] Breaking behind PC → Rappa -- 【屋根上】崩し背後始動　PC→らっぱ
+11361610 [On the roof] Start behind the collapse PC → Rappa (Tokugawa) -- 【屋根上】崩し背後始動　PC→らっぱ（徳川）
+11450610 [On the roof] Start behind the collapse PC → Nightjars -- 【屋根上】崩し背後始動　PC→夜鷹衆
+11470610 [On the roof] Start behind the collapsed PC → Kokageshu -- 【屋根上】崩し背後始動　PC→孤影衆
+17510610 [On the roof] Start behind the collapse PC → White -- 【屋根上】崩し背後始動　PC→白らっぱ
+11240611 [On the roof] The main body behind the collapse PC → Shamo chicken -- 【屋根上】崩し背後本体　PC→軍鶏
+11250611 [On the roof] The main body behind the collapse PC → Small fish monkey -- 【屋根上】崩し背後本体　PC→雑魚猿
+11260611 [On the roof] The main body behind the collapse PC → Chigo monkey -- 【屋根上】崩し背後本体　PC→稚児猿
+11310611 [On the roof] The main body behind the collapse PC → Genpei Samurai -- 【屋根上】崩し背後本体　PC→源平武者
+11360611 [On the roof] The main body behind the collapse PC → Rappa -- 【屋根上】崩し背後本体　PC→らっぱ
+11361611 [On the roof] The main body behind the collapse PC → Rappa (Tokugawa) -- 【屋根上】崩し背後本体　PC→らっぱ（徳川）
+11450611 [On the roof] The main body behind the collapse PC → Nightjars -- 【屋根上】崩し背後本体　PC→夜鷹衆
+11470611 [On the roof] The main body behind the collapse PC → Kokageshu -- 【屋根上】崩し背後本体　PC→孤影衆
+17510611 [On the roof] The main body behind the collapse PC → White -- 【屋根上】崩し背後本体　PC→白らっぱ
+11240612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → Shamo chicken -- 【屋根上】崩し背後忍術（血煙）　PC→軍鶏
+11250612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → Small fish monkey -- 【屋根上】崩し背後忍術（血煙）　PC→雑魚猿
+11260612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → Chigo monkey -- 【屋根上】崩し背後忍術（血煙）　PC→稚児猿
+11310612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → Genpei Samurai -- 【屋根上】崩し背後忍術（血煙）　PC→源平武者
+11360612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → Rappa -- 【屋根上】崩し背後忍術（血煙）　PC→らっぱ
+11361612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → Rappa (Tokugawa) -- 【屋根上】崩し背後忍術（血煙）　PC→らっぱ（徳川）
+11450612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → Nightjars -- 【屋根上】崩し背後忍術（血煙）　PC→夜鷹衆
+11470612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → Kokageshu -- 【屋根上】崩し背後忍術（血煙）　PC→孤影衆
+17510612 [On the roof] Ninjutsu behind the collapse (blood smoke) PC → White Rappa -- 【屋根上】崩し背後忍術（血煙）　PC→白らっぱ
+11240613 [On the roof] Ninjutsu behind the collapse (puppet) PC → Shamo chicken -- 【屋根上】崩し背後忍術（傀儡）　PC→軍鶏
+11250613 [On the roof] Ninjutsu behind the collapse (puppet) PC → Small fish monkey -- 【屋根上】崩し背後忍術（傀儡）　PC→雑魚猿
+11260613 [On the roof] Ninjutsu behind the collapse (puppet) PC → Chigo monkey -- 【屋根上】崩し背後忍術（傀儡）　PC→稚児猿
+11310613 [On the roof] Ninjutsu behind the collapse (puppet) PC → Genpei Samurai -- 【屋根上】崩し背後忍術（傀儡）　PC→源平武者
+11360613 [On the roof] Ninjutsu behind the collapse (puppet) PC → Rappa -- 【屋根上】崩し背後忍術（傀儡）　PC→らっぱ
+11361613 [On the roof] Ninjutsu behind the collapse (puppet) PC → Rappa (Tokugawa) -- 【屋根上】崩し背後忍術（傀儡）　PC→らっぱ（徳川）
+11450613 [On the roof] Ninjutsu behind the collapse (puppet) PC → Nightjars -- 【屋根上】崩し背後忍術（傀儡）　PC→夜鷹衆
+11470613 [On the roof] Ninjutsu behind the collapse (puppet) PC → Kokageshu -- 【屋根上】崩し背後忍術（傀儡）　PC→孤影衆
+17510613 [On the roof] Ninjutsu behind the collapse (puppet) PC → White Rappa -- 【屋根上】崩し背後忍術（傀儡）　PC→白らっぱ
+11240614 [On the roof] Ninjutsu behind the collapse (granted) PC → Shamo chicken -- 【屋根上】崩し背後忍術（付与）　PC→軍鶏
+11250614 [On the roof] Ninjutsu behind the collapse (granted) PC → Small fish monkey -- 【屋根上】崩し背後忍術（付与）　PC→雑魚猿
+11260614 [On the roof] Ninjutsu behind the collapse (granted) PC → Chigo monkey -- 【屋根上】崩し背後忍術（付与）　PC→稚児猿
+11310614 [On the roof] Ninjutsu behind the collapse (granted) PC → Genpei Samurai -- 【屋根上】崩し背後忍術（付与）　PC→源平武者
+11360614 [On the roof] Ninjutsu behind the collapse (granted) PC → Rappa -- 【屋根上】崩し背後忍術（付与）　PC→らっぱ
+11361614 [On the roof] Ninjutsu behind the collapse (granted) PC → Rappa (Tokugawa) -- 【屋根上】崩し背後忍術（付与）　PC→らっぱ（徳川）
+11450614 [On the roof] Ninjutsu behind the collapse (granted) PC → Nightjars -- 【屋根上】崩し背後忍術（付与）　PC→夜鷹衆
+11470614 [On the roof] Ninjutsu behind the collapse (granted) PC → Kokageshu -- 【屋根上】崩し背後忍術（付与）　PC→孤影衆
+17510614 [On the roof] Ninjutsu behind the collapse (granted) PC → White Rappa -- 【屋根上】崩し背後忍術（付与）　PC→白らっぱ
+11240650 [On the roof] Crush and fall 0 PC → Shamo chicken -- 【屋根上】崩し落下0　PC→軍鶏
+11250650 [On the roof] Crush and fall 0 PC → Small fish monkey -- 【屋根上】崩し落下0　PC→雑魚猿
+11260650 [On the roof] Crush and fall 0 PC → Chigo monkey -- 【屋根上】崩し落下0　PC→稚児猿
+11310650 [On the roof] Crush and fall 0 PC → Genpei Samurai -- 【屋根上】崩し落下0　PC→源平武者
+11360650 [On the roof] Crush and fall 0 PC → Rappa -- 【屋根上】崩し落下0　PC→らっぱ
+11361650 [On the roof] Collapse and fall 0 PC → Rappa (Tokugawa) -- 【屋根上】崩し落下0　PC→らっぱ（徳川）
+11450650 [On the roof] Crush and fall 0 PC → Nightjars -- 【屋根上】崩し落下0　PC→夜鷹衆
+11470650 [On the roof] Crush and fall 0 PC → Lonely crowd -- 【屋根上】崩し落下0　PC→孤影衆
+17510650 [On the roof] Crush and fall 0 PC → White -- 【屋根上】崩し落下0　PC→白らっぱ
+11240651 [On the roof] Crush and fall 1 PC → Shamo chicken -- 【屋根上】崩し落下1　PC→軍鶏
+11250651 [On the roof] Crush and fall 1 PC → Small fish monkey -- 【屋根上】崩し落下1　PC→雑魚猿
+11260651 [On the roof] Crush and fall 1 PC → Chigo monkey -- 【屋根上】崩し落下1　PC→稚児猿
+11310651 [On the roof] Collapse and fall 1 PC → Genpei Samurai -- 【屋根上】崩し落下1　PC→源平武者
+11360651 [On the roof] Crush and fall 1 PC → Rappa -- 【屋根上】崩し落下1　PC→らっぱ
+11361651 [On the roof] Collapse and fall 1 PC → Rappa (Tokugawa) -- 【屋根上】崩し落下1　PC→らっぱ（徳川）
+11450651 [On the roof] Collapse and fall 1 PC → Nightjars -- 【屋根上】崩し落下1　PC→夜鷹衆
+11470651 [On the roof] Collapse and fall 1 PC → Lonely crowd -- 【屋根上】崩し落下1　PC→孤影衆
+17510651 [On the roof] Crush and fall 1 PC → White -- 【屋根上】崩し落下1　PC→白らっぱ
+11240660 [On the roof] Kicking down 0 PC → Shamo chicken -- 【屋根上】蹴り崩し0　PC→軍鶏
+11250660 [On the roof] Kicking down 0 PC → Small fish monkey -- 【屋根上】蹴り崩し0　PC→雑魚猿
+11260660 [On the roof] Kicking down 0 PC → Chigo monkey -- 【屋根上】蹴り崩し0　PC→稚児猿
+11310660 [On the roof] Kicking down 0 PC → Genpei Samurai -- 【屋根上】蹴り崩し0　PC→源平武者
+11360660 [On the roof] Kicking down 0 PC → Rappa -- 【屋根上】蹴り崩し0　PC→らっぱ
+11361660 [On the roof] Kicking down 0 PC → Rappa (Tokugawa) -- 【屋根上】蹴り崩し0　PC→らっぱ（徳川）
+11450660 [On the roof] Kicking down 0 PC → Nightjars -- 【屋根上】蹴り崩し0　PC→夜鷹衆
+11470660 [On the roof] Kicking down 0 PC → Lonely crowd -- 【屋根上】蹴り崩し0　PC→孤影衆
+17510660 [On the roof] Kicking down 0 PC → White -- 【屋根上】蹴り崩し0　PC→白らっぱ
+11240661 [On the roof] Kicking down 1 PC → Shamo chicken -- 【屋根上】蹴り崩し1　PC→軍鶏
+11250661 [On the roof] Kicking down 1 PC → Small fish monkey -- 【屋根上】蹴り崩し1　PC→雑魚猿
+11260661 [On the roof] Kicking down 1 PC → Chigo monkey -- 【屋根上】蹴り崩し1　PC→稚児猿
+11310661 [On the roof] Kicking down 1 PC → Genpei Samurai -- 【屋根上】蹴り崩し1　PC→源平武者
+11360661 [On the roof] Kicking down 1 PC → Rappa -- 【屋根上】蹴り崩し1　PC→らっぱ
+11361661 [On the roof] Kicking down 1 PC → Rappa (Tokugawa) -- 【屋根上】蹴り崩し1　PC→らっぱ（徳川）
+11450661 [On the roof] Kicking down 1 PC → Nightjars -- 【屋根上】蹴り崩し1　PC→夜鷹衆
+11470661 [On the roof] Kicking down 1 PC → Lonely crowd -- 【屋根上】蹴り崩し1　PC→孤影衆
+17510661 [On the roof] Kicking down 1 PC → White -- 【屋根上】蹴り崩し1　PC→白らっぱ
+21020000 Samurai General → PC Grab the neck and throw -- 侍大将→PC 首をつかんで投げ
+21050000 Spear monk → PC throw -- 槍僧兵→PC 投げ
+21070000 Shura Samurai → PC Shikona trampling throw -- 修羅侍→PC 四股踏みつけ投げ
+21140000 Earthen wall soldier → PC dragged in (left) -- 土塀兵→PC 引きずり込まれ(左)
+21140100 Earthen wall soldier → PC dragged in (right) -- 土塀兵→PC 引きずり込まれ(右)
+21180000 Lower man _ bell → PC bell cover -- 下男_鐘→PC 鐘被せ
+21181000 Younger zombie _ bell → PC bell cover -- 下男ゾンビ_鐘→PC 鐘被せ
+21190000 Valley enemy _ sniper → PC anchor hook -- 谷敵_狙撃→PC　アンカー引っ掛け
+21191000 Valley enemy (female) _ sniper → PC anchor hook -- 谷敵(女)_狙撃→PC　アンカー引っ掛け
+21200000 Sokushinbutsu → PC entangled from clinging -- 即身仏→PC すがりつきからの巻きつかれ
+21220000 Temple foundation Zako → PC sending hand throw -- 寺基礎ザコ→PC 送り小手投げ
+21250000 Small fish monkey → PC drop throw -- 雑魚猿→PC 落下投げ
+21300000 Japanese-style insmouth → PC&#39;s leaning throw -- 和風インスマウス→PC のしかかり投げ
+21340000 Underwater neckless → PC front butt kappa ball removal -- 水中首なし→PC 前尻子玉抜き
+21350000 Neckless → PC Kappa ball removal -- 首なし→PC 尻子玉抜き
+21360000 Rappa → PC Jumping from behind Shinobi -- らっぱ→PC 背後からの飛び掛かり忍殺
+21361000 Tokugawa Rappa → PC Jumping from behind Shinobi -- 徳川らっぱ→PC 背後からの飛び掛かり忍殺
+21500000 Villager Zombie → PC Throw Knife Metta Stab -- 村人ゾンビ→PC 投げ 包丁メッタ刺し
+21500100 Villager Zombie → PC Throw Lacrimal Gland Throw -- 村人ゾンビ→PC 投げ 涙腺抉り投げ
+21500200 Villager Zombie → PC Grab restraint from the ground -- 村人ゾンビ→PC 地中からの掴み拘束
+21501000 Villager Zombie (female) → PC throwing knife Metta stab -- 村人ゾンビ（女）→PC 投げ 包丁メッタ刺し
+21501100 Villager Zombie (female) → PC throwing Lacrimal gland throwing -- 村人ゾンビ（女）→PC 投げ 涙腺抉り投げ
+21501200 Villager Zombie (female) → PC Grab restraint from the ground -- 村人ゾンビ（女）→PC 地中からの掴み拘束
+21520000 Prisoner Zombie → PC Throw Knife Metta Stab -- 囚人ゾンビ→PC 投げ 包丁メッタ刺し
+21520100 Prisoner Zombie → PC Throw Lacrimal Gland Throw -- 囚人ゾンビ→PC 投げ 涙腺抉り投げ
+21520200 Prisoner Zombie → PC Grab restraint from the ground -- 囚人ゾンビ→PC 地中からの掴み拘束
+25020000 Akaoni → PC Throw from right hand grab -- 赤鬼→PC 右手掴みからの投げ
+25020100 Akaoni → Pound from PC tackle grab &amp; throw back -- 赤鬼→PC タックル掴みからのパウンド&後ろ放り投げ
+25021000 Giants Innsmouth → PC Throw from right hand grab -- 巨人インスマス→PC 右手掴みからの投げ
+25021100 Giants Innsmouth → Pound &amp; back throw from PC tackle grab -- 巨人インスマス→PC タックル掴みからのパウンド&後ろ放り投げ
+25060000 Chief of Ninja Army → PC Breaking Throw -- 忍軍の長→PC 崩し投げ
+25060100 Chief of Ninja Army → PC closeout throw -- 忍軍の長→PC 見切り投げ
+25080000 Horse-riding warrior → PC hang-on throw from assault -- 騎馬武者→PC ハングオン突撃からの投げ
+25090000 Butterfly → PC drop throw -- お蝶→PC 落下投げ
+25100000 Yasha Ape (in front of HU) → PC long-distance throw -- 夜叉猿（HU前）→PC 遠距離投げ
+25100100 Yasha Ape (in front of HU) → PC short-distance throw -- 夜叉猿（HU前）→PC 近距離投げ
+25430000 Revived Kensei (bed) → PC Aikido throw -- 蘇った剣聖（病床）→PC 合気道投げ
+27000000 Female player → PC Todome Shinobi -- 女奏者→PC トドメ忍殺
+27100000 Rival → PC body blow -- ライバル→PC ボディブロー
+27100100 Rival → PC roll → pierce -- ライバル→PC 転ばせ→突き刺し
+27110100 Rival → PC roll → pierce -- ライバル→PC 転ばせ→突き刺し
+27400000 Daughter of Isei → PC Aikido Throw -- 医聖の娘→PC 合気道投げ
+27470000 The kidnapped younger man → PC bell cover -- さらわれ下男→PC 鐘被せ
+27490000 Temple foundation Zako → PC sending hand throw -- 寺基礎ザコ→PC 送り小手投げ

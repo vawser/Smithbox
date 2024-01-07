@@ -1,0 +1,19 @@
+<class name='hkMultiThreadCheck' version='1' signature='0x11e4408b' size='12'>
+  <enums>
+    <enum name='AccessType' flags='00000000'>
+      <enumitem name='HK_ACCESS_IGNORE' value='0'/>
+      <enumitem name='HK_ACCESS_RO' value='1'/>
+      <enumitem name='HK_ACCESS_RW' value='2'/>
+    </enum>
+    <enum name='ReadMode' flags='00000000'>
+      <enumitem name='THIS_OBJECT_ONLY' value='0'/>
+      <enumitem name='RECURSIVE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='threadId' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='stackTraceId' offset='4' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='markCount' offset='8' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='markBitStack' offset='10' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

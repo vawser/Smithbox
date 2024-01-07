@@ -1,0 +1,21 @@
+<class name='hclMeshMeshDeformOperator' version='1' signature='0xff4f25c3' size='104' parent='hclOperator'>
+  <enums>
+    <enum name='ScaleNormalBehaviour' flags='00000000'>
+      <enumitem name='SCALE_NORMAL_IGNORE' value='0'/>
+      <enumitem name='SCALE_NORMAL_APPLY' value='1'/>
+      <enumitem name='SCALE_NORMAL_INVERT' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='inputTrianglesSubset' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleVertexPairs' offset='48' ctype='hclMeshMeshDeformOperatorTriangleVertexPair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleVertexStartForVertex' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='inputBufferIdx' offset='80' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputBufferIdx' offset='84' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startVertex' offset='88' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endVertex' offset='90' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='scaleNormalBehaviour' offset='92' etype='ScaleNormalBehaviour' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deformNormals' offset='96' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='partialDeform' offset='97' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

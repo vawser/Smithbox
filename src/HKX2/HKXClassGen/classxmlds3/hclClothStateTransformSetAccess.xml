@@ -1,0 +1,6 @@
+<class name='hclClothStateTransformSetAccess' version='1' signature='0x2b6cbad' size='32'>
+  <members>
+    <member name='transformSetIndex' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transformSetUsage' offset='8' ctype='hclTransformSetUsage' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

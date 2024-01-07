@@ -1,0 +1,6 @@
+<class name='hkxAnimatedFloat' version='1' signature='0x9256c754' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='floats' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hint' offset='32' etype='Hint' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

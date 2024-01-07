@@ -1,0 +1,7 @@
+0 Basic
+1 B0B1 celestial sphere
+2 church
+3 B2 celestial sphere
+20 B2 basic
+50 cutscene church
+51 Cutscene Church (disappear)

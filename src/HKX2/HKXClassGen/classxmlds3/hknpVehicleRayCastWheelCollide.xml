@@ -1,0 +1,4 @@
+<class name='hknpVehicleRayCastWheelCollide' version='1' signature='0x3201a9f4' size='24' parent='hknpVehicleWheelCollide'>
+  <members>
+  </members>
+</class>

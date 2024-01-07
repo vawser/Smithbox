@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <disableMultiDropShare IsBool="" />
+    <isEquipOutBrake IsBool="" />
+    <isDrop IsBool="" />
+    <isNoticeLog IsBool="" />
+    <residentSpEffectId3 Refs="SpEffectParam" />
+    <residentSpEffectId2 Refs="SpEffectParam" />
+    <isDiscard IsBool="" />
+    <isNoticeDialog IsBool="" />
+    <isDeposit IsBool="" />
+    <residentSpEffectId4 Refs="SpEffectParam" />
+    <residentSpEffectId1 Refs="SpEffectParam" />
+  </Field>
+  <Self />
+</PARAMMETA>

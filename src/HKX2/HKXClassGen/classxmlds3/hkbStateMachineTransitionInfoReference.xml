@@ -1,0 +1,7 @@
+<class name='hkbStateMachineTransitionInfoReference' version='1' signature='0x9810c2d0' size='6'>
+  <members>
+    <member name='fromStateIndex' offset='0' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transitionIndex' offset='2' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stateMachineId' offset='4' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

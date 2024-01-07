@@ -1,0 +1,9 @@
+<class name='hclClothState' version='1' signature='0x7b02cd1b' size='88' parent='hkReferencedObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='operators' offset='24' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='usedBuffers' offset='40' ctype='hclClothStateBufferAccess' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='usedTransformSets' offset='56' ctype='hclClothStateTransformSetAccess' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='usedSimCloths' offset='72' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

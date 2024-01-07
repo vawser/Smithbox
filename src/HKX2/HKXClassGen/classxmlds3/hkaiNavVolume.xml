@@ -1,0 +1,21 @@
+<class name='hkaiNavVolume' version='1' signature='0x8aa1da8a' size='160' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Constants' flags='00000000'>
+      <enumitem name='INVALID_CELL_INDEX' value='-1'/>
+      <enumitem name='INVALID_EDGE_INDEX' value='-1'/>
+    </enum>
+    <enum name='CellEdgeFlagBits' flags='00000000'>
+      <enumitem name='EDGE_EXTERNAL_OPPOSITE' value='64'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='cells' offset='16' ctype='hkaiNavVolumeCell' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edges' offset='32' ctype='hkaiNavVolumeEdge' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='streamingSets' offset='48' ctype='hkaiStreamingSet' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aabb' offset='64' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='quantizationScale' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='quantizationOffset' offset='112' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='res' offset='128' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+    <member name='userData' offset='144' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

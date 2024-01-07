@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Field>
+    <physicsDefRate />
+    <magicDefRate />
+    <fireDefRate />
+    <thunderDefRate />
+    <slashDefRate />
+    <blowDefRate />
+    <thrustDefRate />
+    <resistPoisonRate />
+    <resistDiseaseRate />
+    <resistBloodRate />
+    <resistCurseRate />
+    <residentSpEffectId1 Wiki="ID offset applied to armor's residentSpEffectId1" />
+    <residentSpEffectId2 Wiki="ID offset applied to armor's residentSpEffectId2" />
+    <residentSpEffectId3 Wiki="ID offset applied to armor's residentSpEffectId3" />
+    <materialSetId Wiki="ID offset applied to armor's materialSetId" />
+  </Field>
+</PARAMMETA>

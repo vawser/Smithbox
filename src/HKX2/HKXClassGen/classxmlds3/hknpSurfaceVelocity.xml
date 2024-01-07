@@ -1,0 +1,10 @@
+<class name='hknpSurfaceVelocity' version='1' signature='0x9650a6b' size='16' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Space' flags='00000000'>
+      <enumitem name='USE_LOCAL_SPACE' value='0'/>
+      <enumitem name='USE_WORLD_SPACE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

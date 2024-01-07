@@ -1,0 +1,9 @@
+<class name='hkpStiffSpringChainData' version='1' signature='0x8308bac9' size='96' parent='hkpConstraintChainData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpBridgeAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='infos' offset='64' ctype='hkpStiffSpringChainDataConstraintInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tau' offset='80' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='damping' offset='84' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cfm' offset='88' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

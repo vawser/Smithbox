@@ -1,0 +1,11 @@
+<class name='hclConvexHeightFieldShape' version='1' signature='0x7327ec97' size='176' parent='hclShape'>
+  <members>
+    <member name='res' offset='24' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='resIncBorder' offset='26' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='floatCorrectionOffset' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='heights' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='faces' offset='64' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='6' flags='FLAGS_NONE' default='0'/>
+    <member name='localToMapTransform' offset='96' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localToMapScale' offset='160' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>BULLET_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 atkBullet_Id = 3" />
+    <Field Def="s32 sfxIdBullet = -1" />
+    <Field Def="s32 sfxIdHit = -1" />
+    <Field Def="s32 sfxIdFlick = -1" />
+    <Field Def="f32 life" />
+    <Field Def="f32 dist" />
+    <Field Def="f32 shootInterval" />
+    <Field Def="f32 gravityInRange" />
+    <Field Def="f32 gravityOutRange" />
+    <Field Def="f32 homingStopRange" />
+    <Field Def="f32 initVellocity" />
+    <Field Def="f32 accelInRange" />
+    <Field Def="f32 accelOutRange" />
+    <Field Def="f32 maxVellocity" />
+    <Field Def="f32 minVellocity" />
+    <Field Def="f32 accelTime" />
+    <Field Def="f32 homingBeginDist" />
+    <Field Def="f32 hitRadius" />
+    <Field Def="f32 hitRadiusMax" />
+    <Field Def="f32 spreadTime" />
+    <Field Def="f32 expDelay" />
+    <Field Def="f32 homingOffsetRange" />
+    <Field Def="f32 dmgHitRecordLifeTime" />
+    <Field Def="f32 externalForce" />
+    <Field Def="s32 spEffectIdForShooter" />
+    <Field Def="s32 autoSearchNpcThinkId" />
+    <Field Def="s32 hitBulletId = -1" />
+    <Field Def="s32 spEffectId0" />
+    <Field Def="s32 spEffectId1" />
+    <Field Def="s32 spEffectId2" />
+    <Field Def="s32 spEffectId3" />
+    <Field Def="s32 spEffectId4" />
+    <Field Def="s16 numShoot = 1" />
+    <Field Def="s16 homingAngle" />
+    <Field Def="s16 shootAngle" />
+    <Field Def="s16 shootAngleInterval" />
+    <Field Def="s16 shootAngleXInterval" />
+    <Field Def="u8 damageDamp" />
+    <Field Def="u8 magicDamageDamp" />
+    <Field Def="u8 fireDamageDamp" />
+    <Field Def="u8 thunderDamageDamp" />
+    <Field Def="u8 staminaDamp" />
+    <Field Def="u8 knockbackDamp" />
+    <Field Def="u8 shootAngleXZ" />
+    <Field Def="u8 lockShootLimitAng" />
+    <Field Def="u8 isPenetrate = 1" />
+    <Field Def="u8 prevVellocityDirRate" />
+    <Field Def="u8 atkAttribute = 4" />
+    <Field Def="u8 spAttribute = 1" />
+    <Field Def="u8 Material_AttackType" />
+    <Field Def="u8 Material_AttackMaterial = 6" />
+    <Field Def="u8 Material_Size" />
+    <Field Def="u8 launchConditionType" />
+    <Field Def="u8 FollowType0:1" />
+    <Field Def="u8 FollowType1:1" />
+    <Field Def="u8 FollowType2:1" />
+    <Field Def="u8 EmittePosType0:1" />
+    <Field Def="u8 EmittePosType1:1" />
+    <Field Def="u8 EmittePosType2:1" />
+    <Field Def="u8 IsAttackSfx:1" />
+    <Field Def="u8 IsEndlessHit:1" />
+    <Field Def="u8 IsPenetrateMap:1" />
+    <Field Def="u8 IsHitBothTeam:1" />
+    <Field Def="u8 IsUseShardHitList:1 = 1" />
+    <Field Def="u8 IsUseMultiDmyPolyIfPlace:1" />
+    <Field Def="u8 attachEffectType0:1" />
+    <Field Def="u8 attachEffectType1:1" />
+    <Field Def="u8 IsHitForceMagic:1" />
+    <Field Def="u8 IsIgnoreSfxIfHitWater:1" />
+    <Field Def="u8 IsIgnoreMoveStateIfHitWater:1" />
+    <Field Def="u8 IsHitDarkForceMagic:1" />
+    <Field Def="u8 IsInheritEffectToChild:1" />
+    <Field Def="u8 IsInheritSpeedToChild:1" />
+    <Field Def="u8 IsLockModule:1" />
+    <Field Def="u8 IsSearchForTarget:1" />
+    <Field Def="u8 IsEmittedBullet:1" />
+    <Field Def="u8 IsInheritLifeToChild:1" />
+    <Field Def="u8 darkDamageDamp" />
+    <Field Def="u8 bulletHitType0" />
+    <Field Def="u8 bulletHitType1" />
+    <Field Def="f32 SpHomingYAngle" />
+    <Field Def="f32 rand_ShootAngleXZ" />
+    <Field Def="f32 rand_ShootANgleY" />
+    <Field Def="s32 bulletEmitter_bulletId = -1" />
+    <Field Def="f32 bulletEmitter_ShootInterval0" />
+    <Field Def="f32 bulletEmitter_InitInterval" />
+    <Field Def="f32 SpHomingYAngleForEnemy" />
+    <Field Def="f32 bulletEmitter_ShootInterval1" />
+    <Field Def="u8 LaunchType" />
+    <Field Def="u8 LimitBulletParamId" />
+    <Field Def="u8 CounterHitType = 1" />
+    <Field Def="u8 IsPosHitBullet:1" />
+    <Field Def="u8 IsAttachAttackSfx:1" />
+    <Field Def="u8 IsSpCorrection0:1" />
+    <Field Def="u8 IsSpCorrection1:1 = 1" />
+    <Field Def="u8 IsPenetrateTarget:1" />
+    <Field Def="u8 IsSpCorrection2:1" />
+    <Field Def="u8 IsDisableIntScale:1" />
+    <Field Def="u8 unknown:1" />
+    <Field Def="f32 EmittePosRadius" />
+    <Field Def="s32 hitObjectId = -1" />
+    <Field Def="f32 subLife" />
+    <Field Def="s16 subHomingAngle = -1" />
+    <Field Def="dummy8 pad1[2]" />
+    <Field Def="f32 lockShootCorrectionAng" />
+    <Field Def="dummy8 pad2[40]" />
+  </Fields>
+</PARAMDEF>

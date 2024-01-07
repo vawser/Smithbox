@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CLEAR_COUNT_CORRECT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 MaxHpRate = 1">
+      <DisplayName>《最大HP倍率[%]》</DisplayName>
+      <Description>最大HP倍率[%]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 MaxMpRate = 1">
+      <DisplayName>《最大MP倍率[%]》</DisplayName>
+      <Description>最大MP倍率[%]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 MaxStaminaRate = 1">
+      <DisplayName>《最大スタミナ倍率[%]》</DisplayName>
+      <Description>最大スタミナ倍率[%]</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 PhysicsAttackRate = 1">
+      <DisplayName>《物理攻撃力倍率》</DisplayName>
+      <Description>物理攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 SlashAttackRate = 1">
+      <DisplayName>《斬撃攻撃力倍率》</DisplayName>
+      <Description>斬撃攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 BlowAttackRate = 1">
+      <DisplayName>《打撃攻撃力倍率》</DisplayName>
+      <Description>打撃攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="f32 ThrustAttackRate = 1">
+      <DisplayName>《刺突攻撃力倍率》</DisplayName>
+      <Description>刺突攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 NeturalAttackRate = 1">
+      <DisplayName>《無属性攻撃力倍率》</DisplayName>
+      <Description>無属性攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="f32 MagicAttackRate = 1">
+      <DisplayName>《魔法攻撃力倍率》</DisplayName>
+      <Description>魔法攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="f32 FireAttackRate = 1">
+      <DisplayName>《炎攻撃力倍率》</DisplayName>
+      <Description>炎攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="f32 ThunderAttackRate = 1">
+      <DisplayName>《電撃攻撃力倍率》</DisplayName>
+      <Description>電撃攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="f32 DarkAttackRate = 1">
+      <DisplayName>《闇攻撃力倍率》</DisplayName>
+      <Description>闇攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 PhysicsDefenseRate = 1">
+      <DisplayName>《物理防御力倍率》</DisplayName>
+      <Description>物理防御力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 MagicDefenseRate = 1">
+      <DisplayName>《魔法防御力倍率》</DisplayName>
+      <Description>魔法防御力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="f32 FireDefenseRate = 1">
+      <DisplayName>《炎防御力倍率》</DisplayName>
+      <Description>炎防御力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="f32 ThunderDefenseRate = 1">
+      <DisplayName>《電撃防御力倍率》</DisplayName>
+      <Description>電撃防御力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="f32 DarkDefenseRate = 1">
+      <DisplayName>《闇防御力倍率》</DisplayName>
+      <Description>闇防御力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="f32 StaminaAttackRate = 1">
+      <DisplayName>《スタミナ攻撃力倍率》</DisplayName>
+      <Description>スタミナ攻撃力倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="f32 SoulRate = 1">
+      <DisplayName>《所持ソウル率》</DisplayName>
+      <Description>所持ソウル率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2700</SortID>
+    </Field>
+    <Field Def="f32 PoisionResistRate = 1">
+      <DisplayName>《毒耐性変化倍率》</DisplayName>
+      <Description>毒耐性変化倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2800</SortID>
+    </Field>
+    <Field Def="f32 DiseaseResistRate = 1">
+      <DisplayName>《疫病耐性変化倍率》</DisplayName>
+      <Description>疫病耐性変化倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2810</SortID>
+    </Field>
+    <Field Def="f32 BloodResistRate = 1">
+      <DisplayName>《出血耐性変化倍率》</DisplayName>
+      <Description>出血耐性変化倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2820</SortID>
+    </Field>
+    <Field Def="f32 CurseResistRate = 1">
+      <DisplayName>《呪耐性変化倍率》</DisplayName>
+      <Description>呪耐性変化倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2830</SortID>
+    </Field>
+    <Field Def="f32 FreezeResistRate = 1">
+      <DisplayName>《冷気耐性変化倍率》</DisplayName>
+      <Description>冷気耐性変化倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2840</SortID>
+    </Field>
+    <Field Def="f32 BloodDamageRate = 1">
+      <DisplayName>《出血ダメージ補正倍率》</DisplayName>
+      <Description>出血ダメージ補正倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3300</SortID>
+    </Field>
+    <Field Def="f32 SuperArmorDamageRate = 1">
+      <DisplayName>《SAダメージ補正倍率》</DisplayName>
+      <Description>SAダメージ補正倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3400</SortID>
+    </Field>
+    <Field Def="f32 FreezeDamageRate = 1">
+      <DisplayName>《冷気ダメージ補正倍率》</DisplayName>
+      <Description>冷気ダメージ補正倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3310</SortID>
+    </Field>
+    <Field Def="f32 SleepResistRate = 1">
+      <DisplayName>《睡眠耐性変化倍率》</DisplayName>
+      <Description>睡眠耐性変化倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2850</SortID>
+    </Field>
+    <Field Def="f32 MadnessResistRate = 1">
+      <DisplayName>《発狂耐性変化倍率》</DisplayName>
+      <Description>発狂耐性変化倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>2860</SortID>
+    </Field>
+    <Field Def="f32 SleepDamageRate = 1">
+      <DisplayName>《睡眠ダメージ補正倍率》</DisplayName>
+      <Description>睡眠ダメージ補正倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3320</SortID>
+    </Field>
+    <Field Def="f32 MadnessDamageRate = 1">
+      <DisplayName>《発狂ダメージ補正倍率》</DisplayName>
+      <Description>発狂ダメージ補正倍率</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3330</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[4]">
+      <DisplayName>pad</DisplayName>
+      <SortID>3401</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

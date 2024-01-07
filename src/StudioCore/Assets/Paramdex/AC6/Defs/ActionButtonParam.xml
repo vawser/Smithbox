@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACTIONBUTTON_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 regionType"></Field>
+    <Field Def="u8 category"></Field>
+    <Field Def="dummy8 padding1[2]"></Field>
+    <Field Def="s32 dummyPoly1"></Field>
+    <Field Def="s32 dummyPoly2"></Field>
+    <Field Def="f32 radius"></Field>
+    <Field Def="s32 angle"></Field>
+    <Field Def="f32 depth"></Field>
+    <Field Def="f32 width"></Field>
+    <Field Def="f32 height"></Field>
+    <Field Def="f32 baseHeightOffset"></Field>
+    <Field Def="u8 angleCheckType"></Field>
+    <Field Def="u8 Unk0x25"></Field>
+    <Field Def="u8 Unk0x26"></Field>
+    <Field Def="u8 Unk0x27"></Field>
+    <Field Def="s32 allowAngle"></Field>
+    <Field Def="s32 spotDummyPoly"></Field>
+    <Field Def="u8 textBoxType"></Field>
+    <Field Def="u8 UnkByte0x31"></Field>
+    <Field Def="u8 Unk0x32"></Field>
+    <Field Def="dummy8 padding5:1"></Field>
+    <Field Def="u8 isInvalidForRide:1"></Field>
+    <Field Def="u8 isGrayoutForRide:1"></Field>
+    <Field Def="u8 isInvalidForCrouching:1"></Field>
+    <Field Def="u8 isGrayoutForCrouching:1"></Field>
+    <Field Def="dummy8 padding4:3"></Field>
+    <Field Def="s32 textId"></Field>
+    <Field Def="s32 invalidFlag"></Field>
+    <Field Def="s32 grayoutFlag"></Field>
+    <Field Def="s32 overrideActionButtonIdForRide"></Field>
+    <Field Def="f32 execInvalidTime"></Field>
+    <Field Def="u8 UnkByte0x48"></Field>
+    <Field Def="u8 Unk0x49"></Field>
+    <Field Def="s16 UnkShort0x4A"></Field>
+    <Field Def="f32 UnkFloat0x4C"></Field>
+    <Field Def="s32 UnkInt0x50"></Field>
+    <Field Def="f32 UnkFloat0x54"></Field>
+    <Field Def="f32 UnkFloat0x58"></Field>
+    <Field Def="f32 UnkFloat0x5C"></Field>
+    <Field Def="f32 UnkFloat0x60"></Field>
+    <Field Def="f32 UnkFloat0x64"></Field>
+    <Field Def="f32 UnkFloat0x68"></Field>
+    <Field Def="s32 Unk0x6C"></Field>
+  </Fields>
+</PARAMDEF>

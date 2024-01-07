@@ -1,0 +1,14 @@
+<class name='hclVertexSelectionInput' version='1' signature='0x4591bbfb' size='16'>
+  <enums>
+    <enum name='VertexSelectionType' flags='00000000'>
+      <enumitem name='VERTEX_SELECTION_ALL' value='0'/>
+      <enumitem name='VERTEX_SELECTION_NONE' value='1'/>
+      <enumitem name='VERTEX_SELECTION_CHANNEL' value='2'/>
+      <enumitem name='VERTEX_SELECTION_INVERSE_CHANNEL' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='0' etype='VertexSelectionType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='channelName' offset='8' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

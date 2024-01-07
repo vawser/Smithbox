@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="TUTORIAL_MENU_TYPE" type="u8">
+        <Option Value="0" Name="Subtle (one-line)" />
+        <Option Value="1" Name="Subtle (multi-line)" />
+        <Option Value="100" Name="Intrusive (large)" />
+    </Enum>
+    <Enum Name="TUTORIAL_TRIGGER_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+        <Option Value="6" Name="Type 6" />
+        <Option Value="7" Name="Type 7" />
+        <Option Value="8" Name="Type 8" />
+        <Option Value="9" Name="Type 9" />
+        <Option Value="12" Name="Type 12" />
+        <Option Value="13" Name="Type 13" />
+        <Option Value="14" Name="Type 14" />
+        <Option Value="32" Name="Type 32" />
+        <Option Value="35" Name="Type 35" />
+        <Option Value="37" Name="Type 37" />
+        <Option Value="39" Name="Type 39" />
+        <Option Value="40" Name="Type 40" />
+        <Option Value="41" Name="Type 41" />
+        <Option Value="64" Name="Type 64" />
+        <Option Value="65" Name="Type 65" />
+        <Option Value="70" Name="Type 70" />
+    </Enum>
+    <Enum Name="TUTORIAL_REPEAT_TYPE" type="u8">
+        <Option Value="0" Name="Can only display once" />
+        <Option Value="1" Name="Can display more than once" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <menuType AltName="Menu Type" Wiki="Specifies the type of tutorial menu to display" Enum="TUTORIAL_MENU_TYPE" />
+    <triggerType AltName="Trigger Type" Wiki="Display timing (default: 0: -). You will see this tutorial when you open this menu. Specify 0: - if you do not want to display it when you open the menu." Enum="TUTORIAL_TRIGGER_TYPE" />
+    <repeatType AltName="Repeat Type" Wiki="Number of times a tutorial can be displayed" Enum="TUTORIAL_REPEAT_TYPE" />
+    <pad1 AltName=""/>
+    <imageId AltName="Image ID" Wiki="Specifies the tutorial image ID to display (default: 0). Specify 0 if you do not want to display the image" />
+    <pad2 AltName=""/>
+    <unlockEventFlagId AltName="Unlock Event Flag ID" Wiki="Event flag ID for display permission (default: 0). It will not be displayed until this flag is set. Specify 0 if you always want to allow" />
+    <textId AltName="Text ID" Wiki="ID of the text to be displayed in the tutorial [TutorialText.xlsm]. This text ID is used for both Title and Body" FmgRef="TutorialBody" />
+    <displayMinTime AltName="Display Minimum Time" Wiki="Shortest display guaranteed time [seconds]. Even if it is closed due to an event etc., it will be closed after displaying at least this time. It's only for toast, so it's ignored in modals" />
+    <displayTime AltName="Display Time" Wiki="Display time [seconds]. It will close automatically after this time has passed since the toast was displayed. It's only for toast, so it's ignored in modals" />
+    <pad3 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

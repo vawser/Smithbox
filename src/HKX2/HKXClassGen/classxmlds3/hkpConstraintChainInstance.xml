@@ -1,0 +1,7 @@
+<class name='hkpConstraintChainInstance' version='1' signature='0x9a6b1751' size='144' parent='hkpConstraintInstance'>
+  <members>
+    <member name='chainedEntities' offset='112' ctype='hkpEntity' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='action' offset='128' ctype='hkpConstraintChainInstanceAction' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='chainConnectedness' offset='136' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

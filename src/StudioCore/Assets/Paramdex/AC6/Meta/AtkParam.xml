@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ATKPARAM_HIT_CREATE_TYPE" type="u8">
+      <Option Value="0" Name="Connect between DummyPolys" />
+      <Option Value="1" Name="Extend same direction as DummyPoly 1" />
+      <Option Value="2" Name="Fan" />
+    </Enum>
+    <Enum Name="ATKPARAM_SHOOT_SE_CATEGORY" type="s8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Handgun" />
+      <Option Value="2" Name="Rifle" />
+      <Option Value="3" Name="Cannon" />
+      <Option Value="4" Name="Machinegun" />
+      <Option Value="5" Name="AssaultRifle" />
+      <Option Value="6" Name="Gatling" />
+      <Option Value="7" Name="Shotgun" />
+      <Option Value="8" Name="SniperRifle" />
+      <Option Value="9" Name="HandGrenade" />
+      <Option Value="10" Name="bazooka" />
+      <Option Value="11" Name="GrenadeCannon" />
+      <Option Value="12" Name="BombS" />
+      <Option Value="13" Name="BombM" />
+      <Option Value="14" Name="BombL" />
+      <Option Value="15" Name="Missile" />
+      <Option Value="16" Name="Rocket" />
+      <Option Value="17" Name="PulseHandgun" />
+      <Option Value="18" Name="PulseRifle" />
+      <Option Value="19" Name="PulseCannon" />
+      <Option Value="20" Name="PulseMachinegun" />
+      <Option Value="21" Name="PulseShotgun" />
+      <Option Value="22" Name="PulseBombS" />
+      <Option Value="23" Name="PulseBombM" />
+      <Option Value="24" Name="PulseBombL" />
+      <Option Value="25" Name="LaserRifle" />
+      <Option Value="26" Name="HighLaserRifle" />
+      <Option Value="27" Name="LaserSniperRifle" />
+      <Option Value="28" Name="LaserMachinegun" />
+      <Option Value="29" Name="PlasmaRifle" />
+      <Option Value="30" Name="PlasmaCannon" />
+      <Option Value="31" Name="PlasmaBombS" />
+      <Option Value="32" Name="PlasmaBombM" />
+      <Option Value="33" Name="PlasmaBombL" />
+      <Option Value="34" Name="Melee" />
+      <Option Value="100" Name="SpWeapon" />
+    </Enum>
+  </Enums>
+  <Field>
+    <pulseInterferenceDamage AltName="Pulse Armor Interference Damage" Wiki="Bonus damage dealt to pulse armor, pulse protection, and terminal armor core expansions.\nDoesn't affect pulse shields, nor weapons that create pulse barrier assets."/>
+    <pulseShieldInterferenceImpactDamage AltName="Pulse Shield Interference: Impact Damage" Wiki="Bonus impact damage dealt to opponents with pulse shields.\nDoesn't affect pulse armor or pulse protection."/>
+    <pulseShieldInterferenceAccumlativeImpactDamage AltName="Pulse Shield Interference: Accumulative Impact Damage" Wiki="Bonus accumulative impact damage dealt to opponents with pulse shields.\nUses pulseShieldInterferenceImpactDamage for base impact damage.\nDoesn't affect pulse armor or pulse protection."/>
+    <recoilKnockbackVelocity_Grounded AltName="Recoil Knockback (Grounded)" Wiki="Backwards velocity applied to the shooter when using a weapon on the ground.\nApplies conditionally, such as not applying when AC has tank legs."/>
+    <recoilKnockbackVelocity_Airborne AltName="Recoil Knockback (Airborne)" Wiki="Backwards velocity applied to the shooter when using a weapon in the air."/>
+    <hitboxShape AltName="Hitbox Shape" Enum ="ATKPARAM_HIT_CREATE_TYPE" Wiki="Backwards velocity applied to the shooter when using a weapon in the air."/>
+    <attack_Object AltName="Attack Damage (Object)" Wiki="Base object damage. Responsible for damage dealt to assets, including EULE/60D [Pulse Shield Launcher] barriers."/>
+    <UnkFlag0x1DA_0 IsBool=""/>
+    <UnkFlag0x1DA_1 IsBool=""/>
+    <UnkFlag0x1DA_2 IsBool=""/>
+    <UnkFlag0x1DA_3 IsBool=""/>
+    <nonStaggerAttacksCauseKnockback AltName="Non-Stagger Attacks Cause Knockback" IsBool="" Wiki="Makes non-staggering attacks knockback enemies, utilizing nonStaggerKnockbackDist."/>
+    <nonStaggerKnockbackDist AltName="Knockback Distance (non-staggered)" Wiki="Distance enemies will move when hit by this attack (and that attack does not stagger).\nRequires nonStaggerAttacksCauseKnockback"/>
+    <staggerKnockbackDist AltName="Knockback Distance (staggered)" Wiki="Distance enemies will move when staggered by this attack."/>
+    <UnkFlag0x1DA_5 IsBool=""/>
+    <UnkFlag0x1DA_6 IsBool=""/>
+    <weightAffectsDamage AltName="Weight Affects Damage" Wiki="Attack damage scales with weight according to calcCorrectGraph 280" IsBool=""/>
+    <UnkFlag0x1DB_0 IsBool=""/>
+    <UnkFlag0x1DB_1 IsBool=""/>
+    <UnkFlag0x1DB_2 IsBool=""/>
+    <UnkFlag0x1DB_3 IsBool=""/>
+    <UnkFlag0x1DB_4 IsBool=""/>
+    <useImpactRate AltName="Use Impact Rate" Wiki="Determines if impact damage will be affected by SpEffect param." IsBool=""/>
+    <UnkFlag0x1DB_6 IsBool=""/>
+    <UnkFlag0x1DB_7 IsBool=""/>
+    <wwise_ShootSeCategoryId AltName="Shoot Sound" Enum="ATKPARAM_SHOOT_SE_CATEGORY" Refs="WwiseValueToStrParam_Switch_ShootSeCategory" Wiki="Sound to produce when attack is initiated.\nReferences Row ID in WwiseValueToStrParam_Switch_ShootSeCategory." />
+  </Field>
+  <Self />
+</PARAMMETA>

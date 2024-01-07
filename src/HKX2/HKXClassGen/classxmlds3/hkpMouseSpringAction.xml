@@ -1,0 +1,12 @@
+<class name='hkpMouseSpringAction' version='1' signature='0x6035e5a1' size='144' parent='hkpUnaryAction'>
+  <members>
+    <member name='positionInRbLocal' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mousePositionInWorld' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='springDamping' offset='96' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='springElasticity' offset='100' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxRelativeForce' offset='104' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='objectDamping' offset='108' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shapeKey' offset='112' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='applyCallbacks' offset='120' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

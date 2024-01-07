@@ -1,0 +1,19 @@
+<class name='hkxScene' version='1' signature='0xc093dd28' size='240' parent='hkReferencedObject'>
+  <members>
+    <member name='modeller' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='asset' offset='24' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sceneLength' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numFrames' offset='36' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rootNode' offset='40' ctype='hkxNode' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='selectionSets' offset='48' ctype='hkxNodeSelectionSet' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cameras' offset='64' ctype='hkxCamera' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lights' offset='80' ctype='hkxLight' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='meshes' offset='96' ctype='hkxMesh' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materials' offset='112' ctype='hkxMaterial' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='inplaceTextures' offset='128' ctype='hkxTextureInplace' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='externalTextures' offset='144' ctype='hkxTextureFile' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skinBindings' offset='160' ctype='hkxSkinBinding' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='splines' offset='176' ctype='hkxSpline' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='appliedTransform' offset='192' vtype='TYPE_MATRIX3' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

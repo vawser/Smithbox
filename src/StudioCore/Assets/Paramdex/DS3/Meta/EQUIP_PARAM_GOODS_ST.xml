@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="GOODS_USE_ANIM">
+      <Option Value="0" Name="Consumable" />
+      <Option Value="1" Name="Apply to Weapon" />
+      <Option Value="2" Name="Quick Throw" />
+      <Option Value="3" Name="Slow Throw" />
+      <Option Value="4" Name="Binoculars" />
+      <Option Value="5" Name="Scatter" />
+      <Option Value="6" Name="Tool Kneel" />
+      <Option Value="7" Name="Prism Stone" />
+      <Option Value="8" Name="Apply to Ground" />
+      <Option Value="9" Name="Crush Consumable" />
+      <Option Value="10" Name="Estus Flask" />
+      <Option Value="11" Name="Dragon Head Stone" />
+      <Option Value="12" Name="Dragon Torso Stone" />
+      <Option Value="13" Name="Pray" />
+      <Option Value="14" Name="Cross Arms and Apply" />
+      <Option Value="16" Name="Quick Apply to Weapon" />
+      <Option Value="17" Name="Throwing Knife" />
+      <Option Value="18" Name="Quick Throw Bottle" />
+      <Option Value="19" Name="Ashen Estus Flask" />
+      <Option Value="20" Name="Throw Backwards" />
+      <Option Value="21" Name="Siegbräu" />
+      <Option Value="22" Name="Transform" />
+      <Option Value="23" Name="Twinkling Dragon Head Stone" />
+      <Option Value="24" Name="Twinkling Dragon Torso Stone" />
+      <Option Value="25" Name="Spear Fragment" />
+      <Option Value="26" Name="Church Guardian Shiv" />
+    </Enum>
+    <Enum Name="GOODS_OPEN_MENU">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Yes / No" />
+      <Option Value="4" Name="Yes / No (Session)" />
+      <Option Value="5" Name="Write Message" />
+      <Option Value="6" Name="Create Blood Message" />
+      <Option Value="7" Name="Roster Of Knights" />
+      <Option Value="8" Name="Unknown" />
+      <Option Value="9" Name="Ok / Cancel" />
+      <Option Value="10" Name="Invasion" />
+      <Option Value="11" Name="Coiled Sword Fragment" />
+      <Option Value="12" Name="Darksign" />
+    </Enum>
+    <Enum Name="SP_EFFECT_CATEGORY">
+      <Option Value="0" Name="Default" />
+	  <Option Value="3" Name="Sorcery" />
+	  <Option Value="4" Name="Miracle" />
+      <Option Value="5" Name="Basic" />
+	  <Option Value="9" Name="Kick" />
+	  <Option Value="10" Name="Pyromancy" />
+    </Enum>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="GOODS_TYPE">
+      <Option Value="0" Name="Consumable" />
+      <Option Value="1" Name="Key Item" />
+      <Option Value="2" Name="Material" />
+	  <Option Value="5" Name="Spell" />
+    </Enum>
+	<Enum Name="SP_EFFECT_USELIMIT_CATEGORY">
+      <Option Value="0" Name="Default" />
+      <Option Value="3" Name="Dragon Head Stones" />
+    </Enum>
+	<Enum Name="REPLACE_CATEGORY">
+      <Option Value="0" Name="Default" />
+      <Option Value="5" Name="Dragon Head/Body Stones" />
+    </Enum>
+	<Enum Name="GOODS_SUPPLE_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2 - Estus Flask" />
+        <Option Value="3" Name="Type 3 - Ashen Estus Flask" />
+    </Enum>
+    <Enum Name="AUTO_REPLENISH_TYPE" type="u8">
+      <Option Value="0" Name="Type 0" />
+      <Option Value="1" Name="Type 1 - Material" />
+      <Option Value="2" Name="Type 2 - Consumable" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Consumables, Key Items, spells, etc" AlternativeOrder="sortId,iconId,shopId,sellValue,basicPrice,maxNum,maxRepNum,-,
+weight,consumeMP,consumeHeroPoint,-,
+castSfxId,fireSfxId,effectSfxId,sfxVariationId,-,
+refCategory,refId_default,refId_1,refVirtualWepId,useLimitCategory2,-,
+goodsType,replaceItemId,appearanceReplaceItemId,spEffectCategory,goodsUseAnim,opmeMenuType,useLimitCategory,replaceCategory,suppleType,autoReplenishType,invadeType,behaviorId,syncNumVaryId,yesNoDialogMessageId,-,
+isEquip,isDrop,isDiscard,isDeposit,isFixItem,-,
+isConsume,isAutoEquip,isEstablishment,isOnlyOne,isSuppleItem,isFullSuppleItem,isAshenEstusFlask,isEnhance,isEnableFastUseItem,isBonfireWarpItem,isShieldEnchant,isWarpProhibited,enable_ActiveEmber,enable_Ladder,isUseMultiPlayPreparation,canMultiUse,isUseMultiPenaltyOnly,-,
+isDisableHand,isRemoveItem_forGameClear,isApplySpecialEffect,-,
+vowType0,vowType1,vowType2,vowType3,vowType4,vowType5,vowType6,vowType7,vowType8,vowType9,vowType10,vowType11,vowType12,vowType13,vowType14,vowType15,-,
+enable_live,enable_gray,enable_white,enable_black,enable_multi,disable_offline,disableUseAtColiseum,disableUseAtOutofColiseum,disableMutliDropShare,-,
+overDexterity,magicId,modelId,shopLv,vagrantItemLotId,vagrantBonusEneDropItemLotId,vagrantItemEneDropItemLotId,-,
+compTrophySedId,trophySeqId,-,
+pad1,pad2,-" />
+  <Field>
+    <refId_default AltName="Reference ID" Wiki="ID0 called from the item (default)" Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    <sfxVariationId AltName="SFX Variation ID" Wiki="Specify SFX variation (used to identify SFX in combination with TimeActEditor ID)" />
+    <weight AltName="Weight" Wiki="Weight [kg]" />
+    <basicPrice AltName="Basic Price" Wiki="Basic price" />
+    <sellValue AltName="Sell Value" Wiki="Selling price" />
+	<behaviorId AltName="Behavior ID" Wiki="Set the effect that occurs when using a tool" />
+    <replaceItemId AltName="Replace Item ID" Wiki="ID of item to replace when certain conditions are met.\nIf item is FullSuppleItem, replace when this item is fully consumed.\nIf item is SuppleItem, replace when resting at bonfire." Refs="EquipParamGoods" />
+    <sortId AltName="Sort ID" Wiki="Sort ID (-1 Do not collect)" />
+    <appearanceReplaceItemId AltName="Appearance Replace Item ID" Wiki="Conditionally replace the display with another tool ID. The tool ID on the game data side does not change" Refs="EquipParamGoods" />
+    <yesNoDialogMessageId AltName="Dialog Message ID" Wiki="YesNo Message ID used when displaying the dialog" />
+    <magicId AltName="Magic ID" />
+    <iconId AltName="Icon ID" Wiki="Menu icon ID" />
+    <modelId AltName="Model ID" Wiki="Model ID" />
+    <shopLv AltName="Shop Level" />
+    <compTrophySedId AltName="Achivement ID" Wiki="SEQ number of complete trophy" />
+    <trophySeqId AltName="Achivement Sequential ID" Wiki="Trophy SEQ number" />
+    <maxNum AltName="Max Amount" Wiki="Maximum number of possessions" />
+    <consumeHeroPoint AltName="Consume Humanity" Wiki="Consumer nature" />
+    <overDexterity AltName="Over Dexterity" Wiki="Skill over start value" />
+    <goodsType AltName="Goods Type" Wiki="Types of tools" Enum="GOODS_TYPE"/>
+    <refCategory AltName="Reference Type" Wiki=" ID category - Attack, Projectile, Special" Enum="BEHAVIOR_REF_TYPE"  />
+    <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="SP_EFFECT_CATEGORY" />
+    <pad3 AltName=""/>
+    <goodsUseAnim AltName="Goods Use Animation" Wiki="Set the animation to play when using the tool" Enum="GOODS_USE_ANIM" />
+    <opmeMenuType AltName="Interaction Menu Type" Wiki="Menu type that opens when using an item" Enum="GOODS_OPEN_MENU" />
+	<useLimitCategory AltName="Use Limit Category" Wiki="Specified to control whether it can be used by the special effect applied" Enum="SP_EFFECT_USELIMIT_CATEGORY" />
+    <replaceCategory AltName="Replace Category" Wiki="Condition category to add to call ID" Enum="REPLACE_CATEGORY" />
+    <vowType0 AltName="Usable in Vow 0" Wiki="No Covenant" IsBool="" />
+    <vowType1 AltName="Usable in Vow 1" Wiki="Blade of the Darkmoon" IsBool="" />
+    <vowType2 AltName="Usable in Vow 2" Wiki="Warrior of Sunlight" IsBool="" />
+    <vowType3 AltName="Usable in Vow 3" Wiki="Mound-makers" IsBool="" />
+    <vowType4 AltName="Usable in Vow 4" Wiki="Spears of the Church" IsBool="" />
+    <vowType5 AltName="Usable in Vow 5" Wiki="Rosaria's Fingers" IsBool="" />
+    <vowType6 AltName="Usable in Vow 6" Wiki="Watchdogs of Farron" IsBool="" />
+    <vowType7 AltName="Usable in Vow 7" Wiki="Aldrich Faithful" IsBool="" />
+    <vowType8 AltName="Usable in Vow 8" Wiki="Way of Blue" IsBool="" />
+    <vowType9 AltName="Usable in Vow 9" Wiki="Blue Sentinels" IsBool="" />
+    <vowType10 AltName="Usable in Vow 10" IsBool="" />
+    <vowType11 AltName="Usable in Vow 11" IsBool="" />
+    <vowType12 AltName="Usable in Vow 12" IsBool="" />
+    <vowType13 AltName="Usable in Vow 13" IsBool="" />
+    <vowType14 AltName="Usable in Vow 14" IsBool="" />
+    <vowType15 AltName="Usable in Vow 15" IsBool="" />
+    <enable_live AltName="Usable by Human" IsBool="" />
+    <enable_gray AltName="Usable by Hollow" IsBool="" />
+    <enable_white AltName="Usable by Phantom" IsBool="" />
+    <enable_black AltName="Usable by Dark Spirit" IsBool="" />
+    <enable_multi AltName="Enabled in Multiplayer" IsBool="" />
+    <disable_offline AltName="Disable Offline" IsBool="" />
+    <isEquip AltName="Can Equip" Wiki="Can equip in item slots or pouch." IsBool="" />
+    <isConsume AltName="Is Consumed on Use" IsBool="" />
+    <isAutoEquip AltName="Is Automatically Equipped" Wiki="Automatically enters an open item slot when picked up." IsBool="" />
+    <isEstablishment AltName="Is Guidance Item" Wiki="Is it a stationary item?" IsBool="" />
+    <isOnlyOne AltName="Is Unique Item" Wiki="Is it an item that you can only have one?" IsBool="" />
+    <isDiscard AltName="Can Discard" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
+    <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
+    <isDisableHand AltName="Disable if Right Hand is Empty" Wiki="Can't be used when the right-handed weapon is bare-handed?" IsBool="" />
+    <isRemoveItem_forGameClear AltName="Remove Item on Game Clear" Wiki="Whether to delete at the time of lap" IsBool="" />
+    <isSuppleItem AltName="Is Regenerative Item" Wiki="Used to determine replenishable items" IsBool="" />
+    <isFullSuppleItem AltName="Is Full Regenerative Item" Wiki="Used to determine replenished items" IsBool="" />
+    <isEnhance AltName="Is Enhancement Item" Wiki="Do you want to enchant your weapon?" IsBool="" />
+    <isFixItem AltName="Can Repair Item" Wiki="Is it an item to repair?" IsBool="" />
+    <disableMutliDropShare AltName="Disable Multiplayer Sharing" Wiki="Prevents item from appearing to other players when dropped." IsBool="" />
+    <disableUseAtColiseum AltName="Disable Use in Undead Arena" IsBool="" />
+    <disableUseAtOutofColiseum AltName="Disable Use outside of Undead Arena" IsBool="" />
+    <isEnableFastUseItem AltName="Is Quick Use Item" Wiki="Uses Jumptable 107 instead of Jumptable 33 in TAE" IsBool="" />
+    <isApplySpecialEffect AltName="Apply SpEffect Modifiers" Wiki="spCategory needs to not be 5" IsBool="" />
+    <syncNumVaryId AltName="Synchronized Item Usage ID" Wiki="When the number of items is changed, the items with the same ID will be changed at the same time. 0 Not synchronized" />
+    <isAshenEstusFlask AltName="Is Ashen Estus Flask" IsBool="" />
+    <unknown1 AltName="Unknown 1" IsBool="" />
+    <unknown2 AltName="Unknown 2" IsBool="" />
+    <unknown3 AltName="Unknown 3" IsBool="" />
+    <unknown4 AltName="Unknown 4" IsBool="" />
+    <unknown5 AltName="Unknown 5" IsBool="" />
+    <unknown6 AltName="Unknown 6" IsBool="" />
+    <refId_1 AltName="Reference ID - Left Hand" Wiki="ID1 called from the item" Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    <refVirtualWepId AltName="Weapon Reference ID" Wiki="Weapon ID to refer to when using the tool" Refs="EquipParamWeapon" />
+    <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1 No vagrant 0 No lottery 1  With lottery" />
+    <vagrantBonusEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
+    <vagrantItemEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
+    <castSfxId AltName="Usage VFX - Cast" Wiki="SFXID until the effect is activated when you try to use the item" />
+    <fireSfxId AltName="Usage VFX  - Activate" Wiki="SFX ID when the item is activated" />
+    <effectSfxId AltName="Usage VFX - Effect" Wiki="After the item is activated, the SFX ID in effect" />
+    <enable_ActiveEmber AltName="Is Usable with Ember Active" Wiki="Can it be used with a large rune activated?" IsBool="" />
+    <isBonfireWarpItem AltName="Is Bonfire Warp Item" Wiki="If the state change type Warp Prohibition is applied when TRUE, remove the function to disable the item." IsBool="" />
+    <enable_Ladder AltName="Is Usable on Ladder" Wiki="Check here for items available in the ladder" IsBool="" />
+    <isUseMultiPlayPreparation AltName="Is Usable before Multiplayer Session" Wiki="Whether items can be used between session probability and initial synchronization" IsBool="" />
+    <canMultiUse AltName="Is Usable in Multiplayer" Wiki="Can it be used together?" IsBool="" />
+    <isShieldEnchant AltName="Is Shield Enchantment" Wiki="Is it a shield enchantment?" IsBool="" />
+    <isWarpProhibited AltName="Is Warp Prohibited" Wiki="When this is TRUE, disable the item if the state change type Warp Prohibition is applied." IsBool="" />
+    <isUseMultiPenaltyOnly AltName="Is Usable if Disconnect Penalty is Active" Wiki="A flag that allows you to determine if an item is only available when a client disconnect penalty is incurred." IsBool="" />
+	<suppleType AltName="Regenerative Item Type" Wiki="Replenishment item / Replenishment type when replenishing a replenished item." Enum="GOODS_SUPPLE_TYPE" />
+    <autoReplenishType AltName="Auto Replenishment Type" Wiki="Controls whether or not to automatically replenish and default settings" Enum="AUTO_REPLENISH_TYPE" />
+    <isDrop AltName="Can Drop" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <maxRepNum AltName="Max Amount Stored" />
+    <invadeType AltName="Invade Type" />
+    <shopId AltName="Shop Price" />
+    <consumeMP AltName="FP Cost" Wiki="MP consumption" />
+	<useLimitCategory2 AltName="Disabled by State Info" />
+    <pad1 AltName="" />
+    <pad2 AltName="" />
+  </Field>
+</PARAMMETA>

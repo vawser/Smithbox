@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>THROW_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 UnkInt0x00"></Field>
+    <Field Def="s32 AtkChrId"></Field>
+    <Field Def="s32 DefChrId"></Field>
+    <Field Def="f32 Dist"></Field>
+    <Field Def="f32 DiffAngMin"></Field>
+    <Field Def="f32 DiffAngMax"></Field>
+    <Field Def="f32 upperYRange"></Field>
+    <Field Def="f32 lowerYRange"></Field>
+    <Field Def="f32 diffAngMyToDef"></Field>
+    <Field Def="s32 throwTypeId"></Field>
+    <Field Def="s32 atkAnimId"></Field>
+    <Field Def="s32 defAnimId"></Field>
+    <Field Def="u16 escHp"></Field>
+    <Field Def="u16 selfEscCycleTime"></Field>
+    <Field Def="u16 sphereCastRadiusRateTop"></Field>
+    <Field Def="u16 sphereCastRadiusRateLow"></Field>
+    <Field Def="u8 PadType"></Field>
+    <Field Def="u8 AtkEnableState"></Field>
+    <Field Def="u8 throwFollowingType"></Field>
+    <Field Def="dummy8 padding1[1]"></Field>
+    <Field Def="u8 throwType"></Field>
+    <Field Def="u8 selfEscCycleCnt"></Field>
+    <Field Def="u8 dmyHasChrDirType"></Field>
+    <Field Def="u8 isTurnAtker:1"></Field>
+    <Field Def="u8 isSkipWepCate:1"></Field>
+    <Field Def="u8 isSkipSphereCast:1"></Field>
+    <Field Def="u8 isEnableCorrectPos_forThrowAdjust:1"></Field>
+    <Field Def="u8 isEnableThrowFollowingFallAssist:1"></Field>
+    <Field Def="u8 isEnableThrowFollowingFeedback:1"></Field>
+    <Field Def="dummy8 padding2:1"></Field>
+    <Field Def="s16 atkSorbDmyId"></Field>
+    <Field Def="s16 defSorbDmyId"></Field>
+    <Field Def="f32 Dist_start"></Field>
+    <Field Def="f32 DiffAngMin_start"></Field>
+    <Field Def="f32 DiffAngMax_start"></Field>
+    <Field Def="f32 upperYRange_start"></Field>
+    <Field Def="f32 lowerYRange_start"></Field>
+    <Field Def="f32 diffAngMyToDef_start"></Field>
+    <Field Def="s32 judgeRangeBasePosDmyId1"></Field>
+    <Field Def="s32 judgeRangeBasePosDmyId2"></Field>
+    <Field Def="f32 adsrobModelPosInterpolationTime"></Field>
+    <Field Def="f32 throwFollowingEndEasingTime"></Field>
+    <Field Def="s32 UnkInt0x6C"></Field>
+    <Field Def="s32 UnkInt0x70"></Field>
+    <Field Def="s32 UnkInt0x74"></Field>
+    <Field Def="s32 UnkInt0x78"></Field>
+    <Field Def="s32 UnkInt0x7C"></Field>
+    <Field Def="s32 UnkInt0x80"></Field>
+  </Fields>
+</PARAMDEF>

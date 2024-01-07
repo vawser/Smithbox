@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>NETWORK_AREA_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 limitation_time_1" />
+    <Field Def="f32 limitation_time_2" />
+    <Field Def="f32 limitation_time_3" />
+    <Field Def="f32 Unk0C" />
+    <Field Def="f32 Unk10" />
+    <Field Def="f32 Unk14" />
+    <Field Def="s32 Unk18" />
+  </Fields>
+</PARAMDEF>

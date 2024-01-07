@@ -1,0 +1,15 @@
+<class name='hkbRigidBodySetup' version='1' signature='0x3b082f95' size='32'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='INVALID' value='-1'/>
+      <enumitem name='KEYFRAMED' value='0'/>
+      <enumitem name='DYNAMIC' value='1'/>
+      <enumitem name='FIXED' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='collisionFilterInfo' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='4' etype='Type' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shapeSetup' offset='8' ctype='hkbShapeSetup' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

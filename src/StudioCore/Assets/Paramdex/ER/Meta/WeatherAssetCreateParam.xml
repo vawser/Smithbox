@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="WEATHER_ASSET_CREATE_CONDITION_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
+  <Field>
+    <AssetId AltName="Asset ID" Wiki="Specify the asset ID to generate. AEG999_999-> 999999" Refs="AssetEnvironmentGeometryParam" />
+    <SlotNo AltName="Slot Number" Wiki="This is the number for generation control. Only one asset can be generated in the same slot. You can control whether you want to generate duplicates or not." />
+    <CreateConditionType AltName="Create Condition Type" Wiki="The type of condition of occurrence" Enum="WEATHER_ASSET_CREATE_CONDITION_TYPE" />
+    <padding0 AltName=""/>
+    <TransitionSrcWeather AltName="Transition Source Weather" Wiki="Specify the transition source weather. It is referenced only when the occurrence condition is transition." Refs="WeatherParam" />
+    <TransitionDstWeather AltName="Transition Destination Weather" Wiki="Specify the transition destination weather. It is referenced only when the occurrence condition is transition." Refs="WeatherParam" />
+    <ElapsedTimeCheckweather AltName="Check Weather Elapsed Time" Wiki="Specify the weather to check the elapsed time." Refs="WeatherParam" />
+    <padding1 AltName=""/>
+    <ElapsedTime AltName="Elapsed Time" Wiki="Specify the elapsed time. It is referenced only when the occurrence condition is time elapsed. Real time Specify in seconds." />
+    <CreateDelayTime AltName="Create Delay Time" Wiki="Specifies the time to delay after the generation is determined. The created slot will be in use while it is delayed. Created immediately with 0 or less." />
+    <CreateProbability AltName="Create Probability" Wiki="Specifies the probability of occurrence when conditions for weather transitions or elapsed time are met." />
+    <LifeTime AltName="Duration" Wiki="Specifies the life of the generated asset. Real time Specify in seconds." />
+    <FadeTime AltName="Fade Time" Wiki="Time [seconds] used for fade-in and fade-out. No fade below 0." />
+    <EnableCreateTimeMin AltName="Enable Create Time Min" Wiki="Specifies a start time that can be generated [0.0 --24.0]. If you put -1 in either the start or the end, it will be treated as unlimited (can be generated in all time)." />
+    <EnableCreateTimeMax AltName="Enable Create Time Max" Wiki="Specifies the end time that can be generated [0.0 --24.0]. If you put -1 in either the start or the end, it will be treated as unlimited (can be generated in all time)." />
+    <CreatePoint0 AltName="Create Point [0]" Wiki="Specify the generation point number. Specify the last 3 digits of the Weather Asset Generation Point in MapStudio. -1 will be invalid" />
+    <CreatePoint1 AltName="Create Point [1]" Wiki="Specify the generation point number. Specify the last 3 digits of the Weather Asset Generation Point in MapStudio. -1 will be invalid" />
+    <CreatePoint2 AltName="Create Point [2]" Wiki="Specify the generation point number. Specify the last 3 digits of the Weather Asset Generation Point in MapStudio. -1 will be invalid" />
+    <CreatePoint3 AltName="Create Point [3]" Wiki="Specify the generation point number. Specify the last 3 digits of the Weather Asset Generation Point in MapStudio. -1 will be invalid" />
+    <CreateAssetLimitId0 AltName="Create Asset Limit ID [0]" Wiki="ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)." />
+    <CreateAssetLimitId1 AltName="Create Asset Limit ID [1]" Wiki="ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)." />
+    <CreateAssetLimitId2 AltName="Create Asset Limit ID [2]" Wiki="ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)." />
+    <CreateAssetLimitId3 AltName="Create Asset Limit ID [3]" Wiki="ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)." />
+    <Reserved2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

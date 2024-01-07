@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE">
+      <Option Value="0" Name="Attack" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="AttackType">
+      <Option Value="0" Name="1H Light #1 or Bullet or Other" />
+      <Option Value="1" Name="1H Light #1 +1" />
+      <Option Value="2" Name="1H Light #1 +2" />
+      <Option Value="3" Name="1H Light #1 +3" />
+      <Option Value="4" Name="1H Light #1 +4" />
+      <Option Value="10" Name="1H Light #2" />
+      <Option Value="20" Name="1H Light #3" />
+      <Option Value="30" Name="1H Jump" />
+      <Option Value="40" Name="1H Fall Loop or Kick?" />
+      <Option Value="50" Name="1H Fall Landing" />
+      <Option Value="100" Name="1H Heavy #1" />
+      <Option Value="105" Name="1H Heavy #1 Charged" />
+      <Option Value="110" Name="1H Heavy #2" />
+      <Option Value="115" Name="1H Heavy #2 Charged" />
+      <Option Value="200" Name="2H Light #1" />
+      <Option Value="210" Name="2H Light #2" />
+      <Option Value="220" Name="2H Light #3" />
+      <Option Value="230" Name="2H Jump" />
+      <Option Value="240" Name="2H Fall Loop" />
+      <Option Value="250" Name="2H Fall Land" />
+      <Option Value="300" Name="2H Heavy #1" />
+      <Option Value="305" Name="2H Heavy #1 Charged" />
+      <Option Value="310" Name="2H Heavy #2" />
+      <Option Value="315" Name="2H Heavy #2 Charged" />
+      <Option Value="400" Name="Offhand" />
+      <Option Value="401" Name="Offhand +1" />
+      <Option Value="402" Name="Offhand +2" />
+      <Option Value="404" Name="Offhand +4" />
+      <Option Value="410" Name="1H Kick" />
+      <Option Value="420" Name="2H Kick" />
+      <Option Value="430" Name="1H Guard" />
+      <Option Value="440" Name="2H Guard" />
+      <Option Value="450" Name="Offhand Parry" />
+      <Option Value="451" Name="Offhand Parry +1" />
+      <Option Value="560" Name="Guard during Attack" />
+      <Option Value="470" Name="Large Throw" />
+      <Option Value="490" Name="Falling Throw" />
+      <Option Value="500" Name="Backstab" />
+      <Option Value="501" Name="Backstab +1" />
+      <Option Value="505" Name="Backstab Hornet" />
+      <Option Value="506" Name="Backstab Hornet +1" />
+      <Option Value="510" Name="Riposte" />
+      <Option Value="511" Name="Riposte +1" />
+      <Option Value="515" Name="Riposte Hornet" />
+      <Option Value="516" Name="Riposte Hornet +1" />
+      <Option Value="517" Name="Riposte Hornet +2" />
+      <Option Value="520" Name="1H Rolling" />
+      <Option Value="530" Name="2H Rolling" />
+      <Option Value="540" Name="1H Backstep" />
+      <Option Value="580" Name="2H Backstep" />
+      <Option Value="600" Name="Standard Parry" />
+      <Option Value="610" Name="Backstab Transition" />
+      <Option Value="615" Name="Missed Backstab Transition" />
+      <Option Value="620" Name="2H L1 #1" />
+      <Option Value="621" Name="2H L1 #1 +1" />
+      <Option Value="622" Name="2H L1 #1 +2" />
+      <Option Value="630" Name="2H L1 #2" />
+      <Option Value="631" Name="2H L1 #2 +1" />
+      <Option Value="640" Name="2H L1 #3" />
+      <Option Value="641" Name="2H L1 #3 +1" />
+      <Option Value="642" Name="2H L1 #3 +2" />
+      <Option Value="643" Name="2H L1 #3 +3" />
+      <Option Value="699" Name="WA        -1" />
+      <Option Value="700" Name="WA" />
+      <Option Value="701" Name="WA        +1" />
+      <Option Value="702" Name="WA        +2" />
+      <Option Value="703" Name="WA        +3" />
+      <Option Value="704" Name="WA        +4" />
+      <Option Value="705" Name="WA     +5" />
+      <Option Value="706" Name="WA     +5 +1" />
+      <Option Value="710" Name="WA +10" />
+      <Option Value="711" Name="WA +10    +1" />
+      <Option Value="715" Name="WA +10 +5" />
+      <Option Value="716" Name="WA +10 +5 +1" />
+      <Option Value="720" Name="WA +20" />
+      <Option Value="721" Name="WA +20    +1" />
+      <Option Value="722" Name="WA +20    +2" />
+      <Option Value="723" Name="WA +20    +3" />
+      <Option Value="725" Name="WA +20 +5" />
+      <Option Value="726" Name="WA +20 +5 +1" />
+      <Option Value="730" Name="WA +30" />
+      <Option Value="731" Name="WA +30    +1" />
+      <Option Value="732" Name="WA +30    +2" />
+      <Option Value="735" Name="WA +30 +5" />
+      <Option Value="736" Name="WA +30 +5 +1" />
+      <Option Value="740" Name="WA +40" />
+      <Option Value="741" Name="WA +40    +1" />
+      <Option Value="742" Name="WA +40    +2" />
+      <Option Value="743" Name="WA +40    +3" />
+      <Option Value="744" Name="WA +40    +4" />
+      <Option Value="745" Name="WA +40 +5" />
+      <Option Value="746" Name="WA +40 +5 +1" />
+      <Option Value="747" Name="WA +40 +5 +2" />
+      <Option Value="750" Name="WA +50" />
+      <Option Value="751" Name="WA +50    +1" />
+      <Option Value="755" Name="WA +50 +5" />
+      <Option Value="760" Name="WA +60" />
+      <Option Value="761" Name="WA +60     +1" />
+      <Option Value="770" Name="WA +70" />
+      <Option Value="780" Name="WA +80" />
+      <Option Value="800" Name="Alt State 1H Heavy #1" />
+      <Option Value="801" Name="Alt State 1H Heavy #1 +1" />
+      <Option Value="805" Name="Alt State 1H Heavy #1 Charged" />
+      <Option Value="806" Name="Alt State 1H Heavy #1 Charged +1" />
+      <Option Value="807" Name="Alt State 1H Heavy #1 Charged +2" />
+      <Option Value="810" Name="Alt State 1H Heavy #2" />
+      <Option Value="811" Name="Alt State 1H Heavy #2 +1" />
+      <Option Value="815" Name="Alt State 1H Heavy #2 Charged" />
+      <Option Value="816" Name="Alt State 1H Heavy #2 Charged +1" />
+      <Option Value="820" Name="Alt State +20" />
+      <Option Value="821" Name="Alt State +20 +1" />
+      <Option Value="830" Name="Alt State +30" />
+      <Option Value="840" Name="Alt State +40" />
+      <Option Value="900" Name="Alt State 2H Heavy #1" />
+      <Option Value="905" Name="Alt State 2H Heavy #1 Charged" />
+      <Option Value="906" Name="Alt State 2H Heavy #1 Charged +1" />
+      <Option Value="907" Name="Alt State 2H Heavy #1 Charged +2" />
+      <Option Value="910" Name="Alt State 2H Heavy #2" />
+      <Option Value="911" Name="Alt State 2H Heavy #2 +1" />
+      <Option Value="915" Name="Alt State 2H Heavy #2 Charged" />
+      <Option Value="916" Name="Alt State 2H Heavy #2 Charged +1" />
+      <Option Value="920" Name="Unknown A" />
+      <Option Value="921" Name="Unknown B" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY">
+      <Option Value="0" Name="No Category" />
+      <Option Value="1" Name="PC - Right-Hand" />
+      <Option Value="2" Name="PC - Left-hand" />
+      <Option Value="3" Name="Sorcery" />
+      <Option Value="4" Name="Miracle" />
+      <Option Value="5" Name="Basic" />
+      <Option Value="6" Name="NPC - Right-hand" />
+      <Option Value="7" Name="NPC - Left-hand" />
+      <Option Value="9" Name="Kick" />
+      <Option Value="10" Name="Pyromancy" />
+      <Option Value="11" Name="PC - Both-hand" />
+      <Option Value="12" Name="PC - Right-hand" />
+    </Enum>
+    <Enum Name="STATE_BEHAVIOR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Player" />
+      <Option Value="2" Name="NPC" />
+      <Option Value="3" Name="NPC" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Behavior data for character attacks" Row0Dummy="" />
+  <Field>
+    <variationId AltName="Behavior Variation ID" VRef="behaviourVariation" />
+    <behaviorJudgeId AltName="Behavior Judge ID" Enum="AttackType" />
+    <ezStateBehaviorType_old AltName="State Behavior Type" Enum="STATE_BEHAVIOR_TYPE" />
+    <refType AltName="Reference Type" Enum="BEHAVIOR_REF_TYPE" />
+    <refId AltName="Reference ID" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
+    <sfxVariationId AltName="SFX Variation ID" />
+    <stamina AltName="Stamina Cost" />
+    <mp AltName="Durability Cost" />
+    <category AltName="Category" Enum="BEHAVIOR_CATEGORY" />
+    <heroPoint AltName="Humanity Cost" />
+    <pad1 AltName=""/>
+    <pad2 AltName=""/>
+  </Field>
+  <Self Row0Dummy="" AlternativeOrder="variationId,behaviorJudgeId,-,
+category,ezStateBehaviorType_old,-,
+refId,refType,-,
+stamina,mp,heroPoint,-,
+sfxVariationId,-,
+pad1,pad2"/>
+</PARAMMETA>

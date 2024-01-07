@@ -1,0 +1,40 @@
+203000 Rennala, Queen of the Full Moon
+203001 Rennala, Queen of the Full Moon
+211000 Beast Clergyman
+212000 Malenia, Blade of Miquella
+213000 Margit, the Fell Omen
+213001 Morgott, the Omen King
+219000 The Final Battle
+356000 Godskin Apostles
+451000 Lichdragon Fortissax
+452000 Dragonlord Placidusax
+467000 Regal Ancestor Spirit
+471000 God-Devouring Serpent
+472000 Godfrey, The First Elden Lord
+472001 Lord's Apparition
+473000 Starscourge Radahn
+475000 Godrick the Grafted
+476000 Fire Giant
+480000 Mohg, Lord of Blood
+920100 Death's Kindred
+920200 Erdtree Knights
+920300 Dragon
+920400 Grave Wardens
+920500 Erdtree Knights
+920600 Erdtree Avatar
+920700 Astel, Naturalborn of the Void
+920800 Fallingstar Beast
+920900 Formidable Foe II
+921000 Fallen Knights
+921100 The Immured
+921200 The Accursed
+921300 Formidable Foe II
+921400 Red Wolf of Radagon
+921500 Black Knives
+921600 Omen Illusion
+921700 Bloody Fingers
+925000 The Immured
+930000 Grave Wardens
+931000 Formidable Foe I
+932000 Grave Wardens
+950000 Old Warriors

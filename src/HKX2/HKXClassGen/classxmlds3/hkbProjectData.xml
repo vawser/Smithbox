@@ -1,0 +1,7 @@
+<class name='hkbProjectData' version='1' signature='0x363c1159' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='worldUpWS' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stringData' offset='32' ctype='hkbProjectStringData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultEventMode' offset='40' etype='EventMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

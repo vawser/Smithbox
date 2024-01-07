@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <NearMinDist AltName="Proximity Fade: Minimum Near Distance" Wiki="Near Fade minimum distance (m): Distance where  = 0" />
+    <NearMaxDist AltName="Proximity Fade: Maximum Near Distance" Wiki="Near fade maximum distance (m): Starting distance between  = Middel Alpha" />
+    <FarMinDist AltName="Proximity Fade: Minimum Far Distance" Wiki="Minimum distance of Far fade (m): End distance between  = Middle Alpha" />
+    <FarMaxDist AltName="Proximity Fade: Maximum Far Distance" Wiki="Maximum Far Fade Distance (m): Distance where  = 1" />
+    <MiddleAlpha AltName="Proximity Fade: Alpha" Wiki="Intermediate  value" />
+    <dummy AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

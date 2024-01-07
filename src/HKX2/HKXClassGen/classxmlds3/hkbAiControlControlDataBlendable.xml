@@ -1,0 +1,6 @@
+<class name='hkbAiControlControlDataBlendable' version='1' signature='0xbb8d1bbc' size='8'>
+  <members>
+    <member name='desiredSpeed' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maximumSpeed' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

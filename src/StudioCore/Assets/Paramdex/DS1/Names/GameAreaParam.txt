@@ -1,0 +1,27 @@
+1000800 Gaping Dragon
+1010700 Taurus Demon
+1010750 Capra Demon
+1010800 Bell Gargoyles
+1100160 Crossbreed Priscilla
+1200800 Sif, the Great Grey Wolf
+1200801 Moonlight Butterfly
+1210401 Black Dragon Kalameet
+1210800 Sanctuary Guardian
+1210820 Knight Artorias
+1210840 Manus, Father of the Abyss
+1300800 Pinwheel
+1310800 Gravelord Nito
+1400800 Chaos Witch Quelaag
+1410400 Demon Firesage
+1410600 Ceaseless Discharge
+1410700 Centipede Demon
+1410800 Bed of Chaos
+1500800 Iron Golem
+1510650 Dark Sun Gwyndolin
+1510801 Dragon Slayer Ornstein
+1510811 Executioner Smough
+1600800 Four Kings
+1700800 Seath the Scaleless
+1800800 Gwyn, Lord of Cinder
+1810800 Asylum Demon
+1810810 Stray Demon

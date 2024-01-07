@@ -1,0 +1,5 @@
+<class name='hkpSerializedDisplayRbTransforms' version='1' signature='0xc5d3a567' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='transforms' offset='16' ctype='hkpSerializedDisplayRbTransformsDisplayTransformPair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

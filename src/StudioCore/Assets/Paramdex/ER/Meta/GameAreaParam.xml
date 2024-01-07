@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <bonusSoul_single AltName="Bonus Runes - Singleplayer" Wiki="Amount of soul that can be obtained when defeating an area boss (in single play)" />
+    <bonusSoul_multi AltName="Bonus Runes - Multiplayer" Wiki="Amount of soul that can be obtained when defeating an area boss (during multiplayer)" />
+    <humanityPointCountFlagIdTop AltName="Humanity Point Count Flag ID" Wiki="First flag ID for managing humanity drop points (using 20 Bit)" />
+    <humanityDropPoint1 AltName="Humanity Drop Threshold [1]" Wiki="Threshold for acquiring humanity 1" />
+    <humanityDropPoint2 AltName="Humanity Drop Threshold [2]" Wiki="Threshold 2 for acquiring humanity" />
+    <humanityDropPoint3 AltName="Humanity Drop Threshold [3]" Wiki="Threshold 3 for acquiring humanity" />
+    <humanityDropPoint4 AltName="Humanity Drop Threshold [4]" Wiki="Threshold 4 for acquiring humanity" />
+    <humanityDropPoint5 AltName="Humanity Drop Threshold [5]" Wiki="Threshold 5 for acquiring humanity" />
+    <humanityDropPoint6 AltName="Humanity Drop Threshold [6]" Wiki="Threshold 6 for acquiring humanity" />
+    <humanityDropPoint7 AltName="Humanity Drop Threshold [7]" Wiki="Threshold for acquiring humanity 7" />
+    <humanityDropPoint8 AltName="Humanity Drop Threshold [8]" Wiki="Threshold for acquiring humanity 8" />
+    <humanityDropPoint9 AltName="Humanity Drop Threshold [9]" Wiki="Threshold for acquiring humanity 9" />
+    <humanityDropPoint10 AltName="Humanity Drop Threshold [10]" Wiki="Threshold 10 for acquiring humanity" />
+    <soloBreakInPoint_Min AltName="Min Invasion Spawns added after Boss Defeat" Wiki="The minimum value of solo intrusion points to be added when defeating an area boss." />
+    <soloBreakInPoint_Max AltName="Max Invasion Spawns added after Boss Defeat" Wiki="The maximum value of solo intrusion points to be added when defeating an area boss." />
+    <defeatBossFlagId_forSignAimList AltName="Boss Defeat Flag - For Purpose List" Wiki="If this flag is ON, it will not be displayed in the list of purpose settings at the time of hosting. If it is 0, it is always displayed." />
+    <displayAimFlagId AltName="Display Purpose Flag ID" Wiki="" />
+    <foundBossFlagId AltName="Discovered Boss Flag ID" Wiki="" />
+    <foundBossTextId AltName="Discovered Boss Text ID" Wiki="" />
+    <notFindBossTextId AltName="Undiscovered Boss Text ID" Wiki="" />
+    <bossChallengeFlagId AltName="Boss Challenge Flag ID" Wiki="Boss challengeable flag ID. When selecting the target boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para is , the boss with this flag ON is targeted. If it is 0, it is always the target." />
+    <defeatBossFlagId AltName="Boss Defeat Flag ID" Wiki="Boss defeat flag ID. When selecting the target boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para is , the boss with this flag OFF is targeted." />
+    <bossPosX AltName="Boss Coordinate X" Wiki="Boss position_X coordinates (relative coordinates from the specified map). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
+    <bossPosY AltName="Boss Coordinate Y" Wiki="Boss position_Y coordinates (relative coordinates from the specified map). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
+    <bossPosZ AltName="Boss Coordinate Z" Wiki="Boss position_Z coordinates (relative coordinates from the specified map). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
+    <bossMapAreaNo AltName="Map Area" Wiki="Boss position_area number (mXX_00_00_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
+    <bossMapBlockNo AltName="Map Block" Wiki="Boss position_grid X number (m00_XX_00_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
+    <bossMapMapNo AltName="Map Region" Wiki="Boss position_grid Z number (m00_00_XX_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
+    <reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

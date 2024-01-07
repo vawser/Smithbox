@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>LOAD_BALANCER_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 Unk1" />
+    <Field Def="f32 Unk2" />
+    <Field Def="s32 Unk3 = 5" />
+    <Field Def="s32 Unk4 = 20" />
+    <Field Def="s32 Unk5 = 30" />
+    <Field Def="s32 Unk6 = 10" />
+    <Field Def="u8 LoadBalancerVal0 = 12" />
+    <Field Def="u8 LoadBalancerVal1 = 5" />
+    <Field Def="u8 LoadBalancerVal2 = 15" />
+    <Field Def="u8 LoadBalancerVal3 = 12" />
+    <Field Def="u8 LoadBalancerVal4 = 7" />
+    <Field Def="u8 LoadBalancerVal5 = 7" />
+    <Field Def="u8 LoadBalancerVal6 = 10" />
+    <Field Def="u8 LoadBalancerVal7 = 6" />
+    <Field Def="u8 LoadBalancerVal8 = 13" />
+    <Field Def="u8 LoadBalancerVal9 = 8" />
+    <Field Def="u8 LoadBalancerVal10 = 1" />
+    <Field Def="u8 LoadBalancerVal11 = 1" />
+    <Field Def="u8 LoadBalancerVal12 = 1" />
+    <Field Def="u8 LoadBalancerVal13 = 4" />
+    <Field Def="u8 LoadBalancerVal14 = 3" />
+    <Field Def="u8 LoadBalancerVal15 = 4" />
+    <Field Def="u8 LoadBalancerVal16 = 4" />
+    <Field Def="u8 LoadBalancerVal17 = 3" />
+    <Field Def="dummy8 pad1[38]" />
+  </Fields>
+</PARAMDEF>

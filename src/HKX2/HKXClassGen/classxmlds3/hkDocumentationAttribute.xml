@@ -1,0 +1,5 @@
+<class name='hkDocumentationAttribute' version='1' signature='0x630edd9e' size='8'>
+  <members>
+    <member name='docsSectionTag' offset='0' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

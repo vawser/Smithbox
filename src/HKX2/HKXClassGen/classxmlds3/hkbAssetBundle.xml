@@ -1,0 +1,12 @@
+<class name='hkbAssetBundle' version='1' signature='0x10d3e271' size='48' parent='hkReferencedObject'>
+  <enums>
+    <enum name='BundleType' flags='00000000'>
+      <enumitem name='ANIMATION_BUNDLE' value='0'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='assets' offset='16' ctype='hkReferencedObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='32' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='40' etype='BundleType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

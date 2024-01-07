@@ -1,0 +1,12 @@
+<class name='hclStandardLinkSetupObject' version='1' signature='0x7e0ea82a' size='120' parent='hclConstraintSetSetupObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simulationMesh' offset='24' ctype='hclSimulationSetupMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexSelection' offset='32' ctype='hclVertexSelectionInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeSelection' offset='48' ctype='hclEdgeSelectionInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ignoreHiddenEdges' offset='64' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stiffness' offset='72' ctype='hclVertexFloatInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='allowedCompression' offset='88' ctype='hclVertexFloatInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='allowedStretching' offset='104' ctype='hclVertexFloatInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

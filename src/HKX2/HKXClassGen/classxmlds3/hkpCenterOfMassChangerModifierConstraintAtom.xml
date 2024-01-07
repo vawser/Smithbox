@@ -1,0 +1,6 @@
+<class name='hkpCenterOfMassChangerModifierConstraintAtom' version='1' signature='0x7ff7e338' size='80' parent='hkpModifierConstraintAtom'>
+  <members>
+    <member name='displacementA' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='displacementB' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

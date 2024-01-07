@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WORLD_MAP_LEGACY_CONV_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 srcAreaNo"></Field>
+    <Field Def="u8 srcGridXNo"></Field>
+    <Field Def="u8 srcGridZNo"></Field>
+    <Field Def="dummy8 pad1[1]"></Field>
+    <Field Def="f32 srcPosX"></Field>
+    <Field Def="f32 srcPosY"></Field>
+    <Field Def="f32 srcPosZ"></Field>
+    <Field Def="u8 dstAreaNo"></Field>
+    <Field Def="u8 dstGridXNo"></Field>
+    <Field Def="u8 dstGridZNo"></Field>
+    <Field Def="dummy8 pad2[1]"></Field>
+    <Field Def="f32 dstPosX"></Field>
+    <Field Def="f32 dstPosY"></Field>
+    <Field Def="f32 dstPosZ"></Field>
+    <Field Def="u8 isBasePoint:1"></Field>
+    <Field Def="dummy8 pad3:7"></Field>
+    <Field Def="dummy8 pad4[15]"></Field>
+  </Fields>
+</PARAMDEF>

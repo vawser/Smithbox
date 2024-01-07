@@ -1,0 +1,5 @@
+<class name='hkbEvent' version='1' signature='0x3e0fd810' size='24' parent='hkbEventBase'>
+  <members>
+    <member name='sender' offset='16' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

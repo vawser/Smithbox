@@ -1,0 +1,89 @@
+2 Ninja: Aerial Guard / Jasuga -- 忍び流：空中ガード/ジャスガ
+4 Ninja: Step closeout -- 忍び流：ステップ見切り
+5 Ninja: Sliding (dash crouching) -- 忍び流：スライディング（ダッシュしゃがみ）
+6 Ninja style: aerial style -- 忍び流：空中流派技
+7 Ninja: Breaking the back -- 忍び流：崩し裏回り
+10 Shinobi-ryu: Deadly Sword_Rotating Slash Lifted -- 忍び流：必殺剣_回転斬り解禁
+20 Shinobi-ryu: Deadly Sword_Ninja Fang Crash Lifted -- 忍び流：必殺剣_忍者牙突解禁
+60 Covert A (make the sign smaller) -- 隠密A（気配を小さくする）
+61 Covert B (makes the sound quieter) -- 隠密B（音を小さくする）
+70 Parting trunk scraping UP -- 見切りの体幹削りUP
+75 Upper limit of possession of form + 1A -- 形代所持上限+1A
+76 Upper limit of possession of form + 1B -- 形代所持上限+1B
+80 HP recovery at the time of shinobi (A) -- 忍殺時HP回復（A）
+100 Prosthetic hand ninja style: slashing -- 義手忍び流：追い斬り
+101 Prosthetic hand ninja style: slashing in a row -- 義手忍び流：連ね斬り
+102 Prosthetic Hand Ninja: Unleashed Slash -- 義手忍び流：放ち斬り
+103 Prosthetic Hand Ninja: Matoi Slash -- 義手忍び流：まとい斬り
+104 Prosthetic Hand Ninja: Wire Attack -- 義手忍び流：ワイヤー攻撃
+105 Prosthetic Hand Ninja: Aerial Prosthetic Hand Ninja -- 義手忍び流：空中義手忍具
+110 Prosthetic Hand Ninja: Deadly Sword_Dive-in Slash Lifted -- 義手忍び流：必殺剣_飛び込み斬り解禁
+111 Prosthetic Hand Ninja: Special Sword_Dive-in Slash Strengthening +1 -- 義手忍び流：必殺剣_飛び込み斬り強化+1
+170 Knowledge of medicine + 1A -- 薬の知識+1A
+171 Knowledge of medicine + 1B -- 薬の知識+1B
+175 Upper limit of possession of form + 1C -- 形代所持上限+1C
+176 Upper limit of possession of form + 1D -- 形代所持上限+1D
+210 Ashina style: Deadly sword _ face-to-face lifted -- 葦名流：必殺剣_面打ち解禁
+211 Ashina style: Special sword_face-up strengthening +1 -- 葦名流：必殺剣_面打ち強化+1
+220 Ashina style: Deadly sword _ Iai lifted -- 葦名流：必殺剣_居合い解禁
+265 Body recovery during shinobi (A) -- 忍殺時体幹回復（A）
+270 Jasuga&#39;s trunk shaving UP -- ジャスガの体幹削りUP
+275 Jasuga rear sword trunk sharpening UP -- ジャスガ後刀体幹削りUP
+280 Guard / Jasuga&#39;s trunk is shaved and cut -- ガード/ジャスガの体幹削られカット
+310 Temple style: Special sword_Jiu-Jitsu ban lifted -- 寺流：必殺剣_体術連撃解禁
+311 Temple style: Special sword _ Strengthening physique continuous attack +1 -- 寺流：必殺剣_体術連撃強化+1
+320 Temple style: Special sword_Kick rush lifted -- 寺流：必殺剣_蹴りラッシュ解禁
+321 Temple style: Special sword _ Kick rush strengthening +1 -- 寺流：必殺剣_蹴りラッシュ強化+1
+365 Good luck + 1A -- 幸運+1A
+366 Good luck + 1B -- 幸運+1B
+370 Buff effect time UP -- バフ効果時間UP
+400 Temple style: Special sword _ Kick rush strengthening +1 -- 寺流：必殺剣_蹴りラッシュ強化+1
+401 Shinobi-ryu: Deadly Sword_Ninja Fang Crash Lifted -- 忍び流：必殺剣_忍者牙突解禁
+402 Ashina style: Deadly sword _ Iai lifted -- 葦名流：必殺剣_居合い解禁
+403 Prosthetic Hand Ninja: Matoi Slash -- 義手忍び流：まとい斬り
+411 Combined: Deadly Sword_Ninja Fang Strengthening +1 -- 複合：必殺剣_忍者牙突強化+1
+421 Combined: Special Sword _ Eight Flying Rush Strengthening +1 -- 複合：必殺剣_八艘飛びラッシュ強化+1
+431 Combined: Deadly Sword_Immortal Slash Slash Strengthening +1 -- 複合：必殺剣_不死斬り斬撃強化+1
+600 Knowledge of medicine + 1C -- 薬の知識+1C
+601 Knowledge of medicine + 1D -- 薬の知識+1D
+602 Knowledge of medicine + 1E -- 薬の知識+1E
+603 Upper limit of possession of form + 1E -- 形代所持上限+1E
+604 HP recovery at the time of shinobi (B) -- 忍殺時HP回復（B）
+605 Body recovery during shinobi (B) -- 忍殺時体幹回復（B）
+610 Infinite breathing lifted -- 無限呼吸解禁
+620 Anti-aircraft shinobi ban lifted -- 対空忍殺解禁
+630 Deadly Sword_Immortal Sword Lifted -- 必殺剣_不死斬り解禁
+640 Deadly Sword_Sword Holy Iai Ban Lifted -- 必殺剣_剣聖居合解禁
+650 Special Sword_Hachizara Flying Rush Lifted -- 必殺剣_八艘飛びラッシュ解禁
+660 Deadly Sword_Invisible Iai Continuous Attack Lifted -- 必殺剣_見えない居合連撃解禁
+670 Special Sword_Vertical Rise Rotation Slash Lifted -- 必殺剣_垂直上昇回転斬り解禁
+701 Shuriken LV2 (can be stored) -- 手裏剣LV2（溜め可能）
+702 Shuriken LV3-A (can be stored + penetrated) -- 手裏剣LV3-A（溜め可能 + 貫通）
+703 Shuriken LV3-B (can be stored + butterfly phantom bullet) -- 手裏剣LV3-B（溜め可能 + お蝶幻影弾丸）
+704 Shuriken LV3-C (can be stored + throwing money) -- 手裏剣LV3-C（溜め可能 + 銭投げ）
+705 Shuriken LV4 (can be stored + penetration + power up) -- 手裏剣LV4（溜め可能 + 貫通 + 威力UP）
+711 Firecracker LV2 (can be stored) -- 爆竹LV2（溜め可能）
+712 Firecracker LV3-A (can be stored + explosive time extension) -- 爆竹LV3-A（溜め可能 + 炸裂時間延長）
+713 Firecracker LV3-B (can be stored + harmful substances) -- 爆竹LV3-B（溜め可能 + 有害物質）
+721 Ignition LV2 (can be stored) -- 発火LV2（溜め可能）
+722 Ignition LV3 (can be stored + flame can be emitted) -- 発火LV3（溜め可能 + 火炎放射可能）
+723 Ignition LV4 (can be stored + flame can be emitted + anti-spirit) -- 発火LV4（溜め可能 + 火炎放射可能 + 対霊）
+731 Ax LV2 (can be stored) -- 斧LV2（溜め可能）
+732 Ax LV3 (can be stored + explodes) -- 斧LV3（溜め可能 + 爆裂）
+733 Ax LV4 (can be stored + explodes + illusion eraser) -- 斧LV4（溜め可能 + 爆裂 + 幻影消し）
+741 Transformation LV2 (can be activated after damage) -- 変わり身LV2（ダメージ後発動可能）
+742 Transformation LV3 (Can be activated after damage + Shock wave when activated) -- 変わり身LV3（ダメージ後発動可能 + 発動時衝撃波）
+751 Kodachi LV2 (derivative attack possible) -- 小太刀LV2（派生攻撃可能）
+752 Kodachi LV3-A (derivative attack possible + guard penetration) -- 小太刀LV3-A（派生攻撃可能 + ガード貫通）
+753 Kodachi LV3-B (derivative attack possible + poison mist spraying) -- 小太刀LV3-B（派生攻撃可能 + 毒霧散布）
+761 Iron fan LV2 (can be turned) -- 鉄扇LV2（回し受け可能）
+762 Iron fan LV3-A (can be turned + anti-flame) -- 鉄扇LV3-A（回し受け可能 + 対炎）
+763 Iron fan LV3-B (can be turned + anti-spirit) -- 鉄扇LV3-B（回し受け可能 + 対霊）
+771 Enemy turning LV2 (can be activated continuously) -- 敵回しLV2（連続発動可能）
+772 Enemy turning LV3 (continuous activation possible + stealing) -- 敵回しLV3（連続発動可能 + 盗み）
+781 Spear LV2-A (Available for charge) -- 槍LV2-A（溜め突撃可能）
+782 Spear LV2-B -- 槍LV2-B（溜めなぎ払い可能）
+783 Spear LV3-A (reservoir assault possible + corkscrew) -- 槍LV3-A（溜め突撃可能 + コークスクリュー）
+784 Spear LV3-B (reservoirable + flame) -- 槍LV3-B（溜めなぎ払い可能 + 炎）
+791 Finger whistle LV2 (can be stored) -- 指笛LV2（溜め可能）
+792 Finger whistle LV3 (can be stored + minor) -- 指笛LV3（溜め可能 + 短調）

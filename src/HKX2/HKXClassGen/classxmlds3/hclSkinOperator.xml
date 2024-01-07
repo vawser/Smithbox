@@ -1,0 +1,28 @@
+<class name='hclSkinOperator' version='1' signature='0xd1f2ea5e' size='120' parent='hclOperator'>
+  <enums>
+    <enum name='BONE_GROUP_SIZE' flags='00000000'>
+      <enumitem name='GROUP_SIZE_1' value='1'/>
+      <enumitem name='GROUP_SIZE_4' value='4'/>
+      <enumitem name='GROUP_SIZE_8' value='8'/>
+      <enumitem name='GROUP_SIZE_16' value='16'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='boneInfluences' offset='32' ctype='hclSkinOperatorBoneInfluence' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneInfluenceStartPerVertex' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneFromSkinMeshTransforms' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_MATRIX4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='usedBoneGroupIds' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skinPositions' offset='96' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skinNormals' offset='97' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skinTangents' offset='98' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skinBiTangents' offset='99' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='inputBufferIndex' offset='100' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputBufferIndex' offset='104' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transformSetIndex' offset='108' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startVertex' offset='112' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endVertex' offset='114' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='partialSkinning' offset='116' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='dualQuaternionSkinning' offset='117' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneGroupSize' offset='118' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

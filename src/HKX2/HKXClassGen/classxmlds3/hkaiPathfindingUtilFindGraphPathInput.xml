@@ -1,0 +1,13 @@
+<class name='hkaiPathfindingUtilFindGraphPathInput' version='1' signature='0x67555bec' size='152'>
+  <members>
+    <member name='startNodeKeys' offset='0' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initialCosts' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='goalNodeKeys' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='finalCosts' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxNumberOfIterations' offset='64' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='agentInfo' offset='68' ctype='hkaiAgentTraversalInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='searchParameters' offset='80' ctype='hkaiGraphPathSearchParameters' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='searchBuffers' offset='120' ctype='hkaiSearchParametersSearchBuffers' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='hierarchySearchBuffers' offset='136' ctype='hkaiSearchParametersSearchBuffers' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,11 @@
+<class name='hclBendLinkSetupObject' version='1' signature='0xb194001d' size='104' parent='hclConstraintSetSetupObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simulationMesh' offset='24' ctype='hclSimulationSetupMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='createStandardLinks' offset='32' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexSelection' offset='40' ctype='hclVertexSelectionInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bendStiffness' offset='56' ctype='hclVertexFloatInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stretchStiffness' offset='72' ctype='hclVertexFloatInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flatnessFactor' offset='88' ctype='hclVertexFloatInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

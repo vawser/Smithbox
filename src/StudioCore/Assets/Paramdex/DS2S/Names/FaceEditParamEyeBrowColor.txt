@@ -1,0 +1,10 @@
+0 Eyebrow Color Set 1 -- 眉の色セット1
+1 Eyebrow Color Set 2 -- 眉の色セット2
+2 Eyebrow Color Set 3 -- 眉の色セット3
+3 Eyebrow Color Set 4 -- 眉の色セット4
+4 Eyebrow Color Set 5 -- 眉の色セット5
+5 Eyebrow Color Set 6 -- 眉の色セット6
+6 Eyebrow Color Set 7 -- 眉の色セット7
+7 Eyebrow Color Set 8 -- 眉の色セット8
+8 Eyebrow Color Set 9 -- 眉の色セット9
+9 Eyebrow Color Set 10 -- 眉の色セット10

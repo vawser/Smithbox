@@ -1,0 +1,7 @@
+<class name='hkbTimerModifier' version='1' signature='0x7880c5e2' size='120' parent='hkbModifier'>
+  <members>
+    <member name='alarmTimeSeconds' offset='88' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alarmEvent' offset='96' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='secondsElapsed' offset='112' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

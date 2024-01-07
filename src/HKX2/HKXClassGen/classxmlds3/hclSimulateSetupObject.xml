@@ -1,0 +1,11 @@
+<class name='hclSimulateSetupObject' version='1' signature='0x382460d8' size='64' parent='hclOperatorSetupObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simClothSetupObject' offset='24' ctype='hclSimClothSetupObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numberOfSubsteps' offset='32' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numberOfSolveIterations' offset='36' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='adaptConstraintStiffness' offset='40' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='explicitConstraintOrder' offset='41' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraintSetExecutionOrder' offset='48' ctype='hclConstraintSetSetupObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

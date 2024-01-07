@@ -1,0 +1,22 @@
+<class name='hkbHandIkControlData' version='1' signature='0xd72b8d17' size='96'>
+  <enums>
+    <enum name='HandleChangeMode' flags='00000000'>
+      <enumitem name='HANDLE_CHANGE_MODE_ABRUPT' value='0'/>
+      <enumitem name='HANDLE_CHANGE_MODE_CONSTANT_VELOCITY' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='targetPosition' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetRotation' offset='16' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetNormal' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetHandle' offset='48' ctype='hkbHandle' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transformOnFraction' offset='56' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='normalOnFraction' offset='60' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeInDuration' offset='64' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeOutDuration' offset='68' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extrapolationTimeStep' offset='72' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handleChangeSpeed' offset='76' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handleChangeMode' offset='80' etype='HandleChangeMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fixUp' offset='81' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

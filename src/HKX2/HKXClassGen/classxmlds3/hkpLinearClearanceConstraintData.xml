@@ -1,0 +1,12 @@
+<class name='hkpLinearClearanceConstraintData' version='1' signature='0x9f2f89bd' size='320' parent='hkpConstraintData'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='PRISMATIC' value='0'/>
+      <enumitem name='HINGE' value='1'/>
+      <enumitem name='BALL_SOCKET' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpLinearClearanceConstraintDataAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

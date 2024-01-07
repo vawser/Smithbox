@@ -1,0 +1,7 @@
+<class name='hkpStiffSpringConstraintDataAtoms' version='1' signature='0xd04edea9' size='80'>
+  <members>
+    <member name='pivots' offset='0' ctype='hkpSetLocalTranslationsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='setupStabilization' offset='48' ctype='hkpSetupStabilizationAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='spring' offset='64' ctype='hkpStiffSpringConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

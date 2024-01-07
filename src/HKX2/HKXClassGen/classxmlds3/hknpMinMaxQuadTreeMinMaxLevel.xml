@@ -1,0 +1,7 @@
+<class name='hknpMinMaxQuadTreeMinMaxLevel' version='1' signature='0x78080c6d' size='24'>
+  <members>
+    <member name='minMaxData' offset='0' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='xRes' offset='16' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='zRes' offset='18' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

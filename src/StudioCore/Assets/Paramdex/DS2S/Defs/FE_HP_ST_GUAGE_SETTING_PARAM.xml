@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>FE_HP_ST_GUAGE_SETTING_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 Unk00" />
+    <Field Def="f32 Unk01" />
+    <Field Def="f32 damage_threshold_major_damage_player" />
+    <Field Def="f32 damage_threshold_major_damage_enemy" />
+    <Field Def="f32 Unk02" />
+    <Field Def="f32 Unk03" />
+    <Field Def="f32 Unk04" />
+    <Field Def="f32 Unk05" />
+    <Field Def="f32 Unk06" />
+    <Field Def="f32 player_bar_hp_min_length" />
+    <Field Def="f32 player_bar_stamina_min_length" />
+    <Field Def="f32 player_bar_hp_max_length" />
+    <Field Def="f32 player_bar_stamina_max_length" />
+  </Fields>
+</PARAMDEF>

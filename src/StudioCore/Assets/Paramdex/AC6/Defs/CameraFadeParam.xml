@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CAMERA_FADE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 NearMinDist"></Field>
+    <Field Def="f32 NearMaxDist"></Field>
+    <Field Def="f32 FarMinDist"></Field>
+    <Field Def="f32 FarMaxDist"></Field>
+    <Field Def="f32 MiddleAlpha"></Field>
+    <Field Def="s32 Unk0x14"></Field>
+    <Field Def="s32 Unk0x18"></Field>
+    <Field Def="s32 Unk0x1C"></Field>
+  </Fields>
+</PARAMDEF>

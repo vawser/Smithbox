@@ -1,0 +1,20 @@
+<class name='hkbCharacterStringData' version='1' signature='0xb9d8a52' size='224' parent='hkReferencedObject'>
+  <members>
+    <member name='skinNames' offset='16' ctype='hkbCharacterStringDataFileNameMeshNamePair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneAttachmentNames' offset='32' ctype='hkbCharacterStringDataFileNameMeshNamePair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animationBundleNameData' offset='48' ctype='hkbAssetBundleStringData' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animationBundleFilenameData' offset='64' ctype='hkbAssetBundleStringData' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='characterPropertyNames' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='retargetingSkeletonMapperFilenames' offset='96' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lodNames' offset='112' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mirroredSyncPointSubstringsA' offset='128' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mirroredSyncPointSubstringsB' offset='144' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='160' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rigName' offset='168' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ragdollName' offset='176' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='behaviorFilename' offset='184' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='luaScriptOnCharacterActivated' offset='192' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='luaScriptOnCharacterDeactivated' offset='200' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='luaFiles' offset='208' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

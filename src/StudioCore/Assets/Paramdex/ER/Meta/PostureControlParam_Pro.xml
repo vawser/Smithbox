@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <a000_rightArmIO AltName="[a000] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a000_rightArmFB AltName="[a000] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a000_leftArmIO AltName="[a000] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a000_leftArmFB AltName="[a000] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a002_rightArmIO AltName="[a002] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a002_rightArmFB AltName="[a002] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a002_leftArmIO AltName="[a002] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a002_leftArmFB AltName="[a002] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a003_rightArmIO AltName="[a003] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a003_rightArmFB AltName="[a003] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a003_leftArmIO AltName="[a003] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a003_leftArmFB AltName="[a003] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a010_rightArmIO AltName="[a010] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a010_rightArmFB AltName="[a010] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a010_leftArmIO AltName="[a010] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a010_leftArmFB AltName="[a010] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a012_rightArmIO AltName="[a012] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a012_rightArmFB AltName="[a012] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a012_leftArmIO AltName="[a012] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a012_leftArmFB AltName="[a012] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a013_rightArmIO AltName="[a013] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a013_rightArmFB AltName="[a013] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a013_leftArmIO AltName="[a013] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a013_leftArmFB AltName="[a013] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a014_rightArmIO AltName="[a014] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a014_rightArmFB AltName="[a014] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a014_leftArmIO AltName="[a014] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a014_leftArmFB AltName="[a014] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a015_rightArmIO AltName="[a015] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a015_rightArmFB AltName="[a015] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a015_leftArmIO AltName="[a015] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a015_leftArmFB AltName="[a015] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a016_rightArmIO AltName="[a016] Right Arm - Inside/Outside" Wiki="Right arm_inside and outside" />
+    <a016_rightArmFB AltName="[a016] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a016_leftArmIO AltName="[a016] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
+    <a016_leftArmFB AltName="[a016] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

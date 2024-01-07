@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="GeneratorColorSfxTypeEnum" type="s8">
+      <Option Value="-1" Name="None" />
+      <Option Value="0" Name="Fire Orange" />
+      <Option Value="1" Name="Arquebus Blue" />
+      <Option Value="2" Name="Coral Red" />
+    </Enum>
+  </Enums>
+  <Field>
+    <colorSfxType AltName="Color SFX Type" Enum="GeneratorColorSfxTypeEnum" Wiki="Determines SFX used by boosters. Coral also affects core expansion SFX."/> 
+  </Field>
+  <Self />
+</PARAMMETA>

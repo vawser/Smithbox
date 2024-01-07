@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <isAddRigidImpulse_ByDamage IsBool="" />
+    <isDisableEnvMapCapture IsBool="" />
+    <BreakAiSoundID Refs="AiSoundParam" />
+    <isEnableWallJump IsBool="" />
+    <isBreakByPlayerCollide IsBool="" />
+    <isMoveObj IsBool="" />
+    <isAnimPauseOnRemoPlay IsBool="" />
+    <isPenetrationBulletHit IsBool="" />
+    <isBurn IsBool="" />
+    <isRopeBridge IsBool="" />
+    <isLadder IsBool="" />
+    <isAnimBreak IsBool="" />
+    <isDisableBreakForFirstAppear IsBool="" />
+    <isSaveBreakState IsBool="" />
+    <isDamageCover IsBool="" />
+    <isAttackBacklash IsBool="" />
+    <isBreakByEnemyCollide IsBool="" />
+    <SpecialEffectId_InsideHit Refs="SpEffectParam" />
+    <isUserPhysicForChrCollide IsBool="" />
+    <isBreak_ByChrRide IsBool="" />
+    <burnBulletBehaviorId_1 Refs="BehaviorParam" />
+    <burnBulletBehaviorId_2 Refs="BehaviorParam" />
+    <burnBulletBehaviorId_3 Refs="BehaviorParam" />
+    <burnBulletBehaviorId Refs="BehaviorParam" />
+    <breakBulletBehaviorId Refs="BehaviorParam" />
+  </Field>
+  <Self />
+</PARAMMETA>

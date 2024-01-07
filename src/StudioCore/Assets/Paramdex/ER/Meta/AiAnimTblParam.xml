@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="AI_ATK_DIST_TYPE" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <atk0_EzStateId AltName="Attack 1 EzState Anime Number" Wiki="Attack 1 EzState Anime Number" />
+    <atk1_EzStateId AltName="Attack 2 EzState Anime Number" Wiki="Attack 2 EzState Anime Number" />
+    <atk2_EzStateId AltName="Attack 3 EzState Anime Number" Wiki="Attack 3 EzState Anime Number" />
+    <atk3_EzStateId AltName="Attack 4 EzState Anime Number" Wiki="Attack 4 EzState Anime Number" />
+    <atk4_EzStateId AltName="Attack 5 EzState Anime Number" Wiki="Attack 5 EzState Anime Number" />
+    <atk5_EzStateId AltName="Attack 6 EzState Anime Number" Wiki="Attack 6 EzState Anime Number" />
+    <atk6_EzStateId AltName="Attack 7 EzState Anime Number" Wiki="Attack 7 EzState Anime Number" />
+    <atk7_EzStateId AltName="Attack 8 EzState Anime Number" Wiki="Attack 8 EzState Anime Number" />
+    <atk8_EzStateId AltName="Attack 9 EzState Anime Number" Wiki="Attack 9 EzState Anime Number" />
+    <atk9_EzStateId AltName="Attack 10 EzState Anime Number" Wiki="Attack 10 EzState Anime Number" />
+    <atk10_EzStateId AltName="Attack 11 EzState Anime Number" Wiki="Attack 11 EzState Anime Number" />
+    <atk11_EzStateId AltName="Attack 12 EzState Anime Number" Wiki="Attack 12 EzState Anime Number" />
+    <atk12_EzStateId AltName="Attack 13 EzState Anime Number" Wiki="Attack 13 EzState Anime Number" />
+    <atk13_EzStateId AltName="Attack 14 EzState Anime Number" Wiki="Attack 14 EzState Anime Number" />
+    <atk14_EzStateId AltName="Attack 15 EzState Anime Number" Wiki="Attack 15 EzState Anime Number" />
+    <atk15_EzStateId AltName="Attack 16 EzState Anime Number" Wiki="Attack 16 EzState Anime Number" />
+    <atk16_EzStateId AltName="Attack 17 EzState Anime Number" Wiki="Attack 17 EzState Anime Number" />
+    <atk17_EzStateId AltName="Attack 18 EzState Anime Number" Wiki="Attack 18 EzState Anime Number" />
+    <atk18_EzStateId AltName="Attack 19 EzState Anime Number" Wiki="Attack 19 EzState Anime Number" />
+    <atk19_EzStateId AltName="Attack 20 EzState Anime Number" Wiki="Attack 20 EzState Anime Number" />
+    <atk20_EzStateId AltName="Attack 21 EzState Anime Number" Wiki="Attack 21 EzState Anime Number" />
+    <atk21_EzStateId AltName="Attack 22 EzState Anime Number" Wiki="Attack 22 EzState Anime Number" />
+    <atk22_EzStateId AltName="Attack 23 EzState Anime Number" Wiki="Attack 23 EzState Anime Number" />
+    <atk23_EzStateId AltName="Attack 24 EzState Anime Number" Wiki="Attack 24 EzState Anime Number" />
+    <atk24_EzStateId AltName="Attack 25 EzState Anime Number" Wiki="Attack 25 EzState Anime Number" />
+    <atk25_EzStateId AltName="Attack 26 EzState Anime Number" Wiki="Attack 26 EzState Anime Number" />
+    <atk26_EzStateId AltName="Attack 27 EzState Anime Number" Wiki="Attack 27 EzState Anime Number" />
+    <atk27_EzStateId AltName="Attack 28 EzState Anime Number" Wiki="Attack 28 EzState Anime Number" />
+    <atk28_EzStateId AltName="Attack 29 EzState Anime Number" Wiki="Attack 29 EzState Anime Number" />
+    <atk29_EzStateId AltName="Attack 30 EzState Anime Number" Wiki="Attack 30 EzState Anime Number" />
+    <atk0_MinDist AltName="Minimum distance of attack 1 [cm]" Wiki="Minimum distance of attack 1 [cm]" />
+    <atk1_MinDist AltName="Minimum distance of attack 2 [cm]" Wiki="Minimum distance of attack 2 [cm]" />
+    <atk2_MinDist AltName="Minimum distance of attack 3 [cm]" Wiki="Minimum distance of attack 3 [cm]" />
+    <atk3_MinDist AltName="Minimum distance of attack 4 [cm]" Wiki="Minimum distance of attack 4 [cm]" />
+    <atk4_MinDist AltName="Minimum distance of attack 5 [cm]" Wiki="Minimum distance of attack 5 [cm]" />
+    <atk5_MinDist AltName="Minimum distance of attack 6 [cm]" Wiki="Minimum distance of attack 6 [cm]" />
+    <atk6_MinDist AltName="Minimum distance of attack 7 [cm]" Wiki="Minimum distance of attack 7 [cm]" />
+    <atk7_MinDist AltName="Minimum distance of attack 8 [cm]" Wiki="Minimum distance of attack 8 [cm]" />
+    <atk8_MinDist AltName="Minimum distance of attack 9 [cm]" Wiki="Minimum distance of attack 9 [cm]" />
+    <atk9_MinDist AltName="Minimum distance of attack 10 [cm]" Wiki="Minimum distance of attack 10 [cm]" />
+    <atk10_MinDist AltName="Minimum distance of attack 11 [cm]" Wiki="Minimum distance of attack 11 [cm]" />
+    <atk11_MinDist AltName="Minimum distance of attack 12 [cm]" Wiki="Minimum distance of attack 12 [cm]" />
+    <atk12_MinDist AltName="Minimum distance of attack 13 [cm]" Wiki="Minimum distance of attack 13 [cm]" />
+    <atk13_MinDist AltName="Minimum distance of attack 14 [cm]" Wiki="Minimum distance of attack 14 [cm]" />
+    <atk14_MinDist AltName="Minimum distance of attack 15 [cm]" Wiki="Minimum distance of attack 15 [cm]" />
+    <atk15_MinDist AltName="Minimum distance of attack 16 [cm]" Wiki="Minimum distance of attack 16 [cm]" />
+    <atk16_MinDist AltName="Minimum distance of attack 17 [cm]" Wiki="Minimum distance of attack 17 [cm]" />
+    <atk17_MinDist AltName="Minimum distance of attack 18 [cm]" Wiki="Minimum distance of attack 18 [cm]" />
+    <atk18_MinDist AltName="Minimum distance of attack 19 [cm]" Wiki="Minimum distance of attack 19 [cm]" />
+    <atk19_MinDist AltName="Minimum distance of attack 20 [cm]" Wiki="Minimum distance of attack 20 [cm]" />
+    <atk20_MinDist AltName="Minimum distance of attack 21 [cm]" Wiki="Minimum distance of attack 21 [cm]" />
+    <atk21_MinDist AltName="Minimum distance of attack 22 [cm]" Wiki="Minimum distance of attack 22 [cm]" />
+    <atk22_MinDist AltName="Minimum distance of attack 23 [cm]" Wiki="Minimum distance of attack 23 [cm]" />
+    <atk23_MinDist AltName="Minimum distance of attack 24 [cm]" Wiki="Minimum distance of attack 24 [cm]" />
+    <atk24_MinDist AltName="Minimum distance of attack 25 [cm]" Wiki="Minimum distance of attack 25 [cm]" />
+    <atk25_MinDist AltName="Minimum distance of attack 26 [cm]" Wiki="Minimum distance of attack 26 [cm]" />
+    <atk26_MinDist AltName="Minimum distance of attack 27 [cm]" Wiki="Minimum distance of attack 27 [cm]" />
+    <atk27_MinDist AltName="Minimum distance of attack 28 [cm]" Wiki="Minimum distance of attack 28 [cm]" />
+    <atk28_MinDist AltName="Minimum distance of attack 29 [cm]" Wiki="Minimum distance of attack 29 [cm]" />
+    <atk29_MinDist AltName="Minimum distance of attack 30 [cm]" Wiki="Minimum distance of attack 30 [cm]" />
+    <atk0_MaxDist AltName="Maximum distance of attack 1 [cm]" Wiki="Maximum distance of attack 1 [cm]" />
+    <atk1_MaxDist AltName="Maximum distance of attack 2 [cm]" Wiki="Maximum distance of attack 2 [cm]" />
+    <atk2_MaxDist AltName="Maximum distance of attack 3 [cm]" Wiki="Maximum distance of attack 3 [cm]" />
+    <atk3_MaxDist AltName="Maximum distance of attack 4 [cm]" Wiki="Maximum distance of attack 4 [cm]" />
+    <atk4_MaxDist AltName="Maximum distance of attack 5 [cm]" Wiki="Maximum distance of attack 5 [cm]" />
+    <atk5_MaxDist AltName="Maximum distance of attack 6 [cm]" Wiki="Maximum distance of attack 6 [cm]" />
+    <atk6_MaxDist AltName="Maximum distance of attack 7 [cm]" Wiki="Maximum distance of attack 7 [cm]" />
+    <atk7_MaxDist AltName="Maximum distance of attack 8 [cm]" Wiki="Maximum distance of attack 8 [cm]" />
+    <atk8_MaxDist AltName="Maximum distance of attack 9 [cm]" Wiki="Maximum distance of attack 9 [cm]" />
+    <atk9_MaxDist AltName="Maximum distance of attack 10 [cm]" Wiki="Maximum distance of attack 10 [cm]" />
+    <atk10_MaxDist AltName="Maximum distance of attack 11 [cm]" Wiki="Maximum distance of attack 11 [cm]" />
+    <atk11_MaxDist AltName="Maximum distance of attack 12 [cm]" Wiki="Maximum distance of attack 12 [cm]" />
+    <atk12_MaxDist AltName="Maximum distance of attack 13 [cm]" Wiki="Maximum distance of attack 13 [cm]" />
+    <atk13_MaxDist AltName="Maximum distance of attack 14 [cm]" Wiki="Maximum distance of attack 14 [cm]" />
+    <atk14_MaxDist AltName="Maximum distance of attack 15 [cm]" Wiki="Maximum distance of attack 15 [cm]" />
+    <atk15_MaxDist AltName="Maximum distance of attack 16 [cm]" Wiki="Maximum distance of attack 16 [cm]" />
+    <atk16_MaxDist AltName="Maximum distance of attack 17 [cm]" Wiki="Maximum distance of attack 17 [cm]" />
+    <atk17_MaxDist AltName="Maximum distance of attack 18 [cm]" Wiki="Maximum distance of attack 18 [cm]" />
+    <atk18_MaxDist AltName="Maximum distance of attack 19 [cm]" Wiki="Maximum distance of attack 19 [cm]" />
+    <atk19_MaxDist AltName="Maximum distance of attack 20 [cm]" Wiki="Maximum distance of attack 20 [cm]" />
+    <atk20_MaxDist AltName="Maximum distance of attack 21 [cm]" Wiki="Maximum distance of attack 21 [cm]" />
+    <atk21_MaxDist AltName="Maximum distance of attack 22 [cm]" Wiki="Maximum distance of attack 22 [cm]" />
+    <atk22_MaxDist AltName="Maximum distance of attack 23 [cm]" Wiki="Maximum distance of attack 23 [cm]" />
+    <atk23_MaxDist AltName="Maximum distance of attack 24 [cm]" Wiki="Maximum distance of attack 24 [cm]" />
+    <atk24_MaxDist AltName="Maximum distance of attack 25 [cm]" Wiki="Maximum distance of attack 25 [cm]" />
+    <atk25_MaxDist AltName="Maximum distance of attack 26 [cm]" Wiki="Maximum distance of attack 26 [cm]" />
+    <atk26_MaxDist AltName="Maximum distance of attack 27 [cm]" Wiki="Maximum distance of attack 27 [cm]" />
+    <atk27_MaxDist AltName="Maximum distance of attack 28 [cm]" Wiki="Maximum distance of attack 28 [cm]" />
+    <atk28_MaxDist AltName="Maximum distance of attack 29 [cm]" Wiki="Maximum distance of attack 29 [cm]" />
+    <atk29_MaxDist AltName="Maximum distance of attack 30 [cm]" Wiki="Maximum distance of attack 30 [cm]" />
+    <atk0_AtkDistType AltName="Attack success distance type of attack 1" Wiki="Attack success distance type of attack 1" Enum="AI_ATK_DIST_TYPE" />
+    <atk1_AtkDistType AltName="Attack success distance type of attack 2" Wiki="Attack success distance type of attack 2" Enum="AI_ATK_DIST_TYPE" />
+    <atk2_AtkDistType AltName="Attack success distance type of attack 3" Wiki="Attack success distance type of attack 3" Enum="AI_ATK_DIST_TYPE" />
+    <atk3_AtkDistType AltName="Attack success distance type of attack 4" Wiki="Attack success distance type of attack 4" Enum="AI_ATK_DIST_TYPE" />
+    <atk4_AtkDistType AltName="Attack success distance type of attack 5" Wiki="Attack success distance type of attack 5" Enum="AI_ATK_DIST_TYPE" />
+    <atk5_AtkDistType AltName="Attack success distance type of attack 6" Wiki="Attack success distance type of attack 6" Enum="AI_ATK_DIST_TYPE" />
+    <atk6_AtkDistType AltName="Attack success distance type of attack 7" Wiki="Attack success distance type of attack 7" Enum="AI_ATK_DIST_TYPE" />
+    <atk7_AtkDistType AltName="Attack success distance type of attack 8" Wiki="Attack success distance type of attack 8" Enum="AI_ATK_DIST_TYPE" />
+    <atk8_AtkDistType AltName="Attack 9 success distance type" Wiki="Attack 9 success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk9_AtkDistType AltName="Attack 10 attack success distance type" Wiki="Attack 10 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk10_AtkDistType AltName="Attack 11 attack success distance type" Wiki="Attack 11 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk11_AtkDistType AltName="Attack 12 attack success distance type" Wiki="Attack 12 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk12_AtkDistType AltName="Attack 13 attack success distance type" Wiki="Attack 13 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk13_AtkDistType AltName="Attack success distance type of attack 14" Wiki="Attack success distance type of attack 14" Enum="AI_ATK_DIST_TYPE" />
+    <atk14_AtkDistType AltName="Attack 15 attack success distance type" Wiki="Attack 15 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk15_AtkDistType AltName="Attack 16 attack success distance type" Wiki="Attack 16 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk16_AtkDistType AltName="Attack 17 attack success distance type" Wiki="Attack 17 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk17_AtkDistType AltName="Attack 18 attack success distance type" Wiki="Attack 18 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk18_AtkDistType AltName="Attack 19 attack success distance type" Wiki="Attack 19 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk19_AtkDistType AltName="Attack 20 attack success distance type" Wiki="Attack 20 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk20_AtkDistType AltName="Attack success distance type of attack 21" Wiki="Attack success distance type of attack 21" Enum="AI_ATK_DIST_TYPE" />
+    <atk21_AtkDistType AltName="Attack 22 attack success distance type" Wiki="Attack 22 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk22_AtkDistType AltName="Attack success distance type of attack 23" Wiki="Attack 23 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk23_AtkDistType AltName="Attack success distance type of attack 24" Wiki="Attack success distance type of attack 24" Enum="AI_ATK_DIST_TYPE" />
+    <atk24_AtkDistType AltName="Attack 25 attack success distance type" Wiki="Attack 25 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk25_AtkDistType AltName="Attack 26 attack success distance type" Wiki="Attack 26 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk26_AtkDistType AltName="Attack 27 attack success distance type" Wiki="Attack 27 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk27_AtkDistType AltName="Attack 28 attack success distance type" Wiki="Attack 28 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk28_AtkDistType AltName="Attack 29 attack success distance type" Wiki="Attack 29 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
+    <atk29_AtkDistType AltName="Attack success distance type of attack 30" Wiki="Attack success distance type of attack 30" Enum="AI_ATK_DIST_TYPE" />
+    <pad0 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

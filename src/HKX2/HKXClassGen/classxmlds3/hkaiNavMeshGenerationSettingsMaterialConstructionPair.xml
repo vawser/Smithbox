@@ -1,0 +1,6 @@
+<class name='hkaiNavMeshGenerationSettingsMaterialConstructionPair' version='1' signature='0xce2a7760' size='8'>
+  <members>
+    <member name='materialIndex' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='4' etype='ConstructionFlagsBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name='hkcdStaticTreeDynamicStoragehkcdStaticTreeCodecRaw' version='1' signature='0x850534d6' size='16'>
+  <members>
+    <member name='nodes' offset='0' ctype='hkcdStaticTreeCodecRaw' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

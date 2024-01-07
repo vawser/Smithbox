@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MAGIC_CATEGORY">
+      <Option Value="0" Name="Sorcery" />
+      <Option Value="1" Name="Miracle" />
+      <Option Value="2" Name="Pyromancy" />
+	  <Option Value="3" Name="Vow Magic (Magic 4)" />
+    </Enum>
+    <Enum Name="MAGIC_SCHOOL">
+      <Option Value="3" Name="Sorcery" />
+      <Option Value="4" Name="Miracle" />
+	  <Option Value="5" Name="Basic" />
+	  <Option Value="9" Name="Kick" />
+      <Option Value="10" Name="Pyromancy" />
+    </Enum>
+    <Enum Name="MAGIC_MOTION_TYPE">
+      <Option Value="0" Name="Quick Soul Arrow [0.5] (1.0)" />
+      <Option Value="1" Name="Magic Weapon [1.0]" />
+      <Option Value="2" Name="Hidden Body [1.0]" />
+      <Option Value="3" Name="Unused" />
+      <Option Value="4" Name="Unused" />
+      <Option Value="5" Name="Fireball [1.0]" />
+      <Option Value="6" Name="Iron Flesh [1.5]" />
+      <Option Value="7" Name="Unused" />
+      <Option Value="8" Name="Great Combustion [0.5]" />
+      <Option Value="9" Name="Poison Mist [1.33]" />
+      <Option Value="10" Name="Firestorm [1.67]" />
+      <Option Value="11" Name="Rapport [1.33]" />
+      <Option Value="12" Name="Force [0.33]" />
+      <Option Value="13" Name="Chameleon [1.0]" />
+      <Option Value="14" Name="Unused" />
+      <Option Value="15" Name="Unused" />
+      <Option Value="16" Name="Unused" />
+      <Option Value="17" Name="Magic Shield [1.17]" />
+      <Option Value="18" Name="Emit Force [1.33]" />
+      <Option Value="19" Name="Lightning Spear [0.43] (1.72)" />
+      <Option Value="20" Name="Cast Light [1.33]" />
+      <Option Value="21" Name="Unused" />
+      <Option Value="22" Name="Very Slow Soul Arrow [1.67] (3.34)" />
+      <Option Value="23" Name="Fire Surge [0.67]" />
+      <Option Value="24" Name="Fire Whip [0.67]" />
+      <Option Value="25" Name="Soul Greatsword [0.67]" />
+      <Option Value="26" Name="Heal [1.83] (3.66)" />
+      <Option Value="27" Name="Heal Aid [0.73]" />
+      <Option Value="28" Name="Sacred Oath [1.83]" />
+      <Option Value="29" Name="Farron Dart [0.4]" />
+      <Option Value="30" Name="Farron Flashsword [0.67]" />
+      <Option Value="31" Name="Soul Stream [2.83]" />
+      <Option Value="32" Name="Profaned Flame [1.0]" />
+      <Option Value="33" Name="Sacred Flame [1.83]" />
+      <Option Value="34" Name="Lightning Stake [1.0]" />
+      <Option Value="35" Name="Gnaw [1.67]" />
+      <Option Value="36" Name="Lightning Storm [1.67]" />
+      <Option Value="37" Name="Dark Edge [0.67]" />
+      <Option Value="38" Name="Warmth [1.33]" />
+      <Option Value="39" Name="Wrath of the Gods [1.63]" />
+      <Option Value="40" Name="Farron Hail [1.57]" />
+      <Option Value="41" Name="Slow Soul Arrow [1.67]" />
+      <Option Value="42" Name="Black Serpent [1.0]" />
+      <Option Value="43" Name="Chaos Bed Vestiges [0.97]" />
+      <Option Value="44" Name="Lifehunt Scythe [1.17]" />
+      <Option Value="45" Name="Divine Pillars of Light [1.67]" />
+      <Option Value="46" Name="Old Moonlight [0.67]" />
+      <Option Value="47" Name="Floating Chaos [1.33]" />
+      <Option Value="48" Name="Way of White Corona [0.43]" />
+      <Option Value="49" Name="Lightning Arrow [1.83]" />
+      <Option Value="50" Name="Flame Fan [0.5]" />
+    </Enum>
+    <Enum Name="BEHAVIOR_REF_TYPE">
+      <Option Value="0" Name="Behavior" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="MAGIC_STATUS_TYPE">
+      <Option Value="0" Name="Strength" />
+      <Option Value="1" Name="Dexterity" />
+      <Option Value="2" Name="Faith" />
+      <Option Value="3" Name="Intelligence" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Spell data" Row0Dummy="" AlternativeOrder="sortId,iconId,-,
+slotLength,-,
+requirementIntellect,requirementFaith,requirementLuck,-,
+analogDexterityMin,analogDexterityMax,-,
+ezStateBehaviorType,refType,hasSpEffectType,spEffectCategory,-,
+refId1,refId2,refId3,refId4,-,
+refCategory1,refCategory2,refCategory3,refCategory4,-,
+refIdFpCost1,refIdFpCost2,refIdFpCost3,refIdFpCost4,-,
+refIdSpCost1,refIdSpCost2,refIdSpCost3,refIdSpCost4,-,
+CastSfx1,CastSfx2,CastSfx3,-,
+ReplacementStatusType,ReplacementStatus1,ReplacementStatus2,ReplacementStatus3,ReplacementStatus4,-,
+magicId0,magicId1,magicId2,magicId3,-,
+yesNoDialogMessageId,menuType,-,
+limitCancelSpEffectId,aiNotifyType,behaviorId,mtrlItemId,replaceMagicId,-,
+spellchange1,spellchange2,-,
+enable_live,enable_gray,enable_white,enable_black,-,
+disable_offline,vowType1,vowType2,vowType3,vowType4,vowType5,vowType6,vowType7,Unk7,Unk8,-,
+vowType8,vowType9,vowType10,vowType11,vowType12,vowType13,vowType14,vowType15,
+toughnessCorrectRate,Unk10,maxQuantity,-,
+unknown1,unknown2,unknown3,unknown4,unknown5,unknown6,unknown,enableMulti,enableMultOnly,isEnchant,isShieldEnchant,-,
+"/>
+  <Field>
+    <yesNoDialogMessageId AltName="Dialog Message ID" Wiki="Message ID of Yes / No dialog issued when using magic" />
+    <limitCancelSpEffectId AltName="Ignore Usage Restriction - SpEffect ID" Wiki="Usage restrictions can be ignored when the specified special effect ID is activated" />
+    <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect)" />
+    <iconId AltName="Icon ID" />
+    <requirementLuck AltName="Requirement: LCK" Wiki="Can't be equipped without more PC luck" />
+    <aiNotifyType AltName="AI Interrupt Type" Wiki="AI interrupt occurs in act (AI notification when magic is activated)" />
+    <refIdFpCost1 AltName="FP Consumption [1]" />
+    <refIdSpCost1 AltName="Stamina Consumption [1]" />
+    <behaviorId AltName="Behavior ID" Wiki="Set the action ID" />
+    <mtrlItemId AltName="Material Item ID" Wiki="Item ID required for purchase" />
+	<replaceMagicId AltName="Replace Magic ID" Wiki="Greys out icon when set to 1 and Disabled by State Info has a value. Needs further testing." />
+    <maxQuantity AltName="Number of Uses" />
+    <heroPoint AltName="Humanity Cost" />
+    <sfxVariationId AltName="SFX Variation ID" />
+    <overDexterity AltName="Dexterity over Start Value" Wiki="Skill over start value" />
+    <slotLength AltName="Slot Usage" />
+	<requirementIntellect AltName="Requirement: INT" Wiki="Can't be equipped without more PC intelligence" />
+    <requirementFaith AltName="Requirement: FTH" Wiki="It cannot be equipped without the power of the PC any more." />
+    <analogDexterityMin AltName="Casting Speed - DEX Start Range" Wiki="Motion cancel analog: Minimum skill value" />
+    <analogDexterityMax AltName="Casting Speed - DEX End Range" Wiki="Motion cancel analog: Maximum skill value" />
+    <ezStateBehaviorType AltName="Magic School Type" Wiki="Used for sorting> For menu" Enum="MAGIC_CATEGORY" />
+    <refCategory1 Enum="BEHAVIOR_REF_TYPE" AltName="Reference Category [1]" />
+    <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="MAGIC_SCHOOL" />
+    <refType AltName="Motion Category" Enum="MAGIC_MOTION_TYPE" />
+    <menuType AltName="Open Menu Type" Wiki="Menu type to be displayed when using magic"/>
+    <refCategory4 Enum="BEHAVIOR_REF_TYPE" AltName="Reference Category [4]" />
+	<hasSpEffectType AltName="Disabled by State Info" Wiki="Prevents casting when State Info is active. Set replaceMagicId to 1 to make icon grey out." />
+    <unknown1 AltName="Unknown" IsBool="" />
+    <spellchange1 AltName="Affected by Spell Change Flag 1" IsBool="" Wiki="Allows spell to use +6 ID version when using catalyst like Filianore's Chime.\nBoth flags must be True."/>
+    <spellchange2 AltName="Affected by Spell Change Flag 2" IsBool="" Wiki="Allows spell to use +6 ID version when using catalyst like Filianore's Chime.\nBoth flags must be True."/>
+    <unknown2 AltName="Unknown" IsBool="" />
+    <unknown3 AltName="Unknown" IsBool="" />
+    <unknown4 AltName="Unknown" IsBool="" />
+    <unknown5 AltName="Unknown" IsBool="" />
+    <unknown6 AltName="Unknown" IsBool="" />
+    <enableMulti AltName="Unknown" IsBool="" />
+    <enableMultOnly AltName="Unknown" IsBool="" />
+    <isEnchant AltName="Unknown" IsBool="" />
+    <isShieldEnchant AltName="Is Shield Enchantment" IsBool="" />
+    <enable_live AltName="Unknown" IsBool="" />
+    <enable_gray AltName="Unknown" IsBool="" />
+    <enable_white AltName="Unknown" IsBool="" />
+    <enable_black AltName="Unknown" IsBool="" />
+    <enable_live AltName="Enable Live" Wiki="Can surviving characters be used?" IsBool="" />
+    <enable_gray AltName="Enable Gray" Wiki="Can gray characters be used?" IsBool="" />
+    <enable_white AltName="Enable White" Wiki="Can white ghost characters be used?" IsBool="" />
+    <enable_black AltName="Enable Black" Wiki="Can black ghost characters be used?" IsBool="" />
+    <disable_offline AltName="Vow Type 0" Wiki="No Covenant" IsBool="" />
+    <vowType1 AltName="Vow Type 1" Wiki="Blade of the Darkmoon" IsBool="" />
+    <vowType2 AltName="Vow Type 2" Wiki="Warrior of Sunlight" IsBool="" />
+    <vowType3 AltName="Vow Type 3" Wiki="Mound-makers" IsBool="" />
+    <vowType4 AltName="Vow Type 4" Wiki="Spears of the Church" IsBool="" />
+    <vowType5 AltName="Vow Type 5" Wiki="Rosaria's Fingers" IsBool="" />
+    <vowType6 AltName="Vow Type 6" Wiki="Watchdogs of Farron" IsBool="" />
+    <vowType7 AltName="Vow Type 7" Wiki="Aldrich Faithful" IsBool="" />
+    <VowType8 AltName="Enabled in Multiplayer" IsBool="" />
+    <VowType9 AltName="Only Allowed in Multiplayer" Wiki="Needs testing." IsBool="" />
+    <VowType10 AltName="Is Weapon Buff" IsBool="" />
+    <VowType11 AltName="Is Shield Buff" IsBool="" />
+    <VowType12 AltName="Usable by Human" IsBool="" />
+    <VowType13 AltName="Usable by Hollow" IsBool="" />
+    <VowType14 AltName="Usable by Phantom" IsBool="" />
+    <VowType15 AltName="Usable by Dark Spirit" IsBool="" />
+	<Unk7 AltName="Unknown" Wiki="Needs testing. 8 for Homeward.\nPossibily a combo of castResonanceMagic,isValidTough_ProtSADmg, and isWarpMagic." />
+	<Unk8 AltName="Vow Type Extra" Wiki="254 - Vow 8 (Way of Blue) Disabled\n253 - Vow 9 (Blue Sentinels) Disabled\n252 - Vow 8 and 9 Disabled\n251 and beyond - The other vows and permutations" />
+	<CastSfx1 AltName="VFX ID - Casting" />
+	<CastSfx2 AltName="VFX ID - On Cast" />
+	<CastSfx3 AltName="VFX ID - After Cast" />
+	<toughnessCorrectRate AltName="Toughness Correction" Wiki="Needs testing"/>
+    <ReplacementStatusType AltName="Replacement Status Type" Wiki="Replacement status type" Enum="MAGIC_STATUS_TYPE" />
+	<ReplacementStatus1 AltName="Replacement Threshold [1]" Wiki="Replacement status value 1" />
+	<ReplacementStatus2 AltName="Replacement Threshold [2]" Wiki="Replacement status value 2" />
+	<ReplacementStatus3 AltName="Replacement Threshold [3]" Wiki="Replacement status value 3" />
+	<ReplacementStatus4 AltName="Replacement Threshold [4]" Wiki="Replacement status value 4" />
+    <refCategory2 Enum="BEHAVIOR_REF_TYPE" AltName="Reference Category [2]" />
+    <refIdSpCost4 AltName="Stamina Consumption [4]" />
+	<magicId0 Refs="Magic" AltName="Replacement Magic ID [1]" />
+	<magicId1 Refs="Magic" AltName="Replacement Magic ID [2]" />
+	<magicId2 Refs="Magic" AltName="Replacement Magic ID [3]" />
+	<magicId3 Refs="Magic" AltName="Replacement Magic ID [4]" />
+    <refIdFpCost2 AltName="FP Consumption [2]" />
+    <refIdSpCost2 AltName="Stamina Consumption [2]" />
+	<Unk10 AltName="Create Limit Group ID" Wiki="Needs testing"/>
+    <refCategory3 Enum="BEHAVIOR_REF_TYPE" AltName="Reference Category [3]" />
+    <refIdFpCost4 AltName="FP Consumption [4]" />
+    <refIdFpCost3 AltName="FP Consumption [3]" />
+    <refIdSpCost3 AltName="Stamina Consumption [3]" />
+    <refId1 AltName="Reference ID [1]" Refs="Bullet,SpEffectParam,BehaviorParam_PC" />
+    <refId2 AltName="Reference ID [2]" Refs="Bullet,SpEffectParam,BehaviorParam_PC" />
+    <refId3 AltName="Reference ID [3]" Refs="Bullet,SpEffectParam,BehaviorParam_PC" />
+    <refId4 AltName="Reference ID [4]" Refs="Bullet,SpEffectParam,BehaviorParam_PC" />
+    <pad1 AltName="" />
+  </Field>
+  <Self />
+</PARAMMETA>

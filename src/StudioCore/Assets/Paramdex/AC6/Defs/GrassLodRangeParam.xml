@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GRASS_LOD_RANGE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 LOD0_range"></Field>
+    <Field Def="f32 LOD0_play"></Field>
+    <Field Def="f32 LOD1_range"></Field>
+    <Field Def="f32 LOD1_play"></Field>
+    <Field Def="f32 LOD2_range"></Field>
+    <Field Def="f32 LOD2_play"></Field>
+  </Fields>
+</PARAMDEF>

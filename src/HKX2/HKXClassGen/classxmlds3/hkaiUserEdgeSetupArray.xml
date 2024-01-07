@@ -1,0 +1,5 @@
+<class name='hkaiUserEdgeSetupArray' version='1' signature='0x35596d8' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='edgeSetups' offset='16' ctype='hkaiUserEdgeUtilsUserEdgeSetup' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <SoundNo AltName="Sound Number" Wiki="Sound No to play (sound type is fixed to a)" />
+    <ExpandRange AltName="Expand Range" Wiki="Extended distance of playback judgment area" />
+    <FollowSpeed AltName="Follow Speed" Wiki="Follow-up speed (fixed speed) to the target position of the actual sound source" />
+    <FollowRate AltName="Follow Rate" Wiki="Follow-up speed (difference ratio) to the target position of the actual sound source" />
+  </Field>
+  <Self />
+</PARAMMETA>

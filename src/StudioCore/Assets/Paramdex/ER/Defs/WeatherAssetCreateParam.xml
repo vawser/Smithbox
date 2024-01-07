@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>WEATHER_ASSET_CREATE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 AssetId">
+      <DisplayName>アセットId</DisplayName>
+      <Description>生成するアセットIDを指定します。AEG999_999 -&gt; 999999</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999999</Maximum>
+    </Field>
+    <Field Def="u32 SlotNo">
+      <DisplayName>スロット番号</DisplayName>
+      <Description>生成制御用の番号です。同一スロットには１個のアセットのみ生成が可能です。重複して生成させたい、させたくない制御ができます。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>4</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 CreateConditionType">
+      <DisplayName>発生条件</DisplayName>
+      <Enum>WEATHER_ASSET_CREATE_CONDITION_TYPE</Enum>
+      <Description>発生の条件のタイプです</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 padding0[3]">
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="s16 TransitionSrcWeather">
+      <DisplayName>遷移元天候</DisplayName>
+      <Enum>WEATHER_TYPE</Enum>
+      <Description>遷移元の天候を指定します。発生条件が「遷移」のときだけ参照されます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 TransitionDstWeather">
+      <DisplayName>遷移先天候</DisplayName>
+      <Enum>WEATHER_TYPE</Enum>
+      <Description>遷移先の天候を指定します。発生条件が「遷移」のときだけ参照されます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 ElapsedTimeCheckweather">
+      <DisplayName>経過時間チェック天候</DisplayName>
+      <Enum>WEATHER_TYPE</Enum>
+      <Description>経過時間をチェックする天候を指定します。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 padding1[2]">
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="f32 ElapsedTime">
+      <DisplayName>経過時間[Second]</DisplayName>
+      <Description>経過時間を指定します。発生条件が「時間経過」のときだけ参照されます。現実時間[秒]単位で指定します。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 CreateDelayTime = -1">
+      <DisplayName>生成遅延時間[Second]</DisplayName>
+      <Description>生成が決定してから遅延する時間を指定します。遅延している間は作成したスロットは使用中になります。0以下で即時作成。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u32 CreateProbability = 100">
+      <DisplayName>発生確率[％]</DisplayName>
+      <Description>天候遷移、または経過時間の条件を満たした際に発生する確率を指定します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>100</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 LifeTime = 600">
+      <DisplayName>寿命[Second]</DisplayName>
+      <Description>生成したアセットの寿命を指定します。現実時間[秒]単位で指定します。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>10</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 FadeTime = 1">
+      <DisplayName>フェード時間[Second]</DisplayName>
+      <Description>フェードイン、フェードアウトに使用される時間[秒]。0以下でフェードなし。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>64</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 EnableCreateTimeMin = -1">
+      <DisplayName>生成可能開始時刻[Hour]</DisplayName>
+      <Description>生成可能な開始時刻を指定します[0.0 - 24.0]。開始、終了どちらかに-1を入れると無制限(全時間で生成可能)の扱いになります。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>24</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 EnableCreateTimeMax = -1">
+      <DisplayName>生成可能終了時刻[Hour]</DisplayName>
+      <Description>生成可能な終了時刻を指定します[0.0 - 24.0]。開始、終了どちらかに-1を入れると無制限(全時間で生成可能)の扱いになります。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>24</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 CreatePoint0 = -1">
+      <DisplayName>生成ポイント0</DisplayName>
+      <Description>生成ポイント番号を指定します。MapStudioの「天候アセット生成ポイント」の末尾3桁の数値を指定してください。-1だと無効になります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 CreatePoint1 = -1">
+      <DisplayName>生成ポイント1</DisplayName>
+      <Description>生成ポイント番号を指定します。MapStudioの「天候アセット生成ポイント」の末尾3桁の数値を指定してください。-1だと無効になります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 CreatePoint2 = -1">
+      <DisplayName>生成ポイント2</DisplayName>
+      <Description>生成ポイント番号を指定します。MapStudioの「天候アセット生成ポイント」の末尾3桁の数値を指定してください。-1だと無効になります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 CreatePoint3 = -1">
+      <DisplayName>生成ポイント3</DisplayName>
+      <Description>生成ポイント番号を指定します。MapStudioの「天候アセット生成ポイント」の末尾3桁の数値を指定してください。-1だと無効になります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s8 CreateAssetLimitId0 = -1">
+      <DisplayName>生成制限ID0</DisplayName>
+      <Description>生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="s8 CreateAssetLimitId1 = -1">
+      <DisplayName>生成制限ID1</DisplayName>
+      <Description>生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="s8 CreateAssetLimitId2 = -1">
+      <DisplayName>生成制限ID2</DisplayName>
+      <Description>生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="s8 CreateAssetLimitId3 = -1">
+      <DisplayName>生成制限ID3</DisplayName>
+      <Description>生成制限用のIDです。-1:無制限。「マップデフォルトパラメータ.xlsm」の生成制限IDと一致した場合のみ生成が許可されます(SEQ08921)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="dummy8 Reserved2[4]">
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

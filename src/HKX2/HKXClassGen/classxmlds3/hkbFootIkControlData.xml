@@ -1,0 +1,6 @@
+<class name='hkbFootIkControlData' version='1' signature='0x7f18a9a6' size='176'>
+  <members>
+    <member name='gains' offset='0' ctype='hkbFootIkGains' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enabled' offset='40' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='32' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

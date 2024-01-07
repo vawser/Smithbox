@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CHR_MODEL_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="u8 modelMemoryType"></Field>
+    <Field Def="u8 texMemoryType"></Field>
+    <Field Def="s16 cameraDitherFadeId"></Field>
+    <Field Def="s8 UnkSbyte0x08"></Field>
+    <Field Def="u8 UnkByte0x09"></Field>
+    <Field Def="s16 Unk0x0A"></Field>
+  </Fields>
+</PARAMDEF>

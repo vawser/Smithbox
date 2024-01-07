@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <physicsAtkRate AltName="Damage %: Physical" Wiki="Physical attack power correction value" />
+    <magicAtkRate AltName="Damage %: Magic" Wiki="Magic attack power correction value" />
+    <fireAtkRate AltName="Damage %: Fire" Wiki="Fire attack power correction value" />
+    <thunderAtkRate AltName="Damage %: Lightning" Wiki="Correction value of electric shock attack power" />
+    <staminaAtkRate AltName="Damage %: Stamina" Wiki="Stamina attack power correction value" />
+    <saWeaponAtkRate AltName="Damage %: Poise" Wiki="Super Armor Weapon Attack Color Correction Value" />
+    <saDurabilityRate AltName="Poise Durability" Wiki="SA endurance correction value" />
+    <correctStrengthRate AltName="Correction %: STR" Wiki="Correction value of muscle strength correction" />
+    <correctAgilityRate AltName="Correction %: DEX" Wiki="Correction value of agility correction" />
+    <correctMagicRate AltName="Correction %: INT" Wiki="Correction value of magic power correction" />
+    <correctFaithRate AltName="Correction %: FTH" Wiki="Correction value of faith correction" />
+    <physicsGuardCutRate AltName="Guard Absorption %: Physical" Wiki="Correction value of physical attack cut rate when guarding" />
+    <magicGuardCutRate AltName="Guard Absorption %: Magic" Wiki="Correction value of magic attack cut rate when guarding" />
+    <fireGuardCutRate AltName="Guard Absorption %: Fire" Wiki="Correction value of flame attack cut rate when guarding" />
+    <thunderGuardCutRate AltName="Guard Absorption %: Lightning" Wiki="Correction value of electric shock attack cut rate when guarding" />
+    <poisonGuardResistRate AltName="Guard Absorption %: Poison" Wiki="Correction value of poison attack cut rate when guarding" />
+    <diseaseGuardResistRate AltName="Guard Absorption %: Scarlet Rot" Wiki="Correction value of plague attack cut rate when guarding" />
+    <bloodGuardResistRate AltName="Guard Absorption %: Hemorrhage" Wiki="Correction value for bleeding attack cut rate when guarding" />
+    <curseGuardResistRate AltName="Guard Absorption %: Blight" Wiki="Correction value of curse attack cut rate when guarding" />
+    <staminaGuardDefRate AltName="Guard Absorption %: Stability" Wiki="Correction value of stamina defense power when guarding" />
+    <spEffectId1 AltName="Behavior SpEffect [1] Offset" Wiki="Addition correction value for special effect ID1" />
+    <spEffectId2 AltName="Behavior SpEffect [2] Offset" Wiki="Addition correction value for special effect ID2" />
+    <spEffectId3 AltName="Behavior SpEffect [3] Offset" Wiki="Addition correction value for special effect ID3" />
+    <residentSpEffectId1 AltName="Passive SpEffect [1] Offset" Wiki="Addition correction value for resident special effect ID1" />
+    <residentSpEffectId2 AltName="Passive SpEffect [2] Offset" Wiki="Addition correction value for resident special effect ID2" />
+    <residentSpEffectId3 AltName="Passive SpEffect [3] Offset" Wiki="Addition correction value for resident special effect ID3" />
+    <materialSetId AltName="Reinforcement Material Set Offset" Wiki="Addition correction value of material parameter ID" />
+    <maxReinforceLevel AltName="Max Reinforcement Level" Wiki="Level value for maximum enhanced weapon level" />
+    <darkAtkRate AltName="Damage %: Holy" Wiki="Dark attack power correction value" />
+    <darkGuardCutRate AltName="Guard Absorption %: Holy" Wiki="Correction value of darkness attack cut rate when guarding" />
+    <correctLuckRate AltName="Correction %: ARC" Wiki="Correction value of luck correction" />
+    <freezeGuardDefRate AltName="Guard Absorption %: Frostbite" Wiki="Correction value of cold air attack cut rate when guarding" />
+    <reinforcePriceRate AltName="Reinforce Price Rate" Wiki="Correction value to multiply the enhancement price of the weapon parameter" />
+    <baseChangePriceRate AltName="Base Change Price Rate" Wiki="Correction value to multiply the evolution price of the weapon parameter" />
+    <enableGemRank AltName="Ash of War Rank" Wiki="Mountable magic stone rank" IsBool="" />
+    <pad2 AltName=""/>
+    <sleepGuardDefRate AltName="Guard Absorption %: Sleep" Wiki="Correction value of sleep attack cut rate when guarding" />
+    <madnessGuardDefRate AltName="Guard Absorption %: Madness" Wiki="Correction value of mad attack cut rate when guarding" />
+    <baseAtkRate AltName="Damage %: BaseAtk" Wiki="Damage multiplier for attacks with isAddBaseAtk in AtkParam, typically used with Ash of Wars." />
+  </Field>
+  <Self ConsecutiveIDs="" Wiki="Defines upgrades of weapons, include stat changes and upgrade cost (EquipMtrlSetParam id offset)" AlternativeOrder="materialSetId,maxReinforceLevel,reinforcePriceRate,baseChangePriceRate,enableGemRank,-,
+baseAtkRate,physicsAtkRate,magicAtkRate,fireAtkRate,thunderAtkRate,darkAtkRate,-,
+correctStrengthRate,correctAgilityRate,correctMagicRate,correctFaithRate,correctLuckRate,-,
+staminaAtkRate,saWeaponAtkRate,saDurabilityRate,-,
+physicsGuardCutRate,magicGuardCutRate,fireGuardCutRate,thunderGuardCutRate,darkGuardCutRate,staminaGuardDefRate,-,
+poisonGuardResistRate,diseaseGuardResistRate,bloodGuardResistRate,curseGuardResistRate,freezeGuardDefRate,sleepGuardDefRate,madnessGuardDefRate,-,
+spEffectId1,spEffectId2,spEffectId3,residentSpEffectId1,residentSpEffectId2,residentSpEffectId3,-,"/>
+</PARAMMETA>

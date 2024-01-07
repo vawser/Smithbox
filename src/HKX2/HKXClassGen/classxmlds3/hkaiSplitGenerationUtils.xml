@@ -1,0 +1,16 @@
+<class name='hkaiSplitGenerationUtils' version='1' signature='0xd0884934' size='1'>
+  <enums>
+    <enum name='SplitAndGenerateOptions' flags='00000000'>
+      <enumitem name='SIMPLIFY_INDIVIDUALLY' value='0'/>
+      <enumitem name='SIMPLIFY_INDIVIDUALLY_BORDER_PRESERVE' value='1'/>
+      <enumitem name='SIMPLIFY_ALL_AT_ONCE' value='2'/>
+      <enumitem name='SIMPLIFY_TWO_PASS' value='3'/>
+    </enum>
+    <enum name='SplitMethod' flags='00000000'>
+      <enumitem name='SPLIT_UNIFORM' value='0'/>
+      <enumitem name='SPLIT_ADAPTIVE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

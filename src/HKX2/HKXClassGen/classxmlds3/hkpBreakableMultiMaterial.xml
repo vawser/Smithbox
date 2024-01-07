@@ -1,0 +1,6 @@
+<class name='hkpBreakableMultiMaterial' version='1' signature='0xab0e4be4' size='56' parent='hkpBreakableMaterial'>
+  <members>
+    <member name='subMaterials' offset='32' ctype='hkpBreakableMaterial' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='inverseMapping' offset='48' ctype='hkpBreakableMultiMaterialInverseMapping' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

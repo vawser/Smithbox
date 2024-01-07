@@ -1,0 +1,59 @@
+<class name='hkaiNavMeshGenerationSettings' version='1' signature='0x8d773f14' size='528' parent='hkReferencedObject'>
+  <enums>
+    <enum name='ConstructionFlagsBits' flags='00000000'>
+      <enumitem name='MATERIAL_WALKABLE' value='1'/>
+      <enumitem name='MATERIAL_CUTTING' value='2'/>
+      <enumitem name='MATERIAL_WALKABLE_AND_CUTTING' value='3'/>
+    </enum>
+    <enum name='CharacterWidthUsage' flags='00000000'>
+      <enumitem name='NONE' value='0'/>
+      <enumitem name='BLOCK_EDGES' value='1'/>
+      <enumitem name='SHRINK_NAV_MESH' value='2'/>
+    </enum>
+    <enum name='TriangleWinding' flags='00000000'>
+      <enumitem name='WINDING_CCW' value='0'/>
+      <enumitem name='WINDING_CW' value='1'/>
+    </enum>
+    <enum name='EdgeMatchingMetric' flags='00000000'>
+      <enumitem name='ORDER_BY_OVERLAP' value='1'/>
+      <enumitem name='ORDER_BY_DISTANCE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='characterHeight' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='up' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='quantizationGridSize' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxWalkableSlope' offset='52' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleWinding' offset='56' etype='TriangleWinding' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='degenerateAreaThreshold' offset='60' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='degenerateWidthThreshold' offset='64' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='convexThreshold' offset='68' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxNumEdgesPerFace' offset='72' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeMatchingParams' offset='76' ctype='hkaiNavMeshEdgeMatchingParameters' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeMatchingMetric' offset='132' etype='EdgeMatchingMetric' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeConnectionIterations' offset='136' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='regionPruningSettings' offset='144' ctype='hkaiNavMeshGenerationSettingsRegionPruningSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='wallClimbingSettings' offset='176' ctype='hkaiNavMeshGenerationSettingsWallClimbingSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boundsAabb' offset='192' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='carvers' offset='224' ctype='hkaiCarver' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='painters' offset='240' ctype='hkaiMaterialPainter' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='painterOverlapCallback' offset='256' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='defaultConstructionProperties' offset='264' etype='ConstructionFlagsBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materialMap' offset='272' ctype='hkaiNavMeshGenerationSettingsMaterialConstructionPair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fixupOverlappingTriangles' offset='288' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='overlappingTrianglesSettings' offset='292' ctype='hkaiOverlappingTrianglesSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldInputVertices' offset='304' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldThreshold' offset='308' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minCharacterWidth' offset='312' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='characterWidthUsage' offset='316' etype='CharacterWidthUsage' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableSimplification' offset='317' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simplificationSettings' offset='320' ctype='hkaiNavMeshSimplificationUtilsSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='carvedMaterialDeprecated' offset='480' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='carvedCuttingMaterialDeprecated' offset='484' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='setBestFaceCenters' offset='488' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='checkEdgeGeometryConsistency' offset='489' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='saveInputSnapshot' offset='490' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='snapshotFilename' offset='496' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='overrideSettings' offset='504' ctype='hkaiNavMeshGenerationSettingsOverrideSettings' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

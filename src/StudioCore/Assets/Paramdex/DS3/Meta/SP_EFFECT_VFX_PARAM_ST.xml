@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="SP_EFFECT_VFX_SOUL_PARAM_TYPE">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Bright Blue" />
+      <Option Value="2" Name="Red Orange" />
+      <Option Value="3" Name="Green Yellow" />
+      <Option Value="4" Name="Purple" />
+      <Option Value="5" Name="Moss Green" />
+      <Option Value="6" Name="Blue White" />
+      <Option Value="7" Name="Dark Blue" />
+      <Option Value="8" Name="Cobalt Blue" />
+      <Option Value="9" Name="None" />
+      <Option Value="10" Name="White" />
+      <Option Value="11" Name="White Outline" />
+      <Option Value="12" Name="None" />
+      <Option Value="13" Name="[Dark] Bright Blue" />
+      <Option Value="14" Name="[Dark] Red Orange" />
+      <Option Value="15" Name="[Dark] Green Yellow" />
+      <Option Value="16" Name="[Dark] Purple" />
+      <Option Value="17" Name="[Dark] Moss Green" />
+      <Option Value="18" Name="[Dark] Blue White" />
+      <Option Value="19" Name="[Dark] Dark Blue" />
+      <Option Value="20" Name="[Dark] Cobalt Blue" />
+      <Option Value="21" Name="None" />
+      <Option Value="22" Name="White" />
+      <Option Value="23" Name="White Outline" />
+    </Enum>
+	<Enum Name="SP_EFFECT_VFX_EFFECT_TYPE">
+      <Option Value="0" Name="Body" />
+      <Option Value="1" Name="Right Weapon" />
+      <Option Value="2" Name="Left Weapon" />
+    </Enum>
+	<Enum Name="SP_EFFECT_OVERWRITE_PHANTOM_PARAM_TYPE">
+      <Option Value="0" Name="No Change" />
+      <Option Value="1" Name="Forced Human" />
+      <Option Value="2" Name="Forced Hollow" />
+    </Enum>
+	<Enum Name="SP_EFFECT_VFX_SFX_ID_OFFSET_TYPE">
+      <Option Value="0" Name="No Change" />
+      <Option Value="2" Name="On" />
+    </Enum>
+    <Enum Name="SP_EFFECT_VFX_WET_ASPECT_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+        <Option Value="6" Name="Type 6" />
+        <Option Value="7" Name="Type 7" />
+        <Option Value="8" Name="Type 8" />
+        <Option Value="18" Name="Type 18" />
+        <Option Value="19" Name="Type 19" />
+    </Enum>
+  </Enums>
+  <Field>
+    <midstSfxId AltName="Midst SFX ID" Wiki="In effect SfxID (-1: invalid)" />
+    <midstSeId AltName="Midst SE ID" Wiki="In effect SeID (-1: invalid)" />
+    <initSfxId AltName="Start SFX ID" Wiki="SfxID at activation (-1: invalid)" />
+    <initSeId AltName="Start SE ID" Wiki="When activated SeID (-1: invalid)" />
+    <finishSfxId AltName="End SFX ID" Wiki="SfxID at the time of cancellation (-1: invalid)" />
+    <finishSeId AltName="End SE ID" Wiki="SeID at the time of release (-1: invalid)" />
+    <camouflageBeginDist AltName="Camouflage - Start Distance" Wiki="It is the camouflage start distance" />
+    <camouflageEndDist AltName="Camouflage - End Distance" Wiki="It is the camouflage end distance" />
+    <transformProtectorId AltName="Transform - Protector ID" Wiki="Makeover Armor ID (-1: None)" Refs="EquipParamProtector"/>
+    <midstDmyId AltName="Midst Dummy Poly ID" Wiki="In effect Damipoli ID (-1: Root)" />
+    <initDmyId AltName="Start Dummy Poly ID" Wiki="Damipoli ID at the time of activation (-1: root)" />
+    <finishDmyId AltName="End Dummy Poly ID" Wiki="Damipoli ID at the time of cancellation (-1: root)" />
+    <effectType AltName="Effect Type" Wiki="Effect type" Enum="SP_EFFECT_VFX_EFFECT_TYPE" />
+    <soulParamIdForWepEnchant AltName="Weapon Enchant - Soul Param ID" Wiki="Soul Param ID for Weapon Enchantment (-1: None). Change the applied Phantom Param." Enum="SP_EFFECT_VFX_SOUL_PARAM_TYPE" />
+    <playCategory AltName="Play Category" Wiki="Controls effect playback due to duplicate effects" Enum="SP_EFFECT_VFX_PLAYCATEGORY" />
+    <playPriority AltName="Play Priority" Wiki="Set the playback priority when the categories match (lower one has priority)" />
+    <existEffectForLarge AltName="Large Effect Exists" Wiki="Is there a large effect?" IsBool="" />
+    <existEffectForSoul AltName="Soul Effect Exists" Wiki="Is there an effect for the soul body?" IsBool="" />
+    <effectInvisibleAtCamouflage AltName="Camouflage - Invisible while Active" Wiki="Whether to hide the effect when hiding" IsBool="" />
+    <useCamouflage AltName="Camouflage - Enable" Wiki="Do you hide" IsBool="" />
+    <invisibleAtFriendCamouflage AltName="Camouflage - Invisible for Friend" Wiki="Is it hidden even by allies when hiding?" IsBool="" />
+    <isHideFootEffect_forCamouflage AltName="Camouflage - Hide Foot Effect" Wiki="Do you want to turn off the foot effect when hiding?" IsBool="" />
+    <halfCamouflage AltName="Camouflage - Translucent Appearance" Wiki="Only translucent appearance" IsBool="" />
+    <isFullBodyTransformProtectorId AltName="Is Full Body Protector ID" Wiki="Is the transformation armor ID for the whole body?" IsBool="" />
+    <isInvisibleWeapon AltName="Is Invisible Weapon" Wiki="Invisible Weapon for Weapon Enchantment (0: Weapon Show, 1: Weapon Hide)" IsBool="" />
+    <isSilence AltName="Is Silent" Wiki="Is it silence? (0: No, 1: Yes)" IsBool="" />
+    <isMidstFullbody AltName="Is Midst SFX Full Body" Wiki="Do you use whole body Damipoli for equipping SFX during effect? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1" IsBool="" />
+    <isInitFullbody AltName="Is Start SFX Full Body" Wiki="Do you use the whole body Damipoli for equipping SFX during activation? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1" IsBool="" />
+    <isFinishFullbody AltName="Is End SFX Full Body" Wiki="Do you use the whole body Damipoli for equipping SFX at the time of release? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1" IsBool="" />
+    <isVisibleDeadChr AltName="Is Visible on Dead Chr" Wiki="If , VFX will be displayed even when the corpse is dead." IsBool="" />
+    <isUseOffsetEnchantSfxSize AltName="Use Enchant SFX Size to Offset SFX ID" Wiki="Whether to offset the SfxId according to the enchantment Sfx size of the weapon para" IsBool="" />
+    <pad_1 AltName=""/>
+    <decalId1 AltName="Decal ID [0]" Wiki="Decal ID 1 (-1: invalid)" Refs="DecalParam"/>
+    <decalId2 AltName="Decal ID [1]" Wiki="Decal ID 2 (-1: invalid)" Refs="DecalParam"/>
+    <footEffectPriority AltName="Foot Effect Priority" Wiki="Foot effect offset priority (lower is higher)" />
+    <footEffectOffset AltName="Foot Effect Offset" Wiki="Amount offset to foot effect ID when this special effect is applied" />
+    <traceSfxIdOffsetType AltName="Trace SFX ID Offset Type" Wiki="The offset value applied to the sword flash SFX ID. Used for enchantment and sword trajectory effects" Enum="SP_EFFECT_VFX_SOUL_PARAM_TYPE" />
+    <forceDeceasedType AltName="Force Deceased Type" Wiki="A function that can force the appearance of a character to be alive / dead" Enum="SP_EFFECT_VFX_FORCE_DECEASED_TYPE" />
+    <enchantStartDmyId_0 AltName="Enchant SFX Start - Dummy Poly ID [0]" Wiki="Damipoli ID generated at the base of enchantment" />
+    <enchantEndDmyId_0 AltName="Enchant SFX end - Dummy Poly ID [0]" Wiki="Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number." />
+    <enchantStartDmyId_1 AltName="Enchant SFX Start - Dummy Poly ID [1]" Wiki="Damipoli ID generated at the base of enchantment" />
+    <enchantEndDmyId_1 AltName="Enchant SFX End - Dummy Poly ID [1]" Wiki="Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number." />
+    <enchantStartDmyId_2 AltName="Enchant SFX Start - Dummy Poly ID [2]" Wiki="Damipoli ID generated at the base of enchantment" />
+    <enchantEndDmyId_2 AltName="Enchant SFX End - Dummy Poly ID [2]" Wiki="Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number." />
+    <enchantStartDmyId_3 AltName="Enchant SFX Start - Dummy Poly ID [3]" Wiki="Damipoli ID generated at the base of enchantment" />
+    <enchantEndDmyId_3 AltName="Enchant SFX End - Dummy Poly ID [3]" Wiki="Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number." />
+    <enchantStartDmyId_4 AltName="Enchant SFX Start - Dummy Poly ID [4]" Wiki="Damipoli ID generated at the base of enchantment" />
+    <enchantEndDmyId_4 AltName="Enchant SFX End - Dummy Poly ID [4]" Wiki="Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number." />
+    <enchantStartDmyId_5 AltName="Enchant SFX Start - Dummy Poly ID [5]" Wiki="Damipoli ID generated at the base of enchantment" />
+    <enchantEndDmyId_5 AltName="Enchant SFX End - Dummy Poly ID [5]" Wiki="Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number." />
+    <enchantStartDmyId_6 AltName="Enchant SFX Start - Dummy Poly ID [6]" Wiki="Damipoli ID generated at the base of enchantment" />
+    <enchantEndDmyId_6 AltName="Enchant SFX End - Dummy Poly ID [6]" Wiki="Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number." />
+    <enchantStartDmyId_7 AltName="Enchant SFX Start - Dummy Poly ID [7]" Wiki="Damipoli ID generated at the base of enchantment" />
+    <enchantEndDmyId_7 AltName="Enchant SFX End - Dummy Poly ID [7]" Wiki="Damipoli ID generated at the tip of the sword at the time of enchantment. -1 If specified, it will be automatically put out to the point where it is a serial number." />
+    <SfxIdOffsetType AltName="SFX ID Offset Type" Wiki="SfxID offset type" Enum="SP_EFFECT_VFX_SFX_ID_OFFSET_TYPE" />
+    <phantomParamOverwriteType AltName="Phantom Param Overwrite Type" Wiki="Forced overwrite type of phantom parameters" Enum="SP_EFFECT_OVERWRITE_PHANTOM_PARAM_TYPE" Refs="PhantomParam"/>
+    <camouflageMinAlpha AltName="Camouflage - Min Alpha" Wiki="Minimum  value when hiding [%]" />
+    <wetAspectType AltName="Wet Aspect Type" Wiki="Generate a wet expression by referring to the wet parameter" Enum="SP_EFFECT_VFX_WET_ASPECT_TYPE" />
+    <phantomParamOverwriteId AltName="Phantom Param Overwrite ID" Wiki="Forced Id of phantom parameter" />
+    <materialParamId AltName="Material Param ID" Wiki="ID0-99 are GS reservation IDs. If ID100 or later is specified, the material extension parameter is referenced (-1: invalid value)." Refs="MaterialExParam"/>
+    <materialParamInitValue AltName="Material Param - Start Fade" Wiki="The value at the start of the fade of the material parameter. The target is specified by the material parameter ID. If the material parameter ID is -1, do nothing" />
+    <materialParamTargetValue AltName="Material Param - End Fade" Wiki="The value at the end of the fade of the material parameter. The target is specified by the material parameter ID. If the material parameter ID is -1, do nothing" />
+    <materialParamFadeTime AltName="Material Param - Fade Time" Wiki="Fade time for material parameter values. Gradually reach the target value over this time. If the material parameter ID is -1, do nothing" />
+    <footDecalMaterialOffsetOverwriteId AltName="Foot Decal Material Offset Overwrite ID" Wiki="Forcibly rewrite the floor material ID offset of the foot decal (-1 unused)" />
+    <pad AltName=""/>
+    <emissiveIntensityScale AltName="Emissive Intensity Scale" />
+    <unknown2 AltName="" />
+    <emberEffectGlow AltName="Ember Effect Glow" />
+    <unknown3 AltName="" />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="All Visual Effects for Special Effects"/>
+</PARAMMETA>

@@ -1,0 +1,5 @@
+<class name='hkbModifierList' version='1' signature='0xded564c' size='104' parent='hkbModifier'>
+  <members>
+    <member name='modifiers' offset='88' ctype='hkbModifier' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

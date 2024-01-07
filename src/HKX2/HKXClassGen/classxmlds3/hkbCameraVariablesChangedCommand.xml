@@ -1,0 +1,8 @@
+<class name='hkbCameraVariablesChangedCommand' version='1' signature='0x32f87051' size='80' parent='hkReferencedObject'>
+  <members>
+    <member name='cameraVariableFloatNames' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cameraFloatValues' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cameraVariableVectorNames' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cameraVectorValues' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParam_Debug AltName="Disable Param - Debug" Wiki="Parameters marked with a circle are excluded from all packages (because they are for debugging)." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <PlayMapId AltName="Play Map ID" Wiki="Please enter the map number to be played back as an 8-digit number. This is the map number used as the reference in the cutscene. If you do not specify the correct map number, the playback position will shift." />
+    <RequireMapId0 AltName="Require Map ID 0" Wiki="Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank." />
+    <RequireMapId1 AltName="Require Map ID 1" Wiki="Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank." />
+    <RequireMapId2 AltName="Require Map ID 2" Wiki="Please enter the map number required for display as an 8-digit number. This parameter is used by the guest as a list to determine if the cutscene can be played. If you don't need it, you can leave it as 0 or blank." />
+    <RefCamPosHitPartsID AltName="Hit Part ID for Reference Camera" Wiki="Hit part ID for calculating camera position during loading" />
+    <reserved_2 AltName=""/>
+    <ClientDisableViewTimeForProgress AltName="Client Load View - Progress Bar Time" Wiki="The number of seconds used to display the progress of the loading screen progress bar that is displayed when the guest side cannot play in the multi. [GR] SEQ22843 [Cutscene] Players who have not read the map number required for display during cutscene playback will see the screen go dark." />
+    <reserved AltName=""/>
+    <HitParts_0 AltName="Hit Parts [0]" Wiki="Hit parts waiting to be read 0" />
+    <HitParts_1 AltName="Hit Parts [1]" Wiki="Hit parts waiting to be read 1" />
+  </Field>
+  <Self />
+</PARAMMETA>

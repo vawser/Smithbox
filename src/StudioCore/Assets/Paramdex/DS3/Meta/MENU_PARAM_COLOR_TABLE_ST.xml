@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <color_R AltName="Color: R" />
+    <color_G AltName="Color: G" />
+    <color_B AltName="Color: B" />
+    <color_A AltName="Color: Alpha" />
+  </Field>
+  <Self />
+</PARAMMETA>

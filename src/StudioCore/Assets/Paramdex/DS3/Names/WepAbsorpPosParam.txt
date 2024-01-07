@@ -1,0 +1,55 @@
+0 Test
+1 Dummy
+2 Dummy
+3 Dummy
+4 Dummy
+5 Dummy
+6 Dummy
+7 Dummy
+8 Dummy
+9 Dummy
+10 Dummy
+11 Dummy
+12 Dummy
+13 Dummy
+14 Dummy
+15 Dummy
+16 Dummy
+17 Dummy
+18 Dummy
+19 Dummy
+20 Dagger
+21 Dagger - Piercing
+22 Dagger - Throwing
+23 Straight Sword
+24 Straight Sword
+25 Greatsword
+26 Ultra Greatsword
+27 Thrusting Sword
+28 Curved Sword
+29 Katana
+30 Axe
+31 Axe - Throwing
+32 Greataxe
+33 Hammer
+34 Hammer - Piercing
+35 Great Hammer
+36 Spear
+37 Spear - Throwing
+38 Halberd
+39 Halberd - Puncture
+40 Rod-like compound
+41 Catalysts
+42 Fists
+43 Claws
+44 Bows
+45 Greatbows
+46 Crossbow
+47 Greatshield
+48 Shield
+49 Torch
+232 Friede's Great Scythe
+237 Crow Quills
+1028 Sellsword
+1029 Onikiri and Ubadach
+1036 Drang Twinspears

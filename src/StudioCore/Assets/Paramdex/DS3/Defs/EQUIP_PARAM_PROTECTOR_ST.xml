@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EQUIP_PARAM_PROTECTOR_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 sortId = 950000" />
+    <Field Def="s32 wanderingEquipId = 171000" />
+    <Field Def="s32 vagrantItemLotId = -1" />
+    <Field Def="s32 vagrantBonuseneDropItemLotId = -1" />
+    <Field Def="s32 vagrantItemEneDropItemLotId = -1" />
+    <Field Def="s32 fixPrice" />
+    <Field Def="s32 basicPrice = 200" />
+    <Field Def="s32 sellValue = 100" />
+    <Field Def="f32 weight" />
+    <Field Def="s32 residentSpEffectId" />
+    <Field Def="s32 residentSpEffectId2" />
+    <Field Def="s32 residentSpEffectId3 = -1" />
+    <Field Def="s32 materialSetId = 7000" />
+    <Field Def="f32 partsDamageRate" />
+    <Field Def="f32 correctSARecover" />
+    <Field Def="s32 originEquipPro1 = -1" />
+    <Field Def="s32 originEquipPro2 = -1" />
+    <Field Def="s32 originEquipPro3 = -1" />
+    <Field Def="s32 originEquipPro4 = -1" />
+    <Field Def="s32 originEquipPro5 = -1" />
+    <Field Def="s32 originEquipPro6 = -1" />
+    <Field Def="s32 originEquipPro7 = -1" />
+    <Field Def="s32 originEquipPro8 = -1" />
+    <Field Def="s32 originEquipPro9 = -1" />
+    <Field Def="s32 originEquipPro10 = -1" />
+    <Field Def="s32 originEquipPro11 = -1" />
+    <Field Def="s32 originEquipPro12 = -1" />
+    <Field Def="s32 originEquipPro13 = -1" />
+    <Field Def="s32 originEquipPro14 = -1" />
+    <Field Def="s32 originEquipPro15 = -1" />
+    <Field Def="s32 originEquipPro16 = -1" />
+    <Field Def="f32 faceScaleM_ScaleX" />
+    <Field Def="f32 faceScaleM_ScaleZ" />
+    <Field Def="f32 faceScaleM_MaxX" />
+    <Field Def="f32 faceScaleM_MaxZ" />
+    <Field Def="f32 faceScaleF_ScaleX" />
+    <Field Def="f32 faceScaleF_ScaleZ" />
+    <Field Def="f32 faceScaleF_MaxX" />
+    <Field Def="f32 faceScaleF_MaxZ" />
+    <Field Def="s32 qwcId = -1" />
+    <Field Def="s16 equipModelId" />
+    <Field Def="s16 iconIdM" />
+    <Field Def="s16 iconIdF" />
+    <Field Def="s16 Knockback" />
+    <Field Def="s16 KnockbackBounceRate" />
+    <Field Def="s16 durability = 10" />
+    <Field Def="s16 durabilityMax = 10" />
+    <Field Def="s16 saDurability" />
+    <Field Def="s16 defFlickPower" />
+    <Field Def="s16 defensePhys" />
+    <Field Def="s16 defenseMagic" />
+    <Field Def="s16 defenseFire" />
+    <Field Def="s16 defenseThunder" />
+    <Field Def="s16 defenseSlash" />
+    <Field Def="s16 defenseBlow" />
+    <Field Def="s16 defenseThrust" />
+    <Field Def="s16 resistPoison" />
+    <Field Def="s16 resistToxic" />
+    <Field Def="s16 resistBlood" />
+    <Field Def="s16 resistCurse" />
+    <Field Def="s16 reinforceTypeId" />
+    <Field Def="s16 compTrophySedId = -1" />
+    <Field Def="s16 shopLv = -1" />
+    <Field Def="u8 knockbackParamId = 1" />
+    <Field Def="u8 FlickDamageCutRate" />
+    <Field Def="u8 equipModelCategory = 5" />
+    <Field Def="u8 equipModelGender = 4" />
+    <Field Def="u8 protectorCategory" />
+    <Field Def="u8 defenseMaterial" />
+    <Field Def="u8 defenseMaterialSfx" />
+    <Field Def="u8 partsDmgType" />
+    <Field Def="u8 defenseMaterial_Weak" />
+    <Field Def="u8 defenseMaterialSfx_Weak" />
+    <Field Def="u8 isDeposit:1 = 1" />
+    <Field Def="u8 headEquip:1" />
+    <Field Def="u8 bodyEquip:1" />
+    <Field Def="u8 armEquip:1" />
+    <Field Def="u8 legEquip:1" />
+    <Field Def="u8 useFaceScale:1" />
+    <Field Def="u8 InvisibleFlag00:1" />
+    <Field Def="u8 InvisibleFlag01:1" />
+    <Field Def="u8 InvisibleFlag02:1" />
+    <Field Def="u8 InvisibleFlag03:1" />
+    <Field Def="u8 InvisibleFlag04:1" />
+    <Field Def="u8 InvisibleFlag05:1" />
+    <Field Def="u8 InvisibleFlag06:1" />
+    <Field Def="u8 InvisibleFlag07:1" />
+    <Field Def="u8 InvisibleFlag08:1" />
+    <Field Def="u8 InvisibleFlag09:1" />
+    <Field Def="u8 InvisibleFlag10:1" />
+    <Field Def="u8 InvisibleFlag11:1" />
+    <Field Def="u8 InvisibleFlag12:1" />
+    <Field Def="u8 InvisibleFlag13:1" />
+    <Field Def="u8 InvisibleFlag14:1" />
+    <Field Def="u8 InvisibleFlag15:1" />
+    <Field Def="u8 InvisibleFlag16:1" />
+    <Field Def="u8 InvisibleFlag17:1" />
+    <Field Def="u8 InvisibleFlag18:1" />
+    <Field Def="u8 InvisibleFlag19:1" />
+    <Field Def="u8 InvisibleFlag20:1" />
+    <Field Def="u8 InvisibleFlag21:1" />
+    <Field Def="u8 InvisibleFlag22:1" />
+    <Field Def="u8 InvisibleFlag23:1" />
+    <Field Def="u8 InvisibleFlag24:1" />
+    <Field Def="u8 InvisibleFlag25:1" />
+    <Field Def="u8 InvisibleFlag26:1" />
+    <Field Def="u8 InvisibleFlag27:1" />
+    <Field Def="u8 InvisibleFlag28:1" />
+    <Field Def="u8 InvisibleFlag29:1" />
+    <Field Def="u8 InvisibleFlag30:1" />
+    <Field Def="u8 InvisibleFlag31:1" />
+    <Field Def="u8 InvisibleFlag32:1" />
+    <Field Def="u8 InvisibleFlag33:1" />
+    <Field Def="u8 InvisibleFlag34:1" />
+    <Field Def="u8 InvisibleFlag35:1" />
+    <Field Def="u8 InvisibleFlag36:1" />
+    <Field Def="u8 InvisibleFlag37:1" />
+    <Field Def="u8 InvisibleFlag38:1" />
+    <Field Def="u8 InvisibleFlag39:1" />
+    <Field Def="u8 InvisibleFlag40:1" />
+    <Field Def="u8 InvisibleFlag41:1" />
+    <Field Def="u8 InvisibleFlag42:1" />
+    <Field Def="u8 InvisibleFlag43:1" />
+    <Field Def="u8 InvisibleFlag44:1" />
+    <Field Def="u8 InvisibleFlag45:1" />
+    <Field Def="u8 InvisibleFlag46:1" />
+    <Field Def="u8 InvisibleFlag47:1" />
+    <Field Def="u8 disableMultiDropShare:1" />
+    <Field Def="u8 simpleModelForDlc1:1" />
+    <Field Def="u8 isGuestDrop0:1 = 1" />
+    <Field Def="u8 isGuestDrop1:1 = 1" />
+    <Field Def="u8 showLogCondType:1" />
+    <Field Def="u8 showDialogCondType:1" />
+    <Field Def="u8 Unk2:1" />
+    <Field Def="u8 Unk3:1" />
+    <Field Def="u8 Unk4:1" />
+    <Field Def="u8 Unk5:1" />
+    <Field Def="f32 PhysDamageCutRate" />
+    <Field Def="f32 SlashDamageCutRate" />
+    <Field Def="f32 StrikeDamageCutRate" />
+    <Field Def="f32 ThrustDamageCutRate" />
+    <Field Def="f32 MagicDamageCutRate" />
+    <Field Def="f32 FireDamageCutRate" />
+    <Field Def="f32 ThunderDamageCutRate" />
+    <Field Def="u16 defenseMaterialSfx1 = 146" />
+    <Field Def="u16 defenseMaterialSfx_Weak1" />
+    <Field Def="u16 defenseMaterial1 = 106" />
+    <Field Def="u16 defenseMaterial_Weak1" />
+    <Field Def="u16 defenseMaterialSfx2 = 106" />
+    <Field Def="u16 defenseMaterialSfx_Weak2 = 139" />
+    <Field Def="u16 footMaterialSe = 139" />
+    <Field Def="u16 defenseMaterial_Weak2 = 139" />
+    <Field Def="s32 autoFootEffectDecalBaseId1 = -1" />
+    <Field Def="f32 toughnessDamageCutRate" />
+    <Field Def="dummy8 pad1[4]" />
+    <Field Def="f32 DarkDamageCutRate" />
+    <Field Def="s16 defenseDark" />
+    <Field Def="u8 Unk6" />
+    <Field Def="u8 Unk7" />
+    <Field Def="s32 Unk8" />
+    <Field Def="s32 postureControlId = -1" />
+    <Field Def="s32 saleValue = -1" />
+    <Field Def="s16 resistFrost" />
+    <Field Def="u8 Mask00" />
+    <Field Def="u8 Mask01" />
+    <Field Def="u8 Mask02" />
+    <Field Def="u8 Mask03" />
+    <Field Def="u8 Mask04" />
+    <Field Def="u8 Mask05" />
+    <Field Def="u8 Mask06" />
+    <Field Def="u8 Mask07" />
+    <Field Def="u8 Mask08" />
+    <Field Def="u8 Mask09" />
+    <Field Def="u8 Mask10" />
+    <Field Def="u8 Mask11" />
+    <Field Def="u8 Mask12" />
+    <Field Def="u8 Mask13" />
+    <Field Def="u8 Mask14" />
+    <Field Def="u8 Mask15" />
+    <Field Def="u8 Mask16" />
+    <Field Def="u8 Mask17" />
+    <Field Def="u8 Mask18" />
+    <Field Def="u8 Mask19" />
+    <Field Def="u8 Mask20" />
+    <Field Def="u8 Mask21" />
+    <Field Def="u8 Mask22" />
+    <Field Def="u8 Mask23" />
+    <Field Def="u8 Mask24" />
+    <Field Def="u8 Mask25" />
+    <Field Def="u8 Mask26" />
+    <Field Def="u8 Mask27" />
+    <Field Def="u8 Mask28" />
+    <Field Def="u8 Mask29" />
+    <Field Def="u8 Mask30" />
+    <Field Def="u8 Mask31" />
+    <Field Def="u8 Mask32" />
+    <Field Def="u8 Mask33" />
+    <Field Def="u8 Mask34" />
+    <Field Def="u8 Mask35" />
+    <Field Def="u8 Mask36" />
+    <Field Def="u8 Mask37" />
+    <Field Def="u8 Mask38" />
+    <Field Def="u8 Mask39" />
+    <Field Def="u8 Mask40" />
+    <Field Def="u8 Mask41" />
+    <Field Def="u8 Mask42" />
+    <Field Def="u8 Mask43" />
+    <Field Def="u8 Mask44" />
+    <Field Def="u8 Mask45" />
+    <Field Def="u8 Mask46" />
+    <Field Def="u8 Mask47" />
+    <Field Def="u8 Mask48" />
+    <Field Def="u8 Mask49" />
+    <Field Def="u8 Mask50" />
+    <Field Def="u8 Mask51" />
+    <Field Def="u8 Mask52" />
+    <Field Def="u8 Mask53" />
+    <Field Def="u8 Mask54" />
+    <Field Def="u8 Mask55" />
+    <Field Def="u8 Mask56" />
+    <Field Def="u8 Mask57" />
+    <Field Def="u8 Mask58" />
+    <Field Def="u8 Mask59" />
+    <Field Def="u8 Mask60" />
+    <Field Def="u8 Mask61" />
+    <Field Def="u8 Mask62" />
+    <Field Def="u8 Mask63" />
+    <Field Def="u8 Mask64" />
+    <Field Def="u8 Mask65" />
+    <Field Def="u8 Mask66" />
+    <Field Def="u8 Mask67" />
+    <Field Def="u8 Mask68" />
+    <Field Def="u8 Mask69" />
+    <Field Def="u8 Mask70" />
+    <Field Def="u8 Mask71" />
+    <Field Def="u8 Mask72" />
+    <Field Def="u8 Mask73" />
+    <Field Def="u8 Mask74" />
+    <Field Def="u8 Mask75" />
+    <Field Def="u8 Mask76" />
+    <Field Def="u8 Mask77" />
+    <Field Def="u8 Mask78" />
+    <Field Def="u8 Mask79" />
+    <Field Def="u8 Mask80" />
+    <Field Def="u8 Mask81" />
+    <Field Def="u8 Mask82" />
+    <Field Def="u8 Mask83" />
+    <Field Def="u8 Mask84" />
+    <Field Def="u8 Mask85" />
+    <Field Def="u8 Mask86" />
+    <Field Def="u8 Mask87" />
+    <Field Def="u8 Mask88" />
+    <Field Def="u8 Mask89" />
+    <Field Def="u8 Mask90" />
+    <Field Def="u8 Mask91" />
+    <Field Def="u8 Mask92" />
+    <Field Def="u8 Mask93" />
+    <Field Def="u8 Mask94" />
+    <Field Def="u8 Mask95" />
+    <Field Def="u8 Mask96" />
+    <Field Def="u8 Mask97" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,39 @@
+0 temple
+1 Underworld
+10 For poly drama (p01-c00
+11 For poly drama (p01-c01-A
+12 For poly drama (p01-c01-B
+13 For poly drama (p01-c01-C
+14 For poly drama (p01-c02-pre
+15 For poly drama (p01-c02-A
+16 For poly drama (p01-c02-B
+17 For poly drama (p01-c02-C
+18 For poly drama (p01-c03-A
+19 For poly drama (p01-c03-B
+20 For poly drama (p01-c04
+21 Poly drama (p02-general
+24 For poly drama (p03-A
+25 For poly drama (p03-B
+30 For poly drama (p00001-cut-05
+31 For poly drama (p00001-cut-06-01
+32 For poly drama (p00001-cut-06-02
+33 For poly drama (p00001-cut-07
+40 For polyplay (p06_c00-SwordDrop-A
+41 For polyplay (p06_c00-SwordDrop-B
+44 For poly drama (p10-c10
+45 For poly drama (p10-c20
+46 For poly drama (p10-c30-A
+47 For poly drama (p10-c30-B
+48 For poly drama (p10-c30-C
+49 For poly drama (p10-c40-B
+50 For poly drama (p10-c40
+51 For poly drama (p10-c50-A
+52 For poly drama (p10-c50-B
+53 For poly drama (p10-c50-C
+54 For poly drama (p10-c50-D
+55 For poly drama (p10-c50-E
+57 Poly drama (p15-c20-heroineUp
+58 For poly drama (p15-c10-A
+59 For poly drama (p15-c30-talking
+60 For poly drama (p15-c40-A
+61 For poly drama (p15-c40-B

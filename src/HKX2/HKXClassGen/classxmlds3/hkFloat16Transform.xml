@@ -1,0 +1,5 @@
+<class name='hkFloat16Transform' version='1' signature='0x8727ee17' size='24'>
+  <members>
+    <member name='elements' offset='0' ctype='hkFloat16' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='12' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

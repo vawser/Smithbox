@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <Enabled AltName="Motion Blur Enabled" Wiki="Motion blur Enabled" IsBool="" />
+    <ombEnabled AltName="Object Motion Blur Enabled" Wiki="OMB (object motion blur) Enabled" IsBool="" />
+    <forceScaleVelocityBuffer AltName="Force Scale Velocity Buffer" Wiki="Decrease the resolution of the velocity buffer used internally. Not effective if you are not using precision velocity buffers" IsBool="" />
+    <cheapFilterMode AltName="Cheap Filter Mode" Wiki="Normally processed by the Reconstruction filter, but downgraded to a lighter process" IsBool="" />
+    <sampleCountBias AltName="Sample Count Bias" Wiki="Give an offset to the sample count * Set to a multiple of 2" />
+    <recurrenceCountBias AltName="Recurrence Count Bias" Wiki="Give an offset to the number of recursive blurs" />
+    <blurMaxLengthScale AltName="Blur Max Length Scale" Wiki="Scale value for blur maximum length parameter" />
+  </Field>
+  <Self />
+</PARAMMETA>

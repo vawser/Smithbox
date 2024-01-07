@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <r AltName="r" />
+    <g AltName="g" />
+    <b AltName="b" />
+    <a AltName="a" />
+  </Field>
+  <Self />
+</PARAMMETA>

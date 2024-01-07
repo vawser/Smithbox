@@ -1,0 +1,6 @@
+<class name='hknpScaledConvexShapeBase' version='1' signature='0x1d14c258' size='96' parent='hknpDecoratorShape'>
+  <members>
+    <member name='scale' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='translation' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,182 @@
+using SoulsFormats;
+using System.Collections.Generic;
+using System.Numerics;
+
+namespace HKX2
+{
+    public partial class hkbCustomTestGeneratorAnnotatedTypes : hkbCustomTestGeneratorBoneTypes
+    {
+        public override uint Signature { get => 935711895; }
+        
+        public string m_annotatedTypeCStringFilename;
+        public string m_annotatedTypeHkStringPtrFilename;
+        public string m_annotatedTypeCStringScript;
+        public string m_annotatedTypeHkStringPtrScript;
+        public string m_annotatedTypeCStringBoneAttachment;
+        public string m_annotatedTypeHkStringPtrBoneAttachment;
+        public string m_annotatedTypeCStringLocalFrame;
+        public string m_annotatedTypeHkStringPtrLocalFrame;
+        public bool m_annotatedHiddenTypeCopyStart;
+        public int m_annotatedTypeHkInt32EventID;
+        public int m_annotatedTypeHkInt32VariableIndex;
+        public int m_annotatedTypeHkInt32AttributeIndex;
+        public float m_annotatedTypeHkRealTime;
+        public bool m_annotatedTypeBoolNoVar;
+        public bool m_annotatedTypeHkBoolNoVar;
+        public sbyte m_annotatedTypeHkInt8NoVar;
+        public short m_annotatedTypeHkInt16NoVar;
+        public int m_annotatedTypeHkInt32NoVar;
+        public byte m_annotatedTypeHkUint8NoVar;
+        public ushort m_annotatedTypeHkUint16NoVar;
+        public uint m_annotatedTypeHkUint32NoVar;
+        public float m_annotatedTypeHkRealNoVar;
+        public bool m_annotatedTypeBoolOutput;
+        public bool m_annotatedTypeHkBoolOutput;
+        public sbyte m_annotatedTypeHkInt8Output;
+        public short m_annotatedTypeHkInt16Output;
+        public int m_annotatedTypeHkInt32Output;
+        public byte m_annotatedTypeHkUint8Output;
+        public ushort m_annotatedTypeHkUint16Output;
+        public uint m_annotatedTypeHkUint32Output;
+        public float m_annotatedTypeHkRealOutput;
+        public bool m_annotatedHiddenTypeBool;
+        public bool m_annotatedHiddenTypeHkBool;
+        public string m_annotatedHiddenTypeCString1;
+        public string m_annotatedHiddenTypeHkStringPtr1;
+        public string m_annotatedHiddenTypeCString2;
+        public string m_annotatedHiddenTypeHkStringPtr2;
+        public sbyte m_annotatedHiddenTypeHkInt8;
+        public short m_annotatedHiddenTypeHkInt16;
+        public int m_annotatedHiddenTypeHkInt32;
+        public byte m_annotatedHiddenTypeHkUint8;
+        public ushort m_annotatedHiddenTypeHkUint16;
+        public uint m_annotatedHiddenTypeHkUint32;
+        public bool m_annotatedHiddenTypeCopyEnd;
+        
+        public override void Read(PackFileDeserializer des, BinaryReaderEx br)
+        {
+            base.Read(des, br);
+            m_annotatedTypeCStringFilename = des.ReadStringPointer(br);
+            m_annotatedTypeHkStringPtrFilename = des.ReadStringPointer(br);
+            m_annotatedTypeCStringScript = des.ReadStringPointer(br);
+            m_annotatedTypeHkStringPtrScript = des.ReadStringPointer(br);
+            m_annotatedTypeCStringBoneAttachment = des.ReadStringPointer(br);
+            m_annotatedTypeHkStringPtrBoneAttachment = des.ReadStringPointer(br);
+            m_annotatedTypeCStringLocalFrame = des.ReadStringPointer(br);
+            m_annotatedTypeHkStringPtrLocalFrame = des.ReadStringPointer(br);
+            m_annotatedHiddenTypeCopyStart = br.ReadBoolean();
+            br.ReadUInt16();
+            br.ReadByte();
+            m_annotatedTypeHkInt32EventID = br.ReadInt32();
+            m_annotatedTypeHkInt32VariableIndex = br.ReadInt32();
+            m_annotatedTypeHkInt32AttributeIndex = br.ReadInt32();
+            m_annotatedTypeHkRealTime = br.ReadSingle();
+            m_annotatedTypeBoolNoVar = br.ReadBoolean();
+            m_annotatedTypeHkBoolNoVar = br.ReadBoolean();
+            m_annotatedTypeHkInt8NoVar = br.ReadSByte();
+            br.ReadByte();
+            m_annotatedTypeHkInt16NoVar = br.ReadInt16();
+            br.ReadUInt16();
+            m_annotatedTypeHkInt32NoVar = br.ReadInt32();
+            m_annotatedTypeHkUint8NoVar = br.ReadByte();
+            br.ReadByte();
+            m_annotatedTypeHkUint16NoVar = br.ReadUInt16();
+            m_annotatedTypeHkUint32NoVar = br.ReadUInt32();
+            m_annotatedTypeHkRealNoVar = br.ReadSingle();
+            m_annotatedTypeBoolOutput = br.ReadBoolean();
+            m_annotatedTypeHkBoolOutput = br.ReadBoolean();
+            m_annotatedTypeHkInt8Output = br.ReadSByte();
+            br.ReadByte();
+            m_annotatedTypeHkInt16Output = br.ReadInt16();
+            br.ReadUInt16();
+            m_annotatedTypeHkInt32Output = br.ReadInt32();
+            m_annotatedTypeHkUint8Output = br.ReadByte();
+            br.ReadByte();
+            m_annotatedTypeHkUint16Output = br.ReadUInt16();
+            m_annotatedTypeHkUint32Output = br.ReadUInt32();
+            m_annotatedTypeHkRealOutput = br.ReadSingle();
+            m_annotatedHiddenTypeBool = br.ReadBoolean();
+            m_annotatedHiddenTypeHkBool = br.ReadBoolean();
+            br.ReadUInt16();
+            m_annotatedHiddenTypeCString1 = des.ReadStringPointer(br);
+            m_annotatedHiddenTypeHkStringPtr1 = des.ReadStringPointer(br);
+            m_annotatedHiddenTypeCString2 = des.ReadStringPointer(br);
+            m_annotatedHiddenTypeHkStringPtr2 = des.ReadStringPointer(br);
+            m_annotatedHiddenTypeHkInt8 = br.ReadSByte();
+            br.ReadByte();
+            m_annotatedHiddenTypeHkInt16 = br.ReadInt16();
+            m_annotatedHiddenTypeHkInt32 = br.ReadInt32();
+            m_annotatedHiddenTypeHkUint8 = br.ReadByte();
+            br.ReadByte();
+            m_annotatedHiddenTypeHkUint16 = br.ReadUInt16();
+            m_annotatedHiddenTypeHkUint32 = br.ReadUInt32();
+            m_annotatedHiddenTypeCopyEnd = br.ReadBoolean();
+            br.ReadUInt32();
+            br.ReadUInt16();
+            br.ReadByte();
+        }
+        
+        public override void Write(PackFileSerializer s, BinaryWriterEx bw)
+        {
+            base.Write(s, bw);
+            s.WriteStringPointer(bw, m_annotatedTypeCStringFilename);
+            s.WriteStringPointer(bw, m_annotatedTypeHkStringPtrFilename);
+            s.WriteStringPointer(bw, m_annotatedTypeCStringScript);
+            s.WriteStringPointer(bw, m_annotatedTypeHkStringPtrScript);
+            s.WriteStringPointer(bw, m_annotatedTypeCStringBoneAttachment);
+            s.WriteStringPointer(bw, m_annotatedTypeHkStringPtrBoneAttachment);
+            s.WriteStringPointer(bw, m_annotatedTypeCStringLocalFrame);
+            s.WriteStringPointer(bw, m_annotatedTypeHkStringPtrLocalFrame);
+            bw.WriteBoolean(m_annotatedHiddenTypeCopyStart);
+            bw.WriteUInt16(0);
+            bw.WriteByte(0);
+            bw.WriteInt32(m_annotatedTypeHkInt32EventID);
+            bw.WriteInt32(m_annotatedTypeHkInt32VariableIndex);
+            bw.WriteInt32(m_annotatedTypeHkInt32AttributeIndex);
+            bw.WriteSingle(m_annotatedTypeHkRealTime);
+            bw.WriteBoolean(m_annotatedTypeBoolNoVar);
+            bw.WriteBoolean(m_annotatedTypeHkBoolNoVar);
+            bw.WriteSByte(m_annotatedTypeHkInt8NoVar);
+            bw.WriteByte(0);
+            bw.WriteInt16(m_annotatedTypeHkInt16NoVar);
+            bw.WriteUInt16(0);
+            bw.WriteInt32(m_annotatedTypeHkInt32NoVar);
+            bw.WriteByte(m_annotatedTypeHkUint8NoVar);
+            bw.WriteByte(0);
+            bw.WriteUInt16(m_annotatedTypeHkUint16NoVar);
+            bw.WriteUInt32(m_annotatedTypeHkUint32NoVar);
+            bw.WriteSingle(m_annotatedTypeHkRealNoVar);
+            bw.WriteBoolean(m_annotatedTypeBoolOutput);
+            bw.WriteBoolean(m_annotatedTypeHkBoolOutput);
+            bw.WriteSByte(m_annotatedTypeHkInt8Output);
+            bw.WriteByte(0);
+            bw.WriteInt16(m_annotatedTypeHkInt16Output);
+            bw.WriteUInt16(0);
+            bw.WriteInt32(m_annotatedTypeHkInt32Output);
+            bw.WriteByte(m_annotatedTypeHkUint8Output);
+            bw.WriteByte(0);
+            bw.WriteUInt16(m_annotatedTypeHkUint16Output);
+            bw.WriteUInt32(m_annotatedTypeHkUint32Output);
+            bw.WriteSingle(m_annotatedTypeHkRealOutput);
+            bw.WriteBoolean(m_annotatedHiddenTypeBool);
+            bw.WriteBoolean(m_annotatedHiddenTypeHkBool);
+            bw.WriteUInt16(0);
+            s.WriteStringPointer(bw, m_annotatedHiddenTypeCString1);
+            s.WriteStringPointer(bw, m_annotatedHiddenTypeHkStringPtr1);
+            s.WriteStringPointer(bw, m_annotatedHiddenTypeCString2);
+            s.WriteStringPointer(bw, m_annotatedHiddenTypeHkStringPtr2);
+            bw.WriteSByte(m_annotatedHiddenTypeHkInt8);
+            bw.WriteByte(0);
+            bw.WriteInt16(m_annotatedHiddenTypeHkInt16);
+            bw.WriteInt32(m_annotatedHiddenTypeHkInt32);
+            bw.WriteByte(m_annotatedHiddenTypeHkUint8);
+            bw.WriteByte(0);
+            bw.WriteUInt16(m_annotatedHiddenTypeHkUint16);
+            bw.WriteUInt32(m_annotatedHiddenTypeHkUint32);
+            bw.WriteBoolean(m_annotatedHiddenTypeCopyEnd);
+            bw.WriteUInt32(0);
+            bw.WriteUInt16(0);
+            bw.WriteByte(0);
+        }
+    }
+}

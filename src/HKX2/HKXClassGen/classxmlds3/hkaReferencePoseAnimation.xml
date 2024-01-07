@@ -1,0 +1,5 @@
+<class name='hkaReferencePoseAnimation' version='1' signature='0x9e1c3a1c' size='64' parent='hkaAnimation'>
+  <members>
+    <member name='skeleton' offset='56' ctype='hkaSkeleton' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

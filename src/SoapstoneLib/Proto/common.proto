@@ -1,0 +1,121 @@
+syntax = "proto3";
+
+package SoapstoneLib.Proto;
+
+//
+// Public requests
+//
+
+message ServerInfoRequest {
+}
+
+message ServerInfoResponse {
+  // Client id like "DSMapStudio"
+  string id = 1;
+  // Version like "1.0.0"
+  string version = 2;
+  // File name of the server exe
+  string server_path = 3;
+  // All open resources
+  repeated EditorResource resources = 4;
+}
+
+//
+// Public common messages
+//
+
+// A thing which can be opened in an editor, scoped to a particular game and/or mod project.
+// Using this generally requires knowing which editor you're talking with, as different editors
+// will load different things simultaneously.
+// A game object can be available in multiple different resources at once. For instance, there may
+// be a live view of an opened file, but also a passive index of the same data, which could be different
+// (potentially overlapping) resources. Err on the side of having a bunch of these.
+message EditorResource {
+  // The type of resource.
+  EditorResourceType type = 1;
+  // A game enum, checked by the client for basic compatibility
+  // Most other objects don't specify a game, so they're largely context-dependent.
+  FromSoftGame game = 2;
+  // Unique identifier for the resource, if there is more than one of a given type.
+  // For params in DSMS, this can be left blank, as all params are opened together.
+  // For FMGs, this could be the language.
+  // For a map in DSMS, this could be a name like "m10_00_00_00", or it can be left blank to
+  // mean all open maps.
+  // In editors which are not project-based, this could be the entire file or directory path.
+  string name = 3;
+  // Optional, a project.json file, in the root directory of the mod folder.
+  // The definition should be moved into a common library if this is used in multiple editors.
+  // https://github.com/soulsmods/DSMapStudio/blob/master/StudioCore/Editor/ProjectSettings.cs
+  string project_json_path = 4;
+  // Optional, some other kind of filesystem path representing the resource.
+  // This is mainly for editors which don't care about game hierarchy and edit individual files.
+  string resource_path = 5;
+}
+
+enum EditorResourceType {
+  // By convention, the default 0 field of all enums should be an "unset" value.
+  // This should never be set on purpose.
+  EDITOR_RESOURCE_TYPE_UNSPECIFIED = 0;
+  EDITOR_RESOURCE_TYPE_PROJECT = 1;
+  EDITOR_RESOURCE_TYPE_PARAM = 2;
+  EDITOR_RESOURCE_TYPE_FMG = 3;
+  EDITOR_RESOURCE_TYPE_MAP = 4;
+  // Extend this in the future. Possible future ideas:
+  // - Alias resource, for statically loaded names for maps, models, etc.
+  // - Model resource, for a model editor
+  // - Metadata resource, for passively indexed metadata
+}
+
+// Enum for supported games. This can be extended based on what editors support.
+enum FromSoftGame {
+  FROM_SOFT_GAME_UNSPECIFIED = 0;
+  DEMONS_SOULS = 1;
+  DARK_SOULS_PTDE = 2;
+  DARK_SOULS_REMASTERED = 3;
+  DARK_SOULS_2 = 4;
+  DARK_SOULS_2_SOTFS = 5;
+  BLOODBORNE = 6;
+  DARK_SOULS_3 = 7;
+  SEKIRO = 8;
+  ELDEN_RING = 9;
+}
+
+// Namespaces for different types of game data.
+// These do not uniquely identify every type of game object (like objects vs enemies),
+// and is meant for cases when the main ids can overlap for two objects in the same file.
+// Use object properties for specific subtype data.
+enum KeyNamespace {
+  KEY_NAMESPACE_UNSPECIFIED = 0;
+  // An MSB event. Identical names are disambiguated using {2} etc suffixes
+  KEY_NAMESPACE_MAP_EVENT = 1;
+  // An MSB region. Identical names are disambiguated using {2} etc suffixes
+  KEY_NAMESPACE_MAP_REGION = 2;
+  // An MSB part. Identical names are disambiguated using {2} etc suffixes
+  KEY_NAMESPACE_MAP_PART = 3;
+}
+
+// The standard FromSoft comparison operators, and also regex ~ and !~
+enum PropertyComparisonType {
+  PROPERTY_COMPARISON_TYPE_UNSPECIFIED = 0;
+  EQUAL = 1;
+  NOT_EQUAL = 2;
+  GREATER = 3;
+  LESS = 4;
+  GREATER_OR_EQUAL = 5;
+  LESS_OR_EQUAL = 6;
+  MATCHES = 7;
+  NOT_MATCHES = 8;
+}
+
+// Used for get/search operations to determine which properties to retrieve.
+message RequestedProperty {
+  // Like GameProperty, this is a simple string key for the moment.
+  string key = 1;
+  // Whether to include this property only when it is >0 or non-null.
+  // This is largely to avoid a ton of useless EntityID/EntityGroupIDs values.
+  bool non_trivial_only = 2;
+}
+
+message SearchOptions {
+  int32 max_results = 1;
+}

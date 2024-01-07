@@ -1,0 +1,21 @@
+<class name='hknpShapeInstance' version='1' signature='0x5e3dae05' size='128'>
+  <enums>
+    <enum name='Flags' flags='00000000'>
+      <enumitem name='HAS_TRANSLATION' value='2'/>
+      <enumitem name='HAS_ROTATION' value='4'/>
+      <enumitem name='HAS_SCALE' value='8'/>
+      <enumitem name='FLIP_ORIENTATION' value='16'/>
+      <enumitem name='SCALE_SURFACE' value='32'/>
+      <enumitem name='IS_ENABLED' value='64'/>
+      <enumitem name='DEFAULT_FLAGS' value='64'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='transform' offset='0' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='scale' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shape' offset='80' ctype='hknpShape' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shapeTag' offset='88' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='destructionTag' offset='90' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='92' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='30' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BULLET_CREATE_LIMIT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 limitNum_byGroup"></Field>
+    <Field Def="u8 isLimitEachOwner:1"></Field>
+    <Field Def="dummy8 pad2:7"></Field>
+    <Field Def="dummy8 pad[30]"></Field>
+  </Fields>
+</PARAMDEF>

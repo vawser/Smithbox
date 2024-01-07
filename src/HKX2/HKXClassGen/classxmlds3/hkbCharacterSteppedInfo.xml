@@ -1,0 +1,9 @@
+<class name='hkbCharacterSteppedInfo' version='1' signature='0xcc0b92' size='112' parent='hkReferencedObject'>
+  <members>
+    <member name='characterId' offset='16' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deltaTime' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='worldFromModel' offset='32' vtype='TYPE_QSTRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='poseModelSpace' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_QSTRANSFORM' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rigidAttachmentTransforms' offset='96' vtype='TYPE_ARRAY' vsubtype='TYPE_QSTRANSFORM' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

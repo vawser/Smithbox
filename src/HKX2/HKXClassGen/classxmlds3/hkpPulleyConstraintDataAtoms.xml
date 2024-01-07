@@ -1,0 +1,6 @@
+<class name='hkpPulleyConstraintDataAtoms' version='1' signature='0xf62576d0' size='112'>
+  <members>
+    <member name='translations' offset='0' ctype='hkpSetLocalTranslationsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pulley' offset='48' ctype='hkpPulleyConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

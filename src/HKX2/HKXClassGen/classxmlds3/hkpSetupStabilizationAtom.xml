@@ -1,0 +1,9 @@
+<class name='hkpSetupStabilizationAtom' version='1' signature='0x870ee10a' size='16' parent='hkpConstraintAtom'>
+  <members>
+    <member name='enabled' offset='2' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='3' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='1' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='maxLinImpulse' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAngImpulse' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAngle' offset='12' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

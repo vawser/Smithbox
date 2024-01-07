@@ -1,0 +1,8 @@
+<class name='hkaiTraversalAnalysis' version='1' signature='0x350f30a4' size='56' parent='hkReferencedObject'>
+  <members>
+    <member name='settings' offset='16' ctype='hkaiTraversalAnalysisSettings' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='analyzers' offset='24' ctype='hkaiTraversalAnalyzer' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='input' offset='40' ctype='hkaiTraversalAnalysisInput' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='output' offset='48' ctype='hkaiTraversalAnalysisOutput' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

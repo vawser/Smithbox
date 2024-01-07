@@ -1,0 +1,15 @@
+<class name='hkpRagdollLimitsDataAtoms' version='1' signature='0xaa28b6d5' size='208'>
+  <enums>
+    <enum name='Axis' flags='00000000'>
+      <enumitem name='AXIS_TWIST' value='0'/>
+      <enumitem name='AXIS_PLANES' value='1'/>
+      <enumitem name='AXIS_CROSS_PRODUCT' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='rotations' offset='0' ctype='hkpSetLocalRotationsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='twistLimit' offset='112' ctype='hkpTwistLimitConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='coneLimit' offset='144' ctype='hkpConeLimitConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='planesLimit' offset='176' ctype='hkpConeLimitConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

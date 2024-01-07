@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <matchAreaId AltName="Match Area ID" Wiki="Simple match area ID" />
+    <multiPlayStartLimitEventFlagId AltName="Multiplayer Start Limit - Event Flag ID" Wiki="Multiplayer start limit event flag ID" />
+    <otherDisableDistance AltName="Disable Intrusion if Other Ghost In Range" Wiki="Other distances that cannot be invaded by spirits. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position." />
+    <pcPositionSaveLimitEventFlagId AltName="Player Position Save Limit - Event Flag ID" Wiki="PC position save restriction event flag ID (flag ON - PC position save valid flag OFF - PC position save invalid 0 - PC position save always valid)" />
+    <bossAreaId AltName="Boss Area ID" Wiki="Areas with the same ID are treated as the same boss area." Refs="GameAreaParam" />
+    <cultNpcWhiteGhostEntityId_byFree AltName="White Phantom Entity ID - Free Frame" Wiki="NPC White Spirit Summon Ritual Summon The beginning of the free frame ID used as the NPC's entity ID" />
+    <bMapGuradianRegion AltName="Is Map Guardian Region" Wiki="Whether to increase or decrease the frame of the map protection area" IsBool="" />
+    <bYellowCostumeRegion AltName="Is Yellow Monk Region" Wiki="Is it the old man sign area of yellow robe?" IsBool="" />
+    <multiPlayStartLimitEventFlagId_targetFlagState AltName="Target Flag State - Multiplayer Start Limit ID [1]" Wiki="Flag state that limits multiplayer start restriction event flag ID" IsBool="" />
+    <breakInLimitEventFlagId_1_targetFlagState AltName="Target Flag State - Invasion Start Limit ID [1]" Wiki="Flag state that limits intrusion restriction event flag ID1" IsBool="" />
+    <whiteSignLimitEventFlagId_1_targetFlagState AltName="Target Flag State - White Sign Start Limit ID [1]" Wiki="Flag state that limits white sign restriction event flag ID1" IsBool="" />
+    <redSignLimitEventFlagId_1_targetFlagState AltName="Target Flag State - Red Sign Start Limit ID [1]" Wiki="Flag state that limits red sign limit event flag ID1" IsBool="" />
+    <breakInLimitEventFlagId_2_targetFlagState AltName="Target Flag State - Invasion Start Limit ID [2]" Wiki="Flag state that limits intrusion restriction event flag ID2" IsBool="" />
+    <breakInLimitEventFlagId_3_targetFlagState AltName="Target Flag State - Invasion Start Limit ID [3]" Wiki="Flag state that limits intrusion restriction event flag ID3" IsBool="" />
+    <whiteSignLimitEventFlagId_2_targetFlagState AltName="Target Flag State - White Sign Start Limit ID [2]" Wiki="Flag state that limits white sign restriction event flag ID2" IsBool="" />
+    <warpItemUsePermitBonfireId_1 AltName="Warp Item Usage Permitted - Bonfire ID [1]" Wiki="Bonfire entity ID1 used to determine whether to allow the use of warp items" />
+    <warpItemUsePermitBonfireId_2 AltName="Warp Item Usage Permitted - Bonfire ID [2]" Wiki="Bonfire entity ID 2 used to determine permission to use warp items" />
+    <warpItemUsePermitBonfireId_3 AltName="Warp Item Usage Permitted - Bonfire ID [3]" Wiki="Bonfire entity ID 3 used to determine permission to use warp items" />
+    <warpItemUsePermitBonfireId_4 AltName="Warp Item Usage Permitted - Bonfire ID [4]" Wiki="Bonfire entity ID 4 used to determine permission to use warp items" />
+    <warpItemUsePermitBonfireId_5 AltName="Warp Item Usage Permitted - Bonfire ID [5]" Wiki="Bonfire entity ID 5 used to determine permission to use warp items" />
+    <warpItemProhibitionEventFlagId_1 AltName="Warp Item Prohibition - Event Flag ID [1]" Wiki="Event flag ID 1 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
+    <warpItemProhibitionEventFlagId_2 AltName="Warp Item Prohibition - Event Flag ID [2]" Wiki="Event flag ID 2 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
+    <warpItemProhibitionEventFlagId_3 AltName="Warp Item Prohibition - Event Flag ID [3]" Wiki="Event flag ID 3 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
+    <warpItemProhibitionEventFlagId_4 AltName="Warp Item Prohibition - Event Flag ID [4]" Wiki="Event flag ID 4 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
+    <warpItemProhibitionEventFlagId_5 AltName="Warp Item Prohibition - Event Flag ID [5]" Wiki="Event flag ID 5 to determine the prohibition of warp items. Warp item permission Higher priority than judgment by bonfire ID" />
+    <enableBloodstain AltName="Enable Bloodstain" Wiki="Effective bloodstain / death illusion" IsBool="" />
+    <enableBloodMessage AltName="Enable Blood Message" Wiki="Blood character valid" IsBool="" />
+    <enableGhost AltName="Enable Ghost" Wiki="Phantom effective" IsBool="" />
+    <dispMask00 AltName="Display Mask M00" Wiki="Whether to display on map M00" IsBool="" />
+    <dispMask01 AltName="Display Mask M01" Wiki="Whether to display on map M01" IsBool="" />
+    <whiteSignLimitEventFlagId_3_targetFlagState AltName="Target Flag State - White Sign Start Limit ID [3]" Wiki="Flag state that limits white sign restriction event flag ID3" IsBool="" />
+    <redSignLimitEventFlagId_2_targetFlagState AltName="Target Flag State - Red Sign Start Limit ID [2]" Wiki="Flag state that limits red sign limit event flag ID2" IsBool="" />
+    <redSignLimitEventFlagId_3_targetFlagState AltName="Target Flag State - Red Sign Start Limit ID [3]" Wiki="Flag state that limits red sign limit event flag ID3" IsBool="" />
+    <isAutoIntrudePoint AltName="Is Automatic Invasion Point" Wiki="Is it an intrusion point automatic generation? If it is set to , the intrusion position is searched by the automatically generated logic for the intrusion point." IsBool="" />
+    <pad1 AltName=""/>
+    <pad2 AltName=""/>
+    <multiPlayHASHostLimitEventFlagId AltName="Block Yellow Monk Multiplayer - Event Flag ID" Wiki="Yellow Coat Host Restriction Event Flag - When this flag is turned on, multiplayer as a host of Yellow Coat is prohibited. It is assumed that the block clear flag will be inserted. 0 - No limit" />
+    <otherMaxDistance AltName="Other Ghost Invasion Range - Max Limit" Wiki="Other ghost invasion range upper limit. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position." />
+    <signPuddleOpenEventFlagId AltName="Summoning Pool Open - Event Flag ID" Wiki="Sign accumulation release event flag ID" />
+    <areaNo AltName="Map Area" Wiki="Area number (mXX_00_00_00). Data for specifying the display position in the map menu" />
+    <gridXNo AltName="Map Block" Wiki="Grid X number (m00_XX_00_00). Data for specifying the display position in the map menu" />
+    <gridZNo AltName="Map Region" Wiki="Grid Z number (m00_00_XX_00). Data for specifying the display position in the map menu" />
+    <pad4 AltName=""/>
+    <posX AltName="Coordinate - X" Wiki="X coordinates (relative coordinates from the specified map). Data for specifying the display position in the map menu" />
+    <posY AltName="Coordinate - Y" Wiki="Y coordinates (relative coordinates from the specified map). Data for specifying the display position in the map menu. Not actually used, but keep XYZ aligned" />
+    <posZ AltName="Coordinate - Z" Wiki="Z coordinates (relative coordinates from the specified map). Data for specifying the display position in the map menu" />
+    <breakInLimitEventFlagId_1 AltName="Invasion Restriction - Event Flag ID [1]" Wiki="Intrusion restriction event flag ID1" />
+    <whiteSignLimitEventFlagId_1 AltName="Summon Restriction - Event Flag ID [1]" Wiki="White sign limit event flag ID1" />
+    <matchAreaSignCreateLimitEventFlagId AltName="Summoning Pool Restriction - Event Flag ID" Wiki="Sign accumulation registration restriction Event flag ID (Flag ON - Sign accumulation registration is permitted Flag OFF - Sign accumulation registration is prohibited 0 - Sign accumulation registration is always permitted)" />
+    <signAimId_1 AltName="Sign Aim ID [1]" Wiki="Multi-purpose ID to be displayed in the list when setting the purpose" />
+    <signAimId_2 AltName="Sign Aim ID [2]" Wiki="Multi-purpose ID to be displayed in the list when setting the purpose" />
+    <signAimId_3 AltName="Sign Aim ID [3]" Wiki="Multi-purpose ID to be displayed in the list when setting the purpose" />
+    <signAimId_4 AltName="Sign Aim ID [4]" Wiki="Multi-purpose ID to be displayed in the list when setting the purpose" />
+    <signAimId_5 AltName="Sign Aim ID [5]" Wiki="Multi-purpose ID to be displayed in the list when setting the purpose" />
+    <signAimId_6 AltName="Sign Aim ID [6]" Wiki="Multi-purpose ID to be displayed in the list when setting the purpose" />
+    <signAimId_7 AltName="Sign Aim ID [7]" Wiki="Multi-purpose ID to be displayed in the list when setting the purpose" />
+    <signAimId_8 AltName="Sign Aim ID [8]" Wiki="Multi-purpose ID to be displayed in the list when setting the purpose" />
+    <redSignLimitEventFlagId_1 AltName="Red Sign Limit - Event Flag ID [1]" Wiki="Red sign limit event flag ID1" />
+    <breakInLimitEventFlagId_2 AltName="Invasion Limit - Event Flag ID [2]" Wiki="Intrusion restriction event flag ID2" />
+    <breakInLimitEventFlagId_3 AltName="Invasion Limit - Event Flag ID [3]" Wiki="Intrusion restriction event flag ID3" />
+    <whiteSignLimitEventFlagId_2 AltName="White Sign Limit - Event Flag ID [2]" Wiki="White sign limit event flag ID2" />
+    <whiteSignLimitEventFlagId_3 AltName="White Sign Limit - Event Flag ID [3]" Wiki="White sign limit event flag ID3" />
+    <redSignLimitEventFlagId_2 AltName="Red Sign Limit - Event Flag ID [2]" Wiki="Red sign limit event flag ID2" />
+    <redSignLimitEventFlagId_3 AltName="Red Sign Limit - Event Flag ID [3]" Wiki="Red sign limit event flag ID3" />
+    <bossId_1 AltName="Boss ID [1]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_2 AltName="Boss ID [2]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_3 AltName="Boss ID [3]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_4 AltName="Boss ID [4]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_5 AltName="Boss ID [5]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_6 AltName="Boss ID [6]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_7 AltName="Boss ID [7]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_8 AltName="Boss ID [8]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_9 AltName="Boss ID [9]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_10 AltName="Boss ID [10]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_11 AltName="Boss ID [11]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_12 AltName="Boss ID [12]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_13 AltName="Boss ID [13]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_14 AltName="Boss ID [14]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_15 AltName="Boss ID [15]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <bossId_16 AltName="Boss ID [16]" Wiki="Area boss ID. It is used to select the target boss when Is the intrusion point automatically generated? Is ." />
+    <mapMenuUnlockEventId AltName="Map Menu Unlock - Event Flag ID" Wiki="Map display_event flag ID (0 - always displayed). Only when this event flag is set, it will be displayed in a lively manner in the map menu." />
+    <pad5 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

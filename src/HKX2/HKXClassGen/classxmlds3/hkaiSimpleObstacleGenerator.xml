@@ -1,0 +1,5 @@
+<class name='hkaiSimpleObstacleGenerator' version='1' signature='0x1fa49156' size='176' parent='hkaiObstacleGenerator'>
+  <members>
+    <member name='localAabb' offset='144' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

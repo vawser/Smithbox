@@ -1,0 +1,7 @@
+<class name='hkpConvexPieceStreamData' version='1' signature='0x39c17188' size='64' parent='hkReferencedObject'>
+  <members>
+    <member name='convexPieceStream' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='convexPieceOffsets' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='convexPieceSingleTriangles' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,9 @@
+<class name='hkpSimpleMeshShape' version='1' signature='0xe6f57cff' size='104' parent='hkpShapeCollection'>
+  <members>
+    <member name='vertices' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangles' offset='64' ctype='hkpSimpleMeshShapeTriangle' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materialIndices' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='radius' offset='96' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldingType' offset='100' etype='WeldingType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

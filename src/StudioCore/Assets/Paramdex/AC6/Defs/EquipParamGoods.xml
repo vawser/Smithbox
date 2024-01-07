@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EQUIP_PARAM_GOODS_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="s32 refId_default"></Field>
+    <Field Def="s32 sfxVariationId"></Field>
+    <Field Def="f32 weight"></Field>
+    <Field Def="s32 basicPrice"></Field>
+    <Field Def="s32 sellValue"></Field>
+    <Field Def="s32 behaviorId"></Field>
+    <Field Def="s32 replaceItemId"></Field>
+    <Field Def="s32 sortId"></Field>
+    <Field Def="s32 appearanceReplaceItemId"></Field>
+    <Field Def="s32 yesNoDialogMessageId"></Field>
+    <Field Def="s32 useEnableSpEffectType"></Field>
+    <Field Def="u16 iconId"></Field>
+    <Field Def="u16 modelId"></Field>
+    <Field Def="s16 shopLv"></Field>
+    <Field Def="s16 compTrophySedId"></Field>
+    <Field Def="s16 trophySeqId"></Field>
+    <Field Def="s16 maxNum"></Field>
+    <Field Def="u8 consumeHeroPoint"></Field>
+    <Field Def="u8 overDexterity"></Field>
+    <Field Def="u8 goodsType"></Field>
+    <Field Def="u8 refCategory"></Field>
+    <Field Def="u8 spEffectCategory"></Field>
+    <Field Def="dummy8 padding1[1]"></Field>
+    <Field Def="u8 goodsUseAnim"></Field>
+    <Field Def="u8 opmeMenuType"></Field>
+    <Field Def="u8 useLimitCategory"></Field>
+    <Field Def="u8 replaceCategory"></Field>
+    <Field Def="u8 UnkByte0x46"></Field>
+    <Field Def="u8 Unk0x47"></Field>
+    <Field Def="u8 enable_live:1"></Field>
+    <Field Def="u8 enable_gray:1"></Field>
+    <Field Def="u8 enable_white:1"></Field>
+    <Field Def="u8 enable_black:1"></Field>
+    <Field Def="u8 enable_multi:1"></Field>
+    <Field Def="u8 disable_offline:1"></Field>
+    <Field Def="u8 isEquip:1"></Field>
+    <Field Def="u8 isConsume:1"></Field>
+    <Field Def="u8 isAutoEquip:1"></Field>
+    <Field Def="u8 isEstablishment:1"></Field>
+    <Field Def="u8 isOnlyOne:1"></Field>
+    <Field Def="u8 isDiscard:1"></Field>
+    <Field Def="u8 isDeposit:1"></Field>
+    <Field Def="u8 isDisableHand:1"></Field>
+    <Field Def="u8 isRemoveItem_forGameClear:1"></Field>
+    <Field Def="u8 isSuppleItem:1"></Field>
+    <Field Def="u8 isFullSuppleItem:1"></Field>
+    <Field Def="u8 isEnhance:1"></Field>
+    <Field Def="u8 isFixItem:1"></Field>
+    <Field Def="u8 disableMultiDropShare:1"></Field>
+    <Field Def="u8 disableUseAtColiseum:1"></Field>
+    <Field Def="u8 disableUseAtOutOfColiseum:1"></Field>
+    <Field Def="u8 isEnableFastUseItem:1"></Field>
+    <Field Def="u8 isApplySpecialEffect:1"></Field>
+    <Field Def="u8 syncNumVaryId"></Field>
+    <Field Def="s32 refId_1"></Field>
+    <Field Def="s32 refVirtualWepId"></Field>
+    <Field Def="s32 vagrantItemLotId"></Field>
+    <Field Def="s32 vagrantBonusEneDropItemLotId"></Field>
+    <Field Def="s32 vagrantItemEneDropItemLotId"></Field>
+    <Field Def="s32 castSfxId"></Field>
+    <Field Def="s32 fireSfxId"></Field>
+    <Field Def="s32 effectSfxId"></Field>
+    <Field Def="u8 enable_ActiveBigRune"></Field>
+    <Field Def="s8 suppleType"></Field>
+    <Field Def="u8 autoReplenishType"></Field>
+    <Field Def="u8 isDrop"></Field>
+    <Field Def="s16 maxRepositoryNum"></Field>
+    <Field Def="u8 unkSortGroupId_SameAsWeaponParam0x2CB_0x73"></Field>
+    <Field Def="u8 isUseNoAttackRegion"></Field>
+    <Field Def="s32 Unk0x74"></Field>
+    <Field Def="f32 UnkFloat0x78"></Field>
+    <Field Def="s32 UnkInt0x7C"></Field>
+    <Field Def="s32 Unk0x80"></Field>
+    <Field Def="s32 Unk0x84"></Field>
+    <Field Def="s32 Unk0x88"></Field>
+  </Fields>
+</PARAMDEF>

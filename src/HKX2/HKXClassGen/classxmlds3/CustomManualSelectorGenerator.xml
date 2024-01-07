@@ -1,0 +1,50 @@
+<class name='CustomManualSelectorGenerator' version='1' signature='0xff6b0824' size='256' parent='hkbGenerator'>
+  <enums>
+    <enum name='OffsetType' flags='00000000'>
+      <enumitem name='WeaponCategoryRight' value='13'/>
+      <enumitem name='WeaponCategoryLeft' value='14'/>
+      <enumitem name='IdleCategory' value='11'/>
+      <enumitem name='OffsetNone' value='0'/>
+      <enumitem name='AnimIdOffset' value='15'/>
+      <enumitem name='WeaponCategoryHandStyle' value='16'/>
+    </enum>
+    <enum name='AnimeEndEventType' flags='00000000'>
+      <enumitem name='FireNextStateEvent' value='0'/>
+      <enumitem name='FireStateEndEvent' value='1'/>
+      <enumitem name='FireIdleEvent' value='2'/>
+      <enumitem name='None' value='3'/>
+    </enum>
+    <enum name='ReplanningAI' flags='00000000'>
+      <enumitem name='Enable' value='0'/>
+      <enumitem name='Disable' value='1'/>
+    </enum>
+    <enum name='ChangeTypeOfSelectedIndexAfterActivate' flags='00000000'>
+      <enumitem name='NONE' value='0'/>
+      <enumitem name='SELF_TRANSITION' value='1'/>
+      <enumitem name='UPDATE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='generators' offset='136' ctype='hkbGenerator' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='offsetType' offset='152' etype='OffsetType' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animId' offset='156' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animeEndEventType' offset='160' etype='AnimeEndEventType' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableScript' offset='164' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableTae' offset='165' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='changeTypeOfSelectedIndexAfterActivate' offset='166' etype='ChangeTypeOfSelectedIndexAfterActivate' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='generatorChangedTransitionEffect' offset='168' ctype='hkbTransitionEffect' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='checkAnimEndSlotNo' offset='176' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='replanningAI' offset='180' etype='ReplanningAI' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endEvent' offset='184' ctype='hkbEvent' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='preLocalTime' offset='208' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='localTime' offset='212' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='animeDuration' offset='216' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='argTaeId' offset='220' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='scriptGenerator' offset='224' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='stateId' offset='232' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='isInTransFrom' offset='236' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='currentGeneratorIndex' offset='237' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='generatorIndexAtActivate' offset='238' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='activeTransitions' offset='240' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+   <Enums>
+    <Enum Name="SWORD_ARTS_REF_STATUS_TYPE" type="s8">
+          <Option Value="0" Name="Weapon Skill" />
+          <Option Value="1" Name="Parry (Right and Left Handed)" />
+          <Option Value="2" Name="Stomp" />
+          <Option Value="4" Name="Stance" />
+          <Option Value="8" Name="Bow Rapid Fire" />
+          <Option Value="11" Name="Spin Slash" />
+          <Option Value="12" Name="Warcry" />
+          <Option Value="13" Name="Charge" />
+          <Option Value="14" Name="Perseverance" />
+          <Option Value="16" Name="Magic Buff (Right and Left Handed)" />
+          <Option Value="17" Name="Unfaltering Prayer (Weak Poise)" />
+          <Option Value="18" Name="Quickstep" />
+          <Option Value="19" Name="Bow Charge Shot" />
+          <Option Value="21" Name="Head Hunt" />
+          <Option Value="22" Name="One Shot" />
+          <Option Value="23" Name="One Shot (Right and Left Handed)" />
+          <Option Value="24" Name="One Shot (Visually One Handed)" />
+          <Option Value="25" Name="Storm Stance " />
+          <Option Value="26" Name="Bow Strong Shot" />
+          <Option Value="27" Name="Unfaltering Prayer (Medium Poise)" />
+          <Option Value="28" Name="Unfaltering Prayer (Strong Poise)" />
+          <Option Value="29" Name="Bow Wide Shot" />
+          <Option Value="30" Name="Pyromancer's Parting Flame" />
+          <Option Value="31" Name="Four Way Attack" />
+          <Option Value="32" Name="Four Way Stance" />
+          <Option Value="33" Name="Crossbow Gatling Stance" />
+          <Option Value="34" Name="Random One Shot" />
+          <Option Value="35" Name="Magic Buff Attack (Right and Left Handed)" />
+          <Option Value="36" Name="Stance (Aquamarine Dagger)" />
+    </Enum>
+    <Enum Name="SWORD_ARTS_SHIELD_ICON_TYPE" type="s8">
+          <Option Value="0" Name="Default" />
+          <Option Value="1" Name="Weapon Skill" />
+          <Option Value="2" Name="Parry" />
+          <Option Value="3" Name="Shield Bash" />
+          <Option Value="4" Name="Unique Skill" />
+    </Enum>
+    <Enum Name="SPEED_TYPE">
+	  <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Fast" />
+	  <Option Value="2" Name="Slow" />
+	</Enum>
+  </Enums>
+  <Field>
+    <swordArtsType AltName="Sword Arts Type" Wiki="Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler" Enum="SWORD_ARTS_REF_STATUS_TYPE" />
+    <artsSpeedType AltName="Arts Speed Type" Wiki="Which cancellation timing do you see? 0: Normal (left hand attack) / 1: Early / 2: Slow" Enum="SPEED_TYPE" />
+    <refStatus AltName="Reference Status Type" Wiki="Which system of arts points to refer to" />
+    <isRefRightArts AltName="Is Right-hand Arts Reference" Wiki="When set to the arts of the left-handed weapon, the arts of the right-handed weapon are displayed in FE. Assumed to be used for weapon maneuvers etc." IsBool="" />
+    <isGrayoutLeftHand AltName="Is Greyout Left-hand" Wiki="Whether to gray out when displaying the arts name of the left hand (one-handed)" IsBool="" />
+    <isGrayoutRightHand AltName="Is Greyout Right-hand" Wiki="Whether to gray out when displaying the arts name of the right hand (one-handed)" IsBool="" />
+    <isGrayoutBothHand AltName="Is Greyout Both-hand" Wiki="Whether to gray out when displaying the arts name of both hands" IsBool="" />
+    <reserve2 AltName=""/>
+    <usePoint_L1 AltName="Arts Points - L1" Wiki="Points to spend when putting out arts by L1" />
+    <usePoint_L2 AltName="Arts Points - L2" Wiki="Points to spend when putting out arts by L2" />
+    <usePoint_R1 AltName="Arts Points - R1" Wiki="Points to spend when putting out arts by R1" />
+    <usePoint_R2 AltName="Arts Points - R2" Wiki="Points to spend when putting out arts by R2" />
+    <textId AltName="Text ID" Wiki="Text ID for arts description" FmgRef="Modern_MenuText" />
+    <useMagicPoint_L1 AltName="FP Consumption - L1" Wiki="MP consumed when issuing arts by L1" />
+    <useMagicPoint_L2 AltName="FP Consumption - L2" Wiki="MP consumed when issuing arts by L2" />
+    <useMagicPoint_R1 AltName="FP Consumption - R1" Wiki="MP consumed when issuing arts by R1" />
+    <useMagicPoint_R2 AltName="FP Consumption - R2" Wiki="MP consumed when issuing arts by R2" />
+    <shieldIconType AltName="Shield Icon Type" Wiki="If you do not overwrite it, the icon will be displayed based on the swashbuckler ID of the weapon para." Enum="SWORD_ARTS_SHIELD_ICON_TYPE" />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="All Action Ids for Weapon Arts"/>
+</PARAMMETA>

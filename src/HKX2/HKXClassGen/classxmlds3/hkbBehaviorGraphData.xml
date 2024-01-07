@@ -1,0 +1,11 @@
+<class name='hkbBehaviorGraphData' version='1' signature='0x907a8222' size='112' parent='hkReferencedObject'>
+  <members>
+    <member name='attributeDefaults' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='variableInfos' offset='32' ctype='hkbVariableInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='characterPropertyInfos' offset='48' ctype='hkbVariableInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventInfos' offset='64' ctype='hkbEventInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='variableBounds' offset='80' ctype='hkbVariableBounds' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='variableInitialValues' offset='96' ctype='hkbVariableValueSet' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stringData' offset='104' ctype='hkbBehaviorGraphStringData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,19 @@
+<class name='hkcdPlanarGeometryPlanesCollection' version='1' signature='0x32b86890' size='64' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Bounds' flags='00000000'>
+      <enumitem name='BOUND_POS_X' value='0'/>
+      <enumitem name='BOUND_NEG_X' value='1'/>
+      <enumitem name='BOUND_POS_Y' value='2'/>
+      <enumitem name='BOUND_NEG_Y' value='3'/>
+      <enumitem name='BOUND_POS_Z' value='4'/>
+      <enumitem name='BOUND_NEG_Z' value='5'/>
+      <enumitem name='NUM_BOUNDS' value='6'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='offsetAndScale' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='planes' offset='32' ctype='hkcdPlanarGeometryPrimitivesPlane' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cache' offset='48' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='criticalAccess' offset='56' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,59 @@
+<class name='hkpConstraintAtom' version='1' signature='0xc132ad1f' size='2'>
+  <enums>
+    <enum name='AtomType' flags='00000000'>
+      <enumitem name='TYPE_INVALID' value='0'/>
+      <enumitem name='TYPE_BRIDGE' value='1'/>
+      <enumitem name='TYPE_SET_LOCAL_TRANSFORMS' value='2'/>
+      <enumitem name='TYPE_SET_LOCAL_TRANSLATIONS' value='3'/>
+      <enumitem name='TYPE_SET_LOCAL_ROTATIONS' value='4'/>
+      <enumitem name='TYPE_BALL_SOCKET' value='5'/>
+      <enumitem name='TYPE_STIFF_SPRING' value='6'/>
+      <enumitem name='TYPE_LIN' value='7'/>
+      <enumitem name='TYPE_LIN_SOFT' value='8'/>
+      <enumitem name='TYPE_LIN_LIMIT' value='9'/>
+      <enumitem name='TYPE_LIN_FRICTION' value='10'/>
+      <enumitem name='TYPE_LIN_MOTOR' value='11'/>
+      <enumitem name='TYPE_2D_ANG' value='12'/>
+      <enumitem name='TYPE_ANG' value='13'/>
+      <enumitem name='TYPE_ANG_LIMIT' value='14'/>
+      <enumitem name='TYPE_TWIST_LIMIT' value='15'/>
+      <enumitem name='TYPE_CONE_LIMIT' value='16'/>
+      <enumitem name='TYPE_ANG_FRICTION' value='17'/>
+      <enumitem name='TYPE_ANG_MOTOR' value='18'/>
+      <enumitem name='TYPE_RAGDOLL_MOTOR' value='19'/>
+      <enumitem name='TYPE_PULLEY' value='20'/>
+      <enumitem name='TYPE_RACK_AND_PINION' value='21'/>
+      <enumitem name='TYPE_COG_WHEEL' value='22'/>
+      <enumitem name='TYPE_SETUP_STABILIZATION' value='23'/>
+      <enumitem name='TYPE_3D_ANG' value='24'/>
+      <enumitem name='TYPE_DEFORMABLE_3D_LIN' value='25'/>
+      <enumitem name='TYPE_DEFORMABLE_3D_ANG' value='26'/>
+      <enumitem name='TYPE_OVERWRITE_PIVOT' value='27'/>
+      <enumitem name='TYPE_WHEEL_FRICTION' value='28'/>
+      <enumitem name='TYPE_CONTACT' value='29'/>
+      <enumitem name='FIRST_MODIFIER_TYPE' value='30'/>
+      <enumitem name='TYPE_MODIFIER_SOFT_CONTACT' value='30'/>
+      <enumitem name='TYPE_MODIFIER_MASS_CHANGER' value='31'/>
+      <enumitem name='TYPE_MODIFIER_VISCOUS_SURFACE' value='32'/>
+      <enumitem name='TYPE_MODIFIER_MOVING_SURFACE' value='33'/>
+      <enumitem name='TYPE_MODIFIER_IGNORE_CONSTRAINT' value='34'/>
+      <enumitem name='TYPE_MODIFIER_CENTER_OF_MASS_CHANGER' value='35'/>
+      <enumitem name='LAST_MODIFIER_TYPE' value='35'/>
+      <enumitem name='TYPE_MAX' value='36'/>
+    </enum>
+    <enum name='CallbackRequest' flags='00000000'>
+      <enumitem name='CALLBACK_REQUEST_NONE' value='0'/>
+      <enumitem name='CALLBACK_REQUEST_NEW_CONTACT_POINT' value='1'/>
+      <enumitem name='CALLBACK_REQUEST_SETUP_PPU_ONLY' value='2'/>
+      <enumitem name='CALLBACK_REQUEST_SETUP_CALLBACK' value='4'/>
+      <enumitem name='CALLBACK_REQUEST_CONTACT_POINT_CALLBACK' value='8'/>
+    </enum>
+    <enum name='SolvingMethod' flags='00000000'>
+      <enumitem name='METHOD_STABILIZED' value='0'/>
+      <enumitem name='METHOD_OLD' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='0' etype='AtomType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

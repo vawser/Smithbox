@@ -1,0 +1,66 @@
+90 Consumable
+91 Unlimited use
+100 S
+101 A
+102 B
+103 C
+104 D
+105 E
+106 -
+110 -
+111 Blade of the Darkmoon
+112 Warrior of Sunlight
+113 Mound-makers
+114 Spears of the Church
+115 Rosaria's Fingers
+116 Watchdogs of Farron
+117 Aldrich Faithful
+118 Way of Blue
+119 Blue Sentinels
+120 Dagger
+121 Straight Sword
+122 Greatsword
+123 Ultra Greatsword
+124 Curved Sword
+125 Curved Greatsword
+126 Katana
+127 Thrusting Sword
+128 Axe
+129 Greataxe
+130 Hammer
+131 Great Hammer
+132 Spear
+133 Pike
+134 Halberd
+135 Reaper
+136 Fist
+137 Fist
+138 Claw
+139 Whip
+140 Bow
+141 Greatbow
+142 Crossbow
+143 Staff
+144 Pyromancy Flame
+145 Talisman
+146 Sacred Chime
+147 Small Shield
+148 Shield
+149 Greatshield
+150 Arrow
+151 Greatarrow
+152 Bolt
+153 Torch
+154 Dagger (Paired)
+155 Sword (Paired)
+156 Ultra Greatsword (Unique)
+157 Curved Sword (Paired)
+158 Katana (Paired)
+159 Axe (Paired)
+160 Hammer (Paired)
+161 Spear (Paired)
+162 Special Straight Sword
+163 Special Thrusting Sword
+164 Reaper
+165 Greatshield (Paired)
+166 Ultra Greatsword (Paired)

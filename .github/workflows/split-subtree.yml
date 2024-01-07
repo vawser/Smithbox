@@ -1,0 +1,24 @@
+# This is a beta only for developers who can deal with SF fork issues and contribute upstream fixes to this repository.
+# Contact DSMS maintainers if you want to be added to it.
+name: Mirror SoulsFormats (beta)
+on:
+  push:
+    paths:
+      - '/src/Andre/SoulsFormats/**'
+jobs:
+  split:
+    runs-on: ubuntu-latest
+    name: Update soulsmods/MapStudioSF repo
+    if: github.repository == 'soulsmods/DSMapStudio'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Split
+        uses: nxtlvlsoftware/git-subtree-action@1.1
+        with:
+          repo: 'soulsmods/MapStudioSF'
+          path: 'SoulsFormats'
+          deploy_key: ${{ secrets.DSMS_SOULS_FORMATS_DEPLOY_KEY }}
+          force: true

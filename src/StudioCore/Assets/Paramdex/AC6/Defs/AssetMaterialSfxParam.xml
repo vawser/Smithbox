@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ASSET_MATERIAL_SFX_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 sfxId_00"></Field>
+    <Field Def="u32 sfxId_01"></Field>
+    <Field Def="u32 sfxId_02"></Field>
+    <Field Def="u32 sfxId_03"></Field>
+    <Field Def="u32 sfxId_04"></Field>
+    <Field Def="u32 sfxId_05"></Field>
+    <Field Def="u32 sfxId_06"></Field>
+    <Field Def="u32 sfxId_07"></Field>
+    <Field Def="u32 sfxId_08"></Field>
+    <Field Def="u32 sfxId_09"></Field>
+    <Field Def="u32 sfxId_10"></Field>
+    <Field Def="u32 sfxId_11"></Field>
+    <Field Def="u32 sfxId_12"></Field>
+    <Field Def="u32 sfxId_13"></Field>
+    <Field Def="u32 sfxId_14"></Field>
+    <Field Def="u32 sfxId_15"></Field>
+    <Field Def="u32 sfxId_16"></Field>
+    <Field Def="u32 sfxId_17"></Field>
+    <Field Def="u32 sfxId_18"></Field>
+    <Field Def="u32 sfxId_19"></Field>
+    <Field Def="u32 sfxId_20"></Field>
+    <Field Def="u32 sfxId_21"></Field>
+    <Field Def="u32 sfxId_22"></Field>
+    <Field Def="u32 sfxId_23"></Field>
+    <Field Def="u32 sfxId_24"></Field>
+    <Field Def="u32 sfxId_25"></Field>
+    <Field Def="u32 sfxId_26"></Field>
+    <Field Def="u32 sfxId_27"></Field>
+    <Field Def="u32 sfxId_28"></Field>
+    <Field Def="u32 sfxId_29"></Field>
+    <Field Def="u32 sfxId_30"></Field>
+    <Field Def="u32 sfxId_31"></Field>
+  </Fields>
+</PARAMDEF>

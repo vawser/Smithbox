@@ -1,0 +1,41 @@
+0 Host of Embers
+1 Phantom
+2 Dark Spirit
+3 Wandering Enemy
+4 Wandering NPC
+5 Normal
+6 Animal
+7 Boss
+8 Grey Ghost
+9 Friendly NPC
+10 Replay
+11 Display
+12 Invader
+13 Arean - Invader
+10001 Blade of the Darkmoon - Coop
+10002 Blade of the Darkmoon - Invader
+10013 Blade of the Darkmoon - Invader
+20001 Warrior of Sunlight - Coop
+20002 Warrior of Sunlight - Invader
+20013 Warrior of Sunlight - Invader
+30001 Mound-makers - Mad Coop
+30002 Mound-makers - Mad Invader
+30013 Mound-makers - Invader
+40001 Spear of the Church - Coop
+40002 Spear of the Church - Invader
+40013 Spear of the Church - Invader
+50001 Rosaria's Fingers - Coop
+50002 Rosaria's Fingers - Invader
+50013 Rosaria's Fingers - Invader
+60001 Watchdogs of Farron - Coop
+60002 Watchdogs of Farron - Invader
+60013 Watchdogs of Farron - Invader
+70001 Aldrich Faithful - Coop
+70002 Aldrich Faithful - Invader
+70013 Aldrich Faithful - Invader
+80001 Phantom - Coop
+80002 Dark Spirit - Invader
+80013 Dark Spirit - Invader
+90001 Blue Sentinels - Coop
+90002 Blue Sentinels - Invader
+90013 Blue Sentinels - Invader

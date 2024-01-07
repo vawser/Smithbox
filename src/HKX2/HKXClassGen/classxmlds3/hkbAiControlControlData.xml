@@ -1,0 +1,6 @@
+<class name='hkbAiControlControlData' version='1' signature='0x185eba78' size='12'>
+  <members>
+    <member name='blendable' offset='0' ctype='hkbAiControlControlDataBlendable' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nonBlendable' offset='8' ctype='hkbAiControlControlDataNonBlendable' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

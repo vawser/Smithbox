@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <a000_rightElbowIO AltName="[a000] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a000_leftElbowIO AltName="[a000] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a000_bothLegsIO AltName="[a000] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <a002_rightElbowIO AltName="[a002] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a002_leftElbowIO AltName="[a002] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a002_bothLegsIO AltName="[a002] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <a003_rightElbowIO AltName="[a003] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a003_leftElbowIO AltName="[a003] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a003_bothLegsIO AltName="[a003] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <a010_rightElbowIO AltName="[a010] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a010_leftElbowIO AltName="[a010] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a010_bothLegsIO AltName="[a010] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <a012_rightElbowIO AltName="[a012] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a012_leftElbowIO AltName="[a012] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a012_bothLegsIO AltName="[a012] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <a013_rightElbowIO AltName="[a013] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a013_leftElbowIO AltName="[a013] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a013_bothLegsIO AltName="[a013] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <a014_rightElbowIO AltName="[a014] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a014_leftElbowIO AltName="[a014] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a014_bothLegsIO AltName="[a014] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <a015_rightElbowIO AltName="[a015] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a015_leftElbowIO AltName="[a015] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a015_bothLegsIO AltName="[a015] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <a016_rightElbowIO AltName="[a016] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
+    <a016_leftElbowIO AltName="[a016] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
+    <a016_bothLegsIO AltName="[a016] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

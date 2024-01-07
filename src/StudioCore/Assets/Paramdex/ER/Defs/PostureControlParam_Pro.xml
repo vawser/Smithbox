@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>POSTURE_CONTROL_PARAM_PRO_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 a000_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>1</SortID>
+      <UnkC8>a000</UnkC8>
+    </Field>
+    <Field Def="s16 a000_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>2</SortID>
+      <UnkC8>a000</UnkC8>
+    </Field>
+    <Field Def="s16 a000_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>3</SortID>
+      <UnkC8>a000</UnkC8>
+    </Field>
+    <Field Def="s16 a000_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>4</SortID>
+      <UnkC8>a000</UnkC8>
+    </Field>
+    <Field Def="s16 a002_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>5</SortID>
+      <UnkC8>a002</UnkC8>
+    </Field>
+    <Field Def="s16 a002_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>6</SortID>
+      <UnkC8>a002</UnkC8>
+    </Field>
+    <Field Def="s16 a002_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>7</SortID>
+      <UnkC8>a002</UnkC8>
+    </Field>
+    <Field Def="s16 a002_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>8</SortID>
+      <UnkC8>a002</UnkC8>
+    </Field>
+    <Field Def="s16 a003_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>9</SortID>
+      <UnkC8>a003</UnkC8>
+    </Field>
+    <Field Def="s16 a003_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>10</SortID>
+      <UnkC8>a003</UnkC8>
+    </Field>
+    <Field Def="s16 a003_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>11</SortID>
+      <UnkC8>a003</UnkC8>
+    </Field>
+    <Field Def="s16 a003_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>12</SortID>
+      <UnkC8>a003</UnkC8>
+    </Field>
+    <Field Def="s16 a010_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>13</SortID>
+      <UnkC8>a010</UnkC8>
+    </Field>
+    <Field Def="s16 a010_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>14</SortID>
+      <UnkC8>a010</UnkC8>
+    </Field>
+    <Field Def="s16 a010_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>15</SortID>
+      <UnkC8>a010</UnkC8>
+    </Field>
+    <Field Def="s16 a010_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>16</SortID>
+      <UnkC8>a010</UnkC8>
+    </Field>
+    <Field Def="s16 a012_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>17</SortID>
+      <UnkC8>a012</UnkC8>
+    </Field>
+    <Field Def="s16 a012_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>18</SortID>
+      <UnkC8>a012</UnkC8>
+    </Field>
+    <Field Def="s16 a012_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>19</SortID>
+      <UnkC8>a012</UnkC8>
+    </Field>
+    <Field Def="s16 a012_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>20</SortID>
+      <UnkC8>a012</UnkC8>
+    </Field>
+    <Field Def="s16 a013_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>21</SortID>
+      <UnkC8>a013</UnkC8>
+    </Field>
+    <Field Def="s16 a013_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>22</SortID>
+      <UnkC8>a013</UnkC8>
+    </Field>
+    <Field Def="s16 a013_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>23</SortID>
+      <UnkC8>a013</UnkC8>
+    </Field>
+    <Field Def="s16 a013_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>24</SortID>
+      <UnkC8>a013</UnkC8>
+    </Field>
+    <Field Def="s16 a014_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>25</SortID>
+      <UnkC8>a014</UnkC8>
+    </Field>
+    <Field Def="s16 a014_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>26</SortID>
+      <UnkC8>a014</UnkC8>
+    </Field>
+    <Field Def="s16 a014_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>27</SortID>
+      <UnkC8>a014</UnkC8>
+    </Field>
+    <Field Def="s16 a014_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>28</SortID>
+      <UnkC8>a014</UnkC8>
+    </Field>
+    <Field Def="s16 a015_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>29</SortID>
+      <UnkC8>a015</UnkC8>
+    </Field>
+    <Field Def="s16 a015_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>30</SortID>
+      <UnkC8>a015</UnkC8>
+    </Field>
+    <Field Def="s16 a015_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>31</SortID>
+      <UnkC8>a015</UnkC8>
+    </Field>
+    <Field Def="s16 a015_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>32</SortID>
+      <UnkC8>a015</UnkC8>
+    </Field>
+    <Field Def="s16 a016_rightArmIO">
+      <DisplayName>右腕_内外</DisplayName>
+      <Description>右腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>33</SortID>
+      <UnkC8>a016</UnkC8>
+    </Field>
+    <Field Def="s16 a016_rightArmFB">
+      <DisplayName>右腕_前後</DisplayName>
+      <Description>右腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>34</SortID>
+      <UnkC8>a016</UnkC8>
+    </Field>
+    <Field Def="s16 a016_leftArmIO">
+      <DisplayName>左腕_内外</DisplayName>
+      <Description>左腕_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>35</SortID>
+      <UnkC8>a016</UnkC8>
+    </Field>
+    <Field Def="s16 a016_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>36</SortID>
+      <UnkC8>a016</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad[8]">
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>38</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,17 @@
+<class name='hclBlendSomeVerticesOperator' version='1' signature='0x2b45e438' size='64' parent='hclOperator'>
+  <enums>
+    <enum name='VectorContext' flags='00000000'>
+      <enumitem name='VEC_POSITION' value='0'/>
+      <enumitem name='VEC_DIRECTION' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='blendEntries' offset='32' ctype='hclBlendSomeVerticesOperatorBlendEntry' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bufferIdx_A' offset='48' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bufferIdx_B' offset='52' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bufferIdx_C' offset='56' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendNormals' offset='60' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendTangents' offset='61' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendBitangents' offset='62' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

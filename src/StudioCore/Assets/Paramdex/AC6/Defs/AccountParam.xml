@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ACCOUNT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 fmgId">
+      <Description>Base FMG ID in NPC名 for the range of 10 strings determining character name and AC name.</Description>
+    </Field>
+    <Field Def="u16 menuDecalId">
+      <Description>ID of the MENU_Decal texture in 00_Solo to use for the character's emblem.</Description>
+    </Field>
+    <Field Def="dummy8 pad08[10]"></Field>
+  </Fields>
+</PARAMDEF>

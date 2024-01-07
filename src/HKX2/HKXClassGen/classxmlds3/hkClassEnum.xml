@@ -1,0 +1,13 @@
+<class name='hkClassEnum' version='1' signature='0x8a3609cf' size='40'>
+  <enums>
+    <enum name='FlagValues' flags='00000000'>
+      <enumitem name='FLAGS_NONE' value='0'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='0' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='items' offset='8' ctype='hkClassEnumItem' vtype='TYPE_SIMPLEARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attributes' offset='24' ctype='hkCustomAttributes' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='flags' offset='32' etype='FlagValues' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

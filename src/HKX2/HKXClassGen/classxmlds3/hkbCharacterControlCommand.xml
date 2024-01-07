@@ -1,0 +1,13 @@
+<class name='hkbCharacterControlCommand' version='1' signature='0xc281c421' size='32' parent='hkReferencedObject'>
+  <enums>
+    <enum name='CharacterControlCommand' flags='00000000'>
+      <enumitem name='COMMAND_HIDE' value='0'/>
+      <enumitem name='COMMAND_SHOW' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='characterId' offset='16' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='command' offset='24' etype='CharacterControlCommand' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='28' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name='hkxTriangleSelectionChannel' version='1' signature='0x34ca75a6' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='selectedTriangles' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <texId AltName="texId" />
+    <isFlare AltName="isFlare" />
+    <enableRoll AltName="enableRoll" />
+    <enableScale AltName="enableScale" />
+    <dummy1 AltName="dummy1" />
+    <locateDistRate AltName="locateDistRate" />
+    <texScale AltName="texScale" />
+    <colR AltName="colR" />
+    <colG AltName="colG" />
+    <colB AltName="colB" />
+    <colA AltName="colA" />
+  </Field>
+  <Self />
+</PARAMMETA>

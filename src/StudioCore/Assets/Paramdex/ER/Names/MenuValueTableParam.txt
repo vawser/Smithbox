@@ -1,0 +1,70 @@
+50 Light Load
+51 Med. Load
+52 Heavy Load
+53 Overloaded
+90 Consumable
+91 Reusable
+100 S
+101 A
+102 B
+103 C
+104 D
+105 E
+106 -
+110 -
+120 Dagger
+121 Straight Sword
+122 Greatsword
+123 Colossal Sword
+124 Curved Sword
+125 Curved Greatsword
+126 Katana
+127 Twinblade
+128 Thrusting Sword
+129 Heavy Thrusting Sword
+130 Axe
+131 Greataxe
+132 Hammer
+133 Warhammer
+134 Flail
+135 Spear
+137 Great Spear
+138 Halberd
+139 Reaper
+140 Fist
+141 Fist
+142 Claw
+143 Whip
+144 Colossal Weapon
+145 Light Bow
+146 Bow
+147 Greatbow
+148 Crossbow
+149 Ballista
+150 Glintstone Staff
+151 Tattoo
+152 Sacred Seal
+154 Small Shield
+155 Medium Shield
+156 Greatshield
+157 Arrow
+158 Greatarrow
+159 Bolt
+160 Greatbolt
+161 Torch
+300 Cracked Pot
+301 Perfume Bottle
+302 Ritual Pot
+400 Standard
+401 Heavy
+402 Keen
+403 Quality
+404 Magic
+405 Fire
+406 Flame Art
+407 Lightning
+408 Sacred
+409 Poison
+410 Blood
+411 Cold
+412 Occult

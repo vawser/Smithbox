@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="BUDDY_PC_FOLLOW_TYPE" type="u8">
+        <Option Value="0" Name="Follow/Warp to Player (Needs spEffect 297000)" />
+        <Option Value="1" Name="Wander" />
+        <Option Value="2" Name="Stay Still" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <triggerSpEffectId AltName="Trigger SpEffect ID" Wiki="Set the special effect ID that will be the summoning condition" Refs="SpEffectParam"/>
+    <npcParamId AltName="NPC Param ID" Wiki="Set the NPC parameter ID of the summoned buddy" Refs="NpcParam" />
+    <npcThinkParamId AltName="NPC Think Param ID" Wiki="Sets the NPC Thinking Parameter ID of the summoned buddy" Refs="NpcThinkParam" />
+    <npcParamId_ridden AltName="NPC Param ID - Ride" Wiki="For buddies that you want to summon while riding, set the NPC parameter ID for the rider" Refs="NpcParam" />
+    <npcThinkParamId_ridden AltName="NPC Think Param ID - Ride" Wiki="For buddies that you want to summon while riding, set the NPC Thinking Parameter ID for the rider" Refs="NpcThinkParam" />
+    <x_offset AltName="Spawn Offset: X (left/right)" Wiki="Sets the distance in meters to offset the buddy from the summon point to the X coordinate (left/right)." />
+    <z_offset AltName="Spawn Offset: Z (forward/back)" Wiki="Sets the distance in meters to offsets the buddy from the summon point to the Z coordinate (forwad/back)." />
+    <y_angle AltName="Spawn Angle: Y" Wiki="Sets summon position rotation." />
+    <appearOnAroundSekihi AltName="Appear near Stone Monument" Wiki="Forces summon to spawn at summon monument." IsBool="" />
+    <disablePCTargetShare AltName="Disable Player Target Share" Wiki="Disables summon targeting whoever PC locked-onto." IsBool="" />
+    <pcFollowType AltName="Player Follow Type" Wiki="Determines PC tracking and non-combat behavior." Enum="BUDDY_PC_FOLLOW_TYPE" />
+    <Reserve AltName=""/>
+    <dopingSpEffect_lv0 AltName="Reinforcement SpEffect: +0" Wiki="SpEffect granted when reinforced to +0" Refs="SpEffectParam" />
+    <dopingSpEffect_lv1 AltName="Reinforcement SpEffect: +1" Wiki="SpEffect granted when reinforced to +1." Refs="SpEffectParam" />
+    <dopingSpEffect_lv2 AltName="Reinforcement SpEffect: +2" Wiki="SpEffect granted when reinforced to +2." Refs="SpEffectParam" />
+    <dopingSpEffect_lv3 AltName="Reinforcement SpEffect: +3" Wiki="SpEffect granted when reinforced to +3." Refs="SpEffectParam" />
+    <dopingSpEffect_lv4 AltName="Reinforcement SpEffect: +4" Wiki="SpEffect granted when reinforced to +4." Refs="SpEffectParam" />
+    <dopingSpEffect_lv5 AltName="Reinforcement SpEffect: +5" Wiki="SpEffect granted when reinforced to +5." Refs="SpEffectParam" />
+    <dopingSpEffect_lv6 AltName="Reinforcement SpEffect: +6" Wiki="SpEffect granted when reinforced to +6." Refs="SpEffectParam" />
+    <dopingSpEffect_lv7 AltName="Reinforcement SpEffect: +7" Wiki="SpEffect granted when reinforced to +7." Refs="SpEffectParam" />
+    <dopingSpEffect_lv8 AltName="Reinforcement SpEffect: +8" Wiki="SpEffect granted when reinforced to +8." Refs="SpEffectParam" />
+    <dopingSpEffect_lv9 AltName="Reinforcement SpEffect: +9" Wiki="SpEffect granted when reinforced to +9." Refs="SpEffectParam" />
+    <dopingSpEffect_lv10 AltName="Reinforcement SpEffect: +10" Wiki="SpEffect granted when reinforced to +10." Refs="SpEffectParam" />
+    <npcPlayerInitParamId AltName="Character Init ID" Wiki="CharaInitParam ID this c0000 summon will use." Refs="CharaInitParam" />
+    <generateAnimId AltName="Generate Anim ID" Wiki="Generate Anime ID" />
+    <Reserve2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

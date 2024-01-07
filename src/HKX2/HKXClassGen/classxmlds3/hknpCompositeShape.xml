@@ -1,0 +1,6 @@
+<class name='hknpCompositeShape' version='1' signature='0x12bb3bef' size='96' parent='hknpShape'>
+  <members>
+    <member name='edgeWeldingMap' offset='48' ctype='hknpSparseCompactMapunsignedshort' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shapeTagCodecInfo' offset='88' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

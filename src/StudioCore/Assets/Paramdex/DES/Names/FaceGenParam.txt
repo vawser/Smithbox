@@ -1,0 +1,100 @@
+1 testData
+2 female default candidate
+3 female default candidate
+4 female default candidate
+5 female default candidate
+6 female default candidate
+7 male default candidate
+8 male default candidate
+9 male default candidate
+10 male default candidate
+11 male default candidate
+1001 mercenary man
+1002 Low-ranking soldier_male
+1003 Junior Knight_Male
+1004 Temple Knight_Male
+1005 Shinto priest _ man
+1006 Nobility _ man
+1007 hunter man
+1008 bandit_man
+1009 Sorcerer_Male
+1010 Wanderer _ man
+1011 mercenary_woman
+1012 Junior soldier_woman
+1013 Low-ranking knight_woman
+1014 Temple Knight_Female
+1015 Shinto priest _ woman
+1016 aristocrat woman
+1017 hunter _ woman
+1018 thief_woman
+1019 sorceress_woman
+1020 wanderer _ woman
+2001 Prince of Ostrava
+2002 Billor
+2003 witch yuria
+2004 Miralda the Condemned
+2005 Grave Robber Blige
+2006 wise man flake
+2007 hyena patch
+2008 Yurt, Lord of Silence
+2009 Saint Urbain
+2010 Gal Vinland
+2011 Wanderer Skillville
+2012 broken heart warrior
+2013 Princess Knight Selene Vinland
+2014 Lord Rydell in Black
+2015 Old King Doran
+2016 Mephistopheles
+2017 Master Satsuki
+2018 sorcerer
+2019 Believers of God Part 1
+2020 Believers of God Part 2
+2021 Believers of God Part 3
+2022 Believers of God Part 4
+2023 Savvy
+2024 big bag thomas
+3000 For NPC face creation, male 1
+3001 For NPC face creation Male 2
+3002 For NPC face creation, male 3
+3003 For NPC face creation, male 4
+3004 For NPC face creation, male 5
+3005 For NPC face creation, male 6
+3006 For NPC face creation Male 7
+3007 For NPC face creation, male 8
+3008 For creating NPC faces, male 9
+3010 For creating NPC faces, female 1
+3011 For NPC face creation, female 2
+3012 For NPC face creation, female 3
+3013 For NPC face creation, female 4
+3014 For NPC face creation, female 5
+3015 For NPC face creation, female 6
+3016 For creating NPC faces, female 7
+3017 For NPC face creation, female 8
+3018 For creating NPC faces, female 9
+3100 Billor
+3101 flake
+3102 yurt
+3103 Rydell
+3104 patch
+3105 follower of god 2
+3106 ? ? ?
+3107 big bag thomas
+3108 Blige
+3109 selenium
+3110 Urbain
+3111 broken heart warrior
+3112 Magician Ito
+3113 Mephistopheles
+3114 Follower of God 3 Ito
+3115 Skillville
+3116 Prince of Ostrava
+3117 Miralda
+3118 follower of god 1
+3119 sorcerer
+3120 Mephistopheles Yokoyama
+3121 Urbain Luo
+3122 Master Satsuki
+3123 selenium luo
+3124 follower of god 3
+3125 old king doran
+3126 Gal Vinland

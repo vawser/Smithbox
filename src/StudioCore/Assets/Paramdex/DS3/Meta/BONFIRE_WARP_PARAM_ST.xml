@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+	<Enum Name="List">
+      <Option Value="0" Name="Cemetary of Ash / Untended Graves" />
+      <Option Value="1" Name="High Wall of Lothric / Consumed King's Garden" />
+	  <Option Value="2" Name="Undead Settlement" />
+	  <Option Value="3" Name="Road of Sacrifices / Farron Keep" />
+	  <Option Value="4" Name="Cathedral of the Deep" />
+	  <Option Value="5" Name="Catacombs of Carthus / Smouldering Lake" />
+	  <Option Value="6" Name="Irithyll of the Boreal Valley / Anor Londo" />
+	  <Option Value="7" Name="Irithyll Dungeon / Profaned Capital" />
+	  <Option Value="8" Name="Lothric Castle / Grand Archives" />
+	  <Option Value="9" Name="Archdragon Peak" />
+	  <Option Value="10" Name="Kiln of the First Flame" />
+	  <Option Value="11" Name="Painted World of Ariandel" />
+	  <Option Value="12" Name="Dreg Heap" />
+	  <Option Value="13" Name="The Ringed City" />
+    </Enum>
+  </Enums>
+  <Field>
+	<LocationEventId AltName="Event Flag ID" Wiki="Used in RegisterBonfire command in EMEVD." />
+	<WarpEventId AltName="Bonfire Entity ID" Wiki="Used in RegisterBonfire command in EMEVD." />
+	<BonfireNameId AltName="Name ID" Wiki="Stored in Modern_MenuText." />
+	<DescriptionTextId AltName="Description ID" Wiki="Unused.\nPresumably stored in Modern_MenuText."/>
+	<PictureId AltName="Picture ID" Wiki="Stored in menu/mapimage." />
+	<ListId AltName="List ID" Enum="List" Wiki="Determines which warp group bonfire appears in." />
+	<IsDisableQuickwarp AltName="Is Home Bonfire" IsBool="" Wiki="Seems to enable bonfire level display at menu."/>
+	<CeremonyId AltName="Ceremony ID" Wiki="Forces map into ceremony if value is not -1." />
+	<onlineAreaId AltName="Play Region ID" Refs="PlayRegionParam" Wiki="For displaying online activity embers." />
+    <pad1 AltName=""/>
+  </Field>
+  <Self Wiki="Bonfire configuration"/>
+</PARAMMETA>

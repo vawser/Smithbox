@@ -1,0 +1,5 @@
+<class name='hkUuid' version='1' signature='0xaf28b5cf' size='16'>
+  <members>
+    <member name='data' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

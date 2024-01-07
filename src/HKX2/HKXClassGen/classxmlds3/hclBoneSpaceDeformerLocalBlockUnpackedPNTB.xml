@@ -1,0 +1,8 @@
+<class name='hclBoneSpaceDeformerLocalBlockUnpackedPNTB' version='1' signature='0xf66f32f2' size='1024'>
+  <members>
+    <member name='localPosition' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='localNormal' offset='256' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='localTangent' offset='512' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='localBiTangent' offset='768' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

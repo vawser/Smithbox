@@ -1,0 +1,5 @@
+<class name='hkpConstrainedSystemFilter' version='1' signature='0xddf0dfdd' size='88' parent='hkpCollisionFilter'>
+  <members>
+    <member name='otherFilter' offset='80' ctype='hkpCollisionFilter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

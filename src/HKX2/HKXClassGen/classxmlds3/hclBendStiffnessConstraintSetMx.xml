@@ -1,0 +1,7 @@
+<class name='hclBendStiffnessConstraintSetMx' version='1' signature='0x8d26451b' size='72' parent='hclConstraintSet'>
+  <members>
+    <member name='batches' offset='32' ctype='hclBendStiffnessConstraintSetMxBatch' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='singles' offset='48' ctype='hclBendStiffnessConstraintSetMxSingle' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useRestPoseConfig' offset='64' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

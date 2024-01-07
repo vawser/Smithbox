@@ -1,0 +1,8 @@
+<class name='hkpEntitySpuCollisionCallback' version='1' signature='0x81147f05' size='16'>
+  <members>
+    <member name='util' offset='0' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='capacity' offset='8' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='eventFilter' offset='10' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userFilter' offset='11' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

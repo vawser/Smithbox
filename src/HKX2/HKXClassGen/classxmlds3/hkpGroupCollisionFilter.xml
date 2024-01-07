@@ -1,0 +1,6 @@
+<class name='hkpGroupCollisionFilter' version='1' signature='0x27c777bb' size='208' parent='hkpCollisionFilter'>
+  <members>
+    <member name='noGroupCollisionEnabled' offset='72' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionGroups' offset='76' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='32' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name='hkaiCuttingGeometryInfo' version='1' signature='0x922465a1' size='88' parent='hkReferencedObject'>
+  <members>
+    <member name='geometry' offset='16' ctype='hkGeometry' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cuttingTriangles' offset='64' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

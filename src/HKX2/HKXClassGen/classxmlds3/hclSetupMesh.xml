@@ -1,0 +1,21 @@
+<class name='hclSetupMesh' version='1' signature='0x4b456b02' size='16' parent='hkReferencedObject'>
+  <enums>
+    <enum name='VertexChannelType' flags='00000000'>
+      <enumitem name='HCL_VERTEX_CHANNEL_INVALID' value='0'/>
+      <enumitem name='HCL_VERTEX_CHANNEL_FLOAT' value='1'/>
+      <enumitem name='HCL_VERTEX_CHANNEL_DISTANCE' value='2'/>
+      <enumitem name='HCL_VERTEX_CHANNEL_ANGLE' value='3'/>
+      <enumitem name='HCL_VERTEX_CHANNEL_SELECTION' value='4'/>
+    </enum>
+    <enum name='TriangleChannelType' flags='00000000'>
+      <enumitem name='HCL_TRIANGLE_CHANNEL_INVALID' value='0'/>
+      <enumitem name='HCL_TRIANGLE_CHANNEL_SELECTION' value='1'/>
+    </enum>
+    <enum name='EdgeChannelType' flags='00000000'>
+      <enumitem name='HCL_EDGE_CHANNEL_INVALID' value='0'/>
+      <enumitem name='HCL_EDGE_CHANNEL_SELECTION' value='1'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

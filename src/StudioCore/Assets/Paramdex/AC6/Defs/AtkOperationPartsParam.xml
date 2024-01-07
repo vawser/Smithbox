@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ATK_OPERATION_PARTS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 UnkByte0x00"></Field>
+    <Field Def="u8 UnkByte0x01"></Field>
+    <Field Def="u8 UnkByte0x02"></Field>
+    <Field Def="u8 UnkByte0x03"></Field>
+    <Field Def="u8 UnkByte0x04"></Field>
+    <Field Def="u8 UnkByte0x05"></Field>
+    <Field Def="u8 UnkByte0x06"></Field>
+    <Field Def="u8 UnkByte0x07"></Field>
+    <Field Def="u8 UnkByte0x08"></Field>
+    <Field Def="u8 UnkByte0x09"></Field>
+    <Field Def="u8 UnkByte0x0A"></Field>
+    <Field Def="u8 UnkByte0x0B"></Field>
+    <Field Def="u8 UnkByte0x0C"></Field>
+    <Field Def="u8 UnkByte0x0D"></Field>
+    <Field Def="u8 UnkByte0x0E"></Field>
+    <Field Def="u8 UnkByte0x0F"></Field>
+    <Field Def="u8 UnkByte0x10"></Field>
+    <Field Def="u8 UnkByte0x11"></Field>
+    <Field Def="u8 UnkByte0x12"></Field>
+    <Field Def="u8 UnkByte0x13"></Field>
+    <Field Def="u8 UnkByte0x14"></Field>
+    <Field Def="u8 UnkByte0x15"></Field>
+    <Field Def="u8 UnkByte0x16"></Field>
+    <Field Def="u8 UnkByte0x17"></Field>
+    <Field Def="u8 UnkByte0x18"></Field>
+    <Field Def="u8 UnkByte0x19"></Field>
+    <Field Def="u8 UnkByte0x1A"></Field>
+    <Field Def="u8 UnkByte0x1B"></Field>
+    <Field Def="u8 UnkByte0x1C"></Field>
+    <Field Def="u8 UnkByte0x1D"></Field>
+    <Field Def="u8 UnkByte0x1E"></Field>
+    <Field Def="u8 UnkByte0x1F"></Field>
+    <Field Def="s32 Unk0x20"></Field>
+    <Field Def="s32 Unk0x24"></Field>
+    <Field Def="s32 Unk0x28"></Field>
+    <Field Def="s32 Unk0x2C"></Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,9 @@
+2 Name
+3 Body Type
+4 Age
+6 Origin
+7 Keepsake
+9 Choose Base Template
+10 Detailed Appearance
+11 Age
+12 Voice

@@ -1,0 +1,28 @@
+0 Move 
+1 Havok Default Value 
+1000 Gundyr - The Evil Spirits 
+1001 Gundyr - Ragdoll Test 2 
+1100 Pus of Man - Right arm 
+1101 Pus of Man - Left arm 
+1102 Pus of Man - small feet 
+1103 Pus of Man - Tail root 
+1104 Pus of Man - Tail tip 
+1105 Pus of Man - Head 
+1106 Pus of Man - Neck 
+1201 Wolnir - Crown 
+1202 Wolnir - torso 
+1203 Wolnir - right arm 
+1204 Wolnir - left arm 
+1206 Wolnir - Head 
+1301 Yhorm - Head 
+1302 Yhorm - Torso 
+1303 Yhorm - left arm 
+1304 Yhorm - right arm 
+1305 Yhorm - Left Shin 
+1306 Yhorm - Right Shin 
+1307 Yhorm - right hand weapon 
+1401 Slug - Dead dumpling 
+1500 Dragon - twines in the legs 
+1501 Dragon - Before your left ankle 
+1600 Giant Slave - Iron Ball 
+9999 Dummy 

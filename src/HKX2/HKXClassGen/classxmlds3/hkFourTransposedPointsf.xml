@@ -1,0 +1,5 @@
+<class name='hkFourTransposedPointsf' version='1' signature='0xce97c03f' size='48'>
+  <members>
+    <member name='vertices' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

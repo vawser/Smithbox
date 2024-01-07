@@ -1,0 +1,26 @@
+<class name='hkxVertexDescription' version='1' signature='0x476106c0' size='16'>
+  <enums>
+    <enum name='DataType' flags='00000000'>
+      <enumitem name='HKX_DT_NONE' value='0'/>
+      <enumitem name='HKX_DT_UINT8' value='1'/>
+      <enumitem name='HKX_DT_INT16' value='2'/>
+      <enumitem name='HKX_DT_UINT32' value='3'/>
+      <enumitem name='HKX_DT_FLOAT' value='4'/>
+    </enum>
+    <enum name='DataUsage' flags='00000000'>
+      <enumitem name='HKX_DU_NONE' value='0'/>
+      <enumitem name='HKX_DU_POSITION' value='1'/>
+      <enumitem name='HKX_DU_COLOR' value='2'/>
+      <enumitem name='HKX_DU_NORMAL' value='4'/>
+      <enumitem name='HKX_DU_TANGENT' value='8'/>
+      <enumitem name='HKX_DU_BINORMAL' value='16'/>
+      <enumitem name='HKX_DU_TEXCOORD' value='32'/>
+      <enumitem name='HKX_DU_BLENDWEIGHTS' value='64'/>
+      <enumitem name='HKX_DU_BLENDINDICES' value='128'/>
+      <enumitem name='HKX_DU_USERDATA' value='256'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='decls' offset='0' ctype='hkxVertexDescriptionElementDecl' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

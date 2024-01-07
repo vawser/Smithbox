@@ -1,0 +1,10 @@
+<class name='hkxVertexDescriptionElementDecl' version='1' signature='0x865bf29f' size='24'>
+  <members>
+    <member name='byteOffset' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='4' etype='DataType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='usage' offset='6' etype='DataUsage' vtype='TYPE_ENUM' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='byteStride' offset='8' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numElements' offset='12' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='channelID' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

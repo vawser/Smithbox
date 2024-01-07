@@ -1,0 +1,10 @@
+<class name='hkaiWorldCharacterStepSerializableContext' version='1' signature='0xc1267dff' size='80' parent='hkReferencedObject'>
+  <members>
+    <member name='world' offset='16' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='callbackType' offset='24' etype='CharacterCallbackType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='timestep' offset='28' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='characters' offset='32' ctype='hkaiCharacter' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localSteeringInputs' offset='48' ctype='hkaiLocalSteeringInput' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='obstacleGenerators' offset='64' ctype='hkaiObstacleGenerator' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

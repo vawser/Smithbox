@@ -1,0 +1,32 @@
+0 UNKNOWN
+11000 [Company of Champions] Awestone
+11010 [Rat King] Pharros' Lockstone
+11020 [Dragon Remnants] Dragon Scale
+11030 [Pilgrims of Dark] Bonfire Ascetic- Human Effigy
+11050 [Blue Sentinels] Token of Fidelity
+11060 [Heirs of the Sun] Sunlight Medal
+11070 [Rat King] Smooth & Silky Stone
+11080 [Rat King] Smooth & Silky Stone
+11090 None
+11100 None
+11110 [Blue Sentinels] Token of Fidelity
+11120 [Blue Sentinels] Token of Fidelity
+11130 None
+11140 [Brotherhood of Blood] Token of Spite
+11150 [Brotherhood of Blood] Token of Spite
+11160 [Brotherhood of Blood] Token of Spite
+11170 [Brotherhood of Blood] Token of Spite
+11180 [Bell Keeper] Titanite Chunk- Titanite Slab- Twinkling Titanite- Petrified Dragon Bone
+11190 [Rat King] Pharros' Lockstone- Smooth & Silky Stone
+11200 [Rat King] Pharros' Lockstone- Smooth & Silky Stone
+11210 [Dragon Remnants] Dragon Scale
+11220 [Pilgrims of Dark] Bonfire Ascetic- Human Effigy
+11230 [Blue Sentinels] Cracked Blue Eye Orb
+11240 [Blue Sentinels] Cracked Red Eye Orb
+11250 [Pilgrims of Dark] Human Effigy
+11260 [Pilgrims of Dark] Human Effigy
+11270 [Pilgrims of Dark] Human Effigy
+11280 [Bell Keeper] Titanite Chunk- Titanite Slab- Twinkling Titanite- Petrified Dragon Bone
+10045500 Torch
+90000000 UNKNOWN
+90000001 UNKNOWN

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>MAP_GRID_CREATE_HEIGHT_LIMIT_INFO_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 GridEnableCreateHeightMin = -99999">
+      <DisplayName>グリッド構築可能高さMin[m]</DisplayName>
+      <Description>グリッド構築可能高さ最小値[m]。(LOD2単位)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="f32 GridEnableCreateHeightMax = 99999">
+      <DisplayName>グリッド構築可能高さMax[m]</DisplayName>
+      <Description>グリッド構築可能高さ最大値[m]。(LOD2単位)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99999</Minimum>
+      <Maximum>99999</Maximum>
+      <Increment>1</Increment>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve[24]">
+      <DisplayName>リザーブ</DisplayName>
+      <Description>リザーブ</Description>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

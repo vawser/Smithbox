@@ -1,0 +1,6 @@
+<class name='hkpDisplayBindingDataPhysicsSystem' version='1' signature='0x16d92386' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='bindings' offset='16' ctype='hkpDisplayBindingDataRigidBody' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='system' offset='32' ctype='hkpPhysicsSystem' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

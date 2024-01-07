@@ -1,0 +1,9 @@
+<class name='hclAntiPinchConstraintSet' version='1' signature='0x8a13b4c2' size='64' parent='hclConstraintSet'>
+  <members>
+    <member name='perParticleData' offset='32' ctype='hclAntiPinchConstraintSetPerParticle' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='toAnimPeriod' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='toSimPeriod' offset='52' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='toSimMaxDistance' offset='56' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='referenceMeshBufferIdx' offset='60' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

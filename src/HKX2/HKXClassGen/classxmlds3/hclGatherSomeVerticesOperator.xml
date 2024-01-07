@@ -1,0 +1,8 @@
+<class name='hclGatherSomeVerticesOperator' version='1' signature='0x85597cf0' size='64' parent='hclOperator'>
+  <members>
+    <member name='vertexPairs' offset='32' ctype='hclGatherSomeVerticesOperatorVertexPair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='inputBufferIdx' offset='48' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputBufferIdx' offset='52' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='gatherNormals' offset='56' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

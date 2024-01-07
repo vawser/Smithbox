@@ -1,0 +1,35 @@
+<class name='hkpCompressedMeshShape' version='1' signature='0xe092d6d4' size='288' parent='hkpShapeCollection'>
+  <enums>
+    <enum name='MaterialType' flags='00000000'>
+      <enumitem name='MATERIAL_NONE' value='0'/>
+      <enumitem name='MATERIAL_SINGLE_VALUE_PER_CHUNK' value='1'/>
+      <enumitem name='MATERIAL_ONE_BYTE_PER_TRIANGLE' value='2'/>
+      <enumitem name='MATERIAL_TWO_BYTES_PER_TRIANGLE' value='3'/>
+      <enumitem name='MATERIAL_FOUR_BYTES_PER_TRIANGLE' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='bitsPerIndex' offset='48' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bitsPerWIndex' offset='52' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='wIndexMask' offset='56' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexMask' offset='60' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='radius' offset='64' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldingType' offset='68' etype='WeldingType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materialType' offset='69' etype='MaterialType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materials' offset='72' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materials16' offset='88' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materials8' offset='104' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transforms' offset='120' vtype='TYPE_ARRAY' vsubtype='TYPE_QSTRANSFORM' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bigVertices' offset='136' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bigTriangles' offset='152' ctype='hkpCompressedMeshShapeBigTriangle' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='chunks' offset='168' ctype='hkpCompressedMeshShapeChunk' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='convexPieces' offset='184' ctype='hkpCompressedMeshShapeConvexPiece' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='error' offset='200' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bounds' offset='208' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultCollisionFilterInfo' offset='240' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='meshMaterials' offset='248' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='materialStriding' offset='256' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numMaterials' offset='258' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='namedMaterials' offset='264' ctype='hkpNamedMeshMaterial' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

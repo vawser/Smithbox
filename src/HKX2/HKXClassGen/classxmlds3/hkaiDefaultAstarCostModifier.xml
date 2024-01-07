@@ -1,0 +1,6 @@
+<class name='hkaiDefaultAstarCostModifier' version='1' signature='0x44d04021' size='96' parent='hkaiAstarCostModifier'>
+  <members>
+    <member name='maxCostPenalty' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='costMultiplierLookupTable' offset='28' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='32' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

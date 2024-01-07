@@ -1,0 +1,8 @@
+<class name='hknpVehicleDefaultAnalogDriverInput' version='1' signature='0x95bc6f90' size='32' parent='hknpVehicleDriverInput'>
+  <members>
+    <member name='slopeChangePointX' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initialSlope' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deadZone' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='autoReverse' offset='28' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

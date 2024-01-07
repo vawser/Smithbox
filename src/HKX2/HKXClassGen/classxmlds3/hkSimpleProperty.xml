@@ -1,0 +1,7 @@
+<class name='hkSimpleProperty' version='1' signature='0x12089954' size='16'>
+  <members>
+    <member name='key' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alignmentPadding' offset='4' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='value' offset='8' ctype='hkSimplePropertyValue' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

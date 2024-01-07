@@ -1,0 +1,5 @@
+<class name='hkpVehicleFrictionStatus' version='1' signature='0x1c076a84' size='72'>
+  <members>
+    <member name='axis' offset='0' ctype='hkpVehicleFrictionStatusAxisStatus' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

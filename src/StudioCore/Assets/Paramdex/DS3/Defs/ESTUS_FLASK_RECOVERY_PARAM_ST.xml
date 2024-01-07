@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ESTUS_FLASK_RECOVERY_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 host" />
+    <Field Def="u8 invadeOrb_None" />
+    <Field Def="u8 invadeOrb_Umbasa" />
+    <Field Def="u8 invadeOrb_Berserker" />
+    <Field Def="u8 invadeOrb_Sinners" />
+    <Field Def="u8 invadeSign_None" />
+    <Field Def="u8 invadeSign_Umbasa" />
+    <Field Def="u8 invadeSign_Berserker" />
+    <Field Def="u8 invadeSign_Sinners" />
+    <Field Def="u8 invadeRing_Sinners" />
+    <Field Def="u8 invadeRing_Rosalia" />
+    <Field Def="u8 invadeRing_Forest" />
+    <Field Def="u8 coopSign_None" />
+    <Field Def="u8 coopSign_Umbasa" />
+    <Field Def="u8 coopSign_Berserker" />
+    <Field Def="u8 coopSign_Sinners" />
+    <Field Def="u8 coopRing_RedHunter" />
+    <Field Def="u8 invadeRing_Anor" />
+    <Field Def="u16 paramReplaceRate" />
+    <Field Def="s32 paramReplaceId" />
+  </Fields>
+</PARAMDEF>

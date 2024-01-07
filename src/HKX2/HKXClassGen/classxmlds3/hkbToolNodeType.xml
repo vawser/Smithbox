@@ -1,0 +1,17 @@
+<class name='hkbToolNodeType' version='1' signature='0xad59b7df' size='1'>
+  <enums>
+    <enum name='NodeType' flags='00000000'>
+      <enumitem name='NODE_TYPE_UNKNOWN' value='0'/>
+      <enumitem name='NODE_TYPE_STATE_MACHINE' value='1'/>
+      <enumitem name='NODE_TYPE_CLIP' value='2'/>
+      <enumitem name='NODE_TYPE_BLEND' value='4'/>
+      <enumitem name='NODE_TYPE_MODIFIER' value='8'/>
+      <enumitem name='NODE_TYPE_GENERATOR' value='16'/>
+      <enumitem name='NODE_TYPE_MODIFIER_GENERATOR' value='32'/>
+      <enumitem name='NODE_TYPE_TRANSITION_EFFECT' value='64'/>
+      <enumitem name='NODE_TYPE_BEHAVIOR_FILE_REFERENCE' value='128'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

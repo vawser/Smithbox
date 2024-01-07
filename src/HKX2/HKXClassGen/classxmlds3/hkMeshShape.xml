@@ -1,0 +1,10 @@
+<class name='hkMeshShape' version='1' signature='0x694fda80' size='16' parent='hkReferencedObject'>
+  <enums>
+    <enum name='AccessFlags' flags='00000000'>
+      <enumitem name='ACCESS_INDICES' value='1'/>
+      <enumitem name='ACCESS_VERTEX_BUFFER' value='2'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

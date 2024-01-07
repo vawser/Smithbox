@@ -1,0 +1,6 @@
+<class name='hkbBehaviorGraphInternalState' version='1' signature='0xc253dbe0' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='nodeInternalStateInfos' offset='16' ctype='hkbNodeInternalStateInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='variableValueSet' offset='32' ctype='hkbVariableValueSet' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

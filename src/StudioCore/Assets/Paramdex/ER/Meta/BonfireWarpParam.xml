@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="WORLD_MAP_POINT_TEXT_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <eventflagId AltName="Event Flag ID" Wiki="Release condition event flag ID" />
+    <bonfireEntityId AltName="Bonfire Entity ID" Wiki="Bonfire entity ID" />
+    <pad4 AltName=""/>
+    
+    <bonfireSubCategorySortId AltName="Sort ID" Wiki="Bonfire Warp Subcategory Sort ID. Specify the order (ascending order) in the same subcategory" />
+    <forbiddenIconId AltName="Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited" />
+    <dispMinZoomStep AltName="Display Zoom Step" Wiki="Zoom step to display the bonfire (0 when zoomed out most, +1 for each zoom). Displayed when Display zoom step  Current zoom step. Default is 0 (always displayed)" />
+    <selectMinZoomStep AltName="Selectable Zoom Step" Wiki="A zoom step that allows you to select and snap a bonfire (0 for the most zoomed out state, +1 for each zoom). Can be selected and snapped when Selectable zoom step  current enlargement stage. The default is 0 (always selectable / snappable)" />
+    <bonfireSubCategoryId AltName="Subcategory ID" Wiki="Bonfire Warp Subcategory Parameter ID (-1: Invalid). Set which subcategory it belongs to. If it is invalid, it will not be displayed in the bonfire list." Refs="BonfireWarpSubCategoryParam" />
+    
+    <clearedEventFlagId AltName="Cleared Event Flag ID" Wiki="Cleared event flag ID (0: always treated as cleared)" />
+    <iconId AltName="Icon ID" Wiki="Icon ID" />
+    <dispMask00 AltName="Display Setting M00" Wiki="Whether to display with M00" IsBool="" />
+    <dispMask01 AltName="Display Setting M01" Wiki="Whether to display with M01" IsBool="" />
+    <pad1 AltName=""/>
+    <pad2 AltName=""/>
+    <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />
+    <gridXNo AltName="Map Block" Wiki="BB part of mAA_BB_CC_DD" />
+    <gridZNo AltName="Map Region" Wiki="CC part of mAA_BB_CC_DD" />
+    <pad3 AltName=""/>
+    <posX AltName="Coordinate: X" Wiki="X coordinate" />
+    <posY AltName="Coordinate: Y" Wiki="Y coordinate (not used)" />
+    <posZ AltName="Coordinate: Z" Wiki="Z coordinate" />
+    <textId1 AltName="Text ID [1]" Wiki="The text ID to display. If the value is invalid (-1), nothing is displayed." FmgRef="TitleLocations" />
+    <textEnableFlagId1 AltName="Text Enable Flag ID [1]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." />
+    <textDisableFlagId1 AltName="Text Disable Flag ID [1]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." />
+    <textId2 AltName="Text ID [2]" Wiki="The text ID to display. If it is an invalid value (-2), nothing is displayed." FmgRef="TitleLocations" />
+    <textEnableFlagId2 AltName="Text Enable Flag ID [2]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (1) is invalid, it will be treated as On." />
+    <textDisableFlagId2 AltName="Text Disable Flag ID [2]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (1) is invalid, it will be treated as Off." />
+    <textId3 AltName="Text ID [3]" Wiki="The text ID to display. If it is an invalid value (-3), nothing is displayed." FmgRef="TitleLocations" />
+    <textEnableFlagId3 AltName="Text Enable Flag ID [3]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (2) is invalid, it will be treated as On." />
+    <textDisableFlagId3 AltName="Text Disable Flag ID [3]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (2) is invalid, it will be treated as Off." />
+    <textId4 AltName="Text ID [4]" Wiki="The text ID to display. If it is an invalid value (-4), nothing is displayed." FmgRef="TitleLocations" />
+    <textEnableFlagId4 AltName="Text Enable Flag ID [4]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (3) is invalid, it will be treated as On." />
+    <textDisableFlagId4 AltName="Text Disable Flag ID [4]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (3) is invalid, it will be treated as Off." />
+    <textId5 AltName="Text ID [5]" Wiki="The text ID to display. If it is an invalid value (-5), nothing is displayed." FmgRef="TitleLocations" />
+    <textEnableFlagId5 AltName="Text Enable Flag ID [5]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (4) is invalid, it will be treated as On." />
+    <textDisableFlagId5 AltName="Text Disable Flag ID [5]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (4) is invalid, it will be treated as Off." />
+    <textId6 AltName="Text ID [6]" Wiki="The text ID to display. If it is an invalid value (-6), nothing is displayed." FmgRef="TitleLocations" />
+    <textEnableFlagId6 AltName="Text Enable Flag ID [6]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (5) is invalid, it will be treated as On." />
+    <textDisableFlagId6 AltName="Text Disable Flag ID [6]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (5) is invalid, it will be treated as Off." />
+    <textId7 AltName="Text ID [7]" Wiki="The text ID to display. If it is an invalid value (-7), nothing is displayed." FmgRef="TitleLocations" />
+    <textEnableFlagId7 AltName="Text Enable Flag ID [7]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (6) is invalid, it will be treated as On." />
+    <textDisableFlagId7 AltName="Text Disable Flag ID [7]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (6) is invalid, it will be treated as Off." />
+    <textId8 AltName="Text ID [8]" Wiki="The text ID to display. If it is an invalid value (-8), nothing is displayed." FmgRef="TitleLocations" />
+    <textEnableFlagId8 AltName="Text Enable Flag ID [8]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (7) is invalid, it will be treated as On." />
+    <textDisableFlagId8 AltName="Text Disable Flag ID [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (7) is invalid, it will be treated as Off." />
+    <textType1 AltName="Text Type [1]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType2 AltName="Text Type [2]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType3 AltName="Text Type [3]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType4 AltName="Text Type [4]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType5 AltName="Text Type [5]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType6 AltName="Text Type [6]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType7 AltName="Text Type [7]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <textType8 AltName="Text Type [8]" Wiki="Text type (place name, NPC name, ...)" Enum="WORLD_MAP_POINT_TEXT_TYPE" />
+    <noIgnitionSfxDmypolyId_0 AltName="Bonfire Ignition - Dummy Poly ID [0]" Wiki="Damipoli ID that issues SFX before bonfire ignition" />
+    <noIgnitionSfxId_0 AltName="Bonfire Ignition - SFX ID [0]" Wiki="SFX ID issued before bonfire ignition. It goes out when ignited. In case of -1, SFX is not issued." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <noIgnitionSfxDmypolyId_1 AltName="Bonfire Ignition - Dummy Poly ID [1]" Wiki="Damipoli ID that issues SFX before bonfire ignition" />
+    <noIgnitionSfxId_1 AltName="Bonfire Ignition - SFX ID [1]" Wiki="SFX ID issued before bonfire ignition. It goes out when ignited. In case of -1, SFX is not issued." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <unkA8 AltName="unkA8" Wiki="" />
+    <unkAC AltName="unkAC" Wiki="" />
+    <unkB0 AltName="unkB0" Wiki="" />
+    <unkB4 AltName="unkB4" Wiki="" />
+    <unkB8 AltName="unkB8" Wiki="" />
+    <unkBC AltName="unkBC" Wiki="" />
+    <unkC0 AltName="unkC0" Wiki="" />
+    <unkC4 AltName="unkC4" Wiki="" />
+    <unkC8 AltName="unkC8" Wiki="" />
+    <unkCC AltName="unkCC" Wiki="" />
+    <unkD0 AltName="unkD0" Wiki="" />
+    <unkD4 AltName="unkD4" Wiki="" />
+    <unkD8 AltName="unkD8" Wiki="" />
+    <unkDC AltName="unkDC" Wiki="" />
+    <unkE0 AltName="unkE0" Wiki="" />
+    <unkE4 AltName="unkE4" Wiki="" />
+    <unkE8 AltName="unkE8" Wiki="" />
+  </Field>
+  <Self />
+</PARAMMETA>

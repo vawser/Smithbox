@@ -1,0 +1,5 @@
+0 Nukire -- ぬのきれ
+770000 [Proto] Hunter_head_new joint -- 【プロト】ハンター_頭_新関節
+771000 [Proto] Hunter_Torso_New joint -- 【プロト】ハンター_胴_新関節
+772000 [Proto] Hunter_arm_new joint -- 【プロト】ハンター_腕_新関節
+773000 [Proto] Hunter_Leg_New joint -- 【プロト】ハンター_脚_新関節

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <physRate AltName="Damage %: Physical" />
+    <magRate AltName="Damage %: Magic" />
+    <fireRate AltName="Damage %: Fire" />
+    <thunRate AltName="Damage %: Lightning" />
+    <darkRate AltName="Damage %: Holy" />
+    <staminaRate AltName="Damage %: Stamina" />
+    <saRate AltName="Damage %: Poise" />
+  </Field>
+  <Self Wiki="PvP corrections"/>
+</PARAMMETA>

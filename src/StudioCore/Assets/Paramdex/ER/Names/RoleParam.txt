@@ -1,0 +1,26 @@
+0 Host of Fingers
+1 Furled Finger
+2 Duelist
+8 Host of Fingers
+15 Bloody Finger
+16 Recusant
+17 Hunter
+18 Bloody Finger
+10001 Hunter
+10002 Hunter
+20001 Furled Finger
+20002 Furled Finger
+30001 Duelist
+30002 Duelist
+40001 Bloody Finger
+40002 Bloody Finger
+50001 Recusant
+50002 Recusant
+60001 Hunter
+60002 Hunter
+70001 Bloody Finger
+70002 Bloody Finger
+80001 Furled Finger
+80002 Furled Finger
+90001 Hunter
+90002 Hunter

@@ -1,0 +1,13 @@
+<class name='hkaiPathfindingUtilFindPathInput' version='1' signature='0x771ab415' size='208' parent='hkReferencedObject'>
+  <members>
+    <member name='startPoint' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='goalPoints' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startFaceKey' offset='48' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='goalFaceKeys' offset='56' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxNumberOfIterations' offset='72' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='agentInfo' offset='76' ctype='hkaiAgentTraversalInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='searchParameters' offset='96' ctype='hkaiNavMeshPathSearchParameters' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='searchBuffers' offset='176' ctype='hkaiSearchParametersSearchBuffers' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='hierarchySearchBuffers' offset='192' ctype='hkaiSearchParametersSearchBuffers' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

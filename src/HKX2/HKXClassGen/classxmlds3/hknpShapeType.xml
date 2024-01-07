@@ -1,0 +1,30 @@
+<class name='hknpShapeType' version='1' signature='0x373aa323' size='1'>
+  <enums>
+    <enum name='Enum' flags='00000000'>
+      <enumitem name='CONVEX' value='0'/>
+      <enumitem name='CONVEX_POLYTOPE' value='1'/>
+      <enumitem name='SPHERE' value='2'/>
+      <enumitem name='CAPSULE' value='3'/>
+      <enumitem name='TRIANGLE' value='4'/>
+      <enumitem name='COMPRESSED_MESH' value='5'/>
+      <enumitem name='EXTERN_MESH' value='6'/>
+      <enumitem name='STATIC_COMPOUND' value='7'/>
+      <enumitem name='DYNAMIC_COMPOUND' value='8'/>
+      <enumitem name='HEIGHT_FIELD' value='9'/>
+      <enumitem name='COMPRESSED_HEIGHT_FIELD' value='10'/>
+      <enumitem name='SCALED_CONVEX' value='11'/>
+      <enumitem name='MASKED' value='12'/>
+      <enumitem name='MASKED_COMPOUND' value='13'/>
+      <enumitem name='LOD' value='14'/>
+      <enumitem name='DUMMY' value='15'/>
+      <enumitem name='USER_0' value='16'/>
+      <enumitem name='USER_1' value='17'/>
+      <enumitem name='USER_2' value='18'/>
+      <enumitem name='USER_3' value='19'/>
+      <enumitem name='NUM_SHAPE_TYPES' value='20'/>
+      <enumitem name='INVALID' value='21'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

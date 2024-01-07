@@ -1,0 +1,7 @@
+<class name='hkpTriggerVolumeEventInfo' version='1' signature='0xeb60f431' size='24'>
+  <members>
+    <member name='sortValue' offset='0' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='body' offset='8' ctype='hkpRigidBody' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='operation' offset='16' etype='Operation' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

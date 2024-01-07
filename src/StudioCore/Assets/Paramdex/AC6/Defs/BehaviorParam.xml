@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BEHAVIOR_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="s32 variationId">
+      <Description>Used to link BehaviorParam entries to a weapon or enemy.</Description>
+    </Field>
+    <Field Def="u8 behaviorJudgeId"></Field>
+    <Field Def="u8 Unk0x09"></Field>
+    <Field Def="u8 Unk0x0A"></Field>
+    <Field Def="u8 Unk0x0B"></Field>
+    <Field Def="u8 Unk0x0C"></Field>
+    <Field Def="u8 refType">
+      <Description>The type of reference used in the refId field. 0 is AtkParam, 1 is Bullet, 2 is SpEffectParam.</Description>
+    </Field>
+    <Field Def="s16 UnkShort0x0E"></Field>
+    <Field Def="s32 refId">
+      <Description>The action this behavior will invoke.</Description>
+    </Field>
+    <Field Def="s32 Unk0x14"></Field>
+    <Field Def="s16 UnkShort0x18"></Field>
+    <Field Def="s16 UnkShort0x1A"></Field>
+    <Field Def="s32 UnkInt0x1C"></Field>
+    <Field Def="u8 UnkByte0x20"></Field>
+    <Field Def="u8 UnkByte0x21"></Field>
+    <Field Def="s16 Unk0x22"></Field>
+    <Field Def="s32 dummyPolyRange_Min"></Field>
+    <Field Def="s32 dummyPolyRange_Max"></Field>
+    <Field Def="s16 UnkAngleShort0x2C"></Field>
+    <Field Def="s16 UnkAngleShort0x2E"></Field>
+    <Field Def="u8 UnkByte0x30"></Field>
+    <Field Def="u8 UnkByte0x31"></Field>
+    <Field Def="s16 Unk0x32"></Field>
+    <Field Def="u16 UnkUshort0x34"></Field>
+    <Field Def="u16 UnkUshort0x36"></Field>
+    <Field Def="f32 UnkFloat0x38"></Field>
+    <Field Def="s16 UnkAngleShort0x3C"></Field>
+    <Field Def="s16 UnkAngleShort0x3E"></Field>
+    <Field Def="f32 UnkFloat0x40"></Field>
+    <Field Def="f32 UnkFloat0x44"></Field>
+    <Field Def="f32 UnkFloat0x48"></Field>
+    <Field Def="f32 UnkFloat0x4C"></Field>
+    <Field Def="u8 weaponBulletNum"></Field>
+    <Field Def="u8 burstFireAmount"></Field>
+    <Field Def="s16 UnkShort0x52"></Field>
+    <Field Def="f32 burstFireInterval"></Field>
+    <Field Def="f32 rapidFireInterval"></Field>
+    <Field Def="f32 UnkFloat0x5C"></Field>
+    <Field Def="f32 UnkFloat0x60"></Field>
+    <Field Def="u8 UnkByte0x64"></Field>
+    <Field Def="u8 Unk0x65"></Field>
+    <Field Def="s16 UnkShort0x66"></Field>
+    <Field Def="s16 UnkShort0x68"></Field>
+    <Field Def="s16 Unk0x6A"></Field>
+    <Field Def="f32 UnkFloat0x6C"></Field>
+    <Field Def="s32 weaponChargedAmmunitionConsumption">
+      <Description>Ammunition consumed by charge attacks.</Description>
+    </Field>
+    <Field Def="f32 weaponRecoil">
+      <Description>Recoil that occurs when firing.</Description>
+    </Field>
+    <Field Def="f32 missileHomingLockTime">
+      <Description>Time it takes to acquire lock-on for missiles and other homing weapons.</Description>
+    </Field>
+    <Field Def="u8 missileMaxLockCount">
+      <Description>Maximum possible number of lock-ons for missiles and other homing weapons. Multi-lock is possible if this number is 2 or higher.</Description>
+    </Field>
+    <Field Def="u8 UnkByte0x7D"></Field>
+    <Field Def="s16 Unk0x7E"></Field>
+    <Field Def="s32 Unk0x80"></Field>
+    <Field Def="s32 Unk0x84"></Field>
+    <Field Def="s32 bulletShotgunParamId1">
+      <Description>References BulletShotgunParam</Description>
+    </Field>
+    <Field Def="f32 unkBulletSpreadFocalDist"></Field>
+    <Field Def="f32 weaponAttackHeatBuildup">
+      <Description>Heat buildup when attacking. Overheat occurs when value exceeds maximum tolerance.</Description>
+    </Field>
+    <Field Def="s32 bulletShotgunParamId2">
+      <Description>References BulletShotgunParam</Description>
+    </Field>
+    <Field Def="f32 UnkFloat0x98"></Field>
+    <Field Def="f32 channelAttackHeatBuildup">
+      <Description>Heat buildup when attacking. Used by parts that 'channel'.</Description>
+    </Field>
+    <Field Def="s32 UnkInt0xA0"></Field>
+    <Field Def="f32 UnkFloat0xA4"></Field>
+    <Field Def="s32 heatBuildup"></Field>
+    <Field Def="f32 UnkFloat0xAC"></Field>
+    <Field Def="s32 Unk0xB0"></Field>
+    <Field Def="s32 Unk0xB4"></Field>
+    <Field Def="s32 Unk0xB8"></Field>
+    <Field Def="s32 Unk0xBC"></Field>
+    <Field Def="s32 Unk0xC0"></Field>
+    <Field Def="s32 Unk0xC4"></Field>
+    <Field Def="s32 Unk0xC8"></Field>
+    <Field Def="s32 Unk0xCC"></Field>
+  </Fields>
+</PARAMDEF>

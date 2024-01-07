@@ -1,0 +1,8 @@
+<class name='hkbHandle' version='1' signature='0x43c54f34' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='frame' offset='16' ctype='hkLocalFrame' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rigidBody' offset='24' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='character' offset='32' ctype='hkbCharacter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animationBoneIndex' offset='40' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

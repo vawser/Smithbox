@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <host AltName="Flask Recovery - Host" Wiki="Number of host est recovery" />
+    <WhiteGhost_None AltName="Flask Recovery - White Phantom - None" Wiki="Number of white spirits recovering from the cooperation sign" />
+    <WhiteGhost_Umbasa AltName="Flask Recovery - White Phantom - Gold" Wiki="Number of est recovery of gold spirits of cooperation sign" />
+    <WhiteGhost_Berserker AltName="Flask Recovery - White Phantom - Berserker" Wiki="Number of recovery of white Berserker's est of cooperation sign" />
+    <BlackGhost_None_Sign AltName="Flask Recovery - Black Phantom - None" Wiki="Number of est recovery of red spirits of hostile sign" />
+    <BlackGhost_Umbasa_Sign AltName="Flask Recovery - Black Phantom - Gold" Wiki="Number of est recovery of red gold spirit of hostile sign" />
+    <BlackGhost_Berserker_Sign AltName="Flask Recovery - Black Phantom - Berserker" Wiki="Number of est recovery of red Berserker of hostile sign" />
+    <BlackGhost_None_Invade AltName="Flask Recovery - Black Phantom - None - Invasion" Wiki="Number of intrusion est recovery" />
+    <BlackGhost_Umbasa_Invade AltName="Flask Recovery - Black Phantom - Gold - Invasion" Wiki="Number of est recovery of red gold spirits of invading orbs" />
+    <BlackGhost_Berserker_Invade AltName="Flask Recovery - Black Phantom - Berserker - Invasion" Wiki="Invasion Orb Red Berserker Est Recovery Number" />
+    <RedHunter1 AltName="Flask Recovery - Red Hunter [1]" Wiki="Number of rescue guests' est recovery" />
+    <RedHunter2 AltName="Flask Recovery - Red Hunter [2]" Wiki="Number of est recovery of Red Scare Spirit 2" />
+    <GuardianOfForest AltName="Flask Recovery - Forest Guardian" Wiki="Map guardian spirit (forest) est recovery number" />
+    <GuardianOfAnor AltName="Flask Recovery - Darkmoon Blade" Wiki="Map Guardian Spirit (Anor) Est Recovery Number" />
+    <BattleRoyal AltName="Flask Recovery - Arena" Wiki="Number of est recovery in the arena" />
+    <YellowMonk AltName="Flask Recovery - Yellow Monk" Wiki="The number of est recovery of the old man in yellow" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

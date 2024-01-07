@@ -1,0 +1,21 @@
+<class name='hclBufferUsage' version='1' signature='0xf02067ba' size='5'>
+  <enums>
+    <enum name='Component' flags='00000000'>
+      <enumitem name='COMPONENT_POSITION' value='0'/>
+      <enumitem name='COMPONENT_NORMAL' value='1'/>
+      <enumitem name='COMPONENT_TANGENT' value='2'/>
+      <enumitem name='COMPONENT_BITANGENT' value='3'/>
+    </enum>
+    <enum name='InternalFlags' flags='00000000'>
+      <enumitem name='USAGE_NONE' value='0'/>
+      <enumitem name='USAGE_READ' value='1'/>
+      <enumitem name='USAGE_WRITE' value='2'/>
+      <enumitem name='USAGE_FULL_WRITE' value='4'/>
+      <enumitem name='USAGE_READ_BEFORE_WRITE' value='8'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='perComponentFlags' offset='0' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='trianglesRead' offset='4' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

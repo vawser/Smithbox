@@ -1,0 +1,8 @@
+<class name='hknpSparseCompactMapunsignedshort' version='1' signature='0x4558127c' size='40'>
+  <members>
+    <member name='secondaryKeyMask' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sencondaryKeyBits' offset='4' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='primaryKeyToIndex' offset='8' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='valueAndSecondaryKeys' offset='24' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

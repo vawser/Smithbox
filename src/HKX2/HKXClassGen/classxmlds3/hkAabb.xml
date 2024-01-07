@@ -1,0 +1,6 @@
+<class name='hkAabb' version='1' signature='0x4a948b16' size='32'>
+  <members>
+    <member name='min' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='max' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="PerformanceCheckParamWork" type="u8">
+    </Enum>
+    <Enum Name="PerformanceCheckParamCategory" type="u8">
+    </Enum>
+    <Enum Name="PerformanceCheckParamCompare" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <workTag AltName="Report destination_Job type tag" Wiki="Report destination_Job type tag" Enum="PerformanceCheckParamWork" />
+    <categoryTag AltName="Report destination_category tag" Wiki="Report destination_category tag" Enum="PerformanceCheckParamCategory" />
+    <compareType AltName="Comparison symbol" Wiki="Comparison symbol" Enum="PerformanceCheckParamCompare" />
+    <dummy1 AltName=""/>
+    <compareValue AltName="Comparison value" Wiki="Comparison value" />
+    <dummy2 AltName=""/>
+    <userTag AltName="Report destination_user tag" Wiki="Report to_Performance person tag" />
+  </Field>
+  <Self />
+</PARAMMETA>

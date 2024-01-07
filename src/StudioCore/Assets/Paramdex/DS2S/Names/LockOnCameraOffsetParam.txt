@@ -1,0 +1,37 @@
+10010 Very small -- 極小型
+10020 Small -- 小型
+10030 Medium -- 中型
+10040 Large -- 大型
+10050 Extra large -- 特大型
+10060 Special size -- 特特大型
+10070 Special size -- 特特特大型
+21540 Dedicated - Skeleton Aristocracy -- 専用-スケルトン貴族
+22120 Dedicated - Wyburn -- 専用-ワイバーン
+22235 Dedicated - Giant Rat -- 専用-巨大ネズミ
+23033 Dedicated - Double Sided Warrior: Snake Head -- 専用-両面戦士：ヘビ頭
+23050 Dedicated - Daemon Night -- 専用-デーモンナイト
+23096 Dedicated - New Giant Senior Soldier (Deceased) -- 専用-新・巨人上級兵士（亡者）
+23097 Dedicated - New Giant Senior Soldier (Live) -- 専用-新・巨人上級兵士（生者）
+23180 Dedicated - Bay Grant -- 専用-ベイグラント
+23240 Dedicated - Gargoil -- 専用-ガーゴイル
+23250 Dedicated - Warrior in the Mirror -- 専用-鏡の中の戦士
+23260 Dedicated - Butcher -- 専用-ブッチャー
+23320 Dedicated - Queen Knight A -- 専用-王妃の騎士A
+23330 Dedicated - Queen Knight B -- 専用-王妃の騎士B
+23340 Dedicated - Queen Knight C -- 専用-王妃の騎士C
+25000 Dedicated - Javaza Hat -- 専用-ジャバザハット
+25010 Dedicated - Naga -- 専用-ナーガ
+25030 Dedicated - Manscorpion ♀ -- 専用-マンスコーピオン♀
+25040 Dedicated - Mirror Night -- 専用-ミラーナイト
+25061 Dedicated - Agaduran Stand -- 専用-アガドゥランのスタンド
+25146 Dedicated - Old King -- 専用-年老いた王
+26000 Dedicated - Old Dragon -- 専用-古の龍
+26020 Dedicated - Beautiful Voice Frog -- 専用-美声カエル
+26030 Dedicated - Spider Queen -- 専用-蜘蛛の女王
+26031 Dedicated - Spider Queen (Cliff) -- 専用-蜘蛛の女王（崖）
+26070 Dedicated - Molten Iron Daemon -- 専用-熔鉄デーモン
+26110 Dedicated - Heavy Cavalry -- 専用-重騎馬兵
+26191 Exclusive - Silver Chariot -- 専用-シルバーチャリオット
+26250 Dedicated - Ornstein -- 専用-オーンスタイン
+26260 Dedicated - Forgotten Sinner -- 専用-忘れられた罪人
+26270 Dedicated - Queen's Armor Form -- 専用-王妃の鎧形態

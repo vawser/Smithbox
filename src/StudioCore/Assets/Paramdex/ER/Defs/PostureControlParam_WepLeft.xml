@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>POSTURE_CONTROL_PARAM_WEP_LEFT_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 a000_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>1</SortID>
+      <UnkC8>a000</UnkC8>
+    </Field>
+    <Field Def="s16 a000_leftWristFB">
+      <DisplayName>左手首_前後</DisplayName>
+      <Description>左手首_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>2</SortID>
+      <UnkC8>a000</UnkC8>
+    </Field>
+    <Field Def="s16 a000_leftWristIO">
+      <DisplayName>左手首_内外</DisplayName>
+      <Description>左手首_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>3</SortID>
+      <UnkC8>a000</UnkC8>
+    </Field>
+    <Field Def="s16 a002_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>4</SortID>
+      <UnkC8>a002</UnkC8>
+    </Field>
+    <Field Def="s16 a002_leftWristFB">
+      <DisplayName>左手首_前後</DisplayName>
+      <Description>左手首_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>5</SortID>
+      <UnkC8>a002</UnkC8>
+    </Field>
+    <Field Def="s16 a002_leftWristIO">
+      <DisplayName>左手首_内外</DisplayName>
+      <Description>左手首_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>6</SortID>
+      <UnkC8>a002</UnkC8>
+    </Field>
+    <Field Def="s16 a003_leftArmFB">
+      <DisplayName>左腕_前後</DisplayName>
+      <Description>左腕_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>7</SortID>
+      <UnkC8>a003</UnkC8>
+    </Field>
+    <Field Def="s16 a003_leftWristFB">
+      <DisplayName>左手首_前後</DisplayName>
+      <Description>左手首_前後</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>8</SortID>
+      <UnkC8>a003</UnkC8>
+    </Field>
+    <Field Def="s16 a003_leftWristIO">
+      <DisplayName>左手首_内外</DisplayName>
+      <Description>左手首_内外</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>9</SortID>
+      <UnkC8>a003</UnkC8>
+    </Field>
+    <Field Def="dummy8 pad[14]">
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>11</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

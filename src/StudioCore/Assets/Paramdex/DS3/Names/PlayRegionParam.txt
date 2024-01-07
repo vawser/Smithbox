@@ -1,0 +1,141 @@
+300001 High Wall of Lothric - Initial Area up to Tower on the Wall bonfire
+300002 High Wall of Lothric - Darkwraith Chamber
+300003 High Wall of Lothric - From Tower on the Wall to Courtyard (Bonfire 2)
+300004 High Wall of Lothric - Lower High Wall
+300006 High Wall of Lothric - Dancer of the Boreal Valley
+300007 High Wall of Lothric - Vordt of the Boreal Valley
+300008 High Wall of Lothric - High Wall (Post-Dancer)
+300009 High Wall of Lothric - High Wall (Post-Vordt)
+300020 High Wall of Lothric - Consumed King's Garden - Upper
+300021 High Wall of Lothric - Consumed King's Garden - Lower
+300022 High Wall of Lothric - Consumed King's Garden - Courtyard
+300023 High Wall of Lothric - Oceiros Arena
+300024 High Wall of Lothric - Untended Graves Passage
+301000 Lothric Castle
+301001 Lothric Castle - Dragon Barracks
+301002 Lothric Castle - Lower Barracks
+301003 Lothric Castle - Altar of Sunlight
+301010 Lothric Castle - Dragonslayer Armour
+301011 Lothric Castle - None
+310000 Undead Settlement - Foot of the High Wall
+310001 Undead Settlement - Dilapidated Bridge
+310002 Undead Settlement - Cliff Underside
+310003 Undead Settlement - Irina's Cell
+310004 Undead Settlement - None
+310020 Undead Settlement - Curse-rotted Greatwood
+310021 Undead Settlement - Just Before Crucifixion Woods (Road of Sacrifices)
+320001 Archdragon Peak - None
+320002 Archdragon Peak
+320010 Archdragon Peak - Ancient Wyvern
+320011 Archdragon Peak - Dragon-kin Mausoleum
+320012 Archdragon Peak - King of the Storm and Nameless King
+320013 Archdragon Peak - Great Belfry
+320020 Archdragon Peak - Mausoleum Lift
+330000 Crucifixion Woods
+330001 Crucifixion Woods - Crystal Sage
+330002 Crucifixion Woods - Halfway Fortress
+330010 Farron Keep - Abyss Watchers
+330011 Farron Keep - Keep Ruins
+330012 Farron Keep - Swamp
+330013 Farron Keep - Old Wolf of Farron Bonfire
+330014 Farron Keep - Inside the Wolf Blood (Pre-Abyss Watchers)
+330015 Farron Keep - Farron Keep Perimeter
+330020 Crucifixion Woods - Road of Sacrifices
+330021 Crucifixion Woods - Road to Cathedral of the Deep (Post-Crystal Sage)
+330022 Crucifixion Woods - None
+341000 Grand Archives
+341001 Grand Archives - Archive Rooftops
+341002 Grand Archives - Post-Ganker NPC Trio
+341003 Grand Archives - Grand Rooftop
+341010 Grand Archives - Twin Princes
+341011 Grand Archives - None
+350000 Cathedral of the Deep - Deacons of the Deep
+350001 Cathedral of the Deep - Cleansing Chapel
+350002 Cathedral of the Deep - Below Chapel
+350003 Cathedral of the Deep - Outside Great Cathedral Door
+350004 Cathedral of the Deep
+350005 Cathedral of the Deep - Pre-Deacons
+350010 Cathedral of the Deep - Rosaria's Bed Chambers
+350011 Cathedral of the Deep - Pre-Rosaria
+350020 Cathedral of the Deep - Pre-Cleansing Chapel
+370001 Irithyll of the Boreal Valley - Central Irithyll
+370002 Irithyll of the Boreal Valley - Church of Yorshka
+370003 Irithyll of the Boreal Valley
+370004 Irithyll of the Boreal Valley - Kitchen (Siegward's Fireplace)
+370005 Irithyll of the Boreal Valley - Pre-Pontiff
+370006 Irithyll of the Boreal Valley - Pontiff Sullyvahn
+370007 Irithyll of the Boreal Valley - Pontiff Beast Bridge Entrance
+370008 Irithyll of the Boreal Valley - Tower of Yorshka
+370010 Irithyll of the Boreal Valley - Pontiff's PVP Hotspot (Post-Pontiff Sullyvahn)
+370011 Irithyll of the Boreal Valley - Darkmoon Tomb (Past Gwyn's illusory statue)
+370012 Irithyll of the Boreal Valley - Anor Londo
+370013 Irithyll of the Boreal Valley - Aldrich, Devourer of Gods
+380000 Catacombs of Carthus - High Lord Wolnir
+380001 Catacombs of Carthus - Entrance (1st Bonfire)
+380002 Catacombs of Carthus - Past Boulder Stairs
+380003 Catacombs of Carthus - None
+380010 Demon Ruins - Old Demon King
+380011 Demon Ruins - None
+380012 Demon Ruins - Abandoned Tomb
+380013 Demon Ruins - Horace's Cave
+380014 Demon Ruins - Giant Avelyn
+380015 Demon Ruins - Old King's Antechamber
+380016 Demon Ruins - None
+380020 Catacombs of Carthus - Post-Abyss Watchers
+380021 Catacombs of Carthus - Post-High Lord Wolnir (Catacombs to Irithyll)
+390000 Irithyll Dungeon
+390001 Irithyll Dungeon - Sleeping Giant
+390002 Irithyll Dungeon - Lower Dungeon
+390003 Profaned Capital
+390004 Profaned Capital - Pre-Yhorm
+390005 Profaned Capital - Yhorm the Giant
+390006 Profaned Capital - None
+400000 Cemetery of Ash
+400001 Cemetery of Ash
+400002 Cemetery of Ash
+400010 Cemetery of Ash
+400100 Cemetery of Ash - Iudex Gundyr
+400101 Cemetery of Ash
+400102 Cemetery of Ash - Firelink Shrine
+400110 Cemetery of Ash - None
+410000 Kiln of the First Flame - Soul of Cinder Arena
+410001 Kiln of the First Flame - Path to the Kiln
+410002 Kiln of the First Flame - Flameless Shrine
+450000 Painted World of Ariandel - Sister Friede and Father Ariandel
+450001 Painted World of Ariandel - Snowfield
+450002 Painted World of Ariandel - Corvian Settlement
+450003 Painted World of Ariandel - Snowy Mountain Pass
+450004 Painted World of Ariandel - None
+450005 Painted World of Ariandel - Ariandel Chapel
+450006 Painted World of Ariandel - None
+450010 Painted World of Ariandel - Champion's Gravetender
+450011 Painted World of Ariandel - Depths of the Painting
+450015 Painted World of Ariandel
+450020 Painted World of Ariandel - Priscilla's Arena
+460000 Arena - Grand Roof
+470000 Arena - Kiln of Flame
+500000 Dreg Heap - Demon Prince
+500001 Dreg Heap
+500002 Dreg Heap - Earthen Peak Ruins
+500003 Dreg Heap - Within the Earthen Peak Ruins
+500020 Dreg Heap - None
+510000 Ringed City - Halflight, Spear of the Church
+510001 Ringed City - Mausoleum Lookout
+510002 Ringed City - Ringed Inner Wall
+510003 Ringed City - Ringed City Streets
+510004 Ringed City - Shared Grave
+510005 Ringed City - Post-Midir Bridge
+510010 Ringed City - Darkeater Midir
+510011 Ringed City - Pre-Darkeater Midir
+510020 Ringed City - Church of Filianore
+511000 Filianore's Rest - Slave Knight Gael
+511001 Filianore's Rest
+511010 Filianore's Rest - Broken Church
+511020 Filianore's Rest - None
+530000 Arena - Dragon Ruins
+540000 Arena - Round Plaza
+981001 Test Map _01
+981002 Test Map _02
+981003 Test Map _03
+981004 Test Map _04
+981005 Test Map _05

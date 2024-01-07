@@ -1,0 +1,8 @@
+<class name='hkpTransformShape' version='1' signature='0x2eae1715' size='144' parent='hkpShape'>
+  <members>
+    <member name='childShape' offset='32' ctype='hkpSingleShapeContainer' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='childShapeSize' offset='48' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='rotation' offset='64' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transform' offset='80' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,18 @@
+<class name='hkbExpressionData' version='1' signature='0x6740042a' size='24'>
+  <enums>
+    <enum name='ExpressionEventMode' flags='00000000'>
+      <enumitem name='EVENT_MODE_SEND_ONCE' value='0'/>
+      <enumitem name='EVENT_MODE_SEND_ON_TRUE' value='1'/>
+      <enumitem name='EVENT_MODE_SEND_ON_FALSE_TO_TRUE' value='2'/>
+      <enumitem name='EVENT_MODE_SEND_EVERY_FRAME_ONCE_TRUE' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='expression' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='assignmentVariableIndex' offset='8' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='assignmentEventIndex' offset='12' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventMode' offset='16' etype='ExpressionEventMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='raisedEvent' offset='17' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='wasTrueInPreviousFrame' offset='18' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

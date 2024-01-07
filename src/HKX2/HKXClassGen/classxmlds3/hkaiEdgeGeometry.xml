@@ -1,0 +1,18 @@
+<class name='hkaiEdgeGeometry' version='1' signature='0xe1e66d28' size='80' parent='hkReferencedObject'>
+  <enums>
+    <enum name='FaceFlagBits' flags='00000000'>
+      <enumitem name='FLAGS_NONE' value='0'/>
+      <enumitem name='FLAGS_INPUT_GEOMETRY' value='1'/>
+      <enumitem name='FLAGS_PAINTER' value='2'/>
+      <enumitem name='FLAGS_CARVER' value='4'/>
+      <enumitem name='FLAGS_EXTRUDED' value='8'/>
+      <enumitem name='FLAGS_ALL' value='15'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='edges' offset='16' ctype='hkaiEdgeGeometryEdge' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='faces' offset='32' ctype='hkaiEdgeGeometryFace' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertices' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='zeroFace' offset='64' ctype='hkaiEdgeGeometryFace' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

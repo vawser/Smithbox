@@ -1,0 +1,6 @@
+<class name='hclStorageSetupMeshBone' version='1' signature='0xe3cf5e57' size='80'>
+  <members>
+    <member name='name' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneFromSkin' offset='16' vtype='TYPE_MATRIX4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

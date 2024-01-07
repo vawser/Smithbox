@@ -1,0 +1,18 @@
+<class name='hclVertexGatherSetupObject' version='1' signature='0xb96bf3ed' size='88' parent='hclOperatorSetupObject'>
+  <enums>
+    <enum name='Direction' flags='00000000'>
+      <enumitem name='SIMULATION_TO_DISPLAY' value='0'/>
+      <enumitem name='DISPLAY_TO_SIMULATION' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='direction' offset='24' etype='Direction' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simulationBuffer' offset='32' ctype='hclSimClothBufferSetupObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simulationParticleSelection' offset='40' ctype='hclVertexSelectionInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='displayBuffer' offset='56' ctype='hclBufferSetupObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='displayVertexSelection' offset='64' ctype='hclVertexSelectionInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='gatherAllThreshold' offset='80' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='gatherNormals' offset='84' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

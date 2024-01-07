@@ -1,0 +1,6 @@
+<class name='CustomMeshTriangleParameter' version='1' signature='0x63fb7030' size='72' parent='CustomMeshParameter'>
+  <members>
+    <member name='triangleDataBuffer' offset='56' vtype='TYPE_SIMPLEARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleDataStride' offset='68' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

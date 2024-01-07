@@ -1,0 +1,5 @@
+"ASSET_AUTO_DRAW_GROUP_BACKFACE_CHECK_TYPE"
+"u8"
+"自動（動的アセットはチェックしない）","0"
+"しない","1"
+"する","2"

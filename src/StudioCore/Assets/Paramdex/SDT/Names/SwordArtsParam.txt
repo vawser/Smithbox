@@ -1,0 +1,149 @@
+0 test data -- テストデータ
+1 No arts -- アーツなし
+10 Bare hand: Right hand arts activated -- 素手：右手アーツ発動
+60 Small shield: Right hand arts activated -- 小盾：右手アーツ発動
+70 Large shield: Right hand arts activated -- 大盾：右手アーツ発動
+80 Middle shield: Right hand arts activated -- 中盾：右手アーツ発動
+90 Small shield: Parry -- 小盾：パリィ
+91 Middle shield: Parry -- 中盾：パリィ
+92 Small Shield: Spell Parry -- 小盾：スペルパリィ
+93 Middle shield: Spell Parry -- 中盾：スペルパリィ
+99 Dagger: Parry -- 短剣：パリィ
+100 Dagger: Strong Rock Step -- 短剣：強ロックステップ
+101 Dagger: Shield Penetration: Do not store one-shot weapons -- 短剣：盾貫通：ワンショット武器収納しない
+102 Dagger: Underground Prisoner: One Shot -- 短剣：地下の囚人：ワンショット
+103 Dagger: Candlestick: Do not store one-shot weapons -- 短剣：燭台：ワンショット武器収納しない
+104 Dagger: Rosalia: One Shot -- 短剣：ロザリア：ワンショット
+105 Dagger: Fang: Do not store one-shot weapons -- 短剣：牙突：ワンショット武器収納しない
+200 Straight sword: stance -- 直剣：構え
+201 Straight sword: Stepping on -- 直剣：踏み込み
+202 Straight sword: Candlestick: One-shot Weapon not stored -- 直剣：燭台：ワンショット武器収納しない
+203 Straight sword: Sun: Do not store one-shot weapons -- 直剣：太陽：ワンショット武器収納しない
+204 Straight sword: Brother: Ready -- 直剣：弟：構え
+205 Straight Sword: Dark Knight: Ready -- 直剣：ダークナイト：構え
+300 Great sword: stance -- 大剣：構え
+301 Great Sword: King of the Dead: One Shot -- 大剣：死霊の王：ワンショット
+302 Great Sword: Last Boss: One Shot -- 大剣：ラスボス：ワンショット
+303 Great Sword: Moonlight: One Shot -- 大剣：月光：ワンショット
+304 Great Sword: Old King: Ready -- 大剣：老王：構え
+305 Great Sword: Twin Princes Combined: Ready -- 大剣：双皇子合体：構え
+306 Great Sword: Altri: Ready -- 大剣：アルトリ：構え
+307 Great Sword: Executioner Sword: Stepping on -- 大剣：エグゼキューショナーソード：踏み込み
+308 Great Sword: Bastard Sword: Stepping on -- 大剣：バスタードソード：踏み込み
+309 Great Sword: Storm Ruler: Special Position -- 大剣：ストームルーラー：特殊構え
+310 Great sword: Patience -- 大剣：我慢
+400 Oversized sword: Stepping on -- 特大剣：踏み込み
+401 Oversized Sword: Watcher: Parry -- 特大剣：監視者：パリィ
+402 Oversized sword: assault -- 特大剣：突撃
+403 Oversized Sword: Old King: Stepping on -- 特大剣：老王：踏み込み
+404 Oversized sword: Twin prince brother: Stepping on -- 特大剣：双皇子兄：踏み込み
+405 Oversized sword: Step on (horizontal rotation) -- 特大剣：踏み込み（横回転）
+406 Oversized Sword: Black Knight: Stepping on -- 特大剣：黒騎士：踏み込み
+407 Oversized Sword: Smoke: Stepping on -- 特大剣：煙：踏み込み
+500 Sword: Ready -- 刺剣：構え
+501 Sword: Fang: One Shot -- 刺剣：牙突：ワンショット
+502 Sword: Ricard: One-shot Weapon not stored -- 刺剣：リカール：ワンショット武器収納しない
+600 Curved sword: Rotate -- 曲剣：回転
+601 Sword: Missing month: One shot -- 曲剣：欠月：ワンショット
+602 Sword: King of Storms: Rotation -- 曲剣：嵐の王：回転
+603 Curved Sword: Sulliburn: Rotate -- 曲剣：サリバーン：回転
+604 Sword: Shortel: Rotate -- 曲剣：ショーテル：回転
+605 Light sword: Rotate -- 軽曲剣：回転
+606 Light sword: Painting protection: Rotation -- 軽曲剣：絵画守り：回転
+700 Omagari Sword: Rotation -- 大曲剣：回転
+701 Omagari Sword: Wolf: Rotate -- 大曲剣：オオカミ：回転
+702 Omagari Sword: Skeleton: Rotate -- 大曲剣：スケルトン：回転
+703 Omagari Sword: Forest Keeper: Rotation -- 大曲剣：森の番人：回転
+800 Sword: stance -- 刀：構え
+801 Sword: Seppuku sword: One shot -- 刀：腹切り刀：ワンショット
+802 Sword: Clothesline: Ready -- 刀：物干し竿：構え
+803 Sword: Fang: One shot -- 刀：牙突：ワンショット
+900 Ax: Walk Rye -- 斧：ウォークライ
+901 Ax: Cut meat: One shot -- 斧：肉断ち：ワンショット
+902 Ax: 4 Knights: One Shot -- 斧：4騎士：ワンショット
+903 Ax: Strong Rock Step -- 斧：強ロックステップ
+1000 Large Ax: Walk Rye -- 大斧：ウォークライ
+1001 Large Ax: Dragon King: One Shot -- 大斧：竜王：ワンショット
+1002 Large Ax: Firewood Demon: One Shot -- 大斧：薪デーモン：ワンショット
+1003 Large Ax: Guardian Knight: One Shot -- 大斧：守護騎士：ワンショット
+1004 Large Ax: Harek: Walk Rye -- 大斧：ハレック：ウォークライ
+1005 Large ax: Sharpen: One shot -- 大斧：研ぐ：ワンショット
+1100 Hammer: Patience -- 槌：我慢
+1101 Hammer: Walk Rye -- 槌：ウォークライ
+1102 Hammer: Magic enhancement -- 槌：魔法強化
+1103 Hammer: Pick: Patience -- 槌：ピック：我慢（気合）
+1200 Otsuchi: Patience -- 大槌：我慢
+1201 Otsuchi: Ash Demon: Patience -- 大槌：灰デーモン：我慢
+1202 Otsuchi: Gargoyle: Patience -- 大槌：ガーゴイル：我慢
+1203 Otsuchi: Walk Rye -- 大槌：ウォークライ
+1204 Otsuchi: Black dog: Patience -- 大槌：黒犬：我慢
+1205 Gavel: Rotation -- 大槌：回転
+1206 Otsuchi: Ice ax: Patience -- 大槌：ピッケル：我慢（気合）
+1300 Spear: Assault -- 槍：突撃
+1301 Spear: King of Storms: One Shot -- 槍：嵐の王：ワンショット
+1302 Spear: Rosalia: One Shot -- 槍：ロザリア：ワンショット
+1303 Spear: Fang: One Shot -- 槍：牙突：ワンショット
+1304 Spear: Sullivan: Magical Enhancement -- 槍：サリヴァーン：魔法強化
+1305 Spear: Not good: One shot -- 槍：なりそこない：ワンショット
+1306 Spear: Lance: Assault -- 槍：ランス：突撃
+1307 Spear: Fork: Assault -- 槍：フォーク：突撃
+1308 Spear: Dragon hunting: Assault -- 槍：竜狩り：突撃
+1309 Spear: Gargoyle: Assault -- 槍：ガーゴイル：突撃
+1310 Spear: Cardinal: Assault -- 槍：枢機卿：突撃
+1311 Spear: Rotate -- 槍：回転
+1400 Halberd: Rotate -- 斧槍：回転
+1401 Halberd: Royal Castle Fat: Rotating -- 斧槍：王城デブ：回転
+1402 Halberd: Gunda: Assault -- 斧槍：グンダ：突撃
+1403 Halberd: Mother Dragon: One Shot -- 斧槍：母ドラゴン：ワンショット
+1404 Halberd: Moonlight Witch: One Shot -- 斧槍：月光魔女：ワンショット
+1405 Halberd: Crescent: Walk Rye -- 斧槍：三日月：ウォークライ
+1406 Halberd: Charge -- 斧槍：突撃
+1407 Halberd: Patience -- 斧槍：我慢
+1500 Sickle: Headshot -- 鎌：ヘッドショット
+1501 Sickle: Thirsty: One shot -- 鎌：渇望：ワンショット
+1502 Sickle: Sullivan: One Shot -- 鎌：サリヴァーン：ワンショット
+1503 Sickle: Twin Prince: One Shot -- 鎌：双皇子：ワンショット
+1600 Whip: Do not store one-shot weapons -- 鞭：ワンショット武器収納しない
+1601 Whip: Ash Demon: Do not store one-shot weapons -- 鞭：灰デーモン：ワンショット武器収納しない
+1700 Fist: Strong rock step -- 拳：強ロックステップ
+1701 Fist: Firewood Demon Knuckle: Rotate -- 拳：薪のデーモンナックル：回転
+1702 Fist: Dark Hand: Throw -- 拳：ダークハンド：投げ
+1703 Fist: Cestvs: Patience -- 拳：セスタス：我慢
+1800 Claws: Headshot -- 爪：ヘッドショット
+1801 Nail: One shot -- 爪：ワンショット
+1802 Claw: Strong lock step -- 爪：強ロックステップ
+1900 Koyumi: Rapid fire -- 小弓：連射
+1901 Koyumi: Shot -- 小弓：強射
+1902 Small bow: diffusion -- 小弓：拡散
+1903 Koyumi: Sullivan: Strong fire -- 小弓：サリヴァーン：強射
+2000 Large bow: Penetration -- 大弓：貫通
+2001 Large bow: Penetration -- 大弓：貫通
+2101 Crossbow: One shot -- クロスボウ：ワンショット
+2102 Crossbow: Strong rock step -- クロスボウ：強ロックステップ
+2200 Wand: Magic enhancement -- 杖：魔法強化
+2201 Wand: Crystal Elder: Magical Enhancement -- 杖：結晶古老：魔法強化
+2202 Wand: Zombie Crow: Magical Enhancement -- 杖：ゾンビ烏：魔法強化
+2203 Wand: Logan: Magic enhancement -- 杖：ローガン：魔法強化
+2300 Talisman: Patience Chant (Middle) -- タリスマン：我慢詠唱（中）
+2301 Bell: Magic enhancement (regeneration) -- 鈴：魔法強化（リジェネ）
+2302 Talisman: One Shot (Full) -- タリスマン：ワンショット（フル）
+2303 Talisman: Patience Chant (Weak) -- タリスマン：我慢詠唱（弱）
+2304 Talisman: Patience Chant (Strong) -- タリスマン：我慢詠唱（強）
+2400 Fire of Magic: One Shot (Full) -- 呪術の火：ワンショット（フル）
+2500 Twin Dagger: Strong Rock Step -- 双短剣：強ロックステップ
+2600 Double sword: Rotate -- 双直剣：回転
+2700 Hyperbolic sword: Rotate -- 双曲剣：回転
+2701 Hyperbolic Sword: Elite: Rotate -- 双曲剣：エリート：回転
+2710 Hyperbolic Sword: Kiaran: Rotation -- 双曲剣：キアラン：回転
+2720 Hyperbolic Sword: Tracker: Rotate -- 双曲剣：追跡者：回転
+2800 Twin sword: Headshot -- 双刀：ヘッドショット
+2900 Twin spear: Charge -- 双槍：突撃
+3000 Twin ax: Rotate -- 双斧：回転
+3100 Twin mallet: Rotation -- 双槌：回転
+3200 Middle shield: One shot (full) -- 中盾：ワンショット（フル）
+3201 Middle shield: Thorn shield: One shot (full) -- 中盾：トゲの盾：ワンショット（フル）
+3300 Pavise: One Shot (Full) -- 大盾：ワンショット（フル）
+3301 Large shield: Gunda: One shot (full) -- 大盾：グンダ：ワンショット（フル）
+3310 Large shield: Havel: One shot (full) -- 大盾：ハベル：ワンショット（フル）
+3320 Large shield: Skeleton: One shot (full) -- 大盾：骸骨：ワンショット（フル）
+3400 Small shield: One shot (full) -- 小盾：ワンショット（フル）

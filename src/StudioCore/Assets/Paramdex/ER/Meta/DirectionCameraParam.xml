@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <isUseOption AltName="Is Use Option" Wiki="Is it affected by the production camera ON / OFF option?" IsBool="" />
+    <pad2 AltName=""/>
+    <pad1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

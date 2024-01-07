@@ -1,0 +1,16 @@
+0 1 lap -- 1周回
+1 2nd lap -- 2周目
+2 3rd lap -- 3周目
+3 4th lap -- 4周目
+4 5th lap -- 5周目
+5 6th lap -- 6周目
+6 7th lap -- 7周目
+7 8th lap -- 8周目
+100 1 lap (hard mode) -- 1周回（ハードモード）
+101 2nd lap (hard mode) -- 2周目（ハードモード）
+102 3rd lap (hard mode) -- 3周目（ハードモード）
+103 4th lap (hard mode) -- 4周目（ハードモード）
+104 5th lap (hard mode) -- 5周目（ハードモード）
+105 6th lap (hard mode) -- 6周目（ハードモード）
+106 7th lap (hard mode) -- 7周目（ハードモード）
+107 8th lap (hard mode) -- 8周目（ハードモード）

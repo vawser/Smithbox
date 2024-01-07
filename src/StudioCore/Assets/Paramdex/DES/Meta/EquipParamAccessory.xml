@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <equipModelCategory AltName="equipModelCategory" />
+    <equipModelGender AltName="equipModelGender" />
+    <equipModelId AltName="equipModelId" />
+    <iconId AltName="iconId" />
+    <accessoryCategory AltName="accessoryCategory" />
+    <pad_0 AltName="pad_0" />
+    <weight AltName="weight" />
+    <behaviorId AltName="behaviorId" />
+    <basicPrice AltName="basicPrice" />
+    <shopLv AltName="shopLv" />
+    <pad_2 AltName="pad_2" />
+    <sortId AltName="sortId" />
+    <trophySGradeId AltName="trophySGradeId" />
+    <pad_3 AltName="pad_3" />
+    <qwcId AltName="qwcId" />
+    <pad_4 AltName="pad_4" />
+  </Field>
+  <Self />
+</PARAMMETA>

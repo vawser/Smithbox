@@ -1,0 +1,7 @@
+<class name='hknpDestructionShapeProperties' version='1' signature='0x5f02ac9e' size='96' parent='hkReferencedObject'>
+  <members>
+    <member name='worldFromShape' offset='16' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isHierarchicalCompound' offset='80' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hasDestructionShapes' offset='81' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

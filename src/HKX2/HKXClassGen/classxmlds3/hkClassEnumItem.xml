@@ -1,0 +1,6 @@
+<class name='hkClassEnumItem' version='1' signature='0xce6f8a6c' size='16'>
+  <members>
+    <member name='value' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='8' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

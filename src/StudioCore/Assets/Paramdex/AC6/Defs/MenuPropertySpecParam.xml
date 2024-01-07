@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENUPROPERTY_SPEC</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 CaptionTextID"></Field>
+    <Field Def="s32 UnkInt0x04"></Field>
+    <Field Def="s32 UnkInt0x08"></Field>
+    <Field Def="s8 compareType"></Field>
+    <Field Def="u8 UnkByte0x0D"></Field>
+    <Field Def="u16 UnkUshort0x0E"></Field>
+    <Field Def="s32 Unk0x10"></Field>
+    <Field Def="s32 Unk0x14"></Field>
+    <Field Def="s32 Unk0x18"></Field>
+    <Field Def="s32 Unk0x1C"></Field>
+    <Field Def="s32 UnkInt0x20"></Field>
+    <Field Def="u8 UnkByte0x24"></Field>
+    <Field Def="s8 UnkSbyte0x25"></Field>
+    <Field Def="u8 Unk0x26"></Field>
+    <Field Def="u8 Unk0x27"></Field>
+    <Field Def="u8 UnkByte0x28"></Field>
+    <Field Def="u8 Unk0x29"></Field>
+    <Field Def="u8 Unk0x2A"></Field>
+    <Field Def="u8 Unk0x2B"></Field>
+    <Field Def="s32 Unk0x2C"></Field>
+    <Field Def="s32 Unk0x30"></Field>
+    <Field Def="s32 Unk0x34"></Field>
+    <Field Def="s32 UnkInt0x38"></Field>
+    <Field Def="s32 UnkInt0x3C"></Field>
+    <Field Def="s32 UnkInt0x40"></Field>
+    <Field Def="u16 UnkUshort0x44"></Field>
+    <Field Def="u8 UnkByte0x46"></Field>
+    <Field Def="u8 UnkByte0x47"></Field>
+    <Field Def="s32 UnkInt0x48"></Field>
+    <Field Def="f32 UnkFloat0x4C"></Field>
+    <Field Def="f32 UnkFloat0x50"></Field>
+    <Field Def="s32 Unk0x54"></Field>
+    <Field Def="u16 UnkUshort0x58"></Field>
+    <Field Def="u8 UnkByte0x5A"></Field>
+    <Field Def="u8 UnkByte0x5B"></Field>
+    <Field Def="s32 UnkInt0x5C"></Field>
+    <Field Def="s32 Unk0x60"></Field>
+    <Field Def="s32 Unk0x64"></Field>
+    <Field Def="s32 Unk0x68"></Field>
+  </Fields>
+</PARAMDEF>

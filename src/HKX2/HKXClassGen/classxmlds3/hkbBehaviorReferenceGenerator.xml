@@ -1,0 +1,6 @@
+<class name='hkbBehaviorReferenceGenerator' version='1' signature='0x154fcfaa' size='152' parent='hkbGenerator'>
+  <members>
+    <member name='behaviorName' offset='136' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='behavior' offset='144' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

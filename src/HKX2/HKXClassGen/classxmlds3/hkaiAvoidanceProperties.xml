@@ -1,0 +1,20 @@
+<class name='hkaiAvoidanceProperties' version='1' signature='0xa499e271' size='128' parent='hkReferencedObject'>
+  <enums>
+    <enum name='NearbyBoundariesSearchType' flags='00000000'>
+      <enumitem name='SEARCH_NEIGHBORS' value='0'/>
+      <enumitem name='SEARCH_FLOOD_FILL' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='movementProperties' offset='16' ctype='hkaiMovementProperties' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nearbyBoundariesSearchType' offset='52' etype='NearbyBoundariesSearchType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localSensorAabb' offset='64' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='wallFollowingAngle' offset='96' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='dodgingPenalty' offset='100' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='velocityHysteresis' offset='104' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sidednessChangingPenalty' offset='108' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionPenalty' offset='112' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='penetrationPenalty' offset='116' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxNeighbors' offset='120' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

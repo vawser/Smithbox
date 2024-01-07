@@ -1,0 +1,5 @@
+0 Template -- テンプレ
+0 Template -- テンプレ
+1 Catalina -- カタリナ
+2 Sumou -- スモウ
+3 Forest keeper -- 森の番人

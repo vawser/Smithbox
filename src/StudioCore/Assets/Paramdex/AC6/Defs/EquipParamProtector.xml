@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EQUIP_PARAM_PROTECTOR_ST</ParamType>
+  <DataVersion>7</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="s32 sortId"></Field>
+    <Field Def="s32 wanderingEquipId"></Field>
+    <Field Def="s32 Unk0x0C"></Field>
+    <Field Def="s32 Unk0x10"></Field>
+    <Field Def="s32 Unk0x14"></Field>
+    <Field Def="s32 fixPrice"></Field>
+    <Field Def="s32 basicPrice"></Field>
+    <Field Def="s32 sellValue"></Field>
+    <Field Def="f32 weight"></Field>
+    <Field Def="s32 residentSpEffectId"></Field>
+    <Field Def="s32 residentSpEffectId2"></Field>
+    <Field Def="s32 residentSpEffectId3"></Field>
+    <Field Def="s32 materialSetId"></Field>
+    <Field Def="f32 partsDamageRate"></Field>
+    <Field Def="f32 corectSARecover"></Field>
+    <Field Def="s32 originEquipPro"></Field>
+    <Field Def="s32 originEquipPro1"></Field>
+    <Field Def="s32 originEquipPro2"></Field>
+    <Field Def="s32 originEquipPro3"></Field>
+    <Field Def="s32 originEquipPro4"></Field>
+    <Field Def="s32 originEquipPro5"></Field>
+    <Field Def="s32 originEquipPro6"></Field>
+    <Field Def="s32 originEquipPro7"></Field>
+    <Field Def="s32 originEquipPro8"></Field>
+    <Field Def="s32 originEquipPro9"></Field>
+    <Field Def="s32 originEquipPro10"></Field>
+    <Field Def="s32 originEquipPro11"></Field>
+    <Field Def="s32 originEquipPro12"></Field>
+    <Field Def="s32 originEquipPro13"></Field>
+    <Field Def="s32 originEquipPro14"></Field>
+    <Field Def="s32 originEquipPro15"></Field>
+    <Field Def="f32 faceScaleM_ScaleX"></Field>
+    <Field Def="f32 faceScaleM_ScaleZ"></Field>
+    <Field Def="f32 faceScaleM_MaxX"></Field>
+    <Field Def="f32 faceScaleM_MaxZ"></Field>
+    <Field Def="f32 faceScaleF_ScaleX"></Field>
+    <Field Def="f32 faceScaleF_ScaleZ"></Field>
+    <Field Def="f32 faceScaleF_MaxX"></Field>
+    <Field Def="f32 faceScaleF_MaxZ"></Field>
+    <Field Def="s32 Unk0xA0"></Field>
+    <Field Def="u16 equipModelId">
+      <Description>The model is also used to generate the menu icon.</Description>
+    </Field>
+    <Field Def="u16 iconIdM">
+      <Description>No longer used.</Description>
+    </Field>
+    <Field Def="u16 iconIdF">
+      <Description>No longer used.</Description>
+    </Field>
+    <Field Def="u16 knockBack"></Field>
+    <Field Def="u16 knockbackBounceRate"></Field>
+    <Field Def="u16 durability"></Field>
+    <Field Def="u16 durabilityMax"></Field>
+    <Field Def="s16 UnkShort0xB2"></Field>
+    <Field Def="u16 defFlickPower"></Field>
+    <Field Def="u16 defensePhysics"></Field>
+    <Field Def="u16 defenseMagic"></Field>
+    <Field Def="u16 defenseFire"></Field>
+    <Field Def="u16 defenseThunder"></Field>
+    <Field Def="s16 defenseSlash"></Field>
+    <Field Def="s16 defenseBlow"></Field>
+    <Field Def="s16 defenseThrust"></Field>
+    <Field Def="u16 resistPoison"></Field>
+    <Field Def="u16 resistDisease"></Field>
+    <Field Def="u16 resistBlood"></Field>
+    <Field Def="u16 resistCurse"></Field>
+    <Field Def="s16 reinforceTypeId"></Field>
+    <Field Def="s16 trophySGradeId"></Field>
+    <Field Def="s16 shopLv"></Field>
+    <Field Def="u8 knockbackParamId"></Field>
+    <Field Def="u8 flickDamageCutRate"></Field>
+    <Field Def="u8 equipModelCategory"></Field>
+    <Field Def="u8 equipModelGender"></Field>
+    <Field Def="u8 protectorCategory"></Field>
+    <Field Def="s8 unkSameAsWeaponParam0x2C8_Sbyte0xD8"></Field>
+    <Field Def="u8 sortGroupId"></Field>
+    <Field Def="u8 partsDmgType"></Field>
+    <Field Def="u16 legsType">
+      <Description>Determines leg type and behavior, such as reverse joints, tetrapod, and tank legs.</Description>
+    </Field>
+    <Field Def="u8 isDeposit:1"></Field>
+    <Field Def="u8 headEquip:1"></Field>
+    <Field Def="u8 bodyEquip:1"></Field>
+    <Field Def="u8 armEquip:1"></Field>
+    <Field Def="u8 legEquip:1"></Field>
+    <Field Def="u8 useFaceScale:1"></Field>
+    <Field Def="u8 isSkipWeakDamageAnim:1"></Field>
+    <Field Def="dummy8 pad06:1"></Field>
+    <Field Def="u8 defenseMaterialVariationValue_Weak"></Field>
+    <Field Def="s16 autoFootEffectDecalBaseId2"></Field>
+    <Field Def="s16 autoFootEffectDecalBaseId3"></Field>
+    <Field Def="u8 defenseMaterialVariationValue"></Field>
+    <Field Def="u8 isDiscard:1"></Field>
+    <Field Def="u8 isDrop:1"></Field>
+    <Field Def="u8 disableMultiDropShare:1"></Field>
+    <Field Def="u8 simpleModelForDlc:1"></Field>
+    <Field Def="u8 showLogCondType:1"></Field>
+    <Field Def="u8 showDialogCondType:2"></Field>
+    <Field Def="dummy8 pad:1"></Field>
+    <Field Def="f32 neutralDamageCutRate"></Field>
+    <Field Def="f32 slashDamageCutRate"></Field>
+    <Field Def="f32 blowDamageCutRate"></Field>
+    <Field Def="f32 thrustDamageCutRate"></Field>
+    <Field Def="f32 magicDamageCutRate"></Field>
+    <Field Def="f32 fireDamageCutRate"></Field>
+    <Field Def="f32 thunderDamageCutRate"></Field>
+    <Field Def="u16 defenseMaterialSfx1"></Field>
+    <Field Def="u16 defenseMaterialSfx_Weak1"></Field>
+    <Field Def="u16 defenseMaterial1"></Field>
+    <Field Def="u16 defenseMaterial_Weak1"></Field>
+    <Field Def="u16 defenseMaterialSfx2"></Field>
+    <Field Def="u16 defenseMaterialSfx_Weak2"></Field>
+    <Field Def="u16 footMaterialSe"></Field>
+    <Field Def="u16 defenseMaterial_Weak2"></Field>
+    <Field Def="s32 autoFootEffectDecalBaseId1"></Field>
+    <Field Def="f32 toughnessDamageCutRate"></Field>
+    <Field Def="f32 toughnessRecoverCorrection"></Field>
+    <Field Def="f32 darkDamageCutRate"></Field>
+    <Field Def="u16 defenseDark"></Field>
+    <Field Def="dummy8 invisibleFlag48:1"></Field>
+    <Field Def="dummy8 invisibleFlag49:1"></Field>
+    <Field Def="dummy8 invisibleFlag50:1"></Field>
+    <Field Def="dummy8 invisibleFlag51:1"></Field>
+    <Field Def="dummy8 invisibleFlag52:1"></Field>
+    <Field Def="dummy8 invisibleFlag53:1"></Field>
+    <Field Def="dummy8 invisibleFlag54:1"></Field>
+    <Field Def="dummy8 invisibleFlag55:1"></Field>
+    <Field Def="dummy8 invisibleFlag56:1"></Field>
+    <Field Def="dummy8 invisibleFlag57:1"></Field>
+    <Field Def="dummy8 invisibleFlag58:1"></Field>
+    <Field Def="dummy8 invisibleFlag59:1"></Field>
+    <Field Def="dummy8 invisibleFlag60:1"></Field>
+    <Field Def="dummy8 invisibleFlag61:1"></Field>
+    <Field Def="dummy8 invisibleFlag62:1"></Field>
+    <Field Def="dummy8 invisibleFlag63:1"></Field>
+    <Field Def="dummy8 invisibleFlag64:1"></Field>
+    <Field Def="dummy8 invisibleFlag65:1"></Field>
+    <Field Def="dummy8 invisibleFlag66:1"></Field>
+    <Field Def="dummy8 invisibleFlag67:1"></Field>
+    <Field Def="dummy8 invisibleFlag68:1"></Field>
+    <Field Def="dummy8 invisibleFlag69:1"></Field>
+    <Field Def="dummy8 invisibleFlag70:1"></Field>
+    <Field Def="dummy8 invisibleFlag71:1"></Field>
+    <Field Def="dummy8 invisibleFlag72:1"></Field>
+    <Field Def="dummy8 invisibleFlag73:1"></Field>
+    <Field Def="dummy8 invisibleFlag74:1"></Field>
+    <Field Def="dummy8 invisibleFlag75:1"></Field>
+    <Field Def="dummy8 invisibleFlag76:1"></Field>
+    <Field Def="dummy8 invisibleFlag77:1"></Field>
+    <Field Def="dummy8 invisibleFlag78:1"></Field>
+    <Field Def="dummy8 invisibleFlag79:1"></Field>
+    <Field Def="dummy8 invisibleFlag80:1"></Field>
+    <Field Def="dummy8 padbit:7"></Field>
+    <Field Def="u8 postureControlId"></Field>
+    <Field Def="s32 Unk0x128"></Field>
+    <Field Def="s32 saleValue"></Field>
+    <Field Def="u16 resistFreeze"></Field>
+    <Field Def="u8 UnkByte0x132"></Field>
+    <Field Def="u8 UnkByte0x133"></Field>
+    <Field Def="u8 UnkByte0x134"></Field>
+    <Field Def="u8 UnkByte0x135"></Field>
+    <Field Def="u8 UnkByte0x136"></Field>
+    <Field Def="u8 UnkByte0x137"></Field>
+    <Field Def="u8 UnkByte0x138"></Field>
+    <Field Def="u8 UnkByte0x139"></Field>
+    <Field Def="u8 UnkByte0x13A"></Field>
+    <Field Def="u8 UnkByte0x13B"></Field>
+    <Field Def="u8 UnkByte0x13C"></Field>
+    <Field Def="u8 UnkByte0x13D"></Field>
+    <Field Def="u8 UnkByte0x13E"></Field>
+    <Field Def="u8 UnkByte0x13F"></Field>
+    <Field Def="u8 UnkByte0x140"></Field>
+    <Field Def="u8 UnkByte0x141"></Field>
+    <Field Def="u8 UnkByte0x142"></Field>
+    <Field Def="u8 UnkByte0x143"></Field>
+    <Field Def="u8 UnkByte0x144"></Field>
+    <Field Def="u8 UnkByte0x145"></Field>
+    <Field Def="u8 UnkByte0x146"></Field>
+    <Field Def="u8 UnkByte0x147"></Field>
+    <Field Def="u8 UnkByte0x148"></Field>
+    <Field Def="u8 UnkByte0x149"></Field>
+    <Field Def="u8 UnkByte0x14A"></Field>
+    <Field Def="u8 UnkByte0x14B"></Field>
+    <Field Def="u8 UnkByte0x14C"></Field>
+    <Field Def="u8 UnkByte0x14D"></Field>
+    <Field Def="u8 UnkByte0x14E"></Field>
+    <Field Def="u8 UnkByte0x14F"></Field>
+    <Field Def="u8 UnkByte0x150"></Field>
+    <Field Def="u8 UnkByte0x151"></Field>
+    <Field Def="u8 UnkByte0x152"></Field>
+    <Field Def="u8 UnkByte0x153"></Field>
+    <Field Def="u8 UnkByte0x154"></Field>
+    <Field Def="u8 UnkByte0x155"></Field>
+    <Field Def="u8 UnkByte0x156"></Field>
+    <Field Def="u8 UnkByte0x157"></Field>
+    <Field Def="u8 UnkByte0x158"></Field>
+    <Field Def="u8 UnkByte0x159"></Field>
+    <Field Def="u8 UnkByte0x15A"></Field>
+    <Field Def="u8 UnkByte0x15B"></Field>
+    <Field Def="u8 UnkByte0x15C"></Field>
+    <Field Def="u8 UnkByte0x15D"></Field>
+    <Field Def="u8 UnkByte0x15E"></Field>
+    <Field Def="u8 UnkByte0x15F"></Field>
+    <Field Def="u8 UnkByte0x160"></Field>
+    <Field Def="u8 UnkByte0x161"></Field>
+    <Field Def="u8 UnkByte0x162"></Field>
+    <Field Def="u8 UnkByte0x163"></Field>
+    <Field Def="u8 UnkByte0x164"></Field>
+    <Field Def="u8 UnkByte0x165"></Field>
+    <Field Def="u8 UnkByte0x166"></Field>
+    <Field Def="u8 UnkByte0x167"></Field>
+    <Field Def="u8 UnkByte0x168"></Field>
+    <Field Def="u8 UnkByte0x169"></Field>
+    <Field Def="u8 UnkByte0x16A"></Field>
+    <Field Def="u8 UnkByte0x16B"></Field>
+    <Field Def="u8 UnkByte0x16C"></Field>
+    <Field Def="u8 UnkByte0x16D"></Field>
+    <Field Def="u8 UnkByte0x16E"></Field>
+    <Field Def="u8 UnkByte0x16F"></Field>
+    <Field Def="u8 UnkByte0x170"></Field>
+    <Field Def="u8 UnkByte0x171"></Field>
+    <Field Def="u8 UnkByte0x172"></Field>
+    <Field Def="u8 UnkByte0x173"></Field>
+    <Field Def="u8 UnkByte0x174"></Field>
+    <Field Def="u8 UnkByte0x175"></Field>
+    <Field Def="u8 UnkByte0x176"></Field>
+    <Field Def="u8 UnkByte0x177"></Field>
+    <Field Def="u8 UnkByte0x178"></Field>
+    <Field Def="u8 UnkByte0x179"></Field>
+    <Field Def="u8 UnkByte0x17A"></Field>
+    <Field Def="u8 UnkByte0x17B"></Field>
+    <Field Def="u8 UnkByte0x17C"></Field>
+    <Field Def="u8 UnkByte0x17D"></Field>
+    <Field Def="u8 UnkByte0x17E"></Field>
+    <Field Def="u8 UnkByte0x17F"></Field>
+    <Field Def="u8 UnkByte0x180"></Field>
+    <Field Def="u8 UnkByte0x181"></Field>
+    <Field Def="u8 UnkByte0x182"></Field>
+    <Field Def="u8 UnkByte0x183"></Field>
+    <Field Def="u8 UnkByte0x184"></Field>
+    <Field Def="u8 UnkByte0x185"></Field>
+    <Field Def="u8 UnkByte0x186"></Field>
+    <Field Def="u8 UnkByte0x187"></Field>
+    <Field Def="u8 UnkByte0x188"></Field>
+    <Field Def="u8 UnkByte0x189"></Field>
+    <Field Def="u8 UnkByte0x18A"></Field>
+    <Field Def="u8 UnkByte0x18B"></Field>
+    <Field Def="u8 UnkByte0x18C"></Field>
+    <Field Def="u8 UnkByte0x18D"></Field>
+    <Field Def="u8 UnkByte0x18E"></Field>
+    <Field Def="u8 UnkByte0x18F"></Field>
+    <Field Def="u8 UnkByte0x190"></Field>
+    <Field Def="u8 UnkByte0x191"></Field>
+    <Field Def="s16 UnkShort0x192"></Field>
+    <Field Def="s32 lockCamParamId"></Field>
+    <Field Def="s32 energyLoad"></Field>
+    <Field Def="s32 armorPoints"></Field>
+    <Field Def="s32 menuTextId"></Field>
+    <Field Def="s32 Unk0x1A4"></Field>
+    <Field Def="s32 Unk0x1A8"></Field>
+    <Field Def="s32 Unk0x1AC"></Field>
+    <Field Def="u8 Unk0x1B0"></Field>
+    <Field Def="u8 UnkByte0x1B1"></Field>
+    <Field Def="u8 UnkByte0x1B2"></Field>
+    <Field Def="u8 legsAnimOffset"></Field>
+    <Field Def="f32 UnkFloat0x1B4"></Field>
+    <Field Def="s32 energyCapacity"></Field>
+    <Field Def="s32 energyOutput"></Field>
+    <Field Def="f32 energyRechargeDelay"></Field>
+    <Field Def="s32 thrusterParamId">
+      <Description>Refers to ThrustersParam_PC.</Description>
+    </Field>
+    <Field Def="f32 UnkFloat0x1C8"></Field>
+    <Field Def="s32 weaponParamId">
+      <Description>Refers to EquipParamWeapon. Used to define scanner for with head parts, unknown usage with core parts.</Description>
+    </Field>
+    <Field Def="s32 UnkInt0x1D0"></Field>
+    <Field Def="s16 UnkShort0x1D4"></Field>
+    <Field Def="s16 UnkShort0x1D6"></Field>
+    <Field Def="s32 UnkInt0x1D8"></Field>
+    <Field Def="f32 legsBrakingCorrection"></Field>
+    <Field Def="f32 quickBoostVelocity">
+      <Description>Referred to in-game as "Jump Distance". Does not affect jump distance.</Description>
+    </Field>
+    <Field Def="s32 firearmSpecialization"></Field>
+    <Field Def="s32 attitudeStability"></Field>
+    <Field Def="f32 UnkFloat0x1EC"></Field>
+    <Field Def="f32 recoilControl"></Field>
+    <Field Def="f32 tetrapodHoverDrainRate"></Field>
+    <Field Def="f32 tetrapodHoverQuickBoostVelocity"></Field>
+    <Field Def="s32 Unk0x1FC"></Field>
+    <Field Def="u16 corporationTextureId"></Field>
+    <Field Def="u16 equipmentMenuManageCategoryParamId"></Field>
+    <Field Def="s32 demonstrationVideoBinkId">
+      <Description>Refers to the video filename in Game/movie/</Description>
+    </Field>
+    <Field Def="s32 Unk0x208"></Field>
+    <Field Def="s32 Unk0x20C"></Field>
+    <Field Def="s32 Unk0x210"></Field>
+    <Field Def="s32 Unk0x214"></Field>
+    <Field Def="s32 Unk0x218"></Field>
+    <Field Def="s32 Unk0x21C"></Field>
+    <Field Def="s32 Unk0x220"></Field>
+    <Field Def="s32 Unk0x224"></Field>
+    <Field Def="s32 Unk0x228"></Field>
+    <Field Def="f32 recoilKnockbackVelocityCorrection_Grounded"></Field>
+    <Field Def="f32 recoilKnockbackVelocityCorrection_Airborne"></Field>
+    <Field Def="f32 UnkFloat0x234"></Field>
+    <Field Def="f32 armsLoadLimit"></Field>
+    <Field Def="s32 Unk0x23C"></Field>
+    <Field Def="s32 meleeSpecialization"></Field>
+    <Field Def="s32 loadLimit"></Field>
+    <Field Def="s32 legsPartBoosterParamId">
+      <Description>Refers to EquipParamBooster</Description>
+    </Field>
+    <Field Def="s32 movementAcTypeParamId">
+      <Description>Refers to MovementAcTypeParam</Description>
+    </Field>
+    <Field Def="s32 chrActTurnParamId">
+      <Description>Refers to ChrActTurnParam</Description>
+    </Field>
+    <Field Def="f32 Unk0x254"></Field>
+    <Field Def="s32 Unk0x258"></Field>
+    <Field Def="s32 Unk0x25C"></Field>
+    <Field Def="s32 Unk0x260"></Field>
+    <Field Def="f32 antiKineticDefense">
+      <Description>Base value is 300. +1.0 = +10 ingame, +0.5 = +5, etc.</Description>
+    </Field>
+    <Field Def="f32 antiEnergyDefense">
+      <Description>Base value is 300. +1.0 = +10 ingame, +0.5 = +5, etc.</Description>
+    </Field>
+    <Field Def="f32 antiExplosiveDefense">
+      <Description>Base value is 300. +1.0 = +10 ingame, +0.5 = +5, etc.</Description>
+    </Field>
+    <Field Def="f32 antiCoralDefense"></Field>
+    <Field Def="f32 antiDarkDefense"></Field>
+    <Field Def="f32 systemRecovery_Display"></Field>
+    <Field Def="f32 systemRecovery"></Field>
+    <Field Def="f32 UnkFloat0x280"></Field>
+    <Field Def="s32 Unk0x284"></Field>
+    <Field Def="f32 UnkFloat0x288"></Field>
+    <Field Def="s32 Unk0x28C"></Field>
+    <Field Def="f32 UnkFloat0x290"></Field>
+    <Field Def="f32 quickBoostVerticalVelocity_Grounded">
+      <Description>Height gained while quick boosting.</Description>
+    </Field>
+    <Field Def="f32 boostModeJumpHorizontalSpeedBonus">
+      <Description>When boosting then jumping, takes current speed and multiplies it by this value then adds it to current speed.</Description>
+    </Field>
+    <Field Def="f32 jumpVelocityVertical"></Field>
+    <Field Def="f32 jumpVelocityAcceleration">
+      <Description>How quickly jump reaches max velocity and velocity ends. Interrupted by boosting.</Description>
+    </Field>
+    <Field Def="f32 UnkFloat0x2A4"></Field>
+    <Field Def="f32 jumpVelocityHorizontal"></Field>
+    <Field Def="f32 UnkFloat0x2AC"></Field>
+    <Field Def="f32 jumpVelocityHorizontalTransferred">
+      <Description>Amount of vertical jump velocity to transfer into horizontal velocity.</Description>
+    </Field>
+    <Field Def="f32 Unk0x2B4"></Field>
+    <Field Def="f32 Unk0x2B8"></Field>
+    <Field Def="f32 Unk0x2BC"></Field>
+    <Field Def="f32 unkAttitudeStability"></Field>
+    <Field Def="f32 Unk0x2C4"></Field>
+    <Field Def="f32 cameraDisruptionResistance"></Field>
+    <Field Def="f32 Unk0x2CC"></Field>
+    <Field Def="f32 Unk0x2D0"></Field>
+    <Field Def="f32 Unk0x2D4"></Field>
+    <Field Def="f32 Unk0x2D8"></Field>
+    <Field Def="f32 Unk0x2DC"></Field>
+    <Field Def="f32 Unk0x2E0"></Field>
+    <Field Def="f32 unkLoadLimit"></Field>
+    <Field Def="f32 Unk0x2E8"></Field>
+    <Field Def="f32 Unk0x2EC"></Field>
+    <Field Def="f32 unkDisplayJumpDistance">
+      <Description>Seemingly does nothing, and UI element for "Jump Distance" is governed by quickBoostVelocity.</Description>
+    </Field>
+    <Field Def="f32 displayJumpHeight">
+      <Description>Only affects value in UI.</Description>
+    </Field>
+    <Field Def="f32 Unk0x2F8"></Field>
+    <Field Def="f32 Unk0x2FC"></Field>
+    <Field Def="f32 Unk0x300"></Field>
+    <Field Def="f32 Unk0x304"></Field>
+    <Field Def="f32 Unk0x308"></Field>
+    <Field Def="f32 Unk0x30C"></Field>
+    <Field Def="f32 Unk0x310"></Field>
+    <Field Def="f32 Unk0x314"></Field>
+    <Field Def="f32 Unk0x318"></Field>
+    <Field Def="f32 Unk0x31C"></Field>
+    <Field Def="f32 Unk0x320"></Field>
+    <Field Def="f32 Unk0x324"></Field>
+    <Field Def="f32 Unk0x328"></Field>
+    <Field Def="f32 Unk0x32C"></Field>
+    <Field Def="f32 Unk0x330"></Field>
+    <Field Def="s16 Unk0x334"></Field>
+    <Field Def="u16 scanAngle"></Field>
+    <Field Def="f32 scanDistance">
+      <Description>Range within which scanning can detect enemies or part containers.</Description>
+    </Field>
+    <Field Def="f32 scanEffectDuration">
+      <Description>Scan visibility duration after having detected enemies or part containers.</Description>
+    </Field>
+    <Field Def="u8 UnkByte0x340"></Field>
+    <Field Def="u8 Unk0x341"></Field>
+    <Field Def="u8 Unk0x342"></Field>
+    <Field Def="u8 altCalcCorrectType"></Field>
+    <Field Def="u8 UnkByte0x344"></Field>
+    <Field Def="u8 Unk0x345"></Field>
+    <Field Def="u8 Unk0x346"></Field>
+    <Field Def="u8 Unk0x347"></Field>
+    <Field Def="f32 walkOverburdenedAnimationSpeedMultiplier"></Field>
+    <Field Def="f32 walkAnimationSpeedMultiplier"></Field>
+    <Field Def="s32 UnkInt0x350"></Field>
+    <Field Def="f32 babyBoostSlowWalkVelocity_Grounded"></Field>
+    <Field Def="f32 babyBoostWalkVelocity_Grounded"></Field>
+    <Field Def="f32 backWeaponHeightAdjustment"></Field>
+    <Field Def="f32 UnkFloat0x360"></Field>
+    <Field Def="s32 protectorParamId"></Field>
+    <Field Def="f32 boostEfficiencyAdj"></Field>
+    <Field Def="f32 generatorOutputAdj"></Field>
+    <Field Def="f32 generatorSupplyAdj"></Field>
+    <Field Def="s32 Unk0x374"></Field>
+    <Field Def="s32 Unk0x378"></Field>
+    <Field Def="s32 Unk0x37C"></Field>
+    <Field Def="s32 Unk0x380"></Field>
+  </Fields>
+</PARAMDEF>

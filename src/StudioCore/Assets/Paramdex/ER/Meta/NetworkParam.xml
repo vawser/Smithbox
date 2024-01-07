@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <signVerticalOffset AltName="Common - Sign Height Offset" Wiki="" />
+    <maxSignPosCorrectionRange AltName="Common - Max Sign Position Correction Range" Wiki="" />
+    <summonTimeoutTime AltName="Common - Summon Timeout Time" Wiki="" />
+    <pad_0 AltName=""/>
+    <signPuddleActiveMessageIntervalSec AltName="Summon Sign - Sign Puddle Active Message Interval" Wiki="" />
+    <keyGuideHeight_0 AltName="Summon Sign - Key Guide Height" Wiki="" />
+    <reloadSignIntervalTime1 AltName="Summon Sign - Reload Sign Interval Time [1]" Wiki="" />
+    <reloadSignIntervalTime2 AltName="Summon Sign - Reload Sign Interval Time [2]" Wiki="" />
+    <reloadSignTotalCount_0 AltName="Summon Sign - Reload Sign Total Count" Wiki="Actually u8 is enough" />
+    <reloadSignCellCount_0 AltName="Summon Sign - Reload Sign Cell Count" Wiki="Actually u8 is enough" />
+    <updateSignIntervalTime AltName="Summon Sign - Update Sign Interval Time" Wiki="" />
+    <basicExclusiveRange_0 AltName="Summon Sign - Basic Horizontal Drawing Range" Wiki="" />
+    <basicExclusiveHeight_0 AltName="Summon Sign - Basic Vertical Drawing Height" Wiki="" />
+    <previewChrWaitingTime AltName="Summon Sign - Preview Chr Waiting Time" Wiki="" />
+    <signVisibleRange_0 AltName="Summon Sign - Sign Visible Range" Wiki="" />
+    <cellGroupHorizontalRange_0 AltName="Summon Sign - Acquisition Cell Range (Horizontal)" Wiki="Actually u8 is enough" />
+    <cellGroupTopRange_0 AltName="Summon Sign - Acquisition Cell Range (Top)" Wiki="Actually u8 is enough" />
+    <cellGroupBottomRange_0 AltName="Summon Sign - Acquisition Cell Range (Bottom)" Wiki="Actually u8 is enough" />
+    <minWhitePhantomLimitTimeScale AltName="Summon Sign - Min White Phantom Limit Time Scale" Wiki="" />
+    <minSmallPhantomLimitTimeScale AltName="Summon Sign - Min Small Phantom Limit Time Scale" Wiki="" />
+    <whiteKeywordLimitTimeScale AltName="Summon Sign - White Keyword Limit Time Scale" Wiki="" />
+    <smallKeywordLimitTimeScale AltName="Summon Sign - Small Keyword Limit Time Scale" Wiki="" />
+    <blackKeywordLimitTimeScale AltName="Summon Sign - Black Keyword Limit Time Scale" Wiki="" />
+    <dragonKeywordLimitTimeScale AltName="Summon Sign - Dragon Keyword Limit Time Scale" Wiki="" />
+    <singGetMax AltName="Summon Sign - Sign Get Max" Wiki="Actually u8 is enough" />
+    <signDownloadSpan AltName="Summon Sign - Sign Download Span" Wiki="" />
+    <signUpdateSpan AltName="Summon Sign - Sign Update Span" Wiki="" />
+    <signPad AltName=""/>
+    <maxBreakInTargetListCount AltName="Intrusion - Max Intruder List Count" Wiki="" />
+    <breakInRequestIntervalTimeSec AltName="Intrusion - Intruder Request Interval Time" Wiki="" />
+    <breakInRequestTimeOutSec AltName="Intrusion - Intruder Request Timeout" Wiki="" />
+    <pad_1 AltName=""/>
+    <keyGuideRange AltName="Blood Message - Key Guide Horionztal Range" Wiki="" />
+    <keyGuideHeight_1 AltName="Blood Message - Key Guide Vertical Range" Wiki="" />
+    <reloadSignTotalCount_1 AltName="Blood Message - Reload Sign Total Count" Wiki="Actually u8 is enough" />
+    <reloadNewSignCellCount AltName="Blood Message - Reload New Sign Cell Count" Wiki="Actually u8 is enough" />
+    <reloadRandomSignCellCount AltName="Blood Message - Reload Random Sign Cell Count" Wiki="Actually u8 is enough" />
+    <maxSignTotalCount_0 AltName="Blood Message - Max Sign Total Count" Wiki="Actually u16 is enough" />
+    <maxSignCellCount_0 AltName="Blood Message - Max Sign Cell Count" Wiki="Actually u8 is enough" />
+    <basicExclusiveRange_1 AltName="Blood Message - Basic Exclusive Range" Wiki="" />
+    <basicExclusiveHeight_1 AltName="Blood Message - Basic Exclusive Height" Wiki="" />
+    <signVisibleRange_1 AltName="Blood Message - Sign Visible Range" Wiki="" />
+    <maxWriteSignCount AltName="Blood Message - Max Write Sign Count" Wiki="Actually u8 is enough" />
+    <maxReadSignCount AltName="Blood Message - Max Read Sign Count" Wiki="Actually u8 is enough" />
+    <reloadSignIntervalTime_0 AltName="Blood Message - Reload Sign Interval Time" Wiki="" />
+    <cellGroupHorizontalRange_1 AltName="Blood Message - Cell Group Horizontal Range" Wiki="Actually u8 is enough" />
+    <cellGroupTopRange_1 AltName="Blood Message - Cell Group Top Range" Wiki="Actually u8 is enough" />
+    <cellGroupBottomRange_1 AltName="Blood Message - Cell Group Bottom Range" Wiki="Actually u8 is enough" />
+    <lifeTime_0 AltName="Blood Message - Lifetime" Wiki="Actually u16 is enough" />
+    <downloadSpan_0 AltName="Blood Message - Download Span" Wiki="" />
+    <downloadEvaluationSpan AltName="Blood Message - Download Evaluation Span" Wiki="" />
+    <pad_2 AltName=""/>
+    <deadingGhostStartPosThreshold AltName="Bloodstain - Dead Ghost Start Position Threshold" Wiki="If the distance between the bloodstain position and the illusion start position is farther than this value, the server will not be registered." />
+    <keyGuideHeight_2 AltName="Bloodstain - Key Guide Height" Wiki="" />
+    <keyGuideRangePlayer AltName="Bloodstain - Key Guide Range Player" Wiki="" />
+    <keyGuideHeightPlayer AltName="Bloodstain - Key Guide Height Player" Wiki="" />
+    <reloadSignTotalCount_2 AltName="Bloodstain - Reload Sign Total Count" Wiki="Actually u8 is enough" />
+    <reloadSignCellCount_1 AltName="Bloodstain - Reload Sign Cell Count" Wiki="Actually u8 is enough" />
+    <maxSignTotalCount_1 AltName="Bloodstain - Max Sign Total Count" Wiki="Actually u16 is enough" />
+    <maxSignCellCount_1 AltName="Bloodstain - Max Sign Cell Count" Wiki="Actually u8 is enough" />
+    <reloadSignIntervalTime_1 AltName="Bloodstain - Reload Sign Interval Time" Wiki="" />
+    <signVisibleRange_2 AltName="Bloodstain - Sign Visible Range" Wiki="" />
+    <basicExclusiveRange_2 AltName="Bloodstain - Basic Exclusive Range" Wiki="" />
+    <basicExclusiveHeight_2 AltName="Bloodstain - Basic Exclusive Height" Wiki="" />
+    <cellGroupHorizontalRange_2 AltName="Bloodstain - Cell Group Horizontal Range" Wiki="Actually u8 is enough" />
+    <cellGroupTopRange_2 AltName="Bloodstain - Cell Group Top Range" Wiki="Actually u8 is enough" />
+    <cellGroupBottomRange_2 AltName="Bloodstain - Cell Group Bottom Range" Wiki="Actually u8 is enough" />
+    <lifeTime_1 AltName="Bloodstain - Lifetime" Wiki="Actually u16 is enough" />
+    <recordDeadingGhostTotalTime AltName="Bloodstain - Record Dead Ghost Total Time" Wiki="" />
+    <recordDeadingGhostMinTime AltName="Bloodstain - Record Dead Ghost Min Time" Wiki="Death illusions less than this recording time will not register the server" />
+    <downloadSpan_1 AltName="Bloodstain - Download Span" Wiki="" />
+    <statueCreatableDistance AltName="Bloodstain - Statue Creatable Distance" Wiki="For open fields. When a stone statue is generated, it can be generated if the distance between the PC and the generation position is greater than or equal to this value." />
+    <reloadGhostTotalCount AltName="Ghost - Reload Ghost Total Count" Wiki="Actually u8 is enough" />
+    <reloadGhostCellCount AltName="Ghost - Reload Ghost Cell Count" Wiki="Actually u8 is enough" />
+    <maxGhostTotalCount AltName="Ghost - Max Ghost Total Count" Wiki="Actually u16 is enough" />
+    <distanceOfBeginRecordVersus AltName="Ghost - Begin Record Distance (Versus)" Wiki="" />
+    <distanceOfEndRecordVersus AltName="Ghost - End Record Distance (Versus)" Wiki="" />
+    <updateWanderGhostIntervalTime AltName="Ghost - Update Wandering Ghost Interval Time" Wiki="" />
+    <updateVersusGhostIntervalTime AltName="Ghost - Update Versus Ghost Interval Time" Wiki="" />
+    <recordWanderingGhostTime AltName="Ghost - Record Wandering Ghost Time" Wiki="" />
+    <recordWanderingGhostMinTime AltName="Ghost - Record Wandering Ghost Min Time" Wiki="Wandering illusions less than this recording time do not register the server" />
+    <updateBonfireGhostIntervalTime AltName="Ghost - Update Bonfire Ghost Interval Time" Wiki="" />
+    <replayGhostRangeOnView AltName="Ghost - Replay Ghost Range On View" Wiki="" />
+    <replayGhostRangeOutView AltName="Ghost - Replay Ghost Range Out View" Wiki="" />
+    <replayBonfireGhostTime AltName="Ghost - Replay Bonfire Ghost Time" Wiki="" />
+    <minBonfireGhostValidRange AltName="Ghost - Bonfire Ghost Min Valid Range" Wiki="Do not place bonfire illusions less than this distance from the bonfire" />
+    <maxBonfireGhostValidRange AltName="Ghost - Bonfire Ghost Max Valid Range" Wiki="Do not place bonfire illusions beyond this distance from the bonfire" />
+    <minReplayIntervalTime AltName="Ghost - Replay Interval Min Time" Wiki="" />
+    <maxReplayIntervalTime AltName="Ghost - Replay Interval Max Time" Wiki="" />
+    <reloadGhostIntervalTime AltName="Ghost - Reload Ghost Interval Time" Wiki="" />
+    <cellGroupHorizontalRange_3 AltName="Ghost - Cell Group Horizontal Range" Wiki="Actually u8 is enough" />
+    <cellGroupTopRange_3 AltName="Ghost - Cell Group Top Range" Wiki="Actually u8 is enough" />
+    <replayBonfirePhantomParamIdForCodename AltName="Ghost - Replay Bonfire Phantom Param ID (CodeDisplayName)" Wiki="Phantom bonfire mode phantom parameter ID used when codename matches" />
+    <replayBonfireModeRange AltName="Ghost - Replay Bonfire Mode Range" Wiki="" />
+    <replayBonfirePhantomParamId AltName="Ghost - Replay Bonfire Phantom Param ID" Wiki="Phantom bonfire mode phantom parameter ID" />
+    <ghostpad AltName=""/>
+    <reloadVisitListCoolTime AltName="Visit - Reload Visit List Cool time" Wiki="" />
+    <maxCoopBlueSummonCount AltName="Visit - Max Coop Blue Summon Count" Wiki="Actually u8 is enough" />
+    <maxBellGuardSummonCount AltName="Visit - Max Bell Guard Summon Count" Wiki="Actually u8 is enough" />
+    <maxVisitListCount AltName="Visit - Max Visit List Count" Wiki="" />
+    <reloadSearch_CoopBlue_Min AltName="Visit - Reload Search - Coop Blue - Min" Wiki="" />
+    <reloadSearch_CoopBlue_Max AltName="Visit - Reload Search - Coop Blue - Max" Wiki="" />
+    <reloadSearch_BellGuard_Min AltName="Visit - Reload Search - Bell Guard - Min" Wiki="" />
+    <reloadSearch_BellGuard_Max AltName="Visit - Reload Search - Bell Guard - Max" Wiki="" />
+    <reloadSearch_RatKing_Min AltName="Visit - Reload Search - Rat King - Min" Wiki="" />
+    <reloadSearch_RatKing_Max AltName="Visit - Reload Search - Rat King - Max" Wiki="" />
+    <visitpad00 AltName=""/>
+    <srttMaxLimit AltName="Extra - SSRT Max Limit" Wiki="" />
+    <srttMeanLimit AltName="Extra - SSRT Mean Limit" Wiki="" />
+    <srttMeanDeviationLimit AltName="Extra - SSRT Mean Deviation Limit" Wiki="" />
+    <darkPhantomLimitBoostTime AltName="Extra - Dark Phantom Limit Boost Time" Wiki="" />
+    <darkPhantomLimitBoostScale AltName="Extra - Dark Phantom Limit Boost Scale" Wiki="" />
+    <multiplayDisableLifeTime AltName="Extra - Multiplayer Disable Lifetime" Wiki="" />
+    <abyssMultiplayLimit AltName="Extra - Abyss Multiplayer Limit" Wiki="The number of times the abyss spirit enters the host in the abyss area" />
+    <phantomWarpMinimumTime AltName="Extra - Phantom Warp Minimum Time" Wiki="" />
+    <phantomReturnDelayTime AltName="Extra - Phantom Return Delay Time" Wiki="" />
+    <terminateTimeoutTime AltName="Extra - Terminate Timeout Time" Wiki="" />
+    <penaltyPointLanDisconnect AltName="Extra - Penalty Point LAN Disconnet" Wiki="" />
+    <penaltyPointSignout AltName="Extra - Penalty Point Signout" Wiki="" />
+    <penaltyPointReboot AltName="Extra - Penalty Point Reboot" Wiki="" />
+    <penaltyPointBeginPenalize AltName="Extra - Penalty Point Begin Penalize" Wiki="" />
+    <penaltyForgiveItemLimitTime AltName="Extra - Penalty Forgive Item Limit Time" Wiki="" />
+    <allAreaSearchRate_CoopBlue AltName="Extra - All Area Search Rate - Coop Blue" Wiki="Percentage of searching for intrusion targets from all areas (%)" />
+    <allAreaSearchRate_VsBlue AltName="Extra - All Area Search Rate - Vs. Coop Blue" Wiki="Percentage of searching for intrusion targets from all areas (%)" />
+    <allAreaSearchRate_BellGuard AltName="Extra - All Area Search Rate - Bell Guard" Wiki="Percentage of searching for intrusion targets from all areas (%)" />
+    <bloodMessageEvalHealRate AltName="Extra - Blood Message Eval Heal Rate" Wiki="" />
+    <smallGoldSuccessHostRewardId AltName="Extra - Small Gold Success Host Reward ID" Wiki="" />
+    <doorInvalidPlayAreaExtents AltName="Extra - Door Invalid Play Area Extents" Wiki="The area around the black door that separates the multiplayer area is set to the systematically invalid play area (-1). At that time, make the invalid area thicker with this parameter on the thinner side of the OBJ's bounding box with a black door." />
+    <signDisplayMax AltName="Extra - Sign Display Max" Wiki="" />
+    <bloodStainDisplayMax AltName="Extra - Bloodstain Display Max" Wiki="" />
+    <bloodMessageDisplayMax AltName="Extra - Blood Message Display Max" Wiki="" />
+    <pad00 AltName=""/>
+    <pad10 AltName=""/>
+    <summonMessageInterval AltName="Quick Match - Summon Message Interval" Wiki="" />
+    <hostRegisterUpdateTime AltName="Quick Match - Host Register Update Time" Wiki="" />
+    <hostTimeOutTime AltName="Quick Match - Host Time Out Time" Wiki="" />
+    <guestUpdateTime AltName="Quick Match - Guest Update Time" Wiki="" />
+    <guestPlayerNoTimeOutTime AltName="Quick Match - Guest Player No Time Out Time" Wiki="" />
+    <hostPlayerNoTimeOutTime AltName="Quick Match - Host Player No Time Out Time" Wiki="" />
+    <requestSearchQuickMatchLimit AltName="Quick Match - Request Search Quick Match Limit" Wiki="Actually u8 is enough" />
+    <AvatarMatchSearchMax AltName="Quick Match - Avatar Match Search Max" Wiki="Actually u8 is enough" />
+    <BattleRoyalMatchSearchMin AltName="Quick Match - Battle Royale Match Search Min" Wiki="Actually u8 is enough" />
+    <BattleRoyalMatchSearchMax AltName="Quick Match - Battle Royale Match Search Max" Wiki="Actually u8 is enough" />
+    <pad11 AltName=""/>
+    <VisitorListMax AltName="Visitor - Visitor List Max" Wiki="Actually u8 is enough" />
+    <VisitorTimeOutTime AltName="Visitor - Visitor Time Out Time" Wiki="" />
+    <DownloadSpan_2 AltName="Visitor - Download Span" Wiki="" />
+    <VisitorGuestRequestMessageIntervalSec AltName="Visitor - Visitor Guest Request Message Interval" Wiki="Display interval [seconds] of messages sent by visiting guests while searching for a destination" />
+    <wanderGhostIntervalLifeTime AltName="Ghost Addition - Wandering Ghost Interval Lifetime" Wiki="Wandering illusion life" />
+    <pad13 AltName=""/>
+    <YellowMonkTimeOutTime AltName="Yellow Monk - Yellow Monk Timeout Time" Wiki="" />
+    <YellowMonkDownloadSpan AltName="Yellow Monk - Yellow Monk Download Span" Wiki="" />
+    <YellowMonkOverallFlowTimeOutTime AltName="Yellow Monk - Yellow Monk Overall Flow Time Out Time" Wiki="" />
+    <pad14_0 AltName=""/>
+    <pad14_1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

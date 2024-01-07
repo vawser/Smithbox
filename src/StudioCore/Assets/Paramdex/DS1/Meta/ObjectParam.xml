@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Field>
+    <hp Wiki="Amount of damage object receives before breaking. -1 = don't break normally" />
+    <defense Wiki="Threshold compared against AtkParam field atkObj. if object damage surpasses object defense, the object will take damage (needs verification)" />
+    <extRefTexId />
+    <materialId Wiki="Material to use when this object is hit, determining visual effect and sound to use" />
+    <animBreakIdMax />
+    <isCamHit IsBool="" Wiki="Determines if camera collides with object" />
+    <isBreakByPlayerCollide IsBool="" Wiki="Determines if player collision can break the object (needs verification)" />
+    <isAnimBreak IsBool="" Wiki="Determines if object should use an animation when broken" />
+    <isPenetrationBulletHit IsBool="" Wiki="If Bullet with isPenetrate will collide with the object." />
+    <isChrHit IsBool="" Wiki="Determines if characters will collide with the object and if character attacks can hit the object" />
+    <isAttackBacklash IsBool="" Wiki="Determines if attacks can deflect off of the object (attacks can deflect anyway if object is invincible)" />
+    <isDisableBreakForFirstAppear IsBool="" Wiki="Determines if the object will break when the game is loaded if the player collides with the object upon spawning" />
+    <isLadder IsBool="" />
+    <isAnimPauseOnRemoPlay IsBool="" />
+    <isDamageNoHit IsBool="" Wiki="Unknown. Related to AtkParam field isDisableNoDamage?" />
+    <isMoveObj IsBool="" />
+    <defaultLodParamId />
+    <breakSfxId />
+  </Field>
+</PARAMMETA>

@@ -1,0 +1,146 @@
+60 [GEN:60] Benhart of Jugo
+61 [GEN:61] Benhart of Jugo
+65 [GEN:65] Mild Mannered Pate
+66 [GEN:66] Mild Mannered Pate
+85 [GEN:85] Cartographer Cale
+86 [GEN:86] Cartographer Cale
+260 [GEN:260] Merchant Hag Melentia
+261 [GEN:261] Merchant Hag Melentia
+520 [GEN:520] Royal Sorcerer Navlaan
+521 [GEN:521] Armorer Dennis
+526 [GEN:526] Mild Mannered Pate
+527 [GEN:527] Sellsword Luet
+528 [GEN:528] Ruined Aflis
+853 [GEN:853] The Pursuer [Boss]
+857 [GEN:857] The Last Giant [Boss]
+923 [GEN:923] Forlorn
+1000 [GEN:1000] Hollow Infantry
+1005 [GEN:1005] Hollow Infantry
+1081 [GEN:1081] Hollow Infantry
+1082 [GEN:1082] Hollow Infantry
+1083 [GEN:1083] Hollow Infantry
+1084 [GEN:1084] Hollow Infantry
+1085 [GEN:1085] Hollow Infantry
+1086 [GEN:1086] Hollow Infantry
+1090 [GEN:1090] Hollow Infantry
+1105 [GEN:1105] Hollow Infantry
+1106 [GEN:1106] Hollow Soldier
+1112 [GEN:1112] Hollow Infantry
+1114 [GEN:1114] Hollow Infantry
+1116 [GEN:1116] Hollow Infantry
+1117 [GEN:1117] Hollow Infantry
+1119 [GEN:1119] Hollow Infantry
+1120 [GEN:1120] Hollow Infantry
+1121 [GEN:1121] Hollow Infantry
+1122 [GEN:1122] Hollow Infantry
+1123 [GEN:1123] Hollow Infantry
+1124 [GEN:1124] Hollow Infantry
+1125 [GEN:1125] Hollow Infantry
+1126 [GEN:1126] Hollow Infantry
+1127 [GEN:1127] Hollow Infantry
+1160 [GEN:1160] Hollow Infantry
+1161 [GEN:1161] Hollow Infantry
+1162 [GEN:1162] Hollow Infantry
+1163 [GEN:1163] Hollow Infantry
+1170 [GEN:1170] Hollow Soldier
+1171 [GEN:1171] Hollow Infantry
+1180 [GEN:1180] Hollow Soldier
+1190 [GEN:1190] Hollow Infantry
+1191 [GEN:1191] Hollow Infantry
+1250 [GEN:1250] Ironclad Soldier
+1251 [GEN:1251] Ironclad Soldier
+1260 [GEN:1260] Hollow Infantry
+1261 [GEN:1261] Hollow Infantry
+1266 [GEN:1266] Hollow Infantry
+1270 [GEN:1270] Hollow Infantry
+1271 [GEN:1271] Hollow Infantry
+1272 [GEN:1272] Hollow Infantry
+1273 [GEN:1273] Hollow Infantry
+1274 [GEN:1274] Hollow Infantry
+1275 [GEN:1275] Hollow Infantry
+1280 [GEN:1280] Hollow Soldier
+1300 [GEN:1300] Hollow Soldier
+1401 [GEN:1401] Hollow Soldier
+1410 [GEN:1410] Hollow Soldier
+1411 [GEN:1411] Hollow Soldier
+1500 [GEN:1500] Hollow Soldier
+1600 [GEN:1600] Skeleton
+1601 [GEN:1601] Skeleton
+1602 [GEN:1602] Skeleton
+1603 [GEN:1603] Skeleton
+1604 [GEN:1604] Skeleton
+1605 [GEN:1605] Skeleton
+1770 [GEN:1770] Hollow Infantry
+1771 [GEN:1771] Hollow Infantry
+1772 [GEN:1772] Ironclad Soldier
+1784 [GEN:1784] Ironclad Soldier
+1789 [GEN:1789] Ironclad Soldier
+1790 [GEN:1790] Hollow Infantry
+1800 [GEN:1800] Ironclad Soldier
+1810 [GEN:1810] Hollow Soldier
+1820 [GEN:1820] Ironclad Soldier
+2000 [GEN:2000] Hollow Infantry
+2020 [GEN:2020] Hollow Infantry
+2031 [GEN:2031] Hollow Infantry
+2033 [GEN:2033] Hollow Infantry
+2041 [GEN:2041] Hollow Soldier
+2050 [GEN:2050] Hollow Infantry
+2060 [GEN:2060] Hollow Soldier
+2200 [GEN:2200] Hollow Infantry
+2210 [GEN:2210] Ironclad Soldier
+2235 [GEN:2235] Hollow Soldier
+2236 [GEN:2236] Hollow Soldier
+2240 [GEN:2240] Hollow Soldier
+2255 [GEN:2255] The Pursuer
+2261 [GEN:2261] Hollow Soldier
+2262 [GEN:2262] Hollow Soldier
+2263 [GEN:2263] Hollow Soldier
+2350 [GEN:2350] Hollow Soldier
+2351 [GEN:2351] Hollow Infantry
+2352 [GEN:2352] Hollow Infantry
+2353 [GEN:2353] Hollow Infantry
+2354 [GEN:2354] Hollow Soldier
+2500 [GEN:2500] Hollow Soldier
+2501 [GEN:2501] Hollow Soldier
+2502 [GEN:2502] Hollow Soldier
+2503 [GEN:2503] Hollow Soldier
+2504 [GEN:2504] Hollow Soldier
+2510 [GEN:2510] Hollow Soldier
+2520 [GEN:2520] Hollow Soldier
+2521 [GEN:2521] Hollow Soldier
+2522 [GEN:2522] Hollow Soldier
+2601 [GEN:2601] Hollow Soldier
+2603 [GEN:2603] Hollow Soldier
+2610 [GEN:2610] Hollow Soldier
+2611 [GEN:2611] Hollow Soldier
+2612 [GEN:2612] Hollow Soldier
+2651 [GEN:2651] Hollow Soldier
+2660 [GEN:2660] Hollow Soldier
+2661 [GEN:2661] Hollow Soldier
+2680 [GEN:2680] Ironclad Soldier
+2710 [GEN:2710] Hollow Infantry
+2711 [GEN:2711] Hollow Infantry
+2730 [GEN:2730] Hollow Soldier
+2731 [GEN:2731] Hollow Soldier
+2740 [GEN:2740] Ironclad Soldier
+2810 [GEN:2810] Hollow Soldier
+2820 [GEN:2820] Ironclad Soldier
+2830 [GEN:2830] Hollow Soldier
+3110 [GEN:3110] Flame Lizard
+3150 [GEN:3150] Flame Lizard
+3160 [GEN:3160] Flame Lizard
+5000 [GEN:5000] Crystal Lizard
+6000 [GEN:6000] Syan Knight Phantom
+6001 [GEN:6001] Knight Phantom
+6200 [GEN:6200] Knight Phantom
+7002 [GEN:7002] Hollow Soldier
+7010 [GEN:7010] Royal Soldier
+7011 [GEN:7011] Royal Soldier
+7020 [GEN:7020] Royal Soldier
+7021 [GEN:7021] Hollow Soldier
+7100 [GEN:7100] Hollow Soldier
+7101 [GEN:7101] Hollow Soldier
+8000 [GEN:8000] Ogre
+8100 [GEN:8100] Syan Knight
+9000 [GEN:9000] Catarina Knight Phantom
+9100 [GEN:9100] Invisible Hollow

@@ -1,0 +1,21 @@
+<class name='hkbAttachmentSetup' version='1' signature='0xcf95eff3' size='48' parent='hkReferencedObject'>
+  <enums>
+    <enum name='AttachmentType' flags='00000000'>
+      <enumitem name='ATTACHMENT_TYPE_KEYFRAME_RIGID_BODY' value='0'/>
+      <enumitem name='ATTACHMENT_TYPE_BALL_SOCKET_CONSTRAINT' value='1'/>
+      <enumitem name='ATTACHMENT_TYPE_RAGDOLL_CONSTRAINT' value='2'/>
+      <enumitem name='ATTACHMENT_TYPE_SET_WORLD_FROM_MODEL' value='3'/>
+      <enumitem name='ATTACHMENT_TYPE_NONE' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='blendInTime' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='moveAttacherFraction' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='gain' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extrapolationTimeStep' offset='28' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fixUpGain' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxLinearDistance' offset='36' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAngularDistance' offset='40' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attachmentType' offset='44' etype='AttachmentType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

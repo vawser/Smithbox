@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <talkChrEntityId AltName="Talk Character Entity ID" Wiki="Used as a foreign key when referencing from a conversation." />
+    <eliminateTargetEntityId AltName="Defeat Target List Entity ID" Wiki="Entity ID of the character / group to be defeated by the buddy when summoned from this stele" />
+    <summonedEventFlagId AltName="Summoned Event Flag ID" Wiki="Flag ID that stands when summoned from a stone monument. When this flag is set, the stone monument cannot be summoned." />
+    <isSpecial AltName="Is Special Monument" Wiki="Is the stone monument an SP stone monument or a general-purpose stone monument? A bool that distinguishes." IsBool="" />
+    <pad1 AltName=""/>
+    <pad2 AltName=""/>
+    <buddyId AltName="Buddy ID" Wiki="ID of the buddy parameter. If Special is , this buddy ID will be summoned." />
+    <dopingSpEffectId AltName="Applied SpEffect ID" Wiki="Special effect ID applied to the buddy when summoning the buddy." Refs="SpEffectParam"/>
+    <activateRange AltName="Activation Distance" Wiki="If there is at least one character to be defeated in this range, you can summon a buddy at that stone monument." />
+    <overwriteReturnRange AltName="Overwrite Return Range" Wiki="Buddy's homecoming distance can be overridden" />
+    <overwriteActivateRegionEntityId AltName="Overwrite Activation Region Entity ID" Wiki="The range where the buddy can be summoned can be overwritten in the area of the specified entity ID." />
+    <warnRegionEntityId AltName="Warn Region Entity ID" Wiki="Warning area entity ID" />
+    <pad3 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <baseWepId AltName="Base Weapon ID" Wiki="Weapon base ID" Refs="EquipParamWeapon" />
+    <gemId AltName="Gem ID" Wiki="Magic stone ID" Refs="EquipParamGem" />
+    <reinforceLv AltName="Reinforcement Level" Wiki="Enhancement value" />
+    <pad AltName=""/>
+  </Field>
+  <Self Wiki="Defines a pairing of Weapon and Ash of War (Gem) for use from CharaInitParam.\nFor loot and shops, change the default AoW/Gem on the weapon." />
+</PARAMMETA>

@@ -1,0 +1,10 @@
+<class name='hkpCogWheelConstraintAtom' version='1' signature='0x57c62967' size='16' parent='hkpConstraintAtom'>
+  <members>
+    <member name='cogWheelRadiusA' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cogWheelRadiusB' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isScrew' offset='12' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memOffsetToInitialAngleOffset' offset='13' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memOffsetToPrevAngle' offset='14' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memOffsetToRevolutionCounter' offset='15' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

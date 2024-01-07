@@ -1,0 +1,30 @@
+<class name='hkaSplineCompressedAnimationTrackCompressionParams' version='1' signature='0x42e878d3' size='28'>
+  <enums>
+    <enum name='RotationQuantization' flags='00000000'>
+      <enumitem name='POLAR32' value='0'/>
+      <enumitem name='THREECOMP40' value='1'/>
+      <enumitem name='THREECOMP48' value='2'/>
+      <enumitem name='THREECOMP24' value='3'/>
+      <enumitem name='STRAIGHT16' value='4'/>
+      <enumitem name='UNCOMPRESSED' value='5'/>
+    </enum>
+    <enum name='ScalarQuantization' flags='00000000'>
+      <enumitem name='BITS8' value='0'/>
+      <enumitem name='BITS16' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='rotationTolerance' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='translationTolerance' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='scaleTolerance' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='floatingTolerance' offset='12' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotationDegree' offset='16' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='translationDegree' offset='18' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='scaleDegree' offset='20' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='floatingDegree' offset='22' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotationQuantizationType' offset='24' etype='RotationQuantization' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='translationQuantizationType' offset='25' etype='ScalarQuantization' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='scaleQuantizationType' offset='26' etype='ScalarQuantization' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='floatQuantizationType' offset='27' etype='ScalarQuantization' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

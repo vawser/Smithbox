@@ -1,0 +1,61 @@
+1000 For automatic patrol: normal -- 自動巡回用:通常
+1001 For automatic patrol: Ritual A -- 自動巡回用:儀式A
+1002 For automatic patrol: Ritual B -- 自動巡回用:儀式B
+1003 For automatic patrol: Ritual C -- 自動巡回用:儀式C
+1004 For automatic patrol: Ritual D -- 自動巡回用:儀式D
+1005 For automatic patrol: Ritual E -- 自動巡回用:儀式E
+11000000 Castle: Default -- 城下：デフォルト
+11000020 Castle: Invasion of Tokugawa -- 城下：徳川襲来
+11010000 Honjo: Default -- 本城：デフォルト
+11010010 Honjo: Arashi -- 本城：嵐
+11010020 Honjo: Invasion of Tokugawa -- 本城：徳川襲来
+11020000 Hidden Prison: Default -- 隠し牢：デフォルト
+11020020 Hidden prison: Tokugawa invasion -- 隠し牢：徳川襲来
+15000000 Sick Village: Default -- 病み村：デフォルト
+15000010 Sick Village: During illusion -- 病み村：幻術中
+25000000 Submerged City: Default -- 水没都：デフォルト
+25000010 Submerged city: dense fog -- 水没都：濃霧
+30000000 Eclipse Royal Castle_1: Default -- 蝕の王城_1：デフォルト
+30000010 The Royal Castle of Eclipse_1: The World of Eclipse -- 蝕の王城_1：蝕世界
+30001000 Eclipse King _1: Product version -- 蝕の王城_1：製品版
+30001010 Royal Castle of Eclipse_1: NT -- 蝕の王城_1：NT
+30001011 Eclipse Royal Castle_1: TGS -- 蝕の王城_1：TGS
+30001012 Eclipse King _1: E3 Light Test -- 蝕の王城_1：E3ライトテスト
+30001015 Eclipse royal castle_1: royal castle 2 distant view test -- 蝕の王城_1：王城2遠景テスト
+30001020 Eclipse King _1: Gparam Or test -- 蝕の王城_1：GparamOrテスト
+30010000 Eclipse Royal Castle_2: Default -- 蝕の王城_2：デフォルト
+30010010 The Royal Castle of Eclipse_2: The World of Eclipse -- 蝕の王城_2：蝕世界
+31000000 Evil Eye City: Default -- 邪眼の街：デフォルト
+31000010 Evil Eye City: The World of Corrosion -- 邪眼の街：蝕世界
+31000020 City of Evil Eyes: Default (Oujou 1) -- 邪眼の街：デフォルト(王城1)
+31000030 Evil Eye City: The World of Evil Eye (Oujou 1) -- 邪眼の街：蝕世界(王城1)
+31001000 City of Evil Eyes: Pseudo NPC Multi 1 -- 邪眼の街：疑似NPCマルチ1
+32000000 Flying Dragon Bridge: Default (fine weather) -- 飛竜の橋：デフォルト（晴天）
+32000010 Hiryu no Hashi: Boss Room Appears -- 飛竜の橋：ボス部屋出現
+33000000 Poison Swamp Forest: Default -- 毒沼の森：デフォルト
+33000010 Poison Swamp Forest: Corrosion World -- 毒沼の森：蝕世界
+34010000 Eclipse Royal Castle_3: Default -- 蝕の王城_3：デフォルト
+34010010 The Royal Castle of Eclipse_3: The World of Eclipse -- 蝕の王城_3：蝕世界
+35000000 Basilica Church: Default -- 聖堂教会：デフォルト
+35000010 Basilica Church: Eating World -- 聖堂教会：蝕世界
+37000000 Anor: Default -- アノール：デフォルト
+37000010 Anor: The World of Erosion -- アノール：蝕世界
+37001000 Anor: Pseudo NPC Multi 1 -- アノール：疑似NPCマルチ1
+37001100 Anor: Pseudo NPC Multi 2 -- アノール：疑似NPCマルチ2
+37001200 Anor: Pseudo NPC Multi 3-1 -- アノール：疑似NPCマルチ3-1
+37001201 Anor: Pseudo NPC Multi 3-2 -- アノール：疑似NPCマルチ3-2
+38000000 Abandoned city: Default (dedicated) -- 廃都：デフォルト（専用）
+39000000 Dungeon: Default -- 地下牢：デフォルト
+40000000 Location: Default -- 拠点：デフォルト
+40000010 Base: Corrosion World -- 拠点：蝕世界
+40000020 Base: Las Boss -- 拠点：ラスボス
+41000000 Last map: default -- ラストマップ：デフォルト
+91080000 Ritual Layer Test Map: Noon -- 儀式レイヤーテストMap：昼
+91080010 Ritual layer test Map: gloomy cloudy -- 儀式レイヤーテストMap：陰鬱な曇り
+91080020 Ritual Layer Test Map: Evening / Evening Darkness -- 儀式レイヤーテストMap：夕方/宵闇
+91080030 Ritual Layer Test Map: Moonlit Night -- 儀式レイヤーテストMap：月夜
+91080040 Ritual Layer Test Map: Map Specific -- 儀式レイヤーテストMap：マップ固有
+91080050 Ritual Layer Test Map: Map Specific -- 儀式レイヤーテストMap：マップ固有
+91080800 Ritual Layer Test Map: Reload Test -- 儀式レイヤーテストMap：リロードテスト
+99090000 Event test: Default -- イベントテスト：デフォ
+99090010 Event test: Pseudo multi -- イベントテスト：疑似マルチ

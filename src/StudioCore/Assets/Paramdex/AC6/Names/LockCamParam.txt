@@ -1,0 +1,8 @@
+0 Bipedal legs
+1 Bipedal legs (Locked on)
+100000 Reverse joint legs
+100001 Reverse joint legs (Locked on)
+200000 Tank legs
+200001 Tank legs (Locked on)
+300000 Tetrapod legs
+300001 etrapod  legs (Locked on)

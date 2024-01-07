@@ -1,0 +1,37 @@
+0 temple part
+1 Last boss
+2 pit
+3 Underworld
+4 bird object
+5 dignitary object
+11 Last boss mouth
+15 Character/Appearance/Passage
+17 For poly drama (scn00015-c01-PC
+18 Poly drama (scn00015-c02-heroine
+19 For poly drama (scn00001-c00
+20 For poly drama (scn00001-c01-A(PC
+21 For poly drama (scn00001-c01-A (Heroine
+22 For poly drama (scn00001-c01-B
+23 For poly drama (scn00001-c02-PC
+24 For poly drama (scn00001-c04-Heroine
+26 Poly drama (scn00001-c05 Heroine "be good"
+28 For polyplay (scn00001-vertical hole-A
+29 For polyplay (scn00001-vertical hole-B
+30 For poly drama (scn00001-c02-Heroine
+31 Poly drama (scn00001-c02-Map
+32 Poly drama (scn00001-c02-last boss
+33 Poly drama (scn00001-c03-01 last boss
+35 Poly drama (scn00001-c06-heroine
+36 Poly drama (scn00001-c07-heroine
+37 Poly drama (scn00010-c02-heroine
+38 For poly drama (scn00010-c03-PC-A
+39 For poly drama (scn00010-c03-PC-B
+40 For poly drama (scn00010-c02-Heroine
+41 For poly drama (scn00010-c03-Heroine
+42 For polyplay (scn00010-c04-Heroine
+58 Character dignitary area
+59 Character boss area Akira
+60 Character boss area dark
+61 Character Underground world
+62 character dark
+63 Character normal

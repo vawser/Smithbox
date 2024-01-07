@@ -1,0 +1,7 @@
+<class name='hkpGroupFilter' version='1' signature='0x887c8c65' size='272' parent='hkpCollisionFilter'>
+  <members>
+    <member name='nextFreeSystemGroup' offset='72' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionLookupTable' offset='76' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='32' flags='FLAGS_NONE' default='0'/>
+    <member name='pad256' offset='208' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

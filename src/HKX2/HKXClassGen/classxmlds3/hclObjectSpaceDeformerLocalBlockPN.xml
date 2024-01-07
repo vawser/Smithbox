@@ -1,0 +1,6 @@
+<class name='hclObjectSpaceDeformerLocalBlockPN' version='1' signature='0xf66f11c2' size='256'>
+  <members>
+    <member name='localPosition' offset='0' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='64' flags='FLAGS_NONE' default='0'/>
+    <member name='localNormal' offset='128' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='64' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

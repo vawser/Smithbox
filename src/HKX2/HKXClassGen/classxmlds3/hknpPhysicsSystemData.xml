@@ -1,0 +1,11 @@
+<class name='hknpPhysicsSystemData' version='1' signature='0xb857718b' size='120' parent='hkReferencedObject'>
+  <members>
+    <member name='materials' offset='16' ctype='hknpMaterial' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motionProperties' offset='32' ctype='hknpMotionProperties' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motionCinfos' offset='48' ctype='hknpMotionCinfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bodyCinfos' offset='64' ctype='hknpBodyCinfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraintCinfos' offset='80' ctype='hknpConstraintCinfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='referencedObjects' offset='96' ctype='hkReferencedObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='112' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,47 @@
+<class name='hkcdShapeType' version='1' signature='0x7413992d' size='1'>
+  <enums>
+    <enum name='ShapeTypeEnum' flags='00000000'>
+      <enumitem name='SPHERE' value='0'/>
+      <enumitem name='CYLINDER' value='1'/>
+      <enumitem name='TRIANGLE' value='2'/>
+      <enumitem name='BOX' value='3'/>
+      <enumitem name='CAPSULE' value='4'/>
+      <enumitem name='CONVEX_VERTICES' value='5'/>
+      <enumitem name='TRI_SAMPLED_HEIGHT_FIELD_COLLECTION' value='6'/>
+      <enumitem name='TRI_SAMPLED_HEIGHT_FIELD_BV_TREE' value='7'/>
+      <enumitem name='LIST' value='8'/>
+      <enumitem name='MOPP' value='9'/>
+      <enumitem name='CONVEX_TRANSLATE' value='10'/>
+      <enumitem name='CONVEX_TRANSFORM' value='11'/>
+      <enumitem name='SAMPLED_HEIGHT_FIELD' value='12'/>
+      <enumitem name='EXTENDED_MESH' value='13'/>
+      <enumitem name='TRANSFORM' value='14'/>
+      <enumitem name='COMPRESSED_MESH' value='15'/>
+      <enumitem name='STATIC_COMPOUND' value='16'/>
+      <enumitem name='BV_COMPRESSED_MESH' value='17'/>
+      <enumitem name='COLLECTION' value='18'/>
+      <enumitem name='USER0' value='19'/>
+      <enumitem name='USER1' value='20'/>
+      <enumitem name='USER2' value='21'/>
+      <enumitem name='BV_TREE' value='22'/>
+      <enumitem name='CONVEX' value='23'/>
+      <enumitem name='CONVEX_PIECE' value='24'/>
+      <enumitem name='MULTI_SPHERE' value='25'/>
+      <enumitem name='CONVEX_LIST' value='26'/>
+      <enumitem name='TRIANGLE_COLLECTION' value='27'/>
+      <enumitem name='HEIGHT_FIELD' value='28'/>
+      <enumitem name='SPHERE_REP' value='29'/>
+      <enumitem name='BV' value='30'/>
+      <enumitem name='PLANE' value='31'/>
+      <enumitem name='PHANTOM_CALLBACK' value='32'/>
+      <enumitem name='MULTI_RAY' value='33'/>
+      <enumitem name='INVALID' value='34'/>
+      <enumitem name='FIRST_SHAPE_TYPE' value='0'/>
+      <enumitem name='MAX_SPU_SHAPE_TYPE' value='22'/>
+      <enumitem name='MAX_PPU_SHAPE_TYPE' value='35'/>
+      <enumitem name='ALL_SHAPE_TYPES' value='-1'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

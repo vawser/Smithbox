@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>THROW_INFO_BANK</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 AtkChrId" />
+    <Field Def="s32 DefChrId" />
+    <Field Def="f32 Dist" />
+    <Field Def="f32 DiffAngMin" />
+    <Field Def="f32 DiffAngMax" />
+    <Field Def="f32 upperYRange" />
+    <Field Def="f32 lowerYRange" />
+    <Field Def="f32 diffAngMyToDef" />
+    <Field Def="s32 throwTypeId" />
+    <Field Def="s32 atkAnimId" />
+    <Field Def="s32 defAnimId" />
+    <Field Def="s16 escHp" />
+    <Field Def="s16 selfEscCycleTime" />
+    <Field Def="s16 sphereCastRadiusRateTop" />
+    <Field Def="s16 sphereCastRadiusRateLow" />
+    <Field Def="u8 PadType = 1" />
+    <Field Def="u8 AtkEnableState" />
+    <Field Def="u8 throwFollowingType" />
+    <Field Def="dummy8 pad2[1]" />
+    <Field Def="u8 throwType" />
+    <Field Def="u8 selfEscCycleCnt" />
+    <Field Def="u8 dmyHasChrDirType" />
+    <Field Def="u8 isTurnAtker:1 = 1" />
+    <Field Def="u8 isSkipWepCate:1" />
+    <Field Def="u8 isSkipSphereCast:1" />
+    <Field Def="u8 isEnableCorrectPos_forThrowAdjust:1" />
+    <Field Def="u8 isEnableThrowFollowingFallAssist:1" />
+    <Field Def="u8 isEnableThrowFollowingFeedback:1" />
+    <Field Def="dummy8 pad0:2" />
+    <Field Def="s16 atkSorbDmyId" />
+    <Field Def="s16 defSorbDmyId" />
+    <Field Def="f32 Dist_start" />
+    <Field Def="f32 DiffAngMin_start" />
+    <Field Def="f32 DiffAngMax_start" />
+    <Field Def="f32 upperYRange_start" />
+    <Field Def="f32 lowerYRange_start" />
+    <Field Def="f32 diffAngMyToDef_start" />
+    <Field Def="s32 judgeRangeBasePosDmyId1 = -1" />
+    <Field Def="s32 judgeRangeBasePosDmyId2 = -1" />
+    <Field Def="dummy8 pad1[32]" />
+  </Fields>
+</PARAMDEF>

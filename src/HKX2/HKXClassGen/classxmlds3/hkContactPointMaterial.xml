@@ -1,0 +1,17 @@
+<class name='hkContactPointMaterial' version='1' signature='0x5b304c3c' size='16'>
+  <enums>
+    <enum name='FlagEnum' flags='00000000'>
+      <enumitem name='CONTACT_IS_NEW' value='1'/>
+      <enumitem name='CONTACT_USES_SOLVER_PATH2' value='2'/>
+      <enumitem name='CONTACT_BREAKOFF_OBJECT_ID_SMALLER' value='4'/>
+      <enumitem name='CONTACT_IS_DISABLED' value='8'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='userData' offset='0' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='friction' offset='8' ctype='hkUFloat8' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='restitution' offset='9' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxImpulse' offset='10' ctype='hkUFloat8' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='11' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

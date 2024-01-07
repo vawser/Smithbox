@@ -1,0 +1,5 @@
+1 Reference mass -- 基準マス
+2 1 mass deviation -- 1マスずれ
+3 2 mass deviation -- 2マスずれ
+4 3 mass deviation -- 3マスずれ
+5 4 mass deviation -- 4マスずれ

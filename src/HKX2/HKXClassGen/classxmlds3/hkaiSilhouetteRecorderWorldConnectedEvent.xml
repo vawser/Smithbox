@@ -1,0 +1,5 @@
+<class name='hkaiSilhouetteRecorderWorldConnectedEvent' version='1' signature='0x8f96b741' size='32' parent='hkaiSilhouetteRecorderReplayEvent'>
+  <members>
+    <member name='world' offset='24' ctype='hkaiWorld' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

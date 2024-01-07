@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <atkIron_1 AltName="Iron [1]" Wiki="Iron: Concept 1"  />
+    <atkIron_2 AltName="Iron [2]" Wiki="Iron: Concept 2"  />
+    <atkLeather_1 AltName="Leather [1]" Wiki="Leather: Concept 1"  />
+    <atkLeather_2 AltName="Leather [2]" Wiki="Leather: Concept 2"  />
+    <atkWood_1 AltName="Wood [1]" Wiki="Wooden: Concept 1"  />
+    <atkWood_2 AltName="Wood [2]" Wiki="Wooden: Concept 2"  />
+    <atkBody_1 AltName="Flesh [1]" Wiki="Meat: Concept 1"  />
+    <atkBody_2 AltName="Flesh [2]" Wiki="Meat: Concept 2"  />
+    <atkStone_1 AltName="Stone [1]" Wiki="Corrosion: Concept 1"  />
+    <atkStone_2 AltName="Stone [2]" Wiki="Corrosion: Concept 2"  />
+    <pad AltName=""/>
+    <atkNone_1 AltName="None [1]" Wiki="None: Concept 1"  />
+    <atkNone_2 AltName="None [2]" Wiki="None: Concept 2"  />
+    <reserve AltName=""/>
+  </Field>
+  <Self Wiki="Related to Hit Sound Effects"/>
+</PARAMMETA>

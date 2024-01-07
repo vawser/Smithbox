@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>DUNGEON_FEATURE_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u32 featureNameId">
+      <DisplayName>特徴名</DisplayName>
+      <Description>特徴名ID</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 subFeatureGroupId">
+      <DisplayName>サブ特徴グループID</DisplayName>
+      <Description>サブ特徴グループID</Description>
+      <Maximum>99</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 eventflagId">
+      <DisplayName>イベントフラグID下２桁</DisplayName>
+      <Description>イベントフラグID下２桁</Description>
+      <Maximum>99</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 dungeonNamePriority">
+      <DisplayName>ダンジョン名優先度</DisplayName>
+      <Description>ダンジョン名優先度</Description>
+      <Maximum>99</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u8 releaseFlagIdOffset = -1">
+      <DisplayName>解禁イベントフラグオフセットID</DisplayName>
+      <Description>解禁イベントフラグオフセットID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>191</Maximum>
+      <SortID>300000</SortID>
+    </Field>
+    <Field Def="u32 npcParamIdOffset">
+      <DisplayName>NPCパラオフセット値</DisplayName>
+      <Description>NPCパラオフセット値</Description>
+      <Maximum>9999999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="u32 itemLotParamIdOffset">
+      <DisplayName>アイテム抽選IDオフセット値</DisplayName>
+      <Description>アイテム抽選IDオフセット値</Description>
+      <Maximum>1E+08</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="s32 eneSpeffectId = -1">
+      <DisplayName>敵全体特殊効果ID</DisplayName>
+      <Description>敵全体特殊効果ID(-1:なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 gemDropCorrectParamId = -1">
+      <DisplayName>魔石ドロップ補正パラメータID</DisplayName>
+      <Description>魔石ドロップ補正パラメータID(-1:なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u32 gemGenParamIdOffset">
+      <DisplayName>魔石生成IDオフセット値</DisplayName>
+      <Description>魔石生成IDオフセット値</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 dungeonNameModifierId = -1">
+      <DisplayName>ダンジョン名修飾語ID</DisplayName>
+      <Description>ダンジョン名修飾語ID(-1:なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 dungeonShortNameId = -1">
+      <DisplayName>ダンジョン短縮名ID</DisplayName>
+      <Description>ダンジョン短縮名ID(-1:なし)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>11</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

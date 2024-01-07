@@ -1,0 +1,46 @@
+<class name='hkbStateMachine' version='1' signature='0xe1221651' size='336' parent='hkbGenerator'>
+  <enums>
+    <enum name='StartStateMode' flags='00000000'>
+      <enumitem name='START_STATE_MODE_DEFAULT' value='0'/>
+      <enumitem name='START_STATE_MODE_SYNC' value='1'/>
+      <enumitem name='START_STATE_MODE_RANDOM' value='2'/>
+      <enumitem name='START_STATE_MODE_CHOOSER' value='3'/>
+    </enum>
+    <enum name='StateMachineSelfTransitionMode' flags='00000000'>
+      <enumitem name='SELF_TRANSITION_MODE_NO_TRANSITION' value='0'/>
+      <enumitem name='SELF_TRANSITION_MODE_TRANSITION_TO_START_STATE' value='1'/>
+      <enumitem name='SELF_TRANSITION_MODE_FORCE_TRANSITION_TO_START_STATE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='eventToSendWhenStateOrTransitionChanges' offset='136' ctype='hkbEvent' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startStateIdSelector' offset='160' ctype='hkbCustomIdSelector' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startStateId' offset='168' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='returnToPreviousStateEventId' offset='172' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='randomTransitionEventId' offset='176' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transitionToNextHigherStateEventId' offset='180' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transitionToNextLowerStateEventId' offset='184' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='syncVariableIndex' offset='188' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='currentStateId' offset='192' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='wrapAroundStateId' offset='196' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxSimultaneousTransitions' offset='197' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startStateMode' offset='198' etype='StartStateMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='selfTransitionMode' offset='199' etype='StateMachineSelfTransitionMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isActive' offset='200' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='states' offset='208' ctype='hkbStateMachineStateInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='wildcardTransitions' offset='224' ctype='hkbStateMachineTransitionInfoArray' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stateIdToIndexMap' offset='232' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='activeTransitions' offset='240' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='transitionFlags' offset='256' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='wildcardTransitionFlags' offset='272' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='delayedTransitions' offset='288' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeInState' offset='304' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='lastLocalTime' offset='308' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='previousStateId' offset='312' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='nextStartStateIndexOverride' offset='316' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='stateOrTransitionChanged' offset='320' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='echoNextUpdate' offset='321' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='hasEventlessWildcardTransitions' offset='322' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='eventIdToTransitionInfoIndicesMap' offset='328' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

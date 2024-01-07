@@ -1,0 +1,9 @@
+0 Global settings -- 全体設定
+1 Grass_Large -- 草_大
+2 Grass_small -- 草_小
+5 Game grass -- ゲーム草
+32 Nezasa -- ネザサ
+37 Miscanthus (specify angle) -- ススキ（角度指定）
+99 General purpose test -- 汎用テスト
+110 Castle -- 城下
+111 Honjo -- 本城

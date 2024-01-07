@@ -1,0 +1,9 @@
+0 None (do not edit) -- 無し（編集しない）
+200 Blood (living) -- 血(生者)
+210 Blood (dead) -- 血(亡者)
+290 Meat under armor -- 鎧の下の肉
+300 Poisonous meat -- 毒肉
+310 White meat -- 白肉
+550 Phantom (effective attack) -- 幻影（攻撃有効)
+570 Jasuga shock wave (directivity) -- ジャスガ　衝撃波（指向性）
+610 Guard shock wave (directivity) -- ガード　衝撃波（指向性）

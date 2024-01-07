@@ -1,0 +1,10 @@
+<class name='hclCompressibleLinkConstraintSetMxBatch' version='1' signature='0xd8722c79' size='320'>
+  <members>
+    <member name='restLengths' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='compressionLengths' offset='64' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='stiffnessesA' offset='128' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='stiffnessesB' offset='192' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='particlesA' offset='256' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='particlesB' offset='288' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

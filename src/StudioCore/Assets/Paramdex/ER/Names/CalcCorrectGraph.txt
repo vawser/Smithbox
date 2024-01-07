@@ -1,0 +1,49 @@
+0 Default
+1 Heavy
+2 Keen
+4 Magic / Fire / Lightning / Holy
+7 Occult
+8 Quality
+12 Catalyst -
+14 Catalyst - Demi-Human Queen's Staff
+15 Catalyst -
+16 Catalyst -
+100 HP Scaling - Vigor
+101 FP Scaling - Mind
+102 Soul Level - Defence
+104 Stamina - Endurance
+110 Resistance: Poison - Soul Level
+111 Resistance: Scarlet Rot - Soul Level
+112 Resistance: Hemorrhage - Soul Level
+113 Resistance: Frostbite - Soul Level
+114 Resistance: Sleep - Soul Level
+115 Resistance: Madness - Soul Level
+116 Resistance: Death - Soul Level
+120 Resistance: Poison - Stat
+121 Resistance: Scarlet Rot - Stat
+122 Resistance: Hemorrhage - Stat
+123 Resistance: Frostbite - Stat
+124 Resistance: Sleep - Stat
+125 Resistance: Madness - Stat
+126 Resistance: Death - Stat
+130 Physical Defence - Strength
+131 Physical Defence - Vitality
+132 Magic Defence - Intelligence
+133 Fire Defence - Vigor
+134 Lightning Defence - Endurance
+135 Holy Defence - Faith
+140 Item Discovery - Arcane
+160 Shield - Absorption %
+161 Shield - Attribute %
+162 Shield - Status %
+163 Shield - Stamina %
+170 Weapon Arts Point Max - Strength
+171 Weapon Arts Point Max - Dexterity
+172 Weapon Arts Point Max - Intelligence
+173 Weapon Arts Point Max - Faith
+200 Soul Level - Souls Required
+210 Fall Damage - Distance
+211 Fall Damage - Equip Load
+212 Fall Damage - Strength
+213 Fall Damage - Dexterity
+220 Equip Load - Endurance

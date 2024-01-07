@@ -1,0 +1,22 @@
+<class name='hclBoneSpaceDeformer' version='1' signature='0x694fac94' size='88'>
+  <enums>
+    <enum name='ControlByte' flags='00000000'>
+      <enumitem name='FOUR_BLEND' value='0'/>
+      <enumitem name='THREE_BLEND' value='1'/>
+      <enumitem name='TWO_BLEND' value='2'/>
+      <enumitem name='ONE_BLEND' value='3'/>
+      <enumitem name='NEXT_SPU_BATCH' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='fourBlendEntries' offset='0' ctype='hclBoneSpaceDeformerFourBlendEntryBlock' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='threeBlendEntries' offset='16' ctype='hclBoneSpaceDeformerThreeBlendEntryBlock' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='twoBlendEntries' offset='32' ctype='hclBoneSpaceDeformerTwoBlendEntryBlock' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='oneBlendEntries' offset='48' ctype='hclBoneSpaceDeformerOneBlendEntryBlock' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='controlBytes' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startVertexIndex' offset='80' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endVertexIndex' offset='82' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='batchSizeSpu' offset='84' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='partialWrite' offset='86' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,17 @@
+<class name='hkPackfileHeader' version='1' signature='0x563d66bf' size='64'>
+  <members>
+    <member name='magic' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='userTag' offset='8' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fileVersion' offset='12' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='layoutRules' offset='16' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='numSections' offset='20' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contentsSectionIndex' offset='24' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contentsSectionOffset' offset='28' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contentsClassNameSectionIndex' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contentsClassNameSectionOffset' offset='36' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contentsVersion' offset='40' vtype='TYPE_CHAR' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='56' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxpredicate' offset='60' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='predicateArraySizePlusPadding' offset='62' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <lowerFpsThreshold AltName="Lower FPS Threshold - Raise Balance Level" Wiki="If it falls below this FPS, increase the load balance level by 1." />
+    <upperFpsThreshold AltName="Upper FPS Threshold - Lower Balance Level" Wiki="If you exceed this FPS, lower the load balance level by 1." />
+    <lowerFpsContinousCount AltName="Lower FPS Continous - Raise Balance Level" Wiki="If this frame continues below the threshold, level up" />
+    <upperFpsContinousCount AltName="Upper FPS Continous - Lower Balance Level" Wiki="If the threshold is exceeded continuously for this frame, level down" />
+    <downAfterChangeSleep AltName="Sleep Frame Count after Level Lower" Wiki="Sleep frame count after level down" />
+    <upAfterChangeSleep AltName="Sleep Frame Count after Level Raise" Wiki="Sleep frame count after leveling up" />
+    <postProcessLightShaft AltName="Post Process Light Shaft" Wiki="Light shaft of filter" />
+    <postProcessBloom AltName="Post Process Bloom" Wiki="Bloom" />
+    <postProcessGlow AltName="Post Process Glow" Wiki="Glow" />
+    <postProcessAA AltName="Post Process Anti-Aliasing" Wiki="Antialiasing" />
+    <postProcessSSAO AltName="Post Process SSAO" Wiki="SSAO" />
+    <postProcessDOF AltName="Post Process Depth of Field" Wiki="DOF" />
+    <postProcessMotionBlur AltName="Post Process Motion Blur" Wiki="Motion Blur" />
+    <postProcessMotionBlurIteration AltName="Post Process Motion Blur Iteration" Wiki="Reduce the number of Motion Blur iterations" />
+    <reserve0 AltName=""/>
+    <shadowBlur AltName="Cut Shadow Blur" Wiki="Cut the shadow blur" />
+    <sfxParticleHalf AltName="Halve SFX Particle" Wiki="Emit interval, number of emits, LOD distance halved in graphics config" />
+    <sfxReflection AltName="Omit SFX Reflection" Wiki="Omit the reflection scene SFX" />
+    <sfxWaterInteraction AltName="Omit Water Surface SFX Interaction" Wiki="Omit water surface interact SFX" />
+    <sfxGlow AltName="Omit SFX Glow" Wiki="Omit Glow playing with SFX" />
+    <sfxDistortion AltName="Omit SFX Distortion" Wiki="Omit of distortion applied by SFX" />
+    <sftSoftSprite AltName="Omit SFX Soft Sprite" Wiki="Soft sprite omit with SFX" />
+    <sfxLightShaft AltName="Omit SFX Light Shaft" Wiki="SFX Light Shaft Omit" />
+    <sfxScaleRenderDistanceScale AltName="SFX Scale - Render Distance Scale" Wiki="Scale to the distance judgment of the effect dynamically registered in the reduction buffer by the distance of SFX" />
+    <dynamicResolution AltName="Dynamic Resolution" Wiki="Dynamic resolution" />
+    <shadowCascade0ResolutionHalf AltName="Halve Shadow Cascade [0] Resolution" Wiki="Cut the shadow (cascade 0) resolution in half" />
+    <shadowCascade1ResolutionHalf AltName="Halve Shadow Cascade [1] Resolution" Wiki="Cut the shadow (cascade 1) resolution in half" />
+    <chrWetDisablePlayer AltName="Disable Wetness for Player" Wiki="Turn off the water wetting process for local players" />
+    <chrWetDisableRemotePlayer AltName="Disable Wetness for Remote Player" Wiki="Turn off the water wetting process of the remote player" />
+    <chrWetDisableEnemy AltName="Disable Wetness for NPC" Wiki="Turn off the water wetting process of enemy characters" />
+    <dynamicResolutionPercentageMin AltName="Lower Limit of Resolution Reduction" Wiki="Resolution reduction lower limit (%)" />
+    <dynamicResolutionPercentageMax AltName="Upper Limit of Resolution Reduction" Wiki="Resolution reduction upper limit (%)" />
+    <reserve1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

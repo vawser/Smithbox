@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_UPSCALE_TYPE" type="u8">
+    </Enum>
+    <Enum Name="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_EDGE_CORRECTION_LEVEL" type="u8">
+    </Enum>
+    <Enum Name="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_RESOLUTION" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <fogEnabled AltName="Fog Enabled" Wiki="Fog enabled" IsBool="" />
+    <fogShadowEnabled AltName="Fog Shadow Enabled" Wiki="Fog shadow permission" IsBool="" />
+    <dmy AltName=""/>
+    <fogShadowSampleCountBias AltName="Shadow Sample Count Offset" Wiki="Shadow sample count offset." />
+    <fogLocalLightDistScale AltName="Local Light Distance Scale" Wiki="Local light calculation distance scale (0 does not calculate local light)" />
+    <fogVolueSizeScaler AltName="Fog Volume Size Scaler" Wiki="Fog volume size scaler" />
+    <fogVolueSizeDivider AltName="Fog Volume Size Division" Wiki="Fog volume size division" />
+    <fogVolumeDepthScaler AltName="Fog Volume Depth Slice Scaler" Wiki="Fog Volume Depth Slice Scaler" />
+    <fogVolumeDepthDivider AltName="Fog Volume Depth Slice Division" Wiki="Fog volume depth slice division" />
+    <fogVolumeEnabled AltName="Arranged Fog Volume Enabled" Wiki="Arranged fog volume enabled" IsBool="" />
+    <fogVolumeUpScaleType AltName="Upscale Type" Wiki="Method type at the time of upscale" Enum="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_UPSCALE_TYPE" />
+    <fogVolumeEdgeCorrectionLevel AltName="Edge Correction Level" Wiki="Edge correction level performed only at bilateral (0- invalid, edge redraw permission at 1- 1 / 2x1 / 2 resolution, edge redraw permission with parameter reduction at 2- 1 / 2x1 / 2 + 1x1 resolution, 3 - 1 / 2x1 / 2 + 1x1 resolution edge redraw permission)" Enum="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_EDGE_CORRECTION_LEVEL" />
+    <fogVolumeRayMarcingSampleCountOffset AltName="Ray Sample Count Offset" Wiki="Offset of sampling number during ray marching" />
+    <fogVolumeShadowEnabled AltName="Fog Volume Shadow Enabled" Wiki="Shadow permission (refers to shadow processing due to density changes in the area, where shadows are cast on the area)" IsBool="" />
+    <fogVolumeForceShadowing AltName="Fog Volume - Force Shadowing" Wiki="Forcibly casts a shadow on the area regardless of the setting when shadow is permitted (shadow processing is not affected)" IsBool="" />
+    <fogVolumeResolution AltName="Fog Volume Resolution" Wiki="" Enum="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_RESOLUTION" />
+    <pad2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

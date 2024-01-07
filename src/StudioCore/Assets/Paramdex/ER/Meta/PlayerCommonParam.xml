@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <playerFootEffect_bySFX AltName="Automatic Foot Effect SFX Identifier" Wiki="The identifier used for the SFX ID of the automatic foot effect. It corresponds to ZZZ of XYYZZZ." />
+    <snipeModeDrawAlpha_FadeTime AltName="Precision Shoot - Player Model Fade Time" Wiki="The fade time when hiding the player during precision shooting. The unit is seconds" />
+    <toughnessRecoverCorrection AltName="Toughness Recovery Correction" Wiki="A correction value used to calculate the player's toughness recovery time." />
+    <baseMagicSlotSize AltName="Base Memory Slot Count" Wiki="Magic memory slot initial value" />
+    <baseAccSlotNum AltName="Base Talisman Slot Count" Wiki="Talisman equipment slot initial value" />
+    <reserved02 AltName=""/>
+    <animeID_DropItemPick AltName="Item Pick-up - Animation ID" Wiki="Animation ID when picking up a drop item" />
+    <resistRecoverPoint_Sleep_Player AltName="Player Resist Recovery - Sleep" Wiki="Player resistance value recovery amount_sleep point / s" />
+    <flareOverrideHomingAngle AltName="Flare Overwrite Homing Angle" Wiki="Flare overwrite guidance performance deg / s (-1 no overwrite)" />
+    <flareOverrideHomingStopRange AltName="Flare Overwrite Homing Stop Range" Wiki="Flare overwrite guidance stop distance m (-1 no overwrite)" />
+    <animeID_SleepCollectorItemPick AltName="Sleep Collector Item Pick-up - Animation ID" Wiki="Animation ID when acquiring Nemuri item" />
+    <unlockEventFlagBaseId_forWepAttr AltName="Weapon Affinity Unlock - Base Event Flag ID" Wiki="Weapon attribute ban event flag base ID" />
+    <systemEnchant_BigRune AltName="Great Rune Activation - SpEffect ID" Wiki="Special effect Id to call when a large rune is activated from the system" />
+    <lowStatus_AtkPowDown AltName="Insufficient Stats - Attack Power Reduction" Wiki="Insufficient status Basic attack power reduction" />
+    <lowStatus_ConsumeStaminaRate AltName="Insufficient Stats - Stamina Consumption" Wiki="Insufficient status Stamina consumption ratio" />
+    <lowStatus_AtkGuardBreak AltName="Insufficient Stats - Stamina Damage Reduction" Wiki="Insufficient status Playing attack power" />
+    <guardStatusCorrect_MaxStatusVal AltName="Guard Boost Correction - Max Value" Wiki="Maximum status value to increase performance used when calculating the status correction value of shield performance" />
+    <unlockEventFlagStepNum_forWepAttr AltName="Weapon Affinity Unlock - Event Flag Step Offset" Wiki="How much space is left for each weapon attribute ID from the base ID. Weapon attribute ban event flag ID = Weapon attribute ban event flag base ID + Weapon attribute ID x Weapon attribute ban event flag number of steps" />
+    <retributionMagic_damageCountNum AltName="Retribution Magic - Damage Trigger Count" Wiki="Causal Retribution_Number of Damages Before Counterattack" />
+    <retributionMagic_damageCountRemainTime AltName="Retribution Magic - Damage Trigger Duration" Wiki="Causal response_Number of damages until counterattack Duration s" />
+    <retributionMagic_burstDmypolyId AltName="Retribution Magic - Explosion Dummy Poly ID" Wiki="Causal Retribution_Counterattack Magic Damipoli ID" />
+    <retributionMagic_burstMagicParamId AltName="Retribution Magic - Explosion Magic Param ID" Wiki="Causal Retribution_Counterattack Magic Param ID" />
+    <chrAimCam_rideOffsetHeight AltName="Mounted Precision Shoot - Camera Offset Height" Wiki="Riding precision shooting camera offset height" />
+    <reserved23 AltName=""/>
+    <arrowCaseWepBindDmypolyId AltName="Quiver Dummy Poly ID" Wiki="Quiver adsorption Damipoly ID" />
+    <boltPouchWepBindDmypolyId AltName="Bolt Case Dummy Poly ID" Wiki="Bolt cylinder adsorption Damipoly ID (However, if the bolt cylinder is used alone, the quiver Damipoly ID is used)" />
+    <estusFlaskAllocateRate AltName="Multiplayer Flask Reduction" Wiki="Multi-time client bottle correction magnification (0.5 specified to halve the number of possessions)" />
+    <reserved38 AltName=""/>
+    <kickAcceptanceDeg AltName="Kick Acceptance Angle" Wiki="Angle at which a kick can be taken when viewed from the front of the player" />
+    <npcPlayerAnalogWeightRate_Light AltName="NPC Player - Weight Rate Light" Wiki="Analog weight ratio for NPC players %. lightweight." />
+    <npcPlayerAnalogWeightRate_Normal AltName="NPC Player - Weight Rate Normal" Wiki="Analog weight ratio for NPC players %. Medium weight." />
+    <npcPlayerAnalogWeightRate_Heavy AltName="NPC Player - Weight Rate Heavy" Wiki="Analog weight ratio for NPC players %. weight." />
+    <npcPlayerAnalogWeightRate_WeightOver AltName="NPC Player - Weight Rate Encumbered" Wiki="Analog weight ratio for NPC players %. Overweight." />
+    <npcPlayerAnalogWeightRate_SuperLight AltName="NPC Player - Weight Rate Ninja" Wiki="Analog weight ratio for NPC players %. Super lightweight." />
+    <reserved45 AltName=""/>
+    <clearCountCorrectBaseSpEffectId AltName="Game Clear - Base SpEffect ID" Wiki="Criteria ID for special effects applied for lap correction" />
+    <arrowBoltModelIdOffset AltName="Ammunition Model ID Offset" Wiki="Offset added to the model ID when equipped in slot 1 when displaying the arrow and bolt models. (Model Id + offset value)" />
+    <arrowBoltRemainingNumModelMaskThreshold1 AltName="Ammunition Count Model Mask Threshold 1" Wiki="When displaying the arrow and bolt models, the one-step judgment value % of the threshold value when applying the display mask by the number. (If it is more than this value, it is displayed in one step)" />
+    <arrowBoltRemainingNumModelMaskThreshold2 AltName="Ammunition Count Model Mask Threshold 2" Wiki="Two-step judgment value % of the threshold value when applying a display mask based on the number of arrows and bolt models. (If it is more than this value, it is displayed in 2 steps)" />
+    <reserved27 AltName=""/>
+    <resistRecoverPoint_Poision_Player AltName="Player Resist Recovery - Poison" Wiki="Player resistance recovery amount_poison point / s" />
+    <resistRecoverPoint_Desease_Player AltName="Player Resist Recovery - Scarlet Rot" Wiki="Player resistance value recovery amount_plague point / s" />
+    <resistRecoverPoint_Blood_Player AltName="Player Resist Recovery - Hemorrhage" Wiki="Player resistance recovery amount_bleeding point / s" />
+    <resistRecoverPoint_Curse_Player AltName="Player Resist Recovery - Blight" Wiki="Player resistance recovery amount_curse point / s" />
+    <resistRecoverPoint_Freeze_Player AltName="Player Resist Recovery - Frostbite" Wiki="Player resistance value recovery amount_cold air point / s" />
+    <resistRecoverPoint_Poision_Enemy AltName="Enemy Resist Recovery - Poison" Wiki="Enemy resistance recovery amount_poison point / s" />
+    <resistRecoverPoint_Desease_Enemy AltName="Enemy Resist Recovery - Scarlet Rot" Wiki="Enemy resistance value recovery amount_plague point / s" />
+    <resistRecoverPoint_Blood_Enemy AltName="Enemy Resist Recovery - Hemorrhage" Wiki="Enemy resistance recovery amount_bleeding point / s" />
+    <resistRecoverPoint_Curse_Enemy AltName="Enemy Resist Recovery - Blight" Wiki="Enemy resistance recovery amount_curse point / s" />
+    <resistRecoverPoint_Freeze_Enemy AltName="Enemy Resist Recovery - Frostbite" Wiki="Enemy resistance value recovery amount_cold air point / s" />
+    <requestTimeLeftBothHand AltName="Button Input Time for Both-Hand Left" Wiki="Button input time when holding both left hand" />
+    <resistRecoverPoint_Madness_Player AltName="Player Resist Recovery - Madness" Wiki="Player resistance value recovery amount_madness point / s" />
+    <animeID_MaterialItemPick AltName="Material Pick-up - Animation ID" Wiki="Animation ID when picking up a material item" />
+    <hpEstusFlaskAllocateRateForYellowMonk AltName="HP Flask Reduction - Yellow Monk" Wiki="Yellow Cloth HP Est Bottle Correction Magnification" />
+    <hpEstusFlaskAllocateOffsetForYellowMonk AltName="HP Flask Offset - Yellow Monk" Wiki="Yellow Cloth HP Est Bottle Offset" />
+    <mpEstusFlaskAllocateRateForYellowMonk AltName="FP Flask Reduction - Yellow Monk" Wiki="Yellow Cloth MP Est Bottle Correction Magnification" />
+    <mpEstusFlaskAllocateOffsetForYellowMonk AltName="FP Flask Offset - Yellow Monk" Wiki="Yellow Cloth MP Est Bottle Offset" />
+    <resistRecoverPoint_Sleep_Enemy AltName="Enemy Resist Recovery - Sleep" Wiki="Enemy resistance value recovery amount_sleep point / s" />
+    <resistRecoverPoint_Madness_Enemy AltName="Enemy Resist Recovery - Madness" Wiki="Enemy resistance value recovery amount_madness point / s" />
+    <resistCurseItemId AltName="Resist Blight Item ID" Wiki="Abnormal condition_immediate death_immediate death Item ID" Refs="EquipParamGoods"/>
+    <resistCurseItemMaxNum AltName="Resist Blight Item Max Count" Wiki="Abnormal condition_immediate death_maximum number of instant death items" />
+    <reserved_123 AltName=""/>
+    <resistCurseItemSpEffectBaseId AltName="Resist Blight Item - Base SpEffect ID" Wiki="Abnormal condition_Instant death_Instant death Item possession Special effect base ID" Refs="SpEffectParam"/>
+    <resistCurseItemLotParamId_map AltName="Resist Blight Item - Map Item Lot ID" Wiki="Abnormal condition_immediate death_immediate death item lottery ID_for map" Refs="ItemLotParam_map"/>
+    <reserved41 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

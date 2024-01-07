@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <enabled AltName="Depth of Field Enabled" Wiki="DOF permission" IsBool="" />
+    <dmy AltName=""/>
+    <forceHiResoBlur AltName="Force High Resolution Blur" Wiki="Change the HiResolutionBlur setting (-1- forced off, 0- as-is, 1- forced on)" />
+    <maxBlurLevel AltName="Maximum Blur Level" Wiki="Maximum blur level. 2- Maximum, 1- Level to one paragraph, 0- Further reduce accuracy" />
+  </Field>
+  <Self />
+</PARAMMETA>

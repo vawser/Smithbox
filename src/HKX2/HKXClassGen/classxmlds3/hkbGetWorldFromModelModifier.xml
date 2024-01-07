@@ -1,0 +1,6 @@
+<class name='hkbGetWorldFromModelModifier' version='1' signature='0xa7227f4c' size='128' parent='hkbModifier'>
+  <members>
+    <member name='translationOut' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotationOut' offset='112' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

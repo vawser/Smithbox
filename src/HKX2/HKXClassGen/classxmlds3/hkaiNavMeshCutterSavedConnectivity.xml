@@ -1,0 +1,5 @@
+<class name='hkaiNavMeshCutterSavedConnectivity' version='1' signature='0x4fecd01f' size='24'>
+  <members>
+    <member name='storage' offset='0' ctype='hkSetUint32' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

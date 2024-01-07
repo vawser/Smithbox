@@ -1,0 +1,2605 @@
+0 Test
+1 Magic Test
+2 Funnel Test
+3 Flying Dragon Breath Test
+4 Automatic Cyclic object destruction
+6 Test
+50 Bonfire Recovery effect
+60 Bullet Random Number Test _ Parent
+61 Bullet Random number Test child
+62 Long distance Magic: Drilled Flames
+63 Long distance Magic: Drilled Flames _ Parents
+64 Long distance Magic: Drilled Flames _ Search Bullets
+65 Long distance Magic: Drilled Fire Child
+75 Firebomb Hit Hit
+76 Firebomb Hit Hit Hit
+77 Black Firebomb Hit Hit
+78 Black Firebomb Hit Hit Hit
+100 Throwing Knives 
+101 Poison-throwing knives 
+110 Fire bottle (Parent) 
+111 Fire bottle (child) 
+112 (For debugging) flame bottle (Parent) 
+113 (For debugging) fire bottle (child) 
+115 Black Flame bottle (parent) 
+116 Black Flame bottle (child) 
+120 Each time a (parent) 
+121 Each time a child 
+122 Each time b (parent) 
+123 The Child B 
+130 Convenient stone (parent) 
+131 Convenient stone (child) 
+132 Convenient stone (grandchild) 
+150 The parent of a dung dumpling 
+151 Son of a dumpling 
+160 EST not available (parent) 
+161 EST not available (child) 
+170 bleeding treatment (State recovery) 
+171 bleeding treatment (resistance recovery) 
+180 Poison treatment (State recovery) 
+181 Poison treatment (Resilient recovery) 
+190 Toxic treatment (State recovery) 
+191 Toxic treatment (Resilient recovery) 
+220 Elixir (State Recovery) 
+221 Elixir (Recovery of bleeding immunity) 
+222 Elixir (Poison tolerance recovery) 
+223 Elixir (Deadly poison resistant recovery) 
+226 Elixir (HP Recovery) 
+236 Twinkling Dragon Head Stone - Head Hit
+300 Quick Knives 
+301 Quick Poison Knife 
+302 Lacerating Knife 
+310 Quick Flame Bottle parent - Search Bullets
+315 Quick Black Flame jar parent - Search Bullets
+340 Caries State _ attracting 
+341 Caries status _ attracting _ recovery 
+380 Judicator - Ledo
+381 Judicator - Ledo
+382 Judicator - Ledo
+383 Judicator - Ledo
+384 Judicator - Ledo
+385 Judicator - Ledo
+386 Judicator - Ledo
+387 Judicator - Ledo
+400 (DLC) Talking stone a (fly) 
+401 (DLC) Talking stone a (talking) 
+405 (DLC) talking stone b (Fly) 
+406 (DLC) talking stone b (talking) 
+410 (DLC) Talking stone c (fly) 
+411 (DLC) Talking stone c (talking) 
+415 (DLC) talking stone d (fly) 
+416 (DLC) Talking stone D (speaking) 
+420 (DLC) Talking stone e (fly) 
+421 (DLC) Talking stone e (talking) 
+500 Standard Arrow
+501 Standard Arrow
+502 Standard Arrow - Pharis Triple-shot
+503 Standard Arrow - Pharis Triple-shot
+504 Standard Arrow - Pharis Triple-shot
+505 Standard Arrow - Rapid Fire
+506 Standard Arrow - Puncture
+507 Standard Arrow - Darkmoon Arrow
+508 Standard Arrow - Wrathful Arrow
+510 Large Arrow
+511 Large Arrow
+512 Large Arrow - Pharis Triple-shot
+513 Large Arrow - Pharis Triple-shot
+514 Large Arrow - Pharis Triple-shot
+515 Large Arrow - Rapid Fire
+516 Large Arrow - Puncture
+517 Large Arrow - Darkmoon Arrow
+518 Large Arrow - Wrathful Arrow
+520 Feather Arrow
+521 Feather Arrow
+522 Feather Arrow - Pharis Triple-shot
+523 Feather Arrow - Pharis Triple-shot
+524 Feather Arrow - Pharis Triple-shot
+525 Feather Arrow - Rapid Fire
+526 Feather Arrow - Puncture
+527 Feather Arrow - Darkmoon Arrow
+528 Feather Arrow - Wrathful Arrow
+530 Fire Arrow
+531 Fire Arrow
+532 Fire Arrow - Pharis Triple-shot
+533 Fire Arrow - Pharis Triple-shot
+534 Fire Arrow - Pharis Triple-shot
+535 Fire Arrow - Rapid Fire
+536 Fire Arrow - Puncture
+537 Fire Arrow - Darkmoon Arrow
+538 Fire Arrow - Wrathful Arrow
+540 Poison Arrow
+541 Poison Arrow
+542 Poison Arrow - Pharis Triple-shot
+543 Poison Arrow - Pharis Triple-shot
+544 Poison Arrow - Pharis Triple-shot
+545 Poison Arrow - Rapid Fire
+546 Poison Arrow - Puncture
+547 Poison Arrow - Darkmoon Arrow
+548 Poison Arrow - Wrathful Arrow
+550 Moonlight Arrow
+551 Moonlight Arrow
+552 Moonlight Arrow - Pharis Triple-shot
+553 Moonlight Arrow - Pharis Triple-shot
+554 Moonlight Arrow - Pharis Triple-shot
+555 Moonlight Arrow - Rapid Fire
+556 Moonlight Arrow - Puncture
+557 Moonlight Arrow - Darkmoon Arrow
+558 Moonlight Arrow - Wrathful Arrow
+560 Wood Arrow
+561 Wood Arrow
+562 Wood Arrow - Pharis Triple-shot
+563 Wood Arrow - Pharis Triple-shot
+564 Wood Arrow - Pharis Triple-shot
+565 Wood Arrow - Rapid Fire
+566 Wood Arrow - Puncture
+567 Wood Arrow - Darkmoon Arrow
+568 Wood Arrow - Wrathful Arrow
+570 Dark Arrow
+571 Dark Arrow
+572 Dark Arrow - Pharis Triple-shot
+573 Dark Arrow - Pharis Triple-shot
+574 Dark Arrow - Pharis Triple-shot
+575 Dark Arrow - Rapid Fire
+576 Dark Arrow - Puncture
+577 Dark Arrow - Darkmoon Arrow
+578 Dark Arrow - Wrathful Arrow
+700 Dragonslayer Greatarrow
+701 Dragonslayer Greatarrow - Puncturing Arrow
+702 Dragonslayer Greatarrow
+703 Dragonslayer Greatarrow - Pierce Earth
+704 Dragonslayer Greatarrow - Pierce Earth Hit
+705 Dragonslayer Greatarrow - Pierce Earth Hit
+706 Dragonslayer Greatarrow - Pierce Earth
+710 Dragonslayer Lightning Arrow
+711 Dragonslayer Lightning Arrow - Puncturing Arrow
+712 Dragonslayer Lightning Arrow
+713 Dragonslayer Lightning Arrow - Pierce Earth
+714 Dragonslayer Lightning Arrow - Pierce Earth Hit
+715 Dragonslayer Lightning Arrow - Pierce Earth Hit
+716 Dragonslayer Lightning Arrow - Pierce Earth
+720 Onislayer Greatarrow
+721 Onislayer Greatarrow - Puncturing Arrow
+722 Onislayer Greatarrow
+723 Onislayer Greatarrow - Pierce Earth
+724 Onislayer Greatarrow - Pierce Earth Hit
+725 Onislayer Greatarrow - Pierce Earth Hit
+726 Onislayer Greatarrow - Pierce Earth
+730 Millwood Greatarrow
+731 Millwood Greatarrow - Puncturing Arrow
+732 Millwood Greatarrow
+733 Millwood Greatarrow - Pierce Earth
+734 Millwood Greatarrow - Pierce Earth Hit
+735 Millwood Greatarrow - Pierce Earth Hit
+736 Millwood Greatarrow - Pierce Earth
+800 Standard Bolt
+805 Standard Bolt - Avelyn
+808 Standard Bolt - Repeat Fire
+810 Heavy Bolt
+815 Heavy Bolt - Avelyn
+818 Heavy Bolt - Repeat Fire
+820 Sniper Bolt
+825 Sniper Bolt - Avelyn
+828 Sniper Bolt - Repeat Fire
+830 Wood Bolt
+835 Wood Bolt - Avelyn
+838 Wood Bolt - Repeat Fire
+840 Lightning Bolt
+841 Lightning Bolt - Avelyn
+845 Lightning Bolt - Repeat Fire
+848 Lightning Bolt - Repeat Fire
+850 Splintering Bolt
+851 Splintering Bolt Hit
+852 Splintering Bolt
+855 Splintering Bolt - Avelyn
+856 Splintering Bolt - Avelyn Hit
+857 Splintering Bolt - Repeat Fire
+860 Exploding Bolt
+861 Exploding Bolt Hit
+862 Exploding Bolt
+865 Exploding Bolt - Avelyn
+866 Exploding Bolt - Avelyn Hit
+867 Exploding Bolt - Repeat Fire
+870 Splintering Bolt
+871 Splintering Bolt
+872 Splintering Bolt
+880 Exploding Bolt
+881 Exploding Bolt
+970 Lightning Spear #2 Hit
+971 Lightning Spear #2 Hit
+972 Lightning Spear #2 Hit
+973 Lightning Spear #2 Hit
+974 Lightning Spear #2 Hit
+980 Great Lightning Spear #2 Hit
+981 Great Lightning Spear #2 Hit
+982 Great Lightning Spear #2 Hit
+983 Great Lightning Spear #2 Hit
+984 Great Lightning Spear #2 Hit
+990 Sunlight Spear #2 Hit
+991 Sunlight Spear #2 Hit
+992 Sunlight Spear #2 Hit
+993 Sunlight Spear #2 Hit
+994 Sunlight Spear #2 Hit
+1000 Unveil Marker
+1001 Red Orb
+1002 Grey Orb
+1003 Green Orb
+9000 Bomb ritual: Explosive bullets around
+9100 Bomb ritual: Target Search Bullets _ host lv.20 or less
+9101 Bomb ritual: Target Search Bullets _ host lv.40 or less
+9102 Bomb ritual: Target Search Bullets _ host lv.60 or less
+9103 Bomb ritual: Target Search Bullets _ host lv.80 or less
+9104 Bomb ritual: Target Search Bullets _ host lv.100 or less
+9105 Bomb ritual: Target Search Bullets _ host lv.120 or less
+9106 Bomb ritual: Target Search Bullets _ host lv.140 or less
+9107 Bomb ritual: Target Search Bullets _ host lv.160 or less
+9108 Bomb ritual: Target Search Bullets _ host lv.180 or less
+9109 Bomb ritual: Target Search Bullets _ host lv.200 or less
+9110 Bomb ritual: Target Search Bullets _ host lv.250 or less
+9111 Bomb ritual: Target Search Bullets _ host lv.300 or less
+9112 Bomb ritual: Target Search Bullets _ host lv.400 or less
+9113 Bomb ritual: Target Search Bullets _ host lv.500 or less
+9114 Bomb ritual: Target Search Bullets _ host lv.600 or less
+9115 Bomb ritual: Target Search Bullets _ host lv.700 or less
+9116 Bomb ritual: Target Search Bullets _ host lv.800 or less
+9920 Oil area ablaze system -
+15310 Ballista Arrow
+15311 Ballista Arrow
+15312 Ballista Arrow
+15313 Ballista Arrow
+15314 Ballista Arrow
+15315 Ballista Arrow
+15316 Ballista Arrow
+15320 Ballista Arrow Hit
+15321 Ballista Arrow Hit
+15322 Ballista Arrow Hit
+15323 Ballista Arrow Hit
+15324 Ballista Arrow Hit
+15325 Ballista Arrow Hit
+15326 Ballista Arrow Hit
+15330 Ballista Arrow Hit
+15331 Ballista Arrow Hit
+15332 Ballista Arrow Hit
+15333 Ballista Arrow Hit
+15334 Ballista Arrow Hit
+15335 Ballista Arrow Hit
+15336 Ballista Arrow Hit
+15340 Ballista Arrow Hit
+15341 Ballista Arrow Hit
+15342 Ballista Arrow Hit
+15343 Ballista Arrow Hit
+15344 Ballista Arrow Hit
+15345 Ballista Arrow Hit
+15346 Ballista Arrow Hit
+15350 Ballista Arrow Hit
+15351 Ballista Arrow Hit
+15352 Ballista Arrow Hit
+15353 Ballista Arrow Hit
+15354 Ballista Arrow Hit
+15355 Ballista Arrow Hit
+15356 Ballista Arrow Hit
+40000 Spear of the Church - Holy Soulmass
+40001 Spear of the Church - Holy Soulmass Hit
+40010 Spear of the Church - Holy Soulmass
+40011 Spear of the Church - Holy Soulmass Hit
+40020 Spear of the Church - Holy Soulmass
+40021 Spear of the Church - Holy Soulmass Hit
+40030 Spear of the Church - Holy Soulmass
+40031 Spear of the Church - Holy Soulmass Hit
+40100 Spear of the Church - Holy Soulmass
+40101 Spear of the Church - Holy Soulmass Hit
+40110 Spear of the Church - Holy Soulmass
+40111 Spear of the Church - Holy Soulmass Hit
+40120 Spear of the Church - Holy Soulmass
+40121 Spear of the Church - Holy Soulmass Hit
+40130 Spear of the Church - Holy Soulmass
+40131 Spear of the Church - Holy Soulmass Hit
+40200 Spear of the Church - Holy Soulmass
+40201 Spear of the Church - Holy Soulmass Hit
+40210 Spear of the Church - Holy Soulmass
+40211 Spear of the Church - Holy Soulmass Hit
+40220 Spear of the Church - Holy Soulmass
+40221 Spear of the Church - Holy Soulmass Hit
+40230 Spear of the Church - Holy Soulmass
+40231 Spear of the Church - Holy Soulmass Hit
+40300 Spear of the Church - Holy Soulmass
+40301 Spear of the Church - Holy Soulmass Hit
+40310 Spear of the Church - Holy Soulmass
+40311 Spear of the Church - Holy Soulmass Hit
+40320 Spear of the Church - Holy Soulmass
+40321 Spear of the Church - Holy Soulmass Hit
+40330 Spear of the Church - Holy Soulmass
+40331 Spear of the Church - Holy Soulmass Hit
+40400 Spear of the Church - Holy Soulmass
+40401 Spear of the Church - Holy Soulmass Hit
+40410 Spear of the Church - Holy Soulmass
+40411 Spear of the Church - Holy Soulmass Hit
+40420 Spear of the Church - Holy Soulmass
+40421 Spear of the Church - Holy Soulmass Hit
+40430 Spear of the Church - Holy Soulmass
+40431 Spear of the Church - Holy Soulmass Hit
+40500 Spear of the Church - Holy Soulmass
+40501 Spear of the Church - Holy Soulmass Hit
+40510 Spear of the Church - Holy Soulmass
+40511 Spear of the Church - Holy Soulmass Hit
+40520 Spear of the Church - Holy Soulmass
+40521 Spear of the Church - Holy Soulmass Hit
+40530 Spear of the Church - Holy Soulmass
+40531 Spear of the Church - Holy Soulmass Hit
+40600 Spear of the Church - Holy Soulmass
+40601 Spear of the Church - Holy Soulmass Hit
+40610 Spear of the Church - Holy Soulmass
+40611 Spear of the Church - Holy Soulmass Hit
+40620 Spear of the Church - Holy Soulmass
+40621 Spear of the Church - Holy Soulmass Hit
+40630 Spear of the Church - Holy Soulmass
+40631 Spear of the Church - Holy Soulmass Hit
+40700 Spear of the Church - Holy Soulmass
+40701 Spear of the Church - Holy Soulmass Hit
+40710 Spear of the Church - Holy Soulmass
+40711 Spear of the Church - Holy Soulmass Hit
+40720 Spear of the Church - Holy Soulmass
+40721 Spear of the Church - Holy Soulmass Hit
+40730 Spear of the Church - Holy Soulmass
+40731 Spear of the Church - Holy Soulmass Hit
+40800 Spear of the Church - Holy Soulmass
+40801 Spear of the Church - Holy Soulmass Hit
+40810 Spear of the Church - Holy Soulmass
+40811 Spear of the Church - Holy Soulmass Hit
+40820 Spear of the Church - Holy Soulmass
+40821 Spear of the Church - Holy Soulmass Hit
+40830 Spear of the Church - Holy Soulmass
+40831 Spear of the Church - Holy Soulmass Hit
+40900 Spear of the Church - Holy Soulmass
+40901 Spear of the Church - Holy Soulmass Hit
+40910 Spear of the Church - Holy Soulmass
+40911 Spear of the Church - Holy Soulmass Hit
+40920 Spear of the Church - Holy Soulmass
+40921 Spear of the Church - Holy Soulmass Hit
+40930 Spear of the Church - Holy Soulmass
+40931 Spear of the Church - Holy Soulmass Hit
+41000 Spear of the Church - Holy Soulmass
+41001 Spear of the Church - Holy Soulmass Hit
+41010 Spear of the Church - Holy Soulmass
+41011 Spear of the Church - Holy Soulmass Hit
+41020 Spear of the Church - Holy Soulmass
+41021 Spear of the Church - Holy Soulmass Hit
+41030 Spear of the Church - Holy Soulmass
+41031 Spear of the Church - Holy Soulmass Hit
+41100 Spear of the Church - Holy Soulmass
+41101 Spear of the Church - Holy Soulmass Hit
+41110 Spear of the Church - Holy Soulmass
+41111 Spear of the Church - Holy Soulmass Hit
+41120 Spear of the Church - Holy Soulmass
+41121 Spear of the Church - Holy Soulmass Hit
+41130 Spear of the Church - Holy Soulmass
+41131 Spear of the Church - Holy Soulmass Hit
+41200 Spear of the Church - Holy Soulmass
+41201 Spear of the Church - Holy Soulmass Hit
+41210 Spear of the Church - Holy Soulmass
+41211 Spear of the Church - Holy Soulmass Hit
+41220 Spear of the Church - Holy Soulmass
+41221 Spear of the Church - Holy Soulmass Hit
+41230 Spear of the Church - Holy Soulmass
+41231 Spear of the Church - Holy Soulmass Hit
+41300 Spear of the Church - Holy Soulmass
+41301 Spear of the Church - Holy Soulmass Hit
+41310 Spear of the Church - Holy Soulmass
+41311 Spear of the Church - Holy Soulmass Hit
+41320 Spear of the Church - Holy Soulmass
+41321 Spear of the Church - Holy Soulmass Hit
+41330 Spear of the Church - Holy Soulmass
+41331 Spear of the Church - Holy Soulmass Hit
+41400 Spear of the Church - Holy Soulmass
+41401 Spear of the Church - Holy Soulmass Hit
+41410 Spear of the Church - Holy Soulmass
+41411 Spear of the Church - Holy Soulmass Hit
+41420 Spear of the Church - Holy Soulmass
+41421 Spear of the Church - Holy Soulmass Hit
+41430 Spear of the Church - Holy Soulmass
+41431 Spear of the Church - Holy Soulmass Hit
+41500 Spear of the Church - Holy Soulmass
+41501 Spear of the Church - Holy Soulmass Hit
+41510 Spear of the Church - Holy Soulmass
+41511 Spear of the Church - Holy Soulmass Hit
+41520 Spear of the Church - Holy Soulmass
+41521 Spear of the Church - Holy Soulmass Hit
+41530 Spear of the Church - Holy Soulmass
+41531 Spear of the Church - Holy Soulmass Hit
+41600 Spear of the Church - Holy Soulmass
+41601 Spear of the Church - Holy Soulmass Hit
+41610 Spear of the Church - Holy Soulmass
+41611 Spear of the Church - Holy Soulmass Hit
+41620 Spear of the Church - Holy Soulmass
+41621 Spear of the Church - Holy Soulmass Hit
+41630 Spear of the Church - Holy Soulmass
+41631 Spear of the Church - Holy Soulmass Hit
+41700 Spear of the Church - Holy Soulmass
+41701 Spear of the Church - Holy Soulmass Hit
+41710 Spear of the Church - Holy Soulmass
+41711 Spear of the Church - Holy Soulmass Hit
+41720 Spear of the Church - Holy Soulmass
+41721 Spear of the Church - Holy Soulmass Hit
+41730 Spear of the Church - Holy Soulmass
+41731 Spear of the Church - Holy Soulmass Hit
+41800 Spear of the Church - Holy Soulmass
+41801 Spear of the Church - Holy Soulmass Hit
+41810 Spear of the Church - Holy Soulmass
+41811 Spear of the Church - Holy Soulmass Hit
+41820 Spear of the Church - Holy Soulmass
+41821 Spear of the Church - Holy Soulmass Hit
+41830 Spear of the Church - Holy Soulmass
+41831 Spear of the Church - Holy Soulmass Hit
+42000 Ritual Spear Fragment
+42005 Ritual Spear Fragment
+42010 Ritual Spear Fragment
+42020 Ritual Spear Fragment
+42030 Ritual Spear Fragment
+42040 Ritual Spear Fragment
+42050 Ritual Spear Fragment
+42100 Divine Spear Fragment
+42105 Divine Spear Fragment
+42110 Divine Spear Fragment
+42120 Divine Spear Fragment
+42130 Divine Spear Fragment
+42140 Divine Spear Fragment
+42150 Divine Spear Fragment
+50000 Spear of the Church - Sparking Holy Soulmass
+50001 Spear of the Church - Sparking Holy Soulmass Hit
+50010 Spear of the Church - Sparking Holy Soulmass
+50011 Spear of the Church - Sparking Holy Soulmass Hit
+50020 Spear of the Church - Sparking Holy Soulmass
+50021 Spear of the Church - Sparking Holy Soulmass Hit
+50030 Spear of the Church - Sparking Holy Soulmass
+50031 Spear of the Church - Sparking Holy Soulmass Hit
+50100 Spear of the Church - Sparking Holy Soulmass
+50101 Spear of the Church - Sparking Holy Soulmass Hit
+50110 Spear of the Church - Sparking Holy Soulmass
+50111 Spear of the Church - Sparking Holy Soulmass Hit
+50120 Spear of the Church - Sparking Holy Soulmass
+50121 Spear of the Church - Sparking Holy Soulmass Hit
+50130 Spear of the Church - Sparking Holy Soulmass
+50131 Spear of the Church - Sparking Holy Soulmass Hit
+50200 Spear of the Church - Sparking Holy Soulmass
+50201 Spear of the Church - Sparking Holy Soulmass Hit
+50210 Spear of the Church - Sparking Holy Soulmass
+50211 Spear of the Church - Sparking Holy Soulmass Hit
+50220 Spear of the Church - Sparking Holy Soulmass
+50221 Spear of the Church - Sparking Holy Soulmass Hit
+50230 Spear of the Church - Sparking Holy Soulmass
+50231 Spear of the Church - Sparking Holy Soulmass Hit
+50300 Spear of the Church - Sparking Holy Soulmass
+50301 Spear of the Church - Sparking Holy Soulmass Hit
+50310 Spear of the Church - Sparking Holy Soulmass
+50311 Spear of the Church - Sparking Holy Soulmass Hit
+50320 Spear of the Church - Sparking Holy Soulmass
+50321 Spear of the Church - Sparking Holy Soulmass Hit
+50330 Spear of the Church - Sparking Holy Soulmass
+50331 Spear of the Church - Sparking Holy Soulmass Hit
+50400 Spear of the Church - Sparking Holy Soulmass
+50401 Spear of the Church - Sparking Holy Soulmass Hit
+50410 Spear of the Church - Sparking Holy Soulmass
+50411 Spear of the Church - Sparking Holy Soulmass Hit
+50420 Spear of the Church - Sparking Holy Soulmass
+50421 Spear of the Church - Sparking Holy Soulmass Hit
+50430 Spear of the Church - Sparking Holy Soulmass
+50431 Spear of the Church - Sparking Holy Soulmass Hit
+50500 Spear of the Church - Sparking Holy Soulmass
+50501 Spear of the Church - Sparking Holy Soulmass Hit
+50510 Spear of the Church - Sparking Holy Soulmass
+50511 Spear of the Church - Sparking Holy Soulmass Hit
+50520 Spear of the Church - Sparking Holy Soulmass
+50521 Spear of the Church - Sparking Holy Soulmass Hit
+50530 Spear of the Church - Sparking Holy Soulmass
+50531 Spear of the Church - Sparking Holy Soulmass Hit
+50600 Spear of the Church - Sparking Holy Soulmass
+50601 Spear of the Church - Sparking Holy Soulmass Hit
+50610 Spear of the Church - Sparking Holy Soulmass
+50611 Spear of the Church - Sparking Holy Soulmass Hit
+50620 Spear of the Church - Sparking Holy Soulmass
+50621 Spear of the Church - Sparking Holy Soulmass Hit
+50630 Spear of the Church - Sparking Holy Soulmass
+50631 Spear of the Church - Sparking Holy Soulmass Hit
+50700 Spear of the Church - Sparking Holy Soulmass
+50701 Spear of the Church - Sparking Holy Soulmass Hit
+50710 Spear of the Church - Sparking Holy Soulmass
+50711 Spear of the Church - Sparking Holy Soulmass Hit
+50720 Spear of the Church - Sparking Holy Soulmass
+50721 Spear of the Church - Sparking Holy Soulmass Hit
+50730 Spear of the Church - Sparking Holy Soulmass
+50731 Spear of the Church - Sparking Holy Soulmass Hit
+50800 Spear of the Church - Sparking Holy Soulmass
+50801 Spear of the Church - Sparking Holy Soulmass Hit
+50810 Spear of the Church - Sparking Holy Soulmass
+50811 Spear of the Church - Sparking Holy Soulmass Hit
+50820 Spear of the Church - Sparking Holy Soulmass
+50821 Spear of the Church - Sparking Holy Soulmass Hit
+50830 Spear of the Church - Sparking Holy Soulmass
+50831 Spear of the Church - Sparking Holy Soulmass Hit
+50900 Spear of the Church - Sparking Holy Soulmass
+50901 Spear of the Church - Sparking Holy Soulmass Hit
+50910 Spear of the Church - Sparking Holy Soulmass
+50911 Spear of the Church - Sparking Holy Soulmass Hit
+50920 Spear of the Church - Sparking Holy Soulmass
+50921 Spear of the Church - Sparking Holy Soulmass Hit
+50930 Spear of the Church - Sparking Holy Soulmass
+50931 Spear of the Church - Sparking Holy Soulmass Hit
+51000 Spear of the Church - Sparking Holy Soulmass
+51001 Spear of the Church - Sparking Holy Soulmass Hit
+51010 Spear of the Church - Sparking Holy Soulmass
+51011 Spear of the Church - Sparking Holy Soulmass Hit
+51020 Spear of the Church - Sparking Holy Soulmass
+51021 Spear of the Church - Sparking Holy Soulmass Hit
+51030 Spear of the Church - Sparking Holy Soulmass
+51031 Spear of the Church - Sparking Holy Soulmass Hit
+51100 Spear of the Church - Sparking Holy Soulmass
+51101 Spear of the Church - Sparking Holy Soulmass Hit
+51110 Spear of the Church - Sparking Holy Soulmass
+51111 Spear of the Church - Sparking Holy Soulmass Hit
+51120 Spear of the Church - Sparking Holy Soulmass
+51121 Spear of the Church - Sparking Holy Soulmass Hit
+51130 Spear of the Church - Sparking Holy Soulmass
+51131 Spear of the Church - Sparking Holy Soulmass Hit
+51200 Spear of the Church - Sparking Holy Soulmass
+51201 Spear of the Church - Sparking Holy Soulmass Hit
+51210 Spear of the Church - Sparking Holy Soulmass
+51211 Spear of the Church - Sparking Holy Soulmass Hit
+51220 Spear of the Church - Sparking Holy Soulmass
+51221 Spear of the Church - Sparking Holy Soulmass Hit
+51230 Spear of the Church - Sparking Holy Soulmass
+51231 Spear of the Church - Sparking Holy Soulmass Hit
+51300 Spear of the Church - Sparking Holy Soulmass
+51301 Spear of the Church - Sparking Holy Soulmass Hit
+51310 Spear of the Church - Sparking Holy Soulmass
+51311 Spear of the Church - Sparking Holy Soulmass Hit
+51320 Spear of the Church - Sparking Holy Soulmass
+51321 Spear of the Church - Sparking Holy Soulmass Hit
+51330 Spear of the Church - Sparking Holy Soulmass
+51331 Spear of the Church - Sparking Holy Soulmass Hit
+51400 Spear of the Church - Sparking Holy Soulmass
+51401 Spear of the Church - Sparking Holy Soulmass Hit
+51410 Spear of the Church - Sparking Holy Soulmass
+51411 Spear of the Church - Sparking Holy Soulmass Hit
+51420 Spear of the Church - Sparking Holy Soulmass
+51421 Spear of the Church - Sparking Holy Soulmass Hit
+51430 Spear of the Church - Sparking Holy Soulmass
+51431 Spear of the Church - Sparking Holy Soulmass Hit
+51500 Spear of the Church - Sparking Holy Soulmass
+51501 Spear of the Church - Sparking Holy Soulmass Hit
+51510 Spear of the Church - Sparking Holy Soulmass
+51511 Spear of the Church - Sparking Holy Soulmass Hit
+51520 Spear of the Church - Sparking Holy Soulmass
+51521 Spear of the Church - Sparking Holy Soulmass Hit
+51530 Spear of the Church - Sparking Holy Soulmass
+51531 Spear of the Church - Sparking Holy Soulmass Hit
+51600 Spear of the Church - Sparking Holy Soulmass
+51601 Spear of the Church - Sparking Holy Soulmass Hit
+51610 Spear of the Church - Sparking Holy Soulmass
+51611 Spear of the Church - Sparking Holy Soulmass Hit
+51620 Spear of the Church - Sparking Holy Soulmass
+51621 Spear of the Church - Sparking Holy Soulmass Hit
+51630 Spear of the Church - Sparking Holy Soulmass
+51631 Spear of the Church - Sparking Holy Soulmass Hit
+51700 Spear of the Church - Sparking Holy Soulmass
+51701 Spear of the Church - Sparking Holy Soulmass Hit
+51710 Spear of the Church - Sparking Holy Soulmass
+51711 Spear of the Church - Sparking Holy Soulmass Hit
+51720 Spear of the Church - Sparking Holy Soulmass
+51721 Spear of the Church - Sparking Holy Soulmass Hit
+51730 Spear of the Church - Sparking Holy Soulmass
+51731 Spear of the Church - Sparking Holy Soulmass Hit
+51800 Spear of the Church - Sparking Holy Soulmass
+51801 Spear of the Church - Sparking Holy Soulmass Hit
+51810 Spear of the Church - Sparking Holy Soulmass
+51811 Spear of the Church - Sparking Holy Soulmass Hit
+51820 Spear of the Church - Sparking Holy Soulmass
+51821 Spear of the Church - Sparking Holy Soulmass Hit
+51830 Spear of the Church - Sparking Holy Soulmass
+51831 Spear of the Church - Sparking Holy Soulmass Hit
+55000 Spear of the Church - Ritual Spears
+55001 Spear of the Church - Ritual Spears
+55002 Spear of the Church - Ritual Spears
+55003 Spear of the Church - Ritual Spears
+55004 Spear of the Church - Ritual Spears
+55010 Spear of the Church - Ritual Spears
+55011 Spear of the Church - Ritual Spears
+55012 Spear of the Church - Ritual Spears
+55013 Spear of the Church - Ritual Spears
+55014 Spear of the Church - Ritual Spears
+55020 Spear of the Church - Ritual Spears
+55021 Spear of the Church - Ritual Spears
+55022 Spear of the Church - Ritual Spears
+55023 Spear of the Church - Ritual Spears
+55024 Spear of the Church - Ritual Spears
+55030 Spear of the Church - Ritual Spears
+55031 Spear of the Church - Ritual Spears
+55032 Spear of the Church - Ritual Spears
+55033 Spear of the Church - Ritual Spears
+55034 Spear of the Church - Ritual Spears
+55040 Spear of the Church - Ritual Spears
+55041 Spear of the Church - Ritual Spears
+55042 Spear of the Church - Ritual Spears
+55043 Spear of the Church - Ritual Spears
+55044 Spear of the Church - Ritual Spears
+55050 Spear of the Church - Ritual Spears
+55051 Spear of the Church - Ritual Spears
+55052 Spear of the Church - Ritual Spears
+55053 Spear of the Church - Ritual Spears
+55054 Spear of the Church - Ritual Spears
+55060 Spear of the Church - Ritual Spears
+55061 Spear of the Church - Ritual Spears
+55062 Spear of the Church - Ritual Spears
+55063 Spear of the Church - Ritual Spears
+55064 Spear of the Church - Ritual Spears
+55070 Spear of the Church - Ritual Spears
+55071 Spear of the Church - Ritual Spears
+55072 Spear of the Church - Ritual Spears
+55073 Spear of the Church - Ritual Spears
+55074 Spear of the Church - Ritual Spears
+55080 Spear of the Church - Ritual Spears
+55081 Spear of the Church - Ritual Spears
+55082 Spear of the Church - Ritual Spears
+55083 Spear of the Church - Ritual Spears
+55084 Spear of the Church - Ritual Spears
+55090 Spear of the Church - Ritual Spears
+55091 Spear of the Church - Ritual Spears
+55092 Spear of the Church - Ritual Spears
+55093 Spear of the Church - Ritual Spears
+55094 Spear of the Church - Ritual Spears
+55100 Spear of the Church - Ritual Spears
+55101 Spear of the Church - Ritual Spears
+55102 Spear of the Church - Ritual Spears
+55103 Spear of the Church - Ritual Spears
+55104 Spear of the Church - Ritual Spears
+55110 Spear of the Church - Ritual Spears
+55111 Spear of the Church - Ritual Spears
+55112 Spear of the Church - Ritual Spears
+55113 Spear of the Church - Ritual Spears
+55114 Spear of the Church - Ritual Spears
+55120 Spear of the Church - Ritual Spears
+55121 Spear of the Church - Ritual Spears
+55122 Spear of the Church - Ritual Spears
+55123 Spear of the Church - Ritual Spears
+55124 Spear of the Church - Ritual Spears
+55130 Spear of the Church - Ritual Spears
+55131 Spear of the Church - Ritual Spears
+55132 Spear of the Church - Ritual Spears
+55133 Spear of the Church - Ritual Spears
+55134 Spear of the Church - Ritual Spears
+55140 Spear of the Church - Ritual Spears
+55141 Spear of the Church - Ritual Spears
+55142 Spear of the Church - Ritual Spears
+55143 Spear of the Church - Ritual Spears
+55144 Spear of the Church - Ritual Spears
+55150 Spear of the Church - Ritual Spears
+55151 Spear of the Church - Ritual Spears
+55152 Spear of the Church - Ritual Spears
+55153 Spear of the Church - Ritual Spears
+55154 Spear of the Church - Ritual Spears
+55160 Spear of the Church - Ritual Spears
+55161 Spear of the Church - Ritual Spears
+55162 Spear of the Church - Ritual Spears
+55163 Spear of the Church - Ritual Spears
+55164 Spear of the Church - Ritual Spears
+55170 Spear of the Church - Ritual Spears
+55171 Spear of the Church - Ritual Spears
+55172 Spear of the Church - Ritual Spears
+55173 Spear of the Church - Ritual Spears
+55174 Spear of the Church - Ritual Spears
+55180 Spear of the Church - Ritual Spears
+55181 Spear of the Church - Ritual Spears
+55182 Spear of the Church - Ritual Spears
+55183 Spear of the Church - Ritual Spears
+55184 Spear of the Church - Ritual Spears
+56000 Spear of the Church - Divine Spears
+56001 Spear of the Church - Divine Spears
+56002 Spear of the Church - Divine Spears
+56003 Spear of the Church - Divine Spears
+56004 Spear of the Church - Divine Spears
+56010 Spear of the Church - Divine Spears
+56011 Spear of the Church - Divine Spears
+56012 Spear of the Church - Divine Spears
+56013 Spear of the Church - Divine Spears
+56014 Spear of the Church - Divine Spears
+56020 Spear of the Church - Divine Spears
+56021 Spear of the Church - Divine Spears
+56022 Spear of the Church - Divine Spears
+56023 Spear of the Church - Divine Spears
+56024 Spear of the Church - Divine Spears
+56030 Spear of the Church - Divine Spears
+56031 Spear of the Church - Divine Spears
+56032 Spear of the Church - Divine Spears
+56033 Spear of the Church - Divine Spears
+56034 Spear of the Church - Divine Spears
+56040 Spear of the Church - Divine Spears
+56041 Spear of the Church - Divine Spears
+56042 Spear of the Church - Divine Spears
+56043 Spear of the Church - Divine Spears
+56044 Spear of the Church - Divine Spears
+56050 Spear of the Church - Divine Spears
+56051 Spear of the Church - Divine Spears
+56052 Spear of the Church - Divine Spears
+56053 Spear of the Church - Divine Spears
+56054 Spear of the Church - Divine Spears
+56060 Spear of the Church - Divine Spears
+56061 Spear of the Church - Divine Spears
+56062 Spear of the Church - Divine Spears
+56063 Spear of the Church - Divine Spears
+56064 Spear of the Church - Divine Spears
+56070 Spear of the Church - Divine Spears
+56071 Spear of the Church - Divine Spears
+56072 Spear of the Church - Divine Spears
+56073 Spear of the Church - Divine Spears
+56074 Spear of the Church - Divine Spears
+56080 Spear of the Church - Divine Spears
+56081 Spear of the Church - Divine Spears
+56082 Spear of the Church - Divine Spears
+56083 Spear of the Church - Divine Spears
+56084 Spear of the Church - Divine Spears
+56090 Spear of the Church - Divine Spears
+56091 Spear of the Church - Divine Spears
+56092 Spear of the Church - Divine Spears
+56093 Spear of the Church - Divine Spears
+56094 Spear of the Church - Divine Spears
+56100 Spear of the Church - Divine Spears
+56101 Spear of the Church - Divine Spears
+56102 Spear of the Church - Divine Spears
+56103 Spear of the Church - Divine Spears
+56104 Spear of the Church - Divine Spears
+56110 Spear of the Church - Divine Spears
+56111 Spear of the Church - Divine Spears
+56112 Spear of the Church - Divine Spears
+56113 Spear of the Church - Divine Spears
+56114 Spear of the Church - Divine Spears
+56120 Spear of the Church - Divine Spears
+56121 Spear of the Church - Divine Spears
+56122 Spear of the Church - Divine Spears
+56123 Spear of the Church - Divine Spears
+56124 Spear of the Church - Divine Spears
+56130 Spear of the Church - Divine Spears
+56131 Spear of the Church - Divine Spears
+56132 Spear of the Church - Divine Spears
+56133 Spear of the Church - Divine Spears
+56134 Spear of the Church - Divine Spears
+56140 Spear of the Church - Divine Spears
+56141 Spear of the Church - Divine Spears
+56142 Spear of the Church - Divine Spears
+56143 Spear of the Church - Divine Spears
+56144 Spear of the Church - Divine Spears
+56150 Spear of the Church - Divine Spears
+56151 Spear of the Church - Divine Spears
+56152 Spear of the Church - Divine Spears
+56153 Spear of the Church - Divine Spears
+56154 Spear of the Church - Divine Spears
+56160 Spear of the Church - Divine Spears
+56161 Spear of the Church - Divine Spears
+56162 Spear of the Church - Divine Spears
+56163 Spear of the Church - Divine Spears
+56164 Spear of the Church - Divine Spears
+56170 Spear of the Church - Divine Spears
+56171 Spear of the Church - Divine Spears
+56172 Spear of the Church - Divine Spears
+56173 Spear of the Church - Divine Spears
+56174 Spear of the Church - Divine Spears
+56180 Spear of the Church - Divine Spears
+56181 Spear of the Church - Divine Spears
+56182 Spear of the Church - Divine Spears
+56183 Spear of the Church - Divine Spears
+56184 Spear of the Church - Divine Spears
+100000 Map gimmick general-purpose explosive barrels
+100010 Map gimmick general-purpose combustion
+130000 Protomap Exploding Barrels 
+135000 Map Trigger - Poison
+135001 Map Trigger - Poison
+135002 Map Trigger - Poison
+135003 Map Trigger - Poison
+135004 Map Trigger - Poison
+135005 Map Trigger - Poison
+135006 Map Trigger - Poison
+135010 Map Trigger - Poison
+135011 Map Trigger - Poison
+135012 Map Trigger - Poison
+135013 Map Trigger - Poison
+135014 Map Trigger - Poison
+135015 Map Trigger - Poison
+135016 Map Trigger - Poison
+135050 Fireball
+135051 Fireball Hit
+138000 Arrow
+138001 Arrow
+138002 Arrow
+138003 Arrow
+138004 Arrow
+138005 Arrow
+138006 Arrow
+138010 Catacombs of Carthus - Bolt Trap - Volley 1
+138011 Catacombs of Carthus - Bolt Trap - Volley 1
+138012 Catacombs of Carthus - Bolt Trap - Volley 1
+138013 Catacombs of Carthus - Bolt Trap - Volley 1
+138014 Catacombs of Carthus - Bolt Trap - Volley 1
+138015 Catacombs of Carthus - Bolt Trap - Volley 1
+138016 Catacombs of Carthus - Bolt Trap - Volley 1
+138020 Catacombs of Carthus - Bolt Trap - Volley 2
+138021 Catacombs of Carthus - Bolt Trap - Volley 2
+138022 Catacombs of Carthus - Bolt Trap - Volley 2
+138023 Catacombs of Carthus - Bolt Trap - Volley 2
+138024 Catacombs of Carthus - Bolt Trap - Volley 2
+138025 Catacombs of Carthus - Bolt Trap - Volley 2
+138026 Catacombs of Carthus - Bolt Trap - Volley 2
+138040 Catacombs of Carthus - Affinity Pot
+138041 Catacombs of Carthus - Affinity Pot
+138042 Catacombs of Carthus - Affinity Pot
+138043 Catacombs of Carthus - Affinity Pot
+138044 Catacombs of Carthus - Affinity Pot
+138045 Catacombs of Carthus - Affinity Pot
+138046 Catacombs of Carthus - Affinity Pot
+138050 Flame
+138051 Flame
+138052 Flame
+138060 Flame
+139000 Profaned Capital - Fireball
+139001 Profaned Capital - Fireball
+139002 Profaned Capital - Fireball
+139003 Profaned Capital - Fireball
+139004 Profaned Capital - Fireball
+139005 Profaned Capital - Fireball
+139006 Profaned Capital - Fireball
+139010 Profaned Capital - Fireball
+139011 Profaned Capital - Fireball
+139012 Profaned Capital - Fireball
+139013 Profaned Capital - Fireball
+139014 Profaned Capital - Fireball
+139015 Profaned Capital - Fireball
+139016 Profaned Capital - Fireball
+149000 Purple Summon Sign
+149001 Purple Summon Sign Hit
+149010 Purple Summon Sign
+149011 Purple Summon Sign Hit
+149020 FDP proto Flame bottle (throw) 
+149021 FDP proto flame bottle (impact) 
+1070090 Skeleton - Firebomb
+1070091 Skeleton - Firebomb Hit
+1070230 Skeleton - Bow Arrow
+1070700 Skeleton - Hexing Urn
+1070701 Skeleton - Hexing Urn
+1070702 Skeleton - Hexing Urn
+1090700 Pus of Man - Spew
+1100560 Hollow Soldier - Throwing Knife
+1100750 Hollow Soldier - ?
+1100751 Hollow Soldier - ?
+1100752 Hollow Soldier - ?
+1100800 Hollow Soldier - Crossbow Bolt/Arrow
+1100801 Hollow Soldier - Crossbow Bolt/Arrow
+1100805 Hollow Soldier - Crossbow Bolt/Arrow
+1100806 Hollow Soldier - Crossbow Bolt/Arrow
+1100810 Hollow Soldier - Oil Pot
+1100811 Hollow Soldier - Oil Pot Hit
+1100820 Hollow Soldier - Firebomb
+1100821 Hollow Soldier - Firebomb Hit
+1100822 Hollow Soldier - Firebomb Hit
+1100823 Hollow Soldier - Firebomb Hit
+1100830 Hollow Soldier - Undead Hunter Charm
+1100831 Hollow Soldier - Undead Hunter Charm Hit
+1100832 Hollow Soldier - Undead Hunter Charm
+1105210 Large Hollow Soldier - ?
+1105220 Large Hollow Soldier - ?
+1130700 Rotten Slug - Vomiting
+1130710 Rotten Slug - Vomiting (short)
+1130800 Rotten Slug - Ground search bullets
+1130801 Rotten Slug - Damage accumulated
+1130802 Rotten Slug - ?
+1170700 Carthus Swordsman - Carthus Arrow
+1170701 Carthus Swordsman - Carthus Arrow
+1180700 Carthus Swordsman - Shotel - Baxtenife throwing
+1180710 Carthus Swordsman - Shotel - Knife throwing
+1180720 Carthus Swordsman - Shotel - Step knife throwing
+1190010 Cathedral Knight - Bash AOE
+1190170 Cathedral Knight - Miracle Attack
+1190180 Cathedral Knight - Miracle Recovery
+1190181 Cathedral Knight - Miracle Recovery
+1190255 Cathedral Knight - ?
+1190655 Cathedral Knight - Delayed Burst
+1190656 Cathedral Knight - Delayed Burst
+1190657 Cathedral Knight - Delayed Burst
+1200190 Hollow Slave - Blowgun (1)
+1200191 Hollow Slave - Blowgun (2)
+1200240 Hollow Slave - Firebomb
+1200241 Hollow Slave - Firebomb Hit
+1210280 Ghru - ?
+1210340 Ghru - Poison Mist
+1210350 Ghru - Poison Mist
+1210360 Ghru - Estrus induced test
+1210370 Ghru - Blue Magic 1
+1210380 Ghru - Blue Magic 2 Body
+1210381 Ghru - Blue Magic 2 Landing
+1210390 Ghru - Blue Range Recovery
+1220020 Corpse-grub - Firing maggots
+1220021 Corpse-grub - Maggots spitting _ Search bullets
+1220022 Corpse-grub - The Uzi spitting
+1220030 Corpse-grub - Uzi hit effect Search bullets
+1220031 Corpse-grub - Uzi hit effect
+1230740 Cathedral Evangelist - Projection Magic
+1230741 Cathedral Evangelist - ?
+1230750 Cathedral Evangelist - ?
+1230751 Cathedral Evangelist - ?
+1240700 Peasant Hollow - Firebomb
+1240701 Peasant Hollow - Firebomb Hit
+1240710 Peasant Hollow - Oil Pot
+1240711 Peasant Hollow - Oil Pot Hit
+1240720 Peasant Hollow - ?
+1240721 Peasant Hollow - ?
+1240800 Peasant Hollow - ?
+1250700 Cathedral Grave Warden - Fire Breath
+1260700 Hollow Manservant - Pot Throw
+1260701 Hollow Manservant - Pot Throw (poised)
+1260710 Hollow Manservant - ?
+1280700 Lothric Knight - Bow Fire
+1280710 Lothric Knight - ?
+1290150 Winged Knight - Force
+1290190 Winged Knight - Pillar of Light: Wall Search
+1290191 Winged Knight - Pillar of Light: Floor Search
+1290192 Winged Knight - Pillar of Light: Impact
+1290193 Winged Knight - Pillar of Light: shock wave at trigger
+1290194 Winged Knight - Pillar of Light: Wall search (short distance)
+1290195 Winged Knight - Pillar of Light: Wall search (target above)
+1290330 Winged Knight - Force
+1290380 Winged Knight - Axe Throwing _ Right
+1290381 Winged Knight - Ax Throwing _ Left
+1310180 Boreal Outrider Knight - Chill Breath (parent)
+1310181 Boreal Outrider Knight - Chill Breath (Child)
+1310182 Boreal Outrider Knight - Chill Breath _ Decal (parent)
+1310183 Boreal Outrider Knight - Chill Breath (Child)
+1310700 Boreal Outrider Knight - Constant cold air (outbreak bullet)
+1310701 Boreal Outrider Knight - Constant cold air (impact)
+1310710 Boreal Outrider Knight - Always raised for cold air decals
+1320010 Crystal Sage - ?
+1320011 Crystal Sage - ?
+1320012 Crystal Sage - ?
+1320013 Crystal Sage - ?
+1320020 Crystal Sage - ?
+1320021 Crystal Sage - ?
+1320030 Crystal Sage - Blue Crystal Orb
+1320031 Crystal Sage - Blue Crystal Orb Hit
+1320050 Crystal Sage - Purple Crystal Soulmass
+1320051 Crystal Sage - Purple Crystal Soulmass Hit
+1320052 Crystal Sage - Purple Crystal Soulmass Hit
+1320053 Crystal Sage - Purple Crystal Soulmass Hit
+1320112 Crystal Sage -
+1320140 Crystal Sage -
+1320141 Crystal Sage -
+1320142 Crystal Sage -
+1320143 Crystal Sage -
+1320144 Crystal Sage -
+1320150 Crystal Sage - Purple Crystal Hail
+1320151 Crystal Sage - Purple Crystal Hail Hit
+1320152 Crystal Sage - Purple Crystal Hail Hit
+1320153 Crystal Sage - Purple Crystal Hail Hit
+1320155 Crystal Sage - Purple Crystal Hail
+1320160 Crystal Sage - Soul Sword Burst
+1320161 Crystal Sage - Soul Sword Burst Hit
+1320170 Crystal Sage - Purple Crystal Orb
+1320180 Crystal Sage - Farron Dart
+1320190 Crystal Sage - Purple Crystal Tri-Line Emitter -
+1320191 Crystal Sage - Purple Crystal Tri-Line
+1320192 Crystal Sage - Purple Crystal Tri-Line Hit
+1320193 Crystal Sage - Purple Crystal Tri-Line - Shockwave Hit
+1320194 Crystal Sage - Purple Crystal Tri-Line - Search
+1320195 Crystal Sage - Purple Crystal Tri-Line - Search (Above)
+1320196 Crystal Sage - Purple Crystal Tri-Line - Search
+1320312 Crystal Sage - ?
+1320340 Crystal Sage - ?
+1320341 Crystal Sage - ?
+1320342 Crystal Sage - ?
+1320343 Crystal Sage - ?
+1320344 Crystal Sage - ?
+1320350 Crystal Sage - Crystal Hail
+1320351 Crystal Sage - Crystal Hail
+1320352 Crystal Sage - Crystal Hail
+1320353 Crystal Sage - Crystal Hail
+1320355 Crystal Sage - Crystal Hail
+1320360 Crystal Sage - Soul Sword Burst
+1320361 Crystal Sage - Soul Sword Burst Hit
+1320370 Crystal Sage - Crystal Soul Spear
+1320380 Crystal Sage - Farron Dart
+1320390 Crystal Sage - ?
+1320391 Crystal Sage - ?
+1320392 Crystal Sage - ?
+1320393 Crystal Sage - ?
+1320394 Crystal Sage - ?
+1320395 Crystal Sage - ?
+1320512 Crystal Sage - ?
+1320540 Crystal Sage - ?
+1320541 Crystal Sage - ?
+1320542 Crystal Sage - ?
+1320543 Crystal Sage - ?
+1320544 Crystal Sage - ?
+1320550 Crystal Sage - Crystal Hail
+1320551 Crystal Sage - Crystal Hail
+1320552 Crystal Sage - Crystal Hail
+1320553 Crystal Sage - Crystal Hail
+1320555 Crystal Sage - Crystal Hail
+1320560 Crystal Sage - Soul Sword Burst
+1320561 Crystal Sage - Soul Sword Burst Hit
+1320570 Crystal Sage - Crystal Soul Spear
+1320580 Crystal Sage - Farron Dart
+1320590 Crystal Sage - ?
+1320591 Crystal Sage - ?
+1320592 Crystal Sage - ?
+1320593 Crystal Sage - ?
+1320594 Crystal Sage - ?
+1320595 Crystal Sage - ?
+1340700 Archive Scholar - Soul Arrow
+1340710 Archive Scholar - Soul Dart
+1340720 Archive Scholar - Wax Attack
+1340730 Archive Scholar - Wax Attack
+1340731 Archive Scholar - Wax Attack
+1340732 Archive Scholar - Wax Attack
+1340740 Archive Scholar - Wax Attack
+1340750 Archive Scholar - Wax Attack Hit
+1350700 Irithyllian Slave - Soul Dart
+1350710 Irithyllian Slave - Soulmass
+1350711 Irithyllian Slave - Soulmass Hit
+1350720 Irithyllian Slave - Spit
+1350721 Irithyllian Slave - Spit Hit
+1350722 Irithyllian Slave - Spit Hit
+1350730 Irithyllian Slave - Soul Flash
+1350740 Irithyllian Slave - ?
+1350741 Irithyllian Slave - ?
+1380700 Serpent-man Summoner - Golden Orb
+1380710 Serpent-man Summoner - Golden Orb Soulmass
+1380711 Serpent-man Summoner - Golden Orb Soulmass Hit
+1380712 Serpent-man Summoner - Golden Orb Soulmass Hit
+1380713 Serpent-man Summoner - Golden Orb Soulmass Hit
+1380714 Serpent-man Summoner - Golden Orb Soulmass Hit
+1390400 Serpent-man - Fireball
+1391032 Giant Serpent-man - ?
+1391060 Giant Serpent-man - Fire Breath
+1391061 Giant Serpent-man - Fire Breath
+1391132 Giant Serpent-man - ?
+1391140 Giant Serpent-man - ?
+1391141 Giant Serpent-man - ?
+1391150 Giant Serpent-man - ?
+1391151 Giant Serpent-man - ?
+1391440 Giant Serpent-man - ?
+1410300 Silver Knight - Bow Fire
+1410310 Silver Knight - ?
+1410400 Silver Knight - ?
+1440800 Devout Bomber - ?
+1440801 Devout Bomber - ?
+1441840 Devout Bomber - ?
+1441850 Devout Bomber - ?
+1441851 Devout Bomber - ?
+1480700 Dark Knight (Phantom) -
+1480701 Dark Knight (Phantom) -
+1480710 Dark Knight (Phantom) -
+2030230 Pontiff Knight - Abyssal Orb
+2030700 Pontiff Knight - ?
+2030701 Pontiff Knight - ?
+2070700 Wretch - Acid Spit
+2070701 Wretch - Acid Spit Hit
+2070710 Wretch - Wind Burst
+2080130 Undead Dog - Blood Spit
+2080131 Undead Dog - Blood Spit Hit
+2090700 Oceiros - Straight Breath
+2090701 Oceiros - ?
+2090702 Oceiros - ?
+2090710 Oceiros - Whack Breath
+2090711 Oceiros - ?
+2090712 Oceiros - ?
+2090713 Oceiros - ?
+2090720 Oceiros - Air Breath
+2090721 Oceiros - ?
+2090722 Oceiros - ?
+2090730 Oceiros - ?
+2090740 Oceiros - Pestilent Mist
+2090741 Oceiros - Pestilent Mist
+2090742 Oceiros - Pestilent Mist
+2090743 Oceiros - Pestilent Mist
+2100700 Sewer Centipede - Grimy Spit
+2100701 Sewer Centipede - Grimy Spit Hit
+2120130 Mimic - Spit
+2130121 Smouldering Rotten Flesh - Explosion
+2140010 Basilisk - Petrifying Mist
+2140011 Basilisk - Petrifying Mist
+2140015 Basilisk - Petrifying Mist
+2140020 Basilisk - Jump & Petrifying Mist
+2140021 Basilisk - Jump & Petrifying Mist - Landing
+2150020 Crystal Lizard - Red Crystal Explosion
+2180040 Rosaria Maggot - White Spit
+2180110 Rosaria Maggot - Divine Arrow
+2180200 Rosaria Maggot - Fire spreading
+2190700 Gargoyle - Fireball
+2190701 Gargoyle - Fireball Hit
+2190702 Gargoyle - Fireball Hit
+2190705 Gargoyle - Fireball
+2190706 Gargoyle - Fireball Hit
+2190710 Gargoyle - Fireball Lob
+2190711 Gargoyle - Fireball Lob Hit
+2190720 Gargoyle - Fireball Splash
+2190721 Gargoyle - Fireball Splash - Right
+2190722 Gargoyle - Fireball Splash - Left
+2190730 Gargoyle - Fireball Splash - Above
+2200110 Carthus Sandworm - ?
+2200120 Carthus Sandworm - ?
+2200140 Carthus Sandworm - ?
+2200230 Carthus Sandworm - ?
+2200600 Carthus Sandworm - ?
+2200601 Carthus Sandworm - ?
+2200602 Carthus Sandworm - ?
+2210500 Corvian - Storyteller - Firing bullets
+2210501 Corvian - Storyteller - Spreading bullets
+2210510 Corvian - Storyteller - Fireball
+2210540 Corvian - Storyteller - Tri-Fireball
+2210541 Corvian - Storyteller - Tri-Fireball Hit
+2210550 Corvian - Storyteller - ?
+2210551 Corvian - Storyteller - ?
+2210560 Corvian - Storyteller - Poison Mist
+2230200 Jailer - Petrifying Mist
+2230210 Jailer - Petrifying Mist (Range)
+2230211 Jailer - Petrifying Mist (Range)
+2230220 Jailer - Fire Breath (Down)
+2230221 Jailer - Fire Breath (Down)
+2230222 Jailer - Fire Breath (Down)
+2230223 Jailer - Fire Breath (Down)
+2230224 Jailer - Fire Breath (Down)
+2230225 Jailer - Fire Breath (Down)
+2230226 Jailer - Fire Breath (Down)
+2230227 Jailer - Fire Breath (Down)
+2230228 Jailer - Fire Breath (Down)
+2230229 Jailer - Fire Breath (Down)
+2230230 Jailer - Fire Breath (Down)
+2230235 Jailer - Fire Breath (Down)
+2230700 Jailer - Quick Turn Petrify breath (right turn)
+2230701 Jailer - Quick Turn Petrify breath (left turn)
+2230702 Jailer - ?
+2230798 Jailer - ?
+2230799 Jailer - ?
+2230900 Jailer - Long Distance Magic: Sniper (tentative) _ Search Bullets
+2230901 Jailer - Long Distance Magic: Sniper (Provisional) _ Spread Bullets
+2230902 Jailer - Long Distance Magic: Sniper (Provisional) _ Projectile
+2240112 Vordt - Frost Dust
+2240176 Vordt - Frost Breath
+2240260 Vordt - Always raised for cold air decals
+2240270 Vordt - ?
+2240271 Vordt - ?
+2240273 Vordt - ?
+2250700 Sulyvahn's Beast - Lightning Breath
+2250701 Sulyvahn's Beast - Lightning Breath Hit
+2250702 Sulyvahn's Beast - Lightning Breath Hit
+2250703 Sulyvahn's Beast - Lightning Breath Hit
+2250704 Sulyvahn's Beast - Lightning Breath Hit
+2250705 Sulyvahn's Beast - Lightning Breath Hit
+2260700 Ballista - Giant Arrow
+2260701 Ballista - Giant Arrow Hit
+2260702 Ballista - Giant Arrow Hit
+2260703 Ballista - Giant Arrow Hit
+2270110 Giant Crab - Bubble Spit
+2270111 Giant Crab - Bubble Spit Hit
+2270210 Giant Crab - ?
+2270211 Giant Crab - ?
+2270220 Giant Crab - ?
+2270221 Giant Crab - ?
+2270222 Giant Crab - ?
+3020192 Giant Slave - Rock Burst
+3021200 Giant Crab - Dung Spit
+3021900 Giant Slave - ?
+3021901 Giant Slave - ?
+3021910 Giant Slave - ?
+3021911 Giant Slave - ?
+3040700 Abyss Watcher - ?
+3040701 Abyss Watcher - ?
+3040710 Abyss Watcher - Fire Line
+3040711 Abyss Watcher - Fire Line
+3040712 Abyss Watcher - Fire Line
+3040713 Abyss Watcher - Fire Line
+3040714 Abyss Watcher - Fire Line
+3040715 Abyss Watcher - Fire Line
+3040716 Abyss Watcher - Fire Line
+3040717 Abyss Watcher - Fire Line
+3040718 Abyss Watcher - Fire Line
+3040719 Abyss Watcher - Fire Line
+3040720 Abyss Watcher - Fire Explosion
+3040740 Abyss Watcher - ?
+3040750 Abyss Watcher - ?
+3040760 Abyss Watcher - ?
+3040770 Abyss Watcher - Fire Explosion
+3040780 Abyss Watcher - Fire Line
+3040781 Abyss Watcher - Fire Line
+3040820 Abyss Watcher - ?
+3040840 Abyss Watcher - ?
+3040841 Abyss Watcher - ?
+3040842 Abyss Watcher - ?
+3040843 Abyss Watcher - ?
+3040844 Abyss Watcher - ?
+3040845 Abyss Watcher - ?
+3040846 Abyss Watcher - ?
+3040847 Abyss Watcher - ?
+3040870 Abyss Watcher - ?
+3040880 Abyss Watcher - Fire Explosion
+3040890 Abyss Watcher - ?
+3040891 Abyss Watcher - ?
+3040900 Abyss Watcher - ?
+3050700 Old Demon King - Lava Breath
+3050701 Old Demon King - Lava Breath Hit
+3050710 Old Demon King - Lava Breath
+3050711 Old Demon King - Lava Breath Hit
+3050720 Old Demon King - Fire Explosion
+3050721 Old Demon King - Fire Explosion Hit
+3050730 Old Demon King - Rain of Fire
+3050731 Old Demon King - Rain of Fire Hit
+3050732 Old Demon King - Rain of Fire Hit
+3050733 Old Demon King - Rain of Fire Hit
+3050734 Old Demon King - Rain of Fire Hit
+3050735 Old Demon King - Rain of Fire Hit
+3050740 Old Demon King - ?
+3050741 Old Demon King - ?
+3050742 Old Demon King - ?
+3050743 Old Demon King - ?
+3050744 Old Demon King - ?
+3050745 Old Demon King - ?
+3050746 Old Demon King - ?
+3050747 Old Demon King - ?
+3050748 Old Demon King - ?
+3050749 Old Demon King - ?
+3050750 Old Demon King - ?
+3050751 Old Demon King - ?
+3050752 Old Demon King - ?
+3050753 Old Demon King - ?
+3050754 Old Demon King - ?
+3050755 Old Demon King - ?
+3050756 Old Demon King - ?
+3050757 Old Demon King - ?
+3050758 Old Demon King - ?
+3050759 Old Demon King - ?
+3050760 Old Demon King - Fire Explosion
+3050770 Old Demon King - Fire Explosion
+3050780 Old Demon King - ?
+3050781 Old Demon King - ?
+3050782 Old Demon King - ?
+3050783 Old Demon King - ?
+3050784 Old Demon King - ?
+3050785 Old Demon King - ?
+3050786 Old Demon King - ?
+3050790 Old Demon King - ?
+3050800 Old Demon King - ?
+3050810 Old Demon King - ?
+3050811 Old Demon King - ?
+3050812 Old Demon King - ?
+3050813 Old Demon King - ?
+3050814 Old Demon King - ?
+3050815 Old Demon King - ?
+3050816 Old Demon King - ?
+3050817 Old Demon King - ?
+3050818 Old Demon King - ?
+3050819 Old Demon King - ?
+3050820 Old Demon King - ?
+3050821 Old Demon King - ?
+3050822 Old Demon King - ?
+3060700 Demon - Fire Breath
+3060701 Demon - Fire Breath Hit
+3060702 Demon - Fire Breath Hit
+3060710 Demon - Fire Breath
+3060800 Demon - Fire Breath (Upward)
+3060801 Demon - Fire Breath (Upward) Hit
+3060802 Demon - Fire Breath (Upward) Hit
+3070700 Demon Cleric - Chaos Fireball
+3070710 Demon Cleric - Combustion
+3070720 Demon Cleric - Floating Chaos - Burst
+3071700 Demon Cleric - Floating Chaos - Bullet
+3080700 Pilgrim Butterfly - Corrupted Blood Orb - Delayed
+3080701 Pilgrim Butterfly - Corrupted Blood Orb Hit
+3080702 Pilgrim Butterfly - Corrupted Blood Orb Hit
+3080710 Pilgrim Butterfly - Corrupted Laser
+3080711 Pilgrim Butterfly - Corrupted Laser Hit
+3080712 Pilgrim Butterfly - Corrupted Laser Hit
+3080720 Pilgrim Butterfly - Corrupted Explosion
+3080721 Pilgrim Butterfly - Corrupted Explosion Hit
+3090100 Caged Hollow - Poop Throw
+3100011 Giant Crystal Lizard - Crystal Burst - Right
+3100012 Giant Crystal Lizard - Crystal Burst - Right Hit
+3100013 Giant Crystal Lizard - Crystal Burst - Right Hit
+3100021 Giant Crystal Lizard - Crystal Burst - Left
+3100022 Giant Crystal Lizard - Crystal Burst - Left Hit
+3100023 Giant Crystal Lizard - Crystal Burst - Left Hit
+3100050 Giant Crystal Lizard - Crystal Slam
+3100051 Giant Crystal Lizard - Crystal Slam
+3100052 Giant Crystal Lizard - Crystal Slam Hit
+3100060 Giant Crystal Lizard - Crystal Dive
+3100061 Giant Crystal Lizard - Crystal Dive
+3100062 Giant Crystal Lizard - Crystal Dive Hit
+3100070 Giant Crystal Lizard - Crystal Breath
+3100071 Giant Crystal Lizard - Crystal Breath Hit
+3100072 Giant Crystal Lizard - Crystal Breath Hit
+3100210 Giant Crystal Lizard - Crystal Burst
+3100220 Giant Crystal Lizard - ?
+3100221 Giant Crystal Lizard - ?
+3100230 Giant Crystal Lizard - ?
+3100231 Giant Crystal Lizard - ?
+3100240 Giant Crystal Lizard - ?
+3110700 Deep Acursed - Deep Vomit
+3110701 Deep Acursed - Deep Vomit Hit
+3110702 Deep Acursed - Deep Vomit Hit
+3110710 Deep Acursed - Smokescreen
+3120700 Elder Ghru - Force
+3120710 Elder Ghru - Red Skull
+3120711 Elder Ghru - Red Skull Hit
+3120720 Elder Ghru - ?
+3120721 Elder Ghru - ?
+3120730 Elder Ghru - Red Skulls
+3140010 Ancient Wyvern - For eclipse Dripping decal
+3140500 Ancient Wyvern - Straight Breath _ Breath
+3140501 Ancient Wyvern - Straight Breath _ Breath (search)
+3140502 Ancient Wyvern - Straight Breath _ Breath (impact)
+3140505 Ancient Wyvern - ?
+3140510 Ancient Wyvern - Saigi Bless _ Breath
+3140511 Ancient Wyvern - Saigi Bless (search)
+3140512 Ancient Wyvern - Saigi Breath _ Breath (impact)
+3140520 Ancient Wyvern - Immediate breath _ Breath
+3140521 Ancient Wyvern - Immediate Breath _ Breath (search)
+3140522 Ancient Wyvern - Immediate breath _ Breath (impact)
+3140530 Ancient Wyvern - Glide Breath _ Breath
+3140531 Ancient Wyvern - Glide Breath _ Breath (search)
+3140532 Ancient Wyvern - Glide Breath _ Breath (impact)
+3140540 Ancient Wyvern - Hashimoto _ Swirling Breath _ bless ①
+3140541 Ancient Wyvern - Hashimoto _ Swirling Breath _ Breath ① (search)
+3140542 Ancient Wyvern - Hashimoto _ Swirling Breath _ breath ① (Impact)
+3140550 Ancient Wyvern - Hashimoto _ Swirling Breath _ bless ②
+3140551 Ancient Wyvern - Hashimoto _ Swirling Breath _ Breath ② (search)
+3140552 Ancient Wyvern - Hashimoto _ Swirling Breath _ breath ② (Impact)
+3140560 Ancient Wyvern - Climb 2_ appearance _ on the tower → Square _ breath
+3140562 Ancient Wyvern - Climb 2_ appearance _ on tower → Square _ breath (impact)
+3140570 Ancient Wyvern - Climb 2_ another tower → square → breath withdrawal _ breath
+3140572 Ancient Wyvern - Climb 2_ Betto → square → breath withdrawal _ breath (impact)
+3140581 Ancient Wyvern - Rampage Breath A_ Ground (impact)
+3140582 Ancient Wyvern - Rampage Breath A_ Ground (decal)
+3140591 Ancient Wyvern - Rampage Breath b_ Ground (impact)
+3140592 Ancient Wyvern - Rampage Breath b_ Ground (decal)
+3140630 Ancient Wyvern - Rampage Breath b_ Ground Passage (impact)
+3140631 Ancient Wyvern - Rampage Breath b_ Ground Passage (decal)
+3140640 Ancient Wyvern - Rampage Breath A_ Ground Determination small (impact)
+3140641 Ancient Wyvern - Rampage Breath A_ Ground Determination small (decal)
+3140650 Ancient Wyvern - Rampage Breath B_ Ground Determination small (impact)
+3140651 Ancient Wyvern - Rampage Breath B_ Ground Determination small (decal)
+3140652 Ancient Wyvern - Rampage Breath B_ Ground Determination large (impact)
+3140653 Ancient Wyvern - Rampage Breath B_ Ground Determination large (decal)
+3140667 Ancient Wyvern - Withdrawal Breath _ Ground (impact)
+3140668 Ancient Wyvern - Withdrawal Breath _ Ground (decal)
+3140677 Ancient Wyvern - Bonfire Bless _ Ground (impact)
+3140678 Ancient Wyvern - Bonfire Breath _ Ground (decal)
+3140687 Ancient Wyvern - Left side Breath _ Ground (impact)
+3140688 Ancient Wyvern - Left side Breath _ Ground (decal)
+3140750 Ancient Wyvern - ?
+3140751 Ancient Wyvern - ?
+3140752 Ancient Wyvern - ?
+3140755 Ancient Wyvern - ?
+3140756 Ancient Wyvern - ?
+3140757 Ancient Wyvern - ?
+3140760 Ancient Wyvern - ?
+3140770 Ancient Wyvern - ?
+3160700 Dragonslayer Armour - Wind Shockwave
+3210020 Poisonhorn Bug - Toxic Mist
+3220040 Rock Lizard - Flame Breath
+3230010 ? - ?
+3230020 ? - ?
+5010430 Nameless King - Sunlight Stake
+5010520 Nameless King - ?
+5010521 Nameless King - Sunlight Strike
+5010522 Nameless King - Sunlight Strike Hit
+5010531 Nameless King - ?
+5010532 Nameless King - Lightning Storm Hit
+5010533 Nameless King - Lightning Storm
+5010540 Nameless King - Lightning Strike Hit
+5010541 Nameless King - Lightning Strike
+5010550 Nameless King - Lightning Orb
+5010551 Nameless King - Lightning Orb Hit
+5010552 Nameless King - Lightning Orb Hit
+5010700 Nameless King - Wind Line Hit
+5010701 Nameless King - Wind Line
+5010710 Nameless King - Wind Wall Hit
+5010711 Nameless King - Wind Wall
+5010720 Nameless King - Big Wind Pillar
+5010730 Nameless King - Wind Wave
+5010731 Nameless King - Wind Wave Hit
+5020140 Demon Prince - Chaos Burst
+5020141 Demon Prince - Chaos Burst
+5020142 Demon Prince - Chaos Burst
+5020144 Demon Prince - Chaos Burst Hit
+5020145 Demon Prince - Chaos Burst
+5020155 Demon Prince - ?
+5020156 Demon Prince - ?
+5020191 Demon Prince - Chaos Burst with Wave
+5020206 Demon Prince - Chaos Burst with Wave
+5020211 Demon Prince - Flame Patch
+5020212 Demon Prince - Flame Patch Hit
+5020226 Demon Prince - ?
+5020230 Demon Prince - Homing Fireball
+5020231 Demon Prince - Homing Fireball
+5020232 Demon Prince - Homing Fireball
+5020240 Demon Prince - Tri-Fireball
+5020241 Demon Prince - Tri-Fireball
+5020242 Demon Prince - Tri-Fireball
+5020243 Demon Prince - Tri-Fireball
+5020244 Demon Prince - Tri-Fireball
+5020250 Demon Prince - Fire Wave
+5020251 Demon Prince - Fire Wave
+5020260 Demon Prince - Large Fireball
+5020261 Demon Prince - Large Fireball
+5020262 Demon Prince - Large Fireball
+5020271 Demon Prince - ?
+5020272 Demon Prince - ?
+5020281 Demon Prince - ?
+5020306 Demon Prince - ?
+5020307 Demon Prince - ?
+5020310 Demon Prince - Poison Spit
+5020320 Demon Prince - Exploding Poison Spit
+5020321 Demon Prince - Exploding Poison Spit
+5020322 Demon Prince - Exploding Poison Spit
+5020323 Demon Prince - Exploding Poison Spit
+5020324 Demon Prince - Exploding Poison Spit
+5020325 Demon Prince - Exploding Poison Spit
+5020326 Demon Prince - Exploding Poison Spit
+5020327 Demon Prince - Exploding Poison Spit
+5020421 Demon Prince - ?
+5020423 Demon Prince - ?
+5020424 Demon Prince - ?
+5020425 Demon Prince - ?
+5020431 Demon Prince - Fire Explosion
+5020456 Demon Prince - Ground Burst
+5020457 Demon Prince - Ground Burst
+5020461 Demon Prince - Low Ground Burst
+5020462 Demon Prince - Low Ground Burst
+5020571 Demon Prince - Fire Explosion
+5020581 Demon Prince - ?
+5020582 Demon Prince - ?
+5020710 Demon Prince - ?
+5020711 Demon Prince - ?
+5020712 Demon Prince - ?
+5020713 Demon Prince - ?
+5020720 Demon Prince - ?
+5020730 Demon Prince - ?
+5020740 Demon Prince - ?
+5020950 Demon Prince - ?
+5021050 Demon Prince - ?
+5021100 Demon Prince - Summon Fire Rocks
+5021101 Demon Prince - Summon Fire Rocks
+5021102 Demon Prince - Summon Fire Rocks
+5021103 Demon Prince - Summon Fire Rocks
+5021105 Demon Prince - Summon Fire Rocks
+5021700 Demon Prince - Lob Fireball
+5021701 Demon Prince - Lob Fireball
+5021702 Demon Prince - Lob Fireball
+5021703 Demon Prince - Lob Fireball
+5021710 Demon Prince - Summon Fire Rocks - In Air
+5021711 Demon Prince - Summon Fire Rocks - In Air
+5021712 Demon Prince - Summon Fire Rocks - In Air
+5021713 Demon Prince - Summon Fire Rocks - In Air
+5021715 Demon Prince - Summon Fire Rocks - In Air
+5021720 Demon Prince - Fireball
+5022700 Demon Prince - Quick Fireball
+5022710 Demon Prince - Backwards Fireball
+5022711 Demon Prince - Backwards Fireball
+5022720 Demon Prince - Bursting Fireball
+5022730 Demon Prince - Quick Fireball
+5022750 Demon Prince - Lob Tri-Fireball
+5022751 Demon Prince - Lob Tri-Fireball
+5022752 Demon Prince - Lob Tri-Fireball
+5022753 Demon Prince - Lob Tri-Fireball
+5022760 Demon Prince - Lob Tri-Fireball
+5022761 Demon Prince - Lob Tri-Fireball
+5022762 Demon Prince - Lob Tri-Fireball
+5022763 Demon Prince - Lob Tri-Fireball
+5022770 Demon Prince - Lob Tri-Fireball
+5022771 Demon Prince - Lob Tri-Fireball
+5022772 Demon Prince - Lob Tri-Fireball
+5022773 Demon Prince - Lob Tri-Fireball
+5030121 King of the Storm - ?
+5030231 King of the Storm - ?
+5030300 King of the Storm - Wind Wall
+5030301 King of the Storm - Wind Wall Hit
+5030302 King of the Storm - Wind Wall - Upper
+5030303 King of the Storm - Wind Wall - Upper Hit
+5030700 King of the Storm - Vertical Breath
+5030701 King of the Storm - Vertical Breath Hit
+5030710 King of the Storm - Flapping attack: Tornado
+5030711 King of the Storm - Flapping attack: Tornado landed
+5030720 King of the Storm - ?
+5030730 King of the Storm - ?
+5030740 King of the Storm - Sunlight Spear
+5030741 King of the Storm - Sunlight Spear
+5030750 King of the Storm - Lightning Storm
+5030751 King of the Storm - ?
+5030760 King of the Storm - ?
+5030770 King of the Storm - ?
+5030780 King of the Storm - ?
+5030781 King of the Storm - ?
+5110410 Gundyr - ?
+5110411 Gundyr - ?
+5110500 Gundyr - ?
+5110600 Gundyr - ?
+5120710 Evil Spirits - Blinding Explosion
+5120720 Evil Spirits - Ground Poison Mist
+5120721 Evil Spirits - Ground Poison Mist Hit
+5120730 Evil Spirits - Poison Mist
+5120800 Evil Spirits - Walking - Body
+5120810 Evil Spirits - Traveling - Body
+5140201 Pontiff Sulyvahn - Profaned Flame
+5140202 Pontiff Sulyvahn - Profaned Flame
+5140251 Pontiff Sulyvahn - Purple Soul Spear
+5140261 Pontiff Sulyvahn - Purple Wave
+5140262 Pontiff Sulyvahn - Purple Wave
+5140700 Pontiff Sulyvahn - ?
+5140701 Pontiff Sulyvahn - ?
+5140800 Pontiff Sulyvahn - ?
+5140801 Pontiff Sulyvahn - ?
+5140810 Pontiff Sulyvahn - ?
+5140811 Pontiff Sulyvahn - ?
+5141201 Pontiff Sulyvahn - Spirit Clone - Profaned Flame
+5141202 Pontiff Sulyvahn - Spirit Clone - Profaned Flame
+5141251 Pontiff Sulyvahn - Spirit Clone - Purple Soul Spear
+5141261 Pontiff Sulyvahn - Spirit Clone - Purple Wave
+5141262 Pontiff Sulyvahn - Spirit Clone - Purple Wave
+5150700 Aldrich - Purple Orb - Search
+5150701 Aldrich - Purple Orb - Search Hit
+5150702 Aldrich - Purple Orb - Search Hit
+5150710 Aldrich - Fire Marker
+5150711 Aldrich - Fire Marker Hit
+5150713 Aldrich - Fire Marker Hit
+5150720 Aldrich - Big Purple Orb Emitter -
+5150721 Aldrich - Big Purple Orb Hit
+5150722 Aldrich - Big Purple Orb Hit
+5150723 Aldrich - Big Purple Orb Hit
+5150730 Aldrich - Darkmoon Arrow Rain Emitter -
+5150731 Aldrich - Darkmoon Arrow Rain Hit
+5150732 Aldrich - Darkmoon Arrow Rain Hit
+5150733 Aldrich - Darkmoon Arrow Rain Hit
+5150734 Aldrich - Darkmoon Arrow Rain - Emitter Hit
+5150740 Aldrich - Purple Explosion
+5150750 Aldrich - ?
+5150751 Aldrich - ?
+5150752 Aldrich - ?
+5150753 Aldrich - ?
+5150754 Aldrich - ?
+5150760 Aldrich - Purple Orb Emitter -
+5160060 Wolnir - Miasma breath (before HU)
+5160061 Wolnir - Miasma breath (before HU)
+5160062 Wolnir - ?
+5160063 Wolnir - ?
+5160064 Wolnir - ?
+5160065 Wolnir - ?
+5160303 Wolnir - Grave King Elementalers (outbreak bullet)
+5160313 Wolnir - Miasma Damage
+5160314 Wolnir - Miasma Damage
+5160450 Wolnir - Darkness
+5160451 Wolnir - Darkness
+5160452 Wolnir - Darkness
+5160453 Wolnir - Darkness
+5160454 Wolnir - Darkness
+5170010 ? - Breath
+5180200 Curse-rotted Greatwood - Goop
+5180201 Curse-rotted Greatwood - Goop Hit
+5180220 Curse-rotted Greatwood - Goop
+5180221 Curse-rotted Greatwood - Goop
+5180223 Curse-rotted Greatwood - Goop Hit
+5180402 Curse-rotted Greatwood - Goop
+5180430 Curse-rotted Greatwood - Goop
+5180431 Curse-rotted Greatwood - Goop Hit
+5180500 Curse-rotted Greatwood - Goop
+5180501 Curse-rotted Greatwood - Goop Hit
+5180800 Curse-rotted Greatwood - Noxious Pools
+5180810 Curse-rotted Greatwood - Noxious Pools
+5190700 ? - They yell
+5190710 ? - Force
+5190711 ? - Force Hit
+5200700 Stray Demon - Boulder Spit
+5200710 Stray Demon - Boulder Spit
+5200711 Stray Demon - Boulder Spit
+5220700 Deacons of the Deep - Fireball
+5220800 Deacons of the Deep - Curse Orb
+5220801 Deacons of the Deep - Curse Orb Hit
+5220810 Deacons of the Deep - Curse Orb
+5220811 Deacons of the Deep - Curse Orb Hit
+5220812 Deacons of the Deep - Curse Orb Hit
+5220820 Deacons of the Deep - Curse Orb
+5220821 Deacons of the Deep - Curse Orb Hit
+5220822 Deacons of the Deep - Curse Orb Hit
+5220830 Deacons of the Deep - Curse Orb
+5220831 Deacons of the Deep - Curse Orb Hit
+5220832 Deacons of the Deep - Curse Orb Hit
+5220900 Deacons of the Deep - ?
+5221700 Fat Deacon - Fireball
+5221710 Fat Deacon - Force
+5221720 Fat Deacon - ?
+5221721 Fat Deacon - ?
+5221800 Fat Deacon - Small Curse Orb
+5221801 Fat Deacon - Small Curse Orb Hit
+5222700 Tall Deacon - Fireball
+5222800 Tall Deacon - Small Curse Orb
+5222801 Tall Deacon - Small Curse Orb Hit
+5222900 Tall Deacon - Small Curse Orb
+5222901 Tall Deacon - Small Curse Orb Hit
+5222910 Tall Deacon - Small Curse Orb
+5223700 Deacon - Fireball
+5223800 Tall Deacon - Small Curse Orb
+5223801 Tall Deacon - Small Curse Orb Hit
+5230070 ? - Passage Breath 1: Wait C
+5230071 ? - Passage Breath 1: Standby c_ Impact 1
+5230072 ? - Passage Breath 1: Standby c_ Impact 2
+5230130 ? - Outside stair breath: wait F
+5230200 ? - Outside stair breath: wait g
+5230210 ? - Bell tower Breath: Wait F
+5230220 ? - Bell tower Breath: Wait g
+5230250 ? - Poke/Single Passage breath 2: Wait C
+5230260 ? - Passage Breath 3: Wait C
+5230261 ? - Passage Breath 3: Standby c_ Impact 1
+5230280 ? - Chasing PC while blessing
+5230320 ? - Breath down the stairs: wait D
+5240100 Irithyll Fire Witch - Always Torches
+5240110 Irithyll Fire Witch - Primordial Flame
+5240111 Irithyll Fire Witch - Primordial Flame Hit
+5240200 Irithyll Fire Witch - Fire Line
+5240201 Irithyll Fire Witch - Fire Line Hit
+5240202 Irithyll Fire Witch - Fire Line Hit
+5240203 Irithyll Fire Witch - Fire Line Hit
+5240210 Irithyll Fire Witch - Fire Pillar
+5240211 Irithyll Fire Witch - Fire Pillar Hit
+5240212 Irithyll Fire Witch - Fire Pillar Hit
+5240220 Irithyll Fire Witch - Guided Bullets
+5240225 Irithyll Fire Witch - Fire Spit
+5240230 Irithyll Fire Witch - Fire Spit
+5240240 Irithyll Fire Witch - ?
+5250700 Lothric Princes - Holy Seeking Orb 1
+5250701 Lothric Princes - Holy Seeking Orb 1 Hit
+5250702 Lothric Princes - Holy Seeking Orb 2
+5250703 Lothric Princes - Holy Seeking Orb 2 Hit
+5250710 Lothric Princes - Holy Explosion with Lingering Light Orbs
+5250720 Lothric Princes - ?
+5250721 Lothric Princes - ?
+5250722 Lothric Princes - ?
+5250723 Lothric Princes - ?
+5250724 Lothric Princes - ?
+5250725 Lothric Princes - ?
+5250726 Lothric Princes - ?
+5250727 Lothric Princes - ?
+5250728 Lothric Princes - ?
+5250729 Lothric Princes - ?
+5250730 Lothric Princes - Holy Line Burst
+5250731 Lothric Princes - Holy Line Burst Emitter -
+5250732 Lothric Princes - Holy Line Burst Hit
+5250733 Lothric Princes - Holy Line Burst Hit Hit
+5250740 Lothric Princes - Holy Crystal Soul Spear
+5250750 Lothric Princes - ?
+5250751 Lothric Princes - ?
+5250752 Lothric Princes - ?
+5250753 Lothric Princes - ?
+5252699 Lothric Princes - Purple Crystal Burst - Big
+5252700 Lothric Princes - Purple Crystal Burst - Small
+5252701 Lothric Princes - Purple Crystal Burst - Small
+5252709 Lothric Princes - Purple Crystal Burst - Small
+5252710 Lothric Princes - Purple Crystal Burst - Small
+5252711 Lothric Princes - Purple Crystal Burst - Small
+5252719 Lothric Princes - Purple Crystal Burst - Small
+5252720 Lothric Princes - Purple Crystal Burst - Small
+5252721 Lothric Princes - Purple Crystal Burst - Small
+5260313 Yhorm the Giant - Roar (Old)
+5260600 Yhorm the Giant - Explosion - Heatup
+5260601 Yhorm the Giant - Explosion - Heatup Hit
+5270140 Dancer - Explosion
+5270151 Dancer - Fire Pillar
+5270152 Dancer - Fire Pillar Hit
+5270520 Dancer - Explosion - Heatup
+5270521 Dancer - Explosion - Heatup Hit
+5270721 Dancer - Dark Pillar - Heatup
+5270722 Dancer - Dark Pillar - Heatup Hit
+5270731 Dancer - Fire Pillar - Heatup
+5270732 Dancer - Fire Pillar - Heatup Hit
+5280081 Soul of Cinder - ?
+5280190 Soul of Cinder - Wrath of the Gods
+5280240 Soul of Cinder - Combustion
+5280241 Soul of Cinder - Combustion Hit
+5280245 Soul of Cinder - Fireball
+5280246 Soul of Cinder - Fireball Hit
+5280247 Soul of Cinder - Fireball Hit
+5280255 Soul of Cinder - Poison Mist
+5280256 Soul of Cinder - Poison Mist - Line
+5280257 Soul of Cinder - Poison Mist - Cone
+5280300 Soul of Cinder - Soul Arrow
+5280310 Soul of Cinder - Soul Hail
+5280320 Soul of Cinder - Crystal Soulmass
+5280321 Soul of Cinder - Crystal Soulmass Hit
+5280322 Soul of Cinder - Crystal Soulmass Hit
+5280323 Soul of Cinder - Crystal Soulmass Hit
+5280340 Soul of Cinder - Soul Stream
+5280535 Soul of Cinder - Lightning Burst
+5280536 Soul of Cinder - ?
+5280537 Soul of Cinder - ?
+5280540 Soul of Cinder - Sunlight Spear
+5280550 Soul of Cinder - Heavenly Thunder
+5280551 Soul of Cinder - Heavenly Thunder Hit
+5280552 Soul of Cinder - Heavenly Thunder Hit
+5280555 Soul of Cinder - Heavenly Thunder
+5280556 Soul of Cinder - Heavenly Thunder Hit
+5280558 Soul of Cinder - ?
+5280559 Soul of Cinder - Heavenly Thunder - Low
+5280604 Soul of Cinder - ?
+5280903 Soul of Cinder - ?
+5280904 Soul of Cinder - ?
+5280910 Soul of Cinder - ?
+6000700 Farron Follower - ?
+6000701 Farron Follower - ?
+6000705 Farron Follower - ?
+6000710 Farron Follower - ?
+6000711 Farron Follower - ?
+6000720 Farron Follower - ?
+6000730 Farron Follower - ?
+6000731 Farron Follower - ?
+6000740 Farron Follower - ?
+6000741 Farron Follower - ?
+6000750 Farron Follower - ?
+6010700 Father Ariandel - ?
+6010710 Father Ariandel - ?
+6010711 Father Ariandel - ?
+6010720 Father Ariandel - ?
+6020131 Freide - ?
+6020133 Freide - ?
+6020134 Freide - ?
+6020135 Freide - ?
+6020136 Freide - ?
+6020137 Freide - ?
+6020138 Freide - ?
+6020143 Freide - ?
+6020144 Freide - ?
+6020145 Freide - ?
+6020146 Freide - ?
+6020147 Freide - ?
+6020148 Freide - ?
+6020149 Freide - ?
+6020150 Freide - ?
+6020151 Freide - ?
+6020152 Freide - ?
+6020153 Freide - ?
+6020155 Freide - ?
+6020156 Freide - ?
+6020157 Freide - ?
+6020210 Freide - ?
+6020211 Freide - ?
+6020525 Freide - ?
+6020526 Freide - ?
+6020655 Freide - ?
+6020657 Freide - ?
+6020658 Freide - ?
+6020661 Freide - ?
+6020662 Freide - ?
+6020663 Freide - ?
+6020664 Freide - ?
+6020665 Freide - ?
+6020666 Freide - ?
+6020667 Freide - ?
+6020668 Freide - ?
+6020671 Freide - ?
+6020672 Freide - ?
+6020673 Freide - ?
+6020674 Freide - ?
+6020675 Freide - ?
+6020676 Freide - ?
+6020677 Freide - ?
+6020765 Freide - ?
+6020766 Freide - ?
+6020775 Freide - ?
+6020781 Freide - ?
+6020782 Freide - ?
+6020783 Freide - ?
+6020784 Freide - ?
+6020785 Freide - ?
+6020786 Freide - ?
+6020787 Freide - ?
+6020788 Freide - ?
+6020789 Freide - ?
+6020801 Freide - ?
+6020802 Freide - ?
+6020803 Freide - ?
+6020804 Freide - ?
+6020805 Freide - ?
+6020900 Freide - ?
+6020996 Freide - ?
+6020997 Freide - ?
+6030700 Gravetender Greatwolf - ?
+6040700 Wolf - ?
+6040710 Wolf - ?
+6040720 Wolf - ?
+6040730 Wolf - ?
+6050700 Wolf #2 - ?
+6050710 Wolf #2 - ?
+6050720 Wolf #2 - ?
+6050730 Wolf #2 - ?
+6060700 Tree Woman - ?
+6060701 Tree Woman - ?
+6060702 Tree Woman - ?
+6060703 Tree Woman - ?
+6060704 Tree Woman - ?
+6060710 Tree Woman - ?
+6060711 Tree Woman - ?
+6060712 Tree Woman - ?
+6060713 Tree Woman - ?
+6060714 Tree Woman - ?
+6060715 Tree Woman - ?
+6060716 Tree Woman - ?
+6060717 Tree Woman - ?
+6060718 Tree Woman - ?
+6060719 Tree Woman - ?
+6060720 Tree Woman - ?
+6060721 Tree Woman - ?
+6070700 Corvian Knight - ?
+6070701 Corvian Knight - ?
+6070710 Corvian Knight - ?
+6070720 Corvian Knight - ?
+6070730 Corvian Knight - ?
+6070740 Corvian Knight - ?
+6070750 Corvian Knight - ?
+6070760 Corvian Knight - ?
+6080700 Giant Fly - ?
+6080701 Giant Fly - ?
+6080702 Giant Fly - ?
+6080703 Giant Fly - ?
+6080704 Giant Fly - ?
+6080705 Giant Fly - ?
+6080706 Giant Fly - ?
+6080707 Giant Fly - ?
+6080708 Giant Fly - ?
+6080709 Giant Fly - ?
+6080710 Giant Fly - ?
+6080711 Giant Fly - ?
+6080712 Giant Fly - ?
+6080713 Giant Fly - ?
+6080715 Giant Fly - ?
+6080716 Giant Fly - ?
+6080720 Giant Fly - ?
+6080730 Giant Fly - ?
+6080740 Giant Fly - ?
+6080750 Giant Fly - ?
+6080751 Giant Fly - ?
+6080790 Giant Fly - ?
+6080800 Giant Fly - ?
+6080801 Giant Fly - ?
+6080802 Giant Fly - ?
+6080805 Giant Fly - ?
+6080806 Giant Fly - ?
+6080807 Giant Fly - ?
+6081700 Giant Fly #2 - ?
+6081701 Giant Fly #2 - ?
+6081702 Giant Fly #2 - ?
+6081703 Giant Fly #2 - ?
+6081704 Giant Fly #2 - ?
+6081705 Giant Fly #2 - ?
+6081706 Giant Fly #2 - ?
+6081707 Giant Fly #2 - ?
+6081708 Giant Fly #2 - ?
+6081709 Giant Fly #2 - ?
+6081710 Giant Fly #2 - ?
+6081711 Giant Fly #2 - ?
+6081715 Giant Fly #2 - ?
+6081716 Giant Fly #2 - ?
+6081720 Giant Fly #2 - ?
+6081730 Giant Fly #2 - ?
+6081790 Giant Fly #2 - ?
+6081800 Giant Fly #2 - ?
+6081801 Giant Fly #2 - ?
+6081802 Giant Fly #2 - ?
+6081805 Giant Fly #2 - ?
+6081806 Giant Fly #2 - ?
+6081807 Giant Fly #2 - ?
+6090700 Giant Fly #3 - ?
+6090701 Giant Fly #3 - ?
+6090702 Giant Fly #3 - ?
+6090703 Giant Fly #3 - ?
+6090704 Giant Fly #3 - ?
+6100700 Millwood Knight - ?
+6100701 Millwood Knight - ?
+6100702 Millwood Knight - ?
+6100703 Millwood Knight - ?
+6100704 Millwood Knight - ?
+6100705 Millwood Knight - ?
+6100710 Millwood Knight - ?
+6100711 Millwood Knight - ?
+6100712 Millwood Knight - ?
+6100713 Millwood Knight - ?
+6100714 Millwood Knight - ?
+6100720 Millwood Knight - ?
+6100750 Millwood Knight - ?
+6100850 Millwood Knight - ?
+6100851 Millwood Knight - ?
+6100860 Millwood Knight - ?
+6100861 Millwood Knight - ?
+6100862 Millwood Knight - ?
+6100863 Millwood Knight - ?
+6100870 Millwood Knight - ?
+6100871 Millwood Knight - ?
+6100872 Millwood Knight - ?
+6100873 Millwood Knight - ?
+6130700 Great Crab - ?
+6200700 Slave Knight Gael - ?
+6200710 Slave Knight Gael - ?
+6200720 Slave Knight Gael - ?
+6200721 Slave Knight Gael - ?
+6200722 Slave Knight Gael - ?
+6200723 Slave Knight Gael - ?
+6200724 Slave Knight Gael - ?
+6200730 Slave Knight Gael - Halo
+6200731 Slave Knight Gael - Halo
+6200732 Slave Knight Gael - Halo
+6200740 Slave Knight Gael - ?
+6200750 Slave Knight Gael - ?
+6200900 Slave Knight Gael - ?
+6200901 Slave Knight Gael - ?
+6200902 Slave Knight Gael - Blue Lightning #2
+6200903 Slave Knight Gael - Blue Lightning Hit
+6200920 Slave Knight Gael - ?
+6200921 Slave Knight Gael - ?
+6200950 Slave Knight Gael - Blue Lightning
+6200951 Slave Knight Gael - Blue Lightning
+6200952 Slave Knight Gael - Blue Lightning
+6200953 Slave Knight Gael - Blue Lightning
+6200954 Slave Knight Gael - Blue Lightning
+6200960 Slave Knight Gael - Blue Lightning #2
+6200961 Slave Knight Gael - Blue Lightning #2
+6200962 Slave Knight Gael - Blue Lightning #2
+6201700 Slave Knight Gael - Initial - ?
+6210700 Darkeater Midir - ?
+6210701 Darkeater Midir - ?
+6210702 Darkeater Midir - ?
+6210703 Darkeater Midir - ?
+6210705 Darkeater Midir - ?
+6210706 Darkeater Midir - ?
+6210707 Darkeater Midir - ?
+6210708 Darkeater Midir - ?
+6210710 Darkeater Midir - ?
+6210720 Darkeater Midir - ?
+6210721 Darkeater Midir - ?
+6210725 Darkeater Midir - ?
+6210726 Darkeater Midir - ?
+6210730 Darkeater Midir - ?
+6210750 Darkeater Midir - ?
+6210760 Darkeater Midir - ?
+6210761 Darkeater Midir - ?
+6210762 Darkeater Midir - ?
+6210763 Darkeater Midir - ?
+6210764 Darkeater Midir - ?
+6210765 Darkeater Midir - ?
+6210766 Darkeater Midir - ?
+6210767 Darkeater Midir - ?
+6210770 Darkeater Midir - ?
+6210771 Darkeater Midir - ?
+6210772 Darkeater Midir - ?
+6210775 Darkeater Midir - ?
+6210776 Darkeater Midir - ?
+6210777 Darkeater Midir - ?
+6210780 Darkeater Midir - ?
+6210781 Darkeater Midir - ?
+6210782 Darkeater Midir - ?
+6210785 Darkeater Midir - ?
+6210786 Darkeater Midir - ?
+6210787 Darkeater Midir - ?
+6210790 Darkeater Midir - ?
+6210791 Darkeater Midir - ?
+6210792 Darkeater Midir - ?
+6210795 Darkeater Midir - ?
+6210796 Darkeater Midir - ?
+6210797 Darkeater Midir - ?
+6210800 Darkeater Midir - ?
+6210801 Darkeater Midir - ?
+6210802 Darkeater Midir - ?
+6210805 Darkeater Midir - ?
+6210806 Darkeater Midir - ?
+6210807 Darkeater Midir - ?
+6210810 Darkeater Midir - ?
+6210811 Darkeater Midir - ?
+6210812 Darkeater Midir - ?
+6210815 Darkeater Midir - ?
+6210816 Darkeater Midir - ?
+6210817 Darkeater Midir - ?
+6210820 Darkeater Midir - ?
+6210821 Darkeater Midir - ?
+6210822 Darkeater Midir - ?
+6210825 Darkeater Midir - ?
+6210826 Darkeater Midir - ?
+6210827 Darkeater Midir - ?
+6210830 Darkeater Midir - ?
+6210831 Darkeater Midir - ?
+6210832 Darkeater Midir - ?
+6210835 Darkeater Midir - ?
+6210836 Darkeater Midir - ?
+6210837 Darkeater Midir - ?
+6210840 Darkeater Midir - ?
+6210841 Darkeater Midir - ?
+6210842 Darkeater Midir - ?
+6210845 Darkeater Midir - ?
+6210846 Darkeater Midir - ?
+6210847 Darkeater Midir - ?
+6210850 Darkeater Midir - ?
+6210860 Darkeater Midir - ?
+6210862 Darkeater Midir - ?
+6210870 Darkeater Midir - ?
+6210871 Darkeater Midir - ?
+6210880 Darkeater Midir - ?
+6210881 Darkeater Midir - ?
+6211400 Darkeater Midir - ?
+6211410 Darkeater Midir - ?
+6211420 Darkeater Midir - ?
+6211422 Darkeater Midir - ?
+6211423 Darkeater Midir - ?
+6211429 Darkeater Midir - ?
+6211440 Darkeater Midir - ?
+6211462 Darkeater Midir - ?
+6211470 Darkeater Midir - ?
+6211481 Darkeater Midir - ?
+6211482 Darkeater Midir - ?
+6211483 Darkeater Midir - ?
+6211487 Darkeater Midir - ?
+6211488 Darkeater Midir - ?
+6211489 Darkeater Midir - ?
+6211800 Darkeater Midir - ?
+6211801 Darkeater Midir - ?
+6211802 Darkeater Midir - ?
+6211803 Darkeater Midir - ?
+6211804 Darkeater Midir - ?
+6211805 Darkeater Midir - ?
+6211905 Darkeater Midir - ?
+6230700 Murkman - Deep Soul
+6231700 Murkman - Spirit Rush
+6231701 Murkman - Spirit Rush
+6240700 Pilgrim Pulpa - ?
+6250100 Pilgrim Angel - 3000 - Holy Barrage 1
+6250101 Pilgrim Angel - 3000 - Holy Barrage 1
+6250102 Pilgrim Angel - 3000 - Holy Barrage 1
+6250103 Pilgrim Angel - 3000 - Holy Barrage 1
+6250110 Pilgrim Angel - 3000 - Holy Barrage 1
+6250111 Pilgrim Angel - 3000 - Holy Barrage 1
+6250112 Pilgrim Angel - 3000 - Holy Barrage 1
+6250113 Pilgrim Angel - 3000 - Holy Barrage 1
+6250200 Pilgrim Angel - 3000 - Holy Barrage 2
+6250201 Pilgrim Angel - 3000 - Holy Barrage 2
+6250202 Pilgrim Angel - 3000 - Holy Barrage 2
+6250203 Pilgrim Angel - 3000 - Holy Barrage 2
+6250210 Pilgrim Angel - 3000 - Holy Barrage 2
+6250211 Pilgrim Angel - 3000 - Holy Barrage 2
+6250212 Pilgrim Angel - 3000 - Holy Barrage 2
+6250213 Pilgrim Angel - 3000 - Holy Barrage 2
+6250300 Pilgrim Angel - 3000 - Holy Barrage 3
+6250301 Pilgrim Angel - 3000 - Holy Barrage 3
+6250302 Pilgrim Angel - 3000 - Holy Barrage 3
+6250303 Pilgrim Angel - 3000 - Holy Barrage 3
+6250310 Pilgrim Angel - 3000 - Holy Barrage 3
+6250311 Pilgrim Angel - 3000 - Holy Barrage 3
+6250312 Pilgrim Angel - 3000 - Holy Barrage 3
+6250313 Pilgrim Angel - 3000 - Holy Barrage 3
+6250740 Pilgrim Angel -
+6250741 Pilgrim Angel - Curse Mist
+6250742 Pilgrim Angel - Curse Mist Fog -
+6250750 Pilgrim Angel - Swoop Down - Holy Burst
+6250751 Pilgrim Angel - Swoop Down - Holy Burst
+6250752 Pilgrim Angel - Swoop Down - Holy Burst
+6250755 Pilgrim Angel - Swoop Down - Holy Burst
+6250756 Pilgrim Angel - Swoop Down - Holy Burst
+6250757 Pilgrim Angel - Swoop Down - Holy Burst
+6250759 Pilgrim Angel - Holy Barrage Hit
+6250800 Pilgrim Angel - Curse Mist
+6260700 Ringed Knight - ?
+6260701 Ringed Knight - ?
+6260705 Ringed Knight - ?
+6260709 Ringed Knight - ?
+6260710 Ringed Knight - ?
+6260711 Ringed Knight - ?
+6260712 Ringed Knight - ?
+6260713 Ringed Knight - ?
+6260714 Ringed Knight - ?
+6260730 Ringed Knight - ?
+6260731 Ringed Knight - ?
+6260750 Ringed Knight - ?
+6260770 Ringed Knight - ?
+6260800 Ringed Knight - ?
+6260805 Ringed Knight - ?
+6260810 Ringed Knight - ?
+6260811 Ringed Knight - ?
+6260812 Ringed Knight - ?
+6260813 Ringed Knight - ?
+6260814 Ringed Knight - ?
+6260815 Ringed Knight - ?
+6260816 Ringed Knight - ?
+6260817 Ringed Knight - ?
+6260818 Ringed Knight - ?
+6260819 Ringed Knight - ?
+6260820 Ringed Knight - ?
+6260830 Ringed Knight - ?
+6260831 Ringed Knight - ?
+6260832 Ringed Knight - ?
+6260833 Ringed Knight - ?
+6260834 Ringed Knight - ?
+6260835 Ringed Knight - ?
+6260836 Ringed Knight - ?
+6260837 Ringed Knight - ?
+6260850 Ringed Knight - ?
+6260870 Ringed Knight - ?
+6260880 Ringed Knight - ?
+6260881 Ringed Knight - ?
+6260890 Ringed Knight - ?
+6270070 Lothric Thief - ?
+6270170 Lothric Thief - ?
+6270700 Lothric Thief - ?
+6270710 Lothric Thief - ?
+6270711 Lothric Thief - ?
+6270720 Lothric Thief - ?
+6270721 Lothric Thief - ?
+6280300 Judicator - ?
+6280301 Judicator - ?
+6280302 Judicator - ?
+6280303 Judicator - ?
+6280304 Judicator - ?
+6280305 Judicator - ?
+6280306 Judicator - ?
+6280307 Judicator - ?
+6280308 Judicator - ?
+6280309 Judicator - ?
+6280310 Judicator - ?
+6280312 Judicator - Ruin Knight Archer Ghost
+6280313 Judicator - Ruin Knight Archer Ghost
+6280314 Judicator - ?
+6280315 Judicator - Arrow
+6280316 Judicator - Ruin Knight Archer Ghost
+6280317 Judicator - Ruin Knight Archer Ghost
+6280320 Judicator - ?
+6280321 Judicator - ?
+6280322 Judicator - ?
+6280325 Judicator - ?
+6280326 Judicator - ?
+6280330 Judicator - ?
+6280331 Judicator - ?
+6280332 Judicator - Knight Ghost
+6280333 Judicator - Witch Ghost with Dark Edge
+6280334 Judicator - ?
+6280335 Judicator - ?
+6280336 Judicator - ?
+6280337 Judicator - Dark Fire Line
+6280338 Judicator - Witch Ghost
+6280339 Judicator - ?
+6280340 Judicator - ?
+6280341 Judicator - ?
+6280342 Judicator - Ledo Ghost
+6280343 Judicator - Ledo Ghost
+6280344 Judicator - ?
+6280345 Judicator - Ledo Ghost
+6280346 Judicator - ?
+6280347 Judicator - Ledo Ghost
+6280348 Judicator - ?
+6280349 Judicator - ?
+6280390 Judicator - ?
+6280392 Judicator - Spread Fire Burst
+6280393 Judicator - Dragonform Ghost + Breathe Fire
+6280395 Judicator - ?
+6280396 Judicator - Forward Fire Burst
+6280397 Judicator - Wide Scattered Ground Fire
+6280398 Judicator - Dragonform Ghost
+6280399 Judicator - ?
+6280800 Judicator - ?
+6280900 Judicator - ?
+6280910 Judicator - ?
+6280920 Judicator - ?
+6280930 Judicator - ?
+6290050 Hollow Cleric - ?
+6290051 Hollow Cleric - ?
+6290052 Hollow Cleric - ?
+6290055 Hollow Cleric - ?
+6290056 Hollow Cleric - ?
+6290057 Hollow Cleric - ?
+6290060 Hollow Cleric - ?
+6290061 Hollow Cleric - ?
+6290062 Hollow Cleric - ?
+6290063 Hollow Cleric - ?
+6290065 Hollow Cleric - ?
+6290066 Hollow Cleric - ?
+6290080 Hollow Cleric - ?
+6290081 Hollow Cleric - ?
+6290085 Hollow Cleric - ?
+6290086 Hollow Cleric - ?
+11200000 Farron Dart
+11300000 Soul Arrow
+11302000 Shockwave
+11303000 Soul Geyser - Main Projectile
+11304000 Homing Soulmass
+11305000 Homing Crystal Soulmass
+11306000 Soul Spear
+11307000 Crystal Soul Spear
+11308000 Deep Soul
+11309000 Great Deep Soul
+11356000 Aural Decoy
+11356010 Aural Decoy Hit
+11370000 White Dragon Breath
+11370010 White Dragon Breath unused -
+11370020 White Dragon Breath Hit
+11370030 White Dragon Breath Hit
+11370040 White Dragon Breath Hit
+11370050 White Dragon Breath Hit
+11370060 White Dragon Breath Hit
+11370070 White Dragon Breath Hit
+11370080 White Dragon Breath Hit
+11370090 White Dragon Breath Hit
+11370100 White Dragon Breath Hit
+11370110 White Dragon Breath Hit
+11370120 White Dragon Breath Hit
+11370130 White Dragon Breath Hit
+11370140 White Dragon Breath Hit
+11370150 White Dragon Breath unused -
+11370160 White Dragon Breath unused -
+11370170 White Dragon Breath unused -
+11372000 Farron Hail
+11372100 Farron Hail
+11373000 Crystal Hail
+11373100 Crystal Hail Emitter -
+11373200 Crystal Hail Emitter Hit
+11373300 Crystal Hail
+11373400 Crystal Hail Emitter -
+11373500 Crystal Hail Emitter Hit
+11376000 Old Moonlight
+11376001 Old Moonlight Hit
+11376100 Old Moonlight
+11376101 Old Moonlight Hit
+11603000 Affinity
+11603100 Affinity Hit
+11604000 Great Soul Dregs
+11620000 Soul Stream Emitter -
+11620100 Soul Stream Hit
+11620200 Soul Stream
+11620300 Soul Stream
+11651000 Twisted Wall of Light
+11651100 Twisted Wall of Light
+11740000 Pestilent Mist
+11740100 Pestilent Mist Hit
+11740101 Pestilent Mist Hit
+11740102 Pestilent Mist Hit
+12400000 Fireball
+12400100 Fireball Hit
+12402000 Fire Orb
+12402100 Fire Orb Hit
+12403000 Firestorm
+12403100 Outcry
+12405000 Fire Surge
+12407000 Black Serpent
+12407100 Black Serpent Hit
+12407200 Black Serpent Hit
+12411000 Great Combustion
+12411100 Great Combustion Hit
+12411200 Great Combustion Hit
+12420000 Poison Mist
+12421000 Toxic Mist
+12422000 Acid Surge
+12430000 Iron Flesh
+12436000 Rapport
+12450000 Great Chaos Fire Orb
+12450100 Great Chaos Fire Orb Hit
+12450200 Great Chaos Fire Orb Hit
+12450300 Great Chaos Fire Orb Hit
+12451000 Chaos Storm
+12451100 Repeating Chaos Storm
+12452000 Fire Whip
+12453000 Black Flame
+12453100 Black Flame Hit
+12453200 Black Flame Hit
+12455000 Profaned Flame
+12455100 Profaned Flame Hit
+12455200 Profaned Flame Hit
+12456000 Chaos Bed Vestiges
+12456100 Chaos Bed Vestiges Hit
+12456200 Chaos Bed Vestiges
+12456210 Chaos Bed Vestiges Hit
+12457000 Floating Chaos
+12457010 Floating Chaos
+12457100 Floating Chaos Emitter -
+12457110 Floating Chaos Bullet -
+12458000 Flame Fan
+12458010 Flame Fan
+12470000 Warmth
+12600000 Dark Orb unused -
+12600100 Dark Orb unused - Hit
+12610000 Black Fire Orb
+12610100 Black Fire Orb Hit
+12620000 Bursting Fireball
+12620100 Bursting Fireballl Hit
+12620200 Bursting Fireball Hit
+12630000 Boulder Heave
+12630100 Boulder Heave Hit
+12660000 Seething Chaos
+12660010 Seething Chaos Hit
+12660020 Seething Chaos Hit
+12660025 Seething Chaos Hit
+12660030 Seething Chaos Hit
+13490000 Heal Aid
+13500000 Heal
+13500006 Heal
+13500100 Heal Hit
+13500106 Heal Hit
+13501000 Med Heal
+13501006 Med Heal
+13501100 Med Heal Hit
+13501106 Med Heal Hit
+13502000 Great Heal
+13502006 Great Heal
+13502100 Great Heal Hit
+13502106 Great Heal Hit
+13503000 Soothing Sunlight
+13503006 Soothing Sunlight
+13503100 Soothing Sunlight Hit
+13503106 Soothing Sunlight Hit
+13505000 Bountiful Sunlight
+13505006 Bountiful Sunlight
+13505100 Bountiful Sunlight Hit
+13505106 Bountiful Sunlight Hit
+13508000 Caressing Tears
+13508006 Caressing Tears
+13509000 Lightning Arrow
+13513000 Morbid Temptation unused -
+13530000 Force
+13531000 Wrath of the Gods
+13532000 Emit Force
+13532100 Emit Force Hit
+13540000 Heavenly Relief
+13540010 Heavenly Relief Hit
+13550000 Lightning Spear
+13550100 Lightning Spear Projectile -
+13551000 Great Lightning Spear
+13551100 Great Lightning Spear Projectile -
+13552000 Sunlight Spear
+13552100 Sunlight Spear Projectile -
+13553000 Lightning Storm
+13553100 Lightning Storm
+13553200 Lightning Storm Hit
+13553300 Lightning Storm
+13553400 Lightning Storm
+13553500 Lightning Storm
+13553600 Lightning Storm Hit
+13553700 Lightning Storm
+13553800 Lightning Storm
+13554000 Gnaw
+13555000 Dorhys' Gnawing
+13556000 Way of White Corona
+13556010 Way of White Corona Hit
+13556020 Way of White Corona Hit
+13556021 Way of White Corona Hit
+13557000 Projected Heal
+13557006 Projected Heal
+13557010 Projected Heal Hit
+13557016 Projected Heal Hit
+13563000 Sacred Oath
+13563006 Sacred Oath
+13581000 Vow of Silence
+13581006 Vow of Silence
+13700000 Dead Again - Source Bullet (unused)
+13700100 Dead Again - Finder Bullet - Tier 1
+13700110 Dead Again - Finder Bullet - Tier 2
+13700120 Dead Again - Finder Bullet - Tier 3
+13700130 Dead Again - Finder Bullet - Tier 4
+13700140 Dead Again - Finder Bullet - Tier 5
+13700150 Dead Again - Finder Bullet - Tier 6
+13700160 Dead Again - Finder Bullet - Tier 7
+13700170 Dead Again - Finder Bullet - Tier 8
+13700180 Dead Again - Finder Bullet - Tier 9
+13700200 Dead Again - Finder Bullet Hit - Tier 1
+13700210 Dead Again - Finder Bullet Hit - Tier 2
+13700220 Dead Again - Finder Bullet Hit - Tier 3
+13700230 Dead Again - Finder Bullet Hit - Tier 4
+13700240 Dead Again - Finder Bullet Hit - Tier 5
+13700250 Dead Again - Finder Bullet Hit - Tier 6
+13700260 Dead Again - Finder Bullet Hit - Tier 7
+13700270 Dead Again - Finder Bullet Hit - Tier 8
+13700280 Dead Again - Finder Bullet Hit - Tier 9
+13710000 Lightning Stake
+13710100 Sunlight Stake
+13720000 Divine Pillars of Light
+13720100 Repeating Pillars of Light
+13730000 Lifehunt Scythe
+13730100 Lifehunt Scythe
+13730200 Lifehunt Scythe
+13730300 Lifehunt Scythe
+13730400 Lifehunt Scythe
+100010800 Tailbone Short Sword - Unleash Dragon
+100010810 Tailbone Short Sword - Unleash Dragon Emitter -
+100010820 Tailbone Short Sword - Unleash Dragon Hit
+100021100 Sunlight Straight Sword - Oath of Sunlight
+100021110 Sunlight Straight Sword - Oath of Sunlight Hit
+100022400 Onyx Blade - Elfriede's Blackflame
+100040800 Storm Curved Sword - Tornado
+100040810 Storm Curved Sword - Tornado
+100040820 Storm Curved Sword - Tornado
+100041000 Crescent Moon Sword - Crescent Blade
+100041300 Demon's Scar - Spin Slash
+100041301 Demon's Scar - Spin Slash Hit
+100050600 Frayed Blade - Hold
+100050601 Frayed Blade - Hold Hit
+100050602 Frayed Blade - Hold Hit
+100050603 Frayed Blade - Hold Hit
+100050604 Frayed Blade - Hold Hit
+100050605 Frayed Blade - Hold Hit
+100050606 Frayed Blade - Hold Hit
+100050607 Frayed Blade - Hold Hit
+100050608 Frayed Blade - Hold Hit
+100050609 Frayed Blade - Hold Hit
+100050610 Frayed Blade - Hold
+100050611 Frayed Blade - Hold Hit
+100050612 Frayed Blade - Hold Hit
+100050613 Frayed Blade - Hold Hit
+100050614 Frayed Blade - Hold Hit
+100050615 Frayed Blade - Hold Hit
+100050620 Frayed Blade - Hold
+100061700 Greatsword of Judgment - Stance of Judgment (Wave)
+100061800 Profaned Greatsword - Strong Attack 1H
+100061801 Profaned Greatsword - Strong Attack 1H Hit
+100061802 Profaned Greatsword - Strong Attack 1H Hit
+100061810 Profaned Greatsword - Strong Attack 1H
+100061811 Profaned Greatsword - Strong Attack 1H Hit
+100061812 Profaned Greatsword - Strong Attack 1H Hit
+100061820 Profaned Greatsword - Strong Attack 2H
+100061821 Profaned Greatsword - Strong Attack 2H Hit
+100061822 Profaned Greatsword - Strong Attack 2H Hit
+100061830 Profaned Greatsword - Strong Attack 2H
+100061831 Profaned Greatsword - Strong Attack 2H Hit
+100061832 Profaned Greatsword - Strong Attack 2H Hit
+100061840 Profaned Greatsword - Profaned Flame
+100061841 Profaned Greatsword - Profaned Flame Hit
+100061842 Profaned Greatsword - Profaned Flame Hit
+100062600 Lorian's Greatsword - Flame of Lorian
+100062610 Lorian's Greatsword - Flame of Lorian Hit
+100062611 Lorian's Greatsword - Flame of Lorian Hit
+100062612 Lorian's Greatsword - Flame of Lorian Hit
+100062613 Lorian's Greatsword - Flame of Lorian Hit
+100062614 Lorian's Greatsword - Flame of Lorian Hit
+100062615 Lorian's Greatsword - Flame of Lorian Hit
+100062700 Twin Princes' Greatsword - Sacred Light and Flame
+100062710 Twin Princes' Greatsword - Sacred Light and Flame
+100062720 Twin Princes' Greatsword - Sacred Light and Flame
+100062721 Twin Princes' Greatsword - Sacred Light and Flame
+100062722 Twin Princes' Greatsword - Sacred Light and Flame
+100062723 Twin Princes' Greatsword - Sacred Light and Flame
+100062724 Twin Princes' Greatsword - Sacred Light and Flame
+100062725 Twin Princes' Greatsword - Sacred Light and Flame
+100062800 Lothric's Holy Sword - Sacred Lothric Light
+100062900 Wolnir's Holy Sword - Wrath of the Gods
+100062910 Wolnir's Holy Sword - Wrath of the Gods Hit
+100063200 Moonlight Greatsword - 1H Heavy #1 (Charged) - Vertical Wave
+100063210 Moonlight Greatsword - 1H Heavy #2 (Charged) - Horizontal Wave
+100063220 Moonlight Greatsword - 2H Heavy #1 (Charged) - Horizontal Wave
+100063230 Moonlight Greatsword - 2H Heavy #2 (Charged) - Horizontal Wave
+100063240 Moonlight Greatsword - Moonlight Vortex
+100063400 Firelink Greatsword - Ember
+100063410 Firelink Greatsword - Ember Emitter -
+100063411 Firelink Greatsword - Ember Hit
+100063412 Firelink Greatsword - Ember Hit
+100063413 Firelink Greatsword - Ember Hit
+100063414 Firelink Greatsword - Ember Hit
+100063415 Firelink Greatsword - Ember Hit
+100063416 Firelink Greatsword - Ember Hit
+100063417 Firelink Greatsword - Ember Hit
+100063418 Firelink Greatsword - Ember Hit
+100063419 Firelink Greatsword - Ember Hit
+100063730 Storm Ruler - Storm King
+100063731 Storm Ruler - Storm King
+100063732 Storm Ruler - Storm King
+100063740 Storm Ruler - Storm King
+100063741 Storm Ruler - Storm King
+100071100 Dragonslayer Greataxe - Falling Bolt
+100071110 Dragonslayer Greataxe - Falling Bolt Hit
+100071111 Dragonslayer Greataxe - Falling Bolt Hit
+100071112 Dragonslayer Greataxe - Falling Bolt Hit
+100071113 Dragonslayer Greataxe - Falling Bolt Hit
+100071114 Dragonslayer Greataxe - Falling Bolt Hit
+100071115 Dragonslayer Greataxe - Falling Bolt Hit
+100071116 Dragonslayer Greataxe - Falling Bolt Hit
+100071117 Dragonslayer Greataxe - Falling Bolt Hit
+100071200 Demon's Great Axe - Demonic Flare
+100071800 Earth Seeker - Earthen Wrath
+100071801 Earth Seeker - Earthen Wrath Hit
+100071802 Earth Seeker - Earthen Wrath Hit
+100071803 Earth Seeker - Earthen Wrath Hit
+100071811 Earth Seeker - Earthen Wrath Hit
+100071812 Earth Seeker - Earthen Wrath Hit
+100071813 Earth Seeker - Earthen Wrath Hit
+100081700 Gargoyle Flame Hammer - Kindled Flurry
+100081710 Gargoyle Flame Hammer - Kindled Flurry
+100081900 Old King's Great Hammer - Molten Perseverance
+100081910 Old King's Great Hammer - Molten Perseverance
+100082900 Morne's Great Hammer - Morne's Rage
+100082910 Morne's Great Hammer - Morne's Rage Hit
+100082920 Morne's Great Hammer - Morne's Rage Hit
+100083200 Ledo's Great Hammer - Call to Stone
+100083201 Ledo's Great Hammer - Call to Stone Hit
+100083202 Ledo's Great Hammer - Call to Stone Hit
+100091100 Gargoyle Flame Spear - Kindled Charge
+100091105 Gargoyle Flame Spear - Kindled Charge
+100091300 Tailbone Spear - Unleash Dragon
+100091310 Tailbone Spear - Unleash Dragon
+100091400 Soldering Iron - Charge
+100091600 Dragonslayer Swordspear - Falling Bolt
+100091610 Dragonslayer Swordspear - Falling Bolt Hit
+100091620 Dragonslayer Swordspear - Falling Bolt Hit
+100091630 Dragonslayer Swordspear - Falling Bolt Hit
+100092200 Dragonslayer Spear - Lightning Charge
+100092210 Dragonslayer Spear - Lightning Charge
+100092220 Dragonslayer Spear - Lightning Charge
+100092230 Dragonslayer Spear - Lightning Charge
+100092300 Follower Javelin - Hurl Spear
+100092301 Follower Javelin - Hurl Spear Hit
+100092310 Follower Javelin - Hurl Spear
+100092311 Follower Javelin - Hurl Spear Hit
+100092400 Ringed Knight Spear - Ember
+100092401 Ringed Knight Spear - Ember Hit
+100092402 Ringed Knight Spear - Ember Hit
+100092403 Ringed Knight Spear - Ember Hit
+100092404 Ringed Knight Spear - Ember Hit
+100092405 Ringed Knight Spear - Ember Hit
+100092406 Ringed Knight Spear - Ember Hit
+100092407 Ringed Knight Spear - Ember Hit
+100092408 Ringed Knight Spear - Ember Hit
+100092409 Ringed Knight Spear - Ember Hit
+100092500 Lothric War Banner - Lothric War Banner
+100092610 Crucifix of the Mad King - Mad King's Folly
+100092620 Crucifix of the Mad King - Mad King's Folly
+100092640 Crucifix of the Mad King - Mad King's Folly
+100092641 Crucifix of the Mad King - Mad King's Folly
+100092642 Crucifix of the Mad King - Mad King's Folly
+100092643 Crucifix of the Mad King - Mad King's Folly
+100100700 Pontiff Knight Great Scythe - Frost
+100101600 Immolation Tinder - Punitive Flame
+100101610 Immolation Tinder - Punitive Flame Hit
+100101611 Immolation Tinder - Punitive Flame Hit
+100101612 Immolation Tinder - Punitive Flame Hit
+100101613 Immolation Tinder - Punitive Flame Hit
+100101614 Immolation Tinder - Punitive Flame Hit
+100101615 Immolation Tinder - Punitive Flame Hit
+100101616 Immolation Tinder - Punitive Flame Hit
+100101617 Immolation Tinder - Punitive Flame Hit
+100101618 Immolation Tinder - Punitive Flame Hit
+100101619 Immolation Tinder - Punitive Flame Hit
+100101700 Splitleaf Greatsword - Wind Wheel
+100101800 Friede's Great Scythe - Elfriede's Stance
+100101801 Friede's Great Scythe - Elfriede's Stance
+100101805 Friede's Great Scythe - Elfriede's Stance
+100101806 Friede's Great Scythe - Elfriede's Stance
+100101807 Friede's Great Scythe - Elfriede's Stance
+100101810 Friede's Great Scythe - Elfriede's Stance
+100101811 Friede's Great Scythe - Elfriede's Stance
+100101812 Friede's Great Scythe - Elfriede's Stance
+100101815 Friede's Great Scythe - Elfriede's Stance
+100101816 Friede's Great Scythe - Elfriede's Stance
+100101817 Friede's Great Scythe - Elfriede's Stance
+100101850 Friede's Great Scythe - Elfriede's Stance
+100101851 Friede's Great Scythe - Elfriede's Stance
+100101852 Friede's Great Scythe - Elfriede's Stance
+100101855 Friede's Great Scythe - Elfriede's Stance
+100101856 Friede's Great Scythe - Elfriede's Stance
+100101857 Friede's Great Scythe - Elfriede's Stance
+100101860 Friede's Great Scythe - Elfriede's Stance
+100101861 Friede's Great Scythe - Elfriede's Stance
+100101862 Friede's Great Scythe - Elfriede's Stance
+100101899 Friede's Great Scythe - Elfriede's Stance
+100110000 Claw - Leaping Slash
+100110300 Demon's Fist - Flame Whirlwind
+100110310 Demon's Fist - Flame Whirlwind
+100110320 Demon's Fist - Flame Whirlwind
+100110325 Demon's Fist - Flame Whirlwind Hit
+100130700 Corvian Longstaff - Curse Spores
+100134005 Pyromancy Flame - Combustion
+100134015 Pyromancy Flame - Combustion
+100134025 Pyromancy Flame - Combustion
+100134300 Sacred Chime of Filianore - Pray for Favor
+100161500 Crow Quills - Quill Dart
+100161510 Crow Quills - Quill Dart
+100161600 Ringed Knight Paired Greatswords - Ember
+100161601 Ringed Knight Paired Greatswords - Ember
+100161602 Ringed Knight Paired Greatswords - Ember
+100161610 Ringed Knight Paired Greatswords - Ember
+100202800 Shield - Spell Parry
+100202810 Shield - Parry
+100203100 Dragonhead Greatshield - Dragon Roar
+100213100 Dragonhead Shield - Dragon Breath
+100213101 Dragonhead Shield - Dragon Breath Hit
+100220410 Dragonslayer Greatshield - Bash
+100220415 Dragonslayer Greatshield - Bash
+104901700 Follower Torch - Breathe Fire
+104901701 Follower Torch - Breathe Fire Hit
+104901710 Follower Torch - Breathe Fire
+104901711 Follower Torch - Breathe Fire

@@ -1,0 +1,16 @@
+<class name='hkbCharacterInfo' version='1' signature='0xe5e3cae6' size='32' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Event' flags='00000000'>
+      <enumitem name='REMOVED_FROM_WORLD' value='0'/>
+      <enumitem name='SHOWN' value='1'/>
+      <enumitem name='HIDDEN' value='2'/>
+      <enumitem name='ACTIVATED' value='3'/>
+      <enumitem name='DEACTIVATED' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='characterId' offset='16' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='event' offset='24' etype='Event' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='28' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

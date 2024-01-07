@@ -1,0 +1,6 @@
+<class name='hkpEntityExtendedListeners' version='1' signature='0xf557023c' size='32'>
+  <members>
+    <member name='activationListeners' offset='0' ctype='hkpEntitySmallArraySerializeOverrideType' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='entityListeners' offset='16' ctype='hkpEntitySmallArraySerializeOverrideType' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

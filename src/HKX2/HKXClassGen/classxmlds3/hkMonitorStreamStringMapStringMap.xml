@@ -1,0 +1,6 @@
+<class name='hkMonitorStreamStringMapStringMap' version='1' signature='0x2c76ce16' size='16'>
+  <members>
+    <member name='id' offset='0' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='string' offset='8' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name='hkaiTraversalAnalysisInput' version='1' signature='0xd9cfefe7' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='sections' offset='16' ctype='hkaiTraversalAnalysisInputSection' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

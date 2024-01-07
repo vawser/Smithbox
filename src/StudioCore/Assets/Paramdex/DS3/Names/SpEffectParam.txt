@@ -1,0 +1,2843 @@
+0 For testing 
+1 Pledge effect test 
+2 Test_enchantweapon 
+3 Test_cure 
+4 Item - White Sign Soapstone
+5 Test_cureitem 
+6 【 system 】 Kickout 
+7 Item - Black Separation Crystal
+8 System: Parameter changes during ghosting 
+9 【 system 】 Black parameter change 
+10 Item - Red Sign Soapstone
+11 Item - Cracked Red Eye Orb
+12 【 system 】 Bloodsign 
+13 (System) Soul steel (multi) 
+14 (System) Blue sign Visualization 
+15 Item - Black Eye Orb
+16 【 system 】 NITs intrusion sign barreling 
+17 【 system 】 L Arena exit 
+20 【 System 】 Evaluation effect 
+21 (System) Point light source equipment 
+22 Test_change_wep0 
+23 Test_change_wep1 
+24 【 system 】 Request for rescue 
+25 (System) effect for revival production 
+26 【 system 】 Invasion of the prize neck 
+27 (System) to scatter the scales of dragons 
+28 Item - Dried Finger
+30 Paris State (throwing conditions) 
+31 Counter damage (puncture) 
+32 Player is falling (throwing condition) 
+33 Petrified 
+34 Crystallization 
+35 Throwing invalid state 
+36 Throwing ring equipment (throwing conditions) 
+37 Soul Drain Throw condition 
+38 Enhanced throwing damage up effect 
+39 【 DLC 】 Throwing disabled state _ for prevention of saddle 
+40 No resonance 
+41 Resonance LV1 
+42 Resonance Lv2 
+43 Resonance Lv3 
+44 Resonance lv4 
+45 Caries deaths 
+50 Magic Nature (slot + 3 version) 
+52 PG Test: Detection 
+53 PG Test: Waiting for cooperation 
+54 PG Test: Cooperation 
+55 PG Test: Cooperating send 
+57 PG Test: Gravity disabled 
+59 Cooperation LV1 
+60 Cooperation LV2 
+61 Cooperation Lv3 
+62 Waiting for cooperation 
+63 Evil Eye Lv1 
+64 Evil Eye Lv2 
+65 The Evil eye (for use) 
+71 Curse effect _LV1 
+72 Curse effect _lv2 
+73 Curse effect _lv3 
+74 Curse effect _lv4 
+80 Curse effect (Strengthening of spirits) 
+90 Down 
+91 Not guarded: scheduled to be deleted 
+92 Guard possible 
+94 SA addition disabled 
+95 Movement magnification can be changed 
+96 View Cut 
+97 In a posture collapse 
+100 Bonfire Recovery effect 1 
+101 Bonfire Recovery Effect 2 
+102 Bonfire Recovery Effect 3 
+103 Bonfire Recovery Effect 4 
+104 Bonfire Recovery Effect 5 
+105 Bonfire Recovery Effect 6 
+106 Bonfire Recovery Effect 7 
+107 Bonfire Recovery Effect 8 
+108 Bonfire Recovery Effect 9 
+109 Bonfire Recovery effect 10 
+110 Squirrel-Pong Recovery effect 1 
+111 Squirrel Pong Recovery Effect 2 
+112 Squirrel Pong Recovery Effect 3 
+113 Squirrel Pong Recovery Effect 4 
+114 Squirrel Pong Recovery Effect 5 
+115 The Squirrel Pong Recovery effect 6 
+116 Squirrel Pong Recovery Effect 7 
+117 Squirrel Pong Recovery Effect 8 
+118 Squirrel Pong Recovery Effect 9 
+119 Squirrel Pong Recovery Effect 10 
+201 【 QWC 】 Area _npc_ + 1 
+202 【 QWC 】 Area _npc_ + 2 
+203 【 QWC 】 Area _npc_ + 3 
+206 【 QWC 】 Area _npc_-1 
+207 【 QWC 】 Area _NPC_-2 
+208 【 QWC 】 Area _NPC_-3 
+211 (QWC) Area _ black _ + 1 
+212 (QWC) Area _ black _ + 2 
+221 (QWC) Area _ white _ + 1 
+222 (QWC) Area _ white _ + 2 
+231 (QWC) Area _ gray _ + 1 
+232 (QWC) Area _ gray _ + 2 
+236 (QWC) Area _ gray _-1 
+237 (QWC) Area _ gray _-2 
+311 (QWC) Player _ black _ + 1 
+312 (QWC) Player _ black _ + 2 
+321 (QWC) Player _ white _ + 1 
+322 (QWC) Player _ white _ + 2 
+331 (QWC) Player _ gray _ + 1 
+332 (QWC) Player _ gray _ + 2 
+336 (QWC) Player _ gray _-1 
+337 (QWC) Player _ gray _-2 
+403 Torches (for enemy sensing) 
+404 (SP) Torches _ for flame effect 
+407 (SP) Torch _ for Light ID offset 
+412 (FDP) Torch _ for Flame effect (raised) 
+420 (SP) covered with oil 
+421 【 SP 】 Fire Daruma 
+425 【 SP 】 Fire Spread damage 
+430 (FDP) Damage in the fire Daruma 
+490 (FDP) King of firewood added effect 
+491 (FDP) Added SFX when attacking king of firewood 
+499 (FDP) King of firewood added effect _ client 
+500 Gravity 
+510 Gravity (for the use of) 
+520 Sound Feed 
+530 Hidden 
+531 Hidden-sound source for dead 
+540 Silence 
+550 Tip Blood Letters 
+560 Resurrection when dead 
+561 Resurrection when dead (for determination of cord) 
+570 Regenerate 
+580 return (standby) 
+581 Return of movement 
+600 Anti Magic 
+610 Anti-Magic (for the use) 【 effect 】 
+611 Anti-Magic (for the use of) (effect) 
+620 Light 
+630 Attracted 
+640 Falling control 
+650 A firm oath 
+651 Hard Oath for icons 
+1000 Weapon Magic Reinforcement 1 
+1010 Weapon Magic Reinforcement 2 
+1020 Weapon Magic Reinforcement 3 
+1040 Shield Reinforcement 1 
+1050 Shield Reinforcement 2 
+1060 Invisible weapon 
+1070 Sword of the Sun 
+1080 Moon Sword 
+1081 Sword of the Moon _lv1 
+1082 Sword of the Moon _lv2 
+1083 Sword of the Moon _lv3 
+1090 The Power of Madness 
+1100 Fire Weapon Reinforcement 1 
+1120 Veil of water 
+1130 Body of iron (damage reduction effect) 
+1140 Body of iron (moving slow effect) 
+1150 Body of iron (damage animation change effect) 
+1160 Magic Protection 1 
+1170 Magic Protection 2 
+1200 Poison for Poisoncloud 
+1210 Deadly poison for the desk loud 
+1220 Corrosion for corrosion Cloud 
+1230 A deadly poison for the Mist of Darkness 
+1300 Universal treatment (State Recovery) 
+1301 Universal treatment (recovery of bleeding immunity) 
+1302 Universal cure (Poison tolerance recovery) 
+1303 Universal cure (deadly poison resistant recovery) 
+1320 Poison treatment (State recovery) 
+1321 Poison treatment (Resilient recovery) 
+1330 Weapon Armor Repair 
+1340 A curse 
+1350 Worm Recovery 
+1400 HP Recovery 1_ Yourself 
+1401 HP Recovery 1_ around 
+1420 HP Recovery 3_ Yourself 
+1421 HP Recovery 3_ around 
+1430 HP Recovery 4 
+1431 HP Recovery 4_ Resonance LV1 
+1500 Mimicry 
+1510 Mimicry (moving slow effect) 
+1520 Dragon Change 1 
+1530 Dragon Change 2 
+1600 Soul Drain 1 (AI) 
+1610 Soul Drain 1 【 PC 】 
+1620 Soul Drain 2 (AI) 
+1630 Soul Drain 2 (PC) 
+1700 White Relief Magic 
+1710 Black Relief Magic 
+1720 Item Detection Magic 
+1800 Causal retribution _ for counting 
+1810 Causal retribution _ for explosive generation 
+1900 (FDP) Tread SA 
+1901 FDP ID override test 
+1902 (FDP) covered with Uzi test 
+1903 (FDP) Tread guard 
+1904 (FDP) Rotation movement gap 
+1905 (FDP) Holding guard compensation for continuous firing 
+1906 (FDP) Double chanting 
+1907 FDP SA chanting 
+2000 Item - Estus Flask
+2001 Item - Estus Flask+1
+2002 Item - Estus Flask+2
+2003 Item - Estus Flask+3
+2004 Item - Estus Flask+4
+2005 Item - Estus Flask+5
+2006 Item - Estus Flask+6
+2007 Item - Estus Flask+7
+2008 Item - Estus Flask+8
+2009 Item - Estus Flask+9
+2010 Item - Estus Flask+10
+2020 Item - Ashen Estus Flask
+2021 Item - Ashen Estus Flask+1
+2022 Item - Ashen Estus Flask+2
+2023 Item - Ashen Estus Flask+3
+2024 Item - Ashen Estus Flask+4
+2025 Item - Ashen Estus Flask+5
+2026 Item - Ashen Estus Flask+6
+2027 Item - Ashen Estus Flask+7
+2028 Item - Ashen Estus Flask+8
+2029 Item - Ashen Estus Flask+9
+2030 Item - Ashen Estus Flask+10
+2100 Item - Charcoal Pine Resin
+2110 Item - Charcoal Pine Bundle
+2120 Item - Gold Pine Resin
+2130 Item - Gold Pine Bundle
+2140 Resonance 
+2150 Item - Rotten Pine Resin
+2170 Item - Human Pine Resin
+2180 Item - Carthus Rouge
+2190 Item - Pale Pine Resin
+2300 Power Up Miracles 
+2310 Magic Slot-up B 
+2320 Dark Moon God's ring 
+2330 Ring of Thieves 
+2340 HP Slight increase 
+2350 Black Dragon Ring 
+3000 HP Recovery Grass 
+3040 Item - Green Blossom
+3041 (DLC) Fragment of mushroom 
+3042 Item - Budding Green Blossom
+3050 bleeding treatment (State recovery) 
+3051 bleeding treatment (resistance recovery) 
+3060 Poison treatment (State recovery) 
+3061 Poison treatment (Resilient recovery) 
+3070 Toxic treatment (State recovery) 
+3071 Toxic treatment (Resilient recovery) 
+3080 Universal treatment (State Recovery) 
+3090 Curse treatment 
+3091 Egg treatment 
+3092 Caries treatment 
+3093 Item - Purging Stone
+3100 Item - Repair Powder
+3110 Poison-throwing knife (poison effect) 
+3120 To make the opponent a poisonous poison 
+3121 I take damage 
+3130 Each time a 
+3140 And every time B 
+3150 EST not available (for mimic sleep determination) 
+3151 EST not available (EST) 
+3152 EST not available (for mimic sleep judgment) 
+3160 Weapon Flame Enhancement 
+3161 Weapon Flame Enhancement (quick) 
+3170 Weapon Lightning Reinforcement 
+3171 Weapon Lightning Enhancement (quick) 
+3180 Weapon versus Spirit reinforcement 
+3210 Excitement Incense 
+3220 Item - Coiled Sword Fragment
+3221 Return Stone A 
+3222 return Stone B 
+3223 return Stone C 
+3224 return Stone D 
+3225 Return Stone E 
+3226 Item - Darksign
+3230 Resurrection Stone (Resurrection effect) 
+3231 Human Nature Recovery 
+3240 Item - Binoculars
+3250 Pledge discarded 
+3269 Item - Fading Soul
+3270 Item - Soul of a Deserted Corpse
+3271 Item - Large Soul of a Deserted Corpse
+3272 Item - Soul of an Unknown Traveler
+3273 Item - Large Soul of an Unknown Traveler
+3274 Item - Soul of a Nameless Soldier
+3275 Item - Large Soul of a Nameless Soldier
+3276 Item - Soul of a Weary Warrior
+3277 Item - Large Soul of a Weary Warrior
+3278 Item - Soul of a Crestfallen Knight
+3279 Item - Large Soul of a Crestfallen Knight
+3280 Item - Soul of a Proud Paladin
+3281 Item - Large Soul of a Proud Paladin
+3282 Item - Soul of an Intrepid Hero
+3283 Item - Large Soul of an Intrepid Hero
+3284 Item - Soul of a Seasoned Warrior
+3285 Item - Large Soul of a Seasoned Warrior
+3286 Item - Soul of an Old Hand
+3287 Item - Soul of a Venerable Old Hand
+3288 Item - Soul of a Champion
+3289 Item - Soul of a Great Champion
+3290 Item - Ember
+3291 Wang Hua of firewood when SFX: right elbow 
+3292 Wang Hua of firewood when SFX: right shoulder 
+3293 Wang Hua of firewood when SFX: upper body 
+3294 Wang Hua of firewood when SFX: systemic 
+3295 Wang Hua of firewood when SFX: 
+3296 Wang Hua of firewood when SFX: 
+3297 Wang Hua of firewood when SFX: 
+3298 Wang Hua of firewood when SFX: 
+3330 Human Nature Recovery 
+3340 Item - Hidden Blessing
+3400 Item - Soul of a Crystal Sage
+3401 Soul of the Wolf of the eclipse of the boss soul 
+3402 Item - Soul of the Blood of the Wolf
+3403 Item - Soul of Consumed Oceiros
+3404 Item - Soul of Boreal Valley Vordt
+3405 Item - Soul of the Old Demon King
+3406 Item - Soul of Dragonslayer Armour
+3407 Item - Soul of the Nameless King
+3408 (Boss Soul) Crimson bat Soul 
+3409 Item - Soul of Champion Gundyr
+3410 (Boss Soul) soul of evil spirits 
+3411 Item - Soul of Pontiff Sulyvahn
+3412 Item - Soul of Aldrich
+3413 Item - Soul of High Lord Wolnir
+3414 Item - Soul of the Rotted Greatwood
+3415 Item - Soul of Rosaria
+3416 Item - Soul of the Deacons of the Deep
+3417 Boss Soul: Prince of Darkness, soul of Brother 
+3418 Item - Soul of the Twin Princes
+3419 Item - Soul of Yhorm the Giant
+3420 Item - Soul of the Dancer
+3421 Item - Soul of the Lords
+3427 Item - Soul of a Demon
+3431 Item - Soul of a Stray Demon
+3432 Item - Soul of Sister Friede
+3433 Item - Soul of Slave Knight Gael
+3434 Item - Soul of the Demon Prince
+3435 Item - Soul of Darkeater Midir
+3700 Item - Seed of a Giant Tree
+3730 Item - Way of White Circlet
+3740 Item - Forked Pale Tongue
+3750 Item - Proof of a Concord Well Kept
+3820 Item - Mossfruit
+3870 Item - Young White Branch
+3880 Item - Rusted Coin
+3890 Item - Rusted Gold Coin
+3900 Item - Siegbräu Heal
+3901 Item - Siegbräu Frost Resistence
+3910 Item - Blue Bug Pellet
+3920 Item - Red Bug Pellet
+3930 Item - Yellow Bug Pellet
+3940 Item - Black Bug Pellet
+4000 Sustained damage floor (slow for poison) 
+4001 Sustained damage floor (Poison _ Interval Adjustment _ Poison swamp Forest (deep)) 
+4002 Sustained damage floor (poison _ Effect Body _ Poison swamp Forest (deep)) 
+4003 Sustained damage floor (Poison _ Interval Adjustment _ Poison swamp forest (shallow)) 
+4004 Sustained damage floor (poison _ Effect Body _ Poison swamp forest (shallow)) 
+4050 Forced fall death disabled (used in God's Tomb map) 
+4060 Drop damage disabled (used in stronghold map) 
+4100 Slow effect (weak) 
+4101 Slow effect (strong) 
+4150 Inside Key of Universal door 
+4200 The swamp of caries 
+5000 Non-combat action running 
+5001 Non-combat behavior smooth disregard 
+5020 General effect for logic judgment 1 
+5021 General effect for logic judgment 2 
+5022 General effect for logic judgment 3 
+5023 General effect for logic judgment 4 
+5024 General effect for logic judgment 5 
+5025 General effect for logic judgment 6 
+5026 General effect for logic judgment 7 
+5027 General effect for logic judgement 8 
+5028 General effect for logic judgment 9 
+5029 General effect for logic judgment 10 
+5030 General effect for logic judgment 11 
+5031 General effect for logic judgement 12 
+5032 General effect for logic judgment 13 
+5033 General effect for logic judgment 14 
+5034 General effect for logic judgment 15 
+5040 MP Decrease-1 
+5041 MP Decrease-2 
+5042 MP Decrease-3 
+5043 MP Decrease-4 
+5044 MP Decrease-5 
+5045 MP Recovery + 1 
+5046 MP Recovery + 2 
+5047 MP Recovery + 3 
+5048 MP Recovery + 4 
+5049 MP Recovery + 5 
+5100 Maggots covered 
+5101 Blood damage so that the maggots smeared 
+5247 Cold air Damage Release 
+5300 Damage Level Change (all disabled) 
+5301 Damage Level Change (minimal, small, medium, large, beating, launch, pushing disabled) 
+5302 Damage Level Change (minimum, small, medium, large, push disabled) 
+5303 Damage Level Change (Minimal, small, medium, press disabled) 
+5304 Damage Level Change (minimal, small, push disabled) 
+5305 Damage Level Change (minimal, push disabled) 
+5306 Damage Level Change (press → Small) 
+5307 Damage Level Change (minimum → small) 
+5308 Damage Level Change
+5309 Damage Level Change 
+5310 Damage Level Change (lv1 down) 
+5311 Damage Level Change (small, 吹tsu飛bimasu, launch only) 
+5320 Damage Level Change (large only) 
+5321 Damage Level Change (Medium, large, only slams) 
+5322 Damage Level Change (吹tsu飛bimasu) 
+5323 Damage Level Change (no 吹tsu飛bimasu/slams) 
+5324 Damage Level Change (Minimal, small, medium, large only) 
+5325 Damage Level Change (吹tsu飛bimasu/push) 
+5326 Damage Level Change (small and medium only) 
+5327 Damage Level Change (small, medium, large only) 
+5328 Damage Level Change (small, medium, large, only slapping) 
+5329 Damage Level Change (small only) 
+5330 Damage Level Change (small, large, 吹tsu飛bimasu only) 
+5331 Damage Level Change (for crystal lizards) 
+5332 Damage Level Change (under the big deal) 
+5333 Damage Level Change (during only) 
+5334 Damage Level Change (medium/吹tsu飛bimasu only) 
+5335 Damage Level Change (reaction large) 
+5350 Damage Level Change (all disabled) (instant) 
+5351 Damage Level Change (minimal, small, medium, large, beating, launch, pushing disabled) (instant) 
+5352 Damage Level Change (minimum, small, medium, large, push disabled) (instant) 
+5353 Damage Level Change (Minimal, small, medium, press disabled) (instant) 
+5354 Damage Level Change (minimal, small, push disabled) (instant) 
+5360 Poise Damage Level Change (all anime No) 
+5361 Poise Damage Level Change (small only) 
+5362 Poise Damage Level Changes 
+5363 Poise Damage Level Change (small and medium) 
+5364 Poise Damage Level Change (small only/large void) 
+5370 Poise Damage Level Change (all disabled) (instant) 
+5371 Poise Damage Level Change (small only) (instant) 
+5372 Poise Damage Level Change (medium only) (instant) 
+5373 Poise Damage Level Change (small and medium) (instant) 
+5374 Poise Damage Level Change (small only/large void) (instant) 
+5400 Animation ID Offset 0
+5404 Animation ID Offset 1
+5405 Animation ID Offset 2
+5406 Animation ID Offset 3
+5407 Animation ID Offset 4
+5408 Animation ID Offset 5
+5440 NPC - Blood Damage Rate 30
+5441 NPC - Blood Damage Rate 50
+5442 NPC - Blood Damage Rate 70
+5443 NPC - Blood Damage Rate 20
+5450 NPC - Wait for Event Processing
+5460 NPC - Estus Recovery
+5461 NPC - Estus Recovery
+5462 NPC - Estus Recovery
+5463 NPC - Estus Recovery
+5540 NPC - Maggot Removal with Fire
+5600 Salivan Enchant 
+5700 _c2180 maggots for special damage assessment 
+5701 _c1360 Crucifixion dead for special damage determination 
+5702 _c1370 Crucifixion dead B for special damage determination 
+5703 _c2250 Tindalos for special damage determination 
+5704 _c1390 snake Assassin for special damage determination 
+5705 Sand worm c2201 sharing of _c2200 waste for special damage determination 
+5706 _c2020 dead dog for special damage determination 
+5707 _c5230_ Mother Dragon for special damage determination 
+5708 _c2190_ Ojo Gargoyle for special Damage determination 
+5709 _c1090_ dead soldier for special damage Determination (Segunda State) 
+5710 _c2240_ Full Armor beast for special damage determination 
+5711 _c2250_ Tindalos for special Damage Determination (for animation transition after large throw) 
+5712 _c1170 Skeleton Warrior a c1180 share for special damage determination 
+5750 For special Damage Determination _ Continuous Regeneration Prevention: duration of flag pulling 
+5751 For special Damage Determination _ Continuous regeneration Prevention: cool time 3 seconds 
+5752 For special Damage Determination _ Continuous regeneration Prevention: cool time 5 seconds 
+5800 (Behavior) Do not cut the movement amount of damage anime 
+5820 (Behavior) Stance: Valid only for the duration of the flag pulling 
+5830 The VFX will light your eyes and revive you once and for all 
+5831 If the 5830 is at stake, let the dead anime transition 
+6000 (Behavior) touchable in rolling 
+6001 (Behavior) is flipped when the damage judgment is hit the map anime reproduction 
+6002 (Behavior) Wait offset instantaneous switching 
+6003 (Behavior) Count any number of seconds 
+6050 Golem keeps crumbling state 
+6070 Yhorm -
+6071 Yhorm -
+6200 Stamina Recovery Down _ head _ Level 1 
+6201 Stamina Recovery Down _ head _ Level 2 
+6202 Stamina Recovery Down _ head _ Level 3 
+6203 Stamina Recovery Down _ head _ Level 4 
+6210 Stamina Recovery Down _ torso _ Level 1 
+6211 Stamina Recovery Down _ torso _ Level 2 
+6212 Stamina Recovery Down _ torso _ Level 3 
+6213 Stamina Recovery Down _ torso _ Level 4 
+6220 Stamina Recovery Down _ arm _ Level 1 
+6221 Stamina Recovery Down _ arms _ Level 2 
+6222 Stamina Recovery Down _ arms _ Level 3 
+6223 Stamina Recovery Down _ arm _ Level 4 
+6230 Stamina Recovery Down _ leg _ Level 1 
+6231 Stamina Recovery Down _ leg _ Level 2 
+6232 Stamina Recovery Down _ leg _ Level 3 
+6233 Stamina Recovery Down _ leg _ Level 4 
+6300 Super Armor
+6310 Helm of Thorns
+6311 Armor of Thorns
+6312 Gauntlets of Thorns
+6313 Leggings of Thorns
+6320 Symbol of Avarice
+6321 Symbol of Avarice
+6325 Blindfold Mask
+6326 Blindfold Mask
+6330 Crown of Dusk
+6331 Crown of Dusk
+6340 Weapon Art - Stomp
+6350 Toughness - 0 to 30
+6351 Toughness - 30 to 50
+6352 Toughness - 50 to 70
+6353 Toughness - 70 to 100
+6354 Toughness - 100 or more
+6380 Defense Reduction - Head
+6381 Defense Reduction - Body
+6382 Defense Reduction - Hands
+6383 Defense Reduction - Legs
+6400 Bleed 1
+6401 Bleed 2
+6402 Bleed 3
+6403 Bleed 4
+6404 Bleed 5
+6405 Bleed 6
+6500 Poison 1
+6501 Poison 2
+6502 Poison 3
+6503 Poison 4
+6504 Poison 5
+6505 Poison 6
+6510 Poison 1 - Short
+6511 Poison 2 - Short
+6512 Poison 3 - Short
+6513 Poison 4 - Short
+6514 Poison 5 - Short
+6515 Poison 6 - Short
+6600 Toxic 1
+6601 Toxic 2
+6602 Toxic 3
+6603 Toxic 4
+6604 Toxic 5
+6605 Toxic 6
+6700 Frostbite 1
+6701 Frostbite 2
+6702 Frostbite 3
+6703 Frostbite 4
+6704 Frostbite 5
+6705 Frostbite 6
+6800 Curse 1
+6801 Curse 2
+6802 Curse 3
+6803 Curse 4
+6804 Curse 5
+6805 Curse 6
+6900 Weapon Hit Increment - 2
+6901 Weapon Hit Increment - 4
+6902 Weapon Hit Increment - 6
+6903 Weapon Hit Increment - 8
+6904 Weapon Hit Increment - 10
+6905 Weapon Hit Increment - 12
+6906 Weapon Hit Increment - 14
+6907 Weapon Hit Increment - 16
+6908 Weapon Hit Increment - 18
+6909 Weapon Hit Increment - 20
+6910 Weapon Hit Increment - 100
+7000 Level Scaling - Cemetery of Ash
+7010 Level Scaling - High Wall of Lothric
+7020 Level Scaling - Undead Settlement
+7030 Level Scaling - Road of Sacrifices
+7040 Level Scaling - Cathedral of the Deep
+7045 Level Scaling - Farron Keep
+7060 Level Scaling - Catacombs of Carthus
+7070 Level Scaling - Smouldering Lake
+7080 Level Scaling - Irithyll of the Boreal Valley
+7090 Level Scaling - Irithyll Dungeon/Profaned Capital
+7092 Level Scaling - Anor Londo/Lothric Castle
+7093 Level Scaling - Lothric Castle
+7095 Level Scaling - Lothric Castle
+7120 Level Scaling - Archdragon Peak
+7130 Level Scaling - Untended Graves
+7135 Level Scaling - Grand Archives
+7140 Level Scaling - Fireless Shrine
+7150 Level Scaling - Ariandel
+7160 Level Scaling - Dreg Heap
+7170 Level Scaling - Ringed City
+7300 Level Scaling - Black Phantom
+7400 NG+ Scaling - Cemetery of Ash
+7410 NG+ Scaling - High Wall of Lothric
+7420 NG+ Scaling - Undead Settlement
+7430 NG+ Scaling - Road of Sacrifices
+7440 NG+ Scaling - Cathedral of the Deep
+7445 NG+ Scaling - Farron Keep
+7460 NG+ Scaling - Catacombs of Carthus
+7470 NG+ Scaling - Smouldering Lake
+7480 NG+ Scaling - Irithyll of the Boreal Valley
+7490 NG+ Scaling - Irithyll Dungeon/Profaned Capital
+7492 NG+ Scaling - Anor Londo/Lothric Castle
+7493 NG+ Scaling - Lothric Castle
+7495 NG+ Scaling - Lothric Castle
+7520 NG+ Scaling - Archdragon Peak
+7530 NG+ Scaling - Untended Graves
+7535 NG+ Scaling - Grand Archives
+7540 NG+ Scaling - Fireless Shrine
+7550 NG+ Scaling - Ariandel
+7560 NG+ Scaling - Dreg Heap
+7570 NG+ Scaling - Ringed City
+9000 Watchdogs of Farron - Allow Invasion
+9010 Aldrich Faithful - Allow Invasion
+9020 Unknown - Allow Invasion
+9100 Spear of the Chuch - Allow Invasion
+9120 Item Ban
+9135 HKS - Minimal Stagger
+9136 HKS - Stagger
+9137 HKS - Stumble Back
+9138 HKS - Heavy Stagger and Stumble
+9139 HKS - Knockback to Ground
+9190 Goods Use Animation
+9200 Invasion occurring 
+9201 Intrusion Outbreak & Intrusion Stop State 
+9400 GameSystemParam - Mound-maker
+9500 ABATABAF: 3 times the actual damage 
+9600 Multiplayer - Weapon/Player Adjustment
+9800 Spear of the Church - Holy Soulmass
+9801 Spear of the Church - Holy Soulmass
+9802 Spear of the Church - Holy Soulmass
+9803 Spear of the Church - Holy Soulmass
+9810 Spear of the Church - Holy Soulmass
+9811 Spear of the Church - Holy Soulmass
+9812 Spear of the Church - Holy Soulmass
+9813 Spear of the Church - Holy Soulmass
+9820 Spear of the Church - Holy Soulmass
+9821 Spear of the Church - Holy Soulmass
+9822 Spear of the Church - Holy Soulmass
+9823 Spear of the Church - Holy Soulmass
+9830 Spear of the Church - Holy Soulmass
+9831 Spear of the Church - Holy Soulmass
+9832 Spear of the Church - Holy Soulmass
+9833 Spear of the Church - Holy Soulmass
+9840 Spear of the Church - Holy Soulmass
+9841 Spear of the Church - Holy Soulmass
+9842 Spear of the Church - Holy Soulmass
+9843 Spear of the Church - Holy Soulmass
+9850 Spear of the Church - Holy Soulmass
+9851 Spear of the Church - Holy Soulmass
+9852 Spear of the Church - Holy Soulmass
+9853 Spear of the Church - Holy Soulmass
+9860 Spear of the Church - Holy Soulmass
+9861 Spear of the Church - Holy Soulmass
+9862 Spear of the Church - Holy Soulmass
+9863 Spear of the Church - Holy Soulmass
+9870 Spear of the Church - Holy Soulmass
+9871 Spear of the Church - Holy Soulmass
+9872 Spear of the Church - Holy Soulmass
+9873 Spear of the Church - Holy Soulmass
+9880 Spear of the Church - Holy Soulmass
+9881 Spear of the Church - Holy Soulmass
+9882 Spear of the Church - Holy Soulmass
+9883 Spear of the Church - Holy Soulmass
+9890 Spear of the Church - Holy Soulmass
+9891 Spear of the Church - Holy Soulmass
+9892 Spear of the Church - Holy Soulmass
+9893 Spear of the Church - Holy Soulmass
+9900 Spear of the Church - Holy Soulmass
+9901 Spear of the Church - Holy Soulmass
+9902 Spear of the Church - Holy Soulmass
+9903 Spear of the Church - Holy Soulmass
+9910 Spear of the Church - Holy Soulmass
+9911 Spear of the Church - Holy Soulmass
+9912 Spear of the Church - Holy Soulmass
+9913 Spear of the Church - Holy Soulmass
+9920 Spear of the Church - Holy Soulmass
+9921 Spear of the Church - Holy Soulmass
+9922 Spear of the Church - Holy Soulmass
+9923 Spear of the Church - Holy Soulmass
+9930 Spear of the Church - Holy Soulmass
+9931 Spear of the Church - Holy Soulmass
+9932 Spear of the Church - Holy Soulmass
+9933 Spear of the Church - Holy Soulmass
+9940 Spear of the Church - Holy Soulmass
+9941 Spear of the Church - Holy Soulmass
+9942 Spear of the Church - Holy Soulmass
+9943 Spear of the Church - Holy Soulmass
+9950 Spear of the Church - Holy Soulmass
+9951 Spear of the Church - Holy Soulmass
+9952 Spear of the Church - Holy Soulmass
+9953 Spear of the Church - Holy Soulmass
+9960 Spear of the Church - Holy Soulmass
+9961 Spear of the Church - Holy Soulmass
+9962 Spear of the Church - Holy Soulmass
+9963 Spear of the Church - Holy Soulmass
+9970 Spear of the Church - Holy Soulmass
+9971 Spear of the Church - Holy Soulmass
+9972 Spear of the Church - Holy Soulmass
+9973 Spear of the Church - Holy Soulmass
+9980 Spear of the Church - Holy Soulmass
+9981 Spear of the Church - Holy Soulmass
+9982 Spear of the Church - Holy Soulmass
+9983 Spear of the Church - Holy Soulmass
+10000 Spear of the Church - Sparking Holy Soulmass
+10001 Spear of the Church - Sparking Holy Soulmass
+10002 Spear of the Church - Sparking Holy Soulmass
+10003 Spear of the Church - Sparking Holy Soulmass
+10010 Spear of the Church - Sparking Holy Soulmass
+10011 Spear of the Church - Sparking Holy Soulmass
+10012 Spear of the Church - Sparking Holy Soulmass
+10013 Spear of the Church - Sparking Holy Soulmass
+10020 Spear of the Church - Sparking Holy Soulmass
+10021 Spear of the Church - Sparking Holy Soulmass
+10022 Spear of the Church - Sparking Holy Soulmass
+10023 Spear of the Church - Sparking Holy Soulmass
+10030 Spear of the Church - Sparking Holy Soulmass
+10031 Spear of the Church - Sparking Holy Soulmass
+10032 Spear of the Church - Sparking Holy Soulmass
+10033 Spear of the Church - Sparking Holy Soulmass
+10040 Spear of the Church - Sparking Holy Soulmass
+10041 Spear of the Church - Sparking Holy Soulmass
+10042 Spear of the Church - Sparking Holy Soulmass
+10043 Spear of the Church - Sparking Holy Soulmass
+10050 Spear of the Church - Sparking Holy Soulmass
+10051 Spear of the Church - Sparking Holy Soulmass
+10052 Spear of the Church - Sparking Holy Soulmass
+10053 Spear of the Church - Sparking Holy Soulmass
+10060 Spear of the Church - Sparking Holy Soulmass
+10061 Spear of the Church - Sparking Holy Soulmass
+10062 Spear of the Church - Sparking Holy Soulmass
+10063 Spear of the Church - Sparking Holy Soulmass
+10070 Spear of the Church - Sparking Holy Soulmass
+10071 Spear of the Church - Sparking Holy Soulmass
+10072 Spear of the Church - Sparking Holy Soulmass
+10073 Spear of the Church - Sparking Holy Soulmass
+10080 Spear of the Church - Sparking Holy Soulmass
+10081 Spear of the Church - Sparking Holy Soulmass
+10082 Spear of the Church - Sparking Holy Soulmass
+10083 Spear of the Church - Sparking Holy Soulmass
+10090 Spear of the Church - Sparking Holy Soulmass
+10091 Spear of the Church - Sparking Holy Soulmass
+10092 Spear of the Church - Sparking Holy Soulmass
+10093 Spear of the Church - Sparking Holy Soulmass
+10100 Spear of the Church - Sparking Holy Soulmass
+10101 Spear of the Church - Sparking Holy Soulmass
+10102 Spear of the Church - Sparking Holy Soulmass
+10103 Spear of the Church - Sparking Holy Soulmass
+10110 Spear of the Church - Sparking Holy Soulmass
+10111 Spear of the Church - Sparking Holy Soulmass
+10112 Spear of the Church - Sparking Holy Soulmass
+10113 Spear of the Church - Sparking Holy Soulmass
+10120 Spear of the Church - Sparking Holy Soulmass
+10121 Spear of the Church - Sparking Holy Soulmass
+10122 Spear of the Church - Sparking Holy Soulmass
+10123 Spear of the Church - Sparking Holy Soulmass
+10130 Spear of the Church - Sparking Holy Soulmass
+10131 Spear of the Church - Sparking Holy Soulmass
+10132 Spear of the Church - Sparking Holy Soulmass
+10133 Spear of the Church - Sparking Holy Soulmass
+10140 Spear of the Church - Sparking Holy Soulmass
+10141 Spear of the Church - Sparking Holy Soulmass
+10142 Spear of the Church - Sparking Holy Soulmass
+10143 Spear of the Church - Sparking Holy Soulmass
+10150 Spear of the Church - Sparking Holy Soulmass
+10151 Spear of the Church - Sparking Holy Soulmass
+10152 Spear of the Church - Sparking Holy Soulmass
+10153 Spear of the Church - Sparking Holy Soulmass
+10160 Spear of the Church - Sparking Holy Soulmass
+10161 Spear of the Church - Sparking Holy Soulmass
+10162 Spear of the Church - Sparking Holy Soulmass
+10163 Spear of the Church - Sparking Holy Soulmass
+10170 Spear of the Church - Sparking Holy Soulmass
+10171 Spear of the Church - Sparking Holy Soulmass
+10172 Spear of the Church - Sparking Holy Soulmass
+10173 Spear of the Church - Sparking Holy Soulmass
+10180 Spear of the Church - Sparking Holy Soulmass
+10181 Spear of the Church - Sparking Holy Soulmass
+10182 Spear of the Church - Sparking Holy Soulmass
+10183 Spear of the Church - Sparking Holy Soulmass
+10200 Spear of the Church - Ritual Spears
+10201 Spear of the Church - Ritual Spears
+10205 Spear of the Church - Ritual Spears
+10206 Spear of the Church - Ritual Spears
+10210 Spear of the Church - Ritual Spears
+10211 Spear of the Church - Ritual Spears
+10215 Spear of the Church - Ritual Spears
+10216 Spear of the Church - Ritual Spears
+10220 Spear of the Church - Ritual Spears
+10221 Spear of the Church - Ritual Spears
+10225 Spear of the Church - Ritual Spears
+10226 Spear of the Church - Ritual Spears
+10230 Spear of the Church - Ritual Spears
+10231 Spear of the Church - Ritual Spears
+10235 Spear of the Church - Ritual Spears
+10236 Spear of the Church - Ritual Spears
+10240 Spear of the Church - Ritual Spears
+10241 Spear of the Church - Ritual Spears
+10245 Spear of the Church - Ritual Spears
+10246 Spear of the Church - Ritual Spears
+10250 Spear of the Church - Ritual Spears
+10251 Spear of the Church - Ritual Spears
+10255 Spear of the Church - Ritual Spears
+10256 Spear of the Church - Ritual Spears
+10260 Spear of the Church - Ritual Spears
+10261 Spear of the Church - Ritual Spears
+10265 Spear of the Church - Ritual Spears
+10266 Spear of the Church - Ritual Spears
+10270 Spear of the Church - Ritual Spears
+10271 Spear of the Church - Ritual Spears
+10275 Spear of the Church - Ritual Spears
+10276 Spear of the Church - Ritual Spears
+10280 Spear of the Church - Ritual Spears
+10281 Spear of the Church - Ritual Spears
+10285 Spear of the Church - Ritual Spears
+10286 Spear of the Church - Ritual Spears
+10290 Spear of the Church - Ritual Spears
+10291 Spear of the Church - Ritual Spears
+10400 Spear of the Church - Divine Spears
+10401 Spear of the Church - Divine Spears
+10405 Spear of the Church - Divine Spears
+10406 Spear of the Church - Divine Spears
+10410 Spear of the Church - Divine Spears
+10411 Spear of the Church - Divine Spears
+10415 Spear of the Church - Divine Spears
+10416 Spear of the Church - Divine Spears
+10420 Spear of the Church - Divine Spears
+10421 Spear of the Church - Divine Spears
+10425 Spear of the Church - Divine Spears
+10426 Spear of the Church - Divine Spears
+10430 Spear of the Church - Divine Spears
+10431 Spear of the Church - Divine Spears
+10435 Spear of the Church - Divine Spears
+10436 Spear of the Church - Divine Spears
+10440 Spear of the Church - Divine Spears
+10441 Spear of the Church - Divine Spears
+10445 Spear of the Church - Divine Spears
+10446 Spear of the Church - Divine Spears
+10450 Spear of the Church - Divine Spears
+10451 Spear of the Church - Divine Spears
+10455 Spear of the Church - Divine Spears
+10456 Spear of the Church - Divine Spears
+10460 Spear of the Church - Divine Spears
+10461 Spear of the Church - Divine Spears
+10465 Spear of the Church - Divine Spears
+10466 Spear of the Church - Divine Spears
+10470 Spear of the Church - Divine Spears
+10471 Spear of the Church - Divine Spears
+10475 Spear of the Church - Divine Spears
+10476 Spear of the Church - Divine Spears
+10480 Spear of the Church - Divine Spears
+10481 Spear of the Church - Divine Spears
+10485 Spear of the Church - Divine Spears
+10486 Spear of the Church - Divine Spears
+10490 Spear of the Church - Divine Spears
+10491 Spear of the Church - Divine Spears
+10501 High Lord Wolnir - Curse
+10502 High Lord Wolnir - dissipated state 
+10503 High Lord Wolnir - right arm part 
+10504 High Lord Wolnir - left arm part breakdown state 
+10505 High Lord Wolnir - Miasma
+10506 High Lord Wolnir - Miasma
+10507 High Lord Wolnir - Miasma Damage - Set on Boss Start
+10508 High Lord Wolnir - Miasma Damage - Set on Boss Start
+10510 Demon Cleric - Small VFX
+10511 Demon Cleric - Medium VFX
+10512 Demon Cleric - Big VFX
+10513 Demon Cleric - No VFX
+10514 Demon Cleric - VFX - Speed Doubled
+10515 Demon Cleric - Flame Enchantment
+10516 Demon Cleric -
+10530 Pontiff Knight -
+10531 Pontiff Knight -
+10532 Pontiff Knight - VFX
+10533 Pontiff Knight -
+10534 Pontiff Knight -
+10540 Infested Corpse - Maggot Fire Condition
+10549 Infested Corpse -
+10550 Crystal Sage - Boost - Self
+10551 Crystal Sage - Boost - Ally
+10552 Crystal Sage - Prevent Special Effects on Crystals
+10553 Crystal Sage - Camera State for Crystals
+10554 Crystal Sage -
+10555 Crystal Sage -
+10556 Crystal Sage -
+10557 Crystal Sage -
+10558 Crystal Sage -
+10559 Crystal Sage -
+10560 Hollow Soldier - Lantern VFX
+10561 Hollow Soldier - Pus of Max VFX
+10562 Hollow Soldier - Waist Lantern VFX
+10563 Hollow Soldier - Estus Recovery
+10564 Hollow Soldier -
+10565 Hollow Soldier -
+10566 Hollow Soldier -
+10570 Ghru - Slow
+10571 Ghru - Recovery
+10572 Ghru - Self-Enhancement
+10573 Ghru - Reinforcement
+10574 Ghru -
+10575 Ghru -
+10576 Ghru -
+10577 Ghru -
+10578 Ghru -
+10579 Ghru -
+10580 Demon - VFX
+10581 Demon - Heat-up VFX
+10582 Demon -
+10583 Demon -
+10590 Skeleton - Torch
+10591 Skeleton - Kill
+10600 Pontiff Sulyvahn - In Anim 3000
+10601 Pontiff Sulyvahn - In Anim 3001
+10602 Pontiff Sulyvahn - In Anim 3002
+10603 Pontiff Sulyvahn - In Anim 3003
+10604 Pontiff Sulyvahn - In Anim 3004
+10605 Pontiff Sulyvahn - In Anim 3005
+10606 Pontiff Sulyvahn - In Anim 3006
+10607 Pontiff Sulyvahn - In Anim 3007
+10608 Pontiff Sulyvahn - In Anim 3008
+10609 Pontiff Sulyvahn - In Anim 3009
+10610 Pontiff Sulyvahn - In Anim 3010
+10611 Pontiff Sulyvahn - In Anim 3011
+10612 Pontiff Sulyvahn - In Anim 3012
+10613 Pontiff Sulyvahn - In Anim 3013
+10614 Pontiff Sulyvahn - In Anim 3014
+10615 Pontiff Sulyvahn - In Anim 3015
+10616 Pontiff Sulyvahn - In Anim 3016
+10617 Pontiff Sulyvahn - In Anim 3017
+10618 Pontiff Sulyvahn - In Anim 3018
+10619 Pontiff Sulyvahn - In Anim 3019
+10620 Pontiff Sulyvahn - In Anim 3020
+10621 Pontiff Sulyvahn - In Anim 3021
+10622 Pontiff Sulyvahn - In Anim 3022
+10623 Pontiff Sulyvahn - In Anim 3023
+10624 Pontiff Sulyvahn - In Anim 3024
+10625 Pontiff Sulyvahn - In Anim 3025
+10629 Pontiff Sulyvahn - Clone remove transparency
+10630 Pontiff Sulyvahn - VFX
+10631 Pontiff Sulyvahn - VFX - Heat-up
+10632 Pontiff Sulyvahn - Clone is translucent
+10633 Pontiff Sulyvahn - Clone is transparent
+10634 Pontiff Sulyvahn - Disable Clone
+10635 Pontiff Sulyvahn - Self and Clone is transparent
+10636 Pontiff Sulyvahn - Parried State
+10637 Pontiff Sulyvahn - Cooldown for Parried State
+10638 Pontiff Sulyvahn - Transition State
+10639 Pontiff Sulyvahn -
+10640 Pontiff Sulyvahn - Pontiff Sulyvahn - Heat Up
+10641 Pontiff Sulyvahn - Pontiff Sulyvahn - Heat Up
+10642 Pontiff Sulyvahn - Pontiff Sulyvahn - Heat Up - Clone
+10650 Sulyvahn's Beast - Prayer Transition State
+10651 Sulyvahn's Beast - Death Transition State
+10652 Sulyvahn's Beast - Warp State for AI
+10653 Sulyvahn's Beast -
+10654 Sulyvahn's Beast -
+10830 Silver Knight -
+10831 Silver Knight -
+10850 Cathedral Knight -
+10851 Cathedral Knight -
+10852 Cathedral Knight -
+10853 Cathedral Knight -
+10854 Cathedral Knight -
+10855 Cathedral Knight -
+10856 Cathedral Knight -
+10857 Cathedral Knight -
+10858 Cathedral Knight -
+10859 Cathedral Knight -
+10900 Boreal Outrider Knight - resident SFX
+10901 Boreal Outrider Knight - Frost - bullet firing (for freezing)
+10902 Boreal Outrider Knight - Frost - Bullet firing (for decals)
+10920 Irithyll Fire Witch - Resident SFX
+10921 Irithyll Fire Witch - Torch for Damage
+10922 Irithyll Fire Witch - Anime ID offset 1,000,000
+10930 Aldrich - In Anim 3024 - Enchancement
+10931 Aldrich - In Anim 3020 - VFX
+10932 Aldrich - In Anim 3024 - VFX
+10933 Aldrich - Effect VFX
+10934 Aldrich - In Anim 3015
+10935 Aldrich -
+10936 Aldrich - Anim VFX
+11000 Ancient Wyvern - Still not blowing breath once
+11001 Ancient Wyvern - Event Animation Transition Timing
+11002 Ancient Wyvern - Breath blowing good condition
+11003 Ancient Wyvern - Front Breath frequency: High
+11004 Ancient Wyvern - Stop blowing the breath
+11005 Ancient Wyvern - Side street Breath Frequency: High
+11006 Ancient Wyvern - Lost player status
+11007 Ancient Wyvern - Lost player status _ lifted
+11008 Ancient Wyvern - for the caries foot SFX
+11009 Ancient Wyvern - for removal of caries feet SFX
+11010 Ancient Wyvern - Lower left breath frequency: high
+11011 Ancient Wyvern - Top left breath frequency: high
+11012 Ancient Wyvern - Plunge Attack - Absorption Reduction
+11013 Ancient Wyvern - Plunge Attack - HP Drain
+11021 Lothric Castle - Corrupted Wyvern - Left
+11022 Lothric Castle - Corrupted Wyvern - Left
+11023 Lothric Castle - Corrupted Wyvern - Left
+11030 Lothric Castle - Corrupted Wyvern - Right
+11031 Lothric Castle - Corrupted Wyvern - Right
+11032 Lothric Castle - Corrupted Wyvern - Right
+11040 Carthus Sandworm - Move
+11060 Giant Slave - Rampage State
+11100 Dancer - Frost VFx
+11101 Dancer - Fire Sword VFX
+11102 Dancer - Dark Sword VFX
+11103 Dancer - Heat-up - Pre-throw frequency control
+11200 Ballista - Shoot Effect 1
+11201 Ballista - Shoot Effect 2
+11202 Ballista - Shoot Effect 3
+11280 Iudex Gundyr (Pus of Man) - Heat-up at 60%
+11281 Iudex Gundyr (Pus of Man) - Bullet - Right Hand
+11282 Iudex Gundyr (Pus of Man) - Bullet - Left Hand
+11283 Iudex Gundyr (Pus of Man) - Bullet - Right Elbow
+11284 Iudex Gundyr (Pus of Man) - Bullet - Left Elbow
+11285 Iudex Gundyr (Pus of Man) - Bullet - Tail
+11290 Serpent-man Summoner -
+11291 Serpent-man Summoner -
+11292 Serpent-man Summoner -
+11300 Dragonslayer Armour - Heat-up
+11301 Dragonslayer Armour - Effect VFX
+11400 Yhorm - Heat-up
+11401 Yhorm - Damage Absorption
+11402 Yhorm -
+11410 Yhorm -
+11420 Yhorm - Storm Ruler - Applied by Storm King
+11421 Yhorm - Storm Ruler - Applied by Storm King
+11430 Yhorm - Storm Ruler - Debuff
+11450 Curse-rotted Greatwood - Animation Judgment
+11451 Curse-rotted Greatwood - Animation Judgment
+11452 Curse-rotted Greatwood - Animation Judgment
+11453 Curse-rotted Greatwood - Animation Judgment
+11460 Curse-rotted Greatwood - Sac
+11461 Curse-rotted Greatwood - Sac
+11462 Curse-rotted Greatwood - Sac
+11463 Curse-rotted Greatwood - Sac
+11464 Curse-rotted Greatwood - Sac
+11465 Curse-rotted Greatwood - Sac
+11466 Curse-rotted Greatwood - Sac
+11467 Curse-rotted Greatwood - Sac
+11500 Deacons of the Deep - Curse Bullet
+11501 Deacons of the Deep - Curse Appearance
+11502 Deacons of the Deep -
+11503 Deacons of the Deep -
+11504 Deacons of the Deep -
+11511 Deacons of the Deep -
+11512 Deacons of the Deep -
+11513 Deacons of the Deep -
+11514 Deacons of the Deep -
+11515 Deacons of the Deep -
+11516 Deacons of the Deep -
+11517 Deacons of the Deep -
+11519 Deacons of the Deep -
+11520 Deacons of the Deep - Eye VFX
+11521 Deacons of the Deep - Fat Deacon - Boss Aura
+11522 Deacons of the Deep - Tall Deacon - Boss Aura
+11523 Deacons of the Deep - Thin Deacon - Boss Aura
+11530 Deacons of the Deep -
+11531 Deacons of the Deep -
+11532 Deacons of the Deep -
+11533 Deacons of the Deep -
+11534 Deacons of the Deep -
+11535 Deacons of the Deep -
+11536 Deacons of the Deep -
+11537 Deacons of the Deep -
+11538 Deacons of the Deep -
+11539 Deacons of the Deep -
+11540 Deacons of the Deep -
+11541 Deacons of the Deep -
+11542 Deacons of the Deep -
+11543 Deacons of the Deep -
+11544 Deacons of the Deep -
+11550 Deacons of the Deep -
+11551 Deacons of the Deep -
+11552 Deacons of the Deep -
+11553 Deacons of the Deep -
+11554 Deacons of the Deep -
+11555 Deacons of the Deep -
+11556 Deacons of the Deep -
+11557 Deacons of the Deep -
+11558 Deacons of the Deep -
+11559 Deacons of the Deep -
+11560 Deacons of the Deep - Fat Deacon Killed
+11561 Deacons of the Deep - Tall Deacon Killed
+11562 Deacons of the Deep - Thin Deacon Killed
+11563 Deacons of the Deep -
+11564 Deacons of the Deep -
+11565 Deacons of the Deep -
+11600 Lorian - Regen revival
+11601 Lorian - Character attachment
+11602 Lorian -
+11603 Lorian -
+11604 Lorian -
+11605 Lorian - Effect VFX
+11606 Lorian -
+11607 Lorian -
+11650 Fallen Protector - Fallen Protector Revival
+11651 Fallen Protector - Maiden Attachment
+11652 Fallen Protector - Fallen Protector - Staggered
+11653 Fallen Protector - Fallen Protector - Staggered
+11654 Fallen Protector - Heatup Form - Boost
+11655 Fallen Protector - Solid State
+11656 Fallen Protector - Fade State
+11657 Fallen Protector - Fallen Protector - Down
+11660 Fallen Protector - Heatup Form
+11661 Fallen Protector - Fallen Protector - Staggered
+11662 Fallen Protector - Maiden - Re-attached after Revival
+11700 Mimic - Open Treasure State
+11710 Mimic - Revert to Chest
+11720 Mimic - Sleep State
+11721 Mimic - Sleep Disabled
+11730 Mimic - Awakened
+11731 Mimic - Awakened - Disable Chest State
+11800 Hungry Jack: Ai visual distance change _0.25 times
+11880 Jailer - HP Reduction
+11881 Jailer - HP Reduction Expiration -
+11882 Jailer - HP Reduction - Whilst in Vision
+11890 Jailer -
+11895 Jailer -
+11896 Jailer -
+11897 Jailer - HP Reduction - Whilst in Vision Expiration -
+11898 Jailer - HP Reduction
+11899 Jailer -
+11900 Jailer - Lantern VFX
+11901 Jailer -
+11902 Jailer -
+11903 Jailer -
+11904 Jailer -
+11905 Jailer -
+11906 Jailer -
+11907 Jailer - HP Reduction Effect
+11908 Jailer -
+11909 Jailer -
+11910 Gargoyle - VFX
+11911 Gargoyle - Guard
+11912 Gargoyle -
+11913 Gargoyle -
+11920 Vordt - Frost VFX - Before Heat-up
+11921 Vordt - Frost VFX - After Heat-up
+11922 Vordt - Frost Breath
+11923 Vordt - Heat-up
+11926 Vordt - Frost Breath - Wince Damage
+11950 Dark Knight (Phantom) - Stone hat
+11951 Dark Knight (Phantom) -
+11952 Dark Knight (Phantom) -
+11960 Drifting stuff _ Underwater offset switching
+11970 Archive Scholar - Resident SFX
+11980 Segunda to change the damage magnification from dead enemy
+12000 Elder Ghru - Gravity
+12010 Elder Ghru - VFX
+12011 Elder Ghru - VFX
+12012 Elder Ghru -
+12013 Elder Ghru -
+12020 Archive Scholar - Wax Attack - First Form
+12021 Archive Scholar - Wax Attack - First Form - Check
+12022 Archive Scholar - Wax Attack - Second Form
+12023 Archive Scholar - Wax Attack - Second Form - Check
+12024 Archive Scholar - Wax Attack
+12030 City Map Sniper Transparent effect
+12040 Giant Crab - Bubblebeam Slow
+12041 Giant Crab - Step Right
+12042 Giant Crab - Step Left
+12043 Giant Crab -
+12044 Giant Crab -
+12045 Giant Crab -
+12060 Nameless King -
+12061 Nameless King - Effect VFX
+12062 Nameless King - Effect VFX
+12063 Nameless King -
+12080 Lycanthrope -
+12110 Soul of Cinder - Effect VFX
+12111 Soul of Cinder -
+12112 Soul of Cinder -
+12113 Soul of Cinder -
+12114 Soul of Cinder -
+12115 Soul of Cinder -
+12116 Soul of Cinder -
+12117 Soul of Cinder -
+12118 Soul of Cinder -
+12119 Soul of Cinder -
+12120 Soul of Cinder -
+12121 Soul of Cinder -
+12122 Soul of Cinder -
+12123 Soul of Cinder -
+12125 Soul of Cinder -
+12126 Soul of Cinder -
+12127 Soul of Cinder -
+12128 Soul of Cinder -
+12129 Soul of Cinder -
+12130 Ghru -
+12131 Ghru -
+12132 Ghru -
+12140 Corvian -
+12141 Corvian -
+12142 Corvian -
+12143 Corvian -
+12144 Corvian -
+12145 Corvian -
+12146 Corvian -
+12150 Irithyllian Slave -
+12151 Irithyllian Slave -
+12152 Irithyllian Slave -
+12153 Irithyllian Slave -
+12155 Irithyllian Slave -
+12156 Irithyllian Slave -
+12170 Crystal Lizard - Sparkles
+12171 Red Crystal Lizard - Sparkles
+12172 Large Red Crystal Lizard - Sparkles
+12200 Demon Cleric -
+12201 Demon Cleric -
+12202 Demon Cleric -
+12203 Demon Cleric -
+12204 Demon Cleric -
+12205 Demon Cleric -
+12210 Devout of the Deep -
+12211 Devout of the Deep -
+12212 Devout of the Deep -
+12213 Devout of the Deep -
+12214 Devout of the Deep -
+12215 Devout of the Deep -
+12216 Devout of the Deep -
+12217 Devout of the Deep -
+12220 Hollow Man-servant -
+12230 Hollow Man-servant -
+12231 Hollow Man-servant -
+12240 Abyss Watcher -
+12241 Abyss Watcher -
+12242 Abyss Watcher - Effect VFX
+12243 Abyss Watcher - Is Dead
+12244 Abyss Watcher - Is Dead
+12245 Abyss Watcher - Normal Watcher Add
+12246 Abyss Watcher -
+12247 Abyss Watcher - Damage Reduction
+12248 Abyss Watcher -
+12600 High Lord Wolnir
+12601 High Lord Wolnir
+12602 High Lord Wolnir
+12603 High Lord Wolnir
+12604 High Lord Wolnir
+12605 High Lord Wolnir
+12610 High Lord Wolnir Darkness Aura - Set on Boss Start
+12611 High Lord Wolnir Darkness Aura - Set on Boss Start
+12612 High Lord Wolnir Darkness Aura - Set on Boss Start
+12613 High Lord Wolnir Bracelet Explosion 2 Effect
+12614 High Lord Wolnir Bracelet Explosion 1 Effect
+12615 High Lord Wolnir Bracelet Explosion 1 Expiration
+12616 High Lord Wolnir Bracelet Explosion 2 Expiration
+12617 High Lord Wolnir VFX - Set on Boss Start
+12618 High Lord Wolnir Darkness Aura - Set on Boss Start
+12620 High Lord Wolnir
+12621 High Lord Wolnir
+12630 High Lord Wolnir
+12700 Giant Serpent-man
+12710 Giant Serpent-man
+12720 Giant Serpent-man
+13000 Tree Woman
+13001 Tree Woman
+13002 Tree Woman
+13010 Tree Woman
+13020 Wolf
+13021 Wolf
+13022 Wolf
+13023 Wolf
+13024 Wolf
+13025 Wolf
+13026 Wolf
+13027 Wolf
+13028 Wolf
+13029 Wolf
+13030 Wolf
+13031 Wolf
+13032 Wolf
+13033 Wolf
+13034 Wolf
+13035 Wolf
+13036 Wolf
+13050 Giant Fly
+13051 Giant Fly
+13052 Giant Fly
+13053 Giant Fly
+13055 Giant Fly
+13056 Giant Fly
+13057 Giant Fly
+13058 Giant Fly
+13060 Millwood Knight
+13061 Millwood Knight
+13062 Millwood Knight
+13063 Millwood Knight
+13064 Millwood Knight
+13065 Millwood Knight
+13066 Millwood Knight
+13067 Millwood Knight
+13068 Millwood Knight
+13069 Millwood Knight
+13100 Gravetender Greatwolf
+13101 Gravetender Greatwolf
+13102 Gravetender Greatwolf
+13103 Gravetender Greatwolf
+13104 Gravetender Greatwolf
+13105 Gravetender Greatwolf
+13106 Gravetender Greatwolf
+13107 Gravetender Greatwolf
+13108 Gravetender Greatwolf
+13109 Gravetender Greatwolf
+13110 Giant Fly
+13111 Giant Fly
+13112 Giant Fly
+13113 Giant Fly
+13114 Giant Fly
+13119 Giant Fly
+13130 Sister Friede
+13131 Sister Friede
+13132 Sister Friede Ressurection Effect
+13133 Sister Friede
+13134 Sister Friede
+13135 Sister Friede
+13136 Sister Friede
+13137 Sister Friede
+13138 Sister Friede
+13139 Sister Friede
+13140 Sister Friede
+13141 Sister Friede
+13142 Sister Friede
+13143 Sister Friede
+13144 Sister Friede
+13145 Sister Friede
+13146 Sister Friede
+13147 Sister Friede
+13150 Sister Friede
+13200 Sister Friede
+13201 Sister Friede
+13202 Sister Friede
+13210 Sister Friede
+13211 Sister Friede
+13215 Sister Friede
+13216 Sister Friede
+13250 Corvian Knight
+13251 Corvian Knight
+13252 Corvian Knight
+13253 Corvian Knight
+13270 Corvian Knight
+15020 Demon Prince
+15021 Demon Prince
+15022 Demon Prince
+15023 Demon Prince
+15024 Demon Prince
+15025 Demon Prince
+15026 Demon Prince
+15027 Demon Prince
+15028 Demon Prince
+15030 Demon Prince
+15031 Demon Prince
+15032 Demon Prince
+15033 Demon Prince
+15034 Demon Prince
+15035 Demon Prince
+15036 Demon Prince
+15037 Demon Prince
+15038 Demon Prince
+15039 Demon Prince
+15040 Demon Prince
+15041 Demon Prince
+15042 Demon Prince
+15043 Demon Prince
+15045 Demon Prince
+15046 Demon Prince
+15047 Demon Prince
+15048 Demon Prince
+15207 Slave Knight Gael - White Phantom - AI
+16000 Lothric Knight - Lance
+16002 Lothric Knight - Lance
+16003 Lothric Knight - Lance
+16004 Lothric Knight - Lance
+16005 Lothric Knight - Lance
+16188 Slave Knight Gael
+16189 Player - Suspend AI?
+16200 Slave Knight Gael
+16201 Slave Knight Gael
+16202 Slave Knight Gael Effect VFX
+16203 Slave Knight Gael
+16204 Slave Knight Gael
+16205 Slave Knight Gael
+16206 Slave Knight Gael
+16207 Slave Knight Gael
+16208 Slave Knight Gael
+16210 Darkeater Midir
+16211 Darkeater Midir
+16212 Darkeater Midir
+16213 Darkeater Midir
+16214 Darkeater Midir
+16215 Darkeater Midir Effect VFX
+16216 Darkeater Midir
+16217 Darkeater Midir
+16218 Darkeater Midir
+16220 Murkman
+16221 Murkman
+16222 Murkman
+16223 Murkman
+16224 Murkman
+16225 Murkman
+16226 Murkman
+16227 Murkman
+16228 Murkman
+16229 Murkman
+16230 Murkman
+16231 Murkman
+16232 Murkman
+16233 Murkman
+16234 Murkman
+16235 Murkman
+16236 Murkman
+16237 Murkman
+16238 Murkman
+16239 Murkman
+16240 Murkman
+16241 Murkman
+16242 Murkman
+16243 Murkman
+16244 Murkman
+16245 Murkman
+16246 Murkman
+16247 Murkman
+16248 Murkman
+16249 Murkman
+16260 Ringed Knight
+16261 Ringed Knight
+16262 Ringed Knight
+16263 Ringed Knight
+16264 Ringed Knight
+16265 Ringed Knight
+16266 Ringed Knight
+16267 Ringed Knight
+16268 Ringed Knight
+16269 Ringed Knight
+16270 Hollow Vagabond
+16271 Hollow Vagabond
+16272 Hollow Vagabond
+16273 Hollow Vagabond
+16274 Hollow Vagabond
+16275 Hollow Vagabond
+16276 Hollow Vagabond
+16277 Hollow Vagabond
+16278 Hollow Vagabond
+16279 Hollow Vagabond
+16280 Judicator
+16281 Judicator
+16282 Judicator
+16283 Judicator
+16284 Judicator
+16285 Judicator
+16286 Judicator
+16287 Judicator
+16288 Judicator
+16289 Judicator
+16290 Hollow Cleric
+16291 Hollow Cleric
+16292 Hollow Cleric
+16293 Hollow Cleric
+16294 Hollow Cleric
+16295 Hollow Cleric
+16296 Hollow Cleric
+16297 Hollow Cleric
+16298 Hollow Cleric
+16330 Big Locust
+16331 Big Locust
+16332 Big Locust
+16333 Big Locust
+16334 Big Locust
+16335 Big Locust
+16336 Big Locust
+16337 Big Locust
+16338 Big Locust
+16340 Big Locust
+16341 Big Locust
+16342 Big Locust
+16343 Big Locust
+16344 Big Locust
+16345 Big Locust
+16346 Big Locust
+16347 Big Locust
+16348 Big Locust
+16349 Big Locust
+16400 Judicator
+16401 Judicator
+16402 Judicator
+16403 Judicator
+16404 Judicator
+16410 Judicator
+16411 Judicator
+16412 Judicator
+16413 Judicator
+16414 Judicator
+16420 Judicator
+16421 Judicator
+16430 Judicator
+16431 Judicator
+16432 Judicator
+16433 Judicator
+16434 Judicator
+16450 Judicator
+16451 Judicator
+16500 Ringed Knight
+16501 Ringed Knight
+16502 Ringed Knight
+16503 Ringed Knight
+16504 Ringed Knight
+16505 Ringed Knight
+16506 Ringed Knight
+16507 Ringed Knight
+16508 Ringed Knight
+16509 Ringed Knight
+16550 Darkeater Midir
+16551 Darkeater Midir
+16552 Darkeater Midir
+16553 Darkeater Midir
+16554 Darkeater Midir
+16555 Darkeater Midir
+16556 Darkeater Midir
+16557 Darkeater Midir
+16558 Darkeater Midir
+16559 Darkeater Midir
+16571 Darkeater Midir - Bridge
+16572 Darkeater Midir - Bridge
+16573 Darkeater Midir - Bridge
+16574 Darkeater Midir - Bridge
+16575 Darkeater Midir - Bridge
+16576 Darkeater Midir - Bridge
+16580 Darkeater Midir - Bridge
+16581 Darkeater Midir - Bridge
+16582 Darkeater Midir - Bridge
+16583 Darkeater Midir - Bridge
+16584 Darkeater Midir - Bridge
+16585 Darkeater Midir - Bridge
+16600 Pilgrim Angel
+16601 Pilgrim Angel
+16602 Pilgrim Angel
+16603 Pilgrim Angel
+16604 Pilgrim Angel
+16605 Pilgrim Angel
+16606 Pilgrim Angel
+16607 Pilgrim Angel
+16608 Pilgrim Angel
+16609 Pilgrim Angel
+16610 Pilgrim Angel
+16611 Pilgrim Angel
+16612 Pilgrim Angel
+16613 Pilgrim Angel
+16614 Pilgrim Angel
+16620 Pilgrim Pulpa
+16621 Pilgrim Pulpa
+16622 Pilgrim Pulpa
+16630 Pilgrim Pulpa
+16631 Pilgrim Pulpa
+16632 Pilgrim Pulpa
+16700 Hollow Vagabond Stamina Recovery
+16701 Hollow Vagabond Stamina Recovery
+16702 Hollow Vagabond Curse 15
+16802 NPC: Movement
+16805 NPC: AI Visual Distance Change
+16810 NPC: AI Visual Distance Change
+17000 NPC: Self-Damage 100
+17001 NPC: Self-Damage 90
+17002 NPC: Self-Damage 80
+17003 NPC: Self-Damage 70
+17004 NPC: Self-Damage 60
+17005 NPC: Self-Damage 50
+17006 NPC: Self-Damage 40
+17007 NPC: Self-Damage 30
+17008 NPC: Self-Damage 20
+17009 NPC: Self-Damage 10
+17010 NPC: 324
+17500 NPC: Invisibility until Close
+17501 NPC: Invisibility until Close
+18020 NPC: Ignore Sight Reductions with VFX
+18100 NPC: Ignore Sight Reductions
+20000 NPC: Poison 10
+20001 NPC: Poison 20
+20002 NPC: Poison 30
+20003 NPC: Poison 40
+20004 NPC: Poison 50
+20005 NPC: Poison 60
+20006 NPC: Poison 70
+20007 NPC: Poison 80
+20008 NPC: Poison 90
+20009 NPC: Poison 100
+20010 NPC: Poison 110
+20011 NPC: Poison 120
+20012 NPC: Poison 130
+20013 NPC: Poison 140
+20014 NPC: Poison 150
+20015 NPC: Poison 160
+20016 NPC: Poison 170
+20017 NPC: Poison 180
+20018 NPC: Poison 190
+20019 NPC: Poison 200
+20100 NPC: Poison 55
+21000 NPC: Toxic 10
+21001 NPC: Toxic 20
+21002 NPC: Toxic 30
+21003 NPC: Toxic 40
+21004 NPC: Toxic 50
+21005 NPC: Toxic 60
+21006 NPC: Toxic 70
+21007 NPC: Toxic 80
+21008 NPC: Toxic 90
+21009 NPC: Toxic 100
+21010 NPC: Toxic 110
+21011 NPC: Toxic 120
+21012 NPC: Toxic 130
+21013 NPC: Toxic 140
+21014 NPC: Toxic 150
+21015 NPC: Toxic 160
+21016 NPC: Toxic 170
+21017 NPC: Toxic 180
+21018 NPC: Toxic 190
+21019 NPC: Toxic 200
+22000 NPC: Bleed 10
+22001 NPC: Bleed 20
+22002 NPC: Bleed 30
+22003 NPC: Bleed 40
+22004 NPC: Bleed 50
+22005 NPC: Bleed 60
+22006 NPC: Bleed 70
+22007 NPC: Bleed 80
+22008 NPC: Bleed 90
+22009 NPC: Bleed 100
+22010 NPC: Bleed 110
+22011 NPC: Bleed 120
+22012 NPC: Bleed 130
+22013 NPC: Bleed 140
+22014 NPC: Bleed 150
+22015 NPC: Bleed 160
+22016 NPC: Bleed 170
+22017 NPC: Bleed 180
+22018 NPC: Bleed 190
+22019 NPC: Bleed 200
+22100 NPC: Bleed 40
+22101 NPC: Bleed 80
+23000 NPC: Curse 10
+23001 NPC: Curse 20
+23002 NPC: Curse 30
+23003 NPC: Curse 40
+23004 NPC: Curse 50
+23005 NPC: Curse 60
+23006 NPC: Curse 70
+23007 NPC: Curse 80
+23008 NPC: Curse 90
+23009 NPC: Curse 100
+23010 NPC: Curse 110
+23011 NPC: Curse 120
+23012 NPC: Curse 130
+23013 NPC: Curse 140
+23014 NPC: Curse 150
+23015 NPC: Curse 160
+23016 NPC: Curse 170
+23017 NPC: Curse 180
+23018 NPC: Curse 190
+23019 NPC: Curse 200
+23100 NPC: Curse 1
+24000 NPC: Frost 10
+24001 NPC: Frost 20
+24002 NPC: Frost 30
+24003 NPC: Frost 40
+24004 NPC: Frost 50
+24005 NPC: Frost 60
+24006 NPC: Frost 70
+24007 NPC: Frost 80
+24008 NPC: Frost 90
+24009 NPC: Frost 100
+24010 NPC: Frost 110
+24011 NPC: Frost 120
+24012 NPC: Frost 130
+24013 NPC: Frost 140
+24014 NPC: Frost 150
+24015 NPC: Frost 160
+24016 NPC: Frost 170
+24017 NPC: Frost 180
+24018 NPC: Frost 190
+24019 NPC: Frost 200
+24100 NPC: Frost 480
+24101 NPC: Frost 60
+24110 NPC: Frost 1
+24111 NPC: Frost 18
+24112 NPC: Frost 27
+24120 NPC: Frost 3
+24130 NPC: Frost - Pontiff Knight
+24140 NPC: Frost 40
+24500 NPC: Durability Damage 5
+24501 NPC: Durability Damage 1
+30000 NPC: Disable Poison
+30010 NPC: Disable Toxic
+30020 NPC: Disable Bleed
+30030 NPC: Disable Curse
+30040 NPC: Disable Frostbite
+30100 NPC: Ignore Fake Targets
+30200 NPC: Allow Charm
+30210 NPC: Disable Stagger
+71100 NPC: Disable All Statuses
+71110 NPC: Immortality disabled
+71111 NPC: All enabled
+80000 Disable all 
+80011 Remnant & Soul-absorbing disabled 
+80101 Remnant & Fascination Disabled 
+80111 Remnants invalid 
+81001 Soul & Fascination Disabled 
+81011 Soul Absorption disabled 
+81101 Fascinated disabled 
+81111 All enabled 
+90000 Disable all 
+90001 Poison & Bleeding & plague Disabled 
+90010 Poison & Bleeding & curse disabled 
+90011 Poison & Bleeding Disabled 
+90100 Poison & Plague & Curse Disabled 
+90101 Poison & Plague Disabled 
+90110 Poison & Curse Disabled 
+90111 Poison disabled 
+91000 Bleeding & plague & Curse Disabled 
+91001 Bleeding & plague Disabled 
+91010 Bleeding & curses disabled 
+91011 Bleeding disabled 
+91100 Plague & Curse Invalid 
+91101 Plague disabled 
+91110 Curse disabled 
+91111 All enabled 
+99000 Shallow snow 
+99001 Deep snow 
+99002 Dead Torches State 
+99003 Desaster from the Sword 
+99004 Show off 
+99005 Test after caries ritual 
+99006 Play an enemy that does not notice the version 
+99007 The power of the evil spirits in the play 
+99008 Counter Test 
+99013 Always throwing off for concept bridge dead 
+99014 Suspension dead for determining waiting condition 
+99020 Special effects for Slime 
+99050 The swamp of caries 
+99100 (FDP) Test _ No damage against flames 
+99101 (FDP) Test _ wolf-throwing damage 
+99102 (FDP) Test _ Firefly Item Use event acquisition 
+99200 (FDP) Proto-giant slime freezing 
+99201 (FDP) Proto _ giant slime freezing SFX 
+99300 Dragon Bleeding 
+99310 Dragon Bleeding 1 
+99311 Dragon Bleeding 2 
+99312 Dragon Bleeding 3 
+99313 Dragon Bleeding 4 
+99314 Dragon Bleeding 5 
+99400 (Test) Curse of the Evil King 
+99401 C1210 Blue estrus Permit test 
+99402 c1210 Blue estrus Anime ID offset 3,000,000 
+99410 Touchable in c1240 poor dead rolling 
+99420 c2180 maggots test for changing animation of damage in flames 
+99430 12 End edition avatar for pseudo-death state 
+99440 Ash Daemon hot air damage large 
+99441 Ash Daemon hot air damage small 
+99450 Resident damage Anime change (for provisional Black Knight) 
+99451 Resident damage Anime change (for temporary crucifixion dead a) 
+99500 Test for the Cathedral Golem 
+99600 Test for time measurement until the pseudo-death resurrection 
+99700 Team Type Change test 
+99800 Tae-eventmaker Collaboration Test 
+100000 HKS - Anim - Walking
+100001 HKS - Anim - Running
+100002 HKS - Anim - Sprinting
+100005 HKS - Anim - Stop Walking
+100006 HKS - Anim - Stop Running
+100007 HKS - Anim - Stop Sprinting
+100010 HKS - Anim - Turning
+100020 HKS - Player stamina out of judgment
+100030 HKS - upper body Anime End transition judgement
+100040 HKS - Lower body anime End transition judgement
+100050 HKS - Rotation attack transition available for specified period
+100060 HKS - HKS - Heavy attack for back-step Prohibition in motion
+100070 HKS - For the fall transition judging of jump animation
+100080 HKS - For judgment of wall collision during throwing
+100090 HKS - For determining the timing of the possible interruption of the reservoir attack
+100100 HKS - For determining death timing for wall collisions
+100110 HKS - Bonfire Event Issue Timing determination
+100120 HKS - Guard reversal Possible timing determination
+100130 HKS - Moving right
+100140 HKS - Moving right diagonal
+100150 HKS - Moving left
+100160 HKS - Moving left diagonal
+100170 HKS - For determination of 180 degree turning in dash
+100180 HKS - For no dash judgment
+100190 HKS - For the driving and dash no judgment
+100200 HKS - For non-moving judgment
+100210 HKS - Left-hand attack transition timing
+100220 HKS - Continue to dash even if dash input is missing
+100230 HKS - Make a default attack instead of a combo attack
+100240 HKS - No Turn whilst Rolling
+100250 HKS - The second stage of attack can be derived or determined
+100260 HKS - The second stage of the rush attack can be derived or determined
+100270 HKS - Can rise and roll
+100280 HKS - Crucifix of the Mad King
+100290 HKS - Blank
+100300 HKS - Blank
+100310 HKS - Falling
+100320 HKS - Blank
+100330 HKS - Repeating Crossbow
+100340 HKS - Crossbow
+100350 HKS - Shield Bash
+100360 HKS - Rolling
+100370 HKS - Rolling
+100380 HKS - Blank
+100390 HKS - Rolling
+100400 HKS - Slide
+100410 HKS -
+100420 HKS - Dragonhead Greatshield
+100430 HKS -
+100440 HKS -
+100450 HKS -
+100460 HKS -
+100470 HKS -
+100480 HKS -
+100490 HKS - Non-generator Transition - Friede's Great Scythe
+100500 HKS - Non-generator Transition
+100510 HKS - Guard
+100520 HKS - Guard Break
+100530 HKS -
+100540 HKS -
+100550 HKS -
+100560 HKS - Anim - Item Usage
+100570 HKS - Harald Curved Greatsword
+100580 HKS - Demon's Scar
+100590 HKS - Harald Curved Greatsword
+100591 HKS - Kirk
+100595 HKS - Ivory King UGS - WA Heavy - Follow-up
+100600 HKS -
+100610 HKS -
+100620 HKS - Cast Magic
+100630 HKS - Cast Magic
+100640 HKS - Cast Magic
+100650 HKS - Cast Magic
+100660 HKS - Cast Magic
+100670 HKS - Cast Magic
+100680 HKS - Frayed Blade
+100690 HKS - Guard
+100700 HKS - Guard
+100710 HKS - SubStart 2 Transition
+100711 HKS - SubStart 2  into End
+100712 HKS - SubStart 2  into Start
+100713 HKS - SubStart 1  into End
+100714 HKS - SubStart 1  into Start
+100715 HKS - SubStart 1 Transition
+120000 Weapon Art - Axe: War cry
+120010 Weapon Art - Axe: War cry Lack of FP
+120020 Weapon Art - Axe: War cry - Shockwave Lack of FP
+120110 Weapon Art - Greatsword: Stance Lack of FP
+120210 Weapon Art - Straight Sword: Stance Lack of FP
+120310 Weapon Art - Curved Sword: Stance Lack of FP
+120410 Weapon Art - Bow: Rapid Fire Lack of FP
+120500 Weapon Art - Steady Chant: Right
+120501 Weapon Art - Steady Chant: Left
+120510 Weapon Art - Steady Chant: Right Lack of FP
+120511 Weapon Art - Steady Chant: Left Lack of FP
+120610 Weapon Art
+120650 Weapon Art - Spear - Hurl Spear
+120700 Weapon Art - Hammer: Perserverence
+120701 Weapon Art - Hammer: Perserverence Damage Replacement
+120710 Weapon Art - Hammer: Perserverence Lack of FP
+120750 Weapon Art - Perserverence
+120751 Weapon Art - Perserverence: Damage Replacement
+120760 Weapon Art - Perserverence Lack of FP
+120770 Weapon Art - Perserverence
+120800 Weapon Art - Unfaltering Prayer
+120801 Weapon Art - Unfaltering Prayer Damage Replacement
+120810 Weapon Art - Unfaltering Prayer Lack of FP
+120811 Weapon Art - Unfaltering Prayer Damage Replacement - Lack of FP
+120820 Weapon Art - Unfaltering Prayer
+120821 Weapon Art - Unfaltering Prayer Damage Replacement
+120830 Weapon Art - Unfaltering Prayer Lack of FP
+120831 Weapon Art - Unfaltering Prayer Damage Replacement - Lack of FP
+120840 Weapon Art - Unfaltering Prayer Used for Shield Catalyst
+120841 Weapon Art - Unfaltering Prayer Damage Replacement - Used for Shield Catalyst
+120850 Weapon Art - Unfaltering Prayer Lack of FP - Used for Shield Catalyst
+120851 Weapon Art - Unfaltering Prayer Damage Replacement - Lack of FP - Used for Shield Catalyst
+120910 Weapon Art - Greatbow: Puncturing Arrow Lack of FP
+121010 Weapon Art
+121020 Weapon Art - Moonlight Greatsword Lack of FP
+121110 Weapon Art - Carthus Curved Greatsword Lack of FP
+121210 Weapon Art - Frayed Blade Lack of FP
+121310 Weapon Art - Frayed Blade Lack of FP
+121410 Weapon Art - Lack of FP - 75%
+121510 Weapon Art - Lack of FP - 75%
+121610 Weapon Art - Lack of FP - 75%
+121710 Weapon Art - Lack of FP - V
+121810 Weapon Art - Lack of FP - 75%
+121910 Weapon Art - Lack of FP - 65%
+121920 Weapon Art - Lack of FP - 65%
+130000 Wet Aspect - Water
+130010 Wet Aspect - Poison
+130020 Wet Aspect - Mud
+130040 Wet Aspect - Frost
+130110 Move Type - Heavy
+135000 Pyromancer's Parting Flame - Estus Indicator
+139990 Weapon Style - Right
+139995 Weapon Style - Left
+140001 NPC Correction - Super - 1 Player
+140002 NPC Correction - Super - 2 Player
+140003 NPC Correction - Super - 3 Player
+140101 NPC Correction - Hostile NPC - 1 Player
+140102 NPC Correction - Hostile NPC - 2 Player
+140103 NPC Correction - Hostile NPC - 3 Player
+140201 NPC Correction - Boss - 1 Player
+140202 NPC Correction - Boss - 2 Player
+140203 NPC Correction - Boss - 3 Player
+140211 NPC Correction - Aldrich, Devourer of Gods - 1 Player
+140212 NPC Correction - Aldrich, Devourer of Gods - 2 Player
+140213 NPC Correction - Aldrich, Devourer of Gods - 3 Player
+140221 NPC Correction - Soul of Cinder - 1 Player
+140222 NPC Correction - Soul of Cinder - 2 Player
+140223 NPC Correction - Soul of Cinder - 3 Player
+140231 NPC Correction - Crystal Sage - 1 Player
+140232 NPC Correction - Crystal Sage - 2 Player
+140233 NPC Correction - Crystal Sage - 3 Player
+140241 NPC Correction - Nameless King - 1 Player
+140242 NPC Correction - Nameless King - 2 Player
+140243 NPC Correction - Nameless King - 3 Player
+140251 NPC Correction - Pontiff Sulyvahn - 1 Player
+140252 NPC Correction - Pontiff Sulyvahn - 2 Player
+140253 NPC Correction - Pontiff Sulyvahn - 3 Player
+140261 NPC Correction - Champion Gundyr - 1 Player
+140262 NPC Correction - Champion Gundyr - 2 Player
+140263 NPC Correction - Champion Gundyr - 3 Player
+140271 NPC Correction - Dragonslayer Armour - 1 Player
+140272 NPC Correction - Dragonslayer Armour - 2 Player
+140273 NPC Correction - Dragonslayer Armour - 3 Player
+140281 NPC Correction - Twin Princes - 1 Player
+140282 NPC Correction - Twin Princes - 2 Player
+140283 NPC Correction - Twin Princes - 3 Player
+140291 NPC Correction - Abyss Watcher - 1 Player
+140292 NPC Correction - Abyss Watcher - 2 Player
+140293 NPC Correction - Abyss Watcher - 3 Player
+140301 NPC Correction - Deacons of the Deep - 1 Player
+140302 NPC Correction - Deacons of the Deep - 2 Player
+140303 NPC Correction - Deacons of the Deep - 3 Player
+140311 NPC Correction - Vordt of the Boreal Valley - 1 Player
+140312 NPC Correction - Vordt of the Boreal Valley - 2 Player
+140313 NPC Correction - Vordt of the Boreal Valley - 3 Player
+140321 NPC Correction - King of the Storm - 1 Player
+140322 NPC Correction - King of the Storm - 2 Player
+140323 NPC Correction - King of the Storm - 3 Player
+140331 NPC Correction - Dancer of the Boreal Valley - 1 Player
+140332 NPC Correction - Dancer of the Boreal Valley - 2 Player
+140333 NPC Correction - Dancer of the Boreal Valley - 3 Player
+140341 NPC Correction - Father Ariandel - 1 Player
+140342 NPC Correction - Father Ariandel - 2 Player
+140343 NPC Correction - Father Ariandel - 3 Player
+140351 NPC Correction - Sister Friede - 1st Stage - 1 Player
+140352 NPC Correction - Sister Friede - 1st Stage - 2 Player
+140353 NPC Correction - Sister Friede - 1st Stage - 3 Player
+140361 NPC Correction - Sister Friede - 2nd / 3rd Stage - 1 Player
+140362 NPC Correction - Sister Friede - 2nd / 3rd Stage - 2 Player
+140363 NPC Correction - Sister Friede - 2nd / 3rd Stage - 3 Player
+140371 NPC Correction - Gravetender Greatwolf - 1 Player
+140372 NPC Correction - Gravetender Greatwolf - 2 Player
+140373 NPC Correction - Gravetender Greatwolf - 3 Player
+140381 NPC Correction - Champion's Gravetender - 1 Player
+140382 NPC Correction - Champion's Gravetender - 2 Player
+140383 NPC Correction - Champion's Gravetender - 3 Player
+140391 NPC Correction - Demon in Pain - 1 Player
+140392 NPC Correction - Demon in Pain - 2 Player
+140393 NPC Correction - Demon in Pain - 3 Player
+140401 NPC Correction - Demon from Below - 1 Player
+140402 NPC Correction - Demon from Below - 2 Player
+140403 NPC Correction - Demon from Below - 3 Player
+140411 NPC Correction - Painting Guardian - 1 Player
+140412 NPC Correction - Painting Guardian - 2 Player
+140413 NPC Correction - Painting Guardian - 3 Player
+140414 NPC Correction -
+140415 NPC Correction -
+140416 NPC Correction -
+140417 NPC Correction -
+140418 NPC Correction -
+140419 NPC Correction -
+140421 NPC Correction - Painting Guardian - 1 Player
+140422 NPC Correction - Painting Guardian - 2 Player
+140423 NPC Correction - Painting Guardian - 3 Player
+140424 NPC Correction -
+140425 NPC Correction -
+140426 NPC Correction -
+140427 NPC Correction -
+140428 NPC Correction -
+140429 NPC Correction -
+140431 NPC Correction - Halflight - 1 Player
+140432 NPC Correction - Halflight - 2 Player
+140433 NPC Correction - Halflight - 3 Player
+140441 NPC Correction - Darkeater Midir - 1 Player
+140442 NPC Correction - Darkeater Midir - 2 Player
+140443 NPC Correction - Darkeater Midir - 3 Player
+140451 NPC Correction - Slave Knight Gael - 1st Stage - 1 Player
+140452 NPC Correction - Slave Knight Gael - 1st Stage - 2 Player
+140453 NPC Correction - Slave Knight Gael - 1st Stage - 3 Player
+140461 NPC Correction - Slave Knight Gael - 2nd Stage - 1 Player
+140462 NPC Correction - Slave Knight Gael - 2nd Stage - 2 Player
+140463 NPC Correction - Slave Knight Gael - 2nd Stage - 3 Player
+140471 NPC Correction - Princess Yngvil - 1 Player
+140472 NPC Correction - Princess Yngvil - 2 Player
+140473 NPC Correction - Princess Yngvil - 3 Player
+900100 SFX Confirmation: EST recovery
+950000 Carthus Beacon
+950010 Carthus Beacon
+1062301 Weapon Art - Warcry 1 - Right
+1062311 Weapon Art - Warcry 1 - Right - No FP
+1062351 Weapon Art - Warcry 1 - Left
+1062361 Weapon Art - Warcry 1 - Left - No FP
+1070101 Weapon Art - Warcry 2 - Right
+1070111 Weapon Art - Warcry 2 - Right - No FP
+1070151 Weapon Art - Warcry 2 - Left
+1070161 Weapon Art - Warcry 2 - Left - No FP
+1070401 Weapon Art - Warcry 3 - Right
+1070411 Weapon Art - Warcry 3 - Right - No FP
+1070451 Weapon Art - Warcry 3 - Left
+1070461 Weapon Art - Warcry 3 - Left - No FP
+1070501 Weapon Art - Warcry 4 - Right
+1070511 Weapon Art - Warcry 4 - Right - No FP
+1070551 Weapon Art - Warcry 4 - Left
+1070561 Weapon Art - Warcry 4 - Left - No FP
+1080001 Weapon Art - Warcry 5 - Right
+1080011 Weapon Art - Warcry 5 - Right - No FP
+1080051 Weapon Art - Warcry 5 - Left
+1080061 Weapon Art - Warcry 5 - Left - No FP
+1080101 Weapon Art - Warcry of the Abyss - Right
+1080111 Weapon Art - Warcry of the Abyss - Right - No FP
+1080151 Weapon Art - Warcry of the Abyss - Left
+1080161 Weapon Art - Warcry of the Abyss - Left - No FP
+1080601 Weapon Art - Warcry 6 - Right
+1080611 Weapon Art - Warcry 6 - Right - No FP
+1080651 Weapon Art - Warcry 6 - Left
+1080661 Weapon Art - Warcry 6 - Left - No FP
+1080701 Weapon Art - Tonitrus - Sparks - Right
+1080711 Weapon Art - Tonitrus - Sparks - Right - No FP
+1080751 Weapon Art - Tonitrus - Sparks - Left
+1080761 Weapon Art - Tonitrus - Sparks - Left - No FP
+1080801 Weapon Art - Bewitched Alonne Sword - Seppuku - Right
+1080811 Weapon Art - Bewitched Alonne Sword - Seppuku - Right - No FP
+1080851 Weapon Art - Bewitched Alonne Sword - Seppuku - Left
+1080861 Weapon Art - Bewitched Alonne Sword - Seppuku - Left - No FP
+1080901 Weapon Art - Chariot Lance - Executioner's Torment - Right
+1080911 Weapon Art - Chariot Lance - Executioner's Torment - Right - No FP
+1080951 Weapon Art - Chariot Lance - Executioner's Torment - Left
+1080961 Weapon Art - Chariot Lance - Executioner's Torment - Left - No FP
+1081001 Weapon Art - Elemental Flow – Right Hand
+1081011 Weapon Art - Elemental Flow – Right Hand – Low FP
+1081051 Weapon Art - Elemental Flow – Left Hand
+1081061 Weapon Art - Elemental Flow – Left Hand – Low FP
+1081101 Weapon Art - Bloodlust - Right Hand
+1081111 Weapon Art - Bloodlust - Right Hand - No FP
+1081151 Weapon Art - Bloodlust - Left Hand
+1081161 Weapon Art - Bloodlust - Left Hand - No FP
+1081201 Weapon Art - Phosphorescent Pole - Right Hand
+1081211 Weapon Art - Phosphorescent Pole - Right Hand - No FP
+1081251 Weapon Art - Phosphorescent Pole - Left Hand
+1081261 Weapon Art - Phosphorescent Pole - Left Hand - No FP
+1081301 Weapon Art - Washing Pole - Right Hand
+1081311 Weapon Art - Washing Pole - Right Hand - No FP
+1081351 Weapon Art - Washing Pole - Left Hand
+1081361 Weapon Art - Washing Pole - Left Hand - No FP
+1083201 Weapon Art - Ledo's Great Hammer - Right
+1083251 Weapon Art - Ledo's Great Hammer - Left
+1092401 Weapon Art - Ringed Knight Spear - Ember - Right
+1092411 Weapon Art - Ringed Knight Spear - Ember - Right - No FP
+1092451 Weapon Art - Ringed Knight Spear - Ember - Left
+1092461 Weapon Art - Ringed Knight Spear - Ember - Left - No FP
+101310000 Sorcery - Magic Weapon
+101311000 Sorcery - Great Magic Weapon
+101312000 Sorcery - Crystal Magic Weapon
+101312010 Sorcery - Moonlight Weapon
+101313000 Sorcery - Frozen Weapon
+101313010 Sorcery - Supreme Frozen Weapon
+101330000 Sorcery - Magic Shield
+101331000 Sorcery - Great Magic Shield
+101331010 Sorcery - Supreme Magic Shield
+101340000 Sorcery - Hidden Weapon
+101341000 Sorcery - Hidden Body
+101350000 Sorcery - Cast Light
+101353000 Sorcery - Repair
+101353010 Sorcery - Skilled Repair
+101354000 Sorcery - Spook
+101354100 Sorcery - Spook (Cycle)
+101355000 Sorcery - Chameleon
+101355100 Sorcery - Chameleon (Cycle)
+101356000 Sorcery - Aural Decoy
+101740000 Sorcery - Pestilent Mist
+101741000 Sorcery - Snap Freeze
+102430000 Pyromancy - Iron Flesh
+102430100 Pyromancy - Iron Flesh
+102430200 Pyromancy - Iron Flesh
+102430300 Pyromancy - Iron Flesh
+102430400 Pyromancy - Lingering Iron Flesh
+102430500 Pyromancy - Lingering Iron Flesh
+102430600 Pyromancy - Lingering Iron Flesh
+102430700 Pyromancy - Lingering Iron Flesh
+102431000 Pyromancy - Flash Sweat
+102431010 Pyromancy - Great Flash Sweat
+102435000 Pyromancy - Carthus Flame Arc
+102435100 Pyromancy - Chaos Flame Arc
+102436000 Pyromancy - Rapport
+102436001 Pyromancy - Fortified Rapport
+102436010 Pyromancy - Rapport
+102440000 Pyromancy - Power Within
+102440100 Pyromancy - Lingering Power Within
+102470000 Pyromancy - Warmth
+102562000 Pyromancy - Profuse Sweat
+102650000 Pyromancy - Carthus Beacon
+102650005 Pyromancy - Lingering Carthus Beacon
+102650010 Pyromancy - Carthus Beacon - Start Condition Check + Reduce Increment
+102650011 Pyromancy - Carthus Beacon - 17 'Hits'
+102650012 Pyromancy - Carthus Beacon - 45 'Hits'
+102651000 Pyromancy - Immolation
+102651010 Immolation - Smouldering Talisman
+103490000 Miracle - Heal Aid
+103490100 Miracle - Heal Aid MP
+103500000 Miracle - Heal
+103500100 Miracle - Heal MP
+103501000 Miracle - Med Heal
+103501100 Miracle - Med Heal MP
+103502000 Miracle - Great Heal
+103502100 Miracle - Great Heal MP
+103503000 Miracle - Soothing Sunlight
+103503100 Miracle - Soothing Sunlight MP
+103504000 Miracle - Replenishment
+103504010 Miracle - Lingering Replenishment
+103505000 Miracle - Bountiful Sunlight
+103505100 Miracle - Bountiful Sunlight MP
+103505300 Miracle - Lingering Bountiful Sunlight
+103505400 Miracle - Lingering Bountiful Sunlight MP
+103507000 Miracle - Bountiful Light
+103507010 Miracle - Lingering Bountiful Light
+103508000 Miracle - Caressing Tears
+103508100 Miracle - Caressing Tears
+103508200 Miracle - Caressing Tears
+103508300 Miracle - Caressing Tears
+103508400 Miracle - Caressing Tears
+103508500 Miracle - Caressing Tears
+103520000 Miracle - Tears of Denial
+103520100 GameSystemParam - Tears of Denial - Trigger
+103521000 Miracle - Homeward
+103521100 Miracle - Homeward Replace
+103540000 Miracle - Heavenly Relief
+103540010 Miracle - Divine Relief
+103557000 Miracle - Projected Heal - Friendly
+103557010 Miracle - Projected Heal - Self
+103560000 Miracle - Magic Barrier
+103561000 Miracle - Great Magic Barrier
+103561010 Miracle - Supreme Magic Barrier
+103563000 Miracle - Sacred Oath
+103563100 Miracle - Sacred Oath
+103581000 Miracle - Vow of Silence
+103581010 Miracle - Curse of Silence
+103590000 Miracle - Lightning Blade
+103590010 Miracle - Sunlight Blade
+103591000 Miracle - Darkmoon Blade
+103591010 Miracle - Supreme Darkmoon Blade
+103640000 Miracle - Dark Blade
+103640001 Miracle - Dark Blade - Absorption
+103640010 Miracle - Abyssal Blade
+103640011 Miracle - Abyssal Blade - Absorption
+103700000 Miracle - Dead Again
+103700100 GameSystemParam - DeadChrFinder - SpEffect
+103730000 Miracle - Lifehunt Scythe
+103731000 Miracle - Lifehunt Scythe - HP Gain
+103760000 Miracle - Blessed Weapon
+103760010 Miracle - Holy Weapon
+103770000 Miracle - Deep Protection
+103770100 Miracle - Deep Protection (Cycle)
+103770200 Miracle - Deep Protection (Cycle)
+103770300 Miracle - Deep Protection (Cycle)
+103770500 Miracle - Bottomless Deep Protection
+103770600 Miracle - Bottomless Deep Protection (Cycle)
+103770700 Miracle - Bottomless Deep Protection (Cycle)
+103770800 Miracle - Bottomless Deep Protection (Cycle)
+103780000 Miracle - Atonement
+103780010 Miracle - Lingering Atonement
+111000000 Ring - Blade of the Darkmoon
+111001000 Ring - Spears of the Church
+111002000 Ring - Watchdogs of Farron
+111003000 Ring - Aldrich Faithful
+111004000 Ring - Blue Sentinels
+112000000 Ring - Life Ring
+112000100 Ring - Life Ring+1
+112000200 Ring - Life Ring+2
+112000300 Ring - Life Ring+3
+112001000 Ring - Chloranthy Ring
+112001100 Ring - Chloranthy Ring+1
+112001200 Ring - Chloranthy Ring+2
+112001300 Ring - Chloranthy Ring+3
+112002000 Ring - Havel's Ring
+112002100 Ring - Havel's Ring+1
+112002200 Ring - Havel's Ring+2
+112002300 Ring - Havel's Ring+3
+112003000 Ring - Ring of Favor
+112003100 Ring - Ring of Favor+1
+112003200 Ring - Ring of Favor+2
+112003300 Ring - Ring of Favor+3
+112004000 Ring - Ring of Steel Protection
+112004100 Ring - Ring of Steel Protection+1
+112004200 Ring - Ring of Steel Protection+2
+112004300 Ring - Ring of Steel Protection+3
+112005000 Ring - Flame Stoneplate Ring
+112005100 Ring - Flame Stoneplate Ring+1
+112005200 Ring - Flame Stoneplate Ring+2
+112006000 Ring - Thunder Stoneplate Ring
+112006100 Ring - Thunder Stoneplate Ring+1
+112006200 Ring - Thunder Stoneplate Ring+2
+112007000 Ring - Magic Stoneplate Ring
+112007100 Ring - Magic Stoneplate Ring+1
+112007200 Ring - Magic Stoneplate Ring+2
+112008000 Ring - Dark Stoneplate Ring
+112008100 Ring - Dark Stoneplate Ring+1
+112008200 Ring - Dark Stoneplate Ring+2
+112009000 Ring - Speckled Stoneplate Ring
+112009100 Ring - Speckled Stoneplate Ring+1
+112010000 Ring - Bloodbite Ring
+112010100 Ring - Bloodbite Ring+1
+112011000 Ring - Poisonbite Ring
+112011100 Ring - Poisonbite Ring+1
+112012000 Ring - Cursebite Ring
+112013000 Ring - Fleshbite Ring
+112013100 Ring - Fleshbite Ring+1
+112014000 Ring - Wood Grain Ring
+112014100 Ring - Wood Grain Ring+1
+112014200 Ring - Wood Grain Ring+2
+112015000 Ring - Scholar Ring
+112016000 Ring - Priestess Ring
+112017000 Ring - Red Tearstone Ring
+112018000 Ring - Blue Tearstone Ring
+112019000 Ring - Wolf Ring
+112019100 Ring - Wolf Ring+1
+112019200 Ring - Wolf Ring+2
+112019300 Ring - Wolf Ring+3
+112020000 Ring - Leo Ring
+112021000 Ring - Ring of Sacrifice
+112022000 Ring - Ring of Sacrifice (Complementary)
+112023000 Ring - Young Dragon Ring
+112023100 Ring - Bellowing Dragoncrest Ring
+112024000 Ring - Great Swamp Ring
+112024100 Ring - Witch's Ring
+112025000 Ring - Morne's Ring
+112025100 Ring - Ring of the Sun's First Born
+112027000 Ring - Lingering Dragoncrest Ring
+112027100 Ring - Lingering Dragoncrest Ring+1
+112027200 Ring - Lingering Dragoncrest Ring+2
+112028000 Ring - Sage Ring
+112028100 Ring - Sage Ring+1
+112028200 Ring - Sage Ring+2
+112029000 Ring - Slumbering Dragoncrest Ring
+112030000 Ring - Dusk Crown Ring
+112031000 Ring - Saint's Ring
+112032000 Ring - Deep Ring
+112033000 Ring - Darkmoon Ring
+112037000 Ring - Hawk Ring
+112038000 Ring - Hornet Ring
+112039000 Ring - Covetous Gold Serpent Ring
+112039100 Ring - Covetous Gold Serpent Ring+1
+112039200 Ring - Covetous Gold Serpent Ring+2
+112039300 Ring - Covetous Gold Serpent Ring+3
+112040000 Ring - Covetous Silver Serpent Ring
+112040100 Ring - Covetous Silver Serpent Ring+1
+112040200 Ring - Covetous Silver Serpent Ring+2
+112040300 Ring - Covetous Silver Serpent Ring+3
+112041000 Ring - Sun Princess Ring
+112042000 Ring - Silvercat Ring
+112043000 Ring - Skull Ring
+112044000 Ring - Untrue White Ring
+112045000 Ring - Carthus Milkring - Effect
+112045010 Ring - Carthus Milkring - Condition
+112046000 Ring - Knight's Ring
+112047000 Ring - Hunter's Ring
+112048000 Ring - Knight Slayer's Ring
+112049000 Ring - Magic Clutch Ring
+112050000 Ring - Lightning Clutch Ring
+112051000 Ring - Fire Clutch Ring
+112052000 Ring - Dark Clutch Ring
+112054000 Ring - Flynn's Ring
+112055000 Ring - Prisoner's Chain
+112056000 Ring - Untrue Dark Ring
+112058000 Ring - Obscuring Ring
+112059000 Ring - Ring of the Evil Eye
+112059010 Ring - Ring of the Evil Eye - Effect
+112059100 Ring - Ring of the Evil Eye+1
+112059110 Ring - Ring of the Evil Eye+1 - Effect
+112059200 Ring - Ring of the Evil Eye+2
+112059210 Ring - Ring of the Evil Eye+2 - Effect
+112059300 Ring - Ring of the Evil Eye+3
+112059310 Ring - Ring of the Evil Eye+3 - Effect
+112060000 Ring - Calamity Ring
+112061000 Ring - Farron Ring
+112062000 Ring - Aldrich's Ruby
+112062001 Ring - Aldrich's Ruby - Condition
+112062002 Ring - Aldrich's Ruby - Effect
+112063000 Ring - Aldrich's Sapphire
+112063001 Ring - Aldrich's Sapphire - Condition
+112063002 Ring - Aldrich's Sapphire - Effect
+112066000 Ring - Lloyd's Sword Ring
+112067000 Ring - Lloyd's Shield Ring
+112070000 Ring - Estus Ring
+112071000 Ring - Ashen Estus Ring
+112072000 Ring - Horsehoof Ring
+112073000 Ring - Carthus Bloodring
+112074000 Ring - Reversal Ring
+112075000 Ring - Pontiff's Right Eye - Condition
+112075010 Ring - Pontiff's Right Eye - Condition (Complementary)
+112075020 Ring - Pontiff's Right Eye - Condition (Complementary)
+112075030 Ring - Pontiff's Right Eye - Condition (Complementary)
+112075100 Ring - Pontiff's Right Eye - Effect (Complementary)
+112075110 Ring - Pontiff's Right Eye - Effect (Complementary)
+112075120 Ring - Pontiff's Right Eye - Effect (Complementary)
+112075130 Ring - Pontiff's Right Eye - Effect
+112079000 Ring - Pontiff's Left Eye
+112079100 Ring - Pontiff's Left Eye - Effect
+112083000 Ring - Dragonscale Ring
+112100000 Ring - Chillbite Ring
+129000500 Infusion - Simple
+129000501 Infusion - Simple +1
+129000502 Infusion - Simple +2
+129000503 Infusion - Simple +3
+129000504 Infusion - Simple +4
+129000505 Infusion - Simple +5
+129000506 Infusion - Simple +6
+129000507 Infusion - Simple +7
+129000508 Infusion - Simple +8
+129000509 Infusion - Simple +9
+129000510 Infusion - Simple +10
+129001100 Infusion - Poison
+129001101 Infusion - Poison +1
+129001102 Infusion - Poison +2
+129001103 Infusion - Poison +3
+129001104 Infusion - Poison +4
+129001105 Infusion - Poison +5
+129001106 Infusion - Poison +6
+129001107 Infusion - Poison +7
+129001108 Infusion - Poison +8
+129001109 Infusion - Poison +9
+129001110 Infusion - Poison +10
+129001200 Infusion - Bleed
+129001201 Infusion - Bleed +1
+129001202 Infusion - Bleed +2
+129001203 Infusion - Bleed +3
+129001204 Infusion - Bleed +4
+129001205 Infusion - Bleed +5
+129001206 Infusion - Bleed +6
+129001207 Infusion - Bleed +7
+129001208 Infusion - Bleed +8
+129001209 Infusion - Bleed +9
+129001210 Infusion - Bleed +10
+129001400 Infusion - Blessed
+129001401 Infusion - Blessed +1
+129001402 Infusion - Blessed +2
+129001403 Infusion - Blessed +3
+129001404 Infusion - Blessed +4
+129001405 Infusion - Blessed +5
+129001406 Infusion - Blessed +6
+129001407 Infusion - Blessed +7
+129001408 Infusion - Blessed +8
+129001409 Infusion - Blessed +9
+129001410 Infusion - Blessed +10
+129001500 Infusion - Hollow
+129001501 Infusion - Hollow +1
+129001502 Infusion - Hollow +2
+129001503 Infusion - Hollow +3
+129001504 Infusion - Hollow +4
+129001505 Infusion - Hollow +5
+129001506 Infusion - Hollow +6
+129001507 Infusion - Hollow +7
+129001508 Infusion - Hollow +8
+129001509 Infusion - Hollow +9
+129001510 Infusion - Hollow +10
+129010500 Infusion - Simple Level 2
+129010501 Infusion - Simple Level 2 +1
+129010502 Infusion - Simple Level 2 +2
+129010503 Infusion - Simple Level 2 +3
+129010504 Infusion - Simple Level 2 +4
+129010505 Infusion - Simple Level 2 +5
+129010506 Infusion - Simple Level 2 +6
+129010507 Infusion - Simple Level 2 +7
+129010508 Infusion - Simple Level 2 +8
+129010509 Infusion - Simple Level 2 +9
+129010510 Infusion - Simple Level 2 +10
+129011100 Infusion - Poison Level 2
+129011101 Infusion - Poison Level 2 +1
+129011102 Infusion - Poison Level 2 +2
+129011103 Infusion - Poison Level 2 +3
+129011104 Infusion - Poison Level 2 +4
+129011105 Infusion - Poison Level 2 +5
+129011106 Infusion - Poison Level 2 +6
+129011107 Infusion - Poison Level 2 +7
+129011108 Infusion - Poison Level 2 +8
+129011109 Infusion - Poison Level 2 +9
+129011110 Infusion - Poison Level 2 +10
+129011200 Infusion - Bleed Level 2
+129011201 Infusion - Bleed Level 2 +1
+129011202 Infusion - Bleed Level 2 +2
+129011203 Infusion - Bleed Level 2 +3
+129011204 Infusion - Bleed Level 2 +4
+129011205 Infusion - Bleed Level 2 +5
+129011206 Infusion - Bleed Level 2 +6
+129011207 Infusion - Bleed Level 2 +7
+129011208 Infusion - Bleed Level 2 +8
+129011209 Infusion - Bleed Level 2 +9
+129011210 Infusion - Bleed Level 2 +10
+129011400 Infusion - Blessed Level 2
+129011401 Infusion - Blessed Level 2 +1
+129011402 Infusion - Blessed Level 2 +2
+129011403 Infusion - Blessed Level 2 +3
+129011404 Infusion - Blessed Level 2 +4
+129011405 Infusion - Blessed Level 2 +5
+129011406 Infusion - Blessed Level 2 +6
+129011407 Infusion - Blessed Level 2 +7
+129011408 Infusion - Blessed Level 2 +8
+129011409 Infusion - Blessed Level 2 +9
+129011410 Infusion - Blessed Level 2 +10
+129021100 Infusion - Poison Level 3
+129021101 Infusion - Poison Level 3 +1
+129021102 Infusion - Poison Level 3 +2
+129021103 Infusion - Poison Level 3 +3
+129021104 Infusion - Poison Level 3 +4
+129021105 Infusion - Poison Level 3 +5
+129021106 Infusion - Poison Level 3 +6
+129021107 Infusion - Poison Level 3 +7
+129021108 Infusion - Poison Level 3 +8
+129021109 Infusion - Poison Level 3 +9
+129021110 Infusion - Poison Level 3 +10
+129021200 Infusion - Bleed Level 3
+129021201 Infusion - Bleed Level 3 +1
+129021202 Infusion - Bleed Level 3 +2
+129021203 Infusion - Bleed Level 3 +3
+129021204 Infusion - Bleed Level 3 +4
+129021205 Infusion - Bleed Level 3 +5
+129021206 Infusion - Bleed Level 3 +6
+129021207 Infusion - Bleed Level 3 +7
+129021208 Infusion - Bleed Level 3 +8
+129021209 Infusion - Bleed Level 3 +9
+129021210 Infusion - Bleed Level 3 +10
+129031100 Infusion - Poison Level 4
+129031101 Infusion - Poison Level 4 +1
+129031102 Infusion - Poison Level 4 +2
+129031103 Infusion - Poison Level 4 +3
+129031104 Infusion - Poison Level 4 +4
+129031105 Infusion - Poison Level 4 +5
+129031106 Infusion - Poison Level 4 +6
+129031107 Infusion - Poison Level 4 +7
+129031108 Infusion - Poison Level 4 +8
+129031109 Infusion - Poison Level 4 +9
+129031110 Infusion - Poison Level 4 +10
+129031200 Infusion - Bleed Level 4
+129031201 Infusion - Bleed Level 4 +1
+129031202 Infusion - Bleed Level 4 +2
+129031203 Infusion - Bleed Level 4 +3
+129031204 Infusion - Bleed Level 4 +4
+129031205 Infusion - Bleed Level 4 +5
+129031206 Infusion - Bleed Level 4 +6
+129031207 Infusion - Bleed Level 4 +7
+129031208 Infusion - Bleed Level 4 +8
+129031209 Infusion - Bleed Level 4 +9
+129031210 Infusion - Bleed Level 4 +10
+129041100 Infusion - Poison Level 5
+129041101 Infusion - Poison Level 5 +1
+129041102 Infusion - Poison Level 5 +2
+129041103 Infusion - Poison Level 5 +3
+129041104 Infusion - Poison Level 5 +4
+129041105 Infusion - Poison Level 5 +5
+129041106 Infusion - Poison Level 5 +6
+129041107 Infusion - Poison Level 5 +7
+129041108 Infusion - Poison Level 5 +8
+129041109 Infusion - Poison Level 5 +9
+129041110 Infusion - Poison Level 5 +10
+129041200 Infusion - Bleed Level 5
+129041201 Infusion - Bleed Level 5 +1
+129041202 Infusion - Bleed Level 5 +2
+129041203 Infusion - Bleed Level 5 +3
+129041204 Infusion - Bleed Level 5 +4
+129041205 Infusion - Bleed Level 5 +5
+129041206 Infusion - Bleed Level 5 +6
+129041207 Infusion - Bleed Level 5 +7
+129041208 Infusion - Bleed Level 5 +8
+129041209 Infusion - Bleed Level 5 +9
+129041210 Infusion - Bleed Level 5 +10
+129051100 Infusion - Poison Level 6
+129051101 Infusion - Poison Level 6 +1
+129051102 Infusion - Poison Level 6 +2
+129051103 Infusion - Poison Level 6 +3
+129051104 Infusion - Poison Level 6 +4
+129051105 Infusion - Poison Level 6 +5
+129051106 Infusion - Poison Level 6 +6
+129051107 Infusion - Poison Level 6 +7
+129051108 Infusion - Poison Level 6 +8
+129051109 Infusion - Poison Level 6 +9
+129051110 Infusion - Poison Level 6 +10
+129051200 Infusion - Bleed Level 6
+129051201 Infusion - Bleed Level 6 +1
+129051202 Infusion - Bleed Level 6 +2
+129051203 Infusion - Bleed Level 6 +3
+129051204 Infusion - Bleed Level 6 +4
+129051205 Infusion - Bleed Level 6 +5
+129051206 Infusion - Bleed Level 6 +6
+129051207 Infusion - Bleed Level 6 +7
+129051208 Infusion - Bleed Level 6 +8
+129051209 Infusion - Bleed Level 6 +9
+129051210 Infusion - Bleed Level 6 +10
+130010700 Weapon Art - Guiding Light - Right
+130010701 Weapon Art - Guiding Light - Right (Cycle)
+130010702 Weapon Art - Guiding Light - Right (Cycle)
+130010750 Weapon Art - Guiding Light - Left
+130010751 Weapon Art - Guiding Light - Left (Cycle)
+130010752 Weapon Art - Guiding Light - Left (Cycle)
+130010790 Effect - Scholar's Candlestick
+130011200 Effect - Handmaid's Dagger
+130011210 Bandit's Knife - Unknown - Right
+130011211 Bandit's Knife - Unknown - Right (Cycle)
+130011212 Bandit's Knife - Unknown - Right
+130011260 Bandit's Knife - Unknown - Left
+130011261 Bandit's Knife - Unknown - Left (Cycle)
+130021100 Sunlight Straight Sword - Oath of Sunlight
+130021101 Sunlight Straight Sword - Oath of Sunlight (Cycle)
+130021105 Sunlight Straight Sword - Oath of Sunlight - No FP
+130021106 Sunlight Straight Sword - Oath of Sunlight - No FP (Cycle)
+130021110 Sunlight Straight Sword - Oath of Sunlight
+130021111 Sunlight Straight Sword - Oath of Sunlight
+130021800 Effect - Morion Blade
+130022200 Effect - Executioner's Greatsword
+130022210 Effect - Executioner's Greatsword DeathOccurance
+130022300 Anri's Straight Sword
+130022400 Onyx Blade - Eldriede's Blackflame - Right
+130022401 Onyx Blade - Eldriede's Blackflame - Right (Cycle)
+130022450 Onyx Blade - Eldriede's Blackflame - Left
+130022451 Onyx Blade - Eldriede's Blackflame - Left (Cycle)
+130022500 Ringed Knight Straight Sword - Ember - Right
+130022550 Ringed Knight Straight Sword - Ember - Left
+130022600 Twinspears of the Forlorn - Vestiges of Aldia - Right
+130022601 Twinspears of the Forlorn - Vestiges of Aldia - Right (Cycle)
+130022650 Twinspears of the Forlorn - Vestiges of Aldia - Left
+130022651 Twinspears of the Forlorn - Vestiges of Aldia - Left (Cycle)
+130030400 Effect - Crystal Sage's Rapier
+130040700 Pontiff Knight Curved Sword - Frost Blade
+130040701 Pontiff Knight Curved Sword - Frost Blade
+130041000 Crescent Moon Sword - Crescent Blade
+130050200 Effect - Chaos Blade
+130050201 Effect - Chaos Blade
+130050400 Bloodlust - Bloodlust (Old)
+130050401 Bloodlust - Bloodlust (Old)
+130050420 Bloodlust - Bloodlust Cycle - (Old)
+130050421 Bloodlust - Bloodlust AttackOccurance - (Old)
+130050430 Bloodlust - Bloodlust (Old)
+130050431 Bloodlust - Bloodlust Cycle - (Old)
+130050432 Bloodlust - Bloodlust AttackOccurance - (Old)
+130050450 Bloodlust - Bloodlust (Old)
+130050451 Bloodlust - Bloodlust Cycle - (Old)
+130050460 Bloodlust - Bloodlust (Old)
+130050461 Bloodlust - Bloodlust Cycle - (Old)
+130050462 Bloodlust - Bloodlust AttackOccurance - (Old)
+130061700 Greatsword of Judgment - Stance of Judgment - Right
+130061701 Greatsword of Judgment - Stance of Judgment - Right (Cycle)
+130061702 Greatsword of Judgment - Stance of Judgment - Boost - Right
+130061750 Greatsword of Judgment - Stance of Judgment - Left
+130061751 Greatsword of Judgment - Stance of Judgment - Left (Cycle)
+130061752 Greatsword of Judgment - Stance of Judgment - Boost - Left
+130061800 Profaned Greatsword - Profaned Flame - Right
+130061801 Profaned Greatsword - Profaned Flame - Right (Cycle)
+130061850 Profaned Greatsword - Profaned Flame - Left
+130061851 Profaned Greatsword - Profaned Flame - Left (Cycle)
+130061860 Profaned Greatsword - Profaned Flame
+130061870 Tonitrus - Charged Spark
+130061880 Silver Knight Weapon - Lightning Buff
+130061885 Dragonslayer Spear - Lightning Buff
+130062000 Boom Hammer - Ignite - Right
+130062001 Boom Hammer - Ignite - Right (Cycle)
+130062050 Boom Hammer - Ignite - Left
+130062051 Boom Hammer - Ignite - Left (Cycle)
+130062300 Yhorm's Great Machete - Warcry - Right
+130062310 Yhorm's Great Machete - Warcry - Right
+130062350 Yhorm's Great Machete - Warcry - Left
+130062360 Yhorm's Great Machete - Warcry - Left
+130062700 Twin Princes' Greatsword - Sacred Light and Flame - Right
+130062701 Twin Princes' Greatsword - Sacred Light and Flame - Right (Cycle)
+130062710 Twin Princes' Greatsword - Sacred Light and Flame - Right
+130062711 Twin Princes' Greatsword - Sacred Light and Flame - Right (Cycle)
+130062750 Twin Princes' Greatsword - Sacred Light and Flame - Left
+130062751 Twin Princes' Greatsword - Sacred Light and Flame - Left (Cycle)
+130062760 Twin Princes' Greatsword - Sacred Light and Flame - Left
+130062761 Twin Princes' Greatsword - Sacred Light and Flame - Left (Cycle)
+130063400 Firelink Greatsword - Ember - Right
+130063401 Firelink Greatsword - Ember - Right (Cycle)
+130063450 Firelink Greatsword - Ember - Left
+130063451 Firelink Greatsword - Ember - Left (Cycle)
+130063500 Great Lord Greatsword - Flame of the Great Lord
+130063501 Great Lord Greatsword - Flame of the Great Lord - No FP
+130063510 Great Lord Greatsword - Flame of the Great Lord (Cycle)
+130063511 Great Lord Greatsword - Flame of the Great Lord (Cycle) - - No FP
+130063600 Effect - Old Wolf Curved Sword
+130063610 Effect - Old Wolf Curved Sword
+130063620 Effect - Old Wolf Curved Sword
+130063625 Effect - Old Wolf Curved Sword
+130063626 Effect - Old Wolf Curved Sword
+130063630 Effect - Old Wolf Curved Sword
+130063635 Effect - Old Wolf Curved Sword
+130063636 Effect - Old Wolf Curved Sword
+130069500 Lorian's Greatsword - Flame of Lorian - Right
+130069501 Lorian's Greatsword - Flame of Lorian - Right (Cycle)
+130069511 Lorian's Greatsword - Flame of Lorian - Right
+130069550 Lorian's Greatsword - Flame of Lorian - Left
+130069551 Lorian's Greatsword - Flame of Lorian - Left (Cycle)
+130069600 Lothric's Holy Sword - Sacred Lothric Light - Right
+130069601 Lothric's Holy Sword - Sacred Lothric Light - Right (Cycle)
+130069650 Lothric's Holy Sword - Sacred Lothric Light - Left
+130069651 Lothric's Holy Sword - Sacred Lothric Light - Left (Cycle)
+130069700 Lorian's Greatsword - Dark Flame of Lorian - Right
+130069701 Lorian's Greatsword - Dark Flame of Lorian - Right (Cycle)
+130069750 Lorian's Greatsword - Dark Flame of Lorian - Left
+130069751 Lorian's Greatsword - Dark Flame of Lorian - Left (Cycle)
+130070100 Millwood Battle Axe - Warcry - Right
+130070110 Millwood Battle Axe - Warcry - Right
+130070150 Millwood Battle Axe - Warcry - Left
+130070160 Millwood Battle Axe - Warcry - Left
+130070400 Unknown - Warcry - Right
+130070410 Unknown - Warcry - Right
+130070450 Unknown - Warcry - Left
+130070460 Unknown - Warcry - Left
+130070500 Greataxe - Warcry - Right
+130070510 Greataxe - Warcry - Right
+130070550 Greataxe - Warcry - Left
+130070560 Greataxe - Warcry - Left
+130070700 Effect - Butcher Knife
+130070701 Effect - Butcher Knife
+130070702 Effect - Butcher Knife
+130070710 Butcher Knife - Sharpen - Right
+130070720 Butcher Knife - Sharpen - Right (Cycle)
+130070721 Butcher Knife - Sharpen - Right
+130070760 Butcher Knife - Sharpen - Left
+130070770 Butcher Knife - Sharpen - Left (Cycle)
+130070777 Butcher Knife - Sharpen - Left
+130071300 Eleonora - Feast Bell - Bleed - Right
+130071310 Eleonora - Feast Bell - Bleed - Right (Cycle)
+130071311 Eleonora - Feast Bell - Bleed - Right AttackOccurance
+130071320 Eleonora - Feast Bell - HP Gain - Right
+130071330 Eleonora - Feast Bell - HP Gain - Right (Cycle)
+130071331 Eleonora - Feast Bell - HP Gain - Right AttackOccurance
+130071350 Eleonora - Feast Bell - Bleed - Left
+130071360 Eleonora - Feast Bell - Bleed - Left (Cycle)
+130071361 Eleonora - Feast Bell - Bleed - Left AttackOccurance
+130071370 Eleonora - Feast Bell - HP Gain - Left
+130071380 Eleonora - Feast Bell - HP Gain - Left (Cycle)
+130071381 Eleonora - Feast Bell - HP Gain - Left AttackOccurance
+130080000 Hammer - Warcry - Right
+130080010 Hammer - Warcry - Right
+130080050 Hammer - Warcry - Left
+130080060 Hammer - Warcry - Left
+130080100 Hammer - Warcry of the Abyss - Right
+130080110 Hammer - Warcry of the Abyss - Right
+130080150 Hammer - Warcry of the Abyss - Left
+130080160 Hammer - Warcry of the Abyss - Left
+130080600 Great Hammer - Warcry - Right
+130080610 Great Hammer - Warcry - Right
+130080650 Great Hammer - Warcry - Left
+130080660 Great Hammer - Warcry - Left
+130081000 Quarterstaff - Elemental Flow – Right
+130081010 Quarterstaff - Elemental Flow – Right – Low FP
+130081050 Quarterstaff - Elemental Flow – Left
+130081060 Quarterstaff - Elemental Flow – Left – Low FP
+130081100 Quarterstaff - Elemental Flow - Weapon Buff Lightning - Right
+130081101 Quarterstaff - Elemental Flow - Weapon Buff Lightning - Right (Cycle)
+130081150 Quarterstaff - Elemental Flow - Weapon Buff Lightning - Left
+130081151 Quarterstaff - Elemental Flow - Weapon Buff Lightning - Left (Cycle)
+130081200 Quarterstaff - Elemental Flow - Weapon Buff Wind - Right
+130081201 Quarterstaff - Elemental Flow - Weapon Buff Wind - Right (Cycle)
+130081250 Quarterstaff - Elemental Flow - Weapon Buff Wind – Left
+130081251 Quarterstaff - Elemental Flow - Weapon Buff Wind - Left (Cycle)
+130081800 Frost
+130081900 Old King's Great Hammer - Molten Perseverance
+130082400 Warpick - Galvanise - Right
+130082401 Warpick - Galvanise - Right (Cycle)
+130082450 Warpick - Galvanise - Left
+130082451 Warpick - Galvanise - Left (Cycle)
+130082600 Effect - Dragon Tooth
+130082700 Effect - Smough's Hammer
+130083200 Ledo's Great Hammer - Call to Stone - Right
+130083202 Ledo's Great Hammer - Call to Stone - Right Expiration
+130083210 Ledo's Great Hammer - Call to Stone - Right
+130083211 Ledo's Great Hammer - Call to Stone - Right (Cycle)
+130083250 Ledo's Great Hammer - Call to Stone - Left
+130083252 Ledo's Great Hammer - Call to Stone - Left Expiration
+130083260 Ledo's Great Hammer - Call to Stone - Left
+130083261 Ledo's Great Hammer - Call to Stone - Left (Cycle)
+130090900 Effect - Lothric Knight Long Spear
+130091600 Dragonslayer Swordspear - Falling Bolt - Right
+130091601 Dragonslayer Swordspear - Falling Bolt - Right (Cycle)
+130091650 Dragonslayer Swordspear - Falling Bolt - Left
+130091651 Dragonslayer Swordspear - Falling Bolt - Left (Cycle)
+130091700 Effect - Arstor's Spear
+130091710 Effect - Arstor's Spear DeathOccurance
+130091900 Yorshka's Spear - Pacify - Right
+130091910 Yorshka's Spear - Pacify - Right (Cycle)
+130091911 Yorshka's Spear - Pacify - Right AttackOccurance
+130091950 Yorshka's Spear - Pacify - Left
+130091960 Yorshka's Spear - Pacify - Left (Cycle)
+130091961 Yorshka's Spear - Pacify - Left AttackOccurance
+130092200 Dragonslayer Spear - Lightning Charge
+130092400 Ringed Knight Spear - Ember - Right
+130092410 Ringed Knight Spear - Ember - Right - No FP
+130092450 Ringed Knight Spear - Ember - Left
+130092460 Ringed Knight Spear - Ember - Left - No FP
+130092500 Lothric War Banner - Lothric War Banner - Right
+130092501 Lothric War Banner - Lothric War Banner - Right (Cycle)
+130092505 Lothric War Banner - Lothric War Banner - Right
+130092506 Lothric War Banner - Lothric War Banner - Right (Cycle)
+130092510 Lothric War Banner - Lothric War Banner - Right
+130092550 Lothric War Banner - Lothric War Banner - Left
+130092551 Lothric War Banner - Lothric War Banner - Left (Cycle)
+130092600 Crucifix of the Mad King - Mad King's Folly - Effect 1
+130092630 Crucifix of the Mad King - Mad King's Folly - Effect 2
+130092650 Crucifix of the Mad King - Mad King's Folly - Effect 3
+130093000 Frostfall - Endless Winter - Freezing Mists - Frost
+130093001 Frostfall - Endless Winter - Freezing Mists - Hp Loss
+130093050 Frostfall - Endless Winter - Crystal Crescendo FP Cost
+130093100 Frostfall - Endless Winter - Low FP Freezing Mists
+130093200 Frostfall - Endless Winter - Frostfire Blade Buff - Right
+130093201 Frostfall - Endless Winter - Frostfire Blade Buff - Right (Cycle)
+130093250 Frostfall - Endless Winter - Frostfire Blade Buff - Left
+130093251 Frostfall - Endless Winter - Frostfire Blade Buff - Left (Cycle)
+130093300 Frostfall - Endless Winter Loop - Stability
+130093350 Frostfall - 2H Dash - Stability
+130093351 Frostfall - 2H L1 #5 - Stability
+130093400 Frostfall - Crystal Rain Effect
+130093401 Frostfall - Crystal Rain Effect ConditionOccurrence
+130093402 Frostfall - Crystal Rain Effect Bullet Call
+130093410 Frostfall - Crystal Rain Effect - Frost
+130093500 Ivory King UGS - Ivory King's Valor - Frostfire Buff - Right
+130093501 Ivory King UGS - Ivory King's Valor - Frostfire Buff - Right (Cycle)
+130093550 Ivory King UGS - Ivory King's Valor - Frostfire Buff - Left
+130093551 Ivory King UGS - Ivory King's Valor - Frostfire Buff - Left (Cycle)
+130100700 Pontiff Knight Great Scythe - Frost - Right
+130100710 Pontiff Knight Great Scythe - Frost - Right (Cycle)
+130100711 Pontiff Knight Great Scythe - Frost - Right AttackOccurance
+130100750 Pontiff Knight Great Scythe - Frost - Left
+130100760 Pontiff Knight Great Scythe - Frost - Left (Cycle)
+130100761 Pontiff Knight Great Scythe - Frost - Left AttackOccurance
+130100780 Pontiff Knight Great Scythe - Frost
+130100790 Bleed
+130110400 Magic - Anim 40021
+130110410 Magic - Anim 40021
+130110450 Magic - Anim 40021
+130120400 Witch's Locks - Impact
+130120700 Rose of Ariandel - Awakening - Right
+130120701 Rose of Ariandel - Awakening - Right (Cycle)
+130120750 Rose of Ariandel - Awakening - Left
+130120751 Rose of Ariandel - Awakening - Left (Cycle)
+130120760 Rose of Ariandel - Awakening
+130130700 Storyteller's Staff - Poison Spores
+130130701 Storyteller's Staff - Curse Spores
+130130702 Storyteller's Staff - Bleed Spores
+130130703 Storyteller's Staff - Frost Spores
+130130710 Storyteller's Staff - Poison Spores - VFX
+130130720 Storyteller's Staff - Poison Spores
+130130800 Effect - Mendicant's Staff
+130131600 Sage's Crystal Staff - Steady Chant - Right
+130131601 Sage's Crystal Staff - Steady Chant - Right (Cycle)
+130131650 Sage's Crystal Staff - Steady Chant - Left
+130131651 Sage's Crystal Staff - Steady Chant - Left (Cycle)
+130131900 Effect - Witchtree Branch
+130132300 Effect - Saint-tree Bellvine
+130134100 Effect - Pyromancer's Parting Flame
+130134101 Effect - Pyromancer's Parting Flame
+130134110 Effect - Pyromancer's Parting Flame
+130134120 Effect - Pyromancer's Parting Flame DeathOccurance
+130134130 Pyromancer's Parting Flame - Parting Flame
+130134131 Pyromancer's Parting Flame - Parting Flame
+130134132 Pyromancer's Parting Flame - Parting Flame
+130134200 Murky Longstaff - Chant from the Depths - Right
+130134201 Murky Longstaff - Chant from the Depths - Right (Cycle)
+130134250 Murky Longstaff - Chant from the Depths - Left
+130134251 Murky Longstaff - Chant from the Depths - Left (Cycle)
+130134300 Effect - Sacred Chime of Filianore
+130134400 Preacher's Right Arm - Feasting Branch
+130134401 Preacher's Right Arm - Feasting Branch
+130134410 Preacher's Right Arm - Feasting Branch
+130134411 Preacher's Right Arm - Feasting Branch
+130160500 Greataxe - Sharpen - Right
+130160501 Greataxe - Sharpen - Right (Cycle)
+130160550 Greataxe - Sharpen - Left
+130160551 Greataxe - Sharpen - Left (Cycle)
+130161200 Giant Door Shield - Lockout
+130161210 Giant Door Shield - Lockout
+130161220 Giant Door Shield - Lockout
+130161221 Giant Door Shield - Lockout
+130161222 Giant Door Shield - Lockout
+130161223 Giant Door Shield - Lockout
+130161230 Giant Door Shield - Lockout
+130161400 Valorheart - Lion Stance
+130161410 Valorheart - General
+130201500 Havel's Greatshield - Stone Flesh
+130201510 Havel's Greatshield - Stone Flesh (Cycle)
+130201520 Havel's Greatshield - Stone Flesh (Cycle)
+130210500 Black Dragon Shield - Black Dragon's Ire
+130220500 Moaning Shield - Moaning Shield
+130230000 Spear - Stability Boost - Shield Poke
+130231000 Phosphorescent Pole - Absorption Decrease
+140010400 Poison
+140021200 Poison
+140091200 Poison
+140091700 Poison
+140120600 Poison
+140201300 Poison
+142010100 Bleed
+142021800 Bleed
+142022100 Bleed
+142040500 Bleed
+142040600 Bleed
+142040900 Bleed
+142041100 Bleed
+142050000 Bleed
+142050100 Bleed
+142050200 Bleed
+142050300 Bleed
+142050400 Bleed
+142050500 Bleed
+142061400 Bleed
+142080200 Bleed
+142080300 Bleed
+142082100 Bleed
+142083000 Bleed
+142100000 Bleed
+142100800 Bleed
+142100810 Bleed
+142110000 Bleed
+142110200 Bleed
+142120500 Bleed
+142160200 Bleed
+142160900 Bleed
+142211300 Bleed
+143021900 Friede's Great Scythe - Elfriede's Stance - Right
+143021905 Friede's Great Scythe - Elfriede's Stance - Right
+143021910 Friede's Great Scythe - Elfriede's Stance - Left
+143021911 Friede's Great Scythe - Elfriede's Stance - Left (Cycle)
+150001000 Chime - Gentle Prayer - Right
+150001001 Chime - Gentle Prayer - Right (Cycle)
+150001050 Chime - Gentle Prayer - Left
+150001051 Chime - Gentle Prayer - Left (Cycle)
+150003000 Staff - Arcane Ward - Right
+150003050 Staff - Arcane Ward  - Left
+150003100 Blue Flame - Leydia Enchantment - Right
+150003150 Blue Flame - Leydia Enchantment - Left
+150003200 Pilgrim's Spontoon - Pilgrim's Enchantment - Right
+150003250 Pilgrim's Spontoon - Pilgrim's Enchantment - Left
+150004000 Sacred Chime of Filianore - Pray for Favor - Right
+150004001 Sacred Chime of Filianore - Pray for Favor - Right (Cycle)
+150004050 Sacred Chime of Filianore - Pray for Favor - Left
+150004051 Sacred Chime of Filianore - Pray for Favor - Left (Cycle)
+150004060 Sacred Chime of Filianore - Pray for Favor - Left

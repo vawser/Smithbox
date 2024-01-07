@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the Torch." Row0Dummy="" />
+  <Field>
+    <torch_duration AltName="Torch Duration" />
+  </Field>
+</PARAMMETA>

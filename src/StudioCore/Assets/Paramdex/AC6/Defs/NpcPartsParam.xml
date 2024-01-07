@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>NPC_PARTS_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="u16 Unk0x04"></Field>
+    <Field Def="u16 Unk0x06"></Field>
+    <Field Def="s32 Unk0x08"></Field>
+    <Field Def="f32 Unk0x0C"></Field>
+    <Field Def="f32 Unk0x10"></Field>
+    <Field Def="f32 Unk0x14"></Field>
+    <Field Def="u16 Unk0x18"></Field>
+    <Field Def="u16 Unk0x1A"></Field>
+    <Field Def="s32 spEffectId"></Field>
+    <Field Def="s32 Unk0x20"></Field>
+    <Field Def="u16 Unk0x24"></Field>
+    <Field Def="u16 Unk0x26"></Field>
+    <Field Def="s32 Unk0x28"></Field>
+    <Field Def="s32 Unk0x2C"></Field>
+    <Field Def="f32 Unk0x30"></Field>
+    <Field Def="s32 Unk0x34"></Field>
+    <Field Def="s32 Unk0x38"></Field>
+  </Fields>
+</PARAMDEF>

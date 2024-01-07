@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="SP_EFFECT_CATEGORY">
+      <Option Value="0" Name="Default" />
+	  <Option Value="3" Name="Sorcery" />
+	  <Option Value="4" Name="Miracle" />
+      <Option Value="5" Name="Basic" />
+	  <Option Value="9" Name="Kick" />
+	  <Option Value="10" Name="Pyromancy" />
+    </Enum>
+    <Enum Name="BEHAVIOR_REF_TYPE">
+      <Option Value="0" Name="Behavior / None" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="ACCESSORY_TYPE">
+      <Option Value="0" Name="Ring" />
+      <Option Value="1" Name="Covenant" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_CATEGORY">
+      <Option Value="0" Name="Accessory" />
+      <Option Value="1" Name="Arm" />
+      <Option Value="2" Name="Body" />
+      <Option Value="3" Name="Face" />
+      <Option Value="4" Name="Hair" />
+      <Option Value="5" Name="Head" />
+      <Option Value="6" Name="Leg" />
+      <Option Value="7" Name="Weapon" />
+    </Enum>
+    <Enum Name="EQUIP_MODEL_GENDER">
+      <Option Value="0" Name="All" />
+      <Option Value="1" Name="Male/Female (1)" />
+      <Option Value="2" Name="Male/Female (2)" />
+      <Option Value="3" Name="Male/Female (3)" />
+      <Option Value="4" Name="Male" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Rings and Covenants" AlternativeOrder="sortId,iconId,sellValue,sellValue,saleValue,basicPrice,-,
+accessoryCategory,accessoryGroup,vowId,weight,-,
+refCategory,refId,residentSpEffectId1,residentSpEffectId2,residentSpEffectId3,residentSpEffectId4,behaviorId,spEffectCategory,-,
+isDrop,IsDiscard,IsDeposit,disableMultiDropShare,IsEquipOutBrake,-,
+qwcId,shopLv,equipModelId,equipModelCategory,equipModelGender,sfxVariationId,vagrantItemLotId,vagrantBonusEneDropItemLotId,vagrantItemEneDropItemLotId,trophySeqId,trophySGradeId,compTrophySedId,-,
+showLogCondType,showDialogCondType,-," />
+  <Field>
+    <refId AltName="Reference ID" Wiki="ID called from decorations" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
+    <sfxVariationId AltName="SFX Variation ID" />
+    <weight AltName="Weight" Wiki="Weight [kg]" />
+    <behaviorId AltName="Behavior ID" Wiki="Action ID (= Skill)" />
+    <basicPrice AltName="Basic Price" Wiki="Basic price" />
+    <sellValue AltName="Sell Value" Wiki="Selling price" />
+    <sortId AltName="Sort ID" Wiki="" />
+    <qwcId AltName="QWC ID" Wiki="" />
+    <equipModelId AltName="Equip Model ID" Wiki="Equipment model number" />
+    <iconId AltName="Icon ID" Wiki="Menu icon ID" />
+    <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
+    <trophySGradeId AltName="Achievement Grade ID" Wiki="" />
+    <trophySeqId AltName="Achievement Sequential ID" Wiki="Trophy SEQ number" />
+    <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type" Enum="EQUIP_MODEL_CATEGORY" />
+    <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model" Enum="EQUIP_MODEL_GENDER" />
+    <accessoryCategory AltName="Accessory Type" Wiki="Armor category" Enum="ACCESSORY_TYPE" />
+    <refCategory AltName="Reference Type" Wiki=" ID category [Attack, Projectile, Special]" Enum="BEHAVIOR_REF_TYPE" />
+    <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="SP_EFFECT_CATEGORY" />
+    <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1: No vagrant 0: No lottery 1 ~: With lottery" />
+    <vagrantBonusEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1: No drop 0: No lottery 1 ~: With lottery" />
+    <vagrantItemEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1: No drop 0: No lottery 1 ~: With lottery" />
+    <IsDeposit AltName="Can Deposit" IsBool="" />
+    <IsEquipOutBrake AltName="Break on Unequip" IsBool="" />
+    <disableMultiDropShare AltName="Disable Multiplayer Sharing" Wiki="Prevents item from appearing to other players when dropped." IsBool="" />
+    <IsDiscard AltName="Can Discard" IsBool="" />
+    <isDrop AltName="Can Drop" IsBool="" />
+	<showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
+    <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
+	<pad2 AltName=""/>
+    <saleValue AltName="Sale Price" Wiki="Selling price" />
+    <accessoryGroup AltName="Accessory Group" Wiki="Items of the same group cannot be equipped at the same time" VRef="accessoryGroup" />
+    <vowId AltName="Vow ID" />
+    <compTrophySedId AltName="Number of Completed Achievement ID" Wiki="SEQ number of complete trophy" />
+    <residentSpEffectId1 AltName="SpEffect ID 1" Wiki="Resident special effect ID1" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
+    <residentSpEffectId2 AltName="SpEffect ID 2" Wiki="Resident special effect ID2" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
+    <residentSpEffectId3 AltName="SpEffect ID 3" Wiki="Resident special effect ID3" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
+    <residentSpEffectId4 AltName="SpEffect ID 4" Wiki="Resident special effect ID4" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
+    <pad1 AltName="" />
+    <pad3 AltName="" />
+    
+  </Field>
+</PARAMMETA>

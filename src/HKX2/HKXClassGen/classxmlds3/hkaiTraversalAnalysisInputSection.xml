@@ -1,0 +1,8 @@
+<class name='hkaiTraversalAnalysisInputSection' version='1' signature='0xad695051' size='64'>
+  <members>
+    <member name='navMeshInstance' offset='0' ctype='hkaiNavMeshInstance' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='geometry' offset='8' ctype='hkGeometry' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='walkableBitfield' offset='16' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cuttingBitfield' offset='40' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

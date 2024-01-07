@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="RARITY" type="u8">
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Common" />
+      <Option Value="2" Name="Rare" />
+      <Option Value="3" Name="Legendary" />
+    </Enum>
+    <Enum Name="GET_DIALOG_CONDITION_TYPE" type="u8">
+      <Option Value="0" Name="Type 0" />
+      <Option Value="2" Name="Type 2" />
+    </Enum>
+    <Enum Name="DISPLAY_CATEGORY_ID" type="u8">
+      <Option Value="10" Name="Heavy" />
+      <Option Value="20" Name="Keen" />
+      <Option Value="30" Name="Quality" />
+      <Option Value="40" Name="Magic" />
+      <Option Value="50" Name="Fire" />
+      <Option Value="80" Name="Sacred" />
+      <Option Value="90" Name="Aux" />
+      <Option Value="120" Name="Occult" />
+      <Option Value="130" Name="Bow" />
+      <Option Value="140" Name="Shield" />
+      <Option Value="255" Name="None" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <iconId AltName="Icon ID" Wiki="Menu icon ID" ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
+    <rank AltName="Rank" Wiki="Magic stone rank" />
+    <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
+    <spEffectId0 AltName="SpEffect ID [0]" Wiki="Special effect ID00" Refs="SpEffectParam" />
+    <spEffectId1 AltName="SpEffect ID [1]" Wiki="Special effect ID01" Refs="SpEffectParam"/>
+    <spEffectId2 AltName="SpEffect ID [2]" Wiki="Special effect ID02" Refs="SpEffectParam"/>
+    <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." />
+    <swordArtsParamId AltName="Sword Arts ID" Wiki="ID of the destination arts parameter" Refs="SwordArtsParam" />
+    <mountValue AltName="Application Cost" Wiki="Installation price" />
+    <sellValue AltName="Sell Value" Wiki="Sale price" />
+    <saleValue AltName="Sale Value" Wiki="Selling price" />
+    <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect)" />
+    <compTrophySedId AltName="Achievement ID" Wiki="SEQ number of complete trophy" />
+    <trophySeqId AltName="Achievement Sequential ID" Wiki="Trophy SEQ number" />
+    <configurableWepAttr00 AltName="Affinity: Standard" Wiki="Configurable weapon attribute ID 0" IsBool="" />
+    <configurableWepAttr01 AltName="Affinity: Heavy" Wiki="Configurable Weapon Attribute ID 1" IsBool="" />
+    <configurableWepAttr02 AltName="Affinity: Keen" Wiki="Configurable Weapon Attribute ID 2" IsBool="" />
+    <configurableWepAttr03 AltName="Affinity: Quality" Wiki="Configurable Weapon Attribute ID 3" IsBool="" />
+    <configurableWepAttr04 AltName="Affinity: Fire" Wiki="Configurable Weapon Attribute ID 4" IsBool="" />
+    <configurableWepAttr05 AltName="Affinity: Flame Art" Wiki="Configurable Weapon Attribute ID 5" IsBool="" />
+    <configurableWepAttr06 AltName="Affinity: Lightning" Wiki="Configurable Weapon Attribute ID 6" IsBool="" />
+    <configurableWepAttr07 AltName="Affinity: Sacred" Wiki="Configurable Weapon Attribute ID 7" IsBool="" />
+    <configurableWepAttr08 AltName="Affinity: Magic" Wiki="Configurable Weapon Attribute ID 8" IsBool="" />
+    <configurableWepAttr09 AltName="Affinity: Cold" Wiki="Configurable Weapon Attribute ID 9" IsBool="" />
+    <configurableWepAttr10 AltName="Affinity: Poison" Wiki="Configurable Weapon Attribute ID 10" IsBool="" />
+    <configurableWepAttr11 AltName="Affinity: Blood" Wiki="Configurable Weapon Attribute ID 11" IsBool="" />
+    <configurableWepAttr12 AltName="Affinity: Occult" Wiki="Configurable Weapon Attribute ID 12" IsBool="" />
+    <configurableWepAttr13 AltName="Affinity: Unused [13]" Wiki="Configurable Weapon Attribute ID 13" IsBool="" />
+    <configurableWepAttr14 AltName="Affinity: Unused [14]" Wiki="Configurable Weapon Attribute ID 14" IsBool="" />
+    <configurableWepAttr15 AltName="Affinity: Unused [15]" Wiki="Configurable Weapon Attribute ID 15" IsBool="" />
+    <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
+    <configurableWepAttr16 AltName="Affinity: Unused [16]" Wiki="Configurable Weapon Attribute ID 16" IsBool="" />
+    <configurableWepAttr17 AltName="Affinity: Unused [17]" Wiki="Configurable Weapon Attribute ID 17" IsBool="" />
+    <configurableWepAttr18 AltName="Affinity: Unused [18]" Wiki="Configurable Weapon Attribute ID 18" IsBool="" />
+    <configurableWepAttr19 AltName="Affinity: Unused [19]" Wiki="Configurable Weapon Attribute ID 19" IsBool="" />
+    <configurableWepAttr20 AltName="Affinity: Unused [20]" Wiki="Configurable Weapon Attribute ID 20" IsBool="" />
+    <configurableWepAttr21 AltName="Affinity: Unused [21]" Wiki="Configurable Weapon Attribute ID 21" IsBool="" />
+    <configurableWepAttr22 AltName="Affinity: Unused [22]" Wiki="Configurable Weapon Attribute ID 22" IsBool="" />
+    <configurableWepAttr23 AltName="Affinity: Unused [23]" Wiki="Configurable Weapon Attribute ID 23" IsBool="" />
+    <isDiscard AltName="Is Discardable" Wiki="Can you throw away the item? TRUE = thrown away" IsBool="" />
+    <isDrop AltName="Is Droppable" Wiki="Can I put the item on the spot? TRUE = can be placed" IsBool="" />
+    <isDeposit AltName="Is Depositable" Wiki="Can you leave it in the warehouse?" IsBool="" />
+    <disableMultiDropShare AltName="Is Drop Disabled in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
+    <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
+    <showLogCondType AltName="Item Acquisition Show Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
+    <pad AltName=""/>
+    <defaultWepAttr AltName="Default Weapon Affinity" Wiki="Default weapon attribute ID. Can be installed even with unopened weapon attributes" />
+    <pad2 AltName=""/>
+    <canMountWep_Dagger AltName="Available: Dagger" Wiki="Can it be attached to Weapon type: Dagger? No input becomes x" IsBool="" />
+    <canMountWep_SwordNormal AltName="Available: Straight Sword" Wiki="Can it be attached to Weapon type: Straight sword? No input becomes x" IsBool="" />
+    <canMountWep_SwordLarge AltName="Available: Greatsword" Wiki="Can it be attached to Weapon Type: Large Sword? No input becomes x" IsBool="" />
+    <canMountWep_SwordGigantic AltName="Available: Colossal Sword" Wiki="Can it be attached to Weapon Type: Oversized Sword? No input becomes x" IsBool="" />
+    <canMountWep_SaberNormal AltName="Available: Curved Sword" Wiki="Can it be attached to Weapon Type: Curly Sword? No input becomes x" IsBool="" />
+    <canMountWep_SaberLarge AltName="Available: Curved Greatsword" Wiki="Can it be attached to Weapon Type: Omagari Sword? No input becomes x" IsBool="" />
+    <canMountWep_katana AltName="Available: Katana" Wiki="Can it be attached to Weapon type: Sword? No input becomes x" IsBool="" />
+    <canMountWep_SwordDoubleEdge AltName="Available: Twinblade" Wiki="Can it be attached to Weapon type: Double-edged sword? No input becomes x" IsBool="" />
+    <canMountWep_SwordPierce AltName="Available: Thrusting Sword" Wiki="Can it be attached to Weapon type: Sword? No input becomes x" IsBool="" />
+    <canMountWep_RapierHeavy AltName="Available: Heavy Thrusting Sword" Wiki="Can it be attached to Weapon Type: Large Sword? No input becomes x" IsBool="" />
+    <canMountWep_AxeNormal AltName="Available: Axe" Wiki="Can it be attached to Weapon Type: Ax? No input becomes x" IsBool="" />
+    <canMountWep_AxeLarge AltName="Available: Greataxe" Wiki="Can it be attached to Weapon Type: Large Ax? No input becomes x" IsBool="" />
+    <canMountWep_HammerNormal AltName="Available: Hammer" Wiki="Can it be attached to Weapon type: Hammer? No input becomes x" IsBool="" />
+    <canMountWep_HammerLarge AltName="Available: Great Hammer" Wiki="Can it be attached to Weapon Type: Gavel? No input becomes x" IsBool="" />
+    <canMountWep_Flail AltName="Available: Flail" Wiki="Can it be attached to Weapon Type: Frail? No input becomes x" IsBool="" />
+    <canMountWep_SpearNormal AltName="Available: Spear" Wiki="Can it be attached to Weapon Type: Spear? No input becomes x" IsBool="" />
+    <canMountWep_SpearLarge AltName="Available: Large Spear" Wiki="Can it be attached to Weapon Type: Long Spear? No input becomes x" IsBool="" />
+    <canMountWep_SpearHeavy AltName="Available: Heavy Spear" Wiki="Can it be attached to Weapon Type: Large Spear? No input becomes x" IsBool="" />
+    <canMountWep_SpearAxe AltName="Available: Halberd" Wiki="Can it be attached to Weapon Type: Halberd? No input becomes x" IsBool="" />
+    <canMountWep_Sickle AltName="Available: Reaper" Wiki="Can it be attached to Weapon type: Sickle? No input becomes x" IsBool="" />
+    <canMountWep_Knuckle AltName="Available: Fist" Wiki="Can it be attached to Weapon type: Fist? No input becomes x" IsBool="" />
+    <canMountWep_Claw AltName="Available: Claw" Wiki="Can it be attached to Weapon type: Claw? No input becomes x" IsBool="" />
+    <canMountWep_Whip AltName="Available: Whip" Wiki="Can it be attached to Weapon type: Whip? No input becomes x" IsBool="" />
+    <canMountWep_AxhammerLarge AltName="Available: Colossal Weapon" Wiki="Can it be attached to Weapon type: Oversized ax mallet? No input becomes x" IsBool="" />
+    <canMountWep_BowSmall AltName="Available: Light Bow" Wiki="Can it be attached to Weapon type: Small bow? No input becomes x" IsBool="" />
+    <canMountWep_BowNormal AltName="Available: Bow" Wiki="Can it be attached to Weapon Type: Bow? No input becomes x" IsBool="" />
+    <canMountWep_BowLarge AltName="Available: Greatbow" Wiki="Can it be attached to Weapon Type: Large Bow? No input becomes x" IsBool="" />
+    <canMountWep_ClossBow AltName="Available: Crossbow" Wiki="Can it be attached to Weapon Type: Crossbow? No input becomes x" IsBool="" />
+    <canMountWep_Ballista AltName="Available: Ballista" Wiki="Can it be attached to Weapon Type: Varistor? No input becomes x" IsBool="" />
+    <canMountWep_Staff AltName="Available: Staff" Wiki="Can it be attached to Weapon type: Wand? No input becomes x" IsBool="" />
+    <canMountWep_Sorcery AltName="Available: Unused Catalyst" Wiki="Can it be attached to Weapon type: Tattoo? No input becomes x" IsBool="" />
+    <canMountWep_Talisman AltName="Available: Seal" Wiki="Can it be attached to Weapon Type: Holy Mark? No input becomes x" IsBool="" />
+    <canMountWep_ShieldSmall AltName="Available: Small Shield" Wiki="Can it be attached to Weapon Type: Small Shield? No input becomes x" IsBool="" />
+    <canMountWep_ShieldNormal AltName="Available: Medium Shield" Wiki="Can it be attached to Weapon Type: Middle Shield? No input becomes x" IsBool="" />
+    <canMountWep_ShieldLarge AltName="Available: Greatshield" Wiki="Can it be attached to Weapon Type: Large Shield? No input becomes x" IsBool="" />
+    <canMountWep_Torch AltName="Available: Torch" Wiki="Can it be attached to Weapon type: Torch? No input becomes x" IsBool="" />
+    <reserved_canMountWep AltName=""/>
+    <reserved2_canMountWep AltName=""/>
+    <spEffectMsgId0 AltName="SpEffect Message ID [0]" Wiki="Effect text ID 00 (Gem_Effect). Magic stone effect text to display in status" />
+    <spEffectMsgId1 AltName="SpEffect Message ID [1]" Wiki="Effect text ID 01 (Gem_Effect). Magic stone effect text to display in status" />
+    <spEffectId_forAtk0 AltName="SpEffect ID - Attack Hit [0]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
+    <spEffectId_forAtk1 AltName="SpEffect ID - Attack Hit [1]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
+    <spEffectId_forAtk2 AltName="SpEffect ID - Attack Hit [2]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
+    <mountWepTextId AltName="Mount Weapon Text ID" Wiki="Corresponding Weapon Type Overwrite Text ID (-1: Do not overwrite) [Menu Text]" />
+    <pad6 AltName=""/>
+  </Field>
+  <Self Wiki="Defines an Ash of War item. Determines what weapons it can be applied to and with what affinities.\nDoes not manage unique Ashes of War. Ashes of war may not immediately function on arbitrary weapons." AlternativeOrder="
+sortId,sortGroupId,rank,rarity,iconId,-,
+mountValue,sellValue,saleValue,-,
+swordArtsParamId,mountWepTextId,-,
+
+spEffectId0,spEffectId1,spEffectId2,-,
+spEffectMsgId0,spEffectMsgId1,-,
+spEffectId_forAtk0,spEffectId_forAtk1,spEffectId_forAtk2,-,
+
+defaultWepAttr,-,
+configurableWepAttr00,configurableWepAttr01,configurableWepAttr02,configurableWepAttr03,configurableWepAttr04,configurableWepAttr05,configurableWepAttr06,configurableWepAttr07,configurableWepAttr08,configurableWepAttr09,configurableWepAttr10,configurableWepAttr11,configurableWepAttr12,configurableWepAttr13,configurableWepAttr14,configurableWepAttr15,configurableWepAttr16,configurableWepAttr17,configurableWepAttr18,configurableWepAttr19,configurableWepAttr20,configurableWepAttr21,configurableWepAttr22,configurableWepAttr23,-,
+
+canMountWep_Dagger,canMountWep_SwordNormal,canMountWep_SwordLarge,canMountWep_SwordGigantic,canMountWep_SaberNormal,canMountWep_SaberLarge,canMountWep_katana,canMountWep_SwordDoubleEdge,canMountWep_SwordPierce,canMountWep_RapierHeavy,canMountWep_AxeNormal,canMountWep_AxeLarge,canMountWep_HammerNormal,canMountWep_HammerLarge,canMountWep_Flail,canMountWep_SpearNormal,canMountWep_SpearLarge,canMountWep_SpearHeavy,canMountWep_SpearAxe,canMountWep_Sickle,canMountWep_Knuckle,canMountWep_Claw,canMountWep_Whip,canMountWep_AxhammerLarge,-,
+canMountWep_ShieldSmall,canMountWep_ShieldNormal,canMountWep_ShieldLarge,canMountWep_Torch,-,
+canMountWep_BowSmall,canMountWep_BowNormal,canMountWep_BowLarge,canMountWep_ClossBow,canMountWep_Ballista,-,
+canMountWep_Staff,canMountWep_Sorcery,canMountWep_Talisman,-,
+
+isDiscard,isDrop,isDeposit,disableMultiDropShare,-,
+
+itemGetTutorialFlagId,-,
+compTrophySedId,trophySeqId,-,
+showDialogCondType,showLogCondType,-,
+pad,disableParam_NT,disableParamReserve1,reserved_canMountWep,-,
+pad6,pad2,reserved2_canMountWep,disableParamReserve2,-,"/>
+</PARAMMETA>

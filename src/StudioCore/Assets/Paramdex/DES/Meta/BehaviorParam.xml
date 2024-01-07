@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ReferenceType">
+      <Option Value="0" Name="Attack" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+  </Enums>
+  <Field>
+    <variationId AltName="variationId" VRef="BehaviorVariation" />
+    <behaviorJudgeId AltName="behaviorJudgeId" />
+    <ezStateBehaviorType_old AltName="ezStateBehaviorType_old" />
+    <refType AltName="refType" />
+    <pad0 AltName="pad0" />
+    <atkParamId AltName="atkParamId" Refs="AtkParam_Npc,AtkParam_Pc"/>
+    <bulletParamId AltName="bulletParamId" Refs="Bullet" />
+    <spEffectId AltName="spEffectId" Refs="SpEffectParam" />
+    <sfxVariationId AltName="sfxVariationId" />
+    <category AltName="category" />
+    <pad1 AltName="pad1" />
+    <stamina AltName="stamina" />
+    <mp AltName="mp" />
+    <pad3 AltName="pad3" />
+    <atkType AltName="atkType" />
+    <atkMaterial AltName="atkMaterial" />
+    <defMaterial AltName="defMaterial" />
+    <atkSize AltName="atkSize" />
+    <defSfxMaterial AltName="defSfxMaterial" />
+    <pad2 AltName="pad2" />
+  </Field>
+  <Self />
+</PARAMMETA>

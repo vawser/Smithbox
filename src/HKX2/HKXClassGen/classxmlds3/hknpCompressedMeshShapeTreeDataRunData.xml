@@ -1,0 +1,5 @@
+<class name='hknpCompressedMeshShapeTreeDataRunData' version='1' signature='0xc253682b' size='2'>
+  <members>
+    <member name='data' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

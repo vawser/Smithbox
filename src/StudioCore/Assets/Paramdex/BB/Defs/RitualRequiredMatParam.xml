@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>RITUAL_REQUIRED_MAT_PARAM</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u32 useSoul">
+      <DisplayName>ソウル量</DisplayName>
+      <Description>必要ソウル量(0:なし)</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u32 materialItemId_1">
+      <DisplayName>①素材アイテムID</DisplayName>
+      <Description>①素材アイテムID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>11000</SortID>
+    </Field>
+    <Field Def="u32 materialItemId_2">
+      <DisplayName>②素材アイテムID</DisplayName>
+      <Description>②素材アイテムID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>12000</SortID>
+    </Field>
+    <Field Def="u32 materialItemId_3">
+      <DisplayName>③素材アイテムID</DisplayName>
+      <Description>③素材アイテムID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>13000</SortID>
+    </Field>
+    <Field Def="u32 materialItemId_4">
+      <DisplayName>④素材アイテムID</DisplayName>
+      <Description>④素材アイテムID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>14000</SortID>
+    </Field>
+    <Field Def="u32 materialItemId_5">
+      <DisplayName>⑤素材アイテムID</DisplayName>
+      <Description>⑤素材アイテムID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>15000</SortID>
+    </Field>
+    <Field Def="u32 num_1">
+      <DisplayName>①数量</DisplayName>
+      <Description>①数量(0:なし)</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>11010</SortID>
+    </Field>
+    <Field Def="u32 num_2">
+      <DisplayName>②数量</DisplayName>
+      <Description>②数量(0:なし)</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>12010</SortID>
+    </Field>
+    <Field Def="u32 num_3">
+      <DisplayName>③数量</DisplayName>
+      <Description>③数量(0:なし)</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>13010</SortID>
+    </Field>
+    <Field Def="u32 num_4">
+      <DisplayName>④数量</DisplayName>
+      <Description>④数量(0:なし)</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>14010</SortID>
+    </Field>
+    <Field Def="u32 num_5">
+      <DisplayName>⑤数量</DisplayName>
+      <Description>⑤数量(0:なし)</Description>
+      <Maximum>1E+09</Maximum>
+      <SortID>15010</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

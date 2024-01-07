@@ -1,0 +1,12 @@
+0 Event Camera -- イベントカメラ
+1 Only from the back- keep tilt- flip left and right -- 後ろからのみ、傾き維持、左右は反転
+2 fixed from everywhere always the same angle -- どこから見ても固定　常に同じ角度
+100000010 Shop Camera-1 -- ショップカメラ-１
+100000020 Shop Camera-2 -- ショップカメラ-２
+100000030 Shop Camera-3 -- ショップカメラ-３
+100000040 Shop Camera-4 -- ショップカメラ-４
+100000050 Shop Camera-5 -- ショップカメラ-５
+200000010 Bonfire Camera-1 -- 篝火カメラ-1
+200000011 Bonfire Camera-2 -- 篝火カメラ-2
+200000012 Bonfire Camera-3 -- 篝火カメラ-3
+900000010 Event Test Camera -- イベントテストカメラ

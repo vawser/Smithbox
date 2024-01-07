@@ -1,0 +1,17 @@
+<class name='hkpPrismaticConstraintDataAtoms' version='1' signature='0xe617f094' size='256'>
+  <enums>
+    <enum name='Axis' flags='00000000'>
+      <enumitem name='AXIS_SHAFT' value='0'/>
+      <enumitem name='AXIS_PERP_TO_SHAFT' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='transforms' offset='0' ctype='hkpSetLocalTransformsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motor' offset='144' ctype='hkpLinMotorConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='friction' offset='168' ctype='hkpLinFrictionConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ang' offset='184' ctype='hkpAngConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lin0' offset='200' ctype='hkpLinConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lin1' offset='216' ctype='hkpLinConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='linLimit' offset='232' ctype='hkpLinLimitConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

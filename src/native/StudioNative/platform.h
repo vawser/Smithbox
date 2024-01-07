@@ -1,0 +1,6 @@
+#ifndef STUDIONATIVE_PLATFORM_H
+#define STUDIONATIVE_PLATFORM_H
+
+void hello();
+
+#endif //STUDIONATIVE_PLATFORM_H

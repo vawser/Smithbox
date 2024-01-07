@@ -1,0 +1,19 @@
+<class name='hkbParticleSystemEventPayload' version='1' signature='0xce130434' size='80' parent='hkbEventPayload'>
+  <enums>
+    <enum name='SystemType' flags='00000000'>
+      <enumitem name='DEBRIS' value='0'/>
+      <enumitem name='DUST' value='1'/>
+      <enumitem name='EXPLOSION' value='2'/>
+      <enumitem name='SMOKE' value='3'/>
+      <enumitem name='SPARKS' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='SystemType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='emitBoneIndex' offset='18' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='offset' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='direction' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numParticles' offset='64' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='speed' offset='68' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

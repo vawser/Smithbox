@@ -1,0 +1,17 @@
+<class name='hkaiSilhouetteRecorderReplayEvent' version='1' signature='0x837d619b' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='ReplayEventType' flags='00000000'>
+      <enumitem name='EVENT_CONNECT_TO_WORLD' value='0'/>
+      <enumitem name='EVENT_INSTANCE_LOADED' value='1'/>
+      <enumitem name='EVENT_INSTANCE_UNLOADED' value='2'/>
+      <enumitem name='EVENT_STEP_SILHOUETTES' value='3'/>
+      <enumitem name='EVENT_VOLUME_LOADED' value='4'/>
+      <enumitem name='EVENT_VOLUME_UNLOADED' value='5'/>
+      <enumitem name='EVENT_GRAPH_LOADED' value='6'/>
+      <enumitem name='EVENT_GRAPH_UNLOADED' value='7'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='eventType' offset='16' etype='ReplayEventType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

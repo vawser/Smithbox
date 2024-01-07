@@ -1,0 +1,8 @@
+<class name='hkxSkinBinding' version='1' signature='0xbb137e2f' size='128' parent='hkReferencedObject'>
+  <members>
+    <member name='mesh' offset='16' ctype='hkxMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nodeNames' offset='24' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bindPose' offset='40' vtype='TYPE_ARRAY' vsubtype='TYPE_MATRIX4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initSkinTransform' offset='64' vtype='TYPE_MATRIX4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

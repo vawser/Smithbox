@@ -1,0 +1,8 @@
+<class name='hkpBreakableBody' version='1' signature='0x9341b2f8' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='controller' offset='16' ctype='hkpBreakableBodyController' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='breakableShape' offset='24' ctype='hkpBreakableShape' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bodyTypeAndFlags' offset='32' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraintStrength' offset='34' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

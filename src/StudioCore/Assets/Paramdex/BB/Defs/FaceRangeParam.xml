@@ -1,0 +1,1178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>FACE_RANGE_PARAM_ST</ParamType>
+  <Unk06>3</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 facePartsId">
+      <DisplayName>顔パーツID</DisplayName>
+      <Description>顔パーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 skinColor_R">
+      <DisplayName>肌の色(Ｒ)</DisplayName>
+      <Description>肌の色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 skinColor_G">
+      <DisplayName>肌の色(Ｇ)</DisplayName>
+      <Description>肌の色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="f32 skinColor_B">
+      <DisplayName>肌の色(Ｂ)</DisplayName>
+      <Description>肌の色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 hairPartsId">
+      <DisplayName>髪パーツID</DisplayName>
+      <Description>髪パーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 hairColor_R">
+      <DisplayName>髪の色(Ｒ)</DisplayName>
+      <Description>髪の色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 hairColor_G">
+      <DisplayName>髪の色(Ｇ)</DisplayName>
+      <Description>髪の色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 hairColor_B">
+      <DisplayName>髪の色(Ｂ)</DisplayName>
+      <Description>髪の色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 eyeLPartsId">
+      <DisplayName>左目パーツID</DisplayName>
+      <Description>左目パーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 eyeLColor_R">
+      <DisplayName>左目の色(Ｒ)</DisplayName>
+      <Description>左目の色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 eyeLColor_G">
+      <DisplayName>左目の色(Ｇ)</DisplayName>
+      <Description>左目の色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="f32 eyeLColor_B">
+      <DisplayName>左目の色(Ｂ)</DisplayName>
+      <Description>左目の色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 eyeRPartsId">
+      <DisplayName>右目パーツID</DisplayName>
+      <Description>右目パーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="f32 eyeRColor_R">
+      <DisplayName>右目の色(Ｒ)</DisplayName>
+      <Description>右目の色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="f32 eyeRColor_G">
+      <DisplayName>右目の色(Ｇ)</DisplayName>
+      <Description>右目の色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 eyeRColor_B">
+      <DisplayName>右目の色(Ｂ)</DisplayName>
+      <Description>右目の色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="f32 eyebrowPartsId">
+      <DisplayName>眉パーツID</DisplayName>
+      <Description>眉パーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="f32 eyebrowColor_R">
+      <DisplayName>眉の色(Ｒ)</DisplayName>
+      <Description>眉の色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="f32 eyebrowColor_G">
+      <DisplayName>眉の色(Ｇ)</DisplayName>
+      <Description>眉の色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="f32 eyebrowColor_B">
+      <DisplayName>眉の色(Ｂ)</DisplayName>
+      <Description>眉の色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="f32 eyelashPartsId">
+      <DisplayName>まつげパーツID</DisplayName>
+      <Description>まつげパーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="f32 eyelashColor_R">
+      <DisplayName>まつげの色(Ｒ)</DisplayName>
+      <Description>まつげの色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="f32 eyelashColor_G">
+      <DisplayName>まつげの色(Ｇ)</DisplayName>
+      <Description>まつげの色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="f32 eyelashColor_B">
+      <DisplayName>まつげの色(Ｂ)</DisplayName>
+      <Description>まつげの色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="f32 beardPartsId">
+      <DisplayName>髭パーツID</DisplayName>
+      <Description>髭パーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="f32 beardColor_R">
+      <DisplayName>髭の色(Ｒ)</DisplayName>
+      <Description>髭の色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="f32 beardColor_G">
+      <DisplayName>髭の色(Ｇ)</DisplayName>
+      <Description>髭の色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="f32 beardColor_B">
+      <DisplayName>髭の色(Ｂ)</DisplayName>
+      <Description>髭の色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="f32 accessoriesPartsId">
+      <DisplayName>装飾パーツID</DisplayName>
+      <Description>装飾パーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="f32 accessoriesColor_R">
+      <DisplayName>装飾の色(Ｒ)</DisplayName>
+      <Description>装飾の色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="f32 accessoriesColor_G">
+      <DisplayName>装飾の色(Ｇ)</DisplayName>
+      <Description>装飾の色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="f32 accessoriesColor_B">
+      <DisplayName>装飾の色(Ｂ)</DisplayName>
+      <Description>装飾の色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="f32 decalPartsId">
+      <DisplayName>デカールパーツID</DisplayName>
+      <Description>デカールパーツID</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="f32 decalColor_R">
+      <DisplayName>デカールの色(Ｒ)</DisplayName>
+      <Description>デカールの色(Ｒ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="f32 decalColor_G">
+      <DisplayName>デカールの色(Ｇ)</DisplayName>
+      <Description>デカールの色(Ｇ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="f32 decalColor_B">
+      <DisplayName>デカールの色(Ｂ)</DisplayName>
+      <Description>デカールの色(Ｂ)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="f32 decalPosX">
+      <DisplayName>デカール位置(x)</DisplayName>
+      <Description>デカール位置(x)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="f32 decalPosY">
+      <DisplayName>デカール位置(y)</DisplayName>
+      <Description>デカール位置(y)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="f32 decalAngle">
+      <DisplayName>デカール角度</DisplayName>
+      <Description>デカール角度</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="f32 decalScale">
+      <DisplayName>デカールスケール</DisplayName>
+      <Description>デカールスケール</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="f32 chrBodyScaleHead">
+      <DisplayName>キャラ体型頭部スケール</DisplayName>
+      <Description>キャラ体型頭部スケール</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="f32 chrBodyScaleBreast">
+      <DisplayName>キャラ体型胸部スケール</DisplayName>
+      <Description>キャラ体型胸部スケール</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="f32 chrBodyScaleAbdomen">
+      <DisplayName>キャラ体型腹部スケール</DisplayName>
+      <Description>キャラ体型腹部スケール</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="f32 chrBodyScaleArm">
+      <DisplayName>キャラ体型腕部スケール</DisplayName>
+      <Description>キャラ体型腕部スケール</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="f32 chrBodyScaleLeg">
+      <DisplayName>キャラ体型脚部スケール</DisplayName>
+      <Description>キャラ体型脚部スケール</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="f32 age">
+      <DisplayName>年齢</DisplayName>
+      <Description>年齢</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="f32 gender">
+      <DisplayName>性別</DisplayName>
+      <Description>性別</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="f32 caricatureGeometry">
+      <DisplayName>誇張（モデル）</DisplayName>
+      <Description>誇張（モデル）</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="f32 caricatureTexture">
+      <DisplayName>誇張（テクスチャ）</DisplayName>
+      <Description>誇張（テクスチャ）</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>49</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData00">
+      <DisplayName>顔作成ジオメトリデータ00</DisplayName>
+      <Description>顔作成ジオメトリデータ00</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData01">
+      <DisplayName>顔作成ジオメトリデータ01</DisplayName>
+      <Description>顔作成ジオメトリデータ01</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>51</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData02">
+      <DisplayName>顔作成ジオメトリデータ02</DisplayName>
+      <Description>顔作成ジオメトリデータ02</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData03">
+      <DisplayName>顔作成ジオメトリデータ03</DisplayName>
+      <Description>顔作成ジオメトリデータ03</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>53</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData04">
+      <DisplayName>顔作成ジオメトリデータ04</DisplayName>
+      <Description>顔作成ジオメトリデータ04</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>54</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData05">
+      <DisplayName>顔作成ジオメトリデータ05</DisplayName>
+      <Description>顔作成ジオメトリデータ05</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData06">
+      <DisplayName>顔作成ジオメトリデータ06</DisplayName>
+      <Description>顔作成ジオメトリデータ06</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>56</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData07">
+      <DisplayName>顔作成ジオメトリデータ07</DisplayName>
+      <Description>顔作成ジオメトリデータ07</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>57</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData08">
+      <DisplayName>顔作成ジオメトリデータ08</DisplayName>
+      <Description>顔作成ジオメトリデータ08</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>58</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData09">
+      <DisplayName>顔作成ジオメトリデータ09</DisplayName>
+      <Description>顔作成ジオメトリデータ09</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>59</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData10">
+      <DisplayName>顔作成ジオメトリデータ10</DisplayName>
+      <Description>顔作成ジオメトリデータ10</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData11">
+      <DisplayName>顔作成ジオメトリデータ11</DisplayName>
+      <Description>顔作成ジオメトリデータ11</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>61</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData12">
+      <DisplayName>顔作成ジオメトリデータ12</DisplayName>
+      <Description>顔作成ジオメトリデータ12</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>62</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData13">
+      <DisplayName>顔作成ジオメトリデータ13</DisplayName>
+      <Description>顔作成ジオメトリデータ13</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>63</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData14">
+      <DisplayName>顔作成ジオメトリデータ14</DisplayName>
+      <Description>顔作成ジオメトリデータ14</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>64</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData15">
+      <DisplayName>顔作成ジオメトリデータ15</DisplayName>
+      <Description>顔作成ジオメトリデータ15</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>65</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData16">
+      <DisplayName>顔作成ジオメトリデータ16</DisplayName>
+      <Description>顔作成ジオメトリデータ16</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>66</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData17">
+      <DisplayName>顔作成ジオメトリデータ17</DisplayName>
+      <Description>顔作成ジオメトリデータ17</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>67</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData18">
+      <DisplayName>顔作成ジオメトリデータ18</DisplayName>
+      <Description>顔作成ジオメトリデータ18</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>68</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData19">
+      <DisplayName>顔作成ジオメトリデータ19</DisplayName>
+      <Description>顔作成ジオメトリデータ19</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>69</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData20">
+      <DisplayName>顔作成ジオメトリデータ20</DisplayName>
+      <Description>顔作成ジオメトリデータ20</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData21">
+      <DisplayName>顔作成ジオメトリデータ21</DisplayName>
+      <Description>顔作成ジオメトリデータ21</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>71</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData22">
+      <DisplayName>顔作成ジオメトリデータ22</DisplayName>
+      <Description>顔作成ジオメトリデータ22</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>72</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData23">
+      <DisplayName>顔作成ジオメトリデータ23</DisplayName>
+      <Description>顔作成ジオメトリデータ23</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>73</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData24">
+      <DisplayName>顔作成ジオメトリデータ24</DisplayName>
+      <Description>顔作成ジオメトリデータ24</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>74</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData25">
+      <DisplayName>顔作成ジオメトリデータ25</DisplayName>
+      <Description>顔作成ジオメトリデータ25</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>75</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData26">
+      <DisplayName>顔作成ジオメトリデータ26</DisplayName>
+      <Description>顔作成ジオメトリデータ26</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>76</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData27">
+      <DisplayName>顔作成ジオメトリデータ27</DisplayName>
+      <Description>顔作成ジオメトリデータ27</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>77</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData28">
+      <DisplayName>顔作成ジオメトリデータ28</DisplayName>
+      <Description>顔作成ジオメトリデータ28</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>78</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData29">
+      <DisplayName>顔作成ジオメトリデータ29</DisplayName>
+      <Description>顔作成ジオメトリデータ29</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>79</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData30">
+      <DisplayName>顔作成ジオメトリデータ30</DisplayName>
+      <Description>顔作成ジオメトリデータ30</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData31">
+      <DisplayName>顔作成ジオメトリデータ31</DisplayName>
+      <Description>顔作成ジオメトリデータ31</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>81</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData32">
+      <DisplayName>顔作成ジオメトリデータ32</DisplayName>
+      <Description>顔作成ジオメトリデータ32</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>82</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData33">
+      <DisplayName>顔作成ジオメトリデータ33</DisplayName>
+      <Description>顔作成ジオメトリデータ33</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>83</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData34">
+      <DisplayName>顔作成ジオメトリデータ34</DisplayName>
+      <Description>顔作成ジオメトリデータ34</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>84</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData35">
+      <DisplayName>顔作成ジオメトリデータ35</DisplayName>
+      <Description>顔作成ジオメトリデータ35</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>85</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData36">
+      <DisplayName>顔作成ジオメトリデータ36</DisplayName>
+      <Description>顔作成ジオメトリデータ36</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>86</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData37">
+      <DisplayName>顔作成ジオメトリデータ37</DisplayName>
+      <Description>顔作成ジオメトリデータ37</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>87</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData38">
+      <DisplayName>顔作成ジオメトリデータ38</DisplayName>
+      <Description>顔作成ジオメトリデータ38</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>88</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData39">
+      <DisplayName>顔作成ジオメトリデータ39</DisplayName>
+      <Description>顔作成ジオメトリデータ39</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>89</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData40">
+      <DisplayName>顔作成ジオメトリデータ40</DisplayName>
+      <Description>顔作成ジオメトリデータ40</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData41">
+      <DisplayName>顔作成ジオメトリデータ41</DisplayName>
+      <Description>顔作成ジオメトリデータ41</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>91</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData42">
+      <DisplayName>顔作成ジオメトリデータ42</DisplayName>
+      <Description>顔作成ジオメトリデータ42</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>92</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData43">
+      <DisplayName>顔作成ジオメトリデータ43</DisplayName>
+      <Description>顔作成ジオメトリデータ43</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>93</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData44">
+      <DisplayName>顔作成ジオメトリデータ44</DisplayName>
+      <Description>顔作成ジオメトリデータ44</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>94</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData45">
+      <DisplayName>顔作成ジオメトリデータ45</DisplayName>
+      <Description>顔作成ジオメトリデータ45</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>95</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData46">
+      <DisplayName>顔作成ジオメトリデータ46</DisplayName>
+      <Description>顔作成ジオメトリデータ46</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>96</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData47">
+      <DisplayName>顔作成ジオメトリデータ47</DisplayName>
+      <Description>顔作成ジオメトリデータ47</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>97</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData48">
+      <DisplayName>顔作成ジオメトリデータ48</DisplayName>
+      <Description>顔作成ジオメトリデータ48</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>98</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData49">
+      <DisplayName>顔作成ジオメトリデータ49</DisplayName>
+      <Description>顔作成ジオメトリデータ49</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>99</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData50">
+      <DisplayName>顔作成ジオメトリデータ50</DisplayName>
+      <Description>顔作成ジオメトリデータ50</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData51">
+      <DisplayName>顔作成ジオメトリデータ51</DisplayName>
+      <Description>顔作成ジオメトリデータ51</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData52">
+      <DisplayName>顔作成ジオメトリデータ52</DisplayName>
+      <Description>顔作成ジオメトリデータ52</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData53">
+      <DisplayName>顔作成ジオメトリデータ53</DisplayName>
+      <Description>顔作成ジオメトリデータ53</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData54">
+      <DisplayName>顔作成ジオメトリデータ54</DisplayName>
+      <Description>顔作成ジオメトリデータ54</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>104</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData55">
+      <DisplayName>顔作成ジオメトリデータ55</DisplayName>
+      <Description>顔作成ジオメトリデータ55</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>105</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData56">
+      <DisplayName>顔作成ジオメトリデータ56</DisplayName>
+      <Description>顔作成ジオメトリデータ56</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>106</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData57">
+      <DisplayName>顔作成ジオメトリデータ57</DisplayName>
+      <Description>顔作成ジオメトリデータ57</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>107</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData58">
+      <DisplayName>顔作成ジオメトリデータ58</DisplayName>
+      <Description>顔作成ジオメトリデータ58</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>108</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData59">
+      <DisplayName>顔作成ジオメトリデータ59</DisplayName>
+      <Description>顔作成ジオメトリデータ59</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>109</SortID>
+    </Field>
+    <Field Def="f32 faceGeoData60">
+      <DisplayName>顔作成ジオメトリデータ60</DisplayName>
+      <Description>顔作成ジオメトリデータ60</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="f32 faceTexData00">
+      <DisplayName>顔作成テクスチャデータ00</DisplayName>
+      <Description>顔作成テクスチャデータ00</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>111</SortID>
+    </Field>
+    <Field Def="f32 faceTexData01">
+      <DisplayName>顔作成テクスチャデータ01</DisplayName>
+      <Description>顔作成テクスチャデータ01</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>112</SortID>
+    </Field>
+    <Field Def="f32 faceTexData02">
+      <DisplayName>顔作成テクスチャデータ02</DisplayName>
+      <Description>顔作成テクスチャデータ02</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>113</SortID>
+    </Field>
+    <Field Def="f32 faceTexData03">
+      <DisplayName>顔作成テクスチャデータ03</DisplayName>
+      <Description>顔作成テクスチャデータ03</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>114</SortID>
+    </Field>
+    <Field Def="f32 faceTexData04">
+      <DisplayName>顔作成テクスチャデータ04</DisplayName>
+      <Description>顔作成テクスチャデータ04</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>115</SortID>
+    </Field>
+    <Field Def="f32 faceTexData05">
+      <DisplayName>顔作成テクスチャデータ05</DisplayName>
+      <Description>顔作成テクスチャデータ05</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>116</SortID>
+    </Field>
+    <Field Def="f32 faceTexData06">
+      <DisplayName>顔作成テクスチャデータ06</DisplayName>
+      <Description>顔作成テクスチャデータ06</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>117</SortID>
+    </Field>
+    <Field Def="f32 faceTexData07">
+      <DisplayName>顔作成テクスチャデータ07</DisplayName>
+      <Description>顔作成テクスチャデータ07</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>118</SortID>
+    </Field>
+    <Field Def="f32 faceTexData08">
+      <DisplayName>顔作成テクスチャデータ08</DisplayName>
+      <Description>顔作成テクスチャデータ08</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>119</SortID>
+    </Field>
+    <Field Def="f32 faceTexData09">
+      <DisplayName>顔作成テクスチャデータ09</DisplayName>
+      <Description>顔作成テクスチャデータ09</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="f32 faceTexData10">
+      <DisplayName>顔作成テクスチャデータ10</DisplayName>
+      <Description>顔作成テクスチャデータ10</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>121</SortID>
+    </Field>
+    <Field Def="f32 faceTexData11">
+      <DisplayName>顔作成テクスチャデータ11</DisplayName>
+      <Description>顔作成テクスチャデータ11</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>122</SortID>
+    </Field>
+    <Field Def="f32 faceTexData12">
+      <DisplayName>顔作成テクスチャデータ12</DisplayName>
+      <Description>顔作成テクスチャデータ12</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>123</SortID>
+    </Field>
+    <Field Def="f32 faceTexData13">
+      <DisplayName>顔作成テクスチャデータ13</DisplayName>
+      <Description>顔作成テクスチャデータ13</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>124</SortID>
+    </Field>
+    <Field Def="f32 faceTexData14">
+      <DisplayName>顔作成テクスチャデータ14</DisplayName>
+      <Description>顔作成テクスチャデータ14</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>125</SortID>
+    </Field>
+    <Field Def="f32 faceTexData15">
+      <DisplayName>顔作成テクスチャデータ15</DisplayName>
+      <Description>顔作成テクスチャデータ15</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>126</SortID>
+    </Field>
+    <Field Def="f32 faceTexData16">
+      <DisplayName>顔作成テクスチャデータ16</DisplayName>
+      <Description>顔作成テクスチャデータ16</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>127</SortID>
+    </Field>
+    <Field Def="f32 faceTexData17">
+      <DisplayName>顔作成テクスチャデータ17</DisplayName>
+      <Description>顔作成テクスチャデータ17</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>128</SortID>
+    </Field>
+    <Field Def="f32 faceTexData18">
+      <DisplayName>顔作成テクスチャデータ18</DisplayName>
+      <Description>顔作成テクスチャデータ18</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>129</SortID>
+    </Field>
+    <Field Def="f32 faceTexData19">
+      <DisplayName>顔作成テクスチャデータ19</DisplayName>
+      <Description>顔作成テクスチャデータ19</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>130</SortID>
+    </Field>
+    <Field Def="f32 faceTexData20">
+      <DisplayName>顔作成テクスチャデータ20</DisplayName>
+      <Description>顔作成テクスチャデータ20</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>131</SortID>
+    </Field>
+    <Field Def="f32 faceTexData21">
+      <DisplayName>顔作成テクスチャデータ21</DisplayName>
+      <Description>顔作成テクスチャデータ21</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>132</SortID>
+    </Field>
+    <Field Def="f32 faceTexData22">
+      <DisplayName>顔作成テクスチャデータ22</DisplayName>
+      <Description>顔作成テクスチャデータ22</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>133</SortID>
+    </Field>
+    <Field Def="f32 faceTexData23">
+      <DisplayName>顔作成テクスチャデータ23</DisplayName>
+      <Description>顔作成テクスチャデータ23</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>134</SortID>
+    </Field>
+    <Field Def="f32 faceTexData24">
+      <DisplayName>顔作成テクスチャデータ24</DisplayName>
+      <Description>顔作成テクスチャデータ24</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>135</SortID>
+    </Field>
+    <Field Def="f32 faceTexData25">
+      <DisplayName>顔作成テクスチャデータ25</DisplayName>
+      <Description>顔作成テクスチャデータ25</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>136</SortID>
+    </Field>
+    <Field Def="f32 faceTexData26">
+      <DisplayName>顔作成テクスチャデータ26</DisplayName>
+      <Description>顔作成テクスチャデータ26</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>137</SortID>
+    </Field>
+    <Field Def="f32 faceTexData27">
+      <DisplayName>顔作成テクスチャデータ27</DisplayName>
+      <Description>顔作成テクスチャデータ27</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>138</SortID>
+    </Field>
+    <Field Def="f32 faceTexData28">
+      <DisplayName>顔作成テクスチャデータ28</DisplayName>
+      <Description>顔作成テクスチャデータ28</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>139</SortID>
+    </Field>
+    <Field Def="f32 faceTexData29">
+      <DisplayName>顔作成テクスチャデータ29</DisplayName>
+      <Description>顔作成テクスチャデータ29</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>140</SortID>
+    </Field>
+    <Field Def="f32 faceTexData30">
+      <DisplayName>顔作成テクスチャデータ30</DisplayName>
+      <Description>顔作成テクスチャデータ30</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>141</SortID>
+    </Field>
+    <Field Def="f32 faceTexData31">
+      <DisplayName>顔作成テクスチャデータ31</DisplayName>
+      <Description>顔作成テクスチャデータ31</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>142</SortID>
+    </Field>
+    <Field Def="f32 faceTexData32">
+      <DisplayName>顔作成テクスチャデータ32</DisplayName>
+      <Description>顔作成テクスチャデータ32</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>143</SortID>
+    </Field>
+    <Field Def="f32 faceTexData33">
+      <DisplayName>顔作成テクスチャデータ33</DisplayName>
+      <Description>顔作成テクスチャデータ33</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>144</SortID>
+    </Field>
+    <Field Def="f32 faceTexData34">
+      <DisplayName>顔作成テクスチャデータ34</DisplayName>
+      <Description>顔作成テクスチャデータ34</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>145</SortID>
+    </Field>
+    <Field Def="f32 faceTexData35">
+      <DisplayName>顔作成テクスチャデータ35</DisplayName>
+      <Description>顔作成テクスチャデータ35</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>-1000</Minimum>
+      <Maximum>1000</Maximum>
+      <SortID>146</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

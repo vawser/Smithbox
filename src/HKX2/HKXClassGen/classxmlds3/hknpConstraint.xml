@@ -1,0 +1,32 @@
+<class name='hknpConstraint' version='1' signature='0x68e3b294' size='56'>
+  <enums>
+    <enum name='FlagsEnum' flags='00000000'>
+      <enumitem name='NO_FLAGS' value='0'/>
+      <enumitem name='IS_EXPORTABLE' value='1'/>
+      <enumitem name='IS_IMMEDIATE' value='2'/>
+      <enumitem name='IS_DISABLED' value='4'/>
+      <enumitem name='IS_DESTRUCTION_INTERNAL' value='8'/>
+      <enumitem name='AUTO_REMOVE_ON_DESTRUCTION_RESET' value='16'/>
+      <enumitem name='AUTO_REMOVE_ON_DESTRUCTION' value='32'/>
+      <enumitem name='RAISE_CONSTRAINT_FORCE_EVENTS' value='64'/>
+      <enumitem name='RAISE_CONSTRAINT_FORCE_EXCEEDED_EVENTS' value='128'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='bodyIdA' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bodyIdB' offset='4' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='data' offset='8' ctype='hkpConstraintData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='id' offset='16' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='immediateId' offset='20' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='flags' offset='22' etype='FlagsEnum' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='23' etype='ConstraintType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='atoms' offset='24' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='sizeOfAtoms' offset='32' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sizeOfSchemas' offset='34' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numSolverResults' offset='36' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numSolverElemTemps' offset='37' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='runtimeSize' offset='38' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='runtime' offset='40' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='userData' offset='48' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

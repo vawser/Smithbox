@@ -1,0 +1,201 @@
+10 UNKNOWN
+100000 Forest Grotesque
+101000 Kobold
+102000 Hollow Soldier
+102100 Royal Soldier
+103000 Hollow Infantry
+103100 Drangleic Infantry
+105000 Amana Shrine Maiden
+106000 Hollow Priest
+107000 Parasitized Undead
+108000 Hollow Rogue
+113000 Varangian Sailor
+115000 Undead Traveler
+117000 Stone Soldier
+118000 Black Hollow Mage
+119000 Lion Clan Mage
+121000 Giant
+123000 Suspicious Shadow
+124000 Manikin
+125000 Rupturing Hollow
+127000 Rupturing Hollow
+129000 Forest Spirit
+131000 Lindelt Cleric
+132000 Skeleton
+133000 Skeleton
+134000 Gyrm
+135000 Gyrm Warrior
+137000 Prowling Magus
+138000 Torturer
+139000 Artificial Undead
+141000 Undead Aberration
+146000 Lord Tseldora
+147000 Undead with Head Bandage
+148000 Undead Peasant
+149000 Undead Steelworker
+150000 Stone Knight
+151000 Ironclad Soldier
+152000 Royal Soldier
+153000 Syan Knight
+154000 Skeleton Lord
+155000 Amana Aberration
+156000 UNKNOWN
+157000 Dual-wielding Skeleton
+201000 Small Boar
+201100 Small Boar
+202000 Undead Boar
+203000 Parasite Spider
+204000 Poison Moth
+205000 Poison Horn Beetle
+206000 Razorback Nightcrawler
+209000 Hunting Dog
+210000 Basilisk
+212000 Guardian Dragon
+213000 Crystal Lizard
+214000 Giant Undead Boar
+216000 Wall Ghost
+217000 Dark Stalker
+218000 UNKNOWN
+220000 Giant Acid Horn Beetle
+222000 Giant Basilisk
+223000 Mongrel Rat
+223500 UNKNOWN
+224000 Darksucker
+225000 UNKNOWN
+226000 Corpse Rat
+227000 Stray Dog
+300000 Ogre
+301000 Heide Knight
+302000 Undead Jailer
+303300 Flexile Sentry
+304000 Milfanito
+305000 Smelter Demon
+306000 Alonne Captain
+307000 Headless Vengarl
+307100 Vengarl
+308000 Lion Clan Warrior
+309000 Forgotten Giant
+309600 Last Giant
+309700 Giant Lord
+311000 Mounted Overseer
+312000 Grave Warden
+313000 Hollow Falconer
+314000 Hollow Primal Knight
+315000 Primal Knight
+316000 Desert Sorceress
+317000 Dragon Acolyte
+318000 The Pursuer
+319000 Alonne Knight
+321000 Mimic
+324000 Belfry Gargoyle
+325000 Ruin Sentinel
+326000 The Rotten
+327000 Dragon Skeleton
+330000 Old Knight
+331000 Drakekeeper
+332000 Throne Defender
+333000 Velstadt
+334000 Throne Watcher
+337000 Captive Undead
+500000 Covetous Demon
+501000 Mytha- the Baneful Queen
+502000 Manscorpion Tark
+503000 Scorpioness Najka
+504000 Looking Glass Knight
+506100 Darklurker
+506500 Grave Warden Agdayne
+507000 UNKNOWN
+508000 UNKNOWN
+509000 Leydia Witch
+509100 UNKNOWN
+511000 Imperious Knight
+512000 Leydia Pyromancer
+514600 Vendrick (hollow)
+600000 Ancient Dragon
+601000 Flame Lizard
+602000 Rampart Hedgehog
+603000 The Duke's Dear Freja
+603010 The Duke's Dear Freja
+607000 Old Iron King
+608000 Corrosive Ant Queen
+610000 UNKNOWN
+611000 Dragonrider
+611010 Dragonrider
+619100 Executioner's Chariot
+619110 Executioner's Chariot
+625000 Old Dragonslayer
+626000 Lost Sinner
+627000 Nashandra
+650000 Iron Warrior
+651000 Fume Sorcerer
+653000 Ashen Warrior
+654000 Ashen Crawler
+656000 Possessed Armor
+657000 Barrel Carrier
+658000 Retainer
+659000 Rampart Golem
+660000 Crystal Golem
+661000 Frozen Reindeer
+662000 Rampart Hedgehog
+663000 Rampart Spearman
+665000 Sanctum Knight
+666000 Sanctum Soldier
+670000 Sanctum Priestess
+671000 Poison Statue Cluster
+672000 Corrosive Ant
+674000 Pagan Tree
+675000 Fume Knight
+677000 Retainer Sorcerer
+678000 Ice Golem
+679000 Aava- the King's Pet
+680000 Sir Alonne
+681000 Sinh- the Slumbering Dragon
+681001 Sinh- the Slumbering Dragon
+682000 Elana- Squalid Queen
+683000 Imperfect
+684000 Vendrick
+688000 Loyce Knight
+689000 Charred Loyce Knight
+690000 Burnt Ivory King
+692000 Aldia- Scholar of the First Sin
+700000 Emerald Herald
+701000 UNKNOWN
+704500 Laddersmith Gilligan
+705000 Strowen
+721100 Chancellor Wellager
+723000 Milibeth
+724000 Captain Drummond
+725000 Darkdiver Grandahl
+726000 Lonesome Gavlan
+730000 Looking Glass Phantom
+732000 Lost Sinner Pyromancer Phantom
+742000 Creighton the Wanderer
+743000 Benhart of Jugo
+744000 Mild Mannered Pate
+751000 Cartographer Cale
+752000 Lucatiel of Mirrah
+753000 Bell Keeper
+754000 Merchant Hag Melentia
+755000 UNKNOWN
+760000 Milfanito
+760200 Imprisoned Milfanito
+761000 Maughlin the Armourer
+762000 Stone Trader Chloanne
+763000 Rosabeth of Melfia
+764000 Blacksmith Lenigrast
+766000 Carhillion of the Fold
+768000 Straid of Olaphis
+769000 Licia of Lindeldt
+770000 Felkin the Outcast
+771000 Royal Sorcerer Navlaan
+772000 Magerold of Lanafir
+776000 Weaponsmith Ornifex
+777000 Sweet Shalquoir
+783000 Titchy Gren
+784000 Cromwell the Pardoner
+785000 Blue Sentinel Targray
+786000 Dyna & Tillo
+800000 UNKNOWN
+800001 UNKNOWN
+800010 UNKNOWN
+999999999 UNKNOWN

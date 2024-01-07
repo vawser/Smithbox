@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>DECAL_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 textureId = -1" />
+    <Field Def="s32 dmypolyId = -1" />
+    <Field Def="f32 pitchAngle" />
+    <Field Def="f32 yawAngle" />
+    <Field Def="f32 nearDistance" />
+    <Field Def="f32 farDistance" />
+    <Field Def="f32 nearSize" />
+    <Field Def="f32 farSize" />
+    <Field Def="s32 maskSpeffectId = -1" />
+    <Field Def="u32 pad_10:4" />
+    <Field Def="u32 replaceTextureId_byMaterial:1" />
+    <Field Def="u32 dmypolyCategory:2" />
+    <Field Def="u32 pad_05:4" />
+    <Field Def="u32 useDeferredDecal:1 = 1" />
+    <Field Def="u32 usePaintDecal:1" />
+    <Field Def="u32 bloodTypeEnable:1" />
+    <Field Def="u32 bUseNormal:1" />
+    <Field Def="u32 pad_08:1" />
+    <Field Def="u32 pad_09:1" />
+    <Field Def="u32 usePom:1" />
+    <Field Def="u32 useEmissive:1" />
+    <Field Def="u32 putVertical:1" />
+    <Field Def="u32 pad_13:12" />
+    <Field Def="s16 randomSizeMin = 80" />
+    <Field Def="s16 randomSizeMax = 160" />
+    <Field Def="f32 randomRollMin" />
+    <Field Def="f32 randomRollMax" />
+    <Field Def="f32 randomPitchMin" />
+    <Field Def="f32 randomPitchMax" />
+    <Field Def="f32 randomYawMin" />
+    <Field Def="f32 randomYawMax" />
+    <Field Def="f32 pomHeightScale" />
+    <Field Def="u8 pomSampleMin = 8" />
+    <Field Def="u8 pomSampleMax = 64" />
+    <Field Def="s8 blendMode = 1" />
+    <Field Def="s8 appearDirType" />
+    <Field Def="f32 emissiveValueBegin = 1" />
+    <Field Def="f32 emissiveValueEnd = 1" />
+    <Field Def="f32 emissiveTime" />
+    <Field Def="u8 bIntpEnable" />
+    <Field Def="dummy8 pad_01[3]" />
+    <Field Def="f32 intpIntervalDist = 0.1" />
+    <Field Def="s32 beginIntpTextureId = -1" />
+    <Field Def="s32 endIntpTextureId = -1" />
+    <Field Def="s32 appearSfxId = -1" />
+    <Field Def="f32 appearSfxOffsetPos" />
+    <Field Def="s32 maskTextureId = -1" />
+    <Field Def="s32 diffuseTextureId = -1" />
+    <Field Def="s32 reflecTextureId = -1" />
+    <Field Def="f32 maskScale = 1" />
+    <Field Def="s32 normalTextureId = -1" />
+    <Field Def="s32 heightTextureId = -1" />
+    <Field Def="s32 emissiveTextureId = -1" />
+    <Field Def="u8 diffuseColorR = 255" />
+    <Field Def="u8 diffuseColorG = 255" />
+    <Field Def="u8 diffuseColorB = 255" />
+    <Field Def="dummy8 pad_03[1]" />
+    <Field Def="u8 reflecColorR = 255" />
+    <Field Def="u8 reflecColorG = 255" />
+    <Field Def="u8 reflecColorB = 255" />
+    <Field Def="u8 bLifeEnable" />
+    <Field Def="f32 siniScale" />
+    <Field Def="f32 lifeTimeSec" />
+    <Field Def="f32 fadeOutTimeSec" />
+    <Field Def="s16 priority = -1" />
+    <Field Def="u8 bDistThinOutEnable" />
+    <Field Def="u8 bAlignedTexRandomVariationEnable" />
+    <Field Def="f32 distThinOutCheckDist" />
+    <Field Def="f32 distThinOutCheckAngleDeg" />
+    <Field Def="u8 distThinOutMaxNum = 1" />
+    <Field Def="u8 distThinOutCheckNum = 1" />
+    <Field Def="s16 delayAppearFrame" />
+    <Field Def="u32 randVaria_Diffuse:4" />
+    <Field Def="u32 randVaria_Mask:4" />
+    <Field Def="u32 randVaria_Reflec:4" />
+    <Field Def="u32 pad_12:4" />
+    <Field Def="u32 randVaria_Normal:4" />
+    <Field Def="u32 randVaria_Height:4" />
+    <Field Def="u32 randVaria_Emissive:4" />
+    <Field Def="u32 pad_11:4" />
+    <Field Def="f32 fadeInTimeSec" />
+    <Field Def="dummy8 pad1[8]" />
+  </Fields>
+</PARAMDEF>

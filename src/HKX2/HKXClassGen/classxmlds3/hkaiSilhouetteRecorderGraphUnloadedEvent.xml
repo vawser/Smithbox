@@ -1,0 +1,5 @@
+<class name='hkaiSilhouetteRecorderGraphUnloadedEvent' version='1' signature='0x8e8eaa57' size='32' parent='hkaiSilhouetteRecorderReplayEvent'>
+  <members>
+    <member name='sectionUid' offset='24' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

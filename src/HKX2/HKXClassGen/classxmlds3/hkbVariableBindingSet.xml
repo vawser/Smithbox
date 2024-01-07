@@ -1,0 +1,8 @@
+<class name='hkbVariableBindingSet' version='1' signature='0xe942f339' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='bindings' offset='16' ctype='hkbVariableBindingSetBinding' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexOfBindingToEnable' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hasOutputBinding' offset='36' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='initializedOffsets' offset='37' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

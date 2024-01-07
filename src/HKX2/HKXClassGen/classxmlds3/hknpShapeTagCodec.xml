@@ -1,0 +1,13 @@
+<class name='hknpShapeTagCodec' version='1' signature='0x85b7c832' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='TYPE_NULL' value='0'/>
+      <enumitem name='TYPE_MATERIAL_PALETTE' value='1'/>
+      <enumitem name='TYPE_UFM' value='2'/>
+      <enumitem name='TYPE_USER' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='Type' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

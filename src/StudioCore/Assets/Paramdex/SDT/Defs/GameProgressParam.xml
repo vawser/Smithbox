@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GAME_PROGRESS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 eventFlagId">
+      <DisplayName>イベントフラグID</DisplayName>
+      <Description>イベントフラグID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 progressValue">
+      <DisplayName>加算進捗率[％]</DisplayName>
+      <Description>加算進捗率[％]</Description>
+      <Maximum>100</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[11]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <SortID>201</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

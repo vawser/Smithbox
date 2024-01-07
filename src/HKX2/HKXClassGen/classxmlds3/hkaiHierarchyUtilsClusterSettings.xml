@@ -1,0 +1,7 @@
+<class name='hkaiHierarchyUtilsClusterSettings' version='1' signature='0x552dcdf3' size='112'>
+  <members>
+    <member name='desiredFacesPerCluster' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='searchParameters' offset='16' ctype='hkaiNavMeshPathSearchParameters' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='agentInfo' offset='96' ctype='hkaiAgentTraversalInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

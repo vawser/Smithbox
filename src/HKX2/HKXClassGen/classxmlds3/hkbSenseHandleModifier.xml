@@ -1,0 +1,37 @@
+<class name='hkbSenseHandleModifier' version='1' signature='0x4fb828b7' size='240' parent='hkbModifier'>
+  <enums>
+    <enum name='SensingMode' flags='00000000'>
+      <enumitem name='SENSE_IN_NEARBY_RIGID_BODIES' value='0'/>
+      <enumitem name='SENSE_IN_RIGID_BODIES_OUTSIDE_THIS_CHARACTER' value='1'/>
+      <enumitem name='SENSE_IN_OTHER_CHARACTER_RIGID_BODIES' value='2'/>
+      <enumitem name='SENSE_IN_THIS_CHARACTER_RIGID_BODIES' value='3'/>
+      <enumitem name='SENSE_IN_GIVEN_CHARACTER_RIGID_BODIES' value='4'/>
+      <enumitem name='SENSE_IN_GIVEN_RIGID_BODY' value='5'/>
+      <enumitem name='SENSE_IN_OTHER_CHARACTER_SKELETON' value='6'/>
+      <enumitem name='SENSE_IN_THIS_CHARACTER_SKELETON' value='7'/>
+      <enumitem name='SENSE_IN_GIVEN_CHARACTER_SKELETON' value='8'/>
+      <enumitem name='SENSE_IN_GIVEN_LOCAL_FRAME_GROUP' value='9'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='handle' offset='88' ctype='hkbHandle' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='sensorLocalOffset' offset='144' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ranges' offset='160' ctype='hkbSenseHandleModifierRange' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handleOut' offset='176' ctype='hkbHandle' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handleIn' offset='184' ctype='hkbHandle' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localFrameName' offset='192' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorLocalFrameName' offset='200' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minDistance' offset='208' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxDistance' offset='212' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='distanceOut' offset='216' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionFilterInfo' offset='220' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorRagdollBoneIndex' offset='224' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorAnimationBoneIndex' offset='226' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensingMode' offset='228' etype='SensingMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extrapolateSensorPosition' offset='229' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='keepFirstSensedHandle' offset='230' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='foundHandleOut' offset='231' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='timeSinceLastModify' offset='232' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='rangeIndexForEventToSendNextUpdate' offset='236' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

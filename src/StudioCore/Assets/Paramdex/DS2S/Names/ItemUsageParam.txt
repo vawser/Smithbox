@@ -1,0 +1,53 @@
+0 Default
+1000 Weapon
+1010 Weapon and Key
+1100 Armor
+1110 Dragon Form
+1115 Vendrick's Crowns
+1200 Ring
+1300 Covenant Ring
+1310 Agape Ring
+1400 Spell
+1500 Soul Vessel / Estus Flask
+1600 Absorption / Resistance / Stats / Stamina
+1610 HP / Spell Recovery
+1615 Brightbug
+1620 Rubbish
+1700 Buff / Utility
+1750 Ammunition
+1800 Homeward Bone
+1900 Soul
+2000 Boss Soul
+2100 Covenant Item
+2110 UNKNOWN
+2120 Cracked Eye Orb
+2130 Token of Fidelity
+2135 Token of Spite
+2140 Human Effigy
+2150 Flame Butterfly
+2200 Darksign
+2210 Aged Feather
+2220 UNKNOWN
+2230 Bonfire Item / Reinforcement Material
+2240 Fragrant Branch of Yore
+2300 Dried Fingers
+2400 Carving
+2410 Soapstone
+2420 Dragon Head Stone
+2500 Gesture
+2550 UNKNOWN
+2600 UNKNOWN
+2601 UNKNOWN
+2602 UNKNOWN
+2610 Black Separation Crystal
+2620 Seed of a Tree of Giants
+2630 Bone of Order
+2635 Champion's Tablet
+2640 Petrified Egg
+2645 Smooth & Silky Stone
+2650 Petrified Something
+2700 Key
+2701 UNKNOWN
+2702 Crushed Eye Orb
+2703 Simpleton's Spice / Skeptic's Spice
+2704 Smelter Wedge / Soul of Nadalia- Bride of Ash

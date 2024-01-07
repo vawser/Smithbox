@@ -1,0 +1,22 @@
+0 B0 basic
+1 B0 Indoor
+3 B0 phalanx floor
+5 B0 character (basic)
+6 B0 character (indoor)
+7 B0 character (shade)
+10 B1 basic
+11 B1 Indoor
+15 B1 character (basic)
+16 B1 character (indoor)
+17 B1 character (shade)
+20 B2 basic
+21 B2 Indoor
+25 B2 character (basic)
+26 B2 character (indoor)
+27 B2 character (shade)
+28 B2 flag object
+30 B3 Basic
+31 B3 Indoor
+35 B3 character (basic)
+36 B3 character (indoor)
+37 B3 character (shade)

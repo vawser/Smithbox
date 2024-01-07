@@ -1,0 +1,5 @@
+<class name='hknpScaledConvexShape' version='1' signature='0xf14e5f2' size='112' parent='hknpScaledConvexShapeBase'>
+  <members>
+    <member name='mutationSignals' offset='96' ctype='hknpShapeSignals' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

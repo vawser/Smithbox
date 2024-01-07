@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+      <menuTabCategory Wiki="Which tab in menu emblem will appear in. Menu uses text 212110 + value" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,6 @@
+<class name='hkbSequenceStringData' version='1' signature='0x96ce0349' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='eventNames' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='variableNames' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

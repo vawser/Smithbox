@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <textId AltName="Text ID" Wiki="Subcategory display name Text ID [MenuText]" FmgRef="Modern_MenuText" />
+    <tabId AltName="Tab ID" Wiki="Kagaribi Warp Tab ID. ID of the tab to which this subcategory belongs" Refs="BonfireWarpTabParam" />
+    <sortId AltName="Tab Sort ID" Wiki="Bonfire Warp Tab Sort ID. Display order of subcategories in tabs" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

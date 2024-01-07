@@ -1,0 +1,6 @@
+<class name='hkpBreakableShape' version='1' signature='0x8a60664' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='physicsShape' offset='16' ctype='hkcdShape' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='material' offset='24' ctype='hkpBreakableMaterial' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

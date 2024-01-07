@@ -1,0 +1,357 @@
+60 ID monitoring item 1 -- ID監視用アイテム1
+61 ID monitoring item 2 -- ID監視用アイテム2
+62 ID monitoring item 3 -- ID監視用アイテム3
+63 ID monitoring item 4 -- ID監視用アイテム4
+64 ID monitoring item 5 -- ID監視用アイテム5
+65 ID monitoring item 6 -- ID監視用アイテム6
+66 ID monitoring item 7 -- ID監視用アイテム7
+67 ID monitoring item 8 -- ID監視用アイテム8
+68 ID monitoring item 9 -- ID監視用アイテム9
+69 ID monitoring item 10 -- ID監視用アイテム10
+70 [FDP] Avatar Ritual 1 A-1 -- 【FDP】アバター儀式1 A-1
+71 [FDP] Avatar Ritual 2 B-1 -- 【FDP】アバター儀式2 B-1
+72 [FDP] Avatar Ritual 3 C-1 -- 【FDP】アバター儀式3 C-1
+73 [FDP] Avatar Ritual 4 A-2 -- 【FDP】アバター儀式4 A-2
+74 [FDP] Avatar Ritual 5 B-2 -- 【FDP】アバター儀式5 B-2
+75 [FDP] Avatar Ritual 6 C-2 -- 【FDP】アバター儀式6 C-2
+76 [FDP] Avatar Ritual 7 A-3 -- 【FDP】アバター儀式7 A-3
+77 [FDP] Avatar Ritual 8 B-3 -- 【FDP】アバター儀式8 B-3
+78 [FDP] Avatar Ritual 9 C-3 -- 【FDP】アバター儀式9 C-3
+79 [FDP] Battle Royale -- 【FDP】バトルロイヤル
+90 [FDP] Connect with other worlds -- 【FDP】他世界と接続
+91 [FDP] Dragon egg -- 【FDP】竜の卵
+92 [FDP] Corrosion ritual -- 【FDP】蝕儀式
+93 [FDP] Invasion ritual -- 【FDP】侵入儀式
+94 Dummy for playing PC animation when creating blood characters -- 血文字作成時のPCアニメ再生用ダミー
+95 Dummy for playing PC animation when calling blood character illusion -- 血文字幻影呼び出し時のPCアニメ再生用ダミー
+500 Remaining machine -- 残機
+1000 Resource item A (white charge) -- リソースアイテムA（白形代）
+1001 Temporary resource item A (replenishment white charge) -- 一時リソースアイテムA（補充白形代）
+1100 Resurrection right -- 復活権
+1101 Fragment of resurrection right -- 復活権の欠片
+1110 Temporary resurrection right -- テンポラリ復活権
+1200 Skill points -- スキルポイント
+2000 Resurrection technique -- 復活の術
+2100 Ninjutsu Ninjutsu_Blood Smoke -- 忍殺忍術_血煙
+2110 Ninjutsu Ninjutsu_Puppet -- 忍殺忍術_傀儡
+2120 Ninjutsu Ninjutsu_Encha -- 忍殺忍術_エンチャ
+2300 Right hand sword -- 右手刀
+2310 Left hand prosthesis -- 左手義手
+2390 Night eyes -- 夜目
+2400 Immortal sword -- 不死斬りの刀
+2420 Infinite breathing -- 無限呼吸
+2450 Basic action lifted _ anti-aircraft shinobi killing -- 基本アクション解禁_対空忍殺
+2460 Lifting of the ban on school techniques_Sword Holy Iai -- 流派技解禁_剣聖居合い
+2461 Lifting of the ban on school techniques_Hachiman Flying Rush -- 流派技解禁_八艘飛びラッシュ
+2462 Lifting the ban on school techniques_flame Iai -- 流派技解禁_火炎居合い
+2470 Strengthening _ Drug effect UP (C) -- 能力強化_薬の効果UP（C）
+2471 Strengthening _ Drug effect UP (D) -- 能力強化_薬の効果UP（D）
+2472 Strengthening _ Drug effect UP (E) -- 能力強化_薬の効果UP（E）
+2475 Capacity enhancement_Upper limit of possession of form (E) -- 能力強化_形代所持上限UP（E）
+2480 Ability enhancement_HP recovery at the time of shinobi (B) -- 能力強化_忍殺時HP回復（B）
+2481 Strengthening _ Core recovery at the time of shinobi (B) -- 能力強化_忍殺時体幹回復（B）
+2490 Lifting the ban on school techniques_Vertical ascending rotation slash -- 流派技解禁_垂直上昇回転斬り
+2500 Sacred treasure A_ flower -- 神器A_花
+2501 Sacred Treasure B_ Calculus -- 神器B_結石
+2502 Sacred treasure C_ Kaoki -- 神器C_香木
+2503 Sacred treasure D_ fragrant tree (raw tree) -- 神器D_香木（生木）
+2910 Lifting of the ban on prosthetic hand ninja -- 義手忍具強化解禁
+2920 School tree lifted_Shinobi style -- 流派ツリー解禁_忍び流
+2921 School tree lifted _ prosthetic hand style -- 流派ツリー解禁_義手流
+2922 School tree lifted _ Ashina style -- 流派ツリー解禁_葦名流
+2923 School tree lifted _ temple style -- 流派ツリー解禁_寺院流
+2924 School tree lifted _ compound style -- 流派ツリー解禁_複合流
+2930 Dragon cough treatment lifted -- 竜咳治療解禁
+3000 [Replenishment] Est_Yes -- 【補充】エスト_有
+3001 [Replenishment] Est_None -- 【補充】エスト_無
+3020 [Consumption] Regeneration -- 【消費】リジェネ
+3040 [Consumption] Elixir -- 【消費】エリクサー
+3050 [Consumption] Weird young water thrombus (fascinated samurai) -- 【消費】変若水血栓（魅了された侍）
+3051 [Consumption] Weird young water thrombus (scale shop fry) -- 【消費】変若水血栓（うろこショップ稚魚）
+3052 [Consumption] Weird young water thrombus (kidnapped younger man) -- 【消費】変若水血栓（さらわれ下男）
+3053 [Consumption] Weird water thrombus (Immortal experiment doctor) -- 【消費】変若水血栓（不死実験の医僧）
+3060 [Consumption] Ohagi -- 【消費】おはぎ
+3061 [Consumption] Ohagi (extraordinary) -- 【消費】おはぎ（惜別）
+3070 [Consumption] Persimmon -- 【消費】柿
+3071 [Consumption] Persimmon (younger man) -- 【消費】柿（下男）
+3080 [Consumption] Chigo rice -- 【消費】稚児米
+3081 [Consumption] Chigo rice (Sasameyuki) -- 【消費】稚児米（細雪）
+3200 [Consumption] Disease recovery + resistance enhancement -- 【消費】病毒回復 + 耐性強化
+3210 [Consumption] Recovery from fire + Strengthening resistance -- 【消費】炎上回復 + 耐性強化
+3211 [Consumption] Recovery from fire + Strengthening resistance (Tokugawa) -- 【消費】炎上回復 + 耐性強化（徳川）
+3220 [Consumption] Recovery from madness + Strengthening resistance -- 【消費】発狂回復 + 耐性強化
+3230 [Consumption] Strengthening resistance to electric shock -- 【消費】感電耐性強化
+3250 [Consumption] Self-illness poison -- 【消費】自病毒
+3290 [Consumption] Suicide -- 【消費】自殺
+3291 [Infinity] Suicide -- 【無限】自殺
+3292 [Consumption] Suicide_Betrayal Nightjars -- 【消費】自殺_裏切り夜鷹衆
+3300 [Replenishment] Disease prevention_Yes -- 【補充】病毒予防_有
+3301 [Replenishment] Disease prevention_None -- 【補充】病毒予防_無
+3310 [Replenishment] Flame prevention_Yes -- 【補充】炎上予防_有
+3311 [Replenishment] Flame prevention_No -- 【補充】炎上予防_無
+3320 [Replenishment] Madness prevention_Yes -- 【補充】発狂予防_有
+3321 [Replenishment] Madness prevention_No -- 【補充】発狂予防_無
+3350 [Infinite / Shape cost consumption] Attack strengthening -- 【無限/形代消費】攻撃強化
+3360 [Infinite / Shape cost consumption] Attack enhancement_with disadvantages -- 【無限/形代消費】攻撃強化_デメリット付き
+3370 [Infinite / Shape cost consumption] Strengthen defense -- 【無限/形代消費】防御強化
+3380 [Infinite / Shape cost consumption] Strengthening the core -- 【無限/形代消費】体幹強化
+3390 [Infinite / Shape cost consumption] Stealth enhancement -- 【無限/形代消費】ステルス強化
+3400 [Consumption] Attack enhancement -- 【消費】攻撃強化
+3410 [Consumption] Attack enhancement_with disadvantages -- 【消費】攻撃強化_デメリット付き
+3420 [Consumption] Strengthening defense -- 【消費】防御強化
+3430 [Consumption] Strengthening the core -- 【消費】体幹強化
+3440 [Consumption] Stealth enhancement -- 【消費】ステルス強化
+3450 [Consumption] Strengthening anti-spirit -- 【消費】対霊強化
+3500 [Consumption] Ceramic piece -- 【消費】陶片
+3510 [Consumption] Grip ash -- 【消費】握り灰
+3520 [Consumption] Aburatsubo -- 【消費】油壷
+3530 [Consumption] Release illusion -- 【消費】幻術解除
+3580 [Replenishment] Five-color rice_Yes -- 【補充】五色米_有
+3581 [Replenishment] Five-color rice _ None -- 【補充】五色米_無
+3600 [Consumption] Increased amount of money obtained -- 【消費】お金入手量UP
+3610 [Consumption] Increased amount of revival rights obtained -- 【消費】復活権入手量UP
+3620 [Consumption] Item drop rate UP -- 【消費】アイテムドロップ率UP
+3630 [Consumption] Increased drop rate -- 【消費】形代ドロップ率UP
+3640 [Consumption] White water balloon -- 【消費】白らっぱ水風船
+3700 [Consumption] Gold nugget_small -- 【消費】金塊_小
+3704 [Consumption] Gold nugget _ Medium -- 【消費】金塊_中
+3708 [Consumption] Gold nugget_Large -- 【消費】金塊_大
+3720 [Consumption] Resurrection right mass -- 【消費】復活権塊
+3721 [Consumption] Resurrection right mass (female player) -- 【消費】復活権塊（女奏者）
+3730 [Consumption] Bell Demon_Day -- 【消費】鐘鬼_昼
+3800 [Replenishment] Form conversion_Yes -- 【補充】形代変換_有
+3801 [Replenishment] Form conversion_No -- 【補充】形代変換_無
+3900 [Infinity] Telescope -- 【無限】遠眼鏡
+3980 [Infinity] Buddha statue of return -- 【無限】帰還の仏像
+3990 [Infinity] Redo bell -- 【無限】やりなおし鈴
+4000 HP / Trunk UP Fragment -- HP/体幹UPの欠片
+4100 HP / trunk UP vessel 1 -- HP/体幹UPの器1
+4101 HP / trunk UP vessel 2 -- HP/体幹UPの器2
+4102 HP / trunk UP vessel 3 -- HP/体幹UPの器3
+4103 HP / trunk UP vessel 4 -- HP/体幹UPの器4
+4104 HP / trunk UP vessel 5 -- HP/体幹UPの器5
+4105 HP / trunk UP vessel 6 -- HP/体幹UPの器6
+4106 HP / trunk UP vessel 7 -- HP/体幹UPの器7
+4107 HP / trunk UP vessel 8 -- HP/体幹UPの器8
+4108 HP / trunk UP vessel 9 -- HP/体幹UPの器9
+4109 HP / trunk UP vessel 10 -- HP/体幹UPの器10
+4400 Gourd possession upper limit UP -- ひょうたん所持上限UP
+5100 Attack base UP -- 攻撃ベースUP
+5200 Boss Soul_Cavalry Warrior -- ボスソウル_騎馬武者
+5201 Boss Soul_Butterfly -- ボスソウル_お蝶
+5202 Boss Soul_Rival 2nd -- ボスソウル_ライバル2回目
+5203 Boss Soul_Chigo Monkey -- ボスソウル_稚児猿
+5204 Boss Soul_Yasha Ape -- ボスソウル_夜叉猿
+5205 Boss Soul_Burning Monk (Phantom) -- ボスソウル_破戒僧（幻影）
+5206 Boss Soul_Ninja Army Chief -- ボスソウル_忍軍の長
+5207 Boss Soul_Ninja Army Chief (True) -- ボスソウル_忍軍の長（真）
+5208 Boss Soul_Burning Monk -- ボスソウル_破戒僧
+5209 Boss Soul_Mermaid Dragon -- ボスソウル_人魚竜
+5210 Boss Soul_Demon Buddhist Master -- ボスソウル_鬼仏師
+5211 Boss Soul_Revived Kensei -- ボスソウル_蘇った剣聖
+5212 Boss Soul_Sword of the Bed -- ボスソウル_病床の剣聖
+5213 Boss Soul_Yasha Ape 2nd round -- ボスソウル_夜叉猿2戦目
+5220 Boss Soul_EX Genichiro -- ボスソウル_EX弦一郎
+5221 Boss Soul_EX Father-in-law -- ボスソウル_EX義父
+5222 Boss Soul_EX One Heart -- ボスソウル_EX一心
+5300 Boss Soul (Used) _ Cavalry Warrior -- ボスソウル（使用済み）_騎馬武者
+5301 Boss Soul (Used) _ Butterfly -- ボスソウル（使用済み）_お蝶
+5302 Boss Soul (Used) _ Second Rival -- ボスソウル（使用済み）_ライバル2回目
+5303 Boss Soul (Used) _ Chigo Monkey -- ボスソウル（使用済み）_稚児猿
+5304 Boss Soul (Used) _ Yasha Ape -- ボスソウル（使用済み）_夜叉猿
+5305 Boss Soul (Used) _ Haunting Monk (Phantom) -- ボスソウル（使用済み）_破戒僧（幻影）
+5306 Boss Soul (Used) _ Chief of Ninja Army -- ボスソウル（使用済み）_忍軍の長
+5307 Boss Soul (Used) _ Chief of Ninja Army (True) -- ボスソウル（使用済み）_忍軍の長（真）
+5308 Boss Soul (Used) _Burning Monk -- ボスソウル（使用済み）_破戒僧
+5309 Boss Soul (Used) _ Mermaid Dragon -- ボスソウル（使用済み）_人魚竜
+5310 Boss Soul (Used) _ Demon Buddhist Master -- ボスソウル（使用済み）_鬼仏師
+5311 Boss Soul (Used) _ Revived Kensei -- ボスソウル（使用済み）_蘇った剣聖
+5312 Boss Soul (Used) _ Kensei on the sickbed -- ボスソウル（使用済み）_病床の剣聖
+5313 Boss Soul (Used) _ Yasha Ape 2nd Round -- ボスソウル（使用済み）_夜叉猿2戦目
+5320 Boss Soul (Used) _EX Genichiro -- ボスソウル（使用済み）_EX弦一郎
+5321 Boss Soul (Used) _EX Father-in-law -- ボスソウル（使用済み）_EX義父
+5322 Boss Soul (Used) _EX One Heart -- ボスソウル（使用済み）_EX一心
+5400 Boss Soul_For displaying the number of possessions -- ボスソウル_所持数表示用
+5500 Mask Fragment A -- お面の破片A
+5501 Mask Fragment B -- お面の破片B
+5502 Mask Fragment C -- お面の破片C
+5510 Mask finished product -- お面完成品
+5600 Dragon cough treatment -- 竜咳治療
+6000 General-purpose material: Steel 1 (fragment) -- 汎用素材：鋼鉄1（欠片）
+6010 General-purpose material: Steel 2 (Large piece) -- 汎用素材：鋼鉄2（大欠片）
+6020 General-purpose material: Steel 3 (lump) -- 汎用素材：鋼鉄3（塊）
+6100 General-purpose material: Chemical magic 1 (fragment) -- 汎用素材：化学呪術1（欠片）
+6200 General-purpose material: Chemistry 2 (Large piece) -- 汎用素材：化学2（大欠片）
+6210 General-purpose material: Chemistry 3 (lump) -- 汎用素材：化学3（塊）
+6300 General-purpose material: Magic 2 (Large Fragment) -- 汎用素材：呪術2（大欠片）
+6310 General-purpose material: Magic 3 (lump) -- 汎用素材：呪術3（塊）
+6400 General-purpose material: Steel Chemical Spell 4 (master) -- 汎用素材：鋼鉄化学呪術4（原盤）
+9000 Mermaid dragon tears -- 人魚竜の涙
+9003 Amulet -- お守り
+9009 Sakura drop -- 桜雫
+9010 Prince&#39;s bell -- 皇子の鈴
+9011 Father-in-law&#39;s bell -- 義父の鈴
+9020 Inro of irises -- 花菖蒲の印籠
+9052 Red eyeball -- 赤い目玉
+9060 tally -- 割符
+9061 Anayama tally -- 穴山割符
+9070 Kyoto water -- 京の水
+9071 Lord&#39;s beard -- 主の髭
+9080 Red-white windmill -- 赤白い風車
+9081 Pure white windmill -- 真白い風車
+9090 Chigo rice (for Kuro) -- 稚児米（九郎の分）
+9091 Ice tears -- 氷涙
+9100 Sake (sake) -- 酒（日本酒）
+9101 Sake (Doburoku) -- 酒（どぶろく）
+9102 Sake (monkey liquor) -- 酒（猿酒）
+9103 Sake (Ryusen) -- 酒（竜泉）
+9104 Sake (Emma&#39;s sake) -- 酒（エマの日本酒）
+9105 Sake (Kensei no Doburoku) -- 酒（剣聖のどぶろく）
+9180 Nishikigoi bait -- 錦鯉の餌
+9181 Nishikigoi food_poison A -- 錦鯉の餌_毒A
+9182 Nishikigoi food_poison B -- 錦鯉の餌_毒B
+9192 Snake organ_A -- 蛇の臓器_A
+9193 Snake organ_B -- 蛇の臓器_B
+9200 Book_ Whereabouts of illusion cancellation -- 書物_幻術解除の所在
+9205 Book_Immortal Experiment Doctor&#39;s Note -- 書物_不死実験医僧の手記
+9206 Book_Rat writing -- 書物_鼠相書き
+9207 Books_Order Writing_A -- 書物_注文書き_A
+9208 Books_Order Writing_B -- 書物_注文書き_B
+9209 Books_About the ritual of swaying -- 書物_揺籃の儀について
+9210 Book_Book of the Dragon Seed (above) -- 書物_竜胤断ちの書（上）
+9211 Book_Book of the Dragon Seed (below) -- 書物_竜胤断ちの書（下）
+9212 Books_About incense flowers -- 書物_香の花について
+9213 Books_About stones -- 書物_結石について
+9214 Book_length memoir of Kosho -- 書物_丈の小姓の手記
+9215 From the book_Senmine Shonin&#39;s scripture_Monk -- 書物_仙峯上人の経典_僧正から
+9216 Books_Return -- 書物_人返りについて
+9217 Book_ Whereabouts of ignition -- 書物_発火の所在
+9218 Books_Nightjars Smoke Signal Tips -- 書物_夜鷹衆狼煙のヒント
+9219 Book_Kensei&#39;s letter -- 書物_剣聖の置手紙
+9220 Books_About stones (hero) -- 書物_結石について（主人公）
+9221 Books_Kodachi Material Tips_Before purchasing from Araji shop clerk -- 書物_小太刀素材ヒント_荒れ寺ショップ店員から購入前
+9222 Books_Kodachi Material Tips_After purchasing from Araji shop clerk -- 書物_小太刀素材ヒント_荒れ寺ショップ店員から購入後
+9223 Books_Finger Whistle Reinforcement Material Tips_Before Purchase from Arajera Shop Clerk -- 書物_指笛強化素材ヒント_荒れ寺ショップ店員から購入前
+9224 Books_Finger Whistle Reinforcement Material Tips_After purchasing from Araji Shop Clerk -- 書物_指笛強化素材ヒント_荒れ寺ショップ店員から購入後
+9225 Books_Transformation Material Tips_Before Purchasing from Araji Shop Clerk -- 書物_変わり身素材ヒント_荒れ寺ショップ店員から購入前
+9226 Books_Transformation Material Tips_After Purchasing from Araji Shop Clerk -- 書物_変わり身素材ヒント_荒れ寺ショップ店員から購入後
+9227 Book_Black Immortal Sword Document -- 書物_黒の不死斬りの文書
+9228 From the book_Senmine Shonin&#39;s scripture_Map layout -- 書物_仙峯上人の経典_マップ配置から
+9402 Key_key of the station -- 鍵_詰所の鍵
+9403 Key_Key of the Great Buddha Hall -- 鍵_大仏殿の鍵
+9404 Key_loophole key -- 鍵_抜け穴の鍵
+9405 Key_valley key -- 鍵_渓谷の鍵
+9500 Illness of collapse_Busshi -- 決壊の病_仏師
+9501 Illness of collapse_Sale bandit -- 決壊の病_物売り野盗
+9502 Illness of collapse_white -- 決壊の病_白らっぱ
+9503 Breaking illness _ kidnapped younger man -- 決壊の病_さらわれた下男
+9504 Illness of collapse_fascinated samurai -- 決壊の病_魅了された侍
+9505 Collapse Disease_Immortality Experiment Doctor -- 決壊の病_不死実験の医僧
+9510 Illness of collapse_Son of Suzu -- 決壊の病_鈴婆の息子
+9511 Illness of collapse_decent villagers -- 決壊の病_まともな村人
+9515 Illness of collapse_Suzu -- 決壊の病_鈴婆
+9516 Illness of collapse_Yao Hioka -- 決壊の病_八尾比丘尼
+9520 Illness of collapse_Crow&#39;s bed grave fishing -- 決壊の病_鴉の寝床の墓漁り
+9521 Illness of collapse_grave fishing near the battlefield -- 決壊の病_戦場近くの墓漁り
+9522 Illness of collapse_grave fishing in front of abandoned prison -- 決壊の病_捨て牢前の墓漁り
+9523 Collapse disease_Snake burrow grave fishing -- 決壊の病_蛇の巣穴の墓漁り
+9524 Illness of collapse_Shugendo grave fishing -- 決壊の病_修験道の墓漁り
+9525 Illness of collapse_grave fishing on the cliff road -- 決壊の病_崖道の墓漁り
+9526 Illness of collapse_Araji shop clerk -- 決壊の病_荒れ寺ショップ店員
+9560 Breakdown disease_Blood of dragon cough patient -- 決壊の病_竜咳患者の血
+9700 Prosthetic hand ninja tool creation_shuriken -- 義手忍具作成_手裏剣
+9701 Strengthening prosthetic hand ninja _ Shuriken _ Butterfly kunai -- 義手忍具強化_手裏剣_お蝶クナイ
+9710 Prosthetic hand ninja tool creation_firecracker -- 義手忍具作成_爆竹
+9720 Prosthetic hand ninja tool creation_fire -- 義手忍具作成_発火
+9721 Prosthesis Ninja Strengthening_Ignition_Flamethrower -- 義手忍具強化_発火_火炎放射
+9730 Prosthetic hand ninja tool creation_prepared ax -- 義手忍具作成_仕込み斧
+9740 Prosthetic hand ninja tool creation _ transformation -- 義手忍具作成_変わり身
+9750 Prosthetic hand ninja tool creation_prepared Kodachi -- 義手忍具作成_仕込み小太刀
+9760 Prosthetic hand ninja tool creation_iron fan -- 義手忍具作成_鉄扇
+9770 Prosthetic hand ninja tool creation_enemy turning -- 義手忍具作成_敵回し
+9780 Prosthetic hand ninja tool creation_prepared spear -- 義手忍具作成_仕込み槍
+9790 Prosthetic hand ninja tool creation_finger whistle -- 義手忍具作成_指笛
+9791 Prosthesis Ninja Strengthening_Finger Whistle_Minor -- 義手忍具強化_指笛_短調
+9800 Costume_Shura -- コスチューム_修羅
+9810 Costume_Ashina Ninja -- コスチューム_葦名忍者
+9820 Costume_tengu -- コスチューム_天狗
+10000 Scales -- うろこ
+11000 Boss rematch mode _c5080_ Demon Penalty Department -- ボス再戦モード_c5080_鬼刑部
+11010 Boss rematch mode _c5090_ butterfly -- ボス再戦モード_c5090_お蝶
+11020 Boss rematch mode _c7100_ Genichiro -- ボス再戦モード_c7100_弦一郎
+11030 Boss rematch mode _c1260_ folding screen monkey -- ボス再戦モード_c1260_屏風の猿
+11040 Boss rematch mode _c5100_ lion monkey -- ボス再戦モード_c5100_獅子猿
+11050 Boss rematch mode _c5100_ Neckless lion monkey + bride -- ボス再戦モード_c5100_首無し獅子猿+嫁
+11060 Boss Rematch Mode_c5000_Burning Monk (Phantom) -- ボス再戦モード_c5000_破戒僧（幻影）
+11070 Boss Rematch Mode_c5000_Burning Monk -- ボス再戦モード_c5000_破戒僧
+11080 Boss Rematch Mode_c5060_Shinobi Owl -- ボス再戦モード_c5060_大忍び　梟
+11090 Boss rematch mode _c5060_ father-in-law -- ボス再戦モード_c5060_義父
+11100 Boss rematch mode_c5200_mermaid dragon -- ボス再戦モード_c5200_人魚竜
+11110 Boss rematch mode_c7400_ Emma -- ボス再戦モード_c7400_エマ
+11120 Boss rematch mode _c5410_ sickbed -- ボス再戦モード_c5410_病床一心
+11130 Boss Rematch Mode_c5400_Sword Seiichishin -- ボス再戦モード_c5400_剣聖一心
+11140 Boss rematch mode_c7010_Grief demon -- ボス再戦モード_c7010_怨嗟の鬼
+11150 Boss rematch mode _c7100_ Genichiro, back -- ボス再戦モード_c7100_弦一郎・裏
+11160 Boss rematch mode_c5060_Father-in-law, back -- ボス再戦モード_c5060_義父・裏
+11170 Boss rematch mode_c5400_Ichishin / Ura -- ボス再戦モード_c5400_一心・裏
+11180 Boss Rematch Mode _c7101_ Immortal Slasher Genichiro -- ボス再戦モード_c7101_不死斬り弦一郎
+11500 Boss rematch mode_concealment -- ボス再戦モード_秘匿
+12000 Boss rematch mode_c7100_Genichiro / back_ban lifted -- ボス再戦モード_c7100_弦一郎・裏_解禁
+12010 Boss rematch mode_c5060_father / back_ban lifted -- ボス再戦モード_c5060_義父・裏_解禁
+12020 Boss rematch mode_c5400_Isshin / Ura_Unveiled -- ボス再戦モード_c5400_一心・裏_解禁
+12500 Boss Rematch Mode_Tutorial Check_Item Reset -- ボス再戦モード_チュートリアルチェック_アイテムリセット
+12600 Boss Rematch Mode_Reward Check_EX Genichiro -- ボス再戦モード_報酬チェック_EX弦一郎
+12610 Boss rematch mode_reward check_EX father-in-law -- ボス再戦モード_報酬チェック_EX義父
+12620 Boss Rematch Mode_Reward Check_EX One Heart -- ボス再戦モード_報酬チェック_EX一心
+910000 Debugging Skills Lifted: New Game -- デバッグ用スキル解禁：ニューゲーム
+910010 Debugging skills lifted: Castle -- デバッグ用スキル解禁：城下
+910020 Debugging skills lifted: Samurai residence -- デバッグ用スキル解禁：武家屋敷
+910030 Debugging skills lifted: Honjo -- デバッグ用スキル解禁：本城
+910040 Debugging skills lifted: Hidden prison -- デバッグ用スキル解禁：隠し牢
+910050 Debugging skills lifted: Dungeon -- デバッグ用スキル解禁：地下牢
+910060 Debugging skills lifted: Temple -- デバッグ用スキル解禁：寺
+910070 Debugging skills lifted: Valley -- デバッグ用スキル解禁：渓谷
+910080 Debugging skills lifted: Lower valley -- デバッグ用スキル解禁：渓谷下層
+910090 Debugging Skills Lifted: Sick Village -- デバッグ用スキル解禁：病み村
+910100 Debugging skill lifted: Honjo_Ninja army invasion -- デバッグ用スキル解禁：本城_忍軍襲来時
+910110 Debugging skill lifted: Submerged city -- デバッグ用スキル解禁：水没都
+910120 Debugging skills lifted: Honjo_Tokugawa invasion -- デバッグ用スキル解禁：本城_徳川襲来時
+910130 Debugging skill lifted: Hidden prison _ When Tokugawa attacks -- デバッグ用スキル解禁：隠し牢_徳川襲来時
+910140 Debugging skills lifted: Castle_Tokugawa invasion -- デバッグ用スキル解禁：城下_徳川襲来時
+910150 Debugging skills lifted: Game clear -- デバッグ用スキル解禁：ゲームクリア
+920000 Debugging skills lifted: New game for checking enemies -- デバッグ用スキル解禁：敵チェック用ニューゲーム
+920010 Debugging skill lifted: Castle for checking enemies -- デバッグ用スキル解禁：敵チェック用城下
+920020 Debugging skills lifted: Samurai residence for checking enemies -- デバッグ用スキル解禁：敵チェック用武家屋敷
+920030 Debugging skill lifted: Honjo for checking enemies -- デバッグ用スキル解禁：敵チェック用本城
+920040 Debugging skill lifted: Hidden prison for checking enemies -- デバッグ用スキル解禁：敵チェック用隠し牢
+920050 Debugging skills lifted: Enemy check dungeon -- デバッグ用スキル解禁：敵チェック用地下牢
+920060 Debugging skill lifted: Enemy check temple -- デバッグ用スキル解禁：敵チェック用寺
+920070 Debugging skills lifted: Enemy check valley -- デバッグ用スキル解禁：敵チェック用渓谷
+920080 Debugging skill lifted: Lower layer of valley for checking enemies -- デバッグ用スキル解禁：敵チェック用渓谷下層
+920090 Debugging skill lifted: Enemy check sick village -- デバッグ用スキル解禁：敵チェック用病み村
+920100 Debugging skill lifted: Enemy check Honjo_Ninja army invasion -- デバッグ用スキル解禁：敵チェック用本城_忍軍襲来時
+920110 Debugging skill lifted: Submerged city for checking enemies -- デバッグ用スキル解禁：敵チェック用水没都
+920120 Debugging skill lifted: Enemy check Honjo_When Tokugawa attacks -- デバッグ用スキル解禁：敵チェック用本城_徳川襲来時
+920130 Debugging skill lifted: Hidden prison for checking enemies_When Tokugawa attacks -- デバッグ用スキル解禁：敵チェック用隠し牢_徳川襲来時
+920140 Debugging skill lifted: Enemy check castle _ Tokugawa invasion -- デバッグ用スキル解禁：敵チェック用城下_徳川襲来時
+920150 Debugging skill lifted: Clear enemy check game -- デバッグ用スキル解禁：敵チェック用ゲームクリア
+930000 Debugging skill voucher: New game for checking enemies -- デバッグ用スキル引換券：敵チェック用ニューゲーム
+930010 Debugging skill voucher: Castle for checking enemies -- デバッグ用スキル引換券：敵チェック用城下
+930020 Debugging skill voucher: Samurai residence for checking enemies -- デバッグ用スキル引換券：敵チェック用武家屋敷
+930030 Debugging skill voucher: Honjo for checking enemies -- デバッグ用スキル引換券：敵チェック用本城
+930040 Debugging skill voucher: Hidden prison for checking enemies -- デバッグ用スキル引換券：敵チェック用隠し牢
+930050 Debugging skill voucher: Enemy check dungeon -- デバッグ用スキル引換券：敵チェック用地下牢
+930060 Debugging skill voucher: Enemy check temple -- デバッグ用スキル引換券：敵チェック用寺
+930070 Debugging skill voucher: Enemy check valley -- デバッグ用スキル引換券：敵チェック用渓谷
+930080 Debugging skill voucher: Lower layer of valley for checking enemies -- デバッグ用スキル引換券：敵チェック用渓谷下層
+930090 Debugging skill voucher: Enemy check sick village -- デバッグ用スキル引換券：敵チェック用病み村
+930100 Debugging skill voucher: Honjo for enemy check_When the Ninja army invades -- デバッグ用スキル引換券：敵チェック用本城_忍軍襲来時
+930110 Debugging skill voucher: Submerged city for checking enemies -- デバッグ用スキル引換券：敵チェック用水没都
+930120 Debugging skill voucher: Honjo for enemy check_When Tokugawa attacks -- デバッグ用スキル引換券：敵チェック用本城_徳川襲来時
+930130 Debugging skill voucher: Hidden prison for checking enemies_When Tokugawa attacks -- デバッグ用スキル引換券：敵チェック用隠し牢_徳川襲来時
+930140 Debugging skill voucher: Castle for checking enemies_When Tokugawa attacks -- デバッグ用スキル引換券：敵チェック用城下_徳川襲来時
+930150 Debugging skill voucher: Clear enemy check game -- デバッグ用スキル引換券：敵チェック用ゲームクリア
+999996 Debugging skill lifted: No derivative attacks -- デバッグ用スキル解禁：派生攻撃なし
+999997 Debugging skills lifted: Everything except immortal slashing / acquisition of form charges -- デバッグ用スキル解禁：不死斬り/形代取得以外全て
+999998 Debugging Skills Lifted: Everything except Immortal Slash -- デバッグ用スキル解禁：不死斬り以外全て
+999999 Debugging skills lifted: All -- デバッグ用スキル解禁：全て

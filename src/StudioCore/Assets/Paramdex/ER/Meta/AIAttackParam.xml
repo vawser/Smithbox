@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="AI_ATTACK_BOOL" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <attackTableId AltName="Reference ID" Wiki="ID specified by NPC thinking parameters" />
+    <attackId AltName="Attack ID" Wiki="Attack number" />
+    <successDistance AltName="Success judgment distance" Wiki="For arguments of Common_Attack type subgoals" />
+    <turnTimeBeforeAttack AltName="Turn time before attack" Wiki="For arguments of Common_Attack type subgoals" />
+    <frontAngleRange AltName="Front judgment angle" Wiki="For arguments of Common_Attack type subgoals" />
+    <upAngleThreshold AltName="Upward execution threshold" Wiki="For arguments of Common_Attack type subgoals" />
+    <downAngleThershold AltName="Downward execution threshold" Wiki="For arguments of Common_Attack type subgoals" />
+    <isFirstAttack AltName="Is it a starting technique?" Wiki="Attacks from the second stage of the combo are " Enum="AI_ATTACK_BOOL" />
+    <doesSelectOnOutRange AltName="Whether to select outside the proper distance" Wiki="Whether to select when the distance is out of the proper distance" Enum="AI_ATTACK_BOOL" />
+    <minOptimalDistance AltName="Minimum proper distance" Wiki="Minimum value of proper attack distance" />
+    <maxOptimalDistance AltName="Maximum proper distance" Wiki="Maximum attack suitability distance" />
+    <baseDirectionForOptimalAngle1 AltName="Appropriate angle reference direction 1" Wiki="Direction that serves as a reference for the proper angle of attack (XZ plane)" />
+    <optimalAttackAngleRange1 AltName="Appropriate angle reference range 1" Wiki="Range of aptitude angles for attacks" />
+    <baseDirectionForOptimalAngle2 AltName="Appropriate angle reference direction 2" Wiki="Direction that serves as a reference for attack aptitude accuracy (XZ plane)" />
+    <optimalAttackAngleRange2 AltName="Appropriate angle reference range 2" Wiki="Range of aptitude angles for attacks" />
+    <intervalForExec AltName="Executable interval" Wiki="Time required to attack once and then use it again" />
+    <selectionTendency AltName="Selection rate" Wiki="Specify the ease of selection by magnification" />
+    <shortRangeTendency AltName="Short range selection rate" Wiki="Selection rate at close range" />
+    <middleRangeTendency AltName="Medium range selection rate" Wiki="Selection rate at medium range" />
+    <farRangeTendency AltName="Distance selection rate" Wiki="Selection rate at long distances" />
+    <outRangeTendency AltName="Out of range rate" Wiki="Selection rate out of range" />
+    <deriveAttackId1 AltName="Derived attack 1" Wiki="Derivable attack number" />
+    <deriveAttackId2 AltName="Derived attack 2" Wiki="Derivable attack number" />
+    <deriveAttackId3 AltName="Derived attack 3" Wiki="Derivable attack number" />
+    <deriveAttackId4 AltName="Derived attack 4" Wiki="Derivable attack number" />
+    <deriveAttackId5 AltName="Derived attack 5" Wiki="Derivable attack number" />
+    <deriveAttackId6 AltName="Derived attack 6" Wiki="Derivable attack number" />
+    <deriveAttackId7 AltName="Derived attack 7" Wiki="Derivable attack number" />
+    <deriveAttackId8 AltName="Derived attack 8" Wiki="Derivable attack number" />
+    <deriveAttackId9 AltName="Derived attack 9" Wiki="Derivable attack number" />
+    <deriveAttackId10 AltName="Derived attack 10" Wiki="Derivable attack number" />
+    <deriveAttackId11 AltName="Derived attack 11" Wiki="Derivable attack number" />
+    <deriveAttackId12 AltName="Derived attack 12" Wiki="Derivable attack number" />
+    <deriveAttackId13 AltName="Derived attack 13" Wiki="Derivable attack number" />
+    <deriveAttackId14 AltName="Derived attack 14" Wiki="Derivable attack number" />
+    <deriveAttackId15 AltName="Derived attack 15" Wiki="Derivable attack number" />
+    <deriveAttackId16 AltName="Derived attack 16" Wiki="Derivable attack number" />
+    <goalLifeMin AltName="Minimum life of the goal" Wiki="Minimum life of the goal" />
+    <goalLifeMax AltName="Maximum life span of the goal" Wiki="Maximum life span of the goal" />
+    <doesSelectOnInnerRange AltName="Whether to select within the appropriate distance" Wiki="Whether to select when within the appropriate distance" Enum="AI_ATTACK_BOOL" />
+    <enableAttackOnBattleStart AltName="Whether to use it as the first hit" Wiki="Whether to use it as the first hit" Enum="AI_ATTACK_BOOL" />
+    <doesSelectOnTargetDown AltName="Whether to select when the target is down" Wiki="Whether to select when the target is down" Enum="AI_ATTACK_BOOL" />
+    <pad1 AltName=""/>
+    <minArriveDistance AltName="Minimum reach judgment distance" Wiki="Minimum reach judgment distance" />
+    <maxArriveDistance AltName="Maximum reach judgment distance" Wiki="Maximum reach judgment distance" />
+    <comboExecDistance AltName="Continuous attack execution distance" Wiki="Distance used to determine the execution of attacks from the second stage onward" />
+    <comboExecRange AltName="Continuous attack execution angle" Wiki="Distance used to determine the execution of attacks from the second stage onward" />
+  </Field>
+  <Self />
+</PARAMMETA>

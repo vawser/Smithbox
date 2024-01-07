@@ -1,0 +1,49 @@
+<class name='hkVertexFormat' version='1' signature='0xf11e3ff7' size='260'>
+  <enums>
+    <enum name='ComponentType' flags='00000000'>
+      <enumitem name='TYPE_NONE' value='0'/>
+      <enumitem name='TYPE_INT8' value='1'/>
+      <enumitem name='TYPE_UINT8' value='2'/>
+      <enumitem name='TYPE_INT16' value='3'/>
+      <enumitem name='TYPE_UINT16' value='4'/>
+      <enumitem name='TYPE_INT32' value='5'/>
+      <enumitem name='TYPE_UINT32' value='6'/>
+      <enumitem name='TYPE_UINT8_DWORD' value='7'/>
+      <enumitem name='TYPE_ARGB32' value='8'/>
+      <enumitem name='TYPE_FLOAT16' value='9'/>
+      <enumitem name='TYPE_FLOAT32' value='10'/>
+      <enumitem name='TYPE_VECTOR4' value='11'/>
+      <enumitem name='TYPE_LAST' value='12'/>
+    </enum>
+    <enum name='ComponentUsage' flags='00000000'>
+      <enumitem name='USAGE_NONE' value='0'/>
+      <enumitem name='USAGE_POSITION' value='1'/>
+      <enumitem name='USAGE_NORMAL' value='2'/>
+      <enumitem name='USAGE_COLOR' value='3'/>
+      <enumitem name='USAGE_TANGENT' value='4'/>
+      <enumitem name='USAGE_BINORMAL' value='5'/>
+      <enumitem name='USAGE_BLEND_MATRIX_INDEX' value='6'/>
+      <enumitem name='USAGE_BLEND_WEIGHTS' value='7'/>
+      <enumitem name='USAGE_BLEND_WEIGHTS_LAST_IMPLIED' value='8'/>
+      <enumitem name='USAGE_TEX_COORD' value='9'/>
+      <enumitem name='USAGE_POINT_SIZE' value='10'/>
+      <enumitem name='USAGE_USER' value='11'/>
+      <enumitem name='USAGE_LAST' value='12'/>
+    </enum>
+    <enum name='HintFlags' flags='00000000'>
+      <enumitem name='FLAG_READ' value='1'/>
+      <enumitem name='FLAG_WRITE' value='2'/>
+      <enumitem name='FLAG_DYNAMIC' value='4'/>
+      <enumitem name='FLAG_NOT_SHARED' value='8'/>
+    </enum>
+    <enum name='SharingType' flags='00000000'>
+      <enumitem name='SHARING_ALL_SHARED' value='0'/>
+      <enumitem name='SHARING_ALL_NOT_SHARED' value='1'/>
+      <enumitem name='SHARING_MIXTURE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='elements' offset='0' ctype='hkVertexFormatElement' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='32' flags='FLAGS_NONE' default='0'/>
+    <member name='numElements' offset='256' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name='hclBlendSomeVerticesOperatorBlendEntry' version='1' signature='0xa538f48c' size='8'>
+  <members>
+    <member name='vertexIndex' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendWeight' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

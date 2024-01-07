@@ -1,0 +1,5 @@
+<class name='hkpBridgeAtoms' version='1' signature='0x8214e9fc' size='32'>
+  <members>
+    <member name='bridgeAtom' offset='0' ctype='hkpBridgeConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

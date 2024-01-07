@@ -1,0 +1,6 @@
+<class name='hkbMoveCharacterModifier' version='1' signature='0x8a40ba00' size='128' parent='hkbModifier'>
+  <members>
+    <member name='offsetPerSecondMS' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='timeSinceLastModify' offset='112' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

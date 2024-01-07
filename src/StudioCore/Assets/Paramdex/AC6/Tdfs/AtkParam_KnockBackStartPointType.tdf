@@ -1,0 +1,6 @@
+"ATKPARAM_KNOCKBACK_STARTPOINT_TYPE"
+"u8"
+"デフォルト","0"
+"着弾位置","1"
+"攻撃した人","2"
+"攻撃発生源","3"

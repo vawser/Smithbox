@@ -1,0 +1,5 @@
+<class name='hkp3dAngConstraintAtom' version='1' signature='0xed1ebd41' size='16' parent='hkpConstraintAtom'>
+  <members>
+    <member name='padding' offset='2' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='14' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

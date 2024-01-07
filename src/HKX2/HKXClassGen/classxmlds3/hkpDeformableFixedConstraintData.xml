@@ -1,0 +1,5 @@
+<class name='hkpDeformableFixedConstraintData' version='1' signature='0x5269ba9b' size='368' parent='hkpConstraintData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpDeformableFixedConstraintDataAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

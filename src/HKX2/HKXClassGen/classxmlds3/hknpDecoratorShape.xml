@@ -1,0 +1,6 @@
+<class name='hknpDecoratorShape' version='1' signature='0x19ac37e2' size='64' parent='hknpShape'>
+  <members>
+    <member name='coreShape' offset='48' ctype='hknpShape' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='coreShapeSize' offset='56' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

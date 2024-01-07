@@ -1,0 +1,20 @@
+{
+    "Title": "Param Editor: Param Upgrade",
+    "Tags": [
+        "Feature",
+        "Param"
+    ],
+    "Contents": [
+        "The Upgrade Params feature allows you to update the regulation version",
+        "used by your project's regulation.bin.",
+        "",
+        "You will need to possess the older version(s) of the base game's regulation.bin",
+        "to use this feature.",
+        "",
+        "The process will fail if both your project and the latest regulation.bin",
+        "add in a row with the same ID.",
+        "",
+        "Supported Games:",
+        "- Elden Ring"
+    ]
+}

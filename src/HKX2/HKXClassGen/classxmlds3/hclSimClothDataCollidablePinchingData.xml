@@ -1,0 +1,7 @@
+<class name='hclSimClothDataCollidablePinchingData' version='1' signature='0x4c1edaa8' size='8'>
+  <members>
+    <member name='pinchDetectionEnabled' offset='0' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pinchDetectionPriority' offset='1' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pinchDetectionRadius' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

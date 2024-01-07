@@ -1,0 +1,21 @@
+<class name='hkcdStaticMeshTreeBaseSection' version='1' signature='0xfd01ccd8' size='96' parent='hkcdStaticTreeTreehkcdStaticTreeDynamicStorage4'>
+  <enums>
+    <enum name='Flags' flags='00000000'>
+      <enumitem name='SF_REQUIRE_TREE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='codecParms' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='6' flags='FLAGS_NONE' default='0'/>
+    <member name='firstPackedVertex' offset='72' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sharedVertices' offset='76' ctype='hkcdStaticMeshTreeBaseSectionSharedVertices' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='primitives' offset='80' ctype='hkcdStaticMeshTreeBaseSectionPrimitives' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='dataRuns' offset='84' ctype='hkcdStaticMeshTreeBaseSectionDataRuns' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numPackedVertices' offset='88' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numSharedIndices' offset='89' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='leafIndex' offset='90' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='page' offset='92' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='93' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='layerData' offset='94' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='unusedData' offset='95' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

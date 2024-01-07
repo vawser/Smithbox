@@ -1,0 +1,5 @@
+<class name='hkcdStaticTreeCodecRaw' version='1' signature='0x2d65e9f4' size='32'>
+  <members>
+    <member name='aabb' offset='0' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name='hkpMoppCodeCodeInfo' version='1' signature='0xd8fdbb08' size='16'>
+  <members>
+    <member name='offset' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

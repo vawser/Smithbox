@@ -1,0 +1,7 @@
+<class name='hclMoveFixedParticlesSetupObject' version='1' signature='0x1706fab1' size='40' parent='hclOperatorSetupObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simClothSetupObject' offset='24' ctype='hclSimClothSetupObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='displayBufferSetup' offset='32' ctype='hclBufferSetupObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

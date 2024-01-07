@@ -1,0 +1,24 @@
+<class name='hkbpReachModifier' version='1' signature='0x2c3a1751' size='160' parent='hkbModifier'>
+  <enums>
+    <enum name='ReachMode' flags='00000000'>
+      <enumitem name='REACH_MODE_TERRAIN' value='0'/>
+      <enumitem name='REACH_MODE_WORLD_POSITION' value='1'/>
+      <enumitem name='REACH_MODE_MODEL_POSITION' value='2'/>
+      <enumitem name='REACH_MODE_BONE_POSITION' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='hands' offset='88' ctype='hkbpReachModifierHand' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='newTargetGain' offset='104' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='noTargetGain' offset='108' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetGain' offset='112' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeOutDuration' offset='116' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='raycastLayer' offset='120' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensingPropertyKey' offset='124' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='reachMode' offset='128' etype='ReachMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ignoreMySystemGroup' offset='129' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extrapolate' offset='132' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='internalHandData' offset='136' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeLapse' offset='152' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

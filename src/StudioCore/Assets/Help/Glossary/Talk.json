@@ -1,0 +1,13 @@
+{
+    "Title": "Talk",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "Character speech, prompted through ESD command.",
+        "Talk ids are in the Talk param, which includes a reference to",
+        "an FMG text id and to an FMOD Sample Bank (FSB) audio id.",
+        "",
+        "In Elden Ring and Armored Core VI, the audio id is instead Wwise."
+    ]
+}

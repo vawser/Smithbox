@@ -1,0 +1,6 @@
+<class name='hclObjectSpaceSkinPNTOperator' version='1' signature='0xb6099e3f' size='192' parent='hclObjectSpaceSkinOperator'>
+  <members>
+    <member name='localPNTs' offset='160' ctype='hclObjectSpaceDeformerLocalBlockPNT' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localUnpackedPNTs' offset='176' ctype='hclObjectSpaceDeformerLocalBlockUnpackedPNT' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

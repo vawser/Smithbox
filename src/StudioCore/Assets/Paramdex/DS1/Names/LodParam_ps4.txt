@@ -1,0 +1,15 @@
+0 Default settings -- デフォルト設定
+1 L0 Main -- L0メイン
+2 L1 Main -- L1メイン
+3 Not LOD -- LODしない
+4 Testparm -- testparm
+10 Small size -- サイズ小
+11 Medium size -- サイズ中
+12 Large size -- サイズ大
+13 Size Oversized -- サイズ特大
+19 Don't switch to LOD models -- LODモデルに切り替わらない
+20 Lake Beast -- 湖獣
+60 Not switch to low texture -- lowテクスチャに切り替わらない
+61 Not switch to the low texture that does not switch to the LOD model -- LODモデルに切り替わらない lowテクスチャに切り替わらない
+62 L2 only (Reflection scene default) -- L2のみ（反射シーンデフォルト）
+63 Do not switch to LOD model (for poly play) -- LODモデルに切り替わらない(ポリ劇用)

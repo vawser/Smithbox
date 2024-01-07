@@ -1,0 +1,6 @@
+<class name='hkbpReachTowardTargetModifierHand' version='1' signature='0x5be561aa' size='4'>
+  <members>
+    <member name='shoulderIndex' offset='0' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isEnabled' offset='2' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

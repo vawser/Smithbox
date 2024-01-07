@@ -1,0 +1,34 @@
+91 UNKNOWN
+7000 UNKNOWN
+7211 Chancellor Wellager
+7220 UNKNOWN
+7240 Captain Drummond
+7400 UNKNOWN
+7410 Crestfallen Saulden
+7420 Creighton the Wanderer
+7440 Mild Mannered Pate
+7460 UNKNOWN
+7510 Cartographer Cale
+7520 Lucatiel of Mirrah
+7550 UNKNOWN
+7600 Milfanito
+7601 Milfanito
+7602 Milfanito
+7603 Milfanito
+7604 Milfanito
+7610 Maughlin the Armourer
+7620 Stone Trader Chloanne
+7630 Rosabeth of Melfia
+7640 Blacksmith Lenigrast
+7643 Steady Hand McDuff
+7650 UNKNOWN
+7660 Carhillion of the Fold
+7670 UNKNOWN
+7720 Magerold of Lanafir
+7740 UNKNOWN
+7780 UNKNOWN
+7800 UNKNOWN
+7831 UNKNOWN
+7840 Cromwell the Pardoner
+7860 Dyna & Tillo
+7870 UNKNOWN

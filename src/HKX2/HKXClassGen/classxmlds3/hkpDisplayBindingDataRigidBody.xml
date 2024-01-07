@@ -1,0 +1,7 @@
+<class name='hkpDisplayBindingDataRigidBody' version='1' signature='0x7edbfd2b' size='96' parent='hkReferencedObject'>
+  <members>
+    <member name='rigidBody' offset='16' ctype='hkpRigidBody' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='displayObjectPtr' offset='24' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rigidBodyFromDisplayObjectTransform' offset='32' vtype='TYPE_MATRIX4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

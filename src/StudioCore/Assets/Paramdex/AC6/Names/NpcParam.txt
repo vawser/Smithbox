@@ -1,0 +1,1105 @@
+10000000 NIGHTFALL / 51-016 GA - Arena
+10001000 NIGHTFALL / Raven - Defend the Old Spaceport
+10001010 NIGHTFALL / Raven - Defend the Dam Complex
+10100000 DEADSLED / Coldcall - Arena
+10101000 DEADSLED / Coldcall - Underground Exploration - Depth 2 (Alt)
+10200000 ENTANGLE / Sulla - Arena
+10201000 ENTANGLE / Sulla - Attack the Watchpoint
+10300000 MIND BETA / 51-002 K - Arena
+10300001 MIND BETA / 51-002 K
+10301000 TRANSCRIBER / Kate Markson - Obstruct the Mandatory Inspection
+10310000 MIND GAMMA / 51-003 K - Arena
+10311000 ALLMIND (MIND GAMMA) - Coral Release
+10400000 SHINOBI / Rokumonsen - Arena
+10400001 SHINOBI / Rokumonsen - Eliminate V.VII
+10500000 STEEL HAZE / V.IV Rusty - Arena
+10501000 STEEL HAZE / V.IV Rusty - Attack the Old Spaceport
+10501010 STEEL HAZE / V.IV Rusty - Operation Wallclimber
+10501100 STEEL HAZE / V.IV Rusty - Unknown Territory Survey
+10600000 STEEL HAZE ORTUS / 51-101 R - Arena
+10601000 STEEL HAZE ORTUS / Rusty - Breach the Karman Line
+10601001 STEEL HAZE ORTUS / Rusty - Destroy the Drive Block (Before Smart Cleaner)
+10601002 STEEL HAZE ORTUS / Rusty - Destroy the Drive Block (Smart Cleaner)
+10609999 STEEL HAZE ORTUS / Rusty
+10700000 OPEN FAITH / V.II Snail - Arena
+10700001 OPEN FAITH / V.II Snail
+10701000 OPEN FAITH / V.II Snail
+10701001 OPEN FAITH / V.II Snail - Reach the Coral Convergence (Alt)
+10710000 OPEN FAITH / V.II Snail (Alt) - Destroy the Ice Worm
+10800000 RECONFIG / V.V Hawkins - Arena
+10801000 RECONFIG / V.V Hawkins - Ambush the Vespers
+10900000 DUAL NATURE / V.VIII Pater - Arena
+10901001 DUAL NATURE / V.VIII Pater - Ambush the Vespers
+11000000 MILK TOOTH / "Honest" Brute - Arena
+11001000 MILK TOOTH / "Honest" Brute - Eliminate "Honest" Brute
+11100000 INSTITUTE / 51-015 GA - Arena
+11101000 IA-C01: EPHEMERA / Enforcement System - Underground Exploration - Depth 3
+11200000 FULL COURSE / "Cinder" Carla - Arena
+11201000 FULL COURSE / "Cinder" Carla - Eliminate "Cinder" Carla
+11201001 FULL COURSE / "Cinder" Carla - Escape
+11300000 IB-C03: HAL 826 / 51-201 W - Arena
+11300001 IB-C03: HAL 826 / 51-201 W
+11301000 IB-C03: HAL 826 / Handler Walter - Bring Down the Xylem
+11400000 HEAD BRINGER / G5 Iguazu - Arena
+11401010 HEAD BRINGER / G5 Iguazu
+11401020 HEAD BRINGER / G5 Iguazu - Stop the Secret Data Breach
+11401030 HEAD BRINGER / G5 Iguazu - Destroy the Ice Worm
+11401040 HEAD BRINGER / G5 Iguazu - Attack the Dam Complex
+11410000 HEAD BRINGER / G5 Iguazu (ALLMIND) - Underground Exploration - Depth 2
+11411000 HEAD BRINGER / G5 Iguazu (ALLMIND) - Reach the Coral Convergence (Alt)
+11500000 CANNON HEAD / G4 Volta - Arena
+11501010 CANNON HEAD / G4 Volta - Attack the Dam Complex
+11600000 LIGER TAIL / G1 Michigan - Arena
+11601001 LIGER TAIL / G1 Michigan - Intercept the Redguns
+11700000 BURN PICKAXE / Index Dunham - Arena
+11701000 BURN PICKAXE / Index Dunham - Attack the Dam Complex
+11800000 YUE YU / Little Ziyi - Arena
+11801000 YUE YU / Little Ziyi - Retrieve Combat Logs
+11900000 TSUBASA / Middle Flatwell - Arena
+11901000 TSUBASA / Middle Flatwell - Ambush the Vespers
+11901001 TSUBASA / Middle Flatwell - Unknown Territory Survey (Alt)
+12000000 LOCKSMITH / V.I Freud - Arena
+12001000 LOCKSMITH / V.I Freud
+12001001 LOCKSMITH / V.I Freud
+12100000 CIRCUS / "Chatty" Stick - Arena
+12101000 CIRCUS / "Chatty" Stick - Destroy the Ice Worm
+12101100 CIRCUS / "Chatty" Stick - Intercept the Corporate Forces
+12101101 CIRCUS / "Chatty" Stick - Intercept the Corporate Forces
+12101200 CIRCUS / "Chatty" Stick - Eliminate "Cinder" Carla
+12200000 ALLMIND Helper (Back Weapons) - Coral Release
+12300000 ALLMIND Helper (Arm Weapons) - Coral Release
+12400000 ALLMIND Helper (Arm and Back Weapons)
+12500000 ECHO / Ayre - Arena
+12501000 ECHO / Ayre - Coral Release
+12600000 TRAINER / 51-011 AL - Arena
+12601000 Trainer AC
+12601100 Trainer AC - AC Test
+12700000 TESTER / 51-012 AL - Arena
+12701000 TESTER AC / Dafeng Student Pilot - Destroy the Tester AC
+20000000 DEEP DOWN / G2 Nile - Arena
+20001000 DEEP DOWN / G2 Nile - Prisoner Rescue
+20100000 LI LONG / G3 Wu Huahai - Arena
+20101001 LI LONG / G3 Wu Huahai - Reach the Coral Convergence
+20200000 HERMIT / G6 Red - Arena
+20201000 HERMIT / G6 Red - MIA
+20300000 CORPORATION / 51-013 BE - Arena
+20400000 GUIDANCE / V.VII Swinburne - Arena
+20401000 GUIDANCE / V.VII Swinburne - Eliminate V.VII
+20500000 INFECTION / V.VI Maeterlinck - Arena
+20501000 INFECTION / V.VI Maeterlinck - Reach the Coral Convergence
+20600000 BARREN FLOWER / V.III O'Keeffe - Arena
+20601000 BARREN FLOWER / V.III O'Keeffe - Eliminate V.III
+20700000 CANDLE RING / Ring Freddie - Arena
+20701000 CANDLE RING / Ring Freddie - Eliminate the Enforcement Squads
+20800000 ASTGHIK / Thumb Dolmayan - Arena
+20801000 ASTGHIK / Thumb Dolmayan - Survey the Uninhabited Floating City (Alt)
+20900000 MAD STOMP / "Invincible" Rummy - Arena
+20901000 MAD STOMP / "Invincible" Rummy - Infiltrate Grid 086
+21000000 RUBICONIAN / 51-014 BE - Arena
+21100000 BITTER PROMISE / Nosaac - Arena
+21101000 BITTER PROMISE / Nosaac
+21101001 BITTER PROMISE / Nosaac
+21200000 UMBER OX / Chartreuse - Arena
+21201000 UMBER OX / Chartreuse - Defend the Dam Complex
+21300000 ASTER CROWN / King - Arena
+21301000 ASTER CROWN / King - Defend the Dam Complex
+21400000 MIND ALPHA / 51-001 K - Arena
+30000000 BAWS Guard MT (Walker) (Kinetic Gun)
+30000099 BAWS Guard MT (Walker) (Kinetic Gun)
+30000100 BAWS Guard MT (Walker) (Laser Gun)
+30000199 BAWS Guard MT (Walker) (Laser Gun)
+30000200 BAWS Guard MT (Walker) (Missiles)
+30000201 BAWS Guard MT (Walker) (Missiles)
+30000299 BAWS Guard MT (Walker) (Missiles)
+30000900 BAWS Guard MT (Walker) (All Weapons)
+30000902 BAWS Guard MT (Walker) (All Weapons)
+30000903 BAWS Guard MT (Walker) (All Weapons)
+30000904 BAWS Guard MT (Walker) (All Weapons)
+30000905 BAWS Guard MT (Walker) (Kinetic Gun)
+30001001 BAWS Guard MT (Walker) (Kinetic Gun)
+30001002 BAWS Guard MT (Walker) (Kinetic Gun)
+30001003 BAWS Guard MT (Walker) (Kinetic Gun)
+30001004 BAWS Guard MT (Walker) (Kinetic Gun)
+30001100 BAWS Guard MT (Walker) (Laser Gun)
+30004000 BAWS Guard MT (Walker) (Kinetic Gun)
+30004001 BAWS Guard MT (Walker) (Kinetic Gun)
+30004002 BAWS Guard MT (Walker) (Kinetic Gun)
+30004100 BAWS Guard MT (Walker) (Missiles)
+30010000 Junker Coyote "Puncher" MT (Walker) - Eliminate the Doser Faction
+30010950 Junker Coyote "Puncher" MT (Walker)
+30010951 Junker Coyote "Puncher" MT (Walker)
+30020000 Junker Coyote "Kicker" MT (Walker) - Eliminate the Doser Faction
+30200000 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200001 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200090 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200099 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200100 BAWS Bipedal MT (Dual Machine Guns)
+30200101 BAWS Bipedal MT (Dual Machine Guns)
+30200199 BAWS Bipedal MT (Dual Machine Guns)
+30200200 BAWS Bipedal MT (Machine Gun + Bazooka)
+30200201 BAWS Bipedal MT (Machine Gun + Bazooka)
+30200202 BAWS Bipedal MT (Machine Gun + Bazooka)
+30200299 BAWS Bipedal MT (Machine Gun + Bazooka)
+30200300 BAWS Bipedal MT (Shotgun + Shield)
+30200301 BAWS Bipedal MT (Shotgun + Shield)
+30200399 BAWS Bipedal MT (Shotgun + Shield)
+30200400 BAWS Bipedal MT (Rifle + Back Missiles)
+30200401 BAWS Bipedal MT (Rifle + Back Missiles)
+30200499 BAWS Bipedal MT (Rifle + Back Missiles)
+30200500 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30200501 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30200503 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30200599 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30200600 BAWS Bipedal MT (Rifle + Shield)
+30200601 BAWS Bipedal MT (Rifle + Shield)
+30200699 BAWS Bipedal MT (Rifle + Shield)
+30200700 BAWS Bipedal MT (Rifle + Bazooka)
+30200799 BAWS Bipedal MT (Rifle + Bazooka)
+30200800 BAWS Bipedal MT (Machine Gun + Shield)
+30200801 BAWS Bipedal MT (Machine Gun + Shield)
+30200810 BAWS Bipedal MT (Machine Gun Only)
+30200811 BAWS Bipedal MT (Machine Gun Only)
+30200820 BAWS Bipedal MT (Shield Only)
+30200821 BAWS Bipedal MT (Shield Only)
+30200830 BAWS Bipedal MT (Rifle + Back Camera)
+30200831 BAWS Bipedal MT (Rifle + Back Camera)
+30200900 BAWS Bipedal MT (All Weapons)
+30200901 BAWS Bipedal MT (Back Bazooka Only)
+30200902 BAWS Bipedal MT (All Weapons)
+30200903 BAWS Bipedal MT (All Weapons)
+30200904 BAWS Bipedal MT (All Weapons)
+30200915 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200950 BAWS Bipedal MT (All Weapons)
+30200951 BAWS Bipedal MT (All Weapons)
+30200991 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200992 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200993 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200994 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200995 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200996 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30200998 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201000 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201001 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201002 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201003 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201004 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201005 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201021 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201022 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201023 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201024 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201025 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201026 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201027 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201028 BAWS Bipedal MT (Rifle + Bomb Launcher)
+30201100 BAWS Bipedal MT (Dual Machine Guns)
+30201101 BAWS Bipedal MT (Dual Machine Guns)
+30201102 BAWS Bipedal MT (Dual Machine Guns)
+30201103 BAWS Bipedal MT (Dual Machine Guns)
+30201104 BAWS Bipedal MT (Dual Machine Guns)
+30201105 BAWS Bipedal MT (Dual Machine Guns)
+30201106 BAWS Bipedal MT (Dual Machine Guns)
+30201107 BAWS Bipedal MT (Dual Machine Guns)
+30201108 BAWS Bipedal MT (Dual Machine Guns)
+30201109 BAWS Bipedal MT (Dual Machine Guns)
+30201111 BAWS Bipedal MT (Dual Machine Guns)
+30201112 BAWS Bipedal MT (Dual Machine Guns)
+30201113 BAWS Bipedal MT (Dual Machine Guns)
+30201114 BAWS Bipedal MT (Dual Machine Guns)
+30201115 BAWS Bipedal MT (Dual Machine Guns)
+30201120 BAWS Bipedal MT (Dual Machine Guns)
+30201121 BAWS Bipedal MT (Dual Machine Guns)
+30201122 BAWS Bipedal MT (Dual Machine Guns)
+30201123 BAWS Bipedal MT (Dual Machine Guns)
+30201124 BAWS Bipedal MT (Dual Machine Guns)
+30201125 BAWS Bipedal MT (Dual Machine Guns)
+30201126 BAWS Bipedal MT (Dual Machine Guns)
+30201127 BAWS Bipedal MT (Dual Machine Guns)
+30201200 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201201 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201202 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201203 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201204 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201205 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201206 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201207 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201208 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201209 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201210 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201212 BAWS Bipedal MT (Machine Gun + Bazooka)
+30201301 BAWS Bipedal MT (Shotgun + Shield)
+30201303 BAWS Bipedal MT (Shotgun + Shield)
+30201304 BAWS Bipedal MT (Shotgun + Shield)
+30201305 BAWS Bipedal MT (Shotgun + Shield)
+30201311 BAWS Bipedal MT (Shotgun + Shield)
+30201400 BAWS Bipedal MT (Rifle + Back Missiles) - AC Test
+30201402 BAWS Bipedal MT (Rifle + Back Missiles)
+30201403 BAWS Bipedal MT (Rifle + Back Missiles)
+30201404 BAWS Bipedal MT (Rifle + Back Missiles)
+30201406 BAWS Bipedal MT (Rifle + Back Missiles)
+30201407 BAWS Bipedal MT (Rifle + Back Missiles)
+30201408 BAWS Bipedal MT (Rifle + Back Missiles)
+30201409 BAWS Bipedal MT (Rifle + Back Missiles)
+30201410 BAWS Bipedal MT (Rifle + Back Missiles)
+30201411 BAWS Bipedal MT (Rifle + Back Missiles)
+30201412 BAWS Bipedal MT (Rifle + Back Missiles)
+30201413 BAWS Bipedal MT (Rifle + Back Missiles)
+30201414 BAWS Bipedal MT (Rifle + Back Missiles)
+30201415 BAWS Bipedal MT (Rifle + Back Missiles)
+30201416 BAWS Bipedal MT (Rifle + Back Missiles)
+30201417 BAWS Bipedal MT (Rifle + Back Missiles)
+30201418 BAWS Bipedal MT (Rifle + Back Missiles)
+30201419 BAWS Bipedal MT (Rifle + Back Missiles)
+30201420 BAWS Bipedal MT (Rifle + Back Missiles)
+30201421 BAWS Bipedal MT (Rifle + Back Missiles)
+30201422 BAWS Bipedal MT (Rifle + Back Missiles)
+30201423 BAWS Bipedal MT (Rifle + Back Missiles)
+30201424 BAWS Bipedal MT (Rifle + Back Missiles)
+30201425 BAWS Bipedal MT (Rifle + Back Missiles)
+30201426 BAWS Bipedal MT (Rifle + Back Missiles)
+30201427 BAWS Bipedal MT (Rifle + Back Missiles)
+30201428 BAWS Bipedal MT (Rifle + Back Missiles)
+30201429 BAWS Bipedal MT (Rifle + Back Missiles)
+30201430 BAWS Bipedal MT (Rifle + Back Missiles)
+30201500 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201501 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201502 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201503 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201504 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201505 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201506 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201507 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201508 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201509 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201510 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201511 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201512 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201513 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201514 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201515 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201516 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201517 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201518 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201519 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30201600 BAWS Bipedal MT (Rifle + Shield)
+30201602 BAWS Bipedal MT (Rifle + Shield)
+30201603 BAWS Bipedal MT (Rifle + Shield)
+30201604 BAWS Bipedal MT (Rifle + Shield)
+30201700 BAWS Bipedal MT (Rifle + Bazooka)
+30201701 BAWS Bipedal MT (Rifle + Bazooka)
+30201800 BAWS Bipedal MT (Machine Gun + Shield)
+30201801 BAWS Bipedal MT (Machine Gun + Shield)
+30201802 BAWS Bipedal MT (Machine Gun + Shield)
+30201803 BAWS Bipedal MT (Machine Gun + Shield)
+30201810 BAWS Bipedal MT (Machine Gun Only)
+30201812 BAWS Bipedal MT (Machine Gun Only)
+30201813 BAWS Bipedal MT (Machine Gun Only)
+30201814 BAWS Bipedal MT (Machine Gun Only)
+30201815 BAWS Bipedal MT (Machine Gun Only)
+30201816 BAWS Bipedal MT (Machine Gun Only)
+30201817 BAWS Bipedal MT (Machine Gun Only)
+30201818 BAWS Bipedal MT (Machine Gun Only)
+30201819 BAWS Bipedal MT (Machine Gun Only)
+30201820 BAWS Bipedal MT (Machine Gun Only)
+30201822 BAWS Bipedal MT (Machine Gun Only)
+30201830 BAWS Bipedal MT (Rifle + Back Camera)
+30201831 BAWS Bipedal MT (Rifle + Back Camera)
+30202000 BAWS Bipedal MT (Machine Gun Only)
+30202001 BAWS Bipedal MT (Machine Gun + Back Bazooka)
+30500000 PCA Subject Guard MT (Laser + Missiles)
+30500001 PCA Subject Guard MT (Laser + Missiles)
+30500002 PCA Subject Guard MT (Laser + Missiles)
+30500003 PCA Subject Guard MT (Laser + Missiles)
+30500004 PCA Subject Guard MT (Laser + Missiles)
+30500005 PCA Subject Guard MT (Laser + Missiles)
+30500006 PCA Subject Guard MT (Laser + Missiles)
+30500007 PCA Subject Guard MT (Laser + Missiles)
+30500008 PCA Subject Guard MT (Laser + Missiles)
+30500009 PCA Subject Guard MT (Laser + Missiles)
+30500010 PCA Subject Guard MT (Laser + Missiles)
+30500099 PCA Subject Guard MT (Laser + Missiles)
+30500100 PCA Subject Guard MT (Stun Bomb Launcher)
+30500101 PCA Subject Guard MT (Stun Bomb Launcher)
+30500102 PCA Subject Guard MT (Stun Bomb Launcher)
+30500103 PCA Subject Guard MT (Stun Bomb Launcher)
+30500104 PCA Subject Guard MT (Stun Bomb Launcher)
+30500105 PCA Subject Guard MT (Stun Bomb Launcher)
+30500106 PCA Subject Guard MT (Stun Bomb Launcher)
+30500107 PCA Subject Guard MT (Stun Bomb Launcher)
+30500108 PCA Subject Guard MT (Stun Bomb Launcher)
+30500199 PCA Subject Guard MT (Stun Bomb Launcher)
+30500200 PCA Subject Guard MT (Fire Blade)
+30500201 PCA Subject Guard MT (Fire Blade)
+30500299 PCA Subject Guard MT (Fire Blade)
+30500300 PCA Subject Guard MT (Flamethrower)
+30500399 PCA Subject Guard MT (Flamethrower)
+30500400 PCA Subject Guard MT (Back Bazookas)
+30500401 PCA Subject Guard MT (Back Bazookas)
+30500402 PCA Subject Guard MT (Back Bazookas)
+30500403 PCA Subject Guard MT (Back Bazookas)
+30500404 PCA Subject Guard MT (Back Bazookas)
+30500405 PCA Subject Guard MT (Back Bazookas)
+30500406 PCA Subject Guard MT (Back Bazookas)
+30500407 PCA Subject Guard MT (Back Bazookas)
+30500408 PCA Subject Guard MT (Back Bazookas)
+30500499 PCA Subject Guard MT (Back Bazookas)
+30500900 PCA Subject Guard MT (All Weapons)
+30500901 PCA Subject Guard MT (All Weapons)
+30500902 PCA Subject Guard MT (All Weapons)
+30500903 PCA Subject Guard MT (All Weapons)
+30500950 PCA Subject Guard MT (All Weapons)
+30500951 PCA Subject Guard MT (All Weapons)
+30501000 PCA Subject Guard MT (Laser + Missiles)
+30501001 PCA Subject Guard MT (Laser + Missiles)
+30501002 PCA Subject Guard MT (Laser + Missiles)
+30501003 PCA Subject Guard MT (Laser + Missiles)
+30501004 PCA Subject Guard MT (Laser + Missiles)
+30501005 PCA Subject Guard MT (Laser + Missiles)
+30501006 PCA Subject Guard MT (Laser + Missiles)
+30501007 PCA Subject Guard MT (Laser + Missiles)
+30501008 PCA Subject Guard MT (Laser + Missiles)
+30501009 PCA Subject Guard MT (Laser + Missiles)
+30501010 PCA Subject Guard MT (Laser + Missiles)
+30501011 PCA Subject Guard MT (Laser + Missiles)
+30501012 PCA Subject Guard MT (Laser + Missiles)
+30501013 PCA Subject Guard MT (Laser + Missiles)
+30501015 PCA Subject Guard MT (Laser + Missiles)
+30501016 PCA Subject Guard MT (Laser + Missiles)
+30501017 PCA Subject Guard MT (Laser + Missiles)
+30501018 PCA Subject Guard MT (Laser + Missiles)
+30501019 PCA Subject Guard MT (Laser + Missiles)
+30501100 PCA Subject Guard MT (Stun Bomb Launcher)
+30501101 PCA Subject Guard MT (Stun Bomb Launcher)
+30501102 PCA Subject Guard MT (Stun Bomb Launcher)
+30501200 PCA Subject Guard MT (Fire Blade)
+30501201 PCA Subject Guard MT (Fire Blade)
+30501202 PCA Subject Guard MT (Fire Blade)
+30501204 PCA Subject Guard MT (Fire Blade)
+30501205 PCA Subject Guard MT (Fire Blade)
+30501300 PCA Subject Guard MT (Flamethrower)
+30501301 PCA Subject Guard MT (Flamethrower)
+30501400 PCA Subject Guard MT (Back Bazookas)
+30501401 PCA Subject Guard MT (Back Bazookas)
+30501405 PCA Subject Guard MT (Back Bazookas)
+30501406 PCA Subject Guard MT (Back Bazookas)
+30501407 PCA Subject Guard MT (Back Bazookas)
+31000000 Xylem Flying MT (Plasma Gun)
+31000001 Xylem Flying MT (Plasma Gun)
+31000003 Xylem Flying MT (Plasma Gun)
+31000100 Xylem Flying MT (Laser Blades)
+31000103 Xylem Flying MT (Laser Blades)
+31000600 Xylem Flying MT (Laser Blades)
+31000900 Xylem Flying MT (All Weapons)
+31000901 Xylem Flying MT (All Weapons)
+31000902 Xylem Flying MT (All Weapons)
+31000903 Xylem Flying MT (All Weapons)
+31000904 Xylem Flying MT (All Weapons)
+31000905 Xylem Flying MT (All Weapons)
+31000906 Xylem Flying MT (All Weapons)
+31000910 Xylem Flying MT (All Weapons)
+31000950 Xylem Flying MT (All Weapons)
+31000951 Xylem Flying MT (All Weapons)
+31000955 Xylem Flying MT (All Weapons)
+31000956 Xylem Flying MT (All Weapons)
+31001000 Xylem Flying MT (Plasma Gun)
+31001100 Xylem Flying MT (Laser Blades)
+31001101 Xylem Flying MT (Laser Blades)
+31500000 HA-T-102 JUGGERNAUT - Operation Wallclimber
+31500900 HA-T-102 JUGGERNAUT
+31501000 HA-T-102 JUGGERNAUT
+31501001 HA-T-102 JUGGERNAUT
+32000000 AAS03: EKDROMOI EP / PCA SP 2nd Lieutenant - Attack the Refueling base
+32000010 AAS03: EKDROMOI EP
+32000100 AAS03: EKDROMOI MG
+32000101 AAS03: EKDROMOI "SMG"
+32000110 AAS03: EKDROMOI MG
+32000200 AAS03: EKDROMOI PG / PCA SP Chief Sergeant 1st Cls - Attack the Refueling Base
+32000210 AAS03: EKDROMOI PG
+32000900 AAS03: EKDROMOI (All Weapons)
+32000901 AAS03: EKDROMOI (All Weapons)
+32000902 AAS03: EKDROMOI (All Weapons)
+32000903 AAS03: EKDROMOI (All Weapons)
+32000950 AAS03: EKDROMOI EP
+32000951 AAS03: EKDROMOI EP
+32000953 AAS03: EKDROMOI EP
+32000955 AAS03: EKDROMOI PG
+32000956 AAS03: EKDROMOI PG
+32001100 AAS03: EKDROMOI MG / PCA SP Chief Sergeant 2nd Cls - Obstruct the Mandatory Inspection
+32001200 AAS03: EKDROMOI PG / PCA SP Warrant Officer - Obstruct the Mandatory Inspection
+32500000 AA18: LIGHT CAVALRY (Shield)
+32500001 AA18: LIGHT CAVALRY (Shield)
+32500099 AA18: LIGHT CAVALRY (Shield)
+32500100 AA18: LIGHT CAVALRY (Shotgun)
+32500101 AA18: LIGHT CAVALRY (Shotgun)
+32500102 AA18: LIGHT CAVALRY (Shotgun)
+32500199 AA18: LIGHT CAVALRY (Shotgun)
+32500400 AA18: LIGHT CAVALRY (Sniper)
+32500401 AA18: LIGHT CAVALRY (Sniper)
+32500402 AA18: LIGHT CAVALRY (Sniper)
+32500499 AA18: LIGHT CAVALRY (Sniper)
+32500600 AA18: LIGHT CAVALRY (Heavily Armed)
+32500601 AA18: LIGHT CAVALRY (Heavily Armed)
+32500699 AA18: LIGHT CAVALRY (Heavily Armed)
+32500700 AA18A: LIGHT CAVALRY HM
+32500701 AA18A: LIGHT CAVALRY HM
+32500799 AA18A: LIGHT CAVALRY HM
+32500900 AA18: LIGHT CAVALRY (All Weapons)
+32500901 AA18: LIGHT CAVALRY (All Weapons)
+32500902 AA18: LIGHT CAVALRY (All Weapons)
+32500903 AA18: LIGHT CAVALRY (All Weapons)
+32500910 AA18: LIGHT CAVALRY (All Weapons)
+32500950 AA18: LIGHT CAVALRY (Shield)
+32500951 AA18: LIGHT CAVALRY (Shield)
+32500953 AA18: LIGHT CAVALRY (Shield)
+32500998 AA18: LIGHT CAVALRY
+32500999 AA18: LIGHT CAVALRY
+32501000 AA18: LIGHT CAVALRY (Shield)
+32501002 AA18: LIGHT CAVALRY (Shield)
+32501003 AA18: LIGHT CAVALRY (Shield)
+32501004 AA18: LIGHT CAVALRY (Shield)
+32501010 AA18: LIGHT CAVALRY (Shield)
+32501100 AA18: LIGHT CAVALRY (Shotgun)
+32501101 AA18: LIGHT CAVALRY (Shotgun)
+32501102 AA18: LIGHT CAVALRY (Shotgun)
+32501103 AA18: LIGHT CAVALRY (Shotgun) - Eliminate the Enforcement Squads
+32501104 AA18: LIGHT CAVALRY (Shotgun) - Eliminate the Enforcement Squads
+32501105 AA18: LIGHT CAVALRY (Shield) / PCA Chief Sergeant 1st Cls - Prevent Corporate Salvage of New Tech
+32501106 AA18: LIGHT CAVALRY (Shotgun) / PCA Chief Sergeant 2nd Cls - Prevent Corporate Salvage of New Tech
+32501110 AA18: LIGHT CAVALRY (Shotgun)
+32501400 AA18: LIGHT CAVALRY (Sniper)
+32501401 AA18: LIGHT CAVALRY (Sniper)
+32501402 AA18: LIGHT CAVALRY (Sniper)
+32501403 AA18: LIGHT CAVALRY (Sniper)
+32501404 AA18: LIGHT CAVALRY (Sniper) - Survey the Uninhabited Floating City
+32501405 AA18: LIGHT CAVALRY (Sniper)
+32501406 AA18: LIGHT CAVALRY (Sniper)
+32501407 AA18: LIGHT CAVALRY (Sniper)
+32501408 AA18: LIGHT CAVALRY (Sniper)
+32501409 AA18: LIGHT CAVALRY (Sniper)
+32501410 AA18: LIGHT CAVALRY (Sniper)
+32501412 AA18: LIGHT CAVALRY (Sniper)
+32501413 AA18: LIGHT CAVALRY (Sniper)
+32501414 AA18: LIGHT CAVALRY (Sniper)
+32501415 AA18: LIGHT CAVALRY (Sniper)
+32501416 AA18: LIGHT CAVALRY (Sniper)
+32501417 AA18: LIGHT CAVALRY (Sniper)
+32501418 AA18: LIGHT CAVALRY (Sniper)
+32501600 AA18: LIGHT CAVALRY (Heavily Armed) - Intercept the Corporate Forces
+32501601 AA18: LIGHT CAVALRY (Heavily Armed) - Intercept the Corporate Forces
+32501602 AA18: LIGHT CAVALRY (Heavily Armed)
+32501603 AA18: LIGHT CAVALRY (Heavily Armed) - MIA
+32501700 AA18A: LIGHT CAVALRY HM
+32501701 AA18A: LIGHT CAVALRY HM / PCA 1st Lieutenant - Attack the Old Spaceport
+32501702 AA18A: LIGHT CAVALRY HM - Intercept the Corporate Forces (Combat Log)
+32501703 AA18A: LIGHT CAVALRY HM / V.III Pater - MIA
+32600000 AA22: HEAVY CAVALRY (Laser Gun)
+32600090 AA22: HEAVY CAVALRY (Laser Gun)
+32600091 AA22: HEAVY CAVALRY (Laser Gun)
+32600099 AA22: HEAVY CAVALRY (Laser Gun)
+32600100 AA22: HEAVY CAVALRY (Laser Blade)
+32600190 AA22: HEAVY CAVALRY (Laser Blade)
+32600199 AA22: HEAVY CAVALRY (Laser Blade)
+32600300 AA22: HEAVY CAVALRY (Plasma Gun)
+32600390 AA22: HEAVY CAVALRY (Plasma Gun)
+32600399 AA22: HEAVY CAVALRY (Plasma Gun)
+32600900 AA22: HEAVY CAVALRY (All Weapons)
+32600901 AA22: HEAVY CAVALRY (Laser Gun)
+32600902 AA22: HEAVY CAVALRY (Laser Gun)
+32600903 AA22: HEAVY CAVALRY (Laser Gun)
+32600950 AA22: HEAVY CAVALRY (Laser Gun)
+32600951 AA22: HEAVY CAVALRY (Laser Gun)
+32600953 AA22: HEAVY CAVALRY (Laser Gun)
+32601000 AA22: HEAVY CAVALRY (Laser Gun) / PCA Warrant Officer - Eliminate the Enforcement Squads
+32601001 AA22: HEAVY CAVALRY (Laser Gun)
+32601100 AA22: HEAVY CAVALRY (Laser Blade) / PCA Captain - Attack the Old Spaceport
+32601101 AA22: HEAVY CAVALRY (Laser Gun)
+32601102 AA22: HEAVY CAVALRY (Laser Blade) / PCA 2nd Lieutenant - Prevent Corporate Salvage of New Tech
+32601300 AA22: HEAVY CAVALRY (Plasma Gun) / Arquebus Main Squad Member - Intercept the Corporate Forces
+33000000 Ghost MT (Whip) - Grid 135 Cleanup/Investigate BAWS Arsenal No. 2/Survey the Uninhabited Floating City
+33000100 Ghost MT (Pulse Armor) - Stop the Secret Data Breach
+33000200 Ghost MT (Sniper) - Stop the Secret Data Breach/Regain Control of the Xylem
+33000900 Ghost MT (All Weapons)
+33000901 Ghost MT (All Weapons)
+33000902 Ghost MT (All Weapons)
+33000903 Ghost MT (All Weapons)
+33000950 Ghost MT (All Weapons)
+33000951 Ghost MT (All Weapons)
+33000953 Ghost MT (Whip)
+33001100 Ghost MT (Pulse Armor) - Investigate BAWS Arsenal No. 2
+33001200 Ghost MT (Sniper) - Investigate BAWS Arsenal No. 2
+33001201 Ghost MT (Sniper) - Investigate BAWS Arsenal No. 2 (Wall)
+33001202 Ghost MT (Sniper)
+33100000 Ghost MT?
+34000000 BAWS Tetrapod MT (Shield)
+34000001 BAWS Tetrapod MT (Shield)
+34000010 BAWS Tetrapod MT (Shield)
+34000011 BAWS Tetrapod MT (Shield)
+34000020 BAWS Tetrapod MT (Shield)
+34000099 BAWS Tetrapod MT (Shield)
+34000100 BAWS Tetrapod MT (Chainguns)
+34000101 BAWS Tetrapod MT (Chainguns)
+34000110 BAWS Tetrapod MT (Chainguns)
+34000111 BAWS Tetrapod MT (Chainguns)
+34000199 BAWS Tetrapod MT (Chainguns)
+34000200 BAWS Tetrapod MT (Laser Blade)
+34000201 BAWS Tetrapod MT (Laser Blade)
+34000210 BAWS Tetrapod MT (Laser Blade)
+34000211 BAWS Tetrapod MT (Laser Blade)
+34000290 BAWS Tetrapod MT (Laser Blade)
+34000299 BAWS Tetrapod MT (Laser Blade)
+34000300 BAWS Tetrapod MT (Bomb Launcher)
+34000301 BAWS Tetrapod MT (Bomb Launcher)
+34000310 BAWS Tetrapod MT (Bomb Launcher)
+34000311 BAWS Tetrapod MT (Bomb Launcher)
+34000399 BAWS Tetrapod MT (Bomb Launcher)
+34000900 BAWS Tetrapod MT (All Weapons)
+34000901 BAWS Tetrapod MT (All Weapons)
+34000902 BAWS Tetrapod MT (All Weapons)
+34000903 BAWS Tetrapod MT (All Weapons)
+34000910 BAWS Tetrapod MT (All Weapons)
+34000950 BAWS Tetrapod MT (All Weapons)
+34000951 BAWS Tetrapod MT (All Weapons)
+34000953 BAWS Tetrapod MT (Shield)
+34000991 BAWS Tetrapod MT (Shield)
+34000992 BAWS Tetrapod MT (Shield)
+34000993 BAWS Tetrapod MT (Shield)
+34000994 BAWS Tetrapod MT (Shield)
+34000995 BAWS Tetrapod MT (Shield)
+34000996 BAWS Tetrapod MT (Shield)
+34001001 BAWS Tetrapod MT (Shield)
+34001002 BAWS Tetrapod MT (Shield)
+34001003 BAWS Tetrapod MT (Shield)
+34001004 BAWS Tetrapod MT (Shield)
+34001005 BAWS Tetrapod MT (Shield)
+34001006 BAWS Tetrapod MT (Shield)
+34001100 BAWS Tetrapod MT (Chainguns)
+34001101 BAWS Tetrapod MT (Chainguns)
+34001102 BAWS Tetrapod MT (Chainguns)
+34001103 BAWS Tetrapod MT (Chainguns)
+34001104 BAWS Tetrapod MT (Chainguns)
+34001105 BAWS Tetrapod MT (Chainguns)
+34001200 BAWS Tetrapod MT (Laser Blade)
+34001201 BAWS Tetrapod MT (Laser Blade)
+34001202 BAWS Tetrapod MT (Laser Blade)
+34001203 BAWS Tetrapod MT (Laser Blade)
+34001211 BAWS Tetrapod MT (Laser Blade)
+34001212 BAWS Tetrapod MT (Laser Blade)
+34001213 BAWS Tetrapod MT (Laser Blade)
+34001300 BAWS Tetrapod MT (Bomb Launcher)
+34001301 BAWS Tetrapod MT (Bomb Launcher)
+34001302 BAWS Tetrapod MT (Bomb Launcher)
+34001800 BAWS Tetrapod MT (Machine Gun Only)
+34001801 BAWS Tetrapod MT (Machine Gun Only) - AC Test
+34004000 BAWS Tetrapod MT (Laser Blade)
+34004100 BAWS Tetrapod MT (Shield)
+35000000 Institute MT (Bazooka)
+35000001 Institute MT (Bazooka)
+35000100 Institute MT (Long Bazooka)
+35000200 Institute MT (Cluster Missiles)
+35000201 Institute MT (Cluster Missiles)
+35000900 Institute MT (All Weapons)
+35000901 Institute MT (All Weapons)
+35000902 Institute MT (All Weapons)
+35000903 Institute MT (All Weapons)
+35000950 Institute MT (All Weapons)
+35000951 Institute MT (All Weapons)
+35000953 Institute MT (Bazooka)
+35001000 Institute MT (Bazooka)
+35001010 Institute MT (Bazooka)
+35001011 Institute MT (Bazooka) - Escort the Weaponized Mining Ship (Second Set - Right)
+35001012 Institute MT (Bazooka) - Escort the Weaponized Mining Ship (Second Set - Left)
+35001013 Institute MT (Bazooka)
+35001014 Institute MT (Bazooka) - Escort the Weaponized Mining Ship (First Set - Left)
+35001015 Institute MT (Bazooka) - Escort the Weaponized Mining Ship (First Set - Right)
+35001110 Institute MT (Long Bazooka) - Reach the Coral Convergence
+35001200 Institute MT (Cluster Missiles)
+35001210 Institute MT (Cluster Missiles) - Reach the Coral Convergence
+36000000 RaD Spider MT (Buzzsaw)
+36000010 RaD Spider MT (Buzzsaw)
+36000100 RaD Spider MT (SMG)
+36000190 RaD Spider MT (SMG)
+36000200 RaD Spider MT (Dual Guns)
+36000290 RaD Spider MT (Dual Guns)
+36000291 RaD Spider MT (Dual Guns)
+36000292 RaD Spider MT (Dual Guns)
+36000293 RaD Spider MT (Dual Guns)
+36000300 RaD Spider MT (Shield)
+36000390 RaD Spider MT (Shield)
+36000391 RaD Spider MT (Shield)
+36000900 RaD Spider MT (All Weapons)
+36000901 RaD Spider MT (All Weapons)
+36000902 RaD Spider MT (All Weapons)
+36000903 RaD Spider MT (All Weapons)
+36000904 RaD Spider MT (Dual Guns)
+36000950 RaD Spider MT (All Weapons)
+36000951 RaD Spider MT (All Weapons)
+36000953 RaD Spider MT (Shield)
+36001001 RaD Spider MT (Buzzsaw)
+36001002 RaD Spider MT (Buzzsaw)
+36001003 RaD Spider MT (Buzzsaw)
+36001004 RaD Spider MT (Buzzsaw)
+36001005 RaD Spider MT (Buzzsaw)
+36001006 RaD Spider MT (Buzzsaw)
+36001009 RaD Spider MT (Buzzsaw)
+36001010 RaD Spider MT (Buzzsaw)
+36001011 RaD Spider MT (Buzzsaw)
+36001019 RaD Spider MT (Buzzsaw)
+36001100 RaD Spider MT (SMG)
+36001101 RaD Spider MT (SMG)
+36001102 RaD Spider MT (SMG)
+36001103 RaD Spider MT (SMG)
+36001109 RaD Spider MT (SMG)
+36001199 RaD Spider MT (SMG)
+36001200 RaD Spider MT (Dual Guns)
+36001202 RaD Spider MT (Dual Guns)
+36001203 RaD Spider MT (Dual Guns)
+36001204 RaD Spider MT (Dual Guns)
+36001205 RaD Spider MT (Dual Guns)
+36001206 RaD Spider MT (Dual Guns)
+36001207 RaD Spider MT (Dual Guns)
+36001208 RaD Spider MT (Dual Guns)
+36001290 RaD Spider MT (Dual Guns)
+36001291 RaD Spider MT (Dual Guns)
+36001292 RaD Spider MT (Dual Guns)
+36001293 RaD Spider MT (Dual Guns)
+36001294 RaD Spider MT (Dual Guns)
+36001295 RaD Spider MT (Dual Guns)
+36001296 RaD Spider MT (Dual Guns)
+36001300 RaD Spider MT (Shield)
+36001301 RaD Spider MT (Shield)
+36001302 RaD Spider MT (SMG)
+36001303 RaD Spider MT (Dual Guns)
+36001304 RaD Spider MT (Dual Guns)
+36001305 RaD Spider MT (Shield) - Eliminate the Doser Faction
+36001306 RaD Spider MT (Shield- No Missile)
+37000000 PCA Drone MT (Laser Rifle)
+37000001 PCA Drone MT (Laser Rifle)
+37000099 PCA Drone MT (Laser Rifle)
+37000100 PCA Drone MT (Pulse Blade)
+37000101 PCA Drone MT (Pulse Blade)
+37000199 PCA Drone MT (Pulse Blade)
+37000200 PCA Drone MT (Sniper)
+37000201 PCA Drone MT (Sniper)
+37000210 PCA Drone MT (Sniper)
+37000299 PCA Drone MT (Sniper)
+37000300 PCA Drone MT (Heavy) - Underground Exploration - Depth 3 (Outside)
+37000390 PCA Drone MT (Heavy)
+37000399 PCA Drone MT (Heavy)
+37000900 PCA Drone MT (All Weapons)
+37000901 PCA Drone MT (All Weapons)
+37000902 PCA Drone MT (All Weapons)
+37000903 PCA Drone MT (All Weapons)
+37000913 PCA Drone MT (Pulse Blade)
+37000915 PCA Drone MT (Laser Rifle)
+37000950 PCA Drone MT (All Weapons)
+37000951 PCA Drone MT (All Weapons)
+37000953 PCA Drone MT (Pulse Blade)
+37001000 PCA Drone MT (Laser Rifle)
+37001001 PCA Drone MT (Laser Rifle)
+37001002 PCA Drone MT (Laser Rifle)
+37001003 PCA Drone MT (Laser Rifle)
+37001004 PCA Drone MT (Laser Rifle)
+37001005 PCA Drone MT (Laser Rifle)
+37001006 PCA Drone MT (Laser Rifle)
+37001010 PCA Drone MT (Laser Rifle)
+37001011 PCA Drone MT (Laser Rifle)
+37001020 PCA Drone MT (Laser Rifle)
+37001100 PCA Drone MT (Pulse Blade)
+37001101 PCA Drone MT (Pulse Blade)
+37001102 PCA Drone MT (Pulse Blade)
+37001103 PCA Drone MT (Pulse Blade)
+37001104 PCA Drone MT (Pulse Blade)
+37001120 PCA Drone MT (Pulse Blade)
+37001121 PCA Drone MT (Pulse Blade)
+37001130 PCA Drone MT (Pulse Blade)
+37001140 PCA Drone MT (Pulse Blade)
+37001200 PCA Drone MT (Sniper)
+37001201 PCA Drone MT (Sniper)
+37001202 PCA Drone MT (Sniper)
+37001203 PCA Drone MT (Sniper)
+37001210 PCA Drone MT (Sniper)
+37001211 PCA Drone MT (Sniper)
+37001212 PCA Drone MT (Sniper)
+37001213 PCA Drone MT (Sniper)
+37001220 PCA Drone MT (Sniper)
+37001230 PCA Drone MT (Sniper)
+37001240 PCA Drone MT (Sniper)
+37001300 PCA Drone MT (Heavy) - Reach the Coral Convergence (Near CEL 240)
+37001310 PCA Drone MT (Heavy) - Underground Exploration - Depth 3 (Combat Log)
+37001330 PCA Drone MT (Heavy) - Underground Exploration - Depth 3 (Inside)
+40000100 AAS02: CATAPHRACT
+40000101 AAS02: CATAPHRACT
+40000102 AAS02: CATAPHRACT
+40000900 AAS02: CATAPHRACT
+40000901 AAS02: CATAPHRACT
+40000902 AAS02: CATAPHRACT
+40000903 AAS02: CATAPHRACT
+40000950 AAS02: CATAPHRACT
+40000951 AAS02: CATAPHRACT
+40001100 AAS02: CATAPHRACT / PCA SP Captain - Destroy the Special Forces Craft
+40001101 AAS02: CATAPHRACT / PCA SP 1st Lieutenant - Obstruct the Mandatory Inspection
+41000000 AAP07: BALTEUS
+41000100 AAP07: BALTEUS (PCA) - Attack the Watchpoint
+41000200 AAP07A: ARQUEBUS BALTEUS / V.II Snail - Destroy the Drive Block
+41000901 AAP07: BALTEUS
+41000902 AAP07: BALTEUS
+41000903 AAP07: BALTEUS
+41000950 AAP07: BALTEUS
+41000951 AAP07: BALTEUS
+41000953 AAP07: BALTEUS (PCA)
+41000960 AAP07A: ARQUEBUS BALTEUS
+41500000 TOYBOX MT
+41500010 TOYBOX MT
+41500100 TOYBOX MT (Pulse Protection)
+41500101 TOYBOX MT (Pulse Protection)
+41500200 TOYBOX MT (Missile)
+41500500 TOYBOX MT
+41500501 TOYBOX MT (Pulse Protection)
+41500502 TOYBOX MT (Missile)
+41500900 TOYBOX MT (All Weapons)
+41500901 TOYBOX MT (All Weapons)
+41500902 TOYBOX MT (All Weapons)
+41500903 TOYBOX MT (All Weapons)
+41500950 TOYBOX MT (All Weapons)
+41500951 TOYBOX MT (All Weapons)
+41500953 TOYBOX MT
+41501000 TOYBOX MT
+41501001 TOYBOX MT
+41501002 TOYBOX MT
+41501003 TOYBOX MT
+41501004 TOYBOX MT
+41501005 TOYBOX MT
+41501010 TOYBOX MT
+41501011 TOYBOX MT
+41501110 TOYBOX MT (Pulse Protection)
+41501200 TOYBOX MT (Missile)
+42000000 IB-07: SOL 644 / Ayre - Shut Down the Closure Satellites
+42000050 IB-07: SOL 644 / Ayre
+42000901 IB-07: SOL 644 / Ayre
+42000902 IB-07: SOL 644 / Ayre
+42000903 IB-07: SOL 644 / Ayre
+42000950 IB-07: SOL 644 / Ayre
+42000951 IB-07: SOL 644 / Ayre
+42000953 IB-07: SOL 644 / Ayre
+42010000 ALLMIND (IB-07: SOL 644) - Coral Release
+42010050 ALLMIND (IB-07: SOL 644)
+42100000 IB-07: SOL 644 / Ayre (Clone)
+42500000 IB-01: CEL 240 (Ibis)
+42500800 IB-01: CEL 240 (Ibis)
+42500901 IB-01: CEL 240 (Ibis)
+42500902 IB-01: CEL 240 (Ibis)
+42500903 IB-01: CEL 240 (Ibis)
+42500950 IB-01: CEL 240 (Ibis)
+42500951 IB-01: CEL 240 (Ibis)
+42500953 IB-01: CEL 240 (Ibis)
+42600000 IB-01: CEL 240 (Ibis) Drones
+50000000 Helicopter Drone (Gatling Gun)
+50000200 Helicopter Drone (Bomb)
+50000900 Helicopter Drone (All Weapons)
+50000901 Helicopter Drone (All Weapons)
+50000902 Helicopter Drone (All Weapons)
+50000903 Helicopter Drone (All Weapons)
+50001000 Helicopter Drone (Gatling Gun)
+50001001 Helicopter Drone (Gatling Gun)
+50001002 Helicopter Drone (Gatling Gun)
+50001003 Helicopter Drone (Gatling Gun)
+50001200 Helicopter Drone (Bomb)
+50001800 Helicopter Drone (Gatling Gun) - AC Test
+50100000 Repair Drone (Repair Tool)
+50100001 Repair Drone (Repair Tool)
+50100200 Repair Drone (Laser Gun)
+50100201 Repair Drone (Laser Gun)
+50100202 Repair Drone (Laser Gun)
+50100300 Repair Drone (Shock Emitter)
+50100301 Repair Drone (Shock Emitter)
+50100302 Repair Drone (Shock Emitter)
+50100303 Repair Drone (Shock Emitter)
+50100900 Repair Drone (All Weapons)
+50100901 Repair Drone (All Weapons)
+50100902 Repair Drone (All Weapons)
+50100903 Repair Drone (All Weapons)
+50101000 Repair Drone (Repair Tool)
+50101200 Repair Drone (Laser Gun)
+50101210 Repair Drone (Laser Gun)
+50200000 EC-0804 SMART CLEANER
+50201000 EC-0804 SMART CLEANER - Grid 086
+50201001 EC-0804 SMART CLEANER
+50201002 EC-0804 SMART CLEANER - Destroy the Drive Block
+51000000 Transport Helicopter
+51000001 Transport Helicopter
+51000002 Transport Helicopter
+51000099 Transport Helicopter
+51000100 Transport Helicopter
+51000101 Transport Helicopter
+51000110 Transport Helicopter
+51000900 Transport Helicopter
+51000901 Transport Helicopter
+51000902 Transport Helicopter
+51000903 Transport Helicopter
+51000990 Transport Helicopter
+51001000 Transport Helicopter / RLF HELICOPTER - Prisoner Rescue
+51001001 Transport Helicopter
+51001002 Transport Helicopter
+51001003 Transport Helicopter
+51001004 Transport Helicopter
+51001021 Transport Helicopter
+51001031 Transport Helicopter
+51001040 Transport Helicopter
+51001041 Transport Helicopter
+51001101 Transport Helicopter
+51001102 Transport Helicopter
+51001110 Transport Helicopter
+51001111 Transport Helicopter
+51001112 Transport Helicopter
+51010000 Transport Helicopter Gatling Gun
+51011000 Transport Helicopter Gatling Gun
+51011001 Transport Helicopter Gatling Gun
+51200000 Quadcopter Drone (No Weapons)
+51200001 Quadcopter Drone (No Weapons)
+51200002 Quadcopter Drone (No Weapons)
+51200090 Quadcopter Drone (No Weapons)
+51200091 Quadcopter Drone (No Weapons)
+51200092 Quadcopter Drone (No Weapons)
+51200100 Quadcopter Drone (Laser Gun)
+51200180 Quadcopter Drone (Laser Gun)
+51200190 Quadcopter Drone (Laser Gun)
+51200191 Quadcopter Drone (Laser Gun)
+51200200 Quadcopter Drone (Pulse)
+51200280 Quadcopter Drone (Pulse)
+51200281 Quadcopter Drone (Pulse)
+51200290 Quadcopter Drone (Pulse)
+51200291 Quadcopter Drone (Pulse)
+51200292 Quadcopter Drone (Pulse)
+51200300 Quadcopter Drone (Cluster Missiles)
+51200380 Quadcopter Drone (Cluster Missiles)
+51200390 Quadcopter Drone (Cluster Missiles)
+51200391 Quadcopter Drone (Cluster Missiles)
+51200900 Quadcopter Drone (All Weapons)
+51201000 Quadcopter Drone (No Weapons)
+51201100 Quadcopter Drone (Laser Gun)
+51201101 Quadcopter Drone (Laser Gun)
+51201102 Quadcopter Drone (Laser Gun)
+51201103 Quadcopter Drone (No Weapons)
+51201180 Quadcopter Drone (Laser Gun)
+51201200 Quadcopter Drone (Pulse)
+51201280 Quadcopter Drone (Pulse)
+51201300 Quadcopter Drone (Cluster Missiles)
+51201301 Quadcopter Drone (Cluster Missiles)
+51201302 Quadcopter Drone (Cluster Missiles)
+51201303 Quadcopter Drone (Cluster Missiles)
+51500000 Helicopter (Kinetic Gun)
+51500001 Helicopter (Kinetic Gun)
+51500200 Helicopter (Laser Gun)
+51500201 Helicopter (Laser Gun)
+51500900 Helicopter (All Weapons)
+51500901 Helicopter (All Weapons)
+51500902 Helicopter (All Weapons)
+51500903 Helicopter (All Weapons)
+52000000 Artillery Vehicle (Gun + Missiles)
+52000010 Artillery Vehicle (Gun + Missiles)
+52000020 Artillery Vehicle (Gun + Missiles)
+52000030 Artillery Vehicle (Gun + Missiles)
+52000900 Artillery Vehicle (All Weapons)
+52001309 Artillery Vehicle (Machine Gun)
+52500000 HELIANTHUS Wheel (Bonewheel)
+52501000 HELIANTHUS Wheel (Bonewheel)
+53000000 Suicide Squid Drone
+53000001 Suicide Squid Drone
+53000002 Suicide Squid Drone
+53000100 Suicide Squid Drone
+53000200 Suicide Squid Drone
+53000250 Suicide Squid Drone
+53000300 Suicide Squid Drone
+53000350 Suicide Squid Drone
+53000400 Suicide Squid Drone
+53000450 Suicide Squid Drone
+53000500 Suicide Squid Drone
+53000550 Suicide Squid Drone
+53000600 Suicide Squid Drone
+53000901 Suicide Squid Drone
+53000902 Suicide Squid Drone
+53000903 Suicide Squid Drone
+53001000 Suicide Squid Drone
+53001001 Suicide Squid Drone
+53001002 Suicide Squid Drone
+53001003 Ice Worm Drone - Destroy the Ice Worm
+53001004 Suicide Squid Drone
+53001005 Suicide Squid Drone
+53001006 Suicide Squid Drone
+53001007 Suicide Squid Drone
+53001008 Suicide Squid Drone
+53001009 Suicide Squid Drone
+53001600 Suicide Squid Drone
+55000000 Coral Mealworm
+55001000 Coral Mealworm
+55001900 Coral Mealworm
+60500000 AH12: HC HELICOPTER
+60500010 AH12: HC HELICOPTER - Illegal Entry (Boss)
+60500011 AH12: HC HELICOPTER
+60500100 AH12: HC HELICOPTER
+60500101 AH12: HC HELICOPTER
+60500900 AH12: HC HELICOPTER (All Weapons)
+60501010 AH12: HC HELICOPTER - Illegal Entry (Early Appearance)
+60501100 AH12: HC HELICOPTER - Survey the Uninhabited Floating City
+60501101 AH12: HC HELICOPTER - Survey the Uninhabited Floating City (Alt)
+61000000 IA-13: SEA SPIDER - Ocean Crossing
+61000098 IA-13: SEA SPIDER (ALLMIND) - Coral Release (Right)
+61000099 IA-13: SEA SPIDER (ALLMIND) - Coral Release (Left)
+61000100 IA-13: SEA SPIDER
+61000990 IA-13: SEA SPIDER
+61000991 IA-13: SEA SPIDER
+61000992 IA-13: SEA SPIDER
+61000993 IA-13: SEA SPIDER
+61010000 IA-13: SEA SPIDER (Turret)
+61010099 IA-13: SEA SPIDER (Turret)
+62500000 IA-02: ICE WORM
+62500010 IA-02: ICE WORM
+62501000 IA-02: ICE WORM - Destroy the Ice Worm
+62501001 IA-02: ICE WORM - Attack the Old Spaceport
+63510000 Unknown
+63520000 Unknown
+64000000 EB-0309 STRIDER
+64001000 EB-0309 STRIDER
+64200000 EB-0309 STRIDER (Eye)
+72221000 RaD MAIN MISSILE - Heavy Missile Launch Support
+72221001 RaD SUB-MISSILE (RIGHT) - Heavy Missile Launch Support
+72221002 RaD SUB-MISSILE (LEFT) - Heavy Missile Launch Support
+72300000 Artillery - Shielded Cannon
+72300100 Artillery - Shielded Cannon
+72301000 Artillery - Shielded Cannon
+72301100 Artillery - Shielded Cannon
+72302000 Artillery - Shielded Cannon
+72302100 Artillery - Shielded Cannon
+72303000 Artillery - Shielded Cannon
+72303100 Artillery - Shielded Cannon
+72305000 Artillery - Shielded Cannon
+72400000 Artillery - Cannon
+72401000 Artillery - Cannon
+72402000 Artillery - Cannon
+72403000 Artillery - Cannon
+72500000 Artillery - Four Gatling Guns
+72500100 Artillery - Four Gatling Guns
+72501000 Artillery - Four Gatling Guns
+72501100 Artillery - Four Gatling Guns
+72502000 Artillery - Four Gatling Guns
+72502006 Artillery - Four Gatling Guns
+72502007 Artillery - Four Gatling Guns
+72502100 Artillery - Four Gatling Guns
+72503000 Artillery - Four Gatling Guns
+72503100 Artillery - Four Gatling Guns
+72600000 Artillery - Angled Missile Array
+72601000 Artillery - Angled Missile Array
+72602000 Artillery - Angled Missile Array
+72603000 Artillery - Angled Missile Array
+72610000 Artillery - Vertical Missile Array
+72611000 Artillery - Vertical Missile Array
+72611010 Artillery - Vertical Missile Array
+72611020 Artillery - Vertical Missile Array
+72611030 Artillery - Vertical Missile Array
+72611040 Artillery - Vertical Missile Array
+72611050 Artillery - Vertical Missile Array
+72611100 Artillery - Vertical Missile Array
+72611110 Artillery - Vertical Missile Array
+72612000 Artillery - Vertical Missile Array
+72613000 Artillery - Vertical Missile Array
+72620000 Artillery - Frontal Missile Array
+72621000 Artillery - Frontal Missile Array
+72700000 Artillery - Autocannon
+72700100 Artillery - Autocannon
+72701000 Artillery - Autocannon
+72701001 Artillery - Autocannon
+72702000 Artillery - Autocannon
+72702100 Artillery - Autocannon
+72703000 Artillery - Autocannon
+72800000 Artillery - Laser Cannon
+72801000 Artillery - Laser Cannon
+72900000 Artillery - Watchpoint Delta
+72901000 Artillery - Watchpoint Delta
+73000000 Artillery - Pulse Gun
+73001000 Artillery - Pulse Gun
+73002000 Artillery - Pulse Gun
+73003000 Artillery - Pulse Gun
+73100000 Artillery - Plasma Gun
+73101000 Artillery - Plasma Gun
+73101001 Artillery - Plasma Gun
+73200000 Artillery - Three-Barrelled Cannon
+73900000 AB08: NEPENTHES
+74000000 AS07: HEAVY WARSHIP
+74000100 AS07: HEAVY WARSHIP
+74000200 AS07: HEAVY WARSHIP
+74000300 AS07: HEAVY WARSHIP
+74000400 AS07: HEAVY WARSHIP
+74000410 AS07: HEAVY WARSHIP
+74000500 AS07: HEAVY WARSHIP
+74000700 AS07: HEAVY WARSHIP
+74000900 AS07: HEAVY WARSHIP
+74000901 AS07: HEAVY WARSHIP
+74000902 AS07: HEAVY WARSHIP
+74000903 AS07: HEAVY WARSHIP
+74000904 AS07: HEAVY WARSHIP
+74000905 AS07: HEAVY WARSHIP
+74000906 AS07: HEAVY WARSHIP
+74000907 AS07: HEAVY WARSHIP
+74000908 AS07: HEAVY WARSHIP
+74000909 AS07: HEAVY WARSHIP
+74001000 AS07: HEAVY WARSHIP
+74001001 AS07: HEAVY WARSHIP
+74001500 AS07: HEAVY WARSHIP
+74001501 AS07: HEAVY WARSHIP
+74001502 AS07: HEAVY WARSHIP
+74001503 AS07: HEAVY WARSHIP
+74001504 AS07: HEAVY WARSHIP
+74001700 AS07: HEAVY WARSHIP
+74001701 AS07: HEAVY WARSHIP
+74010000 Warship Mount - Cannon
+74010001 Warship Mount - Cannon
+74011000 Warship Mount - Cannon
+74011001 Warship Mount - Cannon
+74011002 Warship Mount - Cannon
+74011003 Warship Mount - Cannon
+74011100 Warship Mount - Cannon
+74012000 Warship Mount - Cannon
+74012001 Warship Mount - Cannon
+74020000 Warship Mount - Turret
+74021000 Warship Mount - Turret
+74021001 Warship Mount - Turret
+74021002 Warship Mount - Turret
+74021003 Warship Mount - Turret
+74021004 Warship Mount - Turret
+74021005 Warship Mount - Turret
+74021100 Warship Mount - Turret
+74022000 Warship Mount - Turret
+74030000 Warship Mount - Laser
+74031000 Warship Mount - Laser
+74031001 Warship Mount - Laser
+74031100 Warship Mount - Laser
+74100000 Warship Drone
+74100100 Warship Drone
+74100120 Warship Drone
+74100130 Warship Drone
+74100200 Warship Drone
+74100901 Warship Drone
+74100902 Warship Drone
+74100903 Warship Drone
+74100990 Warship Drone
+74101001 Warship Drone
+74101002 Warship Drone
+81350000 AAP03: ENFORCER / Enforcement System
+81350901 AAP03: ENFORCER / Enforcement System
+81350902 AAP03: ENFORCER / Enforcement System
+81350903 AAP03: ENFORCER / Enforcement System
+81350950 AAP03: ENFORCER / Enforcement System
+81350951 AAP03: ENFORCER / Enforcement System
+81350953 AAP03: ENFORCER / Enforcement System
+81450000 AAP03: ENFORCER / Enforcement System (Defense Mode) - Underground Exploration - Depth 2
+85350000 Strider Eye
+85350100 Strider Eye
+85360000 Strider Foot
+94000000 Emplacement - Cannon (Placeholder)
+94000010 Emplacement - Cannon (Placeholder)
+94010000 Emplacement - Cannon (Placeholder)
+94100000 Emplacement - Railgun (Placeholder)
+94110000 Emplacement - Railgun (Placeholder)
+94200000 Emplacement - Missle Array (Placeholder)
+94310000 Emplacement - Autocannon (Placeholder)
+99801007 XYLEM CONTROL TOWER / XYLEM SHIELD

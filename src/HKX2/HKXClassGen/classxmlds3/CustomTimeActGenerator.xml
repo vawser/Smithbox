@@ -1,0 +1,23 @@
+<class name='CustomTimeActGenerator' version='1' signature='0x73bc458f' size='176' parent='hkbGenerator'>
+  <enums>
+    <enum name='OffsetType' flags='00000000'>
+      <enumitem name='WeaponCategory' value='10'/>
+      <enumitem name='IdleCategory' value='11'/>
+      <enumitem name='Variable' value='200'/>
+      <enumitem name='Float2Step' value='201'/>
+      <enumitem name='Float3Step' value='202'/>
+      <enumitem name='OffsetNone' value='0'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='generator' offset='136' ctype='hkbGenerator' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='offsetType' offset='144' etype='OffsetType' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='taeId' offset='148' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='valIndex' offset='152' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='valRate' offset='156' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='preLocalTime' offset='160' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='localTime' offset='164' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='animeDuration' offset='168' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='argTaeId' offset='172' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

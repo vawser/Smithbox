@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <action00 Wiki="Unlocks Diving" IsBool="" />
+    <action01 Wiki="Unlocks Night Eyes" IsBool="" />
+    <action02 Wiki="Unlocks Resurrection" IsBool="" />
+    <action03 Wiki="Unlocks Mortal Blade" IsBool="" />
+    <action04 Wiki="Unlocks Prosthetic Arm" IsBool="" />
+    <action05 Wiki="Unlocks Kusabimaru" IsBool="" />
+    <action06 Wiki="Unlocks Spirit Emblems" IsBool="" />
+    <action07 Wiki="Unused" IsBool="" />
+    <action08 Wiki="Unused" IsBool="" />
+    <action09 Wiki="Unused" IsBool="" />
+    <action10 Wiki="Unused" IsBool="" />
+    <action11 Wiki="Unlocks Mikiri Counter" IsBool="" />
+    <action12 Wiki="Unused" IsBool="" />
+    <action13 Wiki="Unlocks Vault Over" IsBool="" />
+    <action14 Wiki="Unlocks Grappling Hook Attack" IsBool="" />
+    <action15 Wiki="Unlocks Mid-Air Deflect" IsBool="" />
+    <action16 Wiki="Unlocks Mid-Air Prosthetic Tool" IsBool="" />
+    <action17 Wiki="Unused" IsBool="" />
+    <action18 Wiki="Anti-Air Deathblow" IsBool="" />
+    <action19 Wiki="Reservoir Thrust unused unlock" IsBool="" />
+    <action20 Wiki="Unlocks Chasing Slice" IsBool="" />
+    <action21 Wiki="Unlocks Projected Force" IsBool="" />
+    <action22 Wiki="Unlocks Fang and Blade" IsBool="" />
+    <action23 Wiki="Unlocks Living Force" IsBool="" />
+    <action24 Wiki="Unused" IsBool="" />
+    <action25 Wiki="Unlocks Mid-Air Combat Arts" IsBool="" />
+    <action26 Wiki="Unlocks Run and Slide" IsBool="" />
+    <action27 Wiki="Unused" IsBool="" />
+    <action28 Wiki="Unused" IsBool="" />
+    <action29 Wiki="Unused" IsBool="" />
+  </Field>
+  <Self Wiki="Used to unlock various abilities as you progress" />
+</PARAMMETA>

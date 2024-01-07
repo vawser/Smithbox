@@ -1,0 +1,7 @@
+<class name='hkbpCheckRagdollSpeedModifier' version='1' signature='0x91d9056' size='112' parent='hkbModifier'>
+  <members>
+    <member name='eventToSend' offset='88' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minSpeedThreshold' offset='104' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxSpeedThreshold' offset='108' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

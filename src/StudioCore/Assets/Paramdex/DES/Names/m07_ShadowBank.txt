@@ -1,0 +1,3 @@
+0 B0
+1 B1
+20 Temporary ID for rough map (m07_00)

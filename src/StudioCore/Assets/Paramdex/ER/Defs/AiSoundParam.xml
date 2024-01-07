@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>AI_SOUND_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 radius">
+      <DisplayName>音半径[m]</DisplayName>
+      <Description>AI音の半径</Description>
+      <Minimum>0</Minimum>
+      <Maximum>65536</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 lifeFrame">
+      <DisplayName>消滅時間[秒]</DisplayName>
+      <Description>AI音が残る時間</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 bSpEffectEnable">
+      <DisplayName>特殊効果からの影響を受けるか</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>特殊効果の”音半径倍率”の影響を受けるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u8 type">
+      <DisplayName>種別</DisplayName>
+      <Enum>AI_SOUND_RATE_TYPE</Enum>
+      <Description>AI音の種別</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 opposeTarget:1 = 1">
+      <DisplayName>対象：●敵対</DisplayName>
+      <Enum>AI_SOUND_BOOL</Enum>
+      <Description>対象：●敵対</Description>
+      <Maximum>1</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u8 friendlyTarget:1">
+      <DisplayName>対象：○味方</DisplayName>
+      <Enum>AI_SOUND_BOOL</Enum>
+      <Description>対象：○味方</Description>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 selfTarget:1">
+      <DisplayName>対象：自分</DisplayName>
+      <Enum>AI_SOUND_BOOL</Enum>
+      <Description>対象：自分</Description>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u8 disableOnTargetPCompany:1">
+      <DisplayName>PC自軍をターゲット中は聞けない</DisplayName>
+      <Enum>AI_SOUND_BOOL</Enum>
+      <Description>PC自軍をターゲット中は聞けない</Description>
+      <Maximum>1</Maximum>
+      <SortID>745</SortID>
+    </Field>
+    <Field Def="u8 rank">
+      <DisplayName>キャラの振る舞い</DisplayName>
+      <Enum>AI_SOUND_RANK</Enum>
+      <Description>キャラの振る舞い(旧：音タイプ</Description>
+      <Maximum>5</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="f32 forgetTime = -1">
+      <DisplayName>音ターゲット忘れる時間（上書き）[sec]</DisplayName>
+      <Description>音ターゲット忘れる時間（上書き）[sec]</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>350</SortID>
+    </Field>
+    <Field Def="s32 priority = 100">
+      <DisplayName>AI音優先度</DisplayName>
+      <Description>AI音優先度</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>750</SortID>
+    </Field>
+    <Field Def="s32 soundBehaviorId = -1">
+      <DisplayName>振る舞いID</DisplayName>
+      <Description>振る舞いID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="u8 aiSoundLevel">
+      <DisplayName>AI音レベル</DisplayName>
+      <Description>どれくらい聞き取りづらい音なのか</Description>
+      <Maximum>128</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="u8 replaningState">
+      <DisplayName>リプランニングするAI状態</DisplayName>
+      <Enum>AI_SOUND_REPLANNING_STATE_TYPE</Enum>
+      <Description>AI音を聞いた際にリプランニングを走らせるAI状態の設定</Description>
+      <Maximum>2</Maximum>
+      <SortID>740</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[6]">
+      <DisplayName>パッド</DisplayName>
+      <Description>pad</Description>
+      <SortID>901</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

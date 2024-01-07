@@ -1,0 +1,6 @@
+<class name='hclSkinOperatorBoneInfluence' version='1' signature='0x750286a2' size='2'>
+  <members>
+    <member name='boneIndex' offset='0' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weight' offset='1' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

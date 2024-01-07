@@ -1,0 +1,18 @@
+<class name='hkcdStaticMeshTreeBase' version='1' signature='0xf885dcd0' size='112' parent='hkcdStaticTreeTreehkcdStaticTreeDynamicStorage5'>
+  <enums>
+    <enum name='CompressionMode' flags='00000000'>
+      <enumitem name='CM_GLOBAL' value='0'/>
+      <enumitem name='CM_LOCAL_4' value='1'/>
+      <enumitem name='CM_LOCAL_2' value='2'/>
+      <enumitem name='CM_AUTO' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='numPrimitiveKeys' offset='48' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bitsPerKey' offset='52' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxKeyValue' offset='56' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sections' offset='64' ctype='hkcdStaticMeshTreeBaseSection' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='primitives' offset='80' ctype='hkcdStaticMeshTreeBasePrimitive' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sharedVerticesIndex' offset='96' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

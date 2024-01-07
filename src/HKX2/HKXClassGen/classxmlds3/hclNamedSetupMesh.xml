@@ -1,0 +1,7 @@
+<class name='hclNamedSetupMesh' version='1' signature='0x124de283' size='40' parent='hclSetupMesh'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='meshName' offset='24' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='setupMesh' offset='32' ctype='hclSetupMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,77 @@
+0 Without
+10 Spark
+20 General smoke
+30 Dust
+40 Soil
+50 Gravel
+60 Ash Smoke
+70 Dust
+80 Wood
+90 A piece of stone
+100 Bone fragments
+110 Crystal Pieces
+120 A piece of grass
+130 Leaves
+140 Deciduous
+150 God grave net Piece
+160 Splashes
+170 Mud Splash
+180 Poison Swamp Splash
+190 Oil
+200 The front of the blood
+201 On the Blood
+202 Under the blood
+203 Blood (Live) _ Left
+204 Blood (The Raw) _ Right
+210 Blood (dead) _ Front
+211 On Blood (Dead) _
+212 Blood (Dead) _ under
+213 Blood (dead) _ Left
+214 Blood (dead) _ Right
+220 Blood (Dragon) _ Front
+221 On Blood (Dragons) _
+222 Under Blood (Dragon)
+223 Blood (Dragon) left
+224 Blood (Dragon) _ Right
+230 Caries _ Front
+231 On caries _
+232 Under Eclipse
+233 Eclipse left
+234 Caries right
+240 Fluid
+250 Drool
+260 Maggots
+270 Wax
+280 Insect fluids
+290 Humanity
+300 Hair fragments
+310 Feathers
+320 Carrion pieces
+330 Ash Daemon
+340 Lava
+350 Spirits
+360 Ghost White
+370 Ghost Black
+380 Flame
+390 Lightning
+400 Seoul
+410 Poison
+420 Caries map
+430 Fire Powder and Flame
+440 Eclipse hits (gas)
+450 Eclipse hits (liquid)
+460 Energy (Strong)
+470 Preliminary
+480 Preliminary
+490 Preliminary
+500 Preliminary
+510 Preliminary
+520 Preliminary
+530 Preliminary
+540 Preliminary
+550 Preliminary
+560 Preliminary
+570 Preliminary
+580 Preliminary
+590 Preliminary
+600 Preliminary

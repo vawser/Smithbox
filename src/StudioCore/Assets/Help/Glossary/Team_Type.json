@@ -1,0 +1,14 @@
+{
+    "Title": "Team Type",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "Defines a characters' alignment (in NPC and multiplayer)",
+        "including who its AI will attack, who it can damage,",
+        "and who it can take damage from.",
+        "",
+        "This varies from game to game.",
+        "Look at existing NPC params to determine the best team type for a new NPC."
+    ]
+}

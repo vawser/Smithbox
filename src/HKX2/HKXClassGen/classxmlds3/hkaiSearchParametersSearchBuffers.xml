@@ -1,0 +1,6 @@
+<class name='hkaiSearchParametersSearchBuffers' version='1' signature='0x4c6163a4' size='16'>
+  <members>
+    <member name='openSetBuffer' offset='0' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='searchStateBuffer' offset='8' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

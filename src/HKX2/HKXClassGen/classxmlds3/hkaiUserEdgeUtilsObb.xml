@@ -1,0 +1,6 @@
+<class name='hkaiUserEdgeUtilsObb' version='1' signature='0x48d1149a' size='80'>
+  <members>
+    <member name='transform' offset='0' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='halfExtents' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

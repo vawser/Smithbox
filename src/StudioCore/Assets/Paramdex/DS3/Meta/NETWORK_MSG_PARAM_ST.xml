@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<MsgType0 AltName="Priority" />
+	<MsgType2 AltName="Force Play" IsBool="" />
+	<MsgId0 AltName="White Phantom" />
+	<MsgId1 AltName="White Phantom (Warrior of Sunlight)" />
+	<MsgId2 AltName="White Phantom (Mound-makers)" />
+	<MsgId3 AltName="White Phantom (Sinner Hero)" />
+	<MsgId4 AltName="Dark Spirit Summon" />
+	<MsgId5 AltName="Dark Spirit Summon (Warrior of Sunlight)" />
+	<MsgId6 AltName="Dark Spirit Summon (Mound-makers)" />
+	<MsgId7 AltName="Dark Spirit Invader" />
+	<MsgId8 AltName="Dark Spirit Invader (Warrior of Sunlight)" />
+	<MsgId9 AltName="Dark Spirit Invader (Mound-makers)" />
+	<MsgId10 AltName="Covenant Invader (Spears of the Church)" />
+	<MsgId11 AltName="Covenant Summon (Blade of the Darkmoon)" />
+	<MsgId12 AltName="Covenant Invader (Boss Defender)" />
+	<MsgId13 AltName="Covenant Invader (Watchdogs of Farron)" />
+	<MsgId14 AltName="Covenant Invader (Aldrich Faithful)" />
+	<MsgId15 AltName="Dark Spirit Summon (Rosaria's Fingers)" />
+	<MsgId16 AltName="Dark Spirit Invader (Rosaria's Fingers)" />
+	<MsgId17 AltName="Covenant Summon (Blue Sentinels)" />
+	<MsgId18 AltName="NPC 1 (Sirris vs Creighton)"/>
+	<MsgId19 AltName="NPC 2 (Sirris vs Hodrick)" />
+	<MsgId20 AltName="NPC 3 (Player vs Leonhard)" />
+	<MsgId21 AltName="NPC 4 (Anri vs Aldrich)" />
+	<MsgId22 AltName="Arena" />
+    <pad1 AltName="" />
+    <pad2 AltName="" />
+    
+  </Field>
+  <Self Wiki="Network Messages"/>
+</PARAMMETA>

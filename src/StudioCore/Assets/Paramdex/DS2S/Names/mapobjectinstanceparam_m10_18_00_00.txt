@@ -1,0 +1,77 @@
+10180800 Brazier
+10180801 Brazier
+10180802 Brazier
+10180803 Brazier
+10180804 Brazier
+10180805 Brazier
+10180806 Brazier
+10180807 Brazier
+10180808 Brazier
+10180809 Brazier
+10180810 Brazier
+10180811 Brazier
+10180812 Brazier
+10180813 Brazier
+10180814 Brazier
+10180815 Brazier
+10180816 Brazier
+10180817 Brazier
+10180818 Brazier
+10180819 Brazier
+10180820 Brazier
+10180821 Brazier
+10180822 Brazier
+10180823 Brazier
+10180824 Brazier
+10180825 Brazier
+10180826 Brazier
+10180827 Brazier
+10180828 Brazier
+10180829 Brazier
+10180830 Brazier
+10180831 Brazier
+10180832 Brazier
+10180833 Brazier
+10180834 Brazier
+10180835 Brazier
+10180836 Brazier
+10180837 Brazier
+10180838 Brazier
+10180839 Brazier
+10180840 Brazier
+10180841 Brazier
+10180842 Brazier
+10180843 Brazier
+10180844 Brazier
+10180845 Brazier
+10180846 Brazier
+10180847 Brazier
+10180848 Brazier
+10180849 Brazier
+10180850 Brazier
+10185000 [Chest] Treasure
+10185030 [Chest] Treasure
+10185040 [Chest] Treasure
+10185050 [Chest] Treasure
+10185060 [Chest] Treasure
+10185070 [Chest] Treasure
+10185080 [Chest] Treasure
+10185100 [Chest] Treasure
+10185110 [Chest] Treasure
+10185120 [Chest] Treasure
+10186000 [Corpse] Treasure
+10186010 [Corpse] Treasure
+10186020 [Corpse] Treasure
+10186030 [Corpse] Treasure
+10186040 [Corpse] Treasure
+10186050 [Corpse] Treasure
+10186070 [Corpse] Treasure
+10186080 [Corpse] Treasure
+10186100 [Corpse] Treasure
+10186110 [Corpse] Treasure
+10186120 [Corpse] Treasure
+10186130 [Corpse] Treasure
+10186140 [Corpse] Treasure
+10186150 [Corpse] Treasure
+10186160 [Corpse] Treasure
+10186170 [Corpse] Treasure

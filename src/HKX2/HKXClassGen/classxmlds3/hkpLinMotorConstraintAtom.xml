@@ -1,0 +1,10 @@
+<class name='hkpLinMotorConstraintAtom' version='1' signature='0xdce8c1bc' size='24' parent='hkpConstraintAtom'>
+  <members>
+    <member name='isEnabled' offset='2' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motorAxis' offset='3' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initializedOffset' offset='4' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='previousTargetPositionOffset' offset='6' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='targetPosition' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motor' offset='16' ctype='hkpConstraintMotor' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

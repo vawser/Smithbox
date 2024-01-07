@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <EventLayerID AltName="Event Layer ID" Wiki="Event maker layer ID" />
+    <MapStudioLayerID AltName="Map Studio Layer ID" Wiki="Map Studio Layer ID" />
+	<GparamIDUp AltName="GParam ID Offset" />
+	<GparamIDLow AltName="GParam Override ID" />
+	<PointCloudID AltName="Point Cloud ID" />
+	<GI_TextureID AltName="GI Texture ID" />
+	<LightGroupID AltName="Light Group ID" />
+	<IsReload AltName="Can Reload" IsBool="" />
+	<IsDisableOnline AltName="Play Region Offset" Wiki="Offsets PlayRegion IDs by given x 100\nEx: 400000 -> 400100 for value of 1." />
+    <pad1 AltName=""/>
+  </Field>
+  <Self Wiki="Map ceremony data"/>
+</PARAMMETA>

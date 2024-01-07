@@ -1,0 +1,5 @@
+<class name='hkbRotateCharacterModifierInternalState' version='1' signature='0x8c4ec77' size='24' parent='hkReferencedObject'>
+  <members>
+    <member name='angle' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

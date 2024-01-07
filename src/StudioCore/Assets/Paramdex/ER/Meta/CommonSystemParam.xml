@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <mapSaveMapNameIdOnGameStart AltName="Save Data - Game Start: Map Name" Wiki="At the start of the game Map name ID_for save data (SEQ15052)" />
+    <reserve0 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

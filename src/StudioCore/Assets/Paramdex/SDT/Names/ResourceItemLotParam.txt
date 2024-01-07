@@ -1,0 +1,261 @@
+0 for test -- テスト用
+1980 Form fee acquisition &amp; acquisition rate UP test -- 形代入手 & 入手率UPテスト
+1985 Resurrection right acquisition &amp; acquisition amount UP test 1 -- 復活権入手 & 入手量UPテスト1
+1986 Resurrection right acquisition &amp; acquisition amount UP test 2 -- 復活権入手 & 入手量UPテスト2
+1000000 Samurai residence_100% white charge_00 -- 武家屋敷_白形代100%_00
+1000010 Samurai residence_100% white charge_01 -- 武家屋敷_白形代100%_01
+1000020 Samurai residence_100% white charge_02 -- 武家屋敷_白形代100%_02
+1000030 Samurai residence_100% white charge_03 -- 武家屋敷_白形代100%_03
+1000040 Samurai residence_100% white charge_04 -- 武家屋敷_白形代100%_04
+1000050 Samurai residence_100% white charge_05 -- 武家屋敷_白形代100%_05
+1000060 Samurai residence_100% white charge_06 -- 武家屋敷_白形代100%_06
+1000070 Samurai residence_100% white charge_07 -- 武家屋敷_白形代100%_07
+1000080 Samurai residence_100% white charge_08 -- 武家屋敷_白形代100%_08
+1100000 Castle_white _100% _00 -- 城下_白形代100%_00
+1100010 Castle_white _100% _01 -- 城下_白形代100%_0１
+1100020 Castle_white _100% _02 -- 城下_白形代100%_02
+1100030 Castle_white _100% _03 -- 城下_白形代100%_03
+1100040 Castle_white _100% _04 -- 城下_白形代100%_04
+1100050 Castle_white _100% _05 -- 城下_白形代100%_05
+1100060 Castle_white _100% _06 -- 城下_白形代100%_06
+1100070 Castle_white _100% _07 -- 城下_白形代100%_07
+1100080 Castle_white _100% _08 -- 城下_白形代100%_08
+1100090 Castle_white _100% _09 -- 城下_白形代100%_09
+1100100 Castle_white _100% _10 -- 城下_白形代100%_10
+1100900 Castle_white _100% _03 -- 城下_白形代100%_03
+1100910 Castle_white _100% _03 -- 城下_白形代100%_03
+1110000 Honjo_Shirokatayo 100%_00 -- 本城_白形代100%_00
+1110010 Honjo_Shirokatayo 100% _01 -- 本城_白形代100%_01
+1110020 Honjo_Shirokatayo 100% _02 -- 本城_白形代100%_02
+1110030 Honjo_Shirokatayo 100% _03 -- 本城_白形代100%_03
+1110040 Honjo_Shirokatayo 100% _04 -- 本城_白形代100%_04
+1110050 Honjo_Shirokatayo 100% _05 -- 本城_白形代100%_05
+1110051 Honjo_Shirokatayo 100% _06 -- 本城_白形代100%_06
+1110052 Honjo_Shirokatayo 100% _07 -- 本城_白形代100%_07
+1110053 Honjo_Shirokatayo 100% _08 -- 本城_白形代100%_08
+1120000 Hidden prison_white charge 100% _00 -- 隠し牢_白形代100%_00
+1120010 Hidden prison_white charge 100% _01 -- 隠し牢_白形代100%_01
+1120020 Hidden prison_white charge 100% _02 -- 隠し牢_白形代100%_02
+1300000 Dungeon_White 100% _00 -- 地下牢_白形代100%_00
+1300010 Dungeon_White 100% _01 -- 地下牢_白形代100%_01
+1300020 Dungeon_White 100% _02 -- 地下牢_白形代100%_02
+1300030 Dungeon_White 100% _03 -- 地下牢_白形代100%_03
+1300040 Dungeon_White 100% _04 -- 地下牢_白形代100%_04
+1300050 Dungeon_White 100% _05 -- 地下牢_白形代100%_05
+1500000 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500010 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500020 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500030 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500040 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500050 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500060 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500070 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500080 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500090 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500100 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500110 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500120 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1500130 Illness Village_White 100% _00 -- 病み村_白形代100%_00
+1700000 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700010 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700020 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700030 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700040 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700050 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700060 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700070 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700080 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700090 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700100 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700110 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700120 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700130 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700140 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700150 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700160 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700170 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700180 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700190 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700200 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700210 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700220 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+1700230 Valley_white charge 100% _00 -- 渓谷_白形代100%_00
+2000000 Temple_white _100% _00 -- 寺_白形代100%_00
+2000010 Temple_white _100% _00 -- 寺_白形代100%_00
+2000020 Temple_white _100% _00 -- 寺_白形代100%_00
+2000030 Temple_white _100% _00 -- 寺_白形代100%_00
+2000040 Temple_white _100% _00 -- 寺_白形代100%_00
+2000050 Temple_white _100% _00 -- 寺_白形代100%_00
+2000060 Temple_white _100% _00 -- 寺_白形代100%_00
+2000070 Temple_white _100% _00 -- 寺_白形代100%_00
+2000080 Temple_white _100% _00 -- 寺_白形代100%_00
+2000090 Temple_white _100% _00 -- 寺_白形代100%_00
+2000100 Temple_white _100% _00 -- 寺_白形代100%_00
+2000110 Temple_white _100% _00 -- 寺_白形代100%_00
+2000120 Temple_white _100% _00 -- 寺_白形代100%_00
+2000130 Temple_white _100% _00 -- 寺_白形代100%_00
+2000140 Temple_white _100% _00 -- 寺_白形代100%_00
+2000150 Temple_white _100% _00 -- 寺_白形代100%_00
+2000160 Temple_white _100% _00 -- 寺_白形代100%_00
+2000170 Temple_white _100% _00 -- 寺_白形代100%_00
+2000180 Temple_white _100% _00 -- 寺_白形代100%_00
+2000190 Temple_white _100% _00 -- 寺_白形代100%_00
+2000200 Temple_white _100% _00 -- 寺_白形代100%_00
+2000210 Temple_white _100% _00 -- 寺_白形代100%_00
+2000220 Temple_white _100% _00 -- 寺_白形代100%_00
+2000230 Temple_white _100% _00 -- 寺_白形代100%_00
+2000240 Temple_white _100% _00 -- 寺_白形代100%_00
+2000250 Temple_white _100% _00 -- 寺_白形代100%_00
+2000260 Temple_white _100% _00 -- 寺_白形代100%_00
+2000270 Temple_white _100% _00 -- 寺_白形代100%_00
+2000280 Temple_white _100% _00 -- 寺_白形代100%_00
+2000290 Temple_white _100% _00 -- 寺_白形代100%_00
+2000300 Temple_white _100% _00 -- 寺_白形代100%_00
+2000310 Temple_white _100% _00 -- 寺_白形代100%_00
+2500000 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500010 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500020 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500030 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500040 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500050 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500060 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500070 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500080 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500090 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500100 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500110 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500120 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500130 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+2500140 Submerged city_white charge 100% _00 -- 水没都_白形代100%_00
+9620000 1st Playable_White charge 100% _00 -- 1stPlayable_白形代100%_00
+9620010 1st Playable_White charge 100% _01 -- 1stPlayable_白形代100%_01
+9620020 1st Playable_White charge 100% _02 -- 1stPlayable_白形代100%_02
+9620030 1st Playable_White charge 100% _03 -- 1stPlayable_白形代100%_03
+9620040 1st Playable_White charge 100% _04 -- 1stPlayable_白形代100%_04
+9620050 1st Playable_White charge 100% _05 -- 1stPlayable_白形代100%_05
+9620060 1st Playable_White charge 100% _06 -- 1stPlayable_白形代100%_06
+9620070 1st Playable_White charge 100% _07 -- 1stPlayable_白形代100%_07
+9620080 1st Playable_White charge 100% _08 -- 1stPlayable_白形代100%_08
+9620090 1st Playable_White charge 100% _09 -- 1stPlayable_白形代100%_09
+9620100 1st Playable_White charge 100% _10 -- 1stPlayable_白形代100%_10
+9620110 1st Playable_White charge 100% _11 -- 1stPlayable_白形代100%_11
+9620120 1st Playable_White charge 100% _12 -- 1stPlayable_白形代100%_12
+9620130 1st Playable_White charge 100% _13 -- 1stPlayable_白形代100%_13
+9620140 1st Playable_White charge 100% _14 -- 1stPlayable_白形代100%_14
+9620150 1st Playable_White charge 100% _15 -- 1stPlayable_白形代100%_15
+9620160 1st Playable_White charge 100% _16 -- 1stPlayable_白形代100%_16
+9620170 1st Playable_White charge 100% _17 -- 1stPlayable_白形代100%_17
+9620180 1st Playable_White charge 100% _18 -- 1stPlayable_白形代100%_18
+9620190 1st Playable_White charge 100% _19 -- 1stPlayable_白形代100%_19
+9620200 1st Playable_White charge 100% _20 -- 1stPlayable_白形代100%_20
+9620210 1st Playable_White charge 100% _21 -- 1stPlayable_白形代100%_21
+9620220 1st Playable_White charge 100% _22 -- 1stPlayable_白形代100%_22
+9620230 1st Playable_White charge 100% _23 -- 1stPlayable_白形代100%_23
+9620240 1st Playable_White charge 100% _24 -- 1stPlayable_白形代100%_24
+9620250 1st Playable_White charge 100% _25 -- 1stPlayable_白形代100%_25
+9620260 1st Playable_White charge 100% _26 -- 1stPlayable_白形代100%_26
+9620270 1st Playable_White charge 100% _27 -- 1stPlayable_白形代100%_27
+9620280 1st Playable_White charge 100% _28 -- 1stPlayable_白形代100%_28
+9620900 1st Playable_White charge 100% _Infinite -- 1stPlayable_白形代100%_無限
+9623000 1st Playable_Red color 100% _00 -- 1stPlayable_赤形代100%_00
+9623010 1st Playable_ Red form 100% _01 -- 1stPlayable_赤形代100%_01
+9623020 1st Playable_ Red form 100% _02 -- 1stPlayable_赤形代100%_02
+9623030 1st Playable_ Red form 100% _03 -- 1stPlayable_赤形代100%_03
+9623040 1st Playable_ Red form 100% _04 -- 1stPlayable_赤形代100%_04
+9623050 1st Playable_ Red form 100% _05 -- 1stPlayable_赤形代100%_05
+9623900 1st Playable_Red shape 100% _Infinite -- 1stPlayable_赤形代100%_無限
+9626000 1st Playable_Blue fee 100% _00 -- 1stPlayable_青形代100%_00
+9626010 1st Playable_Blue size 100% _01 -- 1stPlayable_青形代100%_01
+9626020 1st Playable_Blue size 100% _02 -- 1stPlayable_青形代100%_02
+9626030 1st Playable_Blue size 100% _03 -- 1stPlayable_青形代100%_03
+9626040 1st Playable_Blue size 100% _04 -- 1stPlayable_青形代100%_04
+9626050 1st Playable_Blue size 100% _05 -- 1stPlayable_青形代100%_05
+9626060 1st Playable_Blue size 100% _06 -- 1stPlayable_青形代100%_06
+9626070 1st Playable_Blue size 100% _07 -- 1stPlayable_青形代100%_07
+9626080 1st Playable_Blue size 100% _08 -- 1stPlayable_青形代100%_08
+9626090 1st Playable_Blue size 100% _09 -- 1stPlayable_青形代100%_09
+9626100 1st Playable_Blue size 100% _10 -- 1stPlayable_青形代100%_10
+9626110 1st Playable_Blue size 100% _11 -- 1stPlayable_青形代100%_11
+9626120 1st Playable_Blue size 100% _12 -- 1stPlayable_青形代100%_12
+9626130 1st Playable_Blue size 100% _13 -- 1stPlayable_青形代100%_13
+9626140 1st Playable_Blue size 100% _14 -- 1stPlayable_青形代100%_14
+9626150 1st Playable_Blue size 100% _15 -- 1stPlayable_青形代100%_15
+9626160 1st Playable_Blue size 100% _16 -- 1stPlayable_青形代100%_16
+9626900 1st Playable_Blue size 100% _Infinite -- 1stPlayable_青形代100%_無限
+10000000 Swashbuckler fish -- 剣戟雑魚
+10000010 Swashbuckler [Strong] -- 剣戟雑魚【強】
+10000020 Swashbuckler [weak] -- 剣戟雑魚【弱】
+10000090 Swashbuckler _GC -- 剣戟雑魚_GC
+10000100 Swashbuckler -- 剣戟強敵
+10000190 Swashbuckler _GC -- 剣戟強敵_GC
+10000200 Long-distance small fish -- 遠距離雑魚
+10000290 Long-distance small fish_GC -- 遠距離雑魚_GC
+10000300 Long-range strong enemy -- 遠距離強敵
+10000400 animal -- 動物
+10000410 Animal [strong] -- 動物【強】
+10000500 Alert enemy -- アラート敵
+10000590 Alert enemy_GC -- アラート敵_GC
+10000600 Gimmick enemy -- ギミック敵
+10000800 Bonus for slaughter of enemies with 1 or more slaughter -- 1忍殺以上の敵の忍殺時ボーナス
+10000900 Medium boss -- 中ボス
+10005000 Swashbuckler fish -- 剣戟雑魚
+10005001 Swashbuckler fish -- 剣戟雑魚
+10005010 Swashbuckler [Strong] -- 剣戟雑魚【強】
+10005011 Swashbuckler [Strong] -- 剣戟雑魚【強】
+10005020 Swashbuckler [weak] -- 剣戟雑魚【弱】
+10005021 Swashbuckler [weak] -- 剣戟雑魚【弱】
+10005100 Swashbuckler -- 剣戟強敵
+10005101 Swashbuckler -- 剣戟強敵
+10005200 Long-distance small fish -- 遠距離雑魚
+10005201 Long-distance small fish -- 遠距離雑魚
+10005300 Long-range strong enemy -- 遠距離強敵
+10005301 Long-range strong enemy -- 遠距離強敵
+10005400 animal -- 動物
+10005401 animal -- 動物
+10005410 Animal [strong] -- 動物【強】
+10005411 Animal [strong] -- 動物【強】
+10005500 Alert enemy -- アラート敵
+10005501 Alert enemy -- アラート敵
+10005600 Gimmick enemy -- ギミック敵
+10005601 Gimmick enemy -- ギミック敵
+10005800 Bonus for slaughter of enemies with 1 or more slaughter -- 1忍殺以上の敵の忍殺時ボーナス
+10005801 Bonus for slaughter of enemies with 1 or more slaughter -- 1忍殺以上の敵の忍殺時ボーナス
+10005900 Medium boss -- 中ボス
+10005901 Medium boss -- 中ボス
+10200000 c1020_ General Samurai -- c1020_侍大将
+10200010 c1020_Samurai General_Jinhaori -- c1020_侍大将_陣羽織あり
+10205000 c1020_ General Samurai -- c1020_侍大将
+10205010 c1020_Samurai General_Jinhaori -- c1020_侍大将_陣羽織あり
+10400000 c1040_ Centipede size -- c1040_ムカデ大
+10405000 c1040_ Centipede size -- c1040_ムカデ大
+10700000 c1070_ Shura Samurai -- c1070_修羅侍
+10705000 c1070_ Shura Samurai -- c1070_修羅侍
+10800000 c1080_ Seven-sided warrior -- c1080_七面武者
+10805000 c1080_ Seven-sided warrior -- c1080_七面武者
+11300000 c1130_ Nanban armor -- c1130_南蛮甲冑
+11305000 c1130_ Nanban armor -- c1130_南蛮甲冑
+13500000 c1350_ neckless -- c1350_首なし
+13505000 c1350_ neckless -- c1350_首なし
+13700000 c1370_ fire cow -- c1370_火牛
+13705000 c1370_ fire cow -- c1370_火牛
+50200000 c5020_ Caucasian slave -- c5020_白人奴隷
+50205000 c5020_ Caucasian slave -- c5020_白人奴隷
+70000000 c7000_ female player -- c7000_女奏者
+70005000 c7000_ female player -- c7000_女奏者
+999999100 [For mounting test] 100% red shape -- 【実装テスト用】赤形代100%
+999999110 [For mounting test] 50% red shape -- 【実装テスト用】赤形代50%
+999999120 [For mounting test] Red form 20% -- 【実装テスト用】赤形代20%
+999999130 [For mounting test] Red or blue -- 【実装テスト用】赤形代or青形代
+999999140 [For mounting test] 0 to 7 white shapes -- 【実装テスト用】白形代0～7個
+999999150 [For mounting test] 1/3 of the blue shape -- 【実装テスト用】青形代1/3個
+999999151 [For mounting test] 2/3 blue shape -- 【実装テスト用】青形代2/3個
+999999152 [For mounting test] 3/3 blue-shaped charges -- 【実装テスト用】青形代3/3個
+999999160 [For mounting test] 1/3 of red, blue and white -- 【実装テスト用】赤青白形代1/3個
+999999161 [For mounting test] Red, blue, white, 2/3 pieces -- 【実装テスト用】赤青白形代2/3個
+999999162 [For mounting test] Red, blue, white, 3/3 pieces -- 【実装テスト用】赤青白形代3/3個
+999999170 [For mounting test] 1/3 random red, blue and white -- 【実装テスト用】赤青白形代ランダム1/3個
+999999171 [For mounting test] Red Blue White Random 2/3 pieces -- 【実装テスト用】赤青白形代ランダム2/3個
+999999172 [For mounting test] Red, blue, white, random 3/3 pieces -- 【実装テスト用】赤青白形代ランダム3/3個
+999999180 [For implementation test] White form _ Acquired flag ID 9170 -- 【実装テスト用】白形代_取得済みフラグID9170
+999999190 [For mounting test] 99 white shapes -- 【実装テスト用】白形代99個
+999999200 [For mounting test] Off -- 【実装テスト用】はずれ

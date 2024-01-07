@@ -1,0 +1,7 @@
+<class name='hkbpCatchFallModifierHand' version='1' signature='0xe8d604a0' size='6'>
+  <members>
+    <member name='animShoulderIndex' offset='0' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ragdollShoulderIndex' offset='2' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ragdollAnkleIndex' offset='4' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

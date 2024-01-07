@@ -1,0 +1,18 @@
+<class name='hkaiNavVolumePathSearchParameters' version='1' signature='0x1221b75f' size='64'>
+  <enums>
+    <enum name='LineOfSightFlags' flags='00000000'>
+      <enumitem name='NO_LINE_OF_SIGHT_CHECK' value='0'/>
+      <enumitem name='EARLY_OUT_IF_NO_COST_MODIFIER' value='1'/>
+      <enumitem name='EARLY_OUT_ALWAYS' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='up' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='costModifier' offset='16' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='edgeFilter' offset='24' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='lineOfSightFlags' offset='32' etype='LineOfSightFlags' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='heuristicWeight' offset='36' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maximumPathLength' offset='40' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bufferSizes' offset='44' ctype='hkaiSearchParametersBufferSizes' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

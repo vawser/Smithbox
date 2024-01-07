@@ -1,0 +1,6 @@
+<class name='hclObjectSpaceMeshMeshDeformPNTBOperator' version='1' signature='0x83e96a2f' size='200' parent='hclObjectSpaceMeshMeshDeformOperator'>
+  <members>
+    <member name='localPNTBs' offset='168' ctype='hclObjectSpaceDeformerLocalBlockPNTB' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localUnpackedPNTBs' offset='184' ctype='hclObjectSpaceDeformerLocalBlockUnpackedPNTB' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

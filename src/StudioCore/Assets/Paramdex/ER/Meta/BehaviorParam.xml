@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Attack" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+      <Option Value="0" Name="No Category" />
+      <Option Value="1" Name="PC Right-Hand" />
+      <Option Value="2" Name="PC Left-hand" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Magic" />
+      <Option Value="5" Name="Basic" />
+      <Option Value="6" Name="NPC Right-hand" />
+      <Option Value="7" Name="NPC Left-hand" />
+      <Option Value="9" Name="Kick" />
+      <Option Value="10" Name="PC Both-hand" />
+      <Option Value="11" Name="PC Both-hand" />
+      <Option Value="12" Name="PC Right-hand #2" />
+    </Enum>
+    <Enum Name="STATE_BEHAVIOR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Player" />
+      <Option Value="2" Name="NPC" />
+      <Option Value="3" Name="NPC" />
+    </Enum>
+  </Enums>
+  <Field>
+    <variationId AltName="Behavior Variation ID" Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." />
+    <behaviorJudgeId AltName="Behavior Judge ID" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine." VRef="behaviorVariation" />
+    <ezStateBehaviorType_old AltName="State Behavior Type" Wiki="For ID calculation rules" Enum="STATE_BEHAVIOR_TYPE" />
+    <refType AltName="Reference Type" Wiki="Specify the reference ID so that it is correct." Enum="BEHAVIOR_REF_TYPE" />
+    <pad2 AltName=""/>
+    <refId AltName="Reference ID" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType." Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
+    <consumeSA AltName="Poise Cost" Wiki="Set the amount of SA consumed during action." />
+    <stamina AltName="Stamina Cost" Wiki="Set the amount of stamina consumed during action." />
+    <consumeDurability AltName="Durability Cost" Wiki="Set the durability of weapons consumed during action." />
+    <category AltName="Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="BEHAVIOR_CATEGORY" />
+    <heroPoint AltName="Humanity Cost" Wiki="Set the amount of humanity consumed during action" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self Wiki="Handles animation events, including attack frames or firing bullets.\nResponsible for stamina consumption.\nNote that in Elden Ring, SpEffects are applied directly from the animation." AlternativeOrder="variationId,behaviorJudgeId,-,category,ezStateBehaviorType_old,-,refId,refType,-,consumeSA,stamina,consumeDurability,heroPoint,-"/>
+</PARAMMETA>

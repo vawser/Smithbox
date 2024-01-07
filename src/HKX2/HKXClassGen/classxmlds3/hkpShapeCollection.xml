@@ -1,0 +1,18 @@
+<class name='hkpShapeCollection' version='1' signature='0x93c7f0b' size='48' parent='hkpShape'>
+  <enums>
+    <enum name='CollectionType' flags='00000000'>
+      <enumitem name='COLLECTION_LIST' value='0'/>
+      <enumitem name='COLLECTION_EXTENDED_MESH' value='1'/>
+      <enumitem name='COLLECTION_TRISAMPLED_HEIGHTFIELD' value='2'/>
+      <enumitem name='COLLECTION_USER' value='3'/>
+      <enumitem name='COLLECTION_SIMPLE_MESH' value='4'/>
+      <enumitem name='COLLECTION_MESH_SHAPE' value='5'/>
+      <enumitem name='COLLECTION_COMPRESSED_MESH' value='6'/>
+      <enumitem name='COLLECTION_MAX' value='7'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='disableWelding' offset='40' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collectionType' offset='41' etype='CollectionType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

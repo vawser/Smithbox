@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <residentSpEffectId2 Refs="SpEffectParam" />
+    <armEquip IsBool="" />
+    <legEquip IsBool="" />
+    <residentSpEffectId Refs="SpEffectParam" />
+    <isDeposit IsBool="" />
+    <residentSpEffectId3 Refs="SpEffectParam" />
+    <headEquip IsBool="" />
+    <bodyEquip IsBool="" />
+  </Field>
+  <Self />
+</PARAMMETA>

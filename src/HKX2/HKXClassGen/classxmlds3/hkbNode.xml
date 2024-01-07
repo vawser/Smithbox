@@ -1,0 +1,26 @@
+<class name='hkbNode' version='1' signature='0x8b4251f' size='80' parent='hkbBindable'>
+  <enums>
+    <enum name='GetChildrenFlagBits' flags='00000000'>
+      <enumitem name='FLAG_ACTIVE_ONLY' value='1'/>
+      <enumitem name='FLAG_GENERATORS_ONLY' value='4'/>
+      <enumitem name='FLAG_IGNORE_REFERENCED_BEHAVIORS' value='8'/>
+    </enum>
+    <enum name='CloneState' flags='00000000'>
+      <enumitem name='CLONE_STATE_DEFAULT' value='0'/>
+      <enumitem name='CLONE_STATE_TEMPLATE' value='1'/>
+      <enumitem name='CLONE_STATE_CLONE' value='2'/>
+    </enum>
+    <enum name='TemplateOrClone' flags='00000000'>
+      <enumitem name='NODE_IS_TEMPLATE' value='0'/>
+      <enumitem name='NODE_IS_CLONE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='userData' offset='48' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='56' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='id' offset='64' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='cloneState' offset='66' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='type' offset='67' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='nodeInfo' offset='72' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

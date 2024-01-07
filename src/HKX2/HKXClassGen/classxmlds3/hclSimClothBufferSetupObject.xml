@@ -1,0 +1,14 @@
+<class name='hclSimClothBufferSetupObject' version='1' signature='0x9f6a88ab' size='40' parent='hclBufferSetupObject'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='SIM_CLOTH_MESH_CURRENT_POSITIONS' value='0'/>
+      <enumitem name='SIM_CLOTH_MESH_PREVIOUS_POSITIONS' value='1'/>
+      <enumitem name='SIM_CLOTH_MESH_ORIGINAL_POSE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='Type' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='24' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simClothSetupObject' offset='32' ctype='hclSimClothSetupObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

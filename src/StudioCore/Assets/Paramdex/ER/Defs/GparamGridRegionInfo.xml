@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>GPARAM_GRID_REGION_INFO_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 GparamGridRegionId">
+      <DisplayName>MapGparam用オープン地方ID </DisplayName>
+      <Description>MapGparam用オープンの地方ID。m60_00_00XX.gparamxmlのXXの部分に使用される</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="dummy8 Reserve[28]">
+      <DisplayName>リザーブ</DisplayName>
+      <Description>リザーブ</Description>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

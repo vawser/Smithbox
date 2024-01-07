@@ -1,0 +1,20 @@
+<class name='hclBufferLayout' version='1' signature='0xd26825a7' size='26'>
+  <enums>
+    <enum name='SlotFlags' flags='00000000'>
+      <enumitem name='SF_NO_ALIGNED_START' value='0'/>
+      <enumitem name='SF_16BYTE_ALIGNED_START' value='1'/>
+      <enumitem name='SF_64BYTE_ALIGNED_START' value='3'/>
+    </enum>
+    <enum name='TriangleFormat' flags='00000000'>
+      <enumitem name='TF_THREE_INT32S' value='0'/>
+      <enumitem name='TF_THREE_INT16S' value='1'/>
+      <enumitem name='TF_OTHER' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='elementsLayout' offset='0' ctype='hclBufferLayoutBufferElement' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='slots' offset='16' ctype='hclBufferLayoutSlot' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='numSlots' offset='24' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleFormat' offset='25' etype='TriangleFormat' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

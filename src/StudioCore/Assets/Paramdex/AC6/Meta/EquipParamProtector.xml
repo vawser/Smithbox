@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name = "LegTypeEnum"> 
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Bipedal" />
+      <Option Value="100" Name="Tetrapod" />
+      <Option Value="200" Name="Reverse Joint" />
+      <Option Value="300" Name="Tank 1" />
+      <Option Value="301" Name="Tank 2" />
+      <Option Value="302" Name="Tank 3" />
+    </Enum>
+  </Enums>
+  <Field>
+    <knockbackParamId AltName="knockbackParamId" Refs="KnockbackParam" />
+    <legsType AltName="Legs Type" Enum="LegTypeEnum" Wiki="Determines basic leg behavior. Value references are unknown." />
+    <thrusterParamId AltName="thrusterParamId" Refs="ThrustersParam_PC" />
+    <weaponParamId AltName="Weapon Param ID" Refs="EquipParamWeapon" Wiki="Refers to EquipParamWeapon. Used to define scanner for with head parts, unknown usage with core parts."/>
+    <quickBoostVelocity AltName="Quick boost velocity (&quot;Jump Distance&quot;)" Wiki="Referred to in-game as &quot;Jump Distance&quot;. Does not affect jump distance."/>
+    <movementAcTypeParamId AltName="movementAcTypeParamId" Refs="MovementAcTypeParam" />
+    <chrActTurnParamId AltName="chrActTurnParamId" Refs="ChrActTurnParam" />
+    <quickBoostVerticalVelocity_Grounded AltName="Quick Boost: Vertical Velocity (Grounded)" Wiki="Vertical velocity gained from quick boosting while on the ground." />
+    <boostModeJumpHorizontalSpeedBonus AltName="Boost Mode Jump: Horizontal Speed Bonus" Wiki="When boosting then jumping, takes current speed and multiplies it by this value then adds it to current speed." />
+    <jumpVelocityVertical AltName="Jump Velocity: Vertical" Wiki="Amount of vertical velocity when jumping." />
+    <jumpVelocityAcceleration AltName="Jump Velocity: Acceleration" Wiki="How quickly jump reaches max velocity and velocity ends. Interrupted by boosting." />
+    <jumpVelocityHorizontal AltName="Jump Velocity: Horizontal" Wiki="Amount of horizontal velocity when jumping and before aerial boosting.\nDoes not affect baby boost." />
+    <jumpVelocityHorizontalTransferred AltName="Jump Velocity: Horizontal Transfer Rate" Wiki="Amount of vertical jump velocity to transfer into horizontal velocity." />
+    <unkDisplayLegsJumpDistance AltName="" Wiki="Seemingly does nothing. UI element for &quot;Jump Distance&quot; is governed by quickBoostVelocity." />
+    <displayLegsJumpHeight AltName="Displayed Jump Height" Wiki=">Only affects value displayed in UI. Use jumpVelocityAcceleration for actual effects." />
+    <protectorParamId AltName="protectorParamId" Refs="EquipParamProtector" />
+    <legsPartBoosterParamId AltName="legPartBoosterParamId" Refs="EquipParamBooster" />
+    <menuTextId AltName="MenuText ID" FmgRef="Modern_MenuText" />
+    <equipmentMenuManageCategoryParamId AltName="" Refs="EquipmentMenuManageCategoryParam" />
+    <armsLoadLimit AltName="Arms Load Limit" Wiki="Maximum weapon weight arms can handle before being overloaded." />
+    <armRecoilControl AltName="Recoil Control" Wiki="Affects how quickly weapon spread grows and shrinks while firing." />
+    <armsMeleeSpecialization AltName="Melee Specialization" Wiki="Increases melee weapon damage. Minimum of 0 (+0% damage), maximum of 200 (+200% damage)." />
+    <systemRecovery AltName="System Recovery" Wiki="Actual effects of System Recovery stat, which increases resistance to status effects." />
+    <systemRecovery_Display AltName="System Recovery (Displayed)" Wiki="UI value of System Recovery stat. See systemRecovery for actual effects." />
+    <babyBoostSlowWalkVelocity_Grounded Name="Baby Boost Slow Walk Velocity (Grounded)" Wiki="Velocity when baby boost state is active, which replaces walk animations (requires SpEffect 9080)." />
+    <babyBoostWalkVelocity_Grounded Name="Baby Boost Walk Velocity (Grounded)" Wiki="Velocity when baby boost state is active, which replaces walk animations (requires SpEffect 9080)." />
+    <legsBrakingCorrection AltName="Grounded Deceleration Multiplier" Wiki="Affects velocity lost during grounded deceleration." />
+    <recoilKnockbackVelocityCorrection_Grounded AltName="Recoil Knockback % (Grounded)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon on the ground.\nApplies conditionally, such as not applying when AC has tank legs."/>
+    <recoilKnockbackVelocityCorrection_Airborne AltName="Recoil Knockback % (Airborne)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon in the air."/>
+    <backWeaponHeightAdjustment AltName="Back Weapon Height Adjustment" Wiki="Affects how high back weapons are placed, larger values are higher. Values range from 0 to 2." />
+    <legsAnimOffset AltName="Legs Animation Offset" Wiki="TAE ID used for overriding animations.\nValue of 1 utilizes TAE a010, 3 uses a030, etc.\nUsed with Lammergeier for hovering and assault boost animations." />
+    <altCalcCorrectType Wiki="Affects which CalcCorrects are used for various actions.\nExample: value of 2 on tank legs utilizes 22X calcCorrects instead of 27X for movement." />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <targetTrackingCorrection AltName="Target Tracking Multiplier" Wiki="Affects Target Tracking stat, which affects aim assist ability."/>
+    <aimAssistMaxDist AltName="Aim Assist: Max Distance (Red Lock)" Wiki="Determines maximum distance before aim assist will no longer occur."/>
+    <aimAssistInputTargetDist_Stage0 AltName="Aim Assist: Input Target Distance (Stage 0)" Wiki="Determines which target distance ranges will use which aim assist values."/>
+    <aimAssistInputTargetDist_Stage1 AltName="Aim Assist: Input Target Distance (Stage 1)" Wiki="Determines which target distance ranges will use which aim assist values."/>
+    <aimAssistInputTargetDist_Stage2 AltName="Aim Assist: Input Target Distance (Stage 2)" Wiki="Determines which target distance ranges will use which aim assist values."/>
+    <aimAssistInputTargetDist_Stage3 AltName="Aim Assist: Input Target Distance (Stage 3)" Wiki="Determines which target distance ranges will use which aim assist values."/>
+    <aimAssistInputTargetDist_Stage4 AltName="Aim Assist: Input Target Distance (Stage 4)" Wiki="Determines which target distance ranges will use which aim assist values."/>
+    <aimAssistGrowVal_Stage0 AltName="Aim Assist Effectivity (Stage 0)" Wiki="Effectiveness of Aim Assist when target distance equals stage 0.\nValue will grow from stage 0 to stage 1 until stage 1 target distance is met."/>
+    <aimAssistGrowVal_Stage1 AltName="Aim Assist Effectivity (Stage 1) (Close Range)" Wiki="Effectiveness of Aim Assist when target distance equals stage 1.\nValue will grow from stage 1 to stage 2 until stage 2 target distance is met.\nValue is used for Close-Range Assist in UI. "/>
+    <aimAssistGrowVal_Stage2 AltName="Aim Assist Effectivity (Stage 2)" Wiki="Effectiveness of Aim Assist when target distance equals stage 2.\nValue will grow from stage 2 to stage 3 until stage 3 target distance is met."/>
+    <aimAssistGrowVal_Stage3 AltName="Aim Assist Effectivity (Stage 3) (Medium Range)" Wiki="Effectiveness of Aim Assist when target distance equals stage 3.\nValue will grow from stage 3 to stage 4 until stage 4 target distance is met.\nValue is used for Medium-Range Assist in UI. "/>
+    <aimAssistGrowVal_Stage4 AltName="Aim Assist Effectivity (Stage 4) (Long Range)" Wiki="Effectiveness of Aim Assist when target distance equals stage 4.\nIf target distance exceeds stage 4, value remains at stage 4 until target distance exceeds aimAssistMaxDist.\nValue is used for Long-Range Assist in UI. "/>
+    <inheritanceFcsParamId AltName="FCS Inheritance" Refs="EquipParamFcs" Wiki="Inherits fields from referenced FCS." />
+  </Field>
+  <Self CalcCorrectDef="aimAssistInputTargetDist_Stage0,aimAssistInputTargetDist_Stage1,aimAssistInputTargetDist_Stage2,aimAssistInputTargetDist_Stage3,aimAssistInputTargetDist_Stage4,aimAssistGrowVal_Stage0,aimAssistGrowVal_Stage1,aimAssistGrowVal_Stage2,aimAssistGrowVal_Stage3,aimAssistGrowVal_Stage4,aimAssistMaxDist"/>
+</PARAMMETA>

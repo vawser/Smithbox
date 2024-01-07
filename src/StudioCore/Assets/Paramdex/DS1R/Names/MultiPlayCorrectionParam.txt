@@ -1,0 +1,5 @@
+0 Do not erase -- 消すべからず
+10 Test Data 2 -- テストデータ2
+100 Super Ability -- ザコ
+200 Formidable -- 強敵
+300 Boss -- ボス

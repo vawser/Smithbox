@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Slash" />
+      <Option Value="2" Name="Light Hit" />
+      <Option Value="3" Name="Thrust" />
+      <Option Value="4" Name="Neutral" />
+      <Option Value="5" Name="Ninsatsu" />
+      <Option Value="6" Name="Heavy Hit" />
+      <Option Value="7" Name="Anti Ground" />
+      <Option Value="8" Name="Anti Air" />
+      <Option Value="9" Name="Light Shoot" />
+      <Option Value="10" Name="Attribute A" />
+      <Option Value="11" Name="Attribute B" />
+      <Option Value="12" Name="Attribute C" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+      <Option Value="1" Name="Default" />
+      <Option Value="2" Name="Fire" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Poison" />
+      <Option Value="6" Name="Lightning (No midair reversal animation)" />
+      <Option Value="10" Name="Lightning (Midair reversal animation)" />
+    </Enum>
+    <Enum Name="BULLET_LAUNCH_CONDITION_TYPE" type="u8">
+      <Option Value="0" Name="When it hits or runs out" />
+      <Option Value="1" Name="Only when it hits water" />
+      <Option Value="4" Name="Only when it hits the gorund" />
+    </Enum>
+    <Enum Name="ATKPARAM_STAMINA_ATKATTR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Slash" />
+      <Option Value="2" Name="Light Hit" />
+      <Option Value="3" Name="Thrust" />
+      <Option Value="4" Name="Neutral" />
+      <Option Value="5" Name="Ninsatsu" />
+      <Option Value="6" Name="Heavy Hit" />
+      <Option Value="7" Name="Anti Ground" />
+      <Option Value="8" Name="Anti Air" />
+      <Option Value="9" Name="Light Shoot" />
+      <Option Value="10" Name="Attribute A" />
+      <Option Value="11" Name="Attribute B" />
+      <Option Value="12" Name="Attribute C" />
+    </Enum>
+  </Enums>
+  <Field>
+    <atkId_Bullet Wiki="Hitbox referenced by this bullet" Refs="AtkParam_Npc,AtkParam_Pc" />
+    <sfxId_Bullet Wiki="Sfx attached to the bullet as it travels" />
+    <sfxId_Hit Wiki="Sfx spawned when the bullet hits something" />
+    <sfxId_Flick Wiki="Sfx spawned when the bullet is blocked" />
+    <life Wiki="The amount of time the bullet lasts" />
+    <dist Wiki="Attenuation Distance, distance the bullet can travel before gravity and damage dampaning take effect" />
+    <shootInterval Wiki="How often the bullet is shot when InvokeBulletBehavior is active on an animation" />
+    <gravityInRange Wiki="Gravity applied before the attenuation distance" />
+    <gravityOutRange Wiki="Gravity applied before the atenuantion distance" />
+    <hormingStopRange Wiki="The distance to the target at which to stop homing" />
+    <initVellocity Wiki="Base Velocity" />
+    <accelInRange Wiki="Acceleration within range of SFX" />
+    <accelOutRange Wiki="Acceleration when SFX goes out of range" />
+    <maxVellocity Wiki="Fastest speed this bullet can travel" />
+    <minVellocity Wiki="Slowest speed this bullet can travel" />
+    <accelTime Wiki="The time it takes to fully accelerate the bullet" />
+    <homingBeginDist Wiki="How many meters ahead do you want to start homing?" />
+    <hitRadius Wiki="Starting size of the bullet" />
+    <hitRadiusMax Wiki="Maximum size of the bullet" />
+    <spreadTime Wiki="Amount of time it takes for the bullet to reach the maximum size" />
+    <expDelay Wiki="Delay for the HitBulletID to spawn after the parent bullet has expired or hit something" />
+    <hormingOffsetRange Wiki="0 is correct. Shift each component of XYZ by this amount when aiming." />
+    <dmgHitRecordLifeTime Wiki="How often the bullet can hit while it is active" />
+    <externalForce />
+    <spEffectIDForShooter Wiki="Applies speffect to the bullet owner when the bullet is shot" Refs="SpEffectParam" />
+    <autoSearchNPCThinkID />
+    <HitBulletID Wiki="Bullet that spawns based on the launchConditionType" Refs="Bullet" />
+    <spEffectId0 Refs="SpEffectParam" />
+    <spEffectId1 Refs="SpEffectParam" />
+    <spEffectId2 Refs="SpEffectParam" />
+    <spEffectId3 Refs="SpEffectParam" />
+    <spEffectId4 Refs="SpEffectParam" />
+    <numShoot Wiki="The number of projectiles fired at once" />
+    <homingAngle Wiki="The amount of corrections applied to the bullet trajectory every second" />
+    <shootAngle Wiki="Offsets the angle the bullet is shot at in degrees on the Y axis, Negative # = Shoot right/Positive # = Shoot left" />
+    <shootAngleInterval Wiki="The amount of degrees each bullet will be offset relative to the one that came before when shooting multiple bullets (Y axis)" />
+    <shootAngleXInterval Wiki="The amount of degrees each bullet will be offset relative to the one that came before when shooting multiple bullets (X axis)" />
+    <damageDamp Wiki="Reduces physical damage of the bullet when the bullet travels past the attenuation distance" />
+    <spelDamageDamp Wiki="Reduces magic damage of the bullet when the bullet travels past the attenuation distance" />
+    <fireDamageDamp Wiki="Reduces fire damage of the bullet when the bullet travels past the attenuation distance" />
+    <thunderDamageDamp Wiki="Reduces lightning damage of the bullet when the bullet travels past the attenuation distance" />
+    <staminaDamp Wiki="Reduces stamina damage of the bullet when the bullet travels past the attenuation distance" />
+    <knockbackDamp Wiki="Reduces knockback damage of the bullet when the bullet travels past the attenuation distance" />
+    <shootAngleXZ Wiki="Offsets the angle the bullet is shot at in degrees on the X axis, Negative # = Shoot right/Positive # = Shoot left" />
+    <lockShootLimitAng />
+    <isPenetrate Wiki="Can the bullet travel through characters and objects?" IsBool="" />
+    <prevVelocityDirRate Wiki="Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall" />
+    <atkAttribute Wiki="Physical damage type" Enum="ATKPARAM_ATKATTR_TYPE" />
+    <spAttribute Wiki="Non-physical damage type" Enum="ATKPARAM_SPATTR_TYPE" />
+    <Material_AttackType />
+    <Material_AttackMaterial_forSfx />
+    <Material_Size />
+    <launchConditionType Wiki="Determines the conditions required for HitBulletID to spawn" Enum="BULLET_LAUNCH_CONDITION_TYPE" />
+    <FollowType />
+    <pad7 />
+    <isAttackSFX Wiki="Sets whether bullets such as arrows remain stuck in the character" IsBool="" />
+    <isEndlessHit IsBool="" />
+    <isPenetrateMap Wiki="Can the bullet travel through the map?" IsBool="" />
+    <isHitBothTeam Wiki="Will it hit both enemies and allies? (Does not hit wandering ghosts)" IsBool="" />
+    <isUseSharedHitList IsBool="" />
+    <isUseMultiDmyPolyIfPlace IsBool="" />
+    <isSendShootInterrupt Wiki="Whether to send an interrupt notification to AI (INTERUPT_FLAG_Shoot)" IsBool="" />
+    <isHowitzer Wiki="Apply curvature correction" IsBool="" />
+    <isHitForceMagic IsBool="" />
+    <isIgnoreSfxIfHitWater Wiki="Ignore the effect if it hits the surface of the water" IsBool="" />
+    <isIgnoreMoveStateIfHitWater Wiki="Ignore state transitions even when hit by water" IsBool="" />
+    <isHitDarkForceMagic IsBool="" />
+    <dmgCalcSide Wiki="Damage calculation side.　In multiplayer, for switching the damage calculation between the giving side and the receiving side" />
+    <isEnableAutoHoming Wiki="Whether to automatically follow when unlocked" IsBool="" />
+    <isSyncBulletCulcDumypolyPos Wiki="In the case of synchronously generated bullets, the synchronous emitter attitude is used without recalculating the attitude based on the dummy poly position when the bullet is generated" IsBool="" />
+    <isIntervalCreateTargetLockOn Wiki="If bullets are created at regular intervals, should they be shot at the target? If OFF, fly to the parent posture" IsBool="" />
+    <isInheritSfxToChild Wiki="Takes over the SFX of the parent bullet. Ignore the SFXID set for submunitions" IsBool="" />
+    <darkDamageDamp Wiki="Reduces dark damage of the bullet when the bullet travels past the attenuation distance" />
+    <bulletSfxDeleteType_byHit Wiki="Bullet SFX disappearance type when landing or repelling" />
+    <bulletSfxDeleteType_byLifeDead Wiki="Bullet SFX disappearance type when the duration expires" />
+    <targetYOffsetRange Wiki="Vertical offset of the impact position. Shifts the target position up and down when firing and homing" />
+    <shootAngleYMaxRandom />
+    <shootAngleXMaxRandom />
+    <intervalCreateBulletId Wiki="Bullet that is spawned from this bullet over the duration of this bullet" Refs="Bullet" />
+    <intervalCreateTimeMin Wiki="Maximum amount of time to wait for before create another bullet via intervalCreateBulletId" />
+    <intervalCreateTimeMax Wiki="Minimum amount of time to wait for before create another bullet via intervalCreateBulletId" />
+    <predictionShootObserveTime />
+    <intervalCreateWaitTime Wiki="Wait time before starting to make bullets at regular intervals" />
+    <sfxPostureType Wiki="Set the initial pose of the SFX created from the bullet or sub-bullet" />
+    <createLimitGroupId Wiki="When creating bullets set to the same group Id, if the limit is reached, the bullet will not be created" />
+    <guardRangeType Wiki="When guarding a bullet, where to take the guard success judgment position" />
+    <isInheritSpeedToChild Wiki="The speed of the parent bullet will be inherited to the bullet spawned by the parent" IsBool="" />
+    <isDisableHitSfx_byChrAndObj IsBool="" />
+    <isCheckWall_byCenterRay IsBool="" />
+    <isHitOtherBulletForceEraseA IsBool="" />
+    <isUseBulletWallFilter IsBool="" />
+    <isUseParentAngForlockShootLimitAng IsBool="" />
+    <isNonDependenceMagicForFunnleNum IsBool="" />
+    <pad1 />
+    <randomCreateRadius />
+    <generateObjId Wiki="Creates the specified object when the bullet is shot" Refs="ObjectParam" />
+    <lifeRandomRange Wiki="Add a random number of seconds with the set time amplitude to the lifetime" />
+    <Material_AttackMaterial_forSe />
+    <staminaPhysicsAttribute Wiki="Posture damage type" Enum="ATKPARAM_STAMINA_ATKATTR_TYPE" />
+    <attachEffectType />
+    <objGenerateTiming />
+    <sfxId_ForceErase />
+    <bulletSfxDeleteType_byForceErase />
+    <pad3 />
+    <homingAngleX />
+    <shootYOffsetRange />
+    <generationMaxDistWhenOwner Wiki="If the bullet's spawn point is more than this distance away from the owner's position, it will not be fired" />
+    <elevationMinAngle Wiki="For curvature correction_Minimum firing elevation angle [deg]" />
+    <elevationMaxAngle Wiki="For curvature correction_Maximum firing elevation angle [deg]" />
+    <initMinVellocity />
+    <initMaxVellocity />
+    <isHitOtherBulletForceEraseB IsBool="" />
+    <pad4 />
+    <pad5 />
+    <EmittePosType />
+    <disappearDistanceToTarget Wiki="When the bullet approaches the specified value (m) from the guidance target, the bullet disappears" />
+    <pad6 />
+  </Field>
+  <Self Wiki="Projectiles for Npc's and the Player" AlternativeOrder="atkId_Bullet,autoSearchNPCThinkID,-,
+sfxId_Bullet,sfxId_Hit,sfxId_Flick,sfxId_ForceErase,sfxPostureType,-,
+HitBulletID,launchConditionType,expDelay,intervalCreateBulletId,intervalCreateTimeMax,intervalCreateTimeMin,intervalCreateWaitTime,EmittePosType,FollowType,generationMaxDistWhenOwner,createLimitGroupId,-,
+spEffectIDForShooter,spEffectId0,spEffectId1,spEffectId2,spEffectId3,spEffectId4,-,
+life,lifeRandomRange,dist,disappearDistanceToTarget,shootInterval,gravityInRange,gravityOutRange,elevationMaxAngle,elevationMinAngle,initVellocity,initMaxVellocity,initMinVellocity,maxVellocity,minVellocity,accelInRange,accelOutRange,accelTime,homingAngle,homingAngleX,homingBeginDist,hormingOffsetRange,hormingStopRange,isEnableAutoHoming,-,
+hitRadius,hitRadiusMax,spreadTime,numShoot,randomCreateRadius,dmgHitRecordLifeTime,-,
+shootAngle,shootAngleXZ,shootAngleInterval,shootAngleXInterval,shootAngleXMaxRandom,shootAngleYMaxRandom,shootYOffsetRange,lockShootLimitAng,-,
+isAttackSFX,isEndlessHit,isHitBothTeam,isUseSharedHitList,isPenetrate,isPenetrateMap,isHitForceMagic,isHitDarkForceMagic,isHitOtherBulletForceEraseA,isHitOtherBulletForceEraseB,isIgnoreSfxIfHitWater,isIgnoreMoveStateIfHitWater,isUseBulletWallFilter,isCheckWall_byCenterRay,isUseMultiDmyPolyIfPlace,isSendShootInterrupt,isHowitzer,isSyncBulletCulcDumypolyPos,isIntervalCreateTargetLockOn,isInheritSfxToChild,isInheritSpeedToChild,isDisableHitSfx_byChrAndObj,isUseParentAngForlockShootLimitAng,isNonDependenceMagicForFunnleNum,-,
+atkAttribute,spAttribute,staminaPhysicsAttribute,-,
+generateObjId,objGenerateTiming,-,
+damageDamp,spelDamageDamp,fireDamageDamp,thunderDamageDamp,darkDamageDamp,staminaDamp,knockbackDamp,-,
+bulletSfxDeleteType_byHit,bulletSfxDeleteType_byLifeDead,bulletSfxDeleteType_byForceErase,-,
+Material_AttackType,Material_Size,Material_AttackMaterial_forSfx,Material_AttackMaterial_forSe,-,
+externalForce,dmgCalcSide,guardRangeType,attachEffectType,targetYOffsetRange,predictionShootObserveTime,prevVelocityDirRate,-" />
+</PARAMMETA>

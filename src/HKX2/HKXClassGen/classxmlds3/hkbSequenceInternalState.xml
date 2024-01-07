@@ -1,0 +1,10 @@
+<class name='hkbSequenceInternalState' version='1' signature='0xfec31d01' size='88' parent='hkReferencedObject'>
+  <members>
+    <member name='nextSampleEvents' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nextSampleReals' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nextSampleBools' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nextSampleInts' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='time' offset='80' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isEnabled' offset='84' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

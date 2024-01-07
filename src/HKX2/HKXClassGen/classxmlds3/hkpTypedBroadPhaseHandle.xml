@@ -1,0 +1,8 @@
+<class name='hkpTypedBroadPhaseHandle' version='1' signature='0xf4b0f799' size='12' parent='hkpBroadPhaseHandle'>
+  <members>
+    <member name='type' offset='4' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ownerOffset' offset='5' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='objectQualityType' offset='6' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionFilterInfo' offset='8' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

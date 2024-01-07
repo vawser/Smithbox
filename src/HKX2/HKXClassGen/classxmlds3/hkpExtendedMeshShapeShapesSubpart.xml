@@ -1,0 +1,7 @@
+<class name='hkpExtendedMeshShapeShapesSubpart' version='1' signature='0x99b9f170' size='80' parent='hkpExtendedMeshShapeSubpart'>
+  <members>
+    <member name='childShapes' offset='32' ctype='hkpConvexShape' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotation' offset='48' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='translation' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

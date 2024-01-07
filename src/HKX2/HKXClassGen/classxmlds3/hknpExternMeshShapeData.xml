@@ -1,0 +1,7 @@
+<class name='hknpExternMeshShapeData' version='1' signature='0x2f4c0943' size='96' parent='hkReferencedObject'>
+  <members>
+    <member name='aabbTree' offset='16' ctype='hkcdStaticTreeDefaultTreeStorage6' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simdTree' offset='64' ctype='hkcdSimdTree' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='buildContext' offset='88' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

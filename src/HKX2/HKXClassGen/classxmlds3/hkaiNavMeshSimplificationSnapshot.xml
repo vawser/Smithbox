@@ -1,0 +1,9 @@
+<class name='hkaiNavMeshSimplificationSnapshot' version='1' signature='0x6b11d9e1' size='592'>
+  <members>
+    <member name='geometry' offset='0' ctype='hkGeometry' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='carvers' offset='8' ctype='hkaiCarver' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cuttingTriangles' offset='24' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='settings' offset='48' ctype='hkaiNavMeshGenerationSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='unsimplifiedNavMesh' offset='576' ctype='hkaiNavMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

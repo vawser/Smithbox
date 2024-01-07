@@ -1,0 +1,8 @@
+<class name='hkbEventsFromRangeModifier' version='1' signature='0xc9ece705' size='120' parent='hkbModifier'>
+  <members>
+    <member name='inputValue' offset='88' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lowerBound' offset='92' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventRanges' offset='96' ctype='hkbEventRangeDataArray' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='wasActiveInPreviousFrame' offset='104' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

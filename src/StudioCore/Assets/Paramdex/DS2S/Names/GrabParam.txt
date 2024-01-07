@@ -1,0 +1,126 @@
+0 Backstab Test -- バックスタブテスト
+100 Goblin Throwing Test -- ゴブリン投げテスト
+10100 Baxta - Mini - General Purpose (1.0m) -- バクスタ-極小-汎用（1.0ｍ）
+10300 Baxta-Medium-General Purpose (1.0m) -- バクスタ-中-汎用（1.0ｍ）
+10500 Baxta - Extra Large - General Purpose (1.0m) -- バクスタ-特大-汎用（1.0ｍ）
+20100 Guard Break - Mini - General Purpose (1.0m) -- ガードブレイク-極小-汎用（1.0ｍ）
+20300 Guard Break - Medium - General Purpose (1.0m) -- ガードブレイク-中-汎用（1.0ｍ）
+20500 Guard Break - Extra Large - General Purpose (1.0m) -- ガードブレイク-特大-汎用（1.0ｍ）
+30100 Pari-Blake - Minimal - General Purpose -- パリィブレイク-極小-汎用
+30300 Pari-Blake - Medium - Generic -- パリィブレイク-中-汎用
+30500 Pari-Blake - Oversized - General -- パリィブレイク-特大-汎用
+12100000 Giant Lower Soldier (Giant) -- 巨人下級兵士（巨人）
+30900000 Giant Senior Soldier (Giant) -- 巨人上級兵士（巨人）
+30970000 New Giant Senior Soldier (Live) -- 新・巨人上級兵士（生者）
+31400000 Elephant (deceased) -- 象人（亡者）
+31500000 Elephant (Born) -- 象人（生者）
+60100000 Salamander -- サラマンダー
+110000110 Goblin (Raw Man): Bare hand Action 11_Bite Toss -- ゴブリン（生者）：素手　行動11_噛み付き投げ
+110203410 Kingdom Soldier (Deceased): Stabbing Sword: Medium Shield Action 18_Parie -- 王国兵士（亡者）：刺突剣：中盾　行動18_パリィ
+110300110 Lower Soldier (Dead): Bare hands Action 11_Bite -- 下級兵士（亡者）：素手　行動11_噛みつき
+110700410 Parasite Spider (Parasitic) Action 14_Throwing Attack_Right -- パラサイトスパイダー（寄生）　行動14_投げ攻撃_右
+110800510 Rogue: Dagger x 2 Action 15_ Backstab -- ローグ：短剣×２　行動15_バックスタブ
+111500110 Dead: Traveler's Clothing ♂: Bare hands Action 11_Bite: Gripping -- 亡者：旅人の服♂：素手　行動11_噛みつき：掴み
+111800310 Dark Wizard Action 13_Proximity Attack: Dash Megante -- ダークウィザード　行動13_近接攻撃：ダッシュメガンテ
+112100210 Giant Lower Soldier (Giant): Bare hand Action 12_Throw: Grab right hand -- 巨人下級兵士（巨人）：素手　行動12_投げ：掴み　右手
+112101100 Giant Lower Soldier (Giant): Club Action 12_Throw: Grab right hand -- 巨人下級兵士（巨人）：棍棒　行動12_投げ：掴み　右手
+112102100 Giant Lower Soldier (Giant): Poison Action 12_ Throw: Grab right hand -- 巨人下級兵士（巨人）：毒　行動12_投げ：掴み　右手
+112103100 Giant Lower Soldier (Giant): Club Action 12_Throw: Grab right hand -- 巨人下級兵士（巨人）：棍棒　行動12_投げ：掴み　右手
+112300610 Deformed Shadow: 2 Swordsnails Action 16_Guard Break Stub -- 異形の影：２刀爪　行動16_ガードブレイクスタブ
+112300710 Deformed Shadow: 2 Swordsnails Action 17_Backstab -- 異形の影：２刀爪　行動17_バックスタブ
+112301310 Deformed Shadow: Dagger: Stabbing Sword Action 14_Tackle_Sliding Throw -- 異形の影：短剣：刺突剣　行動14_タックル_スライディング投げ
+112400610 Assassin: 2 swordsto action 16_ jumping toss -- 暗殺者：２刀爪　行動16_飛びつき投げ
+112400810 Assassin: 2 Swordsto Action 18_Backstab -- 暗殺者：２刀爪　行動18_バックスタブ
+112401510 Assassin: Dagger Action 16_Pari -- 暗殺者：短剣　行動16_パリィ
+112401610 Assassin: Dagger Action 18_Backstab -- 暗殺者：短剣　行動18_バックスタブ
+112402610 Assassin: Song Sword Action 16_Pari -- 暗殺者：曲剣　行動16_パリィ
+112402710 Assassin: Song Sword Action 18_Backstab -- 暗殺者：曲剣　行動18_バックスタブ
+112500110 undead citizen action eleven_clinging tossing -- アンデッド市民　行動11_しがみつき投げ
+113200610 Skeleton: 2 Swords To Action 16_Pari -- スケルトン：２刀流　行動16_パリィ
+113201510 Skeleton: One-handed sword Action 15_Guard Break -- スケルトン：片手曲剣　行動15_ガードブレイク
+113201610 Skeleton: One-handed sword Action 16_Pari -- スケルトン：片手曲剣　行動16_パリィ
+113202410 Skeleton: One-handed stabbing sword Action 14_Pariy -- スケルトン：片手刺突剣　行動14_パリィ
+113300210 Wheel Skeleton: Bare hands Action 12_Wheel Throwing -- 車輪スケルトン：素手　行動12_車輪投げ
+113600010 Dark Reis Action 10_Soul Drain: Throw (for weapons destruction) -- ダークレイス　行動10_ソウルドレイン：投げ（武器破壊用）
+113700210 Necromancer Action 12_Absorption Throw -- ネクロマンサー　行動12_吸収投げ
+113700310 Necromancer Action 13_Pariei Break Stub -- ネクロマンサー　行動13_パリィブレイクスタブ
+113800510 Tortureman: Torture Apparatus Action 15_ Butting -- 拷問人：拷問器具　行動15_突き（投げ）
+113900410 Man-made immortal action 14_sickle throwing: gripping -- 人造不死人　行動14_鎌投げ：掴み
+113901110 Man-made Immortal: Bare-handed Action 11_Body Press -- 人造不死人：素手　行動11_ボディープレス
+114000110 Belka's Crow Action 11_Jump Throwing: Attach -- ベルカの鴉人　行動11_ジャンプ投げ：アタッチ
+114100510 Deceased: Sick man's clothes♂ action 12_foot grab stos -- 亡者：病人の服♂　行動12_足掴み投げ
+114700210 Strengthening Immortalaction 15_Throw: Gripping -- 強化不死人　行動15_投げ：掴み
+115000610 Statue: Night Action 16_Backstab -- スタチュー：ナイト　行動16_バックスタブ
+115000710 Statue: Night Action 17_Guard Break Stub -- スタチュー：ナイト　行動17_ガードブレイクスタブ
+115100610 Kingdom Soldier Warrior: Color (1): Action 17_Backstab: Grab -- 王国兵重戦士：色①： 行動17_バックスタブ：つかみ
+115110510 Royal Warrior: One Hand Club Action 17_Backstab: Grab -- 王国兵重戦士：片手棍棒 行動17_バックスタブ：つかみ
+120300410 Parasite Spider Action 13_Jump Throw: Attach Grab -- パラサイトスパイダー　行動13_ジャンプ投げ：アタッチ　掴み
+120300510 Parasite Spider Action 14_Fall Throw: Attach grab -- パラサイトスパイダー　行動14_落下投げ：アタッチ　掴み
+120900310 Hunting dog action 13_ pulled down: throw -- 狩猟犬　行動13_引き倒し：投げ
+120900410 Hunting dog action 14_foot bite: throw -- 狩猟犬　行動14_足下噛みつき：投げ
+120900510 Hunting dog action 15_ fall: throw -- 狩猟犬　行動15_落下：投げ
+120900610 Hunting dog action 16_ down: throw -- 狩猟犬　行動16_ダウン：投げ
+121400010 Fang Beast Action 10_ Throwing: Lunge -- 牙獣　行動10_投げ：突進
+121700510 Hide in the darkness action 15_grab_toss_right hand -- 闇に隠れし者　行動15_掴み投げ_右手
+121700610 hideout in the darkness action sixteen_throwing down_right hand -- 闇に隠れし者　行動16_ダウン投げ_右手
+122000110 Giant VenomOus Worm: Acid Action 11_Bite Toss -- 巨大毒角虫：酸　行動11_噛みつき投げ
+122400010 Coal Tar Action 10_Catch (Close Range) -- コールタール　行動10_捕まえる（近距離）
+122400110 Coal Tar Action 11_Catch (Long Distance) -- コールタール　行動11_捕まえる（遠距離）
+130000210 Auger Action 12_ Throwing: Goblin Predator -- オーガ　行動12_投げ：ゴブリン捕食
+130000310 Auger Action 13_ Throwing: Player Predator -- オーガ　行動13_投げ：プレイヤー捕食
+130102310 Wandering Knight: Head C Action 13_Skewered -- 彷徨える騎士：頭部C　行動13_串刺し投げ
+130200210 Prison Man: Two-Handed Sickle Action 13_Neck Hanking Tree -- 獄吏：両手鎌　行動13_ネックハンキングツリー
+130330310 Two-sided warrior: Snake head Action 8 Throw: Chidate Kannon -- 両面戦士：ヘビ頭　行動8 投げ：千手観音
+130330810 Double-sided warrior: Snake head Action 17 Throw: Chidate Kannon + -- 両面戦士：ヘビ頭　行動17 投げ：千手観音+
+130400010 Banshee Action 10_Mount Throw -- バンシー　行動10_マウント投げ
+130400110 Banshee jumped from a crouching state in action 11 -- バンシー　行動11_しゃがんでいる状態から飛び掛かり
+130700010 Durahan (deceased): One-handed sword: Medium Shield Action 10_ Throw: For weapons destruction -- デュラハン（亡者）：片手剣：中盾　行動10_投げ：武器破壊用
+130700510 Durahan (deceased): One-handed sword: Medium Shield Action 15_Parieblake Stub -- デュラハン（亡者）：片手剣：中盾　行動15_パリィブレイクスタブ
+130710010 Durahan (deceased): One-handed sword: Medium Shield Action 10_ Throw: For weapons destruction -- デュラハン（亡者）：片手剣：中盾　行動10_投げ：武器破壊用
+130710510 Durahan (deceased): One-handed sword: Medium Shield Action 15_Parieblake Stub -- デュラハン（亡者）：片手剣：中盾　行動15_パリィブレイクスタブ
+131200710 Immortal Senior Soldier: Sickle Action 17_Sickle: Throw -- イモータル上級兵士：鎌　行動17_鎌：投げ
+131300610 Takataku Warrior: Naoken Action 16_Backstab -- 鷹匠戦士：直剣　行動16_バックスタブ
+131300710 Falcon Warrior: Nabute Action 18_Parii Break Stub -- 鷹匠戦士：直剣　行動18_パリィブレイクスタブ
+131301610 Falcon Warrior: Swords Action 16_Backstab -- 鷹匠戦士：刺剣　行動16_バックスタブ
+131301710 Falcon Warrior: Swords Action 18_Pariebreak Stub -- 鷹匠戦士：刺剣　行動18_パリィブレイクスタブ
+131500310 Elephant (live) action 13_ throwing: hit with the nose -- 象人（生者）　行動13_投げ：鼻で殴る
+131600410 Captured Magician Action 14_KissOfDeath: Throw -- 捕らわれた魔導士　行動14_KissOfDeath：投げ
+131600510 Captured Magician Action 15_Ass Beating: Backstab -- 捕らわれた魔導士　行動15_お尻叩き：バックスタブ
+131800310 Bay Grant Action 13_Grab -- ベイグラント　行動13_掴み
+132100010 []-Mic Action 10_Jump Front Throw -- ν－ミミック　行動10_ジャンプ正面投げ
+132100110 [mimic action 11_jump back throwing -- ν－ミミック　行動11_ジャンプ背面投げ
+132100510 [] Micic Action 14_Mimetic Throw -- ν－ミミック　行動14_擬態投げ
+132600510 Butcher Action 15_Instant Death Throw -- ブッチャー　行動15_即死投げ
+133201510 Queen Knight A Action 15 Throwing Gripping -- 王妃の騎士A　行動15　投げ掴み
+133400710 Queen Knight C Parii Break Stub -- 王妃の騎士C　パリィブレイクスタブ
+133400810 Queen Knight C Backstab -- 王妃の騎士C　バックスタブ
+150000110 Javazahat Action 11_Throw: Bite -- ジャバザハット　行動11_投げ：噛みつき
+150100310 Naga Action 13_ Throwing: Jumping -- ナーガ　行動13_投げ：飛び掛かり
+150200610 Manscorpion ♂ Action 16_Throw: Capture (both hands) -- マンスコーピオン♂　行動16_投げ：捕獲（両手）
+150300510 Manscorpion ♀ Action 13_Tail Throw -- マンスコーピオン♀　行動13_テイル投げ
+150650310 Tomb Guard Agaduran Action 13_Parii Break Stub -- 墓守 アガドゥラン　行動13_パリィブレイクスタブ
+150700410 Rich Action 14_ Throwing: Body Absorption -- リッチ　行動14_投げ：体内吸収
+150900110 Dark Bishop Action 11_ Throwing: Drain -- ダークビショップ　行動11_投げ：ドレイン
+151100710 Phantom Knight Action 17_ Throwing: Shield Scissors -- ファントムナイト　行動17_投げ：盾鋏
+160200410 Beautiful Voice Frog Action 14 Arm Grab Throw -- 美声カエル　行動14 腕掴み投げ
+162500710 Ornstein Action 17_Throwing -- オーンスタイン  行動17_突き投げ
+162600710 Forgotten Sinner Action 17_Paribreak Stub -- 忘れられた罪人  行動17_パリィブレイクスタブ
+172400410 Kingdom Captain Dime Hug Action 14_Backstab -- 王国隊長ダイムハッグ  行動14_バックスタブ
+174200610 Wandering Warrior Clayton: One Hand Axe_Action 16_ Backstab -- 放浪の戦士　クレイトン：片手斧_行動16_バックスタブ
+174200710 Wandering Warrior Clayton: One Hand Axe_Action 17_Guard Break Stub -- 放浪の戦士　クレイトン：片手斧_行動17_ガードブレイクスタブ
+174201610 Wandering Warrior Clayton: Two-Handed Sword_Action 16_ Backstab -- 放浪の戦士　クレイトン：両手剣_行動16_バックスタブ
+174201710 Wandering Warrior Clayton: Two-Handed Sword_Action 17_Guard Break Stub -- 放浪の戦士　クレイトン：両手剣_行動17_ガードブレイクスタブ
+174300610 Moonlight Man Banholt: Two-Handed Sword_Action 16_ Backstab -- 月光爺バンホルト：両手剣_行動16_バックスタブ
+174300710 Moonlight Man Banholt: Two-Handed Sword_Action 17_Guard Break Stub -- 月光爺バンホルト：両手剣_行動17_ガードブレイクスタブ
+174401510 Pait__ Backstab_Grab -- ペイト__バックスタブ_掴み
+175100510 Atlas Culturevik Action_15_Backstab -- 地図書きカルチャヴィーク　行動_15_バックスタブ
+175100610 Atlas CultureVik Action_16_Guard Break Stub -- 地図書きカルチャヴィーク　行動_16_ガードブレイクスタブ
+175200410 Female Knight Akertilla Action 14_Backstab_Gripping -- 女騎士アーケルティーラ　行動14_バックスタブ_掴み
+175200610 Female Knight Akertilla Action 16_Guard Break Stub_Gripping -- 女騎士アーケルティーラ　行動16_ガードブレイクスタブ_掴み
+175500310 Stalker Warrior: Two-Handed Sword Action 13_Backstab_1St Stage -- ストーカー戦士：両手剣　行動13_バックスタブ_１段目
+175500410 Stalker Warrior: Two-Handed Sword Action 14_Guard Break Stub_1St Stage -- ストーカー戦士：両手剣　行動14_ガードブレイクスタブ_１段目
+177000310 Sealed Man Action 13_Swords: Backstab -- 封じられた人　行動13_刺剣：バックスタブ
+177000410 Sealed Man Action 14_Stabbing: Guard Break Stub -- 封じられた人　行動14_刺剣：ガードブレイクスタブ
+178500310 Knight of The Guardian Action 13_Backstab -- 守護の騎士　行動13_バックスタブ
+178500410 Knight of The Guardian Action 14_Guard Breaking Attack -- 守護の騎士　行動14_ガード崩し攻撃
+199999999 For enemy throwing test -- エネミーの投げテスト用

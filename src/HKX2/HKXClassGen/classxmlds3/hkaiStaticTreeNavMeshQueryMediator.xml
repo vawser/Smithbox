@@ -1,0 +1,6 @@
+<class name='hkaiStaticTreeNavMeshQueryMediator' version='1' signature='0x433a1e61' size='32' parent='hkaiNavMeshQueryMediator'>
+  <members>
+    <member name='tree' offset='16' ctype='hkcdStaticAabbTree' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='navMesh' offset='24' ctype='hkaiNavMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,11 @@
+<class name='hkaiCarver' version='1' signature='0x1421050f' size='32' parent='hkReferencedObject'>
+  <enums>
+    <enum name='FlagBits' flags='00000000'>
+      <enumitem name='CARVER_ERODE_EDGES' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='volume' offset='16' ctype='hkaiVolume' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='24' etype='FlagBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

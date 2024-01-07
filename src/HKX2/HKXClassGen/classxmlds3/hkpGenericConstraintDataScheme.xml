@@ -1,0 +1,9 @@
+<class name='hkpGenericConstraintDataScheme' version='1' signature='0x11fd6f6c' size='80'>
+  <members>
+    <member name='info' offset='0' ctype='hkpGenericConstraintDataSchemeConstraintInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='data' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='commands' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='modifiers' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='motors' offset='64' ctype='hkpConstraintMotor' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

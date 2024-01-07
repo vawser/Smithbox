@@ -1,0 +1,38 @@
+<class name='hkaiNavMeshPathSearchParameters' version='1' signature='0x3b79185' size='80'>
+  <enums>
+    <enum name='OutputPathFlags' flags='00000000'>
+      <enumitem name='OUTPUT_PATH_SMOOTHED' value='1'/>
+      <enumitem name='OUTPUT_PATH_PROJECTED' value='2'/>
+      <enumitem name='OUTPUT_PATH_COMPUTE_NORMALS' value='4'/>
+    </enum>
+    <enum name='UserEdgeTraversalTestType' flags='00000000'>
+      <enumitem name='USER_EDGE_TRAVERSAL_TEST_DISABLED' value='0'/>
+      <enumitem name='USER_EDGE_TRAVERSAL_TEST_ENABLED' value='1'/>
+    </enum>
+    <enum name='LineOfSightFlags' flags='00000000'>
+      <enumitem name='NO_LINE_OF_SIGHT_CHECK' value='0'/>
+      <enumitem name='EARLY_OUT_IF_NO_COST_MODIFIER' value='1'/>
+      <enumitem name='HANDLE_INTERNAL_VERTICES' value='2'/>
+      <enumitem name='EARLY_OUT_ALWAYS' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='up' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='costModifier' offset='16' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='edgeFilter' offset='24' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='validateInputs' offset='32' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputPathFlags' offset='33' etype='OutputPathFlags' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lineOfSightFlags' offset='34' etype='LineOfSightFlags' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useHierarchicalHeuristic' offset='35' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='projectedRadiusCheck' offset='36' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userEdgeTraversalTestType' offset='37' etype='UserEdgeTraversalTestType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useGrandparentDistanceCalculation' offset='38' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='heuristicWeight' offset='40' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simpleRadiusThreshold' offset='44' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maximumPathLength' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='searchSphereRadius' offset='52' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='searchCapsuleRadius' offset='56' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bufferSizes' offset='60' ctype='hkaiSearchParametersBufferSizes' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hierarchyBufferSizes' offset='68' ctype='hkaiSearchParametersBufferSizes' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

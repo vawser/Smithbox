@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <damage_Min_ContTime AltName="Damage Level - Minimum - Maintenance Time" Wiki="Set the maintenance time used for tiny damage animation" />
+    <damage_S_ContTime AltName="Damage Level - Small - Maintenance Time" Wiki="Set the maintenance time used for small damage animation" />
+    <damage_M_ContTime AltName="Damage Level - Medium - Maintenance Time" Wiki="Set the maintenance time used for medium damage animation" />
+    <damage_L_ContTime AltName="Damage Level - Heavy - Maintenance Time" Wiki="Set the maintenance time used for heavy damage animation" />
+    <damage_BlowS_ContTime AltName="Damage Level - Small Blow-off - Maintenance Time" Wiki="Set the maintenance time used for small blow-off damage animation" />
+    <damage_BlowM_ContTime AltName="Damage Level - Heavy Blow-off - Maintenance Time" Wiki="Set the maintenance time used during the big blow damage animation" />
+    <damage_Strike_ContTime AltName="Damage Level - Strike - Maintenance Time" Wiki="Set the maintenance time used for slamming damage animation" />
+    <damage_Uppercut_ContTime AltName="Damage Level - Uppercut - Maintenance Time" Wiki="Set the maintenance time used for launch damage animation" />
+    <damage_Push_ContTime AltName="Damage Level - Push - Maintenance Time" Wiki="Set the maintenance time used for push damage animation" />
+    <damage_Breath_ContTime AltName="Damage Level - Breath - Maintenance Time" Wiki="Set the maintenance time used for breath damage animation" />
+    <damage_HeadShot_ContTime AltName="Damage Level - Headshot - Maintenance Time" Wiki="Headshot damage Set the maintenance time used during animation" />
+    <guard_S_ContTime AltName="Guard Damage Level - Small - Maintenance Time" Wiki="Set the maintenance time used for guard receiving small animation" />
+    <guard_L_ContTime AltName="Guard Damage Level - Heavy - Maintenance Time" Wiki="Set the maintenance time used at the time of guard receiving large animation" />
+    <guard_LL_ContTime AltName="Guard Damage Level - Very Heavy - Maintenance Time" Wiki="Set the maintenance time used for guard receiving oversized animation" />
+    <guardBrake_ContTime AltName="Guard Damage Level - Break - Maintenance Time" Wiki="Set the maintenance time specified at the time of guard scraping animation" />
+    <damage_min_decTime AltName="Damage Level - Minimum - Deceleration Time" Wiki="Set the deceleration time used for minimal damage animation" />
+    <damage_S_decTime AltName="Damage Level - Small - Deceleration Time" Wiki="Set the deceleration time used for small damage animation" />
+    <damage_M_decTime AltName="Damage Level - Medium - Deceleration Time" Wiki="Set the deceleration time used for medium damage animation" />
+    <damage_L_decTime AltName="Damage Level - Heavy - Deceleration Time" Wiki="Set the deceleration time used for heavy damage animation" />
+    <damage_BlowS_decTime AltName="Damage Level - Small Blow-off - Deceleration Time" Wiki="Set the deceleration time used for small blow-off damage animation" />
+    <damage_BlowM_decTime AltName="Damage Level - Heavy Blow-off - Deceleration Time" Wiki="Large blow-off damage Set the deceleration time used during animation" />
+    <damage_Strike_decTime AltName="Damage Level - Strike - Deceleration Time" Wiki="Set the deceleration time used during slamming damage animation" />
+    <damage_Uppercut_DecTime AltName="Damage Level - Uppercut - Deceleration Time" Wiki="Set the deceleration time used during launch damage animation" />
+    <damage_Push_DecTime AltName="Damage Level - Push - Deceleration Time" Wiki="Set the deceleration time used during push damage animation" />
+    <damage_Breath_DecTime AltName="Damage Level - Breath - Deceleration Time" Wiki="Set the deceleration time used during breath damage animation" />
+    <damage_HeadShot_DecTime AltName="Damage Level - Headshot - Deceleration Time" Wiki="Headshot damage Set the deceleration time used during animation" />
+    <guard_S_DecTime AltName="Guard Damage Level - Small - Deceleration Time" Wiki="Set the deceleration time used for guard receiving small animation" />
+    <guard_L_DecTime AltName="Guard Damage Level - Heavy - Deceleration Time" Wiki="Set the deceleration time used for guard receiving large animation" />
+    <guard_LL_DecTime AltName="Guard Damage Level - Very Break - Deceleration Time" Wiki="Set the deceleration time used for guard receiving oversized animation" />
+    <guardBrake_DecTime AltName="Guard Damage Level - Break - Deceleration Time" Wiki="Set the deceleration time specified at the time of guard breaking animation" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self Wiki="Basic Knockback data for attacks"/>
+</PARAMMETA>

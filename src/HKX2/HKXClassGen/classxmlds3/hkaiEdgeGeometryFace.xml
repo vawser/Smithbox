@@ -1,0 +1,7 @@
+<class name='hkaiEdgeGeometryFace' version='1' signature='0x6ccb5e08' size='12'>
+  <members>
+    <member name='data' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='faceIndex' offset='4' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='8' etype='FaceFlagBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

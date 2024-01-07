@@ -1,0 +1,9 @@
+<class name='hkaiNavVolumeCell' version='1' signature='0x9029f6fa' size='24'>
+  <members>
+    <member name='min' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+    <member name='numEdges' offset='6' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='max' offset='8' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+    <member name='startEdgeIndex' offset='16' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='data' offset='20' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

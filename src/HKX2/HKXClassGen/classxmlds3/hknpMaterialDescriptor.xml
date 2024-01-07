@@ -1,0 +1,7 @@
+<class name='hknpMaterialDescriptor' version='1' signature='0x879edb1f' size='24'>
+  <members>
+    <member name='name' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='material' offset='8' ctype='hknpRefMaterial' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materialId' offset='16' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

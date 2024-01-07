@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <a000_rightArmFB AltName="[a000] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a000_rightWristFB AltName="[a000] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a000_rightWristIO AltName="[a000] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a000_leftArmFB AltName="[a000] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a000_leftWristFB AltName="[a000] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a000_leftWristIO AltName="[a000] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a002_rightArmFB AltName="[a002] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a002_rightWristFB AltName="[a002] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a002_rightWristIO AltName="[a002] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a002_leftArmFB AltName="[a002] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a002_leftWristFB AltName="[a002] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a002_leftWristIO AltName="[a002] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a003_rightArmFB AltName="[a003] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a003_rightWristFB AltName="[a003] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a003_rightWristIO AltName="[a003] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a003_leftArmFB AltName="[a003] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a003_leftWristFB AltName="[a003] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a003_leftWristIO AltName="[a003] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a010_rightArmFB AltName="[a010] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a010_rightWristFB AltName="[a010] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a010_rightWristIO AltName="[a010] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a010_leftArmFB AltName="[a010] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a010_leftWristFB AltName="[a010] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a010_leftWristIO AltName="[a010] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a012_rightArmFB AltName="[a012] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a012_rightWristFB AltName="[a012] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a012_rightWristIO AltName="[a012] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a012_leftArmFB AltName="[a012] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a012_leftWristFB AltName="[a012] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a012_leftWristIO AltName="[a012] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a013_rightArmFB AltName="[a013] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a013_rightWristFB AltName="[a013] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a013_rightWristIO AltName="[a013] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a013_leftArmFB AltName="[a013] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a013_leftWristFB AltName="[a013] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a013_leftWristIO AltName="[a013] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a014_rightArmFB AltName="[a014] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a014_rightWristFB AltName="[a014] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a014_rightWristIO AltName="[a014] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a014_leftArmFB AltName="[a014] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a014_leftWristFB AltName="[a014] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a014_leftWristIO AltName="[a014] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a015_rightArmFB AltName="[a015] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a015_rightWristFB AltName="[a015] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a015_rightWristIO AltName="[a015] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a015_leftArmFB AltName="[a015] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a015_leftWristFB AltName="[a015] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a015_leftWristIO AltName="[a015] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a016_rightArmFB AltName="[a016] Right Arm - Front/Back" Wiki="Right arm_front and back" />
+    <a016_rightWristFB AltName="[a016] Right Wrist - Front/Back" Wiki="Right wrist_front and back" />
+    <a016_rightWristIO AltName="[a016] Right Wrist - Inside/Outside" Wiki="Right wrist_inside and outside" />
+    <a016_leftArmFB AltName="[a016] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a016_leftWristFB AltName="[a016] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a016_leftWristIO AltName="[a016] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

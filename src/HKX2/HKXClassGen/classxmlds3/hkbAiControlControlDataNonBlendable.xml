@@ -1,0 +1,6 @@
+<class name='hkbAiControlControlDataNonBlendable' version='1' signature='0xa7750bd1' size='4'>
+  <members>
+    <member name='canControl' offset='0' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='1' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='3' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

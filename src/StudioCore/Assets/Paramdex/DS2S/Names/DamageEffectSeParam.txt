@@ -1,0 +1,840 @@
+0 Offensive side replacement -- 攻め側置換
+1 Without -- なし
+2 Iron -- 鉄
+3 Heavy iron -- 重鉄
+4 Tree -- 木
+5 Water -- 水
+6 Swamp -- 沼
+7 Wood -- 木材
+8 Raw Meat -- 生者肉
+9 Dead Meat -- 亡者肉
+10 Bugs -- 虫
+11 Giant -- 巨人
+12 Bone -- 骨
+13 Copper -- 銅
+14 Energy -- エネルギー
+15 Flame -- 炎
+16 Lightning -- 雷
+17 Darkness -- 闇
+18 Magic -- 魔力
+19 Stone -- 石
+20 Soil -- 土
+21 Carpet -- カーペット
+22 Grass -- 草
+23 Gravel -- 砂利
+24 Cloth -- 布
+25 Sand -- 砂
+26 Ash -- 灰
+27 Poison Swamp -- 毒沼
+28 Oil -- 油
+29 Coal tar -- コールタール
+30 Lava -- 溶岩
+31 Spider Thread -- 蜘蛛の糸
+32 Sulfur crystals -- 硫黄結晶
+33 Seoul -- ソウル
+34 Beautiful Voice Frog -- 美声カエル
+1000 Offensive side replacement -- 攻め側置換
+1001 Without -- なし
+1002 Iron -- 鉄
+1003 Heavy iron -- 重鉄
+1004 Tree -- 木
+1005 Water -- 水
+1006 Swamp -- 沼
+1007 Wood -- 木材
+1008 Raw Meat -- 生者肉
+1009 Dead Meat -- 亡者肉
+1010 Bugs -- 虫
+1011 Giant -- 巨人
+1012 Bone -- 骨
+1013 Copper -- 銅
+1014 Energy -- エネルギー
+1015 Flame -- 炎
+1016 Lightning -- 雷
+1017 Darkness -- 闇
+1018 Magic -- 魔力
+1019 Stone -- 石
+1020 Soil -- 土
+1021 Carpet -- カーペット
+1022 Grass -- 草
+1023 Gravel -- 砂利
+1024 Cloth -- 布
+1025 Sand -- 砂
+1026 Ash -- 灰
+1027 Poison Swamp -- 毒沼
+1028 Oil -- 油
+1029 Coal tar -- コールタール
+1030 Lava -- 溶岩
+1031 Spider Thread -- 蜘蛛の糸
+1032 Sulfur crystals -- 硫黄結晶
+1033 Seoul -- ソウル
+1034 Beautiful Voice Frog -- 美声カエル
+2000 Offensive side replacement -- 攻め側置換
+2001 Without -- なし
+2002 Iron -- 鉄
+2003 Heavy iron -- 重鉄
+2004 Tree -- 木
+2005 Water -- 水
+2006 Swamp -- 沼
+2007 Wood -- 木材
+2008 Raw Meat -- 生者肉
+2009 Dead Meat -- 亡者肉
+2010 Bugs -- 虫
+2011 Giant -- 巨人
+2012 Bone -- 骨
+2013 Copper -- 銅
+2014 Energy -- エネルギー
+2015 Flame -- 炎
+2016 Lightning -- 雷
+2017 Darkness -- 闇
+2018 Magic -- 魔力
+2019 Stone -- 石
+2020 Soil -- 土
+2021 Carpet -- カーペット
+2022 Grass -- 草
+2023 Gravel -- 砂利
+2024 Cloth -- 布
+2025 Sand -- 砂
+2026 Ash -- 灰
+2027 Poison Swamp -- 毒沼
+2028 Oil -- 油
+2029 Coal tar -- コールタール
+2030 Lava -- 溶岩
+2031 Spider Thread -- 蜘蛛の糸
+2032 Sulfur crystals -- 硫黄結晶
+2033 Seoul -- ソウル
+2034 Beautiful Voice Frog -- 美声カエル
+3000 Offensive side replacement -- 攻め側置換
+3001 Without -- なし
+3002 Iron -- 鉄
+3003 Heavy iron -- 重鉄
+3004 Tree -- 木
+3005 Water -- 水
+3006 Swamp -- 沼
+3007 Wood -- 木材
+3008 Raw Meat -- 生者肉
+3009 Dead Meat -- 亡者肉
+3010 Bugs -- 虫
+3011 Giant -- 巨人
+3012 Bone -- 骨
+3013 Copper -- 銅
+3014 Energy -- エネルギー
+3015 Flame -- 炎
+3016 Lightning -- 雷
+3017 Darkness -- 闇
+3018 Magic -- 魔力
+3019 Stone -- 石
+3020 Soil -- 土
+3021 Carpet -- カーペット
+3022 Grass -- 草
+3023 Gravel -- 砂利
+3024 Cloth -- 布
+3025 Sand -- 砂
+3026 Ash -- 灰
+3027 Poison Swamp -- 毒沼
+3028 Oil -- 油
+3029 Coal tar -- コールタール
+3030 Lava -- 溶岩
+3031 Spider Thread -- 蜘蛛の糸
+3032 Sulfur crystals -- 硫黄結晶
+3033 Seoul -- ソウル
+3034 Beautiful Voice Frog -- 美声カエル
+10000 Offensive side replacement -- 攻め側置換
+10001 Without -- なし
+10002 Iron -- 鉄
+10003 Heavy iron -- 重鉄
+10004 Tree -- 木
+10005 Water -- 水
+10006 Swamp -- 沼
+10007 Wood -- 木材
+10008 Raw Meat -- 生者肉
+10009 Dead Meat -- 亡者肉
+10010 Bugs -- 虫
+10011 Giant -- 巨人
+10012 Bone -- 骨
+10013 Copper -- 銅
+10014 Energy -- エネルギー
+10015 Flame -- 炎
+10016 Lightning -- 雷
+10017 Darkness -- 闇
+10018 Magic -- 魔力
+10019 Stone -- 石
+10020 Soil -- 土
+10021 Carpet -- カーペット
+10022 Grass -- 草
+10023 Gravel -- 砂利
+10024 Cloth -- 布
+10025 Sand -- 砂
+10026 Ash -- 灰
+10027 Poison Swamp -- 毒沼
+10028 Oil -- 油
+10029 Coal tar -- コールタール
+10030 Lava -- 溶岩
+10031 Spider Thread -- 蜘蛛の糸
+10032 Sulfur crystals -- 硫黄結晶
+10033 Seoul -- ソウル
+10034 Beautiful Voice Frog -- 美声カエル
+11000 Offensive side replacement -- 攻め側置換
+11001 Without -- なし
+11002 Iron -- 鉄
+11003 Heavy iron -- 重鉄
+11004 Tree -- 木
+11005 Water -- 水
+11006 Swamp -- 沼
+11007 Wood -- 木材
+11008 Raw Meat -- 生者肉
+11009 Dead Meat -- 亡者肉
+11010 Bugs -- 虫
+11011 Giant -- 巨人
+11012 Bone -- 骨
+11013 Copper -- 銅
+11014 Energy -- エネルギー
+11015 Flame -- 炎
+11016 Lightning -- 雷
+11017 Darkness -- 闇
+11018 Magic -- 魔力
+11019 Stone -- 石
+11020 Soil -- 土
+11021 Carpet -- カーペット
+11022 Grass -- 草
+11023 Gravel -- 砂利
+11024 Cloth -- 布
+11025 Sand -- 砂
+11026 Ash -- 灰
+11027 Poison Swamp -- 毒沼
+11028 Oil -- 油
+11029 Coal tar -- コールタール
+11030 Lava -- 溶岩
+11031 Spider Thread -- 蜘蛛の糸
+11032 Sulfur crystals -- 硫黄結晶
+11033 Seoul -- ソウル
+11034 Beautiful Voice Frog -- 美声カエル
+12000 Offensive side replacement -- 攻め側置換
+12001 Without -- なし
+12002 Iron -- 鉄
+12003 Heavy iron -- 重鉄
+12004 Tree -- 木
+12005 Water -- 水
+12006 Swamp -- 沼
+12007 Wood -- 木材
+12008 Raw Meat -- 生者肉
+12009 Dead Meat -- 亡者肉
+12010 Bugs -- 虫
+12011 Giant -- 巨人
+12012 Bone -- 骨
+12013 Copper -- 銅
+12014 Energy -- エネルギー
+12015 Flame -- 炎
+12016 Lightning -- 雷
+12017 Darkness -- 闇
+12018 Magic -- 魔力
+12019 Stone -- 石
+12020 Soil -- 土
+12021 Carpet -- カーペット
+12022 Grass -- 草
+12023 Gravel -- 砂利
+12024 Cloth -- 布
+12025 Sand -- 砂
+12026 Ash -- 灰
+12027 Poison Swamp -- 毒沼
+12028 Oil -- 油
+12029 Coal tar -- コールタール
+12030 Lava -- 溶岩
+12031 Spider Thread -- 蜘蛛の糸
+12032 Sulfur crystals -- 硫黄結晶
+12033 Seoul -- ソウル
+12034 Beautiful Voice Frog -- 美声カエル
+13000 Offensive side replacement -- 攻め側置換
+13001 Without -- なし
+13002 Iron -- 鉄
+13003 Heavy iron -- 重鉄
+13004 Tree -- 木
+13005 Water -- 水
+13006 Swamp -- 沼
+13007 Wood -- 木材
+13008 Raw Meat -- 生者肉
+13009 Dead Meat -- 亡者肉
+13010 Bugs -- 虫
+13011 Giant -- 巨人
+13012 Bone -- 骨
+13013 Copper -- 銅
+13014 Energy -- エネルギー
+13015 Flame -- 炎
+13016 Lightning -- 雷
+13017 Darkness -- 闇
+13018 Magic -- 魔力
+13019 Stone -- 石
+13020 Soil -- 土
+13021 Carpet -- カーペット
+13022 Grass -- 草
+13023 Gravel -- 砂利
+13024 Cloth -- 布
+13025 Sand -- 砂
+13026 Ash -- 灰
+13027 Poison Swamp -- 毒沼
+13028 Oil -- 油
+13029 Coal tar -- コールタール
+13030 Lava -- 溶岩
+13031 Spider Thread -- 蜘蛛の糸
+13032 Sulfur crystals -- 硫黄結晶
+13033 Seoul -- ソウル
+13034 Beautiful Voice Frog -- 美声カエル
+20000 Offensive side replacement -- 攻め側置換
+20001 Without -- なし
+20002 Iron -- 鉄
+20003 Heavy iron -- 重鉄
+20004 Tree -- 木
+20005 Water -- 水
+20006 Swamp -- 沼
+20007 Wood -- 木材
+20008 Raw Meat -- 生者肉
+20009 Dead Meat -- 亡者肉
+20010 Bugs -- 虫
+20011 Giant -- 巨人
+20012 Bone -- 骨
+20013 Copper -- 銅
+20014 Energy -- エネルギー
+20015 Flame -- 炎
+20016 Lightning -- 雷
+20017 Darkness -- 闇
+20018 Magic -- 魔力
+20019 Stone -- 石
+20020 Soil -- 土
+20021 Carpet -- カーペット
+20022 Grass -- 草
+20023 Gravel -- 砂利
+20024 Cloth -- 布
+20025 Sand -- 砂
+20026 Ash -- 灰
+20027 Poison Swamp -- 毒沼
+20028 Oil -- 油
+20029 Coal tar -- コールタール
+20030 Lava -- 溶岩
+20031 Spider Thread -- 蜘蛛の糸
+20032 Sulfur crystals -- 硫黄結晶
+20033 Seoul -- ソウル
+20034 Beautiful Voice Frog -- 美声カエル
+21000 Offensive side replacement -- 攻め側置換
+21001 Without -- なし
+21002 Iron -- 鉄
+21003 Heavy iron -- 重鉄
+21004 Tree -- 木
+21005 Water -- 水
+21006 Swamp -- 沼
+21007 Wood -- 木材
+21008 Raw Meat -- 生者肉
+21009 Dead Meat -- 亡者肉
+21010 Bugs -- 虫
+21011 Giant -- 巨人
+21012 Bone -- 骨
+21013 Copper -- 銅
+21014 Energy -- エネルギー
+21015 Flame -- 炎
+21016 Lightning -- 雷
+21017 Darkness -- 闇
+21018 Magic -- 魔力
+21019 Stone -- 石
+21020 Soil -- 土
+21021 Carpet -- カーペット
+21022 Grass -- 草
+21023 Gravel -- 砂利
+21024 Cloth -- 布
+21025 Sand -- 砂
+21026 Ash -- 灰
+21027 Poison Swamp -- 毒沼
+21028 Oil -- 油
+21029 Coal tar -- コールタール
+21030 Lava -- 溶岩
+21031 Spider Thread -- 蜘蛛の糸
+21032 Sulfur crystals -- 硫黄結晶
+21033 Seoul -- ソウル
+21034 Beautiful Voice Frog -- 美声カエル
+22000 Offensive side replacement -- 攻め側置換
+22001 Without -- なし
+22002 Iron -- 鉄
+22003 Heavy iron -- 重鉄
+22004 Tree -- 木
+22005 Water -- 水
+22006 Swamp -- 沼
+22007 Wood -- 木材
+22008 Raw Meat -- 生者肉
+22009 Dead Meat -- 亡者肉
+22010 Bugs -- 虫
+22011 Giant -- 巨人
+22012 Bone -- 骨
+22013 Copper -- 銅
+22014 Energy -- エネルギー
+22015 Flame -- 炎
+22016 Lightning -- 雷
+22017 Darkness -- 闇
+22018 Magic -- 魔力
+22019 Stone -- 石
+22020 Soil -- 土
+22021 Carpet -- カーペット
+22022 Grass -- 草
+22023 Gravel -- 砂利
+22024 Cloth -- 布
+22025 Sand -- 砂
+22026 Ash -- 灰
+22027 Poison Swamp -- 毒沼
+22028 Oil -- 油
+22029 Coal tar -- コールタール
+22030 Lava -- 溶岩
+22031 Spider Thread -- 蜘蛛の糸
+22032 Sulfur crystals -- 硫黄結晶
+22033 Seoul -- ソウル
+22034 Beautiful Voice Frog -- 美声カエル
+23000 Offensive side replacement -- 攻め側置換
+23001 Without -- なし
+23002 Iron -- 鉄
+23003 Heavy iron -- 重鉄
+23004 Tree -- 木
+23005 Water -- 水
+23006 Swamp -- 沼
+23007 Wood -- 木材
+23008 Raw Meat -- 生者肉
+23009 Dead Meat -- 亡者肉
+23010 Bugs -- 虫
+23011 Giant -- 巨人
+23012 Bone -- 骨
+23013 Copper -- 銅
+23014 Energy -- エネルギー
+23015 Flame -- 炎
+23016 Lightning -- 雷
+23017 Darkness -- 闇
+23018 Magic -- 魔力
+23019 Stone -- 石
+23020 Soil -- 土
+23021 Carpet -- カーペット
+23022 Grass -- 草
+23023 Gravel -- 砂利
+23024 Cloth -- 布
+23025 Sand -- 砂
+23026 Ash -- 灰
+23027 Poison Swamp -- 毒沼
+23028 Oil -- 油
+23029 Coal tar -- コールタール
+23030 Lava -- 溶岩
+23031 Spider Thread -- 蜘蛛の糸
+23032 Sulfur crystals -- 硫黄結晶
+23033 Seoul -- ソウル
+23034 Beautiful Voice Frog -- 美声カエル
+30000 Offensive side replacement -- 攻め側置換
+30001 Without -- なし
+30002 Iron -- 鉄
+30003 Heavy iron -- 重鉄
+30004 Tree -- 木
+30005 Water -- 水
+30006 Swamp -- 沼
+30007 Wood -- 木材
+30008 Raw Meat -- 生者肉
+30009 Dead Meat -- 亡者肉
+30010 Bugs -- 虫
+30011 Giant -- 巨人
+30012 Bone -- 骨
+30013 Copper -- 銅
+30014 Energy -- エネルギー
+30015 Flame -- 炎
+30016 Lightning -- 雷
+30017 Darkness -- 闇
+30018 Magic -- 魔力
+30019 Stone -- 石
+30020 Soil -- 土
+30021 Carpet -- カーペット
+30022 Grass -- 草
+30023 Gravel -- 砂利
+30024 Cloth -- 布
+30025 Sand -- 砂
+30026 Ash -- 灰
+30027 Poison Swamp -- 毒沼
+30028 Oil -- 油
+30029 Coal tar -- コールタール
+30030 Lava -- 溶岩
+30031 Spider Thread -- 蜘蛛の糸
+30032 Sulfur crystals -- 硫黄結晶
+30033 Seoul -- ソウル
+30034 Beautiful Voice Frog -- 美声カエル
+31000 Offensive side replacement -- 攻め側置換
+31001 Without -- なし
+31002 Iron -- 鉄
+31003 Heavy iron -- 重鉄
+31004 Tree -- 木
+31005 Water -- 水
+31006 Swamp -- 沼
+31007 Wood -- 木材
+31008 Raw Meat -- 生者肉
+31009 Dead Meat -- 亡者肉
+31010 Bugs -- 虫
+31011 Giant -- 巨人
+31012 Bone -- 骨
+31013 Copper -- 銅
+31014 Energy -- エネルギー
+31015 Flame -- 炎
+31016 Lightning -- 雷
+31017 Darkness -- 闇
+31018 Magic -- 魔力
+31019 Stone -- 石
+31020 Soil -- 土
+31021 Carpet -- カーペット
+31022 Grass -- 草
+31023 Gravel -- 砂利
+31024 Cloth -- 布
+31025 Sand -- 砂
+31026 Ash -- 灰
+31027 Poison Swamp -- 毒沼
+31028 Oil -- 油
+31029 Coal tar -- コールタール
+31030 Lava -- 溶岩
+31031 Spider Thread -- 蜘蛛の糸
+31032 Sulfur crystals -- 硫黄結晶
+31033 Seoul -- ソウル
+31034 Beautiful Voice Frog -- 美声カエル
+32000 Offensive side replacement -- 攻め側置換
+32001 Without -- なし
+32002 Iron -- 鉄
+32003 Heavy iron -- 重鉄
+32004 Tree -- 木
+32005 Water -- 水
+32006 Swamp -- 沼
+32007 Wood -- 木材
+32008 Raw Meat -- 生者肉
+32009 Dead Meat -- 亡者肉
+32010 Bugs -- 虫
+32011 Giant -- 巨人
+32012 Bone -- 骨
+32013 Copper -- 銅
+32014 Energy -- エネルギー
+32015 Flame -- 炎
+32016 Lightning -- 雷
+32017 Darkness -- 闇
+32018 Magic -- 魔力
+32019 Stone -- 石
+32020 Soil -- 土
+32021 Carpet -- カーペット
+32022 Grass -- 草
+32023 Gravel -- 砂利
+32024 Cloth -- 布
+32025 Sand -- 砂
+32026 Ash -- 灰
+32027 Poison Swamp -- 毒沼
+32028 Oil -- 油
+32029 Coal tar -- コールタール
+32030 Lava -- 溶岩
+32031 Spider Thread -- 蜘蛛の糸
+32032 Sulfur crystals -- 硫黄結晶
+32033 Seoul -- ソウル
+32034 Beautiful Voice Frog -- 美声カエル
+33000 Offensive side replacement -- 攻め側置換
+33001 Without -- なし
+33002 Iron -- 鉄
+33003 Heavy iron -- 重鉄
+33004 Tree -- 木
+33005 Water -- 水
+33006 Swamp -- 沼
+33007 Wood -- 木材
+33008 Raw Meat -- 生者肉
+33009 Dead Meat -- 亡者肉
+33010 Bugs -- 虫
+33011 Giant -- 巨人
+33012 Bone -- 骨
+33013 Copper -- 銅
+33014 Energy -- エネルギー
+33015 Flame -- 炎
+33016 Lightning -- 雷
+33017 Darkness -- 闇
+33018 Magic -- 魔力
+33019 Stone -- 石
+33020 Soil -- 土
+33021 Carpet -- カーペット
+33022 Grass -- 草
+33023 Gravel -- 砂利
+33024 Cloth -- 布
+33025 Sand -- 砂
+33026 Ash -- 灰
+33027 Poison Swamp -- 毒沼
+33028 Oil -- 油
+33029 Coal tar -- コールタール
+33030 Lava -- 溶岩
+33031 Spider Thread -- 蜘蛛の糸
+33032 Sulfur crystals -- 硫黄結晶
+33033 Seoul -- ソウル
+33034 Beautiful Voice Frog -- 美声カエル
+40000 Offensive side replacement -- 攻め側置換
+40001 Without -- なし
+40002 Iron -- 鉄
+40003 Heavy iron -- 重鉄
+40004 Tree -- 木
+40005 Water -- 水
+40006 Swamp -- 沼
+40007 Wood -- 木材
+40008 Raw Meat -- 生者肉
+40009 Dead Meat -- 亡者肉
+40010 Bugs -- 虫
+40011 Giant -- 巨人
+40012 Bone -- 骨
+40013 Copper -- 銅
+40014 Energy -- エネルギー
+40015 Flame -- 炎
+40016 Lightning -- 雷
+40017 Darkness -- 闇
+40018 Magic -- 魔力
+40019 Stone -- 石
+40020 Soil -- 土
+40021 Carpet -- カーペット
+40022 Grass -- 草
+40023 Gravel -- 砂利
+40024 Cloth -- 布
+40025 Sand -- 砂
+40026 Ash -- 灰
+40027 Poison Swamp -- 毒沼
+40028 Oil -- 油
+40029 Coal tar -- コールタール
+40030 Lava -- 溶岩
+40031 Spider Thread -- 蜘蛛の糸
+40032 Sulfur crystals -- 硫黄結晶
+40033 Seoul -- ソウル
+40034 Beautiful Voice Frog -- 美声カエル
+41000 Offensive side replacement -- 攻め側置換
+41001 Without -- なし
+41002 Iron -- 鉄
+41003 Heavy iron -- 重鉄
+41004 Tree -- 木
+41005 Water -- 水
+41006 Swamp -- 沼
+41007 Wood -- 木材
+41008 Raw Meat -- 生者肉
+41009 Dead Meat -- 亡者肉
+41010 Bugs -- 虫
+41011 Giant -- 巨人
+41012 Bone -- 骨
+41013 Copper -- 銅
+41014 Energy -- エネルギー
+41015 Flame -- 炎
+41016 Lightning -- 雷
+41017 Darkness -- 闇
+41018 Magic -- 魔力
+41019 Stone -- 石
+41020 Soil -- 土
+41021 Carpet -- カーペット
+41022 Grass -- 草
+41023 Gravel -- 砂利
+41024 Cloth -- 布
+41025 Sand -- 砂
+41026 Ash -- 灰
+41027 Poison Swamp -- 毒沼
+41028 Oil -- 油
+41029 Coal tar -- コールタール
+41030 Lava -- 溶岩
+41031 Spider Thread -- 蜘蛛の糸
+41032 Sulfur crystals -- 硫黄結晶
+41033 Seoul -- ソウル
+41034 Beautiful Voice Frog -- 美声カエル
+42000 Offensive side replacement -- 攻め側置換
+42001 Without -- なし
+42002 Iron -- 鉄
+42003 Heavy iron -- 重鉄
+42004 Tree -- 木
+42005 Water -- 水
+42006 Swamp -- 沼
+42007 Wood -- 木材
+42008 Raw Meat -- 生者肉
+42009 Dead Meat -- 亡者肉
+42010 Bugs -- 虫
+42011 Giant -- 巨人
+42012 Bone -- 骨
+42013 Copper -- 銅
+42014 Energy -- エネルギー
+42015 Flame -- 炎
+42016 Lightning -- 雷
+42017 Darkness -- 闇
+42018 Magic -- 魔力
+42019 Stone -- 石
+42020 Soil -- 土
+42021 Carpet -- カーペット
+42022 Grass -- 草
+42023 Gravel -- 砂利
+42024 Cloth -- 布
+42025 Sand -- 砂
+42026 Ash -- 灰
+42027 Poison Swamp -- 毒沼
+42028 Oil -- 油
+42029 Coal tar -- コールタール
+42030 Lava -- 溶岩
+42031 Spider Thread -- 蜘蛛の糸
+42032 Sulfur crystals -- 硫黄結晶
+42033 Seoul -- ソウル
+42034 Beautiful Voice Frog -- 美声カエル
+43000 Offensive side replacement -- 攻め側置換
+43001 Without -- なし
+43002 Iron -- 鉄
+43003 Heavy iron -- 重鉄
+43004 Tree -- 木
+43005 Water -- 水
+43006 Swamp -- 沼
+43007 Wood -- 木材
+43008 Raw Meat -- 生者肉
+43009 Dead Meat -- 亡者肉
+43010 Bugs -- 虫
+43011 Giant -- 巨人
+43012 Bone -- 骨
+43013 Copper -- 銅
+43014 Energy -- エネルギー
+43015 Flame -- 炎
+43016 Lightning -- 雷
+43017 Darkness -- 闇
+43018 Magic -- 魔力
+43019 Stone -- 石
+43020 Soil -- 土
+43021 Carpet -- カーペット
+43022 Grass -- 草
+43023 Gravel -- 砂利
+43024 Cloth -- 布
+43025 Sand -- 砂
+43026 Ash -- 灰
+43027 Poison Swamp -- 毒沼
+43028 Oil -- 油
+43029 Coal tar -- コールタール
+43030 Lava -- 溶岩
+43031 Spider Thread -- 蜘蛛の糸
+43032 Sulfur crystals -- 硫黄結晶
+43033 Seoul -- ソウル
+43034 Beautiful Voice Frog -- 美声カエル
+50000 Offensive side replacement -- 攻め側置換
+50001 Without -- なし
+50002 Iron -- 鉄
+50003 Heavy iron -- 重鉄
+50004 Tree -- 木
+50005 Water -- 水
+50006 Swamp -- 沼
+50007 Wood -- 木材
+50008 Raw Meat -- 生者肉
+50009 Dead Meat -- 亡者肉
+50010 Bugs -- 虫
+50011 Giant -- 巨人
+50012 Bone -- 骨
+50013 Copper -- 銅
+50014 Energy -- エネルギー
+50015 Flame -- 炎
+50016 Lightning -- 雷
+50017 Darkness -- 闇
+50018 Magic -- 魔力
+50019 Stone -- 石
+50020 Soil -- 土
+50021 Carpet -- カーペット
+50022 Grass -- 草
+50023 Gravel -- 砂利
+50024 Cloth -- 布
+50025 Sand -- 砂
+50026 Ash -- 灰
+50027 Poison Swamp -- 毒沼
+50028 Oil -- 油
+50029 Coal tar -- コールタール
+50030 Lava -- 溶岩
+50031 Spider Thread -- 蜘蛛の糸
+50032 Sulfur crystals -- 硫黄結晶
+50033 Seoul -- ソウル
+50034 Beautiful Voice Frog -- 美声カエル
+51000 Offensive side replacement -- 攻め側置換
+51001 Without -- なし
+51002 Iron -- 鉄
+51003 Heavy iron -- 重鉄
+51004 Tree -- 木
+51005 Water -- 水
+51006 Swamp -- 沼
+51007 Wood -- 木材
+51008 Raw Meat -- 生者肉
+51009 Dead Meat -- 亡者肉
+51010 Bugs -- 虫
+51011 Giant -- 巨人
+51012 Bone -- 骨
+51013 Copper -- 銅
+51014 Energy -- エネルギー
+51015 Flame -- 炎
+51016 Lightning -- 雷
+51017 Darkness -- 闇
+51018 Magic -- 魔力
+51019 Stone -- 石
+51020 Soil -- 土
+51021 Carpet -- カーペット
+51022 Grass -- 草
+51023 Gravel -- 砂利
+51024 Cloth -- 布
+51025 Sand -- 砂
+51026 Ash -- 灰
+51027 Poison Swamp -- 毒沼
+51028 Oil -- 油
+51029 Coal tar -- コールタール
+51030 Lava -- 溶岩
+51031 Spider Thread -- 蜘蛛の糸
+51032 Sulfur crystals -- 硫黄結晶
+51033 Seoul -- ソウル
+51034 Beautiful Voice Frog -- 美声カエル
+52000 Offensive side replacement -- 攻め側置換
+52001 Without -- なし
+52002 Iron -- 鉄
+52003 Heavy iron -- 重鉄
+52004 Tree -- 木
+52005 Water -- 水
+52006 Swamp -- 沼
+52007 Wood -- 木材
+52008 Raw Meat -- 生者肉
+52009 Dead Meat -- 亡者肉
+52010 Bugs -- 虫
+52011 Giant -- 巨人
+52012 Bone -- 骨
+52013 Copper -- 銅
+52014 Energy -- エネルギー
+52015 Flame -- 炎
+52016 Lightning -- 雷
+52017 Darkness -- 闇
+52018 Magic -- 魔力
+52019 Stone -- 石
+52020 Soil -- 土
+52021 Carpet -- カーペット
+52022 Grass -- 草
+52023 Gravel -- 砂利
+52024 Cloth -- 布
+52025 Sand -- 砂
+52026 Ash -- 灰
+52027 Poison Swamp -- 毒沼
+52028 Oil -- 油
+52029 Coal tar -- コールタール
+52030 Lava -- 溶岩
+52031 Spider Thread -- 蜘蛛の糸
+52032 Sulfur crystals -- 硫黄結晶
+52033 Seoul -- ソウル
+52034 Beautiful Voice Frog -- 美声カエル
+53000 Offensive side replacement -- 攻め側置換
+53001 Without -- なし
+53002 Iron -- 鉄
+53003 Heavy iron -- 重鉄
+53004 Tree -- 木
+53005 Water -- 水
+53006 Swamp -- 沼
+53007 Wood -- 木材
+53008 Raw Meat -- 生者肉
+53009 Dead Meat -- 亡者肉
+53010 Bugs -- 虫
+53011 Giant -- 巨人
+53012 Bone -- 骨
+53013 Copper -- 銅
+53014 Energy -- エネルギー
+53015 Flame -- 炎
+53016 Lightning -- 雷
+53017 Darkness -- 闇
+53018 Magic -- 魔力
+53019 Stone -- 石
+53020 Soil -- 土
+53021 Carpet -- カーペット
+53022 Grass -- 草
+53023 Gravel -- 砂利
+53024 Cloth -- 布
+53025 Sand -- 砂
+53026 Ash -- 灰
+53027 Poison Swamp -- 毒沼
+53028 Oil -- 油
+53029 Coal tar -- コールタール
+53030 Lava -- 溶岩
+53031 Spider Thread -- 蜘蛛の糸
+53032 Sulfur crystals -- 硫黄結晶
+53033 Seoul -- ソウル
+53034 Beautiful Voice Frog -- 美声カエル

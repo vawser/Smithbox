@@ -1,0 +1,7 @@
+<class name='hkpVehicleFrictionDescription' version='1' signature='0xbc4ef876' size='224' parent='hkReferencedObject'>
+  <members>
+    <member name='wheelDistance' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='chassisMassInv' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='axleDescr' offset='24' ctype='hkpVehicleFrictionDescriptionAxisDescription' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

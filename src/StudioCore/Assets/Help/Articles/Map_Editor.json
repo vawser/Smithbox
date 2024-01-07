@@ -1,0 +1,29 @@
+{
+    "Title": "Map Editor",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "The Map Editor allows you to edit the map files used by the game, also known as MSB files.",
+        "",
+        "To edit a map:",
+        "- Enter the Map Editor tab",
+        "- Hover over the map you wish to edit in the Map Object List",
+        "- Right-click to bring up the context menu, select Load Map",
+        "",
+        "A simple explanation covering each of the high-level map object types:",
+        "",
+        "--- Event ---",
+        "Map objects that control map attributes or state.",
+        "",
+        "--- Light ---",
+        "Map objects that control the spot and directional lightning within a map.",
+        "",
+        "--- Part ---",
+        "Map objects are entities within the map that the player interacts with,",
+        "or that shape the level.",
+        "",
+        "--- Region ---",
+        "Map objects that represent areas, either for detection or for placement."
+    ]
+}

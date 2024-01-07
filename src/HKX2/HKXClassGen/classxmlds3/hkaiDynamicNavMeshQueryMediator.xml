@@ -1,0 +1,8 @@
+<class name='hkaiDynamicNavMeshQueryMediator' version='1' signature='0x68e898c1' size='48' parent='hkaiNavMeshQueryMediator'>
+  <members>
+    <member name='collection' offset='16' ctype='hkaiStreamingCollection' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aabbTree' offset='24' ctype='hkcdDynamicAabbTree' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cutter' offset='32' ctype='hkaiNavMeshCutter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cutAabbTolerance' offset='40' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

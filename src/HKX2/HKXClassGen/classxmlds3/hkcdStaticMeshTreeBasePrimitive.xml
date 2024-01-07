@@ -1,0 +1,14 @@
+<class name='hkcdStaticMeshTreeBasePrimitive' version='1' signature='0x56da2f7c' size='4'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='INVALID' value='0'/>
+      <enumitem name='TRIANGLE' value='1'/>
+      <enumitem name='QUAD' value='2'/>
+      <enumitem name='CUSTOM' value='3'/>
+      <enumitem name='NUM_TYPES' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='indices' offset='0' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

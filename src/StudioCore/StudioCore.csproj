@@ -1,0 +1,483 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <LangVersion>12</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Fonts\forkawesome-webfont.ttf" />
+    <None Remove="Assets\Fonts\NotoSansCJKtc-Light.otf" />
+    <None Remove="Assets\Fonts\NotoSansCJKtc-Medium.otf" />
+    <None Remove="Assets\Fonts\NotoSansMonoCJKtc-Regular.otf" />
+    <None Remove="Assets\Fonts\OpenFontIcons.ttf" />
+    <None Remove="Assets\Fonts\RobotoMono-Light.ttf" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\AREA_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ARMOR_HANDS_UP_F_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ARMOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ARMOR_REINFORCE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ARROW_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\BEHAVIOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\BOSS_BATTLE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\BOSS_ENEMY_GENERATE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\BOSS_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\BOSS_PARTS_MODEL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\BOSS_PARTS_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\BULLET_ATTACH_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\BULLET_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_ACTION_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_AREA_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_BATTLE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_CONTROL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_ELASTIC_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_EVENT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_EXFOLLOW_IMPACT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_EXFOLLOW_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_FREE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_GPAPPLER_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_MENU_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_NORMAL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CAMERA_SUBJECTIVE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_COLOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_COMMON_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_CULLING_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_EDIT_PARAM_BODY_PRESET.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_EMISSIVE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_EQUIP_LOAD_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_EQUIP_WEAPON_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_FULLBODY_SFX_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_GROWTH_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_LEVEL_UP_SOULS_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_MODEL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_MOVE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_MULTIPLAY_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_NETWORK_PHANTOM_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_NET_PHANTOM_SOUL_RATE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_PHANTOM_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_POINT_WIND_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_ROUND_DAMAGE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_ROUND_DROP_SOUL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_WET_ASPECT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHR_WET_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CHUNK_PHASE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\COMBO_BEHAVIOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CRIMINAL_AND_DECEASED_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CUSTOM_ATTR_COST_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\CUSTOM_ATTR_SPEC_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_ADJUST_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_ATTACK_TYPE_RATE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_CTRL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_DEAD_MOTION_WEIGHT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_EFFECT_MATERIAL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_EFFECT_SE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_EFFECT_SFX_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_MOTION_WEIGHT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_MOVEMENT_POWER_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_OBJ_ATTACK_ATTR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_OVER_WRITE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_SFX_TRACE_DP_COLOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_STYLE_RATE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_WEAPON_TYPE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DAMAGE_WIND_CATE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DEAD_TYPE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DECAL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DEMO_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\DUAL_WIELDING_PERMISSION_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ENEMY_ATTACK_MOVE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ENEMY_DEFAULT_LOGIC_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ENEMY_SHOT_SFX_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\EQUIP_CULLING_TARGET_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\EQUIP_INTERFERE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\EQUIP_REINFORCE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ESTUS_FLASK_LV_DATA_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ESTUS_FLASK_MAX_REINFORCE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\EVENT_COMMON_PARAM_FLOAT_ST.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\EVENT_COMMON_PARAM_ST.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\EVENT_FLAG_LIST_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\EVENT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\EZSTATE_SHARED_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FACE_EDIT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FACE_EDIT_PARAM_COLOR_A_PRESET.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FACE_EDIT_PARAM_COLOR_PRESET.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FACE_EDIT_PARAM_MONTAGE_CAMERA.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FACE_EDIT_PARAM_RACE_PRESET.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FALLING_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FE_COLOR_PALETTE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FE_COLOR_SET_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FE_CONTROLLER_SETTING_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FE_HP_ST_GUAGE_SETTING_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FE_SCROLL_SPEED_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FE_TIME_SETTING_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FE_WEAPON_THRESHOLD_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FOOT_EFFECT_SFX_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\FOOT_EFFECT_WATER_SFX_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\GENERAL_LOCATION_EVENT_PARAM_ST.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\GENERATOR_LOCATION_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\GENERATOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\GENERATOR_REGIST_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\GRAB_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\GROUND_MATERIAL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\GUARD_LEVEL_MOTION_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\HIT_BACK_MATRIX_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\HIT_BACK_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ITEM_LOT_PARAM2.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ITEM_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ITEM_TYPE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ITEM_USAGE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ITEM_USE_CHECK_DIALOG_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\KEY_CONFIG_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\KEY_GUIDE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\LACK_OF_STATS_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\LEVELUP_STATUS_CALC_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\LOADING_DISPLAY_ITEM_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\LOCK_ON_CAMERA_OFFSET_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\LOCK_ON_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\LOCK_TARGET_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\LOGIC_COM_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_BONFIRE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_BREAK_ACTION_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_CHRSPEED_SCALE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_DOOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_GD_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_INSTANCE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_INSTANCE_TYPE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_MOMENTUM_SCALE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_PLAY_GO_DOOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_TORCH_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_WEIGHT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_OBJECT_WHITE_DOOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_STATEACT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MAP_VOLUME_FOG_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MATERIAL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MENU_CATEGORY_ICON_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MENU_STATS_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MODEL_LINK_LOD_TYPE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\MOVIE_TEXT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NETWORK_AREA_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NETWORK_MESSAGE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NETWORK_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NOISE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NPC_EVENT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NPC_GENERATE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NPC_INFO_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NPC_NAME_SWAP_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NPC_PLAYER_SKIN_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\NPC_PLAYER_STATUS_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\ONLINE_EVENT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PAD_RUMBLE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PHYSICS_TEXTURE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PHYS_STATS_PER_LEVEL_STAT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PLAYER_COMMON_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PLAYER_LIGHT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PLAYER_STATUS_ITEM_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PLAYER_STATUS_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PLAY_AREA_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\PLURSL_SELECT_MENU_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\POISE_DAMAGE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\REINFORCE_COST_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\RELATE_PHYS_STAT_TO_LEVEL_STAT.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\RESULT_EVENT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\RING_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\SHOP_LINEUP_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\SLIDE_FLOOR_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\SOUND_FOOT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\SOUND_OBJECT_BREAK_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\SOUND_RESIDENT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\SOUND_SPECIAL_EQUIPMENT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\SPELL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\SPELL_SOUL_CONSUME_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\TORCH_CTRL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\TORCH_OFF_CTRL_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\VOW_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\WEAPON_ACTION_CATEGORY_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\WEAPON_ATTACK_MOTION_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\WEAPON_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\WEAPON_REINFORCE_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\WEAPON_STAMINA_COST_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\WEAPON_STATS_AFFECT_PARAM.xml" />
+    <None Remove="Assets\ParamLayouts\DS2SOTFS\WEAPON_TYPE_PARAM.xml" />
+    <None Remove="Assets\Shaders\Collision.frag.spv" />
+    <None Remove="Assets\Shaders\Collision.vert.spv" />
+    <None Remove="Assets\Shaders\Collision_selected.frag.spv" />
+    <None Remove="Assets\Shaders\Collision_selected.vert.spv" />
+    <None Remove="Assets\Shaders\DebugWire.frag.spv" />
+    <None Remove="Assets\Shaders\DebugWire.vert.spv" />
+    <None Remove="Assets\Shaders\FlverBB.frag.spv" />
+    <None Remove="Assets\Shaders\FlverBB.vert.spv" />
+    <None Remove="Assets\Shaders\FlverDS3.frag.spv" />
+    <None Remove="Assets\Shaders\FlverDS3.vert.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader.frag.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader.vert.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_blend.frag.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_blend.vert.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_blendmask.frag.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_blendmask.vert.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.frag.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.vert.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_blend_selected.frag.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_blend_selected.vert.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_selected.frag.spv" />
+    <None Remove="Assets\Shaders\FlverShader\FlverShader_selected.vert.spv" />
+    <None Remove="Assets\Shaders\FullScreenQuad.frag.spv" />
+    <None Remove="Assets\Shaders\FullScreenQuad.vert.spv" />
+    <None Remove="Assets\Shaders\imgui-frag.frag.spv" />
+    <None Remove="Assets\Shaders\imgui-vertex.vert.spv" />
+    <None Remove="Assets\Shaders\imgui.frag.spv" />
+    <None Remove="Assets\Shaders\imgui.vert.spv" />
+    <None Remove="Assets\Shaders\NavSolid.frag.spv" />
+    <None Remove="Assets\Shaders\NavSolid.vert.spv" />
+    <None Remove="Assets\Shaders\NavSolid_selected.frag.spv" />
+    <None Remove="Assets\Shaders\NavSolid_selected.vert.spv" />
+    <None Remove="Assets\Shaders\NavWire.frag.spv" />
+    <None Remove="Assets\Shaders\NavWire.vert.spv" />
+    <None Remove="Assets\Shaders\SimpleFlver.frag.spv" />
+    <None Remove="Assets\Shaders\SimpleFlver.vert.spv" />
+    <None Remove="Assets\Shaders\SimpleFlver_selected.frag.spv" />
+    <None Remove="Assets\Shaders\SimpleFlver_selected.vert.spv" />
+    <None Remove="tracy.dll" />
+    <None Update="Assets\GameOffsets\DS1R\CoreOffsets.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\GameOffsets\DS1R\ItemGibOffsets.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\GameOffsets\DS1R\ParamOffsets.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Fonts\forkawesome-webfont.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\NotoSansCJKtc-Light.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\NotoSansCJKtc-Medium.otf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\NotoSansMonoCJKtc-Regular.otf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\OpenFontIcons.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Fonts\RobotoMono-Light.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\lib\SDL2.dll" Link="SDL2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\Collision.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\Collision.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\Collision_selected.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\Collision_selected.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\DebugWire.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\DebugWire.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverBB.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverBB.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverDS3.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverDS3.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_blend.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_blend.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_blend_selected.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_blend_selected.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_selected.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FlverShader\FlverShader_selected.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FullScreenQuad.frag.spv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\FullScreenQuad.vert.spv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\imgui.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\imgui.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\NavSolid.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\NavSolid.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\NavSolid_selected.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\NavSolid_selected.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\NavWire.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\NavWire.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\SimpleFlver.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\SimpleFlver.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\lib\libveldrid-spirv.dll" Link="libveldrid-spirv.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\SimpleFlver_selected.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shaders\SimpleFlver_selected.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="tracy.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <Content Include="..\..\lib\cimgui.dll" Link="cimgui.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <Content Include="..\..\lib\rel\cimgui.dll" Link="cimgui.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Paramdex\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Aliases\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\MassEditScripts\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\GameOffsets\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Upgrader\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNext.IO" Version="4.15.0" />
+    <PackageReference Include="Microsoft.Toolkit.HighPerformance" Version="7.1.2" />
+    <PackageReference Include="NativeFileDialogSharp" Version="0.6.0-alpha" />
+    <PackageReference Include="NativeLibraryLoader" Version="1.0.13" />
+    <PackageReference Include="Octokit" Version="9.0.0" />
+    <PackageReference Include="ProcessMemoryUtilities.Net" Version="1.3.4" />
+    <PackageReference Include="Silk.NET.OpenGL" Version="2.20.0" />
+    <PackageReference Include="Silk.NET.SDL" Version="2.20.0" />
+    <PackageReference Include="System.Threading.Tasks.Dataflow" Version="8.0.0" />
+    <PackageReference Include="Vortice.Vulkan" Version="1.8.3" />
+    <PackageReference Include="Vortice.VulkanMemoryAllocator" Version="1.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SoapstoneLib\SoapstoneLib\SoapstoneLib.csproj" />
+    <ProjectReference Include="..\Andre\Andre.Formats\Andre.Formats.csproj" />
+    <ProjectReference Include="..\HKX2\HKX2\HKX2.csproj" />
+    <ProjectReference Include="..\Andre\SoulsFormats\SoulsFormats\SoulsFormats.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.RenderDoc\Veldrid.RenderDoc.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.SPIRV\Veldrid.SPIRV.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.StartupUtilities\Veldrid.StartupUtilities.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.Utilities\Veldrid.Utilities.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ImGui.NET">
+      <HintPath>..\..\lib\ImGui.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Shaders\NavSolid.vert.spv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\lib\NavGen.dll" Link="NavGen.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DDSDeswizzler.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="MapStudioNew.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="NewAnimSkeleton.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+</Project>

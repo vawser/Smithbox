@@ -1,0 +1,6 @@
+<class name='hkpSimpleShapePhantom' version='1' signature='0x9b09059f' size='448' parent='hkpShapePhantom'>
+  <members>
+    <member name='collisionDetails' offset='416' ctype='hkpSimpleShapePhantomCollisionDetail' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='orderDirty' offset='432' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

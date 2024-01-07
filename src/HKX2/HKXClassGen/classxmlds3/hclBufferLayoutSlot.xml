@@ -1,0 +1,6 @@
+<class name='hclBufferLayoutSlot' version='1' signature='0xc485fa70' size='2'>
+  <members>
+    <member name='flags' offset='0' etype='SlotFlags' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stride' offset='1' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

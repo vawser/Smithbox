@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <host AltName="Rune Reward Multiplier - Host" Wiki="Host reward soul multiplier" />
+    <WhiteGhost_None AltName="Rune Reward Multiplier - White Phantom - None" Wiki="Cooperation sign white spirit reward soul multiplier" />
+    <WhiteGhost_Umbasa AltName="Rune Reward Multiplier - White Phantom - Gold" Wiki="Cooperative sign gold spirit reward soul multiplier" />
+    <WhiteGhost_Berserker AltName="Rune Reward Multiplier - White Phantom - Berserker" Wiki="Cooperation sign white Berserker reward soul multiplier" />
+    <BlackGhost_None_Sign AltName="Rune Reward Multiplier - Black Phantom - None" Wiki="Hostile sign red spirit reward soul multiplier" />
+    <BlackGhost_Umbasa_Sign AltName="Rune Reward Multiplier - Black Phantom - Gold" Wiki="Hostile sign red gold spirit reward soul multiplier" />
+    <BlackGhost_Berserker_Sign AltName="Rune Reward Multiplier - Black Phantom - Berserker" Wiki="Hostile sign red berserker reward soul multiplier" />
+    <BlackGhost_None_Invade AltName="Rune Reward Multiplier - Black Phantom - None - Invade" Wiki="Invasion reward Soul multiplier" />
+    <BlackGhost_Umbasa_Invade AltName="Rune Reward Multiplier - Black Phantom - Gold - Invade" Wiki="Invasion Orb's Red Gold Spirit Reward Soul Multiplier" />
+    <BlackGhost_Berserker_Invade AltName="Rune Reward Multiplier - Black Phantom - Berserker - Invade" Wiki="Invasion Orb Red Berserker Reward Soul Multiplier" />
+    <RedHunter1 AltName="Rune Reward Multiplier - Red Hunter [1]" Wiki="Relief guest reward soul multiplier" />
+    <RedHunter2 AltName="Rune Reward Multiplier - Red Hunter [2]" Wiki="Red Scare Spirit 2 Reward Soul Multiplier" />
+    <GuardianOfForest AltName="Rune Reward Multiplier - Forest Guardian" Wiki="Map Guardian Spirit (Forest) Reward Soul Magnification" />
+    <GuardianOfAnor AltName="Rune Reward Multiplier - Darkmoon Blade" Wiki="Map Guardian Spirit (Anor) Reward Soul Multiplier" />
+    <BattleRoyal AltName="Rune Reward Multiplier - Arena" Wiki="Arena reward soul multiplier" />
+    <YellowMonk AltName="Rune Reward Multiplier - Yellow Monk" Wiki="Yellow robe's old man's reward soul multiplier" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

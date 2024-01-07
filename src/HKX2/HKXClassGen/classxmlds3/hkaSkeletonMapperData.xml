@@ -1,0 +1,21 @@
+<class name='hkaSkeletonMapperData' version='1' signature='0x3e0a67fd' size='176'>
+  <enums>
+    <enum name='MappingType' flags='00000000'>
+      <enumitem name='HK_RAGDOLL_MAPPING' value='0'/>
+      <enumitem name='HK_RETARGETING_MAPPING' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='skeletonA' offset='0' ctype='hkaSkeleton' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skeletonB' offset='8' ctype='hkaSkeleton' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='partitionMap' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simpleMappingPartitionRanges' offset='32' ctype='hkaSkeletonMapperDataPartitionMappingRange' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='chainMappingPartitionRanges' offset='48' ctype='hkaSkeletonMapperDataPartitionMappingRange' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simpleMappings' offset='64' ctype='hkaSkeletonMapperDataSimpleMapping' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='chainMappings' offset='80' ctype='hkaSkeletonMapperDataChainMapping' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='unmappedBones' offset='96' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extractedMotionMapping' offset='112' vtype='TYPE_QSTRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='keepUnmappedLocal' offset='160' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mappingType' offset='164' etype='MappingType' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,17 @@
+<class name='hclObjectSpaceMeshMeshDeformOperator' version='1' signature='0x7fc45151' size='168' parent='hclOperator'>
+  <enums>
+    <enum name='ScaleNormalBehaviour' flags='00000000'>
+      <enumitem name='SCALE_NORMAL_IGNORE' value='0'/>
+      <enumitem name='SCALE_NORMAL_APPLY' value='1'/>
+      <enumitem name='SCALE_NORMAL_INVERT' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='inputBufferIdx' offset='32' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputBufferIdx' offset='36' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='scaleNormalBehaviour' offset='40' etype='ScaleNormalBehaviour' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='inputTrianglesSubset' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleFromMeshTransforms' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_MATRIX4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='objectSpaceDeformer' offset='80' ctype='hclObjectSpaceDeformer' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

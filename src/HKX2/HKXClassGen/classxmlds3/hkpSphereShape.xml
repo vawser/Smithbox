@@ -1,0 +1,5 @@
+<class name='hkpSphereShape' version='1' signature='0x37aa32c9' size='56' parent='hkpConvexShape'>
+  <members>
+    <member name='pad16' offset='40' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='3' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

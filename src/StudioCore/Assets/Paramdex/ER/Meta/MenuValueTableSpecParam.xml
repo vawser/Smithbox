@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MENU_VALUE_TABLE_CMP_TYPE" type="s8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+  </Enums>
+  <Field>
+    <value AltName="Value" Wiki="Value to compare" />
+    <textId AltName="Text ID" Wiki="Converted text ID" FmgRef="Modern_MenuText"/>
+    <compareType AltName="Compare Type" Wiki="Comparison type" Enum="MENU_VALUE_TABLE_CMP_TYPE" />
+    <padding AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

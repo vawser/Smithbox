@@ -1,0 +1,18 @@
+<class name='hkpPointToPathConstraintData' version='1' signature='0x6c108777' size='208' parent='hkpConstraintData'>
+  <enums>
+    <enum name='OrientationConstraintType' flags='00000000'>
+      <enumitem name='CONSTRAIN_ORIENTATION_INVALID' value='0'/>
+      <enumitem name='CONSTRAIN_ORIENTATION_NONE' value='1'/>
+      <enumitem name='CONSTRAIN_ORIENTATION_ALLOW_SPIN' value='2'/>
+      <enumitem name='CONSTRAIN_ORIENTATION_TO_PATH' value='3'/>
+      <enumitem name='CONSTRAIN_ORIENTATION_MAX_ID' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpBridgeAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='path' offset='64' ctype='hkpParametricCurve' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxFrictionForce' offset='72' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='angularConstrainedDOF' offset='76' etype='OrientationConstraintType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transform_OS_KS' offset='80' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

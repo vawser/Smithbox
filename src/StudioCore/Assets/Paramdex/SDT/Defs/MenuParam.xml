@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENU_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 SoloPlayDeath_ToFadeOutTime">
+      <DisplayName>ソロプレイ死亡時フェードアウト開始時間[秒]</DisplayName>
+      <Description>ソロプレイ死亡時で「YOU DIED」表示後、何秒経過したらフェードアウトを開始するか</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="f32 PartyGhostDeath_ToFadeOutTime">
+      <DisplayName>ホワイト、ブラックゴースト死亡時フェードアウト開始時間[秒]</DisplayName>
+      <Description>ホワイト、ブラックゴースト死亡時で「YOU DIED」表示後、何秒経過したらフェードアウトを開始するか</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="s32 PlayerMaxHpLimit">
+      <DisplayName>プレイヤー最大HPの上限</DisplayName>
+      <Description>HPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="s32 PlayerMaxMpLimit">
+      <DisplayName>プレイヤー最大MPの上限</DisplayName>
+      <Description>MPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="s32 PlayerMaxSpLimit">
+      <DisplayName>プレイヤー最大SPの上限</DisplayName>
+      <Description>SPゲージ表示の際に、リソースで用意されたゲージの長さの何％を使うかを算出するために使われます。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>50</SortID>
+    </Field>
+    <Field Def="f32 ActionPanelChangeThreshold_Vel">
+      <DisplayName>アクションパネル切り替え判定_プレイヤー速度[m/sec]</DisplayName>
+      <Description>アクションパネル切り替え可能なプレイヤーの速度。この速度以下なら切り替え可能</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>60</SortID>
+    </Field>
+    <Field Def="f32 ActionPanelChangeThreshold_PassTime">
+      <DisplayName>アクションパネル切り替え判定_プレイヤー速度判定時間[sec]</DisplayName>
+      <Description>アクションパネル切り替え可能なプレイヤーの速度を出すための考慮時間。この時間の平均速度を使う(システム的に最大４秒)</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>4</Maximum>
+      <SortID>70</SortID>
+    </Field>
+    <Field Def="s32 PlayerMaxAddHp">
+      <DisplayName>ゲージ長計算時にプレイヤー最大HPに加算する値</DisplayName>
+      <Description>リソースで用意されたゲージ長の何％を使うかを計算する際に、プレイヤー最大HPに加算する値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>80</SortID>
+    </Field>
+    <Field Def="s32 PlayerMaxAddMp">
+      <DisplayName>ゲージ長計算時にプレイヤー最大MPに加算する値</DisplayName>
+      <Description>リソースで用意されたゲージ長の何％を使うかを計算する際に、プレイヤー最大MPに加算する値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>90</SortID>
+    </Field>
+    <Field Def="s32 PlayerMaxAddSp">
+      <DisplayName>ゲージ長計算時にプレイヤー最大SPに加算する値</DisplayName>
+      <Description>リソースで用意されたゲージ長の何％を使うかを計算する際に、プレイヤー最大SPに加算する値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 DecalPosOffsetX">
+      <DisplayName>デカールオフセット（左右）</DisplayName>
+      <Description>デカールの表示位置オフセット左右方向</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-255</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 DecalPosOffsetY">
+      <DisplayName>デカールオフセット（上下）</DisplayName>
+      <Description>デカールの表示位置オフセット上下方向</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-255</Minimum>
+      <Maximum>255</Maximum>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="f32 WirePointMinSize">
+      <DisplayName>ワイヤーポイント：最小サイズ</DisplayName>
+      <Description>ワイヤーポイントを距離によって拡大縮小する際のパラメータ。Flashで指定した大きさに対する倍率です。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 WirePointMaxSize">
+      <DisplayName>ワイヤーポイント：最大サイズ</DisplayName>
+      <Description>ワイヤーポイントを距離によって拡大縮小する際のパラメータ。Flashで指定した大きさに対する倍率です。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>510</SortID>
+    </Field>
+    <Field Def="s32 HealthHpNoDamage">
+      <DisplayName>健康状態表示「無傷」：HPと比較する値</DisplayName>
+      <Description>この値以上であれば「無傷」アイコンが表示される </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s32 HealthHpLightDamage">
+      <DisplayName>健康状態表示「軽傷」：HPと比較する値</DisplayName>
+      <Description>上記の「無傷」の値未満で、この値以上であれば「軽傷」が表示される </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>610</SortID>
+    </Field>
+    <Field Def="s32 HealthHpHeavyDamage">
+      <DisplayName>健康状態表示「重傷」：HPと比較する値</DisplayName>
+      <Description>上記の「軽傷」の値未満で、この値以上であれば「重傷」が表示される </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>620</SortID>
+    </Field>
+    <Field Def="s32 HealthHpDying">
+      <DisplayName>健康状態表示「瀕死」：HPと比較する値</DisplayName>
+      <Description>上記の「重傷」の値未満で、この値以上であれば「瀕死」が表示される</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>630</SortID>
+    </Field>
+    <Field Def="s32 HealthHpDead">
+      <DisplayName>健康状態表示「死亡」：HPと比較する値</DisplayName>
+      <Description>上記の「瀕死」の値未満で、この値以上であれば「死亡」が表示される </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>640</SortID>
+    </Field>
+    <Field Def="s32 PlayerCountSoul">
+      <DisplayName>残機表示「残機ありアイコン」：ソウルと比較する値</DisplayName>
+      <Description>この値以上であれば「残機ありアイコン」が表示される</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s32 LockStaminaNoDamage">
+      <DisplayName>敵の体幹表示「白」：体幹の残量と比較する値 </DisplayName>
+      <Description>比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="s32 LockStaminaLightDamage">
+      <DisplayName>敵の体幹表示「薄い黄色」：体幹の残量と比較する値 </DisplayName>
+      <Description>比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>810</SortID>
+    </Field>
+    <Field Def="s32 LockStaminaMiddleDamage">
+      <DisplayName>敵の体幹表示「黄色」：体幹の残量と比較する値 </DisplayName>
+      <Description>比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>820</SortID>
+    </Field>
+    <Field Def="s32 LockStaminaHeavyDamage">
+      <DisplayName>敵の体幹表示「オレンジ」：体幹の残量と比較する値 </DisplayName>
+      <Description>比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>830</SortID>
+    </Field>
+    <Field Def="s32 LockStaminaCriticalDamage">
+      <DisplayName>敵の体幹表示「赤」：体幹の残量と比較する値 </DisplayName>
+      <Description>比較する値として指定した割合以上になった時に、該当する色のロックオンカーソルが表示されます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>840</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenRangeX">
+      <DisplayName>画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]</DisplayName>
+      <Description>画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenRangeY">
+      <DisplayName>画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]</DisplayName>
+      <Description>画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>910</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenDisplayX">
+      <DisplayName>画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] </DisplayName>
+      <Description>画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>920</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenDisplayY">
+      <DisplayName>画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] </DisplayName>
+      <Description>画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>930</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenScaleEnable">
+      <DisplayName>画面外ワイヤーポイント：画面外ワイヤーポイントの射出可能表示を距離に応じて拡縮させるかどうか[有効/無効] </DisplayName>
+      <Description>画面外ワイヤーポイント：画面外ワイヤーポイントの射出可能表示を距離に応じて拡縮させるかどうか[有効/無効] </Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>940</SortID>
+    </Field>
+    <Field Def="f32 WireOffScreenScale = 1">
+      <DisplayName>画面外ワイヤーポイント：表示サイズ(固定)</DisplayName>
+      <Description>画面外ワイヤーポイント：表示サイズ(固定)（拡縮無効時にのみ有効）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>950</SortID>
+    </Field>
+    <Field Def="s32 LockStaminaFatalDamage">
+      <DisplayName>敵の体幹表示「黒い赤」：体幹の残量と比較する値</DisplayName>
+      <Description>敵の体幹表示「どす黒い赤」：体幹の残量と比較する値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>850</SortID>
+    </Field>
+    <Field Def="f32 PreOpeningMovie_WaitSec">
+      <DisplayName>OPムービー前のウェイト[sec]</DisplayName>
+      <Description>OPムービー再生前のウェイト時間。＞SEQ 15261</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 PlayerDangerSp">
+      <DisplayName>ゲージの色を変化させるSPしきい値</DisplayName>
+      <Description>この値以下であればSPゲージの色が変化します</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>55</SortID>
+    </Field>
+    <Field Def="s32 WatchTargetPointRate">
+      <DisplayName>発見されそうマーカー：表示するポイントの割合[％]</DisplayName>
+      <Description>使用していません</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1150</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenRangeX_Test">
+      <DisplayName>【検証用】画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]</DisplayName>
+      <Description>GamePropetiesで検証用のレイアウトを設定した際に参照される画面外ワイヤーポイントのパラメータです</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>990</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenRangeY_Test">
+      <DisplayName>【検証用】画面外ワイヤーポイント：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]</DisplayName>
+      <Description>GamePropetiesで検証用のレイアウトを設定した際に参照される画面外ワイヤーポイントのパラメータです</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>991</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenDisplayX_Test">
+      <DisplayName>【検証用】画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] </DisplayName>
+      <Description>GamePropetiesで検証用のレイアウトを設定した際に参照される画面外ワイヤーポイントのパラメータです</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>992</SortID>
+    </Field>
+    <Field Def="s32 WireOffScreenDisplayY_Test">
+      <DisplayName>【検証用】画面外ワイヤーポイント：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] </DisplayName>
+      <Description>GamePropetiesで検証用のレイアウトを設定した際に参照される画面外ワイヤーポイントのパラメータです</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>993</SortID>
+    </Field>
+    <Field Def="s32 PlayerQuarterHp = 25">
+      <DisplayName>ハート1/4個分のHP値</DisplayName>
+      <Description>HPを示すハート1/4個の数値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>52</SortID>
+    </Field>
+    <Field Def="f32 WatchTargetOffScrRangeX">
+      <DisplayName>発見されそうマーカー：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]</DisplayName>
+      <Description>発見されそうマーカー：画面外のどの位置まで通常のワイヤーポイントを表示するか_X軸[％]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="f32 WatchTargetOffScrRangeY">
+      <DisplayName>発見されそうマーカー：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]</DisplayName>
+      <Description>発見されそうマーカー：画面外のどの位置まで通常のワイヤーポイントを表示するか_Y軸[％]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1120</SortID>
+    </Field>
+    <Field Def="f32 WatchTargetOffScrDisplayX">
+      <DisplayName>発見されそうマーカー：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] </DisplayName>
+      <Description>発見されそうマーカー：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_X軸[％] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1130</SortID>
+    </Field>
+    <Field Def="f32 WatchTargetOffScrDisplayY">
+      <DisplayName>発見されそうマーカー：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] </DisplayName>
+      <Description>発見されそうマーカー：画面端からどのくらい離れた位置に画面外ワイヤーポイントを表示するか_Y軸[％] </Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1140</SortID>
+    </Field>
+    <Field Def="f32 GetItemViewTime">
+      <DisplayName>アイテム取得ログ：1行の表示時間[sec]</DisplayName>
+      <Description>アイテム取得ログ：1行の表示時間[sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 SpMinimumDispTime">
+      <DisplayName>体幹ゲージ最低表示時間[sec]</DisplayName>
+      <Description>体幹ゲージ最低表示時間[sec]</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="s32 Reserved42">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999009</SortID>
+    </Field>
+    <Field Def="s32 Reserved43">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999010</SortID>
+    </Field>
+    <Field Def="s32 Reserved44">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999011</SortID>
+    </Field>
+    <Field Def="s32 Reserved45">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999012</SortID>
+    </Field>
+    <Field Def="s32 Reserved46">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999013</SortID>
+    </Field>
+    <Field Def="s32 Reserved47">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999014</SortID>
+    </Field>
+    <Field Def="s32 Reserved48">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999015</SortID>
+    </Field>
+    <Field Def="s32 Reserved49">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999016</SortID>
+    </Field>
+    <Field Def="s32 Reserved50">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999017</SortID>
+    </Field>
+    <Field Def="s32 Reserved51">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999018</SortID>
+    </Field>
+    <Field Def="s32 Reserved52">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999019</SortID>
+    </Field>
+    <Field Def="s32 Reserved53">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999020</SortID>
+    </Field>
+    <Field Def="s32 Reserved54">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999021</SortID>
+    </Field>
+    <Field Def="s32 Reserved55">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999022</SortID>
+    </Field>
+    <Field Def="s32 Reserved56">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999023</SortID>
+    </Field>
+    <Field Def="s32 Reserved57">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999024</SortID>
+    </Field>
+    <Field Def="s32 Reserved58">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999025</SortID>
+    </Field>
+    <Field Def="s32 Reserved59">
+      <DisplayName>予約</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>999026</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

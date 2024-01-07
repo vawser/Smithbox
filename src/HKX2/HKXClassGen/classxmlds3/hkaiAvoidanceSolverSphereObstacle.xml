@@ -1,0 +1,6 @@
+<class name='hkaiAvoidanceSolverSphereObstacle' version='1' signature='0xef54850d' size='32'>
+  <members>
+    <member name='sphere' offset='0' ctype='hkSphere' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='velocity' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,12 @@
+{
+    "Title": "FLVER",
+    "Tags": [
+        "Format",
+        "Model"
+    ],
+    "Contents": [
+        "A proprietary format used for rendering data.",
+        "It defines meshes, skeletons, and links to materials and textures.",
+        "Can be converted to/from the more blender/max friendly FBX format with custom tools."
+    ]
+}

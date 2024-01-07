@@ -1,0 +1,10 @@
+{
+    "Title": "Draw Param",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "A type of param used for per-map rendering configuration (tone, light, shadows).",
+        "Different versions of draw params for a map can be activated with EMEVD."
+    ]
+}

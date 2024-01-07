@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>SOUND_COMMON_INGAME_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstr ParamKeyStr[32]">
+      <DisplayName>パラメータのKey文字列</DisplayName>
+      <Description>パラメータのKey文字列です</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="fixstr ParamValueStr[32]">
+      <DisplayName>パラメータのValue文字列</DisplayName>
+      <Description>パラメータのValue文字列です</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>2</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

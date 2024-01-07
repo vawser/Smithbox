@@ -1,0 +1,6 @@
+<class name='hkbpBalanceModifierStepInfo' version='1' signature='0xa759ddf6' size='8'>
+  <members>
+    <member name='boneIndex' offset='0' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fractionOfSolution' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

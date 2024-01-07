@@ -1,0 +1,6 @@
+<class name='hkSkinnedMeshShapeBoneSet' version='1' signature='0xaa66794d' size='4'>
+  <members>
+    <member name='boneBufferOffset' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numBones' offset='2' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,9 @@
+<class name='hkbnpRagdollInterface' version='1' signature='0x2abf53d6' size='72' parent='hkbRagdollInterface'>
+  <members>
+    <member name='physicsInterface' offset='16' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='ragdoll' offset='24' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='scaledObjects' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='rigidBodyHandles' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='addedToWorld' offset='64' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

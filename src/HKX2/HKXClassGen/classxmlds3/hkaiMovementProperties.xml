@@ -1,0 +1,20 @@
+<class name='hkaiMovementProperties' version='1' signature='0xd0211f76' size='36'>
+  <enums>
+    <enum name='KinematicConstraintType' flags='00000000'>
+      <enumitem name='CONSTRAINTS_NONE' value='0'/>
+      <enumitem name='CONSTRAINTS_LINEAR_AND_ANGULAR' value='1'/>
+      <enumitem name='CONSTRAINTS_LINEAR_ONLY' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='minVelocity' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxVelocity' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAcceleration' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxDeceleration' offset='12' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='leftTurnRadius' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rightTurnRadius' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAngularVelocity' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxTurnVelocity' offset='28' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='kinematicConstraintType' offset='32' etype='KinematicConstraintType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="Gender">
+      <Option Value="0" Name="Female" />
+      <Option Value="1" Name="Male" />
+    </Enum>
+	<Enum Name="DrawType">
+      <Option Value="0" Name="Human" />
+      <Option Value="4" Name="Hollow" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Player NPC data" Row0Dummy="" AlternativeOrder="equip_Wep_Right,equip_Subwep_Right,equip_Wep_Body_GenId,equip_Wep_Left,equip_Subwep_Left,SecondaryItem_01,-,
+  equip_Arrow,equip_SubArrow,equip_Bolt,equip_SubBolt,arrowNum,subArrowNum,boltNum,subBoltNum,-,
+  equip_Helm,equip_Armor,equip_Gaunt,equip_Leg,-,
+  soulLvl,baseVit,baseWil,baseEnd,baseDurability,baseStr,baseDex,baseMag,baseFai,baseLuc,baseHeroPoint,soul,secondaryItemNum_07,secondaryItemNum_08,-,
+  equip_Accessory1,equip_Accessory2,equip_Accessory3,equip_Accessory4,equip_Accessory5,-,
+  equip_Spell_01,equip_Spell_02,equip_Spell_03,equip_Spell_04,equip_Spell_05,equip_Spell_06,equip_Spell_07,-,
+  Item_01,Item_02,Item_03,Item_04,Item_05,Item_06,Item_07,Item_08,Item_09,Item_10,SecondaryItem_02,itemNum_01,itemNum_02,itemNum_03,itemNum_04,itemNum_05,itemNum_06,itemNum_07,itemNum_08,itemNum_09,itemNum_10,-,
+  SecondaryItem_03,SecondaryItem_04,SecondaryItem_05,SecondaryItem_06,SecondaryItem_07,SecondaryItem_08,secondaryItemNum_01,secondaryItemNum_02,secondaryItemNum_03,secondaryItemNum_04,secondaryItemNum_04,secondaryItemNum_05,secondaryItemNum_06,-,
+  gestureid0,gestureid1,gestureid2,gestureid3,gestureid4,gestureid5,gestureid6,-,
+  npcPlayerFaceGenId,npcPlayerThinkId,npcPlayerType,npcPlayerDrawType,NpcPlayerSex,vowType,VoiceType,-,
+  equip_Wep_Right_GenId,equip_Subwep_Right_GenId,equip_Wep_Left_GenId,equip_Subwep_Left_GenId,equip_Helm_GenId,equip_Armor_GenId,equip_Gaunt_GenId,equip_Leg_GenId,-" />
+  <Field>
+    <BaseRec_mp AltName="Base FP Recovery" />
+    <BaseRec_sp AltName="Base SP Recovery" />
+    <red_Falldam AltName="Fall Damage Dampen" />
+	<soul AltName="Starting Soul Count" />
+    <equip_Wep_Right Refs="EquipParamWeapon" AltName="Right Weapon 1" />
+    <equip_Subwep_Right Refs="EquipParamWeapon" AltName="Right Weapon 2" />
+    <equip_Wep_Left Refs="EquipParamWeapon" AltName="Left Weapon 1" />
+    <equip_Subwep_Left Refs="EquipParamWeapon" AltName="Left Weapon 2" />
+    <equip_Helm Refs="EquipParamProtector" AltName="Equipped Head" />
+    <equip_Armor Refs="EquipParamProtector" AltName="Equipped Body" />
+    <equip_Gaunt Refs="EquipParamProtector" AltName="Equipped Arms" />
+    <equip_Leg Refs="EquipParamProtector" AltName="Equipped Legs" />
+    <equip_Arrow Refs="EquipParamWeapon" AltName="Arrow Slot 1" />
+    <equip_Bolt Refs="EquipParamWeapon" AltName="Bolt Slot 1" />
+    <equip_SubArrow Refs="EquipParamWeapon" AltName="Arrow Slot 2" />
+    <equip_SubBolt Refs="EquipParamWeapon" AltName="Bolt Slot 2" />
+    <equip_Accessory1 Refs="EquipParamAccessory" AltName="Ring Slot 1" />
+    <equip_Accessory2 Refs="EquipParamAccessory" AltName="Ring Slot 2" />
+    <equip_Accessory3 Refs="EquipParamAccessory" AltName="Ring Slot 3" />
+    <equip_Accessory4 Refs="EquipParamAccessory" AltName="Ring Slot 4" />
+    <equip_Accessory5 Refs="EquipParamAccessory" AltName="Covenant Slot" />
+    <equip_Spell_01 Refs="Magic" AltName="Spell 1" />
+    <equip_Spell_02 Refs="Magic" AltName="Spell 2" />
+    <equip_Spell_03 Refs="Magic" AltName="Spell 3" />
+    <equip_Spell_04 Refs="Magic" AltName="Spell 4" />
+    <equip_Spell_05 Refs="Magic" AltName="Spell 5" />
+    <equip_Spell_06 Refs="Magic" AltName="Spell 6" />
+    <equip_Spell_07 Refs="Magic" AltName="Spell 7" />
+    <Item_01 Refs="EquipParamGoods" AltName="Item 1" />
+    <Item_02 Refs="EquipParamGoods" AltName="Item 2" />
+    <Item_03 Refs="EquipParamGoods" AltName="Item 3" />
+    <Item_04 Refs="EquipParamGoods" AltName="Item 4" />
+    <Item_05 Refs="EquipParamGoods" AltName="Item 5" />
+    <Item_06 Refs="EquipParamGoods" AltName="Item 6" />
+    <Item_07 Refs="EquipParamGoods" AltName="Item 7" />
+    <Item_08 Refs="EquipParamGoods" AltName="Item 8" />
+    <Item_09 Refs="EquipParamGoods" AltName="Item 9" />
+    <Item_10 Refs="EquipParamGoods" AltName="Item 10" />
+    <npcPlayerFaceGenId Refs="FaceParam" AltName="Face Param ID" />
+    <baseHp AltName="Base HP" />
+    <baseMp AltName="Base FP" />
+    <baseSp AltName="Base Stamina" />
+    <arrowNum AltName="Slot 1 Arrow Amount" />
+    <boltNum AltName="Slot 1 Bolt Amount" />
+    <subArrowNum AltName="Slot 2 Arrow Amount" />
+    <subBoltNum AltName="Slot 2 Bolt Amount" />
+    <soulLvl AltName="Soul Level" Wiki="Character's Starting Soul Level" />
+    <baseVit AltName="Vigor" Wiki="Character's Starting Vigor Level" />
+    <baseWil AltName="Attunement" Wiki="Character's Starting Attunement Level" />
+    <baseEnd AltName="Endurance" Wiki="Character's Starting Endurance Level" />
+    <baseStr AltName="Strength" Wiki="Character's Starting Strength Level" />
+    <baseDex AltName="Dexterity" Wiki="Character's Starting Dexterity Level" />
+    <baseMag AltName="Intelligence" Wiki="Character's Starting Intelligence Level" />
+    <baseFai AltName="Faith" Wiki="Character's Starting Faith Level" />
+    <baseLuc AltName="Luck" Wiki="Character's Starting Luck Level" />
+	<baseHeroPoint AltName="Humanity" Wiki="Unused in vanilla, but still functional" />
+    <baseDurability AltName="Vitality" Wiki="Character's Starting Vitality Level" />
+    <itemNum_01 AltName="Item 1 Amount" />
+    <itemNum_02 AltName="Item 2 Amount" />
+    <itemNum_03 AltName="Item 3 Amount" />
+    <itemNum_04 AltName="Item 4 Amount" />
+    <itemNum_05 AltName="Item 5 Amount" />
+    <itemNum_06 AltName="Item 6 Amount" />
+    <itemNum_07 AltName="Item 7 Amount" />
+    <itemNum_08 AltName="Item 8 Amount" />
+    <itemNum_09 AltName="Item 9 Amount" />
+    <itemNum_10 AltName="Item 10 Amount" />
+    <bodyScaleHead AltName="Head Body Scale" />
+    <bodyScaleBreast AltName="Breast Body Scale" />
+    <BodyScaleAbdomen AltName="Abdomen Body Scale" />
+    <BodyScaleArm AltName="Arm Body Scale" />
+    <BodyScaleLeg AltName="Leg Body Scale" />
+	<gestureid0 AltName="Gesture ID 0" />
+	<gestureid1 AltName="Gesture ID 1" />
+	<gestureid2 AltName="Gesture ID 2" />
+	<gestureid3 AltName="Gesture ID 3" />
+	<gestureid4 AltName="Gesture ID 4" />
+	<gestureid5 AltName="Gesture ID 5" />
+	<gestureid6 AltName="Gesture ID 6" />
+    <npcPlayerThinkId AltName="NPC Player - Think ID" />
+    <npcPlayerType AltName="NPC Player - Type" />
+	<npcPlayerDrawType AltName="NPC Player - Draw Type" Enum="DrawType" />
+	<NpcPlayerSex AltName="NPC Gender" Enum="Gender" />
+    <vowType AltName="Covenant Type" />
+    <VoiceType AltName="Voice Type" />
+    <equip_Wep_Right_GenId Refs="WeaponGenParam" AltName="Right Weapon 1 Gen ID" />
+    <equip_Subwep_Right_GenId Refs="WeaponGenParam" AltName="Right Weapon 2 Gen ID" />
+    <equip_Wep_Left_GenId Refs="WeaponGenParam" AltName="Left Weapon 1 Gen ID" />
+    <equip_Subwep_Left_GenId Refs="WeaponGenParam" AltName="Left Weapon 2 Gen ID" />
+	<equip_Helm_GenId Refs="ProtectorGenParam" AltName="Equipped Head Gen ID" />
+	<equip_Armor_GenId Refs="ProtectorGenParam" AltName="Equipped Body Gen ID" />
+	<equip_Gaunt_GenId Refs="ProtectorGenParam" AltName="Equipped Arms Gen ID" />
+	<equip_Leg_GenId Refs="ProtectorGenParam" AltName="Equipped Legs Gen ID" />
+    <SecondaryItem_01 Refs="EquipParamWeapon" AltName="Left Weapon 3" />
+    <SecondaryItem_02 Refs="EquipParamGoods" AltName="Item 11" Wiki="Appears as equipped in inventory, gives only 1" />
+    <SecondaryItem_03 Refs="EquipParamGoods" AltName="Pouch Item 1" />
+    <SecondaryItem_04 Refs="EquipParamGoods" AltName="Pouch Item 2" />
+    <SecondaryItem_05 Refs="EquipParamGoods" AltName="Pouch Item 3" />
+    <SecondaryItem_06 Refs="EquipParamGoods" AltName="Pouch Item 4" />
+    <SecondaryItem_07 Refs="EquipParamGoods" AltName="Pouch Item 5" />
+    <SecondaryItem_08 Refs="EquipParamGoods" AltName="Pouch Item 6" Wiki="Item does not appear" />
+    <secondaryItemNum_01 AltName="Pouch Item 1 Amount" />
+    <secondaryItemNum_02 AltName="Pouch Item 2 Amount" />
+    <secondaryItemNum_03 AltName="Pouch Item 3 Amount" />
+    <secondaryItemNum_04 AltName="Pouch Item 4 Amount" />
+    <secondaryItemNum_05 AltName="Pouch Item 5 Amount" />
+    <secondaryItemNum_06 AltName="Pouch Item 6 Amount" Wiki="Item does not appear" />
+    <secondaryItemNum_07 AltName="Starting Estus Flasks" />
+    <secondaryItemNum_08 AltName="Starting Ashen Estus Flasks" />
+    <equip_Wep_Body_GenId Refs="EquipParamWeapon" AltName="Right Weapon 3" />
+    <Equip_Skill_01 AltName="Equipped Skill 1" />
+    <Equip_Skill_02 AltName="Equipped Skill 2" />
+    <Equip_Skill_03 AltName="Equipped Skill 3" />
+    <QWC_sb AltName="QWC SB" />
+    <QWC_mw AltName="QWC MW" />
+    <QWC_cd AltName="QWC CD" />
+    <pad1 AltName="" />
+    <pad2 AltName="" />
+    
+  </Field>
+  <Self />
+</PARAMMETA>

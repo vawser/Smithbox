@@ -1,0 +1,7 @@
+<class name='hkMemoryResourceHandle' version='1' signature='0xc64e9bc2' size='48' parent='hkResourceHandle'>
+  <members>
+    <member name='variant' offset='16' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='24' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='references' offset='32' ctype='hkMemoryResourceHandleExternalLink' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

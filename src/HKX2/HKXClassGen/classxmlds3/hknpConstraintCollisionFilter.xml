@@ -1,0 +1,5 @@
+<class name='hknpConstraintCollisionFilter' version='1' signature='0x226c8a0a' size='56' parent='hknpPairCollisionFilter'>
+  <members>
+    <member name='subscribedWorld' offset='48' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

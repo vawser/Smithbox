@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <installUnlockTextId AltName="Unlock Text ID (Level 0)" FmgRef="Modern_MenuText" />
+    <updateOneUnlockTextId AltName="Unlock Text ID (Level 1)" FmgRef="Modern_MenuText" />
+    <updateTwoUnlockTextId AltName="Unlock Text ID (Level 2)" FmgRef="Modern_MenuText" />
+    <updateThreeUnlockTextId AltName="Unlock Text ID (Level 3)" FmgRef="Modern_MenuText" />
+    <updateFourUnlockTextId AltName="Unlock Text ID (Level 4)" FmgRef="Modern_MenuText" />
+    <installIncreaseValue AltName="OS Effect Value (Level 0)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
+    <updateOneIncreaseValue AltName="OS Effect Value (Level 1)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
+    <updateTwoIncreaseValue AltName="OS Effect Value (Level 2)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
+    <updatethreeIncreaseValue AltName="OS Effect Value (Level 3)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
+    <updateFourIncreaseValue AltName="OS Effect Value (Level 4)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
+  </Field>
+  <Self />
+</PARAMMETA>

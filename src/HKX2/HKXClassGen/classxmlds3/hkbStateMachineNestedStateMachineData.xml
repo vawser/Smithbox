@@ -1,0 +1,6 @@
+<class name='hkbStateMachineNestedStateMachineData' version='1' signature='0x7358f5da' size='16'>
+  <members>
+    <member name='nestedStateMachine' offset='0' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='eventIdMap' offset='8' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

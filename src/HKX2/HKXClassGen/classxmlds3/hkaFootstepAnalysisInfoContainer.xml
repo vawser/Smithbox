@@ -1,0 +1,5 @@
+<class name='hkaFootstepAnalysisInfoContainer' version='1' signature='0x2ec78218' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='previewInfo' offset='16' ctype='hkaFootstepAnalysisInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

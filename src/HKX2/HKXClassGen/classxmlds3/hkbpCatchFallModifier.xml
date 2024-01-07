@@ -1,0 +1,41 @@
+<class name='hkbpCatchFallModifier' version='1' signature='0xa9264369' size='304' parent='hkbModifier'>
+  <enums>
+    <enum name='FadeState' flags='00000000'>
+      <enumitem name='FADE_IN' value='0'/>
+      <enumitem name='FADE_OUT' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='directionOfFallForwardLS' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='directionOfFallRightLS' offset='112' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='directionOfFallUpLS' offset='128' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='spineIndices' offset='144' ctype='hkbBoneIndexArray' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='leftHand' offset='152' ctype='hkbpCatchFallModifierHand' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rightHand' offset='158' ctype='hkbpCatchFallModifierHand' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='catchFallDoneEvent' offset='168' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='spreadHandsMultiplier' offset='184' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='radarRange' offset='188' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='previousTargetBlendWeight' offset='192' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handsBendDistance' offset='196' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxReachDistanceForward' offset='200' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxReachDistanceBackward' offset='204' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeInReachGainSpeed' offset='208' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeOutReachGainSpeed' offset='212' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeOutDuration' offset='216' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeInTwistSpeed' offset='220' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeOutTwistSpeed' offset='224' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='raycastLayer' offset='228' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='velocityRagdollBoneIndex' offset='230' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='directionOfFallRagdollBoneIndex' offset='232' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='orientHands' offset='234' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='catchFallPosInBS' offset='240' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='currentReachGain' offset='272' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='timeSinceLastModify' offset='280' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='currentTwistGain' offset='284' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='currentTwistDirection' offset='288' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='catchFallPosIsValid' offset='290' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='catchFallBegin' offset='292' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='catchFallEnd' offset='293' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='fadeState' offset='294' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

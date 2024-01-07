@@ -1,0 +1,7 @@
+<class name='hclVolumeConstraintMxApplyBatchData' version='1' signature='0x982866a8' size='352'>
+  <members>
+    <member name='frameVector' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='particleIndex' offset='256' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='stiffness' offset='288' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

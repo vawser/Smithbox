@@ -1,0 +1,630 @@
+0 test
+1 Magic test
+2 Funnel test
+3 Flying Dragon Breath Test
+5 Evil eye [throw]
+6 Evil eye [landing]
+9 Genki ball LV1_ test [throw]
+10 Genki ball LV2_ test [throw]
+11 Genki ball LV3_ test [throw]
+12 Genki ball LV1_ test [landing]
+13 Genki Ball LV2_ Test [Arrival]
+14 Genki ball LV3_ test [landing]
+50 Bonfire recovery effect
+100 [Item] Throwing Knife
+101 [Item] Poison Throwing Knife
+110 [Item] Firebomb
+111 [Item] Firebomb - HitBullet
+115 [Item] Black Firebomb
+116 [Item] Black Firebomb - HitBullet
+120 [Item] Alluring Skull
+121 [Item] Alluring Skull - HitBullet
+122 Again B [parent]
+123 Again B [child]
+130 [Item] Prism Stone
+131 [Item] Prism Stone -HitBullet
+132 [Item] Prism Stone -HitBullet
+140 Sleep Ball [Parent]
+141 Sleeping Ball [Child]
+150 [Item] Dung Pie
+151 [Item] Dung Pie - HitBullet
+160 [Item] Lloyd's Talisman
+161 [Item] Lloyd's Talisman - HitBullet
+170 [Item] Bloodred Moss Clump
+171 [Item] Bloodred Moss Clump - HitBullet
+180 [Item] Purple Moss Clump
+181 [Item] Purple Moss Clump - HitBullet
+190 [Item] Blooming Purple Moss Clump
+191 [Item] Blooming Purple Moss Clump - HitBullet
+200 all-purpose treatment [condition recovery]
+201 All-purpose treatment [Bleeding resistance recovery]
+202 All-purpose treatment [Recovery of poison resistance]
+203 All-around treatment
+210 Resurrection Stone [Resurrection Effect]
+211 Resurrection Stone [Humanity Recovery Effect]
+220 [Item] Divine Blessing
+221 [Item] Divine Blessing - HitBullet
+222 [Item] Divine Blessing - HitBullet
+223 [Item] Divine Blessing - HitBullet
+226 [Item] Divine Blessing - HitBullet
+230 [Item] Dragon Head Stone
+231 [Item] Dragon Head Stone 1
+232 [Item] Dragon Head Stone 2
+233 [Item] Dragon Head Stone 3
+240 [Item] Dragon Torso Stone
+241 [Item] Dragon Torso Stone 1
+242 [Item] Dragon Torso Stone 2
+243 [Item] Dragon Torso Stone 3
+250 [Item] Dragon Torso Stone - HitBullet
+251 [Item] Dragon Torso Stone - HitBullet 1
+252 [Item] Dragon Torso Stone - HitBullet 2
+253 [Item] Dragon Torso Stone - HitBullet 3
+260 [Item] Hello Carving
+261 [Item] Hello Carving - HitBullet
+265 [Item] Thank you Carving
+266 [Item] Thank you Carving - HitBullet
+270 [Item] Very good! Carving
+271 [Item] Very good! Carving - HitBullet
+275 [Item] I'm sorry Carving
+276 [Item] I'm sorry Carving - HitBullet
+280 [Item] Help me! Carving
+281 [Item] Help me! Carving - HitBullet
+300 [Item] Silver Pendant
+500 Standard Arrow
+501 Large Arrow
+502 Feather Arrow
+503 Fire Arrow
+504 Poison Arrow
+505 Moonlight Arrow
+506 Wooden Arrow
+507 Dragonslayer Arrow
+508 Gough's Great Arrow
+600 Standard Bolt
+601 Heavy Bolt
+602 Sniper Bolt
+603 Wood Bolt
+604 Lightning Bolt
+1000 [58] Old Dragon's Straight Sword
+1001 [58] Old Dragon's Straight Sword [1 Shot]
+1002 [58] Old dragon straight sword [2 bullets]
+1003 [58] Old dragon straight sword [3 bullets]
+1004 [58] Old Dragon's Straight Sword [4 Shots]
+1005 [58] Old Dragon's Straight Sword [5 Shots]
+1006 [58] Old Dragon's Straight Sword [6 Shots]
+1007 [58] Old Dragon's Straight Sword [7 Shots]
+1008 [58] Old Dragon's Straight Sword [8 Shots]
+1009 [58] Old Dragon's Straight Sword [9 Shots]
+1010 [58] Old Dragon's Straight Sword [10 Shots]
+1011 [58] Old Dragon's Straight Sword [11 Shots]
+1012 [58] Old dragon's straight sword [12 shots]
+1013 [58] Old Dragon's Straight Sword [13 Shots]
+1014 [58] Old Dragon's Straight Sword [14 Shots]
+1015 [58] Old Dragon's Straight Sword [15 Shots]
+1020 Royal Castle 1
+1021 Royal Castle 1 Gargoyle statue blowing fire
+1030 [77] Great Sword of Stone [Gravity]
+1040 [79] Moonlight_One hand [Light wave]
+1050 [79] Moonlight _ Both hands [Light wave]
+1051 [79] Moonlight _ Both hands [Landing explosion]
+1060 [94] Rock Shield [Hazuki]
+1061 [94] Great Shield of Rock [SA Enhancement]
+1070 [104] Iron Ax [Shock wave]
+1080 [106] Dragon King's Big Ax [Slap Shockwave]
+1090 [62] Hammer of Law Judgment [Range Damage]
+1100 [65] Sixth Magic Spear [Other Biquilt]
+1110 [68] Dragon Hunting Spear
+1111 [68] Dragon Hunting Spear [1 Shot]
+1112 [68] Dragon Hunting Spear [2 Shots]
+1113 [68] Dragon Hunting Spear [3 Shots]
+1114 [68] Dragon Hunting Spear [4 Shots]
+1115 [68] Dragon Hunting Spear [5 Shots]
+1120 [92] Small shield of crystal ring [Shock wave]
+1130 [98] Old Dragon's Great Sword
+1131 [98] Old Dragon's Great Sword [1 Shot]
+1132 [98] Great sword of the old dragon [2 bullets]
+1133 [98] Old Dragon's Great Sword [3 Shots]
+1134 [98] Old Dragon's Great Sword [4 Shots]
+1135 [98] Old Dragon's Great Sword [5 Shots]
+1136 [98] Old Dragon's Great Sword [6 Shots]
+1137 [98] Old Dragon's Great Sword [7 Shots]
+1138 [98] Old Dragon's Great Sword [8 Shots]
+1139 [98] Great Dragon Sword [9 Shots]
+1140 [98] Old Dragon's Great Sword [10 Shots]
+1141 [98] Old Dragon's Great Sword [11 Shots]
+1142 [98] Old Dragon's Great Sword [12 Shots]
+1143 [98] Old Dragon's Great Sword [13 Shots]
+1144 [98] Old Dragon's Great Sword [14 Shots]
+1145 [98] Old Dragon's Great Sword [15 Shots]
+1160 Ryuken (Step Attack)
+1170 [135] Black Dragon Great Sword [Slapping Shockwave]
+2000 Undead Rapport
+2100 Iron Flesh
+2110 Iron Flesh - HitBullet
+2120 Iron Flesh - HitBullet
+2200 Aural Decoy
+2210 Aural Decoy - HitBullet
+2300 Vow of Silence
+2310 Vow of Silence - HitBullet
+2320 Vow of Silence - HitBullet
+2400 Tranquil Walk of Peace
+2410 Tranquil Walk of Peace - HitBullet
+2500 Poison Mist
+2510 Poison Mist - HitBullet
+2600 Toxic Mist
+2610 Toxic Mist - HitBullet
+2700 Chameleon
+2710 Chameleon - HitBullet
+2800 Poison treatment [condition recovery]
+2810 Poison Treatment [Resilience Recovery]
+2900 Remedy
+2910 Remedy - HitBullet
+2920 Remedy - HitBullet
+2930 Remedy - HitBullet
+3000 Soul Arrow
+3010 Great Soul Arrow
+3020 Heavy Soul Arrow
+3030 Great Heavy Soul Arrow
+3040 Homing Soulmass
+3050 Homing Soulmass - HitBullet
+3060 Homing Crystal Soulmass
+3070 Homing Crystal Soulmass - HitBullet
+3080 Soul Spear
+3090 Crystal Soul Spear
+3100 Soothing Sunlight
+3101 Soothing Sunlight - Level 1
+3102 Soothing Sunlight - Level 2
+3103 Soothing Sunlight - Level 3
+3104 Soothing Sunlight - Level 4
+3200 Bountiful Sunlight
+3201 Bountiful Sunlight - Level 1
+3202 Bountiful Sunlight - Level 2
+3203 Bountiful Sunlight - Level 3
+3204 Bountiful Sunlight - Level 4
+3300 Acid Surge
+3310 Acid Surge - HitBullet
+6000 Fireball
+6010 Fireball - HitBullet
+6100 Fire Orb
+6110 Fire Orb - HitBullet
+6200 Great Fireball
+6210 Great Fireball - HitBullet
+6300 Great Chaos Fireball
+6310 Great Chaos Fireball - HitBullet
+6320 Great Chaos Fireball - HitBullet
+6330 Great Chaos Fireball - HitBullet
+6340 Great Chaos Fireball - HitBullet
+6400 Gravelord Sword Dance
+6401 Gravelord Sword Dance - Level 1
+6402 Gravelord Sword Dance - Level 2
+6403 Gravelord Sword Dance - Level 3
+6410 Gravelord Sword Dance - HitBullet
+6411 Gravelord Sword Dance - Level 1 - HitBullet
+6412 Gravelord Sword Dance - Level 2 - HitBullet
+6413 Gravelord Sword Dance - Level 3 - HitBullet
+6500 Gravelord Greatsword Dance
+6501 Gravelord Greatsword Dance - Level 1
+6502 Gravelord Greatsword Dance - Level 2
+6503 Gravelord Greatsword Dance - Level 3
+6510 Gravelord Greatsword Dance - HitBullet
+6511 Gravelord Greatsword Dance - Level 1 - HitBullet
+6512 Gravelord Greatsword Dance - Level 2 - HitBullet
+6513 Gravelord Greatsword Dance - Level 3 - HitBullet
+7000 Combustion
+7010 Combustion - HitBullet
+7100 Great Combustion
+7110 Great Combustion - HitBullet
+7200 firing 3 [bullet]
+7210 firing 3 [landing]
+8000 Firestorm
+8010 Firestorm - HitBullet
+8100 Fire Tempest
+8110 Fire Tempest - HitBullet
+8200 Chaos Storm
+8210 Chaos Storm - HitBullet
+8220 Chaos Storm - HitBullet
+9000 Lightning Spear
+9010 Lightning Spear - HitBullet
+9020 Lightning Spear - HitBullet
+9030 Lightning Spear - HitBullet
+9040 Lightning Spear - HitBullet
+9050 Lightning Spear - HitBullet
+9100 Great Lightning Spear
+9110 Great Lightning Spear - HitBullet
+9120 Great Lightning Spear - HitBullet
+9130 Great Lightning Spear - HitBullet
+9140 Great Lightning Spear - HitBullet
+9150 Great Lightning Spear - HitBullet
+9200 Sunlight Spear
+9210 Sunlight Spear - HitBullet
+9220 Sunlight Spear - HitBullet
+9230 Sunlight Spear - HitBullet
+9240 Sunlight Spear - HitBullet
+9250 Sunlight Spear - HitBullet
+10000 Force
+10001 Force - Level 1
+10002 Force - Level 2
+10003 Force - Level 3
+10004 Force - Level 4
+10100 Wrath of the Gods
+10101 Wrath of the Gods - Level 1
+10102 Wrath of the Gods - Level 2
+10103 Wrath of the Gods - Level 3
+10104 Wrath of the Gods - Level 4
+10200 Emit Force
+10201 Emit Force - Level 1
+10202 Emit Force - Level 2
+10203 Emit Force - Level 3
+10204 Emit Force - Level 4
+10210 Emit Force - HitBullet
+10211 Emit Force - Level 1 - HitBullet
+10212 Emit Force - Level 2 - HitBullet
+10213 Emit Force - Level 3 - HitBullet
+10214 Emit Force - Level 4 - HitBullet
+11000 Dragon transformation _ whole body [head]
+11010 Dragon transformation _ whole body [body]
+11200 Fire Surge
+11300 Fire Whip
+11400 Chaos Fire Whip
+11410 Chaos Fire Whip - HitBullet
+11500 White Dragon Breath
+11510 White Dragon Breath - HitBullet
+11520 White Dragon Breath - HitBullet
+11530 White Dragon Breath - HitBullet
+11540 White Dragon Breath - HitBullet
+11550 White Dragon Breath - HitBullet
+11560 White Dragon Breath - HitBullet
+11570 White Dragon Breath - HitBullet
+11580 White Dragon Breath - HitBullet
+11590 White Dragon Breath - HitBullet
+11600 White Dragon Breath - HitBullet
+11610 White Dragon Breath - HitBullet
+11620 White Dragon Breath - HitBullet
+11630 White Dragon Breath - HitBullet
+11640 White Dragon Breath - HitBullet
+11650 White Dragon Breath - HitBullet
+12000 Causal response [throw]
+12010 Causal response [landing]
+13000 Soul Drain 1
+13100 Soul Drain 2
+14000 Dark Orb
+14100 Dark Bead
+14200 Dark Fog
+14210 Dark Fog - HitBullet
+14300 Pursuers
+14310 Pursuers - HitBullet
+14400 Black Flame
+14410 Black Flame - HitBullet
+19901 Resuscitation [throw]
+19902 Resuscitation [landing]
+19905 Restoration of others
+19906 Black ghost retreat [throw]
+19907 Black ghost landing [landing]
+19908 Corrosion cloud [throw]
+19909 Corrosion cloud [landing_corrosion]
+19910 Fire bolt
+20600 [Infested Ghoul] Throwing a live head
+22300 [Stray Demon] Forward magic [throw]
+22301 [Stray Demon] Forward magic [landing]
+22305 [Stray Demon] Self-centered magic [throw]
+22306 [Stray Demon] Self-centered magic [landing]
+22310 [Firesage Demon] forward magic [throw]
+22311 [Firesage Demon] Forward magic [landing]
+22312 [Firesage Demon] Self-centered magic [throw]
+22313 [Firesage Demon] Self-centered magic [landing]
+22600 [Batwing Demon] Spear Throw 1
+23000 [Prowling Demon] Lightning Magic
+23200 [Iron Golem] Ax to vacuum wave
+23600 [Smough] Thunder Explosion with Hip Attack
+23700 [Channeler] Magic Launch 1
+23701 [Channeler] Magic Launch 2 (Long)
+23702 [Channeler] Magic Washi (for allies)
+23703 [Channeler] Masashita Wasshoi (for yourself)
+23800 [Stone Knight] Earth Knight_Gravity
+24000 [Painting Guardian] knife throwing
+24100 [Silver Knight] Launch of a large bow
+24300 [Demonic Statue] Breath (Front / Long)
+24301 [Demonic Statue] Breath (Swing)
+25000 [Hollow] bow shooting
+25200 [Undead Assassin] Throwing knife
+25300 [Blowdart Hollow] Blow Arrow
+25400 [Hollow Warrior] Throw the bottle
+25401 [Hollow Warrior]  tying bullet from “throwing a bottle”
+25402 [Hollow Warrior] Spreading Flame from "Splice Bullet"
+25500 [Hollow Soldier] Bowgun Shooting
+25600 [Balder Knight] Bowgun Shooting
+25900 [Unknown] Shooting
+26500 [Necromancer] Fire magic from skeletons
+26501 [Necromancer] Pow the ashes
+26700 [Ghost (Male)] magic launch
+26800 [Ghost (Female)] Push out baby
+27000 [Serpent Mage] Spit the venom
+27001 [Serpent Mage] Magic launch
+27100 [Crystal Golem] hit the ground
+27101 [Crystal Golem] Striking the ground (Derivation 1)
+27102 [Crystal Golem] Striking the ground (Derivation 2)
+27103 [Crystal Golem] hitting the ground (derivation 3)
+27104 [Crystal Golem] hitting the ground (derivation 4)
+27105 [Crystal Golem] hitting the ground (derived 5)
+27106 [Crystal Golem] Striking the ground (Derivation 6)
+27107 [Crystal Golem] Striking the ground (Derivation 7)
+27110 [Crystal Golem (Gold)] Striking the ground
+27111 [Crystal Golem (Gold)] hit the ground [child]
+27112 [Crystal Golem (Gold)] Hit the ground [grandchild]
+27113 [Crystal Golem (Gold)] Striking the ground [Great Son]
+27114 [Crystal Golem (Gold)] Hit the ground [Genso]
+27300 [Priscilla] breath (foot)
+27301 [Priscilla] breath (slight swing)
+28000 [Crystal Hollow] bow shooting
+28110 [Infested Barbarian] throw rock
+28300 [Hollow Phalanx] Spear Throw
+28400 [Engorged Hollow] Spit the venom of blood
+28401 [Engorged Hollow] Mass squirting of toxic blood at death
+28402 [Engorged Hollow] Spell 1
+28403 [Engorged Hollow] Spell 2
+28600 [Giant] Throwing 1
+28601 [Giant] throwing 2
+28602 [Giant] throwing 3
+28607 [Giant] fire pot [for the middle]
+28608 [Giant] flame jar [tie]
+28609 [Giant] fire jar [landing]
+28610 [Giant] Event throwing 1
+28611 [Giant] event throwing 2
+28612 [Giant] Event throwing 3
+28613 [Giant] event throwing 4
+28614 [Giant] Event throwing 5
+28615 [Giant] Event throwing 6
+28700 [Royal Sentinel] Miracles / Angry of God
+29000 [Skeleton] Arrow
+29010 [Skeleton] Large bow and arrow
+30900 [Mosquito] venomous squirt
+32000 [Slime] dropping drops
+32200 [Chaos Bug] discharge liquid
+32300 [Moonlight Butterfly] Magic Spear
+32301 [Moonlight Butterfly] magic spear (for direction)
+32302 [Moonlight Butterfly] Magic spear (for stage 2)
+32310 [Moonlight Butterfly] Magic spear (large)
+32320 [Moonlight Butterfly] Magic Spear (Oversized)
+32321 [Moonlight Butterfly] Magic Spear (Oversized) [Arrival]
+32330 [Moonlight Butterfly] range explosion
+32400 [Chaos Eater] Digestive juice
+32401 [Chaos Eater] Digestive juice (long distance)
+32700 [Basilisk] Petrified breath
+32701 [Basilisk] jump & breath
+32702 [Basilisk] Jump & Breath Impact For SFX
+32703 [Basilisk] For jump & breath landing headache
+33200 [Pinwheel] Magic Square A
+33201 [Pinwheel] Magic Square A (upside down)
+33202 [Pinwheel] Back Step & Magic Square A
+33203 [Pinwheel] Back Step & Magic Square A (upside down)
+33300 [Pisaca] Bishacha_Spit
+33410 [Flaming Attack Dog] Spit Flame
+33800 [Leech] mucus
+33900 [Burrower] Spitting liquid in a short distance
+33901 [Burrower] Spit to a long distance
+33902 [Burrower] Spit on base (ground)
+33903 [Burrower] Spit a liquid far away (ground)
+33904 [Burrower] Spit mucus (wall)
+33906 [Burrower] Mucous / Front (ceiling)
+33907 [Burrower] mucus, right (ceiling)
+33908 [Burrower] mucus, left (ceiling)
+33909 [Burrower] Mucus / Back (ceiling)
+34000 [Cragspider] Magma from umbilical cord
+34001 [Cragspider] Magma from umbilical cord [landing]
+34100 [Frog-Ray] mucus
+34101 [Frog-Ray] Slime (at the time of jump)
+34200 [Undead Dragon] Assid Breath
+34201 [Undead Dragon] Assid Breath (for right)
+34202 [Undead Dragon] Assid Breath (Left)
+34203 [Undead Dragon]  Front Breath
+34204 [Undead Dragon] Wide Angle Breath
+34205 [Undead Dragon] Float and breath right below
+34206 [Undead Dragon] Floats and breathes right below (child bullet)
+34207 [Undead Dragon (Valley of the Drakes)] breath to the right
+34208 [Undead Dragon (Valley of the Drakes)] breath in front
+34209 [Undead Dragon (Valley of the Drakes)] Breath to the left
+34300 [Hellkite Drake] A point breath 1
+34301 [Hellkite Drake] A → B
+34302 [Hellkite Drake] B point breath 1
+34303 [Hellkite Drake] B point breath 2
+34304 [Hellkite Drake] B point fly off and breath 1
+34305 [Hellkite Drake] B point fly-off breath 2
+34700 [Sanctuary Guardian (Old)] Wind with wings
+34701 [Sanctuary Guardian (Old)] Breath 1
+34710 [Sanctuary Guardian] Win the wind with wings
+34711 [Sanctuary Guardian] Breath 1 Dummy
+34712 [Sanctuary Guardian] Breath 2 dummy
+34713 [Sanctuary Guardian] Aerial breath 1
+34714 [Sanctuary Guardian] Aerial Breath 2R
+34715 [Sanctuary Guardian] Aerial breath 2L
+34716 [Sanctuary Guardian] Aerial breath (child)
+34717 [Sanctuary Guardian] Aerial breath (grandchild)
+34718 [Sanctuary Guardian] Aerial breath (great grandson)
+34719 [Sanctuary Guardian] Aerial Breath (Genso)
+34720 [Sanctuary Guardian] Aerial breath (next grandson)
+34721 [Sanctuary Guardian] step turning breath
+34722 [Sanctuary Guardian] Breath 1
+34723 [Sanctuary Guardian] Breath 2
+34724 [Sanctuary Guardian] Breath 1 (for passage) Dummy
+34725 [Sanctuary Guardian] Breath 2 (for passage) dummy
+34726 [Sanctuary Guardian] Breath 1 (for passage)
+34727 [Sanctuary Guardian] Breath 2 (for passage)
+34728 [Sanctuary Guardian] Aerial Breath 2R (Near)
+34729 [Sanctuary Guardian] Aerial breath 2L (near)
+34910 [Evil Vagrant] Spiky launch_Damage level available
+34911 [Evil Vagrant] Spiky launch (right) _With damage level
+34912 [Evil Vagrant] Spiky launch (left side) _With damage level
+35000 [Mass Of Souls] Slime bullet (close)
+35001 [Mass Of Souls] Slime bullet (far)
+35010 [Wisp] Suicide [throwing]
+35011 [Wisp] self-destruction [landing]
+35200 [Drake] Top and bottom breath
+35201 [Drake] Left and right breath (close)
+35202 [Drake] Left and right breath (medium)
+35203 [Drake] Left and right breath (far)
+35204 [Drake] Descent breath
+35205 [Drake] Breath landing
+35206 [Drake] Front breath (ground)
+35207 [Drake] Swing Breath (ground)
+35208 [Drake] Breath & Backstep (ground)
+35209 [Drake] Leaving breath (ground)
+35210 [Drake] Leaving breath (moving forward)
+35211 [Drake] Leaving Breath clockwise
+35212 [Drake] Ascent & Glide & Breath
+35213 [Drake] Ascending breath & jump
+35300 [Hydra] A Point → B Point Movement_Breath
+35301 [Hydra] B → C → Breath
+35303 [Hydra] Near Breath_Neck 1
+35304 [Hydra] Near Breath_Neck 2
+35305 [Hydra] Near Breath_Neck 3
+35306 [Hydra] Near Breath_Neck 4
+35307 [Hydra] Near Breath_Neck 5
+35308 [Hydra] Near Breath_Neck 6
+35309 [Hydra] Near Breath_Neck 7
+35310 [Hydra] Breath_Neck 1
+35311 [Hydra] Breath_Neck 2
+35312 [Hydra] Breath_Neck 3
+35313 [Hydra] Distant Breath_Neck 4
+35314 [Hydra] Breath_Neck 5
+35315 [Hydra] Breath_Neck 6
+35316 [Hydra] Breath_Neck 7
+35330 [Hydra] A Point → B Point Movement_Breath_Head 1
+35331 [Hydra] A Point → B Point Movement_Breath_Head 2
+35332 [Hydra] A Point → B Point Movement_Breath_Neck 3
+35333 [Hydra] A point → B point movement_Breath_Neck 4
+35334 [Hydra] A point → B point movement_Breath_Neck 5
+35335 [Hydra] Point A → Point B Movement_Breath_Head 6
+35336 [Hydra] Point A → B Point Movement_Breath_Head 7
+35350 [Hydra] B → Move to point A_Breath_Head 1
+35351 [Hydra] B Point → A Point Movement_Breath_Head 2
+35352 [Hydra] Point B → A Point Movement_Breath_Neck 3
+35353 [Hydra] Point B → A Point Movement_Breath_Head 4
+35354 [Hydra] B Point → A Point Movement_Breath_Head 5
+35355 [Hydra] Point B → A point move_Breath_Head 6
+35356 [Hydra] B → Move to A_Breath_Head 7
+35360 [Hydra] Breath [Arrival (child)]
+35361 [Hydra] Move Breath [Arrival (child)]
+35363 [Hydra] Breath 2_Neck 1
+35364 [Hydra] Breath 2_Neck 2
+35365 [Hydra] Breath 2_Neck 3
+35366 [Hydra] Beast_Breath 2_Neck 4
+35367 [Hydra] Breath 2_Neck 5
+35368 [Hydra] Breath 2_Neck 6
+35369 [Hydra] Breath 2_Neck 7
+35370 [Hydra] Sand smoke SFX generation_neck 1
+35371 [Hydra] Sand smoke SFX generation_neck 2
+35372 [Hydra] Sand smoke SFX generation_neck 3
+35373 [Hydra] Sand smoke SFX generation_neck 4
+35374 [Hydra] Sand smoke SFX generation_neck 5
+35375 [Hydra] Smoke SFX generation_neck 6
+35376 [Hydra] Smoke SFX generation_neck 7
+35377 [Hydra] Sand smoke SFX generation [landing]
+40900 [Marvellous Chester] arrow
+40901 [Marvellous Chester] Rose
+41500 [Knight Artorias] Left hand tackle [Body]
+41501 [Knight Artorias] Left hand tackle [Arrival]
+41510 [Knight Artorias] Self-enhancement
+41600 [Bloathead Sorcerer] Magic 1
+41610 [Bloathead Sorcerer] Magic 2 [Throw]
+41611 [Bloathead Sorcerer] Magic 2 [Arrival _ Poison]
+41620 [Bloathead Sorcerer] Magic 3
+41621 [Bloathead Sorcerer] Magic 3 (above)
+41622 [Bloathead Sorcerer] Magic 3 (below)
+41700 [Humanity Phantom (Large)] Attack
+41710 [Humanity Phantom (Medium)] Attack
+41720 [Humanity Phantom (Small)] Attack
+45000 [Manus, Father of the Abyss] Dummy 1
+45009 [Manus, Father of the Abyss] Magic 1_Body
+45010 [Manus, Father of the Abyss] Magic 2
+45011 [Manus, Father of the Abyss] Magic 2_Final
+45020 [Manus, Father of the Abyss] Magic 3_Dummy
+45021 [Manus, Father of the Abyss] Magic 3_Body
+45100 [Kalameet] straight breath
+45101 [Kalameet] Linear Breath_1
+45102 [Kalameet] Linear Breath_2
+45103 [Kalameet] Linear Breath_3rd Shot
+45110 [Kalameet] Fan type breath
+45120 [Kalameet] rising breath
+45121 [Kalameet] Rising Breath Impact
+45130 [Kalameet] 180 Turning_Breath
+45140 [Kalameet] Event Attack (Distant) Breath
+45141 [Kalameet] Event Attack (Distant) Breath Landed
+45160 [Kalameet] Event Attack (Near) Breath
+45161 [Kalameet] Event Attack (Near) Breath Landed
+45170 [Kalameet] direct breath
+45171 [Kalameet] Breathe landing directly below
+45172 [Kalameet] Breath directly below
+45180 [Kalameet] Cliff Breath 1
+45181 [Kalameet] Cliff Breath Breath 1 Shot
+45190 [Kalameet] Cliff Breath 2
+45191 [Kalameet] Cliff Breath Breath 2 Shot
+45200 [Kalameet] Shock across the bridge
+52000 [Centipede Demon] fireball first
+52001 [Centipede Demon] fireball second
+52002 [Centipede Demon] throwing a huge fireball [throwing]
+52003 [Centipede Demon] throwing a huge fireball [landing]
+52200 [Gravelord Nito] Self-centered explosion [throw]
+52201 [Gravelord Nito] Self-centered explosion [landing]
+52310 [Bed Of Chaos] Bombardment bullet
+52311 [Bed Of Chaos] Breath landing
+52600 [Gaping Dragon] Gero [Throwing]
+52601 [Gaping Dragon] Gero [Arrival]
+52700 [Dragonslayer Ornstein] Raise and throw lightning
+52701 [Dragonslayer Ornstein] Thunder fire
+52710 [Dragonslayer Ornstein (Giant)] Raise and throw lightning
+52711 [Dragonslayer Ornstein (Giant)] Hip Attack_Lightning Explosion
+52712 [Dragonslayer Ornstein (Giant)] One-handed Thundering
+52800 [Chaos Witch Quelaag] Magma breath
+52801 [Chaos Witch Quelaag] Magma breath (right)
+52802 [Chaos Witch Quelaag] Magma breath (left)
+52803 [Chaos Witch Quelaag] magma [landing]
+52804 [Chaos Witch Quelaag] Strong breath
+52805 [Chaos Witch Quelaag] Self-centered explosion [throwing]
+52806 [Chaos Witch Quelaag] self-centered explosion [landing]
+52807 [Chaos Witch Quelaag] Butt flame
+52808 [Chaos Witch Quelaag] For strong breath magma impact generation
+52809 [Chaos Witch Quelaag] Forward jump breath
+52810 [Chaos Witch Quelaag] Forward jump Breath for magma impact
+52900 [Seath the Scaleless] Breath
+52901 [Seath the Scaleless] Breath (short-range sweeping) [Arrival]
+52902 [Seath the Scaleless] Breath (Long distance sweeping)
+52903 [Seath the Scaleless] Breath (Long distance sweeping) [Arrival]
+52904 [Seath the Scaleless] Breath (Front)
+52905 [Seath the Scaleless] breath (front) [landing]
+52906 [Seath the Scaleless] Breath (Front): Slow ver.
+52907 [Seath the Scaleless] Breath (Long distance sweeping)
+52908 [Seath the Scaleless] self-centered explosion
+52909 [Seath the Scaleless] Self-centered explosion [grandchild]
+52910 [Seath the Scaleless] Self-centered explosion (for continued damage) [Parent]
+52911 [Seath the Scaleless] Self-centered explosion (for continuing damage)
+52912 [Seath the Scaleless] Self center explosion_Submunition 1
+52913 [Seath the Scaleless] Self center explosion_Submunition 2
+52914 [Seath the Scaleless] Self center explosion_Submunition 3
+52915 [Seath the Scaleless] Self center explosion_Submunition 4
+52916 [Seath the Scaleless] Self center explosion_Submunition 5
+52917 [Seath the Scaleless] Self center explosion_Submunition 6
+52920 [Seath the Scaleless] Breath (Ultra short distance sweeping)
+52921 [Seath the Scaleless] Breath
+52922 [Seath the Scaleless] Self-centered explosion_First match
+52923 [Seath the Scaleless] Self-centered explosion (Damage continuation / First match)
+53000 [Undead King Ja-Yearl] Seoul Energy Explosion
+53200 [Gwyndolin] bow
+53210 [Gwyndolin] Induction
+53211 [Gwyndolin] Induction 2
+53220 [Gwyndolin] Extremely thick
+53500 [Gargoyle] Swing breath
+53501 [Gargoyle] Breath from the air
+53510 [Gargoyle] Swing breath
+53511 [Gargoyle] Breath from the air
+53900 [Four Kings] Self-centered explosion
+53901 [Four Kings] Dark Bullet
+53902 [Four Kings] Fire a huge dark aura
+54000 [Bed of Chaos] Throw a flame with your right hand (right direction)
+54001 [Bed of Chaos] Throw a flame with your right hand (left direction)
+54002 [Bed of Chaos] Self-centered flame
+54003 [Bed of Chaos] Magma bullet
+54004 [Bed of Chaos] Remaining magma
+54005 [Bed of Chaos] Throw the flame [Arrive]
+54010 [Bed of Chaos] Storm of Fire_Point Decision Bullet
+54011 [Bed of Chaos] Fire Storm_Parent
+54012 [Bed of Chaos] Fire Storm_Child
+54013 [Bed of Chaos] Magma Bullet 2

@@ -1,0 +1,5 @@
+<class name='hkbSimulationStateInfo' version='1' signature='0x3e6ee0e3' size='24' parent='hkReferencedObject'>
+  <members>
+    <member name='simulationState' offset='16' etype='SimulationState' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

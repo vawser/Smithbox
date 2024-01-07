@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>OBJ_ACT_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 actionEnableMsgId = -1" />
+    <Field Def="s32 actionFailedMsgId = -1" />
+    <Field Def="s32 spQualifiedPassEventFlag = -1" />
+    <Field Def="s32 playerAnimId" />
+    <Field Def="s32 chrAnimId" />
+    <Field Def="s16 validDist = 70" />
+    <Field Def="s16 spQualifiedId" />
+    <Field Def="s16 spQualifiedId2" />
+    <Field Def="u8 objDummyId" />
+    <Field Def="u8 isEventKickSync" />
+    <Field Def="u32 objAnimId" />
+    <Field Def="u8 validPlayerAngle = 60" />
+    <Field Def="u8 spQualifiedType" />
+    <Field Def="u8 spQualifiedType2" />
+    <Field Def="u8 validObjAngle = 60" />
+    <Field Def="u8 chrSorbType" />
+    <Field Def="u8 eventKickTiming = 1" />
+    <Field Def="dummy8 pad2[2]" />
+    <Field Def="s32 actionButtonParamId = -1" />
+    <Field Def="f32 enableTreasureDelaySec" />
+  </Fields>
+</PARAMDEF>

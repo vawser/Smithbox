@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <sfxId_0 AltName="SFX ID [0]" Wiki="0: SfxID" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <dmypolyId_0 AltName="Dummy Poly ID [0]" Wiki="0: Damipoli ID" />
+    <reserve_0 AltName=""/>
+    <sfxId_1 AltName="SFX ID [1]" Wiki="1: SfxID" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <dmypolyId_1 AltName="Dummy Poly ID [1]" Wiki="1: Damipoli ID" />
+    <reserve_1 AltName=""/>
+    <sfxId_2 AltName="SFX ID [2]" Wiki="2: SfxID" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <dmypolyId_2 AltName="Dummy Poly ID [2]" Wiki="2: Damipoli ID" />
+    <reserve_2 AltName=""/>
+    <sfxId_3 AltName="SFX ID [3]" Wiki="3: SfxID" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <dmypolyId_3 AltName="Dummy Poly ID [3]" Wiki="3: Damipoli ID" />
+    <reserve_3 AltName=""/>
+    <sfxId_4 AltName="SFX ID [4]" Wiki="4: SfxID" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <dmypolyId_4 AltName="Dummy Poly ID [4]" Wiki="4: Damipoli ID" />
+    <reserve_4 AltName=""/>
+    <sfxId_5 AltName="SFX ID [5]" Wiki="5: SfxID" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <dmypolyId_5 AltName="Dummy Poly ID [5]" Wiki="5: Damipoli ID" />
+    <reserve_5 AltName=""/>
+    <sfxId_6 AltName="SFX ID [6]" Wiki="6: SfxID" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <dmypolyId_6 AltName="Dummy Poly ID [6]" Wiki="6: Damipoli ID" />
+    <reserve_6 AltName=""/>
+    <sfxId_7 AltName="SFX ID [7]" Wiki="7: SfxID" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <dmypolyId_7 AltName="Dummy Poly ID [7]" Wiki="7: Damipoli ID" />
+    <isDisableIV AltName="Is Irradiance Volume Disabled" Wiki="When enabled, the effect on irradiance volume shooting is disabled." />
+    <reserve_7 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

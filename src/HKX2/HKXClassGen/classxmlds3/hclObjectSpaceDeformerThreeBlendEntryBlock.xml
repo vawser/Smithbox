@@ -1,0 +1,7 @@
+<class name='hclObjectSpaceDeformerThreeBlendEntryBlock' version='1' signature='0x4c91300b' size='176'>
+  <members>
+    <member name='vertexIndices' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='boneIndices' offset='32' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='48' flags='FLAGS_NONE' default='0'/>
+    <member name='boneWeights' offset='128' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='48' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

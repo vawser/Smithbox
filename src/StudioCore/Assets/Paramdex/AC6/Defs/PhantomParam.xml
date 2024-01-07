@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PHANTOM_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 edgeColorA"></Field>
+    <Field Def="f32 frontColorA"></Field>
+    <Field Def="f32 diffMulColorA"></Field>
+    <Field Def="f32 specMulColorA"></Field>
+    <Field Def="f32 lightColorA"></Field>
+    <Field Def="u8 edgeColorR"></Field>
+    <Field Def="u8 edgeColorG"></Field>
+    <Field Def="u8 edgeColorB"></Field>
+    <Field Def="u8 frontColorR"></Field>
+    <Field Def="u8 frontColorG"></Field>
+    <Field Def="u8 frontColorB"></Field>
+    <Field Def="u8 diffMulColorR"></Field>
+    <Field Def="u8 diffMulColorG"></Field>
+    <Field Def="u8 diffMulColorB"></Field>
+    <Field Def="u8 specMulColorR"></Field>
+    <Field Def="u8 specMulColorG"></Field>
+    <Field Def="u8 specMulColorB"></Field>
+    <Field Def="u8 lightColorR"></Field>
+    <Field Def="u8 lightColorG"></Field>
+    <Field Def="u8 lightColorB"></Field>
+    <Field Def="dummy8 reserve[1]"></Field>
+    <Field Def="f32 alpha"></Field>
+    <Field Def="f32 blendRate"></Field>
+    <Field Def="u8 blendType"></Field>
+    <Field Def="u8 isEdgeSubtract"></Field>
+    <Field Def="u8 isFrontSubtract"></Field>
+    <Field Def="u8 isNo2Pass"></Field>
+    <Field Def="f32 edgePower"></Field>
+    <Field Def="f32 glowScale"></Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <SfxId AltName="Weather SFX ID" Wiki="SfxId for weather -1: No weather Sfx Set for indoor and outdoor use. Items that can be erased with Above Shadow, such as raindrops of interactive particles, are OK here." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <WindSfxId AltName="Wind SFX ID" Wiki="Wind SfxId -1: No wind Sfx Created only outdoors" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <GroundHitSfxId AltName="Ground Hit SFX ID" Wiki="SfxId for ground hit effect -1: None for ground hit effect" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <SoundId AltName="Sound ID" Wiki="SoundId for weather -1: No Sound" />
+    <WetTime AltName="Wet Time" Wiki="Time to get completely wet (time until the weight of m00_00_0000_WeatherBase reaches 1.0) -1: No wetness (m00_00_0000_WeatherBase remains 0.0)" />
+    <GparamId AltName="GPARAM ID" Wiki="Specify the XXX part of Gparam (m00_00_? XXX_WeatherOutdoor.gparamxml) for outdoor weather. Gparam to be used can be shared between weather." />
+    <NextLotIngameSecondsMin AltName="Next Weather Lot - Min Duration" Wiki="Specify the minimum time to the next weather lottery in in-game seconds. When transitioning to this weather, the time to the next weather will be a random time between the minimum and maximum." />
+    <NextLotIngameSecondsMax AltName="Next Weather Lot - Max Duration" Wiki="Specify the maximum time until the next weather lottery in in-game seconds. When transitioning to this weather, the time to the next weather will be a random time between the minimum and maximum." />
+    <WetSpEffectId00 AltName="Wet SpEffect [0]" Wiki="Special effect ID on the character (-1: None)" Refs="SpEffectParam"/>
+    <WetSpEffectId01 AltName="Wet SpEffect [1]" Wiki="Special effect ID on the character (-1: None)" Refs="SpEffectParam"/>
+    <WetSpEffectId02 AltName="Wet SpEffect [2]" Wiki="Special effect ID on the character (-1: None)" Refs="SpEffectParam"/>
+    <WetSpEffectId03 AltName="Wet SpEffect [3]" Wiki="Special effect ID on the character (-1: None)" Refs="SpEffectParam"/>
+    <WetSpEffectId04 AltName="Wet SpEffect [4]" Wiki="Special effect ID on the character (-1: None)" Refs="SpEffectParam"/>
+    <SfxIdInoor AltName="Weather SFX - Indoors Only - SFX ID" Wiki="Weather SfxId -1: No weather Sfx indoors only" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <SfxIdOutdoor AltName="Weather SFX - Outdoors Only - SFX ID" Wiki="Weather SfxId -1: No weather Sfx, outdoor only" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <aiSightRate AltName="AI Sight Rate" Wiki="AI field of view magnification" />
+    <DistViewWeatherGparamOverrideWeight AltName="Overwrite Weight Valuue in Distant View Camera" Wiki="Overwrite weight value in distant view camera (SEQ16724)" />
+  </Field>
+  <Self />
+</PARAMMETA>

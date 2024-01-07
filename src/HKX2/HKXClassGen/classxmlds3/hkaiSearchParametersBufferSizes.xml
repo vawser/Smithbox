@@ -1,0 +1,16 @@
+<class name='hkaiSearchParametersBufferSizes' version='1' signature='0x79281d30' size='8'>
+  <enums>
+    <enum name='ThreadingType' flags='00000000'>
+      <enumitem name='SINGLE_THREADED' value='0'/>
+      <enumitem name='MULTI_THREADED' value='1'/>
+    </enum>
+    <enum name='SearchType' flags='00000000'>
+      <enumitem name='SEARCH_REGULAR' value='0'/>
+      <enumitem name='SEARCH_HIERARCHICAL' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='maxOpenSetSizeBytes' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxSearchStateSizeBytes' offset='4' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

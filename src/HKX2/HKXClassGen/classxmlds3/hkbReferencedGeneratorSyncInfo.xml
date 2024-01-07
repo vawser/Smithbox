@@ -1,0 +1,5 @@
+<class name='hkbReferencedGeneratorSyncInfo' version='1' signature='0xa99c3d43' size='184' parent='hkReferencedObject'>
+  <members>
+    <member name='syncInfo' offset='16' ctype='hkbGeneratorSyncInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

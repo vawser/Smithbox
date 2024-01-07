@@ -1,0 +1,561 @@
+0 UNKNOWN
+9800 UNKNOWN
+9801 UNKNOWN
+9802 UNKNOWN
+9803 UNKNOWN
+9916 UNKNOWN
+9917 UNKNOWN
+9918 UNKNOWN
+9919 UNKNOWN
+9920 UNKNOWN
+9921 UNKNOWN
+9922 UNKNOWN
+9923 UNKNOWN
+9926 UNKNOWN
+9927 UNKNOWN
+9930 UNKNOWN
+9932 UNKNOWN
+9933 UNKNOWN
+9934 UNKNOWN
+9935 UNKNOWN
+9936 UNKNOWN
+9939 UNKNOWN
+9940 UNKNOWN
+9941 UNKNOWN
+9942 UNKNOWN
+9943 UNKNOWN
+9950 UNKNOWN
+9951 UNKNOWN
+9952 UNKNOWN
+9953 UNKNOWN
+199180 UNKNOWN
+199181 UNKNOWN
+199182 UNKNOWN
+199183 UNKNOWN
+11001100 UNKNOWN
+11001101 UNKNOWN
+11001102 UNKNOWN
+11001103 UNKNOWN
+11010100 Pate's Helm
+11010101 Pate's Armor
+11010102 Pate's Gloves
+11010103 Pate's Trousers
+11020100 Thief Mask
+11020101 Black Leather Armor
+11020102 Black Leather Gloves
+11020103 Black Leather Boots
+11030100 Wanderer Hood
+11030101 Wanderer Coat
+11030102 Wanderer Manchettes
+11030103 Wanderer Boots
+11040100 Hunter's Hat
+11040101 Leather Armor
+11040102 Leather Gloves
+11040103 Leather Boots
+11041100 UNKNOWN
+11050100 Knight Helm
+11050101 Knight Armor
+11050102 Knight Gauntlets
+11050103 Knight Leggings
+11060100 Elite Knight Helm
+11060101 Elite Knight Armor
+11060102 Elite Knight Gloves
+11060103 Elite Knight Leggings
+11070100 Tattered Cloth Hood
+11070101 Tattered Cloth Robe
+11070102 Tattered Cloth Manchettes
+11070103 Heavy Boots
+11080100 Brigand Hood
+11080101 Brigand Armor
+11080102 Brigand Gauntlets
+11080103 Brigand Trousers
+11090100 UNKNOWN
+11090101 UNKNOWN
+11090102 UNKNOWN
+11090103 UNKNOWN
+11100100 Imported Hood
+11100101 Imported Tunic
+11100102 Imported Manchettes
+11100103 Imported Trousers
+11110100 UNKNOWN
+11110101 UNKNOWN
+11110102 UNKNOWN
+11110103 UNKNOWN
+11120100 UNKNOWN
+11120101 UNKNOWN
+11120102 UNKNOWN
+11120103 UNKNOWN
+11130100 UNKNOWN
+11130101 UNKNOWN
+11130102 UNKNOWN
+11130103 UNKNOWN
+11140100 Traveling Merchant Hat
+11140101 Traveling Merchant Coat
+11140102 Traveling Merchant Gloves
+11140103 Traveling Merchant Boots
+11150100 UNKNOWN
+11150101 UNKNOWN
+11150102 UNKNOWN
+11150103 UNKNOWN
+11160100 Havel's Helm
+11160101 Havel's Armor
+11160102 Havel's Gauntlets
+11160103 Havel's Leggings
+11170100 UNKNOWN
+11170101 UNKNOWN
+11170102 UNKNOWN
+11170103 UNKNOWN
+11180100 UNKNOWN
+11180101 UNKNOWN
+11180102 UNKNOWN
+11180103 UNKNOWN
+11190100 UNKNOWN
+11190101 UNKNOWN
+11190102 UNKNOWN
+11190103 UNKNOWN
+11210100 Jester's Cap
+11210101 Jester's Robes
+11210102 Jester's Gloves
+11210103 Jester's Tights
+11220100 UNKNOWN
+11220101 UNKNOWN
+11220102 UNKNOWN
+11220103 UNKNOWN
+11230100 Moon Hat
+11230101 Astrologist's Robe
+11230102 Astrologist's Gauntlets
+11230103 Astrologist's Bottoms
+11240100 UNKNOWN
+11240101 UNKNOWN
+11240102 UNKNOWN
+11240103 UNKNOWN
+11250100 UNKNOWN
+11250101 UNKNOWN
+11250102 UNKNOWN
+11250103 UNKNOWN
+11270100 UNKNOWN
+11270101 UNKNOWN
+11270102 UNKNOWN
+11270103 UNKNOWN
+11280100 UNKNOWN
+11280101 UNKNOWN
+11280102 UNKNOWN
+11280103 UNKNOWN
+11290100 UNKNOWN
+11290101 UNKNOWN
+11290102 UNKNOWN
+11290103 UNKNOWN
+11300100 UNKNOWN
+11300101 UNKNOWN
+11300102 UNKNOWN
+11300103 UNKNOWN
+11310100 UNKNOWN
+11310101 UNKNOWN
+11310102 UNKNOWN
+11310103 UNKNOWN
+11320100 Faraam Helm
+11320101 Faraam Armor
+11320102 Faraam Gauntlets
+11320103 Faraam Boots
+11330100 Black Dragon Helm
+11330101 Black Dragon Armor
+11330102 Black Dragon Gauntlets
+11330103 Black Dragon Leggings
+11340100 Xanthous Crown
+11340101 Xanthous Overcoat
+11340102 Xanthous Gloves
+11340103 Xanthous Waistcloth
+11350100 Mask of Judgment
+11350101 Robe of Judgment
+11350102 Manchettes ofJudgment
+11350103 Tights of Judgment
+11360100 Helm of Aurous
+11360101 Armor of Aurous
+11360102 Gauntlets of Aurous
+11360103 Leggings of Aurous
+11361100 Helm of Aurous
+11361101 Armor of Aurous
+11361102 Gauntlets of Aurous
+11361103 Leggings of Aurous
+11370100 Monastery Headcloth
+11370101 Monastery Longshirt
+11370102 Monastery Long Gloves
+11370103 Monastery Skirt
+11380100 UNKNOWN
+11380101 UNKNOWN
+11380102 UNKNOWN
+11380103 UNKNOWN
+11390100 Dingy Hood
+11390101 Dingy Robe
+11390102 Dingy Cuffs
+11390103 Blood-stained Skirt
+11430100 Durgo's Hat
+11440102 Engraved Gauntlets
+11450101 UNKNOWN
+11460103 Flying Feline Boots
+11470100 Moon Butterfly Hat
+11470101 Moon Butterfly Wings
+11470102 Moon Butterfly Cuffs
+11470103 Moon Butterfly Skirt
+11480100 Catarina Helm
+11480101 Catarina Armor
+11480102 Catarina Gauntlets
+11480103 Catarina Leggings
+11490100 Alva Helm
+11490101 Alva Armor
+11490102 Alva Gauntlets
+11490103 Alva Leggings
+11500100 Black Witch Veil
+11500101 Black Witch Robe
+11500102 Black Witch Gloves
+11500103 Black Witch Trousers
+11501100 Black Witch Hat
+11502100 Black Witch Domino Mask
+11600100 Drakeblood Helm
+11600101 Drakeblood Armor
+11600102 Drakeblood Gauntlets
+11600103 Drakeblood Leggings
+11610100 Northwarder Hood
+11610101 Northwarder Robe
+11610102 Northwarder Manchettes
+11610103 Northwarder Trousers
+11630100 Crown of the Old Iron King
+11640100 Crown of the Ivory King
+11650100 Crown of the Sunken King
+11660100 Old Bell Helm
+11670100 Hollow Skin
+11680100 Pharros Mask
+11690103 Flower Skirt
+11700100 Minotaur Helm
+11710100 Symbol of Avarice
+12020100 UNKNOWN
+12020101 UNKNOWN
+12020102 UNKNOWN
+12020103 UNKNOWN
+12021100 Royal Soldier Helm
+12021101 Royal Soldier Armor
+12021102 Royal Soldier Gauntlets
+12021103 Royal Soldier Leggings
+12030100 Hollow Infantry Helm
+12030101 Hollow Infantry Armor
+12030102 Hollow Infantry Gloves
+12030103 Hollow Infantry Boots
+12031100 Infantry Helm
+12031101 Infantry Armor
+12031102 Infantry Gloves
+12031103 Infantry Boots
+12060100 White Priest Headpiece
+12060101 White Priest Robe
+12060102 White Priest Gloves
+12060103 White Priest Skirt
+12062100 Priestess Headpiece
+12062101 Priestess Robe
+12062102 Priestess Gloves
+12062103 Priestess Skirt
+12080100 Rogue Hood
+12080101 Rogue Armor
+12080102 Rogue Gauntlets
+12080103 Rogue Leggings
+12110100 Spiked Bandit Helm
+12110101 Bandit Armor
+12110102 Bandit Gauntlets
+12110103 Bandit Boots
+12130100 Varangian Helm
+12130101 Varangian Armor
+12130102 Varangian Cuffs
+12130103 Varangian Leggings
+12180100 Black Hollow Mage Hood
+12180101 Black Hollow Mage Robe
+12180102 UNKNOWN
+12180103 UNKNOWN
+12181100 UNKNOWN
+12181101 UNKNOWN
+12181102 UNKNOWN
+12181103 UNKNOWN
+12182100 White Hollow Mage Hood
+12182101 White Hollow Mage Robe
+12182102 UNKNOWN
+12182103 UNKNOWN
+12190101 Lion Mage Robe
+12190102 Lion Mage Cuffs
+12190103 Lion Mage Skirt
+12220100 Steel Helm
+12220101 Steel Armor
+12220102 Steel Gauntlets
+12220103 Steel Leggings
+12221100 UNKNOWN
+12230100 Shadow Mask
+12230101 Shadow Top
+12230102 Shadow Gauntlets
+12230103 Shadow Leggings
+12240100 Manikin Mask
+12240101 Manikin Top
+12240102 Manikin Gloves
+12240103 Manikin Boots
+12270100 Prisoner's Hood
+12270101 Prisoner's Tatters
+12270102 Prisoner's Gloves
+12270103 Prisoner's Waistcloth
+12271100 Prisoner's Hood
+12271101 Prisoner's Tatters
+12310100 Archdrake Helm
+12310101 Archdrake Robes
+12310102 Archdrake Gloves
+12310103 Archdrake Boots
+12340100 Gyrm Helm
+12340101 Gyrm Armor
+12340102 Gyrm Gloves
+12340103 Gyrm Boots
+12350100 Gyrm Warrior Helm
+12350101 Gyrm Warrior Armor
+12350102 Gyrm Warrior Gloves
+12350103 Gyrm Warrior Boots
+12351100 Gyrm Warrior Greathelm
+12360100 Dark Mask
+12360101 Dark Armor
+12360102 Dark Gauntlets
+12360103 Dark Leggings
+12370100 Warlock Mask
+12460100 Tseldora Cap
+12460101 Tseldora Robe
+12460102 Tseldora Manchettes
+12460103 Tseldora Trousers
+12480100 Peasant Hat
+12480101 Peasant Attire
+12480102 Peasant Long Gloves
+12480103 Peasant Trousers
+12510100 Ironclad Helm
+12510101 Ironclad Armor
+12510102 Ironclad Gauntlets
+12510103 Ironclad Leggings
+12512100 Old Ironclad Helm
+12512101 Old Ironclad Armor
+12512102 Old Ironclad Gauntlets
+12512103 Old Ironclad Leggings
+12520100 Royal Swordsman Helm
+12520101 Royal Swordsman Armor
+12520102 Royal Swordsman Gloves
+12520103 Royal Swordsman Leggings
+12530100 Syan's Helm
+12530101 Syan's Armor
+12530102 Syan's Gloves
+12530103 Syan's Leggings
+12540100 Bone Crown
+12540101 Bone King Robe
+12540102 Bone King Cuffs
+12540103 Bone King Skirt
+13010100 Heide Knight Greathelm
+13010101 Heide Knight Chainmail
+13010102 Heide Knight Gauntlets
+13010103 Heide Knight Leggings
+13011100 Heide Knight Iron Mask
+13040101 Singer's Dress
+13050100 Smelter Demon Helm
+13050101 Smelter Demon Armor
+13050102 Smelter Demon Gauntlets
+13050103 Smelter Demon Leggings
+13060100 Alonne Captain Helm
+13060101 Alonne Captain Armor
+13060102 UNKNOWN
+13060103 UNKNOWN
+13061100 Alonne Knight Helm
+13061101 Alonne Knight Armor
+13061102 Alonne Knight Gauntlets
+13061103 Alonne Knight Leggings
+13070100 Vengarl's Helm
+13070101 Vengarl's Armor
+13070102 Vengarl's Gloves
+13070103 Vengarl's Boots
+13080101 Lion Warrior Cape
+13080102 Lion Warrior Cuffs
+13080103 Lion Warrior Skirt
+13081100 Lion Warrior Helm
+13081101 Red Lion Warrior Cape
+13081103 UNKNOWN
+13120100 Grave Warden Mask
+13120101 Grave Warden Top
+13120102 Grave Warden Cuffs
+13120103 Grave Warden Bottoms
+13130100 Falconer Helm
+13130101 Falconer Armor
+13130102 Falconer Gloves
+13130103 Falconer Boots
+13140100 Rusted Mastodon Helm
+13140101 Rusted Mastodon Armor
+13140102 Rusted Mastodon Gauntlets
+13140103 Rusted Mastodon Leggings
+13150100 Mastodon Helm
+13150101 Mastodon Armor
+13150102 Mastodon Gauntlets
+13150103 Mastodon Leggings
+13160100 Desert Sorceress Hood
+13160101 Desert Sorceress Top
+13160102 Desert Sorceress Gloves
+13160103 Desert Sorceress Skirt
+13170100 Dragon Acolyte Mask
+13170101 Dragon Acolyte Robe
+13170102 Dragon Acolyte Gloves
+13170103 Dragon Acolyte Boots
+13171100 Dragon Sage Hood
+13250100 Ruin Helm
+13250101 Ruin Armor
+13250102 Ruin Gauntlets
+13250103 Ruin Leggings
+13300100 Old Knight Helm
+13300101 Old Knight Armor
+13300102 Old Knight Gauntlets
+13300103 Old Knight Leggings
+13310100 Drakekeeper Helm
+13310101 Drakekeeper Armor
+13310102 Drakekeeper Gauntlets
+13310103 Drakekeeper Boots
+13320100 Throne Defender Helm
+13320101 Throne Defender Armor
+13320102 Throne Defender Gauntlets
+13320103 Throne Defender Leggings
+13330100 Velstadt's Helm
+13330101 Velstadt's Armor
+13330102 Velstadt's Gauntlets
+13330103 Velstadt's Leggings
+13340100 Throne Watcher Helm
+13340101 Throne Watcher Armor
+13340102 Throne Watcher Gauntlets
+13340103 Throne Watcher Leggings
+15040100 Looking Glass Mask
+15040101 Looking Glass Armor
+15040102 Looking Glass Gauntlets
+15040103 Looking Glass Leggings
+15060101 Agdayne's Black Robe
+15060102 Agdayne's Cuffs
+15060103 Agdayne's Kilt
+15090100 Leydia Black Hood
+15090101 Leydia Black Robe
+15100100 Insolent Helm
+15100101 Insolent Armor
+15100102 Insolent Gloves
+15100103 Insolent Boots
+15110100 Imperious Helm
+15110101 Imperious Armor
+15110102 Imperious Gloves
+15110103 Imperious Leggings
+15120100 Leydia White Hood
+15120101 Leydia White Robe
+15120102 Leydia Gauntlets
+15120103 UNKNOWN
+15130100 King's Crown
+15130101 King's Armor
+15130102 King's Gauntlets
+15130103 King's Leggings
+16100100 Dragonrider Helm
+16100101 Dragonrider Armor
+16100102 Dragonrider Gauntlets
+16100103 Dragonrider Leggings
+16180100 Executioner Helm
+16180101 Executioner Armor
+16180102 Executioner Gauntlets
+16180103 Executioner Leggings
+16260100 Penal Mask
+16260101 Penal Straightjacket
+16260102 Penal Handcuffs
+16260103 Penal Skirt
+16510100 Fume Sorcerer Mask
+16510101 Fume Sorcerer Robes
+16510102 Fume Sorcerer Gloves
+16510103 Fume Sorcerer Boots
+16590100 Rampart Golem Helm
+16590101 Rampart Golem Armor
+16590102 Rampart Golem Gauntlets
+16590103 Rampart Golem Leggings
+16650100 Sanctum Knight Helm
+16650101 Sanctum Knight Armor
+16650102 Sanctum Knight Gauntlets
+16650103 Sanctum Knight Leggings
+16660102 Sanctum Soldier Gauntlet
+16700100 Sanctum Priestess Tiara
+16750100 Raime's Helm
+16750101 Raime's Armor
+16750102 Raime's Gauntlets
+16750103 Raime's Leggings
+16770101 Retainer Robe
+16800100 Alonne's Helm
+16800101 Alonne's Armor
+16800102 Alonne's Gauntlets
+16800103 Alonne's Leggings
+16880100 Loyce Helm
+16880101 Loyce Armor
+16880102 Loyce Gauntlets
+16880103 Loyce Leggings
+16890100 Charred Loyce Helm
+16890101 Charred Loyce Armor
+16890102 Charred Loyce Gauntlets
+16890103 Charred Loyce Leggings
+16900100 Ivory King Helm
+16900101 Ivory King Armor
+16900102 Ivory King Gauntlets
+16900103 Ivory King Leggings
+16940100 Hood of the Forlorn
+16940101 Armor of the Forlorn
+16940102 Gauntlets of the Forlorn
+16940103 Leggings of the Forlorn
+17210101 Llewellyn Armor
+17210102 Llewellyn Gloves
+17210103 Llewellyn Shoes
+17240100 Drangleic Helm
+17240101 Drangleic Mail
+17240102 Drangleic Gauntlets
+17240103 Drangleic Leggings
+17420100 Creighton's Steel Mask
+17420101 Creighton's Chainmail
+17420102 Creighton's Chain Gloves
+17420103 Creighton's Chain Leggings
+17430100 Benhart's Knight Helm
+17430101 Benhart's Armor
+17430102 Benhart's Gauntlets
+17430103 Benhart's Boots
+17440100 Standard Helm
+17440101 Hard Leather Armor
+17440102 Hard Leather Gauntlets
+17440103 Hard Leather Boots
+17510100 Cale's Helm
+17510101 Cale's Leather Armor
+17510103 Cale's Shoes
+17520100 Lucatiel's Mask
+17520101 Lucatiel's Vest
+17520102 Lucatiel's Gloves
+17520103 Lucatiel's Trousers
+17521100 Mirrah Hat
+17530100 Bell Keeper Helmet
+17530101 Bell Keeper Bellyband
+17530102 Bell Keeper Cuffs
+17530103 Bell Keeper Trousers
+17550100 Mad Warrior Mask
+17550101 Mad Warrior Armor
+17550102 Mad Warrior Gauntlets
+17550103 Mad Warrior Leggings
+17630101 UNKNOWN
+17680100 Black Hood
+17680101 Black Robes
+17680102 Black Gloves
+17680103 Black Boots
+17690100 Saint's Hood
+17690101 Saint's Dress
+17690102 Saint's Long Gloves
+17690103 Saint's Trousers
+17700100 Hexer's Hood
+17700101 Hexer's Robe
+17700102 Hexer's Gloves
+17700103 Hexer's Boots
+17710100 Chaos Hood
+17710101 Chaos Robe
+17710102 Chaos Gloves
+17710103 Chaos Boots
+17830100 Nahr Alma Hood
+17830101 Nahr Alma Robes
+17950100 Targray's Helm
+17950101 Targray's Armor
+17950102 Targray's Manifers
+17950103 Targray's Leggings
+19000101 UNKNOWN
+19010101 UNKNOWN
+19020101 UNKNOWN
+19030101 UNKNOWN

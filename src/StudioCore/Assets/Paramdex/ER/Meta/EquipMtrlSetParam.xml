@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="GAITEM_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Protector" />
+        <Option Value="4" Name="Good" />
+        <Option Value="15" Name="Unknown" />
+    </Enum>
+  </Enums>
+  <Field>
+    <materialId01 AltName="Material ID [1]" Wiki="Material item ID required to strengthen armor." Refs="EquipParamGoods(materialCate01=4),EquipParamProtector(materialCate01=1),EquipParamGem(materialCate01=3),EquipParamWeapon(materialCate01=0)" />
+    <materialId02 AltName="Material ID [2]" Wiki="Material item ID required to strengthen armor." Refs="EquipParamGoods(materialCate02=4),EquipParamProtector(materialCate02=1),EquipParamGem(materialCate02=3),EquipParamWeapon(materialCate02=0)" />
+    <materialId03 AltName="Material ID [3]" Wiki="Material item ID required to strengthen armor." Refs="EquipParamGoods(materialCate03=4),EquipParamProtector(materialCate03=1),EquipParamGem(materialCate03=3),EquipParamWeapon(materialCate03=0)" />
+    <materialId04 AltName="Material ID [4]" Wiki="Material item ID required to strengthen armor." Refs="EquipParamGoods(materialCate04=4),EquipParamProtector(materialCate04=1),EquipParamGem(materialCate04=3),EquipParamWeapon(materialCate04=0)" />
+    <materialId05 AltName="Material ID [5]" Wiki="Material item ID required to strengthen armor." Refs="EquipParamGoods(materialCate05=4),EquipParamProtector(materialCate05=1),EquipParamGem(materialCate05=3),EquipParamWeapon(materialCate05=0)" />
+    <materialId06 AltName="Material ID [6]" Wiki="Material item ID required to strengthen armor." Refs="EquipParamGoods(materialCate06=4),EquipParamProtector(materialCate06=1),EquipParamGem(materialCate06=3),EquipParamWeapon(materialCate06=0)" />
+    <pad_id AltName=""/>
+    <itemNum01 AltName="Material Amount [1]" Wiki="The number of material items required to strengthen armor." />
+    <itemNum02 AltName="Material Amount [2]" Wiki="The number of material items required to strengthen armor." />
+    <itemNum03 AltName="Material Amount [3]" Wiki="The number of material items required to strengthen armor." />
+    <itemNum04 AltName="Material Amount [4]" Wiki="The number of material items required to strengthen armor." />
+    <itemNum05 AltName="Material Amount [5]" Wiki="The number of material items required to strengthen armor." />
+    <itemNum06 AltName="Material Amount [6]" Wiki="The number of material items required to strengthen armor." />
+    <pad_num AltName=""/>
+    <materialCate01 AltName="Material Category [1]" Wiki="This is a category of material items required for strengthening armor." Enum="GAITEM_CATEGORY" />
+    <materialCate02 AltName="Material Category [2]" Wiki="This is a category of material items required for strengthening armor." Enum="GAITEM_CATEGORY" />
+    <materialCate03 AltName="Material Category [3]" Wiki="This is a category of material items required for strengthening armor." Enum="GAITEM_CATEGORY" />
+    <materialCate04 AltName="Material Category [4]" Wiki="This is a category of material items required for strengthening armor." Enum="GAITEM_CATEGORY" />
+    <materialCate05 AltName="Material Category [5]" Wiki="This is a category of material items required for strengthening armor." Enum="GAITEM_CATEGORY" />
+    <materialCate06 AltName="Material Category [6]" Wiki="This is a category of material items required for strengthening armor." Enum="GAITEM_CATEGORY" />
+    <pad_cate AltName=""/>
+    <isDisableDispNum01 AltName="Disable Display Number [1]" Wiki="Disable the number display (for enhanced shops)" IsBool="" />
+    <isDisableDispNum02 AltName="Disable Display Number [2]" Wiki="Whether to disable the number display" IsBool="" />
+    <isDisableDispNum03 AltName="Disable Display Number [3]" Wiki="Whether to disable the number display" IsBool="" />
+    <isDisableDispNum04 AltName="Disable Display Number [4]" Wiki="Whether to disable the number display" IsBool="" />
+    <isDisableDispNum05 AltName="Disable Display Number [5]" Wiki="Whether to disable the number display" IsBool="" />
+    <isDisableDispNum06 AltName="Disable Display Number [6]" Wiki="Whether to disable the number display" IsBool="" />
+    <pad AltName=""/>
+  </Field>
+  <Self Wiki="Defines costs associated with trades or upgrades. ID incrementation is used in places." ConsecutiveIDs="" />
+</PARAMMETA>

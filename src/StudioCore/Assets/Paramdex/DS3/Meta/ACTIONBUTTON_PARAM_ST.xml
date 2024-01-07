@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ACTION_BUTTON_REGION_TYPE" type="u8">
+        <Option Value="0" Name="Cylinder" />
+        <Option Value="1" Name="Prism" />
+        <Option Value="2" Name="Capsule" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_ANGLE_CHECK_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_TEXT_BOX_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+  </Enums>
+  <Field>
+    <regionType AltName="Region Type" Wiki="Range shape (cylinder, prism, capsule)" Enum="ACTION_BUTTON_REGION_TYPE" />
+    <dummyPoly1 AltName="Dummy Poly [1]" Wiki="Specify the Damipoli ID that is the center of the bottom of the range. If there is no Damipoly or -1 is entered, the center coordinates will be the reference." />
+    <dummyPoly2 AltName="Dummy Poly [2]" Wiki="Used only when the range type is a capsule. Additional Damipoly (capsule) that creates a line segment with two Damipoly" />
+    <Radius AltName="Radius" Wiki="Radius (cylinder / capsule)" />
+    <Angle AltName="Angle" Wiki="Angle (cylinder)" />
+    <depth AltName="Depth" Wiki="Depth (prism)" />
+    <width AltName="Width" Wiki="Width (prism)" />
+    <height AltName="Height" Wiki="Height (cylinder / prism)" />
+    <baseHeightOffset AltName="Bottom Height Offset" Wiki="How much to raise or lower the Y coordinate of the bottom (cylinder / prism)" />
+    <angleCheckType AltName="Angle Difference Check Type" Wiki="Angle difference judgment type (cylinder / prism)" Enum="ACTION_BUTTON_ANGLE_CHECK_TYPE" />
+    <AllowAngle AltName="Allowable Angle Difference" Wiki="Allowable angle difference (cylinder / prism)" />
+    <textBoxType AltName="Textbox Type" Wiki="Text box type" Enum="ACTION_BUTTON_TEXT_BOX_TYPE" />
+    <textId AltName="Text ID" Wiki="Text ID to display" />
+    <InvalidFlag AltName="Invalid Flag" Wiki="If this flag is ON, the action button will not appear and no judgment will be made." />
+    <grayoutFlag AltName="Grayout Flag" Wiki="If this flag is ON, the action button will be grayed out and no judgment will be made." />
+    <priority AltName="Priority" />
+    <execInvalidTime AltName="Execution Invalid Time" Wiki="Invalid time after execution (-infinite by value)" />
+    <execButtonCircle AltName="Execution Button" />
+    
+    <pad1 AltName=""/>
+    <pad2 AltName=""/>
+    <pad3 AltName=""/>
+    <pad4 AltName=""/>
+  </Field>
+  <Self Wiki="Prompts near bonfires, ladders, etc."/>
+</PARAMMETA>

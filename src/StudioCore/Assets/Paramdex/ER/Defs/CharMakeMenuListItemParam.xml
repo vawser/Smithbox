@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CHARMAKEMENU_LISTITEM_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 value">
+      <DisplayName>値</DisplayName>
+      <Description>プログラム側に扱う値。1つのグループ内で通し番号にする</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 captionId">
+      <DisplayName>項目テキストID</DisplayName>
+      <Description>表示するテキストのID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>表示するアイコンのID</Description>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[7]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,18 @@
+<class name='hkxMaterialEffect' version='1' signature='0x5b0717f9' size='48' parent='hkReferencedObject'>
+  <enums>
+    <enum name='EffectType' flags='00000000'>
+      <enumitem name='EFFECT_TYPE_INVALID' value='0'/>
+      <enumitem name='EFFECT_TYPE_UNKNOWN' value='1'/>
+      <enumitem name='EFFECT_TYPE_HLSL_FX_INLINE' value='2'/>
+      <enumitem name='EFFECT_TYPE_CG_FX_INLINE' value='3'/>
+      <enumitem name='EFFECT_TYPE_HLSL_FX_FILENAME' value='4'/>
+      <enumitem name='EFFECT_TYPE_CG_FX_FILENAME' value='5'/>
+      <enumitem name='EFFECT_TYPE_MAX_ID' value='6'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='24' etype='EffectType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='data' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

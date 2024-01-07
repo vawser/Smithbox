@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <reverbType AltName="Reverb Type" Wiki="Reverb type" />
+    <AreaNo AltName="Condition: Area Number" Wiki="Condition: Area No. (-1: Invalid)" />
+    <IndoorOutdoor AltName="Condition: Indoor/Outdoor" Wiki="Condition: Indoor / outdoor designation (0: outdoor, 1: indoor) (-1: invalid)" />
+    <useDistNoA AltName="Condition: Evaluation Distance A" Wiki="Condition: Evaluation distance number A to use (-1: invalid)" />
+    <useDistNoB AltName="Condition: Evaluation Distance B" Wiki="Condition: Evaluation distance number B to be used (-1: invalid)" />
+    <pad0 AltName=""/>
+    <DistMinA AltName="Condition: Evaluation Distance A - Min" Wiki="Condition: For evaluation distance minimum specification A (less than 0: invalid)" />
+    <DistMaxA AltName="Condition: Evaluation Distance A - Max" Wiki="Condition: For evaluation distance maximum specification A (less than 0: invalid)" />
+    <DistMinB AltName="Condition: Evaluation Distance B - Min" Wiki="Condition: For evaluation distance minimum specification A (less than 0: invalid)" />
+    <DistMaxB AltName="Condition: Evaluation Distance B - Max" Wiki="Condition: For evaluation distance maximum specification A (less than 0: invalid)" />
+    <NoHitNumMin AltName="Condition: No Hit Minimum" Wiki="Condition: No Hit number (-1: invalid)" />
+  </Field>
+  <Self />
+</PARAMMETA>

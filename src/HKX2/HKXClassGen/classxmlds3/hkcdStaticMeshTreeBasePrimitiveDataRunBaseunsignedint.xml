@@ -1,0 +1,7 @@
+<class name='hkcdStaticMeshTreeBasePrimitiveDataRunBaseunsignedint' version='1' signature='0xf65cbb0c' size='8'>
+  <members>
+    <member name='value' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='index' offset='4' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='count' offset='5' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

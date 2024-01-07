@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <host AltName="Host" Wiki="Number of host est recovery" />
+    <invadeOrb_None AltName="Invasion Orb - None" Wiki="The number of est recovery of the power of the orb whose invasion route is" />
+    <invadeOrb_Umbasa AltName="Invasion Orb - Gold" Wiki="The number of est recovery of the power of the orb whose invasion route is" />
+    <invadeOrb_Berserker AltName="Invasion Orb - Berserker" Wiki="The number of est recovery of the power of the orb whose invasion route is" />
+    <invadeOrb_Sinners AltName="Invasion Orb - Sinner" Wiki="The number of est recovery of the power of the orb whose invasion route is" />
+    <invadeSign_None AltName="Invasion Sign - None" Wiki="The number of est recovery of the power whose invasion route is a sign" />
+    <invadeSign_Umbasa AltName="Invasion Sign - Gold" Wiki="The number of est recovery of the power whose invasion route is a sign" />
+    <invadeSign_Berserker AltName="Invasion Sign - Berserker" Wiki="The number of est recovery of the power whose invasion route is a sign" />
+    <invadeSign_Sinners AltName="Invasion Sign - Sinner" Wiki="The number of est recovery of the power whose invasion route is a sign" />
+    <invadeRing_Sinners AltName="Invasion Ring - Sinner" Wiki="The number of est recovery of the power of the ring whose invasion route is" />
+    <invadeRing_Rosalia AltName="Invasion Ring - Rosalia" Wiki="The number of est recovery of the power of the ring whose invasion route is" />
+    <invadeRing_Forest AltName="Invasion Ring - Forest" Wiki="The number of est recovery of the power of the ring whose invasion route is" />
+    <coopSign_None AltName="Coop Sign - None" Wiki="The number of est recovery of the power whose cooperation route is a sign" />
+    <coopSign_Umbasa AltName="Coop Sign - Gold" Wiki="The number of est recovery of the power whose cooperation route is a sign" />
+    <coopSign_Berserker AltName="Coop Sign - Berserker" Wiki="The number of est recovery of the power whose cooperation route is a sign" />
+    <coopSign_Sinners AltName="Coop Sign - Sinner" Wiki="The number of est recovery of the power whose cooperation route is a sign" />
+    <coopRing_RedHunter AltName="Coop Sign - Red Hunter" Wiki="Cooperation route is the number of est recovery of the power of the ring" />
+    <invadeRing_Anor AltName="Invasion Ring - Darkmoon Blade" Wiki="The number of est recovery of the power of the ring whose invasion route is" />
+    <paramReplaceRate AltName="Replacement Rate" Wiki="Recovery number Parameter replacement rate" />
+    <paramReplaceId AltName="Replace ID" Wiki="Recovery number Parameter replacement destination ID" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ASSEM_EVALUATE_PARAM</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0001"></Field>
+    <Field Def="f32 Unk0002"></Field>
+    <Field Def="s32 Unk0003"></Field>
+    <Field Def="s32 Unk0004"></Field>
+  </Fields>
+</PARAMDEF>

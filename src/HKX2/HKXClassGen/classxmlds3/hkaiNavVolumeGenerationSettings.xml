@@ -1,0 +1,38 @@
+<class name='hkaiNavVolumeGenerationSettings' version='1' signature='0xcbb70f6d' size='272' parent='hkReferencedObject'>
+  <enums>
+    <enum name='MaterialFlagsBits' flags='00000000'>
+      <enumitem name='MATERIAL_NONE' value='0'/>
+      <enumitem name='MATERIAL_BLOCKING' value='1'/>
+      <enumitem name='MATERIAL_DEFAULT' value='1'/>
+    </enum>
+    <enum name='CellWidthToResolutionRounding' flags='00000000'>
+      <enumitem name='ROUND_TO_ZERO' value='0'/>
+      <enumitem name='ROUND_TO_NEAREST' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='volumeAabb' offset='16' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxHorizontalRange' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxVerticalRange' offset='52' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='up' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='characterHeight' offset='80' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='characterDepth' offset='84' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='characterWidth' offset='88' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cellWidth' offset='92' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='resolutionRoundingMode' offset='96' etype='CellWidthToResolutionRounding' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='chunkSettings' offset='98' ctype='hkaiNavVolumeGenerationSettingsChunkSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='chunkDomainCallback' offset='112' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='border' offset='120' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useBorderCells' offset='124' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mergingSettings' offset='128' ctype='hkaiNavVolumeGenerationSettingsMergingSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minRegionVolume' offset='164' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minDistanceToSeedPoints' offset='168' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='regionSeedPoints' offset='176' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultConstructionInfo' offset='192' ctype='hkaiNavVolumeGenerationSettingsMaterialConstructionInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materialMap' offset='208' ctype='hkaiNavVolumeGenerationSettingsMaterialConstructionInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='carvers' offset='224' ctype='hkaiCarver' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='painters' offset='240' ctype='hkaiMaterialPainter' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='saveInputSnapshot' offset='256' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='snapshotFilename' offset='264' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

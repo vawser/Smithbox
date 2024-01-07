@@ -1,0 +1,6 @@
+<class name='hkaAnnotationTrack' version='1' signature='0xd4114fdd' size='24'>
+  <members>
+    <member name='trackName' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='annotations' offset='8' ctype='hkaAnnotationTrackAnnotation' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

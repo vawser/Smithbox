@@ -1,0 +1,9 @@
+<class name='CustomMeshParameter' version='1' signature='0x81b795a4' size='56' parent='hkReferencedObject'>
+  <members>
+    <member name='version' offset='16' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexDataBuffer' offset='24' vtype='TYPE_SIMPLEARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexDataStride' offset='36' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='primitiveDataBuffer' offset='40' vtype='TYPE_SIMPLEARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materialNameData' offset='52' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

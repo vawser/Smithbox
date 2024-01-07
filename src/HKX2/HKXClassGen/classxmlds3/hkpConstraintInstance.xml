@@ -1,0 +1,46 @@
+<class name='hkpConstraintInstance' version='1' signature='0xda4ce91e' size='112' parent='hkReferencedObject'>
+  <enums>
+    <enum name='ConstraintPriority' flags='00000000'>
+      <enumitem name='PRIORITY_INVALID' value='0'/>
+      <enumitem name='PRIORITY_PSI' value='1'/>
+      <enumitem name='PRIORITY_SIMPLIFIED_TOI_UNUSED' value='2'/>
+      <enumitem name='PRIORITY_TOI' value='3'/>
+      <enumitem name='PRIORITY_TOI_HIGHER' value='4'/>
+      <enumitem name='PRIORITY_TOI_FORCED' value='5'/>
+      <enumitem name='NUM_PRIORITIES' value='6'/>
+    </enum>
+    <enum name='InstanceType' flags='00000000'>
+      <enumitem name='TYPE_NORMAL' value='0'/>
+      <enumitem name='TYPE_CHAIN' value='1'/>
+      <enumitem name='TYPE_DISABLE_SPU' value='2'/>
+    </enum>
+    <enum name='AddReferences' flags='00000000'>
+      <enumitem name='DO_NOT_ADD_REFERENCES' value='0'/>
+      <enumitem name='DO_ADD_REFERENCES' value='1'/>
+    </enum>
+    <enum name='CloningMode' flags='00000000'>
+      <enumitem name='CLONE_SHALLOW_IF_NOT_CONSTRAINED_TO_WORLD' value='0'/>
+      <enumitem name='CLONE_DATAS_WITH_MOTORS' value='1'/>
+      <enumitem name='CLONE_FORCE_SHALLOW' value='2'/>
+    </enum>
+    <enum name='OnDestructionRemapInfo' flags='00000000'>
+      <enumitem name='ON_DESTRUCTION_REMAP' value='0'/>
+      <enumitem name='ON_DESTRUCTION_REMOVE' value='1'/>
+      <enumitem name='ON_DESTRUCTION_RESET_REMOVE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='owner' offset='16' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='data' offset='24' ctype='hkpConstraintData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraintModifiers' offset='32' ctype='hkpModifierConstraintAtom' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='entities' offset='40' ctype='hkpEntity' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='priority' offset='56' etype='ConstraintPriority' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='wantRuntime' offset='57' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='destructionRemapInfo' offset='58' etype='OnDestructionRemapInfo' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='listeners' offset='64' ctype='hkpConstraintInstanceSmallArraySerializeOverrideType' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='name' offset='80' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData' offset='88' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='internal' offset='96' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='uid' offset='104' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

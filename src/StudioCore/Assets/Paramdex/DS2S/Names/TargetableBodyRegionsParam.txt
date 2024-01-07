@@ -1,0 +1,6 @@
+0 A bad example -- ダメな例
+1 Wait relationship -- 待機関係
+41000 An exaggeration -- 袈裟構え
+41100 I'm in a position to be there. -- 居合い構え
+59000 Poise Dash -- 構えダッシュ
+59100 Ai dash -- 居合いダッシュ

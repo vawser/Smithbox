@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "common.proto";
+import "internal.proto";
+
+package SoapstoneLib.Proto.Internal;
+
+service Soapstone {
+  // Returns basic info about the editor's current state. All servers must implement this.
+  // Editor resources are parts of an editor which can be individually loaded or unloaded.
+  // Once a resource is loaded, various objects and functionality can be straightforwardly accessed within it.
+  rpc GetServerInfo (ServerInfoRequest) returns (ServerInfoResponse);
+
+  // Get objects matching a search query, with requested properties.
+  // A property does not have to be requested to search against it.
+  rpc SearchObjects (Internal.SearchObjectsRequest) returns (Internal.SearchObjectsResponse);
+
+  // Returns a single object, within an editor resource type.
+  // This can be used if the exact key is known, or to get more properties after a broader search.
+  // It returns empty if object is not found (as opposed to an error).
+  rpc GetObject (Internal.GetObjectRequest) returns (Internal.GetObjectResponse);
+
+  // Returns objects in batch, within an editor resource type.
+  // It returns only the objects which could be found.
+  rpc BatchGetObjects (Internal.BatchGetObjectsRequest) returns (Internal.BatchGetObjectsResponse);
+
+  // Open a resource, like a map by name.
+  rpc OpenResource (Internal.OpenResourceRequest) returns (Internal.OpenResourceResponse);
+
+  // Jump to or frame the given object within the editor.
+  rpc OpenObject (Internal.OpenObjectRequest) returns (Internal.OpenObjectResponse);
+
+  // Start a given search in the editor.
+  rpc OpenSearch (Internal.OpenSearchRequest) returns (Internal.OpenSearchResponse);
+}

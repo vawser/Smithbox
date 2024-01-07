@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>FACE_EDIT_PARAM_RACE_PRESET</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 edit_Age" />
+    <Field Def="f32 edit_Hormones" />
+    <Field Def="f32 edit_FormEmphasis" />
+    <Field Def="f32 edit_ColorEmphasis" />
+    <Field Def="f32 edit_RelativeNoseSize" />
+    <Field Def="f32 edit_RatioNoseToForehead" />
+    <Field Def="f32 edit_FacialWidth" />
+    <Field Def="f32 edit_FacialRoundness" />
+    <Field Def="f32 edit_VerticalSpacing" />
+    <Field Def="f32 edit_Placement" />
+    <Field Def="f32 edit_HorizontalSpacing" />
+    <Field Def="f32 edit_SkinColor1" />
+    <Field Def="f32 edit_SkinColor2" />
+    <Field Def="f32 edit_SkinColor3" />
+    <Field Def="f32 edit_SkinColor4" />
+    <Field Def="f32 edit_SkinColor5" />
+    <Field Def="f32 edit_NoseRidgeColor" />
+    <Field Def="f32 edit_CheekColor" />
+    <Field Def="f32 edit_GlabellaWidth" />
+    <Field Def="f32 edit_GlabellaDepth" />
+    <Field Def="f32 edit_GlabellaProturation" />
+    <Field Def="f32 edit_GlabellaHeight" />
+    <Field Def="f32 edit_NoseRidgeProtrusion1" />
+    <Field Def="f32 edit_NoseRidgeProtrusion2" />
+    <Field Def="f32 edit_GlabellaWidthEyebrows" />
+    <Field Def="f32 edit_BrowHeight" />
+    <Field Def="f32 edit_InnerBrow" />
+    <Field Def="f32 edit_OuterBrow" />
+    <Field Def="f32 edit_EyePosition" />
+    <Field Def="f32 edit_EyeSize" />
+    <Field Def="f32 edit_EyeAngle" />
+    <Field Def="f32 edit_EyeSpacing" />
+    <Field Def="f32 edit_EyeSocketColor1" />
+    <Field Def="f32 edit_EyeSocketColor2" />
+    <Field Def="f32 edit_EyeBrightness" />
+    <Field Def="f32 edit_EyelidColor" />
+    <Field Def="f32 edit_EyeLiner" />
+    <Field Def="f32 edit_EyeShadow" />
+    <Field Def="f32 edit_NoseRidgeDepth" />
+    <Field Def="f32 edit_NoseRidgeLength" />
+    <Field Def="f32 edit_NosePosition" />
+    <Field Def="f32 edit_NoseHeight" />
+    <Field Def="f32 edit_NoseProtrusion" />
+    <Field Def="f32 edit_NoseTipHeight" />
+    <Field Def="f32 Unk00" />
+    <Field Def="f32 edit_NostrilAngle" />
+    <Field Def="f32 edit_NostrillSize" />
+    <Field Def="f32 edit_NostrilWidth" />
+    <Field Def="f32 Unk01" />
+    <Field Def="f32 edit_CheckboneHeight" />
+    <Field Def="f32 edit_CheekboneDepth" />
+    <Field Def="f32 edit_CheekboneSpread" />
+    <Field Def="f32 edit_CheekFullness" />
+    <Field Def="f32 edit_Cheeks" />
+    <Field Def="f32 edit_LaughLines" />
+    <Field Def="f32 edit_LipShape" />
+    <Field Def="f32 edit_MouthExpression" />
+    <Field Def="f32 edit_Fullness" />
+    <Field Def="f32 edit_LipSize" />
+    <Field Def="f32 edit_LipProtrusion" />
+    <Field Def="f32 edit_LipThickness" />
+    <Field Def="f32 edit_MouthProtrusion" />
+    <Field Def="f32 edit_MouthSlant" />
+    <Field Def="f32 edit_Occlusion" />
+    <Field Def="f32 edit_Position" />
+    <Field Def="f32 edit_Width" />
+    <Field Def="f32 edit_DistanceMouthToChin" />
+    <Field Def="f32 edit_CheekFullness2" />
+    <Field Def="f32 edit_Lipstick1" />
+    <Field Def="f32 edit_Lipstick2" />
+    <Field Def="f32 edit_JawPosition" />
+    <Field Def="f32 edit_JawLength" />
+    <Field Def="f32 edit_JawProtrusion" />
+    <Field Def="f32 edit_ChinTipDepth" />
+    <Field Def="f32 edit_JawSize" />
+    <Field Def="f32 edit_JawHeight" />
+    <Field Def="f32 edit_JawSpread" />
+    <Field Def="f32 Unk02" />
+    <Field Def="f32 edit_JawBreadth" />
+    <Field Def="f32 edit_Chin" />
+    <Field Def="f32 edit_JawOutline" />
+  </Fields>
+</PARAMDEF>

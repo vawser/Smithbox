@@ -1,0 +1,6 @@
+<class name='hkaiPersistentEdgeKey' version='1' signature='0xf444333a' size='12'>
+  <members>
+    <member name='faceKey' offset='0' ctype='hkaiPersistentFaceKey' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeOffset' offset='8' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

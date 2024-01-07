@@ -1,0 +1,15 @@
+{
+    "Title": "Asset",
+    "Tags": [
+        "Term",
+        "Object"
+    ],
+    "Contents": [
+        "An asset is a static entity within a map, typically named like AEG000500.",
+        "An asset may be destroyed in certain circumstances, as defined in asset params.",
+        "EMEVD can be used to activate or deactive assets, show animations and change states",
+        "not already handled with with ObjActs.",
+        "",
+        "Prior to Elden Ring, Assets were called Objects."
+    ]
+}

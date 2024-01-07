@@ -1,0 +1,6 @@
+<class name='hkMonitorStreamColorTable' version='1' signature='0x9e02cc7b' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='colorPairs' offset='16' ctype='hkMonitorStreamColorTableColorPair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultColor' offset='32' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

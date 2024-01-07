@@ -1,0 +1,157 @@
+55 [LOC:55] Creighton the Wanderer
+56 [LOC:56] Creighton the Wanderer
+155 [LOC:155] Felkin the Outcast
+156 [LOC:156] Felkin the Outcast
+275 [LOC:275] Titchy Gren
+276 [LOC:276] Titchy Gren
+580 [LOC:580] Merciless Roenna
+586 [LOC:586] Bashful Ray
+587 [LOC:587] Creighton the Wanderer
+816 [LOC:816] Executioner's Chariot
+839 [LOC:839] Skeleton Lord
+840 [LOC:840] Skeleton Lord
+841 [LOC:841] Skeleton Lord
+944 [LOC:944] Forlorn
+1110 [LOC:1110] NO MATCH
+1111 [LOC:1111] Captive Undead
+1112 [LOC:1112] Captive Undead
+1114 [LOC:1114] Captive Undead
+1115 [LOC:1115] Captive Undead
+1120 [LOC:1120] NO MATCH
+1121 [LOC:1121] Captive Undead
+1122 [LOC:1122] Captive Undead
+1123 [LOC:1123] Giant Basilisk
+1125 [LOC:1125] Captive Undead
+1200 [LOC:1200] Poison Moth
+1205 [LOC:1205] Poison Moth
+1206 [LOC:1206] Poison Moth
+1500 [LOC:1500] Captive Undead
+2000 [LOC:2000] Captive Undead
+2002 [LOC:2002] Captive Undead
+2003 [LOC:2003] NO MATCH
+2004 [LOC:2004] NO MATCH
+2005 [LOC:2005] Captive Undead
+2006 [LOC:2006] Captive Undead
+2007 [LOC:2007] NO MATCH
+2010 [LOC:2010] Hollow Rogue
+2011 [LOC:2011] Hollow Rogue
+2014 [LOC:2014] Hollow Rogue
+2015 [LOC:2015] Hollow Rogue
+2016 [LOC:2016] Captive Undead
+2017 [LOC:2017] Captive Undead
+2020 [LOC:2020] Hollow Rogue
+2021 [LOC:2021] Hollow Rogue
+2023 [LOC:2023] NO MATCH
+2026 [LOC:2026] Hollow Rogue
+2029 [LOC:2029] Torturer
+2030 [LOC:2030] Hollow Rogue
+2100 [LOC:2100] Captive Undead
+2400 [LOC:2400] NO MATCH
+2401 [LOC:2401] Captive Undead
+2402 [LOC:2402] Captive Undead
+2500 [LOC:2500] Captive Undead
+2700 [LOC:2700] Syan Knight
+3000 [LOC:3000] Captive Undead
+3001 [LOC:3001] Captive Undead
+3002 [LOC:3002] Captive Undead
+3003 [LOC:3003] Captive Undead
+3004 [LOC:3004] Captive Undead
+3005 [LOC:3005] Captive Undead
+3016 [LOC:3016] Hollow Rogue
+3101 [LOC:3101] Artificial Undead
+3103 [LOC:3103] Poison Moth
+3105 [LOC:3105] Artificial Undead
+3110 [LOC:3110] NO MATCH
+3111 [LOC:3111] Captive Undead
+3112 [LOC:3112] Captive Undead
+3113 [LOC:3113] NO MATCH
+3123 [LOC:3123] Poison Moth
+3201 [LOC:3201] Hollow Rogue
+3210 [LOC:3210] Hollow Rogue
+3220 [LOC:3220] Stray Dog
+3250 [LOC:3250] Hollow Rogue
+3260 [LOC:3260] NO MATCH
+3261 [LOC:3261] Captive Undead
+3310 [LOC:3310] Captive Undead
+3400 [LOC:3400] Hollow Rogue
+3500 [LOC:3500] Captive Undead
+4000 [LOC:4000] Dual-wielding Skeleton
+4003 [LOC:4003] Dual-wielding Skeleton
+4010 [LOC:4010] Dual-wielding Skeleton
+4012 [LOC:4012] Dual-wielding Skeleton
+4013 [LOC:4013] Dual-wielding Skeleton
+4020 [LOC:4020] Black Hollow Mage
+4050 [LOC:4050] Dual-wielding Skeleton
+4053 [LOC:4053] Dual-wielding Skeleton
+4054 [LOC:4054] Dual-wielding Skeleton
+4055 [LOC:4055] Dual-wielding Skeleton
+4060 [LOC:4060] Dual-wielding Skeleton
+4100 [LOC:4100] Hollow Rogue
+4102 [LOC:4102] Hollow Rogue
+4105 [LOC:4105] Hollow Rogue
+4107 [LOC:4107] Hollow Rogue
+4110 [LOC:4110] Hollow Rogue
+4111 [LOC:4111] Hollow Rogue
+4112 [LOC:4112] Crystal Lizard
+4122 [LOC:4122] Artificial Undead
+4125 [LOC:4125] Hollow Rogue
+4126 [LOC:4126] Hollow Rogue
+4127 [LOC:4127] Captive Undead
+4128 [LOC:4128] Captive Undead
+4129 [LOC:4129] NO MATCH
+4130 [LOC:4130] Hollow Rogue
+4140 [LOC:4140] Poison Moth
+4200 [LOC:4200] Artificial Undead
+5000 [LOC:5000] Torturer
+5003 [LOC:5003] Torturer
+5005 [LOC:5005] Captive Undead
+5006 [LOC:5006] NO MATCH
+5010 [LOC:5010] Torturer
+5011 [LOC:5011] Torturer
+5012 [LOC:5012] Torturer
+5013 [LOC:5013] Torturer
+5014 [LOC:5014] Torturer
+5015 [LOC:5015] Torturer
+5016 [LOC:5016] Torturer
+5017 [LOC:5017] Torturer
+5020 [LOC:5020] Dual-wielding Skeleton
+5100 [LOC:5100] NO MATCH
+5101 [LOC:5101] Captive Undead
+5102 [LOC:5102] Captive Undead
+5200 [LOC:5200] Skeleton
+5201 [LOC:5201] Skeleton
+5210 [LOC:5210] Dual-wielding Skeleton
+5211 [LOC:5211] Dual-wielding Skeleton
+5212 [LOC:5212] Dual-wielding Skeleton
+5213 [LOC:5213] Dual-wielding Skeleton
+5214 [LOC:5214] Dual-wielding Skeleton
+5220 [LOC:5220] Dual-wielding Skeleton
+5221 [LOC:5221] Dual-wielding Skeleton
+5222 [LOC:5222] Dual-wielding Skeleton
+5223 [LOC:5223] Dual-wielding Skeleton
+5224 [LOC:5224] Dual-wielding Skeleton
+5225 [LOC:5225] Dual-wielding Skeleton
+5226 [LOC:5226] Dual-wielding Skeleton
+5227 [LOC:5227] Dual-wielding Skeleton
+5228 [LOC:5228] Dual-wielding Skeleton
+5229 [LOC:5229] Dual-wielding Skeleton
+5230 [LOC:5230] Dual-wielding Skeleton
+5231 [LOC:5231] Dual-wielding Skeleton
+6000 [LOC:6000] Dual-wielding Skeleton
+6001 [LOC:6001] Dual-wielding Skeleton
+6002 [LOC:6002] Dual-wielding Skeleton
+6003 [LOC:6003] Dual-wielding Skeleton
+6004 [LOC:6004] Dual-wielding Skeleton
+6005 [LOC:6005] Dual-wielding Skeleton
+6006 [LOC:6006] Dual-wielding Skeleton
+6030 [LOC:6030] Black Hollow Mage
+6031 [LOC:6031] Black Hollow Mage
+8000 [LOC:8000] Greatsword Phantom
+8001 [LOC:8001] Greatsword Phantom
+8500 [LOC:8500] Skeleton
+9000 [LOC:9000] Poison Moth
+9001 [LOC:9001] Poison Moth
+9002 [LOC:9002] Poison Moth
+9003 [LOC:9003] Poison Moth
+9004 [LOC:9004] Poison Moth
+9500 [LOC:9500] Invisible Hollow

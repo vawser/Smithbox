@@ -1,0 +1,6 @@
+<class name='hkSetunsignedlonglonghkContainerHeapAllocatorhkMapOperationsunsignedlonglong' version='1' signature='0xf2a3f3e5' size='24'>
+  <members>
+    <member name='elem' offset='0' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT64' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numElems' offset='16' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

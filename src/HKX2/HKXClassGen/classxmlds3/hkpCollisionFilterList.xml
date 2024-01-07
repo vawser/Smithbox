@@ -1,0 +1,5 @@
+<class name='hkpCollisionFilterList' version='1' signature='0xa893dc80' size='88' parent='hkpCollisionFilter'>
+  <members>
+    <member name='collisionFilters' offset='72' ctype='hkpCollisionFilter' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

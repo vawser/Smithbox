@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>MAP_DEFAULT_INFO_PARAM_ST</ParamType>
+  <DataVersion>6</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>5103</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>5104</SortID>
+    </Field>
+    <Field Def="u32 EnableFastTravelEventFlagId">
+      <DisplayName>ファストトラベル許可フラグID</DisplayName>
+      <Description>ファストトラベル許可フラグID</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>-1</Maximum>
+    </Field>
+    <Field Def="s32 WeatherLotTimeOffsetIngameSeconds">
+      <DisplayName>天候抽選時間オフセット(インゲーム秒)</DisplayName>
+      <Description>天候抽選時間にかかるオフセット(単位：インゲーム秒)。ゲームプロパティのインゲーム時間スケールで割ると現実時間になります</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s8 WeatherCreateAssetLimitId = -1">
+      <DisplayName>天候生成アセット生成制限用ID</DisplayName>
+      <Description>天候アセット生成パラメータ.xlsmで生成されるアセットの生成制限に使うID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u8 MapAiSightType">
+      <DisplayName>マップ視界タイプ</DisplayName>
+      <Enum>MAP_AI_SIGHT_TYPE</Enum>
+      <Description>マップ視界タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>3</Maximum>
+      <SortID>105</SortID>
+    </Field>
+    <Field Def="u8 SoundIndoorType">
+      <DisplayName>サウンド屋内、完全屋内振り分け</DisplayName>
+      <Enum>SOUND_INDOOR_TYPE</Enum>
+      <Description>マップGD設定の「屋内」をサウンド用の「屋内」、「完全屋内」どちらに振り分けるかを設定します(SEQ09833)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>108</SortID>
+    </Field>
+    <Field Def="s8 ReverbDefaultType = -1">
+      <DisplayName>リバーブデフォルト設定</DisplayName>
+      <Enum>SOUND_MAP_DEFAULT_REVERB_TYPE</Enum>
+      <Description>このマップのリバーブデフォルトタイプを指定します</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>64</Maximum>
+      <SortID>109</SortID>
+    </Field>
+    <Field Def="s16 BgmPlaceInfo">
+      <DisplayName>BGM用場所情報</DisplayName>
+      <Enum>SOUND_BGM_MAP_PLACE_TYPE</Enum>
+      <Description>BGM用の場所デフォルト情報を指定します</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s16 EnvPlaceInfo">
+      <DisplayName>環境音用場所情報</DisplayName>
+      <Enum>SOUND_ENV_MAP_PLACE_TYPE</Enum>
+      <Description>環境音用の場所デフォルト情報を指定します</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>111</SortID>
+    </Field>
+    <Field Def="s32 MapAdditionalSoundBankId = -1">
+      <DisplayName>マップ追加バンクID</DisplayName>
+      <Description>追加で読み込むサウンドの「マップ追加バンク」のIDを指定します(-1:マップ追加バンクなし)(SEQ15725)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999</Maximum>
+      <SortID>112</SortID>
+    </Field>
+    <Field Def="s16 MapHeightForSound">
+      <DisplayName>サウンド用マップ高さ情報[m]</DisplayName>
+      <Description>サウンド用マップ高さ情報[m](SEQ15727)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-2000</Minimum>
+      <Maximum>2000</Maximum>
+      <SortID>113</SortID>
+    </Field>
+    <Field Def="u8 IsEnableBlendTimezoneEnvmap = 1">
+      <DisplayName>【レガシー用】マップ環境マップ時間ブレンド有効か？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>環境マップの時間ブレンドを行うかを指定します。0番の時間帯のTexureだけが撮影、使用されます。GPU負荷,メモリが軽減されます。レガシー(m00-m49)のみ有効な設定です(SEQ16464)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5100</SortID>
+    </Field>
+    <Field Def="s8 OverrideGIResolution_XSS = -1">
+      <DisplayName>GI解像度上書き設定_XSSプラット</DisplayName>
+      <Enum>MAP_GI_RESOLUTION_OVERRIDE_TYPE</Enum>
+      <Description>XSS(Xbox SeriesS,Lockhart)で使用するGI解像度上書きします</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>5101</SortID>
+    </Field>
+    <Field Def="f32 MapLoHiChangeBorderDist_XZ = 40">
+      <DisplayName>マップハイヒット切り替判定AABB_幅奥行き(XZ)[m]</DisplayName>
+      <Description>マップハイヒット切り替判定AABB_幅奥行き(XZ)[m](SEQ16295)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 MapLoHiChangeBorderDist_Y = 40">
+      <DisplayName>マップハイヒット切り替え判定AABB_高さ(Y)[m]</DisplayName>
+      <Description>マップハイヒット切り替え判定AABB_高さ(Y)[m](SEQ16295)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="f32 MapLoHiChangePlayDist = 5">
+      <DisplayName>マップハイヒット切り替え判定遊び距離[m]</DisplayName>
+      <Description>マップハイヒット切り替え判定遊び距離[m]。通常はデフォルトでいいはず。小さいAABBの場合は必要に応じて調整してください。遊びがあまりに小さいと頻繁に切り替えが起こります。AABBサイズより大きい場合は想定してません(SEQ16295)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.5</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="u32 MapAutoDrawGroupBackFacePixelNum = 32400">
+      <DisplayName>自動描画グループ計算で、裏面判定となるピクセル数</DisplayName>
+      <Description>自動描画グループ計算で、裏面判定となるピクセル数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>-1</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="f32 PlayerLigntScale = 1">
+      <DisplayName>Playerライト強度スケール値</DisplayName>
+      <Description>このマップでPC、PC馬常駐光源にかけるスケールを指定します(SEQ16562)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0.1</Minimum>
+      <Maximum>10</Maximum>
+      <Increment>1</Increment>
+      <SortID>121</SortID>
+    </Field>
+    <Field Def="u8 IsEnableTimezonnePlayerLigntScale = 1">
+      <DisplayName>時間帯によるPlayerライト強度スケール変化をするか？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>このマップでPC、PC馬常駐光源、時間帯によるPlayerライト強度スケール変化をするか？を指定します(SEQ16562)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>122</SortID>
+    </Field>
+    <Field Def="u8 isDisableAutoCliffWind">
+      <DisplayName>自動崖風SE無効にするか？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>自動崖風SE無効にするか？(SEQ15729)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>114</SortID>
+    </Field>
+    <Field Def="s16 OpenChrActivateThreshold = -1">
+      <DisplayName>オープンキャラアクティベート制限_評価値閾値</DisplayName>
+      <Description>オープンキャラアクティベート制限_評価値閾値</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>117</SortID>
+    </Field>
+    <Field Def="s32 MapMimicryEstablishmentParamId = -1">
+      <DisplayName>マップ別擬態確率パラメータID</DisplayName>
+      <Description>マップ別擬態確率パラメータID(SEQ22471)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>106</SortID>
+    </Field>
+    <Field Def="s8 OverrideGIResolution_XSX = -1">
+      <DisplayName>GI解像度上書き設定_XSXプラット</DisplayName>
+      <Enum>MAP_GI_RESOLUTION_OVERRIDE_TYPE</Enum>
+      <Description>XSX(Xbox SeriesX,Anaconda)で使用するGI解像度上書きします</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>5101</SortID>
+    </Field>
+    <Field Def="dummy8 Reserve[7]">
+      <DisplayName>リザーブ</DisplayName>
+      <Description>リザーブ</Description>
+      <SortID>5102</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

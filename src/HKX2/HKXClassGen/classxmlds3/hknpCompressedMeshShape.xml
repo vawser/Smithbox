@@ -1,0 +1,9 @@
+<class name='hknpCompressedMeshShape' version='1' signature='0x5f60d536' size='160' parent='hknpCompositeShape'>
+  <members>
+    <member name='data' offset='96' ctype='hknpCompressedMeshShapeData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='quadIsFlat' offset='104' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleIsInterior' offset='128' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numTriangles' offset='152' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='numConvexShapes' offset='156' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

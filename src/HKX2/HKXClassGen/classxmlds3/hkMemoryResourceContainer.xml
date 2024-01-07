@@ -1,0 +1,8 @@
+<class name='hkMemoryResourceContainer' version='1' signature='0x1de13a73' size='64' parent='hkResourceContainer'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='parent' offset='24' ctype='hkMemoryResourceContainer' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='resourceHandles' offset='32' ctype='hkMemoryResourceHandle' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='children' offset='48' ctype='hkMemoryResourceContainer' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

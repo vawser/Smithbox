@@ -1,0 +1,5 @@
+<class name='hkUFloat8' version='1' signature='0x7c076f9a' size='1'>
+  <members>
+    <member name='value' offset='0' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

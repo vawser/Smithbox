@@ -1,0 +1,5 @@
+<class name='hkxSparselyAnimatedEnum' version='1' signature='0x48650476' size='56' parent='hkxSparselyAnimatedInt'>
+  <members>
+    <member name='enum' offset='48' ctype='hkxEnum' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Attack" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+  </Enums>
+  <Field>
+    <variationId AltName="Behavior Variation ID" Wiki="Used to link BehaviorParam entries to a weapon or enemy." />
+    <refType AltName="Reference Type" Wiki="Which param type to reference for attack behavior." Enum="BEHAVIOR_REF_TYPE" />
+    <refId AltName="Reference ID" Wiki="ID of param to use for attack behavior. Param used determined by refType" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
+    <bulletShotgunParamId1 AltName="BulletShotgunParam ID (1)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
+    <bulletShotgunParamId2 AltName="BulletShotgunParam ID (2)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
+    <dummyPolyRange_Min AltName="DummyPoly Range (Min)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the start of a range that ends with dummyPolyRange_Max. If max is -1, then a single dummypoly will be used." />
+    <dummyPolyRange_Max AltName="DummyPoly Range (Max)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the end of a range that starts with dummyPolyRange_Min. If max is -1, then a single dummypoly will be used." />
+  </Field>
+  <Self />
+</PARAMMETA>

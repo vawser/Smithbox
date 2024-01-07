@@ -1,0 +1,5 @@
+<class name='hkMonitorStreamStringMap' version='1' signature='0xc4d3a8b4' size='16'>
+  <members>
+    <member name='map' offset='0' ctype='hkMonitorStreamStringMapStringMap' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

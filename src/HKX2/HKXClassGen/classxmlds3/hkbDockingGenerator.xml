@@ -1,0 +1,27 @@
+<class name='hkbDockingGenerator' version='1' signature='0x7f8f8240' size='224' parent='hkbGenerator'>
+  <enums>
+    <enum name='BlendType' flags='00000000'>
+      <enumitem name='BLEND_TYPE_BLEND_IN' value='0'/>
+      <enumitem name='BLEND_TYPE_FULL_ON' value='1'/>
+    </enum>
+    <enum name='DockingFlagBits' flags='00000000'>
+      <enumitem name='FLAG_NONE' value='0'/>
+      <enumitem name='FLAG_DOCK_TO_FUTURE_POSITION' value='1'/>
+      <enumitem name='FLAG_OVERRIDE_MOTION' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='dockingBone' offset='136' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='translationOffset' offset='144' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotationOffset' offset='160' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendType' offset='176' etype='BlendType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='178' etype='DockingFlagBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='child' offset='184' ctype='hkbGenerator' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='intervalStart' offset='192' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='intervalEnd' offset='196' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localTime' offset='200' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='previousLocalTime' offset='204' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='intervalStartLocalTime' offset='208' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='intervalEndLocalTime' offset='212' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

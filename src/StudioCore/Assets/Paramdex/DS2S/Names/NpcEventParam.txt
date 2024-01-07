@@ -1,0 +1,73 @@
+30700000 Head of Vengarl
+30700001 Head of Vengarl
+50200000 Manscorpion Tark
+50200001 Manscorpion Tark
+50600000 Grave Warden Agdayne
+50600001 Grave Warden Agdayne
+70000000 Emerald Herald
+70400000 Laddersmith Gilligan
+70400001 Laddersmith Gilligan
+70401000 Laddersmith Gilligan
+70401001 Laddersmith Gilligan
+70401002 Laddersmith Gilligan
+70401003 Laddersmith Gilligan
+70500000 Strowen
+72110000 Chancellor Wellager
+72110001 Chancellor Wellager
+72400000 Captain Drummond
+72400001 Captain Drummond
+72500000 Darkdiver Grandahl
+72500001 Darkdiver Grandahl
+72600000 Lonesome Gavlan
+73000000 UNKNOWN
+73100000 UNKNOWN
+74100000 Crestfallen Saulden
+74100001 Crestfallen Saulden
+74200000 Creighton the Wanderer
+74200001 Creighton the Wanderer
+74300000 Benhart of Jugo
+74300001 Benhart of Jugo
+75400000 Merchant Hag Melentia
+75600000 The Rat King
+75700000 Nadalia- Bride of Ash
+75800000 Alsanna- Silent Oracle
+75900000 Elana- Queen of Ruin
+76100000 Maughlin the Armourer
+76100001 Maughlin the Armourer
+76100002 Maughlin the Armourer
+76200000 Stone Trader Chloanne
+76300000 Rosabeth of Melfia
+76300001 Rosabeth of Melfia
+76400000 Blacksmith Lenigrast
+76430000 Steady Hand McDuff
+76600000 Carhillion of the Fold
+76800000 Straid of Olaphis
+76800001 Straid of Olaphis
+76900000 Licia of Lindeldt
+76900001 Licia of Lindeldt
+77000000 Felkin the Outcast
+77100000 Royal Sorcerer Navlaan
+77101000 Royal Sorcerer Navlaan
+77200000 Magerold of Lanafir
+77200001 Magerold of Lanafir
+77600000 Weaponsmith Ornifex
+77600001 Weaponsmith Ornifex
+77700000 Sweet Shalquoir
+78300000 Titchy Gren
+78400000 Cromwell the Pardoner
+78500000 Blue Sentinel Targray
+78500001 Blue Sentinel Targray
+78600000 Dyna & Tillo
+78601000 Dyna & Tillo
+78602000 Dyna & Tillo
+78602001 Dyna & Tillo
+81000000 Masterless Glencour
+81100000 Lone Hunter Schmidt
+81200000 Pilgrim Bellclaire
+81300000 Felicia the Brave
+81400000 Melinda the Butcher
+82000000 Vorgel the Sinner
+82100000 Merciless Roenna
+82200000 Peculiar Kindalur
+82300000 Dragonfang Villard
+99999999 UNKNOWN

@@ -1,0 +1,136 @@
+7 Soul of King Lendor
+8 prison key
+9 water prison key
+10 Prison castle 1st floor key
+11 Prison castle 2nd floor key
+12 Prison castle 3rd floor key
+13 Prison castle 4th floor key
+14 Key to the second floor of the prison mezzanine
+15 Phalanx DS
+16 King's Shield DS
+17 King's Sword DS
+18 Referee DS
+19 Storm Warrior DS
+20 Storm Beast DS
+21 Kamisama DS
+22 Chimera DS
+23 Old Man in Yellow DS
+24 Hiru Demon DS
+25 Fly Colossus DS
+26 Libra DS
+27 Large Spider DS
+28 Fire Giant DS
+29 Dragon Demon DS
+30 Heroine DS
+31 Fat Demon DS
+32 Hiryuko DS
+33 Flying dragon parent DS
+34 Ore Spirit DS
+35 mausoleum key
+36 Prison Tower Key
+37 Proof of Gold Run
+38 jade hair ornament
+39 Prison Key (I)
+40 Prison Key (II)
+41 Prison Key (III)
+42 Prison Key (IV)
+43 Prison Key (II) 2
+44 Logan's Prison Key
+45 Bad End DS
+99 [Seoul Lantern]
+1000 Potion A
+1001 Potion B
+1002 Potion C
+1003 Potion D
+1004 Potion E
+1005 MP Potion A
+1006 MP Potion B
+1007 Antidote A
+1008 Antidote B
+1009 Panacea
+1010 whetstone
+1011 throwing knife
+1012 poison throwing knife
+1013 Molotov cocktail
+1014 soul coin
+1015 rosin
+1016 Burning pine resin
+1017 stone of light
+1018 telescope
+1020 Gate
+1021 resuscitation medicine
+1022 signpost stone
+1023 hemostatic agent
+1024 covert african throwing knives
+1025 Nameless Warrior's Soul
+1026 The pure soul of an unnamed warrior
+1027 Skilled Warrior's Soul
+1028 Pure Soul of a Skilled Warrior
+1029 Renowned Warrior's Soul
+1030 Pure Soul of a Famous Warrior
+1031 Legendary Warrior Soul
+1032 Pure Soul of a Legendary Warrior
+1033 infinity gate
+2000 hard stone fragment
+2001 large piece of hardstone
+2002 lump of hard stone
+2003 pure hard stone
+2004 sharp stone fragment
+2005 large piece of sharp stone
+2006 chunk of sharp stone
+2007 pure sharp stone
+2008 piece of black wire
+2009 A large piece of black steel wire
+2010 lump of black steel wire
+2011 pure black steel wire
+2012 Minagi Stone Fragment
+2013 Lump of Minagi Stone
+2014 pure minagi stone
+2015 Fragment of Nibi Stone
+2016 lump of pumice stone
+2017 pure nibi stone
+2018 piece of gold wire
+2019 lump of steel wire
+2020 pure gold steel wire
+2021 blade stone fragment
+2022 blade stone block
+2023 pure blade stone
+2024 Fragment of Spider Thread Steel Wire
+2025 Mass of spider silk steel wire
+2026 pure spider silk wire
+2027 Mercury Stone Fragment
+2028 lump of mercury stone
+2029 pure mercury stone
+2030 dragon stone shard
+2031 lump of dragon stone
+2032 pure dragon stone
+2033 sucking stone fragment
+2034 lump of sucking stone
+2035 pure sucking stone
+2036 medulla stone fragment
+2037 lump of medulla
+2038 pure medulla
+2039 Moonstone Fragment
+2040 lump of moonstone
+2041 pure moonstone
+2042 Moonstone Fragment
+2043 lump of moonstone
+2044 pure moonstone
+2045 faint stone shard
+2046 chunk of faint stone
+2047 pure faint stone
+2048 Magic shield stone fragment
+2049 Block of Magic Shield Stone
+2050 pure magic stone
+2051 round stone fragment
+2052 chunk of stone
+2053 pure stone
+2054 [Reinforcement reset item]
+2055 A large piece of minagi stone
+2056 large piece of nibi stone
+2057 Large piece of blade stone
+9995 Black Eyes_Intrusion [System]
+9996 Red eyes_Black_Soulsign [System]
+9997 Blue eyes_Soulsign [system]
+9998 unused_kickout [system]
+9999 White eyes_leaveSession [system]

@@ -1,0 +1,187 @@
+10 No Skill
+100 Lion's Claw
+101 Impaling Thrust
+102 Piercing Fang
+103 Spinning Slash
+104 %null%
+105 Charge Forth
+106 Stamp (Upward Cut)
+107 Stamp (Sweep)
+108 Blood Tax
+109 Repeating Thrust
+110 Wild Strikes
+111 Spinning Strikes
+112 Double Slash
+113 Prelate's Charge
+114 Unsheathe
+115 Square Off
+116 Giant Hunt
+117 Torch Attack
+118 Loretta's Slash
+119 Poison Moth Flight
+120 Spinning Weapon
+121 %null%
+122 Storm Assault
+123 Stormcaller
+124 Sword Dance
+125 Spinning Chain
+200 Glintblade Phalanx
+201 Sacred Blade
+202 Ice Spear
+203 Glintstone Pebble
+204 Bloody Slash
+205 Lifesteal Fist
+207 Eruption
+208 Prayerful Strike
+209 Gravitas
+210 Storm Blade
+212 Earthshaker
+213 Golden Land
+214 Flaming Strike
+216 Thunderbolt
+217 Lightning Slash
+218 Carian Grandeur
+219 Carian Greatsword
+220 Vacuum Slice
+221 Black Flame Tornado
+222 Sacred Ring of Light
+223 Firebreather
+224 Blood Blade
+225 Phantom Slash
+226 Spectral Lance
+227 Chilling Mist
+228 Poisonous Mist
+300 Shield Bash
+301 Barricade Shield
+302 Parry
+303 Buckler Parry
+305 Carian Retaliation
+306 Storm Wall
+307 Golden Parry
+308 Shield Crash
+309 Thops's Barrier
+400 Through and Through
+401 Barrage
+402 Mighty Shot
+404 Enchanted Shot
+405 Sky Shot
+406 Rain of Arrows
+407 %null%
+501 Hoarfrost Stomp
+502 Storm Stomp
+503 Kick
+504 Lightning Ram
+505 Flame of the Redmanes
+506 Ground Slam
+507 Golden Slam
+508 Waves of Darkness
+509 Hoarah Loux's Earthshaker
+600 Determination
+601 Royal Knight's Resolve
+602 Assassin's Gambit
+603 Golden Vow
+604 Sacred Order
+605 Shared Order
+606 Seppuku
+607 Cragblade
+650 Barbaric Roar
+651 War Cry
+652 Beast's Roar
+653 Troll's Roar
+654 Braggart's Roar
+700 Endure
+701 Vow of the Indomitable
+702 Holy Ground
+800 Quickstep
+801 Bloodhound's Step
+802 Raptor of the Mists
+850 White Shadow's Lure
+1000 Surge of Faith
+1001 Flame Spit
+1002 Tongues of Fire
+1003 Oracular Bubble
+1004 Bubble Shower
+1005 Great Oracular Bubble
+1006 Sea of Magma
+1007 Viper Bite
+1008 Moonlight Greatsword
+1009 Siluria's Woe
+1010 Rallying Standard
+1011 Bear Witness!
+1012 Eochaid's Dancing Blade
+1013 Soul Stifler
+1014 Taker's Flames
+1015 Shriek of Milos
+1016 Reduvia Blood Blade
+1017 Glintstone Dart
+1018 Flowing Form
+1019 Night-and-Flame Stance
+1020 Wave of Gold
+1021 Ruinous Ghostflame
+1022 Establish Order
+1023 Mists of Slumber
+1024 Spearcall Ritual
+1025 Wolf's Assault
+1026 Thundercloud Form
+1027 Cursed-Blood Slice
+1028 Waterfowl Dance
+1029 Gold Breaker
+1030 I Command Thee Kneel!
+1031 Regal Roar
+1032 Starcaller Cry
+1033 Wave of Destruction
+1034 Bloodboon Ritual
+1035 Flowing Form
+1036 Blade of Death
+1037 Blade of Gold
+1038 Destined Death
+1039 Spinning Wheel
+1040 Alabaster Lords' Pull
+1041 Onyx Lords' Repulsion
+1042 Oath of Vengeance
+1043 Ice Lightning Sword
+1044 Regal Beastclaw
+1045 Flame Dance
+1046 Claw Flick
+1047 Nebula
+1048 Ghostflame Ignition
+1049 Ancient Lightning Spear
+1050 Frenzyflame Thrust
+1051 Miquella's Ring of Light
+1052 Golden Tempering
+1053 Last Rites
+1054 Unblockable Blade
+1055 Eochaid's Dancing Blade
+1167 Corpse Wax Cutter
+1168 Zamor Ice Storm
+1169 Radahn's Rain
+1170 The Queen's Black Flame
+1171 Dynast's Finesse
+1172 Magma Shower
+1173 Nebula
+1174 Death Flare
+1175 Bloodhound's Finesse
+1176 Magma Guillotine
+1177 Corpse Piler
+1178 Transient Moonlight
+1179 Bloodblade Dance
+1180 %null%
+1181 %null%
+1182 Knowledge Above All
+1183 Devourer of Worlds
+1184 Familal Rancor
+1185 Rosus's Summons
+1186 Thunderstorm
+1187 Sacred Phalanx
+1188 Great-Serpent Hunt
+1189 Angel's Wings
+1190 Storm Kick
+1191 Unblockable Blade
+1192 Sorcery of the Crozier
+1193 Erdtree Slam
+1194 Gravity Bolt
+1195 Fires of Slumber
+1196 Golden Retaliation
+1197 Contagious Fury
+1198 Ordovis's Vortex
+1199 Spinning Weapon

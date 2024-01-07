@@ -1,0 +1,32 @@
+1000 For automatic patrol: normal -- 自動巡回用:通常
+1001 For automatic circuit: ritual A -- 自動巡回用:儀式A
+1002 Automatic Circuit: Ritual b -- 自動巡回用:儀式B
+1003 For automatic circuit: ritual c -- 自動巡回用:儀式C
+1004 For automatic circuit: ritual D -- 自動巡回用:儀式D
+1005 Automatic Circuit: Ritual E -- 自動巡回用:儀式E
+30000000 Ojo _1 of caries: Daytime -- 蝕の王城_1：昼
+30000010 Ojo _1 of caries: gloomy and cloudy -- 蝕の王城_1：陰鬱な曇り
+30001000 Ojo _1 of caries: Product version -- 蝕の王城_1：製品版
+30001010 Ojo _1 of caries: NT -- 蝕の王城_1：NT
+30001011 Ojo _1 of caries: TGS -- 蝕の王城_1：TGS
+30001012 Ojo _1 of caries: E3 light Test -- 蝕の王城_1：E3ライトテスト
+30001015 Ojo _1 of caries: Ojo 2 distant Test -- 蝕の王城_1：王城2遠景テスト
+30010000 Ojo _2 of caries: Daytime -- 蝕の王城_2：昼
+30010010 Ojo _2 of caries: gloomy and cloudy -- 蝕の王城_2：陰鬱な曇り
+31000000 City of Evil Eye: Noon -- 邪眼の街：昼
+31000010 City of Evil eyes: gloomy and cloudy -- 邪眼の街：陰鬱な曇り
+31000020 City of Evil Eye: evening/Dusk -- 邪眼の街：夕方/宵闇
+31000030 The City of Evil Eyes: Moon Night -- 邪眼の街：月夜
+32000000 The Bridge of Flying Dragon: Noon -- 飛竜の橋：昼
+32000010 The Bridge of Flying dragon: gloomy and cloudy -- 飛竜の橋：陰鬱な曇り
+33000000 Poison Swamp Forest: Noon -- 毒沼の森：昼
+33000010 Poison swamp Forest: gloomy and cloudy -- 毒沼の森：陰鬱な曇り
+35000000 Cathedral Church: Noon -- 聖堂教会：昼
+35000010 Cathedral church: Gloomy and cloudy -- 聖堂教会：陰鬱な曇り
+37000000 Anole: Daytime -- アノール：昼
+37000010 Anole: Gloomy and cloudy -- アノール：陰鬱な曇り
+38000000 Waste City: Daytime -- 廃都：昼
+39000000 Dungeon: Noon -- 地下牢：昼
+40000000 Location: Daytime -- 拠点：昼
+40000010 Location: Gloomy and cloudy -- 拠点：陰鬱な曇り
+40000020 Location: Evening/Dusk -- 拠点：夕方/宵闇

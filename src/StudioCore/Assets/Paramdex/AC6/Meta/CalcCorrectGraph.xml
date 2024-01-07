@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field></Field>
+  <Self Wiki="Handles value curve functions for various mechanics." CalcCorrectDef="stageMaxVal0,stageMaxVal1,stageMaxVal2,stageMaxVal3,stageMaxVal4,stageMaxGrowVal0,stageMaxGrowVal1,stageMaxGrowVal2,stageMaxGrowVal3,stageMaxGrowVal4,adjPt_maxGrowVal0,adjPt_maxGrowVal1,adjPt_maxGrowVal2,adjPt_maxGrowVal3" SoulCostDef="init_inclination_soul,adjustment_value,boundry_inclination_soul,boundry_value,200,713" />
+</PARAMMETA>

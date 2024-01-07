@@ -1,0 +1,6 @@
+<class name='hkpSerializedTrack1nInfo' version='1' signature='0xf12d48d9' size='32'>
+  <members>
+    <member name='sectors' offset='0' ctype='hkpAgent1nSector' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='subTracks' offset='16' ctype='hkpSerializedSubTrack1nInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

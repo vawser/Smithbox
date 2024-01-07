@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EquipParamFcs_TENTATIVE</ParamType>
+  <DataVersion>8</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="s16 Unk0x04"></Field>
+    <Field Def="u16 menuModelId"></Field>
+    <Field Def="s32 sortId"></Field>
+    <Field Def="f32 weight"></Field>
+    <Field Def="s32 energyCapacity"></Field>
+    <Field Def="s32 energyOutput"></Field>
+    <Field Def="s32 energyLoad"></Field>
+    <Field Def="f32 energyRechargeDelay"></Field>
+    <Field Def="f32 UnkFloat0x20"></Field>
+    <Field Def="f32 UnkFloat0x24"></Field>
+    <Field Def="f32 aimAssistMaxDist"></Field>
+    <Field Def="f32 UnkFloat0x2C"></Field>
+    <Field Def="s32 Unk0x30"></Field>
+    <Field Def="s32 Unk0x34"></Field>
+    <Field Def="s32 Unk0x38"></Field>
+    <Field Def="s32 Unk0x3C"></Field>
+    <Field Def="s32 Unk0x40"></Field>
+    <Field Def="s32 Unk0x44"></Field>
+    <Field Def="f32 Unk0x48"></Field>
+    <Field Def="f32 Unk0x4C"></Field>
+    <Field Def="s32 Unk0x50"></Field>
+    <Field Def="s32 Unk0x54"></Field>
+    <Field Def="s32 Unk0x58"></Field>
+    <Field Def="s32 Unk0x5C"></Field>
+    <Field Def="s32 Unk0x60"></Field>
+    <Field Def="s32 Unk0x64"></Field>
+    <Field Def="s32 Unk0x68"></Field>
+    <Field Def="s32 Unk0x6C"></Field>
+    <Field Def="s32 Unk0x70"></Field>
+    <Field Def="s32 Unk0x74"></Field>
+    <Field Def="s32 Unk0x78"></Field>
+    <Field Def="s32 Unk0x7C"></Field>
+    <Field Def="s32 Unk0x80"></Field>
+    <Field Def="f32 missileLockCorrection"></Field>
+    <Field Def="f32 multiLockCorrection"></Field>
+    <Field Def="s32 inheritanceFcsParamId"></Field>
+    <Field Def="f32 targetTrackingCorrection"></Field>
+    <Field Def="f32 UnkFloat0x94"></Field>
+    <Field Def="f32 aimAssistInputTargetDist_Stage0"></Field>
+    <Field Def="f32 aimAssistInputTargetDist_Stage1"></Field>
+    <Field Def="f32 aimAssistInputTargetDist_Stage2"></Field>
+    <Field Def="f32 aimAssistInputTargetDist_Stage3"></Field>
+    <Field Def="f32 aimAssistInputTargetDist_Stage4"></Field>
+    <Field Def="f32 aimAssistGrowVal_Stage0"></Field>
+    <Field Def="f32 aimAssistGrowVal_Stage1"></Field>
+    <Field Def="f32 aimAssistGrowVal_Stage2"></Field>
+    <Field Def="f32 aimAssistGrowVal_Stage3"></Field>
+    <Field Def="f32 aimAssistGrowVal_Stage4"></Field>
+    <Field Def="s32 Unk0xC0"></Field>
+    <Field Def="s32 Unk0xC4"></Field>
+    <Field Def="s32 Unk0xC8"></Field>
+    <Field Def="s32 Unk0xCC"></Field>
+  </Fields>
+</PARAMDEF>

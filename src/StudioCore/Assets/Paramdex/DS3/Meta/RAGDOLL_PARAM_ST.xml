@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <hierarchGain AltName="Hierarchy Gain" />
+    <velocityDamping AltName="Velocity Dampening" />
+    <accelGain AltName="Acceleration Gain" />
+    <velocityGain AltName="Velocity Gain" />
+    <positionGain AltName="Position Gain" />
+    <maxLinerVelocity AltName="Max Linear Velocity" />
+    <maxAngularVelocity AltName="Max Angular Velocity" />
+    <snapGain AltName="Snap Gain" />
+    <enable AltName="Enable" IsBool="" />
+    <partsHitMaskNo AltName="Parts Hit Mask No." />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="Ragdoll data"/>
+</PARAMMETA>

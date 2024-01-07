@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <ezStateBehaviorType AltName="ezStateBehaviorType" />
+    <refType AltName="refType" />
+    <enable_multi AltName="enable_multi" />
+    <enable_multi_only AltName="enable_multi_only" />
+    <iconId AltName="iconId" />
+    <behaviorId AltName="behaviorId" />
+    <faithForGet AltName="faithForGet" />
+    <slotLength AltName="slotLength" />
+    <isEnchant AltName="isEnchant" />
+    <sortId AltName="sortId" />
+    <basicValue AltName="basicValue" />
+    <mtrlItemId AltName="mtrlItemId" />
+    <enable_live AltName="enable_live" />
+    <enable_gray AltName="enable_gray" />
+    <enable_white AltName="enable_white" />
+    <enable_black AltName="enable_black" />
+    <yesNoDialogMessageId AltName="yesNoDialogMessageId" />
+    <opmeMenuType AltName="opmeMenuType" />
+    <disableOffline AltName="disableOffline" />
+    <pad1 AltName="pad1" />
+  </Field>
+  <Self />
+</PARAMMETA>

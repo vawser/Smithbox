@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>GRAB_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 attacker_dummy_poly_id" />
+    <Field Def="s32 attacker_orientation" />
+    <Field Def="s32 Unk08" />
+    <Field Def="s32 Unk0C" />
+    <Field Def="s32 Unk10" />
+    <Field Def="s32 Unk14" />
+    <Field Def="s32 defender_dummy_poly_id" />
+    <Field Def="s32 defender_orientation" />
+    <Field Def="s32 Unk20" />
+    <Field Def="s32 Unk24" />
+    <Field Def="s32 Unk28" />
+    <Field Def="s32 Unk2C" />
+    <Field Def="s32 shift_target" />
+    <Field Def="s32 Unk34" />
+    <Field Def="s32 Unk38" />
+    <Field Def="u8 Unk3C" />
+    <Field Def="u8 Unk3D" />
+    <Field Def="u8 Unk3E" />
+    <Field Def="u8 Unk3F" />
+    <Field Def="f32 relative_position_x" />
+    <Field Def="f32 relative_position_z" />
+    <Field Def="s32 Unk48" />
+    <Field Def="s32 Unk4C" />
+    <Field Def="u8 distance_confirmation_type" />
+    <Field Def="u8 enable_angle_confirmation_type" />
+    <Field Def="u8 Unk50c" />
+    <Field Def="u8 Unk50d" />
+    <Field Def="f32 minimum_distance_x" />
+    <Field Def="f32 minimum_distance_y" />
+    <Field Def="f32 minimum_distance_z" />
+    <Field Def="f32 Unk60" />
+    <Field Def="f32 Unk64" />
+    <Field Def="f32 Unk68" />
+    <Field Def="f32 angle_difference_unk_1" />
+    <Field Def="f32 angle_difference_unk_2" />
+    <Field Def="f32 angle_difference_unk_3" />
+    <Field Def="f32 Unk78" />
+    <Field Def="f32 angle_difference_maximum" />
+  </Fields>
+</PARAMDEF>

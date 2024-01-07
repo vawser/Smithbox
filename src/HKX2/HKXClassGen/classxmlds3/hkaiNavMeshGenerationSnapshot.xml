@@ -1,0 +1,6 @@
+<class name='hkaiNavMeshGenerationSnapshot' version='1' signature='0x441eed00' size='576'>
+  <members>
+    <member name='geometry' offset='0' ctype='hkGeometry' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='settings' offset='48' ctype='hkaiNavMeshGenerationSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

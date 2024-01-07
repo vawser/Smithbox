@@ -1,0 +1,16 @@
+<class name='hkbWorldEnums' version='1' signature='0x25640b46' size='1'>
+  <enums>
+    <enum name='SimulationState' flags='00000000'>
+      <enumitem name='SIMULATION_STATE_PLAY' value='0'/>
+      <enumitem name='SIMULATION_STATE_PAUSE' value='1'/>
+      <enumitem name='SIMULATION_STATE_STEP' value='2'/>
+      <enumitem name='SIMULATION_STATE_STOP' value='3'/>
+    </enum>
+    <enum name='AccumulateMotionState' flags='00000000'>
+      <enumitem name='ACCUMULATE_MOTION' value='0'/>
+      <enumitem name='DO_NOT_ACCUMULATE_MOTION' value='1'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

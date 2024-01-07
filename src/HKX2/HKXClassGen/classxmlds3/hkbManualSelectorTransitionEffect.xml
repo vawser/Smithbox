@@ -1,0 +1,11 @@
+<class name='hkbManualSelectorTransitionEffect' version='1' signature='0x9c02b0c0' size='232' parent='hkbTransitionEffect'>
+  <members>
+    <member name='transitionEffects' offset='168' ctype='hkbTransitionEffect' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='selectedIndex' offset='184' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexSelector' offset='192' ctype='hkbCustomIdSelector' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='currentTransitionEffectIndex' offset='200' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='currentTransitionEffect' offset='208' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='parentStateMachine' offset='216' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='referenceBehavior' offset='224' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

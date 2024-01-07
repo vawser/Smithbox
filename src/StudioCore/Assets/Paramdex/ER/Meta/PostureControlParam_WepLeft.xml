@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <a000_leftArmFB AltName="[a000] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a000_leftWristFB AltName="[a000] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a000_leftWristIO AltName="[a000] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a002_leftArmFB AltName="[a002] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a002_leftWristFB AltName="[a002] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a002_leftWristIO AltName="[a002] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <a003_leftArmFB AltName="[a003] Left Arm - Front/Back" Wiki="Left arm_front and back" />
+    <a003_leftWristFB AltName="[a003] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
+    <a003_leftWristIO AltName="[a003] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

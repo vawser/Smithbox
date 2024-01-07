@@ -1,0 +1,188 @@
+syntax = "proto3";
+
+import "common.proto";
+
+package SoapstoneLib.Proto.Internal;
+
+//
+// Internal requests (prefer to use library instead of accessing these directly)
+//
+
+message SearchObjectsRequest {
+  EditorResource resource = 1;
+  PrimaryKeyType result_type = 2;
+  PropertySearch search = 3;
+  repeated RequestedProperty properties = 4;
+  SearchOptions options = 5;
+}
+
+message SearchObjectsResponse {
+  repeated GameObject results = 1;
+}
+
+message GetObjectRequest {
+  EditorResource resource = 1;
+  PrimaryKey key = 2;
+  repeated RequestedProperty properties = 3;
+}
+
+message GetObjectResponse {
+  GameObject result = 1;
+}
+
+message BatchGetObjectsRequest {
+  EditorResource resource = 1;
+  repeated PrimaryKey keys = 2;
+  repeated RequestedProperty properties = 3;
+}
+
+message BatchGetObjectsResponse {
+  repeated GameObject results = 1;
+}
+
+message OpenResourceRequest {
+  EditorResource resource = 1;
+}
+
+message OpenResourceResponse {
+}
+
+message OpenObjectRequest {
+  EditorResource resource = 1;
+  PrimaryKey key = 2;
+}
+
+message OpenObjectResponse {
+}
+
+message OpenSearchRequest {
+  EditorResource resource = 1;
+  PrimaryKeyType result_type = 2;
+  PropertySearch search = 3;
+  // Likewise, editors can do this if supported
+  bool open_first_result = 4;
+}
+
+message OpenSearchResponse {
+}
+
+// Internal SoapstoneLib stuff. Clients should use public APIs instead
+
+message GameObject {
+  // Identifier for the object, to use for subsequent UI operations
+  PrimaryKey key = 1;
+  // All requested properties.
+  // The same property name can repeat multiple times, like EntityGroupIDs.
+  // Alternatively, PropertyValue could support arrays.
+  repeated GameProperty properties = 2;
+}
+
+// Some relatively unique identifier for a game object: the file it's in and an id within it.
+// Clients should not examine this directly. Prefer to use properties.
+// Note that EntityID is *not* a valid primary key. It would be a property of an entity.
+// Clients should avoid constructing this key object directly. Instead, use high-level methods in
+// a C# library to ensure that different editors use the same representation for game objects.
+// Failing that, try to use keys returned by servers, rather than constructing them in clients.
+// It is possible for key representations to change over time (and maybe even proto fields), but
+// try to maintain backwards compatibility if it's not too arduous.
+// This system is meant for data in straightforward key-value pairs, not complex recursive data.
+message PrimaryKey {
+  // The lowercase name of the file that this game object appears in, after the interrot prefix
+  // (or other redundant prefixes if no interroot), and without the dcx extension. Overall, it 
+  // should be reasonably stable across games.
+  // This might be "map/mapstudio/m10_00_00_00.msb" for a map, which is a top-level file.
+  // For a resource within a BND, this would be the path name, like
+  // "script/talk/m10_00_00_00/t204101000.esd" or "chr/c0000/tae/a00.tae" or
+  // "param/GameParam/ThrowParam.param".
+  // Note that protobuf interns strings while deserializing, so this is fairly cheap, but if
+  // necessary we can do some kind of reference table or RLE-type compression.
+  string file = 1;
+  // Optionally, a namespace within a file for scoping ids. For instance, in MSB, names
+  // are disambiguated only within regions/parts. FMGs don't need this - all ids are entry ids.
+  // Feel free to create dozens of these as appropriate for disambiguation purposes, but don't
+  // rely on this for precise type information (e.g. distinguishing enemies and objects) -
+  // use properties for that.
+  KeyNamespace namespace = 2;
+  // If there are multiple instances of something with the same id, like a param row for 
+  // instance, this identifies which one it is, starting from 0, then 1, etc.
+  // This number should be stable but is not otherwise meaningful.
+  int32 index = 3;
+  // The main stable identifier for the object, scoped within the file and namespace.
+  // Generally, this should represent how the object is referenced within the format.
+  // If the object has a numerical identifier, use that. If it has a name field, use that.
+  // Try to avoid indices if there is a more stable alternative.
+  // If there is a multipart numerical id, separate parts using underscores.
+  // If this field is missing, this primary key can be used to mean the entire file.
+  oneof id {
+    // String name, or specially formatted name
+    string str_id = 4;
+    // Integer id (any width)
+    int64 int_id = 5;
+  }
+}
+
+// An internal representation of a type of a PrimaryKey object.
+// This is mainly for filtering search results.
+message PrimaryKeyType {
+  // A template version of the PrimaryKey file key, using {0} {1} by convention.
+  // For instance, using the examples given in PrimaryKey, the types would be
+  // "script/talk/{0}/{1}.esd" or "chr/{0}/tae/{1}.tae" or "param/GameParam/{0}.param".
+  string file = 1;
+  // The PrimaryKey namespace. Must not be unspecified.
+  PrimaryKeyCategory category = 2;
+}
+
+enum PrimaryKeyCategory {
+  PRIMARY_KEY_CATEGORY_UNSPECIFIED = 0;
+  // A game file with a unique path. This includes both bnd files and files within bnds.
+  PRIMARY_KEY_CATEGORY_FILE = 1;
+  // A key-value entry in a game file.
+  PRIMARY_KEY_CATEGORY_ENTRY = 2;
+
+}
+
+message GameProperty {
+  // For the moment, use a string key here. This could become more richly typed in the future.
+  string key = 1;
+  PropertyValue value = 2;
+}
+
+// This is a wrapper for scalar values supported by SearchProperties.
+// The oneof includes a case enum by default, plus the value itself.
+// shorts/bytes are represented using varint 32-bit values, as they have no special proto type.
+message PropertyValue {
+  oneof value {
+    // This is quite a few values, but tag numbers are kept in one byte (<2^4, protobuf-net
+    // tag number performance) and it's stored with low overhead (private object value_).
+    sint32 s8_value = 1;
+    uint32 u8_value = 2;
+    sint32 s16_value = 3;
+    uint32 u16_value = 4;
+    sint32 s32_value = 5;
+    uint32 u32_value = 6;
+    sint64 s64_value = 7;
+    uint64 u64_value = 8;
+    float f32_value = 9;
+    double f64_value = 10;
+    bool bool_value = 11;
+    string string_value = 12;
+  }
+}
+
+// Representation of a search.
+// For anything more complex, an expression language can be added later.
+message PropertySearch {
+  // Conjunctive normal form (AND of ORs)
+  repeated MultiPropertyCondition all_of_any_conditions = 1;
+}
+
+message MultiPropertyCondition {
+  repeated PropertyCondition conditions = 3;
+}
+
+// Some basic search condition like EntityID == 5555
+message PropertyCondition {
+  PropertyComparisonType type = 1;
+  string key = 2;
+  PropertyValue value = 3;
+}

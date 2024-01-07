@@ -1,0 +1,35 @@
+<class name='hkaiSilhouetteGenerator' version='1' signature='0xb65d2fc' size='80' parent='hkReferencedObject'>
+  <enums>
+    <enum name='GeneratorType' flags='00000000'>
+      <enumitem name='GENERATOR_PHYSICS_2012_BODY' value='0'/>
+      <enumitem name='GENERATOR_POINT_CLOUD' value='1'/>
+      <enumitem name='GENERATOR_STORAGE_POINT_CLOUD_REMOVED' value='2'/>
+      <enumitem name='GENERATOR_PHYSICS_BODY_BASE' value='3'/>
+      <enumitem name='GENERATOR_PHYSICS_BODY' value='4'/>
+      <enumitem name='GENERATOR_USER_0' value='5'/>
+      <enumitem name='GENERATOR_USER_1' value='6'/>
+      <enumitem name='GENERATOR_USER_2' value='7'/>
+      <enumitem name='GENERATOR_USER_3' value='8'/>
+      <enumitem name='GENERATOR_MAX' value='9'/>
+    </enum>
+    <enum name='ForceGenerateOntoPpuReasons' flags='00000000'>
+      <enumitem name='FORCE_PPU_USER_REQUEST' value='8'/>
+      <enumitem name='FORCE_PPU_SILHOUETTE_COMPLEXITY_REQUEST' value='16'/>
+    </enum>
+    <enum name='ExpansionFlags' flags='00000000'>
+      <enumitem name='AABB_EXPAND_NONE' value='0'/>
+      <enumitem name='AABB_EXTRUDE_DOWN' value='1'/>
+      <enumitem name='AABB_EXPAND_PLANAR' value='2'/>
+      <enumitem name='AABB_EXPAND_UNIFORM' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='userData' offset='16' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lazyRecomputeDisplacementThreshold' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='28' etype='GeneratorType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='forceGenerateOntoPpu' offset='29' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materialId' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cachedSilhouettes' offset='40' ctype='hkaiConvexSilhouetteSet' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transform' offset='48' ctype='hkQTransform' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <enabled AltName="Reflection Enabled" Wiki="Reflective effective" IsBool="" />
+    <localLightEnabled AltName="Local Light Enabled" Wiki="Local light enabled" IsBool="" />
+    <localLightForceEnabled AltName="Local Light Forced Enabled" Wiki="Local light forced enable" IsBool="" />
+    <dmy AltName=""/>
+    <resolutionDivider AltName="Resolution Scale" Wiki="Resolution scale" />
+    <ssrEnabled AltName="SSR Enabled" Wiki="SSR enabled" IsBool="" />
+    <ssrGaussianBlurEnabled AltName="Gaussian Blur Enabled" Wiki="Gaussian blur permission" IsBool="" />
+    <dmy2 AltName=""/>
+    <ssrDepthRejectThresholdScale AltName="Calculated Distance Scale" Wiki="Calculated distance scale" />
+    <ssrRayTraceStepScale AltName="Raytrace Step Scale" Wiki="Raytrace step factor (multiply by SSR parameter)" />
+    <ssrFadeToViewerBias AltName="Fade Angle Bias" Wiki="Fade angle bias. High quality when made smaller" />
+    <ssrFresnelRejectBias AltName="Fresnel Reject Bias" Wiki="Fresnel reject bias. High quality when made smaller" />
+  </Field>
+  <Self />
+</PARAMMETA>

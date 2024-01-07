@@ -1,0 +1,145 @@
+700 [GEN:700] Jester Thomas
+710 [GEN:710] Abbess Feeva
+711 [GEN:711] Ruined Aflis
+712 [GEN:712] Steelheart Ellie
+713 [GEN:713] Transcendent Edde
+714 [GEN:714] Rapacious Andrei
+715 [GEN:715] Benhart of Jugo
+720 [GEN:720] Rockshield Baldyr
+721 [GEN:721] Rhoy the Explorer
+722 [GEN:722] Stewart the Explorer
+723 [GEN:723] Courh the Explorer
+900 [GEN:900] Elana- Squalid Queen
+901 [GEN:901] Sinh- the Slumbering Dragon
+974 [GEN:974] Forlorn (Scythe)
+1010 [GEN:1010] Sanctum Soldier
+1050 [GEN:1050] Sanctum Soldier
+1051 [GEN:1051] Sanctum Soldier
+1052 [GEN:1052] Sanctum Soldier
+1060 [GEN:1060] Sanctum Soldier
+1061 [GEN:1061] Sanctum Soldier
+1062 [GEN:1062] Sanctum Soldier
+1063 [GEN:1063] Sanctum Soldier
+1070 [GEN:1070] Sanctum Soldier
+1100 [GEN:1100] Sanctum Soldier
+1101 [GEN:1101] Sanctum Soldier
+1200 [GEN:1200] Rotten Vermin
+1201 [GEN:1201] Rotten Vermin
+1400 [GEN:1400] Sanctum Soldier
+1410 [GEN:1410] NO MATCH
+1411 [GEN:1411] Rotten Vermin
+1600 [GEN:1600] Sanctum Soldier
+1601 [GEN:1601] Sanctum Soldier
+1800 [GEN:1800] Rotten Vermin
+1801 [GEN:1801] Rotten Vermin
+1802 [GEN:1802] Rotten Vermin
+1803 [GEN:1803] Rotten Vermin
+1804 [GEN:1804] Rotten Vermin
+2000 [GEN:2000] Poison Statue Cluster
+2001 [GEN:2001] NO MATCH
+2002 [GEN:2002] NO MATCH
+2200 [GEN:2200] Sanctum Soldier
+2201 [GEN:2201] Sanctum Soldier
+2400 [GEN:2400] Sanctum Soldier
+2401 [GEN:2401] Sanctum Soldier
+2402 [GEN:2402] NO MATCH
+2403 [GEN:2403] Sanctum Soldier
+2404 [GEN:2404] Sanctum Soldier
+2405 [GEN:2405] Sanctum Soldier
+2410 [GEN:2410] Poison Statue Cluster
+2500 [GEN:2500] Pagan Tree
+2501 [GEN:2501] Poison Statue Cluster
+2502 [GEN:2502] Poison Statue Cluster
+2503 [GEN:2503] Poison Statue Cluster
+2600 [GEN:2600] Sanctum Soldier
+2601 [GEN:2601] Sanctum Soldier
+2602 [GEN:2602] Sanctum Soldier
+2700 [GEN:2700] NO MATCH
+2701 [GEN:2701] NO MATCH
+3000 [GEN:3000] NO MATCH
+3200 [GEN:3200] Sanctum Soldier
+3201 [GEN:3201] Sanctum Soldier
+4001 [GEN:4001] Sanctum Knight
+4002 [GEN:4002] Sanctum Knight
+4200 [GEN:4200] Sanctum Soldier
+4201 [GEN:4201] Sanctum Soldier
+4202 [GEN:4202] Sanctum Soldier
+4203 [GEN:4203] Sanctum Soldier
+4400 [GEN:4400] Sanctum Soldier
+4401 [GEN:4401] NO MATCH
+4402 [GEN:4402] Sanctum Priestess
+4410 [GEN:4410] Sanctum Soldier
+4600 [GEN:4600] Sanctum Soldier
+4601 [GEN:4601] Sanctum Soldier
+4602 [GEN:4602] Sanctum Soldier
+4800 [GEN:4800] Rotten Vermin
+4801 [GEN:4801] Rotten Vermin
+4802 [GEN:4802] Rotten Vermin
+4803 [GEN:4803] Rotten Vermin
+4804 [GEN:4804] Rotten Vermin
+4805 [GEN:4805] Rotten Vermin
+4806 [GEN:4806] Rotten Vermin
+4807 [GEN:4807] Rotten Vermin
+4808 [GEN:4808] Rotten Vermin
+4809 [GEN:4809] Rotten Vermin
+4810 [GEN:4810] Rotten Vermin
+5000 [GEN:5000] Sanctum Knight
+5002 [GEN:5002] Sanctum Knight
+5200 [GEN:5200] Sanctum Priestess
+5201 [GEN:5201] Sanctum Priestess
+5202 [GEN:5202] Sanctum Knight
+5400 [GEN:5400] Sanctum Knight
+5401 [GEN:5401] NO MATCH
+5800 [GEN:5800] Sanctum Knight
+5801 [GEN:5801] Sanctum Knight
+5802 [GEN:5802] Sanctum Knight
+6000 [GEN:6000] Imperfect
+6001 [GEN:6001] Imperfect
+6002 [GEN:6002] Imperfect
+6003 [GEN:6003] Imperfect
+6004 [GEN:6004] Imperfect
+6500 [GEN:6500] Drakeblood Knight Rondor
+6510 [GEN:6510] Drakeblood Knight Rondor
+6520 [GEN:6520] NO MATCH
+6530 [GEN:6530] Drakeblood Knight Rondor
+6531 [GEN:6531] Drakeblood Knight Rondor
+6540 [GEN:6540] Drakeblood Knight Rondor
+6550 [GEN:6550] Drakeblood Knight Rondor
+6600 [GEN:6600] Crystal Lizard
+6601 [GEN:6601] Crystal Lizard
+6602 [GEN:6602] Crystal Lizard
+6603 [GEN:6603] Crystal Lizard
+6700 [GEN:6700] Sanctum Knight
+7000 [GEN:7000] Sanctum Priestess
+7001 [GEN:7001] Sanctum Priestess
+7010 [GEN:7010] Rotten Vermin
+7011 [GEN:7011] Rotten Vermin
+7012 [GEN:7012] Rotten Vermin
+8000 [GEN:8000] Sanctum Soldier
+8001 [GEN:8001] Sanctum Soldier
+8002 [GEN:8002] Sanctum Soldier
+8203 [GEN:8203] Poison Statue Cluster
+8204 [GEN:8204] Poison Statue Cluster
+8205 [GEN:8205] Poison Statue Cluster
+8206 [GEN:8206] Poison Statue Cluster
+8400 [GEN:8400] NO MATCH
+8401 [GEN:8401] Poison Statue Cluster
+8402 [GEN:8402] NO MATCH
+8403 [GEN:8403] NO MATCH
+8404 [GEN:8404] Poison Statue Cluster
+8405 [GEN:8405] Poison Statue Cluster
+8410 [GEN:8410] Poison Statue Cluster
+8411 [GEN:8411] NO MATCH
+8412 [GEN:8412] NO MATCH
+8413 [GEN:8413] NO MATCH
+8420 [GEN:8420] Razorback Nightcrawler
+8500 [GEN:8500] Skeleton (Elana)
+8501 [GEN:8501] Skeleton (Elana)
+8502 [GEN:8502] Skeleton (Elana)
+8503 [GEN:8503] Small Undead Boar (Elana)
+8504 [GEN:8504] Small Undead Boar (Elana)
+8505 [GEN:8505] Small Undead Boar (Elana)
+8506 [GEN:8506] Velstadt (Elana)
+8507 [GEN:8507] Skeleton (Elana)
+8508 [GEN:8508] Skeleton (Elana)
+9000 [GEN:9000] Sinh- the Slumbering Dragon

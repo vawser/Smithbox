@@ -1,0 +1,7 @@
+<class name='hkpConvexPieceMeshShape' version='1' signature='0xbe1c544a' size='72' parent='hkpShapeCollection'>
+  <members>
+    <member name='convexPieceStream' offset='48' ctype='hkpConvexPieceStreamData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='displayMesh' offset='56' ctype='hkpShapeCollection' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='radius' offset='64' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

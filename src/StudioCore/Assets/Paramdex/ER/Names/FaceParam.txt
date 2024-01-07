@@ -1,0 +1,83 @@
+1 Mimic Tear
+23000 Tanith, Volcano Manor Proprietress
+23010 White Mask Varré
+23040 Festering Fingerprint Vyke
+23070 Preceptor Seluvis
+23090 Patches
+23100 Finger Maiden Hyetta
+23110 Edgar the Revenger
+23120 Witch-Hunter Jerren
+23130 Rya the Scout
+23140 Knight Diallos
+23150 Human
+23160 Sorceress Sellen
+23162 Sorceress Sellen
+23180 Shabriri
+23190 D, Hunter of the Dead
+23192 D, Beholder of Death
+23200 Roderika
+23210 Kenneth Haight, Limgrave Heir
+23220 Fia, Deathbed Companion
+23230 Dung Eater
+23240 Sir Gideon Ofnir, the All-Knowing
+23250 Sorcerer Rogier
+23260 Recusant Bernahl
+23270 Eleonora, Violet Bloody Finger
+23290 Lionel the Lionhearted
+23310 Blackguard
+23320 Rykard-Hating Ghost
+23330 Sorcerer Thops
+23340 Nepheli Loux, Warrior
+23360 Vyke's Finger Maiden
+23380 Finger Maiden
+23390 Ensha of the Royal Remains
+23400 Bloody Finger Ravenmount Assassin
+23420 Boc the Seamster
+23430 Bloody Finger Nerijus
+23440 Great Horned Tragoth
+23450 Old Knight Istvan
+23460 Rileigh the Idle
+23470 Juno Hoslow, Knight of Blood
+23480 Millicent
+23481 Millicent
+23490 Sage Gowry
+23510 Scribe Corhyn
+23520 Preceptor Miriam
+23530 Anastasia, Tarnished-Eater
+23550 Okina
+23560 Adan, Thief of Fire
+23590 Moongrum, Carian Knight
+23600 Vargram the Raging Wolf
+23610 Fia's Champion 1
+23611 Fia's Champion 1
+23612 Fia's Champion 1
+23630 Finger Maiden Therolina
+23640 Dolores the Sleeping Arrow
+23650 Jarwight
+23670 Inaba, Disciple of Okina
+23680 Silver Tear
+23681 Silver Tear
+23682 Silver Tear
+23683 Silver Tear
+23690 Recusant Henricus
+23720 Maleigh Marais, Shaded Castle Castellan
+23730 Knight of the Great Jar
+23740 Knight of the Great Jar
+23750 Knight of the Great Jar
+23760 Necromancer Garris
+23770 Nameless White Mask
+23800 Errant Sorcerer Wilhelm
+23820 Chief Guardian Arghanthy
+23830 Flame Guardian
+23840 Inquisitor Ghiza
+23850 Mad Tongue Alberich
+23860 Esgar, Priest of Blood
+23870 Mary, Eldest Sister
+23880 Maureen, Second Sister
+23890 Amy, Third Sister
+23900 Polyanna, Youngest Sister
+23910 Magnus the Beast Claw
+27000 Stormhill Colosseum Silent Spirit
+27001 Caria Manor Silent Spirit
+27002 Dragonbarrow Silent Spirit
+27900 Human

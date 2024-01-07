@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>MENUPROPERTY_LAYOUT</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstr LayoutPath[16]">
+      <DisplayName>レイアウトパス</DisplayName>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 PropertyID">
+      <DisplayName>プロパティID</DisplayName>
+      <Enum>MENU_PROPERTY_ID</Enum>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 CaptionTextID">
+      <DisplayName>項目名テキストID</DisplayName>
+      <Description>有効なテキストIDが設定されている場合、プロパティ名よりもこちらを優先して表示します。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 HelpTextID">
+      <DisplayName>ヘルプテキストID</DisplayName>
+      <Description>ここが有効なテキストIDの場合のみ、項目ヘルプで選択できるようになります。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="dummy8 reserved[4]">
+      <DisplayName>予約</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <SortID>5</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <equipWeaponRight Refs="EquipParamWeapon" />
+    <equipWeaponLeft Refs="EquipParamWeapon" />
+    <equipPartHead Refs="EquipParamProtector" />
+    <equipPartCore Refs="EquipParamProtector" />
+    <equipPartArms Refs="EquipParamProtector" />
+    <equipPartLegs Refs="EquipParamProtector" />
+    <equipPartBackRight Refs="EquipParamWeapon" />
+    <equipPartBackLeft Refs="EquipParamWeapon" />
+    <equipPartBooster Refs="EquipParamBooster" />
+    <equipPartGenerator Refs="EquipParamGenerator" />
+    <equipPartFcs Refs="EquipParamFcs" />
+  </Field>
+  <Self />
+</PARAMMETA>

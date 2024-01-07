@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WHITE_SIGN_COOL_TIME_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 limitationTime_Normal"></Field>
+    <Field Def="f32 limitationTime_NormalDriedFinger"></Field>
+    <Field Def="f32 limitationTime_Guardian"></Field>
+    <Field Def="f32 limitationTime_GuardianDriedFinger"></Field>
+  </Fields>
+</PARAMDEF>

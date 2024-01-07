@@ -1,0 +1,6 @@
+<class name='hkbHandIkDriverInfo' version='1' signature='0x3eab47f1' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='hands' offset='16' ctype='hkbHandIkDriverInfoHand' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeInOutCurve' offset='32' etype='BlendCurve' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

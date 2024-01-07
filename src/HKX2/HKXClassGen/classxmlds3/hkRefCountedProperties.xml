@@ -1,0 +1,11 @@
+<class name='hkRefCountedProperties' version='1' signature='0x7c574867' size='16'>
+  <enums>
+    <enum name='ReferenceCountHandling' flags='00000000'>
+      <enumitem name='REFERENCE_COUNT_INCREMENT' value='0'/>
+      <enumitem name='REFERENCE_COUNT_IGNORE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='entries' offset='0' ctype='hkRefCountedPropertiesEntry' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name='hkaiDirectedGraphInstanceFreeBlockList' version='1' signature='0x32787717' size='16'>
+  <members>
+    <member name='blocks' offset='0' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,32 @@
+<class name='hkpSerializedAgentNnEntry' version='1' signature='0x4b13e677' size='400' parent='hkReferencedObject'>
+  <enums>
+    <enum name='SerializedAgentType' flags='00000000'>
+      <enumitem name='INVALID_AGENT_TYPE' value='0'/>
+      <enumitem name='BOX_BOX_AGENT3' value='1'/>
+      <enumitem name='CAPSULE_TRIANGLE_AGENT3' value='2'/>
+      <enumitem name='PRED_GSK_AGENT3' value='3'/>
+      <enumitem name='PRED_GSK_CYLINDER_AGENT3' value='4'/>
+      <enumitem name='CONVEX_LIST_AGENT3' value='5'/>
+      <enumitem name='LIST_AGENT3' value='6'/>
+      <enumitem name='BV_TREE_AGENT3' value='7'/>
+      <enumitem name='COLLECTION_COLLECTION_AGENT3' value='8'/>
+      <enumitem name='COLLECTION_AGENT3' value='9'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='bodyA' offset='16' ctype='hkpEntity' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bodyB' offset='24' ctype='hkpEntity' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bodyAId' offset='32' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bodyBId' offset='40' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useEntityIds' offset='48' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='agentType' offset='49' etype='SerializedAgentType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='atom' offset='64' ctype='hkpSimpleContactConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='propertiesStream' offset='112' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contactPoints' offset='128' ctype='hkContactPoint' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cpIdMgr' offset='144' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nnEntryData' offset='160' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='192' flags='FLAGS_NONE' default='0'/>
+    <member name='trackInfo' offset='352' ctype='hkpSerializedTrack1nInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endianCheckBuffer' offset='384' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='version' offset='388' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

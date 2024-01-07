@@ -1,0 +1,6 @@
+<class name='hkpMultiRayShape' version='1' signature='0x9bb1f853' size='56' parent='hkpShape'>
+  <members>
+    <member name='rays' offset='32' ctype='hkpMultiRayShapeRay' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rayPenetrationDistance' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

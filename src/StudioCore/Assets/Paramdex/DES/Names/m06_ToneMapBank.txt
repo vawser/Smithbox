@@ -1,0 +1,5 @@
+0 Basic
+1 moderate
+10 For poly drama (p60100
+20 For poly drama (p60200-shine
+21 For poly drama (p60200-general

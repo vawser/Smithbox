@@ -1,0 +1,23 @@
+0 Default (delete not allowed)
+300000 High Wall of Lothric
+301000 Lothric Castle
+310000 Undead Settlement
+320000 Archdragon Peak
+330000 Road of Sacrifices / Farron Keep
+341000 Grand Archives
+350000 Cathedral of the Deep
+370000 Irithyll of the Boreal Valley
+380000 Catacombs of Carthus / Smouldering Lake
+390000 Irithyll Dungeon
+400000 Cemetery of Ash / Untended Graves
+410000 Flameless Shrine
+450000 Ariandel
+460000 Arena - Grand Roof
+470000 Arena - Kiln of Flame
+500000 Dreg Heap
+510000 The Ringed City
+511000 Filianore's Rest
+530000 Arena - Dragon Ruins
+540000 Arena - Round Plaza
+981000 Multi-Play Test map
+991000 Old multi-play test map

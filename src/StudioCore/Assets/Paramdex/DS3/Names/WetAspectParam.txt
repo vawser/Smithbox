@@ -1,0 +1,11 @@
+1 Water wet
+2 Poison Wet
+3 Oil wet
+4 Mud Stains
+5 Sand Dust
+6 Freezing
+7 Covered with wax
+8 Frostbite
+9 Preliminary 1
+10 Preliminary 2
+11 Preliminary 3

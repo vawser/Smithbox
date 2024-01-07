@@ -1,0 +1,19 @@
+<class name='hkpLinearClearanceConstraintDataAtoms' version='1' signature='0xd0748d53' size='288'>
+  <enums>
+    <enum name='Axis' flags='00000000'>
+      <enumitem name='AXIS_SHAFT' value='0'/>
+      <enumitem name='AXIS_PERP_TO_SHAFT' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='transforms' offset='0' ctype='hkpSetLocalTransformsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motor' offset='144' ctype='hkpLinMotorConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='friction0' offset='168' ctype='hkpLinFrictionConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='friction1' offset='184' ctype='hkpLinFrictionConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='friction2' offset='200' ctype='hkpLinFrictionConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ang' offset='216' ctype='hkpAngConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='linLimit0' offset='232' ctype='hkpLinLimitConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='linLimit1' offset='248' ctype='hkpLinLimitConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='linLimit2' offset='264' ctype='hkpLinLimitConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

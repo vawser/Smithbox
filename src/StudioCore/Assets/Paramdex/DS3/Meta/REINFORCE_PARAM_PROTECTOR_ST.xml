@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self AlternativeOrder="physicDefRate,magicDefRate,fireDefRate,thunderDefRate,darkDefRate,slashDefRate,blowDefRate,thrustDefRate,-,
+  resistPoisonRate,resistToxicRate,resistBloodRate,resistFrost,resistCurseRate,-,
+  ResidentSpEffectId1,ResidentSpEffectId2,ResidentSpEffectId3,materialSetId" />
+  <Field>
+	<physicDefRate AltName="Defense %: Physical" />
+	<magicDefRate AltName="Defense %: Magic" />
+	<fireDefRate AltName="Defense %: Fire" />
+	<thunderDefRate AltName="Defense %: Lightning" />
+	<slashDefRate AltName="Defense %: Slash" />
+	<blowDefRate AltName="Defense %: Strike" />
+	<thrustDefRate AltName="Defense %: Thrust" />
+	<resistPoisonRate AltName="Resist %: Poison" />
+	<resistToxicRate AltName="Resist %: Toxic" />
+	<resistBloodRate AltName="Resist %: Bleed" />
+	<resistCurseRate AltName="Resist %: Curse" />
+	<ResidentSpEffectId1 AltName="Passive SpEffect ID 1 Offset" />
+    <ResidentSpEffectId2 AltName="Passive SpEffect ID 2 Offset" />
+    <ResidentSpEffectId3 AltName="Passive SpEffect ID 3 Offset" />
+	<materialSetId AltName="Material ID Offset" />
+	<darkDefRate AltName="Defense %: Dark" />
+	<resistFrost AltName="Resist %: Frost" />
+    <pad1 AltName="" />
+  </Field>
+  <Self ConsecutiveIDs="" Wiki="Defines upgrades of Armor." />
+</PARAMMETA>

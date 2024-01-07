@@ -1,0 +1,25 @@
+<class name='hkbVariableBindingSetBinding' version='1' signature='0x4d592f72' size='40'>
+  <enums>
+    <enum name='BindingType' flags='00000000'>
+      <enumitem name='BINDING_TYPE_VARIABLE' value='0'/>
+      <enumitem name='BINDING_TYPE_CHARACTER_PROPERTY' value='1'/>
+    </enum>
+    <enum name='InternalBindingFlags' flags='00000000'>
+      <enumitem name='FLAG_NONE' value='0'/>
+      <enumitem name='FLAG_OUTPUT' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='memberPath' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memberClass' offset='8' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='offsetInObjectPlusOne' offset='16' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='offsetInArrayPlusOne' offset='20' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='rootVariableIndex' offset='24' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='variableIndex' offset='28' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bitIndex' offset='32' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bindingType' offset='33' etype='BindingType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memberType' offset='34' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='variableType' offset='35' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='flags' offset='36' vtype='TYPE_FLAGS' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

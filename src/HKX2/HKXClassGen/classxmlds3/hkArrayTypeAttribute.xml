@@ -1,0 +1,12 @@
+<class name='hkArrayTypeAttribute' version='1' signature='0xd404a39a' size='1'>
+  <enums>
+    <enum name='ArrayType' flags='00000000'>
+      <enumitem name='NONE' value='0'/>
+      <enumitem name='POINTSOUP' value='1'/>
+      <enumitem name='ENTITIES' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='0' etype='ArrayType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

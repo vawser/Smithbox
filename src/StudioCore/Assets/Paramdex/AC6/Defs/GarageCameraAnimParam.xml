@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>GARAGE_CAMERA_ANIM_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 UnkInt0x00"></Field>
+    <Field Def="u16 UnkUshort0x04"></Field>
+    <Field Def="s16 UnkShort0x06"></Field>
+    <Field Def="s8 UnkSbyte0x08"></Field>
+    <Field Def="u8 UnkByte0x09"></Field>
+    <Field Def="s16 UnkShort0x0A"></Field>
+    <Field Def="dummy8 Unk0x0C[1]"></Field>
+    <Field Def="u8 UnkByte0x0D"></Field>
+    <Field Def="u8 Unk0x0E"></Field>
+    <Field Def="u8 Unk0x0F"></Field>
+    <Field Def="u16 UnkUshort0x10"></Field>
+    <Field Def="s16 UnkShort0x12"></Field>
+    <Field Def="s8 UnkSbyte0x14"></Field>
+    <Field Def="u8 UnkByte0x15"></Field>
+    <Field Def="s16 UnkShort0x16"></Field>
+    <Field Def="dummy8 Unk0x18[1]"></Field>
+    <Field Def="u8 UnkByte0x19"></Field>
+    <Field Def="u8 Unk0x1A"></Field>
+    <Field Def="u8 Unk0x1B"></Field>
+    <Field Def="u16 UnkUshort0x1C"></Field>
+    <Field Def="s16 UnkShort0x1E"></Field>
+    <Field Def="s8 UnkSbyte0x20"></Field>
+    <Field Def="u8 UnkByte0x21"></Field>
+    <Field Def="s16 UnkShort0x22"></Field>
+    <Field Def="dummy8 Unk0x24[1]"></Field>
+    <Field Def="u8 UnkByte0x25"></Field>
+    <Field Def="u8 Unk0x26"></Field>
+    <Field Def="u8 Unk0x27"></Field>
+    <Field Def="u16 UnkUshort0x28"></Field>
+    <Field Def="s16 UnkShort0x2A"></Field>
+    <Field Def="s8 UnkSbyte0x2C"></Field>
+    <Field Def="u8 UnkByte0x2D"></Field>
+    <Field Def="s16 UnkShort0x2E"></Field>
+    <Field Def="dummy8 Unk0x30[1]"></Field>
+    <Field Def="u8 UnkByte0x31"></Field>
+    <Field Def="u8 Unk0x32"></Field>
+    <Field Def="u8 Unk0x33"></Field>
+    <Field Def="s32 UnkInt0x34"></Field>
+    <Field Def="s32 UnkInt0x38"></Field>
+    <Field Def="s32 UnkInt0x3C"></Field>
+    <Field Def="s32 UnkInt0x40"></Field>
+    <Field Def="s32 UnkInt0x44"></Field>
+    <Field Def="s32 UnkInt0x48"></Field>
+    <Field Def="s32 UnkInt0x4C"></Field>
+    <Field Def="s32 UnkInt0x50"></Field>
+    <Field Def="s32 UnkInt0x54"></Field>
+    <Field Def="s32 UnkInt0x58"></Field>
+    <Field Def="s32 UnkInt0x5C"></Field>
+    <Field Def="s32 UnkInt0x60"></Field>
+    <Field Def="s32 UnkInt0x64"></Field>
+    <Field Def="s32 UnkInt0x68"></Field>
+    <Field Def="s32 UnkInt0x6C"></Field>
+    <Field Def="s32 UnkInt0x70"></Field>
+    <Field Def="s32 UnkInt0x74"></Field>
+    <Field Def="s32 UnkInt0x78"></Field>
+    <Field Def="s32 UnkInt0x7C"></Field>
+    <Field Def="s32 UnkInt0x80"></Field>
+    <Field Def="s32 UnkInt0x84"></Field>
+    <Field Def="s32 UnkInt0x88"></Field>
+    <Field Def="s32 UnkInt0x8C"></Field>
+    <Field Def="s32 UnkInt0x90"></Field>
+    <Field Def="s32 UnkInt0x94"></Field>
+    <Field Def="s32 UnkInt0x98"></Field>
+    <Field Def="s32 UnkInt0x9C"></Field>
+    <Field Def="s32 UnkInt0xA0"></Field>
+    <Field Def="s32 UnkInt0xA4"></Field>
+    <Field Def="s32 UnkInt0xA8"></Field>
+    <Field Def="s32 UnkInt0xAC"></Field>
+    <Field Def="s32 UnkInt0xB0"></Field>
+    <Field Def="s32 UnkInt0xB4"></Field>
+    <Field Def="s32 UnkInt0xB8"></Field>
+    <Field Def="s32 UnkInt0xBC"></Field>
+    <Field Def="s32 UnkInt0xC0"></Field>
+  </Fields>
+</PARAMDEF>

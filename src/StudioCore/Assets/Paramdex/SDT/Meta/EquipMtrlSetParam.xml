@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <materialId01 Wiki="Item that will be consumed upradging or purchasing" Refs="EquipParamGoods(materialCate01=4)" />
+    <materialId02 Wiki="Item that will be consumed upradging or purchasing" Refs="EquipParamGoods(materialCate02=4)" />
+    <materialId03 Wiki="Item that will be consumed upradging or purchasing" Refs="EquipParamGoods(materialCate03=4)" />
+    <materialId04 Wiki="Item that will be consumed upradging or purchasing" Refs="EquipParamGoods(materialCate04=4)" />
+    <materialId05 Wiki="Item that will be consumed upradging or purchasing" Refs="EquipParamGoods(materialCate05=4)" />
+    <itemNum01 Wiki="How much of materialId01 will be consumed?" />
+    <itemNum02 Wiki="How much of materialId02 will be consumed?" />
+    <itemNum03 Wiki="How much of materialId03 will be consumed?" />
+    <itemNum04 Wiki="How much of materialId04 will be consumed?" />
+    <itemNum05 Wiki="How much of materialId05 will be consumed?" />
+    <materialCate01 Wiki="Determines what param materialId01 references" />
+    <materialCate02 Wiki="Determines what param materialId02 references" />
+    <materialCate03 Wiki="Determines what param materialId03 references" />
+    <materialCate04 Wiki="Determines what param materialId04 references" />
+    <materialCate05 Wiki="Determines what param materialId05 references" />
+    <isDisableDispNum01 IsBool="" />
+    <isDisableDispNum05 IsBool="" />
+    <isDisableDispNum03 IsBool="" />
+    <isDisableDispNum02 IsBool="" />
+    <isDisableDispNum04 IsBool="" />
+  </Field>
+  <Self Wiki="Defines items used for upgrades and shops" AlternativeOrder="materialId01,itemNum01,materialCate01,isDisableDispNum01,-,
+  materialId02,itemNum02,materialCate02,isDisableDispNum02,-,
+  materialId03,itemNum03,materialCate03,isDisableDispNum03,-,
+  materialId04,itemNum04,materialCate04,isDisableDispNum04,-,
+  materialId05,itemNum05,materialCate05,isDisableDispNum05,-" />
+</PARAMMETA>

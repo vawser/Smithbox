@@ -1,0 +1,15 @@
+<class name='hkaiReferenceFrameAndExtrusion' version='1' signature='0x58d204d9' size='32'>
+  <enums>
+    <enum name='UpVectorTransformMethod' flags='00000000'>
+      <enumitem name='USE_GLOBAL_UP' value='0'/>
+      <enumitem name='USE_INSTANCE_TRANSFORM' value='1'/>
+      <enumitem name='USE_FACE_NORMAL' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='up' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cellExtrusion' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='silhouetteRadiusExpasion' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='upTransformMethod' offset='24' etype='UpVectorTransformMethod' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

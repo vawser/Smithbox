@@ -1,0 +1,14 @@
+<class name='hkbpControlledReachModifier' version='1' signature='0x6f568aeb' size='136' parent='hkbModifier'>
+  <members>
+    <member name='target' offset='88' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='time' offset='96' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='fadeInStart' offset='100' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeInEnd' offset='104' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeOutStart' offset='108' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeOutEnd' offset='112' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeOutDuration' offset='116' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorAngle' offset='120' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handIndex' offset='124' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='isHandEnabled' offset='128' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

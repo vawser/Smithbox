@@ -1,0 +1,5 @@
+<class name='hkpPointToPlaneConstraintData' version='1' signature='0x9a4c51a9' size='192' parent='hkpConstraintData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpPointToPlaneConstraintDataAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

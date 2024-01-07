@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <shopType AltName="shopType" />
+    <equipType AltName="equipType" />
+    <pad_0 AltName="pad_0" />
+    <equipId AltName="equipId" />
+    <value AltName="value" />
+    <mtrlId AltName="mtrlId" />
+    <eventFlag AltName="eventFlag" />
+    <sellQuantity AltName="sellQuantity" />
+    <qwcId AltName="qwcId" />
+    <pad_1 AltName="pad_1" />
+  </Field>
+  <Self />
+</PARAMMETA>

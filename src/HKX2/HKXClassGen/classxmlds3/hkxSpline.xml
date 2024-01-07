@@ -1,0 +1,14 @@
+<class name='hkxSpline' version='1' signature='0x5ad44352' size='40' parent='hkReferencedObject'>
+  <enums>
+    <enum name='ControlType' flags='00000000'>
+      <enumitem name='BEZIER_SMOOTH' value='0'/>
+      <enumitem name='BEZIER_CORNER' value='1'/>
+      <enumitem name='LINEAR' value='2'/>
+      <enumitem name='CUSTOM' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='controlPoints' offset='16' ctype='hkxSplineControlPoint' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isClosed' offset='32' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

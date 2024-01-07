@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <isUseOption AltName="Affected by Production Camera Toggle" Wiki="Is it affected by the production camera ON / OFF option?" IsBool="" />
+    <pad1 AltName=""/>
+    
+  </Field>
+  <Self Wiki="Rumble Camera data"/>
+</PARAMMETA>

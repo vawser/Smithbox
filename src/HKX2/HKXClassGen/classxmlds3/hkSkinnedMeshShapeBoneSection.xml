@@ -1,0 +1,7 @@
+<class name='hkSkinnedMeshShapeBoneSection' version='1' signature='0x21b4c99a' size='16'>
+  <members>
+    <member name='meshBuffer' offset='0' ctype='hkMeshShape' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startBoneSetId' offset='8' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numBoneSets' offset='10' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

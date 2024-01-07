@@ -1,0 +1,5 @@
+<class name='hkpBoxShape' version='1' signature='0xdca2d1a7' size='64' parent='hkpConvexShape'>
+  <members>
+    <member name='halfExtents' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

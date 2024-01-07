@@ -1,0 +1,7 @@
+<class name='hkpAabbPhantom' version='1' signature='0x45d05af9' size='304' parent='hkpPhantom'>
+  <members>
+    <member name='aabb' offset='240' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='overlappingCollidables' offset='272' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='orderDirty' offset='288' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

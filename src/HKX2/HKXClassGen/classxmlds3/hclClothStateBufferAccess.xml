@@ -1,0 +1,7 @@
+<class name='hclClothStateBufferAccess' version='1' signature='0x6a9c903' size='16'>
+  <members>
+    <member name='bufferIndex' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bufferUsage' offset='4' ctype='hclBufferUsage' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shadowBufferIndex' offset='12' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

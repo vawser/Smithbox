@@ -1,0 +1,6 @@
+<class name='hkaiAabbTreeNavVolumeMediator' version='1' signature='0xacfc8e34' size='32' parent='hkaiNavVolumeMediator'>
+  <members>
+    <member name='navVolume' offset='16' ctype='hkaiNavVolume' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tree' offset='24' ctype='hkcdStaticAabbTree' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

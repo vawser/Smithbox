@@ -1,0 +1,7 @@
+<class name='hkpBallAndSocketConstraintDataAtoms' version='1' signature='0xe51e4bcc' size='80'>
+  <members>
+    <member name='pivots' offset='0' ctype='hkpSetLocalTranslationsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='setupStabilization' offset='48' ctype='hkpSetupStabilizationAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ballSocket' offset='64' ctype='hkpBallSocketConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

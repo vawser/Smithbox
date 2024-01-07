@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="BULLET_LAUNCH_CONDITION_TYPE">
+      <Option Value="0" Name="Always" />
+      <Option Value="1" Name="Hit water" />
+      <Option Value="2" Name="Hit water or swamp" />
+      <Option Value="3" Name="Didn't hit enemy" />/>
+      <Option Value="4" Name="Hit enemy" />
+      <Option Value="254" Name="Expired" />
+      <Option Value="255" Name="Hit ground or enemy" />
+    </Enum>
+    <Enum Name="BULLET_EMITTE_POS_TYPE" type="u8">
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Shooter + randomCreateRadius" />
+      <Option Value="2" Name="Higher elevation" />
+      <Option Value="3" Name="Nearby enemy origin. If no enemies, targets bullet origin." />
+      <Option Value="4" Name="Nearest enemy + randomCreateRadius" />
+      <Option Value="5" Name="Parent bullet (instead of hit location)" />
+      <Option Value="6" Name="Aim straight up" />
+    </Enum>
+    <Enum Name="BULLET_FOLLOW_TYPE" type="u8">
+      <Option Value="0" Name="Do not follow" />
+      <Option Value="1" Name="Follow shooter" />
+      <Option Value="2" Name="Follow shooter's feet" />
+      <Option Value="3" Name="Follow target" />
+      <Option Value="4" Name="Slide along ground" />
+      <Option Value="5" Name="Keep same direction" />
+      <Option Value="6" Name="Follow target trail" />
+      <Option Value="7" Name="Follow parent bullet" />
+      <Option Value="8" Name="Follow ground" />
+      <Option Value="9" Name="Follow parent bullet (except for direction)" />
+      <Option Value="10" Name="Follow parent bullet position" />
+    </Enum>
+    <Enum Name="BULLET_CHARA_PENETRATE_TYPE" type="u8">
+      <Option Value="0" Name="No characters" />
+      <Option Value="1" Name="Low penetrate defense" />
+      <Option Value="2" Name="All characters" />
+    </Enum>
+    <Enum Name="BULLET_HOMING_TYPE" type="u8">
+      <Option Value="0" Name="Normal" />
+      <Option Value="1" Name="Maintain altitude" />
+    </Enum>
+  </Enums>
+  <Field>
+    <atkId_Bullet AltName="AtkParam ID" Wiki="References AtkParam. Used to apply the damage characteristics to a project." Refs="AtkParam_Pc,AtkParam_Npc" />
+    <sfxId_Bullet AltName="Projectile FFX ID" Wiki="Visual effect for projectile in transit." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Hit AltName="Impact FFX ID" Wiki="Visual effect when projectile hits something." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Flick AltName="Repel FFX ID" Wiki="Visual effect when projectile is deflected off of a shield." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Muzzle AltName="Muzzle FFX ID" Wiki="Visual effect when producing projectile." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <hitRadius AltName="Hitbox Radius (initial)" Wiki="Initial radius of the hitbox." />
+    <hitRadiusMax AltName="Hitbox Radius (max)" Wiki="Maximum radius of the hitbox, time hitbox changes from initial to max is determined by spreadTime. (If -1, radius is same as initial hitbox radius)." />
+    <spreadTime AltName="Hitbox Radius Spread Time" Wiki="Amount of time (in seconds) it takes for hitbox radius to grow from hitRadius to hitRadiusMax." />
+    <spEffectIDForShooter AltName="Shooter SpEffect ID" Wiki="SpEffect applied to owner of bullet." Refs="SpEffectParam" />
+    <hitBulletID AltName="Hit Bullet ID" Wiki="Bullet to generate when projectile expires." Refs="Bullet" />
+    <launchConditionType AltName="Hit Bullet Condition" Enum="BULLET_LAUNCH_CONDITION_TYPE" Wiki="Conditions required for HitBulletID to generate." />
+    <chrPenetrateType AltName="Penetration Type (characters)" Enum="BULLET_CHARA_PENETRATE_TYPE" Wiki="Which characters bullets will penetrate through. See NpcParam penetrateDefense." />
+    <emittePosType AltName="Emit Position" Enum="BULLET_EMITTE_POS_TYPE" Wiki="Where bullet appears when created." />
+    <followType AltName="Follow Type" Enum="BULLET_FOLLOW_TYPE" Wiki="Affects bullet position and behavior." />
+    <intervalCreateBulletId  AltName="Interval Create (Bullet ID)" Wiki="Bullet ID to generate for Interval Create Bullet." Refs="Bullet" />
+    <intervalCreateShootMax  AltName="Interval Create (Bullet Shoot Max)" Wiki="Maximum number of times Interval Create Bullet can be generated." />
+    <spEffectId0 AltName="Target SpEffect ID [0]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
+    <spEffectId1 AltName="Target SpEffect ID [1]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
+    <spEffectId2 AltName="Target SpEffect ID [2]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
+    <spEffectId3 AltName="Target SpEffect ID [3]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
+    <spEffectId4 AltName="Target SpEffect ID [4]" Wiki="SpEffect applied to hit targets." Refs="SpEffectParam" />
+    <lifeDist AltName="Expire Distance" Wiki="Distance travelled before bullet expires." />
+    <hitChrProximityDistance AltName="Hit Character Proximity Distance" Wiki="Distance to an enemy for bullet to expire." />
+    <assetCreationAssetId AltName="Asset Created (Asset ID)" Refs="AssetEnvironmentGeometryParam" Wiki="ID of asset to spawn." />
+    <UnkFlag0x48_0 IsBool="" />
+    <UnkFlag0x48_1 IsBool="" />
+    <enableCreateAsset IsBool="" />
+    <UnkFlag0x48_3 IsBool="" />
+    <UnkFlag0x48_4 IsBool="" />
+    <UnkFlag0x48_5 IsBool="" />
+    <UnkFlag0x48_6 IsBool="" />
+    <UnkFlag0x48_7 IsBool="" />
+    <homingType AltName="Homing Type" Enum="BULLET_HOMING_TYPE" />
+    <recoilShootAngleHorizontalStart AltName="Horizontal Shoot Angle: 0% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
+    <recoilShootAngleHorizontalEnd AltName="Horizontal Shoot Angle: 100% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
+    <recoilShootAngleVerticallStart AltName="Vertical Shoot Angle: 0% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
+    <recoilShootAngleVerticalEnd AltName="Vertical Shoot Angle: 100% Recoil" Wiki="Defines maximum angle of shoot direction during sustained fire.\nAngle will transition from start value to end value as recoil increases." />
+  </Field>
+  <Self />
+</PARAMMETA>

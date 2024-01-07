@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="OBJACT_SP_QUALIFIED_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+    <Enum Name="OBJACT_CHR_SORB_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="OBJACT_EVENT_KICK_TIMING" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
+  <Field>
+    <actionEnableMsgId AltName="Action Enabled - Message ID" Wiki="The MsgID of the menu displayed when the action is enabled." FmgRef="ActionButtonText" />
+    <actionFailedMsgId AltName="Action Failed - Message ID" Wiki="The MsgID of the menu to display when the action fails." FmgRef="ActionButtonText" />
+    <spQualifiedPassEventFlag AltName="Unconditional Qualified Event Flag ID" Wiki="Event flags for unconditionally passing special conditions." />
+    <playerAnimId AltName="Player Animation ID" Wiki="This is the animation ID for the action of the player character." />
+    <chrAnimId AltName="Character Animation ID" Wiki="Anime ID at the time of action such as enemy" />
+    <validDist AltName="Valid Distance" Wiki="The effective distance of the action." />
+    <spQualifiedId AltName="Conditional Qualified Event Flag ID [1]" Wiki="Special condition ID" />
+    <spQualifiedId2 AltName="Conditional Qualified Event Flag ID [2]" Wiki="Special condition ID part 2" />
+    <objDummyId AltName="Object Dummy Poly ID" Wiki="Damipoli ID that is the action position of the object" />
+    <isEventKickSync AltName="Is Event Execution Synchronized" Wiki="ObjAct Whether to synchronize the events used in the execution judgment. Set to basic . It may be set to  only when the actor is not important." IsBool="" />
+    <objAnimId AltName="Object Animation ID" Wiki="This is the animation ID for the action of the object." />
+    <validPlayerAngle AltName="Valid Player Angle" Wiki="The effective angle of the player's action. Effective angle difference between the player's orientation vector and the orientation vector to the object" />
+    <spQualifiedType AltName="Qualified ID Type [1]" Wiki="Types of special conditions" Enum="OBJACT_SP_QUALIFIED_TYPE" />
+    <spQualifiedType2 AltName="Qualified ID Type [2]" Wiki="Type of special condition 2" Enum="OBJACT_SP_QUALIFIED_TYPE" />
+    <validObjAngle AltName="Valid Object Angle" Wiki="The action effective angle of the object. Effective angle difference between the action vector of the object and the character vector" />
+    <chrSorbType AltName="Character Absorb Type" Wiki="It is a method of adsorbing characters during object action." Enum="OBJACT_CHR_SORB_TYPE" />
+    <eventKickTiming AltName="Event Execution Timing" Wiki="Event execution timing" Enum="OBJACT_EVENT_KICK_TIMING" />
+    <pad1 AltName=""/>
+    <actionButtonParamId AltName="Action Button Param ID" Wiki="Action button parameter ID" Refs="ActionButtonParam" />
+    <enableTreasureDelaySec AltName="Treasure Enable Delay" Wiki="The number of seconds from the execution of the object action to the activation of the treasure. A setting exclusively for the object type treasure box of the object act." />
+    <preActionSfxDmypolyId AltName="Pre-action SFX Dummy Poly ID" Wiki="Issue SFX from this Damipoli ID before executing the object. If it is -1, start from the origin." />
+    <preActionSfxId AltName="Pre-action SFX ID" Wiki="SFX issued before executing the object. If it is -1, it will not be issued." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <pad2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,37 @@
+<class name='hkbStateMachineTransitionInfo' version='1' signature='0xcdec8025' size='72'>
+  <enums>
+    <enum name='TransitionFlags' flags='00000000'>
+      <enumitem name='FLAG_USE_TRIGGER_INTERVAL' value='1'/>
+      <enumitem name='FLAG_USE_INITIATE_INTERVAL' value='2'/>
+      <enumitem name='FLAG_UNINTERRUPTIBLE_WHILE_PLAYING' value='4'/>
+      <enumitem name='FLAG_UNINTERRUPTIBLE_WHILE_DELAYED' value='8'/>
+      <enumitem name='FLAG_DELAY_STATE_CHANGE' value='16'/>
+      <enumitem name='FLAG_DISABLED' value='32'/>
+      <enumitem name='FLAG_DISALLOW_RETURN_TO_PREVIOUS_STATE' value='64'/>
+      <enumitem name='FLAG_DISALLOW_RANDOM_TRANSITION' value='128'/>
+      <enumitem name='FLAG_DISABLE_CONDITION' value='256'/>
+      <enumitem name='FLAG_ALLOW_SELF_TRANSITION_BY_TRANSITION_FROM_ANY_STATE' value='512'/>
+      <enumitem name='FLAG_IS_GLOBAL_WILDCARD' value='1024'/>
+      <enumitem name='FLAG_IS_LOCAL_WILDCARD' value='2048'/>
+      <enumitem name='FLAG_FROM_NESTED_STATE_ID_IS_VALID' value='4096'/>
+      <enumitem name='FLAG_TO_NESTED_STATE_ID_IS_VALID' value='8192'/>
+      <enumitem name='FLAG_ABUT_AT_END_OF_FROM_GENERATOR' value='16384'/>
+    </enum>
+    <enum name='InternalFlagBits' flags='00000000'>
+      <enumitem name='FLAG_INTERNAL_IN_TRIGGER_INTERVAL' value='1'/>
+      <enumitem name='FLAG_INTERNAL_IN_INITIATE_INTERVAL' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='triggerInterval' offset='0' ctype='hkbStateMachineTimeInterval' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initiateInterval' offset='16' ctype='hkbStateMachineTimeInterval' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transition' offset='32' ctype='hkbTransitionEffect' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='condition' offset='40' ctype='hkbCondition' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventId' offset='48' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='toStateId' offset='52' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fromNestedStateId' offset='56' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='toNestedStateId' offset='60' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='priority' offset='64' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='66' etype='TransitionFlags' vtype='TYPE_FLAGS' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,23 @@
+<class name='hclRuntimeConversionInfo' version='1' signature='0xe36985b8' size='42'>
+  <enums>
+    <enum name='VectorConversion' flags='00000000'>
+      <enumitem name='VC_FLOAT4' value='0'/>
+      <enumitem name='VC_FLOAT3' value='1'/>
+      <enumitem name='VC_BYTE4' value='2'/>
+      <enumitem name='VC_SHORT3' value='3'/>
+      <enumitem name='VC_HFLOAT3' value='4'/>
+      <enumitem name='VC_CUSTOM_A' value='20'/>
+      <enumitem name='VC_CUSTOM_B' value='21'/>
+      <enumitem name='VC_CUSTOM_C' value='22'/>
+      <enumitem name='VC_CUSTOM_D' value='23'/>
+      <enumitem name='VC_CUSTOM_E' value='24'/>
+      <enumitem name='VC_NONE' value='250'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='slotConversions' offset='0' ctype='hclRuntimeConversionInfoSlotConversion' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='elementConversions' offset='28' ctype='hclRuntimeConversionInfoElementConversion' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='numSlotsConverted' offset='40' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numElementsConverted' offset='41' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

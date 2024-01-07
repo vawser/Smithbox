@@ -1,0 +1,5 @@
+<class name='hkcdStaticMeshTreeBaseSectionSharedVertices' version='1' signature='0x2b62bb35' size='4'>
+  <members>
+    <member name='data' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <virtualWeaponId Wiki="Weapon given to the player when the skill is obtained, used for dummy weapons" Refs="EquipParamWeapon" />
+    <unlockEventFlag Wiki="This skill will be locked until this event flag is on" />
+    <parent1 Wiki="Skill needed to unlock this skill" Refs="SkillParam" />
+    <parent2 Wiki="Skill needed to unlock this skill" Refs="SkillParam" />
+    <parent3 Wiki="Skill needed to unlock this skill" Refs="SkillParam" />
+    <acquireWeaponId Wiki="Weapon given to the player when the skill is obtained, used for useable Combat Arts and Prosthetics" Refs="EquipParamWeapon" />
+    <reinforceWeaponId Refs="EquipParamWeapon" />
+    <spEffect1 Wiki="Applies SpEffect to the player when this skill is unlocked" Refs="SpEffectParam" />
+    <spEffect2 Wiki="Applies SpEffect to the player when this skill is unlocked" Refs="SpEffectParam" />
+    <spEffect3 Wiki="Applies SpEffect to the player when this skill is unlocked" Refs="SpEffectParam" />
+    <dispRow Wiki="Horizontal position of the skill in the skill tree" />
+    <dispCol Wiki="Vertical position of the skill in the skill tree" />
+    <unenforementWepId Wiki="Dummy weapon used to hide the skill until viewing is unlocked, this one specifies the type of skill" Refs="EquipParamWeapon" />
+    <unreleaseWepId Wiki="Dummy weapon used to hide the skill until viewing is unlocked, this one doesn't specify the type of skill" Refs="EquipParamWeapon" />
+    <menuPageNo Wiki="Skill Tree this skill appears in. 0=Shinobi 1=Prosthetic 2=Ashina 3=Temple 4=Mushin -1=No tree" />
+    <addResourceItemA Wiki="Increases the maximum amount of held spirit emblems when the skill is obtained and only when it's obtained" />
+    <unlovkViewSkill0 Wiki="Skills needed to view what the skill is, only one is needed to unlock viewing" Refs="SkillParam" />
+    <unlovkViewSkill1 Wiki="Skills needed to view what the skill is, only one is needed to unlock viewing" Refs="SkillParam" />
+    <unlovkViewSkill2 Wiki="Skills needed to view what the skill is, only one is needed to unlock viewing" Refs="SkillParam" />
+    <unlovkViewSkill3 Wiki="Skills needed to view what the skill is, only one is needed to unlock viewing" Refs="SkillParam" />
+    <unlovkViewSkill4 Wiki="Skills needed to view what the skill is, only one is needed to unlock viewing" Refs="SkillParam" />
+    <unlovkViewSkill5 Wiki="Skills needed to view what the skill is, only one is needed to unlock viewing" Refs="SkillParam" />
+    <unlovkViewSkill6 Wiki="Skills needed to view what the skill is, only one is needed to unlock viewing" Refs="SkillParam" />
+    <unlovkViewSkill7 Wiki="Skills needed to view what the skill is, only one is needed to unlock viewing" Refs="SkillParam" />
+  </Field>
+  <Self Wiki="Handles Skills" AlternativeOrder="virtualWeaponId,acquireWeaponId,reinforceWeaponId,unenforementWepId,unreleaseWepId,addResourceItemA,-,
+spEffect1,spEffect2,spEffect3,-,
+parent1,parent2,parent3,-,
+unlockEventFlag,-,
+dispRow,dispCol,menuPageNo,-,
+unlovkViewSkill0,unlovkViewSkill1,unlovkViewSkill2,unlovkViewSkill3,unlovkViewSkill4,unlovkViewSkill5,unlovkViewSkill6,unlovkViewSkill7,-" />
+</PARAMMETA>

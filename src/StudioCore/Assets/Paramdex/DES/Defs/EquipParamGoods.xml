@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EQUIP_PARAM_GOODS_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>True</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>102</Version>
+  <Fields>
+    <Field Def="u16 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>メニュー用アイコンID</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="u8 goodsType">
+      <DisplayName>道具のタイプ</DisplayName>
+      <Enum>GOODS_TYPE</Enum>
+      <Description>道具の種類</Description>
+      <Maximum>3</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_0[1]">
+      <DisplayName>パディング</DisplayName>
+      <Description>pad</Description>
+    </Field>
+    <Field Def="f32 weight = 1">
+      <DisplayName>重量[kg]</DisplayName>
+      <Description>重量[kg]</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+    </Field>
+    <Field Def="u16 modelId">
+      <DisplayName>モデルID</DisplayName>
+      <Description>モデルID</Description>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_1[2]">
+      <DisplayName>パディング</DisplayName>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap</EditFlags>
+      <Maximum>9999</Maximum>
+      <Increment>1</Increment>
+    </Field>
+    <Field Def="s32 basicPrice">
+      <DisplayName>基本価格</DisplayName>
+      <Description>基本価格</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+    <Field Def="u8 goodsCategory">
+      <DisplayName>道具カテゴリ</DisplayName>
+      <Enum>GOODS_CATEGORY</Enum>
+      <Description>道具カテゴリ</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_2[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>pad</Description>
+    </Field>
+    <Field Def="u8 goodsUseAnim">
+      <DisplayName>道具使用時アニメ</DisplayName>
+      <Enum>GOODS_USE_ANIM</Enum>
+      <Description>道具を使ったときに再生するアニメを設定します</Description>
+      <Maximum>99</Maximum>
+    </Field>
+    <Field Def="s32 behaviorId">
+      <DisplayName>行動ID</DisplayName>
+      <Description>道具を使ったときに発生する効果を設定します</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+    <Field Def="u8 enable_live">
+      <DisplayName>生存使用可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>生存プレイヤー使用可能か</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 enable_gray">
+      <DisplayName>グレイ使用可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>グレイゴースト使用可能か</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 enable_white">
+      <DisplayName>白使用可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ホワイトゴースト使用可能か</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 enable_black">
+      <DisplayName>黒使用可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ブラックゴーストしよう可能か</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 enable_multi">
+      <DisplayName>マルチプレイ可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>マルチプレイ中に使用可能か？</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 disable_offline">
+      <DisplayName>オフラインで使用不可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>オフライン中に使用不可か？</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_3[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>pad</Description>
+    </Field>
+    <Field Def="u8 isEquip = 1">
+      <DisplayName>装備可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>装備できるかどうか</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 isConsume = 1">
+      <DisplayName>消耗品か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>使用時に消耗するか(所持数が減るか)</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 isAutoEquip = 1">
+      <DisplayName>自動装備するか？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>拾った時に自動で装備するか？</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 isEstablishment">
+      <DisplayName>設置型アイテムか？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設置型アイテムか？</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="s16 shopLv">
+      <DisplayName>ショップレベル</DisplayName>
+      <Description>お店で販売できるレベル</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_5[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>pad</Description>
+    </Field>
+    <Field Def="u8 isDrop = 1">
+      <DisplayName>捨てれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムを捨てれるか？TRUE=捨てれる</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 isDisableHand">
+      <DisplayName>右素手に使えないか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>右手武器が素手の場合に使用不可か</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_6[2]">
+      <DisplayName>パディング</DisplayName>
+      <Description>pad</Description>
+    </Field>
+    <Field Def="s32 sortId">
+      <DisplayName>ソートID</DisplayName>
+      <Description>ソートID(-1:集めない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+    <Field Def="s16 trophySGradeId = -1">
+      <DisplayName>トロフィーSグレードID</DisplayName>
+      <Description>トロフィのＳグレード番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="dummy8 pad_7[2]">
+      <DisplayName>pad</DisplayName>
+    </Field>
+    <Field Def="s32 qwcId = -1">
+      <DisplayName>QWCID</DisplayName>
+      <Description>QWCのパラメタiD</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+    <Field Def="u8 isEnhance">
+      <DisplayName>エンチャントするか？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>武器にエンチャントするか？</Description>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 opmeMenuType">
+      <DisplayName>メニュー開くか</DisplayName>
+      <Enum>GOODS_OPEN_MENU</Enum>
+      <Description>アイテム使用時に開くメニュータイプ</Description>
+    </Field>
+    <Field Def="dummy8 pad_8[2]">
+      <DisplayName>pad</DisplayName>
+    </Field>
+    <Field Def="s32 yesNoDialogMessageId = -1">
+      <DisplayName>YES/NOメッセージID</DisplayName>
+      <Description>YesNoダイアログ表示時に使用するメッセージID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+    </Field>
+  </Fields>
+</PARAMDEF>

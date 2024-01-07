@@ -1,0 +1,72 @@
+<class name='hkxMaterial' version='1' signature='0x785ec362' size='224' parent='hkxAttributeHolder'>
+  <enums>
+    <enum name='TextureType' flags='00000000'>
+      <enumitem name='TEX_UNKNOWN' value='0'/>
+      <enumitem name='TEX_DIFFUSE' value='1'/>
+      <enumitem name='TEX_REFLECTION' value='2'/>
+      <enumitem name='TEX_BUMP' value='3'/>
+      <enumitem name='TEX_NORMAL' value='4'/>
+      <enumitem name='TEX_DISPLACEMENT' value='5'/>
+      <enumitem name='TEX_SPECULAR' value='6'/>
+      <enumitem name='TEX_SPECULARANDGLOSS' value='7'/>
+      <enumitem name='TEX_OPACITY' value='8'/>
+      <enumitem name='TEX_EMISSIVE' value='9'/>
+      <enumitem name='TEX_REFRACTION' value='10'/>
+      <enumitem name='TEX_GLOSS' value='11'/>
+      <enumitem name='TEX_DOMINANTS' value='12'/>
+      <enumitem name='TEX_NOTEXPORTED' value='13'/>
+    </enum>
+    <enum name='PropertyKey' flags='00000000'>
+      <enumitem name='PROPERTY_MTL_TYPE_BLEND' value='1'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE0' value='256'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE1' value='257'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE2' value='258'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE3' value='259'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE4' value='260'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE5' value='261'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE6' value='262'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE7' value='263'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE8' value='264'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE9' value='265'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE10' value='266'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE11' value='267'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE12' value='268'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE13' value='269'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE14' value='270'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE15' value='271'/>
+      <enumitem name='PROPERTY_MTL_UV_ID_STAGE_MAX' value='272'/>
+    </enum>
+    <enum name='UVMappingAlgorithm' flags='00000000'>
+      <enumitem name='UVMA_SRT' value='0'/>
+      <enumitem name='UVMA_TRS' value='1'/>
+      <enumitem name='UVMA_3DSMAX_STYLE' value='2'/>
+      <enumitem name='UVMA_MAYA_STYLE' value='3'/>
+    </enum>
+    <enum name='Transparency' flags='00000000'>
+      <enumitem name='transp_none' value='0'/>
+      <enumitem name='transp_alpha' value='2'/>
+      <enumitem name='transp_additive' value='3'/>
+      <enumitem name='transp_colorkey' value='4'/>
+      <enumitem name='transp_subtractive' value='9'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='32' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stages' offset='40' ctype='hkxMaterialTextureStage' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='diffuseColor' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ambientColor' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='specularColor' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='emissiveColor' offset='112' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='subMaterials' offset='128' ctype='hkxMaterial' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extraData' offset='144' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='uvMapScale' offset='152' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='uvMapOffset' offset='160' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='uvMapRotation' offset='168' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='uvMapAlgorithm' offset='172' etype='UVMappingAlgorithm' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='specularMultiplier' offset='176' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='specularExponent' offset='180' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transparency' offset='184' etype='Transparency' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData' offset='192' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='properties' offset='200' ctype='hkxMaterialProperty' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

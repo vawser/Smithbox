@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>THROW_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 AtkChrId">
+      <DisplayName>投げ側キャラID</DisplayName>
+      <Description>投げ側キャラID</Description>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 DefChrId">
+      <DisplayName>受け側キャラID</DisplayName>
+      <Description>受け側キャラID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="f32 Dist">
+      <DisplayName>有効距離[m]</DisplayName>
+      <Description>この値より近い距離じゃないと投げない[m]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="f32 DiffAngMin">
+      <DisplayName>自分の向きと相手の向きの角度差範囲min</DisplayName>
+      <Description>投げ側と受け側の角度差(Y軸)がこの角度より大きくないと投げない</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 DiffAngMax">
+      <DisplayName>自分の向きと相手の向きの角度差範囲max</DisplayName>
+      <Description>投げ側と受け側の角度差(Y軸)がこの角度より小さくないと投げない</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 upperYRange = 0.2">
+      <DisplayName>高さ範囲上[m]</DisplayName>
+      <Description>投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="f32 lowerYRange = 0.2">
+      <DisplayName>高さ範囲下[m]</DisplayName>
+      <Description>投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 diffAngMyToDef = 60">
+      <DisplayName>自分の向きと自分から相手への方向の角度差</DisplayName>
+      <Description>自分の正面のベクトルと、自分から相手への方向のベクトルの角度差。この値より大きいと投げない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="s32 throwTypeId">
+      <DisplayName>投げタイプID</DisplayName>
+      <Description>投げの種類を特定するID(攻撃パラメタと紐付け)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s32 atkAnimId">
+      <DisplayName>投げ側アニメID</DisplayName>
+      <Description>攻撃アニメIDを設定(EzStateと紐付け)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s32 defAnimId">
+      <DisplayName>受け側アニメID</DisplayName>
+      <Description>ダメージアニメIDを設定(EzStateと紐付け)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u16 escHp">
+      <DisplayName>投げ抜けHP</DisplayName>
+      <Description>投げ抜けに耐えられる値</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u16 selfEscCycleTime">
+      <DisplayName>自力投げ抜けサイクル時間[ms]</DisplayName>
+      <Description>自力投げ抜けのサイクル時間[ms]</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>2030</SortID>
+    </Field>
+    <Field Def="u16 sphereCastRadiusRateTop = 80">
+      <DisplayName>スフィアキャスト半径比率_上[1/100Rate]</DisplayName>
+      <Description>スフィアキャストの上側半径の比率[80-&gt;0.8]</Description>
+      <Maximum>999</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="u16 sphereCastRadiusRateLow = 80">
+      <DisplayName>スフィアキャスト半径比率_下[1/100Rate]</DisplayName>
+      <Description>スフィアキャストの下側半径の比率[80-&gt;0.8]</Description>
+      <Maximum>999</Maximum>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="u8 PadType = 1">
+      <DisplayName>操作タイプ</DisplayName>
+      <Enum>THROW_PAD_TYPE</Enum>
+      <Description>操作タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>10</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u8 AtkEnableState">
+      <DisplayName>投げ側の投げ可能状態タイプ</DisplayName>
+      <Enum>THROW_ENABLE_STATE</Enum>
+      <Description>投げ側の投げが可能な状態タイプを設定してください</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>650</SortID>
+    </Field>
+    <Field Def="u8 throwFollowingType">
+      <DisplayName>投げ追従方式</DisplayName>
+      <Enum>THROW_FOLLOWING_TYPE</Enum>
+      <Description>投げ実行中、吸着ダミポリ所持キャラにどのように追従するか。※追従期間はTAEアクションでコントロール</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[1]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>999999</SortID>
+    </Field>
+    <Field Def="u8 throwType">
+      <DisplayName>投げ種別</DisplayName>
+      <Enum>THROW_TYPE</Enum>
+      <Description>投げの種別</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u8 selfEscCycleCnt">
+      <DisplayName>自力投げ抜けサイクル回数</DisplayName>
+      <Description>自力投げ抜けのサイクル回数</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>2050</SortID>
+    </Field>
+    <Field Def="u8 dmyHasChrDirType">
+      <DisplayName>投げ発生時のダミポリ所持キャラの向き</DisplayName>
+      <Enum>THROW_DMY_CHR_DIR_TYPE</Enum>
+      <Description>投げ発生時のダミポリ所持キャラの向き</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u8 isTurnAtker:1">
+      <DisplayName>投げ側が旋回するか？</DisplayName>
+      <Description>投げ側が旋回するか？</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="u8 isSkipWepCate:1">
+      <DisplayName>武器カテゴリチェックをスキップするか？</DisplayName>
+      <Description>攻撃側の武器カテゴリチェックをスキップするか？</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="u8 isSkipSphereCast:1">
+      <DisplayName>スフィアキャストをスキップするか？</DisplayName>
+      <Description>スフィアキャストをスキップするか？</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="u8 isEnableCorrectPos_forThrowAdjust:1 = 1">
+      <DisplayName>投げ吸着時、平地相当の位置関係に戻すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>◯にすると投げ位置合わせの場所が「平地相当の位置関係に戻した吸着ダミポリの位置」になる</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1810</SortID>
+    </Field>
+    <Field Def="u8 isEnableThrowFollowingFallAssist:1 = 1">
+      <DisplayName>投げ追従解除時の落下を防止するか？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>追従解除時に段差から落下しないよう、壁抜け防止と同じ処理を落下防止壁に対しても行うか？</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1830</SortID>
+    </Field>
+    <Field Def="u8 isEnableThrowFollowingFeedback:1 = 1">
+      <DisplayName>投げ追従中の壁めり込みを抑制するか？</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>追従中壁にめり込んだり段差から落下しそうな見た目にならないよう、ヒットや落下防止壁に接触したときに吸着ダミポリ所持キャラごと戻す処理を行うか？</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1840</SortID>
+    </Field>
+    <Field Def="dummy8 pad0:2">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>99999998</SortID>
+    </Field>
+    <Field Def="s16 atkSorbDmyId">
+      <DisplayName>投げ側 吸着ダミポリID</DisplayName>
+      <Description>投げ側のどこに受け側を吸着させるか？</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="s16 defSorbDmyId">
+      <DisplayName>受け側 吸着ダミポリID</DisplayName>
+      <Description>受け側のどこに投げ側を吸着させるか？</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 Dist_start">
+      <DisplayName>有効距離(投げ開始)[m]</DisplayName>
+      <Description>この値より近い距離じゃないと投げない[m]　バックスタブ開始時の投げに使われる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>710</SortID>
+    </Field>
+    <Field Def="f32 DiffAngMin_start">
+      <DisplayName>自分の向きと相手の向きの角度差範囲min(投げ開始)</DisplayName>
+      <Description>投げ側と受け側の角度差(Y軸)がこの角度より大きくないと投げない　バックスタブ開始時の投げに使われる</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>740</SortID>
+    </Field>
+    <Field Def="f32 DiffAngMax_start">
+      <DisplayName>自分の向きと相手の向きの角度差範囲max(投げ開始)</DisplayName>
+      <Description>投げ側と受け側の角度差(Y軸)がこの角度より小さくないと投げない　バックスタブ開始時の投げに使われる</Description>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>750</SortID>
+    </Field>
+    <Field Def="f32 upperYRange_start">
+      <DisplayName>高さ範囲上(投げ開始)[m]</DisplayName>
+      <Description>投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない　バックスタブ開始時の投げに使われる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>720</SortID>
+    </Field>
+    <Field Def="f32 lowerYRange_start">
+      <DisplayName>高さ範囲下(投げ開始)[m]</DisplayName>
+      <Description>投げ側から受け側のY軸の相対距離がこの値より小さくないと投げない　バックスタブ開始時の投げに使われる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10000</Maximum>
+      <SortID>730</SortID>
+    </Field>
+    <Field Def="f32 diffAngMyToDef_start">
+      <DisplayName>自分の向きと自分から相手への方向の角度差(投げ開始)</DisplayName>
+      <Description>自分の正面のベクトルと、自分から相手への方向のベクトルの角度差。この値より大きいと投げない　バックスタブ開始時の投げに使われる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>760</SortID>
+    </Field>
+    <Field Def="s32 judgeRangeBasePosDmyId1 = -1">
+      <DisplayName>投げ側の投げ範囲判定基準ダミポリId</DisplayName>
+      <Description>投げ側が、投げ範囲を計算するときに自分の位置と見なすダミポリ。-1ならカプセル原点</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>660</SortID>
+    </Field>
+    <Field Def="s32 judgeRangeBasePosDmyId2 = -1">
+      <DisplayName>投られ側の投げ範囲判定基準ダミポリId</DisplayName>
+      <Description>投げられ側が、投げ範囲を計算するときに自分の位置と見なすダミポリ。-1ならカプセル原点</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>670</SortID>
+    </Field>
+    <Field Def="f32 adsrobModelPosInterpolationTime = 0.5">
+      <DisplayName>吸着時モデル位置補間時間[s]</DisplayName>
+      <Description>カプセルが吸着ダミポリに吸着したあと、キャラモデルが投げアニメデータ通りの位置に補間移動する時間（0を設定した場合はモデル位置の補間が行われず、吸着直後からアニメデータ通りの位置関係で再生開始される）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1820</SortID>
+    </Field>
+    <Field Def="f32 throwFollowingEndEasingTime = 0.5">
+      <DisplayName>追従終了時モデル位置補間時間[s]</DisplayName>
+      <Description>追従終了時モデル位置補間時間</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>1825</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[24]">
+      <DisplayName>pad</DisplayName>
+      <Description>pad</Description>
+      <SortID>99999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

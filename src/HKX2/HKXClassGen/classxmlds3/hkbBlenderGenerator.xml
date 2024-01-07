@@ -1,0 +1,32 @@
+<class name='hkbBlenderGenerator' version='1' signature='0xce45c088' size='224' parent='hkbGenerator'>
+  <enums>
+    <enum name='BlenderFlags' flags='00000000'>
+      <enumitem name='FLAG_SYNC' value='1'/>
+      <enumitem name='FLAG_SMOOTH_GENERATOR_WEIGHTS' value='4'/>
+      <enumitem name='FLAG_DONT_DEACTIVATE_CHILDREN_WITH_ZERO_WEIGHTS' value='8'/>
+      <enumitem name='FLAG_PARAMETRIC_BLEND' value='16'/>
+      <enumitem name='FLAG_IS_PARAMETRIC_BLEND_CYCLIC' value='32'/>
+      <enumitem name='FLAG_FORCE_DENSE_POSE' value='64'/>
+      <enumitem name='FLAG_BLEND_MOTION_OF_ADDITIVE_ANIMATIONS' value='128'/>
+      <enumitem name='FLAG_USE_VELOCITY_SYNCHRONIZATION' value='256'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='referencePoseWeightThreshold' offset='136' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendParameter' offset='140' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minCyclicBlendParameter' offset='144' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxCyclicBlendParameter' offset='148' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexOfSyncMasterChild' offset='152' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='154' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='subtractLastChild' offset='156' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='children' offset='160' ctype='hkbBlenderGeneratorChild' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='childrenInternalStates' offset='176' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='sortedChildren' offset='192' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='endIntervalWeight' offset='208' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='numActiveChildren' offset='212' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='beginIntervalIndex' offset='216' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='endIntervalIndex' offset='218' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='initSync' offset='220' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='doSubtractiveBlend' offset='221' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

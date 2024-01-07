@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <value AltName="Value" Wiki="The value handled by the program. Make serial numbers within one group" />
+    <captionId AltName="Caption ID" Wiki="ID of the text to be displayed" FmgRef="Modern_MenuText" />
+    <iconId AltName="Icon ID" Wiki="ID of the icon to be displayed" />
+    <reserved AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

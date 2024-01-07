@@ -1,0 +1,12 @@
+{
+    "Title": "Area",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "The displayed name of an area, which pops up when you step on",
+        "a collision marking the boundary.",
+        "",
+        "Maps will often contain multiple display names."
+    ]
+}

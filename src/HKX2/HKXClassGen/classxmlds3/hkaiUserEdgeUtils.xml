@@ -1,0 +1,20 @@
+<class name='hkaiUserEdgeUtils' version='1' signature='0x1b125b1f' size='1'>
+  <enums>
+    <enum name='UserEdgeDirection' flags='00000000'>
+      <enumitem name='USER_EDGE_BLOCKED' value='0'/>
+      <enumitem name='USER_EDGE_A_TO_B' value='1'/>
+      <enumitem name='USER_EDGE_B_TO_A' value='2'/>
+      <enumitem name='USER_EDGE_BIDIRECTIONAL' value='3'/>
+    </enum>
+    <enum name='UserEdgeSetupSpace' flags='00000000'>
+      <enumitem name='USER_EDGE_SPACE_WORLD' value='0'/>
+      <enumitem name='USER_EDGE_SPACE_LOCAL' value='1'/>
+    </enum>
+    <enum name='ClearanceResetMode' flags='00000000'>
+      <enumitem name='RESET_CLEARANCE_CACHE' value='0'/>
+      <enumitem name='DONT_RESET_CLEARANCE_CACHE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

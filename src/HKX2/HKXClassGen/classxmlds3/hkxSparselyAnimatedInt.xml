@@ -1,0 +1,6 @@
+<class name='hkxSparselyAnimatedInt' version='1' signature='0xf2fa7b07' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='ints' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='times' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

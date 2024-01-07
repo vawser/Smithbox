@@ -1,0 +1,6 @@
+<class name='hclBoneSpaceDeformerLocalBlockPN' version='1' signature='0x7360bfdb' size='384'>
+  <members>
+    <member name='localPosition' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+    <member name='localNormal' offset='256' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='64' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="CHR_MEMORY_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+        <Option Value="6" Name="Type 6" />
+        <Option Value="7" Name="Type 7" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <modelMemoryType AltName="Model Memory Type" Wiki="Model used memory type" Enum="CHR_MEMORY_TYPE" />
+    <texMemoryType AltName="Texture Memory Type" Wiki="Texture usage memory type" Enum="CHR_MEMORY_TYPE" />
+    <cameraDitherFadeId AltName="Camera Dither Fade ID" Wiki="Camera fade parameter ID (-1 refer to material, 0: do not disappear, 1 parameter ID)" />
+    <reportAnimMemSizeMb AltName="Send Report - Animation Memory Size MB" Wiki="If this value is exceeded, a report will be sent by the reporting system." />
+  </Field>
+  <Self />
+</PARAMMETA>

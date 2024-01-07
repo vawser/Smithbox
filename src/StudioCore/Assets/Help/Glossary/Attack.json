@@ -1,0 +1,11 @@
+{
+    "Title": "Attack",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "An action taken by a character, including the player,",
+        "which can apply damage and/or effects along with animation(s).",
+        "This is a type of behavior."
+    ]
+}

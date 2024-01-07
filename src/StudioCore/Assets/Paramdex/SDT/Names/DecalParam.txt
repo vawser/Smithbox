@@ -1,0 +1,205 @@
+0 test -- テスト
+40011 [OBJ] Burning grass (defard) -- 【OBJ】草　燃え跡（デファード）
+50010 [Item] Aburatsubo landing oil (character) -- 【アイテム】油壺　着弾　油(キャラ)
+50011 [Item] Aburatsubo landing oil map) -- 【アイテム】油壺　着弾　油マップ）
+600010 [Shinobi / Medium] Sword stab (attacking side) Blood (character) -- 【忍殺・中】刀刺し（攻撃側）　血　中　（キャラ）
+600011 [Shinobi / Medium] Sword stab (attacking side) Blood (map) -- 【忍殺・中】刀刺し（攻撃側）　血　中　（マップ）
+610010 [Shinobi / Medium] Sword stab (Defender) Blood (Character) -- 【忍殺・中】刀刺し（防御側）　血　中　（キャラ）
+610011 [Shinobi / Medium] Sword stab (Defender) Blood (Map) -- 【忍殺・中】刀刺し（防御側）　血　中　（マップ）
+620010 [Shinobi / Middle] Sword-paying Blood (Character) -- 【忍殺・中】刀払い　血　中　（キャラ）
+620011 [Shinobi / Medium] Sword-paying Blood (Map) -- 【忍殺・中】刀払い　血　中　（マップ）
+710011 [Shinobi / Medium] Massive bleeding Blood (Map) -- 【忍殺・中】大量出血　血　中（マップ）
+800000 [NTC] Prototype Mud splash walking (character) -- 【NTC】プロト　泥はね　歩行　(キャラ)
+800001 [NTC] Prototype Mud splash running (character) -- 【NTC】プロト　泥はね　走行　(キャラ)
+800002 [NTC] Proto Mud Splash Dash (Character) -- 【NTC】プロト　泥はね　ダッシュ　(キャラ)
+800003 [NTC] Prototype mud splash walking (map) -- 【NTC】プロト　泥はね　歩行　(マップ)
+800004 [NTC] Prototype mud splash running (map) -- 【NTC】プロト　泥はね　走行　(マップ)
+800005 [NTC] Proto Mud Splash Dash (Map) -- 【NTC】プロト　泥はね　ダッシュ　(マップ)
+801000 [Attack] Blood (dead) Middle front (for characters) -- 【攻撃】血(亡者)中　正面（キャラ用）
+801001 [Attack] Blood (dead) Nakagami (for characters) -- 【攻撃】血(亡者)中　上（キャラ用）
+801002 [Attack] Blood (dead) Nakashita (for characters) -- 【攻撃】血(亡者)中　下（キャラ用）
+801003 [Attack] Blood (dead) Middle left (for characters) -- 【攻撃】血(亡者)中　左（キャラ用）
+801004 [Attack] Blood (dead) Middle right (for characters) -- 【攻撃】血(亡者)中　右（キャラ用）
+801010 [Special Attack] Blood Doba (for characters) -- 【必殺攻撃】血　中　どばっ（キャラ用）
+801011 [Special Attack] Blood Doba (for characters) -- 【必殺攻撃】血　中　どばっ（キャラ用）上
+801012 [Special Attack] Under the blood (for characters) -- 【必殺攻撃】血　中　どばっ（キャラ用）下
+801013 [Special Attack] Blood Doba (for characters) Diagonally in front -- 【必殺攻撃】血　中　どばっ（キャラ用）斜め前
+801014 [Special Attack] Blood Doba (for characters) Diagonally behind -- 【必殺攻撃】血　中　どばっ（キャラ用）斜め後
+801015 [Special Attack] Blood Doba (for characters) Back -- 【必殺攻撃】血　中　どばっ（キャラ用）背面
+801016 [Special Attack] Blood Potapota (for characters) -- 【必殺攻撃】血　中　ポタポタ（キャラ用）
+801030 [Attack] Meat under armor Fresh blood (PC) Front (for characters) -- 【攻撃】鎧の下の肉　鮮血中(PC)　正面（キャラ用）
+801031 [Attack] Meat under armor (for characters) -- 【攻撃】鎧の下の肉　上（キャラ用）
+801032 [Attack] Under the flesh under the armor (for characters) -- 【攻撃】鎧の下の肉　下（キャラ用）
+801033 [Attack] Meat under armor Left (for characters) -- 【攻撃】鎧の下の肉　左（キャラ用）
+801034 [Attack] Meat under armor Right (for characters) -- 【攻撃】鎧の下の肉　右（キャラ用）
+801100 [Attack] Blood (dead) in front (for map) -- 【攻撃】血(亡者)中　正面（マップ用）
+801101 [Attack] Blood (dead) Nakagami (for map) -- 【攻撃】血(亡者)中　上（マップ用）
+801102 [Attack] Blood (dead) Nakashita (for map) -- 【攻撃】血(亡者)中　下（マップ用）
+801103 [Attack] Blood (dead) Middle left (for map) -- 【攻撃】血(亡者)中　左（マップ用）
+801104 [Attack] Blood (dead) Middle right (for map) -- 【攻撃】血(亡者)中　右（マップ用）
+801110 [Special Attack] Blood Doba (for map) Front -- 【必殺攻撃】血　中　どばっ（マップ用）正面
+801111 [Special Attack] Blood Doba (for map) -- 【必殺攻撃】血　中　どばっ（マップ用）上
+801112 [Special Attack] Under Blood (for Map) -- 【必殺攻撃】血　中　どばっ（マップ用）下
+801115 [Special Attack] Blood Doba (for map) Diagonally in front -- 【必殺攻撃】血　中　どばっ（マップ用）斜め前
+801116 [Special Attack] Blood Doba (for map) diagonally behind -- 【必殺攻撃】血　中　どばっ（マップ用）斜め後
+801117 [Special Attack] Blood Doba (for map) Back -- 【必殺攻撃】血　中　どばっ（マップ用）背面
+801120 [Special Attack] Blood Potapota (for map) Front -- 【必殺攻撃】血　中　ポタポタ（マップ用）正面
+801121 [Special Attack] Bloody Potapota (for map) -- 【必殺攻撃】血　中　ポタポタ（マップ用）上
+801122 [Special Attack] Under Blood Potapota (for Map) -- 【必殺攻撃】血　中　ポタポタ（マップ用）下
+801125 [Special Attack] Blood Potapota (for map) Diagonally in front -- 【必殺攻撃】血　中　ポタポタ（マップ用）斜め前
+801126 [Special attack] Blood potapota (for map) diagonally behind -- 【必殺攻撃】血　中　ポタポタ（マップ用）斜め後
+801127 [Special attack] Blood potapota (for map) back -- 【必殺攻撃】血　中　ポタポタ（マップ用）背面
+801130 [Attack] Meat under armor Front (for map) -- 【攻撃】鎧の下の肉　正面（マップ用）
+801131 [Attack] Meat under armor (for map) -- 【攻撃】鎧の下の肉　上（マップ用）
+801132 [Attack] Under the armor (for maps) -- 【攻撃】鎧の下の肉　下（マップ用）
+801133 [Attack] Meat under armor Left (for map) -- 【攻撃】鎧の下の肉　左（マップ用）
+801134 [Attack] Meat under armor Right (for map) -- 【攻撃】鎧の下の肉　右（マップ用）
+802000 [Shinobi] Blood World Under (Character) -- 【忍殺】血　ワールド　下（キャラ）
+802100 [Shinobi] Blood World Below (Map) -- 【忍殺】血　ワールド　下（マップ）
+802200 [Attack] Blood (dead) Middle front (for characters) -- 【攻撃】血(亡者)中　正面（キャラ用）
+803010 c5010 Large snake falling shinobi blood killing -- ｃ5010　大蛇　落下忍殺血
+803011 c5010 Large snake litter hidden shinobi blood killing -- ｃ5010　大蛇　輿隠れ忍殺血
+803021 c1200 In front of Sokushinbutsu Gero (character) -- c1200　即身仏　ゲロ（キャラ）前
+803022 c1200 After Sokushinbutsu Gero (Character) -- c1200　即身仏　ゲロ（キャラ）後
+803025 c1200 Immediate Buddha Gero (Character) For foot range attack Before -- c1200　即身仏　ゲロ（キャラ）足元範囲攻撃用　前
+803026 c1200 Immediate Buddha Gero (Character) For foot range attack After -- c1200　即身仏　ゲロ（キャラ）足元範囲攻撃用　後
+803030 c1500 Villager Zombie Fertilizer Reservoir Landing (Map) -- c1500　村人ゾンビ　肥溜め着弾(マップ)
+803031 c1500 Villager Zombie Fertilizer Accumulation Landing (Character) -- c1500　村人ゾンビ　肥溜め着弾(キャラ)
+803040 c1360 Rappa Poison Ball Landing (Map) -- c1360　らっぱ　毒玉着弾(マップ)
+803050 c1260 Chigo Monkey Luminous Footprint Left Foot (Map) -- c1260　稚児猿　発光足跡　左足(マップ)
+803060 c1260 Chigo Monkey Luminous Footprint Right Foot (Map) -- c1260　稚児猿　発光足跡　右足(マップ)
+9990000 test -- テスト
+9990001 test -- テスト
+9990002 test -- テスト
+9990003 Random decal test -- ランダムデカールテスト
+9990004 Random decal test -- ランダムデカールテスト
+9990005 Normal test -- ノーマルテスト
+9990006 Normal test -- ノーマルテスト
+9990007 Normal test -- ノーマルテスト
+9990008 Normal test -- ノーマルテスト
+100600010 [Shinobi / Medium] Sword stab (attacking side) Blood (Character) [MILD] -- 【忍殺・中】刀刺し（攻撃側）　血　中　（キャラ）【MILD】
+100600011 [Shinobi / Medium] Sword stab (attacking side) Blood (Map) [MILD] -- 【忍殺・中】刀刺し（攻撃側）　血　中　（マップ）【MILD】
+100610010 [Shinobi / Medium] Sword stab (Defender) Blood (Character) [MILD] -- 【忍殺・中】刀刺し（防御側）　血　中　（キャラ）【MILD】
+100610011 [Shinobi / Medium] Sword stab (Defender) Blood (Map) [MILD] -- 【忍殺・中】刀刺し（防御側）　血　中　（マップ）【MILD】
+100620010 [Shinobi / Medium] Sword-paying Blood (Character) [MILD] -- 【忍殺・中】刀払い　血　中　（キャラ）【MILD】
+100620011 [Shinobi / Medium] Sword-paying Blood (Map) [MILD] -- 【忍殺・中】刀払い　血　中　（マップ）【MILD】
+100710011 [Shinobi / Medium] Massive bleeding Blood (Map) [MILD] -- 【忍殺・中】大量出血　血　中（マップ）【MILD】
+100801000 [Attack] Blood (dead) Middle Front (for characters) Blood MILD -- 【攻撃】血(亡者)中　正面（キャラ用）血MILD
+100801001 [Attack] Blood (dead) Nakagami (for characters) Blood MILD -- 【攻撃】血(亡者)中　上（キャラ用）血MILD
+100801002 [Attack] Blood (dead) Nakashita (for characters) Blood MILD -- 【攻撃】血(亡者)中　下（キャラ用）血MILD
+100801003 [Attack] Blood (dead) Middle Left (for characters) Blood MILD -- 【攻撃】血(亡者)中　左（キャラ用）血MILD
+100801004 [Attack] Blood (dead) Middle right (for characters) Blood MILD -- 【攻撃】血(亡者)中　右（キャラ用）血MILD
+100801010 [Special Attack] Blood Doba (for characters) -- 【必殺攻撃】血　中　どばっ（キャラ用）
+100801100 [Attack] Blood (dead) Middle Front (for map) Blood MILD -- 【攻撃】血(亡者)中　正面（マップ用）血MILD
+100801101 [Attack] Blood (dead) Nakagami (for map) Blood MILD -- 【攻撃】血(亡者)中　上（マップ用）血MILD
+100801102 [Attack] Blood (dead) Middle and lower (for map) Blood MILD -- 【攻撃】血(亡者)中　下（マップ用）血MILD
+100801103 [Attack] Blood (dead) Middle Left (for map) Blood MILD -- 【攻撃】血(亡者)中　左（マップ用）血MILD
+100801104 [Attack] Blood (dead) Middle right (for map) Blood MILD -- 【攻撃】血(亡者)中　右（マップ用）血MILD
+100801112 [Special Attack] Under Blood (for Map) -- 【必殺攻撃】血　中　どばっ（マップ用）下
+100801122 [Special Attack] Under Blood Potapota (for Map) -- 【必殺攻撃】血　中　ポタポタ（マップ用）下
+100802000 [Shinobi] Blood World Under (Character) [MILD] -- 【忍殺】血　ワールド　下（キャラ）【MILD】
+100802100 [Shinobi] Blood World Below (Map) [MILD] -- 【忍殺】血　ワールド　下（マップ）【MILD】
+100803010 c5010 Large Snake Falling Shinobi Blood [MILD] -- ｃ5010　大蛇　落下忍殺血　【MILD】
+100803011 c5010 Large Serpent Litter Hidden Shinobi Blood Killing [MILD] -- ｃ5010　大蛇　輿隠れ忍殺血　【MILD】
+300027201 [PC feet] Mud shoes -- 【PC足】泥　靴
+300030201 [NTC] Snow footprint shoes -- 【NTC】雪足跡　靴
+600109000 [Attack] Blood (fresh blood) in front (for characters) -- 【攻撃】血(鮮血)中　正面（キャラ用）
+600109001 [Attack] Blood (fresh blood) Nakagami (for characters) -- 【攻撃】血(鮮血)中　上（キャラ用）
+600109002 [Attack] Blood (fresh blood) Middle and lower (for characters) -- 【攻撃】血(鮮血)中　下（キャラ用）
+600109003 [Attack] Blood (fresh blood) Middle Left (for characters) -- 【攻撃】血(鮮血)中　左（キャラ用）
+600109004 [Attack] Blood (fresh blood) Middle right (for characters) -- 【攻撃】血(鮮血)中　右（キャラ用）
+600109100 [Attack] Blood (fresh blood) in front (for map) -- 【攻撃】血(鮮血)中　正面（マップ用）
+600109101 [Attack] Blood (fresh blood) Medium Top (for map) -- 【攻撃】血(鮮血)中　上（マップ用）
+600109102 [Attack] Blood (fresh blood) middle and lower (for map) -- 【攻撃】血(鮮血)中　下（マップ用）
+600109103 [Attack] Blood (fresh blood) Middle Left (for map) -- 【攻撃】血(鮮血)中　左（マップ用）
+600109104 [Attack] Blood (fresh blood) Middle right (for map) -- 【攻撃】血(鮮血)中　右（マップ用）
+600114000 [Attack] Meat under armor Fresh blood (PC) Front (for characters) -- 【攻撃】鎧の下の肉　鮮血中(PC)　正面（キャラ用）
+600114001 [Attack] Meat under armor (for characters) -- 【攻撃】鎧の下の肉　上（キャラ用）
+600114002 [Attack] Under the flesh under the armor (for characters) -- 【攻撃】鎧の下の肉　下（キャラ用）
+600114003 [Attack] Meat under armor Left (for characters) -- 【攻撃】鎧の下の肉　左（キャラ用）
+600114004 [Attack] Meat under armor Right (for characters) -- 【攻撃】鎧の下の肉　右（キャラ用）
+600114100 [Attack] Meat under armor Front (for map) -- 【攻撃】鎧の下の肉　正面（マップ用）
+600114101 [Attack] Meat under armor (for map) -- 【攻撃】鎧の下の肉　上（マップ用）
+600114102 [Attack] Under the armor (for maps) -- 【攻撃】鎧の下の肉　下（マップ用）
+600114103 [Attack] Meat under armor Left (for map) -- 【攻撃】鎧の下の肉　左（マップ用）
+600114104 [Attack] Meat under armor Right (for map) -- 【攻撃】鎧の下の肉　右（マップ用）
+600134000 [Attack] Poisonous meat in front (for characters) -- 【攻撃】毒肉　中　正面（キャラ用）
+600134001 [Attack] Poisonous meat Nakagami (for characters) -- 【攻撃】毒肉　中　上（キャラ用）
+600134002 [Attack] Poisonous meat Nakashita (for characters) -- 【攻撃】毒肉　中　下（キャラ用）
+600134003 [Attack] Poisonous meat middle left (for characters) -- 【攻撃】毒肉　中　左（キャラ用）
+600134004 [Attack] Poisonous meat middle right (for characters) -- 【攻撃】毒肉　中　右（キャラ用）
+600134100 [Attack] Poisonous meat in front (for map) -- 【攻撃】毒肉　中　正面（マップ用）
+600134101 [Attack] Poisonous meat Nakagami (for map) -- 【攻撃】毒肉　中　上（マップ用）
+600134102 [Attack] Poisonous meat Nakashita (for map) -- 【攻撃】毒肉　中　下（マップ用）
+600134103 [Attack] Poisonous meat middle left (for map) -- 【攻撃】毒肉　中　左（マップ用）
+600134104 [Attack] Poisonous meat middle right (for map) -- 【攻撃】毒肉　中　右（マップ用）
+600135000 [Attack] White meat in front (for characters) -- 【攻撃】白肉　中　正面（キャラ用）
+600135001 [Attack] White meat Nakagami (for characters) -- 【攻撃】白肉　中　上（キャラ用）
+600135002 [Attack] White meat Nakashita (for characters) -- 【攻撃】白肉　中　下（キャラ用）
+600135003 [Attack] White meat middle left (for characters) -- 【攻撃】白肉　中　左（キャラ用）
+600135004 [Attack] White meat middle right (for characters) -- 【攻撃】白肉　中　右（キャラ用）
+600135100 [Attack] White meat in front (for map) -- 【攻撃】白肉　中　正面（マップ用）
+600135101 [Attack] White meat Nakagami (for map) -- 【攻撃】白肉　中　上（マップ用）
+600135102 [Attack] White meat middle bottom (for map) -- 【攻撃】白肉　中　下（マップ用）
+600135103 [Attack] White meat middle left (for map) -- 【攻撃】白肉　中　左（マップ用）
+600135104 [Attack] White meat middle right (for map) -- 【攻撃】白肉　中　右（マップ用）
+600146000 [Attack] Fresh blood (PC) Front (for characters) -- 【攻撃】鮮血中(PC)　正面（キャラ用）
+600146001 [Attack] Fresh blood (PC) on (for characters) -- 【攻撃】鮮血中(PC)　上（キャラ用）
+600146002 [Attack] In fresh blood (PC) Under (for characters) -- 【攻撃】鮮血中(PC)　下（キャラ用）
+600146003 [Attack] Fresh blood (PC) Left (for characters) -- 【攻撃】鮮血中(PC)　左（キャラ用）
+600146004 [Attack] Fresh blood (PC) Right (for characters) -- 【攻撃】鮮血中(PC)　右（キャラ用）
+600146100 [Attack] Fresh blood (PC) Front (for map) -- 【攻撃】鮮血中(PC)　正面（マップ用）
+600146101 [Attack] On fresh blood (PC) (for map) -- 【攻撃】鮮血中(PC)　上（マップ用）
+600146102 [Attack] In fresh blood (PC) Below (for map) -- 【攻撃】鮮血中(PC)　下（マップ用）
+600146103 [Attack] Fresh blood (PC) Left (for map) -- 【攻撃】鮮血中(PC)　左（マップ用）
+600146104 [Attack] Fresh blood (PC) Right (for map) -- 【攻撃】鮮血中(PC)　右（マップ用）
+700109000 [Attack] Blood (fresh blood) Middle front (for characters) Blood MILD -- 【攻撃】血(鮮血)中　正面（キャラ用）　血MILD
+700109001 [Attack] Blood (fresh blood) Nakagami (for characters) Blood MILD -- 【攻撃】血(鮮血)中　上（キャラ用）　血MILD
+700109002 [Attack] Blood (fresh blood) Middle and lower (for characters) Blood MILD -- 【攻撃】血(鮮血)中　下（キャラ用）　血MILD
+700109003 [Attack] Blood (fresh blood) Middle Left (for characters) Blood MILD -- 【攻撃】血(鮮血)中　左（キャラ用）　血MILD
+700109004 [Attack] Blood (fresh blood) Middle right (for characters) Blood MILD -- 【攻撃】血(鮮血)中　右（キャラ用）　血MILD
+700109100 [Attack] Blood (fresh blood) Middle front (for map) Blood MILD -- 【攻撃】血(鮮血)中　正面（マップ用）　血MILD
+700109101 [Attack] Blood (fresh blood) Medium (for map) Blood MILD -- 【攻撃】血(鮮血)中　上（マップ用）　血MILD
+700109102 [Attack] Blood (fresh blood) Middle bottom (for map) Blood MILD -- 【攻撃】血(鮮血)中　下（マップ用）　血MILD
+700109103 [Attack] Blood (fresh blood) Middle Left (for map) Blood MILD -- 【攻撃】血(鮮血)中　左（マップ用）　血MILD
+700109104 [Attack] Blood (fresh blood) Middle right (for map) Blood MILD -- 【攻撃】血(鮮血)中　右（マップ用）　血MILD
+700114000 [Attack] Meat under armor Fresh blood (PC) Front (for characters) Blood MILD -- 【攻撃】鎧の下の肉　鮮血中(PC)　正面（キャラ用）　血MILD
+700114001 [Attack] Meat under armor (for characters) Blood MILD -- 【攻撃】鎧の下の肉　上（キャラ用）　血MILD
+700114002 [Attack] Under the flesh under the armor (for characters) Blood MILD -- 【攻撃】鎧の下の肉　下（キャラ用）　血MILD
+700114003 [Attack] Meat under armor Left (for characters) Blood MILD -- 【攻撃】鎧の下の肉　左（キャラ用）　血MILD
+700114004 [Attack] Meat under armor Right (for characters) Blood MILD -- 【攻撃】鎧の下の肉　右（キャラ用）　血MILD
+700114100 [Attack] Meat under armor Front (for map) Blood MILD -- 【攻撃】鎧の下の肉　正面（マップ用）　血MILD
+700114101 [Attack] Meat under armor (for map) Blood MILD -- 【攻撃】鎧の下の肉　上（マップ用）　血MILD
+700114102 [Attack] Under the flesh under the armor (for maps) Blood MILD -- 【攻撃】鎧の下の肉　下（マップ用）　血MILD
+700114103 [Attack] Meat under armor Left (for map) Blood MILD -- 【攻撃】鎧の下の肉　左（マップ用）　血MILD
+700114104 [Attack] Meat under armor Right (for map) Blood MILD -- 【攻撃】鎧の下の肉　右（マップ用）　血MILD
+700134000 [Attack] Poisonous meat in front (for characters) Blood MILD -- 【攻撃】毒肉　中　正面（キャラ用）　血MILD
+700134001 [Attack] Poisonous meat Nakagami (for characters) Blood MILD -- 【攻撃】毒肉　中　上（キャラ用）　血MILD
+700134002 [Attack] Poisonous meat Nakashita (for characters) Blood MILD -- 【攻撃】毒肉　中　下（キャラ用）　血MILD
+700134003 [Attack] Poisonous meat middle left (for characters) Blood MILD -- 【攻撃】毒肉　中　左（キャラ用）　血MILD
+700134004 [Attack] Poisonous meat middle right (for characters) Blood MILD -- 【攻撃】毒肉　中　右（キャラ用）　血MILD
+700134100 [Attack] Poisonous meat in front (for map) Blood MILD -- 【攻撃】毒肉　中　正面（マップ用）　血MILD
+700134101 [Attack] Poisonous meat Nakagami (for map) Blood MILD -- 【攻撃】毒肉　中　上（マップ用）　血MILD
+700134102 [Attack] Poisonous meat Nakashita (for map) Blood MILD -- 【攻撃】毒肉　中　下（マップ用）　血MILD
+700134103 [Attack] Poisonous meat middle left (for map) Blood MILD -- 【攻撃】毒肉　中　左（マップ用）　血MILD
+700134104 [Attack] Poisonous meat middle right (for map) Blood MILD -- 【攻撃】毒肉　中　右（マップ用）　血MILD
+700135000 [Attack] White meat in front (for characters) Blood MILD -- 【攻撃】白肉　中　正面（キャラ用）　血MILD
+700135001 [Attack] White meat Nakagami (for characters) Blood MILD -- 【攻撃】白肉　中　上（キャラ用）　血MILD
+700135002 [Attack] White meat Nakashita (for characters) Blood MILD -- 【攻撃】白肉　中　下（キャラ用）　血MILD
+700135003 [Attack] White meat Middle left (for characters) Blood MILD -- 【攻撃】白肉　中　左（キャラ用）　血MILD
+700135004 [Attack] White meat Middle right (for characters) Blood MILD -- 【攻撃】白肉　中　右（キャラ用）　血MILD
+700135100 [Attack] White meat in front (for map) Blood MILD -- 【攻撃】白肉　中　正面（マップ用）　血MILD
+700135101 [Attack] White meat Nakagami (for map) Blood MILD -- 【攻撃】白肉　中　上（マップ用）　血MILD
+700135102 [Attack] White meat Nakashita (for map) Blood MILD -- 【攻撃】白肉　中　下（マップ用）　血MILD
+700135103 [Attack] White meat Middle left (for map) Blood MILD -- 【攻撃】白肉　中　左（マップ用）　血MILD
+700135104 [Attack] White meat Middle right (for map) Blood MILD -- 【攻撃】白肉　中　右（マップ用）　血MILD
+700146000 [Attack] Fresh blood (PC) Front (for characters) Blood MILD -- 【攻撃】鮮血中(PC)　正面（キャラ用）血MILD
+700146001 [Attack] Fresh blood (PC) on (for characters) Blood MILD -- 【攻撃】鮮血中(PC)　上（キャラ用）血MILD
+700146002 [Attack] Fresh blood (PC) Under (for characters) Blood MILD -- 【攻撃】鮮血中(PC)　下（キャラ用）血MILD
+700146003 [Attack] Fresh blood (PC) Left (for characters) Blood MILD -- 【攻撃】鮮血中(PC)　左（キャラ用）血MILD
+700146004 [Attack] Fresh blood (PC) Right (for characters) Blood MILD -- 【攻撃】鮮血中(PC)　右（キャラ用）血MILD
+700146100 [Attack] Fresh blood (PC) Front (for map) Blood MILD -- 【攻撃】鮮血中(PC)　正面（マップ用）血MILD
+700146101 [Attack] Fresh blood (PC) on (for map) Blood MILD -- 【攻撃】鮮血中(PC)　上（マップ用）血MILD
+700146102 [Attack] Fresh blood (PC) Under (for map) Blood MILD -- 【攻撃】鮮血中(PC)　下（マップ用）血MILD
+700146103 [Attack] Fresh blood (PC) Left (for map) Blood MILD -- 【攻撃】鮮血中(PC)　左（マップ用）血MILD
+700146104 [Attack] Fresh blood (PC) Right (for map) Blood MILD -- 【攻撃】鮮血中(PC)　右（マップ用）血MILD

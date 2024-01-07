@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ItemCategory">
+      <Option Value="4294967295" Name="None" />
+      <Option Value="0" Name="Weapon" />
+      <Option Value="268435456" Name="Armor" />
+      <Option Value="536870912" Name="Accessory" />
+      <Option Value="1073741824" Name="Good" />
+    </Enum>
+  </Enums>
+  <Field>
+    <ItemLotId1 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 1" />
+    <ItemLotId2 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 2" />
+    <ItemLotId3 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 3" />
+    <ItemLotId4 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 4" />
+    <ItemLotId5 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 5" />
+    <ItemLotId6 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 6" />
+    <ItemLotId7 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 7" />
+    <ItemLotId8 Refs="EquipParamGoods,EquipParamProtector,EquipParamWeapon,EquipParamAccessory" AltName="Item ID 8" />
+    <LotItemCategory01 Enum="ItemCategory" />
+    <LotItemCategory02 Enum="ItemCategory" />
+    <LotItemCategory03 Enum="ItemCategory" />
+    <LotItemCategory04 Enum="ItemCategory" />
+    <LotItemCategory05 Enum="ItemCategory" />
+    <LotItemCategory06 Enum="ItemCategory" />
+    <LotItemCategory07 Enum="ItemCategory" />
+    <LotItemCategory08 Enum="ItemCategory" />
+    <LotItemBasePoint01 AltName="Item 1 Chance" />
+    <LotItemBasePoint02 AltName="Item 2 Chance" />
+    <LotItemBasePoint03 AltName="Item 3 Chance" />
+    <LotItemBasePoint04 AltName="Item 4 Chance" />
+    <LotItemBasePoint05 AltName="Item 5 Chance" />
+    <LotItemBasePoint06 AltName="Item 6 Chance" />
+    <LotItemBasePoint07 AltName="Item 7 Chance" />
+    <LotItemBasePoint08 AltName="Item 8 Chance" />
+    <cumulateLotPoint01 AltName="Item 1 Cumulative Chance" />
+    <cumulateLotPoint02 AltName="Item 2 Cumulative Chance" />
+    <cumulateLotPoint03 AltName="Item 3 Cumulative Chance" />
+    <cumulateLotPoint04 AltName="Item 4 Cumulative Chance" />
+    <cumulateLotPoint05 AltName="Item 5 Cumulative Chance" />
+    <cumulateLotPoint06 AltName="Item 6 Cumulative Chance" />
+    <cumulateLotPoint07 AltName="Item 7 Cumulative Chance" />
+    <cumulateLotPoint08 AltName="Item 8 Cumulative Chance" />
+    <GetItemFlagId01 AltName="Item Acquisition Flag [1]" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
+    <GetItemFlagId02 AltName="Item Acquisition Flag [2]" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
+    <GetItemFlagId03 AltName="Item Acquisition Flag [3]" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
+    <GetItemFlagId04 AltName="Item Acquisition Flag [4]" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
+    <GetItemFlagId05 AltName="Item Acquisition Flag [5]" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
+    <GetItemFlagId06 AltName="Item Acquisition Flag [6]" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
+    <GetItemFlagId07 AltName="Item Acquisition Flag [7]" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
+    <GetItemFlagId08 AltName="Item Acquisition Flag [8]" Wiki="Combined use of acquired flag and crunchy frame (0: common use)" />
+    <getItemFlagId AltName="Item Acquisition Flag" Wiki="Combined use of acquired flag and crunchy frame (0: flag invalid)" />
+    <cumulateNumFlagId AltName="Item Accumulate Flag [1]" Wiki="For saving the number of lottery (* 8 flag serial number used)" />
+    <cumulateNumMax AltName="Item Accumulate Max" Wiki="Maximum number of lottery cumulative (0: no cumulative)" />
+    <LotItemRarity AltName="Item Rarity" Wiki="Specify how valuable items are in the treasure chest. When -1, use the rarity of the equipment para without overwriting" />
+    <LotItemNum1 AltName="Item 1 Amount" />
+    <LotItemNum2 AltName="Item 2 Amount" />
+    <LotItemNum3 AltName="Item 3 Amount" />
+    <LotItemNum4 AltName="Item 4 Amount" />
+    <LotItemNum5 AltName="Item 5 Amount" />
+    <LotItemNum6 AltName="Item 6 Amount" />
+    <LotItemNum7 AltName="Item 7 Amount" />
+    <LotItemNum8 AltName="Item 8 Amount" />
+    <EnableLuck01 AltName="Affected by Item Discovery" IsBool="" />
+    <EnableLuck02 AltName="Affected by Item Discovery" IsBool="" />
+    <EnableLuck03 AltName="Affected by Item Discovery" IsBool="" />
+    <EnableLuck04 AltName="Affected by Item Discovery" IsBool="" />
+    <EnableLuck05 AltName="Affected by Item Discovery" IsBool="" />
+    <EnableLuck06 AltName="Affected by Item Discovery" IsBool="" />
+    <EnableLuck07 AltName="Affected by Item Discovery" IsBool="" />
+    <EnableLuck08 AltName="Affected by Item Discovery" IsBool="" />
+    <cumulateReset01 AltName="Item 1 Cumulative Chance Reset" IsBool="" />
+    <cumulateReset02 AltName="Item 2 Cumulative Chance Reset" IsBool="" />
+    <cumulateReset03 AltName="Item 3 Cumulative Chance Reset" IsBool="" />
+    <cumulateReset04 AltName="Item 4 Cumulative Chance Reset" IsBool="" />
+    <cumulateReset05 AltName="Item 5 Cumulative Chance Reset" IsBool="" />
+    <cumulateReset06 AltName="Item 6 Cumulative Chance Reset" IsBool="" />
+    <cumulateReset07 AltName="Item 7 Cumulative Chance Reset" IsBool="" />
+    <cumulateReset08 AltName="Item 8 Cumulative Chance Reset" IsBool="" />
+    <ClearCount AltName="Game Clear Offset" Wiki="Offset during lap play" />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="Defines item lots that can be rolled upon item pickup, enemy death or granted via script.\nWhen doing this, consecutive IDs are also rolled.\nA single result is produced by each row.\nA row will not be rolled if the flag is already set." ConsecutiveIDs="" />
+</PARAMMETA>

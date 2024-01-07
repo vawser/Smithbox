@@ -1,0 +1,36 @@
+<class name='hkpConstraintData' version='1' signature='0x57339dd7' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='ConstraintType' flags='00000000'>
+      <enumitem name='CONSTRAINT_TYPE_BALLANDSOCKET' value='0'/>
+      <enumitem name='CONSTRAINT_TYPE_HINGE' value='1'/>
+      <enumitem name='CONSTRAINT_TYPE_LIMITEDHINGE' value='2'/>
+      <enumitem name='CONSTRAINT_TYPE_POINTTOPATH' value='3'/>
+      <enumitem name='CONSTRAINT_TYPE_PRISMATIC' value='6'/>
+      <enumitem name='CONSTRAINT_TYPE_RAGDOLL' value='7'/>
+      <enumitem name='CONSTRAINT_TYPE_STIFFSPRING' value='8'/>
+      <enumitem name='CONSTRAINT_TYPE_WHEEL' value='9'/>
+      <enumitem name='CONSTRAINT_TYPE_GENERIC' value='10'/>
+      <enumitem name='CONSTRAINT_TYPE_CONTACT' value='11'/>
+      <enumitem name='CONSTRAINT_TYPE_BREAKABLE' value='12'/>
+      <enumitem name='CONSTRAINT_TYPE_MALLEABLE' value='13'/>
+      <enumitem name='CONSTRAINT_TYPE_POINTTOPLANE' value='14'/>
+      <enumitem name='CONSTRAINT_TYPE_PULLEY' value='15'/>
+      <enumitem name='CONSTRAINT_TYPE_ROTATIONAL' value='16'/>
+      <enumitem name='CONSTRAINT_TYPE_HINGE_LIMITS' value='18'/>
+      <enumitem name='CONSTRAINT_TYPE_RAGDOLL_LIMITS' value='19'/>
+      <enumitem name='CONSTRAINT_TYPE_CUSTOM' value='20'/>
+      <enumitem name='CONSTRAINT_TYPE_RACK_AND_PINION' value='21'/>
+      <enumitem name='CONSTRAINT_TYPE_COG_WHEEL' value='22'/>
+      <enumitem name='CONSTRAINT_TYPE_FIXED' value='23'/>
+      <enumitem name='CONSTRAINT_TYPE_DEFORMABLE_FIXED' value='24'/>
+      <enumitem name='CONSTRAINT_TYPE_LINEAR_SLACK' value='25'/>
+      <enumitem name='BEGIN_CONSTRAINT_CHAIN_TYPES' value='100'/>
+      <enumitem name='CONSTRAINT_TYPE_STIFF_SPRING_CHAIN' value='100'/>
+      <enumitem name='CONSTRAINT_TYPE_BALL_SOCKET_CHAIN' value='101'/>
+      <enumitem name='CONSTRAINT_TYPE_POWERED_CHAIN' value='102'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='userData' offset='16' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

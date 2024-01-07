@@ -1,0 +1,18 @@
+<class name='hkMeshVertexBuffer' version='1' signature='0x1a7eb639' size='16' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Flags' flags='00000000'>
+      <enumitem name='ACCESS_READ' value='1'/>
+      <enumitem name='ACCESS_WRITE' value='2'/>
+      <enumitem name='ACCESS_READ_WRITE' value='3'/>
+      <enumitem name='ACCESS_WRITE_DISCARD' value='4'/>
+      <enumitem name='ACCESS_ELEMENT_ARRAY' value='8'/>
+    </enum>
+    <enum name='LockResult' flags='00000000'>
+      <enumitem name='RESULT_FAILURE' value='0'/>
+      <enumitem name='RESULT_SUCCESS' value='1'/>
+      <enumitem name='RESULT_IN_USE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

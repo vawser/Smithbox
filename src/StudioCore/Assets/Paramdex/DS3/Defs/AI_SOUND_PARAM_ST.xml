@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>AI_SOUND_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 Radius" />
+    <Field Def="f32 lifeFrame" />
+    <Field Def="u8 bSpEffectEnable" />
+    <Field Def="u8 Type" />
+    <Field Def="u8 fakeTargetType" />
+    <Field Def="u8 InterestCategory" />
+    <Field Def="u8 UseHitDamageTeam" />
+    <Field Def="dummy8 pad[19]" />
+  </Fields>
+</PARAMDEF>

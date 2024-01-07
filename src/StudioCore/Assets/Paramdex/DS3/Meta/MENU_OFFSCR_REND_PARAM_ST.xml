@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <camAtPosX AltName="Camera Gaze Point X" Wiki="Camera gaze point X" />
+    <camAtPosY AltName="Camera Gaze Point Y" Wiki="Camera gaze point Y" />
+    <camAtPosZ AltName="Camera Gaze Point Z" Wiki="Camera gaze point Z" />
+    <camDist AltName="Camera Distance" Wiki="Camera distance" />
+    <camRotX AltName="Camera Rotation X" Wiki="Camera oriented X" />
+    <camRotY AltName="Camera Rotation Y" Wiki="Suitable for camera Y" />
+    <camFov AltName="Camera Field of View" Wiki="Camera angle of view" />
+    <camDistMin AltName="Camera Distance - Minimum" Wiki="Shortest distance when operating the camera" />
+    <camDistMax AltName="Camera Distance - Maximum" Wiki="Longest distance when operating the camera" />
+    <camRotXMin AltName="Camera Rotation - Minimum" Wiki="Minimum orientation when operating the camera" />
+    <camRotXMax AltName="Camera Rotation - Maximum" Wiki="Maximum orientation when operating the camera" />
+    <GparamID AltName="GPARAM ID" Wiki="GparamID" />
+    <pad2 AltName="" />
+  </Field>
+  <Self Wiki="Menu Content Render"/>
+</PARAMMETA>

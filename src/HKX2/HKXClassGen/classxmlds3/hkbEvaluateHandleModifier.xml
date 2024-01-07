@@ -1,0 +1,22 @@
+<class name='hkbEvaluateHandleModifier' version='1' signature='0x4943a778' size='240' parent='hkbModifier'>
+  <enums>
+    <enum name='HandleChangeMode' flags='00000000'>
+      <enumitem name='HANDLE_CHANGE_MODE_ABRUPT' value='0'/>
+      <enumitem name='HANDLE_CHANGE_MODE_CONSTANT_VELOCITY' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='handle' offset='88' ctype='hkbHandle' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handlePositionOut' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handleRotationOut' offset='112' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isValidOut' offset='128' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extrapolationTimeStep' offset='132' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handleChangeSpeed' offset='136' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handleChangeMode' offset='140' etype='HandleChangeMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='oldHandle' offset='144' ctype='hkbHandle' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='oldHandlePosition' offset='192' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='oldHandleRotation' offset='208' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeSinceLastModify' offset='224' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='smoothlyChangingHandles' offset='228' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EquipParamBooster_TENTATIVE</ParamType>
+  <DataVersion>7</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="s16 UnkSshort0x04"></Field>
+    <Field Def="u16 equipModelId"></Field>
+    <Field Def="s32 UnkInt0x08"></Field>
+    <Field Def="f32 weight">
+      <Description>Weight of the part.</Description>
+    </Field>
+    <Field Def="s32 UnkInt0x10"></Field>
+    <Field Def="s32 UnkInt0x14"></Field>
+    <Field Def="s32 energyLoad">
+      <Description>EN load of the part.</Description>
+    </Field>
+    <Field Def="f32 UnkFloat0x1C"></Field>
+    <Field Def="f32 UnkFloat0x20"></Field>
+    <Field Def="f32 UnkFloat0x24"></Field>
+    <Field Def="f32 UnkFloat0x28"></Field>
+    <Field Def="f32 UnkFloat0x2C"></Field>
+    <Field Def="f32 UnkFloat0x30"></Field>
+    <Field Def="f32 boostModeEnergyCost_Grounded"></Field>
+    <Field Def="f32 UnkFloat0x38"></Field>
+    <Field Def="f32 UnkFloat0x3C"></Field>
+    <Field Def="f32 UnkFloat0x40"></Field>
+    <Field Def="f32 UnkFloat0x44"></Field>
+    <Field Def="f32 UnkFloat0x48"></Field>
+    <Field Def="f32 boostModeEnergyCost_Flying"></Field>
+    <Field Def="f32 upwardThrustEnergyCost">
+      <Description>EN consumed by ascending boost movement.</Description>
+    </Field>
+    <Field Def="s32 quickBoostEnergyCost">
+      <Description>EN consumed by Quick Boost.</Description>
+    </Field>
+    <Field Def="f32 quickBoostVelocity">
+      <Description>Velocity upon using Quick Boost.</Description>
+    </Field>
+    <Field Def="f32 boostModeDuration"></Field>
+    <Field Def="f32 boostModeMovementVelocity">
+      <Description>Velocity upon moving with boost movement.</Description>
+    </Field>
+    <Field Def="f32 boostModeJumpVelocity">
+      <Description>Velocity upon jumping with boost movement.</Description>
+    </Field>
+    <Field Def="f32 displayQuickBoostThrust">
+      <Description>Only affects value in UI.</Description>
+    </Field>
+    <Field Def="f32 UnkFloat0x6C"></Field>
+    <Field Def="f32 upwardThrustMaxVelocity_BoostMode"></Field>
+    <Field Def="f32 UnkFloatBoostModeJumpVelocity0x74"></Field>
+    <Field Def="f32 upwardThrustEnergyCost_BoostMode"></Field>
+    <Field Def="s32 Unk0x7C"></Field>
+    <Field Def="s32 Unk0x80"></Field>
+    <Field Def="f32 quickBoostReloadTime">
+      <Description>Reload time for Quick Boost.</Description>
+    </Field>
+    <Field Def="f32 boostModeGravity"></Field>
+    <Field Def="f32 UnkFloat0x8C"></Field>
+    <Field Def="f32 UnkFloat0x90"></Field>
+    <Field Def="s32 UnkInt0x94"></Field>
+    <Field Def="s32 Unk0x98"></Field>
+    <Field Def="s32 Unk0x9C"></Field>
+    <Field Def="f32 Unk0xA0"></Field>
+    <Field Def="f32 Unk0xA4"></Field>
+    <Field Def="f32 Unk0xA8"></Field>
+    <Field Def="f32 Unk0xAC"></Field>
+    <Field Def="f32 Unk0xB0"></Field>
+    <Field Def="f32 Unk0xB4"></Field>
+    <Field Def="f32 Unk0xB8"></Field>
+    <Field Def="s32 Unk0xBC"></Field>
+    <Field Def="s32 Unk0xC0"></Field>
+    <Field Def="s32 Unk0xC4"></Field>
+    <Field Def="s32 Unk0xC8"></Field>
+    <Field Def="s32 Unk0xCC"></Field>
+    <Field Def="s32 Unk0xD0"></Field>
+    <Field Def="s32 Unk0xD4"></Field>
+    <Field Def="s32 Unk0xD8"></Field>
+    <Field Def="s32 Unk0xDC"></Field>
+    <Field Def="f32 upwardThrustMaxVelocity_Walk"></Field>
+    <Field Def="f32 upwardThrustVelocity_Initial_Walk"></Field>
+    <Field Def="f32 upwardThrustVelocity_During_Walk"></Field>
+    <Field Def="f32 UnkFloat0xEC"></Field>
+    <Field Def="f32 UnkFloat0xF0"></Field>
+    <Field Def="f32 walkFlightVelocity0xF4"></Field>
+    <Field Def="f32 UnkFloat0xF8"></Field>
+    <Field Def="f32 UnkFloat0xFC"></Field>
+    <Field Def="f32 assaultBoostVelocity_Initial">
+      <Description>Initial velocity upon using Assault Boost.</Description>
+    </Field>
+    <Field Def="f32 assaultBoostVelocity_During">
+      <Description>Velocity after initial boost during an Assault Boost.</Description>
+    </Field>
+    <Field Def="f32 assaultBoostGraceTime"></Field>
+    <Field Def="f32 UnkFloat0x10C"></Field>
+    <Field Def="f32 assaultBoostReloadTime">
+      <Description>Duration after which Assault Boost will be available again.</Description>
+    </Field>
+    <Field Def="u16 assaultBoostEnergyCost_Initial"></Field>
+    <Field Def="s16 Unk0x116"></Field>
+    <Field Def="f32 assaultBoostEnergyCost_During">
+      <Description>EN consumed by Assault Boost.</Description>
+    </Field>
+    <Field Def="s16 Unk0x11C"></Field>
+    <Field Def="u16 UnkUshort0x11E"></Field>
+    <Field Def="f32 meleeBoostVelocity_Initial"></Field>
+    <Field Def="f32 meleeBoostVelocity_During"></Field>
+    <Field Def="f32 meleeBoostDuration"></Field>
+    <Field Def="f32 UnkFloat0x12C"></Field>
+    <Field Def="u16 meleeBoostEnergyCost_Initial"></Field>
+    <Field Def="s16 Unk0x132"></Field>
+    <Field Def="f32 meleeBoostEnergyCost_During"></Field>
+    <Field Def="f32 upwardThrust_BoostMode"></Field>
+    <Field Def="f32 UnkFloat0x13C"></Field>
+    <Field Def="f32 UnkFloat0x140"></Field>
+    <Field Def="f32 quickBoostReloadIdealWeight">
+      <Description>Maximum tolerable AC weight before Quick Boost reload time is compromised.</Description>
+    </Field>
+    <Field Def="s32 inheritanceBoosterParamId"></Field>
+    <Field Def="f32 assaultBoostDodgeVelocity_Initial"></Field>
+    <Field Def="f32 assaultBoostDodgeVelocity_During"></Field>
+    <Field Def="f32 assaultBoostDodgeDuration"></Field>
+    <Field Def="f32 UnkFloat0x158"></Field>
+    <Field Def="u16 assaultBoostDodgeEnergyCost"></Field>
+    <Field Def="s16 Unk0x15E"></Field>
+    <Field Def="f32 UnkFloat0x160"></Field>
+    <Field Def="s32 Unk0x164"></Field>
+    <Field Def="s32 Unk0x168"></Field>
+    <Field Def="s32 Unk0x16C"></Field>
+    <Field Def="s32 Unk0x170"></Field>
+    <Field Def="s32 Unk0x174"></Field>
+    <Field Def="s32 Unk0x178"></Field>
+    <Field Def="s32 Unk0x17C"></Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>COOL_TIME_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 limitationTime0"></Field>
+    <Field Def="f32 observeTime0"></Field>
+    <Field Def="f32 limitationTime1"></Field>
+    <Field Def="f32 observeTime1"></Field>
+    <Field Def="f32 limitationTime2"></Field>
+    <Field Def="f32 observeTime2"></Field>
+    <Field Def="f32 limitationTime3"></Field>
+    <Field Def="f32 observeTime3"></Field>
+  </Fields>
+</PARAMDEF>

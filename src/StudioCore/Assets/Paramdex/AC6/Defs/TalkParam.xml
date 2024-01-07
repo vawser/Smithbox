@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TALK_PARAM_ST</ParamType>
+  <DataVersion>5</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="s32 msgId"></Field>
+    <Field Def="s32 voiceId"></Field>
+    <Field Def="s32 spEffectId0"></Field>
+    <Field Def="s32 motionId0"></Field>
+    <Field Def="s32 spEffectId1"></Field>
+    <Field Def="s32 motionId1"></Field>
+    <Field Def="s32 returnPos"></Field>
+    <Field Def="s32 reactionId"></Field>
+    <Field Def="s32 eventId"></Field>
+    <Field Def="f32 msgId_female"></Field>
+    <Field Def="s16 UnkShort0x2C"></Field>
+    <Field Def="s16 UnkShort0x2E"></Field>
+    <Field Def="s32 characterNameTextId"></Field>
+    <Field Def="s32 UnkInt0x34"></Field>
+    <Field Def="f32 timeout"></Field>
+    <Field Def="s32 talkAnimationId"></Field>
+  </Fields>
+</PARAMDEF>

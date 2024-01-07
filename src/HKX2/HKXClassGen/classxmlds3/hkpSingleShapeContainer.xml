@@ -1,0 +1,5 @@
+<class name='hkpSingleShapeContainer' version='1' signature='0x73aa1d38' size='16' parent='hkpShapeContainer'>
+  <members>
+    <member name='childShape' offset='8' ctype='hkpShape' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

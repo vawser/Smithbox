@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <face_partsId AltName="Face - Parts ID" Wiki="Face part ID" />
+    <skin_color_R AltName="Skin - Color R" Wiki="Skin color (R)" />
+    <skin_color_G AltName="Skin - Color G" Wiki="Skin color (G)" />
+    <skin_color_B AltName="Skin - Color B" Wiki="Skin color (B)" />
+    <skin_gloss AltName="Skin - Gloss" Wiki="Shiny skin" />
+    <skin_pores AltName="Skin - Pores" Wiki="pores" />
+    <face_beard AltName="Face - Beard" Wiki="Blue beard" />
+    <face_aroundEye AltName="Face - Around Eye" Wiki="Bear" />
+    <face_aroundEyeColor_R AltName="Face - Around Eye Color R" Wiki="Bear color (R)" />
+    <face_aroundEyeColor_G AltName="Face - Around Eye Color G" Wiki="Bear color (G)" />
+    <face_aroundEyeColor_B AltName="Face - Around Eye Color B" Wiki="Bear color (B)" />
+    <face_cheek AltName="Face - Cheek" Wiki="cheek" />
+    <face_cheekColor_R AltName="Face - Cheek Color R" Wiki="Teak color (R)" />
+    <face_cheekColor_G AltName="Face - Cheek Color G" Wiki="Teak color (G)" />
+    <face_cheekColor_B AltName="Face - Cheek Color B" Wiki="Teak color (B)" />
+    <face_eyeLine AltName="Face - Eyeline" Wiki="Eyeline" />
+    <face_eyeLineColor_R AltName="Face - Eyeline Color R" Wiki="Eyeliner color (R)" />
+    <face_eyeLineColor_G AltName="Face - Eyeline Color G" Wiki="Eyeliner color (G)" />
+    <face_eyeLineColor_B AltName="Face - Eyeline Color B" Wiki="Eyeliner color (B)" />
+    <face_eyeShadowDown AltName="Face - Eyeshadow (Down)" Wiki="Eye shadow (bottom)" />
+    <face_eyeShadowDownColor_R AltName="Face - Eyeshadow (Down) Color R" Wiki="Eyeshadow (bottom) color (R)" />
+    <face_eyeShadowDownColor_G AltName="Face - Eyeshadow (Down) Color G" Wiki="Eyeshadow (bottom) color (G)" />
+    <face_eyeShadowDownColor_B AltName="Face - Eyeshadow (Down) Color B" Wiki="Eyeshadow (bottom) color (B)" />
+    <face_eyeShadowUp AltName="Face - Eyeshadow (Up)" Wiki="Eye shadow (top)" />
+    <face_eyeShadowUpColor_R AltName="Face - Eyeshadow (Up) Color R" Wiki="Eyeshadow (top) color (R)" />
+    <face_eyeShadowUpColor_G AltName="Face - Eyeshadow (Up) Color G" Wiki="Eyeshadow (top) color (G)" />
+    <face_eyeShadowUpColor_B AltName="Face - Eyeshadow (Up) Color B" Wiki="Eyeshadow (top) color (B)" />
+    <face_lip AltName="Face - Lip" Wiki="lipstick" />
+    <face_lipColor_R AltName="Face - Lip Color R" Wiki="Lipstick color (R)" />
+    <face_lipColor_G AltName="Face - Lip Color G" Wiki="Lipstick color (G)" />
+    <face_lipColor_B AltName="Face - Lip Color B" Wiki="Lipstick color (B)" />
+    <body_hair AltName="Body - Hair" Wiki="Hair thickness" />
+    <body_hairColor_R AltName="Body - Hair Color R" Wiki="Hair color (R)" />
+    <body_hairColor_G AltName="Body - Hair Color G" Wiki="Hair color (G)" />
+    <body_hairColor_B AltName="Body - Hair Color B" Wiki="Hair color (B)" />
+    <eye_partsId AltName="Eyes - Parts ID" Wiki="Eyeball part ID" />
+    <eyeR_irisColor_R AltName="Right Eye - Iris Color R" Wiki="Right eye iris color (R)" />
+    <eyeR_irisColor_G AltName="Right Eye - Iris Color G" Wiki="Right eye iris color (G)" />
+    <eyeR_irisColor_B AltName="Right Eye - Iris Color B" Wiki="Right eye iris color (B)" />
+    <eyeR_irisScale AltName="Right Eye - Iris Scale" Wiki="The size of the iris of the right eye" />
+    <eyeR_cataract AltName="Right Eye - Cataract" Wiki="Cloudiness of the crystalline lens of the right eye" />
+    <eyeR_cataractColor_R AltName="Right Eye - Cataract Color R" Wiki="The turbid color of the crystalline lens of the right eye (R)" />
+    <eyeR_cataractColor_G AltName="Right Eye - Cataract Color G" Wiki="The turbid color of the crystalline lens of the right eye (G)" />
+    <eyeR_cataractColor_B AltName="Right Eye - Cataract Color B" Wiki="The turbid color of the crystalline lens of the right eye (B)" />
+    <eyeR_scleraColor_R AltName="Right Eye - Sclera Color R" Wiki="White eye color of the right eye (R)" />
+    <eyeR_scleraColor_G AltName="Right Eye - Sclera Color G" Wiki="White eye color of the right eye (G)" />
+    <eyeR_scleraColor_B AltName="Right Eye - Sclera Color B" Wiki="White eye color of the right eye (B)" />
+    <eyeR_irisDistance AltName="Right Eye - Iris Distance" Wiki="Position of the iris of the right eye" />
+    <eyeL_irisColor_R AltName="Left Eye - Iris Color R" Wiki="Left eye iris color (R)" />
+    <eyeL_irisColor_G AltName="Left Eye - Iris Color G" Wiki="Left eye iris color (G)" />
+    <eyeL_irisColor_B AltName="Left Eye - Iris Color B" Wiki="Left eye iris color (B)" />
+    <eyeL_irisScale AltName="Left Eye - Iris Scale" Wiki="The size of the iris of the left eye" />
+    <eyeL_cataract AltName="Left Eye - Cataract" Wiki="Cloudiness of the crystalline lens of the left eye" />
+    <eyeL_cataractColor_R AltName="Left Eye - Cataract Color R" Wiki="The turbid color of the crystalline lens of the left eye (R)" />
+    <eyeL_cataractColor_G AltName="Left Eye - Cataract Color G" Wiki="The turbid color of the crystalline lens of the left eye (G)" />
+    <eyeL_cataractColor_B AltName="Left Eye - Cataract Color B" Wiki="The turbid color of the crystalline lens of the left eye (B)" />
+    <eyeL_scleraColor_R AltName="Left Eye - Sclera Color R" Wiki="White eye color of the left eye (R)" />
+    <eyeL_scleraColor_G AltName="Left Eye - Sclera Color G" Wiki="White eye color of the left eye (G)" />
+    <eyeL_scleraColor_B AltName="Left Eye - Sclera Color B" Wiki="White eye color of the left eye (B)" />
+    <eyeL_irisDistance AltName="Left Eye - Iris Distance" Wiki="Position of the iris of the left eye" />
+    <hair_partsId AltName="Hair - Parts ID" Wiki="Hair part ID" />
+    <hair_color_R AltName="Hair - Color R" Wiki="Hair color (R)" />
+    <hair_color_G AltName="Hair - Color G" Wiki="Hair color (G)" />
+    <hair_color_B AltName="Hair - Color B" Wiki="Hair color (B)" />
+    <hair_shininess AltName="Hair - Shininess" Wiki="Hair gloss" />
+    <hair_rootBlack AltName="Hair - Root Black" Wiki="Blackness at the base of hair" />
+    <hair_whiteDensity AltName="Hair - White Density" Wiki="Amount of white hair" />
+    <beard_partsId AltName="Beard - Parts ID" Wiki="Beard part ID" />
+    <beard_color_R AltName="Beard - Color R" Wiki="Beard color (R)" />
+    <beard_color_G AltName="Beard - Color G" Wiki="Beard color (G)" />
+    <beard_color_B AltName="Beard - Color B" Wiki="Beard color (B)" />
+    <beard_shininess AltName="Beard - Shininess" Wiki="Beard luster" />
+    <beard_rootBlack AltName="Beard - Root Black" Wiki="Blackness at the base of the beard" />
+    <beard_whiteDensity AltName="Beard - White Density" Wiki="Amount of white hair with a beard" />
+    <eyebrow_partsId AltName="Eyebrow - Parts ID" Wiki="Eyebrow part ID" />
+    <eyebrow_color_R AltName="Eyebrow - Color R" Wiki="Eyebrow color (R)" />
+    <eyebrow_color_G AltName="Eyebrow - Color G" Wiki="Eyebrow color (G)" />
+    <eyebrow_color_B AltName="Eyebrow - Color B" Wiki="Eyebrow color (B)" />
+    <eyebrow_shininess AltName="Eyebrow - Shininess" Wiki="Glossy eyebrows" />
+    <eyebrow_rootBlack AltName="Eyebrow - Root Black" Wiki="Blackness at the base of the eyebrows" />
+    <eyebrow_whiteDensity AltName="Eyebrow - White Density" Wiki="Amount of white hair on the eyebrows" />
+    <eyelash_partsId AltName="Eyelash - Parts ID" Wiki="Eyelash parts ID" />
+    <eyelash_color_R AltName="Eyelash - Color R" Wiki="Eyelash color (R)" />
+    <eyelash_color_G AltName="Eyelash - Color G" Wiki="Eyelash color (G)" />
+    <eyelash_color_B AltName="Eyelash - Color B" Wiki="Eyelash color (B)" />
+    <accessories_partsId AltName="Accessories - Parts ID" Wiki="Decorative part ID" />
+    <accessories_color_R AltName="Accessories - Color R" Wiki="Decoration color (R)" />
+    <accessories_color_G AltName="Accessories - Color G" Wiki="Decoration color (G)" />
+    <accessories_color_B AltName="Accessories - Color B" Wiki="Decorative color (B)" />
+    <decal_partsId AltName="Decal - Parts ID" Wiki="Decal part ID" />
+    <decal_posX AltName="Decal - Position X" Wiki="Decal position (x)" />
+    <decal_posY AltName="Decal - Position Y" Wiki="Decal position (y)" />
+    <decal_angle AltName="Decal - Angle" Wiki="Decal angle" />
+    <decal_scale AltName="Decal - Scale" Wiki="Decal scale" />
+    <decal_color_R AltName="Decal - Color R" Wiki="Decal color (R)" />
+    <decal_color_G AltName="Decal - Color G" Wiki="Decal color (G)" />
+    <decal_color_B AltName="Decal - Color B" Wiki="Decal color (B)" />
+    <decal_gloss AltName="Decal - Gloss" Wiki="Decal gloss" />
+    <decal_mirror AltName="Decal - Mirror" Wiki="Decal reversal" />
+    <chrBodyScaleHead AltName="Chr Body Scale - Head" Wiki="Character body head scale" />
+    <chrBodyScaleBreast AltName="Chr Body Scale - Breast" Wiki="Character body chest scale" />
+    <chrBodyScaleAbdomen AltName="Chr Body Scale - Abdomen" Wiki="Character body type abdominal scale" />
+    <chrBodyScaleArm AltName="Chr Body Scale - Arm" Wiki="Character body type arm scale" />
+    <chrBodyScaleLeg AltName="Chr Body Scale - Leg" Wiki="Character body type leg scale" />
+    <age AltName="Age" Wiki="age" />
+    <gender AltName="Gender" Wiki="sex" />
+    <caricatureGeometry AltName="Model Geometry" Wiki="Exaggeration (model)" />
+    <caricatureTexture AltName="Model Texture" Wiki="Exaggeration (texture)" />
+    <faceGeoData00 AltName="Face - Geo Data [00]]" Wiki="Face - Geo Data [00]" />
+    <faceGeoData01 AltName="Face - Geo Data [01]" Wiki="Face - Geo Data [01]" />
+    <faceGeoData02 AltName="Face - Geo Data [02]" Wiki="Face - Geo Data [02]" />
+    <faceGeoData03 AltName="Face - Geo Data [03]" Wiki="Face - Geo Data [03]" />
+    <faceGeoData04 AltName="Face - Geo Data [04]" Wiki="Face - Geo Data [04]" />
+    <faceGeoData05 AltName="Face - Geo Data [05]" Wiki="Face - Geo Data [05]" />
+    <faceGeoData06 AltName="Face - Geo Data [06]" Wiki="Face - Geo Data [06]" />
+    <faceGeoData07 AltName="Face - Geo Data [07]" Wiki="Face - Geo Data [07]" />
+    <faceGeoData08 AltName="Face - Geo Data [08]" Wiki="Face - Geo Data [08]" />
+    <faceGeoData09 AltName="Face - Geo Data [09]" Wiki="Face - Geo Data [09]" />
+    <faceGeoData10 AltName="Face - Geo Data [10]" Wiki="Face - Geo Data [10]" />
+    <faceGeoData11 AltName="Face - Geo Data [11]" Wiki="Face - Geo Data [11]" />
+    <faceGeoData12 AltName="Face - Geo Data [12]" Wiki="Face - Geo Data [12]" />
+    <faceGeoData13 AltName="Face - Geo Data [13]" Wiki="Face - Geo Data [13]" />
+    <faceGeoData14 AltName="Face - Geo Data [14]" Wiki="Face - Geo Data [14]" />
+    <faceGeoData15 AltName="Face - Geo Data [15]" Wiki="Face - Geo Data [15]" />
+    <faceGeoData16 AltName="Face - Geo Data [16]" Wiki="Face - Geo Data [16]" />
+    <faceGeoData17 AltName="Face - Geo Data [17]" Wiki="Face - Geo Data [17]" />
+    <faceGeoData18 AltName="Face - Geo Data [18]" Wiki="Face - Geo Data [18]" />
+    <faceGeoData19 AltName="Face - Geo Data [19]" Wiki="Face - Geo Data [19]" />
+    <faceGeoData20 AltName="Face - Geo Data [20]" Wiki="Face - Geo Data [20]" />
+    <faceGeoData21 AltName="Face - Geo Data [21]" Wiki="Face - Geo Data [21]" />
+    <faceGeoData22 AltName="Face - Geo Data [22]" Wiki="Face - Geo Data [22]" />
+    <faceGeoData23 AltName="Face - Geo Data [23]" Wiki="Face - Geo Data [23]" />
+    <faceGeoData24 AltName="Face - Geo Data [24]" Wiki="Face - Geo Data [24]" />
+    <faceGeoData25 AltName="Face - Geo Data [25]" Wiki="Face - Geo Data [25]" />
+    <faceGeoData26 AltName="Face - Geo Data [26]" Wiki="Face - Geo Data [26]" />
+    <faceGeoData27 AltName="Face - Geo Data [27]" Wiki="Face - Geo Data [27]" />
+    <faceGeoData28 AltName="Face - Geo Data [28]" Wiki="Face - Geo Data [28]" />
+    <faceGeoData29 AltName="Face - Geo Data [29]" Wiki="Face - Geo Data [29]" />
+    <faceGeoData30 AltName="Face - Geo Data [30]" Wiki="Face - Geo Data [30]" />
+    <faceGeoData31 AltName="Face - Geo Data [31]" Wiki="Face - Geo Data [31]" />
+    <faceGeoData32 AltName="Face - Geo Data [32]" Wiki="Face - Geo Data [32]" />
+    <faceGeoData33 AltName="Face - Geo Data [33]" Wiki="Face - Geo Data [33]" />
+    <faceGeoData34 AltName="Face - Geo Data [34]" Wiki="Face - Geo Data [34]" />
+    <faceGeoData35 AltName="Face - Geo Data [35]" Wiki="Face - Geo Data [35]" />
+    <faceGeoData36 AltName="Face - Geo Data [36]" Wiki="Face - Geo Data [36]" />
+    <faceGeoData37 AltName="Face - Geo Data [37]" Wiki="Face - Geo Data [37]" />
+    <faceGeoData38 AltName="Face - Geo Data [38]" Wiki="Face - Geo Data [38]" />
+    <faceGeoData39 AltName="Face - Geo Data [39]" Wiki="Face - Geo Data [39]" />
+    <faceGeoData40 AltName="Face - Geo Data [40]" Wiki="Face - Geo Data [40]" />
+    <faceGeoData41 AltName="Face - Geo Data [41]" Wiki="Face - Geo Data [41]" />
+    <faceGeoData42 AltName="Face - Geo Data [42]" Wiki="Face - Geo Data [42]" />
+    <faceGeoData43 AltName="Face - Geo Data [43]" Wiki="Face - Geo Data [43]" />
+    <faceGeoData44 AltName="Face - Geo Data [44]" Wiki="Face - Geo Data [44]" />
+    <faceGeoData45 AltName="Face - Geo Data [45]" Wiki="Face - Geo Data [45]" />
+    <faceGeoData46 AltName="Face - Geo Data [46]" Wiki="Face - Geo Data [46]" />
+    <faceGeoData47 AltName="Face - Geo Data [47]" Wiki="Face - Geo Data [47]" />
+    <faceGeoData48 AltName="Face - Geo Data [48]" Wiki="Face - Geo Data [48]" />
+    <faceGeoData49 AltName="Face - Geo Data [49]" Wiki="Face - Geo Data [49]" />
+    <faceGeoData50 AltName="Face - Geo Data [50]" Wiki="Face - Geo Data [50]" />
+    <faceGeoData51 AltName="Face - Geo Data [51]" Wiki="Face - Geo Data [51]" />
+    <faceGeoData52 AltName="Face - Geo Data [52]" Wiki="Face - Geo Data [52]" />
+    <faceGeoData53 AltName="Face - Geo Data [53]" Wiki="Face - Geo Data [53]" />
+    <faceGeoData54 AltName="Face - Geo Data [54]" Wiki="Face - Geo Data [54]" />
+    <faceGeoData55 AltName="Face - Geo Data [55]" Wiki="Face - Geo Data [55]" />
+    <faceGeoData56 AltName="Face - Geo Data [56]" Wiki="Face - Geo Data [56]" />
+    <faceGeoData57 AltName="Face - Geo Data [57]" Wiki="Face - Geo Data [57]" />
+    <faceGeoData58 AltName="Face - Geo Data [58]" Wiki="Face - Geo Data [58]" />
+    <faceGeoData59 AltName="Face - Geo Data [59]" Wiki="Face - Geo Data [59]" />
+    <faceGeoData60 AltName="Face - Geo Data [60]" Wiki="Face - Geo Data [60]" />
+    <faceTexData00 AltName="Face - Texture Data [00]" Wiki="Face - Texture Data [00]" />
+    <faceTexData01 AltName="Face - Texture Data [01]" Wiki="Face - Texture Data [01]" />
+    <faceTexData02 AltName="Face - Texture Data [02]" Wiki="Face - Texture Data [02]" />
+    <faceTexData03 AltName="Face - Texture Data [03]" Wiki="Face - Texture Data [03]" />
+    <faceTexData04 AltName="Face - Texture Data [04]" Wiki="Face - Texture Data [04]" />
+    <faceTexData05 AltName="Face - Texture Data [05]" Wiki="Face - Texture Data [05]" />
+    <faceTexData06 AltName="Face - Texture Data [06]" Wiki="Face - Texture Data [06]" />
+    <faceTexData07 AltName="Face - Texture Data [07]" Wiki="Face - Texture Data [07]" />
+    <faceTexData08 AltName="Face - Texture Data [08]" Wiki="Face - Texture Data [08]" />
+    <faceTexData09 AltName="Face - Texture Data [09]" Wiki="Face - Texture Data [09]" />
+    <faceTexData10 AltName="Face - Texture Data [10]" Wiki="Face - Texture Data [10]" />
+    <faceTexData11 AltName="Face - Texture Data [11]" Wiki="Face - Texture Data [11]" />
+    <faceTexData12 AltName="Face - Texture Data [12]" Wiki="Face - Texture Data [12]" />
+    <faceTexData13 AltName="Face - Texture Data [13]" Wiki="Face - Texture Data [13]" />
+    <faceTexData14 AltName="Face - Texture Data [14]" Wiki="Face - Texture Data [14]" />
+    <faceTexData15 AltName="Face - Texture Data [15]" Wiki="Face - Texture Data [15]" />
+    <faceTexData16 AltName="Face - Texture Data [16]" Wiki="Face - Texture Data [16]" />
+    <faceTexData17 AltName="Face - Texture Data [17]" Wiki="Face - Texture Data [17]" />
+    <faceTexData18 AltName="Face - Texture Data [18]" Wiki="Face - Texture Data [18]" />
+    <faceTexData19 AltName="Face - Texture Data [19]" Wiki="Face - Texture Data [19]" />
+    <faceTexData20 AltName="Face - Texture Data [20]" Wiki="Face - Texture Data [20]" />
+    <faceTexData21 AltName="Face - Texture Data [21]" Wiki="Face - Texture Data [21]" />
+    <faceTexData22 AltName="Face - Texture Data [22]" Wiki="Face - Texture Data [22]" />
+    <faceTexData23 AltName="Face - Texture Data [23]" Wiki="Face - Texture Data [23]" />
+    <faceTexData24 AltName="Face - Texture Data [24]" Wiki="Face - Texture Data [24]" />
+    <faceTexData25 AltName="Face - Texture Data [25]" Wiki="Face - Texture Data [25]" />
+    <faceTexData26 AltName="Face - Texture Data [26]" Wiki="Face - Texture Data [26]" />
+    <faceTexData27 AltName="Face - Texture Data [27]" Wiki="Face - Texture Data [27]" />
+    <faceTexData28 AltName="Face - Texture Data [28]" Wiki="Face - Texture Data [28]" />
+    <faceTexData29 AltName="Face - Texture Data [29]" Wiki="Face - Texture Data [29]" />
+    <faceTexData30 AltName="Face - Texture Data [30]" Wiki="Face - Texture Data [30]" />
+    <faceTexData31 AltName="Face - Texture Data [31]" Wiki="Face - Texture Data [31]" />
+    <faceTexData32 AltName="Face - Texture Data [32]" Wiki="Face - Texture Data [32]" />
+    <faceTexData33 AltName="Face - Texture Data [33]" Wiki="Face - Texture Data [33]" />
+    <faceTexData34 AltName="Face - Texture Data [34]" Wiki="Face - Texture Data [34]" />
+    <faceTexData35 AltName="Face - Texture Data [35]" Wiki="Face - Texture Data [35]" />
+    <burn_scar AltName="Burn Scars" Wiki="Burn scars" />
+  </Field>
+  <Self />
+</PARAMMETA>

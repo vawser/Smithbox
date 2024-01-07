@@ -1,0 +1,6 @@
+<class name='hclBoneSpaceDeformerTwoBlendEntryBlock' version='1' signature='0x5d34fa72' size='48'>
+  <members>
+    <member name='vertexIndices' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='8' flags='FLAGS_NONE' default='0'/>
+    <member name='boneIndices' offset='16' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='16' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

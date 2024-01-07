@@ -1,0 +1,174 @@
+0 Normal state (default) -- 通常状態（デフォルト）
+100 Jump_vertical -- ジャンプ_垂直
+101 Jump_before -- ジャンプ_前
+111 Jump_Position_Before -- ジャンプ_位置取り_前
+112 After jump_positioning_ -- ジャンプ_位置取り_後
+113 Jump_Position_Left -- ジャンプ_位置取り_左
+114 Jump_Position_Right -- ジャンプ_位置取り_右
+115 Jump_Position_Left front -- ジャンプ_位置取り_左前
+116 Jump_Position_Right front -- ジャンプ_位置取り_右前
+117 Jump_Position_Left Rear -- ジャンプ_位置取り_左後
+118 Jump_Position_Right rear -- ジャンプ_位置取り_右後
+121 Jump_dash_before -- ジャンプ_ダッシュ_前
+200 Water jump_vertical -- 水上ジャンプ_垂直
+201 Water jump_before -- 水上ジャンプ_前
+221 Water jump_acceleration_before -- 水上ジャンプ_加速_前
+240 Dolphin Jump 1_Vertical -- ドルフィンジャンプ1_垂直
+241 Dolphin Jump 2_Vertical -- ドルフィンジャンプ2_垂直
+800 Swamp Jump_Vertical -- 沼ジャンプ_垂直
+801 Swamp Jump_Before -- 沼ジャンプ_前
+811 Swamp jump_positioning_before -- 沼ジャンプ_位置取り_前
+812 Swamp jump_positioning_after -- 沼ジャンプ_位置取り_後
+813 Swamp jump_positioning_left -- 沼ジャンプ_位置取り_左
+814 Swamp jump_positioning_right -- 沼ジャンプ_位置取り_右
+815 Swamp jump_positioning_left front -- 沼ジャンプ_位置取り_左前
+816 Swamp jump_positioning_right front -- 沼ジャンプ_位置取り_右前
+817 Swamp jump_positioning_left rear -- 沼ジャンプ_位置取り_左後
+818 Swamp jump_positioning_right rear -- 沼ジャンプ_位置取り_右後
+980 Storm Jump_Top 1 -- ストームジャンプ_上1
+981 Storm Jump_Top 2 -- ストームジャンプ_上2
+982 After storm jump_ -- ストームジャンプ_後
+1000 Wall jump_vertical -- 壁ジャンプ_垂直
+1001 Wall jump_horizontal_front -- 壁ジャンプ_水平_前
+1002 After wall jump_horizontal_ -- 壁ジャンプ_水平_後
+1003 Wall jump_horizontal_left -- 壁ジャンプ_水平_左
+1004 Wall jump_horizontal_right -- 壁ジャンプ_水平_右
+1011 Wall jump_horizontal_front_infinite -- 壁ジャンプ_水平_前_無限
+1111 Wall jump_positioning_front -- 壁ジャンプ_位置取り_前
+1112 After wall jump_positioning_ -- 壁ジャンプ_位置取り_後
+1113 Wall jump_positioning_left -- 壁ジャンプ_位置取り_左
+1114 Wall jump_positioning_right -- 壁ジャンプ_位置取り_右
+1115 Wall jump_positioning_left front -- 壁ジャンプ_位置取り_左前
+1116 Wall jump_positioning_right front -- 壁ジャンプ_位置取り_右前
+1117 Wall jump_positioning_left rear -- 壁ジャンプ_位置取り_左後
+1118 Wall jump_positioning_right rear -- 壁ジャンプ_位置取り_右後
+1200 Wall jump_vertical -- 壁ジャンプ_垂直
+1201 Wall jump_horizontal_front -- 壁ジャンプ_水平_前
+1202 After wall jump_horizontal_ -- 壁ジャンプ_水平_後
+1211 Wall jump_positioning_front -- 壁ジャンプ_位置取り_前
+1212 After wall jump_positioning_ -- 壁ジャンプ_位置取り_後
+1213 Wall jump_positioning_left -- 壁ジャンプ_位置取り_左
+1214 Wall jump_positioning_right -- 壁ジャンプ_位置取り_右
+1215 Wall jump_positioning_left front -- 壁ジャンプ_位置取り_左前
+1216 Wall jump_positioning_right front -- 壁ジャンプ_位置取り_右前
+1217 Wall jump_positioning_left rear -- 壁ジャンプ_位置取り_左後
+1218 Wall jump_positioning_right rear -- 壁ジャンプ_位置取り_右後
+1250 Wall Jump_Ignore Gravity Alternative 1 -- 壁ジャンプ_重力無視代替1
+1251 Wall Jump_Gravity Ignore Alternative 1_ Hanging -- 壁ジャンプ_重力無視代替1_ぶら下がり
+1260 Wall Jump_Gravity Ignore Alternative 2 -- 壁ジャンプ_重力無視代替2
+1100 wire -- ワイヤー
+1101 [For system] Ground wire acceleration -- 【システム用】地上ワイヤー加速
+1102 [For system] Aerial wire deceleration -- 【システム用】空中ワイヤー減速
+1600 Charged_strong_hop (common to jasuga / guard / direct hit / death) -- 帯電_強_ホップ（ジャスガ/ガード/直撃/死亡共通）
+1605 Charged_strong_slow (common to jasuga / guard / direct hit / death) -- 帯電_強_スロー（ジャスガ/ガード/直撃/死亡共通）
+1610 Charged_weak_hop (jasuga) -- 帯電_弱_ホップ（ジャスガ）
+1611 Charged_weak_hop (guard) -- 帯電_弱_ホップ（ガード）
+1612 Charged_weak_hop (direct hit) -- 帯電_弱_ホップ（直撃）
+1613 Charged_weak_hop (death) -- 帯電_弱_ホップ（死亡）
+1615 Charged_weak_slow (common to jasuga / guard / direct hit / death) -- 帯電_弱_スロー（ジャスガ/ガード/直撃/死亡共通）
+1620 Lightning return _ strong -- 雷返し_強
+1621 Lightning return _ strong _ direct hit blast receiver 1 -- 雷返し_強_直撃爆風受け1
+1622 Lightning return _ strong _ direct hit blast receiver 2 -- 雷返し_強_直撃爆風受け2
+1630 Lightning return _ weak -- 雷返し_弱
+2000 Kick jump_enemy_ground_vertical -- 蹴りジャンプ_敵_地上_垂直
+2001 Kick jump_enemy_ground_front -- 蹴りジャンプ_敵_地上_前
+2002 Kick jump_enemy_ground_after -- 蹴りジャンプ_敵_地上_後
+2003 Kick jump_enemy_ground_left -- 蹴りジャンプ_敵_地上_左
+2004 Kick jump_enemy_ground_right -- 蹴りジャンプ_敵_地上_右
+2011 Kick jump_enemy_ground_front_locking -- 蹴りジャンプ_敵_地上_前_ロック中
+2020 Kick Jump_Enemy_Ground_Vertical / Front 2 -- 蹴りジャンプ_敵_地上_垂直/前2
+2040 Kick jump_slow -- 蹴りジャンプ_スロー
+2100 Kick jump_enemy_air_vertical -- 蹴りジャンプ_敵_空中_垂直
+2101 Kick jump_enemy_air_front -- 蹴りジャンプ_敵_空中_前
+2102 Kick jump_enemy_air_after -- 蹴りジャンプ_敵_空中_後
+2103 Kick jump_enemy_air_left -- 蹴りジャンプ_敵_空中_左
+2104 Kick jump_enemy_air_right -- 蹴りジャンプ_敵_空中_右
+2111 Kick jump_enemy_air_front_locking -- 蹴りジャンプ_敵_空中_前_ロック中
+2120 Kick Jump_Enemy_Aerial_Vertical / Front 2 -- 蹴りジャンプ_敵_空中_垂直/前2
+2900 Jumping during aging_vertical -- 老化中ジャンプ_垂直
+2901 Jumping during aging_before -- 老化中ジャンプ_前
+3040 Fluffy damage_before -- ふっとびダメージ_前
+3041 After fluffy damage_ -- ふっとびダメージ_後
+3090 Lifting damage -- かち上げダメージ
+3100 Large fluffy damage_before -- 大ふっとびダメージ_前
+3101 After a big fluffy damage_ -- 大ふっとびダメージ_後
+3110 Super oversized fluffy damage _ before -- 超特大ふっとびダメージ_前
+3111 After super-large fluffy damage_ -- 超特大ふっとびダメージ_後
+3240 Futobi died _ before -- ふっとび死亡_前
+3241 After fluffy death_ -- ふっとび死亡_後
+3290 Lifting death -- かち上げ死亡
+3300 Big fluffy death _ before -- 大ふっとび死亡_前
+3301 After a big fluffy death_ -- 大ふっとび死亡_後
+3310 Super oversized fluffy death _ before -- 超特大ふっとび死亡_前
+3311 Super oversized fluffy death _ after -- 超特大ふっとび死亡_後
+3400 Small aerial damage_before -- 空中小ダメージ_前
+3401 After small aerial damage_ -- 空中小ダメージ_後
+3430 Large aerial damage_before -- 空中大ダメージ_前
+3431 After heavy damage in the air -- 空中大ダメージ_後
+3440 Aerial fluffy damage_before -- 空中ふっとびダメージ_前
+3441 After aerial fluffy damage_ -- 空中ふっとびダメージ_後
+3460 Air slamming damage -- 空中叩き付けダメージ
+3490 Aerial lift damage -- 空中かち上げダメージ
+3500 Large aerial fluffy damage_before -- 空中大ふっとびダメージ_前
+3501 After a large fluffy damage in the air -- 空中大ふっとびダメージ_後
+3510 Super oversized fluffy damage in the air_before -- 空中超特大ふっとびダメージ_前
+3511 After the aerial super-large fluffy damage_ -- 空中超特大ふっとびダメージ_後
+3600 Aerial death_before -- 空中死亡_前
+3601 After aerial death_ -- 空中死亡_後
+3640 Aerial fluffy death _ before -- 空中ふっとび死亡_前
+3641 After aerial fluffy death_ -- 空中ふっとび死亡_後
+3660 Slammed in the air and died -- 空中叩き付け死亡
+3690 Raised in the air and died -- 空中かち上げ死亡
+3700 Large aerial fluffy death _ before -- 空中大ふっとび死亡_前
+3701 After the aerial big fluffy death_ -- 空中大ふっとび死亡_後
+3710 Air super oversized fluffy death _ before -- 空中超特大ふっとび死亡_前
+3711 After the aerial super-large fluffy death_ -- 空中超特大ふっとび死亡_後
+3800 Air speed maintenance_normal fall -- 空中速度維持_通常落下
+3810 Air speed maintenance_normal fall_not adjustable -- 空中速度維持_通常落下_調整不可
+4400 Aerial small guard receiver -- 空中小ガード受け
+4430 Received a large aerial guard -- 空中大ガード受け
+4500 Received oversized guard in the air -- 空中特大ガード受け
+4600 Aerial small jasuga receiver -- 空中小ジャスガ受け
+4630 Large aerial jasuga receiver -- 空中大ジャスガ受け
+4700 Aerial oversized jasuga receiver -- 空中特大ジャスガ受け
+5000 [Enemy] Aerial damage_Hop-up_Before -- 【敵】空中ダメージ_ホップアップ_前
+5010 [Enemy] After aerial damage_hop-up_ -- 【敵】空中ダメージ_ホップアップ_後
+5020 [Enemy] Aerial damage_Hop-up_No before or after -- 【敵】空中ダメージ_ホップアップ_前後無し
+5100 [Enemy] Aerial damage_slow -- 【敵】空中ダメージ_スロー
+7200 Prosthetic hand ninja _fire_air -- 義手忍具_発火_空中
+7201 Prosthesis Ninja _Ignition_Aerial_Slow -- 義手忍具_発火_空中_スロー
+7300 Prosthetic hand ninja _ training ax _ in the air -- 義手忍具_仕込み斧_空中
+7400 Prosthetic Hand Ninja _ Transformation _ Aerial _ Vertical Reset &amp; Hop -- 義手忍具_変わり身_空中_鉛直リセット & ホップ
+7401 Prosthetic hand ninja _ transformation _ aerial _ slow -- 義手忍具_変わり身_空中_スロー
+7410 Prosthetic hand ninja _ transformation _ aerial _ bottom -- 義手忍具_変わり身_空中_下
+7411 Prosthetic hand ninja _ transformation _ aerial _ front -- 義手忍具_変わり身_空中_前
+7412 Prosthetic hand ninja _ transformation _ aerial _ after -- 義手忍具_変わり身_空中_後
+7413 Prosthetic hand ninja _ transformation _ aerial _ left -- 義手忍具_変わり身_空中_左
+7414 Prosthetic hand ninja _ transformation _ aerial _ right -- 義手忍具_変わり身_空中_右
+7415 Prosthetic hand ninja _ transformation _ aerial _ left front -- 義手忍具_変わり身_空中_左前
+7416 Prosthetic hand ninja _ transformation _ aerial _ right front -- 義手忍具_変わり身_空中_右前
+7417 Prosthetic hand ninja _ transformation _ aerial _ left rear -- 義手忍具_変わり身_空中_左後
+7418 Prosthetic hand ninja _ transformation _ aerial _ right rear -- 義手忍具_変わり身_空中_右後
+8000 Fall shinobi -- 落下忍殺
+8005 Unlimited Fall Shinobi -- 制限なし落下忍殺
+8010 Anti-aircraft shinobi -- 対空忍殺
+8020 Wire Shinobi _ Horseman Warrior / Red Demon -- ワイヤー忍殺_騎馬武者/赤鬼
+9000 Red demon thrown and blown away -- 赤鬼投げられ吹っ飛び
+9010 Yasha Ape is thrown and blown away -- 夜叉猿投げられ吹っ飛び
+10000 School technique_Sneak stab_Jump after hit -- 流派技_忍び刺し_ヒット後ジャンプ
+10001 School technique_Sneak stab_Jump after hit_Slow -- 流派技_忍び刺し_ヒット後ジャンプ_スロー
+10002 School Technique_Sneak Prick_Aerial_Slow -- 流派技_忍び刺し_空中_スロー
+10003 School Technique_Sneak Prick_Aerial_Acceleration -- 流派技_忍び刺し_空中_加速
+10010 School technique_kick rush -- 流派技_蹴りラッシュ
+10020 School technique_new technique_jump -- 流派技_新技_ジャンプ
+10021 School technique_new technique_slow after jump -- 流派技_新技_ジャンプ後スロー
+10022 School technique_new technique_hop -- 流派技_新技_ホップ
+10023 School technique_new technique_slow after hop -- 流派技_新技_ホップ後スロー
+10030 School technique_new technique_air_jump -- 流派技_新技_空中_ジャンプ
+10031 School technique_new technique_air_slow after jump -- 流派技_新技_空中_ジャンプ後スロー
+10032 School technique_new technique_hop -- 流派技_新技_ホップ
+10033 School technique_new technique_slow after hop -- 流派技_新技_ホップ後スロー
+10014500 Nightjars_Jump attack (test) -- 夜鷹衆_ジャンプ攻撃（テスト）
+40000000 Base_jump move -- ベース_ジャンプ移動
+40014500 Nightjars_Jump move -- 夜鷹衆_ジャンプ移動
+40013100 Genpei Samurai_Jump move -- 源平武者_ジャンプ移動

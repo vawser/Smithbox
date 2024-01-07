@@ -1,0 +1,8 @@
+<class name='hkxTextureInplace' version='1' signature='0x1f471e0b' size='56' parent='hkReferencedObject'>
+  <members>
+    <member name='fileType' offset='16' vtype='TYPE_CHAR' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='data' offset='24' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='40' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='originalFilename' offset='48' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

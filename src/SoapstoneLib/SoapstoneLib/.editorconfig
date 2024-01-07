@@ -1,0 +1,14 @@
+# You can modify the rules from these initially generated values to suit your own policies
+# You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+
+end_of_line = lf
+
+[*.cs]
+indent_style = space
+
+[*.proto]
+indent_style = space
+indent_size = 2
+
+[*.{cs,vb}]
+end_of_line=lf

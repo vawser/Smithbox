@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>SP_EFFECT_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 iconId = -1" />
+    <Field Def="f32 conditionHp" />
+    <Field Def="f32 effectEndurance" />
+    <Field Def="f32 motionInterval" />
+    <Field Def="f32 maxHpRate" />
+    <Field Def="f32 maxMpRate" />
+    <Field Def="f32 maxStaminaRate" />
+    <Field Def="f32 slashDamageCutRate" />
+    <Field Def="f32 blowDamageCutRate" />
+    <Field Def="f32 thrustDamageCutRate" />
+    <Field Def="f32 neutralDamageCutRate" />
+    <Field Def="f32 magicDamageCutRate" />
+    <Field Def="f32 fireDamageCutRate" />
+    <Field Def="f32 thunderDamageCutRate" />
+    <Field Def="f32 physicsAttackRate" />
+    <Field Def="f32 magicAttackRate" />
+    <Field Def="f32 fireAttackRate" />
+    <Field Def="f32 thunderAttackRate" />
+    <Field Def="f32 physicsAttackPowerRate" />
+    <Field Def="f32 magicAttackPowerRate" />
+    <Field Def="f32 fireAttackPowerRate" />
+    <Field Def="f32 thunderAttackPowerRate" />
+    <Field Def="s32 physicsAttackPower" />
+    <Field Def="s32 magicAttackPower" />
+    <Field Def="s32 fireAttackPower" />
+    <Field Def="s32 thunderAttackPower" />
+    <Field Def="f32 physicsDiffenceRate" />
+    <Field Def="f32 magicDiffenceRate" />
+    <Field Def="f32 fireDiffenceRate" />
+    <Field Def="f32 thunderDiffenceRate" />
+    <Field Def="s32 physicsDiffence" />
+    <Field Def="s32 magicDiffence" />
+    <Field Def="s32 fireDiffence" />
+    <Field Def="s32 thunderDiffence" />
+    <Field Def="f32 NoGuardDamageRate" />
+    <Field Def="f32 vitalSpotChangeRate" />
+    <Field Def="f32 normalSpotChangeRate" />
+    <Field Def="f32 lookAtTargetPosOffset" />
+    <Field Def="s32 behaviorId = -1" />
+    <Field Def="f32 changeHpRate" />
+    <Field Def="s32 changeHpPoint" />
+    <Field Def="f32 changeMpRate" />
+    <Field Def="s32 changeMpPoint" />
+    <Field Def="s32 mpRecoverChangeSpeed" />
+    <Field Def="f32 changeStaminaRate" />
+    <Field Def="s32 changeStaminaPoint" />
+    <Field Def="s32 staminaRecoverChangeSpeed" />
+    <Field Def="f32 magicEffectTimeChange" />
+    <Field Def="s32 insideDurability" />
+    <Field Def="s32 maxDurability" />
+    <Field Def="f32 staminaAttackRate" />
+    <Field Def="s32 poizonAttackPower" />
+    <Field Def="s32 diseaseAttackPower" />
+    <Field Def="s32 bloodAttackPower" />
+    <Field Def="s32 curseAttackPower" />
+    <Field Def="f32 fallDamageRate" />
+    <Field Def="f32 soulRate" />
+    <Field Def="f32 equipWeightChangeRate" />
+    <Field Def="f32 allItemWeightChangeRate" />
+    <Field Def="s32 soul" />
+    <Field Def="s32 animIdOffset = -1" />
+    <Field Def="f32 haveSoulRate" />
+    <Field Def="f32 targetPriority" />
+    <Field Def="s32 sightSearchEnemyRate" />
+    <Field Def="f32 hearingSearchEnemyRate" />
+    <Field Def="f32 grabityRate" />
+    <Field Def="f32 registPoizonChangeRate" />
+    <Field Def="f32 registDiseaseChangeRate" />
+    <Field Def="f32 registBloodChangeRate" />
+    <Field Def="f32 registCurseChangeRate" />
+    <Field Def="f32 soulStealRate" />
+    <Field Def="f32 lifeReductionRate" />
+    <Field Def="f32 hpRecoverRate" />
+    <Field Def="s32 replaceSpEffectId = -1" />
+    <Field Def="s32 cycleOccurrenceSpEffectId = -1" />
+    <Field Def="s32 atkOccurrenceSpEffectId = -1" />
+    <Field Def="f32 guardDefFlickPowerRate" />
+    <Field Def="f32 guardStaminaCutRate" />
+    <Field Def="s16 rayCastPassedTime = -1" />
+    <Field Def="s16 changeSuperArmorPoint" />
+    <Field Def="s16 bowDistRate" />
+    <Field Def="s16 spCategory" />
+    <Field Def="s8 categoryPriority" />
+    <Field Def="s8 saveCategory = -1" />
+    <Field Def="u8 changeMagicSlot" />
+    <Field Def="u8 changeMiracleSlot" />
+    <Field Def="u8 heroPointDamage" />
+    <Field Def="u8 defFlickPower" />
+    <Field Def="u8 flickDamageCutRate" />
+    <Field Def="u8 bloodDamageRate = 100" />
+    <Field Def="u8 dmgLv_None" />
+    <Field Def="u8 dmgLv_S" />
+    <Field Def="u8 dmgLv_M" />
+    <Field Def="u8 dmgLv_L" />
+    <Field Def="u8 dmgLv_BlowM" />
+    <Field Def="u8 dmgLv_Push" />
+    <Field Def="u8 dmgLv_Strike" />
+    <Field Def="u8 dmgLv_BlowS" />
+    <Field Def="u8 dmgLv_Min" />
+    <Field Def="u8 dmgLv_Uppercut" />
+    <Field Def="u8 dmgLv_BlowLL" />
+    <Field Def="u8 dmgLv_Breath" />
+    <Field Def="u8 atkAttribute" />
+    <Field Def="u8 spAttribute" />
+    <Field Def="s16 stateInfo" />
+    <Field Def="u8 wepParamChange" />
+    <Field Def="u8 moveType" />
+    <Field Def="s16 lifeReductionType" />
+    <Field Def="u8 throwCondition" />
+    <Field Def="s8 addBehaviorJudgeId_condition = -1" />
+    <Field Def="u8 freezeDamageRate = 100" />
+    <Field Def="u8 effectTargetSelf:1 = 1" />
+    <Field Def="u8 effectTargetFriend:1 = 1" />
+    <Field Def="u8 effectTargetEnemy:1 = 1" />
+    <Field Def="u8 effectTargetPlayer:1 = 1" />
+    <Field Def="u8 effectTargetAI:1 = 1" />
+    <Field Def="u8 effectTargetLive:1 = 1" />
+    <Field Def="u8 effectTargetGhost:1 = 1" />
+    <Field Def="u8 effectTargetWhiteGhost:1" />
+    <Field Def="u8 effectTargetBlackGhost:1" />
+    <Field Def="u8 effectTargetAttacker:1" />
+    <Field Def="u8 dispIconNonactive:1" />
+    <Field Def="u8 useSpEffectEffect:1" />
+    <Field Def="u8 bAdjustMagicAbility:1" />
+    <Field Def="u8 bAdjustFaithAbility:1" />
+    <Field Def="u8 bGameClearBonus:1" />
+    <Field Def="u8 magParamChange:1" />
+    <Field Def="u8 miracleParamChange:1" />
+    <Field Def="u8 clearSoul:1" />
+    <Field Def="u8 requestSOS:1" />
+    <Field Def="u8 requestBlackSOS:1" />
+    <Field Def="u8 requestForceJoinBlackSOS:1" />
+    <Field Def="u8 requestKickSession:1" />
+    <Field Def="u8 requestLeaveSession:1" />
+    <Field Def="u8 requestNpcInveda:1" />
+    <Field Def="u8 noDead:1" />
+    <Field Def="u8 bCurrHPIndependeMaxHP:1" />
+    <Field Def="u8 corrosionIgnore:1" />
+    <Field Def="u8 sightSearchCutIgnore:1" />
+    <Field Def="u8 hearingSearchCutIgnore:1" />
+    <Field Def="u8 antiMagicIgnore:1" />
+    <Field Def="u8 fakeTargetIgnore:1" />
+    <Field Def="u8 fakeTargetIgnoreUndead:1" />
+    <Field Def="u8 fakeTargetIgnoreAnimal:1" />
+    <Field Def="u8 grabityIgnore:1" />
+    <Field Def="u8 disablePoison:1" />
+    <Field Def="u8 disableDisease:1" />
+    <Field Def="u8 disableBlood:1" />
+    <Field Def="u8 disableCurse:1" />
+    <Field Def="u8 enableCharm:1" />
+    <Field Def="u8 enableLifeTime:1" />
+    <Field Def="u8 hasTarget:1" />
+    <Field Def="u8 replanningOnFire:1" />
+    <Field Def="u8 eraseOnBonfireRecover:1" />
+    <Field Def="u8 requestLeaveColiseumSession:1" />
+    <Field Def="u8 bAdjustStrengthAblity:1" />
+    <Field Def="u8 bAdjustAgilityAblity:1" />
+    <Field Def="u8 chargeAttackParamChange:1" />
+    <Field Def="u8 throwAttackParamChange:1" />
+    <Field Def="u8 vowType0:1 = 1" />
+    <Field Def="u8 vowType1:1 = 1" />
+    <Field Def="u8 vowType2:1 = 1" />
+    <Field Def="u8 vowType3:1 = 1" />
+    <Field Def="u8 vowType4:1 = 1" />
+    <Field Def="u8 vowType5:1 = 1" />
+    <Field Def="u8 vowType6:1 = 1" />
+    <Field Def="u8 vowType7:1 = 1" />
+    <Field Def="u8 vowType8:1 = 1" />
+    <Field Def="u8 vowType9:1 = 1" />
+    <Field Def="u8 vowType10:1 = 1" />
+    <Field Def="u8 vowType11:1 = 1" />
+    <Field Def="u8 vowType12:1 = 1" />
+    <Field Def="u8 vowType13:1 = 1" />
+    <Field Def="u8 vowType14:1 = 1" />
+    <Field Def="u8 vowType15:1 = 1" />
+    <Field Def="u8 repAtkDmgLv" />
+    <Field Def="f32 sightSearchRate" />
+    <Field Def="u8 effectTargetOpposeTarget:1 = 1" />
+    <Field Def="u8 effectTargetFriendlyTarget:1 = 1" />
+    <Field Def="u8 effectTargetSelfTarget:1 = 1" />
+    <Field Def="u8 effectTargetPcHorse:1" />
+    <Field Def="u8 effectTargetPcDeceased:1" />
+    <Field Def="u8 isContractSpEffectLife:1" />
+    <Field Def="u8 isWaitModeDelete:1" />
+    <Field Def="u8 isIgnoreNoDamage:1" />
+    <Field Def="s8 changeTeamType = -1" />
+    <Field Def="s16 dmypolyId = -1" />
+    <Field Def="s32 vfxId = -1" />
+    <Field Def="s32 accumuOverFireId = -1" />
+    <Field Def="s32 accumuOverVal = -1" />
+    <Field Def="s32 accumuUnderFireId = -1" />
+    <Field Def="s32 accumuUnderVal = -1" />
+    <Field Def="s32 accumuVal" />
+    <Field Def="u8 eye_angX" />
+    <Field Def="u8 eye_angY" />
+    <Field Def="s16 addDeceasedLv" />
+    <Field Def="s32 unknown" />
+    <Field Def="s32 vfxId1 = -1" />
+    <Field Def="s32 vfxId2 = -1" />
+    <Field Def="s32 vfxId3 = -1" />
+    <Field Def="s32 vfxId4 = -1" />
+    <Field Def="s32 vfxId5 = -1" />
+    <Field Def="s32 vfxId6 = -1" />
+    <Field Def="s32 vfxId7 = -1" />
+    <Field Def="s32 freezeAttackPower" />
+    <Field Def="s32 AppearAiSoundId" />
+    <Field Def="s16 addFootEffectSfxId = -1" />
+    <Field Def="s8 unknown2" />
+    <Field Def="s8 teamOffenseEffectivity" />
+    <Field Def="f32 toughnessDamageCutRate" />
+    <Field Def="f32 weakDmgRateA" />
+    <Field Def="f32 weakDmgRateB" />
+    <Field Def="f32 weakDmgRateC" />
+    <Field Def="f32 weakDmgRateD" />
+    <Field Def="f32 weakDmgRateE" />
+    <Field Def="f32 weakDmgRateF" />
+    <Field Def="f32 darkDamageCutRate" />
+    <Field Def="f32 darkDiffenceRate" />
+    <Field Def="s32 darkDiffence" />
+    <Field Def="f32 darkAttackRate" />
+    <Field Def="f32 darkAttackPowerRate" />
+    <Field Def="s32 darkAttackPower" />
+    <Field Def="f32 antiDarkSightRadius" />
+    <Field Def="s32 antiDarkSightDmypolyId = -1" />
+    <Field Def="f32 conditionHpRate" />
+    <Field Def="f32 consumeStaminaRate" />
+    <Field Def="f32 itemDropRate" />
+    <Field Def="f32 unknown3" />
+    <Field Def="s32 changePoisonResistPoint" />
+    <Field Def="s32 changeDiseaseResistPoint" />
+    <Field Def="s32 changeBloodResistPoint" />
+    <Field Def="s32 changeCurseResistPoint" />
+    <Field Def="s32 changeFreezeResistPoint" />
+    <Field Def="f32 slashAttackRate" />
+    <Field Def="f32 blowAttackRate" />
+    <Field Def="f32 thrustAttackRate" />
+    <Field Def="f32 neutralAttackRate" />
+    <Field Def="f32 slashAttackPowerRate" />
+    <Field Def="f32 blowAttackPowerRate" />
+    <Field Def="f32 thrustAttackPowerRate" />
+    <Field Def="f32 neutralAttackPowerRate" />
+    <Field Def="s32 slashAttackPower" />
+    <Field Def="s32 blowAttackPower" />
+    <Field Def="s32 thrustAttackPower" />
+    <Field Def="s32 neutralAttackPower" />
+    <Field Def="s32 changeStrengthPoint" />
+    <Field Def="s32 changeAgilityPoint" />
+    <Field Def="s32 changeMagicPoint" />
+    <Field Def="s32 changeFaithPoint" />
+    <Field Def="s32 changeLuckPoint" />
+    <Field Def="s8 recoverArtsPoint_Str" />
+    <Field Def="s8 recoverArtsPoint_Dex" />
+    <Field Def="s8 recoverArtsPoint_Magic" />
+    <Field Def="s8 recoverArtsPoint_Miracle" />
+    <Field Def="u8 wetConditionDepth" />
+    <Field Def="u8 disableFreeze:1" />
+    <Field Def="u8 isUseStatusAilmentAtkPowerCorrect:1" />
+    <Field Def="u8 isUseAtkParamAtkPowerCorrect:1" />
+    <Field Def="u8 isHollowingCorrection:1" />
+    <Field Def="u8 affectedByDurationContraction:1" />
+    <Field Def="u8 waitForTriggerStateInfo:1" />
+    <Field Def="u8 ignoreNoDamage:1" />
+    <Field Def="u8 isDisableNetSync:1" />
+    <Field Def="u8 eyeAngleUpper_around" />
+    <Field Def="u8 eyeAngleUpper_bottom" />
+    <Field Def="f32 saReceiveDamageRate" />
+    <Field Def="f32 defPlayerDmgCorrectRate_Physics" />
+    <Field Def="f32 defPlayerDmgCorrectRate_Magic" />
+    <Field Def="f32 defPlayerDmgCorrectRate_Fire" />
+    <Field Def="f32 defPlayerDmgCorrectRate_Thunder" />
+    <Field Def="f32 defPlayerDmgCorrectRate_Dark" />
+    <Field Def="f32 defEnemyDmgCorrectRate_Physics" />
+    <Field Def="f32 defEnemyDmgCorrectRate_Magic" />
+    <Field Def="f32 defEnemyDmgCorrectRate_Fire" />
+    <Field Def="f32 defEnemyDmgCorrectRate_Thunder" />
+    <Field Def="f32 defEnemyDmgCorrectRate_Dark" />
+    <Field Def="f32 defObjDmgCorrectRate" />
+    <Field Def="f32 atkPlayerDmgCorrectRate_Physics" />
+    <Field Def="f32 atkPlayerDmgCorrectRate_Magic" />
+    <Field Def="f32 atkPlayerDmgCorrectRate_Fire" />
+    <Field Def="f32 atkPlayerDmgCorrectRate_Thunder" />
+    <Field Def="f32 atkPlayerDmgCorrectRate_Dark" />
+    <Field Def="f32 atkEnemyDmgCorrectRate_Physics" />
+    <Field Def="f32 atkEnemyDmgCorrectRate_Magic" />
+    <Field Def="f32 atkEnemyDmgCorrectRate_Fire" />
+    <Field Def="f32 atkEnemyDmgCorrectRate_Thunder" />
+    <Field Def="f32 atkEnemyDmgCorrectRate_Dark" />
+    <Field Def="f32 registFreezeChangeRate" />
+    <Field Def="s16 invocationConditionsStateChange1" />
+    <Field Def="s16 invocationConditionsStateChange2" />
+    <Field Def="s16 invocationConditionsStateChange3" />
+    <Field Def="u8 affectPyromancy" />
+    <Field Def="u8 fakeDexterity_castSpeed" />
+    <Field Def="f32 value_Magnification" />
+    <Field Def="f32 artsConsumptionRate" />
+    <Field Def="f32 magicConsumptionRate" />
+    <Field Def="f32 shamanConsumptionRate" />
+    <Field Def="f32 miracleConsumptionRate" />
+    <Field Def="s32 changeHpEstusFlaskRate" />
+    <Field Def="s32 changeHpEstusFlaskPoint" />
+    <Field Def="s32 changeMpEstusFlaskRate" />
+    <Field Def="s32 changeMpEstusFlaskPoint" />
+    <Field Def="f32 changeHpEstusFlaskCorrectRate" />
+    <Field Def="f32 changeMpEstusFlaskCorrectRate" />
+    <Field Def="s32 applyIdOnGetSoul" />
+    <Field Def="f32 extendLifeRate" />
+    <Field Def="f32 contractLifeRate" />
+    <Field Def="u8 behaviorJudgeId_add0" />
+    <Field Def="u8 behaviorJudgeId_add1" />
+    <Field Def="s16 effectEndDeleteDecalGroupId = -1" />
+    <Field Def="f32 defObjectAttackPowerRate" />
+    <Field Def="s8 addLifeForceStatus" />
+    <Field Def="s8 addWillpowerStatus" />
+    <Field Def="s8 addEndureStatus" />
+    <Field Def="s8 addVitalityStatus" />
+    <Field Def="s8 addStrengthStatus" />
+    <Field Def="s8 addDexterityStatus" />
+    <Field Def="s8 addMagicStatus" />
+    <Field Def="s8 addFaithStatus" />
+    <Field Def="s8 addLuckStatus" />
+    <Field Def="s8 deleteCriteriaDamage = -1" />
+    <Field Def="dummy8 pad10[14]" />
+  </Fields>
+</PARAMDEF>

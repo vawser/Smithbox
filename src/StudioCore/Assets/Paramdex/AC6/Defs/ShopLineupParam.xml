@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SHOP_LINEUP_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 equipId"></Field>
+    <Field Def="s32 value"></Field>
+    <Field Def="s32 mtrlId"></Field>
+    <Field Def="s32 eventFlag_forStock"></Field>
+    <Field Def="s32 eventFlag_forRelease"></Field>
+    <Field Def="s16 sellQuantity"></Field>
+    <Field Def="s16 Unk0x16"></Field>
+    <Field Def="s16 Unk0x18"></Field>
+    <Field Def="u16 UnkUshort0x1A"></Field>
+    <Field Def="s32 UnkInt0x1C"></Field>
+  </Fields>
+</PARAMDEF>

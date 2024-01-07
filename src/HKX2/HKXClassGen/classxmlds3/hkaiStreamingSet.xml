@@ -1,0 +1,9 @@
+<class name='hkaiStreamingSet' version='1' signature='0xa742bd7d' size='56'>
+  <members>
+    <member name='thisUid' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='oppositeUid' offset='4' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='meshConnections' offset='8' ctype='hkaiStreamingSetNavMeshConnection' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='graphConnections' offset='24' ctype='hkaiStreamingSetGraphConnection' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='volumeConnections' offset='40' ctype='hkaiStreamingSetVolumeConnection' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

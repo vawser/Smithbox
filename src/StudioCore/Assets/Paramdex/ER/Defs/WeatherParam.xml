@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>WEATHER_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 SfxId = -1">
+      <DisplayName>天候SfxId(共通)</DisplayName>
+      <Description>天候用SfxId -1：天候Sfxなし 屋内屋外共通で出すものを設定。インタラクティブパーティクルの雨粒など、雨遮蔽(AboveShadow)で消せるものはこちらでOK</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+    </Field>
+    <Field Def="s32 WindSfxId = -1">
+      <DisplayName>風SfxId(屋外)</DisplayName>
+      <Description>風SfxId -1：風Sfxなし 屋外のみ作成されます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 GroundHitSfxId = -1">
+      <DisplayName>地面ヒットエフェクト用SfxId</DisplayName>
+      <Description>地面ヒットエフェクト用SfxId -1：地面ヒットエフェクト用なし</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s32 SoundId = -1">
+      <DisplayName>天候用SoundId(共通)</DisplayName>
+      <Description>天候用SoundId -1：Soundなし</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="f32 WetTime = -1">
+      <DisplayName>濡れ時間(秒)</DisplayName>
+      <Description>完全に濡れるまでの時間(m00_00_0000_WeatherBaseのウェイトが1.0になるまでの時間) -1：濡れなし(m00_00_0000_WeatherBaseは0.0のまま)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>128</Maximum>
+      <Increment>1</Increment>
+      <SortID>2001</SortID>
+    </Field>
+    <Field Def="u32 GparamId">
+      <DisplayName>天候用GparamId</DisplayName>
+      <Description>屋外天候用Gparam(m00_00_?XXX_WeatherOutdoor.gparamxml)のXXXの部分を指定する。天候間で使用するGparamの共有が可能。</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u32 NextLotIngameSecondsMin = 3600">
+      <DisplayName>次回天候抽選までの最小時間(インゲーム秒)</DisplayName>
+      <Description>次回天候抽選までの時間の最最小値をインゲーム秒単位で指定します。この天候に遷移時、次の天候までの時間が最小から最大の間のランダムな時間になります。</Description>
+      <EditFlags>None</EditFlags>
+      <Increment>0</Increment>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="u32 NextLotIngameSecondsMax = 7200">
+      <DisplayName>次回天候抽選までの最大時間(インゲーム秒)</DisplayName>
+      <Description>次回天候抽選までの時間の最大値をインゲーム秒単位で指定します。この天候に遷移時、次の天候までの時間が最小から最大の間のランダムな時間になります。</Description>
+      <EditFlags>None</EditFlags>
+      <SortID>3001</SortID>
+    </Field>
+    <Field Def="s32 WetSpEffectId00 = -1">
+      <DisplayName>濡れ特殊効果ID_00</DisplayName>
+      <Description>キャラに掛かる特殊効果ID(-1：なし)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s32 WetSpEffectId01 = -1">
+      <DisplayName>濡れ特殊効果ID_01</DisplayName>
+      <Description>キャラに掛かる特殊効果ID(-1：なし)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>4001</SortID>
+    </Field>
+    <Field Def="s32 WetSpEffectId02 = -1">
+      <DisplayName>濡れ特殊効果ID_02</DisplayName>
+      <Description>キャラに掛かる特殊効果ID(-1：なし)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>4002</SortID>
+    </Field>
+    <Field Def="s32 WetSpEffectId03 = -1">
+      <DisplayName>濡れ特殊効果ID_03</DisplayName>
+      <Description>キャラに掛かる特殊効果ID(-1：なし)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>4003</SortID>
+    </Field>
+    <Field Def="s32 WetSpEffectId04 = -1">
+      <DisplayName>濡れ特殊効果ID_04</DisplayName>
+      <Description>キャラに掛かる特殊効果ID(-1：なし)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>4004</SortID>
+    </Field>
+    <Field Def="s32 SfxIdInoor = -1">
+      <DisplayName>天候SfxId(屋内)</DisplayName>
+      <Description>天候用SfxId -1：天候Sfxなし　屋内のみ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 SfxIdOutdoor = -1">
+      <DisplayName>天候SfxId(屋外)</DisplayName>
+      <Description>天候用SfxId -1：天候Sfxなし　屋外のみ</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="f32 aiSightRate = 1">
+      <DisplayName>AI視界倍率</DisplayName>
+      <Description>AI視界倍率</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="f32 DistViewWeatherGparamOverrideWeight = -1">
+      <DisplayName>遠見台カメラ中ウェイト値上書き</DisplayName>
+      <Description>遠見台カメラ中ウェイト値上書き(SEQ16724)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>2050</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

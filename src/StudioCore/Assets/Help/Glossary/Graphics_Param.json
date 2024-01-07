@@ -1,0 +1,14 @@
+{
+    "Title": "GFX",
+    "Tags": [
+        "Format",
+        "UI",
+        "Interface"
+    ],
+    "Contents": [
+        "An animation file that contains vector and raster graphics in a format",
+        "similar to the .SWF file format.",
+        "",
+        "Tools such as JPEXS Flash Decompiler can be used to edit these files."
+    ]
+}

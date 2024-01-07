@@ -1,0 +1,10 @@
+<class name='hkResourceBase' version='1' signature='0x2344afe9' size='16' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='TYPE_RESOURCE' value='0'/>
+      <enumitem name='TYPE_CONTAINER' value='1'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

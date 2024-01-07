@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="GRASS_CLUSTER_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+    </Enum>
+    <Enum Name="GRASS_DISTRIBUTION_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="GRASS_FLAT_SPLIT_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="GRASS_SHADOW_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="GRASS_DITHERING_TYPE_ENUM" type="u8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+  </Enums>
+  <Field>
+    <lodRange AltName="LOD Distance" Wiki="" />
+    <lod0ClusterType AltName="LOD 0 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />
+    <lod1ClusterType AltName="LOD 1 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />
+    <lod2ClusterType AltName="LOD 2 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />
+    <pad0 AltName=""/>
+    <distributionType AltName="Placement Method" Wiki="" Enum="GRASS_DISTRIBUTION_TYPE_ENUM" />
+    <baseDensity AltName="Base Density" Wiki="" />
+    <model0Name AltName="Model Name [0]" Wiki="" />
+    <flatTextureName AltName="Flat Texture Name" Wiki="" />
+    <billboardTextureName AltName="Billboard Texture Name" Wiki="" />
+    <normalInfluence AltName="Effect of Tilt %" Wiki="" />
+    <inclinationMax AltName="Maximum Tilt Angle" Wiki="" />
+    <inclinationJitter AltName="Randomness of Tilt Angle" Wiki="" />
+    <scaleBaseMin AltName="Width Scale - Min" Wiki="" />
+    <scaleBaseMax AltName="Width Scale - Max" Wiki="" />
+    <scaleHeightMin AltName="Height Scale - Min" Wiki="" />
+    <scaleHeightMax AltName="Height Scale - Max" Wiki="" />
+    <colorShade1_r AltName="Color Shade [1] R" Wiki="" />
+    <colorShade1_g AltName="Color Shade [1] G" Wiki="" />
+    <colorShade1_b AltName="Color Shade [1] B" Wiki="" />
+    <colorShade2_r AltName="Color Shade [2] R" Wiki="" />
+    <colorShade2_g AltName="Color Shade [1] G" Wiki="" />
+    <colorShade2_b AltName="Color Shade [1] B" Wiki="" />
+    <flatSplitType AltName="Plane Split Type" Wiki="" Enum="GRASS_FLAT_SPLIT_TYPE_ENUM" />
+    <flatBladeCount AltName="Number of Planes" Wiki="" />
+    <flatSlant AltName="Plane Angle" Wiki="" />
+    <flatRadius AltName="Plane Distance" Wiki="" />
+    <castShadow AltName="Cast Shadow" Wiki="" Enum="GRASS_SHADOW_TYPE_ENUM" />
+    <windAmplitude AltName="Wind Amplitude" Wiki="" />
+    <pad1 AltName=""/>
+    <windCycle AltName="Wind Speed" Wiki="" />
+    <orientationAngle AltName="Direction" Wiki="Random for -1" />
+    <orientationRange AltName="Direction Range" Wiki="" />
+    <spacing AltName="Model Spacing" Wiki="" />
+    <dithering AltName="Dithering" Wiki="" Enum="GRASS_DITHERING_TYPE_ENUM" />
+    <pad AltName=""/>
+    <simpleModelName AltName="Simple Model Name" Wiki="" />
+    <model1Name AltName="Model Name [1]" Wiki="" />
+  </Field>
+  <Self />
+</PARAMMETA>

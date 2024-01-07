@@ -1,0 +1,5 @@
+<class name='hkpPhysicsSystemWithContacts' version='1' signature='0xae5356fe' size='120' parent='hkpPhysicsSystem'>
+  <members>
+    <member name='contacts' offset='104' ctype='hkpSerializedAgentNnEntry' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

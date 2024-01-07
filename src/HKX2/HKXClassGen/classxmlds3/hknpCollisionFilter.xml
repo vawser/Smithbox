@@ -1,0 +1,14 @@
+<class name='hknpCollisionFilter' version='1' signature='0x1c7179c4' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='TYPE_UNKNOWN' value='0'/>
+      <enumitem name='TYPE_CONSTRAINT' value='1'/>
+      <enumitem name='TYPE_GROUP' value='2'/>
+      <enumitem name='TYPE_PAIR' value='3'/>
+      <enumitem name='TYPE_USER' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='Type' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

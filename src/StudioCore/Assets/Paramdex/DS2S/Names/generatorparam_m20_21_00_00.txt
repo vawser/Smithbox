@@ -1,0 +1,107 @@
+1 [GEN:1] Chancellor Wellager
+40 [GEN:40] Darkdiver Grandahl
+41 [GEN:41] Darkdiver Grandahl
+60 [GEN:60] Benhart of Jugo
+61 [GEN:61] Benhart of Jugo
+205 [GEN:205] Emerald Herald
+235 [GEN:235] Nashandra (human)
+305 [GEN:305] Imprisoned Milfanito
+306 [GEN:306] Imprisoned Milfanito
+400 [GEN:400] Emerald Herald
+670 [GEN:670] Royal Sorcerer Navlaan
+671 [GEN:671] Nameless Usurper
+676 [GEN:676] Benhart of Jugo
+677 [GEN:677] Vengarl
+678 [GEN:678] Benhart of Jugo
+679 [GEN:679] Ashen Knight Boyd
+680 [GEN:680] Bradley of the Old Guard
+681 [GEN:681] Pilgrim Bellclaire
+682 [GEN:682] Bashful Ray
+683 [GEN:683] Sellsword Luet
+825 [GEN:825] Looking Glass Knight
+859 [GEN:859] Nashandra
+860 [GEN:860] Throne Defender
+862 [GEN:862] Throne Watcher
+863 [GEN:863] Twin Dragonrider
+864 [GEN:864] Twin Dragonrider
+910 [GEN:910] Aldia- Scholar of the First Sin (boss)
+917 [GEN:917] Aldia- Scholar of the First Sin
+968 [GEN:968] Forlorn
+1000 [GEN:1000] Primal Knight
+1010 [GEN:1010] Primal Knight
+1020 [GEN:1020] Drakekeeper Knight Phantom
+1030 [GEN:1030] Royal Soldier
+1031 [GEN:1031] Royal Soldier
+1053 [GEN:1053] Royal Soldier
+1070 [GEN:1070] Syan Knight
+1071 [GEN:1071] Syan Knight
+1073 [GEN:1073] Syan Knight
+1090 [GEN:1090] Royal Soldier
+1091 [GEN:1091] Royal Soldier
+1092 [GEN:1092] Royal Soldier
+1098 [GEN:1098] Crystal Lizard
+1100 [GEN:1100] Syan Knight
+1220 [GEN:1220] Syan Knight
+1221 [GEN:1221] Syan Knight
+1222 [GEN:1222] Syan Knight
+1230 [GEN:1230] Royal Soldier
+1296 [GEN:1296] Syan Knight
+1300 [GEN:1300] Stone Soldier
+1302 [GEN:1302] Stone Soldier
+1306 [GEN:1306] Stone Soldier
+1307 [GEN:1307] Stone Soldier
+1308 [GEN:1308] Stone Soldier
+1310 [GEN:1310] Stone Soldier
+1312 [GEN:1312] Stone Soldier
+1313 [GEN:1313] Stone Soldier
+1316 [GEN:1316] Stone Soldier
+1317 [GEN:1317] Stone Soldier
+1320 [GEN:1320] Ruin Sentinel
+1325 [GEN:1325] Ruin Sentinel
+1330 [GEN:1330] Ruin Sentinel
+1335 [GEN:1335] Ruin Sentinel
+1340 [GEN:1340] Ruin Sentinel
+1360 [GEN:1360] Stone Soldier
+1361 [GEN:1361] Stone Soldier
+1362 [GEN:1362] Stone Soldier
+1363 [GEN:1363] Stone Soldier
+1364 [GEN:1364] Stone Soldier
+1365 [GEN:1365] Stone Soldier
+1366 [GEN:1366] Stone Soldier
+1367 [GEN:1367] Stone Soldier
+1368 [GEN:1368] Stone Soldier
+1410 [GEN:1410] Royal Soldier
+1420 [GEN:1420] Royal Soldier
+1430 [GEN:1430] Royal Soldier
+1431 [GEN:1431] Royal Soldier
+1510 [GEN:1510] Royal Soldier
+1550 [GEN:1550] Syan Knight
+1560 [GEN:1560] Syan Knight
+1561 [GEN:1561] Syan Knight
+1570 [GEN:1570] Syan Knight
+1591 [GEN:1591] Royal Soldier
+1610 [GEN:1610] Royal Soldier
+1703 [GEN:1703] Alonne Captain
+3010 [GEN:3010] Stone Knight
+3020 [GEN:3020] Stone Knight
+3030 [GEN:3030] Stone Knight
+3040 [GEN:3040] Stone Knight
+3100 [GEN:3100] Washing Pole Phantom
+5000 [GEN:5000] Looking Glass Phantom (Faraam)
+5001 [GEN:5001] Looking Glass Phantom (Knight)
+8000 [GEN:8000] The Pursuer
+8010 [GEN:8010] The Pursuer
+9000 [GEN:9000] Belfry Gargoyle
+9010 [GEN:9010] Executioner's Chariot
+9040 [GEN:9040] Dark Stalker
+9050 [GEN:9050] Wall Ghost
+9051 [GEN:9051] Wall Ghost
+9060 [GEN:9060] Desert Sorceress
+9061 [GEN:9061] Desert Sorceress
+9080 [GEN:9080] Manikin
+9081 [GEN:9081] Manikin
+9200 [GEN:9200] Invisible Hollow
+9201 [GEN:9201] Invisible Hollow
+9202 [GEN:9202] Invisible Hollow
+9300 [GEN:9300] Mimic
+9953 [GEN:9953] Royal Soldier

@@ -1,0 +1,14 @@
+<class name='hkbShapeSetup' version='1' signature='0xd7ff86be' size='24'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='CAPSULE' value='0'/>
+      <enumitem name='FILE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='capsuleHeight' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='capsuleRadius' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fileName' offset='8' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='16' etype='Type' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

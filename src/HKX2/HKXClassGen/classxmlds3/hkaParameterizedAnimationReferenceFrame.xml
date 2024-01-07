@@ -1,0 +1,14 @@
+<class name='hkaParameterizedAnimationReferenceFrame' version='1' signature='0x3f2c9910' size='128' parent='hkaDefaultAnimatedReferenceFrame'>
+  <enums>
+    <enum name='ParameterType' flags='00000000'>
+      <enumitem name='UNKNOWN' value='0'/>
+      <enumitem name='LINEAR_SPEED' value='1'/>
+      <enumitem name='LINEAR_DIRECTION' value='2'/>
+      <enumitem name='TURN_SPEED' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='parameterValues' offset='96' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='parameterTypes' offset='112' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

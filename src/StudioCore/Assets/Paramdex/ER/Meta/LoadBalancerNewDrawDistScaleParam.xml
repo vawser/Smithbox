@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <DrawDist_LvBegin AltName="Draw Distance - Level Start" Wiki="Drawing distance scale activation level (start)" />
+    <DrawDist_LvEnd AltName="Draw Distance - Level End" Wiki="Drawing distance scale activation level (completed)" />
+    <reserve0 AltName=""/>
+    <DrawDist_ScaleBegin AltName="Draw Distance - Scale Start" Wiki="Drawing distance scale (start)" />
+    <DrawDist_ScaleEnd AltName="Draw Distance - Scale End" Wiki="Drawing distance scale (completed)" />
+    <ShadwDrawDist_LvBegin AltName="Shadow Draw Distance - Level Start" Wiki="Shadow drawing distance scale activation level (start)" />
+    <ShadwDrawDist_LvEnd AltName="Shadow Draw Distance - Level End" Wiki="Shadow drawing distance scale activation level (completed)" />
+    <reserve1 AltName=""/>
+    <ShadwDrawDist_ScaleBegin AltName="Shadow Draw Distance - Scale Start" Wiki="Shadow drawing distance scale (start)" />
+    <ShadwDrawDist_ScaleEnd AltName="Shadow Draw Distance - Scale End" Wiki="Shadow drawing distance scale (completed)" />
+    <reserve2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

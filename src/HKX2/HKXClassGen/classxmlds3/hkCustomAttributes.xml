@@ -1,0 +1,5 @@
+<class name='hkCustomAttributes' version='1' signature='0xbff19005' size='16'>
+  <members>
+    <member name='attributes' offset='0' ctype='hkCustomAttributesAttribute' vtype='TYPE_SIMPLEARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

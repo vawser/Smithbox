@@ -1,0 +1,7 @@
+<class name='hkaiStreamingCollection' version='1' signature='0x5ff447a4' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='isTemporary' offset='16' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tree' offset='24' ctype='hkcdDynamicAabbTree' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='instances' offset='32' ctype='hkaiStreamingCollectionInstanceInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

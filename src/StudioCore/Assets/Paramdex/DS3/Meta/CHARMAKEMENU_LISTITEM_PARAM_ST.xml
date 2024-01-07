@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <Value AltName="Value" />
+    <CaptionId AltName="Caption ID" FmgRef="Modern_MenuText"/>
+    <IconID AltName="Icon ID" />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="List data for the Character Make Menu"/>
+</PARAMMETA>

@@ -1,0 +1,18 @@
+<class name='hkpCollisionFilter' version='1' signature='0x23f26829' size='72' parent='hkReferencedObject'>
+  <enums>
+    <enum name='hkpFilterType' flags='00000000'>
+      <enumitem name='HK_FILTER_UNKNOWN' value='0'/>
+      <enumitem name='HK_FILTER_NULL' value='1'/>
+      <enumitem name='HK_FILTER_GROUP' value='2'/>
+      <enumitem name='HK_FILTER_LIST' value='3'/>
+      <enumitem name='HK_FILTER_CUSTOM' value='4'/>
+      <enumitem name='HK_FILTER_PAIR' value='5'/>
+      <enumitem name='HK_FILTER_CONSTRAINT' value='6'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='prepad' offset='48' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='56' etype='hkpFilterType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='postpad' offset='60' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

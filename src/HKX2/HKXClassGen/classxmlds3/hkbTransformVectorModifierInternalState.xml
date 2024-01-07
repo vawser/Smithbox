@@ -1,0 +1,5 @@
+<class name='hkbTransformVectorModifierInternalState' version='1' signature='0xaf072eff' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='vectorOut' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

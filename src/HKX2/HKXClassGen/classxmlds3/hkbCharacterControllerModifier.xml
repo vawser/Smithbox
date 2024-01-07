@@ -1,0 +1,24 @@
+<class name='hkbCharacterControllerModifier' version='1' signature='0x74239623' size='176' parent='hkbModifier'>
+  <enums>
+    <enum name='InitialVelocityCoordinates' flags='00000000'>
+      <enumitem name='INITIAL_VELOCITY_IN_WORLD_COORDINATES' value='0'/>
+      <enumitem name='INITIAL_VELOCITY_IN_MODEL_COORDINATES' value='1'/>
+    </enum>
+    <enum name='MotionMode' flags='00000000'>
+      <enumitem name='MOTION_MODE_FOLLOW_ANIMATION' value='0'/>
+      <enumitem name='MOTION_MODE_DYNAMIC' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='controlData' offset='88' ctype='hkbCharacterControllerModifierControlData' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initialVelocity' offset='112' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initialVelocityCoordinates' offset='128' etype='InitialVelocityCoordinates' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motionMode' offset='129' etype='MotionMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='forceDownwardMomentum' offset='130' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='applyGravity' offset='131' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='setInitialVelocity' offset='132' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isTouchingGround' offset='133' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='gravity' offset='144' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='isInitialVelocityAdded' offset='160' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

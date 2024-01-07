@@ -1,0 +1,5 @@
+<class name='hkpStorageMeshShape' version='1' signature='0x3f098bff' size='144' parent='hkpMeshShape'>
+  <members>
+    <member name='storage' offset='128' ctype='hkpStorageMeshShapeSubpartStorage' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

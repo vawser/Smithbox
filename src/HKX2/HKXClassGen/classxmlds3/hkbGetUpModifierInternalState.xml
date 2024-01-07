@@ -1,0 +1,7 @@
+<class name='hkbGetUpModifierInternalState' version='1' signature='0x859fca24' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='timeSinceBegin' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='timeStep' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initNextModify' offset='24' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

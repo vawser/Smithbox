@@ -1,0 +1,11 @@
+{
+    "Title": "Param Editor",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "The Param Editor allows you to edit the params used by the game.",
+        "Params are rows of data that determine almost everything related to the",
+        "data side of a game."
+    ]
+}

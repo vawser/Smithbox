@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENUPROPERTY_LAYOUT</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstr LayoutPath[16]"></Field>
+    <Field Def="s32 PropertyID"></Field>
+    <Field Def="s32 CaptionTextID"></Field>
+    <Field Def="s32 HelpTextID"></Field>
+    <Field Def="dummy8 reserved[4]"></Field>
+  </Fields>
+</PARAMDEF>

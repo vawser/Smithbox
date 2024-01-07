@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <AssetId_0 AltName="Asset ID [0]" Wiki="AssetId_0 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_1 AltName="Asset ID [1]" Wiki="AssetId_1 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_2 AltName="Asset ID [2]" Wiki="AssetId_2 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_3 AltName="Asset ID [3]" Wiki="AssetId_3 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_4 AltName="Asset ID [4]" Wiki="AssetId_4 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_5 AltName="Asset ID [5]" Wiki="AssetId_5 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_6 AltName="Asset ID [6]" Wiki="AssetId_6 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_7 AltName="Asset ID [7]" Wiki="AssetId_7 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <CreateWeight_0 AltName="Create Weight [0]" Wiki="Appearance ratio point (weight) _0 0 is ignored" />
+    <CreateWeight_1 AltName="Create Weight [1]" Wiki="Appearance ratio point (weight) _1" />
+    <CreateWeight_2 AltName="Create Weight [2]" Wiki="Appearance ratio point (weight) _2" />
+    <CreateWeight_3 AltName="Create Weight [3]" Wiki="Appearance ratio point (weight) _3" />
+    <CreateWeight_4 AltName="Create Weight [4]" Wiki="Appearance ratio point (weight) _4" />
+    <CreateWeight_5 AltName="Create Weight [5]" Wiki="Appearance ratio point (weight) _5" />
+    <CreateWeight_6 AltName="Create Weight [6]" Wiki="Appearance ratio point (weight) _6" />
+    <CreateWeight_7 AltName="Create Weight [7]" Wiki="Appearance ratio point (weight) _7" />
+    <Reserve_0 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

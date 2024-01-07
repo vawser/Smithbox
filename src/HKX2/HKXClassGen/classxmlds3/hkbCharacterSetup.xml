@@ -1,0 +1,14 @@
+<class name='hkbCharacterSetup' version='1' signature='0x7490ff0d' size='104' parent='hkReferencedObject'>
+  <members>
+    <member name='retargetingSkeletonMappers' offset='16' ctype='hkaSkeletonMapper' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animationSkeleton' offset='32' ctype='hkaSkeleton' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ragdollToAnimationSkeletonMapper' offset='40' ctype='hkaSkeletonMapper' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animationToRagdollSkeletonMapper' offset='48' ctype='hkaSkeletonMapper' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animationBindingSet' offset='56' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='data' offset='64' ctype='hkbCharacterData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='unscaledAnimationSkeleton' offset='72' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='mirroredSkeleton' offset='80' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='characterPropertyIdMap' offset='88' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='criticalSection' offset='96' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

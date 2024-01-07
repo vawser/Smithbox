@@ -1,0 +1,13 @@
+<class name='hclVertexFloatInput' version='1' signature='0xf7629ecf' size='16'>
+  <enums>
+    <enum name='VertexFloatType' flags='00000000'>
+      <enumitem name='VERTEX_FLOAT_CONSTANT' value='0'/>
+      <enumitem name='VERTEX_FLOAT_CHANNEL' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='0' etype='VertexFloatType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constantValue' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='channelName' offset='8' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

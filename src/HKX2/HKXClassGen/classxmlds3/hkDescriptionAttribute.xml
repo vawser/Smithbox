@@ -1,0 +1,5 @@
+<class name='hkDescriptionAttribute' version='1' signature='0xe9f9578a' size='8'>
+  <members>
+    <member name='string' offset='0' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

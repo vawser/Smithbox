@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="NPC_BULLET_PENETRATE_DEF_TYPE" type="u8">
+      <Option Value="0" Name="Low" />
+      <Option Value="1" Name="Normal" />
+    </Enum>
+  </Enums>
+  <Field>
+    <damageLevelConvThresholdParamId AltName="Stability Threshold Ref (DamageLevelConvThresholdParam ID)" Refs="DamageLevelConvThresholdParam" Wiki="Determines attitude stability behavior." />
+    <npcEquipPartsParamId AltName="NpcEquipPartsParam ID" Refs="NpcEquipPartsParam" />
+    <npcMaterialParamReference AltName="NpcMaterialParam Reference" Wiki="Affects NPC design, such as paint.\nReferences rows in NpcMaterialParam. Rows references seem to be Character ID + this field." />
+    <showStabilityBar AltName="Show Stability Bar" Wiki="If stability bar should appear in UI." IsBool="" />
+    <penetrateDefense AltName="Penetration Defense" Enum="NPC_BULLET_PENETRATE_DEF_TYPE" Wiki="Affects which bullets penetrate this character. See Bullet param chrPenetrateType." />
+  </Field>
+  <Self />
+</PARAMMETA>

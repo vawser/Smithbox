@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MAGIC_AI_NOTIFY_TYPE" type="u8">
+      <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
+      <Option Value="0" Name="Attack" />
+      <Option Value="1" Name="Bullet" />
+      <Option Value="2" Name="SpEffect" />
+    </Enum>
+    <Enum Name="MAGIC_CATEGORY" type="u8">
+      <Option Value="0" Name="Sorcery" />
+      <Option Value="1" Name="Incantation" />
+      <Option Value="2" Name="Unused" />
+    </Enum>
+    <Enum Name="BEHAVIOR_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="3" Name="Sorcery" />
+        <Option Value="4" Name="Incantation" />
+    </Enum>
+    <Enum Name="MAGIC_MOTION_TYPE" type="u8">
+        <Option Value="0" Name="Head Clutch" />
+        <Option Value="1" Name="Raise Front, then Quick Cast" />
+        <Option Value="2" Name="Raise Front, then Cast" />
+        <Option Value="4" Name="Raise Side, then Cast" />
+        <Option Value="5" Name="Magic Bow Cast" />
+        <Option Value="6" Name="Float, then Curl Up" />
+        <Option Value="7" Name="Spell Stream" />
+        <Option Value="8" Name="Raise Up, then Cast" />
+        <Option Value="9" Name="Raise Side and Quick Cast" />
+        <Option Value="10" Name="Hold, then Thrust" />
+        <Option Value="11" Name="Enchant - Weapon" />
+        <Option Value="12" Name="Enchant - Shield" />
+        <Option Value="13" Name="Enchant - Raise Weapon" />
+        <Option Value="14" Name="Raise Arms and Slam" />
+        <Option Value="15" Name="Slam, then Hold" />
+        <Option Value="16" Name="Side Swish" />
+        <Option Value="17" Name="Raise, Charge, then Grab" />
+        <Option Value="19" Name="Hold Sidewards, then Release" />
+        <Option Value="20" Name="Frontal Swish" />
+        <Option Value="22" Name="Raise Arms, then Frontal Swing" />
+        <Option Value="23" Name="Emit from Hand" />
+        <Option Value="24" Name="Lift Pose, then Wide Slam" />
+        <Option Value="25" Name="Hold, then Hand Flick" />
+        <Option Value="26" Name="Raise Front, then Smooth Cast" />
+        <Option Value="27" Name="Raise Above, then Fancy Slash" />
+        <Option Value="28" Name="Cross Arms, then Explode" />
+        <Option Value="29" Name="Cross Arms, then Float and Explode" />
+        <Option Value="31" Name="Side Hold, then Slam into Chest" />
+        <Option Value="32" Name="Quick Enchant" />
+        <Option Value="33" Name="Hold Head" />
+        <Option Value="34" Name="Kneel, Hold Head" />
+        <Option Value="35" Name="Kneel, Hold Head, then Stand and Raise Hand" />
+        <Option Value="36" Name="Swing Back, then Focused Slash" />
+        <Option Value="37" Name="Swing Back and Hunch, then Heavy Slash" />
+        <Option Value="38" Name="Frontal Low Slash" />
+        <Option Value="40" Name="Hand to Ground, then Swipe Up" />
+        <Option Value="41" Name="Swing Back High, then Erupt Ground" />
+        <Option Value="42" Name="Focus Front, then Raise Hand Up" />
+        <Option Value="44" Name="Swing Back, then Jump and Slash" />
+        <Option Value="45" Name="Swing Back, then Jump and Slash (Lightning)" />
+        <Option Value="48" Name="Raise Hands, then Lower and Emit" />
+        <Option Value="49" Name="Golden Order Stance, Right Arm Out" />
+        <Option Value="50" Name="Dragon Breath, Emit Forward" />
+        <Option Value="51" Name="Dragon Breath, Emit Sweeping" />
+        <Option Value="52" Name="Float, then Dragon Claw Slam" />
+        <Option Value="54" Name="Float, then Dragon Slam" />
+        <Option Value="55" Name="Dragon Roar" />
+        <Option Value="56" Name="Hold, then Multiple Slams" />
+        <Option Value="57" Name="Hold, Charge, then Stomp" />
+        <Option Value="58" Name="Hold, then Body Emit" />
+        <Option Value="59" Name="Stance, then Raise Hand (Lightning)" />
+        <Option Value="60" Name="Raise Arms Crossed, then Step Release" />
+        <Option Value="66" Name="Emit Frenzy from Eyes" />
+        <Option Value="67" Name="Lesser Dragon Breath" />
+        <Option Value="70" Name="Step Forward, then Spin Tail" />
+        <Option Value="71" Name="Low Stance, then Quick Shield Bash" />
+        <Option Value="74" Name="Low Hold, then Raise and Release" />
+        <Option Value="75" Name="Side Hold, then Smooth Release" />
+        <Option Value="76" Name="Swing Back, then Slow Forward Release" />
+        <Option Value="78" Name="Swing Back, then Slam Hammer" />
+        <Option Value="79" Name="Forward Hold, then Quick Cast" />
+        <Option Value="80" Name="Side Hold, then Quick Slash" />
+        <Option Value="81" Name="Raise Above, then Erupt Chest" />
+        <Option Value="82" Name="Raise Above, then Front Slam" />
+        <Option Value="83" Name="Raise Forward, then Back Swing" />
+        <Option Value="84" Name="Carian Retaliation" />
+        <Option Value="86" Name="Golden Order Stance: Balance Scales Motion" />
+        <Option Value="87" Name="Raise Arms Crossed in Front, then Emit" />
+        <Option Value="88" Name="Clutch Head, then Emit Frenzy" />
+        <Option Value="89" Name="Clutch Head, then Explode Frenzy" />
+        <Option Value="90" Name="Clutch Head, then Writhe" />
+        <Option Value="91" Name="Wide Arms, then Crouch and Emit Upwards" />
+        <Option Value="92" Name="Swing Back, then Hand Upwards" />
+        <Option Value="93" Name="Stagger Hand Up, then Front Sweep" />
+        <Option Value="94" Name="Claw Motions" />
+        <Option Value="95" Name="Raise Hand, then Swish" />
+        <Option Value="98" Name="Crouch, then Leap and Throw Dual Spears (Lightning)" />
+        <Option Value="99" Name="Hand to Ground, then Swipe Up" />
+        <Option Value="100" Name="Erupt from Chest, then Stride Forward" />
+        <Option Value="102" Name="Hold Above, then Slam Down" />
+        <Option Value="103" Name="Raise Hand, then Swish" />
+        <Option Value="104" Name="Raise Above, then Lower and Burst" />
+        <Option Value="105" Name="Hands Foward, then Explode" />
+        <Option Value="106" Name="Hand to Head, then Flick Wrist" />
+        <Option Value="107" Name="Raise Hand, then Wide Swish" />
+        <Option Value="108" Name="Side Hold, Sweep Front" />
+        <Option Value="109" Name="Side Hold, Sweep Above" />
+        <Option Value="110" Name="Raise Hand, then Swish" />
+        <Option Value="111" Name="Hand to Head, then Thrust Up" />
+        <Option Value="112" Name="Enchnat - Weapon" />
+        <Option Value="113" Name="Side Hold, Sweep Front" />
+        <Option Value="114" Name="Hand to Head, then Hunch" />
+        <Option Value="115" Name="Hold Above, then Slam" />
+        <Option Value="116" Name="Sweep Back, then Spinning Slash" />
+        <Option Value="117" Name="Side Hold, Cast Forward" />
+        <Option Value="118" Name="Raise Hand, then Quick Swish" />
+        <Option Value="119" Name="Swing Back, then Jump and Slam" />
+        <Option Value="120" Name="Hold Above, then Slam" />
+        <Option Value="121" Name="Hold Above, then Slam" />
+        <Option Value="122" Name="Hunch, then Floating Leap and Slam" />
+        <Option Value="123" Name="Magma Breath" />
+        <Option Value="124" Name="Raise Hand, then Quick Swish" />
+    </Enum>
+    <Enum Name="GOODS_OPEN_MENU" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Common Interaction" />
+      <Option Value="4" Name="Leave World" />
+      <Option Value="5" Name="Write Message" />
+      <Option Value="10" Name="Invade World (Bloody Finger)" />
+      <Option Value="13" Name="Beckon Spirit Summon" />
+      <Option Value="14" Name="Reveal Summon Signs" />
+      <Option Value="15" Name="Request Aid" />
+      <Option Value="16" Name="Answer Aid Request" />
+      <Option Value="17" Name="Encourage Invasion" />
+      <Option Value="18" Name="Add Summon Sign to Pool" />
+      <Option Value="19" Name="Add Duel Sign to Pool" />
+      <Option Value="20" Name="Place Summon Sign" />
+      <Option Value="21" Name="Invade World (Recusant Finger)" />
+      <Option Value="22" Name="Invade World (Festering Bloody Finger)" />
+    </Enum>
+    <Enum Name="SP_EFFECT_TYPE" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="2" Name="Poison" />
+        <Option Value="3" Name="Unknown" />
+        <Option Value="4" Name="Durability Damage" />
+        <Option Value="5" Name="Scarlet Rot" />
+        <Option Value="6" Name="Hemorrhage" />
+        <Option Value="7" Name="Ghost" />
+        <Option Value="8" Name="Enemy Sight Reduction" />
+        <Option Value="9" Name="Tranquil Walk of Peace" />
+        <Option Value="10" Name="Remove Poison" />
+        <Option Value="11" Name="Remove Scarlet Rot" />
+        <Option Value="12" Name="Remove Hemorrhage" />
+        <Option Value="13" Name="Remove All Status" />
+        <Option Value="14" Name="Humanity Stolen" />
+        <Option Value="15" Name="Telescope" />
+        <Option Value="16" Name="Warp to Grace" />
+        <Option Value="17" Name="Revival" />
+        <Option Value="19" Name="Dispel Black Phantom" />
+        <Option Value="22" Name="Unknown" />
+        <Option Value="23" Name="OnReviveMagic" />
+        <Option Value="24" Name="Disables Spell Usage" />
+        <Option Value="28" Name="Right-hand Buff VFX" />
+        <Option Value="29" Name="Body Buff VFX" />
+        <Option Value="31" Name="Ghost Parameter Change" />
+        <Option Value="32" Name="Middle of Paralysis" />
+        <Option Value="34" Name="Giant Slime Freezing" />
+        <Option Value="35" Name="Unknown" />
+        <Option Value="36" Name="Unknown" />
+        <Option Value="37" Name="Unknown" />
+        <Option Value="39" Name="Sound Feed" />
+        <Option Value="40" Name="Greater Body Buff VFX" />
+        <Option Value="41" Name="Flash Sweat" />
+        <Option Value="42" Name="HP Recovery" />
+        <Option Value="43" Name="Unknown" />
+        <Option Value="44" Name="Unknown" />
+        <Option Value="45" Name="Unknown" />
+        <Option Value="46" Name="Modify Target Priority" />
+        <Option Value="47" Name="Disable Fall Damage" />
+        <Option Value="48" Name="Increase Damage" />
+        <Option Value="49" Name="Increase Defense" />
+        <Option Value="50" Name="HP/FP/Stamina Recovery" />
+        <Option Value="52" Name="Pledge Effect Test" />
+        <Option Value="54" Name="Modify Enemy Listen Reduction" />
+        <Option Value="55" Name="HostDeath" />
+        <Option Value="58" Name="Point Light Source Equipped" />
+        <Option Value="59" Name="Your Message Was Rated" />
+        <Option Value="60" Name="Magic Buff VFX" />
+        <Option Value="61" Name="Magic Weapon Buff VFX" />
+        <Option Value="62" Name="Fire Weapon Buff VFX" />
+        <Option Value="64" Name="Enchanted Weapon Buff VFX" />
+        <Option Value="65" Name="Unknown" />
+        <Option Value="66" Name="Modify Item Discovery" />
+        <Option Value="69" Name="Tears of Denial VFX" />
+        <Option Value="70" Name="Is Dead Test Condition" />
+        <Option Value="71" Name="Spell Power Boost" />
+        <Option Value="75" Name="Green Blossom VFX" />
+        <Option Value="76" Name="Modify Rune Gain" />
+        <Option Value="78" Name="Unknown" />
+        <Option Value="79" Name="Unknown" />
+        <Option Value="91" Name="Unknown" />
+        <Option Value="95" Name="Applies Chamelon effect" />
+        <Option Value="96" Name="Applies Dragon Form effect" />
+        <Option Value="98" Name="MP Detection" />
+        <Option Value="99" Name="MP Wait for Cooperation" />
+        <Option Value="100" Name="MP Cooperation" />
+        <Option Value="101" Name="MP Cooperation Sent" />
+        <Option Value="102" Name="Wax Slow Down" />
+        <Option Value="103" Name="Used for Evil Eye effect" />
+        <Option Value="104" Name="MP Wait for Cooperation" />
+        <Option Value="105" Name="MP Cooperation LV 1" />
+        <Option Value="106" Name="MP Cooperation LV 2" />
+        <Option Value="107" Name="MP Cooperation LV 3" />
+        <Option Value="108" Name="Used for Evil Eye effect (1)" />
+        <Option Value="109" Name="Used for Evil Eye effect (2)" />
+        <Option Value="110" Name="Counter Damage" />
+        <Option Value="112" Name="1409F7282_HKS" />
+        <Option Value="113" Name="Unknown" />
+        <Option Value="114" Name="Unknown" />
+        <Option Value="115" Name="Backstep Animation Change" />
+        <Option Value="116" Name="Blight" />
+        <Option Value="117" Name="Instant Death animation" />
+        <Option Value="118" Name="Cure Blight" />
+        <Option Value="119" Name="Unknown" />
+        <Option Value="120" Name="Damage Level Change before Poise Break" />
+        <Option Value="121" Name="Damage Level Change" />
+        <Option Value="122" Name="Unknown" />
+        <Option Value="123" Name="Trigger on Roll (Head)" />
+        <Option Value="124" Name="Trigger on Roll (Body)" />
+        <Option Value="125" Name="Trigger on Roll (Hands)" />
+        <Option Value="126" Name="Trigger on Roll (Legs)" />
+        <Option Value="127" Name="Mimic Sleep" />
+        <Option Value="128" Name="Mimic Sleep" />
+        <Option Value="130" Name="Mimic Sleep" />
+        <Option Value="131" Name="Mimic Sleep" />
+        <Option Value="132" Name="Change Team Type" />
+        <Option Value="133" Name="Enable Developer Messages" />
+        <Option Value="134" Name="Iron Flesh" />
+        <Option Value="135" Name="Mimic Sleep" />
+        <Option Value="136" Name="Blight" />
+        <Option Value="137" Name="ResonanceLvl 0" />
+        <Option Value="138" Name="ResonanceLvl 1" />
+        <Option Value="139" Name="ResonanceLvl 2" />
+        <Option Value="140" Name="ResonanceLvl 3" />
+        <Option Value="141" Name="ResonanceLvl 4" />
+        <Option Value="142" Name="NPC Behavior ID Change" />
+        <Option Value="143" Name="Character Respawn" />
+        <Option Value="144" Name="Unknown" />
+        <Option Value="146" Name="Restore Durability" />
+        <Option Value="147" Name="Cast Light" />
+        <Option Value="148" Name="Unknown" />
+        <Option Value="149" Name="White Relief Magic" />
+        <Option Value="150" Name="Black Relief Magic" />
+        <Option Value="151" Name="Lightning Weapon Buff VFX" />
+        <Option Value="152" Name="Enable Attack Effect against Enemy" />
+        <Option Value="153" Name="Enable Attack Effect against Player" />
+        <Option Value="154" Name="Block Estus usage" />
+        <Option Value="155" Name="Modify Poise" />
+        <Option Value="156" Name="Disable Durability" />
+        <Option Value="157" Name="Transient Curse" />
+        <Option Value="158" Name="Left-hand Buff VFX" />
+        <Option Value="159" Name="Destroy Accessory but Save Runes" />
+        <Option Value="160" Name="Rare Ring of Sacrifice [DS1]" />
+        <Option Value="161" Name="Warp to Grace" />
+        <Option Value="162" Name="Warp to Grace" />
+        <Option Value="163" Name="Warp to Grace" />
+        <Option Value="164" Name="Warp to Grace" />
+        <Option Value="165" Name="Warp to Grace" />
+        <Option Value="166" Name="Pledge Discarded" />
+        <Option Value="167" Name="Dragon Change VFX" />
+        <Option Value="168" Name="Bow Distance Change" />
+        <Option Value="169" Name="Unknown" />
+        <Option Value="170" Name="Karmic Justice Counter" />
+        <Option Value="171" Name="Used for Behavior Change" />
+        <Option Value="173" Name="Ritual" />
+        <Option Value="174" Name="Power of Evil Spirits" />
+        <Option Value="175" Name="Revival Production" />
+        <Option Value="176" Name="Aural Decoy" />
+        <Option Value="177" Name="Unknown" />
+        <Option Value="179" Name="DeathEffectLv1" />
+        <Option Value="180" Name="DeathEffectLv2" />
+        <Option Value="181" Name="DeathEffectLv3" />
+        <Option Value="182" Name="DeathEffectLv4" />
+        <Option Value="183" Name="BlueSignVisualization" />
+        <Option Value="184" Name="Hide Weapon" />
+        <Option Value="185" Name="Unknown" />
+        <Option Value="186" Name="Unknown" />
+        <Option Value="188" Name="Unknown" />
+        <Option Value="189" Name="Unknown" />
+        <Option Value="190" Name="Unknown" />
+        <Option Value="191" Name="Unknown" />
+        <Option Value="192" Name="Unknown" />
+        <Option Value="193" Name="Modify Effect Duration" />
+        <Option Value="194" Name="CompareWith203" />
+        <Option Value="195" Name="Unknown" />
+        <Option Value="196" Name="IfWorldChrManNull" />
+        <Option Value="197" Name="Enhance Thrusting Counter Attacks" />
+        <Option Value="198" Name="Cure Blight" />
+        <Option Value="199" Name="Apply Kill Effect" />
+        <Option Value="200" Name="Power Within VFX" />
+        <Option Value="201" Name="VowOfSilenceVisual" />
+        <Option Value="202" Name="Dragon Roar" />
+        <Option Value="203" Name="CompareWith194" />
+        <Option Value="204" Name="Great Magic Shield" />
+        <Option Value="205" Name="Holy Weapon Buff VFX" />
+        <Option Value="206" Name="Unknown" />
+        <Option Value="207" Name="Jailer HP Drain" />
+        <Option Value="213" Name="Trigger on Enemy Backstab" />
+        <Option Value="221" Name="Unknown" />
+        <Option Value="222" Name="ItemBan" />
+        <Option Value="223" Name="Unknown" />
+        <Option Value="224" Name="Unknown" />
+        <Option Value="232" Name="DisableUseAtColiseum" />
+        <Option Value="237" Name="Calamity Ring" />
+        <Option Value="252" Name="Oil" />
+        <Option Value="253" Name="Fire" />
+        <Option Value="258" Name="Unknown" />
+        <Option Value="259" Name="Unknown" />
+        <Option Value="260" Name="Frostbite" />
+        <Option Value="261" Name="Remove Effect If Torch In Hand" />
+        <Option Value="262" Name="WormRecovery(Torch)" />
+        <Option Value="264" Name="SetCultBool" />
+        <Option Value="266" Name="FallDeathIsDisabled" />
+        <Option Value="267" Name="AI Sight Adjustment" />
+        <Option Value="269" Name="Unknown" />
+        <Option Value="270" Name="Unknown" />
+        <Option Value="271" Name="Unknown" />
+        <Option Value="272" Name="Unknown" />
+        <Option Value="275" Name="Player Behavior ID Change" />
+        <Option Value="276" Name="Cure Frostbite" />
+        <Option Value="277" Name="Trigger Great Rune" />
+        <Option Value="278" Name="DisableSpellEffect" />
+        <Option Value="280" Name="WatchdogTriggerForHost" />
+        <Option Value="281" Name="WetSystemTrigger" />
+        <Option Value="282" Name="NPC Correction for Coop" />
+        <Option Value="283" Name="Tears of Denial Trigger" />
+        <Option Value="284" Name="Heal Spell" />
+        <Option Value="285" Name="Unknown" />
+        <Option Value="286" Name="Weak Movement Slow" />
+        <Option Value="287" Name="Strong Movement Slow" />
+        <Option Value="288" Name="Trigger on Critical Hit (HP)" />
+        <Option Value="289" Name="Trigger on Critical Hit (FP)" />
+        <Option Value="290" Name="Extend Roll Invincibility" />
+        <Option Value="291" Name="Grants roll invisibility" />
+        <Option Value="292" Name="Repair1" />
+        <Option Value="293" Name="Change Durability" />
+        <Option Value="294" Name="Unknown" />
+        <Option Value="295" Name="Unknown" />
+        <Option Value="296" Name="Unknown" />
+        <Option Value="297" Name="Not in Multiplayer Session" />
+        <Option Value="298" Name="Trigger on Player Backstab" />
+        <Option Value="299" Name="Enemies attack Invaders" />
+        <Option Value="300" Name="Enemies attack Invaders" />
+        <Option Value="301" Name="Law of Regression" />
+        <Option Value="302" Name="Warp to Grace" />
+        <Option Value="303" Name="Conditional 1" />
+        <Option Value="304" Name="Conditional 2" />
+        <Option Value="305" Name="Conditional 3" />
+        <Option Value="306" Name="Conditional 4" />
+        <Option Value="307" Name="Conditional 5" />
+        <Option Value="308" Name="Conditional 6" />
+        <Option Value="309" Name="Conditional 7" />
+        <Option Value="310" Name="Conditional 8" />
+        <Option Value="311" Name="Conditional 9" />
+        <Option Value="312" Name="Unknown" />
+        <Option Value="313" Name="Seek Guidance" />
+        <Option Value="314" Name="Add Guard Stability" />
+        <Option Value="315" Name="Scale Attack Power with Equip Load" />
+        <Option Value="316" Name="CalcCorrectGraph_33" />
+        <Option Value="317" Name="Revoke Online Penalty" />
+        <Option Value="318" Name="Dead Again" />
+        <Option Value="319" Name="Unknown" />
+        <Option Value="320" Name="Unknown" />
+        <Option Value="321" Name="Reverse Hollowing" />
+        <Option Value="322" Name="ChrAsmStyle_HKS_LEFTHAND" />
+        <Option Value="323" Name="ChrAsmStyle_HKS_RIGHTHAND" />
+        <Option Value="324" Name="Unknown" />
+        <Option Value="325" Name="Wet Aspect Param" />
+        <Option Value="326" Name="Switch Animation Gender" />
+        <Option Value="327" Name="Ember" />
+        <Option Value="328" Name="Change Durability" />
+        <Option Value="329" Name="GetEstusCharge" />
+        <Option Value="330" Name="Online Check Reset Event Flag 2100" />
+        <Option Value="331" Name="AiParam1" />
+        <Option Value="332" Name="AiParam_effect16189" />
+        <Option Value="333" Name="Spell Enhance (+6 to ID)" />
+        <Option Value="334" Name="Bullet Behavior ID Change" />
+        <Option Value="335" Name="Trigger during Critical Hit" />
+        <Option Value="336" Name="Summon Torrent" />
+        <Option Value="337" Name="Unknown" />
+        <Option Value="338" Name="Unknown" />
+        <Option Value="339" Name="Reload" />
+        <Option Value="342" Name="Unknown" />
+        <Option Value="343" Name="Unknown" />
+        <Option Value="344" Name="Unknown" />
+        <Option Value="345" Name="Unknown" />
+        <Option Value="346" Name="Unknown" />
+        <Option Value="347" Name="Unknown" />
+        <Option Value="348" Name="Unknown" />
+        <Option Value="349" Name="Unknown" />
+        <Option Value="350" Name="Unknown" />
+        <Option Value="351" Name="Unknown" />
+        <Option Value="352" Name="Unknown" />
+        <Option Value="353" Name="Unknown" />
+        <Option Value="354" Name="Unknown" />
+        <Option Value="355" Name="Unknown" />
+        <Option Value="356" Name="Unknown" />
+        <Option Value="357" Name="Spirit Summon" />
+        <Option Value="358" Name="Unknown" />
+        <Option Value="359" Name="Unknown" />
+        <Option Value="360" Name="Unknown" />
+        <Option Value="361" Name="Unknown" />
+        <Option Value="362" Name="Unknown" />
+        <Option Value="363" Name="Unknown" />
+        <Option Value="364" Name="Unknown" />
+        <Option Value="365" Name="Unknown" />
+        <Option Value="366" Name="Unknown" />
+        <Option Value="367" Name="Enhance Critical Attacks" />
+        <Option Value="368" Name="Unknown" />
+        <Option Value="369" Name="Unknown" />
+        <Option Value="370" Name="Unknown" />
+        <Option Value="371" Name="Unknown" />
+        <Option Value="372" Name="Unknown" />
+        <Option Value="373" Name="Unknown" />
+        <Option Value="375" Name="Unknown" />
+        <Option Value="376" Name="Unknown" />
+        <Option Value="377" Name="Unknown" />
+        <Option Value="378" Name="Unknown" />
+        <Option Value="379" Name="Trigger in Presence of Blood Loss" />
+        <Option Value="380" Name="Trigger in Presence of Rot" />
+        <Option Value="381" Name="Unknown" />
+        <Option Value="382" Name="Unknown" />
+        <Option Value="383" Name="Unknown" />
+        <Option Value="384" Name="Unknown" />
+        <Option Value="385" Name="Unknown" />
+        <Option Value="387" Name="Unknown" />
+        <Option Value="388" Name="Unknown" />
+        <Option Value="389" Name="Unknown" />
+        <Option Value="390" Name="Pacify Wild Animals" />
+        <Option Value="391" Name="Unknown" />
+        <Option Value="392" Name="Unknown" />
+        <Option Value="393" Name="Unknown" />
+        <Option Value="394" Name="Unknown" />
+        <Option Value="395" Name="Unknown" />
+        <Option Value="396" Name="Unknown" />
+        <Option Value="397" Name="Unknown" />
+        <Option Value="398" Name="Pull towards Caster" />
+        <Option Value="399" Name="Unknown" />
+        <Option Value="402" Name="Unknown" />
+        <Option Value="403" Name="Unknown" />
+        <Option Value="404" Name="Unknown" />
+        <Option Value="405" Name="Reveal Phantom Signs" />
+        <Option Value="406" Name="Request Friendly Phantom" />
+        <Option Value="407" Name="Answer Phantom Request" />
+        <Option Value="408" Name="Encourage Invasion" />
+        <Option Value="409" Name="Send Summon Sign to Pool" />
+        <Option Value="410" Name="Send Invasion Sign to Pool" />
+        <Option Value="411" Name="Unknown" />
+        <Option Value="412" Name="Unknown" />
+        <Option Value="413" Name="Unknown" />
+        <Option Value="414" Name="Unknown" />
+        <Option Value="415" Name="Unknown" />
+        <Option Value="416" Name="Unknown" />
+        <Option Value="417" Name="Unknown" />
+        <Option Value="418" Name="Unknown" />
+        <Option Value="419" Name="Unknown" />
+        <Option Value="421" Name="Unknown" />
+        <Option Value="422" Name="Unknown" />
+        <Option Value="423" Name="Unknown" />
+        <Option Value="424" Name="Unknown" />
+        <Option Value="425" Name="Unknown" />
+        <Option Value="426" Name="Unknown" />
+        <Option Value="427" Name="Unknown" />
+        <Option Value="428" Name="Unknown" />
+        <Option Value="429" Name="Unknown" />
+        <Option Value="430" Name="Unknown" />
+        <Option Value="431" Name="Unknown" />
+        <Option Value="432" Name="Unknown" />
+        <Option Value="435" Name="Unknown" />
+        <Option Value="436" Name="Sleep" />
+        <Option Value="437" Name="Madness" />
+        <Option Value="438" Name="Cure Sleep" />
+        <Option Value="439" Name="Cure Madness" />
+        <Option Value="440" Name="Purify Mohg's Curse" />
+        <Option Value="441" Name="Mohg's Great Rune" />
+        <Option Value="442" Name="Unknown" />
+        <Option Value="443" Name="Unknown" />
+        <Option Value="445" Name="Unknown" />
+        <Option Value="446" Name="Unknown" />
+        <Option Value="447" Name="Phantom Great Rune" />
+        <Option Value="448" Name="Heal Invader when Blessed Enemy Kills Player" />
+        <Option Value="449" Name="Malenia's Great Rune" />
+        <Option Value="450" Name="Reduce Headshot Impact" />
+        <Option Value="452" Name="Unknown" />
+        <Option Value="453" Name="Unknown" />
+        <Option Value="454" Name="Unknown" />
+        <Option Value="455" Name="Unknown" />
+        <Option Value="456" Name="Unknown" />
+        <Option Value="457" Name="Unknown" />
+        <Option Value="458" Name="Attempt Invasion" />
+        <Option Value="459" Name="Unknown" />
+        <Option Value="460" Name="Unknown" />
+        <Option Value="461" Name="Unknown" />
+        <Option Value="462" Name="Unknown" />
+        <Option Value="463" Name="Unknown" />
+        <Option Value="465" Name="Unknown" />
+        <Option Value="466" Name="Trigger on Crouch" />
+        <Option Value="467" Name="Hemorrhage Behavior" />
+        <Option Value="468" Name="Unknown" />
+        <Option Value="469" Name="Unknown" />
+        <Option Value="1000" Name="SkipSpCategoryCheck1" />
+        <Option Value="1001" Name="SkipSpCategoryCheck2" />
+    </Enum>
+    <Enum Name="REPLACE_CATEGORY" type="u8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="SP_EFFECT_USELIMIT_CATEGORY" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+    <Enum Name="MAGIC_STATUS_TYPE" type="u8">
+      <Option Value="0" Name="Strength" />
+      <Option Value="1" Name="Dexterity" />
+      <Option Value="2" Name="Faith" />
+      <Option Value="3" Name="Intelligence" />
+    </Enum>
+    <Enum Name="ATK_SUB_CATEGORY" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Full Moon Sorcery" />
+      <Option Value="2" Name="Carian Sword Sorcery" />
+      <Option Value="3" Name="Glintblade Sorcery" />
+      <Option Value="4" Name="Stonedigger Sorcery" />
+      <Option Value="5" Name="Crystalian Sorcery" />
+      <Option Value="6" Name="Azur Academy Sorcery" />
+      <Option Value="7" Name="Lusat Academy Sorcery" />
+      <Option Value="8" Name="Magma Sorcery" />
+      <Option Value="9" Name="Thorn Sorcery" />
+      <Option Value="10" Name="Death Sorcery" />
+      <Option Value="11" Name="Gravity Sorcery" />
+      <Option Value="12" Name="Night Sorcery" />
+      <Option Value="13" Name="Cold Sorcery" />
+      <Option Value="14" Name="Azur Primeval Sorcery" />
+      <Option Value="15" Name="Lusat Primeval Sorcery" />
+      <Option Value="20" Name="Blackflame Incantation" />
+      <Option Value="21" Name="Giantsflame Incantation" />
+      <Option Value="22" Name="Dragon Cult Incantation" />
+      <Option Value="23" Name="Bestial Incantation" />
+      <Option Value="24" Name="Golden Order Incantation" />
+      <Option Value="25" Name="Dragon Communion Incantation" />
+      <Option Value="26" Name="Frenzied Flame Incantation" />
+      <Option Value="27" Name="Godslayer Incantation" />
+      <Option Value="28" Name="Aspect of the Crucible Incantation" />
+      <Option Value="100" Name="Charged Heavy Attack" />
+      <Option Value="101" Name="Horseback Attack" />
+      <Option Value="102" Name="Jump Attack" />
+      <Option Value="103" Name="Guard Counter Attack" />
+      <Option Value="104" Name="Final Chain Attack" />
+      <Option Value="105" Name="Ammunition Attack" />
+      <Option Value="106" Name="Roar Attack" />
+      <Option Value="107" Name="Breath Attack" />
+      <Option Value="108" Name="Pot Item Attack" />
+      <Option Value="109" Name="Perfume Item Attack" />
+      <Option Value="110" Name="Charged Spell Attack" />
+      <Option Value="111" Name="Charged Skill Attack" />
+      <Option Value="112" Name="Skill Attack" />
+      <Option Value="113" Name="Ranged Skill Attack" />
+      <Option Value="114" Name="Vapor Attack" />
+      <Option Value="116" Name="Unknown Attack" />
+      <Option Value="117" Name="Wraith Attack" />
+      <Option Value="118" Name="Ammunition On-Hit Attack" />
+    </Enum>
+    <Enum Name="MAGIC_CONSUME_TYPE" type="u8">
+        <Option Value="0" Name="Default" />
+        <Option Value="1" Name="Charged" />
+        <Option Value="2" Name="None" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <yesNoDialogMessageId AltName="Dialog Message ID" Wiki="Message ID of Yes / No dialog issued when using magic" />
+    <limitCancelSpEffectId AltName="Ignore Usage Restriction - SpEffect ID" Wiki="Usage restrictions can be ignored when the specified special effect ID is activated" />
+    <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect)" />
+    <requirementLuck AltName="Requirement: ARC" Wiki="Can't be equipped without more PC luck" />
+    <aiNotifyType AltName="AI Interrupt Type" Wiki="AI interrupt occurs in act (AI notification when magic is activated)" Enum="MAGIC_AI_NOTIFY_TYPE" />
+    <mp AltName="FP Consumption - Default" Wiki="MP consumption" />
+    <stamina AltName="Stamina Consumption - Default" Wiki="Consumption stamina" />
+    <iconId AltName="Icon ID" Wiki="Specify icon> For menu" ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
+    <behaviorId AltName="Behavior ID" Wiki="Set the action ID" />
+    <mtrlItemId AltName="Material Item ID" Wiki="Item ID required for purchase" />
+    <replaceMagicId AltName="Replace Magic ID" Wiki="ID to be replaced when the state change matches (-1: invalid)" />
+    <maxQuantity AltName="Number of Uses" Wiki="Number per piece (-1: infinity)" />
+    <refCategory1 AltName="Reference Category [1]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <overDexterity AltName="Dexterity over Start Value" Wiki="Skill over start value" />
+    <refCategory2 AltName="Reference Category [2]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <slotLength AltName="Slot Usage" Wiki="Number of slots required for equipment> For menu" />
+    <requirementIntellect AltName="Requirement: INT" Wiki="Can't be equipped without more PC intelligence" />
+    <requirementFaith AltName="Requirement: FTH" Wiki="It cannot be equipped without the power of the PC any more." />
+    <analogDexterityMin AltName="Casting Speed - DEX Start Range" Wiki="Motion cancel analog: Minimum skill value" />
+    <analogDexterityMax AltName="Casting Speed - DEX End Range" Wiki="Motion cancel analog: Maximum skill value" />
+    <ezStateBehaviorType AltName="Magic School Type" Wiki="Used for sorting> For menu" Enum="MAGIC_CATEGORY" />
+    <refCategory3 AltName="Reference Category [3]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="BEHAVIOR_CATEGORY" />
+    <refType AltName="Motion Category" Wiki="Specify motion> For EzState" Enum="MAGIC_MOTION_TYPE" />
+    <opmeMenuType AltName="Open Menu Type" Wiki="Menu type to be displayed when using magic" Enum="GOODS_OPEN_MENU" />
+    <refCategory4 AltName="Reference Category [4]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <hasSpEffectType AltName="Has SpEffect Type" Wiki="Specify the state change that needs to replace the magic ID" Enum="SP_EFFECT_TYPE" />
+    <replaceCategory AltName="Replace Category" Wiki="Additional conditions when replacing the magic ID" Enum="REPLACE_CATEGORY" />
+    <useLimitCategory AltName="Use Limit Category" Wiki="Specified to control availability by special effects" Enum="SP_EFFECT_USELIMIT_CATEGORY" />
+    <vowType0 AltName="Vow Type [0]" Wiki="Pledge 0" IsBool="" />
+    <vowType1 AltName="Vow Type [1]" Wiki="Pledge 1" IsBool="" />
+    <vowType2 AltName="Vow Type [2]" Wiki="Pledge 2" IsBool="" />
+    <vowType3 AltName="Vow Type [3]" Wiki="Pledge 3" IsBool="" />
+    <vowType4 AltName="Vow Type [4]" Wiki="Pledge 4" IsBool="" />
+    <vowType5 AltName="Vow Type [5]" Wiki="Pledge 5" IsBool="" />
+    <vowType6 AltName="Vow Type [6]" Wiki="Pledge 6" IsBool="" />
+    <vowType7 AltName="Vow Type [7]" Wiki="Pledge 7" IsBool="" />
+    <enable_multi AltName="Allow in Multiplayer" Wiki="Can it be used in multi? Can be used for both single and multi" IsBool="" />
+    <enable_multi_only AltName="Allow only in Multiplayer" Wiki="Is it only for multi? It cannot be used when it is a single. It can be used when it is multi." IsBool="" />
+    <isEnchant AltName="Is Weapon Enchantment" Wiki="Is it magic to enchant?" IsBool="" />
+    <isShieldEnchant AltName="Is Shield Enchantment" Wiki="Is it magic to enchant guards and shields?" IsBool="" />
+    <enable_live AltName="Enable Live" Wiki="Can surviving characters be used?" IsBool="" />
+    <enable_gray AltName="Enable Gray" Wiki="Can gray characters be used?" IsBool="" />
+    <enable_white AltName="Enable White" Wiki="Can white ghost characters be used?" IsBool="" />
+    <enable_black AltName="Enable Black" Wiki="Can black ghost characters be used?" IsBool="" />
+    <disableOffline AltName="Disable Offline" Wiki="Is it unavailable offline?" IsBool="" />
+    <castResonanceMagic AltName="Cast Resonance Magic" Wiki="Do you deliver resonance magic?" IsBool="" />
+    <isValidTough_ProtSADmg AltName="Is Toughness Perfomed if Poise is Initial Value" Wiki="Whether the toughness calculation is performed even if the armor SA is the initial value. Check the toughness specification .xlsx for details" IsBool="" />
+    <isWarpMagic AltName="Is Blocked by Warp Prohibition Effect" Wiki="Is it magic to warp? Magic with a check mark here is prohibited by the special effect Warp Prohibition." IsBool="" />
+    <enableRiding AltName="Usable while Riding" Wiki="Can it be used while riding?" IsBool="" />
+    <disableRiding AltName="Not Usable while Riding" Wiki="Is it prohibited to use while not riding?" IsBool="" />
+    <isUseNoAttackRegion AltName="Usable in No Attack Region" Wiki="Can it be used in an attack-prohibited area?" IsBool="" />
+    <pad_1 AltName=""/>
+    <vowType8 AltName="Vow Type [8]" Wiki="Pledge 8" IsBool="" />
+    <vowType9 AltName="Vow Type [9]" Wiki="Pledge 9" IsBool="" />
+    <vowType10 AltName="Vow Type [10]" Wiki="Pledge 10" IsBool="" />
+    <vowType11 AltName="Vow Type [11]" Wiki="Pledge 11" IsBool="" />
+    <vowType12 AltName="Vow Type [12]" Wiki="Pledge 12" IsBool="" />
+    <vowType13 AltName="Vow Type [13]" Wiki="Pledge 13" IsBool="" />
+    <vowType14 AltName="Vow Type [14]" Wiki="Pledge 14" IsBool="" />
+    <vowType15 AltName="Vow Type [15]" Wiki="Pledge 15" IsBool="" />
+    <castSfxId AltName="SFX ID - Cast" Wiki="SFXID during magical chanting" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <fireSfxId AltName="SFX ID - Fire" Wiki="SFX ID when magic is activated" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <effectSfxId AltName="SFX ID - Effect" Wiki="SFXID during magic effect" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <toughnessCorrectRate AltName="Toughness Correction" Wiki="It is a magnification that corrects the basic value of toughness." />
+    <ReplacementStatusType AltName="Replacement Status Type" Wiki="Replacement status type" Enum="MAGIC_STATUS_TYPE" />
+    <ReplacementStatus1 AltName="Replacement Threshold [1]" Wiki="Replacement status value 1" />
+    <ReplacementStatus2 AltName="Replacement Threshold [2]" Wiki="Replacement status value 2" />
+    <ReplacementStatus3 AltName="Replacement Threshold [3]" Wiki="Replacement status value 3" />
+    <ReplacementStatus4 AltName="Replacement Threshold [4]" Wiki="Replacement status value 4" />
+    <refCategory5 AltName="Reference Category [5]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <consumeSA AltName="Poise Consumption" Wiki="SA consumption [normal / reservoir]" />
+    <ReplacementMagic1 AltName="Replacement Magic ID [1]" Wiki="Replacement ID1" />
+    <ReplacementMagic2 AltName="Replacement Magic ID [2]" Wiki="Replacement ID2" />
+    <ReplacementMagic3 AltName="Replacement Magic ID [3]" Wiki="Replacement ID3" />
+    <ReplacementMagic4 AltName="Replacement Magic ID [4]" Wiki="Replacement ID 4" />
+    <mp_charge AltName="FP Consumption - Charged" Wiki="MP consumption [reservoir]" />
+    <stamina_charge AltName="Stamina Consumption - Charged" Wiki="Consumption stamina [reservoir]" />
+    <createLimitGroupId AltName="Create Limit Group ID" Wiki="If it is 0, it is unused. Check the number of bullets created for the specified group Id, and if the upper limit is reached, you will not be able to use magic." />
+    <refCategory6 AltName="Reference Category [6]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <subCategory1 AltName="Conditional Category [1]" Wiki="Subcategory 1" Enum="ATK_SUB_CATEGORY" />
+    <subCategory2 AltName="Conditional Category [2]" Wiki="Subcategory 2" Enum="ATK_SUB_CATEGORY" />
+    <refCategory7 AltName="Reference Category [7]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <refCategory8 AltName="Reference Category [8]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <refCategory9 AltName="Reference Category [9]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <refCategory10 AltName="Reference Category [10]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
+    <refId1 AltName="Reference ID [1]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory1=0),Bullet(refCategory1=1),SpEffectParam(refCategory1=2)"/>
+    <refId2 AltName="Reference ID [2]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory2=0),Bullet(refCategory2=1),SpEffectParam(refCategory2=2)"/>
+    <refId3 AltName="Reference ID [3]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory3=0),Bullet(refCategory3=1),SpEffectParam(refCategory3=2)"/>
+    <aiUseJudgeId AltName="AI Usage Judgment ID" Wiki="AI usage judgment ID" />
+    <refId4 AltName="Reference ID [4]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory4=0),Bullet(refCategory4=1),SpEffectParam(refCategory4=2)"/>
+    <refId5 AltName="Reference ID [5]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory5=0),Bullet(refCategory5=1),SpEffectParam(refCategory5=2)"/>
+    <refId6 AltName="Reference ID [6]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory6=0),Bullet(refCategory6=1),SpEffectParam(refCategory6=2)"/>
+    <refId7 AltName="Reference ID [7]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory7=0),Bullet(refCategory7=1),SpEffectParam(refCategory7=2)"/>
+    <refId8 AltName="Reference ID [8]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory8=0),Bullet(refCategory8=1),SpEffectParam(refCategory8=2)"/>
+    <refId9 AltName="Reference ID [9]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory9=0),Bullet(refCategory9=1),SpEffectParam(refCategory9=2)"/>
+    <refId10 AltName="Reference ID [10]" Wiki="ID called from magic" Refs="AtkParam_Pc(refCategory10=0),Bullet(refCategory10=1),SpEffectParam(refCategory10=2)"/>
+    <consumeType1 AltName="Consumption Type [1]" Wiki="When Reference ID [1] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType2 AltName="Consumption Type [2]" Wiki="When Reference ID [2] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType3 AltName="Consumption Type [3]" Wiki="When Reference ID [3] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType4 AltName="Consumption Type [4]" Wiki="When Reference ID [4] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType5 AltName="Consumption Type [5]" Wiki="When Reference ID [5] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType6 AltName="Consumption Type [6]" Wiki="When Reference ID [6] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType7 AltName="Consumption Type [7]" Wiki="When Reference ID [7] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType8 AltName="Consumption Type [8]" Wiki="When Reference ID [8] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType9 AltName="Consumption Type [9]" Wiki="When Reference ID [9] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeType10 AltName="Consumption Type [10]" Wiki="When Reference ID [10] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
+    <consumeLoopMP_forMenu AltName="FP Consumption Loop - For Menu Display" Wiki="MP consumption for menu supplement display" />
+    <pad AltName=""/>
+  </Field>
+  <Self Wiki="Defines behaviour data of spells. Do not confuse with version in EquipParamGoods." AlternativeOrder="yesNoDialogMessageId,opmeMenuType,-,
+sortId,iconId,-,
+aiNotifyType,aiUseJudgeId,-,
+mp,stamina,mp_charge,stamina_charge,consumeSA,consumeLoopMP_forMenu,-,
+behaviorId,mtrlItemId,overDexterity,ezStateBehaviorType,limitCancelSpEffectId,useLimitCategory,createLimitGroupId,-,
+maxQuantity,slotLength,-,
+requirementIntellect,requirementFaith,requirementLuck,-,
+analogDexterityMin,analogDexterityMax,-,
+spEffectCategory,-,
+refType,-,
+refId1,refCategory1,consumeType1,-,
+refId2,refCategory2,consumeType2,-,
+refId3,refCategory3,consumeType3,-,
+refId4,refCategory4,consumeType4,-,
+refId5,refCategory5,consumeType5,-,
+refId6,refCategory6,consumeType6,-,
+refId7,refCategory7,consumeType7,-,
+refId8,refCategory8,consumeType8,-,
+refId9,refCategory9,consumeType9,-,
+refId10,refCategory10,consumeType10,-,
+vowType0,vowType1,vowType2,vowType3,vowType4,vowType5,vowType6,vowType7,vowType8,vowType9,vowType10,vowType11,vowType12,vowType13,vowType14,vowType15,-,
+enable_multi,enable_multi_only,enable_live,enable_gray,enable_white,enable_black,disableOffline,-,
+isEnchant,isShieldEnchant,-,
+castResonanceMagic,isValidTough_ProtSADmg,isWarpMagic,-,
+enableRiding,disableRiding,-,
+isUseNoAttackRegion,-,
+castSfxId,fireSfxId,effectSfxId,-,
+toughnessCorrectRate,-,
+ReplacementStatusType,ReplacementStatus1,ReplacementStatus2,ReplacementStatus3,ReplacementStatus4,-,
+ReplacementMagic1,ReplacementMagic2,ReplacementMagic3,ReplacementMagic4,-,
+replaceMagicId,hasSpEffectType,replaceCategory,-,
+subCategory1,subCategory2,-,"/>
+</PARAMMETA>

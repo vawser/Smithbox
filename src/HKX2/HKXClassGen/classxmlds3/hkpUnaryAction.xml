@@ -1,0 +1,5 @@
+<class name='hkpUnaryAction' version='1' signature='0x5f4424f8' size='56' parent='hkpAction'>
+  <members>
+    <member name='entity' offset='48' ctype='hkpEntity' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

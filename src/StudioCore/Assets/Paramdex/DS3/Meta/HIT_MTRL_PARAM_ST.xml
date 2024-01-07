@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Collision Hit Material data"/>
+  <Enums>
+    <Enum Name="HMP_FOOT_EFFECT_HEIGHT_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+    <Enum Name="HMP_FOOT_EFFECT_DIR_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="HMP_FLOOR_HEIGHT_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="HMP_HARDNESS_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+  </Enums>
+  <Field>
+    <aiVolumeRate AltName="AI Volume Rate" Wiki="Normal when 1x. When set to 0, the radius of sound becomes 0 (SE and SFX are unrelated game-like parameters)." />
+    <spEffectIdOnHit0 AltName="On Hit [1] - SpEffect ID" Wiki="When the character steps on the hit material, the set special effect 0 is exhibited." Refs="SpEffectParam"/>
+    <spEffectIdOnHit1 AltName="On Hit [2] - SpEffect ID" Wiki="When the character steps on the hit material, the set special effect 1 is exhibited." Refs="SpEffectParam"/>
+    <footEffectHeightType AltName="Foot Effect Height Type" Wiki="Height to generate foot effect" Enum="HMP_FOOT_EFFECT_HEIGHT_TYPE" />
+    <footEffectDirType AltName="Foot Effect Direction Type" Wiki="Direction of foot effect" Enum="HMP_FOOT_EFFECT_DIR_TYPE" />
+    <floorHeightType AltName="Floor Height Type" Wiki="For floating items such as the surface of the water" Enum="HMP_FLOOR_HEIGHT_TYPE" />
+    <disableFallDamage AltName="Disable Fall Damage" Wiki="Set to 1 for floors that are not subject to fall damage" />
+    <isHardnessForSoundReverb AltName="Is Hardness for Sound Reverb" Wiki="Is it a hard material for sound echo? (0: soft, 1: hard)" />
+    <hardnessType AltName="Hardness Type" Wiki="The hardness of the material. Used for soft contact processing of rigid bodies." Enum="HMP_HARDNESS_TYPE" />
+    <pad2 AltName=""/>
+    <spEffectIdOnHit0_ClearCount_2 AltName="On Hit [0] - NG+1 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 2nd lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit0_ClearCount_3 AltName="On Hit [0] - NG+2 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 3rd lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit0_ClearCount_4 AltName="On Hit [0] - NG+3 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 4th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit0_ClearCount_5 AltName="On Hit [0] - NG+4 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 5th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit0_ClearCount_6 AltName="On Hit [0] - NG+5 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 6th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit0_ClearCount_7 AltName="On Hit [0] - NG+6 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 7th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit0_ClearCount_8 AltName="On Hit [0] - NG+7 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 8th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit1_ClearCount_2 AltName="On Hit [1] - NG+1 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 1st lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit1_ClearCount_3 AltName="On Hit [1] - NG+2 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 1 3rd lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit1_ClearCount_4 AltName="On Hit [1] - NG+3 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 1 4th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit1_ClearCount_5 AltName="On Hit [1] - NG+4 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 1 5th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit1_ClearCount_6 AltName="On Hit [1] - NG+5 - SpEffect ID" Wiki="Special effect when stepping on the hit material 1 6th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit1_ClearCount_7 AltName="On Hit [1] - NG+6 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 1 7th lap" Refs="SpEffectParam"/>
+    <spEffectIdOnHit1_ClearCount_8 AltName="On Hit [1] - NG+7 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 1 8th lap" Refs="SpEffectParam"/>
+    <replaceMateiralId_Rain AltName="Rain - Replace Material ID" Wiki="Hit material change destination ID due to weather (rain) (-1: No change)" Refs="HitMtrlParam"/>
+    <pad1 AltName=""/>
+    <pad2 AltName=""/>
+    <spEffectId_forWet AltName="Wetness [0] - SpEffect ID" Wiki="Special effect for wetting 00" Refs="SpEffectParam"/>
+  </Field>
+</PARAMMETA>

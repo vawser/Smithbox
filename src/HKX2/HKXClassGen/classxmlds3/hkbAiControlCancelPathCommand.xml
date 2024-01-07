@@ -1,0 +1,5 @@
+<class name='hkbAiControlCancelPathCommand' version='1' signature='0xcb3bcf33' size='24' parent='hkReferencedObject'>
+  <members>
+    <member name='characterId' offset='16' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>KEY_ASSIGN_DISPLAY_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 padKeyId"></Field>
+    <Field Def="s32 keyboardModifyKey"></Field>
+    <Field Def="s8 keyboardKeyId"></Field>
+    <Field Def="u8 UnkByte0x09"></Field>
+    <Field Def="s8 UnkSbyte0x0A"></Field>
+    <Field Def="u8 UnkByte0x0B"></Field>
+    <Field Def="s32 mouseModifyKey"></Field>
+    <Field Def="s8 mouseKeyId"></Field>
+    <Field Def="u8 Unk0x11"></Field>
+    <Field Def="u8 Unk0x12"></Field>
+    <Field Def="u8 Unk0x13"></Field>
+    <Field Def="dummy8 reserved[12]"></Field>
+  </Fields>
+</PARAMDEF>

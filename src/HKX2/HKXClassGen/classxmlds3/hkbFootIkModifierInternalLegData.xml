@@ -1,0 +1,6 @@
+<class name='hkbFootIkModifierInternalLegData' version='1' signature='0xe5ca3677' size='32'>
+  <members>
+    <member name='groundPosition' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='footIkSolver' offset='16' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

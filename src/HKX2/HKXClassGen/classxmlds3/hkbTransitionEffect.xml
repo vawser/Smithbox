@@ -1,0 +1,24 @@
+<class name='hkbTransitionEffect' version='1' signature='0xeca9d564' size='168' parent='hkbGenerator'>
+  <enums>
+    <enum name='SelfTransitionMode' flags='00000000'>
+      <enumitem name='SELF_TRANSITION_MODE_CONTINUE_IF_CYCLIC_BLEND_IF_ACYCLIC' value='0'/>
+      <enumitem name='SELF_TRANSITION_MODE_CONTINUE' value='1'/>
+      <enumitem name='SELF_TRANSITION_MODE_RESET' value='2'/>
+      <enumitem name='SELF_TRANSITION_MODE_BLEND' value='3'/>
+    </enum>
+    <enum name='EventMode' flags='00000000'>
+      <enumitem name='EVENT_MODE_DEFAULT' value='0'/>
+      <enumitem name='EVENT_MODE_PROCESS_ALL' value='1'/>
+      <enumitem name='EVENT_MODE_IGNORE_FROM_GENERATOR' value='2'/>
+      <enumitem name='EVENT_MODE_IGNORE_TO_GENERATOR' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='selfTransitionMode' offset='136' etype='SelfTransitionMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventMode' offset='137' etype='EventMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultEventMode' offset='138' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='patchedBindingInfo' offset='144' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='fromGenerator' offset='152' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='toGenerator' offset='160' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <worldMapPieceId AltName="World Map Piece ID" Wiki="Map fragment parameter ID. Display text if you have this map fragment" />
+    <textId AltName="Place Name - Text ID" Wiki="The text ID to display. PlaceName.xlsm" FmgRef="TitleLocations" />
+    <pad1 AltName=""/>
+    <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />
+    <gridXNo AltName="Map Block" Wiki="BB part of mAA_BB_CC_DD" />
+    <gridZNo AltName="Map Region" Wiki="CC part of mAA_BB_CC_DD" />
+    <pad2 AltName=""/>
+    <posX AltName="Map Coodinate: X" Wiki="X coordinate" />
+    <posY AltName="Map Coodinate: Y" Wiki="Y coordinate (not used)" />
+    <posZ AltName="Map Coodinate: Z" Wiki="Z coordinate" />
+  </Field>
+  <Self />
+</PARAMMETA>

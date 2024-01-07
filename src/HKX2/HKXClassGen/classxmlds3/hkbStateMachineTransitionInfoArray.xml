@@ -1,0 +1,7 @@
+<class name='hkbStateMachineTransitionInfoArray' version='1' signature='0x704a19af' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='transitions' offset='16' ctype='hkbStateMachineTransitionInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hasEventlessTransitions' offset='32' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='hasTimeBoundedTransitions' offset='33' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

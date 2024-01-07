@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <textId FmgRef="Event" />
+    <priority />
+  </Field>
+  <Self Wiki="Contextual button prompts that appear on screen" />
+</PARAMMETA>

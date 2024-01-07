@@ -1,0 +1,5 @@
+<class name='hkaiSilhouetteRecorderGraphLoadedEvent' version='1' signature='0xb6f17ea3' size='32' parent='hkaiSilhouetteRecorderReplayEvent'>
+  <members>
+    <member name='graph' offset='24' ctype='hkaiDirectedGraphInstance' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

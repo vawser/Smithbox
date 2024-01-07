@@ -1,0 +1,6 @@
+<class name='hkbAssetBundleStringData' version='1' signature='0x46132bad' size='24'>
+  <members>
+    <member name='bundleName' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='assetNames' offset='8' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

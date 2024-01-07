@@ -1,0 +1,146 @@
+45 [GEN:45] Laddersmith Gilligan
+46 [GEN:46] Laddersmith Gilligan
+47 [GEN:47] Laddersmith Gilligan
+65 [GEN:65] Mild Mannered Pate
+66 [GEN:66] Mild Mannered Pate
+90 [GEN:90] Lucatiel of Mirrah
+91 [GEN:91] Lucatiel of Mirrah
+195 [GEN:195] Stone Trader Chloanne
+196 [GEN:196] Stone Trader Chloanne
+245 [GEN:245] Lonesome Gavlan
+246 [GEN:246] Lonesome Gavlan
+556 [GEN:556] Jester Thomas
+600 [GEN:600] Devotee Scarlett
+605 [GEN:605] Bashful Ray
+800 [GEN:800] Covetous Demon
+801 [GEN:801] Mytha- the Baneful Queen
+935 [GEN:935] Forlorn
+1000 [GEN:1000] Undead Supplicant
+1001 [GEN:1001] Undead Supplicant
+1002 [GEN:1002] Undead Supplicant
+1003 [GEN:1003] NO MATCH
+1004 [GEN:1004] NO MATCH
+1010 [GEN:1010] NO MATCH
+1011 [GEN:1011] Skeleton
+1012 [GEN:1012] Skeleton
+1110 [GEN:1110] Skeleton
+1111 [GEN:1111] NO MATCH
+1600 [GEN:1600] Skeleton
+1601 [GEN:1601] Skeleton
+1700 [GEN:1700] Desert Sorceress
+1701 [GEN:1701] Desert Sorceress
+1702 [GEN:1702] Desert Sorceress
+1800 [GEN:1800] Crystal Lizard
+1801 [GEN:1801] Crystal Lizard
+1802 [GEN:1802] Crystal Lizard
+1810 [GEN:1810] Skeleton
+2201 [GEN:2201] Artificial Undead
+2300 [GEN:2300] NO MATCH
+2310 [GEN:2310] Captive Undead
+2320 [GEN:2320] Captive Undead
+2401 [GEN:2401] Mounted Overseer
+2402 [GEN:2402] Artificial Undead
+2450 [GEN:2450] Artificial Undead
+2451 [GEN:2451] Artificial Undead
+2453 [GEN:2453] Artificial Undead
+2456 [GEN:2456] Artificial Undead
+2500 [GEN:2500] Undead Supplicant
+2501 [GEN:2501] NO MATCH
+2502 [GEN:2502] NO MATCH
+2503 [GEN:2503] Undead Supplicant
+2510 [GEN:2510] Skeleton
+2600 [GEN:2600] Undead Steelworker
+2601 [GEN:2601] Undead Steelworker
+2602 [GEN:2602] Undead Steelworker
+2603 [GEN:2603] Undead Steelworker
+2604 [GEN:2604] Undead Steelworker
+2610 [GEN:2610] Manikin
+3000 [GEN:3000] Undead Steelworker
+3002 [GEN:3002] Undead Steelworker
+3003 [GEN:3003] Undead Steelworker
+3020 [GEN:3020] Poison Horn Beetle
+3021 [GEN:3021] Poison Horn Beetle
+3022 [GEN:3022] Poison Horn Beetle
+3200 [GEN:3200] Desert Sorceress
+3202 [GEN:3202] Manikin
+3204 [GEN:3204] Captive Undead
+3205 [GEN:3205] NO MATCH
+3206 [GEN:3206] NO MATCH
+3207 [GEN:3207] Undead Supplicant
+3208 [GEN:3208] Poison Horn Beetle
+3209 [GEN:3209] Poison Horn Beetle
+3210 [GEN:3210] NO MATCH
+3250 [GEN:3250] Captive Undead
+3251 [GEN:3251] NO MATCH
+3252 [GEN:3252] Captive Undead
+3253 [GEN:3253] Captive Undead
+3300 [GEN:3300] Captive Undead
+3301 [GEN:3301] Captive Undead
+3302 [GEN:3302] Captive Undead
+3303 [GEN:3303] Captive Undead
+3401 [GEN:3401] Manikin
+3402 [GEN:3402] Undead Steelworker
+3500 [GEN:3500] Grave Warden
+3501 [GEN:3501] NO MATCH
+3510 [GEN:3510] NO MATCH
+3600 [GEN:3600] Manikin
+3601 [GEN:3601] Manikin
+3602 [GEN:3602] Desert Sorceress
+3603 [GEN:3603] Desert Sorceress
+3604 [GEN:3604] Desert Sorceress
+3605 [GEN:3605] Desert Sorceress
+3700 [GEN:3700] Manikin
+3800 [GEN:3800] Manikin
+3810 [GEN:3810] Manikin
+3850 [GEN:3850] Grave Warden
+4000 [GEN:4000] Manikin
+4100 [GEN:4100] Manikin
+4200 [GEN:4200] Manikin
+4250 [GEN:4250] Captive Undead
+4400 [GEN:4400] Grave Warden
+4401 [GEN:4401] Manikin
+4500 [GEN:4500] Desert Sorceress
+4602 [GEN:4602] Manikin
+4900 [GEN:4900] Manikin
+4901 [GEN:4901] Manikin
+4902 [GEN:4902] Manikin
+5004 [GEN:5004] Desert Sorceress
+5011 [GEN:5011] Suspicious Shadow
+5110 [GEN:5110] Manikin
+5200 [GEN:5200] Grave Warden
+5201 [GEN:5201] Grave Warden
+5202 [GEN:5202] Grave Warden
+5210 [GEN:5210] Undead Supplicant
+5211 [GEN:5211] NO MATCH
+5212 [GEN:5212] Undead Supplicant
+7010 [GEN:7010] NO MATCH
+7020 [GEN:7020] Captive Undead
+7021 [GEN:7021] NO MATCH
+7022 [GEN:7022] NO MATCH
+7023 [GEN:7023] Captive Undead
+7030 [GEN:7030] Captive Undead
+7040 [GEN:7040] Captive Undead
+7220 [GEN:7220] Desert Sorceress
+7221 [GEN:7221] Desert Sorceress
+7300 [GEN:7300] Manikin
+7310 [GEN:7310] Manikin
+7311 [GEN:7311] Manikin
+7400 [GEN:7400] Grave Warden
+8100 [GEN:8100] Artificial Undead
+8101 [GEN:8101] Manikin
+8102 [GEN:8102] Manikin
+8203 [GEN:8203] Poison Horn Beetle
+8204 [GEN:8204] Poison Horn Beetle
+8205 [GEN:8205] Poison Horn Beetle
+8206 [GEN:8206] Poison Horn Beetle
+8207 [GEN:8207] Poison Horn Beetle
+8208 [GEN:8208] Poison Horn Beetle
+8209 [GEN:8209] Poison Horn Beetle
+8210 [GEN:8210] Mimic
+8211 [GEN:8211] NO MATCH
+9001 [GEN:9001] Voice Marker (Altar of Sunlight)
+9010 [GEN:9010] Mounted Overseer
+9012 [GEN:9012] Mounted Overseer
+9013 [GEN:9013] Mounted Overseer
+9014 [GEN:9014] Mounted Overseer
+9100 [GEN:9100] Poison Moth

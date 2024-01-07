@@ -1,0 +1,6 @@
+<class name='hkxNodeAnnotationData' version='1' signature='0x433dee92' size='16'>
+  <members>
+    <member name='time' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='description' offset='8' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

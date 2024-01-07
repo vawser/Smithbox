@@ -1,0 +1,8 @@
+<class name='hkpLinFrictionConstraintAtom' version='1' signature='0x8ecdcc28' size='16' parent='hkpConstraintAtom'>
+  <members>
+    <member name='isEnabled' offset='2' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='frictionAxis' offset='3' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxFrictionForce' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='8' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='8' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,166 @@
+1 Nezasa (quite a lot of bushes) / (with collision) test -- ネザサ(茂みかなり多め）・（コリジョンあり）テスト
+2 Fern -- シダ
+3 Miscanthus -- ススキ
+4 Tall pampas grass -- 背の高いススキ
+5 Carex lenta -- ナキリスゲ
+6 Akinokirinsou -- アキノキリンソウ
+7 Needlesa -- センダングサ
+8 Imperata cylindrica -- チガヤ
+9 Yabutachibana -- ヤブタチバナ
+10 Ardisia japonica -- ヤブコウジ
+11 Kobanogamazumi -- コバノガマズミ
+12 Nezasa (7 bunches) -- ネザサ(7房）
+13 Nezasa (1 bunch) -- ネザサ（1房）
+14 General-purpose grass (are you using it?) -- 汎用草（使ってる？）
+15 Reeds (for 1 bunch game grass placement) -- 葦(1房　ゲーム草　配置用)
+16 Reeds (for 7 bunch game grass placement) -- 葦(7房　ゲーム草　配置用)
+17 Tall reeds (for 1 bunch game grass placement) -- 背の高い葦(1房　ゲーム草　配置用)
+18 Tall reeds (for 7 bunch game grass placement) -- 背の高い葦(7房　ゲーム草　配置用)
+19 Tall reeds (for 7 bunch game grass placement) -- 背の高い葦(7房　ゲーム草　配置用)
+21 Nezasa (single unit is abolished) -- ネザサ（単体は廃止）
+22 Fern -- シダ
+23 Miscanthus -- ススキ
+24 Tall pampas grass -- 背の高いススキ
+25 Carex lenta -- ナキリスゲ
+26 Akinokirinsou -- アキノキリンソウ
+27 Needlesa -- センダングサ
+28 Imperata cylindrica -- チガヤ
+29 Yabutachibana -- ヤブタチバナ
+30 Ardisia japonica -- ヤブコウジ
+31 Kobanogamazumi -- コバノガマズミ
+32 Nezasa (more bushes) (with collisions) -- ネザサ(茂み多め）・（コリジョンあり）
+33 Nezasa (less bushes) (with collisions) -- ネザサ（茂み少なめ）・（コリジョンあり）
+34 General-purpose grass A -- 汎用草A
+35 Dead grass_large -- 枯草_大
+36 Dead grass_small -- 枯草_小
+37 Miscanthus (specify angle) -- ススキ(角度指定)
+38 General-purpose grass B -- 汎用草B
+39 narcissus -- 水仙
+40 Fuchisou (angle designation) -- フウチソウ（角度指定）
+41 Carex lenta (snow) -- ナキリスゲ(雪)
+50 Waterthyme -- クロモ
+51 Aquatic plants + a little waterthyme -- 水草+クロモ少々
+52 Hanashobu (purple) -- ハナショウブ(紫)
+53 Hanashobu (white) -- ハナショウブ(白)
+54 lotus -- 蓮
+55 Withering lotus -- 枯れかけの蓮
+56 moss -- 苔
+57 Chromo (riffle) 45 ° -- クロモ(浅瀬)45°
+58 reed -- 葦
+59 Ramie -- カラムシ
+60 Set of Nezasa, Dwarf lilyturf and fallen leaves -- ネザサとジャノヒゲ、落ち葉のセット
+61 Selaginella moell -- イヌカタヒバ
+62 Monotropastrum humilis -- ギンリョウソウ
+65 General-purpose grass C -- 汎用草C
+66 General-purpose grass D -- 汎用草D
+67 Hydrangea 01 -- 紫陽花01
+68 Hydrangea 02 -- 紫陽花02
+69 Miscanthus -- ススキ
+70 Akami moss -- アカミゴケ
+71 Chromo (riffle) 170 ° -- クロモ(浅瀬)170°
+72 Syneilesis -- ヤブレガサ
+73 Ostrich Fern -- クサソテツ
+74 Cattail -- ガマ
+75 Withered lotus -- 枯れた蓮
+79 Cliff grass_green -- 崖用草_緑
+80 Stalactite_small -- 鍾乳石_小
+81 Stalactite_middle -- 鍾乳石_中
+82 Stalactite_middle -- 鍾乳石_中
+83 Stalagmite_small -- 石筍_小
+84 Stalagmite _ Medium -- 石筍_中
+85 Stalagmite_Large -- 石筍_大
+86 Hanashobu (white, more) -- ハナショウブ(白・多め)
+87 Algae -- 藻
+88 Underwater lotus -- 水中の蓮
+90 Burnt Nezasa -- 焦げたネザサ
+98 1m for bush test (with collision) -- 茂みテスト用1m（コリジョンあり）
+99 2m for bush test (with collision) -- 茂みテスト用2m（コリジョンあり）
+122 Fern -- シダ
+123 Miscanthus -- ススキ
+124 Tall pampas grass -- 背の高いススキ
+125 Carex lenta -- ナキリスゲ
+126 Akinokirinsou -- アキノキリンソウ
+127 Needlesa (snow) -- センダングサ(雪)
+128 Imperata cylindrica -- チガヤ
+129 Yabutachibana -- ヤブタチバナ
+130 Ardisia japonica -- ヤブコウジ
+131 Kobanogamazumi -- コバノガマズミ
+132 Nezasa (more bushes) (with collisions) -- ネザサ(茂み多め）・（コリジョンあり）
+133 Nezasa (less bushes) (with collisions) -- ネザサ（茂み少なめ）・（コリジョンあり）
+134 General-purpose grass A -- 汎用草A
+135 Dead grass_large (snow) -- 枯草_大(雪)
+136 Dead grass_small (snow) -- 枯草_小(雪)
+138 General-purpose grass B (snow) -- 汎用草B(雪)
+140 Fuchisou (angle designation) / (snow) -- フウチソウ（角度指定）・（雪）
+159 Ramie -- カラムシ
+175 Withered lotus -- 枯れた蓮
+216 Reeds (for 7 bunch game grass placement) -- 葦(7房　ゲーム草　配置用)
+217 Tall reeds (for 1 bunch game grass placement) -- 背の高い葦(1房　ゲーム草　配置用)
+218 Tall reeds (for 7 bunch game grass placement) -- 背の高い葦(7房　ゲーム草　配置用)
+219 Tall reeds (for 7 bunch game grass placement) -- 背の高い葦(7房　ゲーム草　配置用)
+222 Fern -- シダ
+223 Miscanthus -- ススキ
+225 Carex lenta -- ナキリスゲ
+226 Akinokirinsou -- アキノキリンソウ
+227 Needlesa -- センダングサ
+229 Yabutachibana -- ヤブタチバナ
+230 Ardisia japonica -- ヤブコウジ
+231 Kobanogamazumi -- コバノガマズミ
+232 Nezasa (more bushes) (with collisions) -- ネザサ(茂み多め）・（コリジョンあり）
+233 Nezasa (less bushes) (with collisions) -- ネザサ（茂み少なめ）・（コリジョンあり）
+234 General-purpose grass A -- 汎用草A
+235 Dead grass_large -- 枯草_大
+236 Dead grass_small -- 枯草_小
+237 Miscanthus (specify angle) -- ススキ(角度指定)
+238 General-purpose grass B -- 汎用草B
+239 narcissus -- 水仙
+240 Fuchisou (angle designation) -- フウチソウ（角度指定）
+250 Waterthyme -- クロモ
+251 Aquatic plants + a little waterthyme -- 水草+クロモ少々
+252 Hanashobu (purple) -- ハナショウブ(紫)
+253 Hanashobu (white) -- ハナショウブ(白)
+254 lotus -- 蓮
+255 Withering lotus -- 枯れかけの蓮
+256 moss -- 苔
+257 Chromo (riffle) 45 ° -- クロモ(浅瀬)45°
+258 reed -- 葦
+259 Ramie -- カラムシ
+260 Set of Nezasa, Dwarf lilyturf and fallen leaves -- ネザサとジャノヒゲ、落ち葉のセット
+261 Selaginella moell -- イヌカタヒバ
+262 Monotropastrum humilis -- ギンリョウソウ
+265 General-purpose grass C -- 汎用草C
+266 General-purpose grass D -- 汎用草D
+267 Hydrangea 01 -- 紫陽花01
+268 Hydrangea 02 -- 紫陽花02
+269 Miscanthus -- ススキ
+270 Akami moss -- アカミゴケ
+271 Chromo (riffle) 120 ° -- クロモ(浅瀬)120°
+272 Syneilesis -- ヤブレガサ
+273 Ostrich Fern -- クサソテツ
+274 Cattail -- ガマ
+275 Withered lotus -- 枯れた蓮
+276 Cliff grass -- 崖用草
+277 Cliff grass -- 崖用草
+278 Dead grass _ large _ flat -- 枯草_大_平べったい
+279 Cliff grass_green -- 崖用草_緑
+286 Hanashobu (white, more) -- ハナショウブ(白・多め)
+287 Algae -- 藻
+288 Underwater lotus -- 水中の蓮
+290 Swertia japonica -- センブリ
+322 Fern -- シダ
+323 Miscanthus -- ススキ
+325 Carex lenta -- ナキリスゲ
+326 Akinokirinsou -- アキノキリンソウ
+327 Needlesa (snow) -- センダングサ(雪)
+328 Imperata cylindrica -- チガヤ
+329 Yabutachibana -- ヤブタチバナ
+330 Ardisia japonica -- ヤブコウジ
+331 Kobanogamazumi -- コバノガマズミ
+332 Nezasa (more bushes) (with collisions) -- ネザサ(茂み多め）・（コリジョンあり）
+334 General-purpose grass A -- 汎用草A
+335 Dead grass_large (snow) -- 枯草_大(雪)
+336 Dead grass_small (snow) -- 枯草_小(雪)
+338 General-purpose grass B (snow) -- 汎用草B(雪)
+359 Ramie -- カラムシ
+360 Set of Nezasa, Dwarf lilyturf and fallen leaves -- ネザサとジャノヒゲ、落ち葉のセット
+375 Withered lotus -- 枯れた蓮

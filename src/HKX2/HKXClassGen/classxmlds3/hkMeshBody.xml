@@ -1,0 +1,10 @@
+<class name='hkMeshBody' version='1' signature='0xb64aa60c' size='16' parent='hkReferencedObject'>
+  <enums>
+    <enum name='PickDataIdentifier' flags='00000000'>
+      <enumitem name='PICK_RIGID_BODY_WITH_BREAKABLE_BODY' value='1'/>
+      <enumitem name='PICK_USER' value='4096'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

@@ -1,0 +1,3 @@
+0 Hand -- 片手
+1 Hands -- 両手
+2 Two-sword style -- 二刀流

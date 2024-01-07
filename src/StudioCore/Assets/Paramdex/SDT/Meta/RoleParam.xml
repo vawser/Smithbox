@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <spEffectID1 Refs="SpEffectParam" />
+    <spEffectID8 Refs="SpEffectParam" />
+    <spEffectID5 Refs="SpEffectParam" />
+    <spEffectID3 Refs="SpEffectParam" />
+    <spEffectID4 Refs="SpEffectParam" />
+    <phantomParamId Refs="PhantomParam" />
+    <spEffectID6 Refs="SpEffectParam" />
+    <spEffectID0 Refs="SpEffectParam" />
+    <spEffectID2 Refs="SpEffectParam" />
+    <spEffectID9 Refs="SpEffectParam" />
+    <spEffectID7 Refs="SpEffectParam" />
+    <spEffectID_vowRank3 Refs="SpEffectParam" />
+    <spEffectID_vowRank1 Refs="SpEffectParam" />
+    <phantomParamId_vowRank3 Refs="PhantomParam" />
+    <spEffectID_vowRank2 Refs="SpEffectParam" />
+    <phantomParamId_vowRank2 Refs="PhantomParam" />
+    <itemlotParamId Refs="ItemLotParam" />
+    <spEffectID_vowRank0 Refs="SpEffectParam" />
+    <phantomParamId_vowRank1 Refs="PhantomParam" />
+  </Field>
+  <Self />
+</PARAMMETA>

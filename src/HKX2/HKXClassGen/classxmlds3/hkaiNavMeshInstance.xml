@@ -1,0 +1,42 @@
+<class name='hkaiNavMeshInstance' version='1' signature='0xcc481002' size='480' parent='hkReferencedObject'>
+  <enums>
+    <enum name='DebugValues' flags='00000000'>
+      <enumitem name='DEAD_FACE' value='-559023410'/>
+      <enumitem name='DEAD_EDGE' value='-559026834'/>
+    </enum>
+    <enum name='CutInfoValues' flags='00000000'>
+      <enumitem name='NOT_CUT_EDGE' value='65535'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='originalFaces' offset='16' vtype='TYPE_SIMPLEARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='originalEdges' offset='32' vtype='TYPE_SIMPLEARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='originalVertices' offset='48' vtype='TYPE_SIMPLEARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='originalFaceData' offset='64' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='faceDataStriding' offset='72' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='originalEdgeData' offset='80' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='edgeDataStriding' offset='88' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='originalMesh' offset='96' ctype='hkaiNavMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='referenceFrame' offset='112' ctype='hkaiReferenceFrame' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeMap' offset='208' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='faceMap' offset='224' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='instancedFaces' offset='240' ctype='hkaiNavMeshFace' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='instancedEdges' offset='256' ctype='hkaiNavMeshEdge' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ownedFaces' offset='272' ctype='hkaiNavMeshFace' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ownedEdges' offset='288' ctype='hkaiNavMeshEdge' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ownedVertices' offset='304' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='faceFlags' offset='320' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cuttingInfo' offset='336' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='instancedFaceData' offset='352' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='instancedEdgeData' offset='368' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ownedFaceData' offset='384' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ownedEdgeData' offset='400' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='clearanceCache' offset='416' vtype='TYPE_ARRAY' vsubtype='TYPE_HALF' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='globalClearanceCache' offset='432' vtype='TYPE_ARRAY' vsubtype='TYPE_HALF' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='faceClearanceIndices' offset='448' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxGlobalClearance' offset='464' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sectionUid' offset='468' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='runtimeId' offset='472' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='layer' offset='476' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

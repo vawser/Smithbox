@@ -1,0 +1,5 @@
+<class name='hknpRefWorldCinfo' version='1' signature='0xfbaaa6df' size='272' parent='hkReferencedObject'>
+  <members>
+    <member name='info' offset='16' ctype='hknpWorldCinfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

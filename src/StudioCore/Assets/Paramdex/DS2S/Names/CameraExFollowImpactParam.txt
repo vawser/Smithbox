@@ -1,0 +1,52 @@
+1301 Backstab - Medium - Naoken - 1st Shot -- バックスタブ-中-直剣-１撃目
+1302 Backstab - Medium - Naoken - 2st Shot -- バックスタブ-中-直剣-２撃目
+1311 Backstab - Medium - Dagger - 1st Shot -- バックスタブ-中-短剣-１撃目
+1312 Backstab - Medium - Dagger - 2st Shot -- バックスタブ-中-短剣-２撃目
+1321 Backstab - Medium - Two-Handed Axe - 1st Shot -- バックスタブ-中-両手斧-１撃目
+1322 Backstab - Medium - Two-Handed Axe - 2st Shot -- バックスタブ-中-両手斧-２撃目
+1331 Backstab - Medium - Two-Handed Oversized Sword - 1st Shot -- バックスタブ-中-両手特大剣-１撃目
+1332 Backstab - Medium - Two-Handed Oversized Sword - 2st Shot -- バックスタブ-中-両手特大剣-２撃目
+1341 Backstab - Medium - Spear - 1 St -- バックスタブ-中-槍-１撃目
+1342 Backstab - Medium - Spear - 2st Shot -- バックスタブ-中-槍-２撃目
+1351 Backstab - Medium - Fist -1 Shot -- バックスタブ-中-拳-１撃目
+1352 Backstab - Medium - Fist - 2st Shot -- バックスタブ-中-拳-２撃目
+1401 Backstab - Large - Naoken - 1st Shot -- バックスタブ-大-直剣-１撃目
+1402 Backstab - Large - Naoken - 2st Shot -- バックスタブ-大-直剣-２撃目
+1411 Backstab - Large - Dagger - 1St Shot -- バックスタブ-大-短剣-１撃目
+1412 Backstab - Large - Dagger - 2st Shot -- バックスタブ-大-短剣-２撃目
+1441 Backstab - Large - Spear - 1St -- バックスタブ-大-槍-１撃目
+1442 Backstab - Large - Spear - 2st Shot -- バックスタブ-大-槍-２撃目
+1451 Backstab - Large - Fist -1 St -- バックスタブ-大-拳-１撃目
+1452 Backstab - Big - Fist - 2st Shot -- バックスタブ-大-拳-２撃目
+2301 Paribreak Stub - Medium - Naoken - 1st Shot -- パリィブレイクスタブ-中-直剣-１撃目
+2302 Paribreak Stub - Medium - Naoken - 2st Shot -- パリィブレイクスタブ-中-直剣-２撃目
+2311 Paribreak Stub - Medium - Dagger - 1st Shot -- パリィブレイクスタブ-中-短剣-１撃目
+2312 Paribreak Stub - Medium - Dagger - 2st Shot -- パリィブレイクスタブ-中-短剣-２撃目
+2321 Paribreak Stub - Medium - Two-Handed Axe - 1st Shot -- パリィブレイクスタブ-中-両手斧-１撃目
+2322 Paribreak Stub - Medium - Two-Handed Axe - 2st Shot -- パリィブレイクスタブ-中-両手斧-２撃目
+2331 Paribreak Stub - Medium - Two-Handed Oversized Sword - 1st Shot -- パリィブレイクスタブ-中-両手特大剣-１撃目
+2332 Paribreak Stub - Medium - Two-Handed Oversized Sword - 2st Shot -- パリィブレイクスタブ-中-両手特大剣-２撃目
+2341 Paribreak Stub - Medium - Spear - 1st Shot -- パリィブレイクスタブ-中-槍-１撃目
+2342 Paribreak Stub - Medium - Spear - 2st Shot -- パリィブレイクスタブ-中-槍-２撃目
+2351 Paribreak Stub - Medium - Fist - 1St Shot -- パリィブレイクスタブ-中-拳-１撃目
+2352 Paribreak Stub - Medium - Fist - 2st Shot -- パリィブレイクスタブ-中-拳-２撃目
+3301 Guard Break Stub - Medium - Naoken - 1st Shot -- ガードブレイクスタブ-中-直剣-１撃目
+3302 Guard Break Stub - Medium - Naoken - 2rd Shot -- ガードブレイクスタブ-中-直剣-２撃目
+3311 Guard Break Stub - Medium - Dagger - 1st Shot -- ガードブレイクスタブ-中-短剣-１撃目
+3312 Guard Break Stub - Medium - Dagger - 2rd Shot -- ガードブレイクスタブ-中-短剣-２撃目
+3321 Guard Break Stub - Medium - Two-Handed Axe - 1st Shot -- ガードブレイクスタブ-中-両手斧-１撃目
+3322 Guard Break Stub - Medium - Two-Handed Axe - 2rd Shot -- ガードブレイクスタブ-中-両手斧-２撃目
+3331 Guard Break Stub - Medium - Two-Handed Oversized Sword - 1st Shot -- ガードブレイクスタブ-中-両手特大剣-１撃目
+3332 Guard Break Stub - Medium - Two-Handed Oversized Sword - 2rd Shot -- ガードブレイクスタブ-中-両手特大剣-２撃目
+3341 Guard Break Stub - Medium - Spear - 1st Shot -- ガードブレイクスタブ-中-槍-１撃目
+3342 Guard Break Stub - Medium - Spear - 2rd Shot -- ガードブレイクスタブ-中-槍-２撃目
+3351 Guard Break Stub - Medium - Fist - 1st Shot -- ガードブレイクスタブ-中-拳-１撃目
+3352 Guard Break Stub - Medium - Fist - 2st Shot -- ガードブレイクスタブ-中-拳-２撃目
+3401 Guard Break Stub - Large - Naoken - 1st Shot -- ガードブレイクスタブ-大-直剣-１撃目
+3402 Guard Break Stub - Large - Naoken - 2rd Shot -- ガードブレイクスタブ-大-直剣-２撃目
+3411 Guard Break Stub - Large - Dagger - 1st Shot -- ガードブレイクスタブ-大-短剣-１撃目
+3412 Guard Break Stub - Large - Dagger - 2rd Shot -- ガードブレイクスタブ-大-短剣-２撃目
+3441 Guard Break Stub - Large - Spear - 1st Shot -- ガードブレイクスタブ-大-槍-１撃目
+3442 Guard Break Stub - Large - Spear - 2rd Shot -- ガードブレイクスタブ-大-槍-２撃目
+3451 Guard Break Stub - Large- Fist-1 Shot -- ガードブレイクスタブ-大-拳-１撃目
+3452 Guard Break Stub - Large- Fist-2 Shooting -- ガードブレイクスタブ-大-拳-２撃目

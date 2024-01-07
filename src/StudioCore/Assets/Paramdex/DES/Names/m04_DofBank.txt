@@ -1,0 +1,20 @@
+0 B0
+1 B1
+2 B2
+10 Poly drama (p040002-mecha up
+11 For poly drama (p040002-whole body
+13 For poly drama (p040001_c01
+14 For poly drama (p040001_c04
+17 For poly drama (p040201-c03
+18 For poly drama (p040201-c04
+19 For poly drama (p040201-c05
+20 For poly drama (p040201-c06
+21 For poly drama (p040201-c07
+26 For poly drama (p040201-c08-01
+27 For poly drama (p040201-c08-02
+28 For poly drama (p040201-c08-03
+50 Cutscene 1 (bokeh)
+51 Cutscene 1 (focus)
+52 Cutscene 2 (bokeh)
+53 Cutscene 2 (focus)
+54 Cutscene 2 (Soft)

@@ -1,0 +1,27 @@
+<class name='hkbAlignBoneModifier' version='1' signature='0x9a3f6b80' size='176' parent='hkbModifier'>
+  <enums>
+    <enum name='AlignModeABAM' flags='00000000'>
+      <enumitem name='ALIGN_MODE_CHARACTER_WORLD_FROM_MODEL' value='0'/>
+      <enumitem name='ALIGN_MODE_ANIMATION_SKELETON_BONE' value='1'/>
+    </enum>
+    <enum name='AlignTargetMode' flags='00000000'>
+      <enumitem name='ALIGN_TARGET_MODE_CHARACTER_WORLD_FROM_MODEL' value='0'/>
+      <enumitem name='ALIGN_TARGET_MODE_RAGDOLL_SKELETON_BONE' value='1'/>
+      <enumitem name='ALIGN_TARGET_MODE_ANIMATION_SKELETON_BONE' value='2'/>
+      <enumitem name='ALIGN_TARGET_MODE_USER_SPECIFIED_FRAME_OF_REFERENCE' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='alignMode' offset='88' etype='AlignModeABAM' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alignTargetMode' offset='89' etype='AlignTargetMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alignSingleAxis' offset='90' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alignAxis' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alignTargetAxis' offset='112' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='frameOfReference' offset='128' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='duration' offset='144' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alignModeIndex' offset='148' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alignTargetModeIndex' offset='152' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='time' offset='156' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeSinceLastModify' offset='160' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

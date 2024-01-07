@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="CS_PAD_KEY" type="s32">
+    </Enum>
+    <Enum Name="CS_MODIFIER_KEY" type="s32">
+    </Enum>
+    <Enum Name="CS_KEYBOARD_KEY" type="s32">
+    </Enum>
+    <Enum Name="CS_MOUSE_KEY" type="s32">
+    </Enum>
+  </Enums>
+  <Field>
+    <padKeyId AltName="Pad Key ID" Wiki="Pad (physical key)" Enum="CS_PAD_KEY" />
+    <keyboardModifyKey AltName="Keyboard Modify Key" Wiki="Keyboard modifier keys" Enum="CS_MODIFIER_KEY" />
+    <keyboardKeyId AltName="Keyboard Key ID" Wiki="Keyboard (physical keys)" Enum="CS_KEYBOARD_KEY" />
+    <mouseModifyKey AltName="Mouse Modify Key" Wiki="Mouse modifier key" Enum="CS_MODIFIER_KEY" />
+    <mouseKeyId AltName="Mouse Key ID" Wiki="Mouse (physical key)" Enum="CS_MOUSE_KEY" />
+    <reserved AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,847 @@
+0 For testing
+1 Pledge effect test
+2 test_enchantweapon
+3 test_cure
+4 [Item] White Sign Soapstone
+5 test_cureitem
+6 [System] Kickout
+7 [Item] Black Separation Crystal
+8 [System] Parameter changes during ghosting
+9 [System] Black parameter change
+10 [Item] Red Sign Soapstone
+11 [Item] Red Eye Orb
+12 [System] Bloodsign
+13 [System] Soul steel [multi]
+14 [System] Blue sign Visualization
+15 [Item] Black Eye Orb
+16 [System] NITs intrusion sign barreling
+17 [Item] Purple Coward's Crystal
+20 [System] Evaluation effect
+21 [System] Point light source equipment
+22 test_change_wep0
+23 test_change_wep1
+24 [System] Request for rescue
+25 [System] effect for revival production
+26 [Item] Blue Eye Orb
+27 [Item] Dragon Eye
+28 [Item] Dried Finger
+30 Anim - Parry
+31 Anim - Counter
+32 Anim - Falling
+33 Petrified
+34 Crystallization
+35 Throwing invalid state
+36 Hornet Ring
+37 Soul Drain Throw condition
+38 Enhanced throwing damage up effect
+39 Throwing disabled state - for prevention of saddle
+40 No resonance - Always applied to player
+41 Resonance LV1
+42 Resonance Lv2
+43 Resonance Lv3
+44 Resonance lv4
+50 Magic Nature (slot + 3 version)
+52 PG Test: Detection
+53 PG Test: Waiting for cooperation
+54 PG Test: Cooperation
+55 PG Test: Cooperating send
+57 PG Test: Gravity disabled
+59 Cooperation LV1
+60 Cooperation LV2
+61 Cooperation Lv3
+62 Waiting for cooperation
+63 Evil Eye Lv1
+64 Evil Eye Lv2
+65 The Evil eye (for use)
+71 Curse effect - Level 1
+72 Curse effect - Level 2
+73 Curse effect - Level 3
+74 Curse effect - Level 4
+80 Curse effect [Strengthening of spirits]
+100 Bonfire - Restore HP
+101 Bonfire - State Info 13
+102 Bonfire - Remove Bleed
+103 Bonfire - Remove Poison
+104 Bonfire - Remove Toxic
+105 Bonfire -
+106 Bonfire -
+107 Bonfire - Restore Durability
+108 Bonfire -
+109 Bonfire -
+110 Recovery -
+111 Recovery -
+112 Recovery -
+113 Recovery -
+114 Recovery -
+115 Recovery -
+116 Recovery -
+117 Recovery -
+118 Recovery -
+119 Recovery -
+201 [QWC] NPC +1
+202 [QWC] NPC +2
+203 [QWC] NPC +3
+206 [QWC] NPC -1
+207 [QWC] NPC -2
+208 [QWC] NPC -3
+211 [QWC] NPC - Black +1
+212 [QWC] NPC - Black +2
+221 [QWC] NPC - White +1
+222 [QWC] NPC - White +2
+231 [QWC] NPC - Grey +1
+232 [QWC] NPC - Grey +2
+236 [QWC] NPC - Grey -1
+237 [QWC] NPC - Grey -2
+311 [QWC] Player - Black +1
+312 [QWC] Player - Black +2
+321 [QWC] Player - White +1
+322 [QWC] Player - White +2
+331 [QWC] Player - Grey +1
+332 [QWC] Player - Grey +2
+336 [QWC] Player - Grey -1
+337 [QWC] Player - Grey -2
+500 [Spell] Tranquil Walk of Peace - Self
+510 [Spell] Tranquil Walk of Peace - Enemy
+520 [Spell] Aural Decoy
+530 [Spell] Hidden Body
+540 [Spell] Hush
+550 [Spell] Seek Guidance
+560 [Spell] Escape Death
+570 [Spell] Bountiful Sunlight / Replenishment
+571 [Spell] Bountiful Sunlight - Level 1
+572 [Spell] Bountiful Sunlight - Level 2
+573 [Spell] Bountiful Sunlight - Level 3
+574 [Spell] Bountiful Sunlight - Level 4
+580 [Spell] Homeward
+581 [Spell] Homeward
+600 [Spell] Vow of Silence
+610 [Spell] Vow of Silence - Self
+611 [Spell] Vow of Silence - Enemy
+620 [Spell] Cast Light
+630 [Spell] Undead Rapport
+640 [Spell] Fall Control
+1000 [Spell] Magic Weapon
+1010 [Spell] Great Magic Weapon
+1020 [Spell] Crystal Magic Weapon
+1040 [Spell] Magic Shield
+1050 [Spell] Strong Magic Shield
+1060 [Spell] Hidden Weapon
+1070 [Spell] Sunlight Blade
+1080 [Spell] Darkmoon Blade
+1081 [Spell] Darkmoon Blade - Level 1
+1082 [Spell] Darkmoon Blade - Level 2
+1083 [Spell] Darkmoon Blade - Level 3
+1090 [Spell] Power Within
+1120 [Spell] Flash Sweat
+1130 [Spell] Iron Flesh - Damage Reduction
+1140 [Spell] Iron Flesh - Slow Movement
+1150 [Spell] Iron Flesh - Damage Animation
+1160 [Spell] Magic Barrier
+1170 [Spell] Great Magic Barrier
+1200 [Spell] Poison Mist
+1210 [Spell] Toxic Mist
+1220 [Spell] Acid Surge
+1230 [Spell] Dark Fog
+1300 [Spell] Remedy
+1301 [Spell] Remedy - Bleed
+1302 [Spell] Remedy - Poison
+1303 [Spell] Remedy - Toxic
+1320 Poison treatment [State recovery]
+1321 Poison treatment [Resilient recovery]
+1330 [Spell] Repair
+1340 [Spell] Resist Curse
+1400 [Spell] Heal
+1401 [Spell] Heal - Friendly - Level 1
+1402 [Spell] Heal - Friendly - Level 2
+1403 [Spell] Heal - Friendly - Level 3
+1404 [Spell] Heal - Friendly - Level 4
+1410 [Spell] Great Heal Excerpt
+1411 [Spell] Great Heal Excerpt - Friendly - Level 1
+1412 [Spell] Great Heal Excerpt - Friendly - Level 2
+1413 [Spell] Great Heal Excerpt - Friendly - Level 3
+1414 [Spell] Great Heal Excerpt - Friendly - Level 4
+1420 [Spell] Great Heal
+1421 [Spell] Great Heal - Friendly - Level 1
+1422 [Spell] Great Heal - Friendly - Level 2
+1423 [Spell] Great Heal - Friendly - Level 3
+1424 [Spell] Great Heal - Friendly - Level 4
+1430 [Spell] Soothing Sunlight
+1431 [Spell] Soothing Sunlight - Friendly - Level 1
+1432 [Spell] Soothing Sunlight - Friendly - Level 2
+1433 [Spell] Soothing Sunlight - Friendly - Level 3
+1434 [Spell] Soothing Sunlight - Friendly - Level 4
+1500 Mimicry
+1510 Mimicry [moving slow effect]
+1520 Dragon Change 1
+1530 Dragon Change 2
+1600 Soul Drain 1 [AI]
+1610 Soul Drain 1 【 PC 】
+1620 Soul Drain 2 [AI]
+1630 Soul Drain 2 [PC]
+1700 White Relief Magic
+1710 Black Relief Magic
+1720 Item Detection Magic
+1800 [Spell] Karmic Justice
+1810 [Spell] Karmic Justice - Explosion
+1980 Recovery of others_HP recovery
+1981 Ghost camouflage
+1983 Black ghost retreats
+1984 Black ghosting
+1985 Resuscitation
+1986 - Level 1
+1987 - Level 2
+1988 - Level 3
+1989 - Level 4
+1990 Restoration of others
+2000 Havel's Ring
+2010 Red Tearstone Ring
+2013 Cloranthy Ring
+2020 Flame Stoneplate Ring
+2021 Thunder Stoneplate Ring
+2022 Spell Stoneplate Ring
+2023 Ring of Steel Protection
+2024 Speckled Stoneplate Ring
+2030 Bloodbite Ring
+2031 Poisonbite Ring
+2034 Cursebite Ring
+2040 White Seance Ring
+2050 Bellowing Dragoncrest Ring
+2060 Dusk Crown Ring
+2080 Hawk Ring
+2090 Wolf Ring
+2100 Covetous Gold Serpent Ring
+2101 Covetous Silver Serpent Ring
+2110 Slumbering Dragoncrest Ring
+2111 Ring of Fog
+2120 Rusted Iron Ring
+2121 Dark Wood Grain Ring
+2130 Ring of Sacrifice
+2131 Rare Ring of Sacrifice
+2140 Ring of the Sun Princess
+2190 Old Witch's Ring
+2200 Covenant of Artorias
+2210 Orange Charred Ring
+2230 Lingering Dragoncrest Ring
+2240 Ring of the Evil Eye
+2241 Ring of the Evil Eye [DeathOccurance]
+2250 Ring of Favor and Protection
+2260 Leo Ring
+2270 East Wood Grain Ring
+2290 Blue Tearstone Ring
+2300 Ring of the Sun's Firstborn
+2310 Darkmoon Seance Ring
+2320 Darkmoon Blade Covenant Ring
+2330 Cat Covenant Ring
+2340 Tiny Being's Ring
+2350 Calamity Ring
+2976 Substitution
+2977 Both hands power up
+2978 Spiritual hiding
+2979 Causal retribution
+2980 Increased loading weight
+2981 Pinch defense up
+2982 Miracle nature
+2983 white hope
+2984 Black Hope
+2985 Sincere prayer
+2986 Magic insensitivity
+2987 Cat landing
+2988 take care
+2989 Strong Ghost
+2990 weak "ghost camouflage"
+2991 Pheromone
+2992 Greed
+2993 Karateka
+2994 HP Regen
+2995 MP Regen
+2996 Plague resistance
+2997 All Resistance Up 2
+2998 Ignore equipment destruction
+3000 HP Recovery Grass
+3020 Estus Flask 1
+3021 Estus Flask 2
+3022 Estus Flask 3
+3023 Estus Flask 4
+3024 Estus Flask 5
+3025 Estus Flask 6
+3026 Estus Flask 7
+3027 Estus Flask 8
+3030 Estus Flask 1 50%
+3031 Estus Flask 2 50%
+3032 Estus Flask 3 50%
+3033 Estus Flask 4 50%
+3034 Estus Flask 5 50%
+3035 Estus Flask 6 50%
+3036 Estus Flask 7 50%
+3037 Estus Flask 8 50%
+3040 [Item] Green Blossom
+3041 [Item] Elizabeth's Mushroom
+3050 [Item] Bloodred Moss Clump
+3051 [Item] Bloodred Moss Clump
+3060 [Item] Purple Moss Clump
+3061 [Item] Purple Moss Clump
+3070 [Item] Blooming Purple Moss Clump
+3071 [Item] Blooming Purple Moss Clump
+3080 [Item] Divine Blessing
+3090 [Item] Purging Stone
+3091 [Item] Egg Vermifuge
+3100 [Item] Repair Powder
+3110 [Item] Poison Throwing Knife
+3120 [Item] Dung Pie - Self
+3121 [Item] Dung Pie - Enemy
+3130 [Item] Alluring Skull
+3140 And every time B -- Again B
+3150 [Item] Lloyd's Talisman
+3151 [Item] Lloyd's Talisman
+3160 [Item] Charcoal Pine Resin
+3170 [Item] Gold Pine Resin
+3180 [Item] Transient Curse
+3190 [Item] Rotten Pine Resin
+3191 Poisoning weapon [poison opponent when attacking]
+3210 Excitement
+3220 [Item] Homeward Bone
+3221 [Item] Homeward Bone - Warp A
+3222 [Item] Homeward Bone - Warp B
+3223 [Item] Homeward Bone - Warp C
+3224 [Item] Homeward Bone - Warp D
+3225 [Item] Homeward Bone - Warp E
+3226 [Item] Darksign
+3230 Resurrection Stone [Resurrection effect] -- 復活石【復活効果】
+3231 [Item] Humanity
+3240 [Item] Binoculars
+3250 Pledge discarded -- 誓約破棄
+3270 [Item] Soul of a Lost Undead
+3271 [Item] Large Soul of a Lost Undead
+3272 [Item] Soul of a Nameless Soldier
+3273 [Item] Large Soul of a Nameless Soldier
+3274 [Item] Soul of a Proud Knight
+3275 [Item] Large Soul of a Proud Knight
+3276 [Item] Soul of a Brave Warrior
+3277 [Item] Large Soul of a Brave Warrior
+3278 [Item] Soul of a Hero
+3279 [Item] Soul of a Great Hero
+3290 [Item] Humanity
+3291 [Item] Twin Humanities
+3292 Wang Hua of firewood when SFX: right shoulder -- 薪の王化時SFX：右肩
+3293 Wang Hua of firewood when SFX: upper body -- 薪の王化時SFX：上半身
+3294 Wang Hua of firewood when SFX: systemic -- 薪の王化時SFX：全身
+3295 Wang Hua of firewood when SFX: -- 薪の王化時SFX：
+3296 Wang Hua of firewood when SFX: -- 薪の王化時SFX：
+3297 Wang Hua of firewood when SFX: -- 薪の王化時SFX：
+3298 Wang Hua of firewood when SFX: -- 薪の王化時SFX：
+3299 Vagrant Seoul 10
+3300 [Item] Fire Keeper Soul
+3310 [Item] Soul of Quelaag
+3311 [Item] Soul of Sif
+3312 [Item] Soul of Gwyn, Lord of Cinder
+3313 [Item] Core of an Iron Golem
+3314 [Item] Soul of Ornstein
+3315 [Item] Soul of the Moonlight Butterfly
+3316 [Item] Soul of Smough
+3317 [Item] Soul of Priscilla
+3318 [Item] Soul of Gwyndolin
+3319 [Item] Guardian Soul
+3320 [Item] Soul of Artorias
+3321 [Item] Soul of Manus
+3330 Human Nature Recovery -- 人間性回復
+3950 Potion A
+3951 Potion C
+3952 Potion D
+3953 MP Potion B
+3954 Curse release item [Curse Resistance Recovery]
+3955 Burning pine resin
+3956 Light Stone
+3957 Phalanx DS
+3958 King's Shield DS
+3959 King's Sword DS
+3960 Lendl DS
+3961 Referee DS
+3962 Arashi Warrior DS
+3963 Storm Beast DS
+3964 Kamisama DS
+3965 Chimera DS
+3966 Yellow Cloth Okina DS
+3967 Leech Demon DS
+3968 Fly Colossus DS
+3969 Libra DS
+3970 Large Spider DS
+3971 Fire Giant DS
+3972 Dragon Demon DS
+3973 Heroine DS
+3974 Fat Demon DS
+3975 Hiryuko DS
+3976 Flying Dragon DS
+3977 Ore Spirit DS
+3978 Bad End DS
+3979 Infinite Gate
+4000 Sustained damage floor [slow for poison]
+4001 Sustained damage floor [Poison _ Interval Adjustment _ Poison swamp Fores
+4002 Sustained damage floor [poison _ Effect Body _ Poison swamp Forest (deep)
+4003 Sustained damage floor [Poison _ Interval Adjustment _ Poison swamp forest (shallow)]
+4004 Sustained damage floor [poison _ Effect Body _ Poison swamp forest (shallow)]
+4005 PC Black Ghost [Oi no Okina] Doping
+4006 PC Black Ghost [Yoshi no Okina] Head SFX
+4011 Sustained Damage Floor_After [Hill Swamp]
+4012 Sustained Damage Floor After [Poison]
+4013 Persistent Damage Floor_After [Blood Swamp]
+4014 Gorokuro Cannonball-Doping
+4015 gunpowder barrel doping
+4016 Sustained Damage Floor [Hall 2 Lava]
+4017 Sustained Damage Floor [Mine Boss Lava]
+4020 Poison Swamp (shallow)
+4021 Poison Swamp (shallow) - ReplaceEffect
+4030 Lava (No Orange Charred Ring)
+4031 Lava (Base)
+4100 Water (ankle level)
+4130 Hidden in a coffin
+4140 in the territory of Kurana
+4150 Inside Key of Universal door
+4160 Falling control for enemy
+4161 Falling control for white cat
+4170 Pledge special standby throwing disabled
+4500 Forest Bandit Territory
+4501 Inside the territory
+4510 Arena 1 to 1 [Small] Territory
+4511 Arena 2 to 2 [Small] Territory
+4512 Arena Arena Battle Royal [Small] Territory
+4513 Arena 1 to 1 [Small] Summoning Request A
+4514 Arena 1: 1 [Small] Summoning Request B
+4515 Arena 2: 2 [Small] Summon A1
+4516 Arena 2-2 [Small] Summon A2
+4517 Arena 2: 2 [Small] Hope to Summon B1
+4518 Arena 2: 2 [Small] Summoning Request B2
+4519 Arena Battle Royale [Small] Summoning Request A
+4520 Arena Battle Royale [Small] Summoning Request B
+4521 Arena Battle Royale [Small] Summoning Request C
+4522 Arena Battle Royale [Small] Summoning Request D
+4523 Arena 1-on-1 [Large] Territory
+4524 Arena 2 to 2 [Large] Inside Territory
+4525 Arena Battle Royale [Large] Territory
+4526 Arena 1: 1 [Large] Summoning Request A
+4527 Arena 1: 1 [Large] Summoning Request B
+4528 Arena 2-2 [Large] Summoning A1
+4529 Arena 2: 2 [Large] Summoning request A2
+4530 Arena 2 to 2 [Large] Summoning Request B1
+4531 Arena 2 to 2 [Large] Summoning Request B2
+4532 Arena Battle Royale [Large] Summoning Request A
+4533 Arena Battle Royale [Large] Summoning Request B
+4534 Arena Battle Royale [Large] Summoning Request C
+4535 Arena Battle Royale [Large] Summoning Request D
+4600 Unleash Event
+4601 Unleash Event
+4610 Prohibited use of designated items in the arena
+4611 Arena died in Arena
+4612 Provisional 1st place in the Arena for SFX
+4613 NoDead in the Arena
+4614 In the Arena for 1st place in SFX
+4615 Temporary 1st place in the Arena (10 consecutive victories) for SFX
+4616 Provisional 1st place in the Arena (30 consecutive victories) for SFX
+4617 Provisional 1st in the Arena (50 consecutive victories) for SFX
+4618 Provisional 1st place in the Arena (100 consecutive wins) for SFX
+5000 Gold Binding
+5001 Fire Phantom Stage 1
+5002 Fire Phantom Stage 2
+5003 Fire Phantom Stage 3
+5004 Fire Phantom Stage 4
+5005 Yarn-covered
+5006 Fly
+5007 Forced ghost first stage
+5008 Forced ghost stage 2
+5009 Forced ghost stage 3
+5010 Gold Run Enhancement
+5011 Phalanx dipstick doping
+5012 Phalanx-more dough stuck doping
+5013 Chimera enhancement
+5014 Covered with leech
+5015 Reinforced Okina Summon Black NPC
+5016 Corrupt_Poison attack
+5017 Slave soldier_Fire Dagger (Ojo 1)
+5018 General soldiers use recovery items
+5019 Knight: Use recovery item
+5020 Toxic rat _ Toxic attack
+5021 Blood mite, venom
+5022 Black Octopus Head _ Soul Steel
+5023 Centipede_Corrosion attack
+5024 Bleeding attack (low resistance / low effect)
+5025 Bleeding attack II (Strength of resistance and effect)
+5026 Slugs, venom
+5027 Large mosquito _ Poisoned blood _ Normal time
+5028 Large mosquito _ poisoned blood _ when full
+5029 Corrupt_Poison Cloud
+5030 Corrupt_Poison attack
+5031 Soul Steel for exclusive use of King Lendl
+5032 Kamisama Magic Square _ Bonded
+5033 NPC for overweight doping
+5034 No damage to fire
+5035 Remains of Seoul invalid
+5036 For NPC doping (damage 3.0 times)
+5037 For NPC doping (1.5x defense)
+5038 For NPC doping (protection 2.0x)
+5039 For NPC doping (flame resistant)
+5040 For NPC doping (double damage)
+5041 For NPC doping (0.5 times damage)
+5042 Doran for reverse doping
+5043 Soul Steel invalid
+5044 Leech demon recovery
+5045 Prison 3 Doping Level +5 to +1
+5046 Prison 3 Doping Level + 0-5
+5047 Prison 3 Doping Level -6 to -10
+5048 Prison 3 Doping Level-11
+5049 For NPC doping (MP recovery)
+5050 Leech demon Recovery HP100% ～
+5051 Leech Demon Recovery HP70% ～
+5052 Leech Demon Recovery HP40% ～
+5053 Poison Ineffective
+5054 Bleeding disabled
+5055 Plague invalid
+5056 Poison & Bleeding Ineffective
+5057 Poison & Plague Ineffective
+5058 Bleeding & plague invalid
+5059 Poison & Bleeding & Plague Ineffective
+5060 Prisoner_poison attack
+5061 Slave soldier_Fire dagger (Ojo 2)
+5062 Royal Castle 1, 2 Prince Lendl (2.0x defense)
+5063 Royal Castle 3 Lendl Prince (Defense 2.0x)
+5064 Royal Castles 2, 3, 4 Billo (2.5x defense)
+5065 Prison Castle 3 For strengthening NPC
+5066 Phalanx Chibi
+5067 King's Shield, 1st Stage, Left Foot
+5068 King's shield, 2nd stage, left foot
+5069 King's shield, 3 steps, left foot
+5070 King's shield 1st stage, right foot
+5071 King's shield, 2nd stage, right foot
+5072 King's shield, 3 steps, right foot
+5073 Referee belly bleeding
+5074 NPC Stamina Attack Power Level 1
+5075 NPC Stamina Attack Power Level 2
+5076 NPC Stamina Attack Power Level 3
+5077 NPC Stamina Attack Power Level 4
+5078 NPC stamina attack power multiplier level 5
+5079 NPC stamina attack power multiplier level 6
+5080 NPC Stamina Attack Power Level 7
+5081 NPC Stamina Attack Power Level 8
+5082 NPC Stamina Attack Power Level 9
+5083 Libra recovery
+5084 Doran reinforcement
+5100 DS2 @ Gasman resident
+5101 Use DS2 Proto Knight_Item
+5102 DS2 Proto @Gailor_Recovery Magic
+5103 DS2 Proto @ Evil Eye (User)
+5104 General soldiers-use recovery items
+5105 Frog Ai Motion Change
+5110 Tree climbing lizard @ motion change (default)
+5111 Tree climbing lizard @ motion change (tree climbing)
+5120 Wandering Demon becomes normal logic
+5130 Things that continue to shine Motion change (arm release)
+5131 Things that continue to shine Motion change (cliff)
+5132 Things that continue to be inflamed: Thermal power stage 1
+5133 The thing that keeps swelling The second stage of thermal power
+5140 Wheel skeleton state change (animation offset 0)
+5141 Wheel Skeleton State Change (Anime Offset 10000)
+5142 Wheel Skeleton Damage Anime Change [Large / Blown-off Only]
+5150 Fire Damage Disabled
+5151 Bleeding damage reduction (provisional)
+5152 Lava walk (enemy)
+5160 Always small damage
+5161 Resident damage animation change [all invalid] 0.1 second version
+5162 0.1 second version with only small damage
+5163 SA, 0.1 second version with only medium damage
+5170 Giant slave: damage animation change when down [Large only]
+5171 Firewood King-Resident Damage Animation Change
+5180 Gray Saint, always small damage
+5210 Poly poly incubation period
+5211 Poly-Poly state
+5212 Egg head standby
+5213 Egg head
+5214 Egg head_Second stage
+5220 Basilisk petrochemical effect (breath)
+5221 Basilisk petrochemical effect (bullet)
+5222 Basilisk petrochemical effect (smoke)
+5230 jelly covered
+5231 Immortal poison
+5232 Doubu Warrior Gravity
+5233 Darklays 魂
+5234 Corrosion attack, single shot
+5235 Corrosion attack / Gero
+5236 Corrosion attack and continuous throw
+5250 Poison Damage 1
+5251 Poison Damage 2
+5252 Poison Damage 3
+5253 Poison Damage 4
+5254 Poison Damage 5
+5255 Poison Damage 6
+5260 Deadly Poison Damage 1
+5261 Toxic Damage 2
+5262 Poisonous Damage 3
+5263 Deadly Poison Damage 4
+5264 Deadly Poison Damage 5
+5265 Deadly Poison Damage 6
+5269 Deadly Poison Damage 10
+5270 Bleeding Damage 1
+5271 Bleeding damage 2
+5272 Bleeding Damage 3
+5273 Bleeding Damage 4
+5274 Bleeding Damage 5
+5275 Bleeding Damage 6
+5279 Bleeding damage-major bleeding
+5280 Petrification Curse Damage 1
+5281 Petrification Curse Damage 2
+5282 Petrification Curse Damage 3
+5283 Petrification Curse Damage 4
+5284 Petrification Curse Damage 5
+5290 Crystal Curse Damage 1
+5291 Crystal Curse Damage 2
+5292 Crystal Curse Damage 3
+5293 Crystal Curse Damage 4
+5294 Crystal Curse Damage 5
+5295 Impact Crystal Crystal Curse Damage for Sheath
+5296 Self-centering explosion for sheath Crystal curse damage
+5300 Resident damage animation change [all invalid]
+5301 Resident damage animation change [minimal / small / medium / large / striking / launch / push invalid]
+5302 Resident damage animation change [minimal / small / medium / large / push ・ invalid]
+5303 Resident damage animation change [minimal / small / middle / push ・ invalid]
+5304 Resident damage animation change [minimal / small / push invalid]
+5305 Resident damage animation change [extremely small, push invalid]
+5306 Resident damage animation change [push → small]
+5307 Resident damage animation change [very small → small]
+5308 Resident damage animation change [middle or more]
+5309 Resident damage animation change [middle or more, with push]
+5320 Resident damage animation change [Daizumi only]
+5321 Resident damage animation change [medium, large, smashing only]
+5322 Resident damage animation change [no blow-off]
+5323 Resident damage animation change [no blow-off / smashing]
+5324 Resident damage animation change [only minimal / small / medium / large]
+5325 Resident damage animation change [no blow-off, no push]
+5326 Resident damage animation change [small / medium only]
+5327 Resident damage animation change [only small / medium / large]
+5328 Resident damage animation change [small / medium / large / slap only]
+5329 Resident damage animation change [small only]
+5330 Resident damage animation change [small, large, blowing away only]
+5331 Resident damage animation change [for crystal lizard]
+5332 Resident damage animation changes
+5333 Resident damage animation change [only during]
+5334 Resident damage animation change [only medium and blowing away]
+5335 [DLC] Resident damage animation change [Medium / Large / Blow-off only]
+5336 [DLC] Resident damage animation change [Small / Medium / Large / Small flying only]
+5337 [DLC] Resident damage animation changes [Treats blowing and slamming]
+5360 Damage animation change at SA [All without animation]
+5361 Damage animation change at SA [only small]
+5362 Damage animation change at SA [Medium only]
+5363 Damage animation change at SA [Small and Medium]
+5364 Change in damage animation at SA
+5400 Weapon Change Anime ID Offset 0
+5401 Weapon Change Anime ID Offset 10000
+5402 Weapon Change @ Anime ID Offset 20000
+5403 Weapon Change Anime ID Offset 30000
+5410 Prince Isaris @ Motion Change (default)
+5411 Prince Isaris @ Motion Change (Upward)
+5412 Prince Isaris @ Motion Change (upward cliff)
+5413 Prince Isaris @ Motion Change (downward)
+5420 Mimic Normal state
+5421 Mimic Mimic State
+5422 Mimic
+5423 Mimic Normal sleep state
+5424 Mimic-Normal sleep start state
+5430 Lake Beast Neck 1 Disconnected
+5431 Lake Beast Neck 2 Disconnected
+5432 Lake Beast Neck 3 Disconnected
+5433 Lake Beast Neck 4 Disconnected
+5434 Lake Beast Neck 5 Disconnected
+5435 Lake Beast Neck 6 Disconnected
+5436 Lake Beast 7 Disconnected
+5440 White Dragon Sheath HP Automatic Recovery
+5441 White Dragon Sheath Invincible SFX Display 1
+5442 White Dragon Sheath @ Invincible SFX Display 2
+5443 White Dragon Sheath Invincible SFX Display 3
+5444 Moonlight Butterfly landed HP recovery
+5445 MP Infinity for NPC
+5446 NPC stamina recovery is fast
+5447 Hellkite HP Recovery
+5450 Skeleton: Resurrection from suspended
+5451 Skeleton Immortal
+5452 Skeleton suspended
+5460 Enemy Character Est [HP]
+5466 Enemy Character: Miracle, Great Recovery
+5470 Friend enhancement magic (for yourself)
+5471 Ally enhancement magic (for allies)
+5480 Throwing animation and defense adjustment
+5490 Gargoyle 2nd half HP half
+5491 Heavy Knight SA SA decreased during quest
+5492 Tutorial NPC Dying
+5493 Rotorek in-service fall control
+5494 NPC poison resistance 50 times
+5495 NPC
+5496 NPC Quite resistant to magic and fire
+5500 Kagerou Ryu Prefer Host
+5510 [DLC] c4100_Artorius_Self-enhancement
+5511 [DLC] c4100_Artorius_SA adjustment during self-enhancement
+5520 [DLC] c3471 Gold Chimera Poison Damage
+5521 [DLC] c3471 Gold chimera っ た
+5522 [DLC] c3471 Gold Chimera
+5530 [DLC] c4090_Sniper A_Bleeding
+5540 [DLC] c4172_Humanity (large) _Outer edge damage
+5541 [DLC] c4171_ Human nature (medium) _ Outer edge damage
+5542 [DLC] c4170_ Human nature (small) _ Outer margin damage
+5550 [DLC] c4520_ shift _ hard to be targeted
+5560 [DLC] c4160_ Abyss Magician_Poison Cloud
+5561 [DLC] c4160_ Abyss Magician_Stand
+5570 [DLC] c4110 Hawk's Eye Go Poison Life Short
+5571 【DLC】 c4110
+5580 [DLC] c4150 abyss person @ eye light animation offset
+5581 [DLC] c4150 Abyss Eye Doping
+5582 [DLC] c4160 Abyss Magician Eye Light Doping
+5590 [DLC] c4510_ Black Dragon_ Evil Eye Throw Effect
+6000 [Behavior] touchable in rolling
+6010 [94] Large shield of rock [Repelling damage reduction effect]
+6011 [94] Rock Shield [Damage animation change effect]
+6200 Armor - Stamina Recovery Loss - Head 1
+6201 Armor - Stamina Recovery Loss - Head 2
+6202 Armor - Stamina Recovery Loss - Head 3
+6203 Armor - Stamina Recovery Loss - Head 4
+6210 Armor - Stamina Recovery Loss - Body 1
+6211 Armor - Stamina Recovery Loss - Body 2
+6212 Armor - Stamina Recovery Loss - Body 3
+6213 Armor - Stamina Recovery Loss - Body 4
+6220 Armor - Stamina Recovery Loss - Arms 1
+6221 Armor - Stamina Recovery Loss - Arms 2
+6222 Armor - Stamina Recovery Loss - Arms 3
+6223 Armor - Stamina Recovery Loss - Arms 4
+6230 Armor - Stamina Recovery Loss - Legs 1
+6231 Armor - Stamina Recovery Loss - Legs 2
+6232 Armor - Stamina Recovery Loss - Legs 3
+6233 Armor - Stamina Recovery Loss - Legs 4
+6300 Super Armor
+6310 Helm of Thorns
+6320 Armor of Thorns
+6330 Gauntlets of Thorns
+6340 Leggings of Thorns
+6400 Bleed 1
+6401 Bleed 2
+6402 Bleed 3
+6403 Bleed 4
+6404 Bleed 5
+6405 Bleed 6
+6410 Bleed - Priscilla's Dagger
+6420 Bleed
+6500 Poison 1
+6501 Poison 2
+6502 Poison 3
+6503 Poison 4
+6504 Poison 5
+6505 Poison 6
+6600 Toxic 1
+6601 Toxic 2
+6602 Toxic 3
+6603 Toxic 4
+6604 Toxic 5
+6605 Toxic 6
+6610 Bleed - Gold Tracer
+6620 Toxic
+6621 Poise
+6630 Poison - Guardian Tail
+6700 Cold _1
+6702 [Item] Dragon Head Stone
+6710 [Item] Dragon Torso Stone
+6711 [Item] Dragon Torso Stone - Level 1
+6712 [Item] Dragon Torso Stone - Level 2
+6713 [Item] Dragon Torso Stone - Level 3
+6720 Server
+6730 Smough's Hammer
+6740 Sanctus
+6750 Bloodshield
+6760 Poison Arrow
+6800 Tin Crystallization Catalyst / Manus Catalyst
+6810 [58] Old Dragon Sword / Physical Defense Up
+6820 Moonlight Greatsword
+6830 Dragon Greatsword
+6840 Gargoyle Tail Axe
+6850 Dragon King Greataxe
+6860 Dragon Tooth
+6870 Dragon Bone Fist
+6880 Gargoyle's Halberd
+6890 Grass Crest Shield
+6900 Mask of the Father
+6910 Mask of the Mother
+6920 Mask of the Child
+6930 Crown of Dusk
+6940 Crown of the Dark Sun
+6950 Sunlight Maggot
+6960 Symbol of Avarice
+6961 Symbol of Avarice [CycleOccurance]
+6970 Chaos Blade
+6980 Lifehunt Scythe
+6990 Butcher Knife
+7001 Area Scaling - Undead Asylum
+7002 Area Scaling - Firelink Shrine
+7003 Area Scaling - Undead Burg
+7004 Area Scaling - Upper Depths
+7005 Area Scaling - Darkroot Gardens
+7006 Area Scaling -
+7007 Area Scaling - Catacombs
+7008 Area Scaling - Depths / Blighttown
+7009 Area Scaling - Sen's Fortress
+7010 Area Scaling - Anor Londo
+7011 Area Scaling - New Londo / Darkroot Forest
+7012 Area Scaling - Tomb of the Giants
+7013 Area Scaling - Izalith
+7014 Area Scaling - Duke's Archives / Deep Izalith / DLC
+7015 Area Scaling - Kiln of the First Flame / DLC
+7100 Black Phantom
+7401 NG+ Scaling - Undead Asylum
+7402 NG+ Scaling - Firelink Shrine
+7403 NG+ Scaling - Undead Burg
+7404 NG+ Scaling - Upper Depths
+7405 NG+ Scaling - Darkroot Gardens
+7406 NG+ Scaling -
+7407 NG+ Scaling - Catacombs
+7408 NG+ Scaling - Depths / Blighttown
+7409 NG+ Scaling - Sen's Fortress
+7410 NG+ Scaling - Anor Londo
+7411 NG+ Scaling - New Londo / Darkroot Forest
+7412 NG+ Scaling - Tomb of the Giants
+7413 NG+ Scaling - Izalith
+7414 NG+ Scaling - Duke's Archives / Deep Izalith / DLC
+7415 NG+ Scaling - Kiln of the First Flame / DLC
+7500 Multiplayer boss scaling (1 summon)
+7501 Multiplayer boss scaling (2 summons)
+7510 Multiplayer Artorias poise scaling (1 summon)
+7511 Multiplayer Artorias poise scaling (2 summons)
+7600 NPC doping (actual damage 0.5 times)
+7601 For NPC doping (actual damage 1.5 times)
+7602 For NPC doping (actual damage twice)
+7610 For NPC doping (1.5x defense)
+7611 For NPC doping (2.0x defense)
+7650 For NPC doping (Aunt of the swamp)
+7651 For NPC doping ()
+7700 NPC cooperation multi-doping
+7800 [DLC] NPC_HP doping
+7801 [DLC] NPC_ Stamina recovery doping
+8000 wandering doping test (medium)
+8001 Wandering doping test (strong)
+71100 Invalid
+71110 Immortal
+71111 all valid
+80000 All invalid
+80011 Remaining & invalidated
+80101 Remaining & fascinating invalid
+80111 Remaining invalid
+81001 Inhalation & fascination invalid
+81011 Inhalation disabled
+81101 Fascination disabled
+81111 all valid
+90000 All disabled
+90001 Poison & Bleeding & Toxic disabled
+90010 Poison & Bleeding & Curse disabled
+90011 Poison & Toxic disabled
+90100 Poison & Toxic & Curse disabled
+90101 Poison & Bleed disabled
+90110 Poison & Curse disabled
+90111 Poison disabled
+91000 Bleeding & Toxic & curse disabled
+91001 Bleeding & Toxic disabled
+91010 Bleeding & Curse disabled
+91011 Bleeding disabled
+91100 Toxic & Curse disabled
+91101 Toxic disabled
+91110 Curse disabled
+91111 all valid

@@ -1,0 +1,12 @@
+<class name='hkaiSilhouetteMerger' version='1' signature='0x1b5ff640' size='96' parent='hkReferencedObject'>
+  <enums>
+    <enum name='MergeType' flags='00000000'>
+      <enumitem name='UNUSED_MERGING_SIMPLE' value='0'/>
+      <enumitem name='UNUSED_MERGING_CONVEX_HULL' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='mergeType' offset='16' etype='MergeType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mergeParams' offset='32' ctype='hkaiSilhouetteGenerationParameters' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

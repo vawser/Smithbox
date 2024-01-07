@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>LOAD_BALANCER_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 lowerFpsThreshold"></Field>
+    <Field Def="f32 upperFpsThreshold"></Field>
+    <Field Def="s32 lowerFpsContinousCount"></Field>
+    <Field Def="s32 upperFpsContinousCount"></Field>
+    <Field Def="s32 downAfterChangeSleep"></Field>
+    <Field Def="s32 upAfterChangeSleep"></Field>
+    <Field Def="u8 postProcessLightShaft"></Field>
+    <Field Def="u8 postProcessBloom"></Field>
+    <Field Def="u8 postProcessGlow"></Field>
+    <Field Def="u8 postProcessAA"></Field>
+    <Field Def="u8 postProcessSSAO"></Field>
+    <Field Def="u8 postProcessDOF"></Field>
+    <Field Def="u8 postProcessMotionBlur"></Field>
+    <Field Def="u8 postProcessMotionBlurIteration"></Field>
+    <Field Def="u8 Unk0x20"></Field>
+    <Field Def="u8 shadowBlur"></Field>
+    <Field Def="u8 sfxParticleHalf"></Field>
+    <Field Def="u8 sfxReflection"></Field>
+    <Field Def="u8 sfxWaterInteraction"></Field>
+    <Field Def="u8 sfxGlow"></Field>
+    <Field Def="u8 sfxDistortion"></Field>
+    <Field Def="u8 sftSoftSprite"></Field>
+    <Field Def="u8 sfxLightShaft"></Field>
+    <Field Def="u8 sfxScaleRenderDistanceScale"></Field>
+    <Field Def="u8 dynamicResolution"></Field>
+    <Field Def="u8 shadowCascade0ResolutionHalf"></Field>
+    <Field Def="u8 shadowCascade1ResolutionHalf"></Field>
+    <Field Def="u8 chrWetDisablePlayer"></Field>
+    <Field Def="u8 chrWetDisableRemotePlayer"></Field>
+    <Field Def="u8 chrWetDisableEnemy"></Field>
+    <Field Def="u8 dynamicResolutionPercentageMin"></Field>
+    <Field Def="u8 dynamicResolutionPercentageMax"></Field>
+    <Field Def="u16 UnkUshort0x32"></Field>
+    <Field Def="f32 UnkFloat0x34"></Field>
+    <Field Def="u16 UnkUshort0x38"></Field>
+    <Field Def="u16 UnkUshort0x3A"></Field>
+    <Field Def="s32 Unk0x3C"></Field>
+    <Field Def="s32 Unk0x40"></Field>
+    <Field Def="s32 Unk0x44"></Field>
+    <Field Def="s32 Unk0x48"></Field>
+    <Field Def="s32 Unk0x4C"></Field>
+  </Fields>
+</PARAMDEF>

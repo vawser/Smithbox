@@ -1,0 +1,6 @@
+<class name='hknpPairCollisionFilter' version='1' signature='0x30b955f6' size='48' parent='hknpCollisionFilter'>
+  <members>
+    <member name='disabledPairs' offset='24' ctype='hknpPairCollisionFilterMapPairFilterKeyOverrideType' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='childFilter' offset='40' ctype='hknpCollisionFilter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

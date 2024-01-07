@@ -1,0 +1,9 @@
+<class name='hkcdPlanarCsgOperand' version='1' signature='0x40034abe' size='64' parent='hkReferencedObject'>
+  <members>
+    <member name='geometry' offset='16' ctype='hkcdPlanarGeometry' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='danglingGeometry' offset='24' ctype='hkcdPlanarGeometry' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solid' offset='32' ctype='hkcdPlanarSolid' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='geomSources' offset='40' ctype='hkcdPlanarCsgOperandGeomSource' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='regions' offset='56' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

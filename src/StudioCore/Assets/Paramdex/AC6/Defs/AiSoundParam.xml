@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>AI_SOUND_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 radius"></Field>
+    <Field Def="f32 lifeFrame"></Field>
+    <Field Def="u8 bSpEffectEnable"></Field>
+    <Field Def="u8 type"></Field>
+    <Field Def="u8 opposeTarget:1"></Field>
+    <Field Def="u8 friendlyTarget:1"></Field>
+    <Field Def="u8 selfTarget:1"></Field>
+    <Field Def="u8 disableOnTargetPCompany:1"></Field>
+    <Field Def="u8 rank"></Field>
+    <Field Def="f32 forgetTime"></Field>
+    <Field Def="s32 priority"></Field>
+    <Field Def="s32 soundBehaviorId"></Field>
+    <Field Def="u8 aiSoundLevel"></Field>
+    <Field Def="u8 replaningState"></Field>
+    <Field Def="dummy8 pad1[6]"></Field>
+  </Fields>
+</PARAMDEF>

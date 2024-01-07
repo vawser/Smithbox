@@ -1,0 +1,47 @@
+10040700 Brazier
+10040701 Brazier
+10040702 Brazier
+10040703 Brazier
+10040704 Brazier
+10040705 Brazier
+10040706 Brazier
+10040707 Brazier
+10040708 Brazier
+10040709 Brazier
+10040710 Brazier
+10040711 Brazier
+10040712 Brazier
+10040713 Brazier
+10040714 Brazier
+10040715 Brazier
+10040716 Brazier
+10040717 Brazier
+10040718 Brazier
+10040719 Brazier
+10040720 Brazier
+10045000 [Chest] Treasure
+10045010 [Chest] Treasure
+10045020 [Chest] Treasure
+10045030 [Chest] Treasure
+10045040 [Chest] Treasure
+10045050 [Chest] Treasure
+10045060 [Chest] Treasure
+10045070 [Chest] Treasure
+10045500 [Chest] Treasure
+10045510 [Chest] Treasure
+10046000 [Corpse] Treasure
+10046010 [Corpse] Treasure
+10046020 [Corpse] Treasure
+10046030 [Corpse] Treasure
+10046040 [Corpse] Treasure
+10046050 [Corpse] Treasure
+10046060 [Corpse] Treasure
+10046070 [Corpse] Treasure
+10046080 [Corpse] Treasure
+10046090 [Corpse] Treasure
+10046100 [Corpse] Treasure
+10046110 [Corpse] Treasure
+10046120 [Corpse] Treasure
+10046130 [Corpse] Treasure
+10046140 [Corpse] Treasure
+10046150 [Corpse] Treasure

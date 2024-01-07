@@ -1,0 +1,14 @@
+<class name='hknpCollisionDispatchType' version='1' signature='0x30c13d73' size='1'>
+  <enums>
+    <enum name='Enum' flags='00000000'>
+      <enumitem name='NONE' value='0'/>
+      <enumitem name='CONVEX' value='1'/>
+      <enumitem name='COMPOSITE' value='2'/>
+      <enumitem name='DISTANCE_FIELD' value='3'/>
+      <enumitem name='USER' value='4'/>
+      <enumitem name='NUM_TYPES' value='5'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

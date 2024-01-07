@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<ArmZ0 AltName="a00 - Arm Out Angle" />
+	<ArmXY0 AltName="a00 - Arm Forward Angle" />
+	<ArmZ1 AltName="a02 - Arm Out Angle" />
+	<ArmXY1 AltName="a02 - Arm Forward Angle" />
+	<ArmZ2 AltName="a03 - Arm Out Angle" />
+	<ArmXY2 AltName="a03 - Arm Forward Angle" />
+	<ArmZ3 AltName="a10 - Arm Out Angle" />
+	<ArmXY3 AltName="a10 - Arm Forward Angle" />
+	<ArmZ4 AltName="a11 - Arm Out Angle" />
+	<ArmXY4 AltName="a11 - Arm Forward Angle" />
+	<ArmZ5 AltName="a12 - Arm Out Angle" />
+	<ArmXY5 AltName="a12 - Arm Forward Angle" />
+	<ArmZ6 AltName="a13 - Arm Out Angle" />
+	<ArmXY6 AltName="a13 - Arm Forward Angle" />
+	<ArmZ7 AltName="a14 - Arm Out Angle" />
+	<ArmXY7 AltName="a14 - Arm Forward Angle" />
+	<ArmZ8 AltName="a15 - Arm Out Angle" />
+	<ArmXY8 AltName="a15 - Arm Forward Angle" />
+	<ArmZ9 AltName="a16 - Arm Out Angle" />
+	<ArmXY9 AltName="a16 - Arm Forward Angle" />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="Chestpiece Arm Position Correction"/>
+</PARAMMETA>

@@ -1,0 +1,3 @@
+0 Default -- デフォルト
+10 Test -- テスト
+100 For testing -- テスト用

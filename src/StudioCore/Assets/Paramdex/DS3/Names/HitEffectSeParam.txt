@@ -1,0 +1,69 @@
+1 Cobblestone
+2 Stone
+3 Soil
+4 Wood
+5 Grassland
+6 Gravel
+7 Gaps
+8 Trees
+9 Swamp
+10 Nest
+11 Iron
+12 Flesh
+13 Sand
+14 Bone
+15 Ash
+16 Roof Tiles
+17 Cloth
+18 Fallen leaves
+19 Bell
+20 Water (Puddle)
+21 Water (ankle level)
+22 Water (knee)
+23 Poison Swamp (shallow)
+24 Poison Swamp (deep)
+25 Poison Swamp (knee)
+26 Poison Swamp (about puddle)
+27 Water (waist or more)
+28 Carpet
+29 Without
+30 Caries
+31 God Grave Net
+50 Weapon Iron
+51 Wax
+52 Weapon tree
+53 Weapon meat
+54 Shield Iron
+55 Shield Tree
+56 Iron
+58 Armor Leather
+59 Meat (Live)
+60 Meat (raw) _ Weakness
+62 Heavy Iron
+63 Cloth
+64 Humanity
+65 Hair
+66 Soft Stone
+67 Feathers
+68 Carrion
+69 Ash
+70 Lava
+71 Evil
+72 Crystal
+74 Bone
+75 Flame
+76 Rock
+77 Shield Stone
+78 Tree
+79 Heavy Iron Shield
+80 Ghost Enemy Black
+84 Drool
+85 Ghost Enemy Black (for guard)
+89 Without
+90 Penetration
+91 Caries
+92 Maggots
+93 Charcoal
+94 Bugs
+95 Fluid
+98 Caries weakness

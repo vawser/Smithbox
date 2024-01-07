@@ -1,0 +1,6 @@
+<class name='hkxSparselyAnimatedBool' version='1' signature='0x2c6496e4' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='bools' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_BOOL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='times' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

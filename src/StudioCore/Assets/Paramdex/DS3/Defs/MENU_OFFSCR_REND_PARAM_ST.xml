@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>MENU_OFFSCR_REND_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 camAtPosX" />
+    <Field Def="f32 camAtPosY" />
+    <Field Def="f32 camAtPosZ" />
+    <Field Def="f32 camDist" />
+    <Field Def="f32 camRotX" />
+    <Field Def="f32 camRotY" />
+    <Field Def="f32 camFov" />
+    <Field Def="f32 camDistMin" />
+    <Field Def="f32 camDistMax" />
+    <Field Def="f32 camRotXMin" />
+    <Field Def="f32 camRotXMax" />
+    <Field Def="u32 GparamID" />
+    <Field Def="dummy8 pad2[16]" />
+  </Fields>
+</PARAMDEF>

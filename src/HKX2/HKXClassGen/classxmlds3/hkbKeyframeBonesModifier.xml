@@ -1,0 +1,6 @@
+<class name='hkbKeyframeBonesModifier' version='1' signature='0x4e45d0f7' size='112' parent='hkbModifier'>
+  <members>
+    <member name='keyframeInfo' offset='88' ctype='hkbKeyframeBonesModifierKeyframeInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='keyframedBonesList' offset='104' ctype='hkbBoneIndexArray' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

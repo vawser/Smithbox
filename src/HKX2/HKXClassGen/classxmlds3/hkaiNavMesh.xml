@@ -1,0 +1,44 @@
+<class name='hkaiNavMesh' version='1' signature='0x6d493bdb' size='176' parent='hkReferencedObject'>
+  <enums>
+    <enum name='FaceFlagBits' flags='00000000'>
+      <enumitem name='FACE_HIDDEN' value='1'/>
+      <enumitem name='FACE_CUT' value='2'/>
+      <enumitem name='FACE_STREAMING' value='4'/>
+    </enum>
+    <enum name='NavMeshFlagBits' flags='00000000'>
+      <enumitem name='MESH_NONE' value='0'/>
+      <enumitem name='MESH_CLIMBING' value='1'/>
+    </enum>
+    <enum name='Constants' flags='00000000'>
+      <enumitem name='INVALID_REGION_INDEX' value='-1'/>
+      <enumitem name='INVALID_FACE_INDEX' value='-1'/>
+      <enumitem name='INVALID_EDGE_INDEX' value='-1'/>
+      <enumitem name='INVALID_VERTEX_INDEX' value='-1'/>
+      <enumitem name='MAX_DATA_PER_EDGE' value='4'/>
+      <enumitem name='MAX_DATA_PER_FACE' value='4'/>
+    </enum>
+    <enum name='EdgeFlagBits' flags='00000000'>
+      <enumitem name='EDGE_SILHOUETTE' value='1'/>
+      <enumitem name='EDGE_RETRIANGULATED' value='2'/>
+      <enumitem name='EDGE_ORIGINAL' value='4'/>
+      <enumitem name='OPPOSITE_EDGE_UNLOADED_UNUSED' value='8'/>
+      <enumitem name='EDGE_USER' value='16'/>
+      <enumitem name='EDGE_BLOCKED' value='32'/>
+      <enumitem name='EDGE_EXTERNAL_OPPOSITE' value='64'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='faces' offset='16' ctype='hkaiNavMeshFace' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edges' offset='32' ctype='hkaiNavMeshEdge' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertices' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='streamingSets' offset='64' ctype='hkaiStreamingSet' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='faceData' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeData' offset='96' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='faceDataStriding' offset='112' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeDataStriding' offset='116' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='120' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aabb' offset='128' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='erosionRadius' offset='160' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData' offset='168' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

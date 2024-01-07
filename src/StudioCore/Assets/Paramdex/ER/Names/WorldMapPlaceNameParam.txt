@@ -1,0 +1,8 @@
+8000000 Limgrave
+8000400 Liurnia
+8000800 Altus Plateau
+8000900 Caelid
+8001200 Mountaintops of the Giants
+8010000 Ainsel River
+8010200 Siofra River
+8010400 Deeproot Depths

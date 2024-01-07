@@ -1,0 +1,14 @@
+<class name='hkPackfileSectionHeader' version='1' signature='0xc6ef4461' size='64'>
+  <members>
+    <member name='sectionTag' offset='0' vtype='TYPE_CHAR' vsubtype='TYPE_VOID' arrsize='19' flags='FLAGS_NONE' default='0'/>
+    <member name='nullByte' offset='19' vtype='TYPE_CHAR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='absoluteDataStart' offset='20' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localFixupsOffset' offset='24' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='globalFixupsOffset' offset='28' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='virtualFixupsOffset' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='exportsOffset' offset='36' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='importsOffset' offset='40' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endOffset' offset='44' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pad' offset='48' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

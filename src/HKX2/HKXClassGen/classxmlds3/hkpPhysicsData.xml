@@ -1,0 +1,6 @@
+<class name='hkpPhysicsData' version='1' signature='0x47a8ca83' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='worldCinfo' offset='16' ctype='hkpWorldCinfo' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='systems' offset='24' ctype='hkpPhysicsSystem' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

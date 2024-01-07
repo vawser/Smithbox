@@ -1,0 +1,6 @@
+<class name='hkxBlobMeshShape' version='1' signature='0x659130a7' size='56' parent='hkMeshShape'>
+  <members>
+    <member name='blob' offset='16' ctype='hkxBlob' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='48' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

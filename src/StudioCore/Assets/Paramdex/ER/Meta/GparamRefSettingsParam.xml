@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <RefTargetMapId AltName="Reference Target Map ID" Wiki="Specify the referenced map number. Legacy m10_10_00_00-> 10010000, Open m60_ ?? _ ?? _ ??-> m60000000" />
+    <Reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

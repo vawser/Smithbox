@@ -1,0 +1,7 @@
+<class name='hknpVehicleDefaultBrakeWheelBrakingProperties' version='1' signature='0x1ffad971' size='12'>
+  <members>
+    <member name='maxBreakingTorque' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minPedalInputToBlock' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isConnectedToHandbrake' offset='8' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

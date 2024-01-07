@@ -1,0 +1,44 @@
+<class name='hknpMaterial' version='1' signature='0xb7c5f24e' size='80'>
+  <enums>
+    <enum name='TriggerType' flags='00000000'>
+      <enumitem name='TRIGGER_TYPE_NONE' value='0'/>
+      <enumitem name='TRIGGER_TYPE_BROAD_PHASE' value='1'/>
+      <enumitem name='TRIGGER_TYPE_NARROW_PHASE' value='2'/>
+      <enumitem name='TRIGGER_TYPE_CONTACT_SOLVER' value='3'/>
+    </enum>
+    <enum name='CombinePolicy' flags='00000000'>
+      <enumitem name='COMBINE_AVG' value='0'/>
+      <enumitem name='COMBINE_MIN' value='1'/>
+      <enumitem name='COMBINE_MAX' value='2'/>
+    </enum>
+    <enum name='MassChangerCategory' flags='00000000'>
+      <enumitem name='MASS_CHANGER_IGNORE' value='0'/>
+      <enumitem name='MASS_CHANGER_DEBRIS' value='1'/>
+      <enumitem name='MASS_CHANGER_HEAVY' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isExclusive' offset='8' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='12' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triggerType' offset='16' etype='TriggerType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triggerManifoldTolerance' offset='17' ctype='hkUFloat8' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='dynamicFriction' offset='18' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='staticFriction' offset='20' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='restitution' offset='22' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='frictionCombinePolicy' offset='24' etype='CombinePolicy' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='restitutionCombinePolicy' offset='25' etype='CombinePolicy' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldingTolerance' offset='26' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxContactImpulse' offset='28' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fractionOfClippedImpulseToApply' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='massChangerCategory' offset='36' etype='MassChangerCategory' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='massChangerHeavyObjectFactor' offset='38' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='softContactForceFactor' offset='40' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='softContactDampFactor' offset='42' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='softContactSeperationVelocity' offset='44' ctype='hkUFloat8' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='surfaceVelocity' offset='48' ctype='hknpSurfaceVelocity' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='disablingCollisionsBetweenCvxCvxDynamicObjectsDistance' offset='56' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData' offset='64' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isShared' offset='72' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

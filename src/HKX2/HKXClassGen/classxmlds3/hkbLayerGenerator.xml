@@ -1,0 +1,15 @@
+<class name='hkbLayerGenerator' version='1' signature='0xb4e0c52f' size='184' parent='hkbGenerator'>
+  <enums>
+    <enum name='LayerFlagBits' flags='00000000'>
+      <enumitem name='FLAG_SYNC' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='layers' offset='136' ctype='hkbLayer' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexOfSyncMasterChild' offset='152' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='154' etype='LayerFlagBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numActiveLayers' offset='156' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='layerInternalStates' offset='160' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='initSync' offset='176' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

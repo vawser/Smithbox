@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="bvh">
+      <UniqueIdentifier>{ddee8d3c-6494-468b-aab5-9903de74c954}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Recast\Include\Recast.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Recast\Include\RecastAlloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Recast\Include\RecastAssert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\node_intersectors.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\node_layout_optimizer.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\parallel_reinsertion_optimizer.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\platform.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\prefix_sum.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\primitive_intersectors.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\radix_sort.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\ray.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\sah_based_algorithm.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\single_ray_traverser.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\spatial_split_bvh_builder.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\sphere.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\sweep_sah_builder.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\top_down_builder.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\triangle.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\utilities.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\vector.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\binned_sah_builder.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\bottom_up_algorithm.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\bounding_box.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\bvh.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\heuristic_primitive_splitter.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\hierarchy_refitter.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\leaf_collapser.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\linear_bvh_builder.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\locally_ordered_clustering_builder.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\morton.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh\morton_code_based_builder.hpp">
+      <Filter>bvh</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\Recast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastAlloc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastAssert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastContour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastLayers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastMeshDetail.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastRasterization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recast\Source\RecastRegion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bvhbuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

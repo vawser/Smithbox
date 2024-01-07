@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>NETWORK_MESSAGE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 message_type" />
+    <Field Def="s32 message_id_0" />
+    <Field Def="s32 message_id_1" />
+    <Field Def="s32 message_id_2" />
+    <Field Def="s32 message_id_3" />
+    <Field Def="s32 message_id_4" />
+    <Field Def="s32 message_id_5" />
+    <Field Def="s32 message_id_6" />
+    <Field Def="s32 message_id_7" />
+    <Field Def="s32 message_id_8" />
+    <Field Def="s32 message_id_9" />
+    <Field Def="s32 message_id_10" />
+    <Field Def="s32 message_id_11" />
+    <Field Def="s32 message_id_12" />
+    <Field Def="s32 message_id_13" />
+    <Field Def="s32 message_id_14" />
+    <Field Def="s32 message_id_15" />
+    <Field Def="s32 message_id_16" />
+    <Field Def="s32 message_id_17" />
+    <Field Def="s32 message_id_18" />
+    <Field Def="s32 message_id_19" />
+    <Field Def="s32 message_id_20" />
+  </Fields>
+</PARAMDEF>

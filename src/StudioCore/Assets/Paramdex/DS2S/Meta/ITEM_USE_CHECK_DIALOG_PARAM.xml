@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to item usage dialog." Row0Dummy="" />
+  <Field>
+    <flag_id AltName="Flag ID"/>
+    <text_id_on_use AltName="Text ID - On Use" FmgRef="common"/>
+    <text_id_on_invalid_use AltName="Text ID - On Invalid Use" FmgRef="common"/>
+  </Field>
+</PARAMMETA>

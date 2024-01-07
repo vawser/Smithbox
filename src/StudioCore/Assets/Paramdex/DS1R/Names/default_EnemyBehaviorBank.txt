@@ -1,0 +1,22 @@
+0 do nothing
+100 knight
+200 stealth
+300 rotting human
+900 Zako enemy for intern
+901 Ordinary Enemy for Intern
+902 Intern Boss Enemy
+1000 Snake Soldier
+1001 Serpent bow soldier (outside the fort 0000)
+1002 Serpent bow soldier (Fort Yagura 0001-0002)
+1003 Serpent bow soldier (Fort bay window 0003)
+1004 Snakebow Soldier (Lava Square)
+1020 Proto Dragon Demon
+1040 Crocodile
+1100 Snake soldier licking meat
+1200 Plague rat
+2020 Knight [provisional]
+2030 Covert [temporary]
+2100 Rot human [provisional]
+3070 Slug [provisional]
+9000 Prototype Fat Medium Boss
+9051 Standby enemy for test map

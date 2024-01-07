@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <LimitationTime0 AltName="Limitation Time 0" />
+    <LimitationTime1 AltName="Limitation Time 1" />
+    <LimitationTime2 AltName="Limitation Time 2" />
+	<enableBloodstain AltName="Enable Bloodstains" IsBool="" />
+	<enableBloodMessage AltName="Enable Messages" IsBool="" />
+	<enableGhost AltName="Enable Wandering Ghosts" IsBool="" />
+	<enableMultiPlay AltName="Enable Multiplayer" IsBool="" />
+	<enableRingSearch AltName="Enable Covenant Search" IsBool="" />
+	<enableBreakInSearch AltName="Enable Orb Search" IsBool="" />
+    <pad1 AltName="" />
+    <unkb4 AltName="" />
+    <unkb5 AltName="" />
+    <pad2 AltName="" />
+  </Field>
+  <Self Wiki="Area Network Activity"/>
+</PARAMMETA>

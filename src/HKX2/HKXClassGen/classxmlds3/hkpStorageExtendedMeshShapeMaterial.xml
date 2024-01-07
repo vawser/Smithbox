@@ -1,0 +1,7 @@
+<class name='hkpStorageExtendedMeshShapeMaterial' version='1' signature='0x2ca3e906' size='16' parent='hkpMeshMaterial'>
+  <members>
+    <member name='restitution' offset='4' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='friction' offset='6' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData' offset='8' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

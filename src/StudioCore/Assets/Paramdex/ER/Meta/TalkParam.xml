@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <msgId AltName="Male - Message ID" Wiki="PC Gender is Male: Specify Message-> Menu" FmgRef="TalkMsg" />
+    <voiceId AltName="Male - Voice ID" Wiki="PC Gender is Male: Specify Voice-> Sound" />
+    <spEffectId0 AltName="SpEffect ID [0]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId0 AltName="Motion ID [0]" Wiki="Specify motion-> Character" />
+    <spEffectId1 AltName="SpEffect ID [1]" Wiki="Specify special effects-> Character" Refs="SpEffectParam"/>
+    <motionId1 AltName="Motion ID [1]" Wiki="Specify motion-> Character" />
+    <returnPos AltName="Return Position" Wiki="Relative position of returning conversation-> Conversation" />
+    <reactionId AltName="Reaction ID" Wiki="Conversation specification when returning-> Conversation" />
+    <eventId AltName="Event ID" Wiki="Event ID-> Event" />
+    <msgId_female AltName="Female - Message ID" Wiki="PC Gender is Female: Specify Message-> Menu" FmgRef="TalkMsg" />
+    <voiceId_female AltName="Female - Voice ID" Wiki="PC Gender is Female: Specify Voice-> Sound" />
+    <lipSyncStart AltName="Lip Sync Start" Wiki="Speaker: Lip-sync start time. -1 with no lip-sync" />
+    <lipSyncTime AltName="Lip Sync Time" Wiki="Speaker: Lip-sync duration. Lip-sync at -1 continues forever" />
+    <pad2 AltName=""/>
+    <timeout AltName="Voice Playback Timeout" Wiki="Voice playback timeout period. In case of -1, time-out processing is performed in NPC conversation voice playback timeout time of Common_Game system parameter." />
+    <talkAnimationId AltName="Talk Animation ID" Wiki="Speaker: Animation ID during conversation" />
+    <isForceDisp AltName="Force Subtitle Display" Wiki="Do you want to force the display of subtitles? Display subtitles even when subtitles are turned off as an option" IsBool="" />
+    <pad3 AltName=""/>
+    <pad1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

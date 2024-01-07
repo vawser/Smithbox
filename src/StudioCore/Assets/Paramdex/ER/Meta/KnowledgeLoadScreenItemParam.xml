@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <unlockFlagId AltName="Unlock Flag ID" Wiki="Lifting flag (default 0). If this event flag is set, the ban will be lifted (displayed on the loading screen). If it is 0, the ban is always lifted. The invalid flag has priority" />
+    <invalidFlagId AltName="Invalid Flag ID" Wiki="Invalid flag (default 0). If this event flag is set, it will be disabled (it will not be displayed on the loading screen). If it is 0, this flag is not always set." />
+    <msgId AltName="Message ID" Wiki="Text ID (Loading Text.xlsx). Used for both loading titles and loading text" FmgRef="LoadingText" />
+  </Field>
+  <Self />
+</PARAMMETA>

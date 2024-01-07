@@ -1,0 +1,51 @@
+0 Bow
+1 Polite Bow
+2 My Thanks
+3 Curtsy
+4 Reverential Bow
+5 My Lord
+6 Warm Welcome
+7 Wave
+8 Casual Greeting
+9 Strength!
+10 As You Wish
+20 Point Forwards
+21 Point Upwards
+22 Point Downwards
+23 Beckon
+24 Wait!
+25 Calm Down!
+30 Nod In Thought
+40 Extreme Repentance
+41 Grovel For Mercy
+50 Rallying Cry
+51 Heartening Cry
+52 By My Sword
+53 Hoslow's Oath
+54 Fire Spur Me
+55 The Carian Oath (Cut?)
+60 Bravo!
+70 Jump for Joy
+71 Triumphant Delight
+72 Fancy Spin
+73 Finger Snap
+80 Dejection
+90 Patches' Crouch
+91 Crossed Legs
+92 Rest
+93 Sitting Sideways
+94 Dozing Cross-Legged
+95 Spread Out
+96 Fetal Position (Cut?)
+97 Balled Up
+98 What Do You Want?
+100 Prayer
+101 Desperate Prayer
+102 Rapture
+103 Erudition
+104 Outer Order
+105 Inner Order
+106 Golden Order Totality
+108 The Ring
+109 The Ring (Duplicate?)
+110 Unused

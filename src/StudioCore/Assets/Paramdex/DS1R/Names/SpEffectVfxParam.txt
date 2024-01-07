@@ -1,0 +1,232 @@
+0 For testing
+1 Flame
+1 Flame
+2 poison
+3 Hill
+4 Corrosion
+5 Plague
+6 Bleeding
+8 Covert
+9 Gravity users
+10 Abnormal condition recovery [poison]
+11 Recovery from abnormal condition [Plague]
+12 Abnormal condition recovery [bleeding]
+13 Abnormal condition recovery [universal]
+14 Soul Steel
+15 Zoom
+16 warp
+17 Demon's Soul
+18 Black Ghost Dissipation
+19 Strong Ghost
+20 White Hope
+21 Black Hope
+22 Black ghosting
+23 Resuscitation
+24 Magical use prohibited
+25 Miracle motion extension
+26 Whetstone
+27 Asphyxial Resuscitation
+28 Weapon Enhancement
+29 Defense Shield
+30 thread covered
+31 [System] Ghost Param Change
+32 Bond
+33 Fly
+34 Fire Phantom _ Stage 1
+35 Fire Phantom _ Stage 2
+36 Fire Phantom _ Stage 3
+37 Fire Phantom _ Stage 4
+38 Hallucination
+39 Soul Coin
+40 Strong Defense Shield
+41 Fire Resistant Shield
+42 HP recovery status
+43 Forced ghosting first stage
+44 Forced ghosting 2nd stage
+45 Forced Ghost Stage 3
+46 pheromones
+47 Cat landing
+48 Pinch Attack Up
+49 Pinch defense up
+50 Regenerate
+51 Torchlight
+52 Weak Regenerate
+54 Secret Weakness
+55 Tips Blood Character
+56 Hill Feet
+57 Yellow Cloth
+58 point light source
+59 Blood character evaluation
+60 Weapon Enhancement [Medium]
+61 Weapon Enhancement [Large]
+62 Fire Enhancement
+63 Flame Enhancement [Large]
+64 Magic Enhancement
+65 Chimera Enhancement
+66 Item Drop Compensation
+67 MP regenerate
+68 Weak MP Regenerate
+69 Resurrection When Dead
+70 Poison Resistance UP
+71 Magic Power Up
+72 Magic Defense UP
+73 Bleeding Resistance UP
+74 Disease resistance UP
+75 Stamina Recovery UP
+76 Seoul acquisition UP
+77 Fire Resistance UP
+78 King's Shield 1st Stage Left Foot
+79 King's Shield 2nd Stage Left Foot
+80 King's Shield 3 Level Left Foot
+91 King's Shield Level 1 Right Foot
+92 King's Shield 2nd Stage Right Foot
+93 King's Shield 3rd Right Foot
+94 Referee Belly Bleeding
+95 Mimicry
+96 Makeover
+97 Gasman
+98 Detection
+99 Awaiting cooperation
+100 cooperation
+101 Cooperation transmission
+102 Gravity
+103 Evil Eye
+104 Release status [waiting for cooperation]
+105 Effect Lv1
+106 Effect Lv2
+107 Effect Lv3
+108 Evil Eye Lv1
+109 Evil Eye Lv2
+110 counter
+111 Eggplant standby
+112 egg-planting
+113 Egg head standby
+114 Egg Head
+115 Ultralight Move
+116 Curse
+117 Petrification
+118 Curse Release
+119 Humanity Damage
+120 Damage animation change_SA only
+121 Damage animation change_Added
+122 Underwater behavior
+123 weapon head
+124 weapon barrel
+125 Weapon Hand
+126 Weapon Leg
+127 Sleep
+128 mimic_mimicry
+129 Mimic _ Mimic Sleep
+130 mimic_normal
+131 Mimic_Normal Sleep
+132 fascination
+133 Get Blood Character
+134 Change
+135 Mimic_Normal Sleep
+136 crystallization
+137 Resonance Lv0
+138 Resonance Lv1
+139 Resonance Lv2
+140 Resonance Lv3
+141 Resonance Lv4
+142 Specify action ID
+143 Enemy_Immortal
+144 Enemy_Suspension
+145 Holy Attributes
+146 Whole body whetstone
+147 Light Magic
+148 Request for Rescue
+149 White Rescue
+150 Black Rescue
+151 Lightning Enhancement
+152 Enhance Poison
+153 Strengthening plague
+154 Unable to use Est
+155 SA enhancement
+156 Endurance reduction disabled
+157 Enhancer
+158 Guard Enhancement
+159 Ring Revived When Dead
+160 Ring Resurrected When Cursed
+161 Warp B
+162 Warp C
+163 Warp D
+164 Warp E
+165 Warp A
+166 Abandonment of vow
+167 Full Body Makeover
+168 Precision reinforcement
+169 Resonance enhancement
+170 Retribution
+171 Causal Reward Explosion
+172 Sheath Invincible 1
+173 Sheath Invincible 2
+174 Sheath Invincible 3
+175 Humanity Revival
+176 Soul Coin (Immortal)
+177 Soul Coin (Beast)
+178 Ally Enhancement Magic
+179 Curse Effect Lv1
+180 Curse Effect Lv2
+181 Curse Effect Lv3
+182 Curse Effect Lv4
+183 SOS visible
+184 Invisible Weapon
+185 Nit effect
+186 Flame Kick
+187 Grim Reaper
+188 Hope to Summon the Bandit of the Forest
+189 Forest Bandit Territory
+190 Request for Summoning the Brothers
+191 Royal Brother Territory
+192 Egg head_Second stage
+193 Life extension
+194 Magic Usage Up
+195 Dragon Newt Sign
+196 Prize Money Sign
+197 Counter Up
+198 Egg Dashi
+199 HP drain
+200 Power of Madness
+201 For magic ban effect
+202 Dragon Roar
+203 Magic Usage Down
+204 Guard Enhancement [Large]
+205 [DLC] Dark Enhancement
+206 Arena 1-on-1 [Small] Within Territory
+207 Arena 2 to 2 [Small] Territory
+208 Arena Arena Battle Royal [Small] Territory
+209 Arena 1: 1 [Small] Summoning Request A
+210 Arena 1 to 1 [Small] Summoning Request B
+211 Arena 2 to 2 [Small] Summon A1
+212 Arena 2: 2 [Small] Summon A2
+213 Arena 2 to 2 [Small] Hope to Summon B1
+214 Arena 2: 2 [Small] Summoning Request B2
+215 Arena Battle Royale [Small] Summoning Request A
+216 Arena Battle Royale [Small] Summoning Request B
+217 Arena Battle Royale [Small] Summoning Request C
+218 Arena Battle Royale [Small] Summoning Request D
+219 Arena 1-on-1 [Large] Territory
+220 Arena 2 to 2 [Large] Territory
+221 Arena Battle Royale [Large] Inside Territory
+222 Arena 1: 1 [Large] Summoning Request A
+223 Arena 1: 1 [Large] Summoning Request B
+224 Arena 2 to 2 [Large] Summoning Request A1
+225 Arena 2 to 2 [Large] Summoning Request A2
+226 Arena 2 to 2 [Large] Summoning Request B1
+227 Arena 2-2 [Large] Summoning Request B2
+228 Arena Battle Royale [Large] Summoning Request A
+229 Arena Battle Royale [Large] Summoning Request B
+230 Arena Battle Royale [Large] Summoning Request C
+231 Arena Battle Royale [Large] Summoning Request D
+232 Do not use items in the arena
+233 Arena are dead
+234 Provisional first place in the arena
+235 Arena NoDead
+236 1st place in the arena
+237 Black Dragon Ring
+238 Arena 10 or more wins
+239 Arena 30 or more wins
+240 50+ Arena
+241 Arena 100 or more wins
+242 maximum number (selection prohibited)

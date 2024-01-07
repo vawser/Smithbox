@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>DECAL_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 textureId = -1">
+      <DisplayName>テクスチャID</DisplayName>
+      <Description>テクスチャID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 dmypolyId = -1">
+      <DisplayName>ダミポリID</DisplayName>
+      <Description>ダミポリID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="f32 pitchAngle">
+      <DisplayName>基準角度オフセット_上下[deg]</DisplayName>
+      <Description>基準角度オフセット_上下[deg]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="f32 yawAngle">
+      <DisplayName>基準角度オフセット_左右[deg]</DisplayName>
+      <Description>基準角度オフセット_左右[deg]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="f32 nearDistance">
+      <DisplayName>貼り付け開始距離[m]</DisplayName>
+      <Description>貼り付け開始距離[m]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>401</SortID>
+    </Field>
+    <Field Def="f32 farDistance">
+      <DisplayName>貼り付け終了距離[m]</DisplayName>
+      <Description>貼り付け終了距離[m]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-99</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>402</SortID>
+    </Field>
+    <Field Def="f32 nearSize">
+      <DisplayName>開始距離での大きさ[m]</DisplayName>
+      <Description>開始距離での大きさ[m]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>403</SortID>
+    </Field>
+    <Field Def="f32 farSize">
+      <DisplayName>終了距離での大きさ[m]</DisplayName>
+      <Description>終了距離での大きさ[m]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>404</SortID>
+    </Field>
+    <Field Def="s32 maskSpeffectId = -1">
+      <DisplayName>監視特殊効果ID</DisplayName>
+      <Description>監視特殊効果ID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="u32 randomVariationNum:4">
+      <DisplayName>ランダムバリエーション数</DisplayName>
+      <Description>ランダムバリエーション数</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>9</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="u32 replaceTextureId_byMaterial:1">
+      <DisplayName>材質によるテクスチャ差し替え</DisplayName>
+      <Description>材質によるテクスチャ差し替え</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="u32 dmypolyCategory:2">
+      <DisplayName>ダミポリ検索場所</DisplayName>
+      <Description>ダミポリ検索場所</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>2</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u32 decalShapeType:4">
+      <DisplayName>デカル形状タイプ</DisplayName>
+      <Description>デカル形状タイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="u32 useDeferredDecal:1 = 1">
+      <DisplayName>デファード</DisplayName>
+      <Description>デファード</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u32 usePaintDecal:1 = 1">
+      <DisplayName>ペイント</DisplayName>
+      <Description>ペイント</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>601</SortID>
+    </Field>
+    <Field Def="u32 targetAttackChr:1">
+      <DisplayName>デカル対象：攻撃キャラ</DisplayName>
+      <Description>デカル対象：攻撃キャラ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="u32 targetDamageChr:1">
+      <DisplayName>デカル対象：ダメージキャラ</DisplayName>
+      <Description>デカル対象：ダメージキャラ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5001</SortID>
+    </Field>
+    <Field Def="u32 targetOtherChr:1">
+      <DisplayName>デカル対象：その他キャラ</DisplayName>
+      <Description>デカル対象：その他キャラ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5002</SortID>
+    </Field>
+    <Field Def="u32 targetMapObj:1">
+      <DisplayName>デカル対象：背景</DisplayName>
+      <Description>デカル対象：背景</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>5003</SortID>
+    </Field>
+    <Field Def="u32 usePom:1">
+      <DisplayName>POMを有効にするか</DisplayName>
+      <Description>POMを有効にするか</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s16 randomSizeMin = 100">
+      <DisplayName>ランダムスケール最小値[％]</DisplayName>
+      <Description>ランダムスケール最小値[％]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s16 randomSizeMax = 100">
+      <DisplayName>ランダムスケール最大値[％]</DisplayName>
+      <Description>ランダムスケール最大値[％]</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1001</SortID>
+    </Field>
+    <Field Def="f32 randomRollMin">
+      <DisplayName>ランダム角度_ひねり最小値[deg]</DisplayName>
+      <Description>ランダム角度_ひねり最小値[deg]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="f32 randomRollMax">
+      <DisplayName>ランダム角度_ひねり最大値[deg]</DisplayName>
+      <Description>ランダム角度_ひねり最大値[deg]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>1101</SortID>
+    </Field>
+    <Field Def="f32 randomPitchMin">
+      <DisplayName>ランダム角度_上下最小値[deg]</DisplayName>
+      <Description>ランダム角度_上下最小値[deg]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="f32 randomPitchMax">
+      <DisplayName>ランダム角度_上下最大値[deg]</DisplayName>
+      <Description>ランダム角度_上下最大値[deg]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>1201</SortID>
+    </Field>
+    <Field Def="f32 randomYawMin">
+      <DisplayName>ランダム角度_左右最小値[deg]</DisplayName>
+      <Description>ランダム角度_左右最小値[deg]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 randomYawMax">
+      <DisplayName>ランダム角度_左右最大値[deg]</DisplayName>
+      <Description>ランダム角度_左右最大値[deg]</Description>
+      <DisplayFormat>%0.1f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-180</Minimum>
+      <Maximum>180</Maximum>
+      <Increment>1</Increment>
+      <SortID>1301</SortID>
+    </Field>
+    <Field Def="f32 pomHightScale = 1">
+      <DisplayName>POM高さスケール</DisplayName>
+      <Description>POM高さスケール</Description>
+      <DisplayFormat>%0.3f</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <Increment>0.001</Increment>
+      <SortID>710</SortID>
+    </Field>
+    <Field Def="u8 pomSampleMin = 8">
+      <DisplayName>POM最小サンプル数</DisplayName>
+      <Description>POM最小サンプル数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>8</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>720</SortID>
+    </Field>
+    <Field Def="u8 pomSampleMax = 64">
+      <DisplayName>POM最大サンプル数</DisplayName>
+      <Description>POM最大サンプル数</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>8</Minimum>
+      <Maximum>128</Maximum>
+      <SortID>730</SortID>
+    </Field>
+    <Field Def="dummy8 pad_00[14]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>5004</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

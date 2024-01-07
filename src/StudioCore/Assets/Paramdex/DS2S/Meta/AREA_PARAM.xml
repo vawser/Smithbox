@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <area_flag_id AltName="Area Flag ID"/>
+    <map_id AltName="Map ID"/>
+    <lock_on_1 AltName="Lock-on [1]" Refs="LockOnParam"/>
+    <lock_on_2 AltName="Lock-on [2]" Refs="LockOnParam"/>
+    <lock_on_3 AltName="Lock-on [3]" Refs="LockOnParam"/>
+    <mimicry_map_object_1 AltName="Mimicry Map Object [1]" Refs="MapObjectParam" Wiki="Objects the player transforms into with Chameleon"/>
+    <mimicry_map_object_2 AltName="Mimicry Map Object [2]" Refs="MapObjectParam" Wiki="Objects the player transforms into with Chameleon"/>
+    <mimicry_map_object_3 AltName="Mimicry Map Object [3]" Refs="MapObjectParam" Wiki="Objects the player transforms into with Chameleon"/>
+    <mimicry_map_object_4 AltName="Mimicry Map Object [4]" Refs="MapObjectParam" Wiki="Objects the player transforms into with Chameleon"/>
+    <mimicry_map_object_5 AltName="Mimicry Map Object [5]" Refs="MapObjectParam" Wiki="Objects the player transforms into with Chameleon"/>
+  </Field>
+  <Self Wiki="Defines parameters related to map area, such as mimicry objects and lock-on values." Row0Dummy="" AlternativeOrder="area_flag_id,map_id,-,
+  mimicry_map_object_1,mimicry_map_object_2,mimicry_map_object_3,mimicry_map_object_4,mimicry_map_object_5,-,
+  lock_on_1,lock_on_2,lock_on_3,-,
+  Unk00,Unk01,Unk02,Unk03,Unk04,Unk05,Unk06,Unk07,Unk08,Unk17,Unk18,Unk19,Unk20,Unk21,Unk22,Unk23,Unk24,Unk25,Unk26"/>
+</PARAMMETA>

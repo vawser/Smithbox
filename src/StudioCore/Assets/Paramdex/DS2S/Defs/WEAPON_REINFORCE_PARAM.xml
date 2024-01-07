@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>WEAPON_REINFORCE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 damage_physical" />
+    <Field Def="f32 damage_magic" />
+    <Field Def="f32 damage_lightning" />
+    <Field Def="f32 damage_fire" />
+    <Field Def="f32 damage_dark" />
+    <Field Def="f32 damage_poison" />
+    <Field Def="f32 damage_bleed" />
+    <Field Def="f32 damage_petrify" />
+    <Field Def="f32 damage_curse" />
+    <Field Def="f32 max_damage_physical" />
+    <Field Def="f32 max_damage_magic" />
+    <Field Def="f32 max_damage_lightning" />
+    <Field Def="f32 max_damage_fire" />
+    <Field Def="f32 max_damage_dark" />
+    <Field Def="f32 max_damage_poison" />
+    <Field Def="f32 max_damage_bleed" />
+    <Field Def="f32 max_damage_petrify" />
+    <Field Def="f32 max_damage_curse" />
+    <Field Def="s32 max_reinforcement_level" />
+    <Field Def="s32 weapon_stats_affect_id" />
+    <Field Def="f32 absorption_physical" />
+    <Field Def="f32 absorption_magic" />
+    <Field Def="f32 absorption_fire" />
+    <Field Def="f32 absorption_lightning" />
+    <Field Def="f32 absorption_dark" />
+    <Field Def="f32 absorption_poison" />
+    <Field Def="f32 absorption_bleed" />
+    <Field Def="f32 absorption_petrify" />
+    <Field Def="f32 absorption_curse" />
+    <Field Def="f32 stability_0" />
+    <Field Def="f32 stability_1" />
+    <Field Def="f32 stability_2" />
+    <Field Def="f32 stability_3" />
+    <Field Def="f32 stability_4" />
+    <Field Def="f32 stability_5" />
+    <Field Def="f32 stability_6" />
+    <Field Def="f32 stability_7" />
+    <Field Def="f32 stability_8" />
+    <Field Def="f32 stability_9" />
+    <Field Def="f32 stability_10" />
+    <Field Def="f32 damage_mult_physical" />
+    <Field Def="f32 damage_mult_magic" />
+    <Field Def="f32 damage_mult_lightning" />
+    <Field Def="f32 damage_mult_fire" />
+    <Field Def="f32 damage_mult_dark" />
+    <Field Def="f32 damage_mult_poison" />
+    <Field Def="f32 damage_mult_bleed" />
+    <Field Def="f32 damage_mult_petrify" />
+    <Field Def="f32 damage_mult_curse" />
+    <Field Def="f32 infusion_mult_magic" />
+    <Field Def="f32 infusion_mult_lightning" />
+    <Field Def="f32 infusion_mult_fire" />
+    <Field Def="f32 infusion_mult_dark" />
+    <Field Def="f32 infusion_mult_poison" />
+    <Field Def="f32 infusion_mult_bleed" />
+    <Field Def="f32 infusion_mult_raw" />
+    <Field Def="f32 infusion_mult_enchanted" />
+    <Field Def="f32 infusion_mult_mundane" />
+    <Field Def="s32 custom_attr_spec_param_id" />
+    <Field Def="s32 custom_attr_cost_param_id" />
+    <Field Def="s32 reinforce_cost_id" />
+  </Fields>
+</PARAMDEF>

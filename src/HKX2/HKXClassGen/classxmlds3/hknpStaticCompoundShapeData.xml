@@ -1,0 +1,5 @@
+<class name='hknpStaticCompoundShapeData' version='1' signature='0x4fd87fd9' size='64' parent='hkReferencedObject'>
+  <members>
+    <member name='aabbTree' offset='16' ctype='hknpStaticCompoundShapeTree' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

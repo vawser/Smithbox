@@ -1,0 +1,9 @@
+<class name='hkpRagdollMotorConstraintAtom' version='1' signature='0x9d94d42c' size='96' parent='hkpConstraintAtom'>
+  <members>
+    <member name='isEnabled' offset='2' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='initializedOffset' offset='4' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='previousTargetAnglesOffset' offset='6' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='target_bRca' offset='16' vtype='TYPE_MATRIX3' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motors' offset='64' ctype='hkpConstraintMotor' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='3' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

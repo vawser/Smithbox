@@ -1,0 +1,7 @@
+<class name='hkcdDynamicTreeCodecRawunsignedlong' version='1' signature='0xdbbaa806' size='64'>
+  <members>
+    <member name='aabb' offset='0' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='parent' offset='32' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='children' offset='40' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

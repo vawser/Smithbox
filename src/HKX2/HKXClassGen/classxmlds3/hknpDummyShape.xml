@@ -1,0 +1,6 @@
+<class name='hknpDummyShape' version='1' signature='0xb8a4bd5d' size='96' parent='hknpShape'>
+  <members>
+    <member name='aabb' offset='48' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='signals' offset='80' ctype='hknpShapeSignals' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

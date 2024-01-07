@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>JUMP_SPECIFY_ALT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 targetHeight = 300">
+      <Description>Desired height to reach above the jump point.</Description>
+    </Field>
+    <Field Def="f32 speedFactor = 1">
+      <Description>Multiplier of the speed of the jump.</Description>
+    </Field>
+    <Field Def="f32 inheritedVelocityFactor">
+      <Description>Multiplier of existing velocity before jumping.</Description>
+    </Field>
+    <Field Def="f32 deviationTopSpeed">
+      <Description>Top speed of free lateral movement while jumping.</Description>
+    </Field>
+    <Field Def="f32 deviationAcceleration">
+      <Description>Acceleration of free lateral movement while jumping.</Description>
+    </Field>
+    <Field Def="f32 UnkFloat0x14"></Field>
+    <Field Def="f32 UnkFloat0x18"></Field>
+    <Field Def="f32 UnkFloat0x1C"></Field>
+    <Field Def="f32 UnkFloat0x20"></Field>
+    <Field Def="f32 UnkFloat0x24"></Field>
+    <Field Def="f32 UnkFloat0x28"></Field>
+  </Fields>
+</PARAMDEF>

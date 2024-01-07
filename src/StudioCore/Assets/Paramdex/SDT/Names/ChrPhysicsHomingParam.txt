@@ -1,0 +1,62 @@
+0 Deletion prohibited -- 削除禁止
+10000 Homing jump_normal size -- ホーミングジャンプ_通常サイズ
+10010 Homing jump_huge size -- ホーミングジャンプ_巨大サイズ
+10100 Homing Jump_Big Snake -- ホーミングジャンプ_大蛇
+20000 Homing jump_normal size -- ホーミングジャンプ_通常サイズ
+20010 Homing jump_huge size -- ホーミングジャンプ_巨大サイズ
+100014500 Nightjars_Jump attack (test) -- 夜鷹衆_ジャンプ攻撃（テスト）
+200000300 Fall 0_default -- 落下0_デフォルト
+200000301 Fall 0_Large -- 落下0_大型
+200000302 Fall 0_Burning Monk -- 落下0_破戒僧
+200000303 Fall 0_Large Snake -- 落下0_大蛇
+200000304 Fall 0_Red Demon -- 落下0_赤鬼
+200000305 Fall 0_ Centipede size -- 落下0_ムカデ大
+200000306 Fall 0_fire cow -- 落下0_火牛
+200000310 Crushing fall 0_fire cow -- 崩し落下0_火牛
+200000320 Unlimited fall 0_default -- 制限なし落下0_デフォルト
+200000321 Unlimited Fall 0_Okina Dragon -- 制限なし落下0_翁竜
+200000330 Kicking and falling 0_ rival system -- 蹴り崩し落下0_ライバル系
+200001300 Anti-aircraft 0_default -- 対空0_デフォルト
+200001600 Wire 0_default -- ワイヤー0_デフォルト
+200001601 Wire 0_ Cavalry Warrior -- ワイヤー0_騎馬武者
+200001602 Wire 0_Akaoni -- ワイヤー0_赤鬼
+300000000 PC wire_default -- PCワイヤー_デフォルト
+300000020 PC wire_cannot ride default -- PCワイヤー_乗れないデフォルト
+300000024 PC wire_castle snake valley that can not ride -- PCワイヤー_乗れない城下蛇谷
+300000040 PC wire _ kite _ temple ← → valley -- PCワイヤー_凧_寺←→渓谷
+300000041 PC wire _ kite _ main castle _ main enclosure ← → main castle _ outer shell -- PCワイヤー_凧_本城_本丸←→本城_外郭
+300010700 PC wire_c1070_Shura Samurai 0 -- PCワイヤー_c1070_修羅侍0
+300010701 PC wire_c1070_Shura Samurai 1 -- PCワイヤー_c1070_修羅侍1
+300010702 PC wire_c1070_Shura Samurai 2 -- PCワイヤー_c1070_修羅侍2
+300010800 PC Wire_c1080_Seven-sided Warrior 0 -- PCワイヤー_c1080_七面武者0
+300010801 PC Wire_c1080_Seven-sided Warrior 1 -- PCワイヤー_c1080_七面武者1
+300010802 PC Wire_c1080_Seven-sided Warrior 2 -- PCワイヤー_c1080_七面武者2
+300011800 PC wire_c1180_younger man -- PCワイヤー_c1180_下男
+300013700 PC wire_c1370_fire cow_left drifting -- PCワイヤー_c1370_火牛_左ドリフト中
+300013701 PC wire_c1370_fire cow_right drifting -- PCワイヤー_c1370_火牛_右ドリフト中
+300050200 PC wire_c5020_Akaoni_grabbing -- PCワイヤー_c5020_赤鬼_つかみ中
+300050201 PC wire_c5020_red demon_tackle -- PCワイヤー_c5020_赤鬼_タックル中
+300050202 PC wire_c5020_red demon_collapse -- PCワイヤー_c5020_赤鬼_崩れ中
+300050600 PC Wire_c5060_Ninja Army Chief 0 -- PCワイヤー_c5060_忍軍の長0
+300050601 PC Wire_c5060_Ninja Army Chief 1 -- PCワイヤー_c5060_忍軍の長1
+300050602 PC Wire_c5060_Ninja Army Chief 2 -- PCワイヤー_c5060_忍軍の長2
+300050800 PC wire_c5080_horse warrior 0_ javelin throwing -- PCワイヤー_c5080_騎馬武者0_槍投げ中
+300050801 PC wire_c5080_horse warrior 1_spear spinning -- PCワイヤー_c5080_騎馬武者1_槍ぶん回し中
+300050802 PC wire_c5080_horse warrior 2_breaking -- PCワイヤー_c5080_騎馬武者2_崩し中
+300050803 PC Wire_c5080_Cavalry Warrior 3_Drifting A -- PCワイヤー_c5080_騎馬武者3_ドリフト中A
+300050804 PC Wire_c5080_Cavalry Warrior 4_Drifting B -- PCワイヤー_c5080_騎馬武者4_ドリフト中B
+300051000 PC wire_c5100_ Yasha monkey -- PCワイヤー_c5100_夜叉猿
+300052000 PC wire_c5200_mermaid dragon 0 -- PCワイヤー_c5200_人魚竜0
+300052001 PC wire_c5200_mermaid dragon 1 -- PCワイヤー_c5200_人魚竜1
+300052005 PC wire_c5200_mermaid dragon 5 -- PCワイヤー_c5200_人魚竜5
+300052006 PC wire_c5200_mermaid dragon 6 -- PCワイヤー_c5200_人魚竜6
+300053100 PC wire_c5310_ tentacles -- PCワイヤー_c5310_触手
+300053105 PC wire_c5310_tentacle_riding OBJ -- PCワイヤー_c5310_触手_乗る用OBJ
+300053200 PC wire_c5320_Okina Dragon (Large) 0 -- PCワイヤー_c5320_翁竜（大）0
+300053201 PC wire_c5320_Okina Dragon (Large) 1 -- PCワイヤー_c5320_翁竜（大）1
+300070200 PC wire_c7020_Busshi demon_right hand 0 -- PCワイヤー_c7020_仏師鬼_右手0
+300070201 PC wire_c7020_Busshi demon_right hand 1 -- PCワイヤー_c7020_仏師鬼_右手1
+300070210 PC wire_c7021_demon Buddha test -- PCワイヤー_c7021_鬼仏テスト
+400000000 Base_jump move -- ベース_ジャンプ移動
+400014500 Nightjars_Jump move -- 夜鷹衆_ジャンプ移動
+400013100 Genpei Samurai_Jump move -- 源平武者_ジャンプ移動

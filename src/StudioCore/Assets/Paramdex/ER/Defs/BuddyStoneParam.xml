@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>BUDDY_STONE_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>601</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>602</SortID>
+    </Field>
+    <Field Def="u32 talkChrEntityId">
+      <DisplayName>会話キャラエンティティID</DisplayName>
+      <Description>会話から参照する時の外部キーとして使う。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u32 eliminateTargetEntityId">
+      <DisplayName>撃破対象リストエンティティID</DisplayName>
+      <Description>この石碑から召喚した際に、バディの撃破対象になるキャラ/グループのエンティティID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u32 summonedEventFlagId">
+      <DisplayName>召喚済みイベントフラグID</DisplayName>
+      <Description>一度石碑から召喚した際に立つフラグID。このフラグが立っていると、石碑が召喚不可になる。</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 isSpecial:1">
+      <DisplayName>スペシャルか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>石碑がSP石碑か汎用石碑か？を区別するbool。</Description>
+      <DisplayFormat>%s</DisplayFormat>
+      <Maximum>1</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="dummy8 pad1:7">
+      <DisplayName>パディング</DisplayName>
+      <SortID>603</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[3]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>604</SortID>
+    </Field>
+    <Field Def="s32 buddyId">
+      <DisplayName>バディID</DisplayName>
+      <Description>バディパラメータのID。「スペシャルか」が○の場合、このバディIDが召喚される。</Description>
+      <Minimum>0</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s32 dopingSpEffectId = -1">
+      <DisplayName>ドーピング用特殊効果ID</DisplayName>
+      <Description>バディ召喚時に、バディにかかる特殊効果ID。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u16 activateRange = 100">
+      <DisplayName>バディ起動距離[m]</DisplayName>
+      <Description>撃破対象のキャラがこの範囲に1体でも居れば、その石碑でバディ召喚が可能になる</Description>
+      <Maximum>999</Maximum>
+      <SortID>550</SortID>
+    </Field>
+    <Field Def="s16 overwriteReturnRange = -1">
+      <DisplayName>バディ帰巣距離上書き[m]</DisplayName>
+      <Description>バディの帰巣距離を上書きできる</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999</Maximum>
+      <SortID>570</SortID>
+    </Field>
+    <Field Def="u32 overwriteActivateRegionEntityId">
+      <DisplayName>起動範囲上書き領域エンティティID</DisplayName>
+      <Description>バディを召喚できる範囲を、指定エンティティIDの領域で上書きできる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>560</SortID>
+    </Field>
+    <Field Def="u32 warnRegionEntityId">
+      <DisplayName>警告範囲上書き領域エンティティID</DisplayName>
+      <Description>警告領域エンティティID</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>-294967297</Maximum>
+      <SortID>561</SortID>
+    </Field>
+    <Field Def="dummy8 pad3[24]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>605</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

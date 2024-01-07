@@ -1,0 +1,6 @@
+<class name='hkbVariableBounds' version='1' signature='0x9b766364' size='8'>
+  <members>
+    <member name='min' offset='0' ctype='hkbVariableValue' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='max' offset='4' ctype='hkbVariableValue' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

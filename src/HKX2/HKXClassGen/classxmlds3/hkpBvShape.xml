@@ -1,0 +1,6 @@
+<class name='hkpBvShape' version='1' signature='0xadca4e80' size='56' parent='hkpShape'>
+  <members>
+    <member name='boundingVolumeShape' offset='32' ctype='hkpShape' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='childShape' offset='40' ctype='hkpSingleShapeContainer' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

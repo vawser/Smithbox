@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <stayId AltName="Stay ID" Wiki="stand-by" />
+    <walkF AltName="Walk - Forward" Wiki="Before walking" />
+    <walkB AltName="Walk - Backward" Wiki="After walking" />
+    <walkL AltName="Walk - Left" Wiki="Walking left" />
+    <walkR AltName="Walk - Right" Wiki="Walking right" />
+    <dashF AltName="Dash - Forward" Wiki="Before driving" />
+    <dashB AltName="Dash - Backward" Wiki="After running" />
+    <dashL AltName="Dash - Left" Wiki="Driving left" />
+    <dashR AltName="Dash - Right" Wiki="Driving right" />
+    <superDash AltName="Sprint Dash" Wiki="Dash move" />
+    <escapeF AltName="Evasion - Forward" Wiki="Before emergency avoidance" />
+    <escapeB AltName="Evasion - Backward" Wiki="After emergency avoidance" />
+    <escapeL AltName="Evasion - Left" Wiki="Emergency avoidance left" />
+    <escapeR AltName="Evasion - Right" Wiki="Emergency avoidance right" />
+    <turnL AltName="Turn - Left 90" Wiki="90 degree turn left" />
+    <trunR AltName="Turn - Right 90" Wiki="90 degree turn right" />
+    <largeTurnL AltName="Turn - Left 180" Wiki="180 degree turn left" />
+    <largeTurnR AltName="Turn - Right 180" Wiki="180 degree turn right" />
+    <stepMove AltName="Step Move" Wiki="180 degree turn right" />
+    <flyStay AltName="Fly Stay" Wiki="Flight standby" />
+    <flyWalkF AltName="Fly Walk - Forward" Wiki="Flight advance" />
+    <flyWalkFL AltName="Fly Walk - Forward Left" Wiki="Fly left forward. Low rotation" />
+    <flyWalkFR AltName="Fly Walk - Forward Right" Wiki="Fly right forward. Low rotation" />
+    <flyWalkFL2 AltName="Fly Walk - Forward Left 2" Wiki="Flight left forward 2. High rotation" />
+    <flyWalkFR2 AltName="Fly Walk - Forward Right 2" Wiki="Flight right forward 2. High rotation" />
+    <flyDashF AltName="Fly Dash - Forward" Wiki="High speed flight advance" />
+    <flyDashFL AltName="Fly Dash - Forward Left" Wiki="High-speed flight left forward. Low rotation" />
+    <flyDashFR AltName="Fly Dash - Forward Right" Wiki="High speed flight right forward. Low rotation" />
+    <flyDashFL2 AltName="Fly Dash - Forward Left 2" Wiki="High speed flight left forward 2. High rotation" />
+    <flyDashFR2 AltName="Fly Dash - Forward Right 2" Wiki="High speed flight right forward 2. High rotation" />
+    <dashEscapeF AltName="Fly Evasion - Forward" Wiki="Before dash emergency avoidance" />
+    <dashEscapeB AltName="Fly Evasion - Backward" Wiki="After dash emergency avoidance" />
+    <dashEscapeL AltName="Fly Evasion - Left" Wiki="Dash emergency avoidance left" />
+    <dashEscapeR AltName="Fly Evasion - Right" Wiki="Dash emergency avoidance right" />
+    <analogMoveParamId AltName="Analog Move Param ID" Wiki="Mobile animation parameter ID used in mobile animation blend" />
+    <turnNoAnimAngle AltName="No Anim Turn Angle" Wiki="If the turning angle is less than this value, the turning animation will not be played (only the enemy turning control is effective)." />
+    <turn45Angle AltName="45 Turn Angle" Wiki="If the turning angle is less than this value, the 45 degree turning animation will be played (only 2 bosses are valid)." />
+    <turn90Angle AltName="90 Turn Angle" Wiki="If the turning angle is less than this value, the 90 degree turning animation will be played (only the enemy turning control is effective)." />
+    <turnWaitNoAnimAngle AltName="Wait No Anim Turn Angle" Wiki="If the turning angle is less than this value, the turning animation will not be played [when stopped] (only valid for 2 boss legs)" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <textId AltName="Text ID" Wiki="Tab Display Name Text ID [MenuText]" FmgRef="Modern_MenuText" />
+    <sortId AltName="Sort ID" Wiki="Tab display order sort ID. Line up from the left with aim" />
+    <iconId AltName="Icon ID" Wiki="Tab icon ID. Menu resource compliance" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

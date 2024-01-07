@@ -1,0 +1,12 @@
+<class name='hkaSkeletonMapper' version='1' signature='0xace9849c' size='192' parent='hkReferencedObject'>
+  <enums>
+    <enum name='ConstraintSource' flags='00000000'>
+      <enumitem name='NO_CONSTRAINTS' value='0'/>
+      <enumitem name='REFERENCE_POSE' value='1'/>
+      <enumitem name='CURRENT_POSE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='mapping' offset='16' ctype='hkaSkeletonMapperData' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

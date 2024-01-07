@@ -1,0 +1,19 @@
+<class name='hkpConeLimitConstraintAtom' version='1' signature='0x159ea5c9' size='32' parent='hkpConstraintAtom'>
+  <enums>
+    <enum name='MeasurementMode' flags='00000000'>
+      <enumitem name='ZERO_WHEN_VECTORS_ALIGNED' value='0'/>
+      <enumitem name='ZERO_WHEN_VECTORS_PERPENDICULAR' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='isEnabled' offset='2' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='twistAxisInA' offset='3' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='refAxisInB' offset='4' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='angleMeasurementMode' offset='5' etype='MeasurementMode' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memOffsetToAngleOffset' offset='6' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minAngle' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAngle' offset='12' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='angularLimitsTauFactor' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='20' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='12' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <TargetMapId AltName="Target Map ID" Wiki="Specify the target map ID. Legacy only. (m12_34_56_78  12345678). Initially it was only legacy, but it also supports open celestial sphere maps" />
+    <TargetEventId AltName="Target Event ID" Wiki="If you enter the target natural disaster event ID from 300, 310, 311 and 312, it will be [natural disaster replacement data]. If it is 0 or blank, it will be [Regional ID switching data] (SEQ16039)." />
+    <SrcAssetId AltName="Replacement Source Asset ID" Wiki="Replacement source AssetId AEG123_456_9999  123456" Refs="AssetEnvironmentGeometryParam" />
+    <SrcAssetPartsNo AltName="Replacement Source Asset Part ID" Wiki="Replacement source PartsNo AEG123_456_9999  9999" />
+    <DstAssetId AltName="Replacement Destination Asset ID" Wiki="Replacement destination AssetId AEG123_456_9999  123456" Refs="AssetEnvironmentGeometryParam" />
+    <DstAssetPartsNo AltName="Replacement Destination Asset Part ID" Wiki="Replacement destination PartsNo AEG123_456_9999  9999" />
+    <SrcAssetIdRangeMin AltName="Replacement Source Asset ID - Min Range" Wiki="Replacement source asset ID range specification Min" />
+    <SrcAssetIdRangeMax AltName="Replacement Source Asset ID - Max Range" Wiki="Replacement source asset ID range specification Max" />
+    <DstAssetIdRangeMin AltName="Replacement Destination Asset ID - Min Range" Wiki="Replacement destination asset ID range specification Min" />
+    <DstAssetIdRangeMax AltName="Replacement Destination Asset ID - Max Range" Wiki="Replacement destination asset ID range specification Max" />
+    <LimitedMapRegionId0 AltName="Limited Map Region ID [0]" Wiki="MapGD Local ID restriction 0 Valid only when Natural disaster event ID is 0. The part is valid only with the MapGD local ID you set (SEQ16039)." />
+    <LimitedMapRegionId1 AltName="Limited Map Region ID [1]" Wiki="MapGD Local ID Restriction 1 Valid only when Natural Disaster Event ID is 0. The part is valid only with the MapGD local ID you set (SEQ16039)." />
+    <LimitedMapRegionId2 AltName="Limited Map Region ID [2]" Wiki="MapGD Local ID restriction 2 Valid only when Natural disaster event ID is 0. The part is valid only with the MapGD local ID you set (SEQ16039)." />
+    <LimitedMapRegionId3 AltName="Limited Map Region ID [3]" Wiki="MapGD Local ID restriction 3 Valid only when Natural disaster event ID is 0. The part is valid only with the MapGD local ID you set (SEQ16039)." />
+    <reserve AltName=""/>
+    <LimitedMapRegionAssetId AltName="Limited Map Region Asset ID" Wiki="MapGD Valid assets specified by local ID AssetId AEG123_456_9999  123456" Refs="AssetEnvironmentGeometryParam" />
+    <LimitedMapRegioAssetPartsNo AltName="Limited Map Region Parts ID" Wiki="MapGD Valid assets specified by local ID PartsNo AEG123_456_9999  9999" />
+    <LimitedMapRegioAssetIdRangeMin AltName="Limited Map Region Asset ID - Range Min" Wiki="MapGD Valid asset specification with local ID Asset ID range specification Min" />
+    <LimitedMapRegioAssetIdRangeMax AltName="Limited Map Region Asset ID - Range Max" Wiki="MapGD Valid asset specification for local ID Asset ID range specification Max" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,6 @@
+<class name='hkpRemoveTerminalsMoppModifier' version='1' signature='0x5bff12e6' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='removeInfo' offset='24' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tempShapesToRemove' offset='40' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

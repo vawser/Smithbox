@@ -1,0 +1,6 @@
+<class name='hkpCogWheelConstraintDataAtoms' version='1' signature='0x5b6cbcb9' size='160'>
+  <members>
+    <member name='transforms' offset='0' ctype='hkpSetLocalTransformsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cogWheels' offset='144' ctype='hkpCogWheelConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name='hclOperator' version='1' signature='0x558ee36b' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='24' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

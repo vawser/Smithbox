@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="PHANTOM_BLEN_TYPE_ENUM" type="u8">
+      <Option Value="0" Name="Type 0" />
+      <Option Value="1" Name="Type 1" />
+      <Option Value="2" Name="Type 2" />
+      <Option Value="3" Name="Type 3" />
+      <Option Value="4" Name="Type 4" />
+    </Enum>
+  </Enums>
+  <Field>
+    <edgeColorA AltName="Edge Color: Alpha" Wiki="Edge color A." />
+    <frontColorA AltName="Front Color: Alpha" Wiki="The front color is A." />
+    <diffMulColorA AltName="Diffuse Color: Alpha" Wiki="Diffuse multiplication color A." />
+    <specMulColorA AltName="Specular Color: Alpha" Wiki="Specular multiplication color A." />
+    <lightColorA AltName="Light Color: Alpha" Wiki="Light color A." />
+    <edgeColorR AltName="Edge Color: R" Wiki="Edge color R." />
+    <edgeColorG AltName="Edge Color: G" Wiki="Edge color G." />
+    <edgeColorB AltName="Edge Color: B" Wiki="Edge color B." />
+    <frontColorR AltName="Front Color: R" Wiki="The front color is R." />
+    <frontColorG AltName="Front Color: G" Wiki="The front color is G." />
+    <frontColorB AltName="Front Color: B" Wiki="Front color B." />
+    <diffMulColorR AltName="Diffuse Color: R" Wiki="Diffuse multiplication color R." />
+    <diffMulColorG AltName="Diffuse Color: G" Wiki="Diffuse multiplication color G." />
+    <diffMulColorB AltName="Diffuse Color: B" Wiki="Diffuse multiplication color B." />
+    <specMulColorR AltName="Specular Color: R" Wiki="Specular multiplication color R." />
+    <specMulColorG AltName="Specular Color: G" Wiki="Specular multiplication color G." />
+    <specMulColorB AltName="Specular Color: B" Wiki="Specular multiplication color B." />
+    <lightColorR AltName="Light Color: R" Wiki="Light color R." />
+    <lightColorG AltName="Light Color: G" Wiki="Light color G." />
+    <lightColorB AltName="Light Color: B" Wiki="Light color B." />
+    <reserve AltName=""/>
+    <alpha AltName="Overall Alpha" Wiki="The overall transparency." />
+    <blendRate AltName="Blend Rate" Wiki="The blend ratio." />
+    <blendType AltName="Blend Type" Wiki="The type of alpha blend." Enum="PHANTOM_BLEN_TYPE_ENUM" />
+    <isEdgeSubtract AltName="Perform Edge Color Subtraction" Wiki="Whether to perform edge color subtraction." IsBool="" />
+    <isFrontSubtract AltName="Perform Front Color Subtraction" Wiki="Is it front color subtraction?" IsBool="" />
+    <isNo2Pass AltName="Is 1 Pass Only" Wiki="Do you not do 2pass?" IsBool="" />
+    
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="Phantom shader coloring"/>
+</PARAMMETA>

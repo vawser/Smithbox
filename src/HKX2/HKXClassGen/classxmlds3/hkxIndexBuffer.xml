@@ -1,0 +1,18 @@
+<class name='hkxIndexBuffer' version='1' signature='0x81d1cd6e' size='64' parent='hkReferencedObject'>
+  <enums>
+    <enum name='IndexType' flags='00000000'>
+      <enumitem name='INDEX_TYPE_INVALID' value='0'/>
+      <enumitem name='INDEX_TYPE_TRI_LIST' value='1'/>
+      <enumitem name='INDEX_TYPE_TRI_STRIP' value='2'/>
+      <enumitem name='INDEX_TYPE_TRI_FAN' value='3'/>
+      <enumitem name='INDEX_TYPE_MAX_ID' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='indexType' offset='16' etype='IndexType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indices16' offset='24' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indices32' offset='40' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexBaseOffset' offset='56' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='length' offset='60' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

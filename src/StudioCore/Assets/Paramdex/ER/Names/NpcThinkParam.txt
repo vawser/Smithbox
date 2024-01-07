@@ -1,0 +1,859 @@
+20100000 Blaidd the Half-Wolf
+20108000 Blaidd the Half-Wolf
+20108500 Baleful Shadow
+20109000 Blaidd the Half-Wolf
+20300000 Rennala Queen of the Full Moon
+20300100 Rennala Queen of the Full Moon
+20310000 Rennala Queen of the Full Moon
+20310100 Rennala Queen of the Full Moon
+20400000 Juvenile Scholar
+20410000 Kindred of Rot Larva
+20500000 Ranni the Witch
+20600000 The Two Fingers
+21000000 Black Knife Assassin
+21000052 Black Knife Assassin
+21100000 Beast Clergyman
+21101000 Maliketh the Black Blade
+21102000 Beast Clergyman (Sanctum)
+21300000 Morgott
+21300500 Morgott
+21400000 Omen
+21400900 Omen
+21401000 Omen
+21401900 Omen
+21600000 Finger Reader Crone
+21700000 Finger Reader Crone
+21800000 Melina
+21900000 Radagon
+22000000 Elden Beast
+22700000 Giant Crab
+22700100 Giant Crab
+22710000 Crab
+22710010 Crab
+22720000 Giant Black Crab
+22720100 Giant Black Crab
+22730000 Black Crab
+22730020 Black Crab
+22740000 Giant Albinauric Crab
+22750000 Albinauric Crab
+22750020 Albinauric Crab
+22760000 Giant Death Crab
+22770000 Death Crab
+25000000 Crucible Knight
+25000010 Crucible Knight
+25000030 Crucible Knight Ordovis
+25000100 Crucible Knight
+25001000 Crucible Knight
+25001100 Crucible Knight
+25009000 Crucible Knight
+30000000 Exile Soldier
+30000006 Exile Soldier
+30000100 Exile Soldier
+30000200 Exile Soldier
+30000300 Exile Soldier
+30000600 Exile Soldier
+30000700 Exile Soldier
+30000800 Exile Soldier
+30001000 Exile Soldier
+30001100 Exile Soldier
+30001200 Exile Soldier
+30001300 Exile Soldier
+30002000 Exile Soldier
+30003000 Exile Soldier
+30003200 Exile Soldier
+30100000 Banished Knight
+30100100 Banished Knight
+30100200 Banished Knight
+30101000 Banished Knight
+30101100 Banished Knight
+30101200 Banished Knight
+30102000 Banished Knight
+30102100 Banished Knight
+30102200 Banished Knight
+30200000 Large Exile Soldier
+30500000 Commander
+30600000 Giant Skeleton
+30601000 Giant Skeleton
+30610000 Giant Beast Skeleton
+30611000 Giant Beast Skeleton
+30700000 Dominula Celebrant
+30701000 Dominula Celebrant
+30702000 Dominula Celebrant
+30703000 Dominula Celebrant
+30704000 Dominula Celebrant
+30800000 Imp
+30800010 Imp
+30800020 Imp
+30800030 Imp
+30800040 Imp
+30800100 Imp
+30800110 Imp
+30801000 Imp
+30802000 Imp
+31000000 Elemer of the Briar
+31500000 Night's Cavalry
+31500052 Night's Cavalry
+31501000 Night's Cavalry
+31501052 Night's Cavalry
+31600000 Funeral Steed
+31600052 Funeral Steed
+31700000 Albinauric Archer
+31700052 Albinauric Archer
+31709000 Albinauric Archer
+31800000 Albinauric Archer's Wolf
+31800020 Albinauric Archer's Wolf
+31810000 Red Wolf of Radagon
+31810052 Red Wolf of Radagon
+32000000 Nomadic Merchant - Merchant Kalé
+32009000 Nomadic Merchant
+32010000 Frenzied Nomad
+32100000 Nomadic Merchant's Donkey
+32500000 Draconic Tree Sentinel
+32510000 Tree Sentinel
+32511000 Tree Sentinel
+32520000 Loretta
+32520054 Loretta
+32520100 Loretta
+33000000 Nox Swordstress
+33000900 Nox Swordstress
+33200000 Silver Tear
+33200100 Silver Tear
+33200200 Electrified Silver Tear
+33209000 Asimi, Silver Tear
+33300000 Giant Silver Tear
+33300062 Giant Silver Tear
+33500000 Crystalian
+33501000 Crystalian
+33501500 Crystalian
+33502000 Crystalian
+33600000 Ancestral Follower
+33600100 Ancestral Follower
+33600500 Ancestral Follower
+33600600 Ancestral Follower
+33600700 Ancestral Follower
+33601000 Ancestral Follower
+33601100 Ancestral Follower
+33602000 Ancestral Follower
+33602100 Ancestral Follower
+33610000 Putrid Ancestral Follower
+33610500 Putrid Ancestral Follower
+33611000 Putrid Ancestral Follower
+33612000 Putrid Ancestral Follower
+33700000 Ancestral Follower Shaman
+33710000 Putrid Ancestral Follower Shaman
+34000000 Grave Warden Duelist
+34001000 Grave Warden Duelist
+34500000 Misbegotten
+34501000 Winged Misbegotten
+34510000 Scaly Misbegotten
+34519000 Scaly Misbegotten
+34600000 Leonine Misbegotten
+34601000 Leonine Misbegotten
+34700000 Albinauric
+34701000 Albinauric
+34701500 Albinauric
+34702000 Albinauric
+34702500 Albinauric
+34703000 Albinauric
+34704000 Albinauric
+35000000 Large Skeleton (Spear)
+35000010 Large Skeleton (Spear)
+35001000 Large Skeleton (Crossbow)
+35001010 Large Skeleton (Crossbow)
+35002000 Large Skeleton (Scythe)
+35002010 Large Skeleton (Scythe)
+35003000 Large Skeleton (Sword and Shield)
+35003010 Large Skeleton (Sword and Shield)
+35004000 Large Skeleton (Curved Sword)
+35004010 Large Skeleton (Curved Sword)
+35100000 Skeleton (Sword and Shield)
+35100010 Skeleton (Sword and Shield)
+35100100 Skeleton (Sword and Shield)
+35100110 Skeleton (Sword and Shield)
+35100200 Skeleton (Sword and Shield)
+35101000 Skeleton (Sword)
+35101100 Skeleton (Sword)
+35102000 Skeleton (Bow)
+35102010 Skeleton (Bow)
+35102020 Skeleton (Bow)
+35103000 Skeleton (Fists)
+35103100 Skeleton (Fists)
+35104000 Skeleton (Fists)
+35500000 Sanguine Noble
+35600000 Godskin Apostle
+35600100 Godskin Apostle
+35600900 Godskin Apostle
+35700000 Godskin Noble
+35700100 Godskin Noble
+36000000 Alabaster Lord
+36000062 Alabaster Lord
+36001000 Onyx Lord
+36100000 Oracle Envoy
+36200000 Oracle Envoy
+36300000 Oracle Envoy
+36500000 Guardian
+36600000 Commoner
+36600041 Commoner
+36600100 Commoner
+36600600 Commoner
+36601000 Commoner
+36601200 Commoner
+36601300 Commoner
+36601400 Commoner
+36602000 Commoner
+36602100 Commoner
+36602200 Commoner
+36602300 Commoner
+36603000 Commoner
+36603100 Commoner
+36608000 Commoner
+36610000 Putrid Corpse
+36610100 Putrid Corpse
+36615000 Putrid Corpse
+36620000 Putrid Corpse
+36620100 Putrid Corpse
+36625000 Putrid Corpse
+36640000 Cemetery Shade
+36650000 Gostoc
+36660000 The Noble Goldmask
+36700000 Elder Albinauric
+36700100 Elder Albinauric
+36701000 Elder Albinauric
+36701100 Elder Albinauric
+36701120 Elder Albinauric
+36702000 Elder Albinauric
+36702100 Elder Albinauric
+36702200 Elder Albinauric
+36703000 Elder Albinauric
+36704000 Elder Albinauric
+36708000 Elder Albinauric
+36709000 Elder Albinauric
+37000000 Depraved Perfumer
+37000020 Depraved Perfumer
+37010000 Perfumer
+37020000 Glintstone Sorcerer
+37020020 Glintstone Sorcerer
+37020021 Glintstone Sorcerer
+37030000 Page
+37040000 Battlemage
+37040020 Battlemage
+37100000 Azur
+37200000 Lusat
+37300000 Graven School
+37500000 Clayman
+37501000 Clayman
+37502000 Clayman
+38000000 Cleanrot Knight
+38001000 Cleanrot Knight
+38100000 Kindred of Rot
+38101000 Kindred of Rot
+38103000 Kindred of Rot
+38500000 Marionette
+38501000 Marionette
+38502000 Marionette
+38600000 Avionette
+38600500 Avionette
+38601000 Avionette
+39000000 Fire Monk
+39001000 Fire Monk
+39010000 Fire Monk
+39011000 Blackflame Monk
+39100000 Fire Prelate
+39100100 Fire Prelate
+39101000 Fire Prelate
+39101100 Fire Prelate
+39500000 Man-Serpent
+39500100 Man-Serpent
+39502000 Man-Serpent
+39502100 Man-Serpent
+39504000 Man-Serpent
+39509000 Man-Serpent
+39700000 Azula Beastman
+39701000 Azula Beastman
+39701100 Azula Beastman
+39701200 Azula Beastman
+39702000 Azula Beastman
+39702100 Azula Beastman
+39703000 Azula Beastman
+39703100 Azula Beastman
+40000000 Revenant Follower
+40000100 Revenant Follower
+40001000 Revenant Follower
+40200000 Royal Revenant
+40200100 Royal Revenant
+40400000 Slug
+40500000 Kaiden Sellsword
+40500100 Kaiden Sellsword
+40600000 Horse
+40700000 Wolf
+40700100 Wolf
+40701000 Wolf
+40702000 Wolf
+40708000 Wolf
+40800000 Rat
+40800300 Rat
+40900000 Giant Rat
+40900300 Giant Rat
+41000000 Demi-Human
+41000200 Demi-Human
+41001000 Demi-Human
+41001200 Demi-Human
+41002000 Demi-Human
+41002200 Demi-Human
+41009000 Demi-Human
+41010000 Large Demi-Human
+41010050 Large Demi-Human
+41100000 Demi-Human Shaman
+41109000 Demi-Human Shaman
+41200000 Demi-Human Chief
+41200100 Demi-Human Chief
+41300000 Demi-Human Queen
+41301000 Demi-Human Queen
+41400000 Snail
+41401000 Snail
+41402000 Snail
+41403000 Snail
+41404000 Snail
+41500000 Basilisk
+41500100 Basilisk
+41600000 Large Stray
+41610000 Stray
+41610010 Stray
+41620000 Stray
+41630000 Stray
+41640000 Stray
+41650000 Stray
+41660000 Stray
+41670000 Stray
+41700000 Putrid Flesh
+41700010 Putrid Flesh
+41710000 Putrid Flesh
+41800000 Spirit Jellyfish
+41809000 Spirit Jellyfish
+41900000 Large Scarab
+41910000 Scarab
+41912000 Scarab
+41920000 Giant Scarab
+42000000 Man-Bat
+42000100 Man-Bat
+42000200 Man-Bat
+42010000 Operatic Bat
+42011000 Operatic Bat
+42100000 Warhawk
+42100100 Warhawk
+42100200 Warhawk
+42200000 Giant Land Octopus
+42300000 Land Octopus
+42400000 Fingercreeper
+42400020 Fingercreeper
+42400100 Fingercreeper
+42410000 Giant Fingercreeper
+42500000 Small Fingercreeper
+42600000 Erdtree Burial Watchdog
+42601000 Erdtree Burial Watchdog
+42601100 Erdtree Burial Watchdog
+42700000 Elder Lion
+42700040 Elder Lion
+42701000 Elder Lion
+42800000 Giant Ant
+42800100 Giant Ant
+42800200 Giant Ant
+42900000 Bloodhound Knight
+42900010 Bloodhound Knight
+42900020 Bloodhound Knight
+42900100 Bloodhound Knight
+42909000 Bloodhound Knight
+43000000 Wandering Noble
+43000006 Wandering Noble
+43000010 Wandering Noble
+43000100 Wandering Noble
+43000800 Wandering Noble
+43001000 Wandering Noble
+43001800 Wandering Noble
+43002000 Wandering Noble
+43002010 Wandering Noble
+43002110 Wandering Noble
+43002800 Wandering Noble
+43002900 Wandering Noble
+43003000 Wandering Noble
+43003800 Wandering Noble
+43004000 Wandering Noble
+43004100 Wandering Noble
+43004800 Wandering Noble
+43005000 Wandering Noble
+43006000 Wandering Noble
+43006100 Wandering Noble
+43006200 Wandering Noble
+43007000 Wandering Noble
+43110000 Godrick Soldier
+43110010 Godrick Soldier
+43111100 Godrick Soldier
+43112000 Godrick Soldier
+43112010 Godrick Soldier
+43112100 Godrick Soldier
+43113000 Godrick Soldier
+43114000 Godrick Soldier
+43114006 Godrick Soldier
+43120000 Raya Lucaria Soldier
+43120020 Raya Lucaria Soldier
+43120100 Raya Lucaria Soldier
+43121000 Raya Lucaria Soldier
+43121020 Raya Lucaria Soldier
+43121100 Raya Lucaria Soldier
+43122000 Raya Lucaria Soldier
+43123000 Raya Lucaria Soldier
+43130000 Leyndell Soldier
+43130100 Leyndell Soldier
+43131000 Leyndell Soldier
+43131100 Leyndell Soldier
+43132000 Leyndell Soldier
+43133000 Leyndell Soldier
+43140000 Radahn Soldier
+43140040 Radahn Soldier
+43140100 Radahn Soldier
+43141000 Radahn Soldier
+43141100 Radahn Soldier
+43142000 Radahn Soldier
+43142040 Radahn Soldier
+43143000 Radahn Soldier
+43150000 Mausoleum Soldier
+43151000 Mausoleum Soldier
+43152000 Mausoleum Soldier
+43153000 Mausoleum Soldier
+43160000 Haligtree Soldier
+43160100 Haligtree Soldier
+43161000 Haligtree Soldier
+43161100 Haligtree Soldier
+43162000 Haligtree Soldier
+43163000 Haligtree Soldier
+43210000 Vulgar Militia
+43210100 Vulgar Militia
+43211000 Vulgar Militia
+43211100 Vulgar Militia
+43211150 Vulgar Militia
+43212000 Vulgar Militia
+43212100 Vulgar Militia
+43400000 Mad Pumpkin Head
+43400100 Mad Pumpkin Head
+43401000 Mad Pumpkin Head
+43401100 Mad Pumpkin Head
+43410000 Thin Mad Pumpkin Head
+43411000 Thin Mad Pumpkin Head
+43510000 Godrick Knight
+43511000 Godrick Knight
+43512000 Godrick Knight
+43520000 Cuckoo Knight
+43521000 Cuckoo Knight
+43521100 Cuckoo Knight
+43522000 Cuckoo Knight
+43530000 Leyndell Knight
+43531000 Leyndell Knight
+43532000 Leyndell Knight
+43532100 Leyndell Knight
+43540000 Redmane Knight
+43540200 Redmane Knight
+43541000 Redmane Knight
+43541040 Redmane Knight
+43541200 Redmane Knight
+43542000 Redmane Knight
+43542200 Redmane Knight
+43550000 Mausoleum Knight
+43551000 Mausoleum Knight
+43552000 Mausoleum Knight
+43560000 Haligtree Knight
+43561000 Haligtree Knight
+43562000 Haligtree Knight
+43610000 Godrick Knight's Horse
+43620000 Cuckoo Knight's Horse
+43630000 Leyndell Knight's Horse
+43640000 Redmane Knight's Horse
+43650000 Mausoleum Knight's Horse
+43710000 Godrick Foot Soldier
+43710010 Godrick Foot Soldier
+43710500 Godrick Foot Soldier
+43710510 Godrick Foot Soldier
+43711000 Godrick Foot Soldier
+43711010 Godrick Foot Soldier
+43720000 Raya Lucaria Foot Soldier
+43720500 Raya Lucaria Foot Soldier
+43721000 Raya Lucaria Foot Soldier
+43721500 Raya Lucaria Foot Soldier
+43730000 Leyndell Foot Soldier
+43730500 Leyndell Foot Soldier
+43731000 Leyndell Foot Soldier
+43731500 Leyndell Foot Soldier
+43740000 Radahn Foot Soldier
+43740040 Radahn Foot Soldier
+43740500 Radahn Foot Soldier
+43741000 Radahn Foot Soldier
+43741500 Radahn Foot Soldier
+43750000 Mausoleum Foot Soldier
+43750500 Mausoleum Foot Soldier
+43751000 Mausoleum Foot Soldier
+43760000 Haligtree Foot Soldier
+43760500 Haligtree Foot Soldier
+43761000 Haligtree Foot Soldier
+43761500 Haligtree Foot Soldier
+43770000 Highwayman
+43770012 Highwayman
+43770500 Highwayman
+43771000 Highwayman
+43771500 Highwayman
+43800000 Starcaller
+43800100 Starcaller
+43810000 Guilty
+43810100 Guilty
+43820000 Stonedigger
+43820100 Stonedigger
+43821000 Stonedigger
+43821100 Stonedigger
+43822000 Stonedigger
+43823000 Stonedigger
+43824000 Stonedigger
+43825000 Stonedigger
+43826000 Stonedigger
+43830000 Glintstone Digger
+43830010 Glintstone Digger
+43831000 Glintstone Digger
+43840000 Glintstone Digger
+43850000 Disciple of Rot
+43850040 Disciple of Rot
+44200000 Giant Crayfish
+44201000 Giant Crayfish
+44300000 Watcher Stones
+44301000 Watcher Stones
+44400000 Land Squirt
+44410000 Giant Land Squirt
+44500000 Walking Mausoleum
+44600000 Flame Chariot
+44700000 Abductor Virgin
+44701000 Abductor Virgin
+44702000 Abductor Virgin
+44800000 Miranda Blossom
+44800100 Miranda Blossom
+44800200 Miranda Blossom
+44800300 Miranda Blossom
+44800400 Miranda Blossom
+44810000 Miranda Sprout
+44810100 Miranda Sprout
+44810200 Miranda Sprout
+44810300 Miranda Sprout
+44810400 Miranda Sprout
+44810500 Miranda Sprout
+44811000 Miranda Sprout
+44811100 Miranda Sprout
+44811200 Miranda Sprout
+44811300 Miranda Sprout
+44811400 Miranda Sprout
+44820000 Miranda Blossom
+44830000 Miranda Sprout
+44831000 Miranda Sprout
+44900000 Living Jar Warrior
+44900100 Living Jar Warrior
+44900200 Living Jar Warrior
+44910000 Living Jar
+44910100 Living Jar
+44910200 Living Jar
+44919000 Living Jar
+44920000 Greatjar
+45000000 Flying Dragon
+45008000 Flying Dragon (Rennala)
+45010000 Decaying Ekzykes
+45020000 Glintstone Dragon
+45020920 Glintstone Dragon Adula
+45030000 Borealis the Freezing Fog
+45040000 Elder Dragon Greyoll
+45050000 Flying Dragon (Small)
+45100000 Ancient Dragon
+45110000 Lichdragon Fortissax
+45200000 Dragonlord Placidusax
+45500000 Giant Dog
+45500040 Giant Dog
+45506000 Giant Dog
+45600000 Giant Crow
+45600040 Giant Crow
+45610000 Giant Crow
+45700000 Wormface
+45800000 Giant Wormface
+46000000 Troll
+46000010 Troll
+46000040 Troll
+46001000 Troll
+46004000 Troll (Frenzied)
+46008000 Troll (Rennala)
+46010000 Troll Knight
+46010020 Troll Knight
+46020000 Troll Knight
+46020050 Troll Knight
+46021000 Troll Knight
+46030000 Stonedigger Troll
+46040000 War Counselor Iji
+46200000 Astel Stars of Darkness
+46201000 Astel Stars of Darkness
+46209000 Astel Stars of Darkness
+46209100 Astel Stars of Darkness
+46209200 Astel Stars of Darkness
+46209300 Astel Stars of Darkness
+46300000 Runebear
+46300010 Runebear
+46300020 Runebear
+46300052 Runebear
+46400000 Ulcerated Tree Spirit
+46400007 Ulcerated Tree Spirit
+46400032 Ulcerated Tree Spirit
+46400033 Ulcerated Tree Spirit
+46400100 Ulcerated Tree Spirit
+46500000 Dragonkin Soldier
+46500100 Dragonkin Soldier
+46500200 Dragonkin Soldier
+46500265 Dragonkin Soldier
+46500300 Dragonkin Soldier
+46600000 Guardian Golem
+46600100 Guardian Golem
+46601000 Guardian Golem
+46601100 Guardian Golem
+46700000 Ancestor Spirit
+46700100 Ancestor Spirit
+46700200 Ancestor Spirit
+46800000 Fallingstar Beast
+46900000 Grafted Scion
+46900007 Grafted Scion
+46900032 Grafted Scion
+47100000 God-Devouring Serpent / Rykard, Lord of Blasphemy
+47110000 Rykard's Corpse
+47200000 Godfrey, First Elden Lord
+47210000 Hoarah Loux
+47300000 Starscourge Radahn
+47500000 Godrick the Grafted
+47600000 Fire Giant
+47600900 Fire Giant
+47700000 Valiant Gargoyle
+47700200 Valiant Gargoyle
+47701000 Valiant Gargoyle
+47701200 Valiant Gargoyle
+47702000 Valiant Gargoyle
+48000000 Mohg, Lord of Blood
+48001000 Mohg the Omen
+48100000 Erdtree Avatar
+48100100 Erdtree Avatar
+48110000 Putrid Avatar
+48110040 Putrid Avatar
+48200000 Omenkiller
+49100000 Magma Wyrm
+49500000 Tibia Mariner
+49500050 Tibia Mariner
+49600000 Giant Skeleton Torso
+49600050 Giant Skeleton Torso
+49800000 Death Rite Bird
+60010000 Eagle
+60010050 Eagle
+60100000 Deer
+60100010 Deer
+60100050 Deer
+60310000 Bear
+60400000 Owl
+60400050 Owl
+60500000 Boar
+60501000 Boar
+60600000 Goat
+60601000 Goat
+60700000 Murre
+60720000 Carrier Pigeon
+60720100 Carrier Pigeon
+60800000 Dragonfly
+60810000 Yellow Dragonfly
+60820000 Great Dragonfly
+60900000 Turtle
+60910000 Miriel, Pastor of Vows
+61000000 Springhare
+61000010 Springhare
+70000000 Fallen Hawks Soldier
+70000100 Fallen Hawks Soldier
+70001000 Fallen Hawks Soldier
+70002000 Fallen Hawks Soldier
+70003000 Fallen Hawks Soldier
+70003100 Fallen Hawks Soldier
+71000000 Ancient Hero of Zamor
+71000050 Ancient Hero of Zamor
+80000000 Torrent
+81000000 Ballista
+81100000 Dragon-faced Flamethrower
+81200000 Merciless Chariot
+100000010 Mimic Tear
+100000020 Nepheli Loux Puppet
+100000030 Dung Eater Puppet
+100000040 Finger Maiden Therolina Puppet
+100000050 Dolores the Sleeping Arrow
+100000060 Jarwight Puppet
+121000000 Black Knife Tiche
+130101000 Banished Knight Oleg
+130102000 Banished Knight Engvall
+130800000 Fanged Imps
+131700000 Latenna the Albinauric
+132010000 Nomad
+133100000 Nightmaiden
+133101000 Swordstress
+133200000 Mimic Tear - Blob
+133500000 Crystalian
+133600500 Ancestral Follower
+134501000 Winged Misbegotten
+134701000 Albinauric Ashes
+135000000 Skeletal Militiaman
+135004000 Skeletal Bandit
+136100000 Oracle Envoy
+136610000 Putrid Corpse
+137000000 Depraved Perfumer
+137010000 Perfumer Tricia
+137020100 Glintstone Sorcerer / Twinsage Sorcerer
+137030000 Page Ashes
+137040000 Battlemage Hugues
+137502000 Clayman
+138001000 Cleanrot Knight Finlay
+138100000 Kindred of Rot
+138500000 Marionette Soldier
+138601000 Avionette Soldier
+139000000 Fire Monk
+139011000 Blackflame Monk
+139500000 Man-Serpent
+139701000 Azula Beastman
+140500000 Kaiden Sellsword
+140700000 Lone Wolf
+140800000 Giant Rat
+141000000 Demi-Human 1
+141001000 Demi-Human 2
+141002000 Demi-Human 3
+141010000 Demi-Human 4
+141100000 Demi-Human 5
+141660000 Rotten Stray
+141800000 Spirit Jellyfish
+142100000 Warhawk / Stormhawk
+142900000 Bloodhound Knight Floh
+143000000 Wandering Noble 1
+143001000 Wandering Noble 2
+143002000 Noble Sorcerer
+143005000 Wandering Noble 3
+143110000 Godrick Soldier 1
+143112000 Godrick Soldier 2
+143122000 Raya Lucaria Soldier
+143133000 Leyndell Soldier
+143140100 Radahn Soldier 1
+143142000 Radahn Soldier 2
+143150000 Mausoleum Soldier 1
+143151000 Mausoleum Soldier 2
+143152000 Mausoleum Soldier 3
+143210000 Vulgar Militia
+143410000 Mad Pumpkin Head
+143531000 Ancient Dragon Knight Kristoff
+143542000 Redmane Knight Ogha
+143551000 Lhutel the Headless
+143720000 Raya Lucaria Soldier
+143760000 Haligtree Soldier
+144400000 Land Squirt
+144810000 Miranda Sprout
+144910000 Soldjars of Fortune
+148200000 Omenkiller
+170001000 Greatshield Soldier
+170002000 Archer
+523000000 Tanith Volcano Manor Proprietress
+523010000 White Mask Varré
+523040000 Festering Fingerprint Vyke
+523070000 Preceptor Seluvis
+523090000 Patches
+523090010 Patches
+523100000 Irina of Morne
+523110000 Castellan Edgar
+523120000 Castellan Jerren
+523120040 Castellan Jerren
+523130000 Rya the Scout
+523140000 Knight Diallos
+523160000 Sorceress Sellen
+523180000 Yura Hunter of Bloody Fingers
+523190000 D Hunter of the Dead
+523200000 Heartbroken Maiden
+523210000 Kenneth Haight Limgrave Heir
+523220000 Fia Deathbed Companion
+523230000 Dung Eater
+523240000 Sir Gideon Ofnir the All-Knowing
+523250000 Sorcerer Rogier
+523260000 Knight Bernahl
+523270000 Eleonora Violet Bloody Finger
+523310000 Blackguard
+523330000 Sorcerer Thops
+523340000 Nepheli Loux Warrior
+523350000 Reeling Rico
+523360000 Vyke's Finger Maiden
+523380000 Finger Maiden
+523390000 Ensha of the Royal Remains
+523400000 Bloody Finger Ravenmount Assassin
+523420000 Sanguine Noble
+523430000 Bloody Finger Nerijus
+523440000 Great Horned Tragoth
+523450000 Old Knight Istvan
+523460000 Rileigh the Idle
+523470000 Juno Hoslow Knight of Blood
+523480000 Millicent
+523480040 Millicent
+523490000 Sage Gowry
+523510000 Scribe Corhyn
+523520000 Preceptor Miriam
+523530000 Anastasia Tarnished-Eater
+523550000 Okina
+523560000 Adan Thief of Fire
+523590000 Moongrum Carian Knight
+523600000 Vargram the Raging Wolf
+523610000 Fia's Champion
+523630000 Finger Maiden Therolina
+523640000 Dolores the Sleeping Arrow
+523650000 Jarwight
+523670000 Inaba Disciple of Okina
+523680000 Silver Tear
+523690000 Recusant Henricus
+523700000 Fia's Champion
+523710000 Fia's Champion
+523720000 Maleigh Marais Shaded Castle Castellan
+523730000 Knight of the Great Jar
+523740000 Knight of the Great Jar
+523750000 Knight of the Great Jar
+523760000 Necromancer Garris
+523770000 Nameless White Mask
+523800000 Errant Sorcerer Wilhelm
+523820000 Chief Guardian Arghanthy
+523830000 Flame Guardian
+523840000 Inquisitor Ghiza
+523850000 Mad Tongue Alberich
+523870000 Mary Eldest Sister
+523880000 Maureen Second Sister
+523890000 Amy Third Sister
+523900000 Polyanna Youngest Sister
+533040100 Roundtable Knight Vyke
+533090000 Patches
+533110000 Castellan Edgar
+533120000 Witch-Hunter Jerren
+533160000 Sorceress Sellen
+533180000 Yura Hunter of Bloody Fingers
+533181000 Yura Hunter of Bloody Fingers
+533190000 D Hunter of the Dead
+533250000 Sorcerer Rogier
+533260000 Knight Bernahl
+533290000 Recusant Bernahl
+533310000 Blackguard
+533340000 Nepheli Loux Warrior
+533350000 Reeling Rico
+533440000 Great Horned Tragoth
+533450000 Old Knight Istvan
+533480000 Millicent
+533481000 Millicent
+533550000 Okina
+533630000 Finger Maiden Therolina
+533870000 Mary Eldest Sister
+533880000 Maureen Second Sister
+533890000 Amy Third Sister
+533900000 Polyanna Youngest Sister
+543110000 Edgar the Revenger
+543260000 Knight Bernahl
+543270000 Eleonora Violet Bloody Finger
+543390000 Ensha of the Royal Remains
+543430000 Bloody Finger Nerijus
+543480000 Millicent
+543690000 Sage Gowry
+543850000 Mad Tongue Alberich

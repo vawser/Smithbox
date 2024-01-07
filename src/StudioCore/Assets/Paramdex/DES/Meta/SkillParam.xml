@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <iconId AltName="iconId" />
+    <behaviorId AltName="behaviorId" />
+    <NecessityStr AltName="NecessityStr" />
+    <NecessityDex AltName="NecessityDex" />
+    <NecessityMag AltName="NecessityMag" />
+    <NecessityFai AltName="NecessityFai" />
+    <consumeSoul AltName="consumeSoul" />
+    <sortId AltName="sortId" />
+    <slotLength AltName="slotLength" />
+    <pad_1 AltName="pad_1" />
+  </Field>
+  <Self />
+</PARAMMETA>

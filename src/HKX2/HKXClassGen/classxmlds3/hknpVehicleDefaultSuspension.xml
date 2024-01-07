@@ -1,0 +1,5 @@
+<class name='hknpVehicleDefaultSuspension' version='1' signature='0x6365017a' size='48' parent='hknpVehicleSuspension'>
+  <members>
+    <member name='wheelSpringParams' offset='32' ctype='hknpVehicleDefaultSuspensionWheelSpringSuspensionParameters' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

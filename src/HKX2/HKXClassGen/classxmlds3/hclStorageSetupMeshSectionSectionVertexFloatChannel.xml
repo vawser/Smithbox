@@ -1,0 +1,5 @@
+<class name='hclStorageSetupMeshSectionSectionVertexFloatChannel' version='1' signature='0xfd449a19' size='32' parent='hclStorageSetupMeshSectionSectionVertexChannel'>
+  <members>
+    <member name='vertexFloats' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>REINFORCE_COST_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 reinforce_soul_cost_1" />
+    <Field Def="s32 reinforce_soul_cost_2" />
+    <Field Def="s32 reinforce_soul_cost_3" />
+    <Field Def="s32 reinforce_soul_cost_4" />
+    <Field Def="s32 reinforce_soul_cost_5" />
+    <Field Def="s32 reinforce_soul_cost_6" />
+    <Field Def="s32 reinforce_soul_cost_7" />
+    <Field Def="s32 reinforce_soul_cost_8" />
+    <Field Def="s32 reinforce_soul_cost_9" />
+    <Field Def="s32 reinforce_soul_cost_10" />
+    <Field Def="s32 reinforce_material_1" />
+    <Field Def="s32 reinforce_material_2" />
+    <Field Def="s32 reinforce_material_3" />
+    <Field Def="s32 reinforce_material_4" />
+    <Field Def="s32 reinforce_material_5" />
+    <Field Def="s32 reinforce_material_6" />
+    <Field Def="s32 reinforce_material_7" />
+    <Field Def="s32 reinforce_material_8" />
+    <Field Def="s32 reinforce_material_9" />
+    <Field Def="s32 reinforce_material_10" />
+    <Field Def="u16 reinforce_amount_1" />
+    <Field Def="u16 reinforce_amount_2" />
+    <Field Def="u16 reinforce_amount_3" />
+    <Field Def="u16 reinforce_amount_4" />
+    <Field Def="u16 reinforce_amount_5" />
+    <Field Def="u16 reinforce_amount_6" />
+    <Field Def="u16 reinforce_amount_7" />
+    <Field Def="u16 reinforce_amount_8" />
+    <Field Def="u16 reinforce_amount_9" />
+    <Field Def="u16 reinforce_amount_10" />
+  </Fields>
+</PARAMDEF>

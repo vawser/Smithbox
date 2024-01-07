@@ -1,0 +1,6 @@
+<class name='hkpShapeKeyTableBlock' version='1' signature='0x3276838f' size='272'>
+  <members>
+    <member name='slots' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='63' flags='FLAGS_NONE' default='0'/>
+    <member name='next' offset='256' ctype='hkpShapeKeyTableBlock' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

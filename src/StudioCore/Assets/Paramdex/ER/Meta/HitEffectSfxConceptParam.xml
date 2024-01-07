@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="HIT_EFFECT_SFX_CONCEPT_TYPE" type="s16">
+    </Enum>
+  </Enums>
+  <Field>
+    <atkIron_1 AltName="Iron [1]" Wiki="Iron: Concept 1" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkIron_2 AltName="Iron [2]" Wiki="Iron: Concept 2" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkLeather_1 AltName="Leather [1]" Wiki="Leather: Concept 1" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkLeather_2 AltName="Leather [2]" Wiki="Leather: Concept 2" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkWood_1 AltName="Wood [1]" Wiki="Wooden: Concept 1" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkWood_2 AltName="Wood [2]" Wiki="Wooden: Concept 2" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkBody_1 AltName="Flesh [1]" Wiki="Meat: Concept 1" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkBody_2 AltName="Flesh [2]" Wiki="Meat: Concept 2" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkStone_1 AltName="Stone [1]" Wiki="Corrosion: Concept 1" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkStone_2 AltName="Stone [2]" Wiki="Corrosion: Concept 2" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <pad AltName=""/>
+    <atkNone_1 AltName="None [1]" Wiki="None: Concept 1" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <atkNone_2 AltName="None [2]" Wiki="None: Concept 2" Enum="HIT_EFFECT_SFX_CONCEPT_TYPE" />
+    <reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

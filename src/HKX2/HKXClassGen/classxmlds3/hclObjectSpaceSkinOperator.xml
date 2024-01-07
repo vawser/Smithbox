@@ -1,0 +1,9 @@
+<class name='hclObjectSpaceSkinOperator' version='1' signature='0x2755b686' size='160' parent='hclOperator'>
+  <members>
+    <member name='boneFromSkinMeshTransforms' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_MATRIX4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transformSubset' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputBufferIndex' offset='64' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transformSetIndex' offset='68' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='objectSpaceDeformer' offset='72' ctype='hclObjectSpaceDeformer' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,11 @@
+0 Basic
+1 celestial sphere
+2 Incoming light m6000
+3 m50_01 temporary fog
+4 distant tree
+7 river
+21 boss area
+30 for polyplay - testRibra
+50 For poly drama (p050200-c00
+51 For poly drama (p050200-c01
+54 For poly drama (p050200-c04

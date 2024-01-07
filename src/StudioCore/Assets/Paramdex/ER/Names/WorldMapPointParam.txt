@@ -1,0 +1,217 @@
+100000 Stormveil Castle
+110000 Leyndell Royal Capital
+130000 Crumbling Farum Azula
+140000 Academy of Raya Lucaria
+150000 Miquella's Haligtree
+150001 Elphael Brace of the Haligtree
+160000 Volcano Manor
+180000 Stranded Graveyard
+180001 Fringefolk Hero's Grave
+300000 Tombsward Catacombs
+300100 Impaler's Catacombs
+300200 Stormfoot Catacombs
+300300 Road's End Catacombs
+300400 Murkwater Catacombs
+300500 Black Knife Catacombs
+300600 Cliffbottom Catacombs
+300700 Wyndham Catacombs
+300800 Sainted Hero's Grave
+300900 Gelmir Hero's Grave
+301000 Auriza Hero's Grave
+301100 Deathtouched Catacombs
+301200 Unsightly Catacombs
+301300 Auriza Side Tomb
+301400 Minor Erdtree Catacombs
+301500 Caelid Catacombs
+301600 War-Dead Catacombs
+301700 Giant-Conquering Hero's Grave
+301800 Giants' Mountaintop Catacombs
+301900 Consecrated Snowfield Catacombs
+302000 Hidden Path to the Haligtree
+310000 Murkwater Cave
+310100 Earthbore Cave
+310200 Tombsward Cave
+310300 Groveside Cave
+310400 Stillwater Cave
+310500 Lakeside Crystal Cave
+310600 Academy Crystal Cave
+310700 Seethewater Cave
+310900 Volcano Cave
+311000 Dragonbarrow Cave
+311100 Sellia Hideaway
+311200 Cave of the Forlorn
+311500 Coastal Cave
+311700 Highroad Cave
+311800 Perfumer's Grotto
+311900 Sage's Cave
+312000 Abandoned Cave
+312100 Gaol Cave
+312200 Spiritcaller's Cave
+320000 Morne Tunnel
+320100 Limgrave Tunnels
+320200 Raya Lucaria Crystal Tunnel
+320400 Old Altus Tunnel
+320500 Altus Tunnel
+320700 Gael Tunnel
+320800 Sellia Crystal Tunnel
+321100 Yelough Anix Tunnel
+341000 Divine Tower of Limgrave
+341100 Carian Study Hall
+341101 Divine Tower of Liurnia
+341200 Sealed Tunnel
+341201 Divine Tower of West Altus
+341300 Divine Tower of Caelid
+341400 Divine Tower of East Altus
+341500 Isolated Divine Tower
+350000 Subterranean Shunning-Grounds
+392000 Ruin-Strewn Precipice
+61413200 Isolated Merchant's Shack
+61413300 Fourth Church of Marika
+61413301 Witchbane Ruins
+61413500 Church of Dragon Communion
+61413800 Stormhill Shack
+61423200 Tower of Return
+61423300 Weeping Evergaol
+61423400 Tombsward Ruins
+61423600 Church of Elleh
+61423700 Gatefront Ruins
+61423701 Stormhill Evergaol
+61423702 Stormgate
+61423800 Warmaster's Shack
+61433100 Castle Morne
+61433301 Minor Erdtree
+61433400 Church of Pilgrimage
+61433401 Demi-Human Forest Ruins
+61433600 Dragon-Burnt Ruins
+61443300 Callu Baptismal Church
+61443302 Ailing Village
+61443400 Bridge of Sacrifice
+61443401 Forest Lookout Tower
+61443500 Forlorn Hound Evergaol
+61443600 Waypoint Ruins
+61443800 Artist's Shack
+61453300 Oridys's Rise
+61453700 Siofra River Well
+61453701 Mistwood Ruins
+61453702 Minor Erdtree
+61453900 Summonwater Village
+61463600 Fort Haight
+61463800 Third Church of Marika
+62334000 Chelona's Rise
+62334200 Ringleader's Evergaol
+62334300 Minor Erdtree
+62334400 Revenger's Shack
+62334500 Cuckoo's Evergaol
+62334700 The Four Belfries
+62344100 Deep Ainsel Well
+62344200 Moonfolk Ruins
+62344300 Converted Tower
+62344400 Temple Quarter
+62344800 Kingsrealm Ruins
+62345000 Seluvis's Rise
+62345001 Ranni's Rise
+62345002 Three Sisters
+62345100 Renna's Rise
+62354100 Lunar Estate Ruins
+62354200 Village of the Albinaurics
+62354201 Cathedral of Manus Celes
+62354400 Rose Church
+62354700 Testu's Rise
+62355000 Caria Manor
+62364100 Slumbering Wolf's Shack
+62364300 Boilprawn Shack
+62364900 Bellum Church
+62365000 Royal Grave Evergaol
+62374200 Laskyar Ruins
+62374400 Academy Gate Town
+62374600 Church of Vows
+62374900 Church of Inhibition
+62384100 Malefactor's Evergaol
+62384200 Highway Lookout Tower
+62384500 Artist's Shack
+62384600 Ainsel River Well
+62384700 Uld Palace Ruins
+62384800 Frenzied Flame Village
+62384801 Minor Erdtree
+62384900 Frenzy-Flaming Tower
+62393900 Church of Irith
+62394100 Purified Ruins
+62394400 Jarburg
+62394800 Converted Fringe Tower
+63355400 Fort Laiedd
+63365100 Perfumer's Ruins
+63365200 Hermit's Shack
+63365203 Craftsman's Shack
+63375100 Stormcaller Church
+63375200 Hermit Village
+63375400 Minor Erdtree
+63385000 Grand Lift of Dectus
+63385100 Lux Ruins
+63385200 Wyndham Ruins
+63385400 Corpse-Stench Shack
+63395000 Golden Lineage Evergaol
+63395200 Second Church of Marika
+63395300 Mirage Rise
+63395400 The Shaded Castle
+63405200 St. Trina's Hideaway
+63405300 Writheblood Ruins
+63405500 West Windmill Pasture
+63415300 Woodfolk Ruins
+63415301 Minor Erdtree
+63415400 Dominula Windmill Village
+63415500 East Windmill Pasture
+63415501 Village Windmill Pasture
+63425400 Highway Lookout Tower
+63435000 Minor Erdtree Church
+63435300 Hermit Merchant's Shack
+63445300 Minor Erdtree
+64464000 Smoldering Church
+64464001 Shack of the Rotting
+64473800 Caelid Waypoint Ruins
+64473801 Fort Gael
+64474000 Forsaken Ruins
+64474001 Minor Erdtree
+64474002 Caelem Ruins
+64483600 Cathedral of Dragon Communion
+64483800 Street of Sages Ruins
+64484100 Isolated Merchant's Shack
+64493800 Swamp Lookout Tower
+64493801 Sellia Gateway
+64493900 Sellia Evergaol
+64494000 Deep Siofra Well
+64503800 Gowry's Shack
+64503900 Church of the Plague
+64503901 Sellia Town of Sorcery
+64513600 Redmane Castle
+64513700 Wailing Dunes
+64513900 Fort Faroth
+64514000 Minor Erdtree
+64514300 Bestial Sanctum
+64524100 Lenne's Rise
+65475500 Yelough Anix Ruins
+65475800 Apostate Derelict
+65485700 Ordina Liturgical Town
+65495300 Zamor Ruins
+65495301 Grand Lift of Rold
+65505600 Shack of the Lofty
+65505601 Minor Erdtree
+65505602 Albinauric Rise
+65515300 Church of Repose
+65515600 Stargazers' Ruins
+65515700 Castle Sol
+65525500 Guardians' Garrison
+65525600 Minor Erdtree
+65525700 Heretical Rise
+65535600 Lord Contender's Evergaol
+65545300 Forge of the Giants
+65545500 First Church of Marika
+66120100 Uhl Palace Ruins
+66120102 Uhl Palace Ruins
+66120103 Nokstella Eternal City
+66120104 Grand Cloister
+66120200 Night's Sacred Ground
+66120201 Siofra Aqueduct
+66120202 Hallowhorn Grounds
+66120203 Hallowhorn Grounds
+66120500 Mohgwyn Dynasty Mausoleum
+66120700 Nokron Eternal City

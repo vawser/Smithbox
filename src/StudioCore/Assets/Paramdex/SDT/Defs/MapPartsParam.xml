@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MAP_PARTS_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="f32 camDitherFadeMinDist">
+      <DisplayName>カメラディザフェード最小距離(m)</DisplayName>
+      <Description>カメラディザフェード最小距離。「カメラディザフェード最小距離」、「カメラディザフェード最大距離」の両方に「0.0」を設定するとカメラディザフェードが無効になります。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="f32 camDitherFadeMaxDist">
+      <DisplayName>カメラディザフェード最大距離(m)</DisplayName>
+      <Description>カメラディザフェード最大距離。「カメラディザフェード最小距離」、「カメラディザフェード最大距離」の両方に「0.0」を設定するとカメラディザフェードが無効になります。</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="dummy8 pad[24]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

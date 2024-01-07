@@ -1,0 +1,5 @@
+<class name='hkbComputeRotationFromAxisAngleModifierInternalState' version='1' signature='0x4b6e482c' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='rotationOut' offset='16' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

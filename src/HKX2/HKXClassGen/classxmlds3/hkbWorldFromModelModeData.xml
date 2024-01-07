@@ -1,0 +1,16 @@
+<class name='hkbWorldFromModelModeData' version='1' signature='0x321c5008' size='8'>
+  <enums>
+    <enum name='WorldFromModelMode' flags='00000000'>
+      <enumitem name='WORLD_FROM_MODEL_MODE_USE_OLD' value='0'/>
+      <enumitem name='WORLD_FROM_MODEL_MODE_USE_INPUT' value='1'/>
+      <enumitem name='WORLD_FROM_MODEL_MODE_COMPUTE' value='2'/>
+      <enumitem name='WORLD_FROM_MODEL_MODE_NONE' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='poseMatchingBone0' offset='0' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='poseMatchingBone1' offset='2' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='poseMatchingBone2' offset='4' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mode' offset='6' etype='WorldFromModelMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

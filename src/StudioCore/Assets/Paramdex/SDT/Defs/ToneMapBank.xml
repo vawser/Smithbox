@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TONE_MAP_BANK</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>104</FormatVersion>
+  <Fields>
+    <Field Def="s8 bloomBegin = 50">
+      <DisplayName>近傍ブルーム閾値[％]</DisplayName>
+      <Description>輝度が閾値を越えるとにじみ始めます（近傍）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s8 bloomMul = 50">
+      <DisplayName>近傍ブルーム倍率[％]</DisplayName>
+      <Description>閾値以上の値に掛ける値です(0でにじまなくなります)（近傍）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s8 bloomBeginFar = 50">
+      <DisplayName>遠方ブルーム閾値[％]</DisplayName>
+      <Description>輝度が閾値を越えるとにじみ始めます（遠方）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s8 bloomMulFar = 50">
+      <DisplayName>遠方ブルーム倍率[％]</DisplayName>
+      <Description>閾値以上の値に掛ける値です(0でにじまなくなります)（遠方）</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="f32 bloomNearDist = 20">
+      <DisplayName>ブルーム近傍距離</DisplayName>
+      <Description>この距離まで近傍のパラメータが適用されます。(m)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-10000</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="f32 bloomFarDist = 60">
+      <DisplayName>ブルーム遠方距離</DisplayName>
+      <Description>この距離から遠方のパラメータが適用されます。(m)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-10000</Minimum>
+      <Maximum>999999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="f32 grayKeyValue = 0.18">
+      <DisplayName>トーンマップの基準値</DisplayName>
+      <Description>この値が大きいと画面が明るくなり小さいと画面が暗くなります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="f32 minAdaptedLum = 0.1">
+      <DisplayName>最小適応輝度</DisplayName>
+      <Description>値を小さくすると暗い場所に適応して見えるようになります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="f32 maxAdapredLum = 0.2">
+      <DisplayName>最大適応輝度</DisplayName>
+      <Description>値を大きくすると明るい場所に適応して見えるようになります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="f32 adaptSpeed = 1">
+      <DisplayName>適応速度</DisplayName>
+      <Description>値を大きくする明順応、暗順応の速度が速くなります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="s8 lightShaftBegin = 50">
+      <DisplayName>ライトシャフト閾値[％]</DisplayName>
+      <Description>輝度が閾値を越えると光の筋がでます</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="dummy8 pad_0[3]">
+      <DisplayName>パディング</DisplayName>
+      <Description>ダミー</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="f32 lightShaftPower">
+      <DisplayName>ライトシャフトの強さ</DisplayName>
+      <Description>ライトシャフトの強さです。(0で消えます)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="f32 lightShaftAttenRate = 0.95">
+      <DisplayName>ライトシャフトの減衰率</DisplayName>
+      <Description>ライトシャフトの減衰率です。小さくすると短くなります</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+      <SortID>13</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

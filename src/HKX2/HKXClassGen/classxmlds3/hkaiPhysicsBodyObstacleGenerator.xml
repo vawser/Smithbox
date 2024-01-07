@@ -1,0 +1,8 @@
+<class name='hkaiPhysicsBodyObstacleGenerator' version='1' signature='0x2c5516c2' size='176' parent='hkaiObstacleGenerator'>
+  <members>
+    <member name='velocityThreshold' offset='144' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bodyId' offset='148' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='world' offset='152' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='physicsWorldListener' offset='160' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

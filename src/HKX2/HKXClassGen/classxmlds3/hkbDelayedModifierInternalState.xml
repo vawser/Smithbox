@@ -1,0 +1,6 @@
+<class name='hkbDelayedModifierInternalState' version='1' signature='0xe987b6ae' size='24' parent='hkReferencedObject'>
+  <members>
+    <member name='secondsElapsed' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isActive' offset='20' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

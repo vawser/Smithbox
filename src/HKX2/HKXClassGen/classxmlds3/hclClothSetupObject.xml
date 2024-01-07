@@ -1,0 +1,10 @@
+<class name='hclClothSetupObject' version='1' signature='0xd2536738' size='104' parent='hkReferencedObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bufferSetupObjects' offset='24' ctype='hclBufferSetupObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transformSetSetupObjects' offset='40' ctype='hclTransformSetSetupObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simClothSetupObjects' offset='56' ctype='hclSimClothSetupObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='operatorSetupObjects' offset='72' ctype='hclOperatorSetupObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='clothStateSetupObjects' offset='88' ctype='hclClothStateSetupObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

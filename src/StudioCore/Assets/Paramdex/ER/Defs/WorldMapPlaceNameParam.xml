@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>WORLD_MAP_PLACE_NAME_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1601</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1602</SortID>
+    </Field>
+    <Field Def="s32 worldMapPieceId = -1">
+      <DisplayName>地図断片パラメータID</DisplayName>
+      <Description>地図断片パラメータID。この地図断片を持っていればテキストを表示する</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 textId = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID。PlaceName.xlsm</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="dummy8 pad1[4]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>1603</SortID>
+    </Field>
+    <Field Def="u8 areaNo">
+      <DisplayName>エリア番号</DisplayName>
+      <Description>mAA_BB_CC_DD の AA 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 gridXNo">
+      <DisplayName>グリッドX番号</DisplayName>
+      <Description>mAA_BB_CC_DD の BB 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 gridZNo">
+      <DisplayName>グリッドZ番号</DisplayName>
+      <Description>mAA_BB_CC_DD の CC 部分</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <Maximum>99</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="dummy8 pad2[1]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>1604</SortID>
+    </Field>
+    <Field Def="f32 posX">
+      <DisplayName>X座標</DisplayName>
+      <Description>X座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="f32 posY">
+      <DisplayName>Y座標</DisplayName>
+      <Description>Y座標（使っていない）</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="f32 posZ">
+      <DisplayName>Z座標</DisplayName>
+      <Description>Z座標</Description>
+      <Minimum>-20000</Minimum>
+      <Maximum>20000</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

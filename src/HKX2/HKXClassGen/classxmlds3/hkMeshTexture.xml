@@ -1,0 +1,35 @@
+<class name='hkMeshTexture' version='1' signature='0x51e5128d' size='16' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Format' flags='00000000'>
+      <enumitem name='Unknown' value='0'/>
+      <enumitem name='PNG' value='1'/>
+      <enumitem name='TGA' value='2'/>
+      <enumitem name='BMP' value='3'/>
+      <enumitem name='DDS' value='4'/>
+      <enumitem name='RAW' value='5'/>
+    </enum>
+    <enum name='FilterMode' flags='00000000'>
+      <enumitem name='POINT' value='0'/>
+      <enumitem name='LINEAR' value='1'/>
+      <enumitem name='ANISOTROPIC' value='2'/>
+    </enum>
+    <enum name='TextureUsageType' flags='00000000'>
+      <enumitem name='UNKNOWN' value='0'/>
+      <enumitem name='DIFFUSE' value='1'/>
+      <enumitem name='REFLECTION' value='2'/>
+      <enumitem name='BUMP' value='3'/>
+      <enumitem name='NORMAL' value='4'/>
+      <enumitem name='DISPLACEMENT' value='5'/>
+      <enumitem name='SPECULAR' value='6'/>
+      <enumitem name='SPECULARANDGLOSS' value='7'/>
+      <enumitem name='OPACITY' value='8'/>
+      <enumitem name='EMISSIVE' value='9'/>
+      <enumitem name='REFRACTION' value='10'/>
+      <enumitem name='GLOSS' value='11'/>
+      <enumitem name='DOMINANTS' value='12'/>
+      <enumitem name='NOTEXPORTED' value='13'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

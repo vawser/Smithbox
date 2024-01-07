@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <mapRegionId AltName="Map Region ID" Wiki="Map for GD use Local identification ID [00-99 - Open, 1000-9999 - Legacy]" />
+    <Reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

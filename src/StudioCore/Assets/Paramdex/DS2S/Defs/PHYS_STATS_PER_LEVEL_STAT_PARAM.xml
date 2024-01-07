@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>PHYS_STATS_PER_LEVEL_STAT_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u16 soul_level" />
+    <Field Def="u8 attunement_slots" />
+    <Field Def="u8 cast_amount_tier" />
+    <Field Def="u16 stat_hp" />
+    <Field Def="u16 stat_stamina" />
+    <Field Def="f32 stat_max_equip_load" />
+    <Field Def="u32 stat_strength_bonus" />
+    <Field Def="u32 stat_dexterity_bonus" />
+    <Field Def="u32 stat_magic_bonus" />
+    <Field Def="u32 stat_fire_bonus" />
+    <Field Def="u32 stat_lightning_bonus" />
+    <Field Def="u32 stat_dark_bonus" />
+    <Field Def="u32 stat_poison_bonus" />
+    <Field Def="u32 stat_bleed_bonus" />
+    <Field Def="u32 Unk00" />
+    <Field Def="f32 Unk01" />
+    <Field Def="f32 stat_cast_speed" />
+    <Field Def="f32 Unk02" />
+    <Field Def="f32 Unk03" />
+    <Field Def="f32 Unk04" />
+    <Field Def="f32 Unk05" />
+    <Field Def="f32 absorption_bleed" />
+    <Field Def="f32 absorption_poison" />
+    <Field Def="f32 absorption_petrify" />
+    <Field Def="f32 absorption_curse" />
+    <Field Def="f32 absorption_magic" />
+    <Field Def="f32 absorption_fire" />
+    <Field Def="f32 absorption_lightning" />
+    <Field Def="f32 absorption_dark" />
+    <Field Def="f32 agility_backstep" />
+    <Field Def="f32 agility_roll" />
+    <Field Def="f32 agility_landing_roll" />
+    <Field Def="f32 agility_weapon_swap" />
+    <Field Def="f32 agility_item_use" />
+    <Field Def="f32 agility_block_speed" />
+    <Field Def="u32 defence_physical" />
+    <Field Def="u16 Unk06" />
+    <Field Def="u16 Unk07" />
+    <Field Def="u16 Unk08" />
+    <Field Def="u16 non_vigor_hp_stat_gain" />
+    <Field Def="u32 stat_mundane_scaling" />
+    <Field Def="f32 stat_poise" />
+  </Fields>
+</PARAMDEF>

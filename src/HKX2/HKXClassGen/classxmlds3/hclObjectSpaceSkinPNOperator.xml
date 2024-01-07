@@ -1,0 +1,6 @@
+<class name='hclObjectSpaceSkinPNOperator' version='1' signature='0x84488b96' size='192' parent='hclObjectSpaceSkinOperator'>
+  <members>
+    <member name='localPNs' offset='160' ctype='hclObjectSpaceDeformerLocalBlockPN' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localUnpackedPNs' offset='176' ctype='hclObjectSpaceDeformerLocalBlockUnpackedPN' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

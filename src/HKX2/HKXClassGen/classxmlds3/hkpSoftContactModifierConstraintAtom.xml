@@ -1,0 +1,6 @@
+<class name='hkpSoftContactModifierConstraintAtom' version='1' signature='0xe1070ba6' size='64' parent='hkpModifierConstraintAtom'>
+  <members>
+    <member name='tau' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAcceleration' offset='52' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

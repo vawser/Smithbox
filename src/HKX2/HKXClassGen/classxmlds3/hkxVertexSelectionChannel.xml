@@ -1,0 +1,5 @@
+<class name='hkxVertexSelectionChannel' version='1' signature='0x2427d420' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='selectedVertices' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

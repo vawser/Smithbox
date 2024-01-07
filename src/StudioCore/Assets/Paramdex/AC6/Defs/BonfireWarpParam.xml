@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>BONFIRE_WARP_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 LocationEventId"></Field>
+    <Field Def="s32 WarpEventId"></Field>
+    <Field Def="s32 BonfireNameId"></Field>
+    <Field Def="s32 DescriptionTextId"></Field>
+    <Field Def="s32 PictureId"></Field>
+    <Field Def="u8 ListId"></Field>
+    <Field Def="u8 IsDisableQuickwarp"></Field>
+    <Field Def="s16 CeremonyId"></Field>
+    <Field Def="s32 onlineAreaId"></Field>
+    <Field Def="s32 Unk0x1C"></Field>
+  </Fields>
+</PARAMDEF>

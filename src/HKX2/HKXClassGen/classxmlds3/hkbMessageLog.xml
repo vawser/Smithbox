@@ -1,0 +1,6 @@
+<class name='hkbMessageLog' version='1' signature='0x26a196c5' size='16'>
+  <members>
+    <member name='messages' offset='0' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='maxMessages' offset='8' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

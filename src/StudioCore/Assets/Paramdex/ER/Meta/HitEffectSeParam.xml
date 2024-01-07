@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <Iron_Slash_S AltName="Iron - Slash - Small" Wiki="Iron - Slash - Small" />
+    <Iron_Slash_L AltName="Iron - Slash - Large" Wiki="Iron - Slash - Large" />
+    <Iron_Slash_LL AltName="Iron - Slash - Giant" Wiki="Iron - Slash - Oversized" />
+    <Iron_Thrust_S AltName="Iron - Thrust - Small" Wiki="Iron - piercing - small" />
+    <Iron_Thrust_L AltName="Iron - Thrust - Large" Wiki="Made of iron - piercing - large" />
+    <Iron_Thrust_LL AltName="Iron - Thrust - Giant" Wiki="Iron - piercing - oversized" />
+    <Iron_Blow_S AltName="Iron - Strike - Small" Wiki="Iron - Batter - Small" />
+    <Iron_Blow_L AltName="Iron - Strike - Large" Wiki="Iron - Batter - Large" />
+    <Iron_Blow_LL AltName="Iron - Strike - Giant" Wiki="Iron - Batter - Oversized" />
+    <Fire_Slash_S AltName="Fire - Slash - Small" Wiki="Flame - Slash - Small" />
+    <Fire_Slash_L AltName="Fire - Slash - Large" Wiki="Flame - Slash - Large" />
+    <Fire_Slash_LL AltName="Fire - Slash - Giant" Wiki="Flame - Slash - Oversized" />
+    <Fire_Thrust_S AltName="Fire - Thrust - Small" Wiki="Flame - Piercing - Small" />
+    <Fire_Thrust_L AltName="Fire - Thrust - Large" Wiki="Flame - Piercing - Large" />
+    <Fire_Thrust_LL AltName="Fire - Thrust - Giant" Wiki="Flame - Piercing - Oversized" />
+    <Fire_Blow_S AltName="Fire - Strike - Small" Wiki="Flame - Batter - Small" />
+    <Fire_Blow_L AltName="Fire - Strike - Large" Wiki="Flame - Batter - Large" />
+    <Fire_Blow_LL AltName="Fire - Strike - Giant" Wiki="Flame - Batter - Oversized" />
+    <Wood_Slash_S AltName="Wood - Slash - Small" Wiki="Wooden - Slash - Small" />
+    <Wood_Slash_L AltName="Wood - Slash - Large" Wiki="Wooden - Slash - Large" />
+    <Wood_Slash_LL AltName="Wood - Slash - Giant" Wiki="Wooden - Slash - Oversized" />
+    <Wood_Thrust_S AltName="Wood - Thrust - Small" Wiki="Wooden - piercing - small" />
+    <Wood_Thrust_L AltName="Wood - Thrust - Large" Wiki="Wooden - piercing - large" />
+    <Wood_Thrust_LL AltName="Wood - Thrust - Giant" Wiki="Wooden - piercing - oversized" />
+    <Wood_Blow_S AltName="Wood - Strike - Small" Wiki="Wooden - Batter - Small" />
+    <Wood_Blow_L AltName="Wood - Strike - Large" Wiki="Wooden - Batter - Large" />
+    <Wood_Blow_LL AltName="Wood - Strike - Giant" Wiki="Wooden - Batter - Oversized" />
+    <Body_Slash_S AltName="Flesh - Slash - Small" Wiki="Meat - Slash - Small" />
+    <Body_Slash_L AltName="Flesh - Slash - Large" Wiki="Meat - Slash - Large" />
+    <Body_Slash_LL AltName="Flesh - Slash - Giant" Wiki="Meat - Slash - Oversized" />
+    <Body_Thrust_S AltName="Flesh - Thrust - Small" Wiki="Meat - Stab - Small" />
+    <Body_Thrust_L AltName="Flesh - Thrust - Large" Wiki="Meat - Stab - Large" />
+    <Body_Thrust_LL AltName="Flesh - Thrust - Giant" Wiki="Meat - Stab - Oversized" />
+    <Body_Blow_S AltName="Flesh - Strike - Small" Wiki="Meat - Batter - Small" />
+    <Body_Blow_L AltName="Flesh - Strike - Large" Wiki="Meat - Batter - Large" />
+    <Body_Blow_LL AltName="Flesh - Strike - Giant" Wiki="Meat - Batter - Oversized" />
+    <Eclipse_Slash_S AltName="Corrosion - Slash - Small" Wiki="Corrosion - Slash - Small" />
+    <Eclipse_Slash_L AltName="Corrosion - Slash - Large" Wiki="Eating - Slashing - Large" />
+    <Eclipse_Slash_LL AltName="Corrosion - Slash - Giant" Wiki="Eating - Slashing - Oversized" />
+    <Eclipse_Thrust_S AltName="Corrosion - Thrust - Small" Wiki="Corrosion - piercing - small" />
+    <Eclipse_Thrust_L AltName="Corrosion - Thrust - Large" Wiki="Corrosion - Piercing - Large" />
+    <Eclipse_Thrust_LL AltName="Corrosion - Thrust - Giant" Wiki="Corrosion - piercing - oversized" />
+    <Eclipse_Blow_S AltName="Corrosion - Strike - Small" Wiki="Corrosion - Batter - Small" />
+    <Eclipse_Blow_L AltName="Corrosion - Strike - Large" Wiki="Corrosion - Batter - Large" />
+    <Eclipse_Blow_LL AltName="Corrosion - Strike - Giant" Wiki="Corrosion - Batter - Oversized" />
+    <Energy_Slash_S AltName="Energy - Slash - Small" Wiki="Energy - Slash - Small" />
+    <Energy_Slash_L AltName="Energy - Slash - Large" Wiki="Energy - Slash - Large" />
+    <Energy_Slash_LL AltName="Energy - Slash - Giant" Wiki="Energy - Slash - Oversized" />
+    <Energy_Thrust_S AltName="Energy - Thrust - Small" Wiki="Energy - Puncture - Small" />
+    <Energy_Thrust_L AltName="Energy - Thrust - Large" Wiki="Energy - Puncture - Large" />
+    <Energy_Thrust_LL AltName="Energy - Thrust - Giant" Wiki="Energy - Puncture - Oversized" />
+    <Energy_Blow_S AltName="Energy - Strike - Small" Wiki="Energy - Batter - Small" />
+    <Energy_Blow_L AltName="Energy - Strike - Large" Wiki="Energy - Batter - Large" />
+    <Energy_Blow_LL AltName="Energy - Strike - Giant" Wiki="Energy - Batter - Oversized" />
+    <None_Slash_S AltName="None - Slash - Small" Wiki="None - Slash - Small" />
+    <None_Slash_L AltName="None - Slash - Large" Wiki="None - Slash - Large" />
+    <None_Slash_LL AltName="None - Slash - Giant" Wiki="None - Slash - Oversized" />
+    <None_Thrust_S AltName="None - Thrust - Small" Wiki="None - Piercing - Small" />
+    <None_Thrust_L AltName="None - Thrust - Large" Wiki="None - Piercing - Large" />
+    <None_Thrust_LL AltName="None - Thrust - Giant" Wiki="None - Piercing - Oversized" />
+    <None_Blow_S AltName="None - Strike - Small" Wiki="None - Batter - Small" />
+    <None_Blow_L AltName="None - Strike - Large" Wiki="None - Batter - Large" />
+    <None_Blow_LL AltName="None - Strike - Giant" Wiki="None - Batter - Oversized" />
+    <Dmy1_Slash_S AltName="Dummy 1 - Slash - Small" Wiki="Dmy1 - Slash - Small" />
+    <Dmy1_Slash_L AltName="Dummy 1 - Slash - Large" Wiki="Dmy1 - Slash - Large" />
+    <Dmy1_Slash_LL AltName="Dummy 1 - Slash - Giant" Wiki="Dmy1 - Slash - Oversized" />
+    <Dmy1_Thrust_S AltName="Dummy 1 - Thrust - Small" Wiki="Dmy1 - Stab - Small" />
+    <Dmy1_Thrust_L AltName="Dummy 1 - Thrust - Large" Wiki="Dmy1 - Stab - Large" />
+    <Dmy1_Thrust_LL AltName="Dummy 1 - Thrust - Giant" Wiki="Dmy1 - Stab - Oversized" />
+    <Dmy1_Blow_S AltName="Dummy 1 - Strike - Small" Wiki="Dmy1 - Batter - Small" />
+    <Dmy1_Blow_L AltName="Dummy 1 - Strike - Large" Wiki="Dmy1 - Batter - Large" />
+    <Dmy1_Blow_LL AltName="Dummy 1 - Strike - Giant" Wiki="Dmy1 - Batter - Oversized" />
+    <Dmy2_Slash_S AltName="Dummy 2 - Slash - Small" Wiki="Dmy2 - Slash - Small" />
+    <Dmy2_Slash_L AltName="Dummy 2 - Slash - Large" Wiki="Dmy2 - Slash - Large" />
+    <Dmy2_Slash_LL AltName="Dummy 2 - Slash - Giant" Wiki="Dmy2 - Slash - Oversized" />
+    <Dmy2_Thrust_S AltName="Dummy 2 - Thrust - Small" Wiki="Dmy2 - Piercing - Small" />
+    <Dmy2_Thrust_L AltName="Dummy 2 - Thrust - Large" Wiki="Dmy2 - Piercing - Large" />
+    <Dmy2_Thrust_LL AltName="Dummy 2 - Thrust - Giant" Wiki="Dmy2 - Piercing - Oversized" />
+    <Dmy2_Blow_S AltName="Dummy 2 - Strike - Small" Wiki="Dmy2 - Batter - Small" />
+    <Dmy2_Blow_L AltName="Dummy 2 - Strike - Large" Wiki="Dmy2 - Batter - Large" />
+    <Dmy2_Blow_LL AltName="Dummy 2 - Strike - Giant" Wiki="Dmy2 - Batter - Oversized" />
+    <Dmy3_Slash_S AltName="Dummy 3 - Slash - Small" Wiki="Dmy3 - Slash - Small" />
+    <Dmy3_Slash_L AltName="Dummy 3 - Slash - Large" Wiki="Dmy3 - Slash - Large" />
+    <Dmy3_Slash_LL AltName="Dummy 3 - Slash - Giant" Wiki="Dmy3 - Slash - Oversized" />
+    <Dmy3_Thrust_S AltName="Dummy 3 - Thrust - Small" Wiki="Dmy3 - Piercing - Small" />
+    <Dmy3_Thrust_L AltName="Dummy 3 - Thrust - Large" Wiki="Dmy3 - Piercing - Large" />
+    <Dmy3_Thrust_LL AltName="Dummy 3 - Thrust - Giant" Wiki="Dmy3 - Piercing - Oversized" />
+    <Dmy3_Blow_S AltName="Dummy 3 - Strike - Small" Wiki="Dmy3 - Batter - Small" />
+    <Dmy3_Blow_L AltName="Dummy 3 - Strike - Large" Wiki="Dmy3 - Batter - Large" />
+    <Dmy3_Blow_LL AltName="Dummy 3 - Strike - Giant" Wiki="Dmy3 - Batter - Oversized" />
+    <Maggot_Slash_S AltName="Maggot - Slash - Small" Wiki="Uji - Slash - Small" />
+    <Maggot_Slash_L AltName="Maggot - Slash - Large" Wiki="Uji - Slash - Large" />
+    <Maggot_Slash_LL AltName="Maggot - Slash - Giant" Wiki="Uji - Slash - Oversized" />
+    <Maggot_Thrust_S AltName="Maggot - Thrust - Small" Wiki="Uji - Stab - Small" />
+    <Maggot_Thrust_L AltName="Maggot - Thrust - Large" Wiki="Uji - Stab - Large" />
+    <Maggot_Thrust_LL AltName="Maggot - Thrust - Giant" Wiki="Uji - Stab - Oversized" />
+    <Maggot_Blow_S AltName="Maggot - Strike - Small" Wiki="Uji - Batter - Small" />
+    <Maggot_Blow_L AltName="Maggot - Strike - Large" Wiki="Uji - Batter - Large" />
+    <Maggot_Blow_LL AltName="Maggot - Strike - Giant" Wiki="Uji - Batter - Oversized" />
+    <Wax_Slash_S AltName="Wax - Slash - Small" Wiki="Wax - Slash - Small" />
+    <Wax_Slash_L AltName="Wax - Slash - Large" Wiki="Wax - Slash - Large" />
+    <Wax_Slash_LL AltName="Wax - Slash - Giant" Wiki="Wax - Slash - Oversized" />
+    <Wax_Thrust_S AltName="Wax - Thrust - Small" Wiki="Wax - piercing - small" />
+    <Wax_Thrust_L AltName="Wax - Thrust - Large" Wiki="Wax - piercing - large" />
+    <Wax_Thrust_LL AltName="Wax - Thrust - Giant" Wiki="Wax - piercing - oversized" />
+    <Wax_Blow_S AltName="Wax - Strike - Small" Wiki="Wax - Batter - Small" />
+    <Wax_Blow_L AltName="Wax - Strike - Large" Wiki="Wax - Batter - Large" />
+    <Wax_Blow_LL AltName="Wax - Strike - Giant" Wiki="Wax - Batter - Oversized" />
+    <FireFlame_Slash_S AltName="Burning - Slash - Small" Wiki="Burning - Slashing - Small" />
+    <FireFlame_Slash_L AltName="Burning - Slash - Large" Wiki="Burning - Slashing - Large" />
+    <FireFlame_Slash_LL AltName="Burning - Slash - Giant" Wiki="Burning - Slashing - Oversized" />
+    <FireFlame_Thrust_S AltName="Burning - Thrust - Small" Wiki="Burning - Piercing - Small" />
+    <FireFlame_Thrust_L AltName="Burning - Thrust - Large" Wiki="Burning - Piercing - Large" />
+    <FireFlame_Thrust_LL AltName="Burning - Thrust - Giant" Wiki="Burning - Piercing - Oversized" />
+    <FireFlame_Blow_S AltName="Burning - Strike - Small" Wiki="On fire - Batter - Small" />
+    <FireFlame_Blow_L AltName="Burning - Strike - Large" Wiki="On fire - Batter - Large" />
+    <FireFlame_Blow_LL AltName="Burning - Strike - Giant" Wiki="On fire - Batter - Oversized" />
+    <EclipseGas_Slash_S AltName="Corrosion Gas - Slash - Small" Wiki="Corrosion - Gas - Slash - Small" />
+    <EclipseGas_Slash_L AltName="Corrosion Gas - Slash - Large" Wiki="Corrosion - Gas - Slash - Large" />
+    <EclipseGas_Slash_LL AltName="Corrosion Gas - Slash - Giant" Wiki="Corrosion - Gas - Slash - Oversized" />
+    <EclipseGas_Thrust_S AltName="Corrosion Gas - Thrust - Small" Wiki="Corrosion - Gas - Piercing - Small" />
+    <EclipseGas_Thrust_L AltName="Corrosion Gas - Thrust - Large" Wiki="Corrosion - Gas - Piercing - Large" />
+    <EclipseGas_Thrust_LL AltName="Corrosion Gas - Thrust - Giant" Wiki="Corrosion - Gas - Piercing - Oversized" />
+    <EclipseGas_Blow_S AltName="Corrosion Gas - Strike - Small" Wiki="Corrosion - Gas - Batter - Small" />
+    <EclipseGas_Blow_L AltName="Corrosion Gas - Strike - Large" Wiki="Corrosion - Gas - Batter - Large" />
+    <EclipseGas_Blow_LL AltName="Corrosion Gas - Strike - Giant" Wiki="Corrosion - Gas - Batter - Oversized" />
+    <EnergyStrong_Slash_S AltName="Strong Energy - Slash - Small" Wiki="Energy (strong) - Slash - Small" />
+    <EnergyStrong_Slash_L AltName="Strong Energy - Slash - Large" Wiki="Energy (strong) - Slash - Large" />
+    <EnergyStrong_Slash_LL AltName="Strong Energy - Slash - Giant" Wiki="Energy (strong) - Slash - Oversized" />
+    <EnergyStrong_Thrust_S AltName="Strong Energy - Thrust - Small" Wiki="Energy (strong) - piercing - small" />
+    <EnergyStrong_Thrust_L AltName="Strong Energy - Thrust - Large" Wiki="Energy (strong) - piercing - large" />
+    <EnergyStrong_Thrust_LL AltName="Strong Energy - Thrust - Giant" Wiki="Energy (strong) - piercing - oversized" />
+    <EnergyStrong_Blow_S AltName="Strong Energy - Strike - Small" Wiki="Energy (strong) - Batter - Small" />
+    <EnergyStrong_Blow_L AltName="Strong Energy - Strike - Large" Wiki="Energy (strong) - Batter - Large" />
+    <EnergyStrong_Blow_LL AltName="Strong Energy - Strike - Giant" Wiki="Energy (strong) - Batter - Oversized" />
+    <reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

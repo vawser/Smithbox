@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>OS_REINFORCE_PARAM_ST</ParamType>
+  <DataVersion>6</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="u8 osInstallCategory"></Field>
+    <Field Def="u8 osInstallIndex"></Field>
+    <Field Def="dummy8 Unk0x06[14]"></Field>
+    <Field Def="s32 installIncreaseValue"></Field>
+    <Field Def="s32 installOstChipCost"></Field>
+    <Field Def="s32 installUnlockTextId"></Field>
+    <Field Def="dummy8 Unk0x20[12]"></Field>
+    <Field Def="s32 updateOneIncreaseValue"></Field>
+    <Field Def="s32 updateOneOstChipCost"></Field>
+    <Field Def="s32 updateOneUnlockTextId"></Field>
+    <Field Def="dummy8 Unk0x38[12]"></Field>
+    <Field Def="s32 updateTwoIncreaseValue"></Field>
+    <Field Def="s32 updateTwoOstChipCost"></Field>
+    <Field Def="s32 updateTwoUnlockTextId"></Field>
+    <Field Def="dummy8 Unk0x50[12]"></Field>
+    <Field Def="s32 updateThreeIncreaseValue"></Field>
+    <Field Def="s32 updateThreeOstChipCost"></Field>
+    <Field Def="s32 updateThreeUnlockTextId"></Field>
+    <Field Def="dummy8 Unk0x68[12]"></Field>
+    <Field Def="s32 updateFourIncreaseValue"></Field>
+    <Field Def="s32 updateFourOstChipCost"></Field>
+    <Field Def="s32 updateFourUnlockTextId"></Field>
+    <Field Def="dummy8 Unk0x80[44]"></Field>
+  </Fields>
+</PARAMDEF>

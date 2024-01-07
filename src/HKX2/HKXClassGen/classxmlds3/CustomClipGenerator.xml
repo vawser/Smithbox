@@ -1,0 +1,41 @@
+<class name='CustomClipGenerator' version='1' signature='0x1d176ae8' size='288' parent='hkbGenerator'>
+  <enums>
+    <enum name='PlaybackMode' flags='00000000'>
+      <enumitem name='MODE_SINGLE_PLAY' value='0'/>
+      <enumitem name='MODE_LOOPING' value='1'/>
+    </enum>
+    <enum name='ClipFlags' flags='00000000'>
+      <enumitem name='FLAG_CONTINUE_MOTION_AT_END' value='1'/>
+      <enumitem name='FLAG_SYNC_HALF_CYCLE_IN_PING_PONG_MODE' value='2'/>
+      <enumitem name='FLAG_MIRROR' value='4'/>
+      <enumitem name='FLAG_FORCE_DENSE_POSE' value='8'/>
+      <enumitem name='FLAG_DONT_CONVERT_ANNOTATIONS_TO_TRIGGERS' value='16'/>
+      <enumitem name='FLAG_IGNORE_MOTION' value='32'/>
+    </enum>
+    <enum name='AnimeEndEventType' flags='00000000'>
+      <enumitem name='FireNextStateEvent' value='0'/>
+      <enumitem name='FireStateEndEvent' value='1'/>
+      <enumitem name='FireIdleEvent' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='playbackSpeed' offset='136' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mode' offset='140' etype='PlaybackMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animId' offset='144' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animeEndEventType' offset='148' etype='AnimeEndEventType' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endEvent' offset='152' ctype='hkbEvent' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animationControl' offset='176' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='binding' offset='184' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='mapperData' offset='192' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='cropStartAmountLocalTime' offset='200' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cropEndAmountLocalTime' offset='204' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startTime' offset='208' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enforcedDuration' offset='212' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='216' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extractedMotion' offset='224' vtype='TYPE_QSTRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='animationName' offset='272' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='localTime' offset='280' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='atEnd' offset='284' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='ignoreStartTime' offset='285' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

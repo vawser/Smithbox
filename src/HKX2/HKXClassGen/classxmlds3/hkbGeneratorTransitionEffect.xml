@@ -1,0 +1,38 @@
+<class name='hkbGeneratorTransitionEffect' version='1' signature='0x44208f07' size='216' parent='hkbTransitionEffect'>
+  <enums>
+    <enum name='ToGeneratorState' flags='00000000'>
+      <enumitem name='STATE_INACTIVE' value='0'/>
+      <enumitem name='STATE_READY_FOR_SET_LOCAL_TIME' value='1'/>
+      <enumitem name='STATE_READY_FOR_APPLY_SELF_TRANSITION_MODE' value='2'/>
+      <enumitem name='STATE_ACTIVE' value='3'/>
+    </enum>
+    <enum name='Stage' flags='00000000'>
+      <enumitem name='STAGE_BLENDING_IN' value='0'/>
+      <enumitem name='STAGE_PLAYING_TRANSITION_GENERATOR' value='1'/>
+      <enumitem name='STAGE_BLENDING_OUT' value='2'/>
+    </enum>
+    <enum name='ChildState' flags='00000000'>
+      <enumitem name='CHILD_FROM_GENERATOR' value='0'/>
+      <enumitem name='CHILD_TRANSITION_GENERATOR' value='1'/>
+      <enumitem name='CHILD_TO_GENERATOR' value='2'/>
+      <enumitem name='CHILD_NONE' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='transitionGenerator' offset='168' ctype='hkbGenerator' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendInDuration' offset='176' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendOutDuration' offset='180' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='syncToGeneratorStartTime' offset='184' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='childState' offset='185' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeInTransition' offset='188' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='duration' offset='192' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='effectiveBlendInDuration' offset='196' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='effectiveBlendOutDuration' offset='200' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='toGeneratorState' offset='204' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='echoTransitionGenerator' offset='205' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='toGeneratorSelfTransitionMode' offset='206' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='justActivated' offset='207' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='updateActiveNodes' offset='208' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='stage' offset='209' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

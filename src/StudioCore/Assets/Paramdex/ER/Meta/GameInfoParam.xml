@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <titleMsgId AltName="Title Message ID" Wiki="Title name" />
+    <contentMsgId AltName="Content Messae ID" Wiki="Contents" />
+    <value AltName="Price" Wiki="price" />
+    <sortId AltName="Sort ID" Wiki="Sort ID" />
+    <eventId AltName="Action ID" Wiki="This is the action ID that determines the sales status." />
+    <Pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

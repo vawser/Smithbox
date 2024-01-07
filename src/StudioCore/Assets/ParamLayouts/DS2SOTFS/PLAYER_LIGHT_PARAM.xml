@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <entry>
+    <name>Offset X</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Offset Y</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Offset Z</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Diffuse R</name>
+    <type>u8</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Diffuse G</name>
+    <type>u8</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Diffuse B</name>
+    <type>u8</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Diffuse A</name>
+    <type>u8</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Specular R</name>
+    <type>u8</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Specular G</name>
+    <type>u8</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Specular B</name>
+    <type>u8</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Specular A</name>
+    <type>u8</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Diffuse Intensity</name>
+    <type>s16</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Specular Intensity</name>
+    <type>s16</type>
+    <default>255</default>
+  </entry>
+  <entry>
+    <name>Radius</name>
+    <type>f32</type>
+    <default>10</default>
+  </entry>
+  <entry>
+    <name>Unk1C</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Shadow Strength</name>
+    <type>f32</type>
+    <default>1</default>
+  </entry>
+  <entry>
+    <name>Unk24</name>
+    <type>s16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Unk26</name>
+    <type>s16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Unk28</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Unk2C</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Unk30</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Unk34</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Cast Shadows</name>
+    <type>b32</type>
+    <default>false</default>
+  </entry>
+</layout>

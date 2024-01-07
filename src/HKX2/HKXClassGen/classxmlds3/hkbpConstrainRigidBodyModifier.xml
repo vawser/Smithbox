@@ -1,0 +1,25 @@
+<class name='hkbpConstrainRigidBodyModifier' version='1' signature='0xdbb1c59a' size='120' parent='hkbModifier'>
+  <enums>
+    <enum name='PivotPlacement' flags='00000000'>
+      <enumitem name='PIVOT_MIDWAY_BETWEEN_CENTROIDS' value='0'/>
+      <enumitem name='PIVOT_AT_TARGET_CONTACT_POINT' value='1'/>
+      <enumitem name='PIVOT_MIDWAY_BETWEEN_TARGET_SHAPE_CENTROID_AND_BODY_TO_CONSTRAIN_CENTROID' value='2'/>
+    </enum>
+    <enum name='BoneToConstrainPlacement' flags='00000000'>
+      <enumitem name='BTCP_AT_CURRENT_POSITION' value='0'/>
+      <enumitem name='BTCP_ALIGN_COM_AND_PIVOT' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='targetIn' offset='88' ctype='hkbpTarget' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='breakThreshold' offset='96' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ragdollBoneToConstrain' offset='100' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='breakable' offset='102' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pivotPlacement' offset='103' etype='PivotPlacement' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneToConstrainPlacement' offset='104' etype='BoneToConstrainPlacement' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraintType' offset='105' etype='ConstraintType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='clearTargetData' offset='106' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isConstraintHinge' offset='107' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraint' offset='112' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

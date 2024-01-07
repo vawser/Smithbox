@@ -1,0 +1,12 @@
+<class name='hkbBlendCurveUtils' version='1' signature='0x23041af0' size='1'>
+  <enums>
+    <enum name='BlendCurve' flags='00000000'>
+      <enumitem name='BLEND_CURVE_SMOOTH' value='0'/>
+      <enumitem name='BLEND_CURVE_LINEAR' value='1'/>
+      <enumitem name='BLEND_CURVE_LINEAR_TO_SMOOTH' value='2'/>
+      <enumitem name='BLEND_CURVE_SMOOTH_TO_LINEAR' value='3'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

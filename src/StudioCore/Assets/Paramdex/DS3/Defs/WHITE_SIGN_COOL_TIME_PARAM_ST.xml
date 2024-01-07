@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>WHITE_SIGN_COOL_TIME_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 timeLimit0" />
+    <Field Def="f32 timeLimit1" />
+    <Field Def="f32 timeLimit2" />
+    <Field Def="f32 timeLimit3" />
+  </Fields>
+</PARAMDEF>

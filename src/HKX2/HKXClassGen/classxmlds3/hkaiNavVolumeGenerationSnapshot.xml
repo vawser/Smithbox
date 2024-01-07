@@ -1,0 +1,6 @@
+<class name='hkaiNavVolumeGenerationSnapshot' version='1' signature='0xed3a5edf' size='320'>
+  <members>
+    <member name='geometry' offset='0' ctype='hkGeometry' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='settings' offset='48' ctype='hkaiNavVolumeGenerationSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

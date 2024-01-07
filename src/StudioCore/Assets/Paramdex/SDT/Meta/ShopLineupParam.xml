@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="SHOP_LINEUP_EQUIPTYPE" type="u8">
+	  <Option Value="0" Name="Weapon" />
+	  <Option Value="3" Name="Goods" />
+	</Enum>
+  </Enums>
+  <Field>
+    <equipId Wiki="Product being sold" Refs="EquipParamGoods(equipType=3),EquipParamWeapon(equipType=0)"/>
+    <value Wiki="Purchase price, overwrties the saleValue in EquipParamGoods" />
+    <mtrlId Wiki="Defines items needed to trade in order to purchase this item" Refs="EquipMtrlSetParam" />
+    <eventFlag Wiki="Event Flag that is turned on once the item is purchased, cannot be purchased again while the event flag is on" />
+    <flagId_forRelease Wiki="Event flag needed to unlock this item" />
+    <sellQuantity Wiki="Amount of items sold -1=Unlimited" />
+    <shopType />
+    <equipType Wiki="Determines what type of item is sold" Enum="SHOP_LINEUP_EQUIPTYPE" />
+    <value_SAN />
+    <value_Add Wiki="Adds a flat amount to the saleValue in EquipParamGoods" />
+    <value_Magnification Wiki="Multiplies the saleValue in EquipParamGoods" />
+  </Field>
+  <Self Wiki="Handles items purchased in shops" ConsecutiveIDs="" AlternativeOrder="equipId,equipType,shopType,sellQuantity,-,
+value,value_Add,value_Magnification,value_SAN,mtrlId,-,
+eventFlag,flagId_forRelease,-" />
+</PARAMMETA>

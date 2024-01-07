@@ -1,0 +1,6 @@
+<class name='hkaiInvertedAabbVolume' version='1' signature='0x8cd28643' size='96' parent='hkaiVolume'>
+  <members>
+    <member name='aabb' offset='16' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='geometry' offset='48' ctype='hkGeometry' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

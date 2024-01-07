@@ -1,0 +1,5 @@
+<class name='hkaiLineOfSightUtilDirectPathInput' version='1' signature='0x3996e690' size='96' parent='hkaiLineOfSightUtilInputBase'>
+  <members>
+    <member name='direction' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

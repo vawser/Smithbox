@@ -1,0 +1,6 @@
+<class name='hkbGeneratorSyncInfoActiveInterval' version='1' signature='0x29477c2a' size='20'>
+  <members>
+    <member name='syncPoints' offset='0' ctype='hkbGeneratorSyncInfoSyncPoint' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='fraction' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

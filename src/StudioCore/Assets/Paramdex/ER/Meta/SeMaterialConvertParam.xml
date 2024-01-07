@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MATERIAL_SE_TYPE" type="u8">
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="3" Name="Type 3" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="5" Name="Type 5" />
+        <Option Value="6" Name="Type 6" />
+        <Option Value="7" Name="Type 7" />
+        <Option Value="8" Name="Type 8" />
+        <Option Value="9" Name="Type 9" />
+        <Option Value="10" Name="Type 10" />
+        <Option Value="11" Name="Type 11" />
+        <Option Value="12" Name="Type 12" />
+        <Option Value="13" Name="Type 13" />
+        <Option Value="14" Name="Type 14" />
+        <Option Value="15" Name="Type 15" />
+        <Option Value="16" Name="Type 16" />
+        <Option Value="17" Name="Type 17" />
+        <Option Value="18" Name="Type 18" />
+        <Option Value="19" Name="Type 19" />
+        <Option Value="20" Name="Type 20" />
+        <Option Value="21" Name="Type 21" />
+        <Option Value="22" Name="Type 22" />
+        <Option Value="23" Name="Type 23" />
+        <Option Value="24" Name="Type 24" />
+        <Option Value="25" Name="Type 25" />
+        <Option Value="26" Name="Type 26" />
+        <Option Value="27" Name="Type 27" />
+        <Option Value="28" Name="Type 28" />
+        <Option Value="29" Name="Type 29" />
+        <Option Value="30" Name="Type 30" />
+        <Option Value="31" Name="Type 31" />
+        <Option Value="32" Name="Type 32" />
+        <Option Value="33" Name="Type 33" />
+        <Option Value="34" Name="Type 34" />
+        <Option Value="35" Name="Type 35" />
+        <Option Value="36" Name="Type 36" />
+        <Option Value="37" Name="Type 37" />
+        <Option Value="38" Name="Type 38" />
+        <Option Value="39" Name="Type 39" />
+        <Option Value="40" Name="Type 40" />
+        <Option Value="41" Name="Type 41" />
+        <Option Value="42" Name="Type 42" />
+        <Option Value="43" Name="Type 43" />
+        <Option Value="44" Name="Type 44" />
+        <Option Value="45" Name="Type 45" />
+        <Option Value="46" Name="Type 46" />
+        <Option Value="47" Name="Type 47" />
+        <Option Value="48" Name="Type 48" />
+        <Option Value="49" Name="Type 49" />
+        <Option Value="50" Name="Type 50" />
+        <Option Value="51" Name="Type 51" />
+        <Option Value="52" Name="Type 52" />
+        <Option Value="53" Name="Type 53" />
+        <Option Value="54" Name="Type 54" />
+        <Option Value="55" Name="Type 55" />
+        <Option Value="56" Name="Type 56" />
+        <Option Value="57" Name="Type 57" />
+        <Option Value="58" Name="Type 58" />
+        <Option Value="59" Name="Type 59" />
+        <Option Value="60" Name="Type 60" />
+        <Option Value="61" Name="Type 61" />
+        <Option Value="62" Name="Type 62" />
+        <Option Value="63" Name="Type 63" />
+        <Option Value="64" Name="Type 64" />
+        <Option Value="65" Name="Type 65" />
+        <Option Value="66" Name="Type 66" />
+        <Option Value="67" Name="Type 67" />
+        <Option Value="68" Name="Type 68" />
+        <Option Value="69" Name="Type 69" />
+        <Option Value="70" Name="Type 70" />
+        <Option Value="71" Name="Type 71" />
+        <Option Value="72" Name="Type 72" />
+        <Option Value="74" Name="Type 74" />
+        <Option Value="75" Name="Type 75" />
+        <Option Value="76" Name="Type 76" />
+        <Option Value="77" Name="Type 77" />
+        <Option Value="78" Name="Type 78" />
+        <Option Value="79" Name="Type 79" />
+        <Option Value="80" Name="Type 80" />
+        <Option Value="84" Name="Type 84" />
+        <Option Value="85" Name="Type 85" />
+        <Option Value="89" Name="Type 89" />
+        <Option Value="90" Name="Type 90" />
+        <Option Value="91" Name="Type 91" />
+        <Option Value="92" Name="Type 92" />
+        <Option Value="93" Name="Type 93" />
+        <Option Value="94" Name="Type 94" />
+        <Option Value="95" Name="Type 95" />
+        <Option Value="98" Name="Type 98" />
+
+    </Enum>
+  </Enums>
+  <Field>
+    <seMaterialId AltName="SE Material ID" Wiki="Conversion from SFX material ID (3 digits) to SE material ID (2 digits)" Enum="MATERIAL_SE_TYPE" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

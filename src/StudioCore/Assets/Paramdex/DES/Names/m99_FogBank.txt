@@ -1,0 +1,17 @@
+0 Basic
+1 Channel (unused)
+2 water surface
+3 Indoors (near the entrance)
+4 Indoor (back)
+5 distant view
+6 light that shines
+20 Basic
+21 distant view
+22 celestial sphere
+23 blood letters
+24 distant tree
+27 river
+51 distant view
+52 celestial sphere
+53 magma
+63 m99_97_00_00[Nakajima test]

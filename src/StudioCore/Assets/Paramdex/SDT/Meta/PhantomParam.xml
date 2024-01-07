@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <isNo2Pass IsBool="" />
+    <isEdgeSubtract IsBool="" />
+    <isFrontSubtract IsBool="" />
+  </Field>
+  <Self Wiki="Defines the color and transparency of phantom visual effects" />
+</PARAMMETA>

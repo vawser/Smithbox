@@ -1,0 +1,6 @@
+<class name='hkbCharacterControllerSetup' version='1' signature='0xaf5f7339' size='40'>
+  <members>
+    <member name='rigidBodySetup' offset='0' ctype='hkbRigidBodySetup' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='controllerCinfo' offset='32' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

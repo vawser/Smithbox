@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <soloPlayDeath_ToFadeOutTime AltName="[YOU DIED] Fade Out Duration - Host" Wiki="How many seconds have passed after YOU DIED is displayed at the time of death of solo play to start fading out?" />
+    <partyGhostDeath_ToFadeOutTime AltName="[YOU DIED] Fade Out Duration - Phnatom" Wiki="How many seconds have passed after YOU DIED is displayed when a white or black ghost dies to start fading out?" />
+    <playerMaxHpLimit AltName="HP Bar - Visual Scale" Wiki="It is used to calculate what percentage of the gauge length provided by the resource is used when displaying the HP gauge." />
+    <playerMaxMpLimit AltName="FP Bar - Visual Scale" Wiki="It is used to calculate what percentage of the gauge length provided by the resource is used when displaying the MP gauge." />
+    <playerMaxSpLimit AltName="Stamina Bar - Visual Scale" Wiki="It is used to calculate what percentage of the gauge length provided by the resource is used when displaying the SP gauge." />
+    <actionPanelChangeThreshold_Vel AltName="Action Panel Change Threshold - Velocity" Wiki="Action panel Switchable player speed. Switchable if below this speed" />
+    <actionPanelChangeThreshold_PassTime AltName="Action Panel Change Threshold - Pass Time" Wiki="Action panel Consideration time to increase the speed of switchable players. Use the average speed of this time (systematically up to 4 seconds)" />
+    <kgIconVspace AltName="Vertical Position of Key Guide Icon" Wiki="Vertical position of key guide icon (+ - top,- - bottom)" />
+    <worldMapCursorSelectRadius AltName="World Map - Cursor Select Radius" Wiki="If the cursor position is within this radius, it means that it is selected." />
+    <reserved8 AltName=""/>
+    <decalPosOffsetX AltName="Decal Position Offset - X" Wiki="Decal display position offset left and right" />
+    <decalPosOffsetY AltName="Decal Position Offset - Y" Wiki="Decal display position offset vertical direction" />
+    <targetStateSearchDurationTime AltName="FE Search Icon Fade Time" Wiki="The number of seconds it takes for the FE Search icon to start fading in and then fading out." />
+    <targetStateBattleDurationTime AltName="FE Battle Icon Fade Time" Wiki="The number of seconds it takes for the FE Battle icon to start fading in and then fading out." />
+    <worldMapCursorSpeed AltName="World Map - Cursor Speed" Wiki="Movement speed when moving smoothly [px]" />
+    <worldMapCursorFirstDistance AltName="World Map - Cursor First Distance" Wiki="Distance to move only once at the first input [px]" />
+    <worldMapCursorFirstDelay AltName="World Map - Cursor First Delay" Wiki="The time it takes to move only once at the first input [sec]" />
+    <worldMapCursorWaitTime AltName="World Map - Cursor Wait Time" Wiki="Waiting time from input to smooth movement [sec]" />
+    <worldMapCursorSnapRadius AltName="World Map - Cursor Snap Radius" Wiki="Move the cursor closer than this radius to start adsorption (for snap mode) [px]" />
+    <worldMapCursorSnapTime AltName="World Map - Cursor Snap Time" Wiki="The time it takes to start and complete adsorption [sec]" />
+    <itemGetLogAliveTime AltName="Item Get Log Alive Time" Wiki="Time to add one line of log and fade out. There is a timer for each line [sec]" />
+    <playerMaxSaLimit AltName="Player Max Poise Guage Length" Wiki="It is used to calculate what percentage of the gauge length provided by the resource is used when displaying the SA gauge." />
+    <worldMap_IsChangeableLayerEventFlagId AltName="World Map - Underground Layer Event Flag ID" Wiki="Specify the event flag ID that manages whether it is possible to switch to the underground map. When this event flag ID is ON, it is possible to switch to the underground map." />
+    <worldMap_TravelMargin AltName="World Map - Travel Margin" Wiki="Distance (m) that extends in four directions around the player. I decided to break through this range" />
+    <systemAnnounceScrollBufferTime AltName="System Announcement - Scroll Buffer Time" Wiki="The number of seconds to wait before and after scrolling through the long text of the operation announcement. For example, if it is 3 seconds, wait for a total of 6 seconds before and after." />
+    <systemAnnounceScrollSpeed AltName="System Announcement - Scroll Speed" Wiki="Scrolling speed (pixels / second) when scrolling long sentences in the operation announcement. It does not depend on the screen size. Think of the entire menu as 1920x1080" />
+    <systemAnnounceNoScrollWaitTime AltName="System Announcement - No Scroll Wait Time" Wiki="The number of seconds to display when it is a short sentence that does not require scrolling of the operation announcement" />
+    <systemAnnounceScrollCount AltName="System Announcement - Scroll Count" Wiki="Number of times to repeat when scrolling long sentences of management announcement" />
+    <reserved17 AltName=""/>
+    <compassMemoDispDistance AltName="Compass Memo Display Distance" Wiki="Display distance [m] of the memo marker displayed on the compass. Anything closer than this distance will be displayed" />
+    <compassBonfireDispDistance AltName="Compass Bonfire Display Distance" Wiki="The display distance of the bonfire displayed on the compass [m]. Anything closer than this distance will be displayed" />
+    <markerGoalThreshold AltName="Destination Marrker Threshold" Wiki="Goal judgment distance [m] of the destination marker. The destination marker disappears when you get closer than this distance" />
+    <svSliderStep AltName="Saturation/Brightness Slider Step" Wiki="Amount of movement of the saturation / brightness slider of the color control [% / sec]. Maximum amount to move in 1 second when each value is 0% to 100%. Since it is operated with an analog stick, it becomes a ratio by the input value." />
+    <preOpeningMovie_WaitSec AltName="Pre-opening Movie - Wait Time" Wiki="Wait time before playing the OP movie. > SEQ 15261" />
+    <kgIconScale AltName="Key Guide Icon - Scale" Wiki="The scale value of the key guide icon. 100% is the texture size as it is" />
+    <kgIconScale_forTable AltName="Key Guide Icon for Table - Scale" Wiki="Scale value of the key guide icon for the pad operation list. 100% is the texture size as it is" />
+    <kgIconVspace_forTable AltName="Key Guide Icon for Table - Vertical Position" Wiki="Vertical position of the key guide icon for the pad operation list (+ - top,- - bottom)" />
+    <kgIconScale_forConfig AltName="Key Guide Icon for Key Config - Scale" Wiki="The scale value of the key guide icon for the key config. 100% is the texture size as it is" />
+    <kgIconVspace_forConfig AltName="Key Guide Icon for Key Config - Vertical Position" Wiki="Vertical position of key guide icon for key config (+ - top,- - bottom)" />
+    <worldMap_SearchRadius AltName="World Map Search Radius" Wiki="Range [m] (radius) that makes unsearched masks searched. It is assumed that the circle centered on the player has been searched." />
+    <tutorialDisplayTime AltName="Tutorial Display Time" Wiki="Tutorial (toast notification) display time [sec]. It will be closed automatically after this time has passed" />
+    <compassFriendHostInnerDistance AltName="Compass Friendly Phantom Display Distance" Wiki="Display distance [m] of other players (friendly hosts) to be displayed on the compass. If you are more than this distance, it will be displayed on the compass." />
+    <compassEnemyHostInnerDistance AltName="Compass Hostile Phantom Display Distance" Wiki="Display distance [m] of other players (enemy hosts) displayed on the compass. If you are more than this distance, it will be displayed on the compass." />
+    <compassFriendGuestInnerDistance AltName="Compass Guest Phantom Display Distance" Wiki="Display distance [m] of other players (friendly guests) to be displayed on the compass. If you are more than this distance, it will be displayed on the compass." />
+    <cutsceneKeyGuideAliveTime AltName="Cutscene Key Guide - Display Time" Wiki="The amount of time that the key guide will continue to be displayed after the cutscene skip has been pre-entered. Since skip input is accepted only while the key guide is displayed, it can be said that it is the skip input acceptance time." />
+    <autoHideHpThresholdRatio AltName="Auto HUD - HP Ratio to display HUD" Wiki="[HUD - Auto setting] HP ratio. If the HP ratio is below this value, the HP gauge will always be displayed. Percentage and current value are OR conditions (displayed if either is satisfied)" />
+    <autoHideHpThresholdValue AltName="Auto HUD - Display HUD when below X HP" Wiki="[HUD - Auto setting] HP current value. If the current HP value is less than or equal to this value, the HP gauge will always be displayed. Percentage and current value are OR conditions (displayed if either is satisfied)" />
+    <autoHideMpThresholdRatio AltName="Auto HUD - FP Ratio to display HUD" Wiki="[HUD - Auto setting] MP ratio. If the MP ratio is below this value, the MP gauge is always displayed. Percentage and current value are OR conditions (displayed if either is satisfied)" />
+    <autoHideMpThresholdValue AltName="Auto HUD - Display HUD when below X FP" Wiki="[HUD - Auto setting] MP current value. If the current MP value is less than or equal to this value, the MP gauge is always displayed. Percentage and current value are OR conditions (displayed if either is satisfied)" />
+    <autoHideSpThresholdRatio AltName="Auto HUD - Stamina Ratio to display HUD" Wiki="[HUD - Auto setting] SP ratio. If the SP ratio is less than or equal to this value, the SP gauge is always displayed. Percentage and current value are OR conditions (displayed if either is satisfied)" />
+    <autoHideSpThresholdValue AltName="Auto HUD - Display HUD when below X Stamina" Wiki="[HUD - Auto setting] SP current value. If the current SP value is less than or equal to this value, the SP gauge is always displayed. Percentage and current value are OR conditions (displayed if either is satisfied)" />
+    <worldMapZoomAnimationTime AltName="World Map Zoom Animation Time" Wiki="World map - Time to zoom animation [seconds]" />
+    <worldMapIconScaleMin AltName="World Map Icon Minimum Scale" Wiki="World map - Display magnification of the map point icon at zoom step 0 (0.0 to 1.0). 1x (1.0) at zoom step 2. From there, the icon magnification is also interpolated according to the enlargement ratio." />
+    <worldMap_TravelMargin_Point AltName="World Map - Travel Margin Point" Wiki="World map - Additional ban distance [m] when the ban is lifted in map point units. When the ban on map points such as the distant view stand is lifted, the ban on the traversal range will be lifted. Distance to be additionally extended in 4 directions around the map point" />
+    <enemyTagSafeLeft AltName="Enemy HP Guage - Max Left Justification" Wiki="How far can the center coordinates of the enemy HP gauge go to the left end? Since it is the center coordinate, the size of the gauge body is included." />
+    <enemyTagSafeRight AltName="Enemy HP Guage - Max Right Justification" Wiki="How far can the center coordinates of the enemy HP gauge go to the right end? Since it is the center coordinate, the size of the gauge body is included." />
+    <enemyTagSafeTop AltName="Enemy HP Guage - Max Top Justification" Wiki="How far can the center coordinates of the enemy HP gauge go to the upper end? Since it is the center coordinate, the size of the gauge body is included." />
+    <enemyTagSafeBottom AltName="Enemy HP Guage - Max Bottom Justification" Wiki="How far can the center coordinates of the enemy HP gauge go to the lower end? Since it is the center coordinate, the size of the gauge body is included." />
+    <pcHorseHpRecoverDispThreshold AltName="HP Threshold to display Horse HP" Wiki="Threshold for displaying the PC horse HP gauge at the time of recovery. Constant value of Display HP bar when it increases more than a certain value at a time" />
+    <reserved33 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

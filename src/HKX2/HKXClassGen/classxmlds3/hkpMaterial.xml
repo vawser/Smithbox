@@ -1,0 +1,17 @@
+<class name='hkpMaterial' version='1' signature='0x33be6570' size='12'>
+  <enums>
+    <enum name='ResponseType' flags='00000000'>
+      <enumitem name='RESPONSE_INVALID' value='0'/>
+      <enumitem name='RESPONSE_SIMPLE_CONTACT' value='1'/>
+      <enumitem name='RESPONSE_REPORTING' value='2'/>
+      <enumitem name='RESPONSE_NONE' value='3'/>
+      <enumitem name='RESPONSE_MAX_ID' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='responseType' offset='0' etype='ResponseType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rollingFrictionMultiplier' offset='2' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='friction' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='restitution' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

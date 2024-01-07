@@ -1,0 +1,6 @@
+<class name='hkpLinConstraintAtom' version='1' signature='0x29776947' size='16' parent='hkpConstraintAtom'>
+  <members>
+    <member name='axisIndex' offset='2' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='3' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='12' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

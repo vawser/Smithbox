@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <radius Wiki="How far the sound reaches" />
+    <lifeFrame Wiki="How long the sound will be heard" />
+    <bSpEffectEnable Wiki="Determines whether or not speffects can affect this sound" IsBool="" />
+    <type />
+    <opposeTarget Wiki="Will your enemies hear this sound?" IsBool="" />
+    <friendlyTarget Wiki="Will your allies hear this sound?" IsBool="" />
+    <selfTarget Wiki="Will you hear this sound?" IsBool="" />
+    <bRestrictSamePlacementGroup Wiki="Sound will only be heard by enemies within the same PlacementGroup" IsBool="" />
+    <bCallFriend IsBool="" />
+    <rank />
+  </Field>
+  <Self Wiki="Defines sounds that enemies can hear" />
+</PARAMMETA>

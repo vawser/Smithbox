@@ -1,0 +1,8 @@
+<class name='hknpVehicleDriverInputAnalogStatus' version='1' signature='0xe1f62633' size='32' parent='hknpVehicleDriverInputStatus'>
+  <members>
+    <member name='positionX' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='positionY' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handbrakeButtonPressed' offset='24' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='reverseButtonPressed' offset='25' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

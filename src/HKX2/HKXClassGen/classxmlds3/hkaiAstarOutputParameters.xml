@@ -1,0 +1,26 @@
+<class name='hkaiAstarOutputParameters' version='1' signature='0x1613ae07' size='16'>
+  <enums>
+    <enum name='SearchStatus' flags='00000000'>
+      <enumitem name='SEARCH_IN_PROGRESS' value='0'/>
+      <enumitem name='SEARCH_SUCCEEDED' value='1'/>
+      <enumitem name='SEARCH_UNREACHABLE' value='2'/>
+      <enumitem name='SEARCH_TERMINATED' value='3'/>
+      <enumitem name='SEARCH_SUCCEEDED_BUT_RESULTS_TRUNCATED' value='4'/>
+      <enumitem name='SEARCH_INVALID' value='5'/>
+    </enum>
+    <enum name='TerminationCause' flags='00000000'>
+      <enumitem name='NOT_TERMINATED' value='0'/>
+      <enumitem name='TERMINATED_ITERATION_LIMIT' value='1'/>
+      <enumitem name='TERMINATED_OPEN_SET_FULL' value='2'/>
+      <enumitem name='TERMINATED_SEARCH_STATE_FULL' value='3'/>
+      <enumitem name='TERMINATED_BY_USER' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='numIterations' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='goalIndex' offset='4' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pathLength' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='status' offset='12' etype='SearchStatus' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='terminationCause' offset='13' etype='TerminationCause' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <GridEnableCreateHeightMin AltName="Min Height - Grid Creation (LOD2)" Wiki="Minimum height that can be built in the grid [m]. (LOD 2 units)" />
+    <GridEnableCreateHeightMax AltName="Max Height - Grid Creation (LOD2)" Wiki="Maximum height that can be constructed in the grid [m]. (LOD 2 units)" />
+    <Reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

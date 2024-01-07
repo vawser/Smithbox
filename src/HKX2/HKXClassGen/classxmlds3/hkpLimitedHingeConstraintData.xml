@@ -1,0 +1,5 @@
+<class name='hkpLimitedHingeConstraintData' version='1' signature='0x51ea603a' size='304' parent='hkpConstraintData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpLimitedHingeConstraintDataAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

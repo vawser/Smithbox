@@ -1,0 +1,6 @@
+<class name='hkpSetLocalRotationsConstraintAtom' version='1' signature='0x90194a87' size='112' parent='hkpConstraintAtom'>
+  <members>
+    <member name='rotationA' offset='16' vtype='TYPE_ROTATION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotationB' offset='64' vtype='TYPE_ROTATION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

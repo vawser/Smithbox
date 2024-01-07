@@ -1,0 +1,6 @@
+<class name='hkQTransformf' version='1' signature='0x471a21ee' size='32'>
+  <members>
+    <member name='rotation' offset='0' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='translation' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

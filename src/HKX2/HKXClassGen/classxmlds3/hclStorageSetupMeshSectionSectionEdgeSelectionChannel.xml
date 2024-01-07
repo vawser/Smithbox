@@ -1,0 +1,5 @@
+<class name='hclStorageSetupMeshSectionSectionEdgeSelectionChannel' version='1' signature='0x3c99b5da' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='edgeIndices' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

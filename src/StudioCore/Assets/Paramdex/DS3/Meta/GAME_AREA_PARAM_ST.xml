@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<bonusSoul_single AltName="Bonus Souls - Singleplayer" Wiki="Amount of soul that can be obtained when defeating an area boss (in single play)" />
+    <bonusSoul_multi AltName="Bonus Souls - Multiplayer" Wiki="Amount of soul that can be obtained when defeating an area boss (during multiplayer)" />
+    <humanityPointCountFlagIdTop AltName="Humanity Point Count Flag ID" Wiki="First flag ID for managing humanity drop points (using 20 Bit)" />
+    <humanityDropPoint1 AltName="Humanity Drop Threshold [1]" Wiki="Threshold for acquiring humanity 1" />
+    <humanityDropPoint2 AltName="Humanity Drop Threshold [2]" Wiki="Threshold 2 for acquiring humanity" />
+    <humanityDropPoint3 AltName="Humanity Drop Threshold [3]" Wiki="Threshold 3 for acquiring humanity" />
+    <humanityDropPoint4 AltName="Humanity Drop Threshold [4]" Wiki="Threshold 4 for acquiring humanity" />
+    <humanityDropPoint5 AltName="Humanity Drop Threshold [5]" Wiki="Threshold 5 for acquiring humanity" />
+    <humanityDropPoint6 AltName="Humanity Drop Threshold [6]" Wiki="Threshold 6 for acquiring humanity" />
+    <humanityDropPoint7 AltName="Humanity Drop Threshold [7]" Wiki="Threshold for acquiring humanity 7" />
+    <humanityDropPoint8 AltName="Humanity Drop Threshold [8]" Wiki="Threshold for acquiring humanity 8" />
+    <humanityDropPoint9 AltName="Humanity Drop Threshold [9]" Wiki="Threshold for acquiring humanity 9" />
+    <humanityDropPoint10 AltName="Humanity Drop Threshold [10]" Wiki="Threshold 10 for acquiring humanity" />
+    <soloBreakInPoint_Min AltName="Min Invasion Spawns added after Boss Defeat" Wiki="The minimum value of solo intrusion points to be added when defeating an area boss." />
+    <soloBreakInPoint_Max AltName="Max Invasion Spawns added after Boss Defeat" Wiki="The maximum value of solo intrusion points to be added when defeating an area boss." />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="Level Data - Handles boss soul drops"/>
+</PARAMMETA>

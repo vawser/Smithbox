@@ -1,0 +1,108 @@
+0 Test -- テスト
+41 Oil pots (floor) -- 油壺(床)
+1090000 [Attack] Blood (dead) front (for character) -- 【攻撃】血(亡者)中　正面（キャラ用）
+1090001 [Attack] Blood (dead) Nakagami (for character) -- 【攻撃】血(亡者)中　上（キャラ用）
+1090002 [Attack] Blood (dead) Nakashita (for character) -- 【攻撃】血(亡者)中　下（キャラ用）
+1090003 [Attack] Blood (dead) left (for character) -- 【攻撃】血(亡者)中　左（キャラ用）
+1090004 [Attack] Blood (dead) reeling (for character) -- 【攻撃】血(亡者)中　右（キャラ用）
+1090100 [Attack] Blood (dead) front (for map) -- 【攻撃】血(亡者)中　正面（マップ用）
+1090101 [Attack] Blood (dead) Nakagami (for map) -- 【攻撃】血(亡者)中　上（マップ用）
+1090102 [Attack] Blood (dead) Nakashita (for map) -- 【攻撃】血(亡者)中　下（マップ用）
+1090103 [Attack] Blood (dead) left (for map) -- 【攻撃】血(亡者)中　左（マップ用）
+1090104 [Attack] Blood (dead) reeling (for map) -- 【攻撃】血(亡者)中　右（マップ用）
+1091000 [Attack] Blood (dead) frontal (for character) blood mild -- 【攻撃】血(亡者)中　正面（キャラ用）血MILD
+1091001 [Attack] Blood (dead) Nakagami (for character) blood mild -- 【攻撃】血(亡者)中　上（キャラ用）血MILD
+1091002 [Attack] Blood (dead) Nakashita (for character) blood mild -- 【攻撃】血(亡者)中　下（キャラ用）血MILD
+1091003 [Attack] Blood (dead) left (for Chara) blood mild -- 【攻撃】血(亡者)中　左（キャラ用）血MILD
+1091004 [Attack] Blood (dead) reeling (for character) blood mild -- 【攻撃】血(亡者)中　右（キャラ用）血MILD
+1091100 [Attack] Blood (dead) in front (map) Blood mild -- 【攻撃】血(亡者)中　正面（マップ用）血MILD
+1091101 【 attack 】 Blood (dead) Nakagami (for map) blood mild -- 【攻撃】血(亡者)中　上（マップ用）血MILD
+1091102 【 attack 】 Blood (dead) Nakashita (for map) blood mild -- 【攻撃】血(亡者)中　下（マップ用）血MILD
+1091103 [Attack] Blood (dead) left (for map) blood mild -- 【攻撃】血(亡者)中　左（マップ用）血MILD
+1091104 【 attack 】 Blood (dead) reeling (for map) blood mild -- 【攻撃】血(亡者)中　右（マップ用）血MILD
+1410000 Attack: Front of caries -- 【攻撃】蝕中　正面
+1410001 【 attack 】 Caries Nakagami -- 【攻撃】蝕中　上
+1410002 【 attack 】 Caries Nakashita -- 【攻撃】蝕中　下
+1410003 [Attack] in the caries left -- 【攻撃】蝕中　左
+1410004 【 attack 】 Caries reeling -- 【攻撃】蝕中　右
+1420000 [Attack] Maggots front -- 【攻撃】蛆中　正面
+1420001 [Attack] Maggots Nakagami -- 【攻撃】蛆中　上
+1420002 [Attack] Maggots Nakashita -- 【攻撃】蛆中　下
+1420003 [Attack] Maggots left -- 【攻撃】蛆中　左
+1420004 [Attack] Maggots reeling -- 【攻撃】蛆中　右
+1460000 [Attack] Blood (PC) front (for character) -- 【攻撃】鮮血中(PC)　正面（キャラ用）
+1460001 [Attack] Blood (PC) (for characters) -- 【攻撃】鮮血中(PC)　上（キャラ用）
+1460002 [Attack] under Blood (PC) (for character) -- 【攻撃】鮮血中(PC)　下（キャラ用）
+1460003 [Attack] Blood (PC) left (for character) -- 【攻撃】鮮血中(PC)　左（キャラ用）
+1460004 [Attack] Blood (PC) right (for character) -- 【攻撃】鮮血中(PC)　右（キャラ用）
+1460100 [Attack] Blood (PC) front (for map) -- 【攻撃】鮮血中(PC)　正面（マップ用）
+1460101 [Attack] Blood (PC) (for map) -- 【攻撃】鮮血中(PC)　上（マップ用）
+1460102 [Attack] under Blood (PC) (for map) -- 【攻撃】鮮血中(PC)　下（マップ用）
+1460103 [Attack] Blood (PC) left (for map) -- 【攻撃】鮮血中(PC)　左（マップ用）
+1460104 [Attack] Blood (PC) right (for map) -- 【攻撃】鮮血中(PC)　右（マップ用）
+1461000 [Attack] Blood (PC) front (for character) blood mild -- 【攻撃】鮮血中(PC)　正面（キャラ用）血MILD
+1461001 [Attack] Blood (PC) (for characters) blood mild -- 【攻撃】鮮血中(PC)　上（キャラ用）血MILD
+1461002 [Attack] Blood (PC) under (for character) blood mild -- 【攻撃】鮮血中(PC)　下（キャラ用）血MILD
+1461003 [Attack] Blood (PC) left (for character) blood mild -- 【攻撃】鮮血中(PC)　左（キャラ用）血MILD
+1461004 [Attack] Blood (PC) right (for character) blood mild -- 【攻撃】鮮血中(PC)　右（キャラ用）血MILD
+1461100 [Attack] Blood (PC) front (for map) blood mild -- 【攻撃】鮮血中(PC)　正面（マップ用）血MILD
+1461101 [Attack] Blood (PC) (for map) blood mild -- 【攻撃】鮮血中(PC)　上（マップ用）血MILD
+1461102 [Attack] Blood (PC) under (for map) blood mild -- 【攻撃】鮮血中(PC)　下（マップ用）血MILD
+1461103 [Attack] Blood (PC) left (for map) blood mild -- 【攻撃】鮮血中(PC)　左（マップ用）血MILD
+1461104 [Attack] Blood (PC) right (for map) blood mild -- 【攻撃】鮮血中(PC)　右（マップ用）血MILD
+8000300 Dark Flame -- 火炎壺こげ跡
+8000301 Oil pots (for pairs of characters) -- 油壺(対キャラ用)
+8010510 [Dark Knight Beast] Frost -- 【ダークナイトビースト】霜
+8010511 [Dark Knight Beast] Frost attack -- 【ダークナイトビースト】霜 攻撃
+8010512 [Dark Knight Beast] Frost attack (wide range) -- 【ダークナイトビースト】霜 攻撃(広範囲)
+8010513 [Dark Knight Beast] Frost attack (3008) -- 【ダークナイトビースト】霜 攻撃(3008)
+8010520 [c1090 dead Soldier: Evil spirits] knocked back against caries -- 【c1090　亡者兵士：邪霊】叩き付け蝕
+8010530 The tracker (red) knocked back against attack -- 【追跡者】(赤熱)叩き付け 攻撃
+8010531 The tracker (red) Nagi 90 degrees -- 【追跡者】(赤熱)なぎ払い 90度
+8010532 The tracker (red) ground stabbing and line-catching attack -- 【追跡者】(赤熱)地面刺して線引く 攻撃
+8010533 The tracker (red) Ground stab attack -- 【追跡者】(赤熱)地面刺し 攻撃
+8010534 The tracker (red) Horizontal Nagi attack -- 【追跡者】(赤熱)水平なぎ払い 攻撃
+8010535 The tracker (red) Nagi-90 degrees -- 【追跡者】(赤熱)なぎ払い　-90度
+8010536 The tracker (red) Nagi (3005) -- 【追跡者】(赤熱)なぎ払い　(3005)
+8010537 The tracker (red) Horizontal Nagi (3025) -- 【追跡者】(赤熱)水平なぎ払い(3025)
+8010538 The tracker (red) Horizontal Nagi (3014, 1003017) -- 【追跡者】(赤熱)水平なぎ払い(3012、1003017)
+8010539 The tracker (red) Horizontal rotation finish (1003020) -- 【追跡者】(赤熱)横回転フィニッシュ(1003020)
+8010540 [tracker] cut scene of caries large -- 【追跡者】カットシーン　蝕大
+8010541 [tracker] cut scene caries small -- 【追跡者】カットシーン　蝕小
+8010542 [tracker] cut scene caries foot -- 【追跡者】カットシーン　蝕足
+8010550 The tracker (red) Horizontal rotation loop (1003019) -- 【追跡者】(赤熱)横回転ループ (1003019)
+8010560 The tracker (caries sword) knocked back against -- 【追跡者】(蝕剣)叩き付け
+8010561 The tracker (Caries sword) Stab -- 【追跡者】(蝕剣)刺し
+8010562 The tracker (Caries Sword) -- 【追跡者】(蝕剣)なぎ
+8010563 The tracker (Caries sword) continuous lull -- 【追跡者】(蝕剣)連続なぎ
+8010564 The tracker (caries sword) Continuous stab -- 【追跡者】(蝕剣)連続刺し
+8010565 The tracker (caries sword) knocked back against -- 【追跡者】(蝕剣)叩き付け
+8010566 The tracker (Caries Sword) -- 【追跡者】(蝕剣)
+8010567 The tracker (Caries Sword) -- 【追跡者】(蝕剣)
+8010570 [Full Armor Beast] Frost -- 【フルアーマー獣】霜
+8010571 [Full Armor Beast] Frost attack -- 【フルアーマー獣】霜 攻撃
+8010572 [Full Armor Beast] Frost attack (knocked back against) -- 【フルアーマー獣】霜 攻撃（叩き付け）
+8010580 [Ojo 3] Bleeding -- 【ヘルカイト（王城3）】出血
+8010590 [Dead Wax] wax bullet (floor) -- 【蝋の死人】蝋弾(床)
+8010591 [Dead Wax] wax bullet (for character) -- 【蝋の死人】蝋弾(対キャラ用)
+8010600 [Hel Kite] at the time of erosion SAG appearance -- 【ヘルカイト】蝕垂れ 登場時
+8010601 [Hellfire Kite] dripping drip -- 【ヘルカイト】蝕垂れ ポタポタ
+8010602 [Hel Kite] at the time of Eclipse appearance -- 【ヘルカイト】蝕体つき 登場時
+8010603 [Hel kite] erosion appearance at the time of the ceiling -- 【ヘルカイト】蝕垂れ 登場時 天井向き
+8011580 [Ojo 3] bleeding blood mild -- 【ヘルカイト（王城3）】出血 血MILD
+8023000 [m30_00] Hell kite Breath Burn marks -- 【m30_00】ヘルカイト　ブレス燃え跡
+8023900 [M39_00] in blood (dead) -- 【m39_00】血(亡者)　中
+8023901 【 m39_00 】 Large Blood (dead) -- 【m39_00】血(亡者)　大
+9000100 [PC bleeding] footprints blood feet -- 【PC出血】足跡血痕素足
+9000101 [PC bleeding] footprint blood stains shoes -- 【PC出血】足跡血痕靴
+9000102 [PC bleeding] footprints blood stains large shoes -- 【PC出血】足跡血痕大靴
+9000110 [PC Bleeding] PC Bleeding -- 【PC出血】PC出血
+9000111 [PC Bleeding] PC Bleeding (Large) -- 【PC出血】PC出血（大）
+9001100 [PC bleeding] footprints blood mild -- 【PC出血】足跡血痕素足血MILD
+9001101 [PC bleeding] footprints blood stains shoes mild -- 【PC出血】足跡血痕靴血MILD
+9001102 [PC bleeding] footprints blood mild large shoes -- 【PC出血】足跡血痕大靴血MILD
+9001110 [PC Bleeding] PC Bleeding Blood Mild -- 【PC出血】PC出血血MILD
+9001111 [PC Bleeding] PC bleeding (large) blood mild -- 【PC出血】PC出血（大）血MILD
+9990000 Test -- テスト
+9990001 Test -- テスト
+9990002 Test -- テスト

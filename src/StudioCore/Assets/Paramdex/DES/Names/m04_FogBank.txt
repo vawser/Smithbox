@@ -1,0 +1,11 @@
+0 B0 basic
+1 B0 celestial sphere
+2 B0 Church
+3 B0 outdoor
+10 B1 outdoor
+11 B1 celestial sphere
+12 B1 Distant view
+13 B1 chimeric sphere
+14 B1 water surface
+20 B2 basic
+21 B2Okina no Chair

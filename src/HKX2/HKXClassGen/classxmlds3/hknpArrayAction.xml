@@ -1,0 +1,5 @@
+<class name='hknpArrayAction' version='1' signature='0x682e62ca' size='40' parent='hknpAction'>
+  <members>
+    <member name='bodyIds' offset='24' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

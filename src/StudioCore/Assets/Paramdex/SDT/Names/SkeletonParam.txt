@@ -1,0 +1,55 @@
+0 Doesn&#39;t work -- 動かない
+1 NPC common neck -- NPC共通 首
+2 NPC common torso 1 -- NPC共通 胴1
+3 NPC common torso 2 -- NPC共通 胴2
+10 Humanoid general-purpose left foot -- 人型汎用左足
+11 Humanoid general purpose right foot -- 人型汎用右足
+18 Copy_test right leg -- コピー_テスト右脚
+19 Copy_test left leg -- コピー_テスト左脚
+100 heroine -- ヒロイン
+200 VIP -- 要人
+300 Blacksmith Edo -- 鍛冶屋江戸
+400 Slave soldier -- 奴隷兵士
+500 Former aristocratic lady -- 元貴族婦人
+600 Puppet messenger -- 人形使い
+700 Beggar woman -- 乞食女
+800 Baldwin -- ボールドウィン
+900 Beggar man -- 乞食男
+998 Copy_Old general purpose left foot -- コピー_旧汎用左足
+999 Copy_Old general purpose right foot -- コピー_旧汎用右足
+1000 Hound _ -- 猟犬_
+1001 Hound _ -- 猟犬_
+1002 Hound _ -- 猟犬_
+1003 Hound _ -- 猟犬_
+1010 Priest_left foot -- 司祭_左足
+1011 Priest_right foot -- 司祭_右足
+1022 Crowd A_ swing setting -- 群衆Ａ_首振り設定
+1030 Crowd B_left foot -- 群衆Ｂ_左足
+1031 Crowd B_right foot -- 群衆Ｂ_右足
+2000 Mukademon right foot -- ムカデーモン右足
+2001 Mukademon left foot -- ムカデーモン左足
+2010 Gargoyle right foot -- ガーゴイル右足
+2011 Gargoyle left foot -- ガーゴイル左足
+2020 Iron golem right foot -- アイアンゴーレム右足
+2021 Iron golem left foot -- アイアンゴーレム左足
+2022 Iron golem right hand -- アイアンゴーレム右手
+2030 Hammer demon left foot -- ハンマーデーモン左足
+2031 Hammer demon right foot -- ハンマーデーモン右足
+5010 Beast of Fire_Left Front Leg -- 炎の獣_左前脚
+5011 Beast of Fire_Right Front Leg -- 炎の獣_右前脚
+5012 Beast of Fire_Left hind leg -- 炎の獣_左後脚
+5013 Beast of Fire_Right hind leg -- 炎の獣_右後脚
+5014 Beast of Fire_Swing_Head -- 炎の獣_首振り_頭
+5015 Beast of Fire_Swing_Neck 1 -- 炎の獣_首振り_首1
+5016 Beast of Fire_Swing_Neck 2 -- 炎の獣_首振り_首2
+5017 Beast of Fire_Swing_Neck 3 -- 炎の獣_首振り_首3
+5018 Beast of Fire_Swing_Neck 4 -- 炎の獣_首振り_首4
+3004 Crag foot ⑤ -- クラグ足⑤
+3005 Crag foot ⑥ -- クラグ足⑥
+3100 Crag foot ⑦ -- クラグ足⑦
+3101 Crag foot ⑧ -- クラグ足⑧
+3102 Crag foot ⑨ -- クラグ足⑨
+3103 Crag foot ⑩ -- クラグ足⑩
+3104 Crag foot ⑪ -- クラグ足⑪
+3105 Crag foot ⑫ -- クラグ足⑫
+3106 Crag foot ⑬ -- クラグ足⑬

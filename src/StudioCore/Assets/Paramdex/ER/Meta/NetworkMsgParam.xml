@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <priority AltName="Priority" Wiki="priority" />
+    <forcePlay AltName="Force Play" Wiki="Forced interrupt" IsBool="" />
+    <pad1 AltName=""/>
+    <normalWhite AltName="White Phantom - Normal" Wiki="White spirit (white sign)" />
+    <umbasaWhite AltName="White Phantom - Gold" Wiki="Sun spirit (white sign)" />
+    <berserkerWhite AltName="White Phantom - Berseker" Wiki="Berserker spirit (white sign)" />
+    <sinnerHeroWhite AltName="White Phantom - Sinner Hero" Wiki="Sinner Hero Spirit (white sign)" />
+    <normalBlack AltName="Black Phantom - Normal" Wiki="Dark spirit (red sign)" />
+    <umbasaBlack AltName="Black Phantom - Gold" Wiki="Sun spirit (red sign)" />
+    <berserkerBlack AltName="Black Phantom - Berserker" Wiki="Berserker spirit (red sign)" />
+    <forceJoinBlack AltName="Invasion - Black Phantom - Normal" Wiki="Intrusion_A" />
+    <forceJoinUmbasaBlack AltName="Invasion - Black Phantom - Gold" Wiki="Sun spirit (intrusion)" />
+    <forceJoinBerserkerBlack AltName="Invasion - Black Phantom - Berserker" Wiki="Berserker spirit (intrusion)" />
+    <sinnerHunterVisitor AltName="Sinner Hunter Visitor" Wiki="Sinner hunting spirit (visit)" />
+    <redHunterVisitor AltName="Red Hunter 1 Visitor" Wiki="Red Scare Spirit (Visit)" />
+    <guardianOfBossVisitor AltName="Boss Guardian Visitor" Wiki="Boss guardian spirit (visit)" />
+    <guardianOfForestMapVisitor AltName="Forest Hunter Visitor" Wiki="Map Guardian Spirit_Forest (Visit)" />
+    <guardianOfAnolisVisitor AltName="Darkmoon Blade Visitor" Wiki="Map Guardian_Anor (Visit)" />
+    <rosaliaBlack AltName="Black Phantom - Rosalia" Wiki="Rosalia spirit (red sign)" />
+    <forceJoinRosaliaBlack AltName="Invasion - Black Phantom - Rosalia" Wiki="Rosalia spirit (intrusion)" />
+    <redHunterVisitor2 AltName="Red Hunter 2 Visitor" Wiki="Red Scare Spirit 2 (Visit)" />
+    <npc1 AltName="NPC [1]" Wiki="NPC Pseudo Multi 1" />
+    <npc2 AltName="NPC [2]" Wiki="NPC Pseudo Multi 2" />
+    <npc3 AltName="NPC [3]" Wiki="NPC Pseudo Multi 3" />
+    <npc4 AltName="NPC [4]" Wiki="NPC Pseudo Multi 4" />
+    <battleRoyal AltName="Arena" Wiki="Battle royale" />
+    <npc5 AltName="NPC [5]" Wiki="NPC Pseudo Multi 5" />
+    <npc6 AltName="NPC [6]" Wiki="NPC Pseudo Multi 6" />
+    <npc7 AltName="NPC [7]" Wiki="NPC Pseudo Multi 7" />
+    <npc8 AltName="NPC [8]" Wiki="NPC Pseudo Multi 8" />
+    <npc9 AltName="NPC [9]" Wiki="NPC Pseudo Multi 9" />
+    <npc10 AltName="NPC [10]" Wiki="NPC Pseudo Multi 10" />
+    <npc11 AltName="NPC [11]" Wiki="NPC Pseudo Multi 11" />
+    <npc12 AltName="NPC [12]" Wiki="NPC Pseudo Multi 12" />
+    <npc13 AltName="NPC [13]" Wiki="NPC Pseudo Multi 13" />
+    <npc14 AltName="NPC [14]" Wiki="NPC Pseudo Multi 14" />
+    <npc15 AltName="NPC [15]" Wiki="NPC Pseudo Multi 15" />
+    <npc16 AltName="NPC [16]" Wiki="NPC Pseudo Multi 16" />
+    <forceJoinBlack_B AltName="Invasion - Black Phantom - B" Wiki="Intrusion_B" />
+    <normalWhite_Npc AltName="NPC - White Phantom" Wiki="White spirit (white sign) for NPCs" />
+    <forceJoinBlack_Npc AltName="NPC - Black Phantom - Invasion" Wiki="For intrusion_A_NPCs" />
+    <forceJoinBlack_B_Npc AltName="NPC - Black Phantom B - Invasion" Wiki="For intrusion_B_NPCs" />
+    <forceJoinBlack_C_Npc AltName="NPC - Black Phantom C - Invasion" Wiki="For intrusion_C_NPCs" />
+    <pad2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

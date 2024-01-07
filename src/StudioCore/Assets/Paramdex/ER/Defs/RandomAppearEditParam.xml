@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>RANDOM_APPEAR_EDIT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 appearNum">
+      <DisplayName>同時出現数</DisplayName>
+      <Description>同時出現数</Description>
+      <Maximum>99</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 paramId1 = -1">
+      <DisplayName>ランダム出現抽選パラID1</DisplayName>
+      <Description>ランダム出現抽選パラID1</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u32 rate1">
+      <DisplayName>抽選重率1</DisplayName>
+      <Description>抽選重率1</Description>
+      <Maximum>9999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 paramId2 = -1">
+      <DisplayName>ランダム出現抽選パラID2</DisplayName>
+      <Description>ランダム出現抽選パラID2</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="u32 rate2">
+      <DisplayName>抽選重率2</DisplayName>
+      <Description>抽選重率2</Description>
+      <Maximum>9999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="s32 paramId3 = -1">
+      <DisplayName>ランダム出現抽選パラID3</DisplayName>
+      <Description>ランダム出現抽選パラID3</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>6</SortID>
+    </Field>
+    <Field Def="u32 rate3">
+      <DisplayName>抽選重率3</DisplayName>
+      <Description>抽選重率3</Description>
+      <Maximum>9999</Maximum>
+      <SortID>7</SortID>
+    </Field>
+    <Field Def="s32 paramId4 = -1">
+      <DisplayName>ランダム出現抽選パラID4</DisplayName>
+      <Description>ランダム出現抽選パラID4</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>8</SortID>
+    </Field>
+    <Field Def="u32 rate4">
+      <DisplayName>抽選重率4</DisplayName>
+      <Description>抽選重率4</Description>
+      <Maximum>9999</Maximum>
+      <SortID>9</SortID>
+    </Field>
+    <Field Def="s32 paramId5 = -1">
+      <DisplayName>ランダム出現抽選パラID5</DisplayName>
+      <Description>ランダム出現抽選パラID5</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>10</SortID>
+    </Field>
+    <Field Def="u32 rate5">
+      <DisplayName>抽選重率5</DisplayName>
+      <Description>抽選重率5</Description>
+      <Maximum>9999</Maximum>
+      <SortID>11</SortID>
+    </Field>
+    <Field Def="s32 paramId6 = -1">
+      <DisplayName>ランダム出現抽選パラID6</DisplayName>
+      <Description>ランダム出現抽選パラID6</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>12</SortID>
+    </Field>
+    <Field Def="u32 rate6">
+      <DisplayName>抽選重率6</DisplayName>
+      <Description>抽選重率6</Description>
+      <Maximum>9999</Maximum>
+      <SortID>13</SortID>
+    </Field>
+    <Field Def="s32 paramId7 = -1">
+      <DisplayName>ランダム出現抽選パラID7</DisplayName>
+      <Description>ランダム出現抽選パラID7</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>14</SortID>
+    </Field>
+    <Field Def="u32 rate7">
+      <DisplayName>抽選重率7</DisplayName>
+      <Description>抽選重率7</Description>
+      <Maximum>9999</Maximum>
+      <SortID>15</SortID>
+    </Field>
+    <Field Def="s32 paramId8 = -1">
+      <DisplayName>ランダム出現抽選パラID8</DisplayName>
+      <Description>ランダム出現抽選パラID8</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>16</SortID>
+    </Field>
+    <Field Def="u32 rate8">
+      <DisplayName>抽選重率8</DisplayName>
+      <Description>抽選重率8</Description>
+      <Maximum>9999</Maximum>
+      <SortID>17</SortID>
+    </Field>
+    <Field Def="s32 paramId9 = -1">
+      <DisplayName>ランダム出現抽選パラID9</DisplayName>
+      <Description>ランダム出現抽選パラID9</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>18</SortID>
+    </Field>
+    <Field Def="u32 rate9">
+      <DisplayName>抽選重率9</DisplayName>
+      <Description>抽選重率9</Description>
+      <Maximum>9999</Maximum>
+      <SortID>19</SortID>
+    </Field>
+    <Field Def="s32 paramId10 = -1">
+      <DisplayName>ランダム出現抽選パラID10</DisplayName>
+      <Description>ランダム出現抽選パラID10</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>20</SortID>
+    </Field>
+    <Field Def="u32 rate10">
+      <DisplayName>抽選重率10</DisplayName>
+      <Description>抽選重率10</Description>
+      <Maximum>9999</Maximum>
+      <SortID>21</SortID>
+    </Field>
+    <Field Def="s32 paramId11 = -1">
+      <DisplayName>ランダム出現抽選パラID11</DisplayName>
+      <Description>ランダム出現抽選パラID11</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>22</SortID>
+    </Field>
+    <Field Def="u32 rate11">
+      <DisplayName>抽選重率11</DisplayName>
+      <Description>抽選重率11</Description>
+      <Maximum>9999</Maximum>
+      <SortID>23</SortID>
+    </Field>
+    <Field Def="s32 paramId12 = -1">
+      <DisplayName>ランダム出現抽選パラID12</DisplayName>
+      <Description>ランダム出現抽選パラID12</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>24</SortID>
+    </Field>
+    <Field Def="u32 rate12">
+      <DisplayName>抽選重率12</DisplayName>
+      <Description>抽選重率12</Description>
+      <Maximum>9999</Maximum>
+      <SortID>25</SortID>
+    </Field>
+    <Field Def="s32 paramId13 = -1">
+      <DisplayName>ランダム出現抽選パラID13</DisplayName>
+      <Description>ランダム出現抽選パラID13</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>26</SortID>
+    </Field>
+    <Field Def="u32 rate13">
+      <DisplayName>抽選重率13</DisplayName>
+      <Description>抽選重率13</Description>
+      <Maximum>9999</Maximum>
+      <SortID>27</SortID>
+    </Field>
+    <Field Def="s32 paramId14 = -1">
+      <DisplayName>ランダム出現抽選パラID14</DisplayName>
+      <Description>ランダム出現抽選パラID14</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>28</SortID>
+    </Field>
+    <Field Def="u32 rate14">
+      <DisplayName>抽選重率14</DisplayName>
+      <Description>抽選重率14</Description>
+      <Maximum>9999</Maximum>
+      <SortID>29</SortID>
+    </Field>
+    <Field Def="s32 paramId15 = -1">
+      <DisplayName>ランダム出現抽選パラID15</DisplayName>
+      <Description>ランダム出現抽選パラID15</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>30</SortID>
+    </Field>
+    <Field Def="u32 rate15">
+      <DisplayName>抽選重率15</DisplayName>
+      <Description>抽選重率15</Description>
+      <Maximum>9999</Maximum>
+      <SortID>31</SortID>
+    </Field>
+    <Field Def="s32 paramId16 = -1">
+      <DisplayName>ランダム出現抽選パラID16</DisplayName>
+      <Description>ランダム出現抽選パラID16</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>32</SortID>
+    </Field>
+    <Field Def="u32 rate16">
+      <DisplayName>抽選重率16</DisplayName>
+      <Description>抽選重率16</Description>
+      <Maximum>9999</Maximum>
+      <SortID>33</SortID>
+    </Field>
+    <Field Def="s32 paramId17 = -1">
+      <DisplayName>ランダム出現抽選パラID17</DisplayName>
+      <Description>ランダム出現抽選パラID17</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>34</SortID>
+    </Field>
+    <Field Def="u32 rate17">
+      <DisplayName>抽選重率17</DisplayName>
+      <Description>抽選重率17</Description>
+      <Maximum>9999</Maximum>
+      <SortID>35</SortID>
+    </Field>
+    <Field Def="s32 paramId18 = -1">
+      <DisplayName>ランダム出現抽選パラID18</DisplayName>
+      <Description>ランダム出現抽選パラID18</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>36</SortID>
+    </Field>
+    <Field Def="u32 rate18">
+      <DisplayName>抽選重率18</DisplayName>
+      <Description>抽選重率18</Description>
+      <Maximum>9999</Maximum>
+      <SortID>37</SortID>
+    </Field>
+    <Field Def="s32 paramId19 = -1">
+      <DisplayName>ランダム出現抽選パラID19</DisplayName>
+      <Description>ランダム出現抽選パラID19</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>38</SortID>
+    </Field>
+    <Field Def="u32 rate19">
+      <DisplayName>抽選重率19</DisplayName>
+      <Description>抽選重率19</Description>
+      <Maximum>9999</Maximum>
+      <SortID>39</SortID>
+    </Field>
+    <Field Def="s32 paramId20 = -1">
+      <DisplayName>ランダム出現抽選パラID20</DisplayName>
+      <Description>ランダム出現抽選パラID20</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>40</SortID>
+    </Field>
+    <Field Def="u32 rate20">
+      <DisplayName>抽選重率20</DisplayName>
+      <Description>抽選重率20</Description>
+      <Maximum>9999</Maximum>
+      <SortID>41</SortID>
+    </Field>
+    <Field Def="s32 paramId21 = -1">
+      <DisplayName>ランダム出現抽選パラID21</DisplayName>
+      <Description>ランダム出現抽選パラID21</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>42</SortID>
+    </Field>
+    <Field Def="u32 rate21">
+      <DisplayName>抽選重率21</DisplayName>
+      <Description>抽選重率21</Description>
+      <Maximum>9999</Maximum>
+      <SortID>43</SortID>
+    </Field>
+    <Field Def="s32 paramId22 = -1">
+      <DisplayName>ランダム出現抽選パラID22</DisplayName>
+      <Description>ランダム出現抽選パラID22</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>44</SortID>
+    </Field>
+    <Field Def="u32 rate22">
+      <DisplayName>抽選重率22</DisplayName>
+      <Description>抽選重率22</Description>
+      <Maximum>9999</Maximum>
+      <SortID>45</SortID>
+    </Field>
+    <Field Def="s32 paramId23 = -1">
+      <DisplayName>ランダム出現抽選パラID23</DisplayName>
+      <Description>ランダム出現抽選パラID23</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>46</SortID>
+    </Field>
+    <Field Def="u32 rate23">
+      <DisplayName>抽選重率23</DisplayName>
+      <Description>抽選重率23</Description>
+      <Maximum>9999</Maximum>
+      <SortID>47</SortID>
+    </Field>
+    <Field Def="s32 paramId24 = -1">
+      <DisplayName>ランダム出現抽選パラID24</DisplayName>
+      <Description>ランダム出現抽選パラID24</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>999999999</Maximum>
+      <SortID>48</SortID>
+    </Field>
+    <Field Def="u32 rate24">
+      <DisplayName>抽選重率24</DisplayName>
+      <Description>抽選重率24</Description>
+      <Maximum>9999</Maximum>
+      <SortID>49</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

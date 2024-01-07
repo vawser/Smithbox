@@ -1,0 +1,15 @@
+<class name='hkpConstraintMotor' version='1' signature='0xc464ae4d' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='MotorType' flags='00000000'>
+      <enumitem name='TYPE_INVALID' value='0'/>
+      <enumitem name='TYPE_POSITION' value='1'/>
+      <enumitem name='TYPE_VELOCITY' value='2'/>
+      <enumitem name='TYPE_SPRING_DAMPER' value='3'/>
+      <enumitem name='TYPE_CALLBACK' value='4'/>
+      <enumitem name='TYPE_MAX' value='5'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='MotorType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

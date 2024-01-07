@@ -1,0 +1,15 @@
+<class name='hkbSimulationControlCommand' version='1' signature='0xc92ab66a' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='SimulationControlCommand' flags='00000000'>
+      <enumitem name='COMMAND_PLAY' value='0'/>
+      <enumitem name='COMMAND_PAUSE' value='1'/>
+      <enumitem name='COMMAND_STEP' value='2'/>
+      <enumitem name='COMMAND_STOP' value='3'/>
+      <enumitem name='COMMAND_ACCUMULATE_MOTION' value='4'/>
+      <enumitem name='COMMAND_DO_NOT_ACCUMULATE_MOTION' value='5'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='command' offset='16' etype='SimulationControlCommand' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

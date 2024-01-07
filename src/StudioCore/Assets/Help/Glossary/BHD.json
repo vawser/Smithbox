@@ -1,0 +1,11 @@
+{
+    "Title": "BHD",
+    "Tags": [
+        "Format",
+        "Archive"
+    ],
+    "Contents": [
+        "An archive of game data, compressed and sometimes encrypted.",
+        "Tools such as UXM and UDSFM can be used to dump their contents."
+    ]
+}

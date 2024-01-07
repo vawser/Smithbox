@@ -1,0 +1,6 @@
+<class name='hkMonitorStreamColorTableColorPair' version='1' signature='0x15892c33' size='16'>
+  <members>
+    <member name='colorName' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='color' offset='8' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

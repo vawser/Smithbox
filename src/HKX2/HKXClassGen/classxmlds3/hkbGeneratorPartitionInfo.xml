@@ -1,0 +1,8 @@
+<class name='hkbGeneratorPartitionInfo' version='1' signature='0xc5cf46e6' size='40'>
+  <members>
+    <member name='boneMask' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='8' flags='FLAGS_NONE' default='0'/>
+    <member name='partitionMask' offset='32' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='1' flags='FLAGS_NONE' default='0'/>
+    <member name='numBones' offset='36' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numMaxPartitions' offset='38' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

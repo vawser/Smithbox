@@ -1,0 +1,20 @@
+<class name='hkcdFourAabb' version='1' signature='0xad9bb6f1' size='96'>
+  <enums>
+    <enum name='BoundIndex' flags='00000000'>
+      <enumitem name='X_MIN' value='0'/>
+      <enumitem name='X_MAX' value='1'/>
+      <enumitem name='Y_MIN' value='2'/>
+      <enumitem name='Y_MAX' value='3'/>
+      <enumitem name='Z_MIN' value='4'/>
+      <enumitem name='Z_MAX' value='5'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='lx' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hx' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ly' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hy' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lz' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hz' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

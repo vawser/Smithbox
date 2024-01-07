@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <GparamGridRegionId AltName="GPARAM Grid Region ID" Wiki="Open local ID for MapGparam. Used for the XX part of m60_00_00XX.gparamxml" />
+    <Reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

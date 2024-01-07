@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="NPC_TYPE" type="u8">
+        <Option Value="0" Name="Standard" />
+        <Option Value="1" Name="Boss" />
+    </Enum>
+    <Enum Name="NPC_DRAW_TYPE" type="s8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="CHARACTER_INIT_SEX" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="VOW_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+    <Enum Name="CHARA_INIT_WEP_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
+  <Field>
+    <baseRec_mp AltName="Base FP Recovery Time" Wiki="Time until MP recovers 1 point (first decimal place)" />
+    <baseRec_sp AltName="Base Stamina Recovery Time" Wiki="Time to recover 1 point of stamina (first decimal place)" />
+    <red_Falldam AltName="Characer Head Land - Damage Reduction" Wiki="Damage reduction amount (%) that can be a cushion when scolded by another character from above (first decimal place)" />
+    <soul AltName="Runes" Wiki="The amount of soul you have at the beginning" />
+    <equip_Wep_Right AltName="Equipped Weapon: Right Primary" Wiki="Weapon ID of equipment parameter (right hand slot 1)" Refs="EquipParamWeapon(wepParamType_Right1=0),EquipParamCustomWeapon(wepParamType_Right1=1)" />
+    <equip_Subwep_Right AltName="Equipped Weapon: Right Secondary" Wiki="Weapon ID of equipment parameter (right hand slot 2)" Refs="EquipParamWeapon(wepParamType_Right2=0),EquipParamCustomWeapon(wepParamType_Right2=1)" />
+    <equip_Wep_Left AltName="Equipped Weapon: Left Primary" Wiki="Weapon ID of equipment parameter (left hand slot 1)" Refs="EquipParamWeapon(wepParamType_Left1=0),EquipParamCustomWeapon(wepParamType_Left1=1)" />
+    <equip_Subwep_Left AltName="Equipped Weapon: Left Secondary" Wiki="Weapon ID of equipment parameter (left hand slot 2)" Refs="EquipParamWeapon(wepParamType_Left2=0),EquipParamCustomWeapon(wepParamType_Left2=1)" />
+    <equip_Helm AltName="Equipped Armor: Head" Wiki="Equipment parameter armor ID (head armor)" Refs="EquipParamProtector" />
+    <equip_Armer AltName="Equipped Armor: Chest" Wiki="Equipment parameter armor ID (torso armor)" Refs="EquipParamProtector" />
+    <equip_Gaunt AltName="Equipped Armor: Arms" Wiki="Equipment parameter armor ID (arm armor)" Refs="EquipParamProtector" />
+    <equip_Leg AltName="Equipped Armor: Legs" Wiki="Equipment parameter armor ID (leg armor)" Refs="EquipParamProtector" />
+    <equip_Arrow AltName="Equipped Ammunition: Arrow Primary" Wiki="Weapon ID (arrow) of equipment parameter" Refs="EquipParamWeapon"/>
+    <equip_Bolt AltName="Equipped Ammunition: Bolt Primary" Wiki="Weapon ID (bolt) of equipment parameter" Refs="EquipParamWeapon"/>
+    <equip_SubArrow AltName="Equipped Ammunition: Arrow Secondary" Wiki="Weapon ID of equipment parameter (arrow reserve)" Refs="EquipParamWeapon"/>
+    <equip_SubBolt AltName="Equipped Ammunition: Bolt Secondary" Wiki="Weapon ID of equipment parameter (spare bolt)" Refs="EquipParamWeapon"/>
+    <equip_Accessory01 AltName="Equipped Accessory: Slot 1" Wiki="Equipment parameter decoration ID01" Refs="EquipParamAccessory"/>
+    <equip_Accessory02 AltName="Equipped Accessory: Slot 2" Wiki="Equipment parameter decoration ID02" Refs="EquipParamAccessory"/>
+    <equip_Accessory03 AltName="Equipped Accessory: Slot 3" Wiki="Equipment parameter decoration ID03" Refs="EquipParamAccessory"/>
+    <equip_Accessory04 AltName="Equipped Accessory: Slot 4" Wiki="Equipment parameter decoration ID04" Refs="EquipParamAccessory"/>
+    <pad8 AltName=""/>
+    <elixir_material00 AltName="Elixir Material 1" Wiki="Material ID1 for Elixir" />
+    <elixir_material01 AltName="Elixir Material 2" Wiki="Material ID2 for Elixir" />
+    <elixir_material02 AltName="Elixir Material 3" Wiki="Material ID3 for Elixir" />
+    <equip_Spell_01 AltName="Equipped Spell: Slot 1" Wiki="Initial placement magic / miracle ID01" Refs="Magic"/>
+    <equip_Spell_02 AltName="Equipped Spell: Slot 2" Wiki="Initial placement magic / miracle ID02" Refs="Magic"/>
+    <equip_Spell_03 AltName="Equipped Spell: Slot 3" Wiki="Initial placement magic / miracle ID03" Refs="Magic"/>
+    <equip_Spell_04 AltName="Equipped Spell: Slot 4" Wiki="Initial placement magic / miracle ID04" Refs="Magic"/>
+    <equip_Spell_05 AltName="Equipped Spell: Slot 5" Wiki="Initial placement magic / miracle ID05" Refs="Magic"/>
+    <equip_Spell_06 AltName="Equipped Spell: Slot 6" Wiki="Initial placement magic / miracle ID06" Refs="Magic"/>
+    <equip_Spell_07 AltName="Equipped Spell: Slot 7" Wiki="Initial placement magic / miracle ID07" Refs="Magic"/>
+    <item_01 AltName="Equipped Item: Slot 1" Wiki="Initial possession item ID 01" Refs="EquipParamGoods"/>
+    <item_02 AltName="Equipped Item: Slot 2" Wiki="Initial possession item ID 02" Refs="EquipParamGoods"/>
+    <item_03 AltName="Equipped Item: Slot 3" Wiki="Initial possession item ID 03" Refs="EquipParamGoods"/>
+    <item_04 AltName="Equipped Item: Slot 4" Wiki="Initial possession item ID 04" Refs="EquipParamGoods"/>
+    <item_05 AltName="Equipped Item: Slot 5" Wiki="Initial possession item ID 05" Refs="EquipParamGoods"/>
+    <item_06 AltName="Equipped Item: Slot 6" Wiki="Initial possession item ID 06" Refs="EquipParamGoods"/>
+    <item_07 AltName="Equipped Item: Slot 7" Wiki="Initial possession item ID 07" Refs="EquipParamGoods"/>
+    <item_08 AltName="Equipped Item: Slot 8" Wiki="Initial possession item ID 08" Refs="EquipParamGoods"/>
+    <item_09 AltName="Equipped Item: Slot 9" Wiki="Initial possession item ID 09" Refs="EquipParamGoods"/>
+    <item_10 AltName="Equipped Item: Slot 10" Wiki="Initial possession item ID 10" Refs="EquipParamGoods"/>
+    <npcPlayerFaceGenId AltName="NPC Player - Face Gen ID" Wiki="Facegen parameter ID used by NPC players. Not used by normal players." Refs="FaceParam"/>
+    <npcPlayerThinkId AltName="NPC Player - Think ID" Wiki="NPC Thinking Parameter ID used by NPC players. Not used by normal players." Refs="NpcThinkParam"/>
+    <baseHp AltName="Base HP" Wiki="Basic value of HP (actually, it is corrected by the calculation formula)" />
+    <baseMp AltName="Base FP" Wiki="Basic value of MP (actually, it is corrected by the calculation formula)" />
+    <baseSp AltName="Base Stamina" Wiki="Basic value of stamina (actually, it is corrected by the formula)" />
+    <arrowNum AltName="Equipped Ammunition: Arrow Primary Count" Wiki="Initial number of arrows" />
+    <boltNum AltName="Equipped Ammunition: Bolt Primary Count" Wiki="Initial number of bolts" />
+    <subArrowNum AltName="Equipped Ammunition: Arrow Secondary Count" Wiki="Initial number of arrows" />
+    <subBoltNum AltName="Equipped Ammunition: Bolt Secondary Count" Wiki="Initial number of bolts" />
+    <pad4 AltName=""/>
+    <soulLv AltName="Level" Wiki="Initial Lv" />
+    <baseVit AltName="Vigor" Wiki="Basic value of physical fitness" />
+    <baseWil AltName="Attunement" Wiki="Basic value of spirit" />
+    <baseEnd AltName="Endurance" Wiki="Robust base value" />
+    <baseStr AltName="Strength" Wiki="Basic value of muscle strength" />
+    <baseDex AltName="Dexterity" Wiki="Basic value of agility" />
+    <baseMag AltName="Intelligence" Wiki="Basic value of magic power" />
+    <baseFai AltName="Faith" Wiki="Basic value of faith" />
+    <baseLuc AltName="Arcane" Wiki="Basic value of luck" />
+    <baseHeroPoint AltName="Humanity" Wiki="Basic value of human nature" />
+    <baseDurability AltName="Vitality" Wiki="Basic value of endurance" />
+    <itemNum_01 AltName="Equipped Item: Slot 1 Amount" Wiki="Initial possession number of items 01" />
+    <itemNum_02 AltName="Equipped Item: Slot 2 Amount" Wiki="Initial possession number of items 02" />
+    <itemNum_03 AltName="Equipped Item: Slot 3 Amount" Wiki="Initial possession number of items 03" />
+    <itemNum_04 AltName="Equipped Item: Slot 4 Amount" Wiki="Initial possession number of items 04" />
+    <itemNum_05 AltName="Equipped Item: Slot 5 Amount" Wiki="Initial possession number of items 05" />
+    <itemNum_06 AltName="Equipped Item: Slot 6 Amount" Wiki="Initial possession number of items 06" />
+    <itemNum_07 AltName="Equipped Item: Slot 7 Amount" Wiki="Initial possession number of items 07" />
+    <itemNum_08 AltName="Equipped Item: Slot 8 Amount" Wiki="Initial possession number of items 08" />
+    <itemNum_09 AltName="Equipped Item: Slot 9 Amount" Wiki="Initial possession number of items 09" />
+    <itemNum_10 AltName="Equipped Item: Slot 10 Amount" Wiki="Initial possession number of items 10" />
+    <pad5 AltName=""/>
+    <gestureId0 AltName="Equipped Gesture: Slot 0" Wiki="Gesture 0th (0 if you want to play EzState gesture 0)" />
+    <gestureId1 AltName="Equipped Gesture: Slot 1" Wiki="Gesture 1st (0 if you want to play EzState gesture 0)" />
+    <gestureId2 AltName="Equipped Gesture: Slot 2" Wiki="Gesture 2nd (0 if you want to play EzState's gesture 0)" />
+    <gestureId3 AltName="Equipped Gesture: Slot 3" Wiki="Gesture 3rd (0 if you want to play EzState gesture 0)" />
+    <gestureId4 AltName="Equipped Gesture: Slot 4" Wiki="Gesture 4th (0 if you want to play EzState's gesture 0)" />
+    <gestureId5 AltName="Equipped Gesture: Slot 5" Wiki="Gesture 5th (0 if you want to play EzState gesture 0)" />
+    <gestureId6 AltName="Equipped Gesture: Slot 6" Wiki="Gesture 6th (0 if you want to play EzState gesture 0)" />
+    <npcPlayerType AltName="NPC Player - Type" Wiki="NPC type used by NPC players. Not used by normal players." Enum="NPC_TYPE" />
+    <npcPlayerDrawType AltName="NPC Player - Draw Type" Wiki="Drawing type used by NPC players. Not used by normal players." Enum="NPC_DRAW_TYPE" />
+    <npcPlayerSex AltName="NPC Player - Sex" Wiki="The gender used by NPC players. It is not reflected to normal players." Enum="CHARACTER_INIT_SEX" />
+    <vowType AltName="Vow Type" Wiki="Pledge type (None: 0)" Enum="VOW_TYPE" />
+    <isSyncTarget AltName="Is Sync Target" Wiki="Is it a send / receive target (for copy NPCs)?" IsBool="" />
+    <pad AltName=""/>
+    <pad6 AltName=""/>
+    <wepParamType_Right1 AltName="Weapon Param Type - Right Primary" Wiki="Right-handed weapon slot 1 parameter reference" Enum="CHARA_INIT_WEP_TYPE" />
+    <wepParamType_Right2 AltName="Weapon Param Type - Right Secondary" Wiki="Right-handed weapon slot 2 parameter reference" Enum="CHARA_INIT_WEP_TYPE" />
+    <wepParamType_Right3 AltName="Weapon Param Type - Right Tertiary" Wiki="Right-handed weapon slot 3 parameter reference" Enum="CHARA_INIT_WEP_TYPE" />
+    <wepParamType_Left1 AltName="Weapon Param Type - Left Primary" Wiki="Parameter reference for left-handed weapon slot 1" Enum="CHARA_INIT_WEP_TYPE" />
+    <wepParamType_Left2 AltName="Weapon Param Type - Left Secondary" Wiki="Parameter reference for left-handed weapon slot 2" Enum="CHARA_INIT_WEP_TYPE" />
+    <wepParamType_Left3 AltName="Weapon Param Type - Left Tertiary" Wiki="Parameter reference for left-handed weapon slot 3" Enum="CHARA_INIT_WEP_TYPE" />
+    <pad2 AltName=""/>
+    <equip_Subwep_Right3 AltName="Equipped Weapon: Right Tertiary" Wiki="Weapon ID of equipment parameter (right hand slot 3)" Refs="EquipParamWeapon(wepParamType_Right3=0),EquipParamCustomWeapon(wepParamType_Right3=1)"/>
+    <equip_Subwep_Left3 AltName="Equipped Weapon: Left Tertiary" Wiki="Weapon ID of equipment parameter (left hand slot 3)" Refs="EquipParamWeapon(wepParamType_Left3=0),EquipParamCustomWeapon(wepParamType_Left3=1)"/>
+    <pad3 AltName=""/>
+    <secondaryItem_01 AltName="Stored Item: Slot 1" Wiki="Item ID 01 of the second shortcut initial possession" Refs="EquipParamGoods"/>
+    <secondaryItem_02 AltName="Stored Item: Slot 2" Wiki="Item ID 02 of the second shortcut initial possession" Refs="EquipParamGoods"/>
+    <secondaryItem_03 AltName="Stored Item: Slot 3" Wiki="Item ID 03 of the second shortcut initial possession" Refs="EquipParamGoods"/>
+    <secondaryItem_04 AltName="Stored Item: Slot 4" Wiki="Item ID 04 of the second shortcut initial possession" Refs="EquipParamGoods"/>
+    <secondaryItem_05 AltName="Stored Item: Slot 5" Wiki="Item ID 05 of the second shortcut initial possession" Refs="EquipParamGoods"/>
+    <secondaryItem_06 AltName="Stored Item: Slot 6" Wiki="Item ID 06 of the second shortcut initial possession" Refs="EquipParamGoods"/>
+    <secondaryItemNum_01 AltName="Stored Item: Slot 1 Count" Wiki="2nd Shortcut Initial possession number of items 01" />
+    <secondaryItemNum_02 AltName="Stored Item: Slot 2 Count" Wiki="2nd Shortcut Initial possession number of items 02" />
+    <secondaryItemNum_03 AltName="Stored Item: Slot 3 Count" Wiki="2nd Shortcut Initial possession number of items 03" />
+    <secondaryItemNum_04 AltName="Stored Item: Slot 4 Count" Wiki="2nd Shortcut Initial possession number of items 04" />
+    <secondaryItemNum_05 AltName="Stored Item: Slot 5 Count" Wiki="2nd Shortcut Initial possession number of items 05" />
+    <secondaryItemNum_06 AltName="Stored Item: Slot 6 Count" Wiki="2nd Shortcut Initial possession number of items 06" />
+    <HpEstMax AltName="HP Flask - Max Possession Limit" Wiki="HP Est Bottle Possession Limit" />
+    <MpEstMax AltName="FP Flask - Max Possession Limit" Wiki="MP Est Bottle Possession Limit" />
+    <pad7 AltName=""/>
+    <voiceType AltName="Voice Type" Wiki="Voice type" />
+    <reserve AltName=""/>
+  </Field>
+  <Self Wiki="Defines instances of c0000 (player) characters in the game, including starting classes.\nNote that many fields are not used and remain from earlier games, particularly with respect to starting classes.\nStarting classes begin at 3000 with consecutive IDs, and starting gifts begin at 2400 likewise." AlternativeOrder="
+baseRec_mp,baseRec_sp,red_Falldam,soul,-,
+equip_Wep_Right,equip_Subwep_Right,equip_Subwep_Right3,equip_Wep_Left,equip_Subwep_Left,equip_Subwep_Left3,-,
+wepParamType_Right1,wepParamType_Right2,wepParamType_Right3,wepParamType_Left1,wepParamType_Left2,wepParamType_Left3,
+equip_Helm,equip_Armer,equip_Gaunt,equip_Leg,-,
+equip_Arrow,equip_SubArrow,equip_Bolt,equip_SubBolt,-,
+arrowNum,subArrowNum,boltNum,subBoltNum,-,
+equip_Accessory01,equip_Accessory02,equip_Accessory03,equip_Accessory04,-,
+HpEstMax,MpEstMax,elixir_material00,elixir_material01,elixir_material02,-,
+equip_Spell_01,equip_Spell_02,equip_Spell_03,equip_Spell_04,equip_Spell_05,equip_Spell_06,equip_Spell_07,-,
+item_01,item_02,item_03,item_04,item_05,item_06,item_07,item_08,item_09,item_10,-,
+itemNum_01,itemNum_02,itemNum_03,itemNum_04,itemNum_05,itemNum_06,itemNum_07,itemNum_08,itemNum_09,itemNum_10,-,
+npcPlayerFaceGenId,npcPlayerSex,voiceType,npcPlayerDrawType,-,
+npcPlayerThinkId,npcPlayerType,vowType,isSyncTarget,-,
+baseHp,baseMp,baseSp,-,soulLv,baseVit,baseWil,baseEnd,baseStr,baseDex,baseMag,baseFai,baseLuc,baseHeroPoint,baseDurability,-,
+gestureId0,gestureId1,gestureId2,gestureId3,gestureId4,gestureId5,gestureId6,-,
+secondaryItem_01,secondaryItem_02,secondaryItem_03,secondaryItem_04,secondaryItem_05,secondaryItem_06,-,
+secondaryItemNum_01,secondaryItemNum_02,secondaryItemNum_03,secondaryItemNum_04,secondaryItemNum_05,secondaryItemNum_06,-,"/>
+</PARAMMETA>

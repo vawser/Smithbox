@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EquipParamGenerator_TENTATIVE</ParamType>
+  <DataVersion>7</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="s16 Unk0x04"></Field>
+    <Field Def="u16 menuModelId"></Field>
+    <Field Def="s32 UnkInt0x08"></Field>
+    <Field Def="f32 weight"></Field>
+    <Field Def="s32 energyCapacity"></Field>
+    <Field Def="s32 energyOutput"></Field>
+    <Field Def="s32 enLoad"></Field>
+    <Field Def="f32 enRecharge"></Field>
+    <Field Def="f32 supplyRecovery">
+      <Description>It an inverse multipliers. 1x == 1000 (base value), 4x == 250, etc. Game value == 1000/x.</Description>
+    </Field>
+    <Field Def="f32 postRecoveryEnSupply">
+      <Description>It an inverse multipliers. 1x == 1000 (base value), 4x == 250, etc. Game value == 1000/x.</Description>
+    </Field>
+    <Field Def="s32 energyFirearmSpec">
+      <Description>It an inverse multipliers. 1x == 1000 (base value), 4x == 250, etc. Game value == 1000/x.</Description>
+    </Field>
+    <Field Def="s32 Unk0x2C"></Field>
+    <Field Def="s32 Unk0x30"></Field>
+    <Field Def="s32 Unk0x34"></Field>
+    <Field Def="s16 Unk0x38"></Field>
+    <Field Def="u16 corporationTextureId"></Field>
+    <Field Def="s32 Unk0x3C"></Field>
+    <Field Def="s32 Unk0x40"></Field>
+    <Field Def="f32 Unk0x44"></Field>
+    <Field Def="f32 Unk0x48"></Field>
+    <Field Def="f32 Unk0x4C"></Field>
+    <Field Def="s32 Unk0x50"></Field>
+    <Field Def="s32 Unk0x54"></Field>
+    <Field Def="s32 Unk0x58"></Field>
+    <Field Def="s32 Unk0x5C"></Field>
+    <Field Def="s32 Unk0x60"></Field>
+    <Field Def="s32 Unk0x64"></Field>
+    <Field Def="s32 Unk0x68"></Field>
+    <Field Def="s32 Unk0x6C"></Field>
+    <Field Def="s32 Unk0x70"></Field>
+    <Field Def="s32 Unk0x74"></Field>
+    <Field Def="s32 Unk0x78"></Field>
+    <Field Def="s32 Unk0x7C"></Field>
+    <Field Def="s32 Unk0x80"></Field>
+    <Field Def="s32 Unk0x84"></Field>
+    <Field Def="s32 Unk0x88"></Field>
+    <Field Def="s32 Unk0x8C"></Field>
+    <Field Def="s32 Unk0x90"></Field>
+    <Field Def="s32 Unk0x94"></Field>
+    <Field Def="s32 Unk0x98"></Field>
+    <Field Def="s32 Unk0x9C"></Field>
+    <Field Def="u16 Unk0xA1"></Field>
+    <Field Def="s8 colorSfxType"></Field>
+    <Field Def="u8 Unk0xA3"></Field>
+    <Field Def="s32 UnkInt0xA4"></Field>
+    <Field Def="s32 Unk0xA8"></Field>
+    <Field Def="s32 Unk0xAC"></Field>
+    <Field Def="s32 Unk0xB0"></Field>
+    <Field Def="s32 Unk0xB4"></Field>
+    <Field Def="s32 Unk0xB8"></Field>
+    <Field Def="s32 Unk0xBC"></Field>
+    <Field Def="s32 Unk0xC0"></Field>
+    <Field Def="s32 Unk0xC4"></Field>
+    <Field Def="s32 Unk0xC8"></Field>
+    <Field Def="s32 Unk0xCC"></Field>
+    <Field Def="s32 Unk0xD0"></Field>
+    <Field Def="s32 Unk0xD4"></Field>
+    <Field Def="s32 Unk0xD8"></Field>
+    <Field Def="s32 Unk0xDC"></Field>
+    <Field Def="s32 Unk0xE0"></Field>
+    <Field Def="s32 Unk0xE4"></Field>
+    <Field Def="s32 Unk0xE8"></Field>
+    <Field Def="s32 Unk0xEC"></Field>
+    <Field Def="s32 Unk0xF0"></Field>
+    <Field Def="s32 Unk0xF4"></Field>
+    <Field Def="s32 Unk0xF8"></Field>
+    <Field Def="s32 Unk0xFC"></Field>
+    <Field Def="s32 Unk0x100"></Field>
+    <Field Def="s32 Unk0x104"></Field>
+    <Field Def="s32 Unk0x108"></Field>
+    <Field Def="s32 Unk0x10C"></Field>
+    <Field Def="s32 Unk0x110"></Field>
+    <Field Def="s32 Unk0x114"></Field>
+    <Field Def="s32 Unk0x118"></Field>
+    <Field Def="s32 Unk0x11C"></Field>
+    <Field Def="s32 Unk0x120"></Field>
+    <Field Def="s32 Unk0x124"></Field>
+    <Field Def="s32 Unk0x128"></Field>
+    <Field Def="s32 Unk0x12C"></Field>
+    <Field Def="s32 Unk0x130"></Field>
+    <Field Def="s32 Unk0x134"></Field>
+    <Field Def="s32 Unk0x138"></Field>
+    <Field Def="s32 Unk0x13C"></Field>
+    <Field Def="s32 Unk0x140"></Field>
+    <Field Def="s32 Unk0x144"></Field>
+    <Field Def="s32 Unk0x148"></Field>
+    <Field Def="s32 Unk0x14C"></Field>
+    <Field Def="s32 Unk0x150"></Field>
+  </Fields>
+</PARAMDEF>

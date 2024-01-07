@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <openEventFlagId AltName="Open - Event Flag ID" Wiki="Event flag ID of open condition" />
+    <openTravelAreaLeft AltName="Open - Traversal Area - X Min" Wiki="Coordinates of the traversal area that expands when opened (Xmin)" />
+    <openTravelAreaRight AltName="Open - Traversal Area - X Max" Wiki="Coordinates of the traversal area that expands when opened (Xmax)" />
+    <openTravelAreaTop AltName="Open - Traversal Area - Y Min" Wiki="Coordinates of the traversal area that expands when opened (Ymin)" />
+    <openTravelAreaBottom AltName="Open - Traversal Area - Y Max" Wiki="Coordinates of the traversal area that expands when opened (Ymax)" />
+    <acquisitionEventFlagId AltName="Acquisition - Event Flag ID" Wiki="Event flag ID of the acquisition production start condition. Assuming that only one of the map fragments is On" />
+    <acquisitionEventScale AltName="Acquisition - Display Scale" Wiki="Display magnification at the time of acquisition production" />
+    <acquisitionEventCenterX AltName="Acquisition - Center X Coordinate" Wiki="Center coordinates (X) at the time of acquisition production" />
+    <acquisitionEventCenterY AltName="Acquisition - Center Y Coordinate" Wiki="For the central seat at the time of acquisition production (Y)" />
+    <acquisitionEventResScale AltName="Acquisition - Display Resource Scale" Wiki="Display magnification of blindfold resources for acquisition production" />
+    <acquisitionEventResOffsetX AltName="Acquisition - Resource Offset X" Wiki="Display position offset (X) of blindfold resource for acquisition production" />
+    <acquisitionEventResOffsetY AltName="Acquisition - Resource Offset Y" Wiki="Offset of display position of blindfold resource for acquisition production (Y)" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

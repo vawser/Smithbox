@@ -1,0 +1,8 @@
+<class name='hkcdPlanarGeometryPrimitivesCollection28' version='1' signature='0x3921c763' size='3472' parent='hkReferencedObject'>
+  <members>
+    <member name='storage' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='primaryBitmap' offset='32' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='secondaryBitmaps' offset='36' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='26' flags='FLAGS_NONE' default='0'/>
+    <member name='freeBlocks' offset='140' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='832' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

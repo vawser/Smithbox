@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>GEM_CATEGORY_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 SortNo" />
+    <Field Def="f32 manifestRate" />
+    <Field Def="s32 directionalId" />
+    <Field Def="s32 cateGroupId" />
+    <Field Def="s32 excludeGroupId" />
+    <Field Def="u8 isNegative:1" />
+    <Field Def="u8 enableSlotTypeA:1 = 1" />
+    <Field Def="u8 enableSlotTypeB:1 = 1" />
+    <Field Def="u8 enableSlotTypeC:1 = 1" />
+    <Field Def="u8 enableSlotTypeD:1 = 1" />
+    <Field Def="u8 enableSlotTypeE:1 = 1" />
+    <Field Def="u8 enableSlotTypeF:1 = 1" />
+    <Field Def="u8 holygrailTypeGroup:1" />
+    <Field Def="dummy8 pad1[3]" />
+    <Field Def="s32 affinityCateId_0 = -1" />
+    <Field Def="f32 affinityModifyRate_0" />
+    <Field Def="s32 affinityCateId_1 = -1" />
+    <Field Def="f32 affinityModifyRate_1" />
+    <Field Def="s32 affinityCateId_2 = -1" />
+    <Field Def="f32 affinityModifyRate_2" />
+    <Field Def="s32 affinityCateId_3 = -1" />
+    <Field Def="f32 affinityModifyRate_3" />
+  </Fields>
+</PARAMDEF>

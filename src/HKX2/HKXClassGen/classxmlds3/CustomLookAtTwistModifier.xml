@@ -1,0 +1,44 @@
+<class name='CustomLookAtTwistModifier' version='1' signature='0xf04d8abf' size='192' parent='hkbModifier'>
+  <enums>
+    <enum name='MultiRotationAxisType' flags='00000000'>
+      <enumitem name='AxisXY' value='0'/>
+      <enumitem name='AxisYX' value='1'/>
+    </enum>
+    <enum name='SetAngleMethod' flags='00000000'>
+      <enumitem name='LINEAR' value='0'/>
+      <enumitem name='RAMPED' value='1'/>
+    </enum>
+    <enum name='RotationAxisCoordinates' flags='00000000'>
+      <enumitem name='ROTATION_AXIS_IN_MODEL_COORDINATES' value='0'/>
+      <enumitem name='ROTATION_AXIS_IN_LOCAL_COORDINATES' value='1'/>
+    </enum>
+    <enum name='GainState' flags='00000000'>
+      <enumitem name='GainStateTargetGain' value='0'/>
+      <enumitem name='GainStateOn' value='1'/>
+      <enumitem name='GainStateOff' value='2'/>
+    </enum>
+    <enum name='RotationAxisType' flags='00000000'>
+      <enumitem name='AxisX' value='0'/>
+      <enumitem name='AxisY' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='ModifierID' offset='88' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotationAxisType' offset='92' etype='MultiRotationAxisType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='SensingDummyPoly' offset='96' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='twistParam' offset='104' ctype='CustomLookAtTwistModifierTwistParam' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='UpLimitAngle' offset='120' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='DownLimitAngle' offset='124' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='RightLimitAngle' offset='128' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='LeftLimitAngle' offset='132' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='UpMinimumAngle' offset='136' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='DownMinimumAngle' offset='140' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='RightMinimumAngle' offset='144' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='LeftMinimumAngle' offset='148' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='SensingAngle' offset='152' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='setAngleMethod' offset='154' etype='SetAngleMethod' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isAdditive' offset='155' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='twistModifierXArray' offset='160' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='twistModifierYArray' offset='176' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

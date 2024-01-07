@@ -1,0 +1,23 @@
+<class name='hkaiPointCloudSilhouetteGenerator' version='1' signature='0xdef85332' size='160' parent='hkaiSilhouetteGenerator'>
+  <enums>
+    <enum name='DetailLevel' flags='00000000'>
+      <enumitem name='DETAIL_INVALID' value='0'/>
+      <enumitem name='DETAIL_FULL' value='1'/>
+      <enumitem name='DETAIL_OBB' value='2'/>
+      <enumitem name='DETAIL_CONVEX_HULL' value='3'/>
+    </enum>
+    <enum name='PointCloudFlagBits' flags='00000000'>
+      <enumitem name='LOCAL_POINTS_CHANGED' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='localAabb' offset='80' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localPoints' offset='112' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='silhouetteSizes' offset='128' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldTolerance' offset='144' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='silhouetteDetailLevel' offset='148' etype='DetailLevel' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='149' etype='PointCloudFlagBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localPointsChanged' offset='150' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isEnabled' offset='151' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

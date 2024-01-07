@@ -1,0 +1,5 @@
+<class name='hkxVertexVectorDataChannel' version='1' signature='0x78980cff' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='perVertexVectors' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

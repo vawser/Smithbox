@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <variationId AltName="Behavior Variation ID" Wiki="Used to link weapon with BehaviorParam, and from there projectiles/attacks. Corresponds with variationId in BehaviorParam." />
+    <inheritanceWeaponParamId AltName="Weapon Inheritance" Refs="EquipParamWeapon" Wiki="Inherits fields from referenced weapon." />
+    <attackActionParamId AltName="Attack Action Param ID" Refs="AttackActionParam_PC" />
+    <thrustersParamId AltName="Attack Action Param ID" Refs="ThrustersParam_PC" />
+    <menuTextID AltName="menuTextID" FmgRef="Modern_MenuText" />
+    <equipmentMenuManageCategoryParamId AltName="equipmentMenuManageCategoryParamId" Refs="EquipmentMenuManageCategoryParam" />
+    <isBackSwapWeapon AltName="Is Back Swap Weapon" IsBool="" Wiki="If true, this weapon will swap to hands from back instead of firing from back." />
+    <chargeTime_Level1 AltName="Charge Time (Level 1)" Wiki="Amount of time (in seconds) it takes to fully charge to level 1." />
+    <chargeTime_Level2 AltName="Charge Time (Level 2)" Wiki="Amount of time (in seconds) it takes to fully charge to level 2, for when weapon permits charging past level 1." />
+    <isMeleeSpecialization AltName="Melee Specialization" IsBool="" Wiki="Damage benefits from Melee Specialization modifiers." />
+    <isEnergyFirearmSpecialization AltName="Energy Firearm Specialization" IsBool="" Wiki="Damage benefits from Energy Firearm Specialization modifiers." />
+    <unkIsSpecializationType_3 AltName="" IsBool="" />
+    <unkIsSpecializationType_4 AltName="" IsBool="" />
+    <unkIsSpecializationType_5 AltName="" IsBool="" />
+    <unkIsSpecializationType_6 AltName="" IsBool="" />
+    <unkIsSpecializationType_7 AltName="" IsBool="" />
+    <unkIsSpecializationType_8 AltName="" IsBool="" />
+    <homingRequiredDist AltName="Homing: Required Distance" Wiki="Maximum distance to target when firing for homing to function." />
+    <pulseArmorRadius AltName="Pulse Armor: Radius" Wiki="Size of effective pulse armor (see pulseArmorVisualRadius for visual radius)." />
+    <pulseArmorVisualRadius AltName="Pulse Armor: Visual Radius" Wiki="Size of pulse armor visuals (see pulseArmorRadius for effective radius)." />
+    <shieldGuardFacingAngleHorizontalOffset AltName="Pulse Shield: Deployment Angle Offset (Horizontal)" Wiki="Horizontal offset for shield guard facing angle.\nPositive values = angle right, negative values = angle left." />
+    <shieldGuardFacingAngleVerticalOffset AltName="Pulse Shield: Deployment Angle Offset (Vertical)" Wiki="Vertical offset for shield guard facing angle.\nPositive values = angle up, negative values = angle down." />
+    <shieldGuardAngleHorizontal AltName="Pulse Shield: Deployment Range (Horizontal)" Wiki="Horizontal guard angle of shields. Value displayed in UI as Deployment Range (times 2)." />
+    <shieldGuardAngleVertical AltName="Pulse Shield: Deployment Range (Vertical)" Wiki="Vertical guard angle of shields." />
+  </Field>
+  <Self />
+</PARAMMETA>

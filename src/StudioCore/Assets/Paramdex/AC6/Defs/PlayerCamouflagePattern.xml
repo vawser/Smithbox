@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>PLAYER_CAMOUFLAGE_PATTERN_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 uvScaleSmall"></Field>
+    <Field Def="f32 uvScaleMedium"></Field>
+    <Field Def="f32 uvScaleLarge"></Field>
+    <Field Def="s32 Unk0x0C"></Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,40 @@
+101 Intrusion level 1 -- 乱入 レベル1
+102 Intrusion level 2 -- 乱入 レベル2
+103 Intrusion level 3 -- 乱入 レベル3
+104 Intrusion level 4 -- 乱入 レベル4
+105 Intrusion level 5 -- 乱入 レベル5
+106 Intrusion level 6 -- 乱入 レベル6
+107 Intrusion level 7 -- 乱入 レベル7
+108 Intrusion level 8 -- 乱入 レベル8
+109 Intrusion level 9 -- 乱入 レベル9
+110 Intrusion level 10 -- 乱入 レベル10
+201 Map Guardian (Forest) Level 1 -- マップ守護（森） レベル1
+202 Map Guardian (Forest) Level 2 -- マップ守護（森） レベル2
+203 Map Guardian (Forest) Level 3 -- マップ守護（森） レベル3
+204 Map Guardian (Forest) Level 4 -- マップ守護（森） レベル4
+205 Map Guardian (Forest) Level 5 -- マップ守護（森） レベル5
+206 Map Guardian (Forest) Level 6 -- マップ守護（森） レベル6
+207 Map Guardian (Forest) Level 7 -- マップ守護（森） レベル7
+208 Map Guardian (Forest) Level 8 -- マップ守護（森） レベル8
+209 Map Guardian (Forest) Level 9 -- マップ守護（森） レベル9
+210 Map Guardian (Forest) Level 10 -- マップ守護（森） レベル10
+301 Map Guardian (Anor) Level 1 -- マップ守護（アノール） レベル1
+302 Map Guardian (Anor) Level 2 -- マップ守護（アノール） レベル2
+303 Map Guardian (Anor) Level 3 -- マップ守護（アノール） レベル3
+304 Map Guardian (Anor) Level 4 -- マップ守護（アノール） レベル4
+305 Map Guardian (Anor) Level 5 -- マップ守護（アノール） レベル5
+306 Map Guardian (Anor) Level 6 -- マップ守護（アノール） レベル6
+307 Map Guardian (Anor) Level 7 -- マップ守護（アノール） レベル7
+308 Map Guardian (Anor) Level 8 -- マップ守護（アノール） レベル8
+309 Map Guardian (Anor) Level 9 -- マップ守護（アノール） レベル9
+310 Map Guardian (Anor) Level 10 -- マップ守護（アノール） レベル10
+401 Red hunting level 1 -- 赤狩り レベル1
+402 Red hunting level 2 -- 赤狩り レベル2
+403 Red hunting level 3 -- 赤狩り レベル3
+404 Red hunting level 4 -- 赤狩り レベル4
+405 Red hunting level 5 -- 赤狩り レベル5
+406 Red hunting level 6 -- 赤狩り レベル6
+407 Red hunting level 7 -- 赤狩り レベル7
+408 Red hunting level 8 -- 赤狩り レベル8
+409 Red hunting level 9 -- 赤狩り レベル9
+410 Red hunting level 10 -- 赤狩り レベル10

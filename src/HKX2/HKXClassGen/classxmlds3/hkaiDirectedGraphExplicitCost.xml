@@ -1,0 +1,23 @@
+<class name='hkaiDirectedGraphExplicitCost' version='1' signature='0x2f02d92c' size='120' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Constants' flags='00000000'>
+      <enumitem name='INVALID_NODE_INDEX' value='-1'/>
+      <enumitem name='INVALID_EDGE_INDEX' value='-1'/>
+      <enumitem name='INVALID_VERTEX_INDEX' value='-1'/>
+    </enum>
+    <enum name='EdgeBits' flags='00000000'>
+      <enumitem name='EDGE_IS_USER' value='2'/>
+      <enumitem name='EDGE_EXTERNAL_OPPOSITE' value='64'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='positions' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nodes' offset='32' ctype='hkaiDirectedGraphExplicitCostNode' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edges' offset='48' ctype='hkaiDirectedGraphExplicitCostEdge' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nodeData' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeData' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nodeDataStriding' offset='96' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='edgeDataStriding' offset='100' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='streamingSets' offset='104' ctype='hkaiStreamingSet' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

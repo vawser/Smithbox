@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <LayoutPath AltName="Layout Path" Wiki="" />
+    <PropertyID AltName="Menu Property ID" Wiki="" Refs="MenuPropertySpecParam" />
+    <CaptionTextID AltName="Caption Text ID" Wiki="If a valid text ID is set, this will be displayed in preference to the property name." FmgRef="Modern_MenuText"/>
+    <HelpTextID AltName="Help Text ID" Wiki="Only if this is a valid text ID will it be selectable in the field help." FmgRef="Modern_MenuText"/>
+    <reserved AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

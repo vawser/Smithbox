@@ -1,0 +1,7 @@
+<class name='hknpCircularSurfaceVelocity' version='1' signature='0xb2d4ea45' size='64' parent='hknpSurfaceVelocity'>
+  <members>
+    <member name='velocityIsLocalSpace' offset='16' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pivot' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='angularVelocity' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

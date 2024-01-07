@@ -1,0 +1,5 @@
+<class name='hkbRealEventPayload' version='1' signature='0x1897788e' size='24' parent='hkbEventPayload'>
+  <members>
+    <member name='data' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

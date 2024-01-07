@@ -1,0 +1,18 @@
+<class name='hkaFootstepAnalysisInfo' version='1' signature='0x92d00fb7' size='208' parent='hkReferencedObject'>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_CHAR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nameStrike' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_CHAR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nameLift' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_CHAR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nameLock' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_CHAR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='nameUnlock' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_CHAR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minPos' offset='96' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxPos' offset='112' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minVel' offset='128' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxVel' offset='144' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='allBonesDown' offset='160' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='anyBonesDown' offset='176' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='posTol' offset='192' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='velTol' offset='196' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='duration' offset='200' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

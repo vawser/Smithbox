@@ -1,0 +1,7 @@
+<class name='hkxVertexAnimationUsageMap' version='1' signature='0x46f9168e' size='4'>
+  <members>
+    <member name='use' offset='0' etype='DataUsage' vtype='TYPE_ENUM' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useIndexOrig' offset='2' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useIndexLocal' offset='3' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

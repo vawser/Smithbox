@@ -1,0 +1,19 @@
+<class name='hkpCylinderShape' version='1' signature='0xfaae1f08' size='112' parent='hkpConvexShape'>
+  <enums>
+    <enum name='VertexIdEncoding' flags='00000000'>
+      <enumitem name='VERTEX_ID_ENCODING_IS_BASE_A_SHIFT' value='7'/>
+      <enumitem name='VERTEX_ID_ENCODING_SIN_SIGN_SHIFT' value='6'/>
+      <enumitem name='VERTEX_ID_ENCODING_COS_SIGN_SHIFT' value='5'/>
+      <enumitem name='VERTEX_ID_ENCODING_IS_SIN_LESSER_SHIFT' value='4'/>
+      <enumitem name='VERTEX_ID_ENCODING_VALUE_MASK' value='15'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='cylRadius' offset='40' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cylBaseRadiusFactorForHeightFieldCollisions' offset='44' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexA' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexB' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='perpendicular1' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='perpendicular2' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

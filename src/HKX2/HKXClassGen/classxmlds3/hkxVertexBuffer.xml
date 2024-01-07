@@ -1,0 +1,6 @@
+<class name='hkxVertexBuffer' version='1' signature='0xc7213b44' size='136' parent='hkReferencedObject'>
+  <members>
+    <member name='data' offset='16' ctype='hkxVertexBufferVertexData' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='desc' offset='120' ctype='hkxVertexDescription' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

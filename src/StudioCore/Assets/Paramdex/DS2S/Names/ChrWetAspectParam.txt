@@ -1,0 +1,6 @@
+1 Water -- 水
+2 Poison wet -- 毒濡れ
+3 Oil wet -- 油濡れ
+4 Steel -- 鋼鉄
+5 Mirror -- 鏡
+6 Petrified -- 石化

@@ -1,0 +1,6 @@
+<class name='hkcdPlanarSolidNodeStorage' version='1' signature='0x67f1579' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='storage' offset='16' ctype='hkcdPlanarSolidNode' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='firstFreeNodeId' offset='32' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

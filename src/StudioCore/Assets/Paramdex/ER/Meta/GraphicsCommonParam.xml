@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <hitBulletDecalOffset_HitIns AltName="Hit Bullet Decal Offset - Hit INS" Wiki="The position where the decal that occurs when hitting HIT INS is offset by this value in the normal direction." />
+    <reserved02 AltName=""/>
+    <charaWetDecalFadeRange AltName="Character Wet Decal Fade Range" Wiki="Fade range that erases decals when the character gets wet [m]" />
+    <reserved04 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

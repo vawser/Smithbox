@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ROLE_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 teamType"></Field>
+    <Field Def="dummy8 pad0[3]"></Field>
+    <Field Def="s32 phantomParamId"></Field>
+    <Field Def="s32 spEffectID0"></Field>
+    <Field Def="s32 spEffectID1"></Field>
+    <Field Def="s32 spEffectID2"></Field>
+    <Field Def="s32 spEffectID3"></Field>
+    <Field Def="s32 spEffectID4"></Field>
+    <Field Def="s32 spEffectID5"></Field>
+    <Field Def="s32 spEffectID6"></Field>
+    <Field Def="s32 spEffectID7"></Field>
+    <Field Def="s32 spEffectID8"></Field>
+    <Field Def="s32 spEffectID9"></Field>
+    <Field Def="s32 sosSignSfxId"></Field>
+    <Field Def="s32 mySosSignSfxId"></Field>
+    <Field Def="s32 summonStartAnimId"></Field>
+    <Field Def="s32 itemlotParamId"></Field>
+    <Field Def="u8 voiceChatGroup"></Field>
+    <Field Def="u8 roleNameColor"></Field>
+    <Field Def="dummy8 pad1[2]"></Field>
+    <Field Def="s32 roleNameId"></Field>
+    <Field Def="u32 threatLv"></Field>
+    <Field Def="s32 phantomParamId_vowRank1"></Field>
+    <Field Def="s32 phantomParamId_vowRank2"></Field>
+    <Field Def="s32 phantomParamId_vowRank3"></Field>
+    <Field Def="s32 spEffectID_vowRank0"></Field>
+    <Field Def="s32 spEffectID_vowRank1"></Field>
+    <Field Def="s32 spEffectID_vowRank2"></Field>
+    <Field Def="s32 spEffectID_vowRank3"></Field>
+    <Field Def="s32 signPhantomId"></Field>
+    <Field Def="s32 nonPlayerSummonStartAnimId"></Field>
+    <Field Def="s32 Unk0x70"></Field>
+    <Field Def="s32 Unk0x74"></Field>
+    <Field Def="s32 Unk0x78"></Field>
+    <Field Def="s32 Unk0x7C"></Field>
+  </Fields>
+</PARAMDEF>

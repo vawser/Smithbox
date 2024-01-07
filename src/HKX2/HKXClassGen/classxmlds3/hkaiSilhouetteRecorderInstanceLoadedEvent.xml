@@ -1,0 +1,7 @@
+<class name='hkaiSilhouetteRecorderInstanceLoadedEvent' version='1' signature='0xa0b9b072' size='48' parent='hkaiSilhouetteRecorderReplayEvent'>
+  <members>
+    <member name='instance' offset='24' ctype='hkaiNavMeshInstance' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mediator' offset='32' ctype='hkaiNavMeshQueryMediator' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='graph' offset='40' ctype='hkaiDirectedGraphInstance' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name='hkxMaterialShaderSet' version='1' signature='0x74c0891c' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='shaders' offset='16' ctype='hkxMaterialShader' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

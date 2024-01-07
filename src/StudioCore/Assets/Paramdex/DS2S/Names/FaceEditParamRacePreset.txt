@@ -1,0 +1,11 @@
+0 Default -- デフォルト
+1 Origin 1 White Base -- 出自1　白人用ベース
+2 Origin 2 Black Base -- 出自2　黒人用ベース
+3 Origin 3 Arab base -- 出自3　アラブ系ベース
+4 Origin 4 Asian base -- 出自4 アジア系ベース
+5 early face man -- 初期顔　男
+21 Woman Out ing 1 White base -- 女 出自1　白人用ベース
+22 Woman Out-of-2 Black Base -- 女 出自2　黒人用ベース
+23 Woman Out of 3 Arab Base -- 女 出自3　アラブ系ベース
+24 Woman Out of 4 Asian Base -- 女 出自4 アジア系ベース
+25 Early Face Woman -- 初期顔　女

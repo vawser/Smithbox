@@ -1,0 +1,1090 @@
+0 Don&#39;t erase -- 消すな
+100 Item drawstring -- アイテム巾着
+300 Bloody Smoke Shinobi Gaze Shielding Dummy -- 血煙忍殺視線遮蔽ダミー
+1000 Falling ninja debug scaffolding -- 落下忍殺デバッグ足場
+1001 Destruction and anime debugging -- 破壊とアニメデバッグ
+1400 White door_small -- 白扉_小
+1401 White door_middle -- 白扉_中
+1402 White door_large -- 白扉_大
+1500 Plot twist door -- どんでん返し扉
+2000 Riding pine (turn left) _ Criteria -- 乗れる松（左曲がり）_基準
+2001 Riding pine (turn left) _ fall prevention -- 乗れる松（左曲がり）_落下防止
+2010 Riding pine (turn right) _ standard -- 乗れる松（右曲がり）_基準
+2011 Riding pine (turn right) _ fall prevention -- 乗れる松（右曲がり）_落下防止
+2020 Riding pine (S-shaped) _ standard -- 乗れる松（S字）_基準
+2021 Riding pine (S-shaped) _ fall prevention -- 乗れる松（S字）_落下防止
+2030 Riding pine (right L-shaped) _ standard -- 乗れる松（右L字）_基準
+2031 Riding pine (L-shaped on the right) _ fall prevention -- 乗れる松（右L字）_落下防止
+2040 Riding pine (from the ground) _ standard -- 乗れる松（地面から）_基準
+2041 Riding pine (from the ground) _ fall prevention -- 乗れる松（地面から）_落下防止
+2042 Riding pine (from the ground) _ hit -- 乗れる松（地面から）_ヒット
+2050 Riding pine (from the ground / large) _ standard -- 乗れる松（地面から/大）_基準
+2051 Riding pine (from the ground / large) _ fall prevention -- 乗れる松（地面から/大）_落下防止
+2052 Riding pine (from the ground / large) _ hit -- 乗れる松（地面から/大）_ヒット
+2100 Unable to ride pine (straight line) _ standard -- 乗れない松（直線）_基準
+2110 Unable to ride pine (curve) _ standard -- 乗れない松（曲線）_基準
+2120 Unable to ride pine (swell) _ standard -- 乗れない松（うねり）_基準
+2500 Snow-covered pine that you can ride (turn left) -- 乗れる雪被り松（左曲がり）
+2501 Snow-covered pine (turn left) _ fall prevention -- 乗れる雪被り松（左曲がり）_落下防止
+2510 Snow-covered pine that you can ride (turn right) -- 乗れる雪被り松（右曲がり）
+2511 Riding snow-covered pine (turn right) _ fall prevention -- 乗れる雪被り松（右曲がり）_落下防止
+2520 Snow-covered pine (S-shaped) -- 乗れる雪被り松（S字）
+2521 Riding snow-covered pine (S-shaped) _ fall prevention -- 乗れる雪被り松（S字）_落下防止
+2530 Snow-covered pine (L-shaped on the right) -- 乗れる雪被り松（右L字）
+2531 Snow-covered pine (L-shaped on the right) _ fall prevention -- 乗れる雪被り松（右L字）_落下防止
+2540 Riding snow-covered pine (from the ground) -- 乗れる雪被り松（地面から）
+2541 Riding snow-covered pine (from the ground) _ fall prevention -- 乗れる雪被り松（地面から）_落下防止
+2542 Riding snow-covered pine (from the ground) _ hit -- 乗れる雪被り松（地面から）_ヒット
+2550 Riding snow-covered pine (from the ground) -- 乗れる雪被り松（地面から）
+2551 Riding snow-covered pine (from the ground) _ fall prevention -- 乗れる雪被り松（地面から）_落下防止
+2552 Riding snow-covered pine (from the ground) _ hit -- 乗れる雪被り松（地面から）_ヒット
+2600 Snow-covered pine that cannot be ridden (straight line) -- 乗れない雪被り松（直線）
+2610 Snow-covered pine (curve) that cannot be ridden -- 乗れない雪被り松（曲線）
+2620 Snow-covered pine that can&#39;t ride -- 乗れない雪被り松（うねり）
+2700 kite -- 凧
+3000 Root (wire Pt) -- 根(ワイヤーPt)
+3001 For roots in general _ fall prevention -- 根全般用_落下防止
+3010 Root (wire Pt) -- 根(ワイヤーPt)
+3020 Root (wire Pt) -- 根(ワイヤーPt)
+3100 Shachi (wire Pt) -- 鯱(ワイヤーPt)
+3110 Shachi (wire Pt) -- 鯱(ワイヤーPt)
+3150 Wooden shark (wire Pt) -- 木の鯱(ワイヤーPt)
+3160 Wooden shark (wire Pt) -- 木の鯱(ワイヤーPt)
+3200 Snake metal fittings -- 蛇の金具
+3210 Snake metal fittings -- 蛇の金具
+3250 Power God&#39;s nail hiding -- 力神の釘隠し
+3500 Root (wire Pt) -- 根(ワイヤーPt)
+3510 Root (wire Pt) -- 根(ワイヤーPt)
+3520 Root (wire Pt) -- 根(ワイヤーPt)
+3600 Shachi (wire Pt) -- 鯱(ワイヤーPt)
+3601 Shachi (wire Pt) inversion -- 鯱(ワイヤーPt)反転
+3610 Shachi (wire Pt) -- 鯱(ワイヤーPt)
+3650 Wooden shark (wire Pt) -- 木の鯱(ワイヤーPt)
+3660 Wooden shark (wire Pt) -- 木の鯱(ワイヤーPt)
+3700 Fossil bone 1 (wire Pt) -- 化石骨1(ワイヤーPt)
+3710 Fossil bone 2 (wire Pt) -- 化石骨2(ワイヤーPt)
+4000 Katayo Jizo (Large) -- 形代地蔵（大）
+4010 Katashiro Jizo (middle) -- 形代地蔵（中）
+4020 Katayo Jizo (Small) -- 形代地蔵（小）
+4500 [Snow] Jizo Katashiro (Large) -- 【雪】形代地蔵（大）
+4510 [Snow] Jizo Katashiro (middle) -- 【雪】形代地蔵（中）
+4520 [Snow] Yukigata Jizo (Small) -- 【雪】形代地蔵（小）
+5000 Checkpoint -- チェックポイント
+5200 Lower man large shield (destruction object) -- 下男大盾(破壊オブジェ)
+5210 Bandit Shield (Destruction Object) -- 野盗盾(破壊オブジェ)
+5220 Rappa Kikasa (Destruction Object) -- らっぱ木笠(破壊オブジェ)
+5222 [Tokugawa] Shura Samurai body black armor (peeled object) -- 【徳川】修羅侍胴黒い鎧(剥がしオブジェ)
+5223 [Tokugawa] Shura Samurai Torso Red Armor (Peeling Object) -- 【徳川】修羅侍胴赤い鎧(剥がしオブジェ)
+5224 Lower man body armor 01 (peeled object) -- 下男胴鎧01(剥がしオブジェ)
+5225 Lower man body armor 02 (peeled object) -- 下男胴鎧02(剥がしオブジェ)
+5300 General-purpose treasure chest -- 汎用宝箱
+5380 Bird&#39;s nest (low) -- 鳥の巣（低）
+5381 Bird&#39;s nest (low, no drawstring purse) -- 鳥の巣（低・巾着なし）
+5390 Bird&#39;s nest (for high and slope 15 °) -- 鳥の巣（高・斜度15°用）
+5391 Bird&#39;s nest (for high and slope 30 °) -- 鳥の巣（高・斜度30°用）
+5392 Bird&#39;s nest (for high and slope 45 °) -- 鳥の巣（高・斜度45°用）
+5500 Checkpoint / snow -- チェックポイント・雪
+6000 shop -- ショップ
+6500 Shop / snow -- ショップ・雪
+7000 Nezasa -- ネザサ
+7001 Nezasa (more) -- ネザサ（多め）
+7002 Nezasa (less) -- ネザサ（少なめ）
+7010 Fern -- シダ
+7020 Miscanthus -- ススキ
+7021 Tall pampas grass -- 背の高いススキ
+7023 Miscanthus (specify angle) -- ススキ(角度指定)
+7024 Japanese pampas grass + tall Japanese pampas grass (angle designation) -- ススキ+背の高いススキ(角度指定)
+7026 Miscanthus -- ススキ
+7030 Carex lenta -- ナキリスゲ
+7040 Akinokirinsou -- アキノキリンソウ
+7050 Needlesa -- センダングサ
+7060 Imperata cylindrica -- チガヤ
+7070 Yabutachibana -- ヤブタチバナ
+7071 Ardisia japonica -- ヤブコウジ
+7080 Kobanogamazumi -- コバノガマズミ
+7090 General-purpose grass A -- 汎用草A
+7091 General-purpose grass B -- 汎用草B
+7092 General-purpose grass C -- 汎用草C
+7093 General-purpose grass D -- 汎用草D
+7100 Dead grass_large -- 枯草_大
+7110 Dead grass_small -- 枯草_小
+7111 Dead grass _ large _ flat -- 枯草_大_平べったい
+7120 narcissus -- 水仙
+7130 Village Nezasa Set -- 村用ネザサセット
+7140 Selaginella moell -- イヌカタヒバ
+7150 Monotropastrum humilis -- ギンリョウソウ
+7160 Fuchisou (angle designation) -- フウチソウ（角度指定）
+7170 Swertia japonica -- センブリ
+7200 Waterthyme -- クロモ
+7201 Waterthyme -- クロモ
+7202 Chromo (shallow) -- クロモ(浅瀬)
+7210 Hanashobu (purple) -- ハナショウブ(紫)
+7211 Hanashobu (white) -- ハナショウブ(白)
+7220 lotus -- 蓮
+7230 Withering lotus -- 枯れかけの蓮
+7240 moss -- 苔
+7250 Akami moss -- アカミゴケ
+7270 Stalagmite_small -- 石筍_小
+7280 reed -- 葦
+7281 Tall reeds (1 bunch) -- 背の高い葦(1房
+7282 Tall reeds (7 bunches) -- 背の高い葦(7房
+7283 Underwater high reeds (less) -- 水中高い葦(少なめ)
+7284 Underwater high reeds (more) -- 水中高い葦(多め)
+7285 Underwater high reeds (more) -- 水中高い葦(多め)
+7286 Hydrangea 01 -- 紫陽花01
+7287 Hydrangea 02 -- 紫陽花02
+7290 Algae -- 藻
+7310 Syneilesis -- ヤブレガサ
+7300 Ramie -- カラムシ
+7320 Ostrich Fern -- クサソテツ
+7330 Cattail -- ガマ
+7340 Completely dead lotus -- 完全に枯れた蓮
+7350 Cliff grass -- 崖用草
+7351 Cliff grass -- 崖用草
+7352 Cliff grass_green -- 崖用草_緑
+7360 Underwater lotus -- 水中の蓮
+7500 Nezasa -- ネザサ
+7501 Nezasa (more) -- ネザサ（多め）
+7502 Nezasa (less) -- ネザサ（少なめ）
+7510 Fern -- シダ
+7520 Miscanthus -- ススキ
+7521 Tall pampas grass -- 背の高いススキ
+7530 Carex lenta -- ナキリスゲ
+7540 Akinokirinsou -- アキノキリンソウ
+7550 Needlesa -- センダングサ
+7560 Imperata cylindrica -- チガヤ
+7570 Yabutachibana -- ヤブタチバナ
+7571 Ardisia japonica -- ヤブコウジ
+7580 Kobanogamazumi -- コバノガマズミ
+7590 General-purpose grass A (snow) -- 汎用草A（雪）
+7592 General-purpose grass (snow) -- 汎用草（雪）
+7600 Dead grass_large (snow) -- 枯草_大（雪）
+7610 Dead grass_small (snow) -- 枯草_小（雪）
+7630 Set of Nezasa, Dwarf lilyturf and fallen leaves -- ネザサとジャノヒゲ、落ち葉のセット
+7660 Fuchisou (angle designation) / (snow) -- フウチソウ（角度指定）･（雪）
+7800 Ramie (snow) -- カラムシ（雪）
+9010 Straw doll scaffolding_right leg 0 -- 藁人形足場_右脚0
+9011 Straw doll scaffolding_right leg 1 -- 藁人形足場_右脚1
+9012 Straw doll scaffolding_right leg 2 -- 藁人形足場_右脚2
+9013 Straw doll scaffolding_right leg 3 -- 藁人形足場_右脚3
+9014 Straw doll scaffolding_right leg 4 -- 藁人形足場_右脚4
+9015 Straw doll scaffolding_right leg 5 -- 藁人形足場_右脚5
+9016 Straw doll scaffolding_right leg 6 -- 藁人形足場_右脚6
+9017 Straw doll scaffolding_right leg 7 -- 藁人形足場_右脚7
+9018 Straw doll scaffolding_right leg 8 -- 藁人形足場_右脚8
+9019 Straw doll scaffolding_right leg 9 -- 藁人形足場_右脚9
+9020 Straw doll scaffolding_left leg 1 -- 藁人形足場_左脚1
+9021 Straw doll scaffolding_left leg 2 -- 藁人形足場_左脚2
+9022 Straw doll scaffolding_left leg 3 -- 藁人形足場_左脚3
+9023 Straw doll scaffolding_left leg 4 -- 藁人形足場_左脚4
+9024 Straw doll scaffolding_left leg 5 -- 藁人形足場_左脚5
+9025 Straw doll scaffolding_left leg 6 -- 藁人形足場_左脚6
+9026 Straw doll scaffolding_left leg 7 -- 藁人形足場_左脚7
+9027 Straw doll scaffolding_left leg 8 -- 藁人形足場_左脚8
+9028 Straw doll scaffolding_right arm 0 -- 藁人形足場_右腕0
+9029 Straw doll scaffolding_right arm 1 -- 藁人形足場_右腕1
+9030 Straw doll scaffolding_right arm 2 -- 藁人形足場_右腕2
+9031 Straw doll scaffolding_right arm 3 -- 藁人形足場_右腕3
+9032 Straw doll scaffolding_left arm 1 -- 藁人形足場_左腕1
+9033 Straw doll scaffolding_left arm 2 -- 藁人形足場_左腕2
+9034 Straw doll scaffolding_left arm 3 -- 藁人形足場_左腕3
+9035 Straw doll scaffolding_right arm 2 -- 藁人形足場_右腕2
+9035 Straw doll scaffolding_left arm 4 -- 藁人形足場_左腕4
+9036 Straw doll scaffolding_body 0 -- 藁人形足場_胴体0
+9037 Straw doll scaffolding_body 1 -- 藁人形足場_胴体1
+9038 Straw doll scaffolding_body 2 -- 藁人形足場_胴体2
+9039 Straw doll scaffolding_body 3 -- 藁人形足場_胴体3
+9040 Straw doll scaffolding_body 4 -- 藁人形足場_胴体4
+9041 Straw doll scaffolding_body 5 -- 藁人形足場_胴体5
+9042 Straw doll scaffolding_body 6 -- 藁人形足場_胴体6
+9070 For hit-and-miss verification -- あたり抜け検証用
+9990 Suspended corpse (FDPo319180) -- 吊るされた死体(FDPo319180)
+9530 General-purpose door_small B (normal) -- 汎用扉_小B（通常）
+9540 General-purpose door_medium (normal) -- 汎用扉_中（通常）
+9541 General-purpose door_middle (with bar) -- 汎用扉_中（閂有り）
+9550 General-purpose door_large (normal) -- 汎用扉_大（通常）
+9551 General-purpose door_large (with bar) -- 汎用扉_大（閂有り）
+9560 General-purpose door_extra large (normal) -- 汎用扉_特大（通常）
+9561 General-purpose door_extra large (with bar) -- 汎用扉_特大（閂有り）
+101000 Boss room door -- ボス部屋の扉
+101020 Mie tower door -- 三重塔の扉
+101050 Toki Buddhist temple door -- 時仏堂の扉
+101070 Yaguramon door -- 櫓門の扉
+101100 Plot twist door -- どんでん返し扉
+103000 boat -- 舟
+104000 firewood -- 薪
+104050 Spear stand -- 槍立て
+104060 Sword rack -- 刀掛け
+104090 Tsuitate (wood grain) -- 衝立(木目)
+104100 desk -- 机
+104110 Liner -- 行器
+104120 Aside -- 脇息
+104130 Two gradations and one tool -- 二階調一具
+104140 Kitchen shelves -- 厨子棚
+104150 Mirror stand -- 鏡面台
+104160 Desk_small -- 机_小
+104170 Clothes -- 衣掛け
+104171 Clothes -- 衣掛け
+104172 Clothes -- 衣掛け
+104180 Bamboo fence -- 竹柵
+104181 Bamboo fence_3 steps -- 竹柵_3段
+104182 Bamboo fence_3 steps_destroy -- 竹柵_3段_破壊
+104190 Bamboo fence_diagonal 30 degrees -- 竹柵_斜め30度
+104191 Bamboo fence_diagonal 30 degrees_destruction -- 竹柵_斜め30度_破壊
+104192 Bamboo fence_diagonal 30 degrees_destruction -- 竹柵_斜め30度_破壊
+104193 Bamboo fence_low -- 竹柵_低
+104200 Vase_with letter -- 壺_書状入り
+104201 Rolling paper alone -- 巻き紙単体
+104210 Vase -- 花器
+104220 Hatchet -- 鉈
+104230 Hatchet -- 鉈
+104240 folding screen -- 屏風
+104250 Vase_with cassotte -- 壺_柄杓付
+104260 Vase_without lid -- 壺_蓋無し
+104300 Barrel_open lid -- 樽_蓋開き
+104310 Barrel_closed lid -- 樽_蓋閉じ
+104350 Tub -- 桶
+104370 Pail -- 手桶
+104380 Tub (large) -- 桶(大)
+104390 Fertilizer -- 肥桶
+104400 Destructed bamboo -- 破壊竹
+104410 Destructed bamboo -- 破壊竹
+104420 Destructed bamboo -- 破壊竹
+104430 Bamboo shoot _ small -- 筍_小
+104440 Bamboo shoot _ large -- 筍_大
+104450 Bamboo material_destruction -- 竹材_破壊
+104460 Broken bamboo -- 割れた竹
+104500 Daihachiguruma -- 大八車
+104501 Daihachiguruma_Luggage -- 大八車_荷物
+104502 Daihachiguruma_Luggage_茣 蓙 -- 大八車_荷物_茣蓙
+104503 Daihachiguruma_bamboo -- 大八車_竹材
+104510 Daihachiguruma_destroy -- 大八車_破壊
+104511 Daihachiguruma_Luggage_茣 蓙_Destroy -- 大八車_荷物_茣蓙_破壊
+104630 Gyo Lee_Opening -- 行李_蓋開き
+104640 Yuki Lee_two steps -- 行李_二段
+104650 Bamboo basket -- 竹籠
+104660 With basket charcoal -- 籠　炭入り
+104661 With basket bamboo shoots -- 籠　筍入り
+104680 Laundry -- 洗濯物
+104700 Chest -- 櫃
+104701 Chest -- 櫃
+104702 Chest alone -- 櫃単体
+104710 Chest -- 櫃
+104711 Chest -- 櫃
+104720 Lacquer _ box -- 漆_箱
+104721 Lacquer _ box -- 漆_箱
+104750 sake bottle -- 徳利
+104760 Tokkuri_defeat -- 徳利_倒
+104770 Props -- 小道具
+104771 Props 2 -- 小道具2
+104780 Book pile -- 本の山
+104781 Book pile -- 本の山
+104790 hearth -- 囲炉裏
+104800 shelf -- 棚
+104801 Shelf_for walls -- 棚_壁用
+104802 Shelf_2 steps -- 棚_2段
+104803 shelf -- 棚
+104804 Bookshelf_small -- 本棚_小
+104810 Shoji 01 -- 障子01
+104811 Shoji 02 -- 障子02
+104812 Shoji -- 障子
+104813 Shoji -- 障子
+104814 Shoji -- 障子
+104815 Shoji -- 障子
+104820 Fusuma single unit 01 -- 襖　単体01
+104830 Fusuma single unit 02 -- 襖　単体02
+104840 Fusuma single size 01 -- 襖　単体大01
+104850 Fusuma single size 02 -- 襖　単体大02
+104860 Fusuma single large foil 01 -- 襖　単体大 箔01
+104870 Fusuma single large foil 02 -- 襖　単体大 箔02
+104880 Fusuma picture 01 -- 襖　絵01
+104881 Fusuma picture 02 -- 襖　絵02
+104882 Fusuma picture 03 -- 襖　絵03
+104883 Fusuma picture 04 -- 襖　絵04
+104890 Bamboo door -- 竹扉
+104900 Armor warrior -- 鎧武者
+105100 cadaver -- 死体
+105200 Corpse_servant man -- 死体_奉公人の男性
+105210 Corpse_servant woman -- 死体_奉公人の女性
+105211 Corpse_servant woman -- 死体_奉公人の女性
+105220 Corpse_Samurai -- 死体_侍
+105221 Corpse_Samurai -- 死体_侍
+106000 High lighthouse -- 高燈台
+106010 High light cup stand -- 高燈杯台
+106010 Hanging lantern -- 吊り灯篭
+106050 Kagaribi -- 篝火
+106060 Torch plate -- 灯明皿
+106070 Candlestick -- 燭台
+106051 Bonfire (without charcoal) -- 篝火(炭なし)
+106100 Stone lantern 1 -- 石灯篭1
+106150 fire -- 焚火
+106220 Straw bundle _ small -- 藁束_小
+106221 Straw bundle_burning_small -- 藁束_燃焼_小
+106225 Straw bundle _ Takebayashizaka event -- 藁束_竹林坂イベント用
+106226 Straw bundle _ Takebayashizaka event -- 藁束_竹林坂イベント用
+106227 Straw bundle _ Takebayashizaka event _ Hit only _ Damage judgment -- 藁束_竹林坂イベント用_ヒットのみ_ダメージ判定用
+106228 Straw bundle _ Takebayashizaka event _ Hit only _ Damage judgment -- 藁束_竹林坂イベント用_ヒットのみ_ダメージ判定用
+106229 Straw bundle _ Takebayashizaka event _ Hit only -- 藁束_竹林坂イベント用_ヒットのみ
+106230 Straw bundle _ Takebayashizaka event _ Hit only -- 藁束_竹林坂イベント用_ヒットのみ
+106300 Straw bundle (large) _normal -- 藁束(大)_通常
+106301 Straw bundle (large) _ truth -- 藁束(大)_真相
+106310 Straw bundle (medium) _normal -- 藁束(中)_通常
+106311 Straw bundle (middle) _ truth -- 藁束(中)_真相
+106320 Straw bundle (small) _normal -- 藁束(小)_通常
+106321 Straw bundle (small) _ truth -- 藁束(小)_真相
+106400 Burnt tree_normal -- 燃えた木_通常
+106401 Burning tree_truth -- 燃えた木_真相
+106500 Flame entrance_door_closed_normal -- 炎上玄関_扉_閉_通常
+106501 Flame entrance_door_open_truth -- 炎上玄関_扉_開_真相
+107000 Wire point for bridge -- 橋用ワイヤーポイント
+107010 Shachi wire point -- 鯱ワイヤーポイント
+107020 Thatched wire point -- 杮葺ワイヤーポイント
+107100 Reien_well -- 霊園_井戸
+108000 Falling beam for cutscenes 1 -- カットシーン用落下梁1
+108010 Falling beam for cutscenes 2 -- カットシーン用落下梁2
+108020 Falling beam for cutscenes 3 -- カットシーン用落下梁3
+108100 Big Buddha for cutscenes -- カットシーン用大仏
+109050 Falling beam -- 落下梁
+109100 Flame entrance gate (normal) -- 炎上玄関の門(通常)
+109101 Flame entrance gate (burning) -- 炎上玄関の門(燃焼)
+109150 Flame entrance fence (normal) -- 炎上玄関の塀(通常)
+109151 Fence of the burning entrance (burning) -- 炎上玄関の塀(燃焼)
+109800 Falling beam_small -- 落下梁_小
+109850 Falling beam_small -- 落下梁_小
+109910 Burning pillar -- 燃えている柱
+109920 Burning pillar -- 燃えている柱
+109930 Burning pillar -- 燃えている柱
+109950 tatami -- 畳
+109990 Character test object -- キャラテスト用オブジェ
+111100 Hidden prison_Tsukimi turret door -- 隠し牢_月見櫓の扉
+111200 Plot twist door -- どんでん返し扉(かけじく)
+111300 Koryomon_Latch -- 高麗門_閂有り
+111310 Fire cow open space gate -- 火牛広場門
+111320 Gate with a bar (main tower entrance) -- 閂付きの門扉（天守入口）
+111330 Battlefield door -- 戦場跡扉
+113370 Wood for dead end in Jaya -- 蛇谷行き止まり用木材
+111400 Koryomon_Latch -- 高麗門_閂有り
+111410 Middle door_push open -- 中扉_押し開き
+111500 Indoor door with a bar (entrance room) -- 閂付きの屋内扉（玄関部屋）
+111510 General-purpose door -- 汎用扉
+111520 Door for attacking Tokugawa (for Koguchi only) -- 徳川襲来用扉（虎口専用）
+111540 Downhill door -- 下り坂の扉
+111550 Fire cow square door -- 火牛広場の扉
+111600 Large sliding door 1 -- 大襖１
+111610 Large sliding door 2 -- 大襖2
+111620 Large sliding door 3 -- 大襖3
+111630 Large sliding door 4 -- 大襖4
+111650 Set of 2 large sliding doors -- 大襖2枚セット
+111750 Shoji -- 障子
+111810 Single swing sliding door -- 片開き引き戸
+111850 Double door sliding door -- 両開き引き戸
+111860 Castle tower door -- 天守閣扉
+111900 Locked window -- 鍵付き窓
+112400 Bamboo 0 -- 竹0
+112410 Bamboo 1 -- 竹1
+112420 Bamboo 2 -- 竹2
+112430 Bamboo 3 -- 竹3
+112440 Bamboo diagonal -- 竹斜め
+112700 Hosoki -- 細木
+112710 Autumn leaves -- 紅葉
+113000 Stone (small) -- 積み石（小）
+113001 Stone (middle) -- 積み石（中）
+113002 Stone (Large) -- 積み石（大）
+113010 Small five-wheeled tower -- 小さい五輪塔
+113100 Headquarters flag_white -- 本家陣旗_白
+113110 Headquarters flag_black -- 本家陣旗_黒
+113120 Headquarters flag_Assault flag -- 本家陣旗_突撃旗
+113200 Branch flag_red (small deterioration) -- 分家陣旗_赤（劣化小）
+113201 Branch flag_red (deteriorating) -- 分家陣旗_赤（劣化中）
+113202 Branch flag_red (large deterioration) -- 分家陣旗_赤（劣化大）
+113210 Branch flag _ white (small deterioration) -- 分家陣旗_白（劣化小）
+113211 Branch flag_white (deteriorating) -- 分家陣旗_白（劣化中）
+113220 Branch flag_elite unit -- 分家陣旗_精鋭部隊
+113300 Hand-held flag_yellow (small deterioration) -- 寄せ手陣旗_黄（劣化小）
+113301 Hand-held flag_yellow (deteriorating) -- 寄せ手陣旗_黄（劣化中）
+113302 Hand-held flag_yellow (large deterioration) -- 寄せ手陣旗_黄（劣化大）
+113310 Hands-on flag_black -- 寄せ手陣旗_黒
+113320 Hands-on flag_black and white -- 寄せ手陣旗_白黒
+113360 When Tokugawa invades _ Honjin fence -- 徳川襲来時_本陣の柵
+113370 When Tokugawa attacks _ Breakthrough prevention fence 0 -- 徳川襲来時_突破防止柵0
+113371 When Tokugawa attacks _ Breakthrough prevention fence 1 -- 徳川襲来時_突破防止柵1
+113372 When Tokugawa attacks _ Breakthrough prevention fence (low) -- 徳川襲来時_突破防止柵（低）
+113373 When Tokugawa attacks _ Breakthrough prevention fence (door) -- 徳川襲来時_突破防止柵（扉）
+113380 Hanging prevention fence_for stairs (7 on the right) -- ぶら下がり防止柵_階段用（右7本）
+113381 Hanging prevention fence_for stairs (3 on the left) -- ぶら下がり防止柵_階段用（左3本）
+113382 Hanging prevention fence_for stairs (4 on the left) -- ぶら下がり防止柵_階段用（左4本）
+113390 Hanging prevention fence_for stairs (6 on the right) -- ぶら下がり防止柵_階段用（右6本）
+113391 Hanging prevention fence_for stairs (6 on the left) -- ぶら下がり防止柵_階段用（左6本）
+113392 Hanging prevention fence_for stairs (4 on the right) -- ぶら下がり防止柵_階段用（右4本）
+113393 Hanging prevention fence_for stairs (3 on the left) -- ぶら下がり防止柵_階段用（左3本）
+113398 Hanging prevention fence_for low steps (6) -- ぶら下がり防止柵_低段用（6本）
+113399 Hanging prevention fence_for low steps (3) -- ぶら下がり防止柵_低段用（3本）
+113400 Shield -- 掻楯
+113401 Shield (damaged) -- 掻楯（破損）
+113402 Shield (collapse) -- 掻楯（倒壊）
+113403 Shield (for turret installation) -- 掻楯(櫓設置用）
+113404 When Tokugawa invades _ Shield (iron _ for leaning) -- 徳川襲来時_掻楯（鉄_立てかけ用）
+113405 Floor -- 床几
+113406 When Tokugawa attacks _ Shield (iron) -- 徳川襲来時_掻楯（鉄）
+113407 When Tokugawa invades _ Shield (iron _ high) -- 徳川襲来時_掻楯（鉄_高）
+113410 fence -- 柵
+113411 fence -- 柵
+113412 fence -- 柵
+113413 fence -- 柵
+113414 fence -- 柵
+113415 fence -- 柵
+113416 fence -- 柵
+113417 fence -- 柵
+113418 Wooden fence (with thorns) -- 木柵（棘付）
+113420 Pail -- 手桶
+113430 Long spear (with lid) -- 長槍（蓋あり）
+113431 Long spear (without lid) -- 長槍（蓋なし）
+113440 Tub (with lid) -- 桶（蓋あり）
+113450 A table with a shield laid down -- 楯を寝かせたテーブル
+113451 Table with a shield laid down (shield removed) -- 楯を寝かせたテーブル（盾外れ）
+113460 Stone oven -- 石窯
+113470 Charcoal -- 炭
+113480 Goza -- 御座
+113490 Tub (without lid) -- 桶（蓋無し）
+113500 A turret that the boss can break -- ボスが壊せる櫓A
+113501 A turret that can be broken by the boss A_ Fall prevention hit -- ボスが壊せる櫓A_落下防止ヒット
+113510 Tower B that the boss can break -- ボスが壊せる櫓B
+113511 Boss can break turret B_ fall prevention hit -- ボスが壊せる櫓B_落下防止ヒット
+113515 Legs for extension of turret B that the boss can break -- ボスが壊せる櫓Bの延長用の脚
+113521 Lower turret -- 物見櫓下段
+113522 Upper turret -- 物見櫓上段
+113530 Temporary camp that the boss can break -- ボスが壊せる仮設陣屋
+113540 At the time of the Tokugawa invasion_temporary turret -- 徳川襲来時_仮設陣櫓
+113550 Jinnai hut A -- 陣内小屋A
+113560 Jinnai hut B -- 陣内小屋B
+113570 Jinnai hut C -- 陣内小屋C
+113580 Jinnai stand -- 陣内の台
+113600 Stand -- 立てかけ台
+113610 Shelf A -- 棚A
+113611 Shelf B -- 棚B
+113630 Bamboo tube -- 竹筒
+113631 Bamboo tube (horizontal) -- 竹筒（横）
+113640 Latch (Zashiki Jail) -- 閂（座敷牢）
+113650 map -- 地図
+114000 Bookshelf -- 書棚
+114001 Bookshelf_small -- 書棚_小
+114010 Bookshelf_extra large -- 書棚_特大
+114050 Spear stand -- 槍立て
+114100 desk -- 机
+114110 Liner -- 行器
+114120 Accoudoir -- 肘掛
+114130 Two gradations and one tool -- 二階調一具
+114140 Kitchen shelves -- 厨子棚
+114150 Mirror stand -- 鏡面台
+114160 Desk_small -- 机_小
+114180 Bamboo fence -- 竹柵
+114181 Bamboo fence_3 steps -- 竹柵_3段
+114182 Bamboo fence_3 steps_destroy -- 竹柵_3段_破壊
+114190 Bamboo fence_diagonal 30 degrees -- 竹柵_斜め30度
+114191 Bamboo fence_diagonal 30 degrees_destruction -- 竹柵_斜め30度_破壊
+114192 Bamboo fence_diagonal 30 degrees_destruction -- 竹柵_斜め30度_破壊
+114193 Bamboo fence_low -- 竹柵_低
+114200 Vase_cover with cassotte -- 壺_蓋、柄杓付
+114210 Vase_without lid -- 壺_蓋無し
+114240 folding screen -- 屏風
+114241 folding screen -- 屏風
+114250 Tsuitate A -- 衝立A
+114251 Tsuitate B -- 衝立B
+114255 Tsuitate (wood grain) -- 衝立(木目)
+114260 Cushion (Goza) -- 座布団（ゴザ）
+114270 Vase with lid -- 蓋つき壺
+114280 Large jar -- 大きい壺
+114290 Japanese cushion -- 座布団
+114300 Barrel_open version -- 樽_蓋開きバージョン
+114310 Barrel_closed version -- 樽_蓋閉じバージョン
+114350 Tub -- 桶
+114351 Tub -- 桶
+114370 Pail -- 手桶
+114380 Tub (large) -- 桶(大)
+114400 Flag_white -- 旗_白
+114410 Flag_black -- 旗_黒
+114400 Flag_white_destroy -- 旗_白_破壊
+114410 Flag_white_destructive strength -- 旗_白_破壊強
+114450 Bamboo material_destruction -- 竹材_破壊
+114500 Vase -- 壺
+114501 Vase (covering) -- 壺(蓋立てかけ)
+114502 Vase size (with lid and cassotte) -- 壺大(蓋と柄杓付)
+114503 pot -- 壷
+114505 Pot size (with shimenawa) -- 壺大(しめ縄付)
+114506 Amulet pot (large) -- 魔除けの壷（大）
+114507 Amulet pot (small) -- 魔除けの壷（小）
+114508 Vase (with Sakaki) -- 壺(榊入り)
+114510 Sake set -- 酒器
+114511 Sake set -- 酒器
+114512 Sake set and cup -- 酒器と杯
+114515 Medicine box -- 薬箱
+114520 Tea set -- 茶器
+114525 Tea set -- 茶器
+114530 brazier -- 火鉢
+114531 brazier -- 火鉢
+114533 brazier -- 火鉢
+114540 firewood -- 薪
+114541 Firewood (with snow) -- 薪（雪付き）
+114560 spear -- 槍
+114565 Spear (for wall hanging) -- 槍(壁掛け用)
+114570 gun -- 銃
+114575 Bow stand -- 弓立て
+114580 Daihachiguruma -- 大八車
+114585 Daihachiguruma (with corpse) -- 大八車(死体有)
+114590 Daihachiguruma (broken) -- 大八車(壊)
+114595 Daihachiguruma -- 大八車
+114630 Horse sign -- 馬印
+114640 Flamethrower stacking -- 火炎放射積み
+114641 Flamethrower stacking (low) -- 火炎放射積み（低）
+114650 Bamboo basket -- 竹籠
+114655 Bamboo basket (large) -- 竹籠（大）
+114660 With basket charcoal -- 籠　炭入り
+114661 With basket bamboo shoots -- 籠　筍入り
+114670 Cannon -- 大砲
+114680 weapon -- 武器
+114690 Wheel iron -- 車輪の鉄
+114700 General-purpose chest (1 step) -- 汎用櫃(1段)
+114701 General-purpose chest (1 step) version difference -- 汎用櫃(1段)バージョン違い
+114702 Chest desk -- 櫃机
+114710 General-purpose chest (2 steps) -- 汎用櫃(2段)
+114711 General-purpose chest (2 steps) version difference -- 汎用櫃(2段)バージョン違い
+114712 General-purpose chest (1 step) -- 汎用櫃(1段)
+114720 General-purpose chest (1 step) Small version -- 汎用櫃(1段)小さいバージョン
+114730 Lacquer _ box -- 漆_箱
+114731 Lacquer _ box (open) -- 漆_箱(開き)
+114740 Non-destructive box -- 非破壊箱
+114741 Non-destructive box (with flame radiation) -- 非破壊箱（火炎放射入り）
+114750 Gunpowder box -- 火薬箱
+114760 Shop box -- ショップ箱
+114765 Shop box -- ショップ箱
+114770 Crate pile -- 木箱の山
+114780 Book pile -- 本の山
+114781 Book pile -- 本の山
+114785 Book pile (large) -- 本の山(大)
+114800 Rockfall (snow cover) -- 落石(積雪)
+114801 Rockfall -- 落石
+114805 Rockfall + soil -- 落石+土
+114806 Rockfall + soil (snow cover) -- 落石+土(積雪)
+114809 Rockfall (hanging) -- 落石(ぶら下がり)
+114810 Snowfall -- 落雪
+114820 Masonry -- 石積
+114900 Samurai armor -- 武者鎧
+114901 Samurai armor -- 武者鎧
+114902 Samurai armor -- 武者鎧
+114903 Samurai armor -- 武者鎧
+114904 Samurai armor -- 武者鎧
+114905 Samurai armor -- 武者鎧
+114906 Samurai armor -- 武者鎧
+114910 Censer of sacred treasure -- 神器の香炉
+114920 vase -- 花瓶
+114930 The size of the sword -- 刀の大小
+114940 Mitsu-gusoku -- 三具足
+114950 folding screen -- 屏風
+114960 Deer horn bundle -- 鹿の角束
+114990 hanging scroll -- 掛け軸
+115300 Aristocratic corpse -- 貴族死体
+115400 Litter (OBJ that hides the valley) -- 輿（谷の隠れるOBJ）
+115410 Takebashi (short) -- 竹橋（短）
+115411 Takebashi (short) _ fall prevention -- 竹橋（短）_落下防止
+115420 Takebashi (middle) -- 竹橋（中）
+115421 Takebashi (middle) _ fall prevention -- 竹橋（中）_落下防止
+115430 Takebashi (Large) -- 竹橋（大）
+115431 Takebashi (Large) _ Fall prevention -- 竹橋（大）_落下防止
+115440 Takebashi (middle) 1_root -- 竹橋（中）1_根元
+115441 Takebashi (middle) 1_root_fall prevention -- 竹橋（中）1_根元_落下防止
+115450 Takebashi (middle) 2_root -- 竹橋（中）2_根元
+115451 Takebashi (middle) 2_root_fall prevention -- 竹橋（中）2_根元_落下防止
+115460 Takebashi (middle) 3_root -- 竹橋（中）3_根元
+115461 Takebashi (middle) 3_root_fall prevention -- 竹橋（中）3_根元_落下防止
+115470 Takebashi (middle) 4_root -- 竹橋（中）4_根元
+115471 Takebashi (middle) 4_root_fall prevention -- 竹橋（中）4_根元_落下防止
+115480 Takebashi (Large) 1_Root -- 竹橋（大）1_根元
+115481 Takebashi (Large) 1_Root_Fall prevention -- 竹橋（大）1_根元_落下防止
+115490 Takebashi (Large) 2_Root -- 竹橋（大）2_根元
+115491 Takebashi (Large) 2_Root_Fall prevention -- 竹橋（大）2_根元_落下防止
+115500 Root (wire point) -- 根(ワイヤーポイント)
+115510 Root (wire point) -- 根(ワイヤーポイント)
+115520 Root (wire point) -- 根(ワイヤーポイント)
+115550 Snake metal fittings 1 -- 蛇の金具1
+115560 Snake metal fittings 2 -- 蛇の金具2
+115600 Power God&#39;s nail hiding -- 力神の釘隠し
+115700 Wooden Shachihoko (Large) -- 木製しゃちほこ(大)
+115710 Wooden shachihoko (small) -- 木製しゃちほこ(小)
+115720 Iro turret_Gathering hand (decoration) -- 井楼櫓_寄せ手（飾り）
+115730 Well turret_floor (nails) -- 井楼櫓_床（釘）
+115750 Decorative tile _ large -- 飾り瓦_大
+115760 Decorative tile_small -- 飾り瓦_小
+115790 Giant Shachihoko -- 巨大しゃちほこ
+115800 Burning straw bundle (large) -- 燃える藁束（大）
+115810 Burning straw bundle (middle) -- 燃える藁束（中）
+115820 Burning straw bundle (small) -- 燃える藁束（小）
+115830 Burning Tokugawa corpse -- 燃える徳川死体
+115840 Burning wood -- 燃える木材
+115850 Burning straw bundle (for hidden prison only) -- 燃える藁束（隠し牢専用）
+115921 Corpse of the Lonely People_Hit -- 孤影衆の死体_ヒット
+115923 Corpse of the Lonely People_Hit -- 孤影衆の死体_ヒット
+115980 Roof guidance OBJ -- 屋根上誘導OBJ
+116000 Kagaribi -- 篝火
+116010 Hanging bonfire -- 吊り下げ篝火
+116020 Suspended bonfire (half destroyed) -- 吊り下げ篝火(半壊)
+116050 Bonfire with pot -- 鍋付焚火
+116051 Bonfire with pot -- 鍋付焚火
+116060 Smoke signal -- 狼煙
+116100 Torch plate (with stand) -- 燈明皿(台あり)
+116101 Torch plate (with stand) (for prince only) -- 燈明皿(台あり)(皇子専用)
+116110 Candlestick -- 燭台
+116120 Torch plate -- 灯明皿
+116140 High lighthouse -- 高燈台
+116210 Stone lantern -- 石灯籠
+116300 Stone lantern_castle -- 石灯篭_城下
+116310 Stone lantern_castle -- 石灯篭_城下
+116320 Stone lantern_castle -- 石灯篭_城下
+116220 Straw bundle -- 藁束
+116501 Daihachiguruma_Luggage -- 大八車_荷物
+116600 Fishing lantern (without cross) -- 釣り灯篭(クロスなし)
+116601 Fishing lantern (with cross) -- 釣り灯篭(クロス有り)
+116602 Fishing lantern (with cross_short) -- 釣り灯篭(クロス有り_短)
+116710 Stone lantern (indoor) -- 石灯籠（屋内）
+117000 Hikibashi -- 引き橋
+117020 Invasion of Tokugawa_Floor of the main team -- 徳川襲来_本陣の床
+117200 Stone -- 石材
+117600 Well lid _ open -- 井戸蓋_開
+117601 Well lid _ closed -- 井戸蓋_閉
+118200 dead tree -- 枯れ木
+118201 dead tree -- 枯れ木
+118202 dead tree -- 枯れ木
+118203 dead tree -- 枯れ木
+118204 dead tree -- 枯れ木
+118300 Karesansuiiwa -- 枯山水岩
+118301 Karesansuiiwa -- 枯山水岩
+118302 Karesansuiiwa -- 枯山水岩
+118500 Door to loophole -- 抜け道への扉
+118170 Sentence to drop towards the hero OBJ (hidden prison) -- 主人公に向けて落とす文OBJ（隠し牢）
+133000 Stone (small) -- 積み石（小）
+133001 Stone (middle) -- 積み石（中）
+133002 Stone (Large) -- 積み石（大）
+134200 Vase_cover with cassotte -- 壺_蓋、柄杓付
+134210 Vase_without lid -- 壺_蓋無し
+134290 Vase_insect -- 壺_虫
+134300 Barrel_open version -- 樽_蓋開きバージョン
+134310 Barrel_closed version -- 樽_蓋閉じバージョン
+134350 Tub -- 桶
+134370 Pail -- 手桶
+134380 Tub (large) -- 桶(大)
+134390 Memorial rice -- 供養飯
+134450 Bamboo material_destruction -- 竹材_破壊
+134460 Door_ jail -- 扉_牢屋
+134501 Daihachiguruma_Luggage -- 大八車_荷物
+134510 Sake set -- 酒器
+134511 Sake set -- 酒器
+134540 firewood -- 薪
+134650 Bamboo basket -- 竹籠
+134660 With basket charcoal -- 籠　炭入り
+134661 With basket bamboo shoots -- 籠　筍入り
+134700 Saw A -- 鋸A
+134701 Saw B -- 鋸B
+134702 Saw C -- 鋸C
+135100 Experimental zombie -- 実験体ゾンビ
+136000 Kagaribi -- 篝火
+136010 Hanging lantern -- 吊り灯篭
+136100 Torch plate -- 灯明皿
+136110 Torch plate stand -- 灯明皿立て
+136200 Stone lantern 1 -- 石灯篭1
+136210 Stone lantern 2 -- 石灯篭2
+136250 Stone lantern (shrine) -- 石灯篭(祠)
+136450 Incense stick (without light) -- 線香（灯なし）
+136455 Incense stick (with light) -- 線香（灯あり）
+136460 Incense stick_bundle (without light) -- 線香_束（灯なし）
+136465 Incense stick_bundle (with light) -- 線香_束（灯あり）
+151000 Shrine door -- 祠の扉
+153000 boat -- 舟
+154000 Firewood -- 薪(たきぎ)
+154010 Firewood (Takigi) _ single unit -- 薪(たきぎ)_単体
+154100 Carrying pole -- 天秤棒
+154110 Fertilizer -- 肥桶
+154120 Censer of Araji Temple -- 荒れ寺の香炉
+154200 Vase_cover with cassotte -- 壺_蓋、柄杓付
+154201 Vase_without lid -- 壺_蓋無し
+154210 Vase_without lid -- 壺_蓋無し
+154300 Barrel_open version -- 樽_蓋開きバージョン
+154310 Barrel_closed version -- 樽_蓋閉じバージョン
+154320 Barrel_Large -- 樽_大
+154350 Tub -- 桶
+154360 Oke_with blood-dyed cloth -- 桶_血染め布付
+154370 Pail -- 手桶
+154500 Daihachiguruma -- 大八車
+154510 Daihachiguruma_destroy -- 大八車_破壊
+154600 Basket_with charcoal -- 籠_炭入り
+154620 Bamboo basket with persimmon -- 竹籠_柿入り
+154630 Season_with lid -- 行季_蓋付き
+154650 Basket_cocoon -- 籠_繭入り
+154640 Season_two steps -- 行季_二段
+154700 sake bottle -- 徳利
+154710 Tokkuri_defeat -- 徳利_倒
+154750 hearth -- 囲炉裏
+154800 shelf -- 棚
+154809 Stupa destruction -- 卒塔婆 破壊
+154810 stupa -- 卒塔婆
+154811 General-purpose fence -- 汎用柵
+154812 Bamboo fence -- 竹柵
+154813 Bamboo fence -- 竹柵
+154814 General-purpose fence_destruction -- 汎用柵_破壊
+154815 General-purpose fence_destruction -- 汎用柵_破壊
+154816 Bamboo fence_destroy -- 竹柵_破壊
+154817 Fence_cave -- 柵_洞窟
+154818 Fence_cave_destroy -- 柵_洞窟_破壊
+154819 Bamboo fence_15 degrees for slopes -- 竹柵_坂用15度
+154820 Bamboo fence_15 degrees for slopes -- 竹柵_坂用15度
+154900 Offerings -- お供え物
+154910 Vase with lid -- 蓋付き壺
+154950 folding screen -- 屏風
+155000 Monk corpse -- 僧侶の死体
+155010 Monk corpse -- 僧侶の死体
+155020 Sokushinbutsu -- 即身仏
+155030 Upside-down hanging corpse of a monk -- 僧侶の逆さ吊り死体
+155040 Sukekiyo -- スケキヨ
+155041 Sukekiyo -- スケキヨ
+155042 Sukekiyo -- スケキヨ
+155100 Donden floor -- どんでん床
+155200 Disliked House_Rock -- 嫌われ者の家_岩
+155210 House of hated _ fallen tree -- 嫌われ者の家_倒木
+155220 Wire point for thatched roof -- 茅葺屋根用ワイヤーポイント
+155230 Saw sickle wire point -- 鋸鎌ワイヤーポイント
+155300 Meppajiki -- メッパジキ
+155400 Sacred treasure -- 神器
+155500 Vase_for conversation -- 壺_会話用
+156000 fire -- 焚火
+156100 Torch plate -- 灯明皿
+156110 Torch plate stand -- 灯明皿立て
+156111 Torch plate stand -- 灯明皿立て
+156150 Candlestick (small) -- 燭台（小）
+156160 Candlestick (Large) -- 燭台（大）
+156170 Fishing lantern -- 釣り灯篭
+156300 Lantern -- 燈籠
+156310 General-purpose light source_with lid -- 汎用光源_蓋付き
+156320 General-purpose light source_closed lid -- 汎用光源_蓋閉じ
+156350 Shrine_with red cloth -- 祠_赤い布付き
+156400 Gomadan -- 護摩壇
+156500 Firefly basket -- 蛍籠
+156820 Shelf_for walls -- 棚_壁用
+157000 Cloth with moth -- 蛾付布
+157001 Cloth with moth -- 蛾付布
+157002 Cloth with moth -- 蛾付布
+157200 Canopy (swaying) -- 天蓋（揺れる）
+157300 Hanging corpse -- 首つり死体
+158000 Weaving wood -- 機織木
+158100 Litter -- 輿
+158110 Litter_after destruction -- 輿_破壊後
+158200 Trees for cutscenes -- カットシーン用樹木
+159020 Rough Temple_Floor -- 荒れ寺_床
+159030 Rough Temple_Floor_After the illusion is released -- 荒れ寺_床_幻術解除後
+159100 For ladder test -- 梯子テスト用
+174100 Censer -- 香炉
+174300 Flame glass barrel (closed lid) -- 焔硝樽(蓋閉じ)
+174301 Flame glass barrel (open lid) -- 焔硝樽(蓋開き)
+174310 Salt saltpeter box A -- 塩硝木箱A
+174311 Salt saltpeter box B -- 塩硝木箱B
+174330 Wick box -- 灯心箱
+174340 Flint box -- 火打ち石箱
+174350 Roasted ball -- 焙烙玉
+174400 Tub -- 桶
+174410 Pail -- 手桶
+174700 General-purpose chest (1 step) -- 汎用櫃(1段)
+174800 Rockfall -- 落石
+174805 Rockfall + soil -- 落石+土
+174806 Rockfall + soil (snow cover) -- 落石+土(積雪)
+174850 Sat (snow cover) -- 土(積雪)
+174540 firewood -- 薪
+174550 Hatchet ① -- 鉈①
+174551 Hatchet ② -- 鉈②
+174560 Vase with lid -- 蓋つき壺
+174561 Shimenawa pot A -- 注連縄の壺A
+174562 Shimenawa pot B -- 注連縄の壺B
+175000 Suspension bridge (for hits) -- 吊り橋(ヒット用)
+175100 Suspension bridge (for events) -- 吊り橋(イベント用)
+175101 Suspension bridge (for events, for broken) -- 吊り橋(イベント用、壊れた用)
+175200 Geyser -- 間欠泉
+175300 Company door -- 社の扉
+175400 Stone (Large) -- 積み石（大）
+175500 Root for valley bottom (wire point) -- 谷底用の根(ワイヤーポイント)
+175510 Root for valley bottom (wire point) -- 谷底用の根(ワイヤーポイント)
+175520 Root for valley bottom (wire point) -- 谷底用の根(ワイヤーポイント)
+175600 The root standard of the sacred tree that cannot be ridden -- 乗れない神木の根　基準
+175610 The root standard of the sacred tree that cannot be ridden -- 乗れない神木の根　基準
+175620 The root standard of the sacred tree that cannot be ridden -- 乗れない神木の根　基準
+175700 Company wall (for events) -- 社の壁(イベント用)
+175701 Company wall_after destruction (for events) -- 社の壁_破壊後(イベント用)
+175800 Dead tree (wire point) -- 立ち枯れ木(ワイヤーポイント)
+175810 Dead tree (wire point) -- 立ち枯れ木(ワイヤーポイント)
+175900 Bodhisattva crack (wire point) -- 菩薩のヒビ(ワイヤーポイント)
+175901 Bodhisattva crack (wire point) (thin) -- 菩薩のヒビ(ワイヤーポイント)(細)
+175910 Bodhisattva crack (wire point) -- 菩薩のヒビ(ワイヤーポイント)
+175911 Bodhisattva crack (wire point) (thin) -- 菩薩のヒビ(ワイヤーポイント)(細)
+176000 Kagaribi -- 篝火
+176010 Hanging lantern -- 吊り灯篭
+176020 Hanging lantern (half destroyed) -- 吊り灯篭(半壊)
+176050 Bonfire with pot -- 鍋付焚火
+176100 Candlestick -- 燭台
+176110 Candlestick -- 燭台
+176120 Torch plate -- 灯明皿
+176125 Torch plate (summary for rock cave) -- 灯明皿(岩窟用まとめ)
+176140 Torch pottery -- 灯明土器
+176141 Torch pottery -- 灯明土器
+176200 Shrine (snow) -- 祠(雪)
+176210 Shrine -- 祠
+177100 Valley Enemy Weapon_Shotgun -- 谷敵の武器_ショットガン
+177110 Valley Enemy Weapon_Cannon -- 谷敵の武器_大砲
+177120 Valley Enemy Weapon_Gun -- 谷敵の武器_銃
+177130 Valley Enemy Weapon_Gun (Normal) -- 谷敵の武器_銃（通常）
+177700 Carp carp -- 鯉の死骸
+177800 Sacred lotus -- 神器蓮
+177900 Snake liver -- 蛇の肝
+201000 Main hall door -- 本堂の扉
+201010 The door that connects the hidden hall and the main hall -- 隠し堂と本堂をつなぐ扉
+201020 Five-storied pagoda door -- 五重塔の扉
+201030 Bell tower door -- 鐘楼堂の扉
+201040 Light source room door -- 光源部屋の扉
+201050 The front door of the hidden hall -- 隠し堂の正面扉
+202000 Maple that can ride -- 乗れるモミジ
+202010 Maple that can ride -- 乗れるモミジ
+203000 Tsutenbashi _ 蔀 degree -- 通天橋_蔀度
+203001 Tsutenbashi _ 蔀 degree _ opening -- 通天橋_蔀度_開き
+203002 Tsutenbashi _ 蔀 degree _ lower part -- 通天橋_蔀度_下部
+203005 Tsutenbashi_railing -- 通天橋_手すり
+203010 Windmill -- 風車
+203020 Windmill (white) -- 風車(白)
+203030 Windmill (red and white) -- 風車（赤白）
+203100 Bodhisattva statue set -- 菩薩像セット
+204100 Burner with incense burner -- 火舎香炉
+204105 Platform set -- 壇具セット
+204106 Platform set -- 壇具セット
+204110 Censer -- 香炉
+204120 Censer -- 香炉
+204260 Vase -- 壺
+204270 Vase with lid -- 蓋つき壺
+204280 Bug jar -- 虫壺
+204290 Hanging insect jar -- 吊り虫壺
+204291 Hanging insect jar -- 吊り虫壺
+204500 Bookshelf -- 本棚
+204700 Chest -- 櫃
+204710 Keiki -- 経机
+204715 Keiki (meat piece) -- 経机(肉片)
+204720 Sutra box -- 経箱
+204730 Bamboo basket -- 竹籠
+204781 Book pile -- 本の山
+204782 Book pile -- 本の山
+204790 Scroll set -- 巻物セット
+204800 Gomadou_Folding screen -- 護摩堂_屏風
+204801 Gomadou_Folding screen -- 護摩堂_屏風
+204810 Infinite Corridor_Folding Screen_Before Defeat -- 無限回廊_屏風_撃破前
+204811 Infinite Corridor_Folding Screen_After Defeat -- 無限回廊_屏風_撃破後
+204820 Folding screen _Before defeating_ ■ □□□ -- 屏風_撃破前_■□□□
+204821 Folding screen _Before defeat _ □ ■ □□ -- 屏風_撃破前_□■□□
+204822 Folding screen _Before defeat _ □□ ■ □ -- 屏風_撃破前_□□■□
+204823 Folding screen _Before defeat _ □□□ ■ -- 屏風_撃破前_□□□■
+204830 Folding screen _ After defeat _ ■ □□□ -- 屏風_撃破後_■□□□
+204831 Folding screen _ After defeat _ □ ■ □□ -- 屏風_撃破後_□■□□
+204832 Folding screen _ After defeat _ □□ ■ □ -- 屏風_撃破後_□□■□
+204833 Folding screen _ After defeat _ □□□ ■ -- 屏風_撃破後_□□□■
+204850 Hidden main hall_altar object -- 隠し本堂_祭壇オブジェ
+204851 Hidden main hall_altar object -- 隠し本堂_祭壇オブジェ
+205000 Elevator -- エレベーター
+205010 Elevator_lever -- エレベーター_レバー
+205100 bell -- 鐘
+205101 Bell_for infinite corridor -- 鐘_無限回廊用
+205300 kite -- 凧
+205550 Hanging lantern_for events -- 吊り灯篭_イベント用
+205570 Stage equipment_for events -- 壇具_イベント用
+205600 Kuri_folding screen -- 庫裏_屏風
+205700 Poster -- 張り紙
+205900 Sokushinbutsu -- 即身仏
+205910 Sokushinbutsu (purple) -- 即身仏（紫）
+204801 Gomadou_Folding screen -- 護摩堂_屏風
+206000 Stone lantern -- 石灯篭
+206010 High cup lighthouse -- 高杯燈台
+206020 High lighthouse -- 高燈台
+206030 Torch plate -- 灯明皿
+206040 Candlestick -- 連燭台
+206050 Desktop candlestick -- 卓上燭台
+206051 Desktop candlestick (small) -- 卓上燭台(小)
+206052 Desktop candlestick (small) _ for children only -- 卓上燭台(小)_稚児専用
+206060 Candlestick for the main hall -- 本堂用燭台
+206070 Hidden main hall_candle stand (large) -- 隠し本堂_燭台(大)
+206071 Hidden main hall_candlestick (small) set -- 隠し本堂_燭台(小)セット
+206080 Kagaribi -- 篝火
+206100 Fishing lantern -- 釣り灯篭
+206101 Fishing lantern (without light source) -- 釣り灯篭(光源なし)
+206110 Fishing lantern -- 釣り灯篭
+206111 Fishing lantern (without light source) -- 釣り灯篭(光源なし)
+206150 Handheld candlestick -- 手持ち燭台
+206160 Hidden main hall_handheld candlestick -- 隠し本堂_手持ち燭台
+206200 Bodhisattva statue -- 菩蕯像
+206300 Marking object -- 目印オブジェ
+207000 Sokushinbutsu -- 即身仏
+207100 Roof general purpose wire point -- 屋根汎用ワイヤーポイント
+207110 Indoor general purpose wire point -- 屋内汎用ワイヤーポイント
+207300 Human canopy -- 人天蓋
+208000 Redo bell -- やり直しの鐘
+208100 Immortal Slash Box -- 不死斬りの箱
+208200 Hidden main hall 2 tatami mats -- 隠し本堂二畳台
+208210 Hidden main hall cushion -- 隠し本堂座布団
+208300 Immortal sword and a stand to put a box on -- 不死斬りと箱を乗せる台
+208500 Prince pillow -- 皇子の枕
+208600 Trees for cutscenes -- カットシーン用樹木
+251000 Rear door -- 後宮後扉
+251100 Rear door -- 後宮前扉
+252000 Riding cherry blossoms (turn left) -- 乗れる桜（左曲がり）
+252001 Riding cherry blossoms (turn left) _ fall prevention -- 乗れる桜（左曲がり）_落下防止
+252010 Riding cherry blossoms (turn right) -- 乗れる桜（右曲がり）
+252011 Riding cherry blossoms (turn right) _ fall prevention -- 乗れる桜（右曲がり）_落下防止
+252020 Riding cherry blossoms (S-shaped) -- 乗れる桜（S字）
+252021 Riding cherry blossoms (S-shaped) _ fall prevention -- 乗れる桜（S字）_落下防止
+252030 Riding cherry blossoms (L-shaped on the right) -- 乗れる桜（右L字）
+252031 Riding cherry blossoms (L-shaped on the right) _ fall prevention -- 乗れる桜（右L字）_落下防止
+252040 Riding cherry blossoms (from the ground) -- 乗れる桜（地面から）
+252041 Riding cherry blossoms (from the ground) _ fall prevention -- 乗れる桜（地面から）_落下防止
+252042 Riding cherry blossoms (from the ground) _ hit -- 乗れる桜（地面から）_ヒット
+252050 Riding cherry blossoms (from the ground / large) -- 乗れる桜（地面から/大）
+252051 Riding cherry blossoms (from the ground / large) _ fall prevention -- 乗れる桜（地面から/大）_落下防止
+252052 Riding cherry blossoms (from the ground / large) _ hit -- 乗れる桜（地面から/大）_ヒット
+252200 Maple (wire point) -- モミジ(ワイヤーポイント)
+252201 Maple (wire point) -- モミジ(ワイヤーポイント)
+252202 Maple (wire point) -- モミジ(ワイヤーポイント)
+252203 Maple (wire point) -- モミジ(ワイヤーポイント)
+252212 Maple (wire point) -- モミジ(ワイヤーポイント)
+252213 Maple (wire point) -- モミジ(ワイヤーポイント)
+252550 Genpei warrior corpse mask -- 源平武者死体の仮面
+252551 Genpei warrior corpse mask (plural) -- 源平武者死体の仮面(複数)
+25300 Ox cart -- 牛車
+253100 Insect cage (cylinder) -- 虫かご（円筒）
+253110 Insect cage (box type) -- 虫かご（箱型）
+253500 Underwater corridor (roof) that carp breaks -- 鯉が壊す水中廊下（屋根）
+253510 Underwater corridor broken by carp (wall with window) -- 鯉が壊す水中廊下（窓付き壁）
+253520 Underwater corridor (wall) that carp breaks -- 鯉が壊す水中廊下（壁）
+253530 Underwater corridor (floor) destroyed by carp -- 鯉が壊す水中廊下（床）
+253600 Underwater turret that carp breaks (above) -- 鯉が壊す水中櫓(上)
+253610 Underwater turret that carp breaks (bottom) -- 鯉が壊す水中櫓(下)
+254000 folding screen -- 屏風
+254001 Folding screen (broken) -- 屏風（壊れ）
+254002 Folding screen -- 屏風（畳み）
+254003 Folding screen (Okina Ryu left) -- 屏風(翁龍左)
+254004 Folding screen (Okina Ryu right) -- 屏風(翁龍右)
+254005 Folding screen (Okina Dragon left) _ tilt -- 屏風(翁龍左)_傾き
+254006 Folding screen (Okina Ryu right) _ tilt -- 屏風(翁龍右)_傾き
+254000 Folding screen (small) -- 屏風（小）
+254010 screen -- 几帳
+254020 screen -- 衝立
+254050 folding screen -- 屏風
+254051 Folding screen (Okina Ryu left) _ Damaged -- 屏風(翁龍左)_破損
+254052 Folding screen (Okina Ryu right) _damaged -- 屏風(翁龍右)_破損
+254100 Clothing girder -- 衣桁
+254110 Upstairs shelf -- 二階棚一具
+254120 Rooting mirror stand -- 根こじ鏡台
+254130 Weapons -- 角だらい
+254140 Kara Kushige -- 唐櫛笥
+254150 Bow stand -- 弓立て
+254151 Bow stand (desk only) -- 弓立て（机のみ）
+254200 Kara -- 唐櫃
+254270 Vase with lid -- 蓋つき壺
+254300 Fortune-telling set A -- 占いセットA
+254310 Fortune-telling set B -- 占いセットB
+254350 Sake set -- 酒器セット
+254900 Maple branch -- モミジの枝
+254901 Maple branch -- モミジの枝
+254902 Maple branch -- モミジの枝
+255000 Taikobashi that carp breaks -- 鯉が壊す太鼓橋
+255001 Only hits on the floor of the drum bridge that the carp breaks -- 鯉が壊す太鼓橋の床のヒットのみ
+255500 Bell calling a carp -- 鯉を呼ぶ鐘
+255110 Parasitic cherry blossoms (large) -- 寄生桜（大）
+255600 Decorative tile (Pt) -- 飾り瓦(Pt)
+255610 Parasitic cherry blossoms -- 寄生桜
+256000 Stone lantern 1 -- 石灯篭1
+256010 Stone lantern 2 -- 石灯篭2
+256020 Hanging lantern -- 吊り下げ灯篭
+256030 Hanging incense burner -- 吊り香炉
+256100 High lighthouse -- 高灯台
+256110 High cup lighthouse -- 高杯灯台
+259900 Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ
+259910 Mermaid Dragon_Seven-Branched Sword Attached Object -- 人魚竜_七支刀アタッチオブジェ
+259911 Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ
+259912 Mermaid Dragon_Fall Prevention Hit -- 人魚竜_落下防止ヒット
+259920 Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ
+259921 Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ
+259922 Mermaid Dragon_Hit Only Object -- 人魚竜_ヒットのみオブジェ
+259923 Mermaid Dragon_Fall Prevention Hit -- 人魚竜_落下防止ヒット
+259924 Mermaid Dragon_Fall Prevention Hit -- 人魚竜_落下防止ヒット
+259925 Mermaid Dragon_Fall Prevention Hit -- 人魚竜_落下防止ヒット
+950010 Ogawa test door -- 小川テストドア
+950100 Water drop test door -- 水落テストドア
+959000 Tsukamoto test -- 塚本テスト
+959010 Bank test -- 土手テスト
+961500 Exit door of the Great Buddha Hall -- 大仏殿の出口扉
+961598 Great Buddha Hall Exit Door Test 2 -- 大仏殿の出口扉テスト2
+961599 Exit door test of the Great Buddha Hall 1 -- 大仏殿の出口扉テスト1
+963000 Stone (small) -- 積み石（小）
+963001 Stone (middle) -- 積み石（中）
+963002 Stone (Large) -- 積み石（大）
+964450 Tub -- 桶
+964451 Tub -- 桶
+964500 Vase -- 壺
+964501 Vase (covering) -- 壺(蓋立てかけ)
+964502 Vase size (with lid and cassotte) -- 壺大(蓋と柄杓付)
+964510 Sake set -- 酒器
+964511 Sake set -- 酒器
+964512 Sake set -- 酒器
+964530 brazier -- 火鉢
+964540 firewood -- 薪
+964560 spear -- 槍
+964570 gun -- 銃
+964580 Daihachiguruma -- 大八車
+964590 Daihachiguruma (broken) -- 大八車(壊)
+964700 General-purpose chest (1 step) -- 汎用櫃(1段)
+964701 General-purpose chest (1 step) version difference -- 汎用櫃(1段)バージョン違い
+964710 General-purpose chest (2 steps) -- 汎用櫃(2段)
+964711 General-purpose chest (2 steps) version difference -- 汎用櫃(2段)バージョン違い
+964800 Rockfall -- 落石
+964805 Rockfall + soil -- 落石+土
+964806 Rockfall + soil (snow cover) -- 落石+土(積雪)
+964810 Snowfall -- 落雪
+964820 Masonry -- 石積
+964900 Maple branch -- モミジの枝
+964901 Maple branch -- モミジの枝
+964902 Maple branch -- モミジの枝
+965200 Suspension bridge (FDP transplant) -- 吊り橋(FDP移植)
+965210 Suspension bridge (for hits) -- 吊り橋(ヒット用)
+965220 Suspension bridge (for events) -- 吊り橋(イベント用)
+965300 Aristocratic corpse -- 貴族死体
+965400 Litter (OBJ that hides the valley) -- 輿（谷の隠れるOBJ）
+965500 Root (wire point) -- 根(ワイヤーポイント)
+965510 Root (wire point) -- 根(ワイヤーポイント)
+965520 Root (wire point) -- 根(ワイヤーポイント)
+965550 Snake metal fittings 1 -- 蛇の金具1
+965560 Snake metal fittings 2 -- 蛇の金具2
+965600 Power God&#39;s nail hiding -- 力神の釘隠し
+965700 Wooden Shachihoko (Large) -- 木製しゃちほこ(大)
+965710 Wooden shachihoko (small) -- 木製しゃちほこ(小)
+965800 Shachihoko (Large) -- しゃちほこ(大)
+965810 Shachihoko (Small) -- しゃちほこ(小)
+965900 Baluster -- 欄干
+966000 Kagaribi -- 篝火
+966050 Bonfire with pot -- 鍋付焚火
+966051 Bonfire with pot -- 鍋付焚火
+966060 Smoke signal -- 狼煙
+966100 Candlestick -- 燭台
+966110 Candlestick -- 燭台
+966210 Shrine -- 祠
+969000 Nezasa -- ネザサ
+969001 Nezasa (more) -- ネザサ（多め）
+969002 Nezasa (less) -- ネザサ（少なめ）
+969010 Fern -- シダ
+969020 Miscanthus -- ススキ
+969021 Tall pampas grass -- 背の高いススキ
+969030 Carex lenta -- ナキリスゲ
+969040 Akinokirinsou -- アキノキリンソウ
+969050 Needlesa -- センダングサ
+969060 Imperata cylindrica -- チガヤ
+969070 Yabutachibana -- ヤブタチバナ
+969071 Ardisia japonica -- ヤブコウジ
+969080 Kobanogamazumi -- コバノガマズミ
+969900 Nezasa (with a lot of collisions) -- ネザサ（多めコリジョンあり）
+999999 Default -- デフォルト

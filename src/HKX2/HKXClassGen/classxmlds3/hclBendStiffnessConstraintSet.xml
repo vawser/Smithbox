@@ -1,0 +1,6 @@
+<class name='hclBendStiffnessConstraintSet' version='1' signature='0x11315f09' size='56' parent='hclConstraintSet'>
+  <members>
+    <member name='links' offset='32' ctype='hclBendStiffnessConstraintSetLink' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useRestPoseConfig' offset='48' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

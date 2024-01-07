@@ -1,0 +1,13 @@
+{
+    "Title": "FMG",
+    "Tags": [
+        "Format",
+        "Text",
+        "Localization",
+        "Localisation"
+    ],
+    "Contents": [
+        "A localisation format with strings keyed by integer ids.",
+        "This is used for all text which appears within the game."
+    ]
+}

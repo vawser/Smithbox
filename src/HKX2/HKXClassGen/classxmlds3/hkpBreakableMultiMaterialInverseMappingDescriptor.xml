@@ -1,0 +1,6 @@
+<class name='hkpBreakableMultiMaterialInverseMappingDescriptor' version='1' signature='0xaadf66' size='4'>
+  <members>
+    <member name='offset' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numKeys' offset='2' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

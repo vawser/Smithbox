@@ -1,0 +1,5 @@
+<class name='hkbEventPayloadList' version='1' signature='0xef50b225' size='32' parent='hkbEventPayload'>
+  <members>
+    <member name='payloads' offset='16' ctype='hkbEventPayload' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

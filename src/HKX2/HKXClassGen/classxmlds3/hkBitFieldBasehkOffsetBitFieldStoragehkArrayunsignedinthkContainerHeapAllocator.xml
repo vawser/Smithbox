@@ -1,0 +1,5 @@
+<class name='hkBitFieldBasehkOffsetBitFieldStoragehkArrayunsignedinthkContainerHeapAllocator' version='1' signature='0xb8bf0adc' size='24'>
+  <members>
+    <member name='storage' offset='0' ctype='hkOffsetBitFieldStoragehkArrayunsignedinthkContainerHeapAllocator' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

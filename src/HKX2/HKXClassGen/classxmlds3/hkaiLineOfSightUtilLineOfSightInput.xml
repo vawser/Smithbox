@@ -1,0 +1,6 @@
+<class name='hkaiLineOfSightUtilLineOfSightInput' version='1' signature='0x6747e873' size='112' parent='hkaiLineOfSightUtilInputBase'>
+  <members>
+    <member name='goalPoint' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='goalFaceKey' offset='96' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

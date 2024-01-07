@@ -1,0 +1,28 @@
+0 Dummy (for data output) -- ダミー(データ出力のため)
+10000000 Burning down samurai residence -- 焼け落ちる武家屋敷
+11020070 Receive a sword from the prince -- 皇子から刀を授かる
+20000000 Temple boss battle started -- 寺ボス戦開始
+20000011 Defeat the temple boss_day -- 寺ボス撃破＿昼
+20000010 Defeat the temple boss -- 寺ボス撃破
+20000012 Defeat the temple boss_evening -- 寺ボス撃破＿夕
+10000000 Burning down samurai residence -- 焼け落ちる武家屋敷
+10000010 Butterflies appeared -- お蝶登場
+11010010 Second appearance of rivals -- ライバル2回目登場
+11010011 Second appearance of rivals _ noon -- ライバル2回目登場＿昼
+11010020 Rival 2nd HU -- ライバル2回目HU
+11010030 Defeat the second rival -- ライバル2回目撃破
+11010031 Defeat the second rival _ evening -- ライバル2回目撃破＿夕
+11010040 Ninja army chief appearance -- 忍軍の長登場
+11010060 Isei&#39;s daughter battle begins -- 医聖の娘戦開始
+11010070 Shura End -- 修羅エンド
+11020000 Lose to rivals -- ライバルに敗れる
+11020001 Losing to rivals_Victory -- ライバルに敗れる＿勝利
+11020040 Resurrected Kensei Appears -- 蘇った剣聖登場
+11020070 Receive a sword from the prince -- 皇子から刀を授かる
+25000020 Mermaid dragon appeared -- 人魚竜登場
+25000020 Moving to the sea of clouds -- 雲海への移動
+11010080 Kensei Appearance Castle Tower -- 剣聖登場天守閣
+11020090 Join the prince -- 皇子と合流
+15000000 Taken to a straw doll -- 藁人形に連れて行かれる
+10000020 Date display -- 日付表示
+89000099 Burning down samurai residence -- 焼け落ちる武家屋敷

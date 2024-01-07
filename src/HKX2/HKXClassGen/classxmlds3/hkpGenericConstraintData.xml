@@ -1,0 +1,6 @@
+<class name='hkpGenericConstraintData' version='1' signature='0xde44798e' size='144' parent='hkpConstraintData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpBridgeAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='scheme' offset='64' ctype='hkpGenericConstraintDataScheme' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

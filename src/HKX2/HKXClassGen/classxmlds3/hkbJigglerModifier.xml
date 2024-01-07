@@ -1,0 +1,16 @@
+<class name='hkbJigglerModifier' version='1' signature='0x1c1623ad' size='152' parent='hkbModifier'>
+  <enums>
+    <enum name='JiggleCoordinates' flags='00000000'>
+      <enumitem name='JIGGLE_IN_WORLD_COORDINATES' value='0'/>
+      <enumitem name='JIGGLE_IN_MODEL_COORDINATES' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='jigglerGroups' offset='88' ctype='hkbJigglerGroup' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='jiggleCoordinates' offset='104' etype='JiggleCoordinates' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='currentVelocitiesWS' offset='112' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='currentPositions' offset='128' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeStep' offset='144' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='initNextModify' offset='148' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

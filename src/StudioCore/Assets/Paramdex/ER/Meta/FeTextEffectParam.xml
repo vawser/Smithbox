@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <resId AltName="Resource ID" Wiki="Instance name of the menu resource. ID of TextEffect_X" />
+    <pad1 AltName=""/>
+    <textId AltName="Text ID" Wiki="Text ID to display (-1 No text). MenuText" />
+    <seId AltName="SE ID" Wiki="Voice ID to play (-1 No SE)" />
+    <canMixMapName AltName="Display Simultaneously with Map Name" Wiki="Whether to display at the same time as the map name" IsBool="" />
+    <pad3 AltName=""/>
+    <pad2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

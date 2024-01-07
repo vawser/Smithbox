@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <isSummonPosStartForRed IsBool="" />
+    <enableBloodMessage IsBool="" />
+    <enableGhost IsBool="" />
+    <enableBloodstain IsBool="" />
+  </Field>
+  <Self />
+</PARAMMETA>

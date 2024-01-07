@@ -1,0 +1,8 @@
+<class name='hkbStateMachineDelayedTransitionInfo' version='1' signature='0x26d5499' size='24'>
+  <members>
+    <member name='delayedTransition' offset='0' ctype='hkbStateMachineProspectiveTransitionInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='timeDelayed' offset='16' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isDelayedTransitionReturnToPreviousState' offset='20' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='wasInAbutRangeLastFrame' offset='21' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

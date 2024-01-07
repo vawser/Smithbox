@@ -1,0 +1,13 @@
+<class name='hkpHingeConstraintDataAtoms' version='1' signature='0x1f6f4807' size='192'>
+  <enums>
+    <enum name='Axis' flags='00000000'>
+      <enumitem name='AXIS_AXLE' value='0'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='transforms' offset='0' ctype='hkpSetLocalTransformsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='setupStabilization' offset='144' ctype='hkpSetupStabilizationAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='2dAng' offset='160' ctype='hkp2dAngConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ballSocket' offset='176' ctype='hkpBallSocketConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,65 @@
+<class name='hknpWorldCinfo' version='1' signature='0x6300cf42' size='256'>
+  <enums>
+    <enum name='SimulationType' flags='00000000'>
+      <enumitem name='SIMULATION_TYPE_SINGLE_THREADED' value='0'/>
+      <enumitem name='SIMULATION_TYPE_MULTI_THREADED' value='1'/>
+    </enum>
+    <enum name='SolverType' flags='00000000'>
+      <enumitem name='SOLVER_TYPE_INVALID' value='0'/>
+      <enumitem name='SOLVER_TYPE_2ITERS_SOFT' value='1'/>
+      <enumitem name='SOLVER_TYPE_2ITERS_MEDIUM' value='2'/>
+      <enumitem name='SOLVER_TYPE_2ITERS_HARD' value='3'/>
+      <enumitem name='SOLVER_TYPE_4ITERS_SOFT' value='4'/>
+      <enumitem name='SOLVER_TYPE_4ITERS_MEDIUM' value='5'/>
+      <enumitem name='SOLVER_TYPE_4ITERS_HARD' value='6'/>
+      <enumitem name='SOLVER_TYPE_8ITERS_SOFT' value='7'/>
+      <enumitem name='SOLVER_TYPE_8ITERS_MEDIUM' value='8'/>
+      <enumitem name='SOLVER_TYPE_8ITERS_HARD' value='9'/>
+      <enumitem name='SOLVER_TYPE_MAX' value='10'/>
+    </enum>
+    <enum name='LeavingBroadPhaseBehavior' flags='00000000'>
+      <enumitem name='ON_LEAVING_BROAD_PHASE_DO_NOTHING' value='0'/>
+      <enumitem name='ON_LEAVING_BROAD_PHASE_REMOVE_BODY' value='1'/>
+      <enumitem name='ON_LEAVING_BROAD_PHASE_FREEZE_BODY' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='bodyBufferCapacity' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userBodyBuffer' offset='8' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='motionBufferCapacity' offset='16' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userMotionBuffer' offset='24' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='constraintBufferCapacity' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userConstraintBuffer' offset='40' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='persistentStreamAllocator' offset='48' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='materialLibrary' offset='56' ctype='hknpMaterialLibrary' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motionPropertiesLibrary' offset='64' ctype='hknpMotionPropertiesLibrary' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='qualityLibrary' offset='72' ctype='hknpBodyQualityLibrary' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simulationType' offset='80' etype='SimulationType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numSplitterCells' offset='84' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='gravity' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableContactCaching' offset='112' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mergeEventsBeforeDispatch' offset='113' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='leavingBroadPhaseBehavior' offset='114' etype='LeavingBroadPhaseBehavior' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='broadPhaseAabb' offset='128' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='broadPhaseConfig' offset='160' ctype='hknpBroadPhaseConfig' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionFilter' offset='168' ctype='hknpCollisionFilter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shapeTagCodec' offset='176' ctype='hknpShapeTagCodec' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionTolerance' offset='184' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='relativeCollisionAccuracy' offset='188' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableWeldingForDefaultObjects' offset='192' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableWeldingForCriticalObjects' offset='193' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solverTau' offset='196' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solverDamp' offset='200' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solverIterations' offset='204' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solverMicrosteps' offset='208' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultSolverTimestep' offset='212' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxApproachSpeedForHighQualitySolver' offset='216' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableDeactivation' offset='220' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deleteCachesOnDeactivation' offset='221' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='largeIslandSize' offset='224' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableSolverDynamicScheduling' offset='228' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contactSolverType' offset='232' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='unitScale' offset='236' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='applyUnitScaleToStaticConstants' offset='240' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

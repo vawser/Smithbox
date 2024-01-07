@@ -1,0 +1,6 @@
+<class name='hkaiNavMeshGenerationSettingsWallClimbingSettings' version='1' signature='0x15e032a3' size='2'>
+  <members>
+    <member name='enableWallClimbing' offset='0' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='excludeWalkableFaces' offset='1' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name='hclStretchLinkConstraintSetMx' version='1' signature='0xff0a1a16' size='64' parent='hclConstraintSet'>
+  <members>
+    <member name='batches' offset='32' ctype='hclStretchLinkConstraintSetMxBatch' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='singles' offset='48' ctype='hclStretchLinkConstraintSetMxSingle' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

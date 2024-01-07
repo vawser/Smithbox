@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Slash" />
+      <Option Value="2" Name="Light Hit" />
+      <Option Value="3" Name="Thrust" />
+      <Option Value="4" Name="Neutral" />
+      <Option Value="5" Name="Ninsatsu" />
+      <Option Value="6" Name="Heavy Hit" />
+      <Option Value="7" Name="Anti Ground" />
+      <Option Value="8" Name="Anti Air" />
+      <Option Value="9" Name="Light Shoot" />
+      <Option Value="10" Name="Attribute A" />
+      <Option Value="11" Name="Attribute B" />
+      <Option Value="12" Name="Attribute C" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+      <Option Value="1" Name="Default" />
+      <Option Value="2" Name="Fire" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Poison" />
+      <Option Value="6" Name="Lightning (No midair reversal animation)" />
+      <Option Value="10" Name="Lightning (Midair reversal animation)" />
+    </Enum>
+    <Enum Name="ATKPARAM_BEHAVIOR_ID" type="u8">
+      <Option Value="1" Name="(Pc) Mikiri Counter" />
+      <Option Value="2" Name="(Pc) Mikiri Counter" />
+      <Option Value="3" Name="(Pc) Fistful of Ash/Bloodsmoke stun" />
+      <Option Value="5" Name="(Pc) Red Eyes scared reaction" />
+      <Option Value="6" Name="(Pc) Illusion stun/damage" />
+      <Option Value="7" Name="(Pc) Divine Abduction" />
+      <Option Value="8" Name="(Pc) Kicks" />
+      <Option Value="17" Name="(Npc) Dirt/Dust stun" />
+      <Option Value="18" Name="(Npc) Divine Dragon wind, blows upwards" />
+      <Option Value="19" Name="(Npc) Divine Dragon wind, blows backwards" />
+      <Option Value="20" Name="(Npc) Isshin, special deflect reaction" />
+      <Option Value="21" Name="(Npc) Genichiro, special deflect reaction" />
+      <Option Value="22" Name="(Npc) Emma, special deflect reaction" />
+      <Option Value="23" Name="(Npc) Owl, special deflect reaction" />
+    </Enum>
+    <Enum Name="ATKPARAM_STAMINA_ATKATTR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Slash" />
+      <Option Value="2" Name="Light Hit" />
+      <Option Value="3" Name="Thrust" />
+      <Option Value="4" Name="Neutral" />
+      <Option Value="5" Name="Ninsatsu" />
+      <Option Value="6" Name="Heavy Hit" />
+      <Option Value="7" Name="Anti Ground" />
+      <Option Value="8" Name="Anti Air" />
+      <Option Value="9" Name="Light Shoot" />
+      <Option Value="10" Name="Attribute A" />
+      <Option Value="11" Name="Attribute B" />
+      <Option Value="12" Name="Attribute C" />
+    </Enum>
+    <Enum Name="ATK_PARAM_HIT_TYPE" type="u8">
+      <Option Value="0" Name="Ignore Collision" />
+      <Option Value="2" Name="Invoke Collision" />
+    </Enum>
+    <Enum Name="ATKPARAM_DEFLECTED_ACTION" type="u8">
+      <Option Value="1" Name="Play animation xxx" />
+      <Option Value="2" Name="Play animation xxx" />
+      <Option Value="11" Name="No Reaction" />
+    </Enum>
+    <Enum Name="ATKPARAM_JUST_DEFLECTED_ACTION" type="u8">
+      <Option Value="1" Name="Play animation xxx" />
+      <Option Value="2" Name="Play animation xxx" />
+      <Option Value="11" Name="No Reaction" />
+    </Enum>
+  </Enums>
+  <Field>
+    <hit0_Radius Wiki="Radius of the hitbox" />
+    <hit1_Radius Wiki="Radius of the hitbox" />
+    <hit2_Radius Wiki="Radius of the hitbox" />
+    <hit3_Radius Wiki="Radius of the hitbox" />
+    <knockbackDist_DirectHit Wiki="Amount of knockback applied if target is hit hit without blocking" />
+    <knockbackDist_Guard Wiki="Amount of knockback applied if target is hit while blocking" />
+    <knockbackDist_JustGuard Wiki="Amount of knockback applied if target is hit while deflecting" />
+    <hitStopTime />
+    <spEffectId0 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
+    <spEffectId1 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
+    <spEffectId2 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
+    <spEffectId3 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
+    <spEffectId4 Wiki="Applies speffect when the attack connects" Refs="SpEffectParam" />
+    <hit0_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit1_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit2_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit3_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit0_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit1_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit2_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit3_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <blowingCorrection />
+    <atkPhysCorrection Wiki="Multiplies physical damage based on the weapons base damage" />
+    <atkMagCorrection Wiki="Multiplies magic damage based on the weapons base damage" />
+    <atkFireCorrection Wiki="Multiplies fire damage based on the weapons base damage" />
+    <atkThunCorrection Wiki="Multiplies lightning damage based on the weapons base damage" />
+    <atkStamCorrection Wiki="Multiplies posture damage based on the weapons base damage" />
+    <guardAtkRateCorrection />
+    <guardBreakCorrection />
+    <atkThrowEscapeCorrection />
+    <atkThrowEscape />
+    <atkSuperArmorCorrection Wiki="Multiplies super armor damage based on the weapons base damage" />
+    <atkPhys Wiki="Flat Physical damage" />
+    <atkMag Wiki="Flat Magic damage" />
+    <atkFire Wiki="Flat Fire damage" />
+    <atkThun Wiki="Flat Lightning damage" />
+    <atkStam Wiki="Flat Posture damage" />
+    <guardAtkRate />
+    <guardBreakRate />
+    <atkSuperArmor Wiki="Flat super armor damage" />
+    <atkObj Wiki="Damage dealt to objects" />
+    <guardStaminaCutRate />
+    <guardRate />
+    <throwTypeId />
+    <hit0_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit1_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit2_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit3_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit0_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit1_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit2_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit3_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <dmgLevel Wiki="Damage Level (stun type) applied by the attack" />
+    <mapHitType_Normal />
+    <guardCutCancelRate Wiki="The amount that will go through a guard no matter what. Only works when the player doesn't have Kuro's Charm" />
+    <atkAttribute Wiki="Physical damage type" Enum="ATKPARAM_ATKATTR_TYPE" />
+    <spAttribute Wiki="Non-physical damage type" Enum="ATKPARAM_SPATTR_TYPE" />
+    <atkType Wiki="Determines the SFX and SE used when attacking" />
+    <atkMaterial_forSfx />
+    <atkSize />
+    <defSeMaterial1 />
+    <hitSourceType />
+    <throwFlag />
+    <isAllDirGuard IsBool=""/>
+    <disableStaminaAttack IsBool="" />
+    <disableHitSpEffect IsBool="" />
+    <IgnoreNotifyMissSwingForAI IsBool="" />
+    <repeatHitSfx />
+    <isArrowAtk IsBool="" />
+    <isGhostAtk IsBool="" />
+    <isDisableNoDamage Wiki="Attack will connect even during Invincibility frames" IsBool="" />
+    <atkPow_forSfx />
+    <atkDir_forSfx />
+    <opposeTarget Wiki="Will this hitbox hit enemies?" IsBool="" />
+    <friendlyTarget Wiki="Will this hitbox hit your allies?" IsBool="" />
+    <selfTarget Wiki="Will this hitbox hit you?" IsBool="" />
+    <isCheckDoorPenetration IsBool="" />
+    <isDamageDropAttack IsBool="" />
+    <doesBreakRepelStamDamage IsBool="" />
+    <pad />
+    <atkBehaviorId Enum="ATKPARAM_BEHAVIOR_ID" />
+    <atkPow_forSe />
+    <rigidImpulse />
+    <decalId1 Wiki="Applies Decal when attack hits" Refs="DecalParam" />
+    <decalId2 Wiki="Applies Decal when attack hits" Refs="DecalParam" />
+    <AppearAiSoundId Refs="AiSoundParam" />
+    <HitAiSoundId Refs="AiSoundParam" />
+    <HitRumbleId />
+    <HitRumbleIdByNormal />
+    <HitRumbleIdByMiddle />
+    <HitRumbleIdByRoot />
+    <traceSfxId0 />
+    <traceDmyIdHead0 />
+    <traceDmyIdTail0 />
+    <traceSfxId1 />
+    <traceDmyIdHead1 />
+    <traceDmyIdTail1 />
+    <traceSfxId2 />
+    <traceDmyIdHead2 />
+    <traceDmyIdTail2 />
+    <traceSfxId3 />
+    <traceDmyIdHead3 />
+    <traceDmyIdTail3 />
+    <traceSfxId4 />
+    <traceDmyIdHead4 />
+    <traceDmyIdTail4 />
+    <traceSfxId5 />
+    <traceDmyIdHead5 />
+    <traceDmyIdTail5 />
+    <traceSfxId6 />
+    <traceDmyIdHead6 />
+    <traceDmyIdTail6 />
+    <traceSfxId7 />
+    <traceDmyIdHead7 />
+    <traceDmyIdTail7 />
+    <hit4_Radius Wiki="Radius of the hitbox" />
+    <hit5_Radius Wiki="Radius of the hitbox" />
+    <hit6_Radius Wiki="Radius of the hitbox" />
+    <hit7_Radius Wiki="Radius of the hitbox" />
+    <hit8_Radius Wiki="Radius of the hitbox" />
+    <hit9_Radius Wiki="Radius of the hitbox" />
+    <hit10_Radius Wiki="Radius of the hitbox" />
+    <hit11_Radius Wiki="Radius of the hitbox" />
+    <hit12_Radius Wiki="Radius of the hitbox" />
+    <hit13_Radius Wiki="Radius of the hitbox" />
+    <hit14_Radius Wiki="Radius of the hitbox" />
+    <hit15_Radius Wiki="Radius of the hitbox" />
+    <hit4_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit5_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit6_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit7_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit8_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit9_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit10_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit11_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit12_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit13_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit14_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit15_DmyPoly1 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit4_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit5_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit6_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit7_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit8_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit9_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit10_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit11_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit12_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit13_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit14_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit15_DmyPoly2 Wiki="Location of the hitbox, defined by DummyPoly" />
+    <hit4_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit5_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit6_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit7_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit8_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit9_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit10_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit11_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit12_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit13_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit14_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit15_hitType Enum="ATK_PARAM_HIT_TYPE" />
+    <hit4_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit5_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit6_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit7_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit8_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit9_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit10_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit11_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit12_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit13_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit14_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <hit15_Priority Wiki="If there are multiple hit capsules, the one with the higher priority will connect" />
+    <defSfxMaterial1 />
+    <defSeMaterial2 />
+    <defSfxMaterial2 />
+    <atkDarkCorrection Wiki="Multiplies dark damage based on the weapons base damage" />
+    <atkDark Wiki="Flat Dark damage" />
+    <isChargeAtk IsBool="" />
+    <isDisableParry IsBool="" />
+    <isDisableBothHandsAtkBonus IsBool="" />
+    <isObjExtHitSfx IsBool="" />
+    <trackType Wiki="Defines the Invincibility frame category" />
+    <directAtkStamCorrection />
+    <excessDmgKeepHp />
+    <deflectedAction Wiki="Animation that will play when this attack is blocked" />
+    <justDeflectedAction Wiki="Animation that will play when this attack is deflected" />
+    <statusAilmentAtkPowerCorrectRate Wiki="Alters the amount of status build-up dealt by a percent" />
+    <spEffectAtkPowerCorrectRate_byPoint />
+    <spEffectAtkPowerCorrectRate_byRate />
+    <spEffectAtkPowerCorrectRate_byDmg />
+    <atkBehaviorId_2 />
+    <throwDamageAttribute />
+    <overwriteAttackElementCorrectId />
+    <dmgLevel_vsPlayer />
+    <staminaPhysicsAttribute Wiki="Posture damage type" Enum="ATKPARAM_STAMINA_ATKATTR_TYPE" />
+    <directAtkStamDamage Wiki="Posture damage multiplier for direct hits" />
+    <repelLostStamDamage Wiki="Posture damage multiplier for blocked hits" />
+    <directAtkStamDamage_Attacker Wiki="Posture damage dealt to the attacker when this attack hits directly" />
+    <repelVictoryStamDamage_Attacker Wiki="Posture damage dealt to the attacker when this attack is blocked" />
+    <repelLostStamDamage_Attacker Wiki="Posture damage dealt to the attacker when this attack is deflected" />
+    <decalBaseId1 />
+    <decalBaseId2 />
+    <atkMaterial_forSe />
+    <deflectAction />
+    <staminaDamageAttackHitParry Wiki="Flat posture damage dealt to attacker if this attack is countered with Mikiri Counter" />
+    <hitObjAnimeId />
+    <counterSpEffectCondition Wiki="Will activate the counterSpEffectConditon on speffects, which triggers speffects on the attacker" />
+    <attackDirectionPoint IsBool="" />
+    <statusAilmentAtkPowerCorrectRate_byPoint Wiki="Alter the amount of status build-up dealt by a flat amount" />
+    <guardAttribute />
+    <disableGuard_vsGuardAttribute0 Wiki="Attack cannot be blocked with Kusabimaru " IsBool="" />
+    <disableJustGuard_vsGuardAttribute0 Wiki="Attack cannot be deflected with Kusabimaru" IsBool="" />
+    <disableGuard_vsGuardAttribute1 Wiki="Attack cannot be blocked with Umbrella" IsBool="" />
+    <disableJustGuard_vsGuardAttribute1 Wiki="Attack cannot be deflected with Umbrella" IsBool="" />
+    <mapHitType_Middle />
+    <mapHitType_Root />
+    <justDeflectAction />
+    <hitStopTime_Defencer />
+  </Field>
+  <Self Wiki="Defines hitboxes" AlternativeOrder="atkPhys,atkMag,atkFire,atkThun,atkDark,atkStam,atkSuperArmor,atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkDarkCorrection,atkStamCorrection,atkSuperArmorCorrection,directAtkStamCorrection,directAtkStamDamage,repelLostStamDamage,directAtkStamDamage_Attacker,repelVictoryStamDamage_Attacker,repelLostStamDamage_Attacker,staminaDamageAttackHitParry,disableStaminaAttack,-,
+atkAttribute,spAttribute,staminaPhysicsAttribute,atkType,atkSize,atkBehaviorId,atkBehaviorId_2,-,
+knockbackDist_DirectHit,knockbackDist_Guard,knockbackDist_JustGuard,-,
+guardAtkRate,guardAtkRateCorrection,guardBreakRate,guardBreakCorrection,guardRate,guardAttribute,guardCutCancelRate,excessDmgKeepHp,guardStaminaCutRate,isAllDirGuard,disableGuard_vsGuardAttribute0,disableJustGuard_vsGuardAttribute0,disableGuard_vsGuardAttribute1,disableJustGuard_vsGuardAttribute1,-,
+spEffectId0,spEffectId1,spEffectId2,spEffectId3,spEffectId4,counterSpEffectCondition,-,
+statusAilmentAtkPowerCorrectRate,statusAilmentAtkPowerCorrectRate_byPoint,spEffectAtkPowerCorrectRate_byRate,spEffectAtkPowerCorrectRate_byPoint,spEffectAtkPowerCorrectRate_byDmg,-,
+hitStopTime,hitStopTime_Defencer,-,
+dmgLevel,dmgLevel_vsPlayer,-,
+deflectedAction,justDeflectedAction,deflectAction,justDeflectAction,-,
+opposeTarget,friendlyTarget,selfTarget,-,
+AppearAiSoundId,HitAiSoundId,-,
+decalId1,decalId2,decalBaseId1,decalBaseId2,-,
+mapHitType_Normal,mapHitType_Middle,mapHitType_Root,-,
+atkThrowEscapeCorrection,atkThrowEscape,throwFlag,throwTypeId,throwDamageAttribute,-,
+atkMaterial_forSfx,atkMaterial_forSe,defSfxMaterial1,defSeMaterial1,defSfxMaterial2,defSeMaterial2,atkPow_forSfx,atkPow_forSe,atkDir_forSfx,repeatHitSfx,-,
+trackType,isDisableNoDamage,-,
+atkObj,isObjExtHitSfx,hitObjAnimeId,-,
+disableHitSpEffect,isArrowAtk,isGhostAtk,isChargeAtk,isCheckDoorPenetration,isDamageDropAttack,doesBreakRepelStamDamage,isDisableParry,isDisableBothHandsAtkBonus,IgnoreNotifyMissSwingForAI,attackDirectionPoint,rigidImpulse,-,
+HitRumbleId,HitRumbleIdByNormal,HitRumbleIdByMiddle,HitRumbleIdByRoot,-,
+hitSourceType,-,
+hit0_Radius,hit0_DmyPoly1,hit0_DmyPoly2,hit0_hitType,hti0_Priority,-,
+hit1_Radius,hit1_DmyPoly1,hit1_DmyPoly2,hit1_hitType,hti1_Priority,-,
+hit2_Radius,hit2_DmyPoly1,hit2_DmyPoly2,hit2_hitType,hti2_Priority,-,
+hit3_Radius,hit3_DmyPoly1,hit3_DmyPoly2,hit3_hitType,hti3_Priority,-,
+hit4_Radius,hit4_DmyPoly1,hit4_DmyPoly2,hit4_hitType,hti4_Priority,-,
+hit5_Radius,hit5_DmyPoly1,hit5_DmyPoly2,hit5_hitType,hti5_Priority,-,
+hit6_Radius,hit6_DmyPoly1,hit6_DmyPoly2,hit6_hitType,hti6_Priority,-,
+hit7_Radius,hit7_DmyPoly1,hit7_DmyPoly2,hit7_hitType,hti7_Priority,-,
+hit8_Radius,hit8_DmyPoly1,hit8_DmyPoly2,hit8_hitType,hti8_Priority,-,
+hit9_Radius,hit9_DmyPoly1,hit9_DmyPoly2,hit9_hitType,hti9_Priority,-,
+hit10_Radius,hit10_DmyPoly1,hit10_DmyPoly2,hit10_hitType,hti10_Priority,-,
+hit11_Radius,hit11_DmyPoly1,hit11_DmyPoly2,hit11_hitType,hti11_Priority,-,
+hit12_Radius,hit12_DmyPoly1,hit12_DmyPoly2,hit12_hitType,hti12_Priority,-,
+hit13_Radius,hit13_DmyPoly1,hit13_DmyPoly2,hit13_hitType,hti13_Priority,-,
+hit14_Radius,hit14_DmyPoly1,hit14_DmyPoly2,hit14_hitType,hti14_Priority,-,
+hit15_Radius,hit15_DmyPoly1,hit15_DmyPoly2,hit15_hitType,hti15_Priority,-,
+traceSfxId0,traceDmyIdHead0,traceDmyIdTail0,-,
+traceSfxId1,traceDmyIdHead1,traceDmyIdTail1,-,
+traceSfxId2,traceDmyIdHead2,traceDmyIdTail2,-,
+traceSfxId3,traceDmyIdHead3,traceDmyIdTail3,-,
+traceSfxId4,traceDmyIdHead4,traceDmyIdTail4,-,
+traceSfxId5,traceDmyIdHead5,traceDmyIdTail5,-,
+traceSfxId6,traceDmyIdHead6,traceDmyIdTail6,-,
+traceSfxId7,traceDmyIdHead7,traceDmyIdTail7,-,
+overwriteAttackElementCorrectId,blowingCorrection,-" />
+</PARAMMETA>

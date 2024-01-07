@@ -1,0 +1,36 @@
+0 host -- ホスト
+1 Cooperation route client -- 協力経路のクライアント
+2 Intrusion route client -- 侵入経路のクライアント
+900 Enemy test -- エネミーテスト
+1001 MP Est Bottle +1 -- MPエスト瓶＋１
+1002 MP Est Bottle +2 -- MPエスト瓶＋２
+1003 MP Est Bottle +3 -- MPエスト瓶＋３
+1004 MP Est Bottle +4 -- MPエスト瓶＋４
+1005 MP Est Bottle +5 -- MPエスト瓶＋５
+1006 MP Est Bottle +6 -- MPエスト瓶＋６
+1007 MP Est Bottle +7 -- MPエスト瓶＋７
+1008 MP Est Bottle +8 -- MPエスト瓶＋８
+1009 MP Est Bottle +9 -- MPエスト瓶＋９
+1010 MP Est Bottle +10 -- MPエスト瓶＋１０
+1011 MP Est Bottle +11 -- MPエスト瓶＋１１
+1012 MP Est Bottle +12 -- MPエスト瓶＋１２
+1013 MP Est Bottle +13 -- MPエスト瓶＋１３
+1014 MP Est Bottle +14 -- MPエスト瓶＋１４
+1015 MP Est Bottle +15 -- MPエスト瓶＋１５
+2001 Host only _MP Est Bottle +1 -- ホストのみ_MPエスト瓶＋１
+2002 Host only _MP Est bottle +2 -- ホストのみ_MPエスト瓶＋２
+2003 Host only _MP Est bottle +3 -- ホストのみ_MPエスト瓶＋３
+2004 Host only _MP Est bottle +4 -- ホストのみ_MPエスト瓶＋４
+2005 Host only _MP Est bottle +5 -- ホストのみ_MPエスト瓶＋５
+2006 Host only _MP Est bottle +6 -- ホストのみ_MPエスト瓶＋６
+2007 Host only _MP Est bottle +7 -- ホストのみ_MPエスト瓶＋７
+2008 Host only _MP Est bottle +8 -- ホストのみ_MPエスト瓶＋８
+2009 Host only _MP Est Bottle +9 -- ホストのみ_MPエスト瓶＋９
+2010 Host only _MP Est bottle +10 -- ホストのみ_MPエスト瓶＋１０
+2011 Host Only _MP Est Bottle +11 -- ホストのみ_MPエスト瓶＋１１
+2012 Host only _MP Est bottle +12 -- ホストのみ_MPエスト瓶＋１２
+2013 Host only _MP Est bottle +13 -- ホストのみ_MPエスト瓶＋１３
+2014 Host only _MP Est Bottle +14 -- ホストのみ_MPエスト瓶＋１４
+2015 Host only _MP Est bottle +15 -- ホストのみ_MPエスト瓶＋１５
+5000 Prank Madness Reward __MP Est Bottle +2 -- いんちき狂闇霊報酬__MPエスト瓶＋２
+100000 Test ID -- テストID

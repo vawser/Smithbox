@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>LOAD_BALANCER_DRAW_DIST_SCALE_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 Lv00 = 1">
+      <Description>Lv00 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>1</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv01 = 1">
+      <Description>Lv01 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>2</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv02 = 1">
+      <Description>Lv02 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>3</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv03 = 1">
+      <Description>Lv03 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>4</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv04 = 1">
+      <Description>Lv04 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>5</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv05 = 1">
+      <Description>Lv05 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>6</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv06 = 1">
+      <Description>Lv06 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>7</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv07 = 1">
+      <Description>Lv07 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>8</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv08 = 1">
+      <Description>Lv08 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>9</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv09 = 1">
+      <Description>Lv09 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>10</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv10 = 1">
+      <Description>Lv10 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>11</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv11 = 1">
+      <Description>Lv11 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>12</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv12 = 1">
+      <Description>Lv12 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>13</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv13 = 1">
+      <Description>Lv13 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>14</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv14 = 1">
+      <Description>Lv14 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>15</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv15 = 1">
+      <Description>Lv15 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>16</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv16 = 1">
+      <Description>Lv16 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>17</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv17 = 1">
+      <Description>Lv17 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>18</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv18 = 1">
+      <Description>Lv18 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>19</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv19 = 1">
+      <Description>Lv19 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>20</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="f32 Lv20 = 1">
+      <Description>Lv20 描画距離スケール</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>2</Maximum>
+      <SortID>21</SortID>
+      <UnkC8>描画距離スケール</UnkC8>
+    </Field>
+    <Field Def="dummy8 reserve[44]">
+      <DisplayName>予備</DisplayName>
+      <Description>予備</Description>
+      <SortID>23</SortID>
+      <UnkC8>その他</UnkC8>
+    </Field>
+  </Fields>
+</PARAMDEF>

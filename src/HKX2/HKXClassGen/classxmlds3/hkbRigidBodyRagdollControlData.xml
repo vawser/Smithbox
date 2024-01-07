@@ -1,0 +1,6 @@
+<class name='hkbRigidBodyRagdollControlData' version='1' signature='0x34a56bef' size='64'>
+  <members>
+    <member name='keyFrameControlData' offset='0' ctype='hkbKeyFrameControlData' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='durationToBlend' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

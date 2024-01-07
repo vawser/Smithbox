@@ -1,0 +1,6 @@
+<class name='hkcdStaticAabbTree' version='1' signature='0x99e8d0cb' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='shouldDeleteTree' offset='16' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='treePtr' offset='24' ctype='hkcdStaticTreeDefaultTreeStorage6' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

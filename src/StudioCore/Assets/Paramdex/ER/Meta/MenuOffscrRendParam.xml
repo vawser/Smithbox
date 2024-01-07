@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <camAtPosX AltName="Camera Gaze Point X" Wiki="Camera gaze point X" />
+    <camAtPosY AltName="Camera Gaze Point Y" Wiki="Camera gaze point Y" />
+    <camAtPosZ AltName="Camera Gaze Point Z" Wiki="Camera gaze point Z" />
+    <camDist AltName="Camera Distance" Wiki="Camera distance" />
+    <camRotX AltName="Camera Rotation X" Wiki="Camera oriented X" />
+    <camRotY AltName="Camera Rotation Y" Wiki="Suitable for camera Y" />
+    <camFov AltName="Camera Field of View" Wiki="Camera angle of view" />
+    <camDistMin AltName="Camera Distance - Minimum" Wiki="Shortest distance when operating the camera" />
+    <camDistMax AltName="Camera Distance - Maximum" Wiki="Longest distance when operating the camera" />
+    <camRotXMin AltName="Camera Rotation - Minimum" Wiki="Minimum orientation when operating the camera" />
+    <camRotXMax AltName="Camera Rotation - Maximum" Wiki="Maximum orientation when operating the camera" />
+    <GparamID AltName="GPARAM ID" Wiki="GparamID" />
+    <envTexId AltName="Env Texture ID" Wiki="Environment map texture ID. It corresponds to 4 digits of N \ GR \ data \ Other \ SysEnvTex \ GILM _rem.dds." />
+    <Grapm_ID_forPS4 AltName="GPARAM ID - PS4" Wiki="Gparam ID (for PS4)" />
+    <Grapm_ID_forXB1 AltName="GPARAM ID - XB1" Wiki="Gparam ID (for Xbox One)" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

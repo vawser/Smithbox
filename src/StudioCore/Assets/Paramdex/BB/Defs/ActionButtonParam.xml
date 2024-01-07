@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ACTIONBUTTON_PARAM_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 regionType">
+      <DisplayName>範囲タイプ</DisplayName>
+      <Enum>ACTION_BUTTON_REGION_TYPE</Enum>
+      <Description>範囲形状(円柱、角柱、カプセル柱)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="dummy8 padding1[3]">
+      <DisplayName>パディング1</DisplayName>
+      <SortID>100010</SortID>
+    </Field>
+    <Field Def="s32 dummyPoly1 = -1">
+      <DisplayName>ダミポリ1</DisplayName>
+      <Description>範囲の底面の中心となるダミポリIDを指定する　ダミポリがない場合 or -1が入力されている場合は、中心座標が基準になる</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s32 dummyPoly2 = -1">
+      <DisplayName>ダミポリ2</DisplayName>
+      <Description>範囲タイプがカプセル柱の場合のみ使用　ダミポリ2つで線分を作る追加ダミポリ(カプセル柱)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="f32 radius">
+      <DisplayName>半径</DisplayName>
+      <Description>半径(円柱・カプセル柱)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s32 angle = 180">
+      <DisplayName>角度</DisplayName>
+      <Description>角度(円柱)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="f32 depth">
+      <DisplayName>奥行き</DisplayName>
+      <Description>奥行き(角柱)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 width">
+      <DisplayName>幅</DisplayName>
+      <Description>幅(角柱)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>510</SortID>
+    </Field>
+    <Field Def="f32 height">
+      <DisplayName>高さ</DisplayName>
+      <Description>高さ(円柱・角柱・カプセル柱)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>520</SortID>
+    </Field>
+    <Field Def="f32 baseHeightOffset">
+      <DisplayName>底面高さオフセット</DisplayName>
+      <Description>底面のY座標をどれだけ上下させるか</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1E+09</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 angleCheckType">
+      <DisplayName>角度差判定タイプ</DisplayName>
+      <Enum>ACTION_BUTTON_ANGLE_CHECK_TYPE</Enum>
+      <Description>角度差判定タイプ(円柱・角柱)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="dummy8 padding2[3]">
+      <DisplayName>パディング2</DisplayName>
+      <Description>角度差判定タイプ(点・線)</Description>
+      <SortID>100020</SortID>
+    </Field>
+    <Field Def="s32 allowAngle = 180">
+      <DisplayName>許容角度差</DisplayName>
+      <Description>許容角度差</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>180</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="u8 textBoxType">
+      <DisplayName>テキストボックスタイプ</DisplayName>
+      <Enum>ACTION_BUTTON_TEXT_BOX_TYPE</Enum>
+      <Description>テキストボックスタイプ</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="dummy8 padding3[3]">
+      <DisplayName>パディング3</DisplayName>
+      <SortID>100030</SortID>
+    </Field>
+    <Field Def="s32 textId = -1">
+      <DisplayName>テキストID</DisplayName>
+      <Description>表示するテキストID</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 invalidFlag = -1">
+      <DisplayName>無効フラグ</DisplayName>
+      <Description>このフラグがONだとアクションボタンが出ず、判定も行われない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s32 grayoutFlag = -1">
+      <DisplayName>グレーアウトフラグ</DisplayName>
+      <Description>このフラグがONだとアクションボタンがグレーアウトし、判定も行われない</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="s32 priority">
+      <DisplayName>重なり時優先度</DisplayName>
+      <Description>複数のアクションボタンが重なっていた場合の優先度(0～99、0に近い程優先)</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="f32 execInvalidTime">
+      <DisplayName>実行後無効時間</DisplayName>
+      <Description>実行後無効時間(-値で無限)</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="u8 execButtonCircle">
+      <DisplayName>実行条件：○ボタン</DisplayName>
+      <Enum>ACTION_BUTTON_EXEC_CIRCLE</Enum>
+      <Description>○ボタン押下で実行されるか</Description>
+      <EditFlags>Lock</EditFlags>
+      <Maximum>99</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="dummy8 padding4[3]">
+      <DisplayName>パディング4</DisplayName>
+      <SortID>100040</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

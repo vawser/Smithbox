@@ -1,0 +1,12 @@
+<class name='hkbRadialSelectorGenerator' version='1' signature='0x7d60be9' size='184' parent='hkbGenerator'>
+  <members>
+    <member name='generatorPairs' offset='136' ctype='hkbRadialSelectorGeneratorGeneratorPair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='angle' offset='152' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='radius' offset='156' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='currentGeneratorPairIndex' offset='160' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='currentEndpointIndex' offset='164' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='currentFraction' offset='168' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='hasSetLocalTime' offset='172' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='pad' offset='173' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='4' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

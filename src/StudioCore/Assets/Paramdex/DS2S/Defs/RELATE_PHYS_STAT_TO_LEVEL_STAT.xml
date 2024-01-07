@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>RELATE_PHYS_STAT_TO_LEVEL_STAT</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 attunement_slots" />
+    <Field Def="u8 cast_tier" />
+    <Field Def="u8 Unk02" />
+    <Field Def="u8 max_stamina" />
+    <Field Def="u8 max_equip_load" />
+    <Field Def="u8 strength_bonus" />
+    <Field Def="u8 dexterity_bonus" />
+    <Field Def="u8 magic_bonus" />
+    <Field Def="u8 Unk08" />
+    <Field Def="u8 lightning_bonus" />
+    <Field Def="u8 Unk0A" />
+    <Field Def="u8 Unk0B" />
+    <Field Def="u8 Unk0C" />
+    <Field Def="u8 Unk0D" />
+    <Field Def="u8 Unk0E" />
+    <Field Def="u8 Unk0F" />
+    <Field Def="u8 Unk10" />
+    <Field Def="u8 Unk11" />
+    <Field Def="u8 Unk12" />
+    <Field Def="u8 Unk13" />
+    <Field Def="u8 Unk14" />
+    <Field Def="u8 Unk15" />
+    <Field Def="u8 Unk16" />
+    <Field Def="u8 Unk17" />
+    <Field Def="u8 magic_defence" />
+    <Field Def="u8 Unk19" />
+    <Field Def="u8 lightning_defence" />
+    <Field Def="u8 Unk1B" />
+    <Field Def="u8 Unk1C" />
+    <Field Def="u8 Unk1D" />
+    <Field Def="u8 Unk1E" />
+    <Field Def="u8 Unk1F" />
+    <Field Def="u8 Unk20" />
+    <Field Def="u8 Unk21" />
+    <Field Def="u8 Unk22" />
+    <Field Def="u8 Unk23" />
+    <Field Def="u8 Unk24" />
+    <Field Def="u8 Unk25" />
+  </Fields>
+</PARAMDEF>

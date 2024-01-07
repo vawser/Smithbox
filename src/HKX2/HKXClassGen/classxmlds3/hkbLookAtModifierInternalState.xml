@@ -1,0 +1,7 @@
+<class name='hkbLookAtModifierInternalState' version='1' signature='0x22f182fa' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='lookAtLastTargetWS' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lookAtWeight' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isTargetInsideLimitCone' offset='36' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

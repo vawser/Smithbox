@@ -1,0 +1,32 @@
+<class name='hkpBvCompressedMeshShape' version='1' signature='0xabab6bb3' size='272' parent='hkpBvTreeShape'>
+  <enums>
+    <enum name='PerPrimitiveDataMode' flags='00000000'>
+      <enumitem name='PER_PRIMITIVE_DATA_NONE' value='0'/>
+      <enumitem name='PER_PRIMITIVE_DATA_8_BIT' value='1'/>
+      <enumitem name='PER_PRIMITIVE_DATA_PALETTE' value='2'/>
+      <enumitem name='PER_PRIMITIVE_DATA_STRING_PALETTE' value='3'/>
+    </enum>
+    <enum name='PrimitiveType' flags='00000000'>
+      <enumitem name='PRIMITIVE_TYPE_BOX' value='0'/>
+      <enumitem name='PRIMITIVE_TYPE_HULL' value='1'/>
+      <enumitem name='PRIMITIVE_TYPE_SPHERE' value='2'/>
+      <enumitem name='PRIMITIVE_TYPE_CAPSULE' value='3'/>
+      <enumitem name='PRIMITIVE_TYPE_CYLINDER' value='4'/>
+    </enum>
+    <enum name='Config' flags='00000000'>
+      <enumitem name='NUM_BYTES_FOR_TREE' value='144'/>
+      <enumitem name='MAX_NUM_VERTICES_PER_HULL' value='255'/>
+      <enumitem name='MAX_NUM_PRIMITIVES' value='8388608'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='convexRadius' offset='48' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldingType' offset='52' etype='WeldingType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hasPerPrimitiveCollisionFilterInfo' offset='53' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hasPerPrimitiveUserData' offset='54' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionFilterInfoPalette' offset='56' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userDataPalette' offset='72' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userStringPalette' offset='88' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tree' offset='112' ctype='hkpBvCompressedMeshShapeTree' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

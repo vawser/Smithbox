@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>BUDGET_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 MemoryBudget0" />
+    <Field Def="f32 MemoryBudget1" />
+    <Field Def="f32 MemoryBudget2" />
+    <Field Def="f32 MemoryBudget3" />
+    <Field Def="f32 MemoryBudget4" />
+    <Field Def="f32 MemoryBudget5" />
+    <Field Def="f32 MemoryBudget6" />
+    <Field Def="f32 MemoryBudget7" />
+    <Field Def="f32 MemoryBudget8" />
+    <Field Def="f32 MemoryBudget9" />
+    <Field Def="f32 MemoryBudget10" />
+    <Field Def="f32 MemoryBudget11" />
+    <Field Def="f32 MemoryBudget12" />
+    <Field Def="f32 MemoryBudget13" />
+    <Field Def="f32 MemoryBudget14" />
+    <Field Def="f32 MemoryBudget15" />
+    <Field Def="f32 MemoryBudget16" />
+    <Field Def="f32 MemoryBudget17" />
+    <Field Def="f32 MemoryBudget18" />
+    <Field Def="f32 MemoryBudget19" />
+    <Field Def="f32 MemoryBudget20" />
+    <Field Def="f32 MemoryBudget21" />
+    <Field Def="f32 MemoryBudget22" />
+    <Field Def="f32 MemoryBudget23" />
+    <Field Def="f32 MemoryBudget24" />
+    <Field Def="f32 MemoryBudget25" />
+    <Field Def="dummy8 pad1[28]" />
+  </Fields>
+</PARAMDEF>

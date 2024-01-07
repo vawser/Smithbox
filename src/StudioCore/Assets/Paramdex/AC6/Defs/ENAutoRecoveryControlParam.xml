@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EN_AUTO_RECOVERY_CONTROL_PARAM_ALL_TYPES_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 UnkInt0x00"></Field>
+    <Field Def="s8 Unk0x04"></Field>
+    <Field Def="s8 Unk0x05"></Field>
+    <Field Def="s8 Unk0x06"></Field>
+    <Field Def="s8 Unk0x07"></Field>
+    <Field Def="s32 UnkInt0x08"></Field>
+    <Field Def="s8 concurrentEnergyUseMinimumTime"></Field>
+    <Field Def="s8 concurrentEnergyUseNoConsumeTime"></Field>
+    <Field Def="s8 UnkByte0x0E"></Field>
+    <Field Def="s8 Unk0x0F"></Field>
+    <Field Def="s32 UnkInt0x10"></Field>
+    <Field Def="s8 UnkByte0x14"></Field>
+    <Field Def="s8 UnkByte0x15"></Field>
+    <Field Def="s8 UnkByte0x16"></Field>
+    <Field Def="s8 Unk0x17"></Field>
+    <Field Def="s32 fallingEnergyRecoveryRate"></Field>
+    <Field Def="s8 UnkByte0x1C"></Field>
+    <Field Def="s8 UnkByte0x1D"></Field>
+    <Field Def="s8 UnkByte0x1E"></Field>
+    <Field Def="s8 Unk0x1F"></Field>
+    <Field Def="s32 UnkInt0x20"></Field>
+    <Field Def="s8 UnkByte0x24"></Field>
+    <Field Def="s8 UnkByte0x25"></Field>
+    <Field Def="s8 UnkByte0x26"></Field>
+    <Field Def="s8 Unk0x27"></Field>
+    <Field Def="s32 boostFallingEnergyRecoveryRate"></Field>
+    <Field Def="s8 UnkByte0x2C"></Field>
+    <Field Def="s8 UnkByte0x2D"></Field>
+    <Field Def="s8 UnkByte0x2E"></Field>
+    <Field Def="s8 Unk0x2F"></Field>
+    <Field Def="s32 Unk0x30"></Field>
+    <Field Def="s8 Unk0x034"></Field>
+    <Field Def="s8 Unk0x035"></Field>
+    <Field Def="s8 Unk0x036"></Field>
+    <Field Def="s8 Unk0x037"></Field>
+    <Field Def="s32 Unk0x38"></Field>
+    <Field Def="s8 Unk0x3C"></Field>
+    <Field Def="s8 Unk0x3D"></Field>
+    <Field Def="s8 Unk0x3E"></Field>
+    <Field Def="s8 Unk0x3F"></Field>
+    <Field Def="s32 Unk0x40"></Field>
+    <Field Def="s8 Unk0x44"></Field>
+    <Field Def="s8 Unk0x45"></Field>
+    <Field Def="s8 Unk0x46"></Field>
+    <Field Def="s8 Unk0x47"></Field>
+    <Field Def="s32 Unk0x48"></Field>
+    <Field Def="s8 Unk0x4C"></Field>
+    <Field Def="s8 Unk0x4D"></Field>
+    <Field Def="s8 Unk0x4E"></Field>
+    <Field Def="s8 Unk0x4F"></Field>
+    <Field Def="s32 Unk0x50"></Field>
+    <Field Def="s8 Unk0x54"></Field>
+    <Field Def="s8 Unk0x55"></Field>
+    <Field Def="s8 Unk0x56"></Field>
+    <Field Def="s8 Unk0x57"></Field>
+    <Field Def="s32 Unk0x58"></Field>
+    <Field Def="s8 Unk0x5C"></Field>
+    <Field Def="s8 Unk0x5D"></Field>
+    <Field Def="s8 Unk0x5E"></Field>
+    <Field Def="s8 Unk0x5F"></Field>
+    <Field Def="s32 Unk0x60"></Field>
+    <Field Def="s8 Unk0x64"></Field>
+    <Field Def="s8 Unk0x65"></Field>
+    <Field Def="s8 Unk0x66"></Field>
+    <Field Def="s8 Unk0x67"></Field>
+    <Field Def="s32 Unk0x68"></Field>
+    <Field Def="s8 Unk0x6C"></Field>
+    <Field Def="s8 Unk0x6D"></Field>
+    <Field Def="s8 Unk0x6E"></Field>
+    <Field Def="s8 Unk0x6F"></Field>
+    <Field Def="s32 Unk0x70"></Field>
+    <Field Def="s8 Unk0x74"></Field>
+    <Field Def="s8 Unk0x75"></Field>
+    <Field Def="s8 Unk0x76"></Field>
+    <Field Def="s8 Unk0x77"></Field>
+    <Field Def="s32 Unk0x78"></Field>
+    <Field Def="s8 Unk0x7C"></Field>
+    <Field Def="s8 Unk0x7D"></Field>
+    <Field Def="s8 Unk0x7E"></Field>
+    <Field Def="s8 Unk0x7F"></Field>
+    <Field Def="s32 Unk0x80"></Field>
+    <Field Def="s32 Unk0x84"></Field>
+    <Field Def="s32 Unk0x88"></Field>
+    <Field Def="s32 Unk0x8C"></Field>
+    <Field Def="s32 Unk0x90"></Field>
+    <Field Def="s32 Unk0x94"></Field>
+    <Field Def="s32 Unk0x98"></Field>
+    <Field Def="s32 Unk0x9C"></Field>
+  </Fields>
+</PARAMDEF>

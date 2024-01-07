@@ -1,0 +1,11 @@
+<class name='hkaiAstarCostModifier' version='1' signature='0x35bf4620' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='CostModifierType' flags='00000000'>
+      <enumitem name='COST_MODIFIER_DEFAULT' value='0'/>
+      <enumitem name='COST_MODIFIER_USER' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='CostModifierType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="PreviewMode">
+      <Option Value="0" Name="Full Body Armored" />
+      <Option Value="1" Name="Full Body Naked" />
+	  <Option Value="2" Name="Face Close Up" />
+    </Enum>
+	<Enum Name="ViewCondition">
+      <Option Value="0" Name="Default" />
+      <Option Value="1" Name="Beard" />
+	  <Option Value="2" Name="Beard" />
+	  <Option Value="3" Name="Excluded from Rebirth" />
+	  <Option Value="4" Name="Only in Rebirth" />
+    </Enum>
+  </Enums>
+  <Field>
+    <CommandID AltName="Command ID" />
+	<FaceParamID AltName="Caption ID" FmgRef="Modern_MenuText" />
+	<TableID AltName="Face Param ID" />
+	<ViewCondition AltName="Slider Caption/Parts Group ID" Wiki="Slider Caption ID if a slider\nParts Group ID from CharMakeMenuListItemParam if something like hair"/>
+	<PreviewMode AltName="View Condition" Enum="ViewCondition" />
+	<MenuType AltName="Preview Mode" Enum="PreviewMode" />
+    <pad1 AltName="" />
+    <pad2 AltName="" />
+    
+  </Field>
+  <Self Wiki="Layout Data for the Character Make Menu"/>
+</PARAMMETA>

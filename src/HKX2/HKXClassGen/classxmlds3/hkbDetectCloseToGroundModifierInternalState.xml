@@ -1,0 +1,5 @@
+<class name='hkbDetectCloseToGroundModifierInternalState' version='1' signature='0xb7cfa5f3' size='24' parent='hkReferencedObject'>
+  <members>
+    <member name='isCloseToGround' offset='16' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,5 @@
+<class name='hkaAnimationPreviewColorContainer' version='1' signature='0xe7764453' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='previewColor' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

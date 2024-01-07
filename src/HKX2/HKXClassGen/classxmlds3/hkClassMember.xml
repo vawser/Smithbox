@@ -1,0 +1,70 @@
+<class name='hkClassMember' version='1' signature='0xb0efa719' size='40'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='TYPE_VOID' value='0'/>
+      <enumitem name='TYPE_BOOL' value='1'/>
+      <enumitem name='TYPE_CHAR' value='2'/>
+      <enumitem name='TYPE_INT8' value='3'/>
+      <enumitem name='TYPE_UINT8' value='4'/>
+      <enumitem name='TYPE_INT16' value='5'/>
+      <enumitem name='TYPE_UINT16' value='6'/>
+      <enumitem name='TYPE_INT32' value='7'/>
+      <enumitem name='TYPE_UINT32' value='8'/>
+      <enumitem name='TYPE_INT64' value='9'/>
+      <enumitem name='TYPE_UINT64' value='10'/>
+      <enumitem name='TYPE_REAL' value='11'/>
+      <enumitem name='TYPE_VECTOR4' value='12'/>
+      <enumitem name='TYPE_QUATERNION' value='13'/>
+      <enumitem name='TYPE_MATRIX3' value='14'/>
+      <enumitem name='TYPE_ROTATION' value='15'/>
+      <enumitem name='TYPE_QSTRANSFORM' value='16'/>
+      <enumitem name='TYPE_MATRIX4' value='17'/>
+      <enumitem name='TYPE_TRANSFORM' value='18'/>
+      <enumitem name='TYPE_ZERO' value='19'/>
+      <enumitem name='TYPE_POINTER' value='20'/>
+      <enumitem name='TYPE_FUNCTIONPOINTER' value='21'/>
+      <enumitem name='TYPE_ARRAY' value='22'/>
+      <enumitem name='TYPE_INPLACEARRAY' value='23'/>
+      <enumitem name='TYPE_ENUM' value='24'/>
+      <enumitem name='TYPE_STRUCT' value='25'/>
+      <enumitem name='TYPE_SIMPLEARRAY' value='26'/>
+      <enumitem name='TYPE_HOMOGENEOUSARRAY' value='27'/>
+      <enumitem name='TYPE_VARIANT' value='28'/>
+      <enumitem name='TYPE_CSTRING' value='29'/>
+      <enumitem name='TYPE_ULONG' value='30'/>
+      <enumitem name='TYPE_FLAGS' value='31'/>
+      <enumitem name='TYPE_HALF' value='32'/>
+      <enumitem name='TYPE_STRINGPTR' value='33'/>
+      <enumitem name='TYPE_RELARRAY' value='34'/>
+      <enumitem name='TYPE_MAX' value='35'/>
+    </enum>
+    <enum name='FlagValues' flags='00000000'>
+      <enumitem name='FLAGS_NONE' value='0'/>
+      <enumitem name='ALIGN_8' value='128'/>
+      <enumitem name='ALIGN_16' value='256'/>
+      <enumitem name='NOT_OWNED' value='512'/>
+      <enumitem name='SERIALIZE_IGNORED' value='1024'/>
+      <enumitem name='ALIGN_32' value='2048'/>
+      <enumitem name='ALIGN_REAL' value='256'/>
+    </enum>
+    <enum name='DeprecatedFlagValues' flags='00000000'>
+      <enumitem name='DEPRECATED_SIZE_8' value='8'/>
+      <enumitem name='DEPRECATED_ENUM_8' value='8'/>
+      <enumitem name='DEPRECATED_SIZE_16' value='16'/>
+      <enumitem name='DEPRECATED_ENUM_16' value='16'/>
+      <enumitem name='DEPRECATED_SIZE_32' value='32'/>
+      <enumitem name='DEPRECATED_ENUM_32' value='32'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='0' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='class' offset='8' ctype='hkClass' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enum' offset='16' ctype='hkClassEnum' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='24' etype='Type' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='subtype' offset='25' etype='Type' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cArraySize' offset='26' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='28' etype='FlagValues' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='offset' offset='30' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attributes' offset='32' ctype='hkCustomAttributes' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

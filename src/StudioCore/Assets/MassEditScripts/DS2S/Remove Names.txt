@@ -1,0 +1,3 @@
+##Removing all names may help reduce the filesize of enc_regulation
+##This might allow it to be loaded into DS2 without using the loose params option
+param .*: id .*: Name: = ;

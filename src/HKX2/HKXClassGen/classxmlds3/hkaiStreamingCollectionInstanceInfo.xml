@@ -1,0 +1,10 @@
+<class name='hkaiStreamingCollectionInstanceInfo' version='1' signature='0x2a247b6a' size='48'>
+  <members>
+    <member name='instancePtr' offset='0' ctype='hkaiNavMeshInstance' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='volumeInstancePtr' offset='8' ctype='hkaiNavVolumeInstance' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='clusterGraphInstance' offset='16' ctype='hkaiDirectedGraphInstance' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mediator' offset='24' ctype='hkaiNavMeshQueryMediator' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='volumeMediator' offset='32' ctype='hkaiNavVolumeMediator' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='treeNode' offset='40' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

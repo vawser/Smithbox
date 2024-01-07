@@ -1,0 +1,17 @@
+<class name='hkaAnimationBinding' version='1' signature='0xfaf9150' size='88' parent='hkReferencedObject'>
+  <enums>
+    <enum name='BlendHint' flags='00000000'>
+      <enumitem name='NORMAL' value='0'/>
+      <enumitem name='ADDITIVE_DEPRECATED' value='1'/>
+      <enumitem name='ADDITIVE' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='originalSkeletonName' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='animation' offset='24' ctype='hkaAnimation' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transformTrackToBoneIndices' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='floatTrackToFloatSlotIndices' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='partitionIndices' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendHint' offset='80' etype='BlendHint' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

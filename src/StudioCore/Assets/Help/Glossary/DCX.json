@@ -1,0 +1,13 @@
+{
+    "Title": "DCX",
+    "Tags": [
+        "Format"
+    ],
+    "Contents": [
+        "A compression format used by most souls files.",
+        "In Sekiro and Armored Core VI, the compression makes use",
+        "of an external library called Oodle.",
+        "",
+        "It can be unpacked with tools such as WitchyBND or Yabber."
+    ]
+}

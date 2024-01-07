@@ -1,0 +1,11 @@
+<class name='hkbStateMachineActiveTransitionInfo' version='1' signature='0xbb90d54f' size='40'>
+  <members>
+    <member name='transitionEffect' offset='0' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='transitionEffectInternalStateInfo' offset='8' ctype='hkbNodeInternalStateInfo' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transitionInfoReference' offset='16' ctype='hkbStateMachineTransitionInfoReference' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transitionInfoReferenceForTE' offset='22' ctype='hkbStateMachineTransitionInfoReference' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fromStateId' offset='28' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='toStateId' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isReturnToPreviousState' offset='36' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

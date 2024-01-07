@@ -1,0 +1,6 @@
+<class name='hknpVehicleDefaultBrake' version='1' signature='0x31438ee0' size='40' parent='hknpVehicleBrake'>
+  <members>
+    <member name='wheelBrakingProperties' offset='16' ctype='hknpVehicleDefaultBrakeWheelBrakingProperties' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='wheelsMinTimeToBlock' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

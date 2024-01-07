@@ -1,0 +1,7 @@
+<class name='hclClothSetupContainer' version='1' signature='0xf93ee585' size='64' parent='hkReferencedObject'>
+  <members>
+    <member name='clothSetupDatas' offset='16' ctype='hclClothSetupObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='namedSetupMeshWrappers' offset='32' ctype='hclNamedSetupMesh' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='namedTransformSetWrappers' offset='48' ctype='hclNamedTransformSetSetupObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

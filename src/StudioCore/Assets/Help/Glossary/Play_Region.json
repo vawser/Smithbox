@@ -1,0 +1,23 @@
+{
+    "Title": "Play Region",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "A property of collisions in MSB which defines what can happen when",
+        "the player stands on them.",
+        "",
+        "Some regions allow pvp invaders; others allow placing summon signs;",
+        "others are for boss fights and will create unstable collisions,",
+        "prevent reloading in the arena.",
+        "",
+        "Typically fog gates are put on play region boundaries while multiplayer is active.",
+        "",
+        "In Bloodborne onward this is handled in params, but Dark Souls I uses a special convention:",
+        "positive play region id for pvp/coop areas,",
+        "-1 for always unstable,",
+        "-2 for stable with no invasions,",
+        "<-10 for conditionally stable regions,",
+        "based on the value of the event flag at (region id)*-1 - 10"
+    ]
+}

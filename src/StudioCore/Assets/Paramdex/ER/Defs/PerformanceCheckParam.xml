@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>PERFORMANCE_CHECK_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u8 workTag">
+      <DisplayName>報告先_職種タグ</DisplayName>
+      <Enum>PerformanceCheckParamWork</Enum>
+      <Description>報告先_職種タグ</Description>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 categoryTag">
+      <DisplayName>報告先_カテゴリタグ</DisplayName>
+      <Enum>PerformanceCheckParamCategory</Enum>
+      <Description>報告先_カテゴリタグ</Description>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 compareType">
+      <DisplayName>比較記号</DisplayName>
+      <Enum>PerformanceCheckParamCompare</Enum>
+      <Description>比較記号</Description>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="dummy8 dummy1[1]">
+      <DisplayName>予約1</DisplayName>
+      <Description>予約1</Description>
+      <SortID>401</SortID>
+    </Field>
+    <Field Def="f32 compareValue">
+      <DisplayName>比較数値</DisplayName>
+      <Description>比較数値</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="dummy8 dummy2[8]">
+      <DisplayName>予約2</DisplayName>
+      <Description>予約2</Description>
+      <SortID>402</SortID>
+    </Field>
+    <Field Def="fixstrW userTag[16]">
+      <DisplayName>報告先_userタグ</DisplayName>
+      <Description>報告先_パフォーマンス人物タグ</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <Minimum>0</Minimum>
+      <Maximum>0</Maximum>
+      <Increment>0</Increment>
+      <SortID>400</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

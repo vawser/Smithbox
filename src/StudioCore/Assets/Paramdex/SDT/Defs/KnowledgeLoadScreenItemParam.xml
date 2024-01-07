@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 unlockFlagId = -1">
+      <DisplayName>解禁フラグ</DisplayName>
+      <Description>解禁フラグ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 invalidFlagId = -1">
+      <DisplayName>無効フラグ</DisplayName>
+      <Description>無効フラグ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s32 msgId">
+      <DisplayName>テキストID</DisplayName>
+      <Description>テキストID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+    </Field>
+    <Field Def="dummy8 padding[4]">
+      <DisplayName>予約</DisplayName>
+      <Description>予約</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <EditFlags>Wrap, Lock</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>2.14748365E+09</Maximum>
+      <Increment>1</Increment>
+      <SortID>999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

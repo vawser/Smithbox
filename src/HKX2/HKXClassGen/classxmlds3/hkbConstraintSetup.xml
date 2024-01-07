@@ -1,0 +1,11 @@
+<class name='hkbConstraintSetup' version='1' signature='0x3b496447' size='1'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='BALL_AND_SOCKET' value='0'/>
+      <enumitem name='RAGDOLL' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='0' etype='Type' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

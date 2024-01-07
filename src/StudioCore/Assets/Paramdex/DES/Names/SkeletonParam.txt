@@ -1,0 +1,13 @@
+0 does not move
+1 NPC common neck
+2 NPC Common Torso 1
+3 NPC Common Torso 2
+100 heroine
+200 important person
+300 Blacksmith Edo
+400 slave soldier
+500 former aristocratic lady
+600 puppeteer
+700 beggar woman
+800 Baldwin
+900 beggar man

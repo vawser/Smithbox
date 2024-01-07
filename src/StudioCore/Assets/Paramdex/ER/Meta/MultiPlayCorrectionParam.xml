@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MULTI_PLAY_CORRECTION_OVERRIDE_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <client1SpEffectId AltName="Friendly Client [1] - SpEffect ID" Wiki="1 cooperating client Special effect ID" Refs="SpEffectParam" />
+    <client2SpEffectId AltName="Friendly Client [2] - SpEffect ID" Wiki="2 cooperating clients Special effect ID" Refs="SpEffectParam" />
+    <client3SpEffectId AltName="Friendly Client [3] - SpEffect ID" Wiki="3 cooperating clients Special effect ID" Refs="SpEffectParam" />
+    <bOverrideSpEffect AltName="Override SpEffect when Client Count Changes" Wiki="Whether to overwrite when the number of cooperating people fluctuates" Enum="MULTI_PLAY_CORRECTION_OVERRIDE_TYPE" />
+    <pad3 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,10 @@
+0 Tattoo Color Set 1 -- 刺青の色セット1
+1 Tattoo Color Set 2 -- 刺青の色セット2
+2 Tattoo Color Set 3 -- 刺青の色セット3
+3 Tattoo Color Set 4 -- 刺青の色セット4
+4 Tattoo Color Set 5 -- 刺青の色セット5
+5 Tattoo Color Set 6 -- 刺青の色セット6
+6 Tattoo Color Set 7 -- 刺青の色セット7
+7 Tattoo Color Set 8 -- 刺青の色セット8
+8 Tattoo Color Set 9 -- 刺青の色セット9
+9 Tattoo Color Set 10 -- 刺青の色セット10

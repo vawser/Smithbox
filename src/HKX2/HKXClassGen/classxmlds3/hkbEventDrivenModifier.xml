@@ -1,0 +1,8 @@
+<class name='hkbEventDrivenModifier' version='1' signature='0x35ef356b' size='112' parent='hkbModifierWrapper'>
+  <members>
+    <member name='activateEventId' offset='96' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivateEventId' offset='100' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='activeByDefault' offset='104' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isActive' offset='105' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

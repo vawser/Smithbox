@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+	<Enum Name="THROW_TYPE">
+	  <Option Value="0" Name="Grab" />
+	  <Option Value="1" Name="Backstab" />
+      <Option Value="8" Name="Parry/Riposte" />
+	  <Option Value="10" Name="Plunge Attack" />
+	  <Option Value="11" Name="Hornet Ring Backstab/Grab" />
+	  <Option Value="12" Name="Hornet Ring Parry/Riposte" />
+      <Option Value="13" Name="Dark Hand" />
+	  <Option Value="15" Name="Hornet Ring Plunge Attack" />
+	  <Option Value="16" Name="Hornet Ring Dark Hand" />
+	</Enum>
+    <Enum Name="THROW_PAD_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="3" Name="Type 3" />
+    </Enum>
+    <Enum Name="THROW_ENABLE_STATE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+    <Enum Name="THROW_FOLLOWING_TYPE" type="u8">
+    </Enum>
+    <Enum Name="THROW_DMY_CHR_DIR_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+    </Enum>
+  </Enums>
+  <Field>
+    <AtkChrId AltName="Attacker - Character ID" Wiki="Throwing side character ID" />
+    <DefChrId AltName="Defender - Character ID" Wiki="Recipient character ID" />
+    <Dist AltName="Max Throw Distance" Wiki="Do not throw unless the distance is closer than this value [m]" />
+    <DiffAngMin AltName="Height Angle Difference - Min" Wiki="If the angle difference (Y-axis) between the throwing side and the receiving side is not larger than this angle, it will not be thrown." />
+    <DiffAngMax AltName="Height Angle Difference - Max" Wiki="If the angle difference (Y-axis) between the throwing side and the receiving side is smaller than this angle, it will not be thrown." />
+    <upperYRange AltName="Upper Height Range" Wiki="Do not throw unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value" />
+    <lowerYRange AltName="Lower Height Range" Wiki="Do not throw unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value" />
+    <diffAngMyToDef AltName="Angle Difference - To Defender" Wiki="The angle difference between the vector in front of you and the vector in the direction from you to the other party. If it is larger than this value, it will not be thrown" />
+    <throwTypeId AltName="Throw Type ID" Wiki="ID that identifies the type of throw (association with attack parameter)" />
+    <atkAnimId AltName="Attacker - Animation ID" Wiki="Set attack animation ID (linked to EzState)" />
+    <defAnimId AltName="Defender - Animation ID" Wiki="Set damage animation ID (linked to EzState)" />
+    <escHp AltName="Self Escape - HP" Wiki="Value that can withstand throwing through" />
+    <selfEscCycleTime AltName="Self Escape - Cycle Time" Wiki="Cycle time for self-throwing [ms]" />
+    <sphereCastRadiusRateTop AltName="Sphere Cast - Radius Rate Top" Wiki="Ratio of upper radius of sphere cast [80-> 0.8]" />
+    <sphereCastRadiusRateLow AltName="Sphere Cast - Radius Rate Low" Wiki="Spherecast lower radius ratio [80-> 0.8]" />
+    <PadType AltName="Operation Type" Wiki="Operation type" Enum="THROW_PAD_TYPE" />
+    <AtkEnableState AltName="Attack Enable State" Wiki="Please set the state type that can be thrown on the throwing side" Enum="THROW_ENABLE_STATE" />
+    <throwFollowingType AltName="Throw Following Type" Wiki="How to follow the character possessed by Adsorbed Damipoli while throwing. * Follow-up period is controlled by TAE action" Enum="THROW_FOLLOWING_TYPE" />
+    <pad2 AltName=""/>
+    <throwType AltName="Throw Type" Wiki="Type of throw" Enum="THROW_TYPE" />
+    <selfEscCycleCnt AltName="Self Escape - Cycle Count" Wiki="Number of self-throwing cycles" />
+    <dmyHasChrDirType AltName="Character Throw - Dummy Poly Direction Type" Wiki="Direction of Damipoli possession character when throwing occurs" Enum="THROW_DMY_CHR_DIR_TYPE" />
+    <isTurnAtker AltName="Throw can Side Turn" Wiki="Does the throwing side turn?" />
+    <isSkipWepCate AltName="Skip Attacker Weapon Category Check" Wiki="Do you want to skip the attacker's weapon category check?" />
+    <isSkipSphereCast AltName="Skip Sphere Cast" Wiki="Do you want to skip the sphere cast?" />
+    <isEnableCorrectPos_forThrowAdjust AltName="Enable Correct Position for Throw Adjustment" Wiki="If it is set to , the location of the throwing position will be the position of the adsorption Damipoli that has returned to the positional relationship equivalent to the flat ground." IsBool="" />
+    <isEnableThrowFollowingFallAssist AltName="Enable Throw Following Fall Assist" Wiki="Is the same treatment as the wall removal prevention applied to the fall prevention wall so that it does not fall from the step when the follow-up is released?" IsBool="" />
+    <isEnableThrowFollowingFeedback AltName="Enable Throw Following Feedback" Wiki="Do you want to return the character with the Adsorbed Damipoli when it comes in contact with a hit or fall prevention wall so that it does not look like it will get stuck in the middle wall or fall from a step?" IsBool="" />
+    <pad0 AltName=""/>
+    <atkSorbDmyId AltName="Attacker - Absorb Dummy ID" Wiki="Where on the throwing side should the receiving side be attracted?" />
+    <defSorbDmyId AltName="Defender - Absorb Dummy ID" Wiki="Where on the receiving side should the throwing side be adsorbed?" />
+    <Dist_start AltName="Backstab - Max Throw Distance " Wiki="Only throw at a distance closer than this value [m] Used for throwing at the start of the Backstab" />
+    <DiffAngMin_start AltName="Backstab - Height Angle Difference - Min" Wiki="If the angle difference (Y-axis) between the throwing side and the receiving side is not larger than this angle, it will not be thrown. It is used for throwing at the start of the Backstab." />
+    <DiffAngMax_start AltName="Backstab - Height Angle Difference - Max" Wiki="The angle difference (Y-axis) between the throwing side and the receiving side must be smaller than this angle to throw. Used for throwing at the start of the Backstab." />
+    <upperYRange_start AltName="Backstab - Upper Height Range" Wiki="It will not be thrown unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value. It is used for throwing at the start of the Backstab." />
+    <lowerYRange_start AltName="Backstab - Lower Height Range" Wiki="It will not be thrown unless the relative distance of the Y axis from the throwing side to the receiving side is smaller than this value. It is used for throwing at the start of the Backstab." />
+    <diffAngMyToDef_start AltName="Backstab - Angle Difference - To Defender" Wiki="The angle difference between the vector in front of you and the vector in the direction from you to the other party. If it is larger than this value, it will not be thrown. It will be used for throwing at the start of the Backstab." />
+    <judgeRangeBasePosDmyId1 AltName="Attacker - Throwing Range Judgment - Dummy Poly ID" Wiki="Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin" />
+    <judgeRangeBasePosDmyId2 AltName="Defender - Throwing Range Judgment - Dummy Poly ID" Wiki="Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin" />
+    <adsrobModelPosInterpolationTime AltName="Absorb Model Position Interpolation Time" Wiki="After the capsule is adsorbed on Damipoli, the time it takes for the character model to interpolate and move to the position according to the throwing animation data (when 0 is set, the model position is not interpolated and playback starts immediately after adsorption with the positional relationship according to the animation data. Will be)" />
+    <throwFollowingEndEasingTime AltName="Throw Following End Easing Time" Wiki="Model position interpolation time at the end of tracking" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self Wiki="Boss Grabs, Backstabbs, etc"/>
+</PARAMMETA>

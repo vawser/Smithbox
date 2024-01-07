@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <limitNum_byGroup AltName="Max Amount - By Group" Wiki="Maximum number of creations in the same group" />
+    <isLimitEachOwner AltName="Is Limited for each Owner" Wiki="Is it restricted for each owner?" IsBool="" />
+    <pad2 AltName=""/>
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

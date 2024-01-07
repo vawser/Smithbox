@@ -1,0 +1,6 @@
+<class name='hkaiSplitGenerationSnapshot' version='1' signature='0x998b924d' size='640'>
+  <members>
+    <member name='generationSnapshot' offset='0' ctype='hkaiNavMeshGenerationSnapshot' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='splitSettings' offset='576' ctype='hkaiSplitGenerationUtilsSettings' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

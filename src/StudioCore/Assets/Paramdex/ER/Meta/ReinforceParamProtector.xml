@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <physicsDefRate AltName="Defence %: Physical" Wiki="Physical defense correction value" />
+    <magicDefRate AltName="Defence %: Magic" Wiki="Magic defense correction value" />
+    <fireDefRate AltName="Defence %: Fire" Wiki="Fire defense correction value" />
+    <thunderDefRate AltName="Defence %: Lightning" Wiki="Electric shock defense correction value" />
+    <slashDefRate AltName="Defence %: Slash" Wiki="Slash defense correction value" />
+    <blowDefRate AltName="Defence %: Strike" Wiki="Impact defense correction value" />
+    <thrustDefRate AltName="Defence %: Thrust" Wiki="Correction value of piercing defense power" />
+    <resistPoisonRate AltName="Aux Resist %: Poison" Wiki="Poison resistance correction value" />
+    <resistDiseaseRate AltName="Aux Resist %: Scarlet Rot" Wiki="Epidemic resistance correction value" />
+    <resistBloodRate AltName="Aux Resist %: Hemorrhage" Wiki="Bleeding resistance correction value" />
+    <resistCurseRate AltName="Aux Resist %: Blight" Wiki="Curse resistance correction value" />
+    <residentSpEffectId1 AltName="Passive SpEffect ID [1] Offset" Wiki="Addition correction value for resident special effect ID1" />
+    <residentSpEffectId2 AltName="Passive SpEffect ID [2] Offset" Wiki="Addition correction value for resident special effect ID2" />
+    <residentSpEffectId3 AltName="Passive SpEffect ID [3] Offset" Wiki="Addition correction value for resident special effect ID3" />
+    <materialSetId AltName="Reinforcement Material Set ID" Wiki="Addition correction value of material parameter ID" />
+    <darkDefRate AltName="Absorption %: Holy" Wiki="Dark defense correction value" />
+    <resistFreezeRate AltName="Aux Resist %: Frost" Wiki="Cold resistance correction value" />
+    <resistSleepRate AltName="Aux Resist %: Sleep" Wiki="Correction value for sleep tolerance" />
+    <resistMadnessRate AltName="Aux Resist %: Madness" Wiki="Madness resistance correction value" />
+  </Field>
+  <Self ConsecutiveIDs="" Wiki="Defines upgrades of Armor. Unused in Elden Ring.\nTailoring is handled by a shop and functions as total item replacement, not variation." />
+</PARAMMETA>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CUTSCENE_TEXTURE_LOAD_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 disableParam_Debug:1">
+      <DisplayName>デバッグパラメータか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータは全パッケージから除外します（デバッグ用なので）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>0</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="fixstr texName_00[16]">
+      <DisplayName>テクスチャ名 00</DisplayName>
+      <Description>テクスチャ名 00</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_01[16]">
+      <DisplayName>テクスチャ名 01</DisplayName>
+      <Description>テクスチャ名 01</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_02[16]">
+      <DisplayName>テクスチャ名 02</DisplayName>
+      <Description>テクスチャ名 02</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_03[16]">
+      <DisplayName>テクスチャ名 03</DisplayName>
+      <Description>テクスチャ名 03</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_04[16]">
+      <DisplayName>テクスチャ名 04</DisplayName>
+      <Description>テクスチャ名 04</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_05[16]">
+      <DisplayName>テクスチャ名 05</DisplayName>
+      <Description>テクスチャ名 05</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_06[16]">
+      <DisplayName>テクスチャ名 06</DisplayName>
+      <Description>テクスチャ名 06</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_07[16]">
+      <DisplayName>テクスチャ名 07</DisplayName>
+      <Description>テクスチャ名 07</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_08[16]">
+      <DisplayName>テクスチャ名 08</DisplayName>
+      <Description>テクスチャ名 08</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_09[16]">
+      <DisplayName>テクスチャ名 09</DisplayName>
+      <Description>テクスチャ名 09</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_10[16]">
+      <DisplayName>テクスチャ名 10</DisplayName>
+      <Description>テクスチャ名 10</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_11[16]">
+      <DisplayName>テクスチャ名 11</DisplayName>
+      <Description>テクスチャ名 11</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_12[16]">
+      <DisplayName>テクスチャ名 12</DisplayName>
+      <Description>テクスチャ名 12</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_13[16]">
+      <DisplayName>テクスチャ名 13</DisplayName>
+      <Description>テクスチャ名 13</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_14[16]">
+      <DisplayName>テクスチャ名 14</DisplayName>
+      <Description>テクスチャ名 14</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_15[16]">
+      <DisplayName>テクスチャ名 15</DisplayName>
+      <Description>テクスチャ名 15</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

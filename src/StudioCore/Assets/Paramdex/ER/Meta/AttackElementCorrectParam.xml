@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <isStrengthCorrect_byPhysics AltName="Physical Correction: STR" IsBool="" />
+    <isDexterityCorrect_byPhysics AltName="Physical Correction: DEX" IsBool="" />
+    <isMagicCorrect_byPhysics AltName="Physical Correction: INT" IsBool="" />
+    <isFaithCorrect_byPhysics AltName="Physical Correction: FTH" IsBool="" />
+    <isLuckCorrect_byPhysics AltName="Physical Correction: ARC" IsBool="" />
+    <isStrengthCorrect_byMagic AltName="Magic Correction: STR" IsBool="" />
+    <isDexterityCorrect_byMagic AltName="Magic Correction: DEX" IsBool="" />
+    <isMagicCorrect_byMagic AltName="Magic Correction: INT" IsBool="" />
+    <isFaithCorrect_byMagic AltName="Magic Correction: FTH" IsBool="" />
+    <isLuckCorrect_byMagic AltName="Magic Correction: ARC" IsBool="" />
+    <isStrengthCorrect_byFire AltName="Fire Correction: STR" IsBool="" />
+    <isDexterityCorrect_byFire AltName="Fire Correction: DEX" IsBool="" />
+    <isMagicCorrect_byFire AltName="Fire Correction: INT" IsBool="" />
+    <isFaithCorrect_byFire AltName="Fire Correction: FTH" IsBool="" />
+    <isLuckCorrect_byFire AltName="Fire Correction: ARC" IsBool="" />
+    <isStrengthCorrect_byThunder AltName="Lightning Correction: STR" IsBool="" />
+    <isDexterityCorrect_byThunder AltName="Lightning Correction: DEX" IsBool="" />
+    <isMagicCorrect_byThunder AltName="Lightning Correction: INT" IsBool="" />
+    <isFaithCorrect_byThunder AltName="Lightning Correction: FTH" IsBool="" />
+    <isLuckCorrect_byThunder AltName="Lightning Correction: ARC" IsBool="" />
+    <isStrengthCorrect_byDark AltName="Holy Correction: STR" IsBool="" />
+    <isDexterityCorrect_byDark AltName="Holy Correction: DEX" IsBool="" />
+    <isMagicCorrect_byDark AltName="Holy Correction: INT" IsBool="" />
+    <isFaithCorrect_byDark AltName="Holy Correction: FTH" IsBool="" />
+    <isLuckCorrect_byDark AltName="Holy Correction: ARC" IsBool="" />
+    <pad1 AltName=""/>
+    <overwriteStrengthCorrectRate_byPhysics AltName="Physical Replacement Correction: STR" />
+    <overwriteDexterityCorrectRate_byPhysics AltName="Physical Replacement Correction: DEX" />
+    <overwriteMagicCorrectRate_byPhysics AltName="Physical Replacement Correction: INT" />
+    <overwriteFaithCorrectRate_byPhysics AltName="Physical Replacement Correction: FTH" />
+    <overwriteLuckCorrectRate_byPhysics AltName="Physical Replacement Correction: ARC" />
+    <overwriteStrengthCorrectRate_byMagic AltName="Magic Replacement Correction: STR" />
+    <overwriteDexterityCorrectRate_byMagic AltName="Magic Replacement Correction: DEX" />
+    <overwriteMagicCorrectRate_byMagic AltName="Magic Replacement Correction: INT" />
+    <overwriteFaithCorrectRate_byMagic AltName="Magic Replacement Correction: FTH" />
+    <overwriteLuckCorrectRate_byMagic AltName="Magic Replacement Correction: ARC" />
+    <overwriteStrengthCorrectRate_byFire AltName="Fire Replacement Correction: STR" />
+    <overwriteDexterityCorrectRate_byFire AltName="Fire Replacement Correction: DEX" />
+    <overwriteMagicCorrectRate_byFire AltName="Fire Replacement Correction: INT" />
+    <overwriteFaithCorrectRate_byFire AltName="Fire Replacement Correction: FTH" />
+    <overwriteLuckCorrectRate_byFire AltName="Fire Replacement Correction: ARC" />
+    <overwriteStrengthCorrectRate_byThunder AltName="Lightning Replacement Correction: STR" />
+    <overwriteDexterityCorrectRate_byThunder AltName="Lightning Replacement Correction: DEX" />
+    <overwriteMagicCorrectRate_byThunder AltName="Lightning Replacement Correction: INT" />
+    <overwriteFaithCorrectRate_byThunder AltName="Lightning Replacement Correction: FTH" />
+    <overwriteLuckCorrectRate_byThunder AltName="Lightning Replacement Correction: ARC" />
+    <overwriteStrengthCorrectRate_byDark AltName="Holy Replacement Correction: STR" />
+    <overwriteDexterityCorrectRate_byDark AltName="Holy Replacement Correction: DEX" />
+    <overwriteMagicCorrectRate_byDark AltName="Holy Replacement Correction: INT" />
+    <overwriteFaithCorrectRate_byDark AltName="Holy Replacement Correction: FTH" />
+    <overwriteLuckCorrectRate_byDark AltName="Holy Replacement Correction: ARC" />
+    <InfluenceStrengthCorrectRate_byPhysics AltName="Physical Correction Ratio: STR" Wiki="The rate of influence of the correction factor." />
+    <InfluenceDexterityCorrectRate_byPhysics AltName="Physical Correction Ratio: DEX" Wiki="The rate of influence of the correction factor." />
+    <InfluenceMagicCorrectRate_byPhysics AltName="Physical Correction Ratio: INT" Wiki="The rate of influence of the correction factor." />
+    <InfluenceFaithCorrectRate_byPhysics AltName="Physical Correction Ratio: FTH" Wiki="The rate of influence of the correction factor." />
+    <InfluenceLuckCorrectRate_byPhysics AltName="Physical Correction Ratio: ARC" Wiki="The rate of influence of the correction factor." />
+    <InfluenceStrengthCorrectRate_byMagic AltName="Magic Correction Ratio: STR" Wiki="The rate of influence of the correction factor." />
+    <InfluenceDexterityCorrectRate_byMagic AltName="Magic Correction Ratio: DEX" Wiki="The rate of influence of the correction factor." />
+    <InfluenceMagicCorrectRate_byMagic AltName="Magic Correction Ratio: INT" Wiki="The rate of influence of the correction factor." />
+    <InfluenceFaithCorrectRate_byMagic AltName="Magic Correction Ratio: FTH" Wiki="The rate of influence of the correction factor." />
+    <InfluenceLuckCorrectRate_byMagic AltName="Magic Correction Ratio: ARC" Wiki="The rate of influence of the correction factor." />
+    <InfluenceStrengthCorrectRate_byFire AltName="Fire Correction Ratio: STR" Wiki="The rate of influence of the correction factor." />
+    <InfluenceDexterityCorrectRate_byFire AltName="Fire Correction Ratio: DEX" Wiki="The rate of influence of the correction factor." />
+    <InfluenceMagicCorrectRate_byFire AltName="Fire Correction Ratio: INT" Wiki="The rate of influence of the correction factor." />
+    <InfluenceFaithCorrectRate_byFire AltName="Fire Correction Ratio: FTH" Wiki="The rate of influence of the correction factor." />
+    <InfluenceLuckCorrectRate_byFire AltName="Fire Correction Ratio: ARC" Wiki="The rate of influence of the correction factor." />
+    <InfluenceStrengthCorrectRate_byThunder AltName="Lightning Correction Ratio: STR" Wiki="The rate of influence of the correction factor." />
+    <InfluenceDexterityCorrectRate_byThunder AltName="Lightning Correction Ratio: DEX" Wiki="The rate of influence of the correction factor." />
+    <InfluenceMagicCorrectRate_byThunder AltName="Lightning Correction Ratio: INT" Wiki="The rate of influence of the correction factor." />
+    <InfluenceFaithCorrectRate_byThunder AltName="Lightning Correction Ratio: FTH" Wiki="The rate of influence of the correction factor." />
+    <InfluenceLuckCorrectRate_byThunder AltName="Lightning Correction Ratio: ARC" Wiki="The rate of influence of the correction factor." />
+    <InfluenceStrengthCorrectRate_byDark AltName="Holy Correction Ratio: STR" Wiki="The rate of influence of the correction factor." />
+    <InfluenceDexterityCorrectRate_byDark AltName="Holy Correction Ratio: DEX" Wiki="The rate of influence of the correction factor." />
+    <InfluenceMagicCorrectRate_byDark AltName="Holy Correction Ratio: INT" Wiki="The rate of influence of the correction factor." />
+    <InfluenceFaithCorrectRate_byDark AltName="Holy Correction Ratio: FTH" Wiki="The rate of influence of the correction factor." />
+    <InfluenceLuckCorrectRate_byDark AltName="Holy Correction Ratio: ARC" Wiki="The rate of influence of the correction factor." />
+    <pad2 AltName=""/>
+  </Field>
+  <Self Wiki="Governs which damage types scale with which stats. Includes correction values." />
+</PARAMMETA>

@@ -1,0 +1,65 @@
+<class name='hkbCompiledExpressionSetToken' version='1' signature='0xc2879bd5' size='8'>
+  <enums>
+    <enum name='TokenType' flags='00000000'>
+      <enumitem name='TOKEN_TYPE_NONE' value='0'/>
+      <enumitem name='TOKEN_TYPE_OPERATOR' value='1'/>
+      <enumitem name='TOKEN_TYPE_NUMBER' value='2'/>
+      <enumitem name='TOKEN_TYPE_VARIABLE_INDEX' value='3'/>
+      <enumitem name='TOKEN_TYPE_OPENING_PAREN' value='4'/>
+      <enumitem name='TOKEN_TYPE_CLOSING_PAREN' value='5'/>
+      <enumitem name='TOKEN_TYPE_COMMA' value='6'/>
+      <enumitem name='TOKEN_TYPE_CHARACTER_PROPERTY_INDEX' value='7'/>
+    </enum>
+    <enum name='Operator' flags='00000000'>
+      <enumitem name='OP_NOP' value='0'/>
+      <enumitem name='OP_RAND01' value='1'/>
+      <enumitem name='OP_LOGICAL_NOT' value='2'/>
+      <enumitem name='OP_UNARY_MINUS' value='3'/>
+      <enumitem name='OP_UNARY_PLUS' value='4'/>
+      <enumitem name='OP_SIN' value='5'/>
+      <enumitem name='OP_COS' value='6'/>
+      <enumitem name='OP_ASIN' value='7'/>
+      <enumitem name='OP_ACOS' value='8'/>
+      <enumitem name='OP_SQRT' value='9'/>
+      <enumitem name='OP_FABS' value='10'/>
+      <enumitem name='OP_CEIL' value='11'/>
+      <enumitem name='OP_FLOOR' value='12'/>
+      <enumitem name='OP_SQRTINV' value='13'/>
+      <enumitem name='OP_MUL' value='14'/>
+      <enumitem name='OP_DIV' value='15'/>
+      <enumitem name='OP_ADD' value='16'/>
+      <enumitem name='OP_SUB' value='17'/>
+      <enumitem name='OP_LOGICAL_OR' value='18'/>
+      <enumitem name='OP_LOGICAL_AND' value='19'/>
+      <enumitem name='OP_EQ' value='20'/>
+      <enumitem name='OP_NEQ' value='21'/>
+      <enumitem name='OP_LT' value='22'/>
+      <enumitem name='OP_GT' value='23'/>
+      <enumitem name='OP_LEQ' value='24'/>
+      <enumitem name='OP_GEQ' value='25'/>
+      <enumitem name='OP_POW' value='26'/>
+      <enumitem name='OP_MAX2' value='27'/>
+      <enumitem name='OP_MIN2' value='28'/>
+      <enumitem name='OP_RANDRANGE' value='29'/>
+      <enumitem name='OP_ATAN2' value='30'/>
+      <enumitem name='OP_CLAMP' value='31'/>
+      <enumitem name='OP_MOD' value='32'/>
+      <enumitem name='OP_DEG2RAD' value='33'/>
+      <enumitem name='OP_RAD2DEG' value='34'/>
+      <enumitem name='OP_COSD' value='35'/>
+      <enumitem name='OP_SIND' value='36'/>
+      <enumitem name='OP_ACOSD' value='37'/>
+      <enumitem name='OP_ASIND' value='38'/>
+      <enumitem name='OP_ATAN2D' value='39'/>
+      <enumitem name='OP_SIGN' value='40'/>
+      <enumitem name='OP_LERP' value='41'/>
+      <enumitem name='OP_CLERP' value='42'/>
+      <enumitem name='OP_COND' value='43'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='data' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='4' etype='TokenType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='operator' offset='5' etype='Operator' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

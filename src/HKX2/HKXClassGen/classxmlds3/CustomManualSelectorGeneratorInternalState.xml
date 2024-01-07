@@ -1,0 +1,7 @@
+<class name='CustomManualSelectorGeneratorInternalState' version='1' signature='0x6fb85d54' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='currentGeneratorIndex' offset='16' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='generatorIndexAtActivate' offset='17' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='activeTransitions' offset='24' ctype='hkbStateMachineActiveTransitionInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

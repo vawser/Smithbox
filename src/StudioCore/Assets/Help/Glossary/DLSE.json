@@ -1,0 +1,12 @@
+{
+    "Title": "DLSE",
+    "Tags": [
+        "Format",
+        "DS2", "DES"
+    ],
+    "Contents": [
+        "Generic serialization format.",
+        "Used for FFX and ESD in Demon's Souls.",
+        "Used for FFX in Dark Souls II."
+    ]
+}

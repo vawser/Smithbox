@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>LOOK_AT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 UnkByte0x00"></Field>
+    <Field Def="u8 UnkByte0x01"></Field>
+    <Field Def="u8 UnkByte0x02"></Field>
+    <Field Def="u8 UnkByte0x03"></Field>
+    <Field Def="u8 UnkByte0x04"></Field>
+    <Field Def="u8 UnkByte0x05"></Field>
+    <Field Def="u8 UnkByte0x06"></Field>
+    <Field Def="u8 UnkByte0x07"></Field>
+    <Field Def="u8 UnkByte0x08"></Field>
+    <Field Def="u8 UnkByte0x09"></Field>
+    <Field Def="u8 Unk0x0A"></Field>
+    <Field Def="u8 Unk0x0B"></Field>
+    <Field Def="s32 UnkInt0x0C"></Field>
+    <Field Def="s32 UnkInt0x10"></Field>
+    <Field Def="s32 UnkInt0x14"></Field>
+    <Field Def="s8 UnkSbyte0x18"></Field>
+    <Field Def="s8 UnkSbyte0x19"></Field>
+    <Field Def="s8 UnkSbyte0x1A"></Field>
+    <Field Def="s8 UnkSbyte0x1B"></Field>
+    <Field Def="u8 UnkByte0x1C"></Field>
+    <Field Def="u8 UnkByte0x1D"></Field>
+    <Field Def="u16 UnkUshort0x1E"></Field>
+    <Field Def="f32 UnkFloat0x20"></Field>
+    <Field Def="s32 UnkInt0x24"></Field>
+    <Field Def="u8 UnkByte0x28"></Field>
+    <Field Def="u8 UnkByte0x29"></Field>
+    <Field Def="u8 Unk0x2A"></Field>
+    <Field Def="u8 Unk0x2B"></Field>
+    <Field Def="f32 UnkFloat0x2C"></Field>
+    <Field Def="f32 UnkFloat0x30"></Field>
+    <Field Def="f32 UnkFloat0x34"></Field>
+    <Field Def="f32 UnkFloat0x38"></Field>
+    <Field Def="s32 UnkInt0x3C"></Field>
+    <Field Def="f32 UnkFloat0x40"></Field>
+    <Field Def="s8 UnkSbyte0x44"></Field>
+    <Field Def="s8 UnkSbyte0x45"></Field>
+    <Field Def="u8 Unk0x46"></Field>
+    <Field Def="u8 Unk0x47"></Field>
+    <Field Def="f32 UnkFloat0x48"></Field>
+    <Field Def="u8 UnkByte0x4C"></Field>
+    <Field Def="s8 UnkSbyte0x4D"></Field>
+    <Field Def="s8 UnkSbyte0x4E"></Field>
+    <Field Def="u8 Unk0x4F"></Field>
+    <Field Def="s32 UnkInt0x50"></Field>
+    <Field Def="s32 UnkInt0x54"></Field>
+    <Field Def="f32 UnkFloat0x58"></Field>
+    <Field Def="f32 UnkFloat0x5C"></Field>
+    <Field Def="f32 UnkFloat0x60"></Field>
+    <Field Def="f32 UnkFloat0x64"></Field>
+    <Field Def="f32 UnkFloat0x68"></Field>
+    <Field Def="s32 UnkInt0x6C"></Field>
+    <Field Def="s32 UnkInt0x70"></Field>
+    <Field Def="s32 UnkInt0x74"></Field>
+    <Field Def="s32 UnkInt0x78"></Field>
+  </Fields>
+</PARAMDEF>

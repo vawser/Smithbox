@@ -1,0 +1,8 @@
+<class name='hclSimpleMeshBoneDeformOperator' version='1' signature='0x80d9769f' size='72' parent='hclOperator'>
+  <members>
+    <member name='inputBufferIdx' offset='32' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputTransformSetIdx' offset='36' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleBonePairs' offset='40' ctype='hclSimpleMeshBoneDeformOperatorTriangleBonePair' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localBoneTransforms' offset='56' vtype='TYPE_ARRAY' vsubtype='TYPE_MATRIX4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

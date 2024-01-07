@@ -1,0 +1,5 @@
+<class name='hknpDynamicCompoundShapeData' version='1' signature='0xf33dc3cc' size='56' parent='hkReferencedObject'>
+  <members>
+    <member name='aabbTree' offset='16' ctype='hknpDynamicCompoundShapeTree' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

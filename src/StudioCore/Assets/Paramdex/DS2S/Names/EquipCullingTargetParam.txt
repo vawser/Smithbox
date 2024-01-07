@@ -1,0 +1,4 @@
+0 Fuselage -- 胴体
+1 Helmet -- 兜
+2 Arms -- 腕
+3 Feet -- 足

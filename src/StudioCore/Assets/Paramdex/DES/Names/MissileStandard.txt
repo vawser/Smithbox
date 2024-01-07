@@ -1,0 +1,23 @@
+0 Invalid (should not be deleted)
+9999 test
+10 fireball
+11 Fireball landing
+20 Fireball (for Dora Demo)
+21 Fireball landing (for Dora Demo)
+30 Arrow (arrow model + trajectory)
+31 Arrow (arrow model + trajectory) Spear shot
+32 Arrow (arrow model + trajectory) All spear firing
+33 Arrow (arrow model + trajectory) Rain of spears from the wall
+45 phalanx spear
+46 king's shield javelin
+47 c5060_Kamisama_Fireball
+48 Kamisama_Magic Square Attack
+49 Kami-Sama_fireball landing
+50 c1001_ Snake soldier (bow) _ bow attack
+51 Judge's Rubble
+52 c2011_ Bowguns of general soldiers (bowguns)
+53 c2030_assassin's knife
+54 c2050_Barbarian/bear rubble
+55 c4050_ flame monster flame thrower
+56 c2010_general soldier (long sword) molotov cocktail
+57 Molotov cocktail landing

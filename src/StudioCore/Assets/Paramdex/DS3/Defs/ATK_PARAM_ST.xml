@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ATK_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 Hit0_Radius" />
+    <Field Def="f32 Hit1_Radius" />
+    <Field Def="f32 Hit2_Radius" />
+    <Field Def="f32 Hit3_Radius" />
+    <Field Def="f32 KnockbackDist" />
+    <Field Def="f32 HitStopTime" />
+    <Field Def="s32 spEffect0" />
+    <Field Def="s32 spEffect1" />
+    <Field Def="s32 spEffect2" />
+    <Field Def="s32 spEffect3" />
+    <Field Def="s32 spEffect4" />
+    <Field Def="s16 Hit0_DmyPoly1 = 100" />
+    <Field Def="s16 Hit1_DmyPoly1 = -1" />
+    <Field Def="s16 Hit2_DmyPoly1 = -1" />
+    <Field Def="s16 Hit3_DmyPoly1 = -1" />
+    <Field Def="s16 Hit0_DmyPoly2 = 120" />
+    <Field Def="s16 Hit1_DmyPoly2 = -1" />
+    <Field Def="s16 Hit2_DmyPoly2 = -1" />
+    <Field Def="s16 Hit3_DmyPoly2 = -1" />
+    <Field Def="s16 BlowingCorrection" />
+    <Field Def="s16 AtkPhysCorrection = 100" />
+    <Field Def="s16 AtkMagCorrection = 100" />
+    <Field Def="s16 AtkFireCorrection = 100" />
+    <Field Def="s16 AtkThunCorrection = 100" />
+    <Field Def="s16 AtkStamCorrection = 100" />
+    <Field Def="s16 GuardAtkRateCorrection" />
+    <Field Def="s16 GuardBreakCorrection = 100" />
+    <Field Def="s16 AtkThrowEscapeCorrection = 100" />
+    <Field Def="s16 AtkSuperArmorCorrection" />
+    <Field Def="s16 AtkPhys" />
+    <Field Def="s16 AtkMag" />
+    <Field Def="s16 AtkFire" />
+    <Field Def="s16 AtkThun" />
+    <Field Def="s16 AtkStam" />
+    <Field Def="s16 GuardAtkRate" />
+    <Field Def="s16 GuardBreakRate" />
+    <Field Def="s16 AtkSuperArmor" />
+    <Field Def="s16 AtkThrowEscape" />
+    <Field Def="s16 AtkObj = 20" />
+    <Field Def="s16 GuardStaminaCutRate" />
+    <Field Def="s16 GuardRate" />
+    <Field Def="s16 ThrowTypeID" />
+    <Field Def="u8 Hit0_hitType" />
+    <Field Def="u8 Hit1_hitType" />
+    <Field Def="u8 Hit2_hitType" />
+    <Field Def="u8 Hit3_hitType" />
+    <Field Def="u8 hit0_Priority" />
+    <Field Def="u8 hit1_Priority" />
+    <Field Def="u8 hit2_Priority" />
+    <Field Def="u8 hit3_Priority" />
+    <Field Def="u8 damageLevel = 2" />
+    <Field Def="u8 mapHitType" />
+    <Field Def="u8 GuardCutCancelRate" />
+    <Field Def="s8 AtkAttribute = 4" />
+    <Field Def="s8 spAttribute = -1" />
+    <Field Def="s8 atkType" />
+    <Field Def="s8 atkMaterial = -1" />
+    <Field Def="s8 atkSize" />
+    <Field Def="s8 DefMaterial = -1" />
+    <Field Def="s8 DefSfxMaterial" />
+    <Field Def="u8 HitSourceType" />
+    <Field Def="u8 ThrowFlag" />
+    <Field Def="u8 disableGuard:1" />
+    <Field Def="u8 disableStaminaAttack:1" />
+    <Field Def="u8 disableHitSpEffect:1" />
+    <Field Def="u8 IgnoreNotifyMissSwingForAI:1" />
+    <Field Def="u8 repeatHitSfx:1" />
+    <Field Def="u8 IsArrowAtk:1" />
+    <Field Def="u8 IsGhostAtk:1" />
+    <Field Def="u8 isDisableNoDamage:1" />
+    <Field Def="u8 atkPowForSfxSe" />
+    <Field Def="u8 atkDirForSfxSe" />
+    <Field Def="u8 opposeTarget:1 = 1" />
+    <Field Def="u8 friendlyTarget:1" />
+    <Field Def="u8 selfTarget:1" />
+    <Field Def="u8 isChargeAtk:1" />
+    <Field Def="u8 isShareHitList:1" />
+    <Field Def="u8 isCheckObjPenetration:1" />
+    <Field Def="u8 0x81_0:1" />
+    <Field Def="u8 0x81_1:1" />
+    <Field Def="u8 pad1" />
+    <Field Def="u8 regainableSlotId" />
+    <Field Def="s32 deathCauseId" />
+    <Field Def="s32 decalId1" />
+    <Field Def="s32 decalId2 = 100" />
+    <Field Def="s32 spawnAiSoundId = 2030" />
+    <Field Def="s32 HitAiSoundId = 2130" />
+    <Field Def="s32 RumbleId0 = -1" />
+    <Field Def="s32 RumbleId1 = -1" />
+    <Field Def="s32 RumbleId2 = -1" />
+    <Field Def="s32 RumbleId3 = -1" />
+    <Field Def="s32 Hit0_VfxId = -1" />
+    <Field Def="s32 Hit0_DummyPolyId0 = -1" />
+    <Field Def="s32 Hit0_DummyPolyId1 = -1" />
+    <Field Def="s32 Hit1_VfxId1 = -1" />
+    <Field Def="s32 Hit1_DummyPolyId0 = -1" />
+    <Field Def="s32 Hit1_DummyPolyId1 = -1" />
+    <Field Def="s32 Hit2_VfxId = -1" />
+    <Field Def="s32 Hit2_DummyPolyId0 = -1" />
+    <Field Def="s32 Hit2_DummyPolyId1 = -1" />
+    <Field Def="s32 Hit3_VfxId = -1" />
+    <Field Def="s32 Hit3_DummyPolyId0 = -1" />
+    <Field Def="s32 Hit3_DummyPolyId1 = -1" />
+    <Field Def="s32 Hit4_VfxId = -1" />
+    <Field Def="s32 Hit4_DummyPolyId0 = -1" />
+    <Field Def="s32 Hit4_DummyPolyId1 = -1" />
+    <Field Def="s32 Hit5_VfxId = -1" />
+    <Field Def="s32 Hit5_DummyPolyId0 = -1" />
+    <Field Def="s32 Hit5_DummyPolyId1 = -1" />
+    <Field Def="s32 Hit6_VfxId = -1" />
+    <Field Def="s32 Hit6_DummyPolyId0 = -1" />
+    <Field Def="s32 Hit6_DummyPolyId1 = -1" />
+    <Field Def="s32 Hit7_VfxId = -1" />
+    <Field Def="s32 Hit7_DummyPolyId0 = -1" />
+    <Field Def="s32 Hit7_DummyPolyId1 = -1" />
+    <Field Def="f32 Hit4_Radius" />
+    <Field Def="f32 Hit5_Radius" />
+    <Field Def="f32 Hit6_Radius" />
+    <Field Def="f32 Hit7_Radius" />
+    <Field Def="f32 Hit8_Radius" />
+    <Field Def="f32 Hit9_Radius" />
+    <Field Def="f32 Hit10_Radius" />
+    <Field Def="f32 Hit11_Radius" />
+    <Field Def="f32 Hit12_Radius" />
+    <Field Def="f32 Hit13_Radius" />
+    <Field Def="f32 Hit14_Radius" />
+    <Field Def="f32 Hit15_Radius" />
+    <Field Def="s16 Hit4_DmyPoly1 = -1" />
+    <Field Def="s16 Hit5_DmyPoly1 = -1" />
+    <Field Def="s16 Hit6_DmyPoly1 = -1" />
+    <Field Def="s16 Hit7_DmyPoly1 = -1" />
+    <Field Def="s16 Hit8_DmyPoly1 = -1" />
+    <Field Def="s16 Hit9_DmyPoly1 = -1" />
+    <Field Def="s16 Hit10_DmyPoly1 = -1" />
+    <Field Def="s16 Hit11_DmyPoly1 = -1" />
+    <Field Def="s16 Hit12_DmyPoly1 = -1" />
+    <Field Def="s16 Hit13_DmyPoly1 = -1" />
+    <Field Def="s16 Hit14_DmyPoly1 = -1" />
+    <Field Def="s16 Hit15_DmyPoly1 = -1" />
+    <Field Def="s16 Hit4_DmyPoly2 = -1" />
+    <Field Def="s16 Hit5_DmyPoly2 = -1" />
+    <Field Def="s16 Hit6_DmyPoly2 = -1" />
+    <Field Def="s16 Hit7_DmyPoly2 = -1" />
+    <Field Def="s16 Hit8_DmyPoly2 = -1" />
+    <Field Def="s16 Hit9_DmyPoly2 = -1" />
+    <Field Def="s16 Hit10_DmyPoly2 = -1" />
+    <Field Def="s16 Hit11_DmyPoly2 = -1" />
+    <Field Def="s16 Hit12_DmyPoly2 = -1" />
+    <Field Def="s16 Hit13_DmyPoly2 = -1" />
+    <Field Def="s16 Hit14_DmyPoly2 = -1" />
+    <Field Def="s16 Hit15_DmyPoly2 = -1" />
+    <Field Def="u8 Hit4_hitType" />
+    <Field Def="u8 Hit5_hitType" />
+    <Field Def="u8 Hit6_hitType" />
+    <Field Def="u8 Hit7_hitType" />
+    <Field Def="u8 Hit8_hitType" />
+    <Field Def="u8 Hit9_hitType" />
+    <Field Def="u8 Hit10_hitType" />
+    <Field Def="u8 Hit11_hitType" />
+    <Field Def="u8 Hit12_hitType" />
+    <Field Def="u8 Hit13_hitType" />
+    <Field Def="u8 Hit14_hitType" />
+    <Field Def="u8 Hit15_hitType" />
+    <Field Def="s32 0x174" />
+    <Field Def="s32 0x178" />
+    <Field Def="s32 0x17C" />
+    <Field Def="s16 defMaterialVal0 = 255" />
+    <Field Def="s16 defMaterialVal1 = 139" />
+    <Field Def="s16 defMaterialVal2 = 139" />
+    <Field Def="s16 atkDarkCorrection = 100" />
+    <Field Def="s16 atkDark" />
+    <Field Def="u8 IsChargeAtk2:1" />
+    <Field Def="u8 IsChargeAtk3:1 = 1" />
+    <Field Def="u8 0x18A_0:1" />
+    <Field Def="u8 0x18A_1:1" />
+    <Field Def="u8 0x18A_2:1" />
+    <Field Def="u8 0x18A_3:1" />
+    <Field Def="u8 0x18A_4:1" />
+    <Field Def="u8 0x18A_5:1" />
+    <Field Def="u8 0x18B" />
+    <Field Def="s16 physSpCorrection = 100" />
+    <Field Def="s16 magSpCorrection = 100" />
+    <Field Def="s16 fireSpCorrection = 100" />
+    <Field Def="s16 thunSpCorrection = 100" />
+    <Field Def="u8 damageLevelParameter" />
+    <Field Def="u8 0x195" />
+    <Field Def="s16 darkSpCorrection = 100" />
+    <Field Def="s32 atkElementCorrectId = -1" />
+    <Field Def="dummy8 pad2[12]" />
+  </Fields>
+</PARAMDEF>

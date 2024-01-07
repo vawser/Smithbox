@@ -1,0 +1,8 @@
+<class name='hknpMinMaxQuadTree' version='1' signature='0xe7ba4e4' size='48'>
+  <members>
+    <member name='coarseTreeData' offset='0' ctype='hknpMinMaxQuadTreeMinMaxLevel' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='offset' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='multiplier' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='invMultiplier' offset='36' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

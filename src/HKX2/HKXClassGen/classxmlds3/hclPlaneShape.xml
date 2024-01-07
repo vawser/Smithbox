@@ -1,0 +1,5 @@
+<class name='hclPlaneShape' version='1' signature='0x4d60b010' size='48' parent='hclShape'>
+  <members>
+    <member name='planeEquation' offset='32' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

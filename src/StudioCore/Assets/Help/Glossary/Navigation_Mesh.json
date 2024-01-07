@@ -1,0 +1,11 @@
+{
+    "Title": "Navigation Mesh",
+    "Tags": [
+        "Term",
+        "Navmesh"
+    ],
+    "Contents": [
+        "Navigation mesh is a set of data about how enemies can navigate within",
+        "and between collisions, baked on top of the collision data."
+    ]
+}

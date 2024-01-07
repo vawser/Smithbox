@@ -1,0 +1,20 @@
+<class name='hclTransformSetUsage' version='1' signature='0xbf809381' size='24'>
+  <enums>
+    <enum name='Component' flags='00000000'>
+      <enumitem name='COMPONENT_TRANSFORM' value='0'/>
+      <enumitem name='COMPONENT_INVTRANSPOSE' value='1'/>
+      <enumitem name='NUM_COMPONENTS' value='2'/>
+    </enum>
+    <enum name='InternalFlags' flags='00000000'>
+      <enumitem name='USAGE_NONE' value='0'/>
+      <enumitem name='USAGE_READ' value='1'/>
+      <enumitem name='USAGE_WRITE' value='2'/>
+      <enumitem name='USAGE_FULL_WRITE' value='4'/>
+      <enumitem name='USAGE_READ_BEFORE_WRITE' value='8'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='perComponentFlags' offset='0' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='perComponentTransformTrackers' offset='8' ctype='hclTransformSetUsageTransformTracker' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

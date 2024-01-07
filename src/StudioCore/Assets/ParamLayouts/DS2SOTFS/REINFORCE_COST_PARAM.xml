@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <entry>
+    <name>+1 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Soul Cost</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Material</name>
+    <type>s32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Material Amount</name>
+    <type>u16</type>
+    <default>0</default>
+  </entry>
+</layout>

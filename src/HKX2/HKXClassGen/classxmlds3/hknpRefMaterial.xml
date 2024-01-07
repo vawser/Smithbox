@@ -1,0 +1,5 @@
+<class name='hknpRefMaterial' version='1' signature='0xd839618f' size='96' parent='hkReferencedObject'>
+  <members>
+    <member name='material' offset='16' ctype='hknpMaterial' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

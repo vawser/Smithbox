@@ -1,0 +1,9 @@
+<class name='hkaiNavMeshPathRequestInfo' version='1' signature='0x7115766' size='56' parent='hkReferencedObject'>
+  <members>
+    <member name='input' offset='16' ctype='hkaiPathfindingUtilFindPathInput' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='output' offset='24' ctype='hkaiPathfindingUtilFindPathOutput' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='priority' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='owner' offset='40' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='markedForDeletion' offset='48' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ZOOM_BLUR_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s8 UnkSbyte0x00"></Field>
+    <Field Def="u8 UnkByte0x01"></Field>
+    <Field Def="u8 Unk0x02"></Field>
+    <Field Def="u8 Unk0x03"></Field>
+    <Field Def="f32 UnkFloat0x04"></Field>
+    <Field Def="f32 UnkFloat0x08"></Field>
+    <Field Def="s32 UnkInt0x0C"></Field>
+    <Field Def="s32 UnkInt0x10"></Field>
+    <Field Def="s32 UnkInt0x14"></Field>
+    <Field Def="s32 UnkInt0x18"></Field>
+    <Field Def="s32 UnkInt0x1C"></Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <reserved0 AltName=""/>
+    <soundTargetTryApproachTime AltName="Sound - Target Try Approach Time" Wiki="" />
+    <searchTargetTryApproachTime AltName="Search - Target Try Approach Time" Wiki="" />
+    <memoryTargetTryApproachTime AltName="Memory - Target Try Approach Time" Wiki="" />
+    <reserved5 AltName=""/>
+    <activateChrByTime_PhantomId AltName="Activate Chr by Time - Phantom ID" Wiki="Phantom shader ID used for directing the appearance and disappearance of enemies placed in a specific time zone" />
+    <findUnfavorableFailedPointDist AltName="Find Unfavourable Failed Point Distance" Wiki="Distance to generate an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path" />
+    <findUnfavorableFailedPointHeight AltName="Find Unfavourable Failed Point Height" Wiki="The height that causes an interrupt, which turns out that the enemy is likely to be cut off when going to the end of the path" />
+    <reserved18 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

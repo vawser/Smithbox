@@ -1,0 +1,10 @@
+{
+    "Title": "Param",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "Used to refer to game params, which determine the behavior and properties",
+        "of many integer-keyed game objects and mechanisms."
+    ]
+}

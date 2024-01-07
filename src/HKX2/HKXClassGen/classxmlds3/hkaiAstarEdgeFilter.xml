@@ -1,0 +1,11 @@
+<class name='hkaiAstarEdgeFilter' version='1' signature='0xb2108223' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='EdgeFilterType' flags='00000000'>
+      <enumitem name='EDGE_FILTER_DEFAULT' value='0'/>
+      <enumitem name='EDGE_FILTER_USER' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='EdgeFilterType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

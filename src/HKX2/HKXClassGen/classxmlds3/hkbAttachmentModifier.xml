@@ -1,0 +1,16 @@
+<class name='hkbAttachmentModifier' version='1' signature='0x33bc845f' size='208' parent='hkbModifier'>
+  <members>
+    <member name='sendToAttacherOnAttach' offset='88' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sendToAttacheeOnAttach' offset='104' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sendToAttacherOnDetach' offset='120' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sendToAttacheeOnDetach' offset='136' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attachmentSetup' offset='152' ctype='hkbAttachmentSetup' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attacherHandle' offset='160' ctype='hkbHandle' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attacheeHandle' offset='168' ctype='hkbHandle' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attacheeLayer' offset='176' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attacheeRB' offset='184' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='oldMotionType' offset='192' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='oldFilterInfo' offset='196' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='attachment' offset='200' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

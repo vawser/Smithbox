@@ -1,0 +1,5 @@
+<class name='hkpMountedBallGun' version='1' signature='0x2e7595e8' size='128' parent='hkpBallGun'>
+  <members>
+    <member name='position' offset='112' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

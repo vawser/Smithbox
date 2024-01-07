@@ -1,0 +1,7 @@
+<class name='hkaiPhysicsBodySilhouetteGenerator' version='1' signature='0x3b7a9291' size='208' parent='hkaiPhysicsBodySilhouetteGeneratorBase'>
+  <members>
+    <member name='worldBridge' offset='176' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='world' offset='184' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='bodyId' offset='192' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

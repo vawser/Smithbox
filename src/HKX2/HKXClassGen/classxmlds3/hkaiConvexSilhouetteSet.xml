@@ -1,0 +1,8 @@
+<class name='hkaiConvexSilhouetteSet' version='1' signature='0xcc1bbf54' size='96' parent='hkReferencedObject'>
+  <members>
+    <member name='vertexPool' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='silhouetteOffsets' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cachedTransform' offset='48' ctype='hkQTransform' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cachedUp' offset='80' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

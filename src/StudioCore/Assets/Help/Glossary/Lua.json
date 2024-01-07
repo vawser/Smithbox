@@ -1,0 +1,11 @@
+{
+    "Title": "Lua",
+    "Tags": [
+        "Format",
+        "Script"
+    ],
+    "Contents": [
+        "A scripting language, used by all of the games for character and enemy AI.",
+        "In Dark Souls III, Bloodborne, Sekiro and Elden Ring, HKS is written in special form of Lua."
+    ]
+}

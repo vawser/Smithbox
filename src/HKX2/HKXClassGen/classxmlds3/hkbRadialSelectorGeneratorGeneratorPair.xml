@@ -1,0 +1,7 @@
+<class name='hkbRadialSelectorGeneratorGeneratorPair' version='1' signature='0xb10ff169' size='40'>
+  <members>
+    <member name='generators' offset='0' ctype='hkbRadialSelectorGeneratorGeneratorInfo' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='minAngle' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAngle' offset='36' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

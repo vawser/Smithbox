@@ -1,0 +1,6 @@
+<class name='hclObjectSpaceMeshMeshDeformPOperator' version='1' signature='0x574824cf' size='200' parent='hclObjectSpaceMeshMeshDeformOperator'>
+  <members>
+    <member name='localPs' offset='168' ctype='hclObjectSpaceDeformerLocalBlockP' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localUnpackedPs' offset='184' ctype='hclObjectSpaceDeformerLocalBlockUnpackedP' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

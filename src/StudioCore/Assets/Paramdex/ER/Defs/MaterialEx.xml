@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>MATERIAL_EX_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="fixstrW paramName[32]">
+      <DisplayName>マテリアルパラメータ名</DisplayName>
+      <Description>マテリアルのパラメータ名を設定する。最大31文字まで</Description>
+      <DisplayFormat>%ls</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s32 materialId = -1">
+      <DisplayName>対象マテリアルID</DisplayName>
+      <Description>NPCパラ：常駐マテリアル拡張パラID用設定　-1なら全マテリアル対象</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="f32 materialParamValue0">
+      <DisplayName>上書き値1(R)</DisplayName>
+      <Description>NPCパラ：常駐マテリアル拡張パラID用設定</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="f32 materialParamValue1">
+      <DisplayName>上書き値2(G)</DisplayName>
+      <Description>NPCパラ：常駐マテリアル拡張パラID用設定</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="f32 materialParamValue2">
+      <DisplayName>上書き値3(B)</DisplayName>
+      <Description>NPCパラ：常駐マテリアル拡張パラID用設定</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3200</SortID>
+    </Field>
+    <Field Def="f32 materialParamValue3">
+      <DisplayName>上書き値4(A)</DisplayName>
+      <Description>NPCパラ：常駐マテリアル拡張パラID用設定</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3300</SortID>
+    </Field>
+    <Field Def="f32 materialParamValue4 = 1">
+      <DisplayName>上書き値5(I)</DisplayName>
+      <Description>NPCパラ：常駐マテリアル拡張パラID用設定</Description>
+      <DisplayFormat>%.2f</DisplayFormat>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3400</SortID>
+    </Field>
+    <Field Def="dummy8 pad[8]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>3401</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

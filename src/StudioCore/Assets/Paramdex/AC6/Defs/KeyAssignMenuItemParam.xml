@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>CS_KEY_ASSIGN_MENUITEM_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 textID"></Field>
+    <Field Def="s32 key"></Field>
+    <Field Def="u8 enableUnassign"></Field>
+    <Field Def="u8 enablePadConfig"></Field>
+    <Field Def="u8 enableMouseConfig"></Field>
+    <Field Def="u8 group"></Field>
+    <Field Def="s32 mappingTextID"></Field>
+  </Fields>
+</PARAMDEF>

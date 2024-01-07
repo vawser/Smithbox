@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<aiVolumeRate Wiki="Multiplies AI sound produced when in contact with this material" />
+	<spEffectIdOnHit0 Wiki="Applies speffect to player when they touch this material in New Game" Refs="SpEffectParam" />
+	<spEffectIdOnHit1 Wiki="Applies speffect to player when they touch this material in New Game" Refs="SpEffectParam" />
+	<footEffectHeightType Wiki="Height to generate foot effect" />
+	<footEffectDirType Wiki="Direction of foot effect" />
+	<floorHeightType Wiki="For floating items such as on the water surface" />
+	<disableFallDamage Wiki="When enabled player and Npc's will not take fall damage when falling onto this material" IsBool="" />
+	<pad1 />
+	<hardnessType Wiki="Hardness of the material. Used for soft contact processing of rigid bodies" />
+	<wetTiming Wiki="Controls whether the whole body gets wet when stepping on the floor material, or whether it gets wet if specified by TAE" />
+	<pad2 />
+	<spEffectId_forWet Wiki="SpEffect applied when this makes you wet" Refs="SpEffectParam" />
+    <spEffectIdOnHit0_ClearCount_2 Wiki="Applies speffect to player when they touch this material in New Game Plus" Refs="SpEffectParam" />
+    <spEffectIdOnHit0_ClearCount_3 Wiki="Applies speffect to player when they touch this material in New Game Plus 2" Refs="SpEffectParam" />
+    <spEffectIdOnHit0_ClearCount_4 Wiki="Applies speffect to player when they touch this material in New Game Plus 3" Refs="SpEffectParam" />
+    <spEffectIdOnHit0_ClearCount_5 Wiki="Applies speffect to player when they touch this material in New Game Plus 4" Refs="SpEffectParam" />
+    <spEffectIdOnHit0_ClearCount_6 Wiki="Applies speffect to player when they touch this material in New Game Plus 5" Refs="SpEffectParam" />
+    <spEffectIdOnHit0_ClearCount_7 Wiki="Applies speffect to player when they touch this material in New Game Plus 6" Refs="SpEffectParam" />
+    <spEffectIdOnHit0_ClearCount_8 Wiki="Applies speffect to player when they touch this material in New Game Plus 7" Refs="SpEffectParam" />
+    <spEffectIdOnHit1_ClearCount_2 Wiki="Applies speffect to player when they touch this material in New Game Plus 1" Refs="SpEffectParam" />
+    <spEffectIdOnHit1_ClearCount_3 Wiki="Applies speffect to player when they touch this material in New Game Plus 2" Refs="SpEffectParam" />
+    <spEffectIdOnHit1_ClearCount_4 Wiki="Applies speffect to player when they touch this material in New Game Plus 3" Refs="SpEffectParam" />
+    <spEffectIdOnHit1_ClearCount_5 Wiki="Applies speffect to player when they touch this material in New Game Plus 4" Refs="SpEffectParam" />
+    <spEffectIdOnHit1_ClearCount_6 Wiki="Applies speffect to player when they touch this material in New Game Plus 5" Refs="SpEffectParam" />
+    <spEffectIdOnHit1_ClearCount_7 Wiki="Applies speffect to player when they touch this material in New Game Plus 6" Refs="SpEffectParam" />
+    <spEffectIdOnHit1_ClearCount_8 Wiki="Applies speffect to player when they touch this material in New Game Plus 7" Refs="SpEffectParam" />
+	<fallDeathDist Wiki=" When you land on this hit material, if you are falling from a height higher than the set value, you will die instantly upon landing. Valid only for PC" />
+	<fallDamageRate Wiki="When you land on this hit material, this multiplier is applied to the fall damage. Valid only for PC" />
+	<pad />
+  </Field>
+  <Self Wiki="Collision type properties" AlternativeOrder="aiVolumeRate,-,
+footEffectHeightType,footEffectDirType,floorHeightType,-,
+fallDeathDist,fallDamageRate,disableFallDamage,-,
+hardnessType,-,
+wetTiming,spEffectId_forWet,-,
+spEffectIdOnHit0,spEffectIdOnHit0_ClearCount_2,spEffectIdOnHit0_ClearCount_3,spEffectIdOnHit0_ClearCount_4,spEffectIdOnHit0_ClearCount_5,spEffectIdOnHit0_ClearCount_6,spEffectIdOnHit0_ClearCount_7,spEffectIdOnHit0_ClearCount_8,-,
+spEffectIdOnHit1,spEffectIdOnHit1_ClearCount_2,spEffectIdOnHit1_ClearCount_3,spEffectIdOnHit1_ClearCount_4,spEffectIdOnHit1_ClearCount_5,spEffectIdOnHit1_ClearCount_6,spEffectIdOnHit1_ClearCount_7,spEffectIdOnHit1_ClearCount_8,-" />
+</PARAMMETA>

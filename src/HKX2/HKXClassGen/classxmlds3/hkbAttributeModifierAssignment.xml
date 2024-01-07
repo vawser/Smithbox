@@ -1,0 +1,6 @@
+<class name='hkbAttributeModifierAssignment' version='1' signature='0x48b8ad52' size='8'>
+  <members>
+    <member name='attributeIndex' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='attributeValue' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

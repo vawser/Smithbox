@@ -1,0 +1,5 @@
+<class name='hkAabbHalf' version='1' signature='0x11b6739e' size='16'>
+  <members>
+    <member name='data' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='8' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

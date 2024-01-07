@@ -1,0 +1,7 @@
+<class name='hkbEvaluateExpressionModifier' version='1' signature='0x4a3ac449' size='120' parent='hkbModifier'>
+  <members>
+    <member name='expressions' offset='88' ctype='hkbExpressionDataArray' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='compiledExpressionSet' offset='96' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='internalExpressionsData' offset='104' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

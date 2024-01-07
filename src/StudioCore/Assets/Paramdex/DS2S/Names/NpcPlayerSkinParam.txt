@@ -1,0 +1,60 @@
+0 UNKNOWN
+6940 Forlorn
+6950 Forlorn
+7320 Belfry Gargoyle
+7330 Belfry Gargoyle
+7410 Crestfallen Saulden
+7610 Maughlin the Armourer
+7630 Rosabeth of Melfia
+7660 Carhillion of the Fold
+7720 Magerold of Lanafir
+7840 Cromwell the Pardoner
+8000 UNKNOWN
+8001 UNKNOWN
+8002 UNKNOWN
+8003 UNKNOWN
+8004 UNKNOWN
+8005 UNKNOWN
+8006 UNKNOWN
+8007 UNKNOWN
+8008 UNKNOWN
+8009 UNKNOWN
+8010 UNKNOWN
+8100 Masterless Glencour
+8110 Lone Hunter Schmidt
+8120 Pilgrim Bellclaire
+8130 Felicia the Brave
+8140 Melinda the Butcher
+8200 Vorgel the Sinner
+8210 Merciless Roenna
+8220 Peculiar Kindalur
+8230 Dragonfang Villard
+8240 Aslatiel of Mirrah
+8310 Dingy Cleric Phantom
+8311 Faraam Knight Phantom
+8320 Underworld Deadeye
+8321 Pretender to the Xanthous Throne
+8322 Abyss Ironclad
+8323 Abyss Ironclad
+8324 Tenebrous Rogue
+8325 The Ghost of Princes Past
+8326 A Chip Off the Ol Rock
+8327 Shadowveil Assasin
+8330 Peculiar Kindalur Phantom
+8340 UNKNOWN
+8341 UNKNOWN
+8350 Black Dragon Knight
+8351 Black Dragon Knight
+8352 Black Dragon Knight
+8360 Mad Warrior Phantom
+8361 Greatsword Bell Keeper Phantom
+8362 Dual Avelyn Bell Keeper Phantom
+8363 Bell Keeper Mage Phantom
+8364 Ironclad Warrior Phantom
+8370 Foreign Wanderer Phantom
+8371 Foreign Wanderer
+8372 Greatsword Foreigner Phantom
+8373 UNKNOWN
+8380 UNKNOWN
+8381 UNKNOWN
+8900 Unknown Phantom

@@ -1,0 +1,21 @@
+<class name='hkaAnimation' version='1' signature='0xb545fe18' size='56' parent='hkReferencedObject'>
+  <enums>
+    <enum name='AnimationType' flags='00000000'>
+      <enumitem name='HK_UNKNOWN_ANIMATION' value='0'/>
+      <enumitem name='HK_INTERLEAVED_ANIMATION' value='1'/>
+      <enumitem name='HK_MIRRORED_ANIMATION' value='2'/>
+      <enumitem name='HK_SPLINE_COMPRESSED_ANIMATION' value='3'/>
+      <enumitem name='HK_QUANTIZED_COMPRESSED_ANIMATION' value='4'/>
+      <enumitem name='HK_PREDICTIVE_COMPRESSED_ANIMATION' value='5'/>
+      <enumitem name='HK_REFERENCE_POSE_ANIMATION' value='6'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='AnimationType' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='duration' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numberOfTransformTracks' offset='24' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numberOfFloatTracks' offset='28' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extractedMotion' offset='32' ctype='hkaAnimatedReferenceFrame' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='annotationTracks' offset='40' ctype='hkaAnnotationTrack' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

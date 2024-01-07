@@ -1,0 +1,47 @@
+<class name='hkbCustomTestGeneratorComplexTypes' version='1' signature='0x74966e2f' size='384' parent='hkbCustomTestGeneratorSimpleTypes'>
+  <enums>
+    <enum name='CustomEnum' flags='00000000'>
+      <enumitem name='CUSTOM_ENUM_ALA' value='0'/>
+      <enumitem name='CUSTOM_ENUM_DEPECHE' value='1'/>
+      <enumitem name='CUSTOM_ENUM_FURIOUS' value='5'/>
+    </enum>
+    <enum name='CustomFlag' flags='00000000'>
+      <enumitem name='CUSTOM_FLAG_NONE' value='0'/>
+      <enumitem name='CUSTOM_FLAG_UNO' value='1'/>
+      <enumitem name='CUSTOM_FLAG_ZWEI' value='2'/>
+      <enumitem name='CUSTOM_FLAG_SHI_OR_YON' value='4'/>
+      <enumitem name='CUSTOM_FLAG_LOTS_O_BITS' value='240'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='complexTypeHkObjectPtr' offset='256' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexHiddenTypeCopyStart' offset='264' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeHkQuaternion' offset='272' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeHkVector4' offset='288' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkInt8' offset='304' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkInt16' offset='306' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkInt32' offset='308' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkUint8' offset='312' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkUint16' offset='314' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkUint32' offset='316' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkInt8InvalidCheck' offset='320' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkInt16InvalidCheck' offset='322' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkInt32InvalidCheck' offset='324' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkUint8InvalidCheck' offset='328' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkUint16InvalidCheck' offset='330' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeEnumHkUint32InvalidCheck' offset='332' etype='CustomEnum' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkInt8' offset='336' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkInt16' offset='338' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkInt32' offset='340' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkUint8' offset='344' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkUint16' offset='346' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkUint32' offset='348' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkInt8InvalidCheck' offset='352' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkInt16InvalidCheck' offset='354' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkInt32InvalidCheck' offset='356' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkUint8InvalidCheck' offset='360' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkUint16InvalidCheck' offset='362' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexTypeFlagsHkUint32InvalidCheck' offset='364' etype='CustomFlag' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='complexHiddenTypeCopyEnd' offset='368' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

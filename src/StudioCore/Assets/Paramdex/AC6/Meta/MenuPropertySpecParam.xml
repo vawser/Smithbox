@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MENU_PROPERTY_CMP_TYPE" type="s8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Higher values are better" />
+      <Option Value="2" Name="Lower values are better" />
+    </Enum>
+  </Enums>
+  <Field>
+    <compareType Name="Compare Type" Enum="MENU_PROPERTY_CMP_TYPE" Wiki="Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)." />
+  </Field>
+  <Self />
+</PARAMMETA>

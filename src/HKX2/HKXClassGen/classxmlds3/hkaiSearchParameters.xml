@@ -1,0 +1,23 @@
+<class name='hkaiSearchParameters' version='1' signature='0x6fed3214' size='1'>
+  <enums>
+    <enum name='ElementSizes' flags='00000000'>
+      <enumitem name='OPENSET_ELEMENT_SIZE' value='8'/>
+      <enumitem name='SEARCH_STATE_ELEMENT_SIZE' value='18'/>
+      <enumitem name='SEARCH_STATE_OVERHEAD' value='512'/>
+    </enum>
+    <enum name='MemoryDefaultsSingleThreaded' flags='00000000'>
+      <enumitem name='OPEN_SET_SIZE_SINGLE_THREADED' value='131072'/>
+      <enumitem name='SEARCH_STATE_SIZE_SINGLE_THREADED' value='590336'/>
+      <enumitem name='HIERARCHY_OPEN_SET_SIZE_SINGLE_THREADED' value='32768'/>
+      <enumitem name='HIERARCHY_SEARCH_STATE_SIZE_SINGLE_THREADED' value='147968'/>
+    </enum>
+    <enum name='MemoryDefaultsMultiThreaded' flags='00000000'>
+      <enumitem name='OPEN_SET_SIZE_MULTI_THREADED' value='8192'/>
+      <enumitem name='SEARCH_STATE_SIZE_MULTI_THREADED' value='37376'/>
+      <enumitem name='HIERARCHY_OPEN_SET_SIZE_MULTI_THREADED' value='2048'/>
+      <enumitem name='HIERARCHY_SEARCH_STATE_SIZE_MULTI_THREADED' value='9728'/>
+    </enum>
+  </enums>
+  <members>
+  </members>
+</class>

@@ -1,0 +1,11 @@
+<class name='hclConstraintSet' version='1' signature='0x2f15c82b' size='32' parent='hkReferencedObject'>
+  <enums>
+    <enum name='MaxConstraintSetSize' flags='00000000'>
+      <enumitem name='MAX_CONSTRAINT_SET_SIZE' value='128'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='24' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

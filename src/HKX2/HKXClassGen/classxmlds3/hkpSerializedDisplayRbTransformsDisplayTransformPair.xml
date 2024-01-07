@@ -1,0 +1,6 @@
+<class name='hkpSerializedDisplayRbTransformsDisplayTransformPair' version='1' signature='0x94ac5bec' size='80'>
+  <members>
+    <member name='rb' offset='0' ctype='hkpRigidBody' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='localToDisplay' offset='16' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

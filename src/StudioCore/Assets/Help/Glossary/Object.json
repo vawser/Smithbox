@@ -1,0 +1,15 @@
+{
+    "Title": "Object",
+    "Tags": [
+        "Term",
+        "Asset"
+    ],
+    "Contents": [
+        "An object is a static entity within a map, typically named like o000500.",
+        "An object may be destroyed in certain circumstances, as defined in object params.",
+        "EMEVD can be used to activate or deactive objects, show animations and change states",
+        "not already handled with with ObjActs.",
+        "",
+        "In Elden Ring and onwards, Objects are now called Assets."
+    ]
+}

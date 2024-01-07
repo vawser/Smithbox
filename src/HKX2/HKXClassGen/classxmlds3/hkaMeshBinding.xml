@@ -1,0 +1,10 @@
+<class name='hkaMeshBinding' version='1' signature='0x32b0ecb6' size='80' parent='hkReferencedObject'>
+  <members>
+    <member name='mesh' offset='16' ctype='hkxMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='originalSkeletonName' offset='24' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='32' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skeleton' offset='40' ctype='hkaSkeleton' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mappings' offset='48' ctype='hkaMeshBindingMapping' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneFromSkinMeshTransforms' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_TRANSFORM' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

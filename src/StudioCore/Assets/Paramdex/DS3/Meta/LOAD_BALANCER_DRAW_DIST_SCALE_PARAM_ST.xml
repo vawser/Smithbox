@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <Lv00 AltName="Draw Distance Level 0" Wiki="Lv00 Drawing distance scale" />
+    <Lv01 AltName="Draw Distance Level 1" Wiki="Lv01 Drawing distance scale" />
+    <Lv02 AltName="Draw Distance Level 2" Wiki="Lv02 Drawing distance scale" />
+    <Lv03 AltName="Draw Distance Level 3" Wiki="Lv03 Drawing distance scale" />
+    <Lv04 AltName="Draw Distance Level 4" Wiki="Lv04 Drawing distance scale" />
+    <Lv05 AltName="Draw Distance Level 5" Wiki="Lv05 Drawing distance scale" />
+    <Lv06 AltName="Draw Distance Level 6" Wiki="Lv06 Drawing distance scale" />
+    <Lv07 AltName="Draw Distance Level 7" Wiki="Lv07 Drawing distance scale" />
+    <Lv08 AltName="Draw Distance Level 8" Wiki="Lv08 Drawing distance scale" />
+    <Lv09 AltName="Draw Distance Level 9" Wiki="Lv09 Drawing distance scale" />
+    <Lv10 AltName="Draw Distance Level 10" Wiki="Lv10 Drawing distance scale" />
+    <Lv11 AltName="Draw Distance Level 11" Wiki="Lv11 Drawing distance scale" />
+    <Lv12 AltName="Draw Distance Level 12" Wiki="Lv12 Drawing distance scale" />
+    <Lv13 AltName="Draw Distance Level 13" Wiki="Lv13 Drawing distance scale" />
+    <Lv14 AltName="Draw Distance Level 14" Wiki="Lv14 Drawing distance scale" />
+    <Lv15 AltName="Draw Distance Level 15" Wiki="Lv15 Drawing distance scale" />
+    <Lv16 AltName="Draw Distance Level 16" Wiki="Lv16 Drawing distance scale" />
+    <Lv17 AltName="Draw Distance Level 17" Wiki="Lv17 Drawing distance scale" />
+    <Lv18 AltName="Draw Distance Level 18" Wiki="Lv18 Drawing distance scale" />
+    <Lv19 AltName="Draw Distance Level 19" Wiki="Lv19 Drawing distance scale" />
+    <Lv20 AltName="Draw Distance Level 20" Wiki="Lv20 Drawing distance scale" />
+    <reserve AltName=""/>
+  </Field>
+  <Self Wiki="LOD Scale Distance Draw"/>
+</PARAMMETA>

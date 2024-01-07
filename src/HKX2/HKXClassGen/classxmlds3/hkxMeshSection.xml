@@ -1,0 +1,11 @@
+<class name='hkxMeshSection' version='1' signature='0x54533691' size='112' parent='hkReferencedObject'>
+  <members>
+    <member name='vertexBuffer' offset='16' ctype='hkxVertexBuffer' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexBuffers' offset='24' ctype='hkxIndexBuffer' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='material' offset='40' ctype='hkxMaterial' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userChannels' offset='48' ctype='hkReferencedObject' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexAnimations' offset='64' ctype='hkxVertexAnimation' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='linearKeyFrameHints' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneMatrixMap' offset='96' ctype='hkMeshBoneIndexMapping' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

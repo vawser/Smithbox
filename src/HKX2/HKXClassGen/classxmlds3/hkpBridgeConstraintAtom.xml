@@ -1,0 +1,7 @@
+<class name='hkpBridgeConstraintAtom' version='1' signature='0xbc2f503d' size='32' parent='hkpConstraintAtom'>
+  <members>
+    <member name='buildJacobianFunc' offset='8' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='constraintData' offset='16' ctype='hkpConstraintData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='24' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='4' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

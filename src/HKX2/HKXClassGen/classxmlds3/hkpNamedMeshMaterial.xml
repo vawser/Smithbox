@@ -1,0 +1,5 @@
+<class name='hkpNamedMeshMaterial' version='1' signature='0x66b42df1' size='16' parent='hkpMeshMaterial'>
+  <members>
+    <member name='name' offset='8' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

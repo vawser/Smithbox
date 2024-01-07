@@ -1,0 +1,6 @@
+<class name='CustomTransitionEffect' version='1' signature='0x48b56542' size='336' parent='hkbBlendingTransitionEffect'>
+  <members>
+    <member name='durationBackup' offset='320' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='calcDuration' offset='324' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

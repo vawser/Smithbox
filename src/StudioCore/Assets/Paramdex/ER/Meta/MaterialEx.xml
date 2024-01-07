@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <paramName AltName="Material Param Name" Wiki="Set the parameter name of the material. Up to 31 characters" />
+    <materialId AltName="Material ID" Wiki="NPC Para - Resident Material Expansion Para ID setting -1 for all materials" />
+    <materialParamValue0 AltName="Material Param Value - R" Wiki="NPC Para - Resident Material Extended Para ID Settings" />
+    <materialParamValue1 AltName="Material Param Value - G" Wiki="NPC Para - Resident Material Expansion Para ID Settings" />
+    <materialParamValue2 AltName="Material Param Value - B" Wiki="NPC Para - Resident Material Expansion Para ID Settings" />
+    <materialParamValue3 AltName="Material Param Value - A" Wiki="NPC Para - Resident Material Extended Para ID Settings" />
+    <materialParamValue4 AltName="Material Param Value - I" Wiki="NPC Para - Resident Material Expansion Para ID Settings" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

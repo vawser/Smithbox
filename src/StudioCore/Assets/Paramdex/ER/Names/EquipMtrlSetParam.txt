@@ -1,0 +1,359 @@
+0 None
+1 Smithing Stone [1] * 2
+2 Smithing Stone [1] * 4
+3 Smithing Stone [1] * 6
+4 Smithing Stone [2] * 2
+5 Smithing Stone [2] * 4
+6 Smithing Stone [2] * 6
+7 Smithing Stone [3] * 2
+8 Smithing Stone [3] * 4
+9 Smithing Stone [3] * 6
+10 Smithing Stone [4] * 2
+11 Smithing Stone [4] * 4
+12 Smithing Stone [4] * 6
+13 Smithing Stone [5] * 2
+14 Smithing Stone [5] * 4
+15 Smithing Stone [5] * 6
+16 Smithing Stone [6] * 2
+17 Smithing Stone [6] * 4
+18 Smithing Stone [6] * 6
+19 Smithing Stone [7] * 2
+20 Smithing Stone [7] * 4
+21 Smithing Stone [7] * 6
+22 Smithing Stone [8] * 2
+23 Smithing Stone [8] * 4
+24 Smithing Stone [8] * 6
+25 Ancient Dragon Smithing Stone * 1
+2200 None
+2201 Somber Smithing Stone [1] * 1
+2202 Somber Smithing Stone [2] * 1
+2203 Somber Smithing Stone [3] * 1
+2204 Somber Smithing Stone [4] * 1
+2205 Somber Smithing Stone [5] * 1
+2206 Somber Smithing Stone [6] * 1
+2207 Somber Smithing Stone [7] * 1
+2208 Somber Smithing Stone [8] * 1
+2209 Somber Smithing Stone [9] * 1
+2210 Somber Ancient Dragon Smithing Stone * 1
+10000 Grave Glovewort [1] * 1
+10001 Grave Glovewort [2] * 1
+10002 Grave Glovewort [3] * 1
+10003 Grave Glovewort [4] * 1
+10004 Grave Glovewort [5] * 1
+10005 Grave Glovewort [6] * 1
+10006 Grave Glovewort [7] * 1
+10007 Grave Glovewort [8] * 1
+10008 Grave Glovewort [9] * 1
+10009 Great Grave Glovewort * 1
+10100 Ghost Glovewort [1] * 1
+10101 Ghost Glovewort [2] * 1
+10102 Ghost Glovewort [3] * 1
+10103 Ghost Glovewort [4] * 1
+10104 Ghost Glovewort [5] * 1
+10105 Ghost Glovewort [6] * 1
+10106 Ghost Glovewort [7] * 1
+10107 Ghost Glovewort [8] * 1
+10108 Ghost Glovewort [9] * 1
+10109 Great Ghost Glovewort * 1
+300000 Erdleaf Flower * 2
+301000 Mushroom * 1, Smoldering Butterfly * 1
+301010 Mushroom * 2, Smoldering Butterfly * 1, Old Fang * 1
+301020 Fire Blossom * 2
+301030 Mushroom * 1, Fulgurbloom * 1
+301040 Mushroom * 2, Fulgurbloom * 1, Gravel Stone * 1
+301050 Mushroom * 1, Gold-Tinged Excrement * 1
+301060 Mushroom * 1, Blood-Tainted Excrement * 1
+301070 Mushroom * 1, Tarnished Golden Sunflower * 1
+301080 Mushroom * 2, Golden Sunflower * 1, Golden Centipede * 1
+301090 Rimed Crystal Bud * 2
+301100 Toxic Mushroom * 1, Poisonbloom * 1
+301110 Melted Mushroom * 1
+301120 Albinauric Bloodclot * 1, Human Bone Shard * 5
+301130 Beast Blood * 1, Hefty Beast Bone * 2
+301140 Mushroom * 1, Smoldering Butterfly * 1, String * 1
+301150 Mushroom * 1, Fulgurbloom * 1, String * 1
+301160 Mushroom * 1, Gold-Tinged Excrement * 1, String * 1
+301170 Toxic Mushroom * 1, Poisonbloom * 1, String * 1
+301180 Melted Mushroom * 1, String * 1
+301190 Glintstone Firefly * 2, String * 1
+301200 Mushroom * 1, Blood-Tainted Excrement * 1, String * 1
+301220 Volcanic Stone * 2, String * 1
+301230 Mushroom * 1, Tarnished Golden Sunflower * 1, String * 1
+301240 Volcanic Stone * 2
+301250 Mushroom * 2, Albinauric Bloodclot * 1
+301260 Mushroom * 2, Beast Blood * 1, Bloodrose * 1
+301270 Mushroom * 1, Trina's Lily * 1
+301280 Grave Violet * 2, Human Bone Shard * 1
+301290 Glintstone Firefly * 2
+301300 Glintstone Firefly * 2, Old Fang * 1
+301310 Toxic Mushroom * 2, Faded Erdleaf Flower * 2, Aeonian Butterfly * 1
+302000 Rowa Fruit * 1
+302010 Golden Rowa * 1
+302020 Rimed Rowa * 1
+303000 Herba * 1, Cave Moss * 1, Great Dragonfly Head * 1
+303010 Herba * 1, Cave Moss * 1, Land Octopus Ovary * 1
+303020 Herba * 1, Cave Moss * 1, Crab Eggs * 1
+303030 Herba * 1, Cave Moss * 1, Slumbering Egg * 1
+303040 Dewkissed Herba * 2, Crystal Cave Moss * 1, Sacramental Bud * 1
+303050 Dewkissed Herba * 2, Crystal Cave Moss * 1, Golden Centipede * 1
+303060 Dewkissed Herba * 2, Crystal Cave Moss * 1, Eye of Yelough * 1
+304000 Rowa Fruit * 3, Turtle Neck Meat * 1, Herba * 1
+304010 Rowa Fruit * 3, Sliver of Meat * 1, Great Dragonfly Head * 1, Smoldering Butterfly * 1
+304020 Golden Rowa * 3, Sliver of Meat * 1, Crab Eggs * 1, Land Octopus Ovary * 1
+304030 Rimed Rowa * 5, Sliver of Meat * 1, Slumbering Egg * 1, Eye of Yelough * 1
+304040 Golden Rowa * 5, Sliver of Meat * 1, Budding Horn * 1, Nascent Butterfly * 1
+304050 Rowa Fruit * 3, Beast Liver * 1, Glintstone Firefly * 2
+304060 Rowa Fruit * 3, Beast Liver * 1, Smoldering Butterfly * 1
+304070 Rowa Fruit * 3, Beast Liver * 1, Fulgurbloom * 1
+304080 Golden Rowa * 5, Beast Liver * 1, Golden Sunflower * 3
+304090 Rowa Fruit * 3, Four-Toed Fowl Foot * 1, Silver Firefly * 1
+304100 Rowa Fruit * 3, Four-Toed Fowl Foot * 1, Gold Firefly * 1
+304110 Rowa Fruit * 5, Lump of Flesh * 1, Hefty Beast Bone * 1, Arteria Leaf * 1
+304130 Rowa Fruit * 3, Strip of White Flesh * 1, Great Dragonfly Head * 1, Smoldering Butterfly * 1
+304140 Golden Rowa * 3, Strip of White Flesh * 1, Crab Eggs * 1, Land Octopus Ovary * 1
+304150 Rimed Rowa * 5, Strip of White Flesh * 1, Slumbering Egg * 1, Eye of Yelough * 1
+304160 Golden Rowa * 5, Strip of White Flesh * 1, Budding Horn * 1, Nascent Butterfly * 1
+305000 Root Resin * 1, Smoldering Butterfly * 1
+305010 Root Resin * 1, Fulgurbloom * 1
+305020 Root Resin * 1, Crystal Bud * 1
+305030 Root Resin * 1, Golden Sunflower * 1
+305040 Root Resin * 1, Bloodrose * 1
+305050 Root Resin * 1, Trina's Lily * 1
+305060 Root Resin * 1, Poisonbloom * 1
+305070 Root Resin * 1, Rimed Crystal Bud * 1
+305080 Root Resin * 1, Beast Blood * 1, Gravel Stone * 1
+305090 Root Resin * 1, Aeonian Butterfly * 1
+305100 Root Resin * 1, Smoldering Butterfly * 1, String * 1
+305110 Root Resin * 1, Fulgurbloom * 1, String * 1
+305120 Root Resin * 1, Crystal Bud * 1, String * 1
+305130 Root Resin * 1, Golden Sunflower * 1, String * 1
+305140 Root Resin * 1, Bloodrose * 1, String * 1
+305150 Root Resin * 1, String * 1, Trina's Lily * 1
+305160 Root Resin * 1, Poisonbloom * 1, String * 1
+305180 Root Resin * 1, String * 1, Aeonian Butterfly * 1
+305190 Root Resin * 1, Silver Tear Husk * 1, Crystal Bud * 1
+306000 Thin Beast Bones * 2
+306010 Thin Beast Bones * 2, Poisonbloom * 1
+306020 Cracked Crystal * 3
+307000 Ruin Fragment * 1
+307010 Ruin Fragment * 1, Dewkissed Herba * 1
+307020 Erdleaf Flower * 1, Human Bone Shard * 1
+307030 Rowa Fruit * 3, Smoldering Butterfly * 1
+307040 Melted Mushroom * 2
+308000 Crystal Bud * 1, Cracked Crystal * 1
+308010 Erdleaf Flower * 1, Smoldering Butterfly * 1, Sanctuary Stone * 1
+308020 Yellow Ember * 1, Sanctuary Stone * 1
+308030 Ruin Fragment * 1, Human Bone Shard * 1
+308040 Sacramental Bud * 1, Miquella's Lily * 1
+309000 Altus Bloom * 1, Budding Cave Moss * 1, Silver Tear Husk * 1, Arteria Leaf * 1
+309010 Altus Bloom * 1, Miranda Powder * 1
+309020 Altus Bloom * 2, Budding Cave Moss * 1, Living Jar Shard * 3
+309030 Altus Bloom * 2, Budding Cave Moss * 1, Land Octopus Ovary * 1, Arteria Leaf * 1
+309040 Altus Bloom * 1, Miranda Powder * 1, Poisonbloom * 1
+309050 Altus Bloom * 1, Miranda Powder * 1, Formic Rock * 4
+320000 Thin Beast Bones * 3, Flight Pinion * 1
+320010 Thin Beast Bones * 3
+320020 Thin Beast Bones * 3, Smoldering Butterfly * 1, Flight Pinion * 1
+320030 Thin Beast Bones * 3, Smoldering Butterfly * 1
+320040 Thin Beast Bones * 3, Poisonbloom * 1, Flight Pinion * 1
+320050 Thin Beast Bones * 3, Poisonbloom * 1
+320060 Thin Beast Bones * 3, Flight Pinion * 1, Trina's Lily * 1
+320070 Thin Beast Bones * 3, Trina's Lily * 1
+320080 Thin Beast Bones * 3, Stormhawk Feather * 1
+320090 Thin Beast Bones * 3, Fulgurbloom * 1, Flight Pinion * 1
+320100 Thin Beast Bones * 3, Fulgurbloom * 1
+320110 Thin Beast Bones * 3, Ruin Fragment * 3
+320120 Thin Beast Bones * 3, Cracked Crystal * 2
+320130 Thin Beast Bones * 3, Glintstone Firefly * 2, Flight Pinion * 1
+320140 Thin Beast Bones * 3, Glintstone Firefly * 2
+320150 Thin Beast Bones * 3, Golden Sunflower * 2, Flight Pinion * 1
+320160 Thin Beast Bones * 3, Golden Sunflower * 2
+320170 Thin Beast Bones * 3, Bloodrose * 1, Flight Pinion * 1
+320180 Thin Beast Bones * 3, Bloodrose * 1
+320190 Thin Beast Bones * 3, Rimed Crystal Bud * 3, Flight Pinion * 1
+320200 Thin Beast Bones * 3, Rimed Crystal Bud * 3
+320210 Thin Beast Bones * 3, Flight Pinion * 1, Aeonian Butterfly * 1
+320220 Thin Beast Bones * 3, Aeonian Butterfly * 1
+321000 Hefty Beast Bone * 1, Flight Pinion * 1
+321010 Hefty Beast Bone * 1
+322000 Thin Beast Bones * 2
+322010 Thin Beast Bones * 2, Smoldering Butterfly * 1
+322020 Thin Beast Bones * 2, Fulgurbloom * 1
+322030 Thin Beast Bones * 2, Glintstone Firefly * 2
+322040 Thin Beast Bones * 2, Golden Sunflower * 2
+322050 Thin Beast Bones * 2, Poisonbloom * 1
+322060 Thin Beast Bones * 2, Bloodrose * 1
+322070 Thin Beast Bones * 2, Rimed Crystal Bud * 3
+322080 Thin Beast Bones * 2, Aeonian Butterfly * 1
+322090 Thin Beast Bones * 2, Trina's Lily * 1
+323000 Hefty Beast Bone * 1
+900000 Remembrance of the Grafted * 1
+900001 Remembrance of the Grafted * 1
+900002 Remembrance of the Starscourge * 1
+900003 Remembrance of the Starscourge * 1
+900004 Remembrance of the Omen King * 1
+900005 Remembrance of the Omen King * 1
+900006 Remembrance of the Blasphemous * 1
+900007 Remembrance of the Blasphemous * 1
+900008 Remembrance of the Rot Goddess * 1
+900009 Remembrance of the Rot Goddess * 1
+900010 Remembrance of the Blood Lord * 1
+900011 Remembrance of the Blood Lord * 1
+900012 Remembrance of the Black Blade * 1
+900013 Remembrance of the Black Blade * 1
+900014 Remembrance of Hoarah Loux * 1
+900015 Remembrance of Hoarah Loux * 1
+900016 Remembrance of the Dragonlord * 1
+900017 Remembrance of the Dragonlord * 1
+900018 Remembrance of the Full Moon Queen * 1
+900019 Remembrance of the Full Moon Queen * 1
+900020 Remembrance of the Lichdragon * 1
+900021 Remembrance of the Lichdragon * 1
+900022 Remembrance of the Fire Giant * 1
+900023 Remembrance of the Fire Giant * 1
+900024 Remembrance of the Regal Ancestor * 1
+900025 Remembrance of the Regal Ancestor * 1
+900026 Elden Remembrance * 1
+900027 Elden Remembrance * 1
+900028 Remembrance of the Naturalborn * 1
+900029 Remembrance of the Naturalborn * 1
+900100 Drake Knight Helm * 1
+900101 Drake Knight Armor * 1
+900102 Scaled Armor * 1
+900103 Perfumer Robe * 1
+900104 Perfumer's Traveling Garb * 1
+900105 Spellblade's Traveling Attire * 1
+900106 Ronin's Armor * 1
+900107 Blaidd's Armor * 1
+900108 Black Knife Armor * 1
+900109 Briar Armor * 1
+900110 Page Garb * 1
+900111 Night's Cavalry Helm * 1
+900112 Night's Cavalry Armor * 1
+900113 Blue Silver Mail Armor * 1
+900114 Nomadic Merchant's Finery * 1
+900115 Tree Sentinel Armor * 1
+900116 Royal Knight Armor * 1
+900117 Nox Monk Hood * 1
+900118 Nox Monk Armor * 1
+900119 Nox Swordstress Crown * 1
+900120 Nox Swordstress Armor * 1
+900121 Gravekeeper Cloak * 1
+900122 Cleanrot Helm * 1
+900123 Cleanrot Armor * 1
+900124 Depraved Perfumer Robe * 1
+900125 All-Knowing Armor * 1
+900126 Twinned Armor * 1
+900129 Prophet Robe * 1
+900130 Astrologer Robe * 1
+900131 Lionel's Armor * 1
+900132 Hoslow's Armor * 1
+900133 Vagabond Knight Armor * 1
+900134 War Surgeon Gown * 1
+900136 Veteran's Armor * 1
+900137 Bloodhound Knight Armor * 1
+900138 Festive Hood * 1
+900139 Commoner's Garb * 1
+900140 Commoner's Simple Garb * 1
+900141 Raging Wolf Armor * 1
+900142 Land of Reeds Armor * 1
+900143 Confessor Hood * 1
+900144 Confessor Armor * 1
+900145 Finger Maiden Robe * 1
+900147 Preceptor's Long Gown * 1
+900149 Eccentric's Hood * 1
+900150 Fingerprint Armor * 1
+900151 Carian Knight Armor * 1
+900152 Errant Sorcerer Robe * 1
+900153 Gelmir Knight Armor * 1
+900154 Godrick Knight Armor * 1
+900155 Cuckoo Knight Armor * 1
+900156 Leyndell Knight Armor * 1
+900157 Redmane Knight Armor * 1
+900158 Mausoleum Knight Armor * 1
+900159 Haligtree Knight Armor * 1
+900160 High Page Clothes * 1
+900161 Rotten Gravekeeper Cloak * 1
+900162 Beast Champion Armor * 1
+900163 Snow Witch Robe * 1
+900164 Crucible Axe Armor * 1
+900165 Crucible Tree Armor * 1
+900166 Fia's Robe * 1
+900167 Alberich's Pointed Hat * 1
+900168 Alberich's Robe * 1
+900169 Traveling Maiden Robe * 1
+900200 Elden Lord Armor * 1
+900201 Radahn's Lion Armor * 1
+900202 Lord of Blood's Robe * 1
+900203 Maliketh's Armor * 1
+900204 Malenia's Armor * 1
+900300 Drake Knight Helm (Altered) * 1
+900301 Drake Knight Armor (Altered) * 1
+900302 Scaled Armor (Altered) * 1
+900303 Perfumer Robe (Altered) * 1
+900304 Perfumer's Traveling Garb (Altered) * 1
+900305 Spellblade's Traveling Attire (Altered) * 1
+900306 Ronin's Armor (Altered) * 1
+900307 Blaidd's Armor (Altered) * 1
+900308 Black Knife Armor (Altered) * 1
+900309 Briar Armor (Altered) * 1
+900310 Page Garb (Altered) * 1
+900311 Night's Cavalry Helm (Altered) * 1
+900312 Night's Cavalry Armor (Altered) * 1
+900313 Blue Silver Mail Armor (Altered) * 1
+900314 Nomadic Merchant's Finery (Altered) * 1
+900315 Tree Sentinel Armor (Altered) * 1
+900316 Royal Knight Armor (Altered) * 1
+900317 Nox Monk Hood (Altered) * 1
+900318 Nox Monk Armor (Altered) * 1
+900319 Nox Swordstress Crown (Altered) * 1
+900320 Nox Swordstress Armor (Altered) * 1
+900321 Gravekeeper Cloak (Altered) * 1
+900322 Cleanrot Helm (Altered) * 1
+900323 Cleanrot Armor (Altered) * 1
+900324 Depraved Perfumer Robe (Altered) * 1
+900325 All-Knowing Armor (Altered) * 1
+900326 Twinned Armor (Altered) * 1
+900329 Prophet Robe (Altered) * 1
+900330 Astrologer Robe (Altered) * 1
+900331 Lionel's Armor (Altered) * 1
+900332 Hoslow's Armor (Altered) * 1
+900333 Vagabond Knight Armor (Altered) * 1
+900334 War Surgeon Gown (Altered) * 1
+900336 Veteran's Armor (Altered) * 1
+900337 Bloodhound Knight Armor (Altered) * 1
+900338 Festive Hood (Altered) * 1
+900339 Commoner's Garb (Altered) * 1
+900340 Commoner's Simple Garb (Altered) * 1
+900341 Raging Wolf Armor (Altered) * 1
+900342 Land of Reeds Armor (Altered) * 1
+900343 Confessor Hood (Altered) * 1
+900344 Confessor Armor (Altered) * 1
+900345 Finger Maiden Robe (Altered) * 1
+900347 Preceptor's Long Gown (Altered) * 1
+900349 Eccentric's Hood (Altered) * 1
+900350 Fingerprint Armor (Altered) * 1
+900351 Carian Knight Armor (Altered) * 1
+900352 Errant Sorcerer Robe (Altered) * 1
+900353 Gelmir Knight Armor (Altered) * 1
+900354 Godrick Knight Armor (Altered) * 1
+900355 Cuckoo Knight Armor (Altered) * 1
+900356 Leyndell Knight Armor (Altered) * 1
+900357 Redmane Knight Armor (Altered) * 1
+900358 Mausoleum Knight Armor (Altered) * 1
+900359 Haligtree Knight Armor (Altered) * 1
+900360 High Page Clothes (Altered) * 1
+900361 Rotten Gravekeeper Cloak (Altered) * 1
+900362 Beast Champion Armor (Altered) * 1
+900363 Snow Witch Robe (Altered) * 1
+900364 Crucible Axe Armor (Altered) * 1
+900365 Crucible Tree Armor (Altered) * 1
+900366 Fia's Robe (Altered) * 1
+900367 Alberich's Pointed Hat (Altered) * 1
+900368 Alberich's Robe (Altered) * 1
+900369 Traveling Maiden Robe (Altered) * 1
+900400 Elden Lord Armor (Altered) * 1
+900401 Radahn's Lion Armor (Altered) * 1
+900402 Lord of Blood's Robe (Altered) * 1
+900403 Maliketh's Armor (Altered) * 1
+900404 Malenia's Armor (Altered) * 1

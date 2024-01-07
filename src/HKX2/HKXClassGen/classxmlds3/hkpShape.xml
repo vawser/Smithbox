@@ -1,0 +1,5 @@
+<class name='hkpShape' version='1' signature='0xdee9ace0' size='32' parent='hkpShapeBase'>
+  <members>
+    <member name='userData' offset='24' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

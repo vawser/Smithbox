@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="CUTSCENE_INDOOR_OUTDOOR_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParam_Debug AltName="Disable Param - Debug" Wiki="Parameters marked with a circle are excluded from all packages (because they are for debugging)." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <DstWeather_Sunny AltName="Destination Weather: Sunny" Wiki="Sunny" Refs="WeatherParam" />
+    <DstWeather_ClearSky AltName="Destination Weather: Clear Sky" Wiki="Sunny" Refs="WeatherParam" />
+    <DstWeather_WeakCloudy AltName="Destination Weather: Light Cloud" Wiki="Light cloudy" Refs="WeatherParam" />
+    <DstWeather_Cloud AltName="Destination Weather: Cloud" Wiki="cloudy" Refs="WeatherParam" />
+    <DstWeather_Rain AltName="Destination Weather: Rain" Wiki="rain" Refs="WeatherParam" />
+    <DstWeather_HeavyRain AltName="Destination Weather: Heavy Rain" Wiki="Heavy rain" Refs="WeatherParam" />
+    <DstWeather_Storm AltName="Destination Weather: Storm" Wiki="storm" Refs="WeatherParam" />
+    <DstWeather_StormForBattle AltName="Destination Weather: Storm for Battle" Wiki="Storm (for combat with the descendants of the guardian)" Refs="WeatherParam" />
+    <DstWeather_Snow AltName="Destination Weather: Snow" Wiki="snow" Refs="WeatherParam" />
+    <DstWeather_HeavySnow AltName="Destination Weather: Heavy Snow" Wiki="heavy snow" Refs="WeatherParam" />
+    <DstWeather_Fog AltName="Destination Weather: Fog" Wiki="fog" Refs="WeatherParam" />
+    <DstWeather_HeavyFog AltName="Destination Weather: Heavy Fog" Wiki="Thick fog" Refs="WeatherParam" />
+    <DstWeather_SandStorm AltName="Destination Weather: Sandstorm" Wiki="Sandstorm" Refs="WeatherParam" />
+    <DstWeather_HeavyFogRain AltName="Destination Weather: Heavy Fog and Rain" Wiki="Thick fog (rain)" Refs="WeatherParam" />
+    <PostPlayIngameWeather AltName="Post Cutscene In-game Weather" Wiki="In-game weather specifications at the end of playback (nothing is done if blank or invalid)" Refs="WeatherParam" />
+    <IndoorOutdoorType AltName="Indoor/Outdoor Type" Wiki="When indoors, the SFX specified by Weather SfxId (Outdoor) and Wind SfxId (Outdoor) in Weather Parameter.xlsm will be invalid in the cutscene." Enum="CUTSCENE_INDOOR_OUTDOOR_TYPE" />
+    <TakeOverDstWeather_Sunny AltName="Replacement Weather: Sunny" Wiki="In-game weather SFX to take over? _Sunny" IsBool="" />
+    <TakeOverDstWeather_ClearSky AltName="Replacement Weather: Clear Sky" Wiki="In-game weather SFX to take over? _ Sunny" IsBool="" />
+    <TakeOverDstWeather_WeakCloudy AltName="Replacement Weather: Light Cloud" Wiki="Will the in-game weather SFX be taken over? _ Light cloudy" IsBool="" />
+    <TakeOverDstWeather_Cloud AltName="Replacement Weather: Cloud" Wiki="Will the in-game weather SFX be taken over? _cloudy" IsBool="" />
+    <TakeOverDstWeather_Rain AltName="Replacement Weather: Rain" Wiki="In-game weather SFX to take over? _rain" IsBool="" />
+    <TakeOverDstWeather_HeavyRain AltName="Replacement Weather: Heavy Rain" Wiki="In-game weather SFX to take over? _ Heavy rain" IsBool="" />
+    <TakeOverDstWeather_Storm AltName="Replacement Weather: Storm" Wiki="In-game weather SFX to take over? _storm" IsBool="" />
+    <TakeOverDstWeather_StormForBattle AltName="Replacement Weather: Storm for Battle" Wiki="In-game weather SFX to take over? _ Storm (for battle with the descendants of the guardian)" IsBool="" />
+    <TakeOverDstWeather_Snow AltName="Replacement Weather: Snow" Wiki="In-game weather SFX to take over? _snow" IsBool="" />
+    <TakeOverDstWeather_HeavySnow AltName="Replacement Weather: Heavy Snow" Wiki="In-game weather SFX to take over? _heavy snow" IsBool="" />
+    <TakeOverDstWeather_Fog AltName="Replacement Weather: Fog" Wiki="Will the in-game weather SFX be taken over? _fog" IsBool="" />
+    <TakeOverDstWeather_HeavyFog AltName="Replacement Weather: Heavy Fog" Wiki="Will the in-game weather SFX be taken over? _ Thick fog" IsBool="" />
+    <TakeOverDstWeather_SandStorm AltName="Replacement Weather: Sandstorm" Wiki="In-game weather SFX to take over? _ Sandstorm" IsBool="" />
+    <TakeOverDstWeather_HeavyFogRain AltName="Replacement Weather: Heavy Fog and Rain" Wiki="In-game weather SFX to take over? _ Thick fog (rain)" IsBool="" />
+    <reserved AltName=""/>
+    <DstWeather_Snowstorm AltName="Destination Weather: Snowstorm" Wiki="Snowstorm" Refs="WeatherParam" />
+    <DstWeather_LightningStorm AltName="Destination Weather: Lightning Storm" Wiki="Preliminary weather 2" Refs="WeatherParam" />
+    <DstWeather_Reserved3 AltName="Destination Weather: Reserved 3" Wiki="Preliminary weather 3" Refs="WeatherParam" />
+    <DstWeather_Reserved4 AltName="Destination Weather: Reserved 4" Wiki="Preliminary weather 4" Refs="WeatherParam" />
+    <DstWeather_Reserved5 AltName="Destination Weather: Reserved 5" Wiki="Preliminary weather 5" Refs="WeatherParam" />
+    <DstWeather_Reserved6 AltName="Destination Weather: Reserved 6" Wiki="Preliminary weather 6" Refs="WeatherParam" />
+    <DstWeather_Reserved7 AltName="Destination Weather: Reserved 7" Wiki="Preliminary weather 7" Refs="WeatherParam" />
+    <DstWeather_Reserved8 AltName="Destination Weather: Reserved 8" Wiki="Preliminary weather 8" Refs="WeatherParam" />
+    <TakeOverDstWeather_Snowstorm AltName="Replacement Weather: Snowstorm" Wiki="In-game weather SFX to take over? _ Snowstorm" IsBool="" />
+    <TakeOverDstWeather_LightningStorm AltName="Replacement Weather: Lightning Storm" Wiki="In-game weather SFX to take over? _ Storm (thunder)" IsBool="" />
+    <TakeOverDstWeather_Reserved3 AltName="Replacement Weather: Reserved 3" Wiki="Will the in-game weather SFX be taken over? _ Preliminary weather 3" IsBool="" />
+    <TakeOverDstWeather_Reserved4 AltName="Replacement Weather: Reserved 4" Wiki="In-game weather SFX to take over? _ Preliminary weather 4" IsBool="" />
+    <TakeOverDstWeather_Reserved5 AltName="Replacement Weather: Reserved 5" Wiki="Will the in-game weather SFX be taken over? _ Preliminary weather 5" IsBool="" />
+    <TakeOverDstWeather_Reserved6 AltName="Replacement Weather: Reserved 6" Wiki="Will the in-game weather SFX be taken over? _ Preliminary weather 6" IsBool="" />
+    <TakeOverDstWeather_Reserved7 AltName="Replacement Weather: Reserved 7" Wiki="Will the in-game weather SFX be taken over? _ Preliminary weather 7" IsBool="" />
+    <TakeOverDstWeather_Reserved8 AltName="Replacement Weather: Reserved 8" Wiki="In-game weather SFX to take over? _ Preliminary weather 8" IsBool="" />
+    <IsEnableApplyMapGdRegionIdForGparam AltName="Apply MapGdRegionID for GPARAM Enabled" Wiki="Do you want to apply the mapGD local ID changes to the cutscene weather Gparam as in the in-game? ([GR] SEQ30194)" IsBool="" />
+    <reserved2 AltName=""/>
+    <OverrideMapGdRegionId AltName="Override MapGdRegion ID" Wiki="Overwrite the ID used for cutscene weather Gparam (-1: No overwrite. MapGD local ID during cutscene playback is used). If Do you want to apply MapGD local ID to weather Gparam? Is x, it is not referenced." />
+    <reserved1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

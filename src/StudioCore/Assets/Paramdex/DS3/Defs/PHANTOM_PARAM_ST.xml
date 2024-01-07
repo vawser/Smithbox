@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>PHANTOM_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 edgeColorA" />
+    <Field Def="f32 frontColorA" />
+    <Field Def="f32 diffMulColorA" />
+    <Field Def="f32 specMulColorA" />
+    <Field Def="f32 lightColorA" />
+    <Field Def="u8 edgeColorR = 255" />
+    <Field Def="u8 edgeColorG = 255" />
+    <Field Def="u8 edgeColorB = 255" />
+    <Field Def="u8 frontColorR" />
+    <Field Def="u8 frontColorG" />
+    <Field Def="u8 frontColorB" />
+    <Field Def="u8 diffMulColorR = 255" />
+    <Field Def="u8 diffMulColorG = 255" />
+    <Field Def="u8 diffMulColorB = 255" />
+    <Field Def="u8 specMulColorR = 255" />
+    <Field Def="u8 specMulColorG = 255" />
+    <Field Def="u8 specMulColorB = 255" />
+    <Field Def="u8 lightColorR = 255" />
+    <Field Def="u8 lightColorG" />
+    <Field Def="u8 lightColorB" />
+    <Field Def="dummy8 pad1[1]" />
+    <Field Def="f32 alpha" />
+    <Field Def="f32 blendRate" />
+    <Field Def="u8 blendType" />
+    <Field Def="u8 isEdgeSubtract" />
+    <Field Def="u8 isFrontSubtract" />
+    <Field Def="u8 isNo2Pass" />
+  </Fields>
+</PARAMDEF>

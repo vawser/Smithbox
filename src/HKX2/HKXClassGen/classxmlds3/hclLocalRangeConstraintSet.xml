@@ -1,0 +1,18 @@
+<class name='hclLocalRangeConstraintSet' version='1' signature='0x82567805' size='64' parent='hclConstraintSet'>
+  <enums>
+    <enum name='ShapeType' flags='00000000'>
+      <enumitem name='SHAPE_SPHERE' value='0'/>
+      <enumitem name='SHAPE_CYLINDER' value='1'/>
+    </enum>
+    <enum name='ForceUpgrade6' flags='00000000'>
+      <enumitem name='HCL_FORCE_UPGRADE6' value='0'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='localConstraints' offset='32' ctype='hclLocalRangeConstraintSetLocalConstraint' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='referenceMeshBufferIdx' offset='48' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='stiffness' offset='52' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shapeType' offset='56' etype='ShapeType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='applyNormalComponent' offset='60' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

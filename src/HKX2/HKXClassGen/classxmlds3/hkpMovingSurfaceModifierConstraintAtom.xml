@@ -1,0 +1,5 @@
+<class name='hkpMovingSurfaceModifierConstraintAtom' version='1' signature='0xd795b183' size='64' parent='hkpModifierConstraintAtom'>
+  <members>
+    <member name='velocity' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

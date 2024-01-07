@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to item types." Row0Dummy="" />
+  <Field>
+    <movement_correction_amount AltName="Movement Correction Amount"/>
+    <movement_correction_delay AltName="Movement Correction Delay"/>
+    <animation_index AltName="Animation Index"/>
+  </Field>
+</PARAMMETA>

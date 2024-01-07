@@ -1,0 +1,37 @@
+1000 For automatic patrol: normal
+1001 For automatic circuit: ritual A
+1002 Automatic Circuit: Ritual b
+1003 For automatic circuit: ritual c
+1004 For automatic circuit: ritual D
+1005 Automatic Circuit: Ritual E
+30000000 High Wall of Lothric - Daytime
+30000010 High Wall of Lothric - Eclipse
+30000020 High Wall of Lothric - Night
+30001000 High Wall of Lothric - Product version
+30001010 High Wall of Lothric - NT
+30001011 High Wall of Lothric - TGS
+30001012 High Wall of Lothric - E3 light Test
+30001015 High Wall of Lothric -:Lothric Castle distant Test
+30001020 High Wall of Lothric - Unknown
+30010000 Lothric Castle - Daytime
+30010010 Lothric Castle - Eclipse
+31000000 Undead Settlement - Noon
+31000010 Undead Settlement - Eclipse
+31000020 Undead Settlement - Dusk
+31000030 Undead Settlement - Night
+32000000 Archdragon Peak - Noon
+32000010 Archdragon Peak - Storm
+33000000 Road of Sacrifices/Farron Keep - Noon
+33000010 Road of Sacrifices/Farron Keep - Eclipse
+34010000 Grand Archives - Noon
+34010010 Grand Archives - Eclipse
+35000000 Cathedral of the Deep - Noon
+35000010 Cathedral of the Deep - Eclipse
+37000000 Irithyll of the Boreal Valley - Daytime
+37000010 Irithyll of the Boreal Valley - Eclipse
+38000000 Catacombs of Carthus/Smouldering Lake - Daytime
+39000000 Irithyll Dungeon/Profaned Capital - Noon
+40000000 Cemetery of Ash - Daytime
+40000010 Cemetery of Ash - Night
+40000020 Cemetery of Ash -
+47000000 Memory - Day

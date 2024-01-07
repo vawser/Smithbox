@@ -1,0 +1,12 @@
+<class name='hkGeometry' version='1' signature='0x301ba2e4' size='48' parent='hkReferencedObject'>
+  <enums>
+    <enum name='GeometryType' flags='00000000'>
+      <enumitem name='GEOMETRY_STATIC' value='0'/>
+      <enumitem name='GEOMETRY_DYNAMIC_VERTICES' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='vertices' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangles' offset='32' ctype='hkGeometryTriangle' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

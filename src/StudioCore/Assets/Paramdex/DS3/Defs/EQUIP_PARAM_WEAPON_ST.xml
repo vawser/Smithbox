@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EQUIP_PARAM_WEAPON_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 behaviorVariationId = 4800" />
+    <Field Def="s32 sortId = 850000" />
+    <Field Def="s32 wanderingEquipId = 933600" />
+    <Field Def="f32 weight" />
+    <Field Def="f32 weaponWeightRate" />
+    <Field Def="s32 fixPrice = 800" />
+    <Field Def="s32 basicPrice = 130" />
+    <Field Def="s32 sellValue = 100" />
+    <Field Def="f32 correctStrength" />
+    <Field Def="f32 correctAgility" />
+    <Field Def="f32 corretMagic" />
+    <Field Def="f32 corretFaith" />
+    <Field Def="f32 physGuardCutRate" />
+    <Field Def="f32 magGuardCutRate" />
+    <Field Def="f32 fireGuardCutRate" />
+    <Field Def="f32 thunGuardCutRate" />
+    <Field Def="s32 spEffectBehaviorId0 = -1" />
+    <Field Def="s32 spEffectBehaviorId1 = -1" />
+    <Field Def="s32 spEffectBehaviorId2 = -1" />
+    <Field Def="s32 residentSpEffectId0 = -1" />
+    <Field Def="s32 residentSpEffectId1 = -1" />
+    <Field Def="s32 residentSpEffectId2 = -1" />
+    <Field Def="s32 materialSetId" />
+    <Field Def="s32 originEquipWep0 = -1" />
+    <Field Def="s32 originEquipWep1 = -1" />
+    <Field Def="s32 originEquipWep2 = -1" />
+    <Field Def="s32 originEquipWep3 = -1" />
+    <Field Def="s32 originEquipWep4 = -1" />
+    <Field Def="s32 originEquipWep5 = -1" />
+    <Field Def="s32 originEquipWep6 = -1" />
+    <Field Def="s32 originEquipWep7 = -1" />
+    <Field Def="s32 originEquipWep8 = -1" />
+    <Field Def="s32 originEquipWep9 = -1" />
+    <Field Def="s32 originEquipWep10 = -1" />
+    <Field Def="s32 originEquipWep11 = -1" />
+    <Field Def="s32 originEquipWep12 = -1" />
+    <Field Def="s32 originEquipWep13 = -1" />
+    <Field Def="s32 originEquipWep14 = -1" />
+    <Field Def="s32 originEquipWep15 = -1" />
+    <Field Def="f32 weakA_DamageRate" />
+    <Field Def="f32 weakB_DamageRate" />
+    <Field Def="f32 weakC_DamageRate" />
+    <Field Def="f32 weakD_DamageRate" />
+    <Field Def="s32 vagrantItemLotId = 100700" />
+    <Field Def="s32 vagrantBonuseneDropItemLotId = 100710" />
+    <Field Def="s32 vagrantItemEneDropItemLotId = 100720" />
+    <Field Def="s16 equipModelId" />
+    <Field Def="s16 iconId" />
+    <Field Def="s16 durability = 80" />
+    <Field Def="s16 durailityMax = 80" />
+    <Field Def="s16 attackThrowEscape = 1" />
+    <Field Def="s16 parryDamageLife = 10" />
+    <Field Def="s16 atkBasePhysics = 105" />
+    <Field Def="s16 atkBaseMagic" />
+    <Field Def="s16 atkBaseFire" />
+    <Field Def="s16 atkBaseThunder" />
+    <Field Def="s16 atkBaseStamina = 40" />
+    <Field Def="s16 saWeaponDamage = 14" />
+    <Field Def="s16 saDurability" />
+    <Field Def="s16 guardAngle = 60" />
+    <Field Def="s16 staminaGuardDef = 30" />
+    <Field Def="s16 reinforceTypeId = 500" />
+    <Field Def="s16 trophySGradeId = -1" />
+    <Field Def="s16 trophySeqId = -1" />
+    <Field Def="s16 throwAtkRate" />
+    <Field Def="s16 bowDistRate = -1" />
+    <Field Def="u8 equipModelCategory = 7" />
+    <Field Def="u8 equipModelGender" />
+    <Field Def="u8 weaponCategory = 12" />
+    <Field Def="u8 wepmotionCategory = 48" />
+    <Field Def="u8 guardmotionCategory = 2" />
+    <Field Def="u8 atkMaterial" />
+    <Field Def="u8 defMaterial = 100" />
+    <Field Def="u8 defSfxMaterial" />
+    <Field Def="u8 correctType" />
+    <Field Def="u8 spAttribute = 1" />
+    <Field Def="s16 spAtkCategory" />
+    <Field Def="u8 wepmotionOneHandId" />
+    <Field Def="u8 wepmotionBothHandId = 10" />
+    <Field Def="u8 properStrength = 10" />
+    <Field Def="u8 properAgility" />
+    <Field Def="u8 properMagic" />
+    <Field Def="u8 properFaith" />
+    <Field Def="u8 overStrength = 99" />
+    <Field Def="u8 attackBaseParry" />
+    <Field Def="u8 defenseBaseParry" />
+    <Field Def="u8 guardBaseRepel = 10" />
+    <Field Def="u8 attackBaseRepel = 71" />
+    <Field Def="u8 guardCutCancelRate" />
+    <Field Def="u8 guardLevel = 2" />
+    <Field Def="u8 slashGuardCutRate" />
+    <Field Def="u8 blowGuardCutRate" />
+    <Field Def="u8 thrustGuardCutRate" />
+    <Field Def="u8 poisonGuardResist = 15" />
+    <Field Def="u8 toxicGuardResist = 15" />
+    <Field Def="u8 bloodGuardResist = 15" />
+    <Field Def="u8 curseGuardResist = 15" />
+    <Field Def="u8 atkAttribute" />
+    <Field Def="u8 rightHandEquipable:1 = 1" />
+    <Field Def="u8 leftHandEquipable:1 = 1" />
+    <Field Def="u8 bothHandEquipable:1 = 1" />
+    <Field Def="u8 arrowSlotEquipable:1" />
+    <Field Def="u8 boltSlotEquipable:1" />
+    <Field Def="u8 enableGuard:1" />
+    <Field Def="u8 enableParry:1" />
+    <Field Def="u8 enableMagic:1" />
+    <Field Def="u8 enablePyromancy:1" />
+    <Field Def="u8 enableMiracle:1" />
+    <Field Def="u8 enableVowMagic:1" />
+    <Field Def="u8 isNormalAttackType:1" />
+    <Field Def="u8 isBlowAttackType:1" />
+    <Field Def="u8 isSlashAttackType:1" />
+    <Field Def="u8 isThrustAttackType:1" />
+    <Field Def="u8 isEnhance:1" />
+    <Field Def="u8 isHeroPointCorrect:1" />
+    <Field Def="u8 isCustom:1 = 1" />
+    <Field Def="u8 disableBaseChangeReset:1" />
+    <Field Def="u8 disableRepair:1" />
+    <Field Def="u8 isDarkHand:1" />
+    <Field Def="u8 simpleModelForDlc:1" />
+    <Field Def="u8 lanternWep:1" />
+    <Field Def="u8 isVersusGhostWep:1" />
+    <Field Def="u8 infusion_icon_a:1" />
+    <Field Def="u8 infusion_icon_b:1" />
+    <Field Def="u8 infusion_icon_c:1" />
+    <Field Def="u8 infusion_icon_d:1" />
+    <Field Def="u8 infusion_icon_e:1" />
+    <Field Def="u8 infusion_icon_f:1" />
+    <Field Def="u8 DisableShoot:1" />
+    <Field Def="u8 EnableRepository:1 = 1" />
+    <Field Def="u8 DisableMultiDropShare2:1" />
+    <Field Def="u8 IsDiscard:1 = 1" />
+    <Field Def="u8 IsDrop:1 = 1" />
+    <Field Def="u8 showLogCondType:1" />
+    <Field Def="u8 enableThrow:1" />
+    <Field Def="u8 showDialogCondType:2" />
+    <Field Def="u8 disableGemAttr:1" />
+    <Field Def="u16 defSfxMaterial1" />
+    <Field Def="u8 wepCollidableType0 = 1" />
+    <Field Def="u8 wepCollidableType1 = 1" />
+    <Field Def="u8 postureControlId_Right" />
+    <Field Def="u8 postureControlId_Left" />
+    <Field Def="s32 Group0_AtkVfxId = 401000" />
+    <Field Def="s32 Group0_DummyPolyId0 = 300" />
+    <Field Def="s32 Group0_DummyPolyId1 = -1" />
+    <Field Def="s32 Group1_AtkVfxId = -1" />
+    <Field Def="s32 Group1_DummyPolyId0 = -1" />
+    <Field Def="s32 Group1_DummyPolyId1 = -1" />
+    <Field Def="s32 Group2_AtkVfxId = -1" />
+    <Field Def="s32 Group2_DummyPolyId0 = -1" />
+    <Field Def="s32 Group2_DummyPolyId1 = -1" />
+    <Field Def="s32 Group3_AtkVfxId = -1" />
+    <Field Def="s32 Group3_DummyPolyId0 = -1" />
+    <Field Def="s32 Group3_DummyPolyId1 = -1" />
+    <Field Def="s32 Group4_AtkVfxId = -1" />
+    <Field Def="s32 Group4_DummyPolyId0 = -1" />
+    <Field Def="s32 Group4_DummyPolyId1 = -1" />
+    <Field Def="s32 Group5_AtkVfxId = -1" />
+    <Field Def="s32 Group5_DummyPolyId0 = -1" />
+    <Field Def="s32 Group5_DummyPolyId1 = -1" />
+    <Field Def="s32 Group6_AtkVfxId = -1" />
+    <Field Def="s32 Group6_DummyPolyId0 = -1" />
+    <Field Def="s32 Group6_DummyPolyId1 = -1" />
+    <Field Def="s32 Group7_AtkVfxId = -1" />
+    <Field Def="s32 Group7_DummyPolyId0 = -1" />
+    <Field Def="s32 Group7_DummyPolyId1 = -1" />
+    <Field Def="s16 defSfxMaterial2 = 139" />
+    <Field Def="s16 defSeMaterial2 = 139" />
+    <Field Def="s32 absorpParamId = 48" />
+    <Field Def="f32 toughnessCorrectRate" />
+    <Field Def="u8 isValidTough_ProtSADmg:1" />
+    <Field Def="u8 isDualBlade:1" />
+    <Field Def="u8 isAutoEquip:1" />
+    <Field Def="u8 isEnableEmergencyStep:1 = 1" />
+    <Field Def="u8 invisibleOnRemo:1 = 1" />
+    <Field Def="dummy8 pad2:3" />
+    <Field Def="u8 correctType_Magic" />
+    <Field Def="u8 correctType_Fire" />
+    <Field Def="u8 correctType_Thunder" />
+    <Field Def="f32 weakE_DamageRate" />
+    <Field Def="f32 weakF_DamageRate" />
+    <Field Def="f32 darkGuardCutRate" />
+    <Field Def="s16 atkBaseDark" />
+    <Field Def="u8 correctType_Dark" />
+    <Field Def="u8 correctType_Poison = 7" />
+    <Field Def="s32 swordArt_ActId" />
+    <Field Def="u8 correctType_Bleed = 7" />
+    <Field Def="u8 properLuck" />
+    <Field Def="u8 freezeGuardResist = 15" />
+    <Field Def="u8 autoReplenishType" />
+    <Field Def="s32 swordArtsParamId = 90" />
+    <Field Def="f32 correctLuck" />
+    <Field Def="u32 arrowBoltEquipId" />
+    <Field Def="u8 DerivationLevelType" />
+    <Field Def="u8 enchantSfxSize" />
+    <Field Def="s16 displayTypeId = 67" />
+    <Field Def="f32 physGuardCutRate_MaxCorrect" />
+    <Field Def="f32 magGuardCutRate_MaxCorrect" />
+    <Field Def="f32 fireGuardCutRate_MaxCorrect" />
+    <Field Def="f32 thunGuardCutRate_MaxCorrect" />
+    <Field Def="f32 darkGuardCutRate_MaxCorrect" />
+    <Field Def="f32 poisonGuardResist_MaxCorrect" />
+    <Field Def="f32 diseaseGuardResist_MaxCorrect" />
+    <Field Def="f32 bloodGuardResist_MaxCorrect" />
+    <Field Def="f32 curseGuardResist_MaxCorrect" />
+    <Field Def="f32 freezeGuardResist_MaxCorrect" />
+    <Field Def="f32 staminaGuardDef_MaxCorrect" />
+    <Field Def="s32 weaponVfx0 = -1" />
+    <Field Def="s32 weaponVfx1 = -1" />
+    <Field Def="s32 weaponVfx2 = -1" />
+    <Field Def="s32 weaponVfx3 = -1" />
+    <Field Def="s32 weaponVfx4 = -1" />
+    <Field Def="s32 weaponVfx5 = -1" />
+    <Field Def="s32 weaponVfx6 = -1" />
+    <Field Def="s32 weaponVfx7 = -1" />
+    <Field Def="f32 StaminaConsumeRate" />
+    <Field Def="f32 vsPlayerDmgCorrectRate_Physics" />
+    <Field Def="f32 vsPlayerDmgCorrectRate_Magic" />
+    <Field Def="f32 vsPlayerDmgCorrectRate_Fire" />
+    <Field Def="f32 vsPlayerDmgCorrectRate_Thunder" />
+    <Field Def="f32 vsPlayerDmgCorrectRate_Dark" />
+    <Field Def="f32 vsPlayerDmgCorrectRate_Poison" />
+    <Field Def="f32 vsPlayerDmgCorrectRate_Blood" />
+    <Field Def="f32 vsPlayerDmgCorrectRate_Freeze" />
+    <Field Def="s32 attainmentWepStatusStr" />
+    <Field Def="s32 attainmentWepStatusDex" />
+    <Field Def="s32 attainmentWepStatusMag" />
+    <Field Def="s32 attainmentWepStatusFai" />
+    <Field Def="s32 attainmentWepStatusLuc" />
+    <Field Def="s32 attackElementCorrectId = 10000" />
+    <Field Def="s32 saleValue = -1" />
+    <Field Def="u8 reinforceShopCategory = 1" />
+    <Field Def="u8 maxArrowQuantity = 1" />
+    <Field Def="u8 residentSfx_1_IsVisibleForHang:1" />
+    <Field Def="u8 residentSfx_2_IsVisibleForHang:1" />
+    <Field Def="u8 residentSfx_3_IsVisibleForHang:1" />
+    <Field Def="u8 residentSfx_4_IsVisibleForHang:1" />
+    <Field Def="u8 isSoulParamIdChange_model0:1 = 1" />
+    <Field Def="u8 isSoulParamIdChange_model1:1" />
+    <Field Def="u8 isSoulParamIdChange_model2:1" />
+    <Field Def="u8 isSoulParamIdChange_model3:1" />
+    <Field Def="u8 wepSeIdOffset" />
+    <Field Def="s32 baseChangePrice = 650" />
+    <Field Def="s16 levelSyncCorrectId = 310" />
+    <Field Def="dummy8 pad1[38]" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <sfxId_00 AltName="SFX ID 0" Wiki="ID of SFX to use" />
+    <sfxId_01 AltName="SFX ID 1" Wiki="ID of SFX to use" />
+    <sfxId_02 AltName="SFX ID 2" Wiki="ID of SFX to use" />
+    <sfxId_03 AltName="SFX ID 3" Wiki="ID of SFX to use" />
+    <sfxId_04 AltName="SFX ID 4" Wiki="ID of SFX to use" />
+    <sfxId_05 AltName="SFX ID 5" Wiki="ID of SFX to use" />
+    <sfxId_06 AltName="SFX ID 6" Wiki="ID of SFX to use" />
+    <sfxId_07 AltName="SFX ID 7" Wiki="ID of SFX to use" />
+    <sfxId_08 AltName="SFX ID 8" Wiki="ID of SFX to use" />
+    <sfxId_09 AltName="SFX ID 9" Wiki="ID of SFX to use" />
+    <sfxId_10 AltName="SFX ID 10" Wiki="ID of SFX to use" />
+    <sfxId_11 AltName="SFX ID 11" Wiki="ID of SFX to use" />
+    <sfxId_12 AltName="SFX ID 12" Wiki="ID of SFX to use" />
+    <sfxId_13 AltName="SFX ID 13" Wiki="ID of SFX to use" />
+    <sfxId_14 AltName="SFX ID 14" Wiki="ID of SFX to use" />
+    <sfxId_15 AltName="SFX ID 15" Wiki="ID of SFX to use" />
+    <sfxId_16 AltName="SFX ID 16" Wiki="ID of SFX to use" />
+    <sfxId_17 AltName="SFX ID 17" Wiki="ID of SFX to use" />
+    <sfxId_18 AltName="SFX ID 18" Wiki="ID of SFX to use" />
+    <sfxId_19 AltName="SFX ID 19" Wiki="ID of SFX to use" />
+    <sfxId_20 AltName="SFX ID 20" Wiki="ID of SFX to use" />
+    <sfxId_21 AltName="SFX ID 21" Wiki="ID of SFX to use" />
+    <sfxId_22 AltName="SFX ID 22" Wiki="ID of SFX to use" />
+    <sfxId_23 AltName="SFX ID 23" Wiki="ID of SFX to use" />
+    <sfxId_24 AltName="SFX ID 24" Wiki="ID of SFX to use" />
+    <sfxId_25 AltName="SFX ID 25" Wiki="ID of SFX to use" />
+    <sfxId_26 AltName="SFX ID 26" Wiki="ID of SFX to use" />
+    <sfxId_27 AltName="SFX ID 27" Wiki="ID of SFX to use" />
+    <sfxId_28 AltName="SFX ID 28" Wiki="ID of SFX to use" />
+    <sfxId_29 AltName="SFX ID 29" Wiki="ID of SFX to use" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self Wiki="Throws Visual and Sound Effects"/>
+</PARAMMETA>

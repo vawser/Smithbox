@@ -1,0 +1,23 @@
+0 temple part
+1 terrestrial world
+2 pit
+3 Last boss Distant view
+4 bird object
+11 Last boss mouth
+13 For poly drama (p00001-c01 vertical hole-A
+14 For poly drama (p00001-c01 vertical hole-B
+15 For poly drama (p00001-cut02 Heroine
+16 For poly drama (p00001-cut02 Map
+17 For poly drama (p00001-cut02 Last Boss-01
+18 For poly drama (p00001-cut02 Last Boss-02-A
+19 For poly drama (p00001-cut02 Last Boss-02-B
+20 For poly drama (p00001-cut03-01-last boss
+21 Poly drama (p00001-cut03-02-last boss & Map
+22 For polyplay (p00001-cut04-A (bottom
+23 For polyplay (p00001-cut04-B (upper part
+24 For polyplay (p00001-cut04-heroine
+25 For poly drama (p00001-cut05-Map
+26 For poly drama (p00001-cut06-01-Map
+27 For poly drama (p00001-cut06-02-Map
+28 For poly drama (p00001-cut07-Map
+29 For poly drama (p00001-cut07-Heroine

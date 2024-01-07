@@ -1,0 +1,10 @@
+<class name='hkpRackAndPinionConstraintAtom' version='1' signature='0xa8259784' size='16' parent='hkpConstraintAtom'>
+  <members>
+    <member name='pinionRadiusOrScrewPitch' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isScrew' offset='8' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memOffsetToInitialAngleOffset' offset='9' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memOffsetToPrevAngle' offset='10' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memOffsetToRevolutionCounter' offset='11' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='12' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='4' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

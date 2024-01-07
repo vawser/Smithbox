@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ENEMY_BEHAVIOR_ID" type="s32">
+    </Enum>
+    <Enum Name="ChrType" type="s32">
+    </Enum>
+  </Enums>
+  <Field>
+    <EnemyBehaviorID AltName="Behavior id" Wiki="Enemy behavior ID" Enum="ENEMY_BEHAVIOR_ID" />
+    <HP AltName="Hit points" Wiki="Hit points" />
+    <AttackPower AltName="Offensive power" Wiki="Attack power (for proto only)" />
+    <ChrType AltName="Character type" Wiki="Character type" Enum="ChrType" />
+    <HitHeight AltName="Height per [m]" Wiki="Height per (Please specify a size larger than the diameter)" />
+    <HitRadius AltName="Radius around [m]" Wiki="Radius around" />
+    <Weight AltName="Weight [kg]" Wiki="The weight of the character" />
+    <DynamicFriction AltName="Dynamic friction force" Wiki="Dynamic friction force" />
+    <StaticFriction AltName="Static friction" Wiki="Static friction force" />
+    <UpperDefState AltName="Upper body initial state" Wiki="Upper body initial state (PG input)" />
+    <ActionDefState AltName="Initial state of action" Wiki="Action initial state (PG input)" />
+    <RotY_per_Second AltName="Angle that can be turned per unit time [deg / s]" Wiki="Y-axis turning angle per unit time [deg / s]" />
+    <reserve0 AltName=""/>
+    <RotY_per_Second_old AltName="unused" Wiki="unused" />
+    <EnableSideStep AltName="Can you move left and right?" Wiki="Can you move left and right?" />
+    <UseRagdollHit AltName="Whether to use a ragdoll per character" Wiki="Whether to use a ragdoll per character" />
+    <reserve_last AltName=""/>
+    <stamina AltName="Amount of stamina" Wiki="Total amount of stamina" />
+    <staminaRecover AltName="Stamina recovery" Wiki="Stamina recovery amount per second" />
+    <staminaConsumption AltName="Stamina basic consumption" Wiki="Basic value of stamina consumption used when attacking and guarding" />
+    <deffenct_Phys AltName="Physical defense" Wiki="Damage reduction base value for physical attacks" />
+    <reserve_last2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,5 @@
+<class name='hkbVariableValue' version='1' signature='0xb99bd6a' size='4'>
+  <members>
+    <member name='value' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

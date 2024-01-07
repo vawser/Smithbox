@@ -1,0 +1,33 @@
+0 Disabled -- 無効
+3100000 Disabled-Medium-Attack-Generic -- 無効-中-攻撃-汎用
+11100000 General-purpose-mini-attack-general-purpose -- 汎用-極小-攻撃-汎用
+12100000 General-purpose-small-attack-general-purpose -- 汎用-小-攻撃-汎用
+13100000 General-purpose-medium-attack-general-purpose -- 汎用-中-攻撃-汎用
+14100000 General-purpose-large-attack-general-purpose -- 汎用-大-攻撃-汎用
+15100000 General-purpose-oversized-attack-general-purpose -- 汎用-特大-攻撃-汎用
+16100000 General-purpose - Oversized - Attack - General -- 汎用-特特大-攻撃-汎用
+21100000 PC-Mini-Attack-General -- PC-極小-攻撃-汎用
+22100000 PC-Small-Attack-General -- PC-小-攻撃-汎用
+23100000 PC-Medium-Attack-General -- PC-中-攻撃-汎用
+24100000 PC-Large-Attack-General -- PC-大-攻撃-汎用
+25100000 PC-Oversized-Attack-General -- PC-特大-攻撃-汎用
+26100000 PC-Oversized-Attack-General -- PC-特特大-攻撃-汎用
+31100000 Enemy - Minimal - Attack - General Purpose -- エネミー-極小-攻撃-汎用
+31200000 Enemy - Minimum - Ground Vibration - General Purpose -- エネミー-極小-地面振動-汎用
+32100000 Enemy - Small - Attack - General -- エネミー-小-攻撃-汎用
+32200000 Enemy- Small- Ground Vibration - General Purpose -- エネミー-小-地面振動-汎用
+33100000 Enemy - Medium - Attack - General -- エネミー-中-攻撃-汎用
+33200000 Enemy - Medium - Ground Vibration - General Purpose -- エネミー-中-地面振動-汎用
+34100000 Enemy - Big - Attack - General -- エネミー-大-攻撃-汎用
+34200000 Enemy - Large - Ground Vibration - General Purpose -- エネミー-大-地面振動-汎用
+35100000 Enemy - Oversized - Attack - General -- エネミー-特大-攻撃-汎用
+35200000 Enemy - Oversized - Ground Vibration - General Purpose -- エネミー-特大-地面振動-汎用
+36100000 Enemy - Extra Large - Attack - General -- エネミー-特特大-攻撃-汎用
+36200000 Enemy - Extra Large - Ground Vibration - General Purpose -- エネミー-特特大-地面振動-汎用
+41100000 Objects - Small - Attack - General Purpose -- オブジェ-極小-攻撃-汎用
+42100000 Objects - Small - Attack - General Purpose -- オブジェ-小-攻撃-汎用
+43100000 Objects - Medium - Attack - General Purpose -- オブジェ-中-攻撃-汎用
+44100000 Objects - Large - Attack - General Purpose -- オブジェ-大-攻撃-汎用
+45100000 Objects - Oversized - Attack - General Purpose -- オブジェ-特大-攻撃-汎用
+46100000 Objects - Oversized - Attack - General -- オブジェ-特特大-攻撃-汎用
+90000000 Test -- テスト

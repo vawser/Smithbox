@@ -1,0 +1,6 @@
+<class name='hkbGeneratorSyncInfoSyncPoint' version='1' signature='0xb597cf92' size='8'>
+  <members>
+    <member name='id' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='time' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

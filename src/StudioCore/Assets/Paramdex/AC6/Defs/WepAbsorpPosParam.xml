@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WEP_ABSORP_POS_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="u8 hangPosType"></Field>
+    <Field Def="u8 isSkeletonBind"></Field>
+    <Field Def="dummy8 pad0[2]"></Field>
+    <Field Def="s16 weaponDummyPoly_Right_1"></Field>
+    <Field Def="s16 weaponDummyPoly_Left_1"></Field>
+    <Field Def="s16 weaponDummyPoly_Both_1"></Field>
+    <Field Def="s16 weaponDummyPoly_LeftHang_1"></Field>
+    <Field Def="s16 weaponDummyPoly_RightHang_1"></Field>
+    <Field Def="s16 weaponDummyPoly_Right_2"></Field>
+    <Field Def="s16 weaponDummyPoly_Left_2"></Field>
+    <Field Def="s16 weaponDummyPoly_Both_2"></Field>
+    <Field Def="s16 weaponDummyPoly_LeftHang_2"></Field>
+    <Field Def="s16 weaponDummyPoly_RightHang_2"></Field>
+    <Field Def="s16 weaponDummyPoly_Right_3"></Field>
+    <Field Def="s16 weaponDummyPoly_Left_3"></Field>
+    <Field Def="s16 weaponDummyPoly_Both_3"></Field>
+    <Field Def="s16 weaponDummyPoly_LeftHang_3"></Field>
+    <Field Def="s16 weaponDummyPoly_RightHang_3"></Field>
+    <Field Def="s16 weaponDummyPoly_Right_4"></Field>
+    <Field Def="s16 weaponDummyPoly_Left_4"></Field>
+    <Field Def="s16 weaponDummyPoly_Both_4"></Field>
+    <Field Def="s16 weaponDummyPoly_LeftHang_4"></Field>
+    <Field Def="s16 weaponDummyPoly_RightHang_4"></Field>
+    <Field Def="u8 wepInvisibleType_0"></Field>
+    <Field Def="u8 wepInvisibleType_1"></Field>
+    <Field Def="u8 wepInvisibleType_2"></Field>
+    <Field Def="u8 wepInvisibleType_3"></Field>
+    <Field Def="s16 weaponDummyPoly_LeftBoth_0"></Field>
+    <Field Def="s16 weaponDummyPoly_LeftBoth_1"></Field>
+    <Field Def="s16 weaponDummyPoly_LeftBoth_2"></Field>
+    <Field Def="s16 weaponDummyPoly_LeftBoth_3"></Field>
+    <Field Def="u8 displayPos_Right_0"></Field>
+    <Field Def="u8 displayPos_Left_0"></Field>
+    <Field Def="u8 displayPos_RightBoth_0"></Field>
+    <Field Def="u8 displayPos_LeftBoth_0"></Field>
+    <Field Def="u8 displayPos_RightHang_0"></Field>
+    <Field Def="u8 displayPos_LeftHang_0"></Field>
+    <Field Def="u8 displayPos_Right_1"></Field>
+    <Field Def="u8 displayPos_Left_1"></Field>
+    <Field Def="u8 displayPos_RightBoth_1"></Field>
+    <Field Def="u8 displayPos_LeftBoth_1"></Field>
+    <Field Def="u8 displayPos_RightHang_1"></Field>
+    <Field Def="u8 displayPos_LeftHang_1"></Field>
+    <Field Def="u8 displayPos_Right_2"></Field>
+    <Field Def="u8 displayPos_Left_2"></Field>
+    <Field Def="u8 displayPos_RightBoth_2"></Field>
+    <Field Def="u8 displayPos_LeftBoth_2"></Field>
+    <Field Def="u8 displayPos_RightHang_2"></Field>
+    <Field Def="u8 displayPos_LeftHang_2"></Field>
+    <Field Def="u8 displayPos_Right_3"></Field>
+    <Field Def="u8 displayPos_Left_3"></Field>
+    <Field Def="u8 displayPos_RightBoth_3"></Field>
+    <Field Def="u8 displayPos_LeftBoth_3"></Field>
+    <Field Def="u8 displayPos_RightHang_3"></Field>
+    <Field Def="u8 displayPos_LeftHang_3"></Field>
+    <Field Def="s16 Unk0x54"></Field>
+    <Field Def="s16 Unk0x56"></Field>
+    <Field Def="s16 Unk0x58"></Field>
+    <Field Def="s16 Unk0x5A"></Field>
+    <Field Def="s16 Unk0x5C"></Field>
+    <Field Def="s16 Unk0x5E"></Field>
+    <Field Def="s16 Unk0x60"></Field>
+    <Field Def="s16 Unk0x62"></Field>
+    <Field Def="s16 UnkShort0x64"></Field>
+    <Field Def="s16 UnkShort0x66"></Field>
+    <Field Def="s16 Unk0x68"></Field>
+    <Field Def="s16 Unk0x6A"></Field>
+    <Field Def="s32 Unk0x6C"></Field>
+    <Field Def="s32 Unk0x70"></Field>
+    <Field Def="s32 Unk0x74"></Field>
+    <Field Def="s32 Unk0x78"></Field>
+    <Field Def="s32 Unk0x7C"></Field>
+    <Field Def="s32 Unk0x80"></Field>
+  </Fields>
+</PARAMDEF>

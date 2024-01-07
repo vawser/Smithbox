@@ -1,0 +1,7 @@
+<class name='hkpDeformableFixedConstraintDataAtoms' version='1' signature='0xe5bee1e5' size='336'>
+  <members>
+    <member name='transforms' offset='0' ctype='hkpSetLocalTransformsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='lin' offset='144' ctype='hkpDeformableLinConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ang' offset='240' ctype='hkpDeformableAngConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

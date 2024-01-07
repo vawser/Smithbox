@@ -1,0 +1,12 @@
+{
+    "Title": "ObjAct",
+    "Tags": [
+        "Term",
+        "Object",
+        "Action"
+    ],
+    "Contents": [
+        "Object Action (ObjAct) is a container of object state, based on player interaction.",
+        "For instance, ObjAct entries are used to monitor the opening of doors and use of levers."
+    ]
+}

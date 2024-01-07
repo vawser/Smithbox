@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>COMMON_SYSTEM_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u32 mapSaveMapNameIdOnGameStart">
+      <DisplayName>ゲーム開始時マップ名ID_セーブデータ用</DisplayName>
+      <Description>ゲーム開始時マップ名ID_セーブデータ用(SEQ15052)</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>-1</Maximum>
+      <Increment>0</Increment>
+    </Field>
+    <Field Def="dummy8 reserve0[60]">
+      <DisplayName>リザーブ</DisplayName>
+      <Description>リザーブ</Description>
+      <SortID>3</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,7 @@
+<class name='hkbHandIkModifier' version='1' signature='0x6f06891a' size='128' parent='hkbModifier'>
+  <members>
+    <member name='hands' offset='88' ctype='hkbHandIkModifierHand' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fadeInOutCurve' offset='104' etype='BlendCurve' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='internalHandData' offset='112' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

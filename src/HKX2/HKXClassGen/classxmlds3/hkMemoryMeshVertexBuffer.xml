@@ -1,0 +1,12 @@
+<class name='hkMemoryMeshVertexBuffer' version='1' signature='0x517586f7' size='440' parent='hkMeshVertexBuffer'>
+  <members>
+    <member name='format' offset='16' ctype='hkVertexFormat' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='elementOffsets' offset='276' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='32' flags='FLAGS_NONE' default='0'/>
+    <member name='memory' offset='408' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexStride' offset='424' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='locked' offset='428' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numVertices' offset='432' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isBigEndian' offset='436' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isSharable' offset='437' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

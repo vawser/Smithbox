@@ -1,0 +1,187 @@
+##This script is based on Vawser's work in Yapped Rune Bear.
+##Some values and adjustments may not be as expected as this script expects a regularly upgrading, physical weapon.
+##This script only handles 1 row at a time (baseID).
+newvar baseID:1000000;
+newvar normalBaseRate:0.95;
+newvar primaryScaleRate:0.95;
+newvar highScaleRate:0.75;
+newvar lowScaleRate:0.25;
+##start work
+##add rows
+param EquipParamWeapon: id $baseID: copyN 12;
+clipboard: ID: + rowIndex;
+clipboard: ID: scale 100:$baseID;
+clipboard: ID: + 100;
+clipboard: reinforceTypeId: = rowIndex;
+clipboard: reinforceTypeId: * 100;
+clipboard: reinforceTypeId: + 100;
+clipboard: paste;
+##calculate IDs of new rows
+newvar heavyID:$baseID;
+vars heavyID: + 100;
+newvar keenID:$baseID;
+vars keenID: + 200;
+newvar qualityID:$baseID;
+vars qualityID: + 300;
+newvar fireID:$baseID;
+vars fireID: + 400;
+newvar flameArtID:$baseID;
+vars flameArtID: + 500;
+newvar lightningID:$baseID;
+vars lightningID: + 600;
+newvar sacredID:$baseID;
+vars sacredID: + 700;
+newvar magicID:$baseID;
+vars magicID: + 800;
+newvar coldID:$baseID;
+vars coldID: + 900;
+newvar poisonID:$baseID;
+vars poisonID: + 1000;
+newvar bloodID:$baseID;
+vars bloodID: + 1100;
+newvar occultID:$baseID;
+vars occultID: + 1200;
+##calculate highest scaling
+newvar maxScale:0.0;
+vars maxScale: max paramlookup EquipParamWeapon $baseID correctStrength;
+vars maxScale: max paramlookup EquipParamWeapon $baseID correctAgility;
+vars maxScale: max paramlookup EquipParamWeapon $baseID correctMagic;
+vars maxScale: max paramlookup EquipParamWeapon $baseID correctFaith;
+vars maxScale: max paramlookup EquipParamWeapon $baseID correctLuck;
+##collect basic data
+newvar name:UnkName;
+vars name: = paramlookup EquipParamWeapon $baseID Name;
+##heavy
+param EquipParamWeapon: id $heavyID: Name: = Heavy;
+param EquipParamWeapon: id $heavyID: sortId: + 1;
+param EquipParamWeapon: id $heavyID: correctStrength: = $maxScale;
+param EquipParamWeapon: id $heavyID: correctStrength: * 1.2;
+param EquipParamWeapon: id $heavyID: correctAgility: = 0;
+param EquipParamWeapon: id $heavyID: attackBasePhysics: * $normalBaseRate;
+param EquipParamWeapon: id $heavyID: correctType_Physics: = 1;
+##keen
+param EquipParamWeapon: id $keenID: Name: = Keen;
+param EquipParamWeapon: id $keenID: sortId: + 2;
+param EquipParamWeapon: id $keenID: correct(Strength|Agility): = $maxScale;
+param EquipParamWeapon: id $keenID: correctStrength: * 0.5;
+param EquipParamWeapon: id $keenID: correctAgility: * 1.2;
+param EquipParamWeapon: id $keenID: attackBasePhysics: * $normalBaseRate;
+param EquipParamWeapon: id $keenID: correctType_Physics: = 2;
+##quality
+param EquipParamWeapon: id $qualityID: Name: = Quality;
+param EquipParamWeapon: id $qualityID: sortId: + 3;
+param EquipParamWeapon: id $qualityID: correct(Strength|Agility): = $maxScale;
+param EquipParamWeapon: id $qualityID: correct(Strength|Agility): * 1.3;
+param EquipParamWeapon: id $qualityID: attackBasePhysics: * $normalBaseRate;
+param EquipParamWeapon: id $qualityID: correctType_Physics: = 8;
+##fire
+param EquipParamWeapon: id $fireID: Name: = Fire;
+param EquipParamWeapon: id $fireID: sortId: + 5;
+param EquipParamWeapon: id $fireID: correct(Strength|Agility): = $maxScale;
+param EquipParamWeapon: id $fireID: correctStrength: * $highScaleRate;
+param EquipParamWeapon: id $fireID: correctAgility: * $lowScaleRate;
+param EquipParamWeapon: id $fireID: correct(Magic|Faith): = 0;
+param EquipParamWeapon: id $fireID: attackBaseFire: = field attackBasePhysics;
+param EquipParamWeapon: id $fireID: attackBase(Physics|Fire): * $normalBaseRate;
+param EquipParamWeapon: id $fireID: attackBase(Magic|Thunder): = 0;
+param EquipParamWeapon: id $fireID: spAttribute: = 11;
+param EquipParamWeapon: id $fireID: correctType_Fire: = 4;
+param EquipParamWeapon: id $fireID: attackElementCorrectParam: = 10005;
+##flameart
+param EquipParamWeapon: id $flameArtID: Name: = Flame Art;
+param EquipParamWeapon: id $flameArtID: sortId: + 6;
+param EquipParamWeapon: id $flameArtID: correct(Strength|Agility|Faith): = $maxScale;
+param EquipParamWeapon: id $flameArtID: correct(Strength|Agility): * $lowScaleRate;
+param EquipParamWeapon: id $flameArtID: correctFaith: * $primaryScaleRate;
+param EquipParamWeapon: id $flameArtID: correctMagic: = 0;
+param EquipParamWeapon: id $flameArtID: attackBaseFire: = field attackBasePhysics;
+param EquipParamWeapon: id $flameArtID: attackBase(Physics|Fire): * $normalBaseRate;
+param EquipParamWeapon: id $flameArtID: attackBase(Magic|Thunder): = 0;
+param EquipParamWeapon: id $flameArtID: spAttribute: = 11;
+param EquipParamWeapon: id $flameArtID: correctType_Fire: = 4;
+##lightning
+param EquipParamWeapon: id $lightningID: Name: = Lightning;
+param EquipParamWeapon: id $lightningID: sortId: + 7;
+param EquipParamWeapon: id $lightningID: correct(Strength|Agility): = $maxScale;
+param EquipParamWeapon: id $lightningID: correctStrength: * $lowScaleRate;
+param EquipParamWeapon: id $lightningID: correctAgility: * $highScaleRate;
+param EquipParamWeapon: id $lightningID: correct(Magic|Faith): = 0;
+param EquipParamWeapon: id $lightningID: attackBaseThunder: = field attackBasePhysics;
+param EquipParamWeapon: id $lightningID: attackBase(Physics|Thunder): * $normalBaseRate;
+param EquipParamWeapon: id $lightningID: attackBase(Magic|Fire|Thunder): = 0;
+param EquipParamWeapon: id $lightningID: spAttribute: = 12;
+param EquipParamWeapon: id $lightningID: correctType_Thunder: = 4;
+##sacred
+param EquipParamWeapon: id $sacredID: Name: = Sacred;
+param EquipParamWeapon: id $sacredID: sortId: + 8;
+param EquipParamWeapon: id $sacredID: correct(Strength|Agility|Faith): = $maxScale;
+param EquipParamWeapon: id $sacredID: correctStrength: * $lowScaleRate;
+param EquipParamWeapon: id $sacredID: correctAgility: * $highScaleRate;
+param EquipParamWeapon: id $sacredID: correctFaith: * $primaryScaleRate;
+param EquipParamWeapon: id $sacredID: correctMagic: = 0;
+param EquipParamWeapon: id $sacredID: attackBasePhysics: * $normalBaseRate;
+param EquipParamWeapon: id $sacredID: attackBase(Magic|Fire|Thunder): = 0;
+param EquipParamWeapon: id $sacredID: attackBaseDark: = field attackBasePhysics;
+param EquipParamWeapon: id $sacredID: attackBaseDark: * $normalBaseRate;
+param EquipParamWeapon: id $sacredID: spAttribute: = 13;
+param EquipParamWeapon: id $sacredID: correctType_Dark: = 4;
+##magic
+param EquipParamWeapon: id $magicID: Name: = Magic;
+param EquipParamWeapon: id $magicID: sortId: + 4;
+param EquipParamWeapon: id $magicID: correct(Strength|Agility|Magic): = $maxScale;
+param EquipParamWeapon: id $magicID: correct(Strength|Agility): = $lowScaleRate;
+param EquipParamWeapon: id $magicID: correctMagic: * $primaryScaleRate;
+param EquipParamWeapon: id $magicID: correctFaith: = 0;
+param EquipParamWeapon: id $magicID: attackBaseMagic: = field attackBasePhysics;
+param EquipParamWeapon: id $magicID: attackBase(Physics|Magic): * $normalBaseRate;
+param EquipParamWeapon: id $magicID: attackBase(Fire|Thunder|Dark): = 0;
+param EquipParamWeapon: id $magicID: spAttribute: = 10;
+param EquipParamWeapon: id $magicID: correctType_Magic: = 4;
+##cold
+param EquipParamWeapon: id $coldID: Name: = Cold;
+param EquipParamWeapon: id $coldID: sortId: + 11;
+param EquipParamWeapon: id $coldID: correct(Strength|Agility|Magic): = $maxScale;
+param EquipParamWeapon: id $coldID: correct(Strength|Agility|Magic): * $primaryScaleRate;
+param EquipParamWeapon: id $coldID: correctFaith: = 0;
+param EquipParamWeapon: id $coldID: spEffectBehaviourId1: = 107500;
+param EquipParamWeapon: id $coldID: attackBasePhysics: * $normalBaseRate;
+param EquipParamWeapon: id $coldID: attackBaseMagic: = field attackBasePhysics;
+param EquipParamWeapon: id $coldID: attackBaseMagic: * 0.75;
+param EquipParamWeapon: id $coldID: spAttribute: = 10;
+param EquipParamWeapon: id $coldID: correctType_Magic: = 4;
+param EquipParamWeapon: id $coldID: spEffectMsgId0: = 6601;
+##poison
+param EquipParamWeapon: id $poisonID: Name: = Poison;
+param EquipParamWeapon: id $poisonID: sortId: + 9;
+param EquipParamWeapon: id $poisonID: correct(Strength|Agility): = $maxScale;
+param EquipParamWeapon: id $poisonID: correct(Strength|Agility): * $primaryScaleRate;
+param EquipParamWeapon: id $poisonID: correctLuck: = 30;
+param EquipParamWeapon: id $poisonID: spEffectBehaviourId1: = 106000;
+param EquipParamWeapon: id $poisonID: attackBasePhysics: * $normalBaseRate;
+param EquipParamWeapon: id $poisonID: attackElementCorrectParam: = 10013;
+param EquipParamWeapon: id $poisonID: spEffectMsgId0: = 6401;
+##blood
+param EquipParamWeapon: id $bloodID: Name: = Blood;
+param EquipParamWeapon: id $bloodID: sortId: + 10;
+param EquipParamWeapon: id $bloodID: correct(Strength|Agility): = $maxScale;
+param EquipParamWeapon: id $bloodID: correct(Strength|Agility): * $primaryScaleRate;
+param EquipParamWeapon: id $bloodID: correctLuck: = 30;
+param EquipParamWeapon: id $bloodID: spEffectBehaviourId1: = 105000;
+param EquipParamWeapon: id $bloodID: attackBasePhysics: * $normalBaseRate;
+param EquipParamWeapon: id $bloodID: attackElementCorrectParam: = 10013;
+param EquipParamWeapon: id $bloodID: spEffectMsgId0: = 6501;
+##occult
+param EquipParamWeapon: id $occultID: Name: = Occult;
+param EquipParamWeapon: id $occultID: sortId: + 12;
+param EquipParamWeapon: id $occultID: correct(Strength|Agility|Luck): = $maxScale;
+param EquipParamWeapon: id $occultID: correct(Strength|Agility): * 0.4;
+param EquipParamWeapon: id $occultID: correctLuck: * 1.2;
+param EquipParamWeapon: id $occultID: attackBasePhysics: * $normalBaseRate;
+param EquipParamWeapon: id $occultID: correctType_Physics: = 7;
+param EquipParamWeapon: id $occultID: attackElementCorrectParam: = 10013;
+##finishing touches
+newvar allID:textFilter;
+vars allID: = $baseID;
+vars allID: replacex 0000$:\d\d00;
+param EquipParamWeapon: id $allID && !id $baseID: Name: +  ;
+param EquipParamWeapon: id $allID && !id $baseID: Name: + $name;

@@ -1,0 +1,5 @@
+<class name='hkbScriptCondition' version='1' signature='0x76152c37' size='24' parent='hkbCondition'>
+  <members>
+    <member name='conditionScript' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

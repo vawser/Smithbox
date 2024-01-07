@@ -1,0 +1,10 @@
+<class name='hkpShapeInfo' version='1' signature='0xd3fdd2e8' size='128' parent='hkReferencedObject'>
+  <members>
+    <member name='shape' offset='16' ctype='hkpShape' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isHierarchicalCompound' offset='24' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hkdShapesCollected' offset='25' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='childShapeNames' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_STRINGPTR' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='childTransforms' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_TRANSFORM' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transform' offset='64' vtype='TYPE_TRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

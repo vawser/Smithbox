@@ -1,0 +1,33 @@
+<class name='hclClothData' version='1' signature='0xf943cea2' size='128' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Platform' flags='00000000'>
+      <enumitem name='HCL_PLATFORM_INVALID' value='0'/>
+      <enumitem name='HCL_PLATFORM_WIN32' value='1'/>
+      <enumitem name='HCL_PLATFORM_X64' value='2'/>
+      <enumitem name='HCL_PLATFORM_MACPPC' value='4'/>
+      <enumitem name='HCL_PLATFORM_IOS' value='8'/>
+      <enumitem name='HCL_PLATFORM_MAC386' value='16'/>
+      <enumitem name='HCL_PLATFORM_PS3' value='32'/>
+      <enumitem name='HCL_PLATFORM_XBOX360' value='64'/>
+      <enumitem name='HCL_PLATFORM_WII' value='128'/>
+      <enumitem name='HCL_PLATFORM_LRB' value='256'/>
+      <enumitem name='HCL_PLATFORM_LINUX' value='512'/>
+      <enumitem name='HCL_PLATFORM_PSVITA' value='1024'/>
+      <enumitem name='HCL_PLATFORM_ANDROID' value='2048'/>
+      <enumitem name='HCL_PLATFORM_CTR' value='4096'/>
+      <enumitem name='HCL_PLATFORM_WIIU' value='8192'/>
+      <enumitem name='HCL_PLATFORM_PS4' value='16384'/>
+      <enumitem name='HCL_PLATFORM_XBOXONE' value='32768'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='name' offset='16' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simClothDatas' offset='24' ctype='hclSimClothData' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bufferDefinitions' offset='40' ctype='hclBufferDefinition' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='transformSetDefinitions' offset='56' ctype='hclTransformSetDefinition' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='operators' offset='72' ctype='hclOperator' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='clothStateDatas' offset='88' ctype='hclClothState' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='actions' offset='104' ctype='hclAction' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetPlatform' offset='120' etype='Platform' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

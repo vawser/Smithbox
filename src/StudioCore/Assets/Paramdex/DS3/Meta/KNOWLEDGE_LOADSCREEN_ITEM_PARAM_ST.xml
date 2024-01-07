@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ItemCategory">
+      <Option Value="4294967295" Name="None" />
+      <Option Value="0" Name="Weapon" />
+      <Option Value="268435456" Name="Armor" />
+      <Option Value="536870912" Name="Accessory" />
+      <Option Value="1073741824" Name="Good" />
+    </Enum>
+  </Enums>
+  <Field>
+    <LoadscreenCategoryId AltName="Loadscreen Category ID" Enum="ItemCategory" />
+	<KnowledgeId AltName="Knowledge ID" Refs="EquipParamAccessory,EquipParamGoods,EquipParamProtector,EquipParamWeapon" />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="Items to display during the loadscreen"/>
+</PARAMMETA>

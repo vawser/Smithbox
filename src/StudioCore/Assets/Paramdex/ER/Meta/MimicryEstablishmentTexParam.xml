@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <srcR AltName="Pre-conversion - Map Image R" Wiki="Color information (R) of the map image before conversion. Pixels with matching RGB values are associated with this parameter" />
+    <srcG AltName="Pre-conversion - Map Image G" Wiki="Color information (G) of the map image before conversion. Pixels with matching RGB values are associated with this parameter" />
+    <srcB AltName="Pre-conversion - Map Image B" Wiki="Color information (B) of the map image before conversion. Pixels with matching RGB values are associated with this parameter" />
+    <pad1 AltName=""/>
+    <mimicryEstablishmentParamId AltName="Mimicry Establishment Param ID" Wiki="Mimicry probability parameter ID by map (-1 No setting (default value)). The area is combined with Map Studio" Refs="MapMimicryEstablishmentParam" />
+    <pad2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

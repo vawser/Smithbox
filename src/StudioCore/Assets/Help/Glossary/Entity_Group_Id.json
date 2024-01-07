@@ -1,0 +1,10 @@
+{
+    "Title": "Entity Group Id",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "A secondary entity id which can be used to manage multiple entities at once,",
+        "in EMEVD instructions which support it"
+    ]
+}

@@ -1,0 +1,7 @@
+<class name='hknpBridgeConstraintAtom' version='1' signature='0x929fbcb8' size='24' parent='hkpConstraintAtom'>
+  <members>
+    <member name='numSolverResults' offset='4' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraintData' offset='8' ctype='hkpConstraintData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='16' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='4' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

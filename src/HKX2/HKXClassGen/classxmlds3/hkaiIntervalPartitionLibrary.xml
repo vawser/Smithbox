@@ -1,0 +1,6 @@
+<class name='hkaiIntervalPartitionLibrary' version='1' signature='0xace645c' size='32'>
+  <members>
+    <member name='data' offset='0' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='partitionRecords' offset='16' ctype='hkaiIntervalPartitionLibraryPartitionRecord' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,85 @@
+2010 Illegal Entry
+2020 Attack the Dam Complex
+2025 Attack the Dam Complex (ALT)
+2030 Operation Wallclimber
+2050 Attack the Watchpoint
+2055 Attack the Watchpoint (ALT)
+2060 Investigate BAWS Arsenal No. 2
+2080 Destroy the Weaponized Mining Ship
+2100 Retrieve Combat Logs
+2120 Infiltrate Grid 086
+2140 Prisoner Rescue
+2170 Eliminate V.VII
+2180 Ocean Crossing
+2200 Obstruct the Mandatory Inspection
+2211 Coral Export Denial
+2220 Heavy Missile Launch Support
+2230 Stop the Secret Data Breach
+2240 Defend the Dam Complex
+2250 Escort the Weaponized Mining Ship
+3011 Steal the Survey Data
+3030 Attack the Refueling Base
+3043 Attack the Old Spaceport
+3230 Destroy the Ice Worm
+3320 Eliminate "Honest" Brute
+3420 Tunnel Sabotage
+3430 Destroy the Special Forces Craft
+3500 Historic Data Recovery
+4000 Underground Exploration - Depth 1
+4010 Underground Exploration - Depth 2
+4015 Underground Exploration - Depth 2 (ALT)
+4020 Underground Exploration - Depth 3
+4021 Unknown Territory Survey
+4026 Unknown Territory Survey (ALT)
+4030 Reach the Coral Convergence
+4035 Reach the Coral Convergence (ALT)
+4100 MIA
+4110 Ambush the Vespers
+4200 Escape
+5010 Take the Uninhabited Floating City
+5020 Intercept the Corporate Forces
+5030 Destroy the Drive Block
+5040 Breach the Karman Line
+5050 Eliminate "Cinder" Carla
+5100 Survey the Uninhabited Floating City
+5105 Survey the Uninhabited Floating City (ALT)
+5110 Regain Control of the Xylem
+6000 Shut Down the Closure Satellites
+6010 Bring Down the Xylem
+6020 Coral Release
+7900 Destroy the Transport Helicopters
+7910 Prevent Corporate Salvage of New Tech
+7920 Grid 135 Cleanup
+7930 Intercept the Redguns
+7940 Eliminate V.III
+7950 Defend the Old Spaceport
+7960 Eliminate the Doser Faction
+7970 Destroy Artillery Installations
+7980 Destroy the Tester AC
+7990 Eliminate the Enforcement Squads
+9001 Garage
+9100 AC Test
+9200 Beginner Training 1: Basic Controls
+9201 Beginner Training 2: Combat Fundamentals
+9202 Intermediate Support 1: Assembling an AC
+9203 Intermediate Support 2: Reverse-Jointed ACs
+9204 Intermediate Support 3: Tetrapod ACs
+9205 Intermediate Support 4: Tank ACs
+9206 Advanced Mercenary Certification
+9400 Arena: Watchpoint Delta
+9401 Arena: Grid 086
+9402 Arena: Bona Dea Dunes
+9403 Arena: Contaminated City
+9404 Arena: The Wall
+9405 Arena: Jorgen Refueling Base
+9406 Arena: Upper Grid 086
+9407 Arena: Ice Worm Arena
+9408 Arena: AC Test
+9409 Arena: Simulation - Orange/Blue
+9410 Arena: Simulation - Green/Orange
+9411 Arena: Simulation - Red/Dark
+9412 Arena: BAWS Arsenal No. 2
+9413 Arena: Grid 012
+9414 Arena: Old Bertram Spaceport
+9415 Arena: Gallia Dam Complex
+9416 Arena: Xylem- the Floating City

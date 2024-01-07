@@ -1,0 +1,6 @@
+10000000 Bi-pedal Leg Part
+11000000 Reverse Joint Leg Part
+12000000 Tetrapod Leg Part
+13000000 Tank Leg Part: LG-022T BORNEMISSZA
+13100000 Tank Leg Part: VE-42B
+13200000 Tank Leg Part: EL-TL-11 FORTALEZA

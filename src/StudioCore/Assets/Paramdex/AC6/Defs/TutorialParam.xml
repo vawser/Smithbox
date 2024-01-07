@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>TUTORIAL_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="u8 menuType"></Field>
+    <Field Def="u8 triggerType"></Field>
+    <Field Def="u8 repeatType"></Field>
+    <Field Def="dummy8 pad1[1]"></Field>
+    <Field Def="u16 imageId"></Field>
+    <Field Def="dummy8 pad2[2]"></Field>
+    <Field Def="u32 unlockEventFlagId"></Field>
+    <Field Def="s32 textId"></Field>
+    <Field Def="f32 displayMinTime"></Field>
+    <Field Def="f32 displayTime"></Field>
+    <Field Def="s32 Unk0x1C"></Field>
+    <Field Def="s32 Unk0x20"></Field>
+    <Field Def="u8 UnkByte0x24"></Field>
+    <Field Def="u8 Unk0x25"></Field>
+    <Field Def="u8 Unk0x26"></Field>
+    <Field Def="u8 Unk0x27"></Field>
+    <Field Def="s32 Unk0x28"></Field>
+    <Field Def="s32 Unk0x2C"></Field>
+  </Fields>
+</PARAMDEF>

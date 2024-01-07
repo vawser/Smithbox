@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EQUIPMENT_LINEUP_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 equipId"></Field>
+    <Field Def="s32 purchasePrice"></Field>
+    <Field Def="s32 unlockFlag"></Field>
+    <Field Def="u8 equipCategory"></Field>
+    <Field Def="u8 Unk0x0D"></Field>
+    <Field Def="u8 Unk0x0E"></Field>
+    <Field Def="s8 UnkSbyte0x0F"></Field>
+    <Field Def="s32 logHunterRankUnlockValue"></Field>
+    <Field Def="s32 Unk0x14"></Field>
+    <Field Def="s32 Unk0x18"></Field>
+    <Field Def="s32 Unk0x1C"></Field>
+  </Fields>
+</PARAMDEF>

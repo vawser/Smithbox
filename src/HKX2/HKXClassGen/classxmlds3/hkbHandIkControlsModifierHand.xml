@@ -1,0 +1,7 @@
+<class name='hkbHandIkControlsModifierHand' version='1' signature='0x9c72e9e3' size='112'>
+  <members>
+    <member name='controlData' offset='0' ctype='hkbHandIkControlData' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='handIndex' offset='96' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enable' offset='100' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

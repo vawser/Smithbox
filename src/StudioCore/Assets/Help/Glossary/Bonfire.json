@@ -1,0 +1,15 @@
+{
+    "Title": "Bonfire",
+    "Tags": [
+        "Term",
+        "Grace"
+    ],
+    "Contents": [
+        "An in-game character you can interact with through ESD,",
+        "which has some special integration with spawn points, bonfire sitting,",
+        "and kindling/activation levels.",
+        "",
+        "Bonfires are registered in EMEVD.",
+        "Activating, naming, and warping between bonfires is defined in bonfire warp params."
+    ]
+}

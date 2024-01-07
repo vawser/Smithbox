@@ -1,0 +1,17 @@
+{
+    "Title": "Collision",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "An invisible polygonal surface in maps that is used by",
+        "the physics engine (Havok) for floors, walls, death planes,",
+        "and misc other interactions such as ledges in Sekiro.",
+        "",
+        "Is also referred to as a 'Hit'.",
+        "",
+        "AI navigation data (navmeshes) are associated with these.",
+        "They can be enabled and disabled using EMEVD scripting if",
+        "given an entity id."
+    ]
+}

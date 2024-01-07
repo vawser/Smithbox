@@ -1,0 +1,15 @@
+0 B0
+11 Inside the B1 cave
+12 boss room
+13 Near lava in B1 cave
+14 Lava in B1 cave very close
+15 B1In a narrow cave
+35 For poly drama (p60100
+39 For poly drama (p60200-c00-start
+40 For poly drama (p60200-c00-A
+41 For poly drama (p60200-c00-B
+44 For poly drama (p60201-c00
+45 For poly drama (p60201-c01
+46 For poly drama (p60201-c02
+48 For poly drama (p60200-c01-Far
+49 For poly drama (p60200-c01-Near

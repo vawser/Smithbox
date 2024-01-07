@@ -1,0 +1,22 @@
+<class name='hkUiAttribute' version='1' signature='0xc55346c1' size='40'>
+  <enums>
+    <enum name='HideCriteria' flags='00000000'>
+      <enumitem name='NONE' value='0'/>
+      <enumitem name='MODELER_IS_MAX' value='1'/>
+      <enumitem name='MODELER_IS_MAYA' value='2'/>
+      <enumitem name='UI_SCHEME_IS_DESTRUCTION' value='4'/>
+      <enumitem name='UI_SCHEME_IS_DESTRUCTION_2012' value='8'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='visible' offset='0' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='editable' offset='1' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hideCriteria' offset='2' etype='HideCriteria' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='label' offset='8' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='group' offset='16' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='hideBaseClassMembers' offset='24' vtype='TYPE_CSTRING' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endGroup' offset='32' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endGroup2' offset='33' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='advanced' offset='34' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

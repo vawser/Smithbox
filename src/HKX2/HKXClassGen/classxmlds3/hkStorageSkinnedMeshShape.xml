@@ -1,0 +1,9 @@
+<class name='hkStorageSkinnedMeshShape' version='1' signature='0xe648a6ae' size='88' parent='hkSkinnedMeshShape'>
+  <members>
+    <member name='bonesBuffer' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneSets' offset='32' ctype='hkSkinnedMeshShapeBoneSet' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneSections' offset='48' ctype='hkSkinnedMeshShapeBoneSection' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='parts' offset='64' ctype='hkSkinnedMeshShapePart' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='80' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

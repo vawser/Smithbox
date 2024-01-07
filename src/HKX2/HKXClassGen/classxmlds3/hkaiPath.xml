@@ -1,0 +1,19 @@
+<class name='hkaiPath' version='1' signature='0x8b3cb0fd' size='40' parent='hkReferencedObject'>
+  <enums>
+    <enum name='PathPointBits' flags='00000000'>
+      <enumitem name='EDGE_TYPE_USER_START' value='1'/>
+      <enumitem name='EDGE_TYPE_USER_END' value='2'/>
+      <enumitem name='EDGE_TYPE_SEGMENT_START' value='4'/>
+      <enumitem name='EDGE_TYPE_SEGMENT_END' value='8'/>
+    </enum>
+    <enum name='ReferenceFrame' flags='00000000'>
+      <enumitem name='REFERENCE_FRAME_WORLD' value='0'/>
+      <enumitem name='REFERENCE_FRAME_SECTION_LOCAL' value='1'/>
+      <enumitem name='REFERENCE_FRAME_SECTION_FIXED' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='points' offset='16' ctype='hkaiPathPathPoint' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='referenceFrame' offset='32' etype='ReferenceFrame' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

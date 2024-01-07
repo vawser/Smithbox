@@ -1,0 +1,9 @@
+0 Default -- デフォルト
+1 Stairs / slopes -- 階段・斜面
+2 Without camera -- カメラ抜き
+3 Absolutely climb -- 絶対上る
+4 Can&#39;t ride -- 乗れない
+5 I can&#39;t ride without the camera -- カメラ抜き＆乗れない
+6 Steep slope -- 急斜面
+7 Deep waterside -- 深い水辺
+8 Objects that can be ridden -- 乗れるオブジェ

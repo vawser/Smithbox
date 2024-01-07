@@ -1,0 +1,17 @@
+<class name='hkcdPlanarSolid' version='1' signature='0x1828ba3' size='48' parent='hkcdPlanarEntity'>
+  <enums>
+    <enum name='NodeTypes' flags='00000000'>
+      <enumitem name='NODE_TYPE_INTERNAL' value='0'/>
+      <enumitem name='NODE_TYPE_IN' value='1'/>
+      <enumitem name='NODE_TYPE_OUT' value='2'/>
+      <enumitem name='NODE_TYPE_UNKNOWN' value='3'/>
+      <enumitem name='NODE_TYPE_INVALID' value='4'/>
+      <enumitem name='NODE_TYPE_FREE' value='15'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='nodes' offset='24' ctype='hkcdPlanarSolidNodeStorage' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='planes' offset='32' ctype='hkcdPlanarGeometryPlanesCollection' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rootNodeId' offset='40' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

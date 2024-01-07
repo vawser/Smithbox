@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>DEPTH_LINE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="f32 UnkFloat0x00"></Field>
+    <Field Def="f32 UnkFloat0x04"></Field>
+    <Field Def="f32 UnkFloat0x08"></Field>
+    <Field Def="f32 UnkFloat0x0C"></Field>
+    <Field Def="f32 UnkFloat0x10"></Field>
+    <Field Def="f32 UnkFloat0x14"></Field>
+    <Field Def="u16 UnkUshort0x18"></Field>
+    <Field Def="u8 UnkByte0x1A"></Field>
+    <Field Def="u8 Unk0x1B"></Field>
+    <Field Def="u8 UnkByte0x1C"></Field>
+    <Field Def="u8 UnkByte0x1D"></Field>
+    <Field Def="u8 UnkByte0x1E"></Field>
+    <Field Def="u8 UnkByte0x1F"></Field>
+    <Field Def="f32 Unk0x20"></Field>
+    <Field Def="f32 Unk0x24"></Field>
+    <Field Def="f32 Unk0x28"></Field>
+    <Field Def="f32 Unk0x2C"></Field>
+    <Field Def="f32 Unk0x30"></Field>
+    <Field Def="f32 Unk0x34"></Field>
+    <Field Def="f32 Unk0x38"></Field>
+    <Field Def="f32 Unk0x3C"></Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0" >
+  <Field>
+    <midstSfxId Wiki="ID of ffx to use while effect is active" />
+    <midstSeId Wiki="ID of sound to use while effect is active" />
+    <initSfxId Wiki="ID of ffx to use when effect is first added" />
+    <initSeId Wiki="ID of sound to use when effect is first added" />
+    <finishSfxId Wiki="ID of ffx to use when effect is removed" />
+    <finishSeId Wiki=" 	ID of sound to use when effect is removed" />
+    <camouflageBeginDist />
+    <camouflageEndDist />
+    <transformProtectorId />
+    <midstDmyId Wiki="ID of DummyPoly to use for while effect is active FFX" />
+    <initDmyId Wiki="ID of DummyPoly to use for when effect is first added FFX" />
+    <finishDmyId Wiki="ID of DummyPoly to use for when effect is removed FFX" />
+    <effectType />
+    <soulParamIdForWepEnchant />
+    <playCategory />
+    <playPriority />
+    <existEffectForLarge IsBool="" Wiki="Offsets FFX ID according to target's NpcParam sfxSize." />
+    <existEffectForSoul IsBool="" />
+    <effectInvisibleAtCamouflage IsBool="" />
+    <useCamouflage IsBool="" />
+    <invisibleAtFriendCamouflage IsBool="" />
+    <addMapAreaBlockOffset IsBool="" />
+    <halfCamouflage IsBool="" />
+    <isFullBodyTransformProtectorId IsBool="" />
+    <isInvisibleWeapon IsBool="" Wiki="Makes right weapon invisible (hidden weapon sorcery)" />
+    <isSilence IsBool="" Wiki="Makes effect owner produce no sound (Hush sorcery, Slumbering Dragoncrest Ring)" />
+  </Field>
+  <Self Row0Dummy="" />
+</PARAMMETA>

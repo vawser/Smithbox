@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <EnemyBehaviorID AltName="EnemyBehaviorID" />
+    <HP AltName="HP" />
+    <AttackPower AltName="AttackPower" />
+    <ChrType AltName="ChrType" />
+    <HitHeight AltName="HitHeight" />
+    <HitRadius AltName="HitRadius" />
+    <Weight AltName="Weight" />
+    <DynamicFriction AltName="DynamicFriction" />
+    <StaticFriction AltName="StaticFriction" />
+    <UpperDefState AltName="UpperDefState" />
+    <ActionDefState AltName="ActionDefState" />
+    <RotY_per_Second AltName="RotY_per_Second" />
+    <reserve0 AltName="reserve0" />
+    <RotY_per_Second_old AltName="RotY_per_Second_old" />
+    <EnableSideStep AltName="EnableSideStep" />
+    <UseRagdollHit AltName="UseRagdollHit" />
+    <reserve_last AltName="reserve_last" />
+    <stamina AltName="stamina" />
+    <staminaRecover AltName="staminaRecover" />
+    <staminaConsumption AltName="staminaConsumption" />
+    <deffenct_Phys AltName="deffenct_Phys" />
+    <reserve_last2 AltName="reserve_last2" />
+  </Field>
+  <Self />
+</PARAMMETA>

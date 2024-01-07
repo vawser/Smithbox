@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <EventFlagId AltName="Event Flag ID" />
+    <ProgressId AltName="Progress ID" />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="Game Progress data - Handles progress event flags"/>
+</PARAMMETA>

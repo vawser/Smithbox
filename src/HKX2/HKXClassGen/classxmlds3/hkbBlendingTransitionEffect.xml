@@ -1,0 +1,37 @@
+<class name='hkbBlendingTransitionEffect' version='1' signature='0x14e54c5c' size='320' parent='hkbTransitionEffect'>
+  <enums>
+    <enum name='FlagBits' flags='00000000'>
+      <enumitem name='FLAG_NONE' value='0'/>
+      <enumitem name='FLAG_IGNORE_FROM_WORLD_FROM_MODEL' value='1'/>
+      <enumitem name='FLAG_SYNC' value='2'/>
+      <enumitem name='FLAG_IGNORE_TO_WORLD_FROM_MODEL' value='4'/>
+      <enumitem name='FLAG_IGNORE_TO_WORLD_FROM_MODEL_ROTATION' value='8'/>
+    </enum>
+    <enum name='EndMode' flags='00000000'>
+      <enumitem name='END_MODE_NONE' value='0'/>
+      <enumitem name='END_MODE_TRANSITION_UNTIL_END_OF_FROM_GENERATOR' value='1'/>
+      <enumitem name='END_MODE_CAP_DURATION_AT_END_OF_FROM_GENERATOR' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='duration' offset='168' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='toGeneratorStartTimeFraction' offset='172' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='176' etype='FlagBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endMode' offset='178' etype='EndMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='blendCurve' offset='179' etype='BlendCurve' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='alignmentBone' offset='180' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fromPos' offset='192' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='fromRot' offset='208' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='toPos' offset='224' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='toRot' offset='240' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='lastPos' offset='256' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='lastRot' offset='272' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='characterPoseAtBeginningOfTransition' offset='288' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeRemaining' offset='304' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeInTransition' offset='308' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='toGeneratorSelfTranstitionMode' offset='312' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='initializeCharacterPose' offset='313' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='alignThisFrame' offset='314' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='alignmentFinished' offset='315' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

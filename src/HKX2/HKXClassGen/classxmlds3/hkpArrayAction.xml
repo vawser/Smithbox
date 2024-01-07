@@ -1,0 +1,5 @@
+<class name='hkpArrayAction' version='1' signature='0x549859c1' size='64' parent='hkpAction'>
+  <members>
+    <member name='entities' offset='48' ctype='hkpEntity' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

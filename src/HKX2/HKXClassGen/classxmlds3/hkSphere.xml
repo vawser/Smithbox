@@ -1,0 +1,5 @@
+<class name='hkSphere' version='1' signature='0x143dff99' size='16'>
+  <members>
+    <member name='pos' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

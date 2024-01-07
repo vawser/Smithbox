@@ -1,0 +1,6 @@
+<class name='hkcdDynamicTreeCodec18' version='1' signature='0x7088a159' size='18'>
+  <members>
+    <member name='aabb' offset='0' ctype='hkAabbHalf' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='parent' offset='16' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

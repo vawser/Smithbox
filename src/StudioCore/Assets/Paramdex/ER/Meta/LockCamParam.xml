@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <camDistTarget AltName="Camera Target Distance" Wiki="Camera distance target" />
+    <rotRangeMinX AltName="Rotation Range - Min X" Wiki="Minimum X-axis rotation" />
+    <lockRotXShiftRatio AltName="Lock Rotation X - Shift Ratio" Wiki="Lock X rotation shift rate" />
+    <chrOrgOffset_Y AltName="Character Origin - Offset Z" Wiki="Character base point offset" />
+    <chrLockRangeMaxRadius AltName="Character Lock Range - Max Radius" Wiki="Maximum radius of character range" />
+    <camFovY AltName="Field of View - Vertical FOV" Wiki="Vertical angle of view" />
+    <chrLockRangeMaxRadius_forD AltName="Character Lock Range - Max Radius (Darkness)" Wiki="Lockable range of characters in dark places" />
+    <chrLockRangeMaxRadius_forPD AltName="Character Lock Range - Max Radius (Total Darkness)" Wiki="Character lockable range in total darkness" />
+    <closeMaxHeight AltName="Attack Capture - Upper Limit Height" Wiki="Automatic lock-on judgment height upper limit when non-lock-on is close" />
+    <closeMinHeight AltName="Attack Capture - Lower Limit Height" Wiki="Automatic lock-on judgment height lower limit when not locked on Proximity" />
+    <closeAngRange AltName="Attack Capture - Auto Acquisition - Angle Range Left" Wiki="Automatic lock-on judgment when non-lock-on Left / right angle [deg] Proximity" />
+    <closeMaxRadius AltName="Attack Capture - Auto Acquisition - Max Radius" Wiki="Automatic lock-on judgment distance when non-lock-on is close" />
+    <closeMaxRadius_forD AltName="Attack Capture - Auto Acquisition - Max Radius (Darkness)" Wiki="Automatic lock-on judgment distance at non-lock-on _ darkness proximity" />
+    <closeMaxRadius_forPD AltName="Attack Capture - Auto Acquisition - Max Radius (Total Darkness)" Wiki="Automatic lock-on when non-lock-on _ pitch black proximity" />
+    <bulletMaxRadius AltName="Attack Capture - Bullet - Max Radius" Wiki="Automatic lock-on judgment distance when non-lock-on bullet" />
+    <bulletMaxRadius_forD AltName="Attack Capture - Bullet - Max Radius (Dark)" Wiki="Automatic lock-on judgment distance at non-lock-on _ darkness bullet" />
+    <bulletMaxRadius_forPD AltName="Attack Capture - Bullet - Max Radius (Pitch Dark" Wiki="Automatic lock-on judgment distance at non-lock-on _ pitch black bullet" />
+    <bulletAngRange AltName="Attack Capture - Bullet - Angle Range Left/Right" Wiki="Automatic lock-on left / right angle when non-lock-on bullet" />
+    <lockTgtKeepTime AltName="Lock Target Keep Time" Wiki="Time to continue locking even if the lock condition is not met (disabled at 0.0)" />
+    <chrTransChaseRateForNormal AltName="Transition Chase Factor for Normal Character" Wiki="Normal character translation tracking rate (disabled at -1.0)" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

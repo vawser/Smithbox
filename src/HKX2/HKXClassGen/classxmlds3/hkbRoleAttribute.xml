@@ -1,0 +1,30 @@
+<class name='hkbRoleAttribute' version='1' signature='0xfecef669' size='4'>
+  <enums>
+    <enum name='Role' flags='00000000'>
+      <enumitem name='ROLE_DEFAULT' value='0'/>
+      <enumitem name='ROLE_FILE_NAME' value='1'/>
+      <enumitem name='ROLE_BONE_INDEX' value='2'/>
+      <enumitem name='ROLE_EVENT_ID' value='3'/>
+      <enumitem name='ROLE_VARIABLE_INDEX' value='4'/>
+      <enumitem name='ROLE_ATTRIBUTE_INDEX' value='5'/>
+      <enumitem name='ROLE_TIME' value='6'/>
+      <enumitem name='ROLE_SCRIPT' value='7'/>
+      <enumitem name='ROLE_LOCAL_FRAME' value='8'/>
+      <enumitem name='ROLE_BONE_ATTACHMENT' value='9'/>
+    </enum>
+    <enum name='RoleFlags' flags='00000000'>
+      <enumitem name='FLAG_NONE' value='0'/>
+      <enumitem name='FLAG_RAGDOLL' value='1'/>
+      <enumitem name='FLAG_NORMALIZED' value='2'/>
+      <enumitem name='FLAG_NOT_VARIABLE' value='4'/>
+      <enumitem name='FLAG_HIDDEN' value='8'/>
+      <enumitem name='FLAG_OUTPUT' value='16'/>
+      <enumitem name='FLAG_NOT_CHARACTER_PROPERTY' value='32'/>
+      <enumitem name='FLAG_CHAIN' value='64'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='role' offset='0' etype='Role' vtype='TYPE_ENUM' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='2' etype='RoleFlags' vtype='TYPE_FLAGS' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

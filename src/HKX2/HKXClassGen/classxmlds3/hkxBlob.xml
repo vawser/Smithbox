@@ -1,0 +1,5 @@
+<class name='hkxBlob' version='1' signature='0xe6055854' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='data' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

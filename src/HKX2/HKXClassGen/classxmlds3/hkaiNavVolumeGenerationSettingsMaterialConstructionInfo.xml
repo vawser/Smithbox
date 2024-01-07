@@ -1,0 +1,7 @@
+<class name='hkaiNavVolumeGenerationSettingsMaterialConstructionInfo' version='1' signature='0x4cb286ee' size='12'>
+  <members>
+    <member name='materialIndex' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='flags' offset='4' etype='MaterialFlagsBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='resolution' offset='8' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

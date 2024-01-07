@@ -1,0 +1,5 @@
+<class name='hkpDisableEntityCollisionFilter' version='1' signature='0xf743ef9c' size='96' parent='hkpCollisionFilter'>
+  <members>
+    <member name='disabledEntities' offset='80' ctype='hkpEntity' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

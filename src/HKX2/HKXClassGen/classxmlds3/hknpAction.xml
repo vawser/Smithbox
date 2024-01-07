@@ -1,0 +1,11 @@
+<class name='hknpAction' version='1' signature='0x2a292922' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Result' flags='00000000'>
+      <enumitem name='RESULT_OK' value='0'/>
+      <enumitem name='RESULT_REMOVE' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='userData' offset='16' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,22 @@
+<class name='hkaiNavMeshSimplificationUtilsExtraVertexSettings' version='1' signature='0xe4afcb2d' size='56'>
+  <enums>
+    <enum name='VertexSelectionMethod' flags='00000000'>
+      <enumitem name='PROPORTIONAL_TO_AREA' value='0'/>
+      <enumitem name='PROPORTIONAL_TO_VERTICES' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='vertexSelectionMethod' offset='0' etype='VertexSelectionMethod' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertexFraction' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='areaFraction' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minPartitionArea' offset='12' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numSmoothingIterations' offset='16' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='iterationDamping' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='addVerticesOnBoundaryEdges' offset='24' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='addVerticesOnPartitionBorders' offset='25' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boundaryEdgeSplitLength' offset='28' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='partitionBordersSplitLength' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userVertexOnBoundaryTolerance' offset='36' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userVertices' offset='40' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

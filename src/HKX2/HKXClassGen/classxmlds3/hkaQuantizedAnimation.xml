@@ -1,0 +1,7 @@
+<class name='hkaQuantizedAnimation' version='1' signature='0x3158d9ce' size='88' parent='hkaAnimation'>
+  <members>
+    <member name='data' offset='56' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endian' offset='72' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skeleton' offset='80' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

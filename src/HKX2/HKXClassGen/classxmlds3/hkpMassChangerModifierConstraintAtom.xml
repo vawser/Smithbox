@@ -1,0 +1,6 @@
+<class name='hkpMassChangerModifierConstraintAtom' version='1' signature='0xc2179ee8' size='80' parent='hkpModifierConstraintAtom'>
+  <members>
+    <member name='factorA' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='factorB' offset='64' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

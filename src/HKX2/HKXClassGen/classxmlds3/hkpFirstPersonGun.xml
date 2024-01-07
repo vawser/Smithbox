@@ -1,0 +1,37 @@
+<class name='hkpFirstPersonGun' version='1' signature='0x595b1d82' size='56' parent='hkReferencedObject'>
+  <enums>
+    <enum name='Type' flags='00000000'>
+      <enumitem name='WEAPON_TYPE_INVALID' value='0'/>
+      <enumitem name='WEAPON_TYPE_BALLGUN' value='1'/>
+      <enumitem name='WEAPON_TYPE_GRENADEGUN' value='2'/>
+      <enumitem name='WEAPON_TYPE_GRAVITYGUN' value='3'/>
+      <enumitem name='WEAPON_TYPE_MOUNTEDBALLGUN' value='4'/>
+      <enumitem name='WEAPON_TYPE_TWEAKERGUN' value='5'/>
+      <enumitem name='WEAPON_TYPE_MISSILEGUN' value='6'/>
+      <enumitem name='WEAPON_TYPE_RAYCASTGUN' value='7'/>
+      <enumitem name='WEAPON_TYPE_SPHEREGUN' value='8'/>
+      <enumitem name='WEAPON_TYPE_STICKYGUN' value='9'/>
+      <enumitem name='WEAPON_TYPE_NUM_TYPES' value='10'/>
+    </enum>
+    <enum name='KeyboardKey' flags='00000000'>
+      <enumitem name='KEY_F1' value='112'/>
+      <enumitem name='KEY_F2' value='113'/>
+      <enumitem name='KEY_F3' value='114'/>
+      <enumitem name='KEY_F4' value='115'/>
+      <enumitem name='KEY_F5' value='116'/>
+      <enumitem name='KEY_F6' value='117'/>
+      <enumitem name='KEY_F7' value='118'/>
+      <enumitem name='KEY_F8' value='119'/>
+      <enumitem name='KEY_F9' value='120'/>
+      <enumitem name='KEY_F10' value='121'/>
+      <enumitem name='KEY_F11' value='122'/>
+      <enumitem name='KEY_F12' value='123'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='name' offset='24' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='keyboardKey' offset='32' etype='KeyboardKey' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='listeners' offset='40' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

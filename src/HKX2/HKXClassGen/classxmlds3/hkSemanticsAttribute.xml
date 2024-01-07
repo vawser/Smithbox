@@ -1,0 +1,15 @@
+<class name='hkSemanticsAttribute' version='1' signature='0x837099c3' size='1'>
+  <enums>
+    <enum name='Semantics' flags='00000000'>
+      <enumitem name='UNKNOWN' value='0'/>
+      <enumitem name='DISTANCE' value='1'/>
+      <enumitem name='ANGLE' value='2'/>
+      <enumitem name='NORMAL' value='3'/>
+      <enumitem name='POSITION' value='4'/>
+      <enumitem name='COSINE_ANGLE' value='5'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='0' etype='Semantics' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

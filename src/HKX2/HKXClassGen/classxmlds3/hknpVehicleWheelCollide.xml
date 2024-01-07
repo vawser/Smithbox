@@ -1,0 +1,19 @@
+<class name='hknpVehicleWheelCollide' version='1' signature='0x22fd4847' size='24' parent='hkReferencedObject'>
+  <enums>
+    <enum name='WheelCollideType' flags='00000000'>
+      <enumitem name='INVALID_WHEEL_COLLIDE' value='0'/>
+      <enumitem name='RAY_CAST_WHEEL_COLLIDE' value='1'/>
+      <enumitem name='LINEAR_CAST_WHEEL_COLLIDE' value='2'/>
+      <enumitem name='USER_WHEEL_COLLIDE1' value='3'/>
+      <enumitem name='USER_WHEEL_COLLIDE2' value='4'/>
+      <enumitem name='USER_WHEEL_COLLIDE3' value='5'/>
+      <enumitem name='USER_WHEEL_COLLIDE4' value='6'/>
+      <enumitem name='USER_WHEEL_COLLIDE5' value='7'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='alreadyUsed' offset='16' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='type' offset='17' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='wheelCollisionFilterInfo' offset='20' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

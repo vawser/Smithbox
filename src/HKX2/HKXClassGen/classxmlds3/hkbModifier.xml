@@ -1,0 +1,6 @@
+<class name='hkbModifier' version='1' signature='0xc811e80c' size='88' parent='hkbNode'>
+  <members>
+    <member name='enable' offset='80' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padModifier' offset='81' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='3' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

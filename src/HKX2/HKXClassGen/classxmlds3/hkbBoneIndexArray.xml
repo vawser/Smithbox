@@ -1,0 +1,5 @@
+<class name='hkbBoneIndexArray' version='1' signature='0x3d26f425' size='64' parent='hkbBindable'>
+  <members>
+    <member name='boneIndices' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

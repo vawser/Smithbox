@@ -1,0 +1,2515 @@
+1000 Weapon without correction 
+1100 Kukri
+1200 Throwing Knife / Church Guardian Shiv
+1300 Poison Throwing Knife
+1400 Firebomb
+1500 Lightning Urn
+1600 TestData4
+1700 Black Firebomb
+1800 Dung Pie
+1900 Dragon Head Stone
+2000 Dragon Torso Stone
+2100 Ritual Spear Fragment / Divine Spear Fragment
+91000 (Load Check) memory Check 1 
+91100 (Load Check) memory Check 1 
+92000 (Load check) memory Check 2 
+92100 (Load check) memory Check 2 
+93000 (Load Check) memory Check 3 
+93100 (Load Check) memory Check 3 
+94000 (Load Check) memory check 4 
+94100 (Load Check) memory check 4 
+95000 (Load Check) memory Check 5 
+95100 (Load Check) memory Check 5 
+96000 (Load Check) memory Check 6 
+96100 (Load Check) memory Check 6 
+98000 (Load Check) Quiver 1 
+98100 (Load Check) Quiver 2 
+98200 (Load Check) Quiver 3 
+98300 (Load Check) Quiver 4 
+98400 (Load Check) Quiver 5 
+98500 (Load Check) Quiver 6 
+98600 (Load check) bolt cylinder 1 
+98700 (Load check) bolt cylinder 2 
+98800 (Load check) bolt cylinder 3 
+98900 (Load check) bolt cylinder 4 
+99000 (Load check) bolt cylinder 5 
+99100 (Load check) bolt cylinder 6 
+110000 Fists
+400000 Standard Arrow
+400100 Fire Arrow
+400200 Poison Arrow
+400300 Large Arrow
+400400 Feather Arrow
+400500 Moonlight Arrow
+400600 Wood Arrow
+400700 Dark Arrow
+402000 Dragonslayer Greatarrow
+402200 Dragonslayer Lightning Arrow
+402300 Onislayer Greatarrow
+402400 Millwood Greatarrow
+404000 Standard Bolt
+404100 Heavy Bolt
+404200 Sniper Bolt
+404300 Wood Bolt
+404400 Lightning Bolt
+404500 Splintering Bolt
+404600 Exploding Bolt
+409900 TestData Bolt1
+419900 TestData Bolt2
+800000 Test Greatbow
+890000 Test-Glow
+890010 Test-Glow +10
+890020 Test-Glow +20
+890030 Test-Glow +30
+890040 Test-Glow +40
+890050 Test-Glow +50
+890060 Test-Glow +60
+890070 Test-Glow +70
+930000 Ghost Dagger
+930100 Ghost Sword
+930200 Ghost Longsword
+930300 Ghost Ultralongsword
+930310 Ghost Ultralongsword+10
+930400 Ghost Rapier
+930500 Ghost Curved Sword
+930600 Ghost Saber
+930700 Ghost Katana
+930800 Ghost Curved Greatsword
+930900 Ghost Axe
+931000 Ghost Greataxe
+931100 Ghos Club
+931200 Ghost Greatclub
+931300 Ghost Spear
+931400 Ghost Halberd
+931500 Ghost Scythe
+931600 Ghost Staff
+931700 Ghost Chime
+931800 Ghost Pyrohand
+931900 Ghost Whip
+932000 Ghost Bow
+932100 Ghost Greatbow
+932200 Ghost Arbalet
+932300 Ghost Fist
+932400 Ghost Caestus
+932500 Ghost Claw
+932600 Ghost PairedCurvedSwords
+932700 Ghost PairedAxes
+932800 Ghost PairedDaggers
+932900 Ghost PairedLongSwords
+933000 Ghost PairedKatanas
+933100 Ghost PairedSpears
+933200 Ghost DemonFist
+933300 Ghost Claw
+933400 Ghost PairedMace
+933600 Ghost SmallShield
+933610 Ghost SmallShield +10
+933700 Ghost Shield
+933710 Ghost Shield +10
+933800 Ghost GreatShield
+933900 Ghost Torch
+1000000 Dagger
+1000100 Heavy Dagger
+1000200 Sharp Dagger
+1000300 Refined Dagger
+1000400 Simple Dagger
+1000500 Crystal Dagger
+1000600 Fire Dagger
+1000700 Chaos Dagger
+1000800 Lightning Dagger
+1000900 Deep Dagger
+1001000 Dark Dagger
+1001100 Poison Dagger
+1001200 Blood Dagger
+1001300 Raw Dagger
+1001400 Blessed Dagger
+1001500 Hollow Dagger
+1010000 Bandit's Knife
+1010100 Heavy Bandit's Knife
+1010200 Sharp Bandit's Knife
+1010300 Refined Bandit's Knife
+1010400 Simple Bandit's Knife
+1010500 Crystal Bandit's Knife
+1010600 Fire Bandit's Knife
+1010700 Chaos Bandit's Knife
+1010800 Lightning Bandit's Knife
+1010900 Deep Bandit's Knife
+1011000 Dark Bandit's Knife
+1011100 Poison Bandit's Knife
+1011200 Blood Bandit's Knife
+1011300 Raw Bandit's Knife
+1011400 Blessed Bandit's Knife
+1011500 Hollow Bandit's Knife
+1020000 Parrying Dagger
+1020100 Heavy Parrying Dagger
+1020200 Sharp Parrying Dagger
+1020300 Refined Parrying Dagger
+1020400 Simple Parrying Dagger
+1020500 Crystal Parrying Dagger
+1020600 Fire Parrying Dagger
+1020700 Chaos Parrying Dagger
+1020800 Lightning Parrying Dagger
+1020900 Deep Parrying Dagger
+1021000 Dark Parrying Dagger
+1021100 Poison Parrying Dagger
+1021200 Blood Parrying Dagger
+1021300 Raw Parrying Dagger
+1021400 Blessed Parrying Dagger
+1021500 Hollow Parrying Dagger
+1040000 Rotten Ghru Dagger
+1040100 Heavy Rotten Ghru Dagger
+1040200 Sharp Rotten Ghru Dagger
+1040300 Refined Rotten Ghru Dagger
+1040400 Simple Rotten Ghru Dagger
+1040500 Crystal Rotten Ghru Dagger
+1040600 Fire Rotten Ghru Dagger
+1040700 Chaos Rotten Ghru Dagger
+1040800 Lightning Rotten Ghru Dagger
+1040900 Deep Rotten Ghru Dagger
+1041000 Dark Rotten Ghru Dagger
+1041100 Poison Rotten Ghru Dagger
+1041200 Blood Rotten Ghru Dagger
+1041300 Raw Rotten Ghru Dagger
+1041400 Blessed Rotten Ghru Dagger
+1041500 Hollow Rotten Ghru Dagger
+1060000 Harpe
+1060100 Heavy Harpe
+1060200 Sharp Harpe
+1060300 Refined Harpe
+1060400 Simple Harpe
+1060500 Crystal Harpe
+1060600 Fire Harpe
+1060700 Chaos Harpe
+1060800 Lightning Harpe
+1060900 Deep Harpe
+1061000 Dark Harpe
+1061100 Poison Harpe
+1061200 Blood Harpe
+1061300 Raw Harpe
+1061400 Blessed Harpe
+1061500 Hollow Harpe
+1070000 Scholar's Candlestick
+1080000 Tailbone Short Sword
+1090000 Corvian Greatknife
+1090100 Heavy Corvian Greatknife
+1090200 Sharp Corvian Greatknife
+1090300 Refined Corvian Greatknife
+1090400 Simple Corvian Greatknife
+1090500 Crystal Corvian Greatknife
+1090600 Fire Corvian Greatknife
+1090700 Chaos Corvian Greatknife
+1090800 Lightning Corvian Greatknife
+1090900 Deep Corvian Greatknife
+1091000 Dark Corvian Greatknife
+1091100 Poison Corvian Greatknife
+1091200 Blood Corvian Greatknife
+1091300 Raw Corvian Greatknife
+1091400 Blessed Corvian Greatknife
+1091500 Hollow Corvian Greatknife
+1120000 Handmaid's Dagger
+1140000 Aquamarine Dagger
+1150000 Murky Hand Scythe
+1150100 Heavy Murky Hand Scythe
+1150200 Sharp Murky Hand Scythe
+1150300 Refined Murky Hand Scythe
+1150400 Simple Murky Hand Scythe
+1150500 Crystal Murky Hand Scythe
+1150600 Fire Murky Hand Scythe
+1150700 Chaos Murky Hand Scythe
+1150800 Lightning Murky Hand Scythe
+1150900 Deep Murky Hand Scythe
+1151000 Dark Murky Hand Scythe
+1151100 Poison Murky Hand Scythe
+1151200 Blood Murky Hand Scythe
+1151300 Raw Murky Hand Scythe
+1151400 Blessed Murky Hand Scythe
+1151500 Hollow Murky Hand Scythe
+2000000 Shortsword
+2000100 Heavy Shortsword
+2000200 Sharp Shortsword
+2000300 Refined Shortsword
+2000400 Simple Shortsword
+2000500 Crystal Shortsword
+2000600 Fire Shortsword
+2000700 Chaos Shortsword
+2000800 Lightning Shortsword
+2000900 Deep Shortsword
+2001000 Dark Shortsword
+2001100 Poison Shortsword
+2001200 Blood Shortsword
+2001300 Raw Shortsword
+2001400 Blessed Shortsword
+2001500 Hollow Shortsword
+2010000 Long Sword
+2010100 Heavy Longsword
+2010200 Sharp Longsword
+2010300 Refined Longsword
+2010400 Simple Longsword
+2010500 Crystal Longsword
+2010600 Fire Longsword
+2010700 Chaos Longsword
+2010800 Lightning Longsword
+2010900 Deep Longsword
+2011000 Dark Longsword
+2011100 Poison Longsword
+2011200 Blood Longsword
+2011300 Raw Longsword
+2011400 Blessed Longsword
+2011500 Hollow Longsword
+2020000 Broadsword
+2020100 Heavy Broadsword
+2020200 Sharp Broadsword
+2020300 Refined Broadsword
+2020400 Simple Broadsword
+2020500 Crystal Broadsword
+2020600 Fire Broadsword
+2020700 Chaos Broadsword
+2020800 Lightning Broadsword
+2020900 Deep Broadsword
+2021000 Dark Broadsword
+2021100 Poison Broadsword
+2021200 Blood Broadsword
+2021300 Raw Broadsword
+2021400 Blessed Broadsword
+2021500 Hollow Broadsword
+2030000 Broken Straight Sword
+2030100 Broken Heavy Straight Sword
+2030200 Broken Sharp Straight Sword
+2030300 Broken Refined Straight Sword
+2030400 Broken Simple Straight Sword
+2030500 Broken Crystal Straight Sword
+2030600 Broken Fire Straight Sword
+2030700 Broken Chaos Straight Sword
+2030800 Broken Lightning Straight Sword
+2030900 Broken Deep Straight Sword
+2031000 Broken Dark Straight Sword
+2031100 Broken Poison Straight Sword
+2031200 Broken Blood Straight Sword
+2031300 Broken Raw Straight Sword
+2031400 Broken Blessed Straight Sword
+2031500 Broken Hollow Straight Sword
+2060000 Lothric Knight Sword
+2060100 Heavy Lothric Sword
+2060200 Sharp Lothric Sword
+2060300 Refined Lothric Sword
+2060400 Simple Lothric Sword
+2060500 Crystal Lothric Sword
+2060600 Fire Lothric Sword
+2060700 Chaos Lothric Sword
+2060800 Lightning Lothric Sword
+2060900 Deep Lothric Sword
+2061000 Dark Lothric Sword
+2061100 Poison Lothric Sword
+2061200 Blood Lothric Sword
+2061300 Raw Lothric Sword
+2061400 Blessed Lothric Sword
+2061500 Hollow Lothric Sword
+2110000 Sunlight Straight Sword
+2120000 Rotten Ghru Curved Sword
+2120100 Heavy Rotten Ghru Sword
+2120200 Sharp Rotten Ghru Sword
+2120300 Refined Rotten Ghru Sword
+2120400 Simple Rotten Ghru Sword
+2120500 Crystal Rotten Ghru Sword
+2120600 Fire Rotten Ghru Sword
+2120700 Chaos Rotten Ghru Sword
+2120800 Lightning Rotten Ghru Sword
+2120900 Deep Rotten Ghru Sword
+2121000 Dark Rotten Ghru Sword
+2121100 Poison Rotten Ghru Sword
+2121200 Blood Rotten Ghru Sword
+2121300 Raw Rotten Ghru Sword
+2121400 Blessed Rotten Ghru Sword
+2121500 Hollow Rotten Ghru Sword
+2140000 Irithyll Straight Sword
+2160000 Cleric's Candlestick
+2180000 Morion Blade
+2200000 Astora Straight Sword
+2200100 Heavy Astora Sword
+2200200 Sharp Astora Sword
+2200300 Refined Astora Sword
+2200400 Simple Astora Sword
+2200500 Crystal Astora Sword
+2200600 Fire Astora Sword
+2200700 Chaos Astora Sword
+2200800 Lightning Astora Sword
+2200900 Deep Astora Sword
+2201000 Dark Astora Sword
+2201100 Poison Astora Sword
+2201200 Blood Astora Sword
+2201300 Raw Astora Sword
+2201400 Blessed Astora Sword
+2201500 Hollow Astora Sword
+2210000 Barbed Straight Sword
+2210100 Heavy Barbed Sword
+2210200 Sharp Barbed Sword
+2210300 Refined Barbed Sword
+2210400 Simple Barbed Sword
+2210500 Crystal Barbed Sword
+2210600 Fire Barbed Sword
+2210700 Chaos Barbed Sword
+2210800 Lightning Barbed Sword
+2210900 Deep Barbed Sword
+2211000 Dark Barbed Sword
+2211100 Poison Barbed Sword
+2211200 Blood Barbed Sword
+2211300 Raw Barbed Sword
+2211400 Blessed Barbed Sword
+2211500 Hollow Barbed Sword
+2220000 Executioner's Greatsword
+2230000 Anri's Straight Sword
+2240000 Onyx Blade
+2250000 Ringed Knight Straight Sword
+2260000 Gael's Greatsword
+3000000 Estoc
+3000100 Heavy Estoc
+3000200 Sharp Estoc
+3000300 Refined Estoc
+3000400 Simple Estoc
+3000500 Crystal Estoc
+3000600 Fire Estoc
+3000700 Chaos Estoc
+3000800 Lightning Estoc
+3000900 Deep Estoc
+3001000 Dark Estoc
+3001100 Poison Estoc
+3001200 Blood Estoc
+3001300 Raw Estoc
+3001400 Blessed Estoc
+3001500 Hollow Estoc
+3010000 Mail Breaker
+3010100 Heavy Mail Breaker
+3010200 Sharp Mail Breaker
+3010300 Refined Mail Breaker
+3010400 Simple Mail Breaker
+3010500 Crystal Mail Breaker
+3010600 Fire Mail Breaker
+3010700 Chaos Mail Breaker
+3010800 Lightning Mail Breaker
+3010900 Deep Mail Breaker
+3011000 Dark Mail Breaker
+3011100 Poison Mail Breaker
+3011200 Blood Mail Breaker
+3011300 Raw Mail Breaker
+3011400 Blessed Mail Breaker
+3011500 Hollow Mail Breaker
+3020000 Rapier
+3020100 Heavy Rapier
+3020200 Sharp Rapier
+3020300 Refined Rapier
+3020400 Simple Rapier
+3020500 Crystal Rapier
+3020600 Fire Rapier
+3020700 Chaos Rapier
+3020800 Lightning Rapier
+3020900 Deep Rapier
+3021000 Dark Rapier
+3021100 Poison Rapier
+3021200 Blood Rapier
+3021300 Raw Rapier
+3021400 Blessed Rapier
+3021500 Hollow Rapier
+3030000 Ricard's Rapier
+3030100 Ricard's Heavy Rapier
+3030200 Ricard's Sharp Rapier
+3030300 Ricard's Refined Rapier
+3030400 Ricard's Simple Rapier
+3030500 Ricard's Crystal Rapier
+3030600 Ricard's Fire Rapier
+3030700 Ricard's Chaos Rapier
+3030800 Ricard's Lightning Rapier
+3030900 Ricard's Deep Rapier
+3031000 Ricard's Dark Rapier
+3031100 Ricard's Poison Rapier
+3031200 Ricard's Blood Rapier
+3031300 Ricard's Raw Rapier
+3031400 Ricard's Blessed Rapier
+3031500 Ricard's Hollow Rapier
+3040000 Crystal Sage's Rapier
+3050000 Irithyll Rapier
+4010000 Shotel
+4010100 Heavy Shotel
+4010200 Sharp Shotel
+4010300 Refined Shotel
+4010400 Simple Shotel
+4010500 Crystal Shotel
+4010600 Fire Shotel
+4010700 Chaos Shotel
+4010800 Lightning Shotel
+4010900 Deep Shotel
+4011000 Dark Shotel
+4011100 Poison Shotel
+4011200 Blood Shotel
+4011300 Raw Shotel
+4011400 Blessed Shotel
+4011500 Hollow Shotel
+4030000 Scimitar
+4030100 Heavy Scimitar
+4030200 Sharp Scimitar
+4030300 Refined Scimitar
+4030400 Simple Scimitar
+4030500 Crystal Scimitar
+4030600 Fire Scimitar
+4030700 Chaos Scimitar
+4030800 Lightning Scimitar
+4030900 Deep Scimitar
+4031000 Dark Scimitar
+4031100 Poison Scimitar
+4031200 Blood Scimitar
+4031300 Raw Scimitar
+4031400 Blessed Scimitar
+4031500 Hollow Scimitar
+4040000 Falchion
+4040100 Heavy Falchion
+4040200 Sharp Falchion
+4040300 Refined Falchion
+4040400 Simple Falchion
+4040500 Crystal Falchion
+4040600 Fire Falchion
+4040700 Chaos Falchion
+4040800 Lightning Falchion
+4040900 Deep Falchion
+4041000 Dark Falchion
+4041100 Poison Falchion
+4041200 Blood Falchion
+4041300 Raw Falchion
+4041400 Blessed Falchion
+4041500 Hollow Falchion
+4050000 Carthus Curved Sword
+4050100 Heavy Carthus Sword
+4050200 Sharp Carthus Sword
+4050300 Refined Carthus Sword
+4050400 Simple Carthus Sword
+4050500 Crystal Carthus Sword
+4050600 Fire Carthus Sword
+4050700 Chaos Carthus Sword
+4050800 Lightning Carthus Sword
+4050900 Deep Carthus Sword
+4051000 Dark Carthus Sword
+4051100 Poison Carthus Sword
+4051200 Blood Carthus Sword
+4051300 Raw Carthus Sword
+4051400 Blessed Carthus Sword
+4051500 Hollow Carthus Sword
+4060000 Carthus Curved Greatsword
+4060100 Heavy Carthus Greatsword
+4060200 Sharp Carthus Greatsword
+4060300 Refined Carthus Greatsword
+4060400 Simple Carthus Greatsword
+4060500 Crystal Carthus Greatsword
+4060600 Fire Carthus Greatsword
+4060700 Chaos Carthus Greatsword
+4060800 Lightning Carthus Greatsword
+4060900 Deep Carthus Greatsword
+4061000 Dark Carthus Greatsword
+4061100 Poison Carthus Greatsword
+4061200 Blood Carthus Greatsword
+4061300 Raw Carthus Greatsword
+4061400 Blessed Carthus Greatsword
+4061500 Hollow Carthus Greatsword
+4070000 Pontiff Knight Curved Sword
+4080000 Storm Curved Sword
+4090000 Painting Guardian's Curved Sword
+4090100 Painting Guardian's Heavy Sword
+4090200 Painting Guardian's Sharp Sword
+4090300 Painting Guardian's Refined Sword
+4090400 Painting Guardian's Simple Sword
+4090500 Painting Guardian's Crystal Sword
+4090600 Painting Guardian's Fire Sword
+4090700 Painting Guardian's Chaos Sword
+4090800 Painting Guardian's Lightning Sword
+4090900 Painting Guardian's Deep Sword
+4091000 Painting Guardian's Dark Sword
+4091100 Painting Guardian's Poison Sword
+4091200 Painting Guardian's Blood Sword
+4091300 Painting Guardian's Raw Sword
+4091400 Painting Guardian's Blessed Sword
+4091500 Painting Guardian's Hollow Sword
+4100000 Crescent Moon Sword
+4110000 Carthus Shotel
+4110100 Heavy Carthus Shotel
+4110200 Sharp Carthus Shotel
+4110300 Refined Carthus Shotel
+4110400 Simple Carthus Shotel
+4110500 Crystal Carthus Shotel
+4110600 Fire Carthus Shotel
+4110700 Chaos Carthus Shotel
+4110800 Lightning Carthus Shotel
+4110900 Deep Carthus Shotel
+4111000 Dark Carthus Shotel
+4111100 Poison Carthus Shotel
+4111200 Blood Carthus Shotel
+4111300 Raw Carthus Shotel
+4111400 Blessed Carthus Shotel
+4111500 Hollow Carthus Shotel
+4120000 Follower Sabre
+4120100 Heavy Follower Sabre
+4120200 Sharp Follower Sabre
+4120300 Refined Follower Sabre
+4120400 Simple Follower Sabre
+4120500 Crystal Follower Sabre
+4120600 Fire Follower Sabre
+4120700 Chaos Follower Sabre
+4120800 Lightning Follower Sabre
+4120900 Deep Follower Sabre
+4121000 Dark Follower Sabre
+4121100 Poison Follower Sabre
+4121200 Blood Follower Sabre
+4121300 Raw Follower Sabre
+4121400 Blessed Follower Sabre
+4121500 Hollow Follower Sabre
+4130000 Demon's Scar
+5000000 Uchigatana
+5000100 Heavy Uchigatana
+5000200 Sharp Uchigatana
+5000300 Refined Uchigatana
+5000400 Simple Uchigatana
+5000500 Crystal Uchigatana
+5000600 Fire Uchigatana
+5000700 Chaos Uchigatana
+5000800 Lightning Uchigatana
+5000900 Deep Uchigatana
+5001000 Dark Uchigatana
+5001100 Poison Uchigatana
+5001200 Blood Uchigatana
+5001300 Raw Uchigatana
+5001400 Blessed Uchigatana
+5001500 Hollow Uchigatana
+5010000 Washing Pole
+5010100 Heavy Washing Pole
+5010200 Sharp Washing Pole
+5010300 Refined Washing Pole
+5010400 Simple Washing Pole
+5010500 Crystal Washing Pole
+5010600 Fire Washing Pole
+5010700 Chaos Washing Pole
+5010800 Lightning Washing Pole
+5010900 Deep Washing Pole
+5011000 Dark Washing Pole
+5011100 Poison Washing Pole
+5011200 Blood Washing Pole
+5011300 Raw Washing Pole
+5011400 Blessed Washing Pole
+5011500 Hollow Washing Pole
+5020000 Chaos Blade
+5030000 Black Blade
+5030100 Heavy Black Blade
+5030200 Sharp Black Blade
+5030300 Refined Black Blade
+5030400 Simple Black Blade
+5030500 Crystal Black Blade
+5030600 Fire Black Blade
+5030700 Chaos Black Blade
+5030800 Lightning Black Blade
+5030900 Deep Black Blade
+5031000 Dark Black Blade
+5031100 Poison Black Blade
+5031200 Blood Black Blade
+5031300 Raw Black Blade
+5031400 Blessed Black Blade
+5031500 Hollow Black Blade
+5040000 Bloodlust
+5050000 Darkdrift
+5060000 Frayed Blade
+6000000 Bastard Sword
+6000100 Heavy Bastard Sword
+6000200 Sharp Bastard Sword
+6000300 Refined Bastard Sword
+6000400 Simple Bastard Sword
+6000500 Crystal Bastard Sword
+6000600 Fire Bastard Sword
+6000700 Chaos Bastard Sword
+6000800 Lightning Bastard Sword
+6000900 Deep Bastard Sword
+6001000 Dark Bastard Sword
+6001100 Poison Bastard Sword
+6001200 Blood Bastard Sword
+6001300 Raw Bastard Sword
+6001400 Blessed Bastard Sword
+6001500 Hollow Bastard Sword
+6020000 Claymore
+6020100 Heavy Claymore
+6020200 Sharp Claymore
+6020300 Refined Claymore
+6020400 Simple Claymore
+6020500 Crystal Claymore
+6020600 Fire Claymore
+6020700 Chaos Claymore
+6020800 Lightning Claymore
+6020900 Deep Claymore
+6021000 Dark Claymore
+6021100 Poison Claymore
+6021200 Blood Claymore
+6021300 Raw Claymore
+6021400 Blessed Claymore
+6021500 Hollow Claymore
+6040000 Zweihander
+6040100 Heavy Zweihander
+6040200 Sharp Zweihander
+6040300 Refined Zweihander
+6040400 Simple Zweihander
+6040500 Crystal Zweihander
+6040600 Fire Zweihander
+6040700 Chaos Zweihander
+6040800 Lightning Zweihander
+6040900 Deep Zweihander
+6041000 Dark Zweihander
+6041100 Poison Zweihander
+6041200 Blood Zweihander
+6041300 Raw Zweihander
+6041400 Blessed Zweihander
+6041500 Hollow Zweihander
+6050000 Greatsword
+6050100 Heavy Greatsword
+6050200 Sharp Greatsword
+6050300 Refined Greatsword
+6050400 Simple Greatsword
+6050500 Crystal Greatsword
+6050600 Fire Greatsword
+6050700 Chaos Greatsword
+6050800 Lightning Greatsword
+6050900 Deep Greatsword
+6051000 Dark Greatsword
+6051100 Poison Greatsword
+6051200 Blood Greatsword
+6051300 Raw Greatsword
+6051400 Blessed Greatsword
+6051500 Hollow Greatsword
+6070000 Astora Greatsword
+6070100 Heavy Astora Greatsword
+6070200 Sharp Astora Greatsword
+6070300 Refined Astora Greatsword
+6070400 Simple Astora Greatsword
+6070500 Crystal Astora Greatsword
+6070600 Fire Astora Greatsword
+6070700 Chaos Astora Greatsword
+6070800 Lightning Astora Greatsword
+6070900 Deep Astora Greatsword
+6071000 Dark Astora Greatsword
+6071100 Poison Astora Greatsword
+6071200 Blood Astora Greatsword
+6071300 Raw Astora Greatsword
+6071400 Blessed Astora Greatsword
+6071500 Hollow Astora Greatsword
+6080000 Murakumo
+6080100 Heavy Murakumo
+6080200 Sharp Murakumo
+6080300 Refined Murakumo
+6080400 Simple Murakumo
+6080500 Crystal Murakumo
+6080600 Fire Murakumo
+6080700 Chaos Murakumo
+6080800 Lightning Murakumo
+6080900 Deep Murakumo
+6081000 Dark Murakumo
+6081100 Poison Murakumo
+6081200 Blood Murakumo
+6081300 Raw Murakumo
+6081400 Blessed Murakumo
+6081500 Hollow Murakumo
+6100000 Lothric Knight Greatsword
+6100100 Heavy Lothric Greatsword
+6100200 Sharp Lothric Greatsword
+6100300 Refined Lothric Greatsword
+6100400 Simple Lothric Greatsword
+6100500 Crystal Lothric Greatsword
+6100600 Fire Lothric Greatsword
+6100700 Chaos Lothric Greatsword
+6100800 Lightning Lothric Greatsword
+6100900 Deep Lothric Greatsword
+6101000 Dark Lothric Greatsword
+6101100 Poison Lothric Greatsword
+6101200 Blood Lothric Greatsword
+6101300 Raw Lothric Greatsword
+6101400 Blessed Lothric Greatsword
+6101500 Hollow Lothric Greatsword
+6130000 Black Knight Greatsword
+6140000 Flamberge
+6140100 Heavy Flamberge
+6140200 Sharp Flamberge
+6140300 Refined Flamberge
+6140400 Simple Flamberge
+6140500 Crystal Flamberge
+6140600 Fire Flamberge
+6140700 Chaos Flamberge
+6140800 Lightning Flamberge
+6140900 Deep Flamberge
+6141000 Dark Flamberge
+6141100 Poison Flamberge
+6141200 Blood Flamberge
+6141300 Raw Flamberge
+6141400 Blessed Flamberge
+6141500 Hollow Flamberge
+6150000 Exile Greatsword
+6150100 Heavy Exile Greatsword
+6150200 Sharp Exile Greatsword
+6150300 Refined Exile Greatsword
+6150400 Simple Exile Greatsword
+6150500 Crystal Exile Greatsword
+6150600 Fire Exile Greatsword
+6150700 Chaos Exile Greatsword
+6150800 Lightning Exile Greatsword
+6150900 Deep Exile Greatsword
+6151000 Dark Exile Greatsword
+6151100 Poison Exile Greatsword
+6151200 Blood Exile Greatsword
+6151300 Raw Exile Greatsword
+6151400 Blessed Exile Greatsword
+6151500 Hollow Exile Greatsword
+6170000 Greatsword of Judgment
+6180000 Profaned Greatsword
+6190000 Cathedral Knight Greatsword
+6190100 Heavy Cathedral Greatsword
+6190200 Sharp Cathedral Greatsword
+6190300 Refined Cathedral Greatsword
+6190400 Simple Cathedral Greatsword
+6190500 Crystal Cathedral Greatsword
+6190600 Fire Cathedral Greatsword
+6190700 Chaos Cathedral Greatsword
+6190800 Lightning Cathedral Greatsword
+6190900 Deep Cathedral Greatsword
+6191000 Dark Cathedral Greatsword
+6191100 Poison Cathedral Greatsword
+6191200 Blood Cathedral Greatsword
+6191300 Raw Cathedral Greatsword
+6191400 Blessed Cathedral Greatsword
+6191500 Hollow Cathedral Greatsword
+6200000 Farron Greatsword
+6230000 Yhorm's Great Machete
+6240000 Dark Sword
+6240100 Heavy Dark Sword
+6240200 Sharp Dark Sword
+6240300 Refined Dark Sword
+6240400 Simple Dark Sword
+6240500 Crystal Dark Sword
+6240600 Fire Dark Sword
+6240700 Chaos Dark Sword
+6240800 Lightning Dark Sword
+6240900 Deep Dark Sword
+6241000 Reinforced Dark Sword
+6241100 Poison Dark Sword
+6241200 Blood Dark Sword
+6241300 Raw Dark Sword
+6241400 Blessed Dark Sword
+6241500 Hollow Dark Sword
+6250000 Black Knight Sword
+6260000 Lorian's Greatsword
+6270000 Twin Princes' Greatsword
+6280000 Lothric's Holy Sword
+6290000 Wolnir's Holy Sword
+6300000 Wolf Knight's Greatsword
+6310000 Hollowslayer Greatsword
+6320000 Moonlight Greatsword
+6330000 Drakeblood Greatsword
+6330100 Heavy Drakeblood Greatsword
+6330200 Sharp Drakeblood Greatsword
+6330300 Refined Drakeblood Greatsword
+6330400 Simple Drakeblood Greatsword
+6330500 Crystal Drakeblood Greatsword
+6330600 Fire Drakeblood Greatsword
+6330700 Chaos Drakeblood Greatsword
+6330800 Lightning Drakeblood Greatsword
+6330900 Deep Drakeblood Greatsword
+6331000 Dark Drakeblood Greatsword
+6331100 Poison Drakeblood Greatsword
+6331200 Blood Drakeblood Greatsword
+6331300 Raw Drakeblood Greatsword
+6331400 Blessed Drakeblood Greatsword
+6331500 Hollow Drakeblood Greatsword
+6340000 Firelink Greatsword
+6350000 Fume Ultra Greatsword
+6360000 Old Wolf Curved Sword
+6370000 Storm Ruler
+6380000 Harald Curved Greatsword
+6380100 Heavy Harald Curved Greatsword
+6380200 Sharp Harald Curved Greatsword
+6380300 Refined Harald Curved Greatsword
+6380400 Simple Harald Curved Greatsword
+6380500 Crystal Harald Curved Greatsword
+6380600 Fire Harald Curved Greatsword
+6380700 Chaos Harald Curved Greatsword
+6380800 Lightning Harald Curved Greatsword
+6380900 Deep Harald Curved Greatsword
+6381000 Dark Harald Curved Greatsword
+6381100 Poison Harald Curved Greatsword
+6381200 Blood Harald Curved Greatsword
+6381300 Raw Harald Curved Greatsword
+6381400 Blessed Harald Curved Greatsword
+6381500 Hollow Harald Curved Greatsword
+7000000 Hand Axe
+7000100 Heavy Hand Axe
+7000200 Sharp Hand Axe
+7000300 Refined Hand Axe
+7000400 Simple Hand Axe
+7000500 Crystal Hand Axe
+7000600 Fire Hand Axe
+7000700 Chaos Hand Axe
+7000800 Lightning Hand Axe
+7000900 Deep Hand Axe
+7001000 Dark Hand Axe
+7001100 Poison Hand Axe
+7001200 Blood Hand Axe
+7001300 Raw Hand Axe
+7001400 Blessed Hand Axe
+7001500 Hollow Hand Axe
+7010000 Battle Axe
+7010100 Heavy Battle Axe
+7010200 Sharp Battle Axe
+7010300 Refined Battle Axe
+7010400 Simple Battle Axe
+7010500 Crystal Battle Axe
+7010600 Fire Battle Axe
+7010700 Chaos Battle Axe
+7010800 Lightning Battle Axe
+7010900 Deep Battle Axe
+7011000 Dark Battle Axe
+7011100 Poison Battle Axe
+7011200 Blood Battle Axe
+7011300 Raw Battle Axe
+7011400 Blessed Battle Axe
+7011500 Hollow Battle Axe
+7020000 Brigand Axe
+7020100 Heavy Brigand Axe
+7020200 Sharp Brigand Axe
+7020300 Refined Brigand Axe
+7020400 Simple Brigand Axe
+7020500 Crystal Brigand Axe
+7020600 Fire Brigand Axe
+7020700 Chaos Brigand Axe
+7020800 Lightning Brigand Axe
+7020900 Deep Brigand Axe
+7021000 Dark Brigand Axe
+7021100 Poison Brigand Axe
+7021200 Blood Brigand Axe
+7021300 Raw Brigand Axe
+7021400 Blessed Brigand Axe
+7021500 Hollow Brigand Axe
+7040000 Crescent Axe
+7040100 Heavy Crescent Axe
+7040200 Sharp Crescent Axe
+7040300 Refined Crescent Axe
+7040400 Simple Crescent Axe
+7040500 Crystal Crescent Axe
+7040600 Fire Crescent Axe
+7040700 Chaos Crescent Axe
+7040800 Lightning Crescent Axe
+7040900 Deep Crescent Axe
+7041000 Dark Crescent Axe
+7041100 Poison Crescent Axe
+7041200 Blood Crescent Axe
+7041300 Raw Crescent Axe
+7041400 Blessed Crescent Axe
+7041500 Hollow Crescent Axe
+7050000 Greataxe
+7050100 Heavy Greataxe
+7050200 Sharp Greataxe
+7050300 Refined Greataxe
+7050400 Simple Greataxe
+7050500 Crystal Greataxe
+7050600 Fire Greataxe
+7050700 Chaos Greataxe
+7050800 Lightning Greataxe
+7050900 Deep Greataxe
+7051000 Dark Greataxe
+7051100 Poison Greataxe
+7051200 Blood Greataxe
+7051300 Raw Greataxe
+7051400 Blessed Greataxe
+7051500 Hollow Greataxe
+7070000 Butcher Knife
+7080000 Dragonslayer's Axe
+7080100 Heavy Dragonslayer's Axe
+7080200 Sharp Dragonslayer's Axe
+7080300 Refined Dragonslayer's Axe
+7080400 Simple Dragonslayer's Axe
+7080500 Crystal Dragonslayer's Axe
+7080600 Fire Dragonslayer's Axe
+7080700 Chaos Dragonslayer's Axe
+7080800 Lightning Dragonslayer's Axe
+7080900 Deep Dragonslayer's Axe
+7081000 Dark Dragonslayer's Axe
+7081100 Poison Dragonslayer's Axe
+7081200 Blood Dragonslayer's Axe
+7081300 Raw Dragonslayer's Axe
+7081400 Blessed Dragonslayer's Axe
+7081500 Hollow Dragonslayer's Axe
+7100000 Thrall Axe
+7100100 Heavy Thrall Axe
+7100200 Sharp Thrall Axe
+7100300 Refined Thrall Axe
+7100400 Simple Thrall Axe
+7100500 Crystal Thrall Axe
+7100600 Fire Thrall Axe
+7100700 Chaos Thrall Axe
+7100800 Lightning Thrall Axe
+7100900 Deep Thrall Axe
+7101000 Dark Thrall Axe
+7101100 Poison Thrall Axe
+7101200 Blood Thrall Axe
+7101300 Raw Thrall Axe
+7101400 Blessed Thrall Axe
+7101500 Hollow Thrall Axe
+7110000 Dragonslayer Greataxe
+7120000 Demon's Greataxe
+7130000 Eleonora
+7150000 Man Serpent Hatchet
+7150100 Heavy Serpent Hatchet
+7150200 Sharp Serpent Hatchet
+7150300 Refined Serpent Hatchet
+7150400 Simple Serpent Hatchet
+7150500 Crystal Serpent Hatchet
+7150600 Fire Serpent Hatchet
+7150700 Chaos Serpent Hatchet
+7150800 Lightning Serpent Hatchet
+7150900 Deep Serpent Hatchet
+7151000 Dark Serpent Hatchet
+7151100 Poison Serpent Hatchet
+7151200 Blood Serpent Hatchet
+7151300 Raw Serpent Hatchet
+7151400 Blessed Serpent Hatchet
+7151500 Hollow Serpent Hatchet
+7170000 Millwood Battle Axe
+7170100 Heavy Millwood Battle Axe
+7170200 Sharp Millwood Battle Axe
+7170300 Refined Millwood Battle Axe
+7170400 Simple Millwood Battle Axe
+7170500 Crystal Millwood Battle Axe
+7170600 Fire Millwood Battle Axe
+7170700 Chaos Millwood Battle Axe
+7170800 Lightning Millwood Battle Axe
+7170900 Deep Millwood Battle Axe
+7171000 Dark Millwood Battle Axe
+7171100 Poison Millwood Battle Axe
+7171200 Blood Millwood Battle Axe
+7171300 Raw Millwood Battle Axe
+7171400 Blessed Millwood Battle Axe
+7171500 Hollow Millwood Battle Axe
+7180000 Earth Seeker
+8000000 Club
+8000100 Heavy Club
+8000200 Sharp Club
+8000300 Refined Club
+8000400 Simple Club
+8000500 Crystal Club
+8000600 Fire Club
+8000700 Chaos Club
+8000800 Lightning Club
+8000900 Deep Club
+8001000 Dark Club
+8001100 Poison Club
+8001200 Blood Club
+8001300 Raw Club
+8001400 Blessed Club
+8001500 Hollow Club
+8010000 Mace
+8010100 Heavy Mace
+8010200 Sharp Mace
+8010300 Refined Mace
+8010400 Simple Mace
+8010500 Crystal Mace
+8010600 Fire Mace
+8010700 Chaos Mace
+8010800 Lightning Mace
+8010900 Deep Mace
+8011000 Dark Mace
+8011100 Poison Mace
+8011200 Blood Mace
+8011300 Raw Mace
+8011400 Blessed Mace
+8011500 Hollow Mace
+8020000 Morning Star
+8020100 Heavy Morning Star
+8020200 Sharp Morning Star
+8020300 Refined Morning Star
+8020400 Simple Morning Star
+8020500 Crystal Morning Star
+8020600 Fire Morning Star
+8020700 Chaos Morning Star
+8020800 Lightning Morning Star
+8020900 Deep Morning Star
+8021000 Dark Morning Star
+8021100 Poison Morning Star
+8021200 Blood Morning Star
+8021300 Raw Morning Star
+8021400 Blessed Morning Star
+8021500 Hollow Morning Star
+8030000 Reinforced Club
+8030100 Heavy Reinforced Club
+8030200 Sharp Reinforced Club
+8030300 Refined Reinforced Club
+8030400 Simple Reinforced Club
+8030500 Crystal Reinforced Club
+8030600 Fire Reinforced Club
+8030700 Chaos Reinforced Club
+8030800 Lightning Reinforced Club
+8030900 Deep Reinforced Club
+8031000 Dark Reinforced Club
+8031100 Poison Reinforced Club
+8031200 Blood Reinforced Club
+8031300 Raw Reinforced Club
+8031400 Blessed Reinforced Club
+8031500 Hollow Reinforced Club
+8060000 Large Club
+8060100 Heavy Large Club
+8060200 Sharp Large Club
+8060300 Refined Large Club
+8060400 Simple Large Club
+8060500 Crystal Large Club
+8060600 Fire Large Club
+8060700 Chaos Large Club
+8060800 Lightning Large Club
+8060900 Deep Large Club
+8061000 Dark Large Club
+8061100 Poison Large Club
+8061200 Blood Large Club
+8061300 Raw Large Club
+8061400 Blessed Large Club
+8061500 Hollow Large Club
+8080000 Great Club
+8080100 Heavy Great Club
+8080200 Sharp Great Club
+8080300 Refined Great Club
+8080400 Simple Great Club
+8080500 Crystal Great Club
+8080600 Fire Great Club
+8080700 Chaos Great Club
+8080800 Lightning Great Club
+8080900 Deep Great Club
+8081000 Dark Great Club
+8081100 Poison Great Club
+8081200 Blood Great Club
+8081300 Raw Great Club
+8081400 Blessed Great Club
+8081500 Hollow Great Club
+8110000 Great Mace
+8110100 Heavy Great Mace
+8110200 Sharp Great Mace
+8110300 Refined Great Mace
+8110400 Simple Great Mace
+8110500 Crystal Great Mace
+8110600 Fire Great Mace
+8110700 Chaos Great Mace
+8110800 Lightning Great Mace
+8110900 Deep Great Mace
+8111000 Dark Great Mace
+8111100 Poison Great Mace
+8111200 Blood Great Mace
+8111300 Raw Great Mace
+8111400 Blessed Great Mace
+8111500 Hollow Great Mace
+8160000 Great Wooden Hammer
+8160100 Heavy Wooden Hammer
+8160200 Sharp Wooden Hammer
+8160300 Refined Wooden Hammer
+8160400 Simple Wooden Hammer
+8160500 Crystal Wooden Hammer
+8160600 Fire Wooden Hammer
+8160700 Chaos Wooden Hammer
+8160800 Lightning Wooden Hammer
+8160900 Deep Wooden Hammer
+8161000 Dark Wooden Hammer
+8161100 Poison Wooden Hammer
+8161200 Blood Wooden Hammer
+8161300 Raw Wooden Hammer
+8161400 Blessed Wooden Hammer
+8161500 Hollow Wooden Hammer
+8170000 Gargoyle Flame Hammer
+8180000 Vordt's Great Hammer
+8190000 Old King's Great Hammer
+8220000 Heysel Pick
+8240000 Warpick
+8240100 Heavy Warpick
+8240200 Sharp Warpick
+8240300 Refined Warpick
+8240400 Simple Warpick
+8240500 Crystal Warpick
+8240600 Fire Warpick
+8240700 Chaos Warpick
+8240800 Lightning Warpick
+8240900 Deep Warpick
+8241000 Dark Warpick
+8241100 Poison Warpick
+8241200 Blood Warpick
+8241300 Raw Warpick
+8241400 Blessed Warpick
+8241500 Hollow Warpick
+8250000 Pickaxe
+8250100 Heavy Pickaxe
+8250200 Sharp Pickaxe
+8250300 Refined Pickaxe
+8250400 Simple Pickaxe
+8250500 Crystal Pickaxe
+8250600 Fire Pickaxe
+8250700 Chaos Pickaxe
+8250800 Lightning Pickaxe
+8250900 Deep Pickaxe
+8251000 Dark Pickaxe
+8251100 Poison Pickaxe
+8251200 Blood Pickaxe
+8251300 Raw Pickaxe
+8251400 Blessed Pickaxe
+8251500 Hollow Pickaxe
+8260000 Dragon Tooth
+8270000 Smough's Great Hammer
+8280000 Blacksmith Hammer
+8280100 Heavy Blacksmith Hammer
+8280200 Sharp Blacksmith Hammer
+8280300 Refined Blacksmith Hammer
+8280400 Simple Blacksmith Hammer
+8280500 Crystal Blacksmith Hammer
+8280600 Fire Blacksmith Hammer
+8280700 Chaos Blacksmith Hammer
+8280800 Lightning Blacksmith Hammer
+8280900 Deep Blacksmith Hammer
+8281000 Dark Blacksmith Hammer
+8281100 Poison Blacksmith Hammer
+8281200 Blood Blacksmith Hammer
+8281300 Raw Blacksmith Hammer
+8281400 Blessed Blacksmith Hammer
+8281500 Hollow Blacksmith Hammer
+8290000 Morne's Great Hammer
+8300000 Spiked Mace
+8300100 Heavy Spiked Mace
+8300200 Sharp Spiked Mace
+8300300 Refined Spiked Mace
+8300400 Simple Spiked Mace
+8300500 Crystal Spiked Mace
+8300600 Fire Spiked Mace
+8300700 Chaos Spiked Mace
+8300800 Lightning Spiked Mace
+8300900 Deep Spiked Mace
+8301000 Dark Spiked Mace
+8301100 Poison Spiked Mace
+8301200 Blood Spiked Mace
+8301300 Raw Spiked Mace
+8301400 Blessed Spiked Mace
+8301500 Hollow Spiked Mace
+8310000 Quakestone Hammer
+8320000 Ledo's Great Hammer
+9000000 Spear
+9000100 Heavy Spear
+9000200 Sharp Spear
+9000300 Refined Spear
+9000400 Simple Spear
+9000500 Crystal Spear
+9000600 Fire Spear
+9000700 Chaos Spear
+9000800 Lightning Spear
+9000900 Deep Spear
+9001000 Dark Spear
+9001100 Poison Spear
+9001200 Blood Spear
+9001300 Raw Spear
+9001400 Blessed Spear
+9001500 Hollow Spear
+9010000 Winged Spear
+9010100 Heavy Winged Spear
+9010200 Sharp Winged Spear
+9010300 Refined Winged Spear
+9010400 Simple Winged Spear
+9010500 Crystal Winged Spear
+9010600 Fire Winged Spear
+9010700 Chaos Winged Spear
+9010800 Lightning Winged Spear
+9010900 Deep Winged Spear
+9011000 Dark Winged Spear
+9011100 Poison Winged Spear
+9011200 Blood Winged Spear
+9011300 Raw Winged Spear
+9011400 Blessed Winged Spear
+9011500 Hollow Winged Spear
+9030000 Partizan
+9030100 Heavy Partizan
+9030200 Sharp Partizan
+9030300 Refined Partizan
+9030400 Simple Partizan
+9030500 Crystal Partizan
+9030600 Fire Partizan
+9030700 Chaos Partizan
+9030800 Lightning Partizan
+9030900 Deep Partizan
+9031000 Dark Partizan
+9031100 Poison Partizan
+9031200 Blood Partizan
+9031300 Raw Partizan
+9031400 Blessed Partizan
+9031500 Hollow Partizan
+9080000 Greatlance
+9080100 Heavy Greatlance
+9080200 Sharp Greatlance
+9080300 Refined Greatlance
+9080400 Simple Greatlance
+9080500 Crystal Greatlance
+9080600 Fire Greatlance
+9080700 Chaos Greatlance
+9080800 Lightning Greatlance
+9080900 Deep Greatlance
+9081000 Dark Greatlance
+9081100 Poison Greatlance
+9081200 Blood Greatlance
+9081300 Raw Greatlance
+9081400 Blessed Greatlance
+9081500 Hollow Greatlance
+9090000 Lothric Knight Long Spear
+9090100 Heavy Lothric Long Spear
+9090200 Sharp Lothric Long Spear
+9090300 Refined Lothric Long Spear
+9090400 Simple Lothric Long Spear
+9090500 Crystal Lothric Long Spear
+9090600 Fire Lothric Long Spear
+9090700 Chaos Lothric Long Spear
+9090800 Lightning Lothric Long Spear
+9090900 Deep Lothric Long Spear
+9091000 Dark Lothric Long Spear
+9091100 Poison Lothric Long Spear
+9091200 Blood Lothric Long Spear
+9091300 Raw Lothric Long Spear
+9091400 Blessed Lothric Long Spear
+9091500 Hollow Lothric Long Spear
+9100000 Four-Pronged Plow
+9100100 Heavy Four-Pronged Plow
+9100200 Sharp Four-Pronged Plow
+9100300 Refined Four-Pronged Plow
+9100400 Simple Four-Pronged Plow
+9100500 Crystal Four-Pronged Plow
+9100600 Fire Four-Pronged Plow
+9100700 Chaos Four-Pronged Plow
+9100800 Lightning Four-Pronged Plow
+9100900 Deep Four-Pronged Plow
+9101000 Dark Four-Pronged Plow
+9101100 Poison Four-Pronged Plow
+9101200 Blood Four-Pronged Plow
+9101300 Raw Four-Pronged Plow
+9101400 Blessed Four-Pronged Plow
+9101500 Hollow Four-Pronged Plow
+9110000 Gargoyle Flame Spear
+9120000 Rotten Ghru Spear
+9120100 Heavy Rotten Ghru Spear
+9120200 Sharp Rotten Ghru Spear
+9120300 Refined Rotten Ghru Spear
+9120400 Simple Rotten Ghru Spear
+9120500 Crystal Rotten Ghru Spear
+9120600 Fire Rotten Ghru Spear
+9120700 Chaos Rotten Ghru Spear
+9120800 Lightning Rotten Ghru Spear
+9120900 Deep Rotten Ghru Spear
+9121000 Dark Rotten Ghru Spear
+9121100 Poison Rotten Ghru Spear
+9121200 Blood Rotten Ghru Spear
+9121300 Raw Rotten Ghru Spear
+9121400 Blessed Rotten Ghru Spear
+9121500 Hollow Rotten Ghru Spear
+9130000 Tailbone Spear
+9140000 Soldering Iron
+9160000 Dragonslayer Swordspear
+9170000 Arstor's Spear
+9180000 Saint Bident
+9180100 Heavy Saint Bident
+9180200 Sharp Saint Bident
+9180300 Refined Saint Bident
+9180400 Simple Saint Bident
+9180500 Crystal Saint Bident
+9180600 Fire Saint Bident
+9180700 Chaos Saint Bident
+9180800 Lightning Saint Bident
+9180900 Deep Saint Bident
+9181000 Dark Saint Bident
+9181100 Poison Saint Bident
+9181200 Blood Saint Bident
+9181300 Raw Saint Bident
+9181400 Blessed Saint Bident
+9181500 Hollow Saint Bident
+9190000 Yorshka's Spear
+9200000 Pike
+9200100 Heavy Pike
+9200200 Sharp Pike
+9200300 Refined Pike
+9200400 Simple Pike
+9200500 Crystal Pike
+9200600 Fire Pike
+9200700 Chaos Pike
+9200800 Lightning Pike
+9200900 Deep Pike
+9201000 Dark Pike
+9201100 Poison Pike
+9201200 Blood Pike
+9201300 Raw Pike
+9201400 Blessed Pike
+9201500 Hollow Pike
+9220000 Dragonslayer Spear
+9230000 Follower Javelin
+9230100 Heavy Follower Javelin
+9230200 Sharp Follower Javelin
+9230300 Refined Follower Javelin
+9230400 Simple Follower Javelin
+9230500 Crystal Follower Javelin
+9230600 Fire Follower Javelin
+9230700 Chaos Follower Javelin
+9230800 Lightning Follower Javelin
+9230900 Deep Follower Javelin
+9231000 Dark Follower Javelin
+9231100 Poison Follower Javelin
+9231200 Blood Follower Javelin
+9231300 Raw Follower Javelin
+9231400 Blessed Follower Javelin
+9231500 Hollow Follower Javelin
+9240000 Ringed Knight Spear
+9250000 Lothric War Banner
+9250100 Heavy Lothric War Banner
+9250200 Sharp Lothric War Banner
+9250300 Refined Lothric War Banner
+9250400 Simple Lothric War Banner
+9250500 Crystal Lothric War Banner
+9250600 Fire Lothric War Banner
+9250700 Chaos Lothric War Banner
+9250800 Lightning Lothric War Banner
+9250900 Deep Lothric War Banner
+9251000 Dark Lothric War Banner
+9251100 Poison Lothric War Banner
+9251200 Blood Lothric War Banner
+9251300 Raw Lothric War Banner
+9251400 Blessed Lothric War Banner
+9251500 Hollow Lothric War Banner
+9260000 Crucifix of the Mad King
+10000000 Great Scythe
+10000100 Heavy Great Scythe
+10000200 Sharp Great Scythe
+10000300 Refined Great Scythe
+10000400 Simple Great Scythe
+10000500 Crystal Great Scythe
+10000600 Fire Great Scythe
+10000700 Chaos Great Scythe
+10000800 Lightning Great Scythe
+10000900 Deep Great Scythe
+10001000 Dark Great Scythe
+10001100 Poison Great Scythe
+10001200 Blood Great Scythe
+10001300 Raw Great Scythe
+10001400 Blessed Great Scythe
+10001500 Hollow Great Scythe
+10010000 Lucerne
+10010100 Heavy Lucerne
+10010200 Sharp Lucerne
+10010300 Refined Lucerne
+10010400 Simple Lucerne
+10010500 Crystal Lucerne
+10010600 Fire Lucerne
+10010700 Chaos Lucerne
+10010800 Lightning Lucerne
+10010900 Deep Lucerne
+10011000 Dark Lucerne
+10011100 Poison Lucerne
+10011200 Blood Lucerne
+10011300 Raw Lucerne
+10011400 Blessed Lucerne
+10011500 Hollow Lucerne
+10020000 Glaive
+10020100 Heavy Glaive
+10020200 Sharp Glaive
+10020300 Refined Glaive
+10020400 Simple Glaive
+10020500 Crystal Glaive
+10020600 Fire Glaive
+10020700 Chaos Glaive
+10020800 Lightning Glaive
+10020900 Deep Glaive
+10021000 Dark Glaive
+10021100 Poison Glaive
+10021200 Blood Glaive
+10021300 Raw Glaive
+10021400 Blessed Glaive
+10021500 Hollow Glaive
+10030000 Halberd
+10030100 Heavy Halberd
+10030200 Sharp Halberd
+10030300 Refined Halberd
+10030400 Simple Halberd
+10030500 Crystal Halberd
+10030600 Fire Halberd
+10030700 Chaos Halberd
+10030800 Lightning Halberd
+10030900 Deep Halberd
+10031000 Dark Halberd
+10031100 Poison Halberd
+10031200 Blood Halberd
+10031300 Raw Halberd
+10031400 Blessed Halberd
+10031500 Hollow Halberd
+10050000 Black Knight Greataxe
+10070000 Pontiff Knight Great Scythe
+10080000 Great Corvian Scythe
+10080100 Heavy Corvian Scythe
+10080200 Sharp Corvian Scythe
+10080300 Refined Corvian Scythe
+10080400 Simple Corvian Scythe
+10080500 Crystal Corvian Scythe
+10080600 Fire Corvian Scythe
+10080700 Chaos Corvian Scythe
+10080800 Lightning Corvian Scythe
+10080900 Deep Corvian Scythe
+10081000 Dark Corvian Scythe
+10081100 Poison Corvian Scythe
+10081200 Blood Corvian Scythe
+10081300 Raw Corvian Scythe
+10081400 Blessed Corvian Scythe
+10081500 Hollow Corvian Scythe
+10090000 Winged Knight Halberd
+10090100 Heavy Winged Knight Halberd
+10090200 Sharp Winged Knight Halberd
+10090300 Refined Winged Knight Halberd
+10090400 Simple Winged Knight Halberd
+10090500 Crystal Winged Knight Halberd
+10090600 Fire Winged Knight Halberd
+10090700 Chaos Winged Knight Halberd
+10090800 Lightning Winged Knight Halberd
+10090900 Deep Winged Knight Halberd
+10091000 Dark Winged Knight Halberd
+10091100 Poison Winged Knight Halberd
+10091200 Blood Winged Knight Halberd
+10091300 Raw Winged Knight Halberd
+10091400 Blessed Winged Knight Halberd
+10091500 Hollow Winged Knight Halberd
+10100000 Gundyr's Halberd
+10140000 Red Hilted Halberd
+10140100 Heavy Red Halberd
+10140200 Sharp Red Halberd
+10140300 Refined Red Halberd
+10140400 Simple Red Halberd
+10140500 Crystal Red Halberd
+10140600 Fire Red Halberd
+10140700 Chaos Red Halberd
+10140800 Lightning Red Halberd
+10140900 Deep Red Halberd
+10141000 Dark Red Halberd
+10141100 Poison Red Halberd
+10141200 Blood Red Halberd
+10141300 Raw Red Halberd
+10141400 Blessed Red Halberd
+10141500 Hollow Red Halberd
+10150000 Black Knight Glaive
+10160000 Immolation Tinder
+10170000 Splitleaf Greatsword
+10170100 Heavy Splitleaf Greatsword
+10170200 Sharp Splitleaf Greatsword
+10170300 Refined Splitleaf Greatsword
+10170400 Simple Splitleaf Greatsword
+10170500 Crystal Splitleaf Greatsword
+10170600 Fire Splitleaf Greatsword
+10170700 Chaos Splitleaf Greatsword
+10170800 Lightning Splitleaf Greatsword
+10170900 Deep Splitleaf Greatsword
+10171000 Dark Splitleaf Greatsword
+10171100 Poison Splitleaf Greatsword
+10171200 Blood Splitleaf Greatsword
+10171300 Raw Splitleaf Greatsword
+10171400 Blessed Splitleaf Greatsword
+10171500 Hollow Splitleaf Greatsword
+10180000 Friede's Great Scythe
+11000000 Claw
+11000100 Heavy Claw
+11000200 Sharp Claw
+11000300 Skilled Claw
+11000400 Simple Claw
+11000500 Crystal Claw
+11000600 Fire Claw
+11000700 Chaos Claw
+11000800 Lightning Claw
+11000900 Deep Claw
+11001000 Dark Claw
+11001100 Poison Claw
+11001200 Blood Claw
+11001300 Raw Claw
+11001400 Blessed Claw
+11001500 Hollow Claw
+11010000 Caestus
+11010100 Heavy Caestus
+11010200 Sharp Caestus
+11010300 Skilled Caestus
+11010400 Simple Caestus
+11010500 Crystal Caestus
+11010600 Fire Caestus
+11010700 Chaos Caestus
+11010800 Lightning Caestus
+11010900 Deep Caestus
+11011000 Dark Caestus
+11011100 Poison Caestus
+11011200 Blood Caestus
+11011300 Raw Caestus
+11011400 Blessed Caestus
+11011500 Hollow Caestus
+11020000 Manikin Claws
+11020100 Heavy Manikin Claws
+11020200 Sharp Manikin Claws
+11020300 Skilled Manikin Claws
+11020400 Simple Manikin Claws
+11020500 Crystal Manikin Claws
+11020600 Fire Manikin Claws
+11020700 Chaos Manikin Claws
+11020800 Lightning Manikin Claws
+11020900 Deep Manikin Claws
+11021000 Dark Manikin Claws
+11021100 Poison Manikin Claws
+11021200 Blood Manikin Claws
+11021300 Raw Manikin Claws
+11021400 Blessed Manikin Claws
+11021500 Hollow Manikin Claws
+11030000 Demon's Fist
+11040000 Dark Hand
+11050000 Crow Talons
+11050100 Heavy Crow Talons
+11050200 Sharp Crow Talons
+11050300 Refined Crow Talons
+11050400 Simple Crow Talons
+11050500 Crystal Crow Talons
+11050600 Fire Crow Talons
+11050700 Chaos Crow Talons
+11050800 Lightning Crow Talons
+11050900 Deep Crow Talons
+11051000 Dark Crow Talons
+11051100 Poison Crow Talons
+11051200 Blood Crow Talons
+11051300 Raw Crow Talons
+11051400 Blessed Crow Talons
+11051500 Hollow Crow Talons
+12000000 Whip
+12000100 Heavy Whip
+12000200 Sharp Whip
+12000300 Skilled Whip
+12000400 Simple Whip
+12000500 Crystal Whip
+12000600 Fire Whip
+12000700 Chaos Whip
+12000800 Lightning Whip
+12000900 Deep Whip
+12001000 Dark Whip
+12001100 Poison Whip
+12001200 Blood Whip
+12001300 Raw Whip
+12001400 Blessed Whip
+12001500 Hollow Whip
+12040000 Witch's Locks
+12050000 Notched Whip
+12050100 Heavy Notched Whip
+12050200 Sharp Notched Whip
+12050300 Skilled Notched Whip
+12050400 Simple Notched Whip
+12050500 Crystal Notched Whip
+12050600 Fire Notched Whip
+12050700 Chaos Notched Whip
+12050800 Lightning Notched Whip
+12050900 Deep Notched Whip
+12051000 Dark Notched Whip
+12051100 Poison Notched Whip
+12051200 Blood Notched Whip
+12051300 Raw Notched Whip
+12051400 Blessed Notched Whip
+12051500 Hollow Notched Whip
+12060000 Spotted Whip
+12070000 Rose of Ariandel
+13050000 Talisman
+13060000 Sorcerer's Staff
+13070000 Storyteller's Staff
+13080000 Mendicant's Staff
+13100000 Man-grub's Staff
+13110000 Archdeacon's Great Staff
+13120000 Golden Ritual Spear
+13140000 Yorshka's Chime
+13160000 Sage's Crystal Staff
+13170000 Heretic's Staff
+13180000 Court Sorcerer's Staff
+13190000 Witchtree Branch
+13200000 Izalith Staff
+13210000 Cleric's Sacred Chime
+13220000 Priest's Chime
+13230000 Saint-tree Bellvine
+13240000 Caitha's Chime
+13250000 Crystal Chime
+13260000 Sunlight Talisman
+13270000 Canvas Talisman
+13280000 Sunless Talisman
+13290000 Saint's Talisman
+13300000 White Hair Talisman
+13400000 Pyromancy Flame
+13410000 Pyromancer's Parting Flame
+13420000 Murky Longstaff
+13430000 Sacred Chime of Filianore
+13440000 Preacher's Right Arm
+13600000 Dragonslayer Greatbow
+14010000 Short Bow
+14020000 Composite Bow
+14040000 Light Crossbow
+14050000 Arbalest
+14060000 Longbow
+14070000 Dragonrider Bow
+14090000 Avelyn
+14100000 Knight's Crossbow
+14110000 Heavy Crossbow
+14120000 White Birch Bow
+14130000 Darkmoon Longbow
+14140000 Onislayer Greatbow
+14150000 Black Bow of Pharis
+14170000 Sniper Crossbow
+14180000 Millwood Greatbow
+14190000 Repeating Crossbow
+16000000 Sellsword Twinblades
+16000100 Heavy Sellsword Twinblades
+16000200 Sharp Sellsword Twinblades
+16000300 Refined Sellsword Twinblades
+16000400 Simple Sellsword Twinblades
+16000500 Crystal Sellsword Twinblades
+16000600 Fire Sellsword Twinblades
+16000700 Chaos Sellsword Twinblades
+16000800 Lightning Sellsword Twinblades
+16000900 Deep Sellsword Twinblades
+16001000 Dark Sellsword Twinblades
+16001100 Poison Sellsword Twinblades
+16001200 Blood Sellsword Twinblades
+16001300 Raw Sellsword Twinblades
+16001400 Blessed Sellsword Twinblades
+16001500 Hollow Sellsword Twinblades
+16020000 Warden Twinblades
+16020100 Heavy Warden Twinblades
+16020200 Sharp Warden Twinblades
+16020300 Refined Warden Twinblades
+16020400 Simple Warden Twinblades
+16020500 Crystal Warden Twinblades
+16020600 Fire Warden Twinblades
+16020700 Chaos Warden Twinblades
+16020800 Lightning Warden Twinblades
+16020900 Deep Warden Twinblades
+16021000 Dark Warden Twinblades
+16021100 Poison Warden Twinblades
+16021200 Blood Warden Twinblades
+16021300 Raw Warden Twinblades
+16021400 Blessed Warden Twinblades
+16021500 Hollow Warden Twinblades
+16030000 Winged Knight Twinaxes
+16030100 Heavy Winged Knight Twinaxes
+16030200 Sharp Winged Knight Twinaxes
+16030300 Refined Winged Knight Twinaxes
+16030400 Simple Winged Knight Twinaxes
+16030500 Crystal Winged Knight Twinaxes
+16030600 Fire Winged Knight Twinaxes
+16030700 Chaos Winged Knight Twinaxes
+16030800 Lightning Winged Knight Twinaxes
+16030900 Deep Winged Knight Twinaxes
+16031000 Dark Winged Knight Twinaxes
+16031100 Poison Winged Knight Twinaxes
+16031200 Blood Winged Knight Twinaxes
+16031300 Raw Winged Knight Twinaxes
+16031400 Blessed Winged Knight Twinaxes
+16031500 Hollow Winged Knight Twinaxes
+16040000 Dancer's Enchanted Swords
+16050000 Great Machete
+16050100 Heavy Great Machete
+16050200 Sharp Great Machete
+16050300 Refined Great Machete
+16050400 Simple Great Machete
+16050500 Crystal Great Machete
+16050600 Fire Great Machete
+16050700 Chaos Great Machete
+16050800 Lightning Great Machete
+16050900 Deep Great Machete
+16051000 Dark Great Machete
+16051100 Poison Great Machete
+16051200 Blood Great Machete
+16051300 Raw Great Machete
+16051400 Blessed Great Machete
+16051500 Hollow Great Machete
+16060000 Brigand Twindaggers
+16060100 Heavy Brigand Twindaggers
+16060200 Sharp Brigand Twindaggers
+16060300 Refined Brigand Twindaggers
+16060400 Simple Brigand Twindaggers
+16060500 Crystal Brigand Twindaggers
+16060600 Fire Brigand Twindaggers
+16060700 Chaos Brigand Twindaggers
+16060800 Lightning Brigand Twindaggers
+16060900 Deep Brigand Twindaggers
+16061000 Dark Brigand Twindaggers
+16061100 Poison Brigand Twindaggers
+16061200 Blood Brigand Twindaggers
+16061300 Raw Brigand Twindaggers
+16061400 Blessed Brigand Twindaggers
+16061500 Hollow Brigand Twindaggers
+16070000 Gotthard Twinswords
+16070100 Heavy Gotthard Twinswords
+16070200 Sharp Gotthard Twinswords
+16070300 Refined Gotthard Twinswords
+16070400 Simple Gotthard Twinswords
+16070500 Crystal Gotthard Twinswords
+16070600 Fire Gotthard Twinswords
+16070700 Chaos Gotthard Twinswords
+16070800 Lightning Gotthard Twinswords
+16070900 Deep Gotthard Twinswords
+16071000 Dark Gotthard Twinswords
+16071100 Poison Gotthard Twinswords
+16071200 Blood Gotthard Twinswords
+16071300 Raw Gotthard Twinswords
+16071400 Blessed Gotthard Twinswords
+16071500 Hollow Gotthard Twinswords
+16090000 Onikiri and Ubadachi
+16090100 Heavy Onikiri and Ubadachi
+16090200 Sharp Onikiri and Ubadachi
+16090300 Refined Onikiri and Ubadachi
+16090400 Simple Onikiri and Ubadachi
+16090500 Crystal Onikiri and Ubadachi
+16090600 Fire Onikiri and Ubadachi
+16090700 Chaos Onikiri and Ubadachi
+16090800 Lightning Onikiri and Ubadachi
+16090900 Deep Onikiri and Ubadachi
+16091000 Dark Onikiri and Ubadachi
+16091100 Poison Onikiri and Ubadachi
+16091200 Blood Onikiri and Ubadachi
+16091300 Raw Onikiri and Ubadachi
+16091400 Blessed Onikiri and Ubadachi
+16091500 Hollow Onikiri and Ubadachi
+16100000 Drang Twinspears
+16100100 Heavy Drang Twinspears
+16100200 Sharp Drang Twinspears
+16100300 Refined Drang Twinspears
+16100400 Simple Drang Twinspears
+16100500 Crystal Drang Twinspears
+16100600 Fire Drang Twinspears
+16100700 Chaos Drang Twinspears
+16100800 Lightning Drang Twinspears
+16100900 Deep Drang Twinspears
+16101000 Dark Drang Twinspears
+16101100 Poison Drang Twinspears
+16101200 Blood Drang Twinspears
+16101300 Raw Drang Twinspears
+16101400 Blessed Drang Twinspears
+16101500 Hollow Drang Twinspears
+16120000 Giant Door Shield
+16120100 Heavy Giant Door Shield
+16120200 Sharp Giant Door Shield
+16120300 Refined Giant Door Shield
+16120400 Simple Giant Door Shield
+16120500 Crystal Giant Door Shield
+16120600 Fire Giant Door Shield
+16120700 Chaos Giant Door Shield
+16120800 Lightning Giant Door Shield
+16120900 Deep Giant Door Shield
+16121000 Dark Giant Door Shield
+16121100 Poison Giant Door Shield
+16121200 Blood Giant Door Shield
+16121300 Raw Giant Door Shield
+16121400 Blessed Giant Door Shield
+16121500 Hollow Giant Door Shield
+16130000 Drang Hammers
+16130100 Heavy Drang Hammers
+16130200 Sharp Drang Hammers
+16130300 Refined Drang Hammers
+16130400 Simple Drang Hammers
+16130500 Crystal Drang Hammers
+16130600 Fire Drang Hammers
+16130700 Chaos Drang Hammers
+16130800 Lightning Drang Hammers
+16130900 Deep Drang Hammers
+16131000 Dark Drang Hammers
+16131100 Poison Drang Hammers
+16131200 Blood Drang Hammers
+16131300 Raw Drang Hammers
+16131400 Blessed Drang Hammers
+16131500 Hollow Drang Hammers
+16140000 Valorheart
+16150000 Crow Quills
+16150100 Heavy Crow Quills
+16150200 Sharp Crow Quills
+16150300 Refined Crow Quills
+16150400 Simple Crow Quills
+16150500 Crystal Crow Quills
+16150600 Fire Crow Quills
+16150700 Chaos Crow Quills
+16150800 Lightning Crow Quills
+16150900 Deep Crow Quills
+16151000 Dark Crow Quills
+16151100 Poison Crow Quills
+16151200 Blood Crow Quills
+16151300 Raw Crow Quills
+16151400 Blessed Crow Quills
+16151500 Hollow Crow Quills
+16160000 Ringed Knight Paired Greatswords
+20000000 Buckler
+20000100 Heavy Buckler
+20000200 Sharp Buckler
+20000300 Refined Buckler
+20000400 Simple Buckler
+20000500 Crystal Buckler
+20000600 Fire Buckler
+20000700 Chaos Buckler
+20000800 Lightning Buckler
+20000900 Deep Buckler
+20001000 Dark Buckler
+20001100 Poison Buckler
+20001200 Blood Buckler
+20001300 Raw Buckler
+20001400 Blessed Buckler
+20001500 Hollow Buckler
+20010000 Small Leather Shield
+20010100 Heavy Small Leather Shield
+20010200 Sharp Small Leather Shield
+20010300 Refined Small Leather Shield
+20010400 Simple Small Leather Shield
+20010500 Crystal Small Leather Shield
+20010600 Fire Small Leather Shield
+20010700 Chaos Small Leather Shield
+20010800 Lightning Small Leather Shield
+20010900 Deep Small Leather Shield
+20011000 Dark Small Leather Shield
+20011100 Poison Small Leather Shield
+20011200 Blood Small Leather Shield
+20011300 Raw Small Leather Shield
+20011400 Blessed Small Leather Shield
+20011500 Hollow Small Leather Shield
+20030000 Round Shield
+20030100 Heavy Round Shield
+20030200 Sharp Round Shield
+20030300 Refined Round Shield
+20030400 Simple Round Shield
+20030500 Crystal Round Shield
+20030600 Fire Round Shield
+20030700 Chaos Round Shield
+20030800 Lightning Round Shield
+20030900 Deep Round Shield
+20031000 Dark Round Shield
+20031100 Poison Round Shield
+20031200 Blood Round Shield
+20031300 Raw Round Shield
+20031400 Blessed Round Shield
+20031500 Hollow Round Shield
+20040000 Large Leather Shield
+20040100 Heavy Large Leather Shield
+20040200 Sharp Large Leather Shield
+20040300 Refined Large Leather Shield
+20040400 Simple Large Leather Shield
+20040500 Crystal Large Leather Shield
+20040600 Fire Large Leather Shield
+20040700 Chaos Large Leather Shield
+20040800 Lightning Large Leather Shield
+20040900 Deep Large Leather Shield
+20041000 Dark Large Leather Shield
+20041100 Poison Large Leather Shield
+20041200 Blood Large Leather Shield
+20041300 Raw Large Leather Shield
+20041400 Blessed Large Leather Shield
+20041500 Hollow Large Leather Shield
+20070000 Hawkwood's Shield
+20070100 Hawkwood's Heavy Shield
+20070200 Hawkwood's Sharp Shield
+20070300 Hawkwood's Refined Shield
+20070400 Hawkwood's Simple Shield
+20070500 Hawkwood's Crystal Shield
+20070600 Hawkwood's Fire Shield
+20070700 Hawkwood's Chaos Shield
+20070800 Hawkwood's Lightning Shield
+20070900 Hawkwood's Deep Shield
+20071000 Hawkwood's Dark Shield
+20071100 Hawkwood's Poison Shield
+20071200 Hawkwood's Blood Shield
+20071300 Hawkwood's Raw Shield
+20071400 Hawkwood's Blessed Shield
+20071500 Hawkwood's Hollow Shield
+20080000 Iron Round Shield
+20080100 Heavy Iron Shield
+20080200 Sharp Iron Shield
+20080300 Refined Iron Shield
+20080400 Simple Iron Shield
+20080500 Crystal Iron Shield
+20080600 Fire Iron Shield
+20080700 Chaos Iron Shield
+20080800 Lightning Iron Shield
+20080900 Deep Iron Shield
+20081000 Dark Iron Shield
+20081100 Poison Iron Shield
+20081200 Blood Iron Shield
+20081300 Raw Iron Shield
+20081400 Blessed Iron Shield
+20081500 Hollow Iron Shield
+20110000 Wooden Shield
+20110100 Heavy Wooden Shield
+20110200 Sharp Wooden Shield
+20110300 Refined Wooden Shield
+20110400 Simple Wooden Shield
+20110500 Crystal Wooden Shield
+20110600 Fire Wooden Shield
+20110700 Chaos Wooden Shield
+20110800 Lightning Wooden Shield
+20110900 Deep Wooden Shield
+20111000 Dark Wooden Shield
+20111100 Poison Wooden Shield
+20111200 Blood Wooden Shield
+20111300 Raw Wooden Shield
+20111400 Blessed Wooden Shield
+20111500 Hollow Wooden Shield
+20120000 Kite Shield
+20120100 Heavy Kite Shield
+20120200 Sharp Kite Shield
+20120300 Refined Kite Shield
+20120400 Simple Kite Shield
+20120500 Crystal Kite Shield
+20120600 Fire Kite Shield
+20120700 Chaos Kite Shield
+20120800 Lightning Kite Shield
+20120900 Deep Kite Shield
+20121000 Dark Kite Shield
+20121100 Poison Kite Shield
+20121200 Blood Kite Shield
+20121300 Raw Kite Shield
+20121400 Blessed Kite Shield
+20121500 Hollow Kite Shield
+20130000 Ghru Rotshield
+20130100 Heavy Ghru Rotshield
+20130200 Sharp Ghru Rotshield
+20130300 Refined Ghru Rotshield
+20130400 Simple Ghru Rotshield
+20130500 Crystal Ghru Rotshield
+20130600 Fire Ghru Rotshield
+20130700 Chaos Ghru Rotshield
+20130800 Lightning Ghru Rotshield
+20130900 Deep Ghru Rotshield
+20131000 Dark Ghru Rotshield
+20131100 Poison Ghru Rotshield
+20131200 Blood Ghru Rotshield
+20131300 Raw Ghru Rotshield
+20131400 Blessed Ghru Rotshield
+20131500 Hollow Ghru Rotshield
+20150000 Havel's Greatshield
+20160000 Target Shield
+20160100 Heavy Target Shield
+20160200 Sharp Target Shield
+20160300 Refined Target Shield
+20160400 Simple Target Shield
+20160500 Crystal Target Shield
+20160600 Fire Target Shield
+20160700 Chaos Target Shield
+20160800 Lightning Target Shield
+20160900 Deep Target Shield
+20161000 Dark Target Shield
+20161100 Poison Target Shield
+20161200 Blood Target Shield
+20161300 Raw Target Shield
+20161400 Blessed Target Shield
+20161500 Hollow Target Shield
+20170000 Elkhorn Round Shield
+20170100 Heavy Elkhorn Shield
+20170200 Sharp Elkhorn Shield
+20170300 Refined Elkhorn Shield
+20170400 Simple Elkhorn Shield
+20170500 Crystal Elkhorn Shield
+20170600 Fire Elkhorn Shield
+20170700 Chaos Elkhorn Shield
+20170800 Lightning Elkhorn Shield
+20170900 Deep Elkhorn Shield
+20171000 Dark Elkhorn Shield
+20171100 Poison Elkhorn Shield
+20171200 Blood Elkhorn Shield
+20171300 Raw Elkhorn Shield
+20171400 Blessed Elkhorn Shield
+20171500 Hollow Elkhorn Shield
+20180000 Warrior's Round Shield
+20180100 Heavy Warrior's Shield
+20180200 Sharp Warrior's Shield
+20180300 Refined Warrior's Shield
+20180400 Simple Warrior's Shield
+20180500 Crystal Warrior's Shield
+20180600 Fire Warrior's Shield
+20180700 Chaos Warrior's Shield
+20180800 Lightning Warrior's Shield
+20180900 Deep Warrior's Shield
+20181000 Dark Warrior's Shield
+20181100 Poison Warrior's Shield
+20181200 Blood Warrior's Shield
+20181300 Raw Warrior's Shield
+20181400 Blessed Warrior's Shield
+20181500 Hollow Warrior's Shield
+20190000 Caduceus Round Shield
+20190100 Heavy Caduceus Shield
+20190200 Sharp Caduceus Shield
+20190300 Refined Caduceus Shield
+20190400 Simple Caduceus Shield
+20190500 Crystal Caduceus Shield
+20190600 Fire Caduceus Shield
+20190700 Chaos Caduceus Shield
+20190800 Lightning Caduceus Shield
+20190900 Deep Caduceus Shield
+20191000 Dark Caduceus Shield
+20191100 Poison Caduceus Shield
+20191200 Blood Caduceus Shield
+20191300 Raw Caduceus Shield
+20191400 Blessed Caduceus Shield
+20191500 Hollow Caduceus Shield
+20200000 Red and White Round Shield
+20200100 Heavy Red and White Shield
+20200200 Sharp Red and White Shield
+20200300 Refined Red and White Shield
+20200400 Simple Red and White Shield
+20200500 Crystal Red and White Shield
+20200600 Fire Red and White Shield
+20200700 Chaos Red and White Shield
+20200800 Lightning Red and White Shield
+20200900 Deep Red and White Shield
+20201000 Dark Red and White Shield
+20201100 Poison Red and White Shield
+20201200 Blood Red and White Shield
+20201300 Raw Red and White Shield
+20201400 Blessed Red and White Shield
+20201500 Hollow Red and White Shield
+20210000 Plank Shield
+20210100 Heavy Plank Shield
+20210200 Sharp Plank Shield
+20210300 Refined Plank Shield
+20210400 Simple Plank Shield
+20210500 Crystal Plank Shield
+20210600 Fire Plank Shield
+20210700 Chaos Plank Shield
+20210800 Lightning Plank Shield
+20210900 Deep Plank Shield
+20211000 Dark Plank Shield
+20211100 Poison Plank Shield
+20211200 Blood Plank Shield
+20211300 Raw Plank Shield
+20211400 Blessed Plank Shield
+20211500 Hollow Plank Shield
+20220000 Leather Shield
+20220100 Heavy Leather Shield
+20220200 Sharp Leather Shield
+20220300 Refined Leather Shield
+20220400 Simple Leather Shield
+20220500 Crystal Leather Shield
+20220600 Fire Leather Shield
+20220700 Chaos Leather Shield
+20220800 Lightning Leather Shield
+20220900 Deep Leather Shield
+20221000 Dark Leather Shield
+20221100 Poison Leather Shield
+20221200 Blood Leather Shield
+20221300 Raw Leather Shield
+20221400 Blessed Leather Shield
+20221500 Hollow Leather Shield
+20230000 Crimson Parma
+20230100 Heavy Crimson Parma
+20230200 Sharp Crimson Parma
+20230300 Refined Crimson Parma
+20230400 Simple Crimson Parma
+20230500 Crystal Crimson Parma
+20230600 Fire Crimson Parma
+20230700 Chaos Crimson Parma
+20230800 Lightning Crimson Parma
+20230900 Deep Crimson Parma
+20231000 Dark Crimson Parma
+20231100 Poison Crimson Parma
+20231200 Blood Crimson Parma
+20231300 Raw Crimson Parma
+20231400 Blessed Crimson Parma
+20231500 Hollow Crimson Parma
+20240000 Eastern Iron Shield
+20240100 Heavy Eastern Shield
+20240200 Sharp Eastern Shield
+20240300 Refined Eastern Shield
+20240400 Simple Eastern Shield
+20240500 Crystal Eastern Shield
+20240600 Fire Eastern Shield
+20240700 Chaos Eastern Shield
+20240800 Lightning Eastern Shield
+20240900 Deep Eastern Shield
+20241000 Dark Eastern Shield
+20241100 Poison Eastern Shield
+20241200 Blood Eastern Shield
+20241300 Raw Eastern Shield
+20241400 Blessed Eastern Shield
+20241500 Hollow Eastern Shield
+20250000 Llewellyn Shield
+20250100 Heavy Llewellyn Shield
+20250200 Sharp Llewellyn Shield
+20250300 Refined Llewellyn Shield
+20250400 Simple Llewellyn Shield
+20250500 Crystal Llewellyn Shield
+20250600 Fire Llewellyn Shield
+20250700 Chaos Llewellyn Shield
+20250800 Lightning Llewellyn Shield
+20250900 Deep Llewellyn Shield
+20251000 Dark Llewellyn Shield
+20251100 Poison Llewellyn Shield
+20251200 Blood Llewellyn Shield
+20251300 Raw Llewellyn Shield
+20251400 Blessed Llewellyn Shield
+20251500 Hollow Llewellyn Shield
+20270000 Golden Falcon Shield
+20270100 Heavy Falcon Shield
+20270200 Sharp Falcon Shield
+20270300 Refined Falcon Shield
+20270400 Simple Falcon Shield
+20270500 Crystal Falcon Shield
+20270600 Fire Falcon Shield
+20270700 Chaos Falcon Shield
+20270800 Lightning Falcon Shield
+20270900 Deep Falcon Shield
+20271000 Dark Falcon Shield
+20271100 Poison Falcon Shield
+20271200 Blood Falcon Shield
+20271300 Raw Falcon Shield
+20271400 Blessed Falcon Shield
+20271500 Hollow Falcon Shield
+20280000 Sacred Bloom Shield
+20290000 Ancient Dragon Greatshield
+20300000 Follower Shield
+20300100 Heavy Follower Shield
+20300200 Sharp Follower Shield
+20300300 Refined Follower Shield
+20300400 Simple Follower Shield
+20300500 Crystal Follower Shield
+20300600 Fire Follower Shield
+20300700 Chaos Follower Shield
+20300800 Lightning Follower Shield
+20300900 Deep Follower Shield
+20301000 Dark Follower Shield
+20301100 Poison Follower Shield
+20301200 Blood Follower Shield
+20301300 Raw Follower Shield
+20301400 Blessed Follower Shield
+20301500 Hollow Follower Shield
+20310000 Dragonhead Shield
+21010000 Lothric Knight Shield
+21010100 Heavy Lothric Shield
+21010200 Sharp Lothric Shield
+21010300 Refined Lothric Shield
+21010400 Simple Lothric Shield
+21010500 Crystal Lothric Shield
+21010600 Fire Lothric Shield
+21010700 Chaos Lothric Shield
+21010800 Lightning Lothric Shield
+21010900 Deep Lothric Shield
+21011000 Dark Lothric Shield
+21011100 Poison Lothric Shield
+21011200 Blood Lothric Shield
+21011300 Raw Lothric Shield
+21011400 Blessed Lothric Shield
+21011500 Hollow Lothric Shield
+21040000 Knight Shield
+21040100 Heavy Knight Shield
+21040200 Sharp Knight Shield
+21040300 Refined Knight Shield
+21040400 Simple Knight Shield
+21040500 Crystal Knight Shield
+21040600 Fire Knight Shield
+21040700 Chaos Knight Shield
+21040800 Lightning Knight Shield
+21040900 Deep Knight Shield
+21041000 Dark Knight Shield
+21041100 Poison Knight Shield
+21041200 Blood Knight Shield
+21041300 Raw Knight Shield
+21041400 Blessed Knight Shield
+21041500 Hollow Knight Shield
+21060000 Pontiff Knight Shield
+21070000 Carthus Shield
+21070100 Heavy Carthus Shield
+21070200 Sharp Carthus Shield
+21070300 Refined Carthus Shield
+21070400 Simple Carthus Shield
+21070500 Crystal Carthus Shield
+21070600 Fire Carthus Shield
+21070700 Chaos Carthus Shield
+21070800 Lightning Carthus Shield
+21070900 Deep Carthus Shield
+21071000 Dark Carthus Shield
+21071100 Poison Carthus Shield
+21071200 Blood Carthus Shield
+21071300 Raw Carthus Shield
+21071400 Blessed Carthus Shield
+21071500 Hollow Carthus Shield
+21100000 Black Knight Shield
+21120000 Silver Knight Shield
+21130000 Spiked Shield
+21130100 Heavy Spiked Shield
+21130200 Sharp Spiked Shield
+21130300 Refined Spiked Shield
+21130400 Simple Spiked Shield
+21130500 Crystal Spiked Shield
+21130600 Fire Spiked Shield
+21130700 Chaos Spiked Shield
+21130800 Lightning Spiked Shield
+21130900 Deep Spiked Shield
+21131000 Dark Spiked Shield
+21131100 Poison Spiked Shield
+21131200 Blood Spiked Shield
+21131300 Raw Spiked Shield
+21131400 Blessed Spiked Shield
+21131500 Hollow Spiked Shield
+21140000 Pierce Shield
+21140100 Heavy Pierce Shield
+21140200 Sharp Pierce Shield
+21140300 Refined Pierce Shield
+21140400 Simple Pierce Shield
+21140500 Crystal Pierce Shield
+21140600 Fire Pierce Shield
+21140700 Chaos Pierce Shield
+21140800 Lightning Pierce Shield
+21140900 Deep Pierce Shield
+21141000 Dark Pierce Shield
+21141100 Poison Pierce Shield
+21141200 Blood Pierce Shield
+21141300 Raw Pierce Shield
+21141400 Blessed Pierce Shield
+21141500 Hollow Pierce Shield
+21150000 East-West Shield
+21150100 Heavy East-West Shield
+21150200 Sharp East-West Shield
+21150300 Refined East-West Shield
+21150400 Simple East-West Shield
+21150500 Crystal East-West Shield
+21150600 Fire East-West Shield
+21150700 Chaos East-West Shield
+21150800 Lightning East-West Shield
+21150900 Deep East-West Shield
+21151000 Dark East-West Shield
+21151100 Poison East-West Shield
+21151200 Blood East-West Shield
+21151300 Raw East-West Shield
+21151400 Blessed East-West Shield
+21151500 Hollow East-West Shield
+21160000 Sunlight Shield
+21160100 Heavy Sunlight Shield
+21160200 Sharp Sunlight Shield
+21160300 Refined Sunlight Shield
+21160400 Simple Sunlight Shield
+21160500 Crystal Sunlight Shield
+21160600 Fire Sunlight Shield
+21160700 Chaos Sunlight Shield
+21160800 Lightning Sunlight Shield
+21160900 Deep Sunlight Shield
+21161000 Dark Sunlight Shield
+21161100 Poison Sunlight Shield
+21161200 Blood Sunlight Shield
+21161300 Raw Sunlight Shield
+21161400 Blessed Sunlight Shield
+21161500 Hollow Sunlight Shield
+21170000 Crest Shield
+21180000 Dragon Crest Shield
+21190000 Spider Shield
+21190100 Heavy Spider Shield
+21190200 Sharp Spider Shield
+21190300 Refined Spider Shield
+21190400 Simple Spider Shield
+21190500 Crystal Spider Shield
+21190600 Fire Spider Shield
+21190700 Chaos Spider Shield
+21190800 Lightning Spider Shield
+21190900 Deep Spider Shield
+21191000 Dark Spider Shield
+21191100 Poison Spider Shield
+21191200 Blood Spider Shield
+21191300 Raw Spider Shield
+21191400 Blessed Spider Shield
+21191500 Hollow Spider Shield
+21200000 Grass Crest Shield
+21210000 Sunset Shield
+21210100 Heavy Sunset Shield
+21210200 Sharp Sunset Shield
+21210300 Refined Sunset Shield
+21210400 Simple Sunset Shield
+21210500 Crystal Sunset Shield
+21210600 Fire Sunset Shield
+21210700 Chaos Sunset Shield
+21210800 Lightning Sunset Shield
+21210900 Deep Sunset Shield
+21211000 Dark Sunset Shield
+21211100 Poison Sunset Shield
+21211200 Blood Sunset Shield
+21211300 Raw Sunset Shield
+21211400 Blessed Sunset Shield
+21211500 Hollow Sunset Shield
+21220000 Golden Wing Crest Shield
+21230000 Blue Wooden Shield
+21230100 Heavy Blue Shield
+21230200 Sharp Blue Shield
+21230300 Refined Blue Shield
+21230400 Simple Blue Shield
+21230500 Crystal Blue Shield
+21230600 Fire Blue Shield
+21230700 Chaos Blue Shield
+21230800 Lightning Blue Shield
+21230900 Deep Blue Shield
+21231000 Dark Blue Shield
+21231100 Poison Blue Shield
+21231200 Blood Blue Shield
+21231300 Raw Blue Shield
+21231400 Blessed Blue Shield
+21231500 Hollow Blue Shield
+21240000 Silver Eagle Kite Shield
+21240100 Heavy Eagle Kite Shield
+21240200 Sharp Eagle Kite Shield
+21240300 Refined Eagle Kite Shield
+21240400 Simple Eagle Kite Shield
+21240500 Crystal Eagle Kite Shield
+21240600 Fire Eagle Kite Shield
+21240700 Chaos Eagle Kite Shield
+21240800 Lightning Eagle Kite Shield
+21240900 Deep Eagle Kite Shield
+21241000 Dark Eagle Kite Shield
+21241100 Poison Eagle Kite Shield
+21241200 Blood Eagle Kite Shield
+21241300 Raw Eagle Kite Shield
+21241400 Blessed Eagle Kite Shield
+21241500 Hollow Eagle Kite Shield
+21250000 Stone Parma
+21250100 Heavy Stone Parma
+21250200 Sharp Stone Parma
+21250300 Refined Stone Parma
+21250400 Simple Stone Parma
+21250500 Crystal Stone Parma
+21250600 Fire Stone Parma
+21250700 Chaos Stone Parma
+21250800 Lightning Stone Parma
+21250900 Deep Stone Parma
+21251000 Dark Stone Parma
+21251100 Poison Stone Parma
+21251200 Blood Stone Parma
+21251300 Raw Stone Parma
+21251400 Blessed Stone Parma
+21251500 Hollow Stone Parma
+21260000 Spirit Tree Crest Shield
+21270000 Porcine Shield
+21270100 Heavy Porcine Shield
+21270200 Sharp Porcine Shield
+21270300 Refined Porcine Shield
+21270400 Simple Porcine Shield
+21270500 Crystal Porcine Shield
+21270600 Fire Porcine Shield
+21270700 Chaos Porcine Shield
+21270800 Lightning Porcine Shield
+21270900 Deep Porcine Shield
+21271000 Dark Porcine Shield
+21271100 Poison Porcine Shield
+21271200 Blood Porcine Shield
+21271300 Raw Porcine Shield
+21271400 Blessed Porcine Shield
+21271500 Hollow Porcine Shield
+21280000 Shield of Want
+21290000 Wargod Wooden Shield
+21290100 Heavy Wargod Shield
+21290200 Sharp Wargod Shield
+21290300 Refined Wargod Shield
+21290400 Simple Wargod Shield
+21290500 Crystal Wargod Shield
+21290600 Fire Wargod Shield
+21290700 Chaos Wargod Shield
+21290800 Lightning Wargod Shield
+21290900 Deep Wargod Shield
+21291000 Dark Wargod Shield
+21291100 Poison Wargod Shield
+21291200 Blood Wargod Shield
+21291300 Raw Wargod Shield
+21291400 Blessed Wargod Shield
+21291500 Hollow Wargod Shield
+21300000 Ethereal Oak Shield
+21310000 Dragonhead Greatshield
+22010000 Lothric Knight Greatshield
+22010100 Heavy Lothric Greatshield
+22010200 Sharp Lothric Greatshield
+22010300 Refined Lothric Greatshield
+22010400 Simple Lothric Greatshield
+22010500 Crystal Lothric Greatshield
+22010600 Fire Lothric Greatshield
+22010700 Chaos Lothric Greatshield
+22010800 Lightning Lothric Greatshield
+22010900 Deep Lothric Greatshield
+22011000 Dark Lothric Greatshield
+22011100 Poison Lothric Greatshield
+22011200 Blood Lothric Greatshield
+22011300 Raw Lothric Greatshield
+22011400 Blessed Lothric Greatshield
+22011500 Hollow Lothric Greatshield
+22020000 Cathedral Knight Greatshield
+22020100 Heavy Cathedral Greatshield
+22020200 Sharp Cathedral Greatshield
+22020300 Refined Cathedral Greatshield
+22020400 Simple Cathedral Greatshield
+22020500 Crystal Cathedral Greatshield
+22020600 Fire Cathedral Greatshield
+22020700 Chaos Cathedral Greatshield
+22020800 Lightning Cathedral Greatshield
+22020900 Deep Cathedral Greatshield
+22021000 Dark Cathedral Greatshield
+22021100 Poison Cathedral Greatshield
+22021200 Blood Cathedral Greatshield
+22021300 Raw Cathedral Greatshield
+22021400 Blessed Cathedral Greatshield
+22021500 Hollow Cathedral Greatshield
+22040000 Dragonslayer Greatshield
+22050000 Moaning Shield
+22070000 Yhorm's Greatshield
+22080000 Black Iron Greatshield
+22080100 Heavy Black Iron Greatshield
+22080200 Sharp Black Iron Greatshield
+22080300 Refined Black Iron Greatshield
+22080400 Simple Black Iron Greatshield
+22080500 Crystal Black Iron Greatshield
+22080600 Fire Black Iron Greatshield
+22080700 Chaos Black Iron Greatshield
+22080800 Lightning Black Iron Greatshield
+22080900 Deep Black Iron Greatshield
+22081000 Dark Black Iron Greatshield
+22081100 Poison Black Iron Greatshield
+22081200 Blood Black Iron Greatshield
+22081300 Raw Black Iron Greatshield
+22081400 Blessed Black Iron Greatshield
+22081500 Hollow Black Iron Greatshield
+22090000 Wolf Knight's Greatshield
+22100000 Twin Dragon Greatshield
+22100100 Heavy Twin Dragon Greatshield
+22100200 Sharp Twin Dragon Greatshield
+22100300 Refined Twin Dragon Greatshield
+22100400 Simple Twin Dragon Greatshield
+22100500 Crystal Twin Dragon Greatshield
+22100600 Fire Twin Dragon Greatshield
+22100700 Chaos Twin Dragon Greatshield
+22100800 Lightning Twin Dragon Greatshield
+22100900 Deep Twin Dragon Greatshield
+22101000 Dark Twin Dragon Greatshield
+22101100 Poison Twin Dragon Greatshield
+22101200 Blood Twin Dragon Greatshield
+22101300 Raw Twin Dragon Greatshield
+22101400 Blessed Twin Dragon Greatshield
+22101500 Hollow Twin Dragon Greatshield
+22110000 Greatshield of Glory
+22120000 Curse Ward Greatshield
+22130000 Bonewheel Shield
+22130100 Heavy Bonewheel Shield
+22130200 Sharp Bonewheel Shield
+22130300 Refined Bonewheel Shield
+22130400 Simple Bonewheel Shield
+22130500 Crystal Bonewheel Shield
+22130600 Fire Bonewheel Shield
+22130700 Chaos Bonewheel Shield
+22130800 Lightning Bonewheel Shield
+22130900 Deep Bonewheel Shield
+22131000 Dark Bonewheel Shield
+22131100 Poison Bonewheel Shield
+22131200 Blood Bonewheel Shield
+22131300 Raw Bonewheel Shield
+22131400 Blessed Bonewheel Shield
+22131500 Hollow Bonewheel Shield
+22140000 Stone Greatshield
+22140100 Heavy Stone Greatshield
+22140200 Sharp Stone Greatshield
+22140300 Refined Stone Greatshield
+22140400 Simple Stone Greatshield
+22140500 Crystal Stone Greatshield
+22140600 Fire Stone Greatshield
+22140700 Chaos Stone Greatshield
+22140800 Lightning Stone Greatshield
+22140900 Deep Stone Greatshield
+22141000 Dark Stone Greatshield
+22141100 Poison Stone Greatshield
+22141200 Blood Stone Greatshield
+22141300 Raw Stone Greatshield
+22141400 Blessed Stone Greatshield
+22141500 Hollow Stone Greatshield
+23000000 Torch
+23010000 Follower Torch
+63990000 (Debug) Arrow
+67000000 (Debug) Bolt
+90040000 (Debug) Daggers
+90050000 (Debug) Twinswords
+90060000 (Debug) Shield

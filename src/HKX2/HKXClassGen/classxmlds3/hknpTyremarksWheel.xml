@@ -1,0 +1,7 @@
+<class name='hknpTyremarksWheel' version='1' signature='0x8f68857d' size='40' parent='hkReferencedObject'>
+  <members>
+    <member name='currentPosition' offset='16' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numPoints' offset='20' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tyremarkPoints' offset='24' ctype='hknpTyremarkPoint' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

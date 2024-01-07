@@ -1,0 +1,7 @@
+<class name='hclSceneDataSetupMeshSection' version='1' signature='0xac1b3a8' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='setupMesh' offset='24' ctype='hclSceneDataSetupMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='meshSection' offset='32' ctype='hkxMeshSection' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='skinnedSection' offset='40' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

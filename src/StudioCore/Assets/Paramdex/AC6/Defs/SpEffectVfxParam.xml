@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SP_EFFECT_VFX_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 midstSfxId"></Field>
+    <Field Def="s32 midstSeId"></Field>
+    <Field Def="s32 initSfxId"></Field>
+    <Field Def="s32 initSeId"></Field>
+    <Field Def="s32 finishSfxId"></Field>
+    <Field Def="s32 finishSeId"></Field>
+    <Field Def="s32 Unk0x18"></Field>
+    <Field Def="f32 Unk0x1C"></Field>
+    <Field Def="f32 Unk0x20"></Field>
+    <Field Def="s16 midstDmyId"></Field>
+    <Field Def="s16 initDmyId"></Field>
+    <Field Def="s16 finishDmyId"></Field>
+    <Field Def="u8 effectType"></Field>
+    <Field Def="u8 soulParamIdForWepEnchant"></Field>
+    <Field Def="u8 playCategory"></Field>
+    <Field Def="u8 playPriority"></Field>
+    <Field Def="u8 existEffectForLarge:1"></Field>
+    <Field Def="u8 existEffectForSoul:1"></Field>
+    <Field Def="u8 effectInvisibleAtCamouflage:1"></Field>
+    <Field Def="u8 useCamouflage:1"></Field>
+    <Field Def="u8 invisibleAtFriendCamouflage:1"></Field>
+    <Field Def="u8 isHideFootEffect_forCamouflage:1"></Field>
+    <Field Def="u8 halfCamouflage:1"></Field>
+    <Field Def="u8 isFullBodyTransformProtectorId:1"></Field>
+    <Field Def="u8 isInvisibleWeapon:1"></Field>
+    <Field Def="u8 isSilence:1"></Field>
+    <Field Def="u8 isMidstFullbody:1"></Field>
+    <Field Def="u8 isInitFullbody:1"></Field>
+    <Field Def="u8 isFinishFullbody:1"></Field>
+    <Field Def="u8 isVisibleDeadChr:1"></Field>
+    <Field Def="u8 isUseOffsetEnchantSfxSize:1"></Field>
+    <Field Def="dummy8 pad_1:1"></Field>
+    <Field Def="s32 Unk0x30"></Field>
+    <Field Def="s32 decalId1"></Field>
+    <Field Def="s32 decalId2"></Field>
+    <Field Def="u8 footEffectPriority"></Field>
+    <Field Def="u8 footEffectOffset"></Field>
+    <Field Def="u8 traceSfxIdOffsetType"></Field>
+    <Field Def="u8 forceDeceasedType"></Field>
+    <Field Def="s32 enchantStartDmyId_0"></Field>
+    <Field Def="s32 enchantEndDmyId_0"></Field>
+    <Field Def="s32 enchantStartDmyId_1"></Field>
+    <Field Def="s32 enchantEndDmyId_1"></Field>
+    <Field Def="s32 enchantStartDmyId_2"></Field>
+    <Field Def="s32 enchantEndDmyId_2"></Field>
+    <Field Def="s32 enchantStartDmyId_3"></Field>
+    <Field Def="s32 enchantEndDmyId_3"></Field>
+    <Field Def="s32 enchantStartDmyId_4"></Field>
+    <Field Def="s32 enchantEndDmyId_4"></Field>
+    <Field Def="s32 enchantStartDmyId_5"></Field>
+    <Field Def="s32 enchantEndDmyId_5"></Field>
+    <Field Def="s32 enchantStartDmyId_6"></Field>
+    <Field Def="s32 enchantEndDmyId_6"></Field>
+    <Field Def="s32 enchantStartDmyId_7"></Field>
+    <Field Def="s32 enchantEndDmyId_7"></Field>
+    <Field Def="u8 SfxIdOffsetType"></Field>
+    <Field Def="u8 phantomParamOverwriteType"></Field>
+    <Field Def="u8 camouflageMinAlpha"></Field>
+    <Field Def="u8 wetAspectType"></Field>
+    <Field Def="s32 phantomParamOverwriteId"></Field>
+    <Field Def="s32 materialParamId"></Field>
+    <Field Def="f32 materialParamInitValue"></Field>
+    <Field Def="f32 materialParamTargetValue"></Field>
+    <Field Def="f32 materialParamFadeTime"></Field>
+    <Field Def="s16 footDecalMaterialOffsetOverwriteId"></Field>
+    <Field Def="s16 Unk0x9A"></Field>
+    <Field Def="f32 Unk0x9C"></Field>
+    <Field Def="s32 Unk0xA0"></Field>
+    <Field Def="s32 Unk0xA4"></Field>
+    <Field Def="f32 Unk0xA8"></Field>
+    <Field Def="f32 Unk0xAC"></Field>
+    <Field Def="f32 Unk0xB0"></Field>
+    <Field Def="s32 Unk0xB4"></Field>
+    <Field Def="s32 Unk0xB8"></Field>
+    <Field Def="s32 Unk0xBC"></Field>
+    <Field Def="s32 Unk0xC0"></Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <weatherSunny AltName="Appear during Weather: Sunny" Wiki="Will it appear when the weather is sunny?" IsBool="" />
+    <weatherClearSky AltName="Appear during Weather: Clear Sky" Wiki="Will it appear when the weather is clear?" IsBool="" />
+    <weatherWeakCloudy AltName="Appear during Weather: Light Cloud" Wiki="Will it appear when the weather is lightly cloudy?" IsBool="" />
+    <weatherCloudy AltName="Appear during Weather: Cloud" Wiki="Will it appear when the weather is cloudy?" IsBool="" />
+    <weatherRain AltName="Appear during Weather: Rain" Wiki="Will it appear when the weather is rainy?" IsBool="" />
+    <weatherHeavyRain AltName="Appear during Weather: Heavy Rain" Wiki="Will it appear when the weather is heavy rain?" IsBool="" />
+    <weatherStorm AltName="Appear during Weather: Storm" Wiki="Will it appear when the weather is stormy?" IsBool="" />
+    <weatherStormForBattle AltName="Appear during Weather: Storm for Battle" Wiki="Will it appear when the weather is storm (for combat with the descendants of the guardian)?" IsBool="" />
+    <weatherSnow AltName="Appear during Weather: Snow" Wiki="Will it appear when the weather is snow?" IsBool="" />
+    <weatherHeavySnow AltName="Appear during Weather: Heavy Snow" Wiki="Will it appear when the weather is heavy snow?" IsBool="" />
+    <weatherFog AltName="Appear during Weather: Fog" Wiki="Will it appear when the weather is fog?" IsBool="" />
+    <weatherHeavyFog AltName="Appear during Weather: Heavy Fog" Wiki="Will it appear when the weather is dense fog?" IsBool="" />
+    <weatherHeavyFogRain AltName="Appear during Weather: Heavy Fog and Rain" Wiki="Does it appear when the weather is dense fog (rain)?" IsBool="" />
+    <weatherSandStorm AltName="Appear during Weather: Sandstorm" Wiki="Will it appear when the weather is a sandstorm?" IsBool="" />
+    <pad1 AltName=""/>
+    <timeStartHour AltName="Time: Start Hour" Wiki="Appearance start in game time_hour" />
+    <timeStartMin AltName="Time: Start Minute" Wiki="Appearance start in-game time_minutes" />
+    <timeEndHour AltName="Time: End Hour" Wiki="Appearance end in game time_hour" />
+    <timeEndMin AltName="Time: End Minute" Wiki="End of appearance In-game time_minutes" />
+    <pad2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

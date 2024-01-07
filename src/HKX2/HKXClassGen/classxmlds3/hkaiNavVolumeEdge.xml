@@ -1,0 +1,6 @@
+<class name='hkaiNavVolumeEdge' version='1' signature='0x82e710b' size='8'>
+  <members>
+    <member name='flags' offset='0' etype='CellEdgeFlagBits' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='oppositeCell' offset='4' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

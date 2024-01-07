@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CHR_EDIT_PARAM_BODY_PRESET</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 edit_head" />
+    <Field Def="f32 edit_torso" />
+    <Field Def="f32 edit_waist" />
+    <Field Def="f32 edit_arms" />
+    <Field Def="f32 edit_legs" />
+  </Fields>
+</PARAMDEF>

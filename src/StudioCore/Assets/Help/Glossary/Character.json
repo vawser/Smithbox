@@ -1,0 +1,15 @@
+{
+    "Title": "Character",
+    "Tags": [
+        "Term",
+        "Chr", "Human", "Player"
+    ],
+    "Contents": [
+        "A character (also refered to as Chr) refers to any entity under",
+        "the Enemy map object type.",
+        "",
+        "Character data is present in several formats and locations.",
+        "This includes models, textures, animations, behavior, AI, dialogue,",
+        "and some SFX/SE which are associated with the character directly."
+    ]
+}

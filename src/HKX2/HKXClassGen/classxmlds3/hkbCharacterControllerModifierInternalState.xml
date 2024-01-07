@@ -1,0 +1,7 @@
+<class name='hkbCharacterControllerModifierInternalState' version='1' signature='0xb23d7b5f' size='48' parent='hkReferencedObject'>
+  <members>
+    <member name='gravity' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isInitialVelocityAdded' offset='32' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isTouchingGround' offset='33' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

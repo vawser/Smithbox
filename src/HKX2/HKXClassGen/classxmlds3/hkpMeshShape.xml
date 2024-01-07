@@ -1,0 +1,25 @@
+<class name='hkpMeshShape' version='1' signature='0x98d2bd0b' size='128' parent='hkpShapeCollection'>
+  <enums>
+    <enum name='MeshShapeIndexStridingType' flags='00000000'>
+      <enumitem name='INDICES_INVALID' value='0'/>
+      <enumitem name='INDICES_INT16' value='1'/>
+      <enumitem name='INDICES_INT32' value='2'/>
+      <enumitem name='INDICES_MAX_ID' value='3'/>
+    </enum>
+    <enum name='MeshShapeMaterialIndexStridingType' flags='00000000'>
+      <enumitem name='MATERIAL_INDICES_INVALID' value='0'/>
+      <enumitem name='MATERIAL_INDICES_INT8' value='1'/>
+      <enumitem name='MATERIAL_INDICES_INT16' value='2'/>
+      <enumitem name='MATERIAL_INDICES_MAX_ID' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='scaling' offset='48' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numBitsForSubpartIndex' offset='64' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='subparts' offset='72' ctype='hkpMeshShapeSubpart' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldingInfo' offset='88' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldingType' offset='104' etype='WeldingType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='radius' offset='108' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pad' offset='112' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

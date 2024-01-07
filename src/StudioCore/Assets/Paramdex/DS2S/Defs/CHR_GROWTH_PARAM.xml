@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CHR_GROWTH_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s16 Unk00" />
+    <Field Def="s16 Unk01" />
+    <Field Def="f32 Unk02" />
+    <Field Def="f32 Unk03" />
+    <Field Def="f32 Unk04" />
+    <Field Def="f32 Unk05" />
+    <Field Def="f32 Unk06" />
+    <Field Def="f32 Unk07" />
+    <Field Def="f32 Unk08" />
+    <Field Def="f32 Unk09" />
+    <Field Def="f32 Unk10" />
+    <Field Def="f32 Unk11" />
+    <Field Def="f32 Unk12" />
+    <Field Def="f32 Unk13" />
+    <Field Def="f32 Unk14" />
+    <Field Def="f32 Unk15" />
+    <Field Def="f32 Unk16" />
+    <Field Def="f32 Unk17" />
+    <Field Def="f32 Unk18" />
+    <Field Def="f32 Unk19" />
+    <Field Def="f32 Unk20" />
+    <Field Def="f32 Unk21" />
+    <Field Def="f32 Unk22" />
+    <Field Def="f32 Unk23" />
+    <Field Def="f32 Unk24" />
+    <Field Def="f32 Unk25" />
+    <Field Def="f32 Unk26" />
+    <Field Def="f32 Unk27" />
+    <Field Def="f32 Unk28" />
+    <Field Def="f32 Unk29" />
+    <Field Def="f32 Unk30" />
+    <Field Def="f32 Unk31" />
+    <Field Def="f32 Unk32" />
+    <Field Def="f32 Unk33" />
+    <Field Def="f32 Unk34" />
+    <Field Def="f32 Unk35" />
+    <Field Def="f32 Unk36" />
+    <Field Def="f32 Unk37" />
+    <Field Def="f32 Unk38" />
+    <Field Def="f32 Unk39" />
+  </Fields>
+</PARAMDEF>

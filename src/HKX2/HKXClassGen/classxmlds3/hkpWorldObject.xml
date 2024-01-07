@@ -1,0 +1,23 @@
+<class name='hkpWorldObject' version='1' signature='0xeff021bd' size='200' parent='hkReferencedObject'>
+  <enums>
+    <enum name='MtChecks' flags='00000000'>
+      <enumitem name='MULTI_THREADING_CHECKS_ENABLE' value='0'/>
+      <enumitem name='MULTI_THREADING_CHECKS_IGNORE' value='1'/>
+    </enum>
+    <enum name='BroadPhaseType' flags='00000000'>
+      <enumitem name='BROAD_PHASE_INVALID' value='0'/>
+      <enumitem name='BROAD_PHASE_ENTITY' value='1'/>
+      <enumitem name='BROAD_PHASE_PHANTOM' value='2'/>
+      <enumitem name='BROAD_PHASE_BORDER' value='3'/>
+      <enumitem name='BROAD_PHASE_MAX_ID' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='world' offset='16' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='userData' offset='24' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collidable' offset='32' ctype='hkpLinkedCollidable' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='multiThreadCheck' offset='160' ctype='hkMultiThreadCheck' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='name' offset='176' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='properties' offset='184' ctype='hkSimpleProperty' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

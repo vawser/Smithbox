@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Slash" />
+      <Option Value="2" Name="Light Hit" />
+      <Option Value="3" Name="Thrust" />
+      <Option Value="4" Name="Neutral" />
+      <Option Value="5" Name="Ninsatsu" />
+      <Option Value="6" Name="Heavy Hit" />
+      <Option Value="7" Name="Anti Ground" />
+      <Option Value="8" Name="Anti Air" />
+      <Option Value="9" Name="Light Shoot" />
+      <Option Value="10" Name="Attribute A" />
+      <Option Value="11" Name="Attribute B" />
+      <Option Value="12" Name="Attribute C" />
+    </Enum>
+    <Enum Name="ATKPARAM_STAMINA_ATKATTR_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Slash" />
+      <Option Value="2" Name="Light Hit" />
+      <Option Value="3" Name="Thrust" />
+      <Option Value="4" Name="Neutral" />
+      <Option Value="5" Name="Ninsatsu" />
+      <Option Value="6" Name="Heavy Hit" />
+      <Option Value="7" Name="Anti Ground" />
+      <Option Value="8" Name="Anti Air" />
+      <Option Value="9" Name="Light Shoot" />
+      <Option Value="10" Name="Attribute A" />
+      <Option Value="11" Name="Attribute B" />
+      <Option Value="12" Name="Attribute C" />
+    </Enum>
+    <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
+      <Option Value="1" Name="Default" />
+      <Option Value="2" Name="Fire" />
+      <Option Value="3" Name="Magic" />
+      <Option Value="4" Name="Poison" />
+      <Option Value="6" Name="Lightning (No midair reversal animation)" />
+      <Option Value="10" Name="Lightning (Midair reversal animation)" />
+    </Enum>
+    <Enum Name="ATKPARAM_REP_DMGTYPE" type="s8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="No Stagger without additive animations" />
+      <Option Value="2" Name="No Stagger with additive animations" />
+      <Option Value="3" Name="Npc: 8000-8003" />
+      <Option Value="4" Name="Npc: 8010-8013" />
+      <Option Value="5" Name="Npc: 8020-8023" />
+    </Enum>
+    <Enum Name="SP_EFFECT_CHANGE_TEAM_TYPE" type="s8">
+      <Option Value="-1" Name="Default" />
+      <Option Value="0" Name="Disabled" />
+      <Option Value="1" Name="Human" />
+      <Option Value="2" Name="White Phantom" />
+      <Option Value="3" Name="Black Phantom" />
+      <Option Value="4" Name="Hollow" />
+      <Option Value="5" Name="Wandering Phantom" />
+      <Option Value="6" Name="Enemy" />
+      <Option Value="7" Name="Strong Enemy" />
+      <Option Value="8" Name="Ally" />
+      <Option Value="9" Name="Hostile Ally" />
+      <Option Value="10" Name="Decoy Enemy" />
+      <Option Value="11" Name="Child or Red" />
+      <Option Value="12" Name="Friendly Enemy" />
+      <Option Value="13" Name="Invader" />
+      <Option Value="19" Name="Host" />
+      <Option Value="20" Name="Coop" />
+      <Option Value="21" Name="Hostile" />
+      <Option Value="22" Name="Wandering Phantom 1" />
+      <Option Value="23" Name="Enemy 1" />
+      <Option Value="24" Name="Enemy 2" />
+      <Option Value="25" Name="Strong Enemy 1" />
+      <Option Value="26" Name="Friendly NPC" />
+      <Option Value="27" Name="Hostile NPC" />
+      <Option Value="28" Name="Coop NPC" />
+      <Option Value="29" Name="Indiscriminate" />
+      <Option Value="30" Name="Object" />
+      <Option Value="31" Name="White Berserker" />
+      <Option Value="32" Name="Red Berserker" />
+      <Option Value="33" Name="ArchEnemy Team" />
+    </Enum>
+  </Enums>
+  <Field>
+    <iconId Wiki="Icon that will appear below the player's healthbar when this effect is active" />
+    <conditionHp Wiki="SpEffect will not be applied until HP is at or below this threshold" />
+    <effectEndurance Wiki="Duration od the SpEffect -1=Infinite 0=One frame" />
+    <motionInterval Wiki="Amount of times the effect will be applied over it's duration, primarily used for healing or damage over time effects" />
+    <maxHpRate Wiki="Alters maximum Hp by a percent" />
+    <maxMpRate Wiki="Alters maximum Fp/Mp by a percent" />
+    <maxStaminaRate Wiki="Alters maximum stamina by a percent" />
+    <slashDamageCutRate Wiki="Alters slash damage recieved by a percent" />
+    <lightHitDamageCutRate Wiki="Alters light hit damage recieved by a percent" />
+    <thrustDamageCutRate Wiki="Alters thrust damage recieved by a percent" />
+    <neutralDamageCutRate Wiki="Alters neutral damage recieved by a percent" />
+    <magicDamageCutRate Wiki="Alters magic damage recieved by a percent" />
+    <fireDamageCutRate Wiki="Alters fire damage recieved by a percent" />
+    <thunderDamageCutRate Wiki="Alters lightning damage recieved by a percent" />
+    <physicsAttackRate Wiki="Alters physical damage, calculated after defense" />
+    <magicAttackRate Wiki="Alters magic damage, calculated after defense" />
+    <fireAttackRate Wiki="Alters fire damage, calculated after defense" />
+    <thunderAttackRate Wiki="Alters lightning damage, calculated after defense" />
+    <physicsAttackPowerRate Wiki="Alters physical damage, calculated before defense" />
+    <magicAttackPowerRate Wiki="Alters magic damage, calculated before defense" />
+    <fireAttackPowerRate Wiki="Alters fire damage, calculated before defense" />
+    <thunderAttackPowerRate Wiki="Alters lightning damage, calculated before defense" />
+    <physicsAttackPower Wiki="Alters physical damage by a flat amount" />
+    <magicAttackPower Wiki="Alters magic damage by a flat amount" />
+    <fireAttackPower Wiki="Alters fire damage by a flat amount" />
+    <thunderAttackPower Wiki="Alters lightning damage by a flat amount" />
+    <physicsDiffenceRate Wiki="Multiplies flat physical defense" />
+    <magicDiffenceRate Wiki="Multiplies flat magic defense" />
+    <fireDiffenceRate Wiki="Multiplies flat fire defense" />
+    <thunderDiffenceRate Wiki="Multiplies flat thunder defense" />
+    <physicsDiffence Wiki="Alters physical defense by a flat amount" />
+    <magicDiffence Wiki="Alters magic defense by a flat amount" />
+    <fireDiffence Wiki="Alters fire defense by a flat amount" />
+    <thunderDiffence Wiki="Alters lightning defense by a flat amount" />
+    <NoGuardDamageRate Wiki="Replace the damage multiplier at the time of opening with the set value (set on the damage side)" />
+    <vitalSpotChangeRate Wiki="Alters the damage multiplier defined in Jumptable 42" />
+    <normalSpotChangeRate Wiki="Alters the damage multiplier defined in Jumptable 59" />
+    <maxHpChangeRate Wiki="Increases or decreases maximum HP by the set multiplier" />
+    <behaviorId Wiki="Spawns the behavior referenced, requires stateInfo 275" Refs="BehaviorParam,BehaviorParam_PC" />
+    <changeHpRate Wiki="Adds or removes Hp by a percent over the duration of the effect" />
+    <changeHpPoint Wiki="Adds or removes Hp by a flat amount over the duration of the effect" />
+    <changeMpRate Wiki="Adds or removes Fp/Mp by a percent over the duration of the effect" />
+    <changeMpPoint Wiki="Adds or removes Fp/Mp by a flat amount over the duration of the effect" />
+    <mpRecoverChangeSpeed Wiki="Changes recovery speed. Add or subtract from the standard recovery speed and initial recovery speed in the recovery calculation formula." />
+    <changeStaminaRate Wiki="Adds or removes Posture by a percent over the duration of the effect" />
+    <changeStaminaPoint Wiki="Adds or removes Posture by a flat amount over the duration of the effect" />
+    <staminaRecoverChangeSpeed Wiki="Alters Posture regen by a flat amount" />
+    <magicEffectTimeChange Wiki="For only spells whose effect duration is set to 0.1 seconds or more, add or subtract the time set to the effect duration." />
+    <insideDurability />
+    <maxDurability />
+    <staminaAttackRate Wiki="Alters overall Posture damage" />
+    <poizonAttackPower Wiki="Applies Poison build-up, only works with stateInfo 2" />
+    <registIllness Wiki="Applies Terror build-up, only works with stateInfo 5" />
+    <registBlood Wiki="Applies Burn build-up, only work with stateInfo 6" />
+    <registCurse Wiki="Applies Enfeeble build-up, only works with stateInfo 116" />
+    <fallDamageRate Wiki="Alters fall damage taken by a percent" />
+    <soulRate Wiki="Increases the amount of Sen dropped by enemies, requires stateInfo 76 and only works when applied to the player" />
+    <equipWeightChangeRate Wiki="Alters Equip Load" />
+    <allItemWeightChangeRate Wiki="Alters Item Load" />
+    <soul Wiki="Adds or removes Sen from the player over the duration of the effect" />
+    <animIdOffset Wiki="Changes the animation category used, only for Npc's" />
+    <haveSoulRate Wiki="Increases the amount of Sen dropped by enemies, only works when applied to enemies" />
+    <targetPriority Wiki="Chance for an enemy to switch aggro targets to/away the effect's owner. Values range from -1 to 1. +1 = 100% chance to target owner instead of current target, -1 = 100% chance to target somebody else instead of current target (effect owner)." />
+    <sightSearchEnemyCut Wiki="Give it to someone who can see it. The viewer is more likely to be excluded from the AI's visual search target. 0 is default" />
+    <aroundSightPointAddRate Wiki="Give it to someone who can see it. Increase rate of discovery points accumulated in the viewer's peripheral vision" />
+    <mapVisibilityOverrideGood Wiki="When performing a lock judgment or AI visibility judgment, if the map visibility type of the hit where the target character is standing is 'good', replace it with this value before making the judgment." />
+    <mapVisibilityOverrideDark Wiki="When performing lock judgment or AI visibility judgment, if the map visibility type of the hit where the target character is standing is 'darkness', replace it with this value before making the judgment." />
+    <mapVisibilityOverridePitchDark Wiki="When performing lock judgment or AI visibility judgment, if the map visibility type of the hit where the target character is standing is 'pitch darkness', replace it with this value before making the judgment." />
+    <sightCutLimitType Wiki="Give it to someone who can see it. Types of conditions under which the viewer's visual search cut is effective" />
+    <hearingSearchEnemyRate Wiki="Call the person who will listen. Multiplier of the sound radius generated by itself. 1 is the default" />
+    <grabityRate Wiki="Increases or decreaes animation speed by a percent, only works in Dark Souls 1" />
+    <registPoizonChangeRate Wiki="Alters Poison build-up dealt" />
+    <registIllnessChangeRate Wiki="Alters Terror build-up dealt" />
+    <registBloodChangeRate Wiki="Alters Burn build-up dealt" />
+    <registCurseChangeRate Wiki="Alters Enfeeble build-up dealt" />
+    <soulStealRate Wiki="Defense power against HP taken away from NPC by Soul Steal" />
+    <lifeReductionRate />
+    <hpRecoverRate Wiki="Alters the Hp change in changeHpRate and changeHpPoint fields" />
+    <replaceSpEffectId Wiki="Applies speffect once the parent effect's duration has expired" Refs="SpEffectParam" />
+    <cycleOccurrenceSpEffectId Wiki="Applies speffect when the parent effect is active" Refs="SpEffectParam" />
+    <atkOccurrenceSpEffectId Wiki="Applies speffect when an attack connects, only one can be applied at any given time and only works with stateInfo 152, 153, 62, and 64" Refs="SpEffectParam" />
+    <guardDefFlickPowerRate Wiki="Repelling defense power correction value when guarding" />
+    <guardStaminaCutRate Wiki="Stamina cut rate correction value when guarding" />
+    <eyeAngUpper_Perceive Wiki="Alters the upwards vision angle during a Combat AI state" />
+    <eyeAngBottom_Perceive Wiki="Alters the downwards vision angle during a Combat AI state" />
+    <changeSuperArmorPoint Wiki="Alters max super armor by a flat amount" />
+    <bowDistRate Wiki="Increases the attenuation range of bullets, requires stateInfo 168" />
+    <spCategory Wiki="Determines speffect stacking behavior" />
+    <categoryPriority Wiki="Determines the priority of stacking behavior, effects with higher priority will not be removed when one with a lower priority is applied. lower number = higher priority" />
+    <saveCategory Wiki="Effect will not be removed when quitting the game, only one effect within each category can be saved" />
+    <changeMagicSlot Wiki="Alters the amount of sorcery slots the player has" />
+    <changeMiracleSlot Wiki="Alters the amount of miracle slots the player has" />
+    <heroPointDamage Wiki="Damage value given to humanity value" />
+    <defFlickPower Wiki="Set value to override repelling defense power" />
+    <flickDamageCutRate Wiki="Set value to override repelling defense power" />
+    <bloodDamageRate Wiki="Alters Burn damage by a percent" />
+    <dmgLv_None Wiki="Determines what stagger animations play when recieving dmgLevel 0" />
+    <dmgLv_S Wiki="Determines what stagger animations play when recieving dmgLevel 1" />
+    <dmgLv_M Wiki="Determines what stagger animations play when recieving dmgLevel 2" />
+    <dmgLv_L Wiki="Determines what stagger animations play when recieving dmgLevel 3" />
+    <dmgLv_BlowM Wiki="Determines what stagger animations play when recieving dmgLevel 4" />
+    <dmgLv_Push Wiki="Determines what stagger animations play when recieving dmgLevel 5" />
+    <dmgLv_Strike Wiki="Determines what stagger animations play when recieving dmgLevel 6" />
+    <dmgLv_BlowS Wiki="Determines what stagger animations play when recieving dmgLevel 7" />
+    <dmgLv_Min Wiki="Determines what stagger animations play when recieving dmgLevel 8" />
+    <dmgLv_Uppercut Wiki="Determines what stagger animations play when recieving dmgLevel 9" />
+    <dmgLv_BlowLL Wiki="Determines what stagger animations play when recieving dmgLevel 10" />
+    <dmgLv_Breath Wiki="Determines what stagger animations play when recieving dmgLevel 11" />
+    <atkAttribute Wiki="Changes the damage type for physical damage" Enum="ATKPARAM_ATKATTR_TYPE" />
+    <spAttribute Wiki="Non-physical damage type" Enum="ATKPARAM_SPATTR_TYPE" />
+    <stateInfo Wiki="Handles various hardcoded actions (not all stateInfos have hardcoded actions). Can also be used to apply conditional effects." />
+    <wepParamChange Wiki="Determines whether or not the effect will target the left hand, right hand, or self" />
+    <moveType Wiki="Movement type. Change movement speed" Refs="MoveParam" />
+    <lifeReductionType />
+    <throwCondition Wiki="Throwing conditions. Affects throwing masks." />
+    <addBehaviorJudgeId_condition Wiki="Condition value for adding value to behavior judgment ID (Default: -1)" />
+    <freezeDamageRate Wiki="Alters Shock damage by a percent" />
+    <effectTargetSelf IsBool="" />
+    <effectTargetFriend IsBool="" />
+    <effectTargetEnemy IsBool="" />
+    <effectTargetPlayer IsBool="" />
+    <effectTargetAI IsBool="" />
+    <effectTargetLive IsBool="" />
+    <effectTargetGhost IsBool="" />
+    <effectTargetWhiteGhost IsBool="" />
+    <effectTargetBlackGhost IsBool="" />
+    <effectTargetAttacker IsBool="" />
+    <dispIconNonactive Wiki="Display the icon even when waiting for activation" IsBool="" />
+    <useSpEffectEffect Wiki="When enabled the effect will use the SpEffectVfxParam row with the same id as the stateInfo referenced in this effect" IsBool="" />
+    <bAdjustMagicAblity IsBool="" />
+    <bAdjustFaithAblity IsBool="" />
+    <bGameClearBonus Wiki="Only apply this effect in NG+ or higher" IsBool="" />
+    <magParamChange Wiki="Will this affect sorceries?" IsBool="" />
+    <miracleParamChange Wiki="Will this affect miracles?" IsBool="" />
+    <clearSoul Wiki="The number of souls you have becomes 0" IsBool="" />
+    <requestSOS IsBool="" />
+    <requestBlackSOS IsBool="" />
+    <requestForceJoinBlackSOS IsBool="" />
+    <requestKickSession IsBool="" />
+    <requestLeaveSession IsBool="" />
+    <requestNpcInveda IsBool="" />
+    <noDead Wiki="Is it possible to become a corpse? If this is checked, you will not be in a dead state." IsBool="" />
+    <bCurrHPIndependeMaxHP Wiki="When enabled and this effect alters max Hp, current Hp will be adjusted when max Hp is adjusted" IsBool="" />
+    <corrosionIgnore Wiki="[Status change type] ignores [durability] reduction due to [corrosion]" IsBool="" />
+    <sightSearchCutIgnore Wiki="Give it to the viewer. Ignore the visual search cut set for the viewer" IsBool="" />
+    <hearingSearchCutIgnore Wiki="Call to the listener. Ignore the auditory search cut set for the person being heard." IsBool="" />
+    <antiMagicIgnore Wiki="Can use magic even in anti-magic range" IsBool="" />
+    <fakeTargetIgnore IsBool="" />
+    <fakeTargetIgnoreUndead IsBool="" />
+    <fakeTargetIgnoreAnimal IsBool="" />
+    <grabityIgnore Wiki="Ignore the speed changes from grabityRate" IsBool="" />
+    <disablePoison Wiki="Prevents Poison from being applied, stateInfo 2" IsBool="" />
+    <disableDisease Wiki="Prevents Terror from being applied, stateInfo 5" IsBool="" />
+    <disableBlood Wiki="Prevents Burn from being applied, stateInfo 6" IsBool="" />
+    <disableCurse Wiki="Prevents Enfeeble from being applied, stateInfo 116" IsBool="" />
+    <enableCharm IsBool="" />
+    <enableLifeTime Wiki="Will the lifespan be extended when flagging by TAE?" IsBool="" />
+    <effectTargetPCOnlyTarget IsBool="" />
+    <isFireDamageCancel Wiki="Remove this effect once fire damage has been recieved" IsBool="" />
+    <isExtendSpEffectLife Wiki="When enabled this effect's duration will be affected by extendLifeRate" IsBool="" />
+    <requestLeaveColiseumSession IsBool="" />
+    <bAdjustStrengthAblity IsBool="" />
+    <bAdjustAgilityAblity IsBool="" />
+    <chargeAttackParamChange Wiki="Set whether or not to be effective against charged attacks." IsBool="" />
+    <throwAttackParamChange Wiki="Set whether to have an effect on throwing attacks or not." IsBool="" />
+    <vowType0 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType1 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType2 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType3 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType4 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType5 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType6 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType7 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType8 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType9 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType10 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType11 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType12 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType13 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType14 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <vowType15 Wiki="Covenant categories, effect will not be applied to the player if they are in this Covenant and this field set to 0" IsBool="" />
+    <repAtkDmgLv Wiki="The damage level of the attacker will be changed to this value." />
+    <sightSearchRate Wiki="Give it to the viewer. Multiply your own AI visual distance by the set magnification factor" />
+    <effectTargetOpposeTarget IsBool="" />
+    <effectTargetFriendlyTarget IsBool="" />
+    <effectTargetSelfTarget IsBool="" />
+    <changeTeamType Wiki="Changes the team type of the enemy" Enum="SP_EFFECT_CHANGE_TEAM_TYPE" />
+    <dmypolyId Wiki="Defines a dummypoly for a bullet to spawn from" />
+    <vfxId Wiki="Spawns a vfx that is defined in SpEffectVfxParam" Refs="SpEffectVfxParam" />
+    <accumuOverFireId Wiki="Applies speffect when the Accumulation value has reached or exceeded the value defined in accumuOverVal, only works with stateInfo 303-311" Refs="SpEffectParam" />
+    <accumuOverVal Wiki="Defines the value that needs to be met or exceeded in order to apply the speffect in accumuOverFireId, only works with stateInfo 303-311" />
+    <accumuUnderFireId Wiki="Applies speffect when the Accumulation value is below the value defined in accumuUnderVal, only works with stateInfo 303-311" Refs="SpEffectParam" />
+    <accumuUnderVal Wiki="Defines the value that needs to be less than the current Accumulation value in order to apply the speffect in accumuUnderFireId, only works with stateInfo 303-311" />
+    <accumuVal Wiki="Adds to the current Accumulation value when this effect is active, only works with stateInfo 303-311" />
+    <hearingSearchEnemyCut Wiki="Call to the listener. Magnification of the sound radius being generated. 0 is the default." />
+    <eyeAngLeft_Perceive Wiki="Alters the vision angle to the left during a Combat AI state" />
+    <eyeAngRight_Perceive Wiki="Alters the vision angle to the right during a Combat AI state" />
+    <addDeceasedLv Wiki="Add this value to the degree of death" />
+    <vfxId1 Wiki="Spawns a vfx that is defined in SpEffectVfxParam" Refs="SpEffectVfxParam" />
+    <vfxId2 Wiki="Spawns a vfx that is defined in SpEffectVfxParam" Refs="SpEffectVfxParam" />
+    <vfxId3 Wiki="Spawns a vfx that is defined in SpEffectVfxParam" Refs="SpEffectVfxParam" />
+    <vfxId4 Wiki="Spawns a vfx that is defined in SpEffectVfxParam" Refs="SpEffectVfxParam" />
+    <vfxId5 Wiki="Spawns a vfx that is defined in SpEffectVfxParam" Refs="SpEffectVfxParam" />
+    <vfxId6 Wiki="Spawns a vfx that is defined in SpEffectVfxParam" Refs="SpEffectVfxParam" />
+    <vfxId7 Wiki="Spawns a vfx that is defined in SpEffectVfxParam" Refs="SpEffectVfxParam" />
+    <registFreeze Wiki="Applies Shock build-up, only works with stateInfo 260" />
+    <AppearAiSoundId Wiki="Spawns an AI sound when the effect is active" Refs="AiSoundParam" />
+    <addFootEffectSfxId />
+    <postEffectType />
+    <isForceVisibleFootEffect IsBool="" />
+    <toughnessDamageCutRate />
+    <weakDmgRateA Wiki="Alters damage against Type A enemies" />
+    <weakDmgRateB Wiki="Alters damage against Type B enemies" />
+    <weakDmgRateC Wiki="Alters damage against Type C enemies" />
+    <weakDmgRateD Wiki="Alters damage against Type D enemies" />
+    <weakDmgRateE Wiki="Alters damage against Type E enemies" />
+    <weakDmgRateF Wiki="Alters damage against Type F enemies" />
+    <darkDamageCutRate Wiki="Alters dark damage recieved by a percent" />
+    <darkDiffenceRate Wiki="Multiplies flat dark defense" />
+    <darkDiffence Wiki="Alters dark defense by a flat amount" />
+    <darkAttackRate Wiki="Alters dark damage, calculated after defense" />
+    <darkAttackPowerRate Wiki="Alters dark damage, calculated before defense" />
+    <darkAttackPower Wiki="Alters dark damage by a flat amount" />
+    <antiDarkSightRadius Wiki="Darkness radius [m]. If you are within this distance, you will be able to see at normal distance even in dark places." />
+    <antiDarkSightDmypolyId Wiki="Damipoly ID (-1: Master) that can be seen completely in the dark. Create a fully visible area around this dummy poly" />
+    <conditionHpRate Wiki="SpEffect will not be applied until Hp is at or above this threshold" />
+    <consumeStaminaRate Wiki="Alters Posture consumption by a percent" />
+    <itemDropRate Wiki="Increases the drop rate of items, requires stateInfo 66" />
+    <hearingSearchRate Wiki="Multiply the AI ​​hearing distance by the set magnification factor" />
+    <changePoisonResistPoint Wiki="Alters Poison resistance by a flat amount" />
+    <changeDiseaseResistPoint Wiki="Alters Terror resistance by a flat amount" />
+    <changeBloodResistPoint Wiki="Alters Burn resistance by a flat amount" />
+    <changeCurseResistPoint Wiki="Alters Enfeeble resistance by a flat amount" />
+    <changeFreezeResistPoint Wiki="Alters Shock resistance by a flat amount" />
+    <slashAttackRate Wiki="Alters slash damage by a percent, calculated after defense" />
+    <lightHitAttackRate Wiki="Alters light hit damage by a percent, calculated after defense" />
+    <thrustAttackRate Wiki="Alters thrust damage by a percent, calculated after defense" />
+    <neutralAttackRate Wiki="Alters neutral damage by a percent, calculated after defense" />
+    <slashAttackPowerRate Wiki="Alters slash damage by a percent, calculated before defense" />
+    <lightHitAttackPowerRate Wiki="Alters light hit damage by a percent, calculated before defense" />
+    <thrustAttackPowerRate Wiki="Alters thrust damage by a percent, calculated before defense" />
+    <neutralAttackPowerRate Wiki="Alters neutral damage by a percent, calculated before defense" />
+    <slashAttackPower Wiki="Alters slash damage by a flat amount" />
+    <lightHitAttackPower Wiki="Alters light hit damage by a flat amount" />
+    <thrustAttackPower Wiki="Alters thrust damage by a flat amount" />
+    <neutralAttackPower Wiki="Alters neutral damage by a flat amount" />
+    <changeStrengthPoint />
+    <changeAgilityPoint />
+    <changeMagicPoint />
+    <changeFaithPoint />
+    <changeLuckPoint />
+    <recoverArtsPoint_Str />
+    <recoverArtsPoint_Dex />
+    <recoverArtsPoint_Magic />
+    <recoverArtsPoint_Miracle />
+    <overrideThrowTypeId Wiki="Replace with this type ID when throwing normally. SEQ00005 [Throwing system] Change the normal throw (PC) that is executed depending on the special effect" />
+    <sightSearchLeftAngleCut Wiki="Shrinks enemy vision cone facing left" />
+    <sightSearchRightAngleCut Wiki="Shrinks enemy vision cone facing right" />
+    <sightSearchUpperAngleCut Wiki="Shrinks enemy vision cone facing up" />
+    <sightSearchBottomAngleCut Wiki="Shrinks enemy vision cone facing down" />
+    <eyeAngUpper Wiki="Alters the upwards vision angle during a Normal AI state" />
+    <eyeAngBottom Wiki="Alters the downwards vision angle during a Normal AI state" />
+    <eyeAngLeft Wiki="Alters the vision angle to the left during a Normal AI state" />
+    <eyeAngRight Wiki="Alters the vision angle to the right during a Normal AI state" />
+    <wetConditionType Wiki="Types of wet appearance. Used for calculating decal IDs, etc." />
+    <disableFreeze Wiki="Prevents Shock from being applied, stateInfo 260" IsBool="" />
+    <isUseStatusAilmentAtkPowerCorrect Wiki="When this field is enabled and this effect applies status build-up, the status build-up will change based on the status multiplier in AtkParam" IsBool="" />
+    <isUseAtkParamAtkPowerCorrect Wiki="When this field is enabled and this effect deals flat damage, the damage will affected by attack multipliers in AtkParam" IsBool="" />
+    <effectTargetPcDeceased IsBool="" />
+    <isContractSpEffectLife Wiki="When enabled the effects duration will be altered by contractLifeRate" IsBool="" />
+    <isWaitModeDelete Wiki="Allows effects with a stateInfo condition to run out naturally without the stateInfo present" IsBool="" />
+    <isIgnoreNoDamage Wiki="Invinsibility frames will not affect this SpEffect" IsBool="" />
+    <isDisableNetSync Wiki="Does not sync online. This does not mean that it will be applied locally, but simply that it will not be sent over the internet. For example, remote characters do not activate locally, so nothing will happen in that case." IsBool="" />
+    <eyeAngUpper_Around Wiki="Alters the upwards vision angle during a Caution AI state" />
+    <eyeAngBottom_Around Wiki="Alters the downwards vision angle during a Caution AI state" />
+    <saReceiveDamageRate Wiki="Alters the amount of super damage taken by a percent" />
+    <defPlayerDmgCorrectRate_Physics Wiki="Alters physical defense against the player only" />
+    <defPlayerDmgCorrectRate_Magic Wiki="Alters magic defense against the player only" />
+    <defPlayerDmgCorrectRate_Fire Wiki="Alters fire defense against the player only" />
+    <defPlayerDmgCorrectRate_Thunder Wiki="Alters lightning defense against the player only" />
+    <defPlayerDmgCorrectRate_Dark Wiki="Alters dark defense against the player only" />
+    <defEnemyDmgCorrectRate_Physics Wiki="Alters physical defense against Npc's only" />
+    <defEnemyDmgCorrectRate_Magic Wiki="Alters magic defense against Npc's only" />
+    <defEnemyDmgCorrectRate_Fire Wiki="Alters fire defense against Npc's only" />
+    <defEnemyDmgCorrectRate_Thunder Wiki="Alters lightning defense against Npc's only" />
+    <defEnemyDmgCorrectRate_Dark Wiki="Alters dark defense against Npc's only" />
+    <defObjDmgCorrectRate Wiki="Alters damage recieved from objects" />
+    <atkPlayerDmgCorrectRate_Physics Wiki="Alters physical damage for the player only, calculated before defense" />
+    <atkPlayerDmgCorrectRate_Magic Wiki="Alters magic damage for the player only, calculated before defense" />
+    <atkPlayerDmgCorrectRate_Fire Wiki="Alters fire damage for the player only, calculated before defense" />
+    <atkPlayerDmgCorrectRate_Thunder Wiki="Alters lightning damage for the player only, calculated before defense" />
+    <atkPlayerDmgCorrectRate_Dark Wiki="Alters dark damage for the player only, calculated before defense" />
+    <atkEnemyDmgCorrectRate_Physics Wiki="Alters physical damage for Npc's only, calculated before defense" />
+    <atkEnemyDmgCorrectRate_Magic Wiki="Alters magic damage for Npc's only, calculated before defense" />
+    <atkEnemyDmgCorrectRate_Fire Wiki="Alters fire damage for Npc's only, calculated before defense" />
+    <atkEnemyDmgCorrectRate_Thunder Wiki="Alters lightning damage for Npc's only, calculated before defense" />
+    <atkEnemyDmgCorrectRate_Dark Wiki="Alters dark damage for Npc's only, calculated before defense" />
+    <registFreezeChangeRate Wiki="Alters Shock build-up dealt" />
+    <invocationConditionsStateChange1 Wiki="StateInfo that is required for this effect to apply" />
+    <invocationConditionsStateChange2 Wiki="StateInfo that is required for this effect to apply" />
+    <invocationConditionsStateChange3 Wiki="StateInfo that is required for this effect to apply" />
+    <shamanParamChange Wiki="Will this affect Pyromancies?" IsBool="" />
+    <dexterityCancelSystemOnlyAddDexterity Wiki="Add this value when calculating the end timing of the TAE flag for 'skill cancel'" />
+    <value_Magnification Wiki="Selling price correction: Multiplier" />
+    <artsConsumptionRate Wiki="Adjusts Fp cost of weapon arts" />
+    <magicConsumptionRate Wiki="Adjusts Fp cost of sorceries" />
+    <shamanConsumptionRate Wiki="Adjusts Fp cost of pyromancies" />
+    <miracleConsumptionRate Wiki="Adjusts Fp cost of miracles" />
+    <changeHpEstusFlaskRate Wiki="Alters Hp change by a percent, the change rate can be adjusted by changeHpEstusFlaskCorrectRate" />
+    <changeHpEstusFlaskPoint Wiki="Alters Hp change by a flat amount, the change rate can be adjusted by changeHpEstusFlaskCorrectRate" />
+    <changeMpEstusFlaskRate Wiki="Alters Mp change by a percent, the change rate can be adjusted by changeHpEstusFlaskCorrectRate" />
+    <changeMpEstusFlaskPoint Wiki="Alters Mp change by a flat amount, the change rate can be adjusted by changeHpEstusFlaskCorrectRate" />
+    <changeHpEstusFlaskCorrectRate Wiki="Alters the Hp change of the changeHpEstusFlaskRate and changeHpEstusFlaskPoint fields" />
+    <changeMpEstusFlaskCorrectRate Wiki="Alters the Mp change of the changeMpEstusFlaskRate and changeMpEstusFlaskPoint fields" />
+    <applyIdOnGetSoul Wiki="Applies speffect when enemies die, requires stateInfo 199 and the enemy must drop Souls" Refs="SpEffectParam" />
+    <extendLifeRate Wiki="Increases the duration of speffects with isExtendSpEffectLife enabled" />
+    <contractLifeRate Wiki="Decreases the duration of speffects with isContractSpEffectLife enabled" />
+    <addBehaviorJudgeId_add />
+    <effectEndDeleteDecalGroupId Wiki="Will remove the decal with the same GroupId if the DecalGroupId is not applied" />
+    <defObjectAttackPowerRate Wiki="Corrects attack power for damage received from OBJ. (Not damage compensation)" />
+    <addLifeForceStatus Wiki="Adds Vigor" />
+    <addWillpowerStatus Wiki="Adds Attunement" />
+    <addEndureStatus Wiki="Adds Endurance" />
+    <addVitalityStatus Wiki="Adds Vitality" />
+    <addStrengthStatus Wiki="Adds Strength" />
+    <addDexterityStatus Wiki="Adds Dexterity" />
+    <addMagicStatus Wiki="Adds Intelligence" />
+    <addFaithStatus Wiki="Adds Faith" />
+    <addLuckStatus Wiki="Adds Luck" />
+    <staminaPhysicsAttribute Wiki="Changes the damage type for posture damage" Enum="ATKPARAM_STAMINA_ATKATTR_TYPE" />
+    <behaviorRefFlag_checkAliveFlagForBehavior />
+    <recoveRremainNinsatsuNum Wiki="Restores healthbars" />
+    <defSlashStaminaDmgRate Wiki="Alters slash posture damage recived by a percent" />
+    <defLightHitStaminaDmgRate Wiki="Alters light hit posture damage recived by a percent" />
+    <defThrustStaminaDmgRate Wiki="Alters thrust posture damage recived by a percent" />
+    <defNeutralStaminaDmgRate Wiki="Alters neutral posture damage recived by a percent" />
+    <defNinsatuStaminaDmgRate Wiki="Alters ninsatsu posture damage recived by a percent" />
+    <defHeavyHitStaminaDmgRate Wiki="Alters heavy hit posture damage recived by a percent" />
+    <defAntiGroundStaminaDmgRate Wiki="Alters anti ground posture damage recived by a percent" />
+    <defAntiAirStaminaDmgRate Wiki="Alters anti air posture damage recived by a percent" />
+    <defLightShootStaminaDmgRate Wiki="Alters light shoot posture damage recived by a percent" />
+    <atkNinsatsuDmgRate Wiki="Alters ninsatsu damage by a percent, calculated after defense" />
+    <atkHeavyHitDmgRate Wiki="Alters heavy hit damage by a percent, calculated after defense" />
+    <atkAntiGroundDmgRate Wiki="Alters anti ground damage by a percent, calculated after defense" />
+    <atkAntiAirDmgRate Wiki="Alters anti air damage by a percent, calculated after defense" />
+    <atkLightShootDmgRate Wiki="Alters light shoot damage by a percent, calculated after defense" />
+    <ninsatsuAttackPowerRate Wiki="Alters ninsatsu damage by a percent, calculated before defense" />
+    <heavyHitAttackPowerRate Wiki="Alters heavy hit damage by a percent, calculated before defense" />
+    <antiGroundAttackPowerRate Wiki="Alters anti ground damage by a percent, calculated before defense" />
+    <antiAirAttackPowerRate Wiki="Alters anti air damage by a percent, calculated before defense" />
+    <lightShootAttackPowerRate Wiki="Alters light shoot damage by a percent, calculated before defense" />
+    <ninsatsuAttackPower Wiki="Alters ninsatsu damage by a flat amount" />
+    <heavyHitAttackPower Wiki="Alters heavy hit damage by a flat amount" />
+    <antiGroundAttackPower Wiki="Alters anti ground damage by a flat amount" />
+    <antiAirAttackPower Wiki="Alters anti air damage by a flat amount" />
+    <lightShootAttackPower Wiki="Alters light shoot damage by a flat amount" />
+    <defNinsatsuDmgRate Wiki="Alters ninsatsu damage recived by a percent" />
+    <defHeavyHitDmgRate Wiki="Alters heavy hit damage recived by a percent" />
+    <defAntiGroundDmgRate Wiki="Alters anti ground damage recived by a percent" />
+    <defAntiAirDmgRate Wiki="Alters anti air damage recived by a percent" />
+    <defLightShootDmgRate Wiki="Alters light shoot damage recived by a percent" />
+    <throwChangeIdOffset />
+    <agingFadeTime Wiki="Amount of time to wait before replacing the current model with the aging model" />
+    <defStaminaAttackRate Wiki="Deflect posture damage multiplier" />
+    <attackHitParryStaminaAttackRate Wiki="Mikiri Counter posture damage multiplier" />
+    <maxHpIncrease Wiki="Alters max Hp by a flat amount" />
+    <maxSpIncrease Wiki="Alters max Posture by a flat amount" />
+    <counterSpEffectId Wiki="SpEffect that will be applied to the attacker when hit with a hitbox that has the same counterSpEffectCondition as the one in this effect" Refs="SpEffectParam" />
+    <counterSpEffectCondition Wiki="Defines the condition that is required in order trigger the speffect in counterSpEffectId on the attacker" />
+    <teamOffenseEffectivity Wiki="Overwrites an enemies teamAttackEffectivity value" />
+    <unlockThresholdCamouflage Wiki="Alpha value that makes it impossible to lock while hidden" />
+    <camouflageHitPartsGroup Wiki="When receiving damage, regardless of the actual hit location, it is assumed that the damage was received at the location specified here, and the damage is reduced and the propagation rate is corrected depending on the location." />
+    <chrWireVariationNo Wiki="Enables grappling to chr if effect is active. Disabled if set to -1" Refs="WireVariationParam" />
+    <chrWireTargetDmypolyId Wiki="Spawns a grapple UI symbol on the specified dummypoly" />
+    <chrWireLandingPointDmypolyId Wiki="Generate a landing point at the dummy poly position of this ID. -1 generates at the origin." />
+    <behaviorRefId Wiki="References hks script directly to perform various actions" />
+    <defPoisonResistDamageRate Wiki="Alters the amount Poison status build-up recieved" />
+    <defDiseaseResistDamageRate Wiki="Alters the amount Terror status build-up recieved" />
+    <defBloodResistDamageRate Wiki="Alters the amount Burn status build-up recieved" />
+    <defCurseResistDamageRate Wiki="Alters the amount Enfeeble status build-up recieved" />
+    <defFreezeResistDamageRate Wiki="Alters the amount Shock status build-up recieved" />
+    <defAttriAStaminaDmgRate Wiki="Alters the amount of Posture damage recieved from the AttriA posture damage type (atkAttribute 10)" />
+    <defAttriBStaminaDmgRate Wiki="Alters the amount of Posture damage recieved from the AttriB posture damage type (atkAttribute 11)" />
+    <defAttriCStaminaDmgRate Wiki="Alters the amount of Posture damage recieved from the AttriC posture damage type (atkAttribute 12)" />
+    <attriAAttackRate Wiki="Alters attribute A damage by a percent, calculated after defense" />
+    <attriBAttackRate Wiki="Alters attribute B damage by a percent, calculated after defense" />
+    <attriCAttackRate Wiki="Alters attribute C damage by a percent, calculated after defense" />
+    <attriAAttackPowerRate Wiki="Alters attribute A damage by a percent, calculated before defense" />
+    <attriBAttackPowerRate Wiki="Alters attribute B damage by a percent, calculated before defense" />
+    <attriCAttackPowerRate Wiki="Alters attribute C damage by a percent, calculated before defense" />
+    <attriAAttackPower Wiki="Alters attribute A damage by a flat amount" />
+    <attriBAttackPower Wiki="Alters attribute B damage by a flat amount" />
+    <attriCAttackPower Wiki="Alters attribute C damage by a flat amount" />
+    <attriADamageCutRate Wiki="Alters the amount of damage recieved from the AttriA damage type" />
+    <attriBDamageCutRate Wiki="Alters the amount of damage recieved from the AttriB damage type" />
+    <attriCDamageCutRate Wiki="Alters the amount of damage recieved from the AttriC damage type" />
+    <resourceItemDropRate Wiki="Increases drop rate of Resource Item A, B, and C" />
+    <revivalRecastDamage Wiki="Removes black bar that disables Resurrections" />
+    <haveSkillPointRate Wiki="Alters XP drop rate from enemies, only works when applied to the enemy" />
+    <skillPoint Wiki="Awards XP to the player over the duration of the effect" />
+    <staminaRecoverSpeedRate Wiki="Alters Posture regen by a percent" />
+    <atkPlayerDmgCorrectRate_Stamina Wiki="Alters posture damage against the player only, calculated before defense" />
+    <atkEnemyDmgCorrectRate_Stamina Wiki="Alters posture damage against Npc's only, calculated before defense" />
+    <defPlayerDmgCorrectRate_Stamina Wiki="Alters posture defense against the player only" />
+    <defEnemyDmgCorrectRate_Stamina Wiki="Alters posture damage against Npc's only" />
+    <eyeAngLeft_Around Wiki="Alters the vision angle to the left during a Caution AI state" />
+    <eyeAngRight_Around Wiki="Alters the vision angle to the right during a Caution AI state" />
+  </Field>
+  <Self AlternativeOrder="iconId,-,
+effectEndurance,motionInterval,extendLifeRate,isExtendSpEffectLife,contractLifeRate,isContractSpEffectLife,lifeReductionRate,lifeReductionType,-,
+maxHpRate,maxStaminaRate,maxHpIncrease,maxSpIncrease,conditionHp,conditionHpRate,bCurrHPIndependeMaxHP,revivalRecastDamage,maxHpChangeRate,recoveRremainNinsatsuNum,-,
+changeHpRate,changeHpPoint,hpRecoverRate,changeHpEstusFlaskRate,changeHpEstusFlaskPoint,changeHpEstusFlaskCorrectRate,-,
+changeStaminaRate,changeStaminaPoint,staminaRecoverChangeSpeed,staminaRecoverSpeedRate,consumeStaminaRate,-,
+replaceSpEffectId,cycleOccurrenceSpEffectId,atkOccurrenceSpEffectId,applyIdOnGetSoul,counterSpEffectId,counterSpEffectCondition,-,
+spCategory,categoryPriority,saveCategory,isFireDamageCancel,-,
+behaviorId,AppearAiSoundId,dmypolyId,bowDistRate,-,
+dmgLv_None,dmgLv_S,dmgLv_M,dmgLv_L,dmgLv_BlowM,dmgLv_Push,dmgLv_Strike,dmgLv_BlowS,dmgLv_Min,dmgLv_Uppercut,dmgLv_BlowLL,dmgLv_Breath,-,
+stateInfo,isWaitModeDelete,invocationConditionsStateChange1,invocationConditionsStateChange2,invocationConditionsStateChange3,-,
+atkAttribute,spAttribute,staminaPhysicsAttribute,wepParamChange,isUseAtkParamAtkPowerCorrect,isUseStatusAilmentAtkPowerCorrect,-,
+effectTargetSelf,effectTargetFriend,effectTarget,effectTargetEnemy,effectTargetPlayer,effectTargetAI,effectTargetLive,effectTargetGhost,effectTargetWhiteGhost,effectTargetBlackGhost,effectTargetAttacker,effectTargetOpposeTarget,effectTargetFriendlyTarget,effectTargetSelfTarget,effectTargetPCOnlyTarget,effectTargetPcDeceased,-,
+fakeTargetIgnore,fakeTargetIgnoreAnimal,fakeTargetIgnoreUndead,-,
+soulRate,soul,haveSoulRate,soulStealRate,clearSoul,value_Magnification,-,
+skillPoint,haveSkillPointRate,-,
+itemDropRate,resourceItemDropRate,-,
+sightSearchEnemyCut,aroundSightPointAddRate,sightCutLimitType,sightSearchCutIgnore,sightSearchRate,sightSearchLeftAngleCut,sightSearchRightAngleCut,sightSearchUpperAngleCut,sightSearchBottomAngleCut,eyeAngUpper,eyeAngBottom,eyeAngLeft,eyeAngRight,eyeAngUpper_Around,eyeAngBottom_Around,eyeAngLeft_Around,eyeAngRight_Around,eyeAngUpper_Perceive,eyeAngBottom_Perceive,eyeAngLeft_Perceive,eyeAngRight_Perceive,mapVisibilityOverrideGood,mapVisibilityOverrideDark,mapVisibilityOverridePitchDark,antiDarkSightRadius,antiDarkSightDmypolyId,hearingSearchEnemyRate,hearingSearchCutIgnore,hearingSearchEnemyCut,hearingSearchRate,-,
+vfxId,vfxId1,vfxId2,vfxId3,vfxId4,vfxId5,vfxId6,vfxId7,postEffectType,addFootEffectSfxId,effectEndDeleteDecalGroupId,useSpEffectEffect,-,
+accumuOverFireId,accumuOverVal,accumuUnderFireId,accumuUnderVal,accumuVal,-,
+behaviorRefId,behaviorRefFlag_checkAliveFlagForBehavior,addBehaviorJudgeId_add,addBehaviorJudgeId_condition,-,
+animIdOffset,changeTeamType,targetPriority,teamOffenseEffectivity,moveType,-,
+defFlickPower,flickDamageCutRate,guardDefFlickPowerRate,guardStaminaCutRate,-,
+chrWireVariationNo,chrWireTargetDmypolyId,chrWireLandingPointDmypolyId,-,
+chargeAttackParamChange,throwAttackParamChange,throwCondition,throwChangeIdOffset,overrideThrowTypeId,dispIconNonactive,bGameClearBonus,noDead,corrosionIgnore,antiMagicIgnore,enableCharm,enableLifeTime,isForceVisibleFootEffect,isIgnoreNoDamage,isDisableNetSync,unlockThresholdCamouflage,camouflageHitPartsGroup,dexterityCancelSystemOnlyAddDexterity,magicEffectTimeChange,repAtkDmgLv,addDeceasedLv,wetConditionType,-,
+slashDamageCutRate,lightHitDamageCutRate,thrustDamageCutRate,neutralDamageCutRate,defNinsatsuDmgRate,defHeavyHitDmgRate,defAntiGroundDmgRate,defAntiAirDmgRate,defLightShootDmgRate,attriADamageCutRate,attriBDamageCutRate,attriCDamageCutRate,magicDamageCutRate,fireDamageCutRate,thunderDamageCutRate,darkDamageCutRate,defObjDmgCorrectRate,-,
+physicsDiffence,magicDiffence,fireDiffence,thunderDiffence,darkDiffence,-,
+physicsDiffenceRate,magicDiffenceRate,fireDiffenceRate,thunderDiffenceRate,darkDiffenceRate,-,
+defSlashStaminaDmgRate,defLightHitStaminaDmgRate,defThrustStaminaDmgRate,defNeutralStaminaDmgRate,defNinsatuStaminaDmgRate,defHeavyHitStaminaDmgRate,defAntiGroundStaminaDmgRate,defAntiAirStaminaDmgRate,defLightShootStaminaDmgRate,defAttriAStaminaDmgRate,defAttriBStaminaDmgRate,defAttriCStaminaDmgRate,-,
+poizonAttackPower,registPoizonChangeRate,defPoisonResistDamageRate,changePoisonResistPoint,disablePoison,-,
+registIllness,registIllnessChangeRate,defDiseaseResistDamageRate,changeDiseaseResistPoint,disableDisease,-,
+registBlood,registBloodChangeRate,defBloodResistDamageRate,changeBloodResistPoint,disableBlood,bloodDamageRate,-,
+registCurse,registCurseChangeRate,defCurseResistDamageRate,changeCurseResistPoint,agingFadeTime,disableCurse,-,
+registFreeze,registFreezeChangeRate,defFreezeResistDamageRate,changeFreezeResistPoint,disableFreeze,freezeDamageRate,-,
+saReceiveDamageRate,changeSuperArmorPoint,toughnessDamageCutRate,-,
+physicsAttackRate,slashAttackRate,lightHitAttackRate,thrustAttackRate,neutralAttackRate,atkNinsatsuDmgRate,atkHeavyHitDmgRate,atkAntiGroundDmgRate,atkAntiAirDmgRate,atkLightShootDmgRate,attriAAttackRate,attriBAttackRate,attriCAttackRate,magicAttackRate,fireAttackRate,thunderAttackRate,darkAttackRate,-,
+physicsAttackPower,slashAttackPower,lightHitAttackPower,thrustAttackPower,neutralAttackPower,ninsatsuAttackPower,heavyHitAttackPower,antiGroundAttackPower,antiAirAttackPower,lightShootAttackPower,attriAAttackPower,attriBAttackPower,attriCAttackPower,magicAttackPower,fireAttackPower,thunderAttackPower,darkAttackPower,-,
+physicsAttackPowerRate,slashAttackPowerRate,lightHitAttackPowerRate,thrustAttackPowerRate,neutralAttackPowerRate,ninsatsuAttackPowerRate,heavyHitAttackPowerRate,antiGroundAttackPowerRate,antiAirAttackPowerRate,lightShootAttackPowerRate,attriAAttackPowerRate,attriBAttackPowerRate,attriCAttackPowerRate,magicAttackPowerRate,fireAttackPowerRate,thunderAttackPowerRate,darkAttackPowerRate,defObjectAttackPowerRate,-,
+staminaAttackRate,defStaminaAttackRate,attackHitParryStaminaAttackRate,-,
+atkPlayerDmgCorrectRate_Physics,atkPlayerDmgCorrectRate_Magic,atkPlayerDmgCorrectRate_Fire,atkPlayerDmgCorrectRate_Thunder,atkPlayerDmgCorrectRate_Dark,atkPlayerDmgCorrectRate_Stamina,defPlayerDmgCorrectRate_Physics,defPlayerDmgCorrectRate_Magic,defPlayerDmgCorrectRate_Fire,defPlayerDmgCorrectRate_Thunder,defPlayerDmgCorrectRate_Dark,defPlayerDmgCorrectRate_Stamina,-,
+atkEnemyDmgCorrectRate_Physics,atkEnemyDmgCorrectRate_Magic,atkEnemyDmgCorrectRate_Fire,atkEnemyDmgCorrectRate_Thunder,atkEnemyDmgCorrectRate_Dark,atkEnemyDmgCorrectRate_Stamina,defEnemyDmgCorrectRate_Physics,defEnemyDmgCorrectRate_Magic,defEnemyDmgCorrectRate_Fire,defEnemyDmgCorrectRate_Thunder,defEnemyDmgCorrectRate_Dark,defEnemyDmgCorrectRate_Stamina,-,
+weakDmgRateA,weakDmgRateB,weakDmgRateC,weakDmgRateD,weakDmgRateE,weakDmgRateF,-,
+vitalSpotChangeRate,normalSpotChangeRate,NoGuardDamageRate,fallDamageRate,-,
+insideDurability,maxDurability,grabityRate,grabityIgnore,maxMpRate,changeMpRate,changeMpPoint,changeMpEstusFlaskRate,changeMpEstusFlaskPoint,changeMpEstusFlaskCorrectRate,mpRecoverChangeSpeed,equipWeightChangeRate,allItemWeightChangeRate,addLifeForceStatus,addWillpowerStatus,addEndureStatus,addVitalityStatus,addStrengthStatus,addDexterityStatus,addMagicStatus,addFaithStatus,addLuckStatus,changeStrengthPoint,changeAgilityPoint,changeMagicPoint,changeFaithPoint,changeLuckPoint,bAdjustStrengthAblity,bAdjustAgilityAblity,bAdjustMagicAblity,bAdjustFaithAblity,magParamChange,miracleParamChange,shamanParamChange,changeMagicSlot,changeMiracleSlot,recoverArtsPoint_Str,recoverArtsPoint_Dex,recoverArtsPoint_Magic,recoverArtsPoint_Miracle,artsConsumptionRate,magicConsumptionRate,shamanConsumptionRate,miracleConsumptionRate,heroPointDamage,vowType0,vowType1,vowType2,vowType3,vowType4,vowType5,vowType6,vowType7,vowType8,vowType9,vowType10,vowType11,vowType12,vowType13,vowType14,vowType15,requestSOS,requestBlackSOS,requestForceJoinBlackSOS,requestKickSession,requestLeaveColiseumSession,requestLeaveSession,requestNpcInveda,-" />
+</PARAMMETA>

@@ -1,0 +1,16 @@
+<class name='hkpStaticCompoundShape' version='1' signature='0xd029071e' size='160' parent='hkpBvTreeShape'>
+  <enums>
+    <enum name='Config' flags='00000000'>
+      <enumitem name='NUM_BYTES_FOR_TREE' value='48'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='numBitsForChildShapeKey' offset='48' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='referencePolicy' offset='49' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='childShapeKeyMask' offset='52' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='instances' offset='56' ctype='hkpStaticCompoundShapeInstance' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='instanceExtraInfos' offset='72' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='disabledLargeShapeKeyTable' offset='88' ctype='hkpShapeKeyTable' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tree' offset='112' ctype='hkcdStaticTreeDefaultTreeStorage6' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

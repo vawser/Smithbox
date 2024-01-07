@@ -1,0 +1,11 @@
+<class name='hkbEventBase' version='1' signature='0x76bddb31' size='16'>
+  <enums>
+    <enum name='SystemEventIds' flags='00000000'>
+      <enumitem name='EVENT_ID_NULL' value='-1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='id' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='payload' offset='8' ctype='hkbEventPayload' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

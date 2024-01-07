@@ -1,0 +1,6 @@
+<class name='hkaiAgentTraversalInfo' version='1' signature='0xd3db3a74' size='8'>
+  <members>
+    <member name='diameter' offset='0' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='filterInfo' offset='4' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,7 @@
+<class name='hkcdDynamicTreeTreehkcdDynamicTreeDynamicStorage32' version='1' signature='0x7e555eec' size='40' parent='hkcdDynamicTreeDynamicStorage32'>
+  <members>
+    <member name='numLeaves' offset='24' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='path' offset='28' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='root' offset='32' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

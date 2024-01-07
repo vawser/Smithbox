@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <MaxHpRate AltName="Max HP %" Wiki="Maximum HP magnification [%]" />
+    <MaxMpRate AltName="Max FP %" Wiki="Maximum MP magnification [%]" />
+    <MaxStaminaRate AltName="Max Stamina %" Wiki="Maximum stamina magnification [%]" />
+    <PhysicsAttackRate AltName="Damage %: Physical" Wiki="Physical attack power multiplier" />
+    <SlashAttackRate AltName="Damage %: Slash" Wiki="Slash attack power multiplier" />
+    <BlowAttackRate AltName="Damage %: Strike" Wiki="Batter attack power multiplier" />
+    <ThrustAttackRate AltName="Damage %: Thrust" Wiki="Puncture attack power multiplier" />
+    <NeturalAttackRate AltName="Damage %: Standard" Wiki="Non-attribute attack power multiplier" />
+    <MagicAttackRate AltName="Damage %: Magic" Wiki="Magic attack power multiplier" />
+    <FireAttackRate AltName="Damage %: Fire" Wiki="Fire attack power multiplier" />
+    <ThunderAttackRate AltName="Damage %: Lightning" Wiki="Electric shock attack power multiplier" />
+    <DarkAttackRate AltName="Damage %: Holy" Wiki="Dark attack power multiplier" />
+    <PhysicsDefenseRate AltName="Defence %: Physical" Wiki="Physical defense power multiplier" />
+    <MagicDefenseRate AltName="Defence %: Magic" Wiki="Magic defense multiplier" />
+    <FireDefenseRate AltName="Defence %: Fire" Wiki="Fire defense multiplier" />
+    <ThunderDefenseRate AltName="Defence %: Lightning" Wiki="Electric shock defense power multiplier" />
+    <DarkDefenseRate AltName="Defence %: Holy" Wiki="Dark defense multiplier" />
+    <StaminaAttackRate AltName="Damage %: Stamina" Wiki="Stamina attack power multiplier" />
+    <SoulRate AltName="Rune Multiplier" Wiki="Possession soul rate" />
+    <PoisionResistRate AltName="Resist %: Poison" Wiki="Poison resistance change rate" />
+    <DiseaseResistRate AltName="Resist %: Scarlet Rot" Wiki="Epidemic resistance change rate" />
+    <BloodResistRate AltName="Resist %: Hemorrhage" Wiki="Bleeding resistance change rate" />
+    <CurseResistRate AltName="Resist %: Blight" Wiki="Curse resistance change rate" />
+    <FreezeResistRate AltName="Resist %: Frostbite" Wiki="Cold resistance change rate" />
+    <BloodDamageRate AltName="Damage %: Hemorrhage" Wiki="Bleeding damage correction factor" />
+    <SuperArmorDamageRate AltName="Damage %: Poise" Wiki="SA damage correction factor" />
+    <FreezeDamageRate AltName="Damage %: Frostbite" Wiki="Cold damage correction factor" />
+    <SleepResistRate AltName="Resist %: Sleep" Wiki="Sleep tolerance change rate" />
+    <MadnessResistRate AltName="Resist %: Madness" Wiki="Madness resistance change rate" />
+    <SleepDamageRate AltName="Damage %: Sleep" Wiki="Sleep damage correction factor" />
+    <MadnessDamageRate AltName="Damage %: Madness" Wiki="Mad damage correction factor" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,12 @@
+{
+    "Title": "Model Editor",
+    "Tags": [
+        "Feature"
+    ],
+    "Contents": [
+        "The Model Editor allows you to view the models used by the game.",
+        "Specifically, it covers Characters, Assets or Objects, Parts and MapPieces.",
+        "",
+        "Note, the Model Editor does NOT allow you to save changes to the models."
+    ]
+}

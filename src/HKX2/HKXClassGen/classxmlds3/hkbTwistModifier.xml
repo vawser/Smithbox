@@ -1,0 +1,24 @@
+<class name='hkbTwistModifier' version='1' signature='0x98d623bc' size='160' parent='hkbModifier'>
+  <enums>
+    <enum name='SetAngleMethod' flags='00000000'>
+      <enumitem name='LINEAR' value='0'/>
+      <enumitem name='RAMPED' value='1'/>
+    </enum>
+    <enum name='RotationAxisCoordinates' flags='00000000'>
+      <enumitem name='ROTATION_AXIS_IN_MODEL_COORDINATES' value='0'/>
+      <enumitem name='ROTATION_AXIS_IN_PARENT_COORDINATES' value='1'/>
+      <enumitem name='ROTATION_AXIS_IN_LOCAL_COORDINATES' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='axisOfRotation' offset='96' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='twistAngle' offset='112' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='startBoneIndex' offset='116' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='endBoneIndex' offset='118' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='setAngleMethod' offset='120' etype='SetAngleMethod' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='rotationAxisCoordinates' offset='121' etype='RotationAxisCoordinates' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isAdditive' offset='122' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneChainIndices' offset='128' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='parentBoneIndices' offset='144' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

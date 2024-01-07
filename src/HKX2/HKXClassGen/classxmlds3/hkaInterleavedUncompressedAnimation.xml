@@ -1,0 +1,6 @@
+<class name='hkaInterleavedUncompressedAnimation' version='1' signature='0xa5eff3f2' size='88' parent='hkaAnimation'>
+  <members>
+    <member name='transforms' offset='56' vtype='TYPE_ARRAY' vsubtype='TYPE_QSTRANSFORM' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='floats' offset='72' vtype='TYPE_ARRAY' vsubtype='TYPE_REAL' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

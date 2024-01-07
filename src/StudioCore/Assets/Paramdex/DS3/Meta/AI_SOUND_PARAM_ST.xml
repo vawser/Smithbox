@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="AI_SOUND_RATE_TYPE" type="u8">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Default" />
+        <Option Value="2" Name="Collision Based" />
+    </Enum>
+	<Enum Name="AI_SOUND_FAKE_TARGET_TYPE">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Enemy" />
+      <Option Value="2" Name="Ally" />
+	  <Option Value="3" Name="Self" />
+    </Enum>
+  </Enums>
+  <Field>
+    <Radius AltName="Radius" Wiki="AI sound radius" />
+    <lifeFrame AltName="Duration" Wiki="Time for AI sound to remain" />
+    <bSpEffectEnable AltName="Is Affected by Sound Radius Magnification" Wiki="Whether it is affected by the special effect Sound Radius Magnification" IsBool="" />
+    <Type AltName="Rate Type" Wiki="AI sound type" Enum="AI_SOUND_RATE_TYPE" />
+	<fakeTargetType AltName="Fake Target Type" Enum="AI_SOUND_FAKE_TARGET_TYPE" />
+    <UseHitDamageTeam AltName="Is Hit Damage Team" IsBool="" />
+    
+    <pad AltName=""/>
+  </Field>
+  <Self Wiki="How AIs react to sound"/>
+</PARAMMETA>

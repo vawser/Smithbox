@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ATTACK_ELEMENT_CORRECT_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u32 0x00_0:1" />
+    <Field Def="u32 0x00_1:1" />
+    <Field Def="u32 0x00_2:1" />
+    <Field Def="u32 0x00_3:1" />
+    <Field Def="u32 0x00_4:1" />
+    <Field Def="u32 0x00_5:1" />
+    <Field Def="u32 0x00_6:1" />
+    <Field Def="u32 0x00_7:1" />
+    <Field Def="u32 0x00_8:1" />
+    <Field Def="u32 0x00_9:1" />
+    <Field Def="u32 0x00_10:1" />
+    <Field Def="u32 0x00_11:1" />
+    <Field Def="u32 0x00_12:1" />
+    <Field Def="u32 0x00_13:1" />
+    <Field Def="u32 0x00_14:1" />
+    <Field Def="u32 0x00_15:1" />
+    <Field Def="u32 0x00_16:1" />
+    <Field Def="u32 0x00_17:1" />
+    <Field Def="u32 0x00_18:1" />
+    <Field Def="u32 0x00_19:1" />
+    <Field Def="u32 0x00_20:1" />
+    <Field Def="u32 0x00_21:1" />
+    <Field Def="u32 0x00_22:1" />
+    <Field Def="u32 0x00_23:1" />
+    <Field Def="u32 0x00_24:1" />
+    <Field Def="u32 0x00_25:1" />
+    <Field Def="u32 0x00_26:1" />
+    <Field Def="u32 0x00_27:1" />
+    <Field Def="u32 0x00_28:1" />
+    <Field Def="u32 0x00_29:1" />
+    <Field Def="u32 0x00_30:1" />
+    <Field Def="u32 0x00_31:1" />
+    <Field Def="s16 addRate0 = -1" />
+    <Field Def="s16 addRate1 = -1" />
+    <Field Def="s16 addRate2 = -1" />
+    <Field Def="s16 addRate3 = -1" />
+    <Field Def="s16 addRate4 = -1" />
+    <Field Def="s16 addRate5 = -1" />
+    <Field Def="s16 addRate6 = -1" />
+    <Field Def="s16 addRate7 = -1" />
+    <Field Def="s16 addRate8 = -1" />
+    <Field Def="s16 addRate9 = -1" />
+    <Field Def="s16 addRate10 = -1" />
+    <Field Def="s16 addRate11 = -1" />
+    <Field Def="s16 addRate12 = -1" />
+    <Field Def="s16 addRate13 = -1" />
+    <Field Def="s16 addRate14 = -1" />
+    <Field Def="s16 addRate15 = -1" />
+    <Field Def="s16 addRate16 = -1" />
+    <Field Def="s16 addRate17 = -1" />
+    <Field Def="s16 addRate18 = -1" />
+    <Field Def="s16 addRate19 = -1" />
+    <Field Def="s16 addRate20 = -1" />
+    <Field Def="s16 addRate21 = -1" />
+    <Field Def="s16 addRate22 = -1" />
+    <Field Def="s16 addRate23 = -1" />
+    <Field Def="s16 addRate24 = -1" />
+    <Field Def="s16 corrRate0 = 100" />
+    <Field Def="s16 corrRate1 = 100" />
+    <Field Def="s16 corrRate2 = 100" />
+    <Field Def="s16 corrRate3 = 100" />
+    <Field Def="s16 corrRate4 = 100" />
+    <Field Def="s16 corrRate5 = 100" />
+    <Field Def="s16 corrRate6 = 100" />
+    <Field Def="s16 corrRate7 = 100" />
+    <Field Def="s16 corrRate8 = 100" />
+    <Field Def="s16 corrRate9 = 100" />
+    <Field Def="s16 corrRate10 = 100" />
+    <Field Def="s16 corrRate11 = 100" />
+    <Field Def="s16 corrRate12 = 100" />
+    <Field Def="s16 corrRate13 = 100" />
+    <Field Def="s16 corrRate14 = 100" />
+    <Field Def="s16 corrRate15 = 100" />
+    <Field Def="s16 corrRate16 = 100" />
+    <Field Def="s16 corrRate17 = 100" />
+    <Field Def="s16 corrRate18 = 100" />
+    <Field Def="s16 corrRate19 = 100" />
+    <Field Def="s16 corrRate20 = 100" />
+    <Field Def="s16 corrRate21 = 100" />
+    <Field Def="s16 corrRate22 = 100" />
+    <Field Def="s16 corrRate23 = 100" />
+    <Field Def="s16 corrRate24 = 100" />
+    <Field Def="dummy8 pad1[24]" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,6 @@
+<class name='hkContactPoint' version='1' signature='0x91d7dd8e' size='32'>
+  <members>
+    <member name='position' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='separatingNormal' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

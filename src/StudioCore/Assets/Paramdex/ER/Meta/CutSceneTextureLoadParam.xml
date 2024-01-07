@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParam_Debug AltName="Disable Param - Debug" Wiki="Parameters marked with a circle are excluded from all packages (because they are for debugging)." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <texName_00 AltName="Texture DisplayName [00]" Wiki="Texture DisplayName [00]" />
+    <texName_01 AltName="Texture DisplayName [01]" Wiki="Texture DisplayName [01]" />
+    <texName_02 AltName="Texture DisplayName [02]" Wiki="Texture DisplayName [02]" />
+    <texName_03 AltName="Texture DisplayName [03]" Wiki="Texture DisplayName [03]" />
+    <texName_04 AltName="Texture DisplayName [04]" Wiki="Texture DisplayName [04]" />
+    <texName_05 AltName="Texture DisplayName [05]" Wiki="Texture DisplayName [05]" />
+    <texName_06 AltName="Texture DisplayName [06]" Wiki="Texture DisplayName [06]" />
+    <texName_07 AltName="Texture DisplayName [07]" Wiki="Texture DisplayName [07]" />
+    <texName_08 AltName="Texture DisplayName [08]" Wiki="Texture DisplayName [08]" />
+    <texName_09 AltName="Texture DisplayName [09]" Wiki="Texture DisplayName [09]" />
+    <texName_10 AltName="Texture DisplayName [10]" Wiki="Texture DisplayName [10]" />
+    <texName_11 AltName="Texture DisplayName [11]" Wiki="Texture DisplayName [11]" />
+    <texName_12 AltName="Texture DisplayName [12]" Wiki="Texture DisplayName [12]" />
+    <texName_13 AltName="Texture DisplayName [13]" Wiki="Texture DisplayName [13]" />
+    <texName_14 AltName="Texture DisplayName [14]" Wiki="Texture DisplayName [14]" />
+    <texName_15 AltName="Texture DisplayName [15]" Wiki="Texture DisplayName [15]" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,5 @@
+<class name='hkpRagdollLimitsData' version='1' signature='0xcfcd7899' size='240' parent='hkpConstraintData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpRagdollLimitsDataAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

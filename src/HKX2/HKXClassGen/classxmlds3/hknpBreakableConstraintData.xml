@@ -1,0 +1,5 @@
+<class name='hknpBreakableConstraintData' version='1' signature='0xc40485c7' size='40' parent='hkpWrappedConstraintData'>
+  <members>
+    <member name='threshold' offset='32' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

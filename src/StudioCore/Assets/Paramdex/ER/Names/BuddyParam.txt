@@ -1,0 +1,128 @@
+20000000 Black Knife Tiche
+20100000 Banished Knight Oleg
+20200000 Banished Knight Engvall
+20300000 Fanged Imps
+20300001 Fanged Imps
+20400000 Latenna the Albinauric
+20500000 Nomad
+20600000 Nightmaiden & Swordstress
+20600001 Nightmaiden & Swordstress
+20700000 Mimic Tear
+20700001 Mimic Tear
+20800000 Crystalian
+20900000 Ancestral Follower
+21000000 Winged Misbegotten
+21100000 Albinauric Ashes
+21100001 Albinauric Ashes
+21200000 Skeletal Militiaman
+21200001 Skeletal Militiaman
+21300000 Skeletal Bandit
+21400000 Oracle Envoy
+21400001 Oracle Envoy
+21400002 Oracle Envoy
+21400003 Oracle Envoy
+21500000 Putrid Corpse
+21500001 Putrid Corpse
+21500002 Putrid Corpse
+21500003 Putrid Corpse
+21600000 Depraved Perfumer
+21700000 Perfumer Tricia
+21800000 Glintstone Sorcerer
+21900000 Twinsage Sorcerer
+22000000 Page Ashes
+22100000 Battlemage Hugues
+22200000 Clayman
+22200001 Clayman
+22300000 Cleanrot Knight Finlay
+22400000 Kindred of Rot
+22500000 Marionette Soldier
+22500001 Marionette Soldier
+22600000 Avionette Soldier
+22600001 Avionette Soldier
+22700000 Fire Monk
+22800000 Blackflame Monk
+22900000 Man-Serpent
+23000000 Azula Beastman
+23000001 Azula Beastman
+23100000 Kaiden Sellsword
+23200000 Lone Wolf
+23200001 Lone Wolf
+23200002 Lone Wolf
+23300000 Giant Rat
+23300001 Giant Rat
+23300002 Giant Rat
+23310000 Giant Rat - Additional Set 1
+23310001 Giant Rat - Additional Set 1
+23310002 Giant Rat - Additional Set 1
+23310003 Giant Rat - Additional Set 1
+23320000 Giant Rat - Additional Set 2
+23320001 Giant Rat - Additional Set 2
+23320002 Giant Rat - Additional Set 2
+23320003 Giant Rat - Additional Set 2
+23320004 Giant Rat - Additional Set 2
+23400000 Demi-Human
+23400001 Demi-Human
+23400002 Demi-Human
+23400003 Demi-Human
+23400004 Demi-Human
+23500000 Rotten Stray
+23600000 Spirit Jellyfish
+23700000 Warhawk
+23800000 Stormhawk
+23900000 Bloodhound Knight Floh
+24000000 Wandering Noble
+24000001 Wandering Noble
+24000002 Wandering Noble
+24000003 Wandering Noble
+24000004 Wandering Noble
+24100000 Noble Sorcerer
+24200000 Vulgar Militia
+24200001 Vulgar Militia
+24200002 Vulgar Militia
+24300000 Mad Pumpkin Head
+24400000 Land Squirt
+24400001 Land Squirt
+24400002 Land Squirt
+24500000 Miranda Sprout
+24500001 Miranda Sprout
+24500002 Miranda Sprout
+24500003 Miranda Sprout
+24500004 Miranda Sprout
+24600000 Soldjars of Fortune
+24600001 Soldjars of Fortune
+24600002 Soldjars of Fortune
+24700000 Omenkiller
+24800000 Greatshield Soldier
+24800001 Greatshield Soldier
+24800002 Greatshield Soldier
+24800003 Greatshield Soldier
+24800004 Greatshield Soldier
+24900000 Archer
+24900001 Archer
+24900002 Archer
+25000000 Godrick Soldier
+25000001 Godrick Soldier
+25100000 Raya Lucaria Soldier
+25100001 Raya Lucaria Soldier
+25100002 Raya Lucaria Soldier
+25200000 Leyndell Soldier
+25200001 Leyndell Soldier
+25300000 Radahn Soldier
+25300001 Radahn Soldier
+25400000 Mausoleum Soldier
+25400001 Mausoleum Soldier
+25400002 Mausoleum Soldier
+25400003 Mausoleum Soldier
+25400004 Mausoleum Soldier
+25500000 Haligtree Soldier
+25500001 Haligtree Soldier
+25500002 Haligtree Soldier
+25500003 Haligtree Soldier
+25600000 Ancient Dragon Knight Kristoff
+25700000 Redmane Knight Ogha
+25800000 Lhutel the Headless
+25900000 Nepheli Loux Puppet
+26000000 Dung Eater Puppet
+26100000 Finger Maiden Therolina Puppet
+26200000 Dolores the Sleeping Arrow
+26300000 Jarwight Puppet

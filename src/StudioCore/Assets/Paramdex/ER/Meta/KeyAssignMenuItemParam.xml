@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="CS_USER_INPUT_KEY" type="s32">
+    </Enum>
+    <Enum Name="CS_KEY_ASSIGN_GROUP" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <textID AltName="Text ID" Wiki="Key specified  Item name, 1-line help ID. No key specified  Category name ID. No text specified  Not displayed in pad / key settings (operation list display only)" />
+    <key AltName="Key" Wiki="User input key to be assigned. If not specified, it will be treated as a category display item." Enum="CS_USER_INPUT_KEY" />
+    <enableUnassign AltName="Allow Unassignment" Wiki="Is it possible to unassign (default possible)" IsBool="" />
+    <enablePadConfig AltName="Allow Pad Config" Wiki="Is it possible to change the pad operation assignment (default possible)?" IsBool="" />
+    <enableMouseConfig AltName="Allow Mouse Config" Wiki="Is it possible to change the mouse operation assignment (default possible)?" IsBool="" />
+    <group AltName="Group" Wiki="Group for determining duplicate assignments. Cannot be duplicated in the same group" Enum="CS_KEY_ASSIGN_GROUP" />
+    <mappingTextID AltName="Mapping Text ID" Wiki="Item name to be displayed in the operation list. 0  Do not display in the list" FmgRef="Modern_MenuText" />
+    <viewPad AltName="View Pad" Wiki="Whether to display with key config (pad) (default display)" IsBool="" />
+    <viewKeyboardMouse AltName="View Keyboard/Mouse" Wiki="Whether to display with key config (mouse / keyboard) (default display)" IsBool="" />
+    <padding AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

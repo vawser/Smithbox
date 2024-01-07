@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EVENT_FLAG_USAGE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 usageType"></Field>
+    <Field Def="u8 playlogCategory"></Field>
+    <Field Def="dummy8 padding1[2]"></Field>
+    <Field Def="s32 flagNum"></Field>
+    <Field Def="dummy8 padding2[24]"></Field>
+  </Fields>
+</PARAMDEF>

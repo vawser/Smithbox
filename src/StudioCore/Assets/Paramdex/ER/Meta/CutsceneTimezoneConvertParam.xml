@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <SrcTimezoneStart AltName="Source - Timezone Start" Wiki="Start time of the time zone to be converted to cutscene time [hour]" />
+    <DstCutscenTime AltName="Destination - Cutscene Time" Wiki="Enter the time used during cutscene playback in hours [hour]" />
+  </Field>
+  <Self />
+</PARAMMETA>

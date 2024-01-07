@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <vram_all AltName="VRAM: ALL" Wiki="VRAM: ALL (unit is MB)" />
+    <vram_mapobj_tex AltName="VRAM: Map / Object Texture" Wiki="VRAM: Map / Object Texture (Unit: MB)" />
+    <vram_mapobj_mdl AltName="VRAM: Map / Object Model" Wiki="VRAM: Map / object model (in MB)" />
+    <vram_map AltName="VRAM: map" Wiki="VRAM: Map (in MB)" />
+    <vram_chr AltName="VRAM: Character" Wiki="VRAM: Character (unit is MB)" />
+    <vram_parts AltName="VRAM: Parts" Wiki="VRAM: Parts (unit is MB)" />
+    <vram_sfx AltName="VRAM: SFX" Wiki="VRAM: SFX (unit is MB)" />
+    <vram_chr_tex AltName="VRAM: Character texture" Wiki="VRAM: Character texture (unit is MB)" />
+    <vram_chr_mdl AltName="VRAM: Character model" Wiki="VRAM: Character model (unit is MB)" />
+    <vram_parts_tex AltName="VRAM: Parts texture" Wiki="VRAM: Parts texture (unit is MB)" />
+    <vram_parts_mdl AltName="VRAM: Parts model" Wiki="VRAM: Parts model (unit is MB)" />
+    <vram_sfx_tex AltName="VRAM: SFX texture" Wiki="VRAM: SFX texture (unit is MB)" />
+    <vram_sfx_mdl AltName="VRAM: SFX model" Wiki="VRAM: SFX model (in MB)" />
+    <vram_gi AltName="VRAM: Gi" Wiki="VRAM: Gi (unit is MB)" />
+    <vram_menu_tex AltName="VRAM: Menu" Wiki="VRAM: Menu (unit is MB)" />
+    <vram_decal_rt AltName="VRAM: DECAL_RT" Wiki="VRAM: DECAL render target (unit is MB)" />
+    <vram_decal AltName="VRAM: DECAL" Wiki="VRAM: DECAL (unit is MB)" />
+    <reserve_0 AltName=""/>
+    <vram_other_tex AltName="VRAM: Other textures" Wiki="VRAM: Other models (in MB)" />
+    <vram_other_mdl AltName="VRAM: Other models" Wiki="VRAM: Other textures (in MB)" />
+    <havok_anim AltName="HAVOK: Anime" Wiki="HAVOK: Animation (unit is MB)" />
+    <havok_ins AltName="HAVOK: Placement" Wiki="HAVOK: Placement (unit is MB)" />
+    <havok_hit AltName="HAVOK: Hit" Wiki="HAVOK: Hit (unit is MB)" />
+    <vram_other AltName="VRAM: Other" Wiki="VRAM: Other (unit is MB)" />
+    <vram_detail_all AltName="VRAM: Total Value" Wiki="VRAM: Total value (unit is MB)" />
+    <vram_chr_and_parts AltName="VRAM: Characters and Parts" Wiki="VRAM: Total value of characters and parts (unit is MB)" />
+    <havok_navimesh AltName="HAVOK: Navimesh" Wiki="HAVOK: Navimesh (unit is MB)" />
+    <reserve_1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

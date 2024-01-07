@@ -1,0 +1,6 @@
+<class name='hkpConvexTransformShape' version='1' signature='0x3aeaaa63' size='128' parent='hkpConvexTransformShapeBase'>
+  <members>
+    <member name='transform' offset='64' vtype='TYPE_QSTRANSFORM' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extraScale' offset='112' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

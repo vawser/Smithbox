@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+	<wepParamId Refs="EquipParamWeapon" />
+	<gemGenId0 Refs="GemGenParam" />
+	<gemGenId1 Refs="GemGenParam" />
+	<gemGenId2 Refs="GemGenParam" />
+	<gemGenId3 Refs="GemGenParam" />
+	<gemGenId4 Refs="GemGenParam" />
+  </Field>
+  <Self />
+</PARAMMETA>

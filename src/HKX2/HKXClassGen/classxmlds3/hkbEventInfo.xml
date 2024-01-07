@@ -1,0 +1,11 @@
+<class name='hkbEventInfo' version='1' signature='0x5874eed4' size='4'>
+  <enums>
+    <enum name='Flags' flags='00000000'>
+      <enumitem name='FLAG_SILENT' value='1'/>
+      <enumitem name='FLAG_SYNC_POINT' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='flags' offset='0' etype='Flags' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

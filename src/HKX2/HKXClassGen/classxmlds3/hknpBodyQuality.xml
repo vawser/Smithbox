@@ -1,0 +1,30 @@
+<class name='hknpBodyQuality' version='1' signature='0x4d0fbd5b' size='16'>
+  <enums>
+    <enum name='FlagsEnum' flags='00000000'>
+      <enumitem name='DROP_MANIFOLD_CACHE' value='1'/>
+      <enumitem name='FORCE_GSK_EXECUTION' value='2'/>
+      <enumitem name='FORCE_GSK_SINGLE_POINT_MANIFOLD' value='4'/>
+      <enumitem name='ALLOW_INTERIOR_TRIANGLE_COLLISIONS' value='8'/>
+      <enumitem name='ENABLE_SILHOUETTE_MANIFOLDS' value='16'/>
+      <enumitem name='USE_HIGHER_QUALITY_CONTACT_SOLVING' value='64'/>
+      <enumitem name='ENABLE_NEIGHBOR_WELDING' value='128'/>
+      <enumitem name='ENABLE_MOTION_WELDING' value='256'/>
+      <enumitem name='ENABLE_TRIANGLE_WELDING' value='512'/>
+      <enumitem name='ANY_WELDING' value='896'/>
+      <enumitem name='ENABLE_CONTACT_CACHING' value='1024'/>
+      <enumitem name='REQUEST_LINEAR_ONLY_COLLISION_LOOK_AHEAD' value='2048'/>
+      <enumitem name='FORCE_LINEAR_ONLY_COLLISION_LOOK_AHEAD' value='4096'/>
+      <enumitem name='ENABLE_FRICTION_ESTIMATION' value='8192'/>
+      <enumitem name='FIRST_NON_CACHABLE_FLAG' value='65536'/>
+      <enumitem name='CLIP_ANGULAR_VELOCITY' value='65536'/>
+      <enumitem name='USE_DISCRETE_AABB_EXPANSION' value='131072'/>
+      <enumitem name='MERGE_FRICTION_JACOBIANS' value='262144'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='priority' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='supportedFlags' offset='4' etype='FlagsEnum' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='requestedFlags' offset='8' etype='FlagsEnum' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contactCachingRelativeMovementThreshold' offset='12' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

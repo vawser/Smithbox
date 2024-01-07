@@ -1,0 +1,8 @@
+<class name='hclVolumeConstraintMx' version='1' signature='0x37582f2' size='96' parent='hclConstraintSet'>
+  <members>
+    <member name='frameBatchDatas' offset='32' ctype='hclVolumeConstraintMxFrameBatchData' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='frameSingleDatas' offset='48' ctype='hclVolumeConstraintMxFrameSingleData' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='applyBatchDatas' offset='64' ctype='hclVolumeConstraintMxApplyBatchData' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='applySingleDatas' offset='80' ctype='hclVolumeConstraintMxApplySingleData' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,6 @@
+<class name='hkcdPlanarGeometryPrimitivesPlane' version='1' signature='0xf9fd78c4' size='64'>
+  <members>
+    <member name='iEqn' offset='0' vtype='TYPE_INT64' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='dEqn' offset='32' vtype='TYPE_INT64' vsubtype='TYPE_VOID' arrsize='4' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <FFXID AltName="FFXID" Wiki="ID on the FFX editor" />
+    <LifeTime AltName="Survival time [frame]" Wiki="Survival time." />
+    <HitSphereRadius AltName="Hit ball radius [cm]" Wiki="Hit ball radius. Unit cm" />
+    <HitDamage AltName="Landing damage" Wiki="Amount of damage at the time of landing" />
+    <reserve0 AltName=""/>
+    <InitVelocity AltName="Initial speed [m / s]" Wiki="Initial speed [m / s]" />
+    <distance AltName="Range distance" Wiki="Range distance" />
+    <gravityInRange AltName="Gravity within range" Wiki="Gravity within range" />
+    <gravityOutRange AltName="Out-of-range gravity" Wiki="Out-of-range gravity" />
+    <mp AltName="MP consumption" Wiki="MP consumption" />
+    <accelInRange AltName="Acceleration within range" Wiki="Acceleration within range" />
+    <accelOutRange AltName="Out-of-range acceleration" Wiki="Out-of-range acceleration" />
+    <reserve1 AltName=""/>
+    <HitMissileID AltName="Landing ID" Wiki="Landing ID" />
+    <DiedNaturaly AltName="Will you die at the end of your life?" Wiki="Will it use up its life without dying even if it lands?" IsBool="" />
+    <ExplosionDie AltName="Will it land when the life has expired?" Wiki="Will it land when the life has expired?" IsBool="" />
+    <behaviorId AltName="Action ID on hit" Wiki="Action ID given to the opponent when doing damage" />
+    <reserve_last AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

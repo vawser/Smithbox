@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  	<Enum Name="DamageTypeMenu" type="u8">
+		<Option Value="0" Name="None" />
+		<Option Value="1" Name="Strike" />
+		<Option Value="2" Name="Slash" />
+		<Option Value="3" Name="Thrust" />
+		<Option Value="4" Name="Parry" />
+		<Option Value="5" Name="Spell parry" />
+		<Option Value="6" Name="Spell" />
+		<Option Value="7" Name="Projectile" />
+	</Enum>
+  </Enums>
+  <Self Wiki="Defines parameters relating to weapons." Row0Dummy="" />
+  <Field>
+    <weapon_model_id AltName="Weapon Model ID" />
+    <weapon_reinforce_id AltName="Weapon Reinforce ID" Refs="WeaponReinforceParam" />
+    <weapon_action_category_id AltName="Weapon Action Category ID" Refs="WeaponActionCategoryParam" />
+    <weapon_type_id AltName="Weapon Type ID" Refs="WeaponTypeParam" />
+    <str_requirement AltName="STR Requirement" />
+    <dex_requirement AltName="DEX Requirement" />
+    <int_requirement AltName="INT Requirement" />
+    <fth_requirement AltName="FTH Requirement" />
+    <weight AltName="Weight" />
+    <recovery_animation_weight AltName="Recovery Animation Weight" Wiki="Affects Estus Flash usage" />
+    <max_durability AltName="Max Durability" />
+    <base_repair_cost AltName="Base Repair Cost" />
+    <stamina_consumption AltName="Stamina Consumption" Wiki="Value is (*10)"/>
+    <stamina_damage AltName="Stamina Damage" Wiki="Value is (*10)" />
+    <weapon_stamina_cost_id AltName="Weapon Stamina Cost ID" Refs="WeaponStaminaCostParam" />
+    <player_damage_id_backstab_small AltName="Player Damage ID: Backstab Small" Refs="PlayerDamageParam" />
+    <player_damage_id_backstab_medium AltName="Player Damage ID: Backstab Medium" Refs="PlayerDamageParam" />
+    <player_damage_id_backstab_large AltName="Player Damage ID: Backstab Large" Refs="PlayerDamageParam" />
+    <player_damage_id_guardbreak_small AltName="Player Damage ID: Guard Break Stab Small" Refs="PlayerDamageParam" />
+    <player_damage_id_guardbreak_medium AltName="Player Damage ID: Guard Break Stab Medium" Refs="PlayerDamageParam" />
+    <player_damage_id_guardbreak_large AltName="Player Damage ID: Guard Break Stab Large" Refs="PlayerDamageParam" />
+    <player_damage_id_riposte_small AltName="Player Damage ID: Riposte Small" Refs="PlayerDamageParam" />
+    <player_damage_id_riposte_medium AltName="Player Damage ID: Riposte Medium" Refs="PlayerDamageParam" />
+    <player_damage_id_riposte_large AltName="Player Damage ID: Riposte Large" Refs="PlayerDamageParam" />
+    <parry_frames_duration AltName="Parry Frames Duration" />
+    <damage_mult AltName="Damage %" />
+    <stamina_damage_mult AltName="Stamina Damage %" />
+    <durability_damage_mult AltName="Equipment Damage %" />
+    <guard_break_field AltName="Guard Break Related" />
+    <status_effect_amount AltName="Status Effect Amount" />
+    <posture_damage_mult AltName="Posture Damage %" />
+    <hitbox_radius AltName="Hitbox Radius" />
+    <hitbox_length AltName="Hitbox Length" />
+    <hitback_radius AltName="Hitback Radius" />
+    <hitback_length AltName="Hitback Length" />
+    <damage_type_menu_1 AltName="Damage Type Menu 1" Enum="DamageTypeMenu" />
+	<damage_type_menu_2 AltName="Damage Type Menu 2" Enum="DamageTypeMenu" />
+    <poise_damage_menu AltName="Poise Damage Menu" />
+    <counter_damage_menu AltName="Counter Damage Menu" />
+    <casting_speed_menu AltName="Casting Speed Menu" />
+    <poise_damage_pvp AltName="Poise Damage PVP" />
+    <poise_damage_pve AltName="Poise Damage PVE" />
+    <hyper_armor_poise_mult AltName="Hyper-Armor Poise Multiplier" Wiki="Multiplies poise damage taken during hyper-armor state"/>
+  </Field>
+</PARAMMETA>

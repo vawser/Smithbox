@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>MENU_PARAM_COLOR_TABLE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 colorR"></Field>
+    <Field Def="u8 colorG"></Field>
+    <Field Def="u8 colorB"></Field>
+    <Field Def="u8 colorAlpha"></Field>
+  </Fields>
+</PARAMDEF>

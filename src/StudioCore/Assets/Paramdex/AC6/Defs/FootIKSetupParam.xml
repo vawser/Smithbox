@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>FOOT_IK_SETUP_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 UnkByte0x00"></Field>
+    <Field Def="u8 UnkByte0x01"></Field>
+    <Field Def="u8 Unk0x02"></Field>
+    <Field Def="u8 Unk0x03"></Field>
+    <Field Def="f32 UnkFloat0x04"></Field>
+    <Field Def="f32 UnkFloat0x08"></Field>
+    <Field Def="f32 UnkFloat0x0C"></Field>
+    <Field Def="f32 UnkFloat0x10"></Field>
+    <Field Def="f32 UnkFloat0x14"></Field>
+    <Field Def="f32 UnkFloat0x18"></Field>
+    <Field Def="f32 UnkFloat0x1C"></Field>
+    <Field Def="f32 UnkFloat0x20"></Field>
+    <Field Def="f32 UnkFloat0x24"></Field>
+    <Field Def="f32 UnkFloat0x28"></Field>
+    <Field Def="f32 UnkFloat0x2C"></Field>
+    <Field Def="f32 UnkFloat0x30"></Field>
+    <Field Def="f32 UnkFloat0x34"></Field>
+    <Field Def="f32 UnkFloat0x38"></Field>
+    <Field Def="f32 UnkFloat0x3C"></Field>
+    <Field Def="f32 UnkFloat0x40"></Field>
+    <Field Def="f32 UnkFloat0x44"></Field>
+    <Field Def="f32 UnkFloat0x48"></Field>
+    <Field Def="f32 UnkFloat0x4C"></Field>
+    <Field Def="f32 UnkFloat0x50"></Field>
+    <Field Def="f32 UnkFloat0x54"></Field>
+    <Field Def="f32 UnkFloat0x58"></Field>
+    <Field Def="f32 UnkFloat0x5C"></Field>
+    <Field Def="f32 UnkFloat0x60"></Field>
+    <Field Def="f32 UnkFloat0x64"></Field>
+    <Field Def="f32 UnkFloat0x68"></Field>
+    <Field Def="f32 UnkFloat0x6C"></Field>
+    <Field Def="f32 UnkFloat0x70"></Field>
+    <Field Def="f32 UnkFloat0x74"></Field>
+    <Field Def="f32 UnkFloat0x78"></Field>
+    <Field Def="f32 UnkFloat0x7C"></Field>
+    <Field Def="f32 UnkFloat0x80"></Field>
+  </Fields>
+</PARAMDEF>

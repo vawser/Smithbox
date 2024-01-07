@@ -1,0 +1,4 @@
+<class name='hknpDisableCollisionFilter' version='1' signature='0x6730426' size='24' parent='hknpCollisionFilter'>
+  <members>
+  </members>
+</class>

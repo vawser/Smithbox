@@ -1,0 +1,5 @@
+<class name='hkFloat16' version='1' signature='0x903cf105' size='2'>
+  <members>
+    <member name='value' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,28 @@
+0 Mini Attack -- 極小　攻撃
+1 Small Attack -- 小　攻撃
+2 Medium Attack -- 中　攻撃
+3 Major Attack -- 大　攻撃
+4 Oversized attack -- 特大　攻撃
+5 Extra-large attack -- 特特大　攻撃
+6 Special Attacks -- 特殊　攻撃
+100 Mini Attack -- 極小　攻撃
+101 Small Attack -- 小　攻撃
+102 Medium Attack -- 中　攻撃
+103 Major Attack -- 大　攻撃
+104 Oversized attack -- 特大　攻撃
+105 Extra-large attack -- 特特大　攻撃
+106 Special Attacks -- 特殊　攻撃
+10000 Stance Guard Minimal Attack -- 構えガード 極小　攻撃
+10001 Poise Guard Small Attack -- 構えガード 小　攻撃
+10002 Poise Guard Medium Attack -- 構えガード 中　攻撃
+10003 Poise Guard Large Attack -- 構えガード 大　攻撃
+10004 Poise Guard Extra Large Attack -- 構えガード 特大　攻撃
+10005 Stance Guard Special Attack -- 構えガード 特特大　攻撃
+10006 Stance Guard Special Attack -- 構えガード 特殊　攻撃
+10100 Stance Guard Minimal Attack -- 構えガード 極小　攻撃
+10101 Poise Guard Small Attack -- 構えガード 小　攻撃
+10102 Poise Guard Medium Attack -- 構えガード 中　攻撃
+10103 Poise Guard Large Attack -- 構えガード 大　攻撃
+10104 Poise Guard Extra Large Attack -- 構えガード 特大　攻撃
+10105 Stance Guard Special Attack -- 構えガード 特特大　攻撃
+10106 Stance Guard Special Attack -- 構えガード 特殊　攻撃

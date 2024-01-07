@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <characterNameTextId AltName="Character Name Text ID" FmgRef="Characters" Wiki="Name that appears with subtitles when character is talking." />
+  </Field>
+  <Self />
+</PARAMMETA>

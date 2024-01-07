@@ -1,0 +1,20 @@
+<class name='hkMonitorStreamFrameInfo' version='1' signature='0x7798b7db' size='40'>
+  <enums>
+    <enum name='AbsoluteTimeCounter' flags='00000000'>
+      <enumitem name='ABSOLUTE_TIME_TIMER_0' value='0'/>
+      <enumitem name='ABSOLUTE_TIME_TIMER_1' value='1'/>
+      <enumitem name='ABSOLUTE_TIME_NOT_TIMED' value='-1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='heading' offset='0' vtype='TYPE_STRINGPTR' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexOfTimer0' offset='8' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexOfTimer1' offset='12' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='absoluteTimeCounter' offset='16' etype='AbsoluteTimeCounter' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='timerFactor0' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='timerFactor1' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='threadId' offset='28' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='frameStreamStart' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='frameStreamEnd' offset='36' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

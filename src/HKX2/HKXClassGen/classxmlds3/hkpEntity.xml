@@ -1,0 +1,35 @@
+<class name='hkpEntity' version='1' signature='0x88049864' size='720' parent='hkpWorldObject'>
+  <enums>
+    <enum name='SpuCollisionCallbackEventFilter' flags='00000000'>
+      <enumitem name='SPU_SEND_NONE' value='0'/>
+      <enumitem name='SPU_SEND_CONTACT_POINT_ADDED' value='1'/>
+      <enumitem name='SPU_SEND_CONTACT_POINT_PROCESS' value='2'/>
+      <enumitem name='SPU_SEND_CONTACT_POINT_REMOVED' value='4'/>
+      <enumitem name='SPU_SEND_CONTACT_POINT_ADDED_OR_PROCESS' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='material' offset='200' ctype='hkpMaterial' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='limitContactImpulseUtilAndFlag' offset='216' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='damageMultiplier' offset='224' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='breakableBody' offset='232' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='solverData' offset='240' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='storageIndex' offset='244' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contactPointCallbackDelay' offset='246' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='constraintsMaster' offset='248' ctype='hkpEntitySmallArraySerializeOverrideType' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='constraintsSlave' offset='264' ctype='hkpConstraintInstance' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='constraintRuntime' offset='280' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT8' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='simulationIsland' offset='296' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='autoRemoveLevel' offset='304' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numShapeKeysInContactPointProperties' offset='305' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='responseModifierFlags' offset='306' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='uid' offset='308' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='spuCollisionCallback' offset='312' ctype='hkpEntitySpuCollisionCallback' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motion' offset='336' ctype='hkpMaxSizeMotion' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contactListeners' offset='656' ctype='hkpEntitySmallArraySerializeOverrideType' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='actions' offset='672' ctype='hkpEntitySmallArraySerializeOverrideType' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='localFrame' offset='688' ctype='hkLocalFrame' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='extendedListeners' offset='696' ctype='hkpEntityExtendedListeners' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='npData' offset='704' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

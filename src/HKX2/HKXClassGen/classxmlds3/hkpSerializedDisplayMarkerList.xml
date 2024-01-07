@@ -1,0 +1,5 @@
+<class name='hkpSerializedDisplayMarkerList' version='1' signature='0xcf7fbfcb' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='markers' offset='16' ctype='hkpSerializedDisplayMarker' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

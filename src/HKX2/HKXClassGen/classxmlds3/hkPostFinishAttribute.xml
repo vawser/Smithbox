@@ -1,0 +1,5 @@
+<class name='hkPostFinishAttribute' version='1' signature='0x903abb2c' size='8'>
+  <members>
+    <member name='postFinishFunction' offset='0' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

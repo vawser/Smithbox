@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="WEATHER_LOT_TIMEZONE_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="6" Name="Type 6" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <weatherType0 AltName="Weather Type [0]" Wiki="Weather type 0" Refs="WeatherParam" />
+    <weatherType1 AltName="Weather Type [1]" Wiki="Weather type 1" Refs="WeatherParam" />
+    <weatherType2 AltName="Weather Type [2]" Wiki="Weather type 2" Refs="WeatherParam" />
+    <weatherType3 AltName="Weather Type [3]" Wiki="Weather type 3" Refs="WeatherParam" />
+    <weatherType4 AltName="Weather Type [4]" Wiki="Weather type 4" Refs="WeatherParam" />
+    <weatherType5 AltName="Weather Type [5]" Wiki="Weather type 5" Refs="WeatherParam" />
+    <weatherType6 AltName="Weather Type [6]" Wiki="Weather type 6" Refs="WeatherParam" />
+    <weatherType7 AltName="Weather Type [7]" Wiki="Weather type 7" Refs="WeatherParam" />
+    <weatherType8 AltName="Weather Type [8]" Wiki="Weather type 8" Refs="WeatherParam" />
+    <weatherType9 AltName="Weather Type [9]" Wiki="Weather type 9" Refs="WeatherParam" />
+    <weatherType10 AltName="Weather Type [10]" Wiki="Weather type 10" Refs="WeatherParam" />
+    <weatherType11 AltName="Weather Type [11]" Wiki="Weather type 11" Refs="WeatherParam" />
+    <weatherType12 AltName="Weather Type [12]" Wiki="Weather type 12" Refs="WeatherParam" />
+    <weatherType13 AltName="Weather Type [13]" Wiki="Weather type 13" Refs="WeatherParam" />
+    <weatherType14 AltName="Weather Type [14]" Wiki="Weather type 14" Refs="WeatherParam" />
+    <weatherType15 AltName="Weather Type [15]" Wiki="Weather type 15" Refs="WeatherParam" />
+    <lotteryWeight0 AltName="Lottery Weight [0]" Wiki="Lottery weight 0" />
+    <lotteryWeight1 AltName="Lottery Weight [1]" Wiki="Lottery weight 1" />
+    <lotteryWeight2 AltName="Lottery Weight [2]" Wiki="Lottery weight 2" />
+    <lotteryWeight3 AltName="Lottery Weight [3]" Wiki="Lottery weight 3" />
+    <lotteryWeight4 AltName="Lottery Weight [4]" Wiki="Lottery weight 4" />
+    <lotteryWeight5 AltName="Lottery Weight [5]" Wiki="Lottery weight 5" />
+    <lotteryWeight6 AltName="Lottery Weight [6]" Wiki="Lottery weight 6" />
+    <lotteryWeight7 AltName="Lottery Weight [7]" Wiki="Lottery weight 7" />
+    <lotteryWeight8 AltName="Lottery Weight [8]" Wiki="Lottery weight 8" />
+    <lotteryWeight9 AltName="Lottery Weight [9]" Wiki="Lottery weight 9" />
+    <lotteryWeight10 AltName="Lottery Weight [10]" Wiki="Lottery weight 10" />
+    <lotteryWeight11 AltName="Lottery Weight [11]" Wiki="Lottery weight 11" />
+    <lotteryWeight12 AltName="Lottery Weight [12]" Wiki="Lottery weight 12" />
+    <lotteryWeight13 AltName="Lottery Weight [13]" Wiki="Lottery weight 13" />
+    <lotteryWeight14 AltName="Lottery Weight [14]" Wiki="Lottery weight 14" />
+    <lotteryWeight15 AltName="Lottery Weight [15]" Wiki="Lottery weight 15" />
+    <timezoneLimit AltName="Timezone Limit" Wiki="Time zone condition list" Enum="WEATHER_LOT_TIMEZONE_TYPE" />
+    <timezoneStartHour AltName="Timezone Start Hour" Wiki="Direct time specification_start_hour" />
+    <timezoneStartMinute AltName="Timezone Start Minute" Wiki="Direct time specification_start_minute" />
+    <timezoneEndHour AltName="Timezone End Hour" Wiki="Direct time specification_start_hour" />
+    <timezoneEndMinute AltName="Timezone End Minute" Wiki="Direct time specification_start_minute" />
+    <reserve AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

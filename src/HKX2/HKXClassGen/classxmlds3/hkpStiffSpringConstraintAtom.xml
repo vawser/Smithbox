@@ -1,0 +1,6 @@
+<class name='hkpStiffSpringConstraintAtom' version='1' signature='0x1f044420' size='12' parent='hkpConstraintAtom'>
+  <members>
+    <member name='length' offset='4' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxLength' offset='8' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,10 @@
+<class name='hkpPoweredChainDataConstraintInfo' version='1' signature='0xf88aee25' size='96'>
+  <members>
+    <member name='pivotInA' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pivotInB' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aTc' offset='32' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bTc' offset='48' vtype='TYPE_QUATERNION' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='motors' offset='64' ctype='hkpConstraintMotor' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='3' flags='FLAGS_NONE' default='0'/>
+    <member name='switchBodies' offset='88' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

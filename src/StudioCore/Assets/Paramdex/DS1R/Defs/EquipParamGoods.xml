@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EQUIP_PARAM_GOODS_ST</ParamType>
+  <Unk06>1</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>False</Unicode>
+  <Version>104</Version>
+  <Fields>
+    <Field Def="s32 refId = -1">
+      <DisplayName>呼び出しID</DisplayName>
+      <Description>アイテムから呼び出されるID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s32 sfxVariationId = -1">
+      <DisplayName>SFXバリエーションID</DisplayName>
+      <Description>ＳＦＸのバリエーションを指定（TimeActEditorのＩＤと組み合わせて、ＳＦＸを特定するのに使用する）</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="f32 weight = 1">
+      <DisplayName>重量[kg]</DisplayName>
+      <Description>重量[kg]</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>1000</Maximum>
+      <Increment>0.1</Increment>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s32 basicPrice">
+      <DisplayName>基本価格</DisplayName>
+      <Description>基本価格</Description>
+      <Minimum>0</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="s32 sellValue">
+      <DisplayName>販売価格</DisplayName>
+      <Description>販売価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>1210</SortID>
+    </Field>
+    <Field Def="s32 behaviorId">
+      <DisplayName>行動ID</DisplayName>
+      <Description>道具を使ったときに発生する効果を設定します</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="s32 replaceItemId = -1">
+      <DisplayName>差し替えアイテムID</DisplayName>
+      <Description>差し替えるときのアイテムID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+09</Maximum>
+      <SortID>3500</SortID>
+    </Field>
+    <Field Def="s32 sortId">
+      <DisplayName>ソートID</DisplayName>
+      <Description>ソートID(-1:集めない)</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>3600</SortID>
+    </Field>
+    <Field Def="s32 qwcId = -1">
+      <DisplayName>QWCID</DisplayName>
+      <Description>QWCのパラメタiD</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>3900</SortID>
+    </Field>
+    <Field Def="s32 yesNoDialogMessageId = -1">
+      <DisplayName>YES/NOメッセージID</DisplayName>
+      <Description>YesNoダイアログ表示時に使用するメッセージID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>4300</SortID>
+    </Field>
+    <Field Def="s32 magicId = -1">
+      <DisplayName>魔法ID</DisplayName>
+      <Description>巻物と紐づいた魔法ID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>15000</SortID>
+    </Field>
+    <Field Def="u16 iconId">
+      <DisplayName>アイコンID</DisplayName>
+      <Description>メニュー用アイコンID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="u16 modelId">
+      <DisplayName>モデルID</DisplayName>
+      <Description>モデルID</Description>
+      <Maximum>9999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s16 shopLv">
+      <DisplayName>ショップレベル</DisplayName>
+      <Description>お店で販売できるレベル</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2800</SortID>
+    </Field>
+    <Field Def="s16 compTrophySedId = -1">
+      <DisplayName>コンプトロフィーSEQ番号</DisplayName>
+      <Description>コンプリート系トロフィのSEQ番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3700</SortID>
+    </Field>
+    <Field Def="s16 trophySeqId = -1">
+      <DisplayName>トロフィーSEQ番号</DisplayName>
+      <Description>トロフィーのSEQ番号</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>3800</SortID>
+    </Field>
+    <Field Def="s16 maxNum">
+      <DisplayName>最大所持数</DisplayName>
+      <Description>最大所持数</Description>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>610</SortID>
+    </Field>
+    <Field Def="u8 consumeHeroPoint">
+      <DisplayName>消費人間性</DisplayName>
+      <Description>消費人間性</Description>
+      <SortID>611</SortID>
+    </Field>
+    <Field Def="u8 overDexterity">
+      <DisplayName>技量オーバー開始値</DisplayName>
+      <Description>技量オーバー開始値</Description>
+      <Maximum>99</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="u8 goodsType">
+      <DisplayName>道具のタイプ</DisplayName>
+      <Enum>GOODS_TYPE</Enum>
+      <Description>道具の種類</Description>
+      <Maximum>99</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="u8 refCategory">
+      <DisplayName>IDカテゴリ</DisplayName>
+      <Enum>BEHAVIOR_REF_TYPE</Enum>
+      <Description>↓のIDのカテゴリ[攻撃、飛び道具、特殊]</Description>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="u8 spEffectCategory">
+      <DisplayName>特殊効果カテゴリ</DisplayName>
+      <Enum>BEHAVIOR_CATEGORY</Enum>
+      <Description>スキルや、魔法、アイテムなどで、パラメータが変動する効果（エンチャントウェポンなど）があるので、│定した効果が、「武器攻撃のみをパワーアップする」といった効果に対応できるように行動ごとに設定するバリスタなど、設定の必要のないものは「なし」を設定する
+</Description>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="u8 goodsCategory">
+      <DisplayName>道具カテゴリ</DisplayName>
+      <Enum>GOODS_CATEGORY</Enum>
+      <Description>道具カテゴリ</Description>
+      <Maximum>99</Maximum>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="u8 goodsUseAnim">
+      <DisplayName>道具使用時アニメ</DisplayName>
+      <Enum>GOODS_USE_ANIM</Enum>
+      <Description>道具を使ったときに再生するアニメを設定します</Description>
+      <Maximum>99</Maximum>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 opmeMenuType">
+      <DisplayName>メニュー開くか</DisplayName>
+      <Enum>GOODS_OPEN_MENU</Enum>
+      <Description>アイテム使用時に開くメニュータイプ</Description>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="u8 useLimitCategory">
+      <DisplayName>特殊効果カテゴリによる使用制限</DisplayName>
+      <Enum>SP_EFFECT_USELIMIT_CATEGORY</Enum>
+      <Description>かかっている特殊効果によって使用可能かを制御する為に指定</Description>
+      <SortID>1610</SortID>
+    </Field>
+    <Field Def="u8 replaceCategory">
+      <DisplayName>差し替えカテゴリ</DisplayName>
+      <Enum>REPLACE_CATEGORY</Enum>
+      <Description>呼び出しIDに加算しる条件カテゴリ</Description>
+      <SortID>15001</SortID>
+    </Field>
+    <Field Def="u8 vowType0:1">
+      <DisplayName>誓約0</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約0で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20001</SortID>
+    </Field>
+    <Field Def="u8 vowType1:1">
+      <DisplayName>誓約1</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約1で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20002</SortID>
+    </Field>
+    <Field Def="u8 vowType2:1">
+      <DisplayName>誓約2</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約2で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20003</SortID>
+    </Field>
+    <Field Def="u8 vowType3:1">
+      <DisplayName>誓約3</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約3で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20004</SortID>
+    </Field>
+    <Field Def="u8 vowType4:1">
+      <DisplayName>誓約4</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約4で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20005</SortID>
+    </Field>
+    <Field Def="u8 vowType5:1">
+      <DisplayName>誓約5</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約5で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20006</SortID>
+    </Field>
+    <Field Def="u8 vowType6:1">
+      <DisplayName>誓約6</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約6で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20007</SortID>
+    </Field>
+    <Field Def="u8 vowType7:1">
+      <DisplayName>誓約7</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約7で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20008</SortID>
+    </Field>
+    <Field Def="u8 vowType8:1">
+      <DisplayName>誓約8</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約8で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20009</SortID>
+    </Field>
+    <Field Def="u8 vowType9:1">
+      <DisplayName>誓約9</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約9で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20010</SortID>
+    </Field>
+    <Field Def="u8 vowType10:1">
+      <DisplayName>誓約10</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約10で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20011</SortID>
+    </Field>
+    <Field Def="u8 vowType11:1">
+      <DisplayName>誓約11</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約11で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20012</SortID>
+    </Field>
+    <Field Def="u8 vowType12:1">
+      <DisplayName>誓約12</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約12で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20013</SortID>
+    </Field>
+    <Field Def="u8 vowType13:1">
+      <DisplayName>誓約13</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約13で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20014</SortID>
+    </Field>
+    <Field Def="u8 vowType14:1">
+      <DisplayName>誓約14</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約14で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20015</SortID>
+    </Field>
+    <Field Def="u8 vowType15:1">
+      <DisplayName>誓約15</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>誓約15で使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>20016</SortID>
+    </Field>
+    <Field Def="u8 enable_live:1">
+      <DisplayName>生存使用可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>生存プレイヤー使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1700</SortID>
+    </Field>
+    <Field Def="u8 enable_gray:1">
+      <DisplayName>グレイ使用可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>グレイゴースト使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1800</SortID>
+    </Field>
+    <Field Def="u8 enable_white:1">
+      <DisplayName>白使用可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ホワイトゴースト使用可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>1900</SortID>
+    </Field>
+    <Field Def="u8 enable_black:1">
+      <DisplayName>黒使用可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>ブラックゴーストしよう可能か</Description>
+      <Maximum>1</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="u8 enable_multi:1">
+      <DisplayName>マルチプレイ可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>マルチプレイ中に使用可能か？</Description>
+      <Maximum>1</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="u8 enable_pvp:1">
+      <DisplayName>戦闘</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>マルチプレイ中に使用可能か？</Description>
+      <Maximum>1</Maximum>
+      <SortID>2150</SortID>
+    </Field>
+    <Field Def="u8 disable_offline:1">
+      <DisplayName>オフラインで使用不可</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>オフライン中に使用不可か？</Description>
+      <Maximum>1</Maximum>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="u8 isEquip:1 = 1">
+      <DisplayName>装備可能</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>装備できるかどうか</Description>
+      <Maximum>1</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="u8 isConsume:1 = 1">
+      <DisplayName>消耗品か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>使用時に消耗するか(所持数が減るか)</Description>
+      <Maximum>1</Maximum>
+      <SortID>2500</SortID>
+    </Field>
+    <Field Def="u8 isAutoEquip:1 = 1">
+      <DisplayName>自動装備するか？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>拾った時に自動で装備するか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>2600</SortID>
+    </Field>
+    <Field Def="u8 isEstablishment:1">
+      <DisplayName>設置型アイテムか？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>設置型アイテムか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>2700</SortID>
+    </Field>
+    <Field Def="u8 isOnlyOne:1">
+      <DisplayName>1個しか持てないか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>1個しか持てないアイテムか</Description>
+      <Maximum>1</Maximum>
+      <SortID>2900</SortID>
+    </Field>
+    <Field Def="u8 isDrop:1 = 1">
+      <DisplayName>捨てれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>アイテムを捨てれるか？TRUE=捨てれる</Description>
+      <Maximum>1</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="u8 isDeposit:1 = 1">
+      <DisplayName>預けれるか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>倉庫に預けれるか</Description>
+      <Maximum>1</Maximum>
+      <SortID>3150</SortID>
+    </Field>
+    <Field Def="u8 isDisableHand:1">
+      <DisplayName>右素手に使えないか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>右手武器が素手の場合に使用不可か</Description>
+      <Maximum>1</Maximum>
+      <SortID>3200</SortID>
+    </Field>
+    <Field Def="u8 IsTravelItem:1">
+      <DisplayName>旅するアイテムか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>旅するアイテム判別に使用します</Description>
+      <Maximum>1</Maximum>
+      <SortID>3300</SortID>
+    </Field>
+    <Field Def="u8 isSuppleItem:1">
+      <DisplayName>補充アイテムか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>補充可能アイテムを判別するのに使用します</Description>
+      <Maximum>1</Maximum>
+      <SortID>3310</SortID>
+    </Field>
+    <Field Def="u8 isFullSuppleItem:1">
+      <DisplayName>補充済みアイテムか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>補充済みアイテムを判別するのに使用します</Description>
+      <Maximum>1</Maximum>
+      <SortID>3311</SortID>
+    </Field>
+    <Field Def="u8 isEnhance:1">
+      <DisplayName>エンチャントするか？</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>武器にエンチャントするか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="u8 isFixItem:1">
+      <DisplayName>修理アイテムか</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>修理するアイテムか？</Description>
+      <Maximum>1</Maximum>
+      <SortID>3250</SortID>
+    </Field>
+    <Field Def="u8 disableMultiDropShare:1">
+      <DisplayName>マルチドロップ共有禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>マルチドロップ共有禁止か</Description>
+      <Maximum>1</Maximum>
+      <SortID>3155</SortID>
+    </Field>
+    <Field Def="u8 disableUseAtColiseum:1">
+      <DisplayName>闘技場で使用禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>闘技場で使用禁止か</Description>
+      <Maximum>1</Maximum>
+      <SortID>3160</SortID>
+    </Field>
+    <Field Def="u8 disableUseAtOutOfColiseum:1">
+      <DisplayName>闘技場以外で使用禁止か</DisplayName>
+      <Enum>EQUIP_BOOL</Enum>
+      <Description>闘技場以外で使用禁止か</Description>
+      <Maximum>1</Maximum>
+      <SortID>3160</SortID>
+    </Field>
+    <Field Def="dummy8 pad[9]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>99999</SortID>
+    </Field>
+    <Field Def="s32 vagrantItemLotId">
+      <DisplayName>ベイグラント時アイテム抽選ID</DisplayName>
+      <Description>-1：ベイグラントなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="s32 vagrantBonusEneDropItemLotId">
+      <DisplayName>ベイグラントボーナス敵ドロップアイテム抽選ID</DisplayName>
+      <Description>-1：ドロップなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="s32 vagrantItemEneDropItemLotId">
+      <DisplayName>ベイグラントアイテム敵ドロップアイテム抽選ID</DisplayName>
+      <Description>-1：ドロップなし 0：抽選なし 1～：抽選あり</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+08</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,6 @@
+<class name='hkcdStaticPvsBlockHeader' version='1' signature='0xbff36644' size='8'>
+  <members>
+    <member name='offset' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='length' offset='4' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,7 @@
+<class name='hclTransformSetUsageTransformTracker' version='1' signature='0xd9c5ea8b' size='72'>
+  <members>
+    <member name='read' offset='0' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='readBeforeWrite' offset='24' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='written' offset='48' ctype='hkBitField' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

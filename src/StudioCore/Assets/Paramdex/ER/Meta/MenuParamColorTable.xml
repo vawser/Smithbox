@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MENU_COLOR_LERP_MODE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+  </Enums>
+  <Field>
+    <lerpMode AltName="Lerp Mode" Wiki="Interpolation method" Enum="MENU_COLOR_LERP_MODE" />
+    <pad1 AltName=""/>
+    <h AltName="Hue" Wiki="Hue. Treat as a fixed value in interpolation" />
+    <pad2 AltName=""/>
+    <s1 AltName="Saturation [1]" Wiki="Saturation 1. Treated as the first point of interpolation" />
+    <v1 AltName="Brightness [1]" Wiki="Brightness 1. Treated as the first point of interpolation" />
+    <s2 AltName="Saturation [2]" Wiki="Saturation 2. Treated as the second point of interpolation" />
+    <v2 AltName="Brightness [2]" Wiki="Brightness 2. Treated as the second point of interpolation" />
+    <s3 AltName="Saturation [3]" Wiki="Saturation 3. Treated as the third point of interpolation" />
+    <v3 AltName="Brightness [3]" Wiki="Brightness 3. Treated as the third point of interpolation" />
+  </Field>
+  <Self />
+</PARAMMETA>

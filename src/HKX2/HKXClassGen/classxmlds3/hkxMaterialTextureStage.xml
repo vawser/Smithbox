@@ -1,0 +1,7 @@
+<class name='hkxMaterialTextureStage' version='1' signature='0xdbda7fbb' size='16'>
+  <members>
+    <member name='texture' offset='0' ctype='hkReferencedObject' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='usageHint' offset='8' etype='TextureType' vtype='TYPE_ENUM' vsubtype='TYPE_INT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tcoordChannel' offset='12' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

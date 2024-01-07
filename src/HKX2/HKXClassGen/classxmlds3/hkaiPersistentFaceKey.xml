@@ -1,0 +1,6 @@
+<class name='hkaiPersistentFaceKey' version='1' signature='0x92e23867' size='8'>
+  <members>
+    <member name='key' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='offset' offset='4' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

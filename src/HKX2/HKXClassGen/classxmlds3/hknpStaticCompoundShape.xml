@@ -1,0 +1,5 @@
+<class name='hknpStaticCompoundShape' version='1' signature='0x4620d11c' size='208' parent='hknpCompoundShape'>
+  <members>
+    <member name='boundingVolumeData' offset='192' ctype='hknpStaticCompoundShapeData' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

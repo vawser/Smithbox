@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="NPC_AI_ACTION_MOVE_DIR" type="u8">
+        <Option Value="0" Name="Dir 0" />
+        <Option Value="1" Name="Dir 1" />
+        <Option Value="2" Name="Dir 2" />
+        <Option Value="3" Name="Dir 3" />
+        <Option Value="4" Name="Dir 4" />
+        <Option Value="5" Name="Dir 5" />
+        <Option Value="6" Name="Dir 6" />
+        <Option Value="7" Name="Dir 7" />
+        <Option Value="8" Name="Dir 8" />
+    </Enum>
+    <Enum Name="NPC_AI_ACTION_KEY" type="u8">
+        <Option Value="0" Name="Key 0" />
+        <Option Value="1" Name="Key 1" />
+        <Option Value="3" Name="Key 3" />
+        <Option Value="4" Name="Key 4" />
+        <Option Value="5" Name="Key 5" />
+        <Option Value="6" Name="Key 6" />
+        <Option Value="7" Name="Key 7" />
+        <Option Value="8" Name="Key 8" />
+        <Option Value="9" Name="Key 9" />
+        <Option Value="11" Name="Key 11" />
+        <Option Value="12" Name="Key 12" />
+        <Option Value="13" Name="Key 13" />
+        <Option Value="15" Name="Key 15" />
+        <Option Value="16" Name="Key 16" />
+        <Option Value="17" Name="Key 17" />
+        <Option Value="18" Name="Key 18" />
+        <Option Value="19" Name="Key 19" />
+        <Option Value="20" Name="Key 20" />
+        <Option Value="21" Name="Key 21" />
+        <Option Value="22" Name="Key 22" />
+        <Option Value="23" Name="Key 23" />
+    </Enum>
+  </Enums>
+  <Field>
+    <moveDir AltName="Move Direction" Wiki="Moving direction to enter" Enum="NPC_AI_ACTION_MOVE_DIR" />
+    <key1 AltName="Key [1]" Wiki="Key to enter" Enum="NPC_AI_ACTION_KEY" />
+    <key2 AltName="Key [2]" Wiki="Key to enter" Enum="NPC_AI_ACTION_KEY" />
+    <key3 AltName="Key [3]" Wiki="Key to enter" Enum="NPC_AI_ACTION_KEY" />
+    <bMoveDirHold AltName="Handle Move Direction as Long Press" Wiki="Whether to handle the input movement direction as long press" IsBool="" />
+    <bKeyHold1 AltName="Handle Key [1] Hold as Long Press" Wiki="Whether to treat the key to be entered as a long press" IsBool="" />
+    <bKeyHold2 AltName="Handle Key [2] Hold as Long Press" Wiki="Whether to treat the key to be entered as a long press" IsBool="" />
+    <bKeyHold3 AltName="Handle Key [3] Hold as Long Press" Wiki="Whether to treat the key to be entered as a long press" IsBool="" />
+    <gestureId AltName="Gesture ID" Wiki="Gesture ID" />
+    <bLifeEndSuccess AltName="AI Goal Waits For Duration End" Wiki="If this is ON, the AI goal will not be successful until the end of its life" IsBool="" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

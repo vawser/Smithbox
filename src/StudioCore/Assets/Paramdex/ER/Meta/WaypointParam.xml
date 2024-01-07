@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="WAYPOINT_ATTRIBUTE" type="s16">
+        <Option Value="0" Name="Attribute 0" />
+        <Option Value="1" Name="Attribute 1" />
+        <Option Value="2" Name="Attribute 2" />
+        <Option Value="3" Name="Attribute 3" />
+        <Option Value="4" Name="Attribute 4" />
+    </Enum>
+  </Enums>
+  <Field>
+    <attribute1 AltName="Attribute [1]" Wiki="" Enum="WAYPOINT_ATTRIBUTE" />
+    <attribute2 AltName="Attribute [2]" Wiki="" Enum="WAYPOINT_ATTRIBUTE" />
+    <attribute3 AltName="Attribute [3]" Wiki="" Enum="WAYPOINT_ATTRIBUTE" />
+    <attribute4 AltName="Attribute [4]" Wiki="" Enum="WAYPOINT_ATTRIBUTE" />
+    <padding4 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

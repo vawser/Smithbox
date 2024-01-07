@@ -1,0 +1,29 @@
+<class name='hkpMotion' version='1' signature='0x867134af' size='320' parent='hkReferencedObject'>
+  <enums>
+    <enum name='MotionType' flags='00000000'>
+      <enumitem name='MOTION_INVALID' value='0'/>
+      <enumitem name='MOTION_DYNAMIC' value='1'/>
+      <enumitem name='MOTION_SPHERE_INERTIA' value='2'/>
+      <enumitem name='MOTION_BOX_INERTIA' value='3'/>
+      <enumitem name='MOTION_KEYFRAMED' value='4'/>
+      <enumitem name='MOTION_FIXED' value='5'/>
+      <enumitem name='MOTION_THIN_BOX_INERTIA' value='6'/>
+      <enumitem name='MOTION_CHARACTER' value='7'/>
+      <enumitem name='MOTION_MAX_ID' value='8'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='type' offset='16' etype='MotionType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationIntegrateCounter' offset='17' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationNumInactiveFrames' offset='18' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='motionState' offset='32' ctype='hkMotionState' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='inertiaAndMassInv' offset='208' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='linearVelocity' offset='224' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='angularVelocity' offset='240' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationRefPosition' offset='256' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationRefOrientation' offset='288' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='2' flags='FLAGS_NONE' default='0'/>
+    <member name='savedMotion' offset='296' ctype='hkpMaxSizeMotion' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='savedQualityTypeIndex' offset='304' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='gravityFactor' offset='306' vtype='TYPE_HALF' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

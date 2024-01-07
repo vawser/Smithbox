@@ -1,0 +1,12 @@
+{
+    "Title": "BND",
+    "Tags": [
+        "Format",
+        "Binder"
+    ],
+    "Contents": [
+        "An archive format called Binder that is used as a container for numerous game files.",
+        "",
+        "Tools such as WitchBND or Yabber can be used to unpack these files."
+    ]
+}

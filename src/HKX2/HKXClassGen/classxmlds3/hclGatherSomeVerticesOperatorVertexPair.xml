@@ -1,0 +1,6 @@
+<class name='hclGatherSomeVerticesOperatorVertexPair' version='1' signature='0x1c3606cc' size='4'>
+  <members>
+    <member name='indexInput' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='indexOutput' offset='2' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

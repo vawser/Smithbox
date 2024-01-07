@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <AssetId_0 AltName="Asset ID [0]" Wiki="AssetId_0 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_1 AltName="Asset ID [1]" Wiki="AssetId_1 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_2 AltName="Asset ID [2]" Wiki="AssetId_2 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_3 AltName="Asset ID [3]" Wiki="AssetId_3 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_4 AltName="Asset ID [4]" Wiki="AssetId_4 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_5 AltName="Asset ID [5]" Wiki="AssetId_5 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_6 AltName="Asset ID [6]" Wiki="AssetId_6 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <AssetId_7 AltName="Asset ID [7]" Wiki="AssetId_7 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
+    <CreateWeight_0 AltName="Appearance Weight [0]" Wiki="Appearance ratio point (weight) _0 0 is ignored" />
+    <CreateWeight_1 AltName="Appearance Weight [1]" Wiki="Appearance ratio point (weight) _1" />
+    <CreateWeight_2 AltName="Appearance Weight [2]" Wiki="Appearance ratio point (weight) _2" />
+    <CreateWeight_3 AltName="Appearance Weight [3]" Wiki="Appearance ratio point (weight) _3" />
+    <CreateWeight_4 AltName="Appearance Weight [4]" Wiki="Appearance ratio point (weight) _4" />
+    <CreateWeight_5 AltName="Appearance Weight [5]" Wiki="Appearance ratio point (weight) _5" />
+    <CreateWeight_6 AltName="Appearance Weight [6]" Wiki="Appearance ratio point (weight) _6" />
+    <CreateWeight_7 AltName="Appearance Weight [7]" Wiki="Appearance ratio point (weight) _7" />
+    <Reserve_0 AltName=""/>
+  </Field>
+  <Self Wiki="Governs the appearance of random AEGs like glowing skulls and tumbleweed. Each row corresponds to a map ID. The AEGs referenced must have a param row and asset behavior type set to 'Dynamic'." />
+</PARAMMETA>

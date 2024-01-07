@@ -1,0 +1,7 @@
+<class name='hkaiPathfindingUtilFindPathOutput' version='1' signature='0x39914e2d' size='64' parent='hkReferencedObject'>
+  <members>
+    <member name='visitedEdges' offset='16' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pathOut' offset='32' ctype='hkaiPathPathPoint' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='outputParameters' offset='48' ctype='hkaiAstarOutputParameters' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

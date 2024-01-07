@@ -1,0 +1,587 @@
+0 Standard +0
+1 Standard +1
+2 Standard +2
+3 Standard +3
+4 Standard +4
+5 Standard +5
+6 Standard +6
+7 Standard +7
+8 Standard +8
+9 Standard +9
+10 Standard +10
+11 Standard +11
+12 Standard +12
+13 Standard +13
+14 Standard +14
+15 Standard +15
+16 Standard +16
+17 Standard +17
+18 Standard +18
+19 Standard +19
+20 Standard +20
+21 Standard +21
+22 Standard +22
+23 Standard +23
+24 Standard +24
+25 Standard +25
+100 Heavy +0
+101 Heavy +1
+102 Heavy +2
+103 Heavy +3
+104 Heavy +4
+105 Heavy +5
+106 Heavy +6
+107 Heavy +7
+108 Heavy +8
+109 Heavy +9
+110 Heavy +10
+111 Heavy +11
+112 Heavy +12
+113 Heavy +13
+114 Heavy +14
+115 Heavy +15
+116 Heavy +16
+117 Heavy +17
+118 Heavy +18
+119 Heavy +19
+120 Heavy +20
+121 Heavy +21
+122 Heavy +22
+123 Heavy +23
+124 Heavy +24
+125 Heavy +25
+200 Keen +0
+201 Keen +1
+202 Keen +2
+203 Keen +3
+204 Keen +4
+205 Keen +5
+206 Keen +6
+207 Keen +7
+208 Keen +8
+209 Keen +9
+210 Keen +10
+211 Keen +11
+212 Keen +12
+213 Keen +13
+214 Keen +14
+215 Keen +15
+216 Keen +16
+217 Keen +17
+218 Keen +18
+219 Keen +19
+220 Keen +20
+221 Keen +21
+222 Keen +22
+223 Keen +23
+224 Keen +24
+225 Keen +25
+300 Quality +0
+301 Quality +1
+302 Quality +2
+303 Quality +3
+304 Quality +4
+305 Quality +5
+306 Quality +6
+307 Quality +7
+308 Quality +8
+309 Quality +9
+310 Quality +10
+311 Quality +11
+312 Quality +12
+313 Quality +13
+314 Quality +14
+315 Quality +15
+316 Quality +16
+317 Quality +17
+318 Quality +18
+319 Quality +19
+320 Quality +20
+321 Quality +21
+322 Quality +22
+323 Quality +23
+324 Quality +24
+325 Quality +25
+400 Fire +0
+401 Fire +1
+402 Fire +2
+403 Fire +3
+404 Fire +4
+405 Fire +5
+406 Fire +6
+407 Fire +7
+408 Fire +8
+409 Fire +9
+410 Fire +10
+411 Fire +11
+412 Fire +12
+413 Fire +13
+414 Fire +14
+415 Fire +15
+416 Fire +16
+417 Fire +17
+418 Fire +18
+419 Fire +19
+420 Fire +20
+421 Fire +21
+422 Fire +22
+423 Fire +23
+424 Fire +24
+425 Fire +25
+500 Flame Art +0
+501 Flame Art +1
+502 Flame Art +2
+503 Flame Art +3
+504 Flame Art +4
+505 Flame Art +5
+506 Flame Art +6
+507 Flame Art +7
+508 Flame Art +8
+509 Flame Art +9
+510 Flame Art +10
+511 Flame Art +11
+512 Flame Art +12
+513 Flame Art +13
+514 Flame Art +14
+515 Flame Art +15
+516 Flame Art +16
+517 Flame Art +17
+518 Flame Art +18
+519 Flame Art +19
+520 Flame Art +20
+521 Flame Art +21
+522 Flame Art +22
+523 Flame Art +23
+524 Flame Art +24
+525 Flame Art +25
+600 Lightning +0
+601 Lightning +1
+602 Lightning +2
+603 Lightning +3
+604 Lightning +4
+605 Lightning +5
+606 Lightning +6
+607 Lightning +7
+608 Lightning +8
+609 Lightning +9
+610 Lightning +10
+611 Lightning +11
+612 Lightning +12
+613 Lightning +13
+614 Lightning +14
+615 Lightning +15
+616 Lightning +16
+617 Lightning +17
+618 Lightning +18
+619 Lightning +19
+620 Lightning +20
+621 Lightning +21
+622 Lightning +22
+623 Lightning +23
+624 Lightning +24
+625 Lightning +25
+700 Sacred +0
+701 Sacred +1
+702 Sacred +2
+703 Sacred +3
+704 Sacred +4
+705 Sacred +5
+706 Sacred +6
+707 Sacred +7
+708 Sacred +8
+709 Sacred +9
+710 Sacred +10
+711 Sacred +11
+712 Sacred +12
+713 Sacred +13
+714 Sacred +14
+715 Sacred +15
+716 Sacred +16
+717 Sacred +17
+718 Sacred +18
+719 Sacred +19
+720 Sacred +20
+721 Sacred +21
+722 Sacred +22
+723 Sacred +23
+724 Sacred +24
+725 Sacred +25
+800 Magic +0
+801 Magic +1
+802 Magic +2
+803 Magic +3
+804 Magic +4
+805 Magic +5
+806 Magic +6
+807 Magic +7
+808 Magic +8
+809 Magic +9
+810 Magic +10
+811 Magic +11
+812 Magic +12
+813 Magic +13
+814 Magic +14
+815 Magic +15
+816 Magic +16
+817 Magic +17
+818 Magic +18
+819 Magic +19
+820 Magic +20
+821 Magic +21
+822 Magic +22
+823 Magic +23
+824 Magic +24
+825 Magic +25
+900 Cold +0
+901 Cold +1
+902 Cold +2
+903 Cold +3
+904 Cold +4
+905 Cold +5
+906 Cold +6
+907 Cold +7
+908 Cold +8
+909 Cold +9
+910 Cold +10
+911 Cold +11
+912 Cold +12
+913 Cold +13
+914 Cold +14
+915 Cold +15
+916 Cold +16
+917 Cold +17
+918 Cold +18
+919 Cold +19
+920 Cold +20
+921 Cold +21
+922 Cold +22
+923 Cold +23
+924 Cold +24
+925 Cold +25
+1000 Poison +0
+1001 Poison +1
+1002 Poison +2
+1003 Poison +3
+1004 Poison +4
+1005 Poison +5
+1006 Poison +6
+1007 Poison +7
+1008 Poison +8
+1009 Poison +9
+1010 Poison +10
+1011 Poison +11
+1012 Poison +12
+1013 Poison +13
+1014 Poison +14
+1015 Poison +15
+1016 Poison +16
+1017 Poison +17
+1018 Poison +18
+1019 Poison +19
+1020 Poison +20
+1021 Poison +21
+1022 Poison +22
+1023 Poison +23
+1024 Poison +24
+1025 Poison +25
+1100 Blood +0
+1101 Blood +1
+1102 Blood +2
+1103 Blood +3
+1104 Blood +4
+1105 Blood +5
+1106 Blood +6
+1107 Blood +7
+1108 Blood +8
+1109 Blood +9
+1110 Blood +10
+1111 Blood +11
+1112 Blood +12
+1113 Blood +13
+1114 Blood +14
+1115 Blood +15
+1116 Blood +16
+1117 Blood +17
+1118 Blood +18
+1119 Blood +19
+1120 Blood +20
+1121 Blood +21
+1122 Blood +22
+1123 Blood +23
+1124 Blood +24
+1125 Blood +25
+1200 Occult +0
+1201 Occult +1
+1202 Occult +2
+1203 Occult +3
+1204 Occult +4
+1205 Occult +5
+1206 Occult +6
+1207 Occult +7
+1208 Occult +8
+1209 Occult +9
+1210 Occult +10
+1211 Occult +11
+1212 Occult +12
+1213 Occult +13
+1214 Occult +14
+1215 Occult +15
+1216 Occult +16
+1217 Occult +17
+1218 Occult +18
+1219 Occult +19
+1220 Occult +20
+1221 Occult +21
+1222 Occult +22
+1223 Occult +23
+1224 Occult +24
+1225 Occult +25
+1900 Standard Catalyst +0
+1901 Standard Catalyst +1
+1902 Standard Catalyst +2
+1903 Standard Catalyst +3
+1904 Standard Catalyst +4
+1905 Standard Catalyst +5
+1906 Standard Catalyst +6
+1907 Standard Catalyst +7
+1908 Standard Catalyst +8
+1909 Standard Catalyst +9
+1910 Standard Catalyst +10
+1911 Standard Catalyst +11
+1912 Standard Catalyst +12
+1913 Standard Catalyst +13
+1914 Standard Catalyst +14
+1915 Standard Catalyst +15
+1916 Standard Catalyst +16
+1917 Standard Catalyst +17
+1918 Standard Catalyst +18
+1919 Standard Catalyst +19
+1920 Standard Catalyst +20
+1921 Standard Catalyst +21
+1922 Standard Catalyst +22
+1923 Standard Catalyst +23
+1924 Standard Catalyst +24
+1925 Standard Catalyst +25
+2200 Unique +0
+2201 Unique +1
+2202 Unique +2
+2203 Unique +3
+2204 Unique +4
+2205 Unique +5
+2206 Unique +6
+2207 Unique +7
+2208 Unique +8
+2209 Unique +9
+2210 Unique +10
+2400 Unique Catalyst +0
+2401 Unique Catalyst +1
+2402 Unique Catalyst +2
+2403 Unique Catalyst +3
+2404 Unique Catalyst +4
+2405 Unique Catalyst +5
+2406 Unique Catalyst +6
+2407 Unique Catalyst +7
+2408 Unique Catalyst +8
+2409 Unique Catalyst +9
+2410 Unique Catalyst +10
+3000 No Reinforcement
+3100 Standard - Crossbow/Ballista +0
+3101 Standard - Crossbow/Ballista +1
+3102 Standard - Crossbow/Ballista +2
+3103 Standard - Crossbow/Ballista +3
+3104 Standard - Crossbow/Ballista +4
+3105 Standard - Crossbow/Ballista +5
+3106 Standard - Crossbow/Ballista +6
+3107 Standard - Crossbow/Ballista +7
+3108 Standard - Crossbow/Ballista +8
+3109 Standard - Crossbow/Ballista +9
+3110 Standard - Crossbow/Ballista +10
+3111 Standard - Crossbow/Ballista +11
+3112 Standard - Crossbow/Ballista +12
+3113 Standard - Crossbow/Ballista +13
+3114 Standard - Crossbow/Ballista +14
+3115 Standard - Crossbow/Ballista +15
+3116 Standard - Crossbow/Ballista +16
+3117 Standard - Crossbow/Ballista +17
+3118 Standard - Crossbow/Ballista +18
+3119 Standard - Crossbow/Ballista +19
+3120 Standard - Crossbow/Ballista +20
+3121 Standard - Crossbow/Ballista +21
+3122 Standard - Crossbow/Ballista +22
+3123 Standard - Crossbow/Ballista +23
+3124 Standard - Crossbow/Ballista +24
+3125 Standard - Crossbow/Ballista +25
+3200 Unique - Crossbow/Ballista +0
+3201 Unique - Crossbow/Ballista +1
+3202 Unique - Crossbow/Ballista +2
+3203 Unique - Crossbow/Ballista +3
+3204 Unique - Crossbow/Ballista +4
+3205 Unique - Crossbow/Ballista +5
+3206 Unique - Crossbow/Ballista +6
+3207 Unique - Crossbow/Ballista +7
+3208 Unique - Crossbow/Ballista +8
+3209 Unique - Crossbow/Ballista +9
+3210 Unique - Crossbow/Ballista +10
+3300 Pulley Crossbow +0
+3301 Pulley Crossbow +1
+3302 Pulley Crossbow +2
+3303 Pulley Crossbow +3
+3304 Pulley Crossbow +4
+3305 Pulley Crossbow +5
+3306 Pulley Crossbow +6
+3307 Pulley Crossbow +7
+3308 Pulley Crossbow +8
+3309 Pulley Crossbow +9
+3310 Pulley Crossbow +10
+5000 Special - Keen +0
+5001 Special - Keen +1
+5002 Special - Keen +2
+5003 Special - Keen +3
+5004 Special - Keen +4
+5005 Special - Keen +5
+5006 Special - Keen +6
+5007 Special - Keen +7
+5008 Special - Keen +8
+5009 Special - Keen +9
+5010 Special - Keen +10
+5011 Special - Keen +11
+5012 Special - Keen +12
+5013 Special - Keen +13
+5014 Special - Keen +14
+5015 Special - Keen +15
+5016 Special - Keen +16
+5017 Special - Keen +17
+5018 Special - Keen +18
+5019 Special - Keen +19
+5020 Special - Keen +20
+5021 Special - Keen +21
+5022 Special - Keen +22
+5023 Special - Keen +23
+5024 Special - Keen +24
+5025 Special - Keen +25
+6000 Special - Heavy +0
+6001 Special - Heavy +1
+6002 Special - Heavy +2
+6003 Special - Heavy +3
+6004 Special - Heavy +4
+6005 Special - Heavy +5
+6006 Special - Heavy +6
+6007 Special - Heavy +7
+6008 Special - Heavy +8
+6009 Special - Heavy +9
+6010 Special - Heavy +10
+6011 Special - Heavy +11
+6012 Special - Heavy +12
+6013 Special - Heavy +13
+6014 Special - Heavy +14
+6015 Special - Heavy +15
+6016 Special - Heavy +16
+6017 Special - Heavy +17
+6018 Special - Heavy +18
+6019 Special - Heavy +19
+6020 Special - Heavy +20
+6021 Special - Heavy +21
+6022 Special - Heavy +22
+6023 Special - Heavy +23
+6024 Special - Heavy +24
+6025 Special - Heavy +25
+8000 Small Shield +0
+8001 Small Shield +1
+8002 Small Shield +2
+8003 Small Shield +3
+8004 Small Shield +4
+8005 Small Shield +5
+8006 Small Shield +6
+8007 Small Shield +7
+8008 Small Shield +8
+8009 Small Shield +9
+8010 Small Shield +10
+8011 Small Shield +11
+8012 Small Shield +12
+8013 Small Shield +13
+8014 Small Shield +14
+8015 Small Shield +15
+8016 Small Shield +16
+8017 Small Shield +17
+8018 Small Shield +18
+8019 Small Shield +19
+8020 Small Shield +20
+8021 Small Shield +21
+8022 Small Shield +22
+8023 Small Shield +23
+8024 Small Shield +24
+8025 Small Shield +25
+8100 Medium Shield +0
+8101 Medium Shield +1
+8102 Medium Shield +2
+8103 Medium Shield +3
+8104 Medium Shield +4
+8105 Medium Shield +5
+8106 Medium Shield +6
+8107 Medium Shield +7
+8108 Medium Shield +8
+8109 Medium Shield +9
+8110 Medium Shield +10
+8111 Medium Shield +11
+8112 Medium Shield +12
+8113 Medium Shield +13
+8114 Medium Shield +14
+8115 Medium Shield +15
+8116 Medium Shield +16
+8117 Medium Shield +17
+8118 Medium Shield +18
+8119 Medium Shield +19
+8120 Medium Shield +20
+8121 Medium Shield +21
+8122 Medium Shield +22
+8123 Medium Shield +23
+8124 Medium Shield +24
+8125 Medium Shield +25
+8200 Greatshield +0
+8201 Greatshield +1
+8202 Greatshield +2
+8203 Greatshield +3
+8204 Greatshield +4
+8205 Greatshield +5
+8206 Greatshield +6
+8207 Greatshield +7
+8208 Greatshield +8
+8209 Greatshield +9
+8210 Greatshield +10
+8211 Greatshield +11
+8212 Greatshield +12
+8213 Greatshield +13
+8214 Greatshield +14
+8215 Greatshield +15
+8216 Greatshield +16
+8217 Greatshield +17
+8218 Greatshield +18
+8219 Greatshield +19
+8220 Greatshield +20
+8221 Greatshield +21
+8222 Greatshield +22
+8223 Greatshield +23
+8224 Greatshield +24
+8225 Greatshield +25
+8300 Unique - Greatshield +0
+8301 Unique - Greatshield +1
+8302 Unique - Greatshield +2
+8303 Unique - Greatshield +3
+8304 Unique - Greatshield +4
+8305 Unique - Greatshield +5
+8306 Unique - Greatshield +6
+8307 Unique - Greatshield +7
+8308 Unique - Greatshield +8
+8309 Unique - Greatshield +9
+8310 Unique - Greatshield +10
+8500 Coil Shield +0
+8501 Coil Shield +1
+8502 Coil Shield +2
+8503 Coil Shield +3
+8504 Coil Shield +4
+8505 Coil Shield +5
+8506 Coil Shield +6
+8507 Coil Shield +7
+8508 Coil Shield +8
+8509 Coil Shield +9
+8510 Coil Shield +10

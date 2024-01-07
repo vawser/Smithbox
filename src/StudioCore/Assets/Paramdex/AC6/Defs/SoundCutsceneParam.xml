@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>SOUND_CUTSCENE_PARAM_ST</ParamType>
+  <DataVersion>5</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 UnkInt0x00"></Field>
+    <Field Def="u16 UnkUshort0x04"></Field>
+    <Field Def="s16 UnkShort0x06"></Field>
+    <Field Def="s32 UnkInt0x08"></Field>
+    <Field Def="s32 UnkInt0x0C"></Field>
+    <Field Def="s32 UnkInt0x10"></Field>
+    <Field Def="s32 UnkInt0x14"></Field>
+    <Field Def="f32 UnkFloat0x18"></Field>
+    <Field Def="u8 UnkByte0x1C"></Field>
+    <Field Def="u8 Unk0x1D"></Field>
+    <Field Def="u8 Unk0x1E"></Field>
+    <Field Def="u8 Unk0x1F"></Field>
+    <Field Def="s32 UnkInt0x20"></Field>
+    <Field Def="s32 UnkInt0x24"></Field>
+  </Fields>
+</PARAMDEF>

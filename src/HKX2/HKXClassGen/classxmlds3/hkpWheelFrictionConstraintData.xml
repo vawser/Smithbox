@@ -1,0 +1,5 @@
+<class name='hkpWheelFrictionConstraintData' version='1' signature='0x995a087c' size='224' parent='hkpConstraintData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpWheelFrictionConstraintDataAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

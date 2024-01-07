@@ -1,0 +1,212 @@
+2400 Gift - None
+2401 Gift - Crimson Amber Medallion
+2402 Gift - Lands Between Rune
+2403 Gift - Golden Seed
+2404 Gift - Fanged Imp Ashes
+2405 Gift - Cracked Pot
+2406 Gift - Stonesword Key
+2407 Gift - Bewitching Branch
+2408 Gift - Boiled Prawn
+2409 Gift - Shabriri's Woe
+3000 Class - Vagabond
+3001 Class - Warrior
+3002 Class - Hero
+3003 Class - Bandit
+3004 Class - Astrologer
+3005 Class - Prophet
+3006 Class - Confessor
+3007 Class - Samurai
+3008 Class - Prisoner
+3009 Class - Wretch
+20000 Human
+23000 Tanith, Volcano Manor Proprietress
+23010 White Mask Varré
+23040 Roundtable Knight Vyke
+23041 Festering Fingerprint Vyke
+23070 Preceptor Seluvis
+23090 Patches
+23091 Patches
+23092 Patches
+23100 Irina of Morne
+23101 Finger Maiden Hyetta
+23102 Irina of Morne
+23110 Edgar the Revenger
+23120 Witch-Hunter Jerren
+23121 Castellan Jerren
+23122 Witch-Hunter Jerren
+23130 Rya the Scout
+23140 Knight Diallos
+23150 Human
+23160 Sorceress Sellen
+23161 Sorceress Sellen
+23162 Sorceress Sellen
+23163 Sorceress Sellen
+23180 Yura, Hunter of Bloody Fingers
+23181 Yura, Hunter of Bloody Fingers
+23182 Shabriri
+23183 Yura, Hunter of Bloody Fingers
+23184 Shabriri
+23190 D, Hunter of the Dead
+23191 D, Hunter of the Dead
+23192 D, Beholder of Death
+23193 D, Beholder of Death
+23194 D, Hunter of the Dead
+23195 D, Beholder of Death
+23200 Roderika
+23201 Roderika, Spirit Tuner
+23210 Kenneth Haight, Limgrave Heir
+23221 Fia, Deathbed Companion
+23222 Fia, Deathbed Companion
+23230 Dung Eater
+23231 Dung Eater
+23232 Dung Eater Puppet
+23240 Sir Gideon Ofnir, the All-Knowing
+23241 Sir Gideon Ofnir, the All-Knowing
+23242 Sir Gideon Ofnir, the All-Knowing
+23243 Sir Gideon Ofnir, the All-Knowing
+23244 Sir Gideon Ofnir, the All-Knowing
+23245 Sir Gideon Ofnir, the All-Knowing
+23246 Sir Gideon Ofnir, the All-Knowing
+23247 Sir Gideon Ofnir, the All-Knowing
+23248 Sir Gideon Ofnir, the All-Knowing
+23249 Sir Gideon Ofnir, the All-Knowing
+23250 Sorcerer Rogier
+23251 Sorcerer Rogier
+23252 Sorcerer Rogier
+23260 Knight Bernahl
+23261 Recusant Bernahl
+23262 Recusant Bernahl
+23270 Eleonora, Violet Bloody Finger
+23271 Eleonora, Violet Bloody Finger
+23290 Lionel the Lionhearted
+23291 Human
+23310 Blackguard
+23311 Blackguard
+23312 Blackguard
+23320 Rykard-Hating Ghost
+23330 Sorcerer Thops
+23331 Sorcerer Thops
+23340 Nepheli Loux, Warrior
+23341 Nepheli Loux, Warrior
+23342 Nepheli Loux Puppet
+23360 Vyke's Finger Maiden
+23380 Finger Maiden
+23390 Ensha of the Royal Remains
+23400 Bloody Finger Ravenmount Assassin
+23420 Boc the Seamster
+23430 Bloody Finger Nerijus
+23440 Great Horned Tragoth
+23441 Great Horned Tragoth
+23450 Old Knight Istvan
+23460 Rileigh the Idle
+23470 Juno Hoslow, Knight of Blood
+23480 Millicent
+23481 Millicent
+23482 Millicent
+23483 Millicent
+23484 Millicent
+23485 Millicent
+23486 Millicent
+23487 Millicent
+23488 Millicent
+23490 Sage Gowry
+23510 Scribe Corhyn
+23520 Preceptor Miriam
+23521 Preceptor Miriam
+23530 Anastasia, Tarnished-Eater
+23531 Anastasia, Tarnished-Eater
+23532 Anastasia, Tarnished-Eater
+23550 Bloody Finger Okina
+23551 Okina
+23560 Adan, Thief of Fire
+23590 Moongrum, Carian Knight
+23600 Vargram the Raging Wolf
+23610 Fia's Champion 1
+23611 Fia's Champion 1
+23612 Fia's Champion 1
+23613 Fia's Champion 1
+23614 Fia's Champion 1
+23615 Fia's Champion 1
+23616 Fia's Champion 1
+23617 Fia's Champion 1
+23618 Fia's Champion 1
+23630 Finger Maiden Therolina
+23631 Finger Maiden Therolina Puppet
+23632 Finger Maiden Therolina
+23640 Dolores the Sleeping Arrow
+23650 Jarwight
+23670 Inaba, Disciple of Okina
+23680 Silver Tear
+23681 Silver Tear
+23682 Silver Tear
+23683 Silver Tear
+23690 Recusant Henricus
+23700 Fia's Champion 2
+23701 Fia's Champion 1
+23702 Fia's Champion 2
+23703 Fia's Champion 2
+23704 Fia's Champion 2
+23705 Fia's Champion 2
+23706 Fia's Champion 2
+23707 Fia's Champion 2
+23708 Fia's Champion 2
+23710 Fia's Champion 2
+23711 Fia's Champion 1
+23712 Fia's Champion 3
+23713 Fia's Champion 3
+23714 Fia's Champion 3
+23715 Fia's Champion 3
+23716 Fia's Champion 3
+23717 Fia's Champion 3
+23718 Fia's Champion 3
+23720 Maleigh Marais, Shaded Castle Castellan
+23730 Knight of the Great Jar
+23731 Knight of the Great Jar 1
+23732 Knight of the Great Jar 1
+23733 Knight of the Great Jar 1
+23734 Knight of the Great Jar 1
+23735 Knight of the Great Jar 1
+23736 Knight of the Great Jar 1
+23737 Knight of the Great Jar 1
+23738 Knight of the Great Jar 1
+23740 Knight of the Great Jar
+23741 Knight of the Great Jar 2
+23742 Knight of the Great Jar 2
+23743 Knight of the Great Jar 2
+23744 Knight of the Great Jar 2
+23745 Knight of the Great Jar 2
+23746 Knight of the Great Jar 2
+23747 Knight of the Great Jar 2
+23748 Knight of the Great Jar 2
+23750 Knight of the Great Jar
+23751 Knight of the Great Jar 3
+23752 Knight of the Great Jar 3
+23753 Knight of the Great Jar 3
+23754 Knight of the Great Jar 3
+23755 Knight of the Great Jar 3
+23756 Knight of the Great Jar 3
+23757 Knight of the Great Jar 3
+23758 Knight of the Great Jar 3
+23760 Necromancer Garris
+23770 Nameless White Mask
+23800 Errant Sorcerer Wilhelm
+23820 Chief Guardian Arghanthy
+23830 Flame Guardian
+23840 Inquisitor Ghiza
+23850 Mad Tongue Alberich
+23860 Esgar, Priest of Blood
+23870 Mary, Eldest Sister
+23880 Maureen, Second Sister
+23890 Amy, Third Sister
+23900 Polyanna, Youngest Sister
+23901 Polyanna, Adopted Daughter
+23910 Magnus the Beast Claw
+24010 Stray Mimic Tear
+24020 Mimic Tear
+26050 Mimic Tear
+27000 Stormhill Colosseum Silent Spirit
+27001 Caria Manor Silent Spirit
+27002 Dragonbarrow Silent Spirit
+27900 Human
+28500 Human
+29000 Human

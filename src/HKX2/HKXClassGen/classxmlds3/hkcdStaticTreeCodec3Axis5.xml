@@ -1,0 +1,6 @@
+<class name='hkcdStaticTreeCodec3Axis5' version='1' signature='0x12d67453' size='5' parent='hkcdStaticTreeCodec3Axis'>
+  <members>
+    <member name='hiData' offset='3' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='loData' offset='4' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

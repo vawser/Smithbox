@@ -1,0 +1,692 @@
+1 UNKNOWN
+30700000 [Head of Vengarl] Claymore
+30700001 [Head of Vengarl] Greatsword
+30700002 [Head of Vengarl] Red Rust Sword
+30700003 [Head of Vengarl] Red Rust Scimitar
+30700100 [Head of Vengarl] Red Rust Shield
+30700300 [Head of Vengarl] Magic Barrier
+30700600 [Head of Vengarl] Gold Pine Resin
+30700601 [Head of Vengarl] Lightning Urn
+30700602 [Head of Vengarl] Destructive Greatarrow
+50600300 [Grave Warden Agdayne] Soul Spear
+50600301 [Grave Warden Agdayne] Soul Vortex
+50600302 [Grave Warden Agdayne] Soul Appease
+50600303 [Grave Warden Agdayne] Warmth
+50600401 [Grave Warden Agdayne] Ring of Thorns+1
+50600600 [Grave Warden Agdayne] Human Effigy
+50600601 [Grave Warden Agdayne] Elizabeth Mushroom
+50600602 [Grave Warden Agdayne] Dark Arrow
+50600603 [Grave Warden Agdayne] Dark Bolt
+70400000 [Laddersmith Gilligan - Earthen Peak] Reinforced Club
+70400001 [Laddersmith Gilligan - Earthen Peak] Claws
+70400002 [Laddersmith Gilligan - Earthen Peak] Whip
+70400003 [Laddersmith Gilligan - Earthen Peak] Wooden Shield
+70400004 [Laddersmith Gilligan - Majula] Reinforced Club
+70400005 [Laddersmith Gilligan - Majula] Claws
+70400006 [Laddersmith Gilligan - Majula] Whip
+70400007 [Laddersmith Gilligan - Majula] Wooden Shield
+70400200 [Laddersmith Gilligan - Earthen Peak] Thief Mask
+70400201 [Laddersmith Gilligan - Earthen Peak] Black Leather Armor
+70400202 [Laddersmith Gilligan - Earthen Peak] Black Leather Gloves
+70400203 [Laddersmith Gilligan - Earthen Peak] Black Leather Boots
+70400204 [Laddersmith Gilligan - Majula] Thief Mask
+70400205 [Laddersmith Gilligan - Majula] Black Leather Armor
+70400206 [Laddersmith Gilligan - Majula] Black Leather Gloves
+70400207 [Laddersmith Gilligan - Majula] Black Leather Boots
+70400500 [Laddersmith Gilligan - Earthen Peak] Ladder Miniature
+70400501 [Laddersmith Gilligan - Majula] Ladder Miniature
+70400600 [Laddersmith Gilligan - Earthen Peak] Aromatic Ooze
+70400601 [Laddersmith Gilligan - Earthen Peak] Lacerating Knife
+70400602 [Laddersmith Gilligan - Earthen Peak] Bleeding Serum
+70400603 [Laddersmith Gilligan - Majula] Aromatic Ooze
+70400604 [Laddersmith Gilligan - Majula] Lacerating Knife
+70400605 [Laddersmith Gilligan - Majula] Bleeding Serum
+72110000 [Chancellor Wellager] Flamberge
+72110001 [Chancellor Wellager] Lucerne
+72110002 [Chancellor Wellager - Looking Glass Knight] Black Flamestone Dagger
+72110003 [Chancellor Wellager - Looking Glass Knight] Yellow Quartz Longsword
+72110004 [Chancellor Wellager - Looking Glass Knight] Bound Hand Axe
+72110005 [Chancellor Wellager - Looking Glass Knight] Homunculus Mace
+72110006 [Chancellor Wellager - Looking Glass Knight] Transgressor's Staff
+72110007 [Chancellor Wellager - NG+2] Curved Twinblade
+72110008 [Chancellor Wellager - NG+2] Crescent Sickle
+72110100 [Chancellor Wellager - Looking Glass Knight] Black Flamestone Parma
+72110101 [Chancellor Wellager - Looking Glass Knight] Yellow Quartz Shield
+72110102 [Chancellor Wellager - Looking Glass Knight] Bound Wooden Shield
+72110103 [Chancellor Wellager - Looking Glass Knight] Homunculus Wooden Shield
+72110104 [Chancellor Wellager - Looking Glass Knight] Transgressor's Leather Shield
+72110105 [Chancellor Wellager - NG+2] Spirit Tree Shield
+72110300 [Chancellor Wellager - NG+2] Wrath of the Gods
+72110301 [Chancellor Wellager - NG+2] Bountiful Sunlight
+72110302 [Chancellor Wellager - NG+2] Great Chaos Fireball
+72110303 [Chancellor Wellager] Great Magic Barrier
+72110400 [Chancellor Wellager] Bracing Knuckle Ring+1
+72110600 [Chancellor Wellager] Old Radiant Lifegem
+72110601 [Chancellor Wellager] Wilted Dusk Herb
+72110602 [Chancellor Wellager] Divine Blessing
+72110603 [Chancellor Wellager] Repair Powder
+72110604 [Chancellor Wellager] Magic Arrow
+72110605 [Chancellor Wellager] Lightning Arrow
+72110606 [Chancellor Wellager] Magic Bolt
+72110607 [Chancellor Wellager] Lightning Bolt
+72500300 [Darkdiver Grandahl] Cast Light
+72500301 [Darkdiver Grandahl] Dark Orb
+72500302 [Darkdiver Grandahl] Dark Hail
+72500303 [Darkdiver Grandahl] Darkstorm
+72500304 [Darkdiver Grandahl] Profound Still
+72500600 [Darkdiver Grandahl] Human Effigy
+72500601 [Darkdiver Grandahl] Bonfire Ascetic
+72600400 [Lonesome Gavlan - No-man's Wharf] Ring of Giants
+72600401 [Lonesome Gavlan - Harvest Valley] Ring of Giants
+72600402 [Lonesome Gavlan - Doors of Pharros] Ring of Giants
+72600600 [Lonesome Gavlan] Poison Moss
+72600601 [Lonesome Gavlan] Rotten Pine Resin
+72600602 [Lonesome Gavlan] Poison Throwing Knife
+72600603 [Lonesome Gavlan] Poison Arrow
+72600604 [Lonesome Gavlan - Doors of Pharros] Poison Moss
+72600605 [Lonesome Gavlan - Doors of Pharros] Rotten Pine Resin
+72600606 [Lonesome Gavlan - Doors of Pharros] Poison Throwing Knife
+72600607 [Lonesome Gavlan - Doors of Pharros] Poison Arrow
+75400000 [Merchant Hag Melentia] Broken Straight Sword
+75400001 [Merchant Hag Melentia] Hand Axe
+75400002 [Merchant Hag Melentia] Club
+75400003 [Merchant Hag Melentia] Caestus
+75400004 [Merchant Hag Melentia - Grave Warden Agdayne] Darkdrift
+75400005 [Merchant Hag Melentia - Lucatiel of Mirrah] Mirrah Greatsword
+75400006 [Merchant Hag Melentia - Titchy Gren] Scythe of Nahr Alma
+75400007 [Merchant Hag Melentia - Manscorpion Tark] Black Scorpion Stinger
+75400100 [Merchant Hag Melentia - Benhart of Jugo] Benhart's Parma
+75400101 [Merchant Hag Melentia - Mild Mannered Pate] Pate's Shield
+75400200 [Merchant Hag Melentia] Traveling Merchant Hat
+75400201 [Merchant Hag Melentia] Traveling Merchant Coat
+75400202 [Merchant Hag Melentia] Traveling Merchant Gloves
+75400203 [Merchant Hag Melentia] Traveling Merchant Boots
+75400204 [Merchant Hag Melentia - Grave Warden Agdayne] Agdayne's Black Robe
+75400205 [Merchant Hag Melentia - Grave Warden Agdayne] Agdayne's Cuffs
+75400206 [Merchant Hag Melentia - Creighton the Wanderer] Creighton's Chainmail
+75400207 [Merchant Hag Melentia - Creighton the Wanderer] Creighton's Chain Gloves
+75400208 [Merchant Hag Melentia - Creighton the Wanderer] Creighton's Chain Leggings
+75400209 [Merchant Hag Melentia - Benhart of Jugo] Benhart's Knight Helm
+75400210 [Merchant Hag Melentia - Benhart of Jugo] Benhart's Armor
+75400211 [Merchant Hag Melentia - Benhart of Jugo] Benhart's Gauntlets
+75400212 [Merchant Hag Melentia - Benhart of Jugo] Benhart's Boots
+75400213 [Merchant Hag Melentia - Mild Mannered Pate] Pate's Helm
+75400214 [Merchant Hag Melentia - Mild Mannered Pate] Pate's Armor
+75400215 [Merchant Hag Melentia - Mild Mannered Pate] Pate's Gloves
+75400216 [Merchant Hag Melentia - Mild Mannered Pate] Pate's Trousers
+75400217 [Merchant Hag Melentia - Cale the Cartographer] Cale's Leather Armor
+75400218 [Merchant Hag Melentia - Cale the Cartographer] Cale's Shoes
+75400219 [Merchant Hag Melentia - Lucatiel of Mirrah] Lucatiel's Vest
+75400220 [Merchant Hag Melentia - Lucatiel of Mirrah] Lucatiel's Gloves
+75400221 [Merchant Hag Melentia - Lucatiel of Mirrah] Lucatiel's Trousers
+75400222 [Merchant Hag Melentia - Straid of Olaphis] Black Robes
+75400223 [Merchant Hag Melentia - Straid of Olaphis] Black Gloves
+75400224 [Merchant Hag Melentia - Straid of Olaphis] Black Boots
+75400225 [Merchant Hag Melentia - Licia of Lindeldt] Saint's Hood
+75400226 [Merchant Hag Melentia - Licia of Lindeldt] Saint's Dress
+75400227 [Merchant Hag Melentia - Licia of Lindeldt] Saint's Long Gloves
+75400228 [Merchant Hag Melentia - Licia of Lindeldt] Saint's Trousers
+75400229 [Merchant Hag Melentia - Felkin the Outcast] Hexer's Hood
+75400230 [Merchant Hag Melentia - Felkin the Outcast] Hexer's Robes
+75400231 [Merchant Hag Melentia - Felkin the Outcast] Hexer's Gloves
+75400232 [Merchant Hag Melentia - Felkin the Outcast] Hexer's Boots
+75400233 [Merchant Hag Melentia - Royal Sorcerer Navlaan] Chaos Robe
+75400234 [Merchant Hag Melentia - Royal Sorcerer Navlaan] Chaos Gloves
+75400235 [Merchant Hag Melentia - Royal Sorcerer Navlaan] Chaos Boots
+75400236 [Merchant Hag Melentia - Titchy Gren] Nahr Alma Robes
+75400237 [Merchant Hag Melentia - Blue Sentinel Targray] Targray's Helm
+75400238 [Merchant Hag Melentia - Blue Sentinel Targray] Targray's Armor
+75400239 [Merchant Hag Melentia - Blue Sentinel Targray] Targray's Manifers
+75400240 [Merchant Hag Melentia - Blue Sentinel Targray] Targray's Leggings
+75400300 [Merchant Hag Melentia] Soul Arrow
+75400301 [Merchant Hag Melentia] Heal
+75400500 [Merchant Hag Melentia] Lenigrast's Key
+75400600 [Merchant Hag Melentia - Forest of Fallen Giants] Lifegem
+75400601 [Merchant Hag Melentia - Majula] Lifegem
+75400602 [Merchant Hag Melentia - Lost Sinner] Radiant Lifegem
+75400603 [Merchant Hag Melentia] Amber Herb
+75400604 [Merchant Hag Melentia] Throwing Knife
+75400605 [Merchant Hag Melentia] Witching Urn
+75400606 [Merchant Hag Melentia] Firebomb
+75400607 [Merchant Hag Melentia] Human Effigy
+75400608 [Merchant Hag Melentia] Pharros' Lockstone
+75400609 [Merchant Hag Melentia] Brightbug
+75400610 [Merchant Hag Melentia - 1 Major Boss] Brightbug
+75400611 [Merchant Hag Melentia - 2 Major Bosses] Brightbug
+75400612 [Merchant Hag Melentia - 3 Major Bosses] Brightbug
+75400613 [Merchant Hag Melentia - 4 Major Bosses] Brightbug
+75400614 [Merchant Hag Melentia - 5 Major Bosses] Brightbug
+75400615 [Merchant Hag Melentia] Fragrant Branch of Yore
+75600600 [The Rat King] Common Fruit
+75600601 [The Rat King] Red Leech Troches
+75600602 [The Rat King] Triclops Snake Troches
+75600603 [The Rat King] Dung Pie
+75600604 [The Rat King] Corrosive Urn
+76100000 [Maughlin the Armourer] Iron Parma
+76100001 [Maughlin the Armourer] Silver Eagle Kite Shield
+76100002 [Maughlin the Armourer] Twin Dragon Greatshield
+76100200 [Maughlin the Armourer] Standard Helm
+76100201 [Maughlin the Armourer] Hard Leather Armor
+76100202 [Maughlin the Armourer] Hard Leather Gauntlets
+76100203 [Maughlin the Armourer] Hard Leather Boots
+76100204 [Maughlin the Armourer] Falconer Helm
+76100205 [Maughlin the Armourer] Falconer Armor
+76100206 [Maughlin the Armourer] Falconer Gloves
+76100207 [Maughlin the Armourer] Falconer Boots
+76100208 [Maughlin the Armourer] Infantry Armor
+76100209 [Maughlin the Armourer] Infantry Gloves
+76100210 [Maughlin the Armourer] Infantry Boots
+76100211 [Maughlin the Armourer - 1000 Souls] Royal Soldier Helm
+76100212 [Maughlin the Armourer - 1000 Souls] Royal Soldier Armor
+76100213 [Maughlin the Armourer - 1000 Souls] Royal Soldier Gauntlet
+76100214 [Maughlin the Armourer - 1000 Souls] Royal Soldier Leggings
+76100215 [Maughlin the Armourer - 1000 Souls] Elite Knight Helm
+76100216 [Maughlin the Armourer - 1000 Souls] Elite Knight Armor
+76100217 [Maughlin the Armourer - 1000 Souls] Elite Knight Gloves
+76100218 [Maughlin the Armourer - 1000 Souls] Elite Knight Leggings
+76100219 [Maughlin the Armourer - 1000 Souls] Royal Soldier Helm
+76100220 [Maughlin the Armourer - 1000 Souls] Royal Soldier Armor
+76100221 [Maughlin the Armourer - 1000 Souls] Royal Soldier Gauntlets
+76100222 [Maughlin the Armourer - 1000 Souls] Royal Soldier Leggings
+76100223 [Maughlin the Armourer - 1000 Souls] Elite Knight Helm
+76100224 [Maughlin the Armourer - 1000 Souls] Elite Knight Armor
+76100225 [Maughlin the Armourer - 1000 Souls] Elite Knight Gloves
+76100226 [Maughlin the Armourer - 1000 Souls] Elite Knight Leggings
+76100227 [Maughlin the Armourer - 15000 Souls] Alva Helm
+76100228 [Maughlin the Armourer - 15000 Souls] Alva Armor
+76100229 [Maughlin the Armourer - 15000 Souls] Alva Gauntlets
+76100230 [Maughlin the Armourer - 15000 Souls] Alva Leggings
+76100235 [Maughlin the Armourer - Smelter Demon] Smelter Demon Helm
+76100236 [Maughlin the Armourer - Smelter Demon] Smelter Demon Armor
+76100237 [Maughlin the Armourer - Smelter Demon] Smelter Demon Gauntlets
+76100238 [Maughlin the Armourer - Smelter Demon] Smelter Demon Leggings
+76100239 [Maughlin the Armourer - Looking Glass Knight] Looking Glass Mask
+76100240 [Maughlin the Armourer - Looking Glass Knight] Looking Glass Armor
+76100241 [Maughlin the Armourer - Looking Glass Knight] Looking Glass Gauntlets
+76100242 [Maughlin the Armourer - Looking Glass Knight] Looking Glass Leggings
+76100243 [Maughlin the Armourer - Lost Sinner] Penal Mask
+76100244 [Maughlin the Armourer - Lost Sinner] Penal Straightjacket
+76100245 [Maughlin the Armourer - Lost Sinner] Penal Handcuffs
+76100246 [Maughlin the Armourer - Lost Sinner] Penal Skirt
+76100247 [Maughlin the Armourer - Velstadt] Velstadt's Helm
+76100248 [Maughlin the Armourer - Velstadt] Velstadt's Armor
+76100249 [Maughlin the Armourer - Velstadt] Velstadt's Gauntlets
+76100250 [Maughlin the Armourer - Velstadt] Velstadt's Leggings
+76100251 [Maughlin the Armourer - Thorne Defenders] Throne Defender Helm
+76100252 [Maughlin the Armourer - Thorne Defenders] Throne Defender Armor
+76100253 [Maughlin the Armourer - Thorne Defenders] Throne Defender Gauntlets
+76100254 [Maughlin the Armourer - Thorne Defenders] Throne Defender Leggings
+76100255 [Maughlin the Armourer - Thorne Defenders] Throne Watcher Helm
+76100256 [Maughlin the Armourer - Thorne Defenders] Throne Watcher Armor
+76100257 [Maughlin the Armourer - Thorne Defenders] Throne Watcher Gauntlets
+76100258 [Maughlin the Armourer - Thorne Defenders] Throne Watcher Leggings
+76100259 [Maughlin the Armourer - 15000 Souls, NG+3] Moon Butterfly Hat
+76100260 [Maughlin the Armourer - 15000 Souls, NG+2] Moon Butterfly Wings
+76100261 [Maughlin the Armourer - 15000 Souls, NG+2] Moon Butterfly Cuffs
+76100262 [Maughlin the Armourer - 15000 Souls, NG+2] Moon Butterfly Skirt
+76100263 [Maughlin the Armourer - Burnt Ivory King, 50 Loyce Souls] Ivory King Helm
+76100264 [Maughlin the Armourer - Burnt Ivory King, 50 Loyce Souls] Ivory King Armor
+76100265 [Maughlin the Armourer - Burnt Ivory King, 50 Loyce Souls] Ivory King Gauntlets
+76100266 [Maughlin the Armourer - Burnt Ivory King, 50 Loyce Souls] Ivory King Leggings
+76200300 [Stone Trader Chloanne] Soul Appease
+76200301 [Stone Trader Chloanne] Dead Again
+76200600 [Stone Trader Chloanne] Titanite Shard
+76200601 [Stone Trader Chloanne - Old Iron King] Titanite Shard
+76200602 [Stone Trader Chloanne - Old Iron King] Large Titanite Shard
+76200603 [Stone Trader Chloanne - Looking Glass Knight] Large Titanite Shard
+76200604 [Stone Trader Chloanne - Velstadt] Titanite Chunk
+76200605 [Stone Trader Chloanne - Nashandra] Titanite Chunk
+76200606 [Stone Trader Chloanne - Velstadt] Titanite Slab
+76200607 [Stone Trader Chloanne - Velstadt] Twinkling Titanite
+76200608 [Stone Trader Chloanne - Velstadt] Petrified Dragon Bone
+76200609 [Stone Trader Chloanne - Velstadt] Faintstone
+76200610 [Stone Trader Chloanne - Velstadt] Boltstone
+76200611 [Stone Trader Chloanne - Velstadt] Firedrake Stone
+76200612 [Stone Trader Chloanne - Velstadt] Darknight Stone
+76200613 [Stone Trader Chloanne - Looking Glass Knight] Poison Stone
+76200614 [Stone Trader Chloanne - Looking Glass Knight] Bleed Stone
+76200615 [Stone Trader Chloanne - Velstadt] Raw Stone
+76200616 [Stone Trader Chloanne - Velstadt] Magic Stone
+76200617 [Stone Trader Chloanne - Velstadt] Old Mundane Stone
+76200618 [Stone Trader Chloanne] Bonfire Ascetic
+76300300 [Rosabeth of Melfia] Fireball
+76300301 [Rosabeth of Melfia] Fire Orb
+76300302 [Rosabeth of Melfia] Combustion
+76300303 [Rosabeth of Melfia] Poison Mist
+76300304 [Rosabeth of Melfia] Flash Sweat
+76300305 [Rosabeth of Melfia] Iron Flesh
+76300400 [Rosabeth of Melfia] Flame Quartz Ring
+76300401 [Rosabeth of Melfia] Thunder Quartz Ring
+76300402 [Rosabeth of Melfia] Dark Quartz Ring
+76300600 [Rosabeth of Melfia] Small Blue Burr
+76300601 [Rosabeth of Melfia] Small Yellow Burr
+76300602 [Rosabeth of Melfia] Small Orange Burr
+76300603 [Rosabeth of Melfia] Fire Seed
+76400000 [Blacksmith Lenigrast] Longsword
+76400001 [Blacksmith Lenigrast] Broadsword
+76400002 [Blacksmith Lenigrast] Estoc
+76400003 [Blacksmith Lenigrast] Rapier
+76400004 [Blacksmith Lenigrast] Falchion
+76400005 [Blacksmith Lenigrast] Battle Axe
+76400006 [Blacksmith Lenigrast] Mace
+76400007 [Blacksmith Lenigrast] Spear
+76400600 [Blacksmith Lenigrast] Wood Arrow
+76400601 [Blacksmith Lenigrast] Iron Arrow
+76400602 [Blacksmith Lenigrast] Wood Bolt
+76400603 [Blacksmith Lenigrast] Heavy Bolt
+76400604 [Blacksmith Lenigrast] Titanite Shard
+76400605 [Blacksmith Lenigrast] Repair Powder
+76430000 [Steady Hand McDuff] Uchigatana
+76430001 [Steady Hand McDuff] Bastard Sword
+76430002 [Steady Hand McDuff] Greataxe
+76430003 [Steady Hand McDuff] Winged Spear
+76430004 [Steady Hand McDuff] Scythe
+76430005 [Steady Hand McDuff] Long Bow
+76430006 [Steady Hand McDuff] Light Crossbow
+76430007 [Steady Hand McDuff - Unknown Event] Uchigatana
+76430008 [Steady Hand McDuff - Unknown Event] Bastard Sword
+76430009 [Steady Hand McDuff - Unknown Event] Greataxe
+76430010 [Steady Hand McDuff - Unknown Event] Winged Spear
+76430011 [Steady Hand McDuff - Unknown Event] Scythe
+76430012 [Steady Hand McDuff - Unknown Event] Long Bow
+76430013 [Steady Hand McDuff - Unknown Event] Light Crossbow
+76430100 [Steady Hand McDuff] Royal Kite Shield
+76430102 [Steady Hand McDuff - Unknown Event] Royal Kite Shield
+76430600 [Steady Hand McDuff] Wood Arrow
+76430601 [Steady Hand McDuff] Iron Arrow
+76430602 [Steady Hand McDuff] Wood Bolt
+76430603 [Steady Hand McDuff] Heavy Bolt
+76430604 [Steady Hand McDuff] Iron Greatarrow
+76430605 [Steady Hand McDuff] Large Titanite Shard
+76430606 [Steady Hand McDuff] Repair Powder
+76600000 [Carhillion of the Fold] Sorcerer's Staff
+76600300 [Carhillion of the Fold] Soul Arrow
+76600301 [Carhillion of the Fold] Great Soul Arrow
+76600302 [Carhillion of the Fold] Heavy Soul Arrow
+76600303 [Carhillion of the Fold] Great Heavy Soul Arrow
+76600304 [Carhillion of the Fold] Shockwave
+76600305 [Carhillion of the Fold] Soul Spear Barrage
+76600306 [Carhillion of the Fold] Magic Weapon
+76600307 [Carhillion of the Fold] Yearn
+76600308 [Carhillion of the Fold - Shrine of Winter] Soul Arrow
+76600309 [Carhillion of the Fold - Shrine of Winter] Great Soul Arrow
+76600310 [Carhillion of the Fold - Shrine of Winter] Heavy Soul Arrow
+76600311 [Carhillion of the Fold - Shrine of Winter] Great Heavy Soul Arrow
+76600312 [Carhillion of the Fold - Shrine of Winter] Shockwave
+76600313 [Carhillion of the Fold - Shrine of Winter] Soul Spear Barrage
+76600314 [Carhillion of the Fold - Shrine of Winter] Magic Weapon
+76600315 [Carhillion of the Fold - Shrine of Winter] Yearn
+76600400 [Carhillion of the Fold] Spell Quartz Ring
+76600401 [Carhillion of the Fold] Clear Bluestone Ring
+76600600 [Carhillion of the Fold] Amber Herb
+76600601 [Carhillion of the Fold] Twilight Herb
+76600602 [Carhillion of the Fold] Simpleton's Spice
+76800000 [Straid of Olaphis - 5 Forlorn] Greatsword of the Forlorn
+76800001 [Straid of Olaphis - 5 Forlorn] Scythe of the Forlorn
+76800200 [Straid of Olaphis - 1 Forlorn] Hood of the Forlorn
+76800201 [Straid of Olaphis - 4 Forlorn] Armor of the Forlorn
+76800202 [Straid of Olaphis - 2 Forlorn] Gauntlets of the Forlorn
+76800203 [Straid of Olaphis - 3 Forlorn] Leggings of the Forlorn
+76800300 [Straid of Olaphis] Homing Soul Arrow
+76800301 [Straid of Olaphis] Resplendent Life
+76800302 [Straid of Olaphis - Velstadt] Great Lightning Spear
+76800303 [Straid of Olaphis] Unveil
+76800304 [Straid of Olaphis - Velstadt] Sunlight Blade
+76800305 [Straid of Olaphis] Lingering Flame
+76800306 [Straid of Olaphis] Flame Swathe
+76800307 [Straid of Olaphis] Dark Orb
+76800308 [Straid of Olaphis] Dark Hail
+76800309 [Straid of Olaphis] Dark Fog
+76800310 [Straid of Olaphis] Affinity
+76800311 [Straid of Olaphis] Strong Magic Shield
+76800312 [Straid of Olaphis] Cast Light
+76800400 [Straid of Olaphis] Ring of Knowledge
+76800401 [Straid of Olaphis] Lingering Dragoncrest Ring
+76800402 [Straid of Olaphis] Agape Ring
+76800600 [Straid of Olaphis] Rouge Water
+76801000 [Straid of Olaphis - Soul of the Pursuer] Pursuer's Ultra Greatsword
+76801001 [Straid of Olaphis - Soul of the Pursuer] Pursuer's Greatshield
+76801002 [Straid of Olaphis - Soul of the Last Giant] Giant Stone Axe
+76801003 [Straid of Olaphis - Dragonrider Soul] Dragonrider's Halberd
+76801004 [Straid of Olaphis - Dragonrider Soul] Dragonrider Bow
+76801005 [Straid of Olaphis - Dragonrider Soul] Dragonrider Twinblade
+76801006 [Straid of Olaphis - Dragonrider Soul] Dragonrider Greatshield
+76801007 [Straid of Olaphis - Flexile Sentry Soul] Warped Sword
+76801008 [Straid of Olaphis - Flexile Sentry Soul] Barbed Club
+76801009 [Straid of Olaphis - Flexile Sentry Soul] Arced Sword
+76801010 [Straid of Olaphis - Executioner's Chariot Soul] Chariot Lance
+76801011 [Straid of Olaphis - Executioner's Chariot Soul] Shield Crossbow
+76801012 [Straid of Olaphis - Skeleton Lord's Soul] Roaring Halberd
+76801013 [Straid of Olaphis - Skeleton Lord's Soul] Bone Scythe
+76801014 [Straid of Olaphis - Mytha, the Baneful Queen Soul] Mytha's Bent Blade
+76801015 [Straid of Olaphis - Smelter Demon Soul] Smelter Sword
+76801016 [Straid of Olaphis - Demon of Song Soul] Spotted Whip
+76801017 [Straid of Olaphis - Belfry Gargoyle Soul] Gargoyle Bident
+76801100 [Straid of Olaphis - Ruin Sentinel Soul] Heavy Homing Soul Arrow
+76801101 [Straid of Olaphis - Royal Rat Vanguard Soul] Toxic Mist
+76801102 [Straid of Olaphis - Scorpioness Najka Soul] Soul Shower
+76801103 [Straid of Olaphis - Royal Rat Authority Soul] Acid Surge
+76801104 [Straid of Olaphis - Soul of Velstadt] Sacred Oath
+76801105 [Straid of Olaphis - Giant Lord Soul] Repel
+76801106 [Straid of Olaphis - Darklurker Soul] Lifedrain Patch
+76801107 [Straid of Olaphis - Old Witch Soul] Flame Weapon
+76801108 [Straid of Olaphis - Old King Soul] Blinding Bolt
+76801109 [Straid of Olaphis - Old Dead One Soul] Numbness
+76801110 [Straid of Olaphis - Old Paledrake Soul] Crystal Soul Spear
+76801111 [Straid of Olaphis - Soul of Nadalia- Bride of Ash] Outcry
+76801200 [Straid of Olaphis - Soul of the Pursuer] Pursuer's Ultra Greatsword
+76801201 [Straid of Olaphis - Soul of the Pursuer] Pursuer's Greatshield
+76801202 [Straid of Olaphis - Soul of the Last Giant] Giant Stone Axe
+76801203 [Straid of Olaphis - Dragonrider Soul] Dragonrider's Halberd
+76801204 [Straid of Olaphis - Dragonrider Soul] Dragonrider Bow
+76801205 [Straid of Olaphis - Dragonrider Soul] Dragonrider Twinblade
+76801206 [Straid of Olaphis - Dragonrider Soul] Dragonrider Greatshield
+76801207 [Straid of Olaphis - Flexile Sentry Soul] Warped Sword
+76801208 [Straid of Olaphis - Flexile Sentry Soul] Barbed Club
+76801209 [Straid of Olaphis - Flexile Sentry Soul] Arced Sword
+76801210 [Straid of Olaphis - Executioner's Chariot Soul] Chariot Lance
+76801211 [Straid of Olaphis - Executioner's Chariot Soul] Shield Crossbow
+76801212 [Straid of Olaphis - Skeleton Lord's Soul] Roaring Halberd
+76801213 [Straid of Olaphis - Skeleton Lord's Soul] Bone Scythe
+76801214 [Straid of Olaphis - Mytha- the Baneful Queen Soul] Mytha's Bent Blade
+76801215 [Straid of Olaphis - Smelter Demon Soul] Smelter Sword
+76801216 [Straid of Olaphis - Demon of Song Soul] Spotted Whip
+76801217 [Straid of Olaphis - Belfry Gargoyle Soul] Gargoyle Bident
+76801300 [Straid of Olaphis - Ruin Sentinel Soul] Heavy Homing Soul Arrow
+76801301 [Straid of Olaphis - Royal Rat Vanguard Soul] Toxic Mist
+76801302 [Straid of Olaphis - Scorpioness Najka Soul] Soul Shower
+76801303 [Straid of Olaphis - Royal Rat Authority Soul] Acid Surge
+76801304 [Straid of Olaphis - Soul of Velstadt] Sacred Oath
+76801305 [Straid of Olaphis - Giant Lord Soul] Repel
+76801306 [Straid of Olaphis - Darklurker Soul] Lifedrain Patch
+76900000 [Licia of Lindeldt] Cleric's Sacred Chime
+76900300 [Licia of Lindeldt] Heal
+76900301 [Licia of Lindeldt] Med Heal
+76900302 [Licia of Lindeldt] Great Heal Excerpt
+76900303 [Licia of Lindeldt] Replenishment
+76900304 [Licia of Lindeldt] Resplendent Life
+76900305 [Licia of Lindeldt] Caressing Prayer
+76900306 [Licia of Lindeldt] Force
+76900307 [Licia of Lindeldt] Lightning Spear
+76900308 [Licia of Lindeldt] Homeward
+76900309 [Licia of Lindeldt] Guidance
+76900310 [Licia of Lindeldt - Shrine of Winter] Heal
+76900311 [Licia of Lindeldt - Shrine of Winter] Med Heal
+76900312 [Licia of Lindeldt - Shrine of Winter] Great Heal Excerpt
+76900313 [Licia of Lindeldt - Shrine of Winter] Replenishment
+76900314 [Licia of Lindeldt - Shrine of Winter] Resplendent Life
+76900315 [Licia of Lindeldt - Shrine of Winter] Caressing Prayer
+76900316 [Licia of Lindeldt - Shrine of Winter] Force
+76900317 [Licia of Lindeldt - Shrine of Winter] Lightning Spear
+76900318 [Licia of Lindeldt - Shrine of Winter] Homeward
+76900319 [Licia of Lindeldt - Shrine of Winter] Guidance
+76900400 [Licia of Lindeldt] Ring of Prayer
+77000000 [Felkin the Outcast] Archdrake Staff
+77000001 [Felkin the Outcast] Archdrake Chime
+77000002 [Felkin the Outcast] Chaos Rapier
+77000100 [Felkin the Outcast] Chaos Shield
+77000300 [Felkin the Outcast] Dark Orb
+77000301 [Felkin the Outcast] Dark Weapon
+77000302 [Felkin the Outcast] Resonant Flesh
+77000303 [Felkin the Outcast] Resonant Weapon
+77000304 [Felkin the Outcast] Magic Barrier
+77000305 [Felkin the Outcast] Resonant Soul
+77000306 [Felkin the Outcast] Great Resonant Soul
+77000400 [Felkin the Outcast] Ring of Life Protection
+77000600 [Felkin the Outcast] Dark Pine Resin
+77100200 [Royal Sorcerer Navlaan] Moon Hat
+77100201 [Royal Sorcerer Navlaan] Astrologist's Robe
+77100202 [Royal Sorcerer Navlaan] Astrologist's Gauntlets
+77100203 [Royal Sorcerer Navlaan] Astrologist's Bottoms
+77100204 [Royal Sorcerer Navlaan] Black Witch Hat
+77100205 [Royal Sorcerer Navlaan] Black Witch Robe
+77100206 [Royal Sorcerer Navlaan] Black Witch Gloves
+77100207 [Royal Sorcerer Navlaan] Black Witch Trousers
+77100300 [Royal Sorcerer Navlaan] Great Magic Weapon
+77100301 [Royal Sorcerer Navlaan] Strong Magic Shield
+77100400 [Royal Sorcerer Navlaan] Thunder Quartz Ring+2
+77100500 [Royal Sorcerer Navlaan] Bonfire Ascetic
+77100600 [Royal Sorcerer Navlaan] Dragon Charm
+77100601 [Royal Sorcerer Navlaan] Crimson Water
+77100602 [Royal Sorcerer Navlaan] Lightning Greatarrow
+77100603 [Royal Sorcerer Navlaan] Fire Greatarrow
+77100604 [Royal Sorcerer Navlaan] Destructive Greatarrow
+77200200 [Magerold of Lanafir] Spiked Bandit Helm
+77200201 [Magerold of Lanafir] Bandit Armor
+77200202 [Magerold of Lanafir] Bandit Gauntlets
+77200203 [Magerold of Lanafir] Bandit Boots
+77200204 [Magerold of Lanafir] Jester's Cap
+77200205 [Magerold of Lanafir] Jester's Robes
+77200206 [Magerold of Lanafir] Jester's Gloves
+77200207 [Magerold of Lanafir] Jester's Tights
+77200208 [Magerold of Lanafir - NG+2] Dragonrider Helm
+77200209 [Magerold of Lanafir - NG+2] Dragonrider Armor
+77200210 [Magerold of Lanafir - NG+2] Dragonrider Gauntlets
+77200211 [Magerold of Lanafir - NG+2] Dragonrider Leggings
+77200212 [Magerold of Lanafir - Fume Knight] Raime's Helm
+77200213 [Magerold of Lanafir - Fume Knight] Raime's Armor
+77200214 [Magerold of Lanafir - Fume Knight] Raime's Gauntlets
+77200215 [Magerold of Lanafir - Fume Knight] Raime's Leggings
+77200216 [Magerold of Lanafir - Sir Alonne] Alonne's Helm
+77200217 [Magerold of Lanafir - Sir Alonne] Alonne's Armor
+77200218 [Magerold of Lanafir - Sir Alonne] Alonne's Gauntlets
+77200219 [Magerold of Lanafir - Sir Alonne] Alonne's Leggings
+77200300 [Magerold of Lanafir] Soul Arrow
+77200301 [Magerold of Lanafir] Great Soul Arrow
+77200302 [Magerold of Lanafir] Heavy Soul Arrow
+77200303 [Magerold of Lanafir] Great Heavy Soul Arrow
+77200304 [Magerold of Lanafir] Dark Hail
+77200305 [Magerold of Lanafir] Darkstorm
+77200306 [Magerold of Lanafir] Fall Control
+77200400 [Magerold of Lanafir] Cursebite Ring
+77200500 [Magerold of Lanafir] Hello Carving
+77200501 [Magerold of Lanafir] Thank You Carving
+77200502 [Magerold of Lanafir] I'm Sorry Carving
+77200503 [Magerold of Lanafir] Very Good! Carving
+77200600 [Magerold of Lanafir] Green Blossom
+77200601 [Magerold of Lanafir] Charcoal Pine Resin
+77200602 [Magerold of Lanafir] Black Firebomb
+77200603 [Magerold of Lanafir] Rusted Coin
+77200604 [Magerold of Lanafir] Repair Powder
+77200605 [Magerold of Lanafir] Human Effigy
+77200606 [Magerold of Lanafir] Fragrant Branch of Yore
+77600000 [Weaponsmith Ornifex] Monastery Scimitar
+77600001 [Weaponsmith Ornifex] Manikin Claws
+77600002 [Weaponsmith Ornifex] Manikin Knife
+77600003 [Weaponsmith Ornifex] Lion Greataxe
+77600004 [Weaponsmith Ornifex] Silverblack Sickle
+77600300 [Weaponsmith Ornifex] Homing Soul Arrow
+77600301 [Weaponsmith Ornifex] Homing Soulmass
+77600302 [Weaponsmith Ornifex] Fall Control
+77600600 [Weaponsmith Ornifex] Flame Butterfly
+77600601 [Weaponsmith Ornifex] Fire Arrow
+77600602 [Weaponsmith Ornifex] Fire Bolt
+77600603 [Weaponsmith Ornifex] Green Blossom
+77600604 [Weaponsmith Ornifex] Amber Herb
+77600605 [Weaponsmith Ornifex - Nashandra] Green Blossom
+77600606 [Weaponsmith Ornifex - Nashandra] Twilight Herb
+77601000 [Weaponsmith Ornifex - Old Dragonslayer Soul] Dragonslayer Spear
+77601001 [Weaponsmith Ornifex - Soul of the Lost Sinner] Lost Sinner's Sword
+77601002 [Weaponsmith Ornifex - Old Iron King Soul] Iron King Hammer
+77601003 [Weaponsmith Ornifex - Soul of the Rotten] Butcher's Knife
+77601004 [Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider's Silk
+77601005 [Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider Fang
+77601006 [Weaponsmith Ornifex - Looking Glass Knight Soul] Thorned Greatsword
+77601007 [Weaponsmith Ornifex - Looking Glass Knight Soul] King's Mirror
+77601008 [Weaponsmith Ornifex - Soul of Velstadt] Sacred Chime Hammer
+77601009 [Weaponsmith Ornifex - Soul of the King] Ruler's Sword
+77601010 [Weaponsmith Ornifex - Soul of the King] King's Ultra Greatsword
+77601011 [Weaponsmith Ornifex - Soul of the King] King's Shield
+77601012 [Weaponsmith Ornifex - Guardian Dragon Soul] Spitfire Spear
+77601013 [Weaponsmith Ornifex - Guardian Dragon Soul] Drakewing Ultra Greatsword
+77601014 [Weaponsmith Ornifex - Ancient Dragon Soul] Curved Dragon Greatsword
+77601015 [Weaponsmith Ornifex - Soul of Nashandra] Scythe of Want
+77601016 [Weaponsmith Ornifex - Soul of Nashandra] Chime of Want
+77601017 [Weaponsmith Ornifex - Soul of Nashandra] Bow of Want
+77601018 [Weaponsmith Ornifex - Throne Defender Soul] Defender Greatsword
+77601019 [Weaponsmith Ornifex - Throne Defender Soul] Defender's Shield
+77601020 [Weaponsmith Ornifex - Throne Watcher Soul] Watcher Greatsword
+77601021 [Weaponsmith Ornifex - Throne Watcher Soul] Watcher's Shield
+77601022 [Weaponsmith Ornifex - Old Paledrake Soul] Moonlight Greatsword
+77601023 [Weaponsmith Ornifex - Old Dead One Soul] Crypt Blacksword
+77601024 [Weaponsmith Ornifex - Old Witch Soul] Chaos Blade
+77601025 [Weaponsmith Ornifex - Old King Soul] Dragonslayer Greatbow
+77601026 [Weaponsmith Ornifex - Soul of Sinh- the Slumbering Dragon] Yorgh's Spear
+77601027 [Weaponsmith Ornifex - Soul of Elana- Squalid Queen] Wrathful Axe
+77601028 [Weaponsmith Ornifex - Soul of Nadalia- Bride of Ash] Chime of Screams
+77601029 [Weaponsmith Ornifex - Soul of the Fume Knight] Fume Sword
+77601030 [Weaponsmith Ornifex - Soul of the Fume Knight] Fume Ultra Greatsword
+77601031 [Weaponsmith Ornifex - Soul of Sir Alonne] Bewitched Alonne Sword
+77601032 [Weaponsmith Ornifex - Smelter Demon Soul] Aged Smelter Sword
+77601033 [Weaponsmith Ornifex - Soul of Aava- the King's Pet] Ivory Straight Sword
+77601034 [Weaponsmith Ornifex - Soul of Zallen- the King's Pet] Loyce Shield
+77601035 [Weaponsmith Ornifex - Soul of Lud- the King's Pet] Loyce Greatsword
+77601036 [Weaponsmith Ornifex - Soul of the Ivory King] Ivory King Ultra Greatsword
+77601037 [Weaponsmith Ornifex - Soul of Alsanna- Silent Oracle] Eleum Loyce
+77601100 [Weaponsmith Ornifex - Old Dragonslayer Soul] Dragonslayer Spear
+77601101 [Weaponsmith Ornifex - Soul of the Lost Sinner] Lost Sinner's Sword
+77601102 [Weaponsmith Ornifex - Old Iron King Soul] Iron King Hammer
+77601103 [Weaponsmith Ornifex - Soul of the Rotten] Butcher's Knife
+77601104 [Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider's Silk
+77601105 [Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider Fang
+77601106 [Weaponsmith Ornifex - Looking Glass Knight Soul] Thorned Greatsword
+77601107 [Weaponsmith Ornifex - Looking Glass Knight Soul] King's Mirror
+77601108 [Weaponsmith Ornifex - Soul of Velstadt] Sacred Chime Hammer
+77601109 [Weaponsmith Ornifex - Soul of the King] Ruler's Sword
+77601110 [Weaponsmith Ornifex - Soul of the King] King's Ultra Greatsword
+77601111 [Weaponsmith Ornifex - Soul of the King] King's Shield
+77601112 [Weaponsmith Ornifex - Guardian Dragon Soul] Spitfire Spear
+77601113 [Weaponsmith Ornifex - Guardian Dragon Soul] Drakewing Ultra Greatsword
+77601114 [Weaponsmith Ornifex - Ancient Dragon Soul] Curved Dragon Greatsword
+77601115 [Weaponsmith Ornifex - Soul of Nashandra] Scythe of Want
+77601116 [Weaponsmith Ornifex - Soul of Nashandra] Chime of Want
+77601117 [Weaponsmith Ornifex - Soul of Nashandra] Bow of Want
+77601118 [Weaponsmith Ornifex - Throne Defender Soul] Defender Greatsword
+77601119 [Weaponsmith Ornifex - Throne Defender Soul] Defender's Shield
+77601120 [Weaponsmith Ornifex - Throne Watcher Soul] Watcher Greatsword
+77601121 [Weaponsmith Ornifex - Throne Watcher Soul] Watcher's Shield
+77602000 [Weaponsmith Ornifex - Old Dragonslayer Soul] Dragonslayer Spear
+77602001 [Weaponsmith Ornifex - Soul of the Lost Sinner] Lost Sinner's Sword
+77602002 [Weaponsmith Ornifex - Old Iron King Soul] Iron King Hammer
+77602003 [Weaponsmith Ornifex - Soul of the Rotten] Butcher's Knife
+77602004 [Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider's Silk
+77602005 [Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider Fang
+77602006 [Weaponsmith Ornifex - Looking Glass Knight Soul] Thorned Greatsword
+77602007 [Weaponsmith Ornifex - Looking Glass Knight Soul] King's Mirror
+77602008 [Weaponsmith Ornifex - Soul of Velstadt] Sacred Chime Hammer
+77602009 [Weaponsmith Ornifex - Soul of the King] Ruler's Sword
+77602010 [Weaponsmith Ornifex - Soul of the King] King's Ultra Greatsword
+77602011 [Weaponsmith Ornifex - Soul of the King] King's Shield
+77602012 [Weaponsmith Ornifex - Guardian Dragon Soul] Spitfire Spear
+77602013 [Weaponsmith Ornifex - Guardian Dragon Soul] Drakewing Ultra Greatsword
+77602014 [Weaponsmith Ornifex - Ancient Dragon Soul] Curved Dragon Greatsword
+77602015 [Weaponsmith Ornifex - Soul of Nashandra] Scythe of Want
+77602016 [Weaponsmith Ornifex - Soul of Nashandra] Chime of Want
+77602017 [Weaponsmith Ornifex - Soul of Nashandra] Bow of Want
+77602018 [Weaponsmith Ornifex - Throne Defender Soul] Defender Greatsword
+77602019 [Weaponsmith Ornifex - Throne Defender Soul] Defender's Shield
+77602020 [Weaponsmith Ornifex - Throne Watcher Soul] Watcher Greatsword
+77602021 [Weaponsmith Ornifex - Throne Watcher Soul] Watcher's Shield
+77602022 [Weaponsmith Ornifex - Old Paledrake Soul] Moonlight Greatsword
+77602023 [Weaponsmith Ornifex - Old Dead One Soul] Crypt Blacksword
+77602024 [Weaponsmith Ornifex - Old Witch Soul] Chaos Blade
+77602025 [Weaponsmith Ornifex - Old King Soul] Dragonslayer Greatbow
+77602026 [Weaponsmith Ornifex - Soul of Sinh- the Slumbering Dragon] Yorgh's Spear
+77602027 [Weaponsmith Ornifex - Soul of Sinh- the Slumbering Dragon] Yorgh's Spear
+77602028 [Weaponsmith Ornifex - Soul of Nadalia- Bride of Ash] Chime of Screams
+77602029 [Weaponsmith Ornifex - Soul of the Fume Knight] Fume Sword
+77602030 [Weaponsmith Ornifex - Soul of the Fume Knight] Fume Ultra Greatsword
+77602031 [Weaponsmith Ornifex - Soul of Sir Alonne] Bewitched Alonne Sword
+77602032 [Weaponsmith Ornifex - Smelter Demon Soul] Aged Smelter Sword
+77602033 [Weaponsmith Ornifex - Soul of Aava- the King's Pet] Ivory Straight Sword
+77602034 [Weaponsmith Ornifex - Soul of Zallen- the King's Pet] Loyce Shield
+77602035 [Weaponsmith Ornifex - Soul of Lud- the King's Pet] Loyce Greatsword
+77602036 [Weaponsmith Ornifex - Soul of the Ivory King] Ivory King Ultra Greatsword
+77602037 [Weaponsmith Ornifex - Soul of Alsanna- Silent Oracle] Eleum Loyce
+77602100 [Weaponsmith Ornifex - Old Dragonslayer Soul] Dragonslayer Spear
+77602101 [Weaponsmith Ornifex - Soul of the Lost Sinner] Lost Sinner's Sword
+77602102 [Weaponsmith Ornifex - Old Iron King Soul] Iron King Hammer
+77602103 [Weaponsmith Ornifex - Soul of the Rotten] Butcher's Knife
+77602104 [Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider's Silk
+77602105 [Weaponsmith Ornifex - Soul of the Duke's Dear Freja] Spider Fang
+77602106 [Weaponsmith Ornifex - Looking Glass Knight Soul] Thorned Greatsword
+77602107 [Weaponsmith Ornifex - Looking Glass Knight Soul] King's Mirror
+77602108 [Weaponsmith Ornifex - Soul of Velstadt] Sacred Chime Hammer
+77602109 [Weaponsmith Ornifex - Soul of the King] Ruler's Sword
+77602110 [Weaponsmith Ornifex - Soul of the King] King's Ultra Greatsword
+77602111 [Weaponsmith Ornifex - Soul of the King] King's Shield
+77602112 [Weaponsmith Ornifex - Guardian Dragon Soul] Spitfire Spear
+77602113 [Weaponsmith Ornifex - Guardian Dragon Soul] Drakewing Ultra Greatsword
+77602114 [Weaponsmith Ornifex - Ancient Dragon Soul] Curved Dragon Greatsword
+77602115 [Weaponsmith Ornifex - Soul of Nashandra] Scythe of Want
+77602116 [Weaponsmith Ornifex - Soul of Nashandra] Chime of Want
+77602117 [Weaponsmith Ornifex - Soul of Nashandra] Bow of Want
+77602118 [Weaponsmith Ornifex - Throne Defender Soul] Defender Greatsword
+77602119 [Weaponsmith Ornifex - Throne Defender Soul] Defender's Shield
+77602120 [Weaponsmith Ornifex - Throne Watcher Soul] Watcher Greatsword
+77602121 [Weaponsmith Ornifex - Throne Watcher Soul] Watcher's Shield
+77700200 [Sweet Shalquoir - Royal Rat Authority, Royal Rat Vanguard] Flying Feline Boots
+77700400 [Sweet Shalquoir] Silvercat Ring
+77700401 [Sweet Shalquoir] Redeye ring
+77700402 [Sweet Shalquoir] Name-engraved Ring
+77700403 [Sweet Shalquoir] Ring of Whispers
+77700404 [Sweet Shalquoir] Ring of the Evil Eye
+77700600 [Sweet Shalquoir] Prism Stone
+77700601 [Sweet Shalquoir] Alluring Skull
+77700602 [Sweet Shalquoir] Lloyd's Talisman
+77700603 [Sweet Shalquoir] Homeward Bone
+77700604 [Sweet Shalquoir - Shrine of Winter] Prism Stone
+77700605 [Sweet Shalquoir - Shrine of Winter] Alluring Skull
+77700606 [Sweet Shalquoir - Shrine of Winter] Lloyd's Talisman
+77700607 [Sweet Shalquoir - Shrine of Winter] Homeward Bone
+78300000 [Titchy Gren] Great Scythe
+78300001 [Titchy Gren] Priest's Chime
+78300200 [Titchy Gren - Skeleton Lords] Bone Crown
+78300201 [Titchy Gren - Skeleton Lords] Bone King Robe
+78300202 [Titchy Gren - Skeleton Lords] Bone King Cuffs
+78300203 [Titchy Gren - Skeleton Lords] Bone King Skirt
+78300204 [Titchy Gren - Shrine of Winter] Executioner Helm
+78300205 [Titchy Gren - Shrine of Winter] Executioner Armor
+78300206 [Titchy Gren - Shrine of Winter] Executioner Gauntlets
+78300207 [Titchy Gren - Shrine of Winter] Executioner Leggings
+78300300 [Titchy Gren] Firestorm
+78300301 [Titchy Gren] Great Combustion
+78300302 [Titchy Gren] Fire Whip
+78300400 [Titchy Gren] Delicate String
+78300600 [Titchy Gren] Red Sign Soapstone
+78300601 [Titchy Gren] Silver Talisman
+78300602 [Titchy Gren] Hexing Urn
+78300603 [Titchy Gren - NG+] Cracked Red Eye Orb
+78300604 [Titchy Gren] Cracked Red Eye Orb
+78400200 [Cromwell the Pardoner] White Priest Headpiece
+78400201 [Cromwell the Pardoner] White Priest Robe
+78400202 [Cromwell the Pardoner] White Priest Gloves
+78400203 [Cromwell the Pardoner] White Priest Skirt
+78400300 [Cromwell the Pardoner] Great Heal
+78400301 [Cromwell the Pardoner] Replenishment
+78400302 [Cromwell the Pardoner] Caressing Prayer
+78400303 [Cromwell the Pardoner] Force
+78400304 [Cromwell the Pardoner] Emit Force
+78400305 [Cromwell the Pardoner] Heavenly Thunder
+78400306 [Cromwell the Pardoner] Perseverance
+78400307 [Cromwell the Pardoner] Scraps of Life
+78400308 [Cromwell the Pardoner - Unknown Event] Great Heal
+78400309 [Cromwell the Pardoner - Unknown Event] Replenishment
+78400310 [Cromwell the Pardoner - Unknown Event] Caressing Prayer
+78400311 [Cromwell the Pardoner - Unknown Event] Force
+78400312 [Cromwell the Pardoner - Unknown Event] Emit Force
+78400313 [Cromwell the Pardoner - Unknown Event] Heavenly Thunder
+78400314 [Cromwell the Pardoner - Unknown Event] Perseverance
+78400315 [Cromwell the Pardoner - Unknown Event] Scraps of Life
+78400400 [Cromwell the Pardoner] Poisonbite Ring
+78400401 [Cromwell the Pardoner] Bloodbite Ring
+78400402 [Cromwell the Pardoner] Cursebite Ring
+78400600 [Cromwell the Pardoner] Dark Troches
+78500000 [Blue Sentinel Targray] Morning Star
+78500001 [Blue Sentinel Targray] Halberd
+78500300 [Blue Sentinel Targray] Emit Force
+78500301 [Blue Sentinel Targray] Heavenly Thunder
+78500600 [Blue Sentinel Targray] Monastery Charm
+78500601 [Blue Sentinel Targray] Holy Water Urn
+78500602 [Blue Sentinel Targray] Boltstone
+78500603 [Blue Sentinel Targray - NG+] Cracked Blue Eye Orb

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>CS_KEY_ASSIGN_MENUITEM_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 textID">
+      <DisplayName>テキスト</DisplayName>
+      <Description>キー指定あり⇒項目名、1行ヘルプのID。キー指定なし⇒カテゴリ名のID。テキスト指定なし⇒パッド/キー設定に表示しない(操作一覧表示のみ)</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>200</SortID>
+      <UnkC8>割り当て項目</UnkC8>
+    </Field>
+    <Field Def="s32 key = -1">
+      <DisplayName>キー</DisplayName>
+      <Enum>CS_USER_INPUT_KEY</Enum>
+      <Description>割り当て対象のユーザー入力キー。指定が無い時はカテゴリ表示用項目として扱う</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>201</SortID>
+      <UnkC8>割り当て項目</UnkC8>
+    </Field>
+    <Field Def="u8 enableUnassign = 1">
+      <DisplayName>解除</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>割り当ての解除が可能か(デフォルト:可能)</Description>
+      <Maximum>1</Maximum>
+      <SortID>300</SortID>
+      <UnkC8>割り当て制限</UnkC8>
+    </Field>
+    <Field Def="u8 enablePadConfig = 1">
+      <DisplayName>パッド</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>パッド操作の割り当て変更が可能か(デフォルト:可能)</Description>
+      <Maximum>1</Maximum>
+      <SortID>301</SortID>
+      <UnkC8>割り当て制限</UnkC8>
+    </Field>
+    <Field Def="u8 enableMouseConfig = 1">
+      <DisplayName>マウス</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>マウス操作の割り当て変更が可能か(デフォルト:可能)</Description>
+      <Maximum>1</Maximum>
+      <SortID>302</SortID>
+      <UnkC8>割り当て制限</UnkC8>
+    </Field>
+    <Field Def="u8 group">
+      <DisplayName>グループ</DisplayName>
+      <Enum>CS_KEY_ASSIGN_GROUP</Enum>
+      <Description>割り当ての重複判定用グループ。同一グループでは重複不可</Description>
+      <Maximum>1</Maximum>
+      <SortID>303</SortID>
+      <UnkC8>割り当て制限</UnkC8>
+    </Field>
+    <Field Def="s32 mappingTextID">
+      <DisplayName>テキスト</DisplayName>
+      <Description>操作一覧で表示する項目名。0:：一覧に表示しない</Description>
+      <Minimum>0</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>400</SortID>
+      <UnkC8>操作一覧表示</UnkC8>
+    </Field>
+    <Field Def="u8 viewPad = 1">
+      <DisplayName>パッド</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>キーコンフィグ（パッド）で表示するか(デフォルト:表示)</Description>
+      <Maximum>1</Maximum>
+      <SortID>100</SortID>
+      <UnkC8>表示条件</UnkC8>
+    </Field>
+    <Field Def="u8 viewKeyboardMouse = 1">
+      <DisplayName>マウス・キーボード</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>キーコンフィグ（マウス・キーボード）で表示するか(デフォルト:表示）</Description>
+      <Maximum>1</Maximum>
+      <SortID>101</SortID>
+      <UnkC8>表示条件</UnkC8>
+    </Field>
+    <Field Def="dummy8 padding[6]">
+      <Description>パッド操作の割り当て変更が可能か(デフォルト:可能)</Description>
+      <SortID>99999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

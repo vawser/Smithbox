@@ -1,0 +1,15 @@
+<class name='hkpBvTreeShape' version='1' signature='0x13f65b68' size='40' parent='hkpShape'>
+  <enums>
+    <enum name='BvTreeType' flags='00000000'>
+      <enumitem name='BVTREE_MOPP' value='0'/>
+      <enumitem name='BVTREE_TRISAMPLED_HEIGHTFIELD' value='1'/>
+      <enumitem name='BVTREE_STATIC_COMPOUND' value='2'/>
+      <enumitem name='BVTREE_COMPRESSED_MESH' value='3'/>
+      <enumitem name='BVTREE_USER' value='4'/>
+      <enumitem name='BVTREE_MAX' value='5'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='bvTreeType' offset='32' etype='BvTreeType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

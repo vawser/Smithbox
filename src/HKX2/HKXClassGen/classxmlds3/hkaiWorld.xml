@@ -1,0 +1,46 @@
+<class name='hkaiWorld' version='1' signature='0xb155a7f6' size='672' parent='hkReferencedObject'>
+  <enums>
+    <enum name='StepThreading' flags='00000000'>
+      <enumitem name='STEP_SINGLE_THREADED' value='0'/>
+      <enumitem name='STEP_MULTI_THREADED' value='1'/>
+    </enum>
+    <enum name='CharacterCallbackType' flags='00000000'>
+      <enumitem name='CALLBACK_PRECHARACTER_STEP' value='0'/>
+      <enumitem name='CALLBACK_POSTCHARACTER_STEP' value='1'/>
+    </enum>
+    <enum name='PathType' flags='00000000'>
+      <enumitem name='PATH_TYPE_NAVMESH' value='0'/>
+      <enumitem name='PATH_TYPE_NAVVOLUME' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='up' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='streamingCollection' offset='32' ctype='hkaiStreamingCollection' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cutter' offset='40' ctype='hkaiNavMeshCutter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='performValidationChecks' offset='48' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='dynamicNavMeshMediator' offset='56' ctype='hkaiDynamicNavMeshQueryMediator' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='dynamicNavVolumeMediator' offset='64' ctype='hkaiDynamicNavVolumeMediator' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='overlapManager' offset='72' ctype='hkaiOverlapManager' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='silhouetteGenerationParameters' offset='80' ctype='hkaiSilhouetteGenerationParameters' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='silhouetteExtrusion' offset='144' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='forceSilhouetteUpdates' offset='148' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='listeners' offset='152' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='silhouetteGenerators' offset='168' ctype='hkaiSilhouetteGenerator' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='obstacleGenerators' offset='184' ctype='hkaiObstacleGenerator' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='avoidancePairProps' offset='200' ctype='hkaiAvoidancePairProperties' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='navMeshPathRequests' offset='208' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='navVolumePathRequests' offset='224' vtype='TYPE_ARRAY' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='isPathRequestArrayLocked' offset='240' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='maxRequestsPerStep' offset='244' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxEstimatedIterationsPerStep' offset='248' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='priorityThreshold' offset='252' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numPathRequestsPerTask' offset='256' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numBehaviorUpdatesPerTask' offset='260' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numCharactersPerAvoidanceTask' offset='264' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxPathSearchEdgesOut' offset='268' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxPathSearchPointsOut' offset='272' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='precomputeNavMeshClearance' offset='276' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultPathfindingInput' offset='288' ctype='hkaiPathfindingUtilFindPathInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultVolumePathfindingInput' offset='496' ctype='hkaiVolumePathfindingUtilFindPathInput' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

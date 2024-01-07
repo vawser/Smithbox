@@ -1,0 +1,5 @@
+<class name='hclBendLinkConstraintSet' version='1' signature='0x26824757' size='48' parent='hclConstraintSet'>
+  <members>
+    <member name='links' offset='32' ctype='hclBendLinkConstraintSetLink' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

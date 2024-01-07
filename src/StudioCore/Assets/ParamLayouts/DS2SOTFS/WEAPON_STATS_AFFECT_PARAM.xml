@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <entry>
+    <name>Base Damage Multiplier</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Magic Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Lightning Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Fire Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Dark Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+0 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+1 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Physical Scaling STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Physical Scaling DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+2 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+3 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+4 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+5 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+6 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+7 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+8 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+9 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Physical Scaling: STR</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Physical Scaling: DEX</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Magic Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Lightning Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Fire Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Dark Scaling</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Poison Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Bleed Scaling:</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+  <entry>
+    <name>+10 - Unk</name>
+    <type>f32</type>
+    <default>0</default>
+  </entry>
+</layout>

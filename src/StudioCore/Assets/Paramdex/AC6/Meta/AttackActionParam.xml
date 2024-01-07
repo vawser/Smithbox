@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="TRIGGER_ACTION_TYPE_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Single Attack" />
+      <Option Value="2" Name="Continuous Attack" />
+      <Option Value="3" Name="Guard" />
+      <Option Value="4" Name="Melee Attack" />
+      <Option Value="5" Name="Charge Melee Attack" />
+      <Option Value="6" Name="Charge Shoot Attack" />
+      <Option Value="7" Name="Fast Single Attack" />
+    </Enum>  
+  </Enums>
+  
+  <Field>
+    <triggerActionType Enum="TRIGGER_ACTION_TYPE_TYPE" Wiki="Decides how controller inputs affect weapon firing behavior, such as holding down R2 to continuously shoot vs only shoot once."/>
+  </Field>
+  <Self />
+</PARAMMETA>

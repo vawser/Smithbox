@@ -1,0 +1,6 @@
+<class name='hknpTyremarkPoint' version='1' signature='0x6bb7c5e8' size='32'>
+  <members>
+    <member name='pointLeft' offset='0' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='pointRight' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

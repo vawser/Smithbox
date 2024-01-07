@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>KNOWLEDGE_LOADSCREEN_ITEM_PARAM_ST</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u32 LoadscreenCategoryId" />
+    <Field Def="s32 KnowledgeId = 2.3E+07" />
+    <Field Def="dummy8 pad1[8]" />
+  </Fields>
+</PARAMDEF>

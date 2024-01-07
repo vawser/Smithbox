@@ -1,0 +1,13 @@
+<class name='hknpShapeSignals' version='1' signature='0xc18bf544' size='16'>
+  <enums>
+    <enum name='MutationFlagsEnum' flags='00000000'>
+      <enumitem name='MUTATION_AABB_CHANGED' value='1'/>
+      <enumitem name='MUTATION_UPDATE_COLLISION_CACHES' value='2'/>
+      <enumitem name='MUTATION_REBUILD_COLLISION_CACHES' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='shapeMutated' offset='0' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='shapeDestroyed' offset='8' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

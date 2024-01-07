@@ -1,0 +1,5 @@
+<class name='hkReferencedObject' version='1' signature='0xb70c7949' size='16' parent='hkBaseObject'>
+  <members>
+    <member name='memSizeAndRefCount' offset='8' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

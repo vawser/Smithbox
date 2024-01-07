@@ -1,0 +1,1532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>NPC_AI_BEHAVIOR_PROBABILITY_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s16 param000">
+      <DisplayName>右手近接_R1コンボ</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+    </Field>
+    <Field Def="s16 param001">
+      <DisplayName>右手近接_R2コンボ</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 param002">
+      <DisplayName>右手近接_ダッシュ攻撃</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 param003">
+      <DisplayName>右手近接_前ローリング攻撃</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 param004">
+      <DisplayName>右手近接_左右ローリング攻撃</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s16 param005">
+      <DisplayName>右手近接_後ローリング攻撃</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s16 param006">
+      <DisplayName>右手近接_バックステップ攻撃</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s16 param007">
+      <DisplayName>右手近接_ジャンプ攻撃</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s16 param008">
+      <DisplayName>右手近接_ダッシュジャンプ攻撃</DisplayName>
+      <Description>右手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="s16 param009">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s16 param010">
+      <DisplayName>右手遠距離_R1射撃</DisplayName>
+      <Description>右手遠距離武器行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="s16 param011">
+      <DisplayName>右手遠距離_R2射撃</DisplayName>
+      <Description>右手遠距離武器行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="s16 param012">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="s16 param013">
+      <DisplayName>右手魔法_遠距離魔法_前移動</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2200</SortID>
+    </Field>
+    <Field Def="s16 param014">
+      <DisplayName>右手魔法_遠距離魔法_後ろ移動</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2220</SortID>
+    </Field>
+    <Field Def="s16 param015">
+      <DisplayName>左右移動[CloseDrawBow]</DisplayName>
+      <Description>弓構え中に近づかれたインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>24000</SortID>
+    </Field>
+    <Field Def="s16 param016">
+      <DisplayName>左右ローリング[CloseDrawBow]</DisplayName>
+      <Description>弓構え中に近づかれたインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>24100</SortID>
+    </Field>
+    <Field Def="s16 param017">
+      <DisplayName>割り込まない[CloseDrawBow]</DisplayName>
+      <Description>弓構え中に近づかれたインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>24200</SortID>
+    </Field>
+    <Field Def="s16 param018">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>24300</SortID>
+    </Field>
+    <Field Def="s16 param019">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>24400</SortID>
+    </Field>
+    <Field Def="s16 param020">
+      <DisplayName>右手魔法_近接魔法_左右</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2010</SortID>
+    </Field>
+    <Field Def="s16 param021">
+      <DisplayName>右手魔法_中距離魔法_左右</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2110</SortID>
+    </Field>
+    <Field Def="s16 param022">
+      <DisplayName>右手魔法_遠距離魔法_左右</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2210</SortID>
+    </Field>
+    <Field Def="s16 param023">
+      <DisplayName>右手魔法_HP回復魔法</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2300</SortID>
+    </Field>
+    <Field Def="s16 param024">
+      <DisplayName>右手魔法_バフ魔法</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2400</SortID>
+    </Field>
+    <Field Def="s16 param025">
+      <DisplayName>右手魔法_近接魔法_前移動</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2000</SortID>
+    </Field>
+    <Field Def="s16 param026">
+      <DisplayName>右手魔法_近接魔法_後ろ移動</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2020</SortID>
+    </Field>
+    <Field Def="s16 param027">
+      <DisplayName>右手魔法_中距離魔法_前移動</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2100</SortID>
+    </Field>
+    <Field Def="s16 param028">
+      <DisplayName>右手魔法_中距離魔法_後ろ移動</DisplayName>
+      <Description>右手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2120</SortID>
+    </Field>
+    <Field Def="s16 param029">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>2900</SortID>
+    </Field>
+    <Field Def="s16 param030">
+      <DisplayName>右手盾_R1攻撃</DisplayName>
+      <Description>右手盾行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3000</SortID>
+    </Field>
+    <Field Def="s16 param031">
+      <DisplayName>右手盾_R2攻撃</DisplayName>
+      <Description>右手盾行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3100</SortID>
+    </Field>
+    <Field Def="s16 param032">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3200</SortID>
+    </Field>
+    <Field Def="s16 param033">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3300</SortID>
+    </Field>
+    <Field Def="s16 param034">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>3400</SortID>
+    </Field>
+    <Field Def="s16 param035">
+      <DisplayName>バックステップ[SuccessGuard]</DisplayName>
+      <Description>ガード成功インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>25000</SortID>
+    </Field>
+    <Field Def="s16 param036">
+      <DisplayName>割り込まない[SuccessGuard]</DisplayName>
+      <Description>ガード成功インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>25200</SortID>
+    </Field>
+    <Field Def="s16 param037">
+      <DisplayName>ガードカウンター攻撃[SuccessGuard]</DisplayName>
+      <Description>ガード成功インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>25100</SortID>
+    </Field>
+    <Field Def="s16 param038">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>25300</SortID>
+    </Field>
+    <Field Def="s16 param039">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>25400</SortID>
+    </Field>
+    <Field Def="s16 param040">
+      <DisplayName>左手近接_R1コンボ(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4000</SortID>
+    </Field>
+    <Field Def="s16 param041">
+      <DisplayName>左手近接_R2コンボ(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4100</SortID>
+    </Field>
+    <Field Def="s16 param042">
+      <DisplayName>左手近接_L1コンボ(片手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4200</SortID>
+    </Field>
+    <Field Def="s16 param043">
+      <DisplayName>左手近接_ダッシュ攻撃(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4300</SortID>
+    </Field>
+    <Field Def="s16 param044">
+      <DisplayName>左手近接_前ローリング攻撃(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4400</SortID>
+    </Field>
+    <Field Def="s16 param045">
+      <DisplayName>左手近接_左右ローリング攻撃(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4500</SortID>
+    </Field>
+    <Field Def="s16 param046">
+      <DisplayName>左手近接_後ローリング攻撃(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4600</SortID>
+    </Field>
+    <Field Def="s16 param047">
+      <DisplayName>左手近接_バックステップ攻撃(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4700</SortID>
+    </Field>
+    <Field Def="s16 param048">
+      <DisplayName>左手近接_ジャンプ攻撃(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4800</SortID>
+    </Field>
+    <Field Def="s16 param049">
+      <DisplayName>左手近接_ダッシュジャンプ攻撃(両手持ちのみ)</DisplayName>
+      <Description>左手近接行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>4900</SortID>
+    </Field>
+    <Field Def="s16 param050">
+      <DisplayName>左手遠距離_R1射撃</DisplayName>
+      <Description>左手遠距離武器行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5000</SortID>
+    </Field>
+    <Field Def="s16 param051">
+      <DisplayName>左手遠距離_R2射撃</DisplayName>
+      <Description>左手遠距離武器行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5100</SortID>
+    </Field>
+    <Field Def="s16 param052">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>5200</SortID>
+    </Field>
+    <Field Def="s16 param053">
+      <DisplayName>左手魔法_遠距離魔法_前移動</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6200</SortID>
+    </Field>
+    <Field Def="s16 param054">
+      <DisplayName>左手魔法_遠距離魔法_後ろ移動</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6220</SortID>
+    </Field>
+    <Field Def="s16 param055">
+      <DisplayName>致命攻撃[SuccessParry]</DisplayName>
+      <Description>パリィ成功インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>26000</SortID>
+    </Field>
+    <Field Def="s16 param056">
+      <DisplayName>割り込まない[SuccessParry]</DisplayName>
+      <Description>パリィ成功インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>26100</SortID>
+    </Field>
+    <Field Def="s16 param057">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>26200</SortID>
+    </Field>
+    <Field Def="s16 param058">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>26300</SortID>
+    </Field>
+    <Field Def="s16 param059">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>26400</SortID>
+    </Field>
+    <Field Def="s16 param060">
+      <DisplayName>左手魔法_近接魔法_左右</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6010</SortID>
+    </Field>
+    <Field Def="s16 param061">
+      <DisplayName>左手魔法_中距離魔法_左右</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6110</SortID>
+    </Field>
+    <Field Def="s16 param062">
+      <DisplayName>左手魔法_遠距離魔法_左右</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6210</SortID>
+    </Field>
+    <Field Def="s16 param063">
+      <DisplayName>左手魔法_HP回復魔法</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6300</SortID>
+    </Field>
+    <Field Def="s16 param064">
+      <DisplayName>左手魔法_バフ魔法</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6400</SortID>
+    </Field>
+    <Field Def="s16 param065">
+      <DisplayName>左手魔法_近接魔法_前移動</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6000</SortID>
+    </Field>
+    <Field Def="s16 param066">
+      <DisplayName>左手魔法_近接魔法_後ろ移動</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6020</SortID>
+    </Field>
+    <Field Def="s16 param067">
+      <DisplayName>左手魔法_中距離魔法_前移動</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6100</SortID>
+    </Field>
+    <Field Def="s16 param068">
+      <DisplayName>左手魔法_中距離魔法_後ろ移動</DisplayName>
+      <Description>左手魔法行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6110</SortID>
+    </Field>
+    <Field Def="s16 param069">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>6900</SortID>
+    </Field>
+    <Field Def="s16 param070">
+      <DisplayName>バックステップ</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7000</SortID>
+    </Field>
+    <Field Def="s16 param071">
+      <DisplayName>前ローリング</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7100</SortID>
+    </Field>
+    <Field Def="s16 param072">
+      <DisplayName>左右ローリング</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7200</SortID>
+    </Field>
+    <Field Def="s16 param073">
+      <DisplayName>後ろローリング</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7300</SortID>
+    </Field>
+    <Field Def="s16 param074">
+      <DisplayName>左右移動</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7400</SortID>
+    </Field>
+    <Field Def="s16 param075">
+      <DisplayName>後退</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7500</SortID>
+    </Field>
+    <Field Def="s16 param076">
+      <DisplayName>ダッシュ接近</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7600</SortID>
+    </Field>
+    <Field Def="s16 param077">
+      <DisplayName>待機</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7700</SortID>
+    </Field>
+    <Field Def="s16 param078">
+      <DisplayName>右手両手持ちに持ち替え</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7800</SortID>
+    </Field>
+    <Field Def="s16 param079">
+      <DisplayName>左手両手持ちに持ち替え</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7900</SortID>
+    </Field>
+    <Field Def="s16 param080">
+      <DisplayName>片手持ちに持ち替え</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8000</SortID>
+    </Field>
+    <Field Def="s16 param081">
+      <DisplayName>戦闘距離までアプローチ</DisplayName>
+      <Description>共通行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>7650</SortID>
+    </Field>
+    <Field Def="s16 param082">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8200</SortID>
+    </Field>
+    <Field Def="s16 param083">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8300</SortID>
+    </Field>
+    <Field Def="s16 param084">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>8400</SortID>
+    </Field>
+    <Field Def="s16 param085">
+      <DisplayName>致命攻撃[GuardBreak]</DisplayName>
+      <Description>ガードブレイクインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>27000</SortID>
+    </Field>
+    <Field Def="s16 param086">
+      <DisplayName>ダッシュ攻撃[GuardBreak]</DisplayName>
+      <Description>ガードブレイクインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>27100</SortID>
+    </Field>
+    <Field Def="s16 param087">
+      <DisplayName>魔法_近接魔法[GuardBreak]</DisplayName>
+      <Description>ガードブレイクインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>27200</SortID>
+    </Field>
+    <Field Def="s16 param088">
+      <DisplayName>割り込まない[GuardBreak]</DisplayName>
+      <Description>ガードブレイクインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>27300</SortID>
+    </Field>
+    <Field Def="s16 param089">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>27400</SortID>
+    </Field>
+    <Field Def="s16 param090">
+      <DisplayName>盾チク</DisplayName>
+      <Description>特殊行動</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9000</SortID>
+    </Field>
+    <Field Def="s16 param091">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9100</SortID>
+    </Field>
+    <Field Def="s16 param092">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9200</SortID>
+    </Field>
+    <Field Def="s16 param093">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9300</SortID>
+    </Field>
+    <Field Def="s16 param094">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9400</SortID>
+    </Field>
+    <Field Def="s16 param095">
+      <DisplayName>ダッシュ攻撃[Estus]</DisplayName>
+      <Description>エストを飲んだインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>28000</SortID>
+    </Field>
+    <Field Def="s16 param096">
+      <DisplayName>投擲アイテム[Estus]</DisplayName>
+      <Description>エストを飲んだインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>28100</SortID>
+    </Field>
+    <Field Def="s16 param097">
+      <DisplayName>割り込まない[Estus]</DisplayName>
+      <Description>エストを飲んだインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>28200</SortID>
+    </Field>
+    <Field Def="s16 param098">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>28300</SortID>
+    </Field>
+    <Field Def="s16 param099">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>28400</SortID>
+    </Field>
+    <Field Def="s16 param100">
+      <DisplayName>パリィ[Parrytime]</DisplayName>
+      <Description>パリィタイミングインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29000</SortID>
+    </Field>
+    <Field Def="s16 param101">
+      <DisplayName>前ローリング[Parrytime]</DisplayName>
+      <Description>パリィタイミングインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29100</SortID>
+    </Field>
+    <Field Def="s16 param102">
+      <DisplayName>左右ローリング[Parrytime]</DisplayName>
+      <Description>パリィタイミングインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29200</SortID>
+    </Field>
+    <Field Def="s16 param103">
+      <DisplayName>後ろローリング[Parrytime]</DisplayName>
+      <Description>パリィタイミングインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29300</SortID>
+    </Field>
+    <Field Def="s16 param104">
+      <DisplayName>バックステップ攻撃[Parrytime]</DisplayName>
+      <Description>パリィタイミングインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29400</SortID>
+    </Field>
+    <Field Def="s16 param105">
+      <DisplayName>その場ガード[Parrytime]</DisplayName>
+      <Description>パリィタイミングインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29500</SortID>
+    </Field>
+    <Field Def="s16 param106">
+      <DisplayName>割り込まない[Parrytime]</DisplayName>
+      <Description>パリィタイミングインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29600</SortID>
+    </Field>
+    <Field Def="s16 param107">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29700</SortID>
+    </Field>
+    <Field Def="s16 param108">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29800</SortID>
+    </Field>
+    <Field Def="s16 param109">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>29900</SortID>
+    </Field>
+    <Field Def="s16 param110">
+      <DisplayName>後ろローリング[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21400</SortID>
+    </Field>
+    <Field Def="s16 param111">
+      <DisplayName>左右ローリング[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21300</SortID>
+    </Field>
+    <Field Def="s16 param112">
+      <DisplayName>後ろガード移動[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21700</SortID>
+    </Field>
+    <Field Def="s16 param113">
+      <DisplayName>左右ガード移動[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21600</SortID>
+    </Field>
+    <Field Def="s16 param114">
+      <DisplayName>割り込まない[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21800</SortID>
+    </Field>
+    <Field Def="s16 param115">
+      <DisplayName>R1コンボ[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21000</SortID>
+    </Field>
+    <Field Def="s16 param116">
+      <DisplayName>前ローリング[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21200</SortID>
+    </Field>
+    <Field Def="s16 param117">
+      <DisplayName>バックステップ[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21100</SortID>
+    </Field>
+    <Field Def="s16 param118">
+      <DisplayName>前ガード移動[Damaged]</DisplayName>
+      <Description>被ダメージインタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21500</SortID>
+    </Field>
+    <Field Def="s16 param119">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>21900</SortID>
+    </Field>
+    <Field Def="s16 param120">
+      <DisplayName>前ローリング[Shoot]</DisplayName>
+      <Description>飛び道具発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22000</SortID>
+    </Field>
+    <Field Def="s16 param121">
+      <DisplayName>左右ローリング[Shoot]</DisplayName>
+      <Description>飛び道具発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22100</SortID>
+    </Field>
+    <Field Def="s16 param122">
+      <DisplayName>前ガード移動[Shoot]</DisplayName>
+      <Description>飛び道具発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22300</SortID>
+    </Field>
+    <Field Def="s16 param123">
+      <DisplayName>左右ガード移動[Shoot]</DisplayName>
+      <Description>飛び道具発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22400</SortID>
+    </Field>
+    <Field Def="s16 param124">
+      <DisplayName>割り込まない[Shoot]</DisplayName>
+      <Description>飛び道具発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22600</SortID>
+    </Field>
+    <Field Def="s16 param125">
+      <DisplayName>後ローリング[Shoot]</DisplayName>
+      <Description>飛び道具発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22200</SortID>
+    </Field>
+    <Field Def="s16 param126">
+      <DisplayName>ダッシュ接近[Shoot]</DisplayName>
+      <Description>飛び道具発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22500</SortID>
+    </Field>
+    <Field Def="s16 param127">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22700</SortID>
+    </Field>
+    <Field Def="s16 param128">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22800</SortID>
+    </Field>
+    <Field Def="s16 param129">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>22900</SortID>
+    </Field>
+    <Field Def="s16 param130">
+      <DisplayName>バックステップ[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23000</SortID>
+    </Field>
+    <Field Def="s16 param131">
+      <DisplayName>前ローリング[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23100</SortID>
+    </Field>
+    <Field Def="s16 param132">
+      <DisplayName>左右ローリング[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23200</SortID>
+    </Field>
+    <Field Def="s16 param133">
+      <DisplayName>後ローリング[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23300</SortID>
+    </Field>
+    <Field Def="s16 param134">
+      <DisplayName>前ガード移動[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23400</SortID>
+    </Field>
+    <Field Def="s16 param135">
+      <DisplayName>左右ガード移動[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23500</SortID>
+    </Field>
+    <Field Def="s16 param136">
+      <DisplayName>その場ガード[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23600</SortID>
+    </Field>
+    <Field Def="s16 param137">
+      <DisplayName>盾チク[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23700</SortID>
+    </Field>
+    <Field Def="s16 param138">
+      <DisplayName>割り込まない[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23900</SortID>
+    </Field>
+    <Field Def="s16 param139">
+      <DisplayName>その場回避アーツ[FindAttack]</DisplayName>
+      <Description>攻撃発見インタラプト</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>23800</SortID>
+    </Field>
+    <Field Def="s16 param140">
+      <DisplayName>R1コンボ時両手持ち確率</DisplayName>
+      <Description>その他の確率補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>50000</SortID>
+    </Field>
+    <Field Def="s16 param141">
+      <DisplayName>R2コンボ時両手持ち確率</DisplayName>
+      <Description>その他の確率補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>50100</SortID>
+    </Field>
+    <Field Def="s16 param142">
+      <DisplayName>プランニング行動時の移動時ガード確率</DisplayName>
+      <Description>その他の確率補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>50200</SortID>
+    </Field>
+    <Field Def="s16 param143">
+      <DisplayName>R1攻撃を二刀攻撃に置き換える確率</DisplayName>
+      <Description>その他の確率補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>50300</SortID>
+    </Field>
+    <Field Def="s16 param144">
+      <DisplayName>回避を特殊ローリングアーツに置き換える確率</DisplayName>
+      <Description>その他の確率補正</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>50400</SortID>
+    </Field>
+    <Field Def="s16 param145">
+      <DisplayName>投擲系アイテムの使用</DisplayName>
+      <Description>アイテム使用系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9500</SortID>
+    </Field>
+    <Field Def="s16 param146">
+      <DisplayName>HP回復アイテムの使用</DisplayName>
+      <Description>アイテム使用系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9510</SortID>
+    </Field>
+    <Field Def="s16 param147">
+      <DisplayName>バフアイテムの使用</DisplayName>
+      <Description>アイテム使用系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9520</SortID>
+    </Field>
+    <Field Def="s16 param148">
+      <DisplayName>薬包コンボ攻撃</DisplayName>
+      <Description>アイテム使用系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>9530</SortID>
+    </Field>
+    <Field Def="s16 param149">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>50900</SortID>
+    </Field>
+    <Field Def="s16 param150">
+      <DisplayName>アーツ_近距離攻撃</DisplayName>
+      <Description>アーツ行動系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000</SortID>
+    </Field>
+    <Field Def="s16 param151">
+      <DisplayName>アーツ_中距離攻撃</DisplayName>
+      <Description>アーツ行動系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10100</SortID>
+    </Field>
+    <Field Def="s16 param152">
+      <DisplayName>アーツ_遠距離攻撃</DisplayName>
+      <Description>アーツ行動系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10200</SortID>
+    </Field>
+    <Field Def="s16 param153">
+      <DisplayName>アーツ_回復</DisplayName>
+      <Description>アーツ行動系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10300</SortID>
+    </Field>
+    <Field Def="s16 param154">
+      <DisplayName>アーツ_バフ</DisplayName>
+      <Description>アーツ行動系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10400</SortID>
+    </Field>
+    <Field Def="s16 param155">
+      <DisplayName>未使用</DisplayName>
+      <Description>アーツ行動系</Description>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000155</SortID>
+    </Field>
+    <Field Def="s16 param156">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000156</SortID>
+    </Field>
+    <Field Def="s16 param157">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000157</SortID>
+    </Field>
+    <Field Def="s16 param158">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000158</SortID>
+    </Field>
+    <Field Def="s16 param159">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000159</SortID>
+    </Field>
+    <Field Def="s16 param160">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000160</SortID>
+    </Field>
+    <Field Def="s16 param161">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000161</SortID>
+    </Field>
+    <Field Def="s16 param162">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000162</SortID>
+    </Field>
+    <Field Def="s16 param163">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000163</SortID>
+    </Field>
+    <Field Def="s16 param164">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000164</SortID>
+    </Field>
+    <Field Def="s16 param165">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000165</SortID>
+    </Field>
+    <Field Def="s16 param166">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000166</SortID>
+    </Field>
+    <Field Def="s16 param167">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000167</SortID>
+    </Field>
+    <Field Def="s16 param168">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000168</SortID>
+    </Field>
+    <Field Def="s16 param169">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000169</SortID>
+    </Field>
+    <Field Def="s16 param170">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000170</SortID>
+    </Field>
+    <Field Def="s16 param171">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000171</SortID>
+    </Field>
+    <Field Def="s16 param172">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000172</SortID>
+    </Field>
+    <Field Def="s16 param173">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000173</SortID>
+    </Field>
+    <Field Def="s16 param174">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000174</SortID>
+    </Field>
+    <Field Def="s16 param175">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000175</SortID>
+    </Field>
+    <Field Def="s16 param176">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000176</SortID>
+    </Field>
+    <Field Def="s16 param177">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000177</SortID>
+    </Field>
+    <Field Def="s16 param178">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000178</SortID>
+    </Field>
+    <Field Def="s16 param179">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000179</SortID>
+    </Field>
+    <Field Def="s16 param180">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000180</SortID>
+    </Field>
+    <Field Def="s16 param181">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000181</SortID>
+    </Field>
+    <Field Def="s16 param182">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000182</SortID>
+    </Field>
+    <Field Def="s16 param183">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000183</SortID>
+    </Field>
+    <Field Def="s16 param184">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000184</SortID>
+    </Field>
+    <Field Def="s16 param185">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000185</SortID>
+    </Field>
+    <Field Def="s16 param186">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000186</SortID>
+    </Field>
+    <Field Def="s16 param187">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000187</SortID>
+    </Field>
+    <Field Def="s16 param188">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000188</SortID>
+    </Field>
+    <Field Def="s16 param189">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000189</SortID>
+    </Field>
+    <Field Def="s16 param190">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000190</SortID>
+    </Field>
+    <Field Def="s16 param191">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000191</SortID>
+    </Field>
+    <Field Def="s16 param192">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000192</SortID>
+    </Field>
+    <Field Def="s16 param193">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000193</SortID>
+    </Field>
+    <Field Def="s16 param194">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000194</SortID>
+    </Field>
+    <Field Def="s16 param195">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000195</SortID>
+    </Field>
+    <Field Def="s16 param196">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000196</SortID>
+    </Field>
+    <Field Def="s16 param197">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000197</SortID>
+    </Field>
+    <Field Def="s16 param198">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000198</SortID>
+    </Field>
+    <Field Def="s16 param199">
+      <DisplayName>未使用</DisplayName>
+      <EditFlags>None</EditFlags>
+      <Minimum>-9999</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>10000199</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

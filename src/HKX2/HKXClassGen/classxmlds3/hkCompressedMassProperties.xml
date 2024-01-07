@@ -1,0 +1,9 @@
+<class name='hkCompressedMassProperties' version='1' signature='0x9ac5cee1' size='32'>
+  <members>
+    <member name='centerOfMass' offset='0' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='inertia' offset='8' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='majorAxisSpace' offset='16' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+    <member name='mass' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='volume' offset='28' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

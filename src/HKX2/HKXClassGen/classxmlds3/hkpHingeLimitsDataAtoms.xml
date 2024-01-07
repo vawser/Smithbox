@@ -1,0 +1,14 @@
+<class name='hkpHingeLimitsDataAtoms' version='1' signature='0x1b418c90' size='144'>
+  <enums>
+    <enum name='Axis' flags='00000000'>
+      <enumitem name='AXIS_AXLE' value='0'/>
+      <enumitem name='AXIS_PERP_TO_AXLE_1' value='1'/>
+      <enumitem name='AXIS_PERP_TO_AXLE_2' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='rotations' offset='0' ctype='hkpSetLocalRotationsConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='angLimit' offset='112' ctype='hkpAngLimitConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='2dAng' offset='128' ctype='hkp2dAngConstraintAtom' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

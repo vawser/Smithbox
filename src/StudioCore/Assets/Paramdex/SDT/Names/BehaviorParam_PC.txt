@@ -1,0 +1,611 @@
+4 Object destruction attack for automatic patrol -- 自動巡回用オブジェ破壊攻撃
+6 Object destruction attack for automatic patrol_for debugging function verification -- 自動巡回用オブジェ破壊攻撃_デバッグ機能検証用
+10 PC_common_ egg attack -- PC_共通_卵攻撃
+200 Contact impact_in-game start -- 接触衝撃_インゲーム開始
+210 Contact impact_weak_upper and lower wrap -- 接触衝撃_弱_上下包み
+211 Contact impact_weak_origin wrap -- 接触衝撃_弱_原点包み
+220 Contact impact_middle_upper and lower wrap -- 接触衝撃_中_上下包み
+221 Contact impact_medium_origin wrap -- 接触衝撃_中_原点包み
+222 Contact impact_middle_below origin -- 接触衝撃_中_原点下方
+280 Foot for SFX / right foot -- フットSFX用/右足
+281 Foot for SFX / left foot -- フットSFX用/左足
+285 Hand for SFX / right hand -- ハンドSFX用/右手
+286 Hand for SFX / left hand -- ハンドSFX用/左手
+600 Shinobi killing start_break -- 忍殺始動_崩し
+640 Shinobi killing start_behind -- 忍殺始動_背後
+650 Shinobi killing start_ crouching behind -- 忍殺始動_背後しゃがみ
+660 Shinobi killing start_fall -- 忍殺始動_落下
+680 Shinobi killing start_breaking wire -- 忍殺始動_崩しワイヤー
+690 Shinobi killing start_anti-aircraft -- 忍殺始動_対空
+700 Shinobi killing start_wall left -- 忍殺始動_壁張り付き左
+710 Shinobi killing start_walled right -- 忍殺始動_壁張り付き右
+720 Shinobi killing start_ hanging -- 忍殺始動_ぶら下がり
+740 Shinobi killing start_breaking kick jump -- 忍殺始動_崩し蹴りジャンプ
+800 Shinobi slaughter start _ stop _ priest -- 忍殺始動_とどめ_破戒僧
+801 Shinobi killing start _ stop _ chief of the ninja army -- 忍殺始動_とどめ_忍軍の長
+803 Shinobi killing start _ stop _ Yasha monkey -- 忍殺始動_とどめ_夜叉猿
+804 Shinobi killing start _ stop _ rival -- 忍殺始動_とどめ_ライバル
+805 Shinobi killing start _ stop _ butterfly -- 忍殺始動_とどめ_お蝶
+806 Shinobi killing start _ stop _ sword sacred -- 忍殺始動_とどめ_剣聖
+807 Shinobi killing start _ stop _ Buddhist demon -- 忍殺始動_とどめ_仏師鬼
+840 Shinobi shock _ short distance _ on the spot -- 忍殺衝撃_近距離_その場
+841 Shinobi shock _ short distance _ jump away -- 忍殺衝撃_近距離_飛び退き
+842 Shinobi shock _ long distance _ on the spot -- 忍殺衝撃_遠距離_その場
+843 Shinobi shock _ long distance _ jump away -- 忍殺衝撃_遠距離_飛び退き
+900 Kick -- 蹴り
+901 Kick_in the air -- 蹴り_空中
+902 Kick _ closeout success production -- 蹴り_見切り成功演出
+903 Kick_dash -- 蹴り_ダッシュ
+950 Action ID direct designation attack for wire -- ワイヤー用行動ID直指定攻撃
+105000000 Right-handed sword_reservoir 1 -- 右手刀_溜め突き1
+105000001 Right-handed sword_reservoir 2 -- 右手刀_溜め突き2
+105000006 Right hand sword_reservoir 2_reverse foot -- 右手刀_溜め突き2_逆足
+105000010 Right hand sword_normal attack 1 -- 右手刀_通常攻撃1
+105000011 Right hand sword_normal attack 2 -- 右手刀_通常攻撃2
+105000012 Right hand sword_normal attack 3 -- 右手刀_通常攻撃3
+105000013 Right hand sword_normal attack 4 -- 右手刀_通常攻撃4
+105000014 Right hand sword_normal attack 5 -- 右手刀_通常攻撃5
+105000016 Right hand sword_normal attack 2_reverse foot -- 右手刀_通常攻撃2_逆足
+105000020 Right hand sword _ Small jasuga received and then accumulated stab _ Left -- 右手刀_小ジャスガ受け後溜め突き_左
+105000021 Right hand sword_Small jasuga received and then accumulated thrust_Right -- 右手刀_小ジャスガ受け後溜め突き_右
+105000025 Right hand sword _ Middle jasuga receiver / After step stab _ Left -- 右手刀_中ジャスガ受け/ステップ後溜め突き_左
+105000026 Right hand sword _ Middle jasuga receiving / After step stab _ Right -- 右手刀_中ジャスガ受け/ステップ後溜め突き_右
+105000030 Right hand sword _ Attack after receiving small jasuga _ Left -- 右手刀_小ジャスガ受け後攻撃_左
+105000031 Right hand sword _ Attack after receiving small jasuga _ Right -- 右手刀_小ジャスガ受け後攻撃_右
+105000035 Right hand sword_Middle Jasuga receiving / Attack after step_Left -- 右手刀_中ジャスガ受け/ステップ後攻撃_左
+105000036 Right hand sword_Medium Jasuga receiving / Attack after step_Right -- 右手刀_中ジャスガ受け/ステップ後攻撃_右
+105000040 Right-handed sword_guard / Jasuga is flipped and then accumulated -- 右手刀_ガード/ジャスガ弾かれ後溜め突き_右
+105000041 Right hand sword _ guard / jasuga is flipped and then accumulated _ left -- 右手刀_ガード/ジャスガ弾かれ後溜め突き_左
+105000050 Right hand sword_guard / Jasuga attack after being hit_right -- 右手刀_ガード/ジャスガ弾かれ後攻撃_右
+105000051 Right hand sword_guard / Jasuga attack after being hit_left -- 右手刀_ガード/ジャスガ弾かれ後攻撃_左
+105000060 Right hand sword_Aerial attack 1 -- 右手刀_空中攻撃1
+105000061 Right hand sword_Aerial attack 2 -- 右手刀_空中攻撃2
+105000062 Right hand sword_Aerial attack 3 -- 右手刀_空中攻撃3
+105000065 Right hand sword_wire attack 1 -- 右手刀_ワイヤー攻撃1
+105000066 Right hand sword_wire attack 2 -- 右手刀_ワイヤー攻撃2
+105000070 Right hand sword_dash attack -- 右手刀_ダッシュ攻撃
+105000075 Right hand sword_ crouching attack -- 右手刀_しゃがみ攻撃
+105000076 Right hand sword_Crouching attack_Underfloor -- 右手刀_しゃがみ攻撃_床下
+105000080 Right hand sword _ hanging attack -- 右手刀_ぶら下がり攻撃
+105000085 Right hand sword_aging attack -- 右手刀_老化攻撃
+105000086 Right hand sword_water / underwater thrust 1 -- 右手刀_水上/水中突き1
+105000087 Right hand sword_water / underwater thrust 2 -- 右手刀_水上/水中突き2
+105000088 Right hand sword_water / underwater attack 1 -- 右手刀_水上/水中攻撃撃1
+105000089 Right hand sword_water / underwater attack 2 -- 右手刀_水上/水中攻撃撃2
+105000090 Right hand sword_guard -- 右手刀_ガード
+105000100 Shuriken_Chasing Slash -- 手裏剣_追いかけ斬り
+105000105 Firecracker _ slip-through slash -- 爆竹_すり抜け斬り
+105000110 Ignition_Flame Slash -- 発火_炎まとい斬り
+105000115 Ax _ front slash _ sword -- 斧_前宙斬り_刀
+105000120 Transformation_ground appearance attack -- 変わり身_地上出現攻撃
+105000121 Transformation_Aerial Appearance Attack -- 変わり身_空中出現攻撃
+105000130 Kodachi_Table 2nd stage_Right hand sword -- 小太刀_表2段目_右手刀
+105000131 Kodachi _ Table 4th _ Right hand sword -- 小太刀_表4段目_右手刀
+105000132 Kodachi _ Table 6th _ Right hand sword -- 小太刀_表6段目_右手刀
+105000133 Kodachi_back 1st stage_right hand sword -- 小太刀_裏1段目_右手刀
+105000134 Kodachi _ back 2nd stage _ right hand sword -- 小太刀_裏2段目_右手刀
+105000135 Kodachi _ back 3rd stage _ right hand sword -- 小太刀_裏3段目_右手刀
+105000136 Kodachi_back 4th stage_right hand sword -- 小太刀_裏4段目_右手刀
+105000137 Kodachi_back 5th stage_right hand sword -- 小太刀_裏5段目_右手刀
+105000138 Kodachi_back 6th stage_right hand sword -- 小太刀_裏6段目_右手刀
+105000140 Kodachi (Ruri) _Table 2nd stage_Right hand sword -- 小太刀（瑠璃）_表2段目_右手刀
+105000141 Kodachi (Ruri) _ Table 4th _ Right hand sword -- 小太刀（瑠璃）_表4段目_右手刀
+105000142 Kodachi (Ruri) _Table 6th row_Right hand sword -- 小太刀（瑠璃）_表6段目_右手刀
+105000143 Kodachi (Ruri) _back 1st stage_right hand sword -- 小太刀（瑠璃）_裏1段目_右手刀
+105000144 Kodachi (Ruri) _2nd back sword_Right hand sword -- 小太刀（瑠璃）_裏2段目_右手刀
+105000145 Kodachi (Ruri) _ 3rd back sword _ Right hand sword -- 小太刀（瑠璃）_裏3段目_右手刀
+105000146 Kodachi (Ruri) _ back 4th stage _ right hand sword -- 小太刀（瑠璃）_裏4段目_右手刀
+105000147 Kodachi (Ruri) _ 5th stage on the back _ Right hand sword -- 小太刀（瑠璃）_裏5段目_右手刀
+105000148 Kodachi (Ruri) _ 6th back sword _ Right hand sword -- 小太刀（瑠璃）_裏6段目_右手刀
+105000150 Kodachi _ front and back switching slash _ front and back left -- 小太刀_表裏切替斬り_前後左
+105000151 Kodachi _ front and back switching slash _ right -- 小太刀_表裏切替斬り_右
+105000160 Enemy turning _ Wind sword -- 敵回し_風まとい斬り
+105000165 Spear_Chasing Slash -- 槍_追いかけ斬り
+105000166 Spear_Pulling Slash -- 槍_引き寄せ斬り
+105000170 Finger whistle_sound feed slash -- 指笛_音送り斬り
+105000180 Right Hand Sword_Red Blood Enchantment Additional Attack -- 右手刀_赤血エンチャント追加攻撃
+105000181 Right-handed sword_poison blood enchantment additional attack -- 右手刀_毒血エンチャント追加攻撃
+105000182 Right-handed sword_white blood enchantment additional attack -- 右手刀_白血エンチャント追加攻撃
+105000183 Right-handed sword_Weak thunder enchantment additional attack -- 右手刀_弱雷エンチャント追加攻撃
+105000184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+105000185 Right-handed sword_Orange-style enchantment additional attack -- 右手刀_橙風エンチャント追加攻撃
+105000186 Right-handed sword_Kinfu enchantment additional attack -- 右手刀_金風エンチャント追加攻撃
+105000190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+105000191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+105000192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+105000193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+105000280 Right hand sword _ thunder return _ weak thunder _ sword blade -- 右手刀_雷返し_弱雷_刀身
+105000281 Right hand sword _ thunder return _ weak thunder _ thunder -- 右手刀_雷返し_弱雷_雷
+105000290 Right-handed sword_anti-spirit force -- 右手刀_対霊フォース
+105000295 Right Hand Sword_Crisis Force -- 右手刀_恐慌フォース
+105000300 Right-handed sword_Ninjato body_Ninjutsu Ninjutsu_Blood smoke_Normal_Red blood_Dazzle -- 右手刀_忍殺本体_忍殺忍術_血煙_通常_赤血_目くらまし
+105000301 Right hand sword _ Ninja body _ Ninjutsu ninjutsu _ Blood smoke _ Normal _ Red blood _ Hidden -- 右手刀_忍殺本体_忍殺忍術_血煙_通常_赤血_姿隠し
+105000360 Right hand sword _ Ninja body _ Ninjutsu ninjutsu _ Blood smoke _ Radiation _ Red blood _ Dazzle -- 右手刀_忍殺本体_忍殺忍術_血煙_放射_赤血_目くらまし
+105000361 Right-handed sword_Ninjato body_Ninjutsu Ninjutsu_Blood smoke_Radiation_Red blood_Hidden -- 右手刀_忍殺本体_忍殺忍術_血煙_放射_赤血_姿隠し
+105000370 Right hand sword _ Ninja body _ Ninjutsu ninjutsu _ Blood smoke _ Radiation _ Poison blood _ Dazzle -- 右手刀_忍殺本体_忍殺忍術_血煙_放射_毒血_目くらまし
+105000371 Right hand sword _ Ninja body _ Ninjutsu ninjutsu _ Blood smoke _ Radiation _ Poison blood _ Hidden -- 右手刀_忍殺本体_忍殺忍術_血煙_放射_毒血_姿隠し
+105000380 Right-handed sword_Ninjato body_Ninjutsu Ninjutsu_Blood smoke_Radiation_White blood_Dazzle -- 右手刀_忍殺本体_忍殺忍術_血煙_放射_白血_目くらまし
+105000381 Right-handed sword_Ninjato body_Ninjutsu Ninjutsu_Blood smoke_Radiation_White blood_Hidden -- 右手刀_忍殺本体_忍殺忍術_血煙_放射_白血_姿隠し
+105000400 Right-handed sword_Ninjato body_Ninjato Ninjutsu_Puppet_Default -- 右手刀_忍殺本体_忍殺忍術_傀儡_デフォルト
+105000410 Right-handed sword_Ninjato body_Ninjato Ninjutsu_Puppet_Infinite duration -- 右手刀_忍殺本体_忍殺忍術_傀儡_効果時間無限
+105000500 Right hand sword _ Ninja body _ Ninjutsu ninjutsu _ Grant _ Normal _ Red blood -- 右手刀_忍殺本体_忍殺忍術_付与_通常_赤血
+105000510 Right hand sword _ Ninja body _ Ninjutsu ninjutsu _ Grant _ Normal _ Poison blood -- 右手刀_忍殺本体_忍殺忍術_付与_通常_毒血
+105000520 Right hand sword _ Ninja body _ Ninjutsu ninjutsu _ Grant _ Normal _ White blood -- 右手刀_忍殺本体_忍殺忍術_付与_通常_白血
+105000600 Right-handed sword_Ninjato body_Crush -- 右手刀_忍殺本体_崩し
+105000610 Right hand sword_Ninjato body_Play -- 右手刀_忍殺本体_弾き
+105000620 Right hand sword _ Ninjato body _ Closeout -- 右手刀_忍殺本体_見切り
+105000640 Right hand sword _ Ninja body _ Behind -- 右手刀_忍殺本体_背後
+105000650 Right hand sword_Ninjato body_Crouching behind -- 右手刀_忍殺本体_しゃがみ背後
+105000660 Right hand sword _ Ninja body _ Fall -- 右手刀_忍殺本体_落下
+105000661 Right hand sword _ Ninjato body _ Fall _ Fire cow only -- 右手刀_忍殺本体_落下_火牛専用
+105000680 Right hand sword _ Ninja body _ Wire -- 右手刀_忍殺本体_ワイヤー
+105000690 Right hand sword _ Ninja body _ Anti-aircraft -- 右手刀_忍殺本体_対空
+105000700 Right hand sword _ Ninja body _ Left and right with wall -- 右手刀_忍殺本体_壁張り付き左右
+105000720 Right hand sword _ Ninja body _ Before and after hanging -- 右手刀_忍殺本体_ぶら下がり前後
+105000790 Right-handed sword_Ninjato body_Dummy attack that causes the enemy to send Kanji SFX_Blood smoke -- 右手刀_忍殺本体_漢字SFXを敵に出させるダミー攻撃_血煙
+105000791 Right-handed sword_Ninjato body_Dummy attack that causes the enemy to send Kanji SFX_Puppet -- 右手刀_忍殺本体_漢字SFXを敵に出させるダミー攻撃_傀儡
+105000792 Right-handed sword_Ninjato body_Dummy attack that causes the enemy to send Kanji SFX_Grant -- 右手刀_忍殺本体_漢字SFXを敵に出させるダミー攻撃_付与
+105000800 Right hand sword _ Ninja body _ Stop -- 右手刀_忍殺本体_とどめ
+105000899 Right-handed sword_Ninjato body_Aging Ninjato_Abnormal condition recovery bullet -- 右手刀_忍殺本体_老化忍殺_状態異常回復弾丸
+105000990 Shinobi shock _ short distance _ on the spot -- 忍殺衝撃_近距離_その場
+105000991 Shinobi shock _ short distance _ jump away -- 忍殺衝撃_近距離_飛び退き
+105000992 Shinobi shock _ long distance _ on the spot -- 忍殺衝撃_遠距離_その場
+105000993 Shinobi shock _ long distance _ jump away -- 忍殺衝撃_遠距離_飛び退き
+105000994 Resurrection Technique_Boss Sensing Dummy Attack -- 復活の術_ボス感知ダミー攻撃
+105000910 Piece of porcelain -- 陶片
+105000911 Pottery piece _ hanging -- 陶片_ぶら下がり
+105000912 Pottery piece _ peek left -- 陶片_覗き込み左
+105000913 Pottery piece _ peep right -- 陶片_覗き込み右
+105001200 School Technique_Rotating Slash 1-1 -- 流派技_回転斬り1-1
+105001201 School Technique_Rotating Slash 1-2 -- 流派技_回転斬り1-2
+105002200 School Technique_Dive Slash 1 -- 流派技_飛び込み斬り1
+105002201 School Technique_Dive Slash 2 -- 流派技_飛び込み斬り2
+105003200 School technique_face-up 1_reservoir -- 流派技_面打ち1_溜め
+105003201 School technique_face-up 1 -- 流派技_面打ち1
+105003210 School Technique_Face 2 -- 流派技_面打ち2
+105004200 School technique _ Kensei Iai _ Reservoir -- 流派技_剣聖居合_溜め
+105004201 School technique _ Kensei Iai _ Reservoir _ No form fee -- 流派技_剣聖居合_溜め_形代なし
+105004210 School Technique_Sword Holy Iai_Reserved Bullet 1 -- 流派技_剣聖居合_溜め弾丸1
+105004215 School Technique_Sword Holy Iai_Reserved Bullet 2 -- 流派技_剣聖居合_溜め弾丸2
+105004220 School technique_Kensei Iai -- 流派技_剣聖居合
+105004221 School technique_Sword sacred Iai_No form -- 流派技_剣聖居合_形代なし
+105004230 School technique_Sword sacred Iai_Bullet -- 流派技_剣聖居合_弾丸
+105005200 School technique_Iai 1 -- 流派技_居合1
+105005201 School technique_Iai 2 -- 流派技_居合2
+105005202 School technique_Iai 1_No form fee -- 流派技_居合1_形代なし
+105005203 School technique_Iai 2_No form fee -- 流派技_居合2_形代なし
+105005210 School technique_Invisible Iai continuous attack 1 -- 流派技_見えない居合連撃1
+105005211 School Technique_Invisible Iai Strike 1_Red Blood Enchantment Additional Attack -- 流派技_見えない居合連撃1_赤血エンチャント追加攻撃
+105005212 School Technique_Invisible Iai Strike 1_Poison Blood Enchantment Additional Attack -- 流派技_見えない居合連撃1_毒血エンチャント追加攻撃
+105005213 School Technique_Invisible Iai Strike 1_ White Blood Enchantment Additional Attack -- 流派技_見えない居合連撃1_白血エンチャント追加攻撃
+105005214 School technique_Invisible Iai continuous attack 1_Orange wind enchantment additional attack -- 流派技_見えない居合連撃1_橙風エンチャント追加攻撃
+105005215 School technique_Invisible Iai continuous attack 1_Kinfu enchantment additional attack -- 流派技_見えない居合連撃1_金風エンチャント追加攻撃
+105005216 School technique_Invisible Iai continuous attack 1_No form -- 流派技_見えない居合連撃1_形代なし
+105005220 School technique_Invisible Iai continuous attack_Delayed continuous attack 1 -- 流派技_見えない居合連撃_遅延連撃1
+105005221 School technique_Invisible Iai continuous attack_Delayed continuous attack 2 -- 流派技_見えない居合連撃_遅延連撃2
+105005222 School technique_Invisible Iai continuous attack_Delayed continuous attack 3 -- 流派技_見えない居合連撃_遅延連撃3
+105005223 School technique_Invisible Iai continuous attack_Delayed continuous attack 4 -- 流派技_見えない居合連撃_遅延連撃4
+105005230 School technique_Invisible Iai continuous attack_Delayed continuous attack SFX -- 流派技_見えない居合連撃_遅延連撃SFX
+105005240 School technique_Invisible Iai continuous attack 2 -- 流派技_見えない居合連撃2
+105005241 School Technique_Invisible Iai Strike 2_Red Blood Enchantment Additional Attack -- 流派技_見えない居合連撃2_赤血エンチャント追加攻撃
+105005242 School Technique_Invisible Iai Strike 2_Poison Blood Enchantment Additional Attack -- 流派技_見えない居合連撃2_毒血エンチャント追加攻撃
+105005243 School technique_Invisible Iai continuous attack 2_White blood enchantment additional attack -- 流派技_見えない居合連撃2_白血エンチャント追加攻撃
+105005244 School technique_Invisible Iai continuous attack 2_Orange wind enchantment additional attack -- 流派技_見えない居合連撃2_橙風エンチャント追加攻撃
+105005245 School technique_Invisible Iai continuous attack 2_Kinfu enchantment additional attack -- 流派技_見えない居合連撃2_金風エンチャント追加攻撃
+105005246 School technique_Invisible Iai continuous attack 2_No form -- 流派技_見えない居合連撃2_形代なし
+105007200 School Technique_Immortal Slash 1_Reservoir -- 流派技_不死斬り1_溜め
+105007201 School Technique_Immortal Slash 1 -- 流派技_不死斬り1
+105007210 School Technique_Immortal Slash 2_Reservoir -- 流派技_不死斬り2_溜め
+105007211 School Technique_Immortal Slash 2 -- 流派技_不死斬り2
+105007220 School technique_Immortal slash 1_Reservoir_There is a form fee -- 流派技_不死斬り1_溜め_形代あり
+105007221 School technique_Immortal slash 1_There is a form fee -- 流派技_不死斬り1_形代あり
+105007230 School technique_Immortal slash 2_Reservoir_There is a form fee -- 流派技_不死斬り2_溜め_形代あり
+105007231 School technique_Immortal slash 2_There is a form fee -- 流派技_不死斬り2_形代あり
+105007999 School technique_immortal slashing_form consumption dummy -- 流派技_不死斬り_形代消費ダミー
+105008200 School Technique_Kick Rush 1-1 -- 流派技_蹴りラッシュ1-1
+105008201 School Technique_Kick Rush 1-2 -- 流派技_蹴りラッシュ1-2
+105008210 School Technique_Kick Rush 2-1 -- 流派技_蹴りラッシュ2-1
+105008211 School Technique_Kick Rush 2-2 -- 流派技_蹴りラッシュ2-2
+105008220 School Technique_Kick Rush 3-1 -- 流派技_蹴りラッシュ3-1
+105008221 School Technique_Kick Rush 3-2 -- 流派技_蹴りラッシュ3-2
+105008230 School Technique_Kick Rush 4 -- 流派技_蹴りラッシュ4
+105009200 School Technique_Fist Attack 1_Accumulation -- 流派技_拳撃1_溜め
+105009201 School Technique_Fist Attack 1 -- 流派技_拳撃1
+105009210 School Technique_Fist Attack 2 -- 流派技_拳撃2
+105009220 School Technique_Fist Attack 3 -- 流派技_拳撃3
+105009251 School Technique_Fist Attack 1_Aerial -- 流派技_拳撃1_空中
+105010200 School technique _ sneak stab _ reservoir -- 流派技_忍び刺し_溜め
+105010210 School technique_Sneak stab -- 流派技_忍び刺し
+105010215 School technique_Sneak stab_Kick up after hit -- 流派技_忍び刺し_ヒット後蹴上がり
+105010220 School technique_Sneak stab_After kicking up, aerial rotation slash 1 -- 流派技_忍び刺し_蹴上がり後空中回転斬り1
+105010221 School technique_Sneak stab_After kicking up, aerial rotation slash 2 -- 流派技_忍び刺し_蹴上がり後空中回転斬り2
+105020200 School Technique_Hachiman Flying Rush 1 -- 流派技_八艘飛びラッシュ1
+105020201 School Technique_Hachiman Flying Rush 2 -- 流派技_八艘飛びラッシュ2
+105020202 School Technique_Hachiman Flying Rush 3 -- 流派技_八艘飛びラッシュ3
+105020203 School Technique_Hachiman Flying Rush 4 -- 流派技_八艘飛びラッシュ4
+105020209 School Technique_Hachiman Flying Rush 5F -- 流派技_八艘飛びラッシュ5F
+105021200 School Technique_Hachiman Flying Rush 1 -- 流派技_八艘飛びラッシュ1
+105021201 School Technique_Hachiman Flying Rush 2 -- 流派技_八艘飛びラッシュ2
+105021202 School Technique_Hachiman Flying Rush 3 -- 流派技_八艘飛びラッシュ3
+105021203 School Technique_Hachiman Flying Rush 4 -- 流派技_八艘飛びラッシュ4
+105021204 School Technique_Hachiman Flying Rush 5 -- 流派技_八艘飛びラッシュ5
+105021205 School Technique_Hachiman Flying Rush 6 -- 流派技_八艘飛びラッシュ6
+105021206 School Technique_Hachiman Flying Rush 7 -- 流派技_八艘飛びラッシュ7
+105021207 School Technique_Hachiman Flying Rush 8 -- 流派技_八艘飛びラッシュ8
+105021208 School Technique_Hachiman Flying Rush 9F -- 流派技_八艘飛びラッシュ9F
+105021220 School technique_Hachiman flying rush 1_There is a form fee -- 流派技_八艘飛びラッシュ1_形代あり
+105021221 School technique_Hachimanbuki Rush 2_There is a form fee -- 流派技_八艘飛びラッシュ2_形代あり
+105021222 School technique_Hachiman flying rush 3_There is a form fee -- 流派技_八艘飛びラッシュ3_形代あり
+105021223 School technique_Hachiman flying rush 4_There is a form fee -- 流派技_八艘飛びラッシュ4_形代あり
+105021224 School technique_Hachiman flying rush 5_There is a form fee -- 流派技_八艘飛びラッシュ5_形代あり
+105021225 School technique_Hachimanbuki Rush 6_There is a form fee -- 流派技_八艘飛びラッシュ6_形代あり
+105021226 School technique_Hachiman flying rush 7_There is a form fee -- 流派技_八艘飛びラッシュ7_形代あり
+105021227 School technique_Hachiman flying rush 8_There is a form fee -- 流派技_八艘飛びラッシュ8_形代あり
+105021228 School technique_Hachiman Flying Rush 9F_There is a form fee -- 流派技_八艘飛びラッシュ9F_形代あり
+105021229 School technique_Hachiman Flying Rush 3F_There is a form fee -- 流派技_八艘飛びラッシュ3F_形代あり
+105021999 School Technique_Hachiman Flying Rush_Shape Consumption Dummy -- 流派技_八艘飛びラッシュ_形代消費ダミー
+105030200 School technique_new technique 1 -- 流派技_新技1
+105030201 School technique_new technique 2 -- 流派技_新技2
+105030202 School technique_new technique 3 -- 流派技_新技3
+105030205 School technique_new technique 1_no form fee -- 流派技_新技1_形代なし
+105030206 School technique_new technique 2_no form fee -- 流派技_新技2_形代なし
+105030207 School technique_new technique 3_no form fee -- 流派技_新技3_形代なし
+105030210 School technique_new technique 1_SFX -- 流派技_新技1_SFX
+105030211 School technique_new technique 2_SFX -- 流派技_新技2_SFX
+105030212 School technique_new technique 3_SFX -- 流派技_新技3_SFX
+105030215 School technique_new technique 1_SFX_no form fee -- 流派技_新技1_SFX_形代なし
+105030216 School technique_new technique 2_SFX_no form fee -- 流派技_新技2_SFX_形代なし
+105030217 School technique_new technique 3_SFX_no form fee -- 流派技_新技3_SFX_形代なし
+105030220 School Technique_New Technique 1_SFX_Flame Encha -- 流派技_新技1_SFX_炎エンチャ
+105030221 School Technique_New Technique 2_SFX_Flame Encha -- 流派技_新技2_SFX_炎エンチャ
+105030222 School Technique_New Technique 3_SFX_Flame Encha -- 流派技_新技3_SFX_炎エンチャ
+105030225 School Technique_New Technique 1_SFX_Rei Encha -- 流派技_新技1_SFX_霊エンチャ
+105030226 School Technique_New Technique 2_SFX_Rei Encha -- 流派技_新技2_SFX_霊エンチャ
+105030227 School technique_new technique 3_SFX_spirit enchantment -- 流派技_新技3_SFX_霊エンチャ
+105030230 School Technique_New Technique 1_SFX_Orange Wind Encha -- 流派技_新技1_SFX_橙風エンチャ
+105030231 School Technique_New Technique 2_SFX_Orange Wind Encha -- 流派技_新技2_SFX_橙風エンチャ
+105030232 School Technique_New Technique 3_SFX_Orange Wind Encha -- 流派技_新技3_SFX_橙風エンチャ
+105030235 School Technique_New Technique 1_SFX_Kinfu Encha -- 流派技_新技1_SFX_金風エンチャ
+105030236 School Technique_New Technique 2_SFX_Kinfu Encha -- 流派技_新技2_SFX_金風エンチャ
+105030237 School Technique_New Technique 3_SFX_Kinfu Encha -- 流派技_新技3_SFX_金風エンチャ
+105030240 School Technique_New Technique 1_SFX_Red Blood Encha -- 流派技_新技1_SFX_赤血エンチャ
+105030241 School Technique_New Technique 2_SFX_Red Blood Encha -- 流派技_新技2_SFX_赤血エンチャ
+105030242 School Technique_New Technique 3_SFX_Red Blood Encha -- 流派技_新技3_SFX_赤血エンチャ
+105030245 School Technique_New Technique 1_SFX_Poisonous Blood Encha -- 流派技_新技1_SFX_毒血エンチャ
+105030246 School Technique_New Technique 2_SFX_Poisonous Blood Encha -- 流派技_新技2_SFX_毒血エンチャ
+105030247 School Technique_New Technique 3_SFX_Poisonous Blood Encha -- 流派技_新技3_SFX_毒血エンチャ
+105030250 School Technique_New Technique 1_SFX_White Blood Encha -- 流派技_新技1_SFX_白血エンチャ
+105030251 School Technique_New Technique 2_SFX_White Blood Encha -- 流派技_新技2_SFX_白血エンチャ
+105030252 School Technique_New Technique 3_SFX_White Blood Encha -- 流派技_新技3_SFX_白血エンチャ
+105030255 School Technique_New Technique 1_SFX_Thunder Encha -- 流派技_新技1_SFX_雷エンチャ
+105030256 School Technique_New Technique 2_SFX_Thunder Encha -- 流派技_新技2_SFX_雷エンチャ
+105030257 School Technique_New Technique 3_SFX_Thunder Encha -- 流派技_新技3_SFX_雷エンチャ
+105030260 School technique_new technique 1_SFX_ petals -- 流派技_新技1_SFX_花弁
+105030261 School technique_new technique 2_SFX_petals -- 流派技_新技2_SFX_花弁
+105030262 School technique_new technique 3_SFX_petals -- 流派技_新技3_SFX_花弁
+105030265 School Technique_New Technique 1_Thunder Enchantment Additional Attack -- 流派技_新技1_雷エンチャント追加攻撃
+105030266 School Technique_New Technique 2_Thunder Enchantment Additional Attack -- 流派技_新技2_雷エンチャント追加攻撃
+105030267 School Technique_New Technique 3_Thunder Enchantment Additional Attack -- 流派技_新技3_雷エンチャント追加攻撃
+107000100 Shuriken_Reservoir 1/3 throw -- 手裏剣_溜め1/3投目
+107000110 Shuriken_2nd throw -- 手裏剣_溜め2投目
+107000150 Shuriken_1 / 3rd throw -- 手裏剣_1/3投目
+107000160 Shuriken_2 throws -- 手裏剣_2投目
+107000184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107000190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107000191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107000192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107000193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107000195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107000196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107000290 Shuriken_Anti-spirit force -- 手裏剣_対霊フォース
+107000295 Shuriken_Crisis Force -- 手裏剣_恐慌フォース
+107002100 Shuriken LV3-A_ Reservoir 1/3 throw -- 手裏剣LV3-A_溜め1/3投目
+107002110 Shuriken LV3-A_ 2nd throw -- 手裏剣LV3-A_溜め2投目
+107002150 Shuriken LV3-A_1 / 3 throw -- 手裏剣LV3-A_1/3投目
+107002160 Shuriken LV3-A_2 throw -- 手裏剣LV3-A_2投目
+107003100 Shuriken LV3-B_ Reservoir 1/3 throw -- 手裏剣LV3-B_溜め1/3投目
+107003110 Shuriken LV3-B_ 2nd throw -- 手裏剣LV3-B_溜め2投目
+107003120 Shuriken LV3-B_ Reservoir Guided Bullet -- 手裏剣LV3-B_溜め誘導弾丸
+107003150 Shuriken LV3-B_1 / 3 throw -- 手裏剣LV3-B_1/3投目
+107003160 Shuriken LV3-B_2 throw -- 手裏剣LV3-B_2投目
+107003170 Shuriken LV3-B_ Guided Bullet -- 手裏剣LV3-B_誘導弾丸
+107004100 Shuriken LV3-C_ Reservoir 1/3 throw -- 手裏剣LV3-C_溜め1/3投目
+107004101 Shuriken LV3-C_Reservoir 1/3 Throw_LV0 -- 手裏剣LV3-C_溜め1/3投目_LV0
+107004102 Shuriken LV3-C_Reservoir 1/3 Throw_LV1 -- 手裏剣LV3-C_溜め1/3投目_LV1
+107004103 Shuriken LV3-C_Reservoir 1/3 Throw_LV2 -- 手裏剣LV3-C_溜め1/3投目_LV2
+107004104 Shuriken LV3-C_Reservoir 1/3 Throw_LV3 -- 手裏剣LV3-C_溜め1/3投目_LV3
+107004110 Shuriken LV3-C_ 2nd throw -- 手裏剣LV3-C_溜め2投目
+107004111 Shuriken LV3-C_Reservoir 2nd throw_LV0 -- 手裏剣LV3-C_溜め2投目_LV0
+107004112 Shuriken LV3-C_2nd throw _LV1 -- 手裏剣LV3-C_溜め2投目_LV1
+107004113 Shuriken LV3-C_2nd throw _LV2 -- 手裏剣LV3-C_溜め2投目_LV2
+107004114 Shuriken LV3-C_2nd throw _LV3 -- 手裏剣LV3-C_溜め2投目_LV3
+107004150 Shuriken LV3-C_1 / 3 -- 手裏剣LV3-C_1/3投目
+107004151 Shuriken LV3-C_1 / 3 Throw _LV0 -- 手裏剣LV3-C_1/3投目_LV0
+107004152 Shuriken LV3-C_1 / 3 Throw _LV1 -- 手裏剣LV3-C_1/3投目_LV1
+107004153 Shuriken LV3-C_1 / 3 Throw _LV2 -- 手裏剣LV3-C_1/3投目_LV2
+107004154 Shuriken LV3-C_1 / 3 Throw _LV3 -- 手裏剣LV3-C_1/3投目_LV3
+107004160 Shuriken LV3-C_2 throw -- 手裏剣LV3-C_2投目
+107004161 Shuriken LV3-C_2 Throw _LV0 -- 手裏剣LV3-C_2投目_LV0
+107004162 Shuriken LV3-C_2 Throw _LV1 -- 手裏剣LV3-C_2投目_LV1
+107004163 Shuriken LV3-C_2 Throw _LV2 -- 手裏剣LV3-C_2投目_LV2
+107004164 Shuriken LV3-C_2 Throw _LV3 -- 手裏剣LV3-C_2投目_LV3
+107005100 Shuriken LV4_ Reservoir 1/3 throw -- 手裏剣LV4_溜め1/3投目
+107005110 Shuriken LV4_ 2nd throw -- 手裏剣LV4_溜め2投目
+107005150 Shuriken LV4_1 / 3 throw -- 手裏剣LV4_1/3投目
+107005160 Shuriken LV4_2 -- 手裏剣LV4_2投目
+107100100 Firecracker_parent_reservoir -- 爆竹_親_溜め
+107100110 Firecracker _ Parent _ Reservoir _ Anti-Special Attack Character -- 爆竹_親_溜め_対特攻キャラ
+107100120 Firecracker_air_parent -- 爆竹_空中_親
+107100130 Firecracker_Aerial_Parent_Vs. Special Attack Character -- 爆竹_空中_親_対特攻キャラ
+107100150 Firecracker_parent -- 爆竹_親
+107100160 Firecracker_parent_ vs. special attack character -- 爆竹_親_対特攻キャラ
+107100184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107100190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107100191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107100192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107100193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107100195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107100196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107100290 Firecracker _ Anti-spirit force -- 爆竹_対霊フォース
+107100295 Firecracker _ Depression Force -- 爆竹_恐慌フォース
+107102100 Firecracker LV3-A_parent_reservoir -- 爆竹LV3-A_親_溜め
+107102110 Firecracker LV3-A_Parent_Reservoir_Anti-Special Attack Character -- 爆竹LV3-A_親_溜め_対特攻キャラ
+107102120 Firecracker LV3-A_Aerial_Parent -- 爆竹LV3-A_空中_親
+107102130 Firecracker LV3-A_Aerial_Parent_Vs. Special Attack Character -- 爆竹LV3-A_空中_親_対特攻キャラ
+107102150 Firecracker LV3-A_parent -- 爆竹LV3-A_親
+107102160 Firecracker LV3-A_parent_ vs. special attack character -- 爆竹LV3-A_親_対特攻キャラ
+107103100 Firecracker LV3-B_parent_reservoir -- 爆竹LV3-B_親_溜め
+107103110 Firecracker LV3-B_Parent_Reservoir_Anti-Special Attack Character -- 爆竹LV3-B_親_溜め_対特攻キャラ
+107103120 Firecracker LV3-B_Aerial_Parent -- 爆竹LV3-B_空中_親
+107103130 Firecracker LV3-B_Aerial_Parent_Vs. Special Attack Character -- 爆竹LV3-B_空中_親_対特攻キャラ
+107103150 Firecracker LV3-B_parent -- 爆竹LV3-B_親
+107103160 Firecracker LV3-B_parent_ vs. special attack character -- 爆竹LV3-B_親_対特攻キャラ
+107200100 Ignition_Pump shooting -- 発火_溜め撃ち
+107200110 Ignition_normal shooting -- 発火_通常撃ち
+107200120 Ignition_Aerial shooting -- 発火_空中撃ち
+107200130 Ignition_flamethrower_start -- 発火_火炎放射_開始
+107200131 Ignition_flamethrower_loop -- 発火_火炎放射_ループ
+107200140 Ignition_Derived Attack Enchantment Dummy -- 発火_派生攻撃エンチャント用ダミー
+107200184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107200190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107200191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107200192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107200193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107200195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107200196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107200290 Ignition_Anti-spirit force -- 発火_対霊フォース
+107200295 Ignition_Crisis Force -- 発火_恐慌フォース
+107200297 Ignition_Crisis Force_Encha not required Ver. -- 発火_恐慌フォース_エンチャ不要Ver.
+107200999 Ignition_form consumption dummy -- 発火_形代消費ダミー
+107203100 Ignition LV4_ Accumulation shooting -- 発火LV4_溜め撃ち
+107203110 Ignition LV4_normal shooting -- 発火LV4_通常撃ち
+107203120 Ignition LV4_Aerial shooting -- 発火LV4_空中撃ち
+107203130 Ignition LV4_flamethrower_start -- 発火LV4_火炎放射_開始
+107203131 Ignition LV4_flamethrower_loop -- 発火LV4_火炎放射_ループ
+107203140 Ignition LV4_ Derived Attack Enchantment Dummy -- 発火LV4_派生攻撃エンチャント用ダミー
+107203292 Ignition LV4_Anti-spirit force_ Reach far -- 発火LV4_対霊フォース_遠くまで届く
+107300100 Ax_Pump Attack 1 -- 斧_溜め攻撃1
+107300101 Ax_Pump Attack 2 -- 斧_溜め攻撃2
+107300102 Ax_single attack -- 斧_単発攻撃
+107300110 Ax _ front slash _ ax -- 斧_前宙斬り_斧
+107300121 Ax_Aerial attack -- 斧_空中攻撃
+107300122 Ax_Aerial Attack_Loop / Landing -- 斧_空中攻撃_ループ/着地
+107300184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107300190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107300191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107300192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107300193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107300195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107300196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107300290 Ax_anti-spirit force -- 斧_対霊フォース
+107300295 Ax_Crisis Force -- 斧_恐慌フォース
+107302100 Ax LV3_ Reservoir Attack 1 -- 斧LV3_溜め攻撃1
+107302101 Ax LV3_ Reservoir Attack 2 -- 斧LV3_溜め攻撃2
+107302102 Ax LV3_ single attack -- 斧LV3_単発攻撃
+107302110 Ax LV3_Front Slasher_Ax -- 斧LV3_前宙斬り_斧
+107302121 Ax LV3_ aerial attack -- 斧LV3_空中攻撃
+107302122 Ax LV3_Aerial Attack_Loop / Landing -- 斧LV3_空中攻撃_ループ/着地
+107302130 Ax LV3_ shock wave -- 斧LV3_衝撃波
+107302297 Ax LV3_ Depression Force -- 斧LV3_恐慌フォース
+107303100 Ax LV4_ Reservoir Attack 1 -- 斧LV4_溜め攻撃1
+107303101 Ax LV4_ Reservoir Attack 2 -- 斧LV4_溜め攻撃2
+107303102 Ax LV4_ single attack -- 斧LV4_単発攻撃
+107303110 Ax LV4_Front Slasher_Ax -- 斧LV4_前宙斬り_斧
+107303121 Ax LV4_ aerial attack -- 斧LV4_空中攻撃
+107303122 Ax LV4_Aerial Attack_Loop / Landing -- 斧LV4_空中攻撃_ループ/着地
+107303130 Ax LV4_ shock wave -- 斧LV4_衝撃波
+107303140 Ax LV4_Shockwave_Phantom Eraser -- 斧LV4_衝撃波_幻影消し
+107400184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107400190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107400191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107400192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107400193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107400195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107400196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107400290 Transformation_Anti-spirit force -- 変わり身_対霊フォース
+107400295 Transformation_Crisis Force -- 変わり身_恐慌フォース
+107400999 Transformation_form consumption dummy -- 変わり身_形代消費ダミー
+107402100 Transformation LV3_ activation impact -- 変わり身LV3_発動衝撃
+107402297 Transformation LV3_ Depression Force -- 変わり身LV3_恐慌フォース
+107500100 Kodachi_Table 1st stage_Left hand sword -- 小太刀_表1段目_左手刀
+107500102 Kodachi _ Table 3rd _ Left hand sword -- 小太刀_表3段目_左手刀
+107500104 Kodachi _ Table 5th _ Left hand sword -- 小太刀_表5段目_左手刀
+107500105 Kodachi _ Table 6th _ Left hand sword -- 小太刀_表6段目_左手刀
+107500110 Kodachi _ back 1st stage _ left hand sword -- 小太刀_裏1段目_左手刀
+107500111 Kodachi _ back 2nd stage _ left hand sword -- 小太刀_裏2段目_左手刀
+107500112 Kodachi_back 3rd stage_left hand sword -- 小太刀_裏3段目_左手刀
+107500113 Kodachi_back 4th stage_left hand sword -- 小太刀_裏4段目_左手刀
+107500114 Kodachi_back 5th stage_left hand sword -- 小太刀_裏5段目_左手刀
+107500115 Kodachi_back 6th stage_left hand sword -- 小太刀_裏6段目_左手刀
+107500140 Kodachi_Aerial 1st stage_Left hand sword 1 -- 小太刀_空中1段目_左手刀1
+107500141 Kodachi_Aerial 1st stage_Left hand sword 2 -- 小太刀_空中1段目_左手刀2
+107500184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107500190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107500191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107500192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107500193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107500195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107500196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107500290 Kodachi_Anti-spirit force -- 小太刀_対霊フォース
+107500295 Kodachi_Crisis Force -- 小太刀_恐慌フォース
+107502100 Kodachi LV3-A_Table 1st stage_Left hand sword -- 小太刀LV3-A_表1段目_左手刀
+107502102 Kodachi LV3-A_Table 3rd stage_Left hand sword -- 小太刀LV3-A_表3段目_左手刀
+107502104 Kodachi LV3-A_Table 5th stage_Left hand sword -- 小太刀LV3-A_表5段目_左手刀
+107502105 Kodachi LV3-A_Table 6th row_Left hand sword -- 小太刀LV3-A_表6段目_左手刀
+107502110 Kodachi LV3-A_back 1st stage_left hand sword -- 小太刀LV3-A_裏1段目_左手刀
+107502111 Kodachi LV3-A_back 2nd stage_left hand sword -- 小太刀LV3-A_裏2段目_左手刀
+107502112 Kodachi LV3-A_back 3rd stage_left hand sword -- 小太刀LV3-A_裏3段目_左手刀
+107502113 Kodachi LV3-A_back 4th stage_left hand sword -- 小太刀LV3-A_裏4段目_左手刀
+107502114 Kodachi LV3-A_back 5th stage_left hand sword -- 小太刀LV3-A_裏5段目_左手刀
+107502115 Kodachi LV3-A_Back 6th stage_Left hand sword -- 小太刀LV3-A_裏6段目_左手刀
+107502140 Kodachi LV3-A_Aerial 1st stage_Left hand sword 1 -- 小太刀LV3-A_空中1段目_左手刀1
+107502141 Kodachi LV3-A_Aerial 1st stage_Left hand sword 2 -- 小太刀LV3-A_空中1段目_左手刀2
+107503100 Kodachi LV3-B_Table 1st stage_Left hand sword -- 小太刀LV3-B_表1段目_左手刀
+107503102 Kodachi LV3-B_Table 3rd stage_Left hand sword -- 小太刀LV3-B_表3段目_左手刀
+107503104 Kodachi LV3-B_Table 5th stage_Left hand sword -- 小太刀LV3-B_表5段目_左手刀
+107503105 Kodachi LV3-B_Table 6th row_Left hand sword -- 小太刀LV3-B_表6段目_左手刀
+107503110 Kodachi LV3-B_Back 1st stage_Left hand sword -- 小太刀LV3-B_裏1段目_左手刀
+107503111 Kodachi LV3-B_Back 2nd stage_Left hand sword -- 小太刀LV3-B_裏2段目_左手刀
+107503112 Kodachi LV3-B_back 3rd stage_left hand sword -- 小太刀LV3-B_裏3段目_左手刀
+107503113 Kodachi LV3-B_back 4th stage_left hand sword -- 小太刀LV3-B_裏4段目_左手刀
+107503114 Kodachi LV3-B_back 5th stage_left hand sword -- 小太刀LV3-B_裏5段目_左手刀
+107503115 Kodachi LV3-B_Back 6th stage_Left hand sword -- 小太刀LV3-B_裏6段目_左手刀
+107503140 Kodachi LV3-B_Aerial 1st stage_Left hand sword 1 -- 小太刀LV3-B_空中1段目_左手刀1
+107503141 Kodachi LV3-B_Aerial 1st stage_Left hand sword 2 -- 小太刀LV3-B_空中1段目_左手刀2
+107503150 Kodachi LV3-B_poison fog_front -- 小太刀LV3-B_毒霧_正面へ
+107503151 Kodachi LV3-B_Poison fog_Left front -- 小太刀LV3-B_毒霧_左前へ
+107503152 Kodachi LV3-B_Poison fog_To the front right -- 小太刀LV3-B_毒霧_右前へ
+107600100 Iron fan_guard -- 鉄扇_ガード
+107600200 Iron fan _ Shooting attack _ Iron fan _ Bullet LV1 -- 鉄扇_放つ攻撃_鉄扇_弾丸LV1
+107600210 Iron fan _ Shooting attack _ Iron fan _ Bullet LV2 -- 鉄扇_放つ攻撃_鉄扇_弾丸LV2
+107600211 Iron fan_Shoot attack_Iron fan_Bullet LV2_SFX only -- 鉄扇_放つ攻撃_鉄扇_弾丸LV2_SFXのみ
+107600220 Iron fan _ Shooting attack _ Iron fan _ Bullet LV3 -- 鉄扇_放つ攻撃_鉄扇_弾丸LV3
+107600221 Iron fan_Shoot attack_Iron fan_Bullet LV3_SFX only -- 鉄扇_放つ攻撃_鉄扇_弾丸LV3_SFXのみ
+107600240 Iron fan_shooting attack -- 鉄扇_放つ攻撃
+107600241 Iron fan _ Unleash attack _ Red blood enchantment -- 鉄扇_放つ攻撃_赤血エンチャ
+107600242 Iron fan _ Shooting attack _ Poison blood enchantment -- 鉄扇_放つ攻撃_毒血エンチャ
+107600243 Iron fan _ Unleash attack _ White blood enchantment -- 鉄扇_放つ攻撃_白血エンチャ
+107600244 Iron fan _ Shooting attack _ Orange style enchantment -- 鉄扇_放つ攻撃_橙風エンチャ
+107600245 Iron fan _ Unleash attack _ Gold wind enchantment -- 鉄扇_放つ攻撃_金風エンチャ
+107600270 Iron fan _ Anti-flame Iron fan Momentary enchantment by slashing -- 鉄扇_対炎鉄扇放ち斬りによる瞬間エンチャ
+107600271 Iron fan_Anti-spirit Iron fan Momentary enchantment by slashing -- 鉄扇_対霊鉄扇放ち斬りによる瞬間エンチャ
+107600290 Iron fan_anti-spirit force -- 鉄扇_対霊フォース
+107600295 Iron Fan_Crisis Force -- 鉄扇_恐慌フォース
+107600999 Iron fan_form consumption dummy -- 鉄扇_形代消費ダミー
+107602297 Iron Fan LV2-A_ Depression Force -- 鉄扇LV2-A_恐慌フォース
+107603292 Iron fan LV2-B_Anti-spirit force_Jasuga / Turn receiver -- 鉄扇LV2-B_対霊フォース_ジャスガ/回し受け
+107603293 Iron fan LV2-B_Anti-spirit force_ Reach far -- 鉄扇LV2-B_対霊フォース_遠くまで届く
+107700100 Enemy turning _ wind gathering -- 敵回し_風集め
+107700101 Enemy turning _ Wind subtraction by slashing (1 → 0) -- 敵回し_風まとい斬りによる残り減算（1→0）
+107700110 Enemy turning _ Wind release body (remaining 1 → 0) -- 敵回し_風放ち本体（残り1→0）
+107700120 Enemy turning_Wind collection extension -- 敵回し_風集め延長
+107700140 Enemy Turn_Dummy for Derived Attack Enchantment -- 敵回し_派生攻撃エンチャント用ダミー
+107700184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107700190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107700191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107700192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107700193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107700195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107700196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107701100 Enemy turning LV2_Wind collection_Remaining 2 -- 敵回しLV2_風集め_残り2
+107701101 Enemy turning LV2_ Remaining subtraction by wind slashing (2 → 1) -- 敵回しLV2_風まとい斬りによる残り減算（2→1）
+107701110 Enemy turning LV2_ Wind release body (remaining 1 → 0) -- 敵回しLV2_風放ち本体（残り1→0）
+107701111 Enemy turning LV2_ Wind release body (remaining 2 → 1) -- 敵回しLV2_風放ち本体（残り2→1）
+107701120 Enemy turning LV2_Wind collection extension_1 remaining -- 敵回しLV2_風集め延長_残り1
+107701121 Enemy turning LV2_Wind collection extension_Remaining 2 -- 敵回しLV2_風集め延長_残り2
+107702100 Enemy turning LV3_Wind collection_Remaining 2 -- 敵回しLV3_風集め_残り2
+107702101 Enemy turning LV3_ Remaining subtraction by wind slashing (2 → 1) -- 敵回しLV3_風まとい斬りによる残り減算（2→1）
+107702110 Enemy turning LV3_ Wind release body (remaining 1 → 0) -- 敵回しLV3_風放ち本体（残り1→0）
+107702111 Enemy turning LV3_ Wind release body (remaining 2 → 1) -- 敵回しLV3_風放ち本体（残り2→1）
+107702120 Enemy turning LV2_Wind collection extension_1 remaining -- 敵回しLV2_風集め延長_残り1
+107702121 Enemy turning LV2_Wind collection extension_Remaining 2 -- 敵回しLV2_風集め延長_残り2
+107702140 Enemy Turn LV3_ Derived Attack Enchantment Dummy -- 敵回しLV3_派生攻撃エンチャント用ダミー
+107800100 Spear_Pump Charge 1 -- 槍_溜め突撃1
+107800101 Spear_Pump Charge 2 -- 槍_溜め突撃2
+107800102 Spear_Pump Charge 3_Tip -- 槍_溜め突撃3_先端
+107800103 Spear_Pump Charge 3_Intermediate -- 槍_溜め突撃3_中間
+107800104 Spear_Pump Charge 3_Root -- 槍_溜め突撃3_根元
+107800105 Spear_single thrust_tip -- 槍_単発突き_先端
+107800106 Spear _ single shot _ middle -- 槍_単発突き_中間
+107800107 Spear _ single shot _ root -- 槍_単発突き_根元
+107800110 Spear_Attract 1 -- 槍_引き寄せ1
+107800115 Spear_pull 2_tip -- 槍_引き寄せ2_先端
+107800116 Spear_Attract 2_Intermediate -- 槍_引き寄せ2_中間
+107800117 Spear_Attract 2_Root -- 槍_引き寄せ2_根元
+107800184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107800190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107800191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107800192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107800193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107800195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107800196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107800290 Spear_Ghost Force -- 槍_対霊フォース
+107800295 Spear_Crisis Force -- 槍_恐慌フォース
+107802100 Spear LV2-B_ Reservoir _ Tip -- 槍LV2-B_溜めなぎ払い_先端
+107802101 Spear LV2-B_Reservoir _Intermediate -- 槍LV2-B_溜めなぎ払い_中間
+107802102 Spear LV2-B_ Reservoir _ Root -- 槍LV2-B_溜めなぎ払い_根元
+107802105 Spear LV2-B_single thrust_tip -- 槍LV2-B_単発突き_先端
+107802106 Spear LV2-B_single thrust_intermediate -- 槍LV2-B_単発突き_中間
+107802107 Spear LV2-B_single thrust_root -- 槍LV2-B_単発突き_根元
+107802110 Spear LV2-B_Attract 1 -- 槍LV2-B_引き寄せ1
+107802115 Spear LV2-B_Pulling 2_Tip -- 槍LV2-B_引き寄せ2_先端
+107802116 Spear LV2-B_Attract 2_Intermediate -- 槍LV2-B_引き寄せ2_中間
+107802117 Spear LV2-B_Attract 2_Root -- 槍LV2-B_引き寄せ2_根元
+107803100 Spear LV3-A_ Reservoir Charge 1 -- 槍LV3-A_溜め突撃1
+107803101 Spear LV3-A_ Reservoir Assault 2 -- 槍LV3-A_溜め突撃2
+107803102 Spear LV3-A_ Reservoir Assault 3_ Tip -- 槍LV3-A_溜め突撃3_先端
+107803103 Spear LV3-A_Pump Charge 3_Intermediate -- 槍LV3-A_溜め突撃3_中間
+107803104 Spear LV3-A_ Reservoir Assault 3_ Root -- 槍LV3-A_溜め突撃3_根元
+107803105 Spear LV3-A_single thrust_tip -- 槍LV3-A_単発突き_先端
+107803106 Spear LV3-A_single thrust_intermediate -- 槍LV3-A_単発突き_中間
+107803107 Spear LV3-A_single thrust_root -- 槍LV3-A_単発突き_根元
+107803110 Spear LV3-A_Attract 1 -- 槍LV3-A_引き寄せ1
+107803115 Spear LV3-A_Attract 2_ Tip -- 槍LV3-A_引き寄せ2_先端
+107803116 Spear LV3-A_Attract 2_Intermediate -- 槍LV3-A_引き寄せ2_中間
+107803117 Spear LV3-A_Attract 2_Root -- 槍LV3-A_引き寄せ2_根元
+107804100 Spear LV3-B_ Reservoir _ Tip -- 槍LV3-B_溜めなぎ払い_先端
+107804101 Spear LV3-B_Pump-up _Intermediate -- 槍LV3-B_溜めなぎ払い_中間
+107804102 Spear LV3-B_ Reservoir _ Root -- 槍LV3-B_溜めなぎ払い_根元
+107804105 Spear LV3-B_single thrust_tip -- 槍LV3-B_単発突き_先端
+107804106 Spear LV3-B_single thrust_intermediate -- 槍LV3-B_単発突き_中間
+107804107 Spear LV3-B_single thrust_root -- 槍LV3-B_単発突き_根元
+107804110 Spear LV3-B_Attract 1 -- 槍LV3-B_引き寄せ1
+107804115 Spear LV3-B_Pulling 2_Tips -- 槍LV3-B_引き寄せ2_先端
+107804116 Spear LV3-B_Attract 2_Intermediate -- 槍LV3-B_引き寄せ2_中間
+107804117 Spear LV3-B_Attract 2_Root -- 槍LV3-B_引き寄せ2_根元
+107804297 Spear LV3-B_ Depression Force -- 槍LV3-B_恐慌フォース
+107900100 Finger whistle_no lock_reservoir -- 指笛_ノーロック_溜め
+107900101 Finger whistle_no lock -- 指笛_ノーロック
+107900110 Finger whistle_lock-on_reservoir -- 指笛_ロックオン_溜め
+107900111 Finger whistle_lock on -- 指笛_ロックオン
+107900112 Finger whistle_lock on (hanging) -- 指笛_ロックオン（ぶら下がり）
+107900114 Finger whistle_lock-on (peeping-left) -- 指笛_ロックオン（覗き込み_左）
+107900115 Finger whistle_lock-on (peeping-right) -- 指笛_ロックオン（覗き込み_右）
+107900175 Finger whistle _ sound feed slash _ accumulated bullet -- 指笛_音送り斬り_溜め弾丸
+107900176 Finger whistle _ sound feed slash _ bullet -- 指笛_音送り斬り_弾丸
+107900184 Right-handed sword_strong thunder enchantment additional bullet -- 右手刀_強雷エンチャント追加弾丸
+107900190 Right hand sword_red blood enchantment additional bullet (thrust) -- 右手刀_赤血エンチャント追加弾丸（突き）
+107900191 Right hand sword_poison blood enchantment additional bullet (thrust) -- 右手刀_毒血エンチャント追加弾丸（突き）
+107900192 Right hand sword_white blood enchantment additional bullet (thrust) -- 右手刀_白血エンチャント追加弾丸（突き）
+107900193 Right-handed sword_Weak thunder enchantment additional bullet (thrust) -- 右手刀_弱雷エンチャント追加弾丸（突き）
+107900195 Right-handed sword_Orange-style enchantment additional bullet (thrust) -- 右手刀_橙風エンチャント追加弾丸（突き）
+107900196 Right hand sword_Kinfu enchantment additional bullet (thrust) -- 右手刀_金風エンチャント追加弾丸（突き）
+107900999 Finger whistle_form consumption dummy -- 指笛_形代消費ダミー
+107902100 Finger whistle LV3_no lock_reservoir -- 指笛LV3_ノーロック_溜め
+107902101 Finger whistle LV3_ no lock -- 指笛LV3_ノーロック
+107902110 Finger whistle LV3_lock-on_reservoir -- 指笛LV3_ロックオン_溜め
+107902111 Finger whistle LV3_ lock on -- 指笛LV3_ロックオン
+107902112 Finger whistle LV3_ lock on (hanging) -- 指笛LV3_ロックオン（ぶら下がり）
+107902114 Finger whistle LV3_lock on (peeping_left) -- 指笛LV3_ロックオン（覗き込み_左）
+107902115 Finger whistle LV3_lock on (peeping_right) -- 指笛LV3_ロックオン（覗き込み_右）
+107902175 Finger whistle LV3_Sound feed slash_Reservoir bullet -- 指笛LV3_音送り斬り_溜め弾丸
+107902176 Finger whistle LV3_sound feed slash_bullet -- 指笛LV3_音送り斬り_弾丸
+109500000 Wire Weapon_Injection -- ワイヤー武器_射出
+150100000 Test Shinobi 1 Grab -- テスト忍殺1掴み
+150100010 Test Shinobi 2 Grab -- テスト忍殺2掴み
+150200000 Test Shinobi 1 Grab -- テスト忍殺1掴み
+150200010 Test Shinobi 2 Grab -- テスト忍殺2掴み
+150300000 Test Shinobi 1 Grab -- テスト忍殺1掴み
+150300010 Test Shinobi 2 Grab -- テスト忍殺2掴み
+150400000 Test Shinobi 1 Grab -- テスト忍殺1掴み
+150400010 Test Shinobi 2 Grab -- テスト忍殺2掴み

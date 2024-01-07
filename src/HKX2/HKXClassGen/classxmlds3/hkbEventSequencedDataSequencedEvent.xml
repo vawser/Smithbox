@@ -1,0 +1,6 @@
+<class name='hkbEventSequencedDataSequencedEvent' version='1' signature='0x9139b821' size='32'>
+  <members>
+    <member name='event' offset='0' ctype='hkbEvent' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='time' offset='24' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <mimicryEstablishment0 AltName="Mimicry Weight [0]" Wiki="Mimicry weight 0" />
+    <mimicryEstablishment1 AltName="Mimicry Weight [1]" Wiki="Mimicry weight 1" />
+    <mimicryEstablishment2 AltName="Mimicry Weight [2]" Wiki="Mimicry weight 2" />
+    <mimicryBeginSfxId0 AltName="Mimicry - Transform VFX ID [0]" Wiki="Mimicry 0 SFXID Forward swing" />
+    <mimicrySfxId0 AltName="Mimicry - Loop VFX ID [0]" Wiki="Mimicry 0 SFXID body" />
+    <mimicryEndSfxId0 AltName="Mimicry - Destroy VFX ID [0]" Wiki="Mimicry 0 SFXID release" />
+    <mimicryBeginSfxId1 AltName="Mimicry - Transform VFX ID [1]" Wiki="Mimicry 1 SFXID Forward swing" />
+    <mimicrySfxId1 AltName="Mimicry - Loop VFX ID [1]" Wiki="Mimicry 1 SFXID body" />
+    <mimicryEndSfxId1 AltName="Mimicry - Destroy VFX ID [1]" Wiki="Mimicry 1 SFXID release" />
+    <mimicryBeginSfxId2 AltName="Mimicry - Transform VFX ID [2]" Wiki="Mimicry 2 SFXID Forward swing" />
+    <mimicrySfxId2 AltName="Mimicry - Loop VFX ID [2]" Wiki="Mimicry 2 SFXID body" />
+    <mimicryEndSfxId2 AltName="Mimicry - Destroy VFX ID [2]" Wiki="Mimicry 2 SFXID cancellation" />
+    <pad1 AltName=""/>
+  </Field>
+  <Self Wiki="Chameleon Visuals data"/>
+</PARAMMETA>

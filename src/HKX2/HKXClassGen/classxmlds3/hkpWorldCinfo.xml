@@ -1,0 +1,95 @@
+<class name='hkpWorldCinfo' version='1' signature='0x5be9b78c' size='256' parent='hkReferencedObject'>
+  <enums>
+    <enum name='SolverType' flags='00000000'>
+      <enumitem name='SOLVER_TYPE_INVALID' value='0'/>
+      <enumitem name='SOLVER_TYPE_2ITERS_SOFT' value='1'/>
+      <enumitem name='SOLVER_TYPE_2ITERS_MEDIUM' value='2'/>
+      <enumitem name='SOLVER_TYPE_2ITERS_HARD' value='3'/>
+      <enumitem name='SOLVER_TYPE_4ITERS_SOFT' value='4'/>
+      <enumitem name='SOLVER_TYPE_4ITERS_MEDIUM' value='5'/>
+      <enumitem name='SOLVER_TYPE_4ITERS_HARD' value='6'/>
+      <enumitem name='SOLVER_TYPE_8ITERS_SOFT' value='7'/>
+      <enumitem name='SOLVER_TYPE_8ITERS_MEDIUM' value='8'/>
+      <enumitem name='SOLVER_TYPE_8ITERS_HARD' value='9'/>
+      <enumitem name='SOLVER_TYPE_MAX_ID' value='10'/>
+    </enum>
+    <enum name='SimulationType' flags='00000000'>
+      <enumitem name='SIMULATION_TYPE_INVALID' value='0'/>
+      <enumitem name='SIMULATION_TYPE_DISCRETE' value='1'/>
+      <enumitem name='SIMULATION_TYPE_CONTINUOUS' value='2'/>
+      <enumitem name='SIMULATION_TYPE_MULTITHREADED' value='3'/>
+    </enum>
+    <enum name='ContactPointGeneration' flags='00000000'>
+      <enumitem name='CONTACT_POINT_ACCEPT_ALWAYS' value='0'/>
+      <enumitem name='CONTACT_POINT_REJECT_DUBIOUS' value='1'/>
+      <enumitem name='CONTACT_POINT_REJECT_MANY' value='2'/>
+    </enum>
+    <enum name='BroadPhaseType' flags='00000000'>
+      <enumitem name='BROADPHASE_TYPE_SAP' value='0'/>
+      <enumitem name='BROADPHASE_TYPE_TREE' value='1'/>
+      <enumitem name='BROADPHASE_TYPE_HYBRID' value='2'/>
+    </enum>
+    <enum name='BroadPhaseBorderBehaviour' flags='00000000'>
+      <enumitem name='BROADPHASE_BORDER_ASSERT' value='0'/>
+      <enumitem name='BROADPHASE_BORDER_FIX_ENTITY' value='1'/>
+      <enumitem name='BROADPHASE_BORDER_REMOVE_ENTITY' value='2'/>
+      <enumitem name='BROADPHASE_BORDER_DO_NOTHING' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='gravity' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='broadPhaseQuerySize' offset='32' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contactRestingVelocity' offset='36' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='broadPhaseType' offset='40' etype='BroadPhaseType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='broadPhaseBorderBehaviour' offset='41' etype='BroadPhaseBorderBehaviour' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='mtPostponeAndSortBroadPhaseBorderCallbacks' offset='42' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='broadPhaseWorldAabb' offset='48' ctype='hkAabb' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionTolerance' offset='80' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='collisionFilter' offset='88' ctype='hkpCollisionFilter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='convexListFilter' offset='96' ctype='hkpConvexListFilter' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='expectedMaxLinearVelocity' offset='104' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sizeOfToiEventQueue' offset='108' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='expectedMinPsiDeltaTime' offset='112' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='memoryWatchDog' offset='120' ctype='hkWorldMemoryAvailableWatchDog' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='broadPhaseNumMarkers' offset='128' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='contactPointGeneration' offset='132' etype='ContactPointGeneration' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='allowToSkipConfirmedCallbacks' offset='133' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solverTau' offset='136' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solverDamp' offset='140' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solverIterations' offset='144' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='solverMicrosteps' offset='148' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxConstraintViolation' offset='152' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='forceCoherentConstraintOrderingInSolver' offset='156' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='snapCollisionToConvexEdgeThreshold' offset='160' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='snapCollisionToConcaveEdgeThreshold' offset='164' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableToiWeldRejection' offset='168' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableDeprecatedWelding' offset='169' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='iterativeLinearCastEarlyOutDistance' offset='172' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='iterativeLinearCastMaxIterations' offset='176' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationNumInactiveFramesSelectFlag0' offset='180' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationNumInactiveFramesSelectFlag1' offset='181' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationIntegrateCounter' offset='182' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shouldActivateOnRigidBodyTransformChange' offset='183' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='deactivationReferenceDistance' offset='184' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='toiCollisionResponseRotateNormal' offset='188' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useCompoundSpuElf' offset='192' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxSectorsPerMidphaseCollideTask' offset='196' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxSectorsPerNarrowphaseCollideTask' offset='200' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='processToisMultithreaded' offset='204' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxEntriesPerToiMidphaseCollideTask' offset='208' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxEntriesPerToiNarrowphaseCollideTask' offset='212' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxNumToiCollisionPairsSinglethreaded' offset='216' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numToisTillAllowedPenetrationSimplifiedToi' offset='220' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numToisTillAllowedPenetrationToi' offset='224' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numToisTillAllowedPenetrationToiHigher' offset='228' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numToisTillAllowedPenetrationToiForced' offset='232' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableDeactivation' offset='236' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='simulationType' offset='237' etype='SimulationType' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='enableSimulationIslands' offset='238' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='minDesiredIslandSize' offset='240' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='processActionsInSingleThread' offset='244' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='allowIntegrationOfIslandsWithoutConstraintsInASeparateJob' offset='245' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='frameMarkerPsiSnap' offset='248' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='fireCollisionCallbacks' offset='252' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

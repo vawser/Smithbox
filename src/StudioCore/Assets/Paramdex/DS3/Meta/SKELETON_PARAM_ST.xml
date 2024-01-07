@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <neckTurnGain AltName="Neck Turn Gain" />
+    <originalGroundHeightMS AltName="Original Ground Height MS" />
+    <minAnkleHeightMS AltName="Min Ankle Height MS" />
+    <maxAnkleHeightMS AltName="Max Ankle Height MS" />
+    <cosineMaxKneeAngle AltName="Max Knee Angle (Cosine)" />
+    <cosineMinKneeAngle AltName="Min Knee Angle (Cosine)" />
+    <footPlantedAnkleHeightMS AltName="Foot Planted Ankle Height MS" />
+    <footRaisedAnkleHeightMS AltName="Foot Raised Ankle Height" />
+    <raycastDistanceUp AltName="Raycast Distance: Up" />
+    <raycastDistanceDown AltName="Raycast Distance: Down" />
+    <footEndLS_X AltName="Foot End LS: X" />
+    <footEndLS_Y AltName="Foot End LS: Y" />
+    <footEndLS_Z AltName="Foot End LS: Z" />
+    <onOffGain AltName="On/Off Gain" />
+    <groundAcsendingGain AltName="Ground Ascending Gain" />
+    <groundDescendingGain AltName="Ground Descending Gain" />
+    <footRaisedGain AltName="Foot Raised Gain" />
+    <footPlantedGain AltName="Foot Planted Gain" />
+    <footUnlockGain AltName="Foot Unlock Gain" />
+    <kneeAxisType AltName="Knee Axis Type" />
+    <useFootLocking AltName="Use Foot Locking" IsBool="" />
+    <footPlacementOn AltName="Use Foot Placement" IsBool="" />
+    <twistKneeAxisType AltName="Twist Knee Axis Type" />
+    <neckTurnPriority AltName="Neck Turn Priority" />
+    <neckTurnMaxAngle AltName="Neck Turn Max Angle" />
+    <pad1 AltName="" />
+  </Field>
+  <Self />
+</PARAMMETA>

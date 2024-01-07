@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="EVENT_FLAG_USAGE_TYPE" type="u8">
+    </Enum>
+    <Enum Name="EVENT_FLAG_USAGE_PLAYLOG_CATEGORY" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <usageType AltName="Use" Wiki="Use of the flag." Enum="EVENT_FLAG_USAGE_TYPE" />
+    <playlogCategory AltName="Playlog category" Wiki="Valid only when the usage is ON / OFF. If this is set, the play log will be collected when the flag is turned ON." Enum="EVENT_FLAG_USAGE_PLAYLOG_CATEGORY" />
+    <padding1 AltName=""/>
+    <flagNum AltName="Number of secured flags" Wiki="Set to 1 for ON / OFF. In the case of frame allocation and integer, parameter number-parameter number + number of secured flags-1 is secured." />
+    <padding2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

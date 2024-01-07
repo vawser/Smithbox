@@ -1,0 +1,24 @@
+<class name='hkpTriggerVolume' version='1' signature='0xdfa344b7' size='104' parent='hkReferencedObject'>
+  <enums>
+    <enum name='EventType' flags='00000000'>
+      <enumitem name='ENTERED_EVENT' value='1'/>
+      <enumitem name='LEFT_EVENT' value='2'/>
+      <enumitem name='ENTERED_AND_LEFT_EVENT' value='3'/>
+      <enumitem name='TRIGGER_BODY_LEFT_EVENT' value='6'/>
+    </enum>
+    <enum name='Operation' flags='00000000'>
+      <enumitem name='ADDED_OP' value='0'/>
+      <enumitem name='REMOVED_OP' value='1'/>
+      <enumitem name='CONTACT_OP' value='2'/>
+      <enumitem name='TOI_OP' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='overlappingBodies' offset='40' ctype='hkpRigidBody' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventQueue' offset='56' ctype='hkpTriggerVolumeEventInfo' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triggerBody' offset='72' ctype='hkpRigidBody' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sequenceNumber' offset='80' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isProcessingBodyOverlaps' offset='84' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='newOverlappingBodies' offset='88' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <eventLayerId AltName="Event Layer ID" Wiki="Event maker layer ID" />
+    <mapStudioLayerId AltName="Map Studio Layer ID" Wiki="Map Studio Layer ID" />
+    <multiPlayAreaOffset AltName="Play Region ID Offset" Wiki="Multiplayer area ID offset. For example, if you enter 100, the multiplayer area ID will be offset by 100." />
+    <overrideMapPlaceNameId AltName="Override Map Place Name ID" Wiki="Override the map name ID_place name display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID." FmgRef="TitleLocations" />
+    <overrideSaveMapNameId AltName="Override Save Map Name ID" Wiki="Map name ID_Overwrites the save data display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID." FmgRef="TitleLocations" />
+    <pad2 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

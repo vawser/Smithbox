@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="OBJECT_WIND_EFFECT_TYPE" type="u8">
+    </Enum>
+    <Enum Name="OBJECT_CAM_AVOID_TYPE" type="u8">
+    </Enum>
+    <Enum Name="OBJECT_NAVIMESH_FLAG" type="u8">
+    </Enum>
+    <Enum Name="OBJECT_COLLISION_TYPE" type="u8">
+    </Enum>
+  </Enums>
+  <Field>
+    <hp AltName="HP" Wiki="Durability until destruction (-1 Indestructible)" />
+    <defense AltName="Defence" Wiki="Attack power below this value is no damage" />
+    <extRefTexId AltName="External Texture ID" Wiki="mAA / mAA_ ????. Tpf (-1 None) (AA Area number)" />
+    <materialId AltName="Material ID" Wiki="Material ID. Treated the same as the floor material. When -1, the same behavior as before" />
+    <animBreakIdMax AltName="Destruction Animation ID" Wiki="What is the animation destruction ID from 0 to what?" />
+    <isCamHit AltName="Is Camera Hit" Wiki="Does the camera hit (0 not hit, 1 hit)" />
+    <isBreakByPlayerCollide AltName="Is Broken by Player Collision" Wiki="Broken when the player touches (0 no, 1)" />
+    <isAnimBreak AltName="Is Animated Destruction" Wiki="Is it animation destruction (0 physical destruction, 1 animation destruction)" />
+    <isPenetrationBulletHit AltName="Is Hit by Penetrating Bullets" Wiki="Will the penetrating bullet hit (0 not hit, 1 hit)" />
+    <isChrHit AltName="Is Character Hit" Wiki="Does the character win (0 not hit, 1 hit)" />
+    <isAttackBacklash AltName="Is Attack Backlash" Wiki="Do you play the attack (0 do not play, 1 play)" />
+    <isDisableBreakForFirstAppear AltName="Is Disable Destruction on First Appearance" Wiki="Broken at the initial appearance of the player (0 ru, 1 no)" />
+    <isLadder AltName="Is Ladder" Wiki="Is it a ladder (0 different, 1 yes)" />
+    <isAnimPauseOnRemoPlay AltName="Is Animation Paused in Cutscene" Wiki="Do you want to stop the animation during the poly play (0 not, 1 do)" />
+    <isDamageNoHit AltName="Is Damage No Hit" Wiki="No damage (0 hit, 1 not hit)" />
+    <isMoveObj AltName="Is Moving Object" Wiki="Is it a moving object (0 different, 1 yes)" />
+    <isRopeBridge AltName="Is Rope Bridge" Wiki="Suspension bridge object (0 different, 1 yes)" />
+    <isAddRigidImpulse_ByDamage AltName="Is Rigid Body affected by Damage Blow" Wiki="Does the damage blow the rigid body (0 do not blow, 1 blow)" />
+    <isBreak_ByChrRide AltName="Is Destroyed by Riding Character" Wiki="Will it break if the character gets on (0 it won't break 1 it will break)" />
+    <isBurn AltName="Is Flammable" Wiki="Will it burn (0 not, 1)" />
+    <isBreakByEnemyCollide AltName="Is Destroyed by Enemy Collision" Wiki="Broken when an enemy character touches (0 No, 1 Ru)" />
+    <defaultLodParamId AltName="Default LOD Param ID" Wiki="Default LOD Param ID (-1 None)" />
+    <breakSfxId AltName="Destruction - SFX ID" Wiki="SFXID when destroying an object (-1 default (810030))" />
+    <breakSfxCpId AltName="Destruction - Dummy Poly ID" Wiki="SFX generation position when the object is destroyed Damipoly ID (-1 placement position)" />
+    <breakBulletBehaviorId AltName="Destruction - Bullet Behavior ID" Wiki="Action parameter of [bullet] at the time of destruction (-1 does not occur)" />
+    <breakBulletCpId AltName="Destruction - Bullet Dummy Poly ID" Wiki="Location of [bullet] at the time of destruction Damipoli ID (-1 placement position)" />
+    <breakFallHeight AltName="Fall Destruction Height" Wiki="Height at which the object breaks when dropped (0 does not break when dropped)" />
+    <windEffectType_0 AltName="Wind Effect Type - Pre-Destruction" Wiki="Wind effect type (before destruction)" Enum="OBJECT_WIND_EFFECT_TYPE" />
+    <windEffectType_1 AltName="Wind Effect Type - Post-Destruction" Wiki="Wind effect type (after destruction)" Enum="OBJECT_WIND_EFFECT_TYPE" />
+    <camAvoidType AltName="Camera Avoidance Type" Wiki="What to do if an object blocks between the camera and player" Enum="OBJECT_CAM_AVOID_TYPE" />
+    <windEffectRate_0 AltName="Wind Coefficient - Pre-Destruction" Wiki="Wind coefficient (before destruction)" />
+    <windEffectRate_1 AltName="Wind Coefficient - Post-Destruction" Wiki="Wind coefficient (after destruction)" />
+    <breakStopTime AltName="Destruction Stop time" Wiki="Time from destruction to forced stop of rigid body (do not force stop at 0)" />
+    <burnTime AltName="Burn Time" Wiki="Burning time (seconds) (continues to burn at 0)" />
+    <burnBraekRate AltName="Burn Destruction Rate" Wiki="Burnup threshold for switching to the ruptured state" />
+    <burnSfxId AltName="Burn - SFX ID [0]" Wiki="SFX ID at the time of combustion 0 (-1 No SFX)" />
+    <burnSfxId_1 AltName="Burn - SFX ID [1]" Wiki="SFX ID at the time of combustion 1 (-1 No SFX)" />
+    <burnSfxId_2 AltName="Burn - SFX ID [2]" Wiki="SFX ID at the time of combustion 2 (-1 No SFX)" />
+    <burnSfxId_3 AltName="Burn - SFX ID [3]" Wiki="SFX ID at the time of combustion 3 (-1 No SFX)" />
+    <burnBulletBehaviorId AltName="Burn - Bullet Behavior ID [0]" Wiki="Bullet generation behavior parameter at the time of burning 0 (-1 does not occur)" />
+    <burnBulletBehaviorId_1 AltName="Burn - Bullet Behavior ID [1]" Wiki="Bullet generation behavior parameter at the time of burning 1 (-1 does not occur)" />
+    <burnBulletBehaviorId_2 AltName="Burn - Bullet Behavior ID [2]" Wiki="Bullet generation behavior parameter at the time of burning 2 (-1 does not occur)" />
+    <burnBulletBehaviorId_3 AltName="Burn - Bullet Behavior ID [3]" Wiki="Bullet generation behavior parameter at the time of burning 3 (-1 does not occur)" />
+    <burnBulletInterval AltName="Burn - Bullet Interval" Wiki="Interval (frame) to generate bullets for spreading fire" />
+    <navimeshFlag AltName="Navimesh Flag" Wiki="Navigation mesh flag set from the object" Enum="OBJECT_NAVIMESH_FLAG" />
+    <collisionType AltName="Collision Detection Type" Wiki="Collision detection type" Enum="OBJECT_COLLISION_TYPE" />
+    <burnBulletDelayTime AltName="Burn - Bullet Generation Delay Time" Wiki="Time to delay the generation of bullets for fire spread (seconds)" />
+    <burnSfxDelayTimeMin AltName="Burn - Bullet Generation Delay Time [0] (Minimum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMin_1 AltName="Burn - Bullet Generation Delay Time [1] (Minimum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMin_2 AltName="Burn - Bullet Generation Delay Time [2] (Minimum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMin_3 AltName="Burn - Bullet Generation Delay Time [3] (Minimum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMax AltName="Burn - Bullet Generation Delay Time [0] (Maximum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMax_1 AltName="Burn - Bullet Generation Delay Time [1] (Maximum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMax_2 AltName="Burn - Bullet Generation Delay Time [2] (Maximum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <burnSfxDelayTimeMax_3 AltName="Burn - Bullet Generation Delay Time [3] (Maximum)" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
+    <BreakAiSoundID AltName="Destruction AI Sound ID" Wiki="AI sound ID generated at the time of destruction" Refs="AiSoundParam" />
+    <FragmentInvisibleWaitTime AltName="Hidden Debris - Wait Time" Wiki="Material ID of debris (-1 Do not hide)" />
+    <FragmentInvisibleTime AltName="Hidden Debris - Invisibility Time" Wiki="Time to hide debris (seconds)" />
+    <pad_3 AltName=""/>
+    <RigidPenetrationScale_Soft AltName="Rigid Body Collision - Soft" Wiki="Rigid body soft contact setting Collision point distance coefficient [soft]" />
+    <RigidPenetrationScale_Normal AltName="Rigid Body Collision - Normal" Wiki="Rigid soft contact setting Collision point distance coefficient [Normal]" />
+    <RigidPenetrationScale_Hard AltName="Rigid Body Collision - Hard" Wiki="Rigid soft contact setting Collision point distance coefficient [hard]" />
+    <LandTouchSfxId AltName="Land Touch - SFX ID" Wiki="SFX ID at terrain contact (-1 offset by terrain material)" />
+    <isDamageCover AltName="Is Damage blocked after Passing Through" Wiki="Whether to pass the damage to the other side when receiving damage (0 pass, 1 do not pass)" />
+    <pad_4 AltName=""/>
+    <paintDecalTargetTextureSize AltName="Paint Decal Size" Wiki="Paint decal target size (only powers of 0 to 4096 2 allowed)" />
+    <lifeTime_forDC AltName="Dynamic Object Duration" Wiki="Time until dynamically generated Obj disappears after generation (0 does not disappear)" />
+    <clothUpdateDist AltName="Cloth Update Distance from Camera" Wiki="Distance from the camera to update havokCloth (0 always update)" />
+    <contactSeId AltName="Player Touch - SE ID" Wiki="SE ID to play when touched by a local player operated by you (-1 Do not play)" />
+    <breakLandingSfxId AltName="Landing Destruction - SFX ID" Wiki="Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1 does not occur)" />
+    <waypointDummyPolyId_0 AltName="Waypoint Dummy Poly ID" Wiki="Waypoint Damipoli ID_0 (-1 None)" />
+    <waypointParamId_0 AltName="Waypoint Param ID" Wiki="Waypoint parameter ID_0 (-1 none)" />
+    <soundBankId AltName="Sound Bank ID" Wiki="Sound bank ID (-1 no bank, other bank with specified ID)" />
+    <refDrawParamId AltName="Reference Draw Param ID" Wiki="Reference ID of drawing parameter" />
+    <autoCreateDynamicOffsetHeight AltName="Automatica Generation - Appearance Height Offset" Wiki="Map automatic generation OBJ appearance height offset [m], does it float from where the ray cast hits?" />
+    <reserved0 AltName="Blank" Wiki="Reserve" />
+    <soundBreakSEId AltName="Destruction - SE ID" Wiki="Destruction sound SEID (9 digits) -1 Generated from objId" />
+    <pad_5 AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

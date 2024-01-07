@@ -1,0 +1,5 @@
+<class name='hclSetupMeshSectionTriangle' version='1' signature='0xd9b8b4ff' size='12'>
+  <members>
+    <member name='indices' offset='0' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='3' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

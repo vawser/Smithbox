@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>BOSS_BATTLE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u32 souls" />
+    <Field Def="s32 boss_soul_bullet_id" />
+    <Field Def="s32 itemlot_id" />
+    <Field Def="s32 enemy_common_id" />
+    <Field Def="s32 boss_destruction_flag" />
+    <Field Def="s32 boss_shop_visibility_flag" />
+    <Field Def="s32 Unk02" />
+    <Field Def="s32 camera_follow_iD" />
+    <Field Def="s32 lockon_id" />
+    <Field Def="u8 has_named_boss_entity_0" />
+    <Field Def="u8 has_named_boss_entity_1" />
+    <Field Def="u8 has_named_boss_entity_2" />
+    <Field Def="u8 is_primal_bonfire" />
+    <Field Def="u8 Unk06" />
+    <Field Def="u8 Unk07" />
+    <Field Def="u8 Unk08" />
+    <Field Def="u8 Unk09" />
+    <Field Def="s32 name_text_id_0" />
+    <Field Def="s32 name_text_id_1" />
+    <Field Def="s32 name_text_id_2" />
+    <Field Def="f32 Unk10" />
+    <Field Def="s32 map_obj_bonfire_id" />
+    <Field Def="f32 Unk11" />
+  </Fields>
+</PARAMDEF>

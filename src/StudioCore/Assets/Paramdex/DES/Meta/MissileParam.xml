@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <FFXID AltName="FFXID" />
+    <LifeTime AltName="LifeTime" />
+    <HitSphereRadius AltName="HitSphereRadius" />
+    <HitDamage AltName="HitDamage" />
+    <reserve0 AltName="reserve0" />
+    <InitVelocity AltName="InitVelocity" />
+    <distance AltName="distance" />
+    <gravityInRange AltName="gravityInRange" />
+    <gravityOutRange AltName="gravityOutRange" />
+    <mp AltName="mp" />
+    <accelInRange AltName="accelInRange" />
+    <accelOutRange AltName="accelOutRange" />
+    <reserve1 AltName="reserve1" />
+    <HitMissileID AltName="HitMissileID" />
+    <DiedNaturaly AltName="DiedNaturaly" />
+    <ExplosionDie AltName="ExplosionDie" />
+    <behaviorId AltName="behaviorId" />
+    <reserve_last AltName="reserve_last" />
+  </Field>
+  <Self />
+</PARAMMETA>

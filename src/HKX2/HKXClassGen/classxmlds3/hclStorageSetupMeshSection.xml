@@ -1,0 +1,15 @@
+<class name='hclStorageSetupMeshSection' version='1' signature='0x2f10c871' size='192' parent='hkReferencedObject'>
+  <members>
+    <member name='parentSetupMesh' offset='24' ctype='hclSetupMesh' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='vertices' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='normals' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='tangents' offset='64' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bitangents' offset='80' vtype='TYPE_ARRAY' vsubtype='TYPE_VECTOR4' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangles' offset='96' ctype='hclSetupMeshSectionTriangle' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sectionVertexChannels' offset='112' ctype='hclStorageSetupMeshSectionSectionVertexChannel' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sectionEdgeChannels' offset='128' ctype='hclStorageSetupMeshSectionSectionEdgeSelectionChannel' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sectionTriangleChannels' offset='144' ctype='hclStorageSetupMeshSectionSectionTriangleSelectionChannel' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='boneInfluences' offset='160' ctype='hclStorageSetupMeshSectionBoneInfluences' vtype='TYPE_ARRAY' vsubtype='TYPE_POINTER' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='normalIDs' offset='176' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

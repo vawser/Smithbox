@@ -1,0 +1,5 @@
+<class name='hkpCogWheelConstraintData' version='1' signature='0x11ea3d2' size='192' parent='hkpConstraintData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpCogWheelConstraintDataAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

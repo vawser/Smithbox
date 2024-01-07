@@ -1,0 +1,10 @@
+{
+    "Title": "Item Lot",
+    "Tags": [
+        "Term"
+    ],
+    "Contents": [
+        "An entry in the ItemLot param that grants the player an item,",
+        "or a group of items."
+    ]
+}

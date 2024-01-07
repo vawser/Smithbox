@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>ASSET_MODEL_SFX_PARAM_ST</ParamType>
+  <DataVersion>0</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 sfxId_0"></Field>
+    <Field Def="s32 dmypolyId_0"></Field>
+    <Field Def="dummy8 reserve_0[8]"></Field>
+    <Field Def="s32 sfxId_1"></Field>
+    <Field Def="s32 dmypolyId_1"></Field>
+    <Field Def="dummy8 reserve_1[8]"></Field>
+    <Field Def="s32 sfxId_2"></Field>
+    <Field Def="s32 dmypolyId_2"></Field>
+    <Field Def="dummy8 reserve_2[8]"></Field>
+    <Field Def="s32 sfxId_3"></Field>
+    <Field Def="s32 dmypolyId_3"></Field>
+    <Field Def="dummy8 reserve_3[8]"></Field>
+    <Field Def="s32 sfxId_4"></Field>
+    <Field Def="s32 dmypolyId_4"></Field>
+    <Field Def="dummy8 reserve_4[8]"></Field>
+    <Field Def="s32 sfxId_5"></Field>
+    <Field Def="s32 dmypolyId_5"></Field>
+    <Field Def="dummy8 reserve_5[8]"></Field>
+    <Field Def="s32 sfxId_6"></Field>
+    <Field Def="s32 dmypolyId_6"></Field>
+    <Field Def="dummy8 reserve_6[8]"></Field>
+    <Field Def="s32 sfxId_7"></Field>
+    <Field Def="s32 dmypolyId_7"></Field>
+    <Field Def="u8 isDisableIV"></Field>
+    <Field Def="dummy8 reserve_7[7]"></Field>
+  </Fields>
+</PARAMDEF>

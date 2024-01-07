@@ -1,0 +1,180 @@
+0 None
+1 None
+10 Weapon Skill
+60 Weapon Skill
+70 Weapon Skill
+80 Weapon Skill
+90 Parry
+91 Parry
+92 Spell Parry
+93 Spell Parry
+99 Parry
+100 Quickstep
+101 Blind Spot
+102 Unleash Dragon
+103 Guiding Light
+104 Blind Spot
+105 Shield Splitter
+106 Stance
+107 Crystal Blade
+108 Quickstep
+200 Stance
+201 Stomp
+202 Guiding Light
+203 Oath of Sunlight
+204 Sacred Lothric Light
+205 Stance
+206 Lion Stance
+207 Ember
+300 Stance
+301 Wrath of the Gods
+302 Ember
+303 Moonlight Vortex
+304 Stance of Judgment
+305 Sacred Light and Flame
+306 Wolf Sword
+307 Stomp
+308 Stomp
+309 Storm King
+310 Perseverance
+311 Elfriede's Blackflame
+312 Blade of Peril
+400 Stomp
+401 Parry
+402 Charge
+403 Profaned Flame
+404 Flame of Lorian
+405 Stomp
+406 Stomp
+407 Stomp
+410 Ember
+500 Stance
+501 Shield Splitter
+502 Ricard's Lunge and Press
+503 Quill Dart
+600 Spin Slash
+601 Crescent Blade
+602 Tornado
+603 Frost Blade
+604 Spin Slash
+605 Spin Slash
+606 Chained Dance
+607 Prying Wedge
+608 Spin Slash
+700 Spin Slash
+701 Wolf Leap
+702 Spin Slash
+703 Spin Slash
+704 Sever
+800 Hold
+801 Bloodlust
+802 Hold
+803 Darkdrift
+804 Hold
+900 Warcry
+901 Sharpen
+902 Feast Bell
+903 Quickstep
+904 Warcry
+1000 Warcry
+1002 Demonic Flare
+1003 Falling Bolt
+1004 Warcry
+1005 Sharpen
+1006 Earthen Wrath
+1100 Perseverance
+1101 Warcry
+1102 Steady Chant
+1103 Galvanize
+1104 Breathe Fire
+1200 Perseverance
+1201 Molten Perseverance
+1202 Kindled Flurry
+1203 Warcry
+1204 Morne's Rage
+1205 Spin Bash
+1206 Galvanize
+1207 Quake
+1208 Call to Stone
+1300 Charge
+1301 Falling Bolt
+1302 Pacify
+1303 Shield Splitter
+1304 Steady Chant
+1305 Unleash Dragon
+1306 Charge
+1307 Charge
+1308 Lightning Charge
+1309 Kindled Charge
+1310 Charge
+1311 Spin Sweep
+1312 Hurl Spear
+1313 Ember
+1314 Lothric War Banner
+1400 Spin Sweep
+1401 Chain Spin
+1402 Champion's Charge
+1404 Punitive Flame
+1405 Warcry
+1406 Charge
+1407 Perseverance
+1408 Wind Wheel
+1409 Mad King's Folly
+1500 Neck Swipe
+1502 Frost
+1504 Elfriede's Stance
+1600 Impact
+1601 Flame Whip
+1700 Quickstep
+1701 Flame Whirlwind
+1702 Lifedrain
+1703 Perseverance
+1800 Leaping Slash
+1801 Quickstep
+1802 Quickstep
+1803 Raptor Flurry
+1900 Rapid Fire
+1901 Puncture
+1902 Pharis Triple-shot
+1903 Darkmoon Arrow
+1904 Unseen Arrow
+2000 Puncturing Arrow
+2001 Puncturing Arrow
+2002 Pierce Earth
+2101 Tackle
+2102 Quickstep
+2103 Repeat Fire
+2200 Steady Chant
+2201 Steady Chant
+2202 Poison Spores
+2203 Steady Chant
+2204 Chant from the Depths
+2205 Feasting Branch
+2300 Unfaltering Prayer
+2301 Gentle Prayer
+2302 Combustion
+2303 Unfaltering Prayer
+2304 Unfaltering Prayer
+2305 Awakening
+2306 Pray for Favor
+2400 Combustion
+2401 Parting Flame
+2500 Quickstep
+2600 Spin Slash
+2700 Spin Slash
+2701 Spin Slash
+2720 Dancer's Grace
+2800 Onislayer
+2900 Charge
+3000 Chain Spin
+3100 Spin Bash
+3200 Shield Bash
+3201 Shield Strike
+3300 Shield Bash
+3301 Moan
+3310 Stone Flesh
+3320 Wheel of Fate
+3321 Dragon Roar
+3330 Lockout
+3400 Shield Bash
+3401 Dragon Breath

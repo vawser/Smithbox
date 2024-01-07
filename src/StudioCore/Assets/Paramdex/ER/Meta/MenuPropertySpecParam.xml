@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="MENU_PROPERTY_CMP_TYPE" type="s8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+    </Enum>
+    <Enum Name="MENU_PROPERTY_FORMAT_TYPE" type="u16">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+        <Option Value="2" Name="Type 2" />
+        <Option Value="4" Name="Type 4" />
+        <Option Value="10" Name="Type 10" />
+        <Option Value="20" Name="Type 20" />
+        <Option Value="22" Name="Type 22" />
+        <Option Value="50" Name="Type 50" />
+        <Option Value="90" Name="Type 90" />
+        <Option Value="100" Name="Type 100" />
+        <Option Value="110" Name="Type 110" />
+        <Option Value="120" Name="Type 120" />
+        <Option Value="300" Name="Type 300" />
+        <Option Value="400" Name="Type 400" />
+    </Enum>
+  </Enums>
+  <Field>
+    <CaptionTextID AltName="Caption Text ID" Wiki="" FmgRef="Modern_MenuText" />
+    <IconID AltName="Icon ID" Wiki="" />
+    <RequiredPropertyID AltName="Required Property ID" Wiki="" Refs="MenuPropertySpecParam" />
+    <CompareType AltName="Compare Type" Wiki="" Enum="MENU_PROPERTY_CMP_TYPE" />
+    <pad2 AltName=""/>
+    <FormatType AltName="Format Type" Wiki="" Enum="MENU_PROPERTY_FORMAT_TYPE" />
+    <pad AltName=""/>
+  </Field>
+  <Self />
+</PARAMMETA>

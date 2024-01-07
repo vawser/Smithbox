@@ -1,0 +1,20 @@
+{
+    "Links" : [
+        {
+            "Title": "Modding Wiki",
+            "URL": "http://soulsmodding.wikidot.com/"
+        },
+        {
+            "Title": "Map ID Reference",
+            "URL": "http://soulsmodding.wikidot.com/reference:map-list"
+        },
+        {
+            "Title": "DSMapStudio Discord",
+            "URL": "https://discord.gg/CKDBCUFhB3"
+        },
+        {
+            "Title": "FromSoftware Modding Discord",
+            "URL": "https://discord.gg/mT2JJjx"
+        }
+    ]
+}

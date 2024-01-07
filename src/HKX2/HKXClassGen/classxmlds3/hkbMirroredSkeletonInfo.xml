@@ -1,0 +1,7 @@
+<class name='hkbMirroredSkeletonInfo' version='1' signature='0x9f13052e' size='64' parent='hkReferencedObject'>
+  <members>
+    <member name='mirrorAxis' offset='16' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='bonePairMap' offset='32' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='partitionPairMap' offset='48' vtype='TYPE_ARRAY' vsubtype='TYPE_INT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

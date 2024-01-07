@@ -1,0 +1,5 @@
+<class name='hkbMirrorModifier' version='1' signature='0xb3ef2ee5' size='96' parent='hkbModifier'>
+  <members>
+    <member name='isAdditive' offset='88' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

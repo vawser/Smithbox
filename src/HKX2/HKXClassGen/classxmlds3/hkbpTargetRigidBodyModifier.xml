@@ -1,0 +1,60 @@
+<class name='hkbpTargetRigidBodyModifier' version='1' signature='0xe2cc7aed' size='288' parent='hkbModifier'>
+  <enums>
+    <enum name='EventModeTRBAM' flags='00000000'>
+      <enumitem name='EVENT_MODE_DO_NOT_SEND' value='0'/>
+      <enumitem name='EVENT_MODE_SEND_ONCE' value='1'/>
+      <enumitem name='EVENT_MODE_RESEND' value='2'/>
+    </enum>
+    <enum name='TargetMode' flags='00000000'>
+      <enumitem name='TARGET_MODE_CONE_AROUND_CHARACTER_FORWARD' value='0'/>
+      <enumitem name='TARGET_MODE_CONE_AROUND_LOCAL_AXIS' value='1'/>
+      <enumitem name='TARGET_MODE_RAYCAST_ALONG_CHARACTER_FORWARD' value='2'/>
+      <enumitem name='TARGET_MODE_RAYCAST_ALONG_LOCAL_AXIS' value='3'/>
+      <enumitem name='TARGET_MODE_ANY_DIRECTION' value='4'/>
+    </enum>
+    <enum name='ComputeTargetAngleMode' flags='00000000'>
+      <enumitem name='COMPUTE_ANGLE_USING_TARGET_COM' value='0'/>
+      <enumitem name='COMPUTE_ANGLE_USING_TARGET_CONTACT_POINT' value='1'/>
+    </enum>
+    <enum name='ComputeTargetDistanceMode' flags='00000000'>
+      <enumitem name='COMPUTE_DISTANCE_USING_TARGET_POSITION' value='0'/>
+      <enumitem name='COMPUTE_DISTANCE_USING_TARGET_CONTACT_POINT' value='1'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='targetOut' offset='88' ctype='hkbpTarget' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetMode' offset='96' etype='TargetMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensingLayer' offset='100' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetOnlyOnce' offset='104' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='ignoreMySystemGroup' offset='105' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxTargetDistance' offset='108' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxTargetHeightAboveSensor' offset='112' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='closeToTargetDistanceThreshold' offset='116' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetAngleMode' offset='120' etype='ComputeTargetAngleMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetDistanceMode' offset='121' etype='ComputeTargetDistanceMode' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxAngleToTarget' offset='124' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorRagdollBoneIndex' offset='128' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorAnimationBoneIndex' offset='130' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='closeToTargetRagdollBoneIndex' offset='132' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='closeToTargetAnimationBoneIndex' offset='134' vtype='TYPE_INT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorOffsetInBoneSpace' offset='144' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='closeToTargetOffsetInBoneSpace' offset='160' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorDirectionBS' offset='176' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventMode' offset='192' etype='EventModeTRBAM' vtype='TYPE_ENUM' vsubtype='TYPE_INT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensingPropertyKey' offset='196' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='sensorInWS' offset='200' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventToSend' offset='208' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='eventToSendToTarget' offset='224' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='closeToTargetEvent' offset='240' ctype='hkbEventProperty' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='useVelocityPrediction' offset='256' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetOnlySpheres' offset='257' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='isCloseToTargetOut' offset='258' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetPriority' offset='259' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='targetRb' offset='264' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='targetDistance' offset='272' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='timeSinceLastModify' offset='276' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='eventHasBeenSent' offset='280' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='closeToTargetEventHasBeenSent' offset='281' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='isActive' offset='282' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

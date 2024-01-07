@@ -1,0 +1,31 @@
+0 B0 basic
+1 B0 Grass
+2 B0 Church
+5 B0 character (basic)
+6 B0 character (on the bridge)
+7 B0 character (church)
+10 B1 basic
+11 B1 grass
+13 B1 chimeric sphere
+14 B1 chimera sphere (after falling)
+15 B1 character (basic)
+20 B2 basic
+21 B2Okina no Chair
+25 B2 character (basic)
+27 For poly drama (scn040001_c00_PC
+28 For poly drama (scn040001_c01_PC
+29 For poly drama (scn040001_c05_PC
+31 Poly drama (scn040100_Chimera centipede
+33 Poly drama (p040201_Flying cloth
+50 For poly drama (Kamisama Appearance 1
+51 For poly drama (Kamisama Appearance 2
+52 For poly drama (Kamisama Appearance 3
+53 For Poly Drama (Kamisama Appearance-Background
+54 For poly drama (p040201 Okina)
+55 For poly drama (p040201_c08_OkinaA)
+56 For poly drama (p040201_c08_Okina B)
+59 Rubble A
+60 Rubble B
+61 boss room
+62 terrace
+63 Character

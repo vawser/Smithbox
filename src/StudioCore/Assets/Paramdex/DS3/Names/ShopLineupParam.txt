@@ -1,0 +1,590 @@
+30000 Ludleth - Champion Gundyr - Gundyr's Halberd
+30001 Ludleth - Champion Gundyr - Prisoner's Chain
+30020 Ludleth - Dancer - Dancer's Enchanted Swords
+30021 Ludleth - Dancer - Soothing Sunlight
+30030 Ludleth - Crystal Sage - Crystal Sage's Rapier
+30031 Ludleth - Crystal Sage - Crystal Hail
+30040 Ludleth - Abyss Watchers - Farron Greatsword
+30041 Ludleth - Abyss Watchers - Wolf Knight's Greatsword
+30050 Ludleth - Oceiros - Moonlight Greatsword
+30051 Ludleth - Oceiros - White Dragon Breath
+30060 Ludleth - Vordt - Vordt's Great Hammer
+30061 Ludleth - Vordt - Pontiff's Left Eye
+30070 Ludleth - Old Demon King - Old King's Great Hammer
+30071 Ludleth - Old Demon King - Chaos Bed Vestiges
+30080 Ludleth - Dragonslayer Armour - Dragonslayer Greataxe
+30081 Ludleth - Dragonslayer Armour - Dragonslayer Greatshield
+30090 Ludleth - Nameless King - Dragonslayer Swordspear
+30091 Ludleth - Nameless King - Storm Curved Sword
+30092 Ludleth - Nameless King - Lightning Storm
+30110 Ludleth - Pontiff Sulyvahn - Greatsword of Judgment
+30111 Ludleth - Pontiff Sulyvahn - Profaned Greatsword
+30120 Ludleth - Aldrich - Darkmoon Longbow
+30121 Ludleth - Aldrich - Lifehunt Scythe
+30130 Ludleth - Wolnir - Wolnir's Holy Sword
+30131 Ludleth - Wolnir - Black Serpent
+30140 Ludleth - Curse-rotted Greatwood - Arstor's Spear
+30141 Ludleth - Curse-rotted Greatwood - Hollowslayer Greatsword
+30153 Ludleth - Rosaria - Bountiful Sunlight
+30160 Ludleth - Deacons of the Deep - Deep Soul
+30161 Ludleth - Deacons of the Deep - Cleric's Candlestick
+30170 Ludleth - Twin Princes - Lorian's Greatsword
+30171 Ludleth - Twin Princes - Lothric's Holy Sword
+30180 Ludleth - Yhorm - Yhorm's Great Machete
+30181 Ludleth - Yhorm - Yhorm's Greatshield
+30190 Ludleth - Soul of Cinder - Firelink Greatsword
+30191 Ludleth - Soul of Cinder - Sunlight Spear
+30200 Ludleth - Demon - Demon's Greataxe
+30201 Ludleth - Demon - Demon's Fist
+30210 Ludleth - Stray Demon - Boulder Heave
+30211 Ludleth - Stray Demon - Havel's Ring
+30220 Ludleth - Sister Friede - Friede's Great Scythe
+30221 Ludleth - Sister Friede - Rose of Ariandel
+30230 Ludleth - Slave Knight Gael - Gael's Greatsword
+30231 Ludleth - Slave Knight Gael - Repeating Crossbow
+30240 Ludleth - Demon Prince - Demon's Scar
+30241 Ludleth - Demon Prince - Seething Chaos
+30250 Ludleth - Darkeater Midir - Frayed Blade
+30251 Ludleth - Darkeater Midir - Old Moonlight
+40000 Yoel - Dark Hand
+40001 Yoel - Londor Braille Divine Tome
+40002 Yoel - Ring of Sacrifice
+40003 Yoel - Untrue White Ring
+40004 Yoel - Untrue Dark Ring
+40005 Yoel - Purging Stone
+40006 Yoel - Poison Throwing Knife
+50000 Yoel - Spells -Soul Arrow
+50001 Yoel - Spells -Heavy Soul Arrow
+50002 Yoel - Spells -Magic Weapon
+50003 Yoel - Spells -Magic Shield
+50100 Yoel - Spells -Soul Greatsword
+110000 Shrine Handmaid - Dagger
+110001 Shrine Handmaid - Shortsword
+110003 Shrine Handmaid - Scimitar
+110004 Shrine Handmaid - Halberd
+110005 Shrine Handmaid - Talisman
+110006 Shrine Handmaid - Sorcerer's Staff
+110007 Shrine Handmaid - Large Leather Shield
+110008 Shrine Handmaid - Warrior's Round Shield
+110009 Shrine Handmaid - Leather Shield
+110011 Shrine Handmaid - Crimson Parma
+110012 Shrine Handmaid - Torch
+110013 Shrine Handmaid - Chain Helm
+110014 Shrine Handmaid - Chain Armor
+110015 Shrine Handmaid - Leather Gauntlets
+110016 Shrine Handmaid - Chain Leggings
+110017 Shrine Handmaid - Purple Moss Clump
+110018 Shrine Handmaid - Repair Powder
+110019 Shrine Handmaid - Firebomb
+110020 Shrine Handmaid - Homeward Bone
+110021 Shrine Handmaid - Prism Stone
+110022 Shrine Handmaid - White Sign Soapstone
+110023 Shrine Handmaid - Dried Finger
+110024 Shrine Handmaid - Ember
+110025 Shrine Handmaid - Tower Key
+110026 Shrine Handmaid - Farron Dart
+110027 Shrine Handmaid - Soul Arrow
+110028 Shrine Handmaid - Heal Aid
+110029 Shrine Handmaid - Wood Arrow
+110030 Shrine Handmaid - Wood Bolt
+110050 Shrine Handmaid - Mortician's Ashes - Alluring Skull
+110051 Shrine Handmaid - Mortician's Ashes - Charcoal Pine Resin
+110052 Shrine Handmaid - Mortician's Ashes - Human Pine Resin
+110053 Shrine Handmaid - Mortician's Ashes - Charcoal Pine Bundle
+110054 Shrine Handmaid - Mortician's Ashes - Ember
+110055 Shrine Handmaid - Mortician's Ashes - Grave Key
+110100 Shrine Handmaid - Dreamchaser Ashes - Composite Bow
+110101 Shrine Handmaid - Dreamchaser Ashes - Leather Armor
+110102 Shrine Handmaid - Dreamchaser Ashes - Leather Gloves
+110103 Shrine Handmaid - Dreamchaser Ashes - Leather Boots
+110104 Shrine Handmaid - Dreamchaser Ashes - Life Ring
+110105 Shrine Handmaid - Dreamchaser Ashes - Green Blossom
+110106 Shrine Handmaid - Dreamchaser Ashes - Gold Pine Resin
+110107 Shrine Handmaid - Dreamchaser Ashes - Gold Pine Bundle
+110108 Shrine Handmaid - Dreamchaser Ashes - Rotten Pine Resin
+110109 Shrine Handmaid - Dreamchaser Ashes - Black Bug Pellet
+110110 Shrine Handmaid - Dreamchaser Ashes - Feather Arrow
+110111 Shrine Handmaid - Dreamchaser Ashes - Titanite Shard
+110150 Shrine Handmaid - Paladin's Ashes - Morning Star
+110151 Shrine Handmaid - Paladin's Ashes - Crescent Axe
+110152 Shrine Handmaid - Paladin's Ashes - Canvas Talisman
+110153 Shrine Handmaid - Paladin's Ashes - Lloyd's Shield Ring
+110154 Shrine Handmaid - Paladin's Ashes - Purple Moss Clump
+110155 Shrine Handmaid - Paladin's Ashes - Blooming Purple Moss Clump
+110156 Shrine Handmaid - Paladin's Ashes - Undead Hunter Charm
+110157 Shrine Handmaid - Paladin's Ashes - Duel Charm
+110200 Shrine Handmaid - Grave Warden's Ashes - Kukri
+110201 Shrine Handmaid - Grave Warden's Ashes - Carthus Rouge
+110202 Shrine Handmaid - Grave Warden's Ashes - Yellow Bug Pellet
+110203 Shrine Handmaid - Grave Warden's Ashes - Ember
+110204 Shrine Handmaid - Grave Warden's Ashes - Titanite Shard
+110250 Shrine Handmaid - Excrement-Covered Ashes - Blooming Purple Moss Clump
+110251 Shrine Handmaid - Excrement-Covered Ashes - Dung Pie
+110252 Shrine Handmaid - Excrement-Covered Ashes - Stalk Dung Pie
+110253 Shrine Handmaid - Excrement-Covered Ashes - Blue Bug Pellet
+110300 Shrine Handmaid - Prisoner Chief's Ashes - Rime-blue Moss Clump
+110301 Shrine Handmaid - Prisoner Chief's Ashes - Pale Pine Resin
+110302 Shrine Handmaid - Prisoner Chief's Ashes - Karla's Pointed Hat
+110303 Shrine Handmaid - Prisoner Chief's Ashes - Karla's Coat
+110304 Shrine Handmaid - Prisoner Chief's Ashes - Karla's Gloves
+110305 Shrine Handmaid - Prisoner Chief's Ashes - Karla's Trousers
+110350 Shrine Handmaid - Xanthous Ashes - Gold Pine Resin
+110351 Shrine Handmaid - Xanthous Ashes - Gold Pine Bundle
+110352 Shrine Handmaid - Xanthous Ashes - Young White Branch
+110353 Shrine Handmaid - Xanthous Ashes - Xanthous Overcoat
+110354 Shrine Handmaid - Xanthous Ashes - Xanthous Gloves
+110355 Shrine Handmaid - Xanthous Ashes - Xanthous Trousers
+110400 Shrine Handmaid - Hollow's Ashes - Purging Stone
+110401 Shrine Handmaid - Hollow's Ashes - Poison Throwing Knife
+110402 Shrine Handmaid - Hollow's Ashes - Ring of Sacrifice
+110450 Shrine Handmaid - Dragon Chaser's Ashes - Ember
+110451 Shrine Handmaid - Dragon Chaser's Ashes - Titanite Chunk
+110452 Shrine Handmaid - Dragon Chaser's Ashes - Titanite Scale
+110453 Shrine Handmaid - Dragon Chaser's Ashes - Twinkling Titanite
+110500 Shrine Handmaid - Easterner's Ashes - Washing Pole
+110502 Shrine Handmaid - Easterner's Ashes - Eastern Iron Shield
+110503 Shrine Handmaid - Easterner's Ashes - Wood Grain Ring
+110504 Shrine Handmaid - Easterner's Ashes - Eastern Helm
+110505 Shrine Handmaid - Easterner's Ashes - Eastern Armor
+110506 Shrine Handmaid - Easterner's Ashes - Eastern Gauntlets
+110507 Shrine Handmaid - Easterner's Ashes - Eastern Leggings
+110508 Shrine Handmaid - Easterner's Ashes - Dark Arrow
+110509 Shrine Handmaid - Easterner's Ashes - Onislayer Greatarrow
+110510 Shrine Handmaid - Easterner's Ashes - Large Titanite Shard
+110511 Shrine Handmaid - Easterner's Ashes - Mossfruit
+110550 Shrine Handmaid - Soul of Cinder - Firelink Helm
+110551 Shrine Handmaid - Soul of Cinder - Firelink Armor
+110552 Shrine Handmaid - Soul of Cinder - Firelink Gauntlets
+110553 Shrine Handmaid - Soul of Cinder - Firelink Leggings
+110600 Shrine Handmaid - Nameless King - Golden Crown
+110601 Shrine Handmaid - Nameless King - Dragonscale Armor
+110602 Shrine Handmaid - Nameless King - Golden Bracelets
+110603 Shrine Handmaid - Nameless King - Dragonscale Waistcloth
+110650 Shrine Handmaid - Abyss Watchers - Undead Legion Helm
+110651 Shrine Handmaid - Abyss Watchers - Undead Legion Armor
+110652 Shrine Handmaid - Abyss Watchers - Undead Legion Gauntlet
+110653 Shrine Handmaid - Abyss Watchers - Undead Legion Leggings
+110700 Shrine Handmaid - Aldrich - Smough's Helm
+110701 Shrine Handmaid - Aldrich - Smough's Armor
+110702 Shrine Handmaid - Aldrich - Smough's Gauntlets
+110703 Shrine Handmaid - Aldrich - Smough's Leggings
+110750 Shrine Handmaid - Twin Princes - Lorian's Helm
+110751 Shrine Handmaid - Twin Princes - Lorian's Armor
+110752 Shrine Handmaid - Twin Princes - Lorian's Gauntlets
+110753 Shrine Handmaid - Twin Princes - Lorian's Leggings
+110800 Shrine Handmaid - Champion Gundyr - Gundyr's Helm
+110801 Shrine Handmaid - Champion Gundyr - Gundyr's Armor
+110802 Shrine Handmaid - Champion Gundyr - Gundyr's Gauntlets
+110803 Shrine Handmaid - Champion Gundyr - Gundyr's Leggings
+110850 Shrine Handmaid - Dancer - Dancer's Crown
+110851 Shrine Handmaid - Dancer - Dancer's Armor
+110852 Shrine Handmaid - Dancer - Dancer's Gauntlets
+110853 Shrine Handmaid - Dancer - Dancer's Leggings
+110900 Shrine Handmaid - Wolnir - Wolnir's Crown
+110950 Shrine Handmaid - Crystal Sage - Sage's Big Hat
+111000 Shrine Handmaid - Yuria - Billed Mask
+111001 Shrine Handmaid - Yuria - Black Dress
+111002 Shrine Handmaid - Yuria - Black Gauntlets
+111003 Shrine Handmaid - Yuria - Black Leggings
+111050 Shrine Handmaid -
+111051 Shrine Handmaid -
+111052 Shrine Handmaid -
+111053 Shrine Handmaid -
+111100 Shrine Handmaid -
+111101 Shrine Handmaid -
+111102 Shrine Handmaid -
+111103 Shrine Handmaid -
+111150 Shrine Handmaid -
+111151 Shrine Handmaid -
+111152 Shrine Handmaid -
+111153 Shrine Handmaid -
+111200 Shrine Handmaid -
+111201 Shrine Handmaid -
+111250 Shrine Handmaid -
+111251 Shrine Handmaid -
+111252 Shrine Handmaid -
+111253 Shrine Handmaid -
+111301 Shrine Handmaid -
+111302 Shrine Handmaid -
+111303 Shrine Handmaid -
+111350 Shrine Handmaid -
+111351 Shrine Handmaid -
+111352 Shrine Handmaid -
+111353 Shrine Handmaid -
+111400 Shrine Handmaid -
+111401 Shrine Handmaid -
+111402 Shrine Handmaid -
+111403 Shrine Handmaid -
+111450 Shrine Handmaid -
+111451 Shrine Handmaid -
+111452 Shrine Handmaid -
+111453 Shrine Handmaid -
+111500 Shrine Handmaid -
+111550 Shrine Handmaid -
+111551 Shrine Handmaid -
+111552 Shrine Handmaid -
+111553 Shrine Handmaid -
+111560 Shrine Handmaid -
+111561 Shrine Handmaid -
+111562 Shrine Handmaid -
+111563 Shrine Handmaid -
+111600 Shrine Handmaid -
+111601 Shrine Handmaid -
+111602 Shrine Handmaid -
+111650 Shrine Handmaid -
+111651 Shrine Handmaid -
+111652 Shrine Handmaid -
+111653 Shrine Handmaid -
+111654 Shrine Handmaid -
+111655 Shrine Handmaid -
+111656 Shrine Handmaid -
+111950 Shrine Handmaid -
+111951 Shrine Handmaid -
+111952 Shrine Handmaid -
+112000 Shrine Handmaid -
+112001 Shrine Handmaid -
+112002 Shrine Handmaid -
+112003 Shrine Handmaid -
+112004 Shrine Handmaid -
+112005 Shrine Handmaid -
+112006 Shrine Handmaid -
+112500 Shrine Handmaid -
+112501 Shrine Handmaid -
+112502 Shrine Handmaid -
+112503 Shrine Handmaid -
+112600 Shrine Handmaid -
+113000 Shrine Handmaid -
+113001 Shrine Handmaid -
+113002 Shrine Handmaid -
+113003 Shrine Handmaid -
+113004 Shrine Handmaid -
+113005 Shrine Handmaid -
+113006 Shrine Handmaid -
+113007 Shrine Handmaid -
+113008 Shrine Handmaid -
+113009 Shrine Handmaid -
+113010 Shrine Handmaid -
+113011 Shrine Handmaid -
+113012 Shrine Handmaid -
+113013 Shrine Handmaid -
+113014 Shrine Handmaid -
+113015 Shrine Handmaid -
+113016 Shrine Handmaid -
+113017 Shrine Handmaid -
+113018 Shrine Handmaid -
+113019 Shrine Handmaid -
+113020 Shrine Handmaid -
+113021 Shrine Handmaid -
+113022 Shrine Handmaid -
+113100 Shrine Handmaid -
+113101 Shrine Handmaid -
+113102 Shrine Handmaid -
+113103 Shrine Handmaid -
+113104 Shrine Handmaid -
+113105 Shrine Handmaid -
+113106 Shrine Handmaid -
+113107 Shrine Handmaid -
+113108 Shrine Handmaid -
+113109 Shrine Handmaid -
+113110 Shrine Handmaid -
+113111 Shrine Handmaid -
+113112 Shrine Handmaid -
+113113 Shrine Handmaid -
+113114 Shrine Handmaid -
+113115 Shrine Handmaid -
+113116 Shrine Handmaid -
+113117 Shrine Handmaid -
+113118 Shrine Handmaid -
+113119 Shrine Handmaid -
+113120 Shrine Handmaid -
+113121 Shrine Handmaid -
+113122 Shrine Handmaid -
+113124 Shrine Handmaid -
+113125 Shrine Handmaid -
+113200 Shrine Handmaid -
+113201 Shrine Handmaid -
+113202 Shrine Handmaid -
+113203 Shrine Handmaid -
+113204 Shrine Handmaid -
+113205 Shrine Handmaid -
+113206 Shrine Handmaid -
+113207 Shrine Handmaid -
+113208 Shrine Handmaid -
+113209 Shrine Handmaid -
+113210 Shrine Handmaid -
+113211 Shrine Handmaid -
+113212 Shrine Handmaid -
+113213 Shrine Handmaid -
+113214 Shrine Handmaid -
+113300 Shrine Handmaid -
+113301 Shrine Handmaid -
+113302 Shrine Handmaid -
+113303 Shrine Handmaid -
+114100 Shrine Handmaid -
+114101 Shrine Handmaid -
+114102 Shrine Handmaid -
+114103 Shrine Handmaid -
+114104 Shrine Handmaid -
+114105 Shrine Handmaid -
+114106 Shrine Handmaid -
+114107 Shrine Handmaid -
+114108 Shrine Handmaid -
+114109 Shrine Handmaid -
+114110 Shrine Handmaid -
+114200 Shrine Handmaid -
+114300 Shrine Handmaid -
+114301 Shrine Handmaid -
+114302 Shrine Handmaid -
+114303 Shrine Handmaid -
+114400 Shrine Handmaid -
+114401 Shrine Handmaid -
+114500 Shrine Handmaid -
+114501 Shrine Handmaid -
+114502 Shrine Handmaid -
+114600 Shrine Handmaid -
+114601 Shrine Handmaid -
+114602 Shrine Handmaid -
+115000 Shrine Handmaid -
+115001 Shrine Handmaid -
+115002 Shrine Handmaid -
+115003 Shrine Handmaid -
+115100 Shrine Handmaid -
+115101 Shrine Handmaid -
+115102 Shrine Handmaid -
+115103 Shrine Handmaid -
+115104 Shrine Handmaid -
+115200 Shrine Handmaid -
+115201 Shrine Handmaid -
+115202 Shrine Handmaid -
+115300 Shrine Handmaid -
+115301 Shrine Handmaid -
+115302 Shrine Handmaid -
+115400 Shrine Handmaid -
+115401 Shrine Handmaid -
+116100 Shrine Handmaid -
+116101 Shrine Handmaid -
+116200 Shrine Handmaid -
+116201 Shrine Handmaid -
+116202 Shrine Handmaid -
+116300 Shrine Handmaid -
+116301 Shrine Handmaid -
+116400 Shrine Handmaid -
+116401 Shrine Handmaid -
+116500 Shrine Handmaid -
+116501 Shrine Handmaid -
+116502 Shrine Handmaid -
+117000 Shrine Handmaid -
+117100 Shrine Handmaid -
+117101 Shrine Handmaid -
+117102 Shrine Handmaid -
+117103 Shrine Handmaid -
+117200 Shrine Handmaid -
+117201 Shrine Handmaid -
+117202 Shrine Handmaid -
+117300 Shrine Handmaid -
+117301 Shrine Handmaid -
+117302 Shrine Handmaid -
+117400 Shrine Handmaid -
+117401 Shrine Handmaid -
+117500 Shrine Handmaid -
+117501 Shrine Handmaid -
+117502 Shrine Handmaid -
+118000 Shrine Handmaid -
+118001 Shrine Handmaid -
+118002 Shrine Handmaid -
+118003 Shrine Handmaid -
+118004 Shrine Handmaid -
+118005 Shrine Handmaid -
+118011 Shrine Handmaid -
+118012 Shrine Handmaid -
+118013 Shrine Handmaid -
+118014 Shrine Handmaid -
+118015 Shrine Handmaid -
+118016 Shrine Handmaid -
+118017 Shrine Handmaid -
+118018 Shrine Handmaid -
+118100 Shrine Handmaid -
+118200 Shrine Handmaid -
+118300 Shrine Handmaid -
+119000 Shrine Handmaid -
+119001 Shrine Handmaid -
+119002 Shrine Handmaid -
+119003 Shrine Handmaid -
+119004 Shrine Handmaid -
+119005 Shrine Handmaid -
+119900 Shrine Handmaid -
+119901 Shrine Handmaid -
+119902 Shrine Handmaid -
+119903 Shrine Handmaid -
+119904 Shrine Handmaid -
+119905 Shrine Handmaid -
+119906 Shrine Handmaid -
+119907 Shrine Handmaid -
+119950 Shrine Handmaid -
+119951 Shrine Handmaid -
+119952 Shrine Handmaid -
+119953 Shrine Handmaid -
+120000 Greirat -
+120001 Greirat -
+120002 Greirat -
+120003 Greirat -
+120004 Greirat -
+120005 Greirat -
+120006 Greirat -
+120007 Greirat -
+120008 Greirat -
+120009 Greirat -
+120010 Greirat -
+120011 Greirat -
+120012 Greirat -
+120013 Greirat -
+120014 Greirat -
+120015 Greirat -
+120016 Greirat -
+120017 Greirat -
+120018 Greirat -
+120019 Greirat -
+120020 Greirat -
+120021 Greirat -
+120022 Greirat -
+120100 Greirat -
+120101 Greirat -
+120102 Greirat -
+120103 Greirat -
+120104 Greirat -
+120105 Greirat -
+120106 Greirat -
+120107 Greirat -
+120108 Greirat -
+120109 Greirat -
+120110 Greirat -
+120111 Greirat -
+120112 Greirat -
+120113 Greirat -
+120114 Greirat -
+120115 Greirat -
+120116 Greirat -
+120117 Greirat -
+120118 Greirat -
+120119 Greirat -
+120120 Greirat -
+120121 Greirat -
+120122 Greirat -
+120124 Greirat -
+120125 Greirat -
+120200 Greirat -
+120201 Greirat -
+120202 Greirat -
+120203 Greirat -
+120204 Greirat -
+120205 Greirat -
+120206 Greirat -
+120207 Greirat -
+120208 Greirat -
+120209 Greirat -
+120210 Greirat -
+120211 Greirat -
+120212 Greirat -
+120213 Greirat -
+120214 Greirat -
+120300 Greirat -
+120301 Greirat -
+120302 Greirat -
+120303 Greirat -
+130100 Orbeck -
+130101 Orbeck -
+130102 Orbeck -
+130103 Orbeck -
+130104 Orbeck -
+130105 Orbeck -
+130106 Orbeck -
+130107 Orbeck -
+130108 Orbeck -
+130109 Orbeck -
+130110 Orbeck -
+130200 Orbeck -
+130300 Orbeck -
+130301 Orbeck -
+130400 Orbeck -
+130401 Orbeck -
+130500 Orbeck -
+130501 Orbeck -
+130502 Orbeck -
+130600 Orbeck -
+130601 Orbeck -
+130602 Orbeck -
+130603 Orbeck -
+130604 Orbeck -
+140000 Cornyx -
+140001 Cornyx -
+140002 Cornyx -
+140003 Cornyx -
+140100 Cornyx -
+140101 Cornyx -
+140102 Cornyx -
+140103 Cornyx -
+140200 Cornyx -
+140201 Cornyx -
+140202 Cornyx -
+140203 Cornyx -
+140300 Cornyx -
+140301 Cornyx -
+140302 Cornyx -
+140400 Cornyx -
+140401 Cornyx -
+150100 Karla -
+150101 Karla -
+150200 Karla -
+150201 Karla -
+150202 Karla -
+150300 Karla -
+150301 Karla -
+150400 Karla -
+150401 Karla -
+150500 Karla -
+150501 Karla -
+150502 Karla -
+160000 Irina -
+160100 Irina -
+160101 Irina -
+160102 Irina -
+160103 Irina -
+160200 Irina -
+160201 Irina -
+160202 Irina -
+160300 Irina -
+160301 Irina -
+160302 Irina -
+160400 Irina -
+160401 Irina -
+160500 Irina -
+160501 Irina -
+160502 Irina -
+200000 Patches - Parrying Dagger
+200001 Patches - Shotel
+200002 Patches - Winged Spear
+200003 Patches - Black Leather Armor
+200004 Patches - Black Leather Gloves
+200005 Patches - Black Leather Boots
+200006 Patches - Catarina Helm
+200007 Patches - Catarina Armor
+200008 Patches - Catarina Gauntlets
+200009 Patches - Catarina Leggings
+200010 Patches - Pierce Shield
+200011 Patches - Alluring Skull
+200012 Patches - Black Firebomb
+200013 Patches - Rope Black Firebomb
+200014 Patches - Human Pine Resin
+200015 Patches - Rubbish
+200016 Patches - Rusted Coin
+200017 Patches - Red Bug Pellet
+200018 Patches - Poison Arrow
+200100 Patches - Ember
+200200 Patches - Hidden Blessing
+200300 Patches - Horsehoof Ring
+760000 Stone-humped Hag -
+760001 Stone-humped Hag -
+760002 Stone-humped Hag -
+760003 Stone-humped Hag -
+760004 Stone-humped Hag -
+760005 Stone-humped Hag -

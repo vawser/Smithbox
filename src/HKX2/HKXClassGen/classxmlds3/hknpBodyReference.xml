@@ -1,0 +1,5 @@
+<class name='hknpBodyReference' version='1' signature='0x6aa54ea0' size='24' parent='hkReferencedObject'>
+  <members>
+    <member name='id' offset='16' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

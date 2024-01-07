@@ -1,0 +1,8 @@
+0 UNKNOWN
+35030000 Resonant Soul
+35040000 Great Resonant Soul
+35050000 Climax
+35060000 Resonant Flesh
+35070000 Resonant Weapon
+35080000 Lifedrain Patch
+35310000 Dark Dance

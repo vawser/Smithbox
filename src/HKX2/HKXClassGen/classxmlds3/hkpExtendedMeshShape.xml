@@ -1,0 +1,44 @@
+<class name='hkpExtendedMeshShape' version='1' signature='0xc7cf26da' size='320' parent='hkpShapeCollection'>
+  <enums>
+    <enum name='IndexStridingType' flags='00000000'>
+      <enumitem name='INDICES_INVALID' value='0'/>
+      <enumitem name='INDICES_INT8' value='1'/>
+      <enumitem name='INDICES_INT16' value='2'/>
+      <enumitem name='INDICES_INT32' value='3'/>
+      <enumitem name='INDICES_MAX_ID' value='4'/>
+    </enum>
+    <enum name='MaterialIndexStridingType' flags='00000000'>
+      <enumitem name='MATERIAL_INDICES_INVALID' value='0'/>
+      <enumitem name='MATERIAL_INDICES_INT8' value='1'/>
+      <enumitem name='MATERIAL_INDICES_INT16' value='2'/>
+      <enumitem name='MATERIAL_INDICES_MAX_ID' value='3'/>
+    </enum>
+    <enum name='SubpartType' flags='00000000'>
+      <enumitem name='SUBPART_TRIANGLES' value='0'/>
+      <enumitem name='SUBPART_SHAPE' value='1'/>
+      <enumitem name='SUBPART_TYPE_MAX' value='2'/>
+    </enum>
+    <enum name='SubpartTypesAndFlags' flags='00000000'>
+      <enumitem name='SUBPART_TYPE_MASK' value='1'/>
+      <enumitem name='SUBPART_MATERIAL_INDICES_MASK' value='6'/>
+      <enumitem name='SUBPART_MATERIAL_INDICES_SHIFT' value='1'/>
+      <enumitem name='SUBPART_NUM_MATERIALS_MASK' value='65528'/>
+      <enumitem name='SUBPART_NUM_MATERIALS_SHIFT' value='3'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='embeddedTrianglesSubpart' offset='48' ctype='hkpExtendedMeshShapeTrianglesSubpart' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aabbHalfExtents' offset='192' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='aabbCenter' offset='208' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='materialClass' offset='224' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='numBitsForSubpartIndex' offset='232' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='trianglesSubparts' offset='240' ctype='hkpExtendedMeshShapeTrianglesSubpart' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='shapesSubparts' offset='256' ctype='hkpExtendedMeshShapeShapesSubpart' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldingInfo' offset='272' vtype='TYPE_ARRAY' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='weldingType' offset='288' etype='WeldingType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='defaultCollisionFilterInfo' offset='292' vtype='TYPE_UINT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='cachedNumChildShapes' offset='296' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleRadius' offset='300' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='padding' offset='304' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+  </members>
+</class>

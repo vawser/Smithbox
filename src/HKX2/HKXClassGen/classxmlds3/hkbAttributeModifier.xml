@@ -1,0 +1,5 @@
+<class name='hkbAttributeModifier' version='1' signature='0x57b280f8' size='104' parent='hkbModifier'>
+  <members>
+    <member name='assignments' offset='88' ctype='hkbAttributeModifierAssignment' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

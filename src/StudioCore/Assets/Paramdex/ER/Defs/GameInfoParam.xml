@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>GAME_INFO_PARAM</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="s32 titleMsgId">
+      <DisplayName>タイトルのMsgID</DisplayName>
+      <Description>タイトル名</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="s32 contentMsgId">
+      <DisplayName>内容のMsgID</DisplayName>
+      <Description>内容</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="s32 value">
+      <DisplayName>価格</DisplayName>
+      <Description>価格</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="s32 sortId">
+      <DisplayName>ソートID</DisplayName>
+      <Description>ソートID</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>4</SortID>
+    </Field>
+    <Field Def="s32 eventId">
+      <DisplayName>アクションID</DisplayName>
+      <Description>販売状況を判断するアクションIDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99999999</Maximum>
+      <SortID>5</SortID>
+    </Field>
+    <Field Def="dummy8 Pad[12]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディング</Description>
+      <SortID>7</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

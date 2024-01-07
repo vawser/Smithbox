@@ -1,0 +1,5 @@
+<class name='hkpPulleyConstraintData' version='1' signature='0x3f490327' size='144' parent='hkpConstraintData'>
+  <members>
+    <member name='atoms' offset='32' ctype='hkpPulleyConstraintDataAtoms' vtype='TYPE_STRUCT' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

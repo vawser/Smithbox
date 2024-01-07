@@ -1,0 +1,6 @@
+<class name='hclSimpleMeshBoneDeformOperatorTriangleBonePair' version='1' signature='0xa6d8c675' size='4'>
+  <members>
+    <member name='boneOffset' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='triangleOffset' offset='2' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

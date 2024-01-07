@@ -1,0 +1,5 @@
+<class name='hkPackedVector8_3' version='1' signature='0x732b7abb' size='4'>
+  <members>
+    <member name='values' offset='0' vtype='TYPE_INT8' vsubtype='TYPE_VOID' arrsize='4' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

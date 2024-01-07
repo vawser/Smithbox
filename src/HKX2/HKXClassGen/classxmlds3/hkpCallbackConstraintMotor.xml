@@ -1,0 +1,18 @@
+<class name='hkpCallbackConstraintMotor' version='1' signature='0x59e75537' size='72' parent='hkpLimitedForceConstraintMotor'>
+  <enums>
+    <enum name='CallbackType' flags='00000000'>
+      <enumitem name='CALLBACK_MOTOR_TYPE_HAVOK_DEMO_SPRING_DAMPER' value='0'/>
+      <enumitem name='CALLBACK_MOTOR_TYPE_USER_0' value='1'/>
+      <enumitem name='CALLBACK_MOTOR_TYPE_USER_1' value='2'/>
+      <enumitem name='CALLBACK_MOTOR_TYPE_USER_2' value='3'/>
+      <enumitem name='CALLBACK_MOTOR_TYPE_USER_3' value='4'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='callbackFunc' offset='32' vtype='TYPE_POINTER' vsubtype='TYPE_VOID' arrsize='0' flags='SERIALIZE_IGNORED' default='0'/>
+    <member name='callbackType' offset='40' etype='CallbackType' vtype='TYPE_ENUM' vsubtype='TYPE_UINT32' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData0' offset='48' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData1' offset='56' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData2' offset='64' vtype='TYPE_ULONG' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

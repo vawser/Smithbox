@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <bloomBegin AltName="bloomBegin" />
+    <bloomMul AltName="bloomMul" />
+    <pad_0 AltName="pad_0" />
+    <grayKeyValue AltName="grayKeyValue" />
+    <minAdaptedLum AltName="minAdaptedLum" />
+    <maxAdapredLum AltName="maxAdapredLum" />
+    <adaptSpeed AltName="adaptSpeed" />
+    <pad_1 AltName="pad_1" />
+  </Field>
+  <Self />
+</PARAMMETA>

@@ -1,0 +1,5 @@
+<class name='hkaiPhysicsBodySilhouetteGeneratorBase' version='1' signature='0x942983af' size='176' parent='hkaiPointCloudSilhouetteGenerator'>
+  <members>
+    <member name='linearVelocityAndThreshold' offset='160' vtype='TYPE_VECTOR4' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

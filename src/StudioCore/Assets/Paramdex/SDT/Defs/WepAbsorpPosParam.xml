@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>WEP_ABSORP_POS_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="u8 hangPosType">
+      <DisplayName>格納場所タイプ</DisplayName>
+      <Enum>WEP_HANG_POS_TYPE</Enum>
+      <Description>この値によって納刀時アニメが変わります</Description>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 pad0[3]">
+      <DisplayName>パディング</DisplayName>
+      <SortID>1612</SortID>
+    </Field>
+    <Field Def="s16 right_0">
+      <DisplayName>モデル0_右手時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に片手で持っているときのモデル0の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s16 left_0">
+      <DisplayName>モデル0_左手時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に片手で持っているときのモデル0の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>101</SortID>
+    </Field>
+    <Field Def="s16 both_0">
+      <DisplayName>モデル0_右手両手時吸着ダミポリ</DisplayName>
+      <Description>右手武器を両手で持っているときのモデル0の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>102</SortID>
+    </Field>
+    <Field Def="s16 leftHang_0">
+      <DisplayName>モデル0_左手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に持っていて、その武器を納刀しているときのモデル0の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>111</SortID>
+    </Field>
+    <Field Def="s16 rightHang_0">
+      <DisplayName>モデル0_右手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に持っていて、その武器を納刀しているときのモデル0の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s16 right_1">
+      <DisplayName>モデル1_右手時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に片手で持っているときのモデル1の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s16 left_1">
+      <DisplayName>モデル1_左手時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に片手で持っているときのモデル1の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>201</SortID>
+    </Field>
+    <Field Def="s16 both_1">
+      <DisplayName>モデル1_右手両手時吸着ダミポリ</DisplayName>
+      <Description>右手武器を両手で持っているときのモデル1の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>202</SortID>
+    </Field>
+    <Field Def="s16 leftHang_1">
+      <DisplayName>モデル1_左手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に持っていて、その武器を納刀しているときのモデル1の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>211</SortID>
+    </Field>
+    <Field Def="s16 rightHang_1">
+      <DisplayName>モデル1_右手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に持っていて、その武器を納刀しているときのモデル1の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    <Field Def="s16 right_2">
+      <DisplayName>モデル2_右手時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に片手で持っているときのモデル2の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s16 left_2">
+      <DisplayName>モデル2_左手時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に片手で持っているときのモデル2の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>301</SortID>
+    </Field>
+    <Field Def="s16 both_2">
+      <DisplayName>モデル2_右手両手時吸着ダミポリ</DisplayName>
+      <Description>右手武器を両手で持っているときのモデル2の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>302</SortID>
+    </Field>
+    <Field Def="s16 leftHang_2">
+      <DisplayName>モデル2_左手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に持っていて、その武器を納刀しているときのモデル2の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>311</SortID>
+    </Field>
+    <Field Def="s16 rightHang_2">
+      <DisplayName>モデル2_右手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に持っていて、その武器を納刀しているときのモデル2の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="s16 right_3">
+      <DisplayName>モデル3_右手時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に片手で持っているときのモデル3の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s16 left_3">
+      <DisplayName>モデル3_左手時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に片手で持っているときのモデル3の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>401</SortID>
+    </Field>
+    <Field Def="s16 both_3">
+      <DisplayName>モデル3_右手両手時吸着ダミポリ</DisplayName>
+      <Description>右手武器を両手で持っているときのモデル3の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>402</SortID>
+    </Field>
+    <Field Def="s16 leftHang_3">
+      <DisplayName>モデル3_左手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に持っていて、その武器を納刀しているときのモデル3の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>411</SortID>
+    </Field>
+    <Field Def="s16 rightHang_3">
+      <DisplayName>モデル3_右手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に持っていて、その武器を納刀しているときのモデル3の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>410</SortID>
+    </Field>
+    <Field Def="s16 right_4">
+      <DisplayName>モデル4_右手時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に片手で持っているときのモデル4の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s16 left_4">
+      <DisplayName>モデル4_左手時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に片手で持っているときのモデル4の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>501</SortID>
+    </Field>
+    <Field Def="s16 both_4">
+      <DisplayName>モデル4_右手両手時吸着ダミポリ</DisplayName>
+      <Description>右手武器を両手で持っているときのモデル4の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>502</SortID>
+    </Field>
+    <Field Def="s16 leftHang_4">
+      <DisplayName>モデル4_左手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に持っていて、その武器を納刀しているときのモデル4の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>511</SortID>
+    </Field>
+    <Field Def="s16 rightHang_4">
+      <DisplayName>モデル4_右手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に持っていて、その武器を納刀しているときのモデル4の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>510</SortID>
+    </Field>
+    <Field Def="s16 right_5">
+      <DisplayName>モデル5_右手時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に片手で持っているときのモデル5の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s16 left_5">
+      <DisplayName>モデル5_左手時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に片手で持っているときのモデル5の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>601</SortID>
+    </Field>
+    <Field Def="s16 both_5">
+      <DisplayName>モデル5_右手両手時吸着ダミポリ</DisplayName>
+      <Description>右手武器を両手で持っているときのモデル5の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>602</SortID>
+    </Field>
+    <Field Def="s16 leftHang_5">
+      <DisplayName>モデル5_左手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を左手に持っていて、その武器を納刀しているときのモデル5の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>611</SortID>
+    </Field>
+    <Field Def="s16 rightHang_5">
+      <DisplayName>モデル5_右手納刀時吸着ダミポリ</DisplayName>
+      <Description>武器を右手に持っていて、その武器を納刀しているときのモデル5の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>610</SortID>
+    </Field>
+    <Field Def="u8 wepInvisibleType_0">
+      <DisplayName>モデル0_武器非表示タイプ</DisplayName>
+      <Enum>WEP_INVISIBLE_TYPE</Enum>
+      <Description>モデル0の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す</Description>
+      <SortID>120</SortID>
+    </Field>
+    <Field Def="u8 wepInvisibleType_1">
+      <DisplayName>モデル1_武器非表示タイプ</DisplayName>
+      <Enum>WEP_INVISIBLE_TYPE</Enum>
+      <Description>モデル1の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す</Description>
+      <SortID>220</SortID>
+    </Field>
+    <Field Def="u8 wepInvisibleType_2">
+      <DisplayName>モデル2_武器非表示タイプ</DisplayName>
+      <Enum>WEP_INVISIBLE_TYPE</Enum>
+      <Description>モデル2の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す</Description>
+      <SortID>320</SortID>
+    </Field>
+    <Field Def="u8 wepInvisibleType_3">
+      <DisplayName>モデル3_武器非表示タイプ</DisplayName>
+      <Enum>WEP_INVISIBLE_TYPE</Enum>
+      <Description>モデル3の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す</Description>
+      <SortID>420</SortID>
+    </Field>
+    <Field Def="u8 wepInvisibleType_4">
+      <DisplayName>モデル4_武器非表示タイプ</DisplayName>
+      <Enum>WEP_INVISIBLE_TYPE</Enum>
+      <Description>モデル4の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す</Description>
+      <SortID>520</SortID>
+    </Field>
+    <Field Def="u8 wepInvisibleType_5">
+      <DisplayName>モデル5_武器非表示タイプ</DisplayName>
+      <Enum>WEP_INVISIBLE_TYPE</Enum>
+      <Description>モデル5の非表示タイプ。TAEで武器非表示にする際にこれと一致するものを消す</Description>
+      <SortID>620</SortID>
+    </Field>
+    <Field Def="s16 leftBoth_0">
+      <DisplayName>モデル0_左手両手時吸着ダミポリ</DisplayName>
+      <Description>左手武器を両手で持っているときのモデル0の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>103</SortID>
+    </Field>
+    <Field Def="s16 leftBoth_1">
+      <DisplayName>モデル1_左手両手時吸着ダミポリ</DisplayName>
+      <Description>左手武器を両手で持っているときのモデル1の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>203</SortID>
+    </Field>
+    <Field Def="s16 leftBoth_2">
+      <DisplayName>モデル2_左手両手時吸着ダミポリ</DisplayName>
+      <Description>左手武器を両手で持っているときのモデル2の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>303</SortID>
+    </Field>
+    <Field Def="s16 leftBoth_3">
+      <DisplayName>モデル3_左手両手時吸着ダミポリ</DisplayName>
+      <Description>左手武器を両手で持っているときのモデル3の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>403</SortID>
+    </Field>
+    <Field Def="s16 leftBoth_4">
+      <DisplayName>モデル4_左手両手時吸着ダミポリ</DisplayName>
+      <Description>左手武器を両手で持っているときのモデル4の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>503</SortID>
+    </Field>
+    <Field Def="s16 leftBoth_5">
+      <DisplayName>モデル5_左手両手時吸着ダミポリ</DisplayName>
+      <Description>左手武器を両手で持っているときのモデル5の吸着ダミポリ。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>31999</Maximum>
+      <SortID>603</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_right_0">
+      <DisplayName>モデル0_右手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル0_右手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1100</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_left_0">
+      <DisplayName>モデル0_左手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル0_左手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1101</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightBoth_0">
+      <DisplayName>モデル0_右手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル0_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1102</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftBoth_0">
+      <DisplayName>モデル0_左手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル0_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1103</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightHang_0">
+      <DisplayName>モデル0_右手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル0_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1110</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftHang_0">
+      <DisplayName>モデル0_左手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル0_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1111</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_right_1">
+      <DisplayName>モデル1_右手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル1_右手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1200</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_left_1">
+      <DisplayName>モデル1_左手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル1_左手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1201</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightBoth_1">
+      <DisplayName>モデル1_右手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル1_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1202</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftBoth_1">
+      <DisplayName>モデル1_左手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル1_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1203</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightHang_1">
+      <DisplayName>モデル1_右手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル1_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1210</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftHang_1">
+      <DisplayName>モデル1_左手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル1_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1211</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_right_2">
+      <DisplayName>モデル2_右手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル2_右手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1300</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_left_2">
+      <DisplayName>モデル2_左手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル2_左手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1301</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightBoth_2">
+      <DisplayName>モデル2_右手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル2_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1302</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftBoth_2">
+      <DisplayName>モデル2_左手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル2_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1303</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightHang_2">
+      <DisplayName>モデル2_右手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル2_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1310</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftHang_2">
+      <DisplayName>モデル2_左手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル2_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1311</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_right_3">
+      <DisplayName>モデル3_右手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル3_右手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1400</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_left_3">
+      <DisplayName>モデル3_左手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル3_左手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1401</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightBoth_3">
+      <DisplayName>モデル3_右手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル3_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1402</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftBoth_3">
+      <DisplayName>モデル3_左手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル3_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1403</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightHang_3">
+      <DisplayName>モデル3_右手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル3_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1410</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftHang_3">
+      <DisplayName>モデル3_左手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル3_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1411</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_right_4">
+      <DisplayName>モデル4_右手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル4_右手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1500</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_left_4">
+      <DisplayName>モデル4_左手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル4_左手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1501</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightBoth_4">
+      <DisplayName>モデル4_右手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル4_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1502</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftBoth_4">
+      <DisplayName>モデル4_左手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル4_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1503</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightHang_4">
+      <DisplayName>モデル4_右手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル4_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1510</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftHang_4">
+      <DisplayName>モデル4_左手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル4_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1511</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_right_5">
+      <DisplayName>モデル5_右手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル5_右手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1600</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_left_5">
+      <DisplayName>モデル5_左手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル5_左手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1601</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightBoth_5">
+      <DisplayName>モデル5_右手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル5_右手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1602</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftBoth_5">
+      <DisplayName>モデル5_左手両手時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル5_左手両手時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1603</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_rightHang_5">
+      <DisplayName>モデル5_右手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル5_右手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1610</SortID>
+    </Field>
+    <Field Def="u8 dispPosType_leftHang_5">
+      <DisplayName>モデル5_左手納刀時表示位置</DisplayName>
+      <Enum>WEP_DISP_POS_TYPE</Enum>
+      <Description>モデル5_左手納刀時表示位置(TAE から非表示位置を指定するのに使用する)</Description>
+      <SortID>1611</SortID>
+    </Field>
+    <Field Def="dummy8 reserve[10]">
+      <DisplayName>予約領域</DisplayName>
+      <SortID>1613</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

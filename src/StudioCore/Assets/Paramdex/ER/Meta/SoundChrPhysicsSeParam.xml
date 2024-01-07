@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName=""/>
+    <disableParamReserve2 AltName=""/>
+    <ContactLandSeId AltName="Contact Land on Death - SE ID" Wiki="SEID pronounced when contacting the ground after death. (-1: Invalid). SEID category is fixed to c" />
+    <ContactLandAddSeId AltName="Contact Land on Death - Additional SE ID" Wiki="Additional SEID (for material) that sounds when it comes into contact with the ground after death. (-1: Invalid). SEID category is fixed to c" />
+    <ContactLandPlayNum AltName="Contact Land on Death - Play Count" Wiki="Number of pronunciations when touching the ground after death" />
+    <IsEnablePlayCountPerRigid AltName="Enable Play Count per Rigid Body Unit" Wiki="Do you count the number of pronunciations of surface contact after death in rigid body units? (: Rigid body unit, : Character unit)" IsBool="" />
+    <pad AltName=""/>
+    <ContactLandMinImpuse AltName="Contact Land on Death - Min Impulse" Wiki="Minimum impulse value required for ground contact determination after death" />
+    <ContactLandMinSpeed AltName="Contact Land on Death - Min Speed" Wiki="Minimum speed value required for ground contact determination after death" />
+    <ContactPlayerSeId AltName="Contact Player on Death - SE ID" Wiki="SEID that sounds when you come into contact with Player after death. (-1: Invalid). SEID category is fixed to c" />
+    <ContactPlayerMinImpuse AltName="Contact Player on Death - Min Impulse" Wiki="Minimum impulse value required for Player contact judgment after death" />
+    <ContactPlayerMinSpeed AltName="Contact Player on Death - Min Speed" Wiki="Minimum speed value required for Player contact judgment after death" />
+    <ContactCheckRigidIdx0 AltName="Contact Check Rigid Index [0]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx1 AltName="Contact Check Rigid Index [1]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx2 AltName="Contact Check Rigid Index [2]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx3 AltName="Contact Check Rigid Index [3]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx4 AltName="Contact Check Rigid Index [4]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx5 AltName="Contact Check Rigid Index [5]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx6 AltName="Contact Check Rigid Index [6]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx7 AltName="Contact Check Rigid Index [7]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx8 AltName="Contact Check Rigid Index [8]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx9 AltName="Contact Check Rigid Index [9]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx10 AltName="Contact Check Rigid Index [10]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx11 AltName="Contact Check Rigid Index [11]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx12 AltName="Contact Check Rigid Index [12]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx13 AltName="Contact Check Rigid Index [13]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx14 AltName="Contact Check Rigid Index [14]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+    <ContactCheckRigidIdx15 AltName="Contact Check Rigid Index [15]" Wiki="Specify the INDEX of the rigid body for contact judgment. Specify only the rigid body to which you want to attach SE" />
+  </Field>
+  <Self />
+</PARAMMETA>

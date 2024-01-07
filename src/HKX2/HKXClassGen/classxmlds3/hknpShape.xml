@@ -1,0 +1,36 @@
+<class name='hknpShape' version='1' signature='0xdb52aabb' size='48' parent='hkReferencedObject'>
+  <enums>
+    <enum name='FlagsEnum' flags='00000000'>
+      <enumitem name='IS_CONVEX_SHAPE' value='1'/>
+      <enumitem name='IS_CONVEX_POLYTOPE_SHAPE' value='2'/>
+      <enumitem name='IS_COMPOSITE_SHAPE' value='4'/>
+      <enumitem name='IS_HEIGHT_FIELD_SHAPE' value='8'/>
+      <enumitem name='USE_SINGLE_POINT_MANIFOLD' value='16'/>
+      <enumitem name='IS_INTERIOR_TRIANGLE' value='32'/>
+      <enumitem name='SUPPORTS_COLLISIONS_WITH_INTERIOR_TRIANGLES' value='64'/>
+      <enumitem name='USE_NORMAL_TO_FIND_SUPPORT_PLANE' value='128'/>
+      <enumitem name='USE_SMALL_FACE_INDICES' value='256'/>
+      <enumitem name='NO_GET_SHAPE_KEYS_ON_SPU' value='512'/>
+      <enumitem name='SHAPE_NOT_SUPPORTED_ON_SPU' value='1024'/>
+      <enumitem name='IS_TRIANGLE_OR_QUAD_SHAPE' value='2048'/>
+      <enumitem name='IS_QUAD_SHAPE' value='4096'/>
+    </enum>
+    <enum name='ScaleMode' flags='00000000'>
+      <enumitem name='SCALE_SURFACE' value='0'/>
+      <enumitem name='SCALE_VERTICES' value='1'/>
+    </enum>
+    <enum name='ConvexRadiusDisplayMode' flags='00000000'>
+      <enumitem name='CONVEX_RADIUS_DISPLAY_NONE' value='0'/>
+      <enumitem name='CONVEX_RADIUS_DISPLAY_PLANAR' value='1'/>
+      <enumitem name='CONVEX_RADIUS_DISPLAY_ROUNDED' value='2'/>
+    </enum>
+  </enums>
+  <members>
+    <member name='flags' offset='16' etype='FlagsEnum' vtype='TYPE_FLAGS' vsubtype='TYPE_UINT16' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numShapeKeyBits' offset='18' vtype='TYPE_UINT8' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='dispatchType' offset='19' etype='Enum' vtype='TYPE_ENUM' vsubtype='TYPE_UINT8' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='convexRadius' offset='20' vtype='TYPE_REAL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='userData' offset='24' vtype='TYPE_UINT64' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='properties' offset='32' ctype='hkRefCountedProperties' vtype='TYPE_POINTER' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

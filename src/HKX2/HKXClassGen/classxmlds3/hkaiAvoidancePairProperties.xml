@@ -1,0 +1,5 @@
+<class name='hkaiAvoidancePairProperties' version='1' signature='0x9f913fe8' size='32' parent='hkReferencedObject'>
+  <members>
+    <member name='avoidancePairDataMap' offset='16' ctype='hkaiAvoidancePairPropertiesPairData' vtype='TYPE_ARRAY' vsubtype='TYPE_STRUCT' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

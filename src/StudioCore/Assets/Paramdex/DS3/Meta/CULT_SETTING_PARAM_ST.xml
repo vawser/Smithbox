@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <Distance AltName="Distance" />
+    <Angle AltName="Angle" />
+    <EventFlagId AltName="Event Flag ID" />
+	<Coefficient.1000 AltName="Cult Dead - Probability" />
+	<CultState1 AltName="Cult Dead Type - First" />
+	<CultState2 AltName="Cult Dead Type - Probability" />
+    <pad1 AltName="" />
+  </Field>
+  <Self Wiki="Bonfire Sacrifice data (cut feature)"/>
+</PARAMMETA>

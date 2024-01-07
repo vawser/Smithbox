@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Field>
+    <assaultBoostGraceTime AltName="Assault Boost (Grace Time)" Wiki="Amount of time (in frames at 60fps) for assault boost to continue after losing all EN." />
+    <boostModeMovementVelocity AltName="Boost Mode: Movement Velocity" Wiki="Movement velocity when boosting. Also used for tank leg High Speed Performance" />
+    <inheritanceBoosterParamId AltName="Booster Inheritance" Refs="EquipParamBooster" Wiki="Inherits fields from referenced booster." />
+  </Field>
+  <Self />
+</PARAMMETA>

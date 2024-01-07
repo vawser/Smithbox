@@ -1,0 +1,4 @@
+0 Basic
+1 celestial sphere
+20 Temporary ID for rough map (m07_00)
+21 distant view structure

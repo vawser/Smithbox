@@ -1,0 +1,241 @@
+1000 Retrieve lost runes
+1020 Touch bloodstain
+1100 Ride
+2000 Touch gold summon sign
+2001 Touch red summon sign
+2010 Check your summon sign
+3000 Read message
+3010 Check your message
+3020 Read message
+4000 Pick up item
+4100 Pillage corpse
+4110 Pick up item
+4200 Pillage remains
+4201 Pillage remains
+4202 Pillage remains
+4250 Pick up item
+4251 Pick up item
+4252 Pick up item
+4253 Pick up item
+4260 Pick up item
+4270 Pick up item
+4280 Pick up item
+4300 Search treasure chest
+4350 Pick up item
+4400 OK
+5000 Climb
+5010 Descend
+6000 Talk
+6001 Talk
+6100 Touch grace
+6101 Rest at site of grace
+6102 Rest at table of lost grace
+6103 Rest at table of lost grace
+6200 Talk
+6210 Talk
+6220 Talk
+6221 Hand over Deathroot
+6222 Talk
+6230 Touch Hyetta
+6231 Examine
+6240 Talk
+6250 Use smithing table
+6260 Talk
+6270 Talk
+6271 Talk
+6280 Talk
+6290 Accept primal glintstone
+6291 Accept primal glintstone
+6292 Transplant primal glintstone
+6300 Talk
+6310 Touch Fractured Marika
+6320 Examine
+6321 Touch the Two Fingers
+6330 Be held
+6331 Touch Fia
+6332 Talk
+6340 Summon Latenna
+6350 Examine
+6360 Talk
+6361 Pick up item
+6370 Atone
+6380 Use dressing table
+6390 Speak the truth about Radagon
+6400 Talk
+6410 Administer draught
+6411 Administer draught
+6412 Administer draught
+6413 Where did the body go?
+6414 Talk
+6420 Examine
+6430 Examine remains
+6440 Receive mending rune
+6450 Receive mending rune
+6460 Receive mending rune
+6470 Offer finger
+6471 Dye cloth with maiden's blood
+6472 Dye cloth with maiden's blood
+6480 Talk
+6490 Talk
+6500 Talk
+6511 Touch bloodstain
+6519 Return Unalloyed Gold Needle
+6540 Talk
+6570 Talk
+6580 Examine altar
+6590 Examine grave
+6600 Talk
+6700 Examine
+7100 Open
+7101 Open
+7102 Open
+7110 Close
+7200 Open
+7201 Open
+7202 Open
+7210 Close
+7220 Open
+7300 Open
+7301 Open
+7320 Open
+7800 Acquire materials
+7810 Acquire materials
+7811 Acquire materials
+7812 Acquire materials
+7813 Acquire materials
+7814 Acquire materials
+7815 Acquire materials
+7816 Acquire materials
+7817 Acquire materials
+7818 Acquire materials
+7819 Acquire materials
+7820 Acquire materials
+7821 Acquire materials
+7822 Acquire materials
+7823 Acquire materials
+7824 Acquire materials
+7825 Acquire materials
+7826 Acquire materials
+7827 Acquire materials
+7828 Acquire materials
+7850 Acquire materials
+7860 Acquire materials
+7861 Acquire materials
+7862 Acquire materials
+7863 Acquire materials
+7864 Acquire materials
+7865 Acquire materials
+7866 Acquire materials
+7867 Acquire materials
+7868 Acquire materials
+7869 Acquire materials
+7870 Acquire materials
+7871 Acquire materials
+7872 Acquire materials
+7873 Acquire materials
+7874 Acquire materials
+7875 Acquire materials
+7876 Acquire materials
+7877 Acquire materials
+7878 Acquire materials
+8000 Open
+8100 Open
+8200 Pull lever
+8300 Pull lever
+8301 Pull lever
+8302 Pull lever
+8310 Pull lever
+8320 Pull lever
+8400 Pull lever
+8401 Pull lever
+8402 Pull lever
+8403 Push lever
+8420 Pull lever
+8501 Pull lever
+8920 Open
+9000 Examine
+9051 Invade White Mask Varré's world
+9052 Invade Old Knight Istvan's world
+9053 Invade Rileigh the Idle's world
+9054 Invade Juno Hoslow Knight of Blood's world
+9055 Invade Vargram the Raging Wolf's world
+9056 Invade Great Horned Tragoth's world
+9057 Be summoned to assist Yura Hunter of Bloody Fingers
+9058 Be summoned to assist Sorceress Sellen
+9059 Be summoned to challenge Sorceress Sellen
+9060 Be summoned to assist Millicent
+9061 Be summoned to challenge Millicent
+9070 Touch cooperative sign
+9071 Touch invasion sign
+9080 Restore the power of the Great Rune
+9081 Restore the power of the Great Rune
+9082 Restore the power of the Great Rune
+9083 Restore the power of the Great Rune
+9084 Restore the power of the Great Rune
+9085 Restore the power of the Great Rune
+9100 Touch
+9110 Examine
+9120 Open
+9140 Examine
+9190 Examine
+9200 Kick ladder
+9210 Examine
+9220 Examine
+9230 Examine
+9240 Stargaze
+9260 Examine
+9270 Use Birdseye Telescope
+9280 Examine
+9290 Return to entrance
+9300 Examine
+9310 Examine
+9320 Examine
+9330 Examine
+9500 Touch wall of thorns
+9501 Touch golden light
+9503 Examine seal
+9504 Examine
+9505 Examine seal
+9506 Examine seal
+9519 Examine
+9520 Light flame
+9521 Touch phantom
+9522 Examine seal
+9523 Examine
+9524 Light flame
+9525 Touch horned remains
+9526 Go back
+9527 Examine
+9528 Light flame
+9529 Examine seal
+9530 Examine seal
+9531 Examine
+9532 Pillage corpse
+9533 Examine
+9540 Summon Castellan Jerren
+9541 Summon Blaidd the Half-Wolf
+9542 Summon Alexander Warrior Jar
+9543 Summon Great Horned Tragoth
+9544 Summon Okina
+9545 Summon Finger Maiden Therolina
+9546 Summon Lionel the Lionhearted
+9547 Summon Patches
+9550 Examine
+9600 Become the Elden Lord
+9610 Summon Ranni
+9620 Become the Lord of Frenzied Flame
+9630 Wear ring
+9640 Open door
+9700 Hoist medallion
+9701 Hoist secret medallion
+9710 Rest in coffin
+9711 Rest in coffin
+9720 Examine pedestal
+9721 Remove inverted statue
+9730 Open door
+9740 Lie down
+9980 Examine
+9999 Examine
+10000 Traverse the mist
+10001 Traverse the mist
+10010 Traverse the mist

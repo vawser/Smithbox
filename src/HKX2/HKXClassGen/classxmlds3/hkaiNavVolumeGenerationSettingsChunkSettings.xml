@@ -1,0 +1,8 @@
+<class name='hkaiNavVolumeGenerationSettingsChunkSettings' version='1' signature='0xf8d9ef60' size='8'>
+  <members>
+    <member name='maxChunkSizeX' offset='0' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxChunkSizeY' offset='2' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='maxChunkSizeZ' offset='4' vtype='TYPE_UINT16' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='doGreedyMergeAfterCombine' offset='6' vtype='TYPE_BOOL' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>

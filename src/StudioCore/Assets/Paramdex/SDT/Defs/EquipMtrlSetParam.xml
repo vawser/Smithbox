@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="3">
+  <ParamType>EQUIP_MTRL_SET_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>202</FormatVersion>
+  <Fields>
+    <Field Def="s32 materialId01 = -1">
+      <DisplayName>必要素材アイテムID01</DisplayName>
+      <Description>武具強化に必要な素材アイテムIDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 materialId02 = -1">
+      <DisplayName>必要素材アイテムID02</DisplayName>
+      <Description>武具強化に必要な素材アイテムIDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s32 materialId03 = -1">
+      <DisplayName>必要素材アイテムID03</DisplayName>
+      <Description>武具強化に必要な素材アイテムIDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s32 materialId04 = -1">
+      <DisplayName>必要素材アイテムID04</DisplayName>
+      <Description>武具強化に必要な素材アイテムIDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s32 materialId05 = -1">
+      <DisplayName>必要素材アイテムID05</DisplayName>
+      <Description>武具強化に必要な素材アイテムIDです。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>1E+07</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s8 itemNum01 = -1">
+      <DisplayName>必要個数01</DisplayName>
+      <Description>武具強化に必要な素材アイテムの個数です。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s8 itemNum02 = -1">
+      <DisplayName>必要個数02</DisplayName>
+      <Description>武具強化に必要な素材アイテムの個数です。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s8 itemNum03 = -1">
+      <DisplayName>必要個数03</DisplayName>
+      <Description>武具強化に必要な素材アイテムの個数です。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s8 itemNum04 = -1">
+      <DisplayName>必要個数04</DisplayName>
+      <Description>武具強化に必要な素材アイテムの個数です。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="s8 itemNum05 = -1">
+      <DisplayName>必要個数05</DisplayName>
+      <Description>武具強化に必要な素材アイテムの個数です。</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>99</Maximum>
+      <SortID>1000</SortID>
+    </Field>
+    <Field Def="u8 materialCate01 = 4">
+      <DisplayName>必要素材アイテムカテゴリ01</DisplayName>
+      <Enum>GAITEM_CATEGORY</Enum>
+      <Description>武具強化に必要な素材アイテムのカテゴリです。</Description>
+      <Maximum>15</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="u8 materialCate02 = 4">
+      <DisplayName>必要素材アイテムカテゴリ02</DisplayName>
+      <Enum>GAITEM_CATEGORY</Enum>
+      <Description>武具強化に必要な素材アイテムのカテゴリです。</Description>
+      <Maximum>15</Maximum>
+      <SortID>310</SortID>
+    </Field>
+    <Field Def="u8 materialCate03 = 4">
+      <DisplayName>必要素材アイテムカテゴリ03</DisplayName>
+      <Enum>GAITEM_CATEGORY</Enum>
+      <Description>武具強化に必要な素材アイテムのカテゴリです。</Description>
+      <Maximum>15</Maximum>
+      <SortID>510</SortID>
+    </Field>
+    <Field Def="u8 materialCate04 = 4">
+      <DisplayName>必要素材アイテムカテゴリ04</DisplayName>
+      <Enum>GAITEM_CATEGORY</Enum>
+      <Description>武具強化に必要な素材アイテムのカテゴリです。</Description>
+      <Maximum>15</Maximum>
+      <SortID>710</SortID>
+    </Field>
+    <Field Def="u8 materialCate05 = 4">
+      <DisplayName>必要素材アイテムカテゴリ05</DisplayName>
+      <Enum>GAITEM_CATEGORY</Enum>
+      <Description>武具強化に必要な素材アイテムのカテゴリです。</Description>
+      <Maximum>15</Maximum>
+      <SortID>910</SortID>
+    </Field>
+    <Field Def="u8 isDisableDispNum01:1">
+      <DisplayName>個数表示を無効化01</DisplayName>
+      <Description>個数表示を無効化するか(強化ショップ用)</Description>
+      <Maximum>1</Maximum>
+      <SortID>250</SortID>
+    </Field>
+    <Field Def="u8 isDisableDispNum02:1">
+      <DisplayName>個数表示を無効化02</DisplayName>
+      <Description>個数表示を無効化するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>450</SortID>
+    </Field>
+    <Field Def="u8 isDisableDispNum03:1">
+      <DisplayName>個数表示を無効化03</DisplayName>
+      <Description>個数表示を無効化するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>650</SortID>
+    </Field>
+    <Field Def="u8 isDisableDispNum04:1">
+      <DisplayName>個数表示を無効化04</DisplayName>
+      <Description>個数表示を無効化するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>850</SortID>
+    </Field>
+    <Field Def="u8 isDisableDispNum05:1">
+      <DisplayName>個数表示を無効化05</DisplayName>
+      <Description>個数表示を無効化するか</Description>
+      <Maximum>1</Maximum>
+      <SortID>1050</SortID>
+    </Field>
+    <Field Def="dummy8 pad[1]">
+      <DisplayName>パディング</DisplayName>
+      <Description>パディングです。</Description>
+      <SortID>99999999</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>

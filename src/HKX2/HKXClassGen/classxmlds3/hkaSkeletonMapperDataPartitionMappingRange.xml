@@ -1,0 +1,6 @@
+<class name='hkaSkeletonMapperDataPartitionMappingRange' version='1' signature='0xfdf54e87' size='8'>
+  <members>
+    <member name='startMappingIndex' offset='0' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+    <member name='numMappings' offset='4' vtype='TYPE_INT32' vsubtype='TYPE_VOID' arrsize='0' flags='FLAGS_NONE' default='0'/>
+  </members>
+</class>
