@@ -18,7 +18,7 @@ namespace StudioCore.MsbEditor
         private readonly Selection _selection;
 
         private AssetLocator _assetLocator;
-        private AssetdexCore _assetdex;
+        private AssetdexMain _assetdex;
         private MsbEditorScreen _msbEditor;
 
         private List<string> _loadedMaps = new List<string>();
@@ -36,7 +36,7 @@ namespace StudioCore.MsbEditor
 
         private bool disableListGeneration = false;
 
-        public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, AssetdexCore assetdex, MsbEditorScreen editor)
+        public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, AssetdexMain assetdex, MsbEditorScreen editor)
         {
             _scene = scene;
             _selection = sel;
@@ -76,7 +76,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void OnGui()
         {
-            var scale = MapStudioNew.GetUIScale();
+            var scale = Smithbox.GetUIScale();
 
             if (_assetLocator.Type == GameType.Undefined)
                 return;
@@ -213,7 +213,7 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Chr, Obj/AEG and Parts.
         /// </summary>
-        private void DisplayAssetSelectionList(string assetType, Dictionary<string, AssetReference> assetDict)
+        private void DisplayAssetSelectionList(string assetType, Dictionary<string, AssetdexReference> assetDict)
         {
             if (_selectedAssetType == assetType)
             {
@@ -266,7 +266,7 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Map Pieces.
         /// </summary>
-        private void DisplayMapAssetSelectionList(string assetType, Dictionary<string, AssetReference> assetDict)
+        private void DisplayMapAssetSelectionList(string assetType, Dictionary<string, AssetdexReference> assetDict)
         {
             if (_selectedAssetType == assetType)
                 if (_mapModelNameCache.ContainsKey(_selectedAssetMapId))

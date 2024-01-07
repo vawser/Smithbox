@@ -49,7 +49,7 @@ public class HelpBrowser
 
     public void Display()
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
 
         if (!MenuOpenState)
             return;

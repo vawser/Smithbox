@@ -42,9 +42,9 @@ namespace StudioCore.MsbEditor
         private string _searchStrInput = "";
         private string _searchStrInputCache = "";
 
-        private AssetdexCore _assetdex;
+        private AssetdexMain _assetdex;
 
-        public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator, AssetdexCore assetdex)
+        public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator, AssetdexMain assetdex)
         {
             _id = id;
             _assetLocator = locator;
@@ -167,7 +167,7 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Chr, Obj/AEG and Parts.
         /// </summary>
-        private void DisplayAssetSelectionList(string assetType, Dictionary<string, AssetReference> assetDict)
+        private void DisplayAssetSelectionList(string assetType, Dictionary<string, AssetdexReference> assetDict)
         {
             if (_selectedAssetType == assetType)
             {
@@ -227,7 +227,7 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Map Pieces.
         /// </summary>
-        private void DisplayMapAssetSelectionList(string assetType, Dictionary<string, AssetReference> assetDict)
+        private void DisplayMapAssetSelectionList(string assetType, Dictionary<string, AssetdexReference> assetDict)
         {
             if (_selectedAssetType == assetType)
             {

@@ -634,7 +634,7 @@ public class PropertyEditor
     private void PropEditorGeneric(Selection selection, HashSet<Entity> entSelection, object target = null,
         bool decorate = true, int classIndex = -1)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
         Entity firstEnt = entSelection.First();
         var obj = target == null ? firstEnt.WrappedObject : target;
         Type type = obj.GetType();
@@ -1069,7 +1069,7 @@ public class PropertyEditor
 
     public void OnGui(Selection selection, string id, float w, float h)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
         ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0.145f, 0.145f, 0.149f, 1.0f));

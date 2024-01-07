@@ -31,7 +31,7 @@ using Veldrid.Sdl2;
 
 namespace StudioCore;
 
-public class MapStudioNew
+public class Smithbox
 {
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
@@ -42,18 +42,22 @@ public class MapStudioNew
 
     public static bool LowRequirementsMode;
 
-    private readonly AssetLocator _assetLocator;
-
     private readonly IGraphicsContext _context;
-
-    private readonly List<EditorScreen> _editors;
-    private readonly HelpBrowser _helpBrowser;
 
     private readonly NewProjectOptions _newProjectOptions = new();
     private readonly string _programTitle;
-    private readonly SettingsMenu _settingsMenu = new();
 
-    private AssetdexCore _assetdex;
+    // Assets
+    private readonly AssetLocator _assetLocator;
+    private readonly AssetdexMain _assetdex;
+
+    // Editors
+    private readonly List<EditorScreen> _editors;
+    private EditorScreen _focusedEditor;
+
+    // Floating windows
+    private readonly HelpBrowser _helpBrowser;
+    private readonly SettingsMenu _settingsMenu = new();
 
     private readonly SoapstoneService _soapstoneService;
     private readonly string _version;
@@ -65,8 +69,6 @@ public class MapStudioNew
     {
         '鉤', '梟', '倅', '…', '飴', '護', '戮', 'ā', 'ī', 'ū', 'ē', 'ō', 'Ā', 'Ē', 'Ī', 'Ō', 'Ū', '—', '薄', '靄'
     };
-
-    private EditorScreen _focusedEditor;
 
     private bool _programUpdateAvailable;
     private ProjectSettings _projectSettings;
@@ -80,7 +82,7 @@ public class MapStudioNew
 
     private bool _standardProjectUIOpened = true;
 
-    public unsafe MapStudioNew(IGraphicsContext context, string version)
+    public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
         _programTitle = $"Smithbox - Version {_version}";
@@ -98,7 +100,7 @@ public class MapStudioNew
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
         _assetLocator = new AssetLocator();
-        _assetdex = new AssetdexCore();
+        _assetdex = new AssetdexMain();
 
         MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator, _assetdex);
         ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator, _assetdex);

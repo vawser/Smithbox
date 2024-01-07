@@ -126,7 +126,7 @@ public class TextEditorScreen : EditorScreen
             return;
         }
 
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
 
         // Docking setup
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
@@ -466,7 +466,7 @@ public class TextEditorScreen : EditorScreen
 
     private void EditorGUI(bool doFocus)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
 
         if (!FMGBank.IsLoaded)
         {

@@ -9,7 +9,7 @@ namespace StudioCore.JSON.Assetdex
     /// <summary>
     /// Class <c>AssetReference</c> is an entry contained within a <c>AssetReference</c> list within a <c>GameReference</c>.
     /// </summary>
-    public class AssetReference
+    public class AssetdexReference
     {
         public string id { get; set; }
         public string name { get; set; }

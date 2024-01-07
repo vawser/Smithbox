@@ -614,7 +614,7 @@ public class ParamRowEditor
         string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
         ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
         var altName = cellMeta?.AltName;
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);

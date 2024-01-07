@@ -473,7 +473,7 @@
     <Compile Update="Utilities\DDSDeswizzler.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="MapStudioNew.cs">
+    <Compile Update="Smithbox.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="Havok\NewAnimSkeleton.cs">

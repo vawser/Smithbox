@@ -11,14 +11,14 @@ using static SoulsFormats.HKXPWV;
 
 namespace StudioCore.JSON.Assetdex
 {
-    public class AssetContainer
+    public class AssetdexContainer
     {
-        private AssetResource chrEntries = new AssetResource();
-        private AssetResource objEntries = new AssetResource();
-        private AssetResource partEntries = new AssetResource();
-        private AssetResource mapPieceEntries = new AssetResource();
+        private AssetdexResource chrEntries = new AssetdexResource();
+        private AssetdexResource objEntries = new AssetdexResource();
+        private AssetdexResource partEntries = new AssetdexResource();
+        private AssetdexResource mapPieceEntries = new AssetdexResource();
 
-        public AssetContainer(string gametype)
+        public AssetdexContainer(string gametype)
         {
             chrEntries = LoadJSON(gametype, "Chr");
             objEntries = LoadJSON(gametype, "Obj");
@@ -26,9 +26,9 @@ namespace StudioCore.JSON.Assetdex
             mapPieceEntries = LoadJSON(gametype, "MapPiece");
         }
 
-        private AssetResource LoadJSON(string gametype, string type)
+        private AssetdexResource LoadJSON(string gametype, string type)
         {
-            var resource = new AssetResource();
+            var resource = new AssetdexResource();
 
             var json_filepath = AppContext.BaseDirectory + $"\\Assets\\Assetdex\\{gametype}\\{type}.json";
 
@@ -39,25 +39,25 @@ namespace StudioCore.JSON.Assetdex
                     ReadCommentHandling = JsonCommentHandling.Skip,
                     TypeInfoResolver = new DefaultJsonTypeInfoResolver()
                 };
-                resource = JsonSerializer.Deserialize<AssetResource>(File.OpenRead(json_filepath), options);
+                resource = JsonSerializer.Deserialize<AssetdexResource>(File.OpenRead(json_filepath), options);
             }
 
             return resource;
         }
 
-        public List<AssetReference> GetChrEntries()
+        public List<AssetdexReference> GetChrEntries()
         {
             return chrEntries.list;
         }
-        public List<AssetReference> GetObjEntries()
+        public List<AssetdexReference> GetObjEntries()
         {
             return objEntries.list;
         }
-        public List<AssetReference> GetPartEntries()
+        public List<AssetdexReference> GetPartEntries()
         {
             return partEntries.list;
         }
-        public List<AssetReference> GetMapPieceEntries()
+        public List<AssetdexReference> GetMapPieceEntries()
         {
             return mapPieceEntries.list;
         }

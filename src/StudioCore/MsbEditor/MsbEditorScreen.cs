@@ -33,7 +33,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private IModal _activeModal;
 
-    private AssetdexCore _assetdex;
+    private AssetdexMain _assetdex;
 
     private int _createEntityMapIndex;
     private (string, ObjectContainer) _dupeSelectionTargetedMap = ("None", null);
@@ -72,7 +72,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AssetdexCore _assetdex)
+    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AssetdexMain _assetdex)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
@@ -592,7 +592,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void OnGUI(string[] initcmd)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
 
         // Docking setup
         //var vp = ImGui.GetMainViewport();
@@ -871,7 +871,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         SceneTree.OnGui();
         PropSearch.OnGui(propSearchCmd);
-        if (MapStudioNew.FirstFrame)
+        if (Smithbox.FirstFrame)
         {
             ImGui.SetNextWindowFocus();
         }

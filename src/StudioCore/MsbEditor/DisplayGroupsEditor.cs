@@ -25,7 +25,7 @@ public class DisplayGroupsEditor
 
     public void OnGui(int dispCount)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
         ImGui.SetNextWindowSize(new Vector2(100, 100) * scale);
 
         uint[] sdrawgroups = null;

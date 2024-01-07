@@ -392,7 +392,7 @@ public static class ResourceManager
 
     public static void OnGuiDrawTasks(float w, float h)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
 
         if (ActiveJobProgress.Count() > 0)
         {

@@ -22,7 +22,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     IResourceEventListener
 {
     private ModelAssetBrowser _assetBrowser;
-    private AssetdexCore _assetdex;
+    private AssetdexMain _assetdex;
 
     private readonly PropertyEditor _propEditor;
     private readonly PropertyCache _propCache = new();
@@ -47,7 +47,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     private bool ViewportUsingKeyboard;
     private Sdl2Window Window;
 
-    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AssetdexCore assetdex)
+    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AssetdexMain assetdex)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
@@ -129,7 +129,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void OnGUI(string[] commands)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
         // Docking setup
         //var vp = ImGui.GetMainViewport();
         Vector2 wins = ImGui.GetWindowSize();

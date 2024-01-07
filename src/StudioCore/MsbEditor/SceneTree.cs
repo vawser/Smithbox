@@ -213,7 +213,7 @@ public class SceneTree : IActionEventHandler
 
     private unsafe void MapObjectSelectable(Entity e, bool visicon, bool hierarchial = false)
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
 
         // Main selectable
         if (e is MapEntity me)
@@ -364,7 +364,7 @@ public class SceneTree : IActionEventHandler
             ImGui.SetItemAllowOverlap();
             var visible = e.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - (18.0f * MapStudioNew.GetUIScale()));
+            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - (18.0f * Smithbox.GetUIScale()));
             ImGui.PushStyleColor(ImGuiCol.Text, visible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -498,7 +498,7 @@ public class SceneTree : IActionEventHandler
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
                                         ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X -
-                                                            (18.0f * MapStudioNew.GetUIScale()));
+                                                            (18.0f * Smithbox.GetUIScale()));
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -523,7 +523,7 @@ public class SceneTree : IActionEventHandler
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
                                         ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X -
-                                                            (18.0f * MapStudioNew.GetUIScale()));
+                                                            (18.0f * Smithbox.GetUIScale()));
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -565,7 +565,7 @@ public class SceneTree : IActionEventHandler
 
     public void OnGui()
     {
-        var scale = MapStudioNew.GetUIScale();
+        var scale = Smithbox.GetUIScale();
 
         ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0.145f, 0.145f, 0.149f, 1.0f));
         if (_configuration == Configuration.MapEditor)
@@ -595,7 +595,7 @@ public class SceneTree : IActionEventHandler
 
             ImGui.PopStyleVar();
 
-            if (MapStudioNew.LowRequirementsMode)
+            if (Smithbox.LowRequirementsMode)
             {
                 ImGui.NewLine();
                 ImGui.Text("  This editor is not available in low requirements mode.");
