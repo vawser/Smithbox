@@ -612,6 +612,8 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         // Keyboard shortcuts
         if (!ViewportUsingKeyboard && !ImGui.IsAnyItemActive())
         {
+            var type = CFG.Current.Map_ViewportGridType;
+
             if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
             {
                 EditorActionManager.UndoAction();
@@ -620,6 +622,22 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
             {
                 EditorActionManager.RedoAction();
+            }
+
+            // Viewport Grid
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ViewportGrid_Lower))
+            {
+                var offset = CFG.Current.Map_ViewportGrid_Offset;
+                var increment = CFG.Current.Map_ViewportGrid_ShortcutIncrement;
+                offset = offset - increment;
+                CFG.Current.Map_ViewportGrid_Offset = offset;
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ViewportGrid_Raise))
+            {
+                var offset = CFG.Current.Map_ViewportGrid_Offset;
+                var increment = CFG.Current.Map_ViewportGrid_ShortcutIncrement;
+                offset = offset + increment;
+                CFG.Current.Map_ViewportGrid_Offset = offset;
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _selection.IsSelection())

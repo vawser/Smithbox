@@ -77,15 +77,16 @@ public class KeyBindings
 
     public class Bindings
     {
+        // Core
         public KeyBind Core_Delete = new(Key.Delete);
         public KeyBind Core_Duplicate = new(Key.D, true);
         public KeyBind Core_HelpMenu = new(Key.F2);
         public KeyBind Core_Redo = new(Key.Y, true);
         public KeyBind Core_SaveAllEditors = new();
-
-        // Core
         public KeyBind Core_SaveCurrentEditor = new(Key.S, true);
         public KeyBind Core_Undo = new(Key.Z, true);
+
+        // Map
         public KeyBind Map_ArbitraryRotation_Roll = new(Key.J);
         public KeyBind Map_ArbitraryRotation_Yaw = new(Key.K, false, false, true);
         public KeyBind Map_ArbitraryRotation_Yaw_Pivot = new(Key.K);
@@ -94,8 +95,6 @@ public class KeyBindings
         public KeyBind Map_GotoSelectionInObjectList = new(Key.G);
         public KeyBind Map_HideToggle = new(Key.H, true);
         public KeyBind Map_MoveSelectionToCamera = new(Key.X);
-
-        // Map
         public KeyBind Map_PropSearch = new(Key.F, true);
         public KeyBind Map_RenderGroup_GetDisp = new(Key.G, true);
         public KeyBind Map_RenderGroup_GetDraw = new();
@@ -107,6 +106,10 @@ public class KeyBindings
         public KeyBind Map_ResetRotation = new(Key.L);
         public KeyBind Map_UnDummify = new(Key.Period, false, false, true);
         public KeyBind Map_UnhideAll = new(Key.H, false, true);
+        public KeyBind Map_ViewportGrid_Lower = new(Key.Q, true);
+        public KeyBind Map_ViewportGrid_Raise = new(Key.E, true);
+
+        // Param
         public KeyBind Param_Copy = new(Key.C, true);
         public KeyBind Param_ExportCSV = new();
         public KeyBind Param_GotoBack = new(Key.Escape);
@@ -120,18 +123,16 @@ public class KeyBindings
         public KeyBind Param_SearchField = new(Key.N, true);
         public KeyBind Param_SearchParam = new(Key.P, true);
         public KeyBind Param_SearchRow = new(Key.F, true);
-
-        // Parameters
         public KeyBind Param_SelectAll = new(Key.A, true);
+
+        // Text FMG
         public KeyBind TextFMG_ExportAll = new();
         public KeyBind TextFMG_Import = new();
-
-        // Text Editor
         public KeyBind TextFMG_Search = new(Key.F, true);
+
+        // Viewport
         public KeyBind Viewport_Cam_Back = new(Key.S);
         public KeyBind Viewport_Cam_Down = new(Key.Q);
-
-        // Viewport (Map & Model)
         public KeyBind Viewport_Cam_Forward = new(Key.W);
         public KeyBind Viewport_Cam_Left = new(Key.A);
         public KeyBind Viewport_Cam_Reset = new(Key.R);
@@ -142,6 +143,7 @@ public class KeyBindings
         public KeyBind Viewport_ToggleGizmoOrigin = new(Key.Home);
         public KeyBind Viewport_ToggleGizmoSpace = new();
         public KeyBind Viewport_TranslateMode = new(Key.W);
+
 #pragma warning disable IDE0051
         // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.
         [JsonExtensionData] internal IDictionary<string, JsonElement> AdditionalData { get; set; }

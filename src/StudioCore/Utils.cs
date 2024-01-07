@@ -1082,4 +1082,16 @@ public static class Utils
 
         return $"{major}.{minor}.{patch}.{rev}";
     }
+
+    public static Vector3 GetDecimalColor(Color color)
+    {
+        float r = Convert.ToSingle(color.R);
+        float g = Convert.ToSingle(color.G);
+        float b = Convert.ToSingle(color.B);
+        Vector3 vec = new Vector3((r / 255), (g / 255), (b / 255));
+
+        //throw new NotImplementedException($"{vec}");
+
+        return vec;
+    }
 }

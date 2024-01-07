@@ -1381,11 +1381,16 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
             new DbgPrimWireSpheroidWithArrow(Transform.Default, 5.0f, Color.Yellow, 4, 2, false, true);
     }
 
+    private static Color GetRenderableColor(Vector3 color)
+    {
+        return Color.FromArgb((int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
+    }
+
     public static DebugPrimitiveRenderableProxy GetBoxRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionBox);
-        r.BaseColor = Color.Blue;
-        r.HighlightedColor = Color.DarkViolet;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_Box_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_Box_HighlightColor);
         ApplyColorVariance(r);
         return r;
     }
@@ -1393,8 +1398,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetCylinderRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionCylinder);
-        r.BaseColor = Color.Blue;
-        r.HighlightedColor = Color.DarkViolet;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_Cylinder_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_Cylinder_HighlightColor);
         ApplyColorVariance(r);
         return r;
     }
@@ -1402,8 +1407,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetSphereRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
-        r.BaseColor = Color.Blue;
-        r.HighlightedColor = Color.DarkViolet;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_Sphere_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_Sphere_HighlightColor);
         ApplyColorVariance(r);
         return r;
     }
@@ -1411,24 +1416,24 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetPointRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionPoint);
-        r.BaseColor = Color.Yellow;
-        r.HighlightedColor = Color.DarkViolet;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_Point_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_Point_HighlightColor);
         return r;
     }
 
     public static DebugPrimitiveRenderableProxy GetDummyPolyRegionProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OverlayRenderables, _dmyPoint);
-        r.BaseColor = Color.Yellow;
-        r.HighlightedColor = Color.DarkViolet;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_DummyPoly_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_DummyPoly_HighlightColor);
         return r;
     }
 
     public static DebugPrimitiveRenderableProxy GetBonePointProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OverlayRenderables, _jointSphere);
-        r.BaseColor = Color.Blue;
-        r.HighlightedColor = Color.DarkViolet;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_BonePoint_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_BonePoint_HighlightColor);
         return r;
     }
 
@@ -1444,24 +1449,24 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         {
             case ModelMarkerType.Enemy:
                 prim = _modelMarkerChr;
-                baseColor = Color.Firebrick;
-                selectColor = Color.Tomato;
+                baseColor = GetRenderableColor(CFG.Current.GFX_Renderable_ModelMarker_Chr_BaseColor);
+                selectColor = GetRenderableColor(CFG.Current.GFX_Renderable_ModelMarker_Chr_HighlightColor);
                 break;
             case ModelMarkerType.Object:
                 prim = _modelMarkerObj;
-                baseColor = Color.MediumVioletRed;
-                selectColor = Color.DeepPink;
+                baseColor = GetRenderableColor(CFG.Current.GFX_Renderable_ModelMarker_Object_BaseColor);
+                selectColor = GetRenderableColor(CFG.Current.GFX_Renderable_ModelMarker_Object_HighlightColor);
                 break;
             case ModelMarkerType.Player:
                 prim = _modelMarkerPlayer;
-                baseColor = Color.DarkOliveGreen;
-                selectColor = Color.OliveDrab;
+                baseColor = GetRenderableColor(CFG.Current.GFX_Renderable_ModelMarker_Player_BaseColor);
+                selectColor = GetRenderableColor(CFG.Current.GFX_Renderable_ModelMarker_Player_HighlightColor);
                 break;
             case ModelMarkerType.Other:
             default:
                 prim = _modelMarkerOther;
-                baseColor = Color.Wheat;
-                selectColor = Color.AntiqueWhite;
+                baseColor = GetRenderableColor(CFG.Current.GFX_Renderable_ModelMarker_Other_BaseColor);
+                selectColor = GetRenderableColor(CFG.Current.GFX_Renderable_ModelMarker_Other_HighlightColor);
                 break;
         }
 
@@ -1475,8 +1480,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetPointLightProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _pointLight);
-        r.BaseColor = Color.YellowGreen;
-        r.HighlightedColor = Color.Yellow;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_PointLight_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_PointLight_HighlightColor);
         ApplyColorVariance(r);
         return r;
     }
@@ -1484,8 +1489,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetSpotLightProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _spotLight);
-        r.BaseColor = Color.Goldenrod;
-        r.HighlightedColor = Color.Violet;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_SpotLight_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_SpotLight_HighlightColor);
         ApplyColorVariance(r);
         return r;
     }
@@ -1493,8 +1498,8 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public static DebugPrimitiveRenderableProxy GetDirectionalLightProxy(RenderScene scene)
     {
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _directionalLight);
-        r.BaseColor = Color.Cyan;
-        r.HighlightedColor = Color.AliceBlue;
+        r.BaseColor = GetRenderableColor(CFG.Current.GFX_Renderable_DirectionalLight_BaseColor);
+        r.HighlightedColor = GetRenderableColor(CFG.Current.GFX_Renderable_DirectionalLight_HighlightColor);
         return r;
     }
 

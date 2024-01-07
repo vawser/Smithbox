@@ -29,6 +29,8 @@ public class Viewport : IViewport
     //private DebugPrimitives.DbgPrimGizmoTranslate TranslateGizmo = null;
     private readonly Gizmos _gizmos;
 
+    private readonly ViewGrid _viewGrid;
+
     private readonly DbgPrimWire _rayDebug = null;
 
     private readonly RenderScene _renderScene;
@@ -101,6 +103,9 @@ public class Viewport : IViewport
 
         // Create gizmos
         _gizmos = new Gizmos(_actionManager, _selection, _renderScene.OverlayRenderables);
+
+        // Create view grid
+        _viewGrid = new ViewGrid(_renderScene.OpaqueRenderables);
 
         _clearQuad = new FullScreenQuad();
         Renderer.AddBackgroundUploadTask((gd, cl) =>
@@ -198,6 +203,7 @@ public class Viewport : IViewport
         _cursorY = (int)pos.Y; // - Y;
 
         _gizmos.Update(ray, _canInteract && MouseInViewport());
+        _viewGrid.Update(ray);
 
         var kbbusy = false;
 

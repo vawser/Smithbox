@@ -73,6 +73,32 @@ public class DbgPrimWireBox : DbgPrimWire
             AddLine(bbr, tbr, color);
             Lines.Add((bbr, tbr));
 
+            // Diagonal Lines
+            AddLine(bfl, tfr, color);
+            Lines.Add((bfl, tfr));
+            AddLine(tfl, bfr, color);
+            Lines.Add((tfl, bfr));
+            AddLine(bbl, tbr, color);
+            Lines.Add((bbl, tbr));
+            AddLine(bbr, tbl, color);
+            Lines.Add((bbr, tbl));
+            AddLine(tfl, bbl, color);
+            Lines.Add((tfl, bbl));
+            AddLine(bfl, tbl, color);
+            Lines.Add((bfl, tbl));
+            AddLine(tfr, bbr, color);
+            Lines.Add((tfr, bbr));
+            AddLine(bfr, tbr, color);
+            Lines.Add((bfr, tbr));
+            AddLine(tfl, tbr, color);
+            Lines.Add((tfl, tbr));
+            AddLine(tfr, tbl, color);
+            Lines.Add((tfr, tbl));
+            AddLine(bfl, bbr, color);
+            Lines.Add((bfl, bbr));
+            AddLine(bfr, bbl, color);
+            Lines.Add((bfr, bbl));
+
             //FinalizeBuffers(true);
 
             GeometryData = new DbgPrimGeometryData { GeomBuffer = GeometryBuffer };
