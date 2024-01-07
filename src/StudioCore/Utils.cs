@@ -1094,4 +1094,86 @@ public static class Utils
 
         return vec;
     }
+
+    /// <summary>
+    /// Returns true is the input string (whole or part) matches a filename, reference name or tag.
+    /// </summary>
+    public static bool IsSearchFilterMatch(string inputStr, string fileName, string referenceName, List<string> tags)
+    {
+        bool match = false;
+
+        string curInput = inputStr.Trim().ToLower();
+        string lowerFileName = fileName.ToLower();
+        string lowerReferenceName = referenceName.ToLower();
+
+        if (curInput.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
+        }
+
+        // Match: Filename
+        if (curInput == lowerFileName)
+            match = true;
+
+        // Match: Reference Name
+        if (curInput == lowerReferenceName)
+            match = true;
+
+        // Match: Reference Segments
+        string[] refSegments = lowerReferenceName.Split(" ");
+        foreach (string refStr in refSegments)
+        {
+            string curString = refStr;
+
+            // Remove common brackets so the match ignores them
+            if (curString.Contains('('))
+                curString = curString.Replace("(", "");
+
+            if (curString.Contains(')'))
+                curString = curString.Replace(")", "");
+
+            if (curString.Contains('{'))
+                curString = curString.Replace("{", "");
+
+            if (curString.Contains('}'))
+                curString = curString.Replace("}", "");
+
+            if (curString.Contains('('))
+                curString = curString.Replace("(", "");
+
+            if (curString.Contains('['))
+                curString = curString.Replace("[", "");
+
+            if (curString.Contains(']'))
+                curString = curString.Replace("]", "");
+
+            if (curInput == curString.Trim())
+                match = true;
+        }
+
+        // Match: Tags
+        foreach (string tagStr in tags)
+        {
+            if (curInput == tagStr.ToLower())
+                match = true;
+        }
+
+        // Match: AEG Category
+        if (!curInput.Equals("") && curInput.All(char.IsDigit))
+        {
+            if (lowerFileName.Contains("aeg") && lowerFileName.Contains("_"))
+            {
+                string[] parts = lowerFileName.Split("_");
+                string aegCategory = parts[0].Replace("aeg", "");
+
+                if (curInput == aegCategory)
+                {
+                    match = true;
+                }
+            }
+        }
+
+        return match;
+    }
 }

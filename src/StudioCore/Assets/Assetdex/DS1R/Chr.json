@@ -1,0 +1,1364 @@
+{
+    "list": [
+        {
+            "id": "c0000",
+            "name": "Human",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c1200",
+            "name": "Rat",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c1201",
+            "name": "Small Rat",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c1202",
+            "name": "Large Rat",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c1203",
+            "name": "Snow Rat",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2060",
+            "name": "Infested Ghoul",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2210",
+            "name": "Invisible Ghost (unused)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2230",
+            "name": "Stray Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2231",
+            "name": "Demon Firesage",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2232",
+            "name": "Asylum Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2240",
+            "name": "Capra Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2250",
+            "name": "Taurus Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2260",
+            "name": "Batwing Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2270",
+            "name": "Mushroom Parent",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2280",
+            "name": "Mushroom Child",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2290",
+            "name": "Prototype Chained Prisoner",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2300",
+            "name": "Titanite Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2310",
+            "name": "Crow Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2320",
+            "name": "Iron Golem",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2330",
+            "name": "Demonic Foliage",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2360",
+            "name": "Smough",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2370",
+            "name": "Channeler",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2380",
+            "name": "Giant Stone Knight",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2390",
+            "name": "Darkwraith",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2400",
+            "name": "Painting Guardian",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2410",
+            "name": "Silver Knight",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2430",
+            "name": "Demonic Statue",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2500",
+            "name": "Hollow",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2510",
+            "name": "Undead Merchant",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2520",
+            "name": "Undead Assassin",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2530",
+            "name": "Blowdart Sniper",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2540",
+            "name": "Armored Hollow",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2550",
+            "name": "Undead Soldier",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2560",
+            "name": "Balder Knight",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2570",
+            "name": "Heavy Knight",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2590",
+            "name": "Prototype Marvelous Chester",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2591",
+            "name": "Prototype Marvelous Chester",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2600",
+            "name": "Prototype Young Beatrice",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2640",
+            "name": "Andre of Astora",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2650",
+            "name": "Necromancer",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2660",
+            "name": "Butcher",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2670",
+            "name": "Ghost (Male)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2680",
+            "name": "Ghost (Female)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2690",
+            "name": "Serpent Soldier",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2700",
+            "name": "Serpent Mage",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2710",
+            "name": "Crystal Golem",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2711",
+            "name": "Golden Crystal Golem",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2730",
+            "name": "Crossbreed Priscilla",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2731",
+            "name": "Priscilla's Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2750",
+            "name": "Anastacia of Astora",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2780",
+            "name": "Mimic",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2790",
+            "name": "Black Knight (all, kiln variation)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2791",
+            "name": "Black Knight (Kiln Ghost)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2792",
+            "name": "Black Knight (Sword)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2793",
+            "name": "Black Knight (Greatsword)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2794",
+            "name": "Black Knight (Axe)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2795",
+            "name": "Black Knight (Halberd)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2800",
+            "name": "Undead Crystal Soldier",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2810",
+            "name": "Infested Barbarian (Club)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2811",
+            "name": "Infested Barbarian (Boulder)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2820",
+            "name": "Prototype Claw Hollow",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2830",
+            "name": "Phalanx",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2840",
+            "name": "Engorged Zombie",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2860",
+            "name": "Giant",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2870",
+            "name": "Sentinel / Royal Sentinel",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2900",
+            "name": "Skeleton",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2910",
+            "name": "Giant Skeleton",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2920",
+            "name": "Vamos",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2930",
+            "name": "Bonewheel Skeleton",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2940",
+            "name": "Skeleton Baby",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2950",
+            "name": "Skeleton Beast",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c2960",
+            "name": "Bone Tower",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3090",
+            "name": "Giant Mosquito",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3110",
+            "name": "Demon's Souls Crystal Lizard",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3200",
+            "name": "Slime",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3210",
+            "name": "Egg Carrier",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3220",
+            "name": "Vile Maggot",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3230",
+            "name": "Moonlight Butterfly",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3240",
+            "name": "Chaos Eater",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3250",
+            "name": "Man-Eater Shell",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3270",
+            "name": "Basilisk",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3290",
+            "name": "Ohmushi",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3300",
+            "name": "Crystal Lizard",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3320",
+            "name": "Pinwheel",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3330",
+            "name": "Pisaca",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3340",
+            "name": "Undead Attack Dog",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3341",
+            "name": "Flaming Attack Dog",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3350",
+            "name": "Possessed Tree",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3370",
+            "name": "Tree Lizard",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3380",
+            "name": "Giant Leech",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3390",
+            "name": "Burrowing Rockworm",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3400",
+            "name": "Crag-Spider",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3410",
+            "name": "Frog-Ray",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3420",
+            "name": "Undead Dragon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3421",
+            "name": "Bounding Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3422",
+            "name": "Undead Dragon's Wing",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3430",
+            "name": "Hellkite Drake",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3431",
+            "name": "Hellkite Drake's Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3440",
+            "name": "Prototype Kalameet",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3450",
+            "name": "Stone Dragon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3451",
+            "name": "Everlasting Dragon's Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3460",
+            "name": "Armored Tusk (Armored Boar)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3461",
+            "name": "Armored Tusk (Reinforced)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3470",
+            "name": "Prototype Sanctuary Guardian",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3471",
+            "name": "Sanctuary Guardian",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3472",
+            "name": "Sanctuary Guardian's Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3480",
+            "name": "Chaos Bug",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3490",
+            "name": "Good Vagrant",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3491",
+            "name": "Evil Vagrant",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3500",
+            "name": "Mass of Souls",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3501",
+            "name": "Wisp (exploding skull)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3510",
+            "name": "Asylum Transport Crow",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3511",
+            "name": "Crow (cutscene version)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3520",
+            "name": "Drake",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3530",
+            "name": "Hydra",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c3531",
+            "name": "Hydra Head",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4090",
+            "name": "Marvelous Chester",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4091",
+            "name": "Alternate Chester?",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4095",
+            "name": "Alternate Chester?",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4100",
+            "name": "Artorias",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4110",
+            "name": "Hawkeye Gough",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4120",
+            "name": "Stone Guardian",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4130",
+            "name": "Scarecrow",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4140",
+            "name": "Elizabeth",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4150",
+            "name": "Bloathead",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4160",
+            "name": "Bloathead Sorcerer",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4170",
+            "name": "Humanity Phantom (small)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4171",
+            "name": "Humanity Phantom (medium)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4172",
+            "name": "Humanity Phantom (large)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4180",
+            "name": "Chained Prisoner",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4190",
+            "name": "Attack Dog (DLC)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4500",
+            "name": "Manus",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4510",
+            "name": "Black Dragon Kalameet",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4511",
+            "name": "Kalameet's Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4520",
+            "name": "Young Sif",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4530",
+            "name": "Young Alvina",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c4531",
+            "name": "Young Alvina",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5200",
+            "name": "Centipede Demon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5201",
+            "name": "Centipede Demon's Arm",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5202",
+            "name": "Centipede Demon's Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5210",
+            "name": "Sif",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5220",
+            "name": "Gravelord Nito",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5230",
+            "name": "Bed of Chaos (Tree Body)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5231",
+            "name": "Crawling Bed of Chaos (unused, Tree Body)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5240",
+            "name": "Parasitic Wall Hugger",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5250",
+            "name": "Ceaseless Discharge",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5260",
+            "name": "Gaping Dragon",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5261",
+            "name": "Gaping Dragon's Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5270",
+            "name": "Ornstein",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5271",
+            "name": "Super Ornstein",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5280",
+            "name": "Quelaag",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5290",
+            "name": "Seath",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5291",
+            "name": "Seath's Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5300",
+            "name": "Undead King Jar Eel (unused)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5310",
+            "name": "Gwynevere",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5320",
+            "name": "Gwyndolin",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5330",
+            "name": "Frampt / Kaathe",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5340",
+            "name": "The Fair Lady",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5350",
+            "name": "Bell Gargoyles",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5351",
+            "name": "Lightning Gargoyles",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5352",
+            "name": "Bell Gargoyle Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5353",
+            "name": "Lightning Gargolye Tail",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5360",
+            "name": "Great Feline",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5361",
+            "name": "Alvina",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5362",
+            "name": "Alvina",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5370",
+            "name": "Gwyn",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5390",
+            "name": "Four Kings",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5400",
+            "name": "Bed of Chaos (Fire Body)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c5401",
+            "name": "Bed of Chaos (Worm)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
+            "id": "c9990",
+            "name": "Fluted Knight",
+            
+            "tags": [
+                "creature"
+            ]
+        }
+    ]
+}

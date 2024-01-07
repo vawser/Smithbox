@@ -736,7 +736,7 @@ public class AssetLocator
         return ad;
     }
 
-    private string GetGameIDForDir()
+    public string GetGameIDForDir()
     {
         switch (Type)
         {

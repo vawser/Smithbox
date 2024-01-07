@@ -170,6 +170,10 @@ public class CFG
     public bool FMG_NoGroupedFmgEntries = false;
     public bool FMG_ShowOriginalNames = false;
 
+    // Settings: Asset Browser
+    public bool AssetBrowser_ShowTagsInBrowser = true;
+    public bool AssetBrowser_UpdateSelectionName = true;
+
     // CFG
     public static CFG Current { get; private set; }
     public static CFG Default { get; } = new();

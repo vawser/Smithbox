@@ -1,0 +1,1124 @@
+{
+    "list": [
+        {
+            "id": "c0000",
+            "name": "AC",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3000",
+            "name": "Light Guard Mech",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3001",
+            "name": "Medium Walker",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3002",
+            "name": "Heavy Walker",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3020",
+            "name": "Light MT",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3050",
+            "name": "PCA Subject Guard MT",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3100",
+            "name": "Xylem Wing Drone",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3150",
+            "name": "Juggernaut",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3200",
+            "name": "Ekdromoi",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3250",
+            "name": "Light Cavalry",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3260",
+            "name": "Heavy Cavalry",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3300",
+            "name": "Ghost",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3400",
+            "name": "BAWS Tetrapod MT",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3500",
+            "name": "Institute Drone",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3600",
+            "name": "RaD Tetrapod MT",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c3700",
+            "name": "PCA Heavy MT",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c4000",
+            "name": "Cataphract",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c4100",
+            "name": "Balteus",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c4150",
+            "name": "RaD TOYBOX",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c4200",
+            "name": "Ayre (IB-07 SOL 644, no weapons)",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c4201",
+            "name": "ALLMIND",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c4210",
+            "name": "Ayre Clone (IB-07 SOL 644)",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c4250",
+            "name": "IBIS CEL 240",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c4260",
+            "name": "IBIS CEL 240 Drones",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5000",
+            "name": "Helicopter Drone",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5010",
+            "name": "Scavenger Drone",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5020",
+            "name": "Smart Cleaner",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5100",
+            "name": "Quadcopter",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5101",
+            "name": "Broken Helicopter",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5120",
+            "name": "Small Quadcopter",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5150",
+            "name": "Small Helicopter",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5200",
+            "name": "Artillery Vehicle",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5250",
+            "name": "Helianthus Machine",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5300",
+            "name": "Tiny Laser Drone",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c5500",
+            "name": "Mealworm",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6050",
+            "name": "HC Helicopter",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6100",
+            "name": "Sea Spider",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6101",
+            "name": "Orb?",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6250",
+            "name": "Ice Worm",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6350",
+            "name": "Giant Mobile Cannon?",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6400",
+            "name": "Strider",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6420",
+            "name": "Strider Eye",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7222",
+            "name": "RaD Missile",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7230",
+            "name": "Artillery Shielded Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7240",
+            "name": "Artillery Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7250",
+            "name": "Artillery Gatling Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7260",
+            "name": "Artillery Missile Launcher",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7261",
+            "name": "Artillery Verticle Missile Launcher",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7262",
+            "name": "Artillery Horizontal Missile Launcher",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7270",
+            "name": "Artillery Rifle Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7280",
+            "name": "Artillery Laser Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7290",
+            "name": "Artillery Heavy Laser Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7300",
+            "name": "Artillery Pulse Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7310",
+            "name": "Artillery Heavy Plasma Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7320",
+            "name": "Artillery Dual Plasma Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7390",
+            "name": "Nepenthes",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7400",
+            "name": "Heavy Warship",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7401",
+            "name": "Mounted Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7402",
+            "name": "Mounted Turret",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7403",
+            "name": "Mounted Laser Turret",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7410",
+            "name": "PCA Laser Drone",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8135",
+            "name": "Enforcer",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8145",
+            "name": "Enforcer Flight Mode",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9980",
+            "name": "Dummy",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+                        {
+            "id": "c0400",
+            "name": "Test AC Light Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0401",
+            "name": "Test AC Heavy Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0402",
+            "name": "Test AC Heavy Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0403",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0404",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0405",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0406",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0407",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0408",
+            "name": "Test AC Heavy Reverse Legs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c0411",
+            "name": "Six tetrapod ACs",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c2000",
+            "name": "Unused Helicopter",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6000",
+            "name": "Closure Station Satellite",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6010",
+            "name": "Closure Station Satellite part",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c6410",
+            "name": "EB-0309 Strider Drill Column",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7220",
+            "name": "Artillery Missile Launcher",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7221",
+            "name": "Artillery Verticle Missile Launcher",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7223",
+            "name": "Artillery Missile Launcher",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c7224",
+            "name": "RaD Heavy Missile",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8000",
+            "name": "KA-R1",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8020",
+            "name": "AC5",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8040",
+            "name": "AC5 Drone",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8060",
+            "name": "AC5 F21C Stork",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8110",
+            "name": "AC4 AC",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8130",
+            "name": "Beta Enforcer",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8200",
+            "name": "Robot spider",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8510",
+            "name": "AC with tower shield",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8530",
+            "name": "Beta Strider",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8535",
+            "name": "Beta Strider eye",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8536",
+            "name": "Beta Strider drill column",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c8540",
+            "name": "AC5 Hanged Man",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9000",
+            "name": "AC5 R2B Shchit",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9201",
+            "name": "Minigun walker",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9400",
+            "name": "Artillery Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9401",
+            "name": "Artillery Heavy Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9410",
+            "name": "Artillery Rifle Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9411",
+            "name": "Artillery Heavy Rifle Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9420",
+            "name": "Artillery Missile Launcher",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+        {
+            "id": "c9431",
+            "name": "Artillery Gatling Cannon",
+            
+            "tags": [
+                "asset"
+            ]
+        },
+                        {
+            "id": "c0400",
+            "name": "Test AC Light Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0401",
+            "name": "Test AC Heavy Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0402",
+            "name": "Test AC Heavy Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0403",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0404",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0405",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0406",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0407",
+            "name": "Test AC Reverse Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0408",
+            "name": "Test AC Heavy Reverse Legs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c0411",
+            "name": "Six tetrapod ACs",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c2000",
+            "name": "Unused Helicopter",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c6000",
+            "name": "Closure Station Satellite",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c6010",
+            "name": "Closure Station Satellite part",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c6410",
+            "name": "EB-0309 Strider Drill Column",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c7220",
+            "name": "Artillery Missile Launcher",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c7221",
+            "name": "Artillery Verticle Missile Launcher",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c7223",
+            "name": "Artillery Missile Launcher",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c7224",
+            "name": "RaD Heavy Missile",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8000",
+            "name": "KA-R1",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8020",
+            "name": "AC5",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8040",
+            "name": "AC5 Drone",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8060",
+            "name": "AC5 F21C Stork",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8110",
+            "name": "AC4 AC",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8130",
+            "name": "Beta Enforcer",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8200",
+            "name": "Robot spider",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8510",
+            "name": "AC with tower shield",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8530",
+            "name": "Beta Strider",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8535",
+            "name": "Beta Strider eye",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8536",
+            "name": "Beta Strider drill column",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c8540",
+            "name": "AC5 Hanged Man",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c9000",
+            "name": "AC5 R2B Shchit",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c9201",
+            "name": "Minigun walker",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c9400",
+            "name": "Artillery Cannon",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c9401",
+            "name": "Artillery Heavy Cannon",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c9410",
+            "name": "Artillery Rifle Cannon",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c9411",
+            "name": "Artillery Heavy Rifle Cannon",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c9420",
+            "name": "Artillery Missile Launcher",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        },
+        {
+            "id": "c9431",
+            "name": "Artillery Gatling Cannon",
+            
+            "tags": [
+                "asset", "unused"
+            ]
+        }
+    ]
+}

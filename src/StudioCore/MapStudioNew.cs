@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Octokit;
 using SoapstoneLib;
 using SoulsFormats;
+using StudioCore.Assetdex;
 using StudioCore.Editor;
 using StudioCore.Graphics;
 using StudioCore.Help;
@@ -49,6 +50,8 @@ public class MapStudioNew
     private readonly string _programTitle;
     private readonly SettingsMenu _settingsMenu = new();
 
+    private AssetdexCore _assetdex;
+
     private readonly SoapstoneService _soapstoneService;
     private readonly string _version;
 
@@ -92,8 +95,10 @@ public class MapStudioNew
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
         _assetLocator = new AssetLocator();
-        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator);
-        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator);
+        _assetdex = new AssetdexCore();
+
+        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator, _assetdex);
+        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator, _assetdex);
         ParamEditorScreen paramEditor = new(_context.Window, _context.Device, _assetLocator);
         TextEditorScreen textEditor = new(_context.Window, _context.Device, _assetLocator);
         _editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor };

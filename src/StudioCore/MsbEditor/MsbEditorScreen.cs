@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Assetdex;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.Platform;
@@ -24,11 +25,13 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     private const int RECENT_FILES_MAX = 32;
 
     private static readonly object _lock_PauseUpdate = new();
-    private readonly Selection _selection = new();
+    private Selection _selection = new();
 
     public readonly AssetLocator AssetLocator;
 
     private IModal _activeModal;
+
+    private AssetdexCore _assetdex;
 
     private int _createEntityMapIndex;
     private (string, ObjectContainer) _dupeSelectionTargetedMap = ("None", null);
@@ -43,6 +46,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public bool CtrlHeld;
     public DisplayGroupsEditor DispGroupEditor;
+    public MsbAssetBrowser AssetBrowser;
     public ActionManager EditorActionManager = new();
 
     private bool GCNeedsCollection;
@@ -66,7 +70,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
+    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AssetdexCore _assetdex)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
@@ -93,6 +97,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
+        AssetBrowser = new MsbAssetBrowser(RenderScene, _selection, EditorActionManager, AssetLocator, _assetdex, this);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -881,6 +886,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         ResourceManager.OnGuiDrawResourceList();
 
         DispGroupEditor.OnGui(Universe._dispGroupCount);
+        AssetBrowser.OnGui();
 
         if (_activeModal != null)
         {
@@ -992,6 +998,244 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         {
             Viewport.FrameBox(box);
         }
+    }
+
+    public void SetObjectModelForSelection(string modelName, string assetType, string assetMapId)
+    {
+        var actlist = new List<Action>();
+
+        var selected = _selection.GetFilteredSelection<Entity>();
+
+        foreach (var s in selected)
+        {
+            bool isValidObjectType = false;
+
+            if (assetType == "Chr")
+            {
+                switch (AssetLocator.Type)
+                {
+                    case GameType.DemonsSouls:
+                        if (s.WrappedObject is MSBD.Part.Enemy)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.DarkSoulsPTDE:
+                    case GameType.DarkSoulsRemastered:
+                        if (s.WrappedObject is MSB1.Part.Enemy)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.DarkSoulsIISOTFS:
+                        break;
+                    case GameType.DarkSoulsIII:
+                        if (s.WrappedObject is MSB3.Part.Enemy)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.Bloodborne:
+                        if (s.WrappedObject is MSBB.Part.Enemy)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.Sekiro:
+                        if (s.WrappedObject is MSBS.Part.Enemy)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.EldenRing:
+                        if (s.WrappedObject is MSBE.Part.Enemy)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.ArmoredCoreVI:
+                        if (s.WrappedObject is MSB_AC6.Part.Enemy)
+                            isValidObjectType = true;
+                        break;
+                    default:
+                        throw new ArgumentException("Selected entity type must be Enemy");
+                }
+            }
+            if (assetType == "Obj")
+            {
+                switch (AssetLocator.Type)
+                {
+                    case GameType.DemonsSouls:
+                        if (s.WrappedObject is MSBD.Part.Object)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.DarkSoulsPTDE:
+                    case GameType.DarkSoulsRemastered:
+                        if (s.WrappedObject is MSB1.Part.Object)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.DarkSoulsIISOTFS:
+                        if (s.WrappedObject is MSB2.Part.Object)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.DarkSoulsIII:
+                        if (s.WrappedObject is MSB3.Part.Object)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.Bloodborne:
+                        if (s.WrappedObject is MSBB.Part.Object)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.Sekiro:
+                        if (s.WrappedObject is MSBS.Part.Object)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.EldenRing:
+                        if (s.WrappedObject is MSBE.Part.Asset)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.ArmoredCoreVI:
+                        if (s.WrappedObject is MSB_AC6.Part.Asset)
+                            isValidObjectType = true;
+                        break;
+                    default:
+                        throw new ArgumentException("Selected entity type must be Object/Asset");
+                }
+            }
+            if (assetType == "MapPiece")
+            {
+                switch (AssetLocator.Type)
+                {
+                    case GameType.DemonsSouls:
+                        if (s.WrappedObject is MSBD.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.DarkSoulsPTDE:
+                    case GameType.DarkSoulsRemastered:
+                        if (s.WrappedObject is MSB1.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.DarkSoulsIISOTFS:
+                        if (s.WrappedObject is MSB2.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.DarkSoulsIII:
+                        if (s.WrappedObject is MSB3.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.Bloodborne:
+                        if (s.WrappedObject is MSBB.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.Sekiro:
+                        if (s.WrappedObject is MSBS.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.EldenRing:
+                        if (s.WrappedObject is MSBE.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
+                    case GameType.ArmoredCoreVI:
+                        if (s.WrappedObject is MSB_AC6.Part.MapPiece)
+                            isValidObjectType = true;
+                        break;
+                    default:
+                        throw new ArgumentException("Selected entity type must be MapPiece");
+                }
+            }
+
+            if (assetType == "MapPiece")
+            {
+                string mapName = s.Parent.Name;
+                if (mapName != assetMapId)
+                {
+                    PlatformUtils.Instance.MessageBox($"Map Pieces are specific to each map.\nYou cannot change a Map Piece in {mapName} to a Map Piece from {assetMapId}.", "Object Browser", MessageBoxButtons.OK);
+
+                    isValidObjectType = false;
+                }
+            }
+
+            if (isValidObjectType)
+            {
+                // ModelName
+                actlist.Add(s.ChangeObjectProperty("ModelName", modelName));
+
+                // Name
+                if (CFG.Current.AssetBrowser_UpdateSelectionName)
+                {
+                    string name = GetUniqueNameString(modelName);
+                    s.Name = name;
+                    actlist.Add(s.ChangeObjectProperty("Name", name));
+                }
+
+                // Instance ID
+            }
+        }
+
+        if (actlist.Any())
+        {
+            var action = new CompoundAction(actlist);
+            EditorActionManager.ExecuteAction(action);
+        }
+    }
+
+    public string GetUniqueNameString(string modelName)
+    {
+        int postfix = 0;
+        string baseName = $"{modelName}_0000";
+
+        List<string> names = new List<string>();
+
+        // Collect names
+        foreach (var o in Universe.LoadedObjectContainers.Values)
+        {
+            if (o == null)
+            {
+                continue;
+            }
+            if (o is Map m)
+            {
+                foreach (var ob in m.Objects)
+                {
+                    if (ob is MapEntity e)
+                    {
+                        names.Add(ob.Name);
+                    }
+                }
+            }
+        }
+
+        bool validName = false;
+        while (!validName)
+        {
+            bool matchesName = false;
+
+            foreach (string name in names)
+            {
+                // Name already exists
+                if (name == baseName)
+                {
+                    // Increment postfix number by 1
+                    int old_value = postfix;
+                    postfix = postfix + 1;
+
+                    // Replace baseName postfix number
+                    baseName = baseName.Replace($"{PadNameString(old_value)}", $"{PadNameString(postfix)}");
+
+                    matchesName = true;
+                }
+            }
+
+            // If it does not match any name during 1 full iteration, then it must be valid
+            if (!matchesName)
+            {
+                validName = true;
+            }
+        }
+
+        return baseName;
+    }
+
+    public string PadNameString(int value)
+    {
+        if (value < 10)
+            return $"000{value}";
+
+        if (value >= 10 && value < 100)
+            return $"00{value}";
+
+        if (value >= 100 && value < 1000)
+            return $"0{value}";
+
+        return $"{value}";
     }
 
     private void GotoSelection()

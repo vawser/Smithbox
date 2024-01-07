@@ -1,0 +1,6148 @@
+{
+    "list": [
+        {
+			"id": "HD_M_1000",
+			"name": "Dragon Head",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_1001",
+			"name": "Dragon Body",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_1002",
+			"name": "Dragon Arms",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_1003",
+			"name": "Dragon Legs",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_1900",
+			"name": "Fallen Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_1900",
+			"name": "Fallen Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_1900",
+			"name": "Fallen Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_1900",
+			"name": "Fallen Knight Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_1950",
+			"name": "Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_1950",
+			"name": "Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_1950",
+			"name": "Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_1950",
+			"name": "Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2000",
+			"name": "Vilhelm's Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2000",
+			"name": "Vilhelm's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2000",
+			"name": "Vilhelm's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2000",
+			"name": "Vilhelm's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2100",
+			"name": "Firelink Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2100",
+			"name": "Firelink Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2100",
+			"name": "Firelink Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2100",
+			"name": "Firelink Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2150",
+			"name": "Sellsword Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2150",
+			"name": "Sellsword Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2150",
+			"name": "Sellsword Gauntlet",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2150",
+			"name": "Sellsword Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2200",
+			"name": "Herald Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2200",
+			"name": "Herald Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2200",
+			"name": "Herald Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2200",
+			"name": "Herald Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2250",
+			"name": "Sunless Veil",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2250",
+			"name": "Sunless Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2250",
+			"name": "Sunless Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2250",
+			"name": "Sunless Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2300",
+			"name": "Black Hand Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2300",
+			"name": "Black Hand Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2300",
+			"name": "Assassin Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2300",
+			"name": "Assassin Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2310",
+			"name": "Assassin Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2310",
+			"name": "Assassin Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2350",
+			"name": "Xanthous Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2350",
+			"name": "Xanthous Overcoat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2350",
+			"name": "Xanthous Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2350",
+			"name": "Xanthous Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2400",
+			"name": "Northern Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2400",
+			"name": "Northern Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2400",
+			"name": "Northern Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2400",
+			"name": "Northern Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2450",
+			"name": "Morne's Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2450",
+			"name": "Morne's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2450",
+			"name": "Morne's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2450",
+			"name": "Morne's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2500",
+			"name": "Silver Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2500",
+			"name": "Leonhard's Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2500",
+			"name": "Leonhard's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2500",
+			"name": "Leonhard's Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2550",
+			"name": "Sneering Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2550",
+			"name": "Pale Shade Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2550",
+			"name": "Pale Shade Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2550",
+			"name": "Pale Shade Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2600",
+			"name": "Sunset Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2600",
+			"name": "Sunset Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2600",
+			"name": "Sunset Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2600",
+			"name": "Sunset Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2650",
+			"name": "Old Sage's Blindfold",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2650",
+			"name": "Cornyx's Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2650",
+			"name": "Cornyx's Wrap",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2650",
+			"name": "Cornyx's Skirt",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2700",
+			"name": "Executioner Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2700",
+			"name": "Executioner Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2700",
+			"name": "Executioner Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2700",
+			"name": "Executioner Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2750",
+			"name": "Billed Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2750",
+			"name": "Black Dress",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2750",
+			"name": "Black Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2750",
+			"name": "Black Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2800",
+			"name": "Pyromancer Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2800",
+			"name": "Pyromancer Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2800",
+			"name": "Pyromancer Wrap",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2800",
+			"name": "Pyromancer Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2850",
+			"name": "Antiquated Plain Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2850",
+			"name": "Violet Wrappings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2850",
+			"name": "Loincloth",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2900",
+			"name": "Court Sorcerer Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2900",
+			"name": "Court Sorcerer Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2900",
+			"name": "Court Sorcerer Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2900",
+			"name": "Court Sorcerer Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_2950",
+			"name": "Shira's Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_2950",
+			"name": "Shira's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_2950",
+			"name": "Shira's Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_2950",
+			"name": "Shira's Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_3000",
+			"name": "Sorcerer Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_3000",
+			"name": "Sorcerer Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_3000",
+			"name": "Sorcerer Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_3000",
+			"name": "Sorcerer Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_3010",
+			"name": "Clandestine Coat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_3100",
+			"name": "Cleric Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_3100",
+			"name": "Cleric Blue Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_3100",
+			"name": "Cleric Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_3100",
+			"name": "Cleric Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_3200",
+			"name": "Lapp's Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_3200",
+			"name": "Lapp's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_3200",
+			"name": "Lapp's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_3200",
+			"name": "Lapp's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_3300",
+			"name": "Grotto Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_3300",
+			"name": "Grotto Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_3300",
+			"name": "Grotto Wrap",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_3300",
+			"name": "Grotto Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4000",
+			"name": "Steel Soldier Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4000",
+			"name": "Deserter Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_4000",
+			"name": "Deserter Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4020",
+			"name": "Thief Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4300",
+			"name": "Sage's Big Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4400",
+			"name": "Aristocrat's Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4400",
+			"name": "Jailer Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_4400",
+			"name": "Jailer Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_4400",
+			"name": "Jailer Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4450",
+			"name": "Saint's Veil",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4450",
+			"name": "Saint's Dress",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4500",
+			"name": "Footman's Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4500",
+			"name": "Footman's Overcoat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_4500",
+			"name": "Footman's Bracelet",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_4500",
+			"name": "Footman's Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4600",
+			"name": "Grave Warden Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4600",
+			"name": "Grave Warden Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_4600",
+			"name": "Grave Warden Wrap",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_4600",
+			"name": "Grave Warden Skirt",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4700",
+			"name": "Worker Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4700",
+			"name": "Worker Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_4700",
+			"name": "Worker Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_4700",
+			"name": "Worker Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4750",
+			"name": "Thrall Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4800",
+			"name": "Evangelist Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4800",
+			"name": "Evangelist Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_4800",
+			"name": "Evangelist Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_4800",
+			"name": "Evangelist Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4850",
+			"name": "Scholar's Shed Skin",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4850",
+			"name": "Scholar's Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_4900",
+			"name": "Winged Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_4900",
+			"name": "Winged Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_4900",
+			"name": "Winged Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_4900",
+			"name": "Winged Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5050",
+			"name": "Cathedral Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5050",
+			"name": "Cathedral Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5050",
+			"name": "Cathedral Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5050",
+			"name": "Cathedral Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5200",
+			"name": "Lothric Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5200",
+			"name": "Lothric Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5200",
+			"name": "Lothric Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5200",
+			"name": "Lothric Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5300",
+			"name": "Outrider Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5300",
+			"name": "Outrider Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5300",
+			"name": "Outrider Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5300",
+			"name": "Outrider Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5400",
+			"name": "Black Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5400",
+			"name": "Black Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5400",
+			"name": "Black Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5400",
+			"name": "Black Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5450",
+			"name": "Dark Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5450",
+			"name": "Dark Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5450",
+			"name": "Dark Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5450",
+			"name": "Dark Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5500",
+			"name": "Exile Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5500",
+			"name": "Exile Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5500",
+			"name": "Exile Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5500",
+			"name": "Exile Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5550",
+			"name": "Slave Knight Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5550",
+			"name": "Slave Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5550",
+			"name": "Slave Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5550",
+			"name": "Slave Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5600",
+			"name": "Pontiff Knight Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5600",
+			"name": "Pontiff Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5600",
+			"name": "Pontiff Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5600",
+			"name": "Pontiff Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5650",
+			"name": "Ordained Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5650",
+			"name": "Ordained Dress",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5650",
+			"name": "Ordained Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5700",
+			"name": "Golden Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5700",
+			"name": "Dragonscale Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5700",
+			"name": "Golden Bracelets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5700",
+			"name": "Dragonscale Waistcloth",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5750",
+			"name": "Wolnir's Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5800",
+			"name": "Undead Legion Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5800",
+			"name": "Undead Legion Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5800",
+			"name": "Undead Legion Gauntlet",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5800",
+			"name": "Undead Legion Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5850",
+			"name": "Follower Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5850",
+			"name": "Follower Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_5850",
+			"name": "Follower Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_5850",
+			"name": "Follower Boots",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_5950",
+			"name": "Man Serpent's Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_5950",
+			"name": "Man Serpent's Robes",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6000",
+			"name": "Fire Witch Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6000",
+			"name": "Fire Witch Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6000",
+			"name": "Fire Witch Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6000",
+			"name": "Fire Witch Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6050",
+			"name": "Millwood Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6050",
+			"name": "Millwood Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6050",
+			"name": "Millwood Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6050",
+			"name": "Millwood Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6100",
+			"name": "Lorian's Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6100",
+			"name": "Lorian's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6100",
+			"name": "Lorian's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6100",
+			"name": "Lorian's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6150",
+			"name": "Hood of Prayer",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6150",
+			"name": "Robe of Prayer",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6150",
+			"name": "Skirt of Prayer",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6200",
+			"name": "Giant's Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6200",
+			"name": "Giant's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6200",
+			"name": "Giant's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6200",
+			"name": "Giant's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6300",
+			"name": "Dancer's Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6300",
+			"name": "Dancer's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6300",
+			"name": "Dancer's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6300",
+			"name": "Dancer's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6350",
+			"name": "Ringed Knight Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6350",
+			"name": "Ringed Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6350",
+			"name": "Ringed Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6350",
+			"name": "Ringed Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6400",
+			"name": "Gundyr's Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6400",
+			"name": "Gundyr's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6400",
+			"name": "Gundyr's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6400",
+			"name": "Gundyr's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6450",
+			"name": "Harald Legion Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6450",
+			"name": "Harald Legion Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6450",
+			"name": "Harald Legion Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6600",
+			"name": "Archdeacon White Crown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6600",
+			"name": "Archdeacon Holy Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6600",
+			"name": "Archdeacon Skirt",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6650",
+			"name": "Deacon Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6650",
+			"name": "Deacon Skirt",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6750",
+			"name": "Iron Dragonslayer Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6750",
+			"name": "Iron Dragonslayer Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6750",
+			"name": "Iron Dragonslayer Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6750",
+			"name": "Iron Dragonslayer Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6800",
+			"name": "Dingy Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_6800",
+			"name": "Fire Keeper Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_6800",
+			"name": "Fire Keeper Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_6800",
+			"name": "Fire Keeper Skirt",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_6850",
+			"name": "White Preacher Head",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7000",
+			"name": "Chain Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7000",
+			"name": "Chain Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7000",
+			"name": "Leather Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7000",
+			"name": "Chain Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7100",
+			"name": "Nameless Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7100",
+			"name": "Nameless Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7100",
+			"name": "Nameless Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7100",
+			"name": "Nameless Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7200",
+			"name": "Elite Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7200",
+			"name": "Elite Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7200",
+			"name": "Elite Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7200",
+			"name": "Elite Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7300",
+			"name": "Faraam Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7300",
+			"name": "Faraam Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7300",
+			"name": "Faraam Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7300",
+			"name": "Faraam Boots",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7400",
+			"name": "Catarina Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7400",
+			"name": "Catarina Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7400",
+			"name": "Catarina Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7400",
+			"name": "Catarina Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7450",
+			"name": "Standard Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7450",
+			"name": "Hard Leather Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7450",
+			"name": "Hard Leather Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7450",
+			"name": "Hard Leather Boots",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7500",
+			"name": "Havel's Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7500",
+			"name": "Havel's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7500",
+			"name": "Havel's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7500",
+			"name": "Havel's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7550",
+			"name": "Brigand Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7550",
+			"name": "Brigand Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7550",
+			"name": "Brigand Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7550",
+			"name": "Brigand Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7600",
+			"name": "Pharis's Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7600",
+			"name": "Leather Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7600",
+			"name": "Leather Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7600",
+			"name": "Leather Boots",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7650",
+			"name": "Ragged Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7650",
+			"name": "Master's Attire",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7650",
+			"name": "Master's Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7650",
+			"name": "Loincloth",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7700",
+			"name": "Old Sorcerer Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7700",
+			"name": "Old Sorcerer Coat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7700",
+			"name": "Old Sorcerer Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7700",
+			"name": "Old Sorcerer Boots",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7750",
+			"name": "Conjurator Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7750",
+			"name": "Conjurator Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7750",
+			"name": "Conjurator Manchettes",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7750",
+			"name": "Conjurator Boots",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7800",
+			"name": "Black Leather Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7800",
+			"name": "Black Leather Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7800",
+			"name": "Black Leather Boots",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7850",
+			"name": "Symbol of Avarice",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7900",
+			"name": "Creighton's Steel Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7900",
+			"name": "Mirrah Chain Mail",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7900",
+			"name": "Mirrah Chain Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7900",
+			"name": "Mirrah Chain Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_7950",
+			"name": "Maiden Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_7950",
+			"name": "Maiden Robe",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_7950",
+			"name": "Maiden Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_7950",
+			"name": "Maiden Skirt",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8000",
+			"name": "Alva Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8000",
+			"name": "Alva Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8000",
+			"name": "Alva Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8000",
+			"name": "Alva Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8050",
+			"name": "Ruin Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8050",
+			"name": "Ruin Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8050",
+			"name": "Ruin Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8050",
+			"name": "Ruin Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8100",
+			"name": "Shadow Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8100",
+			"name": "Shadow Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8100",
+			"name": "Shadow Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8100",
+			"name": "Shadow Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8150",
+			"name": "Desert Pyromancer Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8150",
+			"name": "Desert Pyromancer Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8150",
+			"name": "Desert Pyromancer Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8150",
+			"name": "Desert Pyromancer Skirt",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8200",
+			"name": "Eastern Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8200",
+			"name": "Eastern Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8200",
+			"name": "Eastern Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8200",
+			"name": "Eastern Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8250",
+			"name": "Black Witch Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8250",
+			"name": "Black Witch Garb",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8250",
+			"name": "Black Witch Wrappings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8250",
+			"name": "Black Witch Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8300",
+			"name": "Helm of Favor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8300",
+			"name": "Embraced Armor of Favor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8300",
+			"name": "Gauntlets of Favor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8300",
+			"name": "Leggings of Favor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8350",
+			"name": "Black Witch Veil",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8400",
+			"name": "Brass Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8400",
+			"name": "Brass Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8400",
+			"name": "Brass Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8400",
+			"name": "Brass Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8450",
+			"name": "Blindfold Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8500",
+			"name": "Silver Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8500",
+			"name": "Silver Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8500",
+			"name": "Silver Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8500",
+			"name": "Silver Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8600",
+			"name": "Lucatiel's Mask",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8600",
+			"name": "Mirrah Vest",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8600",
+			"name": "Mirrah Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8600",
+			"name": "Mirrah Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8700",
+			"name": "Iron Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8700",
+			"name": "Armor of the Sun",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8700",
+			"name": "Iron Bracelets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8700",
+			"name": "Iron Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_8800",
+			"name": "Drakeblood Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8800",
+			"name": "Drakeblood Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8800",
+			"name": "Drakeblood Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8800",
+			"name": "Drakeblood Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_8900",
+			"name": "Drang Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_8900",
+			"name": "Drang Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_8900",
+			"name": "Drang Shoes",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9000",
+			"name": "Black Iron Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9000",
+			"name": "Black Iron Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9000",
+			"name": "Black Iron Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9000",
+			"name": "Black Iron Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9100",
+			"name": "Painting Guardian Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9100",
+			"name": "Painting Guardian Gown",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9100",
+			"name": "Painting Guardian Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9100",
+			"name": "Painting Guardian Waistcloth",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9200",
+			"name": "Wolf Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9200",
+			"name": "Wolf Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9200",
+			"name": "Wolf Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9200",
+			"name": "Wolf Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9300",
+			"name": "Dragonslayer Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9300",
+			"name": "Dragonslayer Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9300",
+			"name": "Dragonslayer Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9300",
+			"name": "Dragonslayer Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9400",
+			"name": "Smough's Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9400",
+			"name": "Smough's Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9400",
+			"name": "Smough's Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9400",
+			"name": "Smough's Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9500",
+			"name": "Hexer's Hood",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9500",
+			"name": "Hexer's Robes",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9500",
+			"name": "Hexer's Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9500",
+			"name": "Hexer's Boots",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9600",
+			"name": "Helm of Thorns",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9600",
+			"name": "Armor of Thorns",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9600",
+			"name": "Gauntlets of Thorns",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9600",
+			"name": "Leggings of Thorns",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9700",
+			"name": "Varangian Helmet",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9700",
+			"name": "Varangian Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9700",
+			"name": "Varangian Cuffs",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9700",
+			"name": "Varangian Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9800",
+			"name": "Crown of Dusk",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9800",
+			"name": "Antiquated Dress",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9800",
+			"name": "Antiquated Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9800",
+			"name": "Antiquated Skirt",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9900",
+			"name": "Karla's Pointed Hat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9900",
+			"name": "Karla's Coat",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9900",
+			"name": "Karla's Gloves",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9900",
+			"name": "Karla's Trousers",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "HD_M_9901",
+			"name": "Burial Knight Helm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "BD_M_9901",
+			"name": "Burial Knight Armor",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "AM_M_9901",
+			"name": "Burial Knight Gauntlets",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "LG_M_9901",
+			"name": "Burial Knight Leggings",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "WP_A_0100",
+			"name": "Dagger",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0101",
+			"name": "Bandit's Knife",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0102",
+			"name": "Parrying Dagger",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0103",
+			"name": "Engraved Dagger",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0104",
+			"name": "Rotten Ghru Dagger",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0106",
+			"name": "Harpe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0107",
+			"name": "Scholar's Candlestick",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0108",
+			"name": "Tailbone Short Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0109",
+			"name": "Corvian Greatknife",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0112",
+			"name": "Handmaid's Dagger",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0114",
+			"name": "Aquamarine Dagger",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0115",
+			"name": "Murky Hand Scythe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0200",
+			"name": "Shortsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0201",
+			"name": "Longsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0202",
+			"name": "Broadsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0203",
+			"name": "Broken Straight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0206",
+			"name": "Lothric Knight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0211",
+			"name": "Sunlight Straight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0212",
+			"name": "Rotten Ghru Curved Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0214",
+			"name": "Irithyll Straight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0215",
+			"name": "Lothric Candlestick",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0216",
+			"name": "Cleric's Candlestick",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0218",
+			"name": "Morion Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0220",
+			"name": "Astora Straight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0221",
+			"name": "Barbed Straight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0222",
+			"name": "Executioner's Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0223",
+			"name": "Anri's Straight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0224",
+			"name": "Onyx Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0225",
+			"name": "Ringed Knight Straight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0226",
+			"name": "Gael's Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0227",
+			"name": "Sword of Avowal",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0300",
+			"name": "Estoc",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0301",
+			"name": "Mail Breaker",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0302",
+			"name": "Rapier",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0303",
+			"name": "Ricard's Rapier",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0304",
+			"name": "Crystal Sage's Rapier",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0305",
+			"name": "Irithyll Rapier",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0306",
+			"name": "Bone Rapier",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0401",
+			"name": "Shotel",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0403",
+			"name": "Scimitar",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0404",
+			"name": "Falchion",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0405",
+			"name": "Carthus Curved Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0406",
+			"name": "Carthus Curved Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0407",
+			"name": "Pontiff Knight Curved Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0408",
+			"name": "Storm Curved Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0409",
+			"name": "Painting Guardian's Curved Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0410",
+			"name": "Crescent Moon Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0411",
+			"name": "Carthus Shotel",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0412",
+			"name": "Follower Sabre",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0413",
+			"name": "Demon's Scar",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0500",
+			"name": "Uchigatana",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0501",
+			"name": "Washing Pole",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0502",
+			"name": "Chaos Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0503",
+			"name": "Black Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0504",
+			"name": "Bloodlust",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0505",
+			"name": "Darkdrift",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0506",
+			"name": "Frayed Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0600",
+			"name": "Bastard Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0601",
+			"name": "Smouldering Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0602",
+			"name": "Claymore",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0604",
+			"name": "Zweihander",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0605",
+			"name": "Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0606",
+			"name": "Irithyll Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0607",
+			"name": "Astora Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0608",
+			"name": "Murakumo",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0610",
+			"name": "Lothric Knight Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0613",
+			"name": "Black Knight Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0614",
+			"name": "Flamberge",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0615",
+			"name": "Exile Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0617",
+			"name": "Greatsword of Judgment",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0618",
+			"name": "Profaned Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0619",
+			"name": "Cathedral Knight Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0620",
+			"name": "Farron Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0623",
+			"name": "Yhorm's Great Machete",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0624",
+			"name": "Dark Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0625",
+			"name": "Black Knight Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0626",
+			"name": "Lorian's Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0627",
+			"name": "Twin Princes' Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0628",
+			"name": "Lothric's Holy Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0629",
+			"name": "Wolnir's Holy Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0630",
+			"name": "Wolf Knight's Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0631",
+			"name": "Hollowslayer Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0632",
+			"name": "Moonlight Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0633",
+			"name": "Drakeblood Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0634",
+			"name": "Firelink Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0635",
+			"name": "Fume Ultra Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0636",
+			"name": "Old Wolf Curved Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0637",
+			"name": "Storm Ruler",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0638",
+			"name": "Harald Curved Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0700",
+			"name": "Hand Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0701",
+			"name": "Battle Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0702",
+			"name": "Brigand Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0704",
+			"name": "Crescent Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0705",
+			"name": "Greataxe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0707",
+			"name": "Butcher Knife",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0708",
+			"name": "Dragonslayer's Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0709",
+			"name": "Missionary Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0710",
+			"name": "Thrall Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0711",
+			"name": "Dragonslayer Greataxe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0712",
+			"name": "Demon's Greataxe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0713",
+			"name": "Eleonora",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0715",
+			"name": "Man Serpent Hatchet",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0717",
+			"name": "Millwood Battle Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0718",
+			"name": "Earth Seeker",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0800",
+			"name": "Club",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0801",
+			"name": "Mace",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0802",
+			"name": "Morning Star",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0803",
+			"name": "Reinforced Club",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0806",
+			"name": "Large Club",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0808",
+			"name": "Great Club",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0811",
+			"name": "Great Mace",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0816",
+			"name": "Great Wooden Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0817",
+			"name": "Gargoyle Flame Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0818",
+			"name": "Vordt's Great Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0819",
+			"name": "Old King's Great Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0821",
+			"name": "Four Knights Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0822",
+			"name": "Heysel Pick",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0823",
+			"name": "Hammer of the Great Tree",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0824",
+			"name": "Warpick",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0825",
+			"name": "Pickaxe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0826",
+			"name": "Dragon Tooth",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0827",
+			"name": "Smough's Great Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0828",
+			"name": "Blacksmith Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0829",
+			"name": "Morne's Great Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0830",
+			"name": "Spiked Mace",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0831",
+			"name": "Quakestone Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0832",
+			"name": "Ledo's Great Hammer",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0900",
+			"name": "Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0901",
+			"name": "Winged Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0903",
+			"name": "Partizan",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0908",
+			"name": "Greatlance",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0909",
+			"name": "Lothric Knight Long Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0912",
+			"name": "Rotten Ghru Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0913",
+			"name": "Tailbone Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0914",
+			"name": "Soldering Iron",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0916",
+			"name": "Dragonslayer Swordspear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0917",
+			"name": "Arstor's Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0918",
+			"name": "Saint Bident",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0919",
+			"name": "Yorshka's Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0922",
+			"name": "Dragonslayer Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0923",
+			"name": "Follower Javelin",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0924",
+			"name": "Ringed Knight Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0925",
+			"name": "Lothric War Banner",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_0926",
+			"name": "Crucifix of the Mad King",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1001",
+			"name": "Lucerne",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1002",
+			"name": "Glaive",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1003",
+			"name": "Halberd",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1005",
+			"name": "Black Knight Greataxe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1007",
+			"name": "Pontiff Knight Great Scythe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1008",
+			"name": "Great Corvian Scythe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1009",
+			"name": "Winged Knight Halberd",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1010",
+			"name": "Gundyr's Halberd",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1011",
+			"name": "Lothric's Scythe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1012",
+			"name": "Ancient Dragon Halberd",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1014",
+			"name": "Red Hilted Halberd",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1015",
+			"name": "Black Knight Glaive",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1016",
+			"name": "Immolation Tinder",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1017",
+			"name": "Splitleaf Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1018",
+			"name": "Friede's Great Scythe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1101",
+			"name": "Caestus",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1102",
+			"name": "Manikin Claws",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1103",
+			"name": "Demon's Fist",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1104",
+			"name": "Dark Hand",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1105",
+			"name": "Crow Talons",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1107",
+			"name": "Censuring Palm",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1204",
+			"name": "Witch's Locks",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1205",
+			"name": "Notched Whip",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1206",
+			"name": "Spotted Whip",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1207",
+			"name": "Rose of Ariandel",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1305",
+			"name": "Talisman",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1306",
+			"name": "Sorcerer's Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1307",
+			"name": "Storyteller's Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1308",
+			"name": "Mendicant's Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1310",
+			"name": "Man-grub's Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1311",
+			"name": "Archdeacon's Great Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1312",
+			"name": "Golden Ritual Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1314",
+			"name": "Yorshka's Chime",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1316",
+			"name": "Sage's Crystal Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1317",
+			"name": "Heretic's Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1318",
+			"name": "Court Sorcerer's Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1319",
+			"name": "Witchtree Branch",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1320",
+			"name": "Izalith Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1321",
+			"name": "Cleric's Sacred Chime",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1322",
+			"name": "Priest's Chime",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1323",
+			"name": "Saint-tree Bellvine",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1324",
+			"name": "Caitha's Chime",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1325",
+			"name": "Crystal Chime",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1326",
+			"name": "Sunlight Talisman",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1327",
+			"name": "Canvas Talisman",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1328",
+			"name": "Sunless Talisman",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1329",
+			"name": "Saint's Talisman",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1330",
+			"name": "White Hair Talisman",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1340",
+			"name": "Pyromancy Flame",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1341",
+			"name": "Pyromancer's Parting Flame",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1342",
+			"name": "Murky Longstaff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1343",
+			"name": "Sacred Chime of Filianore",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1344",
+			"name": "Preacher's Right Arm",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1360",
+			"name": "Dragonslayer Greatbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1401",
+			"name": "Short Bow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1402",
+			"name": "Composite Bow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1404",
+			"name": "Birch Crossbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1405",
+			"name": "Arbalest",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1406",
+			"name": "Longbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1407",
+			"name": "Dragonrider Bow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1409",
+			"name": "Avelyn",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1410",
+			"name": "Knight's Crossbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1411",
+			"name": "Oak Crossbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1412",
+			"name": "White Birch Bow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1413",
+			"name": "Darkmoon Longbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1414",
+			"name": "Onislayer Greatbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1415",
+			"name": "Black Bow of Pharis",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1417",
+			"name": "Sniper Crossbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1418",
+			"name": "Millwood Greatbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1419",
+			"name": "Repeating Crossbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1602",
+			"name": "Warden Twinblades",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1603",
+			"name": "Winged Knight Twinaxes",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1604",
+			"name": "Dancer's Enchanted Swords",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1605",
+			"name": "Great Machete",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1606",
+			"name": "Brigand Twindaggers",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1607",
+			"name": "Gotthard Twinswords",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1608",
+			"name": "Golden Dual Swords",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1609",
+			"name": "Onikiri and Ubadachi",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1610",
+			"name": "Drang Twinspears",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1612",
+			"name": "Giant Door Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1613",
+			"name": "Drang Hammers",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1614",
+			"name": "Valorheart",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1615",
+			"name": "Crow Quills",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1616",
+			"name": "Ringed Knight Paired Greatswords",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2001",
+			"name": "Small Leather Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2003",
+			"name": "Round Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2004",
+			"name": "Large Leather Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2007",
+			"name": "Hawkwood's Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2008",
+			"name": "Iron Round Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2011",
+			"name": "Wooden Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2012",
+			"name": "Kite Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2013",
+			"name": "Ghru Rotshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2015",
+			"name": "Havel's Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2016",
+			"name": "Target Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2017",
+			"name": "Elkhorn Round Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2018",
+			"name": "Warrior's Round Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2019",
+			"name": "Caduceus Round Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2020",
+			"name": "Red and White Round Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2021",
+			"name": "Plank Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2022",
+			"name": "Leather Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2023",
+			"name": "Crimson Parma",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2024",
+			"name": "Eastern Iron Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2025",
+			"name": "Llewellyn Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2026",
+			"name": "Cleric's Parma",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2027",
+			"name": "Golden Falcon Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2028",
+			"name": "Sacred Bloom Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2029",
+			"name": "Ancient Dragon Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2030",
+			"name": "Follower Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2031",
+			"name": "Dragonhead Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2101",
+			"name": "Lothric Knight Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2104",
+			"name": "Knight Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2106",
+			"name": "Pontiff Knight Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2107",
+			"name": "Carthus Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2110",
+			"name": "Black Knight Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2111",
+			"name": "Prince's Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2112",
+			"name": "Silver Knight Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2113",
+			"name": "Spiked Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2114",
+			"name": "Pierce Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2115",
+			"name": "East-West Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2116",
+			"name": "Sunlight Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2117",
+			"name": "Crest Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2118",
+			"name": "Dragon Crest Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2119",
+			"name": "Spider Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2120",
+			"name": "Grass Crest Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2121",
+			"name": "Sunset Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2122",
+			"name": "Golden Wing Crest Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2123",
+			"name": "Blue Wooden Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2124",
+			"name": "Silver Eagle Kite Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2125",
+			"name": "Stone Parma",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2126",
+			"name": "Spirit Tree Crest Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2127",
+			"name": "Porcine Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2128",
+			"name": "Shield of Want",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2129",
+			"name": "Wargod Wooden Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2131",
+			"name": "Dragonhead Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2201",
+			"name": "Lothric Knight Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2202",
+			"name": "Cathedral Knight Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2204",
+			"name": "Dragonslayer Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2205",
+			"name": "Moaning Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2206",
+			"name": "Immortal Dragon Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2207",
+			"name": "Yhorm's Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2208",
+			"name": "Black Iron Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2209",
+			"name": "Wolf Knight's Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2210",
+			"name": "Twin Dragon Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2211",
+			"name": "Greatshield of Glory",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2212",
+			"name": "Curse Ward Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2213",
+			"name": "Bonewheel Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2214",
+			"name": "Stone Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2300",
+			"name": "Torch",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2301",
+			"name": "Follower Torch",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_6399",
+			"name": "[Debug] Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_6700",
+			"name": "[Debug] Bolt",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_9004",
+			"name": "[Debug] Daggers",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_9005",
+			"name": "[Debug] Twinswords",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_9006",
+			"name": "[Debug] Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1000",
+			"name": "No Correction",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1100",
+			"name": "Throwing Knife",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1200",
+			"name": "Church Guardian Shiv",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1300",
+			"name": "Poison Throwing Knife",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1400",
+			"name": "Firebomb",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1500",
+			"name": "Lightning Urn",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1600",
+			"name": "TestData4",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1700",
+			"name": "Black Firebomb",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1800",
+			"name": "Dung Pie",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_1900",
+			"name": "Twinkling Dragon Head Stone",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2000",
+			"name": "Twinkling Dragon Torso Stone",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_2100",
+			"name": "Spear Fragment",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4000",
+			"name": "Standard Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4001",
+			"name": "Fire Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4002",
+			"name": "Poison Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4003",
+			"name": "Large Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4004",
+			"name": "Feather Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4005",
+			"name": "Moonlight Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4006",
+			"name": "Wood Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4007",
+			"name": "Dark Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4020",
+			"name": "Dragonslayer Greatarrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4022",
+			"name": "Dragonslayer Lightning Arrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4023",
+			"name": "Onislayer Greatarrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4024",
+			"name": "Millwood Greatarrow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4040",
+			"name": "Standard Bolt",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4041",
+			"name": "Heavy Bolt",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4042",
+			"name": "Sniper Bolt",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4043",
+			"name": "Wood Bolt",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4044",
+			"name": "Lightning Bolt",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4045",
+			"name": "Splintering Bolt",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4046",
+			"name": "Exploding Bolt",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4099",
+			"name": "TestData Bolt1",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_4199",
+			"name": "TestData Bolt2",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_8000",
+			"name": "Test Greatbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_8900",
+			"name": "Test-Glow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3000",
+			"name": "Ghost Dagger",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3010",
+			"name": "Ghost Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3020",
+			"name": "Ghost Longsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3030",
+			"name": "Ghost Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3031",
+			"name": "Ghost Ultra Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3040",
+			"name": "Ghost Rapier",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3050",
+			"name": "Ghost Curved Sword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3060",
+			"name": "Ghost Saber",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3070",
+			"name": "Ghost Katana",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3080",
+			"name": "Ghost Curved Greatsword",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3090",
+			"name": "Ghost Axe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3100",
+			"name": "Ghost Greataxe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3110",
+			"name": "Ghost Club",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3120",
+			"name": "Ghost Greatclub",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3130",
+			"name": "Ghost Spear",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3140",
+			"name": "Ghost Halberd",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3150",
+			"name": "Ghost Scythe",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3160",
+			"name": "Ghost Staff",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3170",
+			"name": "Ghost Chime",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3180",
+			"name": "Ghost Pyromancy Flame",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3190",
+			"name": "Ghost Whip",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3200",
+			"name": "Ghost Bow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3210",
+			"name": "Ghost Greatbow",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3220",
+			"name": "Ghost Arbalet",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3230",
+			"name": "Ghost Fist",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3240",
+			"name": "Ghost Caestus",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3250",
+			"name": "Ghost Claw",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3260",
+			"name": "Ghost Twin Curved Swords",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3270",
+			"name": "Ghost Twin Axes",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3280",
+			"name": "Ghost Twin Daggers",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3290",
+			"name": "Ghost Twin SWords",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3300",
+			"name": "Ghost Twin Katanas",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3310",
+			"name": "Ghost Twin Spears",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3320",
+			"name": "Ghost Demon Fist",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3330",
+			"name": "Ghost Claw",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3340",
+			"name": "Ghost Twin Maces",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3360",
+			"name": "Ghost Small Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3370",
+			"name": "Ghost Shield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3380",
+			"name": "Ghost Greatshield",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "WP_A_3390",
+			"name": "Ghost Torch",
+			
+			"tags": [
+				"weapon"
+			]
+		}
+    ]
+}
