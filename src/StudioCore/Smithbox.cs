@@ -119,6 +119,7 @@ public class Smithbox
         MapAliasBank.SetAssetLocator(_assetLocator);
         ModelAliasBank.SetAssetLocator(_assetLocator);
         FxrAliasBank.SetAssetLocator(_assetLocator);
+        EventFlagAliasBank.SetAssetLocator(_assetLocator);
         ParamBank.PrimaryBank.SetAssetLocator(_assetLocator);
         ParamBank.VanillaBank.SetAssetLocator(_assetLocator);
         FMGBank.SetAssetLocator(_assetLocator);
@@ -412,9 +413,10 @@ public class Smithbox
         _assetLocator.SetFromProjectSettings(newsettings, moddir);
         _settingsMenu.ProjSettings = _projectSettings;
 
-        ModelAliasBank.ReloadModelAliases();
         MapAliasBank.ReloadMapAliases();
+        ModelAliasBank.ReloadModelAliases();
         FxrAliasBank.ReloadFxrAliases();
+        EventFlagAliasBank.ReloadEventFlagAliases();
         ParamBank.ReloadParams(newsettings, options);
         MtdBank.ReloadMtds();
 

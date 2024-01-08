@@ -423,6 +423,7 @@
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\ModelAliases\**" CopyToOutputDirectory="PreserveNewest" />
       <None Update="Assets\FxrAliases\**" CopyToOutputDirectory="PreserveNewest" />
+      <None Update="Assets\EventFlagAliases\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

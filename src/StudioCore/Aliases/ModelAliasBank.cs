@@ -26,6 +26,8 @@ public class ModelAliasBank
         }
     }
 
+    // TODO: add support for mod-local model aliases
+
     private static void LoadModelNames()
     {
         try
