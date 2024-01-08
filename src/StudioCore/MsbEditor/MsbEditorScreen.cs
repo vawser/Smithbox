@@ -926,25 +926,39 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Save()
     {
-        try
+        if (AssetLocator.Type == GameType.ArmoredCoreVI && FeatureFlags.AC6_MSB_Saving == false)
         {
-            Universe.SaveAllMaps();
+            TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }
-        catch (SavingFailedException e)
+        else
         {
-            HandleSaveException(e);
+            try
+            {
+                Universe.SaveAllMaps();
+            }
+            catch (SavingFailedException e)
+            {
+                HandleSaveException(e);
+            }
         }
     }
 
     public void SaveAll()
     {
-        try
+        if (AssetLocator.Type == GameType.ArmoredCoreVI && FeatureFlags.AC6_MSB_Saving == false)
         {
-            Universe.SaveAllMaps();
+            TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }
-        catch (SavingFailedException e)
+        else
         {
-            HandleSaveException(e);
+            try
+            {
+                Universe.SaveAllMaps();
+            }
+            catch (SavingFailedException e)
+            {
+                HandleSaveException(e);
+            }
         }
     }
 

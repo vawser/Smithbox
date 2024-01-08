@@ -1532,13 +1532,20 @@ public class Universe
 
     public void SaveAllMaps()
     {
-        foreach (KeyValuePair<string, ObjectContainer> m in LoadedObjectContainers)
+        if (_assetLocator.Type == GameType.ArmoredCoreVI && FeatureFlags.AC6_MSB_Saving == false)
         {
-            if (m.Value != null)
+            TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
+        }
+        else
+        {
+            foreach (KeyValuePair<string, ObjectContainer> m in LoadedObjectContainers)
             {
-                if (m.Value is Map ma)
+                if (m.Value != null)
                 {
-                    SaveMap(ma);
+                    if (m.Value is Map ma)
+                    {
+                        SaveMap(ma);
+                    }
                 }
             }
         }

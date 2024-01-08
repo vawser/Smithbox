@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Gui;
@@ -766,7 +767,14 @@ public class SceneTree : IActionEventHandler
                         {
                             try
                             {
-                                _universe.SaveMap(m);
+                                if (_assetLocator.Type == GameType.ArmoredCoreVI && FeatureFlags.AC6_MSB_Saving == false)
+                                {
+                                    TaskLogs.AddLog("AC6 Map saving has been disabled", LogLevel.Warning, TaskLogs.LogPriority.Normal);
+                                }
+                                else
+                                {
+                                    _universe.SaveMap(m);
+                                }
                             }
                             catch (SavingFailedException e)
                             {
