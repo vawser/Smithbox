@@ -724,7 +724,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         _renderablesSet.cSceneVis[_renderable]._drawGroup = _drawgroups;
 
         // Build mesh for selection outline
-        if (_renderOutline)
+        if (_renderOutline && CFG.Current.Map_EnableSelectionOutline)
         {
             pipelineDescription.RasterizerState = new RasterizerStateDescription(
                 _meshProvider.SelectedUseBackface

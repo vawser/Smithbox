@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Octokit;
 using SoapstoneLib;
 using SoulsFormats;
+using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Graphics;
@@ -49,7 +50,6 @@ public class Smithbox
 
     // Assets
     private readonly AssetLocator _assetLocator;
-    private readonly AssetdexMain _assetdex;
 
     // Editors
     private readonly List<EditorScreen> _editors;
@@ -100,10 +100,9 @@ public class Smithbox
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
         _assetLocator = new AssetLocator();
-        _assetdex = new AssetdexMain();
 
-        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator, _assetdex);
-        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator, _assetdex);
+        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator);
+        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator);
         ParamEditorScreen paramEditor = new(_context.Window, _context.Device, _assetLocator);
         TextEditorScreen textEditor = new(_context.Window, _context.Device, _assetLocator);
         _editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor };
@@ -118,7 +117,8 @@ public class Smithbox
 
         _helpBrowser = new HelpBrowser("HelpBrowser", _assetLocator);
 
-        AliasBank.SetAssetLocator(_assetLocator);
+        MapAliasBank.SetAssetLocator(_assetLocator);
+        ModelAliasBank.SetAssetLocator(_assetLocator);
         ParamBank.PrimaryBank.SetAssetLocator(_assetLocator);
         ParamBank.VanillaBank.SetAssetLocator(_assetLocator);
         FMGBank.SetAssetLocator(_assetLocator);
@@ -412,7 +412,8 @@ public class Smithbox
         _assetLocator.SetFromProjectSettings(newsettings, moddir);
         _settingsMenu.ProjSettings = _projectSettings;
 
-        AliasBank.ReloadAliases();
+        ModelAliasBank.ReloadModelAliases();
+        MapAliasBank.ReloadMapAliases();
         ParamBank.ReloadParams(newsettings, options);
         MtdBank.ReloadMtds();
 

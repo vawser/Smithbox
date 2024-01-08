@@ -60,10 +60,10 @@ public class CFG
     public Vector3 GFX_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
     public int Map_ViewportGrid_TotalSize = 1000;
     public int Map_ViewportGrid_IncrementSize = 10;
-
     public float Map_ViewportGrid_Offset = 0;
-
     public float Map_ViewportGrid_ShortcutIncrement = 1;
+
+    public bool Map_EnableSelectionOutline = true;
 
     public float Map_MoveSelectionToCamera_Radius = 3.0f;
     public float GFX_Camera_FOV { get; set; } = 60.0f;

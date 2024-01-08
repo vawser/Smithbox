@@ -33,8 +33,6 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private IModal _activeModal;
 
-    private AssetdexMain _assetdex;
-
     private int _createEntityMapIndex;
     private (string, ObjectContainer) _dupeSelectionTargetedMap = ("None", null);
     private (string, Entity) _dupeSelectionTargetedParent = ("None", null);
@@ -72,7 +70,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AssetdexMain _assetdex)
+    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
@@ -99,7 +97,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
-        AssetBrowser = new MsbAssetBrowser(RenderScene, _selection, EditorActionManager, AssetLocator, _assetdex, this, Viewport);
+        AssetBrowser = new MsbAssetBrowser(RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }

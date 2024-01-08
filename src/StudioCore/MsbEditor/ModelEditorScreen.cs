@@ -25,7 +25,6 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     IResourceEventListener
 {
     private ModelAssetBrowser _assetBrowser;
-    private AssetdexMain _assetdex;
 
     private readonly PropertyEditor _propEditor;
     private readonly PropertyCache _propCache = new();
@@ -52,13 +51,12 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AssetdexMain assetdex)
+    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
         ResourceManager.Locator = AssetLocator;
         Window = window;
-        _assetdex = assetdex;
 
         if (device != null)
         {
@@ -76,7 +74,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         _sceneTree = new SceneTree(SceneTree.Configuration.ModelEditor, this, "modeledittree", _universe,
             _selection, EditorActionManager, Viewport, AssetLocator);
         _propEditor = new PropertyEditor(EditorActionManager, _propCache);
-        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", AssetLocator, _assetdex);
+        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", AssetLocator);
     }
 
     public void OnInstantiateChr(string chrid)

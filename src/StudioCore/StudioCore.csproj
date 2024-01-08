@@ -416,12 +416,12 @@
 
   <ItemGroup>
     <None Update="Assets\Paramdex\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Aliases\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\MapAliases\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\MassEditScripts\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\GameOffsets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Upgrader\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\Assetdex\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\ModelAliases\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

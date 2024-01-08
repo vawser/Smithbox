@@ -1,4 +1,5 @@
-﻿using StudioCore.Settings;
+﻿using StudioCore.Aliases;
+using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +15,7 @@ namespace StudioCore.JSON.Assetdex
     /// </summary>
     public class AssetdexMain
     {
-        private Dictionary<GameType, AssetdexContainer> assetContainers = new Dictionary<GameType, AssetdexContainer>();
+        private Dictionary<GameType, ModelAliasContainer> assetContainers = new Dictionary<GameType, ModelAliasContainer>();
 
         public AssetdexMain()
         {
@@ -30,51 +31,51 @@ namespace StudioCore.JSON.Assetdex
             assetContainers.Add(GameType.ArmoredCoreVI, BuildAssetContainer("AC6"));
         }
 
-        private AssetdexContainer BuildAssetContainer(string gametype)
+        private ModelAliasContainer BuildAssetContainer(string gametype)
         {
-            var container = new AssetdexContainer(gametype);
+            var container = new ModelAliasContainer(gametype);
 
             return container;
         }
 
-        public Dictionary<string, AssetdexReference> GetChrEntriesForGametype(GameType gametype)
+        public Dictionary<string, ModelAliasReference> GetChrEntriesForGametype(GameType gametype)
         {
-            var dict = new Dictionary<string, AssetdexReference>();
+            var dict = new Dictionary<string, ModelAliasReference>();
 
-            foreach (AssetdexReference entry in assetContainers[gametype].GetChrEntries())
+            foreach (ModelAliasReference entry in assetContainers[gametype].GetChrEntries())
                 if (!dict.ContainsKey(entry.id.ToLower()))
                     dict.Add(entry.id.ToLower(), entry);
 
             return dict;
         }
 
-        public Dictionary<string, AssetdexReference> GetObjEntriesForGametype(GameType gametype)
+        public Dictionary<string, ModelAliasReference> GetObjEntriesForGametype(GameType gametype)
         {
-            var dict = new Dictionary<string, AssetdexReference>();
+            var dict = new Dictionary<string, ModelAliasReference>();
 
-            foreach (AssetdexReference entry in assetContainers[gametype].GetObjEntries())
+            foreach (ModelAliasReference entry in assetContainers[gametype].GetObjEntries())
                 if (!dict.ContainsKey(entry.id.ToLower()))
                     dict.Add(entry.id.ToLower(), entry);
 
             return dict;
         }
 
-        public Dictionary<string, AssetdexReference> GetPartEntriesForGametype(GameType gametype)
+        public Dictionary<string, ModelAliasReference> GetPartEntriesForGametype(GameType gametype)
         {
-            var dict = new Dictionary<string, AssetdexReference>();
+            var dict = new Dictionary<string, ModelAliasReference>();
 
-            foreach (AssetdexReference entry in assetContainers[gametype].GetPartEntries())
+            foreach (ModelAliasReference entry in assetContainers[gametype].GetPartEntries())
                 if (!dict.ContainsKey(entry.id.ToLower()))
                     dict.Add(entry.id.ToLower(), entry);
 
             return dict;
         }
 
-        public Dictionary<string, AssetdexReference> GetMapPieceEntriesForGametype(GameType gametype)
+        public Dictionary<string, ModelAliasReference> GetMapPieceEntriesForGametype(GameType gametype)
         {
-            var dict = new Dictionary<string, AssetdexReference>();
+            var dict = new Dictionary<string, ModelAliasReference>();
 
-            foreach (AssetdexReference entry in assetContainers[gametype].GetMapPieceEntries())
+            foreach (ModelAliasReference entry in assetContainers[gametype].GetMapPieceEntries())
                 if (!dict.ContainsKey(entry.id.ToLower()))
                     dict.Add(entry.id.ToLower(), entry);
 

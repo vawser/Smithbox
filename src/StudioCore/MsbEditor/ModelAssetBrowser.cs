@@ -6,6 +6,7 @@ using System.Text;
 using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using SoulsFormats.KF4;
+using StudioCore.Aliases;
 using StudioCore.JSON.Assetdex;
 using StudioCore.Platform;
 using StudioCore.Settings;
@@ -42,14 +43,11 @@ namespace StudioCore.MsbEditor
         private string _searchStrInput = "";
         private string _searchStrInputCache = "";
 
-        private AssetdexMain _assetdex;
-
-        public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator, AssetdexMain assetdex)
+        public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator)
         {
             _id = id;
             _assetLocator = locator;
             _handler = handler;
-            _assetdex = assetdex;
         }
 
         public void OnProjectChanged()
@@ -77,6 +75,12 @@ namespace StudioCore.MsbEditor
 
         public void Display()
         {
+            if (_assetLocator.Type == GameType.Undefined)
+                return;
+
+            if (ModelAliasBank._loadedModelAliasBank == null)
+                return;
+
             if (ImGui.Begin($@"Asset Browser##{_id}"))
             {
                 ImGui.Columns(2);
@@ -100,10 +104,10 @@ namespace StudioCore.MsbEditor
 
                 ImGui.BeginChild("AssetList");
 
-                DisplayAssetSelectionList("Chr", _assetdex.GetChrEntriesForGametype(_assetLocator.Type));
-                DisplayAssetSelectionList("Obj", _assetdex.GetObjEntriesForGametype(_assetLocator.Type));
-                DisplayAssetSelectionList("Parts", _assetdex.GetPartEntriesForGametype(_assetLocator.Type));
-                DisplayMapAssetSelectionList("MapPiece", _assetdex.GetMapPieceEntriesForGametype(_assetLocator.Type));
+                DisplayAssetSelectionList("Chr", ModelAliasBank._loadedModelAliasBank.GetChrEntries());
+                DisplayAssetSelectionList("Obj", ModelAliasBank._loadedModelAliasBank.GetObjEntries());
+                DisplayAssetSelectionList("Parts", ModelAliasBank._loadedModelAliasBank.GetPartEntries());
+                DisplayMapAssetSelectionList("MapPiece", ModelAliasBank._loadedModelAliasBank.GetMapPieceEntries());
 
                 ImGui.EndChild();
                 ImGui.EndChild();
@@ -140,9 +144,9 @@ namespace StudioCore.MsbEditor
             {
                 string labelName = mapId;
 
-                if (Editor.AliasBank.MapNames.ContainsKey(mapId))
+                if (MapAliasBank.MapNames.ContainsKey(mapId))
                 {
-                    labelName = labelName + $" <{Editor.AliasBank.MapNames[mapId]}>";
+                    labelName = labelName + $" <{MapAliasBank.MapNames[mapId]}>";
                 }
 
                 if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
@@ -167,8 +171,15 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Chr, Obj/AEG and Parts.
         /// </summary>
-        private void DisplayAssetSelectionList(string assetType, Dictionary<string, AssetdexReference> assetDict)
+        private void DisplayAssetSelectionList(string assetType, List<ModelAliasReference> referenceList)
         {
+            Dictionary<string, ModelAliasReference> referenceDict = new Dictionary<string, ModelAliasReference>();
+
+            foreach (ModelAliasReference v in referenceList)
+            {
+                referenceDict.Add(v.id, v);
+            }
+
             if (_selectedAssetType == assetType)
             {
                 if (_searchStrInput != _searchStrInputCache || _selectedAssetType != _selectedAssetTypeCache)
@@ -185,18 +196,18 @@ namespace StudioCore.MsbEditor
 
                     string lowercaseName = name.ToLower();
 
-                    if (assetDict.ContainsKey(lowercaseName))
+                    if (referenceDict.ContainsKey(lowercaseName))
                     {
-                        displayName = displayName + $" <{assetDict[lowercaseName].name}>";
+                        displayName = displayName + $" <{referenceDict[lowercaseName].name}>";
 
                         if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                         {
-                            string tagString = string.Join(" ", assetDict[lowercaseName].tags);
+                            string tagString = string.Join(" ", referenceDict[lowercaseName].tags);
                             displayName = $"{displayName} {{ {tagString} }}";
                         }
 
-                        referenceName = assetDict[lowercaseName].name;
-                        tagList = assetDict[lowercaseName].tags;
+                        referenceName = referenceDict[lowercaseName].name;
+                        tagList = referenceDict[lowercaseName].tags;
                     }
 
                     if (Utils.IsSearchFilterMatch(_searchStrInput, lowercaseName, referenceName, tagList))
@@ -227,8 +238,15 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Map Pieces.
         /// </summary>
-        private void DisplayMapAssetSelectionList(string assetType, Dictionary<string, AssetdexReference> assetDict)
+        private void DisplayMapAssetSelectionList(string assetType, List<ModelAliasReference> referenceList)
         {
+            Dictionary<string, ModelAliasReference> referenceDict = new Dictionary<string, ModelAliasReference>();
+
+            foreach (ModelAliasReference v in referenceList)
+            {
+                referenceDict.Add(v.id, v);
+            }
+
             if (_selectedAssetType == assetType)
             {
                 if (_mapModelNameCache.ContainsKey(_selectedAssetMapId))
@@ -255,18 +273,18 @@ namespace StudioCore.MsbEditor
 
                         string lowercaseName = name.ToLower();
 
-                        if (assetDict.ContainsKey(lowercaseName))
+                        if (referenceDict.ContainsKey(lowercaseName))
                         {
-                            displayName = displayName + $" <{assetDict[lowercaseName].name}>";
+                            displayName = displayName + $" <{referenceDict[lowercaseName].name}>";
 
                             if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                             {
-                                string tagString = string.Join(" ", assetDict[lowercaseName].tags);
+                                string tagString = string.Join(" ", referenceDict[lowercaseName].tags);
                                 displayName = $"{displayName} {{ {tagString} }}";
                             }
 
-                            referenceName = assetDict[lowercaseName].name;
-                            tagList = assetDict[lowercaseName].tags;
+                            referenceName = referenceDict[lowercaseName].name;
+                            tagList = referenceDict[lowercaseName].tags;
                         }
 
                         if (Utils.IsSearchFilterMatch(_searchStrInput, lowercaseName, referenceName, tagList))

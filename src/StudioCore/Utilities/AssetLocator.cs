@@ -635,11 +635,15 @@ public class AssetLocator
         }
     }
 
-    public string GetAliasAssetsDir()
+    public string GetMapAliasAssetsDir()
     {
-        return $@"Assets\Aliases\{GetGameIDForDir()}";
+        return $@"Assets\MapAliases\{GetGameIDForDir()}";
     }
 
+    public string GetModelAliasAssetsDir()
+    {
+        return $@"Assets\ModelAliases\{GetGameIDForDir()}";
+    }
 
     public string GetScriptAssetsCommonDir()
     {

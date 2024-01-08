@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Numerics;
 using ImGuiNET;
+using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Gui;
 using StudioCore.JSON.Assetdex;
@@ -19,7 +20,6 @@ namespace StudioCore.MsbEditor
         private readonly Selection _selection;
 
         private AssetLocator _assetLocator;
-        private AssetdexMain _assetdex;
         private MsbEditorScreen _msbEditor;
 
         private List<string> _loadedMaps = new List<string>();
@@ -39,14 +39,13 @@ namespace StudioCore.MsbEditor
 
         private IViewport _viewport;
 
-        public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, AssetdexMain assetdex, MsbEditorScreen editor, IViewport viewport)
+        public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, MsbEditorScreen editor, IViewport viewport)
         {
             _scene = scene;
             _selection = sel;
             _actionManager = manager;
 
             _assetLocator = locator;
-            _assetdex = assetdex;
             _msbEditor = editor;
             _viewport = viewport;
         }
@@ -83,6 +82,9 @@ namespace StudioCore.MsbEditor
             var scale = Smithbox.GetUIScale();
 
             if (_assetLocator.Type == GameType.Undefined)
+                return;
+
+            if (ModelAliasBank._loadedModelAliasBank == null)
                 return;
 
             // Disable the list generation if using the camera panning to prevent visual lag
@@ -145,9 +147,9 @@ namespace StudioCore.MsbEditor
 
                 if (!disableListGeneration)
                 {
-                    DisplayAssetSelectionList("Chr", _assetdex.GetChrEntriesForGametype(_assetLocator.Type));
-                    DisplayAssetSelectionList("Obj", _assetdex.GetObjEntriesForGametype(_assetLocator.Type));
-                    DisplayMapAssetSelectionList("MapPiece", _assetdex.GetMapPieceEntriesForGametype(_assetLocator.Type));
+                    DisplayAssetSelectionList("Chr", ModelAliasBank._loadedModelAliasBank.GetChrEntries());
+                    DisplayAssetSelectionList("Obj", ModelAliasBank._loadedModelAliasBank.GetObjEntries());
+                    DisplayMapAssetSelectionList("MapPiece", ModelAliasBank._loadedModelAliasBank.GetMapPieceEntries());
                 }
 
                 ImGui.EndChild();
@@ -192,8 +194,8 @@ namespace StudioCore.MsbEditor
                 {
                     var labelName = mapId;
 
-                    if (Editor.AliasBank.MapNames.ContainsKey(mapId))
-                        labelName = labelName + $" <{Editor.AliasBank.MapNames[mapId]}>";
+                    if (MapAliasBank.MapNames.ContainsKey(mapId))
+                        labelName = labelName + $" <{MapAliasBank.MapNames[mapId]}>";
 
                     if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                     {
@@ -217,8 +219,15 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Chr, Obj/AEG and Parts.
         /// </summary>
-        private void DisplayAssetSelectionList(string assetType, Dictionary<string, AssetdexReference> assetDict)
+        private void DisplayAssetSelectionList(string assetType, List<ModelAliasReference> referenceList)
         {
+            Dictionary<string, ModelAliasReference> referenceDict = new Dictionary<string, ModelAliasReference>();
+
+            foreach (ModelAliasReference v in referenceList)
+            {
+                referenceDict.Add(v.id, v);
+            }
+
             if (_selectedAssetType == assetType)
             {
                 if (_searchInput != _searchInputCache || _selectedAssetType != _selectedAssetTypeCache)
@@ -235,18 +244,18 @@ namespace StudioCore.MsbEditor
 
                     var lowercaseName = name.ToLower();
 
-                    if (assetDict.ContainsKey(lowercaseName))
+                    if (referenceDict.ContainsKey(lowercaseName))
                     {
-                        displayName = displayName + $" <{assetDict[lowercaseName].name}>";
+                        displayName = displayName + $" <{referenceDict[lowercaseName].name}>";
 
                         if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                         {
-                            var tagString = string.Join(" ", assetDict[lowercaseName].tags);
+                            var tagString = string.Join(" ", referenceDict[lowercaseName].tags);
                             displayName = $"{displayName} {{ {tagString} }}";
                         }
 
-                        referenceName = assetDict[lowercaseName].name;
-                        tagList = assetDict[lowercaseName].tags;
+                        referenceName = referenceDict[lowercaseName].name;
+                        tagList = referenceDict[lowercaseName].tags;
                     }
 
                     if (Utils.IsSearchFilterMatch(_searchInput, lowercaseName, referenceName, tagList))
@@ -270,9 +279,17 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Map Pieces.
         /// </summary>
-        private void DisplayMapAssetSelectionList(string assetType, Dictionary<string, AssetdexReference> assetDict)
+        private void DisplayMapAssetSelectionList(string assetType, List<ModelAliasReference> referenceList)
         {
+            Dictionary<string, ModelAliasReference> referenceDict = new Dictionary<string, ModelAliasReference>();
+
+            foreach (ModelAliasReference v in referenceList)
+            {
+                referenceDict.Add(v.id, v);
+            }
+
             if (_selectedAssetType == assetType)
+            {
                 if (_mapModelNameCache.ContainsKey(_selectedAssetMapId))
                 {
                     if (_searchInput != _searchInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
@@ -296,18 +313,18 @@ namespace StudioCore.MsbEditor
 
                         var lowercaseName = name.ToLower();
 
-                        if (assetDict.ContainsKey(lowercaseName))
+                        if (referenceDict.ContainsKey(lowercaseName))
                         {
-                            displayName = displayName + $" <{assetDict[lowercaseName].name}>";
+                            displayName = displayName + $" <{referenceDict[lowercaseName].name}>";
 
                             if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                             {
-                                var tagString = string.Join(" ", assetDict[lowercaseName].tags);
+                                var tagString = string.Join(" ", referenceDict[lowercaseName].tags);
                                 displayName = $"{displayName} {{ {tagString} }}";
                             }
 
-                            referenceName = assetDict[lowercaseName].name;
-                            tagList = assetDict[lowercaseName].tags;
+                            referenceName = referenceDict[lowercaseName].name;
+                            tagList = referenceDict[lowercaseName].tags;
                         }
 
                         if (Utils.IsSearchFilterMatch(_searchInput, name, referenceName, tagList))
@@ -320,6 +337,7 @@ namespace StudioCore.MsbEditor
                         }
                     }
                 }
+            }
         }
     }
 }

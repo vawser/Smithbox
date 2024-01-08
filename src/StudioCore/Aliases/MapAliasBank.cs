@@ -1,29 +1,28 @@
-﻿using StudioCore.Settings;
+﻿using StudioCore.Editor;
+using StudioCore.Settings;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace StudioCore.Editor;
+namespace StudioCore.Aliases;
 
 /// <summary>
 ///     Utilities for dealing with global params for a game
 /// </summary>
-public class AliasBank
+public class MapAliasBank
 {
     private static AssetLocator AssetLocator;
 
     private static Dictionary<string, string> _mapNames;
-    public static bool IsLoadingAliases { get; private set; }
+    public static bool IsLoadingMapAliases { get; private set; }
 
     public static IReadOnlyDictionary<string, string> MapNames
     {
         get
         {
-            if (IsLoadingAliases)
-            {
+            if (IsLoadingMapAliases)
                 return null;
-            }
 
             return _mapNames;
         }
@@ -33,7 +32,7 @@ public class AliasBank
     {
         try
         {
-            var dir = AssetLocator.GetAliasAssetsDir();
+            var dir = AssetLocator.GetMapAliasAssetsDir();
             var mapNames = File.ReadAllLines(dir + "/MapNames.txt");
             foreach (var pair in mapNames)
             {
@@ -47,19 +46,17 @@ public class AliasBank
         }
     }
 
-    public static void ReloadAliases()
+    public static void ReloadMapAliases()
     {
         TaskManager.Run(new TaskManager.LiveTask("Map - Load Names", TaskManager.RequeueType.WaitThenRequeue, false,
             () =>
             {
                 _mapNames = new Dictionary<string, string>();
-                IsLoadingAliases = true;
+                IsLoadingMapAliases = true;
                 if (AssetLocator.Type != GameType.Undefined)
-                {
                     LoadMapNames();
-                }
 
-                IsLoadingAliases = false;
+                IsLoadingMapAliases = false;
             }));
     }
 

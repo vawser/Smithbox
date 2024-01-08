@@ -2,6 +2,7 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Aliases;
 using StudioCore.Editor;
 using StudioCore.ParamEditor;
 using StudioCore.Scene;
@@ -1003,8 +1004,8 @@ public class PropertyEditor
                             // but only the RootObject has the TransformNode and Viewport integration.
                             var mapid = r.Name;
                             var prettyName = $"{ForkAwesome.Cube} {mapid}";
-                            if (AliasBank.MapNames != null &&
-                                AliasBank.MapNames.TryGetValue(mapid, out var metaName))
+                            if (MapAliasBank.MapNames != null &&
+                                MapAliasBank.MapNames.TryGetValue(mapid, out var metaName))
                             {
                                 prettyName += $" <{metaName.Replace("--", "")}>";
                             }

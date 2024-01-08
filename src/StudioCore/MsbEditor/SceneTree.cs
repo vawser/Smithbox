@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
+using StudioCore.Aliases;
 using StudioCore.Configuration;
-using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.ParamEditor;
 using StudioCore.Platform;
@@ -678,9 +678,9 @@ public class SceneTree : IActionEventHandler
                     continue;
                 }
 
-                if (AliasBank.MapNames != null && AliasBank.MapNames.ContainsKey(mapid))
+                if (MapAliasBank.MapNames != null && MapAliasBank.MapNames.ContainsKey(mapid))
                 {
-                    metaName = AliasBank.MapNames[mapid];
+                    metaName = MapAliasBank.MapNames[mapid];
                 }
 
                 // Map name search filter

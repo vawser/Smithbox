@@ -210,6 +210,13 @@ public class SettingsMenu
 
                 if (CFG.Current.ShowUITooltips)
                 {
+                    ShowHelpMarker("Enabling this option will cause a selection outline to appear on selected objects.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Enable selection outline", ref CFG.Current.Map_EnableSelectionOutline);
+
+                if (CFG.Current.ShowUITooltips)
+                {
                     ShowHelpMarker("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
                     ImGui.SameLine();
                 }
