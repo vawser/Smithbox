@@ -14,7 +14,6 @@ using Viewport = StudioCore.Gui.Viewport;
 using StudioCore.Settings;
 using StudioCore.Utilities;
 using StudioCore.Configuration;
-using StudioCore.JSON.Assetdex;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using SoulsFormats;

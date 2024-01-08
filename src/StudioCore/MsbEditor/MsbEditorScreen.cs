@@ -4,7 +4,6 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Gui;
-using StudioCore.JSON.Assetdex;
 using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.Scene;

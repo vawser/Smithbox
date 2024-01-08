@@ -7,7 +7,6 @@ using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using SoulsFormats.KF4;
 using StudioCore.Aliases;
-using StudioCore.JSON.Assetdex;
 using StudioCore.Platform;
 using StudioCore.Settings;
 using StudioCore.Utilities;

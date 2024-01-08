@@ -4,7 +4,6 @@ using ImGuiNET;
 using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Gui;
-using StudioCore.JSON.Assetdex;
 using StudioCore.Scene;
 using StudioCore.Settings;
 using StudioCore.Utilities;

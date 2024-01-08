@@ -422,6 +422,7 @@
     <None Update="Assets\Upgrader\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\ModelAliases\**" CopyToOutputDirectory="PreserveNewest" />
+      <None Update="Assets\FxrAliases\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

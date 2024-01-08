@@ -7,7 +7,6 @@ using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Graphics;
-using StudioCore.JSON.Assetdex;
 using StudioCore.JSON.Helpdex;
 using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
@@ -119,6 +118,7 @@ public class Smithbox
 
         MapAliasBank.SetAssetLocator(_assetLocator);
         ModelAliasBank.SetAssetLocator(_assetLocator);
+        FxrAliasBank.SetAssetLocator(_assetLocator);
         ParamBank.PrimaryBank.SetAssetLocator(_assetLocator);
         ParamBank.VanillaBank.SetAssetLocator(_assetLocator);
         FMGBank.SetAssetLocator(_assetLocator);
@@ -414,6 +414,7 @@ public class Smithbox
 
         ModelAliasBank.ReloadModelAliases();
         MapAliasBank.ReloadMapAliases();
+        FxrAliasBank.ReloadFxrAliases();
         ParamBank.ReloadParams(newsettings, options);
         MtdBank.ReloadMtds();
 
