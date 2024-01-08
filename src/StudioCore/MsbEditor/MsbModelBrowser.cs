@@ -225,7 +225,8 @@ namespace StudioCore.MsbEditor
 
             foreach (ModelAliasReference v in referenceList)
             {
-                referenceDict.Add(v.id, v);
+                if(!referenceDict.ContainsKey(v.id))
+                    referenceDict.Add(v.id, v);
             }
 
             if (_selectedAssetType == assetType)
@@ -285,7 +286,8 @@ namespace StudioCore.MsbEditor
 
             foreach (ModelAliasReference v in referenceList)
             {
-                referenceDict.Add(v.id, v);
+                if (!referenceDict.ContainsKey(v.id))
+                    referenceDict.Add(v.id, v);
             }
 
             if (_selectedAssetType == assetType)
