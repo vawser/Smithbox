@@ -337,7 +337,7 @@ public class Viewport : IViewport
         return new Ray(WorldView.CameraTransform.Position, worldCoords);
     }
 
-    private bool MouseInViewport()
+    public bool MouseInViewport()
     {
         Vector2 mp = InputTracker.MousePosition;
         if ((int)mp.X < X || (int)mp.X >= X + Width)

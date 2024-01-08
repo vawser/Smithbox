@@ -16,6 +16,8 @@ using StudioCore.Utilities;
 using StudioCore.Configuration;
 using StudioCore.JSON.Assetdex;
 using Microsoft.Extensions.Logging;
+using System.IO;
+using SoulsFormats;
 
 namespace StudioCore.MsbEditor;
 
@@ -48,6 +50,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     private bool ViewportUsingKeyboard;
     private Sdl2Window Window;
 
+    public ModelEditorModelType CurrentlyLoadedModelType;
+
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AssetdexMain assetdex)
     {
         Rect = window.Bounds;
@@ -77,21 +81,25 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void OnInstantiateChr(string chrid)
     {
+        CurrentlyLoadedModelType = ModelEditorModelType.Character;
         LoadModel(chrid, ModelEditorModelType.Character);
     }
 
     public void OnInstantiateObj(string objid)
     {
+        CurrentlyLoadedModelType = ModelEditorModelType.Object;
         LoadModel(objid, ModelEditorModelType.Object);
     }
 
     public void OnInstantiateParts(string partsid)
     {
+        CurrentlyLoadedModelType = ModelEditorModelType.Parts;
         LoadModel(partsid, ModelEditorModelType.Parts);
     }
 
     public void OnInstantiateMapPiece(string mapid, string modelid)
     {
+        CurrentlyLoadedModelType = ModelEditorModelType.MapPiece;
         LoadModel(modelid, ModelEditorModelType.MapPiece, mapid);
     }
 
@@ -253,23 +261,84 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void Save()
     {
-        FlverResource r = _flverhandle.Get();
+        /*
+        if (CurrentlyLoadedModelType == ModelEditorModelType.Character)
+        {
+            FlverResource r = _flverhandle.Get();
 
-        // TODO: this needs to copy the flver container to the mod (if it isn't already present)
-        // and then save the flver within the container
+            string bndout;
+            string realPath = AssetLocator.VirtualToRealPath(_flverhandle.AssetVirtualPath, out bndout);
+            string currentPath = GetModPath(realPath);
+            string flverName = Path.GetFileNameWithoutExtension(Path.GetFileName(realPath));
 
-        string path = $"{AssetLocator.GameModDirectory}";
+            // TODO: this needs to copy existing bnd, and then replace the relevant .FLVER within it
 
-        r.Flver.Write(_flverhandle.AssetVirtualPath);
-        TaskLogs.AddLog($"{_flverhandle.AssetVirtualPath}",
-                    LogLevel.Debug, TaskLogs.LogPriority.High);
+            List<BinderFile> flverFiles = new();
+            BND4 newFlverBnd = null;
+            try
+            {
+                newFlverBnd = SoulsFile<BND4>.Read(realPath);
+            }
+            catch
+            {
+                try
+                {
+                    newFlverBnd = SoulsFile<BND4>.Read(DCX.Decompress(realPath));
+                }
+                catch { }
+            }
+            if (newFlverBnd != null)
+            {
+                int binderIndex = 0;
+                foreach (BinderFile file in newFlverBnd.Files)
+                {
+                    TaskLogs.AddLog($"{file.Name}", LogLevel.Debug, TaskLogs.LogPriority.High);
+
+                    if (IsFLVERPath(file.Name))
+                    {
+                        flverFiles.Add(file);
+
+                        if(file.Name == flverName)
+                        {
+                            // Replace existing .FLVER with edited one
+                        }
+                    }
+
+                    binderIndex++;
+                }
+
+                newFlverBnd.Write(currentPath);
+            }
+
+            TaskLogs.AddLog($"{realPath}\n{currentPath}\n{flverName}\n", LogLevel.Debug, TaskLogs.LogPriority.High);
+        }
+        */
+    }
+    private static bool IsFLVERPath(string filePath)
+    {
+        return filePath.Contains(".flv") || filePath.Contains(".flver");
+    }
+
+    public string GetModPath(string relpath)
+    {
+        string ret = relpath;
+
+        if (AssetLocator.GameModDirectory != null)
+        {
+            var modpath = relpath.Replace($"{AssetLocator.GameRootDirectory}", $"{AssetLocator.GameModDirectory}");
+
+            if (!File.Exists(modpath))
+            {
+                ret = modpath;
+            }
+        }
+
+        return ret;
     }
 
     public void SaveAll()
     {
     }
-
-    // TODO: we will need to adjust/check the FLVER load sequence so we load the mod-local model on subsequent model loads
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
@@ -313,6 +382,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     public void OnEntityContextMenu(Entity ent)
     {
     }
+
+    public AssetDescription loadedAsset;
 
     public void LoadModel(string modelid, ModelEditorModelType modelType, string mapid = null)
     {

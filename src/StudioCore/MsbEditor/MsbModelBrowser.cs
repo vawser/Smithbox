@@ -2,6 +2,7 @@
 using System.Numerics;
 using ImGuiNET;
 using StudioCore.Configuration;
+using StudioCore.Gui;
 using StudioCore.JSON.Assetdex;
 using StudioCore.Scene;
 using StudioCore.Settings;
@@ -36,7 +37,9 @@ namespace StudioCore.MsbEditor
 
         private bool disableListGeneration = false;
 
-        public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, AssetdexMain assetdex, MsbEditorScreen editor)
+        private IViewport _viewport;
+
+        public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, AssetdexMain assetdex, MsbEditorScreen editor, IViewport viewport)
         {
             _scene = scene;
             _selection = sel;
@@ -45,6 +48,7 @@ namespace StudioCore.MsbEditor
             _assetLocator = locator;
             _assetdex = assetdex;
             _msbEditor = editor;
+            _viewport = viewport;
         }
 
         /// <summary>
@@ -82,7 +86,7 @@ namespace StudioCore.MsbEditor
                 return;
 
             // Disable the list generation if using the camera panning to prevent visual lag
-            if (InputTracker.GetMouseButton(MouseButton.Right))
+            if (InputTracker.GetMouseButton(MouseButton.Right) && _viewport.ViewportSelected)
                 disableListGeneration = true;
             else
                 disableListGeneration = false;

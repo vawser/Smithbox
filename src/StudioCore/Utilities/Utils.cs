@@ -1033,6 +1033,7 @@ public static class Utils
                     entList = entity.Container.Objects;
                 }
 
+                // TODO: account for TransformableNamedEntity in Model Editor
                 var i1 = entList.IndexOf(selection.GetFilteredSelection<MapEntity>()
                     .FirstOrDefault(fe => fe.Container == entity.Container && fe != entity.Container.RootObject));
                 var i2 = entList.IndexOf((MapEntity)entity);

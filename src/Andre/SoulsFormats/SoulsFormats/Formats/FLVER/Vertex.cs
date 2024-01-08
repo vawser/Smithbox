@@ -413,12 +413,12 @@ namespace SoulsFormats
                         }
                         else if (member.Type == LayoutType.Short4toFloat4B)
                         {
-                            short v1 = br.ReadInt16();
-                            short v2 = br.ReadInt16();
-                            
-                            WriteUVs.Add(new Vector3(v1, v2, 0) / uvFactor);
+                            Vector3 vec = ReadFloat16NormXYZ(br);
 
-                            AddUV(ReadFloat16NormXYZ(br));
+                            WriteUVs.Add(vec / uvFactor);
+
+                            AddUV(vec);
+
                             br.AssertInt16(0);
                         }
                         else

@@ -22,10 +22,10 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish '${{ runner.workspace }}/DSMapStudio/src/Studio.App/DSMapStudio/DSMapStudio.csproj' --configuration Release -o deploy
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Studio.App/Smithbox/Smithbox.csproj' --configuration Release -o deploy
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: 'DSMapStudio-SHA${{ github.sha }}'
-          path: '${{ runner.workspace }}/DSMapStudio/deploy'
+          name: 'Smithbox-SHA${{ github.sha }}'
+          path: '${{ runner.workspace }}/Smithbox/deploy'
