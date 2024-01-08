@@ -19,6 +19,12 @@ namespace StudioCore.Resource;
 
 public class FlverResource : IResource, IDisposable
 {
+    public class VertexInfo
+    {
+        public int MeshIndex;
+        public int VertexIndex;
+    }
+
     //private static ArrayPool<FlverLayout> VerticesPool = ArrayPool<FlverLayout>.Create();
 
     public const bool CaptureMaterialLayouts = false;

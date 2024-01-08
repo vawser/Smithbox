@@ -15,6 +15,7 @@ using StudioCore.Settings;
 using StudioCore.Utilities;
 using StudioCore.Configuration;
 using StudioCore.JSON.Assetdex;
+using Microsoft.Extensions.Logging;
 
 namespace StudioCore.MsbEditor;
 
@@ -252,11 +253,23 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void Save()
     {
+        FlverResource r = _flverhandle.Get();
+
+        // TODO: this needs to copy the flver container to the mod (if it isn't already present)
+        // and then save the flver within the container
+
+        string path = $"{AssetLocator.GameModDirectory}";
+
+        r.Flver.Write(_flverhandle.AssetVirtualPath);
+        TaskLogs.AddLog($"{_flverhandle.AssetVirtualPath}",
+                    LogLevel.Debug, TaskLogs.LogPriority.High);
     }
 
     public void SaveAll()
     {
     }
+
+    // TODO: we will need to adjust/check the FLVER load sequence so we load the mod-local model on subsequent model loads
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)
     {
