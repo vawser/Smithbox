@@ -2,6 +2,9 @@
 
 A personal version of DSMapStudio, which is a standalone integrated modding tool for modern FromSoft games, which include Demon's Souls (PS3), the Dark Souls series, Bloodborne, Sekiro, and Elden Ring. It currently includes a map editor, a game param editor, and a text editor for editing in game text.
 
+## New Features
+- Asset Browser: allows you to quickly view and categorize Chr, Obj/Asset, Part and MapPiece assets. There is a base name and tag list supplied by Smithbox, and support for local mod overrides. These are added within Smithbox and kept within the currently loaded mod directory. In MSB view the Asset Browser will let you quickly load the target model, replacing your current selection and re-naming it to an avaliable name (i.e. AEG000_0001).
+
 ## Requirements
 * Windows 7/8/8.1/10/11 (64-bit only)
 * Visual C++ Redistributable x64 - INSTALL THIS IF THE PROGRAM CRASHES ON STARTUP (https://aka.ms/vs/16/release/vc_redist.x64.exe)
