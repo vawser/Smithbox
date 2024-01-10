@@ -422,8 +422,9 @@
     <None Update="Assets\Upgrader\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\ModelAliases\**" CopyToOutputDirectory="PreserveNewest" />
-      <None Update="Assets\FxrAliases\**" CopyToOutputDirectory="PreserveNewest" />
-      <None Update="Assets\EventFlagAliases\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\FxrAliases\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\EventFlagAliases\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Template.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

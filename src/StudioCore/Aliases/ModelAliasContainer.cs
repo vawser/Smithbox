@@ -1,5 +1,7 @@
-﻿using Org.BouncyCastle.Pqc.Crypto.Lms;
+﻿using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
 using StudioCore.Aliases;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +10,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization.Metadata;
 using System.Threading.Tasks;
-using static SoulsFormats.HKXPWV;
 
 namespace StudioCore.Aliases;
 
@@ -48,7 +49,11 @@ public class ModelAliasContainer
                 ReadCommentHandling = JsonCommentHandling.Skip,
                 TypeInfoResolver = new DefaultJsonTypeInfoResolver()
             };
-            baseResource = JsonSerializer.Deserialize<ModelAliasResource>(File.OpenRead(baseResourcePath), options);
+
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize<ModelAliasResource>(File.OpenRead(baseResourcePath), options);
+            }
         }
 
         var modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\ModelAliases\\{gametype}\\{type}.json";
@@ -61,10 +66,14 @@ public class ModelAliasContainer
                 ReadCommentHandling = JsonCommentHandling.Skip,
                 TypeInfoResolver = new DefaultJsonTypeInfoResolver()
             };
-            modResource = JsonSerializer.Deserialize<ModelAliasResource>(File.OpenRead(modResourcePath), options);
+
+            using (var stream = File.OpenRead(modResourcePath))
+            {
+                modResource = JsonSerializer.Deserialize<ModelAliasResource>(File.OpenRead(modResourcePath), options);
+            }
 
             // Replace baseResource entries with those from modResource if there are ID matches
-            foreach(var bEntry in baseResource.list)
+            foreach (var bEntry in baseResource.list)
             {
                 var baseId = bEntry.id;
                 var baseName = bEntry.name;
@@ -78,11 +87,35 @@ public class ModelAliasContainer
 
                     // Mod override exists
                     if (baseId == modId)
-                    { 
+                    {
                         bEntry.id = modId;
                         bEntry.name = modName;
                         bEntry.tags = modTags;
                     }
+                }
+            }
+
+            // Add mod local unique rentries
+            foreach (var mEntry in modResource.list)
+            {
+                var modId = mEntry.id;
+
+                bool isUnique = true;
+
+                foreach (var bEntry in baseResource.list)
+                {
+                    var baseId = bEntry.id;
+
+                    // Mod override exists
+                    if (baseId == modId)
+                    {
+                        isUnique = false;
+                    }
+                }
+
+                if(isUnique)
+                {
+                    baseResource.list.Add(mEntry);
                 }
             }
         }
