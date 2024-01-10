@@ -387,38 +387,93 @@ namespace StudioCore.MsbEditor
                     {
                         var modelName = name.Replace($"{_selectedAssetMapId}_", "m");
 
+                        var displayedName = $"{modelName}";
+                        var lowerName = name.ToLower();
+
+                        var refID = $"{name}";
+                        var refName = "";
+                        var refTagList = new List<string>();
+
                         // Adjust the name to remove the A{mapId} section.
                         if (_assetLocator.Type == GameType.DarkSoulsPTDE || _assetLocator.Type == GameType.DarkSoulsRemastered)
-                            modelName = modelName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
-
-                        var displayName = $"{modelName}";
-
-                        var referenceName = "";
-                        var tagList = new List<string>();
-
-                        var lowercaseName = name.ToLower();
-
-                        if (referenceDict.ContainsKey(lowercaseName))
                         {
-                            displayName = displayName + $" <{referenceDict[lowercaseName].name}>";
+                            displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
+                        }
+
+                        if (referenceDict.ContainsKey(lowerName))
+                        {
+                            displayedName = displayedName + $" <{referenceDict[lowerName].name}>";
 
                             if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                             {
-                                var tagString = string.Join(" ", referenceDict[lowercaseName].tags);
-                                displayName = $"{displayName} {{ {tagString} }}";
+                                var tagString = string.Join(" ", referenceDict[lowerName].tags);
+                                displayedName = $"{displayedName} {{ {tagString} }}";
                             }
 
-                            referenceName = referenceDict[lowercaseName].name;
-                            tagList = referenceDict[lowercaseName].tags;
+                            refID = referenceDict[lowerName].id;
+                            refName = referenceDict[lowerName].name;
+                            refTagList = referenceDict[lowerName].tags;
                         }
 
-                        if (Utils.IsSearchFilterMatch(_searchInput, name, referenceName, tagList))
+                        if (Utils.IsSearchFilterMatch(_searchInput, lowerName, refName, refTagList))
                         {
-                            if (ImGui.Selectable(displayName))
+                            if (ImGui.Selectable(displayedName))
                             {
+                                _selectedName = refID;
+
+                                _refUpdateId = refID;
+                                _refUpdateName = refName;
+
+                                if (refTagList.Count > 0)
+                                {
+                                    string tagStr = refTagList[0];
+                                    foreach (string entry in refTagList.Skip(1))
+                                    {
+                                        tagStr = $"{tagStr},{entry}";
+                                    }
+                                    _refUpdateTags = tagStr;
+                                }
+                                else
+                                {
+                                    _refUpdateTags = "";
+                                }
                             }
+
+                            if (_selectedName == refID)
+                            {
+                                if (ImGui.BeginPopupContextItem($"{refID}##context"))
+                                {
+                                    if (ImGui.InputText($"Name", ref _refUpdateName, 255))
+                                    {
+
+                                    }
+
+                                    if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
+                                    {
+
+                                    }
+
+                                    if (ImGui.Button("Update"))
+                                    {
+                                        ModelAliasBank.AddToLocalModelAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                        ImGui.CloseCurrentPopup();
+                                        reloadModelAlias = true;
+                                    }
+                                    if (ImGui.Button("Restore Default"))
+                                    {
+                                        ModelAliasBank.RemoveFromLocalModelAliasBank(assetType, _refUpdateId);
+                                        ImGui.CloseCurrentPopup();
+                                        reloadModelAlias = true;
+                                    }
+
+                                    ImGui.EndPopup();
+                                }
+                            }
+
                             if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
+                            {
                                 _msbEditor.SetObjectModelForSelection(modelName, assetType, _selectedAssetMapId);
+                            }
                         }
                     }
                 }

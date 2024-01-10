@@ -42,11 +42,21 @@ namespace StudioCore.MsbEditor
         private string _searchStrInput = "";
         private string _searchStrInputCache = "";
 
+        private string _refUpdateId = "";
+        private string _refUpdateName = "";
+        private string _refUpdateTags = "";
+
+        private string _selectedName;
+
+        private bool reloadModelAlias = false;
+
         public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator)
         {
             _id = id;
             _assetLocator = locator;
             _handler = handler;
+
+            _selectedName = null;
         }
 
         public void OnProjectChanged()
@@ -77,7 +87,7 @@ namespace StudioCore.MsbEditor
             if (_assetLocator.Type == GameType.Undefined)
                 return;
 
-            if (ModelAliasBank._loadedModelAliasBank == null)
+            if (ModelAliasBank.IsLoadingModelAliases)
                 return;
 
             if (ImGui.Begin($@"Asset Browser##{_id}"))
@@ -105,13 +115,19 @@ namespace StudioCore.MsbEditor
 
                 DisplayAssetSelectionList("Chr", ModelAliasBank._loadedModelAliasBank.GetChrEntries());
                 DisplayAssetSelectionList("Obj", ModelAliasBank._loadedModelAliasBank.GetObjEntries());
-                DisplayAssetSelectionList("Parts", ModelAliasBank._loadedModelAliasBank.GetPartEntries());
+                DisplayAssetSelectionList("Part", ModelAliasBank._loadedModelAliasBank.GetPartEntries());
                 DisplayMapAssetSelectionList("MapPiece", ModelAliasBank._loadedModelAliasBank.GetMapPieceEntries());
 
                 ImGui.EndChild();
                 ImGui.EndChild();
             }
             ImGui.End();
+
+            if (reloadModelAlias)
+            {
+                reloadModelAlias = false;
+                ModelAliasBank.ReloadModelAliases();
+            }
         }
         private void DisplayAssetTypeSelectionList()
         {
@@ -132,10 +148,10 @@ namespace StudioCore.MsbEditor
                 _selectedAssetType = "Obj";
                 _selectedAssetMapId = "";
             }
-            if (ImGui.Selectable("Parts", _selectedAssetType == "Parts"))
+            if (ImGui.Selectable("Part", _selectedAssetType == "Part"))
             {
                 _modelNameCache = _assetLocator.GetPartsModels();
-                _selectedAssetType = "Parts";
+                _selectedAssetType = "Part";
                 _selectedAssetMapId = "";
             }
 
@@ -189,32 +205,83 @@ namespace StudioCore.MsbEditor
                 }
                 foreach (var name in _modelNameCache)
                 {
-                    string displayName = $"{name}";
+                    var displayedName = $"{name}";
+                    var lowerName = name.ToLower();
 
-                    string referenceName = "";
-                    List<string> tagList = new List<string>();
+                    var refID = $"{name}";
+                    var refName = "";
+                    var refTagList = new List<string>();
 
-                    string lowercaseName = name.ToLower();
-
-                    if (referenceDict.ContainsKey(lowercaseName))
+                    if (referenceDict.ContainsKey(lowerName))
                     {
-                        displayName = displayName + $" <{referenceDict[lowercaseName].name}>";
+                        displayedName = displayedName + $" <{referenceDict[lowerName].name}>";
 
                         if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                         {
-                            string tagString = string.Join(" ", referenceDict[lowercaseName].tags);
-                            displayName = $"{displayName} {{ {tagString} }}";
+                            string tagString = string.Join(" ", referenceDict[lowerName].tags);
+                            displayedName = $"{displayedName} {{ {tagString} }}";
                         }
 
-                        referenceName = referenceDict[lowercaseName].name;
-                        tagList = referenceDict[lowercaseName].tags;
+                        refID = referenceDict[lowerName].id;
+                        refName = referenceDict[lowerName].name;
+                        refTagList = referenceDict[lowerName].tags;
                     }
 
-                    if (Utils.IsSearchFilterMatch(_searchStrInput, lowercaseName, referenceName, tagList))
+                    if (Utils.IsSearchFilterMatch(_searchStrInput, lowerName, refName, refTagList))
                     {
-                        if (ImGui.Selectable(displayName))
+                        if (ImGui.Selectable(displayedName))
                         {
+                            _selectedName = refID;
+
+                            _refUpdateId = refID;
+                            _refUpdateName = refName;
+
+                            if (refTagList.Count > 0)
+                            {
+                                string tagStr = refTagList[0];
+                                foreach (string entry in refTagList.Skip(1))
+                                {
+                                    tagStr = $"{tagStr},{entry}";
+                                }
+                                _refUpdateTags = tagStr;
+                            }
+                            else
+                            {
+                                _refUpdateTags = "";
+                            }
                         }
+
+                        if (_selectedName == refID)
+                        {
+                            if (ImGui.BeginPopupContextItem($"{refID}##context"))
+                            {
+                                if (ImGui.InputText($"Name", ref _refUpdateName, 255))
+                                {
+
+                                }
+
+                                if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
+                                {
+
+                                }
+
+                                if (ImGui.Button("Update"))
+                                {
+                                    ModelAliasBank.AddToLocalModelAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                    ImGui.CloseCurrentPopup();
+                                    reloadModelAlias = true;
+                                }
+                                if (ImGui.Button("Restore Default"))
+                                {
+                                    ModelAliasBank.RemoveFromLocalModelAliasBank(assetType, _refUpdateId);
+                                    ImGui.CloseCurrentPopup();
+                                    reloadModelAlias = true;
+                                }
+
+                                ImGui.EndPopup();
+                            }
+                        }
+
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                         {
                             if (_selectedAssetType == "Chr")
@@ -225,7 +292,7 @@ namespace StudioCore.MsbEditor
                             {
                                 _handler.OnInstantiateObj(name);
                             }
-                            if (_selectedAssetType == "Parts")
+                            if (_selectedAssetType == "Part")
                             {
                                 _handler.OnInstantiateParts(name);
                             }
@@ -261,38 +328,90 @@ namespace StudioCore.MsbEditor
                     foreach (string name in _mapModelNameCache[_selectedAssetMapId])
                     {
                         string modelName = name.Replace($"{_selectedAssetMapId}_", "m");
-                        string displayName = $"{modelName}";
+
+                        var displayedName = $"{modelName}";
+                        var lowerName = name.ToLower();
+
+                        var refID = $"{name}";
+                        var refName = "";
+                        var refTagList = new List<string>();
 
                         // Adjust the name to remove the A{mapId} section.
                         if (_assetLocator.Type == GameType.DarkSoulsPTDE || _assetLocator.Type == GameType.DarkSoulsRemastered)
                         {
-                            displayName = displayName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
+                            displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
                         }
 
-                        string referenceName = "";
-                        List<string> tagList = new List<string>();
-
-                        string lowercaseName = name.ToLower();
-
-                        if (referenceDict.ContainsKey(lowercaseName))
+                        if (referenceDict.ContainsKey(lowerName))
                         {
-                            displayName = displayName + $" <{referenceDict[lowercaseName].name}>";
+                            displayedName = displayedName + $" <{referenceDict[lowerName].name}>";
 
                             if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                             {
-                                string tagString = string.Join(" ", referenceDict[lowercaseName].tags);
-                                displayName = $"{displayName} {{ {tagString} }}";
+                                string tagString = string.Join(" ", referenceDict[lowerName].tags);
+                                displayedName = $"{displayedName} {{ {tagString} }}";
                             }
 
-                            referenceName = referenceDict[lowercaseName].name;
-                            tagList = referenceDict[lowercaseName].tags;
+                            refID = referenceDict[lowerName].id;
+                            refName = referenceDict[lowerName].name;
+                            refTagList = referenceDict[lowerName].tags;
                         }
 
-                        if (Utils.IsSearchFilterMatch(_searchStrInput, lowercaseName, referenceName, tagList))
+                        if (Utils.IsSearchFilterMatch(_searchStrInput, lowerName, refName, refTagList))
                         {
-                            if (ImGui.Selectable(displayName))
+                            if (ImGui.Selectable(displayedName))
                             {
+                                _selectedName = refID;
+
+                                _refUpdateId = refID;
+                                _refUpdateName = refName;
+
+                                if (refTagList.Count > 0)
+                                {
+                                    string tagStr = refTagList[0];
+                                    foreach (string entry in refTagList.Skip(1))
+                                    {
+                                        tagStr = $"{tagStr},{entry}";
+                                    }
+                                    _refUpdateTags = tagStr;
+                                }
+                                else
+                                {
+                                    _refUpdateTags = "";
+                                }
                             }
+
+                            if (_selectedName == refID)
+                            {
+                                if (ImGui.BeginPopupContextItem($"{refID}##context"))
+                                {
+                                    if (ImGui.InputText($"Name", ref _refUpdateName, 255))
+                                    {
+
+                                    }
+
+                                    if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
+                                    {
+
+                                    }
+
+                                    if (ImGui.Button("Update"))
+                                    {
+                                        ModelAliasBank.AddToLocalModelAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                        ImGui.CloseCurrentPopup();
+                                        reloadModelAlias = true;
+                                    }
+                                    if (ImGui.Button("Restore Default"))
+                                    {
+                                        ModelAliasBank.RemoveFromLocalModelAliasBank(assetType, _refUpdateId);
+                                        ImGui.CloseCurrentPopup();
+                                        reloadModelAlias = true;
+                                    }
+
+                                    ImGui.EndPopup();
+                                }
+                            }
+
                             if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                             {
                                 _handler.OnInstantiateMapPiece(_selectedAssetMapId, name);

@@ -1,7 +1,7 @@
 {
     "list": [
         {
-            "id": "HD_M_1010",
+            "id": "hd_m_1010",
             "name": "Iron Helmet",
             
             "tags": [
@@ -9,7 +9,7 @@
             ]
         },
         {
-            "id": "BD_M_1010",
+            "id": "bd_m_1010",
             "name": "Scale Armor",
             
             "tags": [
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "id": "AM_M_1010",
+            "id": "am_m_1010",
             "name": "Iron Gauntlets",
             
             "tags": [
@@ -25,7 +25,7 @@
             ]
         },
         {
-            "id": "LG_M_1010",
+            "id": "lg_m_1010",
             "name": "Leather Trousers",
             
             "tags": [
@@ -33,7 +33,7 @@
             ]
         },
         {
-            "id": "HD_M_1840",
+            "id": "hd_m_1840",
             "name": "Kaiden Helm",
             
             "tags": [
@@ -41,7 +41,7 @@
             ]
         },
         {
-            "id": "BD_M_1840",
+            "id": "bd_m_1840",
             "name": "Kaiden Armor",
             
             "tags": [
@@ -49,7 +49,7 @@
             ]
         },
         {
-            "id": "AM_M_1840",
+            "id": "am_m_1840",
             "name": "Kaiden Gauntlets",
             
             "tags": [
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "id": "LG_M_1840",
+            "id": "lg_m_1840",
             "name": "Kaiden Trousers",
             
             "tags": [
@@ -65,7 +65,7 @@
             ]
         },
         {
-            "id": "HD_M_1100",
+            "id": "hd_m_1100",
             "name": "Drake Knight Helm",
             
             "tags": [
@@ -73,7 +73,7 @@
             ]
         },
         {
-            "id": "BD_M_1100",
+            "id": "bd_m_1100",
             "name": "Drake Knight Armor",
             
             "tags": [
@@ -81,7 +81,7 @@
             ]
         },
         {
-            "id": "AM_M_1100",
+            "id": "am_m_1100",
             "name": "Drake Knight Gauntlets",
             
             "tags": [
@@ -89,7 +89,7 @@
             ]
         },
         {
-            "id": "LG_M_1100",
+            "id": "lg_m_1100",
             "name": "Drake Knight Greaves",
             
             "tags": [
@@ -97,7 +97,7 @@
             ]
         },
         {
-            "id": "HD_M_1101",
+            "id": "hd_m_1101",
             "name": "Drake Knight Helm (Altered)",
             
             "tags": [
@@ -105,7 +105,7 @@
             ]
         },
         {
-            "id": "BD_M_1101",
+            "id": "bd_m_1101",
             "name": "Drake Knight Armor (Altered)",
             
             "tags": [
@@ -113,7 +113,7 @@
             ]
         },
         {
-            "id": "HD_M_1120",
+            "id": "hd_m_1120",
             "name": "Scaled Helm",
             
             "tags": [
@@ -121,7 +121,7 @@
             ]
         },
         {
-            "id": "BD_M_1120",
+            "id": "bd_m_1120",
             "name": "Scaled Armor",
             
             "tags": [
@@ -129,7 +129,7 @@
             ]
         },
         {
-            "id": "AM_M_1120",
+            "id": "am_m_1120",
             "name": "Scaled Gauntlets",
             
             "tags": [
@@ -137,7 +137,7 @@
             ]
         },
         {
-            "id": "LG_M_1120",
+            "id": "lg_m_1120",
             "name": "Scaled Greaves",
             
             "tags": [
@@ -145,7 +145,7 @@
             ]
         },
         {
-            "id": "BD_M_1121",
+            "id": "bd_m_1121",
             "name": "Scaled Armor (Altered)",
             
             "tags": [
@@ -153,7 +153,7 @@
             ]
         },
         {
-            "id": "HD_M_1130",
+            "id": "hd_m_1130",
             "name": "Perfumer Hood",
             
             "tags": [
@@ -161,7 +161,7 @@
             ]
         },
         {
-            "id": "BD_M_1130",
+            "id": "bd_m_1130",
             "name": "Perfumer Robe",
             
             "tags": [
@@ -169,7 +169,7 @@
             ]
         },
         {
-            "id": "AM_M_1130",
+            "id": "am_m_1130",
             "name": "Perfumer Gloves",
             
             "tags": [
@@ -177,7 +177,7 @@
             ]
         },
         {
-            "id": "LG_M_1130",
+            "id": "lg_m_1130",
             "name": "Perfumer Sarong",
             
             "tags": [
@@ -185,7 +185,7 @@
             ]
         },
         {
-            "id": "BD_M_1131",
+            "id": "bd_m_1131",
             "name": "Perfumer Robe (Altered)",
             
             "tags": [
@@ -193,7 +193,7 @@
             ]
         },
         {
-            "id": "HD_M_1140",
+            "id": "hd_m_1140",
             "name": "Traveler's Hat",
             
             "tags": [
@@ -201,7 +201,7 @@
             ]
         },
         {
-            "id": "BD_M_1140",
+            "id": "bd_m_1140",
             "name": "Perfumer's Traveling Garb",
             
             "tags": [
@@ -209,7 +209,7 @@
             ]
         },
         {
-            "id": "AM_M_1140",
+            "id": "am_m_1140",
             "name": "Traveler's Gloves",
             
             "tags": [
@@ -217,7 +217,7 @@
             ]
         },
         {
-            "id": "LG_M_1140",
+            "id": "lg_m_1140",
             "name": "Traveler's Slops",
             
             "tags": [
@@ -225,7 +225,7 @@
             ]
         },
         {
-            "id": "BD_M_1141",
+            "id": "bd_m_1141",
             "name": "Perfumer's Traveling Garb (Altered)",
             
             "tags": [
@@ -233,7 +233,7 @@
             ]
         },
         {
-            "id": "HD_M_1160",
+            "id": "hd_m_1160",
             "name": "Alberich's Pointed Hat",
             
             "tags": [
@@ -241,7 +241,7 @@
             ]
         },
         {
-            "id": "BD_M_1160",
+            "id": "bd_m_1160",
             "name": "Alberich's Robe",
             
             "tags": [
@@ -249,7 +249,7 @@
             ]
         },
         {
-            "id": "AM_M_1160",
+            "id": "am_m_1160",
             "name": "Alberich's Bracers",
             
             "tags": [
@@ -257,7 +257,7 @@
             ]
         },
         {
-            "id": "LG_M_1160",
+            "id": "lg_m_1160",
             "name": "Alberich's Trousers",
             
             "tags": [
@@ -265,7 +265,7 @@
             ]
         },
         {
-            "id": "HD_M_1161",
+            "id": "hd_m_1161",
             "name": "Alberich's Pointed Hat (Altered)",
             
             "tags": [
@@ -273,7 +273,7 @@
             ]
         },
         {
-            "id": "BD_M_1161",
+            "id": "bd_m_1161",
             "name": "Alberich's Robe (Altered)",
             
             "tags": [
@@ -281,7 +281,7 @@
             ]
         },
         {
-            "id": "HD_M_1170",
+            "id": "hd_m_1170",
             "name": "Spellblade's Pointed Hat",
             
             "tags": [
@@ -289,7 +289,7 @@
             ]
         },
         {
-            "id": "BD_M_1170",
+            "id": "bd_m_1170",
             "name": "Spellblade's Traveling Attire",
             
             "tags": [
@@ -297,7 +297,7 @@
             ]
         },
         {
-            "id": "AM_M_1170",
+            "id": "am_m_1170",
             "name": "Spellblade's Gloves",
             
             "tags": [
@@ -305,7 +305,7 @@
             ]
         },
         {
-            "id": "LG_M_1170",
+            "id": "lg_m_1170",
             "name": "Spellblade's Trousers",
             
             "tags": [
@@ -313,7 +313,7 @@
             ]
         },
         {
-            "id": "BD_M_1171",
+            "id": "bd_m_1171",
             "name": "Spellblade's Traveling Attire (Altered)",
             
             "tags": [
@@ -321,7 +321,7 @@
             ]
         },
         {
-            "id": "HD_M_1180",
+            "id": "hd_m_1180",
             "name": "Bull-Goat Helm",
             
             "tags": [
@@ -329,7 +329,7 @@
             ]
         },
         {
-            "id": "BD_M_1180",
+            "id": "bd_m_1180",
             "name": "Bull-Goat Armor",
             
             "tags": [
@@ -337,7 +337,7 @@
             ]
         },
         {
-            "id": "AM_M_1180",
+            "id": "am_m_1180",
             "name": "Bull-Goat Gauntlets",
             
             "tags": [
@@ -345,7 +345,7 @@
             ]
         },
         {
-            "id": "LG_M_1180",
+            "id": "lg_m_1180",
             "name": "Bull-Goat Greaves",
             
             "tags": [
@@ -353,7 +353,7 @@
             ]
         },
         {
-            "id": "HD_M_1190",
+            "id": "hd_m_1190",
             "name": "Iron Kasa",
             
             "tags": [
@@ -361,7 +361,7 @@
             ]
         },
         {
-            "id": "BD_M_1190",
+            "id": "bd_m_1190",
             "name": "Ronin's Armor",
             
             "tags": [
@@ -369,7 +369,7 @@
             ]
         },
         {
-            "id": "AM_M_1190",
+            "id": "am_m_1190",
             "name": "Ronin's Gauntlets",
             
             "tags": [
@@ -377,7 +377,7 @@
             ]
         },
         {
-            "id": "LG_M_1190",
+            "id": "lg_m_1190",
             "name": "Ronin's Greaves",
             
             "tags": [
@@ -385,7 +385,7 @@
             ]
         },
         {
-            "id": "BD_M_1191",
+            "id": "bd_m_1191",
             "name": "Ronin's Armor (Altered)",
             
             "tags": [
@@ -393,7 +393,7 @@
             ]
         },
         {
-            "id": "HD_M_1200",
+            "id": "hd_m_1200",
             "name": "Guilty Hood",
             
             "tags": [
@@ -401,7 +401,7 @@
             ]
         },
         {
-            "id": "BD_M_1200",
+            "id": "bd_m_1200",
             "name": "Cloth Garb",
             
             "tags": [
@@ -409,7 +409,7 @@
             ]
         },
         {
-            "id": "LG_M_1200",
+            "id": "lg_m_1200",
             "name": "Cloth Trousers",
             
             "tags": [
@@ -417,7 +417,7 @@
             ]
         },
         {
-            "id": "HD_M_1600",
+            "id": "hd_m_1600",
             "name": "Black Wolf Mask",
             
             "tags": [
@@ -425,7 +425,7 @@
             ]
         },
         {
-            "id": "BD_M_1600",
+            "id": "bd_m_1600",
             "name": "Blaidd's Armor",
             
             "tags": [
@@ -433,7 +433,7 @@
             ]
         },
         {
-            "id": "AM_M_1600",
+            "id": "am_m_1600",
             "name": "Blaidd's Gauntlets",
             
             "tags": [
@@ -441,7 +441,7 @@
             ]
         },
         {
-            "id": "LG_M_1600",
+            "id": "lg_m_1600",
             "name": "Blaidd's Greaves",
             
             "tags": [
@@ -449,7 +449,7 @@
             ]
         },
         {
-            "id": "BD_M_1601",
+            "id": "bd_m_1601",
             "name": "Blaidd's Armor (Altered)",
             
             "tags": [
@@ -457,7 +457,7 @@
             ]
         },
         {
-            "id": "HD_M_1610",
+            "id": "hd_m_1610",
             "name": "Black Knife Hood",
             
             "tags": [
@@ -465,7 +465,7 @@
             ]
         },
         {
-            "id": "BD_M_1610",
+            "id": "bd_m_1610",
             "name": "Black Knife Armor",
             
             "tags": [
@@ -473,7 +473,7 @@
             ]
         },
         {
-            "id": "AM_M_1610",
+            "id": "am_m_1610",
             "name": "Black Knife Gauntlets",
             
             "tags": [
@@ -481,7 +481,7 @@
             ]
         },
         {
-            "id": "LG_M_1610",
+            "id": "lg_m_1610",
             "name": "Black Knife Greaves",
             
             "tags": [
@@ -489,7 +489,7 @@
             ]
         },
         {
-            "id": "BD_M_1611",
+            "id": "bd_m_1611",
             "name": "Black Knife Armor (Altered)",
             
             "tags": [
@@ -497,7 +497,7 @@
             ]
         },
         {
-            "id": "HD_M_1640",
+            "id": "hd_m_1640",
             "name": "Exile Hood",
             
             "tags": [
@@ -505,7 +505,7 @@
             ]
         },
         {
-            "id": "BD_M_1640",
+            "id": "bd_m_1640",
             "name": "Exile Armor",
             
             "tags": [
@@ -513,7 +513,7 @@
             ]
         },
         {
-            "id": "AM_M_1640",
+            "id": "am_m_1640",
             "name": "Exile Gauntlets",
             
             "tags": [
@@ -521,7 +521,7 @@
             ]
         },
         {
-            "id": "LG_M_1640",
+            "id": "lg_m_1640",
             "name": "Exile Greaves",
             
             "tags": [
@@ -529,7 +529,7 @@
             ]
         },
         {
-            "id": "HD_M_1650",
+            "id": "hd_m_1650",
             "name": "Banished Knight Helm",
             
             "tags": [
@@ -537,7 +537,7 @@
             ]
         },
         {
-            "id": "BD_M_1650",
+            "id": "bd_m_1650",
             "name": "Banished Knight Armor",
             
             "tags": [
@@ -545,7 +545,7 @@
             ]
         },
         {
-            "id": "AM_M_1650",
+            "id": "am_m_1650",
             "name": "Banished Knight Gauntlets",
             
             "tags": [
@@ -553,7 +553,7 @@
             ]
         },
         {
-            "id": "LG_M_1650",
+            "id": "lg_m_1650",
             "name": "Banished Knight Greaves",
             
             "tags": [
@@ -561,7 +561,7 @@
             ]
         },
         {
-            "id": "HD_M_1651",
+            "id": "hd_m_1651",
             "name": "Banished Knight Helm (Altered)",
             
             "tags": [
@@ -569,7 +569,7 @@
             ]
         },
         {
-            "id": "BD_M_1651",
+            "id": "bd_m_1651",
             "name": "Banished Knight Armor (Altered)",
             
             "tags": [
@@ -577,7 +577,7 @@
             ]
         },
         {
-            "id": "HD_M_1670",
+            "id": "hd_m_1670",
             "name": "Briar Helm",
             
             "tags": [
@@ -585,7 +585,7 @@
             ]
         },
         {
-            "id": "BD_M_1670",
+            "id": "bd_m_1670",
             "name": "Briar Armor",
             
             "tags": [
@@ -593,7 +593,7 @@
             ]
         },
         {
-            "id": "AM_M_1670",
+            "id": "am_m_1670",
             "name": "Briar Gauntlets",
             
             "tags": [
@@ -601,7 +601,7 @@
             ]
         },
         {
-            "id": "LG_M_1670",
+            "id": "lg_m_1670",
             "name": "Briar Greaves",
             
             "tags": [
@@ -609,7 +609,7 @@
             ]
         },
         {
-            "id": "BD_M_1671",
+            "id": "bd_m_1671",
             "name": "Briar Armor (Altered)",
             
             "tags": [
@@ -617,7 +617,7 @@
             ]
         },
         {
-            "id": "HD_M_1680",
+            "id": "hd_m_1680",
             "name": "Page Hood",
             
             "tags": [
@@ -625,7 +625,7 @@
             ]
         },
         {
-            "id": "BD_M_1680",
+            "id": "bd_m_1680",
             "name": "Page Garb",
             
             "tags": [
@@ -633,7 +633,7 @@
             ]
         },
         {
-            "id": "LG_M_1680",
+            "id": "lg_m_1680",
             "name": "Page Trousers",
             
             "tags": [
@@ -641,7 +641,7 @@
             ]
         },
         {
-            "id": "BD_M_1681",
+            "id": "bd_m_1681",
             "name": "Page Garb (Altered)",
             
             "tags": [
@@ -649,7 +649,7 @@
             ]
         },
         {
-            "id": "HD_M_1690",
+            "id": "hd_m_1690",
             "name": "Night's Cavalry Helm",
             
             "tags": [
@@ -657,7 +657,7 @@
             ]
         },
         {
-            "id": "BD_M_1690",
+            "id": "bd_m_1690",
             "name": "Night's Cavalry Armor",
             
             "tags": [
@@ -665,7 +665,7 @@
             ]
         },
         {
-            "id": "AM_M_1690",
+            "id": "am_m_1690",
             "name": "Night's Cavalry Gauntlets",
             
             "tags": [
@@ -673,7 +673,7 @@
             ]
         },
         {
-            "id": "LG_M_1690",
+            "id": "lg_m_1690",
             "name": "Night's Cavalry Greaves",
             
             "tags": [
@@ -681,7 +681,7 @@
             ]
         },
         {
-            "id": "HD_M_1691",
+            "id": "hd_m_1691",
             "name": "Night's Cavalry Helm (Altered)",
             
             "tags": [
@@ -689,7 +689,7 @@
             ]
         },
         {
-            "id": "BD_M_1691",
+            "id": "bd_m_1691",
             "name": "Night's Cavalry Armor (Altered)",
             
             "tags": [
@@ -697,7 +697,7 @@
             ]
         },
         {
-            "id": "HD_M_1700",
+            "id": "hd_m_1700",
             "name": "Blue Silver Mail Hood",
             
             "tags": [
@@ -705,7 +705,7 @@
             ]
         },
         {
-            "id": "BD_M_1700",
+            "id": "bd_m_1700",
             "name": "Blue Silver Mail Armor",
             
             "tags": [
@@ -713,7 +713,7 @@
             ]
         },
         {
-            "id": "AM_M_1700",
+            "id": "am_m_1700",
             "name": "Blue Silver Bracelets",
             
             "tags": [
@@ -721,7 +721,7 @@
             ]
         },
         {
-            "id": "LG_M_1700",
+            "id": "lg_m_1700",
             "name": "Blue Silver Mail Skirt",
             
             "tags": [
@@ -729,7 +729,7 @@
             ]
         },
         {
-            "id": "BD_M_1701",
+            "id": "bd_m_1701",
             "name": "Blue Silver Mail Armor (Altered)",
             
             "tags": [
@@ -737,7 +737,7 @@
             ]
         },
         {
-            "id": "HD_M_1710",
+            "id": "hd_m_1710",
             "name": "Nomadic Merchant's Chapeau",
             
             "tags": [
@@ -745,7 +745,7 @@
             ]
         },
         {
-            "id": "BD_M_1710",
+            "id": "bd_m_1710",
             "name": "Nomadic Merchant's Finery",
             
             "tags": [
@@ -753,7 +753,7 @@
             ]
         },
         {
-            "id": "LG_M_1710",
+            "id": "lg_m_1710",
             "name": "Nomadic Merchant's Trousers",
             
             "tags": [
@@ -761,7 +761,7 @@
             ]
         },
         {
-            "id": "BD_M_1711",
+            "id": "bd_m_1711",
             "name": "Nomadic Merchant's Finery (Altered)",
             
             "tags": [
@@ -769,7 +769,7 @@
             ]
         },
         {
-            "id": "HD_M_1720",
+            "id": "hd_m_1720",
             "name": "Malformed Dragon Helm",
             
             "tags": [
@@ -777,7 +777,7 @@
             ]
         },
         {
-            "id": "BD_M_1720",
+            "id": "bd_m_1720",
             "name": "Malformed Dragon Armor",
             
             "tags": [
@@ -785,7 +785,7 @@
             ]
         },
         {
-            "id": "AM_M_1720",
+            "id": "am_m_1720",
             "name": "Malformed Dragon Gauntlets",
             
             "tags": [
@@ -793,7 +793,7 @@
             ]
         },
         {
-            "id": "LG_M_1720",
+            "id": "lg_m_1720",
             "name": "Malformed Dragon Greaves",
             
             "tags": [
@@ -801,7 +801,7 @@
             ]
         },
         {
-            "id": "HD_M_1730",
+            "id": "hd_m_1730",
             "name": "Tree Sentinel Helm",
             
             "tags": [
@@ -809,7 +809,7 @@
             ]
         },
         {
-            "id": "BD_M_1730",
+            "id": "bd_m_1730",
             "name": "Tree Sentinel Armor",
             
             "tags": [
@@ -817,7 +817,7 @@
             ]
         },
         {
-            "id": "AM_M_1730",
+            "id": "am_m_1730",
             "name": "Tree Sentinel Gauntlets",
             
             "tags": [
@@ -825,7 +825,7 @@
             ]
         },
         {
-            "id": "LG_M_1730",
+            "id": "lg_m_1730",
             "name": "Tree Sentinel Greaves",
             
             "tags": [
@@ -833,7 +833,7 @@
             ]
         },
         {
-            "id": "BD_M_1731",
+            "id": "bd_m_1731",
             "name": "Tree Sentinel Armor (Altered)",
             
             "tags": [
@@ -841,7 +841,7 @@
             ]
         },
         {
-            "id": "HD_M_1740",
+            "id": "hd_m_1740",
             "name": "Royal Knight Helm",
             
             "tags": [
@@ -849,7 +849,7 @@
             ]
         },
         {
-            "id": "BD_M_1740",
+            "id": "bd_m_1740",
             "name": "Royal Knight Armor",
             
             "tags": [
@@ -857,7 +857,7 @@
             ]
         },
         {
-            "id": "AM_M_1740",
+            "id": "am_m_1740",
             "name": "Royal Knight Gauntlets",
             
             "tags": [
@@ -865,7 +865,7 @@
             ]
         },
         {
-            "id": "LG_M_1740",
+            "id": "lg_m_1740",
             "name": "Royal Knight Greaves",
             
             "tags": [
@@ -873,7 +873,7 @@
             ]
         },
         {
-            "id": "BD_M_1741",
+            "id": "bd_m_1741",
             "name": "Royal Knight Armor (Altered)",
             
             "tags": [
@@ -881,7 +881,7 @@
             ]
         },
         {
-            "id": "HD_M_1750",
+            "id": "hd_m_1750",
             "name": "Nox Monk Hood",
             
             "tags": [
@@ -889,7 +889,7 @@
             ]
         },
         {
-            "id": "BD_M_1750",
+            "id": "bd_m_1750",
             "name": "Nox Monk Armor",
             
             "tags": [
@@ -897,7 +897,7 @@
             ]
         },
         {
-            "id": "AM_M_1750",
+            "id": "am_m_1750",
             "name": "Nox Monk Bracelets",
             
             "tags": [
@@ -905,7 +905,7 @@
             ]
         },
         {
-            "id": "LG_M_1750",
+            "id": "lg_m_1750",
             "name": "Nox Monk Greaves",
             
             "tags": [
@@ -913,7 +913,7 @@
             ]
         },
         {
-            "id": "HD_M_1751",
+            "id": "hd_m_1751",
             "name": "Nox Monk Hood (Altered)",
             
             "tags": [
@@ -921,7 +921,7 @@
             ]
         },
         {
-            "id": "BD_M_1751",
+            "id": "bd_m_1751",
             "name": "Nox Monk Armor (Altered)",
             
             "tags": [
@@ -929,7 +929,7 @@
             ]
         },
         {
-            "id": "HD_M_1755",
+            "id": "hd_m_1755",
             "name": "Nox Swordstress Crown",
             
             "tags": [
@@ -937,7 +937,7 @@
             ]
         },
         {
-            "id": "BD_M_1755",
+            "id": "bd_m_1755",
             "name": "Nox Swordstress Armor",
             
             "tags": [
@@ -945,7 +945,7 @@
             ]
         },
         {
-            "id": "HD_M_2630",
+            "id": "hd_m_2630",
             "name": "Night Maiden Twin Crown",
             
             "tags": [
@@ -953,7 +953,7 @@
             ]
         },
         {
-            "id": "BD_M_2630",
+            "id": "bd_m_2630",
             "name": "Night Maiden Armor",
             
             "tags": [
@@ -961,7 +961,7 @@
             ]
         },
         {
-            "id": "HD_M_1756",
+            "id": "hd_m_1756",
             "name": "Nox Swordstress Crown (Altered)",
             
             "tags": [
@@ -969,7 +969,7 @@
             ]
         },
         {
-            "id": "BD_M_1756",
+            "id": "bd_m_1756",
             "name": "Nox Swordstress Armor (Altered)",
             
             "tags": [
@@ -977,7 +977,7 @@
             ]
         },
         {
-            "id": "HD_M_1760",
+            "id": "hd_m_1760",
             "name": "Great Horned Headband",
             
             "tags": [
@@ -985,7 +985,7 @@
             ]
         },
         {
-            "id": "BD_M_1760",
+            "id": "bd_m_1760",
             "name": "Fur Raiment",
             
             "tags": [
@@ -993,7 +993,7 @@
             ]
         },
         {
-            "id": "LG_M_1760",
+            "id": "lg_m_1760",
             "name": "Fur Leggings",
             
             "tags": [
@@ -1001,7 +1001,7 @@
             ]
         },
         {
-            "id": "HD_M_1765",
+            "id": "hd_m_1765",
             "name": "Shining Horned Headband",
             
             "tags": [
@@ -1009,7 +1009,7 @@
             ]
         },
         {
-            "id": "BD_M_1765",
+            "id": "bd_m_1765",
             "name": "Shaman Furs",
             
             "tags": [
@@ -1017,7 +1017,7 @@
             ]
         },
         {
-            "id": "LG_M_1765",
+            "id": "lg_m_1765",
             "name": "Shaman Leggings",
             
             "tags": [
@@ -1025,7 +1025,7 @@
             ]
         },
         {
-            "id": "HD_M_1770",
+            "id": "hd_m_1770",
             "name": "Duelist Helm",
             
             "tags": [
@@ -1033,7 +1033,7 @@
             ]
         },
         {
-            "id": "BD_M_1770",
+            "id": "bd_m_1770",
             "name": "Gravekeeper Cloak",
             
             "tags": [
@@ -1041,7 +1041,7 @@
             ]
         },
         {
-            "id": "LG_M_1770",
+            "id": "lg_m_1770",
             "name": "Duelist Greaves",
             
             "tags": [
@@ -1049,7 +1049,7 @@
             ]
         },
         {
-            "id": "BD_M_1771",
+            "id": "bd_m_1771",
             "name": "Gravekeeper Cloak (Altered)",
             
             "tags": [
@@ -1057,7 +1057,7 @@
             ]
         },
         {
-            "id": "HD_M_1790",
+            "id": "hd_m_1790",
             "name": "Sanguine Noble Hood",
             
             "tags": [
@@ -1065,7 +1065,7 @@
             ]
         },
         {
-            "id": "BD_M_1790",
+            "id": "bd_m_1790",
             "name": "Sanguine Noble Robe",
             
             "tags": [
@@ -1073,7 +1073,7 @@
             ]
         },
         {
-            "id": "LG_M_1790",
+            "id": "lg_m_1790",
             "name": "Sanguine Noble Waistcloth",
             
             "tags": [
@@ -1081,7 +1081,7 @@
             ]
         },
         {
-            "id": "HD_M_1800",
+            "id": "hd_m_1800",
             "name": "Guardian Mask",
             
             "tags": [
@@ -1089,7 +1089,7 @@
             ]
         },
         {
-            "id": "BD_M_1800",
+            "id": "bd_m_1800",
             "name": "Guardian Garb (Full Bloom)",
             
             "tags": [
@@ -1097,7 +1097,7 @@
             ]
         },
         {
-            "id": "AM_M_1800",
+            "id": "am_m_1800",
             "name": "Guardian Bracers",
             
             "tags": [
@@ -1105,7 +1105,7 @@
             ]
         },
         {
-            "id": "LG_M_1800",
+            "id": "lg_m_1800",
             "name": "Guardian Greaves",
             
             "tags": [
@@ -1113,7 +1113,7 @@
             ]
         },
         {
-            "id": "BD_M_1801",
+            "id": "bd_m_1801",
             "name": "Guardian Garb",
             
             "tags": [
@@ -1121,7 +1121,7 @@
             ]
         },
         {
-            "id": "HD_M_1810",
+            "id": "hd_m_1810",
             "name": "Cleanrot Helm",
             
             "tags": [
@@ -1129,7 +1129,7 @@
             ]
         },
         {
-            "id": "BD_M_1810",
+            "id": "bd_m_1810",
             "name": "Cleanrot Armor",
             
             "tags": [
@@ -1137,7 +1137,7 @@
             ]
         },
         {
-            "id": "AM_M_1810",
+            "id": "am_m_1810",
             "name": "Cleanrot Gauntlets",
             
             "tags": [
@@ -1145,7 +1145,7 @@
             ]
         },
         {
-            "id": "LG_M_1810",
+            "id": "lg_m_1810",
             "name": "Cleanrot Greaves",
             
             "tags": [
@@ -1153,7 +1153,7 @@
             ]
         },
         {
-            "id": "HD_M_1811",
+            "id": "hd_m_1811",
             "name": "Cleanrot Helm (Altered)",
             
             "tags": [
@@ -1161,7 +1161,7 @@
             ]
         },
         {
-            "id": "BD_M_1811",
+            "id": "bd_m_1811",
             "name": "Cleanrot Armor (Altered)",
             
             "tags": [
@@ -1169,7 +1169,7 @@
             ]
         },
         {
-            "id": "HD_M_1820",
+            "id": "hd_m_1820",
             "name": "Fire Monk Hood",
             
             "tags": [
@@ -1177,7 +1177,7 @@
             ]
         },
         {
-            "id": "BD_M_1820",
+            "id": "bd_m_1820",
             "name": "Fire Monk Armor",
             
             "tags": [
@@ -1185,7 +1185,7 @@
             ]
         },
         {
-            "id": "AM_M_1820",
+            "id": "am_m_1820",
             "name": "Fire Monk Gauntlets",
             
             "tags": [
@@ -1193,7 +1193,7 @@
             ]
         },
         {
-            "id": "LG_M_1820",
+            "id": "lg_m_1820",
             "name": "Fire Monk Greaves",
             
             "tags": [
@@ -1201,7 +1201,7 @@
             ]
         },
         {
-            "id": "HD_M_1825",
+            "id": "hd_m_1825",
             "name": "Blackflame Monk Hood",
             
             "tags": [
@@ -1209,7 +1209,7 @@
             ]
         },
         {
-            "id": "BD_M_1825",
+            "id": "bd_m_1825",
             "name": "Blackflame Monk Armor",
             
             "tags": [
@@ -1217,7 +1217,7 @@
             ]
         },
         {
-            "id": "AM_M_1825",
+            "id": "am_m_1825",
             "name": "Blackflame Monk Gauntlets",
             
             "tags": [
@@ -1225,7 +1225,7 @@
             ]
         },
         {
-            "id": "LG_M_1825",
+            "id": "lg_m_1825",
             "name": "Blackflame Monk Greaves",
             
             "tags": [
@@ -1233,7 +1233,7 @@
             ]
         },
         {
-            "id": "HD_M_1830",
+            "id": "hd_m_1830",
             "name": "Fire Prelate Helm",
             
             "tags": [
@@ -1241,7 +1241,7 @@
             ]
         },
         {
-            "id": "BD_M_1830",
+            "id": "bd_m_1830",
             "name": "Fire Prelate Armor",
             
             "tags": [
@@ -1249,7 +1249,7 @@
             ]
         },
         {
-            "id": "AM_M_1830",
+            "id": "am_m_1830",
             "name": "Fire Prelate Gauntlets",
             
             "tags": [
@@ -1257,7 +1257,7 @@
             ]
         },
         {
-            "id": "LG_M_1830",
+            "id": "lg_m_1830",
             "name": "Fire Prelate Greaves",
             
             "tags": [
@@ -1265,7 +1265,7 @@
             ]
         },
         {
-            "id": "BD_M_1831",
+            "id": "bd_m_1831",
             "name": "Fire Prelate Armor (Altered)",
             
             "tags": [
@@ -1273,7 +1273,7 @@
             ]
         },
         {
-            "id": "HD_M_1860",
+            "id": "hd_m_1860",
             "name": "Aristocrat Headband",
             
             "tags": [
@@ -1281,7 +1281,7 @@
             ]
         },
         {
-            "id": "BD_M_1860",
+            "id": "bd_m_1860",
             "name": "Aristocrat Garb",
             
             "tags": [
@@ -1289,7 +1289,7 @@
             ]
         },
         {
-            "id": "LG_M_1860",
+            "id": "lg_m_1860",
             "name": "Aristocrat Boots",
             
             "tags": [
@@ -1297,7 +1297,7 @@
             ]
         },
         {
-            "id": "BD_M_1861",
+            "id": "bd_m_1861",
             "name": "Aristocrat Garb (Altered)",
             
             "tags": [
@@ -1305,7 +1305,7 @@
             ]
         },
         {
-            "id": "HD_M_1870",
+            "id": "hd_m_1870",
             "name": "Aristocrat Hat",
             
             "tags": [
@@ -1313,7 +1313,7 @@
             ]
         },
         {
-            "id": "BD_M_1870",
+            "id": "bd_m_1870",
             "name": "Aristocrat Coat",
             
             "tags": [
@@ -1321,7 +1321,7 @@
             ]
         },
         {
-            "id": "HD_M_1880",
+            "id": "hd_m_1880",
             "name": "Old Aristocrat Cowl",
             
             "tags": [
@@ -1329,7 +1329,7 @@
             ]
         },
         {
-            "id": "BD_M_1880",
+            "id": "bd_m_1880",
             "name": "Old Aristocrat Gown",
             
             "tags": [
@@ -1337,7 +1337,7 @@
             ]
         },
         {
-            "id": "LG_M_1880",
+            "id": "lg_m_1880",
             "name": "Old Aristocrat Shoes",
             
             "tags": [
@@ -1345,7 +1345,7 @@
             ]
         },
         {
-            "id": "HD_M_1930",
+            "id": "hd_m_1930",
             "name": "Vulgar Militia Helm",
             
             "tags": [
@@ -1353,7 +1353,7 @@
             ]
         },
         {
-            "id": "BD_M_1930",
+            "id": "bd_m_1930",
             "name": "Vulgar Militia Armor",
             
             "tags": [
@@ -1361,7 +1361,7 @@
             ]
         },
         {
-            "id": "AM_M_1930",
+            "id": "am_m_1930",
             "name": "Vulgar Militia Gauntlets",
             
             "tags": [
@@ -1369,7 +1369,7 @@
             ]
         },
         {
-            "id": "LG_M_1930",
+            "id": "lg_m_1930",
             "name": "Vulgar Militia Greaves",
             
             "tags": [
@@ -1377,7 +1377,7 @@
             ]
         },
         {
-            "id": "HD_M_1940",
+            "id": "hd_m_1940",
             "name": "Sage Hood",
             
             "tags": [
@@ -1385,7 +1385,7 @@
             ]
         },
         {
-            "id": "BD_M_1940",
+            "id": "bd_m_1940",
             "name": "Sage Robe",
             
             "tags": [
@@ -1393,7 +1393,7 @@
             ]
         },
         {
-            "id": "LG_M_1940",
+            "id": "lg_m_1940",
             "name": "Sage Trousers",
             
             "tags": [
@@ -1401,7 +1401,7 @@
             ]
         },
         {
-            "id": "HD_M_1950",
+            "id": "hd_m_1950",
             "name": "Pumpkin Helm",
             
             "tags": [
@@ -1409,7 +1409,7 @@
             ]
         },
         {
-            "id": "HD_M_2000",
+            "id": "hd_m_2000",
             "name": "Elden Lord Crown",
             
             "tags": [
@@ -1417,7 +1417,7 @@
             ]
         },
         {
-            "id": "BD_M_2000",
+            "id": "bd_m_2000",
             "name": "Elden Lord Armor",
             
             "tags": [
@@ -1425,7 +1425,7 @@
             ]
         },
         {
-            "id": "AM_M_2000",
+            "id": "am_m_2000",
             "name": "Elden Lord Bracers",
             
             "tags": [
@@ -1433,7 +1433,7 @@
             ]
         },
         {
-            "id": "LG_M_2000",
+            "id": "lg_m_2000",
             "name": "Elden Lord Greaves",
             
             "tags": [
@@ -1441,7 +1441,7 @@
             ]
         },
         {
-            "id": "BD_M_2001",
+            "id": "bd_m_2001",
             "name": "Elden Lord Armor (Altered)",
             
             "tags": [
@@ -1449,7 +1449,7 @@
             ]
         },
         {
-            "id": "HD_M_2010",
+            "id": "hd_m_2010",
             "name": "Radahn's Redmane Helm",
             
             "tags": [
@@ -1457,7 +1457,7 @@
             ]
         },
         {
-            "id": "BD_M_2010",
+            "id": "bd_m_2010",
             "name": "Radahn's Lion Armor",
             
             "tags": [
@@ -1465,7 +1465,7 @@
             ]
         },
         {
-            "id": "AM_M_2010",
+            "id": "am_m_2010",
             "name": "Radahn's Gauntlets",
             
             "tags": [
@@ -1473,7 +1473,7 @@
             ]
         },
         {
-            "id": "LG_M_2010",
+            "id": "lg_m_2010",
             "name": "Radahn's Greaves",
             
             "tags": [
@@ -1481,7 +1481,7 @@
             ]
         },
         {
-            "id": "BD_M_2011",
+            "id": "bd_m_2011",
             "name": "Radahn's Lion Armor (Altered)",
             
             "tags": [
@@ -1489,7 +1489,7 @@
             ]
         },
         {
-            "id": "BD_M_2020",
+            "id": "bd_m_2020",
             "name": "Lord of Blood's Robe",
             
             "tags": [
@@ -1497,7 +1497,7 @@
             ]
         },
         {
-            "id": "BD_M_2021",
+            "id": "bd_m_2021",
             "name": "Lord of Blood's Robe (Altered)",
             
             "tags": [
@@ -1505,7 +1505,7 @@
             ]
         },
         {
-            "id": "HD_M_2050",
+            "id": "hd_m_2050",
             "name": "Queen's Crescent Crown",
             
             "tags": [
@@ -1513,7 +1513,7 @@
             ]
         },
         {
-            "id": "BD_M_2050",
+            "id": "bd_m_2050",
             "name": "Queen's Robe",
             
             "tags": [
@@ -1521,7 +1521,7 @@
             ]
         },
         {
-            "id": "AM_M_2050",
+            "id": "am_m_2050",
             "name": "Queen's Bracelets",
             
             "tags": [
@@ -1529,7 +1529,7 @@
             ]
         },
         {
-            "id": "LG_M_2050",
+            "id": "lg_m_2050",
             "name": "Queen's Leggings",
             
             "tags": [
@@ -1537,7 +1537,7 @@
             ]
         },
         {
-            "id": "HD_M_2060",
+            "id": "hd_m_2060",
             "name": "Godskin Apostle Hood",
             
             "tags": [
@@ -1545,7 +1545,7 @@
             ]
         },
         {
-            "id": "BD_M_2060",
+            "id": "bd_m_2060",
             "name": "Godskin Apostle Robe",
             
             "tags": [
@@ -1553,7 +1553,7 @@
             ]
         },
         {
-            "id": "AM_M_2060",
+            "id": "am_m_2060",
             "name": "Godskin Apostle Bracelets",
             
             "tags": [
@@ -1561,7 +1561,7 @@
             ]
         },
         {
-            "id": "LG_M_2060",
+            "id": "lg_m_2060",
             "name": "Godskin Apostle Trousers",
             
             "tags": [
@@ -1569,7 +1569,7 @@
             ]
         },
         {
-            "id": "HD_M_2070",
+            "id": "hd_m_2070",
             "name": "Godskin Noble Hood",
             
             "tags": [
@@ -1577,7 +1577,7 @@
             ]
         },
         {
-            "id": "BD_M_2070",
+            "id": "bd_m_2070",
             "name": "Godskin Noble Robe",
             
             "tags": [
@@ -1585,7 +1585,7 @@
             ]
         },
         {
-            "id": "AM_M_2070",
+            "id": "am_m_2070",
             "name": "Godskin Noble Bracelets",
             
             "tags": [
@@ -1593,7 +1593,7 @@
             ]
         },
         {
-            "id": "LG_M_2070",
+            "id": "lg_m_2070",
             "name": "Godskin Noble Trousers",
             
             "tags": [
@@ -1601,7 +1601,7 @@
             ]
         },
         {
-            "id": "HD_M_2080",
+            "id": "hd_m_2080",
             "name": "Depraved Perfumer Headscarf",
             
             "tags": [
@@ -1609,7 +1609,7 @@
             ]
         },
         {
-            "id": "BD_M_2080",
+            "id": "bd_m_2080",
             "name": "Depraved Perfumer Robe",
             
             "tags": [
@@ -1617,7 +1617,7 @@
             ]
         },
         {
-            "id": "AM_M_2080",
+            "id": "am_m_2080",
             "name": "Depraved Perfumer Gloves",
             
             "tags": [
@@ -1625,7 +1625,7 @@
             ]
         },
         {
-            "id": "LG_M_2080",
+            "id": "lg_m_2080",
             "name": "Depraved Perfumer Trousers",
             
             "tags": [
@@ -1633,7 +1633,7 @@
             ]
         },
         {
-            "id": "BD_M_2081",
+            "id": "bd_m_2081",
             "name": "Depraved Perfumer Robe (Altered)",
             
             "tags": [
@@ -1641,7 +1641,7 @@
             ]
         },
         {
-            "id": "HD_M_2110",
+            "id": "hd_m_2110",
             "name": "Crucible Axe Helm",
             
             "tags": [
@@ -1649,7 +1649,7 @@
             ]
         },
         {
-            "id": "BD_M_2110",
+            "id": "bd_m_2110",
             "name": "Crucible Axe Armor",
             
             "tags": [
@@ -1657,7 +1657,7 @@
             ]
         },
         {
-            "id": "AM_M_2110",
+            "id": "am_m_2110",
             "name": "Crucible Gauntlets",
             
             "tags": [
@@ -1665,7 +1665,7 @@
             ]
         },
         {
-            "id": "LG_M_2110",
+            "id": "lg_m_2110",
             "name": "Crucible Greaves",
             
             "tags": [
@@ -1673,7 +1673,7 @@
             ]
         },
         {
-            "id": "HD_M_2115",
+            "id": "hd_m_2115",
             "name": "Crucible Tree Helm",
             
             "tags": [
@@ -1681,7 +1681,7 @@
             ]
         },
         {
-            "id": "BD_M_2115",
+            "id": "bd_m_2115",
             "name": "Crucible Tree Armor",
             
             "tags": [
@@ -1689,7 +1689,7 @@
             ]
         },
         {
-            "id": "BD_M_2111",
+            "id": "bd_m_2111",
             "name": "Crucible Axe Armor (Altered)",
             
             "tags": [
@@ -1697,7 +1697,7 @@
             ]
         },
         {
-            "id": "BD_M_2116",
+            "id": "bd_m_2116",
             "name": "Crucible Tree Armor (Altered)",
             
             "tags": [
@@ -1705,7 +1705,7 @@
             ]
         },
         {
-            "id": "HD_M_2120",
+            "id": "hd_m_2120",
             "name": "Lusat's Glintstone Crown",
             
             "tags": [
@@ -1713,7 +1713,7 @@
             ]
         },
         {
-            "id": "BD_M_2120",
+            "id": "bd_m_2120",
             "name": "Lusat's Robe",
             
             "tags": [
@@ -1721,7 +1721,7 @@
             ]
         },
         {
-            "id": "AM_M_2120",
+            "id": "am_m_2120",
             "name": "Lusat's Manchettes",
             
             "tags": [
@@ -1729,7 +1729,7 @@
             ]
         },
         {
-            "id": "LG_M_2120",
+            "id": "lg_m_2120",
             "name": "Old Sorcerer's Legwraps",
             
             "tags": [
@@ -1737,7 +1737,7 @@
             ]
         },
         {
-            "id": "HD_M_2125",
+            "id": "hd_m_2125",
             "name": "Azur's Glintstone Crown",
             
             "tags": [
@@ -1745,7 +1745,7 @@
             ]
         },
         {
-            "id": "BD_M_2125",
+            "id": "bd_m_2125",
             "name": "Azur's Glintstone Robe",
             
             "tags": [
@@ -1753,7 +1753,7 @@
             ]
         },
         {
-            "id": "AM_M_2125",
+            "id": "am_m_2125",
             "name": "Azur's Manchettes",
             
             "tags": [
@@ -1761,7 +1761,7 @@
             ]
         },
         {
-            "id": "HD_M_1210",
+            "id": "hd_m_1210",
             "name": "All-Knowing Helm",
             
             "tags": [
@@ -1769,7 +1769,7 @@
             ]
         },
         {
-            "id": "BD_M_1210",
+            "id": "bd_m_1210",
             "name": "All-Knowing Armor",
             
             "tags": [
@@ -1777,7 +1777,7 @@
             ]
         },
         {
-            "id": "AM_M_1210",
+            "id": "am_m_1210",
             "name": "All-Knowing Gauntlets",
             
             "tags": [
@@ -1785,7 +1785,7 @@
             ]
         },
         {
-            "id": "LG_M_1210",
+            "id": "lg_m_1210",
             "name": "All-Knowing Greaves",
             
             "tags": [
@@ -1793,7 +1793,7 @@
             ]
         },
         {
-            "id": "BD_M_1211",
+            "id": "bd_m_1211",
             "name": "All-Knowing Armor (Altered)",
             
             "tags": [
@@ -1801,7 +1801,7 @@
             ]
         },
         {
-            "id": "HD_M_1220",
+            "id": "hd_m_1220",
             "name": "Twinned Helm",
             
             "tags": [
@@ -1809,7 +1809,7 @@
             ]
         },
         {
-            "id": "BD_M_1220",
+            "id": "bd_m_1220",
             "name": "Twinned Armor",
             
             "tags": [
@@ -1817,7 +1817,7 @@
             ]
         },
         {
-            "id": "AM_M_1220",
+            "id": "am_m_1220",
             "name": "Twinned Gauntlets",
             
             "tags": [
@@ -1825,7 +1825,7 @@
             ]
         },
         {
-            "id": "LG_M_1220",
+            "id": "lg_m_1220",
             "name": "Twinned Greaves",
             
             "tags": [
@@ -1833,7 +1833,7 @@
             ]
         },
         {
-            "id": "BD_M_1221",
+            "id": "bd_m_1221",
             "name": "Twinned Armor (Altered)",
             
             "tags": [
@@ -1841,7 +1841,7 @@
             ]
         },
         {
-            "id": "HD_M_1230",
+            "id": "hd_m_1230",
             "name": "Ragged Hat",
             
             "tags": [
@@ -1849,7 +1849,7 @@
             ]
         },
         {
-            "id": "BD_M_1230",
+            "id": "bd_m_1230",
             "name": "Ragged Armor",
             
             "tags": [
@@ -1857,7 +1857,7 @@
             ]
         },
         {
-            "id": "AM_M_1230",
+            "id": "am_m_1230",
             "name": "Ragged Gloves",
             
             "tags": [
@@ -1865,7 +1865,7 @@
             ]
         },
         {
-            "id": "LG_M_1230",
+            "id": "lg_m_1230",
             "name": "Ragged Loincloth",
             
             "tags": [
@@ -1873,7 +1873,7 @@
             ]
         },
         {
-            "id": "HD_M_1231",
+            "id": "hd_m_1231",
             "name": "Ragged Hat (Altered)",
             
             "tags": [
@@ -1881,7 +1881,7 @@
             ]
         },
         {
-            "id": "BD_M_1231",
+            "id": "bd_m_1231",
             "name": "Ragged Armor (Altered)",
             
             "tags": [
@@ -1889,7 +1889,7 @@
             ]
         },
         {
-            "id": "HD_M_1240",
+            "id": "hd_m_1240",
             "name": "Prophet Blindfold",
             
             "tags": [
@@ -1897,7 +1897,7 @@
             ]
         },
         {
-            "id": "BD_M_1240",
+            "id": "bd_m_1240",
             "name": "Corhyn's Robe",
             
             "tags": [
@@ -1905,7 +1905,7 @@
             ]
         },
         {
-            "id": "LG_M_1240",
+            "id": "lg_m_1240",
             "name": "Prophet Trousers",
             
             "tags": [
@@ -1913,7 +1913,7 @@
             ]
         },
         {
-            "id": "BD_M_1241",
+            "id": "bd_m_1241",
             "name": "Prophet Robe (Altered)",
             
             "tags": [
@@ -1921,7 +1921,7 @@
             ]
         },
         {
-            "id": "BD_M_1245",
+            "id": "bd_m_1245",
             "name": "Prophet Robe",
             
             "tags": [
@@ -1929,7 +1929,7 @@
             ]
         },
         {
-            "id": "HD_M_1250",
+            "id": "hd_m_1250",
             "name": "Astrologer Hood",
             
             "tags": [
@@ -1937,7 +1937,7 @@
             ]
         },
         {
-            "id": "BD_M_1250",
+            "id": "bd_m_1250",
             "name": "Astrologer Robe",
             
             "tags": [
@@ -1945,7 +1945,7 @@
             ]
         },
         {
-            "id": "AM_M_1250",
+            "id": "am_m_1250",
             "name": "Astrologer Gloves",
             
             "tags": [
@@ -1953,7 +1953,7 @@
             ]
         },
         {
-            "id": "LG_M_1250",
+            "id": "lg_m_1250",
             "name": "Astrologer Trousers",
             
             "tags": [
@@ -1961,7 +1961,7 @@
             ]
         },
         {
-            "id": "BD_M_1251",
+            "id": "bd_m_1251",
             "name": "Astrologer Robe (Altered)",
             
             "tags": [
@@ -1969,7 +1969,7 @@
             ]
         },
         {
-            "id": "HD_M_1260",
+            "id": "hd_m_1260",
             "name": "Lionel's Helm",
             
             "tags": [
@@ -1977,7 +1977,7 @@
             ]
         },
         {
-            "id": "BD_M_1260",
+            "id": "bd_m_1260",
             "name": "Lionel's Armor",
             
             "tags": [
@@ -1985,7 +1985,7 @@
             ]
         },
         {
-            "id": "AM_M_1260",
+            "id": "am_m_1260",
             "name": "Lionel's Gauntlets",
             
             "tags": [
@@ -1993,7 +1993,7 @@
             ]
         },
         {
-            "id": "LG_M_1260",
+            "id": "lg_m_1260",
             "name": "Lionel's Greaves",
             
             "tags": [
@@ -2001,7 +2001,7 @@
             ]
         },
         {
-            "id": "BD_M_1261",
+            "id": "bd_m_1261",
             "name": "Lionel's Armor (Altered)",
             
             "tags": [
@@ -2009,7 +2009,7 @@
             ]
         },
         {
-            "id": "HD_M_1270",
+            "id": "hd_m_1270",
             "name": "Hoslow's Helm",
             
             "tags": [
@@ -2017,7 +2017,7 @@
             ]
         },
         {
-            "id": "BD_M_1270",
+            "id": "bd_m_1270",
             "name": "Hoslow's Armor",
             
             "tags": [
@@ -2025,7 +2025,7 @@
             ]
         },
         {
-            "id": "AM_M_1270",
+            "id": "am_m_1270",
             "name": "Hoslow's Gauntlets",
             
             "tags": [
@@ -2033,7 +2033,7 @@
             ]
         },
         {
-            "id": "LG_M_1270",
+            "id": "lg_m_1270",
             "name": "Hoslow's Greaves",
             
             "tags": [
@@ -2041,7 +2041,7 @@
             ]
         },
         {
-            "id": "HD_M_1275",
+            "id": "hd_m_1275",
             "name": "Diallos's Mask",
             
             "tags": [
@@ -2049,7 +2049,7 @@
             ]
         },
         {
-            "id": "BD_M_1271",
+            "id": "bd_m_1271",
             "name": "Hoslow's Armor (Altered)",
             
             "tags": [
@@ -2057,7 +2057,7 @@
             ]
         },
         {
-            "id": "HD_M_1280",
+            "id": "hd_m_1280",
             "name": "Vagabond Knight Helm",
             
             "tags": [
@@ -2065,7 +2065,7 @@
             ]
         },
         {
-            "id": "BD_M_1280",
+            "id": "bd_m_1280",
             "name": "Vagabond Knight Armor",
             
             "tags": [
@@ -2073,7 +2073,7 @@
             ]
         },
         {
-            "id": "AM_M_1280",
+            "id": "am_m_1280",
             "name": "Vagabond Knight Gauntlets",
             
             "tags": [
@@ -2081,7 +2081,7 @@
             ]
         },
         {
-            "id": "LG_M_1280",
+            "id": "lg_m_1280",
             "name": "Vagabond Knight Greaves",
             
             "tags": [
@@ -2089,7 +2089,7 @@
             ]
         },
         {
-            "id": "BD_M_1281",
+            "id": "bd_m_1281",
             "name": "Vagabond Knight Armor (Altered)",
             
             "tags": [
@@ -2097,7 +2097,7 @@
             ]
         },
         {
-            "id": "HD_M_1290",
+            "id": "hd_m_1290",
             "name": "Blue Cloth Cowl",
             
             "tags": [
@@ -2105,7 +2105,7 @@
             ]
         },
         {
-            "id": "BD_M_1290",
+            "id": "bd_m_1290",
             "name": "Blue Cloth Vest",
             
             "tags": [
@@ -2113,7 +2113,7 @@
             ]
         },
         {
-            "id": "AM_M_1290",
+            "id": "am_m_1290",
             "name": "Warrior Gauntlets",
             
             "tags": [
@@ -2121,7 +2121,7 @@
             ]
         },
         {
-            "id": "LG_M_1290",
+            "id": "lg_m_1290",
             "name": "Warrior Greaves",
             
             "tags": [
@@ -2129,7 +2129,7 @@
             ]
         },
         {
-            "id": "HD_M_1300",
+            "id": "hd_m_1300",
             "name": "White Mask",
             
             "tags": [
@@ -2137,7 +2137,7 @@
             ]
         },
         {
-            "id": "BD_M_1300",
+            "id": "bd_m_1300",
             "name": "War Surgeon Gown",
             
             "tags": [
@@ -2145,7 +2145,7 @@
             ]
         },
         {
-            "id": "AM_M_1300",
+            "id": "am_m_1300",
             "name": "War Surgeon Gloves",
             
             "tags": [
@@ -2153,7 +2153,7 @@
             ]
         },
         {
-            "id": "LG_M_1300",
+            "id": "lg_m_1300",
             "name": "War Surgeon Trousers",
             
             "tags": [
@@ -2161,7 +2161,7 @@
             ]
         },
         {
-            "id": "BD_M_1301",
+            "id": "bd_m_1301",
             "name": "War Surgeon Gown (Altered)",
             
             "tags": [
@@ -2169,7 +2169,7 @@
             ]
         },
         {
-            "id": "HD_M_1310",
+            "id": "hd_m_1310",
             "name": "Royal Remains Helm",
             
             "tags": [
@@ -2177,7 +2177,7 @@
             ]
         },
         {
-            "id": "BD_M_1310",
+            "id": "bd_m_1310",
             "name": "Royal Remains Armor",
             
             "tags": [
@@ -2185,7 +2185,7 @@
             ]
         },
         {
-            "id": "AM_M_1310",
+            "id": "am_m_1310",
             "name": "Royal Remains Gauntlets",
             
             "tags": [
@@ -2193,7 +2193,7 @@
             ]
         },
         {
-            "id": "LG_M_1310",
+            "id": "lg_m_1310",
             "name": "Royal Remains Greaves",
             
             "tags": [
@@ -2201,7 +2201,7 @@
             ]
         },
         {
-            "id": "HD_M_1320",
+            "id": "hd_m_1320",
             "name": "Brave's Cord Circlet",
             
             "tags": [
@@ -2209,7 +2209,7 @@
             ]
         },
         {
-            "id": "BD_M_1320",
+            "id": "bd_m_1320",
             "name": "Brave's Battlewear",
             
             "tags": [
@@ -2217,7 +2217,7 @@
             ]
         },
         {
-            "id": "AM_M_1320",
+            "id": "am_m_1320",
             "name": "Brave's Bracer",
             
             "tags": [
@@ -2225,7 +2225,7 @@
             ]
         },
         {
-            "id": "LG_M_1320",
+            "id": "lg_m_1320",
             "name": "Brave's Legwraps",
             
             "tags": [
@@ -2233,7 +2233,7 @@
             ]
         },
         {
-            "id": "HD_M_1325",
+            "id": "hd_m_1325",
             "name": "Brave's Leather Helm",
             
             "tags": [
@@ -2241,7 +2241,7 @@
             ]
         },
         {
-            "id": "HD_M_1321",
+            "id": "hd_m_1321",
             "name": "Brave's Battlewear (Altered)",
             
             "tags": [
@@ -2249,7 +2249,7 @@
             ]
         },
         {
-            "id": "HD_M_1330",
+            "id": "hd_m_1330",
             "name": "Beast Champion Helm",
             
             "tags": [
@@ -2257,7 +2257,7 @@
             ]
         },
         {
-            "id": "BD_M_1330",
+            "id": "bd_m_1330",
             "name": "Beast Champion Armor",
             
             "tags": [
@@ -2265,7 +2265,7 @@
             ]
         },
         {
-            "id": "AM_M_1330",
+            "id": "am_m_1330",
             "name": "Beast Champion Gauntlets",
             
             "tags": [
@@ -2273,7 +2273,7 @@
             ]
         },
         {
-            "id": "LG_M_1330",
+            "id": "lg_m_1330",
             "name": "Beast Champion Greaves",
             
             "tags": [
@@ -2281,7 +2281,7 @@
             ]
         },
         {
-            "id": "BD_M_1331",
+            "id": "bd_m_1331",
             "name": "Beast Champion Armor (Altered)",
             
             "tags": [
@@ -2289,7 +2289,7 @@
             ]
         },
         {
-            "id": "HD_M_1380",
+            "id": "hd_m_1380",
             "name": "Champion Headband",
             
             "tags": [
@@ -2297,7 +2297,7 @@
             ]
         },
         {
-            "id": "BD_M_1380",
+            "id": "bd_m_1380",
             "name": "Champion Pauldron",
             
             "tags": [
@@ -2305,7 +2305,7 @@
             ]
         },
         {
-            "id": "AM_M_1380",
+            "id": "am_m_1380",
             "name": "Champion Bracers",
             
             "tags": [
@@ -2313,7 +2313,7 @@
             ]
         },
         {
-            "id": "LG_M_1380",
+            "id": "lg_m_1380",
             "name": "Champion Gaiters",
             
             "tags": [
@@ -2321,7 +2321,7 @@
             ]
         },
         {
-            "id": "HD_M_1390",
+            "id": "hd_m_1390",
             "name": "Crimson Hood",
             
             "tags": [
@@ -2329,7 +2329,7 @@
             ]
         },
         {
-            "id": "BD_M_1390",
+            "id": "bd_m_1390",
             "name": "Noble's Traveling Garb",
             
             "tags": [
@@ -2337,7 +2337,7 @@
             ]
         },
         {
-            "id": "AM_M_1390",
+            "id": "am_m_1390",
             "name": "Noble's Gloves",
             
             "tags": [
@@ -2345,7 +2345,7 @@
             ]
         },
         {
-            "id": "LG_M_1390",
+            "id": "lg_m_1390",
             "name": "Noble's Trousers",
             
             "tags": [
@@ -2353,7 +2353,7 @@
             ]
         },
         {
-            "id": "HD_M_1395",
+            "id": "hd_m_1395",
             "name": "Navy Hood",
             
             "tags": [
@@ -2361,7 +2361,7 @@
             ]
         },
         {
-            "id": "HD_M_1620",
+            "id": "hd_m_1620",
             "name": "Maliketh's Helm",
             
             "tags": [
@@ -2369,7 +2369,7 @@
             ]
         },
         {
-            "id": "BD_M_1620",
+            "id": "bd_m_1620",
             "name": "Maliketh's Armor",
             
             "tags": [
@@ -2377,7 +2377,7 @@
             ]
         },
         {
-            "id": "AM_M_1620",
+            "id": "am_m_1620",
             "name": "Maliketh's Gauntlets",
             
             "tags": [
@@ -2385,7 +2385,7 @@
             ]
         },
         {
-            "id": "LG_M_1620",
+            "id": "lg_m_1620",
             "name": "Maliketh's Greaves",
             
             "tags": [
@@ -2393,7 +2393,7 @@
             ]
         },
         {
-            "id": "BD_M_1621",
+            "id": "bd_m_1621",
             "name": "Maliketh's Armor (Altered)",
             
             "tags": [
@@ -2401,7 +2401,7 @@
             ]
         },
         {
-            "id": "HD_M_1630",
+            "id": "hd_m_1630",
             "name": "Malenia's Winged Helm",
             
             "tags": [
@@ -2409,7 +2409,7 @@
             ]
         },
         {
-            "id": "BD_M_1630",
+            "id": "bd_m_1630",
             "name": "Malenia's Armor",
             
             "tags": [
@@ -2417,7 +2417,7 @@
             ]
         },
         {
-            "id": "AM_M_1630",
+            "id": "am_m_1630",
             "name": "Malenia's Gauntlet",
             
             "tags": [
@@ -2425,7 +2425,7 @@
             ]
         },
         {
-            "id": "LG_M_1630",
+            "id": "lg_m_1630",
             "name": "Malenia's Greaves",
             
             "tags": [
@@ -2433,7 +2433,7 @@
             ]
         },
         {
-            "id": "BD_M_1631",
+            "id": "bd_m_1631",
             "name": "Malenia's Armor (Altered)",
             
             "tags": [
@@ -2441,7 +2441,7 @@
             ]
         },
         {
-            "id": "HD_M_1660",
+            "id": "hd_m_1660",
             "name": "Veteran's Helm",
             
             "tags": [
@@ -2449,7 +2449,7 @@
             ]
         },
         {
-            "id": "BD_M_1660",
+            "id": "bd_m_1660",
             "name": "Veteran's Armor",
             
             "tags": [
@@ -2457,7 +2457,7 @@
             ]
         },
         {
-            "id": "AM_M_1660",
+            "id": "am_m_1660",
             "name": "Veteran's Gauntlets",
             
             "tags": [
@@ -2465,7 +2465,7 @@
             ]
         },
         {
-            "id": "LG_M_1660",
+            "id": "lg_m_1660",
             "name": "Veteran's Greaves",
             
             "tags": [
@@ -2473,7 +2473,7 @@
             ]
         },
         {
-            "id": "BD_M_1661",
+            "id": "bd_m_1661",
             "name": "Veteran's Armor (Altered)",
             
             "tags": [
@@ -2481,7 +2481,7 @@
             ]
         },
         {
-            "id": "HD_M_1850",
+            "id": "hd_m_1850",
             "name": "Bloodhound Knight Helm",
             
             "tags": [
@@ -2489,7 +2489,7 @@
             ]
         },
         {
-            "id": "BD_M_1850",
+            "id": "bd_m_1850",
             "name": "Bloodhound Knight Armor",
             
             "tags": [
@@ -2497,7 +2497,7 @@
             ]
         },
         {
-            "id": "AM_M_1850",
+            "id": "am_m_1850",
             "name": "Bloodhound Knight Gauntlets",
             
             "tags": [
@@ -2505,7 +2505,7 @@
             ]
         },
         {
-            "id": "LG_M_1850",
+            "id": "lg_m_1850",
             "name": "Bloodhound Knight Greaves",
             
             "tags": [
@@ -2513,7 +2513,7 @@
             ]
         },
         {
-            "id": "BD_M_1851",
+            "id": "bd_m_1851",
             "name": "Bloodhound Knight Armor (Altered)",
             
             "tags": [
@@ -2521,7 +2521,7 @@
             ]
         },
         {
-            "id": "HD_M_2130",
+            "id": "hd_m_2130",
             "name": "Festive Hood",
             
             "tags": [
@@ -2529,7 +2529,7 @@
             ]
         },
         {
-            "id": "BD_M_2130",
+            "id": "bd_m_2130",
             "name": "Festive Garb",
             
             "tags": [
@@ -2537,7 +2537,7 @@
             ]
         },
         {
-            "id": "HD_M_2131",
+            "id": "hd_m_2131",
             "name": "Festive Hood (Altered)",
             
             "tags": [
@@ -2545,7 +2545,7 @@
             ]
         },
         {
-            "id": "BD_M_2131",
+            "id": "bd_m_2131",
             "name": "Festive Garb (Altered)",
             
             "tags": [
@@ -2553,7 +2553,7 @@
             ]
         },
         {
-            "id": "HD_M_2135",
+            "id": "hd_m_2135",
             "name": "Blue Festive Hood",
             
             "tags": [
@@ -2561,7 +2561,7 @@
             ]
         },
         {
-            "id": "BD_M_2135",
+            "id": "bd_m_2135",
             "name": "Blue Festive Garb",
             
             "tags": [
@@ -2569,7 +2569,7 @@
             ]
         },
         {
-            "id": "HD_M_2140",
+            "id": "hd_m_2140",
             "name": "Commoner's Headband",
             
             "tags": [
@@ -2577,7 +2577,7 @@
             ]
         },
         {
-            "id": "BD_M_2140",
+            "id": "bd_m_2140",
             "name": "Commoner's Garb",
             
             "tags": [
@@ -2585,7 +2585,7 @@
             ]
         },
         {
-            "id": "LG_M_2140",
+            "id": "lg_m_2140",
             "name": "Commoner's Shoes",
             
             "tags": [
@@ -2593,7 +2593,7 @@
             ]
         },
         {
-            "id": "HD_M_2141",
+            "id": "hd_m_2141",
             "name": "Commoner's Headband (Altered)",
             
             "tags": [
@@ -2601,7 +2601,7 @@
             ]
         },
         {
-            "id": "BD_M_2141",
+            "id": "bd_m_2141",
             "name": "Commoner's Garb (Altered)",
             
             "tags": [
@@ -2609,7 +2609,7 @@
             ]
         },
         {
-            "id": "HD_M_2145",
+            "id": "hd_m_2145",
             "name": "Commoner's Simple Garb",
             
             "tags": [
@@ -2617,7 +2617,7 @@
             ]
         },
         {
-            "id": "BD_M_2146",
+            "id": "bd_m_2146",
             "name": "Commoner's Simple Garb (Altered)",
             
             "tags": [
@@ -2625,7 +2625,7 @@
             ]
         },
         {
-            "id": "HD_M_2150",
+            "id": "hd_m_2150",
             "name": "Envoy Crown",
             
             "tags": [
@@ -2633,7 +2633,7 @@
             ]
         },
         {
-            "id": "HD_M_2160",
+            "id": "hd_m_2160",
             "name": "Twinsage Glintstone Crown",
             
             "tags": [
@@ -2641,7 +2641,7 @@
             ]
         },
         {
-            "id": "BD_M_2160",
+            "id": "bd_m_2160",
             "name": "Raya Lucarian Robe",
             
             "tags": [
@@ -2649,7 +2649,7 @@
             ]
         },
         {
-            "id": "AM_M_2160",
+            "id": "am_m_2160",
             "name": "Sorcerer Manchettes",
             
             "tags": [
@@ -2657,7 +2657,7 @@
             ]
         },
         {
-            "id": "LG_M_2160",
+            "id": "lg_m_2160",
             "name": "Sorcerer Leggings",
             
             "tags": [
@@ -2665,7 +2665,7 @@
             ]
         },
         {
-            "id": "HD_M_2165",
+            "id": "hd_m_2165",
             "name": "Olivinus Glintstone Crown",
             
             "tags": [
@@ -2673,7 +2673,7 @@
             ]
         },
         {
-            "id": "HD_M_2170",
+            "id": "hd_m_2170",
             "name": "Lazuli Glintstone Crown",
             
             "tags": [
@@ -2681,7 +2681,7 @@
             ]
         },
         {
-            "id": "HD_M_2175",
+            "id": "hd_m_2175",
             "name": "Karolos Glintstone Crown",
             
             "tags": [
@@ -2689,7 +2689,7 @@
             ]
         },
         {
-            "id": "HD_M_2540",
+            "id": "hd_m_2540",
             "name": "Witch's Glintstone Crown",
             
             "tags": [
@@ -2697,7 +2697,7 @@
             ]
         },
         {
-            "id": "HD_M_2190",
+            "id": "hd_m_2190",
             "name": "Marionette Soldier Helm",
             
             "tags": [
@@ -2705,7 +2705,7 @@
             ]
         },
         {
-            "id": "BD_M_2190",
+            "id": "bd_m_2190",
             "name": "Marionette Soldier Armor",
             
             "tags": [
@@ -2713,7 +2713,7 @@
             ]
         },
         {
-            "id": "HD_M_2180",
+            "id": "hd_m_2180",
             "name": "Marionette Soldier Birdhelm",
             
             "tags": [
@@ -2721,7 +2721,7 @@
             ]
         },
         {
-            "id": "HD_M_1350",
+            "id": "hd_m_1350",
             "name": "Raging Wolf Helm",
             
             "tags": [
@@ -2729,7 +2729,7 @@
             ]
         },
         {
-            "id": "BD_M_1350",
+            "id": "bd_m_1350",
             "name": "Raging Wolf Armor",
             
             "tags": [
@@ -2737,7 +2737,7 @@
             ]
         },
         {
-            "id": "AM_M_1350",
+            "id": "am_m_1350",
             "name": "Raging Wolf Gauntlets",
             
             "tags": [
@@ -2745,7 +2745,7 @@
             ]
         },
         {
-            "id": "LG_M_1350",
+            "id": "lg_m_1350",
             "name": "Raging Wolf Greaves",
             
             "tags": [
@@ -2753,7 +2753,7 @@
             ]
         },
         {
-            "id": "BD_M_1351",
+            "id": "bd_m_1351",
             "name": "Raging Wolf Armor (Altered)",
             
             "tags": [
@@ -2761,7 +2761,7 @@
             ]
         },
         {
-            "id": "HD_M_1360",
+            "id": "hd_m_1360",
             "name": "Land of Reeds Helm",
             
             "tags": [
@@ -2769,7 +2769,7 @@
             ]
         },
         {
-            "id": "BD_M_1360",
+            "id": "bd_m_1360",
             "name": "Land of Reeds Armor",
             
             "tags": [
@@ -2777,7 +2777,7 @@
             ]
         },
         {
-            "id": "AM_M_1360",
+            "id": "am_m_1360",
             "name": "Land of Reeds Gauntlets",
             
             "tags": [
@@ -2785,7 +2785,7 @@
             ]
         },
         {
-            "id": "LG_M_1360",
+            "id": "lg_m_1360",
             "name": "Land of Reeds Greaves",
             
             "tags": [
@@ -2793,7 +2793,7 @@
             ]
         },
         {
-            "id": "BD_M_1361",
+            "id": "bd_m_1361",
             "name": "Land of Reeds Armor (Altered)",
             
             "tags": [
@@ -2801,7 +2801,7 @@
             ]
         },
         {
-            "id": "HD_M_1365",
+            "id": "hd_m_1365",
             "name": "Okina Mask",
             
             "tags": [
@@ -2809,7 +2809,7 @@
             ]
         },
         {
-            "id": "BD_M_1365",
+            "id": "bd_m_1365",
             "name": "White Reed Armor",
             
             "tags": [
@@ -2817,7 +2817,7 @@
             ]
         },
         {
-            "id": "AM_M_1365",
+            "id": "am_m_1365",
             "name": "White Reed Gauntlets",
             
             "tags": [
@@ -2825,7 +2825,7 @@
             ]
         },
         {
-            "id": "LG_M_1365",
+            "id": "lg_m_1365",
             "name": "White Reed Greaves",
             
             "tags": [
@@ -2833,7 +2833,7 @@
             ]
         },
         {
-            "id": "HD_M_1400",
+            "id": "hd_m_1400",
             "name": "Confessor Hood",
             
             "tags": [
@@ -2841,7 +2841,7 @@
             ]
         },
         {
-            "id": "BD_M_1400",
+            "id": "bd_m_1400",
             "name": "Confessor Armor",
             
             "tags": [
@@ -2849,7 +2849,7 @@
             ]
         },
         {
-            "id": "AM_M_1400",
+            "id": "am_m_1400",
             "name": "Confessor Gloves",
             
             "tags": [
@@ -2857,7 +2857,7 @@
             ]
         },
         {
-            "id": "LG_M_1400",
+            "id": "lg_m_1400",
             "name": "Confessor Boots",
             
             "tags": [
@@ -2865,7 +2865,7 @@
             ]
         },
         {
-            "id": "HD_M_1401",
+            "id": "hd_m_1401",
             "name": "Confessor Hood (Altered)",
             
             "tags": [
@@ -2873,7 +2873,7 @@
             ]
         },
         {
-            "id": "BD_M_1401",
+            "id": "bd_m_1401",
             "name": "Confessor Armor (Altered)",
             
             "tags": [
@@ -2881,7 +2881,7 @@
             ]
         },
         {
-            "id": "HD_M_1410",
+            "id": "hd_m_1410",
             "name": "Prisoner Iron Mask",
             
             "tags": [
@@ -2889,7 +2889,7 @@
             ]
         },
         {
-            "id": "BD_M_1410",
+            "id": "bd_m_1410",
             "name": "Prisoner Clothing",
             
             "tags": [
@@ -2897,7 +2897,7 @@
             ]
         },
         {
-            "id": "LG_M_1410",
+            "id": "lg_m_1410",
             "name": "Prisoner Trousers",
             
             "tags": [
@@ -2905,7 +2905,7 @@
             ]
         },
         {
-            "id": "HD_M_1415",
+            "id": "hd_m_1415",
             "name": "Blackguard's Iron Mask",
             
             "tags": [
@@ -2913,7 +2913,7 @@
             ]
         },
         {
-            "id": "HD_M_1420",
+            "id": "hd_m_1420",
             "name": "Traveling Maiden Hood",
             
             "tags": [
@@ -2921,7 +2921,7 @@
             ]
         },
         {
-            "id": "BD_M_1420",
+            "id": "bd_m_1420",
             "name": "Traveling Maiden Robe",
             
             "tags": [
@@ -2929,7 +2929,7 @@
             ]
         },
         {
-            "id": "AM_M_1420",
+            "id": "am_m_1420",
             "name": "Traveling Maiden Gloves",
             
             "tags": [
@@ -2937,7 +2937,7 @@
             ]
         },
         {
-            "id": "LG_M_1420",
+            "id": "lg_m_1420",
             "name": "Traveling Maiden Boots",
             
             "tags": [
@@ -2945,7 +2945,7 @@
             ]
         },
         {
-            "id": "BD_M_1421",
+            "id": "bd_m_1421",
             "name": "Traveling Maiden Robe (Altered)",
             
             "tags": [
@@ -2953,7 +2953,7 @@
             ]
         },
         {
-            "id": "HD_M_1425",
+            "id": "hd_m_1425",
             "name": "Finger Maiden Fillet",
             
             "tags": [
@@ -2961,7 +2961,7 @@
             ]
         },
         {
-            "id": "BD_M_1425",
+            "id": "bd_m_1425",
             "name": "Finger Maiden Robe",
             
             "tags": [
@@ -2969,7 +2969,7 @@
             ]
         },
         {
-            "id": "LG_M_1425",
+            "id": "lg_m_1425",
             "name": "Finger Maiden Shoes",
             
             "tags": [
@@ -2977,7 +2977,7 @@
             ]
         },
         {
-            "id": "BD_M_1426",
+            "id": "bd_m_1426",
             "name": "Finger Maiden Robe (Altered)",
             
             "tags": [
@@ -2985,7 +2985,7 @@
             ]
         },
         {
-            "id": "HD_M_1430",
+            "id": "hd_m_1430",
             "name": "Preceptor's Big Hat",
             
             "tags": [
@@ -2993,7 +2993,7 @@
             ]
         },
         {
-            "id": "BD_M_1430",
+            "id": "bd_m_1430",
             "name": "Preceptor's Long Gown",
             
             "tags": [
@@ -3001,7 +3001,7 @@
             ]
         },
         {
-            "id": "AM_M_1430",
+            "id": "am_m_1430",
             "name": "Preceptor's Gloves",
             
             "tags": [
@@ -3009,7 +3009,7 @@
             ]
         },
         {
-            "id": "LG_M_1430",
+            "id": "lg_m_1430",
             "name": "Preceptor's Trousers",
             
             "tags": [
@@ -3017,7 +3017,7 @@
             ]
         },
         {
-            "id": "HD_M_1431",
+            "id": "hd_m_1431",
             "name": "Mask of Confidence",
             
             "tags": [
@@ -3025,7 +3025,7 @@
             ]
         },
         {
-            "id": "BD_M_1431",
+            "id": "bd_m_1431",
             "name": "Preceptor's Long Gown (Altered)",
             
             "tags": [
@@ -3033,7 +3033,7 @@
             ]
         },
         {
-            "id": "HD_M_1440",
+            "id": "hd_m_1440",
             "name": "Grass Hair Ornament",
             
             "tags": [
@@ -3041,7 +3041,7 @@
             ]
         },
         {
-            "id": "HD_M_1450",
+            "id": "hd_m_1450",
             "name": "Skeletal Mask",
             
             "tags": [
@@ -3049,7 +3049,7 @@
             ]
         },
         {
-            "id": "BD_M_1450",
+            "id": "bd_m_1450",
             "name": "Raptor's Black Feathers",
             
             "tags": [
@@ -3057,7 +3057,7 @@
             ]
         },
         {
-            "id": "AM_M_1450",
+            "id": "am_m_1450",
             "name": "Bandit Manchettes",
             
             "tags": [
@@ -3065,7 +3065,7 @@
             ]
         },
         {
-            "id": "LG_M_1450",
+            "id": "lg_m_1450",
             "name": "Bandit Boots",
             
             "tags": [
@@ -3073,7 +3073,7 @@
             ]
         },
         {
-            "id": "BD_M_1451",
+            "id": "bd_m_1451",
             "name": "Bandit Garb",
             
             "tags": [
@@ -3081,7 +3081,7 @@
             ]
         },
         {
-            "id": "HD_M_1460",
+            "id": "hd_m_1460",
             "name": "Eccentric's Hood",
             
             "tags": [
@@ -3089,7 +3089,7 @@
             ]
         },
         {
-            "id": "BD_M_1460",
+            "id": "bd_m_1460",
             "name": "Eccentric's Armor",
             
             "tags": [
@@ -3097,7 +3097,7 @@
             ]
         },
         {
-            "id": "AM_M_1460",
+            "id": "am_m_1460",
             "name": "Eccentric's Manchettes",
             
             "tags": [
@@ -3105,7 +3105,7 @@
             ]
         },
         {
-            "id": "LG_M_1460",
+            "id": "lg_m_1460",
             "name": "Eccentric's Breeches",
             
             "tags": [
@@ -3113,7 +3113,7 @@
             ]
         },
         {
-            "id": "HD_M_1461",
+            "id": "hd_m_1461",
             "name": "Eccentric's Hood (Altered)",
             
             "tags": [
@@ -3121,7 +3121,7 @@
             ]
         },
         {
-            "id": "HD_M_1470",
+            "id": "hd_m_1470",
             "name": "Fingerprint Helm",
             
             "tags": [
@@ -3129,7 +3129,7 @@
             ]
         },
         {
-            "id": "BD_M_1470",
+            "id": "bd_m_1470",
             "name": "Fingerprint Armor",
             
             "tags": [
@@ -3137,7 +3137,7 @@
             ]
         },
         {
-            "id": "AM_M_1470",
+            "id": "am_m_1470",
             "name": "Fingerprint Gauntlets",
             
             "tags": [
@@ -3145,7 +3145,7 @@
             ]
         },
         {
-            "id": "LG_M_1470",
+            "id": "lg_m_1470",
             "name": "Fingerprint Greaves",
             
             "tags": [
@@ -3153,7 +3153,7 @@
             ]
         },
         {
-            "id": "BD_M_1471",
+            "id": "bd_m_1471",
             "name": "Fingerprint Armor (Altered)",
             
             "tags": [
@@ -3161,7 +3161,7 @@
             ]
         },
         {
-            "id": "HD_M_1480",
+            "id": "hd_m_1480",
             "name": "Consort's Mask",
             
             "tags": [
@@ -3169,7 +3169,7 @@
             ]
         },
         {
-            "id": "BD_M_1480",
+            "id": "bd_m_1480",
             "name": "Consort's Robe",
             
             "tags": [
@@ -3177,7 +3177,7 @@
             ]
         },
         {
-            "id": "LG_M_1480",
+            "id": "lg_m_1480",
             "name": "Consort's Trousers",
             
             "tags": [
@@ -3185,7 +3185,7 @@
             ]
         },
         {
-            "id": "HD_M_1530",
+            "id": "hd_m_1530",
             "name": "Ruler's Mask",
             
             "tags": [
@@ -3193,7 +3193,7 @@
             ]
         },
         {
-            "id": "BD_M_1530",
+            "id": "bd_m_1530",
             "name": "Ruler's Robe",
             
             "tags": [
@@ -3201,7 +3201,7 @@
             ]
         },
         {
-            "id": "BD_M_1531",
+            "id": "bd_m_1531",
             "name": "Upper-Class Robe",
             
             "tags": [
@@ -3209,7 +3209,7 @@
             ]
         },
         {
-            "id": "HD_M_1485",
+            "id": "hd_m_1485",
             "name": "Marais Mask",
             
             "tags": [
@@ -3217,7 +3217,7 @@
             ]
         },
         {
-            "id": "BD_M_1485",
+            "id": "bd_m_1485",
             "name": "Marais Robe",
             
             "tags": [
@@ -3225,7 +3225,7 @@
             ]
         },
         {
-            "id": "AM_M_1485",
+            "id": "am_m_1485",
             "name": "Bloodsoaked Manchettes",
             
             "tags": [
@@ -3233,7 +3233,7 @@
             ]
         },
         {
-            "id": "HD_M_1486",
+            "id": "hd_m_1486",
             "name": "Bloodsoaked Mask",
             
             "tags": [
@@ -3241,7 +3241,7 @@
             ]
         },
         {
-            "id": "BD_M_1486",
+            "id": "bd_m_1486",
             "name": "Official's Attire",
             
             "tags": [
@@ -3249,7 +3249,7 @@
             ]
         },
         {
-            "id": "HD_M_1490",
+            "id": "hd_m_1490",
             "name": "Omen Helm",
             
             "tags": [
@@ -3257,7 +3257,7 @@
             ]
         },
         {
-            "id": "BD_M_1490",
+            "id": "bd_m_1490",
             "name": "Omen Armor",
             
             "tags": [
@@ -3265,7 +3265,7 @@
             ]
         },
         {
-            "id": "AM_M_1490",
+            "id": "am_m_1490",
             "name": "Omen Gauntlets",
             
             "tags": [
@@ -3273,7 +3273,7 @@
             ]
         },
         {
-            "id": "LG_M_1490",
+            "id": "lg_m_1490",
             "name": "Omen Greaves",
             
             "tags": [
@@ -3281,7 +3281,7 @@
             ]
         },
         {
-            "id": "HD_M_1500",
+            "id": "hd_m_1500",
             "name": "Carian Knight Helm",
             
             "tags": [
@@ -3289,7 +3289,7 @@
             ]
         },
         {
-            "id": "BD_M_1500",
+            "id": "bd_m_1500",
             "name": "Carian Knight Armor",
             
             "tags": [
@@ -3297,7 +3297,7 @@
             ]
         },
         {
-            "id": "AM_M_1500",
+            "id": "am_m_1500",
             "name": "Carian Knight Gauntlets",
             
             "tags": [
@@ -3305,7 +3305,7 @@
             ]
         },
         {
-            "id": "LG_M_1500",
+            "id": "lg_m_1500",
             "name": "Carian Knight Greaves",
             
             "tags": [
@@ -3313,7 +3313,7 @@
             ]
         },
         {
-            "id": "BD_M_1501",
+            "id": "bd_m_1501",
             "name": "Carian Knight Armor (Altered)",
             
             "tags": [
@@ -3321,7 +3321,7 @@
             ]
         },
         {
-            "id": "HD_M_1510",
+            "id": "hd_m_1510",
             "name": "Hierodas Glintstone Crown",
             
             "tags": [
@@ -3329,7 +3329,7 @@
             ]
         },
         {
-            "id": "BD_M_1510",
+            "id": "bd_m_1510",
             "name": "Errant Sorcerer Robe",
             
             "tags": [
@@ -3337,7 +3337,7 @@
             ]
         },
         {
-            "id": "AM_M_1510",
+            "id": "am_m_1510",
             "name": "Errant Sorcerer Manchettes",
             
             "tags": [
@@ -3345,7 +3345,7 @@
             ]
         },
         {
-            "id": "LG_M_1510",
+            "id": "lg_m_1510",
             "name": "Errant Sorcerer Boots",
             
             "tags": [
@@ -3353,7 +3353,7 @@
             ]
         },
         {
-            "id": "BD_M_1511",
+            "id": "bd_m_1511",
             "name": "Errant Sorcerer Robe (Altered)",
             
             "tags": [
@@ -3361,7 +3361,7 @@
             ]
         },
         {
-            "id": "HD_M_1520",
+            "id": "hd_m_1520",
             "name": "Haima Glintstone Crown",
             
             "tags": [
@@ -3369,7 +3369,7 @@
             ]
         },
         {
-            "id": "BD_M_1520",
+            "id": "bd_m_1520",
             "name": "Battlemage Robe",
             
             "tags": [
@@ -3377,7 +3377,7 @@
             ]
         },
         {
-            "id": "AM_M_1520",
+            "id": "am_m_1520",
             "name": "Battlemage Manchettes",
             
             "tags": [
@@ -3385,7 +3385,7 @@
             ]
         },
         {
-            "id": "LG_M_1520",
+            "id": "lg_m_1520",
             "name": "Battlemage Legwraps",
             
             "tags": [
@@ -3393,7 +3393,7 @@
             ]
         },
         {
-            "id": "HD_M_2200",
+            "id": "hd_m_2200",
             "name": "Snow Witch Hat",
             
             "tags": [
@@ -3401,7 +3401,7 @@
             ]
         },
         {
-            "id": "BD_M_2200",
+            "id": "bd_m_2200",
             "name": "Snow Witch Robe",
             
             "tags": [
@@ -3409,7 +3409,7 @@
             ]
         },
         {
-            "id": "LG_M_2200",
+            "id": "lg_m_2200",
             "name": "Snow Witch Skirt",
             
             "tags": [
@@ -3417,7 +3417,7 @@
             ]
         },
         {
-            "id": "BD_M_2201",
+            "id": "bd_m_2201",
             "name": "Snow Witch Robe (Altered)",
             
             "tags": [
@@ -3425,7 +3425,7 @@
             ]
         },
         {
-            "id": "BD_M_2210",
+            "id": "bd_m_2210",
             "name": "Traveler's Clothes",
             
             "tags": [
@@ -3433,7 +3433,7 @@
             ]
         },
         {
-            "id": "AM_M_2210",
+            "id": "am_m_2210",
             "name": "Traveler's Manchettes",
             
             "tags": [
@@ -3441,7 +3441,7 @@
             ]
         },
         {
-            "id": "LG_M_2210",
+            "id": "lg_m_2210",
             "name": "Traveler's Boots",
             
             "tags": [
@@ -3449,7 +3449,7 @@
             ]
         },
         {
-            "id": "HD_M_2220",
+            "id": "hd_m_2220",
             "name": "Juvenile Scholar Cap",
             
             "tags": [
@@ -3457,7 +3457,7 @@
             ]
         },
         {
-            "id": "BD_M_2220",
+            "id": "bd_m_2220",
             "name": "Juvenile Scholar Robe",
             
             "tags": [
@@ -3465,7 +3465,7 @@
             ]
         },
         {
-            "id": "HD_M_2230",
+            "id": "hd_m_2230",
             "name": "Radiant Gold Mask",
             
             "tags": [
@@ -3473,7 +3473,7 @@
             ]
         },
         {
-            "id": "BD_M_2230",
+            "id": "bd_m_2230",
             "name": "Goldmask's Rags",
             
             "tags": [
@@ -3481,7 +3481,7 @@
             ]
         },
         {
-            "id": "AM_M_2230",
+            "id": "am_m_2230",
             "name": "Gold Bracelets",
             
             "tags": [
@@ -3489,7 +3489,7 @@
             ]
         },
         {
-            "id": "LG_M_2230",
+            "id": "lg_m_2230",
             "name": "Gold Waistwrap",
             
             "tags": [
@@ -3497,7 +3497,7 @@
             ]
         },
         {
-            "id": "BD_M_2240",
+            "id": "bd_m_2240",
             "name": "Fell Omen Cloak",
             
             "tags": [
@@ -3505,7 +3505,7 @@
             ]
         },
         {
-            "id": "HD_M_2250",
+            "id": "hd_m_2250",
             "name": "Albinauric Mask",
             
             "tags": [
@@ -3513,7 +3513,7 @@
             ]
         },
         {
-            "id": "BD_M_2250",
+            "id": "bd_m_2250",
             "name": "Dirty Chainmail",
             
             "tags": [
@@ -3521,7 +3521,7 @@
             ]
         },
         {
-            "id": "HD_M_2260",
+            "id": "hd_m_2260",
             "name": "Zamor Mask",
             
             "tags": [
@@ -3529,7 +3529,7 @@
             ]
         },
         {
-            "id": "BD_M_2260",
+            "id": "bd_m_2260",
             "name": "Zamor Armor",
             
             "tags": [
@@ -3537,7 +3537,7 @@
             ]
         },
         {
-            "id": "AM_M_2260",
+            "id": "am_m_2260",
             "name": "Zamor Bracelets",
             
             "tags": [
@@ -3545,7 +3545,7 @@
             ]
         },
         {
-            "id": "LG_M_2260",
+            "id": "lg_m_2260",
             "name": "Zamor Legwraps",
             
             "tags": [
@@ -3553,7 +3553,7 @@
             ]
         },
         {
-            "id": "HD_M_2270",
+            "id": "hd_m_2270",
             "name": "Imp Head (Cat)",
             
             "tags": [
@@ -3561,7 +3561,7 @@
             ]
         },
         {
-            "id": "HD_M_2510",
+            "id": "hd_m_2510",
             "name": "Imp Head (Fanged)",
             
             "tags": [
@@ -3569,7 +3569,7 @@
             ]
         },
         {
-            "id": "HD_M_2520",
+            "id": "hd_m_2520",
             "name": "Imp Head (Long-Tongued)",
             
             "tags": [
@@ -3577,7 +3577,7 @@
             ]
         },
         {
-            "id": "HD_M_2570",
+            "id": "hd_m_2570",
             "name": "Imp Head (Corpse)",
             
             "tags": [
@@ -3585,7 +3585,7 @@
             ]
         },
         {
-            "id": "HD_M_2575",
+            "id": "hd_m_2575",
             "name": "Imp Head (Wolf)",
             
             "tags": [
@@ -3593,7 +3593,7 @@
             ]
         },
         {
-            "id": "HD_M_2580",
+            "id": "hd_m_2580",
             "name": "Imp Head (Elder)",
             
             "tags": [
@@ -3601,7 +3601,7 @@
             ]
         },
         {
-            "id": "HD_M_2280",
+            "id": "hd_m_2280",
             "name": "Silver Tear Mask",
             
             "tags": [
@@ -3609,7 +3609,7 @@
             ]
         },
         {
-            "id": "HD_M_1540",
+            "id": "hd_m_1540",
             "name": "Chain Coif",
             
             "tags": [
@@ -3617,7 +3617,7 @@
             ]
         },
         {
-            "id": "BD_M_1540",
+            "id": "bd_m_1540",
             "name": "Chain Armor",
             
             "tags": [
@@ -3625,7 +3625,7 @@
             ]
         },
         {
-            "id": "AM_M_1540",
+            "id": "am_m_1540",
             "name": "Chain Gauntlets",
             
             "tags": [
@@ -3633,7 +3633,7 @@
             ]
         },
         {
-            "id": "LG_M_1540",
+            "id": "lg_m_1540",
             "name": "Chain Leggings",
             
             "tags": [
@@ -3641,7 +3641,7 @@
             ]
         },
         {
-            "id": "HD_M_1545",
+            "id": "hd_m_1545",
             "name": "Greathelm",
             
             "tags": [
@@ -3649,7 +3649,7 @@
             ]
         },
         {
-            "id": "BD_M_1545",
+            "id": "bd_m_1545",
             "name": "Eye Surcoat",
             
             "tags": [
@@ -3657,7 +3657,7 @@
             ]
         },
         {
-            "id": "BD_M_1546",
+            "id": "bd_m_1546",
             "name": "Tree Surcoat",
             
             "tags": [
@@ -3665,7 +3665,7 @@
             ]
         },
         {
-            "id": "HD_M_2290",
+            "id": "hd_m_2290",
             "name": "Octopus Head",
             
             "tags": [
@@ -3673,7 +3673,7 @@
             ]
         },
         {
-            "id": "HD_M_2300",
+            "id": "hd_m_2300",
             "name": "Jar",
             
             "tags": [
@@ -3681,7 +3681,7 @@
             ]
         },
         {
-            "id": "HD_M_2310",
+            "id": "hd_m_2310",
             "name": "Mushroom Head",
             
             "tags": [
@@ -3689,7 +3689,7 @@
             ]
         },
         {
-            "id": "BD_M_2310",
+            "id": "bd_m_2310",
             "name": "Mushroom Body",
             
             "tags": [
@@ -3697,7 +3697,7 @@
             ]
         },
         {
-            "id": "AM_M_2310",
+            "id": "am_m_2310",
             "name": "Mushroom Arms",
             
             "tags": [
@@ -3705,7 +3705,7 @@
             ]
         },
         {
-            "id": "LG_M_2310",
+            "id": "lg_m_2310",
             "name": "Mushroom Legs",
             
             "tags": [
@@ -3713,7 +3713,7 @@
             ]
         },
         {
-            "id": "HD_M_1550",
+            "id": "hd_m_1550",
             "name": "Nox Mirrorhelm",
             
             "tags": [
@@ -3721,7 +3721,7 @@
             ]
         },
         {
-            "id": "HD_M_1555",
+            "id": "hd_m_1555",
             "name": "Iji's Mirrorhelm",
             
             "tags": [
@@ -3729,7 +3729,7 @@
             ]
         },
         {
-            "id": "HD_M_1560",
+            "id": "hd_m_1560",
             "name": "Black Hood",
             
             "tags": [
@@ -3737,7 +3737,7 @@
             ]
         },
         {
-            "id": "BD_M_1560",
+            "id": "bd_m_1560",
             "name": "Leather Armor",
             
             "tags": [
@@ -3745,7 +3745,7 @@
             ]
         },
         {
-            "id": "AM_M_1560",
+            "id": "am_m_1560",
             "name": "Leather Gloves",
             
             "tags": [
@@ -3753,7 +3753,7 @@
             ]
         },
         {
-            "id": "LG_M_1560",
+            "id": "lg_m_1560",
             "name": "Leather Boots",
             
             "tags": [
@@ -3761,7 +3761,7 @@
             ]
         },
         {
-            "id": "HD_M_1561",
+            "id": "hd_m_1561",
             "name": "Bandit Mask",
             
             "tags": [
@@ -3769,7 +3769,7 @@
             ]
         },
         {
-            "id": "HD_M_1570",
+            "id": "hd_m_1570",
             "name": "Knight Helm",
             
             "tags": [
@@ -3777,7 +3777,7 @@
             ]
         },
         {
-            "id": "BD_M_1570",
+            "id": "bd_m_1570",
             "name": "Knight Armor",
             
             "tags": [
@@ -3785,7 +3785,7 @@
             ]
         },
         {
-            "id": "AM_M_1570",
+            "id": "am_m_1570",
             "name": "Knight Gauntlets",
             
             "tags": [
@@ -3793,7 +3793,7 @@
             ]
         },
         {
-            "id": "LG_M_1570",
+            "id": "lg_m_1570",
             "name": "Knight Greaves",
             
             "tags": [
@@ -3801,7 +3801,7 @@
             ]
         },
         {
-            "id": "HD_M_1580",
+            "id": "hd_m_1580",
             "name": "Greathood",
             
             "tags": [
@@ -3809,7 +3809,7 @@
             ]
         },
         {
-            "id": "HD_M_2320",
+            "id": "hd_m_2320",
             "name": "Godrick Soldier Helm",
             
             "tags": [
@@ -3817,7 +3817,7 @@
             ]
         },
         {
-            "id": "BD_M_2320",
+            "id": "bd_m_2320",
             "name": "Tree-and-Beast Surcoat",
             
             "tags": [
@@ -3825,7 +3825,7 @@
             ]
         },
         {
-            "id": "AM_M_2320",
+            "id": "am_m_2320",
             "name": "Godrick Soldier Gauntlets",
             
             "tags": [
@@ -3833,7 +3833,7 @@
             ]
         },
         {
-            "id": "LG_M_2320",
+            "id": "lg_m_2320",
             "name": "Godrick Soldier Greaves",
             
             "tags": [
@@ -3841,7 +3841,7 @@
             ]
         },
         {
-            "id": "HD_M_2330",
+            "id": "hd_m_2330",
             "name": "Raya Lucarian Helm",
             
             "tags": [
@@ -3849,7 +3849,7 @@
             ]
         },
         {
-            "id": "BD_M_2330",
+            "id": "bd_m_2330",
             "name": "Cuckoo Surcoat",
             
             "tags": [
@@ -3857,7 +3857,7 @@
             ]
         },
         {
-            "id": "AM_M_2330",
+            "id": "am_m_2330",
             "name": "Raya Lucarian Gauntlets",
             
             "tags": [
@@ -3865,7 +3865,7 @@
             ]
         },
         {
-            "id": "LG_M_2330",
+            "id": "lg_m_2330",
             "name": "Raya Lucarian Greaves",
             
             "tags": [
@@ -3873,7 +3873,7 @@
             ]
         },
         {
-            "id": "HD_M_2340",
+            "id": "hd_m_2340",
             "name": "Leyndell Soldier Helm",
             
             "tags": [
@@ -3881,7 +3881,7 @@
             ]
         },
         {
-            "id": "BD_M_2340",
+            "id": "bd_m_2340",
             "name": "Erdtree Surcoat",
             
             "tags": [
@@ -3889,7 +3889,7 @@
             ]
         },
         {
-            "id": "AM_M_2340",
+            "id": "am_m_2340",
             "name": "Leyndell Soldier Gauntlets",
             
             "tags": [
@@ -3897,7 +3897,7 @@
             ]
         },
         {
-            "id": "LG_M_2340",
+            "id": "lg_m_2340",
             "name": "Leyndell Soldier Greaves",
             
             "tags": [
@@ -3905,7 +3905,7 @@
             ]
         },
         {
-            "id": "HD_M_2350",
+            "id": "hd_m_2350",
             "name": "Radahn Soldier Helm",
             
             "tags": [
@@ -3913,7 +3913,7 @@
             ]
         },
         {
-            "id": "BD_M_2350",
+            "id": "bd_m_2350",
             "name": "Redmane Surcoat",
             
             "tags": [
@@ -3921,7 +3921,7 @@
             ]
         },
         {
-            "id": "AM_M_2350",
+            "id": "am_m_2350",
             "name": "Radahn Soldier Gauntlets",
             
             "tags": [
@@ -3929,7 +3929,7 @@
             ]
         },
         {
-            "id": "LG_M_2350",
+            "id": "lg_m_2350",
             "name": "Radahn Soldier Greaves",
             
             "tags": [
@@ -3937,7 +3937,7 @@
             ]
         },
         {
-            "id": "BD_M_2360",
+            "id": "bd_m_2360",
             "name": "Mausoleum Surcoat",
             
             "tags": [
@@ -3945,7 +3945,7 @@
             ]
         },
         {
-            "id": "AM_M_2360",
+            "id": "am_m_2360",
             "name": "Mausoleum Gauntlets",
             
             "tags": [
@@ -3953,7 +3953,7 @@
             ]
         },
         {
-            "id": "LG_M_2360",
+            "id": "lg_m_2360",
             "name": "Mausoleum Greaves",
             
             "tags": [
@@ -3961,7 +3961,7 @@
             ]
         },
         {
-            "id": "HD_M_2370",
+            "id": "hd_m_2370",
             "name": "Haligtree Helm",
             
             "tags": [
@@ -3969,7 +3969,7 @@
             ]
         },
         {
-            "id": "BD_M_2370",
+            "id": "bd_m_2370",
             "name": "Haligtree Crest Surcoat",
             
             "tags": [
@@ -3977,7 +3977,7 @@
             ]
         },
         {
-            "id": "AM_M_2370",
+            "id": "am_m_2370",
             "name": "Haligtree Gauntlets",
             
             "tags": [
@@ -3985,7 +3985,7 @@
             ]
         },
         {
-            "id": "LG_M_2370",
+            "id": "lg_m_2370",
             "name": "Haligtree Greaves",
             
             "tags": [
@@ -3993,7 +3993,7 @@
             ]
         },
         {
-            "id": "HD_M_2380",
+            "id": "hd_m_2380",
             "name": "Gelmir Knight Helm",
             
             "tags": [
@@ -4001,7 +4001,7 @@
             ]
         },
         {
-            "id": "BD_M_2380",
+            "id": "bd_m_2380",
             "name": "Gelmir Knight Armor",
             
             "tags": [
@@ -4009,7 +4009,7 @@
             ]
         },
         {
-            "id": "AM_M_2380",
+            "id": "am_m_2380",
             "name": "Gelmir Knight Gauntlets",
             
             "tags": [
@@ -4017,7 +4017,7 @@
             ]
         },
         {
-            "id": "LG_M_2380",
+            "id": "lg_m_2380",
             "name": "Gelmir Knight Greaves",
             
             "tags": [
@@ -4025,7 +4025,7 @@
             ]
         },
         {
-            "id": "BD_M_2381",
+            "id": "bd_m_2381",
             "name": "Gelmir Knight Armor (Altered)",
             
             "tags": [
@@ -4033,7 +4033,7 @@
             ]
         },
         {
-            "id": "HD_M_2390",
+            "id": "hd_m_2390",
             "name": "Godrick Knight Helm",
             
             "tags": [
@@ -4041,7 +4041,7 @@
             ]
         },
         {
-            "id": "BD_M_2390",
+            "id": "bd_m_2390",
             "name": "Godrick Knight Armor",
             
             "tags": [
@@ -4049,7 +4049,7 @@
             ]
         },
         {
-            "id": "AM_M_2390",
+            "id": "am_m_2390",
             "name": "Godrick Knight Gauntlets",
             
             "tags": [
@@ -4057,7 +4057,7 @@
             ]
         },
         {
-            "id": "LG_M_2390",
+            "id": "lg_m_2390",
             "name": "Godrick Knight Greaves",
             
             "tags": [
@@ -4065,7 +4065,7 @@
             ]
         },
         {
-            "id": "BD_M_2391",
+            "id": "bd_m_2391",
             "name": "Godrick Knight Armor (Altered)",
             
             "tags": [
@@ -4073,7 +4073,7 @@
             ]
         },
         {
-            "id": "HD_M_2400",
+            "id": "hd_m_2400",
             "name": "Cuckoo Knight Helm",
             
             "tags": [
@@ -4081,7 +4081,7 @@
             ]
         },
         {
-            "id": "BD_M_2400",
+            "id": "bd_m_2400",
             "name": "Cuckoo Knight Armor",
             
             "tags": [
@@ -4089,7 +4089,7 @@
             ]
         },
         {
-            "id": "AM_M_2400",
+            "id": "am_m_2400",
             "name": "Cuckoo Knight Gauntlets",
             
             "tags": [
@@ -4097,7 +4097,7 @@
             ]
         },
         {
-            "id": "LG_M_2400",
+            "id": "lg_m_2400",
             "name": "Cuckoo Knight Greaves",
             
             "tags": [
@@ -4105,7 +4105,7 @@
             ]
         },
         {
-            "id": "BD_M_2401",
+            "id": "bd_m_2401",
             "name": "Cuckoo Knight Armor (Altered)",
             
             "tags": [
@@ -4113,7 +4113,7 @@
             ]
         },
         {
-            "id": "HD_M_2410",
+            "id": "hd_m_2410",
             "name": "Leyndell Knight Helm",
             
             "tags": [
@@ -4121,7 +4121,7 @@
             ]
         },
         {
-            "id": "BD_M_2410",
+            "id": "bd_m_2410",
             "name": "Leyndell Knight Armor",
             
             "tags": [
@@ -4129,7 +4129,7 @@
             ]
         },
         {
-            "id": "AM_M_2410",
+            "id": "am_m_2410",
             "name": "Leyndell Knight Gauntlets",
             
             "tags": [
@@ -4137,7 +4137,7 @@
             ]
         },
         {
-            "id": "LG_M_2410",
+            "id": "lg_m_2410",
             "name": "Leyndell Knight Greaves",
             
             "tags": [
@@ -4145,7 +4145,7 @@
             ]
         },
         {
-            "id": "BD_M_2411",
+            "id": "bd_m_2411",
             "name": "Leyndell Knight Armor (Altered)",
             
             "tags": [
@@ -4153,7 +4153,7 @@
             ]
         },
         {
-            "id": "HD_M_2420",
+            "id": "hd_m_2420",
             "name": "Redmane Knight Helm",
             
             "tags": [
@@ -4161,7 +4161,7 @@
             ]
         },
         {
-            "id": "BD_M_2420",
+            "id": "bd_m_2420",
             "name": "Redmane Knight Armor",
             
             "tags": [
@@ -4169,7 +4169,7 @@
             ]
         },
         {
-            "id": "AM_M_2420",
+            "id": "am_m_2420",
             "name": "Redmane Knight Gauntlets",
             
             "tags": [
@@ -4177,7 +4177,7 @@
             ]
         },
         {
-            "id": "LG_M_2420",
+            "id": "lg_m_2420",
             "name": "Redmane Knight Greaves",
             
             "tags": [
@@ -4185,7 +4185,7 @@
             ]
         },
         {
-            "id": "BD_M_2421",
+            "id": "bd_m_2421",
             "name": "Redmane Knight Armor (Altered)",
             
             "tags": [
@@ -4193,7 +4193,7 @@
             ]
         },
         {
-            "id": "BD_M_2430",
+            "id": "bd_m_2430",
             "name": "Mausoleum Knight Armor",
             
             "tags": [
@@ -4201,7 +4201,7 @@
             ]
         },
         {
-            "id": "AM_M_2430",
+            "id": "am_m_2430",
             "name": "Mausoleum Knight Gauntlets",
             
             "tags": [
@@ -4209,7 +4209,7 @@
             ]
         },
         {
-            "id": "LG_M_2430",
+            "id": "lg_m_2430",
             "name": "Mausoleum Knight Greaves",
             
             "tags": [
@@ -4217,7 +4217,7 @@
             ]
         },
         {
-            "id": "BD_M_2431",
+            "id": "bd_m_2431",
             "name": "Mausoleum Knight Armor (Altered)",
             
             "tags": [
@@ -4225,7 +4225,7 @@
             ]
         },
         {
-            "id": "HD_M_2440",
+            "id": "hd_m_2440",
             "name": "Haligtree Knight Helm",
             
             "tags": [
@@ -4233,7 +4233,7 @@
             ]
         },
         {
-            "id": "BD_M_2440",
+            "id": "bd_m_2440",
             "name": "Haligtree Knight Armor",
             
             "tags": [
@@ -4241,7 +4241,7 @@
             ]
         },
         {
-            "id": "AM_M_2440",
+            "id": "am_m_2440",
             "name": "Haligtree Knight Gauntlets",
             
             "tags": [
@@ -4249,7 +4249,7 @@
             ]
         },
         {
-            "id": "LG_M_2440",
+            "id": "lg_m_2440",
             "name": "Haligtree Knight Greaves",
             
             "tags": [
@@ -4257,7 +4257,7 @@
             ]
         },
         {
-            "id": "BD_M_2441",
+            "id": "bd_m_2441",
             "name": "Haligtree Knight Armor (Altered)",
             
             "tags": [
@@ -4265,7 +4265,7 @@
             ]
         },
         {
-            "id": "HD_M_2450",
+            "id": "hd_m_2450",
             "name": "Foot Soldier Cap",
             
             "tags": [
@@ -4273,7 +4273,7 @@
             ]
         },
         {
-            "id": "BD_M_2450",
+            "id": "bd_m_2450",
             "name": "Chain-Draped Tabard",
             
             "tags": [
@@ -4281,7 +4281,7 @@
             ]
         },
         {
-            "id": "AM_M_2450",
+            "id": "am_m_2450",
             "name": "Foot Soldier Gauntlets",
             
             "tags": [
@@ -4289,7 +4289,7 @@
             ]
         },
         {
-            "id": "LG_M_2450",
+            "id": "lg_m_2450",
             "name": "Foot Soldier Greaves",
             
             "tags": [
@@ -4297,7 +4297,7 @@
             ]
         },
         {
-            "id": "HD_M_2460",
+            "id": "hd_m_2460",
             "name": "Foot Soldier Helmet",
             
             "tags": [
@@ -4305,7 +4305,7 @@
             ]
         },
         {
-            "id": "BD_M_2460",
+            "id": "bd_m_2460",
             "name": "Foot Soldier Tabard",
             
             "tags": [
@@ -4313,7 +4313,7 @@
             ]
         },
         {
-            "id": "HD_M_2470",
+            "id": "hd_m_2470",
             "name": "Gilded Foot Soldier Cap",
             
             "tags": [
@@ -4321,7 +4321,7 @@
             ]
         },
         {
-            "id": "BD_M_2470",
+            "id": "bd_m_2470",
             "name": "Leather-Draped Tabard",
             
             "tags": [
@@ -4329,7 +4329,7 @@
             ]
         },
         {
-            "id": "HD_M_2480",
+            "id": "hd_m_2480",
             "name": "Foot Soldier Helm",
             
             "tags": [
@@ -4337,7 +4337,7 @@
             ]
         },
         {
-            "id": "BD_M_2480",
+            "id": "bd_m_2480",
             "name": "Scarlet Tabard",
             
             "tags": [
@@ -4345,7 +4345,7 @@
             ]
         },
         {
-            "id": "BD_M_2490",
+            "id": "bd_m_2490",
             "name": "Bloodsoaked Tabard",
             
             "tags": [
@@ -4353,7 +4353,7 @@
             ]
         },
         {
-            "id": "HD_M_2500",
+            "id": "hd_m_2500",
             "name": "Sacred Crown Helm",
             
             "tags": [
@@ -4361,7 +4361,7 @@
             ]
         },
         {
-            "id": "BD_M_2500",
+            "id": "bd_m_2500",
             "name": "Ivory-Draped Tabard",
             
             "tags": [
@@ -4369,7 +4369,7 @@
             ]
         },
         {
-            "id": "HD_M_2530",
+            "id": "hd_m_2530",
             "name": "Omensmirk Mask",
             
             "tags": [
@@ -4377,7 +4377,7 @@
             ]
         },
         {
-            "id": "BD_M_2530",
+            "id": "bd_m_2530",
             "name": "Omenkiller Robe",
             
             "tags": [
@@ -4385,7 +4385,7 @@
             ]
         },
         {
-            "id": "AM_M_2530",
+            "id": "am_m_2530",
             "name": "Omenkiller Long Gloves",
             
             "tags": [
@@ -4393,7 +4393,7 @@
             ]
         },
         {
-            "id": "LG_M_2530",
+            "id": "lg_m_2530",
             "name": "Omenkiller Boots",
             
             "tags": [
@@ -4401,7 +4401,7 @@
             ]
         },
         {
-            "id": "HD_M_2550",
+            "id": "hd_m_2550",
             "name": "Ash-of-War Scarab",
             
             "tags": [
@@ -4409,7 +4409,7 @@
             ]
         },
         {
-            "id": "HD_M_2551",
+            "id": "hd_m_2551",
             "name": "Incantation Scarab",
             
             "tags": [
@@ -4417,7 +4417,7 @@
             ]
         },
         {
-            "id": "HD_M_2552",
+            "id": "hd_m_2552",
             "name": "Glintstone Scarab",
             
             "tags": [
@@ -4425,7 +4425,7 @@
             ]
         },
         {
-            "id": "HD_M_2555",
+            "id": "hd_m_2555",
             "name": "Crimson Tear Scarab",
             
             "tags": [
@@ -4433,7 +4433,7 @@
             ]
         },
         {
-            "id": "HD_M_2560",
+            "id": "hd_m_2560",
             "name": "Cerulean Tear Scarab",
             
             "tags": [
@@ -4441,7 +4441,7 @@
             ]
         },
         {
-            "id": "BD_M_1590",
+            "id": "bd_m_1590",
             "name": "Deathbed Dress",
             
             "tags": [
@@ -4449,7 +4449,7 @@
             ]
         },
         {
-            "id": "LG_M_1590",
+            "id": "lg_m_1590",
             "name": "Deathbed Smalls",
             
             "tags": [
@@ -4457,7 +4457,7 @@
             ]
         },
         {
-            "id": "HD_M_1595",
+            "id": "hd_m_1595",
             "name": "Fia's Hood",
             
             "tags": [
@@ -4465,7 +4465,7 @@
             ]
         },
         {
-            "id": "BD_M_1595",
+            "id": "bd_m_1595",
             "name": "Fia's Robe",
             
             "tags": [
@@ -4473,7 +4473,7 @@
             ]
         },
         {
-            "id": "BD_M_1596",
+            "id": "bd_m_1596",
             "name": "Fia's Robe (Altered)",
             
             "tags": [
@@ -4481,7 +4481,7 @@
             ]
         },
         {
-            "id": "BD_M_2590",
+            "id": "bd_m_2590",
             "name": "Millicent's Robe",
             
             "tags": [
@@ -4489,7 +4489,7 @@
             ]
         },
         {
-            "id": "AM_M_2590",
+            "id": "am_m_2590",
             "name": "Millicent's Gloves",
             
             "tags": [
@@ -4497,7 +4497,7 @@
             ]
         },
         {
-            "id": "LG_M_2590",
+            "id": "lg_m_2590",
             "name": "Millicent's Boots",
             
             "tags": [
@@ -4505,7 +4505,7 @@
             ]
         },
         {
-            "id": "BD_M_2600",
+            "id": "bd_m_2600",
             "name": "Millicent's Tunic",
             
             "tags": [
@@ -4513,7 +4513,7 @@
             ]
         },
         {
-            "id": "AM_M_2600",
+            "id": "am_m_2600",
             "name": "Golden Prosthetic",
             
             "tags": [
@@ -4521,7 +4521,7 @@
             ]
         },
         {
-            "id": "HD_M_2505",
+            "id": "hd_m_2505",
             "name": "Highwayman Hood",
             
             "tags": [
@@ -4529,7 +4529,7 @@
             ]
         },
         {
-            "id": "BD_M_2505",
+            "id": "bd_m_2505",
             "name": "Highwayman Cloth Armor",
             
             "tags": [
@@ -4537,7 +4537,7 @@
             ]
         },
         {
-            "id": "AM_M_2505",
+            "id": "am_m_2505",
             "name": "Highwayman Gauntlets",
             
             "tags": [
@@ -4545,7 +4545,7 @@
             ]
         },
         {
-            "id": "HD_M_1685",
+            "id": "hd_m_1685",
             "name": "High Page Hood",
             
             "tags": [
@@ -4553,7 +4553,7 @@
             ]
         },
         {
-            "id": "BD_M_1685",
+            "id": "bd_m_1685",
             "name": "High Page Clothes",
             
             "tags": [
@@ -4561,7 +4561,7 @@
             ]
         },
         {
-            "id": "BD_M_1686",
+            "id": "bd_m_1686",
             "name": "High Page Clothes (Altered)",
             
             "tags": [
@@ -4569,7 +4569,7 @@
             ]
         },
         {
-            "id": "HD_M_1775",
+            "id": "hd_m_1775",
             "name": "Rotten Duelist Helm",
             
             "tags": [
@@ -4577,7 +4577,7 @@
             ]
         },
         {
-            "id": "BD_M_1775",
+            "id": "bd_m_1775",
             "name": "Rotten Gravekeeper Cloak",
             
             "tags": [
@@ -4585,7 +4585,7 @@
             ]
         },
         {
-            "id": "LG_M_1775",
+            "id": "lg_m_1775",
             "name": "Rotten Duelist Greaves",
             
             "tags": [
@@ -4593,7 +4593,7 @@
             ]
         },
         {
-            "id": "BD_M_1776",
+            "id": "bd_m_1776",
             "name": "Rotten Gravekeeper Cloak (Altered)",
             
             "tags": [
@@ -4601,7 +4601,7 @@
             ]
         },
         {
-            "id": "HD_M_2610",
+            "id": "hd_m_2610",
             "name": "Mushroom Crown",
             
             "tags": [
@@ -4609,7 +4609,7 @@
             ]
         },
         {
-            "id": "HD_M_2620",
+            "id": "hd_m_2620",
             "name": "Black Dumpling",
             
             "tags": [
@@ -4617,7 +4617,7 @@
             ]
         },
         {
-            "id": "HD_M_2640",
+            "id": "hd_m_2640",
             "name": "Lazuli Robe",
             
             "tags": [
@@ -4625,7 +4625,7 @@
             ]
         },
         {
-            "id": "WP_A_0100",
+            "id": "wp_a_0100",
             "name": "Dagger",
             
             "tags": [
@@ -4633,7 +4633,7 @@
             ]
         },
         {
-            "id": "WP_A_0101",
+            "id": "wp_a_0101",
             "name": "Black Knife",
             
             "tags": [
@@ -4641,7 +4641,7 @@
             ]
         },
         {
-            "id": "WP_A_0102",
+            "id": "wp_a_0102",
             "name": "Parrying Dagger",
             
             "tags": [
@@ -4649,7 +4649,7 @@
             ]
         },
         {
-            "id": "WP_A_0103",
+            "id": "wp_a_0103",
             "name": "Misericorde",
             
             "tags": [
@@ -4657,7 +4657,7 @@
             ]
         },
         {
-            "id": "WP_A_0105",
+            "id": "wp_a_0105",
             "name": "Reduvia",
             
             "tags": [
@@ -4665,7 +4665,7 @@
             ]
         },
         {
-            "id": "WP_A_0110",
+            "id": "wp_a_0110",
             "name": "Bloodstained Dagger",
             
             "tags": [
@@ -4673,7 +4673,7 @@
             ]
         },
         {
-            "id": "WP_A_0115",
+            "id": "wp_a_0115",
             "name": "Crystal Knife",
             
             "tags": [
@@ -4681,7 +4681,7 @@
             ]
         },
         {
-            "id": "WP_A_0116",
+            "id": "wp_a_0116",
             "name": "Glintstone Kris",
             
             "tags": [
@@ -4689,7 +4689,7 @@
             ]
         },
         {
-            "id": "WP_A_0117",
+            "id": "wp_a_0117",
             "name": "Scorpion's Stinger",
             
             "tags": [
@@ -4697,7 +4697,7 @@
             ]
         },
         {
-            "id": "WP_A_0118",
+            "id": "wp_a_0118",
             "name": "Great Knife",
             
             "tags": [
@@ -4705,7 +4705,7 @@
             ]
         },
         {
-            "id": "WP_A_0120",
+            "id": "wp_a_0120",
             "name": "Wakizashi",
             
             "tags": [
@@ -4713,7 +4713,7 @@
             ]
         },
         {
-            "id": "WP_A_0122",
+            "id": "wp_a_0122",
             "name": "Ivory Sickle",
             
             "tags": [
@@ -4721,7 +4721,7 @@
             ]
         },
         {
-            "id": "WP_A_0123",
+            "id": "wp_a_0123",
             "name": "Erdsteel Dagger",
             
             "tags": [
@@ -4729,7 +4729,7 @@
             ]
         },
         {
-            "id": "WP_A_0124",
+            "id": "wp_a_0124",
             "name": "Blade of Calling",
             
             "tags": [
@@ -4737,7 +4737,7 @@
             ]
         },
         {
-            "id": "WP_A_0199",
+            "id": "wp_a_0199",
             "name": "Short Sword",
             
             "tags": [
@@ -4745,7 +4745,7 @@
             ]
         },
         {
-            "id": "WP_A_0201",
+            "id": "wp_a_0201",
             "name": "Broadsword",
             
             "tags": [
@@ -4753,7 +4753,7 @@
             ]
         },
         {
-            "id": "WP_A_0203",
+            "id": "wp_a_0203",
             "name": "Banished Knight's Greatsword",
             
             "tags": [
@@ -4761,7 +4761,7 @@
             ]
         },
         {
-            "id": "WP_A_0204",
+            "id": "wp_a_0204",
             "name": "Alabaster Lord's Sword",
             
             "tags": [
@@ -4769,7 +4769,7 @@
             ]
         },
         {
-            "id": "WP_A_0209",
+            "id": "wp_a_0209",
             "name": "Cleanrot Knight's Sword",
             
             "tags": [
@@ -4777,7 +4777,7 @@
             ]
         },
         {
-            "id": "WP_A_0210",
+            "id": "wp_a_0210",
             "name": "Watchdog's Greatsword",
             
             "tags": [
@@ -4785,7 +4785,7 @@
             ]
         },
         {
-            "id": "WP_A_0211",
+            "id": "wp_a_0211",
             "name": "Noble's Slender Sword",
             
             "tags": [
@@ -4793,7 +4793,7 @@
             ]
         },
         {
-            "id": "WP_A_0213",
+            "id": "wp_a_0213",
             "name": "Blasphemous Blade",
             
             "tags": [
@@ -4801,7 +4801,7 @@
             ]
         },
         {
-            "id": "WP_A_0214",
+            "id": "wp_a_0214",
             "name": "Weathered Straight Sword",
             
             "tags": [
@@ -4809,7 +4809,7 @@
             ]
         },
         {
-            "id": "WP_A_0215",
+            "id": "wp_a_0215",
             "name": "Ornamental Straight Sword",
             
             "tags": [
@@ -4817,7 +4817,7 @@
             ]
         },
         {
-            "id": "WP_A_0216",
+            "id": "wp_a_0216",
             "name": "Golden Epitaph",
             
             "tags": [
@@ -4825,7 +4825,7 @@
             ]
         },
         {
-            "id": "WP_A_0217",
+            "id": "wp_a_0217",
             "name": "Nox Flowing Sword",
             
             "tags": [
@@ -4833,7 +4833,7 @@
             ]
         },
         {
-            "id": "WP_A_0220",
+            "id": "wp_a_0220",
             "name": "Regalia of Eochaid",
             
             "tags": [
@@ -4841,7 +4841,7 @@
             ]
         },
         {
-            "id": "WP_A_0222",
+            "id": "wp_a_0222",
             "name": "Coded Sword",
             
             "tags": [
@@ -4849,7 +4849,7 @@
             ]
         },
         {
-            "id": "WP_A_0223",
+            "id": "wp_a_0223",
             "name": "Sword of Night and Flame",
             
             "tags": [
@@ -4857,7 +4857,7 @@
             ]
         },
         {
-            "id": "WP_A_0224",
+            "id": "wp_a_0224",
             "name": "Crystal Sword",
             
             "tags": [
@@ -4865,7 +4865,7 @@
             ]
         },
         {
-            "id": "WP_A_0227",
+            "id": "wp_a_0227",
             "name": "Carian Knight's Sword",
             
             "tags": [
@@ -4873,7 +4873,7 @@
             ]
         },
         {
-            "id": "WP_A_0228",
+            "id": "wp_a_0228",
             "name": "Cane Sword",
             
             "tags": [
@@ -4881,7 +4881,7 @@
             ]
         },
         {
-            "id": "WP_A_0229",
+            "id": "wp_a_0229",
             "name": "Miquellan Knight's Sword",
             
             "tags": [
@@ -4889,7 +4889,7 @@
             ]
         },
         {
-            "id": "WP_A_0230",
+            "id": "wp_a_0230",
             "name": "Sword of St. Trina",
             
             "tags": [
@@ -4897,7 +4897,7 @@
             ]
         },
         {
-            "id": "WP_A_0231",
+            "id": "wp_a_0231",
             "name": "Warhawk's Talon",
             
             "tags": [
@@ -4905,7 +4905,7 @@
             ]
         },
         {
-            "id": "WP_A_0232",
+            "id": "wp_a_0232",
             "name": "Lazuli Glintstone Sword",
             
             "tags": [
@@ -4913,7 +4913,7 @@
             ]
         },
         {
-            "id": "WP_A_0233",
+            "id": "wp_a_0233",
             "name": "Rotten Crystal Sword",
             
             "tags": [
@@ -4921,7 +4921,7 @@
             ]
         },
         {
-            "id": "WP_A_0250",
+            "id": "wp_a_0250",
             "name": "Rapier",
             
             "tags": [
@@ -4929,7 +4929,7 @@
             ]
         },
         {
-            "id": "WP_A_0251",
+            "id": "wp_a_0251",
             "name": "Rogier's Rapier",
             
             "tags": [
@@ -4937,7 +4937,7 @@
             ]
         },
         {
-            "id": "WP_A_0252",
+            "id": "wp_a_0252",
             "name": "Noble's Estoc",
             
             "tags": [
@@ -4945,7 +4945,7 @@
             ]
         },
         {
-            "id": "WP_A_0253",
+            "id": "wp_a_0253",
             "name": "Antspur Rapier",
             
             "tags": [
@@ -4953,7 +4953,7 @@
             ]
         },
         {
-            "id": "WP_A_0254",
+            "id": "wp_a_0254",
             "name": "Frozen Needle",
             
             "tags": [
@@ -4961,7 +4961,7 @@
             ]
         },
         {
-            "id": "WP_A_0300",
+            "id": "wp_a_0300",
             "name": "Estoc",
             
             "tags": [
@@ -4969,7 +4969,7 @@
             ]
         },
         {
-            "id": "WP_A_0301",
+            "id": "wp_a_0301",
             "name": "Godskin Stitcher",
             
             "tags": [
@@ -4977,7 +4977,7 @@
             ]
         },
         {
-            "id": "WP_A_0302",
+            "id": "wp_a_0302",
             "name": "Bloody Helice",
             
             "tags": [
@@ -4985,7 +4985,7 @@
             ]
         },
         {
-            "id": "WP_A_0303",
+            "id": "wp_a_0303",
             "name": "Great epee",
             
             "tags": [
@@ -4993,7 +4993,7 @@
             ]
         },
         {
-            "id": "WP_A_0305",
+            "id": "wp_a_0305",
             "name": "Dragon King's Cragblade",
             
             "tags": [
@@ -5001,7 +5001,7 @@
             ]
         },
         {
-            "id": "WP_A_0400",
+            "id": "wp_a_0400",
             "name": "Scimitar",
             
             "tags": [
@@ -5009,7 +5009,7 @@
             ]
         },
         {
-            "id": "WP_A_0401",
+            "id": "wp_a_0401",
             "name": "Falchion",
             
             "tags": [
@@ -5017,7 +5017,7 @@
             ]
         },
         {
-            "id": "WP_A_0402",
+            "id": "wp_a_0402",
             "name": "Shotel",
             
             "tags": [
@@ -5025,7 +5025,7 @@
             ]
         },
         {
-            "id": "WP_A_0404",
+            "id": "wp_a_0404",
             "name": "Onyx Lord's Greatsword",
             
             "tags": [
@@ -5033,7 +5033,7 @@
             ]
         },
         {
-            "id": "WP_A_0406",
+            "id": "wp_a_0406",
             "name": "Forked Hatchet",
             
             "tags": [
@@ -5041,7 +5041,7 @@
             ]
         },
         {
-            "id": "WP_A_0408",
+            "id": "wp_a_0408",
             "name": "Shamshir",
             
             "tags": [
@@ -5049,7 +5049,7 @@
             ]
         },
         {
-            "id": "WP_A_0409",
+            "id": "wp_a_0409",
             "name": "Bandit's Curved Sword",
             
             "tags": [
@@ -5057,7 +5057,7 @@
             ]
         },
         {
-            "id": "WP_A_0413",
+            "id": "wp_a_0413",
             "name": "Monk's Flameblade",
             
             "tags": [
@@ -5065,7 +5065,7 @@
             ]
         },
         {
-            "id": "WP_A_0414",
+            "id": "wp_a_0414",
             "name": "Magma Blade",
             
             "tags": [
@@ -5073,7 +5073,7 @@
             ]
         },
         {
-            "id": "WP_A_0416",
+            "id": "wp_a_0416",
             "name": "Celebrant's Sickle",
             
             "tags": [
@@ -5081,7 +5081,7 @@
             ]
         },
         {
-            "id": "WP_A_0417",
+            "id": "wp_a_0417",
             "name": "Cinquedea",
             
             "tags": [
@@ -5089,7 +5089,7 @@
             ]
         },
         {
-            "id": "WP_A_0418",
+            "id": "wp_a_0418",
             "name": "Flowing Curved Sword",
             
             "tags": [
@@ -5097,7 +5097,7 @@
             ]
         },
         {
-            "id": "WP_A_0419",
+            "id": "wp_a_0419",
             "name": "Wing of Astel",
             
             "tags": [
@@ -5105,7 +5105,7 @@
             ]
         },
         {
-            "id": "WP_A_0421",
+            "id": "wp_a_0421",
             "name": "Scavenger's Curved Sword",
             
             "tags": [
@@ -5113,7 +5113,7 @@
             ]
         },
         {
-            "id": "WP_A_0422",
+            "id": "wp_a_0422",
             "name": "Eclipse Shotel",
             
             "tags": [
@@ -5121,7 +5121,7 @@
             ]
         },
         {
-            "id": "WP_A_0423",
+            "id": "wp_a_0423",
             "name": "Serpent-God's Curved Sword",
             
             "tags": [
@@ -5129,7 +5129,7 @@
             ]
         },
         {
-            "id": "WP_A_0424",
+            "id": "wp_a_0424",
             "name": "Mantis Blade",
             
             "tags": [
@@ -5137,7 +5137,7 @@
             ]
         },
         {
-            "id": "WP_A_0425",
+            "id": "wp_a_0425",
             "name": "Grossmesser",
             
             "tags": [
@@ -5145,7 +5145,7 @@
             ]
         },
         {
-            "id": "WP_A_0452",
+            "id": "wp_a_0452",
             "name": "Dismounter",
             
             "tags": [
@@ -5153,7 +5153,7 @@
             ]
         },
         {
-            "id": "WP_A_0453",
+            "id": "wp_a_0453",
             "name": "Bloodhound's Fang",
             
             "tags": [
@@ -5161,7 +5161,7 @@
             ]
         },
         {
-            "id": "WP_A_0454",
+            "id": "wp_a_0454",
             "name": "Starscourge Greatsword",
             
             "tags": [
@@ -5169,7 +5169,7 @@
             ]
         },
         {
-            "id": "WP_A_0455",
+            "id": "wp_a_0455",
             "name": "Magma Wyrm's Scalesword",
             
             "tags": [
@@ -5177,7 +5177,7 @@
             ]
         },
         {
-            "id": "WP_A_0456",
+            "id": "wp_a_0456",
             "name": "Zamor Curved Sword",
             
             "tags": [
@@ -5185,7 +5185,7 @@
             ]
         },
         {
-            "id": "WP_A_0457",
+            "id": "wp_a_0457",
             "name": "Omen Cleaver",
             
             "tags": [
@@ -5193,7 +5193,7 @@
             ]
         },
         {
-            "id": "WP_A_0459",
+            "id": "wp_a_0459",
             "name": "Morgott's Cursed Sword",
             
             "tags": [
@@ -5201,7 +5201,7 @@
             ]
         },
         {
-            "id": "WP_A_0500",
+            "id": "wp_a_0500",
             "name": "Beastman's Curved Sword",
             
             "tags": [
@@ -5209,7 +5209,7 @@
             ]
         },
         {
-            "id": "WP_A_0502",
+            "id": "wp_a_0502",
             "name": "Beastman's Cleaver",
             
             "tags": [
@@ -5217,7 +5217,7 @@
             ]
         },
         {
-            "id": "WP_A_0550",
+            "id": "wp_a_0550",
             "name": "Uchigatana",
             
             "tags": [
@@ -5225,7 +5225,7 @@
             ]
         },
         {
-            "id": "WP_A_0551",
+            "id": "wp_a_0551",
             "name": "Nagakiba",
             
             "tags": [
@@ -5233,7 +5233,7 @@
             ]
         },
         {
-            "id": "WP_A_0552",
+            "id": "wp_a_0552",
             "name": "Hand of Malenia",
             
             "tags": [
@@ -5241,7 +5241,7 @@
             ]
         },
         {
-            "id": "WP_A_0553",
+            "id": "wp_a_0553",
             "name": "Meteoric Ore Blade",
             
             "tags": [
@@ -5249,7 +5249,7 @@
             ]
         },
         {
-            "id": "WP_A_0554",
+            "id": "wp_a_0554",
             "name": "Rivers of Blood",
             
             "tags": [
@@ -5257,7 +5257,7 @@
             ]
         },
         {
-            "id": "WP_A_0556",
+            "id": "wp_a_0556",
             "name": "Moonveil",
             
             "tags": [
@@ -5265,7 +5265,7 @@
             ]
         },
         {
-            "id": "WP_A_0557",
+            "id": "wp_a_0557",
             "name": "Serpentbone Blade",
             
             "tags": [
@@ -5273,7 +5273,7 @@
             ]
         },
         {
-            "id": "WP_A_0558",
+            "id": "wp_a_0558",
             "name": "Dragonscale Blade",
             
             "tags": [
@@ -5281,7 +5281,7 @@
             ]
         },
         {
-            "id": "WP_A_0600",
+            "id": "wp_a_0600",
             "name": "Bastard Sword",
             
             "tags": [
@@ -5289,7 +5289,7 @@
             ]
         },
         {
-            "id": "WP_A_0601",
+            "id": "wp_a_0601",
             "name": "Claymore",
             
             "tags": [
@@ -5297,7 +5297,7 @@
             ]
         },
         {
-            "id": "WP_A_0602",
+            "id": "wp_a_0602",
             "name": "Royal Greatsword",
             
             "tags": [
@@ -5305,7 +5305,7 @@
             ]
         },
         {
-            "id": "WP_A_0603",
+            "id": "wp_a_0603",
             "name": "Maliketh's Black Blade",
             
             "tags": [
@@ -5313,7 +5313,7 @@
             ]
         },
         {
-            "id": "WP_A_0604",
+            "id": "wp_a_0604",
             "name": "Forked Greatsword",
             
             "tags": [
@@ -5321,7 +5321,7 @@
             ]
         },
         {
-            "id": "WP_A_0606",
+            "id": "wp_a_0606",
             "name": "Iron Greatsword",
             
             "tags": [
@@ -5329,7 +5329,7 @@
             ]
         },
         {
-            "id": "WP_A_0607",
+            "id": "wp_a_0607",
             "name": "Lordsworn's Greatsword",
             
             "tags": [
@@ -5337,7 +5337,7 @@
             ]
         },
         {
-            "id": "WP_A_0608",
+            "id": "wp_a_0608",
             "name": "Troll's Golden Sword",
             
             "tags": [
@@ -5345,7 +5345,7 @@
             ]
         },
         {
-            "id": "WP_A_0609",
+            "id": "wp_a_0609",
             "name": "Knight's Greatsword",
             
             "tags": [
@@ -5353,7 +5353,7 @@
             ]
         },
         {
-            "id": "WP_A_0610",
+            "id": "wp_a_0610",
             "name": "Flamberge",
             
             "tags": [
@@ -5361,7 +5361,7 @@
             ]
         },
         {
-            "id": "WP_A_0611",
+            "id": "wp_a_0611",
             "name": "Zweihander",
             
             "tags": [
@@ -5369,7 +5369,7 @@
             ]
         },
         {
-            "id": "WP_A_0612",
+            "id": "wp_a_0612",
             "name": "Greatsword",
             
             "tags": [
@@ -5377,7 +5377,7 @@
             ]
         },
         {
-            "id": "WP_A_0613",
+            "id": "wp_a_0613",
             "name": "Ordovis's Greatsword",
             
             "tags": [
@@ -5385,7 +5385,7 @@
             ]
         },
         {
-            "id": "WP_A_0614",
+            "id": "wp_a_0614",
             "name": "Inseparable Sword",
             
             "tags": [
@@ -5393,7 +5393,7 @@
             ]
         },
         {
-            "id": "WP_A_0617",
+            "id": "wp_a_0617",
             "name": "Dark Moon Greatsword",
             
             "tags": [
@@ -5401,7 +5401,7 @@
             ]
         },
         {
-            "id": "WP_A_0618",
+            "id": "wp_a_0618",
             "name": "Sacred Relic Sword",
             
             "tags": [
@@ -5409,7 +5409,7 @@
             ]
         },
         {
-            "id": "WP_A_0621",
+            "id": "wp_a_0621",
             "name": "Helphen's Steeple",
             
             "tags": [
@@ -5417,7 +5417,7 @@
             ]
         },
         {
-            "id": "WP_A_0622",
+            "id": "wp_a_0622",
             "name": "Godslayer's Greatsword",
             
             "tags": [
@@ -5425,7 +5425,7 @@
             ]
         },
         {
-            "id": "WP_A_0623",
+            "id": "wp_a_0623",
             "name": "Ruins Greatsword",
             
             "tags": [
@@ -5433,7 +5433,7 @@
             ]
         },
         {
-            "id": "WP_A_0625",
+            "id": "wp_a_0625",
             "name": "Marais Executioner's Sword",
             
             "tags": [
@@ -5441,7 +5441,7 @@
             ]
         },
         {
-            "id": "WP_A_0626",
+            "id": "wp_a_0626",
             "name": "Grafted Blade Greatsword",
             
             "tags": [
@@ -5449,7 +5449,7 @@
             ]
         },
         {
-            "id": "WP_A_0627",
+            "id": "wp_a_0627",
             "name": "Golden Order Greatsword",
             
             "tags": [
@@ -5457,7 +5457,7 @@
             ]
         },
         {
-            "id": "WP_A_0628",
+            "id": "wp_a_0628",
             "name": "Sword of Milos",
             
             "tags": [
@@ -5465,7 +5465,7 @@
             ]
         },
         {
-            "id": "WP_A_0629",
+            "id": "wp_a_0629",
             "name": "Gargoyle's Greatsword",
             
             "tags": [
@@ -5473,7 +5473,7 @@
             ]
         },
         {
-            "id": "WP_A_0630",
+            "id": "wp_a_0630",
             "name": "Troll Knight's Sword",
             
             "tags": [
@@ -5481,7 +5481,7 @@
             ]
         },
         {
-            "id": "WP_A_0631",
+            "id": "wp_a_0631",
             "name": "Death's Poker",
             
             "tags": [
@@ -5489,7 +5489,7 @@
             ]
         },
         {
-            "id": "WP_A_0632",
+            "id": "wp_a_0632",
             "name": "Gargoyle's Blackblade",
             
             "tags": [
@@ -5497,7 +5497,7 @@
             ]
         },
         {
-            "id": "WP_A_0700",
+            "id": "wp_a_0700",
             "name": "Hand Axe",
             
             "tags": [
@@ -5505,7 +5505,7 @@
             ]
         },
         {
-            "id": "WP_A_0701",
+            "id": "wp_a_0701",
             "name": "Battle Axe",
             
             "tags": [
@@ -5513,7 +5513,7 @@
             ]
         },
         {
-            "id": "WP_A_0705",
+            "id": "wp_a_0705",
             "name": "Jawbone Axe",
             
             "tags": [
@@ -5521,7 +5521,7 @@
             ]
         },
         {
-            "id": "WP_A_0706",
+            "id": "wp_a_0706",
             "name": "Iron Cleaver",
             
             "tags": [
@@ -5529,7 +5529,7 @@
             ]
         },
         {
-            "id": "WP_A_0707",
+            "id": "wp_a_0707",
             "name": "Ripple Blade",
             
             "tags": [
@@ -5537,7 +5537,7 @@
             ]
         },
         {
-            "id": "WP_A_0708",
+            "id": "wp_a_0708",
             "name": "Celebrant's Cleaver",
             
             "tags": [
@@ -5545,7 +5545,7 @@
             ]
         },
         {
-            "id": "WP_A_0711",
+            "id": "wp_a_0711",
             "name": "Warped Axe",
             
             "tags": [
@@ -5553,7 +5553,7 @@
             ]
         },
         {
-            "id": "WP_A_0712",
+            "id": "wp_a_0712",
             "name": "Great Omenkiller Cleaver",
             
             "tags": [
@@ -5561,7 +5561,7 @@
             ]
         },
         {
-            "id": "WP_A_0713",
+            "id": "wp_a_0713",
             "name": "Rusted Anchor",
             
             "tags": [
@@ -5569,7 +5569,7 @@
             ]
         },
         {
-            "id": "WP_A_0714",
+            "id": "wp_a_0714",
             "name": "Icerind Hatchet",
             
             "tags": [
@@ -5577,7 +5577,7 @@
             ]
         },
         {
-            "id": "WP_A_0716",
+            "id": "wp_a_0716",
             "name": "Highland Axe",
             
             "tags": [
@@ -5585,7 +5585,7 @@
             ]
         },
         {
-            "id": "WP_A_0717",
+            "id": "wp_a_0717",
             "name": "Sacrificial Axe",
             
             "tags": [
@@ -5593,7 +5593,7 @@
             ]
         },
         {
-            "id": "WP_A_0718",
+            "id": "wp_a_0718",
             "name": "Rosus' Axe",
             
             "tags": [
@@ -5601,7 +5601,7 @@
             ]
         },
         {
-            "id": "WP_A_0720",
+            "id": "wp_a_0720",
             "name": "Stormhawk Axe",
             
             "tags": [
@@ -5609,7 +5609,7 @@
             ]
         },
         {
-            "id": "WP_A_0750",
+            "id": "wp_a_0750",
             "name": "Greataxe",
             
             "tags": [
@@ -5617,7 +5617,7 @@
             ]
         },
         {
-            "id": "WP_A_0752",
+            "id": "wp_a_0752",
             "name": "Crescent Moon Axe",
             
             "tags": [
@@ -5625,7 +5625,7 @@
             ]
         },
         {
-            "id": "WP_A_0753",
+            "id": "wp_a_0753",
             "name": "Winged Greathorn",
             
             "tags": [
@@ -5633,7 +5633,7 @@
             ]
         },
         {
-            "id": "WP_A_0754",
+            "id": "wp_a_0754",
             "name": "Duelist Greataxe",
             
             "tags": [
@@ -5641,7 +5641,7 @@
             ]
         },
         {
-            "id": "WP_A_0755",
+            "id": "wp_a_0755",
             "name": "Axe of Godfrey",
             
             "tags": [
@@ -5649,7 +5649,7 @@
             ]
         },
         {
-            "id": "WP_A_0756",
+            "id": "wp_a_0756",
             "name": "Axe of Godrick",
             
             "tags": [
@@ -5657,7 +5657,7 @@
             ]
         },
         {
-            "id": "WP_A_0758",
+            "id": "wp_a_0758",
             "name": "Executioner's Greataxe",
             
             "tags": [
@@ -5665,7 +5665,7 @@
             ]
         },
         {
-            "id": "WP_A_0761",
+            "id": "wp_a_0761",
             "name": "Butchering Knife",
             
             "tags": [
@@ -5673,7 +5673,7 @@
             ]
         },
         {
-            "id": "WP_A_0762",
+            "id": "wp_a_0762",
             "name": "Gargoyle's Great Axe",
             
             "tags": [
@@ -5681,7 +5681,7 @@
             ]
         },
         {
-            "id": "WP_A_0763",
+            "id": "wp_a_0763",
             "name": "Gargoyle's Black Axe",
             
             "tags": [
@@ -5689,7 +5689,7 @@
             ]
         },
         {
-            "id": "WP_A_0800",
+            "id": "wp_a_0800",
             "name": "Club",
             
             "tags": [
@@ -5697,7 +5697,7 @@
             ]
         },
         {
-            "id": "WP_A_0802",
+            "id": "wp_a_0802",
             "name": "Mace",
             
             "tags": [
@@ -5705,7 +5705,7 @@
             ]
         },
         {
-            "id": "WP_A_0803",
+            "id": "wp_a_0803",
             "name": "Greathorn Hammer",
             
             "tags": [
@@ -5713,7 +5713,7 @@
             ]
         },
         {
-            "id": "WP_A_0804",
+            "id": "wp_a_0804",
             "name": "Battle Hammer",
             
             "tags": [
@@ -5721,7 +5721,7 @@
             ]
         },
         {
-            "id": "WP_A_0805",
+            "id": "wp_a_0805",
             "name": "Curved Club",
             
             "tags": [
@@ -5729,7 +5729,7 @@
             ]
         },
         {
-            "id": "WP_A_0806",
+            "id": "wp_a_0806",
             "name": "Monk's Flamemace",
             
             "tags": [
@@ -5737,7 +5737,7 @@
             ]
         },
         {
-            "id": "WP_A_0807",
+            "id": "wp_a_0807",
             "name": "Watchdog's Staff",
             
             "tags": [
@@ -5745,7 +5745,7 @@
             ]
         },
         {
-            "id": "WP_A_0809",
+            "id": "wp_a_0809",
             "name": "Warpick",
             
             "tags": [
@@ -5753,7 +5753,7 @@
             ]
         },
         {
-            "id": "WP_A_0812",
+            "id": "wp_a_0812",
             "name": "Morning Star",
             
             "tags": [
@@ -5761,7 +5761,7 @@
             ]
         },
         {
-            "id": "WP_A_0814",
+            "id": "wp_a_0814",
             "name": "Varre's Bouquet",
             
             "tags": [
@@ -5769,7 +5769,7 @@
             ]
         },
         {
-            "id": "WP_A_0815",
+            "id": "wp_a_0815",
             "name": "Spiked Club",
             
             "tags": [
@@ -5777,7 +5777,7 @@
             ]
         },
         {
-            "id": "WP_A_0816",
+            "id": "wp_a_0816",
             "name": "Hammer",
             
             "tags": [
@@ -5785,7 +5785,7 @@
             ]
         },
         {
-            "id": "WP_A_0817",
+            "id": "wp_a_0817",
             "name": "Scepter of the All-Knowing",
             
             "tags": [
@@ -5793,7 +5793,7 @@
             ]
         },
         {
-            "id": "WP_A_0818",
+            "id": "wp_a_0818",
             "name": "Nox Flowing Hammer",
             
             "tags": [
@@ -5801,7 +5801,7 @@
             ]
         },
         {
-            "id": "WP_A_0819",
+            "id": "wp_a_0819",
             "name": "Ringed Finger",
             
             "tags": [
@@ -5809,7 +5809,7 @@
             ]
         },
         {
-            "id": "WP_A_0820",
+            "id": "wp_a_0820",
             "name": "Stone Club",
             
             "tags": [
@@ -5817,7 +5817,7 @@
             ]
         },
         {
-            "id": "WP_A_0821",
+            "id": "wp_a_0821",
             "name": "Marika's Hammer",
             
             "tags": [
@@ -5825,7 +5825,7 @@
             ]
         },
         {
-            "id": "WP_A_0850",
+            "id": "wp_a_0850",
             "name": "Large Club",
             
             "tags": [
@@ -5833,7 +5833,7 @@
             ]
         },
         {
-            "id": "WP_A_0851",
+            "id": "wp_a_0851",
             "name": "Great Club",
             
             "tags": [
@@ -5841,7 +5841,7 @@
             ]
         },
         {
-            "id": "WP_A_0852",
+            "id": "wp_a_0852",
             "name": "Great Mace",
             
             "tags": [
@@ -5849,7 +5849,7 @@
             ]
         },
         {
-            "id": "WP_A_0854",
+            "id": "wp_a_0854",
             "name": "Dragon Greatclaw",
             
             "tags": [
@@ -5857,7 +5857,7 @@
             ]
         },
         {
-            "id": "WP_A_0855",
+            "id": "wp_a_0855",
             "name": "Curved Great Club",
             
             "tags": [
@@ -5865,7 +5865,7 @@
             ]
         },
         {
-            "id": "WP_A_0856",
+            "id": "wp_a_0856",
             "name": "Prelate's Inferno Crozier",
             
             "tags": [
@@ -5873,7 +5873,7 @@
             ]
         },
         {
-            "id": "WP_A_0860",
+            "id": "wp_a_0860",
             "name": "Celebrant's Skull",
             
             "tags": [
@@ -5881,7 +5881,7 @@
             ]
         },
         {
-            "id": "WP_A_0861",
+            "id": "wp_a_0861",
             "name": "Pickaxe",
             
             "tags": [
@@ -5889,7 +5889,7 @@
             ]
         },
         {
-            "id": "WP_A_0862",
+            "id": "wp_a_0862",
             "name": "Beastclaw Greathammer",
             
             "tags": [
@@ -5897,7 +5897,7 @@
             ]
         },
         {
-            "id": "WP_A_0863",
+            "id": "wp_a_0863",
             "name": "Cranial Vessel Candlestand",
             
             "tags": [
@@ -5905,7 +5905,7 @@
             ]
         },
         {
-            "id": "WP_A_0864",
+            "id": "wp_a_0864",
             "name": "Great Stars",
             
             "tags": [
@@ -5913,7 +5913,7 @@
             ]
         },
         {
-            "id": "WP_A_0865",
+            "id": "wp_a_0865",
             "name": "Brick Hammer",
             
             "tags": [
@@ -5921,7 +5921,7 @@
             ]
         },
         {
-            "id": "WP_A_0866",
+            "id": "wp_a_0866",
             "name": "Staff of the Avatar",
             
             "tags": [
@@ -5929,7 +5929,7 @@
             ]
         },
         {
-            "id": "WP_A_0867",
+            "id": "wp_a_0867",
             "name": "Fallingstar Beast Jaw",
             
             "tags": [
@@ -5937,7 +5937,7 @@
             ]
         },
         {
-            "id": "WP_A_0869",
+            "id": "wp_a_0869",
             "name": "Ghiza's Wheel",
             
             "tags": [
@@ -5945,7 +5945,7 @@
             ]
         },
         {
-            "id": "WP_A_0870",
+            "id": "wp_a_0870",
             "name": "Giant-Crusher",
             
             "tags": [
@@ -5953,7 +5953,7 @@
             ]
         },
         {
-            "id": "WP_A_0871",
+            "id": "wp_a_0871",
             "name": "Devourer's Scepter",
             
             "tags": [
@@ -5961,7 +5961,7 @@
             ]
         },
         {
-            "id": "WP_A_0873",
+            "id": "wp_a_0873",
             "name": "Troll's Hammer",
             
             "tags": [
@@ -5969,7 +5969,7 @@
             ]
         },
         {
-            "id": "WP_A_0874",
+            "id": "wp_a_0874",
             "name": "Rotten Staff",
             
             "tags": [
@@ -5977,7 +5977,7 @@
             ]
         },
         {
-            "id": "WP_A_0875",
+            "id": "wp_a_0875",
             "name": "Rotten Greataxe",
             
             "tags": [
@@ -5985,7 +5985,7 @@
             ]
         },
         {
-            "id": "WP_A_0876",
+            "id": "wp_a_0876",
             "name": "Rotten Battle Hammer",
             
             "tags": [
@@ -5993,7 +5993,7 @@
             ]
         },
         {
-            "id": "WP_A_0902",
+            "id": "wp_a_0902",
             "name": "Spear",
             
             "tags": [
@@ -6001,7 +6001,7 @@
             ]
         },
         {
-            "id": "WP_A_0905",
+            "id": "wp_a_0905",
             "name": "Crystal Spear",
             
             "tags": [
@@ -6009,7 +6009,7 @@
             ]
         },
         {
-            "id": "WP_A_0907",
+            "id": "wp_a_0907",
             "name": "Guardian's Swordspear",
             
             "tags": [
@@ -6017,7 +6017,7 @@
             ]
         },
         {
-            "id": "WP_A_0909",
+            "id": "wp_a_0909",
             "name": "Clayman's Harpoon",
             
             "tags": [
@@ -6025,7 +6025,7 @@
             ]
         },
         {
-            "id": "WP_A_0910",
+            "id": "wp_a_0910",
             "name": "Cleanrot Spear",
             
             "tags": [
@@ -6033,7 +6033,7 @@
             ]
         },
         {
-            "id": "WP_A_0911",
+            "id": "wp_a_0911",
             "name": "Pest's Glaive",
             
             "tags": [
@@ -6041,7 +6041,7 @@
             ]
         },
         {
-            "id": "WP_A_0918",
+            "id": "wp_a_0918",
             "name": "Mohgwyn's Sacred Spear",
             
             "tags": [
@@ -6049,7 +6049,7 @@
             ]
         },
         {
-            "id": "WP_A_0919",
+            "id": "wp_a_0919",
             "name": "Iron Spear",
             
             "tags": [
@@ -6057,7 +6057,7 @@
             ]
         },
         {
-            "id": "WP_A_0921",
+            "id": "wp_a_0921",
             "name": "Partisan",
             
             "tags": [
@@ -6065,7 +6065,7 @@
             ]
         },
         {
-            "id": "WP_A_0922",
+            "id": "wp_a_0922",
             "name": "Celebrant's Rib-Rake",
             
             "tags": [
@@ -6073,7 +6073,7 @@
             ]
         },
         {
-            "id": "WP_A_0926",
+            "id": "wp_a_0926",
             "name": "Pike",
             
             "tags": [
@@ -6081,7 +6081,7 @@
             ]
         },
         {
-            "id": "WP_A_0929",
+            "id": "wp_a_0929",
             "name": "Siluria's Tree",
             
             "tags": [
@@ -6089,7 +6089,7 @@
             ]
         },
         {
-            "id": "WP_A_0930",
+            "id": "wp_a_0930",
             "name": "Bolt of Gransax",
             
             "tags": [
@@ -6097,7 +6097,7 @@
             ]
         },
         {
-            "id": "WP_A_0932",
+            "id": "wp_a_0932",
             "name": "Cross-Naginata",
             
             "tags": [
@@ -6105,7 +6105,7 @@
             ]
         },
         {
-            "id": "WP_A_0933",
+            "id": "wp_a_0933",
             "name": "Death Ritual Spear",
             
             "tags": [
@@ -6113,7 +6113,7 @@
             ]
         },
         {
-            "id": "WP_A_0934",
+            "id": "wp_a_0934",
             "name": "Inquisitor's Girandole",
             
             "tags": [
@@ -6121,7 +6121,7 @@
             ]
         },
         {
-            "id": "WP_A_0935",
+            "id": "wp_a_0935",
             "name": "Serpent-Hunter",
             
             "tags": [
@@ -6129,7 +6129,7 @@
             ]
         },
         {
-            "id": "WP_A_0937",
+            "id": "wp_a_0937",
             "name": "Vyke's War Spear",
             
             "tags": [
@@ -6137,7 +6137,7 @@
             ]
         },
         {
-            "id": "WP_A_0938",
+            "id": "wp_a_0938",
             "name": "Lance",
             
             "tags": [
@@ -6145,7 +6145,7 @@
             ]
         },
         {
-            "id": "WP_A_0939",
+            "id": "wp_a_0939",
             "name": "Treespear",
             
             "tags": [
@@ -6153,7 +6153,7 @@
             ]
         },
         {
-            "id": "WP_A_1002",
+            "id": "wp_a_1002",
             "name": "Lucerne",
             
             "tags": [
@@ -6161,7 +6161,7 @@
             ]
         },
         {
-            "id": "WP_A_1003",
+            "id": "wp_a_1003",
             "name": "Banished Knight's Halberd",
             
             "tags": [
@@ -6169,7 +6169,7 @@
             ]
         },
         {
-            "id": "WP_A_1004",
+            "id": "wp_a_1004",
             "name": "Commander's Standard",
             
             "tags": [
@@ -6177,7 +6177,7 @@
             ]
         },
         {
-            "id": "WP_A_1005",
+            "id": "wp_a_1005",
             "name": "Nightrider Glaive",
             
             "tags": [
@@ -6185,7 +6185,7 @@
             ]
         },
         {
-            "id": "WP_A_1006",
+            "id": "wp_a_1006",
             "name": "Longhaft Axe",
             
             "tags": [
@@ -6193,7 +6193,7 @@
             ]
         },
         {
-            "id": "WP_A_1007",
+            "id": "wp_a_1007",
             "name": "Ripple Crescent Halberd",
             
             "tags": [
@@ -6201,7 +6201,7 @@
             ]
         },
         {
-            "id": "WP_A_1009",
+            "id": "wp_a_1009",
             "name": "Vulgar Militia Saw",
             
             "tags": [
@@ -6209,7 +6209,7 @@
             ]
         },
         {
-            "id": "WP_A_1012",
+            "id": "wp_a_1012",
             "name": "Golem's Halberd",
             
             "tags": [
@@ -6217,7 +6217,7 @@
             ]
         },
         {
-            "id": "WP_A_1013",
+            "id": "wp_a_1013",
             "name": "Golden Halberd",
             
             "tags": [
@@ -6225,7 +6225,7 @@
             ]
         },
         {
-            "id": "WP_A_1014",
+            "id": "wp_a_1014",
             "name": "Glaive",
             
             "tags": [
@@ -6233,7 +6233,7 @@
             ]
         },
         {
-            "id": "WP_A_1016",
+            "id": "wp_a_1016",
             "name": "Loretta's War Sickle",
             
             "tags": [
@@ -6241,7 +6241,7 @@
             ]
         },
         {
-            "id": "WP_A_1017",
+            "id": "wp_a_1017",
             "name": "Spiked Spear",
             
             "tags": [
@@ -6249,7 +6249,7 @@
             ]
         },
         {
-            "id": "WP_A_1019",
+            "id": "wp_a_1019",
             "name": "Dragon Halberd",
             
             "tags": [
@@ -6257,7 +6257,7 @@
             ]
         },
         {
-            "id": "WP_A_1020",
+            "id": "wp_a_1020",
             "name": "Gargoyle's Halberd",
             
             "tags": [
@@ -6265,7 +6265,7 @@
             ]
         },
         {
-            "id": "WP_A_1021",
+            "id": "wp_a_1021",
             "name": "Rotten Crystal Spear",
             
             "tags": [
@@ -6273,7 +6273,7 @@
             ]
         },
         {
-            "id": "WP_A_1022",
+            "id": "wp_a_1022",
             "name": "Gargoyle's Black Halberd",
             
             "tags": [
@@ -6281,7 +6281,7 @@
             ]
         },
         {
-            "id": "WP_A_1050",
+            "id": "wp_a_1050",
             "name": "Scythe",
             
             "tags": [
@@ -6289,7 +6289,7 @@
             ]
         },
         {
-            "id": "WP_A_1052",
+            "id": "wp_a_1052",
             "name": "Grave Scythe",
             
             "tags": [
@@ -6297,7 +6297,7 @@
             ]
         },
         {
-            "id": "WP_A_1053",
+            "id": "wp_a_1053",
             "name": "Halo Scythe",
             
             "tags": [
@@ -6305,7 +6305,7 @@
             ]
         },
         {
-            "id": "WP_A_1054",
+            "id": "wp_a_1054",
             "name": "Vulgar Militia Shotel",
             
             "tags": [
@@ -6313,7 +6313,7 @@
             ]
         },
         {
-            "id": "WP_A_1057",
+            "id": "wp_a_1057",
             "name": "Winged Scythe",
             
             "tags": [
@@ -6321,7 +6321,7 @@
             ]
         },
         {
-            "id": "WP_A_1100",
+            "id": "wp_a_1100",
             "name": "Twinblade",
             
             "tags": [
@@ -6329,7 +6329,7 @@
             ]
         },
         {
-            "id": "WP_A_1101",
+            "id": "wp_a_1101",
             "name": "Godskin Peeler",
             
             "tags": [
@@ -6337,7 +6337,7 @@
             ]
         },
         {
-            "id": "WP_A_1104",
+            "id": "wp_a_1104",
             "name": "Eleonora's Poleblade",
             
             "tags": [
@@ -6345,7 +6345,7 @@
             ]
         },
         {
-            "id": "WP_A_1105",
+            "id": "wp_a_1105",
             "name": "Twinned Knight Swords",
             
             "tags": [
@@ -6353,7 +6353,7 @@
             ]
         },
         {
-            "id": "WP_A_1109",
+            "id": "wp_a_1109",
             "name": "Gargoyle's Twinblade",
             
             "tags": [
@@ -6361,7 +6361,7 @@
             ]
         },
         {
-            "id": "WP_A_1110",
+            "id": "wp_a_1110",
             "name": "Gargoyle's Black Blades",
             
             "tags": [
@@ -6369,7 +6369,7 @@
             ]
         },
         {
-            "id": "WP_A_1150",
+            "id": "wp_a_1150",
             "name": "Caestus",
             
             "tags": [
@@ -6377,7 +6377,7 @@
             ]
         },
         {
-            "id": "WP_A_1151",
+            "id": "wp_a_1151",
             "name": "Venomous Fang",
             
             "tags": [
@@ -6385,7 +6385,7 @@
             ]
         },
         {
-            "id": "WP_A_1152",
+            "id": "wp_a_1152",
             "name": "Hookclaws",
             
             "tags": [
@@ -6393,7 +6393,7 @@
             ]
         },
         {
-            "id": "WP_A_1153",
+            "id": "wp_a_1153",
             "name": "Spiked Caestus",
             
             "tags": [
@@ -6401,7 +6401,7 @@
             ]
         },
         {
-            "id": "WP_A_1154",
+            "id": "wp_a_1154",
             "name": "Bloodhound Claws",
             
             "tags": [
@@ -6409,7 +6409,7 @@
             ]
         },
         {
-            "id": "WP_A_1157",
+            "id": "wp_a_1157",
             "name": "Katar",
             
             "tags": [
@@ -6417,7 +6417,7 @@
             ]
         },
         {
-            "id": "WP_A_1158",
+            "id": "wp_a_1158",
             "name": "Clinging Bone",
             
             "tags": [
@@ -6425,7 +6425,7 @@
             ]
         },
         {
-            "id": "WP_A_1159",
+            "id": "wp_a_1159",
             "name": "Veteran's Prosthesis",
             
             "tags": [
@@ -6433,7 +6433,7 @@
             ]
         },
         {
-            "id": "WP_A_1162",
+            "id": "wp_a_1162",
             "name": "Grafted Dragon",
             
             "tags": [
@@ -6441,7 +6441,7 @@
             ]
         },
         {
-            "id": "WP_A_1163",
+            "id": "wp_a_1163",
             "name": "Raptor Talons",
             
             "tags": [
@@ -6449,7 +6449,7 @@
             ]
         },
         {
-            "id": "WP_A_1164",
+            "id": "wp_a_1164",
             "name": "Iron Ball",
             
             "tags": [
@@ -6457,7 +6457,7 @@
             ]
         },
         {
-            "id": "WP_A_1165",
+            "id": "wp_a_1165",
             "name": "Cipher Pata",
             
             "tags": [
@@ -6465,7 +6465,7 @@
             ]
         },
         {
-            "id": "WP_A_1166",
+            "id": "wp_a_1166",
             "name": "Star Fist",
             
             "tags": [
@@ -6473,7 +6473,7 @@
             ]
         },
         {
-            "id": "WP_A_1200",
+            "id": "wp_a_1200",
             "name": "Whip",
             
             "tags": [
@@ -6481,7 +6481,7 @@
             ]
         },
         {
-            "id": "WP_A_1203",
+            "id": "wp_a_1203",
             "name": "Thorned Whip",
             
             "tags": [
@@ -6489,7 +6489,7 @@
             ]
         },
         {
-            "id": "WP_A_1204",
+            "id": "wp_a_1204",
             "name": "Magma Whip Candlestick",
             
             "tags": [
@@ -6497,7 +6497,7 @@
             ]
         },
         {
-            "id": "WP_A_1206",
+            "id": "wp_a_1206",
             "name": "Hoslow's Petal Whip",
             
             "tags": [
@@ -6505,7 +6505,7 @@
             ]
         },
         {
-            "id": "WP_A_1207",
+            "id": "wp_a_1207",
             "name": "Giant's Red Braid",
             
             "tags": [
@@ -6513,7 +6513,7 @@
             ]
         },
         {
-            "id": "WP_A_1208",
+            "id": "wp_a_1208",
             "name": "Urumi",
             
             "tags": [
@@ -6521,7 +6521,7 @@
             ]
         },
         {
-            "id": "WP_A_1250",
+            "id": "wp_a_1250",
             "name": "Flail",
             
             "tags": [
@@ -6529,7 +6529,7 @@
             ]
         },
         {
-            "id": "WP_A_1251",
+            "id": "wp_a_1251",
             "name": "Nightrider Flail",
             
             "tags": [
@@ -6537,7 +6537,7 @@
             ]
         },
         {
-            "id": "WP_A_1252",
+            "id": "wp_a_1252",
             "name": "Family Heads",
             
             "tags": [
@@ -6545,7 +6545,7 @@
             ]
         },
         {
-            "id": "WP_A_1253",
+            "id": "wp_a_1253",
             "name": "Bastard's Stars",
             
             "tags": [
@@ -6553,7 +6553,7 @@
             ]
         },
         {
-            "id": "WP_A_1255",
+            "id": "wp_a_1255",
             "name": "Chainlink Flail",
             
             "tags": [
@@ -6561,7 +6561,7 @@
             ]
         },
         {
-            "id": "WP_A_1303",
+            "id": "wp_a_1303",
             "name": "Crystal Staff",
             
             "tags": [
@@ -6569,7 +6569,7 @@
             ]
         },
         {
-            "id": "WP_A_1307",
+            "id": "wp_a_1307",
             "name": "Gelmir Glintstone Staff",
             
             "tags": [
@@ -6577,7 +6577,7 @@
             ]
         },
         {
-            "id": "WP_A_1309",
+            "id": "wp_a_1309",
             "name": "Demi-Human Queen's Staff",
             
             "tags": [
@@ -6585,7 +6585,7 @@
             ]
         },
         {
-            "id": "WP_A_1310",
+            "id": "wp_a_1310",
             "name": "Glintstone Staff",
             
             "tags": [
@@ -6593,7 +6593,7 @@
             ]
         },
         {
-            "id": "WP_A_1316",
+            "id": "wp_a_1316",
             "name": "Staff of the Guilty",
             
             "tags": [
@@ -6601,7 +6601,7 @@
             ]
         },
         {
-            "id": "WP_A_1317",
+            "id": "wp_a_1317",
             "name": "Digger's Staff",
             
             "tags": [
@@ -6609,7 +6609,7 @@
             ]
         },
         {
-            "id": "WP_A_1319",
+            "id": "wp_a_1319",
             "name": "Astrologer's Staff",
             
             "tags": [
@@ -6617,7 +6617,7 @@
             ]
         },
         {
-            "id": "WP_A_1322",
+            "id": "wp_a_1322",
             "name": "Academy Glintstone Staff",
             
             "tags": [
@@ -6625,7 +6625,7 @@
             ]
         },
         {
-            "id": "WP_A_1323",
+            "id": "wp_a_1323",
             "name": "Carian Glintstone Staff",
             
             "tags": [
@@ -6633,7 +6633,7 @@
             ]
         },
         {
-            "id": "WP_A_1324",
+            "id": "wp_a_1324",
             "name": "Meteorite Staff",
             
             "tags": [
@@ -6641,7 +6641,7 @@
             ]
         },
         {
-            "id": "WP_A_1325",
+            "id": "wp_a_1325",
             "name": "Carian Regal Scepter",
             
             "tags": [
@@ -6649,7 +6649,7 @@
             ]
         },
         {
-            "id": "WP_A_1326",
+            "id": "wp_a_1326",
             "name": "Albinauric Staff",
             
             "tags": [
@@ -6657,7 +6657,7 @@
             ]
         },
         {
-            "id": "WP_A_1327",
+            "id": "wp_a_1327",
             "name": "Prince of Death's Staff",
             
             "tags": [
@@ -6665,7 +6665,7 @@
             ]
         },
         {
-            "id": "WP_A_1328",
+            "id": "wp_a_1328",
             "name": "Carian Glintblade Staff",
             
             "tags": [
@@ -6673,7 +6673,7 @@
             ]
         },
         {
-            "id": "WP_A_1329",
+            "id": "wp_a_1329",
             "name": "Staff of Loss",
             
             "tags": [
@@ -6681,7 +6681,7 @@
             ]
         },
         {
-            "id": "WP_A_1330",
+            "id": "wp_a_1330",
             "name": "Finger Seal",
             
             "tags": [
@@ -6689,7 +6689,7 @@
             ]
         },
         {
-            "id": "WP_A_1331",
+            "id": "wp_a_1331",
             "name": "Godslayer's Seal",
             
             "tags": [
@@ -6697,7 +6697,7 @@
             ]
         },
         {
-            "id": "WP_A_1332",
+            "id": "wp_a_1332",
             "name": "Giant's Seal",
             
             "tags": [
@@ -6705,7 +6705,7 @@
             ]
         },
         {
-            "id": "WP_A_1333",
+            "id": "wp_a_1333",
             "name": "Gravel Stone Seal",
             
             "tags": [
@@ -6713,7 +6713,7 @@
             ]
         },
         {
-            "id": "WP_A_1334",
+            "id": "wp_a_1334",
             "name": "Clawmark Seal",
             
             "tags": [
@@ -6721,7 +6721,7 @@
             ]
         },
         {
-            "id": "WP_A_1336",
+            "id": "wp_a_1336",
             "name": "Golden Order Seal",
             
             "tags": [
@@ -6729,7 +6729,7 @@
             ]
         },
         {
-            "id": "WP_A_1340",
+            "id": "wp_a_1340",
             "name": "Azur's Glintstone Staff",
             
             "tags": [
@@ -6737,7 +6737,7 @@
             ]
         },
         {
-            "id": "WP_A_1341",
+            "id": "wp_a_1341",
             "name": "Lusat's Glintstone Staff",
             
             "tags": [
@@ -6745,7 +6745,7 @@
             ]
         },
         {
-            "id": "WP_A_1342",
+            "id": "wp_a_1342",
             "name": "Rotten Crystal Staff",
             
             "tags": [
@@ -6753,7 +6753,7 @@
             ]
         },
         {
-            "id": "WP_A_1401",
+            "id": "wp_a_1401",
             "name": "Composite Bow",
             
             "tags": [
@@ -6761,7 +6761,7 @@
             ]
         },
         {
-            "id": "WP_A_1402",
+            "id": "wp_a_1402",
             "name": "Red Branch Shortbow",
             
             "tags": [
@@ -6769,7 +6769,7 @@
             ]
         },
         {
-            "id": "WP_A_1403",
+            "id": "wp_a_1403",
             "name": "Albinauric Bow",
             
             "tags": [
@@ -6777,7 +6777,7 @@
             ]
         },
         {
-            "id": "WP_A_1404",
+            "id": "wp_a_1404",
             "name": "Horn Bow",
             
             "tags": [
@@ -6785,7 +6785,7 @@
             ]
         },
         {
-            "id": "WP_A_1405",
+            "id": "wp_a_1405",
             "name": "Misbegotten Shortbow",
             
             "tags": [
@@ -6793,7 +6793,7 @@
             ]
         },
         {
-            "id": "WP_A_1406",
+            "id": "wp_a_1406",
             "name": "Shortbow",
             
             "tags": [
@@ -6801,7 +6801,7 @@
             ]
         },
         {
-            "id": "WP_A_1407",
+            "id": "wp_a_1407",
             "name": "Golem Greatbow",
             
             "tags": [
@@ -6809,7 +6809,7 @@
             ]
         },
         {
-            "id": "WP_A_1408",
+            "id": "wp_a_1408",
             "name": "Lion Greatbow",
             
             "tags": [
@@ -6817,7 +6817,7 @@
             ]
         },
         {
-            "id": "WP_A_1410",
+            "id": "wp_a_1410",
             "name": "Longbow",
             
             "tags": [
@@ -6825,7 +6825,7 @@
             ]
         },
         {
-            "id": "WP_A_1411",
+            "id": "wp_a_1411",
             "name": "Harp Bow",
             
             "tags": [
@@ -6833,7 +6833,7 @@
             ]
         },
         {
-            "id": "WP_A_1413",
+            "id": "wp_a_1413",
             "name": "Erdtree Bow",
             
             "tags": [
@@ -6841,7 +6841,7 @@
             ]
         },
         {
-            "id": "WP_A_1414",
+            "id": "wp_a_1414",
             "name": "Serpent Bow",
             
             "tags": [
@@ -6849,7 +6849,7 @@
             ]
         },
         {
-            "id": "WP_A_1417",
+            "id": "wp_a_1417",
             "name": "Erdtree Greatbow",
             
             "tags": [
@@ -6857,7 +6857,7 @@
             ]
         },
         {
-            "id": "WP_A_1418",
+            "id": "wp_a_1418",
             "name": "Black Bow",
             
             "tags": [
@@ -6865,7 +6865,7 @@
             ]
         },
         {
-            "id": "WP_A_1419",
+            "id": "wp_a_1419",
             "name": "Pulley Bow",
             
             "tags": [
@@ -6873,7 +6873,7 @@
             ]
         },
         {
-            "id": "WP_A_1420",
+            "id": "wp_a_1420",
             "name": "Greatbow",
             
             "tags": [
@@ -6881,7 +6881,7 @@
             ]
         },
         {
-            "id": "WP_A_1501",
+            "id": "wp_a_1501",
             "name": "Soldier's Crossbow",
             
             "tags": [
@@ -6889,7 +6889,7 @@
             ]
         },
         {
-            "id": "WP_A_1503",
+            "id": "wp_a_1503",
             "name": "Light Crossbow",
             
             "tags": [
@@ -6897,7 +6897,7 @@
             ]
         },
         {
-            "id": "WP_A_1506",
+            "id": "wp_a_1506",
             "name": "Arbalest",
             
             "tags": [
@@ -6905,7 +6905,7 @@
             ]
         },
         {
-            "id": "WP_A_1508",
+            "id": "wp_a_1508",
             "name": "Pulley Crossbow",
             
             "tags": [
@@ -6913,7 +6913,7 @@
             ]
         },
         {
-            "id": "WP_A_1510",
+            "id": "wp_a_1510",
             "name": "Hand Ballista",
             
             "tags": [
@@ -6921,7 +6921,7 @@
             ]
         },
         {
-            "id": "WP_A_1511",
+            "id": "wp_a_1511",
             "name": "Jar Cannon",
             
             "tags": [
@@ -6929,7 +6929,7 @@
             ]
         },
         {
-            "id": "WP_A_1512",
+            "id": "wp_a_1512",
             "name": "Heavy Crossbow",
             
             "tags": [
@@ -6937,7 +6937,7 @@
             ]
         },
         {
-            "id": "WP_A_1513",
+            "id": "wp_a_1513",
             "name": "Full Moon Crossbow",
             
             "tags": [
@@ -6945,7 +6945,7 @@
             ]
         },
         {
-            "id": "WP_A_1514",
+            "id": "wp_a_1514",
             "name": "Crepus's Black-Key Crossbow",
             
             "tags": [
@@ -6953,7 +6953,7 @@
             ]
         },
         {
-            "id": "WP_A_2001",
+            "id": "wp_a_2001",
             "name": "Marred Wooden Shield",
             
             "tags": [
@@ -6961,7 +6961,7 @@
             ]
         },
         {
-            "id": "WP_A_2002",
+            "id": "wp_a_2002",
             "name": "Banished Knight's Shield",
             
             "tags": [
@@ -6969,7 +6969,7 @@
             ]
         },
         {
-            "id": "WP_A_2003",
+            "id": "wp_a_2003",
             "name": "Dragonclaw Shield",
             
             "tags": [
@@ -6977,7 +6977,7 @@
             ]
         },
         {
-            "id": "WP_A_2005",
+            "id": "wp_a_2005",
             "name": "Albinauric Shield",
             
             "tags": [
@@ -6985,7 +6985,7 @@
             ]
         },
         {
-            "id": "WP_A_2007",
+            "id": "wp_a_2007",
             "name": "Sun Realm Shield",
             
             "tags": [
@@ -6993,7 +6993,7 @@
             ]
         },
         {
-            "id": "WP_A_2008",
+            "id": "wp_a_2008",
             "name": "Rickety Shield",
             
             "tags": [
@@ -7001,7 +7001,7 @@
             ]
         },
         {
-            "id": "WP_A_2009",
+            "id": "wp_a_2009",
             "name": "Wooden Greatshield",
             
             "tags": [
@@ -7009,7 +7009,7 @@
             ]
         },
         {
-            "id": "WP_A_2010",
+            "id": "wp_a_2010",
             "name": "Distinguished Greatshield",
             
             "tags": [
@@ -7017,7 +7017,7 @@
             ]
         },
         {
-            "id": "WP_A_2013",
+            "id": "wp_a_2013",
             "name": "Crucible Hornshield",
             
             "tags": [
@@ -7025,7 +7025,7 @@
             ]
         },
         {
-            "id": "WP_A_2014",
+            "id": "wp_a_2014",
             "name": "Silver Mirrorshield",
             
             "tags": [
@@ -7033,7 +7033,7 @@
             ]
         },
         {
-            "id": "WP_A_2016",
+            "id": "wp_a_2016",
             "name": "Round Shield",
             
             "tags": [
@@ -7041,7 +7041,7 @@
             ]
         },
         {
-            "id": "WP_A_2020",
+            "id": "wp_a_2020",
             "name": "Heater Shield",
             
             "tags": [
@@ -7049,7 +7049,7 @@
             ]
         },
         {
-            "id": "WP_A_2021",
+            "id": "wp_a_2021",
             "name": "Great Turtle Shell",
             
             "tags": [
@@ -7057,7 +7057,7 @@
             ]
         },
         {
-            "id": "WP_A_2024",
+            "id": "wp_a_2024",
             "name": "Shield of the Guilty",
             
             "tags": [
@@ -7065,7 +7065,7 @@
             ]
         },
         {
-            "id": "WP_A_2026",
+            "id": "wp_a_2026",
             "name": "Carian Knight's Shield",
             
             "tags": [
@@ -7073,7 +7073,7 @@
             ]
         },
         {
-            "id": "WP_A_2030",
+            "id": "wp_a_2030",
             "name": "Blue-Gold Kite Shield",
             
             "tags": [
@@ -7081,7 +7081,7 @@
             ]
         },
         {
-            "id": "WP_A_2031",
+            "id": "wp_a_2031",
             "name": "Scorpion Kite Shield",
             
             "tags": [
@@ -7089,7 +7089,7 @@
             ]
         },
         {
-            "id": "WP_A_2032",
+            "id": "wp_a_2032",
             "name": "Twinbird Kite Shield",
             
             "tags": [
@@ -7097,7 +7097,7 @@
             ]
         },
         {
-            "id": "WP_A_2033",
+            "id": "wp_a_2033",
             "name": "Kite Shield",
             
             "tags": [
@@ -7105,7 +7105,7 @@
             ]
         },
         {
-            "id": "WP_A_2035",
+            "id": "wp_a_2035",
             "name": "Inverted Hawk Heater Shield",
             
             "tags": [
@@ -7113,7 +7113,7 @@
             ]
         },
         {
-            "id": "WP_A_2036",
+            "id": "wp_a_2036",
             "name": "Eclipse Crest Heater Shield",
             
             "tags": [
@@ -7121,7 +7121,7 @@
             ]
         },
         {
-            "id": "WP_A_2037",
+            "id": "wp_a_2037",
             "name": "Blue Crest Heater Shield",
             
             "tags": [
@@ -7129,7 +7129,7 @@
             ]
         },
         {
-            "id": "WP_A_2038",
+            "id": "wp_a_2038",
             "name": "Red Crest Heater Shield",
             
             "tags": [
@@ -7137,7 +7137,7 @@
             ]
         },
         {
-            "id": "WP_A_2039",
+            "id": "wp_a_2039",
             "name": "Beast Crest Heater Shield",
             
             "tags": [
@@ -7145,7 +7145,7 @@
             ]
         },
         {
-            "id": "WP_A_2040",
+            "id": "wp_a_2040",
             "name": "Hawk Crest Wooden Shield",
             
             "tags": [
@@ -7153,7 +7153,7 @@
             ]
         },
         {
-            "id": "WP_A_2041",
+            "id": "wp_a_2041",
             "name": "Flame Crest Wooden Shield",
             
             "tags": [
@@ -7161,7 +7161,7 @@
             ]
         },
         {
-            "id": "WP_A_2042",
+            "id": "wp_a_2042",
             "name": "Candletree Wooden Shield",
             
             "tags": [
@@ -7169,7 +7169,7 @@
             ]
         },
         {
-            "id": "WP_A_2043",
+            "id": "wp_a_2043",
             "name": "Horse Crest Wooden Shield",
             
             "tags": [
@@ -7177,7 +7177,7 @@
             ]
         },
         {
-            "id": "WP_A_2044",
+            "id": "wp_a_2044",
             "name": "Large Leather Shield",
             
             "tags": [
@@ -7185,7 +7185,7 @@
             ]
         },
         {
-            "id": "WP_A_2045",
+            "id": "wp_a_2045",
             "name": "Black Leather Shield",
             
             "tags": [
@@ -7193,7 +7193,7 @@
             ]
         },
         {
-            "id": "WP_A_2098",
+            "id": "wp_a_2098",
             "name": "Buckler",
             
             "tags": [
@@ -7201,7 +7201,7 @@
             ]
         },
         {
-            "id": "WP_A_2101",
+            "id": "wp_a_2101",
             "name": "Marred Leather Shield",
             
             "tags": [
@@ -7209,7 +7209,7 @@
             ]
         },
         {
-            "id": "WP_A_2103",
+            "id": "wp_a_2103",
             "name": "Perfumer's Shield",
             
             "tags": [
@@ -7217,7 +7217,7 @@
             ]
         },
         {
-            "id": "WP_A_2104",
+            "id": "wp_a_2104",
             "name": "Man-Serpent's Shield",
             
             "tags": [
@@ -7225,7 +7225,7 @@
             ]
         },
         {
-            "id": "WP_A_2106",
+            "id": "wp_a_2106",
             "name": "Pillory Shield",
             
             "tags": [
@@ -7233,7 +7233,7 @@
             ]
         },
         {
-            "id": "WP_A_2108",
+            "id": "wp_a_2108",
             "name": "Red Thorn Roundshield",
             
             "tags": [
@@ -7241,7 +7241,7 @@
             ]
         },
         {
-            "id": "WP_A_2109",
+            "id": "wp_a_2109",
             "name": "Scripture Wooden Shield",
             
             "tags": [
@@ -7249,7 +7249,7 @@
             ]
         },
         {
-            "id": "WP_A_2110",
+            "id": "wp_a_2110",
             "name": "Riveted Wooden Shield",
             
             "tags": [
@@ -7257,7 +7257,7 @@
             ]
         },
         {
-            "id": "WP_A_2111",
+            "id": "wp_a_2111",
             "name": "Blue-White Wooden Shield",
             
             "tags": [
@@ -7265,7 +7265,7 @@
             ]
         },
         {
-            "id": "WP_A_2112",
+            "id": "wp_a_2112",
             "name": "Coil Shield",
             
             "tags": [
@@ -7273,7 +7273,7 @@
             ]
         },
         {
-            "id": "WP_A_2113",
+            "id": "wp_a_2113",
             "name": "Spiralhorn Shield",
             
             "tags": [
@@ -7281,7 +7281,7 @@
             ]
         },
         {
-            "id": "WP_A_2115",
+            "id": "wp_a_2115",
             "name": "Rift Shield",
             
             "tags": [
@@ -7289,7 +7289,7 @@
             ]
         },
         {
-            "id": "WP_A_2116",
+            "id": "wp_a_2116",
             "name": "Iron Roundshield",
             
             "tags": [
@@ -7297,7 +7297,7 @@
             ]
         },
         {
-            "id": "WP_A_2117",
+            "id": "wp_a_2117",
             "name": "Gilded Iron Shield",
             
             "tags": [
@@ -7305,7 +7305,7 @@
             ]
         },
         {
-            "id": "WP_A_2118",
+            "id": "wp_a_2118",
             "name": "Ice Crest Shield",
             
             "tags": [
@@ -7313,7 +7313,7 @@
             ]
         },
         {
-            "id": "WP_A_2119",
+            "id": "wp_a_2119",
             "name": "Smoldering Shield",
             
             "tags": [
@@ -7321,7 +7321,7 @@
             ]
         },
         {
-            "id": "WP_A_2202",
+            "id": "wp_a_2202",
             "name": "Briar Greatshield",
             
             "tags": [
@@ -7329,7 +7329,7 @@
             ]
         },
         {
-            "id": "WP_A_2203",
+            "id": "wp_a_2203",
             "name": "Brass Shield",
             
             "tags": [
@@ -7337,7 +7337,7 @@
             ]
         },
         {
-            "id": "WP_A_2206",
+            "id": "wp_a_2206",
             "name": "Erdtree Greatshield",
             
             "tags": [
@@ -7345,7 +7345,7 @@
             ]
         },
         {
-            "id": "WP_A_2207",
+            "id": "wp_a_2207",
             "name": "Golden Beast Crest Shield",
             
             "tags": [
@@ -7353,7 +7353,7 @@
             ]
         },
         {
-            "id": "WP_A_2208",
+            "id": "wp_a_2208",
             "name": "Dragon Towershield",
             
             "tags": [
@@ -7361,7 +7361,7 @@
             ]
         },
         {
-            "id": "WP_A_2211",
+            "id": "wp_a_2211",
             "name": "Jellyfish Shield",
             
             "tags": [
@@ -7369,7 +7369,7 @@
             ]
         },
         {
-            "id": "WP_A_2212",
+            "id": "wp_a_2212",
             "name": "Fingerprint Stone Shield",
             
             "tags": [
@@ -7377,7 +7377,7 @@
             ]
         },
         {
-            "id": "WP_A_2213",
+            "id": "wp_a_2213",
             "name": "Icon Shield",
             
             "tags": [
@@ -7385,7 +7385,7 @@
             ]
         },
         {
-            "id": "WP_A_2214",
+            "id": "wp_a_2214",
             "name": "One-Eyed Shield",
             
             "tags": [
@@ -7393,7 +7393,7 @@
             ]
         },
         {
-            "id": "WP_A_2216",
+            "id": "wp_a_2216",
             "name": "Spiked Palisade Shield",
             
             "tags": [
@@ -7401,7 +7401,7 @@
             ]
         },
         {
-            "id": "WP_A_2217",
+            "id": "wp_a_2217",
             "name": "Visage Shield",
             
             "tags": [
@@ -7409,7 +7409,7 @@
             ]
         },
         {
-            "id": "WP_A_2218",
+            "id": "wp_a_2218",
             "name": "Manor Towershield",
             
             "tags": [
@@ -7417,7 +7417,7 @@
             ]
         },
         {
-            "id": "WP_A_2219",
+            "id": "wp_a_2219",
             "name": "Crossed-Tree Towershield",
             
             "tags": [
@@ -7425,7 +7425,7 @@
             ]
         },
         {
-            "id": "WP_A_2220",
+            "id": "wp_a_2220",
             "name": "Inverted Hawk Towershield",
             
             "tags": [
@@ -7433,7 +7433,7 @@
             ]
         },
         {
-            "id": "WP_A_2221",
+            "id": "wp_a_2221",
             "name": "Ant's Skull Plate",
             
             "tags": [
@@ -7441,7 +7441,7 @@
             ]
         },
         {
-            "id": "WP_A_2222",
+            "id": "wp_a_2222",
             "name": "Redmane Greatshield",
             
             "tags": [
@@ -7449,7 +7449,7 @@
             ]
         },
         {
-            "id": "WP_A_2223",
+            "id": "wp_a_2223",
             "name": "Eclipse Crest Greatshield",
             
             "tags": [
@@ -7457,7 +7457,7 @@
             ]
         },
         {
-            "id": "WP_A_2224",
+            "id": "wp_a_2224",
             "name": "Cuckoo Greatshield",
             
             "tags": [
@@ -7465,7 +7465,7 @@
             ]
         },
         {
-            "id": "WP_A_2225",
+            "id": "wp_a_2225",
             "name": "Golden Greatshield",
             
             "tags": [
@@ -7473,7 +7473,7 @@
             ]
         },
         {
-            "id": "WP_A_2226",
+            "id": "wp_a_2226",
             "name": "Gilded Greatshield",
             
             "tags": [
@@ -7481,7 +7481,7 @@
             ]
         },
         {
-            "id": "WP_A_2227",
+            "id": "wp_a_2227",
             "name": "Haligtree Crest Greatshield",
             
             "tags": [
@@ -7489,7 +7489,7 @@
             ]
         },
         {
-            "id": "WP_A_2228",
+            "id": "wp_a_2228",
             "name": "Lordsworn's Shield",
             
             "tags": [
@@ -7497,7 +7497,7 @@
             ]
         },
         {
-            "id": "WP_A_3000",
+            "id": "wp_a_3000",
             "name": "Torch",
             
             "tags": [
@@ -7505,7 +7505,7 @@
             ]
         },
         {
-            "id": "WP_A_3001",
+            "id": "wp_a_3001",
             "name": "Torchpole",
             
             "tags": [
@@ -7513,7 +7513,7 @@
             ]
         },
         {
-            "id": "WP_A_3004",
+            "id": "wp_a_3004",
             "name": "Steel-Wire Torch",
             
             "tags": [
@@ -7521,7 +7521,7 @@
             ]
         },
         {
-            "id": "WP_A_3006",
+            "id": "wp_a_3006",
             "name": "St. Trina's Torch",
             
             "tags": [
@@ -7529,7 +7529,7 @@
             ]
         },
         {
-            "id": "WP_A_3007",
+            "id": "wp_a_3007",
             "name": "Ghostflame Torch",
             
             "tags": [
@@ -7537,7 +7537,7 @@
             ]
         },
         {
-            "id": "WP_A_3008",
+            "id": "wp_a_3008",
             "name": "Sentry's Torch",
             
             "tags": [
@@ -7545,7 +7545,7 @@
             ]
         },
         {
-            "id": "WP_A_4014",
+            "id": "wp_a_4014",
             "name": "Envoy's Horn",
             
             "tags": [
@@ -7553,7 +7553,7 @@
             ]
         },
         {
-            "id": "WP_A_4015",
+            "id": "wp_a_4015",
             "name": "Envoy's Long Horn",
             
             "tags": [
@@ -7561,7 +7561,7 @@
             ]
         },
         {
-            "id": "WP_A_4016",
+            "id": "wp_a_4016",
             "name": "Envoy's Greathorn",
             
             "tags": [
@@ -7569,7 +7569,7 @@
             ]
         },
         {
-            "id": "WP_A_503",
+            "id": "wp_a_503",
             "name": "Beastman's Jar-Shield",
             
             "tags": [
@@ -7577,7 +7577,7 @@
             ]
         },
         {
-            "id": "WP_A_7000",
+            "id": "wp_a_7000",
             "name": "Arrow",
             
             "tags": [
@@ -7585,7 +7585,7 @@
             ]
         },
         {
-            "id": "WP_A_7010",
+            "id": "wp_a_7010",
             "name": "Bone Arrow",
             
             "tags": [
@@ -7593,7 +7593,7 @@
             ]
         },
         {
-            "id": "WP_A_7020",
+            "id": "wp_a_7020",
             "name": "Bone Arrow (Fletched)",
             
             "tags": [
@@ -7601,7 +7601,7 @@
             ]
         },
         {
-            "id": "WP_A_7030",
+            "id": "wp_a_7030",
             "name": "Fire Arrow",
             
             "tags": [
@@ -7609,7 +7609,7 @@
             ]
         },
         {
-            "id": "WP_A_7040",
+            "id": "wp_a_7040",
             "name": "Serpent Arrow",
             
             "tags": [
@@ -7617,7 +7617,7 @@
             ]
         },
         {
-            "id": "WP_A_7050",
+            "id": "wp_a_7050",
             "name": "Dwelling Arrow",
             
             "tags": [
@@ -7625,7 +7625,7 @@
             ]
         },
         {
-            "id": "WP_A_7060",
+            "id": "wp_a_7060",
             "name": "St. Trina's Arrow",
             
             "tags": [
@@ -7633,7 +7633,7 @@
             ]
         },
         {
-            "id": "WP_A_7110",
+            "id": "wp_a_7110",
             "name": "Golden Arrow",
             
             "tags": [
@@ -7641,7 +7641,7 @@
             ]
         },
         {
-            "id": "WP_A_7300",
+            "id": "wp_a_7300",
             "name": "Great Arrow",
             
             "tags": [
@@ -7649,7 +7649,7 @@
             ]
         },
         {
-            "id": "WP_A_7310",
+            "id": "wp_a_7310",
             "name": "Golem's Great Arrow",
             
             "tags": [
@@ -7657,7 +7657,7 @@
             ]
         },
         {
-            "id": "WP_A_7320",
+            "id": "wp_a_7320",
             "name": "Golden Great Arrow",
             
             "tags": [
@@ -7665,7 +7665,7 @@
             ]
         },
         {
-            "id": "WP_A_7330",
+            "id": "wp_a_7330",
             "name": "Golem's Magic Arrow",
             
             "tags": [
@@ -7673,7 +7673,7 @@
             ]
         },
         {
-            "id": "WP_A_7340",
+            "id": "wp_a_7340",
             "name": "Radahn's Spear",
             
             "tags": [
@@ -7681,7 +7681,7 @@
             ]
         },
         {
-            "id": "WP_A_7350",
+            "id": "wp_a_7350",
             "name": "Bone Great Arrow (Fletched)",
             
             "tags": [
@@ -7689,7 +7689,7 @@
             ]
         },
         {
-            "id": "WP_A_7500",
+            "id": "wp_a_7500",
             "name": "Bolt",
             
             "tags": [
@@ -7697,7 +7697,7 @@
             ]
         },
         {
-            "id": "WP_A_7520",
+            "id": "wp_a_7520",
             "name": "Perfumer's Bolt",
             
             "tags": [
@@ -7705,7 +7705,7 @@
             ]
         },
         {
-            "id": "WP_A_7530",
+            "id": "wp_a_7530",
             "name": "Black-Key Bolt",
             
             "tags": [
@@ -7713,7 +7713,7 @@
             ]
         },
         {
-            "id": "WP_A_7570",
+            "id": "wp_a_7570",
             "name": "Bone Bolt",
             
             "tags": [
@@ -7721,7 +7721,7 @@
             ]
         },
         {
-            "id": "WP_A_7700",
+            "id": "wp_a_7700",
             "name": "Ballista Bolt",
             
             "tags": [
@@ -7729,7 +7729,7 @@
             ]
         },
         {
-            "id": "WP_A_7710",
+            "id": "wp_a_7710",
             "name": "Lightning Greatbolt",
             
             "tags": [
@@ -7737,7 +7737,7 @@
             ]
         },
         {
-            "id": "WP_A_7720",
+            "id": "wp_a_7720",
             "name": "Explosive Greatbolt",
             
             "tags": [
@@ -7745,7 +7745,7 @@
             ]
         },
         {
-            "id": "WP_A_7730",
+            "id": "wp_a_7730",
             "name": "Meteor Bolt",
             
             "tags": [
