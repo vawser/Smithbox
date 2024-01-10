@@ -117,9 +117,11 @@ public class Smithbox
         _helpBrowser = new HelpBrowser("HelpBrowser", _assetLocator);
 
         MapAliasBank.SetAssetLocator(_assetLocator);
+
         ModelAliasBank.SetAssetLocator(_assetLocator);
         FxrAliasBank.SetAssetLocator(_assetLocator);
         EventFlagAliasBank.SetAssetLocator(_assetLocator);
+
         ParamBank.PrimaryBank.SetAssetLocator(_assetLocator);
         ParamBank.VanillaBank.SetAssetLocator(_assetLocator);
         FMGBank.SetAssetLocator(_assetLocator);

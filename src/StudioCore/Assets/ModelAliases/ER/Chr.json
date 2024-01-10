@@ -43,7 +43,7 @@
         },
         {
             "id": "c2040",
-            "name": "Rennala Student",
+            "name": "Juvenile Scholar",
             
             "tags": [
                 "creature"
@@ -51,7 +51,7 @@
         },
         {
             "id": "c2041",
-            "name": "Small Pest",
+            "name": "Larva of Rot",
             
             "tags": [
                 "creature"
@@ -59,7 +59,7 @@
         },
         {
             "id": "c2050",
-            "name": "Snow Witch Ranni",
+            "name": "Ranni the Witch",
             
             "tags": [
                 "creature"
@@ -67,7 +67,7 @@
         },
         {
             "id": "c2051",
-            "name": "Snow Witch Ranni",
+            "name": "Ranni the Witch",
             
             "tags": [
                 "creature"
@@ -132,7 +132,7 @@
         },
         {
             "id": "c2140",
-            "name": "Fell Twin",
+            "name": "Omen",
             
             "tags": [
                 "creature"
@@ -140,7 +140,7 @@
         },
         {
             "id": "c2150",
-            "name": "Empty",
+            "name": "Lightning Ball",
             
             "tags": [
                 "creature"
@@ -148,7 +148,7 @@
         },
         {
             "id": "c2160",
-            "name": "Palm Reader (Wooden Chair)",
+            "name": "Finger Reader Crone",
             
             "tags": [
                 "creature"
@@ -156,7 +156,7 @@
         },
         {
             "id": "c2170",
-            "name": "Palm Reader (No Chair)",
+            "name": "Finger Reader Crone",
             
             "tags": [
                 "creature"
@@ -214,7 +214,7 @@
         },
         {
             "id": "c2272",
-            "name": "Giant Crab (Damaged)",
+            "name": "Giant Black Crab",
             
             "tags": [
                 "creature"
@@ -222,7 +222,7 @@
         },
         {
             "id": "c2273",
-            "name": "Crab (Maggots)",
+            "name": "Black Crab",
             
             "tags": [
                 "creature"
@@ -230,7 +230,7 @@
         },
         {
             "id": "c2274",
-            "name": "Giant Crab (Clean)",
+            "name": "Giant Albinauric Crab",
             
             "tags": [
                 "creature"
@@ -238,7 +238,7 @@
         },
         {
             "id": "c2275",
-            "name": "Crab (Clean)",
+            "name": "Albinauric Crab",
             
             "tags": [
                 "creature"
@@ -246,7 +246,7 @@
         },
         {
             "id": "c2276",
-            "name": "Giant Crab (Golden Tuffs)",
+            "name": "Giant Death Crab",
             
             "tags": [
                 "creature"
@@ -254,7 +254,7 @@
         },
         {
             "id": "c2277",
-            "name": "Crab (Golden Tuffs)",
+            "name": "Death Crab",
             
             "tags": [
                 "creature"
@@ -270,7 +270,7 @@
         },
         {
             "id": "c3000",
-            "name": "Castle Exile",
+            "name": "Exile Soldier",
             
             "tags": [
                 "creature"
@@ -286,7 +286,7 @@
         },
         {
             "id": "c3020",
-            "name": "Castle Exile (Large)",
+            "name": "Exile Soldier (Large)",
             
             "tags": [
                 "creature"
@@ -294,7 +294,7 @@
         },
         {
             "id": "c3050",
-            "name": "Commander",
+            "name": "Commander Niall/O'Neill",
             
             "tags": [
                 "creature",
@@ -303,7 +303,7 @@
         },
         {
             "id": "c3060",
-            "name": "Undead Mariner",
+            "name": "Giant Skeleton",
             
             "tags": [
                 "creature"
@@ -311,7 +311,7 @@
         },
         {
             "id": "c3061",
-            "name": "Undead Azula Beastman",
+            "name": "Giant Beast Skeleton",
             
             "tags": [
                 "creature"
@@ -352,7 +352,7 @@
         },
         {
             "id": "c3160",
-            "name": "Night's Cavalry Horse",
+            "name": "Funeral Steed",
             
             "tags": [
                 "creature",
@@ -369,7 +369,7 @@
         },
         {
             "id": "c3171",
-            "name": "Giant Albinauric Archer",
+            "name": "Phillia, Towering Little Sister",
             
             "tags": [
                 "creature"
@@ -377,7 +377,7 @@
         },
         {
             "id": "c3180",
-            "name": "Wolf",
+            "name": "Albinauric Archer's Wolf",
             
             "tags": [
                 "creature"
@@ -394,7 +394,7 @@
         },
         {
             "id": "c3200",
-            "name": "Nomad Trader",
+            "name": "Nomadic Merchant",
             
             "tags": [
                 "creature"
@@ -402,7 +402,7 @@
         },
         {
             "id": "c3201",
-            "name": "Nomad Trader",
+            "name": "Frenzied Nomad",
             
             "tags": [
                 "creature"
@@ -410,7 +410,7 @@
         },
         {
             "id": "c3202",
-            "name": "Nomad Trader",
+            "name": "Nomadic Merchant",
             
             "tags": [
                 "creature"
@@ -418,7 +418,7 @@
         },
         {
             "id": "c3210",
-            "name": "Nomad Mule",
+            "name": "Nomadic Merchant's Donkey",
             
             "tags": [
                 "creature",
@@ -445,7 +445,7 @@
         },
         {
             "id": "c3252",
-            "name": "Nox Swordstress",
+            "name": "Loretta",
             
             "tags": [
                 "creature",
@@ -454,7 +454,7 @@
         },
         {
             "id": "c3300",
-            "name": "Nox Priest",
+            "name": "Nox Swordstress/Monk/Nightmaiden",
             
             "tags": [
                 "creature",
@@ -471,7 +471,7 @@
         },
         {
             "id": "c3330",
-            "name": "Silver Tear Orb",
+            "name": "Giant Silver Tear",
             
             "tags": [
                 "creature"
@@ -496,7 +496,7 @@
         },
         {
             "id": "c3361",
-            "name": "Undead Ancestral Follower",
+            "name": "Putrid Ancestral Follower",
             
             "tags": [
                 "creature"
@@ -512,7 +512,7 @@
         },
         {
             "id": "c3371",
-            "name": "Undead Ancestral Follower Shaman",
+            "name": "Putrid Ancestral Follower Shaman",
             
             "tags": [
                 "creature"
@@ -528,7 +528,7 @@
         },
         {
             "id": "c3450",
-            "name": "Winged Misbegotten",
+            "name": "Misbegotten",
             
             "tags": [
                 "creature"
@@ -536,7 +536,7 @@
         },
         {
             "id": "c3451",
-            "name": "Misbegotten",
+            "name": "Scaly Misbegotten",
             
             "tags": [
                 "creature"
@@ -561,7 +561,7 @@
         },
         {
             "id": "c3471",
-            "name": "Albinauric (Large)",
+            "name": "Large Albinauric",
             
             "tags": [
                 "creature"
@@ -569,7 +569,7 @@
         },
         {
             "id": "c3500",
-            "name": "Skeleton (Curved Sword)",
+            "name": "Skeletal Militiaman/Bandit/Knight/Grave Warden",
             
             "tags": [
                 "creature"
@@ -577,7 +577,7 @@
         },
         {
             "id": "c3510",
-            "name": "Skeleton (Scimitar)",
+            "name": "Catacomb Skeleton",
             
             "tags": [
                 "creature"
@@ -625,14 +625,6 @@
         },
         {
             "id": "c3620",
-            "name": "Oracle Envoy (Medium)",
-            
-            "tags": [
-                "creature"
-            ]
-        },
-        {
-            "id": "c3630",
             "name": "Oracle Envoy (Large)",
             
             "tags": [
@@ -640,8 +632,16 @@
             ]
         },
         {
+            "id": "c3630",
+            "name": "Oracle Envoy (Giant)",
+            
+            "tags": [
+                "creature"
+            ]
+        },
+        {
             "id": "c3650",
-            "name": "Erdtree Guardian",
+            "name": "Guardian",
             
             "tags": [
                 "creature"
@@ -665,7 +665,7 @@
         },
         {
             "id": "c3662",
-            "name": "Scarlet Putrid Corpse",
+            "name": "Putrid Corpse (Large)",
             
             "tags": [
                 "creature"
@@ -681,7 +681,7 @@
         },
         {
             "id": "c3665",
-            "name": "Devious Commoner",
+            "name": "Gostoc",
             
             "tags": [
                 "creature"
@@ -689,7 +689,7 @@
         },
         {
             "id": "c3666",
-            "name": "Sunflower Commoner",
+            "name": "The Noble Goldmask",
             
             "tags": [
                 "creature"
@@ -697,7 +697,7 @@
         },
         {
             "id": "c3670",
-            "name": "Albinauric Lookout",
+            "name": "Elder Albinauric",
             
             "tags": [
                 "creature"
@@ -713,7 +713,7 @@
         },
         {
             "id": "c3701",
-            "name": "White Veil Perfumer",
+            "name": "Perfumer",
             
             "tags": [
                 "creature"
@@ -721,7 +721,7 @@
         },
         {
             "id": "c3702",
-            "name": "Raya Lucaria Scholar",
+            "name": "Glintstone Sorcerer",
             
             "tags": [
                 "creature"
@@ -729,7 +729,7 @@
         },
         {
             "id": "c3703",
-            "name": "Noble's Page",
+            "name": "Page",
             
             "tags": [
                 "creature"
@@ -745,7 +745,7 @@
         },
         {
             "id": "c3710",
-            "name": "Master Azur",
+            "name": "Azur",
             
             "tags": [
                 "creature"
@@ -753,7 +753,7 @@
         },
         {
             "id": "c3720",
-            "name": "Master Lusat",
+            "name": "Lusat",
             
             "tags": [
                 "creature"
@@ -761,7 +761,7 @@
         },
         {
             "id": "c3730",
-            "name": "Orb of Many Faces",
+            "name": "Graven School",
             
             "tags": [
                 "creature"
@@ -793,7 +793,7 @@
         },
         {
             "id": "c3850",
-            "name": "Marionette",
+            "name": "Marionette Soldier",
             
             "tags": [
                 "creature"
@@ -801,7 +801,7 @@
         },
         {
             "id": "c3860",
-            "name": "Avionette",
+            "name": "Avionette Soldier",
             
             "tags": [
                 "creature"
@@ -817,7 +817,7 @@
         },
         {
             "id": "c3901",
-            "name": "Godskin Monk",
+            "name": "Blackflame Monk",
             
             "tags": [
                 "creature"
@@ -849,7 +849,7 @@
         },
         {
             "id": "c4000",
-            "name": "Royal Rider",
+            "name": "Revenant Follower",
             
             "tags": [
                 "creature"
@@ -881,7 +881,7 @@
         },
         {
             "id": "c4060",
-            "name": "Horse (Thick Mane)",
+            "name": "Kaiden Sellsword's Horse",
             
             "tags": [
                 "creature",
@@ -890,7 +890,7 @@
         },
         {
             "id": "c4070",
-            "name": "Grey Wolf",
+            "name": "Wolf",
             
             "tags": [
                 "creature"
@@ -930,7 +930,7 @@
         },
         {
             "id": "c4101",
-            "name": "Large Demi-Human",
+            "name": "Demi-Human (Large)",
             
             "tags": [
                 "creature"
@@ -946,7 +946,7 @@
         },
         {
             "id": "c4120",
-            "name": "Demi-Human Beastman",
+            "name": "Demi-Human Chief",
             
             "tags": [
                 "creature"
@@ -979,7 +979,7 @@
         },
         {
             "id": "c4160",
-            "name": "Large Starved Dog",
+            "name": "Stray (Large)",
             
             "tags": [
                 "creature"
@@ -987,7 +987,7 @@
         },
         {
             "id": "c4161",
-            "name": "Starved Dog",
+            "name": "Stray",
             
             "tags": [
                 "creature"
@@ -995,7 +995,7 @@
         },
         {
             "id": "c4162",
-            "name": "Large Braided Dog",
+            "name": "Farum Azula Stray (Large)",
             
             "tags": [
                 "creature"
@@ -1003,7 +1003,7 @@
         },
         {
             "id": "c4163",
-            "name": "Braided Dog",
+            "name": "Farum Azula Stray",
             
             "tags": [
                 "creature"
@@ -1011,7 +1011,7 @@
         },
         {
             "id": "c4164",
-            "name": "Large Rotten Dog",
+            "name": "Bloodbane Stray (Large)",
             
             "tags": [
                 "creature"
@@ -1019,7 +1019,7 @@
         },
         {
             "id": "c4165",
-            "name": "Rotten Dog",
+            "name": "Bloodbane Stray",
             
             "tags": [
                 "creature"
@@ -1027,7 +1027,7 @@
         },
         {
             "id": "c4166",
-            "name": "Large Mushroom Dog",
+            "name": "Rotten Stray (Large)",
             
             "tags": [
                 "creature"
@@ -1035,7 +1035,7 @@
         },
         {
             "id": "c4167",
-            "name": "Mushroom Dog",
+            "name": "Rotten Stray",
             
             "tags": [
                 "creature"
@@ -1043,7 +1043,7 @@
         },
         {
             "id": "c4170",
-            "name": "Small Living Mass",
+            "name": "Putrid Flesh",
             
             "tags": [
                 "creature"
@@ -1051,7 +1051,7 @@
         },
         {
             "id": "c4171",
-            "name": "Giant Living Mass",
+            "name": "Putrid Flesh (Large)",
             
             "tags": [
                 "creature"
@@ -1059,7 +1059,7 @@
         },
         {
             "id": "c4180",
-            "name": "Jellyfish",
+            "name": "Spirit Jellyfish",
             
             "tags": [
                 "creature"
@@ -1067,7 +1067,7 @@
         },
         {
             "id": "c4190",
-            "name": "Large Tear Scarab",
+            "name": "Large Scarab",
             
             "tags": [
                 "creature",
@@ -1076,7 +1076,7 @@
         },
         {
             "id": "c4191",
-            "name": "Tear Scarab",
+            "name": "Scarab",
             
             "tags": [
                 "creature",
@@ -1085,7 +1085,7 @@
         },
         {
             "id": "c4192",
-            "name": "Ash Scarab",
+            "name": "Giant Scarab",
             
             "tags": [
                 "creature",
@@ -1094,7 +1094,7 @@
         },
         {
             "id": "c4200",
-            "name": "Giant Bat",
+            "name": "Man-Bat",
             
             "tags": [
                 "creature"
@@ -1102,7 +1102,7 @@
         },
         {
             "id": "c4201",
-            "name": "Bat Harpy",
+            "name": "Operatic Bat",
             
             "tags": [
                 "creature"
@@ -1135,7 +1135,7 @@
         },
         {
             "id": "c4240",
-            "name": "Fingercreeper (Large)",
+            "name": "Fingercreeper",
             
             "tags": [
                 "creature"
@@ -1143,7 +1143,7 @@
         },
         {
             "id": "c4241",
-            "name": "Fingercreeper (Giant)",
+            "name": "Fingercreeper (Large)",
             
             "tags": [
                 "creature"
@@ -1159,7 +1159,7 @@
         },
         {
             "id": "c4260",
-            "name": "Burial Watchdog",
+            "name": "Erdtree Burial Watchdog",
             
             "tags": [
                 "creature"
@@ -1167,7 +1167,7 @@
         },
         {
             "id": "c4270",
-            "name": "Lion Guardian",
+            "name": "Elder Lion",
             
             "tags": [
                 "creature"
@@ -1183,7 +1183,7 @@
         },
         {
             "id": "c4281",
-            "name": "Giant Ant (Sac)",
+            "name": "Giant Ant (Skull Plate)",
             
             "tags": [
                 "creature"
@@ -1207,7 +1207,7 @@
         },
         {
             "id": "c4310",
-            "name": "Soldier",
+            "name": "Lordsworn Soldier",
             
             "tags": [
                 "creature",
@@ -1252,7 +1252,7 @@
         },
         {
             "id": "c4315",
-            "name": "Mausoleum Soldier (Headless)",
+            "name": "Mausoleum Soldier",
             
             "tags": [
                 "creature",
@@ -1266,14 +1266,6 @@
             "tags": [
                 "creature",
                 "haligtree"
-            ]
-        },
-        {
-            "id": "c4320",
-            "name": "Vulgar Militia",
-            
-            "tags": [
-                "creature"
             ]
         },
         {
@@ -1294,7 +1286,7 @@
         },
         {
             "id": "c4341",
-            "name": "Mad Pumpkin Head",
+            "name": "Mad Pumpkin Head (Thin)",
             
             "tags": [
                 "creature"
@@ -1302,7 +1294,7 @@
         },
         {
             "id": "c4350",
-            "name": "Castle Knight",
+            "name": "Lordsworn Knight",
             
             "tags": [
                 "creature",
@@ -1347,7 +1339,7 @@
         },
         {
             "id": "c4355",
-            "name": "Mausoleum Knight (Headless)",
+            "name": "Mausoleum Knight",
             
             "tags": [
                 "creature",
@@ -1365,7 +1357,7 @@
         },
         {
             "id": "c4360",
-            "name": "Knight's Horse",
+            "name": "Lordsworn Knight's Horse",
             
             "tags": [
                 "creature",
@@ -1420,16 +1412,6 @@
                 "creature",
                 "horse",
                 "mausoleum"
-            ]
-        },
-        {
-            "id": "c4366",
-            "name": "Haligtree Knight's Horse",
-            
-            "tags": [
-                "creature",
-                "horse",
-                "haligtree"
             ]
         },
         {
@@ -1513,7 +1495,7 @@
         },
         {
             "id": "c4381",
-            "name": "Bloodthorn Exile",
+            "name": "Guilty",
             
             "tags": [
                 "creature"
@@ -1521,7 +1503,7 @@
         },
         {
             "id": "c4382",
-            "name": "Tunnel Miner (Big Sack)",
+            "name": "Stonedigger",
             
             "tags": [
                 "creature"
@@ -1529,7 +1511,7 @@
         },
         {
             "id": "c4383",
-            "name": "Glintstone Miner",
+            "name": "Glintstone Digger",
             
             "tags": [
                 "creature"
@@ -1537,7 +1519,7 @@
         },
         {
             "id": "c4384",
-            "name": "Glintstone Miner (Small Sack)",
+            "name": "Glintstone Digger (Small Sack)",
             
             "tags": [
                 "creature"
@@ -1545,15 +1527,7 @@
         },
         {
             "id": "c4385",
-            "name": "Fungal Sorcerer",
-            
-            "tags": [
-                "creature"
-            ]
-        },
-        {
-            "id": "c4400",
-            "name": "Fungal Pod (Land Squirt)",
+            "name": "Disciple of Rot",
             
             "tags": [
                 "creature"
@@ -1561,7 +1535,7 @@
         },
         {
             "id": "c4420",
-            "name": "Giant Lobster",
+            "name": "Giant Crayfish",
             
             "tags": [
                 "creature"
@@ -1569,7 +1543,7 @@
         },
         {
             "id": "c4421",
-            "name": "Giant Lobster",
+            "name": "Giant Crayfish",
             
             "tags": [
                 "creature"
@@ -1577,7 +1551,7 @@
         },
         {
             "id": "c4430",
-            "name": "Abnormal Stone Cluster",
+            "name": "Watcher Stones",
             
             "tags": [
                 "creature"
@@ -1585,7 +1559,7 @@
         },
         {
             "id": "c4440",
-            "name": "Fungal Pod",
+            "name": "Land Squirt",
             
             "tags": [
                 "creature"
@@ -1593,7 +1567,7 @@
         },
         {
             "id": "c4441",
-            "name": "Giant Fungal Pod",
+            "name": "Giant Land Squirt",
             
             "tags": [
                 "creature"
@@ -1601,7 +1575,7 @@
         },
         {
             "id": "c4442",
-            "name": "Giant Fungal Pod (Rotten)",
+            "name": "Giant Rotten Land Squirt",
             
             "tags": [
                 "creature"
@@ -1617,7 +1591,7 @@
         },
         {
             "id": "c4460",
-            "name": "Flamethrower Chariot",
+            "name": "Flame Chariot",
             
             "tags": [
                 "creature"
@@ -1634,7 +1608,7 @@
         },
         {
             "id": "c4480",
-            "name": "Giant Miranda Sprout",
+            "name": "Miranda Blossom",
             
             "tags": [
                 "creature"
@@ -1650,7 +1624,7 @@
         },
         {
             "id": "c4482",
-            "name": "Fading Giant Miranda Sprout",
+            "name": "Rotten Miranda Blossom",
             
             "tags": [
                 "creature"
@@ -1658,7 +1632,7 @@
         },
         {
             "id": "c4483",
-            "name": "Fading Miranda Sprout",
+            "name": "Rotten Miranda Sprout",
             
             "tags": [
                 "creature"
@@ -1666,7 +1640,7 @@
         },
         {
             "id": "c4490",
-            "name": "Living Pot (Large)",
+            "name": "Living Jar Warrior",
             
             "tags": [
                 "creature"
@@ -1674,7 +1648,7 @@
         },
         {
             "id": "c4491",
-            "name": "Living Pot (Small)",
+            "name": "Living Jar",
             
             "tags": [
                 "creature"
@@ -1682,7 +1656,7 @@
         },
         {
             "id": "c4492",
-            "name": "Living Pot (Huge)",
+            "name": "Greatjar",
             
             "tags": [
                 "creature"
@@ -1690,7 +1664,7 @@
         },
         {
             "id": "c4500",
-            "name": "Dragon",
+            "name": "Flying Dragon",
             
             "tags": [
                 "creature",
@@ -1699,7 +1673,7 @@
         },
         {
             "id": "c4501",
-            "name": "Dragon",
+            "name": "Decaying Ekzykes",
             
             "tags": [
                 "creature",
@@ -1708,7 +1682,7 @@
         },
         {
             "id": "c4502",
-            "name": "Dragon (Blade in Mouth)",
+            "name": "Glintstone Dragon",
             
             "tags": [
                 "creature",
@@ -1717,7 +1691,7 @@
         },
         {
             "id": "c4503",
-            "name": "Dragon",
+            "name": "Borealis the Freezing Fog",
             
             "tags": [
                 "creature",
@@ -1735,7 +1709,7 @@
         },
         {
             "id": "c4505",
-            "name": "Lesser Elder Dragon",
+            "name": "Flying Dragon (Small)",
             
             "tags": [
                 "creature",
@@ -1771,7 +1745,7 @@
         },
         {
             "id": "c4550",
-            "name": "Monstrous Dog",
+            "name": "Giant Dog",
             
             "tags": [
                 "creature"
@@ -1779,7 +1753,7 @@
         },
         {
             "id": "c4560",
-            "name": "Monstrous Crow",
+            "name": "Giant Crow",
             
             "tags": [
                 "creature"
@@ -1787,7 +1761,7 @@
         },
         {
             "id": "c4561",
-            "name": "Monstrous Crow (Rotten)",
+            "name": "Giant Crow (Rotten)",
             
             "tags": [
                 "creature"
@@ -1803,7 +1777,7 @@
         },
         {
             "id": "c4580",
-            "name": "Wormface (Large)",
+            "name": "Large Wormface",
             
             "tags": [
                 "creature",
@@ -1812,7 +1786,7 @@
         },
         {
             "id": "c4600",
-            "name": "Troll Knight",
+            "name": "Troll",
             
             "tags": [
                 "creature"
@@ -1828,7 +1802,7 @@
         },
         {
             "id": "c4602",
-            "name": "Troll Knight (Furry)",
+            "name": "Snowfield Troll",
             
             "tags": [
                 "creature"
@@ -1836,7 +1810,7 @@
         },
         {
             "id": "c4603",
-            "name": "Troll Knight (Club)",
+            "name": "Stonedigger Troll",
             
             "tags": [
                 "creature"
@@ -1844,7 +1818,7 @@
         },
         {
             "id": "c4604",
-            "name": "Troll Knight (Covered Face, Club and Book)",
+            "name": "War Counselor Iji",
             
             "tags": [
                 "creature"
@@ -1852,7 +1826,7 @@
         },
         {
             "id": "c4620",
-            "name": "Astel, Stars of Darkness",
+            "name": "Astel, Naturalborn of the Void",
             
             "tags": [
                 "creature",
@@ -1888,7 +1862,7 @@
         },
         {
             "id": "c4660",
-            "name": "Golem",
+            "name": "Guardian Golem",
             
             "tags": [
                 "creature",
@@ -1906,7 +1880,7 @@
         },
         {
             "id": "c4680",
-            "name": "Fallingstar Beast",
+            "name": "Falling-star Beast",
             
             "tags": [
                 "creature",
@@ -1933,7 +1907,7 @@
         },
         {
             "id": "c4711",
-            "name": "Writhing Mass",
+            "name": "Rykard's Corpse",
             
             "tags": [
                 "creature"
@@ -1950,7 +1924,7 @@
         },
         {
             "id": "c4721",
-            "name": "Hoarah Loux",
+            "name": "Hoarah Loux, Warrior",
             
             "tags": [
                 "creature",
@@ -1967,15 +1941,6 @@
             ]
         },
         {
-            "id": "c4740",
-            "name": "Leonard",
-            
-            "tags": [
-                "creature",
-                "horse"
-            ]
-        },
-        {
             "id": "c4750",
             "name": "Godrick the Grafted",
             
@@ -1986,7 +1951,7 @@
         },
         {
             "id": "c4751",
-            "name": "Godrick (Dummy)",
+            "name": "Godrick's Corpse",
             
             "tags": [
                 "creature"
@@ -2003,7 +1968,7 @@
         },
         {
             "id": "c4770",
-            "name": "Black Kindred",
+            "name": "Valiant Gargoyle",
             
             "tags": [
                 "creature",
@@ -2012,7 +1977,7 @@
         },
         {
             "id": "c4800",
-            "name": "Mohg, The Omen",
+            "name": "Mohg, Lord of Blood",
             
             "tags": [
                 "creature",
@@ -2021,7 +1986,7 @@
         },
         {
             "id": "c4801",
-            "name": "Mohg, The Omen",
+            "name": "Mohg, Lord of Blood (Unknown)",
             
             "tags": [
                 "creature",
@@ -2039,7 +2004,7 @@
         },
         {
             "id": "c4811",
-            "name": "Erdtree Avatar (Rotten)",
+            "name": "Putrid Avatar",
             
             "tags": [
                 "creature",
@@ -2066,7 +2031,7 @@
         },
         {
             "id": "c4911",
-            "name": "Magma Wyrm (Large)",
+            "name": "Great Wyrm Theodorix",
             
             "tags": [
                 "creature",
@@ -2084,7 +2049,7 @@
         },
         {
             "id": "c4960",
-            "name": "Giant Skeleton",
+            "name": "Giant Skeleton Torso",
             
             "tags": [
                 "creature"
@@ -2100,17 +2065,8 @@
             ]
         },
         {
-            "id": "c6000",
-            "name": "Hawk",
-            
-            "tags": [
-                "fauna",
-                "bird"
-            ]
-        },
-        {
             "id": "c6001",
-            "name": "Hawk",
+            "name": "Eagle",
             
             "tags": [
                 "fauna",
@@ -2120,14 +2076,6 @@
         {
             "id": "c6010",
             "name": "Deer",
-            
-            "tags": [
-                "fauna"
-            ]
-        },
-        {
-            "id": "c6030",
-            "name": "Bear",
             
             "tags": [
                 "fauna"
@@ -2159,7 +2107,7 @@
         },
         {
             "id": "c6060",
-            "name": "Ram",
+            "name": "Goat",
             
             "tags": [
                 "fauna"
@@ -2167,7 +2115,7 @@
         },
         {
             "id": "c6070",
-            "name": "Gull",
+            "name": "Murre",
             
             "tags": [
                 "fauna",
@@ -2176,7 +2124,7 @@
         },
         {
             "id": "c6072",
-            "name": "Gull",
+            "name": "Carrier Pigeon",
             
             "tags": [
                 "fauna",
@@ -2185,7 +2133,7 @@
         },
         {
             "id": "c6080",
-            "name": "Dragonfly (Small)",
+            "name": "Dragonfly",
             
             "tags": [
                 "fauna"
@@ -2193,7 +2141,7 @@
         },
         {
             "id": "c6081",
-            "name": "Dragonfly (Medium)",
+            "name": "Yellow Dragonfly",
             
             "tags": [
                 "fauna"
@@ -2201,7 +2149,7 @@
         },
         {
             "id": "c6082",
-            "name": "Dragonfly (Large)",
+            "name": "Great Dragonfly",
             
             "tags": [
                 "fauna"
@@ -2233,7 +2181,7 @@
         },
         {
             "id": "c7000",
-            "name": "Fallen Hawk Soldier",
+            "name": "Fallen Hawks Soldier",
             
             "tags": [
                 "creature"
@@ -2241,7 +2189,7 @@
         },
         {
             "id": "c7100",
-            "name": "Zamor Assailant",
+            "name": "Ancient Hero",
             
             "tags": [
                 "creature"
@@ -2265,7 +2213,7 @@
         },
         {
             "id": "c8101",
-            "name": "Giant Ballista",
+            "name": "Trebuchet",
             
             "tags": [
                 "trap"
