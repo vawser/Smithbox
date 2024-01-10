@@ -153,12 +153,12 @@
     <Field Def="f32 Unk0x270"></Field>
     <Field Def="f32 Unk0x274"></Field>
     <Field Def="f32 UnkFloat0x278"></Field>
-    <Field Def="f32 Unk0x27C"></Field>
-    <Field Def="f32 Unk0x280"></Field>
-    <Field Def="f32 Unk0x284"></Field>
-    <Field Def="f32 Unk0x288"></Field>
+    <Field Def="f32 photoModeMoveSpeed"></Field>
+    <Field Def="f32 photoModeTurnSpeed"></Field>
+    <Field Def="f32 photoModeMoveDampening"></Field>
+    <Field Def="f32 photoModeTurnDampening"></Field>
     <Field Def="f32 UnkFloat0x28C"></Field>
-    <Field Def="f32 UnkFloat0x290"></Field>
+    <Field Def="f32 photoModeSpeedMult"></Field>
     <Field Def="s32 Unk0x294"></Field>
     <Field Def="s32 Unk0x298"></Field>
     <Field Def="s32 Unk0x29C"></Field>

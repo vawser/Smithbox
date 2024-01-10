@@ -66,7 +66,7 @@
 5600 Magic Barrier
 5610 Great Magic Barrier
 5700 Karmic Justice
-5710 Karmic Justice
+5710 Karmic Justice (Explosion - hardcoded reference)
 5800 Tranquil Walk of Peace
 5810 Vow of Silence
 5900 Sunlight Blade

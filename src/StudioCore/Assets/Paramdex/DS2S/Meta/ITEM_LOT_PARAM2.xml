@@ -23,8 +23,16 @@
       <Option Value="7" Name="Raw" />
       <Option Value="8" Name="Enchanted" />
     </Enum>
+    <Enum Name="ItemLotDropOrderType">
+      <Option Value="0" Name="Random" />
+      <Option Value="1" Name="Unknown" />
+      <Option Value="2" Name="Unknown (Dyna and Tillo)" />
+      <Option Value="3" Name="In order" />
+    </Enum>
   </Enums>
   <Field>
+    <lots_dropped_order AltName="Lots Dropped Order" Enum="ItemLotDropOrderType" Wiki="Determines the order lots are granted." />
+    <lots_dropped_num AltName="Lots Dropped" Wiki="Number of lots this itemLot will provide." />
     <amount_lot_0 AltName="[0] Amount" Wiki="Determines the amount of the lot item awarded." />
     <amount_lot_1 AltName="[1] Amount" Wiki="Determines the amount of the lot item awarded." />
     <amount_lot_2 AltName="[2] Amount" Wiki="Determines the amount of the lot item awarded." />

@@ -74,5 +74,5 @@
     <spEffectId4 AltName="spEffectId4" />
     <pad8 AltName="pad8" />
   </Field>
-  <Self />
+  <Self Row0Dummy="" />
 </PARAMMETA>

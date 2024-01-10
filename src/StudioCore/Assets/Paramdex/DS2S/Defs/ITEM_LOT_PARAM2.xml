@@ -6,8 +6,8 @@
   <Unicode>True</Unicode>
   <Version>201</Version>
   <Fields>
-    <Field Def="u8 Unk00" />
-    <Field Def="u8 Unk01" />
+    <Field Def="u8 lots_dropped_order" />
+    <Field Def="u8 lots_dropped_num" />
     <Field Def="u8 Unk02" />
     <Field Def="u8 Unk03" />
     <Field Def="u8 amount_lot_0" />

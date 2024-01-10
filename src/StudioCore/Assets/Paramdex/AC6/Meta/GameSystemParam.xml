@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <photoModeMoveSpeed AltName="Photo Mode - Move Speed" />
+    <photoModeTurnSpeed AltName="Photo Mode - Turn Speed" />
+    <photoModeMoveDampening AltName="Photo Mode - Move Dampening" />
+    <photoModeTurnDampening AltName="Photo Mode - Turn Dampening" />
+    <photoModeSpeedMult AltName="Photo Mode - Speed Multiplier" />
+  </Field>
   <Self />
 </PARAMMETA>

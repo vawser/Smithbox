@@ -2,8 +2,8 @@
 <PARAMMETA XmlVersion="0" >
   <Enums>
     <Enum Name="ShopType">
-      <Option Value="1" Name="normal shop" />
-      <Option Value="2" Name="attunement menu" />
+      <Option Value="0" Name="Normal shop" />
+      <Option Value="2" Name="Attunement menu" />
 	</Enum>
     <Enum Name="EquipType">
       <Option Value="0" Name="Weapon" />
@@ -18,7 +18,7 @@
     <value Wiki="Cost of item sold." />
     <mtrlId Refs="EquipMtrlSetParam" Wiki="The EquipMtrlSetParam to use when attuning a spell." />
     <eventFlag Wiki="The ID of an 8-bit event value that stores sold item quantity. Used for any items that are not sold infinitely." />
-    <qwcId />
+    <qwcId Refs="QwcChangeParam" Wiki="Demon's Souls leftover. Probably doesn't work." />
     <sellQuantity Wiki="Maximum amount of items that can be sold. -1 for infinite. Requires an eventFlag for quantity sold to be saved." />
     <shopType Enum="ShopType" />
     <equipType Enum="EquipType" />

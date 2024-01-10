@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Enums>
-    <Enum Name="ReferenceType">
+    <Enum Name="BEHAVIOR_REF_TYPE">
       <Option Value="0" Name="Attack" />
       <Option Value="1" Name="Bullet" />
       <Option Value="2" Name="SpEffect" />
@@ -11,11 +11,12 @@
     <variationId AltName="variationId" VRef="BehaviorVariation" />
     <behaviorJudgeId AltName="behaviorJudgeId" />
     <ezStateBehaviorType_old AltName="ezStateBehaviorType_old" />
+    <refType AltName="refType" Enum="BEHAVIOR_REF_TYPE" />
     <refType AltName="refType" />
     <pad0 AltName="pad0" />
-    <atkParamId AltName="atkParamId" Refs="AtkParam_Npc,AtkParam_Pc"/>
-    <bulletParamId AltName="bulletParamId" Refs="Bullet" />
-    <spEffectId AltName="spEffectId" Refs="SpEffectParam" />
+    <atkParamId AltName="atkParamId" Refs="AtkParam_Npc(refType=0),AtkParam_Pc(refType=0)"/>
+    <bulletParamId AltName="bulletParamId" Refs="Bullet(refType=1)" />
+    <spEffectId AltName="spEffectId" Refs="SpEffectParam(refType=2)" />
     <sfxVariationId AltName="sfxVariationId" />
     <category AltName="category" />
     <pad1 AltName="pad1" />
