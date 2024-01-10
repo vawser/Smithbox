@@ -20,6 +20,12 @@ public class ModelAliasBank
 
     public static bool IsLoadingAliases { get; set; }
 
+    public static string ProgramDirectory = ".smithbox";
+
+    public static string AliasDirectory = "ModelAliases";
+
+    public static string TemplateName = "Template.json";
+
     public static ModelAliasContainer AliasNames
     {
         get
@@ -86,8 +92,8 @@ public class ModelAliasBank
 
     public static void WriteTargetAliasBank(ModelAliasResource targetBank, string assetType)
     {
-        var templateResource = AppContext.BaseDirectory + $"\\Assets\\Template.json";
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\.smithbox\\Assets\\ModelAliases\\{AssetLocator.GetGameIDForDir()}\\";
+        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{TemplateName}";
+        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
         if (File.Exists(resourceFilePath))
@@ -109,8 +115,8 @@ public class ModelAliasBank
 
     public static void AddToLocalAliasBank(string assetType, string refID, string refName, string refTags)
     {
-        var templateResource = AppContext.BaseDirectory + $"\\Assets\\Template.json";
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\.smithbox\\Assets\\ModelAliases\\{AssetLocator.GetGameIDForDir()}\\";
+        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{TemplateName}";
+        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
         // Create directory/file if they don't exist
@@ -188,7 +194,7 @@ public class ModelAliasBank
     /// </summary>
     public static void RemoveFromLocalAliasBank(string assetType, string refID)
     {
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\.smithbox\\Assets\\ModelAliases\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
         // Load up the target local model alias bank. 
