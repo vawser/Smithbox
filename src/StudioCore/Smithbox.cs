@@ -4,10 +4,10 @@ using Octokit;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Aliases;
+using StudioCore.Browsers;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Graphics;
-using StudioCore.JSON.Helpdex;
 using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
 using StudioCore.Platform;
@@ -57,6 +57,8 @@ public class Smithbox
     // Floating windows
     private readonly HelpBrowser _helpBrowser;
     private readonly SettingsMenu _settingsMenu = new();
+    private readonly EventFlagBrowser _eventFlagBrowser;
+    private readonly FxrBrowser _fxrBrowser;
 
     private readonly SoapstoneService _soapstoneService;
     private readonly string _version;
@@ -115,6 +117,8 @@ public class Smithbox
         _settingsMenu.TextEditor = textEditor;
 
         _helpBrowser = new HelpBrowser("HelpBrowser", _assetLocator);
+        _eventFlagBrowser = new EventFlagBrowser("EventFlagBrowser", _assetLocator);
+        _fxrBrowser = new FxrBrowser("FxrBrowser", _assetLocator);
 
         MapAliasBank.SetAssetLocator(_assetLocator);
 
@@ -416,9 +420,9 @@ public class Smithbox
         _settingsMenu.ProjSettings = _projectSettings;
 
         MapAliasBank.ReloadMapAliases();
-        ModelAliasBank.ReloadModelAliases();
-        FxrAliasBank.ReloadFxrAliases();
-        EventFlagAliasBank.ReloadEventFlagAliases();
+        ModelAliasBank.ReloadAliasBank();
+        FxrAliasBank.ReloadAliasBank();
+        EventFlagAliasBank.ReloadAliasBank();
         ParamBank.ReloadParams(newsettings, options);
         MtdBank.ReloadMtds();
 
@@ -916,6 +920,20 @@ public class Smithbox
 
             _focusedEditor.DrawEditorMenu();
 
+            if (ImGui.BeginMenu("Tools"))
+            {
+                if (ImGui.MenuItem("Event Flag Browser", KeyBindings.Current.Core_EventFlagBrowser.HintText))
+                {
+                    _eventFlagBrowser.ToggleMenuVisibility();
+                }
+                if (ImGui.MenuItem("FXR Browser", KeyBindings.Current.Core_FxrBrowser.HintText))
+                {
+                    _fxrBrowser.ToggleMenuVisibility();
+                }
+
+                ImGui.EndMenu();
+            }
+
             if (ImGui.BeginMenu("Help"))
             {
                 if (ImGui.MenuItem("Help Menu", KeyBindings.Current.Core_HelpMenu.HintText))
@@ -1009,8 +1027,10 @@ public class Smithbox
             ImGui.EndMainMenuBar();
         }
 
-        SettingsGUI();
-        HelpGUI();
+        _settingsMenu.Display();
+        _helpBrowser.Display();
+        _eventFlagBrowser.Display();
+        _fxrBrowser.Display();
 
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);
@@ -1365,6 +1385,14 @@ public class Smithbox
             {
                 _helpBrowser.ToggleMenuVisibility();
             }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_EventFlagBrowser))
+            {
+                _eventFlagBrowser.ToggleMenuVisibility();
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_FxrBrowser))
+            {
+                _fxrBrowser.ToggleMenuVisibility();
+            }
         }
 
         ImGui.PopStyleVar(2);
@@ -1389,16 +1417,6 @@ public class Smithbox
         }
 
         _firstframe = false;
-    }
-
-    public void SettingsGUI()
-    {
-        _settingsMenu.Display();
-    }
-
-    public void HelpGUI()
-    {
-        _helpBrowser.Display();
     }
 
     public static float GetUIScale()

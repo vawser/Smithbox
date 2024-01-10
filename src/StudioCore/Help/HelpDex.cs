@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-namespace StudioCore.JSON.Helpdex;
+namespace StudioCore.JSON;
 
 public class HelpDex
 {

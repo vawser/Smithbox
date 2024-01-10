@@ -16,30 +16,26 @@ public class ModelAliasBank
 {
     private static AssetLocator AssetLocator;
 
-    public static ModelAliasContainer _loadedModelAliasBank { get; set; }
+    public static ModelAliasContainer _loadedAliasBank { get; set; }
 
-    public static bool IsLoadingModelAliases { get; set; }
+    public static bool IsLoadingAliases { get; set; }
 
-    private string modResourcePath;
-    private string templateResource;
-    private string resourceFilePath;
-
-    public static ModelAliasContainer ModelNames
+    public static ModelAliasContainer AliasNames
     {
         get
         {
-            if (IsLoadingModelAliases)
+            if (IsLoadingAliases)
                 return null;
 
-            return _loadedModelAliasBank;
+            return _loadedAliasBank;
         }
     }
 
-    private static void LoadModelNames()
+    private static void LoadAliasNames()
     {
         try
         {
-            _loadedModelAliasBank = new ModelAliasContainer(AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
+            _loadedAliasBank = new ModelAliasContainer(AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
         }
         catch (Exception e)
         {
@@ -47,18 +43,18 @@ public class ModelAliasBank
         }
     }
 
-    public static void ReloadModelAliases()
+    public static void ReloadAliasBank()
     {
         TaskManager.Run(new TaskManager.LiveTask("Models - Load Names", TaskManager.RequeueType.None, false,
         () =>
         {
-            _loadedModelAliasBank = new ModelAliasContainer();
-            IsLoadingModelAliases = true;
+            _loadedAliasBank = new ModelAliasContainer();
+            IsLoadingAliases = true;
 
             if (AssetLocator.Type != GameType.Undefined)
-                LoadModelNames();
+                LoadAliasNames();
 
-            IsLoadingModelAliases = false;
+            IsLoadingAliases = false;
         }));
     }
 
@@ -67,7 +63,7 @@ public class ModelAliasBank
         AssetLocator = l;
     }
 
-    public static ModelAliasResource LoadTargetModelAliasBank(string path)
+    public static ModelAliasResource LoadTargetAliasBank(string path)
     {
         var newResource = new ModelAliasResource();
 
@@ -88,7 +84,7 @@ public class ModelAliasBank
         return newResource;
     }
 
-    public static void WriteTargetModelAliasBank(ModelAliasResource targetBank, string assetType)
+    public static void WriteTargetAliasBank(ModelAliasResource targetBank, string assetType)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\Template.json";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\.smithbox\\Assets\\ModelAliases\\{AssetLocator.GetGameIDForDir()}\\";
@@ -111,7 +107,7 @@ public class ModelAliasBank
         }
     }
 
-    public static void AddToLocalModelAliasBank(string assetType, string refID, string refName, string refTags)
+    public static void AddToLocalAliasBank(string assetType, string refID, string refName, string refTags)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\Template.json";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\.smithbox\\Assets\\ModelAliases\\{AssetLocator.GetGameIDForDir()}\\";
@@ -128,7 +124,7 @@ public class ModelAliasBank
         }
 
         // Load up the target local model alias bank.
-        var targetResource = LoadTargetModelAliasBank(resourceFilePath);
+        var targetResource = LoadTargetAliasBank(resourceFilePath);
 
         bool doesExist = false;
 
@@ -184,19 +180,19 @@ public class ModelAliasBank
             targetResource.list.Add(entry);
         }
 
-        ModelAliasBank.WriteTargetModelAliasBank(targetResource, assetType);
+        ModelAliasBank.WriteTargetAliasBank(targetResource, assetType);
     }
 
     /// <summary>
     /// Removes specified reference from local model alias bank.
     /// </summary>
-    public static void RemoveFromLocalModelAliasBank(string assetType, string refID)
+    public static void RemoveFromLocalAliasBank(string assetType, string refID)
     {
         var modResourcePath = AssetLocator.GameModDirectory + $"\\.smithbox\\Assets\\ModelAliases\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
         // Load up the target local model alias bank. 
-        var targetResource = LoadTargetModelAliasBank(resourceFilePath);
+        var targetResource = LoadTargetAliasBank(resourceFilePath);
 
         // Remove the specified reference from the local model alias bank.
         for (int i = 0; i <= targetResource.list.Count - 1; i++)
@@ -209,6 +205,6 @@ public class ModelAliasBank
             }
         }
 
-        ModelAliasBank.WriteTargetModelAliasBank(targetResource, assetType);
+        ModelAliasBank.WriteTargetAliasBank(targetResource, assetType);
     }
 }

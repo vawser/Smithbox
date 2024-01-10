@@ -1,12 +1,13 @@
 ﻿using ImGuiNET;
 using StudioCore.Help;
+using StudioCore.JSON;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.JSON.Helpdex;
+namespace StudioCore.Browsers;
 
 public class HelpBrowser
 {

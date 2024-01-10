@@ -104,7 +104,7 @@ namespace StudioCore.MsbEditor
             if (_assetLocator.Type == GameType.Undefined)
                 return;
 
-            if (ModelAliasBank.IsLoadingModelAliases)
+            if (ModelAliasBank.IsLoadingAliases)
                 return;
 
             // Disable the list generation if using the camera panning to prevent visual lag
@@ -167,9 +167,9 @@ namespace StudioCore.MsbEditor
 
                 if (!disableListGeneration)
                 {
-                    DisplayAssetSelectionList("Chr", ModelAliasBank._loadedModelAliasBank.GetChrEntries());
-                    DisplayAssetSelectionList("Obj", ModelAliasBank._loadedModelAliasBank.GetObjEntries());
-                    DisplayMapAssetSelectionList("MapPiece", ModelAliasBank._loadedModelAliasBank.GetMapPieceEntries());
+                    DisplayAssetSelectionList("Chr", ModelAliasBank._loadedAliasBank.GetChrEntries());
+                    DisplayAssetSelectionList("Obj", ModelAliasBank._loadedAliasBank.GetObjEntries());
+                    DisplayMapAssetSelectionList("MapPiece", ModelAliasBank._loadedAliasBank.GetMapPieceEntries());
                 }
 
                 ImGui.EndChild();
@@ -180,7 +180,7 @@ namespace StudioCore.MsbEditor
             if(reloadModelAlias)
             {
                 reloadModelAlias = false;
-                ModelAliasBank.ReloadModelAliases();
+                ModelAliasBank.ReloadAliasBank();
             }
         }
 
@@ -329,13 +329,13 @@ namespace StudioCore.MsbEditor
 
                                 if (ImGui.Button("Update"))
                                 {
-                                    ModelAliasBank.AddToLocalModelAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                    ModelAliasBank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
                                     ImGui.CloseCurrentPopup();
                                     reloadModelAlias = true;
                                 }
                                 if (ImGui.Button("Restore Default"))
                                 {
-                                    ModelAliasBank.RemoveFromLocalModelAliasBank(assetType, _refUpdateId);
+                                    ModelAliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
                                     ImGui.CloseCurrentPopup();
                                     reloadModelAlias = true;
                                 }
@@ -455,13 +455,13 @@ namespace StudioCore.MsbEditor
 
                                     if (ImGui.Button("Update"))
                                     {
-                                        ModelAliasBank.AddToLocalModelAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                        ModelAliasBank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
                                         ImGui.CloseCurrentPopup();
                                         reloadModelAlias = true;
                                     }
                                     if (ImGui.Button("Restore Default"))
                                     {
-                                        ModelAliasBank.RemoveFromLocalModelAliasBank(assetType, _refUpdateId);
+                                        ModelAliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
                                         ImGui.CloseCurrentPopup();
                                         reloadModelAlias = true;
                                     }

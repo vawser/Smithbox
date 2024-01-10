@@ -85,6 +85,8 @@ public class KeyBindings
         public KeyBind Core_SaveAllEditors = new();
         public KeyBind Core_SaveCurrentEditor = new(Key.S, true);
         public KeyBind Core_Undo = new(Key.Z, true);
+        public KeyBind Core_EventFlagBrowser = new();
+        public KeyBind Core_FxrBrowser = new();
 
         // Map
         public KeyBind Map_ArbitraryRotation_Roll = new(Key.J);
