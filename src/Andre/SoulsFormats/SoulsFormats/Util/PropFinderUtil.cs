@@ -28,6 +28,9 @@ public static class PropFinderUtil
     {
         foreach (PropertyInfo p in obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))
         {
+            if (p.GetIndexParameters().Length > 0)
+                continue;
+
             if (onlyCheckPropName)
             {
                 if (p.Name.ToLower() == prop.Name.ToLower())
@@ -85,6 +88,9 @@ public static class PropFinderUtil
 
         foreach (var p in obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))
         {
+            if (p.GetIndexParameters().Length > 0)
+                continue;
+
             if (p.PropertyType.IsNested)
             {
                 var pp = FindProperty(prop, p.GetValue(obj), classIndex);
