@@ -26,31 +26,68 @@ public class ModelAliasContainer
         partEntries = null;
         mapPieceEntries = null;
     }
-    public ModelAliasContainer(string gametype)
+    public ModelAliasContainer(string gametype, string gameModDirectory)
     {
-        chrEntries = LoadJSON(gametype, "Chr");
-        objEntries = LoadJSON(gametype, "Obj");
-        partEntries = LoadJSON(gametype, "Part");
-        mapPieceEntries = LoadJSON(gametype, "MapPiece");
+        chrEntries = LoadJSON(gametype, "Chr", gameModDirectory);
+        objEntries = LoadJSON(gametype, "Obj", gameModDirectory);
+        partEntries = LoadJSON(gametype, "Part", gameModDirectory);
+        mapPieceEntries = LoadJSON(gametype, "MapPiece", gameModDirectory);
     }
 
-    private ModelAliasResource LoadJSON(string gametype, string type)
+    private ModelAliasResource LoadJSON(string gametype, string type, string gameModDirectory)
     {
-        var resource = new ModelAliasResource();
+        var baseResource = new ModelAliasResource();
+        var modResource = new ModelAliasResource();
 
-        var json_filepath = AppContext.BaseDirectory + $"\\Assets\\ModelAliases\\{gametype}\\{type}.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\ModelAliases\\{gametype}\\{type}.json";
 
-        if (File.Exists(json_filepath))
+        if (File.Exists(baseResourcePath))
         {
             var options = new JsonSerializerOptions
             {
                 ReadCommentHandling = JsonCommentHandling.Skip,
                 TypeInfoResolver = new DefaultJsonTypeInfoResolver()
             };
-            resource = JsonSerializer.Deserialize<ModelAliasResource>(File.OpenRead(json_filepath), options);
+            baseResource = JsonSerializer.Deserialize<ModelAliasResource>(File.OpenRead(baseResourcePath), options);
         }
 
-        return resource;
+        var modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\ModelAliases\\{gametype}\\{type}.json";
+
+        // If path does not exist, use baseResource only
+        if (File.Exists(modResourcePath))
+        {
+            var options = new JsonSerializerOptions
+            {
+                ReadCommentHandling = JsonCommentHandling.Skip,
+                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
+            };
+            modResource = JsonSerializer.Deserialize<ModelAliasResource>(File.OpenRead(modResourcePath), options);
+
+            // Replace baseResource entries with those from modResource if there are ID matches
+            foreach(var bEntry in baseResource.list)
+            {
+                var baseId = bEntry.id;
+                var baseName = bEntry.name;
+                var baseTags = bEntry.tags;
+
+                foreach (var mEntry in modResource.list)
+                {
+                    var modId = mEntry.id;
+                    var modName = mEntry.name;
+                    var modTags = mEntry.tags;
+
+                    // Mod override exists
+                    if (baseId == modId)
+                    { 
+                        bEntry.id = modId;
+                        bEntry.name = modName;
+                        bEntry.tags = modTags;
+                    }
+                }
+            }
+        }
+
+        return baseResource;
     }
 
     public List<ModelAliasReference> GetChrEntries()

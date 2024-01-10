@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Numerics;
 using ImGuiNET;
+using Microsoft.Toolkit.HighPerformance;
 using StudioCore.Aliases;
 using StudioCore.Configuration;
+using StudioCore.Editor;
 using StudioCore.Gui;
+using StudioCore.ParamEditor;
 using StudioCore.Scene;
 using StudioCore.Settings;
 using StudioCore.Utilities;
@@ -239,6 +242,7 @@ namespace StudioCore.MsbEditor
                 {
                     var displayName = $"{name}";
 
+                    var referenceId = "";
                     var referenceName = "";
                     var tagList = new List<string>();
 
@@ -254,6 +258,7 @@ namespace StudioCore.MsbEditor
                             displayName = $"{displayName} {{ {tagString} }}";
                         }
 
+                        referenceId = referenceDict[lowercaseName].id;
                         referenceName = referenceDict[lowercaseName].name;
                         tagList = referenceDict[lowercaseName].tags;
                     }
@@ -262,7 +267,11 @@ namespace StudioCore.MsbEditor
                     {
                         if (ImGui.Selectable(displayName))
                         {
+                            
                         }
+                        
+                        // TODO: add popup that allows you to edit Model Alias name and tags, and then save it to the mod-local directory
+
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                         {
                             var modelName = name;

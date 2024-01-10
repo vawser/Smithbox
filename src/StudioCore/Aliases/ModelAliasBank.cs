@@ -32,7 +32,7 @@ public class ModelAliasBank
     {
         try
         {
-            _loadedModelAliasBank = new ModelAliasContainer(AssetLocator.GetGameIDForDir());
+            _loadedModelAliasBank = new ModelAliasContainer(AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
         }
         catch (Exception e)
         {
