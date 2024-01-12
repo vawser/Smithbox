@@ -689,21 +689,6 @@ public class ParamRowEditor
             EditorCommandQueue.AddCommand($@"param/menu/distributionPopup/{internalName}");
         }
 
-        if (ParamEditorScreen.EditorMode && ImGui.BeginMenu("Find rows with this value..."))
-        {
-            foreach (KeyValuePair<string, Param> p in bank.Params)
-            {
-                var v = (int)oldval;
-                Param.Row r = p.Value[v];
-                if (r != null && ImGui.Selectable($@"{p.Key}: {Utils.ImGuiEscape(r.Name, "null")}"))
-                {
-                    EditorCommandQueue.AddCommand($@"param/select/-1/{p.Key}/{v}");
-                }
-            }
-
-            ImGui.EndMenu();
-        }
-
         if (ParamEditorScreen.EditorMode && cellMeta != null)
         {
             if (ImGui.BeginMenu("Add Reference"))

@@ -37,6 +37,76 @@ public interface IParamDecorator
     public void ClearDecoratorCache();
 }
 
+public static class ParamRowIdFinder
+{
+    private static int _searchID = 0;
+    private static int _cachedSearchID = 0;
+    private static int _searchIndex = -1;
+    private static List<string> _paramResults = new();
+
+    public static void Display()
+    {
+        if (ImGui.BeginMenu("Search all params for row ID"))
+        {
+            ImGui.InputInt("ID##RowSearcher", ref _searchID);
+            ImGui.InputInt("Index (-1 = any)", ref _searchIndex);
+            if (ImGui.Button("Search##RowSearcher"))
+            {
+                _cachedSearchID = _searchID;
+                _paramResults = GetParamsWithRowID(_searchID, _searchIndex);
+                if (_paramResults.Count > 0)
+                {
+                    string message = $"Found row ID {_searchID} in the following params:\n";
+                    foreach (var line in _paramResults)
+                    {
+                        message += $"  {line}\n";
+                    }
+                    TaskLogs.AddLog(message,
+                        LogLevel.Information, TaskLogs.LogPriority.Low);
+                }
+                else
+                {
+                    TaskLogs.AddLog($"No params found with row ID {_searchID}",
+                        LogLevel.Information, TaskLogs.LogPriority.High);
+                }
+            }
+
+            if (_paramResults.Count > 0)
+            {
+                ImGui.TextDisabled($"ID {_cachedSearchID}: {_paramResults.Count} matches");
+                foreach (string paramName in _paramResults)
+                {
+                    if (ImGui.Selectable($"{paramName}##RowSearcher"))
+                    {
+                        EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{_cachedSearchID}");
+                    }
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public static List<string> GetParamsWithRowID(int id, int index)
+    {
+        List<string> output = new();
+        foreach (var p in ParamBank.PrimaryBank.Params)
+        {
+            for (var i = 0; i < p.Value.Rows.Count; i++)
+            {
+                var r = p.Value.Rows[i];
+                if (r.ID == id
+                    && (index == -1 || index == i))
+                {
+                    output.Add(p.Key);
+                    break;
+                }
+            }
+        }
+        return output;
+    }
+}
+
 public class FMGItemParamDecorator : IParamDecorator
 {
     private static readonly Vector4 FMGLINKCOLOUR = new(1.0f, 1.0f, 0.0f, 1.0f);
@@ -54,6 +124,8 @@ public class FMGItemParamDecorator : IParamDecorator
     {
         _entryCache.Clear();
     }
+
+
 
     public void DecorateParam(Param.Row row)
     {
@@ -756,6 +828,13 @@ public class ParamEditorScreen : EditorScreen
         */
 
         ParamUpgradeDisplay();
+
+        if (ImGui.BeginMenu("Tools"))
+        {
+            ParamRowIdFinder.Display();
+
+            ImGui.EndMenu();
+        }
     }
 
     public void OnGUI(string[] initcmd)
