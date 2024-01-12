@@ -333,6 +333,8 @@ namespace StudioCore.MsbEditor
                                     ImGui.CloseCurrentPopup();
                                     reloadModelAlias = true;
                                 }
+
+                                ImGui.SameLine();
                                 if (ImGui.Button("Restore Default"))
                                 {
                                     ModelAliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
@@ -459,6 +461,8 @@ namespace StudioCore.MsbEditor
                                         ImGui.CloseCurrentPopup();
                                         reloadModelAlias = true;
                                     }
+
+                                    ImGui.SameLine();
                                     if (ImGui.Button("Restore Default"))
                                     {
                                         ModelAliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);

@@ -41,7 +41,7 @@ public class EventFlagAliasBank
     {
         try
         {
-            _loadedAliasBank = new EventFlagAliasContainer(AssetLocator.GetGameIDForDir());
+            _loadedAliasBank = new EventFlagAliasContainer(AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
         }
         catch (Exception e)
         {

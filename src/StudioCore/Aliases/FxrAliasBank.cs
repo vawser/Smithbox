@@ -41,7 +41,7 @@ public class FxrAliasBank
     {
         try
         {
-            _loadedAliasBank = new FxrAliasContainer(AssetLocator.GetGameIDForDir());
+            _loadedAliasBank = new FxrAliasContainer(AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
         }
         catch (Exception e)
         {

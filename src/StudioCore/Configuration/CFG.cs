@@ -171,9 +171,11 @@ public class CFG
     public bool FMG_NoGroupedFmgEntries = false;
     public bool FMG_ShowOriginalNames = false;
 
-    // Settings: Asset Browser
+    // Settings: Browsers
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_UpdateSelectionName = true;
+    public bool EventFlagBrowser_ShowTagsInBrowser = true;
+    public bool FxrBrowser_ShowTagsInBrowser = true;
 
     // CFG
     public static CFG Current { get; private set; }

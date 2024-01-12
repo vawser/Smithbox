@@ -924,11 +924,11 @@ public class Smithbox
             {
                 if (ImGui.MenuItem("Event Flag Browser", KeyBindings.Current.Core_EventFlagBrowser.HintText))
                 {
-                    _eventFlagBrowser.ToggleMenuVisibility();
+                    //_eventFlagBrowser.ToggleMenuVisibility();
                 }
                 if (ImGui.MenuItem("FXR Browser", KeyBindings.Current.Core_FxrBrowser.HintText))
                 {
-                    _fxrBrowser.ToggleMenuVisibility();
+                    //_fxrBrowser.ToggleMenuVisibility();
                 }
 
                 ImGui.EndMenu();
