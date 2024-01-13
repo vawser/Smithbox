@@ -922,12 +922,13 @@ public class Smithbox
 
             if (ImGui.BeginMenu("Tools"))
             {
+                // TODO: need to fix the null issue with EventFlagBrowser
                 /*
-                if (ImGui.MenuItem("Event Flag Browser", KeyBindings.Current.Core_EventFlagBrowser.HintText))
+                if (ImGui.MenuItem("Flag ID Browser", KeyBindings.Current.Core_EventFlagBrowser.HintText))
                 {
                     _eventFlagBrowser.ToggleMenuVisibility();
                 }
-                if (ImGui.MenuItem("FXR Browser", KeyBindings.Current.Core_FxrBrowser.HintText))
+                if (ImGui.MenuItem("Particle ID Browser", KeyBindings.Current.Core_FxrBrowser.HintText))
                 {
                     _fxrBrowser.ToggleMenuVisibility();
                 }

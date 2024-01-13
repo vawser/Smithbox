@@ -582,10 +582,6 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                     ImGui.EndMenu();
                 }
             }
-            else
-            {
-                ImGui.Text("No tools available");
-            }
 
             ImGui.EndMenu();
         }

@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats.Util;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -397,7 +398,7 @@ public class SearchProperties
                         Type typ = o.WrappedObject.GetType();
                         if (typeCache.Contains(typ))
                             continue;
-                        var prop = PropFinderUtil.FindProperty(_propertyNameSearchString, o.WrappedObject);
+                        var prop = Utilities.PropFinderUtil.FindProperty(_propertyNameSearchString, o.WrappedObject);
                         if (prop != null)
                         {
                             Property = prop;
@@ -443,7 +444,7 @@ public class SearchProperties
                             {
                                 if (ob is MapEntity e)
                                 {
-                                    var value = PropFinderUtil.FindPropertyValue(Property, ob.WrappedObject, _propSearchMatchNameOnly);
+                                    var value = Utilities.PropFinderUtil.FindPropertyValue(Property, ob.WrappedObject, _propSearchMatchNameOnly);
 
                                     if (value == null)
                                     {

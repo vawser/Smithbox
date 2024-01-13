@@ -747,6 +747,58 @@ public class SettingsMenu
         }
     }
 
+    private void DisplaySettings_Browsers()
+    {
+        if (ImGui.BeginTabItem("Browsers"))
+        {
+            if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Update the Name field of the entity upon double-click. By default only the ModelName field is updated.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Update entity name on selection", ref CFG.Current.AssetBrowser_UpdateSelectionName);
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Suspends the browser list when moving in the Map Editor, preventing hitching.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Suspend browser list when in viewport", ref CFG.Current.AssetBrowser_SuspendListWhenInViewport);
+            }
+
+            if (ImGui.CollapsingHeader("Flag ID Browser"))
+            {
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Show tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
+            }
+
+            if (ImGui.CollapsingHeader("Particle ID Browser"))
+            {
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Show tags", ref CFG.Current.FxrBrowser_ShowTagsInBrowser);
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
     private void DisplaySettings_Keybinds()
     {
         if (ImGui.BeginTabItem("Keybinds"))
@@ -824,6 +876,7 @@ public class SettingsMenu
             //DisplaySettings_ModelEditor();
             DisplaySettings_ParamEditor();
             DisplaySettings_TextEditor();
+            DisplaySettings_Browsers();
             DisplaySettings_Keybinds();
 
             ImGui.PopItemWidth();

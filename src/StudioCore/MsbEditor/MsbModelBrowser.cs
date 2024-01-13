@@ -57,6 +57,9 @@ namespace StudioCore.MsbEditor
 
         private bool reloadModelAlias = false;
 
+        private bool updateScrollPosition = false;
+        private float _currentScrollY;
+
         public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, MsbEditorScreen editor, IViewport viewport)
         {
             _scene = scene;
@@ -107,42 +110,23 @@ namespace StudioCore.MsbEditor
             if (ModelAliasBank.IsLoadingAliases)
                 return;
 
-            // Disable the list generation if using the camera panning to prevent visual lag
-            if (InputTracker.GetMouseButton(MouseButton.Right) && _viewport.ViewportSelected)
-                disableListGeneration = true;
+            if (CFG.Current.AssetBrowser_SuspendListWhenInViewport)
+            {
+                // Disable the list generation if using the camera panning to prevent visual lag
+                if (InputTracker.GetMouseButton(MouseButton.Right) && _viewport.ViewportSelected)
+                    disableListGeneration = true;
+                else
+                    disableListGeneration = false;
+            }
             else
+            {
                 disableListGeneration = false;
+            }
 
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
             if (ImGui.Begin($@"Asset Browser##MsbAssetBrowser"))
             {
-                if (ImGui.Button("Help"))
-                    ImGui.OpenPopup("##AssetBrowserHelp");
-                if (ImGui.BeginPopup("##AssetBrowserHelp"))
-                {
-                    ImGui.Text(
-                        "The Asset Browser allows you to browse through all of the available characters, assets and objects and map pieces.\n" +
-                        "The search will filter the browser list by filename, reference name and tags.\n" +
-                        "\n" +
-                        "If a Enemy is selected within the MSB view, \n" +
-                        "you can click on an entry within the Chr list to change the enemy to that type.\n" +
-                        "\n" +
-                        "If a Asset or Obj is selected within the MSB view, \n" +
-                        "you can click on an entry within the AEG or Obj list to change the object to that type.\n" +
-                        "\n" +
-                        "If a Map Piece is selected within the MSB view, \n" +
-                        "you can click on an entry within the Map Piece list to change the object to that type.\n" +
-                        "Note, you cannot apply a Map Piece asset from a different map to that of the selected Map Piece."
-                        );
-                    ImGui.EndPopup();
-                }
-
-                ImGui.SameLine();
-                ImGui.Checkbox("Show Tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-                ImGui.SameLine();
-                ImGui.Checkbox("Update Selected Name", ref CFG.Current.AssetBrowser_UpdateSelectionName);
-
                 ImGui.Columns(2);
 
                 // Asset Type List
@@ -177,7 +161,12 @@ namespace StudioCore.MsbEditor
             }
             ImGui.End();
 
-            if(reloadModelAlias)
+            if (disableListGeneration)
+            {
+                updateScrollPosition = true;
+            }
+
+            if (reloadModelAlias)
             {
                 reloadModelAlias = false;
                 ModelAliasBank.ReloadAliasBank();
@@ -247,6 +236,12 @@ namespace StudioCore.MsbEditor
         /// </summary>
         private void DisplayAssetSelectionList(string assetType, List<ModelAliasReference> referenceList)
         {
+            if (updateScrollPosition)
+            {
+                updateScrollPosition = false;
+                ImGui.SetScrollY(_currentScrollY);
+            }
+
             Dictionary<string, ModelAliasReference> referenceDict = new Dictionary<string, ModelAliasReference>();
 
             foreach (ModelAliasReference v in referenceList)
@@ -293,6 +288,8 @@ namespace StudioCore.MsbEditor
                     {
                         if (ImGui.Selectable(displayedName))
                         {
+                            _currentScrollY = ImGui.GetScrollY();
+
                             _selectedName = refID;
 
                             _refUpdateId = refID;

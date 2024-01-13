@@ -2,6 +2,7 @@
 using SoulsFormats;
 using SoulsFormats.Util;
 using StudioCore.Scene;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -235,7 +236,7 @@ public class MultipleEntityPropertyChangeAction : Action
         ChangedEnts = changedEnts;
         foreach (Entity o in changedEnts)
         {
-            var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, classIndex, false);
+            var propObj = Utilities.PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, classIndex, false);
             var change = new PropertyChange
             {
                 ChangedObj = propObj, Property = prop, NewValue = newval, ArrayIndex = index
