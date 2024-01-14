@@ -464,7 +464,7 @@ public class Param : SoulsFile<Param>
         // If a row size is already read it must match our computed row size
         else if (byteOffset != RowSize)
         {
-            throw new Exception($@"Row size paramdef mismatch for {ParamType}");
+            throw new Exception($@"Row size paramdef mismatch for {ParamType} - byteOffset:{byteOffset} - rowSize:{RowSize}");
         }
 
         Columns = columns;

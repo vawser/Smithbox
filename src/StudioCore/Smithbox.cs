@@ -424,6 +424,7 @@ public class Smithbox
         ModelAliasBank.ReloadAliasBank();
         FxrAliasBank.ReloadAliasBank();
         EventFlagAliasBank.ReloadAliasBank();
+
         ParamBank.ReloadParams(newsettings, options);
         MtdBank.ReloadMtds();
 
@@ -923,8 +924,6 @@ public class Smithbox
 
             if (ImGui.BeginMenu("Tools"))
             {
-                // TODO: need to fix the null issue with EventFlagBrowser
-                /*
                 if (ImGui.MenuItem("Flag ID Browser", KeyBindings.Current.Core_EventFlagBrowser.HintText))
                 {
                     _eventFlagBrowser.ToggleMenuVisibility();
@@ -933,7 +932,6 @@ public class Smithbox
                 {
                     _fxrBrowser.ToggleMenuVisibility();
                 }
-                */
 
                 ImGui.EndMenu();
             }

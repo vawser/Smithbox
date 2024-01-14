@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>GRAPHICS_CONFIG_CS_SSAO_QUALITY_DETAIL</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    <Field Def="u8 enabled = 1">
+      <DisplayName>SSAO有効</DisplayName>
+      <Enum>ON_OFF</Enum>
+      <Description>SSAO有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="u8 cs_reprojEnabledType = 1">
+      <DisplayName>リプロジェクション有効</DisplayName>
+      <Enum>CS_GCONFIG_ENABLED_TYPE</Enum>
+      <Description>リプロジェクション強制有効の時は、PreventGhostも有効になる</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>2</SortID>
+    </Field>
+    <Field Def="u8 cs_upScaleEnabledType">
+      <DisplayName>バイラテラルアップスケール有効</DisplayName>
+      <Enum>CS_GCONFIG_ENABLED_TYPE</Enum>
+      <Description>バイラテラルアップスケール有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>3</SortID>
+    </Field>
+    <Field Def="u8 cs_useNormalEnabledType = 1">
+      <DisplayName>法線使用有効</DisplayName>
+      <Enum>CS_GCONFIG_ENABLED_TYPE</Enum>
+      <Description>法線使用有効</Description>
+      <DisplayFormat>%u</DisplayFormat>
+      <EditFlags>None</EditFlags>
+      <SortID>4</SortID>
+    </Field>
+  </Fields>
+</PARAMDEF>
