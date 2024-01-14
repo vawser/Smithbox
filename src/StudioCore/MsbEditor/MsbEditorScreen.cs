@@ -573,6 +573,42 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (ImGui.BeginMenu("Tools"))
         {
+            var loadedMaps = Universe.LoadedObjectContainers.Values.Where(x => x != null);
+            if (ImGui.MenuItem("Check loaded maps for duplicate Entity IDs", loadedMaps.Any()))
+            {
+                HashSet<uint> vals = new();
+                string badVals = "";
+                foreach (var loadedMap in loadedMaps)
+                {
+                    foreach (var e in loadedMap?.Objects)
+                    {
+                        var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                        if (val == null)
+                            continue;
+
+                        uint entUint;
+                        if (val is int entInt)
+                            entUint = (uint)entInt;
+                        else
+                            entUint = (uint)val;
+
+                        if (entUint == 0 || entUint == uint.MaxValue)
+                            continue;
+                        if (!vals.Add(entUint))
+                            badVals += $"   Duplicate entity ID: {entUint}\n";
+                    }
+                }
+                if (badVals != "")
+                {
+                    TaskLogs.AddLog("Duplicate entity IDs found across loaded maps (see logger)", LogLevel.Information, TaskLogs.LogPriority.High);
+                    TaskLogs.AddLog("Duplicate entity IDs found:\n" + badVals[..^1], LogLevel.Information, TaskLogs.LogPriority.Low);
+                }
+                else
+                {
+                    TaskLogs.AddLog("No duplicate entity IDs found", LogLevel.Information, TaskLogs.LogPriority.Normal);
+                }
+            }
+
             if (AssetLocator.Type is GameType.DemonsSouls or
                 GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered)
             {

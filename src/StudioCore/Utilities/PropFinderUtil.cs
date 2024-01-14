@@ -144,4 +144,13 @@ public static class PropFinderUtil
 
         return propData.PropInfo.GetValue(propData.Obj);
     }
+
+    public static object? FindPropertyValue(string propName, object obj, bool onlyCheckPropName = false)
+    {
+        var prop = FindProperty(propName, obj);
+        if (prop == null)
+            return null;
+        var val = FindPropertyValue(prop, obj, onlyCheckPropName);
+        return val;
+    }
 }
