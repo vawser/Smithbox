@@ -90,7 +90,7 @@ public class ModelAliasBank
 
     public static void WriteTargetAliasBank(ModelAliasResource targetBank, string assetType)
     {
-        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{TemplateName}";
+        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
@@ -113,7 +113,7 @@ public class ModelAliasBank
 
     public static void AddToLocalAliasBank(string assetType, string refID, string refName, string refTags)
     {
-        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{TemplateName}";
+        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 

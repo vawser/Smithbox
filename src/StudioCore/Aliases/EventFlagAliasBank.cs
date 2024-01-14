@@ -92,7 +92,7 @@ public class EventFlagAliasBank
 
     public static void WriteTargetAliasBank(EventFlagAliasResource targetBank)
     {
-        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{TemplateName}";
+        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{FileName}";
 
@@ -115,7 +115,7 @@ public class EventFlagAliasBank
 
     public static void AddToLocalAliasBank(string refID, string refName, string refTags)
     {
-        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{TemplateName}";
+        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{FileName}";
 
