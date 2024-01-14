@@ -907,16 +907,41 @@ public class ParamBank
                 }
             }
         }
+
+        string sysParam = AssetLocator.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        if (File.Exists(sysParam))
+        {
+            LoadParamsERFromFile(sysParam, false);
+        }
+        else
+        {
+            TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+        }
     }
 
     private void LoadVParamsER()
     {
         LoadParamsERFromFile($@"{AssetLocator.GameRootDirectory}\regulation.bin");
+
+        var sysParam = $@"{AssetLocator.GameRootDirectory}\param\systemparam\systemparam.parambnd.dcx";
+        if (File.Exists(sysParam))
+        {
+            LoadParamsERFromFile(sysParam, false);
+        }
     }
 
-    private void LoadParamsERFromFile(string path)
+    private void LoadParamsERFromFile(string path, bool encrypted = true)
     {
-        LoadParamFromBinder(SFUtil.DecryptERRegulation(path), ref _params, out _paramVersion, true);
+        if (encrypted)
+        {
+            using BND4 bnd = SFUtil.DecryptERRegulation(path);
+            LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+        }
+        else
+        {
+            using BND4 bnd = BND4.Read(path);
+            LoadParamFromBinder(bnd, ref _params, out _, false);
+        }
     }
 
     private void LoadParamsAC6()
@@ -1757,6 +1782,37 @@ public class ParamBank
 
     private void SaveParamsER(bool partial)
     {
+        void OverwriteParamsER(BND4 paramBnd)
+        {
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
+            {
+                if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    Param paramFile = _params[Path.GetFileNameWithoutExtension(p.Name)];
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+                    List<Param.Row> changed = new();
+                    if (partial)
+                    {
+                        TaskManager.WaitAll(); //wait on dirtycache update
+                        HashSet<int> dirtyCache = _vanillaDiffCache[Path.GetFileNameWithoutExtension(p.Name)];
+                        foreach (Param.Row row in paramFile.Rows)
+                        {
+                            if (dirtyCache.Contains(row.ID))
+                            {
+                                changed.Add(row);
+                            }
+                        }
+
+                        paramFile.Rows = changed;
+                    }
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.Rows = backup;
+                }
+            }
+        }
+
         var dir = AssetLocator.GameRootDirectory;
         var mod = AssetLocator.GameModDirectory;
         if (!File.Exists($@"{dir}\\regulation.bin"))
@@ -1773,37 +1829,18 @@ public class ParamBank
             param = $@"{dir}\regulation.bin";
         }
 
-        BND4 paramBnd = SFUtil.DecryptERRegulation(param);
+        BND4 regParams = SFUtil.DecryptERRegulation(param);
+        OverwriteParamsER(regParams);
+        Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, GameType.EldenRing);
 
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
+        string sysParam = AssetLocator.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        if (File.Exists(sysParam))
         {
-            if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-            {
-                Param paramFile = _params[Path.GetFileNameWithoutExtension(p.Name)];
-                IReadOnlyList<Param.Row> backup = paramFile.Rows;
-                List<Param.Row> changed = new();
-                if (partial)
-                {
-                    TaskManager.WaitAll(); //wait on dirtycache update
-                    HashSet<int> dirtyCache = _vanillaDiffCache[Path.GetFileNameWithoutExtension(p.Name)];
-                    foreach (Param.Row row in paramFile.Rows)
-                    {
-                        if (dirtyCache.Contains(row.ID))
-                        {
-                            changed.Add(row);
-                        }
-                    }
-
-                    paramFile.Rows = changed;
-                }
-
-                p.Bytes = paramFile.Write();
-                paramFile.Rows = backup;
-            }
+            using BND4 sysParams = BND4.Read(sysParam);
+            OverwriteParamsER(sysParams);
+            Utils.WriteWithBackup(dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
         }
 
-        Utils.WriteWithBackup(dir, mod, @"regulation.bin", paramBnd, GameType.EldenRing);
         _pendingUpgrade = false;
     }
 

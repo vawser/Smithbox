@@ -1205,16 +1205,6 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                     s.Name = name;
                     actlist.Add(s.ChangeObjectProperty("Name", name));
                 }
-
-                // Instance ID
-                if (CFG.Current.AssetBrowser_UpdateSelectionInstanceID)
-                {
-                    if (AssetLocator.Type == GameType.EldenRing)
-                    {
-                        string instanceId = GetUniqueInstanceIDString(modelName);
-                        actlist.Add(s.ChangeObjectProperty("InstanceID", Int32.Parse(instanceId)));
-                    }
-                }
             }
         }
 
@@ -1282,65 +1272,32 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         return baseName;
     }
 
-    // TODO: change this to use WrappedObject.GetType().GetProperty("InstanceID") instead of the weird name stuff
-    public string GetUniqueInstanceIDString(string modelName)
+    public int GetUniqueInstanceID(string modelName)
     {
-        // This ia a hacky method to get an unique InstanceID without needing to worry about the MSBE specific part stuff
-        int baseId = 0;
-        int postfix = 0;
-        string baseName = $"{modelName}_0000";
+        int newInstanceId = 0;
+        int trackedInstanceId = 0;
 
-        List<string> names = new List<string>();
+        var loadedMaps = Universe.LoadedObjectContainers.Values.Where(x => x != null);
 
-        // Collect names
-        foreach (var o in Universe.LoadedObjectContainers.Values)
+        foreach (var loadedMap in loadedMaps)
         {
-            if (o == null)
+            foreach (var e in loadedMap?.Objects)
             {
-                continue;
-            }
-            if (o is Map m)
-            {
-                foreach (var ob in m.Objects)
+                if (e.Name == modelName)
                 {
-                    if (ob is MapEntity e)
-                    {
-                        names.Add(ob.Name);
-                    }
-                }
-            }
-        }
+                    var val = PropFinderUtil.FindPropertyValue("InstanceID", e.WrappedObject);
 
-        bool validName = false;
-        while (!validName)
-        {
-            bool matchesName = false;
+                    if (val == null)
+                        continue;
 
-            foreach (string name in names)
-            {
-                // Name already exists
-                if (name == baseName)
-                {
-                    // Increment postfix number by 1
-                    int old_value = postfix;
-                    postfix = postfix + 1;
-                    baseId = baseId + 1;
-
-                    // Replace baseName postfix number
-                    baseName = baseName.Replace($"{PadNameString(old_value)}", $"{PadNameString(postfix)}");
-
-                    matchesName = true;
+                    trackedInstanceId = (int)val;
                 }
             }
 
-            // If it does not match any name during 1 full iteration, then it must be valid
-            if (!matchesName)
-            {
-                validName = true;
-            }
+            newInstanceId = trackedInstanceId + 1;
         }
 
-        return baseId.ToString();
+        return newInstanceId;
     }
 
     public string PadNameString(int value)
