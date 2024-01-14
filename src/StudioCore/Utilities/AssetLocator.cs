@@ -1449,7 +1449,7 @@ public class AssetLocator
         ad.AssetArchiveVirtualPath = null;
         string path;
         if (Type == GameType.EldenRing)
-            path = GetOverridenFilePath($@"asset\aet\{aetid.Substring(3, 6)}\{aetid}.tpf.dcx");
+            path = GetOverridenFilePath($@"asset\aet\{aetid.Substring(0, 6)}\{aetid}.tpf.dcx");
         else if (Type is GameType.ArmoredCoreVI)
             path = GetOverridenFilePath($@"\asset\environment\texture\{aetid}.tpf.dcx");
         else
