@@ -962,17 +962,6 @@ public class ParamBank
 
         LoadParamsAC6FromFile(param);
 
-        // graphicsconfig
-        string graphicsConfigParam = AssetLocator.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
-        if (File.Exists(graphicsConfigParam))
-        {
-            LoadParamsAC6FromFile(graphicsConfigParam, false);
-        }
-        else
-        {
-            TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
-        }
-
         // systemparam
         string sysParam = AssetLocator.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
@@ -983,6 +972,29 @@ public class ParamBank
         {
             TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
         }
+
+        // graphicsconfig
+        string graphicsConfigParam = AssetLocator.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+        if (File.Exists(graphicsConfigParam))
+        {
+            LoadParamsAC6FromFile(graphicsConfigParam, false);
+        }
+        else
+        {
+            TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+        }
+
+        // eventparam
+        string eventParam = AssetLocator.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        if (File.Exists(eventParam))
+        {
+            LoadParamsAC6FromFile(eventParam, false);
+        }
+        else
+        {
+            TaskLogs.AddLog("Eventparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+        }
+
     }
 
     private void LoadVParamsAC6()
@@ -999,6 +1011,12 @@ public class ParamBank
         if (File.Exists(graphicsConfigParam))
         {
             LoadParamsAC6FromFile(graphicsConfigParam, false);
+        }
+
+        var eventParam = $@"{AssetLocator.GameRootDirectory}\param\eventparam\eventparam.parambnd.dcx";
+        if (File.Exists(eventParam))
+        {
+            LoadParamsAC6FromFile(eventParam, false);
         }
     }
 
@@ -1953,7 +1971,15 @@ public class ParamBank
         {
             using BND4 graphicsConfigParams = BND4.Read(graphicsConfigParam);
             OverwriteParamsAC6(graphicsConfigParams);
-            Utils.WriteWithBackup(dir, mod, @"param\systemparam\systemparam.parambnd.dcx", graphicsConfigParams);
+            Utils.WriteWithBackup(dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
+        }
+
+        string eventParam = AssetLocator.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        if (File.Exists(eventParam))
+        {
+            using BND4 eventParams = BND4.Read(eventParam);
+            OverwriteParamsAC6(eventParams);
+            Utils.WriteWithBackup(dir, mod, @"param\eventparam\eventparam.parambnd.dcx", eventParams);
         }
 
         _pendingUpgrade = false;
