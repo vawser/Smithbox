@@ -56,7 +56,7 @@ public class Smithbox
 
     // Floating windows
     private readonly HelpBrowser _helpBrowser;
-    private readonly SettingsMenu _settingsMenu = new();
+    private readonly SettingsMenu _settingsMenu;
     private readonly EventFlagBrowser _eventFlagBrowser;
     private readonly FxrBrowser _fxrBrowser;
 
@@ -111,6 +111,7 @@ public class Smithbox
 
         _soapstoneService = new SoapstoneService(_version, _assetLocator, msbEditor);
 
+        _settingsMenu = new SettingsMenu("SettingsMenu", _assetLocator);
         _settingsMenu.MsbEditor = msbEditor;
         _settingsMenu.ModelEditor = modelEditor;
         _settingsMenu.ParamEditor = paramEditor;

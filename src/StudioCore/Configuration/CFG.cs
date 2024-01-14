@@ -174,6 +174,7 @@ public class CFG
     // Settings: Browsers
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_UpdateSelectionName = true;
+    public bool AssetBrowser_UpdateSelectionInstanceID = true;
     public bool AssetBrowser_SuspendListWhenInViewport = true;
     public bool EventFlagBrowser_ShowTagsInBrowser = true;
     public bool FxrBrowser_ShowTagsInBrowser = true;

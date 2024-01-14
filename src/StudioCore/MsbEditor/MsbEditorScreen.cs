@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
@@ -1170,6 +1171,14 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
 
                 // Instance ID
+                if (CFG.Current.AssetBrowser_UpdateSelectionInstanceID)
+                {
+                    if (AssetLocator.Type == GameType.EldenRing)
+                    {
+                        string instanceId = GetUniqueInstanceIDString(modelName);
+                        actlist.Add(s.ChangeObjectProperty("InstanceID", Int32.Parse(instanceId)));
+                    }
+                }
             }
         }
 
@@ -1235,6 +1244,67 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         }
 
         return baseName;
+    }
+
+    // TODO: change this to use WrappedObject.GetType().GetProperty("InstanceID") instead of the weird name stuff
+    public string GetUniqueInstanceIDString(string modelName)
+    {
+        // This ia a hacky method to get an unique InstanceID without needing to worry about the MSBE specific part stuff
+        int baseId = 0;
+        int postfix = 0;
+        string baseName = $"{modelName}_0000";
+
+        List<string> names = new List<string>();
+
+        // Collect names
+        foreach (var o in Universe.LoadedObjectContainers.Values)
+        {
+            if (o == null)
+            {
+                continue;
+            }
+            if (o is Map m)
+            {
+                foreach (var ob in m.Objects)
+                {
+                    if (ob is MapEntity e)
+                    {
+                        names.Add(ob.Name);
+                    }
+                }
+            }
+        }
+
+        bool validName = false;
+        while (!validName)
+        {
+            bool matchesName = false;
+
+            foreach (string name in names)
+            {
+                // Name already exists
+                if (name == baseName)
+                {
+                    // Increment postfix number by 1
+                    int old_value = postfix;
+                    postfix = postfix + 1;
+                    baseId = baseId + 1;
+
+                    // Replace baseName postfix number
+                    baseName = baseName.Replace($"{PadNameString(old_value)}", $"{PadNameString(postfix)}");
+
+                    matchesName = true;
+                }
+            }
+
+            // If it does not match any name during 1 full iteration, then it must be valid
+            if (!matchesName)
+            {
+                validName = true;
+            }
+        }
+
+        return baseId.ToString();
     }
 
     public string PadNameString(int value)

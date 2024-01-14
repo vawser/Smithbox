@@ -6,6 +6,7 @@ using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
 using StudioCore.Scene;
 using StudioCore.TextEditor;
+using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -17,6 +18,9 @@ namespace StudioCore.Settings;
 
 public class SettingsMenu
 {
+    private string _id;
+    private AssetLocator _locator;
+
     private KeyBind _currentKeyBind;
     public bool FontRebuildRequest;
     public bool MenuOpenState;
@@ -25,6 +29,12 @@ public class SettingsMenu
     public ParamEditorScreen ParamEditor;
     public ProjectSettings ProjSettings = null;
     public TextEditorScreen TextEditor;
+
+    public SettingsMenu(string id, AssetLocator assetLocator)
+    {
+        _id = id;
+        _locator = assetLocator;
+    }
 
     public void SaveSettings()
     {
@@ -765,7 +775,17 @@ public class SettingsMenu
                     ShowHelpMarker("Update the Name field of the entity upon double-click. By default only the ModelName field is updated.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Update entity name on selection", ref CFG.Current.AssetBrowser_UpdateSelectionName);
+                ImGui.Checkbox("Update entity Name field on selection", ref CFG.Current.AssetBrowser_UpdateSelectionName);
+
+                if (_locator.Type == GameType.EldenRing)
+                {
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ShowHelpMarker("Update the InstanceID field of the entity upon double-click. By default only the ModelName field is updated.");
+                        ImGui.SameLine();
+                    }
+                    ImGui.Checkbox("Update entity InstanceID field on selection", ref CFG.Current.AssetBrowser_UpdateSelectionInstanceID);
+                }
 
                 if (CFG.Current.ShowUITooltips)
                 {

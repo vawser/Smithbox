@@ -809,6 +809,54 @@ public class Entity : ISelectable, IDisposable
         return act;
     }
 
+    public Action ChangeObjectProperty(string propTarget, int propValue)
+    {
+        var actions = new List<Action>();
+        actions.Add(GetPropertyChangeAction(propTarget, propValue));
+        var act = new CompoundAction(actions);
+        act.SetPostExecutionAction((undo) =>
+        {
+            UpdateRenderModel();
+        });
+        return act;
+    }
+
+    public Action ChangeObjectProperty(string propTarget, byte propValue)
+    {
+        var actions = new List<Action>();
+        actions.Add(GetPropertyChangeAction(propTarget, propValue));
+        var act = new CompoundAction(actions);
+        act.SetPostExecutionAction((undo) =>
+        {
+            UpdateRenderModel();
+        });
+        return act;
+    }
+
+    public Action ChangeObjectProperty(string propTarget, short propValue)
+    {
+        var actions = new List<Action>();
+        actions.Add(GetPropertyChangeAction(propTarget, propValue));
+        var act = new CompoundAction(actions);
+        act.SetPostExecutionAction((undo) =>
+        {
+            UpdateRenderModel();
+        });
+        return act;
+    }
+
+    public Action ChangeObjectProperty(string propTarget, float propValue)
+    {
+        var actions = new List<Action>();
+        actions.Add(GetPropertyChangeAction(propTarget, propValue));
+        var act = new CompoundAction(actions);
+        act.SetPostExecutionAction((undo) =>
+        {
+            UpdateRenderModel();
+        });
+        return act;
+    }
+
     /// <summary>
     ///     Updates entity's DrawGroups/DispGroups. Uses CollisionName DrawGroups if possible.
     /// </summary>
