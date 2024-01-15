@@ -3,7 +3,7 @@
   <Enums>
   </Enums>
   <Field>
-    <Enabled AltName="Motion Blur Enabled" Wiki="Motion blur Enabled" IsBool="" />
+    <enabled AltName="Motion Blur Enabled" Wiki="Motion blur Enabled" IsBool="" />
     <ombEnabled AltName="Object Motion Blur Enabled" Wiki="OMB (object motion blur) Enabled" IsBool="" />
     <forceScaleVelocityBuffer AltName="Force Scale Velocity Buffer" Wiki="Decrease the resolution of the velocity buffer used internally. Not effective if you are not using precision velocity buffers" IsBool="" />
     <cheapFilterMode AltName="Cheap Filter Mode" Wiki="Normally processed by the Reconstruction filter, but downgraded to a lighter process" IsBool="" />
