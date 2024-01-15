@@ -42,7 +42,6 @@
         <Option Value="102" Name="Unused - RRI(旧)" />
         <Option Value="104" Name="Unused - オルマイ(本性)" />
     </Enum>
-    </Enum>
   </Enums>
   <Field>
     <sortId AltName="Sort ID" Wiki="Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)" />
