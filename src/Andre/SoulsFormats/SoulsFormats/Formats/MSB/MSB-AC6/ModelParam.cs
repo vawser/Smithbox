@@ -9,19 +9,19 @@ namespace SoulsFormats
 {
     public partial class MSB_AC6
     {
-        internal enum ModelType : uint
+        public enum ModelType : uint
         {
             MapPiece = 0,
-            Object = 1,
+            Object = 1, // NOT IMPLEMENTED
             Enemy = 2,
-            Item = 3,
+            Item = 3, // NOT IMPLEMENTED
             Player = 4,
             Collision = 5,
-            Navmesh = 6,
-            DummyObject = 7,
-            DummyEnemy = 8,
-            Invalid = 9,
-            Asset = 10
+            Navmesh = 6, // NOT IMPLEMENTED
+            DummyObject = 7, // NOT IMPLEMENTED
+            DummyEnemy = 8, // NOT IMPLEMENTED
+            Invalid = 9, // NOT IMPLEMENTED
+            Asset = 10 
         }
 
         /// <summary>
@@ -29,6 +29,8 @@ namespace SoulsFormats
         /// </summary>
         public class ModelParam : Param<Model>, IMsbParam<IMsbModel>
         {
+            public int version;
+
             /// <summary>
             /// Models for fixed terrain and scenery.
             /// </summary>
@@ -57,8 +59,10 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty ModelParam with the default version.
             /// </summary>
-            public ModelParam() : base(73, "MODEL_PARAM_ST")
+            public ModelParam(int _version) : base(_version, "MODEL_PARAM_ST")
             {
+                version = _version;
+
                 MapPieces = new List<Model.MapPiece>();
                 Enemies = new List<Model.Enemy>();
                 Players = new List<Model.Player>();
@@ -106,7 +110,7 @@ namespace SoulsFormats
             }
             IReadOnlyList<IMsbModel> IMsbParam<IMsbModel>.GetEntries() => GetEntries();
             
-            internal override Model ReadEntry(BinaryReaderEx br, int Version)
+            internal override Model ReadEntry(BinaryReaderEx br, int Version, long offsetLength)
             {
                 ModelType type = br.GetEnum32<ModelType>(br.Position + 8);
                 switch (type)
@@ -137,39 +141,21 @@ namespace SoulsFormats
         /// </summary>
         public abstract class Model : Entry, IMsbModel
         {
-            private protected abstract ModelType Type { get; }
-
-            /// <summary>
-            /// The name of the model.
-            /// </summary>
+            // Main
             public string Name { get; set; }
 
-            /// <summary>
-            /// A path to a .sib file, presumed to be some kind of editor placeholder.
-            /// </summary>
-            public string SibPath { get; set; }
+            public int LocalIndex { get; set; }
+
+            private protected abstract ModelType Type { get; }
+
+            public string SourcePath { get; set; }
 
             private int InstanceCount;
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int Unk1C { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int Unk20 { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int Unk24 { get; set; }
 
             private protected Model(string name)
             {
                 Name = name;
-                SibPath = "";
+                SourcePath = "";
             }
 
             /// <summary>
@@ -184,25 +170,18 @@ namespace SoulsFormats
             private protected Model(BinaryReaderEx br)
             {
                 long start = br.Position;
+
                 long nameOffset = br.ReadInt64();
                 br.AssertUInt32((uint)Type);
-                br.ReadInt32(); // ID
-                long sibOffset = br.ReadInt64();
+                LocalIndex = br.ReadInt32();
+                long sourceOffset = br.ReadInt64();
                 InstanceCount = br.ReadInt32();
-                Unk1C = br.ReadInt32();
-                Unk20 = br.ReadInt32();
-                Unk24 = br.ReadInt32();
+                br.AssertInt32(new int[1]);
+                br.AssertInt32(new int[1]);
+                br.AssertInt32(new int[1]);
 
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
-                if (sibOffset == 0)
-                    throw new InvalidDataException($"{nameof(sibOffset)} must not be 0 in type {GetType()}.");
-
-                br.Position = start + nameOffset;
-                Name = br.ReadUTF16();
-
-                br.Position = start + sibOffset;
-                SibPath = br.ReadUTF16();
+                Name = br.GetUTF16(start + nameOffset);
+                SourcePath = br.GetUTF16(start + sourceOffset);
             }
 
             private protected virtual void ReadTypeData(BinaryReaderEx br)
@@ -213,17 +192,17 @@ namespace SoulsFormats
                 long start = bw.Position;
                 bw.ReserveInt64("NameOffset");
                 bw.WriteUInt32((uint)Type);
-                bw.WriteInt32(id);
-                bw.ReserveInt64("SibOffset");
+                bw.WriteInt32(LocalIndex);
+                bw.ReserveInt64("SourceOffset");
                 bw.WriteInt32(InstanceCount);
-                bw.WriteInt32(Unk1C);
-                bw.WriteInt32(Unk20);
-                bw.WriteInt32(Unk24);
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
 
                 bw.FillInt64("NameOffset", bw.Position - start);
                 bw.WriteUTF16(MSB.ReambiguateName(Name), true);
-                bw.FillInt64("SibOffset", bw.Position - start);
-                bw.WriteUTF16(SibPath, true);
+                bw.FillInt64("SourceOffset", bw.Position - start);
+                bw.WriteUTF16(SourcePath, true);
                 bw.Pad(8);
             }
 
@@ -237,7 +216,7 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"{Type} {Name}";
+                return $"MODEL: {Type} - {Name}";
             }
 
             /// <summary>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.PARAM;
 
 namespace SoulsFormats
 {
@@ -14,6 +15,8 @@ namespace SoulsFormats
         /// </summary>
         public class LayerParam : Param<Layer>
         {
+            public int version;
+
             /// <summary>
             /// The layers in this section.
             /// </summary>
@@ -22,8 +25,10 @@ namespace SoulsFormats
             /// <summary>
             /// Creates a new LayerParam with no layers.
             /// </summary>
-            public LayerParam() : base(3, "LAYER_PARAM_ST")
+            public LayerParam(int _version) : base(_version, "LAYER_PARAM_ST")
             {
+                version = _version;
+
                 Layers = new List<Layer>();
             }
 
@@ -34,7 +39,7 @@ namespace SoulsFormats
             {
                 return Layers;
             }
-            internal override Layer ReadEntry(BinaryReaderEx br, int Version)
+            internal override Layer ReadEntry(BinaryReaderEx br, int Version, long offsetLength)
             {
                 return Layers.EchoAdd(new Layer(br));
             }
@@ -56,11 +61,6 @@ namespace SoulsFormats
             public int Unk08 { get; set; }
 
             /// <summary>
-            /// Unknown; usually just counts up from 0.
-            /// </summary>
-            public int Unk0C { get; set; }
-
-            /// <summary>
             /// Unknown; Probably the local index
             /// </summary>
             public int Unk10 { get; set; }
@@ -75,7 +75,7 @@ namespace SoulsFormats
             /// </summary>
             public Layer()
             {
-                Name = "Layer";
+                Name = "";
             }
 
             /// <summary>
@@ -92,15 +92,10 @@ namespace SoulsFormats
 
                 long nameOffset = br.ReadInt64();
                 Unk08 = br.ReadInt32();
-                Unk0C = br.ReadInt32();
+                br.AssertInt32(new int[1]);
                 Unk10 = br.ReadInt32();
                 Unk14 = br.ReadInt32();
-
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0.");
-
-                br.Position = start + nameOffset;
-                Name = br.ReadUTF16();
+                Name = br.GetUTF16(start + nameOffset);
             }
 
             internal override void Write(BinaryWriterEx bw, int id)
@@ -109,7 +104,7 @@ namespace SoulsFormats
 
                 bw.ReserveInt64("NameOffset");
                 bw.WriteInt32(Unk08);
-                bw.WriteInt32(Unk0C);
+                bw.WriteInt32(0);
                 bw.WriteInt32(Unk10);
                 bw.WriteInt32(Unk14);
 
@@ -123,7 +118,7 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"{Name} ({Unk08}, {Unk0C}, {Unk10}, {Unk14})";
+                return $"LAYER: {Name}";
             }
         }
     }

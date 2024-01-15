@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.PARAM;
 
 namespace SoulsFormats
 {
@@ -14,6 +15,8 @@ namespace SoulsFormats
         /// </summary>
         public class RouteParam : Param<Route>
         {
+            private int version;
+
             /// <summary>
             /// The routes in this section.
             /// </summary>
@@ -22,8 +25,9 @@ namespace SoulsFormats
             /// <summary>
             /// Creates a new RouteParam with no routes.
             /// </summary>
-            public RouteParam() : base(73, "ROUTE_PARAM_ST")
+            public RouteParam(int _version) : base(_version, "ROUTE_PARAM_ST")
             {
+                version = _version;
                 Routes = new List<Route>();
             }
 
@@ -35,7 +39,7 @@ namespace SoulsFormats
                 return Routes;
             }
 
-            internal override Route ReadEntry(BinaryReaderEx br, int Version)
+            internal override Route ReadEntry(BinaryReaderEx br, int version, long offsetLength)
             {
                 return Routes.EchoAdd(new Route(br));
             }
@@ -54,11 +58,6 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            private long NameOffset { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
             public int Unk08 { get; set; }
 
             /// <summary>
@@ -67,16 +66,11 @@ namespace SoulsFormats
             public int Unk0C { get; set; }
 
             /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int Unk10 { get; set; }
-
-            /// <summary>
             /// Creates a new Route with default values.
             /// </summary>
             public Route()
             {
-                Name = "XX-XX";
+                Name = "";
             }
 
             /// <summary>
@@ -91,17 +85,14 @@ namespace SoulsFormats
             {
                 long start = br.Position;
 
-                NameOffset = br.ReadInt64();
+                long nameOffset = br.ReadInt64();
                 Unk08 = br.ReadInt32();
                 Unk0C = br.ReadInt32();
-                Unk10 = br.ReadInt32();
-                br.AssertPattern(0x1B, 0x00);
+                br.AssertInt32(-1);
+                for (int index = 0; index < 27; ++index)
+                    br.AssertInt32(new int[1]);
 
-                if (NameOffset == 0)
-                    throw new InvalidDataException($"{nameof(NameOffset)} must not be 0.");
-
-                br.Position = start + NameOffset;
-                Name = br.ReadUTF16();
+                br.GetUTF16(start + nameOffset);
             }
 
             internal override void Write(BinaryWriterEx bw, int id)
@@ -111,13 +102,12 @@ namespace SoulsFormats
                 bw.ReserveInt64("NameOffset");
                 bw.WriteInt32(Unk08);
                 bw.WriteInt32(Unk0C);
-                bw.WriteInt32(Unk10);
-                bw.WritePattern(0x1B, 0x00);
-
+                bw.WriteInt32(-1);
+                for (int index = 0; index < 27; ++index)
+                    bw.WriteInt32(0);
                 bw.FillInt64("NameOffset", bw.Position - start);
                 bw.WriteUTF16(Name, true);
-
-                //bw.Pad(8);
+                bw.Pad(8);
             }
 
             /// <summary>
@@ -125,7 +115,7 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"\"{Name}\" {Unk08} {Unk0C}";
+                return $"\"ROUTE: {Name}\" {Unk08} {Unk0C}";
             }
         }
     }

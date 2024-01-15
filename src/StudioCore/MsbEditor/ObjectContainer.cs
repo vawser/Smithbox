@@ -532,23 +532,23 @@ public class Map : ObjectContainer
         model.Name = name;
         if (model is MSB_AC6.Model.MapPiece)
         {
-            model.SibPath = $@"N:\FNR\data\Model\map\{Name}\sib\{name}.sib";
+            model.SourcePath = $@"N:\FNR\data\Model\map\{Name}\sib\{name}.sib";
         }
         else if (model is MSB_AC6.Model.Asset)
         {
-            model.SibPath = $@"N:\FNR\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
+            model.SourcePath = $@"N:\FNR\data\Asset\Environment\geometry\{name.Substring(0, 6)}\{name}\sib\{name}.sib";
         }
         else if (model is MSB_AC6.Model.Enemy)
         {
-            model.SibPath = $@"N:\FNR\data\Model\chr\{name}\sib\{name}.sib";
+            model.SourcePath = $@"N:\FNR\data\Model\chr\{name}\sib\{name}.sib";
         }
         else if (model is MSB_AC6.Model.Collision)
         {
-            model.SibPath = $@"N:\FNR\data\Model\map\{Name}\hkt\{name}.hkt";
+            model.SourcePath = $@"N:\FNR\data\Model\map\{Name}\hkt\{name}.hkt";
         }
         else if (model is MSB_AC6.Model.Player)
         {
-            model.SibPath = $@"N:\FNR\data\Model\chr\{name}\sib\{name}.sib";
+            model.SourcePath = $@"N:\FNR\data\Model\chr\{name}\sib\{name}.sib";
         }
 
         m.Models.Add(model);

@@ -9,6 +9,8 @@ namespace SoulsFormats
     /// </summary>
     public partial class MSB_AC6 : SoulsFile<MSB_AC6>, IMsb
     {
+        public int version;
+
         /// <summary>
         /// Model files that are available for parts to use.
         /// </summary>
@@ -48,12 +50,14 @@ namespace SoulsFormats
         /// </summary>
         public MSB_AC6()
         {
-            Models = new ModelParam();
-            Events = new EventParam();
-            Regions = new PointParam();
-            Routes = new RouteParam();
-            Layers = new LayerParam();
-            Parts = new PartsParam();
+            version = 52;
+
+            Models = new ModelParam(version);
+            Events = new EventParam(version);
+            Regions = new PointParam(version);
+            Routes = new RouteParam(version);
+            Layers = new LayerParam(version);
+            Parts = new PartsParam(version);
         }
 
         /// <summary>
@@ -77,17 +81,17 @@ namespace SoulsFormats
             MSB.AssertHeader(br);
 
             Entries entries;
-            Models = new ModelParam();
+            Models = new ModelParam(version);
             entries.Models = Models.Read(br);
-            Events = new EventParam();
+            Events = new EventParam(version);
             entries.Events = Events.Read(br);
-            Regions = new PointParam();
+            Regions = new PointParam(version);
             entries.Regions = Regions.Read(br);
-            Routes = new RouteParam();
+            Routes = new RouteParam(version);
             entries.Routes = Routes.Read(br);
-            Layers = new LayerParam();
+            Layers = new LayerParam(version);
             entries.Layers = Layers.Read(br);
-            Parts = new PartsParam();
+            Parts = new PartsParam(version);
             entries.Parts = Parts.Read(br);
 
             if (br.Position != 0)
@@ -195,13 +199,13 @@ namespace SoulsFormats
                 {
                     br.Position = offset;
 
-                    entries.Add(ReadEntry(br, Version));
+                    entries.Add(ReadEntry(br, Version, offset));
                 }
                 br.Position = nextParamOffset;
                 return entries;
             }
 
-            internal abstract T ReadEntry(BinaryReaderEx br, int Version);
+            internal abstract T ReadEntry(BinaryReaderEx br, int version, long offsetLength);
 
             internal virtual void Write(BinaryWriterEx bw, List<T> entries)
             {
