@@ -16,6 +16,8 @@
     <npcMaterialParamReference AltName="NpcMaterialParam Reference" Wiki="Affects NPC design, such as paint.\nReferences rows in NpcMaterialParam. Rows references seem to be Character ID + this field." />
     <showStabilityBar AltName="Show Stability Bar" Wiki="If stability bar should appear in UI." IsBool="" />
     <penetrateDefense AltName="Penetration Defense" Enum="NPC_BULLET_PENETRATE_DEF_TYPE" Wiki="Affects which bullets penetrate this character. See Bullet param chrPenetrateType." />
+    <movementEnemyTypeParamId AltName="MovementEnemyTypeParam ID" Refs="MovementEnemyTypeParam" Wiki="Determines movement specifics, such as what types of movement can be made and various speeds." />
+    <chrActTurnParamId AltName="ChrActTurnParam_Npc ID" Refs="ChrActTurnParam_Npc" />
   </Field>
   <Self />
 </PARAMMETA>

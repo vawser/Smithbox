@@ -268,8 +268,8 @@
     <Field Def="u16 hpEstusFlaskRecovery_failedLotPointAdd"></Field>
     <Field Def="u16 mpEstusFlaskRecovery_failedLotPointAdd"></Field>
     <Field Def="s32 WanderGhostPhantomId"></Field>
-    <Field Def="s32 UnkInt0x244"></Field>
-    <Field Def="s32 Unk0x248"></Field>
+    <Field Def="s32 movementEnemyTypeParamId"></Field>
+    <Field Def="s32 chrActTurnParamId"></Field>
     <Field Def="s32 UnkInt0x24C"></Field>
     <Field Def="s32 UnkInt0x250"></Field>
     <Field Def="s32 UnkInt0x254"></Field>

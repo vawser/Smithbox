@@ -21,7 +21,8 @@
     <Field Def="f32 UnkFloat0x2C"></Field>
     <Field Def="s32 Unk0x30"></Field>
     <Field Def="s32 Unk0x34"></Field>
-    <Field Def="s32 Unk0x38"></Field>
+    <Field Def="u16 Unk0x38"></Field>
+    <Field Def="u16 corporationTextureId"></Field>
     <Field Def="s32 Unk0x3C"></Field>
     <Field Def="s32 Unk0x40"></Field>
     <Field Def="s32 Unk0x44"></Field>

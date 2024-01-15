@@ -4,9 +4,9 @@
     <damageLevel_0 AltName="Damage Level [0]" />
     <damageLevel_1 AltName="Damage Level [1]" />
     <damageLevel_2 AltName="Damage Level [2]" />
-    <damageLevel_3 AltName="Damage Level [3]" />
-    <damageLevel_4 AltName="Damage Level [4]" />
-    <damageLevel_5 AltName="Damage Level [5]" />
+    <damageLevel_3 AltName="Damage Level [3]: Mini stagger" />
+    <damageLevel_4 AltName="Damage Level [4]: ACS break" />
+    <damageLevel_5 AltName="Damage Level [5]: ACS break + stagger extension" />
     <damageLevel_6 AltName="Damage Level [6]" />
     <damageLevel_7 AltName="Damage Level [7]" />
     <damageLevel_8 AltName="Damage Level [8]" />

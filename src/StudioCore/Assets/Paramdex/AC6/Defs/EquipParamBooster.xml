@@ -106,7 +106,7 @@
       <Description>EN consumed by Assault Boost.</Description>
     </Field>
     <Field Def="s16 Unk0x11C"></Field>
-    <Field Def="u16 UnkUshort0x11E"></Field>
+    <Field Def="u16 corporationTextureId"></Field>
     <Field Def="f32 meleeBoostVelocity_Initial"></Field>
     <Field Def="f32 meleeBoostVelocity_During"></Field>
     <Field Def="f32 meleeBoostDuration"></Field>

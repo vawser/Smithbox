@@ -2072,8 +2072,13 @@ public class ParamEditorScreen : EditorScreen
 
     private static bool SaveCsvDialog(out string path)
     {
-        return PlatformUtils.Instance.SaveFileDialog(
+        var result = PlatformUtils.Instance.SaveFileDialog(
             "Choose CSV file", new[] { AssetLocator.CsvFilter, AssetLocator.TxtFilter }, out path);
+
+        if (result && !path.ToLower().EndsWith(".csv"))
+            path += ".csv";
+
+        return result;
     }
 
     private static bool OpenCsvDialog(out string path)

@@ -2,10 +2,35 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="GeneratorColorSfxTypeEnum" type="s8">
-      <Option Value="-1" Name="None" />
-      <Option Value="0" Name="Fire Orange" />
-      <Option Value="1" Name="Arquebus Blue" />
-      <Option Value="2" Name="Coral Red" />
+        <Option Value="-1" Name="None" />
+        <Option Value="0" Name="Fire Orange" />
+        <Option Value="1" Name="Arquebus Blue" />
+        <Option Value="2" Name="Coral Red" />
+    </Enum>
+    <Enum Name="EQUIP_MAKER_TYPE" type="u16">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Overseer" />
+        <Option Value="2" Name="Rubicon Research Institute" />
+        <Option Value="3" Name="PCA" />
+        <Option Value="4" Name="ALLMIND" />
+        <Option Value="5" Name="Rubiconist" />
+        <Option Value="6" Name="RaD" />
+        <Option Value="7" Name="Arquebus" />
+        <Option Value="8" Name="Schneider" />
+        <Option Value="9" Name="VCPL" />
+        <Option Value="10" Name="Vesper" />
+        <Option Value="11" Name="Balam" />
+        <Option Value="12" Name="Dafeng" />
+        <Option Value="13" Name="Redgun" />
+        <Option Value="14" Name="Unused - 協商" />
+        <Option Value="15" Name="BAWS" />
+        <Option Value="16" Name="Furlong" />
+        <Option Value="17" Name="Takigawa Harmonics" />
+        <Option Value="18" Name="Melinite" />
+        <Option Value="19" Name="Elcano" />
+        <Option Value="20" Name="Arquebus ADD" />
+        <Option Value="102" Name="Unused - RRI(旧)" />
+        <Option Value="104" Name="Unused - オルマイ(本性)" />
     </Enum>
   </Enums>
   <Field>
@@ -18,7 +43,7 @@
     <supplyRecovery AltName="Energy Supply Recovery" />
     <postRecoveryEnSupply AltName="Post Recovery Energy Supply" />
     <energyFirearmSpec AltName="Energy Firearm Specialization" />
-    <corporationTextureId AltName="Corporation Texture ID" />
+    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" />
     <colorSfxType AltName="Color SFX Type" Enum="GeneratorColorSfxTypeEnum" Wiki="Determines SFX used by boosters. Coral also affects core expansion SFX."/> 
   </Field>
   <Self />
