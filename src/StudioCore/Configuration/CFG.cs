@@ -164,6 +164,9 @@ public class CFG
     public bool Param_ShowHotkeysInContextMenu = true;
     public bool Param_ShowSecondaryNames = true;
     public bool Param_ShowVanillaParams = true;
+    public bool Param_FieldNameInContextMenu = true;
+    public bool Param_FieldDescriptionInContextMenu = true;
+    public bool Param_SplitContextMenu = false;
     public bool UI_CompactParams = false;
 
     // Settings: Text Editor

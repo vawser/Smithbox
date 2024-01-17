@@ -716,6 +716,27 @@ public class SettingsMenu
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Repeat the field name in the context menu.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Field name in context menu", ref CFG.Current.Param_FieldNameInContextMenu);
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Repeat the field description in the context menu.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Field description in context menu", ref CFG.Current.Param_FieldDescriptionInContextMenu);
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Split the field context menu into separate menus for separate right-click locations.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Split context menu", ref CFG.Current.Param_SplitContextMenu);
             }
 
             ImGui.EndTabItem();

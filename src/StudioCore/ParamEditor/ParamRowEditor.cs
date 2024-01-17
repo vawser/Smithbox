@@ -326,7 +326,10 @@ public class ParamRowEditor
             ImGui.Selectable("", false, ImGuiSelectableFlags.AllowItemOverlap);
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
-                ImGui.OpenPopup("ParamRowCommonMenu");
+                if (!CFG.Current.Param_SplitContextMenu)
+                    ImGui.OpenPopup("ParamRowCommonMenu");
+                else
+                    ImGui.OpenPopup("ParamRowNameMenu");
             }
 
             ImGui.SameLine();
@@ -354,7 +357,10 @@ public class ParamRowEditor
                 ImGui.EndGroup();
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
                 {
-                    ImGui.OpenPopup("ParamRowCommonMenu");
+                    if (!CFG.Current.Param_SplitContextMenu)
+                        ImGui.OpenPopup("ParamRowCommonMenu");
+                    else
+                        ImGui.OpenPopup("ParamRowNameMenu");
                 }
             }
         }
@@ -404,7 +410,10 @@ public class ParamRowEditor
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
-                ImGui.OpenPopup("ParamRowCommonMenu");
+                if (!CFG.Current.Param_SplitContextMenu)
+                    ImGui.OpenPopup("ParamRowCommonMenu");
+                else
+                    ImGui.OpenPopup("ParamRowValueMenu");
             }
 
             if (displayRefTypes || displayFmgRef || displayEnum)
@@ -429,7 +438,10 @@ public class ParamRowEditor
                 EditorDecorations.ParamRefEnumQuickLink(bank, oldval, RefTypes, row, FmgRef, Enum);
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
                 {
-                    ImGui.OpenPopup("ParamRowCommonMenu");
+                    if (!CFG.Current.Param_SplitContextMenu)
+                        ImGui.OpenPopup("ParamRowCommonMenu");
+                    else
+                        ImGui.OpenPopup("ParamRowValueMenu");
                 }
             }
 
@@ -491,7 +503,23 @@ public class ParamRowEditor
         if (ImGui.BeginPopup("ParamRowCommonMenu"))
         {
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
-                isPinned, col, selection, propType, Wiki, oldval);
+                isPinned, col, selection, propType, Wiki, oldval, true);
+            PropertyRowValueContextMenuItems(bank, row, internalName, VirtualRef, ExtRefs, oldval, ref newval,
+                RefTypes, FmgRef, Enum);
+            ImGui.EndPopup();
+        }
+
+        if (ImGui.BeginPopup("ParamRowNameMenu"))
+        {
+            PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
+                isPinned, col, selection, propType, Wiki, oldval, true);
+            ImGui.EndPopup();
+        }
+
+        if (ImGui.BeginPopup("ParamRowValueMenu"))
+        {
+            PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
+                isPinned, col, selection, propType, Wiki, oldval, false);
             PropertyRowValueContextMenuItems(bank, row, internalName, VirtualRef, ExtRefs, oldval, ref newval,
                 RefTypes, FmgRef, Enum);
             ImGui.EndPopup();
@@ -612,7 +640,7 @@ public class ParamRowEditor
 
     private void PropertyRowNameContextMenuItems(ParamBank bank, string internalName, FieldMetaData cellMeta,
         string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
-        ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval)
+        ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
     {
         var scale = Smithbox.GetUIScale();
         var altName = cellMeta?.AltName;
@@ -621,24 +649,38 @@ public class ParamRowEditor
 
         if (col != null)
         {
-            EditorDecorations.ImGui_DisplayPropertyInfo(propType, internalName, altName, col.Def.ArrayLength, col.Def.BitSize);
-            if (Wiki != null)
+            EditorDecorations.ImGui_DisplayPropertyInfo(propType, internalName, isNameMenu, !isNameMenu, altName, col.Def.ArrayLength,
+                col.Def.BitSize);
+
+            if (isNameMenu && CFG.Current.Param_FieldDescriptionInContextMenu)
             {
-                ImGui.TextColored(new Vector4(.4f, .7f, 1f, 1f), $"{Wiki}");
-            }
-            else
-            {
-                ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.7f),
-                    "Info regarding this field has not been written.");
+                if (Wiki != null)
+                {
+                    ImGui.TextColored(new Vector4(.4f, .7f, 1f, 1f), $"{Wiki}");
+                }
+                else
+                {
+                    ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.7f),
+                        "Info regarding this field has not been written.");
+                }
             }
         }
         else
         {
             // Headers
-            ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(internalName, "", true));
+            if (CFG.Current.Param_FieldNameInContextMenu)
+                ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(internalName, "", true));
         }
 
-        ImGui.Separator();
+
+        if (isNameMenu && (CFG.Current.Param_FieldNameInContextMenu || CFG.Current.Param_FieldDescriptionInContextMenu))
+            ImGui.Separator();
+
+        if (!isNameMenu)
+        {
+            ImGui.PopStyleVar();
+            return;
+        }
 
         if (showPinOptions)
         {
@@ -659,10 +701,13 @@ public class ParamRowEditor
                     pinned.Add(internalName);
                 }
             }
+
             if (isPinned)
             {
-                EditorDecorations.PinListReorderOptions(_paramEditor._projectSettings.PinnedFields[activeParam], internalName);
+                EditorDecorations.PinListReorderOptions(_paramEditor._projectSettings.PinnedFields[activeParam],
+                    internalName);
             }
+
             ImGui.Separator();
         }
 
