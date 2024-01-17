@@ -719,17 +719,17 @@ public class SettingsMenu
 
                 if (CFG.Current.ShowUITooltips)
                 {
-                    ShowHelpMarker("Repeat the label in the context menu.");
+                    ShowHelpMarker("Repeat the field name in the context menu.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Label in context menu", ref CFG.Current.Param_LabelInContextMenu);
+                ImGui.Checkbox("Field name in context menu", ref CFG.Current.Param_FieldNameInContextMenu);
 
                 if (CFG.Current.ShowUITooltips)
                 {
-                    ShowHelpMarker("Repeat the description in the context menu.");
+                    ShowHelpMarker("Repeat the field description in the context menu.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Description in context menu", ref CFG.Current.Param_DescriptionInContextMenu);
+                ImGui.Checkbox("Field description in context menu", ref CFG.Current.Param_FieldDescriptionInContextMenu);
 
                 if (CFG.Current.ShowUITooltips)
                 {

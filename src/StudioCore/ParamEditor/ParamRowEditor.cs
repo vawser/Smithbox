@@ -329,7 +329,7 @@ public class ParamRowEditor
                 if (!CFG.Current.Param_SplitContextMenu)
                     ImGui.OpenPopup("ParamRowCommonMenu");
                 else
-                    ImGui.OpenPopup("ParamRowLabelMenu");
+                    ImGui.OpenPopup("ParamRowNameMenu");
             }
 
             ImGui.SameLine();
@@ -360,7 +360,7 @@ public class ParamRowEditor
                     if (!CFG.Current.Param_SplitContextMenu)
                         ImGui.OpenPopup("ParamRowCommonMenu");
                     else
-                        ImGui.OpenPopup("ParamRowLabelMenu");
+                        ImGui.OpenPopup("ParamRowNameMenu");
                 }
             }
         }
@@ -509,7 +509,7 @@ public class ParamRowEditor
             ImGui.EndPopup();
         }
 
-        if (ImGui.BeginPopup("ParamRowLabelMenu"))
+        if (ImGui.BeginPopup("ParamRowNameMenu"))
         {
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, true);
@@ -652,7 +652,7 @@ public class ParamRowEditor
             EditorDecorations.ImGui_DisplayPropertyInfo(propType, internalName, isNameMenu, !isNameMenu, altName, col.Def.ArrayLength,
                 col.Def.BitSize);
 
-            if (isNameMenu && CFG.Current.Param_DescriptionInContextMenu)
+            if (isNameMenu && CFG.Current.Param_FieldDescriptionInContextMenu)
             {
                 if (Wiki != null)
                 {
@@ -668,12 +668,12 @@ public class ParamRowEditor
         else
         {
             // Headers
-            if (CFG.Current.Param_LabelInContextMenu)
+            if (CFG.Current.Param_FieldNameInContextMenu)
                 ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(internalName, "", true));
         }
 
 
-        if (isNameMenu && (CFG.Current.Param_LabelInContextMenu || CFG.Current.Param_DescriptionInContextMenu))
+        if (isNameMenu && (CFG.Current.Param_FieldNameInContextMenu || CFG.Current.Param_FieldDescriptionInContextMenu))
             ImGui.Separator();
 
         if (!isNameMenu)

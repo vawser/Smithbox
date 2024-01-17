@@ -868,7 +868,7 @@ public class EditorDecorations
             fieldName += $"  /  {altName}";
         }
 
-        if (CFG.Current.Param_LabelInContextMenu && printName)
+        if (CFG.Current.Param_FieldNameInContextMenu && printName)
         {
             ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(fieldName, "", true));
         }
