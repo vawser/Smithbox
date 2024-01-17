@@ -855,20 +855,29 @@ public class EditorDecorations
     /// </summary>
     public static void ImGui_DisplayPropertyInfo(PropertyInfo prop)
     {
-        ImGui_DisplayPropertyInfo(prop.PropertyType, prop.Name);
+        ImGui_DisplayPropertyInfo(prop.PropertyType, prop.Name, true, true);
     }
 
     /// <summary>
     ///     Displays information about the provided property.
     /// </summary>
-    public static void ImGui_DisplayPropertyInfo(Type propType, string fieldName, string altName = null, int arrayLength = -1, int bitSize = -1)
+    public static void ImGui_DisplayPropertyInfo(Type propType, string fieldName, bool printName, bool printType, string altName = null, int arrayLength = -1, int bitSize = -1)
     {
         if (!string.IsNullOrWhiteSpace(altName))
         {
             fieldName += $"  /  {altName}";
         }
 
-        ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(fieldName, "", true));
+        if (CFG.Current.Param_LabelInContextMenu && printName)
+        {
+            ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(fieldName, "", true));
+        }
+
+        if (CFG.Current.Param_SplitContextMenu && !printType)
+        {
+            return;
+        }
+
         if (bitSize != -1)
         {
             var str = $"Bitfield Type within: {fieldName}";
@@ -915,7 +924,5 @@ public class EditorDecorations
                 ImGui.TextColored(new Vector4(.4f, 1f, .7f, 1f), str);
             }
         }
-
-        ImGui.Separator();
     }
 }
