@@ -22,7 +22,6 @@ public class SettingsMenu
     private AssetLocator _locator;
 
     private KeyBind _currentKeyBind;
-    public bool FontRebuildRequest;
     public bool MenuOpenState;
     public ModelEditorScreen ModelEditor;
     public MsbEditorScreen MsbEditor;
@@ -73,14 +72,14 @@ public class SettingsMenu
                 {
                     // Round to 0.05
                     CFG.Current.UIScale = (float)Math.Round(CFG.Current.UIScale * 20) / 20;
-                    FontRebuildRequest = true;
+                    Smithbox.FontRebuildRequest = true;
                 }
 
                 ImGui.SameLine();
                 if (ImGui.Button("Reset"))
                 {
                     CFG.Current.UIScale = CFG.Default.UIScale;
-                    FontRebuildRequest = true;
+                    Smithbox.FontRebuildRequest = true;
                 }
             }
 
@@ -103,7 +102,7 @@ public class SettingsMenu
                     ImGui.SameLine();
                 }
                 if (ImGui.Checkbox("Chinese", ref CFG.Current.FontChinese))
-                    FontRebuildRequest = true;
+                    Smithbox.FontRebuildRequest = true;
 
                 if (CFG.Current.ShowUITooltips)
                 {
@@ -111,7 +110,7 @@ public class SettingsMenu
                     ImGui.SameLine();
                 }
                 if (ImGui.Checkbox("Korean", ref CFG.Current.FontKorean))
-                    FontRebuildRequest = true;
+                    Smithbox.FontRebuildRequest = true;
 
                 if (CFG.Current.ShowUITooltips)
                 {
@@ -119,7 +118,7 @@ public class SettingsMenu
                     ImGui.SameLine();
                 }
                 if (ImGui.Checkbox("Thai", ref CFG.Current.FontThai))
-                    FontRebuildRequest = true;
+                    Smithbox.FontRebuildRequest = true;
 
                 if (CFG.Current.ShowUITooltips)
                 {
@@ -127,7 +126,7 @@ public class SettingsMenu
                     ImGui.SameLine();
                 }
                 if (ImGui.Checkbox("Vietnamese", ref CFG.Current.FontVietnamese))
-                    FontRebuildRequest = true;
+                    Smithbox.FontRebuildRequest = true;
 
                 if (CFG.Current.ShowUITooltips)
                 {
@@ -135,7 +134,7 @@ public class SettingsMenu
                     ImGui.SameLine();
                 }
                 if (ImGui.Checkbox("Cyrillic", ref CFG.Current.FontCyrillic))
-                    FontRebuildRequest = true;
+                    Smithbox.FontRebuildRequest = true;
             }
 
             if (ImGui.CollapsingHeader("Project", ImGuiTreeNodeFlags.DefaultOpen))
