@@ -24,7 +24,7 @@ namespace Veldrid
     /// </summary>
     public unsafe class GraphicsDevice : IDisposable
     {
-        private static readonly FixedUtf8String s_name = "DSMapStudio";
+        private static readonly FixedUtf8String s_name = "Smithbox";
         private static readonly Lazy<bool> s_isSupported = new Lazy<bool>(CheckIsSupported, isThreadSafe: true);
         
         private readonly object _deferredDisposalLock = new object();

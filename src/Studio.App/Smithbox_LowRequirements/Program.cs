@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
-namespace DSMapStudio_LowRequirements
+namespace Smithbox_LowRequirements
 {
     public static class Program
     {
