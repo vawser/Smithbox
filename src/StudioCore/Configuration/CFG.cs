@@ -70,6 +70,7 @@ public class CFG
     public float GFX_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
     public float GFX_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
     public float GFX_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
+    public float GFX_Camera_Sensitivity { get; set; } = 0.0160f;
     public float GFX_RenderDistance_Max { get; set; } = 50000.0f;
     public float Map_ArbitraryRotation_X_Shift { get; set; } = 90.0f;
     public float Map_ArbitraryRotation_Y_Shift { get; set; } = 90.0f;

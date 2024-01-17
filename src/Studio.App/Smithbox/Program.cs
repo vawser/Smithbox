@@ -29,7 +29,7 @@ namespace Smithbox
             currentDomain.UnhandledException += CrashHandler;
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new InvalidOperationException());
             _version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "undefined";
-            var mapStudio = new Smithbox(new VulkanGraphicsContext(), _version);
+            var mapStudio = new StudioCore.Smithbox(new VulkanGraphicsContext(), _version);
 #if !DEBUG
             try
             {

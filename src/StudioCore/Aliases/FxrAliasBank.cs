@@ -51,17 +51,13 @@ public class FxrAliasBank
 
     public static void ReloadAliasBank()
     {
-        TaskManager.Run(new TaskManager.LiveTask("Event Flags - Load Names", TaskManager.RequeueType.None, false,
-            () =>
-            {
-                _loadedAliasBank = new FxrAliasContainer();
-                IsLoadingAliases = true;
+        _loadedAliasBank = new FxrAliasContainer();
+        IsLoadingAliases = true;
 
-                if (AssetLocator.Type != GameType.Undefined)
-                    LoadAliasNames();
+        if (AssetLocator.Type != GameType.Undefined)
+            LoadAliasNames();
 
-                IsLoadingAliases = false;
-            }));
+        IsLoadingAliases = false;
     }
 
     public static void SetAssetLocator(AssetLocator l)

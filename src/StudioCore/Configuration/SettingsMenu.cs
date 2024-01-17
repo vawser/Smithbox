@@ -299,6 +299,7 @@ public class SettingsMenu
 
                     MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.GFX_Camera_MoveSpeed_Slow;
                     CFG.Current.GFX_Camera_MoveSpeed_Slow = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
+                    CFG.Current.GFX_Camera_Sensitivity = CFG.Default.GFX_Camera_Sensitivity;
 
                     MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.GFX_Camera_MoveSpeed_Normal;
                     CFG.Current.GFX_Camera_MoveSpeed_Normal = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
@@ -316,6 +317,18 @@ public class SettingsMenu
                 }
                 if (ImGui.SliderFloat("Camera FOV", ref cam_fov, 40.0f, 140.0f))
                     CFG.Current.GFX_Camera_FOV = cam_fov;
+
+                var cam_sensitivity = CFG.Current.GFX_Camera_Sensitivity;
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Mouse sensitivty for turning the camera.");
+                    ImGui.SameLine();
+                }
+                if (ImGui.SliderFloat("Camera sensitivity", ref cam_sensitivity, 0.0f, 0.1f))
+                {
+                    CFG.Current.GFX_Camera_Sensitivity = cam_sensitivity;
+                }
 
                 var farClip = CFG.Current.GFX_RenderDistance_Max;
                 if (CFG.Current.ShowUITooltips)

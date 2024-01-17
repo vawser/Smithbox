@@ -259,12 +259,6 @@ public class WorldView
         mousePos = new Vector2(Utils.Lerp(oldMouse.X, InputTracker.MousePosition.X, clampedLerpF),
             Utils.Lerp(oldMouse.Y, InputTracker.MousePosition.Y, clampedLerpF));
 
-
-        //KeyboardState keyboard = DBG.EnableKeyboardInput ? Keyboard.GetState() : DBG.DisabledKeyboardState;
-        //int currentWheel = mouse.ScrollWheelValue;
-
-        //bool mouseInWindow = MapStudio.Active && mousePos.X >= game.ClientBounds.Left && mousePos.X < game.ClientBounds.Right && mousePos.Y > game.ClientBounds.Top && mousePos.Y < game.ClientBounds.Bottom;
-
         currentClickType = MouseClickType.None;
 
         if (InputTracker.GetMouseButton(MouseButton.Left))
@@ -531,21 +525,16 @@ public class WorldView
             }
             else
             {
+                int windowX = 0;
+                int windowY = 0;
+
                 Vector2 mouseDelta = MousePressedPos - InputTracker.MousePosition;
-                SDL.WarpMouseInWindow(window.SdlWindowHandle, (int)MousePressedPos.X, (int)MousePressedPos.Y);
 
-                if (mouseDelta.LengthSquared() == 0)
-                {
-                    // Prevents a meme
-                    //oldWheel = currentWheel;
-                    return true;
-                }
+                SDL.GetWindowPosition(window.SdlWindowHandle, ref windowX, ref windowY);
+                SDL.WarpMouseGlobal(windowX + (int)MousePressedPos.X, windowY + (int)MousePressedPos.Y);
 
-                //Mouse.SetPosition(game.ClientBounds.X + game.ClientBounds.Width / 2, game.ClientBounds.Y + game.ClientBounds.Height / 2);
-
-
-                var camH = mouseDelta.X * 1 * CameraTurnSpeedMouse * 0.0160f;
-                var camV = mouseDelta.Y * -1 * CameraTurnSpeedMouse * 0.0160f;
+                var camH = mouseDelta.X * 1 * CameraTurnSpeedMouse * CFG.Current.GFX_Camera_Sensitivity;
+                var camV = mouseDelta.Y * -1 * CameraTurnSpeedMouse * CFG.Current.GFX_Camera_Sensitivity;
 
                 if (IsOrbitCam && !isMoveLightKeyPressed)
                 {
@@ -560,7 +549,6 @@ public class WorldView
                     }
 
                     RotateCameraOrbit(camH, camV, Utils.PiOver2);
-                    //PointCameraToModel();
                 }
                 else if (isMoveLightKeyPressed)
                 {
@@ -575,12 +563,6 @@ public class WorldView
                     CameraTransform.EulerRotation = eu;
                 }
             }
-
-
-            //CameraTransform.Rotation.Z -= (float)Math.Cos(MathHelper.PiOver2 - CameraTransform.Rotation.Y) * camV;
-
-            //RotateCamera(mouseDelta.Y * -0.01f * (float)moveMult, 0, 0, moveMult);
-            //RotateCamera(0, mouseDelta.X * 0.01f * (float)moveMult, 0, moveMult);
         }
         else
         {
@@ -596,12 +578,6 @@ public class WorldView
             {
                 RotateCameraOrbit(0, 0, Utils.PiOver2);
             }
-
-            if (oldMouseClickL)
-            {
-                //Mouse.SetPosition((int)oldMouse.X, (int)oldMouse.Y);
-            }
-            //game.IsMouseVisible = true;
         }
 
 
