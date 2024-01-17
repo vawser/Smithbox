@@ -858,105 +858,56 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
-    ///     Updates entity's DrawGroups/DispGroups. Uses CollisionName DrawGroups if possible.
+    ///     Updates entity's render groups (DrawGroups/DispGroups). Uses CollisionName references if possible.
     /// </summary>
     private void UpdateDispDrawGroups()
     {
-        string colNameStr = null;
-        string[] partNameArray = null;
         RenderGroupRefName = "";
 
-        object renderStruct = null;
-        PropertyInfo myDrawProp = WrappedObject.GetType().GetProperty("DrawGroups");
-        PropertyInfo myDispProp = WrappedObject.GetType().GetProperty("DispGroups");
-
+        PropertyInfo myDrawProp = PropFinderUtil.FindProperty("DrawGroups", WrappedObject);
         if (myDrawProp == null)
         {
-            // Couldn't find DrawGroups. Check if this is post DS3 and drawgroups are in Unk1 struct.
-            PropertyInfo renderGroups = WrappedObject.GetType().GetProperty("Unk1");
-            if (renderGroups != null)
-            {
-                renderStruct = renderGroups.GetValue(WrappedObject);
-                myDrawProp = renderStruct.GetType().GetProperty("DrawGroups");
-                myDispProp = renderStruct.GetType().GetProperty("DisplayGroups");
-            }
+            HasRenderGroups = false;
+            return;
         }
+        PropertyInfo myDispProp = PropFinderUtil.FindProperty("DispGroups", WrappedObject);
+        myDispProp ??= PropFinderUtil.FindProperty("DisplayGroups", WrappedObject);
+        PropertyInfo myCollisionNameProp = PropFinderUtil.FindProperty("CollisionName", WrappedObject);
+        myCollisionNameProp ??= PropFinderUtil.FindProperty("CollisionPartName", WrappedObject);
 
-        PropertyInfo myCollisionNameProp = WrappedObject.GetType().GetProperty("CollisionName");
-        if (myCollisionNameProp == null)
-        {
-            myCollisionNameProp = WrappedObject.GetType().GetProperty("CollisionPartName");
-            if (myCollisionNameProp == null)
-            {
-                /*
-                * UnkPartNames is PROBABLY not a pseudo-CollisionName, but I might be wrong. Keep this code here until we know more.
-                //todo todo2: when UnkPartNames is figured out.
-                //TEST! DON'T KNOW ENOUGH ABOUT UNKPARTNAMES (or; how AEG assets handle CollisionName functionality) ATM TO DO THIS.
-                    //Don't know if it's s actually relevant to  drawgroup rendering (and which indicies do what)
-
-                myCollisionNameProp = WrappedObject.GetType().GetProperty("UnkPartNames"); //string[]
-                if (myCollisionNameProp != null)
-                {
-                    partNameArray = (string[])myCollisionNameProp.GetValue(WrappedObject);
-                    foreach (var str in partNameArray)
-                    {
-                        if (str != null && str != "")
-                        {
-                            colNameStr = str;
-                            break;
-                        }
-                    }
-                }
-                */
-            }
-        }
-
-        if (myDrawProp != null && myCollisionNameProp != null)
+        if (myDrawProp != null && myCollisionNameProp != null
+            && myCollisionNameProp.GetCustomAttribute<NoRenderGroupInheritence>() == null)
         {
             // Found DrawGroups and CollisionName
-            if (partNameArray == null) // Didn't get string from UnkPartNames
-            {
-                colNameStr =
-                    (string)myCollisionNameProp.GetValue(WrappedObject); // Get string in collisionName field
-            }
+            string collisionNameValue = (string)PropFinderUtil.FindPropertyValue(myCollisionNameProp, WrappedObject);
 
-            if (colNameStr != null && colNameStr != "")
+            if (collisionNameValue != null && collisionNameValue != "")
             {
                 // CollisionName field is not empty
-                RenderGroupRefName = colNameStr;
+                RenderGroupRefName = collisionNameValue;
 
-                Entity colNameEnt = Container.GetObjectByName(colNameStr); // Get entity referenced by collisionName
+                Entity colNameEnt = Container.GetObjectByName(collisionNameValue); // Get entity referenced by CollisionName
                 if (colNameEnt != null)
                 {
                     // Get DrawGroups from CollisionName reference
-                    PropertyInfo renderGroups_col = colNameEnt.WrappedObject.GetType().GetProperty("Unk1");
-                    if (renderGroups_col != null)
-                    {
-                        // This is post DS3 and drawgroups are in Unk1 struct.
-                        var renderStruct_col = renderGroups_col.GetValue(colNameEnt.WrappedObject);
+                    var colNamePropDraw = PropFinderUtil.FindProperty("DrawGroups", colNameEnt.WrappedObject);
+                    ;
+                    var colNamePropDisp = PropFinderUtil.FindProperty("DisplayGroups", colNameEnt.WrappedObject);
+                    ;
+                    colNamePropDisp ??= PropFinderUtil.FindProperty("DispGroups", colNameEnt.WrappedObject);
 
-                        Drawgroups = (uint[])renderStruct_col.GetType().GetProperty("DrawGroups")
-                            .GetValue(renderStruct_col);
-                        Dispgroups = (uint[])renderStruct_col.GetType().GetProperty("DisplayGroups")
-                            .GetValue(renderStruct_col);
-                    }
-                    else
-                    {
-                        Drawgroups = (uint[])colNameEnt.WrappedObject.GetType().GetProperty("DrawGroups")
-                            .GetValue(colNameEnt.WrappedObject);
-                        Dispgroups = (uint[])colNameEnt.WrappedObject.GetType().GetProperty("DispGroups")
-                            .GetValue(colNameEnt.WrappedObject);
-                    }
+                    Drawgroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDraw, colNameEnt.WrappedObject);
+                    Dispgroups = (uint[])PropFinderUtil.FindPropertyValue(colNamePropDisp, colNameEnt.WrappedObject);
                     return;
                 }
 
                 if (Universe.postLoad)
                 {
-                    if (colNameStr != "")
+                    if (collisionNameValue != "")
                     {
                         // CollisionName referenced doesn't exist
                         TaskLogs.AddLog(
-                            $"{Container?.Name}: {Name} references to CollisionName {colNameStr} which doesn't exist",
+                            $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
                             LogLevel.Warning);
                     }
                 }
@@ -965,17 +916,9 @@ public class Entity : ISelectable, IDisposable
 
         if (myDrawProp != null)
         {
-            //Found Drawgroups, but no CollisionName reference
-            if (renderStruct != null)
-            {
-                Drawgroups = (uint[])myDrawProp.GetValue(renderStruct);
-                Dispgroups = (uint[])myDispProp.GetValue(renderStruct);
-            }
-            else
-            {
-                Drawgroups = (uint[])myDrawProp.GetValue(WrappedObject);
-                Dispgroups = (uint[])myDispProp.GetValue(WrappedObject);
-            }
+            // Found Drawgroups, but no CollisionName reference
+            Drawgroups = (uint[])PropFinderUtil.FindPropertyValue(myDrawProp, WrappedObject);
+            Dispgroups = (uint[])PropFinderUtil.FindPropertyValue(myDispProp, WrappedObject);
             return;
         }
         HasRenderGroups = false;

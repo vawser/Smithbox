@@ -641,6 +641,7 @@ namespace SoulsFormats
                 /// Collision that controls loading of the enemy.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
+                [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
                 private int CollisionIndex;
 
