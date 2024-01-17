@@ -1,14 +1,16 @@
 ﻿using StudioCore.Scene;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
+using Veldrid.Utilities;
 
 namespace StudioCore.DebugPrimitives;
 
 public class DbgPrimWireGrid : DbgPrimWire
 {
     private readonly DbgPrimGeometryData GeometryData;
+
+    public override BoundingBox Bounds => new(new Vector3(Single.NegativeInfinity), new Vector3(Single.PositiveInfinity));
 
     public DbgPrimWireGrid(Color originColor, Color color, int unitRange, float unitSize)
     {
