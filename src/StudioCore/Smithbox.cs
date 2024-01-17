@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using Octokit;
+using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Aliases;
@@ -12,7 +13,6 @@ using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.Scene;
 using StudioCore.Settings;
 using StudioCore.Tests;
 using StudioCore.TextEditor;
@@ -25,9 +25,11 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
-using System.Threading;
 using Veldrid;
 using Veldrid.Sdl2;
+using Renderer = StudioCore.Scene.Renderer;
+using Thread = System.Threading.Thread;
+using Version = System.Version;
 
 namespace StudioCore;
 
@@ -42,7 +44,9 @@ public class Smithbox
 
     public static bool LowRequirementsMode;
 
-    private readonly IGraphicsContext _context;
+    private static IGraphicsContext _context;
+
+    public static bool FontRebuildRequest;
 
     private readonly NewProjectOptions _newProjectOptions = new();
     private readonly string _programTitle;
@@ -744,12 +748,13 @@ public class Smithbox
     {
         Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, "Imgui");
 
+        UpdateDpi();
         var scale = GetUIScale();
 
-        if (_settingsMenu.FontRebuildRequest)
+        if (FontRebuildRequest)
         {
             _context.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, SetupFonts);
-            _settingsMenu.FontRebuildRequest = false;
+            FontRebuildRequest = false;
         }
         else
         {
@@ -1426,9 +1431,36 @@ public class Smithbox
         _firstframe = false;
     }
 
+    private const float DefaultDpi = 96f;
+    private static float _dpi = DefaultDpi;
+
+    private static float Dpi
+    {
+        get => _dpi;
+        set
+        {
+            if (Math.Abs(value - _dpi) > 0.9f)
+                FontRebuildRequest = true;
+            _dpi = value;
+        }
+    }
+
+    private static unsafe void UpdateDpi()
+    {
+        if (SdlProvider.SDL.IsValueCreated && _context?.Window != null)
+        {
+            var window = _context.Window.SdlWindowHandle;
+            int index = SdlProvider.SDL.Value.GetWindowDisplayIndex(window);
+            float ddpi = 96f;
+            float _ = 0f;
+            SdlProvider.SDL.Value.GetDisplayDPI(index, ref ddpi, ref _, ref _);
+
+            Dpi = ddpi;
+        }
+    }
+
     public static float GetUIScale()
     {
-        // TODO: Multiply by monitor DPI when available.
-        return CFG.Current.UIScale;
+        return CFG.Current.UIScale / DefaultDpi * Dpi;
     }
 }
