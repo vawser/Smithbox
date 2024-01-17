@@ -13,7 +13,7 @@ using StudioCore.Graphics;
 using StudioCore.Platform;
 using Veldrid.Sdl2;
 
-namespace DSMapStudio
+namespace Smithbox
 {
     public static class Program
     {
