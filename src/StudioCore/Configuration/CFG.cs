@@ -152,6 +152,7 @@ public class CFG
     // Settings: Model Editor
 
     // Settings: Param Editor
+    public bool Param_MasseditPopupInContextMenu = true;
     public bool Param_AdvancedMassedit = false;
     public bool Param_AllowFieldReorder = true;
     public bool Param_AlphabeticalParams = true;

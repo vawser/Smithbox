@@ -649,7 +649,8 @@ public class ParamRowEditor
 
         if (col != null)
         {
-            EditorDecorations.ImGui_DisplayPropertyInfo(propType, internalName, isNameMenu, !isNameMenu, altName, col.Def.ArrayLength,
+            EditorDecorations.ImGui_DisplayPropertyInfo(propType, internalName, isNameMenu, !isNameMenu, altName,
+                col.Def.ArrayLength,
                 col.Def.BitSize);
 
             if (isNameMenu && CFG.Current.Param_FieldDescriptionInContextMenu)
@@ -819,27 +820,45 @@ public class ParamRowEditor
         }
 
         ImGui.Separator();
-        if (ImGui.CollapsingHeader("Mass edit", ImGuiTreeNodeFlags.SpanFullWidth))
+        if (!CFG.Current.Param_MasseditPopupInContextMenu)
         {
-            ImGui.Separator();
-            if (ImGui.Selectable("Manually..."))
+            if (ImGui.Selectable("Mass edit"))
             {
                 EditorCommandQueue.AddCommand(
                     $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
             }
 
-            if (ImGui.Selectable("Reset to vanilla..."))
+            if (ImGui.Selectable("Reset to vanilla"))
             {
-                EditorCommandQueue.AddCommand(
-                    $@"param/menu/massEditRegex/selection && !added: {Regex.Escape(internalName)}: = vanilla;");
+                MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
+                    $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
+                    _paramEditor._activeView._selection);
             }
-
-            ImGui.Separator();
-            var res = AutoFill.MassEditOpAutoFill();
-            if (res != null)
+        }
+        else
+        {
+            if (ImGui.CollapsingHeader("Mass edit", ImGuiTreeNodeFlags.SpanFullWidth))
             {
-                EditorCommandQueue.AddCommand(
-                    $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: " + res);
+                ImGui.Separator();
+                if (ImGui.Selectable("Manually..."))
+                {
+                    EditorCommandQueue.AddCommand(
+                        $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
+                }
+
+                if (ImGui.Selectable("Reset to vanilla..."))
+                {
+                    EditorCommandQueue.AddCommand(
+                        $@"param/menu/massEditRegex/selection && !added: {Regex.Escape(internalName)}: = vanilla;");
+                }
+
+                ImGui.Separator();
+                var res = AutoFill.MassEditOpAutoFill();
+                if (res != null)
+                {
+                    EditorCommandQueue.AddCommand(
+                        $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: " + res);
+                }
             }
         }
     }
