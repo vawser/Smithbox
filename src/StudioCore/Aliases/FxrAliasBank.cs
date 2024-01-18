@@ -101,11 +101,18 @@ public class FxrAliasBank
 
             string jsonString = JsonSerializer.Serialize<FxrAliasResource>(targetBank, options);
 
-            FileStream fs = new FileStream(resourceFilePath, FileMode.Create);
-            byte[] data = Encoding.ASCII.GetBytes(jsonString);
-            fs.Write(data, 0, data.Length);
-            fs.Flush();
-            fs.Close();
+            try
+            {
+                FileStream fs = new FileStream(resourceFilePath, FileMode.Create);
+                byte[] data = Encoding.ASCII.GetBytes(jsonString);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"{ex}");
+            }
         }
     }
 

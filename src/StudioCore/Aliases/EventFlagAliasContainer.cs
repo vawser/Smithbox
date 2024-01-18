@@ -14,15 +14,15 @@ namespace StudioCore.Aliases;
 
 public class EventFlagAliasContainer
 {
-    private EventFlagAliasResource flagEntries = new EventFlagAliasResource();
+    private EventFlagAliasResource entries = new EventFlagAliasResource();
 
     public EventFlagAliasContainer()
     {
-        flagEntries = null;
+        entries = null;
     }
     public EventFlagAliasContainer(string gametype, string gameModDirectory)
     {
-        flagEntries = LoadJSON(gametype, gameModDirectory);
+        entries = LoadJSON(gametype, gameModDirectory);
     }
 
     private EventFlagAliasResource LoadJSON(string gametype, string gameModDirectory)
@@ -113,8 +113,8 @@ public class EventFlagAliasContainer
         return baseResource;
     }
 
-    public List<EventFlagAliasReference> GetFlagEntries()
+    public List<EventFlagAliasReference> GetEntries()
     {
-        return flagEntries.list;
+        return entries.list;
     }
 }

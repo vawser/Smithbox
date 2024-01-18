@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Browsers;
 
@@ -26,6 +27,10 @@ public class EventFlagBrowser
     private string _refUpdateId = "";
     private string _refUpdateName = "";
     private string _refUpdateTags = "";
+
+    private string _newRefId = "";
+    private string _newRefName = "";
+    private string _newRefTags = "";
 
     private string _selectedName;
 
@@ -75,7 +80,77 @@ public class EventFlagBrowser
             }
 
             ImGui.SameLine();
+            if (ImGui.Button("Toggle Alias Addition"))
+            {
+                CFG.Current.EventFlagBrowser_ShowEntryAddition = !CFG.Current.EventFlagBrowser_ShowEntryAddition;
+            }
+
+            ImGui.SameLine();
+            if (CFG.Current.ShowUITooltips)
+            {
+                Utils.ShowHelpMarker("When enabled the Browser List will display the tags next to the name.");
+                ImGui.SameLine();
+            }
             ImGui.Checkbox("Show Tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
+
+            if (CFG.Current.EventFlagBrowser_ShowEntryAddition)
+            {
+                ImGui.Separator();
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    Utils.ShowHelpMarker("The numeric ID of the alias to add.");
+                    ImGui.SameLine();
+                }
+                ImGui.InputText($"ID", ref _newRefId, 255);
+                if (CFG.Current.ShowUITooltips)
+                {
+                    Utils.ShowHelpMarker("The name of the alias to add.");
+                    ImGui.SameLine();
+                }
+                ImGui.InputText($"Name", ref _newRefName, 255);
+                if (CFG.Current.ShowUITooltips)
+                {
+                    Utils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
+                    ImGui.SameLine();
+                }
+                ImGui.InputText($"Tags", ref _newRefTags, 255);
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    Utils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
+                    ImGui.SameLine();
+                }
+                if (ImGui.Button("Add New Alias"))
+                {
+                    // Make sure the ref ID is a number
+                    if (Regex.IsMatch(_newRefId, @"^\d+$"))
+                    {
+                        bool isValid = true;
+
+                        var entries = EventFlagAliasBank._loadedAliasBank.GetEntries();
+
+                        foreach (var entry in entries)
+                        {
+                            if (_newRefId == entry.id)
+                                isValid = false;
+                        }
+
+                        if (isValid)
+                        {
+                            EventFlagAliasBank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
+                            ImGui.CloseCurrentPopup();
+                            reloadEventFlagAlias = true;
+                        }
+                        else
+                        {
+                            PlatformUtils.Instance.MessageBox($"Event Flag Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+                ImGui.Separator();
+            }
 
             ImGui.Columns(1);
 
@@ -88,7 +163,7 @@ public class EventFlagBrowser
 
             ImGui.BeginChild("EventFlagList");
 
-            DisplaySelectionList(EventFlagAliasBank.AliasNames.GetFlagEntries());
+            DisplaySelectionList(EventFlagAliasBank.AliasNames.GetEntries());
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -124,7 +199,7 @@ public class EventFlagBrowser
             _searchInputCache = _searchInput;
         }
 
-        var entries = EventFlagAliasBank._loadedAliasBank.GetFlagEntries();
+        var entries = EventFlagAliasBank._loadedAliasBank.GetEntries();
 
         foreach (var entry in entries)
         {
@@ -141,7 +216,7 @@ public class EventFlagBrowser
                 displayedName = $"{displayedName} {{ {tagString} }}";
             }
 
-            if (Utils.IsReferenceSearchFilterMatch(_searchInput, refID, refName, refTagList))
+            if (Utils.IsFlagSearchFilterMatch(_searchInput, refID, refName, refTagList))
             {
                 if (ImGui.Selectable(displayedName))
                 {
@@ -177,6 +252,7 @@ public class EventFlagBrowser
                             ImGui.CloseCurrentPopup();
                             reloadEventFlagAlias = true;
                         }
+                        ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
                             EventFlagAliasBank.RemoveFromLocalAliasBank(_refUpdateId);

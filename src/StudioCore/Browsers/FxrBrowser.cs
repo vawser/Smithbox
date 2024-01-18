@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Browsers;
 
@@ -24,6 +25,10 @@ public class FxrBrowser
     private string _refUpdateId = "";
     private string _refUpdateName = "";
     private string _refUpdateTags = "";
+
+    private string _newRefId = "";
+    private string _newRefName = "";
+    private string _newRefTags = "";
 
     private string _selectedName;
 
@@ -67,7 +72,77 @@ public class FxrBrowser
             }
 
             ImGui.SameLine();
+            if (ImGui.Button("Toggle Alias Addition"))
+            {
+                CFG.Current.FxrBrowser_ShowEntryAddition = !CFG.Current.FxrBrowser_ShowEntryAddition;
+            }
+
+            ImGui.SameLine();
+            if (CFG.Current.ShowUITooltips)
+            {
+                Utils.ShowHelpMarker("When enabled the Browser List will display the tags next to the name.");
+                ImGui.SameLine();
+            }
             ImGui.Checkbox("Show Tags", ref CFG.Current.FxrBrowser_ShowTagsInBrowser);
+
+            if (CFG.Current.FxrBrowser_ShowEntryAddition)
+            {
+                ImGui.Separator();
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    Utils.ShowHelpMarker("The numeric ID of the alias to add.");
+                    ImGui.SameLine();
+                }
+                ImGui.InputText($"ID", ref _newRefId, 255);
+                if (CFG.Current.ShowUITooltips)
+                {
+                    Utils.ShowHelpMarker("The name of the alias to add.");
+                    ImGui.SameLine();
+                }
+                ImGui.InputText($"Name", ref _newRefName, 255);
+                if (CFG.Current.ShowUITooltips)
+                {
+                    Utils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
+                    ImGui.SameLine();
+                }
+                ImGui.InputText($"Tags", ref _newRefTags, 255);
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    Utils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
+                    ImGui.SameLine();
+                }
+                if (ImGui.Button("Add New Alias"))
+                {
+                    // Make sure the ref ID is a number
+                    if (Regex.IsMatch(_newRefId, @"^\d+$"))
+                    {
+                        bool isValid = true;
+
+                        var entries = FxrAliasBank._loadedAliasBank.GetEntries();
+
+                        foreach (var entry in entries)
+                        {
+                            if (_newRefId == entry.id)
+                                isValid = false;
+                        }
+
+                        if (isValid)
+                        {
+                            FxrAliasBank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
+                            ImGui.CloseCurrentPopup();
+                            reloadFxrAlias = true;
+                        }
+                        else
+                        {
+                            PlatformUtils.Instance.MessageBox($"FXR Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+                ImGui.Separator();
+            }
 
             ImGui.Columns(1);
 
@@ -133,7 +208,7 @@ public class FxrBrowser
                 displayedName = $"{displayedName} {{ {tagString} }}";
             }
 
-            if (Utils.IsReferenceSearchFilterMatch(_searchInput, refID, refName, refTagList))
+            if (Utils.IsParticleSearchFilterMatch(_searchInput, refID, refName, refTagList))
             {
                 if (ImGui.Selectable(displayedName))
                 {
@@ -169,6 +244,7 @@ public class FxrBrowser
                             ImGui.CloseCurrentPopup();
                             reloadFxrAlias = true;
                         }
+                        ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
                             FxrAliasBank.RemoveFromLocalAliasBank(_refUpdateId);
@@ -182,7 +258,10 @@ public class FxrBrowser
 
                 if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                 {
-                    PlatformUtils.Instance.SetClipboardText(refID);
+                    string numId = refID.Replace("f", "");
+                    int num = int.Parse(numId);
+
+                    PlatformUtils.Instance.SetClipboardText(num.ToString());
                 }
             }
         }

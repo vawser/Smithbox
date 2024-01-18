@@ -177,14 +177,17 @@ public class CFG
     public bool FMG_ShowOriginalNames = false;
 
     // Settings: Browsers
-    public bool EventFlagBrowser_Open = false;
-    public bool FxrBrowser_Open = false;
-
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_UpdateSelectionName = true;
     public bool AssetBrowser_SuspendListWhenInViewport = true;
+
+    public bool EventFlagBrowser_Open = false;
     public bool EventFlagBrowser_ShowTagsInBrowser = true;
+    public bool EventFlagBrowser_ShowEntryAddition = false;
+
+    public bool FxrBrowser_Open = false;
     public bool FxrBrowser_ShowTagsInBrowser = true;
+    public bool FxrBrowser_ShowEntryAddition = false;
 
     // CFG
     public static CFG Current { get; private set; }
