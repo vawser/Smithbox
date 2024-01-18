@@ -917,6 +917,16 @@ public class ParamBank
         {
             TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
         }
+
+        string eventParam = AssetLocator.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        if (File.Exists(eventParam))
+        {
+            LoadParamsERFromFile(eventParam, false);
+        }
+        else
+        {
+            TaskLogs.AddLog("Eventparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
+        }
     }
 
     private void LoadVParamsER()
@@ -927,6 +937,12 @@ public class ParamBank
         if (File.Exists(sysParam))
         {
             LoadParamsERFromFile(sysParam, false);
+        }
+
+        var eventParam = $@"{AssetLocator.GameRootDirectory}\param\eventparam\eventparam.parambnd.dcx";
+        if (File.Exists(eventParam))
+        {
+            LoadParamsERFromFile(eventParam, false);
         }
     }
 
@@ -1897,6 +1913,14 @@ public class ParamBank
             using BND4 sysParams = BND4.Read(sysParam);
             OverwriteParamsER(sysParams);
             Utils.WriteWithBackup(dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+        }
+
+        string eventParam = AssetLocator.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        if (File.Exists(eventParam))
+        {
+            using BND4 eventParams = BND4.Read(eventParam);
+            OverwriteParamsER(eventParams);
+            Utils.WriteWithBackup(dir, mod, @"param\eventparam\eventparam.parambnd.dcx", eventParams);
         }
 
         _pendingUpgrade = false;
