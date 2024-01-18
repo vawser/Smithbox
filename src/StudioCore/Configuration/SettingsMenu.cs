@@ -645,10 +645,11 @@ public class SettingsMenu
 
                 if (CFG.Current.ShowUITooltips)
                 {
-                    ShowHelpMarker("Show additional options within the MassEdit context menu.");
+                    ShowHelpMarker("Show additional options for advanced users within the massedit popup.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Show advanced massedit options", ref CFG.Current.Param_AdvancedMassedit);
+
+                ImGui.Checkbox("Show advanced options in massedit popup", ref CFG.Current.Param_AdvancedMassedit);
 
                 if (CFG.Current.ShowUITooltips)
                 {
@@ -743,6 +744,15 @@ public class SettingsMenu
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Field description in context menu", ref CFG.Current.Param_FieldDescriptionInContextMenu);
+
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker(@"If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.
+If disabled, simply shows a shortcut to the manual massedit entry element.
+(The full menu is still available from the manual popup)");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Full massedit popup in context menu", ref CFG.Current.Param_MasseditPopupInContextMenu);
 
                 if (CFG.Current.ShowUITooltips)
                 {
