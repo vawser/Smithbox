@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using StudioCore.Aliases;
 using StudioCore.Help;
 using StudioCore.JSON;
+using StudioCore.Platform;
 using StudioCore.Settings;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ public class EventFlagBrowser
     public void ToggleMenuVisibility()
     {
         MenuOpenState = !MenuOpenState;
+        CFG.Current.EventFlagBrowser_Open = !CFG.Current.EventFlagBrowser_Open;
     }
 
     public void Display()
@@ -126,21 +128,20 @@ public class EventFlagBrowser
 
         foreach (var entry in entries)
         {
-            var displayedName = $"{entry.name}";
-            var lowerName = entry.name.ToLower();
+            var displayedName = $"{entry.id} - {entry.name}";
 
             var refID = $"{entry.id}";
             var refName = $"{entry.name}";
             var refTagList = entry.tags;
 
             // Append tags to to displayed name
-            if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
+            if (CFG.Current.EventFlagBrowser_ShowTagsInBrowser)
             {
                 var tagString = string.Join(" ", refTagList);
                 displayedName = $"{displayedName} {{ {tagString} }}";
             }
 
-            if (Utils.IsSearchFilterMatch(_searchInput, lowerName, refName, refTagList))
+            if (Utils.IsReferenceSearchFilterMatch(_searchInput, refID, refName, refTagList))
             {
                 if (ImGui.Selectable(displayedName))
                 {
@@ -189,7 +190,9 @@ public class EventFlagBrowser
 
                 if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                 {
-                    // Copy to clipboard
+                    long num = long.Parse(refID.Replace("f", ""));
+
+                    PlatformUtils.Instance.SetClipboardText($"{num}");
                 }
             }
         }

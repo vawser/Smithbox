@@ -1102,30 +1102,30 @@ public static class Utils
     /// <summary>
     /// Returns true is the input string (whole or part) matches a filename, reference name or tag.
     /// </summary>
-    public static bool IsSearchFilterMatch(string inputStr, string fileName, string referenceName, List<string> tags)
+    public static bool IsAssetSearchFilterMatch(string inputStr, string refId, string refName, List<string> refTags)
     {
         bool match = false;
 
-        string curInput = inputStr.Trim().ToLower();
-        string lowerFileName = fileName.ToLower();
-        string lowerReferenceName = referenceName.ToLower();
+        string lowerInputStr = inputStr.Trim().ToLower();
+        string lowerRefId = refId.ToLower();
+        string lowerRefName = refName.ToLower();
 
-        if (curInput.Equals(""))
+        if (lowerInputStr.Equals(""))
         {
             match = true; // If input is empty, show all
             return match;
         }
 
         // Match: Filename
-        if (curInput == lowerFileName)
+        if (lowerInputStr == lowerRefId)
             match = true;
 
         // Match: Reference Name
-        if (curInput == lowerReferenceName)
+        if (lowerInputStr == lowerRefName)
             match = true;
 
         // Match: Reference Segments
-        string[] refSegments = lowerReferenceName.Split(" ");
+        string[] refSegments = lowerRefName.Split(" ");
         foreach (string refStr in refSegments)
         {
             string curString = refStr;
@@ -1152,30 +1152,98 @@ public static class Utils
             if (curString.Contains(']'))
                 curString = curString.Replace("]", "");
 
-            if (curInput == curString.Trim())
+            if (lowerInputStr == curString.Trim())
                 match = true;
         }
 
         // Match: Tags
-        foreach (string tagStr in tags)
+        foreach (string tagStr in refTags)
         {
-            if (curInput == tagStr.ToLower())
+            if (lowerInputStr == tagStr.ToLower())
                 match = true;
         }
 
         // Match: AEG Category
-        if (!curInput.Equals("") && curInput.All(char.IsDigit))
+        if (!lowerInputStr.Equals("") && lowerInputStr.All(char.IsDigit))
         {
-            if (lowerFileName.Contains("aeg") && lowerFileName.Contains("_"))
+            if (lowerRefId.Contains("aeg") && lowerRefId.Contains("_"))
             {
-                string[] parts = lowerFileName.Split("_");
+                string[] parts = lowerRefId.Split("_");
                 string aegCategory = parts[0].Replace("aeg", "");
 
-                if (curInput == aegCategory)
+                if (lowerInputStr == aegCategory)
                 {
                     match = true;
                 }
             }
+        }
+
+        return match;
+    }
+
+    /// <summary>
+    /// Returns true is the input string (whole or part) matches a filename, reference name or tag.
+    /// </summary>
+    /// TODO: allow a looser match for the AEG000 sections
+    public static bool IsReferenceSearchFilterMatch(string inputStr, string refId, string refName, List<string> refTags)
+    {
+        bool match = false;
+
+        string lowerInputStr = inputStr.ToLower();
+        string lowerRefId = refId.ToLower();
+        string lowerRefName = refName.ToLower();
+
+        if (lowerInputStr.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
+        }
+
+        // Match: ID
+        if (lowerInputStr == lowerRefId)
+            match = true;
+
+        // Match: Reference Name
+        if (lowerInputStr == lowerRefName)
+            match = true;
+
+        // Match: Reference Segments
+        string[] refSegments = lowerRefName.Split(" ");
+        foreach (string refStr in refSegments)
+        {
+            string curString = refStr;
+
+            // Remove common brackets so the match ignores them
+            if (curString.Contains('('))
+                curString = curString.Replace("(", "");
+
+            if (curString.Contains(')'))
+                curString = curString.Replace(")", "");
+
+            if (curString.Contains('{'))
+                curString = curString.Replace("{", "");
+
+            if (curString.Contains('}'))
+                curString = curString.Replace("}", "");
+
+            if (curString.Contains('('))
+                curString = curString.Replace("(", "");
+
+            if (curString.Contains('['))
+                curString = curString.Replace("[", "");
+
+            if (curString.Contains(']'))
+                curString = curString.Replace("]", "");
+
+            if (lowerInputStr == curString.Trim())
+                match = true;
+        }
+
+        // Match: Tags
+        foreach (string tagStr in refTags)
+        {
+            if (lowerInputStr == tagStr.ToLower())
+                match = true;
         }
 
         return match;

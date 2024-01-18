@@ -140,10 +140,15 @@ public class Viewport : IViewport
             Vector2 s = ImGui.GetWindowSize();
             Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
             ResizeViewport(_device, newvp);
+
             if (InputTracker.GetMouseButtonDown(MouseButton.Right) && MouseInViewport())
             {
-                ImGui.SetWindowFocus();
-                ViewportSelected = true;
+                // If floating browsers are open, do not switch focus to the viewport, as it messes with the right-click context menu
+                if (!CFG.Current.EventFlagBrowser_Open && !CFG.Current.FxrBrowser_Open)
+                {
+                    ImGui.SetWindowFocus();
+                    ViewportSelected = true;
+                }
             }
             else if (!InputTracker.GetMouseButton(MouseButton.Right))
             {

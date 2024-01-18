@@ -227,7 +227,7 @@ namespace StudioCore.MsbEditor
                         refTagList = referenceDict[lowerName].tags;
                     }
 
-                    if (Utils.IsSearchFilterMatch(_searchStrInput, lowerName, refName, refTagList))
+                    if (Utils.IsAssetSearchFilterMatch(_searchStrInput, lowerName, refName, refTagList))
                     {
                         if (ImGui.Selectable(displayedName))
                         {
@@ -359,7 +359,7 @@ namespace StudioCore.MsbEditor
                             refTagList = referenceDict[lowerName].tags;
                         }
 
-                        if (Utils.IsSearchFilterMatch(_searchStrInput, lowerName, refName, refTagList))
+                        if (Utils.IsAssetSearchFilterMatch(_searchStrInput, lowerName, refName, refTagList))
                         {
                             if (ImGui.Selectable(displayedName))
                             {

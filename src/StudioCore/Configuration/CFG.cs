@@ -177,6 +177,9 @@ public class CFG
     public bool FMG_ShowOriginalNames = false;
 
     // Settings: Browsers
+    public bool EventFlagBrowser_Open = false;
+    public bool FxrBrowser_Open = false;
+
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_UpdateSelectionName = true;
     public bool AssetBrowser_SuspendListWhenInViewport = true;
