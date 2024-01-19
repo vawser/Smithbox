@@ -56,8 +56,6 @@ public class Viewport : IViewport
     private bool _vpvisible;
     private bool DebugRayCastDraw = false;
 
-    private DbgPrimWireGrid ViewportGrid;
-
     public int X;
     public int Y;
 
@@ -78,7 +76,6 @@ public class Viewport : IViewport
 
         WorldView = new WorldView(new Rectangle(0, 0, Width, Height));
         _viewPipeline = new SceneRenderPipeline(scene, device, width, height);
-        ViewportGrid = new DbgPrimWireGrid(Color.Green, Color.DarkGreen, 50, 5.0f);
 
         _projectionMat = Utils.CreatePerspective(device, false,
             CFG.Current.GFX_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, NearClip, FarClip);
