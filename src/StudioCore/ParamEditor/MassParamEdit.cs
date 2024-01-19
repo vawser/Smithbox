@@ -555,7 +555,7 @@ public class MassParamEditRegex
         }
         catch (Exception e)
         {
-            errHelper = "Unknown error";
+            errHelper = e.Message;
         }
 
         if (res == null && col.Item1 == PseudoColumn.ID)
@@ -817,6 +817,29 @@ public class MEValueOperation : MEOperation<object, object>
         operations.Add("min",
             (new[] { "number" }, "Returns the smaller of the current value and number",
                 (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Min(v, double.Parse(args[0])))));
+
+        operations.Add("round",
+            (new[] { "number" }, "Rounds the current value to the specified amount of decimals",
+                (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v => Math.Round(double.Parse(v), int.Parse(args[0]), MidpointRounding.AwayFromZero))));
+        operations.Add("roundMode",
+            (new[] { "number", "rounding mode" }, "Rounds the current value to the specified amount of decimals using the specified mode. Options are \"up\", \"down\" and \"even\".",
+                (ctx, args) => MassParamEdit.WithDynamicOf(ctx, v =>
+                {
+                    var mode = MidpointRounding.AwayFromZero;
+                    switch (args[1])
+                    {
+                        case "up":
+                            mode = MidpointRounding.ToPositiveInfinity;
+                            break;
+                        case "down":
+                            mode = MidpointRounding.ToNegativeInfinity;
+                            break;
+                        case "even":
+                            mode = MidpointRounding.ToEven;
+                            break;
+                    }
+                    return Math.Round(double.Parse(v), int.Parse(args[0]), mode);
+                })));
     }
 }
 
