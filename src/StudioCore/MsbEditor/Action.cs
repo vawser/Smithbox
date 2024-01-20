@@ -236,7 +236,7 @@ public class MultipleEntityPropertyChangeAction : Action
         ChangedEnts = changedEnts;
         foreach (Entity o in changedEnts)
         {
-            var propObj = Utilities.PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, classIndex, false);
+            var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, classIndex, false);
             var change = new PropertyChange
             {
                 ChangedObj = propObj, Property = prop, NewValue = newval, ArrayIndex = index

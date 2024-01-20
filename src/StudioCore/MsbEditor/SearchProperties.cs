@@ -444,7 +444,7 @@ public class SearchProperties
                             {
                                 if (ob is MapEntity e)
                                 {
-                                    var value = Utilities.PropFinderUtil.FindPropertyValue(Property, ob.WrappedObject, _propSearchMatchNameOnly);
+                                    var value = PropFinderUtil.FindPropertyValue(Property, ob.WrappedObject, _propSearchMatchNameOnly);
 
                                     if (value == null)
                                     {
