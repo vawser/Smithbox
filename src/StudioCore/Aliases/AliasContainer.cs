@@ -15,14 +15,6 @@ namespace StudioCore.Aliases;
 
 public class AliasContainer
 {
-    private enum AliasType
-    {
-        None,
-        Model,
-        EventFlag,
-        Particle
-    }
-
     private Dictionary<string, AliasResource> aliasMap = new Dictionary<string, AliasResource>();
 
     private AliasType aliasType;
@@ -32,26 +24,25 @@ public class AliasContainer
         aliasMap = null;
         aliasType = AliasType.None;
     }
-    public AliasContainer(string aliasName, string gametype, string gameModDirectory)
+    public AliasContainer(AliasType _aliasType, string gametype, string gameModDirectory)
     {
-        if(aliasName == "Models")
+        aliasType = _aliasType;
+
+        if (aliasType is AliasType.Model)
         {
-            aliasType = AliasType.Model;
             aliasMap.Add("Characters", LoadJSON(gametype, "Chr", gameModDirectory));
             aliasMap.Add("Objects", LoadJSON(gametype, "Obj", gameModDirectory));
             aliasMap.Add("Parts", LoadJSON(gametype, "Part", gameModDirectory));
             aliasMap.Add("MapPieces", LoadJSON(gametype, "MapPiece", gameModDirectory));
         }
 
-        if (aliasName == "Flags")
+        if (aliasType is AliasType.EventFlag)
         {
-            aliasType = AliasType.EventFlag;
             aliasMap.Add("Flags", LoadJSON(gametype, "EventFlag", gameModDirectory));
         }
 
-        if (aliasName == "Particles")
+        if (aliasType is AliasType.Particle)
         {
-            aliasType = AliasType.Particle;
             aliasMap.Add("Particles", LoadJSON(gametype, "Fxr", gameModDirectory));
         }
     }

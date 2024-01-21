@@ -10,6 +10,14 @@ using System.Text;
 
 namespace StudioCore.Aliases;
 
+public enum AliasType
+{
+    None,
+    Model,
+    EventFlag,
+    Particle
+}
+
 public class AliasBank
 {
     private AssetLocator AssetLocator;
@@ -31,15 +39,38 @@ public class AliasBank
 
     private string AliasName = "";
 
-    public AliasBank(string _aliasName, AssetLocator locator, string _aliasDir, string _filename, bool _isAssetFileType = false)
+    private AliasType aliasType;
+
+    public AliasBank(AssetLocator locator, AliasType _aliasType)
     {
         AssetLocator = locator;
         mayReloadAliasBank = false;
 
-        AliasName = _aliasName;
-        AliasDirectory = _aliasDir;
-        FileName = _filename;
-        IsAssetFileType = _isAssetFileType;
+        aliasType = _aliasType;
+
+        if (aliasType is AliasType.Model)
+        {
+            AliasName = "Models";
+            AliasDirectory = "Models";
+            FileName = "";
+            IsAssetFileType = true;
+        }
+
+        if (aliasType is AliasType.EventFlag)
+        {
+            AliasName = "Flags";
+            AliasDirectory = "Flags";
+            FileName = "EventFlag";
+            IsAssetFileType = false;
+        }
+
+        if (aliasType is AliasType.Particle)
+        {
+            AliasName = "Particles";
+            AliasDirectory = "Particles";
+            FileName = "Fxr";
+            IsAssetFileType = false;
+        }
     }
 
     public AliasContainer AliasNames
@@ -57,7 +88,7 @@ public class AliasBank
     {
         try
         {
-            _loadedAliasBank = new AliasContainer(AliasName, AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
+            _loadedAliasBank = new AliasContainer(aliasType, AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
         }
         catch (Exception e)
         {

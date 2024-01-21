@@ -112,9 +112,9 @@ public class Smithbox
 
         _assetLocator = new AssetLocator();
 
-        aliasBank_Models = new AliasBank("Models", _assetLocator, "Models", "", true);
-        aliasBank_Flags = new AliasBank("Flags", _assetLocator, "Flags", "EventFlag");
-        aliasBank_Particles = new AliasBank("Particles", _assetLocator, "Particles", "Fxr");
+        aliasBank_Models = new AliasBank(_assetLocator, AliasType.Model);
+        aliasBank_Flags = new AliasBank(_assetLocator, AliasType.EventFlag);
+        aliasBank_Particles = new AliasBank(_assetLocator, AliasType.Particle);
 
         aliasBank_Models.ReloadAliasBank();
         aliasBank_Flags.ReloadAliasBank();
