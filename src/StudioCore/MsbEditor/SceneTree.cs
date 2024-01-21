@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Gui;
@@ -93,10 +94,16 @@ public class SceneTree : IActionEventHandler
 
     private ViewMode _viewMode = ViewMode.ObjectType;
 
+    private AliasBank _modelAliasBank;
     private AliasBank _mapAliasBank;
 
+    private Dictionary<string, string> _chrAliasCache;
+    private Dictionary<string, string> _objAliasCache;
+    private Dictionary<string, string> _mapPieceAliasCache;
+
+
     public SceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe,
-        Selection sel, ActionManager aman, IViewport vp, AssetLocator al, AliasBank mapAliasBank)
+        Selection sel, ActionManager aman, IViewport vp, AssetLocator al, AliasBank modelAliasBank, AliasBank mapAliasBank)
     {
         _handler = handler;
         _id = id;
@@ -106,12 +113,17 @@ public class SceneTree : IActionEventHandler
         _viewport = vp;
         _assetLocator = al;
         _configuration = configuration;
+        _modelAliasBank = modelAliasBank;
         _mapAliasBank = mapAliasBank;
 
         if (_configuration == Configuration.ModelEditor)
         {
             _viewMode = ViewMode.Hierarchy;
         }
+
+        _chrAliasCache = null;
+        _objAliasCache = null;
+        _mapPieceAliasCache = null;
     }
 
     public void OnActionEvent(ActionEvent evt)
@@ -121,6 +133,7 @@ public class SceneTree : IActionEventHandler
             _cachedTypeView = null;
         }
     }
+
 
     private void RebuildTypeViewCache(Map map)
     {
@@ -260,7 +273,43 @@ public class SceneTree : IActionEventHandler
         else
         {
             _mapEnt_ImGuiID++;
-            if (ImGui.Selectable(padding + e.PrettyName + "##" + _mapEnt_ImGuiID,
+
+            string name = e.PrettyName;
+            string aliasedName = name;
+            var modelName = e.GetPropertyValue<string>("ModelName");
+
+            if (CFG.Current.SceneView_ShowCharacterNames)
+            {
+                if (e.IsEnemyPart())
+                {
+                    if (_chrAliasCache != null && _chrAliasCache.ContainsKey(modelName))
+                    {
+                        aliasedName = $"{name} {_chrAliasCache[modelName]}";
+                    }
+                    else
+                    {
+                        foreach (var entry in _modelAliasBank.AliasNames.GetEntries("Characters"))
+                        {
+                            if (modelName == entry.id)
+                            {
+                                aliasedName = $" {{ {entry.name} }}";
+
+                                if (_chrAliasCache == null)
+                                {
+                                    _chrAliasCache = new Dictionary<string, string>();
+                                }
+
+                                if (!_chrAliasCache.ContainsKey(entry.id))
+                                {
+                                    _chrAliasCache.Add(modelName, aliasedName);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (ImGui.Selectable(padding + aliasedName + "##" + _mapEnt_ImGuiID,
                     _selection.GetSelection().Contains(e),
                     ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap))
             {

@@ -87,12 +87,18 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
+    private AliasBank _modelAliasBank;
+    private AliasBank _mapAliasBank;
+
     public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank modelAliasBank, AliasBank mapAliasBank)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
         ResourceManager.Locator = AssetLocator;
         Window = window;
+
+        _modelAliasBank = modelAliasBank;
+        _mapAliasBank = mapAliasBank;
 
         if (device != null)
         {
@@ -107,12 +113,12 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         Universe = new Universe(AssetLocator, RenderScene, _selection);
 
-        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport, AssetLocator, mapAliasBank);
-        PropEditor = new PropertyEditor(EditorActionManager, _propCache, mapAliasBank);
+        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport, AssetLocator, _modelAliasBank, _mapAliasBank);
+        PropEditor = new PropertyEditor(EditorActionManager, _propCache, _mapAliasBank);
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
-        AssetBrowser = new MsbAssetBrowser(RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, modelAliasBank, mapAliasBank);
+        AssetBrowser = new MsbAssetBrowser(RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, _modelAliasBank, _mapAliasBank);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }

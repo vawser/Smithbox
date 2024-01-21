@@ -1131,6 +1131,14 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// Returns true if this entity is an Enemy
+    /// </summary>
+    public bool IsEnemyPart()
+    {
+        return WrappedObject is MSB1.Part.Enemy || WrappedObject is MSB3.Part.Enemy || WrappedObject is MSB_AC6.Part.Enemy || WrappedObject is MSBB.Part.Enemy || WrappedObject is MSBD.Part.Enemy || WrappedObject is MSBE.Part.Enemy || WrappedObject is MSBS.Part.Enemy ? true : false;
+    }
+
+    /// <summary>
     /// Dipose of this entity.
     /// </summary>
     protected virtual void Dispose(bool disposing)

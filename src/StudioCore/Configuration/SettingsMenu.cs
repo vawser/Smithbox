@@ -470,6 +470,16 @@ public class SettingsMenu
                     }
             }
 
+            if(ImGui.CollapsingHeader("Scene View"))
+            {
+                if (CFG.Current.ShowUITooltips)
+                {
+                    ShowHelpMarker("Characters names will be displayed within the scene view list.");
+                    ImGui.SameLine();
+                }
+                ImGui.Checkbox("Display character names", ref CFG.Current.SceneView_ShowCharacterNames);
+            }
+
             if (ImGui.CollapsingHeader("Selection"))
             {
                 var arbitrary_rotation_x = CFG.Current.Map_ArbitraryRotation_X_Shift;
