@@ -59,15 +59,16 @@ public class Smithbox
     private readonly List<EditorScreen> _editors;
     private EditorScreen _focusedEditor;
 
-    // Floating windows
+    // Shared Windows
     private readonly HelpBrowser _helpBrowser;
     private readonly SettingsMenu _settingsMenu;
-
-    private EventFlagAliasBank eventFlagAliasBank;
-    private FxrAliasBank fxrAliasBank;
-
     private readonly EventFlagBrowser _eventFlagBrowser;
     private readonly FxrBrowser _fxrBrowser;
+
+    // Alias Banks
+    private ModelAliasBank modelAliasBank;
+    private EventFlagAliasBank eventFlagAliasBank;
+    private FxrAliasBank fxrAliasBank;
 
     private readonly SoapstoneService _soapstoneService;
     private readonly string _version;
@@ -111,8 +112,17 @@ public class Smithbox
 
         _assetLocator = new AssetLocator();
 
-        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator);
-        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator);
+        modelAliasBank = new ModelAliasBank(_assetLocator);
+        modelAliasBank.ReloadAliasBank();
+
+        eventFlagAliasBank = new EventFlagAliasBank(_assetLocator);
+        eventFlagAliasBank.ReloadAliasBank();
+
+        fxrAliasBank = new FxrAliasBank(_assetLocator);
+        fxrAliasBank.ReloadAliasBank();
+
+        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator, modelAliasBank);
+        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator, modelAliasBank);
         ParamEditorScreen paramEditor = new(_context.Window, _context.Device, _assetLocator);
         TextEditorScreen textEditor = new(_context.Window, _context.Device, _assetLocator);
         _editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor };
@@ -126,21 +136,11 @@ public class Smithbox
         _settingsMenu.ParamEditor = paramEditor;
         _settingsMenu.TextEditor = textEditor;
 
-
-        eventFlagAliasBank = new EventFlagAliasBank(_assetLocator);
-        eventFlagAliasBank.ReloadAliasBank();
-
-        fxrAliasBank = new FxrAliasBank(_assetLocator);
-        fxrAliasBank.ReloadAliasBank();
-
         _helpBrowser = new HelpBrowser("HelpBrowser", _assetLocator);
-
         _eventFlagBrowser = new EventFlagBrowser("EventFlagBrowser", _assetLocator, eventFlagAliasBank);
         _fxrBrowser = new FxrBrowser("FxrBrowser", _assetLocator, fxrAliasBank);
 
         MapAliasBank.SetAssetLocator(_assetLocator);
-        ModelAliasBank.SetAssetLocator(_assetLocator);
-
         ParamBank.PrimaryBank.SetAssetLocator(_assetLocator);
         ParamBank.VanillaBank.SetAssetLocator(_assetLocator);
         FMGBank.SetAssetLocator(_assetLocator);
@@ -435,7 +435,8 @@ public class Smithbox
         _settingsMenu.ProjSettings = _projectSettings;
 
         MapAliasBank.ReloadMapAliases();
-        ModelAliasBank.ReloadAliasBank();
+
+        modelAliasBank.ReloadAliasBank();
         fxrAliasBank.ReloadAliasBank();
         eventFlagAliasBank.ReloadAliasBank();
 

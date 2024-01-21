@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Gui;
@@ -86,7 +87,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
+    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, ModelAliasBank aliasBank)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
@@ -111,7 +112,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
-        AssetBrowser = new MsbAssetBrowser(RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport);
+        AssetBrowser = new MsbAssetBrowser(RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, aliasBank);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }

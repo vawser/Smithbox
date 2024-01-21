@@ -17,6 +17,7 @@ using StudioCore.Configuration;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using SoulsFormats;
+using StudioCore.Aliases;
 
 namespace StudioCore.MsbEditor;
 
@@ -50,7 +51,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
+    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, ModelAliasBank aliasBank)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
@@ -73,7 +74,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         _sceneTree = new SceneTree(SceneTree.Configuration.ModelEditor, this, "modeledittree", _universe,
             _selection, EditorActionManager, Viewport, AssetLocator);
         _propEditor = new PropertyEditor(EditorActionManager, _propCache);
-        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", AssetLocator);
+        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", AssetLocator, aliasBank);
     }
 
     public void OnInstantiateChr(string chrid)

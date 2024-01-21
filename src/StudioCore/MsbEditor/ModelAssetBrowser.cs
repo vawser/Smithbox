@@ -33,6 +33,8 @@ namespace StudioCore.MsbEditor
 
         private AssetLocator _assetLocator;
 
+        private ModelAliasBank _aliasBank;
+
         private string _selectedAssetType = null;
         private string _selectedAssetTypeCache = null;
 
@@ -48,13 +50,13 @@ namespace StudioCore.MsbEditor
 
         private string _selectedName;
 
-        private bool reloadModelAlias = false;
-
-        public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator)
+        public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator, ModelAliasBank aliasBank)
         {
             _id = id;
             _assetLocator = locator;
             _handler = handler;
+
+            _aliasBank = aliasBank;
 
             _selectedName = null;
         }
@@ -87,7 +89,7 @@ namespace StudioCore.MsbEditor
             if (_assetLocator.Type == GameType.Undefined)
                 return;
 
-            if (ModelAliasBank.IsLoadingAliases)
+            if (_aliasBank.IsLoadingAliases)
                 return;
 
             if (ImGui.Begin($@"Asset Browser##{_id}"))
@@ -113,20 +115,20 @@ namespace StudioCore.MsbEditor
 
                 ImGui.BeginChild("AssetList");
 
-                DisplayAssetSelectionList("Chr", ModelAliasBank._loadedAliasBank.GetChrEntries());
-                DisplayAssetSelectionList("Obj", ModelAliasBank._loadedAliasBank.GetObjEntries());
-                DisplayAssetSelectionList("Part", ModelAliasBank._loadedAliasBank.GetPartEntries());
-                DisplayMapAssetSelectionList("MapPiece", ModelAliasBank._loadedAliasBank.GetMapPieceEntries());
+                DisplayAssetSelectionList("Chr", _aliasBank.AliasNames.GetChrEntries());
+                DisplayAssetSelectionList("Obj", _aliasBank.AliasNames.GetObjEntries());
+                DisplayAssetSelectionList("Part", _aliasBank.AliasNames.GetPartEntries());
+                DisplayMapAssetSelectionList("MapPiece", _aliasBank.AliasNames.GetMapPieceEntries());
 
                 ImGui.EndChild();
                 ImGui.EndChild();
             }
             ImGui.End();
 
-            if (reloadModelAlias)
+            if (_aliasBank.mayReloadAliasBank)
             {
-                reloadModelAlias = false;
-                ModelAliasBank.ReloadAliasBank();
+                _aliasBank.mayReloadAliasBank = false;
+                _aliasBank.ReloadAliasBank();
             }
         }
         private void DisplayAssetTypeSelectionList()
@@ -267,17 +269,17 @@ namespace StudioCore.MsbEditor
 
                                 if (ImGui.Button("Update"))
                                 {
-                                    ModelAliasBank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                    _aliasBank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
                                     ImGui.CloseCurrentPopup();
-                                    reloadModelAlias = true;
+                                    _aliasBank.mayReloadAliasBank = true;
                                 }
 
                                 ImGui.SameLine();
                                 if (ImGui.Button("Restore Default"))
                                 {
-                                    ModelAliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+                                    _aliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
                                     ImGui.CloseCurrentPopup();
-                                    reloadModelAlias = true;
+                                    _aliasBank.mayReloadAliasBank = true;
                                 }
 
                                 ImGui.EndPopup();
@@ -399,17 +401,17 @@ namespace StudioCore.MsbEditor
 
                                     if (ImGui.Button("Update"))
                                     {
-                                        ModelAliasBank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                        _aliasBank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
                                         ImGui.CloseCurrentPopup();
-                                        reloadModelAlias = true;
+                                        _aliasBank.mayReloadAliasBank = true;
                                     }
 
                                     ImGui.SameLine();
                                     if (ImGui.Button("Restore Default"))
                                     {
-                                        ModelAliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+                                        _aliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
                                         ImGui.CloseCurrentPopup();
-                                        reloadModelAlias = true;
+                                        _aliasBank.mayReloadAliasBank = true;
                                     }
 
                                     ImGui.EndPopup();
