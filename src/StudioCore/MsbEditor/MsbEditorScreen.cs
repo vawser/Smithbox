@@ -87,7 +87,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, ModelAliasBank aliasBank)
+    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank aliasBank)
     {
         Rect = window.Bounds;
         AssetLocator = locator;

@@ -421,9 +421,10 @@
     <None Update="Assets\GameOffsets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Upgrader\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Help\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\ModelAliases\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\FxrAliases\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\EventFlagAliases\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Aliases\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Aliases\Flags\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Aliases\Models\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Aliases\Particles\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

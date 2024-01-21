@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Aliases
 {
-    public class EventFlagAliasReference
+    public class AliasReference
     {
         public string id { get; set; }
         public string name { get; set; }

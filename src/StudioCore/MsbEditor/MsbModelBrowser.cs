@@ -60,9 +60,9 @@ namespace StudioCore.MsbEditor
         private bool updateScrollPosition = false;
         private float _currentScrollY;
 
-        private ModelAliasBank _aliasBank;
+        private AliasBank _aliasBank;
 
-        public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, MsbEditorScreen editor, IViewport viewport, ModelAliasBank aliasBank)
+        public MsbAssetBrowser(RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, MsbEditorScreen editor, IViewport viewport, AliasBank aliasBank)
         {
             _scene = scene;
             _selection = sel;
@@ -155,9 +155,9 @@ namespace StudioCore.MsbEditor
 
                 if (!disableListGeneration)
                 {
-                    DisplayAssetSelectionList("Chr", _aliasBank.AliasNames.GetChrEntries());
-                    DisplayAssetSelectionList("Obj", _aliasBank.AliasNames.GetObjEntries());
-                    DisplayMapAssetSelectionList("MapPiece", _aliasBank.AliasNames.GetMapPieceEntries());
+                    DisplayAssetSelectionList("Chr", _aliasBank.AliasNames.GetEntries("Characters"));
+                    DisplayAssetSelectionList("Obj", _aliasBank.AliasNames.GetEntries("Objects"));
+                    DisplayMapAssetSelectionList("MapPiece", _aliasBank.AliasNames.GetEntries("MapPieces"));
                 }
 
                 ImGui.EndChild();
@@ -238,7 +238,7 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Chr, Obj/AEG and Parts.
         /// </summary>
-        private void DisplayAssetSelectionList(string assetType, List<ModelAliasReference> referenceList)
+        private void DisplayAssetSelectionList(string assetType, List<AliasReference> referenceList)
         {
             if (updateScrollPosition)
             {
@@ -246,9 +246,9 @@ namespace StudioCore.MsbEditor
                 ImGui.SetScrollY(_currentScrollY);
             }
 
-            Dictionary<string, ModelAliasReference> referenceDict = new Dictionary<string, ModelAliasReference>();
+            Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
 
-            foreach (ModelAliasReference v in referenceList)
+            foreach (AliasReference v in referenceList)
             {
                 if(!referenceDict.ContainsKey(v.id))
                     referenceDict.Add(v.id, v);
@@ -366,11 +366,11 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Display the asset selection list for Map Pieces.
         /// </summary>
-        private void DisplayMapAssetSelectionList(string assetType, List<ModelAliasReference> referenceList)
+        private void DisplayMapAssetSelectionList(string assetType, List<AliasReference> referenceList)
         {
-            Dictionary<string, ModelAliasReference> referenceDict = new Dictionary<string, ModelAliasReference>();
+            Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
 
-            foreach (ModelAliasReference v in referenceList)
+            foreach (AliasReference v in referenceList)
             {
                 if (!referenceDict.ContainsKey(v.id))
                     referenceDict.Add(v.id, v);

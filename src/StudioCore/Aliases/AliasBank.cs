@@ -10,31 +10,39 @@ using System.Text;
 
 namespace StudioCore.Aliases;
 
-public class EventFlagAliasBank
+public class AliasBank
 {
     private AssetLocator AssetLocator;
 
-    public EventFlagAliasContainer _loadedAliasBank { get; set; }
+    public AliasContainer _loadedAliasBank { get; set; }
 
-    public bool IsLoadingAliases { get; private set; }
-
-    private string ProgramDirectory = ".smithbox";
-
-    private string AliasDirectory = "EventFlagAliases";
-
-    private string FileName = "EventFlag.json";
+    public bool IsLoadingAliases { get; set; }
+    public bool mayReloadAliasBank { get; set; }
 
     private string TemplateName = "Template.json";
 
-    public bool mayReloadAliasBank { get; set; }
+    private string ProgramDirectory = ".smithbox";
 
-    public EventFlagAliasBank(AssetLocator locator)
+    private string AliasDirectory = "";
+
+    private string FileName = "";
+
+    private bool IsAssetFileType = false;
+
+    private string AliasName = "";
+
+    public AliasBank(string _aliasName, AssetLocator locator, string _aliasDir, string _filename, bool _isAssetFileType = false)
     {
         AssetLocator = locator;
         mayReloadAliasBank = false;
+
+        AliasName = _aliasName;
+        AliasDirectory = _aliasDir;
+        FileName = _filename;
+        IsAssetFileType = _isAssetFileType;
     }
 
-    public EventFlagAliasContainer AliasNames
+    public AliasContainer AliasNames
     {
         get
         {
@@ -49,7 +57,7 @@ public class EventFlagAliasBank
     {
         try
         {
-            _loadedAliasBank = new EventFlagAliasContainer(AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
+            _loadedAliasBank = new AliasContainer(AliasName, AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
         }
         catch (Exception e)
         {
@@ -59,18 +67,22 @@ public class EventFlagAliasBank
 
     public void ReloadAliasBank()
     {
-        _loadedAliasBank = new EventFlagAliasContainer();
-        IsLoadingAliases = true;
+        TaskManager.Run(new TaskManager.LiveTask($"{AliasName} - Load Aliases", TaskManager.RequeueType.None, false,
+        () =>
+        {
+            _loadedAliasBank = new AliasContainer();
+            IsLoadingAliases = true;
 
-        if (AssetLocator.Type != GameType.Undefined)
-            LoadAliasNames();
+            if (AssetLocator.Type != GameType.Undefined)
+                LoadAliasNames();
 
-        IsLoadingAliases = false;
+            IsLoadingAliases = false;
+        }));
     }
 
-    public EventFlagAliasResource LoadTargetAliasBank(string path)
+    public AliasResource LoadTargetAliasBank(string path)
     {
-        var newResource = new EventFlagAliasResource();
+        var newResource = new AliasResource();
 
         if (File.Exists(path))
         {
@@ -82,18 +94,22 @@ public class EventFlagAliasBank
 
             using (var stream = File.OpenRead(path))
             {
-                newResource = JsonSerializer.Deserialize<EventFlagAliasResource>(stream, options);
+                newResource = JsonSerializer.Deserialize<AliasResource>(stream, options);
             }
         }
 
         return newResource;
     }
 
-    public void WriteTargetAliasBank(EventFlagAliasResource targetBank)
+    public void WriteTargetAliasBank(AliasResource targetBank, string assetType)
     {
-        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
-        var resourceFilePath = $"{modResourcePath}\\{FileName}";
+        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+
+        var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
+
+        if (IsAssetFileType)
+            resourceFilePath = $"{modResourcePath}\\{assetType}.json";
+            
 
         if (File.Exists(resourceFilePath))
         {
@@ -102,7 +118,7 @@ public class EventFlagAliasBank
                 TypeInfoResolver = new DefaultJsonTypeInfoResolver()
             };
 
-            string jsonString = JsonSerializer.Serialize<EventFlagAliasResource>(targetBank, options);
+            string jsonString = JsonSerializer.Serialize<AliasResource>(targetBank, options);
 
             try
             {
@@ -112,18 +128,23 @@ public class EventFlagAliasBank
                 fs.Flush();
                 fs.Dispose();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 TaskLogs.AddLog($"{ex}");
             }
         }
     }
 
-    public void AddToLocalAliasBank(string refID, string refName, string refTags)
+    public void AddToLocalAliasBank(string assetType, string refID, string refName, string refTags)
     {
-        var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
-        var resourceFilePath = $"{modResourcePath}\\{FileName}";
+        var templateResource = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{TemplateName}";
+        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+
+        var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
+
+        if (IsAssetFileType)
+            resourceFilePath = $"{modResourcePath}\\{assetType}.json";
+        
 
         // Create directory/file if they don't exist
         if (!Directory.Exists(modResourcePath))
@@ -135,7 +156,7 @@ public class EventFlagAliasBank
             File.Copy(templateResource, resourceFilePath);
         }
 
-        // Load up the target local alias bank.
+        // Load up the target local model alias bank.
         var targetResource = LoadTargetAliasBank(resourceFilePath);
 
         bool doesExist = false;
@@ -169,7 +190,7 @@ public class EventFlagAliasBank
         // If it doesn't exist in the mod local file, add it in
         if (!doesExist)
         {
-            EventFlagAliasReference entry = new EventFlagAliasReference();
+            AliasReference entry = new AliasReference();
             entry.id = refID;
             entry.name = refName;
             entry.tags = new List<string>();
@@ -192,16 +213,20 @@ public class EventFlagAliasBank
             targetResource.list.Add(entry);
         }
 
-        WriteTargetAliasBank(targetResource);
+        WriteTargetAliasBank(targetResource, assetType);
     }
 
     /// <summary>
     /// Removes specified reference from local model alias bank.
     /// </summary>
-    public void RemoveFromLocalAliasBank(string refID)
+    public void RemoveFromLocalAliasBank(string assetType, string refID)
     {
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
-        var resourceFilePath = $"{modResourcePath}\\{FileName}";
+        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+
+        var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
+
+        if (IsAssetFileType)
+            resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
         // Load up the target local model alias bank. 
         var targetResource = LoadTargetAliasBank(resourceFilePath);
@@ -217,6 +242,6 @@ public class EventFlagAliasBank
             }
         }
 
-        WriteTargetAliasBank(targetResource);
+        WriteTargetAliasBank(targetResource, assetType);
     }
 }

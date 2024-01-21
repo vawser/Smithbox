@@ -51,7 +51,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, ModelAliasBank aliasBank)
+    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank aliasBank)
     {
         Rect = window.Bounds;
         AssetLocator = locator;

@@ -32,9 +32,9 @@ public class FxrBrowser
 
     private string _selectedName;
 
-    public FxrAliasBank _aliasBank;
+    public AliasBank _aliasBank;
 
-    public FxrBrowser(string id, AssetLocator locator, FxrAliasBank aliasBank)
+    public FxrBrowser(string id, AssetLocator locator, AliasBank aliasBank)
     {
         _id = id;
         _locator = locator;
@@ -121,7 +121,7 @@ public class FxrBrowser
                     {
                         bool isValid = true;
 
-                        var entries = _aliasBank.AliasNames.GetEntries();
+                        var entries = _aliasBank.AliasNames.GetEntries("Particles");
 
                         foreach (var entry in entries)
                         {
@@ -131,7 +131,7 @@ public class FxrBrowser
 
                         if (isValid)
                         {
-                            _aliasBank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
+                            _aliasBank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                             ImGui.CloseCurrentPopup();
                             _aliasBank.mayReloadAliasBank = true;
                         }
@@ -156,7 +156,7 @@ public class FxrBrowser
 
             ImGui.BeginChild("ParticleFlagList");
 
-            DisplaySelectionList(_aliasBank.AliasNames.GetEntries());
+            DisplaySelectionList(_aliasBank.AliasNames.GetEntries("Particles"));
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -177,11 +177,11 @@ public class FxrBrowser
     /// <summary>
     /// Display the fxr selection list
     /// </summary>
-    private void DisplaySelectionList(List<FxrAliasReference> referenceList)
+    private void DisplaySelectionList(List<AliasReference> referenceList)
     {
-        Dictionary<string, FxrAliasReference> referenceDict = new Dictionary<string, FxrAliasReference>();
+        Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
 
-        foreach (FxrAliasReference v in referenceList)
+        foreach (AliasReference v in referenceList)
         {
             if (!referenceDict.ContainsKey(v.id))
                 referenceDict.Add(v.id, v);
@@ -192,7 +192,7 @@ public class FxrBrowser
             _searchInputCache = _searchInput;
         }
 
-        var entries = _aliasBank.AliasNames.GetEntries();
+        var entries = _aliasBank.AliasNames.GetEntries("Particles");
 
         foreach (var entry in entries)
         {
@@ -241,14 +241,14 @@ public class FxrBrowser
 
                         if (ImGui.Button("Update"))
                         {
-                            _aliasBank.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+                            _aliasBank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
                             _aliasBank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            _aliasBank.RemoveFromLocalAliasBank(_refUpdateId);
+                            _aliasBank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
                             _aliasBank.mayReloadAliasBank = true;
                         }

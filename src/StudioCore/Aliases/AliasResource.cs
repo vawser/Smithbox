@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Aliases
 {
-    public class ModelAliasReference
+    public class AliasResource
     {
-        public string id { get; set; }
-        public string name { get; set; }
-        public List<string> tags { get; set; }
+        public List<AliasReference> list { get; set; }
     }
 }

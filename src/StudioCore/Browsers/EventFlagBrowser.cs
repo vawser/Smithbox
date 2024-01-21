@@ -34,9 +34,9 @@ public class EventFlagBrowser
 
     private string _selectedName;
 
-    public EventFlagAliasBank _aliasBank;
+    public AliasBank _aliasBank;
 
-    public EventFlagBrowser(string id, AssetLocator locator, EventFlagAliasBank aliasBank)
+    public EventFlagBrowser(string id, AssetLocator locator, AliasBank aliasBank)
     {
         _id = id;
         _locator = locator;
@@ -129,7 +129,7 @@ public class EventFlagBrowser
                     {
                         bool isValid = true;
 
-                        var entries = _aliasBank.AliasNames.GetEntries();
+                        var entries = _aliasBank.AliasNames.GetEntries("Flags");
 
                         foreach (var entry in entries)
                         {
@@ -139,7 +139,7 @@ public class EventFlagBrowser
 
                         if (isValid)
                         {
-                            _aliasBank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
+                            _aliasBank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                             ImGui.CloseCurrentPopup();
                             _aliasBank.mayReloadAliasBank = true;
                         }
@@ -164,7 +164,7 @@ public class EventFlagBrowser
 
             ImGui.BeginChild("EventFlagList");
 
-            DisplaySelectionList(_aliasBank.AliasNames.GetEntries());
+            DisplaySelectionList(_aliasBank.AliasNames.GetEntries("Flags"));
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -185,11 +185,11 @@ public class EventFlagBrowser
     /// <summary>
     /// Display the event flag selection list
     /// </summary>
-    private void DisplaySelectionList(List<EventFlagAliasReference> referenceList)
+    private void DisplaySelectionList(List<AliasReference> referenceList)
     {
-        Dictionary<string, EventFlagAliasReference> referenceDict = new Dictionary<string, EventFlagAliasReference>();
+        Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
 
-        foreach (EventFlagAliasReference v in referenceList)
+        foreach (AliasReference v in referenceList)
         {
             if (!referenceDict.ContainsKey(v.id))
                 referenceDict.Add(v.id, v);
@@ -200,7 +200,7 @@ public class EventFlagBrowser
             _searchInputCache = _searchInput;
         }
 
-        var entries = _aliasBank._loadedAliasBank.GetEntries();
+        var entries = _aliasBank.AliasNames.GetEntries("Flags");
 
         foreach (var entry in entries)
         {
@@ -249,14 +249,14 @@ public class EventFlagBrowser
 
                         if (ImGui.Button("Update"))
                         {
-                            _aliasBank.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+                            _aliasBank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
                             _aliasBank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            _aliasBank.RemoveFromLocalAliasBank(_refUpdateId);
+                            _aliasBank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
                             _aliasBank.mayReloadAliasBank = true;
                         }
