@@ -4,6 +4,9 @@ using System.Numerics;
 
 namespace StudioCore;
 
+/// <summary>
+/// Struct that holds Position, Rotation, Scale and Override Matrix information.
+/// </summary>
 public struct Transform
 {
     public static readonly Transform Default = new(Vector3.Zero, Vector3.Zero, Vector3.One);

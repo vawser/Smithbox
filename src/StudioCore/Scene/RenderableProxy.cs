@@ -14,7 +14,7 @@ using Vortice.Vulkan;
 namespace StudioCore.Scene;
 
 /// <summary>
-///     Model marker type for meshes that may not be visible in the editor (c0000, fogwalls, etc)
+/// Model marker type for meshes that may not be visible in the editor (c0000, fogwalls, etc)
 /// </summary>
 public enum ModelMarkerType
 {
@@ -26,9 +26,9 @@ public enum ModelMarkerType
 }
 
 /// <summary>
-///     Proxy class that represents a connection between the logical scene
-///     heirarchy and the actual underlying renderable representation. Used to handle
-///     things like renderable construction, selection, hiding/showing, etc
+/// Proxy class that represents a connection between the logical scene
+/// heirarchy and the actual underlying renderable representation. Used to handle
+/// things like renderable construction, selection, hiding/showing, etc
 /// </summary>
 public abstract class RenderableProxy : Renderer.IRendererUpdatable, IDisposable
 {

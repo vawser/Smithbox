@@ -5,6 +5,13 @@
 /// </summary>
 public interface ISelectable
 {
+    /// <summary>
+    /// Function executed upon selection.
+    /// </summary>
     public void OnSelected();
+
+    /// <summary>
+    /// Function executed upon deselection.
+    /// </summary>
     public void OnDeselected();
 }

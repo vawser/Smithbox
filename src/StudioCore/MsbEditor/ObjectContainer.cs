@@ -56,6 +56,9 @@ public class ObjectContainer
         Objects.Clear();
     }
 
+    /// <summary>
+    /// Return an Entity that has a Name that the passed Name.
+    /// </summary>
     public Entity GetObjectByName(string name)
     {
         foreach (Entity m in Objects)

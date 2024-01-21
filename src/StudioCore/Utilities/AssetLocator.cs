@@ -66,8 +66,8 @@ public class AssetDescription
 }
 
 /// <summary>
-///     Exposes an interface to retrieve game assets from the various souls games. Also allows layering
-///     of an additional mod directory on top of the game assets.
+/// Exposes an interface to retrieve game assets from the various souls games. Also allows layering
+/// of an additional mod directory on top of the game assets.
 /// </summary>
 public class AssetLocator
 {

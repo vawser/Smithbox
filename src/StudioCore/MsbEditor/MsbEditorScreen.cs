@@ -22,15 +22,29 @@ using Viewport = StudioCore.Gui.Viewport;
 
 namespace StudioCore.MsbEditor;
 
+/// <summary>
+/// Main interface for the MSB Editor.
+/// </summary>
 public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 {
-    private const int RECENT_FILES_MAX = 32;
-
+    /// <summary>
+    /// Lock variable used to handle pauses to the Update() function.
+    /// </summary>
     private static readonly object _lock_PauseUpdate = new();
+
+    /// <summary>
+    /// Current entity selection within the viewport.
+    /// </summary>
     private Selection _selection = new();
 
+    /// <summary>
+    /// Asset locator for game files.
+    /// </summary>
     public readonly AssetLocator AssetLocator;
 
+    /// <summary>
+    /// Active modal window.
+    /// </summary>
     private IModal _activeModal;
 
     private int _createEntityMapIndex;
@@ -42,12 +56,14 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     private bool _PauseUpdate;
     private ProjectSettings _projectSettings;
     private List<(string, Type)> _regionClasses = new();
-    public bool AltHeld;
 
+    public bool AltHeld;
     public bool CtrlHeld;
+
+    public ActionManager EditorActionManager = new();
+
     public DisplayGroupsEditor DispGroupEditor;
     public MsbAssetBrowser AssetBrowser;
-    public ActionManager EditorActionManager = new();
 
     private bool GCNeedsCollection;
 
@@ -80,8 +96,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         if (device != null)
         {
             RenderScene = new RenderScene();
-            Viewport = new Viewport("Mapeditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width,
-                Rect.Height);
+            Viewport = new Viewport("Mapeditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width, Rect.Height);
             RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
         }
         else
@@ -91,8 +106,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         Universe = new Universe(AssetLocator, RenderScene, _selection);
 
-        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection,
-            EditorActionManager, Viewport, AssetLocator);
+        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport, AssetLocator);
         PropEditor = new PropertyEditor(EditorActionManager, _propCache);
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
@@ -1320,7 +1334,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     }
 
     /// <summary>
-    ///     Reset the rotation of the selected object to 0, 0, 0
+    /// Reset the rotation of the selected object to 0, 0, 0
     /// </summary>
     private void ResetRotationSelection()
     {

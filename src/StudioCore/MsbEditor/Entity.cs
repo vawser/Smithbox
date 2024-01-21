@@ -13,56 +13,105 @@ using System.Xml.Serialization;
 namespace StudioCore.MsbEditor;
 
 /// <summary>
-///     A logical map object that can be either a part, region, event, or light. Uses
-///     reflection to access and update properties
+/// A logical map object that can be either a part, region, event, or light. Uses reflection to access and update properties
 /// </summary>
 public class Entity : ISelectable, IDisposable
 {
-    //public uint[] FakeDispgroups; //Used for Viewport dispgroup rendering. Doesn't affect anything else.
-
+    /// <summary>
+    /// Internal. Visibility of the entity.
+    /// </summary>
     protected bool _EditorVisible = true;
 
+    /// <summary>
+    /// Internal. Associated render scene mesh for the entity.
+    /// </summary>
     protected RenderableProxy _renderSceneMesh;
 
+    /// <summary>
+    /// Cached name for the entity.
+    /// </summary>
     private string CachedName;
 
+    /// <summary>
+    /// Current model string for the entity.
+    /// </summary>
     protected string CurrentModel = "";
+
+    /// <summary>
+    /// Internal. Bool to track if render scene mesh has been disposed of.
+    /// </summary>
     private bool disposedValue;
 
+    /// <summary>
+    /// Objects referencing the entity.
+    /// </summary>
     private HashSet<Entity> ReferencingObjects;
+
+    /// <summary>
+    /// Temporary Transform used by the entity.
+    /// </summary>
     internal Transform TempTransform = Transform.Default;
 
+    /// <summary>
+    /// Bool to track if Temporary Transform is used.
+    /// </summary>
     internal bool UseTempTransform;
 
-
+    /// <summary>
+    /// Default constructor.
+    /// </summary>
     public Entity()
     {
     }
 
+    /// <summary>
+    /// Constructor: container, object
+    /// </summary>
     public Entity(ObjectContainer map, object msbo)
     {
         Container = map;
         WrappedObject = msbo;
     }
 
+    /// <summary>
+    /// The wrapped object for this entity.
+    /// </summary>
     public object WrappedObject { get; set; }
 
+    /// <summary>
+    /// The object container for this entity.
+    /// </summary>
     [XmlIgnore] public ObjectContainer Container { get; set; }
 
+    /// <summary>
+    /// Universe.
+    /// </summary>
     [XmlIgnore] public Universe Universe => Container != null ? Container.Universe : null;
 
+    /// <summary>
+    /// The parent entity of this entity.
+    /// </summary>
     [XmlIgnore] public Entity Parent { get; private set; }
 
+    /// <summary>
+    /// A list that contains all the children of this entity.
+    /// </summary>
     public List<Entity> Children { get; set; } = new();
 
     /// <summary>
-    ///     A map that contains references for each property
+    /// A map that contains references for each property.
     /// </summary>
     [XmlIgnore]
     public Dictionary<string, object[]> References { get; } = new();
 
+    /// <summary>
+    /// A bool to track if the entity has a tranform.
+    /// </summary>
     [XmlIgnore] public virtual bool HasTransform => false;
 
+    /// <summary>
+    /// The associated render scene mesh for this entity.
+    /// </summary>
     [XmlIgnore]
     public RenderableProxy RenderSceneMesh
     {
@@ -74,8 +123,14 @@ public class Entity : ISelectable, IDisposable
         get => _renderSceneMesh;
     }
 
+    /// <summary>
+    /// A bool to track if this entity has render groups.
+    /// </summary>
     [XmlIgnore] public bool HasRenderGroups { get; private set; } = true;
 
+    /// <summary>
+    /// The name of this entity.
+    /// </summary>
     [XmlIgnore]
     public virtual string Name
     {
@@ -111,14 +166,29 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// The 'pretty' name of this entity.
+    /// </summary>
     [XmlIgnore] public virtual string PrettyName => Name;
 
+    /// <summary>
+    /// The render group reference name of this entity.
+    /// </summary>
     [XmlIgnore] public string RenderGroupRefName { get; private set; }
 
+    /// <summary>
+    /// The drawgroups of this entity.
+    /// </summary>
     [XmlIgnore] public uint[] Drawgroups { get; set; }
 
+    /// <summary>
+    /// The display groups of this entity.
+    /// </summary>
     [XmlIgnore] public uint[] Dispgroups { get; set; }
 
+    /// <summary>
+    /// The visibility of this entity.
+    /// </summary>
     [XmlIgnore]
     public bool EditorVisible
     {
@@ -138,6 +208,9 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Function executed upon the disposal of this entity.
+    /// </summary>
     public void Dispose()
     {
         // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
@@ -145,6 +218,9 @@ public class Entity : ISelectable, IDisposable
         GC.SuppressFinalize(this);
     }
 
+    /// <summary>
+    /// Function executed upon the selection of this entity.
+    /// </summary>
     public void OnSelected()
     {
         if (RenderSceneMesh != null)
@@ -153,6 +229,9 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Function executed upon the deselection of this entity.
+    /// </summary>
     public void OnDeselected()
     {
         if (RenderSceneMesh != null)
@@ -161,6 +240,9 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Add a child entity to this entity.
+    /// </summary>
     public void AddChild(Entity child)
     {
         if (child.Parent != null)
@@ -180,6 +262,9 @@ public class Entity : ISelectable, IDisposable
         child.UpdateRenderModel();
     }
 
+    /// <summary>
+    /// Add a child entity at the specified index for this entity.
+    /// </summary>
     public void AddChild(Entity child, int index)
     {
         if (child.Parent != null)
@@ -192,6 +277,9 @@ public class Entity : ISelectable, IDisposable
         child.UpdateRenderModel();
     }
 
+    /// <summary>
+    /// Return the index of the passed child entity.
+    /// </summary>
     public int ChildIndex(Entity child)
     {
         for (var i = 0; i < Children.Count(); i++)
@@ -205,6 +293,9 @@ public class Entity : ISelectable, IDisposable
         return -1;
     }
 
+    /// <summary>
+    /// Remove a child entry from this entity.
+    /// </summary>
     public int RemoveChild(Entity child)
     {
         for (var i = 0; i < Children.Count(); i++)
@@ -220,6 +311,9 @@ public class Entity : ISelectable, IDisposable
         return -1;
     }
 
+    /// <summary>
+    /// Clone the render scene mesh upon cloning this entity.
+    /// </summary>
     private void CloneRenderable(Entity obj)
     {
         if (RenderSceneMesh != null)
@@ -237,11 +331,17 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Return a duplicate of the passed entity.
+    /// </summary>
     internal virtual Entity DuplicateEntity(object clone)
     {
         return new Entity(Container, clone);
     }
 
+    /// <summary>
+    /// Return a deep copy of the passed entity as a generic object.
+    /// </summary>
     public object DeepCopyObject(object obj)
     {
         Type typ = obj.GetType();
@@ -296,6 +396,9 @@ public class Entity : ISelectable, IDisposable
         return clone;
     }
 
+    /// <summary>
+    /// Return a clone of this entity.
+    /// </summary>
     public virtual Entity Clone()
     {
         var clone = DeepCopyObject(WrappedObject);
@@ -304,6 +407,9 @@ public class Entity : ISelectable, IDisposable
         return obj;
     }
 
+    /// <summary>
+    /// Return the value of the passed property string.
+    /// </summary>
     public object GetPropertyValue(string prop)
     {
         if (WrappedObject == null)
@@ -338,6 +444,9 @@ public class Entity : ISelectable, IDisposable
         return null;
     }
 
+    /// <summary>
+    /// Return true if the passed property string has the [RotationRadians] attribute, and therefore uses Radians.
+    /// </summary>
     public bool IsRotationPropertyRadians(string prop)
     {
         if (WrappedObject == null)
@@ -353,6 +462,9 @@ public class Entity : ISelectable, IDisposable
         return WrappedObject.GetType().GetProperty(prop).GetCustomAttribute<RotationRadians>() != null;
     }
 
+    /// <summary>
+    /// Return true if the passed property string has the [RotationXZY] attribute, and therefore uses XZY rotation order.
+    /// </summary>
     public bool IsRotationXZY(string prop)
     {
         if (WrappedObject == null)
@@ -368,6 +480,9 @@ public class Entity : ISelectable, IDisposable
         return WrappedObject.GetType().GetProperty(prop).GetCustomAttribute<RotationXZY>() != null;
     }
 
+    /// <summary>
+    /// Return the type of the passed property string.
+    /// </summary>
     public T GetPropertyValue<T>(string prop)
     {
         if (WrappedObject == null)
@@ -401,6 +516,9 @@ public class Entity : ISelectable, IDisposable
         return default;
     }
 
+    /// <summary>
+    /// Return the PropertyInfo of the passed property string.
+    /// </summary>
     public PropertyInfo GetProperty(string prop)
     {
         if (WrappedObject == null)
@@ -437,6 +555,9 @@ public class Entity : ISelectable, IDisposable
         return null;
     }
 
+    /// <summary>
+    /// Return the PropertiesChangedAction of the passed property string and new value.
+    /// </summary>
     public PropertiesChangedAction GetPropertyChangeAction(string prop, object newval)
     {
         if (WrappedObject == null)
@@ -473,15 +594,27 @@ public class Entity : ISelectable, IDisposable
         return null;
     }
 
+    /// <summary>
+    /// Build the reference map for this entity.
+    /// </summary>
     public virtual void BuildReferenceMap()
     {
+        // Is not a param, e.g. DS2 enemy
         if (!(WrappedObject is Param.Row) && !(WrappedObject is MergedParamRow))
         {
+            // Get the entity type, e.g. Part
             Type type = WrappedObject.GetType();
+
+            // Get the propeties for this type
             PropertyInfo[] props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+
+            // Iterate through each property
             foreach (PropertyInfo p in props)
             {
+                // [MSBReference] attribute in the MSB formats
                 var att = p.GetCustomAttribute<MSBReference>();
+
+                // If this property has the [MSBReference] attribute
                 if (att != null)
                 {
                     if (p.PropertyType.IsArray)
@@ -505,12 +638,18 @@ public class Entity : ISelectable, IDisposable
                     }
                     else
                     {
+                        // Get the name, e.g. a Part would get the PartName property
                         var sref = (string)p.GetValue(WrappedObject);
+
+                        // Name is not null or empty.
                         if (sref != null && sref != "")
                         {
+                            // Get the entity that has this name.
                             Entity obj = Container.GetObjectByName(sref);
+
                             if (obj != null)
                             {
+                                // Add the entity to the reference map
                                 if (!References.ContainsKey(sref))
                                 {
                                     References.Add(sref, new[] { obj });
@@ -523,6 +662,9 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Return the referencing objects for this entity.
+    /// </summary>
     public IReadOnlyCollection<Entity> GetReferencingObjects()
     {
         if (Container == null)
@@ -556,13 +698,16 @@ public class Entity : ISelectable, IDisposable
         return ReferencingObjects;
     }
 
+    /// <summary>
+    /// Invalidate the referencing objects for this entity.
+    /// </summary>
     public void InvalidateReferencingObjectsCache()
     {
         ReferencingObjects = null;
     }
 
     /// <summary>
-    ///     Get root object's transform
+    /// Get root object's transform.
     /// </summary>
     public virtual Transform GetRootTransform()
     {
@@ -578,7 +723,7 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
-    ///     Get local transform and offset it by Root Object (Transform Node)
+    /// Get local transform and offset it by Root Object (Transform Node).
     /// </summary>
     public virtual Transform GetRootLocalTransform()
     {
@@ -594,6 +739,9 @@ public class Entity : ISelectable, IDisposable
         return t;
     }
 
+    /// <summary>
+    /// Get local transform for this object.
+    /// </summary>
     public virtual Transform GetLocalTransform()
     {
         var t = Transform.Default;
@@ -634,22 +782,6 @@ public class Entity : ISelectable, IDisposable
                 if (IsRotationXZY("Rotation"))
                 {
                     t.EulerRotationXZY = new Vector3(r.X, r.Y, r.Z);
-                    /*var test = t.EulerRotationXZY;
-                    if (MathF.Abs(r.X - test.X) > 0.01 ||
-                        MathF.Abs(r.Y - test.Y) > 0.01 ||
-                        MathF.Abs(r.Z - test.Z) > 0.01)
-                    {
-                        //Debug.Print("hi");
-                        var q2 = new Transform();
-                        q2.EulerRotationXZY = test;
-                        if (MathF.Abs(q2.Rotation.X - t.Rotation.X) > 0.01 ||
-                            MathF.Abs(q2.Rotation.Y - t.Rotation.Y) > 0.01 ||
-                            MathF.Abs(q2.Rotation.Z - t.Rotation.Z) > 0.01 ||
-                            MathF.Abs(q2.Rotation.W - t.Rotation.W) > 0.01)
-                        {
-                            Debug.Print("hi");
-                        }
-                    }*/
                 }
                 else
                 {
@@ -705,6 +837,9 @@ public class Entity : ISelectable, IDisposable
         return t;
     }
 
+    /// <summary>
+    /// Get world matrix for this object.
+    /// </summary>
     public virtual Matrix4x4 GetWorldMatrix()
     {
         Matrix4x4 t = UseTempTransform ? TempTransform.WorldMatrix : GetLocalTransform().WorldMatrix;
@@ -722,6 +857,9 @@ public class Entity : ISelectable, IDisposable
         return t;
     }
 
+    /// <summary>
+    /// Set temporary transform for this object.
+    /// </summary>
     public void SetTemporaryTransform(Transform t)
     {
         TempTransform = t;
@@ -729,6 +867,9 @@ public class Entity : ISelectable, IDisposable
         UpdateRenderModel();
     }
 
+    /// <summary>
+    /// Clear temporary transform for this object.
+    /// </summary>
     public void ClearTemporaryTransform(bool updaterender = true)
     {
         UseTempTransform = false;
@@ -738,8 +879,12 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Get action for updating the Transform of this object.
+    /// </summary>
     public Action GetUpdateTransformAction(Transform newt)
     {
+        // Is param, e.g. DS2 enemy
         if (WrappedObject is Param.Row || WrappedObject is MergedParamRow)
         {
             List<Action> actions = new();
@@ -797,6 +942,9 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Get action for changing a string propety value for this object.
+    /// </summary>
     public Action ChangeObjectProperty(string propTarget, string propValue)
     {
         var actions = new List<Action>();
@@ -809,6 +957,9 @@ public class Entity : ISelectable, IDisposable
         return act;
     }
 
+    /// <summary>
+    /// Get action for changing a int propety value for this object.
+    /// </summary>
     public Action ChangeObjectProperty(string propTarget, int propValue)
     {
         var actions = new List<Action>();
@@ -821,6 +972,9 @@ public class Entity : ISelectable, IDisposable
         return act;
     }
 
+    /// <summary>
+    /// Get action for changing a byte propety value for this object.
+    /// </summary>
     public Action ChangeObjectProperty(string propTarget, byte propValue)
     {
         var actions = new List<Action>();
@@ -833,6 +987,9 @@ public class Entity : ISelectable, IDisposable
         return act;
     }
 
+    /// <summary>
+    /// Get action for changing a short propety value for this object.
+    /// </summary>
     public Action ChangeObjectProperty(string propTarget, short propValue)
     {
         var actions = new List<Action>();
@@ -845,6 +1002,9 @@ public class Entity : ISelectable, IDisposable
         return act;
     }
 
+    /// <summary>
+    /// Get action for changing a float propety value for this object.
+    /// </summary>
     public Action ChangeObjectProperty(string propTarget, float propValue)
     {
         var actions = new List<Action>();
@@ -858,7 +1018,7 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
-    ///     Updates entity's render groups (DrawGroups/DispGroups). Uses CollisionName references if possible.
+    /// Updates entity's render groups (DrawGroups/DispGroups). Uses CollisionName references if possible.
     /// </summary>
     private void UpdateDispDrawGroups()
     {
@@ -924,6 +1084,9 @@ public class Entity : ISelectable, IDisposable
         HasRenderGroups = false;
     }
 
+    /// <summary>
+    /// Update the render model for this entity.
+    /// </summary>
     public virtual void UpdateRenderModel()
     {
         if (!HasTransform)
@@ -967,6 +1130,9 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Dipose of this entity.
+    /// </summary>
     protected virtual void Dispose(bool disposing)
     {
         if (!disposedValue)
@@ -984,12 +1150,18 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    /// <summary>
+    /// Destructor
+    /// </summary>
     ~Entity()
     {
         Dispose(false);
     }
 }
 
+/// <summary>
+/// Entity with a specific name.
+/// </summary>
 public class NamedEntity : Entity
 {
     public NamedEntity(ObjectContainer map, object msbo, string name) : base(map, msbo)
@@ -1000,6 +1172,9 @@ public class NamedEntity : Entity
     public override string Name { get; set; }
 }
 
+/// <summary>
+/// Entity with a specific name that is transformable.
+/// </summary>
 public class TransformableNamedEntity : Entity
 {
     public TransformableNamedEntity(ObjectContainer map, object msbo, string name) : base(map, msbo)
@@ -1012,6 +1187,9 @@ public class TransformableNamedEntity : Entity
     public override bool HasTransform => true;
 }
 
+/// <summary>
+/// Entity used to serialize a map.
+/// </summary>
 public class MapSerializationEntity
 {
     public string Name { get; set; }
@@ -1026,8 +1204,14 @@ public class MapSerializationEntity
     }
 }
 
+/// <summary>
+/// Entity used within MSB.
+/// </summary>
 public class MapEntity : Entity
 {
+    /// <summary>
+    /// Enum for Entity Type within the MSB.
+    /// </summary>
     public enum MapEntityType
     {
         MapRoot,
@@ -1043,16 +1227,25 @@ public class MapEntity : Entity
         DS2ObjectInstance
     }
 
+    /// <summary>
+    /// Constructor
+    /// </summary>
     public MapEntity()
     {
     }
 
+    /// <summary>
+    /// Constructer: container, object
+    /// </summary>
     public MapEntity(ObjectContainer map, object msbo)
     {
         Container = map;
         WrappedObject = msbo;
     }
 
+    /// <summary>
+    /// Constructer: container, object, entity type
+    /// </summary>
     public MapEntity(ObjectContainer map, object msbo, MapEntityType type)
     {
         Container = map;
@@ -1064,10 +1257,19 @@ public class MapEntity : Entity
         }
     }
 
+    /// <summary>
+    /// The entity type of this entity.
+    /// </summary>
     public MapEntityType Type { get; set; }
 
+    /// <summary>
+    /// The map container this entity belongs to.
+    /// </summary>
     public Map ContainingMap => (Map)Container;
 
+    /// <summary>
+    /// The Map Editor name for this entity.
+    /// </summary>
     public override string PrettyName
     {
         get
@@ -1118,9 +1320,15 @@ public class MapEntity : Entity
         }
     }
 
+    /// <summary>
+    /// The transform state for this entity.
+    /// </summary>
     public override bool HasTransform => Type != MapEntityType.Event && Type != MapEntityType.DS2GeneratorRegist &&
                                          Type != MapEntityType.DS2Event;
 
+    /// <summary>
+    /// The map ID of the parent entity that this entity belongs to.
+    /// </summary>
     [XmlIgnore]
     public string MapID
     {
@@ -1141,6 +1349,9 @@ public class MapEntity : Entity
         }
     }
 
+    /// <summary>
+    /// Update the render model of this entity.
+    /// </summary>
     public override void UpdateRenderModel()
     {
         if (Type == MapEntityType.DS2Generator)
@@ -1209,6 +1420,9 @@ public class MapEntity : Entity
         base.UpdateRenderModel();
     }
 
+    /// <summary>
+    /// Build the reference map for this entity.
+    /// </summary>
     public override void BuildReferenceMap()
     {
         if (Type == MapEntityType.MapRoot && Universe != null)
@@ -1250,6 +1464,9 @@ public class MapEntity : Entity
         }
     }
 
+    /// <summary>
+    /// Return local transform for this entity.
+    /// </summary>
     public override Transform GetLocalTransform()
     {
         Transform t = base.GetLocalTransform();
@@ -1336,11 +1553,17 @@ public class MapEntity : Entity
         return t;
     }
 
+    /// <summary>
+    /// Return duplicate of the passed entity.
+    /// </summary>
     internal override Entity DuplicateEntity(object clone)
     {
         return new MapEntity(Container, clone);
     }
 
+    /// <summary>
+    /// Return clone of this entity.
+    /// </summary>
     public override Entity Clone()
     {
         var c = (MapEntity)base.Clone();
@@ -1348,6 +1571,9 @@ public class MapEntity : Entity
         return c;
     }
 
+    /// <summary>
+    /// Seralize this entity.
+    /// </summary>
     public MapSerializationEntity Serialize(Dictionary<Entity, int> idmap)
     {
         MapSerializationEntity e = new();
