@@ -183,11 +183,16 @@ public class CFG
 
     public bool EventFlagBrowser_Open = false;
     public bool EventFlagBrowser_ShowTagsInBrowser = true;
-    public bool EventFlagBrowser_ShowEntryAddition = false;
+    public bool EventFlagBrowser_ShowAliasAddition = false;
 
-    public bool FxrBrowser_Open = false;
-    public bool FxrBrowser_ShowTagsInBrowser = true;
-    public bool FxrBrowser_ShowEntryAddition = false;
+    public bool ParticleBrowser_Open = false;
+    public bool ParticleBrowser_ShowTagsInBrowser = true;
+    public bool ParticleBrowser_ShowAliasAddition = false;
+
+    public bool MapAliases_ShowMapAliasEditList = false;
+    public bool MapAliases_ShowUnusedNames = false;
+    public bool MapAliases_ShowTagsInBrowser = true;
+    public bool MapAliases_ShowAliasAddition = false;
 
     // CFG
     public static CFG Current { get; private set; }

@@ -51,7 +51,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank aliasBank)
+    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank modelAliasBank, AliasBank mapAliasBank)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
@@ -72,9 +72,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         _universe = new Universe(AssetLocator, RenderScene, _selection);
 
         _sceneTree = new SceneTree(SceneTree.Configuration.ModelEditor, this, "modeledittree", _universe,
-            _selection, EditorActionManager, Viewport, AssetLocator);
-        _propEditor = new PropertyEditor(EditorActionManager, _propCache);
-        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", AssetLocator, aliasBank);
+            _selection, EditorActionManager, Viewport, AssetLocator, mapAliasBank);
+        _propEditor = new PropertyEditor(EditorActionManager, _propCache, mapAliasBank);
+        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", AssetLocator, modelAliasBank, mapAliasBank);
     }
 
     public void OnInstantiateChr(string chrid)

@@ -416,7 +416,6 @@
 
   <ItemGroup>
     <None Update="Assets\Paramdex\**" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Assets\MapAliases\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\MassEditScripts\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\GameOffsets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Upgrader\**" CopyToOutputDirectory="PreserveNewest" />
@@ -425,6 +424,7 @@
     <None Update="Assets\Aliases\Flags\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Aliases\Models\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Aliases\Particles\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Aliases\Maps\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

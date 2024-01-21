@@ -1,17 +1,22 @@
 ﻿using ImGuiNET;
 using SoapstoneLib;
+using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
+using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Veldrid;
 
 namespace StudioCore.Settings;
@@ -29,10 +34,26 @@ public class SettingsMenu
     public ProjectSettings ProjSettings = null;
     public TextEditorScreen TextEditor;
 
-    public SettingsMenu(string id, AssetLocator assetLocator)
+    private AliasBank _mapAliasBank;
+
+    private string _searchInput = "";
+    private string _searchInputCache = "";
+
+    private string _refUpdateId = "";
+    private string _refUpdateName = "";
+    private string _refUpdateTags = "";
+
+    private string _newRefId = "";
+    private string _newRefName = "";
+    private string _newRefTags = "";
+
+    private string _selectedName;
+
+    public SettingsMenu(string id, AssetLocator assetLocator, AliasBank mapAliasBank)
     {
         _id = id;
         _locator = assetLocator;
+        _mapAliasBank = mapAliasBank;
     }
 
     public void SaveSettings()
@@ -138,6 +159,7 @@ public class SettingsMenu
             }
 
             if (ImGui.CollapsingHeader("Project", ImGuiTreeNodeFlags.DefaultOpen))
+            {
                 if (ProjSettings == null || ProjSettings.ProjectName == null)
                 {
                     if (CFG.Current.ShowUITooltips)
@@ -149,58 +171,256 @@ public class SettingsMenu
                 }
                 else
                     if (TaskManager.AnyActiveTasks())
+                {
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ShowHelpMarker("DSMS must finished all program tasks before it can load a project.");
+                        ImGui.SameLine();
+                    }
+                    ImGui.Text("Waiting for program tasks to finish...");
+                }
+                else
+                {
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ShowHelpMarker("This is the currently loaded project.");
+                        ImGui.SameLine();
+                    }
+                    ImGui.Text($@"Project: {ProjSettings.ProjectName}");
+
+                    ImGui.SameLine();
+                    if (ImGui.Button("Open project settings file"))
+                    {
+                        var projectPath = CFG.Current.LastProjectFile;
+                        Process.Start("explorer.exe", projectPath);
+                    }
+
+                    var useLoose = ProjSettings.UseLooseParams;
+                    if (ProjSettings.GameType is GameType.DarkSoulsIISOTFS or GameType.DarkSoulsIII)
                     {
                         if (CFG.Current.ShowUITooltips)
                         {
-                            ShowHelpMarker("DSMS must finished all program tasks before it can load a project.");
+                            ShowHelpMarker("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
                             ImGui.SameLine();
                         }
-                        ImGui.Text("Waiting for program tasks to finish...");
+
+                        if (ImGui.Checkbox("Use loose params", ref useLoose))
+                            ProjSettings.UseLooseParams = useLoose;
+                    }
+
+                    var usepartial = ProjSettings.PartialParams;
+                    if (FeatureFlags.EnablePartialParam || usepartial)
+                    {
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            ShowHelpMarker("Partial params.");
+                            ImGui.SameLine();
+                        }
+
+                        if (ProjSettings.GameType == GameType.EldenRing &&
+                        ImGui.Checkbox("Partial params", ref usepartial))
+                            ProjSettings.PartialParams = usepartial;
+                    }
+
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ShowHelpMarker("Enabling this option will allow unused or debug map names to appear in the scene tree view.");
+                        ImGui.SameLine();
+                    }
+                    ImGui.Checkbox("Show unused map names", ref CFG.Current.MapAliases_ShowUnusedNames);
+
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ShowHelpMarker("Toggle the map name list.");
+                        ImGui.SameLine();
+                    }
+                    if (ImGui.Button("Edit map names"))
+                    {
+                        CFG.Current.MapAliases_ShowMapAliasEditList = !CFG.Current.MapAliases_ShowMapAliasEditList;
+                    }
+
+                    ImGui.Separator();
+
+                    if (ImGui.Button("Toggle Alias Addition"))
+                    {
+                        CFG.Current.MapAliases_ShowAliasAddition = !CFG.Current.MapAliases_ShowAliasAddition;
+                    }
+
+                    ImGui.SameLine();
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        Utils.ShowHelpMarker("When enabled the list will display the tags next to the name.");
+                        ImGui.SameLine();
+                    }
+                    ImGui.Checkbox("Show Tags", ref CFG.Current.MapAliases_ShowTagsInBrowser);
+
+                    ImGui.Separator();
+
+                    if (CFG.Current.MapAliases_ShowAliasAddition)
+                    {
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            Utils.ShowHelpMarker("The map ID of the alias to add.");
+                            ImGui.SameLine();
+                        }
+                        ImGui.InputText($"ID", ref _newRefId, 255);
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            Utils.ShowHelpMarker("The name of the alias to add.");
+                            ImGui.SameLine();
+                        }
+                        ImGui.InputText($"Name", ref _newRefName, 255);
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            Utils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
+                            ImGui.SameLine();
+                        }
+                        ImGui.InputText($"Tags", ref _newRefTags, 255);
+
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            Utils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
+                            ImGui.SameLine();
+                        }
+                        if (ImGui.Button("Add New Alias"))
+                        {
+                            // Make sure the ref ID is a MSB name
+                            if (Regex.IsMatch(_newRefId, @"m\d{2}_\d{2}_\d{2}_\d{2}"))
+                            {
+                                bool isValid = true;
+
+                                var entries = _mapAliasBank.AliasNames.GetEntries("Maps");
+
+                                foreach (var entry in entries)
+                                {
+                                    if (_newRefId == entry.id)
+                                        isValid = false;
+                                }
+
+                                if (isValid)
+                                {
+                                    _mapAliasBank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                                    ImGui.CloseCurrentPopup();
+                                    _mapAliasBank.mayReloadAliasBank = true;
+                                }
+                                else
+                                {
+                                    PlatformUtils.Instance.MessageBox($"Map Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+
+                        ImGui.Separator();
+                    }
+
+                    if (CFG.Current.MapAliases_ShowMapAliasEditList)
+                    {
+                        DisplayMapAliasSelectionList(_mapAliasBank.AliasNames.GetEntries("Maps"));
+                    }
+                }
+            }
+
+            ImGui.EndTabItem();
+        }
+
+        if (_mapAliasBank.mayReloadAliasBank)
+        {
+            _mapAliasBank.mayReloadAliasBank = false;
+            _mapAliasBank.ReloadAliasBank();
+        }
+    }
+
+    private void DisplayMapAliasSelectionList(List<AliasReference> referenceList)
+    {
+        Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
+
+        foreach (AliasReference v in referenceList)
+        {
+            if (!referenceDict.ContainsKey(v.id))
+                referenceDict.Add(v.id, v);
+        }
+
+        if (_searchInput != _searchInputCache)
+        {
+            _searchInputCache = _searchInput;
+        }
+
+        var entries = _mapAliasBank.AliasNames.GetEntries("Maps");
+
+        foreach (var entry in entries)
+        {
+            var displayedName = $"{entry.id} - {entry.name}";
+
+            var refID = $"{entry.id}";
+            var refName = $"{entry.name}";
+            var refTagList = entry.tags;
+
+            // Skip the unused names if this is disabled
+            if (!CFG.Current.MapAliases_ShowUnusedNames)
+            {
+                if (refTagList[0] == "unused")
+                    continue;
+            }
+
+            // Append tags to to displayed name
+            if (CFG.Current.MapAliases_ShowTagsInBrowser)
+            {
+                var tagString = string.Join(" ", refTagList);
+                displayedName = $"{displayedName} {{ {tagString} }}";
+            }
+
+            if (Utils.IsMapSearchFilterMatch(_searchInput, refID, refName, refTagList))
+            {
+                if (ImGui.Selectable(displayedName))
+                {
+                    _selectedName = refID;
+                    _refUpdateId = refID;
+                    _refUpdateName = refName;
+
+                    if (refTagList.Count > 0)
+                    {
+                        string tagStr = refTagList[0];
+                        foreach (string tEntry in refTagList.Skip(1))
+                        {
+                            tagStr = $"{tagStr},{tEntry}";
+                        }
+                        _refUpdateTags = tagStr;
                     }
                     else
                     {
-                        if (CFG.Current.ShowUITooltips)
-                        {
-                            ShowHelpMarker("This is the currently loaded project.");
-                            ImGui.SameLine();
-                        }
-                        ImGui.Text($@"Project: {ProjSettings.ProjectName}");
-
-                        if (ImGui.Button("Open project settings file"))
-                        {
-                            var projectPath = CFG.Current.LastProjectFile;
-                            Process.Start("explorer.exe", projectPath);
-                        }
-
-                        var useLoose = ProjSettings.UseLooseParams;
-                        if (ProjSettings.GameType is GameType.DarkSoulsIISOTFS or GameType.DarkSoulsIII)
-                        {
-                            if (CFG.Current.ShowUITooltips)
-                            {
-                                ShowHelpMarker("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
-                                ImGui.SameLine();
-                            }
-
-                            if (ImGui.Checkbox("Use loose params", ref useLoose))
-                                ProjSettings.UseLooseParams = useLoose;
-                        }
-
-                        var usepartial = ProjSettings.PartialParams;
-                        if (FeatureFlags.EnablePartialParam || usepartial)
-                        {
-                            if (CFG.Current.ShowUITooltips)
-                            {
-                                ShowHelpMarker("Partial params.");
-                                ImGui.SameLine();
-                            }
-
-                            if (ProjSettings.GameType == GameType.EldenRing &&
-                            ImGui.Checkbox("Partial params", ref usepartial))
-                                ProjSettings.PartialParams = usepartial;
-                        }
+                        _refUpdateTags = "";
                     }
+                }
 
-            ImGui.EndTabItem();
+                if (_selectedName == refID)
+                {
+                    if (ImGui.BeginPopupContextItem($"{refID}##context"))
+                    {
+                        ImGui.InputText($"Name", ref _refUpdateName, 255);
+                        ImGui.InputText($"Tags", ref _refUpdateTags, 255);
+
+                        if (ImGui.Button("Update"))
+                        {
+                            _mapAliasBank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            ImGui.CloseCurrentPopup();
+                            _mapAliasBank.mayReloadAliasBank = true;
+                        }
+                        ImGui.SameLine();
+                        if (ImGui.Button("Restore Default"))
+                        {
+                            _mapAliasBank.RemoveFromLocalAliasBank("", _refUpdateId);
+                            ImGui.CloseCurrentPopup();
+                            _mapAliasBank.mayReloadAliasBank = true;
+                        }
+
+                        ImGui.EndPopup();
+                    }
+                }
+
+                if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
+                {
+                }
+            }
         }
     }
 
@@ -845,7 +1065,7 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
                     ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Show tags", ref CFG.Current.FxrBrowser_ShowTagsInBrowser);
+                ImGui.Checkbox("Show tags", ref CFG.Current.ParticleBrowser_ShowTagsInBrowser);
             }
 
             ImGui.EndTabItem();

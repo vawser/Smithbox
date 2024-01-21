@@ -635,16 +635,6 @@ public class AssetLocator
         }
     }
 
-    public string GetMapAliasAssetsDir()
-    {
-        return $@"Assets\MapAliases\{GetGameIDForDir()}";
-    }
-
-    public string GetModelAliasAssetsDir()
-    {
-        return $@"Assets\ModelAliases\{GetGameIDForDir()}";
-    }
-
     public string GetScriptAssetsCommonDir()
     {
         return @"Assets\MassEditScripts\Common";

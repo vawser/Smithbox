@@ -15,7 +15,8 @@ public enum AliasType
     None,
     Model,
     EventFlag,
-    Particle
+    Particle,
+    Map
 }
 
 public class AliasBank
@@ -40,6 +41,8 @@ public class AliasBank
     private string AliasName = "";
 
     private AliasType aliasType;
+
+    public Dictionary<string, string> MapNames;
 
     public AliasBank(AssetLocator locator, AliasType _aliasType)
     {
@@ -71,6 +74,14 @@ public class AliasBank
             FileName = "Fxr";
             IsAssetFileType = false;
         }
+
+        if (aliasType is AliasType.Map)
+        {
+            AliasName = "Maps";
+            AliasDirectory = "Maps";
+            FileName = "Maps";
+            IsAssetFileType = false;
+        }
     }
 
     public AliasContainer AliasNames
@@ -98,7 +109,7 @@ public class AliasBank
 
     public void ReloadAliasBank()
     {
-        TaskManager.Run(new TaskManager.LiveTask($"{AliasName} - Load Aliases", TaskManager.RequeueType.None, false,
+        TaskManager.Run(new TaskManager.LiveTask($"Alias Bank - Load {AliasName}", TaskManager.RequeueType.None, false,
         () =>
         {
             _loadedAliasBank = new AliasContainer();
@@ -108,6 +119,9 @@ public class AliasBank
                 LoadAliasNames();
 
             IsLoadingAliases = false;
+
+            if (AssetLocator.Type != GameType.Undefined)
+                UpdateMapNames();
         }));
     }
 
@@ -187,19 +201,46 @@ public class AliasBank
             File.Copy(templateResource, resourceFilePath);
         }
 
-        // Load up the target local model alias bank.
-        var targetResource = LoadTargetAliasBank(resourceFilePath);
-
-        bool doesExist = false;
-
-        // If it exists within the mod local file, update the contents
-        foreach (var entry in targetResource.list)
+        if (File.Exists(resourceFilePath))
         {
-            if (entry.id == refID)
-            {
-                doesExist = true;
+            // Load up the target local model alias bank.
+            var targetResource = LoadTargetAliasBank(resourceFilePath);
 
+            bool doesExist = false;
+
+            // If it exists within the mod local file, update the contents
+            foreach (var entry in targetResource.list)
+            {
+                if (entry.id == refID)
+                {
+                    doesExist = true;
+
+                    entry.name = refName;
+
+                    if (refTags.Contains(","))
+                    {
+                        List<string> newTags = new List<string>();
+                        var tagList = refTags.Split(",");
+                        foreach (var tag in tagList)
+                        {
+                            newTags.Add(tag);
+                        }
+                        entry.tags = newTags;
+                    }
+                    else
+                    {
+                        entry.tags = new List<string> { refTags };
+                    }
+                }
+            }
+
+            // If it doesn't exist in the mod local file, add it in
+            if (!doesExist)
+            {
+                AliasReference entry = new AliasReference();
+                entry.id = refID;
                 entry.name = refName;
+                entry.tags = new List<string>();
 
                 if (refTags.Contains(","))
                 {
@@ -213,38 +254,14 @@ public class AliasBank
                 }
                 else
                 {
-                    entry.tags = new List<string> { refTags };
+                    entry.tags.Add(refTags);
                 }
+
+                targetResource.list.Add(entry);
             }
+
+            WriteTargetAliasBank(targetResource, assetType);
         }
-
-        // If it doesn't exist in the mod local file, add it in
-        if (!doesExist)
-        {
-            AliasReference entry = new AliasReference();
-            entry.id = refID;
-            entry.name = refName;
-            entry.tags = new List<string>();
-
-            if (refTags.Contains(","))
-            {
-                List<string> newTags = new List<string>();
-                var tagList = refTags.Split(",");
-                foreach (var tag in tagList)
-                {
-                    newTags.Add(tag);
-                }
-                entry.tags = newTags;
-            }
-            else
-            {
-                entry.tags.Add(refTags);
-            }
-
-            targetResource.list.Add(entry);
-        }
-
-        WriteTargetAliasBank(targetResource, assetType);
     }
 
     /// <summary>
@@ -259,20 +276,48 @@ public class AliasBank
         if (IsAssetFileType)
             resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
-        // Load up the target local model alias bank. 
-        var targetResource = LoadTargetAliasBank(resourceFilePath);
-
-        // Remove the specified reference from the local model alias bank.
-        for (int i = 0; i <= targetResource.list.Count - 1; i++)
+        if (File.Exists(resourceFilePath))
         {
-            var entry = targetResource.list[i];
-            if (entry.id == refID)
-            {
-                targetResource.list.Remove(entry);
-                break;
-            }
-        }
+            // Load up the target local model alias bank. 
+            var targetResource = LoadTargetAliasBank(resourceFilePath);
 
-        WriteTargetAliasBank(targetResource, assetType);
+            // Remove the specified reference from the local model alias bank.
+            for (int i = 0; i <= targetResource.list.Count - 1; i++)
+            {
+                var entry = targetResource.list[i];
+                if (entry.id == refID)
+                {
+                    targetResource.list.Remove(entry);
+                    break;
+                }
+            }
+
+            WriteTargetAliasBank(targetResource, assetType);
+        }
+    }
+
+    public void UpdateMapNames()
+    {
+        if (aliasType is AliasType.Map)
+        {
+            Dictionary<string, string> _mapNames = new Dictionary<string, string>();
+
+            foreach (var entry in AliasNames.GetEntries("Maps"))
+            {
+                if (!CFG.Current.MapAliases_ShowUnusedNames)
+                {
+                    if (entry.tags[0] != "unused")
+                    {
+                        _mapNames.Add(entry.id, entry.name);
+                    }
+                }
+                else
+                {
+                    _mapNames.Add(entry.id, entry.name);
+                }
+            }
+
+            MapNames = _mapNames;
+        }
     }
 }

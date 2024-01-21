@@ -19,35 +19,46 @@ public class AliasContainer
 
     private AliasType aliasType;
 
+    private string gametype;
+
+    private string gameModDirectory;
+
     public AliasContainer()
     {
         aliasMap = null;
         aliasType = AliasType.None;
     }
-    public AliasContainer(AliasType _aliasType, string gametype, string gameModDirectory)
+    public AliasContainer(AliasType _aliasType, string _gametype, string _gameModDirectory)
     {
         aliasType = _aliasType;
+        gametype = _gametype;
+        gameModDirectory = _gameModDirectory;
 
         if (aliasType is AliasType.Model)
         {
-            aliasMap.Add("Characters", LoadJSON(gametype, "Chr", gameModDirectory));
-            aliasMap.Add("Objects", LoadJSON(gametype, "Obj", gameModDirectory));
-            aliasMap.Add("Parts", LoadJSON(gametype, "Part", gameModDirectory));
-            aliasMap.Add("MapPieces", LoadJSON(gametype, "MapPiece", gameModDirectory));
+            aliasMap.Add("Characters", LoadJSON("Chr"));
+            aliasMap.Add("Objects", LoadJSON("Obj"));
+            aliasMap.Add("Parts", LoadJSON("Part"));
+            aliasMap.Add("MapPieces", LoadJSON("MapPiece"));
         }
 
         if (aliasType is AliasType.EventFlag)
         {
-            aliasMap.Add("Flags", LoadJSON(gametype, "EventFlag", gameModDirectory));
+            aliasMap.Add("Flags", LoadJSON("EventFlag"));
         }
 
         if (aliasType is AliasType.Particle)
         {
-            aliasMap.Add("Particles", LoadJSON(gametype, "Fxr", gameModDirectory));
+            aliasMap.Add("Particles", LoadJSON("Fxr"));
+        }
+
+        if (aliasType is AliasType.Map)
+        {
+            aliasMap.Add("Maps", LoadJSON("Maps"));
         }
     }
 
-    private AliasResource LoadJSON(string gametype, string filename, string gameModDirectory)
+    private AliasResource LoadJSON(string filename)
     {
         var baseResource = new AliasResource();
         var modResource = new AliasResource();
@@ -55,16 +66,7 @@ public class AliasContainer
         if (aliasType is AliasType.None)
             return null;
 
-        var baseResourcePath = "";
-
-        if (aliasType is AliasType.Model)
-            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\Models\\{gametype}\\{filename}.json";
-
-        if (aliasType is AliasType.EventFlag)
-            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\Flags\\{gametype}\\{filename}.json";
-
-        if (aliasType is AliasType.Particle)
-            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\Particles\\{gametype}\\{filename}.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{GetAliasTypeDir()}\\{gametype}\\{filename}.json";
 
         if (File.Exists(baseResourcePath))
         {
@@ -80,16 +82,7 @@ public class AliasContainer
             }
         }
 
-        var modResourcePath = "";
-
-        if (aliasType is AliasType.Model)
-            modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\Aliases\\Models\\{gametype}\\{filename}.json";
-
-        if (aliasType is AliasType.EventFlag)
-            modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\Aliases\\Flags\\{gametype}\\{filename}.json";
-
-        if (aliasType is AliasType.Particle)
-            modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\Aliases\\Particles\\{gametype}\\{filename}.json";
+        var modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\Aliases\\{GetAliasTypeDir()}\\{gametype}\\{filename}.json";
 
         // If path does not exist, use baseResource only
         if (File.Exists(modResourcePath))
@@ -154,6 +147,25 @@ public class AliasContainer
         }
 
         return baseResource;
+    }
+
+    private string GetAliasTypeDir()
+    {
+        string typDir = "";
+
+        if (aliasType is AliasType.Model)
+            typDir = "Models";
+
+        if (aliasType is AliasType.EventFlag)
+            typDir = "Flags";
+
+        if (aliasType is AliasType.Particle)
+            typDir = "Particles";
+
+        if (aliasType is AliasType.Map)
+            typDir = "Maps";
+
+        return typDir;
     }
 
     public List<AliasReference> GetEntries(string name)

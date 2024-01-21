@@ -1,0 +1,116 @@
+{
+    "list": [
+        {
+            "id": "m21_00_00_00",
+            "name": "Hunter's Dream",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m21_01_00_00",
+            "name": "Abandoned Old Workshop",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m22_00_00_00",
+            "name": "Hemwick Charnel Lane",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m23_00_00_00",
+            "name": "Old Yharnam",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m24_00_00_00",
+            "name": "Cathedral Ward",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m24_01_00_00",
+            "name": "Central Yharnam",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m24_02_00_00",
+            "name": "Upper Cathedral Ward",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m25_00_00_00",
+            "name": "Forsaken Castle Cainhurst",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m26_00_00_00",
+            "name": "Nightmare of Mensis",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m27_00_00_00",
+            "name": "Forbidden Woods",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m28_00_00_00",
+            "name": "Yahar'gul, Unseen Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_00_00_00",
+            "name": "Byrgenwerth",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m33_00_00_00",
+            "name": "Nightmare Frontier",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_00_00_00",
+            "name": "Hunter's Nightmare",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m35_00_00_00",
+            "name": "Research Hall",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m36_00_00_00",
+            "name": "Fishing Hamlet",
+            "tags": [
+                ""
+            ]
+        }
+    ]
+}

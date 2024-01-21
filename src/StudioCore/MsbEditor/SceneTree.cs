@@ -93,8 +93,10 @@ public class SceneTree : IActionEventHandler
 
     private ViewMode _viewMode = ViewMode.ObjectType;
 
+    private AliasBank _mapAliasBank;
+
     public SceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe,
-        Selection sel, ActionManager aman, IViewport vp, AssetLocator al)
+        Selection sel, ActionManager aman, IViewport vp, AssetLocator al, AliasBank mapAliasBank)
     {
         _handler = handler;
         _id = id;
@@ -104,6 +106,8 @@ public class SceneTree : IActionEventHandler
         _viewport = vp;
         _assetLocator = al;
         _configuration = configuration;
+        _mapAliasBank = mapAliasBank;
+
         if (_configuration == Configuration.ModelEditor)
         {
             _viewMode = ViewMode.Hierarchy;
@@ -679,9 +683,12 @@ public class SceneTree : IActionEventHandler
                     continue;
                 }
 
-                if (MapAliasBank.MapNames != null && MapAliasBank.MapNames.ContainsKey(mapid))
+                if (_mapAliasBank.MapNames != null)
                 {
-                    metaName = MapAliasBank.MapNames[mapid];
+                    if (_mapAliasBank.MapNames.ContainsKey(mapid))
+                    {
+                        metaName = _mapAliasBank.MapNames[mapid];
+                    }
                 }
 
                 // Map name search filter

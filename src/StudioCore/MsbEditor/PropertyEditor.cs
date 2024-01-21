@@ -34,10 +34,13 @@ public class PropertyEditor
     public ActionManager ContextActionManager;
     public PropertyInfo RequestedSearchProperty = null;
 
-    public PropertyEditor(ActionManager manager, PropertyCache propCache)
+    private AliasBank _mapAliasBank;
+
+    public PropertyEditor(ActionManager manager, PropertyCache propCache, AliasBank mapAliasBank)
     {
         ContextActionManager = manager;
         _propCache = propCache;
+        _mapAliasBank = mapAliasBank;
     }
 
     private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop)
@@ -975,6 +978,8 @@ public class PropertyEditor
             }
         }
 
+        bool editAlias = false;
+
         var refID = 0; // ID for ImGui distinction
         if (decorate && entSelection.Count == 1)
         {
@@ -1004,10 +1009,13 @@ public class PropertyEditor
                             // but only the RootObject has the TransformNode and Viewport integration.
                             var mapid = r.Name;
                             var prettyName = $"{ForkAwesome.Cube} {mapid}";
-                            if (MapAliasBank.MapNames != null &&
-                                MapAliasBank.MapNames.TryGetValue(mapid, out var metaName))
+
+                            if (_mapAliasBank.MapNames != null)
                             {
-                                prettyName += $" <{metaName.Replace("--", "")}>";
+                                if (_mapAliasBank.MapNames.TryGetValue(mapid, out var metaName))
+                                {
+                                    prettyName += $" <{metaName}>";
+                                }
                             }
 
                             if (ImGui.Button(prettyName + "##MSBRefTo" + refID))

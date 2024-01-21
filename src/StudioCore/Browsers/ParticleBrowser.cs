@@ -1,10 +1,8 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
 using StudioCore.Aliases;
 using StudioCore.Help;
 using StudioCore.JSON;
 using StudioCore.Platform;
-using StudioCore.Settings;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Browsers;
 
-public class EventFlagBrowser
+public class ParticleBrowser
 {
     private string _id;
     private AssetLocator _locator;
@@ -36,7 +34,7 @@ public class EventFlagBrowser
 
     public AliasBank _aliasBank;
 
-    public EventFlagBrowser(string id, AssetLocator locator, AliasBank aliasBank)
+    public ParticleBrowser(string id, AssetLocator locator, AliasBank aliasBank)
     {
         _id = id;
         _locator = locator;
@@ -46,7 +44,7 @@ public class EventFlagBrowser
     public void ToggleMenuVisibility()
     {
         MenuOpenState = !MenuOpenState;
-        CFG.Current.EventFlagBrowser_Open = !CFG.Current.EventFlagBrowser_Open;
+        CFG.Current.ParticleBrowser_Open = !CFG.Current.ParticleBrowser_Open;
     }
 
     public void Display()
@@ -56,12 +54,6 @@ public class EventFlagBrowser
         if (!MenuOpenState)
             return;
 
-        if (_locator.Type == GameType.Undefined)
-            return;
-
-        if (_aliasBank.IsLoadingAliases)
-            return;
-
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
         ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0f, 0f, 0f, 0.98f));
         ImGui.PushStyleColor(ImGuiCol.TitleBgActive, new Vector4(0.25f, 0.25f, 0.25f, 1.0f));
@@ -69,21 +61,21 @@ public class EventFlagBrowser
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
 
-        if (ImGui.Begin("Event Flags##EventFlagBrowser", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
+        if (ImGui.Begin("Particle ID Browser##FxrBrowser", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
             if (ImGui.Button("Help"))
-                ImGui.OpenPopup("##EventFlagBrowserHelp");
+                ImGui.OpenPopup("##FxrBrowserHelp");
 
-            if (ImGui.BeginPopup("##EventFlagBrowserHelp"))
+            if (ImGui.BeginPopup("##FxrBrowserHelp"))
             {
-                ImGui.Text("Double click to copy the event flag to your clipboard.");
+                ImGui.Text("Double click to copy the particle ID to your clipboard.");
                 ImGui.EndPopup();
             }
 
             ImGui.SameLine();
             if (ImGui.Button("Toggle Alias Addition"))
             {
-                CFG.Current.EventFlagBrowser_ShowEntryAddition = !CFG.Current.EventFlagBrowser_ShowEntryAddition;
+                CFG.Current.ParticleBrowser_ShowAliasAddition = !CFG.Current.ParticleBrowser_ShowAliasAddition;
             }
 
             ImGui.SameLine();
@@ -92,9 +84,9 @@ public class EventFlagBrowser
                 Utils.ShowHelpMarker("When enabled the Browser List will display the tags next to the name.");
                 ImGui.SameLine();
             }
-            ImGui.Checkbox("Show Tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
+            ImGui.Checkbox("Show Tags", ref CFG.Current.ParticleBrowser_ShowTagsInBrowser);
 
-            if (CFG.Current.EventFlagBrowser_ShowEntryAddition)
+            if (CFG.Current.ParticleBrowser_ShowAliasAddition)
             {
                 ImGui.Separator();
 
@@ -129,7 +121,7 @@ public class EventFlagBrowser
                     {
                         bool isValid = true;
 
-                        var entries = _aliasBank.AliasNames.GetEntries("Flags");
+                        var entries = _aliasBank.AliasNames.GetEntries("Particles");
 
                         foreach (var entry in entries)
                         {
@@ -145,7 +137,7 @@ public class EventFlagBrowser
                         }
                         else
                         {
-                            PlatformUtils.Instance.MessageBox($"Event Flag Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            PlatformUtils.Instance.MessageBox($"FXR Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -155,16 +147,16 @@ public class EventFlagBrowser
 
             ImGui.Columns(1);
 
-            ImGui.BeginChild("FlagListSearch");
+            ImGui.BeginChild("ParticleListSearch");
             ImGui.InputText($"Search", ref _searchInput, 255);
 
             ImGui.Spacing();
             ImGui.Separator();
             ImGui.Spacing();
 
-            ImGui.BeginChild("EventFlagList");
+            ImGui.BeginChild("ParticleFlagList");
 
-            DisplaySelectionList(_aliasBank.AliasNames.GetEntries("Flags"));
+            DisplaySelectionList(_aliasBank.AliasNames.GetEntries("Particles"));
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -183,7 +175,7 @@ public class EventFlagBrowser
     }
 
     /// <summary>
-    /// Display the event flag selection list
+    /// Display the fxr selection list
     /// </summary>
     private void DisplaySelectionList(List<AliasReference> referenceList)
     {
@@ -200,7 +192,7 @@ public class EventFlagBrowser
             _searchInputCache = _searchInput;
         }
 
-        var entries = _aliasBank.AliasNames.GetEntries("Flags");
+        var entries = _aliasBank.AliasNames.GetEntries("Particles");
 
         foreach (var entry in entries)
         {
@@ -211,13 +203,13 @@ public class EventFlagBrowser
             var refTagList = entry.tags;
 
             // Append tags to to displayed name
-            if (CFG.Current.EventFlagBrowser_ShowTagsInBrowser)
+            if (CFG.Current.ParticleBrowser_ShowTagsInBrowser)
             {
                 var tagString = string.Join(" ", refTagList);
                 displayedName = $"{displayedName} {{ {tagString} }}";
             }
 
-            if (Utils.IsFlagSearchFilterMatch(_searchInput, refID, refName, refTagList))
+            if (Utils.IsParticleSearchFilterMatch(_searchInput, refID, refName, refTagList))
             {
                 if (ImGui.Selectable(displayedName))
                 {
@@ -267,9 +259,10 @@ public class EventFlagBrowser
 
                 if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                 {
-                    long num = long.Parse(refID.Replace("f", ""));
+                    string numId = refID.Replace("f", "");
+                    int num = int.Parse(numId);
 
-                    PlatformUtils.Instance.SetClipboardText($"{num}");
+                    PlatformUtils.Instance.SetClipboardText(num.ToString());
                 }
             }
         }

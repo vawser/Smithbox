@@ -3,6 +3,7 @@
 using ImGuiNET;
 using Microsoft.Win32;
 using SoulsFormats;
+using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.MsbEditor;
 using StudioCore.Settings;
@@ -1278,6 +1279,73 @@ public static class Utils
             {
                 lowerRefId = refId.ToLower();
             }
+        }
+
+        // Match: ID
+        if (lowerInputStr == lowerRefId)
+            match = true;
+
+        // Match: Reference Name
+        if (lowerInputStr == lowerRefName)
+            match = true;
+
+        // Match: Reference Segments
+        string[] refSegments = lowerRefName.Split(" ");
+        foreach (string refStr in refSegments)
+        {
+            string curString = refStr;
+
+            // Remove common brackets so the match ignores them
+            if (curString.Contains('('))
+                curString = curString.Replace("(", "");
+
+            if (curString.Contains(')'))
+                curString = curString.Replace(")", "");
+
+            if (curString.Contains('{'))
+                curString = curString.Replace("{", "");
+
+            if (curString.Contains('}'))
+                curString = curString.Replace("}", "");
+
+            if (curString.Contains('('))
+                curString = curString.Replace("(", "");
+
+            if (curString.Contains('['))
+                curString = curString.Replace("[", "");
+
+            if (curString.Contains(']'))
+                curString = curString.Replace("]", "");
+
+            if (lowerInputStr == curString.Trim())
+                match = true;
+        }
+
+        // Match: Tags
+        foreach (string tagStr in refTags)
+        {
+            if (lowerInputStr == tagStr.ToLower())
+                match = true;
+        }
+
+        return match;
+    }
+
+    // <summary>
+    /// Returns true is the input string (whole or part) matches a filename, reference name or tag.
+    /// </summary>
+    public static bool IsMapSearchFilterMatch(string inputStr, string refId, string refName, List<string> refTags)
+    {
+        bool match = false;
+
+        string lowerInputStr = inputStr.ToLower();
+        string lowerRefId = refId.ToLower();
+        string lowerRefName = refName.ToLower();
+
+        if (lowerInputStr.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
         }
 
         // Match: ID
