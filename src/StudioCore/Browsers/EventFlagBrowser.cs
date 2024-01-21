@@ -34,12 +34,13 @@ public class EventFlagBrowser
 
     private string _selectedName;
 
-    private bool reloadEventFlagAlias = false;
+    public EventFlagAliasBank _aliasBank;
 
-    public EventFlagBrowser(string id, AssetLocator locator)
+    public EventFlagBrowser(string id, AssetLocator locator, EventFlagAliasBank aliasBank)
     {
         _id = id;
         _locator = locator;
+        _aliasBank = aliasBank;
     }
 
     public void ToggleMenuVisibility()
@@ -58,7 +59,7 @@ public class EventFlagBrowser
         if (_locator.Type == GameType.Undefined)
             return;
 
-        if (EventFlagAliasBank.IsLoadingAliases)
+        if (_aliasBank.IsLoadingAliases)
             return;
 
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
@@ -128,7 +129,7 @@ public class EventFlagBrowser
                     {
                         bool isValid = true;
 
-                        var entries = EventFlagAliasBank._loadedAliasBank.GetEntries();
+                        var entries = _aliasBank.AliasNames.GetEntries();
 
                         foreach (var entry in entries)
                         {
@@ -138,9 +139,9 @@ public class EventFlagBrowser
 
                         if (isValid)
                         {
-                            EventFlagAliasBank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
+                            _aliasBank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
                             ImGui.CloseCurrentPopup();
-                            reloadEventFlagAlias = true;
+                            _aliasBank.mayReloadAliasBank = true;
                         }
                         else
                         {
@@ -163,7 +164,7 @@ public class EventFlagBrowser
 
             ImGui.BeginChild("EventFlagList");
 
-            DisplaySelectionList(EventFlagAliasBank.AliasNames.GetEntries());
+            DisplaySelectionList(_aliasBank.AliasNames.GetEntries());
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -174,10 +175,10 @@ public class EventFlagBrowser
         ImGui.PopStyleVar(3);
         ImGui.PopStyleColor(2);
 
-        if (reloadEventFlagAlias)
+        if (_aliasBank.mayReloadAliasBank)
         {
-            reloadEventFlagAlias = false;
-            EventFlagAliasBank.ReloadAliasBank();
+            _aliasBank.mayReloadAliasBank = false;
+            _aliasBank.ReloadAliasBank();
         }
     }
 
@@ -199,7 +200,7 @@ public class EventFlagBrowser
             _searchInputCache = _searchInput;
         }
 
-        var entries = EventFlagAliasBank._loadedAliasBank.GetEntries();
+        var entries = _aliasBank._loadedAliasBank.GetEntries();
 
         foreach (var entry in entries)
         {
@@ -248,16 +249,16 @@ public class EventFlagBrowser
 
                         if (ImGui.Button("Update"))
                         {
-                            EventFlagAliasBank.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+                            _aliasBank.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            reloadEventFlagAlias = true;
+                            _aliasBank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            EventFlagAliasBank.RemoveFromLocalAliasBank(_refUpdateId);
+                            _aliasBank.RemoveFromLocalAliasBank(_refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            reloadEventFlagAlias = true;
+                            _aliasBank.mayReloadAliasBank = true;
                         }
 
                         ImGui.EndPopup();

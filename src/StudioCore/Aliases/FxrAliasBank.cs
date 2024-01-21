@@ -12,21 +12,29 @@ namespace StudioCore.Aliases;
 
 public class FxrAliasBank
 {
-    private static AssetLocator AssetLocator;
+    private AssetLocator AssetLocator;
 
-    public static FxrAliasContainer _loadedAliasBank { get; set; }
+    public FxrAliasContainer _loadedAliasBank { get; set; }
 
-    public static bool IsLoadingAliases { get; private set; }
+    public bool IsLoadingAliases { get; private set; }
 
-    public static string ProgramDirectory = ".smithbox";
+    public string ProgramDirectory = ".smithbox";
 
-    public static string AliasDirectory = "FxrAliases";
+    public string AliasDirectory = "FxrAliases";
 
-    public static string FileName = "Fxr.json";
+    public string FileName = "Fxr.json";
 
-    public static string TemplateName = "Template.json";
+    public string TemplateName = "Template.json";
 
-    public static FxrAliasContainer AliasNames
+    public bool mayReloadAliasBank { get; set; }
+
+    public FxrAliasBank(AssetLocator locator)
+    {
+        AssetLocator = locator;
+        mayReloadAliasBank = false;
+    }
+
+    public FxrAliasContainer AliasNames
     {
         get
         {
@@ -37,7 +45,7 @@ public class FxrAliasBank
         }
     }
 
-    private static void LoadAliasNames()
+    private void LoadAliasNames()
     {
         try
         {
@@ -49,7 +57,7 @@ public class FxrAliasBank
         }
     }
 
-    public static void ReloadAliasBank()
+    public void ReloadAliasBank()
     {
         _loadedAliasBank = new FxrAliasContainer();
         IsLoadingAliases = true;
@@ -60,12 +68,7 @@ public class FxrAliasBank
         IsLoadingAliases = false;
     }
 
-    public static void SetAssetLocator(AssetLocator l)
-    {
-        AssetLocator = l;
-    }
-
-    public static FxrAliasResource LoadTargetAliasBank(string path)
+    public FxrAliasResource LoadTargetAliasBank(string path)
     {
         var newResource = new FxrAliasResource();
 
@@ -86,7 +89,7 @@ public class FxrAliasBank
         return newResource;
     }
 
-    public static void WriteTargetAliasBank(FxrAliasResource targetBank)
+    public void WriteTargetAliasBank(FxrAliasResource targetBank)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
@@ -116,7 +119,7 @@ public class FxrAliasBank
         }
     }
 
-    public static void AddToLocalAliasBank(string refID, string refName, string refTags)
+    public void AddToLocalAliasBank(string refID, string refName, string refTags)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
@@ -189,13 +192,13 @@ public class FxrAliasBank
             targetResource.list.Add(entry);
         }
 
-        FxrAliasBank.WriteTargetAliasBank(targetResource);
+        WriteTargetAliasBank(targetResource);
     }
 
     /// <summary>
     /// Removes specified reference from local model alias bank.
     /// </summary>
-    public static void RemoveFromLocalAliasBank(string refID)
+    public void RemoveFromLocalAliasBank(string refID)
     {
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{FileName}";
@@ -214,6 +217,6 @@ public class FxrAliasBank
             }
         }
 
-        FxrAliasBank.WriteTargetAliasBank(targetResource);
+        WriteTargetAliasBank(targetResource);
     }
 }

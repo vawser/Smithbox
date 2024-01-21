@@ -12,21 +12,29 @@ namespace StudioCore.Aliases;
 
 public class EventFlagAliasBank
 {
-    private static AssetLocator AssetLocator;
+    private AssetLocator AssetLocator;
 
-    public static EventFlagAliasContainer _loadedAliasBank { get; set; }
+    public EventFlagAliasContainer _loadedAliasBank { get; set; }
 
-    public static bool IsLoadingAliases { get; private set; }
+    public bool IsLoadingAliases { get; private set; }
 
-    public static string ProgramDirectory = ".smithbox";
+    private string ProgramDirectory = ".smithbox";
 
-    public static string AliasDirectory = "EventFlagAliases";
+    private string AliasDirectory = "EventFlagAliases";
 
-    public static string FileName = "EventFlag.json";
+    private string FileName = "EventFlag.json";
 
-    public static string TemplateName = "Template.json";
+    private string TemplateName = "Template.json";
 
-    public static EventFlagAliasContainer AliasNames
+    public bool mayReloadAliasBank { get; set; }
+
+    public EventFlagAliasBank(AssetLocator locator)
+    {
+        AssetLocator = locator;
+        mayReloadAliasBank = false;
+    }
+
+    public EventFlagAliasContainer AliasNames
     {
         get
         {
@@ -37,7 +45,7 @@ public class EventFlagAliasBank
         }
     }
 
-    private static void LoadAliasNames()
+    private void LoadAliasNames()
     {
         try
         {
@@ -49,7 +57,7 @@ public class EventFlagAliasBank
         }
     }
 
-    public static void ReloadAliasBank()
+    public void ReloadAliasBank()
     {
         _loadedAliasBank = new EventFlagAliasContainer();
         IsLoadingAliases = true;
@@ -60,12 +68,7 @@ public class EventFlagAliasBank
         IsLoadingAliases = false;
     }
 
-    public static void SetAssetLocator(AssetLocator l)
-    {
-        AssetLocator = l;
-    }
-
-    public static EventFlagAliasResource LoadTargetAliasBank(string path)
+    public EventFlagAliasResource LoadTargetAliasBank(string path)
     {
         var newResource = new EventFlagAliasResource();
 
@@ -86,7 +89,7 @@ public class EventFlagAliasBank
         return newResource;
     }
 
-    public static void WriteTargetAliasBank(EventFlagAliasResource targetBank)
+    public void WriteTargetAliasBank(EventFlagAliasResource targetBank)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
@@ -116,7 +119,7 @@ public class EventFlagAliasBank
         }
     }
 
-    public static void AddToLocalAliasBank(string refID, string refName, string refTags)
+    public void AddToLocalAliasBank(string refID, string refName, string refTags)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\{AliasDirectory}\\{TemplateName}";
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
@@ -189,13 +192,13 @@ public class EventFlagAliasBank
             targetResource.list.Add(entry);
         }
 
-        EventFlagAliasBank.WriteTargetAliasBank(targetResource);
+        WriteTargetAliasBank(targetResource);
     }
 
     /// <summary>
     /// Removes specified reference from local model alias bank.
     /// </summary>
-    public static void RemoveFromLocalAliasBank(string refID)
+    public void RemoveFromLocalAliasBank(string refID)
     {
         var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
         var resourceFilePath = $"{modResourcePath}\\{FileName}";
@@ -214,6 +217,6 @@ public class EventFlagAliasBank
             }
         }
 
-        EventFlagAliasBank.WriteTargetAliasBank(targetResource);
+        WriteTargetAliasBank(targetResource);
     }
 }

@@ -32,12 +32,13 @@ public class FxrBrowser
 
     private string _selectedName;
 
-    private bool reloadFxrAlias = false;
+    public FxrAliasBank _aliasBank;
 
-    public FxrBrowser(string id, AssetLocator locator)
+    public FxrBrowser(string id, AssetLocator locator, FxrAliasBank aliasBank)
     {
         _id = id;
         _locator = locator;
+        _aliasBank = aliasBank;
     }
 
     public void ToggleMenuVisibility()
@@ -120,7 +121,7 @@ public class FxrBrowser
                     {
                         bool isValid = true;
 
-                        var entries = FxrAliasBank._loadedAliasBank.GetEntries();
+                        var entries = _aliasBank.AliasNames.GetEntries();
 
                         foreach (var entry in entries)
                         {
@@ -130,9 +131,9 @@ public class FxrBrowser
 
                         if (isValid)
                         {
-                            FxrAliasBank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
+                            _aliasBank.AddToLocalAliasBank(_newRefId, _newRefName, _newRefTags);
                             ImGui.CloseCurrentPopup();
-                            reloadFxrAlias = true;
+                            _aliasBank.mayReloadAliasBank = true;
                         }
                         else
                         {
@@ -155,7 +156,7 @@ public class FxrBrowser
 
             ImGui.BeginChild("ParticleFlagList");
 
-            DisplaySelectionList(FxrAliasBank.AliasNames.GetEntries());
+            DisplaySelectionList(_aliasBank.AliasNames.GetEntries());
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -166,10 +167,10 @@ public class FxrBrowser
         ImGui.PopStyleVar(3);
         ImGui.PopStyleColor(2);
 
-        if (reloadFxrAlias)
+        if (_aliasBank.mayReloadAliasBank)
         {
-            reloadFxrAlias = false;
-            FxrAliasBank.ReloadAliasBank();
+            _aliasBank.mayReloadAliasBank = false;
+            _aliasBank.ReloadAliasBank();
         }
     }
 
@@ -191,7 +192,7 @@ public class FxrBrowser
             _searchInputCache = _searchInput;
         }
 
-        var entries = FxrAliasBank._loadedAliasBank.GetEntries();
+        var entries = _aliasBank.AliasNames.GetEntries();
 
         foreach (var entry in entries)
         {
@@ -240,16 +241,16 @@ public class FxrBrowser
 
                         if (ImGui.Button("Update"))
                         {
-                            FxrAliasBank.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
+                            _aliasBank.AddToLocalAliasBank(_refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            reloadFxrAlias = true;
+                            _aliasBank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            FxrAliasBank.RemoveFromLocalAliasBank(_refUpdateId);
+                            _aliasBank.RemoveFromLocalAliasBank(_refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            reloadFxrAlias = true;
+                            _aliasBank.mayReloadAliasBank = true;
                         }
 
                         ImGui.EndPopup();

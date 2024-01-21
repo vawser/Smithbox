@@ -27,6 +27,7 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
+using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
@@ -61,6 +62,10 @@ public class Smithbox
     // Floating windows
     private readonly HelpBrowser _helpBrowser;
     private readonly SettingsMenu _settingsMenu;
+
+    private EventFlagAliasBank eventFlagAliasBank;
+    private FxrAliasBank fxrAliasBank;
+
     private readonly EventFlagBrowser _eventFlagBrowser;
     private readonly FxrBrowser _fxrBrowser;
 
@@ -121,15 +126,20 @@ public class Smithbox
         _settingsMenu.ParamEditor = paramEditor;
         _settingsMenu.TextEditor = textEditor;
 
+
+        eventFlagAliasBank = new EventFlagAliasBank(_assetLocator);
+        eventFlagAliasBank.ReloadAliasBank();
+
+        fxrAliasBank = new FxrAliasBank(_assetLocator);
+        fxrAliasBank.ReloadAliasBank();
+
         _helpBrowser = new HelpBrowser("HelpBrowser", _assetLocator);
-        _eventFlagBrowser = new EventFlagBrowser("EventFlagBrowser", _assetLocator);
-        _fxrBrowser = new FxrBrowser("FxrBrowser", _assetLocator);
+
+        _eventFlagBrowser = new EventFlagBrowser("EventFlagBrowser", _assetLocator, eventFlagAliasBank);
+        _fxrBrowser = new FxrBrowser("FxrBrowser", _assetLocator, fxrAliasBank);
 
         MapAliasBank.SetAssetLocator(_assetLocator);
-
         ModelAliasBank.SetAssetLocator(_assetLocator);
-        FxrAliasBank.SetAssetLocator(_assetLocator);
-        EventFlagAliasBank.SetAssetLocator(_assetLocator);
 
         ParamBank.PrimaryBank.SetAssetLocator(_assetLocator);
         ParamBank.VanillaBank.SetAssetLocator(_assetLocator);
@@ -426,8 +436,8 @@ public class Smithbox
 
         MapAliasBank.ReloadMapAliases();
         ModelAliasBank.ReloadAliasBank();
-        FxrAliasBank.ReloadAliasBank();
-        EventFlagAliasBank.ReloadAliasBank();
+        fxrAliasBank.ReloadAliasBank();
+        eventFlagAliasBank.ReloadAliasBank();
 
         ParamBank.ReloadParams(newsettings, options);
         MtdBank.ReloadMtds();
