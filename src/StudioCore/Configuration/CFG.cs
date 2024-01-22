@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
 using StudioCore.Settings;
+using StudioCore.MsbEditor;
 
 namespace StudioCore;
 
@@ -54,7 +55,6 @@ public class CFG
     public bool EnableTexturing = false;
     public bool Map_AlwaysListLoadedMaps = true;
     public bool EnableEldenRingAutoMapOffset = true;
-
     public bool SceneView_ShowCharacterNames = true;
 
     public bool Map_EnableSelectionOutline = true;
@@ -195,6 +195,53 @@ public class CFG
     public bool MapAliases_ShowUnusedNames = false;
     public bool MapAliases_ShowTagsInBrowser = true;
     public bool MapAliases_ShowAliasAddition = false;
+
+    // Toolbar: Controls
+    public bool Toolbar_ShowControlsMenu = true;
+
+    // Toolbar: Tools
+    public bool Toolbar_ShowToolsMenu = false;
+
+    // Toolbar: Scrambler
+    public bool Toolbar_ShowScramblerMenu = false;
+
+    public bool Scrambler_RandomisePosition_X = false;
+    public bool Scrambler_RandomisePosition_Y = false;
+    public bool Scrambler_RandomisePosition_Z = false;
+
+    public float Scrambler_OffsetMin_Position_X = -100.0f;
+    public float Scrambler_OffsetMax_Position_X = 100.0f;
+    public float Scrambler_OffsetMin_Position_Y = -100.0f;
+    public float Scrambler_OffsetMax_Position_Y = 100.0f;
+    public float Scrambler_OffsetMin_Position_Z = -100.0f;
+    public float Scrambler_OffsetMax_Position_Z = 100.0f;
+
+    public bool Scrambler_RandomiseRotation_X = false;
+    public bool Scrambler_RandomiseRotation_Y = false;
+    public bool Scrambler_RandomiseRotation_Z = false;
+
+    public float Scrambler_OffsetMin_Rotation_X = 0.0f;
+    public float Scrambler_OffsetMax_Rotation_X = 360.0f;
+    public float Scrambler_OffsetMin_Rotation_Y = 0.0f;
+    public float Scrambler_OffsetMax_Rotation_Y = 360.0f;
+    public float Scrambler_OffsetMin_Rotation_Z = 0.0f;
+    public float Scrambler_OffsetMax_Rotation_Z = 360.0f;
+
+    public bool Scrambler_RandomiseScale_SharedScale = false;
+
+    public bool Scrambler_RandomiseScale_X = false;
+    public bool Scrambler_RandomiseScale_Y = false;
+    public bool Scrambler_RandomiseScale_Z = false;
+
+    public float Scrambler_OffsetMin_Scale_X = 1.0f;
+    public float Scrambler_OffsetMax_Scale_X = 3.0f;
+    public float Scrambler_OffsetMin_Scale_Y = 1.0f;
+    public float Scrambler_OffsetMax_Scale_Y = 3.0f;
+    public float Scrambler_OffsetMin_Scale_Z = 1.0f;
+    public float Scrambler_OffsetMax_Scale_Z = 3.0f;
+
+    // Toolbar: Replicator
+    public bool Toolbar_ShowReplicatorMenu = false;
 
     // CFG
     public static CFG Current { get; private set; }

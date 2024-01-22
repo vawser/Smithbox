@@ -907,6 +907,10 @@ public class Entity : ISelectable, IDisposable
             PropertiesChangedAction act = new(WrappedObject);
             PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
             act.AddPropertyChange(prop, newt.Position);
+
+            PropertyInfo scaleProp = WrappedObject.GetType().GetProperty("Scale");
+            act.AddPropertyChange(scaleProp, newt.Scale);
+
             prop = WrappedObject.GetType().GetProperty("Rotation");
             if (prop != null)
             {
@@ -1003,9 +1007,9 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
-    /// Get action for changing a float propety value for this object.
+    /// Get action for changing a Position/Rotation/Scale propety value for this object.
     /// </summary>
-    public Action ChangeObjectProperty(string propTarget, float propValue)
+    public Action ChangeObjectTransform(string propTarget, Vector3 propValue)
     {
         var actions = new List<Action>();
         actions.Add(GetPropertyChangeAction(propTarget, propValue));
