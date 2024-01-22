@@ -927,6 +927,14 @@ namespace StudioCore.MsbEditor
                         ImGui.SameLine();
                         Utils.ShowHelpMarker("When enabled, the position offset will be applied in the opposite direction.");
                     }
+
+                    ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
+
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
+                    }
                 }
 
                 ImGui.EndChild();
@@ -964,7 +972,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void ReplicateSelection()
         {
-            ReplicateMapObjectsAction action = new(_universe, _scene,
+            ReplicateMapObjectsAction action = new(this, _universe, _scene,
                     _selection.GetFilteredSelection<MapEntity>().ToList(), true);
             _actionManager.ExecuteAction(action);
         }
@@ -1337,7 +1345,7 @@ namespace StudioCore.MsbEditor
             return newTransform;
         }
 
-        private Transform GetScrambledTransform(Entity sel)
+        public Transform GetScrambledTransform(Entity sel)
         {
             float posOffset_X = (float)GetRandomNumber(CFG.Current.Scrambler_OffsetMin_Position_X, CFG.Current.Scrambler_OffsetMax_Position_X);
             float posOffset_Y = (float)GetRandomNumber(CFG.Current.Scrambler_OffsetMin_Position_Y, CFG.Current.Scrambler_OffsetMax_Position_Y);

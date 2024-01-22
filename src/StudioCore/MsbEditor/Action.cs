@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Silk.NET.SDL;
 using SoulsFormats;
 using SoulsFormats.Util;
 using StudioCore.Scene;
@@ -1315,10 +1316,12 @@ public class ReplicateMapObjectsAction : Action
     private readonly Map TargetMap;
     private readonly Universe Universe;
     private RenderScene Scene;
+    private MsbToolbar Toolbar;
 
-    public ReplicateMapObjectsAction(Universe univ, RenderScene scene, List<MapEntity> objects, bool setSelection,
+    public ReplicateMapObjectsAction(MsbToolbar toolbar, Universe univ, RenderScene scene, List<MapEntity> objects, bool setSelection,
         Map targetMap = null, Entity targetBTL = null)
     {
+        Toolbar = toolbar;
         Universe = univ;
         Scene = scene;
         Clonables.AddRange(objects);
@@ -1467,6 +1470,17 @@ public class ReplicateMapObjectsAction : Action
                     }
 
                     ApplyReplicateTransform(newobj, posOffset);
+
+                    TaskLogs.AddLog($"LOCAL: {newobj.GetLocalTransform().EulerRotation}");
+
+                    if (CFG.Current.Replicator_Apply_Scramble_Configuration)
+                    {
+                        Transform scrambledTransform = Toolbar.GetScrambledTransform(newobj);
+
+                        newobj.SetPropertyValue("Position", scrambledTransform.Position);
+                        newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation);
+                        newobj.SetPropertyValue("Scale", scrambledTransform.Scale);
+                    }
 
                     newobj.UpdateRenderModel();
                     if (newobj.RenderSceneMesh != null)
