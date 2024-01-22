@@ -22,9 +22,26 @@ using static SoulsFormats.ACB;
 using DotNext;
 using Silk.NET.SDL;
 using Veldrid.Utilities;
+using SoulsFormats;
 
 namespace StudioCore.MsbEditor
 {
+    public enum SelectedTool
+    {
+        None,
+        Selection_ToggleVisibility,
+        Selection_GoToInObjectList,
+        Selection_MoveToCamera,
+        Selection_FrameInViewport,
+        Selection_ResetRotation,
+        Selection_Rotate,
+        Selection_Dummify,
+        Selection_Undummify,
+        Selection_Move_to_Grid,
+        Selection_Scramble,
+        Selection_Replicate
+    }
+
     public class MsbToolbar
     {
         private readonly ActionManager _actionManager;
@@ -38,6 +55,8 @@ namespace StudioCore.MsbEditor
         private Universe _universe;
 
         private IViewport _viewport;
+
+        private SelectedTool _selectedTool;
 
         public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, AssetLocator locator, MsbEditorScreen editor, IViewport viewport)
         {
@@ -62,169 +81,350 @@ namespace StudioCore.MsbEditor
 
             if (ImGui.Begin($@"Toolbar##MsbMenubar"))
             {
-                // Button Bar
-                if (ImGui.Button("Controls##ControlsToggle"))
-                {
-                    CFG.Current.Toolbar_ShowControlsMenu = true;
-                    CFG.Current.Toolbar_ShowToolsMenu = false;
-                    CFG.Current.Toolbar_ShowScramblerMenu = false;
-                    CFG.Current.Toolbar_ShowReplicatorMenu = false;
-                }
-                ImGui.SameLine();
-                if (ImGui.Button("Tools##ToolsToggle"))
-                {
-                    CFG.Current.Toolbar_ShowControlsMenu = false;
-                    CFG.Current.Toolbar_ShowToolsMenu = true;
-                    CFG.Current.Toolbar_ShowScramblerMenu = false;
-                    CFG.Current.Toolbar_ShowReplicatorMenu = false;
-                }
-                ImGui.SameLine();
-                if (ImGui.Button("Scrambler##ScramblerToggle"))
-                {
-                    CFG.Current.Toolbar_ShowControlsMenu = false;
-                    CFG.Current.Toolbar_ShowToolsMenu = false;
-                    CFG.Current.Toolbar_ShowScramblerMenu = true;
-                    CFG.Current.Toolbar_ShowReplicatorMenu = false;
-                }
-                ImGui.SameLine();
-                if (ImGui.Button("Replicator##ReplicatorToggle"))
-                {
-                    CFG.Current.Toolbar_ShowControlsMenu = false;
-                    CFG.Current.Toolbar_ShowToolsMenu = false;
-                    CFG.Current.Toolbar_ShowScramblerMenu = false;
-                    CFG.Current.Toolbar_ShowReplicatorMenu = true;
-                }
+                ImGui.Columns(2);
 
-                // Controls
-                if (CFG.Current.Toolbar_ShowControlsMenu)
+                // Selection List
+                ImGui.BeginChild("toolselection");
+
+                ImGui.Text("Double-click to use.");
+                ImGui.Separator();
+                
+                // Go to in Object List
+                if (ImGui.Selectable("Go to in Object List##tool_Selection_GoToInObjectList", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    ImGui.Separator();
+                    _selectedTool = SelectedTool.Selection_GoToInObjectList;
 
-                    ImGui.Text($"Hold right click in viewport to activate camera mode");
-                    ImGui.Text($"Forward: {KeyBindings.Current.Viewport_Cam_Forward.HintText}\n" +
-                        $"Left: {KeyBindings.Current.Viewport_Cam_Left.HintText}\n" +
-                        $"Back: {KeyBindings.Current.Viewport_Cam_Back.HintText}\n" +
-                        $"Right: {KeyBindings.Current.Viewport_Cam_Right.HintText}\n" +
-                        $"Up: {KeyBindings.Current.Viewport_Cam_Up.HintText}\n" +
-                        $"Down: {KeyBindings.Current.Viewport_Cam_Down.HintText}\n" +
-                        $"Fast cam: Shift\n" +
-                        $"Slow cam: Ctrl\n" +
-                        $"Tweak speed: Mouse wheel");
-                }
-
-                // Tools
-                if (CFG.Current.Toolbar_ShowToolsMenu)
-                {
-                    ImGui.Separator();
-
-                    if (CFG.Current.ShowUITooltips)
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
-                        Utils.ShowHelpMarker("Move the camera to the current selection (first if multiple are selected).");
-                        ImGui.SameLine();
+                        GoToInObjectList();
                     }
-                    ImGui.PushItemWidth(200);
-                    if (ImGui.Button("Go to Selection"))
-                    {
-                        GotoSelectionInSceneTree();
-                    }
-                    ImGui.SameLine();
+                }
 
-                    if (CFG.Current.ShowUITooltips)
-                    {
-                        Utils.ShowHelpMarker("Move the current selection to the camera position.");
-                        ImGui.SameLine();
-                    }
-                    ImGui.PushItemWidth(80);
-                    if (ImGui.Button("Move Selection to Camera"))
+                // Move to Camera
+                if (ImGui.Selectable("Move to Camera##tool_Selection_MoveToCamera", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_MoveToCamera;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
                         MoveSelectionToCamera();
                     }
+                }
 
-                    if (CFG.Current.ShowUITooltips)
-                    {
-                        Utils.ShowHelpMarker("Frame the current selection in the viewport (first if multiple are selected).");
-                        ImGui.SameLine();
-                    }
-                    ImGui.PushItemWidth(80);
-                    if (ImGui.Button("Frame Selection"))
+                // Frame in Viewport
+                if (ImGui.Selectable("Frame in Viewport##tool_Selection_FrameInViewport", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_FrameInViewport;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
                         FrameSelection();
                     }
-                    ImGui.SameLine();
+                }
 
-                    if (CFG.Current.ShowUITooltips)
-                    {
-                        Utils.ShowHelpMarker("Reset the rotation of the current selection to <0, 0, 0>.");
-                        ImGui.SameLine();
-                    }
-                    ImGui.PushItemWidth(80);
-                    if (ImGui.Button("Reset Rotation"))
-                    {
-                        ResetRotationSelection();
-                    }
+                // Toggle Visibility
+                if (ImGui.Selectable("Toggle Visibility##tool_Selection_ToggleVisibility", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_ToggleVisibility;
 
-                    if (CFG.Current.ShowUITooltips)
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
-                        Utils.ShowHelpMarker("Enable the visibility of all objects.");
-                        ImGui.SameLine();
-                    }
-                    ImGui.PushItemWidth(80);
-                    if (ImGui.Button("Force Visbility"))
-                    {
-                        ShowAllObjects();
-                    }
-                    ImGui.SameLine();
-
-                    if (CFG.Current.ShowUITooltips)
-                    {
-                        Utils.ShowHelpMarker("Toggle the visibility of the current selection.");
-                        ImGui.SameLine();
-                    }
-                    ImGui.PushItemWidth(80);
-                    if (ImGui.Button("Toggle Visbility"))
-                    {
-                        ToggleSelectionVisibility();
-                    }
-
-                    if (CFG.Current.ShowUITooltips)
-                    {
-                        Utils.ShowHelpMarker("Rotate the current selection by the Arbitary Rotation Roll increment.");
-                        ImGui.SameLine();
-                    }
-                    ImGui.PushItemWidth(80);
-                    if (ImGui.Button("Rotate: X"))
-                    {
-                        ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
-                    }
-                    ImGui.SameLine();
-
-                    if (CFG.Current.ShowUITooltips)
-                    {
-                        Utils.ShowHelpMarker("Rotate the current selection by the Arbitary Rotation Yaw increment.");
-                        ImGui.SameLine();
-                    }
-                    ImGui.PushItemWidth(80);
-                    if (ImGui.Button("Rotate: Y"))
-                    {
-                        ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
-                    }
-                    ImGui.SameLine();
-
-                    if (CFG.Current.ShowUITooltips)
-                    {
-                        Utils.ShowHelpMarker("Rotate the current selection by the Arbitary Rotation Yaw increment.");
-                        ImGui.SameLine();
-                    }
-                    ImGui.PushItemWidth(80);
-                    if (ImGui.Button("Rotate: Y Pivot"))
-                    {
-                        ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
+                        ToggleEntityVisibility();
                     }
                 }
 
-                // Scrambler
-                if (CFG.Current.Toolbar_ShowScramblerMenu)
+                // Rotate
+                if (ImGui.Selectable("Rotate##tool_Selection_Rotate", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
+                    _selectedTool = SelectedTool.Selection_Rotate;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        if (CFG.Current.Toolbar_Rotate_X)
+                        {
+                            ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
+                        }
+                        if (CFG.Current.Toolbar_Rotate_Y)
+                        {
+                            ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
+                        }
+                        if (CFG.Current.Toolbar_Rotate_Y_Pivot)
+                        {
+                            ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
+                        }
+                    }
+                }
+
+                // Reset Rotation
+                if (ImGui.Selectable("Reset Rotation to Default##tool_Selection_ResetRotation", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_ResetRotation;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        ResetRotationSelection();
+                    }
+                }
+
+                // Dummify
+                if (ImGui.Selectable("Dummify##tool_Selection_Dummify", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_Dummify;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        DummySelection();
+                    }
+                }
+
+                // Undummify
+                if (ImGui.Selectable("Undummify##tool_Selection_Undummify", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_Undummify;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        UnDummySelection();
+                    }
+                }
+
+                // Scramble
+                if (ImGui.Selectable("Scramble##tool_Selection_Scramble", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_Scramble;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        ScambleSelection();
+                    }
+                }
+
+                // Replicate
+                if (ImGui.Selectable("Replicate##tool_Selection_Replicate", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_Replicate;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        ReplicateSelection();
+                    }
+                }
+
+                // Move to Grid
+                if (CFG.Current.Map_EnableViewportGrid)
+                {
+                    if (ImGui.Selectable("Move to Grid##tool_Selection_Move_to_Grid", false, ImGuiSelectableFlags.AllowDoubleClick))
+                    {
+                        _selectedTool = SelectedTool.Selection_Move_to_Grid;
+
+                        if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                        {
+                            MoveSelectionToGrid();
+                        }
+                    }
+                }
+
+                ImGui.EndChild();
+
+                // Configuration Window
+                ImGui.NextColumn();
+
+                ImGui.BeginChild("toolconfiguration");
+
+                // Go to in Object List
+                if (_selectedTool == SelectedTool.Selection_GoToInObjectList)
+                {
+                    ImGui.Text("Move the camera to the current selection (first if multiple are selected).");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Go_to_Selection_in_Object_List.HintText)}");
+                    ImGui.Separator();
+                }
+
+                // Move to Camera
+                if (_selectedTool == SelectedTool.Selection_MoveToCamera)
+                {
+                    ImGui.Text("Move the current selection to the camera position.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText)}");
+                    ImGui.Separator();
+
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        Utils.ShowHelpMarker("Set the distance at which the current selection is offset from the camera when this action is used.");
+                        ImGui.SameLine();
+                    }
+                    ImGui.InputFloat("Offset Distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset);
+                        
+                }
+
+                // Frame in Viewport
+                if (_selectedTool == SelectedTool.Selection_FrameInViewport)
+                {
+                    ImGui.Text("Frame the current selection in the viewport (first if multiple are selected).");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport.HintText)}");
+                    ImGui.Separator();
+                }
+
+                // Toggle Visibility
+                if (_selectedTool == SelectedTool.Selection_ToggleVisibility)
+                {
+                    ImGui.Text("Toggle the visibility of the current selection or all objects.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Flip.HintText)} for Selection (Flip).");
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Flip.HintText)} for all Objects (Flip).");
+
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Enabled.HintText)} for Selection (Enabled).");
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Enabled.HintText)} for all Objects (Enabled).");
+
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Disabled.HintText)} for Selection (Disabled).");
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Disabled.HintText)} for all Objects (Disabled).");
+
+                    ImGui.Separator();
+
+                    ImGui.Text("Target:");
+                    if (ImGui.Checkbox("Selection", ref CFG.Current.Toolbar_Visibility_Target_Selection))
+                    {
+                        CFG.Current.Toolbar_Visibility_Target_All = false;
+                    }
+                    if (ImGui.Checkbox("All", ref CFG.Current.Toolbar_Visibility_Target_All))
+                    {
+                        CFG.Current.Toolbar_Visibility_Target_Selection = false;
+                    }
+
+                    ImGui.Separator();
+                    ImGui.Text("State:");
+                    if (ImGui.Checkbox("Visible", ref CFG.Current.Toolbar_Visibility_State_Enabled))
+                    {
+                        CFG.Current.Toolbar_Visibility_State_Disabled = false;
+                        CFG.Current.Toolbar_Visibility_State_Flip = false;
+                    }
+                    if (ImGui.Checkbox("Invisible", ref CFG.Current.Toolbar_Visibility_State_Disabled))
+                    {
+                        CFG.Current.Toolbar_Visibility_State_Enabled = false;
+                        CFG.Current.Toolbar_Visibility_State_Flip = false;
+                    }
+                    if (ImGui.Checkbox("Flip", ref CFG.Current.Toolbar_Visibility_State_Flip))
+                    {
+                        CFG.Current.Toolbar_Visibility_State_Enabled = false;
+                        CFG.Current.Toolbar_Visibility_State_Disabled = false;
+                    }
+                    ImGui.Text("Flip will invert the current visibility.");
+                }
+
+                // Reset Rotation
+                if (_selectedTool == SelectedTool.Selection_ResetRotation)
+                {
+                    ImGui.Text("Reset the rotation of the current selection to <0, 0, 0>.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Reset_Rotation.HintText)}");
+                    ImGui.Separator();
+                }
+
+                // Rotate
+                if (_selectedTool == SelectedTool.Selection_Rotate)
+                {
+                    ImGui.Text("Rotate the current selection by the following parameters.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_X.HintText)} for Rotate X");
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_Y.HintText)} for Rotate Y");
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_Y_Pivot.HintText)} for Rotate Pivot Y");
+                    ImGui.Separator();
+
+                    var rot = CFG.Current.Toolbar_Rotate_Increment;
+
+                    if(ImGui.Checkbox("X", ref CFG.Current.Toolbar_Rotate_X))
+                    {
+                        CFG.Current.Toolbar_Rotate_Y = false;
+                        CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                    }
+                    ImGui.SameLine();
+                    if (ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Rotate_Y))
+                    {
+                        CFG.Current.Toolbar_Rotate_X = false;
+                        CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                    }
+                    ImGui.SameLine();
+                    if (ImGui.Checkbox("Y Pivot", ref CFG.Current.Toolbar_Rotate_Y_Pivot))
+                    {
+                        CFG.Current.Toolbar_Rotate_Y = false;
+                        CFG.Current.Toolbar_Rotate_X = false;
+                    }
+
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        Utils.ShowHelpMarker("Set the angle increment amount used by the rotation.");
+                        ImGui.SameLine();
+                    }
+                    if (ImGui.InputFloat("Degree Increment", ref rot))
+                    {
+                        CFG.Current.Toolbar_Rotate_Increment = Math.Clamp(rot, -180.0f, 180.0f);
+                    }
+                }
+
+                // Dummify
+                if (_selectedTool == SelectedTool.Selection_Dummify)
+                {
+                    ImGui.Text("Make the current selection Dummy Enemy/Object/Asset entities.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Dummify.HintText)}");
+                    ImGui.Separator();
+                }
+
+                // Undummify
+                if (_selectedTool == SelectedTool.Selection_Undummify)
+                {
+                    ImGui.Text("Make the current selection normal Enemy/Object/Asset entities.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Undummify.HintText)}");
+                    ImGui.Separator();
+                }
+
+                // Move to Grid
+                if (_selectedTool == SelectedTool.Selection_Move_to_Grid)
+                {
+                    ImGui.Text("Set the current selection to the closest grid position.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Set_to_Grid.HintText)}");
+                    ImGui.Separator();
+
+                    ImGui.Checkbox("X", ref CFG.Current.Toolbar_Move_to_Grid_X);
+                    ImGui.SameLine();
+                    ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Move_to_Grid_Y);
+                    ImGui.SameLine();
+                    ImGui.Checkbox("Z", ref CFG.Current.Toolbar_Move_to_Grid_Z);
+
+                    if(ImGui.Button("Switch"))
+                    {
+                        CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input = !CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input;
+                    }
+                    ImGui.SameLine();
+                    if (CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input)
+                    {
+                        var height = CFG.Current.Map_ViewportGrid_Offset;
+
+                        ImGui.InputFloat("Grid height", ref height);
+
+                        if (height < -10000)
+                            height = -10000;
+
+                        if (height > 10000)
+                            height = 10000;
+
+                        CFG.Current.Map_ViewportGrid_Offset = height;
+                    }
+                    else
+                    {
+                        ImGui.SliderFloat("Grid height", ref CFG.Current.Map_ViewportGrid_Offset, -1000, 1000);
+                    }
+                }
+
+                // Scramble
+                if (_selectedTool == SelectedTool.Selection_Scramble)
+                {
+                    ImGui.Text("Scramble the current selection's position, rotation and scale by the following parameters.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Scramble.HintText)}");
                     ImGui.Separator();
 
                     var randomOffsetMin_Pos_X = CFG.Current.Scrambler_OffsetMin_Position_X;
@@ -252,88 +452,84 @@ namespace StudioCore.MsbEditor
                     var randomOffsetMax_Scale_Z = CFG.Current.Scrambler_OffsetMax_Scale_Z;
 
                     // Position
-                    ImGui.Text("Scramble Position");
+                    ImGui.Text("Position");
                     ImGui.Checkbox("X##scramblePosX", ref CFG.Current.Scrambler_RandomisePosition_X);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinPosX", ref randomOffsetMin_Pos_X);
+                    ImGui.InputFloat("Lower Bound##offsetMinPosX", ref randomOffsetMin_Pos_X);
                     ImGui.SameLine();
 
-                    ImGui.InputFloat("Offset Max##offsetMaxPosX", ref randomOffsetMax_Pos_X);
+                    ImGui.InputFloat("Upper Bound##offsetMaxPosX", ref randomOffsetMax_Pos_X);
 
                     ImGui.Checkbox("Y##scramblePosY", ref CFG.Current.Scrambler_RandomisePosition_Y);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinPosY", ref randomOffsetMin_Pos_Y);
+                    ImGui.InputFloat("Lower Bound##offsetMinPosY", ref randomOffsetMin_Pos_Y);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Max##offsetMaxPosY", ref randomOffsetMax_Pos_Y);
+                    ImGui.InputFloat("Upper Bound##offsetMaxPosY", ref randomOffsetMax_Pos_Y);
 
                     ImGui.Checkbox("Z##scramblePosZ", ref CFG.Current.Scrambler_RandomisePosition_Z);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinPosZ", ref randomOffsetMin_Pos_Z);
+                    ImGui.InputFloat("Lower Bound##offsetMinPosZ", ref randomOffsetMin_Pos_Z);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Max##offsetMaxPosZ", ref randomOffsetMax_Pos_Z);
+                    ImGui.InputFloat("Upper Bound##offsetMaxPosZ", ref randomOffsetMax_Pos_Z);
 
                     // Rotation
-                    ImGui.Text("Scramble Rotation");
+                    ImGui.Text("Rotation");
                     ImGui.Checkbox("X##scrambleRotX", ref CFG.Current.Scrambler_RandomiseRotation_X);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinRotX", ref randomOffsetMin_Rot_X);
+                    ImGui.InputFloat("Lower Bound##offsetMinRotX", ref randomOffsetMin_Rot_X);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Max##offsetMaxRotX", ref randomOffsetMax_Rot_X);
+                    ImGui.InputFloat("Upper Bound##offsetMaxRotX", ref randomOffsetMax_Rot_X);
 
                     ImGui.Checkbox("Y##scrambleRotY", ref CFG.Current.Scrambler_RandomiseRotation_Y);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinRotY", ref randomOffsetMin_Rot_Y);
+                    ImGui.InputFloat("Lower Bound##offsetMinRotY", ref randomOffsetMin_Rot_Y);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Max##offsetMaxRotY", ref randomOffsetMax_Rot_Y);
+                    ImGui.InputFloat("Upper Bound##offsetMaxRotY", ref randomOffsetMax_Rot_Y);
 
                     ImGui.Checkbox("Z##scrambleRotZ", ref CFG.Current.Scrambler_RandomiseRotation_Z);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinRotZ", ref randomOffsetMin_Rot_Z);
+                    ImGui.InputFloat("Lower Bound##offsetMinRotZ", ref randomOffsetMin_Rot_Z);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Max##offsetMaxRotZ", ref randomOffsetMax_Rot_Z);
+                    ImGui.InputFloat("Upper Bound##offsetMaxRotZ", ref randomOffsetMax_Rot_Z);
 
                     // Scale
-                    ImGui.Text("Scramble Scale");
+                    ImGui.Text("Scale");
                     ImGui.Checkbox("X##scrambleScaleX", ref CFG.Current.Scrambler_RandomiseScale_X);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinScaleX", ref randomOffsetMin_Scale_X);
+                    ImGui.InputFloat("Lower Bound##offsetMinScaleX", ref randomOffsetMin_Scale_X);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Max##offsetMaxScaleX", ref randomOffsetMax_Scale_X);
-                    ImGui.SameLine();
-                    ImGui.Text("     ");
-                    ImGui.SameLine();
-                    ImGui.Checkbox("Shared Scale##scrambleSharedScale", ref CFG.Current.Scrambler_RandomiseScale_SharedScale);
+                    ImGui.InputFloat("Upper Bound##offsetMaxScaleX", ref randomOffsetMax_Scale_X);
 
                     ImGui.Checkbox("Y##scrambleScaleY", ref CFG.Current.Scrambler_RandomiseScale_Y);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinScaleY", ref randomOffsetMin_Scale_Y);
+                    ImGui.InputFloat("Lower Bound##offsetMinScaleY", ref randomOffsetMin_Scale_Y);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Max##offsetMaxScaleY", ref randomOffsetMax_Scale_Y);
+                    ImGui.InputFloat("Upper Bound##offsetMaxScaleY", ref randomOffsetMax_Scale_Y);
 
                     ImGui.Checkbox("Z##scrambleScaleZ", ref CFG.Current.Scrambler_RandomiseScale_Z);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Min##offsetMinScaleZ", ref randomOffsetMin_Scale_Z);
+                    ImGui.InputFloat("Lower Bound##offsetMinScaleZ", ref randomOffsetMin_Scale_Z);
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
-                    ImGui.InputFloat("Offset Max##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
+                    ImGui.InputFloat("Upper Bound##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
 
-                    ImGui.Separator();
+                    ImGui.Checkbox("Scale Proportionally##scrambleSharedScale", ref CFG.Current.Scrambler_RandomiseScale_SharedScale);
 
                     // Clamp floats
                     randomOffsetMin_Pos_X = Math.Clamp(randomOffsetMin_Pos_X, -10000f, 10000f);
@@ -383,34 +579,75 @@ namespace StudioCore.MsbEditor
                     CFG.Current.Scrambler_OffsetMax_Scale_X = randomOffsetMax_Scale_X;
                     CFG.Current.Scrambler_OffsetMax_Scale_Y = randomOffsetMax_Scale_Y;
                     CFG.Current.Scrambler_OffsetMax_Scale_Z = randomOffsetMax_Scale_Z;
-
-                    if (ImGui.Button("Scramble Selection"))
-                    {
-                        List<Action> actlist = new();
-                        foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
-                        {
-                            sel.ClearTemporaryTransform(false);
-                            actlist.Add(sel.GetUpdateTransformAction(GetScrambledTransform(sel)));
-                        }
-
-                        CompoundAction action = new(actlist);
-                        _actionManager.ExecuteAction(action);
-                    }
                 }
 
-                // Replicator
-                if (CFG.Current.Toolbar_ShowReplicatorMenu)
+                // Replicate
+                if (_selectedTool == SelectedTool.Selection_Replicate)
                 {
+                    ImGui.Text("Replicate the current selection by the following parameters.");
                     ImGui.Separator();
-
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Replicate.HintText)}");
+                    ImGui.Separator();
                 }
+
+                ImGui.EndChild();
             }
+
             ImGui.End();
         }
+
+        public string GetKeybindHint(string hint)
+        {
+            if (hint == "")
+                return "None";
+            else
+                return hint;
+        }
+
+        /// <summary>
+        /// Move current selection to the closest grid X, Y, Z
+        /// </summary>
+        public void MoveSelectionToGrid()
+        {
+            List<Action> actlist = new();
+            foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
+            {
+                sel.ClearTemporaryTransform(false);
+                actlist.Add(sel.GetUpdateTransformAction(GetGridTransform(sel)));
+            }
+
+            CompoundAction action = new(actlist);
+            _actionManager.ExecuteAction(action);
+        }
+
+        /// <summary>
+        /// Replicate the current selection.
+        /// </summary>
+        public void ReplicateSelection()
+        {
+
+        }
+
+        /// <summary>
+        /// Scramble the position, rotation and scale of the current selection.
+        /// </summary>
+        public void ScambleSelection()
+        {
+            List<Action> actlist = new();
+            foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
+            {
+                sel.ClearTemporaryTransform(false);
+                actlist.Add(sel.GetUpdateTransformAction(GetScrambledTransform(sel)));
+            }
+
+            CompoundAction action = new(actlist);
+            _actionManager.ExecuteAction(action);
+        }
+
         /// <summary>
         /// Go to the selected object (first if multiple are selected) in the scene tree.
         /// </summary>
-        private void GotoSelectionInSceneTree()
+        public void GoToInObjectList()
         {
             _selection.GotoTreeTarget = _selection.GetSingleSelection();
         }
@@ -462,56 +699,71 @@ namespace StudioCore.MsbEditor
         }
 
         /// <summary>
-        /// Show all objects in every map
+        /// Set visiblity state booleans
         /// </summary>
-        public void ShowAllObjects()
+        public void ForceVisibilityState(bool visible, bool invisible, bool flip)
         {
-            foreach (ObjectContainer m in _universe.LoadedObjectContainers.Values)
-            {
-                if (m == null)
-                {
-                    continue;
-                }
-
-                foreach (Entity obj in m.Objects)
-                {
-                    obj.EditorVisible = true;
-                }
-            }
+            CFG.Current.Toolbar_Visibility_State_Enabled = visible;
+            CFG.Current.Toolbar_Visibility_State_Disabled = invisible;
+            CFG.Current.Toolbar_Visibility_State_Flip = flip;
         }
 
         /// <summary>
         /// Toggle visiblity of selected objects
         /// </summary>
-        public void ToggleSelectionVisibility()
+        public void ToggleEntityVisibility()
         {
-            HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>();
-            var allhidden = true;
-            foreach (Entity s in selected)
+            if (CFG.Current.Toolbar_Visibility_Target_Selection)
             {
-                if (s.EditorVisible)
+                HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>();
+
+                foreach (Entity s in selected)
                 {
-                    allhidden = false;
+                    if (CFG.Current.Toolbar_Visibility_State_Enabled)
+                        s.EditorVisible = true;
+
+                    if (CFG.Current.Toolbar_Visibility_State_Disabled)
+                        s.EditorVisible = false;
+
+                    if (CFG.Current.Toolbar_Visibility_State_Flip)
+                        s.EditorVisible = !s.EditorVisible;
                 }
             }
-
-            foreach (Entity s in selected)
+            if(CFG.Current.Toolbar_Visibility_Target_All)
             {
-                s.EditorVisible = allhidden;
+                foreach (ObjectContainer m in _universe.LoadedObjectContainers.Values)
+                {
+                    if (m == null)
+                    {
+                        continue;
+                    }
+
+                    foreach (Entity obj in m.Objects)
+                    {
+                        if (CFG.Current.Toolbar_Visibility_State_Enabled)
+                            obj.EditorVisible = true;
+
+                        if (CFG.Current.Toolbar_Visibility_State_Disabled)
+                            obj.EditorVisible = false;
+
+                        if (CFG.Current.Toolbar_Visibility_State_Flip)
+                            obj.EditorVisible = !obj.EditorVisible;
+                    }
+                }
             }
         }
 
         /// <summary>
         /// Move current selection to the current camera position
         /// </summary>
-        private void MoveSelectionToCamera()
+        public void MoveSelectionToCamera()
         {
             List<Action> actlist = new();
             HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
             Vector3 camDir = Vector3.Transform(Vector3.UnitZ, _viewport.WorldView.CameraTransform.RotationMatrix);
             Vector3 camPos = _viewport.WorldView.CameraTransform.Position;
-            Vector3 targetCamPos = camPos + (camDir * CFG.Current.Map_MoveSelectionToCamera_Radius);
+            Vector3 targetCamPos = camPos + (camDir * CFG.Current.Toolbar_Move_to_Camera_Offset);
 
             // Get the accumulated center position of all selections
             Vector3 accumPos = Vector3.Zero;
@@ -562,7 +814,7 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Rotate the selected objects by a fixed amount on the specified axis
         /// </summary>
-        private void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
+        public void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
         {
             List<Action> actlist = new();
             HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
@@ -589,13 +841,13 @@ namespace StudioCore.MsbEditor
 
                 if (axis.X != 0)
                 {
-                    radianRotateAmount = (float)Math.PI / 180 * CFG.Current.Map_ArbitraryRotation_X_Shift;
+                    radianRotateAmount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment;
                     rot_x = objT.EulerRotation.X + radianRotateAmount;
                 }
 
                 if (axis.Y != 0)
                 {
-                    radianRotateAmount = (float)Math.PI / 180 * CFG.Current.Map_ArbitraryRotation_Y_Shift;
+                    radianRotateAmount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment;
                     rot_y = objT.EulerRotation.Y + radianRotateAmount;
                 }
 
@@ -623,7 +875,7 @@ namespace StudioCore.MsbEditor
         /// <summary>
         /// Tool: Reset current selection to 0, 0, 0 rotation.
         /// </summary>
-        private void ResetRotationSelection()
+        public void ResetRotationSelection()
         {
             List<Action> actlist = new();
 
@@ -651,6 +903,89 @@ namespace StudioCore.MsbEditor
         {
             Random random = new Random();
             return random.NextDouble() * (maximum - minimum) + minimum;
+        }
+
+        public void DummySelection()
+        {
+            string[] sourceTypes = { "Enemy", "Object", "Asset" };
+            string[] targetTypes = { "DummyEnemy", "DummyObject", "DummyAsset" };
+            DummyUndummySelection(sourceTypes, targetTypes);
+        }
+
+        public void UnDummySelection()
+        {
+            string[] sourceTypes = { "DummyEnemy", "DummyObject", "DummyAsset" };
+            string[] targetTypes = { "Enemy", "Object", "Asset" };
+            DummyUndummySelection(sourceTypes, targetTypes);
+        }
+
+        private void DummyUndummySelection(string[] sourceTypes, string[] targetTypes)
+        {
+            Type msbclass;
+            switch (_assetLocator.Type)
+            {
+                case GameType.DemonsSouls:
+                    msbclass = typeof(MSBD);
+                    break;
+                case GameType.DarkSoulsPTDE:
+                case GameType.DarkSoulsRemastered:
+                    msbclass = typeof(MSB1);
+                    break;
+                case GameType.DarkSoulsIISOTFS:
+                    msbclass = typeof(MSB2);
+                    //break;
+                    return; //idk how ds2 dummies should work
+                case GameType.DarkSoulsIII:
+                    msbclass = typeof(MSB3);
+                    break;
+                case GameType.Bloodborne:
+                    msbclass = typeof(MSBB);
+                    break;
+                case GameType.Sekiro:
+                    msbclass = typeof(MSBS);
+                    break;
+                case GameType.EldenRing:
+                    msbclass = typeof(MSBE);
+                    break;
+                case GameType.ArmoredCoreVI:
+                    msbclass = typeof(MSB_AC6);
+                    break;
+                default:
+                    throw new ArgumentException("type must be valid");
+            }
+
+            List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
+
+            ChangeMapObjectType action = new(_universe, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
+            _actionManager.ExecuteAction(action);
+        }
+        private Transform GetGridTransform(Entity sel)
+        {
+            Transform objT = sel.GetLocalTransform();
+
+            var newTransform = Transform.Default;
+            var newPos = objT.Position;
+            var newRot = objT.Rotation;
+            var newScale = objT.Scale;
+
+            var gridHeight = CFG.Current.Map_ViewportGrid_Offset;
+            var incrementSize = CFG.Current.Map_ViewportGrid_IncrementSize;
+
+            if (CFG.Current.Toolbar_Move_to_Grid_X || CFG.Current.Toolbar_Move_to_Grid_Z)
+            {
+                // Find closest grid point
+            }
+
+            if (CFG.Current.Toolbar_Move_to_Grid_Y)
+            {
+                newPos = new Vector3(newPos[0], gridHeight, newPos[2]);
+            }
+
+            newTransform.Position = newPos;
+            newTransform.Rotation = newRot;
+            newTransform.Scale = newScale;
+
+            return newTransform;
         }
 
         private Transform GetScrambledTransform(Entity sel)
@@ -721,7 +1056,7 @@ namespace StudioCore.MsbEditor
             }
 
             // If shared scale, the scale randomisation will be the same for X, Y, Z
-            if(CFG.Current.Scrambler_RandomiseScale_SharedScale)
+            if (CFG.Current.Scrambler_RandomiseScale_SharedScale)
             {
                 scaleOffset_Y = scaleOffset_X;
                 scaleOffset_Z = scaleOffset_X;
@@ -729,15 +1064,15 @@ namespace StudioCore.MsbEditor
 
             if (CFG.Current.Scrambler_RandomiseScale_X)
             {
-                newScale = new Vector3(newScale[0] + scaleOffset_X, newScale[1], newScale[2]);
+                newScale = new Vector3(scaleOffset_X, newScale[1], newScale[2]);
             }
             if (CFG.Current.Scrambler_RandomiseScale_Y)
             {
-                newScale = new Vector3(newScale[0], newScale[1] + scaleOffset_Y, newScale[2]);
+                newScale = new Vector3(newScale[0], scaleOffset_Y, newScale[2]);
             }
             if (CFG.Current.Scrambler_RandomiseScale_Z)
             {
-                newScale = new Vector3(newScale[0], newScale[1], newScale[2] + scaleOffset_Z);
+                newScale = new Vector3(newScale[0], newScale[1], scaleOffset_Z);
             }
 
             newTransform.Scale = newScale;

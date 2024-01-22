@@ -80,23 +80,38 @@ public class KeyBindings
         // Core
         public KeyBind Core_Delete = new(Key.Delete);
         public KeyBind Core_Duplicate = new(Key.D, true);
-        public KeyBind Core_HelpMenu = new(Key.F2);
         public KeyBind Core_Redo = new(Key.Y, true);
         public KeyBind Core_SaveAllEditors = new();
         public KeyBind Core_SaveCurrentEditor = new(Key.S, true);
         public KeyBind Core_Undo = new(Key.Z, true);
-        public KeyBind Core_EventFlagBrowser = new();
-        public KeyBind Core_FxrBrowser = new();
+
+        // Windows
+        public KeyBind Window_Help = new(Key.F2);
+        public KeyBind Window_FlagBrowser = new(Key.F3);
+        public KeyBind Window_ParticleBrowser = new(Key.F4);
+
+        // Toolbar
+        public KeyBind Toolbar_Rotate_X = new(Key.J);
+        public KeyBind Toolbar_Rotate_Y = new(Key.K, false, false, true);
+        public KeyBind Toolbar_Rotate_Y_Pivot = new(Key.K);
+        public KeyBind Toolbar_Go_to_Selection_in_Object_List = new(Key.G);
+        public KeyBind Toolbar_Move_Selection_to_Camera = new(Key.X);
+        public KeyBind Toolbar_Frame_Selection_in_Viewport = new(Key.F);
+        public KeyBind Toolbar_Toggle_Selection_Visibility_Flip = new(Key.H, true);
+        public KeyBind Toolbar_Toggle_Map_Visibility_Flip = new(Key.B, true);
+        public KeyBind Toolbar_Toggle_Selection_Visibility_Enabled = new(Key.H, true, true);
+        public KeyBind Toolbar_Toggle_Map_Visibility_Enabled = new(Key.B, true, true);
+        public KeyBind Toolbar_Toggle_Selection_Visibility_Disabled = new(Key.H, true, true, true);
+        public KeyBind Toolbar_Toggle_Map_Visibility_Disabled = new(Key.B, true, true, true);
+        public KeyBind Toolbar_Reset_Rotation = new(Key.L);
+        public KeyBind Toolbar_Dummify = new(Key.Comma, false, false, true);
+        public KeyBind Toolbar_Undummify = new(Key.Period, false, false, true);
+        public KeyBind Toolbar_Scramble = new(Key.S, false, true);
+        public KeyBind Toolbar_Replicate = new(Key.R, false, true);
+        public KeyBind Toolbar_Set_to_Grid = new(Key.G, false, true);
 
         // Map
-        public KeyBind Map_ArbitraryRotation_Roll = new(Key.J);
-        public KeyBind Map_ArbitraryRotation_Yaw = new(Key.K, false, false, true);
-        public KeyBind Map_ArbitraryRotation_Yaw_Pivot = new(Key.K);
-        public KeyBind Map_Dummify = new(Key.Comma, false, false, true);
         public KeyBind Map_DuplicateToMap = new(Key.D, false, false, true);
-        public KeyBind Map_GotoSelectionInObjectList = new(Key.G);
-        public KeyBind Map_HideToggle = new(Key.H, true);
-        public KeyBind Map_MoveSelectionToCamera = new(Key.X);
         public KeyBind Map_PropSearch = new(Key.F, true);
         public KeyBind Map_RenderGroup_GetDisp = new(Key.G, true);
         public KeyBind Map_RenderGroup_GetDraw = new();
@@ -105,9 +120,6 @@ public class KeyBindings
         public KeyBind Map_RenderGroup_HideAll = new();
         public KeyBind Map_RenderGroup_ShowAll = new(Key.R, true);
         public KeyBind Map_RenderGroup_SelectHighlights = new();
-        public KeyBind Map_ResetRotation = new(Key.L);
-        public KeyBind Map_UnDummify = new(Key.Period, false, false, true);
-        public KeyBind Map_UnhideAll = new(Key.H, false, true);
         public KeyBind Map_ViewportGrid_Lower = new(Key.Q, true);
         public KeyBind Map_ViewportGrid_Raise = new(Key.E, true);
         public KeyBind Map_ToggleRenderOutline = new();
@@ -142,7 +154,6 @@ public class KeyBindings
         public KeyBind Viewport_Cam_Reset = new(Key.R);
         public KeyBind Viewport_Cam_Right = new(Key.D);
         public KeyBind Viewport_Cam_Up = new(Key.E);
-        public KeyBind Viewport_FrameSelection = new(Key.F);
         public KeyBind Viewport_RotationMode = new(Key.E);
         public KeyBind Viewport_ToggleGizmoOrigin = new(Key.Home);
         public KeyBind Viewport_ToggleGizmoSpace = new();

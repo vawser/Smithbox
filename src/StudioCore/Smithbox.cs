@@ -940,11 +940,11 @@ public class Smithbox
 
             if (ImGui.BeginMenu("Tools"))
             {
-                if (ImGui.MenuItem("Flag ID Browser", KeyBindings.Current.Core_EventFlagBrowser.HintText))
+                if (ImGui.MenuItem("Flag ID Browser", KeyBindings.Current.Window_FlagBrowser.HintText))
                 {
                     _eventFlagBrowser.ToggleMenuVisibility();
                 }
-                if (ImGui.MenuItem("Particle ID Browser", KeyBindings.Current.Core_FxrBrowser.HintText))
+                if (ImGui.MenuItem("Particle ID Browser", KeyBindings.Current.Window_ParticleBrowser.HintText))
                 {
                     _fxrBrowser.ToggleMenuVisibility();
                 }
@@ -954,7 +954,7 @@ public class Smithbox
 
             if (ImGui.BeginMenu("Help"))
             {
-                if (ImGui.MenuItem("Help Menu", KeyBindings.Current.Core_HelpMenu.HintText))
+                if (ImGui.MenuItem("Help Menu", KeyBindings.Current.Window_Help.HintText))
                 {
                     _helpBrowser.ToggleMenuVisibility();
                 }
@@ -1404,15 +1404,15 @@ public class Smithbox
                 SaveAll();
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_HelpMenu))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Window_Help))
             {
                 _helpBrowser.ToggleMenuVisibility();
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_EventFlagBrowser))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Window_FlagBrowser))
             {
                 _eventFlagBrowser.ToggleMenuVisibility();
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_FxrBrowser))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Window_ParticleBrowser))
             {
                 _fxrBrowser.ToggleMenuVisibility();
             }

@@ -185,7 +185,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
             }
 
             // F key frames the selection
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Viewport_FrameSelection))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport))
             {
                 HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>();
                 var first = false;

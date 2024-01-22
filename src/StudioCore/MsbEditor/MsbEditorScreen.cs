@@ -416,88 +416,89 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (ImGui.BeginMenu("Dummify/Un-Dummify"))
             {
-                if (ImGui.MenuItem("Dummify Enemies/Objects/Assets", KeyBindings.Current.Map_Dummify.HintText,
+                if (ImGui.MenuItem("Dummify Enemies/Objects/Assets", KeyBindings.Current.Toolbar_Dummify.HintText,
                         false, _selection.IsSelection()))
                 {
-                    DummySelection();
+                    Toolbar.DummySelection();
                 }
 
-                if (ImGui.MenuItem("Un-Dummify Enemies/Objects/Assets", KeyBindings.Current.Map_UnDummify.HintText,
+                if (ImGui.MenuItem("Un-Dummify Enemies/Objects/Assets", KeyBindings.Current.Toolbar_Undummify.HintText,
                         false, _selection.IsSelection()))
                 {
-                    UnDummySelection();
+                    Toolbar.UnDummySelection();
                 }
 
                 //ImGui.TextColored(new Vector4(1f, .4f, 0f, 1f), "Warning: Converting Assets to Dummy Assets will result in lost property data (Undo will properly restore data)");
                 ImGui.EndMenu();
             }
 
-            //
             ImGui.Separator(); // Visual options goes below here
 
             if (ImGui.BeginMenu("Hide/Unhide"))
             {
-                if (ImGui.MenuItem("Hide/Unhide", KeyBindings.Current.Map_HideToggle.HintText, false,
+                if (ImGui.MenuItem("Hide/Unhide", KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Flip.HintText, false,
                         _selection.IsSelection()))
                 {
-                    HideShowSelection();
+                    Toolbar.ForceVisibilityState(false, false, true);
+                    Toolbar.ToggleEntityVisibility();
                 }
 
                 ObjectContainer loadedMap = Universe.LoadedObjectContainers.Values.FirstOrDefault(x => x != null);
-                if (ImGui.MenuItem("Unhide All", KeyBindings.Current.Map_UnhideAll.HintText, false,
+                if (ImGui.MenuItem("Unhide All", KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Flip.HintText, false,
                         loadedMap != null))
                 {
-                    UnhideAllObjects();
+                    Toolbar.ForceVisibilityState(true, false, false);
+                    Toolbar.ToggleEntityVisibility();
                 }
 
                 ImGui.EndMenu();
             }
 
-            if (ImGui.MenuItem("Frame in Viewport", KeyBindings.Current.Viewport_FrameSelection.HintText, false,
+            if (ImGui.MenuItem("Frame in Viewport", KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport.HintText, false,
                     _selection.IsSelection()))
             {
-                FrameSelection();
+                Toolbar.FrameSelection();
             }
 
-            if (ImGui.MenuItem("Goto in Object List", KeyBindings.Current.Map_GotoSelectionInObjectList.HintText,
+            if (ImGui.MenuItem("Goto in Object List", KeyBindings.Current.Toolbar_Go_to_Selection_in_Object_List.HintText,
                     false, _selection.IsSelection()))
             {
-                GotoSelection();
+                Toolbar.GoToInObjectList();
             }
 
             ImGui.Separator();
 
             if (ImGui.BeginMenu("Manipulate Selection"))
             {
-                if (ImGui.MenuItem("Reset Rotation", KeyBindings.Current.Map_ResetRotation.HintText, false,
+                if (ImGui.MenuItem("Reset Rotation", KeyBindings.Current.Toolbar_Reset_Rotation.HintText, false,
                         _selection.IsSelection()))
                 {
-                    ResetRotationSelection();
+                    Toolbar.ResetRotationSelection();
                 }
 
-                if (ImGui.MenuItem("Arbitrary Rotation: Roll",
-                        KeyBindings.Current.Map_ArbitraryRotation_Roll.HintText, false, _selection.IsSelection()))
+                if (ImGui.MenuItem("Rotate: X",
+                        KeyBindings.Current.Toolbar_Rotate_X.HintText, false, _selection.IsSelection()))
                 {
-                    ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
+                    Toolbar.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
                 }
 
-                if (ImGui.MenuItem("Arbitrary Rotation: Yaw",
-                        KeyBindings.Current.Map_ArbitraryRotation_Yaw.HintText, false, _selection.IsSelection()))
+                if (ImGui.MenuItem("Rotate: Y",
+                        KeyBindings.Current.Toolbar_Rotate_Y.HintText, false, _selection.IsSelection()))
                 {
-                    ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
+                    Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
                 }
 
-                if (ImGui.MenuItem("Arbitrary Rotation: Yaw Pivot",
-                        KeyBindings.Current.Map_ArbitraryRotation_Yaw_Pivot.HintText, false,
+                if (ImGui.MenuItem("Rotate: Pivot Y",
+                        KeyBindings.Current.Toolbar_Rotate_Y_Pivot.HintText, false,
                         _selection.IsSelection()))
                 {
-                    ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
+                    Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
                 }
 
                 if (ImGui.MenuItem("Move Selection to Camera",
-                        KeyBindings.Current.Map_MoveSelectionToCamera.HintText, false, _selection.IsSelection()))
+                        KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText, false, _selection.IsSelection()))
                 {
-                    MoveSelectionToCamera();
+                    Toolbar.MoveSelectionToCamera();
                 }
 
                 ImGui.EndMenu();
@@ -976,59 +977,96 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_HideToggle) && _selection.IsSelection())
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Flip) && _selection.IsSelection())
             {
-                HideShowSelection();
+                Toolbar.ForceVisibilityState(false, false, true);
+                Toolbar.ToggleEntityVisibility();
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Enabled) && _selection.IsSelection())
+            {
+                Toolbar.ForceVisibilityState(true, false, false);
+                Toolbar.ToggleEntityVisibility();
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Disabled) && _selection.IsSelection())
+            {
+                Toolbar.ForceVisibilityState(false, true, false);
+                Toolbar.ToggleEntityVisibility();
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_UnhideAll))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Flip))
             {
-                UnhideAllObjects();
+                Toolbar.ForceVisibilityState(false, false, true);
+                Toolbar.ToggleEntityVisibility();
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Enabled))
+            {
+                Toolbar.ForceVisibilityState(true, false, false);
+                Toolbar.ToggleEntityVisibility();
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Disabled))
+            {
+                Toolbar.ForceVisibilityState(false, true, false);
+                Toolbar.ToggleEntityVisibility();
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Viewport_FrameSelection))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport))
             {
-                FrameSelection();
+                Toolbar.FrameSelection();
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_GotoSelectionInObjectList))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Go_to_Selection_in_Object_List))
             {
-                GotoSelection();
+                Toolbar.GoToInObjectList();
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ArbitraryRotation_Roll))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_X))
             {
-                ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
+                Toolbar.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ArbitraryRotation_Yaw))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_Y))
             {
-                ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
+                Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ArbitraryRotation_Yaw_Pivot))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_Y_Pivot))
             {
-                ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
+                Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_Dummify) && _selection.IsSelection())
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Dummify) && _selection.IsSelection())
             {
-                UnDummySelection();
+                Toolbar.UnDummySelection();
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_UnDummify) && _selection.IsSelection())
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Undummify) && _selection.IsSelection())
             {
-                DummySelection();
+                Toolbar.DummySelection();
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_MoveSelectionToCamera) && _selection.IsSelection())
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Move_Selection_to_Camera) && _selection.IsSelection())
             {
-                MoveSelectionToCamera();
+                Toolbar.MoveSelectionToCamera();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderEnemyPatrolRoutes))
             {
                 PatrolDrawManager.Generate(Universe);
+            }
+
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Set_to_Grid) && _selection.IsSelection())
+            {
+                Toolbar.MoveSelectionToGrid();
+            }
+
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Scramble) && _selection.IsSelection())
+            {
+                Toolbar.ScambleSelection();
+            }
+
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Replicate) && _selection.IsSelection())
+            {
+                Toolbar.ReplicateSelection();
             }
 
             // Render settings
@@ -1137,7 +1175,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 Universe.Selection.ClearSelection();
                 Universe.Selection.AddSelection(target);
                 Universe.Selection.GotoTreeTarget = target;
-                FrameSelection();
+                Toolbar.FrameSelection();
             }
         }
 
@@ -1252,49 +1290,6 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         if (ImGui.Selectable("Create prefab"))
         {
             _activeModal = new CreatePrefabModal(Universe, ent);
-        }
-    }
-
-    public void FrameSelection()
-    {
-        HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>();
-        var first = false;
-        BoundingBox box = new();
-        foreach (Entity s in selected)
-        {
-            if (s.RenderSceneMesh != null)
-            {
-                if (!first)
-                {
-                    box = s.RenderSceneMesh.GetBounds();
-                    first = true;
-                }
-                else
-                {
-                    box = BoundingBox.Combine(box, s.RenderSceneMesh.GetBounds());
-                }
-            }
-            else if (s.Container.RootObject == s)
-            {
-                // Selection is transform node
-                Vector3 nodeOffset = new(10.0f, 10.0f, 10.0f);
-                Vector3 pos = s.GetLocalTransform().Position;
-                BoundingBox nodeBox = new(pos - nodeOffset, pos + nodeOffset);
-                if (!first)
-                {
-                    first = true;
-                    box = nodeBox;
-                }
-                else
-                {
-                    box = BoundingBox.Combine(box, nodeBox);
-                }
-            }
-        }
-
-        if (first)
-        {
-            Viewport.FrameBox(box);
         }
     }
 
@@ -1568,194 +1563,6 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     }
 
     /// <summary>
-    /// Reset the rotation of the selected object to 0, 0, 0
-    /// </summary>
-    private void ResetRotationSelection()
-    {
-        List<Action> actlist = new();
-
-        HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
-        foreach (Entity s in selected)
-        {
-            Vector3 pos = s.GetLocalTransform().Position;
-            var rot_x = 0;
-            var rot_y = 0;
-            var rot_z = 0;
-
-            Transform newRot = new(pos, new Vector3(rot_x, rot_y, rot_z));
-
-            actlist.Add(s.GetUpdateTransformAction(newRot));
-        }
-
-
-        if (actlist.Any())
-        {
-            CompoundAction action = new(actlist);
-            EditorActionManager.ExecuteAction(action);
-        }
-    }
-
-    /// <summary>
-    ///     Rotate the selected objects by a fixed amount on the specified axis
-    /// </summary>
-    private void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
-    {
-        List<Action> actlist = new();
-        HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
-
-        // Get the center position of the selections
-        Vector3 accumPos = Vector3.Zero;
-        foreach (Entity sel in sels)
-        {
-            accumPos += sel.GetLocalTransform().Position;
-        }
-
-        Transform centerT = new(accumPos / sels.Count, Vector3.Zero);
-
-        foreach (Entity s in sels)
-        {
-            Transform objT = s.GetLocalTransform();
-
-            var radianRotateAmount = 0.0f;
-            var rot_x = objT.EulerRotation.X;
-            var rot_y = objT.EulerRotation.Y;
-            var rot_z = objT.EulerRotation.Z;
-
-            var newPos = Transform.Default;
-
-            if (axis.X != 0)
-            {
-                radianRotateAmount = (float)Math.PI / 180 * CFG.Current.Map_ArbitraryRotation_X_Shift;
-                rot_x = objT.EulerRotation.X + radianRotateAmount;
-            }
-
-            if (axis.Y != 0)
-            {
-                radianRotateAmount = (float)Math.PI / 180 * CFG.Current.Map_ArbitraryRotation_Y_Shift;
-                rot_y = objT.EulerRotation.Y + radianRotateAmount;
-            }
-
-            if (pivot)
-            {
-                newPos = Utils.RotateVectorAboutPoint(objT.Position, centerT.Position, axis, radianRotateAmount);
-            }
-            else
-            {
-                newPos.Position = objT.Position;
-            }
-
-            newPos.EulerRotation = new Vector3(rot_x, rot_y, rot_z);
-
-            actlist.Add(s.GetUpdateTransformAction(newPos));
-        }
-
-        if (actlist.Any())
-        {
-            CompoundAction action = new(actlist);
-            EditorActionManager.ExecuteAction(action);
-        }
-    }
-
-    /// <summary>
-    ///     Move current selection to the current camera position
-    /// </summary>
-    private void MoveSelectionToCamera()
-    {
-        List<Action> actlist = new();
-        HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
-
-        Vector3 camDir = Vector3.Transform(Vector3.UnitZ, Viewport.WorldView.CameraTransform.RotationMatrix);
-        Vector3 camPos = Viewport.WorldView.CameraTransform.Position;
-        Vector3 targetCamPos = camPos + (camDir * CFG.Current.Map_MoveSelectionToCamera_Radius);
-
-        // Get the accumulated center position of all selections
-        Vector3 accumPos = Vector3.Zero;
-        foreach (Entity sel in sels)
-        {
-            if (Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox && sel.RenderSceneMesh != null)
-            {
-                // Use bounding box origin as center
-                accumPos += sel.RenderSceneMesh.GetBounds().GetCenter();
-            }
-            else
-            {
-                // Use actual position as center
-                accumPos += sel.GetRootLocalTransform().Position;
-            }
-        }
-
-        Transform centerT = new(accumPos / sels.Count, Vector3.Zero);
-
-        // Offset selection positions to place accumulated center in front of camera
-        foreach (Entity sel in sels)
-        {
-            Transform localT = sel.GetLocalTransform();
-            Transform rootT = sel.GetRootTransform();
-            
-            // Get new localized position by applying reversed root offsets to target camera position.  
-            Vector3 newPos = Vector3.Transform(targetCamPos, Quaternion.Inverse(rootT.Rotation)) 
-                             - Vector3.Transform(rootT.Position, Quaternion.Inverse(rootT.Rotation));
-            
-            // Offset from center of multiple selections.
-            Vector3 localCenter = Vector3.Transform(centerT.Position, Quaternion.Inverse(rootT.Rotation))
-                                      - Vector3.Transform(rootT.Position, Quaternion.Inverse(rootT.Rotation));
-            Vector3 offsetFromCenter = localCenter - localT.Position;
-            newPos -= offsetFromCenter;
-            
-            Transform newT = new(newPos, localT.EulerRotation);
-
-            actlist.Add(sel.GetUpdateTransformAction(newT));
-        }
-
-        if (actlist.Any())
-        {
-            CompoundAction action = new(actlist);
-            EditorActionManager.ExecuteAction(action);
-        }
-    }
-
-    /// <summary>
-    ///     Hides all the selected objects, unless all of them are hidden in which
-    ///     they will be unhidden
-    /// </summary>
-    public void HideShowSelection()
-    {
-        HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>();
-        var allhidden = true;
-        foreach (Entity s in selected)
-        {
-            if (s.EditorVisible)
-            {
-                allhidden = false;
-            }
-        }
-
-        foreach (Entity s in selected)
-        {
-            s.EditorVisible = allhidden;
-        }
-    }
-
-    /// <summary>
-    ///     Unhides all objects in every map
-    /// </summary>
-    public void UnhideAllObjects()
-    {
-        foreach (ObjectContainer m in Universe.LoadedObjectContainers.Values)
-        {
-            if (m == null)
-            {
-                continue;
-            }
-
-            foreach (Entity obj in m.Objects)
-            {
-                obj.EditorVisible = true;
-            }
-        }
-    }
-
-    /// <summary>
     ///     Adds a new entity to the targeted map. If no parent is specified, RootObject will be used.
     /// </summary>
     private void AddNewEntity(Type typ, MapEntity.MapEntityType etype, Map map, Entity parent = null)
@@ -1767,62 +1574,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         AddMapObjectsAction act = new(Universe, map, RenderScene, new List<MapEntity> { obj }, true, parent);
         EditorActionManager.ExecuteAction(act);
-    }
-
-    private void DummySelection()
-    {
-        string[] sourceTypes = { "Enemy", "Object", "Asset" };
-        string[] targetTypes = { "DummyEnemy", "DummyObject", "DummyAsset" };
-        DummyUndummySelection(sourceTypes, targetTypes);
-    }
-
-    private void UnDummySelection()
-    {
-        string[] sourceTypes = { "DummyEnemy", "DummyObject", "DummyAsset" };
-        string[] targetTypes = { "Enemy", "Object", "Asset" };
-        DummyUndummySelection(sourceTypes, targetTypes);
-    }
-
-    private void DummyUndummySelection(string[] sourceTypes, string[] targetTypes)
-    {
-        Type msbclass;
-        switch (AssetLocator.Type)
-        {
-            case GameType.DemonsSouls:
-                msbclass = typeof(MSBD);
-                break;
-            case GameType.DarkSoulsPTDE:
-            case GameType.DarkSoulsRemastered:
-                msbclass = typeof(MSB1);
-                break;
-            case GameType.DarkSoulsIISOTFS:
-                msbclass = typeof(MSB2);
-                //break;
-                return; //idk how ds2 dummies should work
-            case GameType.DarkSoulsIII:
-                msbclass = typeof(MSB3);
-                break;
-            case GameType.Bloodborne:
-                msbclass = typeof(MSBB);
-                break;
-            case GameType.Sekiro:
-                msbclass = typeof(MSBS);
-                break;
-            case GameType.EldenRing:
-                msbclass = typeof(MSBE);
-                break;
-            case GameType.ArmoredCoreVI:
-                msbclass = typeof(MSB_AC6);
-                break;
-            default:
-                throw new ArgumentException("type must be valid");
-        }
-
-        List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
-
-        ChangeMapObjectType action = new(Universe, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
-        EditorActionManager.ExecuteAction(action);
-    }
+    }  
 
     private void DuplicateToTargetMapUI()
     {
@@ -1987,7 +1739,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                         {
                             _selection.ClearSelection();
                             _selection.AddSelection(obj);
-                            FrameSelection();
+                            Toolbar.FrameSelection();
                             return;
                         }
                     }

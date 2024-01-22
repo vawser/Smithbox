@@ -67,15 +67,12 @@ public class CFG
     public float Map_ViewportGrid_ShortcutIncrement = 1;
     public Vector3 GFX_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
 
-    public float Map_MoveSelectionToCamera_Radius = 3.0f;
     public float GFX_Camera_FOV { get; set; } = 60.0f;
     public float GFX_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
     public float GFX_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
     public float GFX_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
     public float GFX_Camera_Sensitivity { get; set; } = 0.0160f;
     public float GFX_RenderDistance_Max { get; set; } = 50000.0f;
-    public float Map_ArbitraryRotation_X_Shift { get; set; } = 90.0f;
-    public float Map_ArbitraryRotation_Y_Shift { get; set; } = 90.0f;
 
     public uint GFX_Limit_Buffer_Flver_Bone = 65536;
     public uint GFX_Limit_Buffer_Indirect_Draw = 50000;
@@ -199,8 +196,28 @@ public class CFG
     // Toolbar: Controls
     public bool Toolbar_ShowControlsMenu = true;
 
-    // Toolbar: Tools
+    // Toolbar: General
     public bool Toolbar_ShowToolsMenu = false;
+
+    public bool Toolbar_Rotate_X = true;
+    public bool Toolbar_Rotate_Y = false;
+    public bool Toolbar_Rotate_Y_Pivot = false;
+    public float Toolbar_Rotate_Increment { get; set; } = 90.0f;
+
+    public float Toolbar_Move_to_Camera_Offset = 3.0f;
+
+    public bool Toolbar_Visibility_Target_Selection = true;
+    public bool Toolbar_Visibility_Target_All = false;
+
+    public bool Toolbar_Visibility_State_Enabled = true;
+    public bool Toolbar_Visibility_State_Disabled = false;
+    public bool Toolbar_Visibility_State_Flip = false;
+
+    public bool Toolbar_Move_to_Grid_X = false;
+    public bool Toolbar_Move_to_Grid_Y = true;
+    public bool Toolbar_Move_to_Grid_Z = false;
+
+    public bool Toolbar_Move_to_Grid_Specific_Height_Input = false;
 
     // Toolbar: Scrambler
     public bool Toolbar_ShowScramblerMenu = false;

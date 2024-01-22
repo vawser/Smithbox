@@ -480,40 +480,6 @@ public class SettingsMenu
                 ImGui.Checkbox("Display character names", ref CFG.Current.SceneView_ShowCharacterNames);
             }
 
-            if (ImGui.CollapsingHeader("Selection"))
-            {
-                var arbitrary_rotation_x = CFG.Current.Map_ArbitraryRotation_X_Shift;
-                var arbitrary_rotation_y = CFG.Current.Map_ArbitraryRotation_Y_Shift;
-                var camera_radius_offset = CFG.Current.Map_MoveSelectionToCamera_Radius;
-
-                if (CFG.Current.ShowUITooltips)
-                {
-                    ShowHelpMarker("Set the angle increment amount used by Arbitary Rotation in the X-axis.");
-                    ImGui.SameLine();
-                }
-                if (ImGui.InputFloat("Rotation increment degrees: Roll", ref arbitrary_rotation_x))
-                    CFG.Current.Map_ArbitraryRotation_X_Shift = Math.Clamp(arbitrary_rotation_x, -180.0f, 180.0f);
-
-                if (CFG.Current.ShowUITooltips)
-                {
-                    ShowHelpMarker("Set the angle increment amount used by Arbitary Rotation in the Y-axis.");
-                    ImGui.SameLine();
-                }
-                if (ImGui.InputFloat("Rotation increment degrees: Yaw", ref arbitrary_rotation_y))
-                {
-                    CFG.Current.Map_ArbitraryRotation_Y_Shift = Math.Clamp(arbitrary_rotation_y, -180.0f, 180.0f);
-                    ;
-                }
-
-                if (CFG.Current.ShowUITooltips)
-                {
-                    ShowHelpMarker("Set the distance at which the current select is offset from the camera when using the Move Selection to Camera action.");
-                    ImGui.SameLine();
-                }
-                if (ImGui.DragFloat("Move selection to camera (offset distance)", ref camera_radius_offset))
-                    CFG.Current.Map_MoveSelectionToCamera_Radius = camera_radius_offset;
-            }
-
             if (ImGui.CollapsingHeader("Camera"))
             {
                 if (CFG.Current.ShowUITooltips)
@@ -663,12 +629,22 @@ public class SettingsMenu
                 }
                 ImGui.SliderInt("Grid increment", ref CFG.Current.Map_ViewportGrid_IncrementSize, 1, 100);
 
+                var height = CFG.Current.Map_ViewportGrid_Offset;
+
                 if (CFG.Current.ShowUITooltips)
                 {
                     ShowHelpMarker("The height at which the horizontal grid sits.");
                     ImGui.SameLine();
                 }
-                ImGui.SliderFloat("Grid height", ref CFG.Current.Map_ViewportGrid_Offset, -1000, 1000);
+                ImGui.InputFloat("Grid height", ref height);
+
+                if (height < -10000)
+                    height = -10000;
+
+                if (height > 10000)
+                    height = 10000;
+
+                CFG.Current.Map_ViewportGrid_Offset = height;
 
                 if (CFG.Current.ShowUITooltips)
                 {
