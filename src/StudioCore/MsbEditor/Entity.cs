@@ -445,6 +445,26 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// Set the value of the passed property string.
+    /// </summary>
+    public void SetPropertyValue(string prop, object value)
+    {
+        if (WrappedObject == null)
+        {
+            return;
+        }
+
+        // DS2 is not supported here
+
+        PropertyInfo p = WrappedObject.GetType()
+            .GetProperty(prop, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+        if (p != null)
+        {
+            p.SetValue(WrappedObject, value);
+        }
+    }
+
+    /// <summary>
     /// Return true if the passed property string has the [RotationRadians] attribute, and therefore uses Radians.
     /// </summary>
     public bool IsRotationPropertyRadians(string prop)

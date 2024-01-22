@@ -266,6 +266,17 @@ public class CFG
     // Toolbar: Replicator
     public bool Toolbar_ShowReplicatorMenu = false;
 
+    public bool Replicator_Mode_Line = true;
+    public bool Replicator_Mode_Circle = false;
+    public bool Replicator_Mode_Square = false;
+
+    public int Replicator_Clone_Amount = 1;
+    public int Replicator_Position_Offset = 25;
+    public bool Replicator_Position_Offset_Axis_X = true;
+    public bool Replicator_Position_Offset_Axis_Y = false;
+    public bool Replicator_Position_Offset_Axis_Z = false;
+    public bool Replicator_Offset_Direction_Flipped = false;
+
     // CFG
     public static CFG Current { get; private set; }
     public static CFG Default { get; } = new();
