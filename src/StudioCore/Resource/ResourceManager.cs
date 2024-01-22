@@ -78,7 +78,7 @@ public static class ResourceManager
     {
         Tracy.___tracy_c_zone_context ctx =
             Tracy.TracyCZoneN(1, $@"LoadTPFResourcesTask::Run {action._virtpathbase}");
-        if (!CFG.Current.EnableTexturing)
+        if (!CFG.Current.Map_Enable_Texturing)
         {
             action._tpf = null;
             Tracy.TracyCZoneEnd(ctx);

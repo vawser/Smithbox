@@ -67,39 +67,39 @@ public class SettingsMenu
         {
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("When enabled Smithbox will automatically check for new versions upon program start.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Check for new versions of Smithbox during startup",
-                    ref CFG.Current.EnableCheckProgramUpdate);
+                    ref CFG.Current.System_Check_Program_Update);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("This is a tooltip.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Show UI tooltips", ref CFG.Current.ShowUITooltips);
+                ImGui.Checkbox("Show UI tooltips", ref CFG.Current.System_Show_UI_Tooltips);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Adjusts the scale of the user interface throughout all of Smithbox.");
                     ImGui.SameLine();
                 }
-                ImGui.SliderFloat("UI scale", ref CFG.Current.UIScale, 0.5f, 4.0f);
+                ImGui.SliderFloat("UI scale", ref CFG.Current.System_UI_Scale, 0.5f, 4.0f);
 
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
                     // Round to 0.05
-                    CFG.Current.UIScale = (float)Math.Round(CFG.Current.UIScale * 20) / 20;
+                    CFG.Current.System_UI_Scale = (float)Math.Round(CFG.Current.System_UI_Scale * 20) / 20;
                     Smithbox.FontRebuildRequest = true;
                 }
 
                 ImGui.SameLine();
                 if (ImGui.Button("Reset"))
                 {
-                    CFG.Current.UIScale = CFG.Default.UIScale;
+                    CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
                     Smithbox.FontRebuildRequest = true;
                 }
             }
@@ -111,50 +111,50 @@ public class SettingsMenu
                     : "not running";
                 ImGui.Text(
                     $"The server is {running}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect.");
-                ImGui.Checkbox("Enable cross-editor features", ref CFG.Current.EnableSoapstone);
+                ImGui.Checkbox("Enable cross-editor features", ref CFG.Current.System_Enable_Soapstone_Server);
             }
 
             // Additional Language Fonts
             if (ImGui.CollapsingHeader("Additional Language Fonts"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Include Chinese font.\nAdditional fonts take more VRAM and increase startup time.");
                     ImGui.SameLine();
                 }
-                if (ImGui.Checkbox("Chinese", ref CFG.Current.FontChinese))
+                if (ImGui.Checkbox("Chinese", ref CFG.Current.System_Font_Chinese))
                     Smithbox.FontRebuildRequest = true;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Include Korean font.\nAdditional fonts take more VRAM and increase startup time.");
                     ImGui.SameLine();
                 }
-                if (ImGui.Checkbox("Korean", ref CFG.Current.FontKorean))
+                if (ImGui.Checkbox("Korean", ref CFG.Current.System_Font_Korean))
                     Smithbox.FontRebuildRequest = true;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Include Thai font.\nAdditional fonts take more VRAM and increase startup time.");
                     ImGui.SameLine();
                 }
-                if (ImGui.Checkbox("Thai", ref CFG.Current.FontThai))
+                if (ImGui.Checkbox("Thai", ref CFG.Current.System_Font_Thai))
                     Smithbox.FontRebuildRequest = true;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Include Vietnamese font.\nAdditional fonts take more VRAM and increase startup time.");
                     ImGui.SameLine();
                 }
-                if (ImGui.Checkbox("Vietnamese", ref CFG.Current.FontVietnamese))
+                if (ImGui.Checkbox("Vietnamese", ref CFG.Current.System_Font_Vietnamese))
                     Smithbox.FontRebuildRequest = true;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
                     ImGui.SameLine();
                 }
-                if (ImGui.Checkbox("Cyrillic", ref CFG.Current.FontCyrillic))
+                if (ImGui.Checkbox("Cyrillic", ref CFG.Current.System_Font_Cyrillic))
                     Smithbox.FontRebuildRequest = true;
             }
 
@@ -162,7 +162,7 @@ public class SettingsMenu
             {
                 if (ProjSettings == null || ProjSettings.ProjectName == null)
                 {
-                    if (CFG.Current.ShowUITooltips)
+                    if (CFG.Current.System_Show_UI_Tooltips)
                     {
                         ShowHelpMarker("No project has been loaded yet.");
                         ImGui.SameLine();
@@ -172,7 +172,7 @@ public class SettingsMenu
                 else
                     if (TaskManager.AnyActiveTasks())
                 {
-                    if (CFG.Current.ShowUITooltips)
+                    if (CFG.Current.System_Show_UI_Tooltips)
                     {
                         ShowHelpMarker("DSMS must finished all program tasks before it can load a project.");
                         ImGui.SameLine();
@@ -181,7 +181,7 @@ public class SettingsMenu
                 }
                 else
                 {
-                    if (CFG.Current.ShowUITooltips)
+                    if (CFG.Current.System_Show_UI_Tooltips)
                     {
                         ShowHelpMarker("This is the currently loaded project.");
                         ImGui.SameLine();
@@ -198,7 +198,7 @@ public class SettingsMenu
                     var useLoose = ProjSettings.UseLooseParams;
                     if (ProjSettings.GameType is GameType.DarkSoulsIISOTFS or GameType.DarkSoulsIII)
                     {
-                        if (CFG.Current.ShowUITooltips)
+                        if (CFG.Current.System_Show_UI_Tooltips)
                         {
                             ShowHelpMarker("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
                             ImGui.SameLine();
@@ -211,7 +211,7 @@ public class SettingsMenu
                     var usepartial = ProjSettings.PartialParams;
                     if (FeatureFlags.EnablePartialParam || usepartial)
                     {
-                        if (CFG.Current.ShowUITooltips)
+                        if (CFG.Current.System_Show_UI_Tooltips)
                         {
                             ShowHelpMarker("Partial params.");
                             ImGui.SameLine();
@@ -222,14 +222,14 @@ public class SettingsMenu
                             ProjSettings.PartialParams = usepartial;
                     }
 
-                    if (CFG.Current.ShowUITooltips)
+                    if (CFG.Current.System_Show_UI_Tooltips)
                     {
                         ShowHelpMarker("Enabling this option will allow unused or debug map names to appear in the scene tree view.");
                         ImGui.SameLine();
                     }
                     ImGui.Checkbox("Show unused map names", ref CFG.Current.MapAliases_ShowUnusedNames);
 
-                    if (CFG.Current.ShowUITooltips)
+                    if (CFG.Current.System_Show_UI_Tooltips)
                     {
                         ShowHelpMarker("Toggle the map name list.");
                         ImGui.SameLine();
@@ -249,7 +249,7 @@ public class SettingsMenu
                         }
 
                         ImGui.SameLine();
-                        if (CFG.Current.ShowUITooltips)
+                        if (CFG.Current.System_Show_UI_Tooltips)
                         {
                             Utils.ShowHelpMarker("When enabled the list will display the tags next to the name.");
                             ImGui.SameLine();
@@ -260,26 +260,26 @@ public class SettingsMenu
 
                         if (CFG.Current.MapAliases_ShowAliasAddition)
                         {
-                            if (CFG.Current.ShowUITooltips)
+                            if (CFG.Current.System_Show_UI_Tooltips)
                             {
                                 Utils.ShowHelpMarker("The map ID of the alias to add.");
                                 ImGui.SameLine();
                             }
                             ImGui.InputText($"ID", ref _newRefId, 255);
-                            if (CFG.Current.ShowUITooltips)
+                            if (CFG.Current.System_Show_UI_Tooltips)
                             {
                                 Utils.ShowHelpMarker("The name of the alias to add.");
                                 ImGui.SameLine();
                             }
                             ImGui.InputText($"Name", ref _newRefName, 255);
-                            if (CFG.Current.ShowUITooltips)
+                            if (CFG.Current.System_Show_UI_Tooltips)
                             {
                                 Utils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
                                 ImGui.SameLine();
                             }
                             ImGui.InputText($"Tags", ref _newRefTags, 255);
 
-                            if (CFG.Current.ShowUITooltips)
+                            if (CFG.Current.System_Show_UI_Tooltips)
                             {
                                 Utils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
                                 ImGui.SameLine();
@@ -430,59 +430,59 @@ public class SettingsMenu
         {
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Enabling this option will cause entities outside of the camera frustrum to be culled.\n\nDisable this if working with the grid.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.EnableFrustrumCulling);
+                ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.Map_Enable_Frustum_Culling);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Enabling this option will cause a selection outline to appear on selected objects.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Enable selection outline", ref CFG.Current.Map_EnableSelectionOutline);
+                ImGui.Checkbox("Enable selection outline", ref CFG.Current.Map_Enable_Selection_Outline);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Enable texturing", ref CFG.Current.EnableTexturing);
+                ImGui.Checkbox("Enable texturing", ref CFG.Current.Map_Enable_Texturing);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.Map_AlwaysListLoadedMaps);
+                ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.Map_Always_List_Loaded_Maps);
 
                 if (ProjSettings != null)
                     if (ProjSettings.GameType is GameType.EldenRing)
                     {
-                        if (CFG.Current.ShowUITooltips)
+                        if (CFG.Current.System_Show_UI_Tooltips)
                         {
                             ShowHelpMarker("");
                             ImGui.SameLine();
                         }
-                        ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.EnableEldenRingAutoMapOffset);
+                        ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Map_Enable_ER_Auto_Map_Offset);
                     }
             }
 
             if(ImGui.CollapsingHeader("Scene View"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Characters names will be displayed within the scene view list.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Display character names", ref CFG.Current.SceneView_ShowCharacterNames);
+                ImGui.Checkbox("Display character names", ref CFG.Current.Map_Show_Character_Names_in_Scene_Tree);
             }
 
             if (ImGui.CollapsingHeader("Camera"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Resets all of the values within this section to their default values.");
                     ImGui.SameLine();
@@ -506,7 +506,7 @@ public class SettingsMenu
 
                 var cam_fov = CFG.Current.GFX_Camera_FOV;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Set the field of view used by the camera within DSMS.");
                     ImGui.SameLine();
@@ -516,7 +516,7 @@ public class SettingsMenu
 
                 var cam_sensitivity = CFG.Current.GFX_Camera_Sensitivity;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Mouse sensitivty for turning the camera.");
                     ImGui.SameLine();
@@ -527,7 +527,7 @@ public class SettingsMenu
                 }
 
                 var farClip = CFG.Current.GFX_RenderDistance_Max;
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
                     ImGui.SameLine();
@@ -535,7 +535,7 @@ public class SettingsMenu
                 if (ImGui.SliderFloat("Map max render distance", ref farClip, 10.0f, 500000.0f))
                     CFG.Current.GFX_RenderDistance_Max = farClip;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
                     ImGui.SameLine();
@@ -544,7 +544,7 @@ public class SettingsMenu
                         ref MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 999.0f))
                     CFG.Current.GFX_Camera_MoveSpeed_Slow = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Set the speed at which the camera will move whilst moving normally.");
                     ImGui.SameLine();
@@ -553,7 +553,7 @@ public class SettingsMenu
                         ref MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 999.0f))
                     CFG.Current.GFX_Camera_MoveSpeed_Normal = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
                     ImGui.SameLine();
@@ -565,7 +565,7 @@ public class SettingsMenu
 
             if (ImGui.CollapsingHeader("Limits"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Reset the values within this section to their default values.");
                     ImGui.SameLine();
@@ -582,7 +582,7 @@ public class SettingsMenu
                 ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f),
                     @"Try smaller increments (+25%%) at first, as high values will cause issues.");
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
                     ImGui.SameLine();
@@ -591,14 +591,14 @@ public class SettingsMenu
                     if (CFG.Current.GFX_Limit_Renderables < CFG.Default.GFX_Limit_Renderables)
                         CFG.Current.GFX_Limit_Renderables = CFG.Default.GFX_Limit_Renderables;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.");
                     ImGui.SameLine();
                 }
                 Utils.ImGui_InputUint("Indirect Draw buffer", ref CFG.Current.GFX_Limit_Buffer_Indirect_Draw);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
                     ImGui.SameLine();
@@ -608,30 +608,35 @@ public class SettingsMenu
 
             if (ImGui.CollapsingHeader("Grid"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if(ImGui.Button("Regenerate"))
+                {
+                    CFG.Current.Viewport_RegenerateMapGrid = true;
+                }
+
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Enable the viewport grid when in the Map Editor.");
                     ImGui.SameLine();
                 }
-                ImGui.Checkbox("Enable viewport grid", ref CFG.Current.Map_EnableViewportGrid);
+                ImGui.Checkbox("Enable viewport grid", ref CFG.Current.Viewport_EnableGrid);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("The overall maximum size of the grid.\nThe grid will only update upon restarting DSMS after changing this value.");
                     ImGui.SameLine();
                 }
-                ImGui.SliderInt("Grid size", ref CFG.Current.Map_ViewportGrid_TotalSize, 100, 1000);
+                ImGui.SliderInt("Grid size", ref CFG.Current.Viewport_Grid_Size, 100, 1000);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("The increment size of the grid.");
                     ImGui.SameLine();
                 }
-                ImGui.SliderInt("Grid increment", ref CFG.Current.Map_ViewportGrid_IncrementSize, 1, 100);
+                ImGui.SliderInt("Grid increment", ref CFG.Current.Viewport_Grid_Square_Size, 1, 100);
 
-                var height = CFG.Current.Map_ViewportGrid_Offset;
+                var height = CFG.Current.Viewport_Grid_Height;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("The height at which the horizontal grid sits.");
                     ImGui.SameLine();
@@ -644,18 +649,18 @@ public class SettingsMenu
                 if (height > 10000)
                     height = 10000;
 
-                CFG.Current.Map_ViewportGrid_Offset = height;
+                CFG.Current.Viewport_Grid_Height = height;
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("The amount to lower or raise the viewport grid height via the shortcuts.");
                     ImGui.SameLine();
                 }
-                ImGui.SliderFloat("Grid height increment", ref CFG.Current.Map_ViewportGrid_ShortcutIncrement, 0.1f, 100);
+                ImGui.SliderFloat("Grid height increment", ref CFG.Current.Viewport_Grid_Height_Increment, 0.1f, 100);
 
                 ImGui.ColorEdit3("Grid color", ref CFG.Current.GFX_Viewport_Grid_Color);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Resets all of the values within this section to their default values.");
                     ImGui.SameLine();
@@ -663,15 +668,15 @@ public class SettingsMenu
                 if (ImGui.Button("Reset"))
                 {
                     CFG.Current.GFX_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
-                    CFG.Current.Map_ViewportGrid_TotalSize = 1000;
-                    CFG.Current.Map_ViewportGrid_IncrementSize = 10;
-                    CFG.Current.Map_ViewportGrid_Offset = 0;
+                    CFG.Current.Viewport_Grid_Size = 1000;
+                    CFG.Current.Viewport_Grid_Square_Size = 10;
+                    CFG.Current.Viewport_Grid_Height = 0;
                 }
             }
 
             if (ImGui.CollapsingHeader("Wireframes"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Resets all of the values within this section to their default values.");
                     ImGui.SameLine();
@@ -789,7 +794,7 @@ public class SettingsMenu
             {
                 ImGui.Text("Configure each of the six display presets available.");
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Reset the values within this section to their default values.");
                     ImGui.SameLine();
@@ -842,14 +847,14 @@ public class SettingsMenu
         {
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Reduces the line height within the the Param Editor screen.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Use compact param editor", ref CFG.Current.UI_CompactParams);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Show additional options for advanced users within the massedit popup.");
                     ImGui.SameLine();
@@ -857,7 +862,7 @@ public class SettingsMenu
 
                 ImGui.Checkbox("Show advanced options in massedit popup", ref CFG.Current.Param_AdvancedMassedit);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Show the shortcut tools in the right-click context menu.");
                     ImGui.SameLine();
@@ -867,7 +872,7 @@ public class SettingsMenu
 
             if (ImGui.CollapsingHeader("Params"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Sort the Param View list alphabetically.");
                     ImGui.SameLine();
@@ -878,14 +883,14 @@ public class SettingsMenu
 
             if (ImGui.CollapsingHeader("Rows"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Disable the row names from wrapping within the Row View list.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Disable line wrapping", ref CFG.Current.Param_DisableLineWrapping);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Disable the grouping of connected rows in certain params, such as ItemLotParam within the Row View list.");
                     ImGui.SameLine();
@@ -895,63 +900,63 @@ public class SettingsMenu
 
             if (ImGui.CollapsingHeader("Fields"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Crowd-sourced names will appear before the canonical name in the Field View list.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Show community field names first", ref CFG.Current.Param_MakeMetaNamesPrimary);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("The crowd-sourced name (or the canonical name if the above option is enabled) will appear after the initial name in the Field View list.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Show secondary field names", ref CFG.Current.Param_ShowSecondaryNames);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("The field offset within the .PARAM file will be show to the left in the Field View List.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Show field data offsets", ref CFG.Current.Param_ShowFieldOffsets);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Hide the generated param references for fields that link to other params.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Hide field references", ref CFG.Current.Param_HideReferenceRows);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Hide the crowd-sourced namelist for index-based enum fields.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Hide field enums", ref CFG.Current.Param_HideEnums);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Repeat the field name in the context menu.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Field name in context menu", ref CFG.Current.Param_FieldNameInContextMenu);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Repeat the field description in the context menu.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Field description in context menu", ref CFG.Current.Param_FieldDescriptionInContextMenu);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker(@"If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.
 If disabled, simply shows a shortcut to the manual massedit entry element.
@@ -960,7 +965,7 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
                 }
                 ImGui.Checkbox("Full massedit popup in context menu", ref CFG.Current.Param_MasseditPopupInContextMenu);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Split the field context menu into separate menus for separate right-click locations.");
                     ImGui.SameLine();
@@ -978,14 +983,14 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
         {
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Show the original FMG file names within the Text Editor file list.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Show original FMG names", ref CFG.Current.FMG_ShowOriginalNames);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("If enabled then FMG entries will not be grouped automatically.");
                     ImGui.SameLine();
@@ -993,7 +998,7 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
                 if (ImGui.Checkbox("Separate related FMGs and entries", ref CFG.Current.FMG_NoGroupedFmgEntries))
                     TextEditor.OnProjectChanged(ProjSettings);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
                     ImGui.SameLine();
@@ -1012,21 +1017,21 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
         {
             if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Update the Name field of the entity upon double-click. By default only the ModelName field is updated.");
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Update entity Name field on selection", ref CFG.Current.AssetBrowser_UpdateSelectionName);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Suspends the browser list when moving in the Map Editor, preventing hitching.");
                     ImGui.SameLine();
@@ -1036,7 +1041,7 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
 
             if (ImGui.CollapsingHeader("Flag ID Browser"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
                     ImGui.SameLine();
@@ -1046,7 +1051,7 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
 
             if (ImGui.CollapsingHeader("Particle ID Browser"))
             {
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
                     ImGui.SameLine();

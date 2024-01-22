@@ -39,32 +39,34 @@ public class CFG
 #pragma warning restore IDE0051
 
     // Settings: System
-    public bool EnableCheckProgramUpdate = true;
-    public bool ShowUITooltips = true;
-    public float UIScale = 1.0f;
-    public bool EnableSoapstone = true;
-
-    public bool FontChinese = false;
-    public bool FontCyrillic = false;
-    public bool FontKorean = false;
-    public bool FontThai = false;
-    public bool FontVietnamese = false;
+    public bool System_Check_Program_Update = true;
+    public bool System_Show_UI_Tooltips = true;
+    public float System_UI_Scale = 1.0f;
+    public bool System_Enable_Soapstone_Server = true;
+    public bool System_Font_Chinese = false;
+    public bool System_Font_Cyrillic = false;
+    public bool System_Font_Korean = false;
+    public bool System_Font_Thai = false;
+    public bool System_Font_Vietnamese = false;
 
     // Settings: Map Editor
-    public bool EnableFrustrumCulling = true;
-    public bool EnableTexturing = false;
-    public bool Map_AlwaysListLoadedMaps = true;
-    public bool EnableEldenRingAutoMapOffset = true;
-    public bool SceneView_ShowCharacterNames = true;
+    public bool Map_Enable_Frustum_Culling = true;
+    public bool Map_Enable_Texturing = false;
+    public bool Map_Always_List_Loaded_Maps = true;
+    public bool Map_Enable_ER_Auto_Map_Offset = true;
+    public bool Map_Show_Character_Names_in_Scene_Tree = true;
+    public bool Map_Enable_Selection_Outline = true;
 
-    public bool Map_EnableSelectionOutline = true;
+    // Viewport
+    public bool Viewport_EnableGrid = true;
+    public int Viewport_GridType = 0;
+    public int Viewport_Grid_Size = 1000;
+    public int Viewport_Grid_Square_Size = 10;
+    public float Viewport_Grid_Height = 0;
+    public float Viewport_Grid_Height_Increment = 1;
+    public bool Viewport_RegenerateMapGrid = false;
 
-    public bool Map_EnableViewportGrid = true;
-    public int Map_ViewportGridType = 0;
-    public int Map_ViewportGrid_TotalSize = 1000;
-    public int Map_ViewportGrid_IncrementSize = 10;
-    public float Map_ViewportGrid_Offset = 0;
-    public float Map_ViewportGrid_ShortcutIncrement = 1;
+    // GFX
     public Vector3 GFX_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
 
     public float GFX_Camera_FOV { get; set; } = 60.0f;
@@ -128,6 +130,7 @@ public class CFG
     public Vector3 GFX_Gizmo_Z_BaseColor = new(0.219f, 0.564f, 0.929f);
     public Vector3 GFX_Gizmo_Z_HighlightColor = new(0.407f, 0.690f, 1.0f);
 
+    // Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
 
     public RenderFilterPreset SceneFilter_Preset_01 { get; set; } = new("Map",

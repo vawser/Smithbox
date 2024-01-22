@@ -18,11 +18,15 @@ public class ViewGrid
 
     private DebugPrimitiveRenderableProxy ViewportGrid;
 
+    private MeshRenderables _renderlist;
+
     public ViewGrid(MeshRenderables renderlist)
     {
-        WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.Map_ViewportGrid_TotalSize, CFG.Current.Map_ViewportGrid_IncrementSize);
+        _renderlist = renderlist;
 
-        ViewportGrid = new DebugPrimitiveRenderableProxy(renderlist, WireGrid);
+        WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.Viewport_Grid_Size, CFG.Current.Viewport_Grid_Square_Size);
+
+        ViewportGrid = new DebugPrimitiveRenderableProxy(_renderlist, WireGrid);
         ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.GFX_Viewport_Grid_Color);
     }
 
@@ -31,17 +35,33 @@ public class ViewGrid
         return Color.FromArgb((int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
     }
 
+    public void Regenerate()
+    {
+        WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.Viewport_Grid_Size, CFG.Current.Viewport_Grid_Square_Size);
+
+        ViewportGrid = new DebugPrimitiveRenderableProxy(_renderlist, WireGrid);
+        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.GFX_Viewport_Grid_Color);
+    }
+
     public void Update(Ray ray)
     {
-        if (CFG.Current.Map_EnableViewportGrid)
+        if (CFG.Current.Viewport_EnableGrid)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.GFX_Viewport_Grid_Color);
             ViewportGrid.Visible = true;
-            ViewportGrid.World = new Transform(0, CFG.Current.Map_ViewportGrid_Offset, 0, 0, 0, 0).WorldMatrix;
+            ViewportGrid.World = new Transform(0, CFG.Current.Viewport_Grid_Height, 0, 0, 0, 0).WorldMatrix;
         }
         else
         {
             ViewportGrid.Visible = false;
+        }
+
+        if(CFG.Current.Viewport_RegenerateMapGrid)
+        {
+            CFG.Current.Viewport_RegenerateMapGrid = false;
+
+            Regenerate();
+            Regenerate();
         }
     }
 }

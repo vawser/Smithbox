@@ -847,7 +847,7 @@ public class Universe
                 }
             }
 
-            if (_assetLocator.Type == GameType.EldenRing && CFG.Current.EnableEldenRingAutoMapOffset)
+            if (_assetLocator.Type == GameType.EldenRing && CFG.Current.Map_Enable_ER_Auto_Map_Offset)
             {
                 if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
                     loadTransform)
@@ -921,7 +921,7 @@ public class Universe
             task = job.Complete();
             tasks.Add(task);
 
-            if (CFG.Current.EnableTexturing)
+            if (CFG.Current.Map_Enable_Texturing)
             {
                 job = ResourceManager.CreateNewJob($@"Loading {amapid} textures");
                 foreach (AssetDescription asset in _assetLocator.GetMapTextures(amapid))

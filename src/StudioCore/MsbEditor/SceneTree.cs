@@ -278,7 +278,7 @@ public class SceneTree : IActionEventHandler
             string aliasedName = name;
             var modelName = e.GetPropertyValue<string>("ModelName");
 
-            if (CFG.Current.SceneView_ShowCharacterNames)
+            if (CFG.Current.Map_Show_Character_Names_in_Scene_Tree)
             {
                 if (e.IsEnemyPart())
                 {
@@ -742,7 +742,7 @@ public class SceneTree : IActionEventHandler
 
                 // Map name search filter
                 if (_mapNameSearchStr != ""
-                    && (!CFG.Current.Map_AlwaysListLoadedMaps || map == null)
+                    && (!CFG.Current.Map_Always_List_Loaded_Maps || map == null)
                     && !lm.Key.Contains(_mapNameSearchStr, StringComparison.CurrentCultureIgnoreCase)
                     && !metaName.Contains(_mapNameSearchStr, StringComparison.CurrentCultureIgnoreCase))
                 {

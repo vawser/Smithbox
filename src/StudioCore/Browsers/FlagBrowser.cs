@@ -87,7 +87,7 @@ public class FlagBrowser
             }
 
             ImGui.SameLine();
-            if (CFG.Current.ShowUITooltips)
+            if (CFG.Current.System_Show_UI_Tooltips)
             {
                 Utils.ShowHelpMarker("When enabled the Browser List will display the tags next to the name.");
                 ImGui.SameLine();
@@ -98,26 +98,26 @@ public class FlagBrowser
             {
                 ImGui.Separator();
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     Utils.ShowHelpMarker("The numeric ID of the alias to add.");
                     ImGui.SameLine();
                 }
                 ImGui.InputText($"ID", ref _newRefId, 255);
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     Utils.ShowHelpMarker("The name of the alias to add.");
                     ImGui.SameLine();
                 }
                 ImGui.InputText($"Name", ref _newRefName, 255);
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     Utils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
                     ImGui.SameLine();
                 }
                 ImGui.InputText($"Tags", ref _newRefTags, 255);
 
-                if (CFG.Current.ShowUITooltips)
+                if (CFG.Current.System_Show_UI_Tooltips)
                 {
                     Utils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
                     ImGui.SameLine();

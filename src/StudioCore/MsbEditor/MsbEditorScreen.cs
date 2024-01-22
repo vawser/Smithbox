@@ -896,7 +896,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         // Keyboard shortcuts
         if (!ViewportUsingKeyboard && !ImGui.IsAnyItemActive())
         {
-            var type = CFG.Current.Map_ViewportGridType;
+            var type = CFG.Current.Viewport_GridType;
 
             if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
             {
@@ -911,17 +911,17 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             // Viewport Grid
             if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ViewportGrid_Lower))
             {
-                var offset = CFG.Current.Map_ViewportGrid_Offset;
-                var increment = CFG.Current.Map_ViewportGrid_ShortcutIncrement;
+                var offset = CFG.Current.Viewport_Grid_Height;
+                var increment = CFG.Current.Viewport_Grid_Height_Increment;
                 offset = offset - increment;
-                CFG.Current.Map_ViewportGrid_Offset = offset;
+                CFG.Current.Viewport_Grid_Height = offset;
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ViewportGrid_Raise))
             {
-                var offset = CFG.Current.Map_ViewportGrid_Offset;
-                var increment = CFG.Current.Map_ViewportGrid_ShortcutIncrement;
+                var offset = CFG.Current.Viewport_Grid_Height;
+                var increment = CFG.Current.Viewport_Grid_Height_Increment;
                 offset = offset + increment;
-                CFG.Current.Map_ViewportGrid_Offset = offset;
+                CFG.Current.Viewport_Grid_Height = offset;
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _selection.IsSelection())

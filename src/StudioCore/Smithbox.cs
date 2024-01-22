@@ -235,27 +235,27 @@ public class Smithbox
             glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
             Array.ForEach(SpecialCharsJP, c => glyphRanges.AddChar(c));
 
-            if (CFG.Current.FontChinese)
+            if (CFG.Current.System_Font_Chinese)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
             }
 
-            if (CFG.Current.FontKorean)
+            if (CFG.Current.System_Font_Korean)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
             }
 
-            if (CFG.Current.FontThai)
+            if (CFG.Current.System_Font_Thai)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
             }
 
-            if (CFG.Current.FontVietnamese)
+            if (CFG.Current.System_Font_Vietnamese)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
             }
 
-            if (CFG.Current.FontCyrillic)
+            if (CFG.Current.System_Font_Cyrillic)
             {
                 glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
             }
@@ -341,14 +341,14 @@ public class Smithbox
         SetupCSharpDefaults();
         ManageImGuiConfigBackups();
 
-        if (CFG.Current.EnableSoapstone)
+        if (CFG.Current.System_Enable_Soapstone_Server)
         {
             TaskManager.RunPassiveTask(new TaskManager.LiveTask("Soapstone Server",
                 TaskManager.RequeueType.None, true,
                 () => SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait()));
         }
 
-        if (CFG.Current.EnableCheckProgramUpdate)
+        if (CFG.Current.System_Check_Program_Update)
         {
             TaskManager.Run(new TaskManager.LiveTask("Check Program Updates",
                 TaskManager.RequeueType.None, true,
@@ -816,9 +816,9 @@ public class Smithbox
         {
             if (ImGui.BeginMenu("File"))
             {
-                if (ImGui.MenuItem("Enable Texturing (alpha)", "", CFG.Current.EnableTexturing))
+                if (ImGui.MenuItem("Enable Texturing (alpha)", "", CFG.Current.Map_Enable_Texturing))
                 {
-                    CFG.Current.EnableTexturing = !CFG.Current.EnableTexturing;
+                    CFG.Current.Map_Enable_Texturing = !CFG.Current.Map_Enable_Texturing;
                 }
 
                 if (ImGui.MenuItem("New Project", "", false, !TaskManager.AnyActiveTasks()))
@@ -1472,6 +1472,6 @@ public class Smithbox
 
     public static float GetUIScale()
     {
-        return CFG.Current.UIScale / DefaultDpi * Dpi;
+        return CFG.Current.System_UI_Scale / DefaultDpi * Dpi;
     }
 }
