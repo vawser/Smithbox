@@ -1471,14 +1471,37 @@ public class ReplicateMapObjectsAction : Action
 
                     ApplyReplicateTransform(newobj, posOffset);
 
-                    TaskLogs.AddLog($"LOCAL: {newobj.GetLocalTransform().EulerRotation}");
-
                     if (CFG.Current.Replicator_Apply_Scramble_Configuration)
                     {
                         Transform scrambledTransform = Toolbar.GetScrambledTransform(newobj);
 
                         newobj.SetPropertyValue("Position", scrambledTransform.Position);
-                        newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation);
+
+                        if (newobj.IsRotationPropertyRadians("Rotation"))
+                        {
+                            if (newobj.IsRotationXZY("Rotation"))
+                            {
+                                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY);
+                            }
+                            else
+                            {
+                                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation);
+                            }
+                        }
+                        else
+                        {
+                            if (newobj.IsRotationXZY("Rotation"))
+                            {
+                                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY * Utils.Rad2Deg);
+                            }
+                            else
+                            {
+                                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
+                            }
+
+                            newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
+                        }
+
                         newobj.SetPropertyValue("Scale", scrambledTransform.Scale);
                     }
 
@@ -1518,9 +1541,6 @@ public class ReplicateMapObjectsAction : Action
         var newRot = objT.Rotation;
         var newScale = objT.Scale;
 
-        TaskLogs.AddLog($"{sel.Name} {newPos}");
-        TaskLogs.AddLog($"{sel.Name} {posOffset}");
-
         if(CFG.Current.Replicator_Offset_Direction_Flipped)
         {
             posOffset = posOffset * -1;
@@ -1545,12 +1565,7 @@ public class ReplicateMapObjectsAction : Action
         newTransform.Rotation = newRot;
         newTransform.Scale = newScale;
 
-        TaskLogs.AddLog($"{sel.Name} {newTransform.Position}");
-
         sel.SetPropertyValue("Position", newPos);
-
-        TaskLogs.AddLog($"{sel.Name} {sel.GetLocalTransform().Position}");
-
     }
 
     public override ActionEvent Undo()
