@@ -202,9 +202,12 @@ public class CFG
     public bool Toolbar_Rotate_X = true;
     public bool Toolbar_Rotate_Y = false;
     public bool Toolbar_Rotate_Y_Pivot = false;
-    public float Toolbar_Rotate_Increment { get; set; } = 90.0f;
 
+    public bool Toolbar_Move_to_Camera_Offset_Specific_Input = false;
     public float Toolbar_Move_to_Camera_Offset = 3.0f;
+
+    public bool Toolbar_Rotate_Specific_Input = false;
+    public float Toolbar_Rotate_Increment { get; set; } = 90.0f;
 
     public bool Toolbar_Visibility_Target_Selection = true;
     public bool Toolbar_Visibility_Target_All = false;

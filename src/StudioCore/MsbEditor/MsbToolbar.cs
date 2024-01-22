@@ -248,13 +248,40 @@ namespace StudioCore.MsbEditor
                     ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText)}");
                     ImGui.Separator();
 
-                    if (CFG.Current.ShowUITooltips)
+
+                    if (ImGui.Button("Switch"))
                     {
-                        Utils.ShowHelpMarker("Set the distance at which the current selection is offset from the camera when this action is used.");
-                        ImGui.SameLine();
+                        CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input = !CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input;
                     }
-                    ImGui.InputFloat("Offset Distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset);
-                        
+                    ImGui.SameLine();
+                    if (CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input)
+                    {
+                        var offset = CFG.Current.Toolbar_Move_to_Camera_Offset;
+
+                        ImGui.InputFloat("Offset distance", ref offset);
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("Set the distance at which the current selection is offset from the camera when this action is used.");
+                        }
+
+                        if (offset < 0)
+                            offset = 0;
+
+                        if (offset > 100)
+                            offset = 100;
+
+                        CFG.Current.Toolbar_Move_to_Camera_Offset = offset;
+                    }
+                    else
+                    {
+                        ImGui.SliderFloat("Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100);
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("Set the distance at which the current selection is offset from the camera when this action is used.");
+                        }
+                    }
                 }
 
                 // Frame in Viewport
@@ -287,9 +314,19 @@ namespace StudioCore.MsbEditor
                     {
                         CFG.Current.Toolbar_Visibility_Target_All = false;
                     }
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the target state to our current selection.");
+                    }
                     if (ImGui.Checkbox("All", ref CFG.Current.Toolbar_Visibility_Target_All))
                     {
                         CFG.Current.Toolbar_Visibility_Target_Selection = false;
+                    }
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the target state to all objects.");
                     }
 
                     ImGui.Separator();
@@ -299,17 +336,31 @@ namespace StudioCore.MsbEditor
                         CFG.Current.Toolbar_Visibility_State_Disabled = false;
                         CFG.Current.Toolbar_Visibility_State_Flip = false;
                     }
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the target selection visible state to enabled.");
+                    }
                     if (ImGui.Checkbox("Invisible", ref CFG.Current.Toolbar_Visibility_State_Disabled))
                     {
                         CFG.Current.Toolbar_Visibility_State_Enabled = false;
                         CFG.Current.Toolbar_Visibility_State_Flip = false;
+                    }
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the target selection visible state to disabled.");
                     }
                     if (ImGui.Checkbox("Flip", ref CFG.Current.Toolbar_Visibility_State_Flip))
                     {
                         CFG.Current.Toolbar_Visibility_State_Enabled = false;
                         CFG.Current.Toolbar_Visibility_State_Disabled = false;
                     }
-                    ImGui.Text("Flip will invert the current visibility.");
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the target selection visible state to opposite of its current state.");
+                    }
                 }
 
                 // Reset Rotation
@@ -338,11 +389,21 @@ namespace StudioCore.MsbEditor
                         CFG.Current.Toolbar_Rotate_Y = false;
                         CFG.Current.Toolbar_Rotate_Y_Pivot = false;
                     }
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the rotation axis to X.");
+                    }
                     ImGui.SameLine();
                     if (ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Rotate_Y))
                     {
                         CFG.Current.Toolbar_Rotate_X = false;
                         CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                    }
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the rotation axis to Y.");
                     }
                     ImGui.SameLine();
                     if (ImGui.Checkbox("Y Pivot", ref CFG.Current.Toolbar_Rotate_Y_Pivot))
@@ -350,15 +411,32 @@ namespace StudioCore.MsbEditor
                         CFG.Current.Toolbar_Rotate_Y = false;
                         CFG.Current.Toolbar_Rotate_X = false;
                     }
-
                     if (CFG.Current.ShowUITooltips)
                     {
-                        Utils.ShowHelpMarker("Set the angle increment amount used by the rotation.");
                         ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the rotation axis to Y and pivot with respect to others within the selection.");
                     }
-                    if (ImGui.InputFloat("Degree Increment", ref rot))
+
+                    if (ImGui.Button("Switch"))
                     {
-                        CFG.Current.Toolbar_Rotate_Increment = Math.Clamp(rot, -180.0f, 180.0f);
+                        CFG.Current.Toolbar_Rotate_Specific_Input = !CFG.Current.Toolbar_Rotate_Specific_Input;
+                    }
+                    ImGui.SameLine();
+                    if (CFG.Current.Toolbar_Rotate_Specific_Input)
+                    {
+                        if (ImGui.InputFloat("Degree Increment", ref rot))
+                        {
+                            CFG.Current.Toolbar_Rotate_Increment = Math.Clamp(rot, -180.0f, 180.0f);
+                        }
+                    }
+                    else
+                    {
+                        ImGui.SliderFloat("Degree Increment", ref rot, -180.0f, 180.0f);
+                    }
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the angle increment amount used by the rotation.");
                     }
                 }
 
@@ -389,12 +467,27 @@ namespace StudioCore.MsbEditor
                     ImGui.Separator();
 
                     ImGui.Checkbox("X", ref CFG.Current.Toolbar_Move_to_Grid_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Move the current selection to the closest X co-ordinate within the map grid.");
+                    }
                     ImGui.SameLine();
                     ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Move_to_Grid_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Move the current selection to the closest Y co-ordinate within the map grid.");
+                    }
                     ImGui.SameLine();
                     ImGui.Checkbox("Z", ref CFG.Current.Toolbar_Move_to_Grid_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Move the current selection to the closest Z co-ordinate within the map grid.");
+                    }
 
-                    if(ImGui.Button("Switch"))
+                    if (ImGui.Button("Switch"))
                     {
                         CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input = !CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input;
                     }
@@ -404,6 +497,11 @@ namespace StudioCore.MsbEditor
                         var height = CFG.Current.Map_ViewportGrid_Offset;
 
                         ImGui.InputFloat("Grid height", ref height);
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("Set the current height of the map grid.");
+                        }
 
                         if (height < -10000)
                             height = -10000;
@@ -415,7 +513,12 @@ namespace StudioCore.MsbEditor
                     }
                     else
                     {
-                        ImGui.SliderFloat("Grid height", ref CFG.Current.Map_ViewportGrid_Offset, -1000, 1000);
+                        ImGui.SliderFloat("Grid height", ref CFG.Current.Map_ViewportGrid_Offset, -10000, 10000);
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("Set the current height of the map grid.");
+                        }
                     }
                 }
 
@@ -454,82 +557,222 @@ namespace StudioCore.MsbEditor
                     // Position
                     ImGui.Text("Position");
                     ImGui.Checkbox("X##scramblePosX", ref CFG.Current.Scrambler_RandomisePosition_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the X co-ordinate of the selection's Position in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinPosX", ref randomOffsetMin_Pos_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the position X co-ordinate.");
+                    }
                     ImGui.SameLine();
 
                     ImGui.InputFloat("Upper Bound##offsetMaxPosX", ref randomOffsetMax_Pos_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the position X co-ordinate.");
+                    }
 
                     ImGui.Checkbox("Y##scramblePosY", ref CFG.Current.Scrambler_RandomisePosition_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the Y co-ordinate of the selection's Position in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinPosY", ref randomOffsetMin_Pos_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the position Y co-ordinate.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Upper Bound##offsetMaxPosY", ref randomOffsetMax_Pos_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the position Y co-ordinate.");
+                    }
 
                     ImGui.Checkbox("Z##scramblePosZ", ref CFG.Current.Scrambler_RandomisePosition_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the Z co-ordinate of the selection's Position in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinPosZ", ref randomOffsetMin_Pos_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the position Z co-ordinate.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Upper Bound##offsetMaxPosZ", ref randomOffsetMax_Pos_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the position Z co-ordinate.");
+                    }
 
                     // Rotation
                     ImGui.Text("Rotation");
                     ImGui.Checkbox("X##scrambleRotX", ref CFG.Current.Scrambler_RandomiseRotation_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the X co-ordinate of the selection's Rotation in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinRotX", ref randomOffsetMin_Rot_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the rotation X co-ordinate.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Upper Bound##offsetMaxRotX", ref randomOffsetMax_Rot_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the rotation X co-ordinate.");
+                    }
 
                     ImGui.Checkbox("Y##scrambleRotY", ref CFG.Current.Scrambler_RandomiseRotation_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the Y co-ordinate of the selection's Rotation in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinRotY", ref randomOffsetMin_Rot_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the rotation Y co-ordinate.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Upper Bound##offsetMaxRotY", ref randomOffsetMax_Rot_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the rotation Y co-ordinate.");
+                    }
 
                     ImGui.Checkbox("Z##scrambleRotZ", ref CFG.Current.Scrambler_RandomiseRotation_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the Z co-ordinate of the selection's Rotation in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinRotZ", ref randomOffsetMin_Rot_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the rotation Z co-ordinate.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Upper Bound##offsetMaxRotZ", ref randomOffsetMax_Rot_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the rotation Z co-ordinate.");
+                    }
 
                     // Scale
                     ImGui.Text("Scale");
                     ImGui.Checkbox("X##scrambleScaleX", ref CFG.Current.Scrambler_RandomiseScale_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the X co-ordinate of the selection's Scale in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinScaleX", ref randomOffsetMin_Scale_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the scale X co-ordinate.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Upper Bound##offsetMaxScaleX", ref randomOffsetMax_Scale_X);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the scale X co-ordinate.");
+                    }
 
                     ImGui.Checkbox("Y##scrambleScaleY", ref CFG.Current.Scrambler_RandomiseScale_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the Y co-ordinate of the selection's Scale in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinScaleY", ref randomOffsetMin_Scale_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the scale Y co-ordinate.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Upper Bound##offsetMaxScaleY", ref randomOffsetMax_Scale_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the scale Y co-ordinate.");
+                    }
 
                     ImGui.Checkbox("Z##scrambleScaleZ", ref CFG.Current.Scrambler_RandomiseScale_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Include the Z co-ordinate of the selection's Scale in the scramble.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Lower Bound##offsetMinScaleZ", ref randomOffsetMin_Scale_Z);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Minimum amount to add to the scale Z co-ordinate.");
+                    }
                     ImGui.SameLine();
                     ImGui.PushItemWidth(100);
                     ImGui.InputFloat("Upper Bound##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Maximum amount to add to the scale Z co-ordinate.");
+                    }
 
                     ImGui.Checkbox("Scale Proportionally##scrambleSharedScale", ref CFG.Current.Scrambler_RandomiseScale_SharedScale);
+                    if (CFG.Current.ShowUITooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("When scrambling the scale, the Y and Z values will follow the X value, making the scaling proportional.");
+                    }
 
                     // Clamp floats
                     randomOffsetMin_Pos_X = Math.Clamp(randomOffsetMin_Pos_X, -10000f, 10000f);
