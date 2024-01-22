@@ -450,7 +450,15 @@ public class CloneMapObjectsAction : Action
                     mapPartEntities[m].Add(newobj);
                 }
 
-                m.Objects.Insert(m.Objects.IndexOf(Clonables[i]) + 1, newobj);
+                if (TargetMap == null)
+                {
+                    m.Objects.Insert(m.Objects.IndexOf(Clonables[i]) + 1, newobj);
+                }
+                else
+                {
+                    m.Objects.Add(newobj);
+                }
+
                 if (TargetBTL != null && newobj.WrappedObject is BTL.Light)
                 {
                     TargetBTL.AddChild(newobj);
