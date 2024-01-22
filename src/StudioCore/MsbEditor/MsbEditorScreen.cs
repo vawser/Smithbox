@@ -65,6 +65,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public DisplayGroupsEditor DispGroupEditor;
     public MsbAssetBrowser AssetBrowser;
+    public MsbMenubar Menubar;
 
     private bool GCNeedsCollection;
 
@@ -119,6 +120,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
         AssetBrowser = new MsbAssetBrowser(RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, _modelAliasBank, _mapAliasBank);
+        Menubar = new MsbMenubar(RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -1168,6 +1170,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         AssetBrowser.OnGui();
+        Menubar.OnGui();
 
         if (_activeModal != null)
         {

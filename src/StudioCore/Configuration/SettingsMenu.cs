@@ -239,82 +239,82 @@ public class SettingsMenu
                         CFG.Current.MapAliases_ShowMapAliasEditList = !CFG.Current.MapAliases_ShowMapAliasEditList;
                     }
 
-                    ImGui.Separator();
-
-                    if (ImGui.Button("Toggle Alias Addition"))
-                    {
-                        CFG.Current.MapAliases_ShowAliasAddition = !CFG.Current.MapAliases_ShowAliasAddition;
-                    }
-
-                    ImGui.SameLine();
-                    if (CFG.Current.ShowUITooltips)
-                    {
-                        Utils.ShowHelpMarker("When enabled the list will display the tags next to the name.");
-                        ImGui.SameLine();
-                    }
-                    ImGui.Checkbox("Show Tags", ref CFG.Current.MapAliases_ShowTagsInBrowser);
-
-                    ImGui.Separator();
-
-                    if (CFG.Current.MapAliases_ShowAliasAddition)
-                    {
-                        if (CFG.Current.ShowUITooltips)
-                        {
-                            Utils.ShowHelpMarker("The map ID of the alias to add.");
-                            ImGui.SameLine();
-                        }
-                        ImGui.InputText($"ID", ref _newRefId, 255);
-                        if (CFG.Current.ShowUITooltips)
-                        {
-                            Utils.ShowHelpMarker("The name of the alias to add.");
-                            ImGui.SameLine();
-                        }
-                        ImGui.InputText($"Name", ref _newRefName, 255);
-                        if (CFG.Current.ShowUITooltips)
-                        {
-                            Utils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
-                            ImGui.SameLine();
-                        }
-                        ImGui.InputText($"Tags", ref _newRefTags, 255);
-
-                        if (CFG.Current.ShowUITooltips)
-                        {
-                            Utils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
-                            ImGui.SameLine();
-                        }
-                        if (ImGui.Button("Add New Alias"))
-                        {
-                            // Make sure the ref ID is a MSB name
-                            if (Regex.IsMatch(_newRefId, @"m\d{2}_\d{2}_\d{2}_\d{2}"))
-                            {
-                                bool isValid = true;
-
-                                var entries = _mapAliasBank.AliasNames.GetEntries("Maps");
-
-                                foreach (var entry in entries)
-                                {
-                                    if (_newRefId == entry.id)
-                                        isValid = false;
-                                }
-
-                                if (isValid)
-                                {
-                                    _mapAliasBank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
-                                    ImGui.CloseCurrentPopup();
-                                    _mapAliasBank.mayReloadAliasBank = true;
-                                }
-                                else
-                                {
-                                    PlatformUtils.Instance.MessageBox($"Map Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                        }
-
-                        ImGui.Separator();
-                    }
-
                     if (CFG.Current.MapAliases_ShowMapAliasEditList)
                     {
+                        ImGui.Separator();
+
+                        if (ImGui.Button("Toggle Alias Addition"))
+                        {
+                            CFG.Current.MapAliases_ShowAliasAddition = !CFG.Current.MapAliases_ShowAliasAddition;
+                        }
+
+                        ImGui.SameLine();
+                        if (CFG.Current.ShowUITooltips)
+                        {
+                            Utils.ShowHelpMarker("When enabled the list will display the tags next to the name.");
+                            ImGui.SameLine();
+                        }
+                        ImGui.Checkbox("Show Tags", ref CFG.Current.MapAliases_ShowTagsInBrowser);
+
+                        ImGui.Separator();
+
+                        if (CFG.Current.MapAliases_ShowAliasAddition)
+                        {
+                            if (CFG.Current.ShowUITooltips)
+                            {
+                                Utils.ShowHelpMarker("The map ID of the alias to add.");
+                                ImGui.SameLine();
+                            }
+                            ImGui.InputText($"ID", ref _newRefId, 255);
+                            if (CFG.Current.ShowUITooltips)
+                            {
+                                Utils.ShowHelpMarker("The name of the alias to add.");
+                                ImGui.SameLine();
+                            }
+                            ImGui.InputText($"Name", ref _newRefName, 255);
+                            if (CFG.Current.ShowUITooltips)
+                            {
+                                Utils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
+                                ImGui.SameLine();
+                            }
+                            ImGui.InputText($"Tags", ref _newRefTags, 255);
+
+                            if (CFG.Current.ShowUITooltips)
+                            {
+                                Utils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
+                                ImGui.SameLine();
+                            }
+                            if (ImGui.Button("Add New Alias"))
+                            {
+                                // Make sure the ref ID is a MSB name
+                                if (Regex.IsMatch(_newRefId, @"m\d{2}_\d{2}_\d{2}_\d{2}"))
+                                {
+                                    bool isValid = true;
+
+                                    var entries = _mapAliasBank.AliasNames.GetEntries("Maps");
+
+                                    foreach (var entry in entries)
+                                    {
+                                        if (_newRefId == entry.id)
+                                            isValid = false;
+                                    }
+
+                                    if (isValid)
+                                    {
+                                        _mapAliasBank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                                        ImGui.CloseCurrentPopup();
+                                        _mapAliasBank.mayReloadAliasBank = true;
+                                    }
+                                    else
+                                    {
+                                        PlatformUtils.Instance.MessageBox($"Map Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+
+                            ImGui.Separator();
+                        }
+
                         DisplayMapAliasSelectionList(_mapAliasBank.AliasNames.GetEntries("Maps"));
                     }
                 }
