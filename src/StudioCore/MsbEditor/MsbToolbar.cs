@@ -258,6 +258,7 @@ namespace StudioCore.MsbEditor
                     {
                         var offset = CFG.Current.Toolbar_Move_to_Camera_Offset;
 
+                        ImGui.PushItemWidth(200);
                         ImGui.InputFloat("Offset distance", ref offset);
                         if (CFG.Current.ShowUITooltips)
                         {
@@ -275,6 +276,7 @@ namespace StudioCore.MsbEditor
                     }
                     else
                     {
+                        ImGui.PushItemWidth(200);
                         ImGui.SliderFloat("Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100);
                         if (CFG.Current.ShowUITooltips)
                         {
@@ -424,6 +426,7 @@ namespace StudioCore.MsbEditor
                     ImGui.SameLine();
                     if (CFG.Current.Toolbar_Rotate_Specific_Input)
                     {
+                        ImGui.PushItemWidth(200);
                         if (ImGui.InputFloat("Degree Increment", ref rot))
                         {
                             CFG.Current.Toolbar_Rotate_Increment = Math.Clamp(rot, -180.0f, 180.0f);
@@ -431,6 +434,7 @@ namespace StudioCore.MsbEditor
                     }
                     else
                     {
+                        ImGui.PushItemWidth(200);
                         ImGui.SliderFloat("Degree Increment", ref rot, -180.0f, 180.0f);
                     }
                     if (CFG.Current.ShowUITooltips)
@@ -496,6 +500,7 @@ namespace StudioCore.MsbEditor
                     {
                         var height = CFG.Current.Map_ViewportGrid_Offset;
 
+                        ImGui.PushItemWidth(200);
                         ImGui.InputFloat("Grid height", ref height);
                         if (CFG.Current.ShowUITooltips)
                         {
@@ -513,6 +518,7 @@ namespace StudioCore.MsbEditor
                     }
                     else
                     {
+                        ImGui.PushItemWidth(200);
                         ImGui.SliderFloat("Grid height", ref CFG.Current.Map_ViewportGrid_Offset, -10000, 10000);
                         if (CFG.Current.ShowUITooltips)
                         {
@@ -1211,17 +1217,25 @@ namespace StudioCore.MsbEditor
             var newRot = objT.Rotation;
             var newScale = objT.Scale;
 
-            var gridHeight = CFG.Current.Map_ViewportGrid_Offset;
-            var incrementSize = CFG.Current.Map_ViewportGrid_IncrementSize;
-
-            if (CFG.Current.Toolbar_Move_to_Grid_X || CFG.Current.Toolbar_Move_to_Grid_Z)
+            if (CFG.Current.Toolbar_Move_to_Grid_X)
             {
-                // Find closest grid point
+                float temp = newPos[0] / CFG.Current.Map_ViewportGrid_IncrementSize;
+                float newPosX = (float)Math.Round(temp, 0) * CFG.Current.Map_ViewportGrid_IncrementSize;
+
+                newPos = new Vector3(newPosX, newPos[1], newPos[2]);
+            }
+
+            if (CFG.Current.Toolbar_Move_to_Grid_Z)
+            {
+                float temp = newPos[2] / CFG.Current.Map_ViewportGrid_IncrementSize;
+                float newPosZ = (float)Math.Round(temp, 0) * CFG.Current.Map_ViewportGrid_IncrementSize;
+
+                newPos = new Vector3(newPos[0], newPos[1], newPosZ);
             }
 
             if (CFG.Current.Toolbar_Move_to_Grid_Y)
             {
-                newPos = new Vector3(newPos[0], gridHeight, newPos[2]);
+                newPos = new Vector3(newPos[0], CFG.Current.Map_ViewportGrid_Offset, newPos[2]);
             }
 
             newTransform.Position = newPos;
