@@ -1262,7 +1262,9 @@ namespace SoulsFormats
                 /// <summary>
                 /// References which PatrolInfo index to use for patrol information.
                 /// </summary>
-                public short PatrolIndex { get; set; }
+                [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
+                public string WalkRouteName { get; set; }
+                private short WalkRouteIndex;
 
                 /// <summary>
                 /// Enum that refers to an animation ID to use.
@@ -1344,7 +1346,7 @@ namespace SoulsFormats
                     PlatoonID = br.ReadInt16();
                     CharaInitID = br.ReadInt32();
                     CollisionPartIndex = br.ReadInt32();
-                    PatrolIndex = br.ReadInt16();
+                    WalkRouteIndex = br.ReadInt16();
                     InitAnimIDType = br.ReadInt16();
                     UnkT24 = br.ReadInt32();
                     br.AssertPattern(0x10, 0xFF);
@@ -1385,7 +1387,7 @@ namespace SoulsFormats
                     bw.WriteInt16(PlatoonID);
                     bw.WriteInt32(CharaInitID);
                     bw.WriteInt32(CollisionPartIndex);
-                    bw.WriteInt16(PatrolIndex);
+                    bw.WriteInt16(WalkRouteIndex);
                     bw.WriteInt16(InitAnimIDType);
                     bw.WriteInt32(UnkT24);
                     bw.WritePattern(0x10, 0xFF);
@@ -1425,6 +1427,7 @@ namespace SoulsFormats
                 {
                     base.GetIndices(msb, entries);
                     CollisionPartIndex = MSB.FindIndex(this, entries.Parts, CollisionPartName);
+                    WalkRouteIndex = (short)MSB.FindIndex(this, msb.Events.PatrolInfo, WalkRouteName);
                 }
             }
 

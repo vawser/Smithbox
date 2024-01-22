@@ -123,6 +123,207 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         EditorActionManager.AddEventHandler(SceneTree);
     }
 
+    /// <summary>
+    ///     Handles rendering walk / patrol routes.
+    /// </summary>
+    public static class PatrolDrawManager
+    {
+        private static readonly HashSet<WeakReference<Entity>> _drawEntities = new();
+        private record DrawEntity;
+
+        private const float _verticalOffset = 0.8f;
+
+        private static Entity GetDrawEntity(ObjectContainer map)
+        {
+            Entity e = new(map, new DrawEntity());
+            map.AddObject(e);
+            _drawEntities.Add(new WeakReference<Entity>(e));
+            return e;
+        }
+
+        private static bool GetPoints(string[] regionNames, ObjectContainer map, out List<Vector3> points)
+        {
+            points = [];
+
+            foreach (var region in regionNames)
+            {
+                if (!string.IsNullOrWhiteSpace(region))
+                {
+                    var pointObj = map.GetObjectByName(region);
+                    if (pointObj == null)
+                        continue;
+                    var pos = pointObj.GetRootLocalTransform().Position;
+                    pos.Y += _verticalOffset;
+
+                    points.Add(pos);
+                }
+            }
+
+            return points.Count > 0;
+        }
+
+        /// <summary>
+        ///     Generates the renderable walk routes for all loaded maps.
+        /// </summary>
+        public static void Generate(Universe universe)
+        {
+            Clear();
+
+            if (universe.GameType is GameType.ArmoredCoreVI)
+            {
+                TaskLogs.AddLog("Unsupported game type for this tool.",
+                    LogLevel.Information, TaskLogs.LogPriority.High);
+                return;
+            }
+
+            var loadedMaps = universe.LoadedObjectContainers.Values.Where(x => x != null);
+            foreach (var map in loadedMaps)
+            {
+                foreach (var patrolEntity in map.Objects.ToList())
+                {
+                    if (patrolEntity.WrappedObject is MSBD.Part.EnemyBase MSBD_Enemy)
+                    {
+                        if (GetPoints(MSBD_Enemy.MovePointNames, map, out List<Vector3> points))
+                        {
+                            Entity drawEntity = GetDrawEntity(map);
+
+                            bool endAtStart = MSBD_Enemy.PointMoveType == 0;
+                            bool moveRandomly = MSBD_Enemy.PointMoveType == 2;
+                            var chain = universe.GetPatrolLineDrawable(patrolEntity, drawEntity,
+                                points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
+
+                            drawEntity.RenderSceneMesh = chain;
+                        }
+                    }
+                    else if (patrolEntity.WrappedObject is MSB1.Part.EnemyBase MSB1_Enemy)
+                    {
+                        if (GetPoints(MSB1_Enemy.MovePointNames, map, out List<Vector3> points))
+                        {
+                            Entity drawEntity = GetDrawEntity(map);
+
+                            bool endAtStart = MSB1_Enemy.PointMoveType == 0;
+                            bool moveRandomly = MSB1_Enemy.PointMoveType == 2;
+                            var chain = universe.GetPatrolLineDrawable(patrolEntity, drawEntity,
+                                points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
+
+                            drawEntity.RenderSceneMesh = chain;
+                        }
+                    }
+                    // DS2 stores walk routes in ESD AI
+                    else if (patrolEntity.WrappedObject is MSBB.Part.EnemyBase MSBB_Enemy)
+                    {
+                        if (GetPoints(MSBB_Enemy.MovePointNames, map, out List<Vector3> points))
+                        {
+                            Entity drawEntity = GetDrawEntity(map);
+
+                            // BB move type is probably in an unk somewhere.
+                            bool endAtStart = false;
+                            bool moveRandomly = false;
+                            var chain = universe.GetPatrolLineDrawable(patrolEntity, drawEntity,
+                                points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
+
+                            drawEntity.RenderSceneMesh = chain;
+                        }
+                    }
+                    else if (patrolEntity.WrappedObject is MSB3.Event.PatrolInfo MSB3_Patrol)
+                    {
+                        if (GetPoints(MSB3_Patrol.WalkPointNames, map, out List<Vector3> points))
+                        {
+                            Entity drawEntity = GetDrawEntity(map);
+                            List<Vector3> enemies = new();
+                            foreach (var ent in map.Objects)
+                            {
+                                if (ent.WrappedObject is MSB3.Part.EnemyBase ene)
+                                {
+                                    if (ene.WalkRouteName != patrolEntity.Name)
+                                        continue;
+
+                                    var pos = ent.GetRootLocalTransform().Position;
+                                    pos.Y += _verticalOffset;
+                                    enemies.Add(pos);
+                                }
+                            }
+
+                            bool endAtStart = MSB3_Patrol.PatrolType == 0;
+                            bool moveRandomly = MSB3_Patrol.PatrolType == 2;
+                            var chain = universe.GetPatrolLineDrawable(patrolEntity, drawEntity,
+                                points, enemies, endAtStart, moveRandomly);
+
+                            drawEntity.RenderSceneMesh = chain;
+                        }
+                    }
+                    else if (patrolEntity.WrappedObject is MSBS.Event.PatrolInfo MSBS_Patrol)
+                    {
+                        if (GetPoints(MSBS_Patrol.WalkRegionNames, map, out List<Vector3> points))
+                        {
+                            Entity drawEntity = GetDrawEntity(map);
+                            List<Vector3> enemies = new();
+                            foreach (var ent in map.Objects)
+                            {
+                                if (ent.WrappedObject is MSBS.Part.EnemyBase ene)
+                                {
+                                    if (ene.WalkRouteName != patrolEntity.Name)
+                                        continue;
+
+                                    var pos = ent.GetRootLocalTransform().Position;
+                                    pos.Y += _verticalOffset;
+                                    enemies.Add(pos);
+                                }
+                            }
+
+                            bool endAtStart = MSBS_Patrol.PatrolType == 0;
+                            bool moveRandomly = MSBS_Patrol.PatrolType == 2;
+                            var chain = universe.GetPatrolLineDrawable(patrolEntity, drawEntity,
+                                points, enemies, endAtStart, moveRandomly);
+
+                            drawEntity.RenderSceneMesh = chain;
+                        }
+                    }
+                    else if (patrolEntity.WrappedObject is MSBE.Event.PatrolInfo MSBE_Patrol)
+                    {
+                        if (GetPoints(MSBE_Patrol.WalkRegionNames, map, out List<Vector3> points))
+                        {
+                            Entity drawEntity = GetDrawEntity(map);
+                            List<Vector3> enemies = new();
+                            foreach (var ent in map.Objects)
+                            {
+                                if (ent.WrappedObject is MSBE.Part.EnemyBase ene)
+                                {
+                                    if (ene.WalkRouteName != patrolEntity.Name)
+                                        continue;
+
+                                    var pos = ent.GetRootLocalTransform().Position;
+                                    pos.Y += _verticalOffset;
+                                    enemies.Add(pos);
+                                }
+                            }
+
+                            bool endAtStart = MSBE_Patrol.PatrolType == 0;
+                            bool moveRandomly = MSBE_Patrol.PatrolType == 2;
+                            var chain = universe.GetPatrolLineDrawable(patrolEntity, drawEntity,
+                                points, enemies, endAtStart, moveRandomly);
+
+                            drawEntity.RenderSceneMesh = chain;
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void Clear()
+        {
+            foreach (var weakEnt in _drawEntities)
+            {
+                if (weakEnt.TryGetTarget(out var ent))
+                {
+                    ent.Container?.Objects.Remove(ent);
+                    ent.Dispose();
+                }
+            }
+            _drawEntities.Clear();
+        }
+    }
+
     private bool PauseUpdate
     {
         get
@@ -595,6 +796,24 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         if (ImGui.BeginMenu("Tools"))
         {
             var loadedMaps = Universe.LoadedObjectContainers.Values.Where(x => x != null);
+
+            if (AssetLocator.Type is not GameType.DarkSoulsIISOTFS)
+            {
+                if (ImGui.BeginMenu("Render enemy patrol routes"))
+                {
+                    if (ImGui.MenuItem("Render##PatrolRoutes", KeyBindings.Current.Map_RenderEnemyPatrolRoutes.HintText,
+                    false, loadedMaps.Any()))
+                    {
+                        PatrolDrawManager.Generate(Universe);
+                    }
+                    if (ImGui.MenuItem("Clear##PatrolRoutes"))
+                    {
+                        PatrolDrawManager.Clear();
+                    }
+                    ImGui.EndMenu();
+                }
+            }
+
             if (ImGui.MenuItem("Check loaded maps for duplicate Entity IDs", loadedMaps.Any()))
             {
                 HashSet<uint> vals = new();
@@ -803,6 +1022,11 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             if (InputTracker.GetKeyDown(KeyBindings.Current.Map_MoveSelectionToCamera) && _selection.IsSelection())
             {
                 MoveSelectionToCamera();
+            }
+
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderEnemyPatrolRoutes))
+            {
+                PatrolDrawManager.Generate(Universe);
             }
 
             // Render settings

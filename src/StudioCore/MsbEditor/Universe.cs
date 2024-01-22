@@ -15,6 +15,7 @@ using System.Runtime.ExceptionServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace StudioCore.MsbEditor;
 
@@ -281,6 +282,25 @@ public class Universe
         mesh.World = obj.GetWorldMatrix();
         obj.RenderSceneMesh = mesh;
         mesh.SetSelectable(obj);
+        return mesh;
+    }
+
+    public RenderableProxy GetPatrolLineDrawable(Entity selectable, Entity obj, List<Vector3> points, List<Vector3> looseStartPoints, bool endAtStart, bool random)
+    {
+        if (points.Count + looseStartPoints.Count < 2)
+        {
+            return null;
+        }
+
+        DebugPrimitives.DbgPrimWireChain line = new(points, looseStartPoints, System.Drawing.Color.Red, endAtStart, random);
+        DebugPrimitiveRenderableProxy mesh = new(_renderScene.OpaqueRenderables, line)
+        {
+            BaseColor = System.Drawing.Color.Red,
+            HighlightedColor = System.Drawing.Color.Red,
+            World = obj.GetWorldMatrix(),
+            DrawFilter = RenderFilter.Region,
+        };
+        mesh.SetSelectable(selectable);
         return mesh;
     }
 

@@ -111,6 +111,7 @@ public class KeyBindings
         public KeyBind Map_ViewportGrid_Lower = new(Key.Q, true);
         public KeyBind Map_ViewportGrid_Raise = new(Key.E, true);
         public KeyBind Map_ToggleRenderOutline = new();
+        public KeyBind Map_RenderEnemyPatrolRoutes = new(Key.P, true);
 
         // Param
         public KeyBind Param_Copy = new(Key.C, true);
