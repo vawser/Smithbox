@@ -613,7 +613,7 @@ public class Smithbox
 
             _projectSettings = settings;
             ChangeProjectSettings(_projectSettings, Path.GetDirectoryName(filename), options);
-            _context.Window.Title = $"{_programTitle}  -  {_projectSettings.ProjectName}";
+            _context.Window.Title = $"{_projectSettings.ProjectName}  -  {_programTitle}";
 
             CFG.RecentProject recent = new()
             {
