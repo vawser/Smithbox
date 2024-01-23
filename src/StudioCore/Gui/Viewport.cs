@@ -140,12 +140,8 @@ public class Viewport : IViewport
 
             if (InputTracker.GetMouseButtonDown(MouseButton.Right) && MouseInViewport())
             {
-                // If floating browsers are open, do not switch focus to the viewport, as it messes with the right-click context menu
-                if (!CFG.Current.EventFlagBrowser_Open && !CFG.Current.ParticleBrowser_Open)
-                {
-                    ImGui.SetWindowFocus();
-                    ViewportSelected = true;
-                }
+                ImGui.SetWindowFocus();
+                ViewportSelected = true;
             }
             else if (!InputTracker.GetMouseButton(MouseButton.Right))
             {
