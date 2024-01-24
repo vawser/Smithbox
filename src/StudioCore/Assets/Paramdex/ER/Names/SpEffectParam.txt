@@ -10,7 +10,9 @@
 32 HKS - Unk Jump Throw Def Invalid
 45 TAE - Counter Frames
 70 Blight Effect
+79 PLAN_SP_EFFECT_FALL_FROM_HORSE_START
 81 Spectral Steed Whistle
+83 PLAN_SP_EFFECT_FALL_FROM_HORSE
 89 HKS - Unk Toughness Increase
 98 HKS - Unk Is Jump Attacking
 100 Grace - Restore HP
@@ -50,6 +52,10 @@
 183 Spiritspring - In Range
 185 Spiritspring - Fall Immune
 186 Spiritspring - Is Jumping
+210 PLAN_SP_EFFECT_BUDDY_ORDER_GO
+211 PLAN_SP_EFFECT_BUDDY_ORDER_COME
+212 PLAN_SP_EFFECT_BUDDY_ORDER_UNSUMMON
+220 PLAN_SP_EFFECT_BUDDY_ORDER_TRIGGER
 415 Torch Effect
 416 Sentry's Torch - Effect
 420 Oil Pot
@@ -450,7 +456,7 @@
 3375 Holy Water Grease - Right
 3376 Holy Water Grease - Left
 3380 Cursed-Blood Pot
-3381 Cursed-Blood Pot
+3381 Cursed-Blood Pot - PLAN_SP_EFFECT_BUDDY_AGGRESSIVE
 3382 Cursed-Blood Pot
 3383 Cursed-Blood Pot
 3450 Rune Arc
@@ -552,7 +558,26 @@
 4300 Enemy: Fade after death
 4301 Enemy: Fade after death (boss)
 4302 Enemy: Fade after death (blue)
+4460 PLAN_SP_EFFECT_SPIRIT_CANDLE
 4600 Wet (Rain)
+5010 PLAN_SP_EFFECT_HORSE_RIDE
+5012 PLAN_SP_EFFECT_FACILITY_RIDE
+5020 PLAN_SP_EFFECT_PATROL_ANIME
+5070 PLAN_SP_EFFECT_NATURAL_SLEEP
+5071 PLAN_SP_EFFECT_NATURAL_SLEEP_MORNING
+5072 PLAN_SP_EFFECT_NATURAL_SLEEP_DAYTIME
+5079 PLAN_SP_EFFECT_NATURAL_SLEEP_GUARD
+5081 PLAN_SP_EFFECT_INITIAL_STANDBY
+5085 PLAN_SP_EFFECT_RETURN_INITIAL_STANDBY
+5090 PLAN_SP_EFFECT_RETURN_INITIAL_STANDBY_WITHANIM
+5110 PLAN_SP_EFFECT_ANIME_SLEEPING
+5111 PLAN_SP_EFFECT_ANIME_COLLECTSLEEPING
+5130 PLAN_SP_EFFECT_BEAST_REPELLENT_UNDAMAGED
+5190 PLAN_SP_EFFECT_DETECT_ANIM_COOLTIME
+5195 PLAN_SP_EFFECT_FINDSHOOT_STEP_ON_FAILED_PATHGOAL
+5230 PLAN_SP_EFFECT_BARISTA_RIDE
+5231 PLAN_SP_EFFECT_L_BARISTA_RIDE
+5232 PLAN_SP_EFFECT_FLAMETHROWER_RIDE
 5250 Enemy: Golden Eyes (Bonus Runes)
 5255 Enemy: Golden Eyes Failed (No Reroll)
 5261 Enemy: Golden Eyes Chance (0.5%)
@@ -705,6 +730,7 @@
 6930 Enemy - Crystal Dart Confusion - Point A
 6931 Enemy - Crystal Dart Confusion - Point B
 6932 Enemy - Crystal Dart Confusion - Point C
+6992 PLAN_SP_EFFECT_TRUNK_COLLAPSE
 7000 Area Scaling - Tier 01 (Stranded Graveyard)
 7010 Area Scaling - Tier 02 (Limgrave)
 7020 Area Scaling - Tier 03 (Weeping Peninsula)
@@ -764,6 +790,9 @@
 7670 NG+ Scaling -
 7680 NG+ Scaling -
 8001 HKS - Is Stealth
+8970 PLAN_SP_EFFECT_STRAGGLER_DEACT
+8971 PLAN_SP_EFFECT_STRAGGLER_ACT
+8972 PLAN_SP_EFFECT_STRAGGLER_ACT_HOSTILE
 9820 Animation Offset - Unk
 9821 Animation Offset - Unk
 9822 Animation Offset - Unk
@@ -821,6 +850,7 @@
 10165 Dragon-faced Flamethrower - Bullet
 10317 Fallen Hawks Soldier - Bullet
 10318 Fallen Hawks Soldier - Bullet [Chain]
+10535 PLAN_SP_EFFECT_BUDDY_AGGRESSIVE_DEMIHUMAN
 10631 Mohg Phase 2 - Animation Offset +1m
 10665 HKS - Unk Event 6001 Event Action Not Possible
 10690 Mohg - Bullet
@@ -2933,11 +2963,11 @@
 296156 Spirit Summon - Damage/Absorption Setup
 296159 Spirit Summon - Damage/Absorption Setup
 297000 Spirit Summon - Follow & Warp to Player
-297100 Spirit Summon -
-297101 Spirit Summon -
-297102 Spirit Summon -
-297103 Spirit Summon -
-297200 Spirit Summon -
+297100 Spirit Summon - PLAN_SP_EFFECT_BUDDY_WALK_FOLLOW
+297101 Spirit Summon - PLAN_SP_EFFECT_BUDDY_REAR_FOLLOW
+297102 Spirit Summon - PLAN_SP_EFFECT_BUDDY_FLY_FOLLOW
+297103 Spirit Summon - PLAN_SP_EFFECT_BUDDY_NO_FOLLOW
+297200 Spirit Summon - PLAN_SP_EFFECT_BUDDY_INTERCEPT_LONGRANGE
 297800 Spirit Summon -
 297810 Spirit Summon -
 297811 Spirit Summon -

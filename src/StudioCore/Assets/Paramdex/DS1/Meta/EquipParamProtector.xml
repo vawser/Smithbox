@@ -132,4 +132,5 @@
     <simpleModelForDlc IsBool="" />
     <oldSortId />
   </Field>
+  <Self OffsetSize="100" />
 </PARAMMETA>

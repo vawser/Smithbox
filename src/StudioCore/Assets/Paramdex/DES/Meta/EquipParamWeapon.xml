@@ -90,5 +90,5 @@
     <pad_6 AltName="pad_6" />
     <basicPrice AltName="basicPrice" />
   </Field>
-  <Self />
+  <Self OffsetSize="100" />
 </PARAMMETA>

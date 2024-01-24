@@ -337,7 +337,7 @@
         <Option Value="266" Name="FallDeathIsDisabled" />
         <Option Value="267" Name="AI Eye Angle" />
         <Option Value="269" Name="Unknown" />
-        <Option Value="270" Name="Unknown" />
+        <Option Value="270" Name="Follow and warp to player (Spirit Summon)" />
         <Option Value="271" Name="Unknown" />
         <Option Value="272" Name="Unknown" />
         <Option Value="275" Name="Player Behavior ID Change" />

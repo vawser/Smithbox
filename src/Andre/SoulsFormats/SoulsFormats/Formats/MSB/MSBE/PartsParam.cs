@@ -153,13 +153,25 @@ namespace SoulsFormats
         /// </summary>
         public abstract class Part : Entry, IMsbPart
         {
-            public enum UnkEnabledStateType : int
+            public enum GameEditionDisableType : int
             {
-                Default = 0,
-                Disabled = 1,
-                Unk2 = 2,
-                Unk3 = 3,
+                NeverDisable = 0,
+
+                /// <summary>
+                /// Disabled if Localize.PkgEdition byte ptr [rcx+0B73h] == 1.
+                /// The value is 1 in all released versions of Elden Ring.
+                /// </summary>
+                DisableInRelease = 1,
+
+                /// <summary>
+                /// Disabled if Localize.PkgEdition byte ptr [rcx+0B73h] == 2.
+                /// The value is 1 in all released versions of Elden Ring.
+                /// </summary>
+                DisableInPkgEditionFlag2 = 2,
+
+                DisableInNetworkTest = 3,
             }
+
             private protected abstract PartType Type { get; }
             private protected abstract bool HasUnk1 { get; }
             private protected abstract bool HasUnk2 { get; }
@@ -205,7 +217,7 @@ namespace SoulsFormats
             /// <summary>
             /// 1 disables the part, 2 and 3 are unknown.
             /// </summary>
-            public UnkEnabledStateType UnkEnabledState { get; set; } = UnkEnabledStateType.Default;
+            public GameEditionDisableType GameEditionDisable { get; set; } = GameEditionDisableType.NeverDisable;
 
             /// <summary>
             /// Very speculative
@@ -353,7 +365,7 @@ namespace SoulsFormats
                 Position = br.ReadVector3();
                 Rotation = br.ReadVector3();
                 Scale = br.ReadVector3();
-                UnkEnabledState = br.ReadEnum32<UnkEnabledStateType>();
+                GameEditionDisable = br.ReadEnum32<GameEditionDisableType>();
                 MapStudioLayer = br.ReadUInt32();
                 br.AssertInt32(0);
                 long unkOffset1 = br.ReadInt64();
@@ -535,7 +547,7 @@ namespace SoulsFormats
                 bw.WriteVector3(Position);
                 bw.WriteVector3(Rotation);
                 bw.WriteVector3(Scale);
-                bw.WriteInt32((int)UnkEnabledState);
+                bw.WriteInt32((int)GameEditionDisable);
                 bw.WriteUInt32(MapStudioLayer);
                 bw.WriteInt32(0);
                 bw.ReserveInt64("UnkOffset1");
