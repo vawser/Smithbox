@@ -842,6 +842,8 @@ namespace StudioCore.MsbEditor
                     {
                         CFG.Current.Replicator_Mode_Circle = false;
                         CFG.Current.Replicator_Mode_Square = false;
+                        CFG.Current.Replicator_Mode_Sphere = false;
+                        CFG.Current.Replicator_Mode_Box = false;
                     }
                     if (CFG.Current.System_Show_UI_Tooltips)
                     {
@@ -849,10 +851,13 @@ namespace StudioCore.MsbEditor
                         Utils.ShowHelpMarker("Replicate the first selection in the Line shape.");
                     }
                     ImGui.SameLine();
+
                     if(ImGui.Checkbox("Circle", ref CFG.Current.Replicator_Mode_Circle))
                     {
                         CFG.Current.Replicator_Mode_Line = false;
                         CFG.Current.Replicator_Mode_Square = false;
+                        CFG.Current.Replicator_Mode_Sphere = false;
+                        CFG.Current.Replicator_Mode_Box = false;
                     }
                     if (CFG.Current.System_Show_UI_Tooltips)
                     {
@@ -860,16 +865,49 @@ namespace StudioCore.MsbEditor
                         Utils.ShowHelpMarker("Replicate the first selection in the Circle shape.");
                     }
                     ImGui.SameLine();
+
                     if(ImGui.Checkbox("Square", ref CFG.Current.Replicator_Mode_Square))
                     {
                         CFG.Current.Replicator_Mode_Circle = false;
                         CFG.Current.Replicator_Mode_Line = false;
+                        CFG.Current.Replicator_Mode_Sphere = false;
+                        CFG.Current.Replicator_Mode_Box = false;
                     }
                     if (CFG.Current.System_Show_UI_Tooltips)
                     {
                         ImGui.SameLine();
                         Utils.ShowHelpMarker("Replicate the first selection in the Square shape.");
                     }
+
+                    // WIP
+                    /*
+                    if (ImGui.Checkbox("Sphere", ref CFG.Current.Replicator_Mode_Sphere))
+                    {
+                        CFG.Current.Replicator_Mode_Circle = false;
+                        CFG.Current.Replicator_Mode_Line = false;
+                        CFG.Current.Replicator_Mode_Square = false;
+                        CFG.Current.Replicator_Mode_Box = false;
+                    }
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Replicate the first selection in the Sphere shape.");
+                    }
+                    ImGui.SameLine();
+
+                    if (ImGui.Checkbox("Box", ref CFG.Current.Replicator_Mode_Box))
+                    {
+                        CFG.Current.Replicator_Mode_Circle = false;
+                        CFG.Current.Replicator_Mode_Line = false;
+                        CFG.Current.Replicator_Mode_Square = false;
+                        CFG.Current.Replicator_Mode_Sphere = false;
+                    }
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Replicate the first selection in the Box shape.");
+                    }
+                    */
 
                     // Line
                     if (CFG.Current.Replicator_Mode_Line)
@@ -965,7 +1003,7 @@ namespace StudioCore.MsbEditor
                         else
                         {
                             ImGui.PushItemWidth(200);
-                            ImGui.SliderFloat("Radius", ref CFG.Current.Replicator_Circle_Radius, -100, 100);
+                            ImGui.SliderFloat("Radius", ref CFG.Current.Replicator_Circle_Radius, 0.1f, 100);
                             if (CFG.Current.System_Show_UI_Tooltips)
                             {
                                 ImGui.SameLine();
@@ -973,6 +1011,7 @@ namespace StudioCore.MsbEditor
                             }
                         }
                     }
+
                     // Square
                     if (CFG.Current.Replicator_Mode_Square)
                     {
@@ -999,16 +1038,87 @@ namespace StudioCore.MsbEditor
                             CFG.Current.Replicator_Square_Width = 1;
 
                         ImGui.PushItemWidth(200);
-                        ImGui.InputFloat("Height", ref CFG.Current.Replicator_Square_Height);
+                        ImGui.InputFloat("Depth", ref CFG.Current.Replicator_Square_Depth);
                         if (CFG.Current.System_Show_UI_Tooltips)
                         {
                             ImGui.SameLine();
-                            Utils.ShowHelpMarker("The height of the square on which to place the entities.");
+                            Utils.ShowHelpMarker("The depth of the square on which to place the entities.");
                         }
 
-                        if (CFG.Current.Replicator_Square_Height < 1)
-                            CFG.Current.Replicator_Square_Height = 1;
+                        if (CFG.Current.Replicator_Square_Depth < 1)
+                            CFG.Current.Replicator_Square_Depth = 1;
                     }
+
+                    // Sphere
+                    if (CFG.Current.Replicator_Mode_Sphere)
+                    {
+                        ImGui.PushItemWidth(200);
+                        ImGui.InputInt("Size", ref CFG.Current.Replicator_Sphere_Size);
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("The number of points within the sphere on which the entities are placed.");
+                        }
+
+                        if (CFG.Current.Replicator_Sphere_Size < 1)
+                            CFG.Current.Replicator_Sphere_Size = 1;
+
+                        if (ImGui.Button("Switch"))
+                        {
+                            CFG.Current.Replicator_Sphere_Horizontal_Radius_Specific_Input = !CFG.Current.Replicator_Sphere_Horizontal_Radius_Specific_Input;
+                        }
+                        ImGui.SameLine();
+                        if (CFG.Current.Replicator_Sphere_Horizontal_Radius_Specific_Input)
+                        {
+                            ImGui.PushItemWidth(200);
+                            ImGui.InputFloat("Horizontal Radius", ref CFG.Current.Replicator_Sphere_Horizontal_Radius);
+                            if (CFG.Current.System_Show_UI_Tooltips)
+                            {
+                                ImGui.SameLine();
+                                Utils.ShowHelpMarker("The radius of the sphere on which to place the entities.");
+                            }
+
+                        }
+                        else
+                        {
+                            ImGui.PushItemWidth(200);
+                            ImGui.SliderFloat("Horizontal Radius", ref CFG.Current.Replicator_Sphere_Horizontal_Radius, 0.1f, 100);
+                            if (CFG.Current.System_Show_UI_Tooltips)
+                            {
+                                ImGui.SameLine();
+                                Utils.ShowHelpMarker("The radius of the sphere on which to place the entities.");
+                            }
+                        }
+
+                        if (ImGui.Button("Switch"))
+                        {
+                            CFG.Current.Replicator_Sphere_Vertical_Radius_Specific_Input = !CFG.Current.Replicator_Sphere_Vertical_Radius_Specific_Input;
+                        }
+                        ImGui.SameLine();
+                        if (CFG.Current.Replicator_Sphere_Vertical_Radius_Specific_Input)
+                        {
+                            ImGui.PushItemWidth(200);
+                            ImGui.InputFloat("Vertical Radius", ref CFG.Current.Replicator_Sphere_Vertical_Radius);
+                            if (CFG.Current.System_Show_UI_Tooltips)
+                            {
+                                ImGui.SameLine();
+                                Utils.ShowHelpMarker("The vertical radius of the sphere on which to place the entities.");
+                            }
+
+                        }
+                        else
+                        {
+                            ImGui.PushItemWidth(200);
+                            ImGui.SliderFloat("Vertical Radius", ref CFG.Current.Replicator_Sphere_Vertical_Radius, 0.1f, 100);
+                            if (CFG.Current.System_Show_UI_Tooltips)
+                            {
+                                ImGui.SameLine();
+                                Utils.ShowHelpMarker("The vertical radius of the sphere on which to place the entities.");
+                            }
+                        }
+                    }
+
+                    // Box
 
                     ImGui.Separator();
 

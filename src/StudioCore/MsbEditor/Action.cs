@@ -1675,7 +1675,7 @@ public class ReplicateMapObjectsAction : Action
                 float width_increment = CFG.Current.Replicator_Square_Width;
                 float x = newPos[0] - width_increment;
 
-                float height_increment = (CFG.Current.Replicator_Square_Height / CFG.Current.Replicator_Square_Size) * squareLeftCount;
+                float height_increment = (CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size) * squareLeftCount;
                 float z = newPos[2] + height_increment;
                 
                 newPos = new Vector3(x, newPos[1], z);
@@ -1689,7 +1689,7 @@ public class ReplicateMapObjectsAction : Action
                 float width_increment = (CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size) * squareTopCount;
                 float x = newPos[0] - width_increment;
 
-                float height_increment = CFG.Current.Replicator_Square_Height;
+                float height_increment = CFG.Current.Replicator_Square_Depth;
                 float z = newPos[2] + height_increment;
 
                 newPos = new Vector3(x, newPos[1], z);
@@ -1700,13 +1700,27 @@ public class ReplicateMapObjectsAction : Action
             // Right
             if (currentSquareSide == SquareSide.Right)
             {
-                float height_increment = (CFG.Current.Replicator_Square_Height / CFG.Current.Replicator_Square_Size) * squareRightCount;
+                float height_increment = (CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size) * squareRightCount;
                 float z = newPos[2] + height_increment;
 
                 newPos = new Vector3(newPos[0], newPos[1], z);
 
                 squareRightCount--;
             }
+        }
+
+        if (CFG.Current.Replicator_Mode_Sphere)
+        {
+            double angleIncrement = 360 / CFG.Current.Replicator_Circle_Size;
+
+            double radius = CFG.Current.Replicator_Circle_Radius;
+            double angle = (angleIncrement * iteration);
+            double rad = angle * (Math.PI / 180);
+
+            double x = (radius * Math.Cos(rad) * 180 / Math.PI);
+            double z = (radius * Math.Sin(rad) * 180 / Math.PI);
+
+            newPos = new Vector3(newPos[0] + (float)x, newPos[1], newPos[2] + (float)z);
         }
 
         newTransform.Position = newPos;
