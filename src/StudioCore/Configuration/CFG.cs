@@ -266,17 +266,24 @@ public class CFG
     // Toolbar: Replicator
     public bool Toolbar_ShowReplicatorMenu = false;
 
+    public bool Replicator_Circle_Radius_Specific_Input = false;
+
+    public bool Replicator_Apply_Scramble_Configuration = false;
+    public bool Replicator_Increment_Entity_ID = false;
+
     public bool Replicator_Mode_Line = true;
     public bool Replicator_Mode_Circle = false;
     public bool Replicator_Mode_Square = false;
 
-    public int Replicator_Clone_Amount = 1;
-    public int Replicator_Position_Offset = 25;
-    public bool Replicator_Position_Offset_Axis_X = true;
-    public bool Replicator_Position_Offset_Axis_Y = false;
-    public bool Replicator_Position_Offset_Axis_Z = false;
-    public bool Replicator_Offset_Direction_Flipped = false;
-    public bool Replicator_Apply_Scramble_Configuration = false;
+    public int Replicator_Line_Clone_Amount = 1;
+    public int Replicator_Line_Position_Offset = 25;
+    public bool Replicator_Line_Position_Offset_Axis_X = true;
+    public bool Replicator_Line_Position_Offset_Axis_Y = false;
+    public bool Replicator_Line_Position_Offset_Axis_Z = false;
+    public bool Replicator_Line_Offset_Direction_Flipped = false;
+
+    public int Replicator_Circle_Size = 1;
+    public float Replicator_Circle_Radius = 1;
 
     // CFG
     public static CFG Current { get; private set; }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Utilities;
 using Silk.NET.SDL;
 using SoulsFormats;
 using SoulsFormats.Util;
@@ -22,7 +23,7 @@ namespace StudioCore.MsbEditor;
 /// </summary>
 public abstract class Action
 {
-    public abstract ActionEvent Execute();
+    public abstract ActionEvent Execute(bool isRedo = false);
     public abstract ActionEvent Undo();
 }
 
@@ -92,7 +93,7 @@ public class PropertiesChangedAction : Action
         PostExecutionAction = action;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         foreach (PropertyChange change in Changes)
         {
@@ -187,7 +188,7 @@ public class ArrayPropertyCopyAction : Action
         PostExecutionAction = action;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         foreach (PropertyChange change in Changes)
         {
@@ -258,7 +259,7 @@ public class MultipleEntityPropertyChangeAction : Action
         }
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         foreach (PropertyChange change in Changes)
         {
@@ -349,7 +350,7 @@ public class CloneMapObjectsAction : Action
         TargetBTL = targetBTL;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         var clonesCached = Clones.Count() > 0;
 
@@ -572,7 +573,7 @@ public class AddMapObjectsAction : Action
         Parent = parent;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         for (var i = 0; i < Added.Count(); i++)
         {
@@ -659,7 +660,7 @@ public class AddParamsAction : Action
         SetSelection = setsel;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         foreach (PARAM.Row row in Clonables)
         {
@@ -732,7 +733,7 @@ public class DeleteMapObjectsAction : Action
         SetSelection = setSelection;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         foreach (MapEntity obj in Deletables)
         {
@@ -828,7 +829,7 @@ public class DeleteParamsAction : Action
         Deletables.AddRange(rows);
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         foreach (PARAM.Row row in Deletables)
         {
@@ -875,7 +876,7 @@ public class ReorderContainerObjectsAction : Action
         SetSelection = setSelection;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         var sourceindices = new int[SourceObjects.Count];
         for (var i = 0; i < SourceObjects.Count; i++)
@@ -1016,7 +1017,7 @@ public class ChangeEntityHierarchyAction : Action
         SetSelection = setSelection;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         var sourceindices = new int[SourceObjects.Count];
         for (var i = 0; i < SourceObjects.Count; i++)
@@ -1216,7 +1217,7 @@ public class ChangeMapObjectType : Action
         }
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         foreach (MapObjectChange mapChangeObj in MapObjectChanges)
         {
@@ -1266,14 +1267,14 @@ public class CompoundAction : Action
         PostExecutionAction = action;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
         var evt = ActionEvent.NoEvent;
         foreach (Action act in Actions)
         {
             if (act != null)
             {
-                evt |= act.Execute();
+                evt |= act.Execute(isRedo);
             }
         }
 
@@ -1311,38 +1312,51 @@ public class ReplicateMapObjectsAction : Action
     private readonly List<MapEntity> Clonables = new();
     private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MapEntity> Clones = new();
-    private readonly bool SetSelection;
-    private readonly Entity TargetBTL;
-    private readonly Map TargetMap;
     private readonly Universe Universe;
     private RenderScene Scene;
     private MsbToolbar Toolbar;
+    private AssetLocator AssetLocator;
+    private ActionManager ActionManager;
 
-    public ReplicateMapObjectsAction(MsbToolbar toolbar, Universe univ, RenderScene scene, List<MapEntity> objects, bool setSelection,
-        Map targetMap = null, Entity targetBTL = null)
+    private int count;
+    private int idxCache;
+    private int iterationCount;
+
+    public ReplicateMapObjectsAction(MsbToolbar toolbar, Universe univ, RenderScene scene, List<MapEntity> objects, AssetLocator assetLocator, ActionManager _actionManager)
     {
         Toolbar = toolbar;
         Universe = univ;
         Scene = scene;
         Clonables.AddRange(objects);
-        SetSelection = setSelection;
-        TargetMap = targetMap;
-        TargetBTL = targetBTL;
+        AssetLocator = assetLocator;
+        ActionManager = _actionManager;
     }
 
-    public override ActionEvent Execute()
+    public override ActionEvent Execute(bool isRedo = false)
     {
-        var clonesCached = Clones.Count() > 0;
+        if (isRedo)
+        {
+            ActionManager.Clear();
 
-        var idxCache = -1;
+            return ActionEvent.NoEvent;
+        }
+
+        count = 0;
+        idxCache = -1;
+
+        if (CFG.Current.Replicator_Mode_Line)
+            iterationCount = CFG.Current.Replicator_Line_Clone_Amount;
+
+        if (CFG.Current.Replicator_Mode_Circle)
+            iterationCount = (CFG.Current.Replicator_Circle_Size);
 
         var objectnames = new Dictionary<string, HashSet<string>>();
         Dictionary<Map, HashSet<MapEntity>> mapPartEntities = new();
 
-        for (var k = 0; k < CFG.Current.Replicator_Clone_Amount; k++)
+        var clonesCached = Clones.Count() > 0;
+
+        for (var k = 0; k < iterationCount; k++)
         {
-            var posOffset = CFG.Current.Replicator_Position_Offset * (1 + k);
-            
             for (var i = 0; i < Clonables.Count(); i++)
             {
                 if (Clonables[i].MapID == null)
@@ -1353,14 +1367,7 @@ public class ReplicateMapObjectsAction : Action
                 }
 
                 Map? m;
-                if (TargetMap != null)
-                {
-                    m = Universe.GetLoadedMap(TargetMap.Name);
-                }
-                else
-                {
-                    m = Universe.GetLoadedMap(Clonables[i].MapID);
-                }
+                m = Universe.GetLoadedMap(Clonables[i].MapID);
 
                 if (m != null)
                 {
@@ -1449,72 +1456,20 @@ public class ReplicateMapObjectsAction : Action
                         idxCache = idxCache + 1;
                     }
 
-                    if (TargetMap == null)
-                    {
-                        m.Objects.Insert(idxCache, newobj);
-                    }
-                    else
-                    {
-                        m.Objects.Add(newobj);
-                    }
+                    m.Objects.Insert(idxCache, newobj);
 
-                    if (TargetBTL != null && newobj.WrappedObject is BTL.Light)
-                    {
-                        TargetBTL.AddChild(newobj);
-                    }
-                    else if (TargetMap != null)
-                    {
-                        // Duping to a targeted map, update parent.
-                        if (TargetMap.MapOffsetNode != null)
-                        {
-                            TargetMap.MapOffsetNode.AddChild(newobj);
-                        }
-                        else
-                        {
-                            TargetMap.RootObject.AddChild(newobj);
-                        }
-                    }
-                    else if (Clonables[i].Parent != null)
+                    if (Clonables[i].Parent != null)
                     {
                         var idx = Clonables[i].Parent.ChildIndex(Clonables[i]);
                         Clonables[i].Parent.AddChild(newobj, idx + 1);
                     }
 
-                    ApplyReplicateTransform(newobj, posOffset);
+                    // Apply transform changes
+                    ApplyReplicateTransform(newobj, k);
+                    ApplyScrambleTransform(newobj);
 
-                    if (CFG.Current.Replicator_Apply_Scramble_Configuration)
-                    {
-                        Transform scrambledTransform = Toolbar.GetScrambledTransform(newobj);
-
-                        newobj.SetPropertyValue("Position", scrambledTransform.Position);
-
-                        if (newobj.IsRotationPropertyRadians("Rotation"))
-                        {
-                            if (newobj.IsRotationXZY("Rotation"))
-                            {
-                                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY);
-                            }
-                            else
-                            {
-                                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation);
-                            }
-                        }
-                        else
-                        {
-                            if (newobj.IsRotationXZY("Rotation"))
-                            {
-                                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY * Utils.Rad2Deg);
-                            }
-                            else
-                            {
-                                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
-                            }
-
-                            newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
-                        }
-
-                        newobj.SetPropertyValue("Scale", scrambledTransform.Scale);
-                    }
+                    // Apply entity ID changes
+                    ChangeEntityID(newobj, m);
 
                     newobj.UpdateRenderModel();
                     if (newobj.RenderSceneMesh != null)
@@ -1537,14 +1492,88 @@ public class ReplicateMapObjectsAction : Action
                         }
                     }
                 }
+
+                count++;
             }
         }
 
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    private void ApplyReplicateTransform(MapEntity sel, int posOffset)
+    public void ChangeEntityID(MapEntity sel, Map map)
     {
+        // Default to 0
+        sel.SetPropertyValue("EntityID", (uint)0);
+
+        if(CFG.Current.Replicator_Increment_Entity_ID)
+        {
+            HashSet<uint> vals = new();
+
+            // Get currently used Entity IDs
+            foreach (var e in map?.Objects)
+            {
+                var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                if (val == null)
+                    continue;
+
+                TaskLogs.AddLog($"{e.Name}: {val}");
+
+                uint entUint;
+                if (val is int entInt)
+                    entUint = (uint)entInt;
+                else
+                    entUint = (uint)val;
+
+                if (entUint == 0 || entUint == uint.MaxValue)
+                    continue;
+
+                vals.Add(entUint);
+            }
+
+            // Build set of all 'valid' Entity IDs
+            var mapIdParts = map.Name.Replace("m", "").Split("_"); // m10_00_00_00
+
+            uint minId = 0;
+            uint maxId = 9999;
+
+            // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
+            if (AssetLocator.Type != GameType.ArmoredCoreVI)
+            {
+                try
+                {
+                    minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog("Unable to parse map name into minimum entity ID.");
+                }
+
+                try
+                {
+                    maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog("Unable to parse map name into maximum entity ID.");
+                }
+            }
+
+            HashSet<uint> baseVals = new HashSet<uint>();
+            for(uint i = minId; i < maxId; i++)
+            {
+                baseVals.Add( i );
+            }
+
+            baseVals.SymmetricExceptWith(vals);
+
+            sel.SetPropertyValue("EntityID", baseVals.First());
+        }
+    }
+
+    private void ApplyReplicateTransform(MapEntity sel, int k)
+    {
+        var posOffset = CFG.Current.Replicator_Line_Position_Offset * (1 + k);
+
         Transform objT = sel.GetLocalTransform();
 
         var newTransform = Transform.Default;
@@ -1552,24 +1581,46 @@ public class ReplicateMapObjectsAction : Action
         var newRot = objT.Rotation;
         var newScale = objT.Scale;
 
-        if(CFG.Current.Replicator_Offset_Direction_Flipped)
+        if (CFG.Current.Replicator_Mode_Line)
         {
-            posOffset = posOffset * -1;
+            if (CFG.Current.Replicator_Line_Offset_Direction_Flipped)
+            {
+                posOffset = posOffset * -1;
+            }
+
+            if (CFG.Current.Replicator_Line_Position_Offset_Axis_X)
+            {
+                newPos = new Vector3(newPos[0] + posOffset, newPos[1], newPos[2]);
+            }
+
+            if (CFG.Current.Replicator_Line_Position_Offset_Axis_Y)
+            {
+                newPos = new Vector3(newPos[0], newPos[1] + posOffset, newPos[2]);
+            }
+
+            if (CFG.Current.Replicator_Line_Position_Offset_Axis_Z)
+            {
+                newPos = new Vector3(newPos[0], newPos[1], newPos[2] + posOffset);
+            }
         }
 
-        if (CFG.Current.Replicator_Position_Offset_Axis_X)
+        if (CFG.Current.Replicator_Mode_Circle)
         {
-            newPos = new Vector3(newPos[0] + posOffset, newPos[1], newPos[2]);
+            double angleIncrement = 360 / CFG.Current.Replicator_Circle_Size;
+
+            double radius = CFG.Current.Replicator_Circle_Radius;
+            double angle = (angleIncrement * k);
+            double rad = angle * (Math.PI / 180);
+
+            double x = (radius * Math.Cos(rad) * 180 / Math.PI);
+            double z = (radius * Math.Sin(rad) * 180 / Math.PI);
+
+            newPos = new Vector3(newPos[0] + (float)x, newPos[1], newPos[2] + (float)z);
         }
 
-        if (CFG.Current.Replicator_Position_Offset_Axis_Y)
+        if (CFG.Current.Replicator_Mode_Square)
         {
-            newPos = new Vector3(newPos[0], newPos[1] + posOffset, newPos[2]);
-        }
 
-        if (CFG.Current.Replicator_Position_Offset_Axis_Z)
-        {
-            newPos = new Vector3(newPos[0], newPos[1], newPos[2] + posOffset);
         }
 
         newTransform.Position = newPos;
@@ -1579,12 +1630,49 @@ public class ReplicateMapObjectsAction : Action
         sel.SetPropertyValue("Position", newPos);
     }
 
+    public void ApplyScrambleTransform(MapEntity newobj)
+    {
+        if (CFG.Current.Replicator_Apply_Scramble_Configuration)
+        {
+            Transform scrambledTransform = Toolbar.GetScrambledTransform(newobj);
+
+            newobj.SetPropertyValue("Position", scrambledTransform.Position);
+
+            if (newobj.IsRotationPropertyRadians("Rotation"))
+            {
+                if (newobj.IsRotationXZY("Rotation"))
+                {
+                    newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY);
+                }
+                else
+                {
+                    newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation);
+                }
+            }
+            else
+            {
+                if (newobj.IsRotationXZY("Rotation"))
+                {
+                    newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY * Utils.Rad2Deg);
+                }
+                else
+                {
+                    newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
+                }
+
+                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
+            }
+
+            newobj.SetPropertyValue("Scale", scrambledTransform.Scale);
+        }
+    }
+
     public override ActionEvent Undo()
     {
         for (var i = 0; i < Clones.Count(); i++)
         {
             CloneMaps[i].Objects.Remove(Clones[i]);
-            if (Clones[i] != null)
+            if (Clones[i].Parent != null)
             {
                 Clones[i].Parent.RemoveChild(Clones[i]);
             }
@@ -1593,16 +1681,6 @@ public class ReplicateMapObjectsAction : Action
             {
                 Clones[i].RenderSceneMesh.AutoRegister = false;
                 Clones[i].RenderSceneMesh.UnregisterWithScene();
-            }
-        }
-
-        // Clones.Clear();
-        if (SetSelection)
-        {
-            Universe.Selection.ClearSelection();
-            foreach (MapEntity c in Clonables)
-            {
-                Universe.Selection.AddSelection(c);
             }
         }
 

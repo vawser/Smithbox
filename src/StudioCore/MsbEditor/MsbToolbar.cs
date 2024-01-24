@@ -871,62 +871,115 @@ namespace StudioCore.MsbEditor
                         Utils.ShowHelpMarker("Replicate the first selection in the Square shape.");
                     }
 
-                    ImGui.PushItemWidth(200);
-                    ImGui.InputInt("Amount", ref CFG.Current.Replicator_Clone_Amount);
-                    if (CFG.Current.System_Show_UI_Tooltips)
+                    // Line
+                    if (CFG.Current.Replicator_Mode_Line)
                     {
+                        ImGui.PushItemWidth(200);
+                        ImGui.InputInt("Amount", ref CFG.Current.Replicator_Line_Clone_Amount);
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("The amount of new entities to create (from the first selection).");
+                        }
+
+                        ImGui.PushItemWidth(200);
+                        ImGui.InputInt("Offset", ref CFG.Current.Replicator_Line_Position_Offset);
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("The distance between each newly created entity.");
+                        }
+
+                        if (ImGui.Checkbox("X", ref CFG.Current.Replicator_Line_Position_Offset_Axis_X))
+                        {
+                            CFG.Current.Replicator_Line_Position_Offset_Axis_Y = false;
+                            CFG.Current.Replicator_Line_Position_Offset_Axis_Z = false;
+                        }
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("Replicate on the X-axis.");
+                        }
                         ImGui.SameLine();
-                        Utils.ShowHelpMarker("The amount of new entities to create (from the first selection).");
+                        if (ImGui.Checkbox("Y", ref CFG.Current.Replicator_Line_Position_Offset_Axis_Y))
+                        {
+                            CFG.Current.Replicator_Line_Position_Offset_Axis_X = false;
+                            CFG.Current.Replicator_Line_Position_Offset_Axis_Z = false;
+                        }
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("Replicate on the Y-axis.");
+                        }
+                        ImGui.SameLine();
+                        if (ImGui.Checkbox("Z", ref CFG.Current.Replicator_Line_Position_Offset_Axis_Z))
+                        {
+                            CFG.Current.Replicator_Line_Position_Offset_Axis_X = false;
+                            CFG.Current.Replicator_Line_Position_Offset_Axis_Y = false;
+                        }
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("Replicate on the Z-axis.");
+                        }
+
+                        ImGui.Checkbox("Flip Offset Direction", ref CFG.Current.Replicator_Line_Offset_Direction_Flipped);
+
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("When enabled, the position offset will be applied in the opposite direction.");
+                        }
                     }
 
-                    ImGui.PushItemWidth(200);
-                    ImGui.InputInt("Offset", ref CFG.Current.Replicator_Position_Offset);
-                    if (CFG.Current.System_Show_UI_Tooltips)
+                    // Circle
+                    if (CFG.Current.Replicator_Mode_Circle)
                     {
+                        ImGui.PushItemWidth(200);
+                        ImGui.InputInt("Size", ref CFG.Current.Replicator_Circle_Size);
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("The number of points within the circle on which the entities are placed.");
+                        }
+
+                        if (CFG.Current.Replicator_Circle_Size < 1)
+                            CFG.Current.Replicator_Circle_Size = 1;
+
+                        if (ImGui.Button("Switch"))
+                        {
+                            CFG.Current.Replicator_Circle_Radius_Specific_Input = !CFG.Current.Replicator_Circle_Radius_Specific_Input;
+                        }
                         ImGui.SameLine();
-                        Utils.ShowHelpMarker("The distance between each newly created entity.");
+                        if (CFG.Current.Replicator_Circle_Radius_Specific_Input)
+                        {
+                            ImGui.PushItemWidth(200);
+                            ImGui.InputFloat("Radius", ref CFG.Current.Replicator_Circle_Radius);
+                            if (CFG.Current.System_Show_UI_Tooltips)
+                            {
+                                ImGui.SameLine();
+                                Utils.ShowHelpMarker("The radius of the circle on which to place the entities.");
+                            }
+
+                        }
+                        else
+                        {
+                            ImGui.PushItemWidth(200);
+                            ImGui.SliderFloat("Radius", ref CFG.Current.Replicator_Circle_Radius, -100, 100);
+                            if (CFG.Current.System_Show_UI_Tooltips)
+                            {
+                                ImGui.SameLine();
+                                Utils.ShowHelpMarker("The radius of the circle on which to place the entities.");
+                            }
+                        }
+                    }
+                    // Square
+                    if (CFG.Current.Replicator_Mode_Square)
+                    {
+                        
                     }
 
-                    if (ImGui.Checkbox("X", ref CFG.Current.Replicator_Position_Offset_Axis_X))
-                    {
-                        CFG.Current.Replicator_Position_Offset_Axis_Y = false;
-                        CFG.Current.Replicator_Position_Offset_Axis_Z = false;
-                    }
-                    if (CFG.Current.System_Show_UI_Tooltips)
-                    {
-                        ImGui.SameLine();
-                        Utils.ShowHelpMarker("Replicate on the X-axis.");
-                    }
-                    ImGui.SameLine();
-                    if (ImGui.Checkbox("Y", ref CFG.Current.Replicator_Position_Offset_Axis_Y))
-                    {
-                        CFG.Current.Replicator_Position_Offset_Axis_X = false;
-                        CFG.Current.Replicator_Position_Offset_Axis_Z = false;
-                    }
-                    if (CFG.Current.System_Show_UI_Tooltips)
-                    {
-                        ImGui.SameLine();
-                        Utils.ShowHelpMarker("Replicate on the Y-axis.");
-                    }
-                    ImGui.SameLine();
-                    if (ImGui.Checkbox("Z", ref CFG.Current.Replicator_Position_Offset_Axis_Z))
-                    {
-                        CFG.Current.Replicator_Position_Offset_Axis_X = false;
-                        CFG.Current.Replicator_Position_Offset_Axis_Y = false;
-                    }
-                    if (CFG.Current.System_Show_UI_Tooltips)
-                    {
-                        ImGui.SameLine();
-                        Utils.ShowHelpMarker("Replicate on the Z-axis.");
-                    }
-
-                    ImGui.Checkbox("Flip Offset Direction", ref CFG.Current.Replicator_Offset_Direction_Flipped);
-
-                    if (CFG.Current.System_Show_UI_Tooltips)
-                    {
-                        ImGui.SameLine();
-                        Utils.ShowHelpMarker("When enabled, the position offset will be applied in the opposite direction.");
-                    }
+                    ImGui.Separator();
 
                     ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
 
@@ -934,6 +987,14 @@ namespace StudioCore.MsbEditor
                     {
                         ImGui.SameLine();
                         Utils.ShowHelpMarker("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
+                    }
+
+                    ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID);
+
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("When enabled, the replicated entities will be given new and unique Entity IDs. Otherwise, the replicated entity ID will be set to 0.");
                     }
                 }
 
@@ -973,7 +1034,7 @@ namespace StudioCore.MsbEditor
         public void ReplicateSelection()
         {
             ReplicateMapObjectsAction action = new(this, _universe, _scene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
+                    _selection.GetFilteredSelection<MapEntity>().ToList(), _assetLocator, _actionManager);
             _actionManager.ExecuteAction(action);
         }
 

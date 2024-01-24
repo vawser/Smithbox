@@ -87,7 +87,7 @@ public class ActionManager
         }
 
         Action a = RedoStack.Pop();
-        NotifyHandlers(a.Execute());
+        NotifyHandlers(a.Execute(true));
         UndoStack.Push(a);
     }
 
