@@ -1023,20 +1023,6 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
                     ImGui.SameLine();
                 }
                 ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-
-                if (CFG.Current.System_Show_UI_Tooltips)
-                {
-                    ShowHelpMarker("Update the Name field of the entity upon double-click. By default only the ModelName field is updated.");
-                    ImGui.SameLine();
-                }
-                ImGui.Checkbox("Update entity Name field on selection", ref CFG.Current.AssetBrowser_UpdateSelectionName);
-
-                if (CFG.Current.System_Show_UI_Tooltips)
-                {
-                    ShowHelpMarker("Suspends the browser list when moving in the Map Editor, preventing hitching.");
-                    ImGui.SameLine();
-                }
-                ImGui.Checkbox("Suspend browser list when in viewport", ref CFG.Current.AssetBrowser_SuspendListWhenInViewport);
             }
 
             if (ImGui.CollapsingHeader("Flag ID Browser"))
