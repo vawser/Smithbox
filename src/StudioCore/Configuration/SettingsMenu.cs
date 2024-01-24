@@ -1,13 +1,21 @@
 ﻿using ImGuiNET;
 using SoapstoneLib;
 using StudioCore.Aliases;
+using StudioCore.AnimationEditor;
 using StudioCore.Configuration;
+using StudioCore.CutsceneEditor;
 using StudioCore.Editor;
+using StudioCore.GraphicsEditor;
+using StudioCore.MaterialEditor;
 using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
+using StudioCore.ParticleEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
+using StudioCore.ScriptEditor;
+using StudioCore.TalkEditor;
 using StudioCore.TextEditor;
+using StudioCore.TextureViewer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -33,6 +41,15 @@ public class SettingsMenu
     public ParamEditorScreen ParamEditor;
     public ProjectSettings ProjSettings = null;
     public TextEditorScreen TextEditor;
+    
+    public AnimationEditorScreen AnimationEditor;
+    public CutsceneEditorScreen CutsceneEditor;
+    public GraphicsEditorScreen GraphicsEditor;
+    public MaterialEditorScreen MaterialEditor;
+    public ParticleEditorScreen ParticleEditor;
+    public ScriptEditorScreen ScriptEditor;
+    public TalkEditorScreen TalkEditor;
+    public TextureViewerScreen TextureViewer;
 
     private AliasBank _mapAliasBank;
 
@@ -1126,6 +1143,14 @@ If disabled, simply shows a shortcut to the manual massedit entry element.
             //DisplaySettings_ModelEditor();
             DisplaySettings_ParamEditor();
             DisplaySettings_TextEditor();
+            // DisplaySettings_AnimationEditor();
+            // DisplaySettings_CutsceneEditor();
+            // DisplaySettings_GraphicsEditor();
+            // DisplaySettings_MaterialEditor();
+            // DisplaySettings_ParticleEditor();
+            // DisplaySettings_ScriptEditor();
+            // DisplaySettings_TalkEditor();
+            // DisplaySettings_TextureViewer();
             DisplaySettings_Browsers();
             DisplaySettings_Keybinds();
 

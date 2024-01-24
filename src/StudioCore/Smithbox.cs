@@ -5,17 +5,25 @@ using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Aliases;
+using StudioCore.AnimationEditor;
 using StudioCore.Browsers;
 using StudioCore.Configuration;
+using StudioCore.CutsceneEditor;
 using StudioCore.Editor;
 using StudioCore.Graphics;
+using StudioCore.GraphicsEditor;
+using StudioCore.MaterialEditor;
 using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
+using StudioCore.ParticleEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
+using StudioCore.ScriptEditor;
 using StudioCore.Settings;
+using StudioCore.TalkEditor;
 using StudioCore.Tests;
 using StudioCore.TextEditor;
+using StudioCore.TextureViewer;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -127,7 +135,18 @@ public class Smithbox
         ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator, aliasBank_Models, aliasBank_Maps);
         ParamEditorScreen paramEditor = new(_context.Window, _context.Device, _assetLocator);
         TextEditorScreen textEditor = new(_context.Window, _context.Device, _assetLocator);
+
+        AnimationEditorScreen animationEditor = new(_context.Window, _context.Device, _assetLocator);
+        CutsceneEditorScreen cutsceneEditor = new(_context.Window, _context.Device, _assetLocator);
+        GraphicsEditorScreen graphicsEditor = new(_context.Window, _context.Device, _assetLocator);
+        MaterialEditorScreen materialEditor = new(_context.Window, _context.Device, _assetLocator);
+        ParticleEditorScreen particleEditor = new(_context.Window, _context.Device, _assetLocator);
+        ScriptEditorScreen scriptEditor = new(_context.Window, _context.Device, _assetLocator);
+        TalkEditorScreen talkEditor = new(_context.Window, _context.Device, _assetLocator);
+        TextureViewerScreen textureViewer = new(_context.Window, _context.Device, _assetLocator);
+
         _editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor };
+        //_editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor, animationEditor, cutsceneEditor, graphicsEditor, materialEditor, particleEditor, scriptEditor, talkEditor, textureViewer };
         _focusedEditor = msbEditor;
 
         _soapstoneService = new SoapstoneService(_version, _assetLocator, msbEditor);
@@ -137,6 +156,14 @@ public class Smithbox
         _settingsMenu.ModelEditor = modelEditor;
         _settingsMenu.ParamEditor = paramEditor;
         _settingsMenu.TextEditor = textEditor;
+        _settingsMenu.AnimationEditor = animationEditor;
+        _settingsMenu.CutsceneEditor = cutsceneEditor;
+        _settingsMenu.GraphicsEditor = graphicsEditor;
+        _settingsMenu.MaterialEditor = materialEditor;
+        _settingsMenu.ParticleEditor = particleEditor;
+        _settingsMenu.ScriptEditor = scriptEditor;
+        _settingsMenu.TalkEditor = talkEditor;
+        _settingsMenu.TextureViewer = textureViewer;
 
         _helpBrowser = new HelpBrowser("HelpBrowser", _assetLocator);
         _eventFlagBrowser = new FlagBrowser("EventFlagBrowser", _assetLocator, aliasBank_Flags);
