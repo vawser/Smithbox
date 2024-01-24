@@ -1318,9 +1318,26 @@ public class ReplicateMapObjectsAction : Action
     private AssetLocator AssetLocator;
     private ActionManager ActionManager;
 
-    private int count;
     private int idxCache;
     private int iterationCount;
+
+    private int squareSideCount;
+    private int squareSideCounter;
+
+    private int squareTopCount;
+    private int squareRightCount;
+    private int squareLeftCount;
+    private int squareBottomCount;
+
+    public enum SquareSide
+    {
+        Top,
+        Left,
+        Right,
+        Bottom
+    }
+
+    private SquareSide currentSquareSide;
 
     public ReplicateMapObjectsAction(MsbToolbar toolbar, Universe univ, RenderScene scene, List<MapEntity> objects, AssetLocator assetLocator, ActionManager _actionManager)
     {
@@ -1341,14 +1358,26 @@ public class ReplicateMapObjectsAction : Action
             return ActionEvent.NoEvent;
         }
 
-        count = 0;
         idxCache = -1;
 
         if (CFG.Current.Replicator_Mode_Line)
             iterationCount = CFG.Current.Replicator_Line_Clone_Amount;
 
         if (CFG.Current.Replicator_Mode_Circle)
-            iterationCount = (CFG.Current.Replicator_Circle_Size);
+            iterationCount = CFG.Current.Replicator_Circle_Size;
+
+        if (CFG.Current.Replicator_Mode_Square)
+        {
+            iterationCount = (CFG.Current.Replicator_Square_Size * 4);
+            squareSideCount = CFG.Current.Replicator_Square_Size;
+            currentSquareSide = SquareSide.Bottom;
+            squareSideCounter = 0;
+
+            squareTopCount = CFG.Current.Replicator_Square_Size;
+            squareLeftCount = CFG.Current.Replicator_Square_Size;
+            squareRightCount = CFG.Current.Replicator_Square_Size;
+            squareBottomCount = CFG.Current.Replicator_Square_Size;
+        }
 
         var objectnames = new Dictionary<string, HashSet<string>>();
         Dictionary<Map, HashSet<MapEntity>> mapPartEntities = new();
@@ -1492,8 +1521,6 @@ public class ReplicateMapObjectsAction : Action
                         }
                     }
                 }
-
-                count++;
             }
         }
 
@@ -1570,10 +1597,8 @@ public class ReplicateMapObjectsAction : Action
         }
     }
 
-    private void ApplyReplicateTransform(MapEntity sel, int k)
+    private void ApplyReplicateTransform(MapEntity sel, int iteration)
     {
-        var posOffset = CFG.Current.Replicator_Line_Position_Offset * (1 + k);
-
         Transform objT = sel.GetLocalTransform();
 
         var newTransform = Transform.Default;
@@ -1583,6 +1608,8 @@ public class ReplicateMapObjectsAction : Action
 
         if (CFG.Current.Replicator_Mode_Line)
         {
+            var posOffset = CFG.Current.Replicator_Line_Position_Offset * (1 + iteration);
+
             if (CFG.Current.Replicator_Line_Offset_Direction_Flipped)
             {
                 posOffset = posOffset * -1;
@@ -1609,7 +1636,7 @@ public class ReplicateMapObjectsAction : Action
             double angleIncrement = 360 / CFG.Current.Replicator_Circle_Size;
 
             double radius = CFG.Current.Replicator_Circle_Radius;
-            double angle = (angleIncrement * k);
+            double angle = (angleIncrement * iteration);
             double rad = angle * (Math.PI / 180);
 
             double x = (radius * Math.Cos(rad) * 180 / Math.PI);
@@ -1620,7 +1647,76 @@ public class ReplicateMapObjectsAction : Action
 
         if (CFG.Current.Replicator_Mode_Square)
         {
+            // Handle each of the sides of the square
+            if (squareSideCounter >= squareSideCount)
+            {
+                squareSideCounter = 0;
 
+                if(currentSquareSide == SquareSide.Bottom)
+                {
+                    currentSquareSide = SquareSide.Left;
+                }
+                else if (currentSquareSide == SquareSide.Left)
+                {
+                    currentSquareSide = SquareSide.Top;
+                }
+                else if (currentSquareSide == SquareSide.Top)
+                {
+                    currentSquareSide = SquareSide.Right;
+                }
+            }
+
+            // Bottom
+            if (currentSquareSide == SquareSide.Bottom)
+            {
+                float width_increment = (CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size) * squareBottomCount;
+                float x = newPos[0] - width_increment;
+
+                newPos = new Vector3(x, newPos[1], newPos[2]);
+
+                squareBottomCount--;
+            }
+
+            // Left
+            if (currentSquareSide == SquareSide.Left)
+            {
+                float width_increment = CFG.Current.Replicator_Square_Width;
+                float x = newPos[0] - width_increment;
+
+                float height_increment = (CFG.Current.Replicator_Square_Height / CFG.Current.Replicator_Square_Size) * squareLeftCount;
+                float z = newPos[2] + height_increment;
+                
+                newPos = new Vector3(x, newPos[1], z);
+
+                squareLeftCount--;
+            }
+
+            // Top
+            if (currentSquareSide == SquareSide.Top)
+            {
+                float width_increment = (CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size) * squareTopCount;
+                float x = newPos[0] - width_increment;
+
+                float height_increment = CFG.Current.Replicator_Square_Height;
+                float z = newPos[2] + height_increment;
+
+                newPos = new Vector3(x, newPos[1], z);
+
+                squareTopCount--;
+            }
+
+            // Right
+            if (currentSquareSide == SquareSide.Right)
+            {
+                float height_increment = (CFG.Current.Replicator_Square_Height / CFG.Current.Replicator_Square_Size) * squareRightCount;
+                float z = newPos[2] + height_increment;
+
+                newPos = new Vector3(newPos[0], newPos[1], z);
+
+                squareRightCount--;
+            }
+
+            squareSideCounter++;
         }
 
         newTransform.Position = newPos;

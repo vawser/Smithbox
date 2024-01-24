@@ -976,7 +976,38 @@ namespace StudioCore.MsbEditor
                     // Square
                     if (CFG.Current.Replicator_Mode_Square)
                     {
-                        
+                        ImGui.PushItemWidth(200);
+                        ImGui.InputInt("Size", ref CFG.Current.Replicator_Square_Size);
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("The number of points on one side of the square on which the entities are placed.");
+                        }
+
+                        if (CFG.Current.Replicator_Square_Size < 4)
+                            CFG.Current.Replicator_Square_Size = 4;
+
+                        ImGui.PushItemWidth(200);
+                        ImGui.InputInt("Width", ref CFG.Current.Replicator_Square_Width);
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("The width of the square on which to place the entities.");
+                        }
+
+                        if (CFG.Current.Replicator_Square_Width < 1)
+                            CFG.Current.Replicator_Square_Width = 1;
+
+                        ImGui.PushItemWidth(200);
+                        ImGui.InputInt("Height", ref CFG.Current.Replicator_Square_Height);
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("The height of the square on which to place the entities.");
+                        }
+
+                        if (CFG.Current.Replicator_Square_Height < 1)
+                            CFG.Current.Replicator_Square_Height = 1;
                     }
 
                     ImGui.Separator();

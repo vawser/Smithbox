@@ -285,6 +285,10 @@ public class CFG
     public int Replicator_Circle_Size = 1;
     public float Replicator_Circle_Radius = 1;
 
+    public int Replicator_Square_Size = 4;
+    public int Replicator_Square_Width = 4;
+    public int Replicator_Square_Height = 4;
+
     // CFG
     public static CFG Current { get; private set; }
     public static CFG Default { get; } = new();
