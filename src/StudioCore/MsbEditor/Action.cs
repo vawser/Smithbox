@@ -1334,6 +1334,8 @@ public class ReplicateMapObjectsAction : Action
     {
         var clonesCached = Clones.Count() > 0;
 
+        var idxCache = -1;
+
         var objectnames = new Dictionary<string, HashSet<string>>();
         Dictionary<Map, HashSet<MapEntity>> mapPartEntities = new();
 
@@ -1438,9 +1440,18 @@ public class ReplicateMapObjectsAction : Action
                         mapPartEntities[m].Add(newobj);
                     }
 
+                    if(idxCache == -1)
+                    {
+                        idxCache = m.Objects.IndexOf(Clonables[i]) + 1;
+                    }
+                    else
+                    {
+                        idxCache = idxCache + 1;
+                    }
+
                     if (TargetMap == null)
                     {
-                        m.Objects.Insert(m.Objects.IndexOf(Clonables[i]) + 1, newobj);
+                        m.Objects.Insert(idxCache, newobj);
                     }
                     else
                     {
