@@ -1319,15 +1319,12 @@ public class ReplicateMapObjectsAction : Action
     private ActionManager ActionManager;
 
     private int idxCache;
+
     private int iterationCount;
-
-    private int squareSideCount;
-    private int squareSideCounter;
-
-    private int squareTopCount;
-    private int squareRightCount;
-    private int squareLeftCount;
-    private int squareBottomCount;
+    private float squareTopCount;
+    private float squareRightCount;
+    private float squareLeftCount;
+    private float squareBottomCount;
 
     public enum SquareSide
     {
@@ -1368,13 +1365,11 @@ public class ReplicateMapObjectsAction : Action
 
         if (CFG.Current.Replicator_Mode_Square)
         {
-            iterationCount = (CFG.Current.Replicator_Square_Size * 4);
-            squareSideCount = CFG.Current.Replicator_Square_Size;
+            iterationCount = (CFG.Current.Replicator_Square_Size * 4) - 1;
             currentSquareSide = SquareSide.Bottom;
-            squareSideCounter = 0;
 
             squareTopCount = CFG.Current.Replicator_Square_Size;
-            squareLeftCount = CFG.Current.Replicator_Square_Size;
+            squareLeftCount = CFG.Current.Replicator_Square_Size - 1;
             squareRightCount = CFG.Current.Replicator_Square_Size;
             squareBottomCount = CFG.Current.Replicator_Square_Size;
         }
@@ -1647,23 +1642,20 @@ public class ReplicateMapObjectsAction : Action
 
         if (CFG.Current.Replicator_Mode_Square)
         {
-            // Handle each of the sides of the square
-            if (squareSideCounter >= squareSideCount)
+            if(currentSquareSide == SquareSide.Bottom && squareBottomCount <= 0)
             {
-                squareSideCounter = 0;
-
-                if(currentSquareSide == SquareSide.Bottom)
-                {
-                    currentSquareSide = SquareSide.Left;
-                }
-                else if (currentSquareSide == SquareSide.Left)
-                {
-                    currentSquareSide = SquareSide.Top;
-                }
-                else if (currentSquareSide == SquareSide.Top)
-                {
-                    currentSquareSide = SquareSide.Right;
-                }
+                currentSquareSide = SquareSide.Left;
+            }
+            else if (currentSquareSide == SquareSide.Left && squareLeftCount <= 0)
+            {
+                currentSquareSide = SquareSide.Top;
+            }
+            else if (currentSquareSide == SquareSide.Top && squareTopCount <= 0)
+            {
+                currentSquareSide = SquareSide.Right;
+            }
+            else if (currentSquareSide == SquareSide.Right && squareRightCount <= 0)
+            {
             }
 
             // Bottom
@@ -1715,8 +1707,6 @@ public class ReplicateMapObjectsAction : Action
 
                 squareRightCount--;
             }
-
-            squareSideCounter++;
         }
 
         newTransform.Position = newPos;

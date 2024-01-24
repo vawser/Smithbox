@@ -984,11 +984,11 @@ namespace StudioCore.MsbEditor
                             Utils.ShowHelpMarker("The number of points on one side of the square on which the entities are placed.");
                         }
 
-                        if (CFG.Current.Replicator_Square_Size < 4)
-                            CFG.Current.Replicator_Square_Size = 4;
+                        if (CFG.Current.Replicator_Square_Size < 2)
+                            CFG.Current.Replicator_Square_Size = 2;
 
                         ImGui.PushItemWidth(200);
-                        ImGui.InputInt("Width", ref CFG.Current.Replicator_Square_Width);
+                        ImGui.InputFloat("Width", ref CFG.Current.Replicator_Square_Width);
                         if (CFG.Current.System_Show_UI_Tooltips)
                         {
                             ImGui.SameLine();
@@ -999,7 +999,7 @@ namespace StudioCore.MsbEditor
                             CFG.Current.Replicator_Square_Width = 1;
 
                         ImGui.PushItemWidth(200);
-                        ImGui.InputInt("Height", ref CFG.Current.Replicator_Square_Height);
+                        ImGui.InputFloat("Height", ref CFG.Current.Replicator_Square_Height);
                         if (CFG.Current.System_Show_UI_Tooltips)
                         {
                             ImGui.SameLine();
