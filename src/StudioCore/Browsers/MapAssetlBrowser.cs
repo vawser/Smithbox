@@ -272,6 +272,7 @@ public class MapAssetBrowser
                     }
 
                     if (_selectedName == refID)
+                    {
                         if (ImGui.BeginPopupContextItem($"{refID}##context"))
                         {
                             if (ImGui.InputText($"Name", ref _refUpdateName, 255))
@@ -301,6 +302,7 @@ public class MapAssetBrowser
 
                             ImGui.EndPopup();
                         }
+                    }
 
                     if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                     {

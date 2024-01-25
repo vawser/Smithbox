@@ -900,7 +900,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Get action for updating the Transform of this object.
     /// </summary>
-    public Action GetUpdateTransformAction(Transform newt)
+    public Action GetUpdateTransformAction(Transform newt, bool includeScale = false)
     {
         // Is param, e.g. DS2 enemy
         if (WrappedObject is Param.Row || WrappedObject is MergedParamRow)
@@ -926,8 +926,11 @@ public class Entity : ISelectable, IDisposable
             PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
             act.AddPropertyChange(prop, newt.Position);
 
-            PropertyInfo scaleProp = WrappedObject.GetType().GetProperty("Scale");
-            act.AddPropertyChange(scaleProp, newt.Scale);
+            if (includeScale)
+            {
+                PropertyInfo scaleProp = WrappedObject.GetType().GetProperty("Scale");
+                act.AddPropertyChange(scaleProp, newt.Scale);
+            }
 
             prop = WrappedObject.GetType().GetProperty("Rotation");
             if (prop != null)

@@ -803,8 +803,8 @@ public class SettingsMenu
                 ImGui.Checkbox("Create", ref CFG.Current.Toolbar_Show_Create);
                 ImguiUtils.ShowHelpMarker("If enabled, the Create action will be visible in the map toolbar window.");
 
-                ImGui.Checkbox("Patrol Rendering", ref CFG.Current.Toolbar_Show_Patrol_Rendering);
-                ImguiUtils.ShowHelpMarker("If enabled, the Patrol Rendering action will be visible in the map toolbar window.");
+                ImGui.Checkbox("Render Patrol Routes", ref CFG.Current.Toolbar_Show_Patrol_Rendering);
+                ImguiUtils.ShowHelpMarker("If enabled, the Render Patrol Routes action will be visible in the map toolbar window.");
             }
 
             if (ImGui.CollapsingHeader("Map Actions", ImGuiTreeNodeFlags.DefaultOpen))

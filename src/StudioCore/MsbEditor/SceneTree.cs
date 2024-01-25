@@ -278,6 +278,9 @@ public class SceneTree : IActionEventHandler
             string aliasedName = name;
             var modelName = e.GetPropertyValue<string>("ModelName");
 
+            if (modelName == null)
+                modelName = "";
+
             if (CFG.Current.Map_Show_Character_Names_in_Scene_Tree)
             {
                 if (e.IsEnemyPart())

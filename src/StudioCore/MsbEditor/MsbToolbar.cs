@@ -24,6 +24,8 @@ using Silk.NET.SDL;
 using Veldrid.Utilities;
 using SoulsFormats;
 using StudioCore.Interface;
+using Org.BouncyCastle.Ocsp;
+using SoulsFormats.KF4;
 
 namespace StudioCore.MsbEditor
 {
@@ -32,7 +34,7 @@ namespace StudioCore.MsbEditor
         None,
         // Global
         Selection_Create,
-        Selection_Patrol_Rendering,
+        Selection_Render_Patrol_Routes,
 
         // Selection
         Selection_Toggle_Visibility,
@@ -42,7 +44,6 @@ namespace StudioCore.MsbEditor
         Selection_Duplicate,
         Selection_Rotate,
         Selection_Toggle_Presence,
-        Selection_Undummify,
         Selection_Move_to_Grid,
         Selection_Scramble,
         Selection_Replicate
@@ -63,6 +64,17 @@ namespace StudioCore.MsbEditor
         private IViewport _viewport;
 
         private SelectedTool _selectedTool;
+
+        private IEnumerable<ObjectContainer> _loadedMaps;
+        private bool creationMenuOpened;
+        private int _createEntityMapIndex;
+        private List<(string, Type)> _eventClasses = new();
+        private List<(string, Type)> _partsClasses = new();
+        private List<(string, Type)> _regionClasses = new();
+
+        private Type _createPartSelectedType;
+        private Type _createRegionSelectedType;
+        private Type _createEventSelectedType;
 
         public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, AssetLocator locator, MsbEditorScreen editor, IViewport viewport)
         {
@@ -97,9 +109,9 @@ namespace StudioCore.MsbEditor
                 ImguiUtils.ShowHelpMarker("Double-click to use.");
                 ImGui.Separator();
 
+                // Create
                 if (CFG.Current.Toolbar_Show_Create)
                 {
-                    // Create
                     if (ImGui.Selectable("Create##tool_Selection_Create", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Create;
@@ -111,16 +123,19 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Patrol Rendering
                 if (CFG.Current.Toolbar_Show_Patrol_Rendering)
                 {
-                    // Patrol Rendering
-                    if (ImGui.Selectable("Patrol Rendering##tool_Selection_Patrol_Rendering", false, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (_assetLocator.Type is not GameType.DarkSoulsIISOTFS)
                     {
-                        _selectedTool = SelectedTool.Selection_Patrol_Rendering;
-
-                        if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                        if (ImGui.Selectable("Render Patrol Routes##tool_Selection_Patrol_Rendering", false, ImGuiSelectableFlags.AllowDoubleClick))
                         {
-                            UpdatePatrolRendering();
+                            _selectedTool = SelectedTool.Selection_Render_Patrol_Routes;
+
+                            if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                            {
+                                RenderPatrolRoutes();
+                            }
                         }
                     }
                 }
@@ -130,9 +145,9 @@ namespace StudioCore.MsbEditor
                 ImguiUtils.ShowHelpMarker("Double-click to use.");
                 ImGui.Separator();
 
+                // Go to in Object List
                 if (CFG.Current.Toolbar_Show_Go_to_in_Object_List)
                 {
-                    // Go to in Object List
                     if (ImGui.Selectable("Go to in Object List##tool_Selection_GoToInObjectList", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Go_to_in_Object_List;
@@ -144,9 +159,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Move to Camera
                 if (CFG.Current.Toolbar_Show_Move_to_Camera)
                 {
-                    // Move to Camera
                     if (ImGui.Selectable("Move to Camera##tool_Selection_MoveToCamera", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Move_to_Camera;
@@ -158,9 +173,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Frame in Viewport
                 if (CFG.Current.Toolbar_Show_Frame_in_Viewport)
                 {
-                    // Frame in Viewport
                     if (ImGui.Selectable("Frame in Viewport##tool_Selection_FrameInViewport", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Frame_in_Viewport;
@@ -172,9 +187,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Toggle Visibility
                 if (CFG.Current.Toolbar_Show_Toggle_Visibility)
                 {
-                    // Toggle Visibility
                     if (ImGui.Selectable("Toggle Visibility##tool_Selection_ToggleVisibility", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Toggle_Visibility;
@@ -186,9 +201,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Duplicate
                 if (CFG.Current.Toolbar_Show_Duplicate)
                 {
-                    // Duplicate
                     if (ImGui.Selectable("Duplicate##tool_Selection_Duplicate", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Duplicate;
@@ -200,9 +215,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Rotate
                 if (CFG.Current.Toolbar_Show_Rotate)
                 {
-                    // Rotate
                     if (ImGui.Selectable("Rotate##tool_Selection_Rotate", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Rotate;
@@ -229,9 +244,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Presence
                 if (CFG.Current.Toolbar_Show_Toggle_Presence)
                 {
-                    // Presence
                     if (ImGui.Selectable("Toggle Presence##tool_Selection_Presence", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Toggle_Presence;
@@ -264,9 +279,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Scramble
                 if (CFG.Current.Toolbar_Show_Scramble)
                 {
-                    // Scramble
                     if (ImGui.Selectable("Scramble##tool_Selection_Scramble", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Scramble;
@@ -278,9 +293,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Replicate
                 if (CFG.Current.Toolbar_Show_Replicate)
                 {
-                    // Replicate
                     if (ImGui.Selectable("Replicate##tool_Selection_Replicate", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         _selectedTool = SelectedTool.Selection_Replicate;
@@ -292,9 +307,9 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Move to Grid
                 if (CFG.Current.Toolbar_Show_Move_to_Grid)
                 {
-                    // Move to Grid
                     if (CFG.Current.Viewport_EnableGrid)
                     {
                         if (ImGui.Selectable("Move to Grid##tool_Selection_Move_to_Grid", false, ImGuiSelectableFlags.AllowDoubleClick))
@@ -315,6 +330,145 @@ namespace StudioCore.MsbEditor
                 ImGui.NextColumn();
 
                 ImGui.BeginChild("toolconfiguration");
+
+                // Create
+                if (_selectedTool == SelectedTool.Selection_Create)
+                {
+                    _loadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
+               
+                    ImGui.Text("Create a new object within the target map.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Create.HintText)}");
+                    ImGui.Separator();
+
+                    if (!_loadedMaps.Any())
+                    {
+                        ImGui.Text("No maps have been loaded yet.");
+                    }
+                    else
+                    {
+                        var map = (Map)_loadedMaps.ElementAt(_createEntityMapIndex);
+
+                        ImGui.Combo("Target Map", ref _createEntityMapIndex, _loadedMaps.Select(e => e.Name).ToArray(), _loadedMaps.Count());
+
+                        if (map.BTLParents.Any())
+                        {
+                            if (ImGui.Checkbox("BTL Light", ref CFG.Current.Toolbar_Create_Light))
+                            {
+                                CFG.Current.Toolbar_Create_Part = false;
+                                CFG.Current.Toolbar_Create_Region = false;
+                                CFG.Current.Toolbar_Create_Event = false;
+                            }
+                            ImguiUtils.ShowHelpMarker("Create a BTL Light object.");
+                        }
+
+                        if (ImGui.Checkbox("Part", ref CFG.Current.Toolbar_Create_Part))
+                        {
+                            CFG.Current.Toolbar_Create_Light = false;
+                            CFG.Current.Toolbar_Create_Region = false;
+                            CFG.Current.Toolbar_Create_Event = false;
+                        }
+                        ImguiUtils.ShowHelpMarker("Create a Part object.");
+
+                        if (ImGui.Checkbox("Region", ref CFG.Current.Toolbar_Create_Region))
+                        {
+                            CFG.Current.Toolbar_Create_Light = false;
+                            CFG.Current.Toolbar_Create_Part = false;
+                            CFG.Current.Toolbar_Create_Event = false;
+                        }
+                        ImguiUtils.ShowHelpMarker("Create a Region object.");
+
+                        if (ImGui.Checkbox("Event", ref CFG.Current.Toolbar_Create_Event))
+                        {
+                            CFG.Current.Toolbar_Create_Light = false;
+                            CFG.Current.Toolbar_Create_Region = false;
+                            CFG.Current.Toolbar_Create_Part = false;
+                        }
+                        ImguiUtils.ShowHelpMarker("Create an Event object.");
+
+                        ImGui.Separator();
+
+                        if (CFG.Current.Toolbar_Create_Light)
+                        {
+                            // Nothing
+                        }
+
+                        if (CFG.Current.Toolbar_Create_Part)
+                        {
+                            ImGui.Text("Part Type:");
+                            ImGui.Separator();
+                            ImGui.BeginChild("msb_part_selection");
+
+                            foreach ((string, Type) p in _partsClasses)
+                            {
+                                if (ImGui.Selectable(p.Item1, p.Item2 == _createPartSelectedType))
+                                {
+                                    _createPartSelectedType = p.Item2;
+                                }
+                            }
+
+                            ImGui.EndChild();
+                        }
+
+                        if (CFG.Current.Toolbar_Create_Region)
+                        {
+                            // MSB format that only have 1 region type
+                            if (_regionClasses.Count == 1)
+                            {
+                                _createRegionSelectedType = _regionClasses[0].Item2;
+                            }
+                            else
+                            {
+                                ImGui.Text("Region Type:");
+                                ImGui.Separator();
+                                ImGui.BeginChild("msb_region_selection");
+
+                                foreach ((string, Type) p in _regionClasses)
+                                {
+                                    if (ImGui.Selectable(p.Item1, p.Item2 == _createRegionSelectedType))
+                                    {
+                                        _createRegionSelectedType = p.Item2;
+                                    }
+                                }
+
+                                ImGui.EndChild();
+                            }
+                        }
+
+                        if (CFG.Current.Toolbar_Create_Event)
+                        {
+                            ImGui.Text("Event Type:");
+                            ImGui.Separator();
+                            ImGui.BeginChild("msb_event_selection");
+
+                            foreach ((string, Type) p in _eventClasses)
+                            {
+                                if (ImGui.Selectable(p.Item1, p.Item2 == _createEventSelectedType))
+                                {
+                                    _createEventSelectedType = p.Item2;
+                                }
+                            }
+
+                            ImGui.EndChild();
+                        }
+
+                        ImGui.Separator();
+                    }
+                }
+
+                // Patrol Rendering
+                if (_selectedTool == SelectedTool.Selection_Render_Patrol_Routes)
+                {
+                    ImGui.Text("Toggle the rendering of patrol route connects.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_RenderEnemyPatrolRoutes.HintText)}");
+                    ImGui.Separator();
+
+                    if (ImGui.Button("Clear"))
+                    {
+                        PatrolDrawManager.Clear();
+                    }
+                }
 
                 // Go to in Object List
                 if (_selectedTool == SelectedTool.Selection_Go_to_in_Object_List)
@@ -549,7 +703,7 @@ namespace StudioCore.MsbEditor
                     CFG.Current.Toolbar_Rotate_FixedAngle = new Vector3(x, y, z);
                 }
 
-                // Dummify
+                // Toggle Presence
                 if (_selectedTool == SelectedTool.Selection_Toggle_Presence)
                 {
                     if(CFG.Current.Toolbar_Presence_Dummy_Type_ER)
@@ -558,8 +712,8 @@ namespace StudioCore.MsbEditor
                         ImGui.Text("Toggle the Dummy status of the current selection.");
 
                     ImGui.Separator();
-                    ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Dummify.HintText)}");
-                    ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Undummify.HintText)}");
+                    ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Dummify.HintText)} for Disable");
+                    ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Undummify.HintText)} for Enable");
                     ImGui.Separator();
 
                     if(ImGui.Checkbox("Disable", ref CFG.Current.Toolbar_Presence_Dummify))
@@ -1075,15 +1229,54 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void CreateNewMapObject()
         {
+            // Appears to require a selection to work: TODO fix this.
 
+            var map = (Map)_loadedMaps.ElementAt(_createEntityMapIndex);
+
+            if (CFG.Current.Toolbar_Create_Light)
+            {
+                foreach (Entity btl in map.BTLParents)
+                {
+                    AddNewEntity(typeof(BTL.Light), MapEntity.MapEntityType.Light, map, btl);  
+                }
+            }
+            if (CFG.Current.Toolbar_Create_Part)
+            {
+                AddNewEntity(_createPartSelectedType, MapEntity.MapEntityType.Part, map);
+            }
+            if (CFG.Current.Toolbar_Create_Region)
+            {
+                AddNewEntity(_createRegionSelectedType, MapEntity.MapEntityType.Region, map);
+            }
+            if (CFG.Current.Toolbar_Create_Event)
+            {
+                AddNewEntity(_createEventSelectedType, MapEntity.MapEntityType.Event, map);
+            }
+        }
+
+        /// <summary>
+        /// Adds a new entity to the targeted map. If no parent is specified, RootObject will be used.
+        /// </summary>
+        private void AddNewEntity(Type typ, MapEntity.MapEntityType etype, Map map, Entity parent = null)
+        {
+            var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
+            MapEntity obj = new(map, newent, etype);
+
+            parent ??= map.RootObject;
+
+            AddMapObjectsAction act = new(_universe, map, _scene, new List<MapEntity> { obj }, true, parent);
+            _actionManager.ExecuteAction(act);
         }
 
         /// <summary>
         /// Update the patrol rendering state
         /// </summary>
-        public void UpdatePatrolRendering()
+        public void RenderPatrolRoutes()
         {
-
+            if (_assetLocator.Type is not GameType.DarkSoulsIISOTFS)
+            {
+                PatrolDrawManager.Generate(_universe);
+            }
         }
 
         /// <summary>
@@ -1131,7 +1324,7 @@ namespace StudioCore.MsbEditor
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
                 sel.ClearTemporaryTransform(false);
-                actlist.Add(sel.GetUpdateTransformAction(GetScrambledTransform(sel)));
+                actlist.Add(sel.GetUpdateTransformAction(GetScrambledTransform(sel), true));
             }
 
             CompoundAction action = new(actlist);
@@ -1600,6 +1793,64 @@ namespace StudioCore.MsbEditor
             newTransform.Scale = newScale;
 
             return newTransform;
+        }
+
+        /// <summary>
+        /// Gets all the msb types using reflection to populate editor creation menus
+        /// </summary>
+        /// <param name="type">The game to collect msb types for</param>
+        public void PopulateClassNames(GameType type)
+        {
+            Type msbclass;
+            switch (type)
+            {
+                case GameType.DemonsSouls:
+                    msbclass = typeof(MSBD);
+                    break;
+                case GameType.DarkSoulsPTDE:
+                case GameType.DarkSoulsRemastered:
+                    msbclass = typeof(MSB1);
+                    break;
+                case GameType.DarkSoulsIISOTFS:
+                    msbclass = typeof(MSB2);
+                    break;
+                case GameType.DarkSoulsIII:
+                    msbclass = typeof(MSB3);
+                    break;
+                case GameType.Bloodborne:
+                    msbclass = typeof(MSBB);
+                    break;
+                case GameType.Sekiro:
+                    msbclass = typeof(MSBS);
+                    break;
+                case GameType.EldenRing:
+                    msbclass = typeof(MSBE);
+                    break;
+                case GameType.ArmoredCoreVI:
+                    msbclass = typeof(MSB_AC6);
+                    break;
+                default:
+                    throw new ArgumentException("type must be valid");
+            }
+
+            Type partType = msbclass.GetNestedType("Part");
+            List<Type> partSubclasses = msbclass.Assembly.GetTypes()
+                .Where(type => type.IsSubclassOf(partType) && !type.IsAbstract).ToList();
+            _partsClasses = partSubclasses.Select(x => (x.Name, x)).ToList();
+
+            Type regionType = msbclass.GetNestedType("Region");
+            List<Type> regionSubclasses = msbclass.Assembly.GetTypes()
+                .Where(type => type.IsSubclassOf(regionType) && !type.IsAbstract).ToList();
+            _regionClasses = regionSubclasses.Select(x => (x.Name, x)).ToList();
+            if (_regionClasses.Count == 0)
+            {
+                _regionClasses.Add(("Region", regionType));
+            }
+
+            Type eventType = msbclass.GetNestedType("Event");
+            List<Type> eventSubclasses = msbclass.Assembly.GetTypes()
+                .Where(type => type.IsSubclassOf(eventType) && !type.IsAbstract).ToList();
+            _eventClasses = eventSubclasses.Select(x => (x.Name, x)).ToList();
         }
     }
 }

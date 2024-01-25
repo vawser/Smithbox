@@ -109,6 +109,8 @@ public class KeyBindings
         public KeyBind Toolbar_Scramble = new(Key.S, false, true);
         public KeyBind Toolbar_Replicate = new(Key.R, false, true);
         public KeyBind Toolbar_Set_to_Grid = new(Key.G, false, true);
+        public KeyBind Toolbar_Create = new(Key.C, false, true);
+        public KeyBind Toolbar_RenderEnemyPatrolRoutes = new(Key.P, true);
 
         // Map
         public KeyBind Map_DuplicateToMap = new(Key.D, false, false, true);
@@ -123,7 +125,6 @@ public class KeyBindings
         public KeyBind Map_ViewportGrid_Lower = new(Key.Q, true);
         public KeyBind Map_ViewportGrid_Raise = new(Key.E, true);
         public KeyBind Map_ToggleRenderOutline = new();
-        public KeyBind Map_RenderEnemyPatrolRoutes = new(Key.P, true);
 
         // Param
         public KeyBind Param_Copy = new(Key.C, true);
