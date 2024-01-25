@@ -843,11 +843,6 @@ public class Smithbox
         {
             if (ImGui.BeginMenu("File"))
             {
-                if (ImGui.MenuItem("Enable Texturing (alpha)", "", CFG.Current.Map_Enable_Texturing))
-                {
-                    CFG.Current.Map_Enable_Texturing = !CFG.Current.Map_Enable_Texturing;
-                }
-
                 if (ImGui.MenuItem("New Project", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     newProject = true;

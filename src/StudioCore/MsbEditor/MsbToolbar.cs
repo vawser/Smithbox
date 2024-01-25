@@ -377,12 +377,15 @@ namespace StudioCore.MsbEditor
                     ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Core_Duplicate.HintText)}");
                     ImGui.Separator();
 
-                    ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID);
-
-                    if (CFG.Current.System_Show_UI_Tooltips)
+                    if (_assetLocator.Type != GameType.DarkSoulsIISOTFS)
                     {
-                        ImGui.SameLine();
-                        Utils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Entity ID.");
+                        ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID);
+
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Entity ID.");
+                        }
                     }
 
                     if (_assetLocator.Type == GameType.EldenRing)
@@ -1210,12 +1213,15 @@ namespace StudioCore.MsbEditor
                         Utils.ShowHelpMarker("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
                     }
 
-                    ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID);
-
-                    if (CFG.Current.System_Show_UI_Tooltips)
+                    if (_assetLocator.Type != GameType.DarkSoulsIISOTFS)
                     {
-                        ImGui.SameLine();
-                        Utils.ShowHelpMarker("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
+                        ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID);
+
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
+                        }
                     }
 
                     if (_assetLocator.Type == GameType.EldenRing)

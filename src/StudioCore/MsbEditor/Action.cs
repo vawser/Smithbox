@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Andre.Formats;
+using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Utilities;
 using Silk.NET.SDL;
 using SoulsFormats;
@@ -527,45 +528,47 @@ public class CloneMapObjectsAction : Action
 
     public void ChangeEntityID(MapEntity sel, Map map)
     {
+        if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+            return;
+
         if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
         {
-            var originalID = sel.GetPropertyValue("EntityID");
-
-            HashSet<uint> vals = new();
-
-            // Get currently used Entity IDs
-            foreach (var e in map?.Objects)
+            if(AssetLocator.Type == GameType.EldenRing || AssetLocator.Type == GameType.ArmoredCoreVI)
             {
-                var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                if (val == null)
-                    continue;
+                uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
-                uint entUint;
-                if (val is int entInt)
-                    entUint = (uint)entInt;
-                else
-                    entUint = (uint)val;
+                HashSet<uint> vals = new();
 
-                if (entUint == 0 || entUint == uint.MaxValue)
-                    continue;
+                // Get currently used Entity IDs
+                foreach (var e in map?.Objects)
+                {
+                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                    if (val == null)
+                        continue;
 
-                vals.Add(entUint);
-            }
+                    uint entUint;
+                    if (val is int entInt)
+                        entUint = (uint)entInt;
+                    else
+                        entUint = (uint)val;
 
-            // Build set of all 'valid' Entity IDs
-            var mapIdParts = map.Name.Replace("m", "").Split("_"); // m10_00_00_00
+                    if (entUint == 0 || entUint == uint.MaxValue)
+                        continue;
 
-            uint minId = 0;
-            uint maxId = 9999;
+                    vals.Add(entUint);
+                }
 
-            // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
-            if (AssetLocator.Type != GameType.ArmoredCoreVI)
-            {
-                minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
-                maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
+                // Build set of all 'valid' Entity IDs
+                var mapIdParts = map.Name.Replace("m", "").Split("_"); // m10_00_00_00
+
+                uint minId = 0;
+                uint maxId = 9999;
 
                 if (AssetLocator.Type == GameType.EldenRing)
                 {
+                    minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
+                    maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
+
                     // Is open-world tile
                     if (mapIdParts[0] == "60")
                     {
@@ -573,48 +576,135 @@ public class CloneMapObjectsAction : Action
                         maxId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
                     }
                 }
-            }
-
-            HashSet<uint> baseVals = new HashSet<uint>();
-            for (uint i = minId; i < maxId; i++)
-            {
-                baseVals.Add(i);
-            }
-
-            baseVals.SymmetricExceptWith(vals);
-
-            bool hasMatch = false;
-            uint newID = 0;
-
-            // Prefer IDs after the original ID first
-            foreach (var entry in baseVals)
-            {
-                if (!hasMatch)
-                {
-                    if (entry > (uint)originalID)
-                    {
-                        newID = entry;
-                        hasMatch = true;
-                    }
-                }
+                // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
                 else
                 {
-                    break;
+                    minId = 0;
+                    maxId = 9999;
                 }
-            }
 
-            // No match in preferred range, get first of possible values.
-            if (!hasMatch)
+                HashSet<uint> baseVals = new HashSet<uint>();
+                for (uint i = minId; i < maxId; i++)
+                {
+                    baseVals.Add(i);
+                }
+
+                baseVals.SymmetricExceptWith(vals);
+
+                bool hasMatch = false;
+                uint newID = 0;
+
+                // Prefer IDs after the original ID first
+                foreach (var entry in baseVals)
+                {
+                    if (!hasMatch)
+                    {
+                        if (entry > originalID)
+                        {
+                            newID = entry;
+                            hasMatch = true;
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                // No match in preferred range, get first of possible values.
+                if (!hasMatch)
+                {
+                    newID = baseVals.First();
+                }
+
+                sel.SetPropertyValue("EntityID", newID);
+            }
+            else
             {
-                newID = baseVals.First();
-            }
+                int originalID = (int)sel.GetPropertyValue("EntityID");
 
-            sel.SetPropertyValue("EntityID", newID);
+                HashSet<int> vals = new();
+
+                // Get currently used Entity IDs
+                foreach (var e in map?.Objects)
+                {
+                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                    if (val == null)
+                        continue;
+
+                    int entInt = (int)val;
+
+                    if (entInt == 0 || entInt == int.MaxValue)
+                        continue;
+
+                    vals.Add(entInt);
+                }
+
+                // Build set of all 'valid' Entity IDs
+                var mapIdParts = map.Name.Replace("m", "").Split("_");
+
+                int minId = 0;
+                int maxId = 9999;
+
+                // Get the first non-zero digit from mapIdParts[1]
+                var part = mapIdParts[1][1];
+
+                minId = Int32.Parse($"{mapIdParts[0]}{part}0000");
+                maxId = Int32.Parse($"{mapIdParts[0]}{part}9999");
+
+                HashSet<int> baseVals = new HashSet<int>();
+                for (int i = minId; i < maxId; i++)
+                {
+                    baseVals.Add(i);
+                }
+
+                baseVals.SymmetricExceptWith(vals);
+
+                bool hasMatch = false;
+                int newID = 0;
+
+                // Prefer IDs after the original ID first
+                foreach (var entry in baseVals)
+                {
+                    if (!hasMatch)
+                    {
+                        if (entry > originalID)
+                        {
+                            newID = entry;
+                            hasMatch = true;
+
+                            // This is to ignore the 4 digit Entity IDs used in some DS1 maps
+                            if (AssetLocator.Type == GameType.DarkSoulsPTDE || AssetLocator.Type == GameType.DarkSoulsRemastered)
+                            {
+                                if (newID < 10000)
+                                {
+                                    hasMatch = false;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                // No match in preferred range, get first of possible values.
+                if (!hasMatch)
+                {
+                    newID = baseVals.First();
+                }
+
+                sel.SetPropertyValue("EntityID", newID);
+            }
         }
     }
 
     public void ChangePartNames(MapEntity sel, Map map)
     {
+        if (AssetLocator.Type != GameType.EldenRing)
+            return;
+
         if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
         {
             if (AssetLocator.Type == GameType.EldenRing)
@@ -1655,6 +1745,9 @@ public class ReplicateMapObjectsAction : Action
 
     public void ChangePartNames(MapEntity sel, Map map)
     {
+        if (AssetLocator.Type != GameType.EldenRing)
+            return;
+
         if (CFG.Current.Replicator_Increment_UnkPartNames)
         {
             if (AssetLocator.Type == GameType.EldenRing)
@@ -1692,92 +1785,177 @@ public class ReplicateMapObjectsAction : Action
 
     public void ChangeEntityID(MapEntity sel, Map map)
     {
-        var originalID = sel.GetPropertyValue("EntityID");
+        if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+            return;
 
-        // Default to 0
-        sel.SetPropertyValue("EntityID", (uint)0);
-
-        if(CFG.Current.Replicator_Increment_Entity_ID)
+        if (CFG.Current.Replicator_Increment_Entity_ID)
         {
-            HashSet<uint> vals = new();
-
-            // Get currently used Entity IDs
-            foreach (var e in map?.Objects)
+            if (AssetLocator.Type == GameType.EldenRing || AssetLocator.Type == GameType.ArmoredCoreVI)
             {
-                var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                if (val == null)
-                    continue;
+                uint originalID = (uint)sel.GetPropertyValue("EntityID");
+                sel.SetPropertyValue("EntityID", (uint)0);
 
-                uint entUint;
-                if (val is int entInt)
-                    entUint = (uint)entInt;
-                else
-                    entUint = (uint)val;
+                HashSet<uint> vals = new();
 
-                if (entUint == 0 || entUint == uint.MaxValue)
-                    continue;
+                // Get currently used Entity IDs
+                foreach (var e in map?.Objects)
+                {
+                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                    if (val == null)
+                        continue;
 
-                vals.Add(entUint);
-            }
+                    uint entUint;
+                    if (val is int entInt)
+                        entUint = (uint)entInt;
+                    else
+                        entUint = (uint)val;
 
-            // Build set of all 'valid' Entity IDs
-            var mapIdParts = map.Name.Replace("m", "").Split("_"); // m10_00_00_00
+                    if (entUint == 0 || entUint == uint.MaxValue)
+                        continue;
 
-            uint minId = 0;
-            uint maxId = 9999;
+                    vals.Add(entUint);
+                }
 
-            // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
-            if (AssetLocator.Type != GameType.ArmoredCoreVI)
-            {
-                minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
-                maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
+                // Build set of all 'valid' Entity IDs
+                var mapIdParts = map.Name.Replace("m", "").Split("_"); // m10_00_00_00
+
+                uint minId = 0;
+                uint maxId = 9999;
 
                 if (AssetLocator.Type == GameType.EldenRing)
                 {
+                    minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
+                    maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
+
                     // Is open-world tile
-                    if(mapIdParts[0] == "60")
+                    if (mapIdParts[0] == "60")
                     {
                         minId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
                         maxId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
                     }
                 }
-            }
-
-            HashSet<uint> baseVals = new HashSet<uint>();
-            for(uint i = minId; i < maxId; i++)
-            {
-                baseVals.Add( i );
-            }
-
-            baseVals.SymmetricExceptWith(vals);
-
-            bool hasMatch = false;
-            uint newID = 0;
-
-            // Prefer IDs after the original ID first
-            foreach(var entry in baseVals)
-            {
-                if (!hasMatch)
-                {
-                    if (entry > (uint)originalID)
-                    {
-                        newID = entry;
-                        hasMatch = true;
-                    }
-                }
+                // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
                 else
                 {
-                    break;
+                    minId = 0;
+                    maxId = 9999;
                 }
-            }
 
-            // No match in preferred range, get first of possible values.
-            if(!hasMatch)
+                HashSet<uint> baseVals = new HashSet<uint>();
+                for (uint i = minId; i < maxId; i++)
+                {
+                    baseVals.Add(i);
+                }
+
+                baseVals.SymmetricExceptWith(vals);
+
+                bool hasMatch = false;
+                uint newID = 0;
+
+                // Prefer IDs after the original ID first
+                foreach (var entry in baseVals)
+                {
+                    if (!hasMatch)
+                    {
+                        if (entry > originalID)
+                        {
+                            newID = entry;
+                            hasMatch = true;
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                // No match in preferred range, get first of possible values.
+                if (!hasMatch)
+                {
+                    newID = baseVals.First();
+                }
+
+                sel.SetPropertyValue("EntityID", newID);
+            }
+            else
             {
-                newID = baseVals.First();
-            }
+                int originalID = (int)sel.GetPropertyValue("EntityID");
+                sel.SetPropertyValue("EntityID", -1);
 
-            sel.SetPropertyValue("EntityID", newID);
+                HashSet<int> vals = new();
+
+                // Get currently used Entity IDs
+                foreach (var e in map?.Objects)
+                {
+                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                    if (val == null)
+                        continue;
+
+                    int entInt = (int)val;
+
+                    if (entInt == 0 || entInt == int.MaxValue)
+                        continue;
+
+                    vals.Add(entInt);
+                }
+
+                // Build set of all 'valid' Entity IDs
+                var mapIdParts = map.Name.Replace("m", "").Split("_");
+
+                int minId = 0;
+                int maxId = 9999;
+
+                // Get the first non-zero digit from mapIdParts[1]
+                var part = mapIdParts[1][1];
+
+                minId = Int32.Parse($"{mapIdParts[0]}{part}0000");
+                maxId = Int32.Parse($"{mapIdParts[0]}{part}9999");
+
+                HashSet<int> baseVals = new HashSet<int>();
+                for (int i = minId; i < maxId; i++)
+                {
+                    baseVals.Add(i);
+                }
+
+                baseVals.SymmetricExceptWith(vals);
+
+                bool hasMatch = false;
+                int newID = 0;
+
+                // Prefer IDs after the original ID first
+                foreach (var entry in baseVals)
+                {
+                    if (!hasMatch)
+                    {
+                        if (entry > originalID)
+                        {
+                            newID = entry;
+                            hasMatch = true;
+                            
+                            // This is to ignore the 4 digit Entity IDs used in some DS1 maps
+                            if(AssetLocator.Type == GameType.DarkSoulsPTDE || AssetLocator.Type == GameType.DarkSoulsRemastered)
+                            {
+                                if(newID < 10000)
+                                {
+                                    hasMatch = false;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                // No match in preferred range, get first of possible values.
+                if (!hasMatch)
+                {
+                    newID = baseVals.First();
+                }
+
+                sel.SetPropertyValue("EntityID", newID);
+            }
         }
     }
 
@@ -1916,7 +2094,24 @@ public class ReplicateMapObjectsAction : Action
         newTransform.Rotation = newRot;
         newTransform.Scale = newScale;
 
-        sel.SetPropertyValue("Position", newPos);
+        if(AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+        {
+            if (sel.Type == MapEntity.MapEntityType.DS2Generator &&
+                sel.WrappedObject is MergedParamRow mp)
+            {
+                Param.Row loc = mp.GetRow("generator-loc");
+                loc.GetCellHandleOrThrow("PositionX").Value = newTransform.Position[0];
+                loc.GetCellHandleOrThrow("PositionY").Value = newTransform.Position[1];
+                loc.GetCellHandleOrThrow("PositionZ").Value = newTransform.Position[2];
+                loc.GetCellHandleOrThrow("RotationX").Value = (float)(newTransform.Rotation[0] * (180 / Math.PI));
+                loc.GetCellHandleOrThrow("RotationY").Value = (float)(newTransform.Rotation[1] * (180 / Math.PI));
+                loc.GetCellHandleOrThrow("RotationZ").Value = (float)(newTransform.Rotation[2] * (180 / Math.PI));
+            }
+        }
+        else
+        {
+            sel.SetPropertyValue("Position", newPos);
+        }
     }
 
     public void ApplyScrambleTransform(MapEntity newobj)
@@ -1925,34 +2120,52 @@ public class ReplicateMapObjectsAction : Action
         {
             Transform scrambledTransform = Toolbar.GetScrambledTransform(newobj);
 
-            newobj.SetPropertyValue("Position", scrambledTransform.Position);
-
-            if (newobj.IsRotationPropertyRadians("Rotation"))
+            if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
             {
-                if (newobj.IsRotationXZY("Rotation"))
+                if(newobj.Type == MapEntity.MapEntityType.DS2Generator &&
+                newobj.WrappedObject is MergedParamRow mp)
                 {
-                    newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY);
-                }
-                else
-                {
-                    newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation);
+                    Param.Row loc = mp.GetRow("generator-loc");
+                    loc.GetCellHandleOrThrow("PositionX").Value = scrambledTransform.Position[0];
+                    loc.GetCellHandleOrThrow("PositionY").Value = scrambledTransform.Position[1];
+                    loc.GetCellHandleOrThrow("PositionZ").Value = scrambledTransform.Position[2];
+                    loc.GetCellHandleOrThrow("RotationX").Value = (float)(scrambledTransform.Rotation[0] * (180 / Math.PI));
+                    loc.GetCellHandleOrThrow("RotationY").Value = (float)(scrambledTransform.Rotation[1] * (180 / Math.PI));
+                    loc.GetCellHandleOrThrow("RotationZ").Value = (float)(scrambledTransform.Rotation[2] * (180 / Math.PI));
                 }
             }
             else
             {
-                if (newobj.IsRotationXZY("Rotation"))
+                newobj.SetPropertyValue("Position", scrambledTransform.Position);
+
+                if (newobj.IsRotationPropertyRadians("Rotation"))
                 {
-                    newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY * Utils.Rad2Deg);
+                    if (newobj.IsRotationXZY("Rotation"))
+                    {
+                        newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY);
+                    }
+                    else
+                    {
+                        newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation);
+                    }
                 }
                 else
                 {
+                    if (newobj.IsRotationXZY("Rotation"))
+                    {
+                        newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotationXZY * Utils.Rad2Deg);
+                    }
+                    else
+                    {
+                        newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
+                    }
+
                     newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
                 }
 
-                newobj.SetPropertyValue("Rotation", scrambledTransform.EulerRotation * Utils.Rad2Deg);
-            }
+                newobj.SetPropertyValue("Scale", scrambledTransform.Scale);
 
-            newobj.SetPropertyValue("Scale", scrambledTransform.Scale);
+            }
         }
     }
 

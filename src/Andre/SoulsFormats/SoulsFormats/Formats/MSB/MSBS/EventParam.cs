@@ -1105,7 +1105,9 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Unknown.
+            /// Associates enemies.
+            /// Note: bRestrictSamePlacementGroup in AISoundParam makes sounds spawned by enemies in
+            /// a PlacementGroup only heard by other enemies in the same group.
             /// </summary>
             public class PlacementGroup : Event
             {
@@ -1115,45 +1117,46 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public string[] Event21PartNames { get; private set; }
-                private int[] Event21PartIndices;
+                [MSBReference(ReferenceType = typeof(Part.EnemyBase))]
+                public string[] PlacementGroupEnemyNames { get; private set; }
+                private int[] PlacementGroupEnemyIndices;
 
                 /// <summary>
                 /// Creates a PlacementGroup with default values.
                 /// </summary>
                 public PlacementGroup() : base($"{nameof(Event)}: {nameof(PlacementGroup)}")
                 {
-                    Event21PartNames = new string[32];
+                    PlacementGroupEnemyNames = new string[32];
                 }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
-                    var event21 = (PlacementGroup)evnt;
-                    event21.Event21PartNames = (string[])Event21PartNames.Clone();
+                    var placementGroup = (PlacementGroup)evnt;
+                    placementGroup.PlacementGroupEnemyNames = (string[])PlacementGroupEnemyNames.Clone();
                 }
 
                 internal PlacementGroup(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Event21PartIndices = br.ReadInt32s(32);
+                    PlacementGroupEnemyIndices = br.ReadInt32s(32);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32s(Event21PartIndices);
+                    bw.WriteInt32s(PlacementGroupEnemyIndices);
                 }
 
                 internal override void GetNames(MSBS msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
-                    Event21PartNames = MSB.FindNames(entries.Parts, Event21PartIndices);
+                    PlacementGroupEnemyNames = MSB.FindNames(entries.Parts, PlacementGroupEnemyIndices);
                 }
 
                 internal override void GetIndices(MSBS msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
-                    Event21PartIndices = MSB.FindIndices(this, entries.Parts, Event21PartNames);
+                    PlacementGroupEnemyIndices = MSB.FindIndices(this, entries.Parts, PlacementGroupEnemyNames);
                 }
             }
 
