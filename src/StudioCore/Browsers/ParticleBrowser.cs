@@ -150,6 +150,9 @@ public class ParticleBrowser
             ImGui.BeginChild("ParticleListSearch");
             ImGui.InputText($"Search", ref _searchInput, 255);
 
+            ImGui.SameLine();
+            Utils.ShowHelpMarker("Separate terms are split via the + character.");
+
             ImGui.Spacing();
             ImGui.Separator();
             ImGui.Spacing();
@@ -209,7 +212,7 @@ public class ParticleBrowser
                 displayedName = $"{displayedName} {{ {tagString} }}";
             }
 
-            if (Utils.IsParticleSearchFilterMatch(_searchInput, refID, refName, refTagList))
+            if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList, false, true))
             {
                 if (ImGui.Selectable(displayedName))
                 {

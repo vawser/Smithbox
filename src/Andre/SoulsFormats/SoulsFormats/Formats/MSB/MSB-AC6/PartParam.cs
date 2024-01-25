@@ -2969,9 +2969,10 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates an Asset with default values.
                 /// </summary>
-                public Asset(int _version) : base("AEGxxx_xxx_xxxx")
+                public Asset() : base("AEGxxx_xxx_xxxx")
                 {
-                    version = _version;
+                    version = 52;
+
                     UnkStruct50 = new UnkStruct50();
                     UnkStruct58 = new UnkStruct58();
                     UnkStruct70 = new UnkStruct70();

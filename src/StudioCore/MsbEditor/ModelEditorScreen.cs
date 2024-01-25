@@ -18,6 +18,7 @@ using Microsoft.Extensions.Logging;
 using System.IO;
 using SoulsFormats;
 using StudioCore.Aliases;
+using StudioCore.Browsers;
 
 namespace StudioCore.MsbEditor;
 

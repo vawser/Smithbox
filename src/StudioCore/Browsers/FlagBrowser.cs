@@ -158,6 +158,9 @@ public class FlagBrowser
             ImGui.BeginChild("FlagListSearch");
             ImGui.InputText($"Search", ref _searchInput, 255);
 
+            ImGui.SameLine();
+            Utils.ShowHelpMarker("Separate terms are split via the + character.");
+
             ImGui.Spacing();
             ImGui.Separator();
             ImGui.Spacing();
@@ -217,7 +220,7 @@ public class FlagBrowser
                 displayedName = $"{displayedName} {{ {tagString} }}";
             }
 
-            if (Utils.IsFlagSearchFilterMatch(_searchInput, refID, refName, refTagList))
+            if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList))
             {
                 if (ImGui.Selectable(displayedName))
                 {

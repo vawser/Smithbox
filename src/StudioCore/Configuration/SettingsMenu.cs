@@ -332,6 +332,14 @@ public class SettingsMenu
                             ImGui.Separator();
                         }
 
+                        ImGui.InputText($"Search", ref _searchInput, 255);
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Separate terms are split via the + character.");
+
+                        ImGui.Spacing();
+                        ImGui.Separator();
+                        ImGui.Spacing();
+
                         DisplayMapAliasSelectionList(_mapAliasBank.AliasNames.GetEntries("Maps"));
                     }
                 }
@@ -386,7 +394,7 @@ public class SettingsMenu
                 displayedName = $"{displayedName} {{ {tagString} }}";
             }
 
-            if (Utils.IsMapSearchFilterMatch(_searchInput, refID, refName, refTagList))
+            if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList))
             {
                 if (ImGui.Selectable(displayedName))
                 {

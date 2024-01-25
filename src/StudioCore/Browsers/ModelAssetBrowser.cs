@@ -12,7 +12,7 @@ using StudioCore.Settings;
 using StudioCore.Utilities;
 using Veldrid;
 
-namespace StudioCore.MsbEditor
+namespace StudioCore.Browsers
 {
     public interface AssetBrowserEventHandler
     {
@@ -74,14 +74,12 @@ namespace StudioCore.MsbEditor
 
                 List<string> mapList = _assetLocator.GetFullMapList();
 
-                foreach (string mapId in mapList)
+                foreach (var mapId in mapList)
                 {
                     var assetMapId = _assetLocator.GetAssetMapID(mapId);
 
                     if (!_mapModelNameCache.ContainsKey(assetMapId))
-                    {
                         _mapModelNameCache.Add(assetMapId, null);
-                    }
                 }
             }
         }
@@ -111,6 +109,9 @@ namespace StudioCore.MsbEditor
                 ImGui.BeginChild("AssetListSearch");
                 ImGui.InputText($"Search", ref _searchStrInput, 255);
 
+                ImGui.SameLine();
+                Utils.ShowHelpMarker("Separate terms are split via the + character.");
+
                 ImGui.Spacing();
                 ImGui.Separator();
                 ImGui.Spacing();
@@ -135,7 +136,7 @@ namespace StudioCore.MsbEditor
         }
         private void DisplayAssetTypeSelectionList()
         {
-            string objLabel = "Obj";
+            var objLabel = "Obj";
 
             if (_assetLocator.Type is GameType.EldenRing or GameType.ArmoredCoreVI)
                 objLabel = "AEG";
@@ -161,15 +162,11 @@ namespace StudioCore.MsbEditor
 
             foreach (var mapId in _mapModelNameCache.Keys)
             {
-                string labelName = mapId;
+                var labelName = mapId;
 
                 if (_mapAliasBank.MapNames != null)
-                {
                     if (_mapAliasBank.MapNames.ContainsKey(mapId))
-                    {
                         labelName = labelName + $" <{_mapAliasBank.MapNames[mapId]}>";
-                    }
-                }
 
                 if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                 {
@@ -178,9 +175,7 @@ namespace StudioCore.MsbEditor
                         var modelList = _assetLocator.GetMapModels(mapId);
                         var cache = new List<string>();
                         foreach (var model in modelList)
-                        {
                             cache.Add(model.AssetName);
-                        }
                         _mapModelNameCache[mapId] = cache;
                     }
 
@@ -195,13 +190,11 @@ namespace StudioCore.MsbEditor
         /// </summary>
         private void DisplayAssetSelectionList(string assetType, List<AliasReference> referenceList)
         {
-            Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
+            var referenceDict = new Dictionary<string, AliasReference>();
 
             foreach (AliasReference v in referenceList)
-            {
                 if (!referenceDict.ContainsKey(v.id))
                     referenceDict.Add(v.id, v);
-            }
 
             if (_selectedAssetType == assetType)
             {
@@ -225,7 +218,7 @@ namespace StudioCore.MsbEditor
 
                         if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                         {
-                            string tagString = string.Join(" ", referenceDict[lowerName].tags);
+                            var tagString = string.Join(" ", referenceDict[lowerName].tags);
                             displayedName = $"{displayedName} {{ {tagString} }}";
                         }
 
@@ -234,7 +227,7 @@ namespace StudioCore.MsbEditor
                         refTagList = referenceDict[lowerName].tags;
                     }
 
-                    if (Utils.IsAssetSearchFilterMatch(_searchStrInput, lowerName, refName, refTagList))
+                    if (SearchFilters.IsSearchMatch(_searchStrInput, lowerName, refName, refTagList, true))
                     {
                         if (ImGui.Selectable(displayedName))
                         {
@@ -245,21 +238,16 @@ namespace StudioCore.MsbEditor
 
                             if (refTagList.Count > 0)
                             {
-                                string tagStr = refTagList[0];
-                                foreach (string entry in refTagList.Skip(1))
-                                {
+                                var tagStr = refTagList[0];
+                                foreach (var entry in refTagList.Skip(1))
                                     tagStr = $"{tagStr},{entry}";
-                                }
                                 _refUpdateTags = tagStr;
                             }
                             else
-                            {
                                 _refUpdateTags = "";
-                            }
                         }
 
                         if (_selectedName == refID)
-                        {
                             if (ImGui.BeginPopupContextItem($"{refID}##context"))
                             {
                                 if (ImGui.InputText($"Name", ref _refUpdateName, 255))
@@ -289,22 +277,15 @@ namespace StudioCore.MsbEditor
 
                                 ImGui.EndPopup();
                             }
-                        }
 
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                         {
                             if (_selectedAssetType == "Chr")
-                            {
                                 _handler.OnInstantiateChr(name);
-                            }
                             if (_selectedAssetType == "Obj")
-                            {
                                 _handler.OnInstantiateObj(name);
-                            }
                             if (_selectedAssetType == "Part")
-                            {
                                 _handler.OnInstantiateParts(name);
-                            }
                         }
                     }
                 }
@@ -316,16 +297,13 @@ namespace StudioCore.MsbEditor
         /// </summary>
         private void DisplayMapAssetSelectionList(string assetType, List<AliasReference> referenceList)
         {
-            Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
+            var referenceDict = new Dictionary<string, AliasReference>();
 
             foreach (AliasReference v in referenceList)
-            {
                 if (!referenceDict.ContainsKey(v.id))
                     referenceDict.Add(v.id, v);
-            }
 
             if (_selectedAssetType == assetType)
-            {
                 if (_mapModelNameCache.ContainsKey(_selectedAssetMapId))
                 {
                     if (_searchStrInput != _searchStrInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
@@ -334,9 +312,9 @@ namespace StudioCore.MsbEditor
                         _selectedAssetTypeCache = _selectedAssetType;
                         _selectedAssetMapIdCache = _selectedAssetMapId;
                     }
-                    foreach (string name in _mapModelNameCache[_selectedAssetMapId])
+                    foreach (var name in _mapModelNameCache[_selectedAssetMapId])
                     {
-                        string modelName = name.Replace($"{_selectedAssetMapId}_", "m");
+                        var modelName = name.Replace($"{_selectedAssetMapId}_", "m");
 
                         var displayedName = $"{modelName}";
                         var lowerName = name.ToLower();
@@ -347,9 +325,7 @@ namespace StudioCore.MsbEditor
 
                         // Adjust the name to remove the A{mapId} section.
                         if (_assetLocator.Type == GameType.DarkSoulsPTDE || _assetLocator.Type == GameType.DarkSoulsRemastered)
-                        {
                             displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
-                        }
 
                         if (referenceDict.ContainsKey(lowerName))
                         {
@@ -357,7 +333,7 @@ namespace StudioCore.MsbEditor
 
                             if (CFG.Current.AssetBrowser_ShowTagsInBrowser)
                             {
-                                string tagString = string.Join(" ", referenceDict[lowerName].tags);
+                                var tagString = string.Join(" ", referenceDict[lowerName].tags);
                                 displayedName = $"{displayedName} {{ {tagString} }}";
                             }
 
@@ -366,7 +342,7 @@ namespace StudioCore.MsbEditor
                             refTagList = referenceDict[lowerName].tags;
                         }
 
-                        if (Utils.IsAssetSearchFilterMatch(_searchStrInput, lowerName, refName, refTagList))
+                        if (SearchFilters.IsSearchMatch(_searchStrInput, lowerName, refName, refTagList, true))
                         {
                             if (ImGui.Selectable(displayedName))
                             {
@@ -377,21 +353,16 @@ namespace StudioCore.MsbEditor
 
                                 if (refTagList.Count > 0)
                                 {
-                                    string tagStr = refTagList[0];
-                                    foreach (string entry in refTagList.Skip(1))
-                                    {
+                                    var tagStr = refTagList[0];
+                                    foreach (var entry in refTagList.Skip(1))
                                         tagStr = $"{tagStr},{entry}";
-                                    }
                                     _refUpdateTags = tagStr;
                                 }
                                 else
-                                {
                                     _refUpdateTags = "";
-                                }
                             }
 
                             if (_selectedName == refID)
-                            {
                                 if (ImGui.BeginPopupContextItem($"{refID}##context"))
                                 {
                                     if (ImGui.InputText($"Name", ref _refUpdateName, 255))
@@ -421,16 +392,12 @@ namespace StudioCore.MsbEditor
 
                                     ImGui.EndPopup();
                                 }
-                            }
 
                             if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-                            {
                                 _handler.OnInstantiateMapPiece(_selectedAssetMapId, name);
-                            }
                         }
                     }
                 }
-            }
         }
     }
 }

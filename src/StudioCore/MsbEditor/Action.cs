@@ -531,9 +531,12 @@ public class CloneMapObjectsAction : Action
         if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
             return;
 
+        if (AssetLocator.Type == GameType.ArmoredCoreVI)
+            return;
+
         if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
         {
-            if(AssetLocator.Type == GameType.EldenRing || AssetLocator.Type == GameType.ArmoredCoreVI)
+            if(AssetLocator.Type == GameType.EldenRing)
             {
                 uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
@@ -1788,9 +1791,12 @@ public class ReplicateMapObjectsAction : Action
         if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
             return;
 
+        if (AssetLocator.Type == GameType.ArmoredCoreVI)
+            return;
+
         if (CFG.Current.Replicator_Increment_Entity_ID)
         {
-            if (AssetLocator.Type == GameType.EldenRing || AssetLocator.Type == GameType.ArmoredCoreVI)
+            if (AssetLocator.Type == GameType.EldenRing)
             {
                 uint originalID = (uint)sel.GetPropertyValue("EntityID");
                 sel.SetPropertyValue("EntityID", (uint)0);

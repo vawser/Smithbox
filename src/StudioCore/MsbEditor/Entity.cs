@@ -454,8 +454,6 @@ public class Entity : ISelectable, IDisposable
             return;
         }
 
-        // DS2 is not supported here
-
         PropertyInfo p = WrappedObject.GetType()
             .GetProperty(prop, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
         if (p != null)

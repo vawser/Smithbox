@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Aliases;
+using StudioCore.Browsers;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Gui;
@@ -64,7 +65,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     public ActionManager EditorActionManager = new();
 
     public DisplayGroupsEditor DispGroupEditor;
-    public MsbAssetBrowser AssetBrowser;
+    public MapAssetBrowser AssetBrowser;
     public MsbToolbar Toolbar;
 
     private bool GCNeedsCollection;
@@ -119,7 +120,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
-        AssetBrowser = new MsbAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, _modelAliasBank, _mapAliasBank);
+        AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, _modelAliasBank, _mapAliasBank);
         Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, AssetLocator, this, Viewport);
 
         EditorActionManager.AddEventHandler(SceneTree);

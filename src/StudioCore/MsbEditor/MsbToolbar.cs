@@ -377,7 +377,7 @@ namespace StudioCore.MsbEditor
                     ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Core_Duplicate.HintText)}");
                     ImGui.Separator();
 
-                    if (_assetLocator.Type != GameType.DarkSoulsIISOTFS)
+                    if (_assetLocator.Type != GameType.DarkSoulsIISOTFS && _assetLocator.Type != GameType.ArmoredCoreVI)
                     {
                         ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID);
 
@@ -1213,7 +1213,7 @@ namespace StudioCore.MsbEditor
                         Utils.ShowHelpMarker("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
                     }
 
-                    if (_assetLocator.Type != GameType.DarkSoulsIISOTFS)
+                    if (_assetLocator.Type != GameType.DarkSoulsIISOTFS && _assetLocator.Type != GameType.ArmoredCoreVI)
                     {
                         ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID);
 

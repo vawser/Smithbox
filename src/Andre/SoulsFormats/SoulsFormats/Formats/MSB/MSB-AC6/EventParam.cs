@@ -1568,7 +1568,7 @@ namespace SoulsFormats
             public class PatrolRoute : Event
             {
                 private protected override EventType Type => EventType.PatrolRoute;
-                private protected override bool HasTypeData => true;
+                private protected override bool HasTypeData => false;
 
                 public byte[] Bytes { get; set; }
 
