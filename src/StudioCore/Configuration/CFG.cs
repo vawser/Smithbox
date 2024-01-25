@@ -208,6 +208,8 @@ public class CFG
     public bool Toolbar_Rotate_X = true;
     public bool Toolbar_Rotate_Y = false;
     public bool Toolbar_Rotate_Y_Pivot = false;
+    public bool Toolbar_Fixed_Rotate = false;
+    public Vector3 Toolbar_Rotate_FixedAngle = new Vector3(0, 0, 0);
 
     public bool Toolbar_Move_to_Camera_Offset_Specific_Input = false;
     public float Toolbar_Move_to_Camera_Offset = 3.0f;

@@ -473,7 +473,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 if (ImGui.MenuItem("Reset Rotation", KeyBindings.Current.Toolbar_Reset_Rotation.HintText, false,
                         _selection.IsSelection()))
                 {
-                    Toolbar.ResetRotationSelection();
+                    Toolbar.SetSelectionToFixedRotation();
                 }
 
                 if (ImGui.MenuItem("Rotate: X",
@@ -1032,6 +1032,11 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_Y_Pivot))
             {
                 Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
+            }
+
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Reset_Rotation))
+            {
+                Toolbar.SetSelectionToFixedRotation();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Dummify) && _selection.IsSelection())

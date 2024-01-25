@@ -33,7 +33,6 @@ namespace StudioCore.MsbEditor
         Selection_GoToInObjectList,
         Selection_MoveToCamera,
         Selection_FrameInViewport,
-        Selection_ResetRotation,
         Selection_Duplicate,
         Selection_Rotate,
         Selection_Dummify,
@@ -164,17 +163,10 @@ namespace StudioCore.MsbEditor
                         {
                             ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
                         }
-                    }
-                }
-
-                // Reset Rotation
-                if (ImGui.Selectable("Reset Rotation to Default##tool_Selection_ResetRotation", false, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    _selectedTool = SelectedTool.Selection_ResetRotation;
-
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        ResetRotationSelection();
+                        if (CFG.Current.Toolbar_Fixed_Rotate)
+                        {
+                            SetSelectionToFixedRotation();
+                        }
                     }
                 }
 
@@ -405,15 +397,6 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
-                // Reset Rotation
-                if (_selectedTool == SelectedTool.Selection_ResetRotation)
-                {
-                    ImGui.Text("Reset the rotation of the current selection to <0, 0, 0>.");
-                    ImGui.Separator();
-                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Reset_Rotation.HintText)}");
-                    ImGui.Separator();
-                }
-
                 // Rotate
                 if (_selectedTool == SelectedTool.Selection_Rotate)
                 {
@@ -422,6 +405,7 @@ namespace StudioCore.MsbEditor
                     ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_X.HintText)} for Rotate X");
                     ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_Y.HintText)} for Rotate Y");
                     ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_Y_Pivot.HintText)} for Rotate Pivot Y");
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Toolbar_Reset_Rotation.HintText)} for Fixed Rotation");
                     ImGui.Separator();
 
                     var rot = CFG.Current.Toolbar_Rotate_Increment;
@@ -430,6 +414,7 @@ namespace StudioCore.MsbEditor
                     {
                         CFG.Current.Toolbar_Rotate_Y = false;
                         CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                        CFG.Current.Toolbar_Fixed_Rotate = false;
                     }
                     if (CFG.Current.System_Show_UI_Tooltips)
                     {
@@ -441,6 +426,7 @@ namespace StudioCore.MsbEditor
                     {
                         CFG.Current.Toolbar_Rotate_X = false;
                         CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                        CFG.Current.Toolbar_Fixed_Rotate = false;
                     }
                     if (CFG.Current.System_Show_UI_Tooltips)
                     {
@@ -452,11 +438,24 @@ namespace StudioCore.MsbEditor
                     {
                         CFG.Current.Toolbar_Rotate_Y = false;
                         CFG.Current.Toolbar_Rotate_X = false;
+                        CFG.Current.Toolbar_Fixed_Rotate = false;
                     }
                     if (CFG.Current.System_Show_UI_Tooltips)
                     {
                         ImGui.SameLine();
                         Utils.ShowHelpMarker("Set the rotation axis to Y and pivot with respect to others within the selection.");
+                    }
+                    ImGui.SameLine();
+                    if (ImGui.Checkbox("Fixed Rotation", ref CFG.Current.Toolbar_Fixed_Rotate))
+                    {
+                        CFG.Current.Toolbar_Rotate_Y = false;
+                        CFG.Current.Toolbar_Rotate_X = false;
+                        CFG.Current.Toolbar_Rotate_Y_Pivot = false;
+                    }
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the rotation axis to specified values below.");
                     }
 
                     if (ImGui.Button("Switch"))
@@ -482,6 +481,47 @@ namespace StudioCore.MsbEditor
                         ImGui.SameLine();
                         Utils.ShowHelpMarker("Set the angle increment amount used by the rotation.");
                     }
+
+                    var x = CFG.Current.Toolbar_Rotate_FixedAngle[0];
+                    var y = CFG.Current.Toolbar_Rotate_FixedAngle[1];
+                    var z = CFG.Current.Toolbar_Rotate_FixedAngle[2];
+
+                    ImGui.Text("Fixed Rotation");
+                    ImGui.PushItemWidth(100);
+                    if (ImGui.InputFloat("X##fixedRotationX", ref x))
+                    {
+                        x = Math.Clamp(x, -360f, 360f);
+                    }
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the X component of the fixed rotation action.");
+                    }
+                    ImGui.SameLine();
+                    ImGui.PushItemWidth(100);
+                    if (ImGui.InputFloat("Y##fixedRotationX", ref y))
+                    {
+                        y = Math.Clamp(y, -360f, 360f);
+                    }
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the Y component of the fixed rotation action.");
+                    }
+                    ImGui.SameLine();
+                    ImGui.PushItemWidth(100);
+                    if (ImGui.InputFloat("Z##fixedRotationZ", ref z))
+                    {
+                        z = Math.Clamp(z, -360f, 360f);
+                    }
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("Set the Z component of the fixed rotation action.");
+                    }
+                    ImGui.SameLine();
+
+                    CFG.Current.Toolbar_Rotate_FixedAngle = new Vector3(x, y, z);
                 }
 
                 // Dummify
@@ -1485,9 +1525,9 @@ namespace StudioCore.MsbEditor
         }
 
         /// <summary>
-        /// Tool: Reset current selection to 0, 0, 0 rotation.
+        /// Set current selection to fixed rotation.
         /// </summary>
-        public void ResetRotationSelection()
+        public void SetSelectionToFixedRotation()
         {
             List<Action> actlist = new();
 
@@ -1495,11 +1535,7 @@ namespace StudioCore.MsbEditor
             foreach (Entity s in selected)
             {
                 Vector3 pos = s.GetLocalTransform().Position;
-                var rot_x = 0;
-                var rot_y = 0;
-                var rot_z = 0;
-
-                Transform newRot = new(pos, new Vector3(rot_x, rot_y, rot_z));
+                Transform newRot = new(pos, CFG.Current.Toolbar_Rotate_FixedAngle);
 
                 actlist.Add(s.GetUpdateTransformAction(newRot));
             }
