@@ -415,96 +415,6 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("Dummify/Un-Dummify"))
-            {
-                if (ImGui.MenuItem("Dummify Enemies/Objects/Assets", KeyBindings.Current.Toolbar_Dummify.HintText,
-                        false, _selection.IsSelection()))
-                {
-                    Toolbar.DummySelection();
-                }
-
-                if (ImGui.MenuItem("Un-Dummify Enemies/Objects/Assets", KeyBindings.Current.Toolbar_Undummify.HintText,
-                        false, _selection.IsSelection()))
-                {
-                    Toolbar.UnDummySelection();
-                }
-
-                //ImGui.TextColored(new Vector4(1f, .4f, 0f, 1f), "Warning: Converting Assets to Dummy Assets will result in lost property data (Undo will properly restore data)");
-                ImGui.EndMenu();
-            }
-
-            ImGui.Separator(); // Visual options goes below here
-
-            if (ImGui.BeginMenu("Hide/Unhide"))
-            {
-                if (ImGui.MenuItem("Hide/Unhide", KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Flip.HintText, false,
-                        _selection.IsSelection()))
-                {
-                    Toolbar.ForceVisibilityState(false, false, true);
-                    Toolbar.ToggleEntityVisibility();
-                }
-
-                ObjectContainer loadedMap = Universe.LoadedObjectContainers.Values.FirstOrDefault(x => x != null);
-                if (ImGui.MenuItem("Unhide All", KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Flip.HintText, false,
-                        loadedMap != null))
-                {
-                    Toolbar.ForceVisibilityState(true, false, false);
-                    Toolbar.ToggleEntityVisibility();
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.MenuItem("Frame in Viewport", KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport.HintText, false,
-                    _selection.IsSelection()))
-            {
-                Toolbar.FrameSelection();
-            }
-
-            if (ImGui.MenuItem("Goto in Object List", KeyBindings.Current.Toolbar_Go_to_Selection_in_Object_List.HintText,
-                    false, _selection.IsSelection()))
-            {
-                Toolbar.GoToInObjectList();
-            }
-
-            ImGui.Separator();
-
-            if (ImGui.BeginMenu("Manipulate Selection"))
-            {
-                if (ImGui.MenuItem("Reset Rotation", KeyBindings.Current.Toolbar_Reset_Rotation.HintText, false,
-                        _selection.IsSelection()))
-                {
-                    Toolbar.SetSelectionToFixedRotation();
-                }
-
-                if (ImGui.MenuItem("Rotate: X",
-                        KeyBindings.Current.Toolbar_Rotate_X.HintText, false, _selection.IsSelection()))
-                {
-                    Toolbar.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
-                }
-
-                if (ImGui.MenuItem("Rotate: Y",
-                        KeyBindings.Current.Toolbar_Rotate_Y.HintText, false, _selection.IsSelection()))
-                {
-                    Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
-                }
-
-                if (ImGui.MenuItem("Rotate: Pivot Y",
-                        KeyBindings.Current.Toolbar_Rotate_Y_Pivot.HintText, false,
-                        _selection.IsSelection()))
-                {
-                    Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
-                }
-
-                if (ImGui.MenuItem("Move Selection to Camera",
-                        KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText, false, _selection.IsSelection()))
-                {
-                    Toolbar.MoveSelectionToCamera();
-                }
-
-                ImGui.EndMenu();
-            }
-
             ImGui.EndMenu();
         }
 
@@ -1042,12 +952,18 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Dummify) && _selection.IsSelection())
             {
-                Toolbar.UnDummySelection();
+                if(CFG.Current.Toolbar_Presence_Dummy_Type_ER)
+                    Toolbar.ER_UnDummySelection();
+                else
+                    Toolbar.UnDummySelection();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Undummify) && _selection.IsSelection())
             {
-                Toolbar.DummySelection();
+                if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
+                    Toolbar.ER_DummySelection();
+                else
+                    Toolbar.DummySelection();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Move_Selection_to_Camera) && _selection.IsSelection())

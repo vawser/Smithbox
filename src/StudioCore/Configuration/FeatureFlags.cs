@@ -22,5 +22,5 @@ public static class FeatureFlags
     public static bool EnablePartialParam = false;
 
     public static bool AC6_MSB = true;
-    public static bool AC6_MSB_Saving = true;
+    public static bool AC6_MSB_Saving = false; // Saving is not byte-perfect, so this must be disabled for releases
 }

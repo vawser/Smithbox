@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Aliases;
 using StudioCore.Help;
+using StudioCore.Interface;
 using StudioCore.JSON;
 using StudioCore.Platform;
 using StudioCore.Settings;
@@ -87,41 +88,22 @@ public class FlagBrowser
             }
 
             ImGui.SameLine();
-            if (CFG.Current.System_Show_UI_Tooltips)
-            {
-                Utils.ShowHelpMarker("When enabled the Browser List will display the tags next to the name.");
-                ImGui.SameLine();
-            }
+            ImguiUtils.ShowHelpMarker("When enabled the Browser List will display the tags next to the name.");
             ImGui.Checkbox("Show Tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
 
             if (CFG.Current.EventFlagBrowser_ShowAliasAddition)
             {
                 ImGui.Separator();
 
-                if (CFG.Current.System_Show_UI_Tooltips)
-                {
-                    Utils.ShowHelpMarker("The numeric ID of the alias to add.");
-                    ImGui.SameLine();
-                }
                 ImGui.InputText($"ID", ref _newRefId, 255);
-                if (CFG.Current.System_Show_UI_Tooltips)
-                {
-                    Utils.ShowHelpMarker("The name of the alias to add.");
-                    ImGui.SameLine();
-                }
-                ImGui.InputText($"Name", ref _newRefName, 255);
-                if (CFG.Current.System_Show_UI_Tooltips)
-                {
-                    Utils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
-                    ImGui.SameLine();
-                }
-                ImGui.InputText($"Tags", ref _newRefTags, 255);
+                ImguiUtils.ShowHelpMarker("The numeric ID of the alias to add.");
 
-                if (CFG.Current.System_Show_UI_Tooltips)
-                {
-                    Utils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
-                    ImGui.SameLine();
-                }
+                ImGui.InputText($"Name", ref _newRefName, 255);
+                ImguiUtils.ShowHelpMarker("The name of the alias to add.");
+
+                ImGui.InputText($"Tags", ref _newRefTags, 255);
+                ImguiUtils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
+
                 if (ImGui.Button("Add New Alias"))
                 {
                     // Make sure the ref ID is a number
@@ -149,6 +131,7 @@ public class FlagBrowser
                         }
                     }
                 }
+                ImguiUtils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
 
                 ImGui.Separator();
             }
@@ -159,7 +142,7 @@ public class FlagBrowser
             ImGui.InputText($"Search", ref _searchInput, 255);
 
             ImGui.SameLine();
-            Utils.ShowHelpMarker("Separate terms are split via the + character.");
+            ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
 
             ImGui.Spacing();
             ImGui.Separator();

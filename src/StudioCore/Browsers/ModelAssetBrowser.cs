@@ -7,6 +7,7 @@ using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using SoulsFormats.KF4;
 using StudioCore.Aliases;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Settings;
 using StudioCore.Utilities;
@@ -110,7 +111,7 @@ namespace StudioCore.Browsers
                 ImGui.InputText($"Search", ref _searchStrInput, 255);
 
                 ImGui.SameLine();
-                Utils.ShowHelpMarker("Separate terms are split via the + character.");
+                ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
 
                 ImGui.Spacing();
                 ImGui.Separator();

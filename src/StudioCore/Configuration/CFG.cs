@@ -196,14 +196,31 @@ public class CFG
     public bool MapAliases_ShowTagsInBrowser = true;
     public bool MapAliases_ShowAliasAddition = false;
 
-    // Toolbar: Controls
-    public bool Toolbar_ShowControlsMenu = true;
+
+    // Settings: Toolbar
+    public bool Toolbar_Show_Create = true;
+    public bool Toolbar_Show_Patrol_Rendering = true;
+
+    public bool Toolbar_Show_Go_to_in_Object_List = true;
+    public bool Toolbar_Show_Move_to_Camera = true;
+    public bool Toolbar_Show_Frame_in_Viewport = true;
+    public bool Toolbar_Show_Toggle_Visibility = true;
+    public bool Toolbar_Show_Duplicate = true;
+    public bool Toolbar_Show_Rotate = true;
+    public bool Toolbar_Show_Toggle_Presence = true;
+    public bool Toolbar_Show_Scramble = true;
+    public bool Toolbar_Show_Replicate = true;
+    public bool Toolbar_Show_Move_to_Grid = true;
 
     // Toolbar: General
     public bool Toolbar_ShowToolsMenu = false;
 
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
     public bool Toolbar_Duplicate_Increment_UnkPartNames = false;
+
+    public bool Toolbar_Presence_Dummy_Type_ER = false;
+    public bool Toolbar_Presence_Dummify = true;
+    public bool Toolbar_Presence_Undummify = false;
 
     public bool Toolbar_Rotate_X = true;
     public bool Toolbar_Rotate_Y = false;

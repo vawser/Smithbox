@@ -22,6 +22,7 @@ using SoulsFormats;
 using StudioCore.Platform;
 using StudioCore.MsbEditor;
 using Action = StudioCore.MsbEditor.Action;
+using StudioCore.Interface;
 
 namespace StudioCore.Browsers;
 
@@ -114,7 +115,7 @@ public class MapAssetBrowser
             ImGui.InputText($"Search", ref _searchInput, 255);
 
             ImGui.SameLine();
-            Utils.ShowHelpMarker("Separate terms are split via the + character.");
+            ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
 
             ImGui.Spacing();
             ImGui.Separator();

@@ -1099,19 +1099,4 @@ public static class Utils
 
         return vec;
     }
-
-    
-
-    public static void ShowHelpMarker(string desc)
-    {
-        ImGui.TextDisabled("(?)");
-        if (ImGui.IsItemHovered())
-        {
-            ImGui.BeginTooltip();
-            ImGui.PushTextWrapPos(450.0f);
-            ImGui.TextUnformatted(desc);
-            ImGui.PopTextWrapPos();
-            ImGui.EndTooltip();
-        }
-    }
 }
