@@ -34,6 +34,7 @@ namespace StudioCore.MsbEditor
         Selection_MoveToCamera,
         Selection_FrameInViewport,
         Selection_ResetRotation,
+        Selection_Duplicate,
         Selection_Rotate,
         Selection_Dummify,
         Selection_Undummify,
@@ -130,6 +131,17 @@ namespace StudioCore.MsbEditor
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
                         ToggleEntityVisibility();
+                    }
+                }
+
+                // Duplicate
+                if (ImGui.Selectable("Duplicate##tool_Selection_Duplicate", false, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    _selectedTool = SelectedTool.Selection_Duplicate;
+
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        DuplicateSelection();
                     }
                 }
 
@@ -362,6 +374,34 @@ namespace StudioCore.MsbEditor
                     {
                         ImGui.SameLine();
                         Utils.ShowHelpMarker("Set the target selection visible state to opposite of its current state.");
+                    }
+                }
+
+                // Duplicate
+                if (_selectedTool == SelectedTool.Selection_Duplicate)
+                {
+                    ImGui.Text("Duplicate the current selection.");
+                    ImGui.Separator();
+                    ImGui.Text($"Shortcut: {GetKeybindHint(KeyBindings.Current.Core_Duplicate.HintText)}");
+                    ImGui.Separator();
+
+                    ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID);
+
+                    if (CFG.Current.System_Show_UI_Tooltips)
+                    {
+                        ImGui.SameLine();
+                        Utils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Entity ID.");
+                    }
+
+                    if (_assetLocator.Type == GameType.EldenRing)
+                    {
+                        ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
+
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
+                        }
                     }
                 }
 
@@ -1135,7 +1175,18 @@ namespace StudioCore.MsbEditor
                     if (CFG.Current.System_Show_UI_Tooltips)
                     {
                         ImGui.SameLine();
-                        Utils.ShowHelpMarker("When enabled, the replicated entities will be given new and unique Entity IDs. Otherwise, the replicated entity ID will be set to 0.");
+                        Utils.ShowHelpMarker("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
+                    }
+
+                    if (_assetLocator.Type == GameType.EldenRing)
+                    {
+                        ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Replicator_Increment_UnkPartNames);
+
+                        if (CFG.Current.System_Show_UI_Tooltips)
+                        {
+                            ImGui.SameLine();
+                            Utils.ShowHelpMarker("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
+                        }
                     }
                 }
 
@@ -1151,6 +1202,16 @@ namespace StudioCore.MsbEditor
                 return "None";
             else
                 return hint;
+        }
+
+        /// <summary>
+        /// Duplicate the current selection
+        /// </summary>
+        public void DuplicateSelection()
+        {
+            CloneMapObjectsAction action = new(_universe, _scene,
+                    _selection.GetFilteredSelection<MapEntity>().ToList(), true, _assetLocator);
+            _actionManager.ExecuteAction(action);
         }
 
         /// <summary>

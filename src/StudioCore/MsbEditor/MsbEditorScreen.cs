@@ -404,7 +404,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                     _selection.IsSelection()))
             {
                 CloneMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
+                    _selection.GetFilteredSelection<MapEntity>().ToList(), true, AssetLocator);
                 EditorActionManager.ExecuteAction(action);
             }
 
@@ -927,7 +927,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _selection.IsSelection())
             {
                 CloneMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
+                    _selection.GetFilteredSelection<MapEntity>().ToList(), true, AssetLocator);
                 EditorActionManager.ExecuteAction(action);
             }
 
@@ -1367,7 +1367,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         {
             Entity? targetParent = _dupeSelectionTargetedParent.Item2;
 
-            CloneMapObjectsAction action = new(Universe, RenderScene, sel, true, targetMap, targetParent);
+            CloneMapObjectsAction action = new(Universe, RenderScene, sel, true, AssetLocator, targetMap, targetParent);
             EditorActionManager.ExecuteAction(action);
             _dupeSelectionTargetedMap = ("None", null);
             _dupeSelectionTargetedParent = ("None", null);

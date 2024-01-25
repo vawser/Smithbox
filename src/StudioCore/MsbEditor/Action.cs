@@ -338,9 +338,10 @@ public class CloneMapObjectsAction : Action
     private readonly Map TargetMap;
     private readonly Universe Universe;
     private RenderScene Scene;
+    private AssetLocator AssetLocator;
 
     public CloneMapObjectsAction(Universe univ, RenderScene scene, List<MapEntity> objects, bool setSelection,
-        Map targetMap = null, Entity targetBTL = null)
+        AssetLocator assetLocator, Map targetMap = null, Entity targetBTL = null)
     {
         Universe = univ;
         Scene = scene;
@@ -348,6 +349,7 @@ public class CloneMapObjectsAction : Action
         SetSelection = setSelection;
         TargetMap = targetMap;
         TargetBTL = targetBTL;
+        AssetLocator = assetLocator;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -485,6 +487,9 @@ public class CloneMapObjectsAction : Action
                     Clonables[i].Parent.AddChild(newobj, idx + 1);
                 }
 
+                ChangeEntityID(newobj, m);
+                ChangePartNames(newobj, m);
+
                 newobj.UpdateRenderModel();
                 if (newobj.RenderSceneMesh != null)
                 {
@@ -518,6 +523,131 @@ public class CloneMapObjectsAction : Action
         }
 
         return ActionEvent.ObjectAddedRemoved;
+    }
+
+    public void ChangeEntityID(MapEntity sel, Map map)
+    {
+        if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
+        {
+            var originalID = sel.GetPropertyValue("EntityID");
+
+            HashSet<uint> vals = new();
+
+            // Get currently used Entity IDs
+            foreach (var e in map?.Objects)
+            {
+                var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                if (val == null)
+                    continue;
+
+                uint entUint;
+                if (val is int entInt)
+                    entUint = (uint)entInt;
+                else
+                    entUint = (uint)val;
+
+                if (entUint == 0 || entUint == uint.MaxValue)
+                    continue;
+
+                vals.Add(entUint);
+            }
+
+            // Build set of all 'valid' Entity IDs
+            var mapIdParts = map.Name.Replace("m", "").Split("_"); // m10_00_00_00
+
+            uint minId = 0;
+            uint maxId = 9999;
+
+            // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
+            if (AssetLocator.Type != GameType.ArmoredCoreVI)
+            {
+                minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
+                maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
+
+                if (AssetLocator.Type == GameType.EldenRing)
+                {
+                    // Is open-world tile
+                    if (mapIdParts[0] == "60")
+                    {
+                        minId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
+                        maxId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
+                    }
+                }
+            }
+
+            HashSet<uint> baseVals = new HashSet<uint>();
+            for (uint i = minId; i < maxId; i++)
+            {
+                baseVals.Add(i);
+            }
+
+            baseVals.SymmetricExceptWith(vals);
+
+            bool hasMatch = false;
+            uint newID = 0;
+
+            // Prefer IDs after the original ID first
+            foreach (var entry in baseVals)
+            {
+                if (!hasMatch)
+                {
+                    if (entry > (uint)originalID)
+                    {
+                        newID = entry;
+                        hasMatch = true;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            // No match in preferred range, get first of possible values.
+            if (!hasMatch)
+            {
+                newID = baseVals.First();
+            }
+
+            sel.SetPropertyValue("EntityID", newID);
+        }
+    }
+
+    public void ChangePartNames(MapEntity sel, Map map)
+    {
+        if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
+        {
+            if (AssetLocator.Type == GameType.EldenRing)
+            {
+                if (sel.WrappedObject is MSBE.Part.Asset)
+                {
+                    string partName = (string)sel.GetPropertyValue("Name");
+                    string modelName = (string)sel.GetPropertyValue("ModelName");
+                    string[] names = (string[])sel.GetPropertyValue("UnkPartNames");
+                    string[] newNames = new string[names.Length];
+
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        var name = names[i];
+
+                        if (name != null)
+                        {
+                            // Name is a AEG reference
+                            if (name.Contains(modelName) && name.Contains("AEG"))
+                            {
+                                TaskLogs.AddLog($"{name}");
+
+                                name = partName;
+                            }
+                        }
+
+                        newNames[i] = name;
+                    }
+
+                    sel.SetPropertyValue("UnkPartNames", newNames);
+                }
+            }
+        }
     }
 
     public override ActionEvent Undo()
@@ -1492,8 +1622,9 @@ public class ReplicateMapObjectsAction : Action
                     ApplyReplicateTransform(newobj, k);
                     ApplyScrambleTransform(newobj);
 
-                    // Apply entity ID changes
+                    // Apply other property changes
                     ChangeEntityID(newobj, m);
+                    ChangePartNames(newobj, m);
 
                     newobj.UpdateRenderModel();
                     if (newobj.RenderSceneMesh != null)
@@ -1522,8 +1653,47 @@ public class ReplicateMapObjectsAction : Action
         return ActionEvent.ObjectAddedRemoved;
     }
 
+    public void ChangePartNames(MapEntity sel, Map map)
+    {
+        if (CFG.Current.Replicator_Increment_UnkPartNames)
+        {
+            if (AssetLocator.Type == GameType.EldenRing)
+            {
+                if (sel.WrappedObject is MSBE.Part.Asset)
+                {
+                    string partName = (string)sel.GetPropertyValue("Name");
+                    string modelName = (string)sel.GetPropertyValue("ModelName");
+                    string[] names = (string[])sel.GetPropertyValue("UnkPartNames");
+                    string[] newNames = new string[names.Length];
+
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        var name = names[i];
+
+                        if (name != null)
+                        {
+                            // Name is a AEG reference
+                            if (name.Contains(modelName) && name.Contains("AEG"))
+                            {
+                                TaskLogs.AddLog($"{name}");
+
+                                name = partName;
+                            }
+                        }
+
+                        newNames[i] = name;
+                    }
+
+                    sel.SetPropertyValue("UnkPartNames", newNames);
+                }
+            }
+        }
+    }
+
     public void ChangeEntityID(MapEntity sel, Map map)
     {
+        var originalID = sel.GetPropertyValue("EntityID");
+
         // Default to 0
         sel.SetPropertyValue("EntityID", (uint)0);
 
@@ -1537,8 +1707,6 @@ public class ReplicateMapObjectsAction : Action
                 var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
                 if (val == null)
                     continue;
-
-                TaskLogs.AddLog($"{e.Name}: {val}");
 
                 uint entUint;
                 if (val is int entInt)
@@ -1561,22 +1729,17 @@ public class ReplicateMapObjectsAction : Action
             // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
             if (AssetLocator.Type != GameType.ArmoredCoreVI)
             {
-                try
-                {
-                    minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
-                }
-                catch (Exception ex)
-                {
-                    TaskLogs.AddLog("Unable to parse map name into minimum entity ID.");
-                }
+                minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
+                maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
 
-                try
+                if (AssetLocator.Type == GameType.EldenRing)
                 {
-                    maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
-                }
-                catch (Exception ex)
-                {
-                    TaskLogs.AddLog("Unable to parse map name into maximum entity ID.");
+                    // Is open-world tile
+                    if(mapIdParts[0] == "60")
+                    {
+                        minId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
+                        maxId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
+                    }
                 }
             }
 
@@ -1588,7 +1751,33 @@ public class ReplicateMapObjectsAction : Action
 
             baseVals.SymmetricExceptWith(vals);
 
-            sel.SetPropertyValue("EntityID", baseVals.First());
+            bool hasMatch = false;
+            uint newID = 0;
+
+            // Prefer IDs after the original ID first
+            foreach(var entry in baseVals)
+            {
+                if (!hasMatch)
+                {
+                    if (entry > (uint)originalID)
+                    {
+                        newID = entry;
+                        hasMatch = true;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            // No match in preferred range, get first of possible values.
+            if(!hasMatch)
+            {
+                newID = baseVals.First();
+            }
+
+            sel.SetPropertyValue("EntityID", newID);
         }
     }
 

@@ -202,6 +202,9 @@ public class CFG
     // Toolbar: General
     public bool Toolbar_ShowToolsMenu = false;
 
+    public bool Toolbar_Duplicate_Increment_Entity_ID = false;
+    public bool Toolbar_Duplicate_Increment_UnkPartNames = false;
+
     public bool Toolbar_Rotate_X = true;
     public bool Toolbar_Rotate_Y = false;
     public bool Toolbar_Rotate_Y_Pivot = false;
@@ -272,6 +275,7 @@ public class CFG
 
     public bool Replicator_Apply_Scramble_Configuration = false;
     public bool Replicator_Increment_Entity_ID = false;
+    public bool Replicator_Increment_UnkPartNames = false;
 
     public bool Replicator_Mode_Line = true;
     public bool Replicator_Mode_Circle = false;
