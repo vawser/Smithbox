@@ -118,7 +118,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, _modelAliasBank, _mapAliasBank);
-        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, AssetLocator, this, Viewport);
+        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, AssetLocator, Viewport);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -399,59 +399,6 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
 
                 ImGui.EndMenu();
-            }
-
-            ImGui.EndMenu();
-        }
-
-        if (ImGui.BeginMenu("Tools"))
-        {
-            var loadedMaps = Universe.LoadedObjectContainers.Values.Where(x => x != null);
-
-            if (ImGui.MenuItem("Check loaded maps for duplicate Entity IDs", loadedMaps.Any()))
-            {
-                HashSet<uint> vals = new();
-                string badVals = "";
-                foreach (var loadedMap in loadedMaps)
-                {
-                    foreach (var e in loadedMap?.Objects)
-                    {
-                        var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                        if (val == null)
-                            continue;
-
-                        uint entUint;
-                        if (val is int entInt)
-                            entUint = (uint)entInt;
-                        else
-                            entUint = (uint)val;
-
-                        if (entUint == 0 || entUint == uint.MaxValue)
-                            continue;
-                        if (!vals.Add(entUint))
-                            badVals += $"   Duplicate entity ID: {entUint}\n";
-                    }
-                }
-                if (badVals != "")
-                {
-                    TaskLogs.AddLog("Duplicate entity IDs found across loaded maps (see logger)", LogLevel.Information, TaskLogs.LogPriority.High);
-                    TaskLogs.AddLog("Duplicate entity IDs found:\n" + badVals[..^1], LogLevel.Information, TaskLogs.LogPriority.Low);
-                }
-                else
-                {
-                    TaskLogs.AddLog("No duplicate entity IDs found", LogLevel.Information, TaskLogs.LogPriority.Normal);
-                }
-            }
-
-            if (AssetLocator.Type is GameType.DemonsSouls or
-                GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered)
-            {
-                if (ImGui.BeginMenu("Regenerate MCP and MCG"))
-                {
-                    GenerateMCGMCP(Universe.LoadedObjectContainers);
-
-                    ImGui.EndMenu();
-                }
             }
 
             ImGui.EndMenu();
@@ -1036,61 +983,5 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         }
     }
 
-    private void GenerateMCGMCP(Dictionary<string, ObjectContainer> orderedMaps)
-    {
-        if (ImGui.BeginCombo("Regenerate MCP and MCG", "Maps"))
-        {
-            HashSet<string> idCache = new();
-            foreach (var map in orderedMaps)
-            {
-                string mapid = map.Key;
-                if (AssetLocator.Type is GameType.DemonsSouls)
-                {
-                    if (mapid != "m03_01_00_99" && !mapid.StartsWith("m99"))
-                    {
-                        var areaId = mapid.Substring(0, 3);
-                        if (idCache.Contains(areaId))
-                            continue;
-                        idCache.Add(areaId);
-
-                        if (ImGui.Selectable($"{areaId}"))
-                        {
-                            List<string> areaDirectories = new List<string>();
-                            foreach (var orderMap in orderedMaps)
-                            {
-                                if (orderMap.Key.StartsWith(areaId) && orderMap.Key != "m03_01_00_99")
-                                {
-                                    areaDirectories.Add(Path.Combine(AssetLocator.GameRootDirectory, "map", orderMap.Key));
-                                }
-                            }
-                            SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, AssetLocator, toBigEndian: true);
-                        }
-                    }
-                    else
-                    {
-                        if (ImGui.Selectable($"{mapid}"))
-                        {
-                            List<string> areaDirectories = new List<string>
-                            {
-                                Path.Combine(AssetLocator.GameRootDirectory, "map", mapid)
-                            };
-                            SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, AssetLocator, toBigEndian: true);
-                        }
-                    }
-                }
-                else if (AssetLocator.Type is GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered)
-                {
-                    if (ImGui.Selectable($"{mapid}"))
-                    {
-                        List<string> areaDirectories = new List<string>
-                        {
-                            Path.Combine(AssetLocator.GameRootDirectory, "map", mapid)
-                        };
-                        SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, AssetLocator, toBigEndian: false);
-                    }
-                }
-            }
-            ImGui.EndCombo();
-        }
-    }
+    
 }

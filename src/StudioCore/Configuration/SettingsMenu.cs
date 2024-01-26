@@ -800,11 +800,14 @@ public class SettingsMenu
         {
             if (ImGui.CollapsingHeader("Global Actions", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Create", ref CFG.Current.Toolbar_Show_Create);
-                ImguiUtils.ShowHelpMarker("If enabled, the Create action will be visible in the map toolbar window.");
+                ImGui.Checkbox("Check Duplicate Entity ID", ref CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID);
+                ImguiUtils.ShowHelpMarker("If enabled, the Check Duplicate Entity ID action will be visible in the map toolbar window.");
 
-                ImGui.Checkbox("Render Patrol Routes", ref CFG.Current.Toolbar_Show_Patrol_Rendering);
-                ImguiUtils.ShowHelpMarker("If enabled, the Render Patrol Routes action will be visible in the map toolbar window.");
+                ImGui.Checkbox("Patrol Routes", ref CFG.Current.Toolbar_Show_Render_Patrol_Routes);
+                ImguiUtils.ShowHelpMarker("If enabled, the Patrol Routes action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Generate Navigation Data", ref CFG.Current.Toolbar_Show_Navigation_Data);
+                ImguiUtils.ShowHelpMarker("If enabled, the Generate Navigation Data action will be visible in the map toolbar window.");
             }
 
             if (ImGui.CollapsingHeader("Map Actions", ImGuiTreeNodeFlags.DefaultOpen))
@@ -820,6 +823,9 @@ public class SettingsMenu
 
                 ImGui.Checkbox("Toggle Visibility", ref CFG.Current.Toolbar_Show_Toggle_Visibility);
                 ImguiUtils.ShowHelpMarker("If enabled, the Toggle Visibility action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Create", ref CFG.Current.Toolbar_Show_Create);
+                ImguiUtils.ShowHelpMarker("If enabled, the Create action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Duplicate", ref CFG.Current.Toolbar_Show_Duplicate);
                 ImguiUtils.ShowHelpMarker("If enabled, the Duplicate action will be visible in the map toolbar window.");

@@ -198,13 +198,15 @@ public class CFG
 
 
     // Settings: Toolbar
-    public bool Toolbar_Show_Create = true;
-    public bool Toolbar_Show_Patrol_Rendering = true;
+    public bool Toolbar_Show_Check_Duplicate_Entity_ID = true;
+    public bool Toolbar_Show_Render_Patrol_Routes = true;
+    public bool Toolbar_Show_Navigation_Data = true;
 
     public bool Toolbar_Show_Go_to_in_Object_List = true;
     public bool Toolbar_Show_Move_to_Camera = true;
     public bool Toolbar_Show_Frame_in_Viewport = true;
     public bool Toolbar_Show_Toggle_Visibility = true;
+    public bool Toolbar_Show_Create = true;
     public bool Toolbar_Show_Duplicate = true;
     public bool Toolbar_Show_Rotate = true;
     public bool Toolbar_Show_Toggle_Presence = true;
@@ -213,8 +215,6 @@ public class CFG
     public bool Toolbar_Show_Move_to_Grid = true;
 
     // Toolbar: General
-    public bool Toolbar_ShowToolsMenu = false;
-
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
     public bool Toolbar_Duplicate_Increment_UnkPartNames = false;
 

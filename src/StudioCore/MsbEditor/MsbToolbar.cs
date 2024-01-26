@@ -33,14 +33,16 @@ namespace StudioCore.MsbEditor
     {
         None,
         // Global
-        Selection_Create,
+        Selection_Duplicate_Entity_ID,
         Selection_Render_Patrol_Routes,
+        Selection_Generate_Navigation_Data,
 
         // Selection
         Selection_Toggle_Visibility,
         Selection_Go_to_in_Object_List,
         Selection_Move_to_Camera,
         Selection_Frame_in_Viewport,
+        Selection_Create,
         Selection_Duplicate,
         Selection_Rotate,
         Selection_Toggle_Presence,
@@ -57,7 +59,6 @@ namespace StudioCore.MsbEditor
         private readonly Selection _selection;
 
         private AssetLocator _assetLocator;
-        private MsbEditorScreen _msbEditor;
 
         private Universe _universe;
 
@@ -66,8 +67,8 @@ namespace StudioCore.MsbEditor
         private SelectedTool _selectedTool;
 
         private IEnumerable<ObjectContainer> _loadedMaps;
-        private bool creationMenuOpened;
         private int _createEntityMapIndex;
+
         private List<(string, Type)> _eventClasses = new();
         private List<(string, Type)> _partsClasses = new();
         private List<(string, Type)> _regionClasses = new();
@@ -76,7 +77,13 @@ namespace StudioCore.MsbEditor
         private Type _createRegionSelectedType;
         private Type _createEventSelectedType;
 
-        public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, AssetLocator locator, MsbEditorScreen editor, IViewport viewport)
+        private List<string> entityIdentifiers = new List<string>();
+
+        private bool NavigationDataProcessed = false;
+
+        private int FrameCount = 0;
+
+        public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, AssetLocator locator, IViewport viewport)
         {
             _scene = scene;
             _selection = sel;
@@ -84,7 +91,6 @@ namespace StudioCore.MsbEditor
             _universe = universe;
 
             _assetLocator = locator;
-            _msbEditor = editor;
             _viewport = viewport;
         }
 
@@ -92,8 +98,18 @@ namespace StudioCore.MsbEditor
         {
             var scale = Smithbox.GetUIScale();
 
+            // This is to reset temporary Text elements. Only used by Generate Navigation Data currently.
+            if(FrameCount > 1000)
+            {
+                FrameCount = 0;
+                NavigationDataProcessed = false;
+            }
+            FrameCount++;
+
             if (_assetLocator.Type == GameType.Undefined)
                 return;
+
+            _loadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
 
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
@@ -105,44 +121,8 @@ namespace StudioCore.MsbEditor
                 ImGui.BeginChild("toolselection");
 
                 ImGui.Separator();
-                ImGui.Text("Global actions");
-                ImguiUtils.ShowHelpMarker("Double-click to use.");
-                ImGui.Separator();
-
-                // Create
-                if (CFG.Current.Toolbar_Show_Create)
-                {
-                    if (ImGui.Selectable("Create##tool_Selection_Create", false, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        _selectedTool = SelectedTool.Selection_Create;
-
-                        if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                        {
-                            CreateNewMapObject();
-                        }
-                    }
-                }
-
-                // Patrol Rendering
-                if (CFG.Current.Toolbar_Show_Patrol_Rendering)
-                {
-                    if (_assetLocator.Type is not GameType.DarkSoulsIISOTFS)
-                    {
-                        if (ImGui.Selectable("Render Patrol Routes##tool_Selection_Patrol_Rendering", false, ImGuiSelectableFlags.AllowDoubleClick))
-                        {
-                            _selectedTool = SelectedTool.Selection_Render_Patrol_Routes;
-
-                            if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                            {
-                                RenderPatrolRoutes();
-                            }
-                        }
-                    }
-                }
-
-                ImGui.Separator();
                 ImGui.Text("Selection actions");
-                ImguiUtils.ShowHelpMarker("Double-click to use.");
+                ImguiUtils.ShowHelpMarker("Double-click to use. These actions are done in the context of a selection.");
                 ImGui.Separator();
 
                 // Go to in Object List
@@ -197,6 +177,20 @@ namespace StudioCore.MsbEditor
                         if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                         {
                             ToggleEntityVisibility();
+                        }
+                    }
+                }
+
+                // Create
+                if (CFG.Current.Toolbar_Show_Create)
+                {
+                    if (ImGui.Selectable("Create##tool_Selection_Create", false, ImGuiSelectableFlags.AllowDoubleClick))
+                    {
+                        _selectedTool = SelectedTool.Selection_Create;
+
+                        if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                        {
+                            CreateNewMapObject();
                         }
                     }
                 }
@@ -324,6 +318,63 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                ImGui.Separator();
+                ImGui.Text("Global actions");
+                ImguiUtils.ShowHelpMarker("Double-click to use. These actions are done in the global context.");
+                ImGui.Separator();
+
+                // Entity ID
+                if (CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID)
+                {
+                    if (ImGui.Selectable("Check Duplicate Entity ID##tool_Selection_Duplicate_Entity_ID", false, ImGuiSelectableFlags.AllowDoubleClick))
+                    {
+                        _selectedTool = SelectedTool.Selection_Duplicate_Entity_ID;
+
+                        if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                        {
+                            if (_loadedMaps.Any())
+                            {
+                                CheckDuplicateEntityIdentifier();
+                            }
+                        }
+                    }
+                }
+
+                // Patrol Routes
+                if (CFG.Current.Toolbar_Show_Render_Patrol_Routes)
+                {
+                    if (_assetLocator.Type is not GameType.DarkSoulsIISOTFS)
+                    {
+                        if (ImGui.Selectable("Patrol Routes##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
+                        {
+                            _selectedTool = SelectedTool.Selection_Render_Patrol_Routes;
+
+                            if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                            {
+                                RenderPatrolRoutes();
+                            }
+                        }
+                    }
+                }
+
+                // Generate Navigation Data
+                if (CFG.Current.Toolbar_Show_Navigation_Data)
+                {
+                    if (_assetLocator.Type is GameType.DemonsSouls || _assetLocator.Type is GameType.DarkSoulsPTDE || _assetLocator.Type is GameType.DarkSoulsRemastered)
+                    {
+                        if (ImGui.Selectable("Navigation Data##tool_Selection_Generate_Navigation_Data", false, ImGuiSelectableFlags.AllowDoubleClick))
+                        {
+                            _selectedTool = SelectedTool.Selection_Generate_Navigation_Data;
+
+                            if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                            {
+                                GenerateNavigationData();
+                            }
+                        }
+                    }
+                }
+
+
                 ImGui.EndChild();
 
                 // Configuration Window
@@ -334,8 +385,6 @@ namespace StudioCore.MsbEditor
                 // Create
                 if (_selectedTool == SelectedTool.Selection_Create)
                 {
-                    _loadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
-               
                     ImGui.Text("Create a new object within the target map.");
                     ImGui.Separator();
                     ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Create.HintText)}");
@@ -456,10 +505,10 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
-                // Patrol Rendering
+                // Render Patrol Routes
                 if (_selectedTool == SelectedTool.Selection_Render_Patrol_Routes)
                 {
-                    ImGui.Text("Toggle the rendering of patrol route connects.");
+                    ImGui.Text("Toggle the rendering of patrol route connections.");
                     ImGui.Separator();
                     ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_RenderEnemyPatrolRoutes.HintText)}");
                     ImGui.Separator();
@@ -467,6 +516,18 @@ namespace StudioCore.MsbEditor
                     if (ImGui.Button("Clear"))
                     {
                         PatrolDrawManager.Clear();
+                    }
+                }
+
+                // Generate Navigation Data
+                if (_selectedTool == SelectedTool.Selection_Generate_Navigation_Data)
+                {
+                    ImGui.Text("Regenerate the navigation data files used for pathfinding.");
+                    ImGui.Separator();
+
+                    if (NavigationDataProcessed)
+                    {
+                        ImGui.Text("Navigation data has been regenerated for all maps.");
                     }
                 }
 
@@ -1218,6 +1279,32 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
+                // Entity ID
+                if (_selectedTool == SelectedTool.Selection_Duplicate_Entity_ID)
+                {
+                    ImGui.Text("Output:");
+                    ImGui.Separator();
+
+                    if (_loadedMaps.Any())
+                    {
+                        string totalText = "";
+
+                        if (entityIdentifiers.Count == 0)
+                        {
+                            totalText = "None";
+                        }
+                        else
+                        {
+                            foreach (var entry in entityIdentifiers)
+                            {
+                                totalText = totalText + entry.ToString();
+                            }
+                        }
+
+                        ImGui.InputTextMultiline("##entityTextOutput", ref totalText, uint.MaxValue, new Vector2(600, 200));
+                    }
+                }
+
                 ImGui.EndChild();
             }
 
@@ -1225,12 +1312,41 @@ namespace StudioCore.MsbEditor
         }
 
         /// <summary>
+        /// Check for duplicate Entity IDs
+        /// </summary>
+        public void CheckDuplicateEntityIdentifier()
+        {
+            entityIdentifiers = new List<string>();
+
+            HashSet<uint> vals = new();
+            string badVals = "";
+            foreach (var loadedMap in _loadedMaps)
+            {
+                foreach (var e in loadedMap?.Objects)
+                {
+                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                    if (val == null)
+                        continue;
+
+                    uint entUint;
+                    if (val is int entInt)
+                        entUint = (uint)entInt;
+                    else
+                        entUint = (uint)val;
+
+                    if (entUint == 0 || entUint == uint.MaxValue)
+                        continue;
+                    if (!vals.Add(entUint))
+                        entityIdentifiers.Add($"{entUint}");
+                }
+            }
+        }
+
+        /// <summary>
         /// Create a new map object
         /// </summary>
         public void CreateNewMapObject()
         {
-            // Appears to require a selection to work: TODO fix this.
-
             var map = (Map)_loadedMaps.ElementAt(_createEntityMapIndex);
 
             if (CFG.Current.Toolbar_Create_Light)
@@ -1793,6 +1909,54 @@ namespace StudioCore.MsbEditor
             newTransform.Scale = newScale;
 
             return newTransform;
+        }
+
+        /// <summary>
+        /// Regenerate the MCP and MCG files used for navigation data
+        /// </summary>
+        private void GenerateNavigationData()
+        {
+            Dictionary<string, ObjectContainer> orderedMaps = _universe.LoadedObjectContainers;
+
+            HashSet<string> idCache = new();
+            foreach (var map in orderedMaps)
+            {
+                string mapid = map.Key;
+
+                if (_assetLocator.Type is GameType.DemonsSouls)
+                {
+                    if (mapid != "m03_01_00_99" && !mapid.StartsWith("m99"))
+                    {
+                        var areaId = mapid.Substring(0, 3);
+                        if (idCache.Contains(areaId))
+                            continue;
+                        idCache.Add(areaId);
+
+                        List<string> areaDirectories = new List<string>();
+                        foreach (var orderMap in orderedMaps)
+                        {
+                            if (orderMap.Key.StartsWith(areaId) && orderMap.Key != "m03_01_00_99")
+                            {
+                                areaDirectories.Add(Path.Combine(_assetLocator.GameRootDirectory, "map", orderMap.Key));
+                            }
+                        }
+                        SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, _assetLocator, toBigEndian: true);
+                    }
+                    else
+                    {
+                        List<string> areaDirectories = new List<string>{ Path.Combine(_assetLocator.GameRootDirectory, "map", mapid) };
+                        SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, _assetLocator, toBigEndian: true);
+                    }
+                }
+                else if (_assetLocator.Type is GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered)
+                {
+                    List<string> areaDirectories = new List<string> { Path.Combine(_assetLocator.GameRootDirectory, "map", mapid) };
+
+                    SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, _assetLocator, toBigEndian: false);
+                }
+            }
+
+            NavigationDataProcessed = true;
         }
 
         /// <summary>
