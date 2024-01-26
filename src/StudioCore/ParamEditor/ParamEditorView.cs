@@ -657,8 +657,19 @@ public class ParamEditorView
 
         ImGui.PopStyleColor();
 
+        // Param Contextu Menu
         if (ImGui.BeginPopupContextItem(r.ID.ToString()))
         {
+            if (CFG.Current.Param_QuickNameEdit)
+            {
+                if (_selection.RowSelectionExists())
+                {
+                    var name = _selection.GetActiveRow().Name;
+                    ImGui.InputText("##rowName", ref name, 255);
+                    _selection.GetActiveRow().Name = name;
+                }
+            }
+
             if (CFG.Current.Param_ShowHotkeysInContextMenu)
             {
                 if (ImGui.Selectable(@$"Copy selection ({KeyBindings.Current.Param_Copy.HintText})", false,

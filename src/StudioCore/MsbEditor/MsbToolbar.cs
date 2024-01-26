@@ -238,7 +238,7 @@ namespace StudioCore.MsbEditor
                     }
                 }
 
-                // Presence
+                // Toggle Presence
                 if (CFG.Current.Toolbar_Show_Toggle_Presence)
                 {
                     if (ImGui.Selectable("Toggle Presence##tool_Selection_Presence", false, ImGuiSelectableFlags.AllowDoubleClick))

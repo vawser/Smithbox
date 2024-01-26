@@ -733,6 +733,9 @@ public class SettingsMenu
 
                 ImGui.Checkbox("Disable row grouping", ref CFG.Current.Param_DisableRowGrouping);
                 ImguiUtils.ShowHelpMarker("Disable the grouping of connected rows in certain params, such as ItemLotParam within the Row View list.");
+
+                ImGui.Checkbox("Enable direct row name editing", ref CFG.Current.Param_QuickNameEdit);
+                ImguiUtils.ShowHelpMarker("Enable the ability to change a row name within the right-click context menu.");
             }
 
             // Fields

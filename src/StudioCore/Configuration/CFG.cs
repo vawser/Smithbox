@@ -172,6 +172,7 @@ public class CFG
     public bool Param_FieldDescriptionInContextMenu = true;
     public bool Param_SplitContextMenu = false;
     public bool UI_CompactParams = false;
+    public bool Param_QuickNameEdit = false;
 
     // Settings: Text Editor
     public bool FMG_NoFmgPatching = false;
