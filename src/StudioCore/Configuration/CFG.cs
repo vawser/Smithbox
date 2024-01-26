@@ -217,6 +217,7 @@ public class CFG
     // Toolbar: General
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
     public bool Toolbar_Duplicate_Increment_UnkPartNames = false;
+    public bool Toolbar_Duplicate_Increment_InstanceID = true;
 
     public bool Toolbar_Presence_Dummy_Type_ER = false;
     public bool Toolbar_Presence_Dummify = true;
@@ -300,6 +301,7 @@ public class CFG
     public bool Replicator_Apply_Scramble_Configuration = false;
     public bool Replicator_Increment_Entity_ID = false;
     public bool Replicator_Increment_UnkPartNames = false;
+    public bool Replicator_Increment_InstanceID = true;
 
     public bool Replicator_Mode_Line = true;
     public bool Replicator_Mode_Circle = false;

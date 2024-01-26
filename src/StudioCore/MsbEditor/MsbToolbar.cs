@@ -657,6 +657,12 @@ namespace StudioCore.MsbEditor
 
                     if (_assetLocator.Type == GameType.EldenRing)
                     {
+                        ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
+                        ImguiUtils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Instance ID.");
+                    }
+
+                    if (_assetLocator.Type == GameType.EldenRing)
+                    {
                         ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
                     }
@@ -1270,6 +1276,12 @@ namespace StudioCore.MsbEditor
                     {
                         ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID);
                         ImguiUtils.ShowHelpMarker("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
+                    }
+
+                    if (_assetLocator.Type == GameType.EldenRing)
+                    {
+                        ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
+                        ImguiUtils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Instance ID.");
                     }
 
                     if (_assetLocator.Type == GameType.EldenRing)

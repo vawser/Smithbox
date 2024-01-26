@@ -432,29 +432,32 @@ public class CloneMapObjectsAction : Action
                 }
 
                 // Get a unique Instance ID for MSBE parts
-                if (newobj.WrappedObject is MSBE.Part msbePart)
+                if (CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
                 {
-                    if (mapPartEntities.TryAdd(m, new HashSet<MapEntity>()))
+                    if (newobj.WrappedObject is MSBE.Part msbePart)
                     {
-                        foreach (Entity ent in m.Objects)
+                        if (mapPartEntities.TryAdd(m, new HashSet<MapEntity>()))
                         {
-                            if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
+                            foreach (Entity ent in m.Objects)
                             {
-                                mapPartEntities[m].Add((MapEntity)ent);
+                                if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
+                                {
+                                    mapPartEntities[m].Add((MapEntity)ent);
+                                }
                             }
                         }
-                    }
 
-                    var newInstanceID = msbePart.InstanceID;
-                    while (mapPartEntities[m].FirstOrDefault(e =>
-                               ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
-                               && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
-                    {
-                        newInstanceID++;
-                    }
+                        var newInstanceID = msbePart.InstanceID;
+                        while (mapPartEntities[m].FirstOrDefault(e =>
+                                   ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
+                                   && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
+                        {
+                            newInstanceID++;
+                        }
 
-                    msbePart.InstanceID = newInstanceID;
-                    mapPartEntities[m].Add(newobj);
+                        msbePart.InstanceID = newInstanceID;
+                        mapPartEntities[m].Add(newobj);
+                    }
                 }
 
                 if (TargetMap == null)
@@ -1669,29 +1672,32 @@ public class ReplicateMapObjectsAction : Action
                     }
 
                     // Get a unique Instance ID for MSBE parts
-                    if (newobj.WrappedObject is MSBE.Part msbePart)
+                    if (CFG.Current.Replicator_Increment_InstanceID)
                     {
-                        if (mapPartEntities.TryAdd(m, new HashSet<MapEntity>()))
+                        if (newobj.WrappedObject is MSBE.Part msbePart)
                         {
-                            foreach (Entity ent in m.Objects)
+                            if (mapPartEntities.TryAdd(m, new HashSet<MapEntity>()))
                             {
-                                if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
+                                foreach (Entity ent in m.Objects)
                                 {
-                                    mapPartEntities[m].Add((MapEntity)ent);
+                                    if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
+                                    {
+                                        mapPartEntities[m].Add((MapEntity)ent);
+                                    }
                                 }
                             }
-                        }
 
-                        var newInstanceID = msbePart.InstanceID;
-                        while (mapPartEntities[m].FirstOrDefault(e =>
-                                   ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
-                                   && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
-                        {
-                            newInstanceID++;
-                        }
+                            var newInstanceID = msbePart.InstanceID;
+                            while (mapPartEntities[m].FirstOrDefault(e =>
+                                       ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
+                                       && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
+                            {
+                                newInstanceID++;
+                            }
 
-                        msbePart.InstanceID = newInstanceID;
-                        mapPartEntities[m].Add(newobj);
+                            msbePart.InstanceID = newInstanceID;
+                            mapPartEntities[m].Add(newobj);
+                        }
                     }
 
                     if(idxCache == -1)
