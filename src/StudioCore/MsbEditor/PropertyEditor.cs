@@ -4,6 +4,8 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Aliases;
 using StudioCore.Editor;
+using StudioCore.FormatInfo;
+using StudioCore.Interface;
 using StudioCore.ParamEditor;
 using StudioCore.Scene;
 using StudioCore.Utilities;
@@ -36,11 +38,14 @@ public class PropertyEditor
 
     private AliasBank _mapAliasBank;
 
-    public PropertyEditor(ActionManager manager, PropertyCache propCache, AliasBank mapAliasBank)
+    private InfoBank _msbInfoBank;
+
+    public PropertyEditor(ActionManager manager, PropertyCache propCache, AliasBank mapAliasBank, InfoBank msbInfoBank)
     {
         ContextActionManager = manager;
         _propCache = propCache;
         _mapAliasBank = mapAliasBank;
+        _msbInfoBank = msbInfoBank;
     }
 
     private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop)
@@ -606,6 +611,7 @@ public class PropertyEditor
             ImGui.NextColumn();
 
             EditorDecorations.ParamRefText(refs, null);
+
             ImGui.NextColumn();
             EditorDecorations.ParamRefsSelectables(ParamBank.PrimaryBank, refs, null, val);
             EditorDecorations.ParamRefEnumQuickLink(ParamBank.PrimaryBank, val, refs, null, null, null);
@@ -696,7 +702,8 @@ public class PropertyEditor
                         Type arrtyp = typ.GetElementType();
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            var open = ImGui.TreeNodeEx($@"{prop.Name}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                            var open = ImGui.TreeNodeEx($@"{GetFieldName(prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                            ShowFieldHint(prop, selection);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var o = a.GetValue(i);
@@ -713,7 +720,8 @@ public class PropertyEditor
                         else
                         {
                             PropContextRowOpener();
-                            ImGui.Text($@"{prop.Name}[{i}]");
+                            ImGui.Text($@"{GetFieldName(prop, selection)}[{i}]");
+                            ShowFieldHint(prop, selection);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var oldval = a.GetValue(i);
@@ -757,7 +765,8 @@ public class PropertyEditor
                         Type arrtyp = typ.GetGenericArguments()[0];
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            var open = ImGui.TreeNodeEx($@"{prop.Name}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                            var open = ImGui.TreeNodeEx($@"{GetFieldName(prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                            ShowFieldHint(prop, selection);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var o = itemprop.GetValue(l, new object[] { i });
@@ -774,7 +783,8 @@ public class PropertyEditor
                         else
                         {
                             PropContextRowOpener();
-                            ImGui.Text($@"{prop.Name}[{i}]");
+                            ImGui.Text($@"{GetFieldName(prop, selection)}[{i}]");
+                            ShowFieldHint(prop, selection);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var oldval = itemprop.GetValue(l, new object[] { i });
@@ -807,7 +817,8 @@ public class PropertyEditor
                 }
                 else if (typ.IsClass && typ == typeof(MSB.Shape))
                 {
-                    var open = ImGui.TreeNodeEx(prop.Name, ImGuiTreeNodeFlags.DefaultOpen);
+                    var open = ImGui.TreeNodeEx(GetFieldName(prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                    ShowFieldHint(prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     var o = prop.GetValue(obj);
@@ -875,7 +886,8 @@ public class PropertyEditor
                 }
                 else if (typ == typeof(BTL.LightType))
                 {
-                    var open = ImGui.TreeNodeEx(prop.Name, ImGuiTreeNodeFlags.DefaultOpen);
+                    var open = ImGui.TreeNodeEx(GetFieldName(prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                    ShowFieldHint(prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     var o = prop.GetValue(obj);
@@ -929,7 +941,8 @@ public class PropertyEditor
                 }
                 else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
                 {
-                    var open = ImGui.TreeNodeEx(prop.Name, ImGuiTreeNodeFlags.DefaultOpen);
+                    var open = ImGui.TreeNodeEx(GetFieldName(prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                    ShowFieldHint(prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     var o = prop.GetValue(obj);
@@ -946,7 +959,8 @@ public class PropertyEditor
                 else
                 {
                     PropContextRowOpener();
-                    ImGui.Text(prop.Name);
+                    ImGui.Text(GetFieldName(prop, selection));
+                    ShowFieldHint(prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     var oldval = prop.GetValue(obj);
@@ -1073,6 +1087,94 @@ public class PropertyEditor
             }
 
             ImGui.Unindent(10 * scale);
+        }
+    }
+
+    public string GetFieldName(PropertyInfo prop, Selection sel)
+    {
+        var name = prop.Name;
+
+        if (CFG.Current.MapEditor_Enable_Commmunity_Names)
+        {
+            Entity _selected = sel.GetFilteredSelection<Entity>().First();
+
+            List<InfoReference> entries = null;
+
+            // Part
+            if (_selected.IsPart())
+            {
+                entries = _msbInfoBank.FormatInformation.GetEntries("Part");
+            }
+
+            // Region
+            if (_selected.IsRegion())
+            {
+                entries = _msbInfoBank.FormatInformation.GetEntries("Region");
+            }
+
+            // Event
+            if (_selected.IsEvent())
+            {
+                entries = _msbInfoBank.FormatInformation.GetEntries("Event");
+            }
+
+            if (entries != null)
+            {
+                foreach (var entry in entries)
+                {
+                    if (entry.id == prop.Name)
+                    {
+                        name = entry.name;
+                    }
+                }
+            }
+        }
+
+        return name;
+    }
+
+    public void ShowFieldHint(PropertyInfo prop, Selection sel)
+    {
+        if (CFG.Current.MapEditor_Enable_Commmunity_Hints)
+        {
+            var desc = "Unknown.";
+
+            Entity _selected = sel.GetFilteredSelection<Entity>().First();
+
+            List<InfoReference> entries = null;
+
+            // Part
+            if (_selected.IsPart())
+            {
+                entries = _msbInfoBank.FormatInformation.GetEntries("Part");
+            }
+
+            // Region
+            if (_selected.IsRegion())
+            {
+                entries = _msbInfoBank.FormatInformation.GetEntries("Region");
+            }
+
+            // Event
+            if (_selected.IsEvent())
+            {
+                entries = _msbInfoBank.FormatInformation.GetEntries("Event");
+            }
+            if (entries != null)
+            {
+                foreach (var entry in entries)
+                {
+                    if (entry.id == prop.Name)
+                    {
+                        desc = entry.desc;
+                    }
+                }
+            }
+
+            if (desc == "")
+                desc = "Unknown.";
+
+            ImguiUtils.ShowHelpMarker(desc);
         }
     }
 

@@ -10,6 +10,7 @@ using StudioCore.Browsers;
 using StudioCore.Configuration;
 using StudioCore.CutsceneEditor;
 using StudioCore.Editor;
+using StudioCore.FormatInfo;
 using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditor;
@@ -79,6 +80,9 @@ public class Smithbox
     private AliasBank aliasBank_Flags;
     private AliasBank aliasBank_Particles;
 
+    // Format Info Banks
+    private InfoBank infoBank_MSB;
+
     private readonly SoapstoneService _soapstoneService;
     private readonly string _version;
 
@@ -121,17 +125,17 @@ public class Smithbox
 
         _assetLocator = new AssetLocator();
 
+        // Alias Banks
         aliasBank_Maps = new AliasBank(_assetLocator, AliasType.Map);
         aliasBank_Models = new AliasBank(_assetLocator, AliasType.Model);
         aliasBank_Flags = new AliasBank(_assetLocator, AliasType.EventFlag);
         aliasBank_Particles = new AliasBank(_assetLocator, AliasType.Particle);
 
-        aliasBank_Maps.ReloadAliasBank();
-        aliasBank_Models.ReloadAliasBank();
-        aliasBank_Flags.ReloadAliasBank();
-        aliasBank_Particles.ReloadAliasBank();
+        // Format Info Banks
+        infoBank_MSB = new InfoBank(_assetLocator, FormatType.MSB);
 
-        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator, aliasBank_Models, aliasBank_Maps);
+        // Screens
+        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator, aliasBank_Models, aliasBank_Maps, infoBank_MSB);
         ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator, aliasBank_Models, aliasBank_Maps);
         ParamEditorScreen paramEditor = new(_context.Window, _context.Device, _assetLocator);
         TextEditorScreen textEditor = new(_context.Window, _context.Device, _assetLocator);
@@ -466,6 +470,8 @@ public class Smithbox
         aliasBank_Flags.ReloadAliasBank();
         aliasBank_Particles.ReloadAliasBank();
         aliasBank_Maps.ReloadAliasBank();
+
+        infoBank_MSB.ReloadInfoBank();
 
         ParamBank.ReloadParams(newsettings, options);
         MtdBank.ReloadMtds();

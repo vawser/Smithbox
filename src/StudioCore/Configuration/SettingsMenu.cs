@@ -403,8 +403,18 @@ public class SettingsMenu
                 }
             }
 
+            // Property View
+            if (ImGui.CollapsingHeader("Property View"))
+            {
+                ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
+                ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
+
+                ImGui.Checkbox("Display community descriptions", ref CFG.Current.MapEditor_Enable_Commmunity_Hints);
+                ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced descriptions.");
+            }
+
             // Scene View
-            if(ImGui.CollapsingHeader("Scene View"))
+            if (ImGui.CollapsingHeader("Scene View"))
             {
                 ImGui.Checkbox("Display character names", ref CFG.Current.Map_Show_Character_Names_in_Scene_Tree);
                 ImguiUtils.ShowHelpMarker("Characters names will be displayed within the scene view list.");

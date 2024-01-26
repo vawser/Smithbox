@@ -57,6 +57,9 @@ public class CFG
     public bool Map_Show_Character_Names_in_Scene_Tree = true;
     public bool Map_Enable_Selection_Outline = true;
 
+    public bool MapEditor_Enable_Commmunity_Names = true;
+    public bool MapEditor_Enable_Commmunity_Hints = true;
+
     // Viewport
     public bool Viewport_EnableGrid = true;
     public int Viewport_GridType = 0;

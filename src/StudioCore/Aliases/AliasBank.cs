@@ -95,18 +95,6 @@ public class AliasBank
         }
     }
 
-    private void LoadAliasNames()
-    {
-        try
-        {
-            _loadedAliasBank = new AliasContainer(aliasType, AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
-        }
-        catch (Exception e)
-        {
-
-        }
-    }
-
     public void ReloadAliasBank()
     {
         TaskManager.Run(new TaskManager.LiveTask($"Alias Bank - Load {AliasName}", TaskManager.RequeueType.None, false,
@@ -116,12 +104,24 @@ public class AliasBank
             IsLoadingAliases = true;
 
             if (AssetLocator.Type != GameType.Undefined)
-                LoadAliasNames();
+            {
+                try
+                {
+                    _loadedAliasBank = new AliasContainer(aliasType, AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"FAILED LOAD: {e.Message}");
+                }
 
-            IsLoadingAliases = false;
+                IsLoadingAliases = false;
+            }
+            else
+            {
+                IsLoadingAliases = false;
+            }
 
-            if (AssetLocator.Type != GameType.Undefined)
-                UpdateMapNames();
+            UpdateMapNames();
         }));
     }
 

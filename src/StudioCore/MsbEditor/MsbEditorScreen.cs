@@ -5,6 +5,7 @@ using StudioCore.Aliases;
 using StudioCore.Browsers;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.FormatInfo;
 using StudioCore.Gui;
 using StudioCore.Platform;
 using StudioCore.Resource;
@@ -89,7 +90,9 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     private AliasBank _modelAliasBank;
     private AliasBank _mapAliasBank;
 
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank modelAliasBank, AliasBank mapAliasBank)
+    private InfoBank _infobank_MSB;
+
+    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank modelAliasBank, AliasBank mapAliasBank, InfoBank msbInfoBank)
     {
         Rect = window.Bounds;
         AssetLocator = locator;
@@ -98,6 +101,8 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         _modelAliasBank = modelAliasBank;
         _mapAliasBank = mapAliasBank;
+
+        _infobank_MSB = msbInfoBank;
 
         if (device != null)
         {
@@ -113,7 +118,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         Universe = new Universe(AssetLocator, RenderScene, _selection);
 
         SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport, AssetLocator, _modelAliasBank, _mapAliasBank);
-        PropEditor = new PropertyEditor(EditorActionManager, _propCache, _mapAliasBank);
+        PropEditor = new PropertyEditor(EditorActionManager, _propCache, _mapAliasBank, _infobank_MSB);
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);

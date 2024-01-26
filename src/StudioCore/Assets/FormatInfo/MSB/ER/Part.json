@@ -1,0 +1,444 @@
+{
+    "list": [
+        {
+            "id": "ModelName",
+            "name": "Model Name",
+            "desc": "The model used by this part; requires an entry in ModelParam."
+        },
+        {
+            "id": "InstanceID",
+            "name": "Instance ID",
+            "desc": "Involved with serialization."
+        },
+        {
+            "id": "SibPath",
+            "name": "Layout Path",
+            "desc": "A path to a .sib file, presumably some kind of editor placeholder."
+        },
+        {
+            "id": "Position",
+            "name": "Position",
+            "desc": "The position of this part."
+        },
+        {
+            "id": "Rotation",
+            "name": "Rotation",
+            "desc": "The rotation of this part."
+        },
+        {
+            "id": "Scale",
+            "name": "Scale",
+            "desc": "The scale of this part. Scale will NOT affect the scale of enemies or the scale of in-built collision for objects and assets (except for assets in Elden Ring)."
+        },
+        {
+            "id": "GameEditionDisable",
+            "name": "Game Edition Disable Type",
+            "desc": "Toggles the loading of this part."
+        },
+        {
+            "id": "MapStudioLayer",
+            "name": "Map Studio Layer",
+            "desc": "Unknown."
+        },
+        {
+            "id": "EntityID",
+            "name": "Entity ID",
+            "desc": "Identifies the part in event scripts."
+        },
+        {
+            "id": "isUsePartsDrawParamID",
+            "name": "Uses Parts Draw Param ID",
+            "desc": "Enables use of PartsDrawParamID. If false, asset param is used instead."
+        },
+        {
+            "id": "PartsDrawParamID",
+            "name": "Parts Draw Param ID",
+            "desc": "The Parts Draw Param ID to use."
+        },
+        {
+            "id": "IsPointLightShadowSrc",
+            "name": "Is Point Light Shadow Source",
+            "desc": "Is this part to be considered a Point Light shadow source."
+        },
+        {
+            "id": "UnkE0B",
+            "name": "UnkE0B",
+            "desc": "Unknown"
+        },
+        {
+            "id": "IsShadowSrc",
+            "name": "Is Shadow Source",
+            "desc": "Is this part to be considered a shadow source."
+        },
+        {
+            "id": "IsShadowSrc",
+            "name": "Is Static Shadow Source",
+            "desc": "Is this part to be considered a static shadow source."
+        },
+        {
+            "id": "IsCascade3ShadowSrc",
+            "name": "Is Cascade Shadow Source",
+            "desc": "Is this part to be considered a cascade shadow source."
+        },
+        {
+            "id": "UnkE0F",
+            "name": "UnkE0F",
+            "desc": ""
+        },
+        {
+            "id": "UnkE10",
+            "name": "UnkE10",
+            "desc": ""
+        },
+        {
+            "id": "IsShadowDest",
+            "name": "Is Shadow Destination",
+            "desc": "Is this part to be considered a shadow destination."
+        },
+        {
+            "id": "IsShadowOnly",
+            "name": "Is Shadow Only",
+            "desc": "Is this part only rendered when calculating the shadow pass."
+        },
+        {
+            "id": "DrawByReflectCam",
+            "name": "Is Drawn by Reflection Camera",
+            "desc": "Is this part drawn by the reflection camera."
+        },
+        {
+            "id": "DrawOnlyReflectCam",
+            "name": "Is Drawn Only by the Reflection Camera",
+            "desc": "Is this part only drawn within the reflection camera."
+        },
+        {
+            "id": "EnableOnAboveShadow",
+            "name": "Enable on Above Shadow",
+            "desc": ""
+        },
+        {
+            "id": "DisablePointLightEffect",
+            "name": "Disable Point Light Effect",
+            "desc": ""
+        },
+        {
+            "id": "UnkE17",
+            "name": "UnkE17",
+            "desc": ""
+        },
+        {
+            "id": "UnkE18",
+            "name": "UnkE18",
+            "desc": ""
+        },
+        {
+            "id": "EntityGroupIDs",
+            "name": "Entity Group ID",
+            "desc": "A entity group ID associated with this part. Allows multiple parts to be identified with a single entity ID."
+        },
+        {
+            "id": "UnkE3C",
+            "name": "UnkE3C",
+            "desc": ""
+        },
+        {
+            "id": "UnkE3E",
+            "name": "UnkE3E",
+            "desc": ""
+        },
+        {
+            "id": "DisplayGroups",
+            "name": "Display Group",
+            "desc": "The display groups for this part."
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        },
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "desc": ""
+        }
+   ]
+}

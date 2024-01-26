@@ -283,7 +283,7 @@ public class SceneTree : IActionEventHandler
 
             if (CFG.Current.Map_Show_Character_Names_in_Scene_Tree)
             {
-                if (e.IsEnemyPart())
+                if (e.IsPartEnemy())
                 {
                     if (_chrAliasCache != null && _chrAliasCache.ContainsKey(modelName))
                     {

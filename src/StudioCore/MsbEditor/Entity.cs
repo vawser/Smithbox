@@ -983,66 +983,6 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
-    /// Get action for changing a int propety value for this object.
-    /// </summary>
-    public Action ChangeObjectProperty(string propTarget, int propValue)
-    {
-        var actions = new List<Action>();
-        actions.Add(GetPropertyChangeAction(propTarget, propValue));
-        var act = new CompoundAction(actions);
-        act.SetPostExecutionAction((undo) =>
-        {
-            UpdateRenderModel();
-        });
-        return act;
-    }
-
-    /// <summary>
-    /// Get action for changing a byte propety value for this object.
-    /// </summary>
-    public Action ChangeObjectProperty(string propTarget, byte propValue)
-    {
-        var actions = new List<Action>();
-        actions.Add(GetPropertyChangeAction(propTarget, propValue));
-        var act = new CompoundAction(actions);
-        act.SetPostExecutionAction((undo) =>
-        {
-            UpdateRenderModel();
-        });
-        return act;
-    }
-
-    /// <summary>
-    /// Get action for changing a short propety value for this object.
-    /// </summary>
-    public Action ChangeObjectProperty(string propTarget, short propValue)
-    {
-        var actions = new List<Action>();
-        actions.Add(GetPropertyChangeAction(propTarget, propValue));
-        var act = new CompoundAction(actions);
-        act.SetPostExecutionAction((undo) =>
-        {
-            UpdateRenderModel();
-        });
-        return act;
-    }
-
-    /// <summary>
-    /// Get action for changing a Position/Rotation/Scale propety value for this object.
-    /// </summary>
-    public Action ChangeObjectTransform(string propTarget, Vector3 propValue)
-    {
-        var actions = new List<Action>();
-        actions.Add(GetPropertyChangeAction(propTarget, propValue));
-        var act = new CompoundAction(actions);
-        act.SetPostExecutionAction((undo) =>
-        {
-            UpdateRenderModel();
-        });
-        return act;
-    }
-
-    /// <summary>
     /// Updates entity's render groups (DrawGroups/DispGroups). Uses CollisionName references if possible.
     /// </summary>
     private void UpdateDispDrawGroups()
@@ -1156,11 +1096,62 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// Returns true if this entity is a Part
+    /// </summary>
+    public bool IsPart()
+    {
+        return WrappedObject is MSB1.Part ||
+            WrappedObject is MSB2.Part ||
+            WrappedObject is MSB3.Part || 
+            WrappedObject is MSBB.Part || 
+            WrappedObject is MSBD.Part || 
+            WrappedObject is MSBE.Part || 
+            WrappedObject is MSBS.Part || 
+            WrappedObject is MSB_AC6.Part ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is a Region
+    /// </summary>
+    public bool IsRegion()
+    {
+        return WrappedObject is MSB1.Region ||
+            WrappedObject is MSB2.Region ||
+            WrappedObject is MSB3.Region ||
+            WrappedObject is MSBB.Region ||
+            WrappedObject is MSBD.Region ||
+            WrappedObject is MSBE.Region ||
+            WrappedObject is MSBS.Region ||
+            WrappedObject is MSB_AC6.Region ? true : false;
+    }
+
+    /// <summary>
+    /// Returns true if this entity is a Event
+    /// </summary>
+    public bool IsEvent()
+    {
+        return WrappedObject is MSB1.Event ||
+            WrappedObject is MSB2.Event ||
+            WrappedObject is MSB3.Event ||
+            WrappedObject is MSBB.Event ||
+            WrappedObject is MSBD.Event ||
+            WrappedObject is MSBE.Event ||
+            WrappedObject is MSBS.Event ||
+            WrappedObject is MSB_AC6.Event ? true : false;
+    }
+
+    /// <summary>
     /// Returns true if this entity is an Enemy
     /// </summary>
-    public bool IsEnemyPart()
+    public bool IsPartEnemy()
     {
-        return WrappedObject is MSB1.Part.Enemy || WrappedObject is MSB3.Part.Enemy || WrappedObject is MSB_AC6.Part.Enemy || WrappedObject is MSBB.Part.Enemy || WrappedObject is MSBD.Part.Enemy || WrappedObject is MSBE.Part.Enemy || WrappedObject is MSBS.Part.Enemy ? true : false;
+        return WrappedObject is MSB1.Part.Enemy || 
+            WrappedObject is MSB3.Part.Enemy || 
+            WrappedObject is MSBB.Part.Enemy || 
+            WrappedObject is MSBD.Part.Enemy || 
+            WrappedObject is MSBE.Part.Enemy || 
+            WrappedObject is MSBS.Part.Enemy || 
+            WrappedObject is MSB_AC6.Part.Enemy ? true : false;
     }
 
     /// <summary>
