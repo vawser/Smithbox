@@ -5,6 +5,7 @@ A personal version of DSMapStudio, which is a standalone integrated modding tool
 ## New Features
 - Asset Browser: allows you to quickly view and categorize Chr, Obj/Asset, Part and MapPiece assets. There is a base name and tag list supplied by Smithbox, and support for local mod overrides.
 - Map Grid: allows you to see a segmented grid throughout the MSB viewport. The size, segments and height of the grid can be adjusted.
+- Map Editor Toolbar: adds the ability to quickly configure the various map-specific actions, as well as adding new powerful actions such as Scramble and Replicate.
 
 ## Requirements
 * Windows 7/8/8.1/10/11 (64-bit only)
