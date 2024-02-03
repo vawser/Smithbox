@@ -38,6 +38,9 @@ public class CFG
     [JsonExtensionData] public IDictionary<string, JsonElement> AdditionalData;
 #pragma warning restore IDE0051
 
+    // Debug
+    public bool Debug_FireOnce = false;
+
     // Settings: System
     public bool System_Check_Program_Update = true;
     public bool System_Show_UI_Tooltips = true;

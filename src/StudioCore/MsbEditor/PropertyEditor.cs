@@ -702,8 +702,8 @@ public class PropertyEditor
                         Type arrtyp = typ.GetElementType();
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            var open = ImGui.TreeNodeEx($@"{GetFieldName(prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
-                            ShowFieldHint(prop, selection);
+                            var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                            ShowFieldHint(type, prop, selection);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var o = a.GetValue(i);
@@ -720,8 +720,8 @@ public class PropertyEditor
                         else
                         {
                             PropContextRowOpener();
-                            ImGui.Text($@"{GetFieldName(prop, selection)}[{i}]");
-                            ShowFieldHint(prop, selection);
+                            ImGui.Text($@"{GetFieldName(type, prop, selection)}[{i}]");
+                            ShowFieldHint(type, prop, selection);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var oldval = a.GetValue(i);
@@ -765,8 +765,8 @@ public class PropertyEditor
                         Type arrtyp = typ.GetGenericArguments()[0];
                         if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            var open = ImGui.TreeNodeEx($@"{GetFieldName(prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
-                            ShowFieldHint(prop, selection);
+                            var open = ImGui.TreeNodeEx($@"{GetFieldName(type, prop, selection)}[{i}]", ImGuiTreeNodeFlags.DefaultOpen);
+                            ShowFieldHint(type, prop, selection);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var o = itemprop.GetValue(l, new object[] { i });
@@ -783,8 +783,8 @@ public class PropertyEditor
                         else
                         {
                             PropContextRowOpener();
-                            ImGui.Text($@"{GetFieldName(prop, selection)}[{i}]");
-                            ShowFieldHint(prop, selection);
+                            ImGui.Text($@"{GetFieldName(type, prop, selection)}[{i}]");
+                            ShowFieldHint(type, prop, selection);
                             ImGui.NextColumn();
                             ImGui.SetNextItemWidth(-1);
                             var oldval = itemprop.GetValue(l, new object[] { i });
@@ -817,8 +817,8 @@ public class PropertyEditor
                 }
                 else if (typ.IsClass && typ == typeof(MSB.Shape))
                 {
-                    var open = ImGui.TreeNodeEx(GetFieldName(prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                    ShowFieldHint(prop, selection);
+                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                    ShowFieldHint(type, prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     var o = prop.GetValue(obj);
@@ -886,8 +886,8 @@ public class PropertyEditor
                 }
                 else if (typ == typeof(BTL.LightType))
                 {
-                    var open = ImGui.TreeNodeEx(GetFieldName(prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                    ShowFieldHint(prop, selection);
+                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                    ShowFieldHint(type, prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     var o = prop.GetValue(obj);
@@ -941,8 +941,8 @@ public class PropertyEditor
                 }
                 else if (typ.IsClass && typ != typeof(string) && !typ.IsArray)
                 {
-                    var open = ImGui.TreeNodeEx(GetFieldName(prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
-                    ShowFieldHint(prop, selection);
+                    var open = ImGui.TreeNodeEx(GetFieldName(type, prop, selection), ImGuiTreeNodeFlags.DefaultOpen);
+                    ShowFieldHint(type, prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     var o = prop.GetValue(obj);
@@ -959,8 +959,8 @@ public class PropertyEditor
                 else
                 {
                     PropContextRowOpener();
-                    ImGui.Text(GetFieldName(prop, selection));
-                    ShowFieldHint(prop, selection);
+                    ImGui.Text(GetFieldName(type, prop, selection));
+                    ShowFieldHint(type, prop, selection);
                     ImGui.NextColumn();
                     ImGui.SetNextItemWidth(-1);
                     var oldval = prop.GetValue(obj);
@@ -1090,9 +1090,16 @@ public class PropertyEditor
         }
     }
 
-    public string GetFieldName(PropertyInfo prop, Selection sel)
+    public string GetFieldName(Type classType, PropertyInfo prop, Selection sel)
     {
-        var name = prop.Name;
+        Type type = classType;
+        string name = prop.Name;
+
+        if (!CFG.Current.Debug_FireOnce)
+        {
+            CFG.Current.Debug_FireOnce = true;
+            TaskLogs.AddLog($"{name} - {type.Name}");
+        }
 
         if (CFG.Current.MapEditor_Enable_Commmunity_Names)
         {
@@ -1133,7 +1140,7 @@ public class PropertyEditor
         return name;
     }
 
-    public void ShowFieldHint(PropertyInfo prop, Selection sel)
+    public void ShowFieldHint(Type classType, PropertyInfo prop, Selection sel)
     {
         if (CFG.Current.MapEditor_Enable_Commmunity_Hints)
         {

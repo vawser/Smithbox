@@ -1,444 +1,283 @@
 {
     "list": [
-        {
-            "id": "ModelName",
-            "name": "Model Name",
-            "desc": "The model used by this part; requires an entry in ModelParam."
-        },
-        {
-            "id": "InstanceID",
-            "name": "Instance ID",
-            "desc": "Involved with serialization."
-        },
-        {
-            "id": "SibPath",
-            "name": "Layout Path",
-            "desc": "A path to a .sib file, presumably some kind of editor placeholder."
-        },
-        {
-            "id": "Position",
-            "name": "Position",
-            "desc": "The position of this part."
-        },
-        {
-            "id": "Rotation",
-            "name": "Rotation",
-            "desc": "The rotation of this part."
-        },
-        {
-            "id": "Scale",
-            "name": "Scale",
-            "desc": "The scale of this part. Scale will NOT affect the scale of enemies or the scale of in-built collision for objects and assets (except for assets in Elden Ring)."
-        },
-        {
-            "id": "GameEditionDisable",
-            "name": "Game Edition Disable Type",
-            "desc": "Toggles the loading of this part."
-        },
-        {
-            "id": "MapStudioLayer",
-            "name": "Map Studio Layer",
-            "desc": "Unknown."
-        },
-        {
-            "id": "EntityID",
-            "name": "Entity ID",
-            "desc": "Identifies the part in event scripts."
-        },
-        {
-            "id": "isUsePartsDrawParamID",
-            "name": "Uses Parts Draw Param ID",
-            "desc": "Enables use of PartsDrawParamID. If false, asset param is used instead."
-        },
-        {
-            "id": "PartsDrawParamID",
-            "name": "Parts Draw Param ID",
-            "desc": "The Parts Draw Param ID to use."
-        },
-        {
-            "id": "IsPointLightShadowSrc",
-            "name": "Is Point Light Shadow Source",
-            "desc": "Is this part to be considered a Point Light shadow source."
-        },
-        {
-            "id": "UnkE0B",
-            "name": "UnkE0B",
-            "desc": "Unknown"
-        },
-        {
-            "id": "IsShadowSrc",
-            "name": "Is Shadow Source",
-            "desc": "Is this part to be considered a shadow source."
-        },
-        {
-            "id": "IsShadowSrc",
-            "name": "Is Static Shadow Source",
-            "desc": "Is this part to be considered a static shadow source."
-        },
-        {
-            "id": "IsCascade3ShadowSrc",
-            "name": "Is Cascade Shadow Source",
-            "desc": "Is this part to be considered a cascade shadow source."
-        },
-        {
-            "id": "UnkE0F",
-            "name": "UnkE0F",
-            "desc": ""
-        },
-        {
-            "id": "UnkE10",
-            "name": "UnkE10",
-            "desc": ""
-        },
-        {
-            "id": "IsShadowDest",
-            "name": "Is Shadow Destination",
-            "desc": "Is this part to be considered a shadow destination."
-        },
-        {
-            "id": "IsShadowOnly",
-            "name": "Is Shadow Only",
-            "desc": "Is this part only rendered when calculating the shadow pass."
-        },
-        {
-            "id": "DrawByReflectCam",
-            "name": "Is Drawn by Reflection Camera",
-            "desc": "Is this part drawn by the reflection camera."
-        },
-        {
-            "id": "DrawOnlyReflectCam",
-            "name": "Is Drawn Only by the Reflection Camera",
-            "desc": "Is this part only drawn within the reflection camera."
-        },
-        {
-            "id": "EnableOnAboveShadow",
-            "name": "Enable on Above Shadow",
-            "desc": ""
-        },
-        {
-            "id": "DisablePointLightEffect",
-            "name": "Disable Point Light Effect",
-            "desc": ""
-        },
-        {
-            "id": "UnkE17",
-            "name": "UnkE17",
-            "desc": ""
-        },
-        {
-            "id": "UnkE18",
-            "name": "UnkE18",
-            "desc": ""
-        },
-        {
-            "id": "EntityGroupIDs",
-            "name": "Entity Group ID",
-            "desc": "A entity group ID associated with this part. Allows multiple parts to be identified with a single entity ID."
-        },
-        {
-            "id": "UnkE3C",
-            "name": "UnkE3C",
-            "desc": ""
-        },
-        {
-            "id": "UnkE3E",
-            "name": "UnkE3E",
-            "desc": ""
-        },
-        {
-            "id": "DisplayGroups",
-            "name": "Display Group",
-            "desc": "The display groups for this part."
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        },
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "desc": ""
-        }
+        "Asset": [
+            {
+                
+                "id": "ModelName",
+                "name": "Model Name",
+                "desc": "The model used by this part; requires an entry in ModelParam."
+            },
+            {
+                "id": "InstanceID",
+                "name": "Instance ID",
+                "desc": "Involved with serialization."
+            },
+            {
+                "id": "SibPath",
+                "name": "Layout Path",
+                "desc": "A path to a .sib file, presumably some kind of editor placeholder."
+            },
+            {
+                "id": "Position",
+                "name": "Position",
+                "desc": "The position of this part."
+            },
+            {
+                "id": "Rotation",
+                "name": "Rotation",
+                "desc": "The rotation of this part."
+            },
+            {
+                "id": "Scale",
+                "name": "Scale",
+                "desc": "The scale of this part. Scale will NOT affect the scale of enemies or the scale of in-built collision for objects and assets (except for assets in Elden Ring)."
+            },
+            {
+                "id": "GameEditionDisable",
+                "name": "Game Edition Disable Type",
+                "desc": "Toggles the loading of this part."
+            },
+            {
+                "id": "MapStudioLayer",
+                "name": "Map Studio Layer",
+                "desc": "Unknown."
+            },
+            {
+                "id": "EntityID",
+                "name": "Entity ID",
+                "desc": "Identifies the part in event scripts."
+            },
+            {
+                "id": "isUsePartsDrawParamID",
+                "name": "Uses Parts Draw Param ID",
+                "desc": "Enables use of PartsDrawParamID. If false, asset param is used instead."
+            },
+            {
+                "id": "PartsDrawParamID",
+                "name": "Parts Draw Param ID",
+                "desc": "The Parts Draw Param ID to use."
+            },
+            {
+                "id": "IsPointLightShadowSrc",
+                "name": "Is Point Light Shadow Source",
+                "desc": "Is this part to be considered a Point Light shadow source."
+            },
+            {
+                "id": "UnkE0B",
+                "name": "UnkE0B",
+                "desc": "Unknown"
+            },
+            {
+                "id": "IsShadowSrc",
+                "name": "Is Shadow Source",
+                "desc": "Is this part to be considered a shadow source."
+            },
+            {
+                "id": "IsShadowSrc",
+                "name": "Is Static Shadow Source",
+                "desc": "Is this part to be considered a static shadow source."
+            },
+            {
+                "id": "IsCascade3ShadowSrc",
+                "name": "Is Cascade Shadow Source",
+                "desc": "Is this part to be considered a cascade shadow source."
+            },
+            {
+                "id": "UnkE0F",
+                "name": "UnkE0F",
+                "desc": ""
+            },
+            {
+                "id": "UnkE10",
+                "name": "UnkE10",
+                "desc": ""
+            },
+            {
+                "id": "IsShadowDest",
+                "name": "Is Shadow Destination",
+                "desc": "Is this part to be considered a shadow destination."
+            },
+            {
+                "id": "IsShadowOnly",
+                "name": "Is Shadow Only",
+                "desc": "Is this part only rendered when calculating the shadow pass."
+            },
+            {
+                "id": "DrawByReflectCam",
+                "name": "Is Drawn by Reflection Camera",
+                "desc": "Is this part drawn by the reflection camera."
+            },
+            {
+                "id": "DrawOnlyReflectCam",
+                "name": "Is Drawn Only by the Reflection Camera",
+                "desc": "Is this part only drawn within the reflection camera."
+            },
+            {
+                "id": "EnableOnAboveShadow",
+                "name": "Enable on Above Shadow",
+                "desc": ""
+            },
+            {
+                "id": "DisablePointLightEffect",
+                "name": "Disable Point Light Effect",
+                "desc": ""
+            },
+            {
+                "id": "UnkE17",
+                "name": "UnkE17",
+                "desc": ""
+            },
+            {
+                "id": "UnkE18",
+                "name": "UnkE18",
+                "desc": ""
+            },
+            {
+                "id": "EntityGroupIDs",
+                "name": "Entity Group ID",
+                "desc": "A entity group ID associated with this part. Allows multiple parts to be identified with a single entity ID."
+            },
+            {
+                "id": "UnkE3C",
+                "name": "UnkE3C",
+                "desc": ""
+            },
+            {
+                "id": "UnkE3E",
+                "name": "UnkE3E",
+                "desc": ""
+            },
+            
+            {
+                "id": "DisplayGroups",
+                "name": "Display Group",
+                "desc": "A display group for this part."
+            },
+            {
+                "id": "DrawGroups",
+                "name": "Draw Group",
+                "desc": "A draw group for this part."
+            },
+            {
+                "id": "CollisionMask",
+                "name": "Collision Mask",
+                "desc": "A collision mask for this part."
+            },
+            {
+                "id": "Condition1",
+                "name": "Condition 1",
+                "desc": ""
+            },
+            {
+                "id": "Condition2",
+                "name": "Condition 2",
+                "desc": ""
+            },
+            {
+                "id": "UnkC2",
+                "name": "UnkC2",
+                "desc": ""
+            },
+            {
+                "id": "UnkC3",
+                "name": "UnkC3",
+                "desc": ""
+            },
+            {
+                "id": "UnkC4",
+                "name": "UnkC4",
+                "desc": ""
+            },
+            {
+                "id": "UnkC6",
+                "name": "UnkC6",
+                "desc": ""
+            },
+            {
+                "id": "Condition",
+                "name": "Condition",
+                "desc": ""
+            },
+            {
+                "id": "DispGroups",
+                "name": "Display Group",
+                "desc": "A display group for this part."
+            },
+            {
+                "id": "Unk24",
+                "name": "Unk24",
+                "desc": ""
+            },
+            {
+                "id": "Unk26",
+                "name": "Unk26",
+                "desc": ""
+            },
+            {
+                "id": "LightSetID",
+                "name": "Light Set ID",
+                "desc": "ID of the value set from LightSet ParamEditor to use."
+            },
+            {
+                "id": "FogParamID",
+                "name": "Fog Param ID",
+                "desc": "ID of the value set from FogParamEditor to use."
+            },
+            {
+                "id": "LightScatteringID",
+                "name": "Light Scattering ID",
+                "desc": "ID of the value set from LightScattering : ParamEditor to use."
+            },
+            {
+                "id": "EnvMapID",
+                "name": "Ennvironment Map ID",
+                "desc": "ID of the value set from Env Map:Editor to use."
+            },
+            {
+                "id": "TransitionTime",
+                "name": "Transition Time",
+                "desc": "Transition time between scenes."
+            },
+            {
+                "id": "GparamSubID_Base",
+                "name": "Graphics Param Override: [1]",
+                "desc": "Value of the hundredths place of a Gparam to override use."
+            },
+            {
+                "id": "GparamSubID_Override1",
+                "name": "Graphics Param Override: [2]",
+                "desc": "Value of the hundredths place of a Gparam to override [1] with."
+            },
+            {
+                "id": "GparamSubID_Override2",
+                "name": "Graphics Param Override: [3]",
+                "desc": "Value of the hundredths place of a Gparam to override [1] and [2] with."
+            },
+            {
+                "id": "GparamSubID_Override3",
+                "name": "Graphics Param Override: [4]",
+                "desc": "Value of the hundredths place of a Gparam to override [1], [2] and [3] with."
+            },
+            {
+                "id": "Unk1C",
+                "name": "Unk1C",
+                "desc": ""
+            },
+            {
+                "id": "Unk1D",
+                "name": "Unk1D",
+                "desc": ""
+            },
+            {
+                "id": "Unk20",
+                "name": "Unk20",
+                "desc": ""
+            },
+            {
+                "id": "Unk21",
+                "name": "Unk21",
+                "desc": ""
+            }
+        ]
    ]
 }
