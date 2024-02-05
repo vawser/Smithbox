@@ -9,4 +9,19 @@ namespace SoulsFormats
     {
         public string ReferenceName;
     }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class PositionProperty : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class RotationProperty : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class ScaleProperty : Attribute
+    {
+    }
 }

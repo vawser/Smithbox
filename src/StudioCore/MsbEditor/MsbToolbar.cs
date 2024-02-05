@@ -26,6 +26,7 @@ using SoulsFormats;
 using StudioCore.Interface;
 using Org.BouncyCastle.Ocsp;
 using SoulsFormats.KF4;
+using System.Reflection;
 
 namespace StudioCore.MsbEditor
 {
@@ -2027,6 +2028,75 @@ namespace StudioCore.MsbEditor
             List<Type> eventSubclasses = msbclass.Assembly.GetTypes()
                 .Where(type => type.IsSubclassOf(eventType) && !type.IsAbstract).ToList();
             _eventClasses = eventSubclasses.Select(x => (x.Name, x)).ToList();
+        }
+
+        /// <summary>
+        /// Save selected object's position to Position clipboard
+        /// </summary>
+        public void CopyCurrentPosition(PropertyInfo prop, object obj)
+        {
+            CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
+        }
+
+        /// <summary>
+        /// Paste saved position to current selection Position property
+        /// </summary>
+        public void PasteSavedPosition()
+        {
+            List<Action> actlist = new();
+            foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
+            {
+                actlist.Add(sel.ApplySavedPosition());
+            }
+
+            CompoundAction action = new(actlist);
+            _actionManager.ExecuteAction(action);
+        }
+
+        /// <summary>
+        /// Save selected object's position to Rotation clipboard
+        /// </summary>
+        public void CopyCurrentRotation(PropertyInfo prop, object obj)
+        {
+            CFG.Current.SavedRotation = (Vector3)prop.GetValue(obj, null);
+        }
+
+        /// <summary>
+        /// Paste saved rotation to current selection Rotation property
+        /// </summary>
+        public void PasteSavedRotation()
+        {
+            List<Action> actlist = new();
+            foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
+            {
+                actlist.Add(sel.ApplySavedRotation());
+            }
+
+            CompoundAction action = new(actlist);
+            _actionManager.ExecuteAction(action);
+        }
+
+        /// <summary>
+        /// Save selected object's scale to Scale clipboard
+        /// </summary>
+        public void CopyCurrentScale(PropertyInfo prop, object obj)
+        {
+            CFG.Current.SavedScale = (Vector3)prop.GetValue(obj, null);
+        }
+
+        /// <summary>
+        /// Paste saved scale to current selection Scale property
+        /// </summary>
+        public void PasteSavedScale()
+        {
+            List<Action> actlist = new();
+            foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
+            {
+                actlist.Add(sel.ApplySavedScale());
+            }
+
+            CompoundAction action = new(actlist);
+            _actionManager.ExecuteAction(action);
         }
     }
 }

@@ -482,12 +482,14 @@ namespace SoulsFormats
             /// The location of the region.
             /// </summary>
             [FormatReference(ReferenceName = "Region-Position")]
+            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// The rotiation of the region, in degrees.
             /// </summary>
             [FormatReference(ReferenceName = "Region-Rotation")]
+            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>

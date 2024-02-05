@@ -40,17 +40,20 @@ public class PropertyEditor
 
     private IViewport _viewport;
 
+    private MsbToolbar _msbToolbar;
+
     private AliasBank _mapAliasBank;
 
     private InfoBank _msbInfoBank;
 
-    public PropertyEditor(ActionManager manager, PropertyCache propCache, IViewport viewport, AliasBank mapAliasBank, InfoBank msbInfoBank)
+    public PropertyEditor(ActionManager manager, PropertyCache propCache, IViewport viewport, MsbToolbar msbToolbar, AliasBank mapAliasBank, InfoBank msbInfoBank)
     {
         ContextActionManager = manager;
         _propCache = propCache;
         _mapAliasBank = mapAliasBank;
         _msbInfoBank = msbInfoBank;
         _viewport = viewport;
+        _msbToolbar = msbToolbar;
     }
 
     private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop)
@@ -722,7 +725,7 @@ public class PropertyEditor
     /// <summary>
     /// Displays property context menu.
     /// </summary>
-    private void DisplayPropContextMenu(PropertyInfo prop, object obj)
+    private void DisplayPropContextMenu(Selection selection, PropertyInfo prop, object obj)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
@@ -731,12 +734,60 @@ public class PropertyEditor
 
         if (ImGui.BeginPopup("MsbPropContextMenu"))
         {
-            EditorDecorations.ImGui_DisplayPropertyInfo(prop);
+            // Info
+            if (CFG.Current.MapEditor_Enable_Property_Info)
+            {
+                EditorDecorations.ImGui_DisplayPropertyInfo(prop);
+                ImGui.Separator();
+            }
 
+            // Actions
             if (ImGui.Selectable(@"Search##PropSearch"))
             {
                 RequestedSearchProperty = prop;
                 EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
+            }
+
+            // Position - Copy/Paste
+            var posAtt = prop.GetCustomAttribute<PositionProperty>();
+            if(posAtt != null )
+            {
+                if (ImGui.Selectable(@"Copy##CopyPosition"))
+                {
+                    _msbToolbar.CopyCurrentPosition(prop, obj);
+                }
+                if (ImGui.Selectable(@"Paste##PastePosition"))
+                {
+                    _msbToolbar.PasteSavedPosition();
+                }
+            }
+
+            // Rotation - Copy/Paste
+            var rotAtt = prop.GetCustomAttribute<RotationProperty>();
+            if (rotAtt != null)
+            {
+                if (ImGui.Selectable(@"Copy##CopyRotation"))
+                {
+                    _msbToolbar.CopyCurrentRotation(prop, obj);
+                }
+                if (ImGui.Selectable(@"Paste##PasteRotation"))
+                {
+                    _msbToolbar.PasteSavedRotation();
+                }
+            }
+
+            // Scale - Copy/Paste
+            var scaleAtt = prop.GetCustomAttribute<ScaleProperty>();
+            if (scaleAtt != null)
+            {
+                if (ImGui.Selectable(@"Copy##CopyScale"))
+                {
+                    _msbToolbar.CopyCurrentScale(prop, obj);
+                }
+                if (ImGui.Selectable(@"Paste##PasteScale"))
+                {
+                    _msbToolbar.PasteSavedScale();
+                }
             }
 
             ImGui.EndPopup();
@@ -878,7 +929,7 @@ public class PropertyEditor
                                 PropertyRow(typ.GetElementType(), oldval, out newval, prop);
                             var changed = propEditResults.Item1;
                             var committed = propEditResults.Item2;
-                            DisplayPropContextMenu(prop, obj);
+                            DisplayPropContextMenu(selection, prop, obj);
                             if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
                             {
                                 ImGui.SetItemDefaultFocus();
@@ -940,7 +991,7 @@ public class PropertyEditor
                             (bool, bool) propEditResults = PropertyRow(arrtyp, oldval, out newval, prop);
                             var changed = propEditResults.Item1;
                             var committed = propEditResults.Item2;
-                            DisplayPropContextMenu(prop, obj);
+                            DisplayPropContextMenu(selection, prop, obj);
                             if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
                             {
                                 ImGui.SetItemDefaultFocus();
@@ -1116,7 +1167,7 @@ public class PropertyEditor
                     (bool, bool) propEditResults = PropertyRow(typ, oldval, out newval, prop);
                     var changed = propEditResults.Item1;
                     var committed = propEditResults.Item2;
-                    DisplayPropContextMenu(prop, obj);
+                    DisplayPropContextMenu(selection, prop, obj);
                     if (ImGui.IsItemActive() && !ImGui.IsWindowFocused())
                     {
                         ImGui.SetItemDefaultFocus();

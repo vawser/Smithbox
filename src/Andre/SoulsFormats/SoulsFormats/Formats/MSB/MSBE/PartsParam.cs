@@ -206,18 +206,21 @@ namespace SoulsFormats
             /// Location of the part.
             /// </summary>
             [FormatReference(ReferenceName = "Part-Position")]
+            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of the part.
             /// </summary>
             [FormatReference(ReferenceName = "Part-Rotation")]
+            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Scale of the part; only works for map pieces and objects.
             /// </summary>
             [FormatReference(ReferenceName = "Part-Scale")]
+            [ScaleProperty]
             public Vector3 Scale { get; set; }
 
             /// <summary>

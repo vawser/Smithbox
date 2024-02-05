@@ -967,6 +967,44 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
+    public Action ApplySavedPosition()
+    {
+        PropertiesChangedAction act = new(WrappedObject);
+        PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
+        act.AddPropertyChange(prop, CFG.Current.SavedPosition);
+
+        act.SetPostExecutionAction(undo =>
+        {
+            UpdateRenderModel();
+        });
+        return act;
+    }
+    public Action ApplySavedRotation()
+    {
+        PropertiesChangedAction act = new(WrappedObject);
+        PropertyInfo prop = WrappedObject.GetType().GetProperty("Rotation");
+        act.AddPropertyChange(prop, CFG.Current.SavedRotation);
+
+        act.SetPostExecutionAction(undo =>
+        {
+            UpdateRenderModel();
+        });
+        return act;
+    }
+
+    public Action ApplySavedScale()
+    {
+        PropertiesChangedAction act = new(WrappedObject);
+        PropertyInfo prop = WrappedObject.GetType().GetProperty("Scale");
+        act.AddPropertyChange(prop, CFG.Current.SavedPosition);
+
+        act.SetPostExecutionAction(undo =>
+        {
+            UpdateRenderModel();
+        });
+        return act;
+    }
+
     /// <summary>
     /// Get action for changing a string propety value for this object.
     /// </summary>

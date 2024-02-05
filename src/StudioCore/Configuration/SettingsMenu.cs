@@ -411,6 +411,9 @@ public class SettingsMenu
 
                 ImGui.Checkbox("Display community descriptions", ref CFG.Current.MapEditor_Enable_Commmunity_Hints);
                 ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced descriptions.");
+
+                ImGui.Checkbox("Display property info", ref CFG.Current.MapEditor_Enable_Property_Info);
+                ImguiUtils.ShowHelpMarker("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
             }
 
             // Scene View

@@ -721,6 +721,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// How much to shift by.
                 /// </summary>
+                [PositionProperty]
                 public Vector3 Position { get; set; }
 
                 /// <summary>

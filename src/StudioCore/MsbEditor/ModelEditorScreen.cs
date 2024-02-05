@@ -74,7 +74,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
         _sceneTree = new SceneTree(SceneTree.Configuration.ModelEditor, this, "modeledittree", _universe,
             _selection, EditorActionManager, Viewport, AssetLocator, modelAliasBank, mapAliasBank);
-        _propEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, mapAliasBank, null);
+        _propEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, null, mapAliasBank, null);
         _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", AssetLocator, modelAliasBank, mapAliasBank);
     }
 

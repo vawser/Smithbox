@@ -41,6 +41,11 @@ public class CFG
     // Debug
     public bool Debug_FireOnce = false;
 
+    // Actions
+    public Vector3 SavedPosition = new Vector3();
+    public Vector3 SavedRotation = new Vector3();
+    public Vector3 SavedScale = new Vector3();
+
     // Settings: System
     public bool System_Check_Program_Update = true;
     public bool System_Show_UI_Tooltips = true;
@@ -62,6 +67,7 @@ public class CFG
 
     public bool MapEditor_Enable_Commmunity_Names = true;
     public bool MapEditor_Enable_Commmunity_Hints = true;
+    public bool MapEditor_Enable_Property_Info = false;
 
     // Viewport
     public bool Viewport_EnableGrid = true;
