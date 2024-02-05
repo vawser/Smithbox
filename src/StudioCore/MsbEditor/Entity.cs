@@ -1141,6 +1141,14 @@ public class Entity : ISelectable, IDisposable
     }
 
     /// <summary>
+    /// Returns true if this entity is a Light
+    /// </summary>
+    public bool IsLight()
+    {
+        return WrappedObject is BTL.Light ? true : false;
+    }
+
+    /// <summary>
     /// Returns true if this entity is an Enemy
     /// </summary>
     public bool IsPartEnemy()

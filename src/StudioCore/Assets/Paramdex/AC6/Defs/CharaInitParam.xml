@@ -38,7 +38,7 @@
     <Field Def="s32 UnkInt0x74"></Field>
     <Field Def="s32 UnkInt0x78"></Field>
     <Field Def="s32 UnkInt0x7C"></Field>
-    <Field Def="s32 UnkInt0x80"></Field>
+    <Field Def="s32 repairKitGoodsParamId"></Field>
     <Field Def="s32 UnkInt0x84"></Field>
     <Field Def="s32 UnkInt0x88"></Field>
     <Field Def="s32 UnkInt0x8C"></Field>

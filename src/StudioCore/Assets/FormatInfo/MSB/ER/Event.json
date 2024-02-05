@@ -1,9 +1,279 @@
 {
     "list": [
         {
-            "id": "ModelName",
-            "name": "Model Name",
-            "desc": "The name of the model this part uses."
+            "id": "Event-EventID",
+            "name": "Event ID",
+            "desc": "Unused."
+        },
+        {
+            "id": "Event-PartName",
+            "name": "Part Name",
+            "desc": ""
+        },
+        {
+            "id": "Event-RegionName",
+            "name": "Region Name",
+            "desc": ""
+        },
+        {
+            "id": "Event-EntityID",
+            "name": "Entity ID",
+            "desc": "Identifies the Event in event scripts."
+        },
+        {
+            "id": "Event-Unk14",
+            "name": "Unk14",
+            "desc": ""
+        },
+        {
+            "id": "Event-MapID",
+            "name": "Map ID",
+            "desc": ""
+        },
+        {
+            "id": "Event-UnkE0C",
+            "name": "UnkE0C",
+            "desc": ""
+        },
+        {
+            "id": "Event-UnkS04",
+            "name": "UnkS04",
+            "desc": ""
+        },
+        {
+            "id": "Event-UnkS08",
+            "name": "UnkS08",
+            "desc": ""
+        },
+        {
+            "id": "Event-UnkS0C",
+            "name": "UnkS0C",
+            "desc": ""
+        },
+        {
+            "id": "Treasure-TreasurePartName",
+            "name": "Attached Part Name",
+            "desc": "The part that the treasure is attached to."
+        },
+        {
+            "id": "Treasure-ItemLotID",
+            "name": "Item Lot ID",
+            "desc": "The item lot to be given."
+        },
+        {
+            "id": "Treasure-ActionButtonID",
+            "name": "Action Button ID",
+            "desc": "If not -1, uses an entry from ActionButtonParam for the pickup prompt."
+        },
+        {
+            "id": "Treasure-PickupAnimID",
+            "name": "Pickup Anim ID",
+            "desc": "Animation to play when taking this treasure."
+        },
+        {
+            "id": "Treasure-InChest",
+            "name": "Is in Chest",
+            "desc": "Changes the text of the pickup prompt."
+        },
+        {
+            "id": "Treasure-StartDisabled",
+            "name": "Starts Disabled",
+            "desc": "Whether the treasure should be hidden by default."
+        },
+        {
+            "id": "Generator-MaxNum",
+            "name": "Maximum Generated Count",
+            "desc": "The maximum number of enemies that this generator can generate in total."
+        },
+        {
+            "id": "Generator-GenType",
+            "name": "Generator Type",
+            "desc": "The spawn location behavior to use upon a generation interval."
+        },
+        {
+            "id": "Generator-LimitNum",
+            "name": "Maximum Spawn Count",
+            "desc": "The maximum number of enemies that this generator can generate upon a generation interval."
+        },
+        {
+            "id": "Generator-MinGenNum",
+            "name": "Random Spawn Count: Minimum",
+            "desc": "The minimum number to use when determining the amount of enemies to generate within a generation interval."
+        },
+        {
+            "id": "Generator-MaxGenNum",
+            "name": "Random Spawn Count: Maximum",
+            "desc": "The maximum number to use when determining the amount of enemies to generate within a generation interval."
+        },
+        {
+            "id": "Generator-MinInterval",
+            "name": "Generation Interval: Minimum",
+            "desc": "The minimum time interval (in seconds) between each generation interval."
+        },
+        {
+            "id": "Generator-MaxInterval",
+            "name": "Generation Interval: Maximum",
+            "desc": "The maximum time interval (in seconds) between each generation interval."
+        },
+        {
+            "id": "Generator-InitialSpawnCount",
+            "name": "Initial Spawn Count",
+            "desc": "The initial number of enemies to spawn upon initialization of the generator."
+        },
+        {
+            "id": "Generator-UnkT14",
+            "name": "UnkT14",
+            "desc": ""
+        },
+        {
+            "id": "Generator-UnkT18",
+            "name": "UnkT18",
+            "desc": ""
+        },
+        {
+            "id": "Generator-SpawnRegionNames",
+            "name": "Spawn Region Names",
+            "desc": "Regions where parts will spawn from."
+        },
+        {
+            "id": "Generator-SpawnPartNames",
+            "name": "Spawn Part Names",
+            "desc": "Parts that will be respawned."
+        },
+        {
+            "id": "ObjAct-ObjActEntityID",
+            "name": "ObjAct Entity ID",
+            "desc": ""
+        },
+        {
+            "id": "ObjAct-ObjActPartName",
+            "name": "ObjAct Part Name",
+            "desc": "The part to be interacted with."
+        },
+        {
+            "id": "ObjAct-ObjActID",
+            "name": "ObjAct ID",
+            "desc": "A row in ObjActParam."
+        },
+        {
+            "id": "ObjAct-StateType",
+            "name": "State Type",
+            "desc": ""
+        },
+        {
+            "id": "ObjAct-EventFlagID",
+            "name": "Event Flag ID",
+            "desc": ""
+        },
+        {
+            "id": "Navmesh-NavmeshRegionName",
+            "name": "Region Name",
+            "desc": ""
+        },
+        {
+            "id": "PseudoMultiplayer-HostEntityID",
+            "name": "Host Entity ID",
+            "desc": "The NPC whose world you're entering."
+        },
+        {
+            "id": "PseudoMultiplayer-EventFlagID",
+            "name": "Event Flag ID",
+            "desc": "Set when inside the event's region, unset when outside it."
+        },
+        {
+            "id": "PseudoMultiplayer-ActivateGoodsID",
+            "name": "Activation Goods ID",
+            "desc": "ID of a goods item that is used to trigger the event."
+        },
+        {
+            "id": "PseudoMultiplayer-UnkT0C",
+            "name": "UnkT0C",
+            "desc": "Unknown; possibly a sound ID."
+        },
+        {
+            "id": "PseudoMultiplayer-UnkT10",
+            "name": "UnkT10",
+            "desc": "Unknown; possibly a map event ID."
+        },
+        {
+            "id": "PseudoMultiplayer-UnkT14",
+            "name": "UnkT14",
+            "desc": "Unknown; possibly flags."
+        },
+        {
+            "id": "PseudoMultiplayer-UnkT18",
+            "name": "UnkT18",
+            "desc": ""
+        },
+        {
+            "id": "PseudoMultiplayer-UnkT1C",
+            "name": "UnkT1C",
+            "desc": ""
+        },
+        {
+            "id": "PlatoonInfo-PlatoonIDScriptActivate",
+            "name": "Platoon Script ID",
+            "desc": "The platoon script to apply when activated."
+        },
+        {
+            "id": "PlatoonInfo-State",
+            "name": "State",
+            "desc": ""
+        },
+        {
+            "id": "PlatoonInfo-GroupPartsNames",
+            "name": "Group Part Names",
+            "desc": "The parts that belong to this platoon."
+        },
+        {
+            "id": "PatrolInfo-PatrolType",
+            "name": "Patrol Type",
+            "desc": "Determines patrol behavior. 0 = return to first region on loop, 1 = go through list backwards on loop, etc."
+        },
+        {
+            "id": "PatrolInfo-WalkRegionNames",
+            "name": "Walk Region Names",
+            "desc": "The regions that belong to this patrol."
+        },
+        {
+            "id": "Mount-RiderPartName",
+            "name": "Rider Part Name",
+            "desc": "The rider Part that may ride the mount Part."
+        },
+        {
+            "id": "Mount-MountPartName",
+            "name": "Mount Part Name",
+            "desc": "The mount Part."
+        },
+        {
+            "id": "SignPool-SignPartName",
+            "name": "Sign Part Name",
+            "desc": "The Part that the signpool is associated with."
+        },
+        {
+            "id": "SignPool-SignPuddleParamID",
+            "name": "Sign Puddle Param ID",
+            "desc": "The ID of the SignPuddleParam row to use for this signpool."
+        },
+        {
+            "id": "RetryPoint-RetryPartName",
+            "name": "Retry Part Name",
+            "desc": "The Part that is associated with this retry point."
+        },
+        {
+            "id": "RetryPoint-EventFlagID",
+            "name": "Event Flag ID",
+            "desc": "Flag that must be set for retry point to be available."
+        },
+        {
+            "id": "RetryPoint-UnkT08",
+            "name": "UnkT08",
+            "desc": ""
+        },
+        {
+            "id": "RetryPoint-RetryRegionName",
+            "name": "Retry Region Name",
+            "desc": "The Region that this retry point covers."
         }
    ]
 }

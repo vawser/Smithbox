@@ -20,4 +20,34 @@ namespace SoulsFormats
     public class MSBEntityReference : Attribute
     {
     }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class IntBoolean : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class UIntBoolean : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class ShortBoolean : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class UShortBoolean : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class ByteBoolean : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class SByteBoolean : Attribute
+    {
+    }
 }

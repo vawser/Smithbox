@@ -58,6 +58,7 @@ public class PropertyEditor
         {
             var val = (long)oldval;
             var strval = $@"{val}";
+
             if (ImGui.InputText("##value", ref strval, 99))
             {
                 var res = long.TryParse(strval, out val);
@@ -71,71 +72,211 @@ public class PropertyEditor
         else if (typ == typeof(int))
         {
             var val = (int)oldval;
-            if (ImGui.InputInt("##value", ref val))
+            var att = prop?.GetCustomAttribute<IntBoolean>();
+
+            if (att != null)
             {
-                newval = val;
-                isChanged = true;
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt("##value", ref val))
+                {
+                    newval = val;
+                    isChanged = true;
+                }
             }
         }
         else if (typ == typeof(uint))
         {
             var val = (uint)oldval;
             var strval = $@"{val}";
-            if (ImGui.InputText("##value", ref strval, 16))
+            var att = prop?.GetCustomAttribute<UIntBoolean>();
+
+            if (att != null)
             {
-                var res = uint.TryParse(strval, out val);
-                if (res)
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
                 {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
                     newval = val;
                     isChanged = true;
+                }
+            }
+            else
+            {
+                if (ImGui.InputText("##value", ref strval, 16))
+                {
+                    var res = uint.TryParse(strval, out val);
+                    if (res)
+                    {
+                        newval = val;
+                        isChanged = true;
+                    }
                 }
             }
         }
         else if (typ == typeof(short))
         {
             int val = (short)oldval;
-            if (ImGui.InputInt("##value", ref val))
+            var att = prop?.GetCustomAttribute<ShortBoolean>();
+
+            if (att != null)
             {
-                newval = (short)val;
-                isChanged = true;
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt("##value", ref val))
+                {
+                    newval = (short)val;
+                    isChanged = true;
+                }
             }
         }
         else if (typ == typeof(ushort))
         {
             var val = (ushort)oldval;
             var strval = $@"{val}";
-            if (ImGui.InputText("##value", ref strval, 5))
+
+            var att = prop?.GetCustomAttribute<UShortBoolean>();
+
+            if (att != null)
             {
-                var res = ushort.TryParse(strval, out val);
-                if (res)
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
                 {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
                     newval = val;
                     isChanged = true;
+                }
+            }
+            else
+            {
+                if (ImGui.InputText("##value", ref strval, 5))
+                {
+                    var res = ushort.TryParse(strval, out val);
+                    if (res)
+                    {
+                        newval = val;
+                        isChanged = true;
+                    }
                 }
             }
         }
         else if (typ == typeof(sbyte))
         {
             int val = (sbyte)oldval;
-            if (ImGui.InputInt("##value", ref val))
+            var att = prop?.GetCustomAttribute<SByteBoolean>();
+
+            if (att != null)
             {
-                newval = (sbyte)val;
-                isChanged = true;
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
+                {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
+                    newval = val;
+                    isChanged = true;
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt("##value", ref val))
+                {
+                    newval = (sbyte)val;
+                    isChanged = true;
+                }
             }
         }
         else if (typ == typeof(byte))
         {
             var val = (byte)oldval;
             var strval = $@"{val}";
-            if (ImGui.InputText("##value", ref strval, 3))
+            var att = prop?.GetCustomAttribute<ByteBoolean>();
+
+            if (att != null)
             {
-                var res = byte.TryParse(strval, out val);
-                if (res)
+                bool bVar = false;
+
+                if (val > 0)
+                    bVar = true;
+
+                if (ImGui.Checkbox("##value", ref bVar))
                 {
+                    if (bVar == true)
+                        val = 1;
+                    else
+                        val = 0;
+
                     newval = val;
                     isChanged = true;
                 }
             }
+            else
+            {
+                if (ImGui.InputText("##value", ref strval, 3))
+                {
+                    var res = byte.TryParse(strval, out val);
+                    if (res)
+                    {
+                        newval = val;
+                        isChanged = true;
+                    }
+                }
+            }
+
             /*
             // TODO: Set Next Unique Value
             // (needs prop search to scan through structs)
@@ -1094,12 +1235,7 @@ public class PropertyEditor
     {
         Type type = classType;
         string name = prop.Name;
-
-        if (!CFG.Current.Debug_FireOnce)
-        {
-            CFG.Current.Debug_FireOnce = true;
-            TaskLogs.AddLog($"{name} - {type.Name}");
-        }
+        var attribute = prop?.GetCustomAttribute<FormatReference>();
 
         if (CFG.Current.MapEditor_Enable_Commmunity_Names)
         {
@@ -1125,11 +1261,17 @@ public class PropertyEditor
                 entries = _msbInfoBank.FormatInformation.GetEntries("Event");
             }
 
-            if (entries != null)
+            // Light
+            if (_selected.IsLight())
+            {
+                entries = _msbInfoBank.FormatInformation.GetEntries("Light");
+            }
+
+            if (entries != null && attribute != null)
             {
                 foreach (var entry in entries)
                 {
-                    if (entry.id == prop.Name)
+                    if (entry.id == attribute.ReferenceName)
                     {
                         name = entry.name;
                     }
@@ -1142,6 +1284,8 @@ public class PropertyEditor
 
     public void ShowFieldHint(Type classType, PropertyInfo prop, Selection sel)
     {
+        var attribute = prop?.GetCustomAttribute<FormatReference>();
+
         if (CFG.Current.MapEditor_Enable_Commmunity_Hints)
         {
             var desc = "Unknown.";
@@ -1167,11 +1311,18 @@ public class PropertyEditor
             {
                 entries = _msbInfoBank.FormatInformation.GetEntries("Event");
             }
-            if (entries != null)
+
+            // Light
+            if (_selected.IsLight())
+            {
+                entries = _msbInfoBank.FormatInformation.GetEntries("Light");
+            }
+
+            if (entries != null && attribute != null)
             {
                 foreach (var entry in entries)
                 {
-                    if (entry.id == prop.Name)
+                    if (entry.id == attribute.ReferenceName)
                     {
                         desc = entry.desc;
                     }

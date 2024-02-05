@@ -34,6 +34,7 @@
     <equipPartFcs AltName="Equipped Part: FCS" Refs="EquipParamFcs" />
     <equipPartCoreExpansion AltName="Equipped Part: Core Expansion" />
     <repairKitAmount AltName="Repair Kit Amount" />
+    <repairKitGoodsParamId AltName="Repair Kit Goods Param ID" Refs="EquipParamGoods" />
   </Field>
   <Self />
 </PARAMMETA>

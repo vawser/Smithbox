@@ -186,148 +186,182 @@ namespace SoulsFormats
             /// <summary>
             /// The model used by this part; requires an entry in ModelParam.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-ModelName")]
             public string ModelName { get; set; }
             private int ModelIndex;
 
             /// <summary>
             /// Involved with serialization.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-InstanceID")]
             public int InstanceID { get; set; }
 
             /// <summary>
             /// A path to a .sib file, presumably some kind of editor placeholder.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-SibPath")]
             public string SibPath { get; set; }
 
             /// <summary>
             /// Location of the part.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-Position")]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of the part.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-Rotation")]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Scale of the part; only works for map pieces and objects.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-Scale")]
             public Vector3 Scale { get; set; }
 
             /// <summary>
             /// 1 disables the part, 2 and 3 are unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-GameEditionDisable")]
             public GameEditionDisableType GameEditionDisable { get; set; } = GameEditionDisableType.NeverDisable;
 
             /// <summary>
             /// Very speculative
             /// </summary>
+            [FormatReference(ReferenceName = "Part-MapStudioLayer")]
             public uint MapStudioLayer { get; set; }
 
             /// <summary>
             /// Identifies the part in event scripts.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-EntityID")]
             public uint EntityID { get; set; }
 
             /// <summary>
             /// Enables use of PartsDrawParamID. If false, asset param is used instead.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-isUsePartsDrawParamID")]
+            [ByteBoolean]
             public byte isUsePartsDrawParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-PartsDrawParamID")]
             [MSBParamReference(ParamName = "PartsDrawParam")]
             public short PartsDrawParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-IsPointLightShadowSrc")]
+            [SByteBoolean]
             public sbyte IsPointLightShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE0B")]
             public byte UnkE0B { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-IsShadowSrc")]
             public bool IsShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-IsStaticShadowSrc")]
+            [ByteBoolean]
             public byte IsStaticShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-IsCascade3ShadowSrc")]
+            [ByteBoolean]
             public byte IsCascade3ShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE0F")]
             public byte UnkE0F { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE10")]
             public byte UnkE10 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-IsShadowDest")]
             public bool IsShadowDest { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-IsShadowOnly")]
             public bool IsShadowOnly { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-DrawByReflectCam")]
             public bool DrawByReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-DrawOnlyReflectCam")]
             public bool DrawOnlyReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-EnableOnAboveShadow")]
+            [ByteBoolean]
             public byte EnableOnAboveShadow { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-DisablePointLightEffect")]
             public bool DisablePointLightEffect { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE17")]
             public byte UnkE17 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE18")]
             public int UnkE18 { get; set; }
 
             /// <summary>
             /// Allows multiple parts to be identified by the same entity ID.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-EntityGroupIDs")]
             public uint[] EntityGroupIDs { get; private set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE3C")]
             public short UnkE3C { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE3E")]
             public short UnkE3E { get; set; }
 
             private protected Part(string name)
@@ -754,46 +788,55 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-DisplayGroups")]
                 public uint[] DisplayGroups { get; private set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-DrawGroups")]
                 public uint[] DrawGroups { get; private set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-CollisionMask")]
                 public uint[] CollisionMask { get; private set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-Condition1")]
                 public byte Condition1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-Condition2")]
                 public byte Condition2 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-UnkC2")]
                 public byte UnkC2 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-UnkC3")]
                 public byte UnkC3 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-UnkC4")]
                 public short UnkC4 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct1-UnkC6")]
                 public short UnkC6 { get; set; }
 
                 /// <summary>
@@ -861,21 +904,25 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct2-Condition")]
                 public int Condition { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct2-DispGroups")]
                 public uint[] DispGroups { get; private set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct2-Unk24")]
                 public short Unk24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct2-Unk26")]
                 public short Unk26 { get; set; }
 
                 /// <summary>
@@ -923,21 +970,25 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID of the value set from LightSet ParamEditor to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "GparamConfig-LightSetID")]
                 public int LightSetID { get; set; }
 
                 /// <summary>
                 /// ID of the value set from FogParamEditor to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "GparamConfig-FogParamID")]
                 public int FogParamID { get; set; }
 
                 /// <summary>
                 /// ID of the value set from LightScattering : ParamEditor to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "GparamConfig-LightScatteringID")]
                 public int LightScatteringID { get; set; }
 
                 /// <summary>
                 /// ID of the value set from Env Map:Editor to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "GparamConfig-EnvMapID")]
                 public int EnvMapID { get; set; }
 
                 /// <summary>
@@ -988,46 +1039,55 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-TransitionTime")]
                 public float TransitionTime { get; set; }
 
                 /// <summary>
                 /// Value of the hundredths place of a Gparam to override use.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-GparamSubID_Base")]
                 public sbyte GparamSubID_Base { get; set; }
 
                 /// <summary>
                 /// Value of the hundredths place of a Gparam to override Base with.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-GparamSubID_Override1")]
                 public sbyte GparamSubID_Override1 { get; set; }
 
                 /// <summary>
                 /// Value of the hundredths place of a Gparam to override Base and Override 1 with.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-GparamSubID_Override2")]
                 public sbyte GparamSubID_Override2 { get; set; }
 
                 /// <summary>
                 /// Value of the hundredths place of a Gparam to override Base and Override 1 and Override 2 with.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-GparamSubID_Override3")]
                 public sbyte GparamSubID_Override3 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-Unk1C")]
                 public sbyte Unk1C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-Unk1D")]
                 public sbyte Unk1D { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-Unk20")]
                 public sbyte Unk20 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-Unk21")]
                 public sbyte Unk21 { get; set; }
 
                 /// <summary>
@@ -1104,36 +1164,43 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct7-Unk00")]
                 public int Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct7-Unk04")]
                 public int Unk04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct7-Unk08")]
                 public int Unk08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct7-Unk0C")]
                 public int Unk0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct7-Unk10")]
                 public int Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct7-Unk14")]
                 public int Unk14 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct7-Unk18")]
                 public int Unk18 { get; set; }
 
                 /// <summary>
@@ -1182,6 +1249,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct8-Unk00")]
                 public int Unk00 { get; set; }
 
                 /// <summary>
@@ -1230,6 +1298,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct9-Unk00")]
                 public int Unk00 { get; set; }
 
                 /// <summary>
@@ -1278,26 +1347,31 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct10-MapID")]
                 public byte[] MapID { get; private set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct10-Unk04")]
                 public int Unk04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct10-Unk0C")]
                 public int Unk0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct10-Unk10")]
                 public int Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct10-Unk14")]
                 public int Unk14 { get; set; }
 
                 /// <summary>
@@ -1351,11 +1425,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct11-Unk00")]
                 public int Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "UnkStruct11-Unk04")]
                 public int Unk04 { get; set; }
 
                 /// <summary>
@@ -1415,36 +1491,43 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPiece-Unk1")]
                 public UnkStruct1 Unk1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPiece-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPiece-Unk7")]
                 public UnkStruct7 Unk7 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPiece-Unk8")]
                 public UnkStruct8 Unk8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPiece-Unk9")]
                 public UnkStruct9 Unk9 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPiece-Unk10")]
                 public UnkStruct10 Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPiece-Unk11")]
                 public UnkStruct11 Unk11 { get; set; }
 
                 /// <summary>
@@ -1522,59 +1605,70 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-Unk1")]
                 public UnkStruct1 Unk1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-Unk8")]
                 public UnkStruct8 Unk8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-Unk10")]
                 public UnkStruct10 Unk10 { get; set; }
 
                 /// <summary>
                 /// An ID in NPCThinkParam that determines the enemy's AI characteristics.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-ThinkParamID")]
                 [MSBParamReference(ParamName = "NpcThinkParam")]
                 public int ThinkParamID { get; set; }
 
                 /// <summary>
                 /// An ID in NPCParam that determines a variety of enemy properties.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-NPCParamID")]
                 [MSBParamReference(ParamName = "NpcParam")]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
                 /// Talk ID
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-TalkID")]
                 public int TalkID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-UnkT15")]
                 public bool UnkT15 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-PlatoonID")]
                 public short PlatoonID { get; set; }
 
                 /// <summary>
                 /// An ID in CharaInitParam that determines a human's inventory and stats.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-CharaInitID")]
                 [MSBParamReference(ParamName = "CharaInitParam")]
                 public int CharaInitID { get; set; }
 
                 /// <summary>
                 /// Should reference the collision the enemy starts on.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-CollisionPartName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionPartName { get; set; }
                 private int CollisionPartIndex;
@@ -1582,6 +1676,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Walk route followed by this enemy.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-WalkRouteName")]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
                 private short WalkRouteIndex;
@@ -1589,43 +1684,51 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-UnkT24")]
                 public int UnkT24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-UnkT28")]
                 public int UnkT28 { get; set; }
 
                 /// <summary>
                 /// ID in ChrActivateConditionParam that affects enemy appearance conditions.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-ChrActivateCondParamID")]
                 [MSBParamReference(ParamName = "ChrActivateConditionParam")]
                 public int ChrActivateCondParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-UnkT34")]
                 public int UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-BackupEventAnimID")]
                 public int BackupEventAnimID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-UnkT3C")]
                 public int UnkT3C { get; set; }
 
                 /// <summary>
                 /// Refers to SpEffectSetParam ID. Applies SpEffects to an enemy.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-SpEffectSetParamID")]
                 [MSBParamReference(ParamName = "SpEffectSetParam")]
                 public int[] SpEffectSetParamID { get; private set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-UnkT84")]
                 public float UnkT84 { get; set; }
 
                 private protected EnemyBase() : base("cXXXX_XXXX")
@@ -1792,21 +1895,25 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Player-Unk1")]
                 public UnkStruct1 Unk1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Player-Unk8")]
                 public UnkStruct8 Unk8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Player-Unk10")]
                 public UnkStruct10 Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Player-Unk00")]
                 public int Unk00 { get; set; }
 
                 /// <summary>
@@ -1895,142 +2002,170 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-Unk1")]
                 public UnkStruct1 Unk1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-Unk2")]
                 public UnkStruct2 Unk2 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-SceneGparam")]
                 public SceneGparamConfig SceneGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-Unk8")]
                 public UnkStruct8 Unk8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-Unk10")]
                 public UnkStruct10 Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-Unk11")]
                 public UnkStruct11 Unk11 { get; set; }
 
                 /// <summary>
                 /// Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-HitFilterID")]
                 public HitFilterType HitFilterID { get; set; } = HitFilterType.Standard;
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT01")]
                 public byte UnkT01 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT02")]
                 public byte UnkT02 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT03")]
                 public bool UnkT03 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT04")]
                 public float UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT14")]
                 public float UnkT14 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT18")]
                 public int UnkT18 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT1C")]
                 public int UnkT1C { get; set; }
 
                 /// <summary>
                 /// Used to determine invasion eligibility.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-PlayRegionID")]
                 [MSBParamReference(ParamName = "PlayRegionParam")]
                 public int PlayRegionID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT24")]
                 public short UnkT24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT26")]
                 public short UnkT26 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT30")]
                 public int UnkT30 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT34")]
                 public byte UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT35")]
                 public byte UnkT35 { get; set; }
 
                 /// <summary>
                 /// Disable being able to summon/ride Torrent.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-DisableTorrent")]
                 public bool DisableTorrent { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT3C")]
                 public short UnkT3C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT3E")]
                 public short UnkT3E { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT40")]
                 public float UnkT40 { get; set; }
 
                 /// <summary>
                 /// Disables Fast Travel if Event Flag is not set.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-EnableFastTravelEventFlagID")]
                 public uint EnableFastTravelEventFlagID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT4C")]
                 public short UnkT4C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT4E")]
                 public short UnkT4E { get; set; }
 
                 /// <summary>
@@ -2163,21 +2298,25 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "DummyAsset-Unk1")]
                 public UnkStruct1 Unk1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "DummyAsset-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "DummyAsset-Unk8")]
                 public UnkStruct8 Unk8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "DummyAsset-Unk10")]
                 public UnkStruct10 Unk10 { get; set; }
 
                 /// <summary>
@@ -2271,31 +2410,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-Unk1")]
                 public UnkStruct1 Unk1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-Unk2")]
                 public UnkStruct2 Unk2 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-Unk8")]
                 public UnkStruct8 Unk8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-Unk10")]
                 public UnkStruct10 Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-Unk11")]
                 public UnkStruct11 Unk11 { get; set; }
 
                 /// <summary>
                 /// The collision part to attach to.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-CollisionName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
@@ -2304,26 +2449,31 @@ namespace SoulsFormats
                 /// <summary>
                 /// The map to load when on this collision.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-MapID")]
                 public byte[] MapID { get; private set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-UnkT08")]
                 public byte UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-UnkT09")]
                 public bool UnkT09 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-UnkT0A")]
                 public byte UnkT0A { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-UnkT0B")]
                 public bool UnkT0B { get; set; }
 
                 /// <summary>
@@ -2418,96 +2568,115 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-Unk1")]
                 public UnkStruct1 Unk1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-Unk2")]
                 public UnkStruct2 Unk2 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-Unk7")]
                 public UnkStruct7 Unk7 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-Unk8")]
                 public UnkStruct8 Unk8 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-Unk9")]
                 public UnkStruct9 Unk9 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-Unk10")]
                 public UnkStruct10 Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-Unk11")]
                 public UnkStruct11 Unk11 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT02")]
                 public short UnkT02 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT10")]
                 public byte UnkT10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT11")]
                 public bool UnkT11 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT12")]
                 public byte UnkT12 { get; set; }
 
                 /// <summary>
                 /// Value added onto model ID determining AssetModelSfxParam to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-AssetSfxParamRelativeID")]
                 public short AssetSfxParamRelativeID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT1E")]
                 public short UnkT1E { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT24")]
                 public int UnkT24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT28")]
                 public int UnkT28 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT30")]
                 public int UnkT30 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT34")]
                 public int UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkPartNames")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] UnkPartNames { get; private set; }
                 private int[] UnkPartIndices;
@@ -2515,41 +2684,49 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT50")]
                 public bool UnkT50 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT51")]
                 public byte UnkT51 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT53")]
                 public byte UnkT53 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT54")]
                 public int UnkT54 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkModelMaskAndAnimID")]
                 public int UnkModelMaskAndAnimID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT5C")]
                 public int UnkT5C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT60")]
                 public int UnkT60 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-UnkT64")]
                 public int UnkT64 { get; set; }
 
                 /// <summary>
@@ -2560,41 +2737,49 @@ namespace SoulsFormats
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct1-Unk00")]
                     public short Unk00 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct1-Unk04")]
                     public bool Unk04 { get; set; }
 
                     /// <summary>
                     /// Disable being able to summon/ride Torrent, but only when asset isn't referencing collision DisableTorrent.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct1-DisableTorrentAssetOnly")]
                     public bool DisableTorrentAssetOnly { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct1-Unk1C")]
                     public int Unk1C { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct1-Unk24")]
                     public short Unk24 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct1-Unk26")]
                     public short Unk26 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct1-Unk28")]
                     public int Unk28 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct1-Unk2C")]
                     public int Unk2C { get; set; }
 
                     /// <summary>
@@ -2667,36 +2852,43 @@ namespace SoulsFormats
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct2-Unk00")]
                     public int Unk00 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct2-Unk04")]
                     public int Unk04 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct2-Unk14")]
                     public float Unk14 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct2-Unk1C")]
                     public byte Unk1C { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct2-Unk1D")]
                     public byte Unk1D { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct2-Unk1E")]
                     public byte Unk1E { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct2-Unk1F")]
                     public byte Unk1F { get; set; }
 
                     /// <summary>
@@ -2767,71 +2959,85 @@ namespace SoulsFormats
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk00")]
                     public int Unk00 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk04")]
                     public float Unk04 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk09")]
                     public byte Unk09 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk0A")]
                     public byte Unk0A { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk0B")]
                     public byte Unk0B { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk0C")]
                     public short Unk0C { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk0E")]
                     public short Unk0E { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk10")]
                     public float Unk10 { get; set; }
 
                     /// <summary>
                     /// Disables the asset when the specified map is loaded.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-DisableWhenMapLoadedMapID")]
                     public sbyte[] DisableWhenMapLoadedMapID { get; private set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk18")]
                     public int Unk18 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk1C")]
                     public int Unk1C { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk20")]
                     public int Unk20 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk24")]
                     public byte Unk24 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct3-Unk25")]
                     public bool Unk25 { get; set; }
 
                     /// <summary>
@@ -2915,21 +3121,25 @@ namespace SoulsFormats
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct4-Unk00")]
                     public bool Unk00 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct4-Unk01")]
                     public byte Unk01 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct4-Unk02")]
                     public byte Unk02 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
+                    [FormatReference(ReferenceName = "AssetUnkStruct4-Unk03")]
                     public bool Unk03 { get; set; }
 
                     /// <summary>
@@ -2995,21 +3205,25 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-AssetUnk1")]
                 public AssetUnkStruct1 AssetUnk1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-AssetUnk2")]
                 public AssetUnkStruct2 AssetUnk2 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-AssetUnk3")]
                 public AssetUnkStruct3 AssetUnk3 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Asset-AssetUnk4")]
                 public AssetUnkStruct4 AssetUnk4 { get; set; }
 
                 /// <summary>

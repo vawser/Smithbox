@@ -475,66 +475,79 @@ namespace SoulsFormats
             /// <summary>
             /// The shape of the region.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-Shape")]
             public MSB.Shape Shape { get; set; }
 
             /// <summary>
             /// The location of the region.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-Position")]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// The rotiation of the region, in degrees.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-Rotation")]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-Unk2C")]
             public int Unk2C { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-Unk40")]
             public int Unk40 { get; set; }
 
             /// <summary>
             /// Controls whether the region is active in different ceremonies.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-MapStudioLayer")]
             public uint MapStudioLayer { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-UnkA")]
             public List<short> UnkA { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-UnkB")]
             public List<short> UnkB { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-UnkE08")]
             public byte UnkE08 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-MapID")]
             public int MapID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-UnkS04")]
             public int UnkS04 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-UnkS0C")]
             public int UnkS0C { get; set; }
 
             /// <summary>
             /// If specified, the region is only active when the part is loaded.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-ActivationPartName")]
             [MSBReference(ReferenceType = typeof(Part))]
             public string ActivationPartName { get; set; }
             private int ActivationPartIndex;
@@ -542,6 +555,7 @@ namespace SoulsFormats
             /// <summary>
             /// Identifies the region in event scripts.
             /// </summary>
+            [FormatReference(ReferenceName = "Region-EntityID")]
             public uint EntityID { get; set; }
 
             private protected Region(string name)
@@ -774,6 +788,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Not sure what this does.
                 /// </summary>
+                [FormatReference(ReferenceName = "InvasionPoint-Priority")]
                 public int Priority { get; set; }
 
                 /// <summary>
@@ -805,66 +820,79 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT00")]
                 public float UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT04")]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT0D")]
                 public bool UnkT0D { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT0E")]
                 public bool UnkT0E { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT0F")]
                 public bool UnkT0F { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT10")]
                 public float UnkT10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT14")]
                 public float UnkT14 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkMapID")]
                 public byte[] UnkMapID { get; private set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT20")]
                 public int UnkT20 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT24")]
                 public int UnkT24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT28")]
                 public int UnkT28 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT2C")]
                 public byte UnkT2C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT2D")]
                 public byte UnkT2D { get; set; }
 
                 /// <summary>
@@ -937,16 +965,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// The category of the sound.
                 /// </summary>
+                [FormatReference(ReferenceName = "Sound-SoundType")]
                 public int SoundType { get; set; }
 
                 /// <summary>
                 /// The ID of the sound.
                 /// </summary>
+                [FormatReference(ReferenceName = "Sound-SoundID")]
                 public int SoundID { get; set; }
 
                 /// <summary>
                 /// References to other regions used to build a composite shape.
                 /// </summary>
+                [FormatReference(ReferenceName = "Sound-ChildRegionNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] ChildRegionNames { get; private set; }
                 private int[] ChildRegionIndices;
@@ -954,6 +985,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Sound-UnkT49")]
                 public bool UnkT49 { get; set; }
 
                 /// <summary>
@@ -1018,11 +1050,14 @@ namespace SoulsFormats
                 /// <summary>
                 /// The ID of the particle effect FFX.
                 /// </summary>
+                [FormatReference(ReferenceName = "SFX-EffectID")]
                 public int EffectID { get; set; }
 
                 /// <summary>
                 /// If true, the effect is off by default until enabled by event scripts.
                 /// </summary>
+                [FormatReference(ReferenceName = "SFX-StartDisabled")]
+                [IntBoolean]
                 public int StartDisabled { get; set; }
 
                 /// <summary>
@@ -1056,11 +1091,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID of the effect FFX.
                 /// </summary>
+                [FormatReference(ReferenceName = "WindSFX-EffectID")]
                 public int EffectID { get; set; }
 
                 /// <summary>
                 /// Reference to a WindArea region.
                 /// </summary>
+                [FormatReference(ReferenceName = "WindSFX-WindAreaName")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string WindAreaName { get; set; }
                 private int WindAreaIndex;
@@ -1068,6 +1105,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "WindSFX-UnkT08")]
                 public float UnkT08 { get; set; }
 
                 /// <summary>
@@ -1147,52 +1185,62 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID of the message's text in the FMGs.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-MessageID")]
                 public short MessageID { get; set; }
 
                 /// <summary>
                 /// Unknown. Always 0 or 2.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-UnkT02")]
                 public short UnkT02 { get; set; }
 
                 /// <summary>
                 /// Whether the message requires Seek Guidance to appear.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-Hidden")]
                 public bool Hidden { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-UnkT08")]
                 public int UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-MessageSfxID")]
                 public int MessageSfxID { get; set; }
 
                 /// <summary>
                 /// Event Flag required to be ON for the message to appear.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-EnableEventFlagID")]
                 public uint EnableEventFlagID { get; set; }
 
                 /// <summary>
                 /// ID of character to render along with the message.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-CharacterModelName")]
                 public int CharacterModelName { get; set; }
 
                 /// <summary>
                 /// NpcParam ID to use when rendering a character with the message.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-NPCParamID")]
                 [MSBParamReference(ParamName = "NPCParam")]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
                 /// Animation ID to use when rendering a character with the message.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-AnimationID")]
                 public int AnimationID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Message-CharaInitParamID")]
                 [MSBParamReference(ParamName = "CharaInitParam")]
                 public int CharaInitParamID { get; set; }
 
@@ -1246,71 +1294,85 @@ namespace SoulsFormats
                 /// <summary>
                 /// Distance from camera required before enabling envmap. 0 = always enabled.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-EnableDist")]
                 public float EnableDist { get; set; }
 
                 /// <summary>
                 /// Distance it takes for an envmap to fully transition into view.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-TransitionDist")]
                 public float TransitionDist { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT08")]
                 public byte UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT09")]
                 public byte UnkT09 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT0A")]
                 public short UnkT0A { get; set; }
 
                 /// <summary>
                 /// Strength of specular light in region.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-SpecularLightMult")]
                 public float SpecularLightMult { get; set; }
 
                 /// <summary>
                 /// Strength of direct light emitting from EnvironmentMapPoint.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-PointLightMult")]
                 public float PointLightMult { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT2C")]
                 public short UnkT2C { get; set; }
 
                 /// <summary>
                 /// Affects lighting with other fields when true. Possibly normalizes light when false.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-IsModifyLight")]
                 public bool IsModifyLight { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT2F")]
                 public bool UnkT2F { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT30")]
                 public short UnkT30 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT33")]
                 public bool UnkT33 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT34")]
                 public short UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT36")]
                 public short UnkT36 { get; set; }
 
                 /// <summary>
@@ -1390,6 +1452,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Map ID this connection targets.
                 /// </summary>
+                [FormatReference(ReferenceName = "Connection-TargetMapID")]
                 public sbyte[] TargetMapID { get; private set; }
 
                 /// <summary>
@@ -1497,31 +1560,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MufflingBox-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MufflingBox-UnkT24")]
                 public float UnkT24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MufflingBox-UnkT34")]
                 public float UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MufflingBox-UnkT3C")]
                 public float UnkT3C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MufflingBox-UnkT40")]
                 public float UnkT40 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MufflingBox-UnkT44")]
                 public float UnkT44 { get; set; }
 
                 /// <summary>
@@ -1587,6 +1656,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MufflingPortal-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -1644,41 +1714,49 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SoundRegion-UnkT00")]
                 public byte UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SoundRegion-UnkT01")]
                 public byte UnkT01 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SoundRegion-UnkT02")]
                 public byte UnkT02 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SoundRegion-UnkT03")]
                 public byte UnkT03 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SoundRegion-UnkT04")]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SoundRegion-UnkT08")]
                 public short UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SoundRegion-UnkT0A")]
                 public short UnkT0A { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SoundRegion-UnkT0C")]
                 public byte UnkT0C { get; set; }
 
                 /// <summary>
@@ -1742,6 +1820,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "PatrolRoute-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -1773,32 +1852,38 @@ namespace SoulsFormats
                 /// <summary>
                 /// Determines which WorldMapPointParam to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPoint-WorldMapPointParamID")]
                 [MSBParamReference(ParamName = "WorldMapPointParam")]
                 public int WorldMapPointParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPoint-UnkT04")]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPoint-UnkT08")]
                 public float UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPoint-UnkT0C")]
                 public float UnkT0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPoint-UnkT14")]
                 public float UnkT14 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPoint-UnkT18")]
                 public float UnkT18 { get; set; }
 
                 /// <summary>
@@ -1844,6 +1929,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Determines which WeatherLotParam ID to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "WeatherOverride-WeatherLotParamID")]
                 [MSBParamReference(ParamName = "WeatherLotParam")]
                 public int WeatherLotParamID { get; set; }
 
@@ -1890,6 +1976,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "AutoDrawGroupPoint-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -1935,21 +2022,25 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "GroupDefeatReward-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "GroupDefeatReward-UnkT04")]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "GroupDefeatReward-UnkT08")]
                 public int UnkT08 { get; set; }
 
                 /// <summary>
                 /// References to enemies to defeat to receive the reward.
                 /// </summary>
+                [FormatReference(ReferenceName = "GroupDefeatReward-PartNames")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] PartNames { get; private set; }
                 private int[] PartIndices;
@@ -1957,16 +2048,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "GroupDefeatReward-UnkT34")]
                 public int UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "GroupDefeatReward-UnkT38")]
                 public int UnkT38 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "GroupDefeatReward-EstusFlaskRecoveryID")]
                 [MSBParamReference(ParamName = "MPEstusFlaskRecoveryParam")]
                 [MSBParamReference(ParamName = "HPEstusFlaskRecoveryParam")]
                 public int EstusFlaskRecoveryID { get; set; }
@@ -2087,6 +2181,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Hitset-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -2118,6 +2213,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Disables fast travel when flag is OFF.
                 /// </summary>
+                [FormatReference(ReferenceName = "FastTravelRestriction-EventFlagID")]
                 public uint EventFlagID { get; set; }
 
                 /// <summary>
@@ -2177,11 +2273,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "PlayArea-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "PlayArea-UnkT04")]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
@@ -2231,11 +2329,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Height the player will move upwards when activating a MountJump.
                 /// </summary>
+                [FormatReference(ReferenceName = "MountJump-JumpHeight")]
                 public float JumpHeight { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MountJump-UnkT04")]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
@@ -2269,6 +2369,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Dummy-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -2358,6 +2459,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapNameOverride-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -2429,6 +2531,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// 1 = Forbid riding torrent, 2 = Permit riding torrent
                 /// </summary>
+                [FormatReference(ReferenceName = "HorseRideOverride-OverrideType")]
                 public HorseRideOverrideType OverrideType { get; set; } = HorseRideOverrideType.PreventRiding;
 
                 /// <summary>

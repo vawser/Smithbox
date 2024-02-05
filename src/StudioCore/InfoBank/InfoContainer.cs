@@ -37,6 +37,7 @@ public class InfoContainer
         formatInfoMap.Add("Part", LoadJSON("Part"));
         formatInfoMap.Add("Region", LoadJSON("Region"));
         formatInfoMap.Add("Event", LoadJSON("Event"));
+        formatInfoMap.Add("Light", LoadJSON("Light"));
     }
 
     private InfoResource LoadJSON(string filename)
