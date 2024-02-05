@@ -214,6 +214,7 @@ public class CFG
     public bool Toolbar_Show_Check_Duplicate_Entity_ID = true;
     public bool Toolbar_Show_Render_Patrol_Routes = true;
     public bool Toolbar_Show_Navigation_Data = true;
+    public bool Toolbar_Show_Toggle_Object_Visibility_by_Tag = true;
 
     public bool Toolbar_Show_Go_to_in_Object_List = true;
     public bool Toolbar_Show_Move_to_Camera = true;
@@ -265,6 +266,10 @@ public class CFG
     public bool Toolbar_Create_Part = true;
     public bool Toolbar_Create_Region = false;
     public bool Toolbar_Create_Event = false;
+
+    public string Toolbar_Tag_Visibility_Target = "LOD";
+    public bool Toolbar_Tag_Visibility_State_Enabled = false;
+    public bool Toolbar_Tag_Visibility_State_Disabled = true;
 
     // Toolbar: Scrambler
     public bool Toolbar_ShowScramblerMenu = false;

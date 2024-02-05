@@ -122,7 +122,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, _modelAliasBank, _mapAliasBank);
-        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, AssetLocator, Viewport);
+        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, AssetLocator, Viewport, _modelAliasBank);
         PropEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, Toolbar, _mapAliasBank, _infobank_MSB);
 
         EditorActionManager.AddEventHandler(SceneTree);

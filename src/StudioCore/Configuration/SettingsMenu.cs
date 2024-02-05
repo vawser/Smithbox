@@ -824,6 +824,9 @@ public class SettingsMenu
 
                 ImGui.Checkbox("Generate Navigation Data", ref CFG.Current.Toolbar_Show_Navigation_Data);
                 ImguiUtils.ShowHelpMarker("If enabled, the Generate Navigation Data action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Toggle Object Visibility by Tag", ref CFG.Current.Toolbar_Show_Toggle_Object_Visibility_by_Tag);
+                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Object Visibility by Tag action will be visible in the map toolbar window.");
             }
 
             if (ImGui.CollapsingHeader("Map Actions", ImGuiTreeNodeFlags.DefaultOpen))
