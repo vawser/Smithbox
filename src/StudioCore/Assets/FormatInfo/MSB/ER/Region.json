@@ -236,7 +236,7 @@
             "desc": "Distance from camera required before enabling envmap. 0 = always enabled."
         },
         {
-            "id": "EnvironmentMapEffectBox-XXX",
+            "id": "EnvironmentMapEffectBox-TransitionDist",
             "name": "Transition Distance",
             "desc": "Distance it takes for an envmap to fully transition into view."
         },
@@ -462,7 +462,7 @@
         },
         {
             "id": "Hitset-UnkT00",
-            "name": "XXX",
+            "name": "",
             "desc": ""
         },
         {
@@ -472,12 +472,12 @@
         },
         {
             "id": "PlayArea-UnkT00",
-            "name": "XXX",
+            "name": "",
             "desc": ""
         },
         {
             "id": "PlayArea-UnkT04",
-            "name": "XXX",
+            "name": "",
             "desc": ""
         },
         {

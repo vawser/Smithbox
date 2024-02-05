@@ -1,9 +1,426 @@
 {
     "list": [
         {
-            "id": "ModelName",
+            
+            "id": "Part-Name",
+            "name": "Name",
+            "desc": "The name of this entry."
+        },
+        {
+            
+            "id": "Part-ModelName",
             "name": "Model Name",
-            "desc": "The name of the model this part uses."
+            "desc": "The model used by this part; requires an entry in ModelParam."
+        },
+        {
+            "id": "Part-SibPath",
+            "name": "Layout Path",
+            "desc": "A path to a .sib file, presumably some kind of editor placeholder."
+        },
+        {
+            "id": "Part-Position",
+            "name": "Position",
+            "desc": "The position of this part."
+        },
+        {
+            "id": "Part-Rotation",
+            "name": "Rotation",
+            "desc": "The rotation of this part."
+        },
+        {
+            "id": "Part-Scale",
+            "name": "Scale",
+            "desc": "The scale of this part. Scale will NOT affect the scale of enemies or the scale of in-built collision for objects and assets (except for assets in Elden Ring)."
+        },
+        {
+            "id": "Part-MapStudioLayer",
+            "name": "Map Studio Layer",
+            "desc": "Unknown."
+        },
+        {
+            "id": "Part-DisplayGroups",
+            "name": "Display Group",
+            "desc": "A display group for this part."
+        },
+        {
+            "id": "Part-DrawGroups",
+            "name": "Draw Group",
+            "desc": "A draw group for this part."
+        },
+        {
+            "id": "Part-BackreadGroups",
+            "name": "Backread Group",
+            "desc": "A backread group for this part."
+        },
+        {
+            "id": "Part-EntityID",
+            "name": "Entity ID",
+            "desc": "Identifies the part in event scripts."
+        },
+        {
+            "id": "Part-EntityGroups",
+            "name": "EntityGroups",
+            "desc": ""
+        },
+        {
+            "id": "Part-UnkE04",
+            "name": "UnkE04",
+            "desc": ""
+        },
+        {
+            "id": "Part-UnkE05",
+            "name": "UnkE05",
+            "desc": ""
+        },
+        {
+            "id": "Part-LanternID",
+            "name": "Lantern ID",
+            "desc": ""
+        },
+        {
+            "id": "Part-LodParamID",
+            "name": "Lod Param ID",
+            "desc": ""
+        },
+        {
+            "id": "Part-UnkE0E",
+            "name": "UnkE0E",
+            "desc": ""
+        },
+        {
+            "id": "Part-PointLightShadowSource",
+            "name": "Is Point Light Shadow Source",
+            "desc": "Is this part to be considered a Point Light shadow source."
+        },
+        {
+            "id": "Part-ShadowSource",
+            "name": "Is Shadow Source",
+            "desc": "Is this part to be considered a shadow source."
+        },
+        {
+            "id": "Part-ShadowDest",
+            "name": "Is Shadow Destination",
+            "desc": "Is this part to be considered a shadow destination."
+        },
+        {
+            "id": "Part-IsShadowOnly",
+            "name": "Is Shadow Only",
+            "desc": "Is this part only rendered when calculating the shadow pass."
+        },
+        {
+            "id": "Part-DrawByReflectCam",
+            "name": "Is Drawn by Reflection Camera",
+            "desc": "Is this part drawn by the reflection camera."
+        },
+        {
+            "id": "Part-DrawOnlyReflectCam",
+            "name": "Is Drawn Only by the Reflection Camera",
+            "desc": "Is this part only drawn within the reflection camera."
+        },
+        {
+            "id": "Part-UseDepthBiasFloat",
+            "name": "Use Depth Bias Float",
+            "desc": ""
+        },
+        {
+            "id": "Part-DisablePointLightEffect",
+            "name": "Disable Point Light Effect",
+            "desc": ""
+        },
+        {
+            "id": "Part-UnkE18",
+            "name": "UnkE18",
+            "desc": ""
+        },
+        {
+            "id": "GparamConfig-LightSetID",
+            "name": "Light Set ID",
+            "desc": "ID of the value set from LightSet ParamEditor to use."
+        },
+        {
+            "id": "GparamConfig-FogParamID",
+            "name": "Fog Param ID",
+            "desc": "ID of the value set from FogParamEditor to use."
+        },
+        {
+            "id": "GparamConfig-LightScatteringID",
+            "name": "Light Scattering ID",
+            "desc": "ID of the value set from LightScattering : ParamEditor to use."
+        },
+        {
+            "id": "GparamConfig-EnvMapID",
+            "name": "Ennvironment Map ID",
+            "desc": "ID of the value set from Env Map:Editor to use."
+        },
+        {
+            "id": "SceneGparamConfig-ShadowParamID",
+            "name": "Shadow Param ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-DofGlareQualityID",
+            "name": "Depth of Field Glare Quality ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-ToneMapID",
+            "name": "Tone Map ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-DofID",
+            "name": "Depth of Field ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-BloomID",
+            "name": "Bloom ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-ColorGradingID",
+            "name": "Color Grading ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-FeedbackBlurID",
+            "name": "Feedback Blur ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-MotionBlurID",
+            "name": "Motion Blur ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-AntiAliasID",
+            "name": "Anti Alias ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-SSAO_ID",
+            "name": "SSAO ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-LightShaftID",
+            "name": "Light Shaft ID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-EventIDs",
+            "name": "EventID",
+            "desc": ""
+        },
+        {
+            "id": "SceneGparamConfig-TransitionTime",
+            "name": "Transition Time",
+            "desc": "Amount of time it takes for GParam to transition (in seconds). -1 = Some default time."
+        },
+        {
+            "id": "MapPiece-Gparam",
+            "name": "Gparam",
+            "desc": "Gparam IDs for this map piece."
+        },
+        {
+            "id": "Object-Gparam",
+            "name": "Gparam",
+            "desc": "Gparam IDs for this object."
+        },
+        {
+            "id": "Object-CollisionName",
+            "name": "Collision Name",
+            "desc": ""
+        },
+        {
+            "id": "Object-BreakTerm",
+            "name": "Break Term",
+            "desc": ""
+        },
+        {
+            "id": "Object-NetSyncType",
+            "name": "Net Sync Type",
+            "desc": ""
+        },
+        {
+            "id": "Object-CollisionFilter",
+            "name": "Collision Filter",
+            "desc": ""
+        },
+        {
+            "id": "Object-SetMainObjStructureBooleans",
+            "name": "Set Main Obj Structure Booleans",
+            "desc": ""
+        },
+        {
+            "id": "Object-AnimIDs",
+            "name": "Anim ID",
+            "desc": "Automatically playing animations; only the first is actually used."
+        },
+        {
+            "id": "Object-ModelSfxParamRelativeIDs",
+            "name": "Model SFX Param Relative ID",
+            "desc": "Value added to the base ModelSfxParam ID; only the first is actually used."
+        },
+        {
+            "id": "Enemy-Gparam",
+            "name": "Gparam",
+            "desc": "Gparam IDs for this enemy."
+        },
+        {
+            "id": "Enemy-CollisionName",
+            "name": "Collision Name",
+            "desc": ""
+        },
+        {
+            "id": "Enemy-ThinkParamID",
+            "name": "Think Param ID",
+            "desc": "An ID in NPCThinkParam that determines the enemy's AI characteristics."
+        },
+        {
+            "id": "Enemy-NPCParamID",
+            "name": "NPC Param ID",
+            "desc": "An ID in NPCParam that determines a variety of enemy properties."
+        },
+        {
+            "id": "Enemy-TalkID",
+            "name": "Talk ID",
+            "desc": "An ID pointing to an .ESD file that contains the a Talk setup."
+        },
+        {
+            "id": "Enemy-CharaInitID",
+            "name": "Character Init ID",
+            "desc": "An ID in CharaInitParam that determines a human's inventory and stats."
+        },
+        {
+            "id": "Enemy-PointMoveType",
+            "name": "Point Move Type",
+            "desc": ""
+        },
+        {
+            "id": "Enemy-PlatoonID",
+            "name": "Platoon ID",
+            "desc": "An ID pointing to a platoon type, used by patrolling groups of enemies."
+        },
+        {
+            "id": "Enemy-WalkRouteName",
+            "name": "Walk Route Name",
+            "desc": "Walk route followed by this enemy."
+        },
+        {
+            "id": "Enemy-BackupEventAnimID",
+            "name": "Backup Event Anim ID",
+            "desc": "Default event animation to apply to the enemy whilst it is idle."
+        },
+        {
+            "id": "Enemy-UnkT78",
+            "name": "UnkT78",
+            "desc": ""
+        },
+        {
+            "id": "Enemy-UnkT84",
+            "name": "UnkT84",
+            "desc": ""
+        },
+        {
+            "id": "Collision-Gparam",
+            "name": "Gparam",
+            "desc": ""
+        },
+        {
+            "id": "Collision-SceneGparam",
+            "name": "SceneGparam",
+            "desc": ""
+        },
+        {
+            "id": "Collision-HitFilterID",
+            "name": "Hit Filter ID",
+            "desc": "Sets collision behavior. Fall collision, death collision, enemy-only collision, etc."
+        },
+        {
+            "id": "Collision-SoundSpaceType",
+            "name": "Sound Space Type",
+            "desc": "Modifies sounds while the player is touching this collision."
+        },
+        {
+            "id": "Collision-EnvLightMapSpotIndex",
+            "name": "Environment Light Map Spot Index",
+            "desc": ""
+        },
+        {
+            "id": "Collision-ReflectPlaneHeight",
+            "name": "Reflection Plane Height",
+            "desc": ""
+        },
+        {
+            "id": "Collision-MapNameID",
+            "name": "Map Name ID",
+            "desc": ""
+        },
+        {
+            "id": "Collision-DisableStart",
+            "name": "Disable Start",
+            "desc": ""
+        },
+        {
+            "id": "Collision-DisableBonfireEntityID",
+            "name": "Disable Bonfire Entity ID",
+            "desc": "Disables a bonfire with this entity ID when an enemy is touching this collision."
+        },
+        {
+            "id": "Collision-PlayRegionID",
+            "name": "Play Region ID",
+            "desc": "Used to determine invasion eligibility."
+        },
+        {
+            "id": "Collision-LockCamID1",
+            "name": "Locked Camera ID [1]",
+            "desc": ""
+        },
+        {
+            "id": "Collision-LockCamID2",
+            "name": "Locked Camera ID [2]",
+            "desc": ""
+        },
+        {
+            "id": "Collision-UnkHitName",
+            "name": "Hit Name",
+            "desc": "Always refers to another collision part."
+        },
+        {
+            "id": "Collision-ChameleonParamID",
+            "name": "Chameleon Param ID",
+            "desc": "ID in MapMimicryEstablishmentParam."
+        },
+        {
+            "id": "Collision-UnkT34",
+            "name": "UnkT34",
+            "desc": ""
+        },
+        {
+            "id": "Collision-UnkT35",
+            "name": "UnkT35",
+            "desc": ""
+        },
+        {
+            "id": "Collision-UnkT36",
+            "name": "UnkT36",
+            "desc": ""
+        },
+        {
+            "id": "Collision-MapVisType",
+            "name": "Map Visibility Type",
+            "desc": ""
+        },
+        {
+            "id": "ConnectCollision-CollisionName",
+            "name": "Collision Name",
+            "desc": "The collision part to attach to."
+        },
+        {
+            "id": "ConnectCollision-MapID",
+            "name": "Map ID",
+            "desc": "The map to load when on this collision."
         }
    ]
 }

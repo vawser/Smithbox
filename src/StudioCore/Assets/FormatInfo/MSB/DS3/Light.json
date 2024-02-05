@@ -1,0 +1,209 @@
+{
+    "list": [
+        {
+            "id": "Light-Unk00",
+            "name": "Unk00",
+            "desc": ""
+        },
+        {
+            "id": "Light-Name",
+            "name": "Name",
+            "desc": "The name of this light."
+        },
+        {
+            "id": "Light-Type",
+            "name": "Type",
+            "desc": "The type of light.\nPoint: omnidirectional light.\nSpot: cone of light.\nDirectional: light at a constant angle."
+        },
+        {
+            "id": "Light-Unk1C",
+            "name": "Unk1C",
+            "desc": ""
+        },
+        {
+            "id": "Light-DiffuseColor",
+            "name": "Diffuse Color",
+            "desc": "Color of the light on diffuse surfaces."
+        },
+        {
+            "id": "Light-DiffusePower",
+            "name": "Diffuse Intensity",
+            "desc": "Intensity of diffuse lighting."
+        },
+        {
+            "id": "Light-SpecularColor",
+            "name": "Specular Color",
+            "desc": "Color of the light on reflective surfaces."
+        },
+        {
+            "id": "Light-CastShadows",
+            "name": "Cast Shadows",
+            "desc": "Whether the light casts shadows."
+        },
+        {
+            "id": "Light-SpecularPower",
+            "name": "Specular Intensity",
+            "desc": "Intensity of specular lighting."
+        },
+        {
+            "id": "Light-ConeAngle",
+            "name": "Spot Light: Cone Angle",
+            "desc": "Tightness of the spot light beam. Only affects Spot lights."
+        },
+        {
+            "id": "Light-Unk30",
+            "name": "Unk30",
+            "desc": ""
+        },
+        {
+            "id": "Light-Unk34",
+            "name": "Unk34",
+            "desc": ""
+        },
+        {
+            "id": "Light-Position",
+            "name": "Position",
+            "desc": "Center of the light."
+        },
+        {
+            "id": "Light-Rotation",
+            "name": "Rotation",
+            "desc": "Rotation of a spot light."
+        },
+        {
+            "id": "Light-Unk50",
+            "name": "Unk50",
+            "desc": ""
+        },
+        {
+            "id": "Light-Unk54",
+            "name": "Unk54",
+            "desc": ""
+        },
+        {
+            "id": "Light-Radius",
+            "name": "Radius",
+            "desc": "Distance the light shines."
+        },
+        {
+            "id": "Light-Unk5C",
+            "name": "Unk5C",
+            "desc": ""
+        },
+        {
+            "id": "Light-Unk64",
+            "name": "Unk64",
+            "desc": ""
+        },
+        {
+            "id": "Light-Unk68",
+            "name": "Unk68",
+            "desc": ""
+        },
+        {
+            "id": "Light-ShadowColor",
+            "name": "Shadow Color",
+            "desc": "Color of shadows cast by the light; alpha is relative to 100."
+        },
+        {
+            "id": "Light-Unk70",
+            "name": "Unk70",
+            "desc": ""
+        },
+        {
+            "id": "Light-FlickerIntervalMin",
+            "name": "Flicker Interval: Minimum",
+            "desc": "Minimum time between flickers."
+        },
+        {
+            "id": "Light-FlickerIntervalMax",
+            "name": "Flicker Interval: Maximum",
+            "desc": "Maximum time between flickers."
+        },
+        {
+            "id": "Light-FlickerBrightnessMult",
+            "name": "Flicker Brightness Multiplier",
+            "desc": "Multiplies the brightness of the light while flickering."
+        },
+        {
+            "id": "Light-EventID",
+            "name": "Event ID",
+            "desc": "Referenced by map events. Only used in DS2."
+        },
+        {
+            "id": "Light-Unk84",
+            "name": "Unk84",
+            "desc": ""
+        },
+        {
+            "id": "Light-Unk88",
+            "name": "Unk88",
+            "desc": ""
+        },
+        {
+            "id": "Light-Unk90",
+            "name": "Unk90",
+            "desc": ""
+        },
+        {
+            "id": "Light-Unk98",
+            "name": "Unk98",
+            "desc": ""
+        },
+        {
+            "id": "Light-NearClip",
+            "name": "Spot Light: Near Clip",
+            "desc": "Distance at which spot light beam starts."
+        },
+        {
+            "id": "Light-UnkA0",
+            "name": "UnkA0",
+            "desc": ""
+        },
+        {
+            "id": "Light-UnkA1",
+            "name": "UnkA1",
+            "desc": ""
+        },
+        {
+            "id": "Light-UnkA2",
+            "name": "UnkA2",
+            "desc": ""
+        },
+        {
+            "id": "Light-ShadowModelCullFlip",
+            "name": "Shadow Model Cull Flip",
+            "desc": ""
+        },
+        {
+            "id": "Light-Sharpness",
+            "name": "Sharpness",
+            "desc": ""
+        },
+        {
+            "id": "Light-UnkAC",
+            "name": "UnkAC",
+            "desc": ""
+        },
+        {
+            "id": "Light-Width",
+            "name": "Spot Light: Width",
+            "desc": "Stretches the spot light beam."
+        },
+        {
+            "id": "Light-LightStartCutoff",
+            "name": "Light Start Cutoff",
+            "desc": "Distance from start before light appears."
+        },
+        {
+            "id": "Light-EnableState_UnkC0",
+            "name": "Enable State",
+            "desc": "Affects if a light appears normally, but details are unknown."
+        },
+        {
+            "id": "Light-EnableDist",
+            "name": "Enable Distance",
+            "desc": "Distance required for a light to transition into view. 0 = always enabled."
+        }
+   ]
+}

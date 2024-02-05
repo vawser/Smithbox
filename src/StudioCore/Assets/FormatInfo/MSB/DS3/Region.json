@@ -1,9 +1,164 @@
 {
     "list": [
         {
-            "id": "ModelName",
-            "name": "Model Name",
-            "desc": "The name of the model this part uses."
+            "id": "Region-Name",
+            "name": "Name",
+            "desc": "The name of the region."
+        },
+        {
+            "id": "Region-Unk2C",
+            "name": "Unk2C",
+            "desc": ""
+        },
+        {
+            "id": "Region-Shape",
+            "name": "Shape",
+            "desc": "The shape of the region."
+        },
+        {
+            "id": "Region-MapStudioLayer",
+            "name": "Map Studio Layer",
+            "desc": "Controls whether the region is active in different ceremonies."
+        },
+        {
+            "id": "Region-Position",
+            "name": "Position",
+            "desc": "The location of the region."
+        },
+        {
+            "id": "Region-Rotation",
+            "name": "Rotation",
+            "desc": "The rotiation of the region, in degrees."
+        },
+        {
+            "id": "Region-UnkA",
+            "name": "UnkA",
+            "desc": ""
+        },
+        {
+            "id": "Region-UnkB",
+            "name": "UnkB",
+            "desc": ""
+        },
+        {
+            "id": "Region-ActivationPartName",
+            "name": "Activation Part Name",
+            "desc": "Region is inactive unless this part is drawn; null for always active."
+        },
+        {
+            "id": "Region-EntityID",
+            "name": "Entity ID",
+            "desc": "Identifies the region in event scripts."
+        },
+        {
+            "id": "InvasionPoint-Priority",
+            "name": "Priority",
+            "desc": ""
+        },
+        {
+            "id": "EnvironmentMapPoint-SaveTypeData",
+            "name": "Save Type Data",
+            "desc": ""
+        },
+        {
+            "id": "EnvironmentMapPoint-UnkT00",
+            "name": "UnkT00",
+            "desc": ""
+        },
+        {
+            "id": "Sound-SoundType",
+            "name": "Sound Type",
+            "desc": "Type of sound in this region; determines mixing behavior like muffling."
+        },
+        {
+            "id": "Sound-SoundID",
+            "name": "Sound ID",
+            "desc": "ID of the sound to play in this region, or 0 for child regions."
+        },
+        {
+            "id": "Sound-ChildRegionNames",
+            "name": "Child Region Names",
+            "desc": "References to other regions used to build a composite shape."
+        },
+        {
+            "id": "SFX-EffectID",
+            "name": "Effect ID",
+            "desc": "The ID of the particle effect FFX."
+        },
+        {
+            "id": "SFX-UnkT04",
+            "name": "UnkT04",
+            "desc": ""
+        },
+        {
+            "id": "SFX-StartDisabled",
+            "name": "Start Disabled",
+            "desc": "If true, the effect is off by default until enabled by event scripts."
+        },
+        {
+            "id": "WindSFX-EffectID",
+            "name": "Effect ID",
+            "desc": "ID of the effect FFX."
+        },
+        {
+            "id": "WindSFX-WindAreaName",
+            "name": "Wind Area Name",
+            "desc": "Reference to a WindArea region."
+        },
+        {
+            "id": "SpawnPoint-UnkT00",
+            "name": "UnkT00",
+            "desc": ""
+        },
+        {
+            "id": "Message-MessageID",
+            "name": "Message ID",
+            "desc": "ID of the message's text in the FMGs."
+        },
+        {
+            "id": "Message-UnkT02",
+            "name": "UnkT02",
+            "desc": ""
+        },
+        {
+            "id": "Message-Hidden",
+            "name": "Hidden",
+            "desc": "Whether the message requires Seek Guidance to appear."
+        },
+        {
+            "id": "EnvironmentMapEffectBox-EnableDist",
+            "name": "Enable Distance",
+            "desc": "Distance from camera required before enabling envmap. 0 = always enabled."
+        },
+        {
+            "id": "EnvironmentMapEffectBox-TransitionDist",
+            "name": "Transition Distance",
+            "desc": "Distance it takes for an envmap to fully transition into view."
+        },
+        {
+            "id": "EnvironmentMapEffectBox-UnkT08",
+            "name": "UnkT08",
+            "desc": ""
+        },
+        {
+            "id": "EnvironmentMapEffectBox-UnkT09",
+            "name": "UnkT09",
+            "desc": ""
+        },
+        {
+            "id": "EnvironmentMapEffectBox-UnkT0A",
+            "name": "UnkT0A",
+            "desc": ""
+        },
+        {
+            "id": "MufflingBox-UnkT00",
+            "name": "UnkT00",
+            "desc": ""
+        },
+        {
+            "id": "MufflingPortal-UnkT00",
+            "name": "UnkT00",
+            "desc": ""
         }
    ]
 }

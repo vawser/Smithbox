@@ -167,135 +167,161 @@ namespace SoulsFormats
             /// <summary>
             /// The name of this part.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-Name")]
             public override string Name { get; set; }
 
             /// <summary>
             /// Unknown network path to a .sib file.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-SibPath")]
             public string SibPath { get; set; }
 
             /// <summary>
             /// The name of this part's model.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-ModelName")]
             public string ModelName { get; set; }
             private int ModelIndex;
 
             /// <summary>
             /// The center of the part.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-Position")]
             [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// The rotation of the part.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-Rotation")]
             [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// The scale of the part, which only really works right for map pieces.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-Scale")]
             [ScaleProperty]
             public Vector3 Scale { get; set; }
 
             /// <summary>
             /// A bitmask that determines which ceremonies the part appears in.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-MapStudioLayer")]
             public uint MapStudioLayer { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-DrawGroups")]
             public uint[] DrawGroups { get; private set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-DispGroups")]
             public uint[] DispGroups { get; private set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-BackreadGroups")]
             public uint[] BackreadGroups { get; private set; }
 
             /// <summary>
             /// Used to identify the part in event scripts.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-EntityID")]
             public int EntityID { get; set; }
 
             /// <summary>
             /// Used to identify multiple parts with the same ID in event scripts.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-EntityGroups")]
             public int[] EntityGroups { get; private set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE04")]
             public sbyte UnkE04 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE05")]
             public sbyte UnkE05 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-LanternID")]
             public sbyte LanternID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-LodParamID")]
             public sbyte LodParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE0E")]
             public sbyte UnkE0E { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-PointLightShadowSource")]
             public bool PointLightShadowSource { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-ShadowSource")]
             public bool ShadowSource { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-ShadowDest")]
             public bool ShadowDest { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-IsShadowOnly")]
             public bool IsShadowOnly { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-DrawByReflectCam")]
             public bool DrawByReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-DrawOnlyReflectCam")]
             public bool DrawOnlyReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UseDepthBiasFloat")]
             public bool UseDepthBiasFloat { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-DisablePointLightEffect")]
             public bool DisablePointLightEffect { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Part-UnkE18")]
             public int UnkE18 { get; set; }
 
             private protected Part(string name)
@@ -553,21 +579,25 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID of the value set from LightSet ParamEditor to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "GparamConfig-LightSetID")]
                 public int LightSetID { get; set; }
 
                 /// <summary>
                 /// ID of the value set from FogParamEditor to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "GparamConfig-FogParamID")]
                 public int FogParamID { get; set; }
 
                 /// <summary>
                 /// ID of the value set from LightScattering : ParamEditor to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "GparamConfig-LightScatteringID")]
                 public int LightScatteringID { get; set; }
 
                 /// <summary>
                 /// ID of the value set from Env Map:Editor to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "GparamConfig-EnvMapID")]
                 public int EnvMapID { get; set; }
 
                 /// <summary>
@@ -618,66 +648,79 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-ShadowParamID")]
                 public int ShadowParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-DofGlareQualityID")]
                 public int DofGlareQualityID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-ToneMapID")]
                 public int ToneMapID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-DofID")]
                 public int DofID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-BloomID")]
                 public int BloomID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-ColorGradingID")]
                 public int ColorGradingID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-FeedbackBlurID")]
                 public int FeedbackBlurID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-MotionBlurID")]
                 public int MotionBlurID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-AntiAliasID")]
                 public int AntiAliasID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-SSAO_ID")]
                 public int SSAO_ID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-LightShaftID")]
                 public int LightShaftID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-EventIDs")]
                 public sbyte[] EventIDs { get; private set; }
 
                 /// <summary>
                 /// Amount of time it takes for GParam to transition (in seconds). -1 = Some default time.
                 /// </summary>
+                [FormatReference(ReferenceName = "SceneGparamConfig-TransitionTime")]
                 public float TransitionTime { get; set; }
 
                 /// <summary>
@@ -759,6 +802,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this map piece.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapPiece-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
@@ -805,11 +849,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this object.
                 /// </summary>
+                [FormatReference(ReferenceName = "Object-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Object-CollisionName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
@@ -818,31 +864,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Object-BreakTerm")]
                 public byte BreakTerm { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Object-NetSyncType")]
                 public bool NetSyncType { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Object-CollisionFilter")]
                 public bool CollisionFilter { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Object-SetMainObjStructureBooleans")]
                 public bool SetMainObjStructureBooleans { get; set; }
 
                 /// <summary>
                 /// Automatically playing animations; only the first is actually used, according to Pav.
                 /// </summary>
+                [FormatReference(ReferenceName = "Object-AnimIDs")]
                 public short[] AnimIDs { get; private set; }
 
                 /// <summary>
                 /// Value added to the base ModelSfxParam ID; only the first is actually used, according to Pav.
                 /// </summary>
+                [FormatReference(ReferenceName = "Object-ModelSfxParamRelativeIDs")]
                 public short[] ModelSfxParamRelativeIDs { get; private set; }
 
                 private protected ObjectBase() : base("oXXXXXX_XXXX")
@@ -931,11 +983,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this enemy.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-CollisionName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
                 private int CollisionPartIndex;
@@ -943,39 +997,46 @@ namespace SoulsFormats
                 /// <summary>
                 /// Controls enemy AI.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-ThinkParamID")]
                 [MSBParamReference(ParamName = "NpcThinkParam")]
                 public int ThinkParamID { get; set; }
 
                 /// <summary>
                 /// Controls enemy stats.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-NPCParamID")]
                 [MSBParamReference(ParamName = "NpcParam")]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
                 /// Controls enemy speech.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-TalkID")]
                 public int TalkID { get; set; }
 
                 /// <summary>
                 /// Controls enemy equipment.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-CharaInitID")]
                 [MSBParamReference(ParamName = "CharaInitParam")]
                 public int CharaInitID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-PointMoveType")]
                 public byte PointMoveType { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-PlatoonID")]
                 public short PlatoonID { get; set; }
 
                 /// <summary>
                 /// Walk route followed by this enemy.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-WalkRouteName")]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
                 private short WalkRouteIndex;
@@ -983,16 +1044,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-BackupEventAnimID")]
                 public int BackupEventAnimID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-UnkT78")]
                 public int UnkT78 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Enemy-UnkT84")]
                 public float UnkT84 { get; set; }
 
                 private protected EnemyBase() : base("cXXXX_XXXX")
@@ -1219,66 +1283,79 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gparam IDs for this collision.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-Gparam")]
                 public GparamConfig Gparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-SceneGparam")]
                 public SceneGparamConfig SceneGparam { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-HitFilterID")]
                 public byte HitFilterID { get; set; }
 
                 /// <summary>
                 /// Modifies sounds while the player is touching this collision.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-SoundSpaceType")]
                 public SoundSpace SoundSpaceType { get; set; } = SoundSpace.NoReverb;
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-EnvLightMapSpotIndex")]
                 public short EnvLightMapSpotIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-ReflectPlaneHeight")]
                 public float ReflectPlaneHeight { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-MapNameID")]
                 public short MapNameID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-DisableStart")]
                 public bool DisableStart { get; set; }
 
                 /// <summary>
                 /// Disables a bonfire with this entity ID when an enemy is touching this collision.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-DisableBonfireEntityID")]
                 public int DisableBonfireEntityID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-PlayRegionID")]
                 public int PlayRegionID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-LockCamID1")]
                 public short LockCamID1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-LockCamID2")]
                 public short LockCamID2 { get; set; }
 
                 /// <summary>
                 /// Unknown. Always refers to another collision part.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkHitName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string UnkHitName { get; set; }
                 private int UnkHitIndex;
@@ -1286,27 +1363,32 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID in MapMimicryEstablishmentParam.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-ChameleonParamID")]
                 [MSBParamReference(ParamName = "MapMimicryEstablishmentParam")]
                 public int ChameleonParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT34")]
                 public byte UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT35")]
                 public byte UnkT35 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-UnkT36")]
                 public byte UnkT36 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Collision-MapVisType")]
                 public MapVisiblity MapVisType { get; set; } = MapVisiblity.Good;
 
                 /// <summary>
@@ -1458,6 +1540,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// The name of the associated collision part.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-CollisionName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
                 private int CollisionIndex;
@@ -1465,6 +1548,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// The map to load when on this collision.
                 /// </summary>
+                [FormatReference(ReferenceName = "ConnectCollision-MapID")]
                 public byte[] MapID { get; private set; }
 
                 /// <summary>

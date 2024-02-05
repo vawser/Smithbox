@@ -171,16 +171,19 @@ namespace SoulsFormats
             /// <summary>
             /// The name of this event.
             /// </summary>
+            [FormatReference(ReferenceName = "Event-Name")]
             public override string Name { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Event-EventID")]
             public int EventID { get; set; }
 
             /// <summary>
             /// The name of a part the event is attached to.
             /// </summary>
+            [FormatReference(ReferenceName = "Event-PartName")]
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
             private int PartIndex;
@@ -188,6 +191,7 @@ namespace SoulsFormats
             /// <summary>
             /// The name of a region the event is attached to.
             /// </summary>
+            [FormatReference(ReferenceName = "Event-PointName")]
             [MSBReference(ReferenceType = typeof(Region))]
             public string PointName { get; set; }
             private int PointIndex;
@@ -195,6 +199,7 @@ namespace SoulsFormats
             /// <summary>
             /// Used to identify the event in event scripts.
             /// </summary>
+            [FormatReference(ReferenceName = "Event-EntityID")]
             public int EntityID { get; set; }
 
             private protected Event(string name)
@@ -309,6 +314,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// The part the treasure is attached to.
                 /// </summary>
+                [FormatReference(ReferenceName = "Treasure-TreasurePartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
                 private int TreasurePartIndex;
@@ -316,39 +322,46 @@ namespace SoulsFormats
                 /// <summary>
                 /// First item lot given by this treasure.
                 /// </summary>
+                [FormatReference(ReferenceName = "Treasure-ItemLot1")]
                 [MSBParamReference(ParamName = "ItemLotParam")]
                 public int ItemLot1 { get; set; }
 
                 /// <summary>
                 /// Second item lot given by this treasure; rarely used.
                 /// </summary>
+                [FormatReference(ReferenceName = "Treasure-ItemLot2")]
                 [MSBParamReference(ParamName = "ItemLotParam")]
                 public int ItemLot2 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Treasure-UnkT18")]
                 public int UnkT18 { get; set; }
 
                 /// <summary>
                 /// If not -1, uses an entry from ActionButtonParam for the pickup prompt.
                 /// </summary>
+                [FormatReference(ReferenceName = "Treasure-ActionButtonParamID")]
                 [MSBParamReference(ParamName = "ActionButtonParam")]
                 public int ActionButtonParamID { get; set; }
 
                 /// <summary>
                 /// Animation to play when taking this treasure.
                 /// </summary>
+                [FormatReference(ReferenceName = "Treasure-PickupAnimID")]
                 public int PickupAnimID { get; set; }
 
                 /// <summary>
                 /// Changes the text of the pickup prompt and causes the treasure to be uninteractible by default.
                 /// </summary>
+                [FormatReference(ReferenceName = "Treasure-InChest")]
                 public bool InChest { get; set; }
 
                 /// <summary>
                 /// Whether the treasure should be hidden by default.
                 /// </summary>
+                [FormatReference(ReferenceName = "Treasure-StartDisabled")]
                 public bool StartDisabled { get; set; }
 
                 /// <summary>
@@ -446,41 +459,49 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-MaxNum")]
                 public byte MaxNum { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-GenType")]
                 public sbyte GenType { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-LimitNum")]
                 public short LimitNum { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-MinGenNum")]
                 public short MinGenNum { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-MaxGenNum")]
                 public short MaxGenNum { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-MinInterval")]
                 public float MinInterval { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-MaxInterval")]
                 public float MaxInterval { get; set; }
 
                 /// <summary>
                 /// Regions that enemies can be spawned at.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-SpawnPointNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnPointNames { get; private set; }
                 private int[] SpawnPointIndices;
@@ -488,6 +509,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Enemies spawned by this generator.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-SpawnPartNames")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; private set; }
                 private int[] SpawnPartIndices;
@@ -495,16 +517,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-InitialSpawnCount")]
                 public byte InitialSpawnCount { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-UnkT14")]
                 public float UnkT14 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "Generator-UnkT18")]
                 public float UnkT18 { get; set; }
 
                 /// <summary>
@@ -636,12 +661,14 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ObjAct-ObjActEntityID")]
                 [MSBEntityReference]
                 public int ObjActEntityID { get; set; }
 
                 /// <summary>
                 /// The object which is being interacted with.
                 /// </summary>
+                [FormatReference(ReferenceName = "ObjAct-ObjActPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
                 private int ObjActPartIndex;
@@ -649,17 +676,20 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID in ObjActParam that configures this ObjAct.
                 /// </summary>
+                [FormatReference(ReferenceName = "ObjAct-ObjActParamID")]
                 [MSBParamReference(ParamName = "ObjActParam")]
                 public int ObjActParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ObjAct-ObjActStateType")]
                 public ObjActState ObjActStateType { get; set; } = ObjActState.OneState;
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "ObjAct-EventFlagID")]
                 public int EventFlagID { get; set; }
 
                 /// <summary>
@@ -730,12 +760,14 @@ namespace SoulsFormats
                 /// <summary>
                 /// Position of the map offset.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapOffset-Position")]
                 [PositionProperty]
                 public Vector3 Position { get; set; }
 
                 /// <summary>
                 /// Rotation of the map offset.
                 /// </summary>
+                [FormatReference(ReferenceName = "MapOffset-RotationY")]
                 public float RotationY { get; set; }
 
                 /// <summary>
@@ -792,43 +824,51 @@ namespace SoulsFormats
                 /// <summary>
                 /// The NPC whose world you're entering.
                 /// </summary>
+                [FormatReference(ReferenceName = "PseudoMultiplayer-HostEntityID")]
                 [MSBEntityReference]
                 public int HostEntityID { get; set; }
 
                 /// <summary>
                 /// Event flag set while the player is within a pseudo world. Unset when the player leaves.
                 /// </summary>
+                [FormatReference(ReferenceName = "PseudoMultiplayer-EventFlagID")]
                 public int EventFlagID { get; set; }
 
                 /// <summary>
                 /// ID of a goods item that is used to trigger the event.
                 /// </summary>
+                [FormatReference(ReferenceName = "PseudoMultiplayer-ActivateGoodsID")]
                 public int ActivateGoodsID { get; set; }
 
                 /// <summary>
                 /// Ceremony Param ID to use.
                 /// </summary>
+                [FormatReference(ReferenceName = "PseudoMultiplayer-CeremonyParamID")]
                 [MSBParamReference(ParamName = "Ceremony")]
                 public int CeremonyParamID { get; set; }
 
                 /// <summary>
                 /// Region player will spawn at in pseudo world.
                 /// </summary>
+                [FormatReference(ReferenceName = "PseudoMultiplayer-SpawnRegionEntityID")]
                 public int SpawnRegionEntityID { get; set; }
 
                 /// <summary>
                 /// Player type to use while in pseudo world. 
                 /// </summary>
+                [FormatReference(ReferenceName = "PseudoMultiplayer-PlayerChrType")]
                 public PseudoPlayerChrType PlayerChrType { get; set; } = PseudoPlayerChrType.WhitePhantom;
 
                 /// <summary>
                 /// Determines which set of FMG entries to use in pseudo world.
                 /// </summary>
+                [FormatReference(ReferenceName = "PseudoMultiplayer-MessageSetType")]
                 public PseudoMessageSetType MessageSetType { get; set; } = PseudoMessageSetType.Default;
 
                 /// <summary>
                 /// ID of FMG entry to display when trying to join pseudo world.
                 /// </summary>
+                [FormatReference(ReferenceName = "PseudoMultiplayer-JoinMessageTextID")]
                 public int JoinMessageTextID { get; set; }
 
                 /// <summary>
@@ -886,11 +926,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown; probably some kind of route type.
                 /// </summary>
+                [FormatReference(ReferenceName = "PatrolInfo-PatrolType")]
                 public int PatrolType { get; set; }
 
                 /// <summary>
                 /// List of points in the route.
                 /// </summary>
+                [FormatReference(ReferenceName = "PatrolInfo-WalkPointNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] WalkPointNames { get; private set; }
                 private short[] WalkPointIndices;
@@ -956,16 +998,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "PlatoonInfo-PlatoonIDScriptActivate")]
                 public int PlatoonIDScriptActivate { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "PlatoonInfo-State")]
                 public int State { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [FormatReference(ReferenceName = "PlatoonInfo-GroupPartsNames")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] GroupPartsNames { get; private set; }
                 private int[] GroupPartsIndices;
@@ -1027,11 +1072,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown; possibly a sound type.
                 /// </summary>
+                [FormatReference(ReferenceName = "Other-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
                 /// Unknown; possibly a sound ID.
                 /// </summary>
+                [FormatReference(ReferenceName = "Other-UnkT04")]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
