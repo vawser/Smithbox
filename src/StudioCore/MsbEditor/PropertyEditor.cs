@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Aliases;
 using StudioCore.Editor;
 using StudioCore.FormatInfo;
+using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.ParamEditor;
 using StudioCore.Scene;
@@ -15,6 +16,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using Veldrid.Utilities;
 
 namespace StudioCore.MsbEditor;
 
@@ -36,16 +38,19 @@ public class PropertyEditor
     public ActionManager ContextActionManager;
     public PropertyInfo RequestedSearchProperty = null;
 
+    private IViewport _viewport;
+
     private AliasBank _mapAliasBank;
 
     private InfoBank _msbInfoBank;
 
-    public PropertyEditor(ActionManager manager, PropertyCache propCache, AliasBank mapAliasBank, InfoBank msbInfoBank)
+    public PropertyEditor(ActionManager manager, PropertyCache propCache, IViewport viewport, AliasBank mapAliasBank, InfoBank msbInfoBank)
     {
         ContextActionManager = manager;
         _propCache = propCache;
         _mapAliasBank = mapAliasBank;
         _msbInfoBank = msbInfoBank;
+        _viewport = viewport;
     }
 
     private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop)
@@ -1150,6 +1155,29 @@ public class PropertyEditor
                     {
                         if (n is Entity e)
                         {
+                            // View Reference in Viewport
+                            if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID))
+                            {
+                                BoundingBox box = new();
+
+                                if (e.RenderSceneMesh != null)
+                                {
+                                    box = e.RenderSceneMesh.GetBounds();
+                                }
+                                else if (e.Container.RootObject == e)
+                                {
+                                    // Selection is transform node
+                                    Vector3 nodeOffset = new(10.0f, 10.0f, 10.0f);
+                                    Vector3 pos = e.GetLocalTransform().Position;
+                                    BoundingBox nodeBox = new(pos - nodeOffset, pos + nodeOffset);
+                                    box = nodeBox;
+                                }
+
+                                _viewport.FrameBox(box);
+                            }
+
+                            // Change Selection to Reference
+                            ImGui.SameLine();
                             var nameWithType = e.PrettyName.Insert(2, e.WrappedObject.GetType().Name + " - ");
                             if (ImGui.Button(nameWithType + "##MSBRefTo" + refID))
                             {
@@ -1218,6 +1246,7 @@ public class PropertyEditor
             foreach (Entity m in firstEnt.GetReferencingObjects())
             {
                 var nameWithType = m.PrettyName.Insert(2, m.WrappedObject.GetType().Name + " - ");
+                // Change Selection to Reference
                 if (ImGui.Button(nameWithType + "##MSBRefBy" + refID))
                 {
                     selection.ClearSelection();
