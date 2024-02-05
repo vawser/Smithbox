@@ -587,6 +587,7 @@
     <nonStaggerAttacksCauseKnockback AltName="Non-Stagger Attacks Cause Knockback" IsBool="" Wiki="Makes non-staggering attacks knockback enemies, utilizing nonStaggerKnockbackDist."/>
     <nonStaggerKnockbackDist AltName="Knockback Distance (non-staggered)" Wiki="Distance enemies will move when hit by this attack (and that attack does not stagger).\nRequires nonStaggerAttacksCauseKnockback"/>
     <staggerKnockbackDist AltName="Knockback Distance (staggered)" Wiki="Distance enemies will move when staggered by this attack."/>
+    <staggerExtensionNumMax AltName="Stagger Extension: Maximum Amount" Wiki="Number of times this attack will extend an existing stagger."/>
   </Field>
   <Self />
 </PARAMMETA>

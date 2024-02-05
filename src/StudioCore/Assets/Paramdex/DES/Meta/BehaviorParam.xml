@@ -30,5 +30,5 @@
     <defSfxMaterial AltName="defSfxMaterial" />
     <pad2 AltName="pad2" />
   </Field>
-  <Self />
+  <Self Row0Dummy="" />
 </PARAMMETA>

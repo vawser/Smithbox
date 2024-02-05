@@ -17,6 +17,7 @@
     <missionType AltName="Mission Type" Enum ="MISSION_TYPE"/>
     <missionAltType AltName="Mission Alt Type" Enum ="MISSION_ALT_TYPE"/>
     <missionBriefingMovieId AltName="Mission Briefing Movie ID" Wiki="ID of .bk2 video file to play for mission briefing."/> 
+    <unkSkyLighting Wiki ="Determines basic lighting used in map. Possibly refers to gparam by index." />
   </Field>
   <Self />
 </PARAMMETA>

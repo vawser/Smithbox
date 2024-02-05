@@ -2,45 +2,45 @@
 <PARAMMETA XmlVersion="0" >
   <Enums>
     <Enum Name="AtkAttribute">
-      <Option Value="1" Name="Slash" />
-      <Option Value="2" Name="Strike" />
-      <Option Value="3" Name="Thrust" />
-      <Option Value="4" Name="Normal" />
+        <Option Value="1" Name="Slash" />
+        <Option Value="2" Name="Strike" />
+        <Option Value="3" Name="Thrust" />
+        <Option Value="4" Name="Normal" />
     </Enum>
     <Enum Name="SpAttribute">
-      <Option Value="1" Name="Normal" />
-      <Option Value="2" Name="Fire" />
-      <Option Value="3" Name="Magic" />
-      <Option Value="4" Name="Poison" />
-      <Option Value="5" Name="Unused (Egg)" />
-      <Option Value="6" Name="Lightning" />
-      <Option Value="7" Name="Petrification" />
-      <Option Value="8" Name="Crystal" />
+        <Option Value="1" Name="Normal" />
+        <Option Value="2" Name="Fire" />
+        <Option Value="3" Name="Magic" />
+        <Option Value="4" Name="Poison" />
+        <Option Value="5" Name="Unused (Egg)" />
+        <Option Value="6" Name="Lightning" />
+        <Option Value="7" Name="Petrification" />
+        <Option Value="8" Name="Crystal" />
     </Enum>
     <Enum Name="BULLET_LAUNCH_CONDITION_TYPE">
-      <Option Value="0" Name="Always" />
-      <Option Value="1" Name="Hit Water" />
-      <Option Value="2" Name="Hit Water or Swamp" />
-      <Option Value="254" Name="Expired" />
-      <Option Value="255" Name="Hit Ground or Enemy" />
+        <Option Value="0" Name="Always" />
+        <Option Value="1" Name="Hit Water" />
+        <Option Value="2" Name="Hit Water or Swamp" />
+        <Option Value="254" Name="Expired" />
+        <Option Value="255" Name="Hit Ground or Enemy" />
     </Enum>
-	<Enum Name="FollowType">
-      <Option Value="0" Name="normal" />
-      <Option Value="1" Name="follow owner (homing soul mass style)" />
-      <Option Value="2" Name="follow owner at origin or dmyPoly (bottom of character)" />
-      <Option Value="3" Name="rapidly approach and stop at dist &amp; ignores velocity &amp; ignores lockShootLimitAng" />
-      <Option Value="4" Name="slide off of world collision" />
-	</Enum>
+    <Enum Name="FollowType">
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Follow owner (homing soul mass style)" />
+        <Option Value="2" Name="Follow owner at origin or dmyPoly (bottom of character)" />
+        <Option Value="3" Name="Rapidly approach and stop at dist. Ignores velocity and lockShootLimitAng" />
+        <Option Value="4" Name="Slide off of world collision" />
+    </Enum>
     <Enum Name="BULLET_EMITTE_POS_TYPE">
-      <Option Value="1" Name="random locations around origin (used by firestorm)" />
-      <Option Value="2" Name="slightly higher elevation (used by white dragon breath and other ground crawling bullets)" />
-      <Option Value="3" Name="nearest enemy origin within a certain distance (unused)" />
-      <Option Value="4" Name="random locations around nearest enemy within certain distance (used by bed of chaos)" />
+        <Option Value="1" Name="Random locations around origin (used by firestorm)" />
+        <Option Value="2" Name="Slightly higher elevation (used by white dragon breath and other ground crawling bullets)" />
+        <Option Value="3" Name="Nearest enemy origin within a certain distance (unused)" />
+        <Option Value="4" Name="Random locations around nearest enemy within certain distance (used by bed of chaos)" />
     </Enum>
     <Enum Name="DeflectType">
-      <Option Value="0" Name="no deflection" />
-      <Option Value="1" Name="isHitForceMagic deflection" />
-      <Option Value="2" Name="isHitDarkForceMagic deflection" />
+        <Option Value="0" Name="No deflection" />
+        <Option Value="1" Name="isHitForceMagic deflection" />
+        <Option Value="2" Name="isHitDarkForceMagic deflection" />
     </Enum>
   </Enums>
   <Field>
@@ -89,7 +89,7 @@
     <knockbackDamp Wiki="Reduction in knockback over time (needs testing. may only apply after dist threshold)" />
     <shootAngleXZ Wiki="Pitch (up/down) angle offset for all projectiles. Positive values angle upwards, negative values angle downwards." />
     <lockShootLimitAng Wiki="Maximum angle the bullet's initial direction can change to face towards player locked-on target or AI focused enemy" />
-    <isPenetrate Wiki="Determines if bullet can pierce through enemies and objects.\nAlso potentially allows hitting the same enemy multiple times using dmgHitRecordLifetime.\nSee isPenetrateMap to ignore map." />
+    <isPenetrate IsBool="" Wiki="Determines if bullet can pierce through enemies and objects.\nAlso potentially allows hitting the same enemy multiple times using dmgHitRecordLifetime.\nSee isPenetrateMap to ignore map." />
     <prevVelocityDirRate />
     <atkAttribute Enum="AtkAttribute" />
     <spAttribute Enum="SpAttribute" Wiki="Changes visual/audio effects on hit and death animations." />

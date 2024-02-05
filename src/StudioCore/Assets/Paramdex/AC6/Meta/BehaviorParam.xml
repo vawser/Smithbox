@@ -36,7 +36,7 @@
       <Option Value="5" Name="Body" />
       <Option Value="6" Name="Energy Attack 1" />
       <Option Value="7" Name="Energy Attack 2" />
-      <Option Value="7" Name="Energy Attack 3" />
+      <Option Value="8" Name="Energy Attack 3" />
       <Option Value="9" Name="Kick" />
     </Enum>
   </Enums>
@@ -62,5 +62,5 @@
     <heatBuildup AltName="Heat Build-up" />
     <burstFireAmount AltName="Burst Fire Amount" />
   </Field>
-  <Self />
+  <Self Row0Dummy="" />
 </PARAMMETA>

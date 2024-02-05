@@ -279,7 +279,7 @@
     <Field Def="s32 UnkInt0x21C"></Field>
     <Field Def="u8 UnkByte0x220"></Field>
     <Field Def="u8 UnkByte0x221"></Field>
-    <Field Def="u16 UnkUshort0x222"></Field>
+    <Field Def="u16 staggerExtensionNumMax"></Field>
     <Field Def="s32 Unk0x224"></Field>
     <Field Def="u16 hit0_FanHitboxLength"></Field>
     <Field Def="u16 hit1_FanHitboxLength"></Field>

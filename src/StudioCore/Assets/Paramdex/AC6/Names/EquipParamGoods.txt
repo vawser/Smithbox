@@ -1,3 +1,9 @@
+25 Repair Kit (Unknown)
+90 Repair Kit (Default)
+91 Repair Kit (Upgrade 0)
+92 Repair Kit (Upgrade 1)
+93 Repair Kit (Upgrade 2)
+94 Repair Kit (Upgrade 3)
 13021500 License Code: Thomas Kirk
 13021510 License Code: Monkey Gordo
 13021520 License Code: G7 Hakra

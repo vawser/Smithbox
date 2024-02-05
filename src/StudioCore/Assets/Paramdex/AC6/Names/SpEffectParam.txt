@@ -15,11 +15,11 @@
 6700 Camera Disruption
 9080 Baby Boost Legs
 9090 Tetrapod Hover Mode
-9303 Repair Kit (Default)
-9304 Repair Kit (Upgrade 0)
-9305 Repair Kit (Upgrade 1)
-9306 Repair Kit (Upgrade 2)
-9307 Repair Kit (Upgrade 3)
+9403 Repair Kit (Default)
+9404 Repair Kit (Upgrade 0)
+9405 Repair Kit (Upgrade 1)
+9406 Repair Kit (Upgrade 2)
+9407 Repair Kit (Upgrade 3)
 2010090 Prologue (Illegal Entry) Initial AP Damage
 2120600 ACS Failure - 50
 3420005 Red EN Anomaly

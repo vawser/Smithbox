@@ -38,7 +38,7 @@
     <Field Def="s32 UnkInt0x74"></Field>
     <Field Def="s32 UnkInt0x78"></Field>
     <Field Def="s32 UnkInt0x7C"></Field>
-    <Field Def="s32 repairKitGoodsParamId"></Field>
+    <Field Def="s32 equippedItemId"></Field>
     <Field Def="s32 UnkInt0x84"></Field>
     <Field Def="s32 UnkInt0x88"></Field>
     <Field Def="s32 UnkInt0x8C"></Field>
@@ -66,7 +66,7 @@
     <Field Def="u8 UnkByte0xCD"></Field>
     <Field Def="u8 UnkByte0xCE"></Field>
     <Field Def="u8 UnkByte0xCF"></Field>
-    <Field Def="u8 repairKitAmount"></Field>
+    <Field Def="u8 equippedItemNum"></Field>
     <Field Def="u8 UnkByte0xD1"></Field>
     <Field Def="u8 UnkByte0xD2"></Field>
     <Field Def="u8 UnkByte0xD3"></Field>
