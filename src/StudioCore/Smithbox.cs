@@ -10,6 +10,7 @@ using StudioCore.Browsers;
 using StudioCore.Configuration;
 using StudioCore.CutsceneEditor;
 using StudioCore.Editor;
+using StudioCore.Editors.GraphicsEditor;
 using StudioCore.FormatInfo;
 using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
@@ -149,7 +150,7 @@ public class Smithbox
         TalkEditorScreen talkEditor = new(_context.Window, _context.Device, _assetLocator);
         TextureViewerScreen textureViewer = new(_context.Window, _context.Device, _assetLocator);
 
-        _editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor };
+        _editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor, graphicsEditor };
         //_editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor, animationEditor, cutsceneEditor, graphicsEditor, materialEditor, particleEditor, scriptEditor, talkEditor, textureViewer };
         _focusedEditor = msbEditor;
 
@@ -177,6 +178,7 @@ public class Smithbox
         ParamBank.VanillaBank.SetAssetLocator(_assetLocator);
         FMGBank.SetAssetLocator(_assetLocator);
         MtdBank.LoadMtds(_assetLocator);
+        GraphicsParamBank.SetAssetLocator(_assetLocator);
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();

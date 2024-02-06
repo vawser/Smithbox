@@ -1909,5 +1909,45 @@ public class AssetLocator
         return filename;
     }
 
+    public List<string> GetDrawParams()
+    {
+        try
+        {
+            HashSet<string> drawParams = new();
+            List<string> ret = new();
 
+            var paramDir = @"\param\drawparam";
+            var paramExt = @".gparam.dcx";
+
+            var paramFiles = Directory.GetFileSystemEntries(GameRootDirectory + paramDir, $@"*{paramExt}")
+                .ToList();
+            foreach (var f in paramFiles)
+            {
+                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                ret.Add(name);
+                drawParams.Add(name);
+            }
+
+            if (GameModDirectory != null && Directory.Exists(GameModDirectory + paramDir))
+            {
+                paramFiles = Directory.GetFileSystemEntries(GameModDirectory + paramDir, $@"*{paramExt}").ToList();
+                foreach (var f in paramFiles)
+                {
+                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                    if (!drawParams.Contains(name))
+                    {
+                        ret.Add(name);
+                        drawParams.Add(name);
+                    }
+                }
+            }
+
+            return ret;
+        }
+        catch (DirectoryNotFoundException e)
+        {
+            // Game likely isn't UXM unpacked
+            return new List<string>();
+        }
+    }
 }
