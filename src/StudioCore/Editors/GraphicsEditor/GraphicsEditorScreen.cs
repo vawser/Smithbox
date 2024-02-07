@@ -18,21 +18,21 @@ public class GraphicsEditorScreen : EditorScreen
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
-    public readonly AssetLocator AssetLocator;
+    private readonly AssetLocator AssetLocator;
 
-    public ActionManager EditorActionManager = new();
+    private ActionManager EditorActionManager = new();
 
-    public GraphicsParamBank.GraphicsParamInfo _selectedGraphicsParamInfo;
-    public GPARAM _selectedGraphicsParam;
-    public string _selectedGraphicsParamKey;
+    private GraphicsParamBank.GraphicsParamInfo _selectedGraphicsParamInfo;
+    private GPARAM _selectedGraphicsParam;
+    private string _selectedGraphicsParamKey;
 
-    public GPARAM.Param _selectedParamGroup;
-    public string _selectedParamGroupKey;
+    private GPARAM.Param _selectedParamGroup;
+    private string _selectedParamGroupKey;
 
-    public GPARAM.IField _selectedParam;
-    public string _selectedParamKey;
+    private GPARAM.IField _selectedParam;
+    private string _selectedParamKey;
 
-    public string _newGparamFile_Name;
+    private string _newGparamFile_Name;
 
     public GraphicsEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
     {
@@ -207,7 +207,7 @@ public class GraphicsEditorScreen : EditorScreen
         ImGui.PopStyleVar();
     }
 
-    public void GraphicsParamPropertyView()
+    private void GraphicsParamPropertyView()
     {
         GPARAM.IField field = _selectedParam;
 
