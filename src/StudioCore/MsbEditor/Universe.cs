@@ -5,7 +5,6 @@ using StudioCore.ParamEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +15,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Numerics;
+using StudioCore.ProjectCore;
 
 namespace StudioCore.MsbEditor;
 
@@ -32,7 +32,6 @@ internal partial class BtlLightSerializerContext : JsonSerializerContext
 /// </summary>
 public class Universe
 {
-    private readonly AssetLocator _assetLocator;
     private readonly RenderScene _renderScene;
     public int _dispGroupCount = 8;
 
@@ -40,9 +39,8 @@ public class Universe
 
     public bool postLoad;
 
-    public Universe(AssetLocator al, RenderScene scene, Selection sel)
+    public Universe(RenderScene scene, Selection sel)
     {
-        _assetLocator = al;
         _renderScene = scene;
         Selection = sel;
     }
@@ -52,7 +50,7 @@ public class Universe
 
     public List<string> EnvMapTextures { get; private set; } = new();
 
-    public GameType GameType => _assetLocator.Type;
+    public ProjectType GameType => UserProject.Type;
 
     public Map GetLoadedMap(string id)
     {
@@ -318,43 +316,43 @@ public class Universe
         var loadflver = false;
         var filt = RenderFilter.All;
 
-        var amapid = _assetLocator.GetAssetMapID(map.Name);
+        var amapid = AssetLocator.GetAssetMapID(map.Name);
 
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
         if (modelname.ToLower().StartsWith("m"))
         {
             loadflver = true;
-            asset = _assetLocator.GetMapModel(amapid, _assetLocator.MapModelNameToAssetName(amapid, modelname));
+            asset = AssetLocator.GetMapModel(amapid, AssetLocator.MapModelNameToAssetName(amapid, modelname));
             filt = RenderFilter.MapPiece;
         }
         else if (modelname.ToLower().StartsWith("c"))
         {
             loadflver = true;
-            asset = _assetLocator.GetChrModel(modelname);
+            asset = AssetLocator.GetChrModel(modelname);
             filt = RenderFilter.Character;
         }
         else if (modelname.ToLower().StartsWith("o") || modelname.StartsWith("AEG"))
         {
             loadflver = true;
-            asset = _assetLocator.GetObjModel(modelname);
+            asset = AssetLocator.GetObjModel(modelname);
             filt = RenderFilter.Object;
         }
         else if (modelname.ToLower().StartsWith("h"))
         {
             loadcol = true;
-            asset = _assetLocator.GetMapCollisionModel(amapid,
-                _assetLocator.MapModelNameToAssetName(amapid, modelname), false);
+            asset = AssetLocator.GetMapCollisionModel(amapid,
+                AssetLocator.MapModelNameToAssetName(amapid, modelname), false);
             filt = RenderFilter.Collision;
         }
         else if (modelname.ToLower().StartsWith("n"))
         {
             loadnav = true;
-            asset = _assetLocator.GetMapNVMModel(amapid, _assetLocator.MapModelNameToAssetName(amapid, modelname));
+            asset = AssetLocator.GetMapNVMModel(amapid, AssetLocator.MapModelNameToAssetName(amapid, modelname));
             filt = RenderFilter.Navmesh;
         }
         else
         {
-            asset = _assetLocator.GetNullAsset();
+            asset = AssetLocator.GetNullAsset();
         }
 
         ModelMarkerType modelMarkerType =
@@ -391,7 +389,7 @@ public class Universe
             return mesh;
         }
 
-        if (loadnav && _assetLocator.Type != GameType.DarkSoulsIISOTFS)
+        if (loadnav && UserProject.Type != ProjectType.DS2S)
         {
             MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
                 _renderScene, asset.AssetVirtualPath, modelMarkerType);
@@ -422,7 +420,7 @@ public class Universe
 
             return mesh;
         }
-        else if (loadnav && _assetLocator.Type == GameType.DarkSoulsIISOTFS)
+        else if (loadnav && UserProject.Type == ProjectType.DS2S)
         {
         }
         else if (loadflver)
@@ -533,14 +531,14 @@ public class Universe
                     (int)regist.GetCellHandleOrThrow("EnemyParamID").Value);
                 if (chrid != null)
                 {
-                    AssetDescription asset = _assetLocator.GetChrModel($@"c{chrid}");
+                    AssetDescription asset = AssetLocator.GetChrModel($@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
                         _renderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy);
                     model.DrawFilter = RenderFilter.Character;
                     generatorObjs[row.ID].RenderSceneMesh = model;
                     model.SetSelectable(generatorObjs[row.ID]);
                     chrsToLoad.Add(asset);
-                    AssetDescription tasset = _assetLocator.GetChrTextures($@"c{chrid}");
+                    AssetDescription tasset = AssetLocator.GetChrTextures($@"c{chrid}");
                     if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                     {
                         chrsToLoad.Add(tasset);
@@ -619,7 +617,7 @@ public class Universe
     public void PopulateMapList()
     {
         LoadedObjectContainers.Clear();
-        foreach (var m in _assetLocator.GetFullMapList())
+        foreach (var m in AssetLocator.GetFullMapList())
         {
             LoadedObjectContainers.Add(m, null);
         }
@@ -628,7 +626,7 @@ public class Universe
     public void LoadRelatedMapsER(string mapid, Dictionary<string, ObjectContainer> maps)
     {
         IReadOnlyDictionary<string, SpecialMapConnections.RelationType> relatedMaps =
-            SpecialMapConnections.GetRelatedMaps(GameType.EldenRing, mapid, maps.Keys);
+            SpecialMapConnections.GetRelatedMaps(mapid, maps.Keys);
         foreach (KeyValuePair<string, SpecialMapConnections.RelationType> map in relatedMaps)
         {
             LoadMap(map.Key);
@@ -637,7 +635,7 @@ public class Universe
 
     public bool LoadMap(string mapid, bool selectOnLoad = false)
     {
-        if (_assetLocator.Type == GameType.DarkSoulsIISOTFS
+        if (UserProject.Type == ProjectType.DS2S
             && ParamBank.PrimaryBank.Params == null)
         {
             // ParamBank must be loaded for DS2 maps
@@ -646,7 +644,7 @@ public class Universe
             return false;
         }
 
-        AssetDescription ad = _assetLocator.GetMapMSB(mapid);
+        AssetDescription ad = AssetLocator.GetMapMSB(mapid);
         if (ad.AssetPath == null)
         {
             return false;
@@ -662,7 +660,7 @@ public class Universe
         {
             BTL btl;
 
-            if (_assetLocator.Type == GameType.DarkSoulsIISOTFS)
+            if (UserProject.Type == ProjectType.DS2S)
             {
                 using BXF4 bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
                 BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
@@ -712,61 +710,61 @@ public class Universe
             HashSet<AssetDescription> navsToLoad = new();
 
             //drawgroup count
-            switch (_assetLocator.Type)
+            switch (UserProject.Type)
             {
                 // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
-                case GameType.DemonsSouls:
-                case GameType.DarkSoulsPTDE:
-                case GameType.DarkSoulsRemastered:
-                case GameType.DarkSoulsIISOTFS:
+                case ProjectType.DES:
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                case ProjectType.DS2S:
                     _dispGroupCount = 4;
                     break;
-                case GameType.Bloodborne:
-                case GameType.DarkSoulsIII:
+                case ProjectType.BB:
+                case ProjectType.DS3:
                     _dispGroupCount = 8;
                     break;
-                case GameType.Sekiro:
-                case GameType.EldenRing:
-                case GameType.ArmoredCoreVI:
+                case ProjectType.SDT:
+                case ProjectType.ER:
+                case ProjectType.AC6:
                     _dispGroupCount = 8; //?
                     break;
                 default:
-                    throw new Exception($"Error: Did not expect Gametype {_assetLocator.Type}");
+                    throw new Exception($"Error: Did not expect Gametype {UserProject.Type}");
                 //break;
             }
 
-            AssetDescription ad = _assetLocator.GetMapMSB(mapid);
+            AssetDescription ad = AssetLocator.GetMapMSB(mapid);
             if (ad.AssetPath == null)
             {
                 return;
             }
 
             IMsb msb;
-            if (_assetLocator.Type == GameType.DarkSoulsIII)
+            if (UserProject.Type == ProjectType.DS3)
             {
                 msb = MSB3.Read(ad.AssetPath);
             }
-            else if (_assetLocator.Type == GameType.Sekiro)
+            else if (UserProject.Type == ProjectType.SDT)
             {
                 msb = MSBS.Read(ad.AssetPath);
             }
-            else if (_assetLocator.Type == GameType.EldenRing)
+            else if (UserProject.Type == ProjectType.ER)
             {
                 msb = MSBE.Read(ad.AssetPath);
             }
-            else if (_assetLocator.Type == GameType.ArmoredCoreVI)
+            else if (UserProject.Type == ProjectType.AC6)
             {
                 msb = MSB_AC6.Read(ad.AssetPath);
             }
-            else if (_assetLocator.Type == GameType.DarkSoulsIISOTFS)
+            else if (UserProject.Type == ProjectType.DS2S)
             {
                 msb = MSB2.Read(ad.AssetPath);
             }
-            else if (_assetLocator.Type == GameType.Bloodborne)
+            else if (UserProject.Type == ProjectType.BB)
             {
                 msb = MSBB.Read(ad.AssetPath);
             }
-            else if (_assetLocator.Type == GameType.DemonsSouls)
+            else if (UserProject.Type == ProjectType.DES)
             {
                 msb = MSBD.Read(ad.AssetPath);
             }
@@ -777,21 +775,21 @@ public class Universe
 
             map.LoadMSB(msb);
 
-            var amapid = _assetLocator.GetAssetMapID(mapid);
+            var amapid = AssetLocator.GetAssetMapID(mapid);
             foreach (IMsbModel model in msb.Models.GetEntries())
             {
                 AssetDescription asset;
                 if (model.Name.StartsWith("m"))
                 {
-                    asset = _assetLocator.GetMapModel(amapid,
-                        _assetLocator.MapModelNameToAssetName(amapid, model.Name));
+                    asset = AssetLocator.GetMapModel(amapid,
+                        AssetLocator.MapModelNameToAssetName(amapid, model.Name));
                     mappiecesToLoad.Add(asset);
                 }
                 else if (model.Name.StartsWith("c"))
                 {
-                    asset = _assetLocator.GetChrModel(model.Name);
+                    asset = AssetLocator.GetChrModel(model.Name);
                     chrsToLoad.Add(asset);
-                    AssetDescription tasset = _assetLocator.GetChrTextures(model.Name);
+                    AssetDescription tasset = AssetLocator.GetChrTextures(model.Name);
                     if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                     {
                         chrsToLoad.Add(tasset);
@@ -799,9 +797,9 @@ public class Universe
                 }
                 else if (model.Name.StartsWith("o"))
                 {
-                    asset = _assetLocator.GetObjModel(model.Name);
+                    asset = AssetLocator.GetObjModel(model.Name);
                     objsToLoad.Add(asset);
-                    AssetDescription tasset = _assetLocator.GetObjTexture(model.Name);
+                    AssetDescription tasset = AssetLocator.GetObjTexture(model.Name);
                     if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                     {
                         objsToLoad.Add(tasset);
@@ -809,20 +807,20 @@ public class Universe
                 }
                 else if (model.Name.StartsWith("AEG"))
                 {
-                    asset = _assetLocator.GetObjModel(model.Name);
+                    asset = AssetLocator.GetObjModel(model.Name);
                     objsToLoad.Add(asset);
                 }
                 else if (model.Name.StartsWith("h"))
                 {
-                    asset = _assetLocator.GetMapCollisionModel(amapid,
-                        _assetLocator.MapModelNameToAssetName(amapid, model.Name), false);
+                    asset = AssetLocator.GetMapCollisionModel(amapid,
+                        AssetLocator.MapModelNameToAssetName(amapid, model.Name), false);
                     colsToLoad.Add(asset);
                 }
-                else if (model.Name.StartsWith("n") && _assetLocator.Type != GameType.DarkSoulsIISOTFS &&
-                         _assetLocator.Type != GameType.Bloodborne)
+                else if (model.Name.StartsWith("n") && UserProject.Type != ProjectType.DS2S &&
+                         UserProject.Type != ProjectType.BB)
                 {
-                    asset = _assetLocator.GetMapNVMModel(amapid,
-                        _assetLocator.MapModelNameToAssetName(amapid, model.Name));
+                    asset = AssetLocator.GetMapNVMModel(amapid,
+                        AssetLocator.MapModelNameToAssetName(amapid, model.Name));
                     navsToLoad.Add(asset);
                 }
             }
@@ -837,7 +835,7 @@ public class Universe
             }
 
             // Load BTLs (must be done after MapOffset is set)
-            List<AssetDescription> BTLs = _assetLocator.GetMapBTLs(mapid);
+            List<AssetDescription> BTLs = AssetLocator.GetMapBTLs(mapid);
             foreach (AssetDescription btl_ad in BTLs)
             {
                 BTL btl = ReturnBTL(btl_ad);
@@ -847,7 +845,7 @@ public class Universe
                 }
             }
 
-            if (_assetLocator.Type == GameType.EldenRing && CFG.Current.Map_Enable_ER_Auto_Map_Offset)
+            if (UserProject.Type == ProjectType.ER && CFG.Current.Map_Enable_ER_Auto_Map_Offset)
             {
                 if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
                     loadTransform)
@@ -873,15 +871,15 @@ public class Universe
                 Selection.AddSelection(map.RootObject);
             }
 
-            if (_assetLocator.Type == GameType.DarkSoulsIISOTFS)
+            if (UserProject.Type == ProjectType.DS2S)
             {
                 LoadDS2Generators(amapid, map);
             }
 
             // Temporary DS3 navmesh loading
-            if (FeatureFlags.LoadDS3Navmeshes && _assetLocator.Type == GameType.DarkSoulsIII)
+            if (FeatureFlags.LoadDS3Navmeshes && UserProject.Type == ProjectType.DS3)
             {
-                AssetDescription nvaasset = _assetLocator.GetMapNVA(amapid);
+                AssetDescription nvaasset = AssetLocator.GetMapNVA(amapid);
                 if (nvaasset.AssetPath != null)
                 {
                     NVA nva = NVA.Read(nvaasset.AssetPath);
@@ -891,8 +889,8 @@ public class Universe
                         MapEntity n = new(map, nav, MapEntity.MapEntityType.Editor);
                         map.AddObject(n);
                         var navid = $@"n{nav.ModelID:D6}";
-                        var navname = "n" + _assetLocator.MapModelNameToAssetName(amapid, navid).Substring(1);
-                        AssetDescription nasset = _assetLocator.GetHavokNavmeshModel(amapid, navname);
+                        var navname = "n" + AssetLocator.MapModelNameToAssetName(amapid, navid).Substring(1);
+                        AssetDescription nasset = AssetLocator.GetHavokNavmeshModel(amapid, navname);
 
                         MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
                             _renderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
@@ -924,7 +922,7 @@ public class Universe
             if (CFG.Current.Map_Enable_Texturing)
             {
                 job = ResourceManager.CreateNewJob($@"Loading {amapid} textures");
-                foreach (AssetDescription asset in _assetLocator.GetMapTextures(amapid))
+                foreach (AssetDescription asset in AssetLocator.GetMapTextures(amapid))
                 {
                     if (asset.AssetArchiveVirtualPath != null)
                     {
@@ -1003,9 +1001,9 @@ public class Universe
             if (FeatureFlags.LoadNavmeshes)
             {
                 job = ResourceManager.CreateNewJob(@"Loading Navmeshes");
-                if (_assetLocator.Type == GameType.DarkSoulsIII && FeatureFlags.LoadDS3Navmeshes)
+                if (UserProject.Type == ProjectType.DS3 && FeatureFlags.LoadDS3Navmeshes)
                 {
-                    AssetDescription nav = _assetLocator.GetHavokNavmeshes(amapid);
+                    AssetDescription nav = AssetLocator.GetHavokNavmeshes(amapid);
                     job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
                         ResourceManager.ResourceType.NavmeshHKX);
                 }
@@ -1030,7 +1028,7 @@ public class Universe
             }
 
             // Real bad hack
-            EnvMapTextures = _assetLocator.GetEnvMapTextureNames(amapid);
+            EnvMapTextures = AssetLocator.GetEnvMapTextureNames(amapid);
 
             ScheduleTextureRefresh();
 
@@ -1133,40 +1131,40 @@ public class Universe
     private void SaveDS2Generators(Map map)
     {
         // Load all the params
-        AssetDescription regparamad = _assetLocator.GetDS2GeneratorRegistParam(map.Name);
-        AssetDescription regparamadw = _assetLocator.GetDS2GeneratorRegistParam(map.Name, true);
+        AssetDescription regparamad = AssetLocator.GetDS2GeneratorRegistParam(map.Name);
+        AssetDescription regparamadw = AssetLocator.GetDS2GeneratorRegistParam(map.Name, true);
         Param regparam = Param.Read(regparamad.AssetPath);
-        PARAMDEF reglayout = _assetLocator.GetParamdefForParam(regparam.ParamType);
+        PARAMDEF reglayout = AssetLocator.GetParamdefForParam(regparam.ParamType);
         regparam.ApplyParamdef(reglayout);
 
-        AssetDescription locparamad = _assetLocator.GetDS2GeneratorLocationParam(map.Name);
-        AssetDescription locparamadw = _assetLocator.GetDS2GeneratorLocationParam(map.Name, true);
+        AssetDescription locparamad = AssetLocator.GetDS2GeneratorLocationParam(map.Name);
+        AssetDescription locparamadw = AssetLocator.GetDS2GeneratorLocationParam(map.Name, true);
         Param locparam = Param.Read(locparamad.AssetPath);
-        PARAMDEF loclayout = _assetLocator.GetParamdefForParam(locparam.ParamType);
+        PARAMDEF loclayout = AssetLocator.GetParamdefForParam(locparam.ParamType);
         locparam.ApplyParamdef(loclayout);
 
-        AssetDescription genparamad = _assetLocator.GetDS2GeneratorParam(map.Name);
-        AssetDescription genparamadw = _assetLocator.GetDS2GeneratorParam(map.Name, true);
+        AssetDescription genparamad = AssetLocator.GetDS2GeneratorParam(map.Name);
+        AssetDescription genparamadw = AssetLocator.GetDS2GeneratorParam(map.Name, true);
         Param genparam = Param.Read(genparamad.AssetPath);
-        PARAMDEF genlayout = _assetLocator.GetParamdefForParam(genparam.ParamType);
+        PARAMDEF genlayout = AssetLocator.GetParamdefForParam(genparam.ParamType);
         genparam.ApplyParamdef(genlayout);
 
-        AssetDescription evtparamad = _assetLocator.GetDS2EventParam(map.Name);
-        AssetDescription evtparamadw = _assetLocator.GetDS2EventParam(map.Name, true);
+        AssetDescription evtparamad = AssetLocator.GetDS2EventParam(map.Name);
+        AssetDescription evtparamadw = AssetLocator.GetDS2EventParam(map.Name, true);
         Param evtparam = Param.Read(evtparamad.AssetPath);
-        PARAMDEF evtlayout = _assetLocator.GetParamdefForParam(evtparam.ParamType);
+        PARAMDEF evtlayout = AssetLocator.GetParamdefForParam(evtparam.ParamType);
         evtparam.ApplyParamdef(evtlayout);
 
-        AssetDescription evtlparamad = _assetLocator.GetDS2EventLocationParam(map.Name);
-        AssetDescription evtlparamadw = _assetLocator.GetDS2EventLocationParam(map.Name, true);
+        AssetDescription evtlparamad = AssetLocator.GetDS2EventLocationParam(map.Name);
+        AssetDescription evtlparamadw = AssetLocator.GetDS2EventLocationParam(map.Name, true);
         Param evtlparam = Param.Read(evtlparamad.AssetPath);
-        PARAMDEF evtllayout = _assetLocator.GetParamdefForParam(evtlparam.ParamType);
+        PARAMDEF evtllayout = AssetLocator.GetParamdefForParam(evtlparam.ParamType);
         evtlparam.ApplyParamdef(evtllayout);
 
-        AssetDescription objparamad = _assetLocator.GetDS2ObjInstanceParam(map.Name);
-        AssetDescription objparamadw = _assetLocator.GetDS2ObjInstanceParam(map.Name, true);
+        AssetDescription objparamad = AssetLocator.GetDS2ObjInstanceParam(map.Name);
+        AssetDescription objparamadw = AssetLocator.GetDS2ObjInstanceParam(map.Name, true);
         Param objparam = Param.Read(objparamad.AssetPath);
-        PARAMDEF objlayout = _assetLocator.GetParamdefForParam(objparam.ParamType);
+        PARAMDEF objlayout = AssetLocator.GetParamdefForParam(objparam.ParamType);
         objparam.ApplyParamdef(objlayout);
 
         // Clear them out
@@ -1330,33 +1328,33 @@ public class Universe
 
     private DCX.Type GetCompressionType()
     {
-        if (_assetLocator.Type == GameType.DarkSoulsIII)
+        if (UserProject.Type == ProjectType.DS3)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (_assetLocator.Type == GameType.EldenRing)
+        if (UserProject.Type == ProjectType.ER)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (_assetLocator.Type == GameType.ArmoredCoreVI)
+        if (UserProject.Type == ProjectType.AC6)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (_assetLocator.Type == GameType.DarkSoulsIISOTFS)
+        else if (UserProject.Type == ProjectType.DS2S)
         {
             return DCX.Type.None;
         }
-        else if (_assetLocator.Type == GameType.Sekiro)
+        else if (UserProject.Type == ProjectType.SDT)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (_assetLocator.Type == GameType.Bloodborne)
+        else if (UserProject.Type == ProjectType.BB)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (_assetLocator.Type == GameType.DemonsSouls)
+        else if (UserProject.Type == ProjectType.DES)
         {
             return DCX.Type.None;
         }
@@ -1369,10 +1367,10 @@ public class Universe
     /// </summary>
     public void SaveBTL(Map map)
     {
-        List<AssetDescription> BTLs = _assetLocator.GetMapBTLs(map.Name);
-        List<AssetDescription> BTLs_w = _assetLocator.GetMapBTLs(map.Name, true);
+        List<AssetDescription> BTLs = AssetLocator.GetMapBTLs(map.Name);
+        List<AssetDescription> BTLs_w = AssetLocator.GetMapBTLs(map.Name, true);
         DCX.Type compressionType = GetCompressionType();
-        if (_assetLocator.Type == GameType.DarkSoulsIISOTFS)
+        if (UserProject.Type == ProjectType.DS2S)
         {
             for (var i = 0; i < BTLs.Count; i++)
             {
@@ -1391,8 +1389,8 @@ public class Universe
                         file.Bytes = btl.Write(DCX.Type.DCX_DFLT_10000_24_9);
                         var bdtPath = BTLs_w[i].AssetPath[..^3] + "bdt";
 
-                        Utils.WriteWithBackup(_assetLocator, Utils.GetLocalAssetPath(_assetLocator, bdtPath), bdt,
-                            Utils.GetLocalAssetPath(_assetLocator, BTLs_w[i].AssetPath));
+                        Utils.WriteWithBackup(Utils.GetLocalAssetPath(bdtPath), bdt,
+                            Utils.GetLocalAssetPath( BTLs_w[i].AssetPath));
                     }
                 }
             }
@@ -1412,8 +1410,7 @@ public class Universe
                     {
                         btl.Lights = newLights;
 
-                        Utils.WriteWithBackup(_assetLocator,
-                            Utils.GetLocalAssetPath(_assetLocator, BTLs_w[i].AssetPath), btl);
+                        Utils.WriteWithBackup(Utils.GetLocalAssetPath(BTLs_w[i].AssetPath), btl);
                     }
                 }
             }
@@ -1425,11 +1422,11 @@ public class Universe
         SaveBTL(map);
         try
         {
-            AssetDescription ad = _assetLocator.GetMapMSB(map.Name);
-            AssetDescription adw = _assetLocator.GetMapMSB(map.Name, true);
+            AssetDescription ad = AssetLocator.GetMapMSB(map.Name);
+            AssetDescription adw = AssetLocator.GetMapMSB(map.Name, true);
             IMsb msb;
             DCX.Type compressionType = GetCompressionType();
-            if (_assetLocator.Type == GameType.DarkSoulsIII)
+            if (UserProject.Type == ProjectType.DS3)
             {
                 MSB3 prev = MSB3.Read(ad.AssetPath);
                 MSB3 n = new();
@@ -1438,7 +1435,7 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (_assetLocator.Type == GameType.EldenRing)
+            else if (UserProject.Type == ProjectType.ER)
             {
                 MSBE prev = MSBE.Read(ad.AssetPath);
                 MSBE n = new();
@@ -1446,7 +1443,7 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (_assetLocator.Type == GameType.ArmoredCoreVI)
+            else if (UserProject.Type == ProjectType.AC6)
             {
                 MSB_AC6 prev = MSB_AC6.Read(ad.AssetPath);
                 MSB_AC6 n = new();
@@ -1454,14 +1451,14 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (_assetLocator.Type == GameType.DarkSoulsIISOTFS)
+            else if (UserProject.Type == ProjectType.DS2S)
             {
                 MSB2 prev = MSB2.Read(ad.AssetPath);
                 MSB2 n = new();
                 n.PartPoses = prev.PartPoses;
                 msb = n;
             }
-            else if (_assetLocator.Type == GameType.Sekiro)
+            else if (UserProject.Type == ProjectType.SDT)
             {
                 MSBS prev = MSBS.Read(ad.AssetPath);
                 MSBS n = new();
@@ -1470,11 +1467,11 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (_assetLocator.Type == GameType.Bloodborne)
+            else if (UserProject.Type == ProjectType.BB)
             {
                 msb = new MSBB();
             }
-            else if (_assetLocator.Type == GameType.DemonsSouls)
+            else if (UserProject.Type == ProjectType.DES)
             {
                 MSBD prev = MSBD.Read(ad.AssetPath);
                 MSBD n = new();
@@ -1488,7 +1485,7 @@ public class Universe
                 //((MSB1)msb).Models = t.Models;
             }
 
-            map.SerializeToMSB(msb, _assetLocator.Type);
+            map.SerializeToMSB(msb, UserProject.Type);
 
             // Create the map directory if it doesn't exist
             if (!Directory.Exists(Path.GetDirectoryName(adw.AssetPath)))
@@ -1530,7 +1527,7 @@ public class Universe
 
             File.Move(mapPath + ".temp", mapPath);
 
-            if (_assetLocator.Type == GameType.DarkSoulsIISOTFS)
+            if (UserProject.Type == ProjectType.DS2S)
             {
                 SaveDS2Generators(map);
             }
@@ -1547,7 +1544,7 @@ public class Universe
 
     public void SaveAllMaps()
     {
-        if (_assetLocator.Type == GameType.ArmoredCoreVI && FeatureFlags.AC6_MSB_Saving == false)
+        if (UserProject.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
         {
             TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }
@@ -1625,7 +1622,7 @@ public class Universe
     }
     public void ScheduleTextureRefresh()
     {
-        if (GameType == GameType.DarkSoulsPTDE)
+        if (GameType == ProjectType.DS1)
         {
             ResourceManager.ScheduleUDSMFRefresh();
         }

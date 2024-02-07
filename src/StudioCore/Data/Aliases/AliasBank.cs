@@ -1,12 +1,11 @@
 ﻿using StudioCore.Editor;
-using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using System.Text;
+using StudioCore.ProjectCore;
 
 namespace StudioCore.Data.Aliases;
 
@@ -26,8 +25,6 @@ public enum AliasType
 /// </summary>
 public class AliasBank
 {
-    private AssetLocator AssetLocator;
-
     public AliasContainer _loadedAliasBank { get; set; }
 
     public bool IsLoadingAliases { get; set; }
@@ -49,9 +46,8 @@ public class AliasBank
 
     public Dictionary<string, string> MapNames;
 
-    public AliasBank(AssetLocator locator, AliasType _aliasType)
+    public AliasBank(AliasType _aliasType)
     {
-        AssetLocator = locator;
         mayReloadAliasBank = false;
 
         aliasType = _aliasType;
@@ -108,11 +104,11 @@ public class AliasBank
             _loadedAliasBank = new AliasContainer();
             IsLoadingAliases = true;
 
-            if (AssetLocator.Type != GameType.Undefined)
+            if (UserProject.Type != ProjectType.Undefined)
             {
                 try
                 {
-                    _loadedAliasBank = new AliasContainer(aliasType, AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
+                    _loadedAliasBank = new AliasContainer(aliasType, AssetLocator.GetGameIDForDir(), UserProject.GameModDirectory);
                 }
                 catch (Exception e)
                 {
@@ -149,7 +145,7 @@ public class AliasBank
 
     public void WriteTargetAliasBank(AliasResource targetBank, string assetType)
     {
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
 
@@ -184,7 +180,7 @@ public class AliasBank
     public void AddToLocalAliasBank(string assetType, string refID, string refName, string refTags)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{TemplateName}";
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
 
@@ -256,7 +252,7 @@ public class AliasBank
     /// </summary>
     public void RemoveFromLocalAliasBank(string assetType, string refID)
     {
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
 

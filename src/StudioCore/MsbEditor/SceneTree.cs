@@ -6,6 +6,7 @@ using StudioCore.Data.Aliases;
 using StudioCore.Gui;
 using StudioCore.ParamEditor;
 using StudioCore.Platform;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
 using StudioCore.Settings;
 using StudioCore.Utilities;
@@ -48,8 +49,6 @@ public class SceneTree : IActionEventHandler
         Flat,
         ObjectType
     }
-
-    private readonly AssetLocator _assetLocator;
 
     private readonly Configuration _configuration;
     private readonly List<Entity> _dragDropDestObjects = new();
@@ -103,7 +102,7 @@ public class SceneTree : IActionEventHandler
 
 
     public SceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe,
-        Selection sel, ActionManager aman, IViewport vp, AssetLocator al, AliasBank modelAliasBank, AliasBank mapAliasBank)
+        Selection sel, ActionManager aman, IViewport vp, AliasBank modelAliasBank, AliasBank mapAliasBank)
     {
         _handler = handler;
         _id = id;
@@ -111,7 +110,6 @@ public class SceneTree : IActionEventHandler
         _selection = sel;
         _editorActionManager = aman;
         _viewport = vp;
-        _assetLocator = al;
         _configuration = configuration;
         _modelAliasBank = modelAliasBank;
         _mapAliasBank = mapAliasBank;
@@ -147,12 +145,12 @@ public class SceneTree : IActionEventHandler
         mapcache.Add(MapEntity.MapEntityType.Part, new Dictionary<Type, List<MapEntity>>());
         mapcache.Add(MapEntity.MapEntityType.Region, new Dictionary<Type, List<MapEntity>>());
         mapcache.Add(MapEntity.MapEntityType.Event, new Dictionary<Type, List<MapEntity>>());
-        if (_assetLocator.Type is GameType.Bloodborne or GameType.DarkSoulsIII or GameType.Sekiro
-            or GameType.EldenRing or GameType.ArmoredCoreVI)
+        if (UserProject.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
+            or ProjectType.ER or ProjectType.AC6)
         {
             mapcache.Add(MapEntity.MapEntityType.Light, new Dictionary<Type, List<MapEntity>>());
         }
-        else if (_assetLocator.Type is GameType.DarkSoulsIISOTFS)
+        else if (UserProject.Type is ProjectType.DS2S)
         {
             mapcache.Add(MapEntity.MapEntityType.Light, new Dictionary<Type, List<MapEntity>>());
             mapcache.Add(MapEntity.MapEntityType.DS2Event, new Dictionary<Type, List<MapEntity>>());
@@ -533,10 +531,10 @@ public class SceneTree : IActionEventHandler
                         {
                             // Regions don't have multiple types in certain games
                             if (cats.Key == MapEntity.MapEntityType.Region &&
-                                _assetLocator.Type is GameType.DemonsSouls
-                                    or GameType.DarkSoulsPTDE
-                                    or GameType.DarkSoulsRemastered
-                                    or GameType.Bloodborne)
+                                UserProject.Type is ProjectType.DES
+                                    or ProjectType.DS1
+                                    or ProjectType.DS1R
+                                    or ProjectType.BB)
                             {
                                 foreach (MapEntity obj in typ.Value)
                                 {
@@ -663,7 +661,7 @@ public class SceneTree : IActionEventHandler
 
             if (_configuration == Configuration.MapEditor)
             {
-                if (_assetLocator.Type is GameType.DarkSoulsIISOTFS)
+                if (UserProject.Type is ProjectType.DS2S)
                 {
                     if (ParamBank.PrimaryBank.IsLoadingParams)
                     {
@@ -701,7 +699,7 @@ public class SceneTree : IActionEventHandler
             ImGui.BeginChild("listtree");
             if (_configuration == Configuration.MapEditor && _universe.LoadedObjectContainers.Count == 0)
             {
-                if (_universe.GameType == GameType.Undefined)
+                if (_universe.GameType == ProjectType.Undefined)
                 {
                     ImGui.Text("No project loaded. File -> New Project");
                 }
@@ -711,7 +709,7 @@ public class SceneTree : IActionEventHandler
                 }
             }
 
-            if (_configuration == Configuration.MapEditor && _assetLocator.Type == GameType.ArmoredCoreVI &&
+            if (_configuration == Configuration.MapEditor && UserProject.Type == ProjectType.AC6 &&
                 FeatureFlags.AC6_MSB == false)
             {
                 ImGui.Indent();
@@ -826,7 +824,7 @@ public class SceneTree : IActionEventHandler
                         {
                             try
                             {
-                                if (_assetLocator.Type == GameType.ArmoredCoreVI && FeatureFlags.AC6_MSB_Saving == false)
+                                if (UserProject.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
                                 {
                                     TaskLogs.AddLog("AC6 Map saving has been disabled", LogLevel.Warning, TaskLogs.LogPriority.Normal);
                                 }
@@ -852,7 +850,7 @@ public class SceneTree : IActionEventHandler
                         }
                     }
 
-                    if (_universe.GameType is GameType.EldenRing)
+                    if (_universe.GameType is ProjectType.ER)
                     {
                         if (mapid.StartsWith("m60"))
                         {
@@ -868,7 +866,7 @@ public class SceneTree : IActionEventHandler
                             }
                         }
                     }
-                    else if (_universe.GameType is GameType.ArmoredCoreVI)
+                    else if (_universe.GameType is ProjectType.AC6)
                     {
                         //TODO AC6
                     }
@@ -985,12 +983,12 @@ public class SceneTree : IActionEventHandler
                 }
             }
 
-            if (_assetLocator.Type == GameType.Bloodborne && _configuration == Configuration.MapEditor)
+            if (UserProject.Type == ProjectType.BB && _configuration == Configuration.MapEditor)
             {
                 ChaliceDungeonImportButton();
             }
 
-            if (_configuration == Configuration.MapEditor && _assetLocator.Type == GameType.ArmoredCoreVI &&
+            if (_configuration == Configuration.MapEditor && UserProject.Type == ProjectType.AC6 &&
                 FeatureFlags.AC6_MSB == false)
             {
                 ImGui.EndDisabled();

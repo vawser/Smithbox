@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.Utilities;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,9 +7,9 @@ using System.IO;
 namespace StudioCore.Tests;
 public static class MSB_AC6_Read_Write
 {
-    public static bool Run(AssetLocator locator)
+    public static bool Run()
     {
-        List<string> msbs = locator.GetFullMapList();
+        List<string> msbs = AssetLocator.GetFullMapList();
 
         // m00_90_00_00
 
@@ -17,7 +17,7 @@ public static class MSB_AC6_Read_Write
         {
             if (msb == "m00_90_00_00")
             {
-                AssetDescription path = locator.GetMapMSB(msb);
+                AssetDescription path = AssetLocator.GetMapMSB(msb);
                 var bytes = File.ReadAllBytes(path.AssetPath);
                 Memory<byte> decompressed = DCX.Decompress(bytes);
                 MSB_AC6 m = MSB_AC6.Read(decompressed);

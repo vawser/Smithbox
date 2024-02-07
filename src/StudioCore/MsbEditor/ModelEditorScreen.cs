@@ -11,14 +11,13 @@ using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
 using Viewport = StudioCore.Gui.Viewport;
-using StudioCore.Settings;
-using StudioCore.Utilities;
 using StudioCore.Configuration;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using SoulsFormats;
 using StudioCore.Browsers;
 using StudioCore.Data.Aliases;
+using StudioCore.ProjectCore;
 
 namespace StudioCore.MsbEditor;
 
@@ -41,7 +40,6 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     private Task _loadingTask;
     private MeshRenderableProxy _renderMesh;
 
-    public AssetLocator AssetLocator;
     public ActionManager EditorActionManager = new();
     public Rectangle Rect;
     public RenderScene RenderScene;
@@ -52,11 +50,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank modelAliasBank, AliasBank mapAliasBank)
+    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AliasBank modelAliasBank, AliasBank mapAliasBank)
     {
         Rect = window.Bounds;
-        AssetLocator = locator;
-        ResourceManager.Locator = AssetLocator;
         Window = window;
 
         if (device != null)
@@ -70,12 +66,12 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
             Viewport = new NullViewport("Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
-        _universe = new Universe(AssetLocator, RenderScene, _selection);
+        _universe = new Universe(RenderScene, _selection);
 
         _sceneTree = new SceneTree(SceneTree.Configuration.ModelEditor, this, "modeledittree", _universe,
-            _selection, EditorActionManager, Viewport, AssetLocator, modelAliasBank, mapAliasBank);
+            _selection, EditorActionManager, Viewport, modelAliasBank, mapAliasBank);
         _propEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, null, mapAliasBank, null);
-        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", AssetLocator, modelAliasBank, mapAliasBank);
+        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", modelAliasBank, mapAliasBank);
     }
 
     public void OnInstantiateChr(string chrid)
@@ -252,7 +248,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void OnProjectChanged(ProjectSettings newSettings)
     {
-        if (AssetLocator.Type != GameType.Undefined)
+        if (UserProject.Type != ProjectType.Undefined)
         {
             _assetBrowser.OnProjectChanged();
         }
@@ -322,9 +318,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     {
         string ret = relpath;
 
-        if (AssetLocator.GameModDirectory != null)
+        if (UserProject.GameModDirectory != null)
         {
-            var modpath = relpath.Replace($"{AssetLocator.GameRootDirectory}", $"{AssetLocator.GameModDirectory}");
+            var modpath = relpath.Replace($"{UserProject.GameRootDirectory}", $"{UserProject.GameModDirectory}");
 
             if (!File.Exists(modpath))
             {

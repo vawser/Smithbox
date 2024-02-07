@@ -7,8 +7,8 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
-using StudioCore.Settings;
 using StudioCore.MsbEditor;
+using StudioCore.ProjectCore;
 
 namespace StudioCore;
 
@@ -352,7 +352,7 @@ public class CFG
     public string LastProjectFile { get; set; } = "";
     public List<RecentProject> RecentProjects { get; set; } = new();
 
-    public GameType Game_Type { get; set; } = GameType.Undefined;
+    public ProjectType Game_Type { get; set; } = ProjectType.Undefined;
 
     
 
@@ -564,7 +564,7 @@ public class CFG
 
         public string Name { get; set; }
         public string ProjectFile { get; set; }
-        public GameType GameType { get; set; }
+        public ProjectType GameType { get; set; }
 
         public bool IsSameProjectLocation(RecentProject otherProject)
         {

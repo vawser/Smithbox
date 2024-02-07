@@ -26,6 +26,7 @@ using StudioCore.TalkEditor;
 using StudioCore.Tests;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
+using StudioCore.ProjectCore;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,6 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
-using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
@@ -61,9 +61,6 @@ public class Smithbox
 
     private readonly NewProjectOptions _newProjectOptions = new();
     private readonly string _programTitle;
-
-    // Assets
-    private readonly AssetLocator _assetLocator;
 
     // Editors
     private readonly List<EditorScreen> _editors;
@@ -124,39 +121,37 @@ public class Smithbox
         _context.Window.Title = _programTitle;
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
-        _assetLocator = new AssetLocator();
-
         // Alias Banks
-        aliasBank_Maps = new AliasBank(_assetLocator, AliasType.Map);
-        aliasBank_Models = new AliasBank(_assetLocator, AliasType.Model);
-        aliasBank_Flags = new AliasBank(_assetLocator, AliasType.EventFlag);
-        aliasBank_Particles = new AliasBank(_assetLocator, AliasType.Particle);
+        aliasBank_Maps = new AliasBank(AliasType.Map);
+        aliasBank_Models = new AliasBank(AliasType.Model);
+        aliasBank_Flags = new AliasBank(AliasType.EventFlag);
+        aliasBank_Particles = new AliasBank(AliasType.Particle);
 
         // Format Info Banks
-        infoBank_MSB = new InfoBank(_assetLocator, FormatType.MSB);
+        infoBank_MSB = new InfoBank(FormatType.MSB);
 
         // Screens
-        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, _assetLocator, aliasBank_Models, aliasBank_Maps, infoBank_MSB);
-        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, _assetLocator, aliasBank_Models, aliasBank_Maps);
-        ParamEditorScreen paramEditor = new(_context.Window, _context.Device, _assetLocator);
-        TextEditorScreen textEditor = new(_context.Window, _context.Device, _assetLocator);
+        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, aliasBank_Models, aliasBank_Maps, infoBank_MSB);
+        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, aliasBank_Models, aliasBank_Maps);
+        ParamEditorScreen paramEditor = new(_context.Window, _context.Device);
+        TextEditorScreen textEditor = new(_context.Window, _context.Device);
 
-        AnimationEditorScreen animationEditor = new(_context.Window, _context.Device, _assetLocator);
-        CutsceneEditorScreen cutsceneEditor = new(_context.Window, _context.Device, _assetLocator);
-        GraphicsEditorScreen graphicsEditor = new(_context.Window, _context.Device, _assetLocator);
-        MaterialEditorScreen materialEditor = new(_context.Window, _context.Device, _assetLocator);
-        ParticleEditorScreen particleEditor = new(_context.Window, _context.Device, _assetLocator);
-        ScriptEditorScreen scriptEditor = new(_context.Window, _context.Device, _assetLocator);
-        TalkEditorScreen talkEditor = new(_context.Window, _context.Device, _assetLocator);
-        TextureViewerScreen textureViewer = new(_context.Window, _context.Device, _assetLocator);
+        AnimationEditorScreen animationEditor = new(_context.Window, _context.Device);
+        CutsceneEditorScreen cutsceneEditor = new(_context.Window, _context.Device);
+        GraphicsEditorScreen graphicsEditor = new(_context.Window, _context.Device);
+        MaterialEditorScreen materialEditor = new(_context.Window, _context.Device);
+        ParticleEditorScreen particleEditor = new(_context.Window, _context.Device);
+        ScriptEditorScreen scriptEditor = new(_context.Window, _context.Device);
+        TalkEditorScreen talkEditor = new(_context.Window, _context.Device);
+        TextureViewerScreen textureViewer = new(_context.Window, _context.Device);
 
         _editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor, graphicsEditor };
         //_editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor, animationEditor, cutsceneEditor, graphicsEditor, materialEditor, particleEditor, scriptEditor, talkEditor, textureViewer };
         _focusedEditor = msbEditor;
 
-        _soapstoneService = new SoapstoneService(_version, _assetLocator, msbEditor);
+        _soapstoneService = new SoapstoneService(_version, msbEditor);
 
-        _settingsMenu = new SettingsMenu("SettingsMenu", _assetLocator, aliasBank_Maps);
+        _settingsMenu = new SettingsMenu("SettingsMenu", aliasBank_Maps);
         _settingsMenu.MsbEditor = msbEditor;
         _settingsMenu.ModelEditor = modelEditor;
         _settingsMenu.ParamEditor = paramEditor;
@@ -170,15 +165,11 @@ public class Smithbox
         _settingsMenu.TalkEditor = talkEditor;
         _settingsMenu.TextureViewer = textureViewer;
 
-        _helpBrowser = new HelpBrowser("HelpBrowser", _assetLocator);
-        _eventFlagBrowser = new FlagBrowser("EventFlagBrowser", _assetLocator, aliasBank_Flags);
-        _fxrBrowser = new ParticleBrowser("FxrBrowser", _assetLocator, aliasBank_Particles);
+        _helpBrowser = new HelpBrowser("HelpBrowser");
+        _eventFlagBrowser = new FlagBrowser("EventFlagBrowser", aliasBank_Flags);
+        _fxrBrowser = new ParticleBrowser("FxrBrowser", aliasBank_Particles);
 
-        ParamBank.PrimaryBank.SetAssetLocator(_assetLocator);
-        ParamBank.VanillaBank.SetAssetLocator(_assetLocator);
-        FMGBank.SetAssetLocator(_assetLocator);
-        MtdBank.LoadMtds(_assetLocator);
-        GraphicsParamBank.SetAssetLocator(_assetLocator);
+        MtdBank.LoadMtds();
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();
@@ -465,7 +456,8 @@ public class Smithbox
     private void ChangeProjectSettings(ProjectSettings newsettings, string moddir, NewProjectOptions options)
     {
         _projectSettings = newsettings;
-        _assetLocator.SetFromProjectSettings(newsettings, moddir);
+        UserProject.SetFromProjectSettings(newsettings, moddir);
+        AssetLocator.FullMapList = null;
         _settingsMenu.ProjSettings = _projectSettings;
 
         aliasBank_Models.ReloadAliasBank();
@@ -540,7 +532,7 @@ public class Smithbox
 
     private void DumpFlverLayouts()
     {
-        if (PlatformUtils.Instance.SaveFileDialog("Save Flver layout dump", new[] { AssetLocator.TxtFilter },
+        if (PlatformUtils.Instance.SaveFileDialog("Save Flver layout dump", new[] { FilterStrings.TxtFilter },
                 out var path))
         {
             using (StreamWriter file = new(path))
@@ -559,9 +551,9 @@ public class Smithbox
         }
     }
 
-    private bool GameNotUnpackedWarning(GameType gameType)
+    private bool GameNotUnpackedWarning(ProjectType gameType)
     {
-        if (gameType is GameType.DarkSoulsPTDE or GameType.DarkSoulsIISOTFS)
+        if (gameType is ProjectType.DS1 or ProjectType.DS2S)
         {
             TaskLogs.AddLog(
                 $"The files for {gameType} do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
@@ -591,16 +583,16 @@ public class Smithbox
             {
                 if (PlatformUtils.Instance.OpenFileDialog(
                         $"Select executable for {settings.GameType}...",
-                        new[] { AssetLocator.GameExecutableFilter },
+                        new[] { FilterStrings.GameExecutableFilter },
                         out var path))
                 {
                     settings.GameRoot = path;
-                    GameType gametype = _assetLocator.GetGameTypeForExePath(settings.GameRoot);
+                    ProjectType gametype = UserProject.GetGameTypeForExePath(settings.GameRoot);
                     if (gametype == settings.GameType)
                     {
                         success = true;
                         settings.GameRoot = Path.GetDirectoryName(settings.GameRoot);
-                        if (settings.GameType == GameType.Bloodborne)
+                        if (settings.GameType == ProjectType.BB)
                         {
                             settings.GameRoot += @"\dvdroot_ps4";
                         }
@@ -623,7 +615,7 @@ public class Smithbox
 
         if (success)
         {
-            if (!_assetLocator.CheckFilesExpanded(settings.GameRoot, settings.GameType))
+            if (!AssetLocator.CheckFilesExpanded(settings.GameRoot, settings.GameType))
             {
                 if (!GameNotUnpackedWarning(settings.GameType))
                 {
@@ -631,14 +623,14 @@ public class Smithbox
                 }
             }
 
-            if (settings.GameType == GameType.Sekiro || settings.GameType == GameType.EldenRing)
+            if (settings.GameType == ProjectType.SDT || settings.GameType == ProjectType.ER)
             {
                 if (!StealGameDllIfMissing(settings, "oo2core_6_win64"))
                 {
                     return false;
                 }
             }
-            else if (settings.GameType == GameType.ArmoredCoreVI)
+            else if (settings.GameType == ProjectType.AC6)
             {
                 if (!StealGameDllIfMissing(settings, "oo2core_8_win64"))
                 {
@@ -718,12 +710,12 @@ public class Smithbox
             }
         }
 
-        var success = _assetLocator.CreateRecoveryProject();
+        var success = UserProject.CreateRecoveryProject();
         if (success)
         {
             SaveAll();
             PlatformUtils.Instance.MessageBox(
-                $"Attempted to save project files to {_assetLocator.GameModDirectory} for manual recovery.\n" +
+                $"Attempted to save project files to {UserProject.GameModDirectory} for manual recovery.\n" +
                 "You must manually replace your project files with these recovery files should you wish to restore them.\n" +
                 "Given the program has crashed, these files may be corrupt and you should backup your last good saved\n" +
                 "files before attempting to use these.",
@@ -782,11 +774,11 @@ public class Smithbox
         ImGui.AlignTextToFramePadding();
         ImGui.Text(@"Game Type:         ");
         ImGui.SameLine();
-        var games = Enum.GetNames(typeof(GameType));
+        var games = Enum.GetNames(typeof(ProjectType));
         var gameIndex = Array.IndexOf(games, _newProjectOptions.settings.GameType.ToString());
         if (ImGui.Combo("##GameTypeCombo", ref gameIndex, games, games.Length))
         {
-            _newProjectOptions.settings.GameType = Enum.Parse<GameType>(games[gameIndex]);
+            _newProjectOptions.settings.GameType = Enum.Parse<ProjectType>(games[gameIndex]);
         }
     }
 
@@ -860,7 +852,7 @@ public class Smithbox
                 {
                     if (PlatformUtils.Instance.OpenFileDialog(
                             "Choose the project json file",
-                            new[] { AssetLocator.ProjectJsonFilter },
+                            new[] { FilterStrings.ProjectJsonFilter },
                             out var path))
                     {
                         ProjectSettings settings = ProjectSettings.Deserialize(path);
@@ -926,13 +918,13 @@ public class Smithbox
                 {
                     if (ImGui.MenuItem("Open Project Folder", "", false, !TaskManager.AnyActiveTasks()))
                     {
-                        var projectPath = _assetLocator.GameModDirectory;
+                        var projectPath = UserProject.GameModDirectory;
                         Process.Start("explorer.exe", projectPath);
                     }
 
                     if (ImGui.MenuItem("Open Game Folder", "", false, !TaskManager.AnyActiveTasks()))
                     {
-                        var gamePath = _assetLocator.GameRootDirectory;
+                        var gamePath = UserProject.GameRootDirectory;
                         Process.Start("explorer.exe", gamePath);
                     }
 
@@ -1017,17 +1009,17 @@ public class Smithbox
 
                     if (ImGui.MenuItem("MSBE read/write test"))
                     {
-                        MSBReadWrite.Run(_assetLocator);
+                        MSBReadWrite.Run();
                     }
 
                     if (ImGui.MenuItem("MSB_AC6 Read/Write Test"))
                     {
-                        MSB_AC6_Read_Write.Run(_assetLocator);
+                        MSB_AC6_Read_Write.Run();
                     }
 
                     if (ImGui.MenuItem("BTL read/write test"))
                     {
-                        BTLReadWrite.Run(_assetLocator);
+                        BTLReadWrite.Run();
                     }
 
                     if (ImGui.MenuItem("Insert unique rows IDs into params"))
@@ -1143,7 +1135,7 @@ public class Smithbox
             {
                 if (!_standardProjectUIOpened)
                 {
-                    _newProjectOptions.settings.GameType = GameType.Undefined;
+                    _newProjectOptions.settings.GameType = ProjectType.Undefined;
                 }
 
                 _standardProjectUIOpened = true;
@@ -1169,9 +1161,9 @@ public class Smithbox
                         _newProjectOptions.settings.GameRoot = gname;
                     }
 
-                    _newProjectOptions.settings.GameType = _assetLocator.GetGameTypeForExePath(gname);
+                    _newProjectOptions.settings.GameType = UserProject.GetGameTypeForExePath(gname);
 
-                    if (_newProjectOptions.settings.GameType == GameType.Bloodborne)
+                    if (_newProjectOptions.settings.GameType == ProjectType.BB)
                     {
                         _newProjectOptions.settings.GameRoot += @"\dvdroot_ps4";
                     }
@@ -1182,13 +1174,13 @@ public class Smithbox
                 {
                     if (PlatformUtils.Instance.OpenFileDialog(
                             "Select executable for the game you want to mod...",
-                            new[] { AssetLocator.GameExecutableFilter },
+                            new[] { FilterStrings.GameExecutableFilter },
                             out var path))
                     {
                         _newProjectOptions.settings.GameRoot = Path.GetDirectoryName(path);
-                        _newProjectOptions.settings.GameType = _assetLocator.GetGameTypeForExePath(path);
+                        _newProjectOptions.settings.GameType = UserProject.GetGameTypeForExePath(path);
 
-                        if (_newProjectOptions.settings.GameType == GameType.Bloodborne)
+                        if (_newProjectOptions.settings.GameType == ProjectType.BB)
                         {
                             _newProjectOptions.settings.GameRoot += @"\dvdroot_ps4";
                         }
@@ -1238,7 +1230,7 @@ public class Smithbox
             //
 
             ImGui.Separator();
-            if (_newProjectOptions.settings.GameType is GameType.DarkSoulsIISOTFS or GameType.DarkSoulsIII)
+            if (_newProjectOptions.settings.GameType is ProjectType.DS2S or ProjectType.DS3)
             {
                 ImGui.NewLine();
                 ImGui.AlignTextToFramePadding();
@@ -1255,7 +1247,7 @@ public class Smithbox
                     _newProjectOptions.settings.UseLooseParams = looseparams;
                 }
             }
-            else if (FeatureFlags.EnablePartialParam && _newProjectOptions.settings.GameType == GameType.EldenRing)
+            else if (FeatureFlags.EnablePartialParam && _newProjectOptions.settings.GameType == ProjectType.ER)
             {
                 ImGui.NewLine();
                 ImGui.AlignTextToFramePadding();
@@ -1274,7 +1266,7 @@ public class Smithbox
                 ImGui.TextUnformatted(
                     "Warning: partial params require merging before use in game.\nRow names on unchanged rows will be forgotten between saves");
             }
-            else if (_newProjectOptions.settings.GameType is GameType.ArmoredCoreVI)
+            else if (_newProjectOptions.settings.GameType is ProjectType.AC6)
             {
                 //TODO AC6
             }
@@ -1290,7 +1282,7 @@ public class Smithbox
             ImGui.Checkbox("##loadDefaultNames", ref _newProjectOptions.loadDefaultNames);
             ImGui.NewLine();
 
-            if (_newProjectOptions.settings.GameType == GameType.Undefined)
+            if (_newProjectOptions.settings.GameType == ProjectType.Undefined)
             {
                 ImGui.BeginDisabled();
             }
@@ -1307,7 +1299,7 @@ public class Smithbox
                     validated = false;
                 }
 
-                if (validated && _newProjectOptions.settings.GameType == GameType.Undefined)
+                if (validated && _newProjectOptions.settings.GameType == ProjectType.Undefined)
                 {
                     PlatformUtils.Instance.MessageBox("Your game executable is not a valid supported game.",
                         "Error",
@@ -1357,7 +1349,7 @@ public class Smithbox
                 }
 
                 var gameroot = _newProjectOptions.settings.GameRoot;
-                if (!_assetLocator.CheckFilesExpanded(gameroot, _newProjectOptions.settings.GameType))
+                if (!AssetLocator.CheckFilesExpanded(gameroot, _newProjectOptions.settings.GameType))
                 {
                     if (!GameNotUnpackedWarning(_newProjectOptions.settings.GameType))
                     {
@@ -1376,7 +1368,7 @@ public class Smithbox
                 }
             }
 
-            if (_newProjectOptions.settings.GameType == GameType.Undefined)
+            if (_newProjectOptions.settings.GameType == ProjectType.Undefined)
             {
                 ImGui.EndDisabled();
             }

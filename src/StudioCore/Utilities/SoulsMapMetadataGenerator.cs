@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -45,10 +45,10 @@ public static class SoulsMapMetadataGenerator
         }
     }
 
-    public static void GenerateMCGMCP(List<string> directories, AssetLocator _assetLocator, bool toBigEndian = true)
+    public static void GenerateMCGMCP(List<string> directories, bool toBigEndian = true)
     {
-        string baseDirectory = _assetLocator.GameRootDirectory;
-        string modDirectory = _assetLocator.GameModDirectory;
+        string baseDirectory = UserProject.GameRootDirectory;
+        string modDirectory = UserProject.GameModDirectory;
         Dictionary<string, MCCombo> mcCombos = new Dictionary<string, MCCombo>();
 
         //Gather NVM files and filter by MSB 
@@ -63,14 +63,14 @@ public static class SoulsMapMetadataGenerator
             List<string> msbNavmeshNames = new List<string>();
             if (File.Exists(msbPath))
             {
-                if(_assetLocator.Type == GameType.DemonsSouls)
+                if(UserProject.Type == ProjectType.DES)
                 {
                     var msb = SoulsFile<MSBD>.Read(msbPath);
                     foreach (var navMesh in msb.Parts.Navmeshes)
                     {
                         msbNavmeshNames.Add(navMesh.ModelName.ToLower());
                     }
-                } else if (_assetLocator.Type is GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered)
+                } else if (UserProject.Type is ProjectType.DS1 or ProjectType.DS1R)
                 {
                     var msb = SoulsFile<MSB1>.Read(msbPath);
                     foreach (var navMesh in msb.Parts.Navmeshes)
@@ -89,7 +89,7 @@ public static class SoulsMapMetadataGenerator
                 foreach (var nvmFile in nvmBndFile.Files)
                 {
                     var fname = Path.GetFileNameWithoutExtension(nvmFile.Name).ToLower();
-                    if(_assetLocator.Type is GameType.DarkSoulsRemastered or GameType.DarkSoulsPTDE)
+                    if(UserProject.Type is ProjectType.DS1R or ProjectType.DS1)
                     {
                         fname = fname.Substring(0, 7);
                     }

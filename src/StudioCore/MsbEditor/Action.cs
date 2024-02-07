@@ -4,8 +4,8 @@ using Org.BouncyCastle.Utilities;
 using Silk.NET.SDL;
 using SoulsFormats;
 using SoulsFormats.Util;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
-using StudioCore.Settings;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -339,10 +339,9 @@ public class CloneMapObjectsAction : Action
     private readonly Map TargetMap;
     private readonly Universe Universe;
     private RenderScene Scene;
-    private AssetLocator AssetLocator;
 
     public CloneMapObjectsAction(Universe univ, RenderScene scene, List<MapEntity> objects, bool setSelection,
-        AssetLocator assetLocator, Map targetMap = null, Entity targetBTL = null)
+        Map targetMap = null, Entity targetBTL = null)
     {
         Universe = univ;
         Scene = scene;
@@ -350,7 +349,6 @@ public class CloneMapObjectsAction : Action
         SetSelection = setSelection;
         TargetMap = targetMap;
         TargetBTL = targetBTL;
-        AssetLocator = assetLocator;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -531,15 +529,15 @@ public class CloneMapObjectsAction : Action
 
     public void ChangeEntityID(MapEntity sel, Map map)
     {
-        if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+        if (UserProject.Type == ProjectType.DS2S)
             return;
 
-        if (AssetLocator.Type == GameType.ArmoredCoreVI)
+        if (UserProject.Type == ProjectType.AC6)
             return;
 
         if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
         {
-            if(AssetLocator.Type == GameType.EldenRing)
+            if(UserProject.Type == ProjectType.ER)
             {
                 uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
@@ -570,7 +568,7 @@ public class CloneMapObjectsAction : Action
                 uint minId = 0;
                 uint maxId = 9999;
 
-                if (AssetLocator.Type == GameType.EldenRing)
+                if (UserProject.Type == ProjectType.ER)
                 {
                     minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
                     maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
@@ -680,7 +678,7 @@ public class CloneMapObjectsAction : Action
                             hasMatch = true;
 
                             // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                            if (AssetLocator.Type == GameType.DarkSoulsPTDE || AssetLocator.Type == GameType.DarkSoulsRemastered)
+                            if (UserProject.Type == ProjectType.DS1 || UserProject.Type == ProjectType.DS1R)
                             {
                                 if (newID < 10000)
                                 {
@@ -708,12 +706,12 @@ public class CloneMapObjectsAction : Action
 
     public void ChangePartNames(MapEntity sel, Map map)
     {
-        if (AssetLocator.Type != GameType.EldenRing)
+        if (UserProject.Type != ProjectType.ER)
             return;
 
         if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
         {
-            if (AssetLocator.Type == GameType.EldenRing)
+            if (UserProject.Type == ProjectType.ER)
             {
                 if (sel.WrappedObject is MSBE.Part.Asset)
                 {
@@ -1541,7 +1539,6 @@ public class ReplicateMapObjectsAction : Action
     private readonly Universe Universe;
     private RenderScene Scene;
     private MsbToolbar Toolbar;
-    private AssetLocator AssetLocator;
     private ActionManager ActionManager;
 
     private int idxCache;
@@ -1562,13 +1559,12 @@ public class ReplicateMapObjectsAction : Action
 
     private SquareSide currentSquareSide;
 
-    public ReplicateMapObjectsAction(MsbToolbar toolbar, Universe univ, RenderScene scene, List<MapEntity> objects, AssetLocator assetLocator, ActionManager _actionManager)
+    public ReplicateMapObjectsAction(MsbToolbar toolbar, Universe univ, RenderScene scene, List<MapEntity> objects, ActionManager _actionManager)
     {
         Toolbar = toolbar;
         Universe = univ;
         Scene = scene;
         Clonables.AddRange(objects);
-        AssetLocator = assetLocator;
         ActionManager = _actionManager;
     }
 
@@ -1754,12 +1750,12 @@ public class ReplicateMapObjectsAction : Action
 
     public void ChangePartNames(MapEntity sel, Map map)
     {
-        if (AssetLocator.Type != GameType.EldenRing)
+        if (UserProject.Type != ProjectType.ER)
             return;
 
         if (CFG.Current.Replicator_Increment_UnkPartNames)
         {
-            if (AssetLocator.Type == GameType.EldenRing)
+            if (UserProject.Type == ProjectType.ER)
             {
                 if (sel.WrappedObject is MSBE.Part.Asset)
                 {
@@ -1794,15 +1790,15 @@ public class ReplicateMapObjectsAction : Action
 
     public void ChangeEntityID(MapEntity sel, Map map)
     {
-        if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+        if (UserProject.Type == ProjectType.DS2S)
             return;
 
-        if (AssetLocator.Type == GameType.ArmoredCoreVI)
+        if (UserProject.Type == ProjectType.AC6)
             return;
 
         if (CFG.Current.Replicator_Increment_Entity_ID)
         {
-            if (AssetLocator.Type == GameType.EldenRing)
+            if (UserProject.Type == ProjectType.ER)
             {
                 uint originalID = (uint)sel.GetPropertyValue("EntityID");
                 sel.SetPropertyValue("EntityID", (uint)0);
@@ -1834,7 +1830,7 @@ public class ReplicateMapObjectsAction : Action
                 uint minId = 0;
                 uint maxId = 9999;
 
-                if (AssetLocator.Type == GameType.EldenRing)
+                if (UserProject.Type == ProjectType.ER)
                 {
                     minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
                     maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
@@ -1945,7 +1941,7 @@ public class ReplicateMapObjectsAction : Action
                             hasMatch = true;
                             
                             // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                            if(AssetLocator.Type == GameType.DarkSoulsPTDE || AssetLocator.Type == GameType.DarkSoulsRemastered)
+                            if(UserProject.Type == ProjectType.DS1 || UserProject.Type == ProjectType.DS1R)
                             {
                                 if(newID < 10000)
                                 {
@@ -2106,7 +2102,7 @@ public class ReplicateMapObjectsAction : Action
         newTransform.Rotation = newRot;
         newTransform.Scale = newScale;
 
-        if(AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+        if(UserProject.Type == ProjectType.DS2S)
         {
             if (sel.Type == MapEntity.MapEntityType.DS2Generator &&
                 sel.WrappedObject is MergedParamRow mp)
@@ -2132,7 +2128,7 @@ public class ReplicateMapObjectsAction : Action
         {
             Transform scrambledTransform = Toolbar.GetScrambledTransform(newobj);
 
-            if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+            if (UserProject.Type == ProjectType.DS2S)
             {
                 if(newobj.Type == MapEntity.MapEntityType.DS2Generator &&
                 newobj.WrappedObject is MergedParamRow mp)

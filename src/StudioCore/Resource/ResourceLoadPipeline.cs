@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using System;
 using System.IO;
 using System.Threading.Tasks.Dataflow;
@@ -10,20 +10,20 @@ public readonly record struct LoadByteResourceRequest(
     string VirtualPath,
     Memory<byte> Data,
     AccessLevel AccessLevel,
-    GameType GameType);
+    ProjectType GameType);
 
 public readonly record struct LoadFileResourceRequest(
     string VirtualPath,
     string File,
     AccessLevel AccessLevel,
-    GameType GameType);
+    ProjectType GameType);
 
 public readonly record struct LoadTPFTextureResourceRequest(
     string VirtualPath,
     TPF Tpf,
     int Index,
     AccessLevel AccessLevel,
-    GameType GameType);
+    ProjectType GameType);
 
 public readonly record struct ResourceLoadedReply(
     string VirtualPath,

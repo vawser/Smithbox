@@ -10,7 +10,6 @@ using StudioCore.Configuration;
 using StudioCore.Gui;
 using StudioCore.ParamEditor;
 using StudioCore.Scene;
-using StudioCore.Settings;
 using StudioCore.Utilities;
 using Veldrid;
 using System.IO;
@@ -23,6 +22,7 @@ using StudioCore.MsbEditor;
 using Action = StudioCore.MsbEditor.Action;
 using StudioCore.Interface;
 using StudioCore.Data.Aliases;
+using StudioCore.ProjectCore;
 
 namespace StudioCore.Browsers;
 
@@ -33,7 +33,6 @@ public class MapAssetBrowser
     private readonly RenderScene _scene;
     private readonly Selection _selection;
 
-    private AssetLocator _assetLocator;
     private MsbEditorScreen _msbEditor;
 
     private List<string> _loadedMaps = new List<string>();
@@ -65,14 +64,13 @@ public class MapAssetBrowser
 
     private Universe _universe;
 
-    public MapAssetBrowser(Universe universe, RenderScene scene, Selection sel, ActionManager manager, AssetLocator locator, MsbEditorScreen editor, IViewport viewport, AliasBank modelAliasBank, AliasBank mapAliasBank)
+    public MapAssetBrowser(Universe universe, RenderScene scene, Selection sel, ActionManager manager, MsbEditorScreen editor, IViewport viewport, AliasBank modelAliasBank, AliasBank mapAliasBank)
     {
         _scene = scene;
         _selection = sel;
         _actionManager = manager;
         _universe = universe;
 
-        _assetLocator = locator;
         _msbEditor = editor;
         _viewport = viewport;
 
@@ -89,7 +87,7 @@ public class MapAssetBrowser
     {
         var scale = Smithbox.GetUIScale();
 
-        if (_assetLocator.Type == GameType.Undefined)
+        if (UserProject.Type == ProjectType.Undefined)
             return;
 
         if (_modelAliasBank.IsLoadingAliases)
@@ -146,18 +144,18 @@ public class MapAssetBrowser
     {
         var objLabel = "Obj";
 
-        if (_assetLocator.Type is GameType.EldenRing or GameType.ArmoredCoreVI)
+        if (UserProject.Type is ProjectType.ER or ProjectType.AC6)
             objLabel = "AEG";
 
         if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
         {
-            _modelNameCache = _assetLocator.GetChrModels();
+            _modelNameCache = AssetLocator.GetChrModels();
             _selectedAssetType = "Chr";
             _selectedAssetMapId = "";
         }
         if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
         {
-            _modelNameCache = _assetLocator.GetObjModels();
+            _modelNameCache = AssetLocator.GetObjModels();
             _selectedAssetType = "Obj";
             _selectedAssetMapId = "";
         }
@@ -183,7 +181,7 @@ public class MapAssetBrowser
                 {
                     if (_mapModelNameCache[mapId] == null)
                     {
-                        List<AssetDescription> modelList = _assetLocator.GetMapModels(mapId);
+                        List<AssetDescription> modelList = AssetLocator.GetMapModels(mapId);
                         var cache = new List<string>();
 
                         foreach (AssetDescription model in modelList)
@@ -350,7 +348,7 @@ public class MapAssetBrowser
                     var refTagList = new List<string>();
 
                     // Adjust the name to remove the A{mapId} section.
-                    if (_assetLocator.Type == GameType.DarkSoulsPTDE || _assetLocator.Type == GameType.DarkSoulsRemastered)
+                    if (UserProject.Type == ProjectType.DS1 || UserProject.Type == ProjectType.DS1R)
                         displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
 
                     if (referenceDict.ContainsKey(lowerName))
@@ -437,36 +435,36 @@ public class MapAssetBrowser
             var isValidObjectType = false;
 
             if (assetType == "Chr")
-                switch (_assetLocator.Type)
+                switch (UserProject.Type)
                 {
-                    case GameType.DemonsSouls:
+                    case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Enemy)
                             isValidObjectType = true;
                         break;
-                    case GameType.DarkSoulsPTDE:
-                    case GameType.DarkSoulsRemastered:
+                    case ProjectType.DS1:
+                    case ProjectType.DS1R:
                         if (s.WrappedObject is MSB1.Part.Enemy)
                             isValidObjectType = true;
                         break;
-                    case GameType.DarkSoulsIISOTFS:
+                    case ProjectType.DS2S:
                         break;
-                    case GameType.DarkSoulsIII:
+                    case ProjectType.DS3:
                         if (s.WrappedObject is MSB3.Part.Enemy)
                             isValidObjectType = true;
                         break;
-                    case GameType.Bloodborne:
+                    case ProjectType.BB:
                         if (s.WrappedObject is MSBB.Part.Enemy)
                             isValidObjectType = true;
                         break;
-                    case GameType.Sekiro:
+                    case ProjectType.SDT:
                         if (s.WrappedObject is MSBS.Part.Enemy)
                             isValidObjectType = true;
                         break;
-                    case GameType.EldenRing:
+                    case ProjectType.ER:
                         if (s.WrappedObject is MSBE.Part.Enemy)
                             isValidObjectType = true;
                         break;
-                    case GameType.ArmoredCoreVI:
+                    case ProjectType.AC6:
                         if (s.WrappedObject is MSB_AC6.Part.Enemy)
                             isValidObjectType = true;
                         break;
@@ -474,38 +472,38 @@ public class MapAssetBrowser
                         throw new ArgumentException("Selected entity type must be Enemy");
                 }
             if (assetType == "Obj")
-                switch (_assetLocator.Type)
+                switch (UserProject.Type)
                 {
-                    case GameType.DemonsSouls:
+                    case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Object)
                             isValidObjectType = true;
                         break;
-                    case GameType.DarkSoulsPTDE:
-                    case GameType.DarkSoulsRemastered:
+                    case ProjectType.DS1:
+                    case ProjectType.DS1R:
                         if (s.WrappedObject is MSB1.Part.Object)
                             isValidObjectType = true;
                         break;
-                    case GameType.DarkSoulsIISOTFS:
+                    case ProjectType.DS2S:
                         if (s.WrappedObject is MSB2.Part.Object)
                             isValidObjectType = true;
                         break;
-                    case GameType.DarkSoulsIII:
+                    case ProjectType.DS3:
                         if (s.WrappedObject is MSB3.Part.Object)
                             isValidObjectType = true;
                         break;
-                    case GameType.Bloodborne:
+                    case ProjectType.BB:
                         if (s.WrappedObject is MSBB.Part.Object)
                             isValidObjectType = true;
                         break;
-                    case GameType.Sekiro:
+                    case ProjectType.SDT:
                         if (s.WrappedObject is MSBS.Part.Object)
                             isValidObjectType = true;
                         break;
-                    case GameType.EldenRing:
+                    case ProjectType.ER:
                         if (s.WrappedObject is MSBE.Part.Asset)
                             isValidObjectType = true;
                         break;
-                    case GameType.ArmoredCoreVI:
+                    case ProjectType.AC6:
                         if (s.WrappedObject is MSB_AC6.Part.Asset)
                             isValidObjectType = true;
                         break;
@@ -513,38 +511,38 @@ public class MapAssetBrowser
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                 }
             if (assetType == "MapPiece")
-                switch (_assetLocator.Type)
+                switch (UserProject.Type)
                 {
-                    case GameType.DemonsSouls:
+                    case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.MapPiece)
                             isValidObjectType = true;
                         break;
-                    case GameType.DarkSoulsPTDE:
-                    case GameType.DarkSoulsRemastered:
+                    case ProjectType.DS1:
+                    case ProjectType.DS1R:
                         if (s.WrappedObject is MSB1.Part.MapPiece)
                             isValidObjectType = true;
                         break;
-                    case GameType.DarkSoulsIISOTFS:
+                    case ProjectType.DS2S:
                         if (s.WrappedObject is MSB2.Part.MapPiece)
                             isValidObjectType = true;
                         break;
-                    case GameType.DarkSoulsIII:
+                    case ProjectType.DS3:
                         if (s.WrappedObject is MSB3.Part.MapPiece)
                             isValidObjectType = true;
                         break;
-                    case GameType.Bloodborne:
+                    case ProjectType.BB:
                         if (s.WrappedObject is MSBB.Part.MapPiece)
                             isValidObjectType = true;
                         break;
-                    case GameType.Sekiro:
+                    case ProjectType.SDT:
                         if (s.WrappedObject is MSBS.Part.MapPiece)
                             isValidObjectType = true;
                         break;
-                    case GameType.EldenRing:
+                    case ProjectType.ER:
                         if (s.WrappedObject is MSBE.Part.MapPiece)
                             isValidObjectType = true;
                         break;
-                    case GameType.ArmoredCoreVI:
+                    case ProjectType.AC6:
                         if (s.WrappedObject is MSB_AC6.Part.MapPiece)
                             isValidObjectType = true;
                         break;

@@ -3,7 +3,6 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +17,10 @@ public class ParticleEditorScreen : EditorScreen
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
-    public readonly AssetLocator AssetLocator;
-
     public ActionManager EditorActionManager = new();
 
-    public ParticleEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
+    public ParticleEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        AssetLocator = locator;
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 

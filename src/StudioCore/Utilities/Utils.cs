@@ -5,8 +5,7 @@ using Microsoft.Win32;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.MsbEditor;
-using StudioCore.Settings;
-using StudioCore.Utilities;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -290,31 +289,31 @@ public static class Utils
         return fileName;
     }
 
-    public static string GetLocalAssetPath(AssetLocator assetLocator, string assetPath)
+    public static string GetLocalAssetPath(string assetPath)
     {
-        if (assetPath.StartsWith(assetLocator.GameModDirectory))
+        if (assetPath.StartsWith(UserProject.GameModDirectory))
         {
-            return assetPath.Replace(assetLocator.GameModDirectory, "");
+            return assetPath.Replace(UserProject.GameModDirectory, "");
         }
 
-        if (assetPath.StartsWith(assetLocator.GameRootDirectory))
+        if (assetPath.StartsWith(UserProject.GameRootDirectory))
         {
-            return assetPath.Replace(assetLocator.GameRootDirectory, "");
+            return assetPath.Replace(UserProject.GameRootDirectory, "");
         }
 
         throw new DirectoryNotFoundException(
             $"Asset path did not start with game or project directory: {assetPath}");
     }
 
-    public static void WriteWithBackup<T>(AssetLocator assetLocator, string assetPath, T item,
+    public static void WriteWithBackup<T>(string assetPath, T item,
         params object[] writeparms) where T : SoulsFile<T>, new()
     {
-        WriteWithBackup(assetLocator.GameRootDirectory, assetLocator.GameModDirectory, assetPath, item,
-            assetLocator.Type, writeparms);
+        WriteWithBackup(UserProject.GameRootDirectory, UserProject.GameModDirectory, assetPath, item,
+            UserProject.Type, writeparms);
     }
 
     public static void WriteWithBackup<T>(string gamedir, string moddir, string assetpath, T item,
-        GameType gameType = GameType.Undefined, params object[] writeparms) where T : SoulsFile<T>, new()
+        ProjectType gameType = ProjectType.Undefined, params object[] writeparms) where T : SoulsFile<T>, new()
     {
         var assetgamepath = $@"{gamedir}\{assetpath}";
         var assetmodpath = $@"{moddir}\{assetpath}";
@@ -342,15 +341,15 @@ public static class Utils
                 File.Delete(writepath + ".temp");
             }
 
-            if (gameType == GameType.DarkSoulsIII && item is BND4 bndDS3)
+            if (gameType == ProjectType.DS3 && item is BND4 bndDS3)
             {
                 SFUtil.EncryptDS3Regulation(writepath + ".temp", bndDS3);
             }
-            else if (gameType == GameType.EldenRing && item is BND4 bndER)
+            else if (gameType == ProjectType.ER && item is BND4 bndER)
             {
                 SFUtil.EncryptERRegulation(writepath + ".temp", bndER);
             }
-            else if (gameType == GameType.ArmoredCoreVI && item is BND4 bndAC6)
+            else if (gameType == ProjectType.AC6 && item is BND4 bndAC6)
             {
                 SFUtil.EncryptAC6Regulation(writepath + ".temp", bndAC6);
             }

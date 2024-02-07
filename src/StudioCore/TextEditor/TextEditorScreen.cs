@@ -2,8 +2,8 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.ProjectCore;
 using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +16,6 @@ namespace StudioCore.TextEditor;
 public class TextEditorScreen : EditorScreen
 {
     private readonly PropertyEditor _propEditor;
-
-    public readonly AssetLocator AssetLocator;
 
     private FMGBank.EntryGroup _activeEntryGroup;
     private FMGBank.FMGInfo _activeFmgInfo;
@@ -37,9 +35,8 @@ public class TextEditorScreen : EditorScreen
     private List<FMGBank.FMGInfo> _filteredFmgInfo = new();
     public ActionManager EditorActionManager = new();
 
-    public TextEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
+    public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        AssetLocator = locator;
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
@@ -80,7 +77,7 @@ public class TextEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Text Language", !FMGBank.IsLoading))
         {
-            Dictionary<string, string> folders = FMGBank.AssetLocator.GetMsgLanguages();
+            Dictionary<string, string> folders = AssetLocator.GetMsgLanguages();
             if (folders.Count == 0)
             {
                 ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), "Cannot find language folders.");
@@ -121,7 +118,7 @@ public class TextEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        if (FMGBank.AssetLocator == null)
+        if (UserProject.Type == ProjectType.Undefined)
         {
             return;
         }

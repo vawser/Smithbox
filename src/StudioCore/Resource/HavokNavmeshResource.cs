@@ -1,8 +1,8 @@
 ﻿using DotNext.IO.MemoryMappedFiles;
 using HKX2;
 using SoulsFormats;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
-using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,7 +35,7 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     public BoundingBox Bounds { get; set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al, GameType type)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, ProjectType type)
     {
         BinaryReaderEx br = new(false, bytes);
         var des = new PackFileDeserializer();
@@ -43,7 +43,7 @@ public class HavokNavmeshResource : IResource, IDisposable
         return LoadInternal(al);
     }
 
-    public bool _Load(string path, AccessLevel al, GameType type)
+    public bool _Load(string path, AccessLevel al, ProjectType type)
     {
         using var file =
             MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);

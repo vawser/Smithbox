@@ -3,10 +3,9 @@ using HKX2.Builders;
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Havok;
+using StudioCore.ProjectCore;
 using StudioCore.Resource;
 using StudioCore.Scene;
-using StudioCore.Settings;
-using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
@@ -18,7 +17,6 @@ namespace StudioCore.MsbEditor;
 /// </summary>
 public class NavmeshEditor
 {
-    private readonly AssetLocator _locator;
     private readonly MeshRenderableProxy _previewMesh = null;
     private readonly Selection _selection;
     private readonly int icount = 0;
@@ -37,18 +35,17 @@ public class NavmeshEditor
     private int MinRegionArea = 3;
     private float SlopeAngle = 30.0f;
 
-    public NavmeshEditor(AssetLocator locator, RenderScene scene, Selection sel)
+    public NavmeshEditor(RenderScene scene, Selection sel)
     {
-        _locator = locator;
         _scene = scene;
         _selection = sel;
     }
 
-    public void OnGui(GameType game)
+    public void OnGui()
     {
         if (ImGui.Begin("Navmesh Build"))
         {
-            if (game != GameType.DarkSoulsIII)
+            if (UserProject.Type != ProjectType.DS3)
             {
                 ImGui.Text("Navmesh building only supported for DS3");
                 ImGui.End();
@@ -124,7 +121,7 @@ public class NavmeshEditor
                         _previewMesh.World = mrp.World;
 
                         // Do a test save
-                        var path = $@"{_locator.GameModDirectory}\navout\test.hkx";
+                        var path = $@"{UserProject.GameModDirectory}\navout\test.hkx";
                         using (FileStream s2 = File.Create(path))
                         {
                             BinaryWriterEx bw = new(false, s2);

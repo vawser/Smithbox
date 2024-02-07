@@ -5,8 +5,7 @@ using ProcessMemoryUtilities.Managed;
 using ProcessMemoryUtilities.Native;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Settings;
-using StudioCore.Utilities;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,17 +24,17 @@ internal class ParamReloader
     public static uint numberOfItemsToGive = 1;
     public static uint upgradeLevelItemToGive;
 
-    private static readonly List<GameType> _supportedGames = new()
+    private static readonly List<ProjectType> _supportedGames = new()
     {
-        GameType.DarkSoulsPTDE,
-        GameType.DarkSoulsRemastered,
-        GameType.Sekiro,
-        GameType.DarkSoulsIII,
-        GameType.EldenRing,
-        GameType.ArmoredCoreVI
+        ProjectType.DS1,
+        ProjectType.DS1R,
+        ProjectType.SDT,
+        ProjectType.DS3,
+        ProjectType.ER,
+        ProjectType.AC6
     };
 
-    public static bool GameIsSupported(GameType gameType)
+    public static bool GameIsSupported(ProjectType gameType)
     {
         return _supportedGames.Contains(gameType);
     }
@@ -50,20 +49,20 @@ internal class ParamReloader
         return false;
     }
 
-    public static void ReloadMemoryParam(ParamBank bank, AssetLocator loc, string paramName)
+    public static void ReloadMemoryParam(ParamBank bank, string paramName)
     {
         if (paramName != null)
         {
-            ReloadMemoryParams(bank, loc, new string[] { paramName });
+            ReloadMemoryParams(bank, new string[] { paramName });
         }
     }
 
-    public static void ReloadMemoryParams(ParamBank bank, AssetLocator loc, string[] paramNames)
+    public static void ReloadMemoryParams(ParamBank bank, string[] paramNames)
     {
         TaskManager.Run(new TaskManager.LiveTask("Param - Hot Reload", TaskManager.RequeueType.WaitThenRequeue,
             true, () =>
             {
-                GameOffsets offsets = GetGameOffsets(loc);
+                GameOffsets offsets = GetGameOffsets();
                 if (offsets == null)
                 {
                     return;
@@ -116,7 +115,7 @@ internal class ParamReloader
                 continue;
             }
 
-            if ((offsets.type is GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered) &&
+            if ((offsets.type is ProjectType.DS1 or ProjectType.DS1R) &&
                 param == "ThrowParam")
             {
                 // DS1 ThrowParam requires an additional offset.
@@ -141,9 +140,9 @@ internal class ParamReloader
         }
     }
 
-    public static void GiveItemMenu(AssetLocator loc, List<Param.Row> rowsToGib, string param)
+    public static void GiveItemMenu(List<Param.Row> rowsToGib, string param)
     {
-        GameOffsets offsets = GetGameOffsets(loc);
+        GameOffsets offsets = GetGameOffsets();
 
         if (!offsets.itemGibOffsets.ContainsKey(param))
         {
@@ -503,14 +502,14 @@ internal class ParamReloader
         return 0;
     }
 
-    private static GameOffsets GetGameOffsets(AssetLocator loc)
+    private static GameOffsets GetGameOffsets()
     {
-        GameType game = loc.Type;
+        ProjectType game = UserProject.Type;
         if (!GameOffsets.GameOffsetBank.ContainsKey(game))
         {
             try
             {
-                GameOffsets.GameOffsetBank.Add(game, new GameOffsets(game, loc));
+                GameOffsets.GameOffsetBank.Add(game, new GameOffsets(game));
             }
             catch (Exception e)
             {
@@ -523,9 +522,9 @@ internal class ParamReloader
         return GameOffsets.GameOffsetBank[game];
     }
 
-    public static string[] GetReloadableParams(AssetLocator loc)
+    public static string[] GetReloadableParams()
     {
-        GameOffsets offs = GetGameOffsets(loc);
+        GameOffsets offs = GetGameOffsets();
         if (offs == null)
         {
             return new string[0];
@@ -553,7 +552,7 @@ internal class ParamReloader
 
 internal class GameOffsets
 {
-    internal static Dictionary<GameType, GameOffsets> GameOffsetBank = new();
+    internal static Dictionary<ProjectType, GameOffsets> GameOffsetBank = new();
 
     internal Dictionary<string, string> coreOffsets;
     internal string exeName;
@@ -573,11 +572,11 @@ internal class GameOffsets
     internal Dictionary<string, int> paramOffsets;
     internal int rowHeaderSize;
     internal int rowPointerOffset;
-    internal GameType type;
+    internal ProjectType type;
 
-    internal GameOffsets(GameType type, AssetLocator loc)
+    internal GameOffsets(ProjectType type)
     {
-        var dir = loc.GetGameOffsetsAssetsDir();
+        var dir = AssetLocator.GetGameOffsetsAssetsDir();
         Dictionary<string, string> basicData = GetOffsetFile(dir + "/CoreOffsets.txt");
         exeName = basicData["exeName"];
 
@@ -609,7 +608,7 @@ internal class GameOffsets
         rowHeaderSize = Utils.ParseHexFromString(basicData["rowHeaderSize"]);
         paramOffsets = GetOffsetsIntFile(dir + "/ParamOffsets.txt");
         itemGibOffsets = GetOffsetsIntFile(dir + "/ItemGibOffsets.txt");
-        Is64Bit = type != GameType.DarkSoulsPTDE;
+        Is64Bit = type != ProjectType.DS1;
         this.type = type;
 
         coreOffsets = basicData;
@@ -825,7 +824,7 @@ public class SoulsMemoryHandler
 
     internal int GetRowCount(GameOffsets gOffsets, IntPtr paramPtr)
     {
-        if (gOffsets.type is GameType.DarkSoulsIII or GameType.Sekiro or GameType.EldenRing or GameType.ArmoredCoreVI)
+        if (gOffsets.type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
             return GetRowCountInt(gOffsets, paramPtr);
         }

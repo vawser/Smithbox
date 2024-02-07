@@ -5,7 +5,7 @@ using StudioCore.Help;
 using StudioCore.Interface;
 using StudioCore.JSON;
 using StudioCore.Platform;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,7 +18,6 @@ namespace StudioCore.Browsers;
 public class FlagBrowser
 {
     private string _id;
-    private AssetLocator _locator;
 
     private bool MenuOpenState;
 
@@ -37,10 +36,9 @@ public class FlagBrowser
 
     public AliasBank _aliasBank;
 
-    public FlagBrowser(string id, AssetLocator locator, AliasBank aliasBank)
+    public FlagBrowser(string id, AliasBank aliasBank)
     {
         _id = id;
-        _locator = locator;
         _aliasBank = aliasBank;
     }
 
@@ -57,7 +55,7 @@ public class FlagBrowser
         if (!MenuOpenState)
             return;
 
-        if (_locator.Type == GameType.Undefined)
+        if (UserProject.Type == ProjectType.Undefined)
             return;
 
         if (_aliasBank.IsLoadingAliases)

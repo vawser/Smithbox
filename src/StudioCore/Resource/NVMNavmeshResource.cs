@@ -1,6 +1,6 @@
 ﻿using SoulsFormats;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
-using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,13 +25,13 @@ public class NVMNavmeshResource : IResource, IDisposable
 
     public BoundingBox Bounds { get; set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al, GameType type)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, ProjectType type)
     {
         Nvm = NVM.Read(bytes);
         return LoadInternal(al);
     }
 
-    public bool _Load(string file, AccessLevel al, GameType type)
+    public bool _Load(string file, AccessLevel al, ProjectType type)
     {
         Nvm = NVM.Read(file);
         return LoadInternal(al);

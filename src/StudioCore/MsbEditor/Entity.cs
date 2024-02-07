@@ -1527,8 +1527,7 @@ public class MapEntity : Entity
             }
 
             // For now, the map relationship type is not given here (dictionary values), just all related maps.
-            foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(
-                         Universe.GameType, Name, Universe.LoadedObjectContainers.Keys, connects).Keys)
+            foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Name, Universe.LoadedObjectContainers.Keys, connects).Keys)
             {
                 References[mapRef] = new[] { new ObjectContainerReference(mapRef, Universe) };
             }

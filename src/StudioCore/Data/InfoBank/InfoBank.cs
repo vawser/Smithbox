@@ -1,12 +1,11 @@
 ﻿using StudioCore.Editor;
-using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using System.Text;
+using StudioCore.ProjectCore;
 
 namespace StudioCore.Data.InfoBank;
 
@@ -21,8 +20,6 @@ public enum FormatType
 /// </summary>
 public class InfoBank
 {
-    private AssetLocator AssetLocator;
-
     public InfoContainer _loadedInfoBank { get; set; }
 
     public bool IsLoadingInfoBank { get; set; }
@@ -38,9 +35,8 @@ public class InfoBank
 
     private FormatType formatType;
 
-    public InfoBank(AssetLocator locator, FormatType _formatType)
+    public InfoBank(FormatType _formatType)
     {
-        AssetLocator = locator;
         mayReloadInfoBank = false;
 
         formatType = _formatType;
@@ -71,11 +67,11 @@ public class InfoBank
             _loadedInfoBank = new InfoContainer();
             IsLoadingInfoBank = true;
 
-            if (AssetLocator.Type != GameType.Undefined)
+            if (UserProject.Type != ProjectType.Undefined)
             {
                 try
                 {
-                    _loadedInfoBank = new InfoContainer(formatType, AssetLocator.GetGameIDForDir(), AssetLocator.GameModDirectory);
+                    _loadedInfoBank = new InfoContainer(formatType, AssetLocator.GetGameIDForDir(), UserProject.GameModDirectory);
                 }
                 catch (Exception e)
                 {
@@ -110,7 +106,7 @@ public class InfoBank
 
     public void WriteTargetInfoBank(InfoResource targetBank, string formatType)
     {
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{formatType}.json";
 
@@ -141,7 +137,7 @@ public class InfoBank
     public void AddToLocalInfoBank(string assetType, string refID, string refName, string refDesc)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{TemplateName}";
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
@@ -188,7 +184,7 @@ public class InfoBank
     /// </summary>
     public void RemoveFromLocalAliasBank(string formatType, string refID)
     {
-        var modResourcePath = AssetLocator.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{formatType}.json";
 

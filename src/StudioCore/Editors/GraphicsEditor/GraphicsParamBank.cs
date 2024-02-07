@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Settings;
-using StudioCore.Utilities;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,17 +11,10 @@ using System.Threading.Tasks;
 namespace StudioCore.Editors.GraphicsEditor;
 public static class GraphicsParamBank
 {
-    internal static AssetLocator AssetLocator;
-
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
     public static Dictionary<GraphicsParamInfo, GPARAM> ParamBank { get; private set; } = new();
-
-    public static void SetAssetLocator(AssetLocator assetLocator)
-    {
-        AssetLocator = assetLocator;
-    }
 
     public static void SaveGraphicsParams()
     {
@@ -36,24 +28,24 @@ public static class GraphicsParamBank
     {
         TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
 
-        switch (AssetLocator.Type)
+        switch (UserProject.Type)
         {
-            case GameType.DarkSoulsIISOTFS:
+            case ProjectType.DS2S:
                 param.Write(DCX.Type.DCX_DFLT_10000_24_9);
                 break;
-            case GameType.Bloodborne:
+            case ProjectType.BB:
                 param.Write(DCX.Type.DCX_DFLT_10000_44_9);
                 break;
-            case GameType.DarkSoulsIII:
+            case ProjectType.DS3:
                 param.Write(DCX.Type.DCX_DFLT_10000_44_9);
                 break;
-            case GameType.Sekiro:
+            case ProjectType.SDT:
                 param.Write(DCX.Type.DCX_KRAK);
                 break;
-            case GameType.EldenRing:
+            case ProjectType.ER:
                 param.Write(DCX.Type.DCX_KRAK);
                 break;
-            case GameType.ArmoredCoreVI:
+            case ProjectType.AC6:
                 param.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
@@ -78,13 +70,13 @@ public static class GraphicsParamBank
         {
             var filePath = $"{paramDir}\\{name}{paramExt}";
 
-            if(File.Exists($"{AssetLocator.GameModDirectory}\\{filePath}"))
+            if(File.Exists($"{UserProject.GameModDirectory}\\{filePath}"))
             {
-                LoadGraphicsParam($"{AssetLocator.GameModDirectory}\\{filePath}");
+                LoadGraphicsParam($"{UserProject.GameModDirectory}\\{filePath}");
             }
             else
             {
-                LoadGraphicsParam($"{AssetLocator.GameRootDirectory}\\{filePath}");
+                LoadGraphicsParam($"{UserProject.GameRootDirectory}\\{filePath}");
             }
         }
 

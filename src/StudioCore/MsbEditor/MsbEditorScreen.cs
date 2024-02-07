@@ -8,10 +8,10 @@ using StudioCore.Data.InfoBank;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.Platform;
+using StudioCore.ProjectCore;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -39,11 +39,6 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     /// Current entity selection within the viewport.
     /// </summary>
     private Selection _selection = new();
-
-    /// <summary>
-    /// Asset locator for game files.
-    /// </summary>
-    public readonly AssetLocator AssetLocator;
 
     /// <summary>
     /// Active modal window.
@@ -92,11 +87,9 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private InfoBank _infobank_MSB;
 
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator, AliasBank modelAliasBank, AliasBank mapAliasBank, InfoBank msbInfoBank)
+    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AliasBank modelAliasBank, AliasBank mapAliasBank, InfoBank msbInfoBank)
     {
         Rect = window.Bounds;
-        AssetLocator = locator;
-        ResourceManager.Locator = AssetLocator;
         Window = window;
 
         _modelAliasBank = modelAliasBank;
@@ -115,14 +108,14 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             Viewport = new NullViewport("Mapeditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
-        Universe = new Universe(AssetLocator, RenderScene, _selection);
+        Universe = new Universe(RenderScene, _selection);
 
-        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport, AssetLocator, _modelAliasBank, _mapAliasBank);
+        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport, _modelAliasBank, _mapAliasBank);
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
-        NavMeshEditor = new NavmeshEditor(locator, RenderScene, _selection);
-        AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, AssetLocator, this, Viewport, _modelAliasBank, _mapAliasBank);
-        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, AssetLocator, Viewport, _modelAliasBank);
+        NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
+        AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport, _modelAliasBank, _mapAliasBank);
+        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _modelAliasBank);
         PropEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, Toolbar, _mapAliasBank, _infobank_MSB);
 
         EditorActionManager.AddEventHandler(SceneTree);
@@ -206,7 +199,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                     _selection.IsSelection()))
             {
                 CloneMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true, AssetLocator);
+                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
                 EditorActionManager.ExecuteAction(action);
             }
 
@@ -470,7 +463,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _selection.IsSelection())
             {
                 CloneMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true, AssetLocator);
+                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
                 EditorActionManager.ExecuteAction(action);
             }
 
@@ -759,7 +752,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         // Not usable yet
         if (FeatureFlags.EnableNavmeshBuilder)
         {
-            NavMeshEditor.OnGui(AssetLocator.Type);
+            NavMeshEditor.OnGui();
         }
 
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
@@ -808,7 +801,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Save()
     {
-        if (AssetLocator.Type == GameType.ArmoredCoreVI && FeatureFlags.AC6_MSB_Saving == false)
+        if (UserProject.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
         {
             TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }
@@ -827,7 +820,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void SaveAll()
     {
-        if (AssetLocator.Type == GameType.ArmoredCoreVI && FeatureFlags.AC6_MSB_Saving == false)
+        if (UserProject.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
         {
             TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }
@@ -926,7 +919,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         {
             Entity? targetParent = _dupeSelectionTargetedParent.Item2;
 
-            CloneMapObjectsAction action = new(Universe, RenderScene, sel, true, AssetLocator, targetMap, targetParent);
+            CloneMapObjectsAction action = new(Universe, RenderScene, sel, true, targetMap, targetParent);
             EditorActionManager.ExecuteAction(action);
             _dupeSelectionTargetedMap = ("None", null);
             _dupeSelectionTargetedParent = ("None", null);
@@ -943,9 +936,9 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         GC.Collect();
         Universe.PopulateMapList();
 
-        if (AssetLocator.Type != GameType.Undefined)
+        if (UserProject.Type != ProjectType.Undefined)
         {
-            Toolbar.PopulateClassNames(AssetLocator.Type);
+            Toolbar.PopulateClassNames();
         }
     }
 

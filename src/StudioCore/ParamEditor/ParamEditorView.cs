@@ -3,7 +3,7 @@ using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Platform;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,9 +83,9 @@ public class ParamEditorView
             lastParamSearch = _selection.currentParamSearchString;
         }
 
-        if (ParamBank.PrimaryBank.AssetLocator.Type is GameType.DemonsSouls
-            or GameType.DarkSoulsPTDE
-            or GameType.DarkSoulsRemastered)
+        if (UserProject.Type is ProjectType.DES
+            or ProjectType.DS1
+            or ProjectType.DS1R)
         {
             // This game has DrawParams, add UI element to toggle viewing DrawParam and GameParams.
             if (ImGui.Checkbox("Edit Drawparams", ref _mapParamView))
@@ -95,7 +95,7 @@ public class ParamEditorView
 
             ImGui.Separator();
         }
-        else if (ParamBank.PrimaryBank.AssetLocator.Type is GameType.DarkSoulsIISOTFS)
+        else if (UserProject.Type is ProjectType.DS2S)
         {
             // DS2 has map params, add UI element to toggle viewing map params and GameParams.
             if (ImGui.Checkbox("Edit Map Params", ref _mapParamView))
@@ -166,9 +166,9 @@ public class ParamEditorView
             List<string> keyList = list.Where(param => param.Item1 == ParamBank.PrimaryBank)
                 .Select(param => ParamBank.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
 
-            if (ParamBank.PrimaryBank.AssetLocator.Type is GameType.DemonsSouls
-                or GameType.DarkSoulsPTDE
-                or GameType.DarkSoulsRemastered)
+            if (UserProject.Type is ProjectType.DES
+                or ProjectType.DS1
+                or ProjectType.DS1R)
             {
                 if (_mapParamView)
                 {
@@ -179,7 +179,7 @@ public class ParamEditorView
                     keyList = keyList.FindAll(p => !p.EndsWith("Bank"));
                 }
             }
-            else if (ParamBank.PrimaryBank.AssetLocator.Type is GameType.DarkSoulsIISOTFS)
+            else if (UserProject.Type is ProjectType.DS2S)
             {
                 if (_mapParamView)
                 {

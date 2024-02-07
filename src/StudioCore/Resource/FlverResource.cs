@@ -2,8 +2,8 @@
 using DotNext.IO.MemoryMappedFiles;
 using SoulsFormats;
 using StudioCore.MsbEditor;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
-using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -74,18 +74,18 @@ public class FlverResource : IResource, IDisposable
 
     public GPUBufferAllocator.GPUBufferHandle StaticBoneBuffer { get; private set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al, GameType type)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, ProjectType type)
     {
         bool ret;
-        if (type == GameType.DemonsSouls)
+        if (type == ProjectType.DES)
         {
             FlverDeS = FLVER0.Read(bytes);
             ret = LoadInternalDeS(al, type);
         }
         else
         {
-            if (al == AccessLevel.AccessGPUOptimizedOnly && type != GameType.DarkSoulsRemastered &&
-                type != GameType.DarkSoulsPTDE)
+            if (al == AccessLevel.AccessGPUOptimizedOnly && type != ProjectType.DS1R &&
+                type != ProjectType.DS1)
             {
                 BinaryReaderEx br = new(false, bytes);
                 DCX.Type ctype;
@@ -104,18 +104,18 @@ public class FlverResource : IResource, IDisposable
         return ret;
     }
 
-    public bool _Load(string path, AccessLevel al, GameType type)
+    public bool _Load(string path, AccessLevel al, ProjectType type)
     {
         bool ret;
-        if (type == GameType.DemonsSouls)
+        if (type == ProjectType.DES)
         {
             FlverDeS = FLVER0.Read(path);
             ret = LoadInternalDeS(al, type);
         }
         else
         {
-            if (al == AccessLevel.AccessGPUOptimizedOnly && type != GameType.DarkSoulsRemastered &&
-                type != GameType.DarkSoulsPTDE)
+            if (al == AccessLevel.AccessGPUOptimizedOnly && type != ProjectType.DS1R &&
+                type != ProjectType.DS1)
             {
                 using var file =
                     MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
@@ -261,7 +261,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     private void ProcessMaterialTexture(FlverMaterial dest, string texType, string mpath, string mtd,
-        GameType gameType,
+        ProjectType gameType,
         out bool blend, out bool hasNormal2, out bool hasSpec2, out bool hasShininess2, out bool blendMask)
     {
         blend = false;
@@ -306,7 +306,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE2" || paramNameCheck == "G_SPECULAR2" ||
                  paramNameCheck.Contains("SPECULAR_2"))
         {
-            if (gameType is GameType.DarkSoulsRemastered or GameType.DarkSoulsIISOTFS)
+            if (gameType is ProjectType.DS1R or ProjectType.DS2S)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource2, dest, texType, mpath, mtd);
                 blend = true;
@@ -322,7 +322,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE" || paramNameCheck == "G_SPECULAR" ||
                  paramNameCheck.Contains("SPECULAR"))
         {
-            if (gameType is GameType.DarkSoulsRemastered or GameType.DarkSoulsIISOTFS)
+            if (gameType is ProjectType.DS1R or ProjectType.DS2S)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource, dest, texType, mpath, mtd);
             }
@@ -350,14 +350,14 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
-    private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest, GameType type)
+    private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest, ProjectType type)
     {
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
         dest.MaterialBuffer = Renderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
 
         //FLVER0 stores layouts directly in the material
-        if (type == GameType.DemonsSouls)
+        if (type == ProjectType.DES)
         {
             var desMat = (FLVER0.Material)mat;
             var foundBoneIndices = false;
@@ -448,7 +448,7 @@ public class FlverResource : IResource, IDisposable
         dest.UpdateMaterial();
     }
 
-    private unsafe void ProcessMaterial(FlverMaterial dest, GameType type, BinaryReaderEx br,
+    private unsafe void ProcessMaterial(FlverMaterial dest, ProjectType type, BinaryReaderEx br,
         ref FlverMaterialDef mat, Span<FlverTexture> textures, bool isUTF)
     {
         var mtd = isUTF ? br.GetUTF16(mat.mtdOffset) : br.GetShiftJIS(mat.mtdOffset);
@@ -1647,7 +1647,7 @@ public class FlverResource : IResource, IDisposable
         Marshal.FreeHGlobal(dest.PickingVertices);
     }
 
-    private bool LoadInternalDeS(AccessLevel al, GameType type)
+    private bool LoadInternalDeS(AccessLevel al, ProjectType type)
     {
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
@@ -1695,7 +1695,7 @@ public class FlverResource : IResource, IDisposable
         return true;
     }
 
-    private bool LoadInternal(AccessLevel al, GameType type)
+    private bool LoadInternal(AccessLevel al, ProjectType type)
     {
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
@@ -1749,7 +1749,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     // Read only flver loader designed to be very fast at reading with low memory usage
-    private bool LoadInternalFast(BinaryReaderEx br, GameType type)
+    private bool LoadInternalFast(BinaryReaderEx br, ProjectType type)
     {
         // Parse header
         br.BigEndian = false;

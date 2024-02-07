@@ -3,8 +3,7 @@ using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.Settings;
-using StudioCore.Utilities;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -309,8 +308,6 @@ public class JsonFMG
 /// </summary>
 public static class FMGBank
 {
-    internal static AssetLocator AssetLocator;
-
     /// <summary>
     ///     List of strings to compare with "FmgIDType" name to identify patch FMGs.
     /// </summary>
@@ -690,8 +687,8 @@ public static class FMGBank
         }
 
         IBinder fmgBinder;
-        if (AssetLocator.Type == GameType.DemonsSouls || AssetLocator.Type == GameType.DarkSoulsPTDE ||
-            AssetLocator.Type == GameType.DarkSoulsRemastered)
+        if (UserProject.Type == ProjectType.DES || UserProject.Type == ProjectType.DS1 ||
+            UserProject.Type == ProjectType.DS1R)
         {
             fmgBinder = BND3.Read(path);
         }
@@ -725,12 +722,12 @@ public static class FMGBank
                     ActiveUITypes.Add((FmgUICategory)e, false);
                 }
 
-                if (AssetLocator.Type == GameType.Undefined)
+                if (UserProject.Type == ProjectType.Undefined)
                 {
                     return;
                 }
 
-                if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+                if (UserProject.Type == ProjectType.DS2S)
                 {
                     if (ReloadDS2FMGs())
                     {
@@ -784,12 +781,12 @@ public static class FMGBank
         }
 
         List<string> files = Directory
-            .GetFileSystemEntries($@"{AssetLocator.GameRootDirectory}\{desc.AssetPath}", @"*.fmg").ToList();
+            .GetFileSystemEntries($@"{UserProject.GameRootDirectory}\{desc.AssetPath}", @"*.fmg").ToList();
         FmgInfoBank = new List<FMGInfo>();
         foreach (var file in files)
         {
-            var modfile = $@"{AssetLocator.GameModDirectory}\{desc.AssetPath}\{Path.GetFileName(file)}";
-            if (AssetLocator.GameModDirectory != null && File.Exists(modfile))
+            var modfile = $@"{UserProject.GameModDirectory}\{desc.AssetPath}\{Path.GetFileName(file)}";
+            if (UserProject.GameModDirectory != null && File.Exists(modfile))
             {
                 FMG fmg = FMG.Read(modfile);
                 SetFMGInfoDS2(modfile);
@@ -848,11 +845,11 @@ public static class FMGBank
     /// </summary>
     private static void ApplyGameDifferences(FMGInfo info)
     {
-        GameType gameType = AssetLocator.Type;
+        ProjectType gameType = UserProject.Type;
         switch (info.FmgID)
         {
             case FmgIDType.ReusedFMG_32:
-                if (gameType == GameType.Bloodborne)
+                if (gameType == ProjectType.BB)
                 {
                     info.Name = "GemExtraInfo";
                     info.UICategory = FmgUICategory.Item;
@@ -867,7 +864,7 @@ public static class FMGBank
 
                 break;
             case FmgIDType.ReusedFMG_35:
-                if (gameType == GameType.ArmoredCoreVI)
+                if (gameType == ProjectType.AC6)
                 {
                     info.Name = "TitleGenerator";
                     info.UICategory = FmgUICategory.Item;
@@ -884,7 +881,7 @@ public static class FMGBank
 
                 break;
             case FmgIDType.ReusedFMG_36:
-                if (gameType == GameType.ArmoredCoreVI)
+                if (gameType == ProjectType.AC6)
                 {
                     info.Name = "DescriptionGenerator";
                     info.UICategory = FmgUICategory.Item;
@@ -901,7 +898,7 @@ public static class FMGBank
 
                 break;
             case FmgIDType.ReusedFMG_41:
-                if (gameType == GameType.ArmoredCoreVI)
+                if (gameType == ProjectType.AC6)
                 {
                     info.Name = "TitleFCS";
                     info.UICategory = FmgUICategory.Item;
@@ -918,7 +915,7 @@ public static class FMGBank
 
                 break;
             case FmgIDType.ReusedFMG_42:
-                if (gameType == GameType.ArmoredCoreVI)
+                if (gameType == ProjectType.AC6)
                 {
                     info.Name = "DescriptionFCS";
                     info.UICategory = FmgUICategory.Item;
@@ -936,27 +933,27 @@ public static class FMGBank
                 break;
             case FmgIDType.Event:
             case FmgIDType.Event_Patch:
-                if (gameType is GameType.DemonsSouls or GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered
-                    or GameType.Bloodborne)
+                if (gameType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R
+                    or ProjectType.BB)
                 {
                     info.EntryCategory = FmgEntryCategory.ActionButtonText;
                 }
 
                 break;
             case FmgIDType.ReusedFMG_205:
-                if (gameType == GameType.EldenRing)
+                if (gameType == ProjectType.ER)
                 {
                     info.Name = "LoadingTitle";
                     info.EntryType = FmgEntryTextType.Title;
                     info.EntryCategory = FmgEntryCategory.LoadingScreen;
                 }
-                else if (gameType == GameType.Sekiro)
+                else if (gameType == ProjectType.SDT)
                 {
                     info.Name = "LoadingText";
                     info.EntryType = FmgEntryTextType.Description;
                     info.EntryCategory = FmgEntryCategory.LoadingScreen;
                 }
-                else if (gameType == GameType.ArmoredCoreVI)
+                else if (gameType == ProjectType.AC6)
                 {
                     info.Name = "MenuContext";
                 }
@@ -967,13 +964,13 @@ public static class FMGBank
 
                 break;
             case FmgIDType.ReusedFMG_206:
-                if (gameType == GameType.EldenRing)
+                if (gameType == ProjectType.ER)
                 {
                     info.Name = "LoadingText";
                     info.EntryType = FmgEntryTextType.Description;
                     info.EntryCategory = FmgEntryCategory.LoadingScreen;
                 }
-                else if (gameType == GameType.Sekiro)
+                else if (gameType == ProjectType.SDT)
                 {
                     info.Name = "LoadingTitle";
                     info.EntryType = FmgEntryTextType.Title;
@@ -986,14 +983,14 @@ public static class FMGBank
 
                 break;
             case FmgIDType.ReusedFMG_210:
-                if (gameType == GameType.EldenRing)
+                if (gameType == ProjectType.ER)
                 {
                     info.Name = "ToS_win64";
                     info.UICategory = FmgUICategory.Menu;
                     info.EntryType = FmgEntryTextType.TextBody;
                     info.EntryCategory = FmgEntryCategory.None;
                 }
-                else if (gameType == GameType.ArmoredCoreVI)
+                else if (gameType == ProjectType.AC6)
                 {
                     info.Name = "TextEmbeddedImageNames";
                     info.UICategory = FmgUICategory.Menu;
@@ -1184,7 +1181,7 @@ public static class FMGBank
         }
 
         var filecount = 0;
-        if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+        if (UserProject.Type == ProjectType.DS2S)
         {
             Directory.CreateDirectory(path);
 
@@ -1245,7 +1242,7 @@ public static class FMGBank
     public static bool ImportFMGs()
     {
         if (!PlatformUtils.Instance.OpenMultiFileDialog("Choose Files to Import",
-                new[] { AssetLocator.FmgJsonFilter }, out IReadOnlyList<string> files))
+                new[] { FilterStrings.FmgJsonFilter }, out IReadOnlyList<string> files))
         {
             return false;
         }
@@ -1301,7 +1298,7 @@ public static class FMGBank
     {
         foreach (FMGInfo info in FmgInfoBank)
         {
-            Utils.WriteWithBackup(AssetLocator.GameRootDirectory, AssetLocator.GameModDirectory,
+            Utils.WriteWithBackup(UserProject.GameRootDirectory, UserProject.GameModDirectory,
                 $@"menu\text\{LanguageFolder}\{info.Name}.fmg", info.Fmg);
         }
     }
@@ -1315,12 +1312,12 @@ public static class FMGBank
                 return;
             }
 
-            if (AssetLocator.Type == GameType.Undefined)
+            if (UserProject.Type == ProjectType.Undefined)
             {
                 return;
             }
 
-            if (AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+            if (UserProject.Type == ProjectType.DS2S)
             {
                 SaveFMGsDS2();
                 TaskLogs.AddLog("Saved FMG text");
@@ -1332,8 +1329,8 @@ public static class FMGBank
             IBinder fmgBinderMenu;
             AssetDescription itemMsgPath = AssetLocator.GetItemMsgbnd(LanguageFolder);
             AssetDescription menuMsgPath = AssetLocator.GetMenuMsgbnd(LanguageFolder);
-            if (AssetLocator.Type == GameType.DemonsSouls || AssetLocator.Type == GameType.DarkSoulsPTDE ||
-                AssetLocator.Type == GameType.DarkSoulsRemastered)
+            if (UserProject.Type == ProjectType.DES || UserProject.Type == ProjectType.DS1 ||
+                UserProject.Type == ProjectType.DS1R)
             {
                 fmgBinderItem = BND3.Read(itemMsgPath.AssetPath);
                 fmgBinderMenu = BND3.Read(menuMsgPath.AssetPath);
@@ -1366,27 +1363,27 @@ public static class FMGBank
             AssetDescription menuMsgPathDest = AssetLocator.GetMenuMsgbnd(LanguageFolder, true);
             if (fmgBinderItem is BND3 bnd3)
             {
-                Utils.WriteWithBackup(AssetLocator.GameRootDirectory,
-                    AssetLocator.GameModDirectory, itemMsgPathDest.AssetPath, bnd3);
-                Utils.WriteWithBackup(AssetLocator.GameRootDirectory,
-                    AssetLocator.GameModDirectory, menuMsgPathDest.AssetPath, (BND3)fmgBinderMenu);
+                Utils.WriteWithBackup(UserProject.GameRootDirectory,
+                    UserProject.GameModDirectory, itemMsgPathDest.AssetPath, bnd3);
+                Utils.WriteWithBackup(UserProject.GameRootDirectory,
+                    UserProject.GameModDirectory, menuMsgPathDest.AssetPath, (BND3)fmgBinderMenu);
 
-                if (AssetLocator.Type is GameType.DemonsSouls)
+                if (UserProject.Type is ProjectType.DES)
                 {
                     bnd3.Compression = DCX.Type.None;
                     ((BND3)fmgBinderMenu).Compression = DCX.Type.None;
-                    Utils.WriteWithBackup(AssetLocator.GameRootDirectory,
-                        AssetLocator.GameModDirectory, itemMsgPathDest.AssetPath[..^4], bnd3);
-                    Utils.WriteWithBackup(AssetLocator.GameRootDirectory,
-                        AssetLocator.GameModDirectory, menuMsgPathDest.AssetPath[..^4], (BND3)fmgBinderMenu);
+                    Utils.WriteWithBackup(UserProject.GameRootDirectory,
+                        UserProject.GameModDirectory, itemMsgPathDest.AssetPath[..^4], bnd3);
+                    Utils.WriteWithBackup(UserProject.GameRootDirectory,
+                        UserProject.GameModDirectory, menuMsgPathDest.AssetPath[..^4], (BND3)fmgBinderMenu);
                 }
             }
             else if (fmgBinderItem is BND4 bnd4)
             {
-                Utils.WriteWithBackup(AssetLocator.GameRootDirectory,
-                    AssetLocator.GameModDirectory, itemMsgPathDest.AssetPath, bnd4);
-                Utils.WriteWithBackup(AssetLocator.GameRootDirectory,
-                    AssetLocator.GameModDirectory, menuMsgPathDest.AssetPath, (BND4)fmgBinderMenu);
+                Utils.WriteWithBackup(UserProject.GameRootDirectory,
+                    UserProject.GameModDirectory, itemMsgPathDest.AssetPath, bnd4);
+                Utils.WriteWithBackup(UserProject.GameRootDirectory,
+                    UserProject.GameModDirectory, menuMsgPathDest.AssetPath, (BND4)fmgBinderMenu);
             }
 
             fmgBinderItem.Dispose();
@@ -1398,11 +1395,6 @@ public static class FMGBank
             TaskLogs.AddLog(e.Wrapped.Message,
                 LogLevel.Error, TaskLogs.LogPriority.High, e.Wrapped);
         }
-    }
-
-    public static void SetAssetLocator(AssetLocator l)
-    {
-        AssetLocator = l;
     }
 
     /// <summary>

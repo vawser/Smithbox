@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,7 +56,7 @@ public static class PatrolDrawManager
     {
         Clear();
 
-        if (universe.GameType is GameType.ArmoredCoreVI)
+        if (universe.GameType is ProjectType.AC6)
         {
             TaskLogs.AddLog("Unsupported game type for this tool.",
                 LogLevel.Information, TaskLogs.LogPriority.High);

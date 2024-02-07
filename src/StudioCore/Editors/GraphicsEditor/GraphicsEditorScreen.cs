@@ -2,7 +2,7 @@
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using StudioCore.Utilities;
 using System;
 using System.Linq;
@@ -18,8 +18,6 @@ public class GraphicsEditorScreen : EditorScreen
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
-    private readonly AssetLocator AssetLocator;
-
     private ActionManager EditorActionManager = new();
 
     private GraphicsParamBank.GraphicsParamInfo _selectedGraphicsParamInfo;
@@ -34,7 +32,7 @@ public class GraphicsEditorScreen : EditorScreen
 
     private string _newGparamFile_Name;
 
-    public GraphicsEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
+    public GraphicsEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _newGparamFile_Name = "";
 
@@ -42,7 +40,6 @@ public class GraphicsEditorScreen : EditorScreen
         _selectedParamGroupKey = "";
         _selectedParamKey = "";
 
-        AssetLocator = locator;
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
@@ -70,9 +67,9 @@ public class GraphicsEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GraphicsEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (AssetLocator.Type == GameType.DarkSoulsPTDE || AssetLocator.Type == GameType.DarkSoulsRemastered || AssetLocator.Type == GameType.DarkSoulsIISOTFS)
+        if (UserProject.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S)
         {
-            ImGui.Text($"This editor does not support {AssetLocator.Type}.");
+            ImGui.Text($"This editor does not support {UserProject.Type}.");
         }
         else if (_projectSettings == null)
         {
@@ -211,7 +208,7 @@ public class GraphicsEditorScreen : EditorScreen
     {
         GPARAM.IField field = _selectedParam;
 
-        if (AssetLocator.Type == GameType.Sekiro)
+        if (UserProject.Type == ProjectType.SDT)
         {
             ImGui.Columns(3);
         }
@@ -238,7 +235,7 @@ public class GraphicsEditorScreen : EditorScreen
         ImGui.EndChild();
 
         // Unk04 (Sekiro)
-        if (AssetLocator.Type == GameType.Sekiro)
+        if (UserProject.Type == ProjectType.SDT)
         {
             ImGui.Text($"Floats");
             ImGui.Separator();

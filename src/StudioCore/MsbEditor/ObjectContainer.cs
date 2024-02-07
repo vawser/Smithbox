@@ -1,9 +1,8 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Platform;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
-using StudioCore.Settings;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -803,7 +802,7 @@ public class Map : ObjectContainer
         }
     }
 
-    public void SerializeToMSB(IMsb msb, GameType game)
+    public void SerializeToMSB(IMsb msb, ProjectType game)
     {
         foreach (Entity m in Objects)
         {
@@ -825,35 +824,35 @@ public class Map : ObjectContainer
             }
         }
 
-        if (game == GameType.DemonsSouls)
+        if (game == ProjectType.DES)
         {
             AddModelsDeS(msb);
         }
-        else if (game == GameType.DarkSoulsPTDE || game == GameType.DarkSoulsRemastered)
+        else if (game == ProjectType.DS1 || game == ProjectType.DS1R)
         {
             AddModelsDS1(msb);
         }
-        else if (game == GameType.DarkSoulsIISOTFS)
+        else if (game == ProjectType.DS2S)
         {
             AddModelsDS2(msb);
         }
-        else if (game == GameType.Bloodborne)
+        else if (game == ProjectType.BB)
         {
             AddModelsBB(msb);
         }
-        else if (game == GameType.DarkSoulsIII)
+        else if (game == ProjectType.DS3)
         {
             AddModelsDS3(msb);
         }
-        else if (game == GameType.Sekiro)
+        else if (game == ProjectType.SDT)
         {
             AddModelsSekiro(msb);
         }
-        else if (game == GameType.EldenRing)
+        else if (game == ProjectType.ER)
         {
             AddModelsER(msb);
         }
-        else if (game == GameType.ArmoredCoreVI)
+        else if (game == ProjectType.AC6)
         {
             AddModelsAC6(msb);
         }
@@ -887,7 +886,7 @@ public class Map : ObjectContainer
         return lights;
     }
 
-    public void SerializeToXML(XmlSerializer serializer, TextWriter writer, GameType game)
+    public void SerializeToXML(XmlSerializer serializer, TextWriter writer, ProjectType game)
     {
         serializer.Serialize(writer, this);
     }

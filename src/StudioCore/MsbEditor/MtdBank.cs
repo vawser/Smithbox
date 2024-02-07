@@ -1,7 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Settings;
-using StudioCore.Utilities;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +9,6 @@ namespace StudioCore.MsbEditor;
 
 public class MtdBank
 {
-    private static AssetLocator AssetLocator;
-
     private static Dictionary<string, MTD> _mtds = new();
     private static Dictionary<string, MATBIN> _matbins = new();
 
@@ -29,12 +26,12 @@ public class MtdBank
                 try
                 {
                     IBinder mtdBinder = null;
-                    if (AssetLocator.Type == GameType.DarkSoulsIII || AssetLocator.Type == GameType.Sekiro)
+                    if (UserProject.Type == ProjectType.DS3 || UserProject.Type == ProjectType.SDT)
                     {
                         mtdBinder = BND4.Read(AssetLocator.GetAssetPath(@"mtd\allmaterialbnd.mtdbnd.dcx"));
                         IsMatbin = false;
                     }
-                    else if (AssetLocator.Type is GameType.EldenRing or GameType.ArmoredCoreVI)
+                    else if (UserProject.Type is ProjectType.ER or ProjectType.AC6)
                     {
                         mtdBinder = BND4.Read(AssetLocator.GetAssetPath(@"material\allmaterial.matbinbnd.dcx"));
                         IsMatbin = true;
@@ -83,11 +80,9 @@ public class MtdBank
             }));
     }
 
-    public static void LoadMtds(AssetLocator l)
+    public static void LoadMtds()
     {
-        AssetLocator = l;
-
-        if (AssetLocator.Type == GameType.Undefined)
+        if (UserProject.Type == ProjectType.Undefined)
         {
             return;
         }

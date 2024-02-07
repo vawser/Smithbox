@@ -1,6 +1,6 @@
 ﻿using Andre.Formats;
 using StudioCore.ParamEditor;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,7 +80,6 @@ internal class SpecialMapConnections
     }
 
     public static IReadOnlyDictionary<string, RelationType> GetRelatedMaps(
-        GameType gameType,
         string mapid,
         IReadOnlyCollection<string> allMapIds,
         List<byte[]> connectColMaps = null)
@@ -92,7 +91,7 @@ internal class SpecialMapConnections
             return relations;
         }
 
-        if (gameType == GameType.EldenRing && parts[0] == 60 && parts[1] > 0 && parts[2] > 0)
+        if (UserProject.Type == ProjectType.ER && parts[0] == 60 && parts[1] > 0 && parts[2] > 0)
         {
             var scale = parts[3] % 10;
             if (scale < 2)
@@ -156,7 +155,7 @@ internal class SpecialMapConnections
                 }
             }
         }
-        else if (gameType == GameType.ArmoredCoreVI)
+        else if (UserProject.Type == ProjectType.AC6)
         {
             //TODO AC6
         }
@@ -200,17 +199,17 @@ internal class SpecialMapConnections
             }
 
             // Avoid putting in tons of maps. These types of cols are not used in the vanilla game.
-            if (gameType == GameType.EldenRing && connectParts[0] == 60 && firstWildcard < 3)
+            if (UserProject.Type == ProjectType.ER && connectParts[0] == 60 && firstWildcard < 3)
             {
                 continue;
             }
 
-            if (gameType == GameType.Bloodborne && connectParts[0] == 29)
+            if (UserProject.Type == ProjectType.BB && connectParts[0] == 29)
             {
                 continue;
             }
 
-            if (gameType == GameType.ArmoredCoreVI)
+            if (UserProject.Type == ProjectType.AC6)
             {
                 //TODO AC6
             }

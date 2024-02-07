@@ -16,7 +16,6 @@ namespace StudioCore.Browsers;
 public class ParticleBrowser
 {
     private string _id;
-    private AssetLocator _locator;
 
     private bool MenuOpenState;
 
@@ -35,10 +34,9 @@ public class ParticleBrowser
 
     public AliasBank _aliasBank;
 
-    public ParticleBrowser(string id, AssetLocator locator, AliasBank aliasBank)
+    public ParticleBrowser(string id, AliasBank aliasBank)
     {
         _id = id;
-        _locator = locator;
         _aliasBank = aliasBank;
     }
 

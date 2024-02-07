@@ -12,6 +12,7 @@ using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Platform;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
 using StudioCore.ScriptEditor;
 using StudioCore.TalkEditor;
@@ -33,7 +34,6 @@ namespace StudioCore.Settings;
 public class SettingsMenu
 {
     private string _id;
-    private AssetLocator _locator;
 
     private KeyBind _currentKeyBind;
     public bool MenuOpenState;
@@ -67,10 +67,9 @@ public class SettingsMenu
 
     private string _selectedName;
 
-    public SettingsMenu(string id, AssetLocator assetLocator, AliasBank mapAliasBank)
+    public SettingsMenu(string id, AliasBank mapAliasBank)
     {
         _id = id;
-        _locator = assetLocator;
         _mapAliasBank = mapAliasBank;
     }
 
@@ -168,7 +167,7 @@ public class SettingsMenu
                     }
 
                     var useLoose = ProjSettings.UseLooseParams;
-                    if (ProjSettings.GameType is GameType.DarkSoulsIISOTFS or GameType.DarkSoulsIII)
+                    if (ProjSettings.GameType is ProjectType.DS2S or ProjectType.DS3)
                     {
                         if (ImGui.Checkbox("Use loose params", ref useLoose))
                             ProjSettings.UseLooseParams = useLoose;
@@ -178,7 +177,7 @@ public class SettingsMenu
                     var usepartial = ProjSettings.PartialParams;
                     if (FeatureFlags.EnablePartialParam || usepartial)
                     {
-                        if (ProjSettings.GameType == GameType.EldenRing &&
+                        if (ProjSettings.GameType == ProjectType.ER &&
                         ImGui.Checkbox("Partial params", ref usepartial))
                             ProjSettings.PartialParams = usepartial;
                         ImguiUtils.ShowHelpMarker("Partial params.");
@@ -395,7 +394,7 @@ public class SettingsMenu
 
                 if (ProjSettings != null)
                 {
-                    if (ProjSettings.GameType is GameType.EldenRing)
+                    if (ProjSettings.GameType is ProjectType.ER)
                     {
                         ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Map_Enable_ER_Auto_Map_Offset);
                         ImguiUtils.ShowHelpMarker("");

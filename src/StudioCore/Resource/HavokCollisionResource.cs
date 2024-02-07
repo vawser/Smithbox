@@ -1,7 +1,7 @@
 ﻿using HKX2;
 using SoulsFormats;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
-using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +21,13 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public VkFrontFace FrontFace { get; private set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al, GameType type)
+    public bool _Load(Memory<byte> bytes, AccessLevel al, ProjectType type)
     {
-        if (type == GameType.Bloodborne)
+        if (type == ProjectType.BB)
         {
             Hkx = HKX.Read(bytes, HKX.HKXVariation.HKXBloodBorne);
         }
-        else if (type == GameType.DarkSoulsIII)
+        else if (type == ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(bytes, out t);
@@ -40,7 +40,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(bytes);
         }
 
-        if (type == GameType.DarkSoulsIISOTFS || type == GameType.DarkSoulsIII || type == GameType.Bloodborne)
+        if (type == ProjectType.DS2S || type == ProjectType.DS3 || type == ProjectType.BB)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -49,7 +49,7 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (type == GameType.DarkSoulsIII)
+        if (type == ProjectType.DS3)
         {
             return LoadInternalNew(al);
         }
@@ -58,13 +58,13 @@ public class HavokCollisionResource : IResource, IDisposable
         return LoadInternal(al);
     }
 
-    public bool _Load(string file, AccessLevel al, GameType type)
+    public bool _Load(string file, AccessLevel al, ProjectType type)
     {
-        if (type == GameType.Bloodborne)
+        if (type == ProjectType.BB)
         {
             Hkx = HKX.Read(file, HKX.HKXVariation.HKXBloodBorne);
         }
-        else if (type == GameType.DarkSoulsIII)
+        else if (type == ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(file, out t);
@@ -77,7 +77,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(file);
         }
 
-        if (type == GameType.DarkSoulsIISOTFS || type == GameType.DarkSoulsIII || type == GameType.Bloodborne)
+        if (type == ProjectType.DS2S || type == ProjectType.DS3 || type == ProjectType.BB)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -86,7 +86,7 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (type == GameType.DarkSoulsIII)
+        if (type == ProjectType.DS3)
         {
             return LoadInternalNew(al);
         }

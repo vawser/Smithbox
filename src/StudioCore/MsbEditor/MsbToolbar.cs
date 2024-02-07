@@ -11,7 +11,6 @@ using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.ParamEditor;
 using StudioCore.Scene;
-using StudioCore.Settings;
 using StudioCore.Utilities;
 using Veldrid;
 using System.IO;
@@ -27,6 +26,7 @@ using Org.BouncyCastle.Ocsp;
 using SoulsFormats.KF4;
 using System.Reflection;
 using StudioCore.Data.Aliases;
+using StudioCore.ProjectCore;
 
 namespace StudioCore.MsbEditor
 {
@@ -60,7 +60,6 @@ namespace StudioCore.MsbEditor
         private readonly RenderScene _scene;
         private readonly Selection _selection;
 
-        private AssetLocator _assetLocator;
         private AliasBank _modelAliasBank;
 
         private Universe _universe;
@@ -86,14 +85,13 @@ namespace StudioCore.MsbEditor
 
         private int FrameCount = 0;
 
-        public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, AssetLocator locator, IViewport viewport, AliasBank modelAliasBank)
+        public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, IViewport viewport, AliasBank modelAliasBank)
         {
             _scene = scene;
             _selection = sel;
             _actionManager = manager;
             _universe = universe;
 
-            _assetLocator = locator;
             _viewport = viewport;
             _modelAliasBank = modelAliasBank;
         }
@@ -110,7 +108,7 @@ namespace StudioCore.MsbEditor
             }
             FrameCount++;
 
-            if (_assetLocator.Type == GameType.Undefined)
+            if (UserProject.Type == ProjectType.Undefined)
                 return;
 
             _loadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
@@ -347,7 +345,7 @@ namespace StudioCore.MsbEditor
                 // Patrol Routes
                 if (CFG.Current.Toolbar_Show_Render_Patrol_Routes)
                 {
-                    if (_assetLocator.Type is not GameType.DarkSoulsIISOTFS)
+                    if (UserProject.Type is not ProjectType.DS2S)
                     {
                         if (ImGui.Selectable("Patrol Routes##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
                         {
@@ -364,7 +362,7 @@ namespace StudioCore.MsbEditor
                 // Generate Navigation Data
                 if (CFG.Current.Toolbar_Show_Navigation_Data)
                 {
-                    if (_assetLocator.Type is GameType.DemonsSouls || _assetLocator.Type is GameType.DarkSoulsPTDE || _assetLocator.Type is GameType.DarkSoulsRemastered)
+                    if (UserProject.Type is ProjectType.DES || UserProject.Type is ProjectType.DS1 || UserProject.Type is ProjectType.DS1R)
                     {
                         if (ImGui.Selectable("Navigation Data##tool_Selection_Generate_Navigation_Data", false, ImGuiSelectableFlags.AllowDoubleClick))
                         {
@@ -691,19 +689,19 @@ namespace StudioCore.MsbEditor
                     ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Core_Duplicate.HintText)}");
                     ImGui.Separator();
 
-                    if (_assetLocator.Type != GameType.DarkSoulsIISOTFS && _assetLocator.Type != GameType.ArmoredCoreVI)
+                    if (UserProject.Type != ProjectType.DS2S && UserProject.Type != ProjectType.AC6)
                     {
                         ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Entity ID.");
                     }
 
-                    if (_assetLocator.Type == GameType.EldenRing)
+                    if (UserProject.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Instance ID.");
                     }
 
-                    if (_assetLocator.Type == GameType.EldenRing)
+                    if (UserProject.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
@@ -843,7 +841,7 @@ namespace StudioCore.MsbEditor
                     else
                         ImguiUtils.ShowHelpMarker("Enable the current selection, allow them to be loaded in-game.");
 
-                    if (_assetLocator.Type == GameType.EldenRing)
+                    if (UserProject.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Use Game Edition Disable", ref CFG.Current.Toolbar_Presence_Dummy_Type_ER);
                         ImguiUtils.ShowHelpMarker("Use the GameEditionDisable property to disable entities instead of the Dummy entity system.");
@@ -1314,19 +1312,19 @@ namespace StudioCore.MsbEditor
                     ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
                     ImguiUtils.ShowHelpMarker("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
 
-                    if (_assetLocator.Type != GameType.DarkSoulsIISOTFS && _assetLocator.Type != GameType.ArmoredCoreVI)
+                    if (UserProject.Type != ProjectType.DS2S && UserProject.Type != ProjectType.AC6)
                     {
                         ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID);
                         ImguiUtils.ShowHelpMarker("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
                     }
 
-                    if (_assetLocator.Type == GameType.EldenRing)
+                    if (UserProject.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Instance ID.");
                     }
 
-                    if (_assetLocator.Type == GameType.EldenRing)
+                    if (UserProject.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Replicator_Increment_UnkPartNames);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
@@ -1443,7 +1441,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void RenderPatrolRoutes()
         {
-            if (_assetLocator.Type is not GameType.DarkSoulsIISOTFS)
+            if (UserProject.Type is not ProjectType.DS2S)
             {
                 PatrolDrawManager.Generate(_universe);
             }
@@ -1455,7 +1453,7 @@ namespace StudioCore.MsbEditor
         public void DuplicateSelection()
         {
             CloneMapObjectsAction action = new(_universe, _scene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true, _assetLocator);
+                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
             _actionManager.ExecuteAction(action);
         }
 
@@ -1481,7 +1479,7 @@ namespace StudioCore.MsbEditor
         public void ReplicateSelection()
         {
             ReplicateMapObjectsAction action = new(this, _universe, _scene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), _assetLocator, _actionManager);
+                    _selection.GetFilteredSelection<MapEntity>().ToList(), _actionManager);
             _actionManager.ExecuteAction(action);
         }
 
@@ -1763,7 +1761,7 @@ namespace StudioCore.MsbEditor
             List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
             foreach (MapEntity s in sourceList)
             {
-                if (_assetLocator.Type == GameType.EldenRing)
+                if (UserProject.Type == ProjectType.ER)
                 {
                     s.SetPropertyValue("GameEditionDisable", 1);
                 }
@@ -1775,7 +1773,7 @@ namespace StudioCore.MsbEditor
             List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
             foreach (MapEntity s in sourceList)
             {
-                if (_assetLocator.Type == GameType.EldenRing)
+                if (UserProject.Type == ProjectType.ER)
                 {
                     s.SetPropertyValue("GameEditionDisable", 0);
                 }
@@ -1799,32 +1797,32 @@ namespace StudioCore.MsbEditor
         private void DummyUndummySelection(string[] sourceTypes, string[] targetTypes)
         {
             Type msbclass;
-            switch (_assetLocator.Type)
+            switch (UserProject.Type)
             {
-                case GameType.DemonsSouls:
+                case ProjectType.DES:
                     msbclass = typeof(MSBD);
                     break;
-                case GameType.DarkSoulsPTDE:
-                case GameType.DarkSoulsRemastered:
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
                     msbclass = typeof(MSB1);
                     break;
-                case GameType.DarkSoulsIISOTFS:
+                case ProjectType.DS2S:
                     msbclass = typeof(MSB2);
                     //break;
                     return; //idk how ds2 dummies should work
-                case GameType.DarkSoulsIII:
+                case ProjectType.DS3:
                     msbclass = typeof(MSB3);
                     break;
-                case GameType.Bloodborne:
+                case ProjectType.BB:
                     msbclass = typeof(MSBB);
                     break;
-                case GameType.Sekiro:
+                case ProjectType.SDT:
                     msbclass = typeof(MSBS);
                     break;
-                case GameType.EldenRing:
+                case ProjectType.ER:
                     msbclass = typeof(MSBE);
                     break;
-                case GameType.ArmoredCoreVI:
+                case ProjectType.AC6:
                     msbclass = typeof(MSB_AC6);
                     break;
                 default:
@@ -1977,7 +1975,7 @@ namespace StudioCore.MsbEditor
             {
                 string mapid = map.Key;
 
-                if (_assetLocator.Type is GameType.DemonsSouls)
+                if (UserProject.Type is ProjectType.DES)
                 {
                     if (mapid != "m03_01_00_99" && !mapid.StartsWith("m99"))
                     {
@@ -1991,22 +1989,22 @@ namespace StudioCore.MsbEditor
                         {
                             if (orderMap.Key.StartsWith(areaId) && orderMap.Key != "m03_01_00_99")
                             {
-                                areaDirectories.Add(Path.Combine(_assetLocator.GameRootDirectory, "map", orderMap.Key));
+                                areaDirectories.Add(Path.Combine(UserProject.GameRootDirectory, "map", orderMap.Key));
                             }
                         }
-                        SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, _assetLocator, toBigEndian: true);
+                        SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
                     }
                     else
                     {
-                        List<string> areaDirectories = new List<string>{ Path.Combine(_assetLocator.GameRootDirectory, "map", mapid) };
-                        SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, _assetLocator, toBigEndian: true);
+                        List<string> areaDirectories = new List<string>{ Path.Combine(UserProject.GameRootDirectory, "map", mapid) };
+                        SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
                     }
                 }
-                else if (_assetLocator.Type is GameType.DarkSoulsPTDE or GameType.DarkSoulsRemastered)
+                else if (UserProject.Type is ProjectType.DS1 or ProjectType.DS1R)
                 {
-                    List<string> areaDirectories = new List<string> { Path.Combine(_assetLocator.GameRootDirectory, "map", mapid) };
+                    List<string> areaDirectories = new List<string> { Path.Combine(UserProject.GameRootDirectory, "map", mapid) };
 
-                    SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, _assetLocator, toBigEndian: false);
+                    SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: false);
                 }
             }
 
@@ -2095,34 +2093,34 @@ namespace StudioCore.MsbEditor
         /// Gets all the msb types using reflection to populate editor creation menus
         /// </summary>
         /// <param name="type">The game to collect msb types for</param>
-        public void PopulateClassNames(GameType type)
+        public void PopulateClassNames()
         {
             Type msbclass;
-            switch (type)
+            switch (UserProject.Type)
             {
-                case GameType.DemonsSouls:
+                case ProjectType.DES:
                     msbclass = typeof(MSBD);
                     break;
-                case GameType.DarkSoulsPTDE:
-                case GameType.DarkSoulsRemastered:
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
                     msbclass = typeof(MSB1);
                     break;
-                case GameType.DarkSoulsIISOTFS:
+                case ProjectType.DS2S:
                     msbclass = typeof(MSB2);
                     break;
-                case GameType.DarkSoulsIII:
+                case ProjectType.DS3:
                     msbclass = typeof(MSB3);
                     break;
-                case GameType.Bloodborne:
+                case ProjectType.BB:
                     msbclass = typeof(MSBB);
                     break;
-                case GameType.Sekiro:
+                case ProjectType.SDT:
                     msbclass = typeof(MSBS);
                     break;
-                case GameType.EldenRing:
+                case ProjectType.ER:
                     msbclass = typeof(MSBE);
                     break;
-                case GameType.ArmoredCoreVI:
+                case ProjectType.AC6:
                     msbclass = typeof(MSB_AC6);
                     break;
                 default:

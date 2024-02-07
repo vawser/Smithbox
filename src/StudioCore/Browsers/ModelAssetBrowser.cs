@@ -9,7 +9,7 @@ using SoulsFormats.KF4;
 using StudioCore.Data.Aliases;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using StudioCore.Utilities;
 using Veldrid;
 
@@ -32,8 +32,6 @@ namespace StudioCore.Browsers
         private List<string> _modelNameCache = new List<string>();
         private Dictionary<string, List<string>> _mapModelNameCache = new Dictionary<string, List<string>>();
 
-        private AssetLocator _assetLocator;
-
         private string _selectedAssetType = null;
         private string _selectedAssetTypeCache = null;
 
@@ -52,10 +50,9 @@ namespace StudioCore.Browsers
         private AliasBank _modelAliasBank;
         private AliasBank _mapAliasBank;
 
-        public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AssetLocator locator, AliasBank modelAliasBank, AliasBank mapAliasBank)
+        public ModelAssetBrowser(AssetBrowserEventHandler handler, string id, AliasBank modelAliasBank, AliasBank mapAliasBank)
         {
             _id = id;
-            _assetLocator = locator;
             _handler = handler;
 
             _modelAliasBank = modelAliasBank;
@@ -66,18 +63,18 @@ namespace StudioCore.Browsers
 
         public void OnProjectChanged()
         {
-            if (_assetLocator.Type != GameType.Undefined)
+            if (UserProject.Type != ProjectType.Undefined)
             {
                 _modelNameCache = new List<string>();
                 _mapModelNameCache = new Dictionary<string, List<string>>();
                 _selectedAssetMapId = "";
                 _selectedAssetMapIdCache = null;
 
-                List<string> mapList = _assetLocator.GetFullMapList();
+                List<string> mapList = AssetLocator.GetFullMapList();
 
                 foreach (var mapId in mapList)
                 {
-                    var assetMapId = _assetLocator.GetAssetMapID(mapId);
+                    var assetMapId = AssetLocator.GetAssetMapID(mapId);
 
                     if (!_mapModelNameCache.ContainsKey(assetMapId))
                         _mapModelNameCache.Add(assetMapId, null);
@@ -87,7 +84,7 @@ namespace StudioCore.Browsers
 
         public void Display()
         {
-            if (_assetLocator.Type == GameType.Undefined)
+            if (UserProject.Type == ProjectType.Undefined)
                 return;
 
             if (_modelAliasBank.IsLoadingAliases)
@@ -139,24 +136,24 @@ namespace StudioCore.Browsers
         {
             var objLabel = "Obj";
 
-            if (_assetLocator.Type is GameType.EldenRing or GameType.ArmoredCoreVI)
+            if (UserProject.Type is ProjectType.ER or ProjectType.AC6)
                 objLabel = "AEG";
 
             if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
             {
-                _modelNameCache = _assetLocator.GetChrModels();
+                _modelNameCache = AssetLocator.GetChrModels();
                 _selectedAssetType = "Chr";
                 _selectedAssetMapId = "";
             }
             if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
             {
-                _modelNameCache = _assetLocator.GetObjModels();
+                _modelNameCache = AssetLocator.GetObjModels();
                 _selectedAssetType = "Obj";
                 _selectedAssetMapId = "";
             }
             if (ImGui.Selectable("Part", _selectedAssetType == "Part"))
             {
-                _modelNameCache = _assetLocator.GetPartsModels();
+                _modelNameCache = AssetLocator.GetPartsModels();
                 _selectedAssetType = "Part";
                 _selectedAssetMapId = "";
             }
@@ -173,7 +170,7 @@ namespace StudioCore.Browsers
                 {
                     if (_mapModelNameCache[mapId] == null)
                     {
-                        var modelList = _assetLocator.GetMapModels(mapId);
+                        var modelList = AssetLocator.GetMapModels(mapId);
                         var cache = new List<string>();
                         foreach (var model in modelList)
                             cache.Add(model.AssetName);
@@ -325,7 +322,7 @@ namespace StudioCore.Browsers
                         var refTagList = new List<string>();
 
                         // Adjust the name to remove the A{mapId} section.
-                        if (_assetLocator.Type == GameType.DarkSoulsPTDE || _assetLocator.Type == GameType.DarkSoulsRemastered)
+                        if (UserProject.Type == ProjectType.DS1 || UserProject.Type == ProjectType.DS1R)
                             displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
 
                         if (referenceDict.ContainsKey(lowerName))

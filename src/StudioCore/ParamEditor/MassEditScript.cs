@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
+using StudioCore.ProjectCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -52,8 +53,8 @@ public class MassEditScript
 
     public static void ReloadScripts()
     {
-        var cdir = ParamBank.PrimaryBank.AssetLocator.GetScriptAssetsCommonDir();
-        var dir = ParamBank.PrimaryBank.AssetLocator.GetScriptAssetsDir();
+        var cdir = AssetLocator.GetScriptAssetsCommonDir();
+        var dir = AssetLocator.GetScriptAssetsDir();
         scriptList = new List<MassEditScript>();
         LoadScriptsFromDir(cdir);
         LoadScriptsFromDir(dir);

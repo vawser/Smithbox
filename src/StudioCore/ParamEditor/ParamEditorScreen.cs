@@ -6,9 +6,8 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.Settings;
+using StudioCore.ProjectCore;
 using StudioCore.TextEditor;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -173,13 +172,11 @@ public class ParamEditorScreen : EditorScreen
 {
     public static bool EditorMode;
 
-    public readonly AssetLocator AssetLocator;
-
     /// <summary>
     ///     Whitelist of games and maximum param version to allow param upgrading.
     ///     Used to restrict upgrading before DSMS properly supports it.
     /// </summary>
-    public readonly List<GameType> ParamUpgrade_SupportedGames = new() { GameType.EldenRing, GameType.ArmoredCoreVI };
+    public readonly List<ProjectType> ParamUpgrade_SupportedGames = new() { ProjectType.ER, ProjectType.AC6 };
 
     internal ParamEditorView _activeView;
 
@@ -242,9 +239,8 @@ public class ParamEditorScreen : EditorScreen
     public List<(ulong, string, string)> ParamUpgradeEdits;
     public ulong ParamUpgradeVersionSoftWhitelist;
 
-    public ParamEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
+    public ParamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        AssetLocator = locator;
         _views = new List<ParamEditorView>();
         _views.Add(new ParamEditorView(this, 0));
         _activeView = _views[0];
@@ -651,23 +647,22 @@ public class ParamEditorScreen : EditorScreen
                     if (ImGui.MenuItem("Current Param", KeyBindings.Current.Param_HotReload.HintText, false,
                             canHotReload && _activeView._selection.GetActiveParam() != null))
                     {
-                        ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, ParamBank.PrimaryBank.AssetLocator,
+                        ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank,
                             _activeView._selection.GetActiveParam());
                     }
 
                     if (ImGui.MenuItem("All Params", KeyBindings.Current.Param_HotReloadAll.HintText, false,
                             canHotReload))
                     {
-                        ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, ParamBank.PrimaryBank.AssetLocator,
+                        ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank,
                             ParamBank.PrimaryBank.Params.Keys.ToArray());
                     }
 
-                    foreach (var param in ParamReloader.GetReloadableParams(ParamBank.PrimaryBank.AssetLocator))
+                    foreach (var param in ParamReloader.GetReloadableParams())
                     {
                         if (ImGui.MenuItem(param, "", false, canHotReload))
                         {
-                            ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank,
-                                ParamBank.PrimaryBank.AssetLocator, new[] { param });
+                            ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, new[] { param });
                         }
                     }
                 }
@@ -676,10 +671,9 @@ public class ParamEditorScreen : EditorScreen
             }
 
             var activeParam = _activeView._selection.GetActiveParam();
-            if (activeParam != null && _projectSettings.GameType == GameType.DarkSoulsIII)
+            if (activeParam != null && _projectSettings.GameType == ProjectType.DS3)
             {
-                ParamReloader.GiveItemMenu(ParamBank.PrimaryBank.AssetLocator,
-                    _activeView._selection.GetSelectedRows(), _activeView._selection.GetActiveParam());
+                ParamReloader.GiveItemMenu(_activeView._selection.GetSelectedRows(), _activeView._selection.GetActiveParam());
             }
 
             ImGui.EndMenu();
@@ -711,12 +705,12 @@ public class ParamEditorScreen : EditorScreen
             {
                 string[] allParamTypes =
                 {
-                    AssetLocator.RegulationBinFilter, AssetLocator.Data0Filter, AssetLocator.ParamBndDcxFilter,
-                    AssetLocator.ParamBndFilter, AssetLocator.EncRegulationFilter
+                    FilterStrings.RegulationBinFilter, FilterStrings.Data0Filter, FilterStrings.ParamBndDcxFilter,
+                    FilterStrings.ParamBndFilter, FilterStrings.EncRegulationFilter
                 };
                 try
                 {
-                    if (_projectSettings.GameType != GameType.DarkSoulsIISOTFS)
+                    if (_projectSettings.GameType != ProjectType.DS2S)
                     {
                         if (PlatformUtils.Instance.OpenFileDialog("Select file containing params", allParamTypes,
                                 out var path))
@@ -753,7 +747,7 @@ public class ParamEditorScreen : EditorScreen
                                     MessageBoxIcon.Information);
                                 if (PlatformUtils.Instance.OpenFileDialog(
                                         "Select file containing enemyparam",
-                                        new[] { AssetLocator.ParamLooseFilter }, out var enemyPath))
+                                        new[] { FilterStrings.ParamLooseFilter }, out var enemyPath))
                                 {
                                     ParamBank.LoadAuxBank(path, folder, enemyPath, _projectSettings);
                                 }
@@ -936,14 +930,12 @@ public class ParamEditorScreen : EditorScreen
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.Param_HotReloadAll))
             {
-                ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, ParamBank.PrimaryBank.AssetLocator,
-                    ParamBank.PrimaryBank.Params.Keys.ToArray());
+                ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, ParamBank.PrimaryBank.Params.Keys.ToArray());
             }
             else if (InputTracker.GetKeyDown(KeyBindings.Current.Param_HotReload) &&
                 _activeView._selection.GetActiveParam() != null)
             {
-                ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, ParamBank.PrimaryBank.AssetLocator,
-                    _activeView._selection.GetActiveParam());
+                ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, _activeView._selection.GetActiveParam());
             }
         }
 
@@ -1268,7 +1260,7 @@ public class ParamEditorScreen : EditorScreen
         if (ParamBank.IsDefsLoaded
             && ParamBank.PrimaryBank.Params != null
             && ParamBank.VanillaBank.Params != null
-            && ParamUpgrade_SupportedGames.Contains(ParamBank.PrimaryBank.AssetLocator.Type)
+            && ParamUpgrade_SupportedGames.Contains(UserProject.Type)
             && !ParamBank.PrimaryBank.IsLoadingParams
             && !ParamBank.VanillaBank.IsLoadingParams
             && ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
@@ -1305,7 +1297,7 @@ public class ParamEditorScreen : EditorScreen
                     {
                         if (PlatformUtils.Instance.OpenFileDialog(
                                 $"Select regulation.bin for game version {ParamBank.PrimaryBank.ParamVersion}...",
-                                new[] { AssetLocator.RegulationBinFilter },
+                                new[] { FilterStrings.RegulationBinFilter },
                                 out var path))
                         {
                             UpgradeRegulation(ParamBank.PrimaryBank, ParamBank.VanillaBank, path);
@@ -1373,7 +1365,7 @@ public class ParamEditorScreen : EditorScreen
         if (result == ParamBank.ParamUpgradeResult.RowConflictsFound)
         {
             // If there's row conflicts write a conflict log
-            var logPath = $@"{bank.AssetLocator.GameModDirectory}\regulationUpgradeLog.txt";
+            var logPath = $@"{UserProject.GameModDirectory}\regulationUpgradeLog.txt";
             if (File.Exists(logPath))
             {
                 File.Delete(logPath);
@@ -2073,7 +2065,7 @@ public class ParamEditorScreen : EditorScreen
     private static bool SaveCsvDialog(out string path)
     {
         var result = PlatformUtils.Instance.SaveFileDialog(
-            "Choose CSV file", new[] { AssetLocator.CsvFilter, AssetLocator.TxtFilter }, out path);
+            "Choose CSV file", new[] { FilterStrings.CsvFilter, FilterStrings.TxtFilter }, out path);
 
         if (result && !path.ToLower().EndsWith(".csv"))
             path += ".csv";
@@ -2084,7 +2076,7 @@ public class ParamEditorScreen : EditorScreen
     private static bool OpenCsvDialog(out string path)
     {
         return PlatformUtils.Instance.OpenFileDialog(
-            "Choose CSV file", new[] { AssetLocator.CsvFilter, AssetLocator.TxtFilter }, out path);
+            "Choose CSV file", new[] { FilterStrings.CsvFilter, FilterStrings.TxtFilter }, out path);
     }
 
     private static bool ReadCsvDialog(out string csv)

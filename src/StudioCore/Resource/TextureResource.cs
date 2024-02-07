@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.ProjectCore;
 using StudioCore.Scene;
 using StudioCore.Settings;
 using System;
@@ -111,12 +112,12 @@ public class TextureResource : IResource, IDisposable
         GC.SuppressFinalize(this);
     }
 
-    bool IResource._Load(Memory<byte> bytes, AccessLevel al, GameType type)
+    bool IResource._Load(Memory<byte> bytes, AccessLevel al, ProjectType type)
     {
         return _LoadTexture(al);
     }
 
-    bool IResource._Load(string file, AccessLevel al, GameType type)
+    bool IResource._Load(string file, AccessLevel al, ProjectType type)
     {
         return _LoadTexture(al);
     }
