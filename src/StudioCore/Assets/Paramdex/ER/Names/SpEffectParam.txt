@@ -943,7 +943,7 @@
 18432 Malenia: Rot 120
 18433 Malenia: Rot 60
 18454 Malenia - Bullet
-18699 Spirit Summon - Phantom Color
+18699 Unknown FFX
 18731 Melina - HP Recovery
 20000 NPC: Poison
 20001 NPC: Poison
@@ -2949,6 +2949,7 @@
 290208 Spirit Summon Adjustment - Mimic Tear +8
 290209 Spirit Summon Adjustment - Mimic Tear +9
 290210 Spirit Summon Adjustment - Mimic Tear +10
+295000 Phantom Color - Spirit Summon
 295900 Spirit Summon -
 295901 Spirit Summon -
 295902 Spirit Summon -
@@ -3235,10 +3236,10 @@
 503320 Scriptstone
 503321 Scriptstone [Cycle]
 503350 Bewitching Branch
-503355 Baldachin's Blessing
-503356 Baldachin's Blessing [Cycle]
-503361 Radiant Baldachin's Blessing
-503362 Radiant Baldachin's Blessing [Cycle]
+503355 Baldachin's Blessing - Used
+503356 Baldachin's Blessing - Used [Cycle]
+503359 Baldachin's Blessing - Remove Held Debuff
+503360 Baldachin's Blessing - Held Debuff
 503500 Uplifting Aromatic
 503501 Uplifting Aromatic
 503520 Ironjar Aromatic

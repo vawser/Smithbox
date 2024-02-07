@@ -474,7 +474,8 @@
     <attack_Object AltName="Attack Damage (Object)" Wiki="Base object damage. Responsible for damage dealt to assets, including EULE/60D [Pulse Shield Launcher] barriers."/>
     <UnkFlag0x1DB_6 AltName="" IsBool=""/>
     <UnkFlag0x1DB_7 AltName="" IsBool=""/>
-    <damageLevelConvParamId AltName="Damage Level Conversion Param ID" />
+    <damageLevelConvParamId1 AltName="Damage Level Conversion Param ID" />
+    <damageLevelConvParamId2 AltName="Damage Level Conversion Param ID" />
     <impactDamage AltName="Damage: Impact" />
     <hit0_FanHitboxLength AltName="Hit 0: Fan Hitbox Length" />
     <hit1_FanHitboxLength AltName="Hit 1: Fan Hitbox Length" />

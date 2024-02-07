@@ -32,8 +32,12 @@ public class GraphicsEditorScreen : EditorScreen
     public GPARAM.IField _selectedParam;
     public string _selectedParamKey;
 
+    public string _newGparamFile_Name;
+
     public GraphicsEditorScreen(Sdl2Window window, GraphicsDevice device, AssetLocator locator)
     {
+        _newGparamFile_Name = "";
+
         _selectedGraphicsParamKey = "";
         _selectedParamGroupKey = "";
         _selectedParamKey = "";
@@ -112,6 +116,25 @@ public class GraphicsEditorScreen : EditorScreen
                 _selectedGraphicsParamKey = info.Name;
                 _selectedGraphicsParamInfo = info;
                 _selectedGraphicsParam = param;
+            }
+
+            // Context menu action for duplicating exist to new name
+            if (info.Name == _selectedGraphicsParamKey)
+            {
+                if (ImGui.BeginPopupContextItem($"Duplicate##gparamFile_Duplicate"))
+                {
+                    if(ImGui.Button("Duplicate"))
+                    {
+                        ImGui.CloseCurrentPopup();
+                    }
+                    // If it is a mod-local added file, then it may be deleted
+                    if (ImGui.Button("Delete") && info.Added)
+                    {
+                        ImGui.CloseCurrentPopup();
+                    }
+
+                    ImGui.EndPopup();
+                }
             }
         }
 
@@ -205,6 +228,13 @@ public class GraphicsEditorScreen : EditorScreen
         {
             ImGui.Text($"{val.Id}");
         }
+
+        // Add entry action here
+        if (ImGui.Button($"{ForkAwesome.Plus}"))
+        {
+            // Popup menu to add new entry in in value list
+        }
+
         ImGui.EndChild();
 
         // Unk04 (Sekiro)

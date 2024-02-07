@@ -155,8 +155,8 @@
     <Field Def="f32 UnkFloat0x154"></Field>
     <Field Def="f32 UnkFloat0x158"></Field>
     <Field Def="f32 UnkFloat0x15C"></Field>
-    <Field Def="f32 UnkFloat0x160"></Field>
-    <Field Def="f32 UnkFloat0x164"></Field>
+    <Field Def="f32 unkHitRadius"></Field>
+    <Field Def="f32 unkHitRadiusMax"></Field>
     <Field Def="f32 UnkFloat0x168"></Field>
     <Field Def="f32 UnkFloat0x16C"></Field>
     <Field Def="f32 UnkFloat0x170"></Field>
