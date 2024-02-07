@@ -16,8 +16,6 @@ namespace StudioCore.Browsers;
 
 public class ParticleBrowser
 {
-    private string _id;
-
     private bool MenuOpenState;
 
     private string _searchInput = "";
@@ -33,9 +31,8 @@ public class ParticleBrowser
 
     private string _selectedName;
 
-    public ParticleBrowser(string id)
+    public ParticleBrowser()
     {
-        _id = id;
     }
 
     public void ToggleMenuVisibility()

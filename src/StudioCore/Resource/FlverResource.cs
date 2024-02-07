@@ -1,7 +1,6 @@
 ﻿#nullable enable
 using DotNext.IO.MemoryMappedFiles;
 using SoulsFormats;
-using StudioCore.MsbEditor;
 using StudioCore.UserProject;
 using StudioCore.Scene;
 using System;
@@ -14,6 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Utilities;
+using StudioCore.Banks;
 
 namespace StudioCore.Resource;
 
@@ -224,11 +224,11 @@ public class FlverResource : IResource, IDisposable
         if (mpath == "")
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd);
-            if (MtdBank.IsMatbin)
+            if (MaterialBank.IsMatbin)
             {
-                if (MtdBank.Matbins.ContainsKey(mtdstring))
+                if (MaterialBank.Matbins.ContainsKey(mtdstring))
                 {
-                    MATBIN.Sampler? tex = MtdBank.Matbins[mtdstring].Samplers.Find(x => x.Type == type);
+                    MATBIN.Sampler? tex = MaterialBank.Matbins[mtdstring].Samplers.Find(x => x.Type == type);
                     if (tex == null || tex.Path == "")
                     {
                         return;
@@ -239,9 +239,9 @@ public class FlverResource : IResource, IDisposable
             }
             else
             {
-                if (MtdBank.Mtds.ContainsKey(mtdstring))
+                if (MaterialBank.Mtds.ContainsKey(mtdstring))
                 {
-                    MTD.Texture? tex = MtdBank.Mtds[mtdstring].Textures.Find(x => x.Type == type);
+                    MTD.Texture? tex = MaterialBank.Mtds[mtdstring].Textures.Find(x => x.Type == type);
                     if (tex == null || !tex.Extended || tex.Path == "")
                     {
                         return;

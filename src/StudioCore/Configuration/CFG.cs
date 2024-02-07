@@ -56,6 +56,7 @@ public class CFG
     public bool System_Font_Korean = false;
     public bool System_Font_Thai = false;
     public bool System_Font_Vietnamese = false;
+    public float System_Frame_Rate = 60.0f;
 
     // Settings: Map Editor
     public bool Map_Enable_Frustum_Culling = true;

@@ -124,7 +124,6 @@ public class Smithbox
         ModelEditorScreen modelEditor = new(_context.Window, _context.Device);
         ParamEditorScreen paramEditor = new(_context.Window, _context.Device);
         TextEditorScreen textEditor = new(_context.Window, _context.Device);
-
         AnimationEditorScreen animationEditor = new(_context.Window, _context.Device);
         CutsceneEditorScreen cutsceneEditor = new(_context.Window, _context.Device);
         GraphicsEditorScreen graphicsEditor = new(_context.Window, _context.Device);
@@ -140,7 +139,7 @@ public class Smithbox
 
         _soapstoneService = new SoapstoneService(_version, msbEditor);
 
-        _settingsMenu = new SettingsMenu("SettingsMenu");
+        _settingsMenu = new SettingsMenu();
         _settingsMenu.MsbEditor = msbEditor;
         _settingsMenu.ModelEditor = modelEditor;
         _settingsMenu.ParamEditor = paramEditor;
@@ -154,11 +153,11 @@ public class Smithbox
         _settingsMenu.TalkEditor = talkEditor;
         _settingsMenu.TextureViewer = textureViewer;
 
-        _helpBrowser = new HelpBrowser("HelpBrowser");
-        _eventFlagBrowser = new FlagBrowser("EventFlagBrowser");
-        _fxrBrowser = new ParticleBrowser("FxrBrowser");
+        _helpBrowser = new HelpBrowser();
+        _eventFlagBrowser = new FlagBrowser();
+        _fxrBrowser = new ParticleBrowser();
 
-        MtdBank.LoadMtds();
+        MaterialBank.LoadMaterials();
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();
@@ -384,7 +383,7 @@ public class Smithbox
             }
             else
             {
-                _desiredFrameLengthSeconds = 1.0 / 60.0f;
+                _desiredFrameLengthSeconds = 1.0 / CFG.Current.System_Frame_Rate;
             }
 
             var currentFrameTicks = sw.ElapsedTicks;
@@ -460,7 +459,7 @@ public class Smithbox
         MsbInfoBank.Bank.ReloadInfoBank();
 
         ParamBank.ReloadParams(newsettings, options);
-        MtdBank.ReloadMtds();
+        MaterialBank.ReloadMaterials();
 
         foreach (EditorScreen editor in _editors)
         {

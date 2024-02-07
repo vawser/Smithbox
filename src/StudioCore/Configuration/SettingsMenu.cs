@@ -34,8 +34,6 @@ namespace StudioCore.Settings;
 
 public class SettingsMenu
 {
-    private string _id;
-
     private KeyBind _currentKeyBind;
     public bool MenuOpenState;
     public ModelEditorScreen ModelEditor;
@@ -66,9 +64,8 @@ public class SettingsMenu
 
     private string _selectedName;
 
-    public SettingsMenu(string id)
+    public SettingsMenu()
     {
-        _id = id;
     }
 
     public void SaveSettings()
@@ -86,7 +83,6 @@ public class SettingsMenu
                     ref CFG.Current.System_Check_Program_Update);
                 ImguiUtils.ShowHelpMarker("When enabled Smithbox will automatically check for new versions upon program start.");
 
-                
                 ImGui.Checkbox("Show UI tooltips", ref CFG.Current.System_Show_UI_Tooltips);
                 ImguiUtils.ShowHelpMarker("This is a tooltip.");
 
@@ -100,8 +96,15 @@ public class SettingsMenu
                     Smithbox.FontRebuildRequest = true;
                 }
 
+                ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f);
+                ImguiUtils.ShowHelpMarker("Adjusts the frame rate of the viewport.");
+
+                // Round FPS to the nearest whole number
+                CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
+
                 if (ImGui.Button("Reset"))
                 {
+                    CFG.Current.System_Frame_Rate = CFG.Default.System_Frame_Rate;
                     CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
                     Smithbox.FontRebuildRequest = true;
                 }

@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Banks;
 
-public class MtdBank
+public class MaterialBank
 {
     private static Dictionary<string, MTD> _mtds = new();
     private static Dictionary<string, MATBIN> _matbins = new();
@@ -19,9 +19,9 @@ public class MtdBank
 
     public static IReadOnlyDictionary<string, MATBIN> Matbins => _matbins;
 
-    public static void ReloadMtds()
+    public static void ReloadMaterials()
     {
-        TaskManager.Run(new TaskManager.LiveTask("Resource - Load MTDs", TaskManager.RequeueType.WaitThenRequeue,
+        TaskManager.Run(new TaskManager.LiveTask("Resource - Load Materials", TaskManager.RequeueType.WaitThenRequeue,
             false, () =>
             {
                 try
@@ -39,9 +39,7 @@ public class MtdBank
                     }
 
                     if (mtdBinder == null)
-                    {
                         return;
-                    }
 
                     if (IsMatbin)
                     {
@@ -51,9 +49,7 @@ public class MtdBank
                             var matname = Path.GetFileNameWithoutExtension(f.Name);
                             // Because *certain* mods contain duplicate entries for the same material
                             if (!_matbins.ContainsKey(matname))
-                            {
                                 _matbins.Add(matname, MATBIN.Read(f.Bytes));
-                            }
                         }
                     }
                     else
@@ -64,9 +60,7 @@ public class MtdBank
                             var mtdname = Path.GetFileNameWithoutExtension(f.Name);
                             // Because *certain* mods contain duplicate entries for the same material
                             if (!_mtds.ContainsKey(mtdname))
-                            {
                                 _mtds.Add(mtdname, MTD.Read(f.Bytes));
-                            }
                         }
                     }
 
@@ -81,13 +75,11 @@ public class MtdBank
             }));
     }
 
-    public static void LoadMtds()
+    public static void LoadMaterials()
     {
         if (Project.Type == ProjectType.Undefined)
-        {
             return;
-        }
 
-        ReloadMtds();
+        ReloadMaterials();
     }
 }

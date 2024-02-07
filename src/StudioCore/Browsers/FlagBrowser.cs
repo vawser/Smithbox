@@ -18,8 +18,6 @@ namespace StudioCore.Browsers;
 
 public class FlagBrowser
 {
-    private string _id;
-
     private bool MenuOpenState;
 
     private string _searchInput = "";
@@ -35,9 +33,8 @@ public class FlagBrowser
 
     private string _selectedName;
 
-    public FlagBrowser(string id)
+    public FlagBrowser()
     {
-        _id = id;
     }
 
     public void ToggleMenuVisibility()

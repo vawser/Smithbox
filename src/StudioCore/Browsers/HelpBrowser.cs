@@ -33,10 +33,8 @@ public class HelpBrowser
 
     private bool MenuOpenState;
 
-    public HelpBrowser(string id)
+    public HelpBrowser()
     {
-        _id = id;
-
         _helpDex = new HelpDex();
     }
 
