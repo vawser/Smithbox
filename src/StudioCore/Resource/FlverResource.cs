@@ -2,7 +2,7 @@
 using DotNext.IO.MemoryMappedFiles;
 using SoulsFormats;
 using StudioCore.MsbEditor;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;

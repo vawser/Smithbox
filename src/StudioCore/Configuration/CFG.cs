@@ -8,7 +8,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
 using StudioCore.MsbEditor;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 
 namespace StudioCore;
 

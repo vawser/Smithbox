@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.ProjectCore;
+using StudioCore.AssetLocator;
+using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +29,7 @@ public static class GraphicsParamBank
     {
         TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
 
-        switch (UserProject.Type)
+        switch (Project.Type)
         {
             case ProjectType.DS2S:
                 param.Write(DCX.Type.DCX_DFLT_10000_24_9);
@@ -64,19 +65,19 @@ public static class GraphicsParamBank
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
 
-        List<string> paramNames = AssetLocator.GetDrawParams();
+        List<string> paramNames = ParamAssetLocator.GetGraphicsParams();
 
         foreach (var name in paramNames)
         {
             var filePath = $"{paramDir}\\{name}{paramExt}";
 
-            if(File.Exists($"{UserProject.GameModDirectory}\\{filePath}"))
+            if(File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
-                LoadGraphicsParam($"{UserProject.GameModDirectory}\\{filePath}");
+                LoadGraphicsParam($"{Project.GameModDirectory}\\{filePath}");
             }
             else
             {
-                LoadGraphicsParam($"{UserProject.GameRootDirectory}\\{filePath}");
+                LoadGraphicsParam($"{Project.GameRootDirectory}\\{filePath}");
             }
         }
 

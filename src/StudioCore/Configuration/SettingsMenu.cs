@@ -12,7 +12,7 @@ using StudioCore.MsbEditor;
 using StudioCore.ParamEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Platform;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.ScriptEditor;
 using StudioCore.TalkEditor;

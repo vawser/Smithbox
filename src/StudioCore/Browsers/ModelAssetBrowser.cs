@@ -6,10 +6,11 @@ using System.Text;
 using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using SoulsFormats.KF4;
+using StudioCore.AssetLocator;
 using StudioCore.Data.Aliases;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Utilities;
 using Veldrid;
 
@@ -63,18 +64,18 @@ namespace StudioCore.Browsers
 
         public void OnProjectChanged()
         {
-            if (UserProject.Type != ProjectType.Undefined)
+            if (Project.Type != ProjectType.Undefined)
             {
                 _modelNameCache = new List<string>();
                 _mapModelNameCache = new Dictionary<string, List<string>>();
                 _selectedAssetMapId = "";
                 _selectedAssetMapIdCache = null;
 
-                List<string> mapList = AssetLocator.GetFullMapList();
+                List<string> mapList = MapAssetLocator.GetFullMapList();
 
                 foreach (var mapId in mapList)
                 {
-                    var assetMapId = AssetLocator.GetAssetMapID(mapId);
+                    var assetMapId = MapAssetLocator.GetAssetMapID(mapId);
 
                     if (!_mapModelNameCache.ContainsKey(assetMapId))
                         _mapModelNameCache.Add(assetMapId, null);
@@ -84,7 +85,7 @@ namespace StudioCore.Browsers
 
         public void Display()
         {
-            if (UserProject.Type == ProjectType.Undefined)
+            if (Project.Type == ProjectType.Undefined)
                 return;
 
             if (_modelAliasBank.IsLoadingAliases)
@@ -136,24 +137,24 @@ namespace StudioCore.Browsers
         {
             var objLabel = "Obj";
 
-            if (UserProject.Type is ProjectType.ER or ProjectType.AC6)
+            if (Project.Type is ProjectType.ER or ProjectType.AC6)
                 objLabel = "AEG";
 
             if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
             {
-                _modelNameCache = AssetLocator.GetChrModels();
+                _modelNameCache = ModelAssetLocator.GetChrModels();
                 _selectedAssetType = "Chr";
                 _selectedAssetMapId = "";
             }
             if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
             {
-                _modelNameCache = AssetLocator.GetObjModels();
+                _modelNameCache = ModelAssetLocator.GetObjModels();
                 _selectedAssetType = "Obj";
                 _selectedAssetMapId = "";
             }
             if (ImGui.Selectable("Part", _selectedAssetType == "Part"))
             {
-                _modelNameCache = AssetLocator.GetPartsModels();
+                _modelNameCache = ModelAssetLocator.GetPartsModels();
                 _selectedAssetType = "Part";
                 _selectedAssetMapId = "";
             }
@@ -170,7 +171,7 @@ namespace StudioCore.Browsers
                 {
                     if (_mapModelNameCache[mapId] == null)
                     {
-                        var modelList = AssetLocator.GetMapModels(mapId);
+                        var modelList = ModelAssetLocator.GetMapModels(mapId);
                         var cache = new List<string>();
                         foreach (var model in modelList)
                             cache.Add(model.AssetName);
@@ -322,7 +323,7 @@ namespace StudioCore.Browsers
                         var refTagList = new List<string>();
 
                         // Adjust the name to remove the A{mapId} section.
-                        if (UserProject.Type == ProjectType.DS1 || UserProject.Type == ProjectType.DS1R)
+                        if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                             displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
 
                         if (referenceDict.ContainsKey(lowerName))

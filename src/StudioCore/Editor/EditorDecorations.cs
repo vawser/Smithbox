@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.ParamEditor;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Settings;
 using StudioCore.TextEditor;
 using System;
@@ -382,10 +382,10 @@ public class EditorDecorations
             {
                 List<string> matchedExtRefPath =
                     currentRef.paths.Select(x => string.Format(x, searchValue)).ToList();
-                ExtRefItem(context, fieldName, $"modded {currentRef.name}", matchedExtRefPath, UserProject.GameModDirectory,
+                ExtRefItem(context, fieldName, $"modded {currentRef.name}", matchedExtRefPath, Project.GameModDirectory,
                     cacheOwner);
                 ExtRefItem(context, fieldName, $"vanilla {currentRef.name}", matchedExtRefPath,
-                    UserProject.GameRootDirectory, cacheOwner);
+                    Project.GameRootDirectory, cacheOwner);
             }
         }
     }

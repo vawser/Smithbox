@@ -4,9 +4,10 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Data.Aliases;
 using StudioCore.Gui;
+using StudioCore.AssetLocator;
 using StudioCore.ParamEditor;
 using StudioCore.Platform;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Settings;
 using StudioCore.Utilities;
@@ -145,12 +146,12 @@ public class SceneTree : IActionEventHandler
         mapcache.Add(MapEntity.MapEntityType.Part, new Dictionary<Type, List<MapEntity>>());
         mapcache.Add(MapEntity.MapEntityType.Region, new Dictionary<Type, List<MapEntity>>());
         mapcache.Add(MapEntity.MapEntityType.Event, new Dictionary<Type, List<MapEntity>>());
-        if (UserProject.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
+        if (Project.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
             or ProjectType.ER or ProjectType.AC6)
         {
             mapcache.Add(MapEntity.MapEntityType.Light, new Dictionary<Type, List<MapEntity>>());
         }
-        else if (UserProject.Type is ProjectType.DS2S)
+        else if (Project.Type is ProjectType.DS2S)
         {
             mapcache.Add(MapEntity.MapEntityType.Light, new Dictionary<Type, List<MapEntity>>());
             mapcache.Add(MapEntity.MapEntityType.DS2Event, new Dictionary<Type, List<MapEntity>>());
@@ -531,7 +532,7 @@ public class SceneTree : IActionEventHandler
                         {
                             // Regions don't have multiple types in certain games
                             if (cats.Key == MapEntity.MapEntityType.Region &&
-                                UserProject.Type is ProjectType.DES
+                                Project.Type is ProjectType.DES
                                     or ProjectType.DS1
                                     or ProjectType.DS1R
                                     or ProjectType.BB)
@@ -661,7 +662,7 @@ public class SceneTree : IActionEventHandler
 
             if (_configuration == Configuration.MapEditor)
             {
-                if (UserProject.Type is ProjectType.DS2S)
+                if (Project.Type is ProjectType.DS2S)
                 {
                     if (ParamBank.PrimaryBank.IsLoadingParams)
                     {
@@ -709,7 +710,7 @@ public class SceneTree : IActionEventHandler
                 }
             }
 
-            if (_configuration == Configuration.MapEditor && UserProject.Type == ProjectType.AC6 &&
+            if (_configuration == Configuration.MapEditor && Project.Type == ProjectType.AC6 &&
                 FeatureFlags.AC6_MSB == false)
             {
                 ImGui.Indent();
@@ -824,7 +825,7 @@ public class SceneTree : IActionEventHandler
                         {
                             try
                             {
-                                if (UserProject.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
+                                if (Project.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
                                 {
                                     TaskLogs.AddLog("AC6 Map saving has been disabled", LogLevel.Warning, TaskLogs.LogPriority.Normal);
                                 }
@@ -983,12 +984,12 @@ public class SceneTree : IActionEventHandler
                 }
             }
 
-            if (UserProject.Type == ProjectType.BB && _configuration == Configuration.MapEditor)
+            if (Project.Type == ProjectType.BB && _configuration == Configuration.MapEditor)
             {
                 ChaliceDungeonImportButton();
             }
 
-            if (_configuration == Configuration.MapEditor && UserProject.Type == ProjectType.AC6 &&
+            if (_configuration == Configuration.MapEditor && Project.Type == ProjectType.AC6 &&
                 FeatureFlags.AC6_MSB == false)
             {
                 ImGui.EndDisabled();

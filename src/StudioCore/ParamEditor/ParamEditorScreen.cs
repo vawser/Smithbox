@@ -2,11 +2,12 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.AssetLocator;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -308,7 +309,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 if (ImGui.Selectable("Open Scripts Folder"))
                 {
-                    Process.Start("explorer.exe", AssetLocator.GetScriptAssetsDir());
+                    Process.Start("explorer.exe", ParamAssetLocator.GetMassEditScriptGameDir());
                 }
 
                 if (ImGui.Selectable("Reload Scripts"))
@@ -1221,9 +1222,9 @@ public class ParamEditorScreen : EditorScreen
         ParamUpgradeEdits = null;
         try
         {
-            var baseDir = AssetLocator.GetUpgraderAssetsDir();
-            var wlFile = Path.Join(AssetLocator.GetUpgraderAssetsDir(), "version.txt");
-            var massEditFile = Path.Join(AssetLocator.GetUpgraderAssetsDir(), "massedit.txt");
+            var baseDir = ParamAssetLocator.GetUpgraderAssetsDir();
+            var wlFile = Path.Join(ParamAssetLocator.GetUpgraderAssetsDir(), "version.txt");
+            var massEditFile = Path.Join(ParamAssetLocator.GetUpgraderAssetsDir(), "massedit.txt");
             if (!File.Exists(wlFile) || !File.Exists(massEditFile))
             {
                 return;
@@ -1260,7 +1261,7 @@ public class ParamEditorScreen : EditorScreen
         if (ParamBank.IsDefsLoaded
             && ParamBank.PrimaryBank.Params != null
             && ParamBank.VanillaBank.Params != null
-            && ParamUpgrade_SupportedGames.Contains(UserProject.Type)
+            && ParamUpgrade_SupportedGames.Contains(Project.Type)
             && !ParamBank.PrimaryBank.IsLoadingParams
             && !ParamBank.VanillaBank.IsLoadingParams
             && ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
@@ -1365,7 +1366,7 @@ public class ParamEditorScreen : EditorScreen
         if (result == ParamBank.ParamUpgradeResult.RowConflictsFound)
         {
             // If there's row conflicts write a conflict log
-            var logPath = $@"{UserProject.GameModDirectory}\regulationUpgradeLog.txt";
+            var logPath = $@"{Project.GameModDirectory}\regulationUpgradeLog.txt";
             if (File.Exists(logPath))
             {
                 File.Delete(logPath);

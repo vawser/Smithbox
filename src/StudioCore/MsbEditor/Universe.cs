@@ -15,7 +15,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Numerics;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
+using StudioCore.AssetLocator;
 
 namespace StudioCore.MsbEditor;
 
@@ -50,7 +51,7 @@ public class Universe
 
     public List<string> EnvMapTextures { get; private set; } = new();
 
-    public ProjectType GameType => UserProject.Type;
+    public ProjectType GameType => Project.Type;
 
     public Map GetLoadedMap(string id)
     {
@@ -316,43 +317,43 @@ public class Universe
         var loadflver = false;
         var filt = RenderFilter.All;
 
-        var amapid = AssetLocator.GetAssetMapID(map.Name);
+        var amapid = MapAssetLocator.GetAssetMapID(map.Name);
 
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
         if (modelname.ToLower().StartsWith("m"))
         {
             loadflver = true;
-            asset = AssetLocator.GetMapModel(amapid, AssetLocator.MapModelNameToAssetName(amapid, modelname));
+            asset = ModelAssetLocator.GetMapModel(amapid, ModelAssetLocator.MapModelNameToAssetName(amapid, modelname));
             filt = RenderFilter.MapPiece;
         }
         else if (modelname.ToLower().StartsWith("c"))
         {
             loadflver = true;
-            asset = AssetLocator.GetChrModel(modelname);
+            asset = ModelAssetLocator.GetChrModel(modelname);
             filt = RenderFilter.Character;
         }
         else if (modelname.ToLower().StartsWith("o") || modelname.StartsWith("AEG"))
         {
             loadflver = true;
-            asset = AssetLocator.GetObjModel(modelname);
+            asset = ModelAssetLocator.GetObjModel(modelname);
             filt = RenderFilter.Object;
         }
         else if (modelname.ToLower().StartsWith("h"))
         {
             loadcol = true;
-            asset = AssetLocator.GetMapCollisionModel(amapid,
-                AssetLocator.MapModelNameToAssetName(amapid, modelname), false);
+            asset = ModelAssetLocator.GetMapCollisionModel(amapid,
+                ModelAssetLocator.MapModelNameToAssetName(amapid, modelname), false);
             filt = RenderFilter.Collision;
         }
         else if (modelname.ToLower().StartsWith("n"))
         {
             loadnav = true;
-            asset = AssetLocator.GetMapNVMModel(amapid, AssetLocator.MapModelNameToAssetName(amapid, modelname));
+            asset = ModelAssetLocator.GetMapNVMModel(amapid, ModelAssetLocator.MapModelNameToAssetName(amapid, modelname));
             filt = RenderFilter.Navmesh;
         }
         else
         {
-            asset = AssetLocator.GetNullAsset();
+            asset = ModelAssetLocator.GetNullAsset();
         }
 
         ModelMarkerType modelMarkerType =
@@ -389,9 +390,9 @@ public class Universe
             return mesh;
         }
 
-        if (loadnav && UserProject.Type != ProjectType.DS2S)
+        if (loadnav && Project.Type != ProjectType.DS2S)
         {
-            MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
+            var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
                 _renderScene, asset.AssetVirtualPath, modelMarkerType);
             mesh.World = obj.GetWorldMatrix();
             obj.RenderSceneMesh = mesh;
@@ -420,12 +421,12 @@ public class Universe
 
             return mesh;
         }
-        else if (loadnav && UserProject.Type == ProjectType.DS2S)
+        else if (loadnav && Project.Type == ProjectType.DS2S)
         {
         }
         else if (loadflver)
         {
-            MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
+            var model = MeshRenderableProxy.MeshRenderableFromFlverResource(
                 _renderScene, asset.AssetVirtualPath, modelMarkerType);
             model.DrawFilter = filt;
             model.World = obj.GetWorldMatrix();
@@ -531,14 +532,14 @@ public class Universe
                     (int)regist.GetCellHandleOrThrow("EnemyParamID").Value);
                 if (chrid != null)
                 {
-                    AssetDescription asset = AssetLocator.GetChrModel($@"c{chrid}");
+                    AssetDescription asset = ModelAssetLocator.GetChrModel($@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
                         _renderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy);
                     model.DrawFilter = RenderFilter.Character;
                     generatorObjs[row.ID].RenderSceneMesh = model;
                     model.SetSelectable(generatorObjs[row.ID]);
                     chrsToLoad.Add(asset);
-                    AssetDescription tasset = AssetLocator.GetChrTextures($@"c{chrid}");
+                    AssetDescription tasset = TextureAssetLocator.GetChrTextures($@"c{chrid}");
                     if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                     {
                         chrsToLoad.Add(tasset);
@@ -617,7 +618,7 @@ public class Universe
     public void PopulateMapList()
     {
         LoadedObjectContainers.Clear();
-        foreach (var m in AssetLocator.GetFullMapList())
+        foreach (var m in MapAssetLocator.GetFullMapList())
         {
             LoadedObjectContainers.Add(m, null);
         }
@@ -635,7 +636,7 @@ public class Universe
 
     public bool LoadMap(string mapid, bool selectOnLoad = false)
     {
-        if (UserProject.Type == ProjectType.DS2S
+        if (Project.Type == ProjectType.DS2S
             && ParamBank.PrimaryBank.Params == null)
         {
             // ParamBank must be loaded for DS2 maps
@@ -644,7 +645,7 @@ public class Universe
             return false;
         }
 
-        AssetDescription ad = AssetLocator.GetMapMSB(mapid);
+        AssetDescription ad = MapAssetLocator.GetMapMSB(mapid);
         if (ad.AssetPath == null)
         {
             return false;
@@ -660,9 +661,9 @@ public class Universe
         {
             BTL btl;
 
-            if (UserProject.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S)
             {
-                using BXF4 bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
+                using var bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
                 BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
                 if (file == null)
                 {
@@ -710,7 +711,7 @@ public class Universe
             HashSet<AssetDescription> navsToLoad = new();
 
             //drawgroup count
-            switch (UserProject.Type)
+            switch (Project.Type)
             {
                 // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
                 case ProjectType.DES:
@@ -729,42 +730,42 @@ public class Universe
                     _dispGroupCount = 8; //?
                     break;
                 default:
-                    throw new Exception($"Error: Did not expect Gametype {UserProject.Type}");
+                    throw new Exception($"Error: Did not expect Gametype {Project.Type}");
                 //break;
             }
 
-            AssetDescription ad = AssetLocator.GetMapMSB(mapid);
+            AssetDescription ad = MapAssetLocator.GetMapMSB(mapid);
             if (ad.AssetPath == null)
             {
                 return;
             }
 
             IMsb msb;
-            if (UserProject.Type == ProjectType.DS3)
+            if (Project.Type == ProjectType.DS3)
             {
                 msb = MSB3.Read(ad.AssetPath);
             }
-            else if (UserProject.Type == ProjectType.SDT)
+            else if (Project.Type == ProjectType.SDT)
             {
                 msb = MSBS.Read(ad.AssetPath);
             }
-            else if (UserProject.Type == ProjectType.ER)
+            else if (Project.Type == ProjectType.ER)
             {
                 msb = MSBE.Read(ad.AssetPath);
             }
-            else if (UserProject.Type == ProjectType.AC6)
+            else if (Project.Type == ProjectType.AC6)
             {
                 msb = MSB_AC6.Read(ad.AssetPath);
             }
-            else if (UserProject.Type == ProjectType.DS2S)
+            else if (Project.Type == ProjectType.DS2S)
             {
                 msb = MSB2.Read(ad.AssetPath);
             }
-            else if (UserProject.Type == ProjectType.BB)
+            else if (Project.Type == ProjectType.BB)
             {
                 msb = MSBB.Read(ad.AssetPath);
             }
-            else if (UserProject.Type == ProjectType.DES)
+            else if (Project.Type == ProjectType.DES)
             {
                 msb = MSBD.Read(ad.AssetPath);
             }
@@ -775,21 +776,21 @@ public class Universe
 
             map.LoadMSB(msb);
 
-            var amapid = AssetLocator.GetAssetMapID(mapid);
+            var amapid = MapAssetLocator.GetAssetMapID(mapid);
             foreach (IMsbModel model in msb.Models.GetEntries())
             {
                 AssetDescription asset;
                 if (model.Name.StartsWith("m"))
                 {
-                    asset = AssetLocator.GetMapModel(amapid,
-                        AssetLocator.MapModelNameToAssetName(amapid, model.Name));
+                    asset = ModelAssetLocator.GetMapModel(amapid,
+                        ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name));
                     mappiecesToLoad.Add(asset);
                 }
                 else if (model.Name.StartsWith("c"))
                 {
-                    asset = AssetLocator.GetChrModel(model.Name);
+                    asset = ModelAssetLocator.GetChrModel(model.Name);
                     chrsToLoad.Add(asset);
-                    AssetDescription tasset = AssetLocator.GetChrTextures(model.Name);
+                    AssetDescription tasset = TextureAssetLocator.GetChrTextures(model.Name);
                     if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                     {
                         chrsToLoad.Add(tasset);
@@ -797,9 +798,9 @@ public class Universe
                 }
                 else if (model.Name.StartsWith("o"))
                 {
-                    asset = AssetLocator.GetObjModel(model.Name);
+                    asset = ModelAssetLocator.GetObjModel(model.Name);
                     objsToLoad.Add(asset);
-                    AssetDescription tasset = AssetLocator.GetObjTexture(model.Name);
+                    AssetDescription tasset = TextureAssetLocator.GetObjTexture(model.Name);
                     if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                     {
                         objsToLoad.Add(tasset);
@@ -807,20 +808,20 @@ public class Universe
                 }
                 else if (model.Name.StartsWith("AEG"))
                 {
-                    asset = AssetLocator.GetObjModel(model.Name);
+                    asset = ModelAssetLocator.GetObjModel(model.Name);
                     objsToLoad.Add(asset);
                 }
                 else if (model.Name.StartsWith("h"))
                 {
-                    asset = AssetLocator.GetMapCollisionModel(amapid,
-                        AssetLocator.MapModelNameToAssetName(amapid, model.Name), false);
+                    asset = ModelAssetLocator.GetMapCollisionModel(amapid,
+                        ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name), false);
                     colsToLoad.Add(asset);
                 }
-                else if (model.Name.StartsWith("n") && UserProject.Type != ProjectType.DS2S &&
-                         UserProject.Type != ProjectType.BB)
+                else if (model.Name.StartsWith("n") && Project.Type != ProjectType.DS2S &&
+                         Project.Type != ProjectType.BB)
                 {
-                    asset = AssetLocator.GetMapNVMModel(amapid,
-                        AssetLocator.MapModelNameToAssetName(amapid, model.Name));
+                    asset = ModelAssetLocator.GetMapNVMModel(amapid,
+                        ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name));
                     navsToLoad.Add(asset);
                 }
             }
@@ -835,7 +836,7 @@ public class Universe
             }
 
             // Load BTLs (must be done after MapOffset is set)
-            List<AssetDescription> BTLs = AssetLocator.GetMapBTLs(mapid);
+            List<AssetDescription> BTLs = MapAssetLocator.GetMapBTLs(mapid);
             foreach (AssetDescription btl_ad in BTLs)
             {
                 BTL btl = ReturnBTL(btl_ad);
@@ -845,7 +846,7 @@ public class Universe
                 }
             }
 
-            if (UserProject.Type == ProjectType.ER && CFG.Current.Map_Enable_ER_Auto_Map_Offset)
+            if (Project.Type == ProjectType.ER && CFG.Current.Map_Enable_ER_Auto_Map_Offset)
             {
                 if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
                     loadTransform)
@@ -871,28 +872,28 @@ public class Universe
                 Selection.AddSelection(map.RootObject);
             }
 
-            if (UserProject.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S)
             {
                 LoadDS2Generators(amapid, map);
             }
 
             // Temporary DS3 navmesh loading
-            if (FeatureFlags.LoadDS3Navmeshes && UserProject.Type == ProjectType.DS3)
+            if (FeatureFlags.LoadDS3Navmeshes && Project.Type == ProjectType.DS3)
             {
-                AssetDescription nvaasset = AssetLocator.GetMapNVA(amapid);
+                AssetDescription nvaasset = MapAssetLocator.GetMapNVA(amapid);
                 if (nvaasset.AssetPath != null)
                 {
-                    NVA nva = NVA.Read(nvaasset.AssetPath);
+                    var nva = NVA.Read(nvaasset.AssetPath);
                     foreach (NVA.Navmesh nav in nva.Navmeshes)
                     {
                         // TODO2: set parent to MapOffset
                         MapEntity n = new(map, nav, MapEntity.MapEntityType.Editor);
                         map.AddObject(n);
                         var navid = $@"n{nav.ModelID:D6}";
-                        var navname = "n" + AssetLocator.MapModelNameToAssetName(amapid, navid).Substring(1);
-                        AssetDescription nasset = AssetLocator.GetHavokNavmeshModel(amapid, navname);
+                        var navname = "n" + ModelAssetLocator.MapModelNameToAssetName(amapid, navid).Substring(1);
+                        AssetDescription nasset = ModelAssetLocator.GetHavokNavmeshModel(amapid, navname);
 
-                        MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                        var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
                             _renderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
                         mesh.World = n.GetWorldMatrix();
                         mesh.SetSelectable(n);
@@ -922,7 +923,7 @@ public class Universe
             if (CFG.Current.Map_Enable_Texturing)
             {
                 job = ResourceManager.CreateNewJob($@"Loading {amapid} textures");
-                foreach (AssetDescription asset in AssetLocator.GetMapTextures(amapid))
+                foreach (AssetDescription asset in TextureAssetLocator.GetMapTextures(amapid))
                 {
                     if (asset.AssetArchiveVirtualPath != null)
                     {
@@ -1001,9 +1002,9 @@ public class Universe
             if (FeatureFlags.LoadNavmeshes)
             {
                 job = ResourceManager.CreateNewJob(@"Loading Navmeshes");
-                if (UserProject.Type == ProjectType.DS3 && FeatureFlags.LoadDS3Navmeshes)
+                if (Project.Type == ProjectType.DS3 && FeatureFlags.LoadDS3Navmeshes)
                 {
-                    AssetDescription nav = AssetLocator.GetHavokNavmeshes(amapid);
+                    AssetDescription nav = ModelAssetLocator.GetHavokNavmeshes(amapid);
                     job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
                         ResourceManager.ResourceType.NavmeshHKX);
                 }
@@ -1028,7 +1029,7 @@ public class Universe
             }
 
             // Real bad hack
-            EnvMapTextures = AssetLocator.GetEnvMapTextureNames(amapid);
+            EnvMapTextures = TextureAssetLocator.GetEnvMapTextureNames(amapid);
 
             ScheduleTextureRefresh();
 
@@ -1131,40 +1132,40 @@ public class Universe
     private void SaveDS2Generators(Map map)
     {
         // Load all the params
-        AssetDescription regparamad = AssetLocator.GetDS2GeneratorRegistParam(map.Name);
-        AssetDescription regparamadw = AssetLocator.GetDS2GeneratorRegistParam(map.Name, true);
+        AssetDescription regparamad = ParamAssetLocator.GetDS2GeneratorRegistParam(map.Name);
+        AssetDescription regparamadw = ParamAssetLocator.GetDS2GeneratorRegistParam(map.Name, true);
         Param regparam = Param.Read(regparamad.AssetPath);
-        PARAMDEF reglayout = AssetLocator.GetParamdefForParam(regparam.ParamType);
+        PARAMDEF reglayout = ParamAssetLocator.GetParamdefForParam(regparam.ParamType);
         regparam.ApplyParamdef(reglayout);
 
-        AssetDescription locparamad = AssetLocator.GetDS2GeneratorLocationParam(map.Name);
-        AssetDescription locparamadw = AssetLocator.GetDS2GeneratorLocationParam(map.Name, true);
+        AssetDescription locparamad = ParamAssetLocator.GetDS2GeneratorLocationParam(map.Name);
+        AssetDescription locparamadw = ParamAssetLocator.GetDS2GeneratorLocationParam(map.Name, true);
         Param locparam = Param.Read(locparamad.AssetPath);
-        PARAMDEF loclayout = AssetLocator.GetParamdefForParam(locparam.ParamType);
+        PARAMDEF loclayout = ParamAssetLocator.GetParamdefForParam(locparam.ParamType);
         locparam.ApplyParamdef(loclayout);
 
-        AssetDescription genparamad = AssetLocator.GetDS2GeneratorParam(map.Name);
-        AssetDescription genparamadw = AssetLocator.GetDS2GeneratorParam(map.Name, true);
+        AssetDescription genparamad = ParamAssetLocator.GetDS2GeneratorParam(map.Name);
+        AssetDescription genparamadw = ParamAssetLocator.GetDS2GeneratorParam(map.Name, true);
         Param genparam = Param.Read(genparamad.AssetPath);
-        PARAMDEF genlayout = AssetLocator.GetParamdefForParam(genparam.ParamType);
+        PARAMDEF genlayout = ParamAssetLocator.GetParamdefForParam(genparam.ParamType);
         genparam.ApplyParamdef(genlayout);
 
-        AssetDescription evtparamad = AssetLocator.GetDS2EventParam(map.Name);
-        AssetDescription evtparamadw = AssetLocator.GetDS2EventParam(map.Name, true);
+        AssetDescription evtparamad = ParamAssetLocator.GetDS2EventParam(map.Name);
+        AssetDescription evtparamadw = ParamAssetLocator.GetDS2EventParam(map.Name, true);
         Param evtparam = Param.Read(evtparamad.AssetPath);
-        PARAMDEF evtlayout = AssetLocator.GetParamdefForParam(evtparam.ParamType);
+        PARAMDEF evtlayout = ParamAssetLocator.GetParamdefForParam(evtparam.ParamType);
         evtparam.ApplyParamdef(evtlayout);
 
-        AssetDescription evtlparamad = AssetLocator.GetDS2EventLocationParam(map.Name);
-        AssetDescription evtlparamadw = AssetLocator.GetDS2EventLocationParam(map.Name, true);
+        AssetDescription evtlparamad = ParamAssetLocator.GetDS2EventLocationParam(map.Name);
+        AssetDescription evtlparamadw = ParamAssetLocator.GetDS2EventLocationParam(map.Name, true);
         Param evtlparam = Param.Read(evtlparamad.AssetPath);
-        PARAMDEF evtllayout = AssetLocator.GetParamdefForParam(evtlparam.ParamType);
+        PARAMDEF evtllayout = ParamAssetLocator.GetParamdefForParam(evtlparam.ParamType);
         evtlparam.ApplyParamdef(evtllayout);
 
-        AssetDescription objparamad = AssetLocator.GetDS2ObjInstanceParam(map.Name);
-        AssetDescription objparamadw = AssetLocator.GetDS2ObjInstanceParam(map.Name, true);
+        AssetDescription objparamad = ParamAssetLocator.GetDS2ObjInstanceParam(map.Name);
+        AssetDescription objparamadw = ParamAssetLocator.GetDS2ObjInstanceParam(map.Name, true);
         Param objparam = Param.Read(objparamad.AssetPath);
-        PARAMDEF objlayout = AssetLocator.GetParamdefForParam(objparam.ParamType);
+        PARAMDEF objlayout = ParamAssetLocator.GetParamdefForParam(objparam.ParamType);
         objparam.ApplyParamdef(objlayout);
 
         // Clear them out
@@ -1328,33 +1329,33 @@ public class Universe
 
     private DCX.Type GetCompressionType()
     {
-        if (UserProject.Type == ProjectType.DS3)
+        if (Project.Type == ProjectType.DS3)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (UserProject.Type == ProjectType.ER)
+        if (Project.Type == ProjectType.ER)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (UserProject.Type == ProjectType.AC6)
+        if (Project.Type == ProjectType.AC6)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (UserProject.Type == ProjectType.DS2S)
+        else if (Project.Type == ProjectType.DS2S)
         {
             return DCX.Type.None;
         }
-        else if (UserProject.Type == ProjectType.SDT)
+        else if (Project.Type == ProjectType.SDT)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (UserProject.Type == ProjectType.BB)
+        else if (Project.Type == ProjectType.BB)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (UserProject.Type == ProjectType.DES)
+        else if (Project.Type == ProjectType.DES)
         {
             return DCX.Type.None;
         }
@@ -1367,16 +1368,16 @@ public class Universe
     /// </summary>
     public void SaveBTL(Map map)
     {
-        List<AssetDescription> BTLs = AssetLocator.GetMapBTLs(map.Name);
-        List<AssetDescription> BTLs_w = AssetLocator.GetMapBTLs(map.Name, true);
+        List<AssetDescription> BTLs = MapAssetLocator.GetMapBTLs(map.Name);
+        List<AssetDescription> BTLs_w = MapAssetLocator.GetMapBTLs(map.Name, true);
         DCX.Type compressionType = GetCompressionType();
-        if (UserProject.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S)
         {
             for (var i = 0; i < BTLs.Count; i++)
             {
-                using BXF4 bdt = BXF4.Read(BTLs[i].AssetPath, BTLs[i].AssetPath[..^3] + "bdt");
+                using var bdt = BXF4.Read(BTLs[i].AssetPath, BTLs[i].AssetPath[..^3] + "bdt");
                 BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
-                BTL btl = BTL.Read(file.Bytes);
+                var btl = BTL.Read(file.Bytes);
                 if (btl != null)
                 {
                     List<BTL.Light> newLights = map.SerializeBtlLights(BTLs_w[i].AssetName);
@@ -1422,58 +1423,58 @@ public class Universe
         SaveBTL(map);
         try
         {
-            AssetDescription ad = AssetLocator.GetMapMSB(map.Name);
-            AssetDescription adw = AssetLocator.GetMapMSB(map.Name, true);
+            AssetDescription ad = MapAssetLocator.GetMapMSB(map.Name);
+            AssetDescription adw = MapAssetLocator.GetMapMSB(map.Name, true);
             IMsb msb;
             DCX.Type compressionType = GetCompressionType();
-            if (UserProject.Type == ProjectType.DS3)
+            if (Project.Type == ProjectType.DS3)
             {
-                MSB3 prev = MSB3.Read(ad.AssetPath);
+                var prev = MSB3.Read(ad.AssetPath);
                 MSB3 n = new();
                 n.PartsPoses = prev.PartsPoses;
                 n.Layers = prev.Layers;
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (UserProject.Type == ProjectType.ER)
+            else if (Project.Type == ProjectType.ER)
             {
-                MSBE prev = MSBE.Read(ad.AssetPath);
+                var prev = MSBE.Read(ad.AssetPath);
                 MSBE n = new();
                 n.Layers = prev.Layers;
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (UserProject.Type == ProjectType.AC6)
+            else if (Project.Type == ProjectType.AC6)
             {
-                MSB_AC6 prev = MSB_AC6.Read(ad.AssetPath);
+                var prev = MSB_AC6.Read(ad.AssetPath);
                 MSB_AC6 n = new();
                 n.Layers = prev.Layers;
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (UserProject.Type == ProjectType.DS2S)
+            else if (Project.Type == ProjectType.DS2S)
             {
-                MSB2 prev = MSB2.Read(ad.AssetPath);
+                var prev = MSB2.Read(ad.AssetPath);
                 MSB2 n = new();
                 n.PartPoses = prev.PartPoses;
                 msb = n;
             }
-            else if (UserProject.Type == ProjectType.SDT)
+            else if (Project.Type == ProjectType.SDT)
             {
-                MSBS prev = MSBS.Read(ad.AssetPath);
+                var prev = MSBS.Read(ad.AssetPath);
                 MSBS n = new();
                 n.PartsPoses = prev.PartsPoses;
                 n.Layers = prev.Layers;
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (UserProject.Type == ProjectType.BB)
+            else if (Project.Type == ProjectType.BB)
             {
                 msb = new MSBB();
             }
-            else if (UserProject.Type == ProjectType.DES)
+            else if (Project.Type == ProjectType.DES)
             {
-                MSBD prev = MSBD.Read(ad.AssetPath);
+                var prev = MSBD.Read(ad.AssetPath);
                 MSBD n = new();
                 n.Trees = prev.Trees;
                 msb = n;
@@ -1485,7 +1486,7 @@ public class Universe
                 //((MSB1)msb).Models = t.Models;
             }
 
-            map.SerializeToMSB(msb, UserProject.Type);
+            map.SerializeToMSB(msb, Project.Type);
 
             // Create the map directory if it doesn't exist
             if (!Directory.Exists(Path.GetDirectoryName(adw.AssetPath)))
@@ -1527,7 +1528,7 @@ public class Universe
 
             File.Move(mapPath + ".temp", mapPath);
 
-            if (UserProject.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S)
             {
                 SaveDS2Generators(map);
             }
@@ -1544,7 +1545,7 @@ public class Universe
 
     public void SaveAllMaps()
     {
-        if (UserProject.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
+        if (Project.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
         {
             TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }

@@ -1,8 +1,9 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.AssetLocator;
 using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
@@ -77,7 +78,7 @@ public class TextEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Text Language", !FMGBank.IsLoading))
         {
-            Dictionary<string, string> folders = AssetLocator.GetMsgLanguages();
+            Dictionary<string, string> folders = TextAssetLocator.GetMsgLanguages();
             if (folders.Count == 0)
             {
                 ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), "Cannot find language folders.");
@@ -118,7 +119,7 @@ public class TextEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        if (UserProject.Type == ProjectType.Undefined)
+        if (Project.Type == ProjectType.Undefined)
         {
             return;
         }

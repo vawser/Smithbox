@@ -3,7 +3,7 @@ using HKX2.Builders;
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Havok;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using System.Collections.Generic;
@@ -45,7 +45,7 @@ public class NavmeshEditor
     {
         if (ImGui.Begin("Navmesh Build"))
         {
-            if (UserProject.Type != ProjectType.DS3)
+            if (Project.Type != ProjectType.DS3)
             {
                 ImGui.Text("Navmesh building only supported for DS3");
                 ImGui.End();
@@ -121,7 +121,7 @@ public class NavmeshEditor
                         _previewMesh.World = mrp.World;
 
                         // Do a test save
-                        var path = $@"{UserProject.GameModDirectory}\navout\test.hkx";
+                        var path = $@"{Project.GameModDirectory}\navout\test.hkx";
                         using (FileStream s2 = File.Create(path))
                         {
                             BinaryWriterEx bw = new(false, s2);

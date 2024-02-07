@@ -1,7 +1,7 @@
 ﻿using DotNext.IO.MemoryMappedFiles;
 using HKX2;
 using SoulsFormats;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;

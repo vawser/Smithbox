@@ -1,7 +1,8 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
+using StudioCore.AssetLocator;
 using StudioCore.Platform;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;

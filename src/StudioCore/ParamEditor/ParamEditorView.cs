@@ -3,7 +3,7 @@ using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Platform;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,7 +83,7 @@ public class ParamEditorView
             lastParamSearch = _selection.currentParamSearchString;
         }
 
-        if (UserProject.Type is ProjectType.DES
+        if (Project.Type is ProjectType.DES
             or ProjectType.DS1
             or ProjectType.DS1R)
         {
@@ -95,7 +95,7 @@ public class ParamEditorView
 
             ImGui.Separator();
         }
-        else if (UserProject.Type is ProjectType.DS2S)
+        else if (Project.Type is ProjectType.DS2S)
         {
             // DS2 has map params, add UI element to toggle viewing map params and GameParams.
             if (ImGui.Checkbox("Edit Map Params", ref _mapParamView))
@@ -163,10 +163,10 @@ public class ParamEditorView
         {
             List<(ParamBank, Param)> list =
                 ParamSearchEngine.pse.Search(true, _selection.currentParamSearchString, true, true);
-            List<string> keyList = list.Where(param => param.Item1 == ParamBank.PrimaryBank)
+            var keyList = list.Where(param => param.Item1 == ParamBank.PrimaryBank)
                 .Select(param => ParamBank.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
 
-            if (UserProject.Type is ProjectType.DES
+            if (Project.Type is ProjectType.DES
                 or ProjectType.DS1
                 or ProjectType.DS1R)
             {
@@ -179,7 +179,7 @@ public class ParamEditorView
                     keyList = keyList.FindAll(p => !p.EndsWith("Bank"));
                 }
             }
-            else if (UserProject.Type is ProjectType.DS2S)
+            else if (Project.Type is ProjectType.DS2S)
             {
                 if (_mapParamView)
                 {

@@ -4,8 +4,9 @@ using Microsoft.Extensions.Logging;
 using ProcessMemoryUtilities.Managed;
 using ProcessMemoryUtilities.Native;
 using SoulsFormats;
+using StudioCore.AssetLocator;
 using StudioCore.Editor;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -504,7 +505,7 @@ internal class ParamReloader
 
     private static GameOffsets GetGameOffsets()
     {
-        ProjectType game = UserProject.Type;
+        ProjectType game = Project.Type;
         if (!GameOffsets.GameOffsetBank.ContainsKey(game))
         {
             try
@@ -576,7 +577,7 @@ internal class GameOffsets
 
     internal GameOffsets(ProjectType type)
     {
-        var dir = AssetLocator.GetGameOffsetsAssetsDir();
+        var dir = ParamAssetLocator.GetGameOffsetsAssetsDir();
         Dictionary<string, string> basicData = GetOffsetFile(dir + "/CoreOffsets.txt");
         exeName = basicData["exeName"];
 

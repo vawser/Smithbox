@@ -22,7 +22,8 @@ using StudioCore.MsbEditor;
 using Action = StudioCore.MsbEditor.Action;
 using StudioCore.Interface;
 using StudioCore.Data.Aliases;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
+using StudioCore.AssetLocator;
 
 namespace StudioCore.Browsers;
 
@@ -87,7 +88,7 @@ public class MapAssetBrowser
     {
         var scale = Smithbox.GetUIScale();
 
-        if (UserProject.Type == ProjectType.Undefined)
+        if (Project.Type == ProjectType.Undefined)
             return;
 
         if (_modelAliasBank.IsLoadingAliases)
@@ -144,18 +145,18 @@ public class MapAssetBrowser
     {
         var objLabel = "Obj";
 
-        if (UserProject.Type is ProjectType.ER or ProjectType.AC6)
+        if (Project.Type is ProjectType.ER or ProjectType.AC6)
             objLabel = "AEG";
 
         if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
         {
-            _modelNameCache = AssetLocator.GetChrModels();
+            _modelNameCache = ModelAssetLocator.GetChrModels();
             _selectedAssetType = "Chr";
             _selectedAssetMapId = "";
         }
         if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
         {
-            _modelNameCache = AssetLocator.GetObjModels();
+            _modelNameCache = ModelAssetLocator.GetObjModels();
             _selectedAssetType = "Obj";
             _selectedAssetMapId = "";
         }
@@ -181,7 +182,7 @@ public class MapAssetBrowser
                 {
                     if (_mapModelNameCache[mapId] == null)
                     {
-                        List<AssetDescription> modelList = AssetLocator.GetMapModels(mapId);
+                        List<AssetDescription> modelList = ModelAssetLocator.GetMapModels(mapId);
                         var cache = new List<string>();
 
                         foreach (AssetDescription model in modelList)
@@ -348,7 +349,7 @@ public class MapAssetBrowser
                     var refTagList = new List<string>();
 
                     // Adjust the name to remove the A{mapId} section.
-                    if (UserProject.Type == ProjectType.DS1 || UserProject.Type == ProjectType.DS1R)
+                    if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                         displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
 
                     if (referenceDict.ContainsKey(lowerName))
@@ -435,7 +436,7 @@ public class MapAssetBrowser
             var isValidObjectType = false;
 
             if (assetType == "Chr")
-                switch (UserProject.Type)
+                switch (Project.Type)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Enemy)
@@ -472,7 +473,7 @@ public class MapAssetBrowser
                         throw new ArgumentException("Selected entity type must be Enemy");
                 }
             if (assetType == "Obj")
-                switch (UserProject.Type)
+                switch (Project.Type)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.Object)
@@ -511,7 +512,7 @@ public class MapAssetBrowser
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                 }
             if (assetType == "MapPiece")
-                switch (UserProject.Type)
+                switch (Project.Type)
                 {
                     case ProjectType.DES:
                         if (s.WrappedObject is MSBD.Part.MapPiece)

@@ -1,6 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.ProjectCore;
+using StudioCore.AssetLocator;
+using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,14 +27,14 @@ public class MtdBank
                 try
                 {
                     IBinder mtdBinder = null;
-                    if (UserProject.Type == ProjectType.DS3 || UserProject.Type == ProjectType.SDT)
+                    if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT)
                     {
-                        mtdBinder = BND4.Read(AssetLocator.GetAssetPath(@"mtd\allmaterialbnd.mtdbnd.dcx"));
+                        mtdBinder = BND4.Read(LocatorUtils.GetAssetPath(@"mtd\allmaterialbnd.mtdbnd.dcx"));
                         IsMatbin = false;
                     }
-                    else if (UserProject.Type is ProjectType.ER or ProjectType.AC6)
+                    else if (Project.Type is ProjectType.ER or ProjectType.AC6)
                     {
-                        mtdBinder = BND4.Read(AssetLocator.GetAssetPath(@"material\allmaterial.matbinbnd.dcx"));
+                        mtdBinder = BND4.Read(LocatorUtils.GetAssetPath(@"material\allmaterial.matbinbnd.dcx"));
                         IsMatbin = true;
                     }
 
@@ -82,7 +83,7 @@ public class MtdBank
 
     public static void LoadMtds()
     {
-        if (UserProject.Type == ProjectType.Undefined)
+        if (Project.Type == ProjectType.Undefined)
         {
             return;
         }

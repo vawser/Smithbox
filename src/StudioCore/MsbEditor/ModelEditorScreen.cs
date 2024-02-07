@@ -17,7 +17,8 @@ using System.IO;
 using SoulsFormats;
 using StudioCore.Browsers;
 using StudioCore.Data.Aliases;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
+using StudioCore.AssetLocator;
 
 namespace StudioCore.MsbEditor;
 
@@ -248,7 +249,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void OnProjectChanged(ProjectSettings newSettings)
     {
-        if (UserProject.Type != ProjectType.Undefined)
+        if (Project.Type != ProjectType.Undefined)
         {
             _assetBrowser.OnProjectChanged();
         }
@@ -318,9 +319,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     {
         string ret = relpath;
 
-        if (UserProject.GameModDirectory != null)
+        if (Project.GameModDirectory != null)
         {
-            var modpath = relpath.Replace($"{UserProject.GameRootDirectory}", $"{UserProject.GameModDirectory}");
+            var modpath = relpath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
 
             if (!File.Exists(modpath))
             {
@@ -389,25 +390,25 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         switch (modelType)
         {
             case ModelEditorModelType.Character:
-                asset = AssetLocator.GetChrModel(modelid);
-                assettex = AssetLocator.GetChrTextures(modelid);
+                asset = ModelAssetLocator.GetChrModel(modelid);
+                assettex = TextureAssetLocator.GetChrTextures(modelid);
                 break;
             case ModelEditorModelType.Object:
-                asset = AssetLocator.GetObjModel(modelid);
-                assettex = AssetLocator.GetObjTexture(modelid);
+                asset = ModelAssetLocator.GetObjModel(modelid);
+                assettex = TextureAssetLocator.GetObjTexture(modelid);
                 break;
             case ModelEditorModelType.Parts:
-                asset = AssetLocator.GetPartsModel(modelid);
-                assettex = AssetLocator.GetPartTextures(modelid);
+                asset = ModelAssetLocator.GetPartsModel(modelid);
+                assettex = TextureAssetLocator.GetPartTextures(modelid);
                 break;
             case ModelEditorModelType.MapPiece:
-                asset = AssetLocator.GetMapModel(mapid, modelid);
-                assettex = AssetLocator.GetNullAsset();
+                asset = ModelAssetLocator.GetMapModel(mapid, modelid);
+                assettex = ModelAssetLocator.GetNullAsset();
                 break;
             default:
                 //Uh oh
-                asset = AssetLocator.GetNullAsset();
-                assettex = AssetLocator.GetNullAsset();
+                asset = ModelAssetLocator.GetNullAsset();
+                assettex = ModelAssetLocator.GetNullAsset();
                 break;
         }
 

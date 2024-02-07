@@ -5,7 +5,7 @@ using StudioCore.Help;
 using StudioCore.Interface;
 using StudioCore.JSON;
 using StudioCore.Platform;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -55,7 +55,7 @@ public class FlagBrowser
         if (!MenuOpenState)
             return;
 
-        if (UserProject.Type == ProjectType.Undefined)
+        if (Project.Type == ProjectType.Undefined)
             return;
 
         if (_aliasBank.IsLoadingAliases)

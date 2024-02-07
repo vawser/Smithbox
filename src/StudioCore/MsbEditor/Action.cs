@@ -4,7 +4,7 @@ using Org.BouncyCastle.Utilities;
 using Silk.NET.SDL;
 using SoulsFormats;
 using SoulsFormats.Util;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -529,15 +529,15 @@ public class CloneMapObjectsAction : Action
 
     public void ChangeEntityID(MapEntity sel, Map map)
     {
-        if (UserProject.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S)
             return;
 
-        if (UserProject.Type == ProjectType.AC6)
+        if (Project.Type == ProjectType.AC6)
             return;
 
         if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
         {
-            if(UserProject.Type == ProjectType.ER)
+            if(Project.Type == ProjectType.ER)
             {
                 uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
@@ -568,16 +568,16 @@ public class CloneMapObjectsAction : Action
                 uint minId = 0;
                 uint maxId = 9999;
 
-                if (UserProject.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.ER)
                 {
-                    minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
-                    maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
+                    minId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
+                    maxId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
 
                     // Is open-world tile
                     if (mapIdParts[0] == "60")
                     {
-                        minId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
-                        maxId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
+                        minId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
+                        maxId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
                     }
                 }
                 // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
@@ -587,7 +587,7 @@ public class CloneMapObjectsAction : Action
                     maxId = 9999;
                 }
 
-                HashSet<uint> baseVals = new HashSet<uint>();
+                var baseVals = new HashSet<uint>();
                 for (uint i = minId; i < maxId; i++)
                 {
                     baseVals.Add(i);
@@ -653,10 +653,10 @@ public class CloneMapObjectsAction : Action
                 // Get the first non-zero digit from mapIdParts[1]
                 var part = mapIdParts[1][1];
 
-                minId = Int32.Parse($"{mapIdParts[0]}{part}0000");
-                maxId = Int32.Parse($"{mapIdParts[0]}{part}9999");
+                minId = int.Parse($"{mapIdParts[0]}{part}0000");
+                maxId = int.Parse($"{mapIdParts[0]}{part}9999");
 
-                HashSet<int> baseVals = new HashSet<int>();
+                var baseVals = new HashSet<int>();
                 for (int i = minId; i < maxId; i++)
                 {
                     baseVals.Add(i);
@@ -678,7 +678,7 @@ public class CloneMapObjectsAction : Action
                             hasMatch = true;
 
                             // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                            if (UserProject.Type == ProjectType.DS1 || UserProject.Type == ProjectType.DS1R)
+                            if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                             {
                                 if (newID < 10000)
                                 {
@@ -706,12 +706,12 @@ public class CloneMapObjectsAction : Action
 
     public void ChangePartNames(MapEntity sel, Map map)
     {
-        if (UserProject.Type != ProjectType.ER)
+        if (Project.Type != ProjectType.ER)
             return;
 
         if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
         {
-            if (UserProject.Type == ProjectType.ER)
+            if (Project.Type == ProjectType.ER)
             {
                 if (sel.WrappedObject is MSBE.Part.Asset)
                 {
@@ -1750,12 +1750,12 @@ public class ReplicateMapObjectsAction : Action
 
     public void ChangePartNames(MapEntity sel, Map map)
     {
-        if (UserProject.Type != ProjectType.ER)
+        if (Project.Type != ProjectType.ER)
             return;
 
         if (CFG.Current.Replicator_Increment_UnkPartNames)
         {
-            if (UserProject.Type == ProjectType.ER)
+            if (Project.Type == ProjectType.ER)
             {
                 if (sel.WrappedObject is MSBE.Part.Asset)
                 {
@@ -1790,15 +1790,15 @@ public class ReplicateMapObjectsAction : Action
 
     public void ChangeEntityID(MapEntity sel, Map map)
     {
-        if (UserProject.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S)
             return;
 
-        if (UserProject.Type == ProjectType.AC6)
+        if (Project.Type == ProjectType.AC6)
             return;
 
         if (CFG.Current.Replicator_Increment_Entity_ID)
         {
-            if (UserProject.Type == ProjectType.ER)
+            if (Project.Type == ProjectType.ER)
             {
                 uint originalID = (uint)sel.GetPropertyValue("EntityID");
                 sel.SetPropertyValue("EntityID", (uint)0);
@@ -1830,16 +1830,16 @@ public class ReplicateMapObjectsAction : Action
                 uint minId = 0;
                 uint maxId = 9999;
 
-                if (UserProject.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.ER)
                 {
-                    minId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
-                    maxId = UInt32.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
+                    minId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
+                    maxId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
 
                     // Is open-world tile
                     if (mapIdParts[0] == "60")
                     {
-                        minId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
-                        maxId = UInt32.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
+                        minId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
+                        maxId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
                     }
                 }
                 // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
@@ -1849,7 +1849,7 @@ public class ReplicateMapObjectsAction : Action
                     maxId = 9999;
                 }
 
-                HashSet<uint> baseVals = new HashSet<uint>();
+                var baseVals = new HashSet<uint>();
                 for (uint i = minId; i < maxId; i++)
                 {
                     baseVals.Add(i);
@@ -1916,10 +1916,10 @@ public class ReplicateMapObjectsAction : Action
                 // Get the first non-zero digit from mapIdParts[1]
                 var part = mapIdParts[1][1];
 
-                minId = Int32.Parse($"{mapIdParts[0]}{part}0000");
-                maxId = Int32.Parse($"{mapIdParts[0]}{part}9999");
+                minId = int.Parse($"{mapIdParts[0]}{part}0000");
+                maxId = int.Parse($"{mapIdParts[0]}{part}9999");
 
-                HashSet<int> baseVals = new HashSet<int>();
+                var baseVals = new HashSet<int>();
                 for (int i = minId; i < maxId; i++)
                 {
                     baseVals.Add(i);
@@ -1941,7 +1941,7 @@ public class ReplicateMapObjectsAction : Action
                             hasMatch = true;
                             
                             // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                            if(UserProject.Type == ProjectType.DS1 || UserProject.Type == ProjectType.DS1R)
+                            if(Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                             {
                                 if(newID < 10000)
                                 {
@@ -2102,7 +2102,7 @@ public class ReplicateMapObjectsAction : Action
         newTransform.Rotation = newRot;
         newTransform.Scale = newScale;
 
-        if(UserProject.Type == ProjectType.DS2S)
+        if(Project.Type == ProjectType.DS2S)
         {
             if (sel.Type == MapEntity.MapEntityType.DS2Generator &&
                 sel.WrappedObject is MergedParamRow mp)
@@ -2128,7 +2128,7 @@ public class ReplicateMapObjectsAction : Action
         {
             Transform scrambledTransform = Toolbar.GetScrambledTransform(newobj);
 
-            if (UserProject.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S)
             {
                 if(newobj.Type == MapEntity.MapEntityType.DS2Generator &&
                 newobj.WrappedObject is MergedParamRow mp)

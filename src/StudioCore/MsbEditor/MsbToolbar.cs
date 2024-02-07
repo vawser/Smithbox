@@ -26,7 +26,7 @@ using Org.BouncyCastle.Ocsp;
 using SoulsFormats.KF4;
 using System.Reflection;
 using StudioCore.Data.Aliases;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 
 namespace StudioCore.MsbEditor
 {
@@ -108,7 +108,7 @@ namespace StudioCore.MsbEditor
             }
             FrameCount++;
 
-            if (UserProject.Type == ProjectType.Undefined)
+            if (Project.Type == ProjectType.Undefined)
                 return;
 
             _loadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
@@ -345,7 +345,7 @@ namespace StudioCore.MsbEditor
                 // Patrol Routes
                 if (CFG.Current.Toolbar_Show_Render_Patrol_Routes)
                 {
-                    if (UserProject.Type is not ProjectType.DS2S)
+                    if (Project.Type is not ProjectType.DS2S)
                     {
                         if (ImGui.Selectable("Patrol Routes##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
                         {
@@ -362,7 +362,7 @@ namespace StudioCore.MsbEditor
                 // Generate Navigation Data
                 if (CFG.Current.Toolbar_Show_Navigation_Data)
                 {
-                    if (UserProject.Type is ProjectType.DES || UserProject.Type is ProjectType.DS1 || UserProject.Type is ProjectType.DS1R)
+                    if (Project.Type is ProjectType.DES || Project.Type is ProjectType.DS1 || Project.Type is ProjectType.DS1R)
                     {
                         if (ImGui.Selectable("Navigation Data##tool_Selection_Generate_Navigation_Data", false, ImGuiSelectableFlags.AllowDoubleClick))
                         {
@@ -689,19 +689,19 @@ namespace StudioCore.MsbEditor
                     ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Core_Duplicate.HintText)}");
                     ImGui.Separator();
 
-                    if (UserProject.Type != ProjectType.DS2S && UserProject.Type != ProjectType.AC6)
+                    if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.AC6)
                     {
                         ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Entity ID.");
                     }
 
-                    if (UserProject.Type == ProjectType.ER)
+                    if (Project.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Instance ID.");
                     }
 
-                    if (UserProject.Type == ProjectType.ER)
+                    if (Project.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
@@ -841,7 +841,7 @@ namespace StudioCore.MsbEditor
                     else
                         ImguiUtils.ShowHelpMarker("Enable the current selection, allow them to be loaded in-game.");
 
-                    if (UserProject.Type == ProjectType.ER)
+                    if (Project.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Use Game Edition Disable", ref CFG.Current.Toolbar_Presence_Dummy_Type_ER);
                         ImguiUtils.ShowHelpMarker("Use the GameEditionDisable property to disable entities instead of the Dummy entity system.");
@@ -1312,19 +1312,19 @@ namespace StudioCore.MsbEditor
                     ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
                     ImguiUtils.ShowHelpMarker("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
 
-                    if (UserProject.Type != ProjectType.DS2S && UserProject.Type != ProjectType.AC6)
+                    if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.AC6)
                     {
                         ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID);
                         ImguiUtils.ShowHelpMarker("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
                     }
 
-                    if (UserProject.Type == ProjectType.ER)
+                    if (Project.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated entities will be given a new valid Instance ID.");
                     }
 
-                    if (UserProject.Type == ProjectType.ER)
+                    if (Project.Type == ProjectType.ER)
                     {
                         ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Replicator_Increment_UnkPartNames);
                         ImguiUtils.ShowHelpMarker("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
@@ -1441,7 +1441,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void RenderPatrolRoutes()
         {
-            if (UserProject.Type is not ProjectType.DS2S)
+            if (Project.Type is not ProjectType.DS2S)
             {
                 PatrolDrawManager.Generate(_universe);
             }
@@ -1761,7 +1761,7 @@ namespace StudioCore.MsbEditor
             List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
             foreach (MapEntity s in sourceList)
             {
-                if (UserProject.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.ER)
                 {
                     s.SetPropertyValue("GameEditionDisable", 1);
                 }
@@ -1773,7 +1773,7 @@ namespace StudioCore.MsbEditor
             List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
             foreach (MapEntity s in sourceList)
             {
-                if (UserProject.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.ER)
                 {
                     s.SetPropertyValue("GameEditionDisable", 0);
                 }
@@ -1797,7 +1797,7 @@ namespace StudioCore.MsbEditor
         private void DummyUndummySelection(string[] sourceTypes, string[] targetTypes)
         {
             Type msbclass;
-            switch (UserProject.Type)
+            switch (Project.Type)
             {
                 case ProjectType.DES:
                     msbclass = typeof(MSBD);
@@ -1975,7 +1975,7 @@ namespace StudioCore.MsbEditor
             {
                 string mapid = map.Key;
 
-                if (UserProject.Type is ProjectType.DES)
+                if (Project.Type is ProjectType.DES)
                 {
                     if (mapid != "m03_01_00_99" && !mapid.StartsWith("m99"))
                     {
@@ -1984,25 +1984,25 @@ namespace StudioCore.MsbEditor
                             continue;
                         idCache.Add(areaId);
 
-                        List<string> areaDirectories = new List<string>();
+                        var areaDirectories = new List<string>();
                         foreach (var orderMap in orderedMaps)
                         {
                             if (orderMap.Key.StartsWith(areaId) && orderMap.Key != "m03_01_00_99")
                             {
-                                areaDirectories.Add(Path.Combine(UserProject.GameRootDirectory, "map", orderMap.Key));
+                                areaDirectories.Add(Path.Combine(Project.GameRootDirectory, "map", orderMap.Key));
                             }
                         }
                         SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
                     }
                     else
                     {
-                        List<string> areaDirectories = new List<string>{ Path.Combine(UserProject.GameRootDirectory, "map", mapid) };
+                        var areaDirectories = new List<string> { Path.Combine(Project.GameRootDirectory, "map", mapid) };
                         SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
                     }
                 }
-                else if (UserProject.Type is ProjectType.DS1 or ProjectType.DS1R)
+                else if (Project.Type is ProjectType.DS1 or ProjectType.DS1R)
                 {
-                    List<string> areaDirectories = new List<string> { Path.Combine(UserProject.GameRootDirectory, "map", mapid) };
+                    var areaDirectories = new List<string> { Path.Combine(Project.GameRootDirectory, "map", mapid) };
 
                     SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: false);
                 }
@@ -2096,7 +2096,7 @@ namespace StudioCore.MsbEditor
         public void PopulateClassNames()
         {
             Type msbclass;
-            switch (UserProject.Type)
+            switch (Project.Type)
             {
                 case ProjectType.DES:
                     msbclass = typeof(MSBD);

@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Settings;
 using System;

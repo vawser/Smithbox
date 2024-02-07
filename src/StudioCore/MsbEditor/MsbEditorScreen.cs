@@ -7,8 +7,9 @@ using StudioCore.Data.Aliases;
 using StudioCore.Data.InfoBank;
 using StudioCore.Editor;
 using StudioCore.Gui;
+using StudioCore.AssetLocator;
 using StudioCore.Platform;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Settings;
@@ -801,7 +802,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Save()
     {
-        if (UserProject.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
+        if (Project.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
         {
             TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }
@@ -820,7 +821,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void SaveAll()
     {
-        if (UserProject.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
+        if (Project.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
         {
             TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }
@@ -936,7 +937,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         GC.Collect();
         Universe.PopulateMapList();
 
-        if (UserProject.Type != ProjectType.Undefined)
+        if (Project.Type != ProjectType.Undefined)
         {
             Toolbar.PopulateClassNames();
         }

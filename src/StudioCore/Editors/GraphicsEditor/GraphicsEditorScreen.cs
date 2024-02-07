@@ -2,7 +2,7 @@
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Linq;
@@ -67,9 +67,9 @@ public class GraphicsEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GraphicsEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (UserProject.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S)
+        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S)
         {
-            ImGui.Text($"This editor does not support {UserProject.Type}.");
+            ImGui.Text($"This editor does not support {Project.Type}.");
         }
         else if (_projectSettings == null)
         {
@@ -208,7 +208,7 @@ public class GraphicsEditorScreen : EditorScreen
     {
         GPARAM.IField field = _selectedParam;
 
-        if (UserProject.Type == ProjectType.SDT)
+        if (Project.Type == ProjectType.SDT)
         {
             ImGui.Columns(3);
         }
@@ -235,7 +235,7 @@ public class GraphicsEditorScreen : EditorScreen
         ImGui.EndChild();
 
         // Unk04 (Sekiro)
-        if (UserProject.Type == ProjectType.SDT)
+        if (Project.Type == ProjectType.SDT)
         {
             ImGui.Text($"Floats");
             ImGui.Separator();

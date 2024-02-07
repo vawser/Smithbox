@@ -1,7 +1,8 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.ProjectCore;
+using StudioCore.AssetLocator;
+using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Tasks;
 using System;
@@ -124,7 +125,7 @@ public static class ResourceManager
                 {
                     Memory<byte> f = action.Binder.ReadFile(p.Item3);
                     p.Item1.LoadByteResourceBlock.Post(new LoadByteResourceRequest(p.Item2, f, action.AccessLevel,
-                        UserProject.Type));
+                        Project.Type));
                     action._job.IncrementEstimateTaskSize(1);
                     i++;
                 }
@@ -135,7 +136,7 @@ public static class ResourceManager
                     {
                         TPF f = TPF.Read(action.Binder.ReadFile(t.Item2));
                         action._job.AddLoadTPFResources(new LoadTPFResourcesAction(action._job, t.Item1, f,
-                            action.AccessLevel, UserProject.Type));
+                            action.AccessLevel, Project.Type));
                     }
                     catch (Exception e)
                     {
@@ -540,8 +541,8 @@ public static class ResourceManager
             if (Binder == null)
             {
                 string o;
-                var path = AssetLocator.VirtualToRealPath(BinderVirtualPath, out o);
-                Binder = InstantiateBinderReaderForFile(path, UserProject.Type);
+                var path = LocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
+                Binder = InstantiateBinderReaderForFile(path, Project.Type);
                 if (Binder == null)
                 {
                     return;
@@ -557,7 +558,7 @@ public static class ResourceManager
                 }
 
                 var binderpath = f.Name;
-                var filevirtpath = AssetLocator.GetBinderVirtualPath(BinderVirtualPath, binderpath);
+                var filevirtpath = LocatorUtils.GetBinderVirtualPath(BinderVirtualPath, binderpath);
                 if (AssetWhitelist != null && !AssetWhitelist.Contains(filevirtpath))
                 {
                     continue;
@@ -811,7 +812,7 @@ public static class ResourceManager
             InFlightFiles.Add(virtualPath);
 
             string bndout;
-            var path = AssetLocator.VirtualToRealPath(virtualPath, out bndout);
+            var path = LocatorUtils.VirtualToRealPath(virtualPath, out bndout);
 
             IResourceLoadPipeline pipeline;
             if (path == null || virtualPath == "null")
@@ -839,7 +840,7 @@ public static class ResourceManager
                     }
                 }
 
-                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, path, al, UserProject.Type));
+                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, path, al, Project.Type));
                 return;
             }
             else
@@ -847,7 +848,7 @@ public static class ResourceManager
                 pipeline = _job.FlverLoadPipeline;
             }
 
-            pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, path, al, UserProject.Type));
+            pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, path, al, Project.Type));
         }
 
         /// <summary>
@@ -863,14 +864,14 @@ public static class ResourceManager
                     string path = null;
                     if (texpath.StartsWith("map/tex"))
                     {
-                        path = $@"{UserProject.GameRootDirectory}\map\tx\{Path.GetFileName(texpath)}.tpf";
+                        path = $@"{Project.GameRootDirectory}\map\tx\{Path.GetFileName(texpath)}.tpf";
                     }
 
                     if (path != null && File.Exists(path))
                     {
                         _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
                             Path.GetDirectoryName(r.Key).Replace('\\', '/'),
-                            path, AccessLevel.AccessGPUOptimizedOnly, UserProject.Type));
+                            path, AccessLevel.AccessGPUOptimizedOnly, Project.Type));
                     }
                 }
             }
@@ -900,7 +901,7 @@ public static class ResourceManager
                             continue;
                         }
 
-                        path = AssetLocator.GetAetTexture(fullaetid).AssetPath;
+                        path = TextureAssetLocator.GetAetTexture(fullaetid).AssetPath;
 
                         assetTpfs.Add(fullaetid);
                     }
@@ -909,7 +910,7 @@ public static class ResourceManager
                     {
                         _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
                             Path.GetDirectoryName(r.Key).Replace('\\', '/'), path,
-                            AccessLevel.AccessGPUOptimizedOnly, UserProject.Type));
+                            AccessLevel.AccessGPUOptimizedOnly, Project.Type));
                     }
                 }
             }

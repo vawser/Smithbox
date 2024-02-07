@@ -1,4 +1,4 @@
-﻿namespace StudioCore.ProjectCore;
+﻿namespace StudioCore.UserProject;
 
 public enum ProjectType
 {

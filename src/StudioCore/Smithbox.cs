@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
-using Octokit;
 using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
@@ -26,7 +25,7 @@ using StudioCore.TalkEditor;
 using StudioCore.Tests;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -41,6 +40,7 @@ using Veldrid.Sdl2;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
+using StudioCore.AssetLocator;
 
 namespace StudioCore;
 
@@ -317,8 +317,8 @@ public class Smithbox
 
     private void CheckProgramUpdate()
     {
-        GitHubClient gitHubClient = new(new ProductHeaderValue("Smithbox"));
-        Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
+        Octokit.GitHubClient gitHubClient = new(new Octokit.ProductHeaderValue("Smithbox"));
+        Octokit.Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
         var isVer = false;
         var verstring = "";
         foreach (var c in release.TagName)
@@ -456,8 +456,12 @@ public class Smithbox
     private void ChangeProjectSettings(ProjectSettings newsettings, string moddir, NewProjectOptions options)
     {
         _projectSettings = newsettings;
-        UserProject.SetFromProjectSettings(newsettings, moddir);
-        AssetLocator.FullMapList = null;
+
+        Project.Type = newsettings.GameType;
+        Project.GameRootDirectory = newsettings.GameRoot;
+        Project.GameModDirectory = moddir;
+        MapAssetLocator.FullMapList = null;
+
         _settingsMenu.ProjSettings = _projectSettings;
 
         aliasBank_Models.ReloadAliasBank();
@@ -587,7 +591,7 @@ public class Smithbox
                         out var path))
                 {
                     settings.GameRoot = path;
-                    ProjectType gametype = UserProject.GetGameTypeForExePath(settings.GameRoot);
+                    ProjectType gametype = Project.GetProjectTypeFromExecutable(settings.GameRoot);
                     if (gametype == settings.GameType)
                     {
                         success = true;
@@ -615,7 +619,7 @@ public class Smithbox
 
         if (success)
         {
-            if (!AssetLocator.CheckFilesExpanded(settings.GameRoot, settings.GameType))
+            if (!LocatorUtils.CheckFilesExpanded(settings.GameRoot, settings.GameType))
             {
                 if (!GameNotUnpackedWarning(settings.GameType))
                 {
@@ -710,12 +714,12 @@ public class Smithbox
             }
         }
 
-        var success = UserProject.CreateRecoveryProject();
+        var success = Project.CreateRecoveryProject();
         if (success)
         {
             SaveAll();
             PlatformUtils.Instance.MessageBox(
-                $"Attempted to save project files to {UserProject.GameModDirectory} for manual recovery.\n" +
+                $"Attempted to save project files to {Project.GameModDirectory} for manual recovery.\n" +
                 "You must manually replace your project files with these recovery files should you wish to restore them.\n" +
                 "Given the program has crashed, these files may be corrupt and you should backup your last good saved\n" +
                 "files before attempting to use these.",
@@ -918,13 +922,13 @@ public class Smithbox
                 {
                     if (ImGui.MenuItem("Open Project Folder", "", false, !TaskManager.AnyActiveTasks()))
                     {
-                        var projectPath = UserProject.GameModDirectory;
+                        var projectPath = Project.GameModDirectory;
                         Process.Start("explorer.exe", projectPath);
                     }
 
                     if (ImGui.MenuItem("Open Game Folder", "", false, !TaskManager.AnyActiveTasks()))
                     {
-                        var gamePath = UserProject.GameRootDirectory;
+                        var gamePath = Project.GameRootDirectory;
                         Process.Start("explorer.exe", gamePath);
                     }
 
@@ -1161,7 +1165,7 @@ public class Smithbox
                         _newProjectOptions.settings.GameRoot = gname;
                     }
 
-                    _newProjectOptions.settings.GameType = UserProject.GetGameTypeForExePath(gname);
+                    _newProjectOptions.settings.GameType = Project.GetProjectTypeFromExecutable(gname);
 
                     if (_newProjectOptions.settings.GameType == ProjectType.BB)
                     {
@@ -1178,7 +1182,7 @@ public class Smithbox
                             out var path))
                     {
                         _newProjectOptions.settings.GameRoot = Path.GetDirectoryName(path);
-                        _newProjectOptions.settings.GameType = UserProject.GetGameTypeForExePath(path);
+                        _newProjectOptions.settings.GameType = Project.GetProjectTypeFromExecutable(path);
 
                         if (_newProjectOptions.settings.GameType == ProjectType.BB)
                         {
@@ -1349,7 +1353,7 @@ public class Smithbox
                 }
 
                 var gameroot = _newProjectOptions.settings.GameRoot;
-                if (!AssetLocator.CheckFilesExpanded(gameroot, _newProjectOptions.settings.GameType))
+                if (!LocatorUtils.CheckFilesExpanded(gameroot, _newProjectOptions.settings.GameType))
                 {
                     if (!GameNotUnpackedWarning(_newProjectOptions.settings.GameType))
                     {

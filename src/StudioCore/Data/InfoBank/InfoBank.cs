@@ -5,7 +5,7 @@ using System.IO;
 using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using System.Text;
-using StudioCore.ProjectCore;
+using StudioCore.UserProject;
 
 namespace StudioCore.Data.InfoBank;
 
@@ -67,11 +67,11 @@ public class InfoBank
             _loadedInfoBank = new InfoContainer();
             IsLoadingInfoBank = true;
 
-            if (UserProject.Type != ProjectType.Undefined)
+            if (Project.Type != ProjectType.Undefined)
             {
                 try
                 {
-                    _loadedInfoBank = new InfoContainer(formatType, AssetLocator.GetGameIDForDir(), UserProject.GameModDirectory);
+                    _loadedInfoBank = new InfoContainer(formatType, Project.GetGameIDForDir(), Project.GameModDirectory);
                 }
                 catch (Exception e)
                 {
@@ -106,7 +106,7 @@ public class InfoBank
 
     public void WriteTargetInfoBank(InfoResource targetBank, string formatType)
     {
-        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{FormatInfoDirectory}\\{Project.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{formatType}.json";
 
@@ -137,7 +137,7 @@ public class InfoBank
     public void AddToLocalInfoBank(string assetType, string refID, string refName, string refDesc)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{TemplateName}";
-        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{FormatInfoDirectory}\\{Project.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{assetType}.json";
 
@@ -184,7 +184,7 @@ public class InfoBank
     /// </summary>
     public void RemoveFromLocalAliasBank(string formatType, string refID)
     {
-        var modResourcePath = UserProject.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{FormatInfoDirectory}\\{AssetLocator.GetGameIDForDir()}\\";
+        var modResourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{FormatInfoDirectory}\\{Project.GetGameIDForDir()}\\";
 
         var resourceFilePath = $"{modResourcePath}\\{formatType}.json";
 
