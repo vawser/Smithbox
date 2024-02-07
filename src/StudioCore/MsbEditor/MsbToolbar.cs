@@ -6,7 +6,6 @@ using System.Text.Json;
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using Microsoft.Toolkit.HighPerformance;
-using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Gui;
@@ -27,6 +26,7 @@ using StudioCore.Interface;
 using Org.BouncyCastle.Ocsp;
 using SoulsFormats.KF4;
 using System.Reflection;
+using StudioCore.Data.Aliases;
 
 namespace StudioCore.MsbEditor
 {

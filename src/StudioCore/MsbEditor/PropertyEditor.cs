@@ -2,9 +2,9 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Aliases;
+using StudioCore.Data.Aliases;
+using StudioCore.Data.InfoBank;
 using StudioCore.Editor;
-using StudioCore.FormatInfo;
 using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.ParamEditor;

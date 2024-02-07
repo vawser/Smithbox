@@ -1,8 +1,8 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Aliases;
 using StudioCore.Configuration;
+using StudioCore.Data.Aliases;
 using StudioCore.Gui;
 using StudioCore.ParamEditor;
 using StudioCore.Platform;

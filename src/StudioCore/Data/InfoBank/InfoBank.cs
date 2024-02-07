@@ -8,14 +8,17 @@ using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using System.Text;
 
-namespace StudioCore.FormatInfo;
+namespace StudioCore.Data.InfoBank;
 
 public enum FormatType
 {
     None,
     MSB
 }
-
+/// <summary>
+/// An info bank holds information for annotating formats, such as MSB.
+/// An info bank has 1 source: Smithbox.
+/// </summary>
 public class InfoBank
 {
     private AssetLocator AssetLocator;
@@ -82,9 +85,7 @@ public class InfoBank
                 IsLoadingInfoBank = false;
             }
             else
-            {
                 IsLoadingInfoBank = false;
-            }
         }));
     }
 
@@ -101,9 +102,7 @@ public class InfoBank
             };
 
             using (var stream = File.OpenRead(path))
-            {
                 newResource = JsonSerializer.Deserialize<InfoResource>(stream, options);
-            }
         }
 
         return newResource;
@@ -122,12 +121,12 @@ public class InfoBank
                 TypeInfoResolver = new DefaultJsonTypeInfoResolver()
             };
 
-            string jsonString = JsonSerializer.Serialize<InfoResource>(targetBank, options);
+            var jsonString = JsonSerializer.Serialize(targetBank, options);
 
             try
             {
-                FileStream fs = new FileStream(resourceFilePath, FileMode.Create);
-                byte[] data = Encoding.ASCII.GetBytes(jsonString);
+                var fs = new FileStream(resourceFilePath, FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(jsonString);
                 fs.Write(data, 0, data.Length);
                 fs.Flush();
                 fs.Dispose();
@@ -148,24 +147,19 @@ public class InfoBank
 
         // Create directory/file if they don't exist
         if (!Directory.Exists(modResourcePath))
-        {
             Directory.CreateDirectory(modResourcePath);
-        }
         if (!File.Exists(resourceFilePath))
-        {
             File.Copy(templateResource, resourceFilePath);
-        }
 
         if (File.Exists(resourceFilePath))
         {
             // Load up the target local bank.
             var targetResource = LoadTargetInfoBank(resourceFilePath);
 
-            bool doesExist = false;
+            var doesExist = false;
 
             // If it exists within the mod local file, update the contents
             foreach (var entry in targetResource.list)
-            {
                 if (entry.id == refID)
                 {
                     doesExist = true;
@@ -173,12 +167,11 @@ public class InfoBank
                     entry.name = refName;
                     entry.desc = refDesc;
                 }
-            }
 
             // If it doesn't exist in the mod local file, add it in
             if (!doesExist)
             {
-                InfoReference entry = new InfoReference();
+                var entry = new InfoReference();
                 entry.id = refID;
                 entry.name = refName;
                 entry.desc = refDesc;
@@ -205,7 +198,7 @@ public class InfoBank
             var targetResource = LoadTargetInfoBank(resourceFilePath);
 
             // Remove the specified reference from the local model alias bank.
-            for (int i = 0; i <= targetResource.list.Count - 1; i++)
+            for (var i = 0; i <= targetResource.list.Count - 1; i++)
             {
                 var entry = targetResource.list[i];
                 if (entry.id == refID)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.FormatInfo;
+namespace StudioCore.Data.InfoBank;
 
 public class InfoReference
 {

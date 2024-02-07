@@ -1,5 +1,5 @@
 ﻿using ImGuiNET;
-using StudioCore.Aliases;
+using StudioCore.Data.Aliases;
 using StudioCore.Help;
 using StudioCore.Interface;
 using StudioCore.JSON;

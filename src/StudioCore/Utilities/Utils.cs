@@ -3,7 +3,6 @@
 using ImGuiNET;
 using Microsoft.Win32;
 using SoulsFormats;
-using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.MsbEditor;
 using StudioCore.Settings;
@@ -14,7 +13,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Reflection;
 using System.Text;
 using Veldrid;
 using Veldrid.Utilities;

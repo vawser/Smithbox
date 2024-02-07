@@ -1,11 +1,11 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Aliases;
 using StudioCore.Browsers;
 using StudioCore.Configuration;
+using StudioCore.Data.Aliases;
+using StudioCore.Data.InfoBank;
 using StudioCore.Editor;
-using StudioCore.FormatInfo;
 using StudioCore.Gui;
 using StudioCore.Platform;
 using StudioCore.Resource;

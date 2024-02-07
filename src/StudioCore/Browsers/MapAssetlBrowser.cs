@@ -6,7 +6,6 @@ using System.Text.Json;
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using Microsoft.Toolkit.HighPerformance;
-using StudioCore.Aliases;
 using StudioCore.Configuration;
 using StudioCore.Gui;
 using StudioCore.ParamEditor;
@@ -23,6 +22,7 @@ using StudioCore.Platform;
 using StudioCore.MsbEditor;
 using Action = StudioCore.MsbEditor.Action;
 using StudioCore.Interface;
+using StudioCore.Data.Aliases;
 
 namespace StudioCore.Browsers;
 

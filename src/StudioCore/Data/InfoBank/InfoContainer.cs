@@ -1,17 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
-using StudioCore.Aliases;
-using StudioCore.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization.Metadata;
-using System.Threading.Tasks;
 
-namespace StudioCore.FormatInfo;
+namespace StudioCore.Data.InfoBank;
 
 public class InfoContainer
 {
@@ -59,9 +52,7 @@ public class InfoContainer
             };
 
             using (var stream = File.OpenRead(baseResourcePath))
-            {
                 baseResource = JsonSerializer.Deserialize<InfoResource>(File.OpenRead(baseResourcePath), options);
-            }
         }
 
         var modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\FormatInfo\\{GetFormatTypeDir()}\\{gametype}\\{filename}.json";
@@ -76,9 +67,7 @@ public class InfoContainer
             };
 
             using (var stream = File.OpenRead(modResourcePath))
-            {
                 modResource = JsonSerializer.Deserialize<InfoResource>(File.OpenRead(modResourcePath), options);
-            }
 
             // Replace baseResource entries with those from modResource if there are ID matches
             foreach (var bEntry in baseResource.list)
@@ -108,7 +97,7 @@ public class InfoContainer
             {
                 var modId = mEntry.id;
 
-                bool isUnique = true;
+                var isUnique = true;
 
                 foreach (var bEntry in baseResource.list)
                 {
@@ -116,15 +105,11 @@ public class InfoContainer
 
                     // Mod override exists
                     if (baseId == modId)
-                    {
                         isUnique = false;
-                    }
                 }
 
                 if (isUnique)
-                {
                     baseResource.list.Add(mEntry);
-                }
             }
         }
 
@@ -133,7 +118,7 @@ public class InfoContainer
 
     private string GetFormatTypeDir()
     {
-        string typDir = "";
+        var typDir = "";
 
         if (formatType is FormatType.MSB)
             typDir = "MSB";

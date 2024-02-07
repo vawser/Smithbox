@@ -6,7 +6,7 @@ using System.Text;
 using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using SoulsFormats.KF4;
-using StudioCore.Aliases;
+using StudioCore.Data.Aliases;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Settings;

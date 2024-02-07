@@ -1,9 +1,9 @@
 ﻿using ImGuiNET;
 using SoapstoneLib;
-using StudioCore.Aliases;
 using StudioCore.AnimationEditor;
 using StudioCore.Configuration;
 using StudioCore.CutsceneEditor;
+using StudioCore.Data.Aliases;
 using StudioCore.Editor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;

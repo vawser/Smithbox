@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Pqc.Crypto.Lms;
-using StudioCore.Aliases;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization.Metadata;
 using System.Threading.Tasks;
 
-namespace StudioCore.Aliases;
+namespace StudioCore.Data.Aliases;
 
 public class AliasContainer
 {
@@ -43,19 +42,13 @@ public class AliasContainer
         }
 
         if (aliasType is AliasType.EventFlag)
-        {
             aliasMap.Add("Flags", LoadJSON("EventFlag"));
-        }
 
         if (aliasType is AliasType.Particle)
-        {
             aliasMap.Add("Particles", LoadJSON("Fxr"));
-        }
 
         if (aliasType is AliasType.Map)
-        {
             aliasMap.Add("Maps", LoadJSON("Maps"));
-        }
     }
 
     private AliasResource LoadJSON(string filename)
@@ -77,9 +70,7 @@ public class AliasContainer
             };
 
             using (var stream = File.OpenRead(baseResourcePath))
-            {
                 baseResource = JsonSerializer.Deserialize<AliasResource>(File.OpenRead(baseResourcePath), options);
-            }
         }
 
         var modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\Aliases\\{GetAliasTypeDir()}\\{gametype}\\{filename}.json";
@@ -94,9 +85,7 @@ public class AliasContainer
             };
 
             using (var stream = File.OpenRead(modResourcePath))
-            {
                 modResource = JsonSerializer.Deserialize<AliasResource>(File.OpenRead(modResourcePath), options);
-            }
 
             // Replace baseResource entries with those from modResource if there are ID matches
             foreach (var bEntry in baseResource.list)
@@ -126,7 +115,7 @@ public class AliasContainer
             {
                 var modId = mEntry.id;
 
-                bool isUnique = true;
+                var isUnique = true;
 
                 foreach (var bEntry in baseResource.list)
                 {
@@ -134,15 +123,11 @@ public class AliasContainer
 
                     // Mod override exists
                     if (baseId == modId)
-                    {
                         isUnique = false;
-                    }
                 }
 
                 if (isUnique)
-                {
                     baseResource.list.Add(mEntry);
-                }
             }
         }
 
@@ -151,7 +136,7 @@ public class AliasContainer
 
     private string GetAliasTypeDir()
     {
-        string typDir = "";
+        var typDir = "";
 
         if (aliasType is AliasType.Model)
             typDir = "Models";

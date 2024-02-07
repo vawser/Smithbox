@@ -8,7 +8,7 @@ using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using System.Text;
 
-namespace StudioCore.Aliases;
+namespace StudioCore.Data.Aliases;
 
 public enum AliasType
 {
@@ -19,6 +19,11 @@ public enum AliasType
     Map
 }
 
+/// <summary>
+/// An alias bank holds naming information, allowing for user-readable notes to be appended to raw identifiers (e.g. c0000 becomes c0000 <Player>)
+/// An alias bank has 2 sources: Smithbox, and the local project. 
+/// Entries in the local project version will supercede the Smithbox entries.
+/// </summary>
 public class AliasBank
 {
     private AssetLocator AssetLocator;
@@ -117,9 +122,7 @@ public class AliasBank
                 IsLoadingAliases = false;
             }
             else
-            {
                 IsLoadingAliases = false;
-            }
 
             UpdateMapNames();
         }));
@@ -138,9 +141,7 @@ public class AliasBank
             };
 
             using (var stream = File.OpenRead(path))
-            {
                 newResource = JsonSerializer.Deserialize<AliasResource>(stream, options);
-            }
         }
 
         return newResource;
@@ -154,7 +155,7 @@ public class AliasBank
 
         if (IsAssetFileType)
             resourceFilePath = $"{modResourcePath}\\{assetType}.json";
-            
+
 
         if (File.Exists(resourceFilePath))
         {
@@ -163,12 +164,12 @@ public class AliasBank
                 TypeInfoResolver = new DefaultJsonTypeInfoResolver()
             };
 
-            string jsonString = JsonSerializer.Serialize<AliasResource>(targetBank, options);
+            var jsonString = JsonSerializer.Serialize(targetBank, options);
 
             try
             {
-                FileStream fs = new FileStream(resourceFilePath, FileMode.Create);
-                byte[] data = Encoding.ASCII.GetBytes(jsonString);
+                var fs = new FileStream(resourceFilePath, FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(jsonString);
                 fs.Write(data, 0, data.Length);
                 fs.Flush();
                 fs.Dispose();
@@ -189,28 +190,23 @@ public class AliasBank
 
         if (IsAssetFileType)
             resourceFilePath = $"{modResourcePath}\\{assetType}.json";
-        
+
 
         // Create directory/file if they don't exist
         if (!Directory.Exists(modResourcePath))
-        {
             Directory.CreateDirectory(modResourcePath);
-        }
         if (!File.Exists(resourceFilePath))
-        {
             File.Copy(templateResource, resourceFilePath);
-        }
 
         if (File.Exists(resourceFilePath))
         {
             // Load up the target local model alias bank.
             var targetResource = LoadTargetAliasBank(resourceFilePath);
 
-            bool doesExist = false;
+            var doesExist = false;
 
             // If it exists within the mod local file, update the contents
             foreach (var entry in targetResource.list)
-            {
                 if (entry.id == refID)
                 {
                     doesExist = true;
@@ -219,43 +215,34 @@ public class AliasBank
 
                     if (refTags.Contains(","))
                     {
-                        List<string> newTags = new List<string>();
+                        var newTags = new List<string>();
                         var tagList = refTags.Split(",");
                         foreach (var tag in tagList)
-                        {
                             newTags.Add(tag);
-                        }
                         entry.tags = newTags;
                     }
                     else
-                    {
                         entry.tags = new List<string> { refTags };
-                    }
                 }
-            }
 
             // If it doesn't exist in the mod local file, add it in
             if (!doesExist)
             {
-                AliasReference entry = new AliasReference();
+                var entry = new AliasReference();
                 entry.id = refID;
                 entry.name = refName;
                 entry.tags = new List<string>();
 
                 if (refTags.Contains(","))
                 {
-                    List<string> newTags = new List<string>();
+                    var newTags = new List<string>();
                     var tagList = refTags.Split(",");
                     foreach (var tag in tagList)
-                    {
                         newTags.Add(tag);
-                    }
                     entry.tags = newTags;
                 }
                 else
-                {
                     entry.tags.Add(refTags);
-                }
 
                 targetResource.list.Add(entry);
             }
@@ -282,7 +269,7 @@ public class AliasBank
             var targetResource = LoadTargetAliasBank(resourceFilePath);
 
             // Remove the specified reference from the local model alias bank.
-            for (int i = 0; i <= targetResource.list.Count - 1; i++)
+            for (var i = 0; i <= targetResource.list.Count - 1; i++)
             {
                 var entry = targetResource.list[i];
                 if (entry.id == refID)
@@ -300,22 +287,14 @@ public class AliasBank
     {
         if (aliasType is AliasType.Map)
         {
-            Dictionary<string, string> _mapNames = new Dictionary<string, string>();
+            var _mapNames = new Dictionary<string, string>();
 
             foreach (var entry in AliasNames.GetEntries("Maps"))
-            {
                 if (!CFG.Current.MapAliases_ShowUnusedNames)
-                {
                     if (entry.tags[0] != "unused")
-                    {
                         _mapNames.Add(entry.id, entry.name);
-                    }
-                }
                 else
-                {
                     _mapNames.Add(entry.id, entry.name);
-                }
-            }
 
             MapNames = _mapNames;
         }
