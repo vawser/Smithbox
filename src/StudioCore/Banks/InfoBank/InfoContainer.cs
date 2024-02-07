@@ -4,7 +4,7 @@ using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization.Metadata;
 
-namespace StudioCore.Data.InfoBank;
+namespace StudioCore.Banks.InfoBank;
 
 public class InfoContainer
 {

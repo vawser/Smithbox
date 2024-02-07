@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
-using StudioCore.Data.Aliases;
+using StudioCore.Banks;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Help;
 using StudioCore.Interface;
 using StudioCore.JSON;
@@ -32,12 +33,9 @@ public class ParticleBrowser
 
     private string _selectedName;
 
-    public AliasBank _aliasBank;
-
-    public ParticleBrowser(string id, AliasBank aliasBank)
+    public ParticleBrowser(string id)
     {
         _id = id;
-        _aliasBank = aliasBank;
     }
 
     public void ToggleMenuVisibility()
@@ -95,7 +93,7 @@ public class ParticleBrowser
                     {
                         bool isValid = true;
 
-                        var entries = _aliasBank.AliasNames.GetEntries("Particles");
+                        var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
 
                         foreach (var entry in entries)
                         {
@@ -105,9 +103,9 @@ public class ParticleBrowser
 
                         if (isValid)
                         {
-                            _aliasBank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                            ParticleAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                             ImGui.CloseCurrentPopup();
-                            _aliasBank.mayReloadAliasBank = true;
+                            ParticleAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         else
                         {
@@ -134,7 +132,7 @@ public class ParticleBrowser
 
             ImGui.BeginChild("ParticleFlagList");
 
-            DisplaySelectionList(_aliasBank.AliasNames.GetEntries("Particles"));
+            DisplaySelectionList(ParticleAliasBank.Bank.AliasNames.GetEntries("Particles"));
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -145,10 +143,10 @@ public class ParticleBrowser
         ImGui.PopStyleVar(3);
         ImGui.PopStyleColor(2);
 
-        if (_aliasBank.mayReloadAliasBank)
+        if (ParticleAliasBank.Bank.mayReloadAliasBank)
         {
-            _aliasBank.mayReloadAliasBank = false;
-            _aliasBank.ReloadAliasBank();
+            ParticleAliasBank.Bank.mayReloadAliasBank = false;
+            ParticleAliasBank.Bank.ReloadAliasBank();
         }
     }
 
@@ -170,7 +168,7 @@ public class ParticleBrowser
             _searchInputCache = _searchInput;
         }
 
-        var entries = _aliasBank.AliasNames.GetEntries("Particles");
+        var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
 
         foreach (var entry in entries)
         {
@@ -219,16 +217,16 @@ public class ParticleBrowser
 
                         if (ImGui.Button("Update"))
                         {
-                            _aliasBank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            ParticleAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            _aliasBank.mayReloadAliasBank = true;
+                            ParticleAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            _aliasBank.RemoveFromLocalAliasBank("", _refUpdateId);
+                            ParticleAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            _aliasBank.mayReloadAliasBank = true;
+                            ParticleAliasBank.Bank.mayReloadAliasBank = true;
                         }
 
                         ImGui.EndPopup();

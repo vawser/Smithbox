@@ -25,8 +25,9 @@ using StudioCore.Interface;
 using Org.BouncyCastle.Ocsp;
 using SoulsFormats.KF4;
 using System.Reflection;
-using StudioCore.Data.Aliases;
+using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
+using StudioCore.Banks;
 
 namespace StudioCore.MsbEditor
 {
@@ -60,8 +61,6 @@ namespace StudioCore.MsbEditor
         private readonly RenderScene _scene;
         private readonly Selection _selection;
 
-        private AliasBank _modelAliasBank;
-
         private Universe _universe;
 
         private IViewport _viewport;
@@ -85,7 +84,7 @@ namespace StudioCore.MsbEditor
 
         private int FrameCount = 0;
 
-        public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, IViewport viewport, AliasBank modelAliasBank)
+        public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, IViewport viewport)
         {
             _scene = scene;
             _selection = sel;
@@ -93,7 +92,6 @@ namespace StudioCore.MsbEditor
             _universe = universe;
 
             _viewport = viewport;
-            _modelAliasBank = modelAliasBank;
         }
 
         public void OnGui()
@@ -2026,7 +2024,7 @@ namespace StudioCore.MsbEditor
                 {
                     if (obj.IsPart())
                     {
-                        foreach (var entry in _modelAliasBank.AliasNames.GetEntries("Objects"))
+                        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
                         {
                             var modelName = obj.GetPropertyValue<string>("ModelName");
 
@@ -2054,7 +2052,7 @@ namespace StudioCore.MsbEditor
                             }
                         }
 
-                        foreach (var entry in _modelAliasBank.AliasNames.GetEntries("MapPieces"))
+                        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
                         {
                             var entryName = $"m{entry.id.Split("_").Last()}";
                             var modelName = obj.GetPropertyValue<string>("ModelName");

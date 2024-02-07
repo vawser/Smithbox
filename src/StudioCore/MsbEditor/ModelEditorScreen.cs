@@ -16,7 +16,7 @@ using Microsoft.Extensions.Logging;
 using System.IO;
 using SoulsFormats;
 using StudioCore.Browsers;
-using StudioCore.Data.Aliases;
+using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 
@@ -51,7 +51,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device, AliasBank modelAliasBank, AliasBank mapAliasBank)
+    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
         Window = window;
@@ -69,10 +69,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
         _universe = new Universe(RenderScene, _selection);
 
-        _sceneTree = new SceneTree(SceneTree.Configuration.ModelEditor, this, "modeledittree", _universe,
-            _selection, EditorActionManager, Viewport, modelAliasBank, mapAliasBank);
-        _propEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, null, mapAliasBank, null);
-        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser", modelAliasBank, mapAliasBank);
+        _sceneTree = new SceneTree(SceneTree.Configuration.ModelEditor, this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
+        _propEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, null);
+        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser");
     }
 
     public void OnInstantiateChr(string chrid)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Data.Aliases
+namespace StudioCore.Banks.AliasBank
 {
     public class AliasResource
     {

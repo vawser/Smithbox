@@ -2,8 +2,8 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Data.Aliases;
-using StudioCore.Data.InfoBank;
+using StudioCore.Banks;
+using StudioCore.Banks.InfoBank;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.Interface;
@@ -42,16 +42,10 @@ public class PropertyEditor
 
     private MsbToolbar _msbToolbar;
 
-    private AliasBank _mapAliasBank;
-
-    private InfoBank _msbInfoBank;
-
-    public PropertyEditor(ActionManager manager, PropertyCache propCache, IViewport viewport, MsbToolbar msbToolbar, AliasBank mapAliasBank, InfoBank msbInfoBank)
+    public PropertyEditor(ActionManager manager, PropertyCache propCache, IViewport viewport, MsbToolbar msbToolbar)
     {
         ContextActionManager = manager;
         _propCache = propCache;
-        _mapAliasBank = mapAliasBank;
-        _msbInfoBank = msbInfoBank;
         _viewport = viewport;
         _msbToolbar = msbToolbar;
     }
@@ -1244,9 +1238,9 @@ public class PropertyEditor
                             var mapid = r.Name;
                             var prettyName = $"{ForkAwesome.Cube} {mapid}";
 
-                            if (_mapAliasBank.MapNames != null)
+                            if (MapAliasBank.Bank.MapNames != null)
                             {
-                                if (_mapAliasBank.MapNames.TryGetValue(mapid, out var metaName))
+                                if (MapAliasBank.Bank.MapNames.TryGetValue(mapid, out var metaName))
                                 {
                                     prettyName += $" <{metaName}>";
                                 }
@@ -1326,25 +1320,25 @@ public class PropertyEditor
             // Part
             if (_selected.IsPart())
             {
-                entries = _msbInfoBank.FormatInformation.GetEntries("Part");
+                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Part");
             }
 
             // Region
             if (_selected.IsRegion())
             {
-                entries = _msbInfoBank.FormatInformation.GetEntries("Region");
+                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Region");
             }
 
             // Event
             if (_selected.IsEvent())
             {
-                entries = _msbInfoBank.FormatInformation.GetEntries("Event");
+                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Event");
             }
 
             // Light
             if (_selected.IsLight())
             {
-                entries = _msbInfoBank.FormatInformation.GetEntries("Light");
+                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Light");
             }
 
             if (entries != null && attribute != null)
@@ -1377,25 +1371,25 @@ public class PropertyEditor
             // Part
             if (_selected.IsPart())
             {
-                entries = _msbInfoBank.FormatInformation.GetEntries("Part");
+                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Part");
             }
 
             // Region
             if (_selected.IsRegion())
             {
-                entries = _msbInfoBank.FormatInformation.GetEntries("Region");
+                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Region");
             }
 
             // Event
             if (_selected.IsEvent())
             {
-                entries = _msbInfoBank.FormatInformation.GetEntries("Event");
+                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Event");
             }
 
             // Light
             if (_selected.IsLight())
             {
-                entries = _msbInfoBank.FormatInformation.GetEntries("Light");
+                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Light");
             }
 
             if (entries != null && attribute != null)

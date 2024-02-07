@@ -7,8 +7,8 @@ using StudioCore.AnimationEditor;
 using StudioCore.Browsers;
 using StudioCore.Configuration;
 using StudioCore.CutsceneEditor;
-using StudioCore.Data.Aliases;
-using StudioCore.Data.InfoBank;
+using StudioCore.Banks.AliasBank;
+using StudioCore.Banks.InfoBank;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Graphics;
@@ -41,6 +41,7 @@ using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
 using StudioCore.AssetLocator;
+using StudioCore.Banks;
 
 namespace StudioCore;
 
@@ -71,15 +72,6 @@ public class Smithbox
     private readonly SettingsMenu _settingsMenu;
     private readonly FlagBrowser _eventFlagBrowser;
     private readonly ParticleBrowser _fxrBrowser;
-
-    // Alias Banks
-    private AliasBank aliasBank_Maps;
-    private AliasBank aliasBank_Models;
-    private AliasBank aliasBank_Flags;
-    private AliasBank aliasBank_Particles;
-
-    // Format Info Banks
-    private InfoBank infoBank_MSB;
 
     private readonly SoapstoneService _soapstoneService;
     private readonly string _version;
@@ -121,18 +113,15 @@ public class Smithbox
         _context.Window.Title = _programTitle;
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
-        // Alias Banks
-        aliasBank_Maps = new AliasBank(AliasType.Map);
-        aliasBank_Models = new AliasBank(AliasType.Model);
-        aliasBank_Flags = new AliasBank(AliasType.EventFlag);
-        aliasBank_Particles = new AliasBank(AliasType.Particle);
-
-        // Format Info Banks
-        infoBank_MSB = new InfoBank(FormatType.MSB);
+        MapAliasBank.Bank = new AliasBank(AliasType.Map);
+        ModelAliasBank.Bank = new AliasBank(AliasType.Model);
+        FlagAliasBank.Bank = new AliasBank(AliasType.EventFlag);
+        ParticleAliasBank.Bank = new AliasBank(AliasType.Particle);
+        MsbInfoBank.Bank = new InfoBank(FormatType.MSB);
 
         // Screens
-        MsbEditorScreen msbEditor = new(_context.Window, _context.Device, aliasBank_Models, aliasBank_Maps, infoBank_MSB);
-        ModelEditorScreen modelEditor = new(_context.Window, _context.Device, aliasBank_Models, aliasBank_Maps);
+        MsbEditorScreen msbEditor = new(_context.Window, _context.Device);
+        ModelEditorScreen modelEditor = new(_context.Window, _context.Device);
         ParamEditorScreen paramEditor = new(_context.Window, _context.Device);
         TextEditorScreen textEditor = new(_context.Window, _context.Device);
 
@@ -151,7 +140,7 @@ public class Smithbox
 
         _soapstoneService = new SoapstoneService(_version, msbEditor);
 
-        _settingsMenu = new SettingsMenu("SettingsMenu", aliasBank_Maps);
+        _settingsMenu = new SettingsMenu("SettingsMenu");
         _settingsMenu.MsbEditor = msbEditor;
         _settingsMenu.ModelEditor = modelEditor;
         _settingsMenu.ParamEditor = paramEditor;
@@ -166,8 +155,8 @@ public class Smithbox
         _settingsMenu.TextureViewer = textureViewer;
 
         _helpBrowser = new HelpBrowser("HelpBrowser");
-        _eventFlagBrowser = new FlagBrowser("EventFlagBrowser", aliasBank_Flags);
-        _fxrBrowser = new ParticleBrowser("FxrBrowser", aliasBank_Particles);
+        _eventFlagBrowser = new FlagBrowser("EventFlagBrowser");
+        _fxrBrowser = new ParticleBrowser("FxrBrowser");
 
         MtdBank.LoadMtds();
 
@@ -464,12 +453,11 @@ public class Smithbox
 
         _settingsMenu.ProjSettings = _projectSettings;
 
-        aliasBank_Models.ReloadAliasBank();
-        aliasBank_Flags.ReloadAliasBank();
-        aliasBank_Particles.ReloadAliasBank();
-        aliasBank_Maps.ReloadAliasBank();
-
-        infoBank_MSB.ReloadInfoBank();
+        ModelAliasBank.Bank.ReloadAliasBank();
+        FlagAliasBank.Bank.ReloadAliasBank();
+        ParticleAliasBank.Bank.ReloadAliasBank();
+        MapAliasBank.Bank.ReloadAliasBank();
+        MsbInfoBank.Bank.ReloadInfoBank();
 
         ParamBank.ReloadParams(newsettings, options);
         MtdBank.ReloadMtds();

@@ -3,8 +3,8 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Browsers;
 using StudioCore.Configuration;
-using StudioCore.Data.Aliases;
-using StudioCore.Data.InfoBank;
+using StudioCore.Banks.AliasBank;
+using StudioCore.Banks.InfoBank;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.AssetLocator;
@@ -83,20 +83,10 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
-    private AliasBank _modelAliasBank;
-    private AliasBank _mapAliasBank;
-
-    private InfoBank _infobank_MSB;
-
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device, AliasBank modelAliasBank, AliasBank mapAliasBank, InfoBank msbInfoBank)
+    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
         Window = window;
-
-        _modelAliasBank = modelAliasBank;
-        _mapAliasBank = mapAliasBank;
-
-        _infobank_MSB = msbInfoBank;
 
         if (device != null)
         {
@@ -111,13 +101,13 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         Universe = new Universe(RenderScene, _selection);
 
-        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport, _modelAliasBank, _mapAliasBank);
+        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport);
         DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
         PropSearch = new SearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
-        AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport, _modelAliasBank, _mapAliasBank);
-        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _modelAliasBank);
-        PropEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, Toolbar, _mapAliasBank, _infobank_MSB);
+        AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
+        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
+        PropEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, Toolbar);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }

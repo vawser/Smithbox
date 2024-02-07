@@ -3,7 +3,7 @@ using SoapstoneLib;
 using StudioCore.AnimationEditor;
 using StudioCore.Configuration;
 using StudioCore.CutsceneEditor;
-using StudioCore.Data.Aliases;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
@@ -28,6 +28,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using Veldrid;
+using StudioCore.Banks;
 
 namespace StudioCore.Settings;
 
@@ -52,8 +53,6 @@ public class SettingsMenu
     public TalkEditorScreen TalkEditor;
     public TextureViewerScreen TextureViewer;
 
-    private AliasBank _mapAliasBank;
-
     private string _searchInput = "";
     private string _searchInputCache = "";
 
@@ -67,10 +66,9 @@ public class SettingsMenu
 
     private string _selectedName;
 
-    public SettingsMenu(string id, AliasBank mapAliasBank)
+    public SettingsMenu(string id)
     {
         _id = id;
-        _mapAliasBank = mapAliasBank;
     }
 
     public void SaveSettings()
@@ -231,7 +229,7 @@ public class SettingsMenu
                                 {
                                     bool isValid = true;
 
-                                    var entries = _mapAliasBank.AliasNames.GetEntries("Maps");
+                                    var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
 
                                     foreach (var entry in entries)
                                     {
@@ -241,9 +239,9 @@ public class SettingsMenu
 
                                     if (isValid)
                                     {
-                                        _mapAliasBank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                                        MapAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                                         ImGui.CloseCurrentPopup();
-                                        _mapAliasBank.mayReloadAliasBank = true;
+                                        MapAliasBank.Bank.mayReloadAliasBank = true;
                                     }
                                     else
                                     {
@@ -264,7 +262,7 @@ public class SettingsMenu
                         ImGui.Separator();
                         ImGui.Spacing();
 
-                        DisplayMapAliasSelectionList(_mapAliasBank.AliasNames.GetEntries("Maps"));
+                        DisplayMapAliasSelectionList(MapAliasBank.Bank.AliasNames.GetEntries("Maps"));
                     }
                 }
             }
@@ -272,10 +270,10 @@ public class SettingsMenu
             ImGui.EndTabItem();
         }
 
-        if (_mapAliasBank.mayReloadAliasBank)
+        if (MapAliasBank.Bank.mayReloadAliasBank)
         {
-            _mapAliasBank.mayReloadAliasBank = false;
-            _mapAliasBank.ReloadAliasBank();
+            MapAliasBank.Bank.mayReloadAliasBank = false;
+            MapAliasBank.Bank.ReloadAliasBank();
         }
     }
 
@@ -294,7 +292,7 @@ public class SettingsMenu
             _searchInputCache = _searchInput;
         }
 
-        var entries = _mapAliasBank.AliasNames.GetEntries("Maps");
+        var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
 
         foreach (var entry in entries)
         {
@@ -350,16 +348,16 @@ public class SettingsMenu
 
                         if (ImGui.Button("Update"))
                         {
-                            _mapAliasBank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            MapAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            _mapAliasBank.mayReloadAliasBank = true;
+                            MapAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            _mapAliasBank.RemoveFromLocalAliasBank("", _refUpdateId);
+                            MapAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            _mapAliasBank.mayReloadAliasBank = true;
+                            MapAliasBank.Bank.mayReloadAliasBank = true;
                         }
 
                         ImGui.EndPopup();

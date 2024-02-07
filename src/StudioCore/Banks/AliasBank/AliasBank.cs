@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Text;
 using StudioCore.UserProject;
 
-namespace StudioCore.Data.Aliases;
+namespace StudioCore.Banks.AliasBank;
 
 public enum AliasType
 {

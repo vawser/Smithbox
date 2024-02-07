@@ -21,9 +21,10 @@ using StudioCore.Platform;
 using StudioCore.MsbEditor;
 using Action = StudioCore.MsbEditor.Action;
 using StudioCore.Interface;
-using StudioCore.Data.Aliases;
+using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
 using StudioCore.AssetLocator;
+using StudioCore.Banks;
 
 namespace StudioCore.Browsers;
 
@@ -60,12 +61,9 @@ public class MapAssetBrowser
     private bool updateScrollPosition = false;
     private float _currentScrollY;
 
-    private AliasBank _modelAliasBank;
-    private AliasBank _mapAliasBank;
-
     private Universe _universe;
 
-    public MapAssetBrowser(Universe universe, RenderScene scene, Selection sel, ActionManager manager, MsbEditorScreen editor, IViewport viewport, AliasBank modelAliasBank, AliasBank mapAliasBank)
+    public MapAssetBrowser(Universe universe, RenderScene scene, Selection sel, ActionManager manager, MsbEditorScreen editor, IViewport viewport)
     {
         _scene = scene;
         _selection = sel;
@@ -74,9 +72,6 @@ public class MapAssetBrowser
 
         _msbEditor = editor;
         _viewport = viewport;
-
-        _modelAliasBank = modelAliasBank;
-        _mapAliasBank = mapAliasBank;
 
         _selectedName = null;
     }
@@ -91,7 +86,7 @@ public class MapAssetBrowser
         if (Project.Type == ProjectType.Undefined)
             return;
 
-        if (_modelAliasBank.IsLoadingAliases)
+        if (ModelAliasBank.Bank.IsLoadingAliases)
             return;
 
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
@@ -122,19 +117,19 @@ public class MapAssetBrowser
 
             ImGui.BeginChild("AssetList");
 
-            DisplayAssetSelectionList("Chr", _modelAliasBank.AliasNames.GetEntries("Characters"));
-            DisplayAssetSelectionList("Obj", _modelAliasBank.AliasNames.GetEntries("Objects"));
-            DisplayMapAssetSelectionList("MapPiece", _modelAliasBank.AliasNames.GetEntries("MapPieces"));
+            DisplayAssetSelectionList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+            DisplayAssetSelectionList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+            DisplayMapAssetSelectionList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
 
             ImGui.EndChild();
             ImGui.EndChild();
         }
         ImGui.End();
 
-        if (_modelAliasBank.mayReloadAliasBank)
+        if (ModelAliasBank.Bank.mayReloadAliasBank)
         {
-            _modelAliasBank.mayReloadAliasBank = false;
-            _modelAliasBank.ReloadAliasBank();
+            ModelAliasBank.Bank.mayReloadAliasBank = false;
+            ModelAliasBank.Bank.ReloadAliasBank();
         }
     }
 
@@ -174,9 +169,9 @@ public class MapAssetBrowser
             {
                 var labelName = mapId;
 
-                if (_mapAliasBank.MapNames != null)
-                    if (_mapAliasBank.MapNames.ContainsKey(mapId))
-                        labelName = labelName + $" <{_mapAliasBank.MapNames[mapId]}>";
+                if (MapAliasBank.Bank.MapNames != null)
+                    if (MapAliasBank.Bank.MapNames.ContainsKey(mapId))
+                        labelName = labelName + $" <{MapAliasBank.Bank.MapNames[mapId]}>";
 
                 if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                 {
@@ -286,17 +281,17 @@ public class MapAssetBrowser
 
                             if (ImGui.Button("Update"))
                             {
-                                _modelAliasBank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
                                 ImGui.CloseCurrentPopup();
-                                _modelAliasBank.mayReloadAliasBank = true;
+                                ModelAliasBank.Bank.mayReloadAliasBank = true;
                             }
 
                             ImGui.SameLine();
                             if (ImGui.Button("Restore Default"))
                             {
-                                _modelAliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+                                ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
                                 ImGui.CloseCurrentPopup();
-                                _modelAliasBank.mayReloadAliasBank = true;
+                                ModelAliasBank.Bank.mayReloadAliasBank = true;
                             }
 
                             ImGui.EndPopup();
@@ -402,17 +397,17 @@ public class MapAssetBrowser
 
                                 if (ImGui.Button("Update"))
                                 {
-                                    _modelAliasBank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                    ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
                                     ImGui.CloseCurrentPopup();
-                                    _modelAliasBank.mayReloadAliasBank = true;
+                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
                                 }
 
                                 ImGui.SameLine();
                                 if (ImGui.Button("Restore Default"))
                                 {
-                                    _modelAliasBank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+                                    ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
                                     ImGui.CloseCurrentPopup();
-                                    _modelAliasBank.mayReloadAliasBank = true;
+                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
                                 }
 
                                 ImGui.EndPopup();

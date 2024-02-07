@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
-using StudioCore.Data.Aliases;
+using StudioCore.Banks;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Help;
 using StudioCore.Interface;
 using StudioCore.JSON;
@@ -34,12 +35,9 @@ public class FlagBrowser
 
     private string _selectedName;
 
-    public AliasBank _aliasBank;
-
-    public FlagBrowser(string id, AliasBank aliasBank)
+    public FlagBrowser(string id)
     {
         _id = id;
-        _aliasBank = aliasBank;
     }
 
     public void ToggleMenuVisibility()
@@ -58,7 +56,7 @@ public class FlagBrowser
         if (Project.Type == ProjectType.Undefined)
             return;
 
-        if (_aliasBank.IsLoadingAliases)
+        if (FlagAliasBank.Bank.IsLoadingAliases)
             return;
 
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
@@ -109,7 +107,7 @@ public class FlagBrowser
                     {
                         bool isValid = true;
 
-                        var entries = _aliasBank.AliasNames.GetEntries("Flags");
+                        var entries = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
 
                         foreach (var entry in entries)
                         {
@@ -119,9 +117,9 @@ public class FlagBrowser
 
                         if (isValid)
                         {
-                            _aliasBank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                            FlagAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                             ImGui.CloseCurrentPopup();
-                            _aliasBank.mayReloadAliasBank = true;
+                            FlagAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         else
                         {
@@ -148,7 +146,7 @@ public class FlagBrowser
 
             ImGui.BeginChild("EventFlagList");
 
-            DisplaySelectionList(_aliasBank.AliasNames.GetEntries("Flags"));
+            DisplaySelectionList(FlagAliasBank.Bank.AliasNames.GetEntries("Flags"));
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -159,10 +157,10 @@ public class FlagBrowser
         ImGui.PopStyleVar(3);
         ImGui.PopStyleColor(2);
 
-        if (_aliasBank.mayReloadAliasBank)
+        if (FlagAliasBank.Bank.mayReloadAliasBank)
         {
-            _aliasBank.mayReloadAliasBank = false;
-            _aliasBank.ReloadAliasBank();
+            FlagAliasBank.Bank.mayReloadAliasBank = false;
+            FlagAliasBank.Bank.ReloadAliasBank();
         }
     }
 
@@ -184,7 +182,7 @@ public class FlagBrowser
             _searchInputCache = _searchInput;
         }
 
-        var entries = _aliasBank.AliasNames.GetEntries("Flags");
+        var entries = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
 
         foreach (var entry in entries)
         {
@@ -233,16 +231,16 @@ public class FlagBrowser
 
                         if (ImGui.Button("Update"))
                         {
-                            _aliasBank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            FlagAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            _aliasBank.mayReloadAliasBank = true;
+                            FlagAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            _aliasBank.RemoveFromLocalAliasBank("", _refUpdateId);
+                            FlagAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            _aliasBank.mayReloadAliasBank = true;
+                            FlagAliasBank.Bank.mayReloadAliasBank = true;
                         }
 
                         ImGui.EndPopup();

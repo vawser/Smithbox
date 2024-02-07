@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Text;
 using StudioCore.UserProject;
 
-namespace StudioCore.Data.InfoBank;
+namespace StudioCore.Banks.InfoBank;
 
 public enum FormatType
 {

@@ -10,7 +10,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization.Metadata;
 using System.Threading.Tasks;
 
-namespace StudioCore.Data.Aliases;
+namespace StudioCore.Banks.AliasBank;
 
 public class AliasContainer
 {

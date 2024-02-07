@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Data.Aliases;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Gui;
 using StudioCore.AssetLocator;
 using StudioCore.ParamEditor;
@@ -18,6 +18,7 @@ using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
+using StudioCore.Banks;
 
 namespace StudioCore.MsbEditor;
 
@@ -94,16 +95,12 @@ public class SceneTree : IActionEventHandler
 
     private ViewMode _viewMode = ViewMode.ObjectType;
 
-    private AliasBank _modelAliasBank;
-    private AliasBank _mapAliasBank;
-
     private Dictionary<string, string> _chrAliasCache;
     private Dictionary<string, string> _objAliasCache;
     private Dictionary<string, string> _mapPieceAliasCache;
 
 
-    public SceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe,
-        Selection sel, ActionManager aman, IViewport vp, AliasBank modelAliasBank, AliasBank mapAliasBank)
+    public SceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, Selection sel, ActionManager aman, IViewport vp)
     {
         _handler = handler;
         _id = id;
@@ -112,8 +109,6 @@ public class SceneTree : IActionEventHandler
         _editorActionManager = aman;
         _viewport = vp;
         _configuration = configuration;
-        _modelAliasBank = modelAliasBank;
-        _mapAliasBank = mapAliasBank;
 
         if (_configuration == Configuration.ModelEditor)
         {
@@ -290,7 +285,7 @@ public class SceneTree : IActionEventHandler
                     }
                     else
                     {
-                        foreach (var entry in _modelAliasBank.AliasNames.GetEntries("Characters"))
+                        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
                         {
                             if (modelName == entry.id)
                             {
@@ -734,11 +729,11 @@ public class SceneTree : IActionEventHandler
                     continue;
                 }
 
-                if (_mapAliasBank.MapNames != null)
+                if (MapAliasBank.Bank.MapNames != null)
                 {
-                    if (_mapAliasBank.MapNames.ContainsKey(mapid))
+                    if (MapAliasBank.Bank.MapNames.ContainsKey(mapid))
                     {
-                        metaName = _mapAliasBank.MapNames[mapid];
+                        metaName = MapAliasBank.Bank.MapNames[mapid];
                     }
                 }
 
