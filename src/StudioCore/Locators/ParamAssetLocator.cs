@@ -143,6 +143,12 @@ public static class ParamAssetLocator
             var paramDir = @"\param\drawparam";
             var paramExt = @".gparam.dcx";
 
+            if (Project.Type == ProjectType.DS2S)
+            {
+                paramDir = @"\filter";
+                paramExt = @".fltparam";
+            }
+
             var paramFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + paramDir, $@"*{paramExt}")
                 .ToList();
             foreach (var f in paramFiles)

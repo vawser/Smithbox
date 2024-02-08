@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.AssetLocator;
+using StudioCore.ParamEditor;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -27,31 +28,61 @@ public static class GraphicsParamBank
 
     public static void SaveGraphicsParam(GraphicsParamInfo info, GPARAM param)
     {
-        TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
+        //TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
+
+        byte[] fileBytes = null;
 
         switch (Project.Type)
         {
             case ProjectType.DS2S:
-                param.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                break;
-            case ProjectType.BB:
-                param.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                fileBytes = param.Write(DCX.Type.None);
                 break;
             case ProjectType.DS3:
-                param.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                fileBytes = param.Write(DCX.Type.DCX_DFLT_10000_44_9);
                 break;
             case ProjectType.SDT:
-                param.Write(DCX.Type.DCX_KRAK);
+                fileBytes = param.Write(DCX.Type.DCX_KRAK);
                 break;
             case ProjectType.ER:
-                param.Write(DCX.Type.DCX_KRAK);
+                fileBytes = param.Write(DCX.Type.DCX_KRAK);
                 break;
             case ProjectType.AC6:
-                param.Write(DCX.Type.DCX_KRAK_MAX);
+                fileBytes = param.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid GameType during SaveGraphicsParam");
-                break;
+                TaskLogs.AddLog($"Invalid ProjectType during SaveGraphicsParam");
+                return;
+        }
+
+        var paramDir = @"\param\drawparam";
+        var paramExt = @".gparam.dcx";
+
+        if (Project.Type == ProjectType.DS2S)
+        {
+            paramDir = @"\filter";
+            paramExt = @".fltparam";
+        }
+
+        var assetRoot = $@"{Project.GameRootDirectory}\{paramDir}\{info.Name}{paramExt}";
+        var assetMod = $@"{Project.GameModDirectory}\{paramDir}\{info.Name}{paramExt}";
+
+        // Add drawparam folder if it does not exist in GameModDirectory
+        if (!Directory.Exists($"{Project.GameModDirectory}\\{paramDir}\\"))
+        {
+            Directory.CreateDirectory($"{Project.GameModDirectory}\\{paramDir}\\");
+        }
+
+        // Make a backup of the original file if a mod path doesn't exist
+        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        {
+            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+        }
+
+        if (fileBytes != null)
+        {
+            // Write to GameModDirectory
+            File.WriteAllBytes(assetMod, fileBytes);
+            //TaskLogs.AddLog($"Saved at: {assetMod}");
         }
     }
 
@@ -65,6 +96,12 @@ public static class GraphicsParamBank
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
 
+        if(Project.Type == ProjectType.DS2S)
+        {
+            paramDir = @"\filter";
+            paramExt = @".fltparam";
+        }
+
         List<string> paramNames = ParamAssetLocator.GetGraphicsParams();
 
         foreach (var name in paramNames)
@@ -74,10 +111,12 @@ public static class GraphicsParamBank
             if(File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
                 LoadGraphicsParam($"{Project.GameModDirectory}\\{filePath}");
+                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
                 LoadGraphicsParam($"{Project.GameRootDirectory}\\{filePath}");
+                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
 
@@ -104,8 +143,17 @@ public static class GraphicsParamBank
 
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
         GraphicsParamInfo gStruct = new GraphicsParamInfo(name, path);
+        GPARAM gPARAM = new GPARAM();
 
-        GPARAM gPARAM = GPARAM.Read(DCX.Decompress(path));
+        if (Project.Type == ProjectType.DS2S)
+        {
+            gPARAM = GPARAM.Read(path);
+        }
+        else
+        {
+            gPARAM = GPARAM.Read(DCX.Decompress(path));
+        }
+
         ParamBank.Add(gStruct, gPARAM);
     }
 

@@ -1,7 +1,9 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GraphicsEditor;
+using StudioCore.ParamEditor;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
@@ -15,6 +17,13 @@ namespace StudioCore.GraphicsEditor;
 
 public class GraphicsEditorScreen : EditorScreen
 {
+    private enum SelectionState
+    {
+        None,
+        Param,
+        Row
+    }
+
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
@@ -27,25 +36,22 @@ public class GraphicsEditorScreen : EditorScreen
     private GPARAM.Param _selectedParamGroup;
     private string _selectedParamGroupKey;
 
-    private GPARAM.IField _selectedParam;
-    private string _selectedParamKey;
+    private GPARAM.IField _selectedParamField;
+    private string _selectedParamFieldKey;
 
-    private string _newGparamFile_Name;
+    private GPARAM.IFieldValue _selectedFieldValue = null;
+    private string _selectedFieldValueKey = "";
 
     public GraphicsEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _newGparamFile_Name = "";
-
-        _selectedGraphicsParamKey = "";
-        _selectedParamGroupKey = "";
-        _selectedParamKey = "";
+        ResetAllSelection();
 
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
     public string EditorName => "Graphics Editor";
-    public string CommandEndpoint => "graphics";
-    public string SaveType => "Graphics";
+    public string CommandEndpoint => "gparam";
+    public string SaveType => "Param";
 
     public void DrawEditorMenu()
     {
@@ -54,6 +60,17 @@ public class GraphicsEditorScreen : EditorScreen
     public void OnGUI(string[] initcmd)
     {
         var scale = Smithbox.GetUIScale();
+
+        // Keyboard shortcuts
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+        {
+            ParamUndo();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+        {
+            ParamRedo();
+        }
 
         // Docking setup
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
@@ -64,27 +81,23 @@ public class GraphicsEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        var dsid = ImGui.GetID("DockSpace_GraphicsEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S)
+        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
         {
             ImGui.Text($"This editor does not support {Project.Type}.");
+            ImGui.PopStyleVar();
+            return;
         }
         else if (_projectSettings == null)
         {
             ImGui.Text("No project loaded. File -> New Project");
         }
 
+        var dsid = ImGui.GetID("DockSpace_GraphicsParamEditor");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
         if (!GraphicsParamBank.IsLoaded)
         {
-            // Deselect any currently selected group
-            _selectedParamGroup = null;
-            _selectedParamGroupKey = "";
-
-            // Deselect any currently selected param
-            _selectedParam = null;
-            _selectedParamKey = "";
+            ResetAllSelection();
 
             if (GraphicsParamBank.IsLoading)
             {
@@ -92,6 +105,45 @@ public class GraphicsEditorScreen : EditorScreen
             }
         }
 
+        GraphicsParamView();
+        
+        ImGui.PopStyleVar();
+    }
+
+    private void ResetAllSelection()
+    {
+        ResetFileSelection();
+        ResetGroupSelection();
+        ResetFieldSelection();
+        ResetValueSelection();
+    }
+
+    private void ResetFileSelection()
+    {
+        _selectedGraphicsParam = null;
+        _selectedGraphicsParamKey = "";
+    }
+
+    private void ResetGroupSelection()
+    {
+        _selectedParamGroup = null;
+        _selectedParamGroupKey = "";
+    }
+
+    private void ResetFieldSelection()
+    {
+        _selectedParamField = null;
+        _selectedParamFieldKey = "";
+    }
+
+    private void ResetValueSelection()
+    {
+        _selectedFieldValue = null;
+        _selectedFieldValueKey = "";
+    }
+
+    private void GraphicsParamView()
+    {
         // GPARAM List
         ImGui.Begin("Files");
 
@@ -102,13 +154,9 @@ public class GraphicsEditorScreen : EditorScreen
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGraphicsParamKey))
             {
-                // Deselect any currently selected group
-                _selectedParamGroup = null;
-                _selectedParamGroupKey = "";
-
-                // Deselect any currently selected param
-                _selectedParam = null;
-                _selectedParamKey = "";
+                ResetGroupSelection();
+                ResetFieldSelection();
+                ResetValueSelection();
 
                 _selectedGraphicsParamKey = info.Name;
                 _selectedGraphicsParamInfo = info;
@@ -120,7 +168,7 @@ public class GraphicsEditorScreen : EditorScreen
             {
                 if (ImGui.BeginPopupContextItem($"Duplicate##gparamFile_Duplicate"))
                 {
-                    if(ImGui.Button("Duplicate"))
+                    if (ImGui.Button("Duplicate"))
                     {
                         ImGui.CloseCurrentPopup();
                     }
@@ -137,23 +185,22 @@ public class GraphicsEditorScreen : EditorScreen
 
         ImGui.End();
 
-        // GPARAM Params
-        ImGui.Begin("Params");
+        // GPARAM Groups
+        ImGui.Begin("Groups");
 
         if (_selectedGraphicsParam != null && _selectedGraphicsParamKey != "")
         {
             GPARAM data = _selectedGraphicsParam;
 
-            ImGui.Text($"Param");
+            ImGui.Text($"Group");
             ImGui.Separator();
 
             foreach (GPARAM.Param entry in data.Params)
             {
                 if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", entry.Key == _selectedParamGroupKey))
                 {
-                    // Deselect any currently selected param
-                    _selectedParam = null;
-                    _selectedParamKey = "";
+                    ResetFieldSelection();
+                    ResetValueSelection();
 
                     _selectedParamGroup = entry;
                     _selectedParamGroupKey = entry.Key;
@@ -175,17 +222,13 @@ public class GraphicsEditorScreen : EditorScreen
 
             foreach (var entry in data.Fields)
             {
-                if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", entry.Key == _selectedParamKey))
+                if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", entry.Key == _selectedParamFieldKey))
                 {
-                    _selectedParam = entry;
-                    _selectedParamKey = entry.Key;
+                    ResetValueSelection();
+
+                    _selectedParamField = entry;
+                    _selectedParamFieldKey = entry.Key;
                 }
-            }
-
-            // Display add action
-            if(data.Fields.Count == 0)
-            {
-
             }
         }
 
@@ -194,23 +237,21 @@ public class GraphicsEditorScreen : EditorScreen
         // GPARAM Values
         ImGui.Begin("Values");
 
-        if (_selectedParam != null && _selectedParamKey != "")
+        if (_selectedParamField != null && _selectedParamFieldKey != "")
         {
             GraphicsParamPropertyView();
         }
 
         ImGui.End();
-
-        ImGui.PopStyleVar();
     }
 
     private void GraphicsParamPropertyView()
     {
-        GPARAM.IField field = _selectedParam;
+        GPARAM.IField field = _selectedParamField;
 
         if (Project.Type == ProjectType.SDT)
         {
-            ImGui.Columns(3);
+            ImGui.Columns(2); // 3 if the floats are shown
         }
         else
         {
@@ -221,43 +262,65 @@ public class GraphicsEditorScreen : EditorScreen
         ImGui.BeginChild("IdList");
         ImGui.Text($"ID");
         ImGui.Separator();
+        int idx = 0;
         foreach (var val in field.Values)
         {
-            ImGui.Text($"{val.Id}");
-        }
-
-        // Add entry action here
-        if (ImGui.Button($"{ForkAwesome.Plus}"))
-        {
-            // Popup menu to add new entry in in value list
+            GraphicsParamIdView(idx, val);
         }
 
         ImGui.EndChild();
 
+        ImGui.NextColumn();
+
+        // Never used?
         // Unk04 (Sekiro)
+        /*
         if (Project.Type == ProjectType.SDT)
         {
+            ImGui.BeginChild("UnkList");
             ImGui.Text($"Floats");
             ImGui.Separator();
-            ImGui.NextColumn();
-            ImGui.BeginChild("UnkList");
             foreach (var val in field.Values)
             {
                 ImGui.Text($"{val.Unk04}");
             }
             ImGui.EndChild();
+
+            ImGui.NextColumn();
         }
+        */
 
         // Value
-        ImGui.NextColumn();
         ImGui.BeginChild("ValueList");
         ImGui.Text($"Value");
         ImGui.Separator();
+
+        idx = 0;
         foreach (var val in field.Values)
         {
-            ImGui.Text($"{val.Value}");
+            GraphicsParamValueView(idx, val);
         }
         ImGui.EndChild();
+    }
+
+    public void GraphicsParamIdView(int index, IFieldValue val)
+    {
+        ImGui.AlignTextToFramePadding();
+
+        if (ImGui.Selectable($"{val.Id}##{index}", $"{val.Id}{index}" == _selectedFieldValueKey))
+        {
+            _selectedFieldValue = val;
+            _selectedFieldValueKey = $"{val.Id}{index}";
+        }
+    }
+
+    public void GraphicsParamValueView(int index, IFieldValue val)
+    {
+        string value = val.Value.ToString();
+        Type type = val.GetType();
+
+        ImGui.SetNextItemWidth(-1);
+        ImGui.InputText($"##{val.Id}{index}", ref value, 256);
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)
@@ -270,12 +333,22 @@ public class GraphicsEditorScreen : EditorScreen
 
     public void Save()
     {
-        //GraphicsParamBank.SaveGraphicsParam(_selectedGraphicsParamInfo, _selectedGraphicsParam);
+        GraphicsParamBank.SaveGraphicsParam(_selectedGraphicsParamInfo, _selectedGraphicsParam);
     }
 
     public void SaveAll()
     {
-        //GraphicsParamBank.SaveGraphicsParams();
+        GraphicsParamBank.SaveGraphicsParams();
+    }
+
+    private void ParamUndo()
+    {
+        EditorActionManager.UndoAction();
+    }
+
+    private void ParamRedo()
+    {
+        EditorActionManager.RedoAction();
     }
 
     private void ResetActionManager()

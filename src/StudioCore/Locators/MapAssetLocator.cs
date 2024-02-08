@@ -98,11 +98,14 @@ public static class MapAssetLocator
             AssetDescription ad = new();
             var path = $@"model\map\g{mapid[1..]}.gibhd";
 
-            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") ||
-                writemode && Project.GameModDirectory != null)
+            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") || writemode && Project.GameModDirectory != null)
+            {
                 ad.AssetPath = $@"{Project.GameModDirectory}\{path}";
+            }
             else if (File.Exists($@"{Project.GameRootDirectory}\{path}"))
+            {
                 ad.AssetPath = $@"{Project.GameRootDirectory}\{path}";
+            }
 
             if (ad.AssetPath != null)
             {
@@ -114,11 +117,14 @@ public static class MapAssetLocator
             AssetDescription ad2 = new();
             path = $@"model_lq\map\g{mapid[1..]}.gibhd";
 
-            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") ||
-                writemode && Project.GameModDirectory != null)
+            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") || writemode && Project.GameModDirectory != null)
+            {
                 ad2.AssetPath = $@"{Project.GameModDirectory}\{path}";
+            }
             else if (File.Exists($@"{Project.GameRootDirectory}\{path}"))
+            {
                 ad2.AssetPath = $@"{Project.GameRootDirectory}\{path}";
+            }
 
             if (ad2.AssetPath != null)
             {
@@ -131,9 +137,13 @@ public static class MapAssetLocator
         {
             string path;
             if (Project.Type is ProjectType.ER or ProjectType.AC6)
+            {
                 path = $@"map\{mapid[..3]}\{mapid}";
+            }
             else
+            {
                 path = $@"map\{mapid}";
+            }
 
             List<string> files = new();
 
@@ -155,11 +165,15 @@ public static class MapAssetLocator
             {
                 AssetDescription ad = new();
                 var fileName = file.Split("\\").Last();
-                if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}\{fileName}") ||
-                    writemode && Project.GameModDirectory != null)
+
+                if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}\{fileName}") || writemode && Project.GameModDirectory != null)
+                {
                     ad.AssetPath = $@"{Project.GameModDirectory}\{path}\{fileName}";
+                }
                 else if (File.Exists($@"{Project.GameRootDirectory}\{path}\{fileName}"))
+                {
                     ad.AssetPath = $@"{Project.GameRootDirectory}\{path}\{fileName}";
+                }
 
                 if (ad.AssetPath != null)
                 {
@@ -182,32 +196,43 @@ public static class MapAssetLocator
     {
         AssetDescription ad = new();
         ad.AssetPath = null;
+
         if (mapid.Length != 12)
             return ad;
-        // BB chalice maps
 
         if (Project.Type == ProjectType.BB && mapid.StartsWith("m29"))
         {
             var path = $@"\map\{mapid.Substring(0, 9)}_00\{mapid}";
-            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva.dcx") ||
-                writemode && Project.GameModDirectory != null && Project.Type != ProjectType.DS1)
+
+            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva.dcx") || writemode && Project.GameModDirectory != null && Project.Type != ProjectType.DS1)
+            {
                 ad.AssetPath = $@"{Project.GameModDirectory}\{path}.nva.dcx";
+            }
             else if (File.Exists($@"{Project.GameRootDirectory}\{path}.nva.dcx"))
+            {
                 ad.AssetPath = $@"{Project.GameRootDirectory}\{path}.nva.dcx";
+            }
         }
         else
         {
             var path = $@"\map\{mapid}\{mapid}";
-            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva.dcx") ||
-                writemode && Project.GameModDirectory != null && Project.Type != ProjectType.DS1)
+
+            if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva.dcx") || writemode && Project.GameModDirectory != null && Project.Type != ProjectType.DS1)
+            {
                 ad.AssetPath = $@"{Project.GameModDirectory}\{path}.nva.dcx";
+            }
             else if (File.Exists($@"{Project.GameRootDirectory}\{path}.nva.dcx"))
+            {
                 ad.AssetPath = $@"{Project.GameRootDirectory}\{path}.nva.dcx";
-            else if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva") ||
-                     writemode && Project.GameModDirectory != null)
+            }
+            else if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.nva") || writemode && Project.GameModDirectory != null)
+            {
                 ad.AssetPath = $@"{Project.GameModDirectory}\{path}.nva";
+            }
             else if (File.Exists($@"{Project.GameRootDirectory}\{path}.nva"))
+            {
                 ad.AssetPath = $@"{Project.GameRootDirectory}\{path}.nva";
+            }
         }
 
         ad.AssetName = mapid;
@@ -235,9 +260,14 @@ public static class MapAssetLocator
             if (Project.Type == ProjectType.DS2S)
             {
                 var maps = Directory.GetFileSystemEntries(Project.GameRootDirectory + @"\map", @"m*").ToList();
+
                 if (Project.GameModDirectory != null)
+                {
                     if (Directory.Exists(Project.GameModDirectory + @"\map"))
+                    {
                         maps.AddRange(Directory.GetFileSystemEntries(Project.GameModDirectory + @"\map", @"m*").ToList());
+                    }
+                }
 
                 foreach (var map in maps)
                     mapSet.Add(Path.GetFileNameWithoutExtension($@"{map}.blah"));
@@ -247,14 +277,17 @@ public static class MapAssetLocator
                 var msbFiles = Directory
                     .GetFileSystemEntries(Project.GameRootDirectory + @"\map\MapStudio\", @"*.msb")
                     .Select(Path.GetFileNameWithoutExtension).ToList();
+
                 msbFiles.AddRange(Directory
                     .GetFileSystemEntries(Project.GameRootDirectory + @"\map\MapStudio\", @"*.msb.dcx")
                     .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
+
                 if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + @"\map\MapStudio\"))
                 {
                     msbFiles.AddRange(Directory
                         .GetFileSystemEntries(Project.GameModDirectory + @"\map\MapStudio\", @"*.msb")
                         .Select(Path.GetFileNameWithoutExtension).ToList());
+
                     msbFiles.AddRange(Directory
                         .GetFileSystemEntries(Project.GameModDirectory + @"\map\MapStudio\", @"*.msb.dcx")
                         .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension)
@@ -267,7 +300,9 @@ public static class MapAssetLocator
 
             Regex mapRegex = new(@"^m\d{2}_\d{2}_\d{2}_\d{2}$");
             var mapList = mapSet.Where(x => mapRegex.IsMatch(x)).ToList();
+
             mapList.Sort();
+
             FullMapList = mapList;
             return FullMapList;
         }
@@ -289,15 +324,25 @@ public static class MapAssetLocator
             return mapid;
 
         if (Project.Type is ProjectType.DS1R)
+        {
             if (mapid.StartsWith("m99"))
+            {
                 // DSR m99 maps contain their own assets
                 return mapid;
-            else if (Project.Type is ProjectType.DES)
-                return mapid;
-            else if (Project.Type is ProjectType.BB)
-                if (mapid.StartsWith("m29"))
-                    // Special case for chalice dungeon assets
-                    return "m29_00_00_00";
+            }
+        }
+        else if (Project.Type is ProjectType.DES)
+        {
+            return mapid;
+        }
+        else if (Project.Type is ProjectType.BB)
+        {
+            if (mapid.StartsWith("m29"))
+            {
+                // Special case for chalice dungeon assets
+                return "m29_00_00_00";
+            }
+        }
 
         // Default
         return mapid.Substring(0, 6) + "_00_00";
