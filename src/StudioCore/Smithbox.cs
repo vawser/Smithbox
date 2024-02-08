@@ -122,6 +122,7 @@ public class Smithbox
         WindowContainer.HelpWindow = new HelpWindow();
         WindowContainer.EventFlagWindow = new EventFlagWindow();
         WindowContainer.DebugWindow = new DebugWindow();
+        WindowContainer.MapNameWindow = new MapNameWindow();
 
         // Editors
         EditorContainer.MsbEditor = new MsbEditorScreen(_context.Window, _context.Device);
@@ -944,6 +945,12 @@ public class Smithbox
             }
             ImguiUtils.ShowButtonTooltip("Event Flags");
 
+            if (ImGui.Button($"{ForkAwesome.Building}"))
+            {
+                WindowContainer.MapNameWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowButtonTooltip("Map Names");
+
             if (FeatureFlags.DebugMenu)
             {
                 if (ImGui.Button($"{ForkAwesome.Bell}"))
@@ -977,6 +984,7 @@ public class Smithbox
         WindowContainer.HelpWindow.Display();
         WindowContainer.EventFlagWindow.Display();
         WindowContainer.DebugWindow.Display();
+        WindowContainer.MapNameWindow.Display();
 
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);

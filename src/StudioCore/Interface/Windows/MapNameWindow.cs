@@ -14,7 +14,7 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Interface.Windows;
 
-public class EventFlagWindow
+public class MapNameWindow
 {
     private bool MenuOpenState;
 
@@ -31,7 +31,7 @@ public class EventFlagWindow
 
     private string _selectedName;
 
-    public EventFlagWindow()
+    public MapNameWindow()
     {
     }
 
@@ -50,7 +50,7 @@ public class EventFlagWindow
         if (Project.Type == ProjectType.Undefined)
             return;
 
-        if (FlagAliasBank.Bank.IsLoadingAliases)
+        if (MapAliasBank.Bank.IsLoadingAliases)
             return;
 
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
@@ -60,30 +60,27 @@ public class EventFlagWindow
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
 
-        if (ImGui.Begin("Event Flags##EventFlagWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
+
+        if (ImGui.Begin("Map Names##MapNameWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
             if (ImGui.Button("Help"))
-                ImGui.OpenPopup("##EventFlagWindowHelp");
+                ImGui.OpenPopup("##MapNameWindowHelp");
 
             ImGui.SameLine();
-            ImGui.Checkbox("Show tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
-            ImguiUtils.ShowHelpMarker("Show the tags for each entry within the list as part of their displayed name.");
+            ImGui.Checkbox("Show unused map names", ref CFG.Current.MapAliases_ShowUnusedNames);
+            ImguiUtils.ShowHelpMarker("Enabling this option will allow unused or debug map names to appear in the scene tree view.");
 
-            if (ImGui.BeginPopup("##EventFlagWindowHelp"))
+            if (ImGui.BeginPopup("##MapNameWindowHelp"))
             {
-                ImGui.Text("Double click to copy the event flag to your clipboard.");
+                ImGui.Text("Double click to copy the map name to your clipboard.");
                 ImGui.EndPopup();
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Toggle Flag Addition"))
-                CFG.Current.EventFlagBrowser_ShowAliasAddition = !CFG.Current.EventFlagBrowser_ShowAliasAddition;
+            if (ImGui.Button("Toggle Name Addition"))
+                CFG.Current.MapAliases_ShowAliasAddition = !CFG.Current.MapAliases_ShowAliasAddition;
 
-            ImGui.SameLine();
-            ImguiUtils.ShowHelpMarker("When enabled the list will display the tags next to the name.");
-            ImGui.Checkbox("Show Tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
-
-            if (CFG.Current.EventFlagBrowser_ShowAliasAddition)
+            if (CFG.Current.MapAliases_ShowAliasAddition)
             {
                 ImGui.Separator();
 
@@ -96,35 +93,39 @@ public class EventFlagWindow
                 ImGui.InputText($"Tags", ref _newRefTags, 255);
                 ImguiUtils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
 
-                if (ImGui.Button("Add New Alias"))
+                if (ImGui.Button("Add Name"))
+                {
                     // Make sure the ref ID is a number
-                    if (Regex.IsMatch(_newRefId, @"^\d+$"))
+                    if (Regex.IsMatch(_newRefId, @"m\d{2}_\d{2}_\d{2}_\d{2}"))
                     {
                         var isValid = true;
 
-                        var entries = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
+                        var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
 
                         foreach (var entry in entries)
+                        {
                             if (_newRefId == entry.id)
                                 isValid = false;
+                        }
 
                         if (isValid)
                         {
-                            FlagAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                            MapAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                             ImGui.CloseCurrentPopup();
-                            FlagAliasBank.Bank.mayReloadAliasBank = true;
+                            MapAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         else
-                            PlatformUtils.Instance.MessageBox($"Event Flag Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            PlatformUtils.Instance.MessageBox($"Map Name with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                ImguiUtils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
+                }
+                ImguiUtils.ShowHelpMarker("Adds a new name to the project-specific alias bank.");
 
                 ImGui.Separator();
             }
 
             ImGui.Columns(1);
 
-            ImGui.BeginChild("FlagListSearch");
+            ImGui.BeginChild("MapNameListSearch");
             ImGui.InputText($"Search", ref _searchInput, 255);
 
             ImGui.SameLine();
@@ -134,9 +135,9 @@ public class EventFlagWindow
             ImGui.Separator();
             ImGui.Spacing();
 
-            ImGui.BeginChild("EventFlagList");
+            ImGui.BeginChild("MapNameList");
 
-            DisplaySelectionList(FlagAliasBank.Bank.AliasNames.GetEntries("Flags"));
+            DisplaySelectionList(MapAliasBank.Bank.AliasNames.GetEntries("Maps"));
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -147,10 +148,10 @@ public class EventFlagWindow
         ImGui.PopStyleVar(3);
         ImGui.PopStyleColor(2);
 
-        if (FlagAliasBank.Bank.mayReloadAliasBank)
+        if (MapAliasBank.Bank.mayReloadAliasBank)
         {
-            FlagAliasBank.Bank.mayReloadAliasBank = false;
-            FlagAliasBank.Bank.ReloadAliasBank();
+            MapAliasBank.Bank.mayReloadAliasBank = false;
+            MapAliasBank.Bank.ReloadAliasBank();
         }
     }
 
@@ -168,7 +169,7 @@ public class EventFlagWindow
         if (_searchInput != _searchInputCache)
             _searchInputCache = _searchInput;
 
-        var entries = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
+        var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
 
         foreach (var entry in entries)
         {
@@ -178,8 +179,13 @@ public class EventFlagWindow
             var refName = $"{entry.name}";
             var refTagList = entry.tags;
 
+            // Skip the unused names if this is disabled
+            if (!CFG.Current.MapAliases_ShowUnusedNames)
+                if (refTagList[0] == "unused")
+                    continue;
+
             // Append tags to to displayed name
-            if (CFG.Current.EventFlagBrowser_ShowTagsInBrowser)
+            if (CFG.Current.MapAliases_ShowTagsInBrowser)
             {
                 var tagString = string.Join(" ", refTagList);
                 displayedName = $"{displayedName} {{ {tagString} }}";
@@ -212,16 +218,16 @@ public class EventFlagWindow
 
                         if (ImGui.Button("Update"))
                         {
-                            FlagAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            MapAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            FlagAliasBank.Bank.mayReloadAliasBank = true;
+                            MapAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            FlagAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
+                            MapAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            FlagAliasBank.Bank.mayReloadAliasBank = true;
+                            MapAliasBank.Bank.mayReloadAliasBank = true;
                         }
 
                         ImGui.EndPopup();
@@ -229,9 +235,6 @@ public class EventFlagWindow
 
                 if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                 {
-                    var num = long.Parse(refID.Replace("f", ""));
-
-                    PlatformUtils.Instance.SetClipboardText($"{num}");
                 }
             }
         }

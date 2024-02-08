@@ -139,6 +139,7 @@ public class SettingsWindow
             }
 
             if (ImGui.CollapsingHeader("Project"))
+            {
                 if (ProjSettings == null || ProjSettings.ProjectName == null)
                 {
                     ImGui.Text("No project loaded");
@@ -177,168 +178,9 @@ public class SettingsWindow
                         ImguiUtils.ShowHelpMarker("Partial params.");
                     }
                 }
-
-            if (ImGui.CollapsingHeader("Map Aliases"))
-                if (ProjSettings != null && ProjSettings.ProjectName != null && !TaskManager.AnyActiveTasks())
-                {
-                    ImGui.Checkbox("Show unused map names", ref CFG.Current.MapAliases_ShowUnusedNames);
-                    ImguiUtils.ShowHelpMarker("Enabling this option will allow unused or debug map names to appear in the scene tree view.");
-
-                    if (ImGui.Button("Edit map aliases"))
-                        CFG.Current.MapAliases_ShowMapAliasEditList = !CFG.Current.MapAliases_ShowMapAliasEditList;
-                    ImguiUtils.ShowHelpMarker("Toggle the map alias list.");
-
-                    if (CFG.Current.MapAliases_ShowMapAliasEditList)
-                    {
-                        ImGui.Separator();
-
-                        if (ImGui.Button("Toggle Alias Addition"))
-                            CFG.Current.MapAliases_ShowAliasAddition = !CFG.Current.MapAliases_ShowAliasAddition;
-
-                        ImGui.SameLine();
-                        ImGui.Checkbox("Show Tags", ref CFG.Current.MapAliases_ShowTagsInBrowser);
-                        ImguiUtils.ShowHelpMarker("When enabled the list will display the tags next to the name.");
-
-                        ImGui.Separator();
-
-                        if (CFG.Current.MapAliases_ShowAliasAddition)
-                        {
-                            ImGui.InputText($"ID", ref _newRefId, 255);
-                            ImguiUtils.ShowHelpMarker("The map ID of the alias to add.");
-
-                            ImGui.InputText($"Name", ref _newRefName, 255);
-                            ImguiUtils.ShowHelpMarker("The name of the alias to add.");
-
-                            ImGui.InputText($"Tags", ref _newRefTags, 255);
-                            ImguiUtils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
-
-                            if (ImGui.Button("Add New Alias"))
-                                // Make sure the ref ID is a MSB name
-                                if (Regex.IsMatch(_newRefId, @"m\d{2}_\d{2}_\d{2}_\d{2}"))
-                                {
-                                    var isValid = true;
-
-                                    var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
-
-                                    foreach (var entry in entries)
-                                        if (_newRefId == entry.id)
-                                            isValid = false;
-
-                                    if (isValid)
-                                    {
-                                        MapAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
-                                        ImGui.CloseCurrentPopup();
-                                        MapAliasBank.Bank.mayReloadAliasBank = true;
-                                    }
-                                    else
-                                        PlatformUtils.Instance.MessageBox($"Map Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            ImguiUtils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
-
-                            ImGui.Separator();
-                        }
-
-                        ImGui.InputText($"Search", ref _searchInput, 255);
-                        ImGui.SameLine();
-                        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
-
-                        ImGui.Spacing();
-                        ImGui.Separator();
-                        ImGui.Spacing();
-
-                        DisplayMapAliasSelectionList(MapAliasBank.Bank.AliasNames.GetEntries("Maps"));
-                    }
-                }
+            }
 
             ImGui.EndTabItem();
-        }
-
-        if (MapAliasBank.Bank.mayReloadAliasBank)
-        {
-            MapAliasBank.Bank.mayReloadAliasBank = false;
-            MapAliasBank.Bank.ReloadAliasBank();
-        }
-    }
-
-    private void DisplayMapAliasSelectionList(List<AliasReference> referenceList)
-    {
-        var referenceDict = new Dictionary<string, AliasReference>();
-
-        foreach (AliasReference v in referenceList)
-            if (!referenceDict.ContainsKey(v.id))
-                referenceDict.Add(v.id, v);
-
-        if (_searchInput != _searchInputCache)
-            _searchInputCache = _searchInput;
-
-        var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
-
-        foreach (var entry in entries)
-        {
-            var displayedName = $"{entry.id} - {entry.name}";
-
-            var refID = $"{entry.id}";
-            var refName = $"{entry.name}";
-            var refTagList = entry.tags;
-
-            // Skip the unused names if this is disabled
-            if (!CFG.Current.MapAliases_ShowUnusedNames)
-                if (refTagList[0] == "unused")
-                    continue;
-
-            // Append tags to to displayed name
-            if (CFG.Current.MapAliases_ShowTagsInBrowser)
-            {
-                var tagString = string.Join(" ", refTagList);
-                displayedName = $"{displayedName} {{ {tagString} }}";
-            }
-
-            if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList))
-            {
-                if (ImGui.Selectable(displayedName))
-                {
-                    _selectedName = refID;
-                    _refUpdateId = refID;
-                    _refUpdateName = refName;
-
-                    if (refTagList.Count > 0)
-                    {
-                        var tagStr = refTagList[0];
-                        foreach (var tEntry in refTagList.Skip(1))
-                            tagStr = $"{tagStr},{tEntry}";
-                        _refUpdateTags = tagStr;
-                    }
-                    else
-                        _refUpdateTags = "";
-                }
-
-                if (_selectedName == refID)
-                    if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                    {
-                        ImGui.InputText($"Name", ref _refUpdateName, 255);
-                        ImGui.InputText($"Tags", ref _refUpdateTags, 255);
-
-                        if (ImGui.Button("Update"))
-                        {
-                            MapAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
-                            ImGui.CloseCurrentPopup();
-                            MapAliasBank.Bank.mayReloadAliasBank = true;
-                        }
-                        ImGui.SameLine();
-                        if (ImGui.Button("Restore Default"))
-                        {
-                            MapAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
-                            ImGui.CloseCurrentPopup();
-                            MapAliasBank.Bank.mayReloadAliasBank = true;
-                        }
-
-                        ImGui.EndPopup();
-                    }
-
-                if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-                {
-                }
-            }
         }
     }
 

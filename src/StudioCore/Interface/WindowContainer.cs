@@ -23,5 +23,6 @@ public static class WindowContainer
     public static HelpWindow HelpWindow { get; set; }
     public static EventFlagWindow EventFlagWindow { get; set; }
     public static DebugWindow DebugWindow { get; set; }
+    public static MapNameWindow MapNameWindow { get; set; }
 }
 

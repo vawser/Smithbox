@@ -310,7 +310,8 @@ public class GraphicsEditorScreen : EditorScreen
         Type type = val.GetType();
 
         ImGui.SetNextItemWidth(-1);
-        ImGui.InputText($"##{val.Id}{index}", ref value, 256);
+        ImGui.Text($"{value}"); // Temp until we implement the property edit part
+        //ImGui.InputText($"##{val.Id}{index}", ref value, 256);
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)
