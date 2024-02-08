@@ -13,6 +13,45 @@ namespace StudioCore.AssetLocator;
 
 public static class LocatorUtils
 {
+    public static List<string> GetAssetFiles(string paramDir, string paramExt)
+    {
+        try
+        {
+            HashSet<string> fileList = new();
+            List<string> ret = new();
+
+            var paramFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + paramDir, $@"*{paramExt}")
+                .ToList();
+            foreach (var f in paramFiles)
+            {
+                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                ret.Add(name);
+                fileList.Add(name);
+            }
+
+            if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + paramDir))
+            {
+                paramFiles = Directory.GetFileSystemEntries(Project.GameModDirectory + paramDir, $@"*{paramExt}").ToList();
+                foreach (var f in paramFiles)
+                {
+                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                    if (!fileList.Contains(name))
+                    {
+                        ret.Add(name);
+                        fileList.Add(name);
+                    }
+                }
+            }
+
+            return ret;
+        }
+        catch (DirectoryNotFoundException e)
+        {
+            // Game likely isn't UXM unpacked
+            return new List<string>();
+        }
+    }
+
     public static string GetAssetPath(string relpath)
     {
         if (Project.GameModDirectory != null)

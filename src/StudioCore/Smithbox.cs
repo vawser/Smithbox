@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
-using StudioCore.AnimationEditor;
 using StudioCore.Browsers;
 using StudioCore.Configuration;
 using StudioCore.CutsceneEditor;
@@ -44,6 +43,7 @@ using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface.Windows;
 using StudioCore.Interface;
+using StudioCore.Editors.TimeActEditor;
 
 namespace StudioCore;
 
@@ -130,9 +130,9 @@ public class Smithbox
         EditorContainer.ModelEditor = new ModelEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextEditor = new TextEditorScreen(_context.Window, _context.Device);
         EditorContainer.ParamEditor = new ParamEditorScreen(_context.Window, _context.Device);
-        EditorContainer.AnimationEditor = new AnimationEditorScreen(_context.Window, _context.Device);
+        EditorContainer.TimeActEditor = new TimeActEditorScreen(_context.Window, _context.Device);
         EditorContainer.CutsceneEditor = new CutsceneEditorScreen(_context.Window, _context.Device);
-        EditorContainer.GraphicsParamEditor = new GraphicsEditorScreen(_context.Window, _context.Device);
+        EditorContainer.GparamEditor = new GparamEditorScreen(_context.Window, _context.Device);
         EditorContainer.MaterialEditor = new MaterialEditorScreen(_context.Window, _context.Device);
         EditorContainer.ParticleEditor = new ParticleEditorScreen(_context.Window, _context.Device);
         EditorContainer.ScriptEditor = new ScriptEditorScreen(_context.Window, _context.Device);
@@ -144,8 +144,8 @@ public class Smithbox
             EditorContainer.ModelEditor,
             EditorContainer.ParamEditor,
             EditorContainer.TextEditor,
-            EditorContainer.GraphicsParamEditor,
-            EditorContainer.AnimationEditor,
+            EditorContainer.GparamEditor,
+            EditorContainer.TimeActEditor,
             EditorContainer.CutsceneEditor,
             EditorContainer.MaterialEditor,
             EditorContainer.ParticleEditor,

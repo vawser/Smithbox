@@ -8,7 +8,7 @@ using SoulsFormats;
 using StudioCore.Editor;
 using System.Reflection;
 
-namespace StudioCore.AnimationEditor;
+namespace StudioCore.Editors.TimeActEditor;
 
 public class PropertyEditor
 {

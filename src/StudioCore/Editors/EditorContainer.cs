@@ -1,7 +1,7 @@
-﻿using StudioCore.AnimationEditor;
-using StudioCore.Banks.AliasBank;
+﻿using StudioCore.Banks.AliasBank;
 using StudioCore.CutsceneEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditor;
 using StudioCore.MsbEditor;
@@ -23,9 +23,9 @@ public static class EditorContainer
     public static ModelEditorScreen ModelEditor { get; set; }
     public static TextEditorScreen TextEditor { get; set; }
     public static ParamEditorScreen ParamEditor { get; set; }
-    public static AnimationEditorScreen AnimationEditor { get; set; }
+    public static TimeActEditorScreen TimeActEditor { get; set; }
     public static CutsceneEditorScreen CutsceneEditor { get; set; }
-    public static GraphicsEditorScreen GraphicsParamEditor { get; set; }
+    public static GparamEditorScreen GparamEditor { get; set; }
     public static MaterialEditorScreen MaterialEditor { get; set; }
     public static ParticleEditorScreen ParticleEditor { get; set; }
     public static ScriptEditorScreen ScriptEditor { get; set; }

@@ -12,16 +12,16 @@ using static SoulsFormats.GPARAM;
 
 namespace StudioCore.GraphicsEditor;
 
-public class GraphicsEditorScreen : EditorScreen
+public class GparamEditorScreen : EditorScreen
 {
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
     private ActionManager EditorActionManager = new();
 
-    private GraphicsParamBank.GraphicsParamInfo _selectedGraphicsParamInfo;
-    private GPARAM _selectedGraphicsParam;
-    private string _selectedGraphicsParamKey;
+    private GparamParamBank.GparamInfo _selectedGparamInfo;
+    private GPARAM _selectedGparam;
+    private string _selectedGparamKey;
 
     private GPARAM.Param _selectedParamGroup;
     private string _selectedParamGroupKey;
@@ -32,16 +32,16 @@ public class GraphicsEditorScreen : EditorScreen
     private GPARAM.IFieldValue _selectedFieldValue = null;
     private string _selectedFieldValueKey = "";
 
-    public GraphicsEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         ResetAllSelection();
 
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Graphics Editor";
+    public string EditorName => "Gparam Editor";
     public string CommandEndpoint => "gparam";
-    public string SaveType => "Param";
+    public string SaveType => "Gparam";
 
     public void DrawEditorMenu()
     {
@@ -82,14 +82,14 @@ public class GraphicsEditorScreen : EditorScreen
             ImGui.Text("No project loaded. File -> New Project");
         }
 
-        var dsid = ImGui.GetID("DockSpace_GraphicsParamEditor");
+        var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!GraphicsParamBank.IsLoaded)
+        if (!GparamParamBank.IsLoaded)
         {
             ResetAllSelection();
 
-            if (GraphicsParamBank.IsLoading)
+            if (GparamParamBank.IsLoading)
             {
                 ImGui.Text("Loading...");
             }
@@ -110,8 +110,8 @@ public class GraphicsEditorScreen : EditorScreen
 
     private void ResetFileSelection()
     {
-        _selectedGraphicsParam = null;
-        _selectedGraphicsParamKey = "";
+        _selectedGparam = null;
+        _selectedGparamKey = "";
     }
 
     private void ResetGroupSelection()
@@ -135,28 +135,28 @@ public class GraphicsEditorScreen : EditorScreen
     private void GraphicsParamView()
     {
         // GPARAM List
-        ImGui.Begin("Files");
+        ImGui.Begin("Files##GparamFileList");
 
         ImGui.Text($"File");
         ImGui.Separator();
 
-        foreach (var (info, param) in GraphicsParamBank.ParamBank)
+        foreach (var (info, param) in GparamParamBank.ParamBank)
         {
-            if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGraphicsParamKey))
+            if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGparamKey))
             {
                 ResetGroupSelection();
                 ResetFieldSelection();
                 ResetValueSelection();
 
-                _selectedGraphicsParamKey = info.Name;
-                _selectedGraphicsParamInfo = info;
-                _selectedGraphicsParam = param;
+                _selectedGparamKey = info.Name;
+                _selectedGparamInfo = info;
+                _selectedGparam = param;
             }
 
             // Context menu action for duplicating exist to new name
-            if (info.Name == _selectedGraphicsParamKey)
+            if (info.Name == _selectedGparamKey)
             {
-                if (ImGui.BeginPopupContextItem($"Duplicate##gparamFile_Duplicate"))
+                if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
                 {
                     if (ImGui.Button("Duplicate"))
                     {
@@ -176,11 +176,11 @@ public class GraphicsEditorScreen : EditorScreen
         ImGui.End();
 
         // GPARAM Groups
-        ImGui.Begin("Groups");
+        ImGui.Begin("Groups##GparamGroups");
 
-        if (_selectedGraphicsParam != null && _selectedGraphicsParamKey != "")
+        if (_selectedGparam != null && _selectedGparamKey != "")
         {
-            GPARAM data = _selectedGraphicsParam;
+            GPARAM data = _selectedGparam;
 
             ImGui.Text($"Group");
             ImGui.Separator();
@@ -201,7 +201,7 @@ public class GraphicsEditorScreen : EditorScreen
         ImGui.End();
 
         // GPARAM Fields
-        ImGui.Begin("Fields");
+        ImGui.Begin("Fields##GparamFields");
 
         if (_selectedParamGroup != null && _selectedParamGroupKey != "")
         {
@@ -225,7 +225,7 @@ public class GraphicsEditorScreen : EditorScreen
         ImGui.End();
 
         // GPARAM Values
-        ImGui.Begin("Values");
+        ImGui.Begin("Values##GparamValues");
 
         if (_selectedParamField != null && _selectedParamFieldKey != "")
         {
@@ -249,7 +249,7 @@ public class GraphicsEditorScreen : EditorScreen
         }
 
         // ID
-        ImGui.BeginChild("IdList");
+        ImGui.BeginChild("IdList##GparamPropertyIds");
         ImGui.Text($"ID");
         ImGui.Separator();
         int idx = 0;
@@ -281,7 +281,7 @@ public class GraphicsEditorScreen : EditorScreen
         */
 
         // Value
-        ImGui.BeginChild("ValueList");
+        ImGui.BeginChild("ValueList##GparamPropertyValues");
         ImGui.Text($"Value");
         ImGui.Separator();
 
@@ -317,19 +317,19 @@ public class GraphicsEditorScreen : EditorScreen
     public void OnProjectChanged(ProjectSettings newSettings)
     {
         _projectSettings = newSettings;
-        GraphicsParamBank.LoadGraphicsParams();
+        GparamParamBank.LoadGraphicsParams();
 
         ResetActionManager();
     }
 
     public void Save()
     {
-        GraphicsParamBank.SaveGraphicsParam(_selectedGraphicsParamInfo, _selectedGraphicsParam);
+        GparamParamBank.SaveGraphicsParam(_selectedGparamInfo, _selectedGparam);
     }
 
     public void SaveAll()
     {
-        GraphicsParamBank.SaveGraphicsParams();
+        GparamParamBank.SaveGraphicsParams();
     }
 
     private void ParamUndo()

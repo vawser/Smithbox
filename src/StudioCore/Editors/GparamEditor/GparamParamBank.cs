@@ -10,12 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GraphicsEditor;
-public static class GraphicsParamBank
+public static class GparamParamBank
 {
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<GraphicsParamInfo, GPARAM> ParamBank { get; private set; } = new();
+    public static Dictionary<GparamInfo, GPARAM> ParamBank { get; private set; } = new();
 
     public static void SaveGraphicsParams()
     {
@@ -25,7 +25,7 @@ public static class GraphicsParamBank
         }
     }
 
-    public static void SaveGraphicsParam(GraphicsParamInfo info, GPARAM param)
+    public static void SaveGraphicsParam(GparamInfo info, GPARAM param)
     {
         //TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
 
@@ -141,7 +141,7 @@ public static class GraphicsParamBank
         }
 
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        GraphicsParamInfo gStruct = new GraphicsParamInfo(name, path);
+        GparamInfo gStruct = new GparamInfo(name, path);
         GPARAM gPARAM = new GPARAM();
 
         if (Project.Type == ProjectType.DS2S)
@@ -156,9 +156,9 @@ public static class GraphicsParamBank
         ParamBank.Add(gStruct, gPARAM);
     }
 
-    public struct GraphicsParamInfo
+    public struct GparamInfo
     {
-        public GraphicsParamInfo(string name, string path)
+        public GparamInfo(string name, string path)
         {
             Name = name;
             Path = path;
