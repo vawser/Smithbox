@@ -29,27 +29,17 @@ using System.Text.RegularExpressions;
 using Veldrid;
 using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors;
+using StudioCore.Settings;
 
-namespace StudioCore.Settings;
+namespace StudioCore.Interface.Windows;
 
-public class SettingsMenu
+public class SettingsWindow
 {
     private KeyBind _currentKeyBind;
     public bool MenuOpenState;
-    public ModelEditorScreen ModelEditor;
-    public MsbEditorScreen MsbEditor;
-    public ParamEditorScreen ParamEditor;
+
     public ProjectSettings ProjSettings = null;
-    public TextEditorScreen TextEditor;
-    
-    public AnimationEditorScreen AnimationEditor;
-    public CutsceneEditorScreen CutsceneEditor;
-    public GraphicsEditorScreen GraphicsEditor;
-    public MaterialEditorScreen MaterialEditor;
-    public ParticleEditorScreen ParticleEditor;
-    public ScriptEditorScreen ScriptEditor;
-    public TalkEditorScreen TalkEditor;
-    public TextureViewerScreen TextureViewer;
 
     private string _searchInput = "";
     private string _searchInputCache = "";
@@ -64,13 +54,17 @@ public class SettingsMenu
 
     private string _selectedName;
 
-    public SettingsMenu()
+    public SettingsWindow()
     {
     }
 
     public void SaveSettings()
     {
         CFG.Save();
+    }
+    public void ToggleMenuVisibility()
+    {
+        MenuOpenState = !MenuOpenState;
     }
 
     private void DisplaySettings_System()
@@ -145,7 +139,6 @@ public class SettingsMenu
             }
 
             if (ImGui.CollapsingHeader("Project"))
-            {
                 if (ProjSettings == null || ProjSettings.ProjectName == null)
                 {
                     ImGui.Text("No project loaded");
@@ -184,19 +177,15 @@ public class SettingsMenu
                         ImguiUtils.ShowHelpMarker("Partial params.");
                     }
                 }
-            }
 
             if (ImGui.CollapsingHeader("Map Aliases"))
-            {
                 if (ProjSettings != null && ProjSettings.ProjectName != null && !TaskManager.AnyActiveTasks())
                 {
                     ImGui.Checkbox("Show unused map names", ref CFG.Current.MapAliases_ShowUnusedNames);
                     ImguiUtils.ShowHelpMarker("Enabling this option will allow unused or debug map names to appear in the scene tree view.");
 
                     if (ImGui.Button("Edit map aliases"))
-                    {
                         CFG.Current.MapAliases_ShowMapAliasEditList = !CFG.Current.MapAliases_ShowMapAliasEditList;
-                    }
                     ImguiUtils.ShowHelpMarker("Toggle the map alias list.");
 
                     if (CFG.Current.MapAliases_ShowMapAliasEditList)
@@ -204,9 +193,7 @@ public class SettingsMenu
                         ImGui.Separator();
 
                         if (ImGui.Button("Toggle Alias Addition"))
-                        {
                             CFG.Current.MapAliases_ShowAliasAddition = !CFG.Current.MapAliases_ShowAliasAddition;
-                        }
 
                         ImGui.SameLine();
                         ImGui.Checkbox("Show Tags", ref CFG.Current.MapAliases_ShowTagsInBrowser);
@@ -226,19 +213,16 @@ public class SettingsMenu
                             ImguiUtils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
 
                             if (ImGui.Button("Add New Alias"))
-                            {
                                 // Make sure the ref ID is a MSB name
                                 if (Regex.IsMatch(_newRefId, @"m\d{2}_\d{2}_\d{2}_\d{2}"))
                                 {
-                                    bool isValid = true;
+                                    var isValid = true;
 
                                     var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
 
                                     foreach (var entry in entries)
-                                    {
                                         if (_newRefId == entry.id)
                                             isValid = false;
-                                    }
 
                                     if (isValid)
                                     {
@@ -247,11 +231,8 @@ public class SettingsMenu
                                         MapAliasBank.Bank.mayReloadAliasBank = true;
                                     }
                                     else
-                                    {
                                         PlatformUtils.Instance.MessageBox($"Map Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    }
                                 }
-                            }
                             ImguiUtils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
 
                             ImGui.Separator();
@@ -268,7 +249,6 @@ public class SettingsMenu
                         DisplayMapAliasSelectionList(MapAliasBank.Bank.AliasNames.GetEntries("Maps"));
                     }
                 }
-            }
 
             ImGui.EndTabItem();
         }
@@ -282,18 +262,14 @@ public class SettingsMenu
 
     private void DisplayMapAliasSelectionList(List<AliasReference> referenceList)
     {
-        Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
+        var referenceDict = new Dictionary<string, AliasReference>();
 
         foreach (AliasReference v in referenceList)
-        {
             if (!referenceDict.ContainsKey(v.id))
                 referenceDict.Add(v.id, v);
-        }
 
         if (_searchInput != _searchInputCache)
-        {
             _searchInputCache = _searchInput;
-        }
 
         var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
 
@@ -307,10 +283,8 @@ public class SettingsMenu
 
             // Skip the unused names if this is disabled
             if (!CFG.Current.MapAliases_ShowUnusedNames)
-            {
                 if (refTagList[0] == "unused")
                     continue;
-            }
 
             // Append tags to to displayed name
             if (CFG.Current.MapAliases_ShowTagsInBrowser)
@@ -329,21 +303,16 @@ public class SettingsMenu
 
                     if (refTagList.Count > 0)
                     {
-                        string tagStr = refTagList[0];
-                        foreach (string tEntry in refTagList.Skip(1))
-                        {
+                        var tagStr = refTagList[0];
+                        foreach (var tEntry in refTagList.Skip(1))
                             tagStr = $"{tagStr},{tEntry}";
-                        }
                         _refUpdateTags = tagStr;
                     }
                     else
-                    {
                         _refUpdateTags = "";
-                    }
                 }
 
                 if (_selectedName == refID)
-                {
                     if (ImGui.BeginPopupContextItem($"{refID}##context"))
                     {
                         ImGui.InputText($"Name", ref _refUpdateName, 255);
@@ -365,7 +334,6 @@ public class SettingsMenu
 
                         ImGui.EndPopup();
                     }
-                }
 
                 if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                 {
@@ -394,13 +362,11 @@ public class SettingsMenu
                 ImguiUtils.ShowHelpMarker("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
 
                 if (ProjSettings != null)
-                {
                     if (ProjSettings.GameType is ProjectType.ER)
                     {
                         ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Map_Enable_ER_Auto_Map_Offset);
                         ImguiUtils.ShowHelpMarker("");
                     }
-                }
             }
 
             // Property View
@@ -431,15 +397,15 @@ public class SettingsMenu
 
                     CFG.Current.GFX_RenderDistance_Max = CFG.Default.GFX_RenderDistance_Max;
 
-                    MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.GFX_Camera_MoveSpeed_Slow;
-                    CFG.Current.GFX_Camera_MoveSpeed_Slow = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
+                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.GFX_Camera_MoveSpeed_Slow;
+                    CFG.Current.GFX_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
                     CFG.Current.GFX_Camera_Sensitivity = CFG.Default.GFX_Camera_Sensitivity;
 
-                    MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.GFX_Camera_MoveSpeed_Normal;
-                    CFG.Current.GFX_Camera_MoveSpeed_Normal = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
+                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.GFX_Camera_MoveSpeed_Normal;
+                    CFG.Current.GFX_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
 
-                    MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.GFX_Camera_MoveSpeed_Fast;
-                    CFG.Current.GFX_Camera_MoveSpeed_Fast = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
+                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.GFX_Camera_MoveSpeed_Fast;
+                    CFG.Current.GFX_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
                 }
                 ImguiUtils.ShowHelpMarker("Resets all of the values within this section to their default values.");
 
@@ -452,9 +418,7 @@ public class SettingsMenu
                 var cam_sensitivity = CFG.Current.GFX_Camera_Sensitivity;
 
                 if (ImGui.SliderFloat("Camera sensitivity", ref cam_sensitivity, 0.0f, 0.1f))
-                {
                     CFG.Current.GFX_Camera_Sensitivity = cam_sensitivity;
-                }
                 ImguiUtils.ShowHelpMarker("Mouse sensitivty for turning the camera.");
 
                 var farClip = CFG.Current.GFX_RenderDistance_Max;
@@ -464,18 +428,18 @@ public class SettingsMenu
                 ImguiUtils.ShowHelpMarker("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
 
                 if (ImGui.SliderFloat("Map camera speed (slow)",
-                        ref MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 999.0f))
-                    CFG.Current.GFX_Camera_MoveSpeed_Slow = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
+                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 999.0f))
+                    CFG.Current.GFX_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
                 ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
 
                 if (ImGui.SliderFloat("Map camera speed (normal)",
-                        ref MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 999.0f))
-                    CFG.Current.GFX_Camera_MoveSpeed_Normal = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
+                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 999.0f))
+                    CFG.Current.GFX_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
                 ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move whilst moving normally.");
 
                 if (ImGui.SliderFloat("Map camera speed (fast)",
-                        ref MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 999.0f))
-                    CFG.Current.GFX_Camera_MoveSpeed_Fast = MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
+                        ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 999.0f))
+                    CFG.Current.GFX_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
                 ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
             }
 
@@ -496,10 +460,8 @@ public class SettingsMenu
                     @"Try smaller increments (+25%%) at first, as high values will cause issues.");
 
                 if (ImGui.InputInt("Renderables", ref CFG.Current.GFX_Limit_Renderables, 0, 0))
-                {
                     if (CFG.Current.GFX_Limit_Renderables < CFG.Default.GFX_Limit_Renderables)
                         CFG.Current.GFX_Limit_Renderables = CFG.Default.GFX_Limit_Renderables;
-                }
                 ImguiUtils.ShowHelpMarker("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
 
                 Utils.ImGui_InputUint("Indirect Draw buffer", ref CFG.Current.GFX_Limit_Buffer_Indirect_Draw);
@@ -512,10 +474,8 @@ public class SettingsMenu
             // Grid
             if (ImGui.CollapsingHeader("Grid"))
             {
-                if(ImGui.Button("Regenerate"))
-                {
+                if (ImGui.Button("Regenerate"))
                     CFG.Current.Viewport_RegenerateMapGrid = true;
-                }
 
                 ImGui.Checkbox("Enable viewport grid", ref CFG.Current.Viewport_EnableGrid);
                 ImguiUtils.ShowHelpMarker("Enable the viewport grid when in the Map Editor.");
@@ -799,11 +759,11 @@ public class SettingsMenu
                 ImguiUtils.ShowHelpMarker("Show the original FMG file names within the Text Editor file list.");
 
                 if (ImGui.Checkbox("Separate related FMGs and entries", ref CFG.Current.FMG_NoGroupedFmgEntries))
-                    TextEditor.OnProjectChanged(ProjSettings);
+                    EditorContainer.TextEditor.OnProjectChanged(ProjSettings);
                 ImguiUtils.ShowHelpMarker("If enabled then FMG entries will not be grouped automatically.");
 
                 if (ImGui.Checkbox("Separate patch FMGs", ref CFG.Current.FMG_NoFmgPatching))
-                    TextEditor.OnProjectChanged(ProjSettings);
+                    EditorContainer.TextEditor.OnProjectChanged(ProjSettings);
                 ImguiUtils.ShowHelpMarker("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
             }
 
@@ -863,32 +823,6 @@ public class SettingsMenu
 
                 ImGui.Checkbox("Move to Grid", ref CFG.Current.Toolbar_Show_Move_to_Grid);
                 ImguiUtils.ShowHelpMarker("If enabled, the Move to Grid action will be visible in the map toolbar window.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_Browsers()
-    {
-        if (ImGui.BeginTabItem("Browsers"))
-        {
-            if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-                ImguiUtils.ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
-            }
-
-            if (ImGui.CollapsingHeader("Flag ID Browser"))
-            {
-                ImGui.Checkbox("Show tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
-                ImguiUtils.ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
-            }
-
-            if (ImGui.CollapsingHeader("Particle ID Browser"))
-            {
-                ImGui.Checkbox("Show tags", ref CFG.Current.ParticleBrowser_ShowTagsInBrowser);
-                ImguiUtils.ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
             }
 
             ImGui.EndTabItem();
@@ -960,7 +894,7 @@ public class SettingsMenu
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
 
-        if (ImGui.Begin("Settings Menu##Popup", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
+        if (ImGui.Begin("Settings##Popup", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
             ImGui.BeginTabBar("#SettingsMenuTabBar");
             ImGui.PushStyleColor(ImGuiCol.Header, new Vector4(0.3f, 0.3f, 0.6f, 0.4f));
@@ -981,7 +915,6 @@ public class SettingsMenu
             // DisplaySettings_TalkEditor();
             // DisplaySettings_TextureViewer();
             DisplaySettings_Toolbar();
-            DisplaySettings_Browsers();
             DisplaySettings_Keybinds();
 
             ImGui.PopItemWidth();

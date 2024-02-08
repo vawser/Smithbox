@@ -14,7 +14,7 @@ public static class FeatureFlags
     public static bool StrictResourceChecking = true;
 
 #if DEBUG
-    public static bool TestMenu = true;
+    public static bool DebugMenu = true;
 #else
         public static bool TestMenu = false;
 #endif

@@ -105,6 +105,9 @@ public class MapAssetBrowser
             ImGui.Separator();
             ImGui.Spacing();
 
+            ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
+            ImguiUtils.ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
+
             ImGui.BeginChild("AssetList");
 
             DisplayAssetSelectionList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));

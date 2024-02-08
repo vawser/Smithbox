@@ -37,6 +37,21 @@ public static class ImguiUtils
         }
     }
 
+    public static void ShowButtonTooltip(string desc)
+    {
+        if (CFG.Current.System_Show_UI_Tooltips)
+        {
+            if (ImGui.IsItemHovered())
+            {
+                ImGui.BeginTooltip();
+                ImGui.PushTextWrapPos(450.0f);
+                ImGui.TextUnformatted(desc);
+                ImGui.PopTextWrapPos();
+                ImGui.EndTooltip();
+            }
+        }
+    }
+
     public static string GetKeybindHint(string hint)
     {
         if (hint == "")

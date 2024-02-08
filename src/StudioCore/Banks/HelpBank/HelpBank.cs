@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
-namespace StudioCore.JSON;
+namespace StudioCore.Banks.HelpBank;
 
-public class HelpDex
+public class HelpBank
 {
     private readonly TextEntry _credits;
     private readonly List<HelpEntry> _helpArticles;
@@ -15,7 +15,7 @@ public class HelpDex
     private readonly List<HelpEntry> _helpTutorials;
     private readonly LinkEntries _links;
 
-    public HelpDex()
+    public HelpBank()
     {
         _helpArticles = LoadHelpResource("Articles");
         _helpTutorials = LoadHelpResource("Tutorials");

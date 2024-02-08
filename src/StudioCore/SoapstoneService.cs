@@ -14,6 +14,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors;
 
 #pragma warning disable CS1998 // Async method lacks 'await'. Return without Task is convenient, though
 
@@ -52,10 +53,10 @@ public class SoapstoneService : SoapstoneServiceV1
 
     private readonly string version;
 
-    public SoapstoneService(string version, MsbEditorScreen msbEditor)
+    public SoapstoneService(string version)
     {
         this.version = version;
-        this.msbEditor = msbEditor;
+        this.msbEditor = EditorContainer.MsbEditor;
     }
 
     public override async Task<ServerInfoResponse> GetServerInfo(ServerCallContext context)

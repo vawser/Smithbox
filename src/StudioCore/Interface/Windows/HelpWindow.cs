@@ -1,16 +1,16 @@
 ﻿using ImGuiNET;
+using StudioCore.Banks.HelpBank;
 using StudioCore.Help;
-using StudioCore.JSON;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.Browsers;
+namespace StudioCore.Interface.Windows;
 
-public class HelpBrowser
+public class HelpWindow
 {
-    private readonly HelpDex _helpDex;
+    private readonly HelpBank _helpBank;
 
     // Article
     private readonly string _inputStr_Article = "";
@@ -33,9 +33,9 @@ public class HelpBrowser
 
     private bool MenuOpenState;
 
-    public HelpBrowser()
+    public HelpWindow()
     {
-        _helpDex = new HelpDex();
+        _helpBank = new HelpBank();
     }
 
     public void ToggleMenuVisibility()
@@ -63,11 +63,11 @@ public class HelpBrowser
             ImGui.PushStyleColor(ImGuiCol.Header, new Vector4(0.3f, 0.3f, 0.6f, 0.4f));
             ImGui.PushItemWidth(300f);
 
-            DisplayHelpSection("Article", _helpDex.GetArticles(), _inputStr_Article, _inputStrCache_Article,
+            DisplayHelpSection("Article", _helpBank.GetArticles(), _inputStr_Article, _inputStrCache_Article,
                 "Articles", "No title.", "No article selected.");
-            DisplayHelpSection("Tutorial", _helpDex.GetTutorials(), _inputStr_Tutorial, _inputStrCache_Tutorial,
+            DisplayHelpSection("Tutorial", _helpBank.GetTutorials(), _inputStr_Tutorial, _inputStrCache_Tutorial,
                 "Tutorials", "No title.", "No tutorial selected.");
-            DisplayHelpSection("Glossary", _helpDex.GetGlossaryEntries(), _inputStr_Glossary,
+            DisplayHelpSection("Glossary", _helpBank.GetGlossaryEntries(), _inputStr_Glossary,
                 _inputStrCache_Glossary, "Glossary", "No title.", "No term selected.");
             DisplayLinks();
             DisplayCredits();
@@ -207,7 +207,7 @@ public class HelpBrowser
 
             ImGui.Text("Below are a set of community links. Clicking them will take you to the associated URL.");
 
-            foreach (LinkEntry entry in _helpDex.GetLinks())
+            foreach (LinkEntry entry in _helpBank.GetLinks())
                 if (ImGui.Button($"{entry.Title}"))
                     Process.Start(new ProcessStartInfo { FileName = $"{entry.URL}", UseShellExecute = true });
 
@@ -222,7 +222,7 @@ public class HelpBrowser
         {
             ImGui.Indent();
 
-            ImGui.Text(GetDisplayText(_helpDex.GetCredits().Text));
+            ImGui.Text(GetDisplayText(_helpBank.GetCredits().Text));
 
             ImGui.Unindent();
             ImGui.EndTabItem();

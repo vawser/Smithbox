@@ -10,7 +10,7 @@ using StudioCore.CutsceneEditor;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.InfoBank;
 using StudioCore.Editor;
-using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Editors;
 using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditor;
@@ -42,6 +42,8 @@ using Version = System.Version;
 using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface.Windows;
+using StudioCore.Interface;
 
 namespace StudioCore;
 
@@ -66,12 +68,6 @@ public class Smithbox
     // Editors
     private readonly List<EditorScreen> _editors;
     private EditorScreen _focusedEditor;
-
-    // Shared Windows
-    private readonly HelpBrowser _helpBrowser;
-    private readonly SettingsMenu _settingsMenu;
-    private readonly FlagBrowser _eventFlagBrowser;
-    private readonly ParticleBrowser _fxrBrowser;
 
     private readonly SoapstoneService _soapstoneService;
     private readonly string _version;
@@ -113,51 +109,52 @@ public class Smithbox
         _context.Window.Title = _programTitle;
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
+        // Banks
         MapAliasBank.Bank = new AliasBank(AliasType.Map);
         ModelAliasBank.Bank = new AliasBank(AliasType.Model);
         FlagAliasBank.Bank = new AliasBank(AliasType.EventFlag);
         ParticleAliasBank.Bank = new AliasBank(AliasType.Particle);
         MsbInfoBank.Bank = new InfoBank(FormatType.MSB);
-
-        // Screens
-        MsbEditorScreen msbEditor = new(_context.Window, _context.Device);
-        ModelEditorScreen modelEditor = new(_context.Window, _context.Device);
-        ParamEditorScreen paramEditor = new(_context.Window, _context.Device);
-        TextEditorScreen textEditor = new(_context.Window, _context.Device);
-        AnimationEditorScreen animationEditor = new(_context.Window, _context.Device);
-        CutsceneEditorScreen cutsceneEditor = new(_context.Window, _context.Device);
-        GraphicsEditorScreen graphicsEditor = new(_context.Window, _context.Device);
-        MaterialEditorScreen materialEditor = new(_context.Window, _context.Device);
-        ParticleEditorScreen particleEditor = new(_context.Window, _context.Device);
-        ScriptEditorScreen scriptEditor = new(_context.Window, _context.Device);
-        TalkEditorScreen talkEditor = new(_context.Window, _context.Device);
-        TextureViewerScreen textureViewer = new(_context.Window, _context.Device);
-
-        _editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor, graphicsEditor };
-        //_editors = new List<EditorScreen> { msbEditor, modelEditor, paramEditor, textEditor, animationEditor, cutsceneEditor, graphicsEditor, materialEditor, particleEditor, scriptEditor, talkEditor, textureViewer };
-        _focusedEditor = msbEditor;
-
-        _soapstoneService = new SoapstoneService(_version, msbEditor);
-
-        _settingsMenu = new SettingsMenu();
-        _settingsMenu.MsbEditor = msbEditor;
-        _settingsMenu.ModelEditor = modelEditor;
-        _settingsMenu.ParamEditor = paramEditor;
-        _settingsMenu.TextEditor = textEditor;
-        _settingsMenu.AnimationEditor = animationEditor;
-        _settingsMenu.CutsceneEditor = cutsceneEditor;
-        _settingsMenu.GraphicsEditor = graphicsEditor;
-        _settingsMenu.MaterialEditor = materialEditor;
-        _settingsMenu.ParticleEditor = particleEditor;
-        _settingsMenu.ScriptEditor = scriptEditor;
-        _settingsMenu.TalkEditor = talkEditor;
-        _settingsMenu.TextureViewer = textureViewer;
-
-        _helpBrowser = new HelpBrowser();
-        _eventFlagBrowser = new FlagBrowser();
-        _fxrBrowser = new ParticleBrowser();
-
         MaterialBank.LoadMaterials();
+
+        // Windows
+        WindowContainer.SettingsWindow = new SettingsWindow();
+        WindowContainer.HelpWindow = new HelpWindow();
+        WindowContainer.EventFlagWindow = new EventFlagWindow();
+        WindowContainer.DebugWindow = new DebugWindow();
+
+        // Editors
+        EditorContainer.MsbEditor = new MsbEditorScreen(_context.Window, _context.Device);
+        EditorContainer.ModelEditor = new ModelEditorScreen(_context.Window, _context.Device);
+        EditorContainer.TextEditor = new TextEditorScreen(_context.Window, _context.Device);
+        EditorContainer.ParamEditor = new ParamEditorScreen(_context.Window, _context.Device);
+        EditorContainer.AnimationEditor = new AnimationEditorScreen(_context.Window, _context.Device);
+        EditorContainer.CutsceneEditor = new CutsceneEditorScreen(_context.Window, _context.Device);
+        EditorContainer.GraphicsParamEditor = new GraphicsEditorScreen(_context.Window, _context.Device);
+        EditorContainer.MaterialEditor = new MaterialEditorScreen(_context.Window, _context.Device);
+        EditorContainer.ParticleEditor = new ParticleEditorScreen(_context.Window, _context.Device);
+        EditorContainer.ScriptEditor = new ScriptEditorScreen(_context.Window, _context.Device);
+        EditorContainer.TalkEditor = new TalkEditorScreen(_context.Window, _context.Device);
+        EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
+
+        _editors = new List<EditorScreen> {
+            EditorContainer.MsbEditor,
+            EditorContainer.ModelEditor,
+            EditorContainer.ParamEditor,
+            EditorContainer.TextEditor,
+            EditorContainer.GraphicsParamEditor,
+            EditorContainer.AnimationEditor,
+            EditorContainer.CutsceneEditor,
+            EditorContainer.MaterialEditor,
+            EditorContainer.ParticleEditor,
+            EditorContainer.ScriptEditor,
+            EditorContainer.TalkEditor,
+            EditorContainer.TextureViewer
+        };
+
+        _focusedEditor = EditorContainer.MsbEditor;
+
+        _soapstoneService = new SoapstoneService(_version);
 
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();
@@ -450,7 +447,7 @@ public class Smithbox
         Project.GameModDirectory = moddir;
         MapAssetLocator.FullMapList = null;
 
-        _settingsMenu.ProjSettings = _projectSettings;
+        WindowContainer.SettingsWindow.ProjSettings = _projectSettings;
 
         ModelAliasBank.Bank.ReloadAliasBank();
         FlagAliasBank.Bank.ReloadAliasBank();
@@ -519,27 +516,6 @@ public class Smithbox
     {
         ImGui.PopStyleColor(27);
         ImGui.PopStyleVar(10);
-    }
-
-    private void DumpFlverLayouts()
-    {
-        if (PlatformUtils.Instance.SaveFileDialog("Save Flver layout dump", new[] { FilterStrings.TxtFilter },
-                out var path))
-        {
-            using (StreamWriter file = new(path))
-            {
-                foreach (KeyValuePair<string, FLVER2.BufferLayout> mat in FlverResource.MaterialLayouts)
-                {
-                    file.WriteLine(mat.Key + ":");
-                    foreach (FLVER.LayoutMember member in mat.Value)
-                    {
-                        file.WriteLine($@"{member.Index}: {member.Type.ToString()}: {member.Semantic.ToString()}");
-                    }
-
-                    file.WriteLine();
-                }
-            }
-        }
     }
 
     private bool GameNotUnpackedWarning(ProjectType gameType)
@@ -939,116 +915,49 @@ public class Smithbox
                     SaveAll();
                 }
 
-                if (ImGui.MenuItem("Editor Settings"))
-                {
-                    _settingsMenu.MenuOpenState = true;
-                }
-
-                if (FlverResource.CaptureMaterialLayouts && ImGui.MenuItem("Dump Flver Layouts (Debug)", ""))
-                {
-                    DumpFlverLayouts();
-                }
-
                 ImGui.EndMenu();
             }
 
             _focusedEditor.DrawEditorMenu();
 
-            if (ImGui.BeginMenu("Tools"))
-            {
-                if (ImGui.MenuItem("Flag ID Browser", KeyBindings.Current.Window_FlagBrowser.HintText))
-                {
-                    _eventFlagBrowser.ToggleMenuVisibility();
-                }
-                if (ImGui.MenuItem("Particle ID Browser", KeyBindings.Current.Window_ParticleBrowser.HintText))
-                {
-                    _fxrBrowser.ToggleMenuVisibility();
-                }
+            // Task Bar
+            TaskLogs.Display();
 
-                ImGui.EndMenu();
+            ImGui.Separator();
+
+            // Icon Bar
+            if (ImGui.Button($"{ForkAwesome.Cogs}"))
+            {
+                WindowContainer.SettingsWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowButtonTooltip("Settings");
+
+            if (ImGui.Button($"{ForkAwesome.Book}"))
+            {
+                WindowContainer.HelpWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowButtonTooltip("Help");
+
+            if (ImGui.Button($"{ForkAwesome.LightbulbO}"))
+            {
+                WindowContainer.EventFlagWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowButtonTooltip("Event Flags");
+
+            if (FeatureFlags.DebugMenu)
+            {
+                if (ImGui.Button($"{ForkAwesome.Bell}"))
+                {
+                    WindowContainer.DebugWindow.ToggleMenuVisibility();
+                }
+                ImguiUtils.ShowButtonTooltip("Debug");
             }
 
-            if (ImGui.BeginMenu("Help"))
-            {
-                if (ImGui.MenuItem("Help Menu", KeyBindings.Current.Window_Help.HintText))
-                {
-                    _helpBrowser.ToggleMenuVisibility();
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (FeatureFlags.TestMenu)
-            {
-                if (ImGui.BeginMenu("Debug"))
-                {
-                    if (ImGui.MenuItem("Reset Fire Once"))
-                    {
-                        CFG.Current.Debug_FireOnce = false;
-                    }
-
-                    ImGui.EndMenu();
-                }
-
-                if (ImGui.BeginMenu("Tests"))
-                {
-                    if (ImGui.MenuItem("Crash me (will actually crash)"))
-                    {
-                        var badArray = new int[2];
-                        var crash = badArray[5];
-                    }
-
-                    if (ImGui.MenuItem("MSBE read/write test"))
-                    {
-                        MSBReadWrite.Run();
-                    }
-
-                    if (ImGui.MenuItem("MSB_AC6 Read/Write Test"))
-                    {
-                        MSB_AC6_Read_Write.Run();
-                    }
-
-                    if (ImGui.MenuItem("BTL read/write test"))
-                    {
-                        BTLReadWrite.Run();
-                    }
-
-                    if (ImGui.MenuItem("Insert unique rows IDs into params"))
-                    {
-                        ParamUniqueRowFinder.Run();
-                    }
-
-                    ImGui.EndMenu();
-                }
-
-                if (ImGui.BeginMenu("ImGui Debug"))
-                {
-                    if (ImGui.MenuItem("Demo"))
-                    {
-                        _showImGuiDemoWindow = true;
-                    }
-
-                    if (ImGui.MenuItem("Metrics"))
-                    {
-                        _showImGuiMetricsWindow = true;
-                    }
-
-                    if (ImGui.MenuItem("Debug Log"))
-                    {
-                        _showImGuiDebugLogWindow = true;
-                    }
-
-                    if (ImGui.MenuItem("Stack Tool"))
-                    {
-                        _showImGuiStackToolWindow = true;
-                    }
-
-                    ImGui.EndMenu();
-                }
-            }
-
+            // Program Update
             if (_programUpdateAvailable)
             {
+                ImGui.Separator();
+
                 ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.0f, 1.0f, 0.0f, 1.0f));
                 if (ImGui.Button("Update Available"))
                 {
@@ -1061,25 +970,13 @@ public class Smithbox
                 ImGui.PopStyleColor();
             }
 
-            if (ImGui.BeginMenu("Tasks", TaskManager.GetLiveThreads().Count > 0))
-            {
-                foreach (var task in TaskManager.GetLiveThreads())
-                {
-                    ImGui.Text(task);
-                }
-
-                ImGui.EndMenu();
-            }
-
-            TaskLogs.Display();
-
             ImGui.EndMainMenuBar();
         }
 
-        _settingsMenu.Display();
-        _helpBrowser.Display();
-        _eventFlagBrowser.Display();
-        _fxrBrowser.Display();
+        WindowContainer.SettingsWindow.Display();
+        WindowContainer.HelpWindow.Display();
+        WindowContainer.EventFlagWindow.Display();
+        WindowContainer.DebugWindow.Display();
 
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);
@@ -1090,24 +987,24 @@ public class Smithbox
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(14.0f, 8.0f) * scale);
 
         // ImGui Debug windows
-        if (_showImGuiDemoWindow)
+        if (WindowContainer.DebugWindow._showImGuiDemoWindow)
         {
-            ImGui.ShowDemoWindow(ref _showImGuiDemoWindow);
+            ImGui.ShowDemoWindow(ref WindowContainer.DebugWindow._showImGuiDemoWindow);
         }
 
-        if (_showImGuiMetricsWindow)
+        if (WindowContainer.DebugWindow._showImGuiMetricsWindow)
         {
-            ImGui.ShowMetricsWindow(ref _showImGuiMetricsWindow);
+            ImGui.ShowMetricsWindow(ref WindowContainer.DebugWindow._showImGuiMetricsWindow);
         }
 
-        if (_showImGuiDebugLogWindow)
+        if (WindowContainer.DebugWindow._showImGuiDebugLogWindow)
         {
-            ImGui.ShowDebugLogWindow(ref _showImGuiDebugLogWindow);
+            ImGui.ShowDebugLogWindow(ref WindowContainer.DebugWindow._showImGuiDebugLogWindow);
         }
 
-        if (_showImGuiStackToolWindow)
+        if (WindowContainer.DebugWindow._showImGuiStackToolWindow)
         {
-            ImGui.ShowStackToolWindow(ref _showImGuiStackToolWindow);
+            ImGui.ShowStackToolWindow(ref WindowContainer.DebugWindow._showImGuiStackToolWindow);
         }
 
         // New project modal
@@ -1432,15 +1329,11 @@ public class Smithbox
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Window_Help))
             {
-                _helpBrowser.ToggleMenuVisibility();
+                WindowContainer.HelpWindow.ToggleMenuVisibility();
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Window_FlagBrowser))
             {
-                _eventFlagBrowser.ToggleMenuVisibility();
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Window_ParticleBrowser))
-            {
-                _fxrBrowser.ToggleMenuVisibility();
+                WindowContainer.EventFlagWindow.ToggleMenuVisibility();
             }
         }
 

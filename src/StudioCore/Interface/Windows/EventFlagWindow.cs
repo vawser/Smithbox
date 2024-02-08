@@ -1,10 +1,10 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Help;
-using StudioCore.Interface;
-using StudioCore.JSON;
 using StudioCore.Platform;
+using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,9 +12,9 @@ using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
 
-namespace StudioCore.Browsers;
+namespace StudioCore.Interface.Windows;
 
-public class ParticleBrowser
+public class EventFlagWindow
 {
     private bool MenuOpenState;
 
@@ -31,14 +31,14 @@ public class ParticleBrowser
 
     private string _selectedName;
 
-    public ParticleBrowser()
+    public EventFlagWindow()
     {
     }
 
     public void ToggleMenuVisibility()
     {
         MenuOpenState = !MenuOpenState;
-        CFG.Current.ParticleBrowser_Open = !CFG.Current.ParticleBrowser_Open;
+        CFG.Current.EventFlagBrowser_Open = !CFG.Current.EventFlagBrowser_Open;
     }
 
     public void Display()
@@ -48,6 +48,12 @@ public class ParticleBrowser
         if (!MenuOpenState)
             return;
 
+        if (Project.Type == ProjectType.Undefined)
+            return;
+
+        if (FlagAliasBank.Bank.IsLoadingAliases)
+            return;
+
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
         ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0f, 0f, 0f, 0.98f));
         ImGui.PushStyleColor(ImGuiCol.TitleBgActive, new Vector4(0.25f, 0.25f, 0.25f, 1.0f));
@@ -55,22 +61,30 @@ public class ParticleBrowser
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
 
-        if (ImGui.Begin("Particle ID Browser##FxrBrowser", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
+        if (ImGui.Begin("Event Flags##EventFlagBrowser", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImguiUtils.ShowHelpButton("Help", "Double click to copy the particle ID to your clipboard.", "particle");
+            if (ImGui.Button("Help"))
+                ImGui.OpenPopup("##EventFlagBrowserHelp");
 
             ImGui.SameLine();
-            if (ImGui.Button("Toggle Alias Addition"))
+            ImGui.Checkbox("Show tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
+            ImguiUtils.ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
+
+            if (ImGui.BeginPopup("##EventFlagBrowserHelp"))
             {
-                CFG.Current.ParticleBrowser_ShowAliasAddition = !CFG.Current.ParticleBrowser_ShowAliasAddition;
+                ImGui.Text("Double click to copy the event flag to your clipboard.");
+                ImGui.EndPopup();
             }
 
             ImGui.SameLine();
+            if (ImGui.Button("Toggle Alias Addition"))
+                CFG.Current.EventFlagBrowser_ShowAliasAddition = !CFG.Current.EventFlagBrowser_ShowAliasAddition;
 
-            ImGui.Checkbox("Show Tags", ref CFG.Current.ParticleBrowser_ShowTagsInBrowser);
+            ImGui.SameLine();
             ImguiUtils.ShowHelpMarker("When enabled the Browser List will display the tags next to the name.");
+            ImGui.Checkbox("Show Tags", ref CFG.Current.EventFlagBrowser_ShowTagsInBrowser);
 
-            if (CFG.Current.ParticleBrowser_ShowAliasAddition)
+            if (CFG.Current.EventFlagBrowser_ShowAliasAddition)
             {
                 ImGui.Separator();
 
@@ -84,32 +98,26 @@ public class ParticleBrowser
                 ImguiUtils.ShowHelpMarker("The tags of the alias to add.\nEach tag should be separated by the ',' character.");
 
                 if (ImGui.Button("Add New Alias"))
-                {
                     // Make sure the ref ID is a number
                     if (Regex.IsMatch(_newRefId, @"^\d+$"))
                     {
-                        bool isValid = true;
+                        var isValid = true;
 
-                        var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
+                        var entries = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
 
                         foreach (var entry in entries)
-                        {
                             if (_newRefId == entry.id)
                                 isValid = false;
-                        }
 
                         if (isValid)
                         {
-                            ParticleAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                            FlagAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                             ImGui.CloseCurrentPopup();
-                            ParticleAliasBank.Bank.mayReloadAliasBank = true;
+                            FlagAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         else
-                        {
-                            PlatformUtils.Instance.MessageBox($"FXR Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            PlatformUtils.Instance.MessageBox($"Event Flag Alias with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }
                 ImguiUtils.ShowHelpMarker("Adds a new alias to the project-specific alias bank.");
 
                 ImGui.Separator();
@@ -117,7 +125,7 @@ public class ParticleBrowser
 
             ImGui.Columns(1);
 
-            ImGui.BeginChild("ParticleListSearch");
+            ImGui.BeginChild("FlagListSearch");
             ImGui.InputText($"Search", ref _searchInput, 255);
 
             ImGui.SameLine();
@@ -127,9 +135,9 @@ public class ParticleBrowser
             ImGui.Separator();
             ImGui.Spacing();
 
-            ImGui.BeginChild("ParticleFlagList");
+            ImGui.BeginChild("EventFlagList");
 
-            DisplaySelectionList(ParticleAliasBank.Bank.AliasNames.GetEntries("Particles"));
+            DisplaySelectionList(FlagAliasBank.Bank.AliasNames.GetEntries("Flags"));
 
             ImGui.EndChild();
             ImGui.EndChild();
@@ -140,32 +148,28 @@ public class ParticleBrowser
         ImGui.PopStyleVar(3);
         ImGui.PopStyleColor(2);
 
-        if (ParticleAliasBank.Bank.mayReloadAliasBank)
+        if (FlagAliasBank.Bank.mayReloadAliasBank)
         {
-            ParticleAliasBank.Bank.mayReloadAliasBank = false;
-            ParticleAliasBank.Bank.ReloadAliasBank();
+            FlagAliasBank.Bank.mayReloadAliasBank = false;
+            FlagAliasBank.Bank.ReloadAliasBank();
         }
     }
 
     /// <summary>
-    /// Display the fxr selection list
+    /// Display the event flag selection list
     /// </summary>
     private void DisplaySelectionList(List<AliasReference> referenceList)
     {
-        Dictionary<string, AliasReference> referenceDict = new Dictionary<string, AliasReference>();
+        var referenceDict = new Dictionary<string, AliasReference>();
 
         foreach (AliasReference v in referenceList)
-        {
             if (!referenceDict.ContainsKey(v.id))
                 referenceDict.Add(v.id, v);
-        }
 
         if (_searchInput != _searchInputCache)
-        {
             _searchInputCache = _searchInput;
-        }
 
-        var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
+        var entries = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
 
         foreach (var entry in entries)
         {
@@ -176,13 +180,13 @@ public class ParticleBrowser
             var refTagList = entry.tags;
 
             // Append tags to to displayed name
-            if (CFG.Current.ParticleBrowser_ShowTagsInBrowser)
+            if (CFG.Current.EventFlagBrowser_ShowTagsInBrowser)
             {
                 var tagString = string.Join(" ", refTagList);
                 displayedName = $"{displayedName} {{ {tagString} }}";
             }
 
-            if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList, false, true))
+            if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList))
             {
                 if (ImGui.Selectable(displayedName))
                 {
@@ -192,21 +196,16 @@ public class ParticleBrowser
 
                     if (refTagList.Count > 0)
                     {
-                        string tagStr = refTagList[0];
-                        foreach (string tEntry in refTagList.Skip(1))
-                        {
+                        var tagStr = refTagList[0];
+                        foreach (var tEntry in refTagList.Skip(1))
                             tagStr = $"{tagStr},{tEntry}";
-                        }
                         _refUpdateTags = tagStr;
                     }
                     else
-                    {
                         _refUpdateTags = "";
-                    }
                 }
 
                 if (_selectedName == refID)
-                {
                     if (ImGui.BeginPopupContextItem($"{refID}##context"))
                     {
                         ImGui.InputText($"Name", ref _refUpdateName, 255);
@@ -214,28 +213,26 @@ public class ParticleBrowser
 
                         if (ImGui.Button("Update"))
                         {
-                            ParticleAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            FlagAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            ParticleAliasBank.Bank.mayReloadAliasBank = true;
+                            FlagAliasBank.Bank.mayReloadAliasBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            ParticleAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
+                            FlagAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            ParticleAliasBank.Bank.mayReloadAliasBank = true;
+                            FlagAliasBank.Bank.mayReloadAliasBank = true;
                         }
 
                         ImGui.EndPopup();
                     }
-                }
 
                 if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                 {
-                    string numId = refID.Replace("f", "");
-                    int num = int.Parse(numId);
+                    var num = long.Parse(refID.Replace("f", ""));
 
-                    PlatformUtils.Instance.SetClipboardText(num.ToString());
+                    PlatformUtils.Instance.SetClipboardText($"{num}");
                 }
             }
         }
