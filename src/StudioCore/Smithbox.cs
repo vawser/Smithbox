@@ -115,7 +115,7 @@ public class Smithbox
         FlagAliasBank.Bank = new AliasBank(AliasType.EventFlag);
         ParticleAliasBank.Bank = new AliasBank(AliasType.Particle);
         MsbInfoBank.Bank = new InfoBank(FormatType.MSB);
-        MaterialBank.LoadMaterials();
+        MaterialResourceBank.LoadMaterials();
 
         // Windows
         WindowContainer.SettingsWindow = new SettingsWindow();
@@ -458,7 +458,7 @@ public class Smithbox
         MsbInfoBank.Bank.ReloadInfoBank();
 
         ParamBank.ReloadParams(newsettings, options);
-        MaterialBank.ReloadMaterials();
+        MaterialResourceBank.ReloadMaterials();
 
         foreach (EditorScreen editor in _editors)
         {

@@ -224,11 +224,11 @@ public class FlverResource : IResource, IDisposable
         if (mpath == "")
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd);
-            if (MaterialBank.IsMatbin)
+            if (MaterialResourceBank.IsMatbin)
             {
-                if (MaterialBank.Matbins.ContainsKey(mtdstring))
+                if (MaterialResourceBank.Matbins.ContainsKey(mtdstring))
                 {
-                    MATBIN.Sampler? tex = MaterialBank.Matbins[mtdstring].Samplers.Find(x => x.Type == type);
+                    MATBIN.Sampler? tex = MaterialResourceBank.Matbins[mtdstring].Samplers.Find(x => x.Type == type);
                     if (tex == null || tex.Path == "")
                     {
                         return;
@@ -239,9 +239,9 @@ public class FlverResource : IResource, IDisposable
             }
             else
             {
-                if (MaterialBank.Mtds.ContainsKey(mtdstring))
+                if (MaterialResourceBank.Mtds.ContainsKey(mtdstring))
                 {
-                    MTD.Texture? tex = MaterialBank.Mtds[mtdstring].Textures.Find(x => x.Type == type);
+                    MTD.Texture? tex = MaterialResourceBank.Mtds[mtdstring].Textures.Find(x => x.Type == type);
                     if (tex == null || !tex.Extended || tex.Path == "")
                     {
                         return;

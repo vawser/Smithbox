@@ -88,7 +88,7 @@ public static class CutsceneBank
         if (fileBytes != null)
         {
             File.WriteAllBytes(assetMod, fileBytes);
-            TaskLogs.AddLog($"Saved at: {assetMod}");
+            //TaskLogs.AddLog($"Saved at: {assetMod}");
         }
     }
 
@@ -123,12 +123,12 @@ public static class CutsceneBank
             if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
                 LoadCutscene($"{Project.GameModDirectory}\\{filePath}");
-                TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
+                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
                 LoadCutscene($"{Project.GameRootDirectory}\\{filePath}");
-                TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
 

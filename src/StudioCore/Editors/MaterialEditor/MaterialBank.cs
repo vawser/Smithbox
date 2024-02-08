@@ -1,45 +1,49 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.AssetLocator;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Locators;
-using StudioCore.TextEditor;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TimeActEditor;
-public static class AnimationBank
+namespace StudioCore.Editors.MaterialEditor;
+public static class MaterialBank
 {
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<AnimationFileInfo, IBinder> FileBank { get; private set; } = new();
+    public static Dictionary<MaterialFileInfo, IBinder> FileBank { get; private set; } = new();
 
-    public static void SaveTimeActs()
+    public static void SaveMaterials()
     {
-        foreach(var (info, binder) in FileBank)
+        foreach (var (info, binder) in FileBank)
         {
-            SaveTimeAct(info, binder);
+            SaveMaterial(info, binder);
         }
     }
 
-    public static void SaveTimeAct(AnimationFileInfo info, IBinder binder)
+    public static void SaveMaterial(MaterialFileInfo info, IBinder binder)
     {
-        //TaskLogs.AddLog($"SaveTimeAct: {info.Path}");
+        //TaskLogs.AddLog($"SaveCutscene: {info.Path}");
 
-        var fileDir = @"\chr";
-        var fileExt = @".anibnd.dcx";
+        var fileDir = @"\mtd";
+        var fileExt = @".mtdbnd.dcx";
+
+        if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        {
+            fileDir = @"\material";
+            fileExt = @".matbinbnd.dcx";
+        }
 
         foreach (BinderFile file in binder.Files)
         {
-            foreach (TAE tFile in info.TimeActFiles)
+            foreach (MTD mFile in info.MaterialFiles)
             {
-                if (file.ID == tFile.ID)
-                {
-                    file.Bytes = tFile.Write();
-                }
+                file.Bytes = mFile.Write();
             }
         }
 
@@ -64,7 +68,7 @@ public static class AnimationBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveTimeAct");
+                TaskLogs.AddLog($"Invalid ProjectType during SaveMaterial");
                 return;
         }
 
@@ -83,13 +87,13 @@ public static class AnimationBank
         if (fileBytes != null)
         {
             File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
+            TaskLogs.AddLog($"Saved at: {assetMod}");
         }
     }
 
-    public static void LoadTimeActs()
+    public static void LoadMaterials()
     {
-        if(Project.Type == ProjectType.Undefined)
+        if (Project.Type == ProjectType.Undefined)
         {
             return;
         }
@@ -99,10 +103,16 @@ public static class AnimationBank
 
         FileBank = new();
 
-        var fileDir = @"\chr";
-        var fileExt = @".anibnd.dcx";
+        var fileDir = @"\mtd";
+        var fileExt = @".mtdbnd.dcx";
 
-        List<string> fileNames = FileAssetLocator.GetAnimationBinders();
+        if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        {
+            fileDir = @"\material";
+            fileExt = @".matbinbnd.dcx";
+        }
+
+        List<string> fileNames = FileAssetLocator.GetMaterialBinders();
 
         foreach (var name in fileNames)
         {
@@ -110,54 +120,61 @@ public static class AnimationBank
 
             if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
-                LoadTimeAct($"{Project.GameModDirectory}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
+                LoadMaterial($"{Project.GameModDirectory}\\{filePath}");
+                TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadTimeAct($"{Project.GameRootDirectory}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+                LoadMaterial($"{Project.GameRootDirectory}\\{filePath}");
+                TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
 
         IsLoaded = true;
         IsLoading = false;
 
-        TaskLogs.AddLog($"Animation File Bank - Load Complete");
+        TaskLogs.AddLog($"Material File Bank - Load Complete");
     }
 
-    public static void LoadTimeAct(string path)
+    public static void LoadMaterial(string path)
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading Mtd file.",
                     LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading Mtd file.",
                     LogLevel.Warning);
             return;
         }
 
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        AnimationFileInfo fileStruct = new AnimationFileInfo(name, path);
+        MaterialFileInfo fileStruct = new MaterialFileInfo(name, path);
 
         IBinder binder = BND4.Read(DCX.Decompress(path));
 
-        foreach(var file in binder.Files)
+        var fileExt = @".mtd";
+
+        if (Project.Type is ProjectType.ER or ProjectType.AC6)
         {
-            if (file.Name.Contains(".tae"))
+            fileExt = @".matbin";
+        }
+
+        foreach (var file in binder.Files)
+        {
+            if (file.Name.Contains($"{fileExt}"))
             {
                 try
                 {
-                    TAE taeFile = TAE.Read(file.Bytes);
-                    fileStruct.TimeActFiles.Add(taeFile);
+                    MTD cFile = MTD.Read(file.Bytes);
+                    fileStruct.MaterialFiles.Add(cFile);
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"{name} {file.Name} - Failed to read.\n{ex.ToString()}");
+                    TaskLogs.AddLog($"{file.ID} - Failed to read.\n{ex.ToString()}");
                 }
             }
         }
@@ -165,15 +182,15 @@ public static class AnimationBank
         FileBank.Add(fileStruct, binder);
     }
 
-    public struct AnimationFileInfo
+    public struct MaterialFileInfo
     {
-        public AnimationFileInfo(string name, string path)
+        public MaterialFileInfo(string name, string path)
         {
             Name = name;
             Path = path;
             Modified = false;
             Added = false;
-            TimeActFiles = new List<TAE>();
+            MaterialFiles = new List<MTD>();
         }
 
         public string Name { get; set; }
@@ -183,6 +200,6 @@ public static class AnimationBank
 
         public bool Added { get; set; }
 
-        public List<TAE> TimeActFiles { get; set; }
+        public List<MTD> MaterialFiles { get; set; }
     }
 }

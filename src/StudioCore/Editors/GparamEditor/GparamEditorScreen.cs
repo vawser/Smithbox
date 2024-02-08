@@ -2,7 +2,9 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Editors.MaterialEditor;
 using StudioCore.UserProject;
 using System;
 using System.Numerics;
@@ -24,13 +26,13 @@ public class GparamEditorScreen : EditorScreen
     private string _selectedGparamKey;
 
     private GPARAM.Param _selectedParamGroup;
-    private string _selectedParamGroupKey;
+    private int _selectedParamGroupKey;
 
     private GPARAM.IField _selectedParamField;
-    private string _selectedParamFieldKey;
+    private int _selectedParamFieldKey;
 
     private GPARAM.IFieldValue _selectedFieldValue = null;
-    private string _selectedFieldValueKey = "";
+    private int _selectedFieldValueKey;
 
     public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -85,18 +87,11 @@ public class GparamEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!GparamParamBank.IsLoaded)
+        if (GparamParamBank.IsLoaded)
         {
-            ResetAllSelection();
-
-            if (GparamParamBank.IsLoading)
-            {
-                ImGui.Text("Loading...");
-            }
+            GraphicsParamView();
         }
 
-        GraphicsParamView();
-        
         ImGui.PopStyleVar();
     }
 
@@ -117,19 +112,19 @@ public class GparamEditorScreen : EditorScreen
     private void ResetGroupSelection()
     {
         _selectedParamGroup = null;
-        _selectedParamGroupKey = "";
+        _selectedParamGroupKey = -1;
     }
 
     private void ResetFieldSelection()
     {
         _selectedParamField = null;
-        _selectedParamFieldKey = "";
+        _selectedParamFieldKey = -1;
     }
 
     private void ResetValueSelection()
     {
         _selectedFieldValue = null;
-        _selectedFieldValueKey = "";
+        _selectedFieldValueKey = -1;
     }
 
     private void GraphicsParamView()
@@ -185,15 +180,17 @@ public class GparamEditorScreen : EditorScreen
             ImGui.Text($"Group");
             ImGui.Separator();
 
-            foreach (GPARAM.Param entry in data.Params)
+            for (int i = 0; i < data.Params.Count; i++)
             {
-                if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", entry.Key == _selectedParamGroupKey))
+                GPARAM.Param entry = data.Params[i];
+
+                if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", i == _selectedParamGroupKey))
                 {
                     ResetFieldSelection();
                     ResetValueSelection();
 
                     _selectedParamGroup = entry;
-                    _selectedParamGroupKey = entry.Key;
+                    _selectedParamGroupKey = i;
                 }
             }
         }
@@ -203,21 +200,23 @@ public class GparamEditorScreen : EditorScreen
         // GPARAM Fields
         ImGui.Begin("Fields##GparamFields");
 
-        if (_selectedParamGroup != null && _selectedParamGroupKey != "")
+        if (_selectedParamGroup != null && _selectedParamGroupKey != -1)
         {
             GPARAM.Param data = _selectedParamGroup;
 
             ImGui.Text($"Field");
             ImGui.Separator();
 
-            foreach (var entry in data.Fields)
+            for (int i = 0; i < data.Fields.Count; i++)
             {
-                if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", entry.Key == _selectedParamFieldKey))
+                GPARAM.IField entry = data.Fields[i];
+
+                if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", i == _selectedParamFieldKey))
                 {
                     ResetValueSelection();
 
                     _selectedParamField = entry;
-                    _selectedParamFieldKey = entry.Key;
+                    _selectedParamFieldKey = i;
                 }
             }
         }
@@ -227,7 +226,7 @@ public class GparamEditorScreen : EditorScreen
         // GPARAM Values
         ImGui.Begin("Values##GparamValues");
 
-        if (_selectedParamField != null && _selectedParamFieldKey != "")
+        if (_selectedParamField != null && _selectedParamFieldKey != -1)
         {
             GraphicsParamPropertyView();
         }
@@ -252,10 +251,11 @@ public class GparamEditorScreen : EditorScreen
         ImGui.BeginChild("IdList##GparamPropertyIds");
         ImGui.Text($"ID");
         ImGui.Separator();
-        int idx = 0;
-        foreach (var val in field.Values)
+
+        for (int i = 0; i < field.Values.Count; i++)
         {
-            GraphicsParamIdView(idx, val);
+            GPARAM.IFieldValue entry = field.Values[i];
+            GraphicsParamIdView(i, entry);
         }
 
         ImGui.EndChild();
@@ -285,11 +285,12 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Text($"Value");
         ImGui.Separator();
 
-        idx = 0;
-        foreach (var val in field.Values)
+        for (int i = 0; i < field.Values.Count; i++)
         {
-            GraphicsParamValueView(idx, val);
+            GPARAM.IFieldValue entry = field.Values[i];
+            GraphicsParamValueView(i, entry);
         }
+
         ImGui.EndChild();
     }
 
@@ -297,10 +298,10 @@ public class GparamEditorScreen : EditorScreen
     {
         ImGui.AlignTextToFramePadding();
 
-        if (ImGui.Selectable($"{val.Id}##{index}", $"{val.Id}{index}" == _selectedFieldValueKey))
+        if (ImGui.Selectable($"{val.Id}##{index}", index == _selectedFieldValueKey))
         {
             _selectedFieldValue = val;
-            _selectedFieldValueKey = $"{val.Id}{index}";
+            _selectedFieldValueKey = index;
         }
     }
 
@@ -317,6 +318,7 @@ public class GparamEditorScreen : EditorScreen
     public void OnProjectChanged(ProjectSettings newSettings)
     {
         _projectSettings = newSettings;
+
         GparamParamBank.LoadGraphicsParams();
 
         ResetActionManager();

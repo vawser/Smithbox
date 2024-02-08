@@ -3,6 +3,8 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
+using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Settings;
 using StudioCore.UserProject;
@@ -28,7 +30,7 @@ public class CutsceneEditorScreen : EditorScreen
     private string _selectedBinderKey;
 
     private MQB _selectedCutscene;
-    private string _selectedCutsceneKey;
+    private int _selectedCutsceneKey;
 
     public CutsceneEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -70,15 +72,10 @@ public class CutsceneEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_CutsceneEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!CutsceneBank.IsLoaded)
+        if (CutsceneBank.IsLoaded)
         {
-            if (CutsceneBank.IsLoading)
-            {
-                ImGui.Text("Loading...");
-            }
+            CutsceneFileView();
         }
-
-        CutsceneFileView();
 
         ImGui.PopStyleVar();
     }
@@ -95,6 +92,8 @@ public class CutsceneEditorScreen : EditorScreen
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
             {
+                _selectedCutsceneKey = -1; // Clear cutscene key if file is changed
+
                 _selectedBinderKey = info.Name;
                 _selectedFileInfo = info;
                 _selectedBinder = binder;
@@ -111,11 +110,13 @@ public class CutsceneEditorScreen : EditorScreen
             ImGui.Text($"Cutscenes");
             ImGui.Separator();
 
-            foreach (MQB entry in _selectedFileInfo.CutsceneFiles)
+            for (int i = 0; i < _selectedFileInfo.CutsceneFiles.Count; i++)
             {
-                if (ImGui.Selectable($@" {entry.Name}", entry.Name == _selectedCutsceneKey))
+                MQB entry = _selectedFileInfo.CutsceneFiles[i];
+
+                if (ImGui.Selectable($@" {entry.Name}", i == _selectedCutsceneKey))
                 {
-                    _selectedCutsceneKey = entry.Name;
+                    _selectedCutsceneKey = i;
                     _selectedCutscene = entry;
                 }
             }
@@ -127,6 +128,7 @@ public class CutsceneEditorScreen : EditorScreen
     public void OnProjectChanged(ProjectSettings newSettings)
     {
         _projectSettings = newSettings;
+
         CutsceneBank.LoadCutscenes();
 
         ResetActionManager();

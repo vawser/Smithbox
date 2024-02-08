@@ -8,7 +8,7 @@ using System.IO;
 
 namespace StudioCore.Banks;
 
-public class MaterialBank
+public class MaterialResourceBank
 {
     private static Dictionary<string, MTD> _mtds = new();
     private static Dictionary<string, MATBIN> _matbins = new();

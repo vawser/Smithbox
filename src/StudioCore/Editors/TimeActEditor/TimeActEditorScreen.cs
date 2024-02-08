@@ -1,6 +1,8 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.CutsceneEditor;
+using StudioCore.Editors.GraphicsEditor;
 using StudioCore.UserProject;
 using System.Numerics;
 using Veldrid;
@@ -21,7 +23,7 @@ public class TimeActEditorScreen : EditorScreen
     private string _selectedBinderKey;
 
     private TAE _selectedTimeAct;
-    private string _selectedTimeActKey;
+    private int _selectedTimeActKey;
 
     public TimeActEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -63,15 +65,10 @@ public class TimeActEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TimeActEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!AnimationBank.IsLoaded)
+        if (AnimationBank.IsLoaded)
         {
-            if (AnimationBank.IsLoading)
-            {
-                ImGui.Text("Loading...");
-            }
+            TimeActFileView();
         }
-
-        TimeActFileView();
 
         ImGui.PopStyleVar();
     }
@@ -88,6 +85,8 @@ public class TimeActEditorScreen : EditorScreen
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
             {
+                _selectedTimeActKey = -1; // Clear tae key if file is changed
+
                 _selectedBinderKey = info.Name;
                 _selectedFileInfo = info;
                 _selectedBinder = binder;
@@ -104,11 +103,13 @@ public class TimeActEditorScreen : EditorScreen
             ImGui.Text($"TimeActs");
             ImGui.Separator();
 
-            foreach (TAE entry in _selectedFileInfo.TimeActFiles)
+            for (int i = 0; i < _selectedFileInfo.TimeActFiles.Count; i++)
             {
-                if (ImGui.Selectable($@" {entry.ID}", entry.ID.ToString() == _selectedTimeActKey))
+                TAE entry = _selectedFileInfo.TimeActFiles[i];
+
+                if (ImGui.Selectable($@" {entry.ID}", i == _selectedTimeActKey))
                 {
-                    _selectedTimeActKey = entry.ID.ToString();
+                    _selectedTimeActKey = i;
                     _selectedTimeAct = entry;
                 }
             }
@@ -120,6 +121,7 @@ public class TimeActEditorScreen : EditorScreen
     public void OnProjectChanged(ProjectSettings newSettings)
     {
         _projectSettings = newSettings;
+
         AnimationBank.LoadTimeActs();
 
         ResetActionManager();
