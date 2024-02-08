@@ -1,13 +1,12 @@
 using Andre.Formats;
 using SoulsFormats;
-using StudioCore.ParamEditor;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace StudioCore.Editor;
+namespace StudioCore.Editors.ParamEditor;
 
 /* Restricted characters: colon, space, forward slash, ampersand, exclamation mark
  *
@@ -52,9 +51,7 @@ internal class SearchEngine<A, B>
     public bool HandlesCommand(string command)
     {
         if (command.Length > 0 && command.StartsWith('!'))
-        {
             command = command.Substring(1);
-        }
 
         return filterList.ContainsKey(command.Split(" ")[0]);
     }
@@ -66,15 +63,11 @@ internal class SearchEngine<A, B>
         {
             SearchEngineCommand<A, B> cmd = filterList[op];
             if (cmd.shouldShow == null || cmd.shouldShow())
-            {
                 options.Add(op + "(" + filterList[op].args.Length + " args)");
-            }
         }
 
         if (defaultFilter != null && (defaultFilter.shouldShow == null || defaultFilter.shouldShow()))
-        {
             options.Add("or omit specifying and use default (" + defaultFilter.args.Length + "args)");
-        }
 
         return options;
     }
@@ -86,9 +79,7 @@ internal class SearchEngine<A, B>
         {
             SearchEngineCommand<A, B> cmd = filterList[op];
             if (cmd.shouldShow == null || cmd.shouldShow())
-            {
                 options.Add((op, cmd.args, cmd.wiki));
-            }
         }
 
         return options;
@@ -98,14 +89,10 @@ internal class SearchEngine<A, B>
     {
         List<(string, string[])> options = new();
         foreach (var op in filterList.Keys)
-        {
             options.Add((op, filterList[op].args));
-        }
 
         if (defaultFilter != null)
-        {
             options.Add(("", defaultFilter.args));
-        }
 
         return options;
     }
@@ -127,9 +114,7 @@ internal class SearchEngine<A, B>
             {
                 //temp
                 if (condition.Equals(""))
-                {
                     break;
-                }
 
                 var cmd = condition.Split(' ', 2);
 
@@ -159,23 +144,15 @@ internal class SearchEngine<A, B>
                 }
 
                 for (var i = 0; i < argC; i++)
-                {
                     if (args[i].StartsWith('$'))
-                    {
                         args[i] = MassParamEdit.massEditVars[args[i].Substring(1)].ToString();
-                    }
-                }
 
                 Func<A, Func<B, bool>> filter = selectedCommand.func(args, lenient);
                 Func<B, bool> criteria = filter(context);
                 List<B> newRows = new();
                 foreach (B row in liveSet)
-                {
                     if (not ^ criteria(row))
-                    {
                         newRows.Add(row);
-                    }
-                }
 
                 liveSet = newRows;
             }
@@ -222,9 +199,7 @@ internal class MultiStageSearchEngine<A, B, C, D> : SearchEngine<A, B>
         var conditions = command.Split("&&", 2, StringSplitOptions.TrimEntries);
         List<B> stage1list = base.Search(context, sourceSet, conditions[0], lenient, failureAllOrNone);
         if (conditions.Length == 1)
-        {
             return stage1list;
-        }
 
         B exampleItem = stage1list.FirstOrDefault();
         List<D> stage2list = searchEngineForMultiStage.Search(contextGetterForMultiStage(context, exampleItem),
@@ -293,9 +268,7 @@ internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
             noArgs(noContext(param =>
             {
                 if (param.Item1 != bank)
-                {
                     return false;
-                }
 
                 HashSet<int> cache = bank.GetVanillaDiffRows(bank.GetKeyForParam(param.Item2));
                 return cache.Count > 0;
@@ -364,9 +337,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     if (!ParamBank.VanillaBank.Params.ContainsKey(paramName))
-                    {
                         return row => true;
-                    }
 
                     Param vanilParam = ParamBank.VanillaBank.Params[paramName];
                     return row => vanilParam[row.ID] == null;
@@ -378,12 +349,10 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     if (paramName == null)
-                    {
                         return row => true;
-                    }
 
                     HashSet<int> pCache = ParamBank.PrimaryBank.GetVanillaDiffRows(paramName);
-                    List<(HashSet<int>, HashSet<int>)> auxCaches = ParamBank.AuxBanks.Select(x =>
+                    var auxCaches = ParamBank.AuxBanks.Select(x =>
                         (x.Value.GetPrimaryDiffRows(paramName), x.Value.GetVanillaDiffRows(paramName))).ToList();
                     return row =>
                         !pCache.Contains(row.ID) &&
@@ -396,7 +365,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     HashSet<int> pCache = ParamBank.PrimaryBank.GetVanillaDiffRows(paramName);
-                    List<(HashSet<int>, HashSet<int>)> auxCaches = ParamBank.AuxBanks.Select(x =>
+                    var auxCaches = ParamBank.AuxBanks.Select(x =>
                         (x.Value.GetPrimaryDiffRows(paramName), x.Value.GetVanillaDiffRows(paramName))).ToList();
                     return row =>
                         (pCache.Contains(row.ID) ? 1 : 0) + auxCaches
@@ -431,9 +400,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     Param.Cell? cq = row[field];
                     if (cq == null)
-                    {
                         throw new Exception();
-                    }
 
                     Param.Cell c = cq.Value;
                     var term = c.Value.ToParamEditorString();
@@ -452,9 +419,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     Param.Cell? c = row[field];
                     if (c == null)
-                    {
                         throw new Exception();
-                    }
 
                     return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                 });
@@ -474,18 +439,14 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         Param.Cell? c = row[field];
                         if (c == null)
-                        {
                             throw new Exception();
-                        }
 
                         var val = (int)c.Value.Value;
                         foreach (ParamRef rt in validFields)
                         {
                             Param.Row r = bank.Params[rt.param][val];
                             if (r != null && rx.IsMatch(r.Name ?? ""))
-                            {
                                 return true;
-                            }
                         }
 
                         return false;
@@ -523,31 +484,23 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     foreach ((var param, FmgEntryCategory cat) in ParamBank.ParamToFmgCategoryList)
                     {
                         if (paramName != param)
-                        {
                             continue;
-                        }
 
                         category = cat;
                     }
 
                     if (category == FmgEntryCategory.None)
-                    {
                         throw new Exception();
-                    }
 
                     List<FMG.Entry> fmgEntries = FMGBank.GetFmgEntriesByCategory(category, false);
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)
-                    {
                         _cache[fmgEntry.ID] = fmgEntry;
-                    }
 
                     return row =>
                     {
                         if (!_cache.ContainsKey(row.ID))
-                        {
                             return false;
-                        }
 
                         FMG.Entry e = _cache[row.ID];
                         return e != null && rx.IsMatch(e.Text ?? "");
@@ -567,15 +520,11 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         Param.Row vrow = vparam[row.ID];
                         if (vrow == null)
-                        {
                             return false;
-                        }
 
                         Param.Cell? cq = vrow[field];
                         if (cq == null)
-                        {
                             throw new Exception();
-                        }
 
                         Param.Cell c = cq.Value;
                         var term = c.Value.ToParamEditorString();
@@ -598,15 +547,11 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         Param.Row vrow = vparam[row.ID];
                         if (vrow == null)
-                        {
                             return false;
-                        }
 
                         Param.Cell? c = vrow[field];
                         if (c == null)
-                        {
                             throw new Exception();
-                        }
 
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                     };
@@ -620,9 +565,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var field = args[1];
                 ParamBank bank;
                 if (!ParamBank.AuxBanks.TryGetValue(args[0], out bank))
-                {
                     throw new Exception("Unable to find auxbank " + args[0]);
-                }
 
                 return param =>
                 {
@@ -631,15 +574,11 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         Param.Row vrow = vparam[row.ID];
                         if (vrow == null)
-                        {
                             return false;
-                        }
 
                         Param.Cell? cq = vrow[field];
                         if (cq == null)
-                        {
                             throw new Exception();
-                        }
 
                         Param.Cell c = cq.Value;
                         var term = c.Value.ToParamEditorString();
@@ -661,9 +600,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var ceil = double.Parse(args[2]);
                 ParamBank bank;
                 if (!ParamBank.AuxBanks.TryGetValue(args[0], out bank))
-                {
                     throw new Exception("Unable to find auxbank " + args[0]);
-                }
 
                 return param =>
                 {
@@ -673,9 +610,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         Param.Row vrow = vparam[row.ID];
                         Param.Cell? c = vrow[field];
                         if (c == null)
-                        {
                             throw new Exception();
-                        }
 
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                     };
@@ -697,27 +632,21 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     var otherSearchTerm = args[3];
                     Param otherParamReal;
                     if (!ParamBank.PrimaryBank.Params.TryGetValue(otherParam, out otherParamReal))
-                    {
                         throw new Exception("Could not find param " + otherParam);
-                    }
 
                     List<Param.Row> rows = rse.Search((ParamBank.PrimaryBank, otherParamReal), otherSearchTerm,
                         lenient, false);
                     (PseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
                     if (!otherFieldReal.IsColumnValid())
-                    {
                         throw new Exception("Could not find field " + otherField);
-                    }
 
-                    HashSet<string> possibleValues = rows.Select(x => x.Get(otherFieldReal).ToParamEditorString())
+                    var possibleValues = rows.Select(x => x.Get(otherFieldReal).ToParamEditorString())
                         .Distinct().ToHashSet();
                     return param =>
                     {
                         (PseudoColumn, Param.Column) thisFieldReal = param.Item2.GetCol(thisField);
                         if (!thisFieldReal.IsColumnValid())
-                        {
                             throw new Exception("Could not find field " + thisField);
-                        }
 
                         return row =>
                         {
@@ -728,7 +657,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 }, () => CFG.Current.Param_AdvancedMassedit));
         filterList.Add("unique", newCmd(new string[] { "field" }, "Selects all rows where the value in the given field is unique", (args, lenient) =>
         {
-            string field = args[0].Replace(@"\s", " ");
+            var field = args[0].Replace(@"\s", " ");
             return (param) =>
             {
                 var col = param.Item2.GetCol(field);
@@ -747,9 +676,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             (args, lenient) =>
             {
                 if (!lenient)
-                {
                     return noContext(row => false);
-                }
 
                 Regex rx = new(args[0], RegexOptions.IgnoreCase);
                 return paramContext =>
@@ -759,36 +686,26 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     foreach ((var param, FmgEntryCategory cat) in ParamBank.ParamToFmgCategoryList)
                     {
                         if (paramName != param)
-                        {
                             continue;
-                        }
 
                         category = cat;
                     }
 
                     if (category == FmgEntryCategory.None || !FMGBank.IsLoaded)
-                    {
                         return row => rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString());
-                    }
 
                     List<FMG.Entry> fmgEntries = FMGBank.GetFmgEntriesByCategory(category, false);
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)
-                    {
                         _cache[fmgEntry.ID] = fmgEntry;
-                    }
 
                     return row =>
                     {
                         if (rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString()))
-                        {
                             return true;
-                        }
 
                         if (!_cache.ContainsKey(row.ID))
-                        {
                             return false;
-                        }
 
                         FMG.Entry e = _cache[row.ID];
                         return e != null && rx.IsMatch(e.Text ?? "");
@@ -821,27 +738,19 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                 return noContext(cell =>
                 {
                     if (matchID && cell.Item1 == PseudoColumn.ID)
-                    {
                         return true;
-                    }
 
                     if (matchName && cell.Item1 == PseudoColumn.Name)
-                    {
                         return true;
-                    }
 
                     if (cell.Item2 != null)
                     {
                         FieldMetaData meta = lenient ? FieldMetaData.Get(cell.Item2.Def) : null;
                         if (lenient && meta?.AltName != null && rx.IsMatch(meta?.AltName))
-                        {
                             return true;
-                        }
 
                         if (rx.IsMatch(cell.Item2.Def.InternalName))
-                        {
                             return true;
-                        }
                     }
 
                     return false;
@@ -852,21 +761,15 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
             (args, lenient) => row =>
             {
                 if (row.Item1 == null)
-                {
                     throw new Exception("Can't check if cell is modified - not part of a param");
-                }
 
                 Param vParam = ParamBank.VanillaBank.Params?[row.Item1];
                 if (vParam == null)
-                {
                     throw new Exception("Can't check if cell is modified - no vanilla param");
-                }
 
                 Param.Row r = vParam[row.Item2.ID];
                 if (r == null)
-                {
                     return col => true;
-                }
 
                 return col =>
                 {
@@ -881,41 +784,29 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
             (args, lenient) =>
             {
                 if (!ParamBank.AuxBanks.ContainsKey(args[0]))
-                {
                     throw new Exception("Can't check if cell is modified - parambank not found");
-                }
 
                 ParamBank bank = ParamBank.AuxBanks[args[0]];
                 return row =>
                 {
                     if (row.Item1 == null)
-                    {
                         throw new Exception("Can't check if cell is modified - not part of a param");
-                    }
 
                     Param auxParam = bank.Params?[row.Item1];
                     if (auxParam == null)
-                    {
                         throw new Exception("Can't check if cell is modified - no aux param");
-                    }
 
                     Param vParam = ParamBank.VanillaBank.Params?[row.Item1];
                     if (vParam == null)
-                    {
                         throw new Exception("Can't check if cell is modified - no vanilla param");
-                    }
 
                     Param.Row r = auxParam[row.Item2.ID];
                     Param.Row r2 = vParam[row.Item2.ID];
                     if (r == null)
-                    {
                         return col => false;
-                    }
 
                     if (r2 == null)
-                    {
                         return col => true;
-                    }
 
                     return col =>
                     {
@@ -952,9 +843,7 @@ internal class VarSearchEngine : SearchEngine<bool, string>
             "Selects variables whose name matches the given regex", (args, lenient) =>
             {
                 if (args[0].StartsWith('$'))
-                {
                     args[0] = args[0].Substring(1);
-                }
 
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(name => rx.IsMatch(name));

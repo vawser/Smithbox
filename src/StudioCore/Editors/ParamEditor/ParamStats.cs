@@ -2,7 +2,7 @@ using Andre.Formats;
 using SoulsFormats;
 using System.Collections.Generic;
 
-namespace StudioCore.ParamEditor;
+namespace StudioCore.Editors.ParamEditor;
 
 public class ParamStats
 {

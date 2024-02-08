@@ -3,58 +3,40 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StudioCore.ParamEditor;
+namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamUtils
 {
-    public static string Dummy8Write(Byte[] dummy8)
+    public static string Dummy8Write(byte[] dummy8)
     {
         string val = null;
         foreach (var b in dummy8)
-        {
             if (val == null)
-            {
                 val = "[" + b;
-            }
             else
-            {
                 val += "|" + b;
-            }
-        }
 
         if (val == null)
-        {
             val = "[]";
-        }
         else
-        {
             val += "]";
-        }
 
         return val;
     }
 
-    public static Byte[] Dummy8Read(string dummy8, int expectedLength)
+    public static byte[] Dummy8Read(string dummy8, int expectedLength)
     {
-        var nval = new Byte[expectedLength];
+        var nval = new byte[expectedLength];
         if (!(dummy8.StartsWith('[') && dummy8.EndsWith(']')))
-        {
             return null;
-        }
 
         var spl = dummy8.Substring(1, dummy8.Length - 2).Split('|');
         if (nval.Length != spl.Length)
-        {
             return null;
-        }
 
         for (var i = 0; i < nval.Length; i++)
-        {
             if (!byte.TryParse(spl[i], out nval[i]))
-            {
                 return null;
-            }
-        }
 
         return nval;
     }
@@ -62,9 +44,7 @@ public static class ParamUtils
     public static bool RowMatches(this Param.Row row, Param.Row vrow)
     {
         if (row.Def.ParamType != vrow.Def.ParamType || row.Def.DataVersion != vrow.Def.DataVersion)
-        {
             return false;
-        }
 
         return row.DataEquals(vrow);
     }
@@ -72,17 +52,11 @@ public static class ParamUtils
     public static bool ByteArrayEquals(byte[] v1, byte[] v2)
     {
         if (v1.Length != v2.Length)
-        {
             return false;
-        }
 
         for (var i = 0; i < v1.Length; i++)
-        {
             if (v1[i] != v2[i])
-            {
                 return false;
-            }
-        }
 
         return true;
     }
@@ -90,8 +64,8 @@ public static class ParamUtils
     public static bool IsValueDiff(ref object value, ref object valueBase, Type t)
     {
         return value != null && valueBase != null && !(value.Equals(valueBase) ||
-                                                       (t == typeof(byte[]) && ByteArrayEquals((byte[])value,
-                                                           (byte[])valueBase)));
+                                                       t == typeof(byte[]) && ByteArrayEquals((byte[])value,
+                                                           (byte[])valueBase));
     }
 
     public static string ToParamEditorString(this object val)
@@ -102,14 +76,10 @@ public static class ParamUtils
     public static object Get(this Param.Row row, (PseudoColumn, Param.Column) col)
     {
         if (col.Item1 == PseudoColumn.ID)
-        {
             return row.ID;
-        }
 
         if (col.Item1 == PseudoColumn.Name)
-        {
             return row.Name == null ? "" : row.Name;
-        }
 
         return row[col.Item2].Value;
     }
@@ -140,14 +110,10 @@ public static class ParamUtils
     public static Type GetColumnType(this (PseudoColumn, Param.Column) col)
     {
         if (col.Item1 == PseudoColumn.ID)
-        {
             return typeof(int);
-        }
 
         if (col.Item1 == PseudoColumn.Name)
-        {
             return typeof(string);
-        }
 
         return col.Item2.ValueType;
     }
@@ -155,14 +121,10 @@ public static class ParamUtils
     public static string GetColumnSfType(this (PseudoColumn, Param.Column) col)
     {
         if (col.Item1 == PseudoColumn.ID)
-        {
             return "_int";
-        }
 
         if (col.Item1 == PseudoColumn.Name)
-        {
             return "_string";
-        }
 
         return col.Item2.Def.InternalType;
     }
@@ -181,20 +143,14 @@ public static class ParamUtils
         float[] adjPoint_maxGrowVal = null;
 
         if (ccd.adjPoint_maxGrowVal != null)
-        {
             adjPoint_maxGrowVal = ccd.adjPoint_maxGrowVal.Select((x, i) => (float)row[x].Value.Value).ToArray();
-        }
 
         var length = (int)(stageMaxVal[stageMaxVal.Length - 1] - stageMaxVal[0] + 1);
         if (length <= 0 || length > 1000000)
-        {
             return (new float[0], 0, 0, 0);
-        }
 
         if (ccd.fcsMaxdist != null)
-        {
             length = (int)(float)row[ccd.fcsMaxdist].Value.Value;
-        }
 
         var values = new float[length];
         for (var i = 0; i < values.Length; i++)
@@ -208,14 +164,10 @@ public static class ParamUtils
             var baseVal = i + stageMaxVal[0];
             var band = 0;
             while (band + 1 < stageMaxVal.Length && stageMaxVal[band + 1] < baseVal)
-            {
                 band++;
-            }
 
             if (band + 1 >= stageMaxVal.Length)
-            {
                 values[i] = stageMaxGrowVal[stageMaxGrowVal.Length - 1];
-            }
             else
             {
                 var adjValRate = stageMaxVal[band] == stageMaxVal[band + 1]
@@ -224,17 +176,13 @@ public static class ParamUtils
 
                 float adjGrowValRate;
                 if (adjPoint_maxGrowVal == null)
-                {
                     adjGrowValRate = adjValRate;
-                }
                 else
-                {
                     adjGrowValRate = adjPoint_maxGrowVal[band] >= 0
                         ? (float)Math.Pow(adjValRate, adjPoint_maxGrowVal[band])
                         : 1 - (float)Math.Pow(1 - adjValRate, -adjPoint_maxGrowVal[band]);
-                }
 
-                values[i] = (adjGrowValRate * (stageMaxGrowVal[band + 1] - stageMaxGrowVal[band])) +
+                values[i] = adjGrowValRate * (stageMaxGrowVal[band + 1] - stageMaxGrowVal[band]) +
                             stageMaxGrowVal[band];
             }
         }

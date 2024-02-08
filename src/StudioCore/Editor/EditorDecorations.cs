@@ -3,7 +3,6 @@ using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.ParamEditor;
 using StudioCore.UserProject;
 using StudioCore.Settings;
 using StudioCore.TextEditor;
@@ -15,6 +14,7 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using Veldrid;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.Editor;
 

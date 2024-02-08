@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StudioCore.ParamEditor;
+namespace StudioCore.Editors.ParamEditor;
 
 public class ParamVersionMismatchException : Exception
 {

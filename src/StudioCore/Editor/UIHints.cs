@@ -1,5 +1,5 @@
 using ImGuiNET;
-using StudioCore.ParamEditor;
+using StudioCore.Editors.ParamEditor;
 using System.Numerics;
 
 namespace StudioCore.Editor;

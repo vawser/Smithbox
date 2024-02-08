@@ -1,7 +1,6 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.ParamEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Settings;
@@ -17,6 +16,7 @@ using System.Threading.Tasks;
 using System.Numerics;
 using StudioCore.UserProject;
 using StudioCore.AssetLocator;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.MsbEditor;
 

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.ParamEditor;
+namespace StudioCore.Editors.ParamEditor;
 
 internal class AutoFillSearchEngine<A, B>
 {
@@ -46,19 +46,13 @@ internal class AutoFillSearchEngine<A, B>
                 ref _useAdditionalCondition);
         }
         else if (multiStageSE != null)
-        {
             ImGui.Checkbox("Add another condition?##meautoinputadditionalcondition" + id,
                 ref _useAdditionalCondition);
-        }
 
         if (_useAdditionalCondition && _additionalCondition == null)
-        {
             _additionalCondition = new AutoFillSearchEngine<A, B>(id + "0", engine);
-        }
         else if (!_useAdditionalCondition)
-        {
             _additionalCondition = null;
-        }
 
         foreach ((string, string[], string) cmd in enableDefault
                      ? engine.VisibleCommands().Append((null, engine.defaultFilter.args, engine.defaultFilter.wiki))
@@ -72,9 +66,7 @@ internal class AutoFillSearchEngine<A, B>
                 argIndices[i] = currentArgIndex;
                 currentArgIndex++;
                 if (string.IsNullOrEmpty(_autoFillArgs[argIndices[i]]))
-                {
                     valid = false;
-                }
             }
 
             string subResult = null;
@@ -82,61 +74,45 @@ internal class AutoFillSearchEngine<A, B>
             UIHints.AddImGuiHintButton(cmd.Item1 == null ? "hintdefault" : "hint" + cmd.Item1, ref wiki, false,
                 true);
             if (subMenu != null || _additionalCondition != null)
-            {
                 if (ImGui.BeginMenu(cmd.Item1 == null ? "Default filter..." : cmd.Item1, valid))
                 {
                     var curResult = inheritedCommand + getCurrentStepText(valid, cmd.Item1, argIndices,
                         _additionalCondition != null ? " && " : suffix);
                     if (_useAdditionalCondition && multiStageSE != null)
-                    {
                         subResult = multiStageSE.Menu(enableComplexToggles, enableDefault, suffix, curResult,
                             subMenu);
-                    }
                     else if (_additionalCondition != null)
-                    {
                         subResult = _additionalCondition.Menu(enableComplexToggles, enableDefault, suffix,
                             curResult, subMenu);
-                    }
                     else
-                    {
                         subResult = subMenu(curResult);
-                    }
 
                     ImGui.EndMenu();
                 }
-            }
             else
-            {
                 subResult = ImGui.Selectable(cmd.Item1 == null ? "Default filter..." : cmd.Item1, false,
                     valid ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled)
                     ? suffix
                     : null;
-            }
 
             //ImGui.Indent();
             for (var i = 0; i < argIndices.Length; i++)
             {
                 if (i != 0)
-                {
                     ImGui.SameLine();
-                }
 
                 ImGui.InputTextWithHint("##meautoinput" + argIndices[i], cmd.Item2[i],
                     ref _autoFillArgs[argIndices[i]], 256);
                 var var = AutoFill.MassEditAutoFillForVars(argIndices[i]);
                 if (var != null)
-                {
                     _autoFillArgs[argIndices[i]] = var;
-                }
             }
 
             //ImGui.Unindent();
             var currentResult = getCurrentStepText(valid, cmd.Item1, argIndices,
                 _additionalCondition != null ? " && " : suffix);
             if (subResult != null && valid)
-            {
                 return currentResult + subResult;
-            }
         }
 
         return null;
@@ -145,17 +121,13 @@ internal class AutoFillSearchEngine<A, B>
     internal string getCurrentStepText(bool valid, string command, int[] argIndices, string suffixToUse)
     {
         if (!valid)
-        {
             return null;
-        }
 
         if (command != null)
         {
             var cmdText = _autoFillNotToggle ? '!' + command : command;
             for (var i = 0; i < argIndices.Length; i++)
-            {
                 cmdText += " " + _autoFillArgs[argIndices[i]];
-            }
 
             return cmdText + suffixToUse;
         }
@@ -164,9 +136,7 @@ internal class AutoFillSearchEngine<A, B>
         {
             var argText = _autoFillArgs[argIndices[0]];
             for (var i = 1; i < argIndices.Length; i++)
-            {
                 argText += " " + _autoFillArgs[argIndices[i]];
-            }
 
             return argText + suffixToUse;
         }
@@ -266,17 +236,13 @@ internal class AutoFill
             var result1 = autoFillParse.Menu(false, autoFillRse, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
-                {
                     ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
-                }
 
                 ImGui.TextColored(HINTCOLOUR, "Select fields...");
                 var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand, inheritedCommand2 =>
                 {
                     if (inheritedCommand2 != null)
-                    {
                         ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand2);
-                    }
 
                     ImGui.TextColored(HINTCOLOUR, "Select field operation...");
                     return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";", null);
@@ -285,9 +251,7 @@ internal class AutoFill
                 ImGui.TextColored(HINTCOLOUR, "Select row operation...");
                 var res2 = MassEditAutoFillForOperation(MERowOperation.rowOps, ref _autoFillArgsRop, ";", null);
                 if (res1 != null)
-                {
                     return res1;
-                }
 
                 return res2;
             });
@@ -298,25 +262,19 @@ internal class AutoFill
             var result2 = autoFillPse.Menu(true, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
-                {
                     ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
-                }
 
                 ImGui.TextColored(HINTCOLOUR, "Select rows...");
                 return autoFillRse.Menu(true, false, ": ", inheritedCommand, inheritedCommand2 =>
                 {
                     if (inheritedCommand2 != null)
-                    {
                         ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand2);
-                    }
 
                     ImGui.TextColored(HINTCOLOUR, "Select fields...");
                     var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand2, inheritedCommand3 =>
                     {
                         if (inheritedCommand3 != null)
-                        {
                             ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand3);
-                        }
 
                         ImGui.TextColored(HINTCOLOUR, "Select field operation...");
                         return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";",
@@ -331,9 +289,7 @@ internal class AutoFill
                     }
 
                     if (res1 != null)
-                    {
                         return res1;
-                    }
 
                     return res2;
                 });
@@ -357,9 +313,7 @@ internal class AutoFill
                     result4 = autoFillVse.Menu(false, false, ": ", null, inheritedCommand =>
                     {
                         if (inheritedCommand != null)
-                        {
                             ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
-                        }
 
                         ImGui.TextColored(HINTCOLOUR, "Select value operation...");
                         return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";",
@@ -370,19 +324,13 @@ internal class AutoFill
 
             ImGui.EndPopup();
             if (result1 != null)
-            {
                 return result1;
-            }
 
             if (result2 != null)
-            {
                 return result2;
-            }
 
             if (result3 != null)
-            {
                 return result3;
-            }
 
             return result4;
         }
@@ -409,36 +357,28 @@ internal class AutoFill
                 argIndices[i] = currentArgIndex;
                 currentArgIndex++;
                 if (string.IsNullOrEmpty(staticArgs[argIndices[i]]))
-                {
                     valid = false;
-                }
             }
 
             var wiki = cmd.Item3;
             UIHints.AddImGuiHintButton(cmd.Item1, ref wiki, false, true);
             if (subMenu != null)
-            {
                 if (ImGui.BeginMenu(cmd.Item1, valid))
                 {
                     result = subMenu();
                     ImGui.EndMenu();
                 }
-            }
             else
-            {
                 result = ImGui.Selectable(cmd.Item1, false,
                     valid ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled)
                     ? suffix
                     : null;
-            }
 
             ImGui.Indent();
             for (var i = 0; i < argIndices.Length; i++)
             {
                 if (i != 0)
-                {
                     ImGui.SameLine();
-                }
 
                 ImGui.InputTextWithHint("##meautoinputop" + argIndices[i], cmd.Item2[i],
                     ref staticArgs[argIndices[i]], 256);
@@ -449,9 +389,7 @@ internal class AutoFill
                 {
                     var opargResult = MassEditAutoFillForArguments(MEOperationArgument.arg, ref _autoFillArgsOa);
                     if (opargResult != null)
-                    {
                         staticArgs[argIndices[i]] = opargResult;
-                    }
 
                     ImGui.EndPopup();
                 }
@@ -462,9 +400,7 @@ internal class AutoFill
             {
                 var argText = argIndices.Length > 0 ? staticArgs[argIndices[0]] : null;
                 for (var i = 1; i < argIndices.Length; i++)
-                {
                     argText += ":" + staticArgs[argIndices[i]];
-                }
 
                 result = cmd.Item1 + (argText != null ? " " + argText + result : result);
                 return result;
@@ -487,9 +423,7 @@ internal class AutoFill
                 argIndices[i] = currentArgIndex;
                 currentArgIndex++;
                 if (string.IsNullOrEmpty(staticArgs[argIndices[i]]))
-                {
                     valid = false;
-                }
             }
 
             var selected = false;
@@ -501,9 +435,7 @@ internal class AutoFill
                 result = arg.Item1;
                 var argText = "";
                 for (var i = 0; i < argIndices.Length; i++)
-                {
                     argText += " " + staticArgs[argIndices[i]];
-                }
 
                 return arg.Item1 + argText;
             }
@@ -512,17 +444,13 @@ internal class AutoFill
             for (var i = 0; i < argIndices.Length; i++)
             {
                 if (i != 0)
-                {
                     ImGui.SameLine();
-                }
 
                 ImGui.InputTextWithHint("##meautoinputoa" + argIndices[i], arg.Item3[i],
                     ref staticArgs[argIndices[i]], 256);
                 var var = MassEditAutoFillForVars(argIndices[i]);
                 if (var != null)
-                {
                     staticArgs[argIndices[i]] = var;
-                }
             }
 
             ImGui.Unindent();
@@ -533,19 +461,13 @@ internal class AutoFill
             ImGui.Separator();
             ImGui.TextUnformatted("Defined variables...");
             foreach (KeyValuePair<string, object> pair in MassParamEdit.massEditVars)
-            {
                 if (ImGui.Selectable(pair.Key + "(" + pair.Value + ")"))
-                {
                     return '$' + pair.Key;
-                }
-            }
         }
 
         ImGui.Separator();
         if (ImGui.Selectable("Exactly..."))
-        {
             result = '"' + _literalArg + '"';
-        }
 
         ImGui.InputTextWithHint("##meautoinputoaExact", "literal value...", ref _literalArg, 256);
         return result;
@@ -554,9 +476,7 @@ internal class AutoFill
     internal static string MassEditAutoFillForVars(int id)
     {
         if (MassParamEdit.massEditVars.Count == 0)
-        {
             return null;
-        }
 
         ImGui.SameLine();
         ImGui.Button("$");
@@ -565,13 +485,11 @@ internal class AutoFill
             ImGui.TextUnformatted("Defined variables...");
             ImGui.Separator();
             foreach (KeyValuePair<string, object> pair in MassParamEdit.massEditVars)
-            {
                 if (ImGui.Selectable(pair.Key + "(" + pair.Value + ")"))
                 {
                     ImGui.EndPopup();
                     return '$' + pair.Key;
                 }
-            }
 
             ImGui.EndPopup();
         }

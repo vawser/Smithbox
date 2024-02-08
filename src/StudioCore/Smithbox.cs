@@ -15,7 +15,6 @@ using StudioCore.Graphics;
 using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditor;
 using StudioCore.MsbEditor;
-using StudioCore.ParamEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
@@ -42,6 +41,7 @@ using Thread = System.Threading.Thread;
 using Version = System.Version;
 using StudioCore.AssetLocator;
 using StudioCore.Banks;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore;
 

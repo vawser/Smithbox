@@ -5,7 +5,6 @@ using SoapstoneLib.Proto;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
-using StudioCore.ParamEditor;
 using StudioCore.UserProject;
 using StudioCore.TextEditor;
 using System;
@@ -14,6 +13,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using StudioCore.Editors.ParamEditor;
 
 #pragma warning disable CS1998 // Async method lacks 'await'. Return without Task is convenient, though
 

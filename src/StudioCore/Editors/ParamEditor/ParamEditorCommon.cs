@@ -5,7 +5,7 @@ using System;
 using System.Numerics;
 using System.Reflection;
 
-namespace StudioCore.ParamEditor;
+namespace StudioCore.Editors.ParamEditor;
 
 public class ParamEditorCommon
 {
@@ -155,7 +155,7 @@ public class ParamEditorCommon
         else if (typ == typeof(double))
         {
             var val = (double)oldval;
-            if (ImGui.InputScalar("##value", ImGuiDataType.Double, new IntPtr(&val)))
+            if (ImGui.InputScalar("##value", ImGuiDataType.Double, new nint(&val)))
             {
                 newval = val;
                 _editedPropCache = newval;
@@ -166,9 +166,7 @@ public class ParamEditorCommon
         {
             var val = (string)oldval;
             if (val == null)
-            {
                 val = "";
-            }
 
             if (ImGui.InputText("##value", ref val, 128))
             {
@@ -238,15 +236,11 @@ public class ParamEditorCommon
             _editedTypeCache = prop;
         }
         else if (_editedPropCache != null && _editedPropCache != oldval)
-        {
             _changedCache = true;
-        }
 
         if (_changedCache)
-        {
             ChangeProperty(executor, _editedTypeCache, _editedObjCache, _editedPropCache, ref _committedCache,
                 arrayindex);
-        }
 
         return _changedCache && _committedCache;
     }
@@ -266,13 +260,9 @@ public class ParamEditorCommon
 
             PropertiesChangedAction action;
             if (arrayindex != -1)
-            {
                 action = new PropertiesChangedAction((PropertyInfo)prop, arrayindex, obj, newval);
-            }
             else
-            {
                 action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
-            }
 
             executor.ExecuteAction(action);
         }

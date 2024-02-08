@@ -1,6 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.ParamEditor;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

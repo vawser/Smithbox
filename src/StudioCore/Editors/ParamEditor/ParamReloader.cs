@@ -18,7 +18,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.ParamEditor;
+namespace StudioCore.Editors.ParamEditor;
 
 internal class ParamReloader
 {
@@ -43,9 +43,7 @@ internal class ParamReloader
     public static bool CanReloadMemoryParams(ParamBank bank, ProjectSettings projectSettings)
     {
         if (projectSettings != null && GameIsSupported(projectSettings.GameType) && bank.IsLoadingParams == false)
-        {
             return true;
-        }
 
         return false;
     }
@@ -53,9 +51,7 @@ internal class ParamReloader
     public static void ReloadMemoryParam(ParamBank bank, string paramName)
     {
         if (paramName != null)
-        {
             ReloadMemoryParams(bank, new string[] { paramName });
-        }
     }
 
     public static void ReloadMemoryParams(ParamBank bank, string[] paramNames)
@@ -65,15 +61,11 @@ internal class ParamReloader
             {
                 GameOffsets offsets = GetGameOffsets();
                 if (offsets == null)
-                {
                     return;
-                }
 
                 Process[] processArray = Process.GetProcessesByName(offsets.exeName);
                 if (!processArray.Any())
-                {
                     processArray = Process.GetProcessesByName(offsets.exeName.Replace(".exe", ""));
-                }
 
                 if (processArray.Any())
                 {
@@ -83,9 +75,7 @@ internal class ParamReloader
                     memoryHandler.Terminate();
                 }
                 else
-                {
                     throw new Exception("Unable to find running game");
-                }
             }));
     }
 
@@ -95,17 +85,13 @@ internal class ParamReloader
         nint soloParamRepositoryPtr;
         if (offsets.ParamBaseAobPattern != null)
         {
-            if (!handler.TryFindOffsetFromAOB("ParamBase", offsets.ParamBaseAobPattern, offsets.ParamBaseAobRelativeOffsets, out int paramBase))
-            {
+            if (!handler.TryFindOffsetFromAOB("ParamBase", offsets.ParamBaseAobPattern, offsets.ParamBaseAobRelativeOffsets, out var paramBase))
                 return;
-            }
 
-            soloParamRepositoryPtr = IntPtr.Add(handler.GetBaseAddress(), paramBase);
+            soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), paramBase);
         }
         else
-        {
-            soloParamRepositoryPtr = IntPtr.Add(handler.GetBaseAddress(), offsets.ParamBaseOffset);
-        }
+            soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), offsets.ParamBaseOffset);
 
         List<Task> tasks = new();
         foreach (var param in paramNames)
@@ -116,29 +102,21 @@ internal class ParamReloader
                 continue;
             }
 
-            if ((offsets.type is ProjectType.DS1 or ProjectType.DS1R) &&
+            if (offsets.type is ProjectType.DS1 or ProjectType.DS1R &&
                 param == "ThrowParam")
-            {
                 // DS1 ThrowParam requires an additional offset.
                 tasks.Add(new Task(() =>
-                    WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, IntPtr.Add(soloParamRepositoryPtr, 0x10))));
-            }
+                    WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, nint.Add(soloParamRepositoryPtr, 0x10))));
             else
-            {
                 tasks.Add(new Task(() =>
                     WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, soloParamRepositoryPtr)));
-            }
         }
 
         foreach (Task task in tasks)
-        {
             task.Start();
-        }
 
         foreach (Task task in tasks)
-        {
             task.Wait();
-        }
     }
 
     public static void GiveItemMenu(List<Param.Row> rowsToGib, string param)
@@ -146,15 +124,11 @@ internal class ParamReloader
         GameOffsets offsets = GetGameOffsets();
 
         if (!offsets.itemGibOffsets.ContainsKey(param))
-        {
             return;
-        }
 
         if (ImGui.MenuItem("Spawn Selected Items In Game"))
-        {
             GiveItem(offsets, rowsToGib, param, param == "EquipParamGoods" ? (int)numberOfItemsToGive : 1,
                 param == "EquipParamWeapon" ? (int)upgradeLevelItemToGive : 0);
-        }
 
         if (param == "EquipParamGoods")
         {
@@ -163,12 +137,8 @@ internal class ParamReloader
             ImGui.Text("Number of Spawned Items");
             ImGui.SameLine();
             if (ImGui.InputText("##Number of Spawned Items", ref itemsNum, 2))
-            {
                 if (uint.TryParse(itemsNum, out var result) && result != 0)
-                {
                     numberOfItemsToGive = result;
-                }
-            }
         }
         else if (param == "EquipParamWeapon")
         {
@@ -176,12 +146,8 @@ internal class ParamReloader
             ImGui.SameLine();
             var weaponLevel = upgradeLevelItemToGive.ToString();
             if (ImGui.InputText("##Spawned Weapon Level", ref weaponLevel, 2))
-            {
                 if (uint.TryParse(weaponLevel, out var result) && result < 11)
-                {
                     upgradeLevelItemToGive = result;
-                }
-            }
         }
 
         ImGui.Unindent();
@@ -212,7 +178,7 @@ internal class ParamReloader
         WriteMemoryPARAM(offsets, param, BasePtr, memoryHandler);
     }
 
-    private static void WriteMemoryPARAM(GameOffsets offsets, Param param, IntPtr BasePtr,
+    private static void WriteMemoryPARAM(GameOffsets offsets, Param param, nint BasePtr,
         SoulsMemoryHandler memoryHandler)
     {
         var BaseDataPtr = memoryHandler.GetToRowPtr(offsets, BasePtr);
@@ -224,7 +190,7 @@ internal class ParamReloader
             return;
         }
 
-        IntPtr DataSectionPtr;
+        nint DataSectionPtr;
 
         var RowId = 0;
         var rowPtr = 0;
@@ -242,15 +208,13 @@ internal class ParamReloader
                 continue;
             }
 
-            DataSectionPtr = IntPtr.Add(BasePtr, rowPtr);
+            DataSectionPtr = nint.Add(BasePtr, rowPtr);
 
             BaseDataPtr += offsets.rowHeaderSize;
 
             if (rowDictionary.TryGetValue(RowId, out Queue<Param.Row> queue)
                 && queue.TryDequeue(out Param.Row row))
-            {
                 WriteMemoryRow(row, DataSectionPtr, memoryHandler);
-            }
             else
             {
                 TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor. Try saving params and restarting game.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
@@ -259,20 +223,18 @@ internal class ParamReloader
         }
     }
 
-    private static void WriteMemoryRow(Param.Row row, IntPtr RowDataSectionPtr, SoulsMemoryHandler memoryHandler)
+    private static void WriteMemoryRow(Param.Row row, nint RowDataSectionPtr, SoulsMemoryHandler memoryHandler)
     {
         var offset = 0;
         var bitFieldPos = 0;
         BitArray bits = null;
 
         foreach (Param.Column cell in row.Columns)
-        {
             offset += WriteMemoryCell(row[cell], RowDataSectionPtr + offset, ref bitFieldPos, ref bits,
                 memoryHandler);
-        }
     }
 
-    private static int WriteMemoryCell(Param.Cell cell, IntPtr CellDataPtr, ref int bitFieldPos, ref BitArray bits,
+    private static int WriteMemoryCell(Param.Cell cell, nint CellDataPtr, ref int bitFieldPos, ref BitArray bits,
         SoulsMemoryHandler memoryHandler)
     {
         PARAMDEF.DefType displayType = cell.Def.DisplayType;
@@ -282,9 +244,7 @@ internal class ParamReloader
             if (displayType == PARAMDEF.DefType.u8 || displayType == PARAMDEF.DefType.dummy8)
             {
                 if (bitFieldPos == 0)
-                {
                     bits = new BitArray(8);
-                }
 
                 return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
             }
@@ -292,9 +252,7 @@ internal class ParamReloader
             if (displayType == PARAMDEF.DefType.u16)
             {
                 if (bitFieldPos == 0)
-                {
                     bits = new BitArray(16);
-                }
 
                 return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
             }
@@ -302,9 +260,7 @@ internal class ParamReloader
             if (displayType == PARAMDEF.DefType.u32)
             {
                 if (bitFieldPos == 0)
-                {
                     bits = new BitArray(32);
-                }
 
                 return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
             }
@@ -324,9 +280,7 @@ internal class ParamReloader
 
             var value = Convert.ToSingle(cell.Value);
             if (valueRead != value)
-            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
-            }
 
             return sizeof(float);
         }
@@ -338,11 +292,9 @@ internal class ParamReloader
 
             var value = Convert.ToInt32(cell.Value);
             if (valueRead != value)
-            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
-            }
 
-            return sizeof(Int32);
+            return sizeof(int);
         }
 
         if (displayType == PARAMDEF.DefType.s16)
@@ -352,11 +304,9 @@ internal class ParamReloader
 
             var value = Convert.ToInt16(cell.Value);
             if (valueRead != value)
-            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
-            }
 
-            return sizeof(Int16);
+            return sizeof(short);
         }
 
         if (displayType == PARAMDEF.DefType.s8)
@@ -366,9 +316,7 @@ internal class ParamReloader
 
             var value = Convert.ToSByte(cell.Value);
             if (valueRead != value)
-            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
-            }
 
             return sizeof(sbyte);
         }
@@ -380,11 +328,9 @@ internal class ParamReloader
 
             var value = Convert.ToUInt32(cell.Value);
             if (valueRead != value)
-            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
-            }
 
-            return sizeof(UInt32);
+            return sizeof(uint);
         }
 
         if (displayType == PARAMDEF.DefType.u16)
@@ -394,11 +340,9 @@ internal class ParamReloader
 
             var value = Convert.ToUInt16(cell.Value);
             if (valueRead != value)
-            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
-            }
 
-            return sizeof(UInt16);
+            return sizeof(ushort);
         }
 
         if (displayType == PARAMDEF.DefType.u8)
@@ -408,49 +352,35 @@ internal class ParamReloader
 
             var value = Convert.ToByte(cell.Value);
             if (valueRead != value)
-            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
-            }
 
             return sizeof(byte);
         }
 
         if (displayType == PARAMDEF.DefType.dummy8 || displayType == PARAMDEF.DefType.fixstr ||
             displayType == PARAMDEF.DefType.fixstrW)
-        {
             return cell.Def.ArrayLength * (displayType == PARAMDEF.DefType.fixstrW ? 2 : 1);
-        }
 
         throw new Exception("Unexpected Field Type");
     }
 
-    private static int WriteBitArray(Param.Cell? cell, IntPtr CellDataPtr, ref int bitFieldPos, ref BitArray bits,
+    private static int WriteBitArray(Param.Cell? cell, nint CellDataPtr, ref int bitFieldPos, ref BitArray bits,
         SoulsMemoryHandler memoryHandler, bool flushBits)
     {
         if (!flushBits)
         {
             if (cell == null)
-            {
                 throw new ArgumentException();
-            }
 
             BitArray cellValueBitArray = null;
             if (bits.Count == 8)
-            {
                 cellValueBitArray = new BitArray(BitConverter.GetBytes((byte)cell.Value.Value << bitFieldPos));
-            }
             else if (bits.Count == 16)
-            {
                 cellValueBitArray = new BitArray(BitConverter.GetBytes((ushort)cell.Value.Value << bitFieldPos));
-            }
             else if (bits.Count == 32)
-            {
                 cellValueBitArray = new BitArray(BitConverter.GetBytes((uint)cell.Value.Value << bitFieldPos));
-            }
             else
-            {
                 throw new Exception("Unknown bitfield length");
-            }
 
             for (var i = 0; i < cell.Value.Def.BitSize; i++)
             {
@@ -469,30 +399,22 @@ internal class ParamReloader
             {
                 var bitbuffer = bitField[0];
                 if (valueRead != bitbuffer)
-                {
                     memoryHandler.WriteProcessMemory(CellDataPtr, ref bitbuffer);
-                }
             }
             else if (bits.Count == 16)
             {
                 var bitbuffer = BitConverter.ToUInt16(bitField, 0);
                 if (valueRead != bitbuffer)
-                {
                     memoryHandler.WriteProcessMemory(CellDataPtr, ref bitbuffer);
-                }
             }
             else if (bits.Count == 32)
             {
                 var bitbuffer = BitConverter.ToUInt32(bitField, 0);
                 if (valueRead != bitbuffer)
-                {
                     memoryHandler.WriteProcessMemory(CellDataPtr, ref bitbuffer);
-                }
             }
             else
-            {
                 throw new Exception("Unknown bitfield length");
-            }
 
             var advance = bits.Count / 8;
             bitFieldPos = 0;
@@ -507,7 +429,6 @@ internal class ParamReloader
     {
         ProjectType game = Project.Type;
         if (!GameOffsets.GameOffsetBank.ContainsKey(game))
-        {
             try
             {
                 GameOffsets.GameOffsetBank.Add(game, new GameOffsets(game));
@@ -518,7 +439,6 @@ internal class ParamReloader
                     TaskLogs.LogPriority.High, e);
                 return null;
             }
-        }
 
         return GameOffsets.GameOffsetBank[game];
     }
@@ -527,9 +447,7 @@ internal class ParamReloader
     {
         GameOffsets offs = GetGameOffsets();
         if (offs == null)
-        {
             return new string[0];
-        }
 
         return offs.paramOffsets.Keys.ToArray();
     }
@@ -564,7 +482,7 @@ internal class GameOffsets
     internal int ParamBaseOffset = 0;
 
     // AOB for param base offset. If null, ParamBaseOffset will be used instead.
-    internal string? ParamBaseAobPattern;
+    internal string ParamBaseAobPattern;
     internal List<(int, int)> ParamBaseAobRelativeOffsets = new();
 
     internal int paramCountOffset;
@@ -581,27 +499,21 @@ internal class GameOffsets
         Dictionary<string, string> basicData = GetOffsetFile(dir + "/CoreOffsets.txt");
         exeName = basicData["exeName"];
 
-        if (basicData.TryGetValue("paramBase", out string paramBaseStr))
-        {
+        if (basicData.TryGetValue("paramBase", out var paramBaseStr))
             ParamBaseOffset = Utils.ParseHexFromString(paramBaseStr);
-        }
         basicData.TryGetValue("paramBaseAob", out ParamBaseAobPattern);
 
-        if (basicData.TryGetValue("paramBaseAobRelativeOffset", out string paramBaseAobRelativeOffsetStr))
-        {
+        if (basicData.TryGetValue("paramBaseAobRelativeOffset", out var paramBaseAobRelativeOffsetStr))
             foreach (var relativeOffset in paramBaseAobRelativeOffsetStr.Split(','))
             {
                 var split = relativeOffset.Split('/');
                 ParamBaseAobRelativeOffsets.Add(new(Utils.ParseHexFromString(split[0]), Utils.ParseHexFromString(split[1])));
             }
-        }
 
         var innerpath = basicData["paramInnerPath"].Split("/");
         paramInnerPath = new int[innerpath.Length];
         for (var i = 0; i < innerpath.Length; i++)
-        {
             paramInnerPath[i] = Utils.ParseHexFromString(innerpath[i]);
-        }
 
         paramCountOffset = Utils.ParseHexFromString(basicData["paramCountOffset"]);
         paramDataOffset = Utils.ParseHexFromString(basicData["paramDataOffset"]);
@@ -623,9 +535,7 @@ internal class GameOffsets
         Dictionary<string, string> paramData = GetOffsetFile(dir);
         Dictionary<string, int> offsets = new();
         foreach (KeyValuePair<string, string> entry in paramData)
-        {
             offsets.Add(entry.Key, Utils.ParseHexFromString(entry.Value));
-        }
 
         return offsets;
     }
@@ -653,7 +563,7 @@ public class SoulsMemoryHandler
 
     private readonly Process gameProcess;
     private readonly Dictionary<string, int> _processOffsets;
-    public IntPtr memoryHandle;
+    public nint memoryHandle;
 
     public SoulsMemoryHandler(Process gameProcess)
     {
@@ -669,7 +579,7 @@ public class SoulsMemoryHandler
         }
     }
 
-    public IntPtr GetBaseAddress()
+    public nint GetBaseAddress()
     {
         return gameProcess.MainModule.BaseAddress;
     }
@@ -681,25 +591,25 @@ public class SoulsMemoryHandler
     }
 
     [DllImport("kernel32", EntryPoint = "ReadProcessMemory")]
-    private static extern bool ReadProcessMemory(IntPtr Handle, IntPtr Address,
+    private static extern bool ReadProcessMemory(nint Handle, nint Address,
         [Out] byte[] Arr, int Size, out int BytesRead);
 
-    public bool ReadProcessMemory(IntPtr baseAddress, ref byte[] arr, int size)
+    public bool ReadProcessMemory(nint baseAddress, ref byte[] arr, int size)
     {
         return ReadProcessMemory(memoryHandle, baseAddress, arr, size, out _);
     }
 
-    public bool ReadProcessMemory<T>(IntPtr baseAddress, ref T buffer) where T : unmanaged
+    public bool ReadProcessMemory<T>(nint baseAddress, ref T buffer) where T : unmanaged
     {
         return NativeWrapper.ReadProcessMemory(memoryHandle, baseAddress, ref buffer);
     }
 
-    public bool WriteProcessMemory<T>(IntPtr baseAddress, ref T buffer) where T : unmanaged
+    public bool WriteProcessMemory<T>(nint baseAddress, ref T buffer) where T : unmanaged
     {
         return NativeWrapper.WriteProcessMemory(memoryHandle, baseAddress, ref buffer);
     }
 
-    public bool WriteProcessMemoryArray<T>(IntPtr baseAddress, T[] buffer) where T : unmanaged
+    public bool WriteProcessMemoryArray<T>(nint baseAddress, T[] buffer) where T : unmanaged
     {
         return NativeWrapper.WriteProcessMemoryArray(memoryHandle, baseAddress, buffer);
     }
@@ -709,7 +619,7 @@ public class SoulsMemoryHandler
         var start = offset + startOffset;
         var end = start + 4;
         var target = mem[start..end];
-        int address = BitConverter.ToInt32(target);
+        var address = BitConverter.ToInt32(target);
         return offset + address + endOffset;
     }
 
@@ -720,29 +630,24 @@ public class SoulsMemoryHandler
     public bool TryFindOffsetFromAOB(string offsetName, string aobPattern, List<(int, int)> relativeOffsets, out int outOffset)
     {
         if (_processOffsets.TryGetValue(offsetName, out outOffset))
-        {
             return true;
-        }
 
-        GenerateAobPattern(aobPattern, out byte[] pattern, out bool[] wildcard);
+        GenerateAobPattern(aobPattern, out var pattern, out var wildcard);
 
-        int memSize = gameProcess.MainModule.ModuleMemorySize;
-        int memFindLength = memSize - pattern.Length;
-        byte[] mem = new byte[memSize];
+        var memSize = gameProcess.MainModule.ModuleMemorySize;
+        var memFindLength = memSize - pattern.Length;
+        var mem = new byte[memSize];
 
         ReadProcessMemory(gameProcess.MainModule.BaseAddress, ref mem, memSize);
 
         for (var offset = 0; offset < memFindLength; offset++)
-        {
             if (mem[offset] == pattern[0])
             {
-                bool matched = true;
-                for (int iPattern = 1; iPattern < pattern.Length; iPattern++)
+                var matched = true;
+                for (var iPattern = 1; iPattern < pattern.Length; iPattern++)
                 {
                     if (wildcard[iPattern] || mem[offset + iPattern] == pattern[iPattern])
-                    {
                         continue;
-                    }
                     matched = false;
                     break;
                 }
@@ -751,16 +656,13 @@ public class SoulsMemoryHandler
                 {
                     // Match has been found. Set out variable and add to process offsets.
                     foreach (var relativeOffset in relativeOffsets)
-                    {
                         offset = GetRelativeOffset(mem, offset, relativeOffset.Item1, relativeOffset.Item2);
-                    }
                     outOffset = offset;
                     _processOffsets.Add(offsetName, offset);
                     TaskLogs.AddLog($"Found AOB in memory for {offsetName}. Offset: 0x{offset:X2}", LogLevel.Debug);
                     return true;
                 }
             }
-        }
 
         TaskLogs.AddLog($"Unable to find AOB in memory for {offsetName}", LogLevel.Warning);
         return false;
@@ -768,13 +670,13 @@ public class SoulsMemoryHandler
 
     private void GenerateAobPattern(string str, out byte[] pattern, out bool[] wildcard)
     {
-        string[] split = str.Split(",");
+        var split = str.Split(",");
         pattern = new byte[split.Length];
         wildcard = new bool[split.Length];
 
         for (var i = 0; i < split.Length; i++)
         {
-            string byteStr = split[i].Replace("0x", "");
+            var byteStr = split[i].Replace("0x", "");
 
             if (byteStr == "??")
                 wildcard[i] = true;
@@ -783,32 +685,30 @@ public class SoulsMemoryHandler
         }
     }
 
-    internal IntPtr GetParamPtr(IntPtr paramRepoPtr, GameOffsets offsets, int pOffset)
+    internal nint GetParamPtr(nint paramRepoPtr, GameOffsets offsets, int pOffset)
     {
         if (offsets.Is64Bit)
-        {
             return GetParamPtr64Bit(paramRepoPtr, offsets, pOffset);
-        }
 
         return GetParamPtr32Bit(paramRepoPtr, offsets, pOffset);
     }
 
-    private IntPtr GetParamPtr64Bit(IntPtr paramRepoPtr, GameOffsets offsets, int pOffset)
+    private nint GetParamPtr64Bit(nint paramRepoPtr, GameOffsets offsets, int pOffset)
     {
         var paramPtr = paramRepoPtr;
         NativeWrapper.ReadProcessMemory(memoryHandle, paramPtr, ref paramPtr);
-        paramPtr = IntPtr.Add(paramPtr, pOffset);
+        paramPtr = nint.Add(paramPtr, pOffset);
         NativeWrapper.ReadProcessMemory(memoryHandle, paramPtr, ref paramPtr);
         foreach (var innerPathPart in offsets.paramInnerPath)
         {
-            paramPtr = IntPtr.Add(paramPtr, innerPathPart);
+            paramPtr = nint.Add(paramPtr, innerPathPart);
             NativeWrapper.ReadProcessMemory(memoryHandle, paramPtr, ref paramPtr);
         }
 
         return paramPtr;
     }
 
-    private IntPtr GetParamPtr32Bit(IntPtr paramRepoPtr, GameOffsets offsets, int pOffset)
+    private nint GetParamPtr32Bit(nint paramRepoPtr, GameOffsets offsets, int pOffset)
     {
         var ParamPtr = (int)paramRepoPtr;
         NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr, ref ParamPtr);
@@ -823,54 +723,50 @@ public class SoulsMemoryHandler
         return ParamPtr;
     }
 
-    internal int GetRowCount(GameOffsets gOffsets, IntPtr paramPtr)
+    internal int GetRowCount(GameOffsets gOffsets, nint paramPtr)
     {
         if (gOffsets.type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
-        {
             return GetRowCountInt(gOffsets, paramPtr);
-        }
 
         return GetRowCountShort(gOffsets, paramPtr);
     }
 
-    private int GetRowCountInt(GameOffsets gOffsets, IntPtr ParamPtr)
+    private int GetRowCountInt(GameOffsets gOffsets, nint ParamPtr)
     {
         var buffer = 0;
         NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr + gOffsets.paramCountOffset, ref buffer);
         return buffer;
     }
 
-    private int GetRowCountShort(GameOffsets gOffsets, IntPtr ParamPtr)
+    private int GetRowCountShort(GameOffsets gOffsets, nint ParamPtr)
     {
-        Int16 buffer = 0;
+        short buffer = 0;
         NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr + gOffsets.paramCountOffset, ref buffer);
         return buffer;
     }
 
-    internal IntPtr GetToRowPtr(GameOffsets gOffsets, IntPtr paramPtr)
+    internal nint GetToRowPtr(GameOffsets gOffsets, nint paramPtr)
     {
-        paramPtr = IntPtr.Add(paramPtr, gOffsets.paramDataOffset);
+        paramPtr = nint.Add(paramPtr, gOffsets.paramDataOffset);
         return paramPtr;
     }
 
 
     public void ExecuteFunction(byte[] array)
     {
-        IntPtr buffer = 0x100;
+        nint buffer = 0x100;
 
-        var address = NativeWrapper.VirtualAllocEx(memoryHandle, IntPtr.Zero, buffer,
+        var address = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, buffer,
             AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ExecuteReadWrite);
 
-        if (address != IntPtr.Zero)
+        if (address != nint.Zero)
         {
             if (WriteProcessMemoryArray(address, array))
             {
-                var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, IntPtr.Zero, 0, address,
-                    IntPtr.Zero, ThreadCreationFlags.Immediately, out var threadId);
-                if (threadHandle != IntPtr.Zero)
-                {
+                var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, nint.Zero, 0, address,
+                    nint.Zero, ThreadCreationFlags.Immediately, out var threadId);
+                if (threadHandle != nint.Zero)
                     Kernel32.WaitForSingleObject(threadHandle, 30000);
-                }
             }
 
             NativeWrapper.VirtualFreeEx(memoryHandle, address, buffer, FreeType.PreservePlaceholder);
@@ -882,9 +778,9 @@ public class SoulsMemoryHandler
         var Size1 = 0x100;
         var Size2 = 0x100;
 
-        var address = NativeWrapper.VirtualAllocEx(memoryHandle, IntPtr.Zero, Size1,
+        var address = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, Size1,
             AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ExecuteReadWrite);
-        var bufferAddress = NativeWrapper.VirtualAllocEx(memoryHandle, IntPtr.Zero, Size2,
+        var bufferAddress = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, Size2,
             AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ExecuteReadWrite);
 
         var bytjmp = 0x2;
@@ -895,16 +791,14 @@ public class SoulsMemoryHandler
         bytjmpAr = BitConverter.GetBytes(bufferAddress);
         Array.Copy(bytjmpAr, 0, array, bytjmp, bytjmpAr.Length);
 
-        if (address != IntPtr.Zero)
+        if (address != nint.Zero)
         {
             if (WriteProcessMemoryArray(address, array))
             {
-                var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, IntPtr.Zero, 0, address,
-                    IntPtr.Zero, ThreadCreationFlags.Immediately, out var threadId);
-                if (threadHandle != IntPtr.Zero)
-                {
+                var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, nint.Zero, 0, address,
+                    nint.Zero, ThreadCreationFlags.Immediately, out var threadId);
+                if (threadHandle != nint.Zero)
                     Kernel32.WaitForSingleObject(threadHandle, 30000);
-                }
             }
 
             NativeWrapper.VirtualFreeEx(memoryHandle, address, Size1, FreeType.PreservePlaceholder);

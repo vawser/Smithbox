@@ -5,7 +5,6 @@ using StudioCore.Configuration;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Gui;
 using StudioCore.AssetLocator;
-using StudioCore.ParamEditor;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Scene;
@@ -19,6 +18,7 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
 using StudioCore.Banks;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.MsbEditor;
 

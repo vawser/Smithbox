@@ -9,7 +9,6 @@ using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.MaterialEditor;
 using StudioCore.MsbEditor;
-using StudioCore.ParamEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Platform;
 using StudioCore.UserProject;
@@ -29,6 +28,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using Veldrid;
 using StudioCore.Banks;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.Settings;
 

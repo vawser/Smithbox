@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
 
-namespace StudioCore.ParamEditor;
+namespace StudioCore.Editors.ParamEditor;
 
 public class ParamMetaData
 {
@@ -23,9 +23,7 @@ public class ParamMetaData
     {
         Add(def, this);
         foreach (PARAMDEF.Field f in def.Fields)
-        {
             new FieldMetaData(this, f);
-        }
 
         // Blank Metadata
         try
@@ -56,10 +54,8 @@ public class ParamMetaData
         XmlNode root = xml.SelectSingleNode("PARAMMETA");
         var xmlVersion = int.Parse(root.Attributes["XmlVersion"].InnerText);
         if (xmlVersion != XML_VERSION)
-        {
             throw new InvalidDataException(
                 $"Mismatched XML version; current version: {XML_VERSION}, file version: {xmlVersion}");
-        }
 
         Add(def, this);
 
@@ -68,45 +64,31 @@ public class ParamMetaData
         {
             XmlAttribute WikiEntry = self.Attributes["Wiki"];
             if (WikiEntry != null)
-            {
                 Wiki = WikiEntry.InnerText.Replace("\\n", "\n");
-            }
 
             XmlAttribute GroupSize = self.Attributes["BlockSize"];
             if (GroupSize != null)
-            {
                 BlockSize = int.Parse(GroupSize.InnerText);
-            }
 
             XmlAttribute GroupStart = self.Attributes["BlockStart"];
             if (GroupStart != null)
-            {
                 BlockStart = int.Parse(GroupStart.InnerText);
-            }
 
             XmlAttribute CIDs = self.Attributes["ConsecutiveIDs"];
             if (CIDs != null)
-            {
                 ConsecutiveIDs = true;
-            }
 
             XmlAttribute Off = self.Attributes["OffsetSize"];
             if (Off != null)
-            {
                 OffsetSize = int.Parse(Off.InnerText);
-            }
 
             XmlAttribute FixOff = self.Attributes["FixedOffset"];
             if (FixOff != null)
-            {
                 FixedOffset = int.Parse(FixOff.InnerText);
-            }
 
             XmlAttribute R0 = self.Attributes["Row0Dummy"];
             if (R0 != null)
-            {
                 Row0Dummy = true;
-            }
 
             XmlAttribute AltOrd = self.Attributes["AlternativeOrder"];
             if (AltOrd != null)
@@ -114,22 +96,16 @@ public class ParamMetaData
                 AlternateOrder = new List<string>(AltOrd.InnerText.Replace("\n", "")
                     .Split(',', StringSplitOptions.RemoveEmptyEntries));
                 for (var i = 0; i < AlternateOrder.Count; i++)
-                {
                     AlternateOrder[i] = AlternateOrder[i].Trim();
-                }
             }
 
             XmlAttribute CCD = self.Attributes["CalcCorrectDef"];
             if (CCD != null)
-            {
                 CalcCorrectDef = new CalcCorrectDefinition(CCD.InnerText);
-            }
 
             XmlAttribute SCD = self.Attributes["SoulCostDef"];
             if (SCD != null)
-            {
                 SoulCostDef = new SoulCostDefinition(SCD.InnerText);
-            }
         }
 
         foreach (XmlNode node in root.SelectNodes("Enums/Enum"))
@@ -140,7 +116,6 @@ public class ParamMetaData
 
         Dictionary<string, int> nameCount = new();
         foreach (PARAMDEF.Field f in def.Fields)
-        {
             try
             {
                 var name = FixName(f.InternalName);
@@ -162,7 +137,6 @@ public class ParamMetaData
             {
                 new FieldMetaData(this, f);
             }
-        }
     }
 
     /// <summary>
@@ -218,9 +192,7 @@ public class ParamMetaData
     public static ParamMetaData Get(PARAMDEF def)
     {
         if (!ParamBank.IsMetaLoaded)
-        {
             return null;
-        }
 
         return _ParamMetas[def];
     }
@@ -234,9 +206,7 @@ public class ParamMetaData
     {
         XmlNode node = parent.SelectSingleNode(child);
         if (node == null)
-        {
             node = parent.AppendChild(xml.CreateElement(child));
-        }
 
         return node;
     }
@@ -245,9 +215,7 @@ public class ParamMetaData
     {
         XmlAttribute attribute = node.Attributes[name];
         if (attribute == null)
-        {
             attribute = node.Attributes.Append(xml.CreateAttribute(name));
-        }
 
         return attribute;
     }
@@ -256,9 +224,7 @@ public class ParamMetaData
     {
         XmlNode currentNode = xml;
         foreach (var s in path)
-        {
             currentNode = GetXmlNode(xml, currentNode, s);
-        }
 
         return currentNode;
     }
@@ -267,26 +233,18 @@ public class ParamMetaData
     {
         XmlNode node = GetXmlNode(xml, path);
         if (value)
-        {
             GetXmlAttribute(xml, node, property).InnerText = "";
-        }
         else
-        {
             node.Attributes.RemoveNamedItem(property);
-        }
     }
 
     internal static void SetIntXmlProperty(string property, int value, XmlDocument xml, params string[] path)
     {
         XmlNode node = GetXmlNode(xml, path);
         if (value != 0)
-        {
             GetXmlAttribute(xml, node, property).InnerText = value.ToString();
-        }
         else
-        {
             node.Attributes.RemoveNamedItem(property);
-        }
     }
 
     internal static void SetStringXmlProperty(string property, string value, bool sanitise, XmlDocument xml,
@@ -294,26 +252,18 @@ public class ParamMetaData
     {
         XmlNode node = GetXmlNode(xml, path);
         if (value != null)
-        {
             GetXmlAttribute(xml, node, property).InnerText = sanitise ? value.Replace("\n", "\\n") : value;
-        }
         else
-        {
             node.Attributes.RemoveNamedItem(property);
-        }
     }
 
     internal static void SetEnumXmlProperty(string property, ParamEnum value, XmlDocument xml, params string[] path)
     {
         XmlNode node = GetXmlNode(xml, path);
         if (value != null)
-        {
             GetXmlAttribute(xml, node, property).InnerText = value.name;
-        }
         else
-        {
             node.Attributes.RemoveNamedItem(property);
-        }
     }
 
     internal static void SetStringListXmlProperty<T>(string property, IEnumerable<T> list,
@@ -324,21 +274,17 @@ public class ParamMetaData
         {
             IEnumerable<string> value = list.Select(stringifier);
             GetXmlAttribute(xml, node, property).InnerText = eolPattern != null
-                ? String.Join(',', value).Replace(eolPattern, eolPattern + "\n")
-                : String.Join(',', value);
+                ? string.Join(',', value).Replace(eolPattern, eolPattern + "\n")
+                : string.Join(',', value);
         }
         else
-        {
             node.Attributes.RemoveNamedItem(property);
-        }
     }
 
     public void Commit()
     {
         if (_xml == null)
-        {
             return;
-        }
 
         SetStringXmlProperty("Wiki", Wiki, true, _xml, "PARAMMETA", "Self");
         SetIntXmlProperty("OffsetSize", OffsetSize, _xml, "PARAMMETA", "Self");
@@ -352,9 +298,7 @@ public class ParamMetaData
     public void Save()
     {
         if (_xml == null)
-        {
             return;
-        }
 
         try
         {
@@ -362,9 +306,7 @@ public class ParamMetaData
             writeSettings.Indent = true;
             writeSettings.NewLineHandling = NewLineHandling.None;
             if (!File.Exists(_path))
-            {
                 File.WriteAllBytes(_path, new byte[0]);
-            }
 
             _xml.Save(XmlWriter.Create(_path, writeSettings));
         }
@@ -378,9 +320,7 @@ public class ParamMetaData
     public static void SaveAll()
     {
         foreach (KeyValuePair<PARAMDEF.Field, FieldMetaData> field in FieldMetaData._FieldMetas)
-        {
             field.Value.Commit(FixName(field.Key.InternalName)); //does not handle shared names
-        }
 
         foreach (ParamMetaData param in _ParamMetas.Values)
         {
@@ -392,9 +332,7 @@ public class ParamMetaData
     public static ParamMetaData XmlDeserialize(string path, PARAMDEF def)
     {
         if (!File.Exists(path))
-        {
             return new ParamMetaData(def, path);
-        }
 
         XmlDocument mxml = new();
         //try
@@ -412,9 +350,7 @@ public class ParamMetaData
     {
         var name = Regex.Replace(internalName, @"[^a-zA-Z0-9_]", "");
         if (Regex.IsMatch(name, @"^\d"))
-        {
             name = "_" + name;
-        }
 
         return name;
     }
@@ -439,52 +375,36 @@ public class FieldMetaData
         Add(field, this);
         XmlAttribute Ref = fieldMeta.Attributes["Refs"];
         if (Ref != null)
-        {
             RefTypes = Ref.InnerText.Split(",").Select(x => new ParamRef(x)).ToList();
-        }
 
         XmlAttribute VRef = fieldMeta.Attributes["VRef"];
         if (VRef != null)
-        {
             VirtualRef = VRef.InnerText;
-        }
 
         XmlAttribute FMGRef = fieldMeta.Attributes["FmgRef"];
         if (FMGRef != null)
-        {
             FmgRef = FMGRef.InnerText.Split(",").Select(x => new FMGRef(x)).ToList();
-        }
 
         ;
         XmlAttribute Enum = fieldMeta.Attributes["Enum"];
         if (Enum != null)
-        {
             EnumType = parent.enums.GetValueOrDefault(Enum.InnerText, null);
-        }
 
         XmlAttribute AlternateName = fieldMeta.Attributes["AltName"];
         if (AlternateName != null)
-        {
             AltName = AlternateName.InnerText;
-        }
 
         XmlAttribute WikiText = fieldMeta.Attributes["Wiki"];
         if (WikiText != null)
-        {
             Wiki = WikiText.InnerText.Replace("\\n", "\n");
-        }
 
         XmlAttribute IsBoolean = fieldMeta.Attributes["IsBool"];
         if (IsBoolean != null)
-        {
             IsBool = true;
-        }
 
         XmlAttribute ExRef = fieldMeta.Attributes["ExtRefs"];
         if (ExRef != null)
-        {
             ExtRefs = ExRef.InnerText.Split(';').Select(x => new ExtRef(x)).ToList();
-        }
     }
 
     /// <summary>
@@ -530,14 +450,12 @@ public class FieldMetaData
     public static FieldMetaData Get(PARAMDEF.Field def)
     {
         if (!ParamBank.IsMetaLoaded)
-        {
             return null;
-        }
 
         FieldMetaData fieldMeta = _FieldMetas[def];
         if (fieldMeta == null)
         {
-            ParamMetaData pdef = ParamMetaData.Get(def.Parent);
+            var pdef = ParamMetaData.Get(def.Parent);
             fieldMeta = new FieldMetaData(pdef, def);
         }
 
@@ -552,9 +470,7 @@ public class FieldMetaData
     public void Commit(string field)
     {
         if (_parent._xml == null)
-        {
             return;
-        }
 
         ParamMetaData.SetStringListXmlProperty("Refs", RefTypes, x => x.getStringForm(), null, _parent._xml,
             "PARAMMETA", "Field", field);
@@ -570,9 +486,7 @@ public class FieldMetaData
 
         XmlNode thisNode = ParamMetaData.GetXmlNode(_parent._xml, "PARAMMETA", "Field", field);
         if (thisNode.Attributes.Count == 0 && thisNode.ChildNodes.Count == 0)
-        {
             ParamMetaData.GetXmlNode(_parent._xml, "PARAMMETA", "Field").RemoveChild(thisNode);
-        }
     }
 }
 
@@ -587,9 +501,7 @@ public class ParamEnum
     {
         name = enumNode.Attributes["Name"].InnerText;
         foreach (XmlNode option in enumNode.SelectNodes("Option"))
-        {
             values[option.Attributes["Value"].InnerText] = option.Attributes["Name"].InnerText;
-        }
     }
 }
 
@@ -606,9 +518,7 @@ public class ParamRef
         var offsetSplit = conditionSplit[0].Split('+', 2);
         param = offsetSplit[0];
         if (offsetSplit.Length > 1)
-        {
             offset = int.Parse(offsetSplit[1]);
-        }
 
         if (conditionSplit.Length > 1 && conditionSplit[1].EndsWith(')'))
         {
@@ -705,14 +615,10 @@ public class CalcCorrectDefinition
     {
         var str = string.Join(',', stageMaxVal) + ',' + string.Join(',', stageMaxGrowVal) + ',';
         if (adjPoint_maxGrowVal != null)
-        {
             str += string.Join(',', adjPoint_maxGrowVal);
-        }
 
         if (fcsMaxdist != null)
-        {
             str += string.Join(',', fcsMaxdist);
-        }
 
         return str;
     }
