@@ -14,13 +14,6 @@ namespace StudioCore.GraphicsEditor;
 
 public class GraphicsEditorScreen : EditorScreen
 {
-    private enum SelectionState
-    {
-        None,
-        Param,
-        Row
-    }
-
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
