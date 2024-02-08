@@ -6,7 +6,7 @@ using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditor;
 using StudioCore.MsbEditor;
 using StudioCore.ParticleEditor;
-using StudioCore.ScriptEditor;
+using StudioCore.EmevdEditor;
 using StudioCore.TalkEditor;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
@@ -28,7 +28,7 @@ public static class EditorContainer
     public static GparamEditorScreen GparamEditor { get; set; }
     public static MaterialEditorScreen MaterialEditor { get; set; }
     public static ParticleEditorScreen ParticleEditor { get; set; }
-    public static ScriptEditorScreen ScriptEditor { get; set; }
-    public static TalkEditorScreen TalkEditor { get; set; }
+    public static EventScriptEditorScreen ScriptEditor { get; set; }
+    public static TalkScriptEditorScreen TalkEditor { get; set; }
     public static TextureViewerScreen TextureViewer { get; set; }
 }

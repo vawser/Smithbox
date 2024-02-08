@@ -17,7 +17,7 @@ using StudioCore.MsbEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.ScriptEditor;
+using StudioCore.EmevdEditor;
 using StudioCore.Settings;
 using StudioCore.TalkEditor;
 using StudioCore.Tests;
@@ -135,8 +135,8 @@ public class Smithbox
         EditorContainer.GparamEditor = new GparamEditorScreen(_context.Window, _context.Device);
         EditorContainer.MaterialEditor = new MaterialEditorScreen(_context.Window, _context.Device);
         EditorContainer.ParticleEditor = new ParticleEditorScreen(_context.Window, _context.Device);
-        EditorContainer.ScriptEditor = new ScriptEditorScreen(_context.Window, _context.Device);
-        EditorContainer.TalkEditor = new TalkEditorScreen(_context.Window, _context.Device);
+        EditorContainer.ScriptEditor = new EventScriptEditorScreen(_context.Window, _context.Device);
+        EditorContainer.TalkEditor = new TalkScriptEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
 
         _editors = new List<EditorScreen> {

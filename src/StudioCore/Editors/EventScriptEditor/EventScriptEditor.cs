@@ -8,7 +8,7 @@ using SoulsFormats;
 using StudioCore.Editor;
 using System.Reflection;
 
-namespace StudioCore.ScriptEditor;
+namespace StudioCore.EmevdEditor;
 
 public class PropertyEditor
 {
