@@ -1,45 +1,50 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.AssetLocator;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.Locators;
-using StudioCore.TextEditor;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static StudioCore.Editors.TimeActEditor.AnimationBank;
 
-namespace StudioCore.Editors.TimeActEditor;
-public static class AnimationBank
+namespace StudioCore.Editors.CutsceneEditor;
+public static class CutsceneBank
 {
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<AnimationFileInfo, IBinder> FileBank { get; private set; } = new();
+    public static Dictionary<CutsceneFileInfo, IBinder> FileBank { get; private set; } = new();
 
-    public static void SaveTimeActs()
+    public static void SaveCutscenes()
     {
-        foreach(var (info, binder) in FileBank)
+        foreach (var (info, binder) in FileBank)
         {
-            SaveTimeAct(info, binder);
+            SaveCutscene(info, binder);
         }
     }
 
-    public static void SaveTimeAct(AnimationFileInfo info, IBinder binder)
+    public static void SaveCutscene(CutsceneFileInfo info, IBinder binder)
     {
-        //TaskLogs.AddLog($"SaveTimeAct: {info.Path}");
+        //TaskLogs.AddLog($"SaveCutscene: {info.Path}");
 
         var fileDir = @"\chr";
         var fileExt = @".anibnd.dcx";
 
+        // Sekiro + ER + AC6
+        if (Project.Type is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        {
+            fileDir = @"\cutscene";
+            fileExt = @".cutscenebnd.dcx";
+        }
+
         foreach (BinderFile file in binder.Files)
         {
-            foreach (TAE tFile in info.TimeActFiles)
+            foreach (MQB cFile in info.CutsceneFiles)
             {
-                if (file.ID == tFile.ID)
-                {
-                    file.Bytes = tFile.Write();
-                }
+                file.Bytes = cFile.Write();
             }
         }
 
@@ -64,7 +69,7 @@ public static class AnimationBank
                 fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
                 break;
             default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveTimeAct");
+                TaskLogs.AddLog($"Invalid ProjectType during SaveCutscene");
                 return;
         }
 
@@ -83,13 +88,13 @@ public static class AnimationBank
         if (fileBytes != null)
         {
             File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
+            TaskLogs.AddLog($"Saved at: {assetMod}");
         }
     }
 
-    public static void LoadTimeActs()
+    public static void LoadCutscenes()
     {
-        if(Project.Type == ProjectType.Undefined)
+        if (Project.Type == ProjectType.Undefined)
         {
             return;
         }
@@ -99,10 +104,17 @@ public static class AnimationBank
 
         FileBank = new();
 
-        var fileDir = @"\chr";
-        var fileExt = @".anibnd.dcx";
+        var fileDir = @"\remo";
+        var fileExt = @".remobnd.dcx";
 
-        List<string> fileNames = FileAssetLocator.GetAnimationBinders();
+        // Sekiro + ER + AC6
+        if (Project.Type is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        {
+            fileDir = @"\cutscene";
+            fileExt = @".cutscenebnd.dcx";
+        }
+
+        List<string> fileNames = FileAssetLocator.GetCutsceneBinders();
 
         foreach (var name in fileNames)
         {
@@ -110,50 +122,50 @@ public static class AnimationBank
 
             if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
-                LoadTimeAct($"{Project.GameModDirectory}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
+                LoadCutscene($"{Project.GameModDirectory}\\{filePath}");
+                TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadTimeAct($"{Project.GameRootDirectory}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+                LoadCutscene($"{Project.GameRootDirectory}\\{filePath}");
+                TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
 
         IsLoaded = true;
         IsLoading = false;
 
-        TaskLogs.AddLog($"Animation File Bank - Load Complete");
+        TaskLogs.AddLog($"Cutscene File Bank - Load Complete");
     }
 
-    public static void LoadTimeAct(string path)
+    public static void LoadCutscene(string path)
     {
         if (path == null)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading Mqb file.",
                     LogLevel.Warning);
             return;
         }
         if (path == "")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading Tae file.",
+            TaskLogs.AddLog($"Could not locate {path} when loading Mqb file.",
                     LogLevel.Warning);
             return;
         }
 
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        AnimationFileInfo fileStruct = new AnimationFileInfo(name, path);
+        CutsceneFileInfo fileStruct = new CutsceneFileInfo(name, path);
 
         IBinder binder = BND4.Read(DCX.Decompress(path));
 
-        foreach(var file in binder.Files)
+        foreach (var file in binder.Files)
         {
-            if (file.Name.Contains(".tae"))
+            if (file.Name.Contains(".mqb"))
             {
                 try
                 {
-                    TAE taeFile = TAE.Read(file.Bytes);
-                    fileStruct.TimeActFiles.Add(taeFile);
+                    MQB cFile = MQB.Read(file.Bytes);
+                    fileStruct.CutsceneFiles.Add(cFile);
                 }
                 catch (Exception ex)
                 {
@@ -165,15 +177,15 @@ public static class AnimationBank
         FileBank.Add(fileStruct, binder);
     }
 
-    public struct AnimationFileInfo
+    public struct CutsceneFileInfo
     {
-        public AnimationFileInfo(string name, string path)
+        public CutsceneFileInfo(string name, string path)
         {
             Name = name;
             Path = path;
             Modified = false;
             Added = false;
-            TimeActFiles = new List<TAE>();
+            CutsceneFiles = new List<MQB>();
         }
 
         public string Name { get; set; }
@@ -183,6 +195,6 @@ public static class AnimationBank
 
         public bool Added { get; set; }
 
-        public List<TAE> TimeActFiles { get; set; }
+        public List<MQB> CutsceneFiles { get; set; }
     }
 }
