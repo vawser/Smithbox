@@ -1,34 +1,15 @@
 ﻿using ImGuiNET;
 using SoapstoneLib;
-using StudioCore.AnimationEditor;
 using StudioCore.Configuration;
-using StudioCore.CutsceneEditor;
-using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
-using StudioCore.GraphicsEditor;
-using StudioCore.Interface;
-using StudioCore.MaterialEditor;
-using StudioCore.MsbEditor;
-using StudioCore.ParticleEditor;
-using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Scene;
-using StudioCore.ScriptEditor;
-using StudioCore.TalkEditor;
-using StudioCore.TextEditor;
-using StudioCore.TextureViewer;
-using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text.RegularExpressions;
 using Veldrid;
-using StudioCore.Banks;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors;
 using StudioCore.Settings;
 
@@ -36,23 +17,9 @@ namespace StudioCore.Interface.Windows;
 
 public class SettingsWindow
 {
-    private KeyBind _currentKeyBind;
     public bool MenuOpenState;
 
     public ProjectSettings ProjSettings = null;
-
-    private string _searchInput = "";
-    private string _searchInputCache = "";
-
-    private string _refUpdateId = "";
-    private string _refUpdateName = "";
-    private string _refUpdateTags = "";
-
-    private string _newRefId = "";
-    private string _newRefName = "";
-    private string _newRefTags = "";
-
-    private string _selectedName;
 
     public SettingsWindow()
     {
@@ -670,59 +637,7 @@ public class SettingsWindow
             ImGui.EndTabItem();
         }
     }
-
-    private void DisplaySettings_Keybinds()
-    {
-        if (ImGui.BeginTabItem("Keybinds"))
-        {
-            if (ImGui.IsAnyItemActive())
-                _currentKeyBind = null;
-
-            FieldInfo[] binds = KeyBindings.Current.GetType().GetFields();
-            foreach (FieldInfo bind in binds)
-            {
-                var bindVal = (KeyBind)bind.GetValue(KeyBindings.Current);
-                ImGui.Text(bind.Name);
-
-                ImGui.SameLine();
-                ImGui.Indent(250f);
-
-                var keyText = bindVal.HintText;
-                if (keyText == "")
-                    keyText = "[None]";
-
-                if (_currentKeyBind == bindVal)
-                {
-                    ImGui.Button("Press Key <Esc - Clear>");
-                    if (InputTracker.GetKeyDown(Key.Escape))
-                    {
-                        bind.SetValue(KeyBindings.Current, new KeyBind());
-                        _currentKeyBind = null;
-                    }
-                    else
-                    {
-                        KeyBind newkey = InputTracker.GetNewKeyBind();
-                        if (newkey != null)
-                        {
-                            bind.SetValue(KeyBindings.Current, newkey);
-                            _currentKeyBind = null;
-                        }
-                    }
-                }
-                else if (ImGui.Button($"{keyText}##{bind.Name}"))
-                    _currentKeyBind = bindVal;
-
-                ImGui.Indent(-250f);
-            }
-
-            ImGui.Separator();
-
-            if (ImGui.Button("Restore defaults"))
-                KeyBindings.ResetKeyBinds();
-
-            ImGui.EndTabItem();
-        }
-    }
+    
     public void Display()
     {
         var scale = Smithbox.GetUIScale();
@@ -757,7 +672,6 @@ public class SettingsWindow
             // DisplaySettings_TalkEditor();
             // DisplaySettings_TextureViewer();
             DisplaySettings_Toolbar();
-            DisplaySettings_Keybinds();
 
             ImGui.PopItemWidth();
             ImGui.PopStyleColor();

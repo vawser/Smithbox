@@ -123,6 +123,7 @@ public class Smithbox
         WindowContainer.EventFlagWindow = new EventFlagWindow();
         WindowContainer.DebugWindow = new DebugWindow();
         WindowContainer.MapNameWindow = new MapNameWindow();
+        WindowContainer.KeybindWindow = new KeybindWindow();
 
         // Editors
         EditorContainer.MsbEditor = new MsbEditorScreen(_context.Window, _context.Device);
@@ -926,12 +927,18 @@ public class Smithbox
 
             ImGui.Separator();
 
-            // Icon Bar
+            // Configuration Bar
             if (ImGui.Button($"{ForkAwesome.Cogs}"))
             {
                 WindowContainer.SettingsWindow.ToggleMenuVisibility();
             }
             ImguiUtils.ShowButtonTooltip("Settings");
+
+            if (ImGui.Button($"{ForkAwesome.KeyboardO}"))
+            {
+                WindowContainer.KeybindWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowButtonTooltip("Keybinds");
 
             if (ImGui.Button($"{ForkAwesome.Book}"))
             {
@@ -939,6 +946,18 @@ public class Smithbox
             }
             ImguiUtils.ShowButtonTooltip("Help");
 
+            if (FeatureFlags.DebugMenu)
+            {
+                if (ImGui.Button($"{ForkAwesome.Bell}"))
+                {
+                    WindowContainer.DebugWindow.ToggleMenuVisibility();
+                }
+                ImguiUtils.ShowButtonTooltip("Debug");
+            }
+
+            ImGui.Separator();
+
+            // Shared Tool Bar
             if (ImGui.Button($"{ForkAwesome.LightbulbO}"))
             {
                 WindowContainer.EventFlagWindow.ToggleMenuVisibility();
@@ -950,15 +969,6 @@ public class Smithbox
                 WindowContainer.MapNameWindow.ToggleMenuVisibility();
             }
             ImguiUtils.ShowButtonTooltip("Map Names");
-
-            if (FeatureFlags.DebugMenu)
-            {
-                if (ImGui.Button($"{ForkAwesome.Bell}"))
-                {
-                    WindowContainer.DebugWindow.ToggleMenuVisibility();
-                }
-                ImguiUtils.ShowButtonTooltip("Debug");
-            }
 
             // Program Update
             if (_programUpdateAvailable)
@@ -985,6 +995,7 @@ public class Smithbox
         WindowContainer.EventFlagWindow.Display();
         WindowContainer.DebugWindow.Display();
         WindowContainer.MapNameWindow.Display();
+        WindowContainer.KeybindWindow.Display();
 
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);

@@ -34,6 +34,7 @@ public class TextureViewerScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
+        
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)

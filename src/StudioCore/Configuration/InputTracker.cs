@@ -185,7 +185,7 @@ public static class InputTracker
             _newKeysThisFrame.Add(key);
     }
 
-    public static KeyBind GetNewKeyBind()
+    public static KeyBind GetNewKeyBind(string name, Category keyCategory)
     {
         Key newkey = GetNextKey();
         _newKeysThisFrame.Clear(); // Clear to prevent hotkeys from triggering
@@ -195,7 +195,7 @@ public static class InputTracker
             var ctrl = GetKey(Key.LControl) || GetKey(Key.RControl);
             var alt = GetKey(Key.AltLeft) || GetKey(Key.AltRight);
             var shift = GetKey(Key.ShiftLeft) || GetKey(Key.ShiftRight);
-            return new KeyBind(newkey, ctrl, alt, shift);
+            return new KeyBind(name, keyCategory, newkey, ctrl, alt, shift);
         }
 
         return null;

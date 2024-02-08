@@ -24,5 +24,6 @@ public static class WindowContainer
     public static EventFlagWindow EventFlagWindow { get; set; }
     public static DebugWindow DebugWindow { get; set; }
     public static MapNameWindow MapNameWindow { get; set; }
+    public static KeybindWindow KeybindWindow { get; set; }
 }
 
