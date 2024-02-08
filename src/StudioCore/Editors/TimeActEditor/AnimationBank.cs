@@ -150,14 +150,18 @@ public static class AnimationBank
         {
             if (file.Name.Contains(".tae"))
             {
-                try
+                // Ignore the empty TAE files
+                if (file.Bytes.Length > 0)
                 {
-                    TAE taeFile = TAE.Read(file.Bytes);
-                    fileStruct.TimeActFiles.Add(taeFile);
-                }
-                catch (Exception ex)
-                {
-                    TaskLogs.AddLog($"{name} {file.Name} - Failed to read.\n{ex.ToString()}");
+                    try
+                    {
+                        TAE taeFile = TAE.Read(file.Bytes);
+                        fileStruct.TimeActFiles.Add(taeFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"{name} {file.Name} - Failed to read.\n{ex.ToString()}");
+                    }
                 }
             }
         }

@@ -87,7 +87,7 @@ public static class MaterialBank
         if (fileBytes != null)
         {
             File.WriteAllBytes(assetMod, fileBytes);
-            TaskLogs.AddLog($"Saved at: {assetMod}");
+            //TaskLogs.AddLog($"Saved at: {assetMod}");
         }
     }
 
@@ -121,12 +121,12 @@ public static class MaterialBank
             if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
                 LoadMaterial($"{Project.GameModDirectory}\\{filePath}");
-                TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
+                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
                 LoadMaterial($"{Project.GameRootDirectory}\\{filePath}");
-                TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
 
