@@ -148,10 +148,10 @@ public class Smithbox
             EditorContainer.TimeActEditor,
             EditorContainer.CutsceneEditor,
             EditorContainer.MaterialEditor,
-            EditorContainer.ParticleEditor,
-            EditorContainer.ScriptEditor,
-            EditorContainer.TalkEditor,
-            EditorContainer.TextureViewer
+            EditorContainer.ParticleEditor
+            //EditorContainer.ScriptEditor,
+            //EditorContainer.TalkEditor,
+            //EditorContainer.TextureViewer
         };
 
         _focusedEditor = EditorContainer.MsbEditor;
@@ -1413,3 +1413,4 @@ public class Smithbox
         return CFG.Current.System_UI_Scale / DefaultDpi * Dpi;
     }
 }
+

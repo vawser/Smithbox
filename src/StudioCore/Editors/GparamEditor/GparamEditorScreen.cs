@@ -4,11 +4,14 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.EmevdEditor;
+using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.UserProject;
 using System;
 using System.Numerics;
+using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
 using static SoulsFormats.GPARAM;
@@ -42,7 +45,7 @@ public class GparamEditorScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Gparam Editor";
+    public string EditorName => "Gparam Editor##gparamEditor";
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
 
@@ -53,17 +56,6 @@ public class GparamEditorScreen : EditorScreen
     public void OnGUI(string[] initcmd)
     {
         var scale = Smithbox.GetUIScale();
-
-        // Keyboard shortcuts
-        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
-        {
-            ParamUndo();
-        }
-
-        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
-        {
-            ParamRedo();
-        }
 
         // Docking setup
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
@@ -101,47 +93,17 @@ public class GparamEditorScreen : EditorScreen
 
         if (GparamParamBank.IsLoaded)
         {
-            GraphicsParamView();
+            GparamListView();
+            GparamGroupList();
+            GparamFieldList();
+            GparamValueProperties();
         }
 
         ImGui.PopStyleVar();
     }
 
-    private void ResetAllSelection()
+    private void GparamListView()
     {
-        ResetFileSelection();
-        ResetGroupSelection();
-        ResetFieldSelection();
-        ResetValueSelection();
-    }
-
-    private void ResetFileSelection()
-    {
-        _selectedGparam = null;
-        _selectedGparamKey = "";
-    }
-
-    private void ResetGroupSelection()
-    {
-        _selectedParamGroup = null;
-        _selectedParamGroupKey = -1;
-    }
-
-    private void ResetFieldSelection()
-    {
-        _selectedParamField = null;
-        _selectedParamFieldKey = -1;
-    }
-
-    private void ResetValueSelection()
-    {
-        _selectedFieldValue = null;
-        _selectedFieldValueKey = -1;
-    }
-
-    private void GraphicsParamView()
-    {
-        // GPARAM List
         ImGui.Begin("Files##GparamFileList");
 
         ImGui.Text($"File");
@@ -181,8 +143,10 @@ public class GparamEditorScreen : EditorScreen
         }
 
         ImGui.End();
+    }
 
-        // GPARAM Groups
+    public void GparamGroupList()
+    {
         ImGui.Begin("Groups##GparamGroups");
 
         if (_selectedGparam != null && _selectedGparamKey != "")
@@ -208,8 +172,10 @@ public class GparamEditorScreen : EditorScreen
         }
 
         ImGui.End();
+    }
 
-        // GPARAM Fields
+    public void GparamFieldList()
+    {
         ImGui.Begin("Fields##GparamFields");
 
         if (_selectedParamGroup != null && _selectedParamGroupKey != -1)
@@ -234,79 +200,75 @@ public class GparamEditorScreen : EditorScreen
         }
 
         ImGui.End();
-
-        // GPARAM Values
+    }
+    private void GparamValueProperties()
+    {
         ImGui.Begin("Values##GparamValues");
 
         if (_selectedParamField != null && _selectedParamFieldKey != -1)
         {
-            GraphicsParamPropertyView();
+            GPARAM.IField field = _selectedParamField;
+
+            if (Project.Type == ProjectType.SDT)
+            {
+                ImGui.Columns(2); // 3 if the floats are shown
+            }
+            else
+            {
+                ImGui.Columns(2);
+            }
+
+            // ID
+            ImGui.BeginChild("IdList##GparamPropertyIds");
+            ImGui.Text($"ID");
+            ImGui.Separator();
+
+            for (int i = 0; i < field.Values.Count; i++)
+            {
+                GPARAM.IFieldValue entry = field.Values[i];
+                GparamProperty_ID(field, i, entry);
+            }
+
+            ImGui.EndChild();
+
+            ImGui.NextColumn();
+
+            // Never used?
+            // Unk04 (Sekiro)
+            /*
+            if (Project.Type == ProjectType.SDT)
+            {
+                ImGui.BeginChild("UnkList");
+                ImGui.Text($"Floats");
+                ImGui.Separator();
+                foreach (var val in field.Values)
+                {
+                    ImGui.Text($"{val.Unk04}");
+                }
+                ImGui.EndChild();
+
+                ImGui.NextColumn();
+            }
+            */
+
+            // Value
+            ImGui.BeginChild("ValueList##GparamPropertyValues");
+            ImGui.Text($"Value");
+            ImGui.Separator();
+
+            for (int i = 0; i < field.Values.Count; i++)
+            {
+                GPARAM.IFieldValue entry = field.Values[i];
+                GparamProperty_Value(field, i, entry);
+            }
+
+            ImGui.EndChild();
         }
 
         ImGui.End();
     }
 
-    private void GraphicsParamPropertyView()
-    {
-        GPARAM.IField field = _selectedParamField;
-
-        if (Project.Type == ProjectType.SDT)
-        {
-            ImGui.Columns(2); // 3 if the floats are shown
-        }
-        else
-        {
-            ImGui.Columns(2);
-        }
-
-        // ID
-        ImGui.BeginChild("IdList##GparamPropertyIds");
-        ImGui.Text($"ID");
-        ImGui.Separator();
-
-        for (int i = 0; i < field.Values.Count; i++)
-        {
-            GPARAM.IFieldValue entry = field.Values[i];
-            GraphicsParamIdView(i, entry);
-        }
-
-        ImGui.EndChild();
-
-        ImGui.NextColumn();
-
-        // Never used?
-        // Unk04 (Sekiro)
-        /*
-        if (Project.Type == ProjectType.SDT)
-        {
-            ImGui.BeginChild("UnkList");
-            ImGui.Text($"Floats");
-            ImGui.Separator();
-            foreach (var val in field.Values)
-            {
-                ImGui.Text($"{val.Unk04}");
-            }
-            ImGui.EndChild();
-
-            ImGui.NextColumn();
-        }
-        */
-
-        // Value
-        ImGui.BeginChild("ValueList##GparamPropertyValues");
-        ImGui.Text($"Value");
-        ImGui.Separator();
-
-        for (int i = 0; i < field.Values.Count; i++)
-        {
-            GPARAM.IFieldValue entry = field.Values[i];
-            GraphicsParamValueView(i, entry);
-        }
-
-        ImGui.EndChild();
-    }
-
-    public void GraphicsParamIdView(int index, IFieldValue val)
+    public void GparamProperty_ID(IField field, int index, IFieldValue val)
     {
         ImGui.AlignTextToFramePadding();
 
@@ -317,14 +279,15 @@ public class GparamEditorScreen : EditorScreen
         }
     }
 
-    public void GraphicsParamValueView(int index, IFieldValue val)
+    public void GparamProperty_Value(IField field, int index, IFieldValue val)
     {
-        string value = val.Value.ToString();
-        Type type = val.GetType();
+        Type fieldType = field.GetType();
+
+        object oldval = val.Value;
+        object newval = null;
 
         ImGui.AlignTextToFramePadding();
-        ImGui.Text($"{value}"); // Temp until we implement the property edit part
-        //ImGui.InputText($"##{val.Id}{index}", ref value, 256);
+        GparamEditorCommon.PropertyField(index, fieldType, oldval, ref newval);
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)
@@ -349,18 +312,42 @@ public class GparamEditorScreen : EditorScreen
             GparamParamBank.SaveGraphicsParams();
     }
 
-    private void ParamUndo()
-    {
-        EditorActionManager.UndoAction();
-    }
-
-    private void ParamRedo()
-    {
-        EditorActionManager.RedoAction();
-    }
-
     private void ResetActionManager()
     {
         EditorActionManager.Clear();
     }
+
+
+    private void ResetAllSelection()
+    {
+        ResetFileSelection();
+        ResetGroupSelection();
+        ResetFieldSelection();
+        ResetValueSelection();
+    }
+
+    private void ResetFileSelection()
+    {
+        _selectedGparam = null;
+        _selectedGparamKey = "";
+    }
+
+    private void ResetGroupSelection()
+    {
+        _selectedParamGroup = null;
+        _selectedParamGroupKey = -1;
+    }
+
+    private void ResetFieldSelection()
+    {
+        _selectedParamField = null;
+        _selectedParamFieldKey = -1;
+    }
+
+    private void ResetValueSelection()
+    {
+        _selectedFieldValue = null;
+        _selectedFieldValueKey = -1;
+    }
+
 }

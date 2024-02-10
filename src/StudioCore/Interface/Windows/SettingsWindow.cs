@@ -105,6 +105,27 @@ public class SettingsWindow
                 ImguiUtils.ShowHelpMarker("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
             }
 
+            if(ImGui.CollapsingHeader("Resources"))
+            {
+                ImGui.Checkbox("Time Act Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_TimeAct);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+
+                ImGui.Checkbox("Cutscene Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Cutscene);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+
+                ImGui.Checkbox("Gparam Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Gparam);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+
+                ImGui.Checkbox("Material Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Material);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+
+                ImGui.Checkbox("Particle Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Particle);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+
+                ImGui.Checkbox("Texture Viewer - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Textures);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
             if (ImGui.CollapsingHeader("Project"))
             {
                 if (ProjSettings == null || ProjSettings.ProjectName == null)
@@ -463,6 +484,58 @@ public class SettingsWindow
                 SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_06);
             }
 
+            // Toolbar
+            if (ImGui.CollapsingHeader("Global Actions", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Check Duplicate Entity ID", ref CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID);
+                ImguiUtils.ShowHelpMarker("If enabled, the Check Duplicate Entity ID action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Patrol Routes", ref CFG.Current.Toolbar_Show_Render_Patrol_Routes);
+                ImguiUtils.ShowHelpMarker("If enabled, the Patrol Routes action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Generate Navigation Data", ref CFG.Current.Toolbar_Show_Navigation_Data);
+                ImguiUtils.ShowHelpMarker("If enabled, the Generate Navigation Data action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Toggle Object Visibility by Tag", ref CFG.Current.Toolbar_Show_Toggle_Object_Visibility_by_Tag);
+                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Object Visibility by Tag action will be visible in the map toolbar window.");
+            }
+
+            if (ImGui.CollapsingHeader("Map Actions", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Go to in Object List", ref CFG.Current.Toolbar_Show_Go_to_in_Object_List);
+                ImguiUtils.ShowHelpMarker("If enabled, the Go to in Object List action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Move to Camera", ref CFG.Current.Toolbar_Show_Move_to_Camera);
+                ImguiUtils.ShowHelpMarker("If enabled, the Move to Camera action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Frame in Viewport", ref CFG.Current.Toolbar_Show_Frame_in_Viewport);
+                ImguiUtils.ShowHelpMarker("If enabled, the Frame in Viewport action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Toggle Visibility", ref CFG.Current.Toolbar_Show_Toggle_Visibility);
+                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Visibility action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Create", ref CFG.Current.Toolbar_Show_Create);
+                ImguiUtils.ShowHelpMarker("If enabled, the Create action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Duplicate", ref CFG.Current.Toolbar_Show_Duplicate);
+                ImguiUtils.ShowHelpMarker("If enabled, the Duplicate action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Rotate", ref CFG.Current.Toolbar_Show_Rotate);
+                ImguiUtils.ShowHelpMarker("If enabled, the Rotate action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Toggle Presence", ref CFG.Current.Toolbar_Show_Toggle_Presence);
+                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Presence action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Scramble", ref CFG.Current.Toolbar_Show_Scramble);
+                ImguiUtils.ShowHelpMarker("If enabled, the Scramble action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Replicate", ref CFG.Current.Toolbar_Show_Replicate);
+                ImguiUtils.ShowHelpMarker("If enabled, the Replicate action will be visible in the map toolbar window.");
+
+                ImGui.Checkbox("Move to Grid", ref CFG.Current.Toolbar_Show_Move_to_Grid);
+                ImguiUtils.ShowHelpMarker("If enabled, the Move to Grid action will be visible in the map toolbar window.");
+            }
+
             ImGui.Unindent();
             ImGui.EndTabItem();
         }
@@ -565,194 +638,13 @@ public class SettingsWindow
             ImGui.EndTabItem();
         }
     }
-    private void DisplaySettings_Toolbar()
-    {
-        if (ImGui.BeginTabItem("Map Toolbar"))
-        {
-            if (ImGui.CollapsingHeader("Global Actions", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Check Duplicate Entity ID", ref CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID);
-                ImguiUtils.ShowHelpMarker("If enabled, the Check Duplicate Entity ID action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Patrol Routes", ref CFG.Current.Toolbar_Show_Render_Patrol_Routes);
-                ImguiUtils.ShowHelpMarker("If enabled, the Patrol Routes action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Generate Navigation Data", ref CFG.Current.Toolbar_Show_Navigation_Data);
-                ImguiUtils.ShowHelpMarker("If enabled, the Generate Navigation Data action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Toggle Object Visibility by Tag", ref CFG.Current.Toolbar_Show_Toggle_Object_Visibility_by_Tag);
-                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Object Visibility by Tag action will be visible in the map toolbar window.");
-            }
-
-            if (ImGui.CollapsingHeader("Map Actions", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Go to in Object List", ref CFG.Current.Toolbar_Show_Go_to_in_Object_List);
-                ImguiUtils.ShowHelpMarker("If enabled, the Go to in Object List action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Move to Camera", ref CFG.Current.Toolbar_Show_Move_to_Camera);
-                ImguiUtils.ShowHelpMarker("If enabled, the Move to Camera action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Frame in Viewport", ref CFG.Current.Toolbar_Show_Frame_in_Viewport);
-                ImguiUtils.ShowHelpMarker("If enabled, the Frame in Viewport action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Toggle Visibility", ref CFG.Current.Toolbar_Show_Toggle_Visibility);
-                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Visibility action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Create", ref CFG.Current.Toolbar_Show_Create);
-                ImguiUtils.ShowHelpMarker("If enabled, the Create action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Duplicate", ref CFG.Current.Toolbar_Show_Duplicate);
-                ImguiUtils.ShowHelpMarker("If enabled, the Duplicate action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Rotate", ref CFG.Current.Toolbar_Show_Rotate);
-                ImguiUtils.ShowHelpMarker("If enabled, the Rotate action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Toggle Presence", ref CFG.Current.Toolbar_Show_Toggle_Presence);
-                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Presence action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Scramble", ref CFG.Current.Toolbar_Show_Scramble);
-                ImguiUtils.ShowHelpMarker("If enabled, the Scramble action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Replicate", ref CFG.Current.Toolbar_Show_Replicate);
-                ImguiUtils.ShowHelpMarker("If enabled, the Replicate action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Move to Grid", ref CFG.Current.Toolbar_Show_Move_to_Grid);
-                ImguiUtils.ShowHelpMarker("If enabled, the Move to Grid action will be visible in the map toolbar window.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_ModelEditor()
-    {
-        if (ImGui.BeginTabItem("Model Editor"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
 
     private void DisplaySettings_TimeActEditor()
     {
         if (ImGui.BeginTabItem("Time Act Editor"))
         {
             // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_TimeAct);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_CutsceneEditor()
-    {
-        if (ImGui.BeginTabItem("Cutscene Editor"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Cutscene);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_GparamEditor()
-    {
-        if (ImGui.BeginTabItem("Gparam Editor"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Gparam);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_MaterialEditor()
-    {
-        if (ImGui.BeginTabItem("Material Editor"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Material);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_ParticleEditor()
-    {
-        if (ImGui.BeginTabItem("Particle Editor"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Particle);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_EventScriptEditor()
-    {
-        if (ImGui.BeginTabItem("Event Script Editor"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_EventScript);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_TalkScriptEditor()
-    {
-        if (ImGui.BeginTabItem("Talk Script Editor"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_TalkScript);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_TextureViewer()
-    {
-        if (ImGui.BeginTabItem("Texture Viewer"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Textures);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-            }
+            
 
             ImGui.EndTabItem();
         }
@@ -780,18 +672,8 @@ public class SettingsWindow
             // Settings Order
             DisplaySettings_System();
             DisplaySettings_MapEditor();
-            DisplaySettings_Toolbar();
             DisplaySettings_ParamEditor();
             DisplaySettings_TextEditor();
-            DisplaySettings_ModelEditor();
-            DisplaySettings_TimeActEditor();
-            DisplaySettings_CutsceneEditor();
-            DisplaySettings_GparamEditor();
-            DisplaySettings_MaterialEditor();
-            DisplaySettings_ParticleEditor();
-            DisplaySettings_EventScriptEditor();
-            DisplaySettings_TalkScriptEditor();
-            DisplaySettings_TextureViewer();
 
             ImGui.PopItemWidth();
             ImGui.PopStyleColor();
