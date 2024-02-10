@@ -27,6 +27,9 @@ public static class AnimationBank
 
     public static void SaveTimeAct(AnimationFileInfo info, IBinder binder)
     {
+        if (binder == null)
+            return;
+
         //TaskLogs.AddLog($"SaveTimeAct: {info.Path}");
 
         var fileDir = @"\chr";

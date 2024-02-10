@@ -30,8 +30,11 @@ public static class CutsceneBank
     {
         //TaskLogs.AddLog($"SaveCutscene: {info.Path}");
 
-        var fileDir = @"\chr";
-        var fileExt = @".anibnd.dcx";
+        if (binder == null)
+            return;
+
+        var fileDir = @"\remo";
+        var fileExt = @".remobnd.dcx";
 
         // Sekiro + ER + AC6
         if (Project.Type is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
@@ -42,9 +45,13 @@ public static class CutsceneBank
 
         foreach (BinderFile file in binder.Files)
         {
-            foreach (MQB cFile in info.CutsceneFiles)
+            if (file.Name.Contains(".mqb"))
             {
-                file.Bytes = cFile.Write();
+                foreach (MQB cFile in info.CutsceneFiles)
+                {
+                    if(file.Name == cFile.Name)
+                        file.Bytes = cFile.Write();
+                }
             }
         }
 

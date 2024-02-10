@@ -5,6 +5,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.TalkEditor;
+using StudioCore.Editors.TimeActEditor;
 using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,17 @@ public class TalkScriptEditorScreen : EditorScreen
         if (_projectSettings == null)
         {
             ImGui.Text("No project loaded. File -> New Project");
+        }
+
+        if (!TalkScriptBank.IsLoaded)
+        {
+            if (!CFG.Current.AutoLoadBank_TalkScript)
+            {
+                if (ImGui.Button("Load Talk Script Editor"))
+                {
+                    TalkScriptBank.LoadTalkScripts();
+                }
+            }
         }
 
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
@@ -123,19 +135,22 @@ public class TalkScriptEditorScreen : EditorScreen
     {
         _projectSettings = newSettings;
 
-        TalkScriptBank.LoadTalkScripts();
+        if (CFG.Current.AutoLoadBank_TalkScript)
+            TalkScriptBank.LoadTalkScripts();
 
         ResetActionManager();
     }
 
     public void Save()
     {
-        TalkScriptBank.SaveTalkScript(_selectedFileInfo, _selectedBinder);
+        if (TalkScriptBank.IsLoaded)
+            TalkScriptBank.SaveTalkScript(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
-        TalkScriptBank.SaveTalkScripts();
+        if (TalkScriptBank.IsLoaded)
+            TalkScriptBank.SaveTalkScripts();
     }
 
     private void ResetActionManager()

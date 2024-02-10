@@ -27,6 +27,9 @@ public static class ParticleBank
 
     public static void SaveParticle(ParticleFileInfo info, IBinder binder)
     {
+        if (binder == null)
+            return;
+
         //TaskLogs.AddLog($"SaveParticle: {info.Path}");
 
         var fileDir = @"\sfx";

@@ -5,6 +5,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.Editors.ParticleEditor;
 using StudioCore.Settings;
 using StudioCore.UserProject;
 using System;
@@ -68,6 +69,17 @@ public class MaterialEditorScreen : EditorScreen
             ImGui.Text("No project loaded. File -> New Project");
         }
 
+        if (!MaterialBank.IsLoaded)
+        {
+            if (!CFG.Current.AutoLoadBank_Material)
+            {
+                if (ImGui.Button("Load Material Editor"))
+                {
+                    MaterialBank.LoadMaterials();
+                }
+            }
+        }
+
         var dsid = ImGui.GetID("DockSpace_MaterialEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
@@ -128,10 +140,7 @@ public class MaterialEditorScreen : EditorScreen
     {
         _projectSettings = newSettings;
 
-        // With ER, this takes way too long,
-        // seems to be failing to read them,
-        // likely an issue with  matbin
-        if(Project.Type != ProjectType.ER)
+        if (CFG.Current.AutoLoadBank_Material)
             MaterialBank.LoadMaterials();
 
         ResetActionManager();
@@ -139,12 +148,14 @@ public class MaterialEditorScreen : EditorScreen
 
     public void Save()
     {
-        MaterialBank.SaveMaterial(_selectedFileInfo, _selectedBinder);
+        if (MaterialBank.IsLoaded)
+            MaterialBank.SaveMaterial(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
-        MaterialBank.SaveMaterials();
+        if (MaterialBank.IsLoaded)
+            MaterialBank.SaveMaterials();
     }
 
     private void ResetActionManager()

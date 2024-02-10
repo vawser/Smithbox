@@ -192,6 +192,30 @@ public class CFG
     public bool FMG_NoGroupedFmgEntries = false;
     public bool FMG_ShowOriginalNames = false;
 
+    // Settings: TimeAct Editor
+    public bool AutoLoadBank_TimeAct = false;
+
+    // Settings: Cutscene Editor
+    public bool AutoLoadBank_Cutscene = false;
+
+    // Settings: Gparam Editor
+    public bool AutoLoadBank_Gparam = false;
+
+    // Settings: Material Editor
+    public bool AutoLoadBank_Material = false;
+
+    // Settings: Particle Editor
+    public bool AutoLoadBank_Particle = false;
+
+    // Settings: Event Script Editor
+    public bool AutoLoadBank_EventScript = false;
+
+    // Settings: Talk Script Editor
+    public bool AutoLoadBank_TalkScript = false;
+
+    // Settings: Texture Viewer
+    public bool AutoLoadBank_Textures = false;
+
     // Settings: Browsers
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_UpdateSelectionName = true;
@@ -209,7 +233,6 @@ public class CFG
     public bool MapAliases_ShowUnusedNames = false;
     public bool MapAliases_ShowTagsInBrowser = true;
     public bool MapAliases_ShowAliasAddition = false;
-
 
     // Settings: Toolbar
     public bool Toolbar_Show_Check_Duplicate_Entity_ID = true;

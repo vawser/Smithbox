@@ -468,20 +468,6 @@ public class SettingsWindow
         }
     }
 
-    private void DisplaySettings_ModelEditor()
-    {
-        if (ImGui.BeginTabItem("Model Editor"))
-        {
-            // General
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
     private void DisplaySettings_ParamEditor()
     {
         if (ImGui.BeginTabItem("Param Editor"))
@@ -581,7 +567,7 @@ public class SettingsWindow
     }
     private void DisplaySettings_Toolbar()
     {
-        if (ImGui.BeginTabItem("Toolbar"))
+        if (ImGui.BeginTabItem("Map Toolbar"))
         {
             if (ImGui.CollapsingHeader("Global Actions", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -637,7 +623,141 @@ public class SettingsWindow
             ImGui.EndTabItem();
         }
     }
-    
+
+    private void DisplaySettings_ModelEditor()
+    {
+        if (ImGui.BeginTabItem("Model Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_TimeActEditor()
+    {
+        if (ImGui.BeginTabItem("Time Act Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_TimeAct);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_CutsceneEditor()
+    {
+        if (ImGui.BeginTabItem("Cutscene Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Cutscene);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_GparamEditor()
+    {
+        if (ImGui.BeginTabItem("Gparam Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Gparam);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_MaterialEditor()
+    {
+        if (ImGui.BeginTabItem("Material Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Material);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_ParticleEditor()
+    {
+        if (ImGui.BeginTabItem("Particle Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Particle);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_EventScriptEditor()
+    {
+        if (ImGui.BeginTabItem("Event Script Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_EventScript);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_TalkScriptEditor()
+    {
+        if (ImGui.BeginTabItem("Talk Script Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_TalkScript);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_TextureViewer()
+    {
+        if (ImGui.BeginTabItem("Texture Viewer"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Automatically load resources", ref CFG.Current.AutoLoadBank_Textures);
+                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup. If disabled, the user will have to press the Load button within the editor to load the resources. The benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
     public void Display()
     {
         var scale = Smithbox.GetUIScale();
@@ -660,18 +780,18 @@ public class SettingsWindow
             // Settings Order
             DisplaySettings_System();
             DisplaySettings_MapEditor();
-            //DisplaySettings_ModelEditor();
+            DisplaySettings_Toolbar();
             DisplaySettings_ParamEditor();
             DisplaySettings_TextEditor();
-            // DisplaySettings_AnimationEditor();
-            // DisplaySettings_CutsceneEditor();
-            // DisplaySettings_GraphicsEditor();
-            // DisplaySettings_MaterialEditor();
-            // DisplaySettings_ParticleEditor();
-            // DisplaySettings_ScriptEditor();
-            // DisplaySettings_TalkEditor();
-            // DisplaySettings_TextureViewer();
-            DisplaySettings_Toolbar();
+            DisplaySettings_ModelEditor();
+            DisplaySettings_TimeActEditor();
+            DisplaySettings_CutsceneEditor();
+            DisplaySettings_GparamEditor();
+            DisplaySettings_MaterialEditor();
+            DisplaySettings_ParticleEditor();
+            DisplaySettings_EventScriptEditor();
+            DisplaySettings_TalkScriptEditor();
+            DisplaySettings_TextureViewer();
 
             ImGui.PopItemWidth();
             ImGui.PopStyleColor();

@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.ParticleEditor;
+using StudioCore.Editors.TalkEditor;
 using StudioCore.UserProject;
 using System.Numerics;
 using Veldrid;
@@ -59,6 +60,17 @@ public class ParticleEditorScreen : EditorScreen
         else if (_projectSettings == null)
         {
             ImGui.Text("No project loaded. File -> New Project");
+        }
+
+        if (!ParticleBank.IsLoaded)
+        {
+            if (!CFG.Current.AutoLoadBank_Particle)
+            {
+                if (ImGui.Button("Load Particle Editor"))
+                {
+                    ParticleBank.LoadParticles();
+                }
+            }
         }
 
         var dsid = ImGui.GetID("DockSpace_ParticleEditor");
@@ -128,7 +140,8 @@ public class ParticleEditorScreen : EditorScreen
         // Only support FXR3 for now
         if(Project.Type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
-            ParticleBank.LoadParticles();
+            if (CFG.Current.AutoLoadBank_Particle)
+                ParticleBank.LoadParticles();
         }
 
         ResetActionManager();
@@ -136,12 +149,14 @@ public class ParticleEditorScreen : EditorScreen
 
     public void Save()
     {
-        ParticleBank.SaveParticle(_selectedFileInfo, _selectedBinder);
+        if (ParticleBank.IsLoaded)
+            ParticleBank.SaveParticle(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
-        ParticleBank.SaveParticles();
+        if (ParticleBank.IsLoaded)
+            ParticleBank.SaveParticles();
     }
 
     private void ResetActionManager()

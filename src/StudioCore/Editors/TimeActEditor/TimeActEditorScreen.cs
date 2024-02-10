@@ -62,6 +62,17 @@ public class TimeActEditorScreen : EditorScreen
             ImGui.Text("No project loaded. File -> New Project");
         }
 
+        if (!AnimationBank.IsLoaded)
+        {
+            if (!CFG.Current.AutoLoadBank_TimeAct)
+            {
+                if (ImGui.Button("Load Time Act Editor"))
+                {
+                    AnimationBank.LoadTimeActs();
+                }
+            }
+        }
+
         var dsid = ImGui.GetID("DockSpace_TimeActEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
@@ -122,19 +133,22 @@ public class TimeActEditorScreen : EditorScreen
     {
         _projectSettings = newSettings;
 
-        AnimationBank.LoadTimeActs();
+        if (CFG.Current.AutoLoadBank_TimeAct)
+            AnimationBank.LoadTimeActs();
 
         ResetActionManager();
     }
 
     public void Save()
     {
-        AnimationBank.SaveTimeAct(_selectedFileInfo, _selectedBinder);
+        if(AnimationBank.IsLoaded)
+            AnimationBank.SaveTimeAct(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
-        AnimationBank.SaveTimeActs();
+        if (AnimationBank.IsLoaded)
+            AnimationBank.SaveTimeActs();
     }
 
     private void ResetActionManager()

@@ -4,6 +4,7 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.EmevdEditor;
+using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Settings;
 using StudioCore.UserProject;
 using System;
@@ -59,6 +60,17 @@ public class EventScriptEditorScreen : EditorScreen
             ImGui.Text("No project loaded. File -> New Project");
         }
 
+        if (!EventScriptBank.IsLoaded)
+        {
+            if (!CFG.Current.AutoLoadBank_EventScript)
+            {
+                if (ImGui.Button("Load Event Script Editor"))
+                {
+                    EventScriptBank.LoadEventScripts();
+                }
+            }
+        }
+
         var dsid = ImGui.GetID("DockSpace_EventScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
@@ -95,19 +107,22 @@ public class EventScriptEditorScreen : EditorScreen
     {
         _projectSettings = newSettings;
 
-        EventScriptBank.LoadEventScripts();
+        if (CFG.Current.AutoLoadBank_EventScript)
+            EventScriptBank.LoadEventScripts();
 
         ResetActionManager();
     }
 
     public void Save()
     {
-        EventScriptBank.SaveEventScript(_selectedFileInfo, _selectedScript);
+        if (EventScriptBank.IsLoaded)
+            EventScriptBank.SaveEventScript(_selectedFileInfo, _selectedScript);
     }
 
     public void SaveAll()
     {
-        EventScriptBank.SaveEventScripts();
+        if (EventScriptBank.IsLoaded)
+            EventScriptBank.SaveEventScripts();
     }
 
     private void ResetActionManager()

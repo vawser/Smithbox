@@ -28,6 +28,9 @@ public static class EventScriptBank
 
     public static void SaveEventScript(EventScriptInfo info, EMEVD script)
     {
+        if (script == null)
+            return;
+
         //TaskLogs.AddLog($"SaveEventScript: {info.Path}");
 
         byte[] fileBytes = null;

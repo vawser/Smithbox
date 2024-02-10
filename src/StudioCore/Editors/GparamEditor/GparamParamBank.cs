@@ -27,6 +27,9 @@ public static class GparamParamBank
 
     public static void SaveGraphicsParam(GparamInfo info, GPARAM param)
     {
+        if (param == null)
+            return;
+
         //TaskLogs.AddLog($"SaveGraphicsParams: {info.Path}");
 
         byte[] fileBytes = null;

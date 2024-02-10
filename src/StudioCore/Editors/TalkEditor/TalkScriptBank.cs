@@ -27,6 +27,9 @@ public static class TalkScriptBank
 
     public static void SaveTalkScript(TalkScriptInfo info, IBinder binder)
     {
+        if (binder == null)
+            return;
+
         //TaskLogs.AddLog($"SaveTalkScript: {info.Path}");
 
         var fileDir = @"\script\talk";

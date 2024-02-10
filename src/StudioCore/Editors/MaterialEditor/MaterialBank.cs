@@ -28,6 +28,9 @@ public static class MaterialBank
 
     public static void SaveMaterial(MaterialFileInfo info, IBinder binder)
     {
+        if (binder == null)
+            return;
+
         //TaskLogs.AddLog($"SaveCutscene: {info.Path}");
 
         var fileDir = @"\mtd";

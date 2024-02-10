@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
+using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.UserProject;
@@ -82,6 +83,17 @@ public class GparamEditorScreen : EditorScreen
         else if (_projectSettings == null)
         {
             ImGui.Text("No project loaded. File -> New Project");
+        }
+
+        if (!GparamParamBank.IsLoaded)
+        {
+            if (!CFG.Current.AutoLoadBank_Gparam)
+            {
+                if (ImGui.Button("Load Gparam Editor"))
+                {
+                    GparamParamBank.LoadGraphicsParams();
+                }
+            }
         }
 
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
@@ -310,7 +322,7 @@ public class GparamEditorScreen : EditorScreen
         string value = val.Value.ToString();
         Type type = val.GetType();
 
-        ImGui.SetNextItemWidth(-1);
+        ImGui.AlignTextToFramePadding();
         ImGui.Text($"{value}"); // Temp until we implement the property edit part
         //ImGui.InputText($"##{val.Id}{index}", ref value, 256);
     }
@@ -319,19 +331,22 @@ public class GparamEditorScreen : EditorScreen
     {
         _projectSettings = newSettings;
 
-        GparamParamBank.LoadGraphicsParams();
+        if (CFG.Current.AutoLoadBank_Gparam)
+            GparamParamBank.LoadGraphicsParams();
 
         ResetActionManager();
     }
 
     public void Save()
     {
-        GparamParamBank.SaveGraphicsParam(_selectedGparamInfo, _selectedGparam);
+        if (GparamParamBank.IsLoaded)
+            GparamParamBank.SaveGraphicsParam(_selectedGparamInfo, _selectedGparam);
     }
 
     public void SaveAll()
     {
-        GparamParamBank.SaveGraphicsParams();
+        if (GparamParamBank.IsLoaded)
+            GparamParamBank.SaveGraphicsParams();
     }
 
     private void ParamUndo()
