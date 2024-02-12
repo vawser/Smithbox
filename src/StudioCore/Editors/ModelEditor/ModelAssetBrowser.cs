@@ -15,7 +15,7 @@ using StudioCore.UserProject;
 using StudioCore.Utilities;
 using Veldrid;
 
-namespace StudioCore.Browsers
+namespace StudioCore.Editors.ModelEditor
 {
     public interface AssetBrowserEventHandler
     {
@@ -81,10 +81,14 @@ namespace StudioCore.Browsers
         public void Display()
         {
             if (Project.Type == ProjectType.Undefined)
+            {
                 return;
+            }
 
             if (ModelAliasBank.Bank.IsLoadingAliases)
+            {
                 return;
+            }
 
             if (ImGui.Begin($@"Asset Browser##{_id}"))
             {
@@ -136,7 +140,9 @@ namespace StudioCore.Browsers
             var objLabel = "Obj";
 
             if (Project.Type is ProjectType.ER or ProjectType.AC6)
+            {
                 objLabel = "AEG";
+            }
 
             if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
             {
@@ -164,7 +170,9 @@ namespace StudioCore.Browsers
                 if (MapAliasBank.Bank.MapNames != null)
                 {
                     if (MapAliasBank.Bank.MapNames.ContainsKey(mapId))
+                    {
                         labelName = labelName + $" <{MapAliasBank.Bank.MapNames[mapId]}>";
+                    }
 
                     if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                     {
@@ -173,7 +181,10 @@ namespace StudioCore.Browsers
                             var modelList = ModelAssetLocator.GetMapModels(mapId);
                             var cache = new List<string>();
                             foreach (var model in modelList)
+                            {
                                 cache.Add(model.AssetName);
+                            }
+
                             _mapModelNameCache[mapId] = cache;
                         }
 
@@ -192,8 +203,12 @@ namespace StudioCore.Browsers
             var referenceDict = new Dictionary<string, AliasReference>();
 
             foreach (AliasReference v in referenceList)
+            {
                 if (!referenceDict.ContainsKey(v.id))
+                {
                     referenceDict.Add(v.id, v);
+                }
+            }
 
             if (_selectedAssetType == assetType)
             {
@@ -239,14 +254,19 @@ namespace StudioCore.Browsers
                             {
                                 var tagStr = refTagList[0];
                                 foreach (var entry in refTagList.Skip(1))
+                                {
                                     tagStr = $"{tagStr},{entry}";
+                                }
                                 _refUpdateTags = tagStr;
                             }
                             else
+                            {
                                 _refUpdateTags = "";
+                            }
                         }
 
                         if (_selectedName == refID)
+                        {
                             if (ImGui.BeginPopupContextItem($"{refID}##context"))
                             {
                                 if (ImGui.InputText($"Name", ref _refUpdateName, 255))
@@ -276,15 +296,24 @@ namespace StudioCore.Browsers
 
                                 ImGui.EndPopup();
                             }
+                        }
 
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                         {
                             if (_selectedAssetType == "Chr")
+                            {
                                 _handler.OnInstantiateChr(name);
+                            }
+
                             if (_selectedAssetType == "Obj")
+                            {
                                 _handler.OnInstantiateObj(name);
+                            }
+
                             if (_selectedAssetType == "Part")
+                            {
                                 _handler.OnInstantiateParts(name);
+                            }
                         }
                     }
                 }
@@ -299,10 +328,15 @@ namespace StudioCore.Browsers
             var referenceDict = new Dictionary<string, AliasReference>();
 
             foreach (AliasReference v in referenceList)
+            {
                 if (!referenceDict.ContainsKey(v.id))
+                {
                     referenceDict.Add(v.id, v);
+                }
+            }
 
             if (_selectedAssetType == assetType)
+            {
                 if (_mapModelNameCache.ContainsKey(_selectedAssetMapId))
                 {
                     if (_searchStrInput != _searchStrInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
@@ -324,7 +358,9 @@ namespace StudioCore.Browsers
 
                         // Adjust the name to remove the A{mapId} section.
                         if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                        {
                             displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
+                        }
 
                         if (referenceDict.ContainsKey(lowerName))
                         {
@@ -354,14 +390,20 @@ namespace StudioCore.Browsers
                                 {
                                     var tagStr = refTagList[0];
                                     foreach (var entry in refTagList.Skip(1))
+                                    {
                                         tagStr = $"{tagStr},{entry}";
+                                    }
+
                                     _refUpdateTags = tagStr;
                                 }
                                 else
+                                {
                                     _refUpdateTags = "";
+                                }
                             }
 
                             if (_selectedName == refID)
+                            {
                                 if (ImGui.BeginPopupContextItem($"{refID}##context"))
                                 {
                                     if (ImGui.InputText($"Name", ref _refUpdateName, 255))
@@ -391,12 +433,16 @@ namespace StudioCore.Browsers
 
                                     ImGui.EndPopup();
                                 }
+                            }
 
                             if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
+                            {
                                 _handler.OnInstantiateMapPiece(_selectedAssetMapId, name);
+                            }
                         }
                     }
                 }
+            }
         }
     }
 }

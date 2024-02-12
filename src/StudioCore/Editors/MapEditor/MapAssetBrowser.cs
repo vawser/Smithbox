@@ -16,7 +16,7 @@ using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 using StudioCore.Banks;
 
-namespace StudioCore.Browsers;
+namespace StudioCore.Editors.MapEditor;
 
 public class MapAssetBrowser
 {
@@ -74,10 +74,14 @@ public class MapAssetBrowser
         var scale = Smithbox.GetUIScale();
 
         if (Project.Type == ProjectType.Undefined)
+        {
             return;
+        }
 
         if (ModelAliasBank.Bank.IsLoadingAliases)
+        {
             return;
+        }
 
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
@@ -134,7 +138,9 @@ public class MapAssetBrowser
         var objLabel = "Obj";
 
         if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        {
             objLabel = "AEG";
+        }
 
         if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
         {
@@ -155,16 +161,24 @@ public class MapAssetBrowser
         foreach (var mapId in _mapModelNameCache.Keys)
         {
             foreach (var obj in _msbEditor.Universe.LoadedObjectContainers)
+            {
                 if (obj.Value != null)
+                {
                     _loadedMaps.Add(obj.Key);
+                }
+            }
 
             if (_loadedMaps.Contains(mapId))
             {
                 var labelName = mapId;
 
                 if (MapAliasBank.Bank.MapNames != null)
+                {
                     if (MapAliasBank.Bank.MapNames.ContainsKey(mapId))
+                    {
                         labelName = labelName + $" <{MapAliasBank.Bank.MapNames[mapId]}>";
+                    }
+                }
 
                 if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                 {
@@ -174,7 +188,10 @@ public class MapAssetBrowser
                         var cache = new List<string>();
 
                         foreach (AssetDescription model in modelList)
+                        {
                             cache.Add(model.AssetName);
+                        }
+
                         _mapModelNameCache[mapId] = cache;
                     }
 
@@ -199,8 +216,12 @@ public class MapAssetBrowser
         var referenceDict = new Dictionary<string, AliasReference>();
 
         foreach (AliasReference v in referenceList)
+        {
             if (!referenceDict.ContainsKey(v.id))
+            {
                 referenceDict.Add(v.id, v);
+            }
+        }
 
         if (_selectedAssetType == assetType)
         {
@@ -255,7 +276,9 @@ public class MapAssetBrowser
                             _refUpdateTags = tagStr;
                         }
                         else
+                        {
                             _refUpdateTags = "";
+                        }
                     }
 
                     if (_selectedName == refID)
@@ -296,7 +319,9 @@ public class MapAssetBrowser
                         var modelName = name;
 
                         if (modelName.Contains("aeg"))
+                        {
                             modelName = modelName.Replace("aeg", "AEG");
+                        }
 
                         SetObjectModelForSelection(modelName, assetType, "");
                     }
@@ -313,10 +338,15 @@ public class MapAssetBrowser
         var referenceDict = new Dictionary<string, AliasReference>();
 
         foreach (AliasReference v in referenceList)
+        {
             if (!referenceDict.ContainsKey(v.id))
+            {
                 referenceDict.Add(v.id, v);
+            }
+        }
 
         if (_selectedAssetType == assetType)
+        {
             if (_mapModelNameCache.ContainsKey(_selectedAssetMapId))
             {
                 if (_searchInput != _searchInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
@@ -325,6 +355,7 @@ public class MapAssetBrowser
                     _selectedAssetTypeCache = _selectedAssetType;
                     _selectedAssetMapIdCache = _selectedAssetMapId;
                 }
+
                 foreach (var name in _mapModelNameCache[_selectedAssetMapId])
                 {
                     var modelName = name.Replace($"{_selectedAssetMapId}_", "m");
@@ -338,7 +369,9 @@ public class MapAssetBrowser
 
                     // Adjust the name to remove the A{mapId} section.
                     if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                    {
                         displayedName = displayedName.Replace($"A{_selectedAssetMapId.Substring(1, 2)}", "");
+                    }
 
                     if (referenceDict.ContainsKey(lowerName))
                     {
@@ -372,10 +405,13 @@ public class MapAssetBrowser
                                 _refUpdateTags = tagStr;
                             }
                             else
+                            {
                                 _refUpdateTags = "";
+                            }
                         }
 
                         if (_selectedName == refID)
+                        {
                             if (ImGui.BeginPopupContextItem($"{refID}##context"))
                             {
                                 if (ImGui.InputText($"Name", ref _refUpdateName, 255))
@@ -405,12 +441,16 @@ public class MapAssetBrowser
 
                                 ImGui.EndPopup();
                             }
+                        }
 
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
+                        {
                             SetObjectModelForSelection(modelName, assetType, _selectedAssetMapId);
+                        }
                     }
                 }
             }
+        }
     }
 
     public void SetObjectModelForSelection(string modelName, string assetType, string assetMapId)
@@ -424,6 +464,7 @@ public class MapAssetBrowser
             var isValidObjectType = false;
 
             if (assetType == "Chr")
+            {
                 switch (Project.Type)
                 {
                     case ProjectType.DES:
@@ -460,7 +501,9 @@ public class MapAssetBrowser
                     default:
                         throw new ArgumentException("Selected entity type must be Enemy");
                 }
+            }
             if (assetType == "Obj")
+            {
                 switch (Project.Type)
                 {
                     case ProjectType.DES:
@@ -499,7 +542,9 @@ public class MapAssetBrowser
                     default:
                         throw new ArgumentException("Selected entity type must be Object/Asset");
                 }
+            }
             if (assetType == "MapPiece")
+            {
                 switch (Project.Type)
                 {
                     case ProjectType.DES:
@@ -538,6 +583,7 @@ public class MapAssetBrowser
                     default:
                         throw new ArgumentException("Selected entity type must be MapPiece");
                 }
+            }
 
             if (assetType == "MapPiece")
             {
@@ -562,7 +608,9 @@ public class MapAssetBrowser
 
                 // Name
                 if (s.WrappedObject is MSBE.Part)
+                {
                     SetUniqueInstanceID((MapEntity)s, modelName);
+                }
             }
         }
 
@@ -584,11 +632,20 @@ public class MapAssetBrowser
         foreach (var o in _universe.LoadedObjectContainers.Values)
         {
             if (o == null)
+            {
                 continue;
+            }
+
             if (o is Map m)
+            {
                 foreach (var ob in m.Objects)
+                {
                     if (ob is MapEntity e)
+                    {
                         names.Add(ob.Name);
+                    }
+                }
+            }
         }
 
         var validName = false;
@@ -597,6 +654,7 @@ public class MapAssetBrowser
             var matchesName = false;
 
             foreach (var name in names)
+            {
                 // Name already exists
                 if (name == baseName)
                 {
@@ -609,10 +667,13 @@ public class MapAssetBrowser
 
                     matchesName = true;
                 }
+            }
 
             // If it does not match any name during 1 full iteration, then it must be valid
             if (!matchesName)
+            {
                 validName = true;
+            }
         }
 
         return baseName;
@@ -628,9 +689,15 @@ public class MapAssetBrowser
         if (selected.WrappedObject is MSBE.Part msbePart)
         {
             if (mapPartEntities.TryAdd(m, new HashSet<MapEntity>()))
+            {
                 foreach (Entity ent in m.Objects)
+                {
                     if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
+                    {
                         mapPartEntities[m].Add((MapEntity)ent);
+                    }
+                }
+            }
 
             var newInstanceID = 9000; // Default start value
 
@@ -638,7 +705,9 @@ public class MapAssetBrowser
                        ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
                        && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID
                        && msbePart != (MSBE.Part)e.WrappedObject) != null)
+            {
                 newInstanceID++;
+            }
 
             msbePart.InstanceID = newInstanceID;
         }
@@ -647,13 +716,19 @@ public class MapAssetBrowser
     public string PadNameString(int value)
     {
         if (value < 10)
+        {
             return $"000{value}";
+        }
 
         if (value >= 10 && value < 100)
+        {
             return $"00{value}";
+        }
 
         if (value >= 100 && value < 1000)
+        {
             return $"0{value}";
+        }
 
         return $"{value}";
     }

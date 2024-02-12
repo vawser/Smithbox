@@ -83,7 +83,7 @@ public class MassParamEditRegex
     private int argc;
 
     // Run data        
-    private string[] argNames;
+    private string[]? argNames;
 
     // Do we want these variables? shouldn't they be contained?
     private ParamBank bank;

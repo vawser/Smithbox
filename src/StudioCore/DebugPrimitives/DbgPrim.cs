@@ -45,8 +45,6 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
     private Color _highlightedColor = Color.Gray;
     protected GPUBufferAllocator.GPUBufferHandle _materialBuffer;
 
-    private bool _updateColors = true;
-
     private int bufferIndexCached = -1;
     private bool disposedValue;
 
@@ -64,7 +62,6 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
         set
         {
             _baseColor = value;
-            _updateColors = true;
         }
     }
 
@@ -74,7 +71,6 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
         set
         {
             _highlightedColor = value;
-            _updateColors = true;
         }
     }
 
@@ -84,7 +80,6 @@ public abstract class DbgPrim : IDbgPrim, IDisposable
         set
         {
             _highlighted = value;
-            _updateColors = true;
         }
     }
 

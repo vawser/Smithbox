@@ -203,14 +203,18 @@ public sealed class QueuedTaskScheduler : TaskScheduler, IDisposable
             {
                 // If a thread abort occurs, we'll try to reset it and continue running.
                 while (true)
+                {
                     try
                     {
                         // For each task queued to the scheduler, try to execute it.
                         foreach (Task task in _blockingTaskQueue.GetConsumingEnumerable(_disposeCancellation.Token))
+                        {
                             // If the task is not null, that means it was queued to this scheduler directly.
                             // Run it.
                             if (task != null)
+                            {
                                 TryExecuteTask(task);
+                            }
                             // If the task is null, that means it's just a placeholder for a task
                             // queued to one of the subschedulers.  Find the next task based on
                             // priority and fairness and run it.
@@ -226,6 +230,7 @@ public sealed class QueuedTaskScheduler : TaskScheduler, IDisposable
                                 if (targetTask != null)
                                     queueForTargetTask.ExecuteTask(targetTask);
                             }
+                        }
                     }
                     catch (ThreadAbortException)
                     {
@@ -233,8 +238,11 @@ public sealed class QueuedTaskScheduler : TaskScheduler, IDisposable
                         // or unloading, let it pass through.  Otherwise, reset the abort so we can
                         // continue processing work items.
                         if (!Environment.HasShutdownStarted && !AppDomain.CurrentDomain.IsFinalizingForUnload())
+                        {
                             Thread.ResetAbort();
+                        }
                     }
+                }
             }
             catch (OperationCanceledException) { }
         }

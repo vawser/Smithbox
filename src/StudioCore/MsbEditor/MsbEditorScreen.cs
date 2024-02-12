@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Browsers;
 using StudioCore.Configuration;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.InfoBank;
@@ -23,6 +22,7 @@ using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
 using Viewport = StudioCore.Gui.Viewport;
+using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.MsbEditor;
 

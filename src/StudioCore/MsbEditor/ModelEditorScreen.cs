@@ -15,10 +15,10 @@ using StudioCore.Configuration;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using SoulsFormats;
-using StudioCore.Browsers;
 using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
 using StudioCore.AssetLocator;
+using StudioCore.Editors.ModelEditor;
 
 namespace StudioCore.MsbEditor;
 
