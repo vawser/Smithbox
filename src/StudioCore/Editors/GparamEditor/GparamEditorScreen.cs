@@ -6,6 +6,7 @@ using StudioCore.Editors.GraphicsEditor;
 using StudioCore.UserProject;
 using System;
 using System.Numerics;
+using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
 using static SoulsFormats.GPARAM;
@@ -280,6 +281,7 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.AlignTextToFramePadding();
         GparamEditorCommon.PropertyField(index, fieldType, oldval, ref newval);
+        //GparamEditorCommon.UpdateProperty(EditorActionManager, newval, prop, oldval);
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)

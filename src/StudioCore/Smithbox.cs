@@ -139,20 +139,37 @@ public class Smithbox
         EditorContainer.TalkEditor = new TalkScriptEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
 
-        _editors = new List<EditorScreen> {
-            EditorContainer.MsbEditor,
-            EditorContainer.ModelEditor,
-            EditorContainer.ParamEditor,
-            EditorContainer.TimeActEditor,
-            EditorContainer.CutsceneEditor,
-            EditorContainer.MaterialEditor,
-            EditorContainer.ParticleEditor,
-            EditorContainer.GparamEditor,
-            EditorContainer.TextEditor
-            //EditorContainer.ScriptEditor,
-            //EditorContainer.TalkEditor,
-            //EditorContainer.TextureViewer
-        };
+        _editors = new List<EditorScreen>();
+
+        _editors.Add(EditorContainer.MsbEditor);
+        _editors.Add(EditorContainer.ModelEditor);
+        _editors.Add(EditorContainer.ParamEditor);
+
+        if(FeatureFlags.EnableEditor_TimeAct)
+            _editors.Add(EditorContainer.TimeActEditor);
+
+        if (FeatureFlags.EnableEditor_Cutscene)
+            _editors.Add(EditorContainer.CutsceneEditor);
+
+        if (FeatureFlags.EnableEditor_Material)
+            _editors.Add(EditorContainer.MaterialEditor);
+
+        if (FeatureFlags.EnableEditor_Particle)
+            _editors.Add(EditorContainer.ParticleEditor);
+
+        if (FeatureFlags.EnableEditor_Gparam)
+            _editors.Add(EditorContainer.GparamEditor);
+
+        if (FeatureFlags.EnableEditor_EventScript)
+            _editors.Add(EditorContainer.ScriptEditor);
+
+        if (FeatureFlags.EnableEditor_TalkScript)
+            _editors.Add(EditorContainer.TalkEditor);
+
+        if (FeatureFlags.EnableEditor_TextureViewer)
+            _editors.Add(EditorContainer.TextureViewer);
+        
+        _editors.Add(EditorContainer.TextEditor);
 
         _focusedEditor = EditorContainer.MsbEditor;
 

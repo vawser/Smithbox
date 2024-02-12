@@ -179,7 +179,7 @@ public class GparamEditorCommon
         _committedCache = true;
     }
 
-    public static bool UpdateProperty(ActionManager executor, object obj, Type prop, object oldval,
+    public static bool UpdateProperty(ActionManager executor, object obj, PropertyInfo prop, object oldval,
         int arrayindex = -1)
     {
         if (_changedCache)

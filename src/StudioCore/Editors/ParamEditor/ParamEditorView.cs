@@ -570,7 +570,13 @@ public class ParamEditorView
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
+                {
                     _paramEditor.DuplicateSelection(_selection);
+                }
+
+                ImGui.InputInt("Duplicate Amount##dupeAmount", ref CFG.Current.Param_DuplicateAmount);
+                if (CFG.Current.Param_DuplicateAmount < 1)
+                    CFG.Current.Param_DuplicateAmount = 1;
 
                 ImGui.Separator();
             }

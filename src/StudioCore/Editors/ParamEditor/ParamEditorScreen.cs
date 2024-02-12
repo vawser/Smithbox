@@ -245,6 +245,10 @@ public class ParamEditorScreen : EditorScreen
                     EditorActionManager.CanUndo()))
                 ParamUndo();
 
+            if (ImGui.MenuItem("Undo All", "", false,
+                    EditorActionManager.CanUndo()))
+                ParamUndoAll();
+
             if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
                     EditorActionManager.CanRedo()))
                 ParamRedo();
@@ -1276,6 +1280,15 @@ public class ParamEditorScreen : EditorScreen
             () => ParamBank.RefreshAllParamDiffCaches(false)));
     }
 
+    private void ParamUndoAll()
+    {
+        EditorActionManager.UndoAllAction();
+        TaskManager.Run(new TaskManager.LiveTask("Param - Check Differences",
+            TaskManager.RequeueType.Repeat, true,
+            TaskLogs.LogPriority.Low,
+            () => ParamBank.RefreshAllParamDiffCaches(false)));
+    }
+
     private void ParamRedo()
     {
         EditorActionManager.RedoAction();
@@ -1457,7 +1470,10 @@ public class ParamEditorScreen : EditorScreen
             rowsToInsert.Add(newrow);
         }
 
-        EditorActionManager.ExecuteAction(new AddParamsAction(param, "legacystring", rowsToInsert, false, false));
+        for (int i = 0; i < CFG.Current.Param_DuplicateAmount; i++)
+        {
+            EditorActionManager.ExecuteAction(new AddParamsAction(param, "legacystring", rowsToInsert, false, false));
+        }
     }
 
     public void OpenMassEditPopup(string popup)

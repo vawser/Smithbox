@@ -186,6 +186,7 @@ public class CFG
     public bool Param_SplitContextMenu = false;
     public bool UI_CompactParams = false;
     public bool Param_QuickNameEdit = false;
+    public int Param_DuplicateAmount = 1;
 
     // Settings: Text Editor
     public bool FMG_NoFmgPatching = false;

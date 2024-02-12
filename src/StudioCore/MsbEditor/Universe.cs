@@ -878,7 +878,7 @@ public class Universe
             }
 
             // Temporary DS3 navmesh loading
-            if (FeatureFlags.LoadDS3Navmeshes && Project.Type == ProjectType.DS3)
+            if (Project.Type == ProjectType.DS3)
             {
                 AssetDescription nvaasset = MapAssetLocator.GetMapNVA(amapid);
                 if (nvaasset.AssetPath != null)
@@ -999,34 +999,31 @@ public class Universe
             task = job.Complete();
             tasks.Add(task);
 
-            if (FeatureFlags.LoadNavmeshes)
+            job = ResourceManager.CreateNewJob(@"Loading Navmeshes");
+            if (Project.Type == ProjectType.DS3)
             {
-                job = ResourceManager.CreateNewJob(@"Loading Navmeshes");
-                if (Project.Type == ProjectType.DS3 && FeatureFlags.LoadDS3Navmeshes)
+                AssetDescription nav = ModelAssetLocator.GetHavokNavmeshes(amapid);
+                job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                    ResourceManager.ResourceType.NavmeshHKX);
+            }
+            else
+            {
+                foreach (AssetDescription nav in navsToLoad)
                 {
-                    AssetDescription nav = ModelAssetLocator.GetHavokNavmeshes(amapid);
-                    job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.NavmeshHKX);
-                }
-                else
-                {
-                    foreach (AssetDescription nav in navsToLoad)
+                    if (nav.AssetArchiveVirtualPath != null)
                     {
-                        if (nav.AssetArchiveVirtualPath != null)
-                        {
-                            job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                                false);
-                        }
-                        else if (nav.AssetVirtualPath != null)
-                        {
-                            job.AddLoadFileTask(nav.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                        }
+                        job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                            false);
+                    }
+                    else if (nav.AssetVirtualPath != null)
+                    {
+                        job.AddLoadFileTask(nav.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                     }
                 }
-
-                task = job.Complete();
-                tasks.Add(task);
             }
+
+            task = job.Complete();
+            tasks.Add(task);
 
             // Real bad hack
             EnvMapTextures = TextureAssetLocator.GetEnvMapTextureNames(amapid);

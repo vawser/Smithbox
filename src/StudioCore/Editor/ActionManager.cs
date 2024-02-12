@@ -90,6 +90,22 @@ public class ActionManager
         UICache.ClearCaches();
     }
 
+    public void UndoAllAction()
+    {
+        if (UndoStack.Count() == 0)
+        {
+            return;
+        }
+
+        while (UndoStack.Count() > 0)
+        {
+            EditorAction a = UndoStack.Pop();
+            NotifyHandlers(a.Undo());
+            RedoStack.Push(a);
+            UICache.ClearCaches();
+        }
+    }
+
     public void RedoAction()
     {
         if (RedoStack.Count() == 0)

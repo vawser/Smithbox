@@ -107,23 +107,41 @@ public class SettingsWindow
 
             if(ImGui.CollapsingHeader("Resources"))
             {
-                ImGui.Checkbox("Time Act Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_TimeAct);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                if (FeatureFlags.EnableEditor_TimeAct)
+                {
+                    ImGui.Checkbox("Time Act Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_TimeAct);
+                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                }
 
-                ImGui.Checkbox("Cutscene Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Cutscene);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                if (FeatureFlags.EnableEditor_Cutscene)
+                {
+                    ImGui.Checkbox("Cutscene Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Cutscene);
+                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                }
 
-                ImGui.Checkbox("Gparam Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Gparam);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                if (FeatureFlags.EnableEditor_Gparam)
+                {
+                    ImGui.Checkbox("Gparam Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Gparam);
+                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                }
 
-                ImGui.Checkbox("Material Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Material);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                if (FeatureFlags.EnableEditor_Material)
+                {
+                    ImGui.Checkbox("Material Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Material);
+                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                }
 
-                ImGui.Checkbox("Particle Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Particle);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                if (FeatureFlags.EnableEditor_Particle)
+                {
+                    ImGui.Checkbox("Particle Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Particle);
+                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                }
 
-                ImGui.Checkbox("Texture Viewer - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Textures);
-                ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                if (FeatureFlags.EnableEditor_TextureViewer)
+                {
+                    ImGui.Checkbox("Texture Viewer - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Textures);
+                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                }
             }
 
             if (ImGui.CollapsingHeader("Project"))
