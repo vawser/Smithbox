@@ -236,11 +236,15 @@ public class ParamEditorCommon
             _editedTypeCache = prop;
         }
         else if (_editedPropCache != null && _editedPropCache != oldval)
+        {
             _changedCache = true;
+        }
 
         if (_changedCache)
+        {
             ChangeProperty(executor, _editedTypeCache, _editedObjCache, _editedPropCache, ref _committedCache,
                 arrayindex);
+        }
 
         return _changedCache && _committedCache;
     }
@@ -260,9 +264,13 @@ public class ParamEditorCommon
 
             PropertiesChangedAction action;
             if (arrayindex != -1)
+            {
                 action = new PropertiesChangedAction((PropertyInfo)prop, arrayindex, obj, newval);
+            }
             else
+            {
                 action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
+            }
 
             executor.ExecuteAction(action);
         }

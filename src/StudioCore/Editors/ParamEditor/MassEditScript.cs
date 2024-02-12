@@ -24,19 +24,27 @@ public class MassEditScript
         List<string> preamble = new();
         var text = File.ReadAllLines(path);
         List<string[]> args = new();
+
         foreach (var line in text)
+        {
             if (line.StartsWith("##") && args.Count == 0)
+            {
                 preamble.Add(line);
+            }
             else if (line.StartsWith("newvar "))
             {
                 var arg = line.Substring(7).Split(':', 2);
+
                 if (arg[1].EndsWith(';'))
+                {
                     arg[1] = arg[1].Substring(0, arg[1].Length - 1);
+                }
 
                 args.Add(arg);
             }
             else
                 break;
+        }
 
         this.name = name;
         this.preamble = preamble;
@@ -58,6 +66,7 @@ public class MassEditScript
         try
         {
             if (Directory.Exists(dir))
+            {
                 scriptList.AddRange(Directory.GetFiles(dir).Select(x =>
                 {
                     var name = x;
@@ -73,6 +82,7 @@ public class MassEditScript
                         return null;
                     }
                 }));
+            }
         }
         catch (Exception e)
         {
@@ -91,6 +101,7 @@ public class MassEditScript
             if (ImGui.BeginMenu(script.name))
             {
                 script.MenuItems();
+
                 if (ImGui.Selectable("Load"))
                 {
                     _currentMEditRegexInput = script.GenerateMassedit();
@@ -105,11 +116,15 @@ public class MassEditScript
     public void MenuItems()
     {
         foreach (var s in preamble)
+        {
             ImGui.TextUnformatted(s.Substring(2));
+        }
 
         ImGui.Separator();
         foreach (var arg in args)
+        {
             ImGui.InputText(arg[0], ref arg[1], 128);
+        }
     }
 
     public string GenerateMassedit()

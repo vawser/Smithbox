@@ -43,7 +43,9 @@ internal class ParamReloader
     public static bool CanReloadMemoryParams(ParamBank bank, ProjectSettings projectSettings)
     {
         if (projectSettings != null && GameIsSupported(projectSettings.GameType) && bank.IsLoadingParams == false)
+        {
             return true;
+        }
 
         return false;
     }
@@ -51,7 +53,9 @@ internal class ParamReloader
     public static void ReloadMemoryParam(ParamBank bank, string paramName)
     {
         if (paramName != null)
+        {
             ReloadMemoryParams(bank, new string[] { paramName });
+        }
     }
 
     public static void ReloadMemoryParams(ParamBank bank, string[] paramNames)
@@ -61,11 +65,15 @@ internal class ParamReloader
             {
                 GameOffsets offsets = GetGameOffsets();
                 if (offsets == null)
+                {
                     return;
+                }
 
                 Process[] processArray = Process.GetProcessesByName(offsets.exeName);
                 if (!processArray.Any())
+                {
                     processArray = Process.GetProcessesByName(offsets.exeName.Replace(".exe", ""));
+                }
 
                 if (processArray.Any())
                 {
@@ -75,7 +83,9 @@ internal class ParamReloader
                     memoryHandler.Terminate();
                 }
                 else
+                {
                     throw new Exception("Unable to find running game");
+                }
             }));
     }
 
@@ -86,12 +96,16 @@ internal class ParamReloader
         if (offsets.ParamBaseAobPattern != null)
         {
             if (!handler.TryFindOffsetFromAOB("ParamBase", offsets.ParamBaseAobPattern, offsets.ParamBaseAobRelativeOffsets, out var paramBase))
+            {
                 return;
+            }
 
             soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), paramBase);
         }
         else
+        {
             soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), offsets.ParamBaseOffset);
+        }
 
         List<Task> tasks = new();
         foreach (var param in paramNames)
@@ -102,21 +116,28 @@ internal class ParamReloader
                 continue;
             }
 
-            if (offsets.type is ProjectType.DS1 or ProjectType.DS1R &&
-                param == "ThrowParam")
+            if (offsets.type is ProjectType.DS1 or ProjectType.DS1R && param == "ThrowParam")
+            {
                 // DS1 ThrowParam requires an additional offset.
                 tasks.Add(new Task(() =>
                     WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, nint.Add(soloParamRepositoryPtr, 0x10))));
+            }
             else
+            {
                 tasks.Add(new Task(() =>
                     WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, soloParamRepositoryPtr)));
+            }
         }
 
         foreach (Task task in tasks)
+        {
             task.Start();
+        }
 
         foreach (Task task in tasks)
+        {
             task.Wait();
+        }
     }
 
     public static void GiveItemMenu(List<Param.Row> rowsToGib, string param)
@@ -124,11 +145,15 @@ internal class ParamReloader
         GameOffsets offsets = GetGameOffsets();
 
         if (!offsets.itemGibOffsets.ContainsKey(param))
+        {
             return;
+        }
 
         if (ImGui.MenuItem("Spawn Selected Items In Game"))
+        {
             GiveItem(offsets, rowsToGib, param, param == "EquipParamGoods" ? (int)numberOfItemsToGive : 1,
                 param == "EquipParamWeapon" ? (int)upgradeLevelItemToGive : 0);
+        }
 
         if (param == "EquipParamGoods")
         {
@@ -137,8 +162,12 @@ internal class ParamReloader
             ImGui.Text("Number of Spawned Items");
             ImGui.SameLine();
             if (ImGui.InputText("##Number of Spawned Items", ref itemsNum, 2))
+            {
                 if (uint.TryParse(itemsNum, out var result) && result != 0)
+                {
                     numberOfItemsToGive = result;
+                }
+            }
         }
         else if (param == "EquipParamWeapon")
         {
@@ -146,8 +175,12 @@ internal class ParamReloader
             ImGui.SameLine();
             var weaponLevel = upgradeLevelItemToGive.ToString();
             if (ImGui.InputText("##Spawned Weapon Level", ref weaponLevel, 2))
+            {
                 if (uint.TryParse(weaponLevel, out var result) && result < 11)
+                {
                     upgradeLevelItemToGive = result;
+                }
+            }
         }
 
         ImGui.Unindent();
@@ -212,9 +245,10 @@ internal class ParamReloader
 
             BaseDataPtr += offsets.rowHeaderSize;
 
-            if (rowDictionary.TryGetValue(RowId, out Queue<Param.Row> queue)
-                && queue.TryDequeue(out Param.Row row))
+            if (rowDictionary.TryGetValue(RowId, out Queue<Param.Row> queue) && queue.TryDequeue(out Param.Row row))
+            {
                 WriteMemoryRow(row, DataSectionPtr, memoryHandler);
+            }
             else
             {
                 TaskLogs.AddLog($"Hot reload: ParamType {param.ParamType}: row {RowId} index {i} is in memory but not in editor. Try saving params and restarting game.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
@@ -230,8 +264,10 @@ internal class ParamReloader
         BitArray bits = null;
 
         foreach (Param.Column cell in row.Columns)
+        {
             offset += WriteMemoryCell(row[cell], RowDataSectionPtr + offset, ref bitFieldPos, ref bits,
                 memoryHandler);
+        }
     }
 
     private static int WriteMemoryCell(Param.Cell cell, nint CellDataPtr, ref int bitFieldPos, ref BitArray bits,
@@ -244,7 +280,9 @@ internal class ParamReloader
             if (displayType == PARAMDEF.DefType.u8 || displayType == PARAMDEF.DefType.dummy8)
             {
                 if (bitFieldPos == 0)
+                {
                     bits = new BitArray(8);
+                }
 
                 return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
             }
@@ -252,7 +290,9 @@ internal class ParamReloader
             if (displayType == PARAMDEF.DefType.u16)
             {
                 if (bitFieldPos == 0)
+                {
                     bits = new BitArray(16);
+                }
 
                 return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
             }
@@ -260,7 +300,9 @@ internal class ParamReloader
             if (displayType == PARAMDEF.DefType.u32)
             {
                 if (bitFieldPos == 0)
+                {
                     bits = new BitArray(32);
+                }
 
                 return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
             }
@@ -280,7 +322,9 @@ internal class ParamReloader
 
             var value = Convert.ToSingle(cell.Value);
             if (valueRead != value)
+            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
+            }
 
             return sizeof(float);
         }
@@ -292,7 +336,9 @@ internal class ParamReloader
 
             var value = Convert.ToInt32(cell.Value);
             if (valueRead != value)
+            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
+            }
 
             return sizeof(int);
         }
@@ -304,7 +350,9 @@ internal class ParamReloader
 
             var value = Convert.ToInt16(cell.Value);
             if (valueRead != value)
+            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
+            }
 
             return sizeof(short);
         }
@@ -316,7 +364,9 @@ internal class ParamReloader
 
             var value = Convert.ToSByte(cell.Value);
             if (valueRead != value)
+            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
+            }
 
             return sizeof(sbyte);
         }
@@ -328,7 +378,9 @@ internal class ParamReloader
 
             var value = Convert.ToUInt32(cell.Value);
             if (valueRead != value)
+            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
+            }
 
             return sizeof(uint);
         }
@@ -340,7 +392,9 @@ internal class ParamReloader
 
             var value = Convert.ToUInt16(cell.Value);
             if (valueRead != value)
+            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
+            }
 
             return sizeof(ushort);
         }
@@ -352,14 +406,17 @@ internal class ParamReloader
 
             var value = Convert.ToByte(cell.Value);
             if (valueRead != value)
+            {
                 memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
+            }
 
             return sizeof(byte);
         }
 
-        if (displayType == PARAMDEF.DefType.dummy8 || displayType == PARAMDEF.DefType.fixstr ||
-            displayType == PARAMDEF.DefType.fixstrW)
+        if (displayType == PARAMDEF.DefType.dummy8 || displayType == PARAMDEF.DefType.fixstr || displayType == PARAMDEF.DefType.fixstrW)
+        {
             return cell.Def.ArrayLength * (displayType == PARAMDEF.DefType.fixstrW ? 2 : 1);
+        }
 
         throw new Exception("Unexpected Field Type");
     }
@@ -370,17 +427,27 @@ internal class ParamReloader
         if (!flushBits)
         {
             if (cell == null)
+            {
                 throw new ArgumentException();
+            }
 
             BitArray cellValueBitArray = null;
             if (bits.Count == 8)
+            {
                 cellValueBitArray = new BitArray(BitConverter.GetBytes((byte)cell.Value.Value << bitFieldPos));
+            }
             else if (bits.Count == 16)
+            {
                 cellValueBitArray = new BitArray(BitConverter.GetBytes((ushort)cell.Value.Value << bitFieldPos));
+            }
             else if (bits.Count == 32)
+            {
                 cellValueBitArray = new BitArray(BitConverter.GetBytes((uint)cell.Value.Value << bitFieldPos));
+            }
             else
+            {
                 throw new Exception("Unknown bitfield length");
+            }
 
             for (var i = 0; i < cell.Value.Def.BitSize; i++)
             {
@@ -399,22 +466,30 @@ internal class ParamReloader
             {
                 var bitbuffer = bitField[0];
                 if (valueRead != bitbuffer)
+                {
                     memoryHandler.WriteProcessMemory(CellDataPtr, ref bitbuffer);
+                }
             }
             else if (bits.Count == 16)
             {
                 var bitbuffer = BitConverter.ToUInt16(bitField, 0);
                 if (valueRead != bitbuffer)
+                {
                     memoryHandler.WriteProcessMemory(CellDataPtr, ref bitbuffer);
+                }
             }
             else if (bits.Count == 32)
             {
                 var bitbuffer = BitConverter.ToUInt32(bitField, 0);
                 if (valueRead != bitbuffer)
+                {
                     memoryHandler.WriteProcessMemory(CellDataPtr, ref bitbuffer);
+                }
             }
             else
+            {
                 throw new Exception("Unknown bitfield length");
+            }
 
             var advance = bits.Count / 8;
             bitFieldPos = 0;
@@ -429,6 +504,7 @@ internal class ParamReloader
     {
         ProjectType game = Project.Type;
         if (!GameOffsets.GameOffsetBank.ContainsKey(game))
+        {
             try
             {
                 GameOffsets.GameOffsetBank.Add(game, new GameOffsets(game));
@@ -439,6 +515,7 @@ internal class ParamReloader
                     TaskLogs.LogPriority.High, e);
                 return null;
             }
+        }
 
         return GameOffsets.GameOffsetBank[game];
     }
@@ -447,7 +524,9 @@ internal class ParamReloader
     {
         GameOffsets offs = GetGameOffsets();
         if (offs == null)
+        {
             return new string[0];
+        }
 
         return offs.paramOffsets.Keys.ToArray();
     }
@@ -500,20 +579,27 @@ internal class GameOffsets
         exeName = basicData["exeName"];
 
         if (basicData.TryGetValue("paramBase", out var paramBaseStr))
+        {
             ParamBaseOffset = Utils.ParseHexFromString(paramBaseStr);
+        }
         basicData.TryGetValue("paramBaseAob", out ParamBaseAobPattern);
 
         if (basicData.TryGetValue("paramBaseAobRelativeOffset", out var paramBaseAobRelativeOffsetStr))
+        {
             foreach (var relativeOffset in paramBaseAobRelativeOffsetStr.Split(','))
             {
                 var split = relativeOffset.Split('/');
                 ParamBaseAobRelativeOffsets.Add(new(Utils.ParseHexFromString(split[0]), Utils.ParseHexFromString(split[1])));
             }
+        }
 
         var innerpath = basicData["paramInnerPath"].Split("/");
         paramInnerPath = new int[innerpath.Length];
+
         for (var i = 0; i < innerpath.Length; i++)
+        {
             paramInnerPath[i] = Utils.ParseHexFromString(innerpath[i]);
+        }
 
         paramCountOffset = Utils.ParseHexFromString(basicData["paramCountOffset"]);
         paramDataOffset = Utils.ParseHexFromString(basicData["paramDataOffset"]);
@@ -534,8 +620,11 @@ internal class GameOffsets
     {
         Dictionary<string, string> paramData = GetOffsetFile(dir);
         Dictionary<string, int> offsets = new();
+
         foreach (KeyValuePair<string, string> entry in paramData)
+        {
             offsets.Add(entry.Key, Utils.ParseHexFromString(entry.Value));
+        }
 
         return offsets;
     }
@@ -544,6 +633,7 @@ internal class GameOffsets
     {
         var data = File.ReadAllLines(dir);
         Dictionary<string, string> values = new();
+
         foreach (var line in data)
         {
             var split = line.Split(":");
@@ -641,13 +731,17 @@ public class SoulsMemoryHandler
         ReadProcessMemory(gameProcess.MainModule.BaseAddress, ref mem, memSize);
 
         for (var offset = 0; offset < memFindLength; offset++)
+        {
             if (mem[offset] == pattern[0])
             {
                 var matched = true;
                 for (var iPattern = 1; iPattern < pattern.Length; iPattern++)
                 {
                     if (wildcard[iPattern] || mem[offset + iPattern] == pattern[iPattern])
+                    {
                         continue;
+                    }
+
                     matched = false;
                     break;
                 }
@@ -656,13 +750,17 @@ public class SoulsMemoryHandler
                 {
                     // Match has been found. Set out variable and add to process offsets.
                     foreach (var relativeOffset in relativeOffsets)
+                    {
                         offset = GetRelativeOffset(mem, offset, relativeOffset.Item1, relativeOffset.Item2);
+                    }
+
                     outOffset = offset;
                     _processOffsets.Add(offsetName, offset);
                     TaskLogs.AddLog($"Found AOB in memory for {offsetName}. Offset: 0x{offset:X2}", LogLevel.Debug);
                     return true;
                 }
             }
+        }
 
         TaskLogs.AddLog($"Unable to find AOB in memory for {offsetName}", LogLevel.Warning);
         return false;
@@ -679,16 +777,22 @@ public class SoulsMemoryHandler
             var byteStr = split[i].Replace("0x", "");
 
             if (byteStr == "??")
+            {
                 wildcard[i] = true;
+            }
             else
+            {
                 pattern[i] = byte.Parse(byteStr, NumberStyles.HexNumber);
+            }
         }
     }
 
     internal nint GetParamPtr(nint paramRepoPtr, GameOffsets offsets, int pOffset)
     {
         if (offsets.Is64Bit)
+        {
             return GetParamPtr64Bit(paramRepoPtr, offsets, pOffset);
+        }
 
         return GetParamPtr32Bit(paramRepoPtr, offsets, pOffset);
     }
@@ -726,7 +830,9 @@ public class SoulsMemoryHandler
     internal int GetRowCount(GameOffsets gOffsets, nint paramPtr)
     {
         if (gOffsets.type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        {
             return GetRowCountInt(gOffsets, paramPtr);
+        }
 
         return GetRowCountShort(gOffsets, paramPtr);
     }
@@ -766,7 +872,9 @@ public class SoulsMemoryHandler
                 var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, nint.Zero, 0, address,
                     nint.Zero, ThreadCreationFlags.Immediately, out var threadId);
                 if (threadHandle != nint.Zero)
+                {
                     Kernel32.WaitForSingleObject(threadHandle, 30000);
+                }
             }
 
             NativeWrapper.VirtualFreeEx(memoryHandle, address, buffer, FreeType.PreservePlaceholder);
@@ -797,8 +905,11 @@ public class SoulsMemoryHandler
             {
                 var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, nint.Zero, 0, address,
                     nint.Zero, ThreadCreationFlags.Immediately, out var threadId);
+
                 if (threadHandle != nint.Zero)
+                {
                     Kernel32.WaitForSingleObject(threadHandle, 30000);
+                }
             }
 
             NativeWrapper.VirtualFreeEx(memoryHandle, address, Size1, FreeType.PreservePlaceholder);

@@ -51,7 +51,9 @@ internal class SearchEngine<A, B>
     public bool HandlesCommand(string command)
     {
         if (command.Length > 0 && command.StartsWith('!'))
+        {
             command = command.Substring(1);
+        }
 
         return filterList.ContainsKey(command.Split(" ")[0]);
     }
@@ -63,11 +65,15 @@ internal class SearchEngine<A, B>
         {
             SearchEngineCommand<A, B> cmd = filterList[op];
             if (cmd.shouldShow == null || cmd.shouldShow())
+            {
                 options.Add(op + "(" + filterList[op].args.Length + " args)");
+            }
         }
 
         if (defaultFilter != null && (defaultFilter.shouldShow == null || defaultFilter.shouldShow()))
+        {
             options.Add("or omit specifying and use default (" + defaultFilter.args.Length + "args)");
+        }
 
         return options;
     }
@@ -79,7 +85,9 @@ internal class SearchEngine<A, B>
         {
             SearchEngineCommand<A, B> cmd = filterList[op];
             if (cmd.shouldShow == null || cmd.shouldShow())
+            {
                 options.Add((op, cmd.args, cmd.wiki));
+            }
         }
 
         return options;
@@ -89,10 +97,14 @@ internal class SearchEngine<A, B>
     {
         List<(string, string[])> options = new();
         foreach (var op in filterList.Keys)
+        {
             options.Add((op, filterList[op].args));
+        }
 
         if (defaultFilter != null)
+        {
             options.Add(("", defaultFilter.args));
+        }
 
         return options;
     }
@@ -114,7 +126,9 @@ internal class SearchEngine<A, B>
             {
                 //temp
                 if (condition.Equals(""))
+                {
                     break;
+                }
 
                 var cmd = condition.Split(' ', 2);
 
@@ -144,15 +158,23 @@ internal class SearchEngine<A, B>
                 }
 
                 for (var i = 0; i < argC; i++)
+                {
                     if (args[i].StartsWith('$'))
+                    {
                         args[i] = MassParamEdit.massEditVars[args[i].Substring(1)].ToString();
+                    }
+                }
 
                 Func<A, Func<B, bool>> filter = selectedCommand.func(args, lenient);
                 Func<B, bool> criteria = filter(context);
                 List<B> newRows = new();
                 foreach (B row in liveSet)
+                {
                     if (not ^ criteria(row))
+                    {
                         newRows.Add(row);
+                    }
+                }
 
                 liveSet = newRows;
             }
@@ -199,7 +221,9 @@ internal class MultiStageSearchEngine<A, B, C, D> : SearchEngine<A, B>
         var conditions = command.Split("&&", 2, StringSplitOptions.TrimEntries);
         List<B> stage1list = base.Search(context, sourceSet, conditions[0], lenient, failureAllOrNone);
         if (conditions.Length == 1)
+        {
             return stage1list;
+        }
 
         B exampleItem = stage1list.FirstOrDefault();
         List<D> stage2list = searchEngineForMultiStage.Search(contextGetterForMultiStage(context, exampleItem),
@@ -263,16 +287,20 @@ internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
         unpacker = dummy =>
             ParamBank.AuxBanks.Select((aux, i) => aux.Value.Params.Select((x, i) => (aux.Value, x.Value)))
                 .Aggregate(bank.Params.Values.Select((x, i) => (bank, x)), (o, n) => o.Concat(n)).ToList();
+
         filterList.Add("modified", newCmd(new string[0],
             "Selects params where any rows do not match the vanilla version, or where any are added. Ignores row names",
             noArgs(noContext(param =>
             {
                 if (param.Item1 != bank)
+                {
                     return false;
+                }
 
                 HashSet<int> cache = bank.GetVanillaDiffRows(bank.GetKeyForParam(param.Item2));
                 return cache.Count > 0;
             }))));
+
         filterList.Add("param", newCmd(new[] { "param name (regex)" },
             "Selects all params whose name matches the given regex", (args, lenient) =>
             {
@@ -284,6 +312,7 @@ internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             ? ""
                             : bank.GetKeyForParam(param.Item2)));
             }));
+
         filterList.Add("auxparam", newCmd(new[] { "parambank name", "param name (regex)" },
             "Selects params from the specified regulation or parambnd where the param name matches the given regex",
             (args, lenient) =>
@@ -297,6 +326,7 @@ internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                             ? ""
                             : auxBank.GetKeyForParam(param.Item2)));
             }, () => ParamBank.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
+
         defaultFilter = newCmd(new[] { "param name (regex)" },
             "Selects all params whose name matches the given regex", (args, lenient) =>
             {
@@ -332,24 +362,30 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return row => cache.Contains(row.ID);
                 }
             )));
+
         filterList.Add("added", newCmd(new string[0], "Selects rows where the ID is not found in the vanilla param",
             noArgs(context =>
                 {
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     if (!ParamBank.VanillaBank.Params.ContainsKey(paramName))
+                    {
                         return row => true;
+                    }
 
                     Param vanilParam = ParamBank.VanillaBank.Params[paramName];
                     return row => vanilParam[row.ID] == null;
                 }
             )));
+
         filterList.Add("mergeable", newCmd(new string[0],
             "Selects rows which are not modified in the primary regulation or parambnd and there is exactly one equivalent row in another regulation or parambnd that is modified",
             noArgs(context =>
                 {
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     if (paramName == null)
+                    {
                         return row => true;
+                    }
 
                     HashSet<int> pCache = ParamBank.PrimaryBank.GetVanillaDiffRows(paramName);
                     var auxCaches = ParamBank.AuxBanks.Select(x =>
@@ -359,6 +395,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         auxCaches.Where(x => x.Item2.Contains(row.ID) && x.Item1.Contains(row.ID)).Count() == 1;
                 }
             ), () => ParamBank.AuxBanks.Count > 0));
+
         filterList.Add("conflicts", newCmd(new string[0],
             "Selects rows which, among all equivalents in the primary and additional regulations or parambnds, there is more than row 1 which is modified",
             noArgs(context =>
@@ -372,12 +409,14 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                             .Where(x => x.Item2.Contains(row.ID) && x.Item1.Contains(row.ID)).Count() > 1;
                 }
             ), () => ParamBank.AuxBanks.Count > 0));
+
         filterList.Add("id", newCmd(new[] { "row id (regex)" }, "Selects rows whose ID matches the given regex",
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0].ToLower()) : new Regex($@"^{args[0]}$");
                 return noContext(row => rx.IsMatch(row.ID.ToString()));
             }));
+
         filterList.Add("idrange", newCmd(new[] { "row id minimum (inclusive)", "row id maximum (inclusive)" },
             "Selects rows whose ID falls in the given numerical range", (args, lenient) =>
             {
@@ -385,12 +424,14 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var ceil = double.Parse(args[1]);
                 return noContext(row => row.ID >= floor && row.ID <= ceil);
             }));
+
         filterList.Add("name", newCmd(new[] { "row name (regex)" },
             "Selects rows whose Name matches the given regex", (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(row => rx.IsMatch(row.Name == null ? "" : row.Name));
             }));
+
         filterList.Add("prop", newCmd(new[] { "field internalName", "field value (regex)" },
             "Selects rows where the specified field has a value that matches the given regex", (args, lenient) =>
             {
@@ -400,13 +441,16 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     Param.Cell? cq = row[field];
                     if (cq == null)
+                    {
                         throw new Exception();
+                    }
 
                     Param.Cell c = cq.Value;
                     var term = c.Value.ToParamEditorString();
                     return rx.IsMatch(term);
                 });
             }));
+
         filterList.Add("proprange", newCmd(
             new[] { "field internalName", "field value minimum (inclusive)", "field value maximum (inclusive)" },
             "Selects rows where the specified field has a value that falls in the given numerical range",
@@ -419,11 +463,14 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     Param.Cell? c = row[field];
                     if (c == null)
+                    {
                         throw new Exception();
+                    }
 
                     return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                 });
             }));
+
         filterList.Add("propref", newCmd(new[] { "field internalName", "referenced row name (regex)" },
             "Selects rows where the specified field that references another param has a value referencing a row whose name matches the given regex",
             (args, lenient) =>
@@ -439,20 +486,25 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         Param.Cell? c = row[field];
                         if (c == null)
+                        {
                             throw new Exception();
+                        }
 
                         var val = (int)c.Value.Value;
                         foreach (ParamRef rt in validFields)
                         {
                             Param.Row r = bank.Params[rt.param][val];
                             if (r != null && rx.IsMatch(r.Name ?? ""))
+                            {
                                 return true;
+                            }
                         }
 
                         return false;
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
+
         filterList.Add("propwhere", newCmd(new[] { "field internalName", "cell/field selector" },
             "Selects rows where the specified field appears when the given cell/field search is given",
             (args, lenient) =>
@@ -472,6 +524,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
+
         filterList.Add("fmg", newCmd(new[] { "fmg title (regex)" },
             "Selects rows which have an attached FMG and that FMG's text matches the given regex",
             (args, lenient) =>
@@ -484,29 +537,38 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     foreach ((var param, FmgEntryCategory cat) in ParamBank.ParamToFmgCategoryList)
                     {
                         if (paramName != param)
+                        {
                             continue;
+                        }
 
                         category = cat;
                     }
 
                     if (category == FmgEntryCategory.None)
+                    {
                         throw new Exception();
+                    }
 
                     List<FMG.Entry> fmgEntries = FMGBank.GetFmgEntriesByCategory(category, false);
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)
+                    {
                         _cache[fmgEntry.ID] = fmgEntry;
+                    }
 
                     return row =>
                     {
                         if (!_cache.ContainsKey(row.ID))
+                        {
                             return false;
+                        }
 
                         FMG.Entry e = _cache[row.ID];
                         return e != null && rx.IsMatch(e.Text ?? "");
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
+
         filterList.Add("vanillaprop", newCmd(new[] { "field internalName", "field value (regex)" },
             "Selects rows where the vanilla equivilent of that row has a value for the given field that matches the given regex",
             (args, lenient) =>
@@ -520,11 +582,15 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         Param.Row vrow = vparam[row.ID];
                         if (vrow == null)
+                        {
                             return false;
+                        }
 
                         Param.Cell? cq = vrow[field];
                         if (cq == null)
+                        {
                             throw new Exception();
+                        }
 
                         Param.Cell c = cq.Value;
                         var term = c.Value.ToParamEditorString();
@@ -532,6 +598,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
+
         filterList.Add("vanillaproprange", newCmd(
             new[] { "field internalName", "field value minimum (inclusive)", "field value maximum (inclusive)" },
             "Selects rows where the vanilla equivilent of that row has a value for the given field that falls in the given numerical range",
@@ -547,16 +614,21 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         Param.Row vrow = vparam[row.ID];
                         if (vrow == null)
+                        {
                             return false;
+                        }
 
                         Param.Cell? c = vrow[field];
                         if (c == null)
+                        {
                             throw new Exception();
+                        }
 
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
+
         filterList.Add("auxprop", newCmd(new[] { "parambank name", "field internalName", "field value (regex)" },
             "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that matches the given regex.\nCan be used to determine if an aux row exists.",
             (args, lenient) =>
@@ -565,7 +637,9 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var field = args[1];
                 ParamBank bank;
                 if (!ParamBank.AuxBanks.TryGetValue(args[0], out bank))
+                {
                     throw new Exception("Unable to find auxbank " + args[0]);
+                }
 
                 return param =>
                 {
@@ -574,11 +648,15 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         Param.Row vrow = vparam[row.ID];
                         if (vrow == null)
+                        {
                             return false;
+                        }
 
                         Param.Cell? cq = vrow[field];
                         if (cq == null)
+                        {
                             throw new Exception();
+                        }
 
                         Param.Cell c = cq.Value;
                         var term = c.Value.ToParamEditorString();
@@ -586,6 +664,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 };
             }, () => ParamBank.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
+
         filterList.Add("auxproprange", newCmd(
             new[]
             {
@@ -600,7 +679,9 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var ceil = double.Parse(args[2]);
                 ParamBank bank;
                 if (!ParamBank.AuxBanks.TryGetValue(args[0], out bank))
+                {
                     throw new Exception("Unable to find auxbank " + args[0]);
+                }
 
                 return param =>
                 {
@@ -610,12 +691,15 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         Param.Row vrow = vparam[row.ID];
                         Param.Cell? c = vrow[field];
                         if (c == null)
+                        {
                             throw new Exception();
+                        }
 
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                     };
                 };
             }, () => ParamBank.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
+
         filterList.Add("semijoin",
             newCmd(
                 new[]
@@ -632,13 +716,18 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     var otherSearchTerm = args[3];
                     Param otherParamReal;
                     if (!ParamBank.PrimaryBank.Params.TryGetValue(otherParam, out otherParamReal))
+                    {
                         throw new Exception("Could not find param " + otherParam);
+                    }
 
                     List<Param.Row> rows = rse.Search((ParamBank.PrimaryBank, otherParamReal), otherSearchTerm,
                         lenient, false);
                     (PseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
+
                     if (!otherFieldReal.IsColumnValid())
+                    {
                         throw new Exception("Could not find field " + otherField);
+                    }
 
                     var possibleValues = rows.Select(x => x.Get(otherFieldReal).ToParamEditorString())
                         .Distinct().ToHashSet();
@@ -646,7 +735,9 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     {
                         (PseudoColumn, Param.Column) thisFieldReal = param.Item2.GetCol(thisField);
                         if (!thisFieldReal.IsColumnValid())
+                        {
                             throw new Exception("Could not find field " + thisField);
+                        }
 
                         return row =>
                         {
@@ -655,6 +746,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         };
                     };
                 }, () => CFG.Current.Param_AdvancedMassedit));
+
         filterList.Add("unique", newCmd(new string[] { "field" }, "Selects all rows where the value in the given field is unique", (args, lenient) =>
         {
             var field = args[0].Replace(@"\s", " ");
@@ -662,9 +754,13 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             {
                 var col = param.Item2.GetCol(field);
                 if (!col.IsColumnValid())
+                {
                     throw new Exception("Could not find field " + field);
+                }
+
                 var distribution = ParamUtils.GetParamValueDistribution(param.Item2.Rows, col);
                 var setOfDuped = distribution.Where((entry, linqi) => entry.Item2 > 1).Select((entry, linqi) => entry.Item1).ToHashSet();
+
                 return (row) =>
                 {
                     return !setOfDuped.Contains(row.Get(col));
@@ -676,7 +772,9 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
             (args, lenient) =>
             {
                 if (!lenient)
+                {
                     return noContext(row => false);
+                }
 
                 Regex rx = new(args[0], RegexOptions.IgnoreCase);
                 return paramContext =>
@@ -686,18 +784,24 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     foreach ((var param, FmgEntryCategory cat) in ParamBank.ParamToFmgCategoryList)
                     {
                         if (paramName != param)
+                        {
                             continue;
+                        }
 
                         category = cat;
                     }
 
                     if (category == FmgEntryCategory.None || !FMGBank.IsLoaded)
+                    {
                         return row => rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString());
+                    }
 
                     List<FMG.Entry> fmgEntries = FMGBank.GetFmgEntriesByCategory(category, false);
                     Dictionary<int, FMG.Entry> _cache = new();
                     foreach (FMG.Entry fmgEntry in fmgEntries)
+                    {
                         _cache[fmgEntry.ID] = fmgEntry;
+                    }
 
                     return row =>
                     {
@@ -729,6 +833,7 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
             list.AddRange(row.Item2.Columns.Select((cell, i) => (PseudoColumn.None, cell)));
             return list;
         };
+
         defaultFilter = newCmd(new[] { "field internalName (regex)" },
             "Selects cells/fields where the internal name of that field matches the given regex", (args, lenient) =>
             {
@@ -738,38 +843,53 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                 return noContext(cell =>
                 {
                     if (matchID && cell.Item1 == PseudoColumn.ID)
+                    {
                         return true;
+                    }
 
                     if (matchName && cell.Item1 == PseudoColumn.Name)
+                    {
                         return true;
+                    }
 
                     if (cell.Item2 != null)
                     {
                         FieldMetaData meta = lenient ? FieldMetaData.Get(cell.Item2.Def) : null;
                         if (lenient && meta?.AltName != null && rx.IsMatch(meta?.AltName))
+                        {
                             return true;
+                        }
 
                         if (rx.IsMatch(cell.Item2.Def.InternalName))
+                        {
                             return true;
+                        }
                     }
 
                     return false;
                 });
             });
+
         filterList.Add("modified", newCmd(new string[0],
             "Selects cells/fields where the equivalent cell in the vanilla regulation or parambnd has a different value",
             (args, lenient) => row =>
             {
                 if (row.Item1 == null)
+                {
                     throw new Exception("Can't check if cell is modified - not part of a param");
+                }
 
                 Param vParam = ParamBank.VanillaBank.Params?[row.Item1];
                 if (vParam == null)
+                {
                     throw new Exception("Can't check if cell is modified - no vanilla param");
+                }
 
                 Param.Row r = vParam[row.Item2.ID];
                 if (r == null)
+                {
                     return col => true;
+                }
 
                 return col =>
                 {
@@ -779,34 +899,47 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     return ParamUtils.IsValueDiff(ref valA, ref valB, col.GetColumnType());
                 };
             }));
+
         filterList.Add("auxmodified", newCmd(new[] { "parambank name" },
             "Selects cells/fields where the equivalent cell in the specified regulation or parambnd has a different value",
             (args, lenient) =>
             {
                 if (!ParamBank.AuxBanks.ContainsKey(args[0]))
+                {
                     throw new Exception("Can't check if cell is modified - parambank not found");
+                }
 
                 ParamBank bank = ParamBank.AuxBanks[args[0]];
                 return row =>
                 {
                     if (row.Item1 == null)
+                    {
                         throw new Exception("Can't check if cell is modified - not part of a param");
+                    }
 
                     Param auxParam = bank.Params?[row.Item1];
                     if (auxParam == null)
+                    {
                         throw new Exception("Can't check if cell is modified - no aux param");
+                    }
 
                     Param vParam = ParamBank.VanillaBank.Params?[row.Item1];
                     if (vParam == null)
+                    {
                         throw new Exception("Can't check if cell is modified - no vanilla param");
+                    }
 
                     Param.Row r = auxParam[row.Item2.ID];
                     Param.Row r2 = vParam[row.Item2.ID];
                     if (r == null)
+                    {
                         return col => false;
+                    }
 
                     if (r2 == null)
+                    {
                         return col => true;
+                    }
 
                     return col =>
                     {
@@ -818,6 +951,7 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     };
                 };
             }, () => ParamBank.AuxBanks.Count > 0));
+
         filterList.Add("sftype", newCmd(new[] { "paramdef type" },
             "Selects cells/fields where the field's data type, as enumerated by soulsformats, matches the given regex",
             (args, lenient) =>
@@ -843,7 +977,9 @@ internal class VarSearchEngine : SearchEngine<bool, string>
             "Selects variables whose name matches the given regex", (args, lenient) =>
             {
                 if (args[0].StartsWith('$'))
+                {
                     args[0] = args[0].Substring(1);
+                }
 
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(name => rx.IsMatch(name));
