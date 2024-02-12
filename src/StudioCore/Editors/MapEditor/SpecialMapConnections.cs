@@ -7,7 +7,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 ///     Business logic for cross-map connections in a game.
@@ -28,7 +28,7 @@ internal class SpecialMapConnections
 
     public static Transform? GetEldenMapTransform(
         string mapid,
-        IReadOnlyDictionary<string, ObjectContainer> loadedMaps)
+        IReadOnlyDictionary<string, MapObjectContainer> loadedMaps)
     {
         if (!TryInitializeEldenOffsets())
         {
@@ -50,8 +50,8 @@ internal class SpecialMapConnections
 
         var closestDistSq = float.PositiveInfinity;
         Vector3 closestOriginGlobal = Vector3.Zero;
-        ObjectContainer closestMap = null;
-        foreach (KeyValuePair<string, ObjectContainer> entry in loadedMaps)
+        MapObjectContainer closestMap = null;
+        foreach (KeyValuePair<string, MapObjectContainer> entry in loadedMaps)
         {
             if (entry.Value == null
                 || !entry.Value.RootObject.HasTransform
@@ -126,8 +126,8 @@ internal class SpecialMapConnections
                 {
                     for (var z = 0; z <= 1; z++)
                     {
-                        var childX = (byte)((tileX * 2) + x);
-                        var childZ = (byte)((tileZ * 2) + z);
+                        var childX = (byte)(tileX * 2 + x);
+                        var childZ = (byte)(tileZ * 2 + z);
                         var child = FormatMap(new byte[] { 60, childX, childZ, (byte)(parts[3] - 1) });
                         if (allMapIds.Contains(child))
                         {
@@ -141,8 +141,8 @@ internal class SpecialMapConnections
                             {
                                 for (var cz = 0; cz <= 1; cz++)
                                 {
-                                    var descX = (byte)((childX * 2) + cx);
-                                    var descZ = (byte)((childZ * 2) + cz);
+                                    var descX = (byte)(childX * 2 + cx);
+                                    var descZ = (byte)(childZ * 2 + cz);
                                     var desc = FormatMap(new byte[] { 60, descX, descZ, (byte)(parts[3] - 2) });
                                     if (allMapIds.Contains(desc))
                                     {
@@ -280,7 +280,7 @@ internal class SpecialMapConnections
             var srcId = FormatMap(GetRowMapParts(row, srcPartFields));
             var dstId = FormatMap(dstParts);
             if (dungeonOffsets.ContainsKey(srcId)
-                || (correctConnects.TryGetValue(srcId, out var trueConnect) && dstId != trueConnect))
+                || correctConnects.TryGetValue(srcId, out var trueConnect) && dstId != trueConnect)
             {
                 continue;
             }
@@ -289,7 +289,9 @@ internal class SpecialMapConnections
             Vector3 dstPos = GetRowPosition(row, "dstPos");
             dungeonOffsets[srcId] = new DungeonOffset
             {
-                TileX = dstParts[1], TileZ = dstParts[2], TileOffset = dstPos - srcPos
+                TileX = dstParts[1],
+                TileZ = dstParts[2],
+                TileOffset = dstPos - srcPos
             };
         }
 
@@ -312,7 +314,9 @@ internal class SpecialMapConnections
                 Vector3 dstPos = GetRowPosition(row, "dstPos");
                 dungeonOffsets[dstId] = new DungeonOffset
                 {
-                    TileX = val.TileX, TileZ = val.TileZ, TileOffset = val.TileOffset + srcPos - dstPos
+                    TileX = val.TileX,
+                    TileZ = val.TileZ,
+                    TileOffset = val.TileOffset + srcPos - dstPos
                 };
             }
         }
@@ -327,7 +331,9 @@ internal class SpecialMapConnections
         // m60_00_00_99's origin matches m60_10_08_02
         dungeonOffsets["m60_00_00_00"] = new DungeonOffset
         {
-            TileX = 40, TileZ = 32, TileOffset = new Vector3(384, 0, 384)
+            TileX = 40,
+            TileZ = 32,
+            TileOffset = new Vector3(384, 0, 384)
         };
 
         // Colosseums are not connected to any maps, but their in-game map position in emevd matches the overworld colosseums
@@ -344,11 +350,15 @@ internal class SpecialMapConnections
 
         dungeonOffsets["m45_01_00_00"] = new DungeonOffset
         {
-            TileX = 47, TileZ = 42, TileOffset = new Vector3(-2.34f, 150.4f, -43.36f)
+            TileX = 47,
+            TileZ = 42,
+            TileOffset = new Vector3(-2.34f, 150.4f, -43.36f)
         };
         dungeonOffsets["m45_02_00_00"] = new DungeonOffset
         {
-            TileX = 42, TileZ = 40, TileOffset = new Vector3(-24.47f, 208.82f, -66.69f)
+            TileX = 42,
+            TileZ = 40,
+            TileOffset = new Vector3(-24.47f, 208.82f, -66.69f)
         };
 
         eldenRingOffsets = dungeonOffsets;

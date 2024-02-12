@@ -394,7 +394,7 @@ public class FlverResource : IResource, IDisposable
             }
         }
 
-        if (!CFG.Current.Map_Enable_Texturing)
+        if (!CFG.Current.Viewport_Enable_Texturing)
         {
             dest.ShaderName = @"SimpleFlver";
             dest.LayoutType = MeshLayoutType.LayoutSky;
@@ -456,7 +456,7 @@ public class FlverResource : IResource, IDisposable
         dest.MaterialBuffer = Renderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
 
-        if (!CFG.Current.Map_Enable_Texturing)
+        if (!CFG.Current.Viewport_Enable_Texturing)
         {
             dest.ShaderName = @"SimpleFlver";
             dest.LayoutType = MeshLayoutType.LayoutSky;

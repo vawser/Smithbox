@@ -1,5 +1,5 @@
 ﻿using ImGuiNET;
-using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -17,9 +17,11 @@ public class NullViewport : IViewport
     public int X;
     public int Y;
 
-    public NullViewport(string id, ActionManager am, Selection sel, int width, int height)
+    private ViewportType _viewportType;
+    public NullViewport(ViewportType viewportType, string id, EntityActionManager am, MapSelection sel, int width, int height)
     {
         _vpid = id;
+        _viewportType = viewportType;
         Width = width;
         Height = height;
         WorldView = new WorldView(new Rectangle(0, 0, Width, Height));
@@ -30,7 +32,7 @@ public class NullViewport : IViewport
     public int Height { get; private set; }
 
     public float NearClip { get; set; } = 0.1f;
-    public float FarClip { get; set; } = CFG.Current.GFX_RenderDistance_Max;
+    public float FarClip { get; set; } = CFG.Current.Viewport_RenderDistance_Max;
 
     public bool ViewportSelected => false;
 

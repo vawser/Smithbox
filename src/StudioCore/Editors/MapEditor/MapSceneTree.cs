@@ -19,8 +19,9 @@ using System.Runtime.InteropServices;
 using Veldrid;
 using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.MsbEditor;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 public struct DragDropPayload
 {
@@ -37,7 +38,7 @@ public interface SceneTreeEventHandler
     public void OnEntityContextMenu(Entity ent);
 }
 
-public class SceneTree : IActionEventHandler
+public class MapSceneTree : IActionEventHandler
 {
     public enum Configuration
     {
@@ -58,12 +59,12 @@ public class SceneTree : IActionEventHandler
     private readonly Dictionary<int, DragDropPayload> _dragDropPayloads = new();
 
     private readonly List<Entity> _dragDropSources = new();
-    private readonly ActionManager _editorActionManager;
+    private readonly EntityActionManager _editorActionManager;
 
     private readonly SceneTreeEventHandler _handler;
 
     private readonly string _id;
-    private readonly Selection _selection;
+    private readonly MapSelection _selection;
 
     // Keep track of open tree nodes for selection management purposes
     private readonly HashSet<Entity> _treeOpenEntities = new();
@@ -73,7 +74,7 @@ public class SceneTree : IActionEventHandler
 
     private readonly IViewport _viewport;
 
-    private Dictionary<string, Dictionary<MapEntity.MapEntityType, Dictionary<Type, List<MapEntity>>>>
+    private Dictionary<string, Dictionary<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>>>
         _cachedTypeView;
 
     private bool _chaliceLoadError;
@@ -100,7 +101,7 @@ public class SceneTree : IActionEventHandler
     private Dictionary<string, string> _mapPieceAliasCache;
 
 
-    public SceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, Selection sel, ActionManager aman, IViewport vp)
+    public MapSceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, MapSelection sel, EntityActionManager aman, IViewport vp)
     {
         _handler = handler;
         _id = id;
@@ -134,35 +135,35 @@ public class SceneTree : IActionEventHandler
         if (_cachedTypeView == null)
         {
             _cachedTypeView =
-                new Dictionary<string, Dictionary<MapEntity.MapEntityType, Dictionary<Type, List<MapEntity>>>>();
+                new Dictionary<string, Dictionary<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>>>();
         }
 
-        Dictionary<MapEntity.MapEntityType, Dictionary<Type, List<MapEntity>>> mapcache = new();
-        mapcache.Add(MapEntity.MapEntityType.Part, new Dictionary<Type, List<MapEntity>>());
-        mapcache.Add(MapEntity.MapEntityType.Region, new Dictionary<Type, List<MapEntity>>());
-        mapcache.Add(MapEntity.MapEntityType.Event, new Dictionary<Type, List<MapEntity>>());
+        Dictionary<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>> mapcache = new();
+        mapcache.Add(MsbEntity.MsbEntityType.Part, new Dictionary<Type, List<MsbEntity>>());
+        mapcache.Add(MsbEntity.MsbEntityType.Region, new Dictionary<Type, List<MsbEntity>>());
+        mapcache.Add(MsbEntity.MsbEntityType.Event, new Dictionary<Type, List<MsbEntity>>());
         if (Project.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT
             or ProjectType.ER or ProjectType.AC6)
         {
-            mapcache.Add(MapEntity.MapEntityType.Light, new Dictionary<Type, List<MapEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
         }
         else if (Project.Type is ProjectType.DS2S)
         {
-            mapcache.Add(MapEntity.MapEntityType.Light, new Dictionary<Type, List<MapEntity>>());
-            mapcache.Add(MapEntity.MapEntityType.DS2Event, new Dictionary<Type, List<MapEntity>>());
-            mapcache.Add(MapEntity.MapEntityType.DS2EventLocation, new Dictionary<Type, List<MapEntity>>());
-            mapcache.Add(MapEntity.MapEntityType.DS2Generator, new Dictionary<Type, List<MapEntity>>());
-            mapcache.Add(MapEntity.MapEntityType.DS2GeneratorRegist, new Dictionary<Type, List<MapEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.DS2Event, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.DS2EventLocation, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.DS2Generator, new Dictionary<Type, List<MsbEntity>>());
+            mapcache.Add(MsbEntity.MsbEntityType.DS2GeneratorRegist, new Dictionary<Type, List<MsbEntity>>());
         }
 
         foreach (Entity obj in map.Objects)
         {
-            if (obj is MapEntity e && mapcache.ContainsKey(e.Type))
+            if (obj is MsbEntity e && mapcache.ContainsKey(e.Type))
             {
                 Type typ = e.WrappedObject.GetType();
                 if (!mapcache[e.Type].ContainsKey(typ))
                 {
-                    mapcache[e.Type].Add(typ, new List<MapEntity>());
+                    mapcache[e.Type].Add(typ, new List<MsbEntity>());
                 }
 
                 mapcache[e.Type][typ].Add(e);
@@ -228,7 +229,7 @@ public class SceneTree : IActionEventHandler
         var scale = Smithbox.GetUIScale();
 
         // Main selectable
-        if (e is MapEntity me)
+        if (e is MsbEntity me)
         {
             ImGui.PushID(me.Type + e.Name);
         }
@@ -275,7 +276,7 @@ public class SceneTree : IActionEventHandler
             if (modelName == null)
                 modelName = "";
 
-            if (CFG.Current.Map_Show_Character_Names_in_Scene_Tree)
+            if (CFG.Current.MapEditor_Show_Character_Names_in_Scene_Tree)
             {
                 if (e.IsPartEnemy())
                 {
@@ -347,8 +348,8 @@ public class SceneTree : IActionEventHandler
 
         if (hierarchial && doSelect)
         {
-            if ((nodeopen && !_treeOpenEntities.Contains(e)) ||
-                (!nodeopen && _treeOpenEntities.Contains(e)))
+            if (nodeopen && !_treeOpenEntities.Contains(e) ||
+                !nodeopen && _treeOpenEntities.Contains(e))
             {
                 doSelect = false;
             }
@@ -415,7 +416,7 @@ public class SceneTree : IActionEventHandler
             ImGui.SetItemAllowOverlap();
             var visible = e.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - (18.0f * Smithbox.GetUIScale()));
+            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, visible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -430,11 +431,11 @@ public class SceneTree : IActionEventHandler
 
         // If the visibility icon wasn't clicked, perform the selection
         Utils.EntitySelectionHandler(_selection, e, doSelect, arrowKeySelect);
-        
+
         // Invisible item to be a drag drop target between nodes
         if (_pendingDragDrop)
         {
-            if (e is MapEntity me2)
+            if (e is MsbEntity me2)
             {
                 ImGui.SetItemAllowOverlap();
                 ImGui.InvisibleButton(me2.Type + e.Name, new Vector2(-1, 3.0f) * scale);
@@ -500,7 +501,7 @@ public class SceneTree : IActionEventHandler
     {
         foreach (Entity obj in map.Objects)
         {
-            if (obj is MapEntity e)
+            if (obj is MsbEntity e)
             {
                 MapObjectSelectable(e, true);
             }
@@ -514,30 +515,30 @@ public class SceneTree : IActionEventHandler
             RebuildTypeViewCache(map);
         }
 
-        foreach (KeyValuePair<MapEntity.MapEntityType, Dictionary<Type, List<MapEntity>>> cats in
+        foreach (KeyValuePair<MsbEntity.MsbEntityType, Dictionary<Type, List<MsbEntity>>> cats in
                  _cachedTypeView[map.Name].OrderBy(q => q.Key.ToString()))
         {
             if (cats.Value.Count > 0)
             {
                 if (ImGui.TreeNodeEx(cats.Key.ToString(), ImGuiTreeNodeFlags.OpenOnArrow))
                 {
-                    foreach (KeyValuePair<Type, List<MapEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
+                    foreach (KeyValuePair<Type, List<MsbEntity>> typ in cats.Value.OrderBy(q => q.Key.Name))
                     {
                         if (typ.Value.Count > 0)
                         {
                             // Regions don't have multiple types in certain games
-                            if (cats.Key == MapEntity.MapEntityType.Region &&
+                            if (cats.Key == MsbEntity.MsbEntityType.Region &&
                                 Project.Type is ProjectType.DES
                                     or ProjectType.DS1
                                     or ProjectType.DS1R
                                     or ProjectType.BB)
                             {
-                                foreach (MapEntity obj in typ.Value)
+                                foreach (MsbEntity obj in typ.Value)
                                 {
                                     MapObjectSelectable(obj, true);
                                 }
                             }
-                            else if (cats.Key == MapEntity.MapEntityType.Light)
+                            else if (cats.Key == MsbEntity.MsbEntityType.Light)
                             {
                                 foreach (Entity parent in map.BTLParents)
                                 {
@@ -549,7 +550,7 @@ public class SceneTree : IActionEventHandler
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
                                         ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X -
-                                                            (18.0f * Smithbox.GetUIScale()));
+                                                            18.0f * Smithbox.GetUIScale());
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -574,7 +575,7 @@ public class SceneTree : IActionEventHandler
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
                                         ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X -
-                                                            (18.0f * Smithbox.GetUIScale()));
+                                                            18.0f * Smithbox.GetUIScale());
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -590,7 +591,7 @@ public class SceneTree : IActionEventHandler
                             }
                             else if (ImGui.TreeNodeEx(typ.Key.Name, ImGuiTreeNodeFlags.OpenOnArrow))
                             {
-                                foreach (MapEntity obj in typ.Value)
+                                foreach (MsbEntity obj in typ.Value)
                                 {
                                     MapObjectSelectable(obj, true);
                                 }
@@ -715,14 +716,14 @@ public class SceneTree : IActionEventHandler
                 ImGui.BeginDisabled();
             }
 
-            IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps =
+            IOrderedEnumerable<KeyValuePair<string, MapObjectContainer>> orderedMaps =
                 _universe.LoadedObjectContainers.OrderBy(k => k.Key);
 
             _mapEnt_ImGuiID = 0;
-            foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
+            foreach (KeyValuePair<string, MapObjectContainer> lm in orderedMaps)
             {
                 var metaName = "";
-                ObjectContainer map = lm.Value;
+                MapObjectContainer map = lm.Value;
                 var mapid = lm.Key;
                 if (mapid == null)
                 {
@@ -739,7 +740,7 @@ public class SceneTree : IActionEventHandler
 
                 // Map name search filter
                 if (_mapNameSearchStr != ""
-                    && (!CFG.Current.Map_Always_List_Loaded_Maps || map == null)
+                    && (!CFG.Current.MapEditor_Always_List_Loaded_Maps || map == null)
                     && !lm.Key.Contains(_mapNameSearchStr, StringComparison.CurrentCultureIgnoreCase)
                     && !metaName.Contains(_mapNameSearchStr, StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -747,7 +748,7 @@ public class SceneTree : IActionEventHandler
                 }
 
                 Entity mapRoot = map?.RootObject;
-                ObjectContainerReference mapRef = new(mapid, _universe);
+                MapObjectContainerReference mapRef = new(mapid, _universe);
                 ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
                 ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
@@ -831,7 +832,7 @@ public class SceneTree : IActionEventHandler
                             }
                             catch (SavingFailedException e)
                             {
-                                ((MsbEditorScreen)_handler).HandleSaveException(e);
+                                ((MapEditorScreen)_handler).HandleSaveException(e);
                             }
                         }
 
@@ -905,8 +906,8 @@ public class SceneTree : IActionEventHandler
                     {
                         // Only select if a node is not currently being opened/closed
                         if (mapRoot == null ||
-                            (nodeopen && _treeOpenEntities.Contains(mapRoot)) ||
-                            (!nodeopen && !_treeOpenEntities.Contains(mapRoot)))
+                            nodeopen && _treeOpenEntities.Contains(mapRoot) ||
+                            !nodeopen && !_treeOpenEntities.Contains(mapRoot))
                         {
                             if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
                             {

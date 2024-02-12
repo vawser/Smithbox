@@ -5,7 +5,6 @@ using SoulsFormats;
 using StudioCore.AssetLocator;
 using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.TextEditor;
@@ -21,6 +20,7 @@ using ActionManager = StudioCore.Editor.ActionManager;
 using AddParamsAction = StudioCore.Editor.AddParamsAction;
 using CompoundAction = StudioCore.Editor.CompoundAction;
 using DeleteParamsAction = StudioCore.Editor.DeleteParamsAction;
+using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.Editors.ParamEditor;
 

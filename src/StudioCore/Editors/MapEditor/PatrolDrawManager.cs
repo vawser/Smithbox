@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.MsbEditor;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// Handles rendering walk / patrol routes.
@@ -20,7 +21,7 @@ public static class PatrolDrawManager
 
     private const float _verticalOffset = 0.8f;
 
-    private static Entity GetDrawEntity(ObjectContainer map)
+    private static Entity GetDrawEntity(MapObjectContainer map)
     {
         Entity e = new(map, new DrawEntity());
         map.AddObject(e);
@@ -28,7 +29,7 @@ public static class PatrolDrawManager
         return e;
     }
 
-    private static bool GetPoints(string[] regionNames, ObjectContainer map, out List<Vector3> points)
+    private static bool GetPoints(string[] regionNames, MapObjectContainer map, out List<Vector3> points)
     {
         points = [];
 

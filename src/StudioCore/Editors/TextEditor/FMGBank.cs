@@ -2,7 +2,6 @@
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.AssetLocator;
-using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using System;
@@ -11,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.TextEditor;
 

@@ -1,16 +1,17 @@
 ﻿using SoulsFormats;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
 using Veldrid.Utilities;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Formats;
 
 /// <summary>
 ///     A (DS1) navigation region which marks a room/area that a navmesh
 ///     is active in. Corresponds with an MCP room
 /// </summary>
-public class NavRegion : ISelectable
+public class NavigationRegion : ISelectable
 {
     /// <summary>
     ///     Indices of neighbors before resolution
@@ -25,7 +26,7 @@ public class NavRegion : ISelectable
     /// <summary>
     ///     Construct a region from a deserialized mcp room
     /// </summary>
-    public NavRegion(ObjectContainer enclosingMap, MCP.Room room)
+    public NavigationRegion(MapObjectContainer enclosingMap, MCP.Room room)
     {
         BoundingBox = new BoundingBox(room.BoundingBoxMin, room.BoundingBoxMax);
         _navidx = room.LocalIndex;
@@ -47,7 +48,7 @@ public class NavRegion : ISelectable
     /// <summary>
     ///     The regions that neighbor and are connected to this region
     /// </summary>
-    public List<NavRegion> Neighbors { get; }
+    public List<NavigationRegion> Neighbors { get; }
 
     public void OnDeselected()
     {

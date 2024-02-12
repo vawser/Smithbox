@@ -42,7 +42,7 @@ public class SceneRenderPipeline
                 0));
         SceneParams = new SceneParam();
         SceneParams.Projection = Utils.CreatePerspective(device, true,
-            CFG.Current.GFX_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
+            CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
         SceneParams.View = Matrix4x4.CreateLookAt(new Vector3(0.0f, 2.0f, 0.0f), new Vector3(1.0f, 2.0f, 0.0f),
             Vector3.UnitY);
         SceneParams.EyePosition = new Vector4(0.0f, 2.0f, 0.0f, 0.0f);

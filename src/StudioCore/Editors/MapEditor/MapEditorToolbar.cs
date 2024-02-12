@@ -15,8 +15,9 @@ using StudioCore.Interface;
 using System.Reflection;
 using StudioCore.UserProject;
 using StudioCore.Banks;
+using StudioCore.MsbEditor;
 
-namespace StudioCore.MsbEditor
+namespace StudioCore.Editors.MapEditor
 {
     public enum SelectedTool
     {
@@ -41,12 +42,12 @@ namespace StudioCore.MsbEditor
         Selection_Replicate
     }
 
-    public class MsbToolbar
+    public class MapEditorToolbar
     {
-        private readonly ActionManager _actionManager;
+        private readonly EntityActionManager _actionManager;
 
         private readonly RenderScene _scene;
-        private readonly Selection _selection;
+        private readonly MapSelection _selection;
 
         private Universe _universe;
 
@@ -54,7 +55,7 @@ namespace StudioCore.MsbEditor
 
         private SelectedTool _selectedTool;
 
-        private IEnumerable<ObjectContainer> _loadedMaps;
+        private IEnumerable<MapObjectContainer> _loadedMaps;
         private int _createEntityMapIndex;
 
         private List<(string, Type)> _eventClasses = new();
@@ -71,7 +72,7 @@ namespace StudioCore.MsbEditor
 
         private int FrameCount = 0;
 
-        public MsbToolbar(RenderScene scene, Selection sel, ActionManager manager, Universe universe, IViewport viewport)
+        public MapEditorToolbar(RenderScene scene, MapSelection sel, EntityActionManager manager, Universe universe, IViewport viewport)
         {
             _scene = scene;
             _selection = sel;
@@ -86,7 +87,7 @@ namespace StudioCore.MsbEditor
             var scale = Smithbox.GetUIScale();
 
             // This is to reset temporary Text elements. Only used by Generate Navigation Data currently.
-            if(FrameCount > 1000)
+            if (FrameCount > 1000)
             {
                 FrameCount = 0;
                 NavigationDataProcessed = false;
@@ -706,7 +707,7 @@ namespace StudioCore.MsbEditor
 
                     var rot = CFG.Current.Toolbar_Rotate_Increment;
 
-                    if(ImGui.Checkbox("X", ref CFG.Current.Toolbar_Rotate_X))
+                    if (ImGui.Checkbox("X", ref CFG.Current.Toolbar_Rotate_X))
                     {
                         CFG.Current.Toolbar_Rotate_Y = false;
                         CFG.Current.Toolbar_Rotate_Y_Pivot = false;
@@ -798,7 +799,7 @@ namespace StudioCore.MsbEditor
                 // Toggle Presence
                 if (_selectedTool == SelectedTool.Selection_Toggle_Presence)
                 {
-                    if(CFG.Current.Toolbar_Presence_Dummy_Type_ER)
+                    if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
                         ImGui.Text("Toggle the load status of the current selection.");
                     else
                         ImGui.Text("Toggle the Dummy status of the current selection.");
@@ -808,7 +809,7 @@ namespace StudioCore.MsbEditor
                     ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Undummify.HintText)} for Enable");
                     ImGui.Separator();
 
-                    if(ImGui.Checkbox("Disable", ref CFG.Current.Toolbar_Presence_Dummify))
+                    if (ImGui.Checkbox("Disable", ref CFG.Current.Toolbar_Presence_Dummify))
                     {
                         CFG.Current.Toolbar_Presence_Undummify = false;
                     }
@@ -817,7 +818,7 @@ namespace StudioCore.MsbEditor
                     else
                         ImguiUtils.ShowHelpMarker("Disable the current selection, preventing them from being loaded in-game.");
 
-                    if(ImGui.Checkbox("Enable", ref CFG.Current.Toolbar_Presence_Undummify))
+                    if (ImGui.Checkbox("Enable", ref CFG.Current.Toolbar_Presence_Undummify))
                     {
                         CFG.Current.Toolbar_Presence_Dummify = false;
                     }
@@ -1097,7 +1098,7 @@ namespace StudioCore.MsbEditor
                     ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Replicate.HintText)}");
                     ImGui.Separator();
 
-                    if(ImGui.Checkbox("Line", ref CFG.Current.Replicator_Mode_Line))
+                    if (ImGui.Checkbox("Line", ref CFG.Current.Replicator_Mode_Line))
                     {
                         CFG.Current.Replicator_Mode_Circle = false;
                         CFG.Current.Replicator_Mode_Square = false;
@@ -1107,7 +1108,7 @@ namespace StudioCore.MsbEditor
                     ImguiUtils.ShowHelpMarker("Replicate the first selection in the Line shape.");
 
                     ImGui.SameLine();
-                    if(ImGui.Checkbox("Circle", ref CFG.Current.Replicator_Mode_Circle))
+                    if (ImGui.Checkbox("Circle", ref CFG.Current.Replicator_Mode_Circle))
                     {
                         CFG.Current.Replicator_Mode_Line = false;
                         CFG.Current.Replicator_Mode_Square = false;
@@ -1117,7 +1118,7 @@ namespace StudioCore.MsbEditor
                     ImguiUtils.ShowHelpMarker("Replicate the first selection in the Circle shape.");
 
                     ImGui.SameLine();
-                    if(ImGui.Checkbox("Square", ref CFG.Current.Replicator_Mode_Square))
+                    if (ImGui.Checkbox("Square", ref CFG.Current.Replicator_Mode_Square))
                     {
                         CFG.Current.Replicator_Mode_Circle = false;
                         CFG.Current.Replicator_Mode_Line = false;
@@ -1259,7 +1260,7 @@ namespace StudioCore.MsbEditor
                         {
                             ImGui.PushItemWidth(200);
                             ImGui.InputFloat("Horizontal Radius", ref CFG.Current.Replicator_Sphere_Horizontal_Radius);
- 
+
                         }
                         else
                         {
@@ -1390,34 +1391,34 @@ namespace StudioCore.MsbEditor
             {
                 foreach (Entity btl in map.BTLParents)
                 {
-                    AddNewEntity(typeof(BTL.Light), MapEntity.MapEntityType.Light, map, btl);  
+                    AddNewEntity(typeof(BTL.Light), MsbEntity.MsbEntityType.Light, map, btl);
                 }
             }
             if (CFG.Current.Toolbar_Create_Part)
             {
-                AddNewEntity(_createPartSelectedType, MapEntity.MapEntityType.Part, map);
+                AddNewEntity(_createPartSelectedType, MsbEntity.MsbEntityType.Part, map);
             }
             if (CFG.Current.Toolbar_Create_Region)
             {
-                AddNewEntity(_createRegionSelectedType, MapEntity.MapEntityType.Region, map);
+                AddNewEntity(_createRegionSelectedType, MsbEntity.MsbEntityType.Region, map);
             }
             if (CFG.Current.Toolbar_Create_Event)
             {
-                AddNewEntity(_createEventSelectedType, MapEntity.MapEntityType.Event, map);
+                AddNewEntity(_createEventSelectedType, MsbEntity.MsbEntityType.Event, map);
             }
         }
 
         /// <summary>
         /// Adds a new entity to the targeted map. If no parent is specified, RootObject will be used.
         /// </summary>
-        private void AddNewEntity(Type typ, MapEntity.MapEntityType etype, Map map, Entity parent = null)
+        private void AddNewEntity(Type typ, MsbEntity.MsbEntityType etype, Map map, Entity parent = null)
         {
             var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
-            MapEntity obj = new(map, newent, etype);
+            MsbEntity obj = new(map, newent, etype);
 
             parent ??= map.RootObject;
 
-            AddMapObjectsAction act = new(_universe, map, _scene, new List<MapEntity> { obj }, true, parent);
+            AddMapObjectsAction act = new(_universe, map, _scene, new List<MsbEntity> { obj }, true, parent);
             _actionManager.ExecuteAction(act);
         }
 
@@ -1438,7 +1439,7 @@ namespace StudioCore.MsbEditor
         public void DuplicateSelection()
         {
             CloneMapObjectsAction action = new(_universe, _scene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
+                    _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
             _actionManager.ExecuteAction(action);
         }
 
@@ -1447,7 +1448,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void MoveSelectionToGrid()
         {
-            List<Action> actlist = new();
+            List<EntityAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
                 sel.ClearTemporaryTransform(false);
@@ -1464,7 +1465,7 @@ namespace StudioCore.MsbEditor
         public void ReplicateSelection()
         {
             ReplicateMapObjectsAction action = new(this, _universe, _scene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), _actionManager);
+                    _selection.GetFilteredSelection<MsbEntity>().ToList(), _actionManager);
             _actionManager.ExecuteAction(action);
         }
 
@@ -1473,7 +1474,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void ScambleSelection()
         {
-            List<Action> actlist = new();
+            List<EntityAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
                 sel.ClearTemporaryTransform(false);
@@ -1569,9 +1570,9 @@ namespace StudioCore.MsbEditor
                         s.EditorVisible = !s.EditorVisible;
                 }
             }
-            if(CFG.Current.Toolbar_Visibility_Target_All)
+            if (CFG.Current.Toolbar_Visibility_Target_All)
             {
-                foreach (ObjectContainer m in _universe.LoadedObjectContainers.Values)
+                foreach (MapObjectContainer m in _universe.LoadedObjectContainers.Values)
                 {
                     if (m == null)
                     {
@@ -1598,12 +1599,12 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void MoveSelectionToCamera()
         {
-            List<Action> actlist = new();
+            List<EntityAction> actlist = new();
             HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
             Vector3 camDir = Vector3.Transform(Vector3.UnitZ, _viewport.WorldView.CameraTransform.RotationMatrix);
             Vector3 camPos = _viewport.WorldView.CameraTransform.Position;
-            Vector3 targetCamPos = camPos + (camDir * CFG.Current.Toolbar_Move_to_Camera_Offset);
+            Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
             // Get the accumulated center position of all selections
             Vector3 accumPos = Vector3.Zero;
@@ -1656,7 +1657,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
         {
-            List<Action> actlist = new();
+            List<EntityAction> actlist = new();
             HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
             // Get the center position of the selections
@@ -1717,7 +1718,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void SetSelectionToFixedRotation()
         {
-            List<Action> actlist = new();
+            List<EntityAction> actlist = new();
 
             HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
             foreach (Entity s in selected)
@@ -1743,8 +1744,8 @@ namespace StudioCore.MsbEditor
 
         public void ER_DummySelection()
         {
-            List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
-            foreach (MapEntity s in sourceList)
+            List<MsbEntity> sourceList = _selection.GetFilteredSelection<MsbEntity>().ToList();
+            foreach (MsbEntity s in sourceList)
             {
                 if (Project.Type == ProjectType.ER)
                 {
@@ -1755,8 +1756,8 @@ namespace StudioCore.MsbEditor
 
         public void ER_UnDummySelection()
         {
-            List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
-            foreach (MapEntity s in sourceList)
+            List<MsbEntity> sourceList = _selection.GetFilteredSelection<MsbEntity>().ToList();
+            foreach (MsbEntity s in sourceList)
             {
                 if (Project.Type == ProjectType.ER)
                 {
@@ -1814,7 +1815,7 @@ namespace StudioCore.MsbEditor
                     throw new ArgumentException("type must be valid");
             }
 
-            List<MapEntity> sourceList = _selection.GetFilteredSelection<MapEntity>().ToList();
+            List<MsbEntity> sourceList = _selection.GetFilteredSelection<MsbEntity>().ToList();
 
             ChangeMapObjectType action = new(_universe, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
             _actionManager.ExecuteAction(action);
@@ -1953,7 +1954,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         private void GenerateNavigationData()
         {
-            Dictionary<string, ObjectContainer> orderedMaps = _universe.LoadedObjectContainers;
+            Dictionary<string, MapObjectContainer> orderedMaps = _universe.LoadedObjectContainers;
 
             HashSet<string> idCache = new();
             foreach (var map in orderedMaps)
@@ -2000,7 +2001,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         private void ToggleObjectVisibilityByTag()
         {
-            foreach (ObjectContainer m in _universe.LoadedObjectContainers.Values)
+            foreach (MapObjectContainer m in _universe.LoadedObjectContainers.Values)
             {
                 if (m == null)
                 {
@@ -2027,7 +2028,7 @@ namespace StudioCore.MsbEditor
 
                                 if (change)
                                 {
-                                    if(CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
+                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
                                     {
                                         obj.EditorVisible = true;
                                     }
@@ -2145,7 +2146,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void PasteSavedPosition()
         {
-            List<Action> actlist = new();
+            List<EntityAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
             {
                 actlist.Add(sel.ApplySavedPosition());
@@ -2168,7 +2169,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void PasteSavedRotation()
         {
-            List<Action> actlist = new();
+            List<EntityAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
             {
                 actlist.Add(sel.ApplySavedRotation());
@@ -2191,7 +2192,7 @@ namespace StudioCore.MsbEditor
         /// </summary>
         public void PasteSavedScale()
         {
-            List<Action> actlist = new();
+            List<EntityAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
             {
                 actlist.Add(sel.ApplySavedScale());

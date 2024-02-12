@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 [Flags]
 public enum ActionEvent
@@ -26,12 +26,12 @@ public interface IActionEventHandler
 /// <summary>
 ///     Manages undo and redo for an editor context
 /// </summary>
-public class ActionManager
+public class EntityActionManager
 {
     private readonly List<IActionEventHandler> _eventHandlers = new();
-    private readonly Stack<Action> RedoStack = new();
+    private readonly Stack<EntityAction> RedoStack = new();
 
-    private readonly Stack<Action> UndoStack = new();
+    private readonly Stack<EntityAction> UndoStack = new();
 
     public void AddEventHandler(IActionEventHandler handler)
     {
@@ -51,14 +51,14 @@ public class ActionManager
         }
     }
 
-    public void ExecuteAction(Action a)
+    public void ExecuteAction(EntityAction a)
     {
         NotifyHandlers(a.Execute());
         UndoStack.Push(a);
         RedoStack.Clear();
     }
 
-    public Action PeekUndoAction()
+    public EntityAction PeekUndoAction()
     {
         if (UndoStack.Count() == 0)
         {
@@ -75,7 +75,7 @@ public class ActionManager
             return;
         }
 
-        Action a = UndoStack.Pop();
+        EntityAction a = UndoStack.Pop();
         NotifyHandlers(a.Undo());
         RedoStack.Push(a);
     }
@@ -89,7 +89,7 @@ public class ActionManager
 
         while (UndoStack.Count() > 0)
         {
-            Action a = UndoStack.Pop();
+            EntityAction a = UndoStack.Pop();
             NotifyHandlers(a.Undo());
             RedoStack.Push(a);
         }
@@ -102,7 +102,7 @@ public class ActionManager
             return;
         }
 
-        Action a = RedoStack.Pop();
+        EntityAction a = RedoStack.Pop();
         NotifyHandlers(a.Execute(true));
         UndoStack.Push(a);
     }

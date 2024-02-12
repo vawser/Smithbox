@@ -11,7 +11,7 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 public class Gizmos
 {
@@ -73,8 +73,8 @@ public class Gizmos
     public static GizmosMode Mode = GizmosMode.Translate;
     public static GizmosSpace Space = GizmosSpace.Local;
     public static GizmosOrigin Origin = GizmosOrigin.World;
-    private readonly Selection _selection;
-    private readonly ActionManager ActionManager;
+    private readonly MapSelection _selection;
+    private readonly EntityActionManager ActionManager;
     private readonly DbgPrimGizmoRotateRing RotateGizmoX;
     private readonly DebugPrimitiveRenderableProxy RotateGizmoXProxy;
     private readonly DbgPrimGizmoRotateRing RotateGizmoY;
@@ -105,7 +105,7 @@ public class Gizmos
     private Vector3 OriginProjection;
     private Axis TransformAxis = Axis.None;
 
-    public Gizmos(ActionManager am, Selection selection, MeshRenderables renderlist)
+    public Gizmos(EntityActionManager am, MapSelection selection, MeshRenderables renderlist)
     {
         ActionManager = am;
         TranslateGizmoX = new DbgPrimGizmoTranslateArrow(Axis.PosX);
@@ -186,7 +186,7 @@ public class Gizmos
         Vector3 pos = t.Position;
         Vector3 normal = Vector3.Cross(Vector3.Cross(ray.Direction, axisvec), ray.Direction);
         var d = Vector3.Dot(ray.Origin - pos, normal) / Vector3.Dot(axisvec, normal);
-        return pos + (axisvec * d);
+        return pos + axisvec * d;
     }
 
     private Vector3 GetDoubleAxisProjection(Ray ray, Transform t, Axis axis)
@@ -209,7 +209,7 @@ public class Gizmos
         Vector3 relorigin = ray.Origin - t.Position;
         if (Utils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
         {
-            return ray.Origin + (ray.Direction * dist);
+            return ray.Origin + ray.Direction * dist;
         }
 
         return ray.Origin;
@@ -235,7 +235,7 @@ public class Gizmos
         Vector3 relorigin = ray.Origin - t.Position;
         if (Utils.RayPlaneIntersection(relorigin, ray.Direction, Vector3.Zero, planeNormal, out dist))
         {
-            return ray.Origin + (ray.Direction * dist);
+            return ray.Origin + ray.Direction * dist;
         }
 
         return ray.Origin;
@@ -304,7 +304,7 @@ public class Gizmos
             if (!InputTracker.GetMouseButton(MouseButton.Left))
             {
                 IsTransforming = false;
-                List<Action> actlist = new();
+                List<EntityAction> actlist = new();
                 foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
                 {
                     sel.ClearTemporaryTransform(false);

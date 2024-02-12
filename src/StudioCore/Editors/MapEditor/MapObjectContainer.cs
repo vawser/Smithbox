@@ -10,15 +10,16 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Xml.Serialization;
+using StudioCore.MsbEditor;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 ///     High level class that stores a single map (msb) and can serialize/
 ///     deserialize it. This is the logical portion of the map and does not
 ///     handle tasks like rendering or loading associated assets with it.
 /// </summary>
-public class ObjectContainer
+public class MapObjectContainer
 {
     /// <summary>
     ///     Parent entities used to organize lights per-BTL file.
@@ -27,15 +28,15 @@ public class ObjectContainer
 
     [XmlIgnore] public List<Entity> Objects = new();
 
-    public ObjectContainer()
+    public MapObjectContainer()
     {
     }
 
-    public ObjectContainer(Universe u, string name)
+    public MapObjectContainer(Universe u, string name)
     {
         Name = name;
         Universe = u;
-        RootObject = new Entity(this, new TransformNode());
+        RootObject = new Entity(this, new MapTransformNode());
     }
 
     public string Name { get; set; }
@@ -183,7 +184,7 @@ public class ObjectContainer
     }
 }
 
-public class Map : ObjectContainer
+public class Map : MapObjectContainer
 {
     // This keeps all models that exist when loading a map, so that saves
     // can be byte perfect
@@ -193,9 +194,9 @@ public class Map : ObjectContainer
     {
         Name = mapid;
         Universe = u;
-        var t = new TransformNode(mapid);
-        RootObject = new MapEntity(this, t, MapEntity.MapEntityType.MapRoot);
-        MapOffsetNode = new MapEntity(this, new TransformNode(mapid));
+        var t = new MapTransformNode(mapid);
+        RootObject = new MsbEntity(this, t, MsbEntity.MsbEntityType.MapRoot);
+        MapOffsetNode = new MsbEntity(this, new MapTransformNode(mapid));
         RootObject.AddChild(MapOffsetNode);
     }
 
@@ -210,7 +211,7 @@ public class Map : ObjectContainer
         get => MapOffsetNode.GetLocalTransform();
         set
         {
-            var node = (TransformNode)MapOffsetNode.WrappedObject;
+            var node = (MapTransformNode)MapOffsetNode.WrappedObject;
             node.Position = value.Position;
             var x = Utils.RadiansToDeg(value.EulerRotation.X);
             var y = Utils.RadiansToDeg(value.EulerRotation.Y);
@@ -230,21 +231,21 @@ public class Map : ObjectContainer
 
         foreach (IMsbPart p in msb.Parts.GetEntries())
         {
-            var n = new MapEntity(this, p, MapEntity.MapEntityType.Part);
+            var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Part);
             Objects.Add(n);
             RootObject.AddChild(n);
         }
 
         foreach (IMsbRegion p in msb.Regions.GetEntries())
         {
-            var n = new MapEntity(this, p, MapEntity.MapEntityType.Region);
+            var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Region);
             Objects.Add(n);
             RootObject.AddChild(n);
         }
 
         foreach (IMsbEvent p in msb.Events.GetEntries())
         {
-            var n = new MapEntity(this, p, MapEntity.MapEntityType.Event);
+            var n = new MsbEntity(this, p, MsbEntity.MsbEntityType.Event);
             if (p is MSB2.Event.MapOffset mo1)
             {
                 var t = Transform.Default;
@@ -288,11 +289,11 @@ public class Map : ObjectContainer
 
     public void LoadBTL(AssetDescription ad, BTL btl)
     {
-        var btlParent = new MapEntity(this, ad, MapEntity.MapEntityType.Editor);
+        var btlParent = new MsbEntity(this, ad, MsbEntity.MsbEntityType.Editor);
         MapOffsetNode.AddChild(btlParent);
         foreach (BTL.Light l in btl.Lights)
         {
-            var n = new MapEntity(this, l, MapEntity.MapEntityType.Light);
+            var n = new MsbEntity(this, l, MsbEntity.MsbEntityType.Light);
             Objects.Add(n);
             btlParent.AddChild(n);
         }
@@ -897,7 +898,7 @@ public class Map : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MapEntity m && m.Type == MapEntity.MapEntityType.DS2Generator &&
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2Generator &&
                 m.WrappedObject is MergedParamRow mp)
             {
                 if (!ids.Contains(mp.ID))
@@ -942,7 +943,7 @@ public class Map : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MapEntity m && m.Type == MapEntity.MapEntityType.DS2GeneratorRegist &&
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2GeneratorRegist &&
                 m.WrappedObject is Param.Row mp)
             {
                 if (!ids.Contains(mp.ID))
@@ -969,7 +970,7 @@ public class Map : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MapEntity m && m.Type == MapEntity.MapEntityType.DS2Event && m.WrappedObject is Param.Row mp)
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2Event && m.WrappedObject is Param.Row mp)
             {
                 if (!ids.Contains(mp.ID))
                 {
@@ -996,7 +997,7 @@ public class Map : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MapEntity m && m.Type == MapEntity.MapEntityType.DS2EventLocation &&
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2EventLocation &&
                 m.WrappedObject is Param.Row mp)
             {
                 if (!ids.Contains(mp.ID))
@@ -1031,7 +1032,7 @@ public class Map : ObjectContainer
         HashSet<long> ids = new();
         foreach (Entity o in Objects)
         {
-            if (o is MapEntity m && m.Type == MapEntity.MapEntityType.DS2ObjectInstance &&
+            if (o is MsbEntity m && m.Type == MsbEntity.MsbEntityType.DS2ObjectInstance &&
                 m.WrappedObject is Param.Row mp)
             {
                 if (!ids.Contains(mp.ID))
@@ -1062,6 +1063,6 @@ public class Map : ObjectContainer
             idmap.Add(Objects[i], i);
         }
 
-        return ((MapEntity)RootObject).Serialize(idmap);
+        return ((MsbEntity)RootObject).Serialize(idmap);
     }
 }

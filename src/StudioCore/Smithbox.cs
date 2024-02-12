@@ -43,6 +43,8 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface.Windows;
 using StudioCore.Interface;
 using StudioCore.Editors.TimeActEditor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 
 namespace StudioCore;
 
@@ -125,7 +127,7 @@ public class Smithbox
         WindowContainer.KeybindWindow = new KeybindWindow();
 
         // Editors
-        EditorContainer.MsbEditor = new MsbEditorScreen(_context.Window, _context.Device);
+        EditorContainer.MsbEditor = new MapEditorScreen(_context.Window, _context.Device);
         EditorContainer.ModelEditor = new ModelEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextEditor = new TextEditorScreen(_context.Window, _context.Device);
         EditorContainer.ParamEditor = new ParamEditorScreen(_context.Window, _context.Device);

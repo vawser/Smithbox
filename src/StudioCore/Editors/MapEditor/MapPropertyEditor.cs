@@ -18,13 +18,13 @@ using System.Numerics;
 using System.Reflection;
 using Veldrid.Utilities;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
-public class PropertyEditor
+public class MapPropertyEditor
 {
     private readonly string[] _lightTypes = { "Spot", "Directional", "Point" };
 
-    private readonly PropertyCache _propCache;
+    private readonly MapPropertyCache _propCache;
 
     private readonly string[] _regionShapes =
     {
@@ -33,16 +33,16 @@ public class PropertyEditor
 
     private object _changingObject;
     private object _changingPropery;
-    private Action _lastUncommittedAction;
+    private EntityAction _lastUncommittedAction;
 
-    public ActionManager ContextActionManager;
+    public EntityActionManager ContextActionManager;
     public PropertyInfo RequestedSearchProperty = null;
 
     private IViewport _viewport;
 
-    private MsbToolbar _msbToolbar;
+    private MapEditorToolbar _msbToolbar;
 
-    public PropertyEditor(ActionManager manager, PropertyCache propCache, IViewport viewport, MsbToolbar msbToolbar)
+    public MapPropertyEditor(EntityActionManager manager, MapPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
     {
         ContextActionManager = manager;
         _propCache = propCache;
@@ -719,7 +719,7 @@ public class PropertyEditor
     /// <summary>
     /// Displays property context menu.
     /// </summary>
-    private void DisplayPropContextMenu(Selection selection, PropertyInfo prop, object obj)
+    private void DisplayPropContextMenu(MapSelection selection, PropertyInfo prop, object obj)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
@@ -744,7 +744,7 @@ public class PropertyEditor
 
             // Position - Copy/Paste
             var posAtt = prop.GetCustomAttribute<PositionProperty>();
-            if(posAtt != null )
+            if (posAtt != null)
             {
                 if (ImGui.Selectable(@"Copy##CopyPosition"))
                 {
@@ -832,7 +832,7 @@ public class PropertyEditor
         }
     }
 
-    private void PropEditorGeneric(Selection selection, HashSet<Entity> entSelection, object target = null,
+    private void PropEditorGeneric(MapSelection selection, HashSet<Entity> entSelection, object target = null,
         bool decorate = true, int classIndex = -1)
     {
         var scale = Smithbox.GetUIScale();
@@ -1230,7 +1230,7 @@ public class PropertyEditor
                                 selection.AddSelection(e);
                             }
                         }
-                        else if (n is ObjectContainerReference r)
+                        else if (n is MapObjectContainerReference r)
                         {
                             // Try to select the map's RootObject if it is loaded, and the reference otherwise.
                             // It's not the end of the world if we choose the wrong one, as SceneTree can use either,
@@ -1305,7 +1305,7 @@ public class PropertyEditor
         }
     }
 
-    public string GetFieldName(Type classType, PropertyInfo prop, Selection sel)
+    public string GetFieldName(Type classType, PropertyInfo prop, MapSelection sel)
     {
         Type type = classType;
         string name = prop.Name;
@@ -1356,7 +1356,7 @@ public class PropertyEditor
         return name;
     }
 
-    public void ShowFieldHint(Type classType, PropertyInfo prop, Selection sel)
+    public void ShowFieldHint(Type classType, PropertyInfo prop, MapSelection sel)
     {
         var attribute = prop?.GetCustomAttribute<FormatReference>();
 
@@ -1410,7 +1410,7 @@ public class PropertyEditor
         }
     }
 
-    public void OnGui(Selection selection, string id, float w, float h)
+    public void OnGui(MapSelection selection, string id, float w, float h)
     {
         var scale = Smithbox.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();

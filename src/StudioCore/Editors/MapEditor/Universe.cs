@@ -17,6 +17,7 @@ using System.Numerics;
 using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.MsbEditor;
 
@@ -40,14 +41,14 @@ public class Universe
 
     public bool postLoad;
 
-    public Universe(RenderScene scene, Selection sel)
+    public Universe(RenderScene scene, MapSelection sel)
     {
         _renderScene = scene;
         Selection = sel;
     }
 
-    public Dictionary<string, ObjectContainer> LoadedObjectContainers { get; } = new();
-    public Selection Selection { get; }
+    public Dictionary<string, MapObjectContainer> LoadedObjectContainers { get; } = new();
+    public MapSelection Selection { get; }
 
     public List<string> EnvMapTextures { get; private set; } = new();
 
@@ -69,7 +70,7 @@ public class Universe
     public int GetLoadedMapCount()
     {
         var i = 0;
-        foreach (KeyValuePair<string, ObjectContainer> map in LoadedObjectContainers)
+        foreach (KeyValuePair<string, MapObjectContainer> map in LoadedObjectContainers)
         {
             if (map.Value != null)
             {
@@ -266,7 +267,7 @@ public class Universe
         return mesh;
     }
 
-    public RenderableProxy GetDummyPolyDrawable(ObjectContainer map, Entity obj)
+    public RenderableProxy GetDummyPolyDrawable(MapObjectContainer map, Entity obj)
     {
         DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetDummyPolyRegionProxy(_renderScene);
         mesh.World = obj.GetWorldMatrix();
@@ -275,7 +276,7 @@ public class Universe
         return mesh;
     }
 
-    public RenderableProxy GetBoneDrawable(ObjectContainer map, Entity obj)
+    public RenderableProxy GetBoneDrawable(MapObjectContainer map, Entity obj)
     {
         SkeletonBoneRenderableProxy mesh = new(_renderScene);
         mesh.World = obj.GetWorldMatrix();
@@ -478,7 +479,7 @@ public class Universe
 
             registParams.Add(row.ID, row);
 
-            MapEntity obj = new(map, row, MapEntity.MapEntityType.DS2GeneratorRegist);
+            MsbEntity obj = new(map, row, MsbEntity.MsbEntityType.DS2GeneratorRegist);
             map.AddObject(obj);
         }
 
@@ -495,7 +496,7 @@ public class Universe
             mergedRow.AddRow("generator-loc", row);
             generatorParams.Add(row.ID, mergedRow);
 
-            MapEntity obj = new(map, mergedRow, MapEntity.MapEntityType.DS2Generator);
+            MsbEntity obj = new(map, mergedRow, MsbEntity.MsbEntityType.DS2Generator);
             generatorObjs.Add(row.ID, obj);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
@@ -519,7 +520,7 @@ public class Universe
                 MergedParamRow mergedRow = new();
                 mergedRow.AddRow("generator", row);
                 generatorParams.Add(row.ID, mergedRow);
-                MapEntity obj = new(map, mergedRow, MapEntity.MapEntityType.DS2Generator);
+                MsbEntity obj = new(map, mergedRow, MsbEntity.MsbEntityType.DS2Generator);
                 generatorObjs.Add(row.ID, obj);
                 map.AddObject(obj);
             }
@@ -558,7 +559,7 @@ public class Universe
 
             eventParams.Add(row.ID, row);
 
-            MapEntity obj = new(map, row, MapEntity.MapEntityType.DS2Event);
+            MsbEntity obj = new(map, row, MsbEntity.MsbEntityType.DS2Event);
             map.AddObject(obj);
         }
 
@@ -572,7 +573,7 @@ public class Universe
 
             eventLocationParams.Add(row.ID, row);
 
-            MapEntity obj = new(map, row, MapEntity.MapEntityType.DS2EventLocation);
+            MsbEntity obj = new(map, row, MsbEntity.MsbEntityType.DS2EventLocation);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
 
@@ -594,7 +595,7 @@ public class Universe
 
             objectInstanceParams.Add(row.ID, row);
 
-            MapEntity obj = new(map, row, MapEntity.MapEntityType.DS2ObjectInstance);
+            MsbEntity obj = new(map, row, MsbEntity.MsbEntityType.DS2ObjectInstance);
             map.AddObject(obj);
         }
 
@@ -624,7 +625,7 @@ public class Universe
         }
     }
 
-    public void LoadRelatedMapsER(string mapid, Dictionary<string, ObjectContainer> maps)
+    public void LoadRelatedMapsER(string mapid, Dictionary<string, MapObjectContainer> maps)
     {
         IReadOnlyDictionary<string, SpecialMapConnections.RelationType> relatedMaps =
             SpecialMapConnections.GetRelatedMaps(mapid, maps.Keys);
@@ -846,7 +847,7 @@ public class Universe
                 }
             }
 
-            if (Project.Type == ProjectType.ER && CFG.Current.Map_Enable_ER_Auto_Map_Offset)
+            if (Project.Type == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
             {
                 if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
                     loadTransform)
@@ -887,7 +888,7 @@ public class Universe
                     foreach (NVA.Navmesh nav in nva.Navmeshes)
                     {
                         // TODO2: set parent to MapOffset
-                        MapEntity n = new(map, nav, MapEntity.MapEntityType.Editor);
+                        MsbEntity n = new(map, nav, MsbEntity.MsbEntityType.Editor);
                         map.AddObject(n);
                         var navid = $@"n{nav.ModelID:D6}";
                         var navname = "n" + ModelAssetLocator.MapModelNameToAssetName(amapid, navid).Substring(1);
@@ -920,7 +921,7 @@ public class Universe
             task = job.Complete();
             tasks.Add(task);
 
-            if (CFG.Current.Map_Enable_Texturing)
+            if (CFG.Current.Viewport_Enable_Texturing)
             {
                 job = ResourceManager.CreateNewJob($@"Loading {amapid} textures");
                 foreach (AssetDescription asset in TextureAssetLocator.GetMapTextures(amapid))
@@ -1112,7 +1113,7 @@ public class Universe
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy, string name)
     {
-        ObjectContainer container = new(this, name);
+        MapObjectContainer container = new(this, name);
 
         container.LoadFlver(flver, proxy);
 
@@ -1548,7 +1549,7 @@ public class Universe
         }
         else
         {
-            foreach (KeyValuePair<string, ObjectContainer> m in LoadedObjectContainers)
+            foreach (KeyValuePair<string, MapObjectContainer> m in LoadedObjectContainers)
             {
                 if (m.Value != null)
                 {
@@ -1561,7 +1562,7 @@ public class Universe
         }
     }
 
-    public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
+    public void UnloadContainer(MapObjectContainer container, bool clearFromList = false)
     {
         if (LoadedObjectContainers.ContainsKey(container.Name))
         {
@@ -1584,7 +1585,7 @@ public class Universe
 
     public void UnloadAllMaps()
     {
-        List<ObjectContainer> toUnload = new();
+        List<MapObjectContainer> toUnload = new();
         foreach (var key in LoadedObjectContainers.Keys)
         {
             if (LoadedObjectContainers[key] != null)
@@ -1593,7 +1594,7 @@ public class Universe
             }
         }
 
-        foreach (ObjectContainer un in toUnload)
+        foreach (MapObjectContainer un in toUnload)
         {
             if (un is Map ma)
             {
@@ -1604,7 +1605,7 @@ public class Universe
 
     public void UnloadAll(bool clearFromList = false)
     {
-        List<ObjectContainer> toUnload = new();
+        List<MapObjectContainer> toUnload = new();
         foreach (var key in LoadedObjectContainers.Keys)
         {
             if (LoadedObjectContainers[key] != null)
@@ -1613,7 +1614,7 @@ public class Universe
             }
         }
 
-        foreach (ObjectContainer un in toUnload)
+        foreach (MapObjectContainer un in toUnload)
         {
             UnloadContainer(un, clearFromList);
         }

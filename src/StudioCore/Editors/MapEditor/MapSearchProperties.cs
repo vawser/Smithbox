@@ -1,18 +1,19 @@
 ﻿using ImGuiNET;
 using SoulsFormats.Util;
+using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
-public class SearchProperties
+public class MapSearchProperties
 {
     private readonly Dictionary<string, List<WeakReference<Entity>>> FoundObjects = new();
     private readonly Universe Universe;
-    private readonly PropertyCache _propCache;
+    private readonly MapPropertyCache _propCache;
 
     public PropertyInfo Property
     {
@@ -39,7 +40,7 @@ public class SearchProperties
     private bool _propSearchMatchNameOnly = true;
     private string _propertyNameSearchString = "";
 
-    public SearchProperties(Universe universe, PropertyCache propCache)
+    public MapSearchProperties(Universe universe, MapPropertyCache propCache)
     {
         Universe = universe;
         _propCache = propCache;
@@ -60,13 +61,13 @@ public class SearchProperties
                 PropertyValue = byte.TryParse(initialValue, out var val) ? val : default;
                 return true;
             }
-            
+
             if (PropertyType == typeof(sbyte) || PropertyType == typeof(sbyte[]))
             {
                 PropertyValue = sbyte.TryParse(initialValue, out sbyte val) ? val : default;
                 return true;
             }
-            
+
             if (PropertyType == typeof(char) || PropertyType == typeof(char[]))
             {
                 PropertyValue = char.TryParse(initialValue, out var val) ? val : default;
@@ -126,7 +127,7 @@ public class SearchProperties
                 PropertyValue = initialValue ?? "";
                 return true;
             }
-            
+
             if (PropertyType.IsEnum)
             {
                 PropertyValue = PropertyType.GetEnumValues().GetValue(0);
@@ -332,7 +333,7 @@ public class SearchProperties
 
         if (ImGui.Begin("Search Properties"))
         {
-        
+
             // propcache
             var selection = Universe.Selection.GetSingleFilteredSelection<Entity>();
             if (selection == null)
@@ -386,7 +387,7 @@ public class SearchProperties
                 // Find the first property that matches the given name.
                 // Definitely replace this (along with everything else, really).
                 HashSet<Type> typeCache = new();
-                foreach (KeyValuePair<string, ObjectContainer> m in Universe.LoadedObjectContainers)
+                foreach (KeyValuePair<string, MapObjectContainer> m in Universe.LoadedObjectContainers)
                 {
                     if (m.Value == null)
                     {
@@ -398,7 +399,7 @@ public class SearchProperties
                         Type typ = o.WrappedObject.GetType();
                         if (typeCache.Contains(typ))
                             continue;
-                        var prop = Utilities.PropFinderUtil.FindProperty(_propertyNameSearchString, o.WrappedObject);
+                        var prop = PropFinderUtil.FindProperty(_propertyNameSearchString, o.WrappedObject);
                         if (prop != null)
                         {
                             Property = prop;
@@ -410,7 +411,7 @@ public class SearchProperties
                         typeCache.Add(o.WrappedObject.GetType());
                     }
                 }
-                end: ;
+            end:;
             }
 
             ImGui.Separator();
@@ -431,7 +432,7 @@ public class SearchProperties
                 if (SearchValue(newSearch))
                 {
                     FoundObjects.Clear();
-                    foreach (ObjectContainer o in Universe.LoadedObjectContainers.Values)
+                    foreach (MapObjectContainer o in Universe.LoadedObjectContainers.Values)
                     {
                         if (o == null)
                         {
@@ -442,7 +443,7 @@ public class SearchProperties
                         {
                             foreach (Entity ob in m.Objects)
                             {
-                                if (ob is MapEntity e)
+                                if (ob is MsbEntity e)
                                 {
                                     var value = PropFinderUtil.FindPropertyValue(Property, ob.WrappedObject, _propSearchMatchNameOnly);
 

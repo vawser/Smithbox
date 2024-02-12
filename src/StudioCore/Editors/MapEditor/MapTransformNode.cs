@@ -1,18 +1,18 @@
 ﻿using System.Numerics;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 ///     A simple transform node that can be a parent to map objects
 ///     to transform them
 /// </summary>
-public class TransformNode
+public class MapTransformNode
 {
-    public TransformNode()
+    public MapTransformNode()
     {
     }
 
-    public TransformNode(string name)
+    public MapTransformNode(string name)
     {
         Name = name;
     }

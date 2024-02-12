@@ -197,22 +197,22 @@ public class SettingsWindow
             // General
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.Map_Enable_Frustum_Culling);
+                ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.Viewport_Frustum_Culling);
                 ImguiUtils.ShowHelpMarker("Enabling this option will cause entities outside of the camera frustrum to be culled.\n\nDisable this if working with the grid.");
 
-                ImGui.Checkbox("Enable selection outline", ref CFG.Current.Map_Enable_Selection_Outline);
+                ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
                 ImguiUtils.ShowHelpMarker("Enabling this option will cause a selection outline to appear on selected objects.");
 
-                ImGui.Checkbox("Enable texturing", ref CFG.Current.Map_Enable_Texturing);
+                ImGui.Checkbox("Enable texturing", ref CFG.Current.Viewport_Enable_Texturing);
                 ImguiUtils.ShowHelpMarker("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
 
-                ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.Map_Always_List_Loaded_Maps);
+                ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
                 ImguiUtils.ShowHelpMarker("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
 
                 if (ProjSettings != null)
                     if (ProjSettings.GameType is ProjectType.ER)
                     {
-                        ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Map_Enable_ER_Auto_Map_Offset);
+                        ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
                         ImguiUtils.ShowHelpMarker("");
                     }
             }
@@ -233,7 +233,7 @@ public class SettingsWindow
             // Scene View
             if (ImGui.CollapsingHeader("Scene View"))
             {
-                ImGui.Checkbox("Display character names", ref CFG.Current.Map_Show_Character_Names_in_Scene_Tree);
+                ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_Show_Character_Names_in_Scene_Tree);
                 ImguiUtils.ShowHelpMarker("Characters names will be displayed within the scene view list.");
             }
 
@@ -241,53 +241,53 @@ public class SettingsWindow
             {
                 if (ImGui.Button("Reset##ViewportCamera"))
                 {
-                    CFG.Current.GFX_Camera_FOV = CFG.Default.GFX_Camera_FOV;
+                    CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
 
-                    CFG.Current.GFX_RenderDistance_Max = CFG.Default.GFX_RenderDistance_Max;
+                    CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
 
-                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.GFX_Camera_MoveSpeed_Slow;
-                    CFG.Current.GFX_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
-                    CFG.Current.GFX_Camera_Sensitivity = CFG.Default.GFX_Camera_Sensitivity;
+                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
+                    CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
 
-                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.GFX_Camera_MoveSpeed_Normal;
-                    CFG.Current.GFX_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
+                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
 
-                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.GFX_Camera_MoveSpeed_Fast;
-                    CFG.Current.GFX_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
+                    EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
                 }
                 ImguiUtils.ShowHelpMarker("Resets all of the values within this section to their default values.");
 
-                var cam_fov = CFG.Current.GFX_Camera_FOV;
+                var cam_fov = CFG.Current.Viewport_Camera_FOV;
 
                 if (ImGui.SliderFloat("Camera FOV", ref cam_fov, 40.0f, 140.0f))
-                    CFG.Current.GFX_Camera_FOV = cam_fov;
+                    CFG.Current.Viewport_Camera_FOV = cam_fov;
                 ImguiUtils.ShowHelpMarker("Set the field of view used by the camera within DSMS.");
 
-                var cam_sensitivity = CFG.Current.GFX_Camera_Sensitivity;
+                var cam_sensitivity = CFG.Current.Viewport_Camera_Sensitivity;
 
                 if (ImGui.SliderFloat("Camera sensitivity", ref cam_sensitivity, 0.0f, 0.1f))
-                    CFG.Current.GFX_Camera_Sensitivity = cam_sensitivity;
+                    CFG.Current.Viewport_Camera_Sensitivity = cam_sensitivity;
                 ImguiUtils.ShowHelpMarker("Mouse sensitivty for turning the camera.");
 
-                var farClip = CFG.Current.GFX_RenderDistance_Max;
+                var farClip = CFG.Current.Viewport_RenderDistance_Max;
 
                 if (ImGui.SliderFloat("Map max render distance", ref farClip, 10.0f, 500000.0f))
-                    CFG.Current.GFX_RenderDistance_Max = farClip;
+                    CFG.Current.Viewport_RenderDistance_Max = farClip;
                 ImguiUtils.ShowHelpMarker("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
 
                 if (ImGui.SliderFloat("Map camera speed (slow)",
                         ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 999.0f))
-                    CFG.Current.GFX_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
                 ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
 
                 if (ImGui.SliderFloat("Map camera speed (normal)",
                         ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 999.0f))
-                    CFG.Current.GFX_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
                 ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move whilst moving normally.");
 
                 if (ImGui.SliderFloat("Map camera speed (fast)",
                         ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 999.0f))
-                    CFG.Current.GFX_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
+                    CFG.Current.Viewport_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
                 ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
             }
 
@@ -296,9 +296,9 @@ public class SettingsWindow
             {
                 if (ImGui.Button("Reset##MapLimits"))
                 {
-                    CFG.Current.GFX_Limit_Renderables = CFG.Default.GFX_Limit_Renderables;
-                    CFG.Current.GFX_Limit_Buffer_Indirect_Draw = CFG.Default.GFX_Limit_Buffer_Indirect_Draw;
-                    CFG.Current.GFX_Limit_Buffer_Flver_Bone = CFG.Default.GFX_Limit_Buffer_Flver_Bone;
+                    CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
+                    CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
+                    CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
                 }
                 ImguiUtils.ShowHelpMarker("Reset the values within this section to their default values.");
 
@@ -307,15 +307,15 @@ public class SettingsWindow
                 ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f),
                     @"Try smaller increments (+25%%) at first, as high values will cause issues.");
 
-                if (ImGui.InputInt("Renderables", ref CFG.Current.GFX_Limit_Renderables, 0, 0))
-                    if (CFG.Current.GFX_Limit_Renderables < CFG.Default.GFX_Limit_Renderables)
-                        CFG.Current.GFX_Limit_Renderables = CFG.Default.GFX_Limit_Renderables;
+                if (ImGui.InputInt("Renderables", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
+                    if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
+                        CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
                 ImguiUtils.ShowHelpMarker("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
 
-                Utils.ImGui_InputUint("Indirect Draw buffer", ref CFG.Current.GFX_Limit_Buffer_Indirect_Draw);
+                Utils.ImGui_InputUint("Indirect Draw buffer", ref CFG.Current.Viewport_Limit_Buffer_Indirect_Draw);
                 ImguiUtils.ShowHelpMarker("This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.");
 
-                Utils.ImGui_InputUint("FLVER Bone buffer", ref CFG.Current.GFX_Limit_Buffer_Flver_Bone);
+                Utils.ImGui_InputUint("FLVER Bone buffer", ref CFG.Current.Viewport_Limit_Buffer_Flver_Bone);
                 ImguiUtils.ShowHelpMarker("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
             }
 
@@ -350,11 +350,11 @@ public class SettingsWindow
                 ImGui.SliderFloat("Grid height increment", ref CFG.Current.Viewport_Grid_Height_Increment, 0.1f, 100);
                 ImguiUtils.ShowHelpMarker("The amount to lower or raise the viewport grid height via the shortcuts.");
 
-                ImGui.ColorEdit3("Grid color", ref CFG.Current.GFX_Viewport_Grid_Color);
+                ImGui.ColorEdit3("Grid color", ref CFG.Current.Viewport_Grid_Color);
 
                 if (ImGui.Button("Reset"))
                 {
-                    CFG.Current.GFX_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
+                    CFG.Current.Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
                     CFG.Current.Viewport_Grid_Size = 1000;
                     CFG.Current.Viewport_Grid_Square_Size = 10;
                     CFG.Current.Viewport_Grid_Height = 0;

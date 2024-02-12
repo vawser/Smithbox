@@ -6,17 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
-public class DisplayGroupsEditor
+public class DisplayGroupEditor
 {
-    private readonly ActionManager _actionManager;
+    private readonly EntityActionManager _actionManager;
 
     private readonly RenderScene _scene;
-    private readonly Selection _selection;
+    private readonly MapSelection _selection;
     public readonly HashSet<string> HighlightedGroups = new();
 
-    public DisplayGroupsEditor(RenderScene scene, Selection sel, ActionManager manager)
+    public DisplayGroupEditor(RenderScene scene, MapSelection sel, EntityActionManager manager)
     {
         _scene = scene;
         _selection = sel;
@@ -88,8 +88,8 @@ public class DisplayGroupsEditor
             }
 
             if (ImGui.Button($"Get Disp <{KeyBindings.Current.Map_RenderGroup_GetDisp.HintText}>")
-                || (InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDisp)
-                    && sdispgroups != null))
+                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDisp)
+                    && sdispgroups != null)
             {
                 for (var i = 0; i < dispCount; i++)
                 {
@@ -99,8 +99,8 @@ public class DisplayGroupsEditor
 
             ImGui.SameLine(0.0f, 6.0f * scale);
             if (ImGui.Button($"Get Draw <{KeyBindings.Current.Map_RenderGroup_GetDraw.HintText}>")
-                || (InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDraw)
-                    && sdispgroups != null))
+                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GetDraw)
+                    && sdispgroups != null)
             {
                 for (var i = 0; i < dispCount; i++)
                 {
@@ -110,8 +110,8 @@ public class DisplayGroupsEditor
 
             ImGui.SameLine(0.0f, 12.0f * scale);
             if (ImGui.Button($"Assign Draw <{KeyBindings.Current.Map_RenderGroup_GiveDraw.HintText}>")
-                || (InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDraw)
-                    && sdispgroups != null))
+                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDraw)
+                    && sdispgroups != null)
             {
                 IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
                 ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
@@ -120,8 +120,8 @@ public class DisplayGroupsEditor
 
             ImGui.SameLine(0.0f, 6.0f * scale);
             if (ImGui.Button($"Assign Disp <{KeyBindings.Current.Map_RenderGroup_GiveDisp.HintText}>")
-                || (InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDisp)
-                    && sdispgroups != null))
+                || InputTracker.GetKeyDown(KeyBindings.Current.Map_RenderGroup_GiveDisp)
+                    && sdispgroups != null)
             {
                 IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
                 ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
@@ -232,7 +232,7 @@ public class DisplayGroupsEditor
                         }
                     }
 
-                    var check = ((dg.RenderGroups[g] >> i) & 0x1) > 0;
+                    var check = (dg.RenderGroups[g] >> i & 0x1) > 0;
 
                     // Add spacing every 4 columns
                     if (i % 4 == 0 && i > 0)
@@ -243,8 +243,8 @@ public class DisplayGroupsEditor
 
                     ImGui.SameLine();
 
-                    var drawActive = sdrawgroups != null && ((sdrawgroups[g] >> i) & 0x1) > 0;
-                    var dispActive = sdispgroups != null && ((sdispgroups[g] >> i) & 0x1) > 0;
+                    var drawActive = sdrawgroups != null && (sdrawgroups[g] >> i & 0x1) > 0;
+                    var dispActive = sdispgroups != null && (sdispgroups[g] >> i & 0x1) > 0;
 
                     if (drawActive && dispActive)
                     {

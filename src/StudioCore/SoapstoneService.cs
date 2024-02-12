@@ -4,7 +4,6 @@ using SoapstoneLib;
 using SoapstoneLib.Proto;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.MsbEditor;
 using StudioCore.UserProject;
 using StudioCore.TextEditor;
 using System;
@@ -15,6 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors;
+using StudioCore.Editors.MapEditor;
 
 #pragma warning disable CS1998 // Async method lacks 'await'. Return without Task is convenient, though
 
@@ -39,17 +39,17 @@ public class SoapstoneService : SoapstoneServiceV1
         [ProjectType.ER] = FromSoftGame.EldenRing
     };
 
-    private static readonly Dictionary<MapEntity.MapEntityType, KeyNamespace> mapNamespaces = new()
+    private static readonly Dictionary<MsbEntity.MsbEntityType, KeyNamespace> mapNamespaces = new()
     {
-        [MapEntity.MapEntityType.Event] = KeyNamespace.MapEvent,
-        [MapEntity.MapEntityType.Region] = KeyNamespace.MapRegion,
-        [MapEntity.MapEntityType.Part] = KeyNamespace.MapPart
+        [MsbEntity.MsbEntityType.Event] = KeyNamespace.MapEvent,
+        [MsbEntity.MsbEntityType.Region] = KeyNamespace.MapRegion,
+        [MsbEntity.MsbEntityType.Part] = KeyNamespace.MapPart
     };
 
-    private static readonly Dictionary<KeyNamespace, MapEntity.MapEntityType> revMapNamespaces =
+    private static readonly Dictionary<KeyNamespace, MsbEntity.MsbEntityType> revMapNamespaces =
         mapNamespaces.ToDictionary(e => e.Value, e => e.Key);
 
-    private readonly MsbEditorScreen msbEditor;
+    private readonly MapEditorScreen msbEditor;
 
     private readonly string version;
 
@@ -78,7 +78,7 @@ public class SoapstoneService : SoapstoneServiceV1
             response.Resources.Add(projectResource);
             if (msbEditor.Universe.LoadedObjectContainers.Count > 0)
             {
-                foreach (KeyValuePair<string, ObjectContainer> entry in msbEditor.Universe.LoadedObjectContainers)
+                foreach (KeyValuePair<string, MapObjectContainer> entry in msbEditor.Universe.LoadedObjectContainers)
                 {
                     if (entry.Value != null)
                     {
@@ -174,7 +174,7 @@ public class SoapstoneService : SoapstoneServiceV1
         return null;
     }
 
-    private static object AccessMapProperty(MapEntity e, string key)
+    private static object AccessMapProperty(MsbEntity e, string key)
     {
         switch (key)
         {
@@ -356,7 +356,7 @@ public class SoapstoneService : SoapstoneServiceV1
             {
                 if (getKey.File is not SoulsKey.MsbKey fileKey
                     || !msbEditor.Universe.LoadedObjectContainers.TryGetValue(fileKey.Map,
-                        out ObjectContainer container)
+                        out MapObjectContainer container)
                     || !MatchesResource(resource, fileKey.Map))
                 {
                     continue;
@@ -372,7 +372,7 @@ public class SoapstoneService : SoapstoneServiceV1
                 {
                     foreach (Entity ob in m.GetObjectsByName(msbEntryKey.Name))
                     {
-                        if (ob is not MapEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns) ||
+                        if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns) ||
                             ns != msbEntryKey.Namespace)
                         {
                             continue;
@@ -517,7 +517,7 @@ public class SoapstoneService : SoapstoneServiceV1
         {
             Predicate<object> fileFilter = search.GetKeyFilter("Map");
             // LoadedObjectContainers is never null, starts out an empty dictionary
-            foreach (KeyValuePair<string, ObjectContainer> entry in msbEditor.Universe.LoadedObjectContainers)
+            foreach (KeyValuePair<string, MapObjectContainer> entry in msbEditor.Universe.LoadedObjectContainers)
             {
                 if (!fileFilter(entry.Key) || !MatchesResource(resource, entry.Key))
                 {
@@ -545,7 +545,7 @@ public class SoapstoneService : SoapstoneServiceV1
                     // Use similar enumeration as SearchProperties
                     foreach (Entity ob in m.Objects)
                     {
-                        if (ob is not MapEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns))
+                        if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns))
                         {
                             continue;
                         }
@@ -603,7 +603,7 @@ public class SoapstoneService : SoapstoneServiceV1
             }
             else if (key is SoulsKey.MsbEntryKey msbEntryKey && MatchesResource(resource, msbEntryKey.File.Map)
                                                              && revMapNamespaces.TryGetValue(msbEntryKey.Namespace,
-                                                                 out MapEntity.MapEntityType entityType))
+                                                                 out MsbEntity.MsbEntityType entityType))
             {
                 EditorCommandQueue.AddCommand(new[]
                 {

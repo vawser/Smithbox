@@ -32,10 +32,10 @@ public class WorldView
     private readonly Sdl SDL;
 
     private Rectangle BoundingRect;
-    public float CameraMoveSpeed_Fast = CFG.Current.GFX_Camera_MoveSpeed_Fast;
-    public float CameraMoveSpeed_Normal = CFG.Current.GFX_Camera_MoveSpeed_Normal;
+    public float CameraMoveSpeed_Fast = CFG.Current.Viewport_Camera_MoveSpeed_Fast;
+    public float CameraMoveSpeed_Normal = CFG.Current.Viewport_Camera_MoveSpeed_Normal;
 
-    public float CameraMoveSpeed_Slow = CFG.Current.GFX_Camera_MoveSpeed_Slow;
+    public float CameraMoveSpeed_Slow = CFG.Current.Viewport_Camera_MoveSpeed_Slow;
     public Transform CameraOrigin = Transform.Default;
     public Transform CameraPositionDefault = Transform.Default;
 
@@ -533,8 +533,8 @@ public class WorldView
                 SDL.GetWindowPosition(window.SdlWindowHandle, ref windowX, ref windowY);
                 SDL.WarpMouseGlobal(windowX + (int)MousePressedPos.X, windowY + (int)MousePressedPos.Y);
 
-                var camH = mouseDelta.X * 1 * CameraTurnSpeedMouse * CFG.Current.GFX_Camera_Sensitivity;
-                var camV = mouseDelta.Y * -1 * CameraTurnSpeedMouse * CFG.Current.GFX_Camera_Sensitivity;
+                var camH = mouseDelta.X * 1 * CameraTurnSpeedMouse * CFG.Current.Viewport_Camera_Sensitivity;
+                var camV = mouseDelta.Y * -1 * CameraTurnSpeedMouse * CFG.Current.Viewport_Camera_Sensitivity;
 
                 if (IsOrbitCam && !isMoveLightKeyPressed)
                 {

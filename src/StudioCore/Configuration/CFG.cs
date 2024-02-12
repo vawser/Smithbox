@@ -38,15 +38,21 @@ public class CFG
     [JsonExtensionData] public IDictionary<string, JsonElement> AdditionalData;
 #pragma warning restore IDE0051
 
+    //**************
     // Debug
+    //**************
     public bool Debug_FireOnce = false;
 
+    //**************
     // Actions
+    //**************
     public Vector3 SavedPosition = new Vector3();
     public Vector3 SavedRotation = new Vector3();
     public Vector3 SavedScale = new Vector3();
 
+    //****************************
     // Settings: System
+    //****************************
     public bool System_Check_Program_Update = true;
     public bool System_Show_UI_Tooltips = true;
     public float System_UI_Scale = 1.0f;
@@ -58,41 +64,51 @@ public class CFG
     public bool System_Font_Vietnamese = false;
     public float System_Frame_Rate = 60.0f;
 
-    // Settings: Map Editor
-    public bool Map_Enable_Frustum_Culling = true;
-    public bool Map_Enable_Texturing = false;
-    public bool Map_Always_List_Loaded_Maps = true;
-    public bool Map_Enable_ER_Auto_Map_Offset = true;
-    public bool Map_Show_Character_Names_in_Scene_Tree = true;
-    public bool Map_Enable_Selection_Outline = true;
+    // Resource Banks
+    public bool AutoLoadBank_TimeAct = false;
+    public bool AutoLoadBank_Cutscene = false;
+    public bool AutoLoadBank_Gparam = false;
+    public bool AutoLoadBank_Material = false;
+    public bool AutoLoadBank_Particle = false;
+    public bool AutoLoadBank_EventScript = false;
+    public bool AutoLoadBank_TalkScript = false;
+    public bool AutoLoadBank_Textures = false;
 
-    public bool MapEditor_Enable_Commmunity_Names = true;
-    public bool MapEditor_Enable_Commmunity_Hints = true;
-    public bool MapEditor_Enable_Property_Info = false;
-
-    // Viewport
+    //****************************
+    // Settings: Viewport
+    //****************************
+    // View Grid
     public bool Viewport_EnableGrid = true;
+
     public int Viewport_GridType = 0;
     public int Viewport_Grid_Size = 1000;
     public int Viewport_Grid_Square_Size = 10;
+
     public float Viewport_Grid_Height = 0;
     public float Viewport_Grid_Height_Increment = 1;
+
     public bool Viewport_RegenerateMapGrid = false;
+    public bool Viewport_Frustum_Culling = true;
+    public bool Viewport_Enable_Texturing = false;
+    public bool Viewport_Enable_ER_Auto_Map_Offset = true;
+    public bool Viewport_Enable_Selection_Outline = true;
 
-    // GFX
-    public Vector3 GFX_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
+    public Vector3 Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
 
-    public float GFX_Camera_FOV { get; set; } = 60.0f;
-    public float GFX_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
-    public float GFX_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
-    public float GFX_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
-    public float GFX_Camera_Sensitivity { get; set; } = 0.0160f;
-    public float GFX_RenderDistance_Max { get; set; } = 50000.0f;
+    // Camera
+    public float Viewport_Camera_FOV { get; set; } = 60.0f;
+    public float Viewport_Camera_MoveSpeed_Slow { get; set; } = 1.0f;
+    public float Viewport_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
+    public float Viewport_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
+    public float Viewport_Camera_Sensitivity { get; set; } = 0.0160f;
+    public float Viewport_RenderDistance_Max { get; set; } = 50000.0f;
 
-    public uint GFX_Limit_Buffer_Flver_Bone = 65536;
-    public uint GFX_Limit_Buffer_Indirect_Draw = 50000;
-    public int GFX_Limit_Renderables = 50000;
+    // Rendering Limits
+    public uint Viewport_Limit_Buffer_Flver_Bone = 65536;
+    public uint Viewport_Limit_Buffer_Indirect_Draw = 50000;
+    public int Viewport_Limit_Renderables = 50000;
 
+    // Wireframe Coloring
     public float GFX_Wireframe_Color_Variance = 0.11f;
 
     public Vector3 GFX_Renderable_Box_BaseColor = Utils.GetDecimalColor(Color.Blue);
@@ -143,30 +159,31 @@ public class CFG
     public Vector3 GFX_Gizmo_Z_BaseColor = new(0.219f, 0.564f, 0.929f);
     public Vector3 GFX_Gizmo_Z_HighlightColor = new(0.407f, 0.690f, 1.0f);
 
-    // Filters
+    //****************************
+    // Settings: Map Editor
+    //****************************
+    public bool MapEditor_Always_List_Loaded_Maps = true;
+    public bool MapEditor_Show_Character_Names_in_Scene_Tree = true;
+    public bool MapEditor_Enable_Commmunity_Names = true;
+    public bool MapEditor_Enable_Commmunity_Hints = true;
+    public bool MapEditor_Enable_Property_Info = false;
+
+    // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
-
-    public RenderFilterPreset SceneFilter_Preset_01 { get; set; } = new("Map",
-        RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-
-    public RenderFilterPreset SceneFilter_Preset_02 { get; set; } = new("Collision",
-        RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
-
-    public RenderFilterPreset SceneFilter_Preset_03 { get; set; } = new("Collision & Navmesh",
-        RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object | RenderFilter.Character |
-        RenderFilter.Region);
-
-    public RenderFilterPreset SceneFilter_Preset_04 { get; set; } = new("Lighting (Map)",
-        RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
-
-    public RenderFilterPreset SceneFilter_Preset_05 { get; set; } = new("Lighting (Collision)",
-        RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
-
+    public RenderFilterPreset SceneFilter_Preset_01 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset SceneFilter_Preset_02 { get; set; } = new("Collision", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset SceneFilter_Preset_03 { get; set; } = new("Collision & Navmesh", RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);
+    public RenderFilterPreset SceneFilter_Preset_04 { get; set; } = new("Lighting (Map)", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
+    public RenderFilterPreset SceneFilter_Preset_05 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
     public RenderFilterPreset SceneFilter_Preset_06 { get; set; } = new("All", RenderFilter.All);
 
+    //****************************
     // Settings: Model Editor
+    //****************************
 
+    //****************************
     // Settings: Param Editor
+    //****************************
     public bool Param_MasseditPopupInContextMenu = true;
     public bool Param_AdvancedMassedit = false;
     public bool Param_AllowFieldReorder = true;
@@ -188,38 +205,18 @@ public class CFG
     public bool Param_QuickNameEdit = false;
     public int Param_DuplicateAmount = 1;
 
+    //****************************
     // Settings: Text Editor
+    //****************************
     public bool FMG_NoFmgPatching = false;
     public bool FMG_NoGroupedFmgEntries = false;
     public bool FMG_ShowOriginalNames = false;
     public int FMG_DuplicateAmount = 1;
     public int FMG_DuplicateIncrement = 1;
 
-    // Settings: TimeAct Editor
-    public bool AutoLoadBank_TimeAct = false;
-
-    // Settings: Cutscene Editor
-    public bool AutoLoadBank_Cutscene = false;
-
-    // Settings: Gparam Editor
-    public bool AutoLoadBank_Gparam = false;
-
-    // Settings: Material Editor
-    public bool AutoLoadBank_Material = false;
-
-    // Settings: Particle Editor
-    public bool AutoLoadBank_Particle = false;
-
-    // Settings: Event Script Editor
-    public bool AutoLoadBank_EventScript = false;
-
-    // Settings: Talk Script Editor
-    public bool AutoLoadBank_TalkScript = false;
-
-    // Settings: Texture Viewer
-    public bool AutoLoadBank_Textures = false;
-
-    // Settings: Browsers
+    //****************************
+    // Windows
+    //****************************
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_UpdateSelectionName = true;
     public bool AssetBrowser_SuspendListWhenInViewport = true;
@@ -228,16 +225,14 @@ public class CFG
     public bool EventFlagBrowser_ShowTagsInBrowser = true;
     public bool EventFlagBrowser_ShowAliasAddition = false;
 
-    public bool ParticleBrowser_Open = false;
-    public bool ParticleBrowser_ShowTagsInBrowser = true;
-    public bool ParticleBrowser_ShowAliasAddition = false;
-
     public bool MapAliases_ShowMapAliasEditList = false;
     public bool MapAliases_ShowUnusedNames = false;
     public bool MapAliases_ShowTagsInBrowser = true;
     public bool MapAliases_ShowAliasAddition = false;
 
-    // Settings: Toolbar
+    //****************************
+    // Map Toolbar
+    //****************************
     public bool Toolbar_Show_Check_Duplicate_Entity_ID = true;
     public bool Toolbar_Show_Render_Patrol_Routes = true;
     public bool Toolbar_Show_Navigation_Data = true;
@@ -255,7 +250,6 @@ public class CFG
     public bool Toolbar_Show_Replicate = true;
     public bool Toolbar_Show_Move_to_Grid = true;
 
-    // Toolbar: General
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
     public bool Toolbar_Duplicate_Increment_UnkPartNames = false;
     public bool Toolbar_Duplicate_Increment_InstanceID = true;
@@ -298,7 +292,6 @@ public class CFG
     public bool Toolbar_Tag_Visibility_State_Enabled = false;
     public bool Toolbar_Tag_Visibility_State_Disabled = true;
 
-    // Toolbar: Scrambler
     public bool Toolbar_ShowScramblerMenu = false;
 
     public bool Scrambler_RandomisePosition_X = false;
@@ -336,7 +329,6 @@ public class CFG
     public float Scrambler_OffsetMin_Scale_Z = 1.0f;
     public float Scrambler_OffsetMax_Scale_Z = 3.0f;
 
-    // Toolbar: Replicator
     public bool Toolbar_ShowReplicatorMenu = false;
 
     public bool Replicator_Circle_Radius_Specific_Input = false;
@@ -372,7 +364,9 @@ public class CFG
     public float Replicator_Sphere_Horizontal_Radius = 1;
     public float Replicator_Sphere_Vertical_Radius = 1;
 
+    //****************************
     // CFG
+    //****************************
     public static CFG Current { get; private set; }
     public static CFG Default { get; } = new();
 

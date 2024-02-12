@@ -1,7 +1,8 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.DebugPrimitives;
-using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Settings;
@@ -16,6 +17,12 @@ using Rectangle = Veldrid.Rectangle;
 
 namespace StudioCore.Gui;
 
+public enum ViewportType
+{
+    MapEditor,
+    ModelEditor
+}
+
 /// <summary>
 ///     A viewport is a virtual (i.e. render to texture/render target) view of a scene. It can receive input events to
 ///     transform
@@ -23,7 +30,7 @@ namespace StudioCore.Gui;
 /// </summary>
 public class Viewport : IViewport
 {
-    private readonly ActionManager _actionManager;
+    private readonly EntityActionManager _actionManager;
 
     private readonly FullScreenQuad _clearQuad;
 
@@ -32,12 +39,12 @@ public class Viewport : IViewport
     //private DebugPrimitives.DbgPrimGizmoTranslate TranslateGizmo = null;
     private readonly Gizmos _gizmos;
 
-    private readonly ViewGrid _viewGrid;
+    private readonly MapViewGrid _viewGrid;
 
     private readonly DbgPrimWire _rayDebug = null;
 
     private readonly RenderScene _renderScene;
-    private readonly Selection _selection;
+    private readonly MapSelection _selection;
     private readonly SceneRenderPipeline _viewPipeline;
 
     private readonly string _vpid = "";
@@ -61,10 +68,14 @@ public class Viewport : IViewport
 
     //public RenderTarget2D SceneRenderTarget = null;
 
-    public Viewport(string id, GraphicsDevice device, RenderScene scene, ActionManager am, Selection sel, int width,
+    private ViewportType _viewportType;
+
+    public Viewport(ViewportType viewportType, string id, GraphicsDevice device, RenderScene scene, EntityActionManager am, MapSelection sel, int width,
         int height)
     {
         _vpid = id;
+        _viewportType = viewportType;
+
         Width = width;
         Height = height;
         _device = device;
@@ -78,7 +89,7 @@ public class Viewport : IViewport
         _viewPipeline = new SceneRenderPipeline(scene, device, width, height);
 
         _projectionMat = Utils.CreatePerspective(device, false,
-            CFG.Current.GFX_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, NearClip, FarClip);
+            CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, NearClip, FarClip);
         _frustum = new BoundingFrustum(_projectionMat);
         _actionManager = am;
 
@@ -105,7 +116,7 @@ public class Viewport : IViewport
         _gizmos = new Gizmos(_actionManager, _selection, _renderScene.OverlayRenderables);
 
         // Create view grid
-        _viewGrid = new ViewGrid(_renderScene.OpaqueRenderables);
+        _viewGrid = new MapViewGrid(_renderScene.OpaqueRenderables);
 
         _clearQuad = new FullScreenQuad();
         Renderer.AddBackgroundUploadTask((gd, cl) =>
@@ -125,7 +136,7 @@ public class Viewport : IViewport
     public int Height { get; private set; }
 
     public float NearClip { get; set; } = 0.1f;
-    public float FarClip => CFG.Current.GFX_RenderDistance_Max;
+    public float FarClip => CFG.Current.Viewport_RenderDistance_Max;
 
     public bool ViewportSelected { get; private set; }
 
@@ -260,7 +271,7 @@ public class Viewport : IViewport
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        _projectionMat = Utils.CreatePerspective(device, true, CFG.Current.GFX_Camera_FOV * (float)Math.PI / 180.0f,
+        _projectionMat = Utils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f,
             Width / (float)Height, NearClip, FarClip);
         _frustum = new BoundingFrustum(WorldView.CameraTransform.CameraViewMatrixLH * _projectionMat);
         _viewPipeline.TestUpdateView(_projectionMat, WorldView.CameraTransform.CameraViewMatrixLH,

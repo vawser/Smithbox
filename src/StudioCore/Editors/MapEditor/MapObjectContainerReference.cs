@@ -1,15 +1,16 @@
-﻿using StudioCore.Scene;
+﻿using StudioCore.MsbEditor;
+using StudioCore.Scene;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 ///     Reference to a top-level container entity, regardless of whether it is loaded or not.
 /// </summary>
-public class ObjectContainerReference : ISelectable
+public class MapObjectContainerReference : ISelectable
 {
     private readonly Universe Universe;
 
-    public ObjectContainerReference(string name, Universe universe)
+    public MapObjectContainerReference(string name, Universe universe)
     {
         Name = name;
         Universe = universe;
@@ -30,7 +31,7 @@ public class ObjectContainerReference : ISelectable
     public ISelectable GetSelectionTarget()
     {
         if (Universe != null
-            && Universe.LoadedObjectContainers.TryGetValue(Name, out ObjectContainer container)
+            && Universe.LoadedObjectContainers.TryGetValue(Name, out MapObjectContainer container)
             && container?.RootObject != null)
         {
             return container.RootObject;
@@ -46,6 +47,6 @@ public class ObjectContainerReference : ISelectable
 
     public override bool Equals(object obj)
     {
-        return obj is ObjectContainerReference o && Name.Equals(o.Name);
+        return obj is MapObjectContainerReference o && Name.Equals(o.Name);
     }
 }

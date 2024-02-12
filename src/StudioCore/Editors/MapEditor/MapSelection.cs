@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// Handles selection of entities within the Viewport and SceneTree.
 /// </summary>
-public class Selection
+public class MapSelection
 {
     /// <summary>
     /// Hashset of current Selection.

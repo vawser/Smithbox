@@ -10,9 +10,9 @@ using System.Reflection.PortableExecutable;
 using Veldrid;
 using Veldrid.Utilities;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MsbEditor;
 
-public class ViewGrid
+public class MapViewGrid
 {
     private DbgPrimWireGrid WireGrid;
 
@@ -20,14 +20,14 @@ public class ViewGrid
 
     private MeshRenderables _renderlist;
 
-    public ViewGrid(MeshRenderables renderlist)
+    public MapViewGrid(MeshRenderables renderlist)
     {
         _renderlist = renderlist;
 
         WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.Viewport_Grid_Size, CFG.Current.Viewport_Grid_Square_Size);
 
         ViewportGrid = new DebugPrimitiveRenderableProxy(_renderlist, WireGrid);
-        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.GFX_Viewport_Grid_Color);
+        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.Viewport_Grid_Color);
     }
 
     private Color GetViewGridColor(Vector3 color)
@@ -40,14 +40,14 @@ public class ViewGrid
         WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.Viewport_Grid_Size, CFG.Current.Viewport_Grid_Square_Size);
 
         ViewportGrid = new DebugPrimitiveRenderableProxy(_renderlist, WireGrid);
-        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.GFX_Viewport_Grid_Color);
+        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.Viewport_Grid_Color);
     }
 
     public void Update(Ray ray)
     {
         if (CFG.Current.Viewport_EnableGrid)
         {
-            ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.GFX_Viewport_Grid_Color);
+            ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.Viewport_Grid_Color);
             ViewportGrid.Visible = true;
             ViewportGrid.World = new Transform(0, CFG.Current.Viewport_Grid_Height, 0, 0, 0, 0).WorldMatrix;
         }
@@ -56,7 +56,7 @@ public class ViewGrid
             ViewportGrid.Visible = false;
         }
 
-        if(CFG.Current.Viewport_RegenerateMapGrid)
+        if (CFG.Current.Viewport_RegenerateMapGrid)
         {
             CFG.Current.Viewport_RegenerateMapGrid = false;
 

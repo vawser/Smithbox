@@ -4,7 +4,7 @@ using ImGuiNET;
 using Microsoft.Win32;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -970,7 +970,7 @@ public static class Utils
         return "Unknown version format";
     }
 
-    public static void EntitySelectionHandler(Selection selection, Entity entity,
+    public static void EntitySelectionHandler(MapSelection selection, Entity entity,
         bool itemSelected, bool isItemFocused, List<WeakReference<Entity>> filteredEntityList = null)
     {
         // Up/Down arrow mass selection
@@ -1032,9 +1032,9 @@ public static class Utils
                 }
 
                 // TODO: account for TransformableNamedEntity in Model Editor
-                var i1 = entList.IndexOf(selection.GetFilteredSelection<MapEntity>()
+                var i1 = entList.IndexOf(selection.GetFilteredSelection<MsbEntity>()
                     .FirstOrDefault(fe => fe.Container == entity.Container && fe != entity.Container.RootObject));
-                var i2 = entList.IndexOf((MapEntity)entity);
+                var i2 = entList.IndexOf((MsbEntity)entity);
 
                 if (i1 != -1 && i2 != -1)
                 {

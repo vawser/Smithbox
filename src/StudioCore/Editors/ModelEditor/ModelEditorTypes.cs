@@ -1,4 +1,4 @@
-﻿namespace StudioCore.MsbEditor;
+﻿namespace StudioCore.Editors.ModelEditor;
 
 public enum ModelEditorModelType
 {

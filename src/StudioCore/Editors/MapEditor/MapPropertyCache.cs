@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace StudioCore.MsbEditor;
-public class PropertyCache
+namespace StudioCore.Editors.MapEditor;
+public class MapPropertyCache
 {
     public readonly Dictionary<string, PropertyInfo[]> PropCache = new();
 
-    public PropertyCache()
+    public MapPropertyCache()
     { }
 
     public PropertyInfo[] GetCachedFields(object obj)

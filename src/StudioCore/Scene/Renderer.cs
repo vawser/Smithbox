@@ -92,7 +92,7 @@ public class Renderer
 
         MaterialBufferAllocator = new GPUBufferAllocator("materials", 5 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material), VkShaderStageFlags.Fragment);
-        BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.GFX_Limit_Buffer_Flver_Bone * 64,
+        BoneBufferAllocator = new GPUBufferAllocator("bones", CFG.Current.Viewport_Limit_Buffer_Flver_Bone * 64,
             VkBufferUsageFlags.StorageBuffer, 64, VkShaderStageFlags.Vertex);
         GlobalTexturePool = new TexturePool(device, "globalTextures", 6000);
         GlobalCubeTexturePool = new TexturePool(device, "globalCubeTextures", 500);
@@ -716,7 +716,7 @@ public class Renderer
             // Create per frame in flight resources
             for (var i = 0; i < _bufferCount; i++)
             {
-                _drawEncoders.Add(new IndirectDrawEncoder(CFG.Current.GFX_Limit_Buffer_Indirect_Draw));
+                _drawEncoders.Add(new IndirectDrawEncoder(CFG.Current.Viewport_Limit_Buffer_Indirect_Draw));
                 _resourcesUpdatedFence.Add(device.ResourceFactory.CreateFence(i != 0));
             }
 

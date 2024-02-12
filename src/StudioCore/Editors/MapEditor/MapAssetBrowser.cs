@@ -9,7 +9,7 @@ using System;
 using SoulsFormats;
 using StudioCore.Platform;
 using StudioCore.MsbEditor;
-using Action = StudioCore.MsbEditor.Action;
+using Action = StudioCore.Editors.MapEditor.EntityAction;
 using StudioCore.Interface;
 using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
@@ -20,12 +20,12 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapAssetBrowser
 {
-    private readonly ActionManager _actionManager;
+    private readonly EntityActionManager _actionManager;
 
     private readonly RenderScene _scene;
-    private readonly Selection _selection;
+    private readonly MapSelection _selection;
 
-    private MsbEditorScreen _msbEditor;
+    private MapEditorScreen _msbEditor;
 
     private List<string> _loadedMaps = new List<string>();
     private List<string> _modelNameCache = new List<string>();
@@ -53,7 +53,7 @@ public class MapAssetBrowser
 
     private Universe _universe;
 
-    public MapAssetBrowser(Universe universe, RenderScene scene, Selection sel, ActionManager manager, MsbEditorScreen editor, IViewport viewport)
+    public MapAssetBrowser(Universe universe, RenderScene scene, MapSelection sel, EntityActionManager manager, MapEditorScreen editor, IViewport viewport)
     {
         _scene = scene;
         _selection = sel;
@@ -455,7 +455,7 @@ public class MapAssetBrowser
 
     public void SetObjectModelForSelection(string modelName, string assetType, string assetMapId)
     {
-        var actlist = new List<Action>();
+        var actlist = new List<EntityAction>();
 
         var selected = _selection.GetFilteredSelection<Entity>();
 
@@ -609,7 +609,7 @@ public class MapAssetBrowser
                 // Name
                 if (s.WrappedObject is MSBE.Part)
                 {
-                    SetUniqueInstanceID((MapEntity)s, modelName);
+                    SetUniqueInstanceID((MsbEntity)s, modelName);
                 }
             }
         }
@@ -640,7 +640,7 @@ public class MapAssetBrowser
             {
                 foreach (var ob in m.Objects)
                 {
-                    if (ob is MapEntity e)
+                    if (ob is MsbEntity e)
                     {
                         names.Add(ob.Name);
                     }
@@ -679,22 +679,22 @@ public class MapAssetBrowser
         return baseName;
     }
 
-    public void SetUniqueInstanceID(MapEntity selected, string modelName)
+    public void SetUniqueInstanceID(MsbEntity selected, string modelName)
     {
         Map m;
         m = _universe.GetLoadedMap(selected.MapID);
 
-        Dictionary<Map, HashSet<MapEntity>> mapPartEntities = new();
+        Dictionary<Map, HashSet<MsbEntity>> mapPartEntities = new();
 
         if (selected.WrappedObject is MSBE.Part msbePart)
         {
-            if (mapPartEntities.TryAdd(m, new HashSet<MapEntity>()))
+            if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
             {
                 foreach (Entity ent in m.Objects)
                 {
                     if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
                     {
-                        mapPartEntities[m].Add((MapEntity)ent);
+                        mapPartEntities[m].Add((MsbEntity)ent);
                     }
                 }
             }

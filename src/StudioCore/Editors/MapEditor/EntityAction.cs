@@ -13,8 +13,9 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using StudioCore.MsbEditor;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 ///     An action that can be performed by the user in the editor that represents
@@ -22,13 +23,13 @@ namespace StudioCore.MsbEditor;
 ///     should have enough information to apply the action AND undo the action, as
 ///     these actions get pushed to a stack for undo/redo
 /// </summary>
-public abstract class Action
+public abstract class EntityAction
 {
     public abstract ActionEvent Execute(bool isRedo = false);
     public abstract ActionEvent Undo();
 }
 
-public class PropertiesChangedAction : Action
+public class PropertiesChangedAction : EntityAction
 {
     private readonly object ChangedObject;
     private readonly List<PropertyChange> Changes = new();
@@ -152,7 +153,7 @@ public class PropertiesChangedAction : Action
 /// <summary>
 ///     Copies values from one array to another without affecting references.
 /// </summary>
-public class ArrayPropertyCopyAction : Action
+public class ArrayPropertyCopyAction : EntityAction
 {
     private readonly List<PropertyChange> Changes = new();
     private Action<bool> PostExecutionAction;
@@ -163,7 +164,10 @@ public class ArrayPropertyCopyAction : Action
         {
             PropertyChange change = new()
             {
-                ChangedObj = target, OldVal = target.GetValue(i), NewVal = source.GetValue(i), ArrayIndex = i
+                ChangedObj = target,
+                OldVal = target.GetValue(i),
+                NewVal = source.GetValue(i),
+                ArrayIndex = i
             };
             Changes.Add(change);
         }
@@ -177,7 +181,10 @@ public class ArrayPropertyCopyAction : Action
             {
                 PropertyChange change = new()
                 {
-                    ChangedObj = target, OldVal = target.GetValue(i), NewVal = source.GetValue(i), ArrayIndex = i
+                    ChangedObj = target,
+                    OldVal = target.GetValue(i),
+                    NewVal = source.GetValue(i),
+                    ArrayIndex = i
                 };
                 Changes.Add(change);
             }
@@ -228,7 +235,7 @@ public class ArrayPropertyCopyAction : Action
     }
 }
 
-public class MultipleEntityPropertyChangeAction : Action
+public class MultipleEntityPropertyChangeAction : EntityAction
 {
     private readonly HashSet<Entity> ChangedEnts = new();
     private readonly List<PropertyChange> Changes = new();
@@ -244,7 +251,10 @@ public class MultipleEntityPropertyChangeAction : Action
             var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, classIndex, false);
             var change = new PropertyChange
             {
-                ChangedObj = propObj, Property = prop, NewValue = newval, ArrayIndex = index
+                ChangedObj = propObj,
+                Property = prop,
+                NewValue = newval,
+                ArrayIndex = index
             };
             if (index != -1 && prop.PropertyType.IsArray)
             {
@@ -328,19 +338,19 @@ public class MultipleEntityPropertyChangeAction : Action
     }
 }
 
-public class CloneMapObjectsAction : Action
+public class CloneMapObjectsAction : EntityAction
 {
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
-    private readonly List<MapEntity> Clonables = new();
-    private readonly List<ObjectContainer> CloneMaps = new();
-    private readonly List<MapEntity> Clones = new();
+    private readonly List<MsbEntity> Clonables = new();
+    private readonly List<MapObjectContainer> CloneMaps = new();
+    private readonly List<MsbEntity> Clones = new();
     private readonly bool SetSelection;
     private readonly Entity TargetBTL;
     private readonly Map TargetMap;
     private readonly Universe Universe;
     private RenderScene Scene;
 
-    public CloneMapObjectsAction(Universe univ, RenderScene scene, List<MapEntity> objects, bool setSelection,
+    public CloneMapObjectsAction(Universe univ, RenderScene scene, List<MsbEntity> objects, bool setSelection,
         Map targetMap = null, Entity targetBTL = null)
     {
         Universe = univ;
@@ -356,7 +366,7 @@ public class CloneMapObjectsAction : Action
         var clonesCached = Clones.Count() > 0;
 
         var objectnames = new Dictionary<string, HashSet<string>>();
-        Dictionary<Map, HashSet<MapEntity>> mapPartEntities = new();
+        Dictionary<Map, HashSet<MsbEntity>> mapPartEntities = new();
 
         for (var i = 0; i < Clonables.Count(); i++)
         {
@@ -367,7 +377,7 @@ public class CloneMapObjectsAction : Action
                 continue;
             }
 
-            Map? m;
+            Map m;
             if (TargetMap != null)
             {
                 m = Universe.GetLoadedMap(TargetMap.Name);
@@ -393,7 +403,7 @@ public class CloneMapObjectsAction : Action
 
                 // If this was executed in the past we reused the cloned objects so because redo
                 // actions that follow this may reference the previously cloned object
-                MapEntity newobj = clonesCached ? Clones[i] : (MapEntity)Clonables[i].Clone();
+                MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
 
                 // Use pattern matching to attempt renames based on appended ID
                 Match idmatch = TrailIDRegex.Match(Clonables[i].Name);
@@ -434,13 +444,13 @@ public class CloneMapObjectsAction : Action
                 {
                     if (newobj.WrappedObject is MSBE.Part msbePart)
                     {
-                        if (mapPartEntities.TryAdd(m, new HashSet<MapEntity>()))
+                        if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
                         {
                             foreach (Entity ent in m.Objects)
                             {
                                 if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
                                 {
-                                    mapPartEntities[m].Add((MapEntity)ent);
+                                    mapPartEntities[m].Add((MsbEntity)ent);
                                 }
                             }
                         }
@@ -518,7 +528,7 @@ public class CloneMapObjectsAction : Action
         if (SetSelection)
         {
             Universe.Selection.ClearSelection();
-            foreach (MapEntity c in Clones)
+            foreach (MsbEntity c in Clones)
             {
                 Universe.Selection.AddSelection(c);
             }
@@ -527,7 +537,7 @@ public class CloneMapObjectsAction : Action
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    public void ChangeEntityID(MapEntity sel, Map map)
+    public void ChangeEntityID(MsbEntity sel, Map map)
     {
         if (Project.Type == ProjectType.DS2S)
             return;
@@ -537,7 +547,7 @@ public class CloneMapObjectsAction : Action
 
         if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
         {
-            if(Project.Type == ProjectType.ER)
+            if (Project.Type == ProjectType.ER)
             {
                 uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
@@ -704,7 +714,7 @@ public class CloneMapObjectsAction : Action
         }
     }
 
-    public void ChangePartNames(MapEntity sel, Map map)
+    public void ChangePartNames(MsbEntity sel, Map map)
     {
         if (Project.Type != ProjectType.ER)
             return;
@@ -765,7 +775,7 @@ public class CloneMapObjectsAction : Action
         if (SetSelection)
         {
             Universe.Selection.ClearSelection();
-            foreach (MapEntity c in Clonables)
+            foreach (MsbEntity c in Clonables)
             {
                 Universe.Selection.AddSelection(c);
             }
@@ -775,18 +785,18 @@ public class CloneMapObjectsAction : Action
     }
 }
 
-public class AddMapObjectsAction : Action
+public class AddMapObjectsAction : EntityAction
 {
     private static Regex TrailIDRegex = new(@"_(?<id>\d+)$");
-    private readonly List<MapEntity> Added = new();
-    private readonly List<ObjectContainer> AddedMaps = new();
+    private readonly List<MsbEntity> Added = new();
+    private readonly List<MapObjectContainer> AddedMaps = new();
     private readonly Map Map;
     private readonly Entity Parent;
     private readonly bool SetSelection;
     private readonly Universe Universe;
     private RenderScene Scene;
 
-    public AddMapObjectsAction(Universe univ, Map map, RenderScene scene, List<MapEntity> objects,
+    public AddMapObjectsAction(Universe univ, Map map, RenderScene scene, List<MsbEntity> objects,
         bool setSelection, Entity parent)
     {
         Universe = univ;
@@ -828,7 +838,7 @@ public class AddMapObjectsAction : Action
         if (SetSelection)
         {
             Universe.Selection.ClearSelection();
-            foreach (MapEntity c in Added)
+            foreach (MsbEntity c in Added)
             {
                 Universe.Selection.AddSelection(c);
             }
@@ -868,7 +878,7 @@ public class AddMapObjectsAction : Action
 ///     Deprecated
 /// </summary>
 [Obsolete]
-public class AddParamsAction : Action
+public class AddParamsAction : EntityAction
 {
     private readonly List<PARAM.Row> Clonables = new();
     private readonly List<PARAM.Row> Clones = new();
@@ -938,18 +948,18 @@ public class AddParamsAction : Action
     }
 }
 
-public class DeleteMapObjectsAction : Action
+public class DeleteMapObjectsAction : EntityAction
 {
-    private readonly List<MapEntity> Deletables = new();
+    private readonly List<MsbEntity> Deletables = new();
     private readonly List<int> RemoveIndices = new();
-    private readonly List<ObjectContainer> RemoveMaps = new();
-    private readonly List<MapEntity> RemoveParent = new();
+    private readonly List<MapObjectContainer> RemoveMaps = new();
+    private readonly List<MsbEntity> RemoveParent = new();
     private readonly List<int> RemoveParentIndex = new();
     private readonly bool SetSelection;
     private readonly Universe Universe;
     private RenderScene Scene;
 
-    public DeleteMapObjectsAction(Universe univ, RenderScene scene, List<MapEntity> objects, bool setSelection)
+    public DeleteMapObjectsAction(Universe univ, RenderScene scene, List<MsbEntity> objects, bool setSelection)
     {
         Universe = univ;
         Scene = scene;
@@ -959,7 +969,7 @@ public class DeleteMapObjectsAction : Action
 
     public override ActionEvent Execute(bool isRedo = false)
     {
-        foreach (MapEntity obj in Deletables)
+        foreach (MsbEntity obj in Deletables)
         {
             Map m = Universe.GetLoadedMap(obj.MapID);
             if (m != null)
@@ -974,7 +984,7 @@ public class DeleteMapObjectsAction : Action
                     obj.RenderSceneMesh.UnregisterWithScene();
                 }
 
-                RemoveParent.Add((MapEntity)obj.Parent);
+                RemoveParent.Add((MsbEntity)obj.Parent);
                 if (obj.Parent != null)
                 {
                     RemoveParentIndex.Add(obj.Parent.RemoveChild(obj));
@@ -1026,7 +1036,7 @@ public class DeleteMapObjectsAction : Action
         if (SetSelection)
         {
             Universe.Selection.ClearSelection();
-            foreach (MapEntity d in Deletables)
+            foreach (MsbEntity d in Deletables)
             {
                 Universe.Selection.AddSelection(d);
             }
@@ -1040,7 +1050,7 @@ public class DeleteMapObjectsAction : Action
 ///     Deprecated
 /// </summary>
 [Obsolete]
-public class DeleteParamsAction : Action
+public class DeleteParamsAction : EntityAction
 {
     private readonly List<PARAM.Row> Deletables = new();
     private readonly PARAM Param;
@@ -1083,9 +1093,9 @@ public class DeleteParamsAction : Action
     }
 }
 
-public class ReorderContainerObjectsAction : Action
+public class ReorderContainerObjectsAction : EntityAction
 {
-    private readonly List<ObjectContainer> Containers = new();
+    private readonly List<MapObjectContainer> Containers = new();
     private readonly bool SetSelection;
     private readonly List<Entity> SourceObjects = new();
     private readonly List<int> TargetIndices = new();
@@ -1105,7 +1115,7 @@ public class ReorderContainerObjectsAction : Action
         var sourceindices = new int[SourceObjects.Count];
         for (var i = 0; i < SourceObjects.Count; i++)
         {
-            ObjectContainer m = SourceObjects[i].Container;
+            MapObjectContainer m = SourceObjects[i].Container;
             Containers.Add(m);
             m.HasUnsavedChanges = true;
             sourceindices[i] = m.Objects.IndexOf(SourceObjects[i]);
@@ -1221,7 +1231,7 @@ public class ReorderContainerObjectsAction : Action
     }
 }
 
-public class ChangeEntityHierarchyAction : Action
+public class ChangeEntityHierarchyAction : EntityAction
 {
     private readonly bool SetSelection;
     private readonly List<Entity> SourceObjects = new();
@@ -1362,9 +1372,9 @@ public class ChangeEntityHierarchyAction : Action
     }
 }
 
-public class ChangeMapObjectType : Action
+public class ChangeMapObjectType : EntityAction
 {
-    private readonly List<MapEntity> Entities = new();
+    private readonly List<MsbEntity> Entities = new();
     private readonly List<MapObjectChange> MapObjectChanges = new();
     private readonly string MsbParamstr;
     private readonly Type MsbType;
@@ -1379,7 +1389,7 @@ public class ChangeMapObjectType : Action
     ///     as Parts or Regions.
     ///     Data for properties absent in targeted type will be lost, but will be restored for undo/redo.
     /// </summary>
-    public ChangeMapObjectType(Universe universe, Type msbType, List<MapEntity> selectedEnts, string[] oldTypes,
+    public ChangeMapObjectType(Universe universe, Type msbType, List<MsbEntity> selectedEnts, string[] oldTypes,
         string[] newTypes, string msbParamStr, bool setSelection)
     {
         Universe = universe;
@@ -1399,7 +1409,7 @@ public class ChangeMapObjectType : Action
             Type targetType = MsbType.GetNestedType(MsbParamstr).GetNestedType(NewTypes[iType]);
             Type partType = MsbType.GetNestedType(MsbParamstr);
 
-            foreach (MapEntity ent in Entities)
+            foreach (MsbEntity ent in Entities)
             {
                 Type currentType = ent.WrappedObject.GetType();
                 if (currentType == sourceType)
@@ -1463,7 +1473,7 @@ public class ChangeMapObjectType : Action
         if (SetSelection)
         {
             Universe.Selection.ClearSelection();
-            foreach (MapEntity ent in Entities)
+            foreach (MsbEntity ent in Entities)
             {
                 Universe.Selection.AddSelection(ent);
             }
@@ -1472,16 +1482,16 @@ public class ChangeMapObjectType : Action
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    private record MapObjectChange(object OldObject, object NewObject, MapEntity Entity);
+    private record MapObjectChange(object OldObject, object NewObject, MsbEntity Entity);
 }
 
-public class CompoundAction : Action
+public class CompoundAction : EntityAction
 {
-    private readonly List<Action> Actions;
+    private readonly List<EntityAction> Actions;
 
     private Action<bool> PostExecutionAction;
 
-    public CompoundAction(List<Action> actions)
+    public CompoundAction(List<EntityAction> actions)
     {
         Actions = actions;
     }
@@ -1494,7 +1504,7 @@ public class CompoundAction : Action
     public override ActionEvent Execute(bool isRedo = false)
     {
         var evt = ActionEvent.NoEvent;
-        foreach (Action act in Actions)
+        foreach (EntityAction act in Actions)
         {
             if (act != null)
             {
@@ -1513,7 +1523,7 @@ public class CompoundAction : Action
     public override ActionEvent Undo()
     {
         var evt = ActionEvent.NoEvent;
-        foreach (Action act in Actions)
+        foreach (EntityAction act in Actions)
         {
             if (act != null)
             {
@@ -1530,16 +1540,16 @@ public class CompoundAction : Action
     }
 }
 
-public class ReplicateMapObjectsAction : Action
+public class ReplicateMapObjectsAction : EntityAction
 {
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
-    private readonly List<MapEntity> Clonables = new();
-    private readonly List<ObjectContainer> CloneMaps = new();
-    private readonly List<MapEntity> Clones = new();
+    private readonly List<MsbEntity> Clonables = new();
+    private readonly List<MapObjectContainer> CloneMaps = new();
+    private readonly List<MsbEntity> Clones = new();
     private readonly Universe Universe;
     private RenderScene Scene;
-    private MsbToolbar Toolbar;
-    private ActionManager ActionManager;
+    private MapEditorToolbar Toolbar;
+    private EntityActionManager ActionManager;
 
     private int idxCache;
 
@@ -1559,7 +1569,7 @@ public class ReplicateMapObjectsAction : Action
 
     private SquareSide currentSquareSide;
 
-    public ReplicateMapObjectsAction(MsbToolbar toolbar, Universe univ, RenderScene scene, List<MapEntity> objects, ActionManager _actionManager)
+    public ReplicateMapObjectsAction(MapEditorToolbar toolbar, Universe univ, RenderScene scene, List<MsbEntity> objects, EntityActionManager _actionManager)
     {
         Toolbar = toolbar;
         Universe = univ;
@@ -1587,7 +1597,7 @@ public class ReplicateMapObjectsAction : Action
 
         if (CFG.Current.Replicator_Mode_Square)
         {
-            iterationCount = (CFG.Current.Replicator_Square_Size * 4) - 1;
+            iterationCount = CFG.Current.Replicator_Square_Size * 4 - 1;
             currentSquareSide = SquareSide.Bottom;
 
             squareTopCount = CFG.Current.Replicator_Square_Size;
@@ -1597,7 +1607,7 @@ public class ReplicateMapObjectsAction : Action
         }
 
         var objectnames = new Dictionary<string, HashSet<string>>();
-        Dictionary<Map, HashSet<MapEntity>> mapPartEntities = new();
+        Dictionary<Map, HashSet<MsbEntity>> mapPartEntities = new();
 
         var clonesCached = Clones.Count() > 0;
 
@@ -1612,7 +1622,7 @@ public class ReplicateMapObjectsAction : Action
                     continue;
                 }
 
-                Map? m;
+                Map m;
                 m = Universe.GetLoadedMap(Clonables[i].MapID);
 
                 if (m != null)
@@ -1631,7 +1641,7 @@ public class ReplicateMapObjectsAction : Action
 
                     // If this was executed in the past we reused the cloned objects so because redo
                     // actions that follow this may reference the previously cloned object
-                    MapEntity newobj = clonesCached ? Clones[i] : (MapEntity)Clonables[i].Clone();
+                    MsbEntity newobj = clonesCached ? Clones[i] : (MsbEntity)Clonables[i].Clone();
 
                     // Use pattern matching to attempt renames based on appended ID
                     Match idmatch = TrailIDRegex.Match(Clonables[i].Name);
@@ -1672,13 +1682,13 @@ public class ReplicateMapObjectsAction : Action
                     {
                         if (newobj.WrappedObject is MSBE.Part msbePart)
                         {
-                            if (mapPartEntities.TryAdd(m, new HashSet<MapEntity>()))
+                            if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
                             {
                                 foreach (Entity ent in m.Objects)
                                 {
                                     if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
                                     {
-                                        mapPartEntities[m].Add((MapEntity)ent);
+                                        mapPartEntities[m].Add((MsbEntity)ent);
                                     }
                                 }
                             }
@@ -1696,7 +1706,7 @@ public class ReplicateMapObjectsAction : Action
                         }
                     }
 
-                    if(idxCache == -1)
+                    if (idxCache == -1)
                     {
                         idxCache = m.Objects.IndexOf(Clonables[i]) + 1;
                     }
@@ -1748,7 +1758,7 @@ public class ReplicateMapObjectsAction : Action
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    public void ChangePartNames(MapEntity sel, Map map)
+    public void ChangePartNames(MsbEntity sel, Map map)
     {
         if (Project.Type != ProjectType.ER)
             return;
@@ -1788,7 +1798,7 @@ public class ReplicateMapObjectsAction : Action
         }
     }
 
-    public void ChangeEntityID(MapEntity sel, Map map)
+    public void ChangeEntityID(MsbEntity sel, Map map)
     {
         if (Project.Type == ProjectType.DS2S)
             return;
@@ -1939,11 +1949,11 @@ public class ReplicateMapObjectsAction : Action
                         {
                             newID = entry;
                             hasMatch = true;
-                            
+
                             // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                            if(Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                            if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                             {
-                                if(newID < 10000)
+                                if (newID < 10000)
                                 {
                                     hasMatch = false;
                                 }
@@ -1967,7 +1977,7 @@ public class ReplicateMapObjectsAction : Action
         }
     }
 
-    private void ApplyReplicateTransform(MapEntity sel, int iteration)
+    private void ApplyReplicateTransform(MsbEntity sel, int iteration)
     {
         Transform objT = sel.GetLocalTransform();
 
@@ -2006,18 +2016,18 @@ public class ReplicateMapObjectsAction : Action
             double angleIncrement = 360 / CFG.Current.Replicator_Circle_Size;
 
             double radius = CFG.Current.Replicator_Circle_Radius;
-            double angle = (angleIncrement * iteration);
+            double angle = angleIncrement * iteration;
             double rad = angle * (Math.PI / 180);
 
-            double x = (radius * Math.Cos(rad) * 180 / Math.PI);
-            double z = (radius * Math.Sin(rad) * 180 / Math.PI);
+            double x = radius * Math.Cos(rad) * 180 / Math.PI;
+            double z = radius * Math.Sin(rad) * 180 / Math.PI;
 
             newPos = new Vector3(newPos[0] + (float)x, newPos[1], newPos[2] + (float)z);
         }
 
         if (CFG.Current.Replicator_Mode_Square)
         {
-            if(currentSquareSide == SquareSide.Bottom && squareBottomCount <= 0)
+            if (currentSquareSide == SquareSide.Bottom && squareBottomCount <= 0)
             {
                 currentSquareSide = SquareSide.Left;
             }
@@ -2036,7 +2046,7 @@ public class ReplicateMapObjectsAction : Action
             // Bottom
             if (currentSquareSide == SquareSide.Bottom)
             {
-                float width_increment = (CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size) * squareBottomCount;
+                float width_increment = CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size * squareBottomCount;
                 float x = newPos[0] - width_increment;
 
                 newPos = new Vector3(x, newPos[1], newPos[2]);
@@ -2050,9 +2060,9 @@ public class ReplicateMapObjectsAction : Action
                 float width_increment = CFG.Current.Replicator_Square_Width;
                 float x = newPos[0] - width_increment;
 
-                float height_increment = (CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size) * squareLeftCount;
+                float height_increment = CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size * squareLeftCount;
                 float z = newPos[2] + height_increment;
-                
+
                 newPos = new Vector3(x, newPos[1], z);
 
                 squareLeftCount--;
@@ -2061,7 +2071,7 @@ public class ReplicateMapObjectsAction : Action
             // Top
             if (currentSquareSide == SquareSide.Top)
             {
-                float width_increment = (CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size) * squareTopCount;
+                float width_increment = CFG.Current.Replicator_Square_Width / CFG.Current.Replicator_Square_Size * squareTopCount;
                 float x = newPos[0] - width_increment;
 
                 float height_increment = CFG.Current.Replicator_Square_Depth;
@@ -2075,7 +2085,7 @@ public class ReplicateMapObjectsAction : Action
             // Right
             if (currentSquareSide == SquareSide.Right)
             {
-                float height_increment = (CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size) * squareRightCount;
+                float height_increment = CFG.Current.Replicator_Square_Depth / CFG.Current.Replicator_Square_Size * squareRightCount;
                 float z = newPos[2] + height_increment;
 
                 newPos = new Vector3(newPos[0], newPos[1], z);
@@ -2089,11 +2099,11 @@ public class ReplicateMapObjectsAction : Action
             double angleIncrement = 360 / CFG.Current.Replicator_Circle_Size;
 
             double radius = CFG.Current.Replicator_Circle_Radius;
-            double angle = (angleIncrement * iteration);
+            double angle = angleIncrement * iteration;
             double rad = angle * (Math.PI / 180);
 
-            double x = (radius * Math.Cos(rad) * 180 / Math.PI);
-            double z = (radius * Math.Sin(rad) * 180 / Math.PI);
+            double x = radius * Math.Cos(rad) * 180 / Math.PI;
+            double z = radius * Math.Sin(rad) * 180 / Math.PI;
 
             newPos = new Vector3(newPos[0] + (float)x, newPos[1], newPos[2] + (float)z);
         }
@@ -2102,9 +2112,9 @@ public class ReplicateMapObjectsAction : Action
         newTransform.Rotation = newRot;
         newTransform.Scale = newScale;
 
-        if(Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S)
         {
-            if (sel.Type == MapEntity.MapEntityType.DS2Generator &&
+            if (sel.Type == MsbEntity.MsbEntityType.DS2Generator &&
                 sel.WrappedObject is MergedParamRow mp)
             {
                 Param.Row loc = mp.GetRow("generator-loc");
@@ -2122,7 +2132,7 @@ public class ReplicateMapObjectsAction : Action
         }
     }
 
-    public void ApplyScrambleTransform(MapEntity newobj)
+    public void ApplyScrambleTransform(MsbEntity newobj)
     {
         if (CFG.Current.Replicator_Apply_Scramble_Configuration)
         {
@@ -2130,7 +2140,7 @@ public class ReplicateMapObjectsAction : Action
 
             if (Project.Type == ProjectType.DS2S)
             {
-                if(newobj.Type == MapEntity.MapEntityType.DS2Generator &&
+                if (newobj.Type == MsbEntity.MsbEntityType.DS2Generator &&
                 newobj.WrappedObject is MergedParamRow mp)
                 {
                     Param.Row loc = mp.GetRow("generator-loc");

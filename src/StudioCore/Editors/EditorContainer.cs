@@ -4,7 +4,6 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditor;
-using StudioCore.MsbEditor;
 using StudioCore.ParticleEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.TalkEditor;
@@ -15,11 +14,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.Editors;
 public static class EditorContainer
 {
-    public static MsbEditorScreen MsbEditor { get; set; }
+    public static MapEditorScreen MsbEditor { get; set; }
     public static ModelEditorScreen ModelEditor { get; set; }
     public static TextEditorScreen TextEditor { get; set; }
     public static ParamEditorScreen ParamEditor { get; set; }

@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.MsbEditor;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -10,7 +11,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// A logical map object that can be either a part, region, event, or light. Uses reflection to access and update properties
@@ -67,7 +68,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Constructor: container, object
     /// </summary>
-    public Entity(ObjectContainer map, object msbo)
+    public Entity(MapObjectContainer map, object msbo)
     {
         Container = map;
         WrappedObject = msbo;
@@ -81,7 +82,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// The object container for this entity.
     /// </summary>
-    [XmlIgnore] public ObjectContainer Container { get; set; }
+    [XmlIgnore] public MapObjectContainer Container { get; set; }
 
     /// <summary>
     /// Universe.
@@ -900,13 +901,13 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Get action for updating the Transform of this object.
     /// </summary>
-    public Action GetUpdateTransformAction(Transform newt, bool includeScale = false)
+    public EntityAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
     {
         // Is param, e.g. DS2 enemy
         if (WrappedObject is Param.Row || WrappedObject is MergedParamRow)
         {
-            List<Action> actions = new();
-            var roty = (newt.EulerRotation.Y * Utils.Rad2Deg) - 180.0f;
+            List<EntityAction> actions = new();
+            var roty = newt.EulerRotation.Y * Utils.Rad2Deg - 180.0f;
             actions.Add(GetPropertyChangeAction("PositionX", newt.Position.X));
             actions.Add(GetPropertyChangeAction("PositionY", newt.Position.Y));
             actions.Add(GetPropertyChangeAction("PositionZ", newt.Position.Z));
@@ -967,7 +968,7 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
-    public Action ApplySavedPosition()
+    public EntityAction ApplySavedPosition()
     {
         PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
@@ -979,7 +980,7 @@ public class Entity : ISelectable, IDisposable
         });
         return act;
     }
-    public Action ApplySavedRotation()
+    public EntityAction ApplySavedRotation()
     {
         PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Rotation");
@@ -992,7 +993,7 @@ public class Entity : ISelectable, IDisposable
         return act;
     }
 
-    public Action ApplySavedScale()
+    public EntityAction ApplySavedScale()
     {
         PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Scale");
@@ -1008,9 +1009,9 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Get action for changing a string propety value for this object.
     /// </summary>
-    public Action ChangeObjectProperty(string propTarget, string propValue)
+    public EntityAction ChangeObjectProperty(string propTarget, string propValue)
     {
-        var actions = new List<Action>();
+        var actions = new List<EntityAction>();
         actions.Add(GetPropertyChangeAction(propTarget, propValue));
         var act = new CompoundAction(actions);
         act.SetPostExecutionAction((undo) =>
@@ -1140,11 +1141,11 @@ public class Entity : ISelectable, IDisposable
     {
         return WrappedObject is MSB1.Part ||
             WrappedObject is MSB2.Part ||
-            WrappedObject is MSB3.Part || 
-            WrappedObject is MSBB.Part || 
-            WrappedObject is MSBD.Part || 
-            WrappedObject is MSBE.Part || 
-            WrappedObject is MSBS.Part || 
+            WrappedObject is MSB3.Part ||
+            WrappedObject is MSBB.Part ||
+            WrappedObject is MSBD.Part ||
+            WrappedObject is MSBE.Part ||
+            WrappedObject is MSBS.Part ||
             WrappedObject is MSB_AC6.Part ? true : false;
     }
 
@@ -1191,12 +1192,12 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public bool IsPartEnemy()
     {
-        return WrappedObject is MSB1.Part.Enemy || 
-            WrappedObject is MSB3.Part.Enemy || 
-            WrappedObject is MSBB.Part.Enemy || 
-            WrappedObject is MSBD.Part.Enemy || 
-            WrappedObject is MSBE.Part.Enemy || 
-            WrappedObject is MSBS.Part.Enemy || 
+        return WrappedObject is MSB1.Part.Enemy ||
+            WrappedObject is MSB3.Part.Enemy ||
+            WrappedObject is MSBB.Part.Enemy ||
+            WrappedObject is MSBD.Part.Enemy ||
+            WrappedObject is MSBE.Part.Enemy ||
+            WrappedObject is MSBS.Part.Enemy ||
             WrappedObject is MSB_AC6.Part.Enemy ? true : false;
     }
 
@@ -1234,7 +1235,7 @@ public class Entity : ISelectable, IDisposable
 /// </summary>
 public class NamedEntity : Entity
 {
-    public NamedEntity(ObjectContainer map, object msbo, string name) : base(map, msbo)
+    public NamedEntity(MapObjectContainer map, object msbo, string name) : base(map, msbo)
     {
         Name = name;
     }
@@ -1247,7 +1248,7 @@ public class NamedEntity : Entity
 /// </summary>
 public class TransformableNamedEntity : Entity
 {
-    public TransformableNamedEntity(ObjectContainer map, object msbo, string name) : base(map, msbo)
+    public TransformableNamedEntity(MapObjectContainer map, object msbo, string name) : base(map, msbo)
     {
         Name = name;
     }
@@ -1264,7 +1265,7 @@ public class MapSerializationEntity
 {
     public string Name { get; set; }
     public int Msbidx { get; set; } = -1;
-    public MapEntity.MapEntityType Type { get; set; }
+    public MsbEntity.MsbEntityType Type { get; set; }
     public Transform Transform { get; set; }
     public List<MapSerializationEntity> Children { get; set; }
 
@@ -1277,12 +1278,12 @@ public class MapSerializationEntity
 /// <summary>
 /// Entity used within MSB.
 /// </summary>
-public class MapEntity : Entity
+public class MsbEntity : Entity
 {
     /// <summary>
     /// Enum for Entity Type within the MSB.
     /// </summary>
-    public enum MapEntityType
+    public enum MsbEntityType
     {
         MapRoot,
         Editor,
@@ -1300,14 +1301,14 @@ public class MapEntity : Entity
     /// <summary>
     /// Constructor
     /// </summary>
-    public MapEntity()
+    public MsbEntity()
     {
     }
 
     /// <summary>
     /// Constructer: container, object
     /// </summary>
-    public MapEntity(ObjectContainer map, object msbo)
+    public MsbEntity(MapObjectContainer map, object msbo)
     {
         Container = map;
         WrappedObject = msbo;
@@ -1316,7 +1317,7 @@ public class MapEntity : Entity
     /// <summary>
     /// Constructer: container, object, entity type
     /// </summary>
-    public MapEntity(ObjectContainer map, object msbo, MapEntityType type)
+    public MsbEntity(MapObjectContainer map, object msbo, MsbEntityType type)
     {
         Container = map;
         WrappedObject = msbo;
@@ -1330,7 +1331,7 @@ public class MapEntity : Entity
     /// <summary>
     /// The entity type of this entity.
     /// </summary>
-    public MapEntityType Type { get; set; }
+    public MsbEntityType Type { get; set; }
 
     /// <summary>
     /// The map container this entity belongs to.
@@ -1345,43 +1346,43 @@ public class MapEntity : Entity
         get
         {
             var icon = "";
-            if (Type == MapEntityType.Part)
+            if (Type == MsbEntityType.Part)
             {
                 icon = ForkAwesome.PuzzlePiece;
             }
-            else if (Type == MapEntityType.Event)
+            else if (Type == MsbEntityType.Event)
             {
                 icon = ForkAwesome.Flag;
             }
-            else if (Type == MapEntityType.Region)
+            else if (Type == MsbEntityType.Region)
             {
                 icon = ForkAwesome.LocationArrow;
             }
-            else if (Type == MapEntityType.MapRoot)
+            else if (Type == MsbEntityType.MapRoot)
             {
                 icon = ForkAwesome.Cube;
             }
-            else if (Type == MapEntityType.Light)
+            else if (Type == MsbEntityType.Light)
             {
                 icon = ForkAwesome.LightbulbO;
             }
-            else if (Type == MapEntityType.DS2Generator)
+            else if (Type == MsbEntityType.DS2Generator)
             {
                 icon = ForkAwesome.Male;
             }
-            else if (Type == MapEntityType.DS2GeneratorRegist)
+            else if (Type == MsbEntityType.DS2GeneratorRegist)
             {
                 icon = ForkAwesome.UserCircleO;
             }
-            else if (Type == MapEntityType.DS2EventLocation)
+            else if (Type == MsbEntityType.DS2EventLocation)
             {
                 icon = ForkAwesome.FlagO;
             }
-            else if (Type == MapEntityType.DS2Event)
+            else if (Type == MsbEntityType.DS2Event)
             {
                 icon = ForkAwesome.FlagCheckered;
             }
-            else if (Type == MapEntityType.DS2ObjectInstance)
+            else if (Type == MsbEntityType.DS2ObjectInstance)
             {
                 icon = ForkAwesome.Database;
             }
@@ -1393,8 +1394,8 @@ public class MapEntity : Entity
     /// <summary>
     /// The transform state for this entity.
     /// </summary>
-    public override bool HasTransform => Type != MapEntityType.Event && Type != MapEntityType.DS2GeneratorRegist &&
-                                         Type != MapEntityType.DS2Event;
+    public override bool HasTransform => Type != MsbEntityType.Event && Type != MsbEntityType.DS2GeneratorRegist &&
+                                         Type != MsbEntityType.DS2Event;
 
     /// <summary>
     /// The map ID of the parent entity that this entity belongs to.
@@ -1405,9 +1406,9 @@ public class MapEntity : Entity
         get
         {
             Entity parent = Parent;
-            while (parent != null && parent is MapEntity e)
+            while (parent != null && parent is MsbEntity e)
             {
-                if (e.Type == MapEntityType.MapRoot)
+                if (e.Type == MsbEntityType.MapRoot)
                 {
                     return parent.Name;
                 }
@@ -1424,10 +1425,10 @@ public class MapEntity : Entity
     /// </summary>
     public override void UpdateRenderModel()
     {
-        if (Type == MapEntityType.DS2Generator)
+        if (Type == MsbEntityType.DS2Generator)
         {
         }
-        else if (Type == MapEntityType.DS2EventLocation && _renderSceneMesh == null)
+        else if (Type == MsbEntityType.DS2EventLocation && _renderSceneMesh == null)
         {
             if (_renderSceneMesh != null)
             {
@@ -1436,7 +1437,7 @@ public class MapEntity : Entity
 
             _renderSceneMesh = Universe.GetDS2EventLocationDrawable(ContainingMap, this);
         }
-        else if (Type == MapEntityType.Region && _renderSceneMesh == null)
+        else if (Type == MsbEntityType.Region && _renderSceneMesh == null)
         {
             if (_renderSceneMesh != null)
             {
@@ -1445,7 +1446,7 @@ public class MapEntity : Entity
 
             _renderSceneMesh = Universe.GetRegionDrawable(ContainingMap, this);
         }
-        else if (Type == MapEntityType.Light && _renderSceneMesh == null)
+        else if (Type == MsbEntityType.Light && _renderSceneMesh == null)
         {
             if (_renderSceneMesh != null)
             {
@@ -1500,7 +1501,7 @@ public class MapEntity : Entity
     /// </summary>
     public override void BuildReferenceMap()
     {
-        if (Type == MapEntityType.MapRoot && Universe != null)
+        if (Type == MsbEntityType.MapRoot && Universe != null)
         {
             // Special handling for map itself, as it references objects outside of the map.
             // This depends on Type, which is only defined in MapEntity.
@@ -1529,7 +1530,7 @@ public class MapEntity : Entity
             // For now, the map relationship type is not given here (dictionary values), just all related maps.
             foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Name, Universe.LoadedObjectContainers.Keys, connects).Keys)
             {
-                References[mapRef] = new[] { new ObjectContainerReference(mapRef, Universe) };
+                References[mapRef] = new[] { new MapObjectContainerReference(mapRef, Universe) };
             }
         }
         else
@@ -1545,7 +1546,7 @@ public class MapEntity : Entity
     {
         Transform t = base.GetLocalTransform();
         // If this is a region scale the region primitive by its respective parameters
-        if (Type == MapEntityType.Region)
+        if (Type == MsbEntityType.Region)
         {
             var shape = GetPropertyValue("Shape");
             if (shape != null && shape is MSB.Shape.Box b2)
@@ -1569,7 +1570,7 @@ public class MapEntity : Entity
                 t.Scale = new Vector3(ci.Radius, 0.0f, ci.Radius);
             }
         }
-        else if (Type == MapEntityType.Light)
+        else if (Type == MsbEntityType.Light)
         {
             var lightType = GetPropertyValue("Type");
             if (lightType != null)
@@ -1597,7 +1598,7 @@ public class MapEntity : Entity
             }
         }
         // DS2 event regions
-        else if (Type == MapEntityType.DS2EventLocation)
+        else if (Type == MsbEntityType.DS2EventLocation)
         {
             var sx = GetPropertyValue("ScaleX");
             var sy = GetPropertyValue("ScaleY");
@@ -1632,7 +1633,7 @@ public class MapEntity : Entity
     /// </summary>
     internal override Entity DuplicateEntity(object clone)
     {
-        return new MapEntity(Container, clone);
+        return new MsbEntity(Container, clone);
     }
 
     /// <summary>
@@ -1640,7 +1641,7 @@ public class MapEntity : Entity
     /// </summary>
     public override Entity Clone()
     {
-        var c = (MapEntity)base.Clone();
+        var c = (MsbEntity)base.Clone();
         c.Type = Type;
         return c;
     }
@@ -1666,7 +1667,7 @@ public class MapEntity : Entity
 
         foreach (Entity c in Children)
         {
-            e.Children.Add(((MapEntity)c).Serialize(idmap));
+            e.Children.Add(((MsbEntity)c).Serialize(idmap));
         }
 
         return e;

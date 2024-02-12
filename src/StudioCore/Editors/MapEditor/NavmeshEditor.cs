@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 ///     Editor used to bake new navmeshes for cols
@@ -18,7 +18,7 @@ namespace StudioCore.MsbEditor;
 public class NavmeshEditor
 {
     private readonly MeshRenderableProxy _previewMesh = null;
-    private readonly Selection _selection;
+    private readonly MapSelection _selection;
     private readonly int icount = 0;
     private readonly int vcount = 0;
 
@@ -35,7 +35,7 @@ public class NavmeshEditor
     private int MinRegionArea = 3;
     private float SlopeAngle = 30.0f;
 
-    public NavmeshEditor(RenderScene scene, Selection sel)
+    public NavmeshEditor(RenderScene scene, MapSelection sel)
     {
         _scene = scene;
         _selection = sel;

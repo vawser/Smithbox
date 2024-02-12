@@ -18,20 +18,21 @@ using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
 using StudioCore.AssetLocator;
-using StudioCore.Editors.ModelEditor;
+using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTreeEventHandler,
     IResourceEventListener
 {
     private ModelAssetBrowser _assetBrowser;
 
-    private readonly PropertyEditor _propEditor;
-    private readonly PropertyCache _propCache = new();
+    private readonly MapPropertyEditor _propEditor;
+    private readonly MapPropertyCache _propCache = new();
 
-    private readonly SceneTree _sceneTree;
-    private readonly Selection _selection = new();
+    private readonly MapSceneTree _sceneTree;
+    private readonly MapSelection _selection = new();
 
     private readonly Universe _universe;
     private string _currentModel;
@@ -41,7 +42,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     private Task _loadingTask;
     private MeshRenderableProxy _renderMesh;
 
-    public ActionManager EditorActionManager = new();
+    public MapEditor.EntityActionManager EditorActionManager = new();
     public Rectangle Rect;
     public RenderScene RenderScene;
     public IViewport Viewport;
@@ -59,18 +60,17 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         if (device != null)
         {
             RenderScene = new RenderScene();
-            Viewport = new Viewport("Modeleditvp", device, RenderScene, EditorActionManager, _selection,
-                Rect.Width, Rect.Height);
+            Viewport = new Viewport(ViewportType.ModelEditor,"Modeleditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
         else
         {
-            Viewport = new NullViewport("Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
+            Viewport = new NullViewport(ViewportType.ModelEditor, "Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
         _universe = new Universe(RenderScene, _selection);
 
-        _sceneTree = new SceneTree(SceneTree.Configuration.ModelEditor, this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
-        _propEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, null);
+        _sceneTree = new MapSceneTree(MapSceneTree.Configuration.ModelEditor, this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
+        _propEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport, null);
         _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser");
     }
 

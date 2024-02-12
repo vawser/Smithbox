@@ -41,7 +41,7 @@ public struct SceneVisibilityComponent
 /// </summary>
 public class Renderables
 {
-    protected static readonly int SYSTEM_SIZE = CFG.Current.GFX_Limit_Renderables;
+    protected static readonly int SYSTEM_SIZE = CFG.Current.Viewport_Limit_Renderables;
 
     private readonly Stack<int> _freeIndices = new(100);
 
@@ -125,7 +125,7 @@ public class MeshRenderables : Renderables
             }
 
             ContainmentType intersect = frustum.Contains(ref cBounds[i]);
-            if (!CFG.Current.Map_Enable_Frustum_Culling)
+            if (!CFG.Current.Viewport_Frustum_Culling)
             {
                 cCulled[i] = !cVisible[i]._valid || !cVisible[i]._visible;
             }

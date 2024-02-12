@@ -22,14 +22,14 @@ using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
 using Viewport = StudioCore.Gui.Viewport;
-using StudioCore.Editors.MapEditor;
+using StudioCore.MsbEditor;
 
-namespace StudioCore.MsbEditor;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
 /// Main interface for the MSB Editor.
 /// </summary>
-public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
+public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 {
     /// <summary>
     /// Lock variable used to handle pauses to the Update() function.
@@ -39,7 +39,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     /// <summary>
     /// Current entity selection within the viewport.
     /// </summary>
-    private Selection _selection = new();
+    private MapSelection _selection = new();
 
     /// <summary>
     /// Active modal window.
@@ -47,7 +47,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     private IModal _activeModal;
 
     private int _createEntityMapIndex;
-    private (string, ObjectContainer) _dupeSelectionTargetedMap = ("None", null);
+    private (string, MapObjectContainer) _dupeSelectionTargetedMap = ("None", null);
     private (string, Entity) _dupeSelectionTargetedParent = ("None", null);
 
     private bool _PauseUpdate;
@@ -56,24 +56,25 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     public bool AltHeld;
     public bool CtrlHeld;
 
-    public ActionManager EditorActionManager = new();
+    public EntityActionManager EditorActionManager = new();
 
-    public DisplayGroupsEditor DispGroupEditor;
+    public DisplayGroupEditor DispGroupEditor;
     public MapAssetBrowser AssetBrowser;
-    public MsbToolbar Toolbar;
+    public MapEditorToolbar MapEditorToolbar;
+    public SavedSelectionToolbar SelectionToolbar;
 
     private bool GCNeedsCollection;
 
     public Rectangle ModelViewerBounds;
     public NavmeshEditor NavMeshEditor;
-    public PropertyEditor PropEditor;
-    public SearchProperties PropSearch;
-    private readonly PropertyCache _propCache = new();
+    public MapPropertyEditor PropEditor;
+    public MapSearchProperties PropSearch;
+    private readonly MapPropertyCache _propCache = new();
 
     public Rectangle Rect;
     public RenderScene RenderScene;
 
-    public SceneTree SceneTree;
+    public MapSceneTree SceneTree;
     public bool ShiftHeld;
 
     public Universe Universe;
@@ -83,7 +84,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
     private Sdl2Window Window;
 
-    public MsbEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public MapEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
         Window = window;
@@ -91,23 +92,24 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         if (device != null)
         {
             RenderScene = new RenderScene();
-            Viewport = new Viewport("Mapeditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width, Rect.Height);
+            Viewport = new Viewport(ViewportType.MapEditor, "Mapeditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width, Rect.Height);
             RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
         }
         else
         {
-            Viewport = new NullViewport("Mapeditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
+            Viewport = new NullViewport(ViewportType.MapEditor, "Mapeditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
 
         Universe = new Universe(RenderScene, _selection);
 
-        SceneTree = new SceneTree(SceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport);
-        DispGroupEditor = new DisplayGroupsEditor(RenderScene, _selection, EditorActionManager);
-        PropSearch = new SearchProperties(Universe, _propCache);
+        SceneTree = new MapSceneTree(MapSceneTree.Configuration.MapEditor, this, "mapedittree", Universe, _selection, EditorActionManager, Viewport);
+        DispGroupEditor = new DisplayGroupEditor(RenderScene, _selection, EditorActionManager);
+        PropSearch = new MapSearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
-        Toolbar = new MsbToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
-        PropEditor = new PropertyEditor(EditorActionManager, _propCache, Viewport, Toolbar);
+        MapEditorToolbar = new MapEditorToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
+        SelectionToolbar = new SavedSelectionToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
+        PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport, MapEditorToolbar);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -188,7 +190,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             if (ImGui.MenuItem("Delete", KeyBindings.Current.Core_Delete.HintText, false, _selection.IsSelection()))
             {
                 DeleteMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
+                    _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
                 EditorActionManager.ExecuteAction(action);
             }
 
@@ -196,7 +198,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                     _selection.IsSelection()))
             {
                 CloneMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
+                    _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
                 EditorActionManager.ExecuteAction(action);
             }
 
@@ -460,7 +462,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _selection.IsSelection())
             {
                 CloneMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
+                    _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
                 EditorActionManager.ExecuteAction(action);
             }
 
@@ -472,7 +474,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete) && _selection.IsSelection())
             {
                 DeleteMapObjectsAction action = new(Universe, RenderScene,
-                    _selection.GetFilteredSelection<MapEntity>().ToList(), true);
+                    _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
                 EditorActionManager.ExecuteAction(action);
             }
 
@@ -512,85 +514,85 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Flip) && _selection.IsSelection())
             {
-                Toolbar.ForceVisibilityState(false, false, true);
-                Toolbar.ToggleEntityVisibility();
+                MapEditorToolbar.ForceVisibilityState(false, false, true);
+                MapEditorToolbar.ToggleEntityVisibility();
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Enabled) && _selection.IsSelection())
             {
-                Toolbar.ForceVisibilityState(true, false, false);
-                Toolbar.ToggleEntityVisibility();
+                MapEditorToolbar.ForceVisibilityState(true, false, false);
+                MapEditorToolbar.ToggleEntityVisibility();
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Disabled) && _selection.IsSelection())
             {
-                Toolbar.ForceVisibilityState(false, true, false);
-                Toolbar.ToggleEntityVisibility();
+                MapEditorToolbar.ForceVisibilityState(false, true, false);
+                MapEditorToolbar.ToggleEntityVisibility();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Flip))
             {
-                Toolbar.ForceVisibilityState(false, false, true);
-                Toolbar.ToggleEntityVisibility();
+                MapEditorToolbar.ForceVisibilityState(false, false, true);
+                MapEditorToolbar.ToggleEntityVisibility();
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Enabled))
             {
-                Toolbar.ForceVisibilityState(true, false, false);
-                Toolbar.ToggleEntityVisibility();
+                MapEditorToolbar.ForceVisibilityState(true, false, false);
+                MapEditorToolbar.ToggleEntityVisibility();
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Disabled))
             {
-                Toolbar.ForceVisibilityState(false, true, false);
-                Toolbar.ToggleEntityVisibility();
+                MapEditorToolbar.ForceVisibilityState(false, true, false);
+                MapEditorToolbar.ToggleEntityVisibility();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport))
             {
-                Toolbar.FrameSelection();
+                MapEditorToolbar.FrameSelection();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Go_to_Selection_in_Object_List))
             {
-                Toolbar.GoToInObjectList();
+                MapEditorToolbar.GoToInObjectList();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_X))
             {
-                Toolbar.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
+                MapEditorToolbar.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_Y))
             {
-                Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
+                MapEditorToolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_Y_Pivot))
             {
-                Toolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
+                MapEditorToolbar.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Reset_Rotation))
             {
-                Toolbar.SetSelectionToFixedRotation();
+                MapEditorToolbar.SetSelectionToFixedRotation();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Dummify) && _selection.IsSelection())
             {
-                if(CFG.Current.Toolbar_Presence_Dummy_Type_ER)
-                    Toolbar.ER_UnDummySelection();
+                if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
+                    MapEditorToolbar.ER_UnDummySelection();
                 else
-                    Toolbar.UnDummySelection();
+                    MapEditorToolbar.UnDummySelection();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Undummify) && _selection.IsSelection())
             {
                 if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
-                    Toolbar.ER_DummySelection();
+                    MapEditorToolbar.ER_DummySelection();
                 else
-                    Toolbar.DummySelection();
+                    MapEditorToolbar.DummySelection();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Move_Selection_to_Camera) && _selection.IsSelection())
             {
-                Toolbar.MoveSelectionToCamera();
+                MapEditorToolbar.MoveSelectionToCamera();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_RenderEnemyPatrolRoutes))
@@ -600,22 +602,22 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Set_to_Grid) && _selection.IsSelection())
             {
-                Toolbar.MoveSelectionToGrid();
+                MapEditorToolbar.MoveSelectionToGrid();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Scramble) && _selection.IsSelection())
             {
-                Toolbar.ScambleSelection();
+                MapEditorToolbar.ScambleSelection();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Replicate) && _selection.IsSelection())
             {
-                Toolbar.ReplicateSelection();
+                MapEditorToolbar.ReplicateSelection();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Create) && _selection.IsSelection())
             {
-                Toolbar.CreateNewMapObject();
+                MapEditorToolbar.CreateNewMapObject();
             }
 
             // Render settings
@@ -701,10 +703,10 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                     if (Universe.GetLoadedMap(mapid) is Map m)
                     {
                         var name = initcmd[2];
-                        if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MapEntity.MapEntityType entityType))
+                        if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntity.MsbEntityType entityType))
                         {
                             target = m.GetObjectsByName(name)
-                                .Where(ent => ent is MapEntity me && me.Type == entityType)
+                                .Where(ent => ent is MsbEntity me && me.Type == entityType)
                                 .FirstOrDefault();
                         }
                         else
@@ -715,7 +717,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
                 else
                 {
-                    target = new ObjectContainerReference(mapid, Universe).GetSelectionTarget();
+                    target = new MapObjectContainerReference(mapid, Universe).GetSelectionTarget();
                 }
             }
 
@@ -724,7 +726,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 Universe.Selection.ClearSelection();
                 Universe.Selection.AddSelection(target);
                 Universe.Selection.GotoTreeTarget = target;
-                Toolbar.FrameSelection();
+                MapEditorToolbar.FrameSelection();
             }
         }
 
@@ -757,7 +759,8 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         AssetBrowser.OnGui();
-        Toolbar.OnGui();
+        MapEditorToolbar.OnGui();
+        SelectionToolbar.OnGui();
 
         if (_activeModal != null)
         {
@@ -845,16 +848,16 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
     /// <summary>
     ///     Adds a new entity to the targeted map. If no parent is specified, RootObject will be used.
     /// </summary>
-    private void AddNewEntity(Type typ, MapEntity.MapEntityType etype, Map map, Entity parent = null)
+    private void AddNewEntity(Type typ, MsbEntity.MsbEntityType etype, Map map, Entity parent = null)
     {
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
-        MapEntity obj = new(map, newent, etype);
+        MsbEntity obj = new(map, newent, etype);
 
         parent ??= map.RootObject;
 
-        AddMapObjectsAction act = new(Universe, map, RenderScene, new List<MapEntity> { obj }, true, parent);
+        AddMapObjectsAction act = new(Universe, map, RenderScene, new List<MsbEntity> { obj }, true, parent);
         EditorActionManager.ExecuteAction(act);
-    }  
+    }
 
     private void DuplicateToTargetMapUI()
     {
@@ -865,7 +868,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (ImGui.BeginCombo("Targeted Map", _dupeSelectionTargetedMap.Item1))
         {
-            foreach (KeyValuePair<string, ObjectContainer> obj in Universe.LoadedObjectContainers)
+            foreach (KeyValuePair<string, MapObjectContainer> obj in Universe.LoadedObjectContainers)
             {
                 if (obj.Value != null)
                 {
@@ -887,7 +890,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         var targetMap = (Map)_dupeSelectionTargetedMap.Item2;
 
-        List<MapEntity> sel = _selection.GetFilteredSelection<MapEntity>().ToList();
+        List<MsbEntity> sel = _selection.GetFilteredSelection<MsbEntity>().ToList();
 
         if (sel.Any(e => e.WrappedObject is BTL.Light))
         {
@@ -914,7 +917,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (ImGui.Button("Duplicate"))
         {
-            Entity? targetParent = _dupeSelectionTargetedParent.Item2;
+            Entity targetParent = _dupeSelectionTargetedParent.Item2;
 
             CloneMapObjectsAction action = new(Universe, RenderScene, sel, true, targetMap, targetParent);
             EditorActionManager.ExecuteAction(action);
@@ -935,7 +938,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (Project.Type != ProjectType.Undefined)
         {
-            Toolbar.PopulateClassNames();
+            MapEditorToolbar.PopulateClassNames();
         }
     }
 
@@ -952,7 +955,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 MessageBoxIcon.Error);
             if (result == DialogResult.Yes)
             {
-                foreach (KeyValuePair<string, ObjectContainer> map in Universe.LoadedObjectContainers.Where(e =>
+                foreach (KeyValuePair<string, MapObjectContainer> map in Universe.LoadedObjectContainers.Where(e =>
                              e.Value != null))
                 {
                     foreach (Entity obj in map.Value.Objects)
@@ -961,7 +964,7 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                         {
                             _selection.ClearSelection();
                             _selection.AddSelection(obj);
-                            Toolbar.FrameSelection();
+                            MapEditorToolbar.FrameSelection();
                             return;
                         }
                     }
@@ -978,5 +981,5 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
         }
     }
 
-    
+
 }
