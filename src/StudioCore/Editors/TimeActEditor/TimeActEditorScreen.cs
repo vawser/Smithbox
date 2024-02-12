@@ -30,7 +30,7 @@ public class TimeActEditorScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "TimeAct Editor";
+    public string EditorName => "TimeAct Editor##TimeActEditor";
     public string CommandEndpoint => "timeact";
     public string SaveType => "TAE";
 

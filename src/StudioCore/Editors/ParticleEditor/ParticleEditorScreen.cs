@@ -30,7 +30,7 @@ public class ParticleEditorScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Particle Editor";
+    public string EditorName => "Particle Editor##ParticleEditor";
     public string CommandEndpoint => "particle";
     public string SaveType => "Particle";
 

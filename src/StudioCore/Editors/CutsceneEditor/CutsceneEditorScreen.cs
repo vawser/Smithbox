@@ -1,17 +1,8 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
-using StudioCore.Editors.EmevdEditor;
-using StudioCore.Editors.GraphicsEditor;
-using StudioCore.Editors.MaterialEditor;
-using StudioCore.Editors.TimeActEditor;
-using StudioCore.Settings;
 using StudioCore.UserProject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -71,7 +62,7 @@ public class CutsceneEditorScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Cutscene Editor";
+    public string EditorName => "Cutscene Editor##CutsceneEditor";
     public string CommandEndpoint => "cutscene";
     public string SaveType => "Cutscene";
 

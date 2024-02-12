@@ -38,7 +38,7 @@ public class TalkScriptEditorScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Talk Script Editor";
+    public string EditorName => "Talk Script Editor##TalkScriptEditor";
     public string CommandEndpoint => "esd";
     public string SaveType => "ESD";
 

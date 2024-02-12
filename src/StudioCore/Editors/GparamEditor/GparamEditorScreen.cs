@@ -1,17 +1,11 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Editors.CutsceneEditor;
-using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GraphicsEditor;
-using StudioCore.Editors.MaterialEditor;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.UserProject;
 using System;
 using System.Numerics;
-using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
 using static SoulsFormats.GPARAM;
@@ -40,12 +34,10 @@ public class GparamEditorScreen : EditorScreen
 
     public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        ResetAllSelection();
-
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Gparam Editor##gparamEditor";
+    public string EditorName => "Gparam Editor##GparamEditor";
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
 

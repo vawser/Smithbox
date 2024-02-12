@@ -143,12 +143,12 @@ public class Smithbox
             EditorContainer.MsbEditor,
             EditorContainer.ModelEditor,
             EditorContainer.ParamEditor,
-            EditorContainer.TextEditor,
-            EditorContainer.GparamEditor,
             EditorContainer.TimeActEditor,
             EditorContainer.CutsceneEditor,
             EditorContainer.MaterialEditor,
-            EditorContainer.ParticleEditor
+            EditorContainer.ParticleEditor,
+            EditorContainer.GparamEditor,
+            EditorContainer.TextEditor
             //EditorContainer.ScriptEditor,
             //EditorContainer.TalkEditor,
             //EditorContainer.TextureViewer

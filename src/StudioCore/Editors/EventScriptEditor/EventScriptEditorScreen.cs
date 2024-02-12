@@ -34,7 +34,7 @@ public class EventScriptEditorScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Event Script Editor";
+    public string EditorName => "Event Script Editor##EventScriptEditor";
     public string CommandEndpoint => "emevd";
     public string SaveType => "EMEVD";
 

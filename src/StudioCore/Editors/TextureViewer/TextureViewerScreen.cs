@@ -24,7 +24,7 @@ public class TextureViewerScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Texture Viewer";
+    public string EditorName => "Texture Viewer##TextureViewerEditor";
     public string CommandEndpoint => "texture";
     public string SaveType => "Texture";
 

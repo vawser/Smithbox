@@ -37,7 +37,7 @@ public class MaterialEditorScreen : EditorScreen
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Material Editor";
+    public string EditorName => "Material Editor##MaterialEditor";
     public string CommandEndpoint => "material";
     public string SaveType => "Material";
 
