@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Editor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -77,6 +78,21 @@ public class ActionManager
         Action a = UndoStack.Pop();
         NotifyHandlers(a.Undo());
         RedoStack.Push(a);
+    }
+
+    public void UndoAllAction()
+    {
+        if (UndoStack.Count() == 0)
+        {
+            return;
+        }
+
+        while (UndoStack.Count() > 0)
+        {
+            Action a = UndoStack.Pop();
+            NotifyHandlers(a.Undo());
+            RedoStack.Push(a);
+        }
     }
 
     public void RedoAction()

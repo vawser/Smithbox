@@ -173,6 +173,12 @@ public class MsbEditorScreen : EditorScreen, SceneTreeEventHandler
                 EditorActionManager.UndoAction();
             }
 
+            if (ImGui.MenuItem("Undo All", "", false,
+                    EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAllAction();
+            }
+
             if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
                     EditorActionManager.CanRedo()))
             {

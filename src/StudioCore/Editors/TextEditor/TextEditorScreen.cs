@@ -11,6 +11,7 @@ using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using StudioCore.Interface;
 
 namespace StudioCore.TextEditor;
 
@@ -54,6 +55,10 @@ public class TextEditorScreen : EditorScreen
             {
                 EditorActionManager.UndoAction();
             }
+
+            if (ImGui.MenuItem("Undo All", "", false,
+                    EditorActionManager.CanUndo()))
+                EditorActionManager.UndoAllAction();
 
             if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
                     EditorActionManager.CanRedo()))
@@ -286,9 +291,12 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     private void DuplicateFMGEntries(FMGBank.EntryGroup entry)
     {
-        _activeIDCache = entry.GetNextUnusedID();
-        var action = new DuplicateFMGEntryAction(entry);
-        EditorActionManager.ExecuteAction(action);
+        for (int i = 0; i < CFG.Current.FMG_DuplicateAmount; i++)
+        {
+            _activeIDCache = entry.GetNextUnusedID(CFG.Current.FMG_DuplicateIncrement);
+            var action = new DuplicateFMGEntryAction(entry);
+            EditorActionManager.ExecuteAction(action);
+        }
 
         // Lazy method to refresh search filter
         // TODO: _searchFilterCached should be cleared whenever CacheBank is cleared.
@@ -656,17 +664,27 @@ public class TextEditorScreen : EditorScreen
 
                 if (ImGui.BeginPopupContextItem())
                 {
-                    if (ImGui.Selectable("Duplicate Entry"))
-                    {
-                        _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                        DuplicateFMGEntries(_activeEntryGroup);
-                    }
-
                     if (ImGui.Selectable("Delete Entry"))
                     {
                         _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
                         DeleteFMGEntries(_activeEntryGroup);
                     }
+
+                    ImGui.Separator();
+
+                    if (ImGui.Selectable("Duplicate Entry"))
+                    {
+                        _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                        DuplicateFMGEntries(_activeEntryGroup);
+                    }
+                    ImGui.InputInt("##dupeAmount", ref CFG.Current.FMG_DuplicateAmount);
+                    if (CFG.Current.FMG_DuplicateAmount < 1)
+                        CFG.Current.FMG_DuplicateAmount = 1;
+                    ImguiUtils.ShowHelpMarker("The number of times to duplicate this entry.");
+                    ImGui.InputInt("##dupeIncrement", ref CFG.Current.FMG_DuplicateIncrement);
+                    if (CFG.Current.FMG_DuplicateIncrement < 1)
+                        CFG.Current.FMG_DuplicateIncrement = 1;
+                    ImguiUtils.ShowHelpMarker("The increment to apply to the text id when duplicating.");
 
                     ImGui.EndPopup();
                 }

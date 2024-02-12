@@ -1644,7 +1644,7 @@ public static class FMGBank
         /// <summary>
         ///     Gets next unused entry ID.
         /// </summary>
-        public int GetNextUnusedID()
+        public int GetNextUnusedID(int idIncrement)
         {
             var id = ID;
             if (TextBody != null)
@@ -1652,7 +1652,7 @@ public static class FMGBank
                 List<FMG.Entry> entries = TextBodyInfo.GetPatchedEntries();
                 do
                 {
-                    id++;
+                    id = id + idIncrement;
                 } while (entries.Find(e => e.ID == id) != null);
             }
             else if (Title != null)
@@ -1660,7 +1660,7 @@ public static class FMGBank
                 List<FMG.Entry> entries = TitleInfo.GetPatchedEntries();
                 do
                 {
-                    id++;
+                    id = id + idIncrement;
                 } while (entries.Find(e => e.ID == id) != null);
             }
             else if (Summary != null)
@@ -1668,7 +1668,7 @@ public static class FMGBank
                 List<FMG.Entry> entries = SummaryInfo.GetPatchedEntries();
                 do
                 {
-                    id++;
+                    id = id + idIncrement;
                 } while (entries.Find(e => e.ID == id) != null);
             }
             else if (Description != null)
@@ -1676,7 +1676,7 @@ public static class FMGBank
                 List<FMG.Entry> entries = DescriptionInfo.GetPatchedEntries();
                 do
                 {
-                    id++;
+                    id = id + idIncrement;
                 } while (entries.Find(e => e.ID == id) != null);
             }
             else if (ExtraText != null)
@@ -1684,7 +1684,7 @@ public static class FMGBank
                 List<FMG.Entry> entries = ExtraTextInfo.GetPatchedEntries();
                 do
                 {
-                    id++;
+                    id = id + idIncrement;
                 } while (entries.Find(e => e.ID == id) != null);
             }
 
@@ -1696,7 +1696,7 @@ public static class FMGBank
         /// </summary>
         public void SetNextUnusedID()
         {
-            ID = GetNextUnusedID();
+            ID = GetNextUnusedID(CFG.Current.FMG_DuplicateIncrement);
         }
 
         /// <summary>

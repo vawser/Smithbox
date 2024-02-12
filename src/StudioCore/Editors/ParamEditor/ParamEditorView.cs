@@ -2,6 +2,7 @@
 using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using System;
@@ -556,15 +557,21 @@ public class ParamEditorView
                             : ImGuiSelectableFlags.Disabled))
                     _paramEditor.CopySelectionToClipboard(_selection);
 
+                ImGui.Separator();
+
                 if (ImGui.Selectable(@$"Paste clipboard ({KeyBindings.Current.Param_Paste.HintText})", false,
                         ParamBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
+
+                ImGui.Separator();
 
                 if (ImGui.Selectable(@$"Delete selection ({KeyBindings.Current.Core_Delete.HintText})", false,
                         _selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                     _paramEditor.DeleteSelection(_selection);
+
+                ImGui.Separator();
 
                 if (ImGui.Selectable(@$"Duplicate selection ({KeyBindings.Current.Core_Duplicate.HintText})", false,
                         _selection.RowSelectionExists()
@@ -574,9 +581,10 @@ public class ParamEditorView
                     _paramEditor.DuplicateSelection(_selection);
                 }
 
-                ImGui.InputInt("Duplicate Amount##dupeAmount", ref CFG.Current.Param_DuplicateAmount);
+                ImGui.InputInt("##dupeAmount", ref CFG.Current.Param_DuplicateAmount);
                 if (CFG.Current.Param_DuplicateAmount < 1)
                     CFG.Current.Param_DuplicateAmount = 1;
+                ImguiUtils.ShowHelpMarker("The number of times to duplicate this entry.");
 
                 ImGui.Separator();
             }
