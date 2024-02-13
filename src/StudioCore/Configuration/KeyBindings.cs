@@ -127,6 +127,9 @@ public class KeyBindings
         public KeyBind Toolbar_Create = new("Create", Category.MapEditor, Key.C, false, true);
         public KeyBind Toolbar_RenderEnemyPatrolRoutes = new("Render Patrol Routes", Category.MapEditor, Key.P, true);
 
+        public KeyBind Toolbar_ExportPrefab = new("Export Prefab", Category.MapEditor, Key.E, true, true);
+        public KeyBind Toolbar_ImportPrefab = new("Import Prefab", Category.MapEditor, Key.I, true, true);
+
         // Map
         public KeyBind Map_DuplicateToMap = new("Duplicate to Map", Category.MapEditor, Key.D, false, false, true);
         public KeyBind Map_PropSearch = new("Property Search", Category.MapEditor, Key.F, true);

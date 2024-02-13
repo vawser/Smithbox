@@ -47,7 +47,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     private IModal _activeModal;
 
     private int _createEntityMapIndex;
-    private (string, MapObjectContainer) _dupeSelectionTargetedMap = ("None", null);
+    private (string, MapObjectContainer) _comboTargetMap = ("None", null);
     private (string, Entity) _dupeSelectionTargetedParent = ("None", null);
 
     private bool _PauseUpdate;
@@ -61,7 +61,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetBrowser AssetBrowser;
     public MapEditorToolbar MapEditorToolbar;
-    public GroupSelectionToolbar SelectionToolbar;
+    public PrefabToolbar PrefabToolbar;
 
     private bool GCNeedsCollection;
 
@@ -108,7 +108,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         MapEditorToolbar = new MapEditorToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
-        SelectionToolbar = new GroupSelectionToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
+        PrefabToolbar = new PrefabToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport, MapEditorToolbar);
 
         EditorActionManager.AddEventHandler(SceneTree);
@@ -204,7 +204,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (ImGui.BeginMenu("Duplicate to Map", _selection.IsSelection()))
             {
-                DuplicateToTargetMapUI();
+                ComboTargetMapUI();
                 ImGui.EndMenu();
             }
 
@@ -664,7 +664,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (ImGui.BeginPopup("##DupeToTargetMapPopup"))
         {
-            DuplicateToTargetMapUI();
+            ComboTargetMapUI();
             ImGui.EndPopup();
         }
 
@@ -760,7 +760,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         AssetBrowser.OnGui();
         MapEditorToolbar.OnGui();
-        SelectionToolbar.OnGui();
+        PrefabToolbar.OnGui();
 
         if (_activeModal != null)
         {
@@ -795,6 +795,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         _projectSettings = newSettings;
         _selection.ClearSelection();
         EditorActionManager.Clear();
+        PrefabToolbar.OnProjectChanged();
 
         ReloadUniverse();
     }
@@ -839,10 +840,12 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void OnEntityContextMenu(Entity ent)
     {
+        /*
         if (ImGui.Selectable("Create prefab"))
         {
             _activeModal = new CreatePrefabModal(Universe, ent);
         }
+        */
     }
 
     /// <summary>
@@ -859,38 +862,38 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         EditorActionManager.ExecuteAction(act);
     }
 
-    private void DuplicateToTargetMapUI()
+    private void ComboTargetMapUI()
     {
-        ImGui.Text("Duplicate selection to specific map");
-        ImGui.SameLine();
-        ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.5f),
-            $" <{KeyBindings.Current.Map_DuplicateToMap.HintText}>");
-
-        if (ImGui.BeginCombo("Targeted Map", _dupeSelectionTargetedMap.Item1))
+        if (ImGui.BeginCombo("Targeted Map", _comboTargetMap.Item1))
         {
-            foreach (KeyValuePair<string, MapObjectContainer> obj in Universe.LoadedObjectContainers)
+            foreach (var obj in Universe.LoadedObjectContainers)
             {
                 if (obj.Value != null)
                 {
                     if (ImGui.Selectable(obj.Key))
                     {
-                        _dupeSelectionTargetedMap = (obj.Key, obj.Value);
+                        _comboTargetMap = (obj.Key, obj.Value);
                         break;
                     }
                 }
             }
-
             ImGui.EndCombo();
         }
+    }
 
-        if (_dupeSelectionTargetedMap.Item2 == null)
-        {
+    private void DuplicateToTargetMapUI()
+    {
+        ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 1.0f), "Duplicate selection to specific map");
+        ImGui.SameLine();
+        ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 0.5f), $" <{KeyBindings.Current.Map_DuplicateToMap.HintText}>");
+
+        ComboTargetMapUI();
+        if (_comboTargetMap.Item2 == null)
             return;
-        }
 
-        var targetMap = (Map)_dupeSelectionTargetedMap.Item2;
+        Map targetMap = (Map)_comboTargetMap.Item2;
 
-        List<MsbEntity> sel = _selection.GetFilteredSelection<MsbEntity>().ToList();
+        var sel = _selection.GetFilteredSelection<MsbEntity>().ToList();
 
         if (sel.Any(e => e.WrappedObject is BTL.Light))
         {
@@ -905,23 +908,19 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                         break;
                     }
                 }
-
                 ImGui.EndCombo();
             }
-
             if (_dupeSelectionTargetedParent.Item2 == null)
-            {
                 return;
-            }
         }
 
         if (ImGui.Button("Duplicate"))
         {
-            Entity targetParent = _dupeSelectionTargetedParent.Item2;
+            Entity? targetParent = _dupeSelectionTargetedParent.Item2;
 
-            CloneMapObjectsAction action = new(Universe, RenderScene, sel, true, targetMap, targetParent);
+            var action = new CloneMapObjectsAction(Universe, RenderScene, sel, true, targetMap, targetParent);
             EditorActionManager.ExecuteAction(action);
-            _dupeSelectionTargetedMap = ("None", null);
+            _comboTargetMap = ("None", null);
             _dupeSelectionTargetedParent = ("None", null);
             // Closes popup/menu bar
             ImGui.CloseCurrentPopup();
