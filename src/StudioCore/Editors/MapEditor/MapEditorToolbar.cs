@@ -536,7 +536,7 @@ namespace StudioCore.Editors.MapEditor
                 // Toggle Object Visibility by tag
                 if (_selectedTool == SelectedTool.Selection_Toggle_Object_Visibility_by_Tag)
                 {
-                    ImGui.Text("Toggle the visibility of map objects, filtering the targets by tag (you can view tags in the Model or Map Asset Browsers).");
+                    ImGui.Text("Toggle the visibility of map objects, filtering the targets by tag\n(you can view tags in the Model or Map Asset Browsers).");
                     ImGui.Separator();
 
                     ImGui.Text("Target Tag:");

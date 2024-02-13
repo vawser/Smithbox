@@ -206,7 +206,7 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-PartName")]
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            private int PartIndex;
+            public int PartIndex;
 
             /// <summary>
             /// Unknown.
@@ -214,7 +214,7 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-RegionName")]
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            private int RegionIndex;
+            public int RegionIndex;
 
             /// <summary>
             /// Identifies the Event in event scripts.
@@ -425,7 +425,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Treasure-TreasurePartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                private int TreasurePartIndex;
+                public int TreasurePartIndex;
 
                 /// <summary>
                 /// The item lot to be given.
@@ -596,7 +596,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Generator-SpawnRegionNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnRegionNames { get; private set; }
-                private int[] SpawnRegionIndices;
+                public int[] SpawnRegionIndices;
 
                 /// <summary>
                 /// Parts that will be respawned.
@@ -604,7 +604,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Generator-SpawnPartNames")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; private set; }
-                private int[] SpawnPartIndices;
+                public int[] SpawnPartIndices;
 
                 /// <summary>
                 /// Creates a Generator with default values.
@@ -704,7 +704,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "ObjAct-ObjActPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                private int ObjActPartIndex;
+                public int ObjActPartIndex;
 
                 /// <summary>
                 /// A row in ObjActParam.
@@ -792,7 +792,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Navmesh-NavmeshRegionName")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string NavmeshRegionName { get; set; }
-                private int NavmeshRegionIndex;
+                public int NavmeshRegionIndex;
 
                 /// <summary>
                 /// Creates a Navmesh with default values.
@@ -955,7 +955,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "PlatoonInfo-GroupPartsNames")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] GroupPartsNames { get; private set; }
-                private int[] GroupPartsIndices;
+                public int[] GroupPartsIndices;
 
                 /// <summary>
                 /// Creates a PlatoonInfo with default values.
@@ -1024,7 +1024,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "PatrolInfo-WalkRegionNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] WalkRegionNames { get; private set; }
-                private short[] WalkRegionIndices;
+                public short[] WalkRegionIndices;
 
                 /// <summary>
                 /// Creates a PatrolInfo with default values.
@@ -1097,7 +1097,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Mount-RiderPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string RiderPartName { get; set; }
-                private int RiderPartIndex;
+                public int RiderPartIndex;
 
                 /// <summary>
                 /// Unknown.
@@ -1105,7 +1105,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Mount-MountPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string MountPartName { get; set; }
-                private int MountPartIndex;
+                public int MountPartIndex;
 
                 /// <summary>
                 /// Creates a Mount with default values.
@@ -1159,7 +1159,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "SignPool-SignPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string SignPartName { get; set; }
-                private int SignPartIndex;
+                public int SignPartIndex;
 
                 /// <summary>
                 /// Unknown.
@@ -1221,7 +1221,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "RetryPoint-RetryPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string RetryPartName { get; set; }
-                private int RetryPartIndex;
+                public int RetryPartIndex;
 
                 /// <summary>
                 /// Flag that must be set for stake to be available.
@@ -1241,7 +1241,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "RetryPoint-RetryRegionName")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string RetryRegionName { get; set; }
-                private short RetryRegionIndex;
+                public short RetryRegionIndex;
 
                 /// <summary>
                 /// Creates a SignPool with default values.
