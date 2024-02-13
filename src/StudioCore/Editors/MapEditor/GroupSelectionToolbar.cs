@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor
 {
-    public class SavedSelectionToolbar
+    public class GroupSelectionToolbar
     {
         private readonly EntityActionManager _actionManager;
 
@@ -25,7 +25,7 @@ namespace StudioCore.Editors.MapEditor
 
         private IViewport _viewport;
 
-        public SavedSelectionToolbar(RenderScene scene, MapSelection sel, EntityActionManager manager, Universe universe, IViewport viewport)
+        public GroupSelectionToolbar(RenderScene scene, MapSelection sel, EntityActionManager manager, Universe universe, IViewport viewport)
         {
             _scene = scene;
             _selection = sel;
@@ -44,7 +44,7 @@ namespace StudioCore.Editors.MapEditor
 
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-            if (ImGui.Begin($@"Selections##SelectionToolbar"))
+            if (ImGui.Begin($@"Groups##GroupSelectionToolbar"))
             {
 
             }

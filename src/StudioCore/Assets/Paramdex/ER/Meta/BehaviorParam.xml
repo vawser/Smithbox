@@ -28,8 +28,8 @@
     </Enum>
   </Enums>
   <Field>
-    <variationId AltName="Behavior Variation ID" Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." />
-    <behaviorJudgeId AltName="Behavior Judge ID" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine." VRef="behaviorVariation" />
+    <variationId AltName="Behavior Variation ID" Wiki="Used when calculating the ID for attack parameters. It is not used directly on the actual machine." VRef="behaviorVariation" />
+    <behaviorJudgeId AltName="Behavior Judge ID" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine."  />
     <ezStateBehaviorType_old AltName="State Behavior Type" Wiki="For ID calculation rules" Enum="STATE_BEHAVIOR_TYPE" />
     <refType AltName="Reference Type" Wiki="Specify the reference ID so that it is correct." Enum="BEHAVIOR_REF_TYPE" />
     <pad2 AltName=""/>

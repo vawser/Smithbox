@@ -158,8 +158,6 @@ public class KeyBindings
         public KeyBind Param_SelectAll = new("Select All", Category.ParamEditor, Key.A, true);
 
         // Text FMG
-        public KeyBind TextFMG_ExportAll = new("Export All", Category.TextEditor);
-        public KeyBind TextFMG_Import = new("Import", Category.TextEditor);
         public KeyBind TextFMG_Search = new("Search", Category.TextEditor, Key.F, true);
 
         // Viewport

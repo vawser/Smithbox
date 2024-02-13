@@ -61,7 +61,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetBrowser AssetBrowser;
     public MapEditorToolbar MapEditorToolbar;
-    public SavedSelectionToolbar SelectionToolbar;
+    public GroupSelectionToolbar SelectionToolbar;
 
     private bool GCNeedsCollection;
 
@@ -108,7 +108,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         MapEditorToolbar = new MapEditorToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
-        SelectionToolbar = new SavedSelectionToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
+        SelectionToolbar = new GroupSelectionToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport, MapEditorToolbar);
 
         EditorActionManager.AddEventHandler(SceneTree);

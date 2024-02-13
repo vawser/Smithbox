@@ -907,11 +907,6 @@ public class ParamEditorScreen : EditorScreen
         // Parse select commands
         if (initcmd != null)
         {
-            foreach (var str in initcmd)
-            {
-                TaskLogs.AddLog($"{str}");
-            }
-
             if (initcmd[0] == "select" || initcmd[0] == "view")
             {
                 if (initcmd.Length > 2 && ParamBank.PrimaryBank.Params.ContainsKey(initcmd[2]))
@@ -920,25 +915,25 @@ public class ParamEditorScreen : EditorScreen
                     if (!doFocus)
                         GotoSelectedRow = true;
 
-                    ParamEditorView viewToMofidy = _activeView;
+                    ParamEditorView viewToModify = _activeView;
                     if (initcmd[1].Equals("new"))
                     {
-                        viewToMofidy = AddView();
+                        viewToModify = AddView();
                     }
                     else
                     {
                         var cmdIndex = -1;
                         var parsable = int.TryParse(initcmd[1], out cmdIndex);
                         if (parsable && cmdIndex >= 0 && cmdIndex < _views.Count)
-                            viewToMofidy = _views[cmdIndex];
+                            viewToModify = _views[cmdIndex];
                     }
 
-                    _activeView = viewToMofidy;
-                    viewToMofidy._selection.SetActiveParam(initcmd[2]);
+                    _activeView = viewToModify;
+                    viewToModify._selection.SetActiveParam(initcmd[2]);
                     if (initcmd.Length > 3)
                     {
-                        viewToMofidy._selection.SetActiveRow(null, doFocus);
-                        Param p = ParamBank.PrimaryBank.Params[viewToMofidy._selection.GetActiveParam()];
+                        viewToModify._selection.SetActiveRow(null, doFocus);
+                        Param p = ParamBank.PrimaryBank.Params[viewToModify._selection.GetActiveParam()];
                         int id;
                         var parsed = int.TryParse(initcmd[3], out id);
                         if (parsed)
@@ -946,7 +941,7 @@ public class ParamEditorScreen : EditorScreen
                             Param.Row r = p.Rows.FirstOrDefault(r => r.ID == id);
                             if (r != null)
                             {
-                                viewToMofidy._selection.SetActiveRow(r, doFocus);
+                                viewToModify._selection.SetActiveRow(r, doFocus);
                             }
                         }
                     }

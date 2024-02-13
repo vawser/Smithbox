@@ -119,6 +119,16 @@ public class ParamEditorSelectionState
         return ref _paramStates[_activeParam].currentPropSearchString;
     }
 
+    public void SetCurrentParamSearchString(string s)
+    {
+        if (_activeParam == null)
+        {
+            return;
+        }
+
+        currentParamSearchString = s;
+    }
+
     public void SetCurrentRowSearchString(string s)
     {
         if (_activeParam == null)

@@ -76,7 +76,7 @@ public class ParamEditorView
 
         if (resAutoParam != null)
         {
-            _selection.SetCurrentRowSearchString(resAutoParam);
+            _selection.SetCurrentParamSearchString(resAutoParam);
         }
 
         if (!_selection.currentParamSearchString.Equals(lastParamSearch))

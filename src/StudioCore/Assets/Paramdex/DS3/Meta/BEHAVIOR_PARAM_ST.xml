@@ -154,7 +154,7 @@
   </Enums>
   <Self Wiki="Behavior data for character attacks" Row0Dummy="" />
   <Field>
-    <variationId AltName="Behavior Variation ID" VRef="behaviourVariation" />
+    <variationId AltName="Behavior Variation ID" VRef="behaviorVariation" />
     <behaviorJudgeId AltName="Behavior Judge ID" Enum="AttackType" />
     <ezStateBehaviorType_old AltName="State Behavior Type" Enum="STATE_BEHAVIOR_TYPE" />
     <refType AltName="Reference Type" Enum="BEHAVIOR_REF_TYPE" />

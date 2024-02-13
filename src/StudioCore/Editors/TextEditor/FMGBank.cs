@@ -8,8 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.TextEditor;
@@ -280,34 +278,10 @@ public enum FmgIDType
     // ER:  LoadingText
 }
 
-[JsonSourceGenerationOptions(WriteIndented = true,
-    GenerationMode = JsonSourceGenerationMode.Metadata, IncludeFields = true)]
-[JsonSerializable(typeof(JsonFMG))]
-internal partial class FmgSerializerContext : JsonSerializerContext
-{
-}
-
-public class JsonFMG
-{
-    public FMG Fmg;
-    public FmgIDType FmgID;
-
-    [JsonConstructor]
-    public JsonFMG()
-    {
-    }
-
-    public JsonFMG(FmgIDType fmg_id, FMG fmg)
-    {
-        FmgID = fmg_id;
-        Fmg = fmg;
-    }
-}
-
 /// <summary>
 ///     Static class that stores all the strings for a Souls game.
 /// </summary>
-public static class FMGBank
+public static partial class FMGBank
 {
     /// <summary>
     ///     List of strings to compare with "FmgIDType" name to identify patch FMGs.
@@ -1136,8 +1110,7 @@ public static class FMGBank
 
         return eGroup;
     }
-
-    private static void HandleDuplicateEntries()
+    public static void HandleDuplicateEntries()
     {
         var askedAboutDupes = false;
         var ignoreDupes = true;
@@ -1167,132 +1140,11 @@ public static class FMGBank
         }
     }
 
-    private static string FormatJson(string json)
+    public static string FormatJson(string json)
     {
         json = json.Replace("{\"ID\"", "\r\n{\"ID\"");
         json = json.Replace("],", "\r\n],");
         return json;
-    }
-
-    public static bool ExportFMGs()
-    {
-        if (!PlatformUtils.Instance.OpenFolderDialog("Choose Export Folder", out var path))
-        {
-            return false;
-        }
-
-        var filecount = 0;
-        if (Project.Type == ProjectType.DS2S)
-        {
-            Directory.CreateDirectory(path);
-
-            foreach (FMGInfo info in FmgInfoBank)
-            {
-                JsonFMG fmgPair = new(info.FmgID, info.Fmg);
-                var json = JsonSerializer.Serialize(fmgPair, FmgSerializerContext.Default.JsonFMG);
-                json = FormatJson(json);
-
-                var fileName = info.Name;
-                if (CFG.Current.FMG_ShowOriginalNames)
-                {
-                    fileName = info.FileName;
-                }
-
-                File.WriteAllText($@"{path}\{fileName}.fmg.json", json);
-
-                filecount++;
-            }
-        }
-        else
-        {
-            var itemPath = $@"{path}\Item Text";
-            var menuPath = $@"{path}\Menu Text";
-            Directory.CreateDirectory(itemPath);
-            Directory.CreateDirectory(menuPath);
-            foreach (FMGInfo info in FmgInfoBank)
-            {
-                if (info.UICategory == FmgUICategory.Item)
-                {
-                    path = itemPath;
-                }
-                else if (info.UICategory == FmgUICategory.Menu)
-                {
-                    path = menuPath;
-                }
-
-                JsonFMG fmgPair = new(info.FmgID, info.Fmg);
-                var json = JsonSerializer.Serialize(fmgPair, FmgSerializerContext.Default.JsonFMG);
-                json = FormatJson(json);
-
-                var fileName = info.Name;
-                if (CFG.Current.FMG_ShowOriginalNames)
-                {
-                    fileName = info.FileName;
-                }
-
-                File.WriteAllText($@"{path}\{fileName}.fmg.json", json);
-
-                filecount++;
-            }
-        }
-
-        PlatformUtils.Instance.MessageBox($"Exported {filecount} text files", "Finished", MessageBoxButtons.OK);
-        return true;
-    }
-
-    public static bool ImportFMGs()
-    {
-        if (!PlatformUtils.Instance.OpenMultiFileDialog("Choose Files to Import",
-                new[] { FilterStrings.FmgJsonFilter }, out IReadOnlyList<string> files))
-        {
-            return false;
-        }
-
-        if (files.Count == 0)
-        {
-            return false;
-        }
-
-        var filecount = 0;
-        foreach (var filePath in files)
-        {
-            try
-            {
-                var file = File.ReadAllText(filePath);
-                JsonFMG json = JsonSerializer.Deserialize(file, FmgSerializerContext.Default.JsonFMG);
-                var success = false;
-                foreach (FMGInfo info in FmgInfoBank)
-                {
-                    if (info.FmgID == json.FmgID)
-                    {
-                        info.Fmg = json.Fmg;
-                        success = true;
-                        filecount++;
-                        break;
-                    }
-                }
-
-                if (!success)
-                {
-                    PlatformUtils.Instance.MessageBox($"Couldn't locate FMG using FMG ID `{json.FmgID}`",
-                        "Import Error", MessageBoxButtons.OK);
-                }
-            }
-            catch (JsonException e)
-            {
-                TaskLogs.AddLog($"{e.Message}\n\nCouldn't import \"{filePath}\"",
-                    LogLevel.Warning, TaskLogs.LogPriority.High, e);
-            }
-        }
-
-        if (filecount == 0)
-        {
-            return false;
-        }
-
-        HandleDuplicateEntries();
-        PlatformUtils.Instance.MessageBox($"Imported {filecount} text files", "Finished", MessageBoxButtons.OK);
-        return true;
     }
 
     private static void SaveFMGsDS2()
