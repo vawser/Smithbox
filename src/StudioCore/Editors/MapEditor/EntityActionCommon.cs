@@ -33,8 +33,6 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
-        // 10_01_101
-        // 10_01_0011
         public static void SetUniqueEntityID_Uint(MsbEntity sel, Map map)
         {
             uint originalID = (uint)sel.GetPropertyValue("EntityID");
@@ -324,10 +322,29 @@ namespace StudioCore.Editors.MapEditor
                     }
                 }
 
-                if (part.EntityGroupIDs[0] == 0)
+                part.EntityGroupIDs = newEntityGroupIDs;
+            }
+            else if(Project.Type == ProjectType.DS3)
+            {
+                var newID = CFG.Current.Prefab_SpecificEntityGroupID;
+                var added = false;
+
+                var part = ent.WrappedObject as MSB3.Part;
+
+                int[] newEntityGroupIDs = new int[part.EntityGroups.Length];
+
+                for (int i = 0; i < part.EntityGroups.Length; i++)
                 {
-                    part.EntityGroupIDs = newEntityGroupIDs;
+                    newEntityGroupIDs[i] = part.EntityGroups[i];
+
+                    if (!added && part.EntityGroups[i] == -1)
+                    {
+                        added = true;
+                        part.EntityGroups[i] = newID;
+                    }
                 }
+
+                part.EntityGroups = newEntityGroupIDs;
             }
         }
     }

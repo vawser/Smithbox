@@ -238,7 +238,7 @@ namespace SoulsFormats
             /// Used to identify multiple parts with the same ID in event scripts.
             /// </summary>
             [FormatReference(ReferenceName = "Part-EntityGroups")]
-            public int[] EntityGroups { get; private set; }
+            public int[] EntityGroups { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -859,7 +859,7 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                private int CollisionPartIndex;
+                public int CollisionPartIndex;
 
                 /// <summary>
                 /// Unknown.
@@ -992,7 +992,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Enemy-CollisionName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
-                private int CollisionPartIndex;
+                public int CollisionPartIndex;
 
                 /// <summary>
                 /// Controls enemy AI.
@@ -1039,7 +1039,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Enemy-WalkRouteName")]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
-                private short WalkRouteIndex;
+                public short WalkRouteIndex;
 
                 /// <summary>
                 /// Unknown.
@@ -1358,7 +1358,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Collision-UnkHitName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string UnkHitName { get; set; }
-                private int UnkHitIndex;
+                public int UnkHitIndex;
 
                 /// <summary>
                 /// ID in MapMimicryEstablishmentParam.
@@ -1543,7 +1543,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "ConnectCollision-CollisionName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
-                private int CollisionIndex;
+                public int CollisionIndex;
 
                 /// <summary>
                 /// The map to load when on this collision.

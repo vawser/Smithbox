@@ -186,7 +186,7 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-PartName")]
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            private int PartIndex;
+            public int PartIndex;
 
             /// <summary>
             /// The name of a region the event is attached to.
@@ -194,7 +194,7 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-PointName")]
             [MSBReference(ReferenceType = typeof(Region))]
             public string PointName { get; set; }
-            private int PointIndex;
+            public int PointIndex;
 
             /// <summary>
             /// Used to identify the event in event scripts.
@@ -317,7 +317,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Treasure-TreasurePartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                private int TreasurePartIndex;
+                public int TreasurePartIndex;
 
                 /// <summary>
                 /// First item lot given by this treasure.
@@ -504,7 +504,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Generator-SpawnPointNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnPointNames { get; private set; }
-                private int[] SpawnPointIndices;
+                public int[] SpawnPointIndices;
 
                 /// <summary>
                 /// Enemies spawned by this generator.
@@ -512,7 +512,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Generator-SpawnPartNames")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; private set; }
-                private int[] SpawnPartIndices;
+                public int[] SpawnPartIndices;
 
                 /// <summary>
                 /// Unknown.
@@ -671,7 +671,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "ObjAct-ObjActPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                private int ObjActPartIndex;
+                public int ObjActPartIndex;
 
                 /// <summary>
                 /// ID in ObjActParam that configures this ObjAct.
@@ -935,7 +935,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "PatrolInfo-WalkPointNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] WalkPointNames { get; private set; }
-                private short[] WalkPointIndices;
+                public short[] WalkPointIndices;
 
                 /// <summary>
                 /// Creates a PatrolInfo with default values.
@@ -1013,7 +1013,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "PlatoonInfo-GroupPartsNames")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] GroupPartsNames { get; private set; }
-                private int[] GroupPartsIndices;
+                public int[] GroupPartsIndices;
 
                 /// <summary>
                 /// Creates a PlatoonInfo with default values.

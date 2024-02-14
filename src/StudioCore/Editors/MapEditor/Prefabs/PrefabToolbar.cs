@@ -75,7 +75,7 @@ namespace StudioCore.Editors.MapEditor
                 return;
 
             // Supported Games
-            if (Project.Type != ProjectType.ER)
+            if (!(Project.Type is ProjectType.ER or ProjectType.DS3))
                 return;
 
             MonitorPrefabShortcuts();
@@ -164,6 +164,12 @@ namespace StudioCore.Editors.MapEditor
                 }
                 ImguiUtils.ShowHelpMarker("Get an unique prefab name based on the first element of the current selection.");
             }
+
+            ImGui.Checkbox("Retain Entity ID", ref CFG.Current.Prefab_IncludeEntityID);
+            ImguiUtils.ShowHelpMarker("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
+
+            ImGui.Checkbox("Retain Entity Group IDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
+            ImguiUtils.ShowHelpMarker("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
         }
 
         public void DisplayTargetMapMenu()
@@ -258,21 +264,21 @@ namespace StudioCore.Editors.MapEditor
                 {
                     ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
                     ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
+
+                    if (Project.Type == ProjectType.ER)
+                    {
+                        ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
+                        ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
+
+                        ImGui.Checkbox("Apply Asset UnkPartNames", ref CFG.Current.Prefab_ApplySelfPartNames);
+                        ImguiUtils.ShowHelpMarker("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
+                    }
+
+                    ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
+                    ImGui.SameLine();
+                    ImGui.InputInt("##entityGroupIdInput", ref CFG.Current.Prefab_SpecificEntityGroupID);
+                    ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
                 }
-
-                if (Project.Type == ProjectType.ER)
-                {
-                    ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
-                    ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
-
-                    ImGui.Checkbox("Apply Asset UnkPartNames", ref CFG.Current.Prefab_ApplySelfPartNames);
-                    ImguiUtils.ShowHelpMarker("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
-                }
-
-                ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
-                ImGui.SameLine();
-                ImGui.InputInt("##entityGroupIdInput", ref CFG.Current.Prefab_SpecificEntityGroupID);
-                ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
             }
         }
 
@@ -288,6 +294,9 @@ namespace StudioCore.Editors.MapEditor
                 {
                     case ProjectType.ER:
                         _selectedPrefabObjectNames = Prefab_ER.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
+                        break;
+                    case ProjectType.DS3:
+                        _selectedPrefabObjectNames = Prefab_DS3.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
                         break;
                     default: break;
                 }
@@ -350,6 +359,9 @@ namespace StudioCore.Editors.MapEditor
                 case ProjectType.ER: 
                     Prefab_ER.ExportSelection(filepath, _selection);
                     break;
+                case ProjectType.DS3:
+                    Prefab_DS3.ExportSelection(filepath, _selection);
+                    break;
                 default: break;
             }
 
@@ -366,6 +378,9 @@ namespace StudioCore.Editors.MapEditor
             {
                 case ProjectType.ER: 
                     Prefab_ER.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager); 
+                    break;
+                case ProjectType.DS3:
+                    Prefab_DS3.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager);
                     break;
                 default: break;
             }

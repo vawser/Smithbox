@@ -14,7 +14,6 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using StudioCore.MsbEditor;
-using static StudioCore.Editors.MapEditor.Prefabs.Prefab_ER;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -601,10 +600,9 @@ public class AddMapObjectsAction : EntityAction
     private readonly Universe Universe;
     private RenderScene Scene;
     private Map TargetMap;
-    private PrefabOptions PrefabOptions;
 
     public AddMapObjectsAction(Universe univ, Map map, RenderScene scene, List<MsbEntity> objects,
-        bool setSelection, Entity parent, Map targetMap = null, PrefabOptions options = null)
+        bool setSelection, Entity parent, Map targetMap = null)
     {
         Universe = univ;
         Map = map;
@@ -613,7 +611,6 @@ public class AddMapObjectsAction : EntityAction
         SetSelection = setSelection;
         Parent = parent;
         TargetMap = targetMap;
-        PrefabOptions = options;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -644,19 +641,19 @@ public class AddMapObjectsAction : EntityAction
                     m = Universe.GetLoadedMap(TargetMap.Name);
 
                     // Prefab-specific
-                    if (PrefabOptions.ApplyUniqueInstanceID)
+                    if (CFG.Current.Prefab_ApplyUniqueInstanceID)
                     {
                         EntityActionCommon.SetUniqueInstanceID(ent, m);
                     }
-                    if (PrefabOptions.ApplyUniqueEntityID)
+                    if (CFG.Current.Prefab_ApplyUniqueEntityID)
                     {
                         EntityActionCommon.SetUniqueEntityID(ent, m);
                     }
-                    if (PrefabOptions.ApplySelfPartNames)
+                    if (CFG.Current.Prefab_ApplySelfPartNames)
                     {
                         EntityActionCommon.SetSelfPartNames(ent, m);
                     }
-                    if (PrefabOptions.ApplySpecificEntityGroupID)
+                    if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
                     {
                         EntityActionCommon.SetSpecificEntityGroupID(ent, m);
                     }

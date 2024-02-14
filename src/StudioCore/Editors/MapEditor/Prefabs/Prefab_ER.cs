@@ -15,9 +15,6 @@ using System.Reflection;
 
 namespace StudioCore.Editors.MapEditor.Prefabs;
 
-/// <summary>
-/// All MSB-specific elements of prefabs are within this file.
-/// </summary>
 public class Prefab_ER
 {
     public string PrefabName = "";
@@ -305,8 +302,15 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.MapPiece temp = InnerObject as MSBE.Part.MapPiece;
-            temp.EntityID = 0;
-            Array.Clear(temp.EntityGroupIDs);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
+            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            {
+                Array.Clear(temp.EntityGroupIDs);
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Part.Enemy enemy)
         {
@@ -315,12 +319,19 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.Enemy temp = InnerObject as MSBE.Part.Enemy;
-            temp.EntityID = 0;
             temp.CollisionPartIndex = -1;
             temp.CollisionPartName = "";
             temp.WalkRouteIndex = -1;
             temp.WalkRouteName = "";
-            Array.Clear(temp.EntityGroupIDs);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
+            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            {
+                Array.Clear(temp.EntityGroupIDs);
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Part.Player player)
         {
@@ -329,8 +340,15 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.Player temp = InnerObject as MSBE.Part.Player;
-            temp.EntityID = 0;
-            Array.Clear(temp.EntityGroupIDs);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
+            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            {
+                Array.Clear(temp.EntityGroupIDs);
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Part.Collision collision)
         {
@@ -339,8 +357,15 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.Collision temp = InnerObject as MSBE.Part.Collision;
-            temp.EntityID = 0;
-            Array.Clear(temp.EntityGroupIDs);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
+            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            {
+                Array.Clear(temp.EntityGroupIDs);
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Part.DummyAsset dummyAsset)
         {
@@ -349,8 +374,15 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.DummyAsset temp = InnerObject as MSBE.Part.DummyAsset;
-            temp.EntityID = 0;
-            Array.Clear(temp.EntityGroupIDs);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
+            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            {
+                Array.Clear(temp.EntityGroupIDs);
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Part.DummyEnemy dummyEnemy)
         {
@@ -359,12 +391,19 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.DummyEnemy temp = InnerObject as MSBE.Part.DummyEnemy;
-            temp.EntityID = 0;
             temp.CollisionPartIndex = -1;
             temp.CollisionPartName = "";
             temp.WalkRouteIndex = -1;
             temp.WalkRouteName = "";
-            Array.Clear(temp.EntityGroupIDs);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
+            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            {
+                Array.Clear(temp.EntityGroupIDs);
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Part.ConnectCollision connectCollision)
         {
@@ -373,10 +412,17 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.ConnectCollision temp = InnerObject as MSBE.Part.ConnectCollision;
-            temp.EntityID = 0;
             temp.CollisionName = "";
             temp.CollisionIndex = -1;
-            Array.Clear(temp.EntityGroupIDs);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
+            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            {
+                Array.Clear(temp.EntityGroupIDs);
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Part.Asset asset)
         {
@@ -385,9 +431,16 @@ public class Prefab_ER
             Parent = parent;
 
             MSBE.Part.Asset temp = InnerObject as MSBE.Part.Asset;
-            temp.EntityID = 0;
-            Array.Clear(temp.EntityGroupIDs);
             Array.Clear(temp.UnkPartNames);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
+            if (!CFG.Current.Prefab_IncludeEntityGroupIDs)
+            {
+                Array.Clear(temp.EntityGroupIDs);
+            }
         }
 
         // Regions
@@ -400,6 +453,11 @@ public class Prefab_ER
             MSBE.Region.InvasionPoint temp = InnerObject as MSBE.Region.InvasionPoint;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.EnvironmentMapPoint region)
         {
@@ -410,6 +468,11 @@ public class Prefab_ER
             MSBE.Region.EnvironmentMapPoint temp = InnerObject as MSBE.Region.EnvironmentMapPoint;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.Sound region)
         {
@@ -422,6 +485,11 @@ public class Prefab_ER
             temp.ActivationPartIndex = -1;
             Array.Clear(temp.ChildRegionNames);
             Array.Clear(temp.ChildRegionIndices);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.SFX region)
         {
@@ -432,6 +500,11 @@ public class Prefab_ER
             MSBE.Region.SFX temp = InnerObject as MSBE.Region.SFX;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.WindSFX region)
         {
@@ -444,6 +517,11 @@ public class Prefab_ER
             temp.ActivationPartIndex = -1;
             temp.WindAreaName = "";
             temp.WindAreaIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.SpawnPoint region)
         {
@@ -454,6 +532,11 @@ public class Prefab_ER
             MSBE.Region.SpawnPoint temp = InnerObject as MSBE.Region.SpawnPoint;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.Message region)
         {
@@ -464,6 +547,11 @@ public class Prefab_ER
             MSBE.Region.Message temp = InnerObject as MSBE.Region.Message;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.EnvironmentMapEffectBox region)
         {
@@ -474,6 +562,11 @@ public class Prefab_ER
             MSBE.Region.EnvironmentMapEffectBox temp = InnerObject as MSBE.Region.EnvironmentMapEffectBox;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.WindArea region)
         {
@@ -484,6 +577,11 @@ public class Prefab_ER
             MSBE.Region.WindArea temp = InnerObject as MSBE.Region.WindArea;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.Connection region)
         {
@@ -494,6 +592,11 @@ public class Prefab_ER
             MSBE.Region.Connection temp = InnerObject as MSBE.Region.Connection;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.PatrolRoute22 region)
         {
@@ -504,6 +607,11 @@ public class Prefab_ER
             MSBE.Region.PatrolRoute22 temp = InnerObject as MSBE.Region.PatrolRoute22;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.BuddySummonPoint region)
         {
@@ -514,6 +622,11 @@ public class Prefab_ER
             MSBE.Region.BuddySummonPoint temp = InnerObject as MSBE.Region.BuddySummonPoint;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MufflingBox region)
         {
@@ -524,6 +637,11 @@ public class Prefab_ER
             MSBE.Region.MufflingBox temp = InnerObject as MSBE.Region.MufflingBox;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MufflingPortal region)
         {
@@ -534,6 +652,11 @@ public class Prefab_ER
             MSBE.Region.MufflingPortal temp = InnerObject as MSBE.Region.MufflingPortal;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.SoundRegion region)
         {
@@ -544,6 +667,11 @@ public class Prefab_ER
             MSBE.Region.SoundRegion temp = InnerObject as MSBE.Region.SoundRegion;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MufflingPlane region)
         {
@@ -554,6 +682,11 @@ public class Prefab_ER
             MSBE.Region.MufflingPlane temp = InnerObject as MSBE.Region.MufflingPlane;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.PatrolRoute region)
         {
@@ -564,6 +697,11 @@ public class Prefab_ER
             MSBE.Region.PatrolRoute temp = InnerObject as MSBE.Region.PatrolRoute;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MapPoint region)
         {
@@ -574,6 +712,11 @@ public class Prefab_ER
             MSBE.Region.MapPoint temp = InnerObject as MSBE.Region.MapPoint;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.WeatherOverride region)
         {
@@ -584,6 +727,11 @@ public class Prefab_ER
             MSBE.Region.WeatherOverride temp = InnerObject as MSBE.Region.WeatherOverride;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.AutoDrawGroupPoint region)
         {
@@ -594,6 +742,11 @@ public class Prefab_ER
             MSBE.Region.AutoDrawGroupPoint temp = InnerObject as MSBE.Region.AutoDrawGroupPoint;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.GroupDefeatReward region)
         {
@@ -606,6 +759,11 @@ public class Prefab_ER
             temp.ActivationPartIndex = -1;
             Array.Clear(temp.PartNames);
             Array.Clear(temp.PartIndices);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MapPointDiscoveryOverride region)
         {
@@ -616,6 +774,11 @@ public class Prefab_ER
             MSBE.Region.MapPointDiscoveryOverride temp = InnerObject as MSBE.Region.MapPointDiscoveryOverride;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MapPointParticipationOverride region)
         {
@@ -626,6 +789,11 @@ public class Prefab_ER
             MSBE.Region.MapPointParticipationOverride temp = InnerObject as MSBE.Region.MapPointParticipationOverride;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.Hitset region)
         {
@@ -636,6 +804,11 @@ public class Prefab_ER
             MSBE.Region.Hitset temp = InnerObject as MSBE.Region.Hitset;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.FastTravelRestriction region)
         {
@@ -646,6 +819,11 @@ public class Prefab_ER
             MSBE.Region.FastTravelRestriction temp = InnerObject as MSBE.Region.FastTravelRestriction;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.WeatherCreateAssetPoint region)
         {
@@ -656,6 +834,11 @@ public class Prefab_ER
             MSBE.Region.WeatherCreateAssetPoint temp = InnerObject as MSBE.Region.WeatherCreateAssetPoint;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.PlayArea region)
         {
@@ -666,6 +849,11 @@ public class Prefab_ER
             MSBE.Region.PlayArea temp = InnerObject as MSBE.Region.PlayArea;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.EnvironmentMapOutput region)
         {
@@ -676,6 +864,11 @@ public class Prefab_ER
             MSBE.Region.EnvironmentMapOutput temp = InnerObject as MSBE.Region.EnvironmentMapOutput;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MountJump region)
         {
@@ -686,6 +879,11 @@ public class Prefab_ER
             MSBE.Region.MountJump temp = InnerObject as MSBE.Region.MountJump;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.Dummy region)
         {
@@ -696,6 +894,11 @@ public class Prefab_ER
             MSBE.Region.Dummy temp = InnerObject as MSBE.Region.Dummy;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.FallPreventionRemoval region)
         {
@@ -706,6 +909,11 @@ public class Prefab_ER
             MSBE.Region.FallPreventionRemoval temp = InnerObject as MSBE.Region.FallPreventionRemoval;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.NavmeshCutting region)
         {
@@ -716,6 +924,11 @@ public class Prefab_ER
             MSBE.Region.NavmeshCutting temp = InnerObject as MSBE.Region.NavmeshCutting;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MapNameOverride region)
         {
@@ -726,6 +939,11 @@ public class Prefab_ER
             MSBE.Region.MapNameOverride temp = InnerObject as MSBE.Region.MapNameOverride;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.MountJumpFall region)
         {
@@ -736,6 +954,11 @@ public class Prefab_ER
             MSBE.Region.MountJumpFall temp = InnerObject as MSBE.Region.MountJumpFall;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.HorseRideOverride region)
         {
@@ -746,6 +969,11 @@ public class Prefab_ER
             MSBE.Region.HorseRideOverride temp = InnerObject as MSBE.Region.HorseRideOverride;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Region.Other region)
         {
@@ -756,6 +984,11 @@ public class Prefab_ER
             MSBE.Region.Other temp = InnerObject as MSBE.Region.Other;
             temp.ActivationPartName = "";
             temp.ActivationPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
 
         // Events
@@ -772,6 +1005,11 @@ public class Prefab_ER
             temp.RegionIndex = -1;
             temp.TreasurePartName = "";
             temp.TreasurePartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.Generator mapEvent)
         {
@@ -788,6 +1026,11 @@ public class Prefab_ER
             Array.Clear(temp.SpawnRegionIndices);
             Array.Clear(temp.SpawnPartNames);
             Array.Clear(temp.SpawnPartIndices);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.ObjAct mapEvent)
         {
@@ -802,6 +1045,11 @@ public class Prefab_ER
             temp.RegionIndex = -1;
             temp.ObjActPartName = "";
             temp.ObjActPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.Navmesh mapEvent)
         {
@@ -816,6 +1064,11 @@ public class Prefab_ER
             temp.RegionIndex = -1;
             temp.NavmeshRegionName = "";
             temp.NavmeshRegionIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.PseudoMultiplayer mapEvent)
         {
@@ -828,6 +1081,11 @@ public class Prefab_ER
             temp.PartIndex = -1;
             temp.RegionName = "";
             temp.RegionIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.PlatoonInfo mapEvent)
         {
@@ -842,6 +1100,11 @@ public class Prefab_ER
             temp.RegionIndex = -1;
             Array.Clear(temp.GroupPartsNames);
             Array.Clear(temp.GroupPartsIndices);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.PatrolInfo mapEvent)
         {
@@ -856,6 +1119,11 @@ public class Prefab_ER
             temp.RegionIndex = -1;
             Array.Clear(temp.WalkRegionNames);
             Array.Clear(temp.WalkRegionIndices);
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.Mount mapEvent)
         {
@@ -872,6 +1140,11 @@ public class Prefab_ER
             temp.RiderPartIndex = -1;
             temp.MountPartName = "";
             temp.MountPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.SignPool mapEvent)
         {
@@ -886,6 +1159,11 @@ public class Prefab_ER
             temp.RegionIndex = -1;
             temp.SignPartName = "";
             temp.SignPartIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.RetryPoint mapEvent)
         {
@@ -902,6 +1180,11 @@ public class Prefab_ER
             temp.RetryPartIndex = -1;
             temp.RetryRegionName = "";
             temp.RetryRegionIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
         public PrefabInfo_ER(Prefab_ER parent, MSBE.Event.Other mapEvent)
         {
@@ -914,6 +1197,11 @@ public class Prefab_ER
             temp.PartIndex = -1;
             temp.RegionName = "";
             temp.RegionIndex = -1;
+
+            if (!CFG.Current.Prefab_IncludeEntityID)
+            {
+                temp.EntityID = 0;
+            }
         }
 
         public void AddNamePrefix(string prefix)
@@ -921,7 +1209,7 @@ public class Prefab_ER
             var prop = InnerObject.GetType().GetProperty("Name");
             if (prop == null)
             {
-                throw new InvalidDataException($"AssetPrefab operation failed, {InnerObject.GetType()} does not contain Name property.");
+                throw new InvalidDataException($"Prefab_ER operation failed, {InnerObject.GetType()} does not contain Name property.");
             }
             var name = prop.GetValue(InnerObject);
             name = $"{prefix}{Parent.PrefixSeparator}{name}";
@@ -933,7 +1221,7 @@ public class Prefab_ER
             var prop = InnerObject.GetType().GetProperty("Name");
             if (prop == null)
             {
-                throw new InvalidDataException($"AssetPrefab operation failed, {InnerObject.GetType()} does not contain Name property.");
+                throw new InvalidDataException($"Prefab_ER operation failed, {InnerObject.GetType()} does not contain Name property.");
             }
             string name = (string)prop.GetValue(InnerObject);
             try
@@ -1614,7 +1902,7 @@ public class Prefab_ER
         catch (Exception e)
         {
             PlatformUtils.Instance.MessageBox(
-                $"Unable to import AssetPrefab due to the following error:" +
+                $"Unable to import Prefab_ER due to the following error:" +
                 $"\n\n{e.Message}"
                 , "Asset prefab import error"
                 , MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1645,13 +1933,7 @@ public class Prefab_ER
                 var parent = targetMap.RootObject;
                 List<MsbEntity> ents = _selectedAssetPrefab.GenerateMapEntities(targetMap);
 
-                PrefabOptions options = new PrefabOptions();
-                options.ApplyUniqueInstanceID = CFG.Current.Prefab_ApplyUniqueInstanceID;
-                options.ApplyUniqueEntityID = CFG.Current.Prefab_ApplyUniqueEntityID;
-                options.ApplySelfPartNames = CFG.Current.Prefab_ApplySelfPartNames;
-                options.ApplySpecificEntityGroupID = CFG.Current.Prefab_ApplySpecificEntityGroupID;
-
-                AddMapObjectsAction act = new(_universe, targetMap, _scene, ents, true, parent, targetMap, options);
+                AddMapObjectsAction act = new(_universe, targetMap, _scene, ents, true, parent, targetMap);
                 _actionManager.ExecuteAction(act);
                 _selectedAssetPrefab = null;
             }
@@ -1660,17 +1942,6 @@ public class Prefab_ER
         {
             PlatformUtils.Instance.MessageBox("Import failed, no map has been selected.", "Prefab Error", MessageBoxButtons.OK);
         }
-    }
-
-    public class PrefabOptions
-    {
-        public bool ApplyUniqueInstanceID { get; set; }
-        public bool ApplyUniqueEntityID { get; set; }
-        public bool ApplySelfPartNames { get; set; }
-        public bool ApplySpecificEntityID { get; set; }
-        public bool ApplySpecificEntityGroupID { get; set; }
-
-        public PrefabOptions() { }
     }
 
     /// <summary>
