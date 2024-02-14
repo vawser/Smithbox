@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Silk.NET.SDL;
+using SoulsFormats;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
@@ -301,14 +302,33 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
-        public static void SetSpecificEntityID(MsbEntity ent, Map m)
-        {
-
-        }
-
         public static void SetSpecificEntityGroupID(MsbEntity ent, Map m)
         {
+            if (Project.Type == ProjectType.ER)
+            {
+                var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
+                var added = false;
 
+                var part = ent.WrappedObject as MSBE.Part;
+
+                uint[] newEntityGroupIDs = new uint[part.EntityGroupIDs.Length];
+
+                for(int i = 0; i < part.EntityGroupIDs.Length; i++)
+                {
+                    newEntityGroupIDs[i] = part.EntityGroupIDs[i];
+
+                    if(!added && part.EntityGroupIDs[i] == 0)
+                    {
+                        added = true;
+                        newEntityGroupIDs[i] = newID;
+                    }
+                }
+
+                if (part.EntityGroupIDs[0] == 0)
+                {
+                    part.EntityGroupIDs = newEntityGroupIDs;
+                }
+            }
         }
     }
 }

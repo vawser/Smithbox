@@ -1649,7 +1649,6 @@ public class Prefab_ER
                 options.ApplyUniqueInstanceID = CFG.Current.Prefab_ApplyUniqueInstanceID;
                 options.ApplyUniqueEntityID = CFG.Current.Prefab_ApplyUniqueEntityID;
                 options.ApplySelfPartNames = CFG.Current.Prefab_ApplySelfPartNames;
-                options.ApplySpecificEntityID = CFG.Current.Prefab_ApplySpecificEntityID;
                 options.ApplySpecificEntityGroupID = CFG.Current.Prefab_ApplySpecificEntityGroupID;
 
                 AddMapObjectsAction act = new(_universe, targetMap, _scene, ents, true, parent, targetMap, options);

@@ -353,7 +353,7 @@ namespace SoulsFormats
             /// Allows multiple parts to be identified by the same entity ID.
             /// </summary>
             [FormatReference(ReferenceName = "Part-EntityGroupIDs")]
-            public uint[] EntityGroupIDs { get; private set; }
+            public uint[] EntityGroupIDs { get; set; }
 
             /// <summary>
             /// Unknown.

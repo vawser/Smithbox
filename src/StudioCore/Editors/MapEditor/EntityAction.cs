@@ -656,10 +656,6 @@ public class AddMapObjectsAction : EntityAction
                     {
                         EntityActionCommon.SetSelfPartNames(ent, m);
                     }
-                    if (PrefabOptions.ApplySpecificEntityID)
-                    {
-                        EntityActionCommon.SetSpecificEntityID(ent, m);
-                    }
                     if (PrefabOptions.ApplySpecificEntityGroupID)
                     {
                         EntityActionCommon.SetSpecificEntityGroupID(ent, m);

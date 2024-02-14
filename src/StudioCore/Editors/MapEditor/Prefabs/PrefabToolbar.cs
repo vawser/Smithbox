@@ -269,16 +269,9 @@ namespace StudioCore.Editors.MapEditor
                     ImguiUtils.ShowHelpMarker("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
                 }
 
-                if(ImGui.Checkbox("Apply Specific Entity ID", ref CFG.Current.Prefab_ApplySpecificEntityID))
-                {
-                    if (CFG.Current.Prefab_ApplySpecificEntityID)
-                    {
-                        CFG.Current.Prefab_ApplyUniqueEntityID = false;
-                    }
-                }
-                ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity ID, incremented by 1 for each object beyond the first.");
-
-                ImGui.Checkbox("Apply Specific Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
+                ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
+                ImGui.SameLine();
+                ImGui.InputInt("##entityGroupIdInput", ref CFG.Current.Prefab_SpecificEntityGroupID);
                 ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
             }
         }

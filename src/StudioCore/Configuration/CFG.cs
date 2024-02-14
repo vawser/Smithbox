@@ -180,10 +180,8 @@ public class CFG
     public bool Prefab_ApplyUniqueInstanceID = true;
     public bool Prefab_ApplyUniqueEntityID = true;
     public bool Prefab_ApplySelfPartNames = true;
-    public bool Prefab_ApplySpecificEntityID = false;
     public bool Prefab_ApplySpecificEntityGroupID = false;
-    public uint Prefab_SpecificEntityID = 0;
-    public uint Prefab_SpecificEntityGroupID = 0;
+    public int Prefab_SpecificEntityGroupID = 0;
 
     //****************************
     // Settings: Model Editor
