@@ -14,6 +14,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using StudioCore.MsbEditor;
+using static StudioCore.Editors.MapEditor.Prefabs.Prefab_ER;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -439,35 +440,6 @@ public class CloneMapObjectsAction : EntityAction
                     objectnames[Clonables[i].MapID].Add(newobj.Name);
                 }
 
-                // Get a unique Instance ID for MSBE parts
-                if (CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
-                {
-                    if (newobj.WrappedObject is MSBE.Part msbePart)
-                    {
-                        if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
-                        {
-                            foreach (Entity ent in m.Objects)
-                            {
-                                if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
-                                {
-                                    mapPartEntities[m].Add((MsbEntity)ent);
-                                }
-                            }
-                        }
-
-                        var newInstanceID = msbePart.InstanceID;
-                        while (mapPartEntities[m].FirstOrDefault(e =>
-                                   ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
-                                   && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
-                        {
-                            newInstanceID++;
-                        }
-
-                        msbePart.InstanceID = newInstanceID;
-                        mapPartEntities[m].Add(newobj);
-                    }
-                }
-
                 if (TargetMap == null)
                 {
                     m.Objects.Insert(m.Objects.IndexOf(Clonables[i]) + 1, newobj);
@@ -499,8 +471,18 @@ public class CloneMapObjectsAction : EntityAction
                     Clonables[i].Parent.AddChild(newobj, idx + 1);
                 }
 
-                ChangeEntityID(newobj, m);
-                ChangePartNames(newobj, m);
+                if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
+                {
+                    EntityActionCommon.SetUniqueEntityID(newobj, m);
+                }
+                if(CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
+                {
+                    EntityActionCommon.SetUniqueInstanceID(newobj, m);
+                }
+                if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
+                {
+                    EntityActionCommon.SetSelfPartNames(newobj, m);
+                }
 
                 newobj.UpdateRenderModel();
                 if (newobj.RenderSceneMesh != null)
@@ -535,183 +517,6 @@ public class CloneMapObjectsAction : EntityAction
         }
 
         return ActionEvent.ObjectAddedRemoved;
-    }
-
-    public void ChangeEntityID(MsbEntity sel, Map map)
-    {
-        if (Project.Type == ProjectType.DS2S)
-            return;
-
-        if (Project.Type == ProjectType.AC6)
-            return;
-
-        if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
-        {
-            if (Project.Type == ProjectType.ER)
-            {
-                uint originalID = (uint)sel.GetPropertyValue("EntityID");
-
-                HashSet<uint> vals = new();
-
-                // Get currently used Entity IDs
-                foreach (var e in map?.Objects)
-                {
-                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                    if (val == null)
-                        continue;
-
-                    uint entUint;
-                    if (val is int entInt)
-                        entUint = (uint)entInt;
-                    else
-                        entUint = (uint)val;
-
-                    if (entUint == 0 || entUint == uint.MaxValue)
-                        continue;
-
-                    vals.Add(entUint);
-                }
-
-                // Build set of all 'valid' Entity IDs
-                var mapIdParts = map.Name.Replace("m", "").Split("_"); // m10_00_00_00
-
-                uint minId = 0;
-                uint maxId = 9999;
-
-                if (Project.Type == ProjectType.ER)
-                {
-                    minId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
-                    maxId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
-
-                    // Is open-world tile
-                    if (mapIdParts[0] == "60")
-                    {
-                        minId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
-                        maxId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
-                    }
-                }
-                // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
-                else
-                {
-                    minId = 0;
-                    maxId = 9999;
-                }
-
-                var baseVals = new HashSet<uint>();
-                for (uint i = minId; i < maxId; i++)
-                {
-                    baseVals.Add(i);
-                }
-
-                baseVals.SymmetricExceptWith(vals);
-
-                bool hasMatch = false;
-                uint newID = 0;
-
-                // Prefer IDs after the original ID first
-                foreach (var entry in baseVals)
-                {
-                    if (!hasMatch)
-                    {
-                        if (entry > originalID)
-                        {
-                            newID = entry;
-                            hasMatch = true;
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-
-                // No match in preferred range, get first of possible values.
-                if (!hasMatch)
-                {
-                    newID = baseVals.First();
-                }
-
-                sel.SetPropertyValue("EntityID", newID);
-            }
-            else
-            {
-                int originalID = (int)sel.GetPropertyValue("EntityID");
-
-                HashSet<int> vals = new();
-
-                // Get currently used Entity IDs
-                foreach (var e in map?.Objects)
-                {
-                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                    if (val == null)
-                        continue;
-
-                    int entInt = (int)val;
-
-                    if (entInt == 0 || entInt == int.MaxValue)
-                        continue;
-
-                    vals.Add(entInt);
-                }
-
-                // Build set of all 'valid' Entity IDs
-                var mapIdParts = map.Name.Replace("m", "").Split("_");
-
-                int minId = 0;
-                int maxId = 9999;
-
-                // Get the first non-zero digit from mapIdParts[1]
-                var part = mapIdParts[1][1];
-
-                minId = int.Parse($"{mapIdParts[0]}{part}0000");
-                maxId = int.Parse($"{mapIdParts[0]}{part}9999");
-
-                var baseVals = new HashSet<int>();
-                for (int i = minId; i < maxId; i++)
-                {
-                    baseVals.Add(i);
-                }
-
-                baseVals.SymmetricExceptWith(vals);
-
-                bool hasMatch = false;
-                int newID = 0;
-
-                // Prefer IDs after the original ID first
-                foreach (var entry in baseVals)
-                {
-                    if (!hasMatch)
-                    {
-                        if (entry > originalID)
-                        {
-                            newID = entry;
-                            hasMatch = true;
-
-                            // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                            if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
-                            {
-                                if (newID < 10000)
-                                {
-                                    hasMatch = false;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-
-                // No match in preferred range, get first of possible values.
-                if (!hasMatch)
-                {
-                    newID = baseVals.First();
-                }
-
-                sel.SetPropertyValue("EntityID", newID);
-            }
-        }
     }
 
     public void ChangePartNames(MsbEntity sel, Map map)
@@ -795,9 +600,11 @@ public class AddMapObjectsAction : EntityAction
     private readonly bool SetSelection;
     private readonly Universe Universe;
     private RenderScene Scene;
+    private Map TargetMap;
+    private PrefabOptions PrefabOptions;
 
     public AddMapObjectsAction(Universe univ, Map map, RenderScene scene, List<MsbEntity> objects,
-        bool setSelection, Entity parent)
+        bool setSelection, Entity parent, Map targetMap = null, PrefabOptions options = null)
     {
         Universe = univ;
         Map = map;
@@ -805,6 +612,8 @@ public class AddMapObjectsAction : EntityAction
         Added.AddRange(objects);
         SetSelection = setSelection;
         Parent = parent;
+        TargetMap = targetMap;
+        PrefabOptions = options;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -825,6 +634,36 @@ public class AddMapObjectsAction : EntityAction
                 {
                     Added[i].RenderSceneMesh.AutoRegister = true;
                     Added[i].RenderSceneMesh.Register();
+                }
+
+                MsbEntity ent = Added[i];
+                Map m;
+
+                if (TargetMap != null)
+                {
+                    m = Universe.GetLoadedMap(TargetMap.Name);
+
+                    // Prefab-specific
+                    if (PrefabOptions.ApplyUniqueInstanceID)
+                    {
+                        EntityActionCommon.SetUniqueInstanceID(ent, m);
+                    }
+                    if (PrefabOptions.ApplyUniqueEntityID)
+                    {
+                        EntityActionCommon.SetUniqueEntityID(ent, m);
+                    }
+                    if (PrefabOptions.ApplySelfPartNames)
+                    {
+                        EntityActionCommon.SetSelfPartNames(ent, m);
+                    }
+                    if (PrefabOptions.ApplySpecificEntityID)
+                    {
+                        EntityActionCommon.SetSpecificEntityID(ent, m);
+                    }
+                    if (PrefabOptions.ApplySpecificEntityGroupID)
+                    {
+                        EntityActionCommon.SetSpecificEntityGroupID(ent, m);
+                    }
                 }
 
                 AddedMaps.Add(Map);
@@ -1677,35 +1516,6 @@ public class ReplicateMapObjectsAction : EntityAction
                         objectnames[Clonables[i].MapID].Add(newobj.Name);
                     }
 
-                    // Get a unique Instance ID for MSBE parts
-                    if (CFG.Current.Replicator_Increment_InstanceID)
-                    {
-                        if (newobj.WrappedObject is MSBE.Part msbePart)
-                        {
-                            if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
-                            {
-                                foreach (Entity ent in m.Objects)
-                                {
-                                    if (ent.WrappedObject != null && ent.WrappedObject is MSBE.Part)
-                                    {
-                                        mapPartEntities[m].Add((MsbEntity)ent);
-                                    }
-                                }
-                            }
-
-                            var newInstanceID = msbePart.InstanceID;
-                            while (mapPartEntities[m].FirstOrDefault(e =>
-                                       ((MSBE.Part)e.WrappedObject).ModelName == msbePart.ModelName
-                                       && ((MSBE.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
-                            {
-                                newInstanceID++;
-                            }
-
-                            msbePart.InstanceID = newInstanceID;
-                            mapPartEntities[m].Add(newobj);
-                        }
-                    }
-
                     if (idxCache == -1)
                     {
                         idxCache = m.Objects.IndexOf(Clonables[i]) + 1;
@@ -1728,8 +1538,18 @@ public class ReplicateMapObjectsAction : EntityAction
                     ApplyScrambleTransform(newobj);
 
                     // Apply other property changes
-                    ChangeEntityID(newobj, m);
-                    ChangePartNames(newobj, m);
+                    if(CFG.Current.Replicator_Increment_Entity_ID)
+                    {
+                        EntityActionCommon.SetUniqueEntityID(newobj, m);
+                    }
+                    if (CFG.Current.Replicator_Increment_InstanceID)
+                    {
+                        EntityActionCommon.SetUniqueInstanceID(newobj, m);
+                    }
+                    if (CFG.Current.Replicator_Increment_UnkPartNames)
+                    {
+                        EntityActionCommon.SetSelfPartNames(newobj, m);
+                    }
 
                     newobj.UpdateRenderModel();
                     if (newobj.RenderSceneMesh != null)
@@ -1756,225 +1576,6 @@ public class ReplicateMapObjectsAction : EntityAction
         }
 
         return ActionEvent.ObjectAddedRemoved;
-    }
-
-    public void ChangePartNames(MsbEntity sel, Map map)
-    {
-        if (Project.Type != ProjectType.ER)
-            return;
-
-        if (CFG.Current.Replicator_Increment_UnkPartNames)
-        {
-            if (Project.Type == ProjectType.ER)
-            {
-                if (sel.WrappedObject is MSBE.Part.Asset)
-                {
-                    string partName = (string)sel.GetPropertyValue("Name");
-                    string modelName = (string)sel.GetPropertyValue("ModelName");
-                    string[] names = (string[])sel.GetPropertyValue("UnkPartNames");
-                    string[] newNames = new string[names.Length];
-
-                    for (int i = 0; i < names.Length; i++)
-                    {
-                        var name = names[i];
-
-                        if (name != null)
-                        {
-                            // Name is a AEG reference
-                            if (name.Contains(modelName) && name.Contains("AEG"))
-                            {
-                                TaskLogs.AddLog($"{name}");
-
-                                name = partName;
-                            }
-                        }
-
-                        newNames[i] = name;
-                    }
-
-                    sel.SetPropertyValue("UnkPartNames", newNames);
-                }
-            }
-        }
-    }
-
-    public void ChangeEntityID(MsbEntity sel, Map map)
-    {
-        if (Project.Type == ProjectType.DS2S)
-            return;
-
-        if (Project.Type == ProjectType.AC6)
-            return;
-
-        if (CFG.Current.Replicator_Increment_Entity_ID)
-        {
-            if (Project.Type == ProjectType.ER)
-            {
-                uint originalID = (uint)sel.GetPropertyValue("EntityID");
-                sel.SetPropertyValue("EntityID", (uint)0);
-
-                HashSet<uint> vals = new();
-
-                // Get currently used Entity IDs
-                foreach (var e in map?.Objects)
-                {
-                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                    if (val == null)
-                        continue;
-
-                    uint entUint;
-                    if (val is int entInt)
-                        entUint = (uint)entInt;
-                    else
-                        entUint = (uint)val;
-
-                    if (entUint == 0 || entUint == uint.MaxValue)
-                        continue;
-
-                    vals.Add(entUint);
-                }
-
-                // Build set of all 'valid' Entity IDs
-                var mapIdParts = map.Name.Replace("m", "").Split("_"); // m10_00_00_00
-
-                uint minId = 0;
-                uint maxId = 9999;
-
-                if (Project.Type == ProjectType.ER)
-                {
-                    minId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}0000");
-                    maxId = uint.Parse($"{mapIdParts[0]}{mapIdParts[1]}9999");
-
-                    // Is open-world tile
-                    if (mapIdParts[0] == "60")
-                    {
-                        minId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}0000");
-                        maxId = uint.Parse($"10{mapIdParts[1]}{mapIdParts[2]}9999");
-                    }
-                }
-                // AC6 only uses the 4 digits within the map itself, so ignore this section if AC6
-                else
-                {
-                    minId = 0;
-                    maxId = 9999;
-                }
-
-                var baseVals = new HashSet<uint>();
-                for (uint i = minId; i < maxId; i++)
-                {
-                    baseVals.Add(i);
-                }
-
-                baseVals.SymmetricExceptWith(vals);
-
-                bool hasMatch = false;
-                uint newID = 0;
-
-                // Prefer IDs after the original ID first
-                foreach (var entry in baseVals)
-                {
-                    if (!hasMatch)
-                    {
-                        if (entry > originalID)
-                        {
-                            newID = entry;
-                            hasMatch = true;
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-
-                // No match in preferred range, get first of possible values.
-                if (!hasMatch)
-                {
-                    newID = baseVals.First();
-                }
-
-                sel.SetPropertyValue("EntityID", newID);
-            }
-            else
-            {
-                int originalID = (int)sel.GetPropertyValue("EntityID");
-                sel.SetPropertyValue("EntityID", -1);
-
-                HashSet<int> vals = new();
-
-                // Get currently used Entity IDs
-                foreach (var e in map?.Objects)
-                {
-                    var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
-                    if (val == null)
-                        continue;
-
-                    int entInt = (int)val;
-
-                    if (entInt == 0 || entInt == int.MaxValue)
-                        continue;
-
-                    vals.Add(entInt);
-                }
-
-                // Build set of all 'valid' Entity IDs
-                var mapIdParts = map.Name.Replace("m", "").Split("_");
-
-                int minId = 0;
-                int maxId = 9999;
-
-                // Get the first non-zero digit from mapIdParts[1]
-                var part = mapIdParts[1][1];
-
-                minId = int.Parse($"{mapIdParts[0]}{part}0000");
-                maxId = int.Parse($"{mapIdParts[0]}{part}9999");
-
-                var baseVals = new HashSet<int>();
-                for (int i = minId; i < maxId; i++)
-                {
-                    baseVals.Add(i);
-                }
-
-                baseVals.SymmetricExceptWith(vals);
-
-                bool hasMatch = false;
-                int newID = 0;
-
-                // Prefer IDs after the original ID first
-                foreach (var entry in baseVals)
-                {
-                    if (!hasMatch)
-                    {
-                        if (entry > originalID)
-                        {
-                            newID = entry;
-                            hasMatch = true;
-
-                            // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                            if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
-                            {
-                                if (newID < 10000)
-                                {
-                                    hasMatch = false;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-
-                // No match in preferred range, get first of possible values.
-                if (!hasMatch)
-                {
-                    newID = baseVals.First();
-                }
-
-                sel.SetPropertyValue("EntityID", newID);
-            }
-        }
     }
 
     private void ApplyReplicateTransform(MsbEntity sel, int iteration)

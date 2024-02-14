@@ -177,6 +177,14 @@ public class CFG
     public RenderFilterPreset SceneFilter_Preset_05 { get; set; } = new("Lighting (Collision)", RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character | RenderFilter.Light);
     public RenderFilterPreset SceneFilter_Preset_06 { get; set; } = new("All", RenderFilter.All);
 
+    public bool Prefab_ApplyUniqueInstanceID = true;
+    public bool Prefab_ApplyUniqueEntityID = true;
+    public bool Prefab_ApplySelfPartNames = true;
+    public bool Prefab_ApplySpecificEntityID = false;
+    public bool Prefab_ApplySpecificEntityGroupID = false;
+    public uint Prefab_SpecificEntityID = 0;
+    public uint Prefab_SpecificEntityGroupID = 0;
+
     //****************************
     // Settings: Model Editor
     //****************************

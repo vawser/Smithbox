@@ -251,6 +251,35 @@ namespace StudioCore.Editors.MapEditor
                 ImGui.SameLine();
                 ImGui.InputText("##prefabRename", ref _newPrefabName, 255);
                 ImguiUtils.ShowHelpMarker("Rename this prefab.");
+
+                // Options
+
+                if (Project.Type is not ProjectType.DS2S or ProjectType.AC6)
+                {
+                    ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
+                    ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
+                }
+
+                if (Project.Type == ProjectType.ER)
+                {
+                    ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
+                    ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
+
+                    ImGui.Checkbox("Apply Asset UnkPartNames", ref CFG.Current.Prefab_ApplySelfPartNames);
+                    ImguiUtils.ShowHelpMarker("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
+                }
+
+                if(ImGui.Checkbox("Apply Specific Entity ID", ref CFG.Current.Prefab_ApplySpecificEntityID))
+                {
+                    if (CFG.Current.Prefab_ApplySpecificEntityID)
+                    {
+                        CFG.Current.Prefab_ApplyUniqueEntityID = false;
+                    }
+                }
+                ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity ID, incremented by 1 for each object beyond the first.");
+
+                ImGui.Checkbox("Apply Specific Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
+                ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
             }
         }
 

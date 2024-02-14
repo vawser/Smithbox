@@ -1645,7 +1645,14 @@ public class Prefab_ER
                 var parent = targetMap.RootObject;
                 List<MsbEntity> ents = _selectedAssetPrefab.GenerateMapEntities(targetMap);
 
-                AddMapObjectsAction act = new(_universe, targetMap, _scene, ents, true, parent);
+                PrefabOptions options = new PrefabOptions();
+                options.ApplyUniqueInstanceID = CFG.Current.Prefab_ApplyUniqueInstanceID;
+                options.ApplyUniqueEntityID = CFG.Current.Prefab_ApplyUniqueEntityID;
+                options.ApplySelfPartNames = CFG.Current.Prefab_ApplySelfPartNames;
+                options.ApplySpecificEntityID = CFG.Current.Prefab_ApplySpecificEntityID;
+                options.ApplySpecificEntityGroupID = CFG.Current.Prefab_ApplySpecificEntityGroupID;
+
+                AddMapObjectsAction act = new(_universe, targetMap, _scene, ents, true, parent, targetMap, options);
                 _actionManager.ExecuteAction(act);
                 _selectedAssetPrefab = null;
             }
@@ -1654,6 +1661,17 @@ public class Prefab_ER
         {
             PlatformUtils.Instance.MessageBox("Import failed, no map has been selected.", "Prefab Error", MessageBoxButtons.OK);
         }
+    }
+
+    public class PrefabOptions
+    {
+        public bool ApplyUniqueInstanceID { get; set; }
+        public bool ApplyUniqueEntityID { get; set; }
+        public bool ApplySelfPartNames { get; set; }
+        public bool ApplySpecificEntityID { get; set; }
+        public bool ApplySpecificEntityGroupID { get; set; }
+
+        public PrefabOptions() { }
     }
 
     /// <summary>
