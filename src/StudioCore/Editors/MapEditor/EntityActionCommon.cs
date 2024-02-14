@@ -340,7 +340,7 @@ namespace StudioCore.Editors.MapEditor
                     if (!added && part.EntityGroups[i] == -1)
                     {
                         added = true;
-                        part.EntityGroups[i] = newID;
+                        newEntityGroupIDs[i] = newID;
                     }
                 }
 
