@@ -223,14 +223,16 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            private int PartIndex;
+            [IndexProperty]
+            public int PartIndex { get; set; }
 
             /// <summary>
             /// Region referenced by the event.
             /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            private int RegionIndex;
+            [IndexProperty]
+            public int RegionIndex { get; set; }
 
             /// <summary>
             /// Identifies the event in external files.
@@ -553,7 +555,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                private int TreasurePartIndex;
+                [IndexProperty]
+                public int TreasurePartIndex { get; set; }
 
                 /// <summary>
                 /// Item lots to be granted when the treasure is picked up; only the first appears to be functional.
@@ -680,15 +683,17 @@ namespace SoulsFormats
                 /// Points that enemies may be spawned at.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] SpawnPointNames { get; private set; }
-                private int[] SpawnPointIndices;
+                public string[] SpawnPointNames { get; set; }
+                [IndexProperty]
+                public int[] SpawnPointIndices { get; set; }
 
                 /// <summary>
                 /// Enemies to be respawned.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string[] SpawnPartNames { get; private set; }
-                private int[] SpawnPartIndices;
+                public string[] SpawnPartNames { get; set; }
+                [IndexProperty]
+                public int[] SpawnPartIndices { get; set; }
 
                 /// <summary>
                 /// Creates a Generator with default values.
@@ -832,7 +837,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                private int ObjActPartIndex;
+                [IndexProperty]
+                public int ObjActPartIndex { get; set; }
 
                 /// <summary>
                 /// ID in ObjActParam that configures the ObjAct.
@@ -907,7 +913,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string SpawnPointName { get; set; }
-                private int SpawnPointIndex;
+                [IndexProperty]
+                public int SpawnPointIndex { get; set; }
 
                 /// <summary>
                 /// Creates a SpawnPoint with default values.
@@ -995,7 +1002,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string NavmeshRegionName { get; set; }
-                private int NavmeshRegionIndex;
+                [IndexProperty]
+                public int NavmeshRegionIndex { get; set; }
 
                 /// <summary>
                 /// Creates a Navmesh with default values.

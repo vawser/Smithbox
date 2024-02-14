@@ -874,7 +874,7 @@ public class MapPropertyEditor
                     continue;
                 }
 
-                if (prop.GetCustomAttribute<IgnoreField>() != null)
+                if (prop.GetCustomAttribute<IndexProperty>() != null)
                 {
                     continue;
                 }

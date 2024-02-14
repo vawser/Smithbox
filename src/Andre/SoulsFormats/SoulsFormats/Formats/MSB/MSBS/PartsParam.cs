@@ -164,7 +164,7 @@ namespace SoulsFormats
             /// The model used by this part; requires an entry in ModelParam.
             /// </summary>
             public string ModelName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int ModelIndex { get; set; }
 
             /// <summary>
@@ -1058,7 +1058,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjPartName1 { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int ObjPartIndex1 { get; set; }
 
                 /// <summary>
@@ -1101,7 +1101,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string ObjPartName2 { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int ObjPartIndex2 { get; set; }
 
                 /// <summary>
@@ -1109,7 +1109,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string ObjPartName3 { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int ObjPartIndex3 { get; set; }
 
                 private protected ObjectBase() : base("oXXXXXX_XXXX")
@@ -1264,7 +1264,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int CollisionPartIndex { get; set; }
 
                 /// <summary>
@@ -1272,7 +1272,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public short WalkRouteIndex { get; set; }
 
                 /// <summary>
@@ -1798,7 +1798,7 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int CollisionIndex { get; set; }
 
                 /// <summary>

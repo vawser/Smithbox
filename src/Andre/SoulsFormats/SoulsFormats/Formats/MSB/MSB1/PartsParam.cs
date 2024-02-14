@@ -499,7 +499,8 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                private int CollisionIndex;
+                [IndexProperty]
+                public int CollisionIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -627,14 +628,16 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
-                private int CollisionIndex;
+                [IndexProperty]
+                public int CollisionIndex { get; set; }
 
                 /// <summary>
                 /// Regions for the enemy to patrol.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] MovePointNames { get; private set; }
-                private short[] MovePointIndices;
+                public string[] MovePointNames { get; set; }
+                [IndexProperty]
+                public short[] MovePointIndices { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -790,7 +793,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Event.Environment))]
                 public string EnvLightMapSpotName { get; set; }
-                private short EnvLightMapSpotIndex;
+                [IndexProperty]
+                public short EnvLightMapSpotIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1033,7 +1037,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
-                private int CollisionIndex;
+                [IndexProperty]
+                public int CollisionIndex { get; set; }
 
                 /// <summary>
                 /// Four bytes specifying the map ID to load.

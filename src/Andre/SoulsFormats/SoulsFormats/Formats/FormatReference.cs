@@ -26,7 +26,7 @@ namespace SoulsFormats
     }
 
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
-    public class IgnoreField : Attribute
+    public class IndexProperty : Attribute
     {
     }
 }

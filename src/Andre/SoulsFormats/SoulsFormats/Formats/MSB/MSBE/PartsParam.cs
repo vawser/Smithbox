@@ -188,7 +188,7 @@ namespace SoulsFormats
             /// </summary>
             [FormatReference(ReferenceName = "Part-ModelName")]
             public string ModelName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int ModelIndex { get; set; }
 
             /// <summary>
@@ -1675,7 +1675,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Enemy-CollisionPartName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int CollisionPartIndex { get; set; }
 
                 /// <summary>
@@ -1684,7 +1684,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Enemy-WalkRouteName")]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public short WalkRouteIndex { get; set; }
 
                 /// <summary>
@@ -2450,7 +2450,7 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int CollisionIndex { get; set; }
 
                 /// <summary>

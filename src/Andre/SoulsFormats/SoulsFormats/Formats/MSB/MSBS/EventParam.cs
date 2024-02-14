@@ -245,7 +245,7 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int PartIndex { get; set; }
 
             /// <summary>
@@ -253,7 +253,7 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int RegionIndex { get; set; }
 
             /// <summary>
@@ -386,7 +386,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string TreasurePartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int TreasurePartIndex { get; set; }
 
                 /// <summary>
@@ -643,7 +643,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int ObjActPartIndex { get; set; }
 
                 /// <summary>
@@ -1287,7 +1287,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string AutoDrawGroupPointName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int AutoDrawGroupPointIndex { get; set; }
 
                 /// <summary>
@@ -1295,7 +1295,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part.Collision))]
                 public string OwningCollisionName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int OwningCollisionIndex { get; set; }
 
                 /// <summary>

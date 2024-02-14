@@ -338,7 +338,7 @@ namespace SoulsFormats
             /// If specified, the region is only active when the part is loaded.
             /// </summary>
             public string ActivationPartName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int ActivationPartIndex { get; set; }
 
             /// <summary>
@@ -798,7 +798,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string WindAreaName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int WindAreaIndex { get; set; }
 
                 /// <summary>

@@ -186,7 +186,7 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-PartName")]
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int PartIndex { get; set; }
 
             /// <summary>
@@ -195,7 +195,7 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-PointName")]
             [MSBReference(ReferenceType = typeof(Region))]
             public string PointName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int PointIndex { get; set; }
 
             /// <summary>
@@ -319,7 +319,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Treasure-TreasurePartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int TreasurePartIndex { get; set; }
 
                 /// <summary>
@@ -674,7 +674,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "ObjAct-ObjActPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int ObjActPartIndex { get; set; }
 
                 /// <summary>

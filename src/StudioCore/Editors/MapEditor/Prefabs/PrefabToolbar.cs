@@ -75,7 +75,7 @@ namespace StudioCore.Editors.MapEditor
                 return;
 
             // Supported Games
-            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT))
+            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS1 or ProjectType.DS1R))
                 return;
 
             MonitorPrefabShortcuts();
@@ -259,21 +259,20 @@ namespace StudioCore.Editors.MapEditor
                 ImguiUtils.ShowHelpMarker("Rename this prefab.");
 
                 // Options
+                ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
+                ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
 
-                if (Project.Type is not ProjectType.DS2S or ProjectType.AC6)
+                if (Project.Type == ProjectType.ER)
                 {
-                    ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
+                    ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
                     ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
 
-                    if (Project.Type == ProjectType.ER)
-                    {
-                        ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
-                        ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
+                    ImGui.Checkbox("Apply Asset UnkPartNames", ref CFG.Current.Prefab_ApplySelfPartNames);
+                    ImguiUtils.ShowHelpMarker("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
+                }
 
-                        ImGui.Checkbox("Apply Asset UnkPartNames", ref CFG.Current.Prefab_ApplySelfPartNames);
-                        ImguiUtils.ShowHelpMarker("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
-                    }
-
+                if (Project.Type != ProjectType.DS1 || Project.Type != ProjectType.DS1R)
+                {
                     ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
                     ImGui.SameLine();
                     ImGui.InputInt("##entityGroupIdInput", ref CFG.Current.Prefab_SpecificEntityGroupID);
@@ -300,6 +299,10 @@ namespace StudioCore.Editors.MapEditor
                         break;
                     case ProjectType.DS3:
                         _selectedPrefabObjectNames = Prefab_DS3.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
+                        break;
+                    case ProjectType.DS1:
+                    case ProjectType.DS1R:
+                        _selectedPrefabObjectNames = Prefab_DS1.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
                         break;
                     default: break;
                 }
@@ -368,6 +371,10 @@ namespace StudioCore.Editors.MapEditor
                 case ProjectType.DS3:
                     Prefab_DS3.ExportSelection(filepath, _selection);
                     break;
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    Prefab_DS1.ExportSelection(filepath, _selection);
+                    break;
                 default: break;
             }
 
@@ -390,6 +397,10 @@ namespace StudioCore.Editors.MapEditor
                     break;
                 case ProjectType.DS3:
                     Prefab_DS3.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager);
+                    break;
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    Prefab_DS1.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager);
                     break;
                 default: break;
             }

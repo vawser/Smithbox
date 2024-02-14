@@ -349,7 +349,7 @@ namespace SoulsFormats
             /// </summary>
             [FormatReference(ReferenceName = "Region-ActivationPartName")]
             public string ActivationPartName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int ActivationPartIndex { get; set; }
 
             /// <summary>
@@ -785,7 +785,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "WindSFX-WindAreaName")]
                 [MSBReference(ReferenceType = typeof(WindArea))]
                 public string WindAreaName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int WindAreaIndex { get; set; }
 
                 /// <summary>

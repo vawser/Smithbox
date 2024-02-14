@@ -206,7 +206,7 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-PartName")]
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int PartIndex { get; set; }
 
             /// <summary>
@@ -215,7 +215,7 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-RegionName")]
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            [IgnoreField]
+            [IndexProperty]
             public int RegionIndex { get; set; }
 
             /// <summary>
@@ -427,7 +427,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Treasure-TreasurePartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int TreasurePartIndex { get; set; }
 
                 /// <summary>
@@ -707,7 +707,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "ObjAct-ObjActPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int ObjActPartIndex { get; set; }
 
                 /// <summary>
@@ -796,7 +796,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Navmesh-NavmeshRegionName")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string NavmeshRegionName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int NavmeshRegionIndex { get; set; }
 
                 /// <summary>
@@ -1029,7 +1029,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "PatrolInfo-WalkRegionNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] WalkRegionNames { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public short[] WalkRegionIndices { get; set; }
 
                 /// <summary>
@@ -1103,7 +1103,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Mount-RiderPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string RiderPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int RiderPartIndex { get; set; }
 
                 /// <summary>
@@ -1112,7 +1112,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Mount-MountPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string MountPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int MountPartIndex { get; set; }
 
                 /// <summary>
@@ -1167,7 +1167,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "SignPool-SignPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string SignPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int SignPartIndex { get; set; }
 
                 /// <summary>
@@ -1230,7 +1230,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "RetryPoint-RetryPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string RetryPartName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public int RetryPartIndex { get; set; }
 
                 /// <summary>
@@ -1251,7 +1251,7 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "RetryPoint-RetryRegionName")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string RetryRegionName { get; set; }
-                [IgnoreField]
+                [IndexProperty]
                 public short RetryRegionIndex { get; set; }
 
                 /// <summary>
