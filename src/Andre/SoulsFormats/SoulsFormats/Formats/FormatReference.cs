@@ -24,4 +24,9 @@ namespace SoulsFormats
     public class ScaleProperty : Attribute
     {
     }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class IgnoreField : Attribute
+    {
+    }
 }

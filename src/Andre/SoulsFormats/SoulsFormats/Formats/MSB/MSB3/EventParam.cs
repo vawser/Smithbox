@@ -186,7 +186,8 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-PartName")]
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            public int PartIndex;
+            [IgnoreField]
+            public int PartIndex { get; set; }
 
             /// <summary>
             /// The name of a region the event is attached to.
@@ -194,7 +195,8 @@ namespace SoulsFormats
             [FormatReference(ReferenceName = "Event-PointName")]
             [MSBReference(ReferenceType = typeof(Region))]
             public string PointName { get; set; }
-            public int PointIndex;
+            [IgnoreField]
+            public int PointIndex { get; set; }
 
             /// <summary>
             /// Used to identify the event in event scripts.
@@ -317,7 +319,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Treasure-TreasurePartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                public int TreasurePartIndex;
+                [IgnoreField]
+                public int TreasurePartIndex { get; set; }
 
                 /// <summary>
                 /// First item lot given by this treasure.
@@ -671,7 +674,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "ObjAct-ObjActPartName")]
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                public int ObjActPartIndex;
+                [IgnoreField]
+                public int ObjActPartIndex { get; set; }
 
                 /// <summary>
                 /// ID in ObjActParam that configures this ObjAct.

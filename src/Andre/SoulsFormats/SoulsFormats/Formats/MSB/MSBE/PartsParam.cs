@@ -188,7 +188,8 @@ namespace SoulsFormats
             /// </summary>
             [FormatReference(ReferenceName = "Part-ModelName")]
             public string ModelName { get; set; }
-            private int ModelIndex;
+            [IgnoreField]
+            public int ModelIndex { get; set; }
 
             /// <summary>
             /// Involved with serialization.
@@ -1674,7 +1675,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Enemy-CollisionPartName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionPartName { get; set; }
-                public int CollisionPartIndex;
+                [IgnoreField]
+                public int CollisionPartIndex { get; set; }
 
                 /// <summary>
                 /// Walk route followed by this enemy.
@@ -1682,7 +1684,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Enemy-WalkRouteName")]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
-                public short WalkRouteIndex;
+                [IgnoreField]
+                public short WalkRouteIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2447,7 +2450,8 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                public int CollisionIndex;
+                [IgnoreField]
+                public int CollisionIndex { get; set; }
 
                 /// <summary>
                 /// The map to load when on this collision.

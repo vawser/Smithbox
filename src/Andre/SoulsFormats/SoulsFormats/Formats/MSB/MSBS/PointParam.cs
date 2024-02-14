@@ -338,7 +338,8 @@ namespace SoulsFormats
             /// If specified, the region is only active when the part is loaded.
             /// </summary>
             public string ActivationPartName { get; set; }
-            private int ActivationPartIndex;
+            [IgnoreField]
+            public int ActivationPartIndex { get; set; }
 
             /// <summary>
             /// Identifies the region in event scripts.
@@ -676,7 +677,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] ChildRegionNames { get; private set; }
-                private int[] ChildRegionIndices;
+                public int[] ChildRegionIndices;
 
                 /// <summary>
                 /// Unknown.
@@ -797,7 +798,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string WindAreaName { get; set; }
-                private int WindAreaIndex;
+                [IgnoreField]
+                public int WindAreaIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.

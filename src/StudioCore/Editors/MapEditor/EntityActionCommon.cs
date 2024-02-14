@@ -346,6 +346,28 @@ namespace StudioCore.Editors.MapEditor
 
                 part.EntityGroups = newEntityGroupIDs;
             }
+            else if (Project.Type == ProjectType.SDT)
+            {
+                var newID = CFG.Current.Prefab_SpecificEntityGroupID;
+                var added = false;
+
+                var part = ent.WrappedObject as MSBS.Part;
+
+                int[] newEntityGroupIDs = new int[part.EntityGroupIDs.Length];
+
+                for (int i = 0; i < part.EntityGroupIDs.Length; i++)
+                {
+                    newEntityGroupIDs[i] = part.EntityGroupIDs[i];
+
+                    if (!added && part.EntityGroupIDs[i] == -1)
+                    {
+                        added = true;
+                        newEntityGroupIDs[i] = newID;
+                    }
+                }
+
+                part.EntityGroupIDs = newEntityGroupIDs;
+            }
         }
     }
 }

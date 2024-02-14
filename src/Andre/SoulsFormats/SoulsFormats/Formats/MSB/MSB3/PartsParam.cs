@@ -181,7 +181,8 @@ namespace SoulsFormats
             /// </summary>
             [FormatReference(ReferenceName = "Part-ModelName")]
             public string ModelName { get; set; }
-            private int ModelIndex;
+            [IgnoreField]
+            public int ModelIndex { get; set; }
 
             /// <summary>
             /// The center of the part.
@@ -859,7 +860,8 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                public int CollisionPartIndex;
+                [IgnoreField]
+                public int CollisionPartIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -992,7 +994,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Enemy-CollisionName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
-                public int CollisionPartIndex;
+                [IgnoreField]
+                public int CollisionPartIndex { get; set; }
 
                 /// <summary>
                 /// Controls enemy AI.
@@ -1039,7 +1042,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Enemy-WalkRouteName")]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
-                public short WalkRouteIndex;
+                [IgnoreField]
+                public short WalkRouteIndex { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1358,7 +1362,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "Collision-UnkHitName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string UnkHitName { get; set; }
-                public int UnkHitIndex;
+                [IgnoreField]
+                public int UnkHitIndex { get; set; }
 
                 /// <summary>
                 /// ID in MapMimicryEstablishmentParam.
@@ -1543,7 +1548,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "ConnectCollision-CollisionName")]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
-                public int CollisionIndex;
+                [IgnoreField]
+                public int CollisionIndex { get; set; }
 
                 /// <summary>
                 /// The map to load when on this collision.

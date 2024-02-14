@@ -75,7 +75,7 @@ namespace StudioCore.Editors.MapEditor
                 return;
 
             // Supported Games
-            if (!(Project.Type is ProjectType.ER or ProjectType.DS3))
+            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT))
                 return;
 
             MonitorPrefabShortcuts();
@@ -295,6 +295,9 @@ namespace StudioCore.Editors.MapEditor
                     case ProjectType.ER:
                         _selectedPrefabObjectNames = Prefab_ER.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
                         break;
+                    case ProjectType.SDT:
+                        _selectedPrefabObjectNames = Prefab_SDT.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
+                        break;
                     case ProjectType.DS3:
                         _selectedPrefabObjectNames = Prefab_DS3.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
                         break;
@@ -359,6 +362,9 @@ namespace StudioCore.Editors.MapEditor
                 case ProjectType.ER: 
                     Prefab_ER.ExportSelection(filepath, _selection);
                     break;
+                case ProjectType.SDT:
+                    Prefab_SDT.ExportSelection(filepath, _selection);
+                    break;
                 case ProjectType.DS3:
                     Prefab_DS3.ExportSelection(filepath, _selection);
                     break;
@@ -378,6 +384,9 @@ namespace StudioCore.Editors.MapEditor
             {
                 case ProjectType.ER: 
                     Prefab_ER.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager); 
+                    break;
+                case ProjectType.SDT:
+                    Prefab_SDT.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager);
                     break;
                 case ProjectType.DS3:
                     Prefab_DS3.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager);

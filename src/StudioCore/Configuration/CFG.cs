@@ -181,7 +181,7 @@ public class CFG
     public bool Prefab_IncludeEntityGroupIDs = true;
 
     public bool Prefab_ApplyUniqueInstanceID = true;
-    public bool Prefab_ApplyUniqueEntityID = true;
+    public bool Prefab_ApplyUniqueEntityID = false;
     public bool Prefab_ApplySelfPartNames = true;
     public bool Prefab_ApplySpecificEntityGroupID = false;
     public int Prefab_SpecificEntityGroupID = 0;

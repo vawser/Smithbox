@@ -234,7 +234,7 @@
         },
         {
             "id": "GparamConfig-EnvMapID",
-            "name": "Ennvironment Map ID",
+            "name": "Environment Map ID",
             "desc": "ID of the value set from Env Map:Editor to use."
         },
         {
@@ -330,7 +330,7 @@
         {
             "id": "UnkStruct10-MapID",
             "name": "Map ID",
-            "desc": ""
+            "desc": "The four ID parts of the map that this map object belongs to. Used in overworld map tiles to link the map object to a specific overworld tile. Order is reverse of map ID string."
         },
         {
             "id": "UnkStruct10-Unk04",

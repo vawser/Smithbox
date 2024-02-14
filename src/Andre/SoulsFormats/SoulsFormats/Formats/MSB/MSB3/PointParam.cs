@@ -349,7 +349,8 @@ namespace SoulsFormats
             /// </summary>
             [FormatReference(ReferenceName = "Region-ActivationPartName")]
             public string ActivationPartName { get; set; }
-            public int ActivationPartIndex;
+            [IgnoreField]
+            public int ActivationPartIndex { get; set; }
 
             /// <summary>
             /// An ID used to identify this region in event scripts.
@@ -784,7 +785,8 @@ namespace SoulsFormats
                 [FormatReference(ReferenceName = "WindSFX-WindAreaName")]
                 [MSBReference(ReferenceType = typeof(WindArea))]
                 public string WindAreaName { get; set; }
-                public int WindAreaIndex;
+                [IgnoreField]
+                public int WindAreaIndex { get; set; }
 
                 /// <summary>
                 /// Creates a WindSFX with default values.

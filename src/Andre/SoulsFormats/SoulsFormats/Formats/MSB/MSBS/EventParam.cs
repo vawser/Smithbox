@@ -245,14 +245,16 @@ namespace SoulsFormats
             /// </summary>
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            private int PartIndex;
+            [IgnoreField]
+            public int PartIndex { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            private int RegionIndex;
+            [IgnoreField]
+            public int RegionIndex { get; set; }
 
             /// <summary>
             /// Identifies the Event in event scripts.
@@ -384,7 +386,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string TreasurePartName { get; set; }
-                private int TreasurePartIndex;
+                [IgnoreField]
+                public int TreasurePartIndex { get; set; }
 
                 /// <summary>
                 /// The item lot to be given.
@@ -536,14 +539,14 @@ namespace SoulsFormats
 
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnRegionNames { get; private set; }
-                private int[] SpawnRegionIndices;
+                public int[] SpawnRegionIndices;
 
                 /// <summary>
                 /// Parts that will be respawned.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; private set; }
-                private int[] SpawnPartIndices;
+                public int[] SpawnPartIndices;
 
                 /// <summary>
                 /// Creates a Generator with default values.
@@ -640,7 +643,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjActPartName { get; set; }
-                private int ObjActPartIndex;
+                [IgnoreField]
+                public int ObjActPartIndex { get; set; }
 
                 /// <summary>
                 /// A row in ObjActParam.
@@ -767,7 +771,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] WalkRegionNames { get; private set; }
-                private short[] WalkRegionIndices;
+                public short[] WalkRegionIndices;
 
                 /// <summary>
                 /// Unknown.
@@ -853,7 +857,7 @@ namespace SoulsFormats
                     /// </summary>
                     [MSBReference(ReferenceType = typeof(Region))]
                     public string RegionName { get; set; }
-                    private short RegionIndex;
+                    public short RegionIndex;
 
                     /// <summary>
                     /// ID of animation to play when arriving at destination region.
@@ -929,7 +933,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] GroupPartNames { get; private set; }
-                private int[] GroupPartIndices;
+                public int[] GroupPartIndices;
 
                 /// <summary>
                 /// Creates a PlatoonInfo with default values.
@@ -1120,7 +1124,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part.EnemyBase))]
                 public string[] PlacementGroupEnemyNames { get; private set; }
-                private int[] PlacementGroupEnemyIndices;
+                public int[] PlacementGroupEnemyIndices;
 
                 /// <summary>
                 /// Creates a PlacementGroup with default values.
@@ -1195,7 +1199,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part.EnemyBase))]
                 public string[] EnemyNames { get; private set; }
-                private int[] EnemyIndices;
+                public int[] EnemyIndices;
 
                 /// <summary>
                 /// IDs of talk ESDs.
@@ -1283,14 +1287,16 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string AutoDrawGroupPointName { get; set; }
-                private int AutoDrawGroupPointIndex;
+                [IgnoreField]
+                public int AutoDrawGroupPointIndex { get; set; }
 
                 /// <summary>
                 /// The collision that the filming point belongs to, presumably.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part.Collision))]
                 public string OwningCollisionName { get; set; }
-                private int OwningCollisionIndex;
+                [IgnoreField]
+                public int OwningCollisionIndex { get; set; }
 
                 /// <summary>
                 /// Creates an AutoDrawGroupCollision with default values.

@@ -164,7 +164,8 @@ namespace SoulsFormats
             /// The model used by this part; requires an entry in ModelParam.
             /// </summary>
             public string ModelName { get; set; }
-            private int ModelIndex;
+            [IgnoreField]
+            public int ModelIndex { get; set; }
 
             /// <summary>
             /// A path to a .sib file, presumably some kind of editor placeholder.
@@ -302,7 +303,7 @@ namespace SoulsFormats
             /// <summary>
             /// Allows multiple parts to be identified by the same entity ID.
             /// </summary>
-            public int[] EntityGroupIDs { get; private set; }
+            public int[] EntityGroupIDs { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -1057,7 +1058,8 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string ObjPartName1 { get; set; }
-                private int ObjPartIndex1;
+                [IgnoreField]
+                public int ObjPartIndex1 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1099,14 +1101,16 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string ObjPartName2 { get; set; }
-                private int ObjPartIndex2;
+                [IgnoreField]
+                public int ObjPartIndex2 { get; set; }
 
                 /// <summary>
                 /// Reference to a collision; believed to be involved with loading when grappling to the object.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string ObjPartName3 { get; set; }
-                private int ObjPartIndex3;
+                [IgnoreField]
+                public int ObjPartIndex3 { get; set; }
 
                 private protected ObjectBase() : base("oXXXXXX_XXXX")
                 {
@@ -1260,14 +1264,16 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionPartName { get; set; }
-                private int CollisionPartIndex;
+                [IgnoreField]
+                public int CollisionPartIndex { get; set; }
 
                 /// <summary>
                 /// References which PatrolInfo index to use for patrol information.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
-                private short WalkRouteIndex;
+                [IgnoreField]
+                public short WalkRouteIndex { get; set; }
 
                 /// <summary>
                 /// Enum that refers to an animation ID to use.
@@ -1792,7 +1798,8 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                private int CollisionIndex;
+                [IgnoreField]
+                public int CollisionIndex { get; set; }
 
                 /// <summary>
                 /// The map to load when on this collision.
