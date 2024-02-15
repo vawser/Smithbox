@@ -308,11 +308,6 @@ namespace StudioCore.Editors.MapEditor
             {
                 var name = info.Name;
 
-                if(info.Tags != null)
-                {
-                    TaskLogs.AddLog($"info.Tags {info.Tags}");
-                }
-
                 if (SearchFilters.IsSearchMatch(_searchInput, name, name, info.Tags, false, false, true, "_"))
                 {
                     if (ImGui.Selectable($"{name}##{name}", _selectedPrefabInfo == info))

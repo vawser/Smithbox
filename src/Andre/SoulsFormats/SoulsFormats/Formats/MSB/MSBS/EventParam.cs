@@ -392,11 +392,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// The item lot to be given.
                 /// </summary>
+                [MSBParamReference(ParamName = "ItemLotParam")]
                 public int ItemLotID { get; set; }
 
                 /// <summary>
                 /// If not -1, uses an entry from ActionButtonParam for the pickup prompt.
                 /// </summary>
+                [MSBParamReference(ParamName = "ActionButtonParam")]
                 public int ActionButtonID { get; set; }
 
                 /// <summary>
@@ -649,6 +651,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// A row in ObjActParam.
                 /// </summary>
+                [MSBParamReference(ParamName = "ObjActParam")]
                 public int ObjActID { get; set; }
 
                 /// <summary>

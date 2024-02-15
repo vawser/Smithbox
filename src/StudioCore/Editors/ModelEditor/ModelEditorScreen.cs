@@ -52,6 +52,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
+    public ModelInfo _loadedModelInfo;
+
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
@@ -74,28 +76,63 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser");
     }
 
+    public void UpdateLoadedModelInfo(string id, string mapid = "")
+    {
+        var modelDir = "";
+        var modelExt = "";
+
+        if (CurrentlyLoadedModelType == ModelEditorModelType.Character)
+        {
+            (modelDir, modelExt) = ModelAssetLocator.GetChrModelContainer();
+        }
+
+        if (CurrentlyLoadedModelType == ModelEditorModelType.Object)
+        {
+            (modelDir, modelExt) = ModelAssetLocator.GetObjModelContainer();
+        }
+
+        if (CurrentlyLoadedModelType == ModelEditorModelType.Parts)
+        {
+            (modelDir, modelExt) = ModelAssetLocator.GetPartsModelContainer();
+        }
+
+        if (CurrentlyLoadedModelType == ModelEditorModelType.MapPiece)
+        {
+            (modelDir, modelExt) = ModelAssetLocator.GetMapModelContainer(mapid);
+        }
+
+        var containerDir = $"{modelDir}";
+        var containerPath = $"{modelDir}{id}{modelExt}";
+
+        _loadedModelInfo = new ModelInfo(id, containerDir, containerPath, modelExt);
+    }
+
     public void OnInstantiateChr(string chrid)
     {
         CurrentlyLoadedModelType = ModelEditorModelType.Character;
         LoadModel(chrid, ModelEditorModelType.Character);
+        UpdateLoadedModelInfo(chrid);
     }
 
     public void OnInstantiateObj(string objid)
     {
         CurrentlyLoadedModelType = ModelEditorModelType.Object;
         LoadModel(objid, ModelEditorModelType.Object);
+        UpdateLoadedModelInfo(objid);
     }
 
     public void OnInstantiateParts(string partsid)
     {
         CurrentlyLoadedModelType = ModelEditorModelType.Parts;
         LoadModel(partsid, ModelEditorModelType.Parts);
+        UpdateLoadedModelInfo(partsid);
     }
 
     public void OnInstantiateMapPiece(string mapid, string modelid)
     {
         CurrentlyLoadedModelType = ModelEditorModelType.MapPiece;
         LoadModel(modelid, ModelEditorModelType.MapPiece, mapid);
+        UpdateLoadedModelInfo(modelid, mapid);
     }
 
     public string EditorName => "Model Editor";
@@ -256,79 +293,96 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void Save()
     {
-        /*
-        if (CurrentlyLoadedModelType == ModelEditorModelType.Character)
+        // The file that holds the loaded model's flver
+        string id = _loadedModelInfo.Name;
+        string containerPath = _loadedModelInfo.ContainerPath;
+        string containerDir = _loadedModelInfo.ContainerDir;
+        string rootPath = $"{Project.GameRootDirectory}\\{containerPath}";
+        string modPath = $"{Project.GameModDirectory}\\{containerPath}";
+        string modDir = $"{Project.GameModDirectory}\\{containerDir}\\";
+        string ext = _loadedModelInfo.Extension;
+
+        FlverResource flvResource = _flverhandle.Get();
+
+        // Add folder if it does not exist in GameModDirectory
+        if(!Directory.Exists(modDir))
         {
-            FlverResource r = _flverhandle.Get();
+            Directory.CreateDirectory(modDir);
+        }
 
-            string bndout;
-            string realPath = AssetLocator.VirtualToRealPath(_flverhandle.AssetVirtualPath, out bndout);
-            string currentPath = GetModPath(realPath);
-            string flverName = Path.GetFileNameWithoutExtension(Path.GetFileName(realPath));
-
-            // TODO: this needs to copy existing bnd, and then replace the relevant .FLVER within it
-
-            List<BinderFile> flverFiles = new();
-            BND4 newFlverBnd = null;
-            try
+        // Copy file to mod path if it exists in root path
+        if (File.Exists(rootPath))
+        {
+            if (!File.Exists(modPath))
             {
-                newFlverBnd = SoulsFile<BND4>.Read(realPath);
+                File.Copy(rootPath, modPath);
             }
-            catch
-            {
-                try
-                {
-                    newFlverBnd = SoulsFile<BND4>.Read(DCX.Decompress(realPath));
-                }
-                catch { }
-            }
-            if (newFlverBnd != null)
-            {
-                int binderIndex = 0;
-                foreach (BinderFile file in newFlverBnd.Files)
-                {
-                    TaskLogs.AddLog($"{file.Name}", LogLevel.Debug, TaskLogs.LogPriority.High);
+        }
+        else
+        {
+            TaskLogs.AddLog($"Root container path does not exist during Model Save: {rootPath}");
+            return;
+        }
 
-                    if (IsFLVERPath(file.Name))
+        // If container exists in mod, then save
+        if (File.Exists(modPath))
+        {
+            byte[] fileBytes = null;
+
+            using (IBinder binder = BND4.Read(DCX.Decompress(modPath)))
+            {
+                foreach (var file in binder.Files)
+                {
+                    TaskLogs.AddLog($"{file.Name} - {id}{ext}");
+
+                    if (file.Name == $"{id}{ext}")
                     {
-                        flverFiles.Add(file);
-
-                        if(file.Name == flverName)
+                        try
                         {
-                            // Replace existing .FLVER with edited one
+                            TaskLogs.AddLog($"pre-Write: {file.Bytes}");
+                            file.Bytes = flvResource.Flver.Write();
+                            TaskLogs.AddLog($"post-Write: {file.Bytes}");
+                        }
+                        catch (Exception ex)
+                        {
+                            TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
                         }
                     }
-
-                    binderIndex++;
                 }
 
-                newFlverBnd.Write(currentPath);
+                // Then write those bytes to file
+                BND4 writeBinder = binder as BND4;
+
+                switch (Project.Type)
+                {
+                    case ProjectType.DS3:
+                        fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                        break;
+                    case ProjectType.SDT:
+                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                        break;
+                    case ProjectType.ER:
+                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                        break;
+                    case ProjectType.AC6:
+                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                        break;
+                    default:
+                        TaskLogs.AddLog($"Invalid ProjectType during Model Editor Save");
+                        return;
+                }
             }
 
-            TaskLogs.AddLog($"{realPath}\n{currentPath}\n{flverName}\n", LogLevel.Debug, TaskLogs.LogPriority.High);
-        }
-        */
-    }
-    private static bool IsFLVERPath(string filePath)
-    {
-        return filePath.Contains(".flv") || filePath.Contains(".flver");
-    }
-
-    public string GetModPath(string relpath)
-    {
-        string ret = relpath;
-
-        if (Project.GameModDirectory != null)
-        {
-            var modpath = relpath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
-
-            if (!File.Exists(modpath))
+            _universe.UnloadAll(true);
+            _flverhandle.Unload();
+            _renderMesh.Dispose();
+            
+            if (fileBytes != null)
             {
-                ret = modpath;
+                File.WriteAllBytes(modPath, fileBytes);
+                TaskLogs.AddLog($"Saved at: {modPath}");
             }
         }
-
-        return ret;
     }
 
     public void SaveAll()

@@ -152,7 +152,7 @@ public class FlverResource : IResource, IDisposable
         return new FlverCache();
     }
 
-    private void ReleaseCache(FlverCache cache)
+    public void ReleaseCache(FlverCache cache)
     {
         if (cache != null)
         {
