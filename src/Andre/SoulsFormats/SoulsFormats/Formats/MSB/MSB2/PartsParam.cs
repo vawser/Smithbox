@@ -128,7 +128,8 @@ namespace SoulsFormats
             /// The name of the part's model, referencing ModelParam.
             /// </summary>
             public string ModelName { get; set; }
-            private short ModelIndex;
+            [IndexProperty]
+            public short ModelIndex { get; set; }
 
             /// <summary>
             /// Location of the part.
@@ -707,7 +708,8 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                private int CollisionIndex;
+                [IndexProperty]
+                public int CollisionIndex { get; set; }
 
                 /// <summary>
                 /// The map to load when on this collision.

@@ -57,6 +57,13 @@ namespace StudioCore.Editors.MapEditor
 
         public void OnProjectChanged()
         {
+            _selectedPrefabObjectNames = new List<string>();
+            _prefabInfos = new List<PrefabInfo>();
+            _selectedPrefabInfo = null;
+            _selectedPrefabInfoCache = null;
+            _comboTargetMap = ("", null);
+            _newPrefabName = "";
+
             _prefabDir = $"{Project.GameModDirectory}\\.smithbox\\{Project.GetGameIDForDir()}\\prefabs\\";
 
             if (!Directory.Exists(_prefabDir))
@@ -75,7 +82,7 @@ namespace StudioCore.Editors.MapEditor
                 return;
 
             // Supported Games
-            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS1 or ProjectType.DS1R))
+            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS2S or ProjectType.DS1 or ProjectType.DS1R))
                 return;
 
             MonitorPrefabShortcuts();
@@ -262,6 +269,14 @@ namespace StudioCore.Editors.MapEditor
                 ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
                 ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
 
+                if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT || Project.Type == ProjectType.ER)
+                {
+                    ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
+                    ImGui.SameLine();
+                    ImGui.InputInt("##entityGroupIdInput", ref CFG.Current.Prefab_SpecificEntityGroupID);
+                    ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
+                }
+
                 if (Project.Type == ProjectType.ER)
                 {
                     ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
@@ -269,14 +284,6 @@ namespace StudioCore.Editors.MapEditor
 
                     ImGui.Checkbox("Apply Asset UnkPartNames", ref CFG.Current.Prefab_ApplySelfPartNames);
                     ImguiUtils.ShowHelpMarker("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
-                }
-
-                if (Project.Type != ProjectType.DS1 || Project.Type != ProjectType.DS1R)
-                {
-                    ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
-                    ImGui.SameLine();
-                    ImGui.InputInt("##entityGroupIdInput", ref CFG.Current.Prefab_SpecificEntityGroupID);
-                    ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
                 }
             }
         }
@@ -299,6 +306,9 @@ namespace StudioCore.Editors.MapEditor
                         break;
                     case ProjectType.DS3:
                         _selectedPrefabObjectNames = Prefab_DS3.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
+                        break;
+                    case ProjectType.DS2S:
+                        _selectedPrefabObjectNames = Prefab_DS2.GetSelectedPrefabObjects(_selectedPrefabInfo, _comboTargetMap);
                         break;
                     case ProjectType.DS1:
                     case ProjectType.DS1R:
@@ -371,6 +381,9 @@ namespace StudioCore.Editors.MapEditor
                 case ProjectType.DS3:
                     Prefab_DS3.ExportSelection(filepath, _selection);
                     break;
+                case ProjectType.DS2S:
+                    Prefab_DS2.ExportSelection(filepath, _selection);
+                    break;
                 case ProjectType.DS1:
                 case ProjectType.DS1R:
                     Prefab_DS1.ExportSelection(filepath, _selection);
@@ -397,6 +410,9 @@ namespace StudioCore.Editors.MapEditor
                     break;
                 case ProjectType.DS3:
                     Prefab_DS3.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager);
+                    break;
+                case ProjectType.DS2S:
+                    Prefab_DS2.ImportSelectedPrefab(info, _comboTargetMap, _universe, _scene, _actionManager);
                     break;
                 case ProjectType.DS1:
                 case ProjectType.DS1R:
