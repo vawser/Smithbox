@@ -21,6 +21,8 @@ public class Prefab_ER
     public string PrefixSeparator = "[]";
     public ProjectType Type = ProjectType.ER;
 
+    public List<string> TagList { get; set; }
+
     /// <summary>
     /// Bytes of the MSB that stores prefab data.
     /// </summary>
@@ -1949,8 +1951,18 @@ public class Prefab_ER
     /// </summary>
     /// <param name="filepath"></param>
     /// <param name="_selection"></param>
-    public static void ExportSelection(string filepath, MapSelection _selection)
+    public static void ExportSelection(string filepath, MapSelection _selection, string tags)
     {
+        List<string> tagList = new List<string>();
+        if (tags.Contains(","))
+        {
+            tagList = tags.Split(",").ToList();
+        }
+        else
+        {
+            tagList.Add(tags);
+        }
+
         Prefab_ER prefab = new(_selection.GetFilteredSelection<MsbEntity>());
 
         if (!prefab.PrefabInfoChildren.Any())
@@ -1960,6 +1972,7 @@ public class Prefab_ER
         else
         {
             prefab.PrefabName = System.IO.Path.GetFileNameWithoutExtension(filepath);
+            prefab.TagList = tagList;
             prefab.Write(filepath);
         }
     }

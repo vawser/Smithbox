@@ -11,13 +11,23 @@ public static class SearchFilters
     /// <summary>
     /// Returns true is the input string (whole or part) matches a filename, reference name or tag.
     /// </summary>
-    public static bool IsSearchMatch(string rawInput, string rawRefId, string rawRefName, List<string> rawRefTags, bool matchAssetCategory = false, bool stripParticlePrefix = false)
+    public static bool IsSearchMatch(string rawInput, string rawRefId, string rawRefName, List<string> rawRefTags, 
+        bool matchAssetCategory = false, // Match AEG categories passed in input
+        bool stripParticlePrefix = false, // Remove f and preceding zeroes from checked string against input
+        bool splitWithDelimiter = false, // Split entry by passed delimiter and check against input
+        string delimiter = "_" // Delimiter to split entry by
+        )
     {
         bool match = false;
 
         string input = rawInput.Trim().ToLower();
         string refId = rawRefId.ToLower();
         string refName = rawRefName.ToLower();
+
+        if(rawRefTags == null)
+        {
+            rawRefTags = new List<string>() { "" };
+        }
 
         if (input.Equals(""))
         {
@@ -56,6 +66,18 @@ public static class SearchFilters
             // Match: Reference Name
             if (entry == refName)
                 partTruth[i] = true;
+
+            if(splitWithDelimiter)
+            {
+                var refParts = refName.Split(delimiter);
+                foreach(var refPart in refParts)
+                {
+                    if(entry == refPart)
+                    {
+                        partTruth[i] = true;
+                    }
+                }
+            }
 
             // Match: Reference Segments
             string[] refSegments = refName.Split(" ");

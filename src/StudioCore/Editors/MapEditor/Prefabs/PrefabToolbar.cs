@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor.Prefabs;
 using StudioCore.Gui;
@@ -7,10 +8,14 @@ using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.UserProject;
+using StudioCore.Utilities;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
 
 namespace StudioCore.Editors.MapEditor
 {
@@ -38,6 +43,10 @@ namespace StudioCore.Editors.MapEditor
         private (string, MapObjectContainer) _comboTargetMap;
 
         private string _newPrefabName;
+        private string _prefabTags;
+
+        private string _searchInput = "";
+        private string _searchInputCache = "";
 
         public PrefabToolbar(RenderScene scene, MapSelection sel, EntityActionManager manager, Universe universe, IViewport viewport, (string, MapObjectContainer) comboTargetMap)
         {
@@ -52,6 +61,7 @@ namespace StudioCore.Editors.MapEditor
             _prefabExt = ".json";
             _prefabDir = "";
             _newPrefabName = "";
+            _prefabTags = "";
             _comboTargetMap = comboTargetMap;
         }
 
@@ -63,6 +73,7 @@ namespace StudioCore.Editors.MapEditor
             _selectedPrefabInfoCache = null;
             _comboTargetMap = ("", null);
             _newPrefabName = "";
+            _prefabTags = "";
 
             _prefabDir = $"{Project.GameModDirectory}\\.smithbox\\{Project.GetGameIDForDir()}\\prefabs\\";
 
@@ -92,6 +103,9 @@ namespace StudioCore.Editors.MapEditor
 
             if (ImGui.Begin($@"Prefabs##PrefabToolbar"))
             {
+                DisplayPrefabActionMenu();
+
+                ImGui.Separator();
                 ImGui.Text("Prefab Export");
                 ImguiUtils.ShowHelpMarker($"Shortcut: {KeyBindings.Current.Toolbar_ExportPrefab.HintText}");
                 ImGui.Separator();
@@ -104,18 +118,16 @@ namespace StudioCore.Editors.MapEditor
                 ImGui.Separator();
 
                 DisplayTargetMapMenu();
+                DisplayPrefabSearch();
 
-                ImGui.Separator();
-
+                ImGui.Columns(2);
                 DisplayPrefabList();
 
-                ImGui.Separator();
-
-                DisplayPrefabActionMenu();
-
-                ImGui.Separator();
+                ImGui.NextColumn();
 
                 DisplayPrefabContentsList();
+
+                ImGui.Columns(1);
             }
             ImGui.End();
         }
@@ -136,82 +148,6 @@ namespace StudioCore.Editors.MapEditor
                 else
                 {
                     PlatformUtils.Instance.MessageBox("No prefab has been selected to import.", "Prefab Error", MessageBoxButtons.OK);
-                }
-            }
-        }
-
-        public void DisplayPrefabSaveMenu()
-        {
-            ImGui.InputText("##prefabName", ref _prefabName, 255);
-            ImGui.SameLine();
-
-            if (ImGui.Button("Save"))
-            {
-                if (File.Exists($"{_prefabDir}{_prefabName}{_prefabExt}"))
-                {
-                    PlatformUtils.Instance.MessageBox("Prefab already exists with this name, try another.", "Prefab Error", MessageBoxButtons.OK);
-                }
-                else if (_prefabName == "" || _prefabName == null)
-                {
-                    PlatformUtils.Instance.MessageBox("Prefab name cannot be blank.", "Prefab Error", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    ExportCurrentSelection(_prefabName);
-                }
-            }
-            ImguiUtils.ShowHelpMarker("Save the current selection as a prefab.\n\nNote, map object fields that refer other map objects will be set to empty when saved as a prefab.");
-
-            if (_selection.GetSelection().Count != 0)
-            {
-                ImGui.SameLine();
-                if (ImGui.Button("Set Name"))
-                {
-                    _prefabName = GetUniquePrefabName();
-                }
-                ImguiUtils.ShowHelpMarker("Get an unique prefab name based on the first element of the current selection.");
-            }
-
-            ImGui.Checkbox("Retain Entity ID", ref CFG.Current.Prefab_IncludeEntityID);
-            ImguiUtils.ShowHelpMarker("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
-
-            ImGui.Checkbox("Retain Entity Group IDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
-            ImguiUtils.ShowHelpMarker("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
-        }
-
-        public void DisplayTargetMapMenu()
-        {
-            if (ImGui.BeginCombo("Targeted Map", _comboTargetMap.Item1))
-            {
-                foreach (var obj in _universe.LoadedObjectContainers)
-                {
-                    if (obj.Value != null)
-                    {
-                        if (ImGui.Selectable(obj.Key))
-                        {
-                            _comboTargetMap = (obj.Key, obj.Value);
-                            break;
-                        }
-                    }
-                }
-                ImGui.EndCombo();
-            }
-            ImguiUtils.ShowHelpMarker("The target map to spawn a prefab in.");
-        }
-
-        public void DisplayPrefabList()
-        {
-            ImGui.Text("Prefabs");
-            ImguiUtils.ShowHelpMarker($"List of saved prefabs.");
-            ImGui.Separator();
-            foreach (var info in _prefabInfos)
-            {
-                var name = info.Name;
-
-                if (ImGui.Selectable($"{name}##{name}", _selectedPrefabInfo == info))
-                {
-                    _selectedPrefabInfo = info;
-                    _newPrefabName = info.Name;
                 }
             }
         }
@@ -288,14 +224,113 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
+        public void DisplayPrefabSaveMenu()
+        {
+            ImGui.InputText("##prefabName", ref _prefabName, 255);
+            ImGui.SameLine();
+
+            if (ImGui.Button("Save"))
+            {
+                if (File.Exists($"{_prefabDir}{_prefabName}{_prefabExt}"))
+                {
+                    PlatformUtils.Instance.MessageBox("Prefab already exists with this name, try another.", "Prefab Error", MessageBoxButtons.OK);
+                }
+                else if (_prefabName == "" || _prefabName == null)
+                {
+                    PlatformUtils.Instance.MessageBox("Prefab name cannot be blank.", "Prefab Error", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    ExportCurrentSelection(_prefabName);
+                }
+            }
+            ImguiUtils.ShowHelpMarker("Save the current selection as a prefab.\n\nNote, map object fields that refer other map objects will be set to empty when saved as a prefab.");
+
+            if (_selection.GetSelection().Count != 0)
+            {
+                ImGui.SameLine();
+                if (ImGui.Button("Set Name"))
+                {
+                    _prefabName = GetUniquePrefabName();
+                }
+                ImguiUtils.ShowHelpMarker("Get an unique prefab name based on the first element of the current selection.");
+            }
+
+            ImGui.InputText("Tags##prefabTags", ref _prefabTags, 255);
+            ImguiUtils.ShowHelpMarker("The set of tags to save this prefab under. Split each tag with the , character.");
+
+            ImGui.Checkbox("Retain Entity ID", ref CFG.Current.Prefab_IncludeEntityID);
+            ImguiUtils.ShowHelpMarker("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
+
+            ImGui.Checkbox("Retain Entity Group IDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
+            ImguiUtils.ShowHelpMarker("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
+        }
+
+        public void DisplayTargetMapMenu()
+        {
+            if (ImGui.BeginCombo("Targeted Map", _comboTargetMap.Item1))
+            {
+                foreach (var obj in _universe.LoadedObjectContainers)
+                {
+                    if (obj.Value != null)
+                    {
+                        if (ImGui.Selectable(obj.Key))
+                        {
+                            _comboTargetMap = (obj.Key, obj.Value);
+                            break;
+                        }
+                    }
+                }
+                ImGui.EndCombo();
+            }
+            ImguiUtils.ShowHelpMarker("The target map to spawn a prefab in.");
+        }
+
+        public void DisplayPrefabSearch()
+        {
+            ImGui.InputText($"Search", ref _searchInput, 255);
+
+            if (_searchInput != _searchInputCache)
+            {
+                _searchInputCache = _searchInput;
+            }
+        }
+
+        public void DisplayPrefabList()
+        {
+            ImGui.BeginChild("##PrefabSelectionList");
+
+            ImGui.Separator();
+            ImGui.Text("Available Prefabs");
+            ImGui.Separator();
+
+            foreach (var info in _prefabInfos)
+            {
+                var name = info.Name;
+
+                if(info.Tags != null)
+                {
+                    TaskLogs.AddLog($"info.Tags {info.Tags}");
+                }
+
+                if (SearchFilters.IsSearchMatch(_searchInput, name, name, info.Tags, false, false, true, "_"))
+                {
+                    if (ImGui.Selectable($"{name}##{name}", _selectedPrefabInfo == info))
+                    {
+                        _selectedPrefabInfo = info;
+                        _newPrefabName = info.Name;
+                    }
+                }
+            }
+
+            ImGui.EndChild();
+        }
+
         public void DisplayPrefabContentsList()
         {
+            ImGui.BeginChild("##PrefabContentList");
             if (_selectedPrefabInfo != null)
             {
-                ImGui.Text("Contents");
-                ImguiUtils.ShowHelpMarker($"The individual map objects that make up this prefab.");
-                ImGui.Separator();
-
                 switch (Project.Type)
                 {
                     case ProjectType.ER:
@@ -317,6 +352,21 @@ namespace StudioCore.Editors.MapEditor
                     default: break;
                 }
 
+                // Tags
+                ImGui.Text("Tags:");
+
+                if(_selectedPrefabInfo.Tags != null)
+                {
+                    foreach(var tag in _selectedPrefabInfo.Tags)
+                    {
+                        ImGui.Text(tag);
+                    }
+                }
+
+                ImGui.Text("");
+
+                // Contents
+                ImGui.Text("Contents:");
                 if (_selectedPrefabObjectNames != null)
                 {
                     foreach (var name in _selectedPrefabObjectNames)
@@ -325,6 +375,8 @@ namespace StudioCore.Editors.MapEditor
                     }
                 }
             }
+
+            ImGui.EndChild();
         }
         public void RefreshPrefabList()
         {
@@ -339,11 +391,65 @@ namespace StudioCore.Editors.MapEditor
             foreach(var file in files)
             {
                 var name = Path.GetFileNameWithoutExtension(file);
-                PrefabInfo info = new PrefabInfo(name, file);
+                PrefabInfo info = new PrefabInfo(name, file, GetPrefabTags(file));
                 infoList.Add(info);
             }
 
             return infoList;
+        }
+
+        public List<string> GetPrefabTags(string filepath)
+        {
+            var options = new JsonSerializerOptions
+            {
+                ReadCommentHandling = JsonCommentHandling.Skip,
+                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
+            };
+
+            List<string> tags = new List<string>();
+
+            switch (Project.Type)
+            {
+                case ProjectType.ER:
+                    var prefab_ER = new Prefab_ER();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_ER = JsonSerializer.Deserialize<Prefab_ER>(File.OpenRead(filepath), options);
+
+                    tags = prefab_ER.TagList;
+                    break;
+                case ProjectType.SDT:
+                    var prefab_SDT = new Prefab_SDT();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_SDT = JsonSerializer.Deserialize<Prefab_SDT>(File.OpenRead(filepath), options);
+
+                    tags = prefab_SDT.TagList;
+                    break;
+                case ProjectType.DS3:
+                    var prefab_DS3 = new Prefab_DS3();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_DS3 = JsonSerializer.Deserialize<Prefab_DS3>(File.OpenRead(filepath), options);
+
+                    tags = prefab_DS3.TagList;
+                    break;
+                case ProjectType.DS2S:
+                    var prefab_DS2 = new Prefab_DS2();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_DS2 = JsonSerializer.Deserialize<Prefab_DS2>(File.OpenRead(filepath), options);
+
+                    tags = prefab_DS2.TagList;
+                    break;
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    var prefab_DS1 = new Prefab_DS1();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_DS1 = JsonSerializer.Deserialize<Prefab_DS1>(File.OpenRead(filepath), options);
+
+                    tags = prefab_DS1.TagList;
+                    break;
+                default: break;
+            }
+
+            return tags;
         }
 
         public string GetUniquePrefabName()
@@ -373,20 +479,20 @@ namespace StudioCore.Editors.MapEditor
             switch(Project.Type)
             {
                 case ProjectType.ER: 
-                    Prefab_ER.ExportSelection(filepath, _selection);
+                    Prefab_ER.ExportSelection(filepath, _selection, _prefabTags);
                     break;
                 case ProjectType.SDT:
-                    Prefab_SDT.ExportSelection(filepath, _selection);
+                    Prefab_SDT.ExportSelection(filepath, _selection, _prefabTags);
                     break;
                 case ProjectType.DS3:
-                    Prefab_DS3.ExportSelection(filepath, _selection);
+                    Prefab_DS3.ExportSelection(filepath, _selection, _prefabTags);
                     break;
                 case ProjectType.DS2S:
-                    Prefab_DS2.ExportSelection(filepath, _selection);
+                    Prefab_DS2.ExportSelection(filepath, _selection, _prefabTags);
                     break;
                 case ProjectType.DS1:
                 case ProjectType.DS1R:
-                    Prefab_DS1.ExportSelection(filepath, _selection);
+                    Prefab_DS1.ExportSelection(filepath, _selection, _prefabTags);
                     break;
                 default: break;
             }
@@ -427,11 +533,13 @@ namespace StudioCore.Editors.MapEditor
     {
         public string Name { get; set; }
         public string Path { get; set; }
+        public List<string> Tags { get; set; }
 
-        public PrefabInfo(string name, string path)
+        public PrefabInfo(string name, string path, List<string> tags)
         {
             Name = name;
             Path = path;
+            Tags = tags;
         }
     }
 }

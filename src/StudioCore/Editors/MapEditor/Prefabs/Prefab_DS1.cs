@@ -22,6 +22,8 @@ namespace StudioCore.Editors.MapEditor.Prefabs
         public string PrefixSeparator = "[]";
         public ProjectType Type = ProjectType.DS1;
 
+
+        public List<string> TagList;
         /// <summary>
         /// Bytes of the MSB that stores prefab data.
         /// </summary>
@@ -980,8 +982,18 @@ namespace StudioCore.Editors.MapEditor.Prefabs
         /// </summary>
         /// <param name="filepath"></param>
         /// <param name="_selection"></param>
-        public static void ExportSelection(string filepath, MapSelection _selection)
+        public static void ExportSelection(string filepath, MapSelection _selection, string tags)
         {
+            List<string> tagList = new List<string>();
+            if (tags.Contains(","))
+            {
+                tagList = tags.Split(",").ToList();
+            }
+            else
+            {
+                tagList.Add(tags);
+            }
+
             Prefab_DS1 prefab = new(_selection.GetFilteredSelection<MsbEntity>());
 
             if (!prefab.PrefabInfoChildren.Any())
@@ -991,6 +1003,7 @@ namespace StudioCore.Editors.MapEditor.Prefabs
             else
             {
                 prefab.PrefabName = System.IO.Path.GetFileNameWithoutExtension(filepath);
+                prefab.TagList = tagList;
                 prefab.Write(filepath);
             }
         }
