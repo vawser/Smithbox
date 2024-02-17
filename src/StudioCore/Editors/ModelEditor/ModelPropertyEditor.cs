@@ -7,6 +7,7 @@ using StudioCore.Banks.InfoBank;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Gui;
+using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -769,8 +770,7 @@ public class ModelPropertyEditor
         }
     }
 
-    private void PropEditorGeneric(MapSelection selection, HashSet<Entity> entSelection, object target = null,
-        bool decorate = true, int classIndex = -1)
+    private void PropEditorGeneric(MapSelection selection, HashSet<Entity> entSelection, object target = null, bool decorate = true, int classIndex = -1)
     {
         var scale = Smithbox.GetUIScale();
         Entity firstEnt = entSelection.First();
@@ -1252,38 +1252,15 @@ public class ModelPropertyEditor
         Type type = classType;
         string name = prop.Name;
 
-        /*
         var attribute = prop?.GetCustomAttribute<FormatReference>();
 
-        if (CFG.Current.MapEditor_Enable_Commmunity_Names)
+        if (CFG.Current.ModelEditor_Enable_Commmunity_Names)
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
             List<InfoReference> entries = null;
 
-            // Part
-            if (_selected.IsPart())
-            {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Part");
-            }
-
-            // Region
-            if (_selected.IsRegion())
-            {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Region");
-            }
-
-            // Event
-            if (_selected.IsEvent())
-            {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Event");
-            }
-
-            // Light
-            if (_selected.IsLight())
-            {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Light");
-            }
+            entries = FlverInfoBank.Bank.FormatInformation.GetEntries("All");
 
             if (entries != null && attribute != null)
             {
@@ -1296,17 +1273,15 @@ public class ModelPropertyEditor
                 }
             }
         }
-        */
 
         return name;
     }
 
     public void ShowFieldHint(Type classType, PropertyInfo prop, MapSelection sel)
     {
-        /*
         var attribute = prop?.GetCustomAttribute<FormatReference>();
 
-        if (CFG.Current.MapEditor_Enable_Commmunity_Hints)
+        if (CFG.Current.ModelEditor_Enable_Commmunity_Hints)
         {
             var desc = "Unknown.";
 
@@ -1314,29 +1289,7 @@ public class ModelPropertyEditor
 
             List<InfoReference> entries = null;
 
-            // Part
-            if (_selected.IsPart())
-            {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Part");
-            }
-
-            // Region
-            if (_selected.IsRegion())
-            {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Region");
-            }
-
-            // Event
-            if (_selected.IsEvent())
-            {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Event");
-            }
-
-            // Light
-            if (_selected.IsLight())
-            {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Light");
-            }
+            entries = FlverInfoBank.Bank.FormatInformation.GetEntries("All");
 
             if (entries != null && attribute != null)
             {
@@ -1354,7 +1307,6 @@ public class ModelPropertyEditor
 
             ImguiUtils.ShowHelpMarker(desc);
         }
-        */
     }
 
     public void OnGui(MapSelection selection, string id, float w, float h)

@@ -12,41 +12,49 @@ namespace SoulsFormats
             /// <summary>
             /// The type of texture this is, corresponding to the entries in the MTD.
             /// </summary>
+            [FormatReference(ReferenceName = "Texture-Type")]
             public string Type { get; set; }
 
             /// <summary>
             /// Network path to the texture file to use.
             /// </summary>
+            [FormatReference(ReferenceName = "Texture-Path")]
             public string Path { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Texture-Scale")]
             public Vector2 Scale { get; set; }
 
             /// <summary>
             /// Unknown; observed values 0, 1, 2.
             /// </summary>
+            [FormatReference(ReferenceName = "Texture-Unk10")]
             public byte Unk10 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Texture-Unk11")]
             public bool Unk11 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Texture-Unk14")]
             public float Unk14 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Texture-Unk18")]
             public float Unk18 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "Texture-Unk1C")]
             public float Unk1C { get; set; }
 
             /// <summary>

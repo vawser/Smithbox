@@ -118,9 +118,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         ViewportUsingKeyboard = Viewport.Update(Window, dt);
 
         // Reload the flvers if a rendering bool has changed
-        if (CFG.Current.Model_RenderingUpdate)
+        if (CFG.Current.ModelEditor_RenderingUpdate)
         {
-            CFG.Current.Model_RenderingUpdate = false;
+            CFG.Current.ModelEditor_RenderingUpdate = false;
             FlverResource r = _flverhandle.Get();
             _universe.LoadFlver(r.Flver, _renderMesh, _currentModel);
         }
@@ -164,15 +164,15 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Dummy Polygons", "", CFG.Current.Model_ViewDummyPolys, true))
+            if (ImGui.MenuItem("Dummy Polygons", "", CFG.Current.ModelEditor_ViewDummyPolys, true))
             {
-                CFG.Current.Model_ViewDummyPolys = !CFG.Current.Model_ViewDummyPolys;
-                CFG.Current.Model_RenderingUpdate = true;
+                CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
+                CFG.Current.ModelEditor_RenderingUpdate = true;
             }
-            if (ImGui.MenuItem("Bones", "", CFG.Current.Model_ViewBones, true))
+            if (ImGui.MenuItem("Bones", "", CFG.Current.ModelEditor_ViewBones, true))
             {
-                CFG.Current.Model_ViewBones = !CFG.Current.Model_ViewBones;
-                CFG.Current.Model_RenderingUpdate = true;
+                CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
+                CFG.Current.ModelEditor_RenderingUpdate = true;
             }
 
             ImGui.EndMenu();

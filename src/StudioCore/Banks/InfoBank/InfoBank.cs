@@ -12,7 +12,8 @@ namespace StudioCore.Banks.InfoBank;
 public enum FormatType
 {
     None,
-    MSB
+    MSB,
+    FLVER
 }
 /// <summary>
 /// An info bank holds information for annotating formats, such as MSB.
@@ -45,6 +46,12 @@ public class InfoBank
         {
             FormatInfoName = "MSB";
             FormatInfoDirectory = "MSB";
+        }
+
+        if (formatType is FormatType.FLVER)
+        {
+            FormatInfoName = "FLVER";
+            FormatInfoDirectory = "FLVER";
         }
     }
 

@@ -15,45 +15,55 @@ namespace SoulsFormats
             /// <summary>
             /// When 1, mesh is in bind pose; when 0, it isn't. Most likely has further implications.
             /// </summary>
+            [FormatReference(ReferenceName = "Mesh-Dynamic")]
             public byte Dynamic { get; set; }
 
             /// <summary>
             /// Index of the material used by all triangles in this mesh.
             /// </summary>
+            /// 
+            [FormatReference(ReferenceName = "Mesh-MaterialIndex")]
             public int MaterialIndex { get; set; }
 
             /// <summary>
             /// Apparently does nothing. Usually points to a dummy bone named after the model, possibly just for labelling.
             /// </summary>
+            [FormatReference(ReferenceName = "Mesh-DefaultBoneIndex")]
             public int DefaultBoneIndex { get; set; }
 
             /// <summary>
             /// Indexes of bones in the bone collection which may be used by vertices in this mesh.
             /// </summary>
+            [FormatReference(ReferenceName = "Mesh-BoneIndices")]
             public List<int> BoneIndices { get; set; }
 
             /// <summary>
             /// Triangles in this mesh.
             /// </summary>
+            [FormatReference(ReferenceName = "Mesh-FaceSets")]
             public List<FaceSet> FaceSets { get; set; }
 
             /// <summary>
             /// Vertex buffers in this mesh.
             /// </summary>
+            [FormatReference(ReferenceName = "Mesh-VertexBuffers")]
             public List<VertexBuffer> VertexBuffers { get; set; }
 
             /// <summary>
             /// Vertices in this mesh.
             /// </summary>
+            [FormatReference(ReferenceName = "Mesh-Vertices")]
             [HideProperty]
             public FLVER.Vertex[] Vertices { get; set; }
             IReadOnlyList<FLVER.Vertex> IFlverMesh.Vertices => Vertices;
 
+            [FormatReference(ReferenceName = "Mesh-VertexCount")]
             public int VertexCount { get; set; }
 
             /// <summary>
             /// Optional bounding box struct; may be null.
             /// </summary>
+            [FormatReference(ReferenceName = "Mesh-BoundingBox")]
             [HideProperty]
             public BoundingBoxes BoundingBox { get; set; }
 
@@ -270,16 +280,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Minimum extent of the mesh.
                 /// </summary>
+                [FormatReference(ReferenceName = "Mesh-BoundingBox-Min")]
                 public Vector3 Min { get; set; }
 
                 /// <summary>
                 /// Maximum extent of the mesh.
                 /// </summary>
+                [FormatReference(ReferenceName = "Mesh-BoundingBox-Max")]
                 public Vector3 Max { get; set; }
 
                 /// <summary>
                 /// Unknown; only present in Sekiro.
                 /// </summary>
+                [FormatReference(ReferenceName = "Mesh-BoundingBox-Unk")]
                 public Vector3 Unk { get; set; }
 
                 /// <summary>

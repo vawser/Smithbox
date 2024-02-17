@@ -47,30 +47,36 @@ namespace SoulsFormats
             /// <summary>
             /// FaceSet Flags on this FaceSet.
             /// </summary>
+            [FormatReference(ReferenceName = "FaceSet-Flags")]
             public FSFlags Flags { get; set; }
 
             /// <summary>
             /// Whether vertices are defined as a triangle strip or individual triangles.
             /// </summary>
+            [FormatReference(ReferenceName = "FaceSet-TriangleStrip")]
             public bool TriangleStrip { get; set; }
 
             /// <summary>
             /// Whether triangles can be seen through from behind.
             /// </summary>
+            [FormatReference(ReferenceName = "FaceSet-CullBackfaces")]
             public bool CullBackfaces { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [FormatReference(ReferenceName = "FaceSet-Unk06")]
             public short Unk06 { get; set; }
 
             [HideProperty]
+            [FormatReference(ReferenceName = "FaceSet-IndicesCount")]
             public int IndicesCount { get; set; }
 
             /// <summary>
             /// Indices to vertices in a mesh.
             /// </summary>
             [HideProperty]
+            [FormatReference(ReferenceName = "FaceSet-Indices")]
             public int[] Indices { get; set; }
 
             /// <summary>

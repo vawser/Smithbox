@@ -116,6 +116,7 @@ public class Smithbox
         FlagAliasBank.Bank = new AliasBank(AliasType.EventFlag);
         ParticleAliasBank.Bank = new AliasBank(AliasType.Particle);
         MsbInfoBank.Bank = new InfoBank(FormatType.MSB);
+        FlverInfoBank.Bank = new InfoBank(FormatType.FLVER);
         MaterialResourceBank.LoadMaterials();
 
         // Windows
@@ -491,6 +492,7 @@ public class Smithbox
         ParticleAliasBank.Bank.ReloadAliasBank();
         MapAliasBank.Bank.ReloadAliasBank();
         MsbInfoBank.Bank.ReloadInfoBank();
+        FlverInfoBank.Bank.ReloadInfoBank();
 
         ParamBank.ReloadParams(newsettings, options);
         MaterialResourceBank.ReloadMaterials();

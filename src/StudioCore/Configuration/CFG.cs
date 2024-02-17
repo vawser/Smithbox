@@ -189,9 +189,12 @@ public class CFG
     //****************************
     // Settings: Model Editor
     //****************************
-    public bool Model_RenderingUpdate = false;
-    public bool Model_ViewDummyPolys = true;
-    public bool Model_ViewBones = true;
+    public bool ModelEditor_RenderingUpdate = false;
+    public bool ModelEditor_ViewDummyPolys = true;
+    public bool ModelEditor_ViewBones = true;
+    public bool ModelEditor_Enable_Commmunity_Names = true;
+    public bool ModelEditor_Enable_Commmunity_Hints = true;
+    public bool ModelEditor_DisplayDmyPolyReferenceID = true;
 
     //****************************
     // Settings: Param Editor
@@ -230,8 +233,7 @@ public class CFG
     // Windows
     //****************************
     public bool AssetBrowser_ShowTagsInBrowser = true;
-    public bool AssetBrowser_UpdateSelectionName = true;
-    public bool AssetBrowser_SuspendListWhenInViewport = true;
+    public bool AssetBrowser_ShowLowDetailParts = false;
 
     public bool EventFlagBrowser_Open = false;
     public bool EventFlagBrowser_ShowTagsInBrowser = true;

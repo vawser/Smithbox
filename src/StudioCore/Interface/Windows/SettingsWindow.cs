@@ -677,13 +677,19 @@ public class SettingsWindow
             // Property View
             if (ImGui.CollapsingHeader("Property View"))
             {
+                ImGui.Checkbox("Display community names", ref CFG.Current.ModelEditor_Enable_Commmunity_Names);
+                ImguiUtils.ShowHelpMarker("The FLVER property fields will be given crowd-sourced names instead of the canonical name.");
+
+                ImGui.Checkbox("Display community descriptions", ref CFG.Current.ModelEditor_Enable_Commmunity_Hints);
+                ImguiUtils.ShowHelpMarker("The FLVER property fields will be given crowd-sourced descriptions.");
 
             }
 
             // Scene View
             if (ImGui.CollapsingHeader("Scene View"))
             {
-
+                ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
+                ImguiUtils.ShowHelpMarker("Display the reference ID of a dummy polygon by the scene tree name.");
             }
 
             ImGui.EndTabItem();
@@ -713,7 +719,7 @@ public class SettingsWindow
             DisplaySettings_System();
             DisplaySettings_Viewport();
             DisplaySettings_MapEditor();
-            //DisplaySettings_ModelEditor();
+            DisplaySettings_ModelEditor();
             DisplaySettings_ParamEditor();
             DisplaySettings_TextEditor();
 

@@ -8,7 +8,7 @@ namespace StudioCore.Banks.InfoBank;
 
 public class InfoContainer
 {
-    private Dictionary<string, InfoResource> formatInfoMap = new Dictionary<string, InfoResource>();
+    private Dictionary<string, InfoResource> FormatInfo = new Dictionary<string, InfoResource>();
 
     private FormatType formatType;
 
@@ -18,7 +18,7 @@ public class InfoContainer
 
     public InfoContainer()
     {
-        formatInfoMap = null;
+        FormatInfo = null;
         formatType = FormatType.None;
     }
     public InfoContainer(FormatType _formatType, string _gametype, string _gameModDirectory)
@@ -27,10 +27,18 @@ public class InfoContainer
         gametype = _gametype;
         gameModDirectory = _gameModDirectory;
 
-        formatInfoMap.Add("Part", LoadJSON("Part"));
-        formatInfoMap.Add("Region", LoadJSON("Region"));
-        formatInfoMap.Add("Event", LoadJSON("Event"));
-        formatInfoMap.Add("Light", LoadJSON("Light"));
+        if(formatType == FormatType.MSB)
+        {
+            FormatInfo.Add("Part", LoadJSON("Part"));
+            FormatInfo.Add("Region", LoadJSON("Region"));
+            FormatInfo.Add("Event", LoadJSON("Event"));
+            FormatInfo.Add("Light", LoadJSON("Light"));
+        }
+
+        if (formatType == FormatType.FLVER)
+        {
+            FormatInfo.Add("All", LoadJSON("All"));
+        }
     }
 
     private InfoResource LoadJSON(string filename)
@@ -123,11 +131,14 @@ public class InfoContainer
         if (formatType is FormatType.MSB)
             typDir = "MSB";
 
+        if (formatType is FormatType.FLVER)
+            typDir = "FLVER";
+
         return typDir;
     }
 
     public List<InfoReference> GetEntries(string name)
     {
-        return formatInfoMap[name].list;
+        return FormatInfo[name].list;
     }
 }

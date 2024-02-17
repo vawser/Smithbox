@@ -426,6 +426,7 @@
     <None Update="Assets\Aliases\Particles\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Aliases\Maps\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\FormatInfo\MSB\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\FormatInfo\FLVER\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

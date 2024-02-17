@@ -4745,6 +4745,14 @@
             ]
         },
         {
+            "id": "wp_a_0200",
+            "name": "Longsword",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_0201",
             "name": "Broadsword",
             
@@ -4763,6 +4771,14 @@
         {
             "id": "wp_a_0204",
             "name": "Alabaster Lord's Sword",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_0207",
+            "name": "Lordsworn's Straight Sword",
             
             "tags": [
                 "weapon"
@@ -5211,6 +5227,14 @@
         {
             "id": "wp_a_0502",
             "name": "Beastman's Cleaver",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_0503",
+            "name": "Beastman's Jar-Shield",
             
             "tags": [
                 "weapon"
@@ -6147,6 +6171,14 @@
         {
             "id": "wp_a_0939",
             "name": "Treespear",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1001",
+            "name": "Halberd",
             
             "tags": [
                 "weapon"
@@ -7577,7 +7609,31 @@
             ]
         },
         {
+            "id": "wp_a_6399",
+            "name": "Quiver",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_6499",
+            "name": "Bolt Pouch",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7000",
+            "name": "Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7001",
             "name": "Arrow",
             
             "tags": [
@@ -7593,7 +7649,23 @@
             ]
         },
         {
+            "id": "wp_a_7011",
+            "name": "Bone Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7020",
+            "name": "Bone Arrow (Fletched)",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7021",
             "name": "Bone Arrow (Fletched)",
             
             "tags": [
@@ -7609,7 +7681,23 @@
             ]
         },
         {
+            "id": "wp_a_7031",
+            "name": "Fire Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7040",
+            "name": "Serpent Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7041",
             "name": "Serpent Arrow",
             
             "tags": [
@@ -7625,7 +7713,23 @@
             ]
         },
         {
+            "id": "wp_a_7051",
+            "name": "Dwelling Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7060",
+            "name": "St. Trina's Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7061",
             "name": "St. Trina's Arrow",
             
             "tags": [
@@ -7641,7 +7745,23 @@
             ]
         },
         {
+            "id": "wp_a_7111",
+            "name": "Golden Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7300",
+            "name": "Great Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7301",
             "name": "Great Arrow",
             
             "tags": [
@@ -7657,7 +7777,23 @@
             ]
         },
         {
+            "id": "wp_a_7311",
+            "name": "Golem's Great Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7320",
+            "name": "Golden Great Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7321",
             "name": "Golden Great Arrow",
             
             "tags": [
@@ -7673,7 +7809,23 @@
             ]
         },
         {
+            "id": "wp_a_7331",
+            "name": "Golem's Magic Arrow",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7340",
+            "name": "Radahn's Spear",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7341",
             "name": "Radahn's Spear",
             
             "tags": [
@@ -7689,7 +7841,23 @@
             ]
         },
         {
+            "id": "wp_a_7351",
+            "name": "Bone Great Arrow (Fletched)",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7500",
+            "name": "Bolt",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7501",
             "name": "Bolt",
             
             "tags": [
@@ -7705,7 +7873,23 @@
             ]
         },
         {
+            "id": "wp_a_7521",
+            "name": "Perfumer's Bolt",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7530",
+            "name": "Black-Key Bolt",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7531",
             "name": "Black-Key Bolt",
             
             "tags": [
@@ -7721,7 +7905,23 @@
             ]
         },
         {
+            "id": "wp_a_7571",
+            "name": "Bone Bolt",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7700",
+            "name": "Ballista Bolt",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7701",
             "name": "Ballista Bolt",
             
             "tags": [
@@ -7737,6 +7937,14 @@
             ]
         },
         {
+            "id": "wp_a_7711",
+            "name": "Lightning Greatbolt",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7720",
             "name": "Explosive Greatbolt",
             
@@ -7745,7 +7953,23 @@
             ]
         },
         {
+            "id": "wp_a_7721",
+            "name": "Explosive Greatbolt",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
             "id": "wp_a_7730",
+            "name": "Meteor Bolt",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_7731",
             "name": "Meteor Bolt",
             
             "tags": [

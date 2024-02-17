@@ -12,57 +12,72 @@ namespace SoulsFormats
             /// <summary>
             /// Corresponds to the name of a bone in the parent skeleton. May also have a dummy name.
             /// </summary>
+
+            [FormatReference(ReferenceName = "Bone-Name")]
             public string Name { get; set; }
 
             /// <summary>
             /// Index of the parent in this FLVER's bone collection, or -1 for none.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-ParentIndex")]
             public short ParentIndex { get; set; }
 
             /// <summary>
             /// Index of the first child in this FLVER's bone collection, or -1 for none.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-ChildIndex")]
             public short ChildIndex { get; set; }
 
             /// <summary>
             /// Index of the next child of this bone's parent, or -1 for none.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-ParentIndex")]
             public short NextSiblingIndex { get; set; }
 
             /// <summary>
             /// Index of the previous child of this bone's parent, or -1 for none.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-PreviousSiblingIndex")]
             public short PreviousSiblingIndex { get; set; }
 
             /// <summary>
             /// Translation of this bone.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-Position")]
+            [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of this bone; euler radians.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-Rotation")]
             [RotationRadians]
+            [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Scale of this bone.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-Scale")]
+            [ScaleProperty]
             public Vector3 Scale { get; set; }
 
             /// <summary>
             /// Minimum extent of the vertices weighted to this bone.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-BoundingBoxMin")]
             public Vector3 BoundingBoxMin { get; set; }
 
             /// <summary>
             /// Maximum extent of the vertices weighted to this bone.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-BoundingBoxMax")]
             public Vector3 BoundingBoxMax { get; set; }
 
             /// <summary>
             /// Unknown; only 0 or 1 before Sekiro.
             /// </summary>
+            [FormatReference(ReferenceName = "Bone-Unk3C")]
             public int Unk3C { get; set; }
 
             /// <summary>

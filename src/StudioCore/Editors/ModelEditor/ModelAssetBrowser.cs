@@ -17,6 +17,15 @@ using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor
 {
+    public enum SelectedCategoryType
+    {
+        None,
+        Character,
+        Object,
+        Part,
+        MapPiece
+    }
+
     public interface AssetBrowserEventHandler
     {
         public void OnInstantiateChr(string chrid);
@@ -34,8 +43,8 @@ namespace StudioCore.Editors.ModelEditor
         private List<string> _modelNameCache = new List<string>();
         private Dictionary<string, List<string>> _mapModelNameCache = new Dictionary<string, List<string>>();
 
-        private string _selectedAssetType = null;
-        private string _selectedAssetTypeCache = null;
+        private SelectedCategoryType _selectedAssetType = SelectedCategoryType.None;
+        private SelectedCategoryType _selectedAssetTypeCache = SelectedCategoryType.None;
 
         private string _selectedAssetMapId = "";
         private string _selectedAssetMapIdCache = null;
@@ -56,6 +65,28 @@ namespace StudioCore.Editors.ModelEditor
 
             _selectedName = null;
         }
+        public string GetSelectedCategoryNameForAliasBank()
+        {
+            string category = "None";
+
+            switch (_selectedAssetType)
+            {
+                case SelectedCategoryType.Character:
+                    category = "Chr";
+                    break;
+                case SelectedCategoryType.Object:
+                    category = "Obj";
+                    break;
+                case SelectedCategoryType.Part:
+                    category = "Part";
+                    break;
+                case SelectedCategoryType.MapPiece:
+                    category = "MapPiece";
+                    break;
+            }
+
+            return category;
+        }
 
         public void OnProjectChanged()
         {
@@ -65,8 +96,8 @@ namespace StudioCore.Editors.ModelEditor
                 _mapModelNameCache = new Dictionary<string, List<string>>();
                 _selectedAssetMapId = "";
                 _selectedAssetMapIdCache = null;
-                _selectedAssetType = null;
-                _selectedAssetTypeCache = null;
+                _selectedAssetType = SelectedCategoryType.None;
+                _selectedAssetTypeCache = SelectedCategoryType.None;
 
                 List<string> mapList = MapAssetLocator.GetFullMapList();
 
@@ -119,12 +150,18 @@ namespace StudioCore.Editors.ModelEditor
                 ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
                 ImguiUtils.ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
 
+                if(_selectedAssetType == SelectedCategoryType.Part)
+                {
+                    ImGui.Checkbox("Show low detail models", ref CFG.Current.AssetBrowser_ShowLowDetailParts);
+                    ImguiUtils.ShowHelpMarker("Show the low detail part models in this list.");
+                }
+
                 ImGui.BeginChild("AssetList");
 
-                DisplayAssetSelectionList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
-                DisplayAssetSelectionList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
-                DisplayAssetSelectionList("Part", ModelAliasBank.Bank.AliasNames.GetEntries("Parts"));
-                DisplayMapAssetSelectionList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+                DisplayAssetSelectionList(SelectedCategoryType.Character, ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                DisplayAssetSelectionList(SelectedCategoryType.Object, ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                DisplayAssetSelectionList(SelectedCategoryType.Part, ModelAliasBank.Bank.AliasNames.GetEntries("Parts"));
+                DisplayMapAssetSelectionList(SelectedCategoryType.MapPiece, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
 
                 ImGui.EndChild();
                 ImGui.EndChild();
@@ -146,22 +183,22 @@ namespace StudioCore.Editors.ModelEditor
                 objLabel = "AEG";
             }
 
-            if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
+            if (ImGui.Selectable("Chr", _selectedAssetType == SelectedCategoryType.Character))
             {
                 _modelNameCache = ModelAssetLocator.GetChrModels();
-                _selectedAssetType = "Chr";
+                _selectedAssetType = SelectedCategoryType.Character;
                 _selectedAssetMapId = "";
             }
-            if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
+            if (ImGui.Selectable(objLabel, _selectedAssetType == SelectedCategoryType.Object))
             {
                 _modelNameCache = ModelAssetLocator.GetObjModels();
-                _selectedAssetType = "Obj";
+                _selectedAssetType = SelectedCategoryType.Object;
                 _selectedAssetMapId = "";
             }
-            if (ImGui.Selectable("Part", _selectedAssetType == "Part"))
+            if (ImGui.Selectable("Part", _selectedAssetType == SelectedCategoryType.Part))
             {
                 _modelNameCache = ModelAssetLocator.GetPartsModels();
-                _selectedAssetType = "Part";
+                _selectedAssetType = SelectedCategoryType.Part;
                 _selectedAssetMapId = "";
             }
 
@@ -191,7 +228,7 @@ namespace StudioCore.Editors.ModelEditor
                         }
 
                         _selectedAssetMapId = mapId;
-                        _selectedAssetType = "MapPiece";
+                        _selectedAssetType = SelectedCategoryType.MapPiece;
                     }
                 }
             }
@@ -200,7 +237,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <summary>
         /// Display the asset selection list for Chr, Obj/AEG and Parts.
         /// </summary>
-        private void DisplayAssetSelectionList(string assetType, List<AliasReference> referenceList)
+        private void DisplayAssetSelectionList(SelectedCategoryType assetType, List<AliasReference> referenceList)
         {
             var referenceDict = new Dictionary<string, AliasReference>();
 
@@ -243,6 +280,17 @@ namespace StudioCore.Editors.ModelEditor
                         refTagList = referenceDict[lowerName].tags;
                     }
 
+                    if(!CFG.Current.AssetBrowser_ShowLowDetailParts)
+                    {
+                        if (_selectedAssetType == SelectedCategoryType.Part)
+                        {
+                            if (name.Substring(name.Length - 2) == "_l")
+                            {
+                                continue; // Skip this entry if it is a low detail entry
+                            }
+                        }
+                    }
+
                     if (SearchFilters.IsSearchMatch(_searchStrInput, lowerName, refName, refTagList, true, false, true))
                     {
                         if (ImGui.Selectable(displayedName))
@@ -283,7 +331,7 @@ namespace StudioCore.Editors.ModelEditor
 
                                 if (ImGui.Button("Update"))
                                 {
-                                    ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                    ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId, _refUpdateName, _refUpdateTags);
                                     ImGui.CloseCurrentPopup();
                                     ModelAliasBank.Bank.mayReloadAliasBank = true;
                                 }
@@ -291,7 +339,7 @@ namespace StudioCore.Editors.ModelEditor
                                 ImGui.SameLine();
                                 if (ImGui.Button("Restore Default"))
                                 {
-                                    ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+                                    ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId);
                                     ImGui.CloseCurrentPopup();
                                     ModelAliasBank.Bank.mayReloadAliasBank = true;
                                 }
@@ -305,17 +353,17 @@ namespace StudioCore.Editors.ModelEditor
                             // TODO: fix issue with DS2 loading
                             if (Project.Type != ProjectType.DS2S)
                             {
-                                if (_selectedAssetType == "Chr")
+                                if (_selectedAssetType == SelectedCategoryType.Character)
                                 {
                                     _handler.OnInstantiateChr(name);
                                 }
 
-                                if (_selectedAssetType == "Obj")
+                                if (_selectedAssetType == SelectedCategoryType.Object)
                                 {
                                     _handler.OnInstantiateObj(name);
                                 }
 
-                                if (_selectedAssetType == "Part")
+                                if (_selectedAssetType == SelectedCategoryType.Part)
                                 {
                                     _handler.OnInstantiateParts(name);
                                 }
@@ -329,7 +377,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <summary>
         /// Display the asset selection list for Map Pieces.
         /// </summary>
-        private void DisplayMapAssetSelectionList(string assetType, List<AliasReference> referenceList)
+        private void DisplayMapAssetSelectionList(SelectedCategoryType assetType, List<AliasReference> referenceList)
         {
             var referenceDict = new Dictionary<string, AliasReference>();
 
@@ -424,7 +472,7 @@ namespace StudioCore.Editors.ModelEditor
 
                                     if (ImGui.Button("Update"))
                                     {
-                                        ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                        ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId, _refUpdateName, _refUpdateTags);
                                         ImGui.CloseCurrentPopup();
                                         ModelAliasBank.Bank.mayReloadAliasBank = true;
                                     }
@@ -432,7 +480,7 @@ namespace StudioCore.Editors.ModelEditor
                                     ImGui.SameLine();
                                     if (ImGui.Button("Restore Default"))
                                     {
-                                        ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+                                        ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId);
                                         ImGui.CloseCurrentPopup();
                                         ModelAliasBank.Bank.mayReloadAliasBank = true;
                                     }
