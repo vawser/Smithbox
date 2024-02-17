@@ -33,16 +33,16 @@ public class MapPropertyEditor
 
     private object _changingObject;
     private object _changingPropery;
-    private EntityAction _lastUncommittedAction;
+    private ViewportAction _lastUncommittedAction;
 
-    public EntityActionManager ContextActionManager;
+    public ViewportActionManager ContextActionManager;
     public PropertyInfo RequestedSearchProperty = null;
 
     private IViewport _viewport;
 
     private MapEditorToolbar _msbToolbar;
 
-    public MapPropertyEditor(EntityActionManager manager, MapPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
+    public MapPropertyEditor(ViewportActionManager manager, MapPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
     {
         ContextActionManager = manager;
         _propCache = propCache;

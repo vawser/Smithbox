@@ -56,7 +56,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public bool AltHeld;
     public bool CtrlHeld;
 
-    public EntityActionManager EditorActionManager = new();
+    public ViewportActionManager EditorActionManager = new();
 
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetBrowser AssetBrowser;

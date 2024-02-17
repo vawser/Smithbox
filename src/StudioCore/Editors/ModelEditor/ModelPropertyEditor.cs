@@ -36,16 +36,16 @@ public class ModelPropertyEditor
 
     private object _changingObject;
     private object _changingPropery;
-    private EntityAction _lastUncommittedAction;
+    private ViewportAction _lastUncommittedAction;
 
-    public EntityActionManager ContextActionManager;
+    public ViewportActionManager ContextActionManager;
     public PropertyInfo RequestedSearchProperty = null;
 
     private IViewport _viewport;
 
     private MapEditorToolbar _msbToolbar;
 
-    public ModelPropertyEditor(EntityActionManager manager, ModelPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
+    public ModelPropertyEditor(ViewportActionManager manager, ModelPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
     {
         ContextActionManager = manager;
         _propCache = propCache;
@@ -593,99 +593,12 @@ public class ModelPropertyEditor
             }
         }
 
-        action = new MultipleEntityPropertyChangeAction((PropertyInfo)prop, ents, newval, arrayindex, classIndex);
+        action = new MultipleEntityPropertyChangeAction((PropertyInfo)prop, ents, newval, arrayindex, classIndex, false);
         ContextActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;
         _changingPropery = prop;
         _changingObject = ents;
-    }
-
-    private void PropEditorParamRow(Entity selection)
-    {
-        IReadOnlyList<Param.Cell> cells = new List<Param.Cell>();
-        if (selection.WrappedObject is Param.Row row)
-        {
-            cells = row.Cells;
-        }
-        else if (selection.WrappedObject is MergedParamRow mrow)
-        {
-            cells = mrow.CellHandles;
-        }
-
-        ImGui.Columns(2);
-        ImGui.Separator();
-        var id = 0;
-
-        // This should be rewritten somehow it's super ugly
-        PropertyInfo nameProp = selection.WrappedObject.GetType().GetProperty("Name");
-        PropertyInfo idProp = selection.WrappedObject.GetType().GetProperty("ID");
-        PropEditorPropInfoRow(selection.WrappedObject, nameProp, "Name", ref id, selection);
-        PropEditorPropInfoRow(selection.WrappedObject, idProp, "ID", ref id, selection);
-
-        foreach (Param.Cell cell in cells)
-        {
-            PropEditorPropCellRow(cell, ref id, selection);
-        }
-
-        ImGui.Columns(1);
-    }
-
-    public void PropEditorParamRow(Param.Row row)
-    {
-        ImGui.Columns(2);
-        ImGui.Separator();
-        var id = 0;
-
-        // This should be rewritten somehow it's super ugly
-        ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.8f, 0.8f, 0.8f, 1.0f));
-        PropertyInfo nameProp = row.GetType().GetProperty("Name");
-        PropertyInfo idProp = row.GetType().GetProperty("ID");
-        PropEditorPropInfoRow(row, nameProp, "Name", ref id, null);
-        PropEditorPropInfoRow(row, idProp, "ID", ref id, null);
-        ImGui.PopStyleColor();
-
-        foreach (Param.Column cell in row.Columns)
-        {
-            PropEditorPropCellRow(row[cell], ref id, null);
-        }
-
-        ImGui.Columns(1);
-    }
-
-    // Many parameter options, which may be simplified.
-    private void PropEditorPropInfoRow(object rowOrWrappedObject, PropertyInfo prop, string visualName, ref int id,
-        Entity nullableSelection)
-    {
-        PropEditorPropRow(prop.GetValue(rowOrWrappedObject), ref id, visualName, prop.PropertyType, null, null,
-            prop, rowOrWrappedObject, nullableSelection);
-    }
-
-    private void PropEditorPropCellRow(Param.Cell cell, ref int id, Entity nullableSelection)
-    {
-        PropEditorPropRow(cell.Value, ref id, cell.Def.InternalName, cell.Value.GetType(), null,
-            cell.Def.InternalName, cell.GetType().GetProperty("Value"), cell, nullableSelection);
-    }
-
-    private void PropEditorPropRow(object oldval, ref int id, string visualName, Type propType,
-        Entity nullableEntity, string nullableName, PropertyInfo proprow, object paramRowOrCell,
-        Entity nullableSelection)
-    {
-        ImGui.PushID(id);
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text(visualName);
-        ImGui.NextColumn();
-        ImGui.SetNextItemWidth(-1);
-
-        object newval;
-        // Property Editor UI
-        (bool, bool) propEditResults = PropertyRow(propType, oldval, out newval, proprow);
-        var changed = propEditResults.Item1;
-        var committed = propEditResults.Item2;
-        UpdateProperty(proprow, nullableSelection, paramRowOrCell, newval, changed, committed);
-        ImGui.NextColumn();
-        ImGui.PopID();
-        id++;
     }
 
     /// <summary>

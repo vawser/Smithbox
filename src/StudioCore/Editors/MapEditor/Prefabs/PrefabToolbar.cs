@@ -22,7 +22,7 @@ namespace StudioCore.Editors.MapEditor
 
     public class PrefabToolbar
     {
-        private readonly EntityActionManager _actionManager;
+        private readonly ViewportActionManager _actionManager;
 
         private readonly RenderScene _scene;
         private readonly ViewportSelection _selection;
@@ -48,7 +48,7 @@ namespace StudioCore.Editors.MapEditor
         private string _searchInput = "";
         private string _searchInputCache = "";
 
-        public PrefabToolbar(RenderScene scene, ViewportSelection sel, EntityActionManager manager, Universe universe, IViewport viewport, (string, MapObjectContainer) comboTargetMap)
+        public PrefabToolbar(RenderScene scene, ViewportSelection sel, ViewportActionManager manager, Universe universe, IViewport viewport, (string, MapObjectContainer) comboTargetMap)
         {
             _scene = scene;
             _selection = sel;

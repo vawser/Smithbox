@@ -13,7 +13,7 @@ namespace StudioCore.Editors.MapEditor
     /// <summary>
     /// For functions that multiple EntityActions make use of.
     /// </summary>
-    public static class EntityActionCommon
+    public static class ViewportActionCommon
     {
         public static void SetUniqueEntityID(MsbEntity sel, Map map)
         {

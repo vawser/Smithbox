@@ -42,7 +42,7 @@ public class ModelSceneTree : IActionEventHandler
     private readonly Dictionary<int, DragDropPayload> _dragDropPayloads = new();
 
     private readonly List<Entity> _dragDropSources = new();
-    private readonly EntityActionManager _editorActionManager;
+    private readonly ViewportActionManager _editorActionManager;
 
     private readonly string _id;
     private readonly ViewportSelection _selection;
@@ -77,7 +77,7 @@ public class ModelSceneTree : IActionEventHandler
     private ModelEditorScreen _editor;
 
 
-    public ModelSceneTree(ModelEditorScreen editor, string id, Universe universe, ViewportSelection sel, EntityActionManager aman, IViewport vp)
+    public ModelSceneTree(ModelEditorScreen editor, string id, Universe universe, ViewportSelection sel, ViewportActionManager aman, IViewport vp)
     {
         _editor = editor;
         _id = id;

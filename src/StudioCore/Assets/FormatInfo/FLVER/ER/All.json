@@ -181,7 +181,7 @@
             "desc": "FaceSet Flags on this FaceSet.\n\nNone - Just your average everyday face set.\nLodLevel1 - Low detail mesh.\nLodLevel2 - Really low detail mesh.\nEdgeCompressed - Not confirmed, but suspected to indicate when indices are edge-compressed.\nMotionBlur - Many meshes have a copy of each faceset with and without this flag. If you remove them, motion blur stops working."
         },
         {
-            "id": "Mesh-TriangleStrip",
+            "id": "FaceSet-TriangleStrip",
             "name": "Triangle Strip",
             "desc": "Whether vertices are defined as a triangle strip or individual triangles."
         },

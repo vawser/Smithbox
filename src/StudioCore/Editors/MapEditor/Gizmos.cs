@@ -74,7 +74,7 @@ public class Gizmos
     public static GizmosSpace Space = GizmosSpace.Local;
     public static GizmosOrigin Origin = GizmosOrigin.World;
     private readonly ViewportSelection _selection;
-    private readonly EntityActionManager ActionManager;
+    private readonly ViewportActionManager ActionManager;
     private readonly DbgPrimGizmoRotateRing RotateGizmoX;
     private readonly DebugPrimitiveRenderableProxy RotateGizmoXProxy;
     private readonly DbgPrimGizmoRotateRing RotateGizmoY;
@@ -105,7 +105,7 @@ public class Gizmos
     private Vector3 OriginProjection;
     private Axis TransformAxis = Axis.None;
 
-    public Gizmos(EntityActionManager am, ViewportSelection selection, MeshRenderables renderlist)
+    public Gizmos(ViewportActionManager am, ViewportSelection selection, MeshRenderables renderlist)
     {
         ActionManager = am;
         TranslateGizmoX = new DbgPrimGizmoTranslateArrow(Axis.PosX);
@@ -304,7 +304,7 @@ public class Gizmos
             if (!InputTracker.GetMouseButton(MouseButton.Left))
             {
                 IsTransforming = false;
-                List<EntityAction> actlist = new();
+                List<ViewportAction> actlist = new();
                 foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
                 {
                     sel.ClearTemporaryTransform(false);

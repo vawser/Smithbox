@@ -23,13 +23,13 @@ namespace StudioCore.Editors.MapEditor;
 ///     should have enough information to apply the action AND undo the action, as
 ///     these actions get pushed to a stack for undo/redo
 /// </summary>
-public abstract class EntityAction
+public abstract class ViewportAction
 {
     public abstract ActionEvent Execute(bool isRedo = false);
     public abstract ActionEvent Undo();
 }
 
-public class PropertiesChangedAction : EntityAction
+public class PropertiesChangedAction : ViewportAction
 {
     private readonly object ChangedObject;
     private readonly List<PropertyChange> Changes = new();
@@ -153,7 +153,7 @@ public class PropertiesChangedAction : EntityAction
 /// <summary>
 ///     Copies values from one array to another without affecting references.
 /// </summary>
-public class ArrayPropertyCopyAction : EntityAction
+public class ArrayPropertyCopyAction : ViewportAction
 {
     private readonly List<PropertyChange> Changes = new();
     private Action<bool> PostExecutionAction;
@@ -235,16 +235,18 @@ public class ArrayPropertyCopyAction : EntityAction
     }
 }
 
-public class MultipleEntityPropertyChangeAction : EntityAction
+public class MultipleEntityPropertyChangeAction : ViewportAction
 {
     private readonly HashSet<Entity> ChangedEnts = new();
     private readonly List<PropertyChange> Changes = new();
 
     public bool UpdateRenderModel = false;
+    public bool ClearName { get; set; }
 
     public MultipleEntityPropertyChangeAction(PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
-        int index = -1, int classIndex = -1)
+        int index = -1, int classIndex = -1, bool clearName = true)
     {
+        ClearName = clearName;
         ChangedEnts = changedEnts;
         foreach (Entity o in changedEnts)
         {
@@ -285,6 +287,7 @@ public class MultipleEntityPropertyChangeAction : EntityAction
             }
         }
 
+        /*
         foreach (Entity e in ChangedEnts)
         {
             if (UpdateRenderModel)
@@ -295,6 +298,7 @@ public class MultipleEntityPropertyChangeAction : EntityAction
             // Clear name cache, forcing it to update.
             e.Name = null;
         }
+        */
 
         return ActionEvent.NoEvent;
     }
@@ -322,7 +326,8 @@ public class MultipleEntityPropertyChangeAction : EntityAction
             }
 
             // Clear name cache, forcing it to update.
-            e.Name = null;
+            if(ClearName)
+                e.Name = null;
         }
 
         return ActionEvent.NoEvent;
@@ -338,7 +343,7 @@ public class MultipleEntityPropertyChangeAction : EntityAction
     }
 }
 
-public class CloneMapObjectsAction : EntityAction
+public class CloneMapObjectsAction : ViewportAction
 {
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Clonables = new();
@@ -472,15 +477,15 @@ public class CloneMapObjectsAction : EntityAction
 
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
                 {
-                    EntityActionCommon.SetUniqueEntityID(newobj, m);
+                    ViewportActionCommon.SetUniqueEntityID(newobj, m);
                 }
                 if(CFG.Current.Toolbar_Duplicate_Increment_InstanceID)
                 {
-                    EntityActionCommon.SetUniqueInstanceID(newobj, m);
+                    ViewportActionCommon.SetUniqueInstanceID(newobj, m);
                 }
                 if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
                 {
-                    EntityActionCommon.SetSelfPartNames(newobj, m);
+                    ViewportActionCommon.SetSelfPartNames(newobj, m);
                 }
 
                 newobj.UpdateRenderModel();
@@ -589,7 +594,7 @@ public class CloneMapObjectsAction : EntityAction
     }
 }
 
-public class AddMapObjectsAction : EntityAction
+public class AddMapObjectsAction : ViewportAction
 {
     private static Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Added = new();
@@ -643,19 +648,19 @@ public class AddMapObjectsAction : EntityAction
                     // Prefab-specific
                     if (CFG.Current.Prefab_ApplyUniqueInstanceID)
                     {
-                        EntityActionCommon.SetUniqueInstanceID(ent, m);
+                        ViewportActionCommon.SetUniqueInstanceID(ent, m);
                     }
                     if (CFG.Current.Prefab_ApplyUniqueEntityID)
                     {
-                        EntityActionCommon.SetUniqueEntityID(ent, m);
+                        ViewportActionCommon.SetUniqueEntityID(ent, m);
                     }
                     if (CFG.Current.Prefab_ApplySelfPartNames)
                     {
-                        EntityActionCommon.SetSelfPartNames(ent, m);
+                        ViewportActionCommon.SetSelfPartNames(ent, m);
                     }
                     if (CFG.Current.Prefab_ApplySpecificEntityGroupID)
                     {
-                        EntityActionCommon.SetSpecificEntityGroupID(ent, m);
+                        ViewportActionCommon.SetSpecificEntityGroupID(ent, m);
                     }
                 }
 
@@ -710,7 +715,7 @@ public class AddMapObjectsAction : EntityAction
 ///     Deprecated
 /// </summary>
 [Obsolete]
-public class AddParamsAction : EntityAction
+public class AddParamsAction : ViewportAction
 {
     private readonly List<PARAM.Row> Clonables = new();
     private readonly List<PARAM.Row> Clones = new();
@@ -780,7 +785,7 @@ public class AddParamsAction : EntityAction
     }
 }
 
-public class DeleteMapObjectsAction : EntityAction
+public class DeleteMapObjectsAction : ViewportAction
 {
     private readonly List<MsbEntity> Deletables = new();
     private readonly List<int> RemoveIndices = new();
@@ -882,7 +887,7 @@ public class DeleteMapObjectsAction : EntityAction
 ///     Deprecated
 /// </summary>
 [Obsolete]
-public class DeleteParamsAction : EntityAction
+public class DeleteParamsAction : ViewportAction
 {
     private readonly List<PARAM.Row> Deletables = new();
     private readonly PARAM Param;
@@ -925,7 +930,7 @@ public class DeleteParamsAction : EntityAction
     }
 }
 
-public class ReorderContainerObjectsAction : EntityAction
+public class ReorderContainerObjectsAction : ViewportAction
 {
     private readonly List<MapObjectContainer> Containers = new();
     private readonly bool SetSelection;
@@ -1063,7 +1068,7 @@ public class ReorderContainerObjectsAction : EntityAction
     }
 }
 
-public class ChangeEntityHierarchyAction : EntityAction
+public class ChangeEntityHierarchyAction : ViewportAction
 {
     private readonly bool SetSelection;
     private readonly List<Entity> SourceObjects = new();
@@ -1204,7 +1209,7 @@ public class ChangeEntityHierarchyAction : EntityAction
     }
 }
 
-public class ChangeMapObjectType : EntityAction
+public class ChangeMapObjectType : ViewportAction
 {
     private readonly List<MsbEntity> Entities = new();
     private readonly List<MapObjectChange> MapObjectChanges = new();
@@ -1317,13 +1322,13 @@ public class ChangeMapObjectType : EntityAction
     private record MapObjectChange(object OldObject, object NewObject, MsbEntity Entity);
 }
 
-public class CompoundAction : EntityAction
+public class CompoundAction : ViewportAction
 {
-    private readonly List<EntityAction> Actions;
+    private readonly List<ViewportAction> Actions;
 
     private Action<bool> PostExecutionAction;
 
-    public CompoundAction(List<EntityAction> actions)
+    public CompoundAction(List<ViewportAction> actions)
     {
         Actions = actions;
     }
@@ -1336,7 +1341,7 @@ public class CompoundAction : EntityAction
     public override ActionEvent Execute(bool isRedo = false)
     {
         var evt = ActionEvent.NoEvent;
-        foreach (EntityAction act in Actions)
+        foreach (ViewportAction act in Actions)
         {
             if (act != null)
             {
@@ -1355,7 +1360,7 @@ public class CompoundAction : EntityAction
     public override ActionEvent Undo()
     {
         var evt = ActionEvent.NoEvent;
-        foreach (EntityAction act in Actions)
+        foreach (ViewportAction act in Actions)
         {
             if (act != null)
             {
@@ -1372,7 +1377,7 @@ public class CompoundAction : EntityAction
     }
 }
 
-public class ReplicateMapObjectsAction : EntityAction
+public class ReplicateMapObjectsAction : ViewportAction
 {
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Clonables = new();
@@ -1381,7 +1386,7 @@ public class ReplicateMapObjectsAction : EntityAction
     private readonly Universe Universe;
     private RenderScene Scene;
     private MapEditorToolbar Toolbar;
-    private EntityActionManager ActionManager;
+    private ViewportActionManager ActionManager;
 
     private int idxCache;
 
@@ -1401,7 +1406,7 @@ public class ReplicateMapObjectsAction : EntityAction
 
     private SquareSide currentSquareSide;
 
-    public ReplicateMapObjectsAction(MapEditorToolbar toolbar, Universe univ, RenderScene scene, List<MsbEntity> objects, EntityActionManager _actionManager)
+    public ReplicateMapObjectsAction(MapEditorToolbar toolbar, Universe univ, RenderScene scene, List<MsbEntity> objects, ViewportActionManager _actionManager)
     {
         Toolbar = toolbar;
         Universe = univ;
@@ -1533,15 +1538,15 @@ public class ReplicateMapObjectsAction : EntityAction
                     // Apply other property changes
                     if(CFG.Current.Replicator_Increment_Entity_ID)
                     {
-                        EntityActionCommon.SetUniqueEntityID(newobj, m);
+                        ViewportActionCommon.SetUniqueEntityID(newobj, m);
                     }
                     if (CFG.Current.Replicator_Increment_InstanceID)
                     {
-                        EntityActionCommon.SetUniqueInstanceID(newobj, m);
+                        ViewportActionCommon.SetUniqueInstanceID(newobj, m);
                     }
                     if (CFG.Current.Replicator_Increment_UnkPartNames)
                     {
-                        EntityActionCommon.SetSelfPartNames(newobj, m);
+                        ViewportActionCommon.SetSelfPartNames(newobj, m);
                     }
 
                     newobj.UpdateRenderModel();

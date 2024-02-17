@@ -1299,7 +1299,7 @@ namespace StudioCore.Editors.MapEditor.Prefabs
         /// <param name="_universe"></param>
         /// <param name="_scene"></param>
         /// <param name="_actionManager"></param>
-        public static void ImportSelectedPrefab(PrefabInfo info, (string, MapObjectContainer) _comboTargetMap, Universe _universe, RenderScene _scene, EntityActionManager _actionManager)
+        public static void ImportSelectedPrefab(PrefabInfo info, (string, MapObjectContainer) _comboTargetMap, Universe _universe, RenderScene _scene, ViewportActionManager _actionManager)
         {
             Prefab_DS3 _selectedAssetPrefab;
 

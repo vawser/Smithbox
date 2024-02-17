@@ -59,7 +59,7 @@ public class MapSceneTree : IActionEventHandler
     private readonly Dictionary<int, DragDropPayload> _dragDropPayloads = new();
 
     private readonly List<Entity> _dragDropSources = new();
-    private readonly EntityActionManager _editorActionManager;
+    private readonly ViewportActionManager _editorActionManager;
 
     private readonly SceneTreeEventHandler _handler;
 
@@ -101,7 +101,7 @@ public class MapSceneTree : IActionEventHandler
     private Dictionary<string, string> _mapPieceAliasCache;
 
 
-    public MapSceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, ViewportSelection sel, EntityActionManager aman, IViewport vp)
+    public MapSceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, ViewportSelection sel, ViewportActionManager aman, IViewport vp)
     {
         _handler = handler;
         _id = id;

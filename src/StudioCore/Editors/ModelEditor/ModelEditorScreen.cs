@@ -42,7 +42,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
     private Task _loadingTask;
     private MeshRenderableProxy _renderMesh;
 
-    public MapEditor.EntityActionManager EditorActionManager = new();
+    public MapEditor.ViewportActionManager EditorActionManager = new();
     public Rectangle Rect;
     public RenderScene RenderScene;
     public IViewport Viewport;

@@ -31,7 +31,7 @@ public enum ViewportType
 /// </summary>
 public class Viewport : IViewport
 {
-    private readonly EntityActionManager _actionManager;
+    private readonly ViewportActionManager _actionManager;
 
     private readonly FullScreenQuad _clearQuad;
 
@@ -71,7 +71,7 @@ public class Viewport : IViewport
 
     private ViewportType _viewportType;
 
-    public Viewport(ViewportType viewportType, string id, GraphicsDevice device, RenderScene scene, EntityActionManager am, ViewportSelection sel, int width,
+    public Viewport(ViewportType viewportType, string id, GraphicsDevice device, RenderScene scene, ViewportActionManager am, ViewportSelection sel, int width,
         int height)
     {
         _vpid = id;

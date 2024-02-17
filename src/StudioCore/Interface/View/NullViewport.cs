@@ -19,7 +19,7 @@ public class NullViewport : IViewport
     public int Y;
 
     private ViewportType _viewportType;
-    public NullViewport(ViewportType viewportType, string id, EntityActionManager am, ViewportSelection sel, int width, int height)
+    public NullViewport(ViewportType viewportType, string id, ViewportActionManager am, ViewportSelection sel, int width, int height)
     {
         _vpid = id;
         _viewportType = viewportType;

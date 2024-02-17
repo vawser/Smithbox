@@ -26,12 +26,12 @@ public interface IActionEventHandler
 /// <summary>
 ///     Manages undo and redo for an editor context
 /// </summary>
-public class EntityActionManager
+public class ViewportActionManager
 {
     private readonly List<IActionEventHandler> _eventHandlers = new();
-    private readonly Stack<EntityAction> RedoStack = new();
+    private readonly Stack<ViewportAction> RedoStack = new();
 
-    private readonly Stack<EntityAction> UndoStack = new();
+    private readonly Stack<ViewportAction> UndoStack = new();
 
     public void AddEventHandler(IActionEventHandler handler)
     {
@@ -51,14 +51,14 @@ public class EntityActionManager
         }
     }
 
-    public void ExecuteAction(EntityAction a)
+    public void ExecuteAction(ViewportAction a)
     {
         NotifyHandlers(a.Execute());
         UndoStack.Push(a);
         RedoStack.Clear();
     }
 
-    public EntityAction PeekUndoAction()
+    public ViewportAction PeekUndoAction()
     {
         if (UndoStack.Count() == 0)
         {
@@ -75,7 +75,7 @@ public class EntityActionManager
             return;
         }
 
-        EntityAction a = UndoStack.Pop();
+        ViewportAction a = UndoStack.Pop();
         NotifyHandlers(a.Undo());
         RedoStack.Push(a);
     }
@@ -89,7 +89,7 @@ public class EntityActionManager
 
         while (UndoStack.Count() > 0)
         {
-            EntityAction a = UndoStack.Pop();
+            ViewportAction a = UndoStack.Pop();
             NotifyHandlers(a.Undo());
             RedoStack.Push(a);
         }
@@ -102,7 +102,7 @@ public class EntityActionManager
             return;
         }
 
-        EntityAction a = RedoStack.Pop();
+        ViewportAction a = RedoStack.Pop();
         NotifyHandlers(a.Execute(true));
         UndoStack.Push(a);
     }

@@ -44,7 +44,7 @@ namespace StudioCore.Editors.MapEditor
 
     public class MapEditorToolbar
     {
-        private readonly EntityActionManager _actionManager;
+        private readonly ViewportActionManager _actionManager;
 
         private readonly RenderScene _scene;
         private readonly ViewportSelection _selection;
@@ -72,7 +72,7 @@ namespace StudioCore.Editors.MapEditor
 
         private int FrameCount = 0;
 
-        public MapEditorToolbar(RenderScene scene, ViewportSelection sel, EntityActionManager manager, Universe universe, IViewport viewport)
+        public MapEditorToolbar(RenderScene scene, ViewportSelection sel, ViewportActionManager manager, Universe universe, IViewport viewport)
         {
             _scene = scene;
             _selection = sel;
@@ -1448,7 +1448,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         public void MoveSelectionToGrid()
         {
-            List<EntityAction> actlist = new();
+            List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
                 sel.ClearTemporaryTransform(false);
@@ -1474,7 +1474,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         public void ScambleSelection()
         {
-            List<EntityAction> actlist = new();
+            List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
                 sel.ClearTemporaryTransform(false);
@@ -1599,7 +1599,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         public void MoveSelectionToCamera()
         {
-            List<EntityAction> actlist = new();
+            List<ViewportAction> actlist = new();
             HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
             Vector3 camDir = Vector3.Transform(Vector3.UnitZ, _viewport.WorldView.CameraTransform.RotationMatrix);
@@ -1657,7 +1657,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         public void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
         {
-            List<EntityAction> actlist = new();
+            List<ViewportAction> actlist = new();
             HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
             // Get the center position of the selections
@@ -1718,7 +1718,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         public void SetSelectionToFixedRotation()
         {
-            List<EntityAction> actlist = new();
+            List<ViewportAction> actlist = new();
 
             HashSet<Entity> selected = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
             foreach (Entity s in selected)
@@ -2146,7 +2146,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         public void PasteSavedPosition()
         {
-            List<EntityAction> actlist = new();
+            List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
             {
                 actlist.Add(sel.ApplySavedPosition());
@@ -2169,7 +2169,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         public void PasteSavedRotation()
         {
-            List<EntityAction> actlist = new();
+            List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
             {
                 actlist.Add(sel.ApplySavedRotation());
@@ -2192,7 +2192,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         public void PasteSavedScale()
         {
-            List<EntityAction> actlist = new();
+            List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
             {
                 actlist.Add(sel.ApplySavedScale());

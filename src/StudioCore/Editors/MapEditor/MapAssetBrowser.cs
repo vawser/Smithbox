@@ -9,7 +9,7 @@ using System;
 using SoulsFormats;
 using StudioCore.Platform;
 using StudioCore.MsbEditor;
-using Action = StudioCore.Editors.MapEditor.EntityAction;
+using Action = StudioCore.Editors.MapEditor.ViewportAction;
 using StudioCore.Interface;
 using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
@@ -20,7 +20,7 @@ namespace StudioCore.Editors.MapEditor;
 
 public class MapAssetBrowser
 {
-    private readonly EntityActionManager _actionManager;
+    private readonly ViewportActionManager _actionManager;
 
     private readonly RenderScene _scene;
     private readonly ViewportSelection _selection;
@@ -53,7 +53,7 @@ public class MapAssetBrowser
 
     private Universe _universe;
 
-    public MapAssetBrowser(Universe universe, RenderScene scene, ViewportSelection sel, EntityActionManager manager, MapEditorScreen editor, IViewport viewport)
+    public MapAssetBrowser(Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, MapEditorScreen editor, IViewport viewport)
     {
         _scene = scene;
         _selection = sel;
@@ -455,7 +455,7 @@ public class MapAssetBrowser
 
     public void SetObjectModelForSelection(string modelName, string assetType, string assetMapId)
     {
-        var actlist = new List<EntityAction>();
+        var actlist = new List<ViewportAction>();
 
         var selected = _selection.GetFilteredSelection<Entity>();
 

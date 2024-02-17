@@ -10,13 +10,13 @@ namespace StudioCore.Editors.MapEditor;
 
 public class DisplayGroupEditor
 {
-    private readonly EntityActionManager _actionManager;
+    private readonly ViewportActionManager _actionManager;
 
     private readonly RenderScene _scene;
     private readonly ViewportSelection _selection;
     public readonly HashSet<string> HighlightedGroups = new();
 
-    public DisplayGroupEditor(RenderScene scene, ViewportSelection sel, EntityActionManager manager)
+    public DisplayGroupEditor(RenderScene scene, ViewportSelection sel, ViewportActionManager manager)
     {
         _scene = scene;
         _selection = sel;

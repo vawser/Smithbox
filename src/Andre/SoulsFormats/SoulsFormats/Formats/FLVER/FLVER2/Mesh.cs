@@ -16,6 +16,7 @@ namespace SoulsFormats
             /// When 1, mesh is in bind pose; when 0, it isn't. Most likely has further implications.
             /// </summary>
             [FormatReference(ReferenceName = "Mesh-Dynamic")]
+            [ByteBoolean]
             public byte Dynamic { get; set; }
 
             /// <summary>

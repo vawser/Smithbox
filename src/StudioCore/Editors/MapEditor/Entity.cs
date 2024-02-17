@@ -901,12 +901,12 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Get action for updating the Transform of this object.
     /// </summary>
-    public EntityAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
+    public ViewportAction GetUpdateTransformAction(Transform newt, bool includeScale = false)
     {
         // Is param, e.g. DS2 enemy
         if (WrappedObject is Param.Row || WrappedObject is MergedParamRow)
         {
-            List<EntityAction> actions = new();
+            List<ViewportAction> actions = new();
             var roty = newt.EulerRotation.Y * Utils.Rad2Deg - 180.0f;
             actions.Add(GetPropertyChangeAction("PositionX", newt.Position.X));
             actions.Add(GetPropertyChangeAction("PositionY", newt.Position.Y));
@@ -968,7 +968,7 @@ public class Entity : ISelectable, IDisposable
         }
     }
 
-    public EntityAction ApplySavedPosition()
+    public ViewportAction ApplySavedPosition()
     {
         PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
@@ -980,7 +980,7 @@ public class Entity : ISelectable, IDisposable
         });
         return act;
     }
-    public EntityAction ApplySavedRotation()
+    public ViewportAction ApplySavedRotation()
     {
         PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Rotation");
@@ -993,7 +993,7 @@ public class Entity : ISelectable, IDisposable
         return act;
     }
 
-    public EntityAction ApplySavedScale()
+    public ViewportAction ApplySavedScale()
     {
         PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Scale");
@@ -1009,9 +1009,9 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Get action for changing a string propety value for this object.
     /// </summary>
-    public EntityAction ChangeObjectProperty(string propTarget, string propValue)
+    public ViewportAction ChangeObjectProperty(string propTarget, string propValue)
     {
-        var actions = new List<EntityAction>();
+        var actions = new List<ViewportAction>();
         actions.Add(GetPropertyChangeAction(propTarget, propValue));
         var act = new CompoundAction(actions);
         act.SetPostExecutionAction((undo) =>
