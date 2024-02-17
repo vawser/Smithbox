@@ -915,6 +915,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID in GrassTypeParam determining properties of dynamic grass on a map piece.
                 /// </summary>
+                [MSBParamReference(ParamName = "GrassTypeParam")]
                 public int GrassTypeParamID { get; set; }
 
                 /// <summary>
@@ -1604,6 +1605,8 @@ namespace SoulsFormats
                 /// <summary>
                 /// Alters camera properties while on this collision.
                 /// </summary>
+                /// 
+                [MSBParamReference(ParamName = "LockCamParam")]
                 public short LockCamParamID { get; set; }
 
                 /// <summary>
