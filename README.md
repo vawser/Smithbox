@@ -1,10 +1,16 @@
 # Smithbox
 A personal version of DSMapStudio, which is a standalone integrated modding tool for modern FromSoft games, which include Demon's Souls (PS3), the Dark Souls series, Bloodborne, Sekiro, and Elden Ring. It currently includes a map editor, a game param editor, and a text editor for editing in game text.
 
-## New Features
-- Asset Browser: allows you to quickly view and categorize Chr, Obj/Asset, Part and MapPiece assets. There is a base name and tag list supplied by Smithbox, and support for local mod overrides.
-- Map Grid: allows you to see a segmented grid throughout the MSB viewport. The size, segments and height of the grid can be adjusted.
-- Map Editor Toolbar: adds the ability to quickly configure the various map-specific actions, as well as adding new powerful actions such as Scramble and Replicate.
+## Key Features
+- Map Asset Browser: view a list of all assets available for the current project type. Double-click to change current selection to chosen asset.
+- Viewport Grid: support for a wireframe grid for use within the Map and Model Editor.
+- Action Toolbar: support for quickly configuring various Map Editor actions.
+- Replicate: powerful new Map Editor action for replicating map objects in a patterned way.
+- Scramble: powerful new Map Editor action for randomising map object position, rotation and scale.
+- Prefabs: support for saving groups of map objects. Supports all game types and all map object types.
+- Model Editor: now supports saving edited models.
+- Param Editor: improvements to the actions of renaming and duplicating rows.
+- Text Editor: improvements to the action of duplicating rows.quality of life
 
 ## Requirements
 * Windows 7/8/8.1/10/11 (64-bit only)
