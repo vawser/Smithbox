@@ -53,7 +53,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-    public ModelInfo _loadedModelInfo;
+    public LoadedModelInfo _loadedModelInfo;
 
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -77,35 +77,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser");
     }
 
-    public void UpdateLoadedModelInfo(string id, string mapid = "")
+    public void UpdateLoadedModelInfo(string modelName, string mapID = "")
     {
-        var modelDir = "";
-        var modelExt = "";
-
-        if (CurrentlyLoadedModelType == ModelEditorModelType.Character)
-        {
-            (modelDir, modelExt) = ModelAssetLocator.GetChrModelContainer();
-        }
-
-        if (CurrentlyLoadedModelType == ModelEditorModelType.Object)
-        {
-            (modelDir, modelExt) = ModelAssetLocator.GetObjModelContainer();
-        }
-
-        if (CurrentlyLoadedModelType == ModelEditorModelType.Parts)
-        {
-            (modelDir, modelExt) = ModelAssetLocator.GetPartsModelContainer();
-        }
-
-        if (CurrentlyLoadedModelType == ModelEditorModelType.MapPiece)
-        {
-            (modelDir, modelExt) = ModelAssetLocator.GetMapModelContainer(mapid);
-        }
-
-        var containerDir = $"{modelDir}";
-        var containerPath = $"{modelDir}{id}{modelExt}";
-
-        _loadedModelInfo = new ModelInfo(id, containerDir, containerPath, modelExt);
+        _loadedModelInfo = new LoadedModelInfo(modelName, CurrentlyLoadedModelType, mapID);
     }
 
     public void OnInstantiateChr(string chrid)
@@ -313,105 +287,158 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         {
             _assetBrowser.OnProjectChanged();
         }
+
+        _loadedModelInfo = null;
+        _universe.UnloadAll(true);
     }
 
     public void Save()
     {
-        // The file that holds the loaded model's flver
-        string id = _loadedModelInfo.Name;
-        string containerPath = _loadedModelInfo.ContainerPath;
-        string containerDir = _loadedModelInfo.ContainerDir;
-        string rootPath = $"{Project.GameRootDirectory}\\{containerPath}";
-        string modPath = $"{Project.GameModDirectory}\\{containerPath}";
-        string modDir = $"{Project.GameModDirectory}\\{containerDir}\\";
-        string ext = _loadedModelInfo.Extension;
-
-        FlverResource flvResource = _flverhandle.Get();
-
-        // Add folder if it does not exist in GameModDirectory
-        if(!Directory.Exists(modDir))
+        if(_loadedModelInfo != null)
         {
-            Directory.CreateDirectory(modDir);
-        }
+            // Copy the binder to the mod directory if it does not already exist.
 
-        // Copy file to mod path if it exists in root path
-        if (File.Exists(rootPath))
-        {
-            if (!File.Exists(modPath))
+            var exists = _loadedModelInfo.CopyBinderToMod();
+
+            if (exists)
             {
-                File.Copy(rootPath, modPath);
-            }
-        }
-        else
-        {
-            TaskLogs.AddLog($"Root container path does not exist during Model Save: {rootPath}");
-            return;
-        }
-
-        // If container exists in mod, then save
-        if (File.Exists(modPath))
-        {
-            byte[] fileBytes = null;
-
-            var fileExt = ".flver";
-            if(Project.Type == ProjectType.DS2S)
-            {
-                fileExt = ".flv";
-            }
-            string fileName = $"{id}{fileExt}";
-
-            using (IBinder binder = BND4.Read(DCX.Decompress(modPath)))
-            {
-                foreach (var file in binder.Files)
+                if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                 {
-                    var curFileName = $"{Path.GetFileName(file.Name)}";
-
-                    if (curFileName == fileName)
+                    if (_loadedModelInfo.Type == ModelEditorModelType.MapPiece)
                     {
-                        try
-                        {
-                            file.Bytes = flvResource.Flver.Write();
-                        }
-                        catch (Exception ex)
-                        {
-                            TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
-                        }
+                        WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
+                    }
+                    else
+                    {
+                        WriteModelBinderBND3();
                     }
                 }
-
-                // Then write those bytes to file
-                BND4 writeBinder = binder as BND4;
-
-                switch (Project.Type)
+                else
                 {
-                    case ProjectType.DS3:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                        break;
-                    case ProjectType.SDT:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                        break;
-                    case ProjectType.ER:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                        break;
-                    case ProjectType.AC6:
-                        fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                        break;
-                    default:
-                        TaskLogs.AddLog($"Invalid ProjectType during Model Editor Save");
-                        return;
+                    WriteModelBinderBND4();
                 }
-            }
-
-            if (fileBytes != null)
-            {
-                File.WriteAllBytes(modPath, fileBytes);
-                TaskLogs.AddLog($"Saved model at: {modPath}");
             }
         }
     }
 
+    public void WriteModelBinderBND4()
+    {
+        LoadedModelInfo info = _loadedModelInfo;
+        FlverResource flvResource = _flverhandle.Get();
+        byte[] fileBytes = null;
+
+        using (IBinder binder = BND4.Read(DCX.Decompress(info.ModBinderPath)))
+        {
+            foreach (var file in binder.Files)
+            {
+                var curFileName = $"{Path.GetFileName(file.Name)}";
+
+                if (curFileName == info.FlverFileName)
+                {
+                    try
+                    {
+                        file.Bytes = flvResource.Flver.Write();
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                    }
+                }
+            }
+
+            // Then write those bytes to file
+            BND4 writeBinder = binder as BND4;
+
+            switch (Project.Type)
+            {
+                case ProjectType.DS3:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                    break;
+                case ProjectType.SDT:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                    break;
+                case ProjectType.ER:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                    break;
+                case ProjectType.AC6:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                    break;
+                default:
+                    TaskLogs.AddLog($"Invalid ProjectType during Model Editor Save");
+                    return;
+            }
+        }
+
+        if (fileBytes != null)
+        {
+            File.WriteAllBytes(info.ModBinderPath, fileBytes);
+            TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+        }
+    }
+
+    public void WriteModelBinderBND3()
+    {
+        LoadedModelInfo info = _loadedModelInfo;
+        FlverResource flvResource = _flverhandle.Get();
+        byte[] fileBytes = null;
+
+        using (IBinder binder = BND3.Read(DCX.Decompress(info.ModBinderPath)))
+        {
+            foreach (var file in binder.Files)
+            {
+                var curFileName = $"{Path.GetFileName(file.Name)}";
+
+                if (curFileName == info.FlverFileName)
+                {
+                    try
+                    {
+                        file.Bytes = flvResource.Flver.Write();
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"{file.ID} - Failed to write.\n{ex.ToString()}");
+                    }
+                }
+            }
+
+            // Then write those bytes to file
+            BND3 writeBinder = binder as BND3;
+
+            switch (Project.Type)
+            {
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
+                    break;
+                default:
+                    TaskLogs.AddLog($"Invalid ProjectType during Model Editor Save");
+                    return;
+            }
+        }
+
+        if (fileBytes != null)
+        {
+            File.WriteAllBytes(info.ModBinderPath, fileBytes);
+            TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+        }
+    }
+
+    public void WriteModelFlver()
+    {
+        LoadedModelInfo info = _loadedModelInfo;
+        FlverResource flvResource = _flverhandle.Get();
+        byte[] fileBytes = null;
+
+        FLVER2 flver = FLVER2.Read(DCX.Decompress(info.ModBinderPath));
+        flver = flvResource.Flver;
+        flver.Write(DCX.Type.DCX_DFLT_10000_24_9);
+
+        TaskLogs.AddLog($"Saved model at: {info.ModBinderPath}");
+    }
+
     public void SaveAll()
     {
+        Save(); // Just call save.
     }
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)

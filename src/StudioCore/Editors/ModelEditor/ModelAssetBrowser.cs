@@ -65,6 +65,8 @@ namespace StudioCore.Editors.ModelEditor
                 _mapModelNameCache = new Dictionary<string, List<string>>();
                 _selectedAssetMapId = "";
                 _selectedAssetMapIdCache = null;
+                _selectedAssetType = null;
+                _selectedAssetTypeCache = null;
 
                 List<string> mapList = MapAssetLocator.GetFullMapList();
 
@@ -300,19 +302,23 @@ namespace StudioCore.Editors.ModelEditor
 
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                         {
-                            if (_selectedAssetType == "Chr")
+                            // TODO: fix issue with DS2 loading
+                            if (Project.Type != ProjectType.DS2S)
                             {
-                                _handler.OnInstantiateChr(name);
-                            }
+                                if (_selectedAssetType == "Chr")
+                                {
+                                    _handler.OnInstantiateChr(name);
+                                }
 
-                            if (_selectedAssetType == "Obj")
-                            {
-                                _handler.OnInstantiateObj(name);
-                            }
+                                if (_selectedAssetType == "Obj")
+                                {
+                                    _handler.OnInstantiateObj(name);
+                                }
 
-                            if (_selectedAssetType == "Part")
-                            {
-                                _handler.OnInstantiateParts(name);
+                                if (_selectedAssetType == "Part")
+                                {
+                                    _handler.OnInstantiateParts(name);
+                                }
                             }
                         }
                     }
@@ -437,7 +443,11 @@ namespace StudioCore.Editors.ModelEditor
 
                             if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                             {
-                                _handler.OnInstantiateMapPiece(_selectedAssetMapId, name);
+                                // TODO: fix issue with DS2 loading
+                                if (Project.Type != ProjectType.DS2S)
+                                {
+                                    _handler.OnInstantiateMapPiece(_selectedAssetMapId, name);
+                                }
                             }
                         }
                     }

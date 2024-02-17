@@ -20,14 +20,6 @@ public static class ModelAssetLocator
         return ret;
     }
 
-    public static (string, string) GetMapModelContainer(string mapid)
-    {
-        var modelDir = $@"map/{mapid}/model/";
-        var modelExt = "*.mapbnd.dcx";
-
-        return (modelDir, modelExt);
-    }
-
     public static List<AssetDescription> GetMapModels(string mapid)
     {
         List<AssetDescription> ret = new();
@@ -245,24 +237,6 @@ public static class ModelAssetLocator
         return ret;
     }
 
-    public static (string, string) GetChrModelContainer()
-    {
-        var modelDir = @"\chr\";
-        var modelExt = @".chrbnd.dcx";
-
-        if (Project.Type == ProjectType.DS1)
-        {
-            modelExt = ".chrbnd";
-        }
-        else if (Project.Type == ProjectType.DS2S)
-        {
-            modelDir = @"\model\chr\";
-            modelExt = ".bnd";
-        }
-
-        return (modelDir, modelExt);
-    }
-
     public static List<string> GetChrModels()
     {
         try
@@ -336,36 +310,6 @@ public static class ModelAssetLocator
             ret.AssetVirtualPath = $@"chr/{chr}/model/{chr}.flver";
 
         return ret;
-    }
-
-    public static (string, string) GetObjModelContainer()
-    {
-        var modelDir = @"\obj\";
-        var modelExt = @".objbnd.dcx";
-
-        if (Project.Type == ProjectType.DS1)
-        {
-            modelExt = ".objbnd";
-        }
-        else if (Project.Type == ProjectType.DS2S)
-        {
-            modelDir = @"\model\obj\";
-            modelExt = ".bnd";
-        }
-        else if (Project.Type == ProjectType.ER)
-        {
-            // AEGs are objs in my heart :(
-            modelDir = @"\asset\aeg\";
-            modelExt = ".geombnd.dcx";
-        }
-        else if (Project.Type == ProjectType.AC6)
-        {
-            // AEGs are objs in my heart :(
-            modelDir = @"\asset\environment\geometry\";
-            modelExt = ".geombnd.dcx";
-        }
-
-        return (modelDir, modelExt);
     }
 
     public static List<string> GetObjModels()
@@ -451,24 +395,6 @@ public static class ModelAssetLocator
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj}.flver";
 
         return ret;
-    }
-
-    public static (string, string) GetPartsModelContainer()
-    {
-        var modelDir = @"\parts\";
-        var modelExt = @".partsbnd.dcx";
-
-        if (Project.Type == ProjectType.DS1)
-        {
-            modelExt = ".partsbnd";
-        }
-        else if (Project.Type == ProjectType.DS2S)
-        {
-            modelDir = @"\model\parts\";
-            modelExt = ".bnd";
-        }
-
-        return (modelDir, modelExt);
     }
 
     public static List<string> GetPartsModels()
