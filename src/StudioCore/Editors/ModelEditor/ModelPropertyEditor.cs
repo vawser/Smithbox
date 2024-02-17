@@ -702,6 +702,12 @@ public class ModelPropertyEditor
             ImGui.NextColumn();
         }
 
+        // Don't display this object to the user
+        if (type == typeof(MapTransformNode))
+        {
+            return;
+        }
+
         // Custom editors
         if (type == typeof(FLVER2.BufferLayout))
         {

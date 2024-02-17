@@ -287,18 +287,19 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
             }
         }
 
-        /*
-        foreach (Entity e in ChangedEnts)
+        if (ClearName)
         {
-            if (UpdateRenderModel)
+            foreach (Entity e in ChangedEnts)
             {
-                e.UpdateRenderModel();
-            }
+                if (UpdateRenderModel)
+                {
+                    e.UpdateRenderModel();
+                }
 
-            // Clear name cache, forcing it to update.
-            e.Name = null;
+                // Clear name cache, forcing it to update.
+                e.Name = null;
+            }
         }
-        */
 
         return ActionEvent.NoEvent;
     }

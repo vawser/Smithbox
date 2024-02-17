@@ -124,7 +124,7 @@ public class ModelSceneTree : IActionEventHandler
         var padding = hierarchial ? "   " : "    ";
         if (hierarchial && e.Children.Count > 0)
         {
-            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
             if (_selection.GetSelection().Contains(e))
             {
                 treeflags |= ImGuiTreeNodeFlags.Selected;
@@ -181,9 +181,7 @@ public class ModelSceneTree : IActionEventHandler
                 }
             }
 
-            if (ImGui.Selectable(padding + aliasedName + "##" + _mapEnt_ImGuiID,
-                    _selection.GetSelection().Contains(e),
-                    ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap))
+            if (ImGui.Selectable(padding + aliasedName + "##" + _mapEnt_ImGuiID, _selection.GetSelection().Contains(e), ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap))
             {
                 // If double clicked frame the selection in the viewport
                 if (ImGui.IsMouseDoubleClicked(0))
@@ -213,8 +211,7 @@ public class ModelSceneTree : IActionEventHandler
 
         // Up/Down arrow mass selection
         var arrowKeySelect = false;
-        if (ImGui.IsItemFocused()
-            && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
         {
             doSelect = true;
             arrowKeySelect = true;
@@ -249,39 +246,6 @@ public class ModelSceneTree : IActionEventHandler
         {
             _editor.OnEntityContextMenu(e);
             ImGui.EndPopup();
-        }
-
-        if (ImGui.BeginDragDropSource())
-        {
-            ImGui.Text(e.PrettyName);
-            // Kinda meme
-            DragDropPayload p = new();
-            p.Entity = e;
-            _dragDropPayloads.Add(_dragDropPayloadCounter, p);
-            DragDropPayloadReference r = new();
-            r.Index = _dragDropPayloadCounter;
-            _dragDropPayloadCounter++;
-            GCHandle handle = GCHandle.Alloc(r, GCHandleType.Pinned);
-            ImGui.SetDragDropPayload("entity", handle.AddrOfPinnedObject(), (uint)sizeof(DragDropPayloadReference));
-            ImGui.EndDragDropSource();
-            handle.Free();
-            _initiatedDragDrop = true;
-        }
-
-        if (hierarchial && ImGui.BeginDragDropTarget())
-        {
-            ImGuiPayloadPtr payload = ImGui.AcceptDragDropPayload("entity");
-            if (payload.NativePtr != null)
-            {
-                var h = (DragDropPayloadReference*)payload.Data;
-                DragDropPayload pload = _dragDropPayloads[h->Index];
-                _dragDropPayloads.Remove(h->Index);
-                _dragDropSources.Add(pload.Entity);
-                _dragDropDestObjects.Add(e);
-                _dragDropDests.Add(e.Children.Count);
-            }
-
-            ImGui.EndDragDropTarget();
         }
 
         // Visibility icon
@@ -406,25 +370,56 @@ public class ModelSceneTree : IActionEventHandler
 
             ImGui.BeginChild("listtree");
             
-            IOrderedEnumerable<KeyValuePair<string, MapObjectContainer>> orderedMaps =
+            IOrderedEnumerable<KeyValuePair<string, MapObjectContainer>> fakeMaps =
                 _universe.LoadedObjectContainers.OrderBy(k => k.Key);
 
             _mapEnt_ImGuiID = 0;
-            foreach (KeyValuePair<string, MapObjectContainer> lm in orderedMaps)
+
+            // This is actually the model itself
+            foreach (KeyValuePair<string, MapObjectContainer> lm in fakeMaps)
             {
                 var metaName = "";
                 MapObjectContainer map = lm.Value;
-                var mapid = lm.Key;
-                if (mapid == null)
+                var assetName = lm.Key;
+
+                if (assetName == null)
                 {
                     continue;
                 }
 
-                if (MapAliasBank.Bank.MapNames != null)
+                if (ModelAliasBank.Bank != null)
                 {
-                    if (MapAliasBank.Bank.MapNames.ContainsKey(mapid))
+                    var list = ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
+                    foreach(var entry in list)
                     {
-                        metaName = MapAliasBank.Bank.MapNames[mapid];
+                        if(entry.id == assetName)
+                        {
+                            metaName = entry.name;
+                        }
+                    }
+                    list = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
+                    foreach (var entry in list)
+                    {
+                        if (entry.id == assetName)
+                        {
+                            metaName = entry.name;
+                        }
+                    }
+                    list = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
+                    foreach (var entry in list)
+                    {
+                        if (entry.id == assetName)
+                        {
+                            metaName = entry.name;
+                        }
+                    }
+                    list = ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces");
+                    foreach (var entry in list)
+                    {
+                        if (entry.id == assetName)
+                        {
+                            metaName = entry.name;
+                        }
                     }
                 }
 
@@ -438,10 +433,10 @@ public class ModelSceneTree : IActionEventHandler
                 }
 
                 Entity mapRoot = map?.RootObject;
-                MapObjectContainerReference mapRef = new(mapid, _universe);
+                MapObjectContainerReference mapRef = new(assetName, _universe);
                 ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
-                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+                ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
                 var selected = _selection.GetSelection().Contains(mapRoot) ||
                                _selection.GetSelection().Contains(mapRef);
                 if (selected)
@@ -454,12 +449,12 @@ public class ModelSceneTree : IActionEventHandler
                 ImGui.BeginGroup();
                 if (map != null)
                 {
-                    nodeopen = ImGui.TreeNodeEx($@"{ForkAwesome.Cube} {mapid}", treeflags,
-                        $@"{ForkAwesome.Cube} {mapid}{unsaved}");
+                    nodeopen = ImGui.TreeNodeEx($@"{ForkAwesome.Cube} {assetName}", treeflags,
+                        $@"{ForkAwesome.Cube} {assetName}{unsaved}");
                 }
                 else
                 {
-                    ImGui.Selectable($@"   {ForkAwesome.Cube} {mapid}", selected);
+                    ImGui.Selectable($@"   {ForkAwesome.Cube} {assetName}", selected);
                 }
 
                 if (metaName != "")
