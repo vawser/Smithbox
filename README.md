@@ -10,7 +10,7 @@ A personal version of DSMapStudio, which is a standalone integrated modding tool
 - Prefabs: support for saving groups of map objects. Supports all game types and all map object types.
 - Model Editor: now supports saving edited models.
 - Param Editor: improvements to the actions of renaming and duplicating rows.
-- Text Editor: improvements to the action of duplicating rows.quality of life
+- Text Editor: improvements to the action of duplicating rows.
 
 ## Requirements
 * Windows 7/8/8.1/10/11 (64-bit only)
