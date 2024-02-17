@@ -21,6 +21,7 @@ using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -34,11 +35,6 @@ public struct DragDropPayloadReference
     public int Index;
 }
 
-public interface SceneTreeEventHandler
-{
-    public void OnEntityContextMenu(Entity ent);
-}
-
 public class ModelSceneTree : IActionEventHandler
 {
     private readonly List<Entity> _dragDropDestObjects = new();
@@ -47,8 +43,6 @@ public class ModelSceneTree : IActionEventHandler
 
     private readonly List<Entity> _dragDropSources = new();
     private readonly EntityActionManager _editorActionManager;
-
-    private readonly SceneTreeEventHandler _handler;
 
     private readonly string _id;
     private readonly MapSelection _selection;
@@ -80,10 +74,12 @@ public class ModelSceneTree : IActionEventHandler
     private Dictionary<string, string> _objAliasCache;
     private Dictionary<string, string> _mapPieceAliasCache;
 
+    private ModelEditorScreen _editor;
 
-    public ModelSceneTree(SceneTreeEventHandler handler, string id, Universe universe, MapSelection sel, EntityActionManager aman, IViewport vp)
+
+    public ModelSceneTree(ModelEditorScreen editor, string id, Universe universe, MapSelection sel, EntityActionManager aman, IViewport vp)
     {
-        _handler = handler;
+        _editor = editor;
         _id = id;
         _universe = universe;
         _selection = sel;
@@ -99,9 +95,12 @@ public class ModelSceneTree : IActionEventHandler
     {
 
     }
-    private unsafe void MapObjectSelectable(Entity e, bool visicon, bool hierarchial = false)
+    private unsafe void ModelSelectable(Entity e, bool visicon, bool hierarchial = false)
     {
         var scale = Smithbox.GetUIScale();
+
+        if (e.Name == null)
+            return;
 
         // Main selectable
         if (e is MsbEntity me)
@@ -248,7 +247,7 @@ public class ModelSceneTree : IActionEventHandler
 
         if (ImGui.BeginPopupContextItem())
         {
-            _handler.OnEntityContextMenu(e);
+            _editor.OnEntityContextMenu(e);
             ImGui.EndPopup();
         }
 
@@ -367,7 +366,7 @@ public class ModelSceneTree : IActionEventHandler
         {
             if (obj is Entity e)
             {
-                MapObjectSelectable(e, true, true);
+                ModelSelectable(e, true, true);
             }
         }
     }
@@ -489,95 +488,6 @@ public class ModelSceneTree : IActionEventHandler
                 if (nodeopen)
                 {
                     ImGui.Indent(); //TreeNodeEx fails to indent as it is inside a group / indentation is reset
-                }
-
-                // Right click context menu
-                if (ImGui.BeginPopupContextItem($@"mapcontext_{mapid}"))
-                {
-                    if (map == null)
-                    {
-                        if (ImGui.Selectable("Load Map"))
-                        {
-                            if (selected)
-                            {
-                                _selection.ClearSelection();
-                            }
-
-                            _universe.LoadMap(mapid, selected);
-                        }
-                    }
-                    else if (map is Map m)
-                    {
-                        if (ImGui.Selectable("Save Map"))
-                        {
-                            try
-                            {
-                                if (Project.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
-                                {
-                                    TaskLogs.AddLog("AC6 Map saving has been disabled", LogLevel.Warning, TaskLogs.LogPriority.Normal);
-                                }
-                                else
-                                {
-                                    _universe.SaveMap(m);
-                                }
-                            }
-                            catch (SavingFailedException e)
-                            {
-                                ((MapEditorScreen)_handler).HandleSaveException(e);
-                            }
-                        }
-
-                        if (ImGui.Selectable("Unload Map"))
-                        {
-                            _selection.ClearSelection();
-                            _editorActionManager.Clear();
-                            _universe.UnloadContainer(m);
-                            GC.Collect();
-                            GC.WaitForPendingFinalizers();
-                            GC.Collect();
-                        }
-                    }
-
-                    if (_universe.GameType is ProjectType.ER)
-                    {
-                        if (mapid.StartsWith("m60"))
-                        {
-                            if (ImGui.Selectable("Load Related Maps"))
-                            {
-                                if (selected)
-                                {
-                                    _selection.ClearSelection();
-                                }
-
-                                _universe.LoadMap(mapid);
-                                _universe.LoadRelatedMapsER(mapid, _universe.LoadedObjectContainers);
-                            }
-                        }
-                    }
-                    else if (_universe.GameType is ProjectType.AC6)
-                    {
-                        //TODO AC6
-                    }
-
-                    if (_universe.GetLoadedMapCount() > 1)
-                    {
-                        if (ImGui.Selectable("Unload All Maps"))
-                        {
-                            DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
-                                MessageBoxButtons.YesNo);
-                            if (result == DialogResult.Yes)
-                            {
-                                _selection.ClearSelection();
-                                _editorActionManager.Clear();
-                                _universe.UnloadAllMaps();
-                                GC.Collect();
-                                GC.WaitForPendingFinalizers();
-                                GC.Collect();
-                            }
-                        }
-                    }
-
-                    ImGui.EndPopup();
                 }
 
                 if (ImGui.IsItemClicked())

@@ -243,7 +243,7 @@ namespace StudioCore.Editors.ModelEditor
                         refTagList = referenceDict[lowerName].tags;
                     }
 
-                    if (SearchFilters.IsSearchMatch(_searchStrInput, lowerName, refName, refTagList, true))
+                    if (SearchFilters.IsSearchMatch(_searchStrInput, lowerName, refName, refTagList, true, false, true))
                     {
                         if (ImGui.Selectable(displayedName))
                         {
@@ -383,7 +383,7 @@ namespace StudioCore.Editors.ModelEditor
                             refTagList = referenceDict[lowerName].tags;
                         }
 
-                        if (SearchFilters.IsSearchMatch(_searchStrInput, lowerName, refName, refTagList, true))
+                        if (SearchFilters.IsSearchMatch(_searchStrInput, lowerName, refName, refTagList, true, false, true))
                         {
                             if (ImGui.Selectable(displayedName))
                             {

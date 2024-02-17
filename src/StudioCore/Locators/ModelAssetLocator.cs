@@ -459,13 +459,19 @@ public static class ModelAssetLocator
         AssetDescription ret = new();
         ret.AssetName = part;
         ret.AssetArchiveVirtualPath = $@"parts/{part}/model";
-        if (Project.Type == ProjectType.DS2S)
-            ret.AssetVirtualPath = $@"parts/{part}/model/{part}.flv";
-        else if (Project.Type is ProjectType.DS1)
-            ret.AssetVirtualPath = $@"parts/{part}/model/{part.ToUpper()}.flver";
-        else
-            ret.AssetVirtualPath = $@"parts/{part}/model/{part}.flver";
 
+        if (Project.Type == ProjectType.DS2S)
+        {
+            ret.AssetVirtualPath = $@"parts/{part}/model/{part}.flv";
+        }
+        else if (Project.Type is ProjectType.DS1)
+        {
+            ret.AssetVirtualPath = $@"parts/{part}/model/{part.ToUpper()}.flver";
+        }
+        else
+        {
+            ret.AssetVirtualPath = $@"parts/{part}/model/{part}.flver";
+        }
         return ret;
     }
 }

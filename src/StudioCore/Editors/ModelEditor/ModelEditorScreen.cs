@@ -24,8 +24,7 @@ using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTreeEventHandler,
-    IResourceEventListener
+public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResourceEventListener
 {
     private ModelAssetBrowser _assetBrowser;
 
@@ -149,6 +148,20 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void DrawEditorMenu()
     {
+
+        if (ImGui.BeginMenu("Model"))
+        {
+            if (ImGui.MenuItem("Unload"))
+            {
+                _loadedModelInfo = null;
+                _universe.UnloadAll(true);
+            }
+
+            // TODO: Select other Flvers within the same container (e.g. _1, _2, etc)
+
+            ImGui.EndMenu();
+        }
+
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Dummy Polygons", "", CFG.Current.Model_ViewDummyPolys, true))
@@ -482,6 +495,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void OnEntityContextMenu(Entity ent)
     {
+        
     }
 
     public AssetDescription loadedAsset;
@@ -504,6 +518,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
                 break;
             case ModelEditorModelType.Parts:
                 asset = ModelAssetLocator.GetPartsModel(modelid);
+                TaskLogs.AddLog($"Part: {asset.AssetName}");
+                TaskLogs.AddLog($"Part: {asset.AssetVirtualPath}");
+                TaskLogs.AddLog($"Part: {asset.AssetArchiveVirtualPath}");
                 assettex = TextureAssetLocator.GetPartTextures(modelid);
                 break;
             case ModelEditorModelType.MapPiece:
