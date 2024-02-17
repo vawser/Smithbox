@@ -6,11 +6,8 @@
 /// </summary>
 public static class FeatureFlags
 {
-    #if DEBUG
-        public static bool DebugMenu = true;
-    #else
-        public static bool TestMenu = false;
-    #endif
+    public static bool DebugMenu = true;
+    public static bool TestMenu = false;
 
     public static bool StrictResourceChecking = true;
 
