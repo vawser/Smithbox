@@ -181,7 +181,7 @@ public class MapObjectContainer
         {
             var dmynode = new TransformableNamedEntity(this, flver.Dummies[i], $@"dmy_{i}");
 
-            if(CFG.Current.Model_ViewDummyPolys)
+            if (CFG.Current.Model_ViewDummyPolys)
                 dmynode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dmynode);
 
             Objects.Add(dmynode);

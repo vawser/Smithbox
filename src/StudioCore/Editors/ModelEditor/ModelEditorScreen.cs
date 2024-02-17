@@ -144,6 +144,14 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
     {
         ViewportUsingKeyboard = Viewport.Update(Window, dt);
 
+        // Reload the flvers if a rendering bool has changed
+        if (CFG.Current.Model_RenderingUpdate)
+        {
+            CFG.Current.Model_RenderingUpdate = false;
+            FlverResource r = _flverhandle.Get();
+            _universe.LoadFlver(r.Flver, _renderMesh, _currentModel);
+        }
+
         if (_loadingTask != null && _loadingTask.IsCompleted)
         {
             _loadingTask = null;
@@ -172,14 +180,12 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
             if (ImGui.MenuItem("Dummy Polygons", "", CFG.Current.Model_ViewDummyPolys, true))
             {
                 CFG.Current.Model_ViewDummyPolys = !CFG.Current.Model_ViewDummyPolys;
-
-                // Add purge/load of dummy poly renderables for current model on change
+                CFG.Current.Model_RenderingUpdate = true;
             }
             if (ImGui.MenuItem("Bones", "", CFG.Current.Model_ViewBones, true))
             {
                 CFG.Current.Model_ViewBones = !CFG.Current.Model_ViewBones;
-
-                // Add purge/load of bone renderables for current model on change
+                CFG.Current.Model_RenderingUpdate = true;
             }
 
             ImGui.EndMenu();
