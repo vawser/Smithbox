@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.DebugPrimitives;
+using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MsbEditor;
 using StudioCore.Resource;
@@ -44,7 +45,7 @@ public class Viewport : IViewport
     private readonly DbgPrimWire _rayDebug = null;
 
     private readonly RenderScene _renderScene;
-    private readonly MapSelection _selection;
+    private readonly ViewportSelection _selection;
     private readonly SceneRenderPipeline _viewPipeline;
 
     private readonly string _vpid = "";
@@ -70,7 +71,7 @@ public class Viewport : IViewport
 
     private ViewportType _viewportType;
 
-    public Viewport(ViewportType viewportType, string id, GraphicsDevice device, RenderScene scene, EntityActionManager am, MapSelection sel, int width,
+    public Viewport(ViewportType viewportType, string id, GraphicsDevice device, RenderScene scene, EntityActionManager am, ViewportSelection sel, int width,
         int height)
     {
         _vpid = id;

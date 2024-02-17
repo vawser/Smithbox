@@ -154,7 +154,7 @@ public class MapObjectContainer
             var bonenode =
                 new TransformableNamedEntity(this, flver.Bones[i], flver.Bones[i].Name);
 
-            if (CFG.Current.ModelEditor_ViewBones)
+            if (CFG.Current.Model_ViewBones)
                 bonenode.RenderSceneMesh = Universe.GetBoneDrawable(this, bonenode);
 
             Objects.Add(bonenode);

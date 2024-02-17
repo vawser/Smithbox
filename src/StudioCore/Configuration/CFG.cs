@@ -191,7 +191,7 @@ public class CFG
     //****************************
     public bool ModelEditor_RenderingUpdate = false;
     public bool ModelEditor_ViewDummyPolys = true;
-    public bool ModelEditor_ViewBones = true;
+    public bool Model_ViewBones = true;
     public bool ModelEditor_Enable_Commmunity_Names = true;
     public bool ModelEditor_Enable_Commmunity_Hints = true;
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;

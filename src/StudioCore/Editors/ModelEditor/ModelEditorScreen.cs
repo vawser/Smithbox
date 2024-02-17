@@ -32,7 +32,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
     private readonly ModelPropertyCache _propCache = new();
 
     private readonly ModelSceneTree _sceneTree;
-    private readonly MapSelection _selection = new();
+    private readonly ViewportSelection _selection = new();
 
     private readonly Universe _universe;
     private string _currentModel;
@@ -169,9 +169,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
                 CFG.Current.ModelEditor_RenderingUpdate = true;
             }
-            if (ImGui.MenuItem("Bones", "", CFG.Current.ModelEditor_ViewBones, true))
+            if (ImGui.MenuItem("Bones", "", CFG.Current.Model_ViewBones, true))
             {
-                CFG.Current.ModelEditor_ViewBones = !CFG.Current.ModelEditor_ViewBones;
+                CFG.Current.Model_ViewBones = !CFG.Current.Model_ViewBones;
                 CFG.Current.ModelEditor_RenderingUpdate = true;
             }
 

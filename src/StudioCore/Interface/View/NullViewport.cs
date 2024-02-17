@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using System.Numerics;
 using Veldrid;
@@ -18,7 +19,7 @@ public class NullViewport : IViewport
     public int Y;
 
     private ViewportType _viewportType;
-    public NullViewport(ViewportType viewportType, string id, EntityActionManager am, MapSelection sel, int width, int height)
+    public NullViewport(ViewportType viewportType, string id, EntityActionManager am, ViewportSelection sel, int width, int height)
     {
         _vpid = id;
         _viewportType = viewportType;

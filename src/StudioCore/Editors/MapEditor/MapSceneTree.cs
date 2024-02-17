@@ -64,7 +64,7 @@ public class MapSceneTree : IActionEventHandler
     private readonly SceneTreeEventHandler _handler;
 
     private readonly string _id;
-    private readonly MapSelection _selection;
+    private readonly ViewportSelection _selection;
 
     // Keep track of open tree nodes for selection management purposes
     private readonly HashSet<Entity> _treeOpenEntities = new();
@@ -101,7 +101,7 @@ public class MapSceneTree : IActionEventHandler
     private Dictionary<string, string> _mapPieceAliasCache;
 
 
-    public MapSceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, MapSelection sel, EntityActionManager aman, IViewport vp)
+    public MapSceneTree(Configuration configuration, SceneTreeEventHandler handler, string id, Universe universe, ViewportSelection sel, EntityActionManager aman, IViewport vp)
     {
         _handler = handler;
         _id = id;

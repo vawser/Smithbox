@@ -13,10 +13,10 @@ public class DisplayGroupEditor
     private readonly EntityActionManager _actionManager;
 
     private readonly RenderScene _scene;
-    private readonly MapSelection _selection;
+    private readonly ViewportSelection _selection;
     public readonly HashSet<string> HighlightedGroups = new();
 
-    public DisplayGroupEditor(RenderScene scene, MapSelection sel, EntityActionManager manager)
+    public DisplayGroupEditor(RenderScene scene, ViewportSelection sel, EntityActionManager manager)
     {
         _scene = scene;
         _selection = sel;

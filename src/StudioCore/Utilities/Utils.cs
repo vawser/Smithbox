@@ -4,6 +4,7 @@ using ImGuiNET;
 using Microsoft.Win32;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.UserProject;
 using System;
@@ -970,7 +971,7 @@ public static class Utils
         return "Unknown version format";
     }
 
-    public static void EntitySelectionHandler(MapSelection selection, Entity entity,
+    public static void EntitySelectionHandler(ViewportSelection selection, Entity entity,
         bool itemSelected, bool isItemFocused, List<WeakReference<Entity>> filteredEntityList = null)
     {
         // Up/Down arrow mass selection

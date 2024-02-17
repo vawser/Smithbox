@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor;
 public class NavmeshEditor
 {
     private readonly MeshRenderableProxy _previewMesh = null;
-    private readonly MapSelection _selection;
+    private readonly ViewportSelection _selection;
     private readonly int icount = 0;
     private readonly int vcount = 0;
 
@@ -35,7 +35,7 @@ public class NavmeshEditor
     private int MinRegionArea = 3;
     private float SlopeAngle = 30.0f;
 
-    public NavmeshEditor(RenderScene scene, MapSelection sel)
+    public NavmeshEditor(RenderScene scene, ViewportSelection sel)
     {
         _scene = scene;
         _selection = sel;

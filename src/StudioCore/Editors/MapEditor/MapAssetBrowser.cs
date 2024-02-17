@@ -23,7 +23,7 @@ public class MapAssetBrowser
     private readonly EntityActionManager _actionManager;
 
     private readonly RenderScene _scene;
-    private readonly MapSelection _selection;
+    private readonly ViewportSelection _selection;
 
     private MapEditorScreen _msbEditor;
 
@@ -53,7 +53,7 @@ public class MapAssetBrowser
 
     private Universe _universe;
 
-    public MapAssetBrowser(Universe universe, RenderScene scene, MapSelection sel, EntityActionManager manager, MapEditorScreen editor, IViewport viewport)
+    public MapAssetBrowser(Universe universe, RenderScene scene, ViewportSelection sel, EntityActionManager manager, MapEditorScreen editor, IViewport viewport)
     {
         _scene = scene;
         _selection = sel;

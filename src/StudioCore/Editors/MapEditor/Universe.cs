@@ -18,6 +18,7 @@ using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors;
 
 namespace StudioCore.MsbEditor;
 
@@ -41,14 +42,14 @@ public class Universe
 
     public bool postLoad;
 
-    public Universe(RenderScene scene, MapSelection sel)
+    public Universe(RenderScene scene, ViewportSelection sel)
     {
         _renderScene = scene;
         Selection = sel;
     }
 
     public Dictionary<string, MapObjectContainer> LoadedObjectContainers { get; } = new();
-    public MapSelection Selection { get; }
+    public ViewportSelection Selection { get; }
 
     public List<string> EnvMapTextures { get; private set; } = new();
 
@@ -371,7 +372,7 @@ public class Universe
                 renderFilter = RenderFilter.Character;
                 break;
             case ModelLoadType.Object:
-                asset = ModelAssetLocator.GetChrModel(modelName);
+                asset = ModelAssetLocator.GetObjModel(modelName);
                 renderFilter = RenderFilter.Object;
                 break;
             case ModelLoadType.Collision:

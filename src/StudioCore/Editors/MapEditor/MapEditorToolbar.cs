@@ -47,7 +47,7 @@ namespace StudioCore.Editors.MapEditor
         private readonly EntityActionManager _actionManager;
 
         private readonly RenderScene _scene;
-        private readonly MapSelection _selection;
+        private readonly ViewportSelection _selection;
 
         private Universe _universe;
 
@@ -72,7 +72,7 @@ namespace StudioCore.Editors.MapEditor
 
         private int FrameCount = 0;
 
-        public MapEditorToolbar(RenderScene scene, MapSelection sel, EntityActionManager manager, Universe universe, IViewport viewport)
+        public MapEditorToolbar(RenderScene scene, ViewportSelection sel, EntityActionManager manager, Universe universe, IViewport viewport)
         {
             _scene = scene;
             _selection = sel;

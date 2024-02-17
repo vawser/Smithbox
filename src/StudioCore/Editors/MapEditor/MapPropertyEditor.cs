@@ -719,7 +719,7 @@ public class MapPropertyEditor
     /// <summary>
     /// Displays property context menu.
     /// </summary>
-    private void DisplayPropContextMenu(MapSelection selection, PropertyInfo prop, object obj)
+    private void DisplayPropContextMenu(ViewportSelection selection, PropertyInfo prop, object obj)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
@@ -832,7 +832,7 @@ public class MapPropertyEditor
         }
     }
 
-    private void PropEditorGeneric(MapSelection selection, HashSet<Entity> entSelection, object target = null,
+    private void PropEditorGeneric(ViewportSelection selection, HashSet<Entity> entSelection, object target = null,
         bool decorate = true, int classIndex = -1)
     {
         var scale = Smithbox.GetUIScale();
@@ -1310,7 +1310,7 @@ public class MapPropertyEditor
         }
     }
 
-    public string GetFieldName(Type classType, PropertyInfo prop, MapSelection sel)
+    public string GetFieldName(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
         Type type = classType;
         string name = prop.Name;
@@ -1361,7 +1361,7 @@ public class MapPropertyEditor
         return name;
     }
 
-    public void ShowFieldHint(Type classType, PropertyInfo prop, MapSelection sel)
+    public void ShowFieldHint(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
         var attribute = prop?.GetCustomAttribute<FormatReference>();
 
@@ -1415,7 +1415,7 @@ public class MapPropertyEditor
         }
     }
 
-    public void OnGui(MapSelection selection, string id, float w, float h)
+    public void OnGui(ViewportSelection selection, string id, float w, float h)
     {
         var scale = Smithbox.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();

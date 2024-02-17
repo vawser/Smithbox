@@ -45,7 +45,7 @@ public class ModelSceneTree : IActionEventHandler
     private readonly EntityActionManager _editorActionManager;
 
     private readonly string _id;
-    private readonly MapSelection _selection;
+    private readonly ViewportSelection _selection;
 
     // Keep track of open tree nodes for selection management purposes
     private readonly HashSet<Entity> _treeOpenEntities = new();
@@ -77,7 +77,7 @@ public class ModelSceneTree : IActionEventHandler
     private ModelEditorScreen _editor;
 
 
-    public ModelSceneTree(ModelEditorScreen editor, string id, Universe universe, MapSelection sel, EntityActionManager aman, IViewport vp)
+    public ModelSceneTree(ModelEditorScreen editor, string id, Universe universe, ViewportSelection sel, EntityActionManager aman, IViewport vp)
     {
         _editor = editor;
         _id = id;

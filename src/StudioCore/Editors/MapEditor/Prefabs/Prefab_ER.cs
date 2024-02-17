@@ -1951,7 +1951,7 @@ public class Prefab_ER
     /// </summary>
     /// <param name="filepath"></param>
     /// <param name="_selection"></param>
-    public static void ExportSelection(string filepath, MapSelection _selection, string tags)
+    public static void ExportSelection(string filepath, ViewportSelection _selection, string tags)
     {
         List<string> tagList = new List<string>();
         if (tags.Contains(","))

@@ -704,7 +704,7 @@ public class ModelPropertyEditor
     /// <summary>
     /// Displays property context menu.
     /// </summary>
-    private void DisplayPropContextMenu(MapSelection selection, PropertyInfo prop, object obj)
+    private void DisplayPropContextMenu(ViewportSelection selection, PropertyInfo prop, object obj)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
@@ -770,7 +770,7 @@ public class ModelPropertyEditor
         }
     }
 
-    private void PropEditorGeneric(MapSelection selection, HashSet<Entity> entSelection, object target = null, bool decorate = true, int classIndex = -1)
+    private void PropEditorGeneric(ViewportSelection selection, HashSet<Entity> entSelection, object target = null, bool decorate = true, int classIndex = -1)
     {
         var scale = Smithbox.GetUIScale();
         Entity firstEnt = entSelection.First();
@@ -1247,7 +1247,7 @@ public class ModelPropertyEditor
         }
     }
 
-    public string GetFieldName(Type classType, PropertyInfo prop, MapSelection sel)
+    public string GetFieldName(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
         Type type = classType;
         string name = prop.Name;
@@ -1277,7 +1277,7 @@ public class ModelPropertyEditor
         return name;
     }
 
-    public void ShowFieldHint(Type classType, PropertyInfo prop, MapSelection sel)
+    public void ShowFieldHint(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
         var attribute = prop?.GetCustomAttribute<FormatReference>();
 
@@ -1309,7 +1309,7 @@ public class ModelPropertyEditor
         }
     }
 
-    public void OnGui(MapSelection selection, string id, float w, float h)
+    public void OnGui(ViewportSelection selection, string id, float w, float h)
     {
         var scale = Smithbox.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
@@ -1323,6 +1323,7 @@ public class ModelPropertyEditor
         if (entSelection.Count > 1)
         {
             Entity firstEnt = entSelection.First();
+
             if (entSelection.All(e => e.WrappedObject.GetType() == firstEnt.WrappedObject.GetType()))
             {
                 if (firstEnt.WrappedObject is Param.Row prow || firstEnt.WrappedObject is MergedParamRow)
@@ -1339,7 +1340,9 @@ public class ModelPropertyEditor
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, new Vector4(0.0f, 0.5f, 0.0f, 0.1f));
                 ImGui.BeginChild("MSB_EditingMultipleObjsChild");
+
                 PropEditorGeneric(selection, entSelection);
+
                 ImGui.PopStyleColor();
                 ImGui.EndChild();
             }
@@ -1355,24 +1358,18 @@ public class ModelPropertyEditor
         else if (entSelection.Any())
         {
             Entity firstEnt = entSelection.First();
-            ImGui.Text($" Map: {firstEnt.Container.Name}");
+
+            ImGui.Text($" Model: {firstEnt.Container.Name}");
             if (firstEnt.WrappedObject == null)
             {
-                ImGui.Text("Select a map object to edit its properties.");
+                ImGui.Text("Select a model object to edit its properties.");
                 ImGui.EndChild();
                 ImGui.End();
                 ImGui.PopStyleColor();
                 return;
             }
 
-            if (firstEnt.WrappedObject is Param.Row prow || firstEnt.WrappedObject is MergedParamRow)
-            {
-                PropEditorParamRow(firstEnt);
-            }
-            else
-            {
-                PropEditorGeneric(selection, entSelection);
-            }
+            PropEditorGeneric(selection, entSelection);
         }
         else
         {

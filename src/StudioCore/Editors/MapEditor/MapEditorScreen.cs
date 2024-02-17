@@ -39,7 +39,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     /// <summary>
     /// Current entity selection within the viewport.
     /// </summary>
-    private MapSelection _selection = new();
+    private ViewportSelection _selection = new();
 
     /// <summary>
     /// Active modal window.

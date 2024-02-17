@@ -73,7 +73,7 @@ public class Gizmos
     public static GizmosMode Mode = GizmosMode.Translate;
     public static GizmosSpace Space = GizmosSpace.Local;
     public static GizmosOrigin Origin = GizmosOrigin.World;
-    private readonly MapSelection _selection;
+    private readonly ViewportSelection _selection;
     private readonly EntityActionManager ActionManager;
     private readonly DbgPrimGizmoRotateRing RotateGizmoX;
     private readonly DebugPrimitiveRenderableProxy RotateGizmoXProxy;
@@ -105,7 +105,7 @@ public class Gizmos
     private Vector3 OriginProjection;
     private Axis TransformAxis = Axis.None;
 
-    public Gizmos(EntityActionManager am, MapSelection selection, MeshRenderables renderlist)
+    public Gizmos(EntityActionManager am, ViewportSelection selection, MeshRenderables renderlist)
     {
         ActionManager = am;
         TranslateGizmoX = new DbgPrimGizmoTranslateArrow(Axis.PosX);
