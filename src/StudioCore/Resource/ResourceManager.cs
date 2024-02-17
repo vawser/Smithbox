@@ -541,7 +541,7 @@ public static class ResourceManager
             if (Binder == null)
             {
                 string o;
-                var path = LocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
+                var path = ResourcePathToRealPath(BinderVirtualPath, out o);
                 //TaskLogs.AddLog($"Load path: {path}");
                 Binder = InstantiateBinderReaderForFile(path, Project.Type);
                 if (Binder == null)
@@ -815,7 +815,7 @@ public static class ResourceManager
             InFlightFiles.Add(virtualPath);
 
             string bndout;
-            var path = LocatorUtils.VirtualToRealPath(virtualPath, out bndout);
+            var path = ResourcePathToRealPath(virtualPath, out bndout);
 
             IResourceLoadPipeline pipeline;
             if (path == null || virtualPath == "null")
@@ -951,4 +951,285 @@ public static class ResourceManager
     private readonly record struct UnloadResourceRequest(
         IResourceHandle Resource,
         bool UnloadOnlyIfUnused);
+
+    // Converts the 'fake' virtualPath into the real path
+    public static string ResourcePathToRealPath(string virtualPath, out string bndpath)
+    {
+        var pathElements = virtualPath.Split('/');
+        Regex mapRegex = new(@"^m\d{2}_\d{2}_\d{2}_\d{2}$");
+        var ret = "";
+
+        // Parse the virtual path with a DFA and convert it to a game path
+        var i = 0;
+        if (pathElements[i].Equals("map"))
+        {
+            i++;
+            if (pathElements[i].Equals("tex"))
+            {
+                i++;
+                if (Project.Type == ProjectType.DS2S)
+                {
+                    var mid = pathElements[i];
+                    i++;
+                    var id = pathElements[i];
+                    if (id == "tex")
+                    {
+                        bndpath = "";
+                        return LocatorUtils.GetAssetPath($@"model\map\t{mid.Substring(1)}.tpfbhd");
+                    }
+                }
+                else if (Project.Type == ProjectType.DES)
+                {
+                    var mid = pathElements[i];
+                    i++;
+                    bndpath = "";
+                    return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_{pathElements[i]}.tpf.dcx");
+                }
+                else
+                {
+                    var mid = pathElements[i];
+                    i++;
+                    bndpath = "";
+                    if (pathElements[i] == "env")
+                    {
+                        if (Project.Type == ProjectType.DS1R)
+                            return LocatorUtils.GetAssetPath($@"map\{mid}\GI_EnvM_{mid}.tpf.dcx");
+
+                        return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx");
+                    }
+
+                    return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_{pathElements[i]}.tpfbhd");
+                }
+            }
+            else if (mapRegex.IsMatch(pathElements[i]))
+            {
+                var mapid = pathElements[i];
+                i++;
+                if (pathElements[i].Equals("model"))
+                {
+                    i++;
+                    bndpath = "";
+                    if (Project.Type == ProjectType.DS1)
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.flver");
+
+                    if (Project.Type == ProjectType.DS1R)
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.flver.dcx");
+
+                    if (Project.Type == ProjectType.DS2S)
+                        return LocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
+
+                    if (Project.Type == ProjectType.BB || Project.Type == ProjectType.DES)
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.flver.dcx");
+
+                    if (Project.Type == ProjectType.ER)
+                        return LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
+
+                    if (Project.Type == ProjectType.AC6)
+                        return LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
+
+                    return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.mapbnd.dcx");
+                }
+
+                if (pathElements[i].Equals("hit"))
+                {
+                    i++;
+                    var hittype = pathElements[i];
+                    i++;
+                    if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DES)
+                    {
+                        bndpath = "";
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}");
+                    }
+
+                    if (Project.Type == ProjectType.DS2S)
+                    {
+                        bndpath = "";
+                        return LocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
+                    }
+
+                    if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
+                    {
+                        bndpath = "";
+                        if (hittype == "lo")
+                            return LocatorUtils.GetAssetPath($@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                    }
+
+                    bndpath = "";
+                    return null;
+                }
+
+                if (pathElements[i].Equals("nav"))
+                {
+                    i++;
+                    if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DES ||
+                        Project.Type == ProjectType.DS1R)
+                    {
+                        if (i < pathElements.Length)
+                            bndpath = $@"{pathElements[i]}";
+                        else
+                            bndpath = "";
+
+                        if (Project.Type == ProjectType.DS1R)
+                            return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmbnd.dcx");
+
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmbnd");
+                    }
+
+                    if (Project.Type == ProjectType.DS3)
+                    {
+                        bndpath = "";
+                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
+                    }
+
+                    bndpath = "";
+                    return null;
+                }
+            }
+        }
+        else if (pathElements[i].Equals("chr"))
+        {
+            i++;
+            var chrid = pathElements[i];
+            i++;
+            if (pathElements[i].Equals("model"))
+            {
+                bndpath = "";
+                if (Project.Type == ProjectType.DS1)
+                    return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
+
+                if (Project.Type == ProjectType.DS2S)
+                    return LocatorUtils.GetOverridenFilePath($@"model\chr\{chrid}.bnd");
+
+                if (Project.Type == ProjectType.DES)
+                    return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}\{chrid}.chrbnd.dcx");
+
+                return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd.dcx");
+            }
+
+            if (pathElements[i].Equals("tex"))
+            {
+                bndpath = "";
+                return TextureAssetLocator.GetChrTexturePath(chrid);
+            }
+        }
+        else if (pathElements[i].Equals("obj"))
+        {
+            i++;
+            var objid = pathElements[i];
+            i++;
+            if (pathElements[i].Equals("model") || pathElements[i].Equals("tex"))
+            {
+                bndpath = "";
+                if (Project.Type == ProjectType.DS1)
+                    return LocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd");
+
+                if (Project.Type == ProjectType.DS2S)
+                    return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}.bnd");
+
+                if (Project.Type == ProjectType.ER)
+                {
+                    // Derive subfolder path from model name (all vanilla AEG are within subfolders)
+                    if (objid.Length >= 6)
+                        return LocatorUtils.GetOverridenFilePath($@"asset\aeg\{objid.Substring(0, 6)}\{objid}.geombnd.dcx");
+
+                    return null;
+                }
+
+                if (Project.Type == ProjectType.AC6)
+                {
+                    if (objid.Length >= 6)
+                        return LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{objid}.geombnd.dcx");
+
+                    return null;
+                }
+
+                return LocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd.dcx");
+            }
+        }
+        else if (pathElements[i].Equals("parts"))
+        {
+            i++;
+            var partsId = pathElements[i];
+            i++;
+
+            if (pathElements[i].Equals("model") || pathElements[i].Equals("tex"))
+            {
+                bndpath = "";
+                if (Project.Type == ProjectType.DS1)
+                {
+                    return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd");
+                }
+                if (Project.Type == ProjectType.DS1R)
+                {
+                    return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+                }
+
+                if (Project.Type == ProjectType.DS2S)
+                {
+                    var partType = "";
+                    switch (partsId.Substring(0, 2))
+                    {
+                        case "as":
+                            partType = "accessories";
+                            break;
+                        case "am":
+                            partType = "arm";
+                            break;
+                        case "bd":
+                            partType = "body";
+                            break;
+                        case "fa":
+                        case "fc":
+                        case "fg":
+                            partType = "face";
+                            break;
+                        case "hd":
+                            partType = "head";
+                            break;
+                        case "leg":
+                            partType = "leg";
+                            break;
+                        case "sd":
+                            partType = "shield";
+                            break;
+                        case "wp":
+                            partType = "weapon";
+                            break;
+                    }
+
+                    return LocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{partsId}.bnd");
+                }
+
+                if (Project.Type == ProjectType.AC6 && pathElements[i].Equals("tex"))
+                {
+                    string path;
+                    if (partsId.Substring(0, 2) == "wp")
+                    {
+                        string id;
+                        if (partsId.EndsWith("_l"))
+                        {
+                            id = partsId[..^2].Split("_").Last();
+                            path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}_l.tpf.dcx");
+                        }
+                        else
+                        {
+                            id = partsId.Split("_").Last();
+                            path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}.tpf.dcx");
+                        }
+                    }
+                    else
+                        path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}_u.tpf.dcx");
+
+                    return path;
+                }
+
+                return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            }
+        }
+
+        bndpath = virtualPath;
+        return null;
+    }
 }

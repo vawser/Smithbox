@@ -518,9 +518,6 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 break;
             case ModelEditorModelType.Parts:
                 asset = ModelAssetLocator.GetPartsModel(modelid);
-                TaskLogs.AddLog($"Part: {asset.AssetName}");
-                TaskLogs.AddLog($"Part: {asset.AssetVirtualPath}");
-                TaskLogs.AddLog($"Part: {asset.AssetArchiveVirtualPath}");
                 assettex = TextureAssetLocator.GetPartTextures(modelid);
                 break;
             case ModelEditorModelType.MapPiece:

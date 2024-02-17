@@ -190,51 +190,21 @@ public class SettingsWindow
         }
     }
 
-    private void DisplaySettings_MapEditor()
+    private void DisplaySettings_Viewport()
     {
-        if (ImGui.BeginTabItem("Map Editor"))
+        if (ImGui.BeginTabItem("Viewport"))
         {
             // General
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Enable model texturing", ref CFG.Current.Viewport_Enable_Texturing);
+                ImguiUtils.ShowHelpMarker("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
+
                 ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.Viewport_Frustum_Culling);
-                ImguiUtils.ShowHelpMarker("Enabling this option will cause entities outside of the camera frustrum to be culled.\n\nDisable this if working with the grid.");
+                ImguiUtils.ShowHelpMarker("Enabling this option will cause entities outside of the camera frustrum to be culled.");
 
                 ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
                 ImguiUtils.ShowHelpMarker("Enabling this option will cause a selection outline to appear on selected objects.");
-
-                ImGui.Checkbox("Enable texturing", ref CFG.Current.Viewport_Enable_Texturing);
-                ImguiUtils.ShowHelpMarker("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
-
-                ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
-                ImguiUtils.ShowHelpMarker("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
-
-                if (ProjSettings != null)
-                    if (ProjSettings.GameType is ProjectType.ER)
-                    {
-                        ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
-                        ImguiUtils.ShowHelpMarker("");
-                    }
-            }
-
-            // Property View
-            if (ImGui.CollapsingHeader("Property View"))
-            {
-                ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
-                ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
-
-                ImGui.Checkbox("Display community descriptions", ref CFG.Current.MapEditor_Enable_Commmunity_Hints);
-                ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced descriptions.");
-
-                ImGui.Checkbox("Display property info", ref CFG.Current.MapEditor_Enable_Property_Info);
-                ImguiUtils.ShowHelpMarker("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
-            }
-
-            // Scene View
-            if (ImGui.CollapsingHeader("Scene View"))
-            {
-                ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_Show_Character_Names_in_Scene_Tree);
-                ImguiUtils.ShowHelpMarker("Characters names will be displayed within the scene view list.");
             }
 
             if (ImGui.CollapsingHeader("Camera"))
@@ -326,7 +296,7 @@ public class SettingsWindow
                     CFG.Current.Viewport_RegenerateMapGrid = true;
 
                 ImGui.Checkbox("Enable viewport grid", ref CFG.Current.Viewport_EnableGrid);
-                ImguiUtils.ShowHelpMarker("Enable the viewport grid when in the Map Editor.");
+                ImguiUtils.ShowHelpMarker("Enable the viewport grid.");
 
                 ImGui.SliderInt("Grid size", ref CFG.Current.Viewport_Grid_Size, 100, 1000);
                 ImguiUtils.ShowHelpMarker("The overall maximum size of the grid.\nThe grid will only update upon restarting DSMS after changing this value.");
@@ -470,6 +440,49 @@ public class SettingsWindow
 
                 ImGui.ColorEdit3("Gizmo - Z Axis - base color", ref CFG.Current.GFX_Gizmo_Z_BaseColor);
                 ImGui.ColorEdit3("Gizmo - Z Axis - highlight color", ref CFG.Current.GFX_Gizmo_Z_HighlightColor);
+            }
+
+            ImGui.Unindent();
+            ImGui.EndTabItem();
+        }
+    }
+
+    private void DisplaySettings_MapEditor()
+    {
+        if (ImGui.BeginTabItem("Map Editor"))
+        {
+            // General
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
+                ImguiUtils.ShowHelpMarker("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
+
+                if (ProjSettings != null)
+                    if (ProjSettings.GameType is ProjectType.ER)
+                    {
+                        ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
+                        ImguiUtils.ShowHelpMarker("");
+                    }
+            }
+
+            // Property View
+            if (ImGui.CollapsingHeader("Property View"))
+            {
+                ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
+                ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
+
+                ImGui.Checkbox("Display community descriptions", ref CFG.Current.MapEditor_Enable_Commmunity_Hints);
+                ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced descriptions.");
+
+                ImGui.Checkbox("Display property info", ref CFG.Current.MapEditor_Enable_Property_Info);
+                ImguiUtils.ShowHelpMarker("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
+            }
+
+            // Scene View
+            if (ImGui.CollapsingHeader("Scene View"))
+            {
+                ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_Show_Character_Names_in_Scene_Tree);
+                ImguiUtils.ShowHelpMarker("Characters names will be displayed within the scene view list.");
             }
 
             // Map Object Display Presets
@@ -657,12 +670,21 @@ public class SettingsWindow
         }
     }
 
-    private void DisplaySettings_TimeActEditor()
+    private void DisplaySettings_ModelEditor()
     {
-        if (ImGui.BeginTabItem("Time Act Editor"))
+        if (ImGui.BeginTabItem("Model Editor"))
         {
-            // General
-            
+            // Property View
+            if (ImGui.CollapsingHeader("Property View"))
+            {
+
+            }
+
+            // Scene View
+            if (ImGui.CollapsingHeader("Scene View"))
+            {
+
+            }
 
             ImGui.EndTabItem();
         }
@@ -689,7 +711,9 @@ public class SettingsWindow
 
             // Settings Order
             DisplaySettings_System();
+            DisplaySettings_Viewport();
             DisplaySettings_MapEditor();
+            //DisplaySettings_ModelEditor();
             DisplaySettings_ParamEditor();
             DisplaySettings_TextEditor();
 
