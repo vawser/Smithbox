@@ -20,6 +20,7 @@ using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
+using System.Linq;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -28,10 +29,10 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 {
     private ModelAssetBrowser _assetBrowser;
 
-    private readonly MapPropertyEditor _propEditor;
-    private readonly MapPropertyCache _propCache = new();
+    private readonly ModelPropertyEditor _propEditor;
+    private readonly ModelPropertyCache _propCache = new();
 
-    private readonly MapSceneTree _sceneTree;
+    private readonly ModelSceneTree _sceneTree;
     private readonly MapSelection _selection = new();
 
     private readonly Universe _universe;
@@ -71,8 +72,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
         _universe = new Universe(RenderScene, _selection);
 
-        _sceneTree = new MapSceneTree(MapSceneTree.Configuration.ModelEditor, this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
-        _propEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport, null);
+        _sceneTree = new ModelSceneTree(this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
+        _propEditor = new ModelPropertyEditor(EditorActionManager, _propCache, Viewport, null);
         _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser");
     }
 
@@ -166,6 +167,23 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
 
     public void DrawEditorMenu()
     {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Dummy Polygons", "", CFG.Current.Model_ViewDummyPolys, true))
+            {
+                CFG.Current.Model_ViewDummyPolys = !CFG.Current.Model_ViewDummyPolys;
+
+                // Add purge/load of dummy poly renderables for current model on change
+            }
+            if (ImGui.MenuItem("Bones", "", CFG.Current.Model_ViewBones, true))
+            {
+                CFG.Current.Model_ViewBones = !CFG.Current.Model_ViewBones;
+
+                // Add purge/load of bone renderables for current model on change
+            }
+
+            ImGui.EndMenu();
+        }
     }
 
     public void OnGUI(string[] commands)
@@ -329,11 +347,20 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
         {
             byte[] fileBytes = null;
 
+            var fileExt = ".flver";
+            if(Project.Type == ProjectType.DS2S)
+            {
+                fileExt = ".flv";
+            }
+            string fileName = $"{id}{fileExt}";
+
             using (IBinder binder = BND4.Read(DCX.Decompress(modPath)))
             {
                 foreach (var file in binder.Files)
                 {
-                    if (file.Name == $"{id}{ext}")
+                    var curFileName = $"{Path.GetFileName(file.Name)}";
+
+                    if (curFileName == fileName)
                     {
                         try
                         {

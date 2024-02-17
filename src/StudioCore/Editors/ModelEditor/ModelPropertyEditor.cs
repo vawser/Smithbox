@@ -5,9 +5,8 @@ using SoulsFormats;
 using StudioCore.Banks;
 using StudioCore.Banks.InfoBank;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Gui;
-using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -16,15 +15,18 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 using Veldrid.Utilities;
+using static StudioCore.Editors.MapEditor.MapPropertyEditor;
 
-namespace StudioCore.Editors.MapEditor;
+namespace StudioCore.Editors.ModelEditor;
 
-public class MapPropertyEditor
+public class ModelPropertyEditor
 {
     private readonly string[] _lightTypes = { "Spot", "Directional", "Point" };
 
-    private readonly MapPropertyCache _propCache;
+    private readonly ModelPropertyCache _propCache;
 
     private readonly string[] _regionShapes =
     {
@@ -42,7 +44,7 @@ public class MapPropertyEditor
 
     private MapEditorToolbar _msbToolbar;
 
-    public MapPropertyEditor(EntityActionManager manager, MapPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
+    public ModelPropertyEditor(EntityActionManager manager, ModelPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
     {
         ContextActionManager = manager;
         _propCache = propCache;
@@ -278,22 +280,6 @@ public class MapPropertyEditor
                     }
                 }
             }
-
-            /*
-            // TODO: Set Next Unique Value
-            // (needs prop search to scan through structs)
-            if (obj != null && ImGui.BeginPopupContextItem(propname))
-            {
-                if (ImGui.Selectable("Set Next Unique Value"))
-                {
-                    newval = obj.Container.GetNextUnique(propname, val);
-                    _forceCommit = true;
-                    ImGui.EndPopup();
-                    edited = true;
-                }
-                ImGui.EndPopup();
-            }
-            */
         }
         else if (typ == typeof(bool))
         {
@@ -429,9 +415,7 @@ public class MapPropertyEditor
             else
             {
                 // SoulsFormats does not define if alpha should be exposed. Expose alpha by default.
-                TaskLogs.AddLog(
-                    $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default",
-                    LogLevel.Warning, TaskLogs.LogPriority.Low);
+                // TaskLogs.AddLog( $"Color property in \"{prop.DeclaringType}\" does not declare if it supports Alpha. Alpha will be exposed by default", LogLevel.Warning, TaskLogs.LogPriority.Low);
 
                 var color = (Color)oldval;
                 Vector4 val = new(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
@@ -488,14 +472,14 @@ public class MapPropertyEditor
         }
         else
         {
-            PropertiesChangedAction action;
+            MapEditor.PropertiesChangedAction action;
             if (arrayindex != -1)
             {
-                action = new PropertiesChangedAction((PropertyInfo)prop, arrayindex, obj, newval);
+                action = new MapEditor.PropertiesChangedAction((PropertyInfo)prop, arrayindex, obj, newval);
             }
             else
             {
-                action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
+                action = new MapEditor.PropertiesChangedAction((PropertyInfo)prop, obj, newval);
             }
 
             ContextActionManager.ExecuteAction(action);
@@ -517,7 +501,7 @@ public class MapPropertyEditor
         // Undo and redo the last action with a rendering update
         if (_lastUncommittedAction != null && ContextActionManager.PeekUndoAction() == _lastUncommittedAction)
         {
-            if (_lastUncommittedAction is PropertiesChangedAction a)
+            if (_lastUncommittedAction is MapEditor.PropertiesChangedAction a)
             {
                 // Kinda a hack to prevent a jumping glitch
                 a.SetPostExecutionAction(null);
@@ -712,7 +696,7 @@ public class MapPropertyEditor
         ImGui.SameLine();
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
-            ImGui.OpenPopup("MsbPropContextMenu");
+            ImGui.OpenPopup("ModelPropContextMenu");
         }
     }
 
@@ -723,10 +707,10 @@ public class MapPropertyEditor
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
-            ImGui.OpenPopup("MsbPropContextMenu");
+            ImGui.OpenPopup("ModelPropContextMenu");
         }
 
-        if (ImGui.BeginPopup("MsbPropContextMenu"))
+        if (ImGui.BeginPopup("ModelPropContextMenu"))
         {
             // Info
             if (CFG.Current.MapEditor_Enable_Property_Info)
@@ -735,62 +719,14 @@ public class MapPropertyEditor
                 ImGui.Separator();
             }
 
-            // Actions
-            if (ImGui.Selectable(@"Search##PropSearch"))
-            {
-                RequestedSearchProperty = prop;
-                EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
-            }
-
-            // Position - Copy/Paste
-            var posAtt = prop.GetCustomAttribute<PositionProperty>();
-            if (posAtt != null)
-            {
-                if (ImGui.Selectable(@"Copy##CopyPosition"))
-                {
-                    _msbToolbar.CopyCurrentPosition(prop, obj);
-                }
-                if (ImGui.Selectable(@"Paste##PastePosition"))
-                {
-                    _msbToolbar.PasteSavedPosition();
-                }
-            }
-
-            // Rotation - Copy/Paste
-            var rotAtt = prop.GetCustomAttribute<RotationProperty>();
-            if (rotAtt != null)
-            {
-                if (ImGui.Selectable(@"Copy##CopyRotation"))
-                {
-                    _msbToolbar.CopyCurrentRotation(prop, obj);
-                }
-                if (ImGui.Selectable(@"Paste##PasteRotation"))
-                {
-                    _msbToolbar.PasteSavedRotation();
-                }
-            }
-
-            // Scale - Copy/Paste
-            var scaleAtt = prop.GetCustomAttribute<ScaleProperty>();
-            if (scaleAtt != null)
-            {
-                if (ImGui.Selectable(@"Copy##CopyScale"))
-                {
-                    _msbToolbar.CopyCurrentScale(prop, obj);
-                }
-                if (ImGui.Selectable(@"Paste##PasteScale"))
-                {
-                    _msbToolbar.PasteSavedScale();
-                }
-            }
-
             ImGui.EndPopup();
         }
     }
 
     private bool ParamRefRow(PropertyInfo propinfo, object val, ref object newObj)
     {
-        List<MSBParamReference> attributes = propinfo.GetCustomAttributes<MSBParamReference>().ToList();
+        /*
+        List<ParamReference> attributes = propinfo.GetCustomAttributes<MSBParamReference>().ToList();
         if (attributes.Any())
         {
             List<ParamRef> refs = new();
@@ -817,6 +753,7 @@ public class MapPropertyEditor
                 return opened;
             }
         }
+        */
 
         return false;
     }
@@ -1053,7 +990,7 @@ public class MapPropertyEditor
                                     throw new Exception("Invalid shape");
                             }
 
-                            PropertiesChangedAction action = new(prop, obj, newshape);
+                            MapEditor.PropertiesChangedAction action = new(prop, obj, newshape);
                             action.SetPostExecutionAction(undo =>
                             {
                                 var selected = false;
@@ -1107,7 +1044,7 @@ public class MapPropertyEditor
                                 throw new Exception("Invalid BTL LightType");
                         }
 
-                        PropertiesChangedAction action = new(prop, obj, newLight);
+                        MapEditor.PropertiesChangedAction action = new(prop, obj, newLight);
                         action.SetPostExecutionAction(undo =>
                         {
                             var selected = false;
@@ -1314,6 +1251,8 @@ public class MapPropertyEditor
     {
         Type type = classType;
         string name = prop.Name;
+
+        /*
         var attribute = prop?.GetCustomAttribute<FormatReference>();
 
         if (CFG.Current.MapEditor_Enable_Commmunity_Names)
@@ -1357,12 +1296,14 @@ public class MapPropertyEditor
                 }
             }
         }
+        */
 
         return name;
     }
 
     public void ShowFieldHint(Type classType, PropertyInfo prop, MapSelection sel)
     {
+        /*
         var attribute = prop?.GetCustomAttribute<FormatReference>();
 
         if (CFG.Current.MapEditor_Enable_Commmunity_Hints)
@@ -1413,6 +1354,7 @@ public class MapPropertyEditor
 
             ImguiUtils.ShowHelpMarker(desc);
         }
+        */
     }
 
     public void OnGui(MapSelection selection, string id, float w, float h)
@@ -1488,23 +1430,5 @@ public class MapPropertyEditor
         ImGui.EndChild();
         ImGui.End();
         ImGui.PopStyleColor();
-    }
-
-    internal enum RegionShape
-    {
-        Point,
-        Sphere,
-        Cylinder,
-        Box,
-        Composite,
-        Rectangle,
-        Circle
-    }
-
-    internal enum LightType
-    {
-        Spot,
-        Directional,
-        Point
     }
 }

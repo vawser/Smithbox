@@ -153,7 +153,10 @@ public class MapObjectContainer
         {
             var bonenode =
                 new TransformableNamedEntity(this, flver.Bones[i], flver.Bones[i].Name);
-            bonenode.RenderSceneMesh = Universe.GetBoneDrawable(this, bonenode);
+
+            if (CFG.Current.Model_ViewBones)
+                bonenode.RenderSceneMesh = Universe.GetBoneDrawable(this, bonenode);
+
             Objects.Add(bonenode);
             boneEntList.Add(bonenode);
         }
@@ -177,7 +180,10 @@ public class MapObjectContainer
         for (var i = 0; i < flver.Dummies.Count; i++)
         {
             var dmynode = new TransformableNamedEntity(this, flver.Dummies[i], $@"dmy_{i}");
-            dmynode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dmynode);
+
+            if(CFG.Current.Model_ViewDummyPolys)
+                dmynode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dmynode);
+
             Objects.Add(dmynode);
             dmysNode.AddChild(dmynode);
         }

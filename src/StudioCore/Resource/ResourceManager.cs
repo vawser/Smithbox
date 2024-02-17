@@ -542,7 +542,7 @@ public static class ResourceManager
             {
                 string o;
                 var path = LocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
-                TaskLogs.AddLog($"Load path: {path}");
+                //TaskLogs.AddLog($"Load path: {path}");
                 Binder = InstantiateBinderReaderForFile(path, Project.Type);
                 if (Binder == null)
                 {

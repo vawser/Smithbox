@@ -189,6 +189,8 @@ public class CFG
     //****************************
     // Settings: Model Editor
     //****************************
+    public bool Model_ViewDummyPolys = true;
+    public bool Model_ViewBones = true;
 
     //****************************
     // Settings: Param Editor
