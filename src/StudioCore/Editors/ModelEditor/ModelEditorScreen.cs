@@ -333,15 +333,11 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
             {
                 foreach (var file in binder.Files)
                 {
-                    TaskLogs.AddLog($"{file.Name} - {id}{ext}");
-
                     if (file.Name == $"{id}{ext}")
                     {
                         try
                         {
-                            TaskLogs.AddLog($"pre-Write: {file.Bytes}");
                             file.Bytes = flvResource.Flver.Write();
-                            TaskLogs.AddLog($"post-Write: {file.Bytes}");
                         }
                         catch (Exception ex)
                         {
@@ -373,14 +369,10 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, SceneTr
                 }
             }
 
-            _universe.UnloadAll(true);
-            _flverhandle.Unload();
-            _renderMesh.Dispose();
-            
             if (fileBytes != null)
             {
                 File.WriteAllBytes(modPath, fileBytes);
-                TaskLogs.AddLog($"Saved at: {modPath}");
+                TaskLogs.AddLog($"Saved model at: {modPath}");
             }
         }
     }

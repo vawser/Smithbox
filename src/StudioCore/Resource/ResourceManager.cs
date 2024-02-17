@@ -542,6 +542,7 @@ public static class ResourceManager
             {
                 string o;
                 var path = LocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
+                TaskLogs.AddLog($"Load path: {path}");
                 Binder = InstantiateBinderReaderForFile(path, Project.Type);
                 if (Binder == null)
                 {
@@ -549,71 +550,73 @@ public static class ResourceManager
                 }
             }
 
-            for (var i = 0; i < Binder.Files.Count(); i++)
+            using (Binder)
             {
-                BinderFileHeader f = Binder.Files[i];
-                if (BinderLoadMask != null && !BinderLoadMask.Contains(i))
+                for (var i = 0; i < Binder.Files.Count(); i++)
                 {
-                    continue;
-                }
-
-                var binderpath = f.Name;
-                var filevirtpath = LocatorUtils.GetBinderVirtualPath(BinderVirtualPath, binderpath);
-                if (AssetWhitelist != null && !AssetWhitelist.Contains(filevirtpath))
-                {
-                    continue;
-                }
-
-                IResourceLoadPipeline pipeline = null;
-                if (filevirtpath.ToUpper().EndsWith(".TPF") || filevirtpath.ToUpper().EndsWith(".TPF.DCX"))
-                {
-                    var virt = BinderVirtualPath;
-                    if (virt.StartsWith(@"map/tex"))
+                    BinderFileHeader f = Binder.Files[i];
+                    if (BinderLoadMask != null && !BinderLoadMask.Contains(i))
                     {
-                        Regex regex = new(@"\d{4}$");
-                        if (regex.IsMatch(virt))
+                        continue;
+                    }
+
+                    var binderpath = f.Name;
+                    var filevirtpath = LocatorUtils.GetBinderVirtualPath(BinderVirtualPath, binderpath);
+                    if (AssetWhitelist != null && !AssetWhitelist.Contains(filevirtpath))
+                    {
+                        continue;
+                    }
+
+                    IResourceLoadPipeline pipeline = null;
+                    if (filevirtpath.ToUpper().EndsWith(".TPF") || filevirtpath.ToUpper().EndsWith(".TPF.DCX"))
+                    {
+                        var virt = BinderVirtualPath;
+                        if (virt.StartsWith(@"map/tex"))
                         {
-                            virt = virt.Substring(0, virt.Length - 5);
+                            Regex regex = new(@"\d{4}$");
+                            if (regex.IsMatch(virt))
+                            {
+                                virt = virt.Substring(0, virt.Length - 5);
+                            }
+                            else if (virt.EndsWith("tex"))
+                            {
+                                virt = virt.Substring(0, virt.Length - 4);
+                            }
                         }
-                        else if (virt.EndsWith("tex"))
+
+                        PendingTPFs.Add(new Tuple<string, BinderFileHeader>(virt, f));
+                    }
+                    else
+                    {
+                        if (ResourceMask.HasFlag(ResourceType.Flver) &&
+                            (filevirtpath.ToUpper().EndsWith(".FLVER") ||
+                             filevirtpath.ToUpper().EndsWith(".FLV") ||
+                             filevirtpath.ToUpper().EndsWith(".FLV.DCX")))
                         {
-                            virt = virt.Substring(0, virt.Length - 4);
+                            //handle = new ResourceHandle<FlverResource>();
+                            pipeline = _job.FlverLoadPipeline;
                         }
-                    }
+                        else if (ResourceMask.HasFlag(ResourceType.CollisionHKX) &&
+                                 (filevirtpath.ToUpper().EndsWith(".HKX") ||
+                                  filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
+                        {
+                            pipeline = _job.HavokCollisionLoadPipeline;
+                        }
+                        else if (ResourceMask.HasFlag(ResourceType.Navmesh) && filevirtpath.ToUpper().EndsWith(".NVM"))
+                        {
+                            pipeline = _job.NVMNavmeshLoadPipeline;
+                        }
+                        else if (ResourceMask.HasFlag(ResourceType.NavmeshHKX) &&
+                                 (filevirtpath.ToUpper().EndsWith(".HKX") ||
+                                  filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
+                        {
+                            pipeline = _job.HavokNavmeshLoadPipeline;
+                        }
 
-                    PendingTPFs.Add(new Tuple<string, BinderFileHeader>(virt, f));
-                }
-                else
-                {
-                    if (ResourceMask.HasFlag(ResourceType.Flver) &&
-                        (filevirtpath.ToUpper().EndsWith(".FLVER") ||
-                         filevirtpath.ToUpper().EndsWith(".FLV") ||
-                         filevirtpath.ToUpper().EndsWith(".FLV.DCX")))
-                    {
-                        //handle = new ResourceHandle<FlverResource>();
-                        pipeline = _job.FlverLoadPipeline;
-                    }
-                    else if (ResourceMask.HasFlag(ResourceType.CollisionHKX) &&
-                             (filevirtpath.ToUpper().EndsWith(".HKX") ||
-                              filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
-                    {
-                        pipeline = _job.HavokCollisionLoadPipeline;
-                    }
-                    else if (ResourceMask.HasFlag(ResourceType.Navmesh) && filevirtpath.ToUpper().EndsWith(".NVM"))
-                    {
-                        pipeline = _job.NVMNavmeshLoadPipeline;
-                    }
-                    else if (ResourceMask.HasFlag(ResourceType.NavmeshHKX) &&
-                             (filevirtpath.ToUpper().EndsWith(".HKX") ||
-                              filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
-                    {
-                        pipeline = _job.HavokNavmeshLoadPipeline;
-                    }
-
-                    if (pipeline != null)
-                    {
-                        PendingResources.Add(
-                            new Tuple<IResourceLoadPipeline, string, BinderFileHeader>(pipeline, filevirtpath, f));
+                        if (pipeline != null)
+                        {
+                            PendingResources.Add(new Tuple<IResourceLoadPipeline, string, BinderFileHeader>(pipeline, filevirtpath, f));
+                        }
                     }
                 }
             }
