@@ -46,6 +46,8 @@ public class MapObjectContainer
 
     public bool HasUnsavedChanges { get; set; } = false;
 
+    public Dictionary<int, string> MaterialDictionary = new Dictionary<int, string>();
+
     public void AddObject(Entity obj)
     {
         Objects.Add(obj);
@@ -109,6 +111,9 @@ public class MapObjectContainer
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy)
     {
+        MaterialDictionary.Clear();
+
+        // Meshes
         var meshesNode = new NamedEntity(this, null, "Meshes");
         Objects.Add(meshesNode);
         RootObject.AddChild(meshesNode);
@@ -125,16 +130,25 @@ public class MapObjectContainer
             meshesNode.AddChild(meshnode);
         }
 
+        // Materials
         var materialsNode = new NamedEntity(this, null, "Materials");
         Objects.Add(materialsNode);
         RootObject.AddChild(materialsNode);
         for (var i = 0; i < flver.Materials.Count; i++)
         {
+            // Build MaterialDictionary here for use in Model Editor
+            var mat = flver.Materials[i];
+            if(!MaterialDictionary.ContainsKey(i))
+            {
+                MaterialDictionary.Add(i, mat.Name);
+            }
+
             var matnode = new Entity(this, flver.Materials[i]);
             Objects.Add(matnode);
             materialsNode.AddChild(matnode);
         }
 
+        // Layouts
         var layoutsNode = new NamedEntity(this, null, "Layouts");
         Objects.Add(layoutsNode);
         RootObject.AddChild(layoutsNode);
@@ -145,6 +159,7 @@ public class MapObjectContainer
             layoutsNode.AddChild(laynode);
         }
 
+        // Bones
         var bonesNode = new NamedEntity(this, null, "Bones");
         Objects.Add(bonesNode);
         RootObject.AddChild(bonesNode);
@@ -173,7 +188,7 @@ public class MapObjectContainer
             }
         }
 
-        // Add dummy polys attached to bones
+        // Dummy Polygons
         var dmysNode = new NamedEntity(this, null, "DummyPolys");
         Objects.Add(dmysNode);
         RootObject.AddChild(dmysNode);

@@ -22,6 +22,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using Microsoft.AspNetCore.Components.Forms;
+using Silk.NET.OpenGL;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -73,8 +74,9 @@ public class ModelSceneTree : IActionEventHandler
     private Dictionary<string, string> _objAliasCache;
     private Dictionary<string, string> _mapPieceAliasCache;
 
-    private ModelEditorScreen _editor;
+    public MapObjectContainer Model { get;  set; }
 
+    private ModelEditorScreen _editor;
 
     public ModelSceneTree(ModelEditorScreen editor, string id, Universe universe, ViewportSelection sel, ViewportActionManager aman, IViewport vp)
     {
@@ -90,193 +92,6 @@ public class ModelSceneTree : IActionEventHandler
         _mapPieceAliasCache = null;
     }
 
-    public void OnActionEvent(ActionEvent evt)
-    {
-
-    }
-    private unsafe void ModelSelectable(Entity e, bool visicon, bool hierarchial = false)
-    {
-        var scale = Smithbox.GetUIScale();
-
-        if (e.Name == null)
-            return;
-
-        // Main selectable
-        if (e is MsbEntity me)
-        {
-            ImGui.PushID(me.Type + e.Name);
-        }
-        else
-        {
-            ImGui.PushID(e.Name);
-        }
-
-        var doSelect = false;
-
-        if (_setNextFocus)
-        {
-            ImGui.SetItemDefaultFocus();
-            _setNextFocus = false;
-            doSelect = true;
-        }
-
-        var nodeopen = false;
-        var padding = hierarchial ? "   " : "    ";
-
-        if (hierarchial && e.Children.Count > 0)
-        {
-            ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
-
-            // Don't auto-open the Bone tree objects
-            if (e.WrappedObject is FLVER.Bone)
-            {
-                treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
-            }
-
-            if (_selection.GetSelection().Contains(e))
-            {
-                treeflags |= ImGuiTreeNodeFlags.Selected;
-            }
-
-            nodeopen = ImGui.TreeNodeEx(e.PrettyName, treeflags);
-            if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
-            {
-                if (e.RenderSceneMesh != null)
-                {
-                    _viewport.FrameBox(e.RenderSceneMesh.GetBounds());
-                }
-            }
-        }
-        else
-        {
-            _mapEnt_ImGuiID++;
-
-            string name = e.PrettyName;
-            string aliasedName = name;
-
-            if (CFG.Current.ModelEditor_DisplayDmyPolyReferenceID)
-            {
-                if (e.WrappedObject is FLVER.Dummy)
-                {
-                    var refId = e.GetPropertyValue<short>("ReferenceID");
-
-                    if (refId != -1)
-                    {
-                        aliasedName = $"{aliasedName} {{ ID {refId} }}";
-                    }
-                }
-            }
-
-            if (ImGui.Selectable(padding + aliasedName + "##" + _mapEnt_ImGuiID, _selection.GetSelection().Contains(e), ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap))
-            {
-                // If double clicked frame the selection in the viewport
-                if (ImGui.IsMouseDoubleClicked(0))
-                {
-                    if (e.RenderSceneMesh != null)
-                    {
-                        _viewport.FrameBox(e.RenderSceneMesh.GetBounds());
-                    }
-                }
-            }
-        }
-
-        if (ImGui.IsItemClicked(0))
-        {
-            _pendingClick = e;
-        }
-
-        if (_pendingClick == e && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
-        {
-            if (ImGui.IsItemHovered())
-            {
-                doSelect = true;
-            }
-
-            _pendingClick = null;
-        }
-
-        // Up/Down arrow mass selection
-        var arrowKeySelect = false;
-        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
-        {
-            doSelect = true;
-            arrowKeySelect = true;
-        }
-
-        if (hierarchial && doSelect)
-        {
-            if (nodeopen && !_treeOpenEntities.Contains(e) ||
-                !nodeopen && _treeOpenEntities.Contains(e))
-            {
-                doSelect = false;
-            }
-
-            if (nodeopen && !_treeOpenEntities.Contains(e))
-            {
-                _treeOpenEntities.Add(e);
-            }
-            else if (!nodeopen && _treeOpenEntities.Contains(e))
-            {
-                _treeOpenEntities.Remove(e);
-            }
-        }
-
-        if (_selection.ShouldGoto(e))
-        {
-            // By default, this places the item at 50% in the frame. Use 0 to place it on top.
-            ImGui.SetScrollHereY();
-            _selection.ClearGotoTarget();
-        }
-
-        if (ImGui.BeginPopupContextItem())
-        {
-            _editor.OnEntityContextMenu(e);
-            ImGui.EndPopup();
-        }
-
-        // Visibility icon
-        if (visicon)
-        {
-            ImGui.SetItemAllowOverlap();
-            var visible = e.EditorVisible;
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
-            ImGui.PushStyleColor(ImGuiCol.Text, visible
-                ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
-                : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(visible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
-            ImGui.PopStyleColor();
-            if (ImGui.IsItemClicked(0))
-            {
-                e.EditorVisible = !e.EditorVisible;
-                doSelect = false;
-            }
-        }
-
-        // If the visibility icon wasn't clicked, perform the selection
-        Utils.EntitySelectionHandler(_selection, e, doSelect, arrowKeySelect);
-
-        // If there's children then draw them
-        if (nodeopen)
-        {
-            HierarchyView(e);
-            ImGui.TreePop();
-        }
-
-        ImGui.PopID();
-    }
-
-    private void HierarchyView(Entity entity)
-    {
-        foreach (Entity obj in entity.Children)
-        {
-            if (obj is Entity e)
-            {
-                ModelSelectable(e, true, true);
-            }
-        }
-    }
-
     public void OnGui()
     {
         var scale = Smithbox.GetUIScale();
@@ -284,9 +99,15 @@ public class ModelSceneTree : IActionEventHandler
         ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0.145f, 0.145f, 0.149f, 1.0f));
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 2.0f) * scale);
 
-        var titleString = $@"Model Hierarchy##{_id}";
+        DisplaySceneTree();
+    }
 
-        if (ImGui.Begin(titleString))
+    public void DisplaySceneTree()
+    {
+        var scale = Smithbox.GetUIScale();
+
+        // Scene Tree
+        if (ImGui.Begin($@"Model Hierarchy##{_id}"))
         {
             ImGui.PopStyleVar();
 
@@ -299,17 +120,16 @@ public class ModelSceneTree : IActionEventHandler
                 return;
             }
 
+            // Tree List
             ImGui.BeginChild("listtree");
-            
+
             IOrderedEnumerable<KeyValuePair<string, MapObjectContainer>> fakeMaps =
                 _universe.LoadedObjectContainers.OrderBy(k => k.Key);
 
             _mapEnt_ImGuiID = 0;
 
-            // This is actually the model itself
             foreach (KeyValuePair<string, MapObjectContainer> lm in fakeMaps)
             {
-                var metaName = "";
                 MapObjectContainer map = lm.Value;
                 var assetName = lm.Key;
 
@@ -318,56 +138,14 @@ public class ModelSceneTree : IActionEventHandler
                     continue;
                 }
 
-                if (ModelAliasBank.Bank != null)
-                {
-                    var list = ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
-                    foreach(var entry in list)
-                    {
-                        if(entry.id == assetName)
-                        {
-                            metaName = entry.name;
-                        }
-                    }
-                    list = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
-                    foreach (var entry in list)
-                    {
-                        if (entry.id == assetName)
-                        {
-                            metaName = entry.name;
-                        }
-                    }
-                    list = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
-                    foreach (var entry in list)
-                    {
-                        if (entry.id == assetName)
-                        {
-                            metaName = entry.name;
-                        }
-                    }
-                    list = ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces");
-                    foreach (var entry in list)
-                    {
-                        if (entry.id == assetName)
-                        {
-                            metaName = entry.name;
-                        }
-                    }
-                }
-
-                // Map name search filter
-                if (_mapNameSearchStr != ""
-                    && (!CFG.Current.MapEditor_Always_List_Loaded_Maps || map == null)
-                    && !lm.Key.Contains(_mapNameSearchStr, StringComparison.CurrentCultureIgnoreCase)
-                    && !metaName.Contains(_mapNameSearchStr, StringComparison.CurrentCultureIgnoreCase))
-                {
-                    continue;
-                }
+                Model = map;
 
                 Entity mapRoot = map?.RootObject;
                 MapObjectContainerReference mapRef = new(assetName, _universe);
                 ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
                 ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
+
                 var selected = _selection.GetSelection().Contains(mapRoot) ||
                                _selection.GetSelection().Contains(mapRef);
                 if (selected)
@@ -377,7 +155,10 @@ public class ModelSceneTree : IActionEventHandler
 
                 var nodeopen = false;
                 var unsaved = map != null && map.HasUnsavedChanges ? "*" : "";
+
+                // Model ID and Name
                 ImGui.BeginGroup();
+
                 if (map != null)
                 {
                     nodeopen = ImGui.TreeNodeEx($@"{ForkAwesome.Cube} {assetName}", treeflags,
@@ -388,6 +169,7 @@ public class ModelSceneTree : IActionEventHandler
                     ImGui.Selectable($@"   {ForkAwesome.Cube} {assetName}", selected);
                 }
 
+                var metaName = GetMetaName(assetName);
                 if (metaName != "")
                 {
                     ImGui.SameLine();
@@ -405,6 +187,7 @@ public class ModelSceneTree : IActionEventHandler
                 }
 
                 ImGui.EndGroup();
+
                 if (_selection.ShouldGoto(mapRoot) || _selection.ShouldGoto(mapRef))
                 {
                     ImGui.SetScrollHereY();
@@ -482,26 +265,6 @@ public class ModelSceneTree : IActionEventHandler
             }
 
             ImGui.EndChild();
-
-            if (_dragDropSources.Count > 0)
-            {
-                if (_dragDropDestObjects.Count > 0)
-                {
-                    ChangeEntityHierarchyAction action = new(_universe, _dragDropSources, _dragDropDestObjects,
-                        _dragDropDests, false);
-                    _editorActionManager.ExecuteAction(action);
-                    _dragDropSources.Clear();
-                    _dragDropDests.Clear();
-                    _dragDropDestObjects.Clear();
-                }
-                else
-                {
-                    ReorderContainerObjectsAction action = new(_universe, _dragDropSources, _dragDropDests, false);
-                    _editorActionManager.ExecuteAction(action);
-                    _dragDropSources.Clear();
-                    _dragDropDests.Clear();
-                }
-            }
         }
         else
         {
@@ -511,5 +274,263 @@ public class ModelSceneTree : IActionEventHandler
         ImGui.End();
         ImGui.PopStyleColor();
         _selection.ClearGotoTarget();
+    }
+
+    private void HierarchyView(Entity rootObject)
+    {
+        foreach (Entity obj in rootObject.Children)
+        {
+            if (obj is Entity e)
+            {
+                ModelSelectable(e, true);
+            }
+        }
+    }
+
+    public bool TreeSelectable(Entity e)
+    {
+        var nodeopen = false;
+
+        ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
+
+        // Don't auto-open these objects
+        if (e is NamedEntity && e.Name == "Bones" || e.WrappedObject is FLVER.Bone)
+        {
+            treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+        }
+
+        // Show selected tree row
+        if (_selection.GetSelection().Contains(e))
+        {
+            treeflags |= ImGuiTreeNodeFlags.Selected;
+        }
+
+        // Tree top
+        nodeopen = ImGui.TreeNodeEx(e.PrettyName, treeflags);
+
+        if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(0))
+        {
+            // Frame model if double-clicked
+            if (e.RenderSceneMesh != null)
+            {
+                _viewport.FrameBox(e.RenderSceneMesh.GetBounds());
+            }
+        }
+
+        return nodeopen;
+    }
+    
+    public void RowSelectable(Entity e)
+    {
+        string name = e.PrettyName;
+        string aliasedName = name;
+
+        if (Model != null)
+        {
+            if (CFG.Current.ModelEditor_DisplayDmyPolyReferenceID)
+            {
+                if (e.WrappedObject is FLVER.Dummy)
+                {
+                    var refId = e.GetPropertyValue<short>("ReferenceID");
+
+                    if (refId != -1)
+                    {
+                        aliasedName = $"{aliasedName} {{ ID {refId} }}";
+                    }
+                }
+            }
+
+            if (CFG.Current.ModelEditor_DisplayMatNameOnMesh)
+            {
+                if (e.WrappedObject is FLVER2.Mesh)
+                {
+                    var mesh = e.WrappedObject as FLVER2.Mesh;
+
+                    if (mesh.MaterialIndex != -1)
+                    {
+                        if (Model.MaterialDictionary.ContainsKey(mesh.MaterialIndex))
+                        {
+                            aliasedName = $"{aliasedName} {{ {Model.MaterialDictionary[mesh.MaterialIndex]} }}";
+                        }
+                    }
+                }
+            }
+        }
+
+        if (ImGui.Selectable("   " + aliasedName + "##" + _mapEnt_ImGuiID, _selection.GetSelection().Contains(e), ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowItemOverlap))
+        {
+            // If double clicked frame the selection in the viewport
+            if (ImGui.IsMouseDoubleClicked(0))
+            {
+                if (e.RenderSceneMesh != null)
+                {
+                    _viewport.FrameBox(e.RenderSceneMesh.GetBounds());
+                }
+            }
+        }
+    }
+
+    private unsafe void ModelSelectable(Entity e, bool visicon)
+    {
+        if (e.Name == null)
+            return;
+
+        ImGui.PushID(e.Name);
+
+        var doSelect = false;
+
+        if (_setNextFocus)
+        {
+            ImGui.SetItemDefaultFocus();
+            _setNextFocus = false;
+            doSelect = true;
+        }
+
+        var nodeopen = false;
+
+        // Tree List class top
+        if (e.Children.Count > 0)
+        {
+            nodeopen = TreeSelectable(e);
+        }
+        // Entries
+        else
+        {
+            _mapEnt_ImGuiID++;
+
+            RowSelectable(e);
+        }
+
+        if (ImGui.IsItemClicked(0))
+        {
+            _pendingClick = e;
+        }
+
+        if (_pendingClick == e && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
+        {
+            if (ImGui.IsItemHovered())
+            {
+                doSelect = true;
+            }
+
+            _pendingClick = null;
+        }
+
+        // Up/Down arrow mass selection
+        var arrowKeySelect = false;
+        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
+        {
+            doSelect = true;
+            arrowKeySelect = true;
+        }
+
+        if (doSelect)
+        {
+            if (nodeopen && !_treeOpenEntities.Contains(e) ||
+                !nodeopen && _treeOpenEntities.Contains(e))
+            {
+                doSelect = false;
+            }
+
+            if (nodeopen && !_treeOpenEntities.Contains(e))
+            {
+                _treeOpenEntities.Add(e);
+            }
+            else if (!nodeopen && _treeOpenEntities.Contains(e))
+            {
+                _treeOpenEntities.Remove(e);
+            }
+        }
+
+        if (_selection.ShouldGoto(e))
+        {
+            // By default, this places the item at 50% in the frame. Use 0 to place it on top.
+            ImGui.SetScrollHereY();
+            _selection.ClearGotoTarget();
+        }
+
+        if (ImGui.BeginPopupContextItem())
+        {
+            _editor.OnEntityContextMenu(e);
+            ImGui.EndPopup();
+        }
+
+        // Visibility icon
+        if (visicon)
+        {
+            ImGui.SetItemAllowOverlap();
+            var visible = e.EditorVisible;
+            ImGui.SameLine();
+            ImGui.SetCursorPosX(ImGui.GetWindowContentRegionMax().X - 18.0f * Smithbox.GetUIScale());
+            ImGui.PushStyleColor(ImGuiCol.Text, visible
+                ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
+                : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
+            ImGui.TextWrapped(visible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+            ImGui.PopStyleColor();
+            if (ImGui.IsItemClicked(0))
+            {
+                e.EditorVisible = !e.EditorVisible;
+                doSelect = false;
+            }
+        }
+
+        // If the visibility icon wasn't clicked, perform the selection
+        Utils.EntitySelectionHandler(_selection, e, doSelect, arrowKeySelect);
+
+        // If there's children then draw them
+        if (nodeopen)
+        {
+            HierarchyView(e);
+            ImGui.TreePop();
+        }
+
+        ImGui.PopID();
+    }
+
+    public string GetMetaName(string assetName)
+    {
+        var metaName = "";
+
+        if (ModelAliasBank.Bank != null)
+        {
+            var list = ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
+            foreach (var entry in list)
+            {
+                if (entry.id == assetName)
+                {
+                    metaName = entry.name;
+                }
+            }
+            list = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
+            foreach (var entry in list)
+            {
+                if (entry.id == assetName)
+                {
+                    metaName = entry.name;
+                }
+            }
+            list = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
+            foreach (var entry in list)
+            {
+                if (entry.id == assetName)
+                {
+                    metaName = entry.name;
+                }
+            }
+            list = ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces");
+            foreach (var entry in list)
+            {
+                if (entry.id == assetName)
+                {
+                    metaName = entry.name;
+                }
+            }
+        }
+
+        return metaName;
+    }
+    public void OnActionEvent(ActionEvent evt)
+    {
+
     }
 }

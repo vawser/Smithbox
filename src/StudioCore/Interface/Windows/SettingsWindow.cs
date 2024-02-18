@@ -693,7 +693,7 @@ public class SettingsWindow
         if (ImGui.BeginTabItem("Model Editor"))
         {
             // Property View
-            if (ImGui.CollapsingHeader("Property View"))
+            if (ImGui.CollapsingHeader("Property View", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Display community names", ref CFG.Current.ModelEditor_Enable_Commmunity_Names);
                 ImguiUtils.ShowHelpMarker("The FLVER property fields will be given crowd-sourced names instead of the canonical name.");
@@ -704,8 +704,11 @@ public class SettingsWindow
             }
 
             // Scene View
-            if (ImGui.CollapsingHeader("Scene View"))
+            if (ImGui.CollapsingHeader("Scene View", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Display material names with meshes", ref CFG.Current.ModelEditor_DisplayMatNameOnMesh);
+                ImguiUtils.ShowHelpMarker("Display the material name that a mesh uses by the scene tree name.");
+
                 ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
                 ImguiUtils.ShowHelpMarker("Display the reference ID of a dummy polygon by the scene tree name.");
             }

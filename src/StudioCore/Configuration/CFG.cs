@@ -200,6 +200,7 @@ public class CFG
     public bool ModelEditor_Enable_Commmunity_Names = true;
     public bool ModelEditor_Enable_Commmunity_Hints = true;
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
+    public bool ModelEditor_DisplayMatNameOnMesh = true;
 
     //****************************
     // Settings: Param Editor
