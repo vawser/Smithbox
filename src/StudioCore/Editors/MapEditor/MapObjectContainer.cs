@@ -151,27 +151,30 @@ public class MapObjectContainer
         }
 
         // Matbin
-        var matbinsNode = new NamedEntity(this, null, "Matbin (Read-only)");
-        Objects.Add(matbinsNode);
-        RootObject.AddChild(matbinsNode);
-        for (var i = 0; i < flver.Materials.Count; i++)
+        if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
         {
-            var mat = flver.Materials[i];
-
-            // Only add nodes if the material uses matbin
-            if(mat.MTD.Contains("matxml"))
+            var matbinsNode = new NamedEntity(this, null, "Matbin (Read-only)");
+            Objects.Add(matbinsNode);
+            RootObject.AddChild(matbinsNode);
+            for (var i = 0; i < flver.Materials.Count; i++)
             {
-                var matname = Path.GetFileNameWithoutExtension(mat.MTD);
+                var mat = flver.Materials[i];
 
-                if (MaterialResourceBank.Matbins.ContainsKey(matname))
+                // Only add nodes if the material uses matbin
+                if (mat.MTD.Contains("matxml"))
                 {
-                    MATBIN matbin = MaterialResourceBank.Matbins[matname].Matbin;
+                    var matname = Path.GetFileNameWithoutExtension(mat.MTD);
 
-                    var name = Path.GetFileNameWithoutExtension(matbin.SourcePath);
+                    if (MaterialResourceBank.Matbins.ContainsKey(matname))
+                    {
+                        MATBIN matbin = MaterialResourceBank.Matbins[matname].Matbin;
 
-                    var matbinnode = new NamedEntity(this, matbin, $"{name}");
-                    Objects.Add(matbinnode);
-                    matbinsNode.AddChild(matbinnode);
+                        var name = Path.GetFileNameWithoutExtension(matbin.SourcePath);
+
+                        var matbinnode = new NamedEntity(this, matbin, $"{name}");
+                        Objects.Add(matbinnode);
+                        matbinsNode.AddChild(matbinnode);
+                    }
                 }
             }
         }
