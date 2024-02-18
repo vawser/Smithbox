@@ -15,7 +15,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
-using static SoulsFormats.FFXDLSE;
 using StudioCore.Settings;
 
 namespace StudioCore.Resource;
