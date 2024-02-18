@@ -1144,6 +1144,7 @@ public class Universe
         }
     }
 
+    // Used by the Model Editor only
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy, string name)
     {
         MapObjectContainer container = new(this, name);

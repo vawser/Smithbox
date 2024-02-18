@@ -11,6 +11,7 @@ using System.Linq;
 using System.Numerics;
 using System.Xml.Serialization;
 using StudioCore.MsbEditor;
+using StudioCore.Banks.ResourceBank;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -109,6 +110,7 @@ public class MapObjectContainer
         return value;
     }
 
+    // Used by the Model Editor only
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy)
     {
         MaterialDictionary.Clear();
@@ -136,8 +138,8 @@ public class MapObjectContainer
         RootObject.AddChild(materialsNode);
         for (var i = 0; i < flver.Materials.Count; i++)
         {
-            // Build MaterialDictionary here for use in Model Editor
             var mat = flver.Materials[i];
+
             if(!MaterialDictionary.ContainsKey(i))
             {
                 MaterialDictionary.Add(i, mat.Name);
@@ -146,6 +148,32 @@ public class MapObjectContainer
             var matnode = new Entity(this, flver.Materials[i]);
             Objects.Add(matnode);
             materialsNode.AddChild(matnode);
+        }
+
+        // Matbin
+        var matbinsNode = new NamedEntity(this, null, "Matbin (Read-only)");
+        Objects.Add(matbinsNode);
+        RootObject.AddChild(matbinsNode);
+        for (var i = 0; i < flver.Materials.Count; i++)
+        {
+            var mat = flver.Materials[i];
+
+            // Only add nodes if the material uses matbin
+            if(mat.MTD.Contains("matxml"))
+            {
+                var matname = Path.GetFileNameWithoutExtension(mat.MTD);
+
+                if (MaterialResourceBank.Matbins.ContainsKey(matname))
+                {
+                    MATBIN matbin = MaterialResourceBank.Matbins[matname].Matbin;
+
+                    var name = Path.GetFileNameWithoutExtension(matbin.SourcePath);
+
+                    var matbinnode = new NamedEntity(this, matbin, $"{name}");
+                    Objects.Add(matbinnode);
+                    matbinsNode.AddChild(matbinnode);
+                }
+            }
         }
 
         // Layouts

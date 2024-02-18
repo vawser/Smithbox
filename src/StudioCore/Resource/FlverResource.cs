@@ -227,7 +227,7 @@ public class FlverResource : IResource, IDisposable
 
             if (MaterialResourceBank.Mtds.ContainsKey(mtdstring))
             {
-                MTD.Texture? tex = MaterialResourceBank.Mtds[mtdstring].Textures.Find(x => x.Type == type);
+                MTD.Texture? tex = MaterialResourceBank.Mtds[mtdstring].Mtd.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
                     return;
@@ -239,7 +239,7 @@ public class FlverResource : IResource, IDisposable
 
             if (MaterialResourceBank.Matbins.ContainsKey(mtdstring))
             {
-                MATBIN.Sampler? tex = MaterialResourceBank.Matbins[mtdstring].Samplers.Find(x => x.Type == type);
+                MATBIN.Sampler? tex = MaterialResourceBank.Matbins[mtdstring].Matbin.Samplers.Find(x => x.Type == type);
                 if (tex == null || tex.Path == "")
                 {
                     return;

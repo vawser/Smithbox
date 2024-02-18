@@ -10,12 +10,12 @@ namespace StudioCore.Banks.ResourceBank;
 
 public class MaterialResourceBank
 {
-    private static Dictionary<string, MTD> _mtds = new();
-    private static Dictionary<string, MATBIN> _matbins = new();
+    private static Dictionary<string, MaterialInfo> _mtds = new();
+    private static Dictionary<string, MaterialInfo> _matbins = new();
 
-    public static IReadOnlyDictionary<string, MTD> Mtds => _mtds;
+    public static IReadOnlyDictionary<string, MaterialInfo> Mtds => _mtds;
 
-    public static IReadOnlyDictionary<string, MATBIN> Matbins => _matbins;
+    public static IReadOnlyDictionary<string, MaterialInfo> Matbins => _matbins;
 
     public static void LoadMaterials()
     {
@@ -27,9 +27,25 @@ public class MaterialResourceBank
         }));
     }
 
+    public struct MaterialInfo
+    {
+        public string Name;
+        public string Path;
+        public MATBIN Matbin;
+        public MTD Mtd;
+
+        public MaterialInfo(string name, string path, MATBIN matbin, MTD mtd)
+        {
+            Name = name;
+            Path = path;
+            Matbin = matbin;
+            Mtd = mtd;
+        }
+    }
+
     public static void LoadMatBins()
     {
-        _matbins = new Dictionary<string, MATBIN>();
+        _matbins = new Dictionary<string, MaterialInfo>();
 
         var modPath = $"{Project.GameModDirectory}//material//";
         if (Directory.Exists(modPath))
@@ -67,10 +83,13 @@ public class MaterialResourceBank
             {
                 foreach (BinderFile f in binder.Files)
                 {
+                    var path = f.Name;
                     var matname = Path.GetFileNameWithoutExtension(f.Name);
 
+                    MaterialInfo info = new MaterialInfo(matname, path, MATBIN.Read(f.Bytes), null);
+
                     if (!_matbins.ContainsKey(matname))
-                        _matbins.Add(matname, MATBIN.Read(f.Bytes));
+                        _matbins.Add(matname, info);
                 }
             }
         }
@@ -78,7 +97,7 @@ public class MaterialResourceBank
 
     public static void LoadMtds()
     {
-        _mtds = new Dictionary<string, MTD>();
+        _mtds = new Dictionary<string, MaterialInfo>();
 
         var modPath = $"{Project.GameModDirectory}//mtd//";
         if (Directory.Exists(modPath))
@@ -116,10 +135,13 @@ public class MaterialResourceBank
             {
                 foreach (BinderFile f in binder.Files)
                 {
+                    var path = f.Name;
                     var matname = Path.GetFileNameWithoutExtension(f.Name);
 
+                    MaterialInfo info = new MaterialInfo(matname, path, null, MTD.Read(f.Bytes));
+
                     if (!_mtds.ContainsKey(matname))
-                        _mtds.Add(matname, MTD.Read(f.Bytes));
+                        _mtds.Add(matname, info);
                 }
             }
         }
