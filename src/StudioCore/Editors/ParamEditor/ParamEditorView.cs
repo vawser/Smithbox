@@ -291,8 +291,15 @@ public class ParamEditorView
     {
         scrollTo = 0;
 
-        //Goto ID
-        if (ImGui.Button($"Goto ID <{KeyBindings.Current.Param_GotoRowID.HintText}>") ||
+        if (ImGui.Button($"Go to selected <{KeyBindings.Current.Param_GotoSelectedRow.HintText}>") ||
+            isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoRowID))
+        {
+            _paramEditor.GotoSelectedRow = true;
+        }
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"Go to ID <{KeyBindings.Current.Param_GotoRowID.HintText}>") ||
             isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.Param_GotoRowID))
         {
             ImGui.OpenPopup("gotoParamRow");
