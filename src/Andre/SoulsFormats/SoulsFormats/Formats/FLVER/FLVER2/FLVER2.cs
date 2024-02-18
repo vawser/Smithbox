@@ -185,7 +185,7 @@ namespace SoulsFormats
             Header.Unk68 = br.AssertInt32([0, 1, 2, 3, 4]);
             br.AssertInt32(0);
             br.AssertInt32(0);
-            br.AssertInt32([0, 0x10]);
+            Header.Unk74 = br.AssertInt32([0, 0x10]);
             br.AssertInt32(0);
             br.AssertInt32(0);
 
@@ -315,7 +315,7 @@ namespace SoulsFormats
             bw.WriteInt32(Header.Unk68);
             bw.WriteInt32(0);
             bw.WriteInt32(0);
-            bw.WriteInt32(0);
+            bw.WriteInt32(Header.Unk74);
             bw.WriteInt32(0);
             bw.WriteInt32(0);
 

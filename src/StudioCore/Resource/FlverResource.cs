@@ -1304,6 +1304,7 @@ public class FlverResource : IResource, IDisposable
         var meshVertices = dest.GeomBuffer.MapVBuffer();
         var meshIndices = dest.GeomBuffer.MapIBuffer();
 
+        // Untextured
         if (dest.Material.LayoutType == MeshLayoutType.LayoutSky)
         {
             FillVerticesNormalOnly(mesh, pvhandle, meshVertices);

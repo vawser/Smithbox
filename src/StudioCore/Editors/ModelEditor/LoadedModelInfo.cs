@@ -179,7 +179,7 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Parts:
                     string partExt = @".partsbnd.dcx";
 
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS1)
                     {
                         partExt = ".partsbnd";
                     }
