@@ -207,6 +207,18 @@ public static class TaskLogs
                 }
 
                 ImGui.SameLine();
+                if (ImGui.Button("Copy to Clipboard##TaskLogger"))
+                {
+                    string contents = "";
+                    foreach(var entry in _log)
+                    {
+                        contents = contents + $"{entry.FormattedMessage}\n";
+                    }
+
+                    PlatformUtils.Instance.SetClipboardText($"{contents}");
+                }
+
+                ImGui.SameLine();
                 ImGui.Checkbox("Log debug messages", ref _showDebugLogs);
 
                 ImGui.BeginChild("##LogItems");
