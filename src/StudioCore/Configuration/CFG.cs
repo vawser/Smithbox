@@ -159,6 +159,11 @@ public class CFG
     public Vector3 GFX_Gizmo_Z_BaseColor = new(0.219f, 0.564f, 0.929f);
     public Vector3 GFX_Gizmo_Z_HighlightColor = new(0.407f, 0.690f, 1.0f);
 
+    public float Viewport_DefaultRender_Brightness = 1.0f;
+    public float Viewport_DefaultRender_Saturation = 0.5f;
+
+    public Vector3 Viewport_DefaultRender_SelectColor = new(1.0f, 0.5f, 0.0f);
+
     //****************************
     // Settings: Map Editor
     //****************************

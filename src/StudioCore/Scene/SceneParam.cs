@@ -17,5 +17,8 @@ public unsafe struct SceneParam
     public float IndirectLightMult;
     public float EmissiveMapMult;
     public float SceneBrightness;
+    public float SimpleFlver_Brightness;
+    public float SimpleFlver_Saturation;
+    public Vector4 SelectionColor;
     public fixed uint padding[2];
 }

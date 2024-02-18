@@ -218,6 +218,10 @@ public class Viewport : IViewport
         _gizmos.Update(ray, _canInteract && MouseInViewport());
         _viewGrid.Update(ray);
 
+        _viewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_DefaultRender_Brightness;
+        _viewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_DefaultRender_Saturation;
+        _viewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_DefaultRender_SelectColor.X, CFG.Current.Viewport_DefaultRender_SelectColor.Y, CFG.Current.Viewport_DefaultRender_SelectColor.Z, 1.0f);
+
         var kbbusy = false;
 
         if (!_gizmos.IsMouseBusy() && _canInteract && MouseInViewport())

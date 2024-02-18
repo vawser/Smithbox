@@ -14,6 +14,8 @@ struct sceneParams
 	float indirectLightMult;
 	float emissiveMapMult;
 	float sceneBrightness;
+    float SimpleFlver_Brightness;
+    float SimpleFlver_Saturation;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -51,7 +53,7 @@ void main()
 {
 	mat4 w = idata[gl_InstanceIndex].world;
 	vec3 tnormal = normalize(mat3(w) * vec3(normal));
-    fsin_color = vec4((vec3((vec4(tnormal, 1.0)) + 0.5) * 0.5) + 0.25, 1.0);
+    fsin_color = vec4((vec3((vec4(tnormal, 1.0)) + sceneparam.SimpleFlver_Brightness) * sceneparam.SimpleFlver_Saturation), 1.0);
 	fsin_entityid = idata[gl_InstanceIndex].materialID.w;
     
 	if (c_normalWBoneTransform)

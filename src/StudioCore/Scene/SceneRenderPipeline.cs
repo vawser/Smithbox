@@ -35,16 +35,12 @@ public class SceneRenderPipeline
 
         // Setup scene param uniform buffer
         SceneParamBuffer = factory.CreateBuffer(
-            new BufferDescription(
-                (uint)sizeof(SceneParam),
-                VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst,
-                VmaMemoryUsage.Auto,
-                0));
+            new BufferDescription( (uint)sizeof(SceneParam), VkBufferUsageFlags.UniformBuffer | VkBufferUsageFlags.TransferDst, VmaMemoryUsage.Auto, 0)
+        );
+
         SceneParams = new SceneParam();
-        SceneParams.Projection = Utils.CreatePerspective(device, true,
-            CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
-        SceneParams.View = Matrix4x4.CreateLookAt(new Vector3(0.0f, 2.0f, 0.0f), new Vector3(1.0f, 2.0f, 0.0f),
-            Vector3.UnitY);
+        SceneParams.Projection = Utils.CreatePerspective(device, true, CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, 0.1f, 2000.0f);
+        SceneParams.View = Matrix4x4.CreateLookAt(new Vector3(0.0f, 2.0f, 0.0f), new Vector3(1.0f, 2.0f, 0.0f), Vector3.UnitY);
         SceneParams.EyePosition = new Vector4(0.0f, 2.0f, 0.0f, 0.0f);
         SceneParams.LightDirection = new Vector4(1.0f, -0.5f, 0.0f, 0.0f);
         SceneParams.EnvMap = EnvMapTexture;
@@ -57,12 +53,15 @@ public class SceneRenderPipeline
         SceneParams.IndirectLightMult = 1.0f;
         SceneParams.EmissiveMapMult = 1.0f;
         SceneParams.SceneBrightness = 1.0f;
+        SceneParams.SimpleFlver_Brightness = 1.0f;
+        SceneParams.SimpleFlver_Saturation = 0.5f;
+        SceneParams.SelectionColor = new Vector4(1.0f, 0.5f, 0.0f, 1.0f);
+
         device.UpdateBuffer(SceneParamBuffer, 0, ref SceneParams, (uint)sizeof(SceneParam));
-        ResourceLayout sceneParamLayout = StaticResourceCache.GetResourceLayout(
-            device.ResourceFactory,
-            StaticResourceCache.SceneParamLayoutDescription);
-        SceneParamResourceSet = StaticResourceCache.GetResourceSet(device.ResourceFactory,
-            new ResourceSetDescription(sceneParamLayout, SceneParamBuffer));
+
+        ResourceLayout sceneParamLayout = StaticResourceCache.GetResourceLayout(device.ResourceFactory,StaticResourceCache.SceneParamLayoutDescription);
+
+        SceneParamResourceSet = StaticResourceCache.GetResourceSet(device.ResourceFactory, new ResourceSetDescription(sceneParamLayout, SceneParamBuffer));
 
         // Setup picking uniform buffer
         PickingResultsBuffer = factory.CreateBuffer(
@@ -73,6 +72,7 @@ public class SceneRenderPipeline
                 0,
                 (uint)sizeof(PickingResult)
             ));
+
         PickingResult = new PickingResult();
         PickingResult.depth = 0; // int.MaxValue;
         PickingResult.entityID = ulong.MaxValue;

@@ -202,9 +202,27 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.Viewport_Frustum_Culling);
                 ImguiUtils.ShowHelpMarker("Enabling this option will cause entities outside of the camera frustrum to be culled.");
+            }
+
+            if (ImGui.CollapsingHeader("Rendering", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.InputFloat("Default Model Render: Brightness", ref CFG.Current.Viewport_DefaultRender_Brightness);
+                ImguiUtils.ShowHelpMarker("Change the brightness modifier for the Default Model Rendering shader.");
+                ImGui.InputFloat("Default Model Render: Saturation", ref CFG.Current.Viewport_DefaultRender_Saturation);
+                ImguiUtils.ShowHelpMarker("Change the saturation modifier for the Default Model Rendering shader.");
+
 
                 ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
                 ImguiUtils.ShowHelpMarker("Enabling this option will cause a selection outline to appear on selected objects.");
+
+                ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
+
+                if (ImGui.Button("Reset##ResetRenderProperties"))
+                {
+                    CFG.Current.Viewport_DefaultRender_Brightness = 1.0f;
+                    CFG.Current.Viewport_DefaultRender_Saturation = 0.5f;
+                }
+                ImguiUtils.ShowHelpMarker("Resets all of the values within this section to their default values.");
             }
 
             if (ImGui.CollapsingHeader("Camera"))
@@ -516,7 +534,7 @@ public class SettingsWindow
             }
 
             // Toolbar
-            if (ImGui.CollapsingHeader("Global Actions", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Global Actions"))
             {
                 ImGui.Checkbox("Check Duplicate Entity ID", ref CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID);
                 ImguiUtils.ShowHelpMarker("If enabled, the Check Duplicate Entity ID action will be visible in the map toolbar window.");
@@ -531,7 +549,7 @@ public class SettingsWindow
                 ImguiUtils.ShowHelpMarker("If enabled, the Toggle Object Visibility by Tag action will be visible in the map toolbar window.");
             }
 
-            if (ImGui.CollapsingHeader("Map Actions", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Map Actions"))
             {
                 ImGui.Checkbox("Go to in Object List", ref CFG.Current.Toolbar_Show_Go_to_in_Object_List);
                 ImguiUtils.ShowHelpMarker("If enabled, the Go to in Object List action will be visible in the map toolbar window.");
