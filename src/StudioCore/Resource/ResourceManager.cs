@@ -15,6 +15,8 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
+using static SoulsFormats.FFXDLSE;
+using StudioCore.Settings;
 
 namespace StudioCore.Resource;
 
@@ -117,36 +119,6 @@ public static class ResourceManager
         try
         {
             action.ProcessBinder();
-            if (!action.PopulateResourcesOnly)
-            {
-                var doasync = action.PendingResources.Count() + action.PendingTPFs.Count() > 1;
-                var i = 0;
-                foreach (Tuple<IResourceLoadPipeline, string, BinderFileHeader> p in action.PendingResources)
-                {
-                    Memory<byte> f = action.Binder.ReadFile(p.Item3);
-                    p.Item1.LoadByteResourceBlock.Post(new LoadByteResourceRequest(p.Item2, f, action.AccessLevel,
-                        Project.Type));
-                    action._job.IncrementEstimateTaskSize(1);
-                    i++;
-                }
-
-                foreach (Tuple<string, BinderFileHeader> t in action.PendingTPFs)
-                {
-                    try
-                    {
-                        TPF f = TPF.Read(action.Binder.ReadFile(t.Item2));
-                        action._job.AddLoadTPFResources(new LoadTPFResourcesAction(action._job, t.Item1, f,
-                            action.AccessLevel, Project.Type));
-                    }
-                    catch (Exception e)
-                    {
-                        TaskLogs.AddLog($"Failed to load TPF \"{t.Item1}\"",
-                            LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
-                    }
-
-                    i++;
-                }
-            }
         }
         catch (Exception e)
         {
@@ -549,6 +521,9 @@ public static class ResourceManager
                 }
             }
 
+            // TODO:
+            // The issue here is that to save a model, the resource files must not be held by a process.
+            // However, this current framework requires some resources to be held for longer than this function, causing a crash on map load.
             for (var i = 0; i < Binder.Files.Count(); i++)
             {
                 BinderFileHeader f = Binder.Files[i];
@@ -587,27 +562,29 @@ public static class ResourceManager
                 {
                     if (ResourceMask.HasFlag(ResourceType.Flver) &&
                         (filevirtpath.ToUpper().EndsWith(".FLVER") ||
-                         filevirtpath.ToUpper().EndsWith(".FLV") ||
-                         filevirtpath.ToUpper().EndsWith(".FLV.DCX")))
+                            filevirtpath.ToUpper().EndsWith(".FLV") ||
+                            filevirtpath.ToUpper().EndsWith(".FLV.DCX")))
                     {
                         //handle = new ResourceHandle<FlverResource>();
                         pipeline = _job.FlverLoadPipeline;
-                    }
-                    else if (ResourceMask.HasFlag(ResourceType.CollisionHKX) &&
-                             (filevirtpath.ToUpper().EndsWith(".HKX") ||
-                              filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
-                    {
-                        pipeline = _job.HavokCollisionLoadPipeline;
                     }
                     else if (ResourceMask.HasFlag(ResourceType.Navmesh) && filevirtpath.ToUpper().EndsWith(".NVM"))
                     {
                         pipeline = _job.NVMNavmeshLoadPipeline;
                     }
                     else if (ResourceMask.HasFlag(ResourceType.NavmeshHKX) &&
-                             (filevirtpath.ToUpper().EndsWith(".HKX") ||
-                              filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
+                                (filevirtpath.ToUpper().EndsWith(".HKX") ||
+                                filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
                     {
                         pipeline = _job.HavokNavmeshLoadPipeline;
+                    }
+
+                    if (FeatureFlags.EnableCollisionPipeline)
+                    {
+                        if (ResourceMask.HasFlag(ResourceType.CollisionHKX) && (filevirtpath.ToUpper().EndsWith(".HKX") || filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
+                        {
+                            pipeline = _job.HavokCollisionLoadPipeline;
+                        }
                     }
 
                     if (pipeline != null)
@@ -616,6 +593,42 @@ public static class ResourceManager
                             new Tuple<IResourceLoadPipeline, string, BinderFileHeader>(pipeline, filevirtpath, f));
                     }
                 }
+            }
+
+            if (!this.PopulateResourcesOnly)
+            {
+                var doasync = this.PendingResources.Count() + this.PendingTPFs.Count() > 1;
+                var i = 0;
+                foreach (Tuple<IResourceLoadPipeline, string, BinderFileHeader> p in this.PendingResources)
+                {
+                    Memory<byte> f = this.Binder.ReadFile(p.Item3);
+                    p.Item1.LoadByteResourceBlock.Post(new LoadByteResourceRequest(p.Item2, f, this.AccessLevel,
+                        Project.Type));
+                    this._job.IncrementEstimateTaskSize(1);
+                    i++;
+                }
+
+                foreach (Tuple<string, BinderFileHeader> t in this.PendingTPFs)
+                {
+                    try
+                    {
+                        TPF f = TPF.Read(this.Binder.ReadFile(t.Item2));
+                        this._job.AddLoadTPFResources(new LoadTPFResourcesAction(this._job, t.Item1, f, this.AccessLevel, Project.Type));
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"Failed to load TPF \"{t.Item1}\"",
+                            LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                    }
+
+                    i++;
+                }
+            }
+
+            // Ignore this for DS2
+            if(Project.Type != ProjectType.DS2S)
+            {
+                Binder.Dispose();
             }
         }
     }
@@ -647,7 +660,12 @@ public static class ResourceManager
             _processedResources = new BufferBlock<ResourceLoadedReply>();
 
             FlverLoadPipeline = new ResourceLoadPipeline<FlverResource>(_processedResources);
-            HavokCollisionLoadPipeline = new ResourceLoadPipeline<HavokCollisionResource>(_processedResources);
+
+            if(FeatureFlags.EnableCollisionPipeline)
+            {
+                HavokCollisionLoadPipeline = new ResourceLoadPipeline<HavokCollisionResource>(_processedResources);
+            }
+
             HavokNavmeshLoadPipeline = new ResourceLoadPipeline<HavokNavmeshResource>(_processedResources);
             NVMNavmeshLoadPipeline = new ResourceLoadPipeline<NVMNavmeshResource>(_processedResources);
             TPFTextureLoadPipeline = new TextureLoadPipeline(_processedResources);
@@ -700,8 +718,13 @@ public static class ResourceManager
                 _loadBinderResources.Completion.Wait();
                 FlverLoadPipeline.LoadByteResourceBlock.Complete();
                 FlverLoadPipeline.LoadFileResourceRequest.Complete();
-                HavokCollisionLoadPipeline.LoadByteResourceBlock.Complete();
-                HavokCollisionLoadPipeline.LoadFileResourceRequest.Complete();
+
+                if (FeatureFlags.EnableCollisionPipeline)
+                {
+                    HavokCollisionLoadPipeline.LoadByteResourceBlock.Complete();
+                    HavokCollisionLoadPipeline.LoadFileResourceRequest.Complete();
+                }
+
                 HavokNavmeshLoadPipeline.LoadByteResourceBlock.Complete();
                 HavokNavmeshLoadPipeline.LoadFileResourceRequest.Complete();
                 _loadTPFResources.Complete();
@@ -709,11 +732,17 @@ public static class ResourceManager
                 TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Complete();
                 FlverLoadPipeline.LoadByteResourceBlock.Completion.Wait();
                 FlverLoadPipeline.LoadFileResourceRequest.Completion.Wait();
-                HavokCollisionLoadPipeline.LoadByteResourceBlock.Completion.Wait();
-                HavokCollisionLoadPipeline.LoadFileResourceRequest.Completion.Wait();
+
+                if (FeatureFlags.EnableCollisionPipeline)
+                {
+                    HavokCollisionLoadPipeline.LoadByteResourceBlock.Completion.Wait();
+                    HavokCollisionLoadPipeline.LoadFileResourceRequest.Completion.Wait();
+                }
+
                 HavokNavmeshLoadPipeline.LoadByteResourceBlock.Completion.Wait();
                 HavokNavmeshLoadPipeline.LoadFileResourceRequest.Completion.Wait();
                 TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Completion.Wait();
+
                 Finished = true;
             });
         }
@@ -889,21 +918,25 @@ public static class ResourceManager
                 {
                     var texpath = r.Key;
                     string path = null;
-                    if (texpath.StartsWith("aet/"))
+
+                    if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
                     {
-                        var splits = texpath.Split('/');
-                        var aetid = splits[1];
-                        var aetname = splits[2];
-                        var fullaetid = aetname.Substring(0, 10);
-
-                        if (assetTpfs.Contains(fullaetid))
+                        if (texpath.StartsWith("aet/"))
                         {
-                            continue;
+                            var splits = texpath.Split('/');
+                            var aetid = splits[1];
+                            var aetname = splits[2];
+                            var fullaetid = aetname.Substring(0, 10);
+
+                            if (assetTpfs.Contains(fullaetid))
+                            {
+                                continue;
+                            }
+
+                            path = TextureAssetLocator.GetAetTexture(fullaetid).AssetPath;
+
+                            assetTpfs.Add(fullaetid);
                         }
-
-                        path = TextureAssetLocator.GetAetTexture(fullaetid).AssetPath;
-
-                        assetTpfs.Add(fullaetid);
                     }
 
                     if (path != null && File.Exists(path))

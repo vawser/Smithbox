@@ -360,6 +360,7 @@ public class Universe
 
         ModelMarkerType modelMarkerType =
             GetModelMarkerType(obj.WrappedObject.GetType().ToString().Split("+").Last());
+
         if (loadcol)
         {
             MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
@@ -942,30 +943,34 @@ public class Universe
                 tasks.Add(task);
             }
 
-            job = ResourceManager.CreateNewJob($@"Loading {amapid} collisions");
-            string archive = null;
-            HashSet<string> colassets = new();
-            foreach (AssetDescription col in colsToLoad)
+            if (FeatureFlags.EnableCollisionPipeline)
             {
-                if (col.AssetArchiveVirtualPath != null)
+                job = ResourceManager.CreateNewJob($@"Loading {amapid} collisions");
+                string archive = null;
+                HashSet<string> colassets = new();
+                foreach (AssetDescription col in colsToLoad)
                 {
-                    //job.AddLoadArchiveTask(col.AssetArchiveVirtualPath, false);
-                    archive = col.AssetArchiveVirtualPath;
-                    colassets.Add(col.AssetVirtualPath);
+                    if (col.AssetArchiveVirtualPath != null)
+                    {
+                        //job.AddLoadArchiveTask(col.AssetArchiveVirtualPath, false);
+                        archive = col.AssetArchiveVirtualPath;
+                        colassets.Add(col.AssetVirtualPath);
+                    }
+                    else if (col.AssetVirtualPath != null)
+                    {
+                        job.AddLoadFileTask(col.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                    }
                 }
-                else if (col.AssetVirtualPath != null)
+
+                if (archive != null)
                 {
-                    job.AddLoadFileTask(col.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                    job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, colassets);
                 }
+
+                task = job.Complete();
+                tasks.Add(task);
             }
 
-            if (archive != null)
-            {
-                job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, colassets);
-            }
-
-            task = job.Complete();
-            tasks.Add(task);
 
             job = ResourceManager.CreateNewJob(@"Loading chrs");
             foreach (AssetDescription chr in chrsToLoad)

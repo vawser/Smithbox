@@ -338,6 +338,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
     {
         LoadedModelInfo info = _loadedModelInfo;
         FlverResource flvResource = _flverhandle.Get();
+
         byte[] fileBytes = null;
 
         using (IBinder binder = BND4.Read(DCX.Decompress(info.ModBinderPath)))

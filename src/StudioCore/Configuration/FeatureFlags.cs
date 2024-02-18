@@ -28,4 +28,7 @@ public static class FeatureFlags
     public static bool EnableEditor_EventScript = false;
     public static bool EnableEditor_TalkScript = false;
     public static bool EnableEditor_TextureViewer = false;
+
+    // This is temporary until the Pipeline mess is fixed.
+    public static bool EnableCollisionPipeline = false;
 }
