@@ -486,6 +486,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 _universe.LoadFlver(r.Flver, _renderMesh, _currentModel);
             }
         }
+
+        _universe.ScheduleTextureRefresh();
     }
 
     public void OnResourceUnloaded(IResourceHandle handle, int tag)
