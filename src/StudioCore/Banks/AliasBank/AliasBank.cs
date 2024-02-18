@@ -118,7 +118,9 @@ public class AliasBank
                 IsLoadingAliases = false;
             }
             else
+            {
                 IsLoadingAliases = false;
+            }
 
             UpdateMapNames();
         }));
@@ -137,7 +139,9 @@ public class AliasBank
             };
 
             using (var stream = File.OpenRead(path))
+            {
                 newResource = JsonSerializer.Deserialize<AliasResource>(stream, options);
+            }
         }
 
         return newResource;
@@ -145,13 +149,19 @@ public class AliasBank
 
     public void WriteTargetAliasBank(AliasResource targetBank, string assetType)
     {
-        var modResourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        var resourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
 
-        var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
+        if(CFG.Current.AliasBank_EditorMode)
+        {
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        }
+
+        var resourceFilePath = $"{resourcePath}\\{FileName}.json";
 
         if (IsAssetFileType)
-            resourceFilePath = $"{modResourcePath}\\{assetType}.json";
-
+        {
+            resourceFilePath = $"{resourcePath}\\{assetType}.json";
+        }
 
         if (File.Exists(resourceFilePath))
         {
@@ -180,19 +190,31 @@ public class AliasBank
     public void AddToLocalAliasBank(string assetType, string refID, string refName, string refTags)
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{TemplateName}";
-        var modResourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
 
-        var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
+        var resourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+
+        if (CFG.Current.AliasBank_EditorMode)
+        {
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        }
+
+        var resourceFilePath = $"{resourcePath}\\{FileName}.json";
 
         if (IsAssetFileType)
-            resourceFilePath = $"{modResourcePath}\\{assetType}.json";
-
+        {
+            resourceFilePath = $"{resourcePath}\\{assetType}.json";
+        }
 
         // Create directory/file if they don't exist
-        if (!Directory.Exists(modResourcePath))
-            Directory.CreateDirectory(modResourcePath);
+        if (!Directory.Exists(resourcePath))
+        {
+            Directory.CreateDirectory(resourcePath);
+        }
+
         if (!File.Exists(resourceFilePath))
+        {
             File.Copy(templateResource, resourceFilePath);
+        }
 
         if (File.Exists(resourceFilePath))
         {
@@ -203,6 +225,7 @@ public class AliasBank
 
             // If it exists within the mod local file, update the contents
             foreach (var entry in targetResource.list)
+            {
                 if (entry.id == refID)
                 {
                     doesExist = true;
@@ -218,8 +241,11 @@ public class AliasBank
                         entry.tags = newTags;
                     }
                     else
+                    {
                         entry.tags = new List<string> { refTags };
+                    }
                 }
+            }
 
             // If it doesn't exist in the mod local file, add it in
             if (!doesExist)
@@ -252,12 +278,19 @@ public class AliasBank
     /// </summary>
     public void RemoveFromLocalAliasBank(string assetType, string refID)
     {
-        var modResourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        var resourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
 
-        var resourceFilePath = $"{modResourcePath}\\{FileName}.json";
+        if (CFG.Current.AliasBank_EditorMode)
+        {
+            resourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        }
+
+        var resourceFilePath = $"{resourcePath}\\{FileName}.json";
 
         if (IsAssetFileType)
-            resourceFilePath = $"{modResourcePath}\\{assetType}.json";
+        {
+            resourceFilePath = $"{resourcePath}\\{assetType}.json";
+        }
 
         if (File.Exists(resourceFilePath))
         {
@@ -286,11 +319,19 @@ public class AliasBank
             var _mapNames = new Dictionary<string, string>();
 
             foreach (var entry in AliasNames.GetEntries("Maps"))
+            {
                 if (!CFG.Current.MapAliases_ShowUnusedNames)
+                {
                     if (entry.tags[0] != "unused")
+                    {
                         _mapNames.Add(entry.id, entry.name);
-                else
-                    _mapNames.Add(entry.id, entry.name);
+                    }
+                    else
+                    {
+                        _mapNames.Add(entry.id, entry.name);
+                    }
+                }
+            }
 
             MapNames = _mapNames;
         }

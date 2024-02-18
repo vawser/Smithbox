@@ -476,7 +476,7 @@ public class ModelSceneTree : IActionEventHandler
     {
         var metaName = "";
 
-        if (ModelAliasBank.Bank != null)
+        if (!ModelAliasBank.Bank.IsLoadingAliases && ModelAliasBank.Bank.AliasNames != null)
         {
             var list = ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
             foreach (var entry in list)
@@ -486,7 +486,10 @@ public class ModelSceneTree : IActionEventHandler
                     metaName = entry.name;
                 }
             }
-            list = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
+        }
+        if (!ModelAliasBank.Bank.IsLoadingAliases && ModelAliasBank.Bank.AliasNames != null)
+        {
+            var list = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
             foreach (var entry in list)
             {
                 if (entry.id == assetName)
@@ -494,7 +497,10 @@ public class ModelSceneTree : IActionEventHandler
                     metaName = entry.name;
                 }
             }
-            list = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
+        }
+        if (!ModelAliasBank.Bank.IsLoadingAliases && ModelAliasBank.Bank.AliasNames != null)
+        {
+            var list = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
             foreach (var entry in list)
             {
                 if (entry.id == assetName)
@@ -502,7 +508,10 @@ public class ModelSceneTree : IActionEventHandler
                     metaName = entry.name;
                 }
             }
-            list = ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces");
+        }
+        if (!ModelAliasBank.Bank.IsLoadingAliases && ModelAliasBank.Bank.AliasNames != null)
+        {
+            var list = ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces");
             foreach (var entry in list)
             {
                 if (entry.id == assetName)

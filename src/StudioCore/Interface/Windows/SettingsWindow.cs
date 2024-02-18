@@ -107,6 +107,9 @@ public class SettingsWindow
 
             if(ImGui.CollapsingHeader("Resources"))
             {
+                ImGui.Checkbox("Alias Banks - Editor Mode", ref CFG.Current.AliasBank_EditorMode);
+                ImguiUtils.ShowHelpMarker("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
+
                 if (FeatureFlags.EnableEditor_TimeAct)
                 {
                     ImGui.Checkbox("Time Act Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_TimeAct);
