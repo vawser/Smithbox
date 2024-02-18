@@ -45,6 +45,7 @@ using StudioCore.Interface;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Banks.ResourceBank;
 
 namespace StudioCore;
 
@@ -117,7 +118,7 @@ public class Smithbox
         ParticleAliasBank.Bank = new AliasBank(AliasType.Particle);
         MsbInfoBank.Bank = new InfoBank(FormatType.MSB);
         FlverInfoBank.Bank = new InfoBank(FormatType.FLVER);
-        MaterialResourceBank.LoadMaterials();
+        MaterialResourceBank.Setup();
 
         // Windows
         WindowContainer.SettingsWindow = new SettingsWindow();
@@ -495,7 +496,7 @@ public class Smithbox
         FlverInfoBank.Bank.ReloadInfoBank();
 
         ParamBank.ReloadParams(newsettings, options);
-        MaterialResourceBank.ReloadMaterials();
+        MaterialResourceBank.Setup();
 
         foreach (EditorScreen editor in _editors)
         {

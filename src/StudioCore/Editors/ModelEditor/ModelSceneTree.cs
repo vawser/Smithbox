@@ -38,11 +38,6 @@ public struct DragDropPayloadReference
 
 public class ModelSceneTree : IActionEventHandler
 {
-    private readonly List<Entity> _dragDropDestObjects = new();
-    private readonly List<int> _dragDropDests = new();
-    private readonly Dictionary<int, DragDropPayload> _dragDropPayloads = new();
-
-    private readonly List<Entity> _dragDropSources = new();
     private readonly ViewportActionManager _editorActionManager;
 
     private readonly string _id;
@@ -54,17 +49,7 @@ public class ModelSceneTree : IActionEventHandler
 
     private readonly IViewport _viewport;
 
-    private bool _chaliceLoadError;
-
-    private string _chaliceMapID = "m29_";
-    private int _dragDropPayloadCounter;
-
-    private bool _initiatedDragDrop;
-
-    private ulong
-        _mapEnt_ImGuiID; // Needed to avoid issue with identical IDs during keyboard navigation. May be unecessary when ImGUI is updated.
-
-    private string _mapNameSearchStr = "";
+    private ulong _mapEnt_ImGuiID; // Needed to avoid issue with identical IDs during keyboard navigation. May be unecessary when ImGUI is updated.
 
     private ISelectable _pendingClick;
 

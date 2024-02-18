@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Utilities;
-using StudioCore.Banks;
+using StudioCore.Banks.ResourceBank;
 
 namespace StudioCore.Resource;
 
@@ -224,38 +224,38 @@ public class FlverResource : IResource, IDisposable
         if (mpath == "")
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd);
-            if (MaterialResourceBank.IsMatbin)
-            {
-                if (MaterialResourceBank.Matbins.ContainsKey(mtdstring))
-                {
-                    MATBIN.Sampler? tex = MaterialResourceBank.Matbins[mtdstring].Samplers.Find(x => x.Type == type);
-                    if (tex == null || tex.Path == "")
-                    {
-                        return;
-                    }
 
-                    path = tex.Path;
+            if (MaterialResourceBank.Mtds.ContainsKey(mtdstring))
+            {
+                MTD.Texture? tex = MaterialResourceBank.Mtds[mtdstring].Textures.Find(x => x.Type == type);
+                if (tex == null || !tex.Extended || tex.Path == "")
+                {
+                    return;
                 }
+
+                path = tex.Path;
+                //TaskLogs.AddLog($"MTD: {path}");
             }
-            else
-            {
-                if (MaterialResourceBank.Mtds.ContainsKey(mtdstring))
-                {
-                    MTD.Texture? tex = MaterialResourceBank.Mtds[mtdstring].Textures.Find(x => x.Type == type);
-                    if (tex == null || !tex.Extended || tex.Path == "")
-                    {
-                        return;
-                    }
 
-                    path = tex.Path;
+            if (MaterialResourceBank.Matbins.ContainsKey(mtdstring))
+            {
+                MATBIN.Sampler? tex = MaterialResourceBank.Matbins[mtdstring].Samplers.Find(x => x.Type == type);
+                if (tex == null || tex.Path == "")
+                {
+                    return;
                 }
+
+                path = tex.Path;
+                //TaskLogs.AddLog($"MATBIN: {path}");
             }
         }
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
-            ResourceManager.AddResourceListener<TextureResource>(TexturePathToVirtual(path.ToLower()), dest,
-                AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
+            string virtualPath = TexturePathToVirtual(path.ToLower());
+            //TaskLogs.AddLog($"Virtual: {virtualPath}");
+
+            ResourceManager.AddResourceListener<TextureResource>(virtualPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
         }
     }
@@ -271,6 +271,7 @@ public class FlverResource : IResource, IDisposable
         hasShininess2 = false;
 
         string paramNameCheck;
+
         if (texType == null)
         {
             paramNameCheck = "G_DIFFUSE";
