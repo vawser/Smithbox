@@ -162,6 +162,7 @@ public static class ModelAssetLocator
     {
         AssetDescription ret = new();
         if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DES)
+        {
             if (hi)
             {
                 ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.hkx");
@@ -174,6 +175,7 @@ public static class ModelAssetLocator
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx";
             }
+        }
         else if (Project.Type == ProjectType.DS2S)
         {
             ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
@@ -182,6 +184,7 @@ public static class ModelAssetLocator
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
         }
         else if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
+        {
             if (hi)
             {
                 ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
@@ -196,8 +199,11 @@ public static class ModelAssetLocator
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx.dcx";
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
             }
+        }
         else
+        {
             return GetNullAsset();
+        }
 
         return ret;
     }

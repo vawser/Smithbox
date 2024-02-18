@@ -305,128 +305,62 @@ public class Universe
         return mesh;
     }
 
-    public enum ModelLoadType
-    {
-        None,
-        MapPiece,
-        Character,
-        Object,
-        Collision,
-        Navmesh
-    }
-
-    public ModelLoadType GetModelLoadType(string modelName)
-    {
-        ModelLoadType loadType = ModelLoadType.None;
-
-        if(modelName.ToLower().StartsWith("m"))
-        {
-            loadType = ModelLoadType.MapPiece;
-        }
-        if (modelName.ToLower().StartsWith("c"))
-        {
-            loadType = ModelLoadType.Character;
-        }
-        if (modelName.ToLower().StartsWith("o") || modelName.StartsWith("AEG"))
-        {
-            loadType = ModelLoadType.Object;
-        }
-        if (modelName.ToLower().StartsWith("h"))
-        {
-            loadType = ModelLoadType.Collision;
-        }
-        if (modelName.ToLower().StartsWith("cn"))
-        {
-            loadType = ModelLoadType.Navmesh;
-        }
-
-        return loadType;
-    }
-
-
     /// <summary>
     ///     Creates a drawable for a model and registers it with the scene. Will load
     ///     the required assets in the background if they aren't already loaded.
     /// </summary>
-    /// <param name="modelName"></param>
+    /// <param name="modelname"></param>
     /// <returns></returns>
-    public RenderableProxy GetModelDrawable(Map map, Entity obj, string modelName, bool loadModel)
+    public RenderableProxy GetModelDrawable(Map map, Entity obj, string modelname, bool load)
     {
         AssetDescription asset;
+        var loadcol = false;
+        var loadnav = false;
+        var loadflver = false;
+        var filt = RenderFilter.All;
 
-        ModelLoadType loadType = GetModelLoadType(modelName);
-        RenderFilter renderFilter = RenderFilter.All;
-
-        string assetMapId = MapAssetLocator.GetAssetMapID(map.Name);
+        var amapid = MapAssetLocator.GetAssetMapID(map.Name);
 
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
-
-        switch(loadType)
+        if (modelname.ToLower().StartsWith("m"))
         {
-            case ModelLoadType.MapPiece:
-                asset = ModelAssetLocator.GetMapModel(assetMapId, ModelAssetLocator.MapModelNameToAssetName(assetMapId, modelName));
-                renderFilter = RenderFilter.MapPiece;
-                break;
-            case ModelLoadType.Character:
-                asset = ModelAssetLocator.GetChrModel(modelName);
-                renderFilter = RenderFilter.Character;
-                break;
-            case ModelLoadType.Object:
-                asset = ModelAssetLocator.GetObjModel(modelName);
-                renderFilter = RenderFilter.Object;
-                break;
-            case ModelLoadType.Collision:
-                asset = ModelAssetLocator.GetMapCollisionModel(assetMapId, ModelAssetLocator.MapModelNameToAssetName(assetMapId, modelName), false);
-                renderFilter = RenderFilter.Collision;
-                break;
-            case ModelLoadType.Navmesh:
-                asset = ModelAssetLocator.GetMapNVMModel(assetMapId, ModelAssetLocator.MapModelNameToAssetName(assetMapId, modelName));
-                renderFilter = RenderFilter.Navmesh;
-                break;
-            default:
-                asset = ModelAssetLocator.GetNullAsset();
-                break;
+            loadflver = true;
+            asset = ModelAssetLocator.GetMapModel(amapid, ModelAssetLocator.MapModelNameToAssetName(amapid, modelname));
+            filt = RenderFilter.MapPiece;
+        }
+        else if (modelname.ToLower().StartsWith("c"))
+        {
+            loadflver = true;
+            asset = ModelAssetLocator.GetChrModel(modelname);
+            filt = RenderFilter.Character;
+        }
+        else if (modelname.ToLower().StartsWith("o") || modelname.StartsWith("AEG"))
+        {
+            loadflver = true;
+            asset = ModelAssetLocator.GetObjModel(modelname);
+            filt = RenderFilter.Object;
+        }
+        else if (modelname.ToLower().StartsWith("h"))
+        {
+            loadcol = true;
+            asset = ModelAssetLocator.GetMapCollisionModel(amapid,
+                ModelAssetLocator.MapModelNameToAssetName(amapid, modelname), false);
+            filt = RenderFilter.Collision;
+        }
+        else if (modelname.ToLower().StartsWith("n"))
+        {
+            loadnav = true;
+            asset = ModelAssetLocator.GetMapNVMModel(amapid, ModelAssetLocator.MapModelNameToAssetName(amapid, modelname));
+            filt = RenderFilter.Navmesh;
+        }
+        else
+        {
+            asset = ModelAssetLocator.GetNullAsset();
         }
 
-        ModelMarkerType modelMarkerType = GetModelMarkerType(obj.WrappedObject.GetType().ToString().Split("+").Last());
-
-        // Flver
-        if (loadType == ModelLoadType.MapPiece || loadType == ModelLoadType.Character || loadType == ModelLoadType.Object)
-        {
-            MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(_renderScene, asset.AssetVirtualPath, modelMarkerType);
-
-            model.DrawFilter = renderFilter;
-            model.World = obj.GetWorldMatrix();
-            obj.RenderSceneMesh = model;
-            model.SetSelectable(obj);
-
-            if (loadModel)
-            {
-                if (!ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
-                {
-                    if (asset.AssetArchiveVirtualPath != null)
-                    {
-                        job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Flver);
-                    }
-                    else if (asset.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                    }
-
-                    ResourceManager.MarkResourceInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                    Task task = job.Complete();
-
-                    if (obj.Universe.postLoad)
-                    {
-                        task.Wait();
-                    }
-                }
-            }
-
-            return model;
-        }
-        // Collision
-        else if (loadType == ModelLoadType.Collision)
+        ModelMarkerType modelMarkerType =
+            GetModelMarkerType(obj.WrappedObject.GetType().ToString().Split("+").Last());
+        if (loadcol)
         {
             MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
                 _renderScene, asset.AssetVirtualPath, modelMarkerType);
@@ -434,7 +368,7 @@ public class Universe
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Collision;
             obj.RenderSceneMesh = mesh;
-            if (loadModel && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
+            if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
                     AccessLevel.AccessGPUOptimizedOnly))
             {
                 if (asset.AssetArchiveVirtualPath != null)
@@ -457,8 +391,8 @@ public class Universe
 
             return mesh;
         }
-        // Navmesh
-        else if (loadType == ModelLoadType.Navmesh && Project.Type != ProjectType.DS2S)
+
+        if (loadnav && Project.Type != ProjectType.DS2S)
         {
             var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
                 _renderScene, asset.AssetVirtualPath, modelMarkerType);
@@ -466,7 +400,7 @@ public class Universe
             obj.RenderSceneMesh = mesh;
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Navmesh;
-            if (loadModel && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
+            if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
                     AccessLevel.AccessGPUOptimizedOnly))
             {
                 if (asset.AssetArchiveVirtualPath != null)
@@ -488,6 +422,40 @@ public class Universe
             }
 
             return mesh;
+        }
+        else if (loadnav && Project.Type == ProjectType.DS2S)
+        {
+        }
+        else if (loadflver)
+        {
+            var model = MeshRenderableProxy.MeshRenderableFromFlverResource(
+                _renderScene, asset.AssetVirtualPath, modelMarkerType);
+            model.DrawFilter = filt;
+            model.World = obj.GetWorldMatrix();
+            obj.RenderSceneMesh = model;
+            model.SetSelectable(obj);
+            if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
+                    AccessLevel.AccessGPUOptimizedOnly))
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+
+                ResourceManager.MarkResourceInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                Task task = job.Complete();
+                if (obj.Universe.postLoad)
+                {
+                    task.Wait();
+                }
+            }
+
+            return model;
         }
 
         return null;
@@ -765,7 +733,7 @@ public class Universe
                     break;
                 default:
                     throw new Exception($"Error: Did not expect Gametype {Project.Type}");
-                //break;
+                    //break;
             }
 
             AssetDescription ad = MapAssetLocator.GetMapMSB(mapid);
@@ -1144,7 +1112,6 @@ public class Universe
         }
     }
 
-    // Used by the Model Editor only
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy, string name)
     {
         MapObjectContainer container = new(this, name);
@@ -1423,7 +1390,7 @@ public class Universe
                         var bdtPath = BTLs_w[i].AssetPath[..^3] + "bdt";
 
                         Utils.WriteWithBackup(Utils.GetLocalAssetPath(bdtPath), bdt,
-                            Utils.GetLocalAssetPath( BTLs_w[i].AssetPath));
+                            Utils.GetLocalAssetPath(BTLs_w[i].AssetPath));
                     }
                 }
             }
