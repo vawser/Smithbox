@@ -541,12 +541,12 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         //_renderMesh.DrawFilter = filt;
         _renderMesh.World = Matrix4x4.Identity;
         _currentModel = modelid;
+
         if (!ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessFull))
         {
             if (asset.AssetArchiveVirtualPath != null)
             {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false,
-                    ResourceManager.ResourceType.Flver);
+                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
             }
             else if (asset.AssetVirtualPath != null)
             {
@@ -555,8 +555,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
             if (assettex.AssetArchiveVirtualPath != null)
             {
-                job.AddLoadArchiveTask(assettex.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                    ResourceManager.ResourceType.Texture);
+                job.AddLoadArchiveTask(assettex.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
             }
             else if (assettex.AssetVirtualPath != null)
             {

@@ -114,7 +114,7 @@ public class MapObjectContainer
         RootObject.AddChild(meshesNode);
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
-            var meshnode = new NamedEntity(this, flver.Meshes[i], $@"mesh_{i}");
+            var meshnode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}");
             if (proxy.Submeshes.Count > 0)
             {
                 meshnode.RenderSceneMesh = proxy.Submeshes[i];
@@ -140,7 +140,7 @@ public class MapObjectContainer
         RootObject.AddChild(layoutsNode);
         for (var i = 0; i < flver.BufferLayouts.Count; i++)
         {
-            var laynode = new NamedEntity(this, flver.BufferLayouts[i], $@"layout_{i}");
+            var laynode = new NamedEntity(this, flver.BufferLayouts[i], $@"Layout {i}");
             Objects.Add(laynode);
             layoutsNode.AddChild(laynode);
         }
@@ -179,7 +179,7 @@ public class MapObjectContainer
         RootObject.AddChild(dmysNode);
         for (var i = 0; i < flver.Dummies.Count; i++)
         {
-            var dmynode = new TransformableNamedEntity(this, flver.Dummies[i], $@"dmy_{i}");
+            var dmynode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}");
 
             if (CFG.Current.ModelEditor_ViewDummyPolys)
                 dmynode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dmynode);

@@ -66,7 +66,6 @@ public class ModelSceneTree : IActionEventHandler
     private string _mapNameSearchStr = "";
 
     private ISelectable _pendingClick;
-    private bool _pendingDragDrop;
 
     private bool _setNextFocus;
 
@@ -113,6 +112,7 @@ public class ModelSceneTree : IActionEventHandler
         }
 
         var doSelect = false;
+
         if (_setNextFocus)
         {
             ImGui.SetItemDefaultFocus();
@@ -122,9 +122,17 @@ public class ModelSceneTree : IActionEventHandler
 
         var nodeopen = false;
         var padding = hierarchial ? "   " : "    ";
+
         if (hierarchial && e.Children.Count > 0)
         {
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
+
+            // Don't auto-open the Bone tree objects
+            if (e.WrappedObject is FLVER.Bone)
+            {
+                treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
+            }
+
             if (_selection.GetSelection().Contains(e))
             {
                 treeflags |= ImGuiTreeNodeFlags.Selected;
@@ -145,38 +153,16 @@ public class ModelSceneTree : IActionEventHandler
 
             string name = e.PrettyName;
             string aliasedName = name;
-            var modelName = e.GetPropertyValue<string>("ModelName");
 
-            if (modelName == null)
-                modelName = "";
-
-            if (CFG.Current.MapEditor_Show_Character_Names_in_Scene_Tree)
+            if (CFG.Current.ModelEditor_DisplayDmyPolyReferenceID)
             {
-                if (e.IsPartEnemy())
+                if (e.WrappedObject is FLVER.Dummy)
                 {
-                    if (_chrAliasCache != null && _chrAliasCache.ContainsKey(modelName))
-                    {
-                        aliasedName = $"{name} {_chrAliasCache[modelName]}";
-                    }
-                    else
-                    {
-                        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
-                        {
-                            if (modelName == entry.id)
-                            {
-                                aliasedName = $" {{ {entry.name} }}";
+                    var refId = e.GetPropertyValue<short>("ReferenceID");
 
-                                if (_chrAliasCache == null)
-                                {
-                                    _chrAliasCache = new Dictionary<string, string>();
-                                }
-
-                                if (!_chrAliasCache.ContainsKey(entry.id))
-                                {
-                                    _chrAliasCache.Add(modelName, aliasedName);
-                                }
-                            }
-                        }
+                    if (refId != -1)
+                    {
+                        aliasedName = $"{aliasedName} {{ ID {refId} }}";
                     }
                 }
             }
@@ -270,50 +256,6 @@ public class ModelSceneTree : IActionEventHandler
         // If the visibility icon wasn't clicked, perform the selection
         Utils.EntitySelectionHandler(_selection, e, doSelect, arrowKeySelect);
 
-        // Invisible item to be a drag drop target between nodes
-        if (_pendingDragDrop)
-        {
-            if (e is MsbEntity me2)
-            {
-                ImGui.SetItemAllowOverlap();
-                ImGui.InvisibleButton(me2.Type + e.Name, new Vector2(-1, 3.0f) * scale);
-            }
-            else
-            {
-                ImGui.SetItemAllowOverlap();
-                ImGui.InvisibleButton(e.Name, new Vector2(-1, 3.0f) * scale);
-            }
-
-            if (ImGui.IsItemFocused())
-            {
-                _setNextFocus = true;
-            }
-
-            if (ImGui.BeginDragDropTarget())
-            {
-                ImGuiPayloadPtr payload = ImGui.AcceptDragDropPayload("entity");
-                if (payload.NativePtr != null) //todo: never passes
-                {
-                    var h = (DragDropPayloadReference*)payload.Data;
-                    DragDropPayload pload = _dragDropPayloads[h->Index];
-                    _dragDropPayloads.Remove(h->Index);
-                    if (hierarchial)
-                    {
-                        _dragDropSources.Add(pload.Entity);
-                        _dragDropDestObjects.Add(e.Parent);
-                        _dragDropDests.Add(e.Parent.ChildIndex(e) + 1);
-                    }
-                    else
-                    {
-                        _dragDropSources.Add(pload.Entity);
-                        _dragDropDests.Add(pload.Entity.Container.Objects.IndexOf(e) + 1);
-                    }
-                }
-
-                ImGui.EndDragDropTarget();
-            }
-        }
-
         // If there's children then draw them
         if (nodeopen)
         {
@@ -346,17 +288,6 @@ public class ModelSceneTree : IActionEventHandler
 
         if (ImGui.Begin(titleString))
         {
-            if (_initiatedDragDrop)
-            {
-                _initiatedDragDrop = false;
-                _pendingDragDrop = true;
-            }
-
-            if (_pendingDragDrop && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
-            {
-                _pendingDragDrop = false;
-            }
-
             ImGui.PopStyleVar();
 
             if (Smithbox.LowRequirementsMode)
@@ -501,9 +432,7 @@ public class ModelSceneTree : IActionEventHandler
                     if (ImGui.IsItemHovered())
                     {
                         // Only select if a node is not currently being opened/closed
-                        if (mapRoot == null ||
-                            nodeopen && _treeOpenEntities.Contains(mapRoot) ||
-                            !nodeopen && !_treeOpenEntities.Contains(mapRoot))
+                        if (mapRoot == null || nodeopen && _treeOpenEntities.Contains(mapRoot) || !nodeopen && !_treeOpenEntities.Contains(mapRoot))
                         {
                             if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
                             {
@@ -543,14 +472,7 @@ public class ModelSceneTree : IActionEventHandler
 
                 if (nodeopen)
                 {
-                    if (_pendingDragDrop)
-                    {
-                        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 0.0f) * scale);
-                    }
-                    else
-                    {
-                        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
-                    }
+                    ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
 
                     HierarchyView(map.RootObject);
 
