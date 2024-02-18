@@ -48,14 +48,13 @@ public class SettingsWindow
                 ImguiUtils.ShowHelpMarker("This is a tooltip.");
 
                 ImGui.SliderFloat("UI scale", ref CFG.Current.System_UI_Scale, 0.5f, 4.0f);
-                ImguiUtils.ShowHelpMarker("Adjusts the scale of the user interface throughout all of Smithbox.");
-
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
                     // Round to 0.05
                     CFG.Current.System_UI_Scale = (float)Math.Round(CFG.Current.System_UI_Scale * 20) / 20;
                     Smithbox.FontRebuildRequest = true;
                 }
+                ImguiUtils.ShowHelpMarker("Adjusts the scale of the user interface throughout all of Smithbox.");
 
                 ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f);
                 ImguiUtils.ShowHelpMarker("Adjusts the frame rate of the viewport.");
