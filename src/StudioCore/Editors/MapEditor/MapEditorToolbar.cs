@@ -55,7 +55,7 @@ namespace StudioCore.Editors.MapEditor
 
         private SelectedTool _selectedTool;
 
-        private IEnumerable<MapObjectContainer> _loadedMaps;
+        private IEnumerable<ObjectContainer> _loadedMaps;
         private int _createEntityMapIndex;
 
         private List<(string, Type)> _eventClasses = new();
@@ -1572,7 +1572,7 @@ namespace StudioCore.Editors.MapEditor
             }
             if (CFG.Current.Toolbar_Visibility_Target_All)
             {
-                foreach (MapObjectContainer m in _universe.LoadedObjectContainers.Values)
+                foreach (ObjectContainer m in _universe.LoadedObjectContainers.Values)
                 {
                     if (m == null)
                     {
@@ -1954,7 +1954,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         private void GenerateNavigationData()
         {
-            Dictionary<string, MapObjectContainer> orderedMaps = _universe.LoadedObjectContainers;
+            Dictionary<string, ObjectContainer> orderedMaps = _universe.LoadedObjectContainers;
 
             HashSet<string> idCache = new();
             foreach (var map in orderedMaps)
@@ -2001,7 +2001,7 @@ namespace StudioCore.Editors.MapEditor
         /// </summary>
         private void ToggleObjectVisibilityByTag()
         {
-            foreach (MapObjectContainer m in _universe.LoadedObjectContainers.Values)
+            foreach (ObjectContainer m in _universe.LoadedObjectContainers.Values)
             {
                 if (m == null)
                 {

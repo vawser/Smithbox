@@ -78,7 +78,7 @@ public class SoapstoneService : SoapstoneServiceV1
             response.Resources.Add(projectResource);
             if (msbEditor.Universe.LoadedObjectContainers.Count > 0)
             {
-                foreach (KeyValuePair<string, MapObjectContainer> entry in msbEditor.Universe.LoadedObjectContainers)
+                foreach (KeyValuePair<string, ObjectContainer> entry in msbEditor.Universe.LoadedObjectContainers)
                 {
                     if (entry.Value != null)
                     {
@@ -356,7 +356,7 @@ public class SoapstoneService : SoapstoneServiceV1
             {
                 if (getKey.File is not SoulsKey.MsbKey fileKey
                     || !msbEditor.Universe.LoadedObjectContainers.TryGetValue(fileKey.Map,
-                        out MapObjectContainer container)
+                        out ObjectContainer container)
                     || !MatchesResource(resource, fileKey.Map))
                 {
                     continue;
@@ -517,7 +517,7 @@ public class SoapstoneService : SoapstoneServiceV1
         {
             Predicate<object> fileFilter = search.GetKeyFilter("Map");
             // LoadedObjectContainers is never null, starts out an empty dictionary
-            foreach (KeyValuePair<string, MapObjectContainer> entry in msbEditor.Universe.LoadedObjectContainers)
+            foreach (KeyValuePair<string, ObjectContainer> entry in msbEditor.Universe.LoadedObjectContainers)
             {
                 if (!fileFilter(entry.Key) || !MatchesResource(resource, entry.Key))
                 {

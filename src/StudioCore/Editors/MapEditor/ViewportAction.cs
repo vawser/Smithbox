@@ -348,7 +348,7 @@ public class CloneMapObjectsAction : ViewportAction
 {
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Clonables = new();
-    private readonly List<MapObjectContainer> CloneMaps = new();
+    private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
     private readonly bool SetSelection;
     private readonly Entity TargetBTL;
@@ -599,7 +599,7 @@ public class AddMapObjectsAction : ViewportAction
 {
     private static Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Added = new();
-    private readonly List<MapObjectContainer> AddedMaps = new();
+    private readonly List<ObjectContainer> AddedMaps = new();
     private readonly Map Map;
     private readonly Entity Parent;
     private readonly bool SetSelection;
@@ -790,7 +790,7 @@ public class DeleteMapObjectsAction : ViewportAction
 {
     private readonly List<MsbEntity> Deletables = new();
     private readonly List<int> RemoveIndices = new();
-    private readonly List<MapObjectContainer> RemoveMaps = new();
+    private readonly List<ObjectContainer> RemoveMaps = new();
     private readonly List<MsbEntity> RemoveParent = new();
     private readonly List<int> RemoveParentIndex = new();
     private readonly bool SetSelection;
@@ -933,7 +933,7 @@ public class DeleteParamsAction : ViewportAction
 
 public class ReorderContainerObjectsAction : ViewportAction
 {
-    private readonly List<MapObjectContainer> Containers = new();
+    private readonly List<ObjectContainer> Containers = new();
     private readonly bool SetSelection;
     private readonly List<Entity> SourceObjects = new();
     private readonly List<int> TargetIndices = new();
@@ -953,7 +953,7 @@ public class ReorderContainerObjectsAction : ViewportAction
         var sourceindices = new int[SourceObjects.Count];
         for (var i = 0; i < SourceObjects.Count; i++)
         {
-            MapObjectContainer m = SourceObjects[i].Container;
+            ObjectContainer m = SourceObjects[i].Container;
             Containers.Add(m);
             m.HasUnsavedChanges = true;
             sourceindices[i] = m.Objects.IndexOf(SourceObjects[i]);
@@ -1382,7 +1382,7 @@ public class ReplicateMapObjectsAction : ViewportAction
 {
     private static readonly Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Clonables = new();
-    private readonly List<MapObjectContainer> CloneMaps = new();
+    private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
     private readonly Universe Universe;
     private RenderScene Scene;

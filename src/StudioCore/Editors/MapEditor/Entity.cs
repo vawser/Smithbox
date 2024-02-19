@@ -68,7 +68,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Constructor: container, object
     /// </summary>
-    public Entity(MapObjectContainer map, object msbo)
+    public Entity(ObjectContainer map, object msbo)
     {
         Container = map;
         WrappedObject = msbo;
@@ -82,7 +82,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// The object container for this entity.
     /// </summary>
-    [XmlIgnore] public MapObjectContainer Container { get; set; }
+    [XmlIgnore] public ObjectContainer Container { get; set; }
 
     /// <summary>
     /// Universe.
@@ -1235,7 +1235,7 @@ public class Entity : ISelectable, IDisposable
 /// </summary>
 public class NamedEntity : Entity
 {
-    public NamedEntity(MapObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
+    public NamedEntity(ObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1250,7 +1250,7 @@ public class NamedEntity : Entity
 /// </summary>
 public class TransformableNamedEntity : Entity
 {
-    public TransformableNamedEntity(MapObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
+    public TransformableNamedEntity(ObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1312,7 +1312,7 @@ public class MsbEntity : Entity
     /// <summary>
     /// Constructer: container, object
     /// </summary>
-    public MsbEntity(MapObjectContainer map, object msbo)
+    public MsbEntity(ObjectContainer map, object msbo)
     {
         Container = map;
         WrappedObject = msbo;
@@ -1321,7 +1321,7 @@ public class MsbEntity : Entity
     /// <summary>
     /// Constructer: container, object, entity type
     /// </summary>
-    public MsbEntity(MapObjectContainer map, object msbo, MsbEntityType type)
+    public MsbEntity(ObjectContainer map, object msbo, MsbEntityType type)
     {
         Container = map;
         WrappedObject = msbo;
@@ -1534,7 +1534,7 @@ public class MsbEntity : Entity
             // For now, the map relationship type is not given here (dictionary values), just all related maps.
             foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Name, Universe.LoadedObjectContainers.Keys, connects).Keys)
             {
-                References[mapRef] = new[] { new MapObjectContainerReference(mapRef, Universe) };
+                References[mapRef] = new[] { new ObjectContainerReference(mapRef, Universe) };
             }
         }
         else

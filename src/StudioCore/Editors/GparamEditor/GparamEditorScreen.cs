@@ -1,12 +1,15 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.UserProject;
 using System;
+using System.IO;
 using System.Numerics;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using Veldrid;
 using Veldrid.Sdl2;
 using static SoulsFormats.GPARAM;
@@ -15,7 +18,6 @@ namespace StudioCore.GraphicsEditor;
 
 public class GparamEditorScreen : EditorScreen
 {
-    private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
     private ActionManager EditorActionManager = new();
@@ -24,18 +26,30 @@ public class GparamEditorScreen : EditorScreen
     private GPARAM _selectedGparam;
     private string _selectedGparamKey;
 
+    private string _fileSearchInput = "";
+    private string _fileSearchInputCache = "";
+
     private GPARAM.Param _selectedParamGroup;
     private int _selectedParamGroupKey;
+
+    private string _paramGroupSearchInput = "";
+    private string _paramGroupSearchInputCache = "";
 
     private GPARAM.IField _selectedParamField;
     private int _selectedParamFieldKey;
 
+    private string _paramFieldSearchInput = "";
+    private string _paramFieldSearchInputCache = "";
+
     private GPARAM.IFieldValue _selectedFieldValue = null;
     private int _selectedFieldValueKey;
 
+    private string _fieldIdSearchInput = "";
+    private string _fieldIdSearchInputCache = "";
+
     public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _propEditor = new PropertyEditor(EditorActionManager);
+        
     }
 
     public string EditorName => "Gparam Editor##GparamEditor";
@@ -84,6 +98,8 @@ public class GparamEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
+        GparamShortcuts();
+
         if (GparamParamBank.IsLoaded)
         {
             GparamListView();
@@ -95,6 +111,14 @@ public class GparamEditorScreen : EditorScreen
         ImGui.PopStyleVar();
     }
 
+    public void GparamShortcuts()
+    {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
+        {
+            
+        }
+    }
+
     private void GparamListView()
     {
         ImGui.Begin("Files##GparamFileList");
@@ -102,7 +126,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Text($"File");
         ImGui.Separator();
 
-        foreach (var (info, param) in GparamParamBank.ParamBank)
+        foreach (var (name, info) in GparamParamBank.ParamBank)
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGparamKey))
             {
@@ -112,21 +136,24 @@ public class GparamEditorScreen : EditorScreen
 
                 _selectedGparamKey = info.Name;
                 _selectedGparamInfo = info;
-                _selectedGparam = param;
+                _selectedGparam = info.Gparam;
             }
 
-            // Context menu action for duplicating exist to new name
+            // Context Menu: File
             if (info.Name == _selectedGparamKey)
             {
                 if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
                 {
+                    // Only allow these actions on mod-local files
+                    if (info.IsModFile)
+                    {
+                        
+                    }
+
                     if (ImGui.Button("Duplicate"))
                     {
-                        ImGui.CloseCurrentPopup();
-                    }
-                    // If it is a mod-local added file, then it may be deleted
-                    if (ImGui.Button("Delete") && info.Added)
-                    {
+                        DuplicateGparamFile();
+
                         ImGui.CloseCurrentPopup();
                     }
 
@@ -202,14 +229,7 @@ public class GparamEditorScreen : EditorScreen
         {
             GPARAM.IField field = _selectedParamField;
 
-            if (Project.Type == ProjectType.SDT)
-            {
-                ImGui.Columns(2); // 3 if the floats are shown
-            }
-            else
-            {
-                ImGui.Columns(2);
-            }
+            ImGui.Columns(3);
 
             // ID
             ImGui.BeginChild("IdList##GparamPropertyIds");
@@ -219,30 +239,12 @@ public class GparamEditorScreen : EditorScreen
             for (int i = 0; i < field.Values.Count; i++)
             {
                 GPARAM.IFieldValue entry = field.Values[i];
-                GparamProperty_ID(field, i, entry);
+                GparamProperty_ID(i, field, entry);
             }
 
             ImGui.EndChild();
 
             ImGui.NextColumn();
-
-            // Never used?
-            // Unk04 (Sekiro)
-            /*
-            if (Project.Type == ProjectType.SDT)
-            {
-                ImGui.BeginChild("UnkList");
-                ImGui.Text($"Floats");
-                ImGui.Separator();
-                foreach (var val in field.Values)
-                {
-                    ImGui.Text($"{val.Unk04}");
-                }
-                ImGui.EndChild();
-
-                ImGui.NextColumn();
-            }
-            */
 
             // Value
             ImGui.BeginChild("ValueList##GparamPropertyValues");
@@ -252,36 +254,58 @@ public class GparamEditorScreen : EditorScreen
             for (int i = 0; i < field.Values.Count; i++)
             {
                 GPARAM.IFieldValue entry = field.Values[i];
-                GparamProperty_Value(field, i, entry);
+                GparamProperty_Value(i, field, entry);
             }
 
             ImGui.EndChild();
+
+            // Information
+            ImGui.NextColumn();
+
+            // Value
+            ImGui.BeginChild("InfoList##GparamPropertyInfo");
+            ImGui.Text($"Information");
+            ImGui.Separator();
+
+            for (int i = 0; i < field.Values.Count; i++)
+            {
+                GPARAM.IFieldValue entry = field.Values[i];
+                GparamProperty_Info(i, field, entry);
+            }
+
+            ImGui.EndChild();
+
         }
 
         ImGui.End();
     }
 
-    public void GparamProperty_ID(IField field, int index, IFieldValue val)
+    public void GparamProperty_ID(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
 
-        if (ImGui.Selectable($"{val.Id}##{index}", index == _selectedFieldValueKey))
+        if (ImGui.Selectable($"{value.Id}##{index}", index == _selectedFieldValueKey))
         {
-            _selectedFieldValue = val;
+            _selectedFieldValue = value;
             _selectedFieldValueKey = index;
         }
     }
 
-    public void GparamProperty_Value(IField field, int index, IFieldValue val)
+    public void GparamProperty_Value(int index, IField field, IFieldValue value)
     {
         Type fieldType = field.GetType();
 
-        object oldval = val.Value;
-        object newval = null;
+        ImGui.AlignTextToFramePadding();
+        GparamEditor.PropertyField(index, field, value);
+    }
+
+    public void GparamProperty_Info(int index, IField field, IFieldValue value)
+    {
+        Type fieldType = field.GetType();
 
         ImGui.AlignTextToFramePadding();
-        GparamEditorCommon.PropertyField(index, fieldType, oldval, ref newval);
-        //GparamEditorCommon.UpdateProperty(EditorActionManager, newval, prop, oldval);
+        // TODO:
+        // Add information on what the property does here, check via IField the name (e.g. Sharpness)
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)
@@ -297,7 +321,7 @@ public class GparamEditorScreen : EditorScreen
     public void Save()
     {
         if (GparamParamBank.IsLoaded)
-            GparamParamBank.SaveGraphicsParam(_selectedGparamInfo, _selectedGparam);
+            GparamParamBank.SaveGraphicsParam(_selectedGparamInfo);
     }
 
     public void SaveAll()
@@ -344,4 +368,104 @@ public class GparamEditorScreen : EditorScreen
         _selectedFieldValueKey = -1;
     }
 
+    public void DuplicateGparamFile()
+    {
+        bool isValidFile = false;
+        string filePath = _selectedGparamInfo.Path;
+        string baseFileName = _selectedGparamInfo.Name;
+        string tryFileName = _selectedGparamInfo.Name;
+
+        do
+        {
+            string currentfileName = CreateDuplicateFileName(tryFileName);
+            string newFilePath = filePath.Replace(baseFileName, currentfileName);
+
+            // If the original is in the root dir, change the path to mod
+            newFilePath = newFilePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+
+            if (!File.Exists(newFilePath))
+            {
+                File.Copy(filePath, newFilePath);
+                isValidFile = true;
+            }
+            else
+            {
+                TaskLogs.AddLog($"{newFilePath} already exists!");
+                tryFileName = currentfileName;
+            }
+        }
+        while (!isValidFile);
+
+        GparamParamBank.LoadGraphicsParams();
+    }
+
+    public string CreateDuplicateFileName(string fileName)
+    {
+        Match mapMatch = Regex.Match(fileName, @"[0-9]{4}");
+
+        if(mapMatch.Success)
+        {
+            var res = mapMatch.Groups[0].Value;
+
+            int slot = 0;
+            string slotStr = "";
+
+            try
+            {
+                int number;
+                int.TryParse(res, out number);
+
+                slot = number + 1;
+            }
+            catch { }
+
+            if(slot >= 100 && slot < 999)
+            {
+                slotStr = "0";
+            }
+            if (slot >= 10 && slot < 99)
+            {
+                slotStr = "00";
+            }
+            if (slot >= 0 && slot < 9)
+            {
+                slotStr = "000";
+            }
+
+            var finalSlotStr = $"{slotStr}{slot}";
+            var final = fileName.Replace(res, finalSlotStr);
+
+            return final;
+        }
+        else
+        {
+            Match dupeMatch = Regex.Match(fileName, @"__[0-9]{1}");
+
+            if (dupeMatch.Success)
+            {
+                var res = dupeMatch.Groups[0].Value;
+
+                Match numMatch = Regex.Match(res, @"[0-9]{1}");
+
+                var num = numMatch.Groups[0].Value;
+                try
+                {
+                    int number;
+                    int.TryParse(res, out number);
+
+                    number = number + 1;
+
+                    return $"{fileName}__{number}";
+                }
+                catch 
+                {
+                    return $"{fileName}__1";
+                }
+            }
+            else
+            {
+                return $"{fileName}__1";
+            }
+        }
+    }
 }

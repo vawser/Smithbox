@@ -11,7 +11,7 @@ namespace StudioCore.Formats;
 /// </summary>
 public class NavigationContext
 {
-    public NavigationContext(MapObjectContainer map, MCP mcp, MCG mcg)
+    public NavigationContext(ObjectContainer map, MCP mcp, MCG mcg)
     {
         Map = map;
 
@@ -21,7 +21,7 @@ public class NavigationContext
         }
     }
 
-    public MapObjectContainer Map { get; }
+    public ObjectContainer Map { get; }
 
     public List<NavigationRegion> Regions { get; } = null;
 }

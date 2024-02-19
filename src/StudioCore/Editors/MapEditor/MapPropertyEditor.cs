@@ -1235,7 +1235,7 @@ public class MapPropertyEditor
                                 selection.AddSelection(e);
                             }
                         }
-                        else if (n is MapObjectContainerReference r)
+                        else if (n is ObjectContainerReference r)
                         {
                             // Try to select the map's RootObject if it is loaded, and the reference otherwise.
                             // It's not the end of the world if we choose the wrong one, as SceneTree can use either,

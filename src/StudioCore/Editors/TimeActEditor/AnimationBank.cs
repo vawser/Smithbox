@@ -172,23 +172,17 @@ public static class AnimationBank
         FileBank.Add(fileStruct, binder);
     }
 
-    public struct AnimationFileInfo
+    public class AnimationFileInfo
     {
         public AnimationFileInfo(string name, string path)
         {
             Name = name;
             Path = path;
-            Modified = false;
-            Added = false;
             TimeActFiles = new List<TAE>();
         }
 
         public string Name { get; set; }
         public string Path { get; set; }
-
-        public bool Modified { get; set; }
-
-        public bool Added { get; set; }
 
         public List<TAE> TimeActFiles { get; set; }
     }

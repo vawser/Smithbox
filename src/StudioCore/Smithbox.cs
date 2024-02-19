@@ -46,6 +46,8 @@ using StudioCore.Editors.TimeActEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Banks.ResourceBank;
+using StudioCore.Editors.BehaviorEditor;
+using StudioCore.BehaviorEditor;
 
 namespace StudioCore;
 
@@ -141,6 +143,7 @@ public class Smithbox
         EditorContainer.ScriptEditor = new EventScriptEditorScreen(_context.Window, _context.Device);
         EditorContainer.TalkEditor = new TalkScriptEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
+        EditorContainer.BehaviorEditor = new BehaviorEditorScreen(_context.Window, _context.Device);
 
         _editors = new List<EditorScreen>();
 
@@ -186,6 +189,11 @@ public class Smithbox
         if (FeatureFlags.EnableEditor_TextureViewer)
         {
             _editors.Add(EditorContainer.TextureViewer);
+        }
+
+        if (FeatureFlags.EnableEditor_BehaviorEditor)
+        {
+            _editors.Add(EditorContainer.BehaviorEditor);
         }
 
         _editors.Add(EditorContainer.TextEditor);

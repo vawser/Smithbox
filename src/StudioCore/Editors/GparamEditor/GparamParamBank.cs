@@ -1,9 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.AssetLocator;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,18 +18,20 @@ public static class GparamParamBank
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<GparamInfo, GPARAM> ParamBank { get; private set; } = new();
+    public static SortedDictionary<string, GparamInfo> ParamBank { get; set; }
 
     public static void SaveGraphicsParams()
     {
-        foreach (var (info, param) in ParamBank)
+        foreach (var (name, info) in ParamBank)
         {
-            SaveGraphicsParam(info, param);
+            SaveGraphicsParam(info);
         }
     }
 
-    public static void SaveGraphicsParam(GparamInfo info, GPARAM param)
+    public static void SaveGraphicsParam(GparamInfo info)
     {
+        GPARAM param = info.Gparam;
+
         if (param == null)
             return;
 
@@ -104,20 +109,18 @@ public static class GparamParamBank
             paramExt = @".fltparam";
         }
 
-        List<string> paramNames = ParamAssetLocator.GetGraphicsParams();
-
-        foreach (var name in paramNames)
+        foreach (var name in GetGparamFileNames())
         {
             var filePath = $"{paramDir}\\{name}{paramExt}";
 
             if(File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
-                LoadGraphicsParam($"{Project.GameModDirectory}\\{filePath}");
+                LoadGraphicsParam($"{Project.GameModDirectory}\\{filePath}", true);
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadGraphicsParam($"{Project.GameRootDirectory}\\{filePath}");
+                LoadGraphicsParam($"{Project.GameRootDirectory}\\{filePath}", false);
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
@@ -125,10 +128,10 @@ public static class GparamParamBank
         IsLoaded = true;
         IsLoading = false;
 
-        TaskLogs.AddLog($"Graphics Param Bank - Load Complete");
+        //TaskLogs.AddLog($"Graphics Param Bank - Load Complete");
     }
 
-    private static void LoadGraphicsParam(string path)
+    private static void LoadGraphicsParam(string path, bool isModFile)
     {
         if(path == null)
         {
@@ -145,35 +148,81 @@ public static class GparamParamBank
 
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
         GparamInfo gStruct = new GparamInfo(name, path);
-        GPARAM gPARAM = new GPARAM();
+        gStruct.Gparam = new GPARAM();
+        gStruct.IsModFile = isModFile;
 
         if (Project.Type == ProjectType.DS2S)
         {
-            gPARAM = GPARAM.Read(path);
+            gStruct.Gparam = GPARAM.Read(path);
         }
         else
         {
-            gPARAM = GPARAM.Read(DCX.Decompress(path));
+            gStruct.Gparam = GPARAM.Read(DCX.Decompress(path));
         }
 
-        ParamBank.Add(gStruct, gPARAM);
+        ParamBank.Add(name, gStruct);
     }
 
-    public struct GparamInfo
+    public static List<string> GetGparamFileNames()
+    {
+        var paramDir = @"\param\drawparam";
+        var paramExt = @".gparam.dcx";
+
+        if (Project.Type == ProjectType.DS2S)
+        {
+            paramDir = @"\filter";
+            paramExt = @".fltparam";
+        }
+
+        HashSet<string> paramNames = new();
+        List<string> ret = new();
+
+        // ROOT
+        var paramFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + paramDir, $@"*{paramExt}").ToList();
+        foreach (var f in paramFiles)
+        {
+            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+            ret.Add(name);
+            paramNames.Add(name);
+        }
+
+        // MOD
+        if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + paramDir))
+        {
+            paramFiles = Directory.GetFileSystemEntries(Project.GameModDirectory + paramDir, $@"*{paramExt}").ToList();
+
+            foreach (var f in paramFiles)
+            {
+                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+
+                if (!paramNames.Contains(name))
+                {
+                    ret.Add(name);
+                    paramNames.Add(name);
+                }
+            }
+        }
+
+        return ret;
+    }
+
+    public class GparamInfo : IComparable<string>
     {
         public GparamInfo(string name, string path)
         {
             Name = name;
             Path = path;
-            Modified = false;
-            Added = false;
         }
 
+        public GPARAM Gparam { get; set; }
         public string Name { get; set; }
         public string Path { get; set; }
 
-        public bool Modified { get; set; }
+        public bool IsModFile { get; set; }
 
-        public bool Added { get; set; }
+        public int CompareTo(string other)
+        {
+            return Name.CompareTo(other);
+        }
     }
 }

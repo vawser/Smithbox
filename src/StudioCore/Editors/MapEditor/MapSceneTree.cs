@@ -716,14 +716,14 @@ public class MapSceneTree : IActionEventHandler
                 ImGui.BeginDisabled();
             }
 
-            IOrderedEnumerable<KeyValuePair<string, MapObjectContainer>> orderedMaps =
+            IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps =
                 _universe.LoadedObjectContainers.OrderBy(k => k.Key);
 
             _mapEnt_ImGuiID = 0;
-            foreach (KeyValuePair<string, MapObjectContainer> lm in orderedMaps)
+            foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
             {
                 var metaName = "";
-                MapObjectContainer map = lm.Value;
+                ObjectContainer map = lm.Value;
                 var mapid = lm.Key;
                 if (mapid == null)
                 {
@@ -748,7 +748,7 @@ public class MapSceneTree : IActionEventHandler
                 }
 
                 Entity mapRoot = map?.RootObject;
-                MapObjectContainerReference mapRef = new(mapid, _universe);
+                ObjectContainerReference mapRef = new(mapid, _universe);
                 ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
                 ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;

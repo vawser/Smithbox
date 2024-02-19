@@ -47,7 +47,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     private IModal _activeModal;
 
     private int _createEntityMapIndex;
-    private (string, MapObjectContainer) _comboTargetMap = ("None", null);
+    private (string, ObjectContainer) _comboTargetMap = ("None", null);
     private (string, Entity) _dupeSelectionTargetedParent = ("None", null);
 
     private bool _PauseUpdate;
@@ -717,7 +717,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 }
                 else
                 {
-                    target = new MapObjectContainerReference(mapid, Universe).GetSelectionTarget();
+                    target = new ObjectContainerReference(mapid, Universe).GetSelectionTarget();
                 }
             }
 
@@ -954,7 +954,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 MessageBoxIcon.Error);
             if (result == DialogResult.Yes)
             {
-                foreach (KeyValuePair<string, MapObjectContainer> map in Universe.LoadedObjectContainers.Where(e =>
+                foreach (KeyValuePair<string, ObjectContainer> map in Universe.LoadedObjectContainers.Where(e =>
                              e.Value != null))
                 {
                     foreach (Entity obj in map.Value.Objects)

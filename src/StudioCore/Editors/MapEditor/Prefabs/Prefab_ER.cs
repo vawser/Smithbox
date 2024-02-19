@@ -1921,7 +1921,7 @@ public class Prefab_ER
     /// <param name="_universe"></param>
     /// <param name="_scene"></param>
     /// <param name="_actionManager"></param>
-    public static void ImportSelectedPrefab(PrefabInfo info, (string, MapObjectContainer) _comboTargetMap, Universe _universe, RenderScene _scene, ViewportActionManager _actionManager)
+    public static void ImportSelectedPrefab(PrefabInfo info, (string, ObjectContainer) _comboTargetMap, Universe _universe, RenderScene _scene, ViewportActionManager _actionManager)
     {
         Prefab_ER _selectedAssetPrefab;
 
@@ -1977,7 +1977,7 @@ public class Prefab_ER
         }
     }
 
-    public static List<string> GetSelectedPrefabObjects(PrefabInfo info, (string, MapObjectContainer) _comboTargetMap)
+    public static List<string> GetSelectedPrefabObjects(PrefabInfo info, (string, ObjectContainer) _comboTargetMap)
     {
         List<string> entNames = new List<string>();
         Prefab_ER _selectedAssetPrefab;

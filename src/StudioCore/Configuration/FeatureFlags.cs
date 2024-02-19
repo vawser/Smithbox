@@ -24,10 +24,11 @@ public static class FeatureFlags
     public static bool EnableEditor_Cutscene = false;
     public static bool EnableEditor_Material = false;
     public static bool EnableEditor_Particle = false;
-    public static bool EnableEditor_Gparam = false;
+    public static bool EnableEditor_Gparam = true;
     public static bool EnableEditor_EventScript = false;
     public static bool EnableEditor_TalkScript = false;
     public static bool EnableEditor_TextureViewer = false;
+    public static bool EnableEditor_BehaviorEditor = false;
 
     // This is temporary until the Pipeline mess is fixed.
     public static bool EnableCollisionPipeline = false;

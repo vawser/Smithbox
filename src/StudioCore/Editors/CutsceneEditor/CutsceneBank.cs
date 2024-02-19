@@ -184,23 +184,17 @@ public static class CutsceneBank
         FileBank.Add(fileStruct, binder);
     }
 
-    public struct CutsceneFileInfo
+    public class CutsceneFileInfo
     {
         public CutsceneFileInfo(string name, string path)
         {
             Name = name;
             Path = path;
-            Modified = false;
-            Added = false;
             CutsceneFiles = new List<MQB>();
         }
 
         public string Name { get; set; }
         public string Path { get; set; }
-
-        public bool Modified { get; set; }
-
-        public bool Added { get; set; }
 
         public List<MQB> CutsceneFiles { get; set; }
     }

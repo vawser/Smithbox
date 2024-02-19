@@ -67,12 +67,13 @@ public class CFG
     // Resource Banks
     public bool AutoLoadBank_TimeAct = false;
     public bool AutoLoadBank_Cutscene = false;
-    public bool AutoLoadBank_Gparam = false;
+    public bool AutoLoadBank_Gparam = true;
     public bool AutoLoadBank_Material = false;
     public bool AutoLoadBank_Particle = false;
     public bool AutoLoadBank_EventScript = false;
     public bool AutoLoadBank_TalkScript = false;
     public bool AutoLoadBank_Textures = false;
+    public bool AutoLoadBank_Behavior = false;
 
     //****************************
     // Settings: Viewport
@@ -234,6 +235,11 @@ public class CFG
     public bool FMG_ShowOriginalNames = false;
     public int FMG_DuplicateAmount = 1;
     public int FMG_DuplicateIncrement = 1;
+
+    //****************************
+    // Settings: Gparam Editor
+    //****************************
+    public bool Gparam_DisplayColorEditForVector4Fields = true;
 
     //****************************
     // Windows

@@ -165,23 +165,17 @@ public static class ParticleBank
         FileBank.Add(fileStruct, binder);
     }
 
-    public struct ParticleFileInfo
+    public class ParticleFileInfo
     {
         public ParticleFileInfo(string name, string path)
         {
             Name = name;
             Path = path;
-            Modified = false;
-            Added = false;
             ParticleFiles = new List<FXR3>();
         }
 
         public string Name { get; set; }
         public string Path { get; set; }
-
-        public bool Modified { get; set; }
-
-        public bool Added { get; set; }
 
         public List<FXR3> ParticleFiles { get; set; }
     }

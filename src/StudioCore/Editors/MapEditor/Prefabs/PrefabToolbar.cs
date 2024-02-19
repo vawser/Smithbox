@@ -40,7 +40,7 @@ namespace StudioCore.Editors.MapEditor
         private PrefabInfo _selectedPrefabInfoCache;
         private List<string> _selectedPrefabObjectNames;
 
-        private (string, MapObjectContainer) _comboTargetMap;
+        private (string, ObjectContainer) _comboTargetMap;
 
         private string _newPrefabName;
         private string _prefabTags;
@@ -48,7 +48,7 @@ namespace StudioCore.Editors.MapEditor
         private string _searchInput = "";
         private string _searchInputCache = "";
 
-        public PrefabToolbar(RenderScene scene, ViewportSelection sel, ViewportActionManager manager, Universe universe, IViewport viewport, (string, MapObjectContainer) comboTargetMap)
+        public PrefabToolbar(RenderScene scene, ViewportSelection sel, ViewportActionManager manager, Universe universe, IViewport viewport, (string, ObjectContainer) comboTargetMap)
         {
             _scene = scene;
             _selection = sel;

@@ -48,7 +48,7 @@ public class Universe
         Selection = sel;
     }
 
-    public Dictionary<string, MapObjectContainer> LoadedObjectContainers { get; } = new();
+    public Dictionary<string, ObjectContainer> LoadedObjectContainers { get; } = new();
     public ViewportSelection Selection { get; }
 
     public List<string> EnvMapTextures { get; private set; } = new();
@@ -71,7 +71,7 @@ public class Universe
     public int GetLoadedMapCount()
     {
         var i = 0;
-        foreach (KeyValuePair<string, MapObjectContainer> map in LoadedObjectContainers)
+        foreach (KeyValuePair<string, ObjectContainer> map in LoadedObjectContainers)
         {
             if (map.Value != null)
             {
@@ -268,7 +268,7 @@ public class Universe
         return mesh;
     }
 
-    public RenderableProxy GetDummyPolyDrawable(MapObjectContainer map, Entity obj)
+    public RenderableProxy GetDummyPolyDrawable(ObjectContainer map, Entity obj)
     {
         DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetDummyPolyRegionProxy(_renderScene);
         mesh.World = obj.GetWorldMatrix();
@@ -277,7 +277,7 @@ public class Universe
         return mesh;
     }
 
-    public RenderableProxy GetBoneDrawable(MapObjectContainer map, Entity obj)
+    public RenderableProxy GetBoneDrawable(ObjectContainer map, Entity obj)
     {
         SkeletonBoneRenderableProxy mesh = new(_renderScene);
         mesh.World = obj.GetWorldMatrix();
@@ -627,7 +627,7 @@ public class Universe
         }
     }
 
-    public void LoadRelatedMapsER(string mapid, Dictionary<string, MapObjectContainer> maps)
+    public void LoadRelatedMapsER(string mapid, Dictionary<string, ObjectContainer> maps)
     {
         IReadOnlyDictionary<string, SpecialMapConnections.RelationType> relatedMaps =
             SpecialMapConnections.GetRelatedMaps(mapid, maps.Keys);
@@ -1119,7 +1119,7 @@ public class Universe
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy, string name)
     {
-        MapObjectContainer container = new(this, name);
+        ObjectContainer container = new(this, name);
 
         container.LoadFlver(flver, proxy);
 
@@ -1555,7 +1555,7 @@ public class Universe
         }
         else
         {
-            foreach (KeyValuePair<string, MapObjectContainer> m in LoadedObjectContainers)
+            foreach (KeyValuePair<string, ObjectContainer> m in LoadedObjectContainers)
             {
                 if (m.Value != null)
                 {
@@ -1568,7 +1568,7 @@ public class Universe
         }
     }
 
-    public void UnloadContainer(MapObjectContainer container, bool clearFromList = false)
+    public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
     {
         if (LoadedObjectContainers.ContainsKey(container.Name))
         {
@@ -1591,7 +1591,7 @@ public class Universe
 
     public void UnloadAllMaps()
     {
-        List<MapObjectContainer> toUnload = new();
+        List<ObjectContainer> toUnload = new();
         foreach (var key in LoadedObjectContainers.Keys)
         {
             if (LoadedObjectContainers[key] != null)
@@ -1600,7 +1600,7 @@ public class Universe
             }
         }
 
-        foreach (MapObjectContainer un in toUnload)
+        foreach (ObjectContainer un in toUnload)
         {
             if (un is Map ma)
             {
@@ -1611,7 +1611,7 @@ public class Universe
 
     public void UnloadAll(bool clearFromList = false)
     {
-        List<MapObjectContainer> toUnload = new();
+        List<ObjectContainer> toUnload = new();
         foreach (var key in LoadedObjectContainers.Keys)
         {
             if (LoadedObjectContainers[key] != null)
@@ -1620,7 +1620,7 @@ public class Universe
             }
         }
 
-        foreach (MapObjectContainer un in toUnload)
+        foreach (ObjectContainer un in toUnload)
         {
             UnloadContainer(un, clearFromList);
         }

@@ -387,7 +387,7 @@ public class MapSearchProperties
                 // Find the first property that matches the given name.
                 // Definitely replace this (along with everything else, really).
                 HashSet<Type> typeCache = new();
-                foreach (KeyValuePair<string, MapObjectContainer> m in Universe.LoadedObjectContainers)
+                foreach (KeyValuePair<string, ObjectContainer> m in Universe.LoadedObjectContainers)
                 {
                     if (m.Value == null)
                     {
@@ -432,7 +432,7 @@ public class MapSearchProperties
                 if (SearchValue(newSearch))
                 {
                     FoundObjects.Clear();
-                    foreach (MapObjectContainer o in Universe.LoadedObjectContainers.Values)
+                    foreach (ObjectContainer o in Universe.LoadedObjectContainers.Values)
                     {
                         if (o == null)
                         {

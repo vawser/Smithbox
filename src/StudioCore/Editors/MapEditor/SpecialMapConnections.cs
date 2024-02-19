@@ -28,7 +28,7 @@ internal class SpecialMapConnections
 
     public static Transform? GetEldenMapTransform(
         string mapid,
-        IReadOnlyDictionary<string, MapObjectContainer> loadedMaps)
+        IReadOnlyDictionary<string, ObjectContainer> loadedMaps)
     {
         if (!TryInitializeEldenOffsets())
         {
@@ -50,8 +50,8 @@ internal class SpecialMapConnections
 
         var closestDistSq = float.PositiveInfinity;
         Vector3 closestOriginGlobal = Vector3.Zero;
-        MapObjectContainer closestMap = null;
-        foreach (KeyValuePair<string, MapObjectContainer> entry in loadedMaps)
+        ObjectContainer closestMap = null;
+        foreach (KeyValuePair<string, ObjectContainer> entry in loadedMaps)
         {
             if (entry.Value == null
                 || !entry.Value.RootObject.HasTransform

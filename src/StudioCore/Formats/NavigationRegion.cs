@@ -26,7 +26,7 @@ public class NavigationRegion : ISelectable
     /// <summary>
     ///     Construct a region from a deserialized mcp room
     /// </summary>
-    public NavigationRegion(MapObjectContainer enclosingMap, MCP.Room room)
+    public NavigationRegion(ObjectContainer enclosingMap, MCP.Room room)
     {
         BoundingBox = new BoundingBox(room.BoundingBoxMin, room.BoundingBoxMax);
         _navidx = room.LocalIndex;

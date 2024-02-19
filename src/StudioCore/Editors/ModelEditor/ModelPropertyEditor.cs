@@ -699,6 +699,7 @@ public class ModelPropertyEditor
         }
     }
 
+    // Core of the property editor.
     private void PropEditorGeneric(ViewportSelection selection, HashSet<Entity> entSelection, object target = null, bool decorate = true, int classIndex = -1)
     {
         var scale = Smithbox.GetUIScale();
@@ -707,6 +708,15 @@ public class ModelPropertyEditor
         Type type = obj.GetType();
 
         PropertyInfo[] properties = _propCache.GetCachedProperties(type);
+
+        if(target == null)
+        {
+            TaskLogs.AddLog($"target is null");
+        }
+        else
+        {
+            TaskLogs.AddLog($"{target} {target.GetType()}");
+        }
 
         if (decorate)
         {
@@ -1116,7 +1126,7 @@ public class ModelPropertyEditor
                                 selection.AddSelection(e);
                             }
                         }
-                        else if (n is MapObjectContainerReference r)
+                        else if (n is ObjectContainerReference r)
                         {
                             // Try to select the map's RootObject if it is loaded, and the reference otherwise.
                             // It's not the end of the world if we choose the wrong one, as SceneTree can use either,

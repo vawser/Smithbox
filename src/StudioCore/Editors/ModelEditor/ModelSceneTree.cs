@@ -59,7 +59,7 @@ public class ModelSceneTree : IActionEventHandler
     private Dictionary<string, string> _objAliasCache;
     private Dictionary<string, string> _mapPieceAliasCache;
 
-    public MapObjectContainer Model { get;  set; }
+    public ObjectContainer Model { get;  set; }
 
     private ModelEditorScreen _editor;
 
@@ -113,14 +113,14 @@ public class ModelSceneTree : IActionEventHandler
             // Tree List
             ImGui.BeginChild("listtree");
 
-            IOrderedEnumerable<KeyValuePair<string, MapObjectContainer>> fakeMaps =
+            IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> fakeMaps =
                 _universe.LoadedObjectContainers.OrderBy(k => k.Key);
 
             _mapEnt_ImGuiID = 0;
 
-            foreach (KeyValuePair<string, MapObjectContainer> lm in fakeMaps)
+            foreach (KeyValuePair<string, ObjectContainer> lm in fakeMaps)
             {
-                MapObjectContainer map = lm.Value;
+                ObjectContainer map = lm.Value;
                 var assetName = lm.Key;
 
                 if (assetName == null)
@@ -131,7 +131,7 @@ public class ModelSceneTree : IActionEventHandler
                 Model = map;
 
                 Entity mapRoot = map?.RootObject;
-                MapObjectContainerReference mapRef = new(assetName, _universe);
+                ObjectContainerReference mapRef = new(assetName, _universe);
                 ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
                 ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;

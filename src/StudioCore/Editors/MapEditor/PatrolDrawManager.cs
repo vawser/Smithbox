@@ -21,7 +21,7 @@ public static class PatrolDrawManager
 
     private const float _verticalOffset = 0.8f;
 
-    private static Entity GetDrawEntity(MapObjectContainer map)
+    private static Entity GetDrawEntity(ObjectContainer map)
     {
         Entity e = new(map, new DrawEntity());
         map.AddObject(e);
@@ -29,7 +29,7 @@ public static class PatrolDrawManager
         return e;
     }
 
-    private static bool GetPoints(string[] regionNames, MapObjectContainer map, out List<Vector3> points)
+    private static bool GetPoints(string[] regionNames, ObjectContainer map, out List<Vector3> points)
     {
         points = [];
 

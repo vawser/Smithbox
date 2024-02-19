@@ -20,7 +20,7 @@ namespace StudioCore.Editors.MapEditor;
 ///     deserialize it. This is the logical portion of the map and does not
 ///     handle tasks like rendering or loading associated assets with it.
 /// </summary>
-public class MapObjectContainer
+public class ObjectContainer
 {
     /// <summary>
     ///     Parent entities used to organize lights per-BTL file.
@@ -36,11 +36,11 @@ public class MapObjectContainer
     public NamedEntity bonesNode;
     public NamedEntity dmysNode;
 
-    public MapObjectContainer()
+    public ObjectContainer()
     {
     }
 
-    public MapObjectContainer(Universe u, string name)
+    public ObjectContainer(Universe u, string name)
     {
         Name = name;
         Universe = u;
@@ -243,7 +243,7 @@ public class MapObjectContainer
     }
 }
 
-public class Map : MapObjectContainer
+public class Map : ObjectContainer
 {
     // This keeps all models that exist when loading a map, so that saves
     // can be byte perfect

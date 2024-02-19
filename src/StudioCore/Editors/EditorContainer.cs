@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.MapEditor;
+using StudioCore.BehaviorEditor;
 
 namespace StudioCore.Editors;
 public static class EditorContainer
@@ -32,4 +33,5 @@ public static class EditorContainer
     public static EventScriptEditorScreen ScriptEditor { get; set; }
     public static TalkScriptEditorScreen TalkEditor { get; set; }
     public static TextureViewerScreen TextureViewer { get; set; }
+    public static BehaviorEditorScreen BehaviorEditor { get; set; }
 }

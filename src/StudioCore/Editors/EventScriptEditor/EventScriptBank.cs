@@ -166,21 +166,15 @@ public static class EventScriptBank
         ScriptBank.Add(eventInfo, eventScript);
     }
 
-    public struct EventScriptInfo
+    public class EventScriptInfo
     {
         public EventScriptInfo(string name, string path)
         {
             Name = name;
             Path = path;
-            Modified = false;
-            Added = false;
         }
 
         public string Name { get; set; }
         public string Path { get; set; }
-
-        public bool Modified { get; set; }
-
-        public bool Added { get; set; }
     }
 }

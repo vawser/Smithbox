@@ -690,6 +690,20 @@ public class SettingsWindow
         }
     }
 
+    private void DisplaySettings_GparamEditor()
+    {
+        if (ImGui.BeginTabItem("Gparam Editor"))
+        {
+            if (ImGui.CollapsingHeader("Fields", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Show color edit for 4 digit properties", ref CFG.Current.Gparam_DisplayColorEditForVector4Fields);
+                ImguiUtils.ShowHelpMarker("Show the color edit tool for 4 digit properties.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
+
     private void DisplaySettings_ModelEditor()
     {
         if (ImGui.BeginTabItem("Model Editor"))
@@ -745,6 +759,7 @@ public class SettingsWindow
             DisplaySettings_ModelEditor();
             DisplaySettings_ParamEditor();
             DisplaySettings_TextEditor();
+            DisplaySettings_GparamEditor();
 
             ImGui.PopItemWidth();
             ImGui.PopStyleColor();

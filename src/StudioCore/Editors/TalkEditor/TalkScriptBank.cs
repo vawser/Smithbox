@@ -165,23 +165,17 @@ public static class TalkScriptBank
         TalkBank.Add(talkInfo, binder);
     }
 
-    public struct TalkScriptInfo
+    public class TalkScriptInfo
     {
         public TalkScriptInfo(string name, string path)
         {
             Name = name;
             Path = path;
-            Modified = false;
-            Added = false;
             EsdFiles = new List<ESD>();
         }
 
         public string Name { get; set; }
         public string Path { get; set; }
-
-        public bool Modified { get; set; }
-
-        public bool Added { get; set; }
 
         public List<ESD> EsdFiles { get; set; }
     }

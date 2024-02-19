@@ -185,23 +185,17 @@ public static class MaterialBank
         FileBank.Add(fileStruct, binder);
     }
 
-    public struct MaterialFileInfo
+    public class MaterialFileInfo
     {
         public MaterialFileInfo(string name, string path)
         {
             Name = name;
             Path = path;
-            Modified = false;
-            Added = false;
             MaterialFiles = new List<MTD>();
         }
 
         public string Name { get; set; }
         public string Path { get; set; }
-
-        public bool Modified { get; set; }
-
-        public bool Added { get; set; }
 
         public List<MTD> MaterialFiles { get; set; }
     }
