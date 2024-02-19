@@ -77,6 +77,11 @@ public class ModelSceneTree : IActionEventHandler
         _mapPieceAliasCache = null;
     }
 
+    public ViewportSelection GetCurrentSelection()
+    {
+        return _selection;
+    }
+
     public void OnGui()
     {
         var scale = Smithbox.GetUIScale();

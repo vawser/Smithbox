@@ -29,6 +29,13 @@ public class MapObjectContainer
 
     [XmlIgnore] public List<Entity> Objects = new();
 
+    public NamedEntity meshesNode;
+    public NamedEntity materialsNode;
+    public NamedEntity matbinsNode;
+    public NamedEntity layoutsNode;
+    public NamedEntity bonesNode;
+    public NamedEntity dmysNode;
+
     public MapObjectContainer()
     {
     }
@@ -116,12 +123,12 @@ public class MapObjectContainer
         MaterialDictionary.Clear();
 
         // Meshes
-        var meshesNode = new NamedEntity(this, null, "Meshes");
+        meshesNode = new NamedEntity(this, null, "Meshes", 0);
         Objects.Add(meshesNode);
         RootObject.AddChild(meshesNode);
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
-            var meshnode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}");
+            var meshnode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
             if (proxy.Submeshes.Count > 0)
             {
                 meshnode.RenderSceneMesh = proxy.Submeshes[i];
@@ -133,7 +140,7 @@ public class MapObjectContainer
         }
 
         // Materials
-        var materialsNode = new NamedEntity(this, null, "Materials");
+        materialsNode = new NamedEntity(this, null, "Materials", 0);
         Objects.Add(materialsNode);
         RootObject.AddChild(materialsNode);
         for (var i = 0; i < flver.Materials.Count; i++)
@@ -145,7 +152,7 @@ public class MapObjectContainer
                 MaterialDictionary.Add(i, mat.Name);
             }
 
-            var matnode = new Entity(this, flver.Materials[i]);
+            var matnode = new NamedEntity(this, flver.Materials[i], mat.Name, i);
             Objects.Add(matnode);
             materialsNode.AddChild(matnode);
         }
@@ -153,7 +160,7 @@ public class MapObjectContainer
         // Matbin
         if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
         {
-            var matbinsNode = new NamedEntity(this, null, "Matbin (Read-only)");
+            matbinsNode = new NamedEntity(this, null, "Matbin (Read-only)", 0);
             Objects.Add(matbinsNode);
             RootObject.AddChild(matbinsNode);
             for (var i = 0; i < flver.Materials.Count; i++)
@@ -171,7 +178,7 @@ public class MapObjectContainer
 
                         var name = Path.GetFileNameWithoutExtension(matbin.SourcePath);
 
-                        var matbinnode = new NamedEntity(this, matbin, $"{name}");
+                        var matbinnode = new NamedEntity(this, matbin, $"{name}", i);
                         Objects.Add(matbinnode);
                         matbinsNode.AddChild(matbinnode);
                     }
@@ -180,25 +187,25 @@ public class MapObjectContainer
         }
 
         // Layouts
-        var layoutsNode = new NamedEntity(this, null, "Layouts");
+        layoutsNode = new NamedEntity(this, null, "Layouts", 0);
         Objects.Add(layoutsNode);
         RootObject.AddChild(layoutsNode);
         for (var i = 0; i < flver.BufferLayouts.Count; i++)
         {
-            var laynode = new NamedEntity(this, flver.BufferLayouts[i], $@"Layout {i}");
+            var laynode = new NamedEntity(this, flver.BufferLayouts[i], $@"Layout {i}", i);
             Objects.Add(laynode);
             layoutsNode.AddChild(laynode);
         }
 
         // Bones
-        var bonesNode = new NamedEntity(this, null, "Bones");
+        bonesNode = new NamedEntity(this, null, "Bones", 0);
         Objects.Add(bonesNode);
         RootObject.AddChild(bonesNode);
         var boneEntList = new List<TransformableNamedEntity>();
         for (var i = 0; i < flver.Bones.Count; i++)
         {
             var bonenode =
-                new TransformableNamedEntity(this, flver.Bones[i], flver.Bones[i].Name);
+                new TransformableNamedEntity(this, flver.Bones[i], flver.Bones[i].Name, i);
 
             if (CFG.Current.Model_ViewBones)
                 bonenode.RenderSceneMesh = Universe.GetBoneDrawable(this, bonenode);
@@ -220,12 +227,12 @@ public class MapObjectContainer
         }
 
         // Dummy Polygons
-        var dmysNode = new NamedEntity(this, null, "DummyPolys");
+        dmysNode = new NamedEntity(this, null, "DummyPolys", 0);
         Objects.Add(dmysNode);
         RootObject.AddChild(dmysNode);
         for (var i = 0; i < flver.Dummies.Count; i++)
         {
-            var dmynode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}");
+            var dmynode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}", i);
 
             if (CFG.Current.ModelEditor_ViewDummyPolys)
                 dmynode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dmynode);

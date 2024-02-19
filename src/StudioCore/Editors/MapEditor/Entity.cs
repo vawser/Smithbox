@@ -1235,12 +1235,14 @@ public class Entity : ISelectable, IDisposable
 /// </summary>
 public class NamedEntity : Entity
 {
-    public NamedEntity(MapObjectContainer map, object msbo, string name) : base(map, msbo)
+    public NamedEntity(MapObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
     {
         Name = name;
+        Index = idx;
     }
 
     public override string Name { get; set; }
+    public int Index { get; set; }
 }
 
 /// <summary>
@@ -1248,12 +1250,14 @@ public class NamedEntity : Entity
 /// </summary>
 public class TransformableNamedEntity : Entity
 {
-    public TransformableNamedEntity(MapObjectContainer map, object msbo, string name) : base(map, msbo)
+    public TransformableNamedEntity(MapObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
     {
         Name = name;
+        Index = idx;
     }
 
     public override string Name { get; set; }
+    public int Index { get; set; }
 
     public override bool HasTransform => true;
 }

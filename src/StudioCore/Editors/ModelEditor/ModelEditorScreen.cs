@@ -21,6 +21,9 @@ using StudioCore.AssetLocator;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using System.Linq;
+using Org.BouncyCastle.Utilities;
+using static SoulsFormats.BTPB;
+using static SoulsFormats.MSB_AC6.Region;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -148,13 +151,26 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void DrawEditorMenu()
     {
+        if (ImGui.BeginMenu("Edit"))
+        {
+            if (ImGui.MenuItem("Duplicate"))
+            {
+                DuplicateSelection();
+            }
+            if (ImGui.MenuItem("Delete"))
+            {
+                DeleteSelection();
+            }
+
+            ImGui.EndMenu();
+        }
 
         if (ImGui.BeginMenu("Model"))
         {
             if (ImGui.MenuItem("Unload"))
             {
                 _loadedModelInfo = null;
-                _universe.UnloadAll(true);
+                _universe.UnloadAll(true); 
             }
 
             // TODO: Select other Flvers within the same container (e.g. _1, _2, etc)
@@ -202,6 +218,16 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
         {
             EditorActionManager.RedoAction();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
+        {
+            DuplicateSelection();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
+        {
+            DeleteSelection();
         }
 
         if (!ViewportUsingKeyboard && !ImGui.GetIO().WantCaptureKeyboard)
@@ -287,6 +313,146 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _sceneTree.OnGui();
         _propEditor.OnGui(_selection, "modeleditprop", Viewport.Width, Viewport.Height);
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
+    }
+
+    public void DuplicateSelection()
+    {
+        ViewportSelection sel = _sceneTree.GetCurrentSelection();
+
+        ISelectable first = sel.GetSelection().First();
+        Entity selected = first as Entity;
+
+        FlverResource r = _flverhandle.Get();
+        NamedEntity nameEnt = selected as NamedEntity;
+        TransformableNamedEntity transformableNamedEntity = selected as TransformableNamedEntity;
+
+        // Mesh
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
+        {
+            FLVER2.Mesh newMesh = r.Flver.Meshes[nameEnt.Index];
+
+            var newIdx = r.Flver.Meshes.Count;
+            r.Flver.Meshes.Add(newMesh);
+
+            var node = new NamedEntity(_sceneTree.Model, r.Flver.Meshes[newIdx], $@"Mesh {newIdx}", newIdx);
+
+            _sceneTree.Model.Objects.Add(node);
+            _sceneTree.Model.meshesNode.AddChild(node);
+        }
+
+        // Material
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.Material))
+        {
+            FLVER2.Material newMaterial = r.Flver.Materials[nameEnt.Index];
+
+            var newIdx = r.Flver.Materials.Count;
+            r.Flver.Materials.Add(newMaterial);
+
+            var node = new NamedEntity(_sceneTree.Model, r.Flver.Materials[newIdx], $@"{newMaterial.Name}", newIdx);
+
+            _sceneTree.Model.Objects.Add(node);
+            _sceneTree.Model.materialsNode.AddChild(node);
+        }
+
+        // Bone
+        if (selected.WrappedObject.GetType() == typeof(FLVER.Bone))
+        {
+            FLVER.Bone newBone = r.Flver.Bones[transformableNamedEntity.Index];
+
+            var newIdx = r.Flver.Bones.Count;
+            r.Flver.Bones.Add(newBone);
+
+            var node = new NamedEntity(_sceneTree.Model, r.Flver.Bones[newIdx], $@"{newBone.Name}", newIdx);
+
+            _sceneTree.Model.Objects.Add(node);
+            _sceneTree.Model.bonesNode.AddChild(node);
+        }
+
+        // Dummy
+        if (selected.WrappedObject.GetType() == typeof(FLVER.Dummy))
+        {
+            FLVER.Dummy newDummy = r.Flver.Dummies[transformableNamedEntity.Index];
+
+            var newIdx = r.Flver.Dummies.Count;
+            r.Flver.Dummies.Add(newDummy);
+
+            var node = new NamedEntity(_sceneTree.Model, r.Flver.Dummies[newIdx], $@"Dummy {newIdx}", newIdx);
+
+            _sceneTree.Model.Objects.Add(node);
+            _sceneTree.Model.dmysNode.AddChild(node);
+        }
+    }
+
+    public void DeleteSelection()
+    {
+        // WIP
+        return;
+
+        ViewportSelection sel = _sceneTree.GetCurrentSelection();
+
+        ISelectable first = sel.GetSelection().First();
+        Entity selected = first as Entity;
+
+        FlverResource r = _flverhandle.Get();
+        NamedEntity nameEnt = selected as NamedEntity;
+        TransformableNamedEntity transformableNamedEntity = selected as TransformableNamedEntity;
+
+        // Mesh
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
+        {
+            FLVER2.Mesh oldMesh = r.Flver.Meshes[nameEnt.Index-1];
+
+            r.Flver.Meshes.Remove(oldMesh);
+
+            var removedEnt = _sceneTree.Model.Objects[nameEnt.Index];
+
+            _sceneTree.Model.Objects.Remove(removedEnt);
+            _sceneTree.Model.meshesNode.RemoveChild(removedEnt);
+        }
+
+        // Material
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.Material))
+        {
+            FLVER2.Material newMaterial = r.Flver.Materials[nameEnt.Index];
+
+            var newIdx = r.Flver.Materials.Count;
+            r.Flver.Materials.Add(newMaterial);
+
+            var node = new NamedEntity(_sceneTree.Model, r.Flver.Materials[newIdx], $@"{newMaterial.Name}", newIdx);
+
+            _sceneTree.Model.Objects.Add(node);
+            _sceneTree.Model.materialsNode.AddChild(node);
+        }
+
+        // Bone
+        if (selected.WrappedObject.GetType() == typeof(FLVER.Bone))
+        {
+            FLVER.Bone newBone = r.Flver.Bones[transformableNamedEntity.Index];
+
+            var newIdx = r.Flver.Bones.Count;
+            r.Flver.Bones.Add(newBone);
+
+            var node = new NamedEntity(_sceneTree.Model, r.Flver.Bones[newIdx], $@"{newBone.Name}", newIdx);
+
+            _sceneTree.Model.Objects.Add(node);
+            _sceneTree.Model.bonesNode.AddChild(node);
+        }
+
+        // Dummy
+        if (selected.WrappedObject.GetType() == typeof(FLVER.Dummy))
+        {
+            FLVER.Dummy newDummy = r.Flver.Dummies[transformableNamedEntity.Index];
+
+            var newIdx = r.Flver.Dummies.Count;
+            r.Flver.Dummies.Add(newDummy);
+
+            var node = new NamedEntity(_sceneTree.Model, r.Flver.Dummies[newIdx], $@"Dummy {newIdx}", newIdx);
+
+            _sceneTree.Model.Objects.Add(node);
+            _sceneTree.Model.dmysNode.AddChild(node);
+        }
+
+        sel.ClearSelection();
     }
 
     public bool InputCaptured()
