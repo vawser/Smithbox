@@ -12,6 +12,8 @@ using System.Reflection;
 using Veldrid;
 using StudioCore.Editors;
 using StudioCore.Settings;
+using SoulsFormats;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.Interface.Windows;
 
@@ -68,6 +70,14 @@ public class SettingsWindow
                     CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
                     Smithbox.FontRebuildRequest = true;
                 }
+            }
+
+            if (ImGui.CollapsingHeader("Formats"))
+            {
+                ImGui.Checkbox("Flexible DCX", ref CFG.Current.System_FlexibleDCX);
+                ImguiUtils.ShowHelpMarker("Enable this if you are attempting to mod files that are 'encrypted'.");
+
+                DCX.IsFlexible = CFG.Current.System_FlexibleDCX;
             }
 
             if (ImGui.CollapsingHeader("Soapstone Server"))

@@ -111,10 +111,12 @@ public class ParamEditorView
         {
             if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
             {
+                _gConfigParamView = false;
                 UICache.ClearCaches();
             }
             if (ImGui.Checkbox("Edit Graphics Config Params", ref _gConfigParamView))
             {
+                _eventParamView = false;
                 UICache.ClearCaches();
             }
 

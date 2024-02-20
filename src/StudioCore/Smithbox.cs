@@ -113,6 +113,9 @@ public class Smithbox
         _context.Window.Title = _programTitle;
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
+        // SoulsFormats toggles
+        DCX.IsFlexible = CFG.Current.System_FlexibleDCX;
+
         // Banks
         MapAliasBank.Bank = new AliasBank(AliasType.Map);
         ModelAliasBank.Bank = new AliasBank(AliasType.Model);
