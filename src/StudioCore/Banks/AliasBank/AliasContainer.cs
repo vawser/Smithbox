@@ -22,6 +22,8 @@ public class AliasContainer
 
     private string gameModDirectory;
 
+    private string ProgramDirectory = ".smithbox";
+
     public AliasContainer()
     {
         aliasMap = null;
@@ -63,29 +65,21 @@ public class AliasContainer
 
         if (File.Exists(baseResourcePath))
         {
-            var options = new JsonSerializerOptions
-            {
-                ReadCommentHandling = JsonCommentHandling.Skip,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-
             using (var stream = File.OpenRead(baseResourcePath))
-                baseResource = JsonSerializer.Deserialize<AliasResource>(File.OpenRead(baseResourcePath), options);
+            {
+                baseResource = JsonSerializer.Deserialize(stream, AliasResourceSerializationContext.Default.AliasResource);
+            }
         }
 
-        var modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\Aliases\\{GetAliasTypeDir()}\\{gametype}\\{filename}.json";
+        var modResourcePath = gameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{GetAliasTypeDir()}\\{gametype}\\{filename}.json";
 
         // If path does not exist, use baseResource only
         if (File.Exists(modResourcePath))
         {
-            var options = new JsonSerializerOptions
-            {
-                ReadCommentHandling = JsonCommentHandling.Skip,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-
             using (var stream = File.OpenRead(modResourcePath))
-                modResource = JsonSerializer.Deserialize<AliasResource>(File.OpenRead(modResourcePath), options);
+            {
+                modResource = JsonSerializer.Deserialize(stream, AliasResourceSerializationContext.Default.AliasResource);
+            }
 
             // Replace baseResource entries with those from modResource if there are ID matches
             foreach (var bEntry in baseResource.list)

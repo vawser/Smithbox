@@ -9,15 +9,6 @@ using StudioCore.UserProject;
 
 namespace StudioCore.Banks.AliasBank;
 
-public enum AliasType
-{
-    None,
-    Model,
-    EventFlag,
-    Particle,
-    Map
-}
-
 /// <summary>
 /// An alias bank holds naming information, allowing for user-readable notes to be appended to raw identifiers (e.g. c0000 becomes c0000 <Player>)
 /// An alias bank has 2 sources: Smithbox, and the local project. 
@@ -132,15 +123,9 @@ public class AliasBank
 
         if (File.Exists(path))
         {
-            var options = new JsonSerializerOptions
-            {
-                ReadCommentHandling = JsonCommentHandling.Skip,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-
             using (var stream = File.OpenRead(path))
             {
-                newResource = JsonSerializer.Deserialize<AliasResource>(stream, options);
+                newResource = JsonSerializer.Deserialize(stream, AliasResourceSerializationContext.Default.AliasResource);
             }
         }
 
@@ -165,16 +150,11 @@ public class AliasBank
 
         if (File.Exists(resourceFilePath))
         {
-            var options = new JsonSerializerOptions
-            {
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-
-            var jsonString = JsonSerializer.Serialize(targetBank, options);
+            string jsonString = JsonSerializer.Serialize(targetBank, typeof(AliasResource), AliasResourceSerializationContext.Default);
 
             try
             {
-                var fs = new FileStream(resourceFilePath, FileMode.Create);
+                var fs = new FileStream(resourceFilePath, System.IO.FileMode.Create);
                 var data = Encoding.ASCII.GetBytes(jsonString);
                 fs.Write(data, 0, data.Length);
                 fs.Flush();

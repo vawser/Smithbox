@@ -91,6 +91,8 @@ public static class GparamParamBank
             File.WriteAllBytes(assetMod, fileBytes);
             //TaskLogs.AddLog($"Saved at: {assetMod}");
         }
+
+        TaskLogs.AddLog($"Saved {info.Name} to {assetMod}");
     }
 
     public static void LoadGraphicsParams()

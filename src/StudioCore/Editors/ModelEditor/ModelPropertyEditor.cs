@@ -709,15 +709,6 @@ public class ModelPropertyEditor
 
         PropertyInfo[] properties = _propCache.GetCachedProperties(type);
 
-        if(target == null)
-        {
-            TaskLogs.AddLog($"target is null");
-        }
-        else
-        {
-            TaskLogs.AddLog($"{target} {target.GetType()}");
-        }
-
         if (decorate)
         {
             ImGui.Columns(2);
