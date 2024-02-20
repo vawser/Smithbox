@@ -74,10 +74,10 @@ public class SettingsWindow
 
             if (ImGui.CollapsingHeader("Formats"))
             {
-                ImGui.Checkbox("Flexible DCX", ref CFG.Current.System_FlexibleDCX);
+                ImGui.Checkbox("Flexible Unpack", ref CFG.Current.System_FlexibleUnpack);
                 ImguiUtils.ShowHelpMarker("Enable this if you are attempting to mod files that are 'encrypted'.");
 
-                DCX.IsFlexible = CFG.Current.System_FlexibleDCX;
+                BinaryReaderEx.IsFlexible = CFG.Current.System_FlexibleUnpack;
             }
 
             if (ImGui.CollapsingHeader("Soapstone Server"))
