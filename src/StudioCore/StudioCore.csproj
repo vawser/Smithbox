@@ -415,7 +415,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\Paramdex\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\MassEditScripts\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\GameOffsets\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Upgrader\**" CopyToOutputDirectory="PreserveNewest" />
@@ -427,6 +427,7 @@
     <None Update="Assets\Aliases\Maps\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\FormatInfo\MSB\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\FormatInfo\FLVER\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\FormatInfo\GPARAM\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -485,10 +486,6 @@
     <Compile Update="Havok\NewAnimSkeleton.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Banks\ResourceBank\" />
   </ItemGroup>
 
 </Project>

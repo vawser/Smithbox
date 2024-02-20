@@ -708,6 +708,10 @@ public class SettingsWindow
             {
                 ImGui.Checkbox("Show color edit for 4 digit properties", ref CFG.Current.Gparam_DisplayColorEditForVector4Fields);
                 ImguiUtils.ShowHelpMarker("Show the color edit tool for 4 digit properties.");
+
+                ImGui.Checkbox("Show Time of Day value", ref CFG.Current.Gparam_DisplayUnk04);
+                ImguiUtils.ShowHelpMarker("Show the time of day value for a field.");
+                
             }
 
             ImGui.EndTabItem();

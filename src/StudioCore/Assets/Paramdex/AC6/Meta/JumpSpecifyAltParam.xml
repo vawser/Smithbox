@@ -4,7 +4,7 @@
     <targetHeight AltName="Target Height" Wiki="Desired height to reach above the jump point." />
     <speedFactor AltName="Speed Factor" Wiki="Multiplier of the speed of the jump." />
     <inheritedVelocityFactor AltName="Inherited Velocity Factor" Wiki="Multiplier of existing velocity before jumping." />
-    <deviationTopSpeed AltName="Deviation Top Speed"Wiki="Top speed of free lateral movement while jumping." />
+    <deviationTopSpeed AltName="Deviation Top Speed" Wiki="Top speed of free lateral movement while jumping." />
     <deviationAcceleration AltName="Deviation Acceleration" Wiki="Acceleration of free lateral movement while jumping." />
   </Field>
   <Self Wiki="Data for jump points in MSB maps." />

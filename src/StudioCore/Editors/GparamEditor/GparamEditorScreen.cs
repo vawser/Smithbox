@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Banks;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
@@ -208,9 +209,21 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.Param entry = data.Params[i];
 
+                // Display user-friendly names
+                var name = entry.Name;
+                var entries = GparamFormatBank.Bank.FormatInformation.GetEntries("Core");
+
+                foreach(var gEntry in entries)
+                {
+                    if (gEntry.id == entry.Key)
+                    {
+                        name = gEntry.name;
+                    }
+                }
+
                 if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
                 {
-                    if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", i == _selectedParamGroupKey))
+                    if (ImGui.Selectable($@" {name}##{entry.Key}", i == _selectedParamGroupKey))
                     {
                         ResetFieldSelection();
                         ResetValueSelection();
@@ -253,9 +266,24 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.IField entry = data.Fields[i];
 
+                // Display user-friendly names
+                var name = entry.Name;
+                var entries = GparamFormatBank.Bank.FormatInformation.GetEntries("Core");
+
+                foreach (var gEntry in entries)
+                {
+                    foreach (var member in gEntry.members)
+                    {
+                        if (member.id == entry.Key)
+                        {
+                            name = member.name;
+                        }
+                    }
+                }
+
                 if (SearchFilters.IsEditorSearchMatch(_paramFieldSearchInput, entry.Name, " "))
                 {
-                    if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", i == _selectedParamFieldKey))
+                    if (ImGui.Selectable($@" {name}##{entry.Key}", i == _selectedParamFieldKey))
                     {
                         ResetValueSelection();
 
@@ -343,14 +371,8 @@ public class GparamEditorScreen : EditorScreen
             ImGui.Text($"Information");
             ImGui.Separator();
 
-            for (int i = 0; i < field.Values.Count; i++)
-            {
-                if (displayTruth[i])
-                {
-                    GPARAM.IFieldValue entry = field.Values[i];
-                    GparamProperty_Info(i, field, entry);
-                }
-            }
+            // Only show once
+            GparamProperty_Info(field);
 
             ImGui.EndChild();
         }
@@ -362,7 +384,15 @@ public class GparamEditorScreen : EditorScreen
     {
         ImGui.AlignTextToFramePadding();
 
-        if (ImGui.Selectable($"{value.Id}##{index}", index == _selectedFieldValueKey))
+        string name = value.Id.ToString();
+
+        if(CFG.Current.Gparam_DisplayUnk04)
+        {
+            name = $"{name} - Time of Day: {value.Unk04}";
+        }
+
+
+        if (ImGui.Selectable($"{name}##{index}", index == _selectedFieldValueKey))
         {
             _selectedFieldValue = value;
             _selectedFieldValueKey = index;
@@ -377,13 +407,28 @@ public class GparamEditorScreen : EditorScreen
         GparamEditor.PropertyField(index, field, value);
     }
 
-    public void GparamProperty_Info(int index, IField field, IFieldValue value)
+    public void GparamProperty_Info(IField field)
     {
         Type fieldType = field.GetType();
 
         ImGui.AlignTextToFramePadding();
-        // TODO:
-        // Add information on what the property does here, check via IField the name (e.g. Sharpness)
+
+        // Display user-friendly names
+        var desc = "";
+        var entries = GparamFormatBank.Bank.FormatInformation.GetEntries("Core");
+
+        foreach (var gEntry in entries)
+        {
+            foreach (var member in gEntry.members)
+            {
+                if (member.id == _selectedParamField.Key)
+                {
+                    desc = member.description;
+                }
+            }
+        }
+
+        ImGui.Text($"{desc}");
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)

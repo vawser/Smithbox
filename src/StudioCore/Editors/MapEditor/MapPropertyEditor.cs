@@ -1325,25 +1325,25 @@ public class MapPropertyEditor
             // Part
             if (_selected.IsPart())
             {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Part");
+                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Part");
             }
 
             // Region
             if (_selected.IsRegion())
             {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Region");
+                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Region");
             }
 
             // Event
             if (_selected.IsEvent())
             {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Event");
+                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Event");
             }
 
             // Light
             if (_selected.IsLight())
             {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Light");
+                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Light");
             }
 
             if (entries != null && attribute != null)
@@ -1376,25 +1376,25 @@ public class MapPropertyEditor
             // Part
             if (_selected.IsPart())
             {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Part");
+                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Part");
             }
 
             // Region
             if (_selected.IsRegion())
             {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Region");
+                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Region");
             }
 
             // Event
             if (_selected.IsEvent())
             {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Event");
+                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Event");
             }
 
             // Light
             if (_selected.IsLight())
             {
-                entries = MsbInfoBank.Bank.FormatInformation.GetEntries("Light");
+                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Light");
             }
 
             if (entries != null && attribute != null)

@@ -242,6 +242,7 @@ public class CFG
     // Settings: Gparam Editor
     //****************************
     public bool Gparam_DisplayColorEditForVector4Fields = true;
+    public bool Gparam_DisplayUnk04 = true;
 
     //****************************
     // Windows

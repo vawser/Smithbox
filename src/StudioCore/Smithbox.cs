@@ -48,6 +48,7 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.BehaviorEditor;
 using StudioCore.BehaviorEditor;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.Banks.GparamBank;
 
 namespace StudioCore;
 
@@ -121,8 +122,9 @@ public class Smithbox
         ModelAliasBank.Bank = new AliasBank(AliasType.Model);
         FlagAliasBank.Bank = new AliasBank(AliasType.EventFlag);
         ParticleAliasBank.Bank = new AliasBank(AliasType.Particle);
-        MsbInfoBank.Bank = new InfoBank(FormatType.MSB);
-        FlverInfoBank.Bank = new InfoBank(FormatType.FLVER);
+        MsbFormatBank.Bank = new InfoBank(FormatType.MSB);
+        FlverFormatBank.Bank = new InfoBank(FormatType.FLVER);
+        GparamFormatBank.Bank = new GparamInfoBank();
         MaterialResourceBank.Setup();
 
         // Windows
@@ -503,8 +505,9 @@ public class Smithbox
         FlagAliasBank.Bank.ReloadAliasBank();
         ParticleAliasBank.Bank.ReloadAliasBank();
         MapAliasBank.Bank.ReloadAliasBank();
-        MsbInfoBank.Bank.ReloadInfoBank();
-        FlverInfoBank.Bank.ReloadInfoBank();
+        MsbFormatBank.Bank.ReloadInfoBank();
+        FlverFormatBank.Bank.ReloadInfoBank();
+        GparamFormatBank.Bank.ReloadInfoBank();
 
         ParamBank.ReloadParams(newsettings, options);
         MaterialResourceBank.Setup();

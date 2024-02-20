@@ -1205,7 +1205,7 @@ public class ModelPropertyEditor
 
             List<InfoReference> entries = null;
 
-            entries = FlverInfoBank.Bank.FormatInformation.GetEntries("All");
+            entries = FlverFormatBank.Bank.FormatInformation.GetEntries("All");
 
             if (entries != null && attribute != null)
             {
@@ -1234,7 +1234,7 @@ public class ModelPropertyEditor
 
             List<InfoReference> entries = null;
 
-            entries = FlverInfoBank.Bank.FormatInformation.GetEntries("All");
+            entries = FlverFormatBank.Bank.FormatInformation.GetEntries("All");
 
             if (entries != null && attribute != null)
             {
