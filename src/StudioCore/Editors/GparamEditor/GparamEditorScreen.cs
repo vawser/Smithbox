@@ -4,7 +4,9 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Interface;
 using StudioCore.UserProject;
+using StudioCore.Utilities;
 using System;
 using System.IO;
 using System.Numerics;
@@ -123,20 +125,33 @@ public class GparamEditorScreen : EditorScreen
     {
         ImGui.Begin("Files##GparamFileList");
 
-        ImGui.Text($"File");
         ImGui.Separator();
+
+        ImGui.InputText($"Search", ref _fileSearchInput, 255);
+        ImGui.SameLine();
+        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+
+        ImGui.Separator();
+
+        if (_fileSearchInput != _fileSearchInputCache)
+        {
+            _fileSearchInputCache = _fileSearchInput;
+        }
 
         foreach (var (name, info) in GparamParamBank.ParamBank)
         {
-            if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGparamKey))
+            if (SearchFilters.IsEditorSearchMatch(_fileSearchInput, info.Name, "_"))
             {
-                ResetGroupSelection();
-                ResetFieldSelection();
-                ResetValueSelection();
+                if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGparamKey))
+                {
+                    ResetGroupSelection();
+                    ResetFieldSelection();
+                    ResetValueSelection();
 
-                _selectedGparamKey = info.Name;
-                _selectedGparamInfo = info;
-                _selectedGparam = info.Gparam;
+                    _selectedGparamKey = info.Name;
+                    _selectedGparamInfo = info;
+                    _selectedGparam = info.Gparam;
+                }
             }
 
             // Context Menu: File
@@ -169,6 +184,19 @@ public class GparamEditorScreen : EditorScreen
     {
         ImGui.Begin("Groups##GparamGroups");
 
+        ImGui.Separator();
+
+        ImGui.InputText($"Search", ref _paramGroupSearchInput, 255);
+        ImGui.SameLine();
+        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+
+        ImGui.Separator();
+
+        if (_paramGroupSearchInput != _paramGroupSearchInputCache)
+        {
+            _paramGroupSearchInputCache = _paramGroupSearchInput;
+        }
+
         if (_selectedGparam != null && _selectedGparamKey != "")
         {
             GPARAM data = _selectedGparam;
@@ -180,13 +208,16 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.Param entry = data.Params[i];
 
-                if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", i == _selectedParamGroupKey))
+                if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
                 {
-                    ResetFieldSelection();
-                    ResetValueSelection();
+                    if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", i == _selectedParamGroupKey))
+                    {
+                        ResetFieldSelection();
+                        ResetValueSelection();
 
-                    _selectedParamGroup = entry;
-                    _selectedParamGroupKey = i;
+                        _selectedParamGroup = entry;
+                        _selectedParamGroupKey = i;
+                    }
                 }
             }
         }
@@ -197,6 +228,19 @@ public class GparamEditorScreen : EditorScreen
     public void GparamFieldList()
     {
         ImGui.Begin("Fields##GparamFields");
+
+        ImGui.Separator();
+
+        ImGui.InputText($"Search", ref _paramFieldSearchInput, 255);
+        ImGui.SameLine();
+        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+
+        ImGui.Separator();
+
+        if (_paramFieldSearchInput != _paramFieldSearchInputCache)
+        {
+            _paramFieldSearchInputCache = _paramFieldSearchInput;
+        }
 
         if (_selectedParamGroup != null && _selectedParamGroupKey != -1)
         {
@@ -209,12 +253,15 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.IField entry = data.Fields[i];
 
-                if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", i == _selectedParamFieldKey))
+                if (SearchFilters.IsEditorSearchMatch(_paramFieldSearchInput, entry.Name, " "))
                 {
-                    ResetValueSelection();
+                    if (ImGui.Selectable($@" {entry.Name}##{entry.Key}", i == _selectedParamFieldKey))
+                    {
+                        ResetValueSelection();
 
-                    _selectedParamField = entry;
-                    _selectedParamFieldKey = i;
+                        _selectedParamField = entry;
+                        _selectedParamFieldKey = i;
+                    }
                 }
             }
         }
@@ -225,9 +272,29 @@ public class GparamEditorScreen : EditorScreen
     {
         ImGui.Begin("Values##GparamValues");
 
+        ImGui.Separator();
+
+        ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
+        ImGui.SameLine();
+        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+
+        ImGui.Separator();
+
+        if (_fieldIdSearchInput != _fieldIdSearchInputCache)
+        {
+            _fieldIdSearchInputCache = _fieldIdSearchInput;
+        }
+
         if (_selectedParamField != null && _selectedParamFieldKey != -1)
         {
             GPARAM.IField field = _selectedParamField;
+
+            bool[] displayTruth = new bool[field.Values.Count];
+
+            for (int i = 0; i < field.Values.Count; i++)
+            {
+                displayTruth[i] = true;
+            }
 
             ImGui.Columns(3);
 
@@ -239,7 +306,13 @@ public class GparamEditorScreen : EditorScreen
             for (int i = 0; i < field.Values.Count; i++)
             {
                 GPARAM.IFieldValue entry = field.Values[i];
-                GparamProperty_ID(i, field, entry);
+
+                displayTruth[i] = SearchFilters.IsIdSearchMatch(_fieldIdSearchInput, entry.Id.ToString());
+
+                if (displayTruth[i])
+                {
+                    GparamProperty_ID(i, field, entry);
+                }
             }
 
             ImGui.EndChild();
@@ -253,8 +326,11 @@ public class GparamEditorScreen : EditorScreen
 
             for (int i = 0; i < field.Values.Count; i++)
             {
-                GPARAM.IFieldValue entry = field.Values[i];
-                GparamProperty_Value(i, field, entry);
+                if (displayTruth[i])
+                {
+                    GPARAM.IFieldValue entry = field.Values[i];
+                    GparamProperty_Value(i, field, entry);
+                }
             }
 
             ImGui.EndChild();
@@ -269,12 +345,14 @@ public class GparamEditorScreen : EditorScreen
 
             for (int i = 0; i < field.Values.Count; i++)
             {
-                GPARAM.IFieldValue entry = field.Values[i];
-                GparamProperty_Info(i, field, entry);
+                if (displayTruth[i])
+                {
+                    GPARAM.IFieldValue entry = field.Values[i];
+                    GparamProperty_Info(i, field, entry);
+                }
             }
 
             ImGui.EndChild();
-
         }
 
         ImGui.End();

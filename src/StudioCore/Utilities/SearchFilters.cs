@@ -147,4 +147,85 @@ public static class SearchFilters
 
         return match;
     }
+
+    public static bool IsEditorSearchMatch(string rawInput, string checkInput, string delimiter)
+    {
+        bool match = false;
+
+        string cleanRawInput = rawInput.Trim().ToLower();
+        string cleanCheckInput = checkInput.Trim().ToLower();
+
+        if (cleanRawInput.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
+        }
+
+        string[] inputParts = cleanRawInput.Split("+");
+        bool[] partTruth = new bool[inputParts.Length];
+
+        for (int i = 0; i < partTruth.Length; i++)
+        {
+            string entry = inputParts[i];
+
+            if (entry == cleanCheckInput)
+                partTruth[i] = true;
+
+            var refParts = cleanCheckInput.Split($"{delimiter}");
+            foreach (var refPart in refParts)
+            {
+                if (entry == refPart)
+                {
+                    partTruth[i] = true;
+                }
+            }
+        }
+
+        match = true;
+
+        foreach (bool entry in partTruth)
+        {
+            if (!entry)
+                match = false;
+        }
+
+        return match;
+    }
+
+    public static bool IsIdSearchMatch(string rawInput, string checkInput)
+    {
+        bool match = false;
+
+        int rawInputNum = -1;
+        int.TryParse(rawInput, out rawInputNum);
+
+        int checkInputNum = -1;
+        int.TryParse(checkInput, out checkInputNum);
+
+        string[] inputParts = rawInput.Split("+");
+        bool[] partTruth = new bool[inputParts.Length];
+
+        if (rawInput.Equals(""))
+        {
+            match = true; // If input is empty, show all
+            return match;
+        }
+
+        for (int i = 0; i < partTruth.Length; i++)
+        {
+            int entry;
+            int.TryParse(inputParts[i], out entry);
+
+            if (entry == checkInputNum)
+                partTruth[i] = true;
+        }
+
+        // Act as OR
+        if(partTruth.Contains(true))
+        {
+            match = true;
+        }
+
+        return match;
+    }
 }
