@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Utilities;
-using StudioCore.Banks.ResourceBank;
+using StudioCore.Editors.MaterialEditor;
 
 namespace StudioCore.Resource;
 

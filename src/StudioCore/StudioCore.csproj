@@ -487,4 +487,8 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Banks\ResourceBank\" />
+  </ItemGroup>
+
 </Project>

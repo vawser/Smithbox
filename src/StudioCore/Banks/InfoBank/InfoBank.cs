@@ -6,6 +6,7 @@ using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using System.Text;
 using StudioCore.UserProject;
+using StudioCore.Banks.AliasBank;
 
 namespace StudioCore.Banks.InfoBank;
 
@@ -98,14 +99,10 @@ public class InfoBank
 
         if (File.Exists(path))
         {
-            var options = new JsonSerializerOptions
-            {
-                ReadCommentHandling = JsonCommentHandling.Skip,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-
             using (var stream = File.OpenRead(path))
-                newResource = JsonSerializer.Deserialize<InfoResource>(stream, options);
+            {
+                newResource = JsonSerializer.Deserialize(stream, InfoResourceSerializationContext.Default.InfoResource);
+            }
         }
 
         return newResource;
@@ -119,12 +116,7 @@ public class InfoBank
 
         if (File.Exists(resourceFilePath))
         {
-            var options = new JsonSerializerOptions
-            {
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-
-            var jsonString = JsonSerializer.Serialize(targetBank, options);
+            string jsonString = JsonSerializer.Serialize(targetBank, typeof(InfoResource), InfoResourceSerializationContext.Default);
 
             try
             {

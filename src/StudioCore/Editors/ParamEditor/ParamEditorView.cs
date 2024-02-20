@@ -27,6 +27,8 @@ public class ParamEditorView
     private bool _focusRows;
     private int _gotoParamRow = -1;
     private bool _mapParamView;
+    private bool _eventParamView;
+    private bool _gConfigParamView;
 
     internal ParamEditorScreen _paramEditor;
 
@@ -99,6 +101,19 @@ public class ParamEditorView
         {
             // DS2 has map params, add UI element to toggle viewing map params and GameParams.
             if (ImGui.Checkbox("Edit Map Params", ref _mapParamView))
+            {
+                UICache.ClearCaches();
+            }
+
+            ImGui.Separator();
+        }
+        else if (Project.Type is ProjectType.ER || Project.Type is ProjectType.AC6)
+        {
+            if (ImGui.Checkbox("Edit Event Params", ref _eventParamView))
+            {
+                UICache.ClearCaches();
+            }
+            if (ImGui.Checkbox("Edit Graphics Config Params", ref _gConfigParamView))
             {
                 UICache.ClearCaches();
             }
@@ -187,6 +202,26 @@ public class ParamEditorView
                 else
                 {
                     keyList = keyList.FindAll(p => !ParamBank.DS2MapParamlist.Contains(p.Split('_')[0]));
+                }
+            }
+            else if (Project.Type is ProjectType.ER || Project.Type is ProjectType.AC6)
+            {
+                if (_eventParamView)
+                {
+                    keyList = keyList.FindAll(p => p.StartsWith("EFID"));
+                }
+                else
+                {
+                    keyList = keyList.FindAll(p => !p.StartsWith("EFID"));
+                }
+
+                if (_gConfigParamView)
+                {
+                    keyList = keyList.FindAll(p => p.StartsWith("Gconfig"));
+                }
+                else
+                {
+                    keyList = keyList.FindAll(p => !p.StartsWith("Gconfig"));
                 }
             }
 

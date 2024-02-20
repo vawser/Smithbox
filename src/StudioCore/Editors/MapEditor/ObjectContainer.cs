@@ -11,7 +11,7 @@ using System.Linq;
 using System.Numerics;
 using System.Xml.Serialization;
 using StudioCore.MsbEditor;
-using StudioCore.Banks.ResourceBank;
+using StudioCore.Editors.MaterialEditor;
 
 namespace StudioCore.Editors.MapEditor;
 

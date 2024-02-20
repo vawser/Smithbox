@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Banks.AliasBank;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
@@ -15,6 +16,8 @@ public class InfoContainer
     private string gametype;
 
     private string gameModDirectory;
+
+    private string ProgramDirectory = ".smithbox";
 
     public InfoContainer()
     {
@@ -53,29 +56,21 @@ public class InfoContainer
 
         if (File.Exists(baseResourcePath))
         {
-            var options = new JsonSerializerOptions
-            {
-                ReadCommentHandling = JsonCommentHandling.Skip,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-
             using (var stream = File.OpenRead(baseResourcePath))
-                baseResource = JsonSerializer.Deserialize<InfoResource>(File.OpenRead(baseResourcePath), options);
+            {
+                baseResource = JsonSerializer.Deserialize(stream, InfoResourceSerializationContext.Default.InfoResource);
+            }
         }
 
-        var modResourcePath = gameModDirectory + $"\\.smithbox\\Assets\\FormatInfo\\{GetFormatTypeDir()}\\{gametype}\\{filename}.json";
+        var modResourcePath = gameModDirectory + $"\\{ProgramDirectory}\\Assets\\FormatInfo\\{GetFormatTypeDir()}\\{gametype}\\{filename}.json";
 
         // If path does not exist, use baseResource only
         if (File.Exists(modResourcePath))
         {
-            var options = new JsonSerializerOptions
-            {
-                ReadCommentHandling = JsonCommentHandling.Skip,
-                TypeInfoResolver = new DefaultJsonTypeInfoResolver()
-            };
-
             using (var stream = File.OpenRead(modResourcePath))
-                modResource = JsonSerializer.Deserialize<InfoResource>(File.OpenRead(modResourcePath), options);
+            {
+                baseResource = JsonSerializer.Deserialize(stream, InfoResourceSerializationContext.Default.InfoResource);
+            }
 
             // Replace baseResource entries with those from modResource if there are ID matches
             foreach (var bEntry in baseResource.list)

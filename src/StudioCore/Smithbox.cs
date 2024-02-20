@@ -45,9 +45,9 @@ using StudioCore.Interface;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Banks.ResourceBank;
 using StudioCore.Editors.BehaviorEditor;
 using StudioCore.BehaviorEditor;
+using StudioCore.Editors.MaterialEditor;
 
 namespace StudioCore;
 

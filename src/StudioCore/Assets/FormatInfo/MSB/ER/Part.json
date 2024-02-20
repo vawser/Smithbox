@@ -78,7 +78,7 @@
             "desc": "Is this part to be considered a shadow source."
         },
         {
-            "id": "Part-IsShadowSrc",
+            "id": "Part-IsStaticShadowSrc",
             "name": "Is Static Shadow Source",
             "desc": "Is this part to be considered a static shadow source."
         },
