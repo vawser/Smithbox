@@ -34,8 +34,6 @@ public class ParamBank
         SelectedRows = 2
     }
 
-    public static bool InvalidParamBankLoad = false;
-
     public static ParamBank PrimaryBank = new();
     public static ParamBank VanillaBank = new();
     public static Dictionary<string, ParamBank> AuxBanks = new();
@@ -503,7 +501,6 @@ public class ParamBank
         }
         catch
         {
-            InvalidParamBankLoad = true;
             PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
@@ -573,7 +570,6 @@ public class ParamBank
         }
         catch
         {
-            InvalidParamBankLoad = true;
             PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
@@ -642,7 +638,6 @@ public class ParamBank
         }
         catch
         {
-            InvalidParamBankLoad = true;
             PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
@@ -682,7 +677,6 @@ public class ParamBank
         }
         catch
         {
-            InvalidParamBankLoad = true;
             PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
@@ -781,7 +775,6 @@ public class ParamBank
             }
             catch
             {
-                InvalidParamBankLoad = true;
                 PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -793,7 +786,6 @@ public class ParamBank
             }
             catch
             {
-                InvalidParamBankLoad = true;
                 PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -916,7 +908,6 @@ public class ParamBank
         }
         catch
         {
-            InvalidParamBankLoad = true;
             PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
@@ -1025,7 +1016,6 @@ public class ParamBank
             }
             catch
             {
-                InvalidParamBankLoad = true;
                 PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1038,7 +1028,6 @@ public class ParamBank
             }
             catch
             {
-                InvalidParamBankLoad = true;
                 PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1128,7 +1117,6 @@ public class ParamBank
             }
             catch
             {
-                InvalidParamBankLoad = true;
                 PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1139,7 +1127,10 @@ public class ParamBank
                 using var bnd = BND4.Read(path);
                 LoadParamFromBinder(bnd, ref _params, out _, false);
             }
-            catch { }
+            catch
+            {
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}\nTry enabling 'Flexible DCX'.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 
@@ -2098,11 +2089,6 @@ public class ParamBank
 
     public void SaveParams(bool loose = false, bool partialParams = false)
     {
-        if(InvalidParamBankLoad)
-        {
-            TaskLogs.AddLog("Param Bank was not loaded properly. Restart DSMS.", LogLevel.Error, TaskLogs.LogPriority.High);
-        }
-
         if (_params == null)
         {
             return;

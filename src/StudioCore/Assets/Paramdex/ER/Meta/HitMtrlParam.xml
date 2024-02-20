@@ -2,22 +2,22 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="HMP_FOOT_EFFECT_HEIGHT_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="No Change" />
+        <Option Value="1" Name="Force to Reflective Surface Height" />
+        <Option Value="2" Name="Force to Character Height" />
     </Enum>
     <Enum Name="HMP_FOOT_EFFECT_DIR_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
+        <Option Value="0" Name="No Change" />
+        <Option Value="1" Name="Force Upwards" />
     </Enum>
     <Enum Name="HMP_FLOOR_HEIGHT_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
+        <Option Value="0" Name="No Change" />
+        <Option Value="1" Name="Force to Reflective Surface Height" />
     </Enum>
     <Enum Name="HMP_HARDNESS_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="Soft" />
+        <Option Value="1" Name="Normal" />
+        <Option Value="2" Name="Hard" />
     </Enum>
   </Enums>
   <Field>
@@ -27,8 +27,8 @@
     <footEffectHeightType AltName="Foot Effect Height Type" Wiki="Height to generate foot effect" Enum="HMP_FOOT_EFFECT_HEIGHT_TYPE" />
     <footEffectDirType AltName="Foot Effect Direction Type" Wiki="Direction of foot effect" Enum="HMP_FOOT_EFFECT_DIR_TYPE" />
     <floorHeightType AltName="Floor Height Type" Wiki="For floating items such as the surface of the water" Enum="HMP_FLOOR_HEIGHT_TYPE" />
-    <disableFallDamage AltName="Disable Fall Damage" Wiki="Set to 1 for floors that are not subject to fall damage" />
-    <isHardnessForSoundReverb AltName="Is Hardness for Sound Reverb" Wiki="Is it a hard material for sound echo? (0: soft, 1: hard)" />
+    <disableFallDamage AltName="Disable Fall Damage" Wiki="Set to 1 for floors that are not subject to fall damage" IsBool="" />
+    <isHardnessForSoundReverb AltName="Is Hardness for Sound Reverb" Wiki="Is it a hard material for sound echo? (0: soft, 1: hard)" IsBool="" />
     <hardnessType AltName="Hardness Type" Wiki="The hardness of the material. Used for soft contact processing of rigid bodies." Enum="HMP_HARDNESS_TYPE" />
     <pad2 AltName=""/>
     <spEffectIdOnHit0_ClearCount_2 AltName="On Hit [0] - NG+1 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 2nd lap" Refs="SpEffectParam"/>
