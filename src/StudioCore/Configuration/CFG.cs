@@ -64,7 +64,7 @@ public class CFG
     public bool System_Font_Vietnamese = false;
     public float System_Frame_Rate = 60.0f;
 
-    public bool System_FlexibleDCX = true;
+    public bool System_FlexibleUnpack = true;
 
     // Resource Banks
     public bool AutoLoadBank_TimeAct = false;

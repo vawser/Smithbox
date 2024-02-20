@@ -114,7 +114,7 @@ public class Smithbox
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
         // SoulsFormats toggles
-        DCX.IsFlexible = CFG.Current.System_FlexibleDCX;
+        BinaryReaderEx.IsFlexible = CFG.Current.System_FlexibleUnpack;
 
         // Banks
         MapAliasBank.Bank = new AliasBank(AliasType.Map);
