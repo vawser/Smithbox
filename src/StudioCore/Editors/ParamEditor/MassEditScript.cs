@@ -24,7 +24,6 @@ public class MassEditScript
         List<string> preamble = new();
         var text = File.ReadAllLines(path);
         List<string[]> args = new();
-
         foreach (var line in text)
         {
             if (line.StartsWith("##") && args.Count == 0)
@@ -34,7 +33,6 @@ public class MassEditScript
             else if (line.StartsWith("newvar "))
             {
                 var arg = line.Substring(7).Split(':', 2);
-
                 if (arg[1].EndsWith(';'))
                 {
                     arg[1] = arg[1].Substring(0, arg[1].Length - 1);
@@ -43,7 +41,9 @@ public class MassEditScript
                 args.Add(arg);
             }
             else
+            {
                 break;
+            }
         }
 
         this.name = name;
@@ -96,12 +96,13 @@ public class MassEditScript
         foreach (MassEditScript script in scriptList)
         {
             if (script == null)
+            {
                 continue;
+            }
 
             if (ImGui.BeginMenu(script.name))
             {
                 script.MenuItems();
-
                 if (ImGui.Selectable("Load"))
                 {
                     _currentMEditRegexInput = script.GenerateMassedit();
