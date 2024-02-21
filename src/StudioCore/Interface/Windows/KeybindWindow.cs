@@ -37,12 +37,12 @@ public class KeybindWindow
 
         FieldInfo[] binds = KeyBindings.Current.GetType().GetFields();
 
-        KeybindSection("Core", binds, Category.Core);
-        KeybindSection("Window", binds, Category.Window);
-        KeybindSection("Viewport", binds, Category.Viewport);
-        KeybindSection("Map Editor", binds, Category.MapEditor);
-        KeybindSection("Param Editor", binds, Category.ParamEditor);
-        KeybindSection("Text Editor", binds, Category.TextEditor);
+        KeybindSection("Core", binds, KeybindCategory.Core, 0);
+        KeybindSection("Window", binds, KeybindCategory.Window, 1);
+        KeybindSection("Viewport", binds, KeybindCategory.Viewport, 2);
+        KeybindSection("Map Editor", binds, KeybindCategory.MapEditor, 3);
+        KeybindSection("Param Editor", binds, KeybindCategory.ParamEditor, 4);
+        KeybindSection("Text Editor", binds, KeybindCategory.TextEditor, 5);
 
         if (ImGui.BeginTabItem($"Defaults"))
         {
@@ -53,9 +53,9 @@ public class KeybindWindow
         }
     }
 
-    public void KeybindSection(string title, FieldInfo[] binds, Category keyCategory)
+    public void KeybindSection(string title, FieldInfo[] binds, KeybindCategory keyCategory, int idx)
     {
-        if (ImGui.BeginTabItem($"{title}"))
+        if (ImGui.BeginTabItem($"{title}##KeyBind{title}{idx}"))
         {
             ImGui.Columns(2);
 
@@ -65,7 +65,7 @@ public class KeybindWindow
 
                 if (bindVal.KeyCategory == keyCategory)
                 {
-                    KeybindTitle(bind, bindVal);
+                    KeybindTitle(bind, bindVal, keyCategory, idx);
                 }
             }
 
@@ -77,7 +77,7 @@ public class KeybindWindow
 
                 if (bindVal.KeyCategory == keyCategory)
                 {
-                    KeybindEntry(bind, bindVal);
+                    KeybindEntry(bind, bindVal, keyCategory, idx);
                 }
             }
 
@@ -87,13 +87,18 @@ public class KeybindWindow
         }
     }
 
-    public void KeybindTitle(FieldInfo bind, KeyBind bindVal)
+    public void KeybindTitle(FieldInfo bind, KeyBind bindVal, KeybindCategory keyCategory, int idx)
     {
+        var name = bindVal.PresentationName;
+        if (bindVal.PresentationName == null)
+        {
+            name = "";
+        }
         ImGui.AlignTextToFramePadding();
-        ImGui.Text(bindVal.PresentationName);
+        ImGui.Text($"{name}");
     }
 
-    public void KeybindEntry(FieldInfo bind, KeyBind bindVal)
+    public void KeybindEntry(FieldInfo bind, KeyBind bindVal, KeybindCategory keyCategory, int idx)
     {
         var keyText = bindVal.HintText;
         if (keyText == "")
@@ -117,7 +122,7 @@ public class KeybindWindow
                 }
             }
         }
-        else if (ImGui.Button($"{keyText}##{bind.Name}"))
+        else if (ImGui.Button($"{keyText}##{bind.Name}{keyCategory}{idx}"))
             _currentKeyBind = bindVal;
     }
 

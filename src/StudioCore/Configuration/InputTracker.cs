@@ -185,7 +185,7 @@ public static class InputTracker
             _newKeysThisFrame.Add(key);
     }
 
-    public static KeyBind GetNewKeyBind(string name, Category keyCategory)
+    public static KeyBind GetNewKeyBind(string name, KeybindCategory keyCategory)
     {
         Key newkey = GetNextKey();
         _newKeysThisFrame.Clear(); // Clear to prevent hotkeys from triggering
