@@ -1,6 +1,7 @@
 ﻿using StudioCore.Resource;
 using StudioCore.Scene;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 using Veldrid;
