@@ -8,6 +8,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
@@ -178,48 +179,52 @@ public class GparamEditorScreen : EditorScreen
                 ImGui.EndGroup();
             }
 
-            // Context Menu: File
-            if (info.Name == _selectedGparamKey)
-            {
-                if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
-                {
-                    if (ImGui.Selectable("Duplicate"))
-                    {
-                        DuplicateGparamFile();
-
-                        ImGui.CloseCurrentPopup();
-                    }
-                    ImguiUtils.ShowButtonTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
-
-                    if (ImGui.Selectable("Copy"))
-                    {
-                        CopyGparamFile(info);
-
-                        ImGui.CloseCurrentPopup();
-                    }
-                    ImguiUtils.ShowButtonTooltip("Copy the selected file and rename it to the name specified below");
-
-                    if (ImGui.Selectable("Remove"))
-                    {
-                        RemoveGparamFile(info);
-
-                        ImGui.CloseCurrentPopup();
-                    }
-                    ImguiUtils.ShowButtonTooltip("Delete the selected file from your project.");
-                    ImGui.Separator();
-
-                    // Copy
-                    if (_copyFileNewName == "")
-                        _copyFileNewName = name;
-
-                    ImGui.InputText("##copyInputName", ref _copyFileNewName, 255);
-
-                    ImGui.EndPopup();
-                }
-            }
+            GparamFileContextMenu(name, info);
         }
 
         ImGui.End();
+    }
+
+    public void GparamFileContextMenu(string name, GparamParamBank.GparamInfo info)
+    {
+        if (info.Name == _selectedGparamKey)
+        {
+            if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
+            {
+                if (ImGui.Selectable("Duplicate"))
+                {
+                    DuplicateGparamFile();
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
+
+                if (ImGui.Selectable("Copy"))
+                {
+                    CopyGparamFile(info);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Copy the selected file and rename it to the name specified below");
+
+                if (ImGui.Selectable("Remove"))
+                {
+                    RemoveGparamFile(info);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Delete the selected file from your project.");
+                ImGui.Separator();
+
+                // Copy
+                if (_copyFileNewName == "")
+                    _copyFileNewName = name;
+
+                ImGui.InputText("##copyInputName", ref _copyFileNewName, 255);
+
+                ImGui.EndPopup();
+            }
+        }
     }
 
     public void GparamGroupList()
@@ -270,35 +275,47 @@ public class GparamEditorScreen : EditorScreen
                 }
             }
 
-            // TODO: implement the GPARAM side of this
-            /*
-            ImGui.Separator();
-
-            // Addable groups
-            for (int i = 0; i < data.Params.Count; i++)
+            if (CFG.Current.Gparam_DisplayGroupAdd)
             {
-                GPARAM.Param entry = data.Params[i];
+                ImGui.Separator();
 
-                var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
-
-                // Ignore the empty groups
-                if (entry.Fields.Count == 0)
-                {
-                    if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
-                    {
-                        if (ImGui.Button($"Add"))
-                        {
-                            AddNewGroup();
-                        }
-                        ImGui.SameLine();
-                        ImGui.Text($"{name}");
-                    }
-                }
+                GparamGroupAddSection();
             }
-            */
         }
 
         ImGui.End();
+    }
+
+    public void GparamGroupAddSection()
+    {
+        GPARAM data = _selectedGparam;
+
+        for (int i = 0; i < data.Params.Count; i++)
+        {
+            GPARAM.Param entry = data.Params[i];
+
+            var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
+
+            // Ignore the empty groups
+            if (entry.Fields.Count == 0)
+            {
+                if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
+                {
+                    if (ImGui.Button($"Add"))
+                    {
+                        AddGroupToGparam();
+                    }
+                    ImGui.SameLine();
+                    ImGui.Text($"{name}");
+                }
+            }
+        }
+    }
+
+    public void AddGroupToGparam()
+    {
+        // TODO
+        PlatformUtils.Instance.MessageBox("Not implemented yet.", "WIP", MessageBoxButtons.OK);
     }
 
     public void GparamFieldList()

@@ -244,6 +244,7 @@ public class CFG
     public bool Gparam_DisplayColorEditForVector4Fields = true;
     public bool Gparam_DisplayUnk04 = true;
     public bool Gparam_DisplayMapNames = true;
+    public bool Gparam_DisplayGroupAdd = true;
 
     //****************************
     // Windows

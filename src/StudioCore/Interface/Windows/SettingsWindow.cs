@@ -706,9 +706,15 @@ public class SettingsWindow
         {
             if (ImGui.CollapsingHeader("Files", ImGuiTreeNodeFlags.DefaultOpen))
             {
-
                 ImGui.Checkbox("Show Map Names", ref CFG.Current.Gparam_DisplayMapNames);
                 ImguiUtils.ShowHelpMarker("Show map names in the GPARAM file list.");
+            }
+
+            if (ImGui.CollapsingHeader("Groups", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+
+                ImGui.Checkbox("Show Add Group options", ref CFG.Current.Gparam_DisplayGroupAdd);
+                ImguiUtils.ShowHelpMarker("Show the Add Group options, which allow the addition of GPARAM groups that are not already present within a GPARAM file.");
             }
 
             ImGui.EndTabItem();
