@@ -109,6 +109,10 @@ namespace SoulsFormats
                     byte unk30 = br.GetByte(0x30);
                     byte unk38 = br.GetByte(0x38);
 
+                    // Credit to ivi
+                    if (BinaryReaderEx.IsFlexible && unk04 != 0x11000)
+                        unk04 = 0x10000;
+
                     if (unk04 == 0x10000 && unk10 == 0x24 && unk30 == 9 && unk38 == 0)
                         type = Type.DCX_DFLT_10000_24_9;
                     else if (unk04 == 0x10000 && unk10 == 0x44 && unk30 == 9 && unk38 == 0)
