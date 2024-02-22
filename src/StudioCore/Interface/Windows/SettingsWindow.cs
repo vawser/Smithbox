@@ -706,6 +706,10 @@ public class SettingsWindow
         {
             if (ImGui.CollapsingHeader("Fields", ImGuiTreeNodeFlags.DefaultOpen))
             {
+
+                ImGui.Checkbox("Show Map Names", ref CFG.Current.Gparam_DisplayMapNames);
+                ImguiUtils.ShowHelpMarker("Show map names in the GPARAM file list.");
+
                 ImGui.Checkbox("Show color edit for 4 digit properties", ref CFG.Current.Gparam_DisplayColorEditForVector4Fields);
                 ImguiUtils.ShowHelpMarker("Show the color edit tool for 4 digit properties.");
 

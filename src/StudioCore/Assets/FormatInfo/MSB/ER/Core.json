@@ -765,56 +765,474 @@
             ]
         },
         {
-            "id": "XXX",
-            "name": "XXXX",
+            "id": "Region",
+            "name": "Region",
             "description": "",
             "attributes": "",
             "members": [
                 {
-                    "id": "",
-                    "name": "",
+                    "id": "Shape",
+                    "name": "Shape",
+                    "description": "The shape of the region.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Position",
+                    "name": "Position",
+                    "description": "The location of the region.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Rotation",
+                    "name": "Rotation",
+                    "description": "The rotiation of the region, in degrees.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MapStudioLayer",
+                    "name": "Map Studio Layer",
+                    "description": "Controls whether the region is active in different ceremonies.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ActivationPartName",
+                    "name": "Activation Part Name",
+                    "description": "If specified, the region is only active when the part is loaded.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EntityID",
+                    "name": "Entity ID",
+                    "description": "Identifies the region in event scripts.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "InvasionPoint",
+            "name": "InvasionPoint",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Priority",
+                    "name": "Priority",
                     "description": "",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "XXX",
-            "name": "XXXX",
+            "id": "Sound",
+            "name": "Sound",
             "description": "",
             "attributes": "",
             "members": [
                 {
-                    "id": "",
-                    "name": "",
+                    "id": "SoundType",
+                    "name": "Sound Type",
+                    "description": "The category of the sound.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SoundID",
+                    "name": "Sound ID",
+                    "description": "The ID of the sound.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ChildRegionNames",
+                    "name": "Child Region Names",
+                    "description": "References to other regions used to build a composite shape.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "SFX",
+            "name": "SFX",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EffectID",
+                    "name": "Effect ID",
+                    "description": "The ID of the particle effect FFX.",
+                    "attributes": ""
+                },
+                {
+                    "id": "StartDisabled",
+                    "name": "Start Disabled",
+                    "description": "If true, the effect is off by default until enabled by event scripts.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "WindSFX",
+            "name": "Wind SFX",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EffectID",
+                    "name": "Effect ID",
+                    "description": "ID of the effect FFX.",
+                    "attributes": ""
+                },
+                {
+                    "id": "WindAreaName",
+                    "name": "Wind Area Name",
+                    "description": "Reference to a WindArea region.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Message",
+            "name": "Message",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "MessageID",
+                    "name": "Message ID",
+                    "description": "ID of the message's text in the FMGs.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Hidden",
+                    "name": "Hidden",
+                    "description": "Whether the message requires Seek Guidance to appear.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MessageSfxID",
+                    "name": "Message SFX ID",
+                    "description": "The FFX ID to use to display the message.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EnableEventFlagID",
+                    "name": "Enable Event Flag ID",
+                    "description": "Event Flag required to be ON for the message to appear.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CharacterModelName",
+                    "name": "Character Model Name",
+                    "description": "ID of character to render along with the message.",
+                    "attributes": ""
+                },
+                {
+                    "id": "NPCParamID",
+                    "name": "NPC Param ID",
+                    "description": "NpcParam ID to use when rendering a character with the message.",
+                    "attributes": ""
+                },
+                {
+                    "id": "AnimationID",
+                    "name": "Animation ID",
+                    "description": "Animation ID to use when rendering a character with the message.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CharaInitParamID",
+                    "name": "Character Init ID",
+                    "description": "CharaInitParam ID to use when rendering a character with the message.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "EnvironmentMapEffectBox",
+            "name": "Environment Map Effect Box",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "EnableDist",
+                    "name": "Enable Distance",
+                    "description": "Distance from camera required before enabling envmap. 0 = always enabled.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TransitionDist",
+                    "name": "Transition Distance",
+                    "description": "Distance it takes for an envmap to fully transition into view.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpecularLightMult",
+                    "name": "Specular Light Multiplier",
+                    "description": "Strength of specular light in region.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PointLightMult",
+                    "name": "Point Light Multiplier",
+                    "description": "Strength of direct light emitting from EnvironmentMapPoint.",
+                    "attributes": ""
+                },
+                {
+                    "id": "IsModifyLight",
+                    "name": "Modify Light",
+                    "description": "Affects lighting with other fields when true. Possibly normalizes light when false.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Connection",
+            "name": "Connection",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "TargetMapID",
+                    "name": "Target Map ID",
+                    "description": "Map ID this connection targets.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "MapPoint",
+            "name": "Map Point",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "WorldMapPointParamID",
+                    "name": "World Map Point ID",
+                    "description": "Determines which WorldMapPointParam to use.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "WeatherOverride",
+            "name": "Weather Override",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "WeatherLotParamID",
+                    "name": "Weather Lot ID",
+                    "description": "Determines which WeatherLotParam ID to use.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "GroupDefeatReward",
+            "name": "Group Defeat Reward",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "PartNames",
+                    "name": "Part Names",
+                    "description": "References to enemies to defeat to receive the reward.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EstusFlaskRecoveryID",
+                    "name": "Estus Flask Recovery ID",
                     "description": "",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "XXX",
-            "name": "XXXX",
+            "id": "FastTravelRestriction",
+            "name": "Fast Travel Restriction",
             "description": "",
             "attributes": "",
             "members": [
                 {
-                    "id": "",
-                    "name": "",
-                    "description": "",
+                    "id": "EventFlagID",
+                    "name": "Event Flag ID",
+                    "description": "Disables fast travel when flag is OFF.",
                     "attributes": ""
                 }
             ]
         },
         {
-            "id": "XXX",
-            "name": "XXXX",
+            "id": "MountJump",
+            "name": "Mount Jump",
             "description": "",
             "attributes": "",
             "members": [
                 {
-                    "id": "",
-                    "name": "",
+                    "id": "JumpHeight",
+                    "name": "Jump Height",
+                    "description": "Height the player will move upwards when activating a MountJump.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "HorseRideOverride",
+            "name": "Horse Ride Override",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "OverrideType",
+                    "name": "Override Type",
+                    "description": "1 = Forbid riding torrent, 2 = Permit riding torrent",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Light",
+            "name": "Light",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Name",
+                    "name": "Name",
+                    "description": "The name of this light.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Type",
+                    "name": "Type",
+                    "description": "The type of light.\nPoint: omnidirectional light.\nSpot: cone of light.\nDirectional: light at a constant angle.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DiffuseColor",
+                    "name": "Diffuse Color",
+                    "description": "Color of the light on diffuse surfaces.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DiffusePower",
+                    "name": "Diffuse Intensity",
+                    "description": "Intensity of diffuse lighting.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpecularColor",
+                    "name": "Specular Color",
+                    "description": "Color of the light on reflective surfaces.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CastShadows",
+                    "name": "Cast Shadows",
+                    "description": "Whether the light casts shadows.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpecularPower",
+                    "name": "Specular Intensity",
+                    "description": "Intensity of specular lighting.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ConeAngle",
+                    "name": "Spot Light: Cone Angle",
+                    "description": "Tightness of the spot light beam. Only affects Spot lights.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Position",
+                    "name": "Position",
+                    "description": "Center of the light.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Rotation",
+                    "name": "Rotation",
+                    "description": "Rotation of a spot light.",
+                    "attributes": ""
+                },
+                {
+                    "id": "Radius",
+                    "name": "Radius",
+                    "description": "Distance the light shines.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ShadowColor",
+                    "name": "ShadowColor",
+                    "description": "Color of shadows cast by the light; alpha is relative to 100.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FlickerIntervalMin",
+                    "name": "Flicker Interval: Minimum",
+                    "description": "Minimum time between flickers.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FlickerIntervalMax",
+                    "name": "Flicker Interval: Maximum",
+                    "description": "Maximum time between flickers.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FlickerBrightnessMult",
+                    "name": "Flicker Brightness Multiplier",
+                    "description": "Multiplies the brightness of the light while flickering.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EventID",
+                    "name": "Event ID",
+                    "description": "Referenced by map events. Only used in DS2.",
+                    "attributes": ""
+                },
+                {
+                    "id": "NearClip",
+                    "name": "Spot Light: Near Clip",
+                    "description": "Distance at which spot light beam starts.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ShadowModelCullFlip",
+                    "name": "Shadow Model Cull Flip",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Sharpness",
+                    "name": "Sharpness",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Width",
+                    "name": "Spot Light: Width",
+                    "description": "Stretches the spot light beam.",
+                    "attributes": ""
+                },
+                {
+                    "id": "LightStartCutoff",
+                    "name": "Light Start Cutoff",
+                    "description": "Distance from start before light appears.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EnableState_UnkC0",
+                    "name": "Enable State",
+                    "description": "Affects if a light appears normally, but details are unknown.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EnableDist",
+                    "name": "Enable Distance",
+                    "description": "Distance required for a light to transition into view. 0 = always enabled.",
+                    "attributes": ""
+                },
+                {
+                    "id": "VolumeDensity",
+                    "name": "Volume Density",
                     "description": "",
                     "attributes": ""
                 }

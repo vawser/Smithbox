@@ -1,17 +1,6 @@
 ﻿using StudioCore.Editor;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json.Serialization.Metadata;
-using System.Text.Json;
-using System.Text;
 using StudioCore.UserProject;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Editors.MapEditor;
-using StudioCore.BanksMain;
-using Veldrid;
-using System.Text.RegularExpressions;
-using SoulsFormats;
 
 namespace StudioCore.Banks.FormatBank;
 

@@ -145,7 +145,11 @@ public class GparamEditorScreen : EditorScreen
         {
             if (SearchFilters.IsEditorSearchMatch(_fileSearchInput, info.Name, "_"))
             {
-                var prettyName = MapAliasBank.GetMapNameFromFilename(info.Name);
+                var prettyName = "";
+                if (CFG.Current.Gparam_DisplayMapNames)
+                {
+                    prettyName = MapAliasBank.GetMapNameFromFilename(info.Name);
+                }
 
                 ImGui.BeginGroup();
                 if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGparamKey))

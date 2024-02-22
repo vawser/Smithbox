@@ -1,16 +1,10 @@
-﻿using SoulsFormats.KF4;
-using StudioCore.Banks.AliasBank;
+﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.UserProject;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.BanksMain;
 
