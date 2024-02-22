@@ -15,7 +15,6 @@ namespace SoulsFormats
             /// <summary>
             /// Index to a layout in the FLVER's layout collection.
             /// </summary>
-            [FormatReference(ReferenceName = "VertexBuffer-LayoutIndex")]
             public int LayoutIndex { get; set; }
 
             internal int VertexSize;

@@ -23,6 +23,7 @@ using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using Microsoft.AspNetCore.Components.Forms;
 using Silk.NET.OpenGL;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Editors.ModelEditor;
 

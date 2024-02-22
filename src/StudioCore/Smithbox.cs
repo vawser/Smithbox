@@ -5,8 +5,6 @@ using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.CutsceneEditor;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Banks.InfoBank;
 using StudioCore.Editor;
 using StudioCore.Editors;
 using StudioCore.Graphics;
@@ -48,7 +46,7 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.BehaviorEditor;
 using StudioCore.BehaviorEditor;
 using StudioCore.Editors.MaterialEditor;
-using StudioCore.Banks.GparamBank;
+using StudioCore.BanksMain;
 
 namespace StudioCore;
 
@@ -117,15 +115,7 @@ public class Smithbox
         // SoulsFormats toggles
         BinaryReaderEx.IsFlexible = CFG.Current.System_FlexibleUnpack;
 
-        // Banks
-        MapAliasBank.Bank = new AliasBank(AliasType.Map);
-        ModelAliasBank.Bank = new AliasBank(AliasType.Model);
-        FlagAliasBank.Bank = new AliasBank(AliasType.EventFlag);
-        ParticleAliasBank.Bank = new AliasBank(AliasType.Particle);
-        MsbFormatBank.Bank = new InfoBank(FormatType.MSB);
-        FlverFormatBank.Bank = new InfoBank(FormatType.FLVER);
-        GparamFormatBank.Bank = new GparamInfoBank();
-        MaterialResourceBank.Setup();
+        BankUtils.SetupBanks();
 
         // Windows
         WindowContainer.SettingsWindow = new SettingsWindow();
@@ -490,27 +480,18 @@ public class Smithbox
         _context.Dispose();
     }
 
-    private void ChangeProjectSettings(ProjectSettings newsettings, string moddir, NewProjectOptions options)
+    private void ChangeProjectSettings(ProjectSettings projectSettings, string moddir, NewProjectOptions projectOptions)
     {
-        _projectSettings = newsettings;
+        _projectSettings = projectSettings;
 
-        Project.Type = newsettings.GameType;
-        Project.GameRootDirectory = newsettings.GameRoot;
+        Project.Type = projectSettings.GameType;
+        Project.GameRootDirectory = projectSettings.GameRoot;
         Project.GameModDirectory = moddir;
         MapAssetLocator.FullMapList = null;
 
         WindowContainer.SettingsWindow.ProjSettings = _projectSettings;
 
-        ModelAliasBank.Bank.ReloadAliasBank();
-        FlagAliasBank.Bank.ReloadAliasBank();
-        ParticleAliasBank.Bank.ReloadAliasBank();
-        MapAliasBank.Bank.ReloadAliasBank();
-        MsbFormatBank.Bank.ReloadInfoBank();
-        FlverFormatBank.Bank.ReloadInfoBank();
-        GparamFormatBank.Bank.ReloadInfoBank();
-
-        ParamBank.ReloadParams(newsettings, options);
-        MaterialResourceBank.Setup();
+        BankUtils.ReloadBanks(projectSettings, projectOptions);
 
         foreach (EditorScreen editor in _editors)
         {

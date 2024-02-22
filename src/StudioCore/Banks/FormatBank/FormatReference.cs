@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Banks.GparamBank;
+namespace StudioCore.Banks.FormatBank;
 
-public class GparamInfoMember
+public class FormatReference
 {
     public string id { get; set; }
     public string name { get; set; }
     public string description { get; set; }
     public string type { get; set; }
+    public string attributes { get; set; }
+    public List<FormatMember> members { get; set; }
 }

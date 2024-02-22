@@ -13,13 +13,11 @@ namespace SoulsFormats
             /// <summary>
             /// Value indicating the terminating item; typically int.MaxValue, sometimes -1.
             /// </summary>
-            [FormatReference(ReferenceName = "GXList-TerminatorID")]
             public int TerminatorID { get; set; }
 
             /// <summary>
             /// The length in bytes of the terminator data block; most likely not important, but varies in original files.
             /// </summary>
-            [FormatReference(ReferenceName = "GXList-TerminatorLength")]
             public int TerminatorLength { get; set; }
 
             /// <summary>
@@ -76,19 +74,16 @@ namespace SoulsFormats
             /// <summary>
             /// In DS2, ID is just a number; in other games, it's 4 ASCII characters.
             /// </summary>
-            [FormatReference(ReferenceName = "GXItem-ID")]
             public string ID { get; set; }
 
             /// <summary>
             /// Unknown; typically 100.
             /// </summary>
-            [FormatReference(ReferenceName = "GXItem-Unk04")]
             public int Unk04 { get; set; }
 
             /// <summary>
             /// Raw parameter data, usually just a bunch of floats.
             /// </summary>
-            [FormatReference(ReferenceName = "GXItem-Data")]
             public byte[] Data { get; set; }
 
             /// <summary>

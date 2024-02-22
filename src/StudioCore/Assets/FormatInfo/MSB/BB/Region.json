@@ -1,9 +1,0 @@
-{
-    "list": [
-        {
-            "id": "ModelName",
-            "name": "Model Name",
-            "desc": "The name of the model this part uses."
-        }
-   ]
-}

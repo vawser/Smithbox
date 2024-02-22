@@ -3,7 +3,7 @@ using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Banks;
-using StudioCore.Banks.InfoBank;
+using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Gui;
@@ -1312,50 +1312,13 @@ public class MapPropertyEditor
 
     public string GetFieldName(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
-        Type type = classType;
         string name = prop.Name;
-        var attribute = prop?.GetCustomAttribute<FormatReference>();
 
         if (CFG.Current.MapEditor_Enable_Commmunity_Names)
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            List<InfoReference> entries = null;
-
-            // Part
-            if (_selected.IsPart())
-            {
-                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Part");
-            }
-
-            // Region
-            if (_selected.IsRegion())
-            {
-                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Region");
-            }
-
-            // Event
-            if (_selected.IsEvent())
-            {
-                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Event");
-            }
-
-            // Light
-            if (_selected.IsLight())
-            {
-                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Light");
-            }
-
-            if (entries != null && attribute != null)
-            {
-                foreach (var entry in entries)
-                {
-                    if (entry.id == attribute.ReferenceName)
-                    {
-                        name = entry.name;
-                    }
-                }
-            }
+            name = MsbFormatBank.Bank.GetNameForProperty(name, _selected);
         }
 
         return name;
@@ -1363,53 +1326,13 @@ public class MapPropertyEditor
 
     public void ShowFieldHint(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
-        var attribute = prop?.GetCustomAttribute<FormatReference>();
+        string desc = "";
 
         if (CFG.Current.MapEditor_Enable_Commmunity_Hints)
         {
-            var desc = "Unknown.";
-
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            List<InfoReference> entries = null;
-
-            // Part
-            if (_selected.IsPart())
-            {
-                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Part");
-            }
-
-            // Region
-            if (_selected.IsRegion())
-            {
-                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Region");
-            }
-
-            // Event
-            if (_selected.IsEvent())
-            {
-                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Event");
-            }
-
-            // Light
-            if (_selected.IsLight())
-            {
-                entries = MsbFormatBank.Bank.FormatInformation.GetEntries("Light");
-            }
-
-            if (entries != null && attribute != null)
-            {
-                foreach (var entry in entries)
-                {
-                    if (entry.id == attribute.ReferenceName)
-                    {
-                        desc = entry.desc;
-                    }
-                }
-            }
-
-            if (desc == "")
-                desc = "Unknown.";
+            desc = MsbFormatBank.Bank.GetDescriptionForProperty(desc, _selected);
 
             ImguiUtils.ShowHelpMarker(desc);
         }

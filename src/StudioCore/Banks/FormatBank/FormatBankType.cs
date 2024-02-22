@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Banks.AliasBank;
-public enum AliasType
+namespace StudioCore.Banks.FormatBank;
+public enum FormatBankType
 {
     None,
-    Model,
-    EventFlag,
-    Particle,
-    Map
+    MSB,
+    FLVER,
+    GPARAM
 }
-

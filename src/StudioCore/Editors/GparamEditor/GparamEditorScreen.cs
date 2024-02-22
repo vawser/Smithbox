@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks;
+using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
@@ -209,17 +210,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.Param entry = data.Params[i];
 
-                // Display user-friendly names
-                var name = entry.Name;
-                var entries = GparamFormatBank.Bank.FormatInformation.GetEntries("Core");
-
-                foreach(var gEntry in entries)
-                {
-                    if (gEntry.id == entry.Key)
-                    {
-                        name = gEntry.name;
-                    }
-                }
+                var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
 
                 if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
                 {
@@ -266,20 +257,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 GPARAM.IField entry = data.Fields[i];
 
-                // Display user-friendly names
-                var name = entry.Name;
-                var entries = GparamFormatBank.Bank.FormatInformation.GetEntries("Core");
-
-                foreach (var gEntry in entries)
-                {
-                    foreach (var member in gEntry.members)
-                    {
-                        if (member.id == entry.Key)
-                        {
-                            name = member.name;
-                        }
-                    }
-                }
+                var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
 
                 if (SearchFilters.IsEditorSearchMatch(_paramFieldSearchInput, entry.Name, " "))
                 {
@@ -413,20 +391,7 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.AlignTextToFramePadding();
 
-        // Display user-friendly names
-        var desc = "";
-        var entries = GparamFormatBank.Bank.FormatInformation.GetEntries("Core");
-
-        foreach (var gEntry in entries)
-        {
-            foreach (var member in gEntry.members)
-            {
-                if (member.id == _selectedParamField.Key)
-                {
-                    desc = member.description;
-                }
-            }
-        }
+        string desc = GparamFormatBank.Bank.GetReferenceDescription(_selectedParamField.Key);
 
         ImGui.Text($"{desc}");
     }

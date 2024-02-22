@@ -2,8 +2,6 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Banks.InfoBank;
 using StudioCore.Editor;
 using StudioCore.Gui;
 using StudioCore.AssetLocator;

@@ -16,7 +16,7 @@ public class AliasContainer
 {
     private Dictionary<string, AliasResource> aliasMap = new Dictionary<string, AliasResource>();
 
-    private AliasType aliasType;
+    private AliasBankType aliasType;
 
     private string gametype;
 
@@ -27,15 +27,15 @@ public class AliasContainer
     public AliasContainer()
     {
         aliasMap = null;
-        aliasType = AliasType.None;
+        aliasType = AliasBankType.None;
     }
-    public AliasContainer(AliasType _aliasType, string _gametype, string _gameModDirectory)
+    public AliasContainer(AliasBankType _aliasType, string _gametype, string _gameModDirectory)
     {
         aliasType = _aliasType;
         gametype = _gametype;
         gameModDirectory = _gameModDirectory;
 
-        if (aliasType is AliasType.Model)
+        if (aliasType is AliasBankType.Model)
         {
             aliasMap.Add("Characters", LoadJSON("Chr"));
             aliasMap.Add("Objects", LoadJSON("Obj"));
@@ -43,13 +43,13 @@ public class AliasContainer
             aliasMap.Add("MapPieces", LoadJSON("MapPiece"));
         }
 
-        if (aliasType is AliasType.EventFlag)
+        if (aliasType is AliasBankType.EventFlag)
             aliasMap.Add("Flags", LoadJSON("EventFlag"));
 
-        if (aliasType is AliasType.Particle)
+        if (aliasType is AliasBankType.Particle)
             aliasMap.Add("Particles", LoadJSON("Fxr"));
 
-        if (aliasType is AliasType.Map)
+        if (aliasType is AliasBankType.Map)
             aliasMap.Add("Maps", LoadJSON("Maps"));
     }
 
@@ -58,7 +58,7 @@ public class AliasContainer
         var baseResource = new AliasResource();
         var modResource = new AliasResource();
 
-        if (aliasType is AliasType.None)
+        if (aliasType is AliasBankType.None)
             return null;
 
         var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{GetAliasTypeDir()}\\{gametype}\\{filename}.json";
@@ -132,16 +132,16 @@ public class AliasContainer
     {
         var typDir = "";
 
-        if (aliasType is AliasType.Model)
+        if (aliasType is AliasBankType.Model)
             typDir = "Models";
 
-        if (aliasType is AliasType.EventFlag)
+        if (aliasType is AliasBankType.EventFlag)
             typDir = "Flags";
 
-        if (aliasType is AliasType.Particle)
+        if (aliasType is AliasBankType.Particle)
             typDir = "Particles";
 
-        if (aliasType is AliasType.Map)
+        if (aliasType is AliasBankType.Map)
             typDir = "Maps";
 
         return typDir;

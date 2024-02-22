@@ -33,17 +33,17 @@ public class AliasBank
 
     private string AliasName = "";
 
-    private AliasType aliasType;
+    private AliasBankType aliasType;
 
     public Dictionary<string, string> MapNames;
 
-    public AliasBank(AliasType _aliasType)
+    public AliasBank(AliasBankType _aliasType)
     {
         mayReloadAliasBank = false;
 
         aliasType = _aliasType;
 
-        if (aliasType is AliasType.Model)
+        if (aliasType is AliasBankType.Model)
         {
             AliasName = "Models";
             AliasDirectory = "Models";
@@ -51,7 +51,7 @@ public class AliasBank
             IsAssetFileType = true;
         }
 
-        if (aliasType is AliasType.EventFlag)
+        if (aliasType is AliasBankType.EventFlag)
         {
             AliasName = "Flags";
             AliasDirectory = "Flags";
@@ -59,7 +59,7 @@ public class AliasBank
             IsAssetFileType = false;
         }
 
-        if (aliasType is AliasType.Particle)
+        if (aliasType is AliasBankType.Particle)
         {
             AliasName = "Particles";
             AliasDirectory = "Particles";
@@ -67,7 +67,7 @@ public class AliasBank
             IsAssetFileType = false;
         }
 
-        if (aliasType is AliasType.Map)
+        if (aliasType is AliasBankType.Map)
         {
             AliasName = "Maps";
             AliasDirectory = "Maps";
@@ -294,7 +294,7 @@ public class AliasBank
 
     public void UpdateMapNames()
     {
-        if (aliasType is AliasType.Map)
+        if (aliasType is AliasBankType.Map)
         {
             var _mapNames = new Dictionary<string, string>();
 

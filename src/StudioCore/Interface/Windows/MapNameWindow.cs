@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
+using StudioCore.BanksMain;
 using StudioCore.Help;
 using StudioCore.Platform;
 using StudioCore.UserProject;

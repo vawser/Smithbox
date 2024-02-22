@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using SoulsFormats;
 using StudioCore.Banks;
+using StudioCore.BanksMain;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;

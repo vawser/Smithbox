@@ -13,67 +13,56 @@ namespace SoulsFormats
             /// <summary>
             /// Location of the dummy point.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-Position")]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Vector indicating the dummy point's forward direction.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-Forward")]
             public Vector3 Forward { get; set; }
 
             /// <summary>
             /// Vector indicating the dummy point's upward direction.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-Upward")]
             public Vector3 Upward { get; set; }
 
             /// <summary>
             /// Indicates the type of dummy point this is (hitbox, sfx, etc).
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-ReferenceID")]
             public short ReferenceID { get; set; }
 
             /// <summary>
             /// Presumably the index of a bone the dummy points would be listed under in an editor. Not known to mean anything ingame.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-DummyBoneIndex")]
             public short DummyBoneIndex { get; set; }
 
             /// <summary>
             /// Index of the bone that the dummy point follows physically.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-AttachBoneIndex")]
             public short AttachBoneIndex { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-Color")]
             public Color Color { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-Flag1")]
             public bool Flag1 { get; set; }
 
             /// <summary>
             /// If false, the upward vector is not read.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-UseUpwardVector")]
             public bool UseUpwardVector { get; set; }
 
             /// <summary>
             /// Unknown; only used in Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-Unk30")]
             public int Unk30 { get; set; }
 
             /// <summary>
             /// Unknown; only used in Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Dummy-Unk34")]
             public int Unk34 { get; set; }
 
             /// <summary>

@@ -16,6 +16,7 @@ using System.Reflection;
 using StudioCore.UserProject;
 using StudioCore.Banks;
 using StudioCore.MsbEditor;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Editors.MapEditor
 {

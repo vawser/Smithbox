@@ -12,6 +12,7 @@ using StudioCore.Scene;
 using System.Linq;
 using StudioCore.Banks;
 using System.Reflection;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Editors.MapEditor.Prefabs;
 

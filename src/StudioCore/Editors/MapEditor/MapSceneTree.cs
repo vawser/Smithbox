@@ -20,6 +20,7 @@ using Veldrid;
 using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.MsbEditor;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Editors.MapEditor;
 

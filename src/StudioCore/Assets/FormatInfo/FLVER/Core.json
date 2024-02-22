@@ -1,0 +1,519 @@
+{
+    "list": [
+        {
+            "id": "Mesh",
+            "name": "Mesh",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+Mesh",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Dynamic",
+                    "name": "Dynamic",
+                    "description": "When 1, mesh is in bind pose; when 0, it isn't. Most likely has further implications.",
+                    "type": "",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "MaterialIndex",
+                    "name": "Material Index",
+                    "description": "Index of the material used by all triangles in this mesh.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "DefaultBoneIndex",
+                    "name": "Default Bone Index",
+                    "description": "Apparently does nothing. Usually points to a dummy bone named after the model, possibly just for labelling.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "BoneIndices",
+                    "name": "Bone Indices",
+                    "description": "Indexes of bones in the bone collection which may be used by vertices in this mesh.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "FaceSets",
+                    "name": "Face Sets",
+                    "description": "Triangles in this mesh.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "VertexBuffers",
+                    "name": "Vertex Buffers",
+                    "description": "Vertex buffers in this mesh.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Vertices",
+                    "name": "Vertices",
+                    "description": "Vertices in this mesh.",
+                    "type": "",
+                    "attributes": "IsHidden"
+                },
+                {
+                    "id": "VertexCount",
+                    "name": "Vertex Count",
+                    "description": "The number of vertices in this mesh.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "BoundingBox",
+                    "name": "Bounding Box",
+                    "description": "",
+                    "type": "",
+                    "attributes": "IsHidden"
+                },
+                {
+                    "id": "Unk",
+                    "name": "Unknown",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Min",
+                    "name": "Minimum",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Max",
+                    "name": "Maximum",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Bone",
+            "name": "Bone",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+Bone",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Name",
+                    "name": "Name",
+                    "description": "Corresponds to the name of a bone in the parent skeleton. May also have a dummy name.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "ParentIndex",
+                    "name": "Parent Index",
+                    "description": "Index of the parent in this FLVER's bone collection, or -1 for none.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "ChildIndex",
+                    "name": "Child Index",
+                    "description": "Index of the first child in this FLVER's bone collection, or -1 for none.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "NextSiblingIndex",
+                    "name": "Next Sibling Index",
+                    "description": "Index of the next child of this bone's parent, or -1 for none.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "PreviousSiblingIndex",
+                    "name": "Previous Sibling Index",
+                    "description": "Index of the previous child of this bone's parent, or -1 for none.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Position",
+                    "name": "Translation",
+                    "description": "Translation of this bone.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Rotation",
+                    "name": "Rotation",
+                    "description": "Rotation of this bone; euler radians.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Scale",
+                    "name": "Scale",
+                    "description": "Scale of this bone.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "BoundingBoxMin",
+                    "name": "Bounding Box: Minimum",
+                    "description": "Minimum extent of the vertices weighted to this bone.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "BoundingBoxMax",
+                    "name": "Bounding Box: Maximum",
+                    "description": "Maximum extent of the vertices weighted to this bone.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk3C",
+                    "name": "Unknown",
+                    "description": "Unknown; only 0 or 1 before Sekiro.",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Dummy",
+            "name": "Dummy",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+Dummy",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Position",
+                    "name": "Position",
+                    "description": "Location of the dummy point.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Forward",
+                    "name": "Forward",
+                    "description": "Vector indicating the dummy point's forward direction.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Upward",
+                    "name": "Upward",
+                    "description": "Vector indicating the dummy point's upward direction.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "ReferenceID",
+                    "name": "Reference ID",
+                    "description": "Indicates the type of dummy point this is (hitbox, sfx, etc).",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "ParentBoneIndex",
+                    "name": "Bone Index",
+                    "description": "Presumably the index of a bone the dummy points would be listed under in an editor. Not known to mean anything ingame.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "DummyBoneIndex",
+                    "name": "Bone Index",
+                    "description": "Presumably the index of a bone the dummy points would be listed under in an editor. Not known to mean anything ingame.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "AttachBoneIndex",
+                    "name": "Attach Bone Index",
+                    "description": "Index of the bone that the dummy point follows physically.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Color",
+                    "name": "Color",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Flag1",
+                    "name": "Flag",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "UseUpwardVector",
+                    "name": "Use Upward Vector",
+                    "description": "If false, the upward vector is not read.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk30",
+                    "name": "Unk30",
+                    "description": "Unknown; only used in Sekiro.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk34",
+                    "name": "Unk34",
+                    "description": "Unknown; only used in Sekiro.",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "FaceSet",
+            "name": "Face Set",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+FaceSet",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Flags",
+                    "name": "Flags",
+                    "description": "",
+                    "type": "",
+                    "attributes": "IsEnum[FSFlags]"
+                },
+                {
+                    "id": "TriangleStrip",
+                    "name": "Triangle Strip",
+                    "description": "Whether vertices are defined as a triangle strip or individual triangles.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "CullBackfaces",
+                    "name": "Cull Backfaces",
+                    "description": "Whether triangles can be seen through from behind.",
+                    "type": "",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "Unk06",
+                    "name": "Unk06",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "IndicesCount",
+                    "name": "Indices Count",
+                    "description": "The number of indices this face set has.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Indices",
+                    "name": "Indices",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "GXList",
+            "name": "GX List",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+GXList",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "TerminatorID",
+                    "name": "Terminator ID",
+                    "description": "Value indicating the terminating item; typically int.MaxValue, sometimes -1.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "TerminatorLength",
+                    "name": "Terminator Length",
+                    "description": "The length in bytes of the terminator data block; most likely not important, but varies in original files.",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "GXItem",
+            "name": "GX Item",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+GXItem",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "ID",
+                    "name": "ID",
+                    "description": "In DS2, ID is just a number; in other games, it's 4 ASCII characters.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk04",
+                    "name": "Unk04",
+                    "description": "Unknown; typically 100.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Data",
+                    "name": "Data",
+                    "description": "Raw parameter data, usually just a bunch of floats.",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Material",
+            "name": "Material",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+Material",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Name",
+                    "name": "Name",
+                    "description": "Identifies the mesh that uses this material, may include keywords that determine hideable parts.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "MTD",
+                    "name": "Material Path",
+                    "description": "Virtual path to an MTD file.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Flags",
+                    "name": "Flags",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Textures",
+                    "name": "Textures",
+                    "description": "Textures used by this material.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "GXIndex",
+                    "name": "GX Index",
+                    "description": "Index to the flver's list of GX lists.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk18",
+                    "name": "Unk18",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unknown; only used in Sekiro.",
+                    "name": "XXXXXX",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Texture",
+            "name": "Texture",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+Texture",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "Type",
+                    "name": "Type",
+                    "description": "The type of texture this is, corresponding to the entries in the MTD.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Path",
+                    "name": "Path",
+                    "description": "Network path to the texture file to use.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Scale",
+                    "name": "Scale",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk10",
+                    "name": "Unk10",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk11",
+                    "name": "Unk11",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk14",
+                    "name": "Unk14",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk18",
+                    "name": "Unk18",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Unk1C",
+                    "name": "Unk1C",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "VertexBuffer",
+            "name": "Vertex Buffer",
+            "description": "",
+            "type": "SoulsFormats.FLVER2+VertexBuffer",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "LayoutIndex",
+                    "name": "Layout Index",
+                    "description": "Index to a layout in the FLVER's layout collection.",
+                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        }
+    ]
+}

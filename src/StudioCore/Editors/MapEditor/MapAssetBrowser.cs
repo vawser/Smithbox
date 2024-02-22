@@ -15,6 +15,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 using StudioCore.Banks;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Editors.MapEditor;
 

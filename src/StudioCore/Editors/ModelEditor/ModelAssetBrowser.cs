@@ -9,6 +9,7 @@ using SoulsFormats.KF4;
 using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
+using StudioCore.BanksMain;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.UserProject;

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 using System.Text.Json;
-using System.Threading.Tasks;
 
-namespace StudioCore.Banks.GparamBank;
+namespace StudioCore.Banks.FormatBank;
 
 [JsonSourceGenerationOptions(
     WriteIndented = true,
@@ -14,14 +14,14 @@ namespace StudioCore.Banks.GparamBank;
     IncludeFields = true,
     ReadCommentHandling = JsonCommentHandling.Skip)
 ]
-[JsonSerializable(typeof(GparamInfoResource))]
-[JsonSerializable(typeof(GparamInfoReference))]
-[JsonSerializable(typeof(GparamInfoMember))]
-public partial class GparamInfoResourceSerializationContext
+[JsonSerializable(typeof(FormatResource))]
+[JsonSerializable(typeof(FormatReference))]
+[JsonSerializable(typeof(FormatMember))]
+public partial class FormatResourceSerializationContext
     : JsonSerializerContext
 { }
 
-public class GparamInfoResource
+public class FormatResource
 {
-    public List<GparamInfoReference> list { get; set; }
+    public List<FormatReference> list { get; set; }
 }

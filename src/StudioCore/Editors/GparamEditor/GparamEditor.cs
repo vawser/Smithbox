@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using System;
@@ -28,9 +29,30 @@ public class GparamEditor
             int fieldValue = intField.Values[idx].Value;
             int intInput = fieldValue;
 
-            if (ImGui.InputInt($"##value{idx}", ref intInput))
+            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
             {
-                intField.Values[idx].Value = intInput;
+                bool boolInput = false;
+                if (fieldValue > 0)
+                    boolInput = true;
+
+                if (ImGui.Checkbox($"##value{idx}", ref boolInput))
+                {
+                    if(boolInput)
+                    {
+                        intField.Values[idx].Value = 1;
+                    }
+                    else
+                    {
+                        intField.Values[idx].Value = 0;
+                    }
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt($"##value{idx}", ref intInput))
+                {
+                    intField.Values[idx].Value = intInput;
+                }
             }
         }
         // UINT
@@ -41,13 +63,34 @@ public class GparamEditor
 
             var strval = $@"{uintInput}";
 
-            if (ImGui.InputText($"##value{idx}", ref strval, 16))
+            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
             {
-                bool result = uint.TryParse(strval, out uintInput);
+                bool boolInput = false;
+                if (fieldValue > 0)
+                    boolInput = true;
 
-                if(result)
+                if (ImGui.Checkbox($"##value{idx}", ref boolInput))
                 {
-                    uintField.Values[idx].Value = uintInput;
+                    if (boolInput)
+                    {
+                        uintField.Values[idx].Value = 1;
+                    }
+                    else
+                    {
+                        uintField.Values[idx].Value = 0;
+                    }
+                }
+            }
+            else
+            {
+                if (ImGui.InputText($"##value{idx}", ref strval, 16))
+                {
+                    bool result = uint.TryParse(strval, out uintInput);
+
+                    if (result)
+                    {
+                        uintField.Values[idx].Value = uintInput;
+                    }
                 }
             }
         }
@@ -57,9 +100,30 @@ public class GparamEditor
             short fieldValue = shortField.Values[idx].Value;
             int shortInput = fieldValue;
 
-            if (ImGui.InputInt($"##value{idx}", ref shortInput))
+            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
             {
-                shortField.Values[idx].Value = (short)shortInput;
+                bool boolInput = false;
+                if (fieldValue > 0)
+                    boolInput = true;
+
+                if (ImGui.Checkbox($"##value{idx}", ref boolInput))
+                {
+                    if (boolInput)
+                    {
+                        shortField.Values[idx].Value = 1;
+                    }
+                    else
+                    {
+                        shortField.Values[idx].Value = 0;
+                    }
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt($"##value{idx}", ref shortInput))
+                {
+                    shortField.Values[idx].Value = (short)shortInput;
+                }
             }
         }
         // SBYTE
@@ -68,9 +132,30 @@ public class GparamEditor
             short fieldValue = sbyteField.Values[idx].Value;
             int sbyteInput = fieldValue;
 
-            if (ImGui.InputInt($"##value{idx}", ref sbyteInput))
+            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
             {
-                sbyteField.Values[idx].Value = (sbyte)sbyteInput;
+                bool boolInput = false;
+                if (fieldValue > 0)
+                    boolInput = true;
+
+                if (ImGui.Checkbox($"##value{idx}", ref boolInput))
+                {
+                    if (boolInput)
+                    {
+                        sbyteField.Values[idx].Value = 1;
+                    }
+                    else
+                    {
+                        sbyteField.Values[idx].Value = 0;
+                    }
+                }
+            }
+            else
+            {
+                if (ImGui.InputInt($"##value{idx}", ref sbyteInput))
+                {
+                    sbyteField.Values[idx].Value = (sbyte)sbyteInput;
+                }
             }
         }
         // BYTE
@@ -81,13 +166,34 @@ public class GparamEditor
 
             var strval = $@"{byteInput}";
 
-            if (ImGui.InputText($"##value{idx}", ref strval, 16))
+            if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
             {
-                bool result = byte.TryParse(strval, out byteInput);
+                bool boolInput = false;
+                if (fieldValue > 0)
+                    boolInput = true;
 
-                if (result)
+                if (ImGui.Checkbox($"##value{idx}", ref boolInput))
                 {
-                    byteField.Values[idx].Value = byteInput;
+                    if (boolInput)
+                    {
+                        byteField.Values[idx].Value = 1;
+                    }
+                    else
+                    {
+                        byteField.Values[idx].Value = 0;
+                    }
+                }
+            }
+            else
+            {
+                if (ImGui.InputText($"##value{idx}", ref strval, 16))
+                {
+                    bool result = byte.TryParse(strval, out byteInput);
+
+                    if (result)
+                    {
+                        byteField.Values[idx].Value = byteInput;
+                    }
                 }
             }
         }

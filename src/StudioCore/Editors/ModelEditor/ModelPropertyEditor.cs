@@ -3,7 +3,8 @@ using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Banks;
-using StudioCore.Banks.InfoBank;
+using StudioCore.Banks.FormatBank;
+using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Gui;
@@ -1194,29 +1195,13 @@ public class ModelPropertyEditor
 
     public string GetFieldName(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
-        Type type = classType;
         string name = prop.Name;
-
-        var attribute = prop?.GetCustomAttribute<FormatReference>();
 
         if (CFG.Current.ModelEditor_Enable_Commmunity_Names)
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            List<InfoReference> entries = null;
-
-            entries = FlverFormatBank.Bank.FormatInformation.GetEntries("All");
-
-            if (entries != null && attribute != null)
-            {
-                foreach (var entry in entries)
-                {
-                    if (entry.id == attribute.ReferenceName)
-                    {
-                        name = entry.name;
-                    }
-                }
-            }
+            name = FlverFormatBank.Bank.GetNameForProperty(name, _selected);
         }
 
         return name;
@@ -1224,31 +1209,13 @@ public class ModelPropertyEditor
 
     public void ShowFieldHint(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
-        var attribute = prop?.GetCustomAttribute<FormatReference>();
+        string desc = "";
 
         if (CFG.Current.ModelEditor_Enable_Commmunity_Hints)
         {
-            var desc = "Unknown.";
-
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            List<InfoReference> entries = null;
-
-            entries = FlverFormatBank.Bank.FormatInformation.GetEntries("All");
-
-            if (entries != null && attribute != null)
-            {
-                foreach (var entry in entries)
-                {
-                    if (entry.id == attribute.ReferenceName)
-                    {
-                        desc = entry.desc;
-                    }
-                }
-            }
-
-            if (desc == "")
-                desc = "Unknown.";
+            desc = FlverFormatBank.Bank.GetDescriptionForProperty(desc, _selected);
 
             ImguiUtils.ShowHelpMarker(desc);
         }
