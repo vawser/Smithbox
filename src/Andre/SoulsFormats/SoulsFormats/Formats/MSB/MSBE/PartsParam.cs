@@ -1186,7 +1186,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "UnkStruct8-Unk00")]
                 public int Unk00 { get; set; }
 
                 /// <summary>
@@ -1356,13 +1355,11 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "UnkStruct11-Unk00")]
                 public int Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "UnkStruct11-Unk04")]
                 public int Unk04 { get; set; }
 
                 /// <summary>

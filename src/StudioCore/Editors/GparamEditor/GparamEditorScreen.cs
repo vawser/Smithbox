@@ -1,7 +1,7 @@
 ﻿using ImGuiNET;
-using Silk.NET.OpenGL;
 using SoulsFormats;
 using StudioCore.Banks;
+using StudioCore.Banks.FormatBank;
 using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -11,6 +11,7 @@ using StudioCore.Interface;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Reflection;
@@ -51,6 +52,8 @@ public class GparamEditorScreen : EditorScreen
 
     private string _fieldIdSearchInput = "";
     private string _fieldIdSearchInputCache = "";
+
+    private string _copyFileNewName = "";
 
     public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -166,7 +169,7 @@ public class GparamEditorScreen : EditorScreen
                 {
                     ImGui.SameLine();
                     ImGui.PushTextWrapPos();
-                
+
                     ImGui.TextColored(new Vector4(1.0f, 1.0f, 0.0f, 1.0f), @$"<{prettyName}>");
 
                     ImGui.PopTextWrapPos();
@@ -180,18 +183,36 @@ public class GparamEditorScreen : EditorScreen
             {
                 if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
                 {
-                    // Only allow these actions on mod-local files
-                    if (info.IsModFile)
-                    {
-                        
-                    }
-
-                    if (ImGui.Button("Duplicate"))
+                    if (ImGui.Selectable("Duplicate"))
                     {
                         DuplicateGparamFile();
 
                         ImGui.CloseCurrentPopup();
                     }
+                    ImguiUtils.ShowButtonTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
+
+                    if (ImGui.Selectable("Copy"))
+                    {
+                        CopyGparamFile(info);
+
+                        ImGui.CloseCurrentPopup();
+                    }
+                    ImguiUtils.ShowButtonTooltip("Copy the selected file and rename it to the name specified below");
+
+                    if (ImGui.Selectable("Remove"))
+                    {
+                        RemoveGparamFile(info);
+
+                        ImGui.CloseCurrentPopup();
+                    }
+                    ImguiUtils.ShowButtonTooltip("Delete the selected file from your project.");
+                    ImGui.Separator();
+
+                    // Copy
+                    if (_copyFileNewName == "")
+                        _copyFileNewName = name;
+
+                    ImGui.InputText("##copyInputName", ref _copyFileNewName, 255);
 
                     ImGui.EndPopup();
                 }
@@ -225,24 +246,56 @@ public class GparamEditorScreen : EditorScreen
             ImGui.Text($"Group");
             ImGui.Separator();
 
+            // Available groups
             for (int i = 0; i < data.Params.Count; i++)
             {
                 GPARAM.Param entry = data.Params[i];
 
                 var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
 
-                if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
+                // Ignore the empty groups
+                if(entry.Fields.Count > 0)
                 {
-                    if (ImGui.Selectable($@" {name}##{entry.Key}", i == _selectedParamGroupKey))
+                    if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
                     {
-                        ResetFieldSelection();
-                        ResetValueSelection();
+                        if (ImGui.Selectable($@" {name}##{entry.Key}", i == _selectedParamGroupKey))
+                        {
+                            ResetFieldSelection();
+                            ResetValueSelection();
 
-                        _selectedParamGroup = entry;
-                        _selectedParamGroupKey = i;
+                            _selectedParamGroup = entry;
+                            _selectedParamGroupKey = i;
+                        }
                     }
                 }
             }
+
+            // TODO: implement the GPARAM side of this
+            /*
+            ImGui.Separator();
+
+            // Addable groups
+            for (int i = 0; i < data.Params.Count; i++)
+            {
+                GPARAM.Param entry = data.Params[i];
+
+                var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
+
+                // Ignore the empty groups
+                if (entry.Fields.Count == 0)
+                {
+                    if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
+                    {
+                        if (ImGui.Button($"Add"))
+                        {
+                            AddNewGroup();
+                        }
+                        ImGui.SameLine();
+                        ImGui.Text($"{name}");
+                    }
+                }
+            }
+            */
         }
 
         ImGui.End();
@@ -469,6 +522,49 @@ public class GparamEditorScreen : EditorScreen
     {
         _selectedFieldValue = null;
         _selectedFieldValueKey = -1;
+    }
+
+    public void RemoveGparamFile(GparamParamBank.GparamInfo info)
+    {
+        string filePath = info.Path;
+        string baseFileName = info.Name;
+
+        filePath = filePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+
+        if (File.Exists(filePath))
+        {
+            TaskLogs.AddLog($"{baseFileName} was removed from your project.");
+            File.Delete(filePath);
+        }
+        else
+        {
+            TaskLogs.AddLog($"{baseFileName} does not exist within your project.");
+        }
+
+        GparamParamBank.LoadGraphicsParams();
+    }
+
+    public void CopyGparamFile(GparamParamBank.GparamInfo info)
+    {
+        string filePath = info.Path;
+        string baseFileName = info.Name;
+        string tryFileName = _copyFileNewName;
+
+        string newFilePath = filePath.Replace(baseFileName, tryFileName);
+
+        // If the original is in the root dir, change the path to mod
+        newFilePath = newFilePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+
+        if (!File.Exists(newFilePath))
+        {
+            File.Copy(filePath, newFilePath);
+        }
+        else
+        {
+            TaskLogs.AddLog($"{newFilePath} already exists!");
+        }
+
+        GparamParamBank.LoadGraphicsParams();
     }
 
     public void DuplicateGparamFile()

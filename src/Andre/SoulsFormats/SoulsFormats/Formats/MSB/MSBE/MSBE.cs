@@ -246,7 +246,6 @@ namespace SoulsFormats
             /// <summary>
             /// The name of this entry.
             /// </summary>
-            [FormatReference(ReferenceName = "Entry-Name")]
             public string Name { get; set; }
 
             internal abstract void Write(BinaryWriterEx bw, int id);

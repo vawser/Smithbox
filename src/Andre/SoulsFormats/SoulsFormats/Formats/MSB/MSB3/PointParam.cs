@@ -287,19 +287,16 @@ namespace SoulsFormats
             /// <summary>
             /// The name of this region.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-Name")]
             public override string Name { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-Unk2C")]
             public int Unk2C { get; set; }
 
             /// <summary>
             /// The shape of this region.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-Shape")]
             public MSB.Shape Shape
             {
                 get => _shape;
@@ -315,39 +312,33 @@ namespace SoulsFormats
             /// <summary>
             /// Controls whether the event is present in different ceremonies. Maybe only used for Messages?
             /// </summary>
-            [FormatReference(ReferenceName = "Region-MapStudioLayer")]
             public uint MapStudioLayer { get; set; }
 
             /// <summary>
             /// Center of the region.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-Position")]
             [PositionProperty]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of the region, in degrees.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-Rotation")]
             [RotationProperty]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-UnkA")]
             public List<short> UnkA { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-UnkB")]
             public List<short> UnkB { get; set; }
 
             /// <summary>
             /// Region is inactive unless this part is drawn; null for always active.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-ActivationPartName")]
             public string ActivationPartName { get; set; }
             [IndexProperty]
             public int ActivationPartIndex { get; set; }
@@ -355,7 +346,6 @@ namespace SoulsFormats
             /// <summary>
             /// An ID used to identify this region in event scripts.
             /// </summary>
-            [FormatReference(ReferenceName = "Region-EntityID")]
             public int EntityID { get; set; }
 
             private protected Region(string name)
@@ -543,7 +533,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Not sure what this does.
                 /// </summary>
-                [FormatReference(ReferenceName = "InvasionPoint-Priority")]
                 public int Priority { get; set; }
 
                 /// <summary>
@@ -576,13 +565,11 @@ namespace SoulsFormats
                 /// <summary>
                 /// Whether or not the UnkFlags will be written to the file.
                 /// </summary>
-                [FormatReference(ReferenceName = "EnvironmentMapPoint-SaveTypeData")]
                 public bool SaveTypeData { get; set; }
 
                 /// <summary>
                 /// Unknown; observed values 0x80 and 0x100.
                 /// </summary>
-                [FormatReference(ReferenceName = "EnvironmentMapPoint-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -643,19 +630,16 @@ namespace SoulsFormats
                 /// <summary>
                 /// Type of sound in this region; determines mixing behavior like muffling.
                 /// </summary>
-                [FormatReference(ReferenceName = "Sound-SoundID")]
                 public SndType SoundType { get; set; } = SndType.Environment;
 
                 /// <summary>
                 /// ID of the sound to play in this region, or 0 for child regions.
                 /// </summary>
-                [FormatReference(ReferenceName = "Sound-SoundID")]
                 public int SoundID { get; set; }
 
                 /// <summary>
                 /// Names of other Sound regions which extend this one.
                 /// </summary>
-                [FormatReference(ReferenceName = "Sound-ChildRegionNames")]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] ChildRegionNames { get; private set; }
                 public int[] ChildRegionIndices;
@@ -716,19 +700,16 @@ namespace SoulsFormats
                 /// <summary>
                 /// The ID of the .fxr file to play in this region.
                 /// </summary>
-                [FormatReference(ReferenceName = "SFX-EffectID")]
                 public int EffectID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "SFX-UnkT04")]
                 public int UnkT04 { get; set; }
 
                 /// <summary>
                 /// If true, the effect is off by default until enabled by event scripts.
                 /// </summary>
-                [FormatReference(ReferenceName = "SFX-StartDisabled")]
                 public bool StartDisabled { get; set; }
 
                 /// <summary>
@@ -776,13 +757,11 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID of an .fxr file.
                 /// </summary>
-                [FormatReference(ReferenceName = "WindSFX-EffectID")]
                 public int EffectID { get; set; }
 
                 /// <summary>
                 /// Name of a corresponding WindArea region.
                 /// </summary>
-                [FormatReference(ReferenceName = "WindSFX-WindAreaName")]
                 [MSBReference(ReferenceType = typeof(WindArea))]
                 public string WindAreaName { get; set; }
                 [IndexProperty]
@@ -845,7 +824,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown; seems kind of like a region index, but also kind of doesn't.
                 /// </summary>
-                [FormatReference(ReferenceName = "SpawnPoint-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -887,19 +865,16 @@ namespace SoulsFormats
                 /// <summary>
                 /// ID of the message's text in the FMGs.
                 /// </summary>
-                [FormatReference(ReferenceName = "Message-MessageID")]
                 public short MessageID { get; set; }
 
                 /// <summary>
                 /// Unknown. Always 0 or 2.
                 /// </summary>
-                [FormatReference(ReferenceName = "Message-UnkT02")]
                 public short UnkT02 { get; set; }
 
                 /// <summary>
                 /// Whether the message requires Seek Guidance to appear.
                 /// </summary>
-                [FormatReference(ReferenceName = "Message-Hidden")]
                 public bool Hidden { get; set; }
 
                 /// <summary>
@@ -1041,31 +1016,26 @@ namespace SoulsFormats
                 /// <summary>
                 /// Distance from camera required before enabling envmap. 0 = always enabled.
                 /// </summary>
-                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-EnableDist")]
                 public float EnableDist { get; set; }
 
                 /// <summary>
                 /// Distance it takes for an envmap to fully transition into view.
                 /// </summary>
-                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-TransitionDist")]
                 public float TransitionDist { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT08")]
                 public bool UnkT08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT09")]
                 public byte UnkT09 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "EnvironmentMapEffectBox-UnkT0A")]
                 public short UnkT0A { get; set; }
 
                 /// <summary>
@@ -1139,7 +1109,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "MufflingBox-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
@@ -1172,7 +1141,6 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [FormatReference(ReferenceName = "MufflingPortal-UnkT00")]
                 public int UnkT00 { get; set; }
 
                 /// <summary>
