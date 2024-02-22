@@ -90,6 +90,55 @@
                     "description": "",
                     "type": "",
                     "attributes": ""
+                },
+                {
+                    "id": "Flags",
+                    "name": "Flags",
+                    "description": "",
+                    "type": "",
+                    "attributes": "IsEnum[FSFlags]"
+                },
+                {
+                    "id": "TriangleStrip",
+                    "name": "Triangle Strip",
+                    "description": "Whether vertices are defined as a triangle strip or individual triangles.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "CullBackfaces",
+                    "name": "Cull Backfaces",
+                    "description": "Whether triangles can be seen through from behind.",
+                    "type": "",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "Unk06",
+                    "name": "Unk06",
+                    "description": "",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "IndicesCount",
+                    "name": "Indices Count",
+                    "description": "The number of indices this face set has.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Indices",
+                    "name": "Indices",
+                    "description": "",
+                    "type": "",
+                    "attributes": "IsHidden"
+                },
+                {
+                    "id": "LayoutIndex",
+                    "name": "Layout Index",
+                    "description": "Index to a layout in the FLVER's layout collection.",
+                    "type": "",
+                    "attributes": ""
                 }
             ]
         },
@@ -97,7 +146,7 @@
             "id": "Bone",
             "name": "Bone",
             "description": "",
-            "type": "SoulsFormats.FLVER2+Bone",
+            "type": "SoulsFormats.FLVER+Bone",
             "attributes": "",
             "members": [
                 {
@@ -183,7 +232,7 @@
             "id": "Dummy",
             "name": "Dummy",
             "description": "",
-            "type": "SoulsFormats.FLVER2+Dummy",
+            "type": "SoulsFormats.FLVER+Dummy",
             "attributes": "",
             "members": [
                 {
@@ -267,57 +316,6 @@
                     "id": "Unk34",
                     "name": "Unk34",
                     "description": "Unknown; only used in Sekiro.",
-                    "type": "",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "FaceSet",
-            "name": "Face Set",
-            "description": "",
-            "type": "SoulsFormats.FLVER2+FaceSet",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "Flags",
-                    "name": "Flags",
-                    "description": "",
-                    "type": "",
-                    "attributes": "IsEnum[FSFlags]"
-                },
-                {
-                    "id": "TriangleStrip",
-                    "name": "Triangle Strip",
-                    "description": "Whether vertices are defined as a triangle strip or individual triangles.",
-                    "type": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "CullBackfaces",
-                    "name": "Cull Backfaces",
-                    "description": "Whether triangles can be seen through from behind.",
-                    "type": "",
-                    "attributes": "IsBool"
-                },
-                {
-                    "id": "Unk06",
-                    "name": "Unk06",
-                    "description": "",
-                    "type": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "IndicesCount",
-                    "name": "Indices Count",
-                    "description": "The number of indices this face set has.",
-                    "type": "",
-                    "attributes": ""
-                },
-                {
-                    "id": "Indices",
-                    "name": "Indices",
-                    "description": "",
                     "type": "",
                     "attributes": ""
                 }
@@ -426,22 +424,6 @@
                     "attributes": ""
                 },
                 {
-                    "id": "Unknown; only used in Sekiro.",
-                    "name": "XXXXXX",
-                    "description": "",
-                    "type": "",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "Texture",
-            "name": "Texture",
-            "description": "",
-            "type": "SoulsFormats.FLVER2+Texture",
-            "attributes": "",
-            "members": [
-                {
                     "id": "Type",
                     "name": "Type",
                     "description": "The type of texture this is, corresponding to the entries in the MTD.",
@@ -500,16 +482,30 @@
             ]
         },
         {
-            "id": "VertexBuffer",
-            "name": "Vertex Buffer",
+            "id": "MATBIN",
+            "name": "MATBIN",
             "description": "",
-            "type": "SoulsFormats.FLVER2+VertexBuffer",
+            "type": "SoulsFormats.MATBIN",
             "attributes": "",
             "members": [
                 {
-                    "id": "LayoutIndex",
-                    "name": "Layout Index",
-                    "description": "Index to a layout in the FLVER's layout collection.",
+                    "id": "ShaderPath",
+                    "name": "Shader Path",
+                    "description": "Network path to the shader source file.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "SourcePath",
+                    "name": "Source Path",
+                    "description": "Network path to the material source file, either a matxml or an mtd.",
+                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "Key",
+                    "name": "Key",
+                    "description": "Unknown, presumed to be an identifier for documentation.",
                     "type": "",
                     "attributes": ""
                 }

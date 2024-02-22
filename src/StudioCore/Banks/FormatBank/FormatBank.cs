@@ -89,6 +89,7 @@ public class FormatBank
         }));
     }
 
+    // Basic Name get: used by GPARAM
     public string GetReferenceName(string key, string name)
     {
         // Top
@@ -112,6 +113,7 @@ public class FormatBank
         return name;
     }
 
+    // Basic Description get: used by GPARAM
     public string GetReferenceDescription(string key)
     {
         var desc = "";
@@ -136,43 +138,8 @@ public class FormatBank
 
         return desc;
     }
-    public bool IsBooleanProperty(string key)
-    {
-        // Top
-        foreach (FormatReference entry in _loadedInfoBank.Data.list)
-        {
-            if (entry.id == key)
-            {
-                return IsBoolAttribute(entry.attributes);
-            }
 
-            // Members
-            foreach (FormatMember member in entry.members)
-            {
-                if (member.id == key)
-                {
-                    return IsBoolAttribute(member.attributes);
-                }
-            }
-        }
-
-        return false;
-    }
-
-    public bool IsBoolAttribute(string rawAttributes)
-    {
-        string[] attributes = rawAttributes.Split(",");
-        foreach (string attr in attributes)
-        {
-            if (attr == "IsBool")
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
+    // Type-checked Name get: used by FLVER and MSB
     public string GetNameForProperty(string baseName, Entity entity)
     {
         var name = baseName;
@@ -195,6 +162,7 @@ public class FormatBank
         return name;
     }
 
+    // Type-checked Description get: used by FLVER and MSB
     public string GetDescriptionForProperty(string baseName, Entity entity)
     {
         var desc = "";
@@ -222,9 +190,58 @@ public class FormatBank
         var entryType = entry.type.ToString();
         var entityType = entity.WrappedObject.GetType().ToString();
 
-        if(entryType == entityType)
+        if (entryType == entityType)
         {
             return true;
+        }
+
+        return false;
+    }
+
+    // Hides property in editor view
+    public bool IsHiddenProperty(string key)
+    {
+        return IsSpecifiedProperty(key, "IsHidden");
+    }
+
+    // Overrides input with checkbox
+    public bool IsBooleanProperty(string key)
+    {
+        return IsSpecifiedProperty(key, "IsBool");
+    }
+
+    public bool IsSpecifiedProperty(string key, string attribute)
+    {
+        // Top
+        foreach (FormatReference entry in _loadedInfoBank.Data.list)
+        {
+            if (entry.id == key)
+            {
+                return IsSpecifiedAttribute(entry.attributes, attribute);
+            }
+
+            // Members
+            foreach (FormatMember member in entry.members)
+            {
+                if (member.id == key)
+                {
+                    return IsSpecifiedAttribute(member.attributes, attribute);
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsSpecifiedAttribute(string rawAttributes, string specificAttribute)
+    {
+        string[] attributes = rawAttributes.Split(",");
+        foreach (string attr in attributes)
+        {
+            if (attr == specificAttribute)
+            {
+                return true;
+            }
         }
 
         return false;

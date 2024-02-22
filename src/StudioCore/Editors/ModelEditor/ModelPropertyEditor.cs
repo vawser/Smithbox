@@ -748,12 +748,8 @@ public class ModelPropertyEditor
                     continue;
                 }
 
-                if (prop.GetCustomAttribute<IndexProperty>() != null)
-                {
-                    continue;
-                }
-
-                if (prop.GetCustomAttribute<HideProperty>() != null)
+                // Is Hidden
+                if (FlverFormatBank.Bank.IsHiddenProperty(prop.Name))
                 {
                     continue;
                 }
@@ -1209,13 +1205,14 @@ public class ModelPropertyEditor
 
     public void ShowFieldHint(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
+        string name = prop.Name;
         string desc = "";
 
         if (CFG.Current.ModelEditor_Enable_Commmunity_Hints)
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            desc = FlverFormatBank.Bank.GetDescriptionForProperty(desc, _selected);
+            desc = FlverFormatBank.Bank.GetDescriptionForProperty(name, _selected);
 
             ImguiUtils.ShowHelpMarker(desc);
         }

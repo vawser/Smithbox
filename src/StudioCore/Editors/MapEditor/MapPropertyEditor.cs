@@ -884,6 +884,14 @@ public class MapPropertyEditor
                     continue;
                 }
 
+                // Is Hidden
+                /*
+                if (MsbFormatBank.Bank.IsHiddenProperty(prop.Name))
+                {
+                    continue;
+                }
+                */
+
                 ImGui.PushID(id);
                 ImGui.AlignTextToFramePadding();
                 Type typ = prop.PropertyType;
