@@ -717,7 +717,6 @@ public class SettingsWindow
                 ImguiUtils.ShowHelpMarker("Show the Add Group options, which allow the addition of GPARAM groups that are not already present within a GPARAM file.");
             }
 
-            ImGui.EndTabItem();
             if (ImGui.CollapsingHeader("Fields", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Show color edit for 4 digit properties", ref CFG.Current.Gparam_DisplayColorEditForVector4Fields);
