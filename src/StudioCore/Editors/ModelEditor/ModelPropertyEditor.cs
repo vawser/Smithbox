@@ -54,22 +54,7 @@ public class ModelPropertyEditor
         _msbToolbar = msbToolbar;
     }
 
-    /// <summary>
-    /// Properties of these types will be ignored for changes
-    /// </summary>
-    /// <param name="type"></param>
-    /// <returns></returns>
-    public bool IsReadOnlyType(Type type)
-    {
-        // MATBIN is read-only for now
-        if (type == typeof(MATBIN))
-        {
-            return true;
-        }
-
-        return false;
-    }
-
+   
     private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop)
     {
         ImGui.SetNextItemWidth(-1);
@@ -810,10 +795,7 @@ public class ModelPropertyEditor
                                 committed = true;
                             }
 
-                            if (IsReadOnlyType(type))
-                            {
-                                UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
-                            }
+                            UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
 
                             ImGui.NextColumn();
                             ImGui.PopID();
@@ -875,10 +857,7 @@ public class ModelPropertyEditor
                                 committed = true;
                             }
 
-                            if (IsReadOnlyType(type))
-                            {
-                                UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
-                            }
+                            UpdateProperty(prop, entSelection, newval, changed, committed, i, classIndex);
 
                             ImGui.NextColumn();
                             ImGui.PopID();
@@ -1054,10 +1033,7 @@ public class ModelPropertyEditor
                         committed = true;
                     }
 
-                    if (IsReadOnlyType(type))
-                    {
-                        UpdateProperty(prop, entSelection, newval, changed, committed, -1, classIndex);
-                    }
+                    UpdateProperty(prop, entSelection, newval, changed, committed, -1, classIndex);
 
                     ImGui.NextColumn();
                     ImGui.PopID();

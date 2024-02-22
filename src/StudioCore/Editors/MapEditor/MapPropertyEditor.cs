@@ -159,7 +159,7 @@ public class MapPropertyEditor
                     else
                         val = 0;
 
-                    newval = val;
+                    newval = (short)val;
                     isChanged = true;
                 }
             }
@@ -229,7 +229,7 @@ public class MapPropertyEditor
                     else
                         val = 0;
 
-                    newval = val;
+                    newval = (sbyte)val;
                     isChanged = true;
                 }
             }

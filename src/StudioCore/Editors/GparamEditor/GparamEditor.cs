@@ -19,8 +19,6 @@ public class GparamEditor
 {
     public static unsafe void PropertyField(int idx, IField field, IFieldValue value)
     {
-        Type fieldType = field.GetType();
-
         ImGui.SetNextItemWidth(-1);
 
         // INT

@@ -251,24 +251,27 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
         foreach (Entity o in changedEnts)
         {
             var propObj = PropFinderUtil.FindPropertyObject(prop, o.WrappedObject, classIndex, false);
-            var change = new PropertyChange
+            if (propObj != null)
             {
-                ChangedObj = propObj,
-                Property = prop,
-                NewValue = newval,
-                ArrayIndex = index
-            };
-            if (index != -1 && prop.PropertyType.IsArray)
-            {
-                var a = (Array)change.Property.GetValue(propObj);
-                change.OldValue = a.GetValue(index);
-            }
-            else
-            {
-                change.OldValue = prop.GetValue(propObj);
-            }
+                var change = new PropertyChange
+                {
+                    ChangedObj = propObj,
+                    Property = prop,
+                    NewValue = newval,
+                    ArrayIndex = index
+                };
+                if (index != -1 && prop.PropertyType.IsArray)
+                {
+                    var a = (Array)change.Property.GetValue(propObj);
+                    change.OldValue = a.GetValue(index);
+                }
+                else
+                {
+                    change.OldValue = prop.GetValue(propObj);
+                }
 
-            Changes.Add(change);
+                Changes.Add(change);
+            }
         }
     }
 

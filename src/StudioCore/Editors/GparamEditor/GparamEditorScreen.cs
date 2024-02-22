@@ -379,16 +379,12 @@ public class GparamEditorScreen : EditorScreen
 
     public void GparamProperty_Value(int index, IField field, IFieldValue value)
     {
-        Type fieldType = field.GetType();
-
         ImGui.AlignTextToFramePadding();
         GparamEditor.PropertyField(index, field, value);
     }
 
     public void GparamProperty_Info(IField field)
     {
-        Type fieldType = field.GetType();
-
         ImGui.AlignTextToFramePadding();
 
         string desc = GparamFormatBank.Bank.GetReferenceDescription(_selectedParamField.Key);
