@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Silk.NET.OpenGL;
 using SoulsFormats;
 using StudioCore.Banks;
 using StudioCore.BanksMain;
@@ -144,6 +145,9 @@ public class GparamEditorScreen : EditorScreen
         {
             if (SearchFilters.IsEditorSearchMatch(_fileSearchInput, info.Name, "_"))
             {
+                var prettyName = MapAliasBank.GetMapNameFromFilename(info.Name);
+
+                ImGui.BeginGroup();
                 if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGparamKey))
                 {
                     ResetGroupSelection();
@@ -154,6 +158,17 @@ public class GparamEditorScreen : EditorScreen
                     _selectedGparamInfo = info;
                     _selectedGparam = info.Gparam;
                 }
+                if (prettyName != "")
+                {
+                    ImGui.SameLine();
+                    ImGui.PushTextWrapPos();
+                
+                    ImGui.TextColored(new Vector4(1.0f, 1.0f, 0.0f, 1.0f), @$"<{prettyName}>");
+
+                    ImGui.PopTextWrapPos();
+                }
+
+                ImGui.EndGroup();
             }
 
             // Context Menu: File

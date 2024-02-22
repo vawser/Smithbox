@@ -1,4 +1,5 @@
-﻿using StudioCore.Banks.AliasBank;
+﻿using SoulsFormats.KF4;
+using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
@@ -119,6 +120,41 @@ public static class MapAliasBank
         }
 
         return $"{baseName}";
+    }
+
+    public static string GetMapNameFromFilename(string filename)
+    {
+        if (MapNames == null)
+            return "";
+
+        // Map-specific names will be 11 characters or more
+        if (filename.Length >= 11)
+        {
+            // Check to see if it is a map or cutscene specific file
+            if (filename[0] is 's' || filename[0] is 'm')
+            {
+                var map1 = $"{filename[1]}{filename[2]}";
+                var map2 = $"{filename[4]}{filename[5]}";
+
+                foreach (var entry in MapNames)
+                {
+                    var id = entry.Key;
+
+                    if (id.Length >= 11)
+                    {
+                        var eMap1 = $"{id[1]}{id[2]}";
+                        var eMap2 = $"{id[4]}{id[5]}";
+
+                        if (map1 == eMap1 && map2 == eMap2)
+                        {
+                            return $"{entry.Value}";
+                        }
+                    }
+                }
+            }
+        }
+
+        return $"";
     }
 }
 
