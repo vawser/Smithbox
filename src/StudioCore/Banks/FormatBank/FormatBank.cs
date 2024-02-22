@@ -10,6 +10,8 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Editors.MapEditor;
 using StudioCore.BanksMain;
 using Veldrid;
+using System.Text.RegularExpressions;
+using SoulsFormats;
 
 namespace StudioCore.Banks.FormatBank;
 
@@ -19,32 +21,34 @@ namespace StudioCore.Banks.FormatBank;
 /// </summary>
 public class FormatBank
 {
-    public FormatContainer _loadedInfoBank { get; set; }
+    public FormatContainer _FormatBank { get; set; }
 
-    public bool IsLoadingInfoBank { get; set; }
-    public bool mayReloadInfoBank { get; set; }
+    public bool IsFormatBankLoaded { get; set; }
+    public bool CanReloadFormatBank { get; set; }
 
     private string FormatInfoName = "";
 
-    private FormatBankType formatType;
+    private FormatBankType FormatBankType;
 
-    public FormatBank(FormatBankType _formatType)
+    private bool IsGameSpecific;
+
+    public FormatBank(FormatBankType formatBankType, bool isGameSpecific)
     {
-        mayReloadInfoBank = false;
+        IsGameSpecific = isGameSpecific;
+        CanReloadFormatBank = false;
+        FormatBankType = formatBankType;
 
-        formatType = _formatType;
-
-        if (formatType is FormatBankType.MSB)
+        if (FormatBankType is FormatBankType.MSB)
         {
             FormatInfoName = "MSB";
         }
 
-        if (formatType is FormatBankType.FLVER)
+        if (FormatBankType is FormatBankType.FLVER)
         {
             FormatInfoName = "FLVER";
         }
 
-        if (formatType is FormatBankType.GPARAM)
+        if (FormatBankType is FormatBankType.GPARAM)
         {
             FormatInfoName = "GPARAM";
         }
@@ -54,12 +58,12 @@ public class FormatBank
     {
         get
         {
-            if (IsLoadingInfoBank)
+            if (IsFormatBankLoaded)
             {
                 return new FormatResource();
             }
 
-            return _loadedInfoBank.Data;
+            return _FormatBank.Data;
         }
     }
 
@@ -68,32 +72,34 @@ public class FormatBank
         TaskManager.Run(new TaskManager.LiveTask($"Format Info - Load {FormatInfoName}", TaskManager.RequeueType.None, false,
         () =>
         {
-            _loadedInfoBank = new FormatContainer();
-            IsLoadingInfoBank = true;
+            _FormatBank = new FormatContainer();
+            IsFormatBankLoaded = true;
 
             if (Project.Type != ProjectType.Undefined)
             {
                 try
                 {
-                    _loadedInfoBank = new FormatContainer(formatType);
+                    _FormatBank = new FormatContainer(FormatBankType, IsGameSpecific);
                 }
                 catch (Exception e)
                 {
                     TaskLogs.AddLog($"FAILED LOAD: {e.Message}");
                 }
 
-                IsLoadingInfoBank = false;
+                IsFormatBankLoaded = false;
             }
             else
-                IsLoadingInfoBank = false;
+                IsFormatBankLoaded = false;
         }));
     }
 
-    // Basic Name get: used by GPARAM
     public string GetReferenceName(string key, string name)
     {
+        if (_FormatBank.Data.list == null)
+            return key;
+
         // Top
-        foreach (FormatReference entry in _loadedInfoBank.Data.list)
+        foreach (FormatReference entry in _FormatBank.Data.list)
         {
             if (entry.id == key)
             {
@@ -113,13 +119,15 @@ public class FormatBank
         return name;
     }
 
-    // Basic Description get: used by GPARAM
     public string GetReferenceDescription(string key)
     {
         var desc = "";
 
+        if (_FormatBank.Data.list == null)
+            return desc;
+
         // Top
-        foreach (FormatReference entry in _loadedInfoBank.Data.list)
+        foreach (FormatReference entry in _FormatBank.Data.list)
         {
             if (entry.id == key)
             {
@@ -139,65 +147,6 @@ public class FormatBank
         return desc;
     }
 
-    // Type-checked Name get: used by FLVER and MSB
-    public string GetNameForProperty(string baseName, Entity entity)
-    {
-        var name = baseName;
-
-        foreach (FormatReference entry in _loadedInfoBank.Data.list)
-        {
-            if (IsTypeMatch(entry, entity))
-            {
-                // Members
-                foreach (FormatMember member in entry.members)
-                {
-                    if (member.id == baseName)
-                    {
-                        return member.name;
-                    }
-                }
-            }
-        }
-
-        return name;
-    }
-
-    // Type-checked Description get: used by FLVER and MSB
-    public string GetDescriptionForProperty(string baseName, Entity entity)
-    {
-        var desc = "";
-
-        foreach (FormatReference entry in _loadedInfoBank.Data.list)
-        {
-            if (IsTypeMatch(entry, entity))
-            {
-                // Members
-                foreach (FormatMember member in entry.members)
-                {
-                    if (member.id == baseName)
-                    {
-                        return member.description;
-                    }
-                }
-            }
-        }
-
-        return desc;
-    }
-
-    public bool IsTypeMatch(FormatReference entry, Entity entity)
-    {
-        var entryType = entry.type.ToString();
-        var entityType = entity.WrappedObject.GetType().ToString();
-
-        if (entryType == entityType)
-        {
-            return true;
-        }
-
-        return false;
-    }
-
     // Hides property in editor view
     public bool IsHiddenProperty(string key)
     {
@@ -212,8 +161,11 @@ public class FormatBank
 
     public bool IsSpecifiedProperty(string key, string attribute)
     {
+        if (_FormatBank.Data.list == null)
+            return false;
+
         // Top
-        foreach (FormatReference entry in _loadedInfoBank.Data.list)
+        foreach (FormatReference entry in _FormatBank.Data.list)
         {
             if (entry.id == key)
             {
@@ -246,5 +198,4 @@ public class FormatBank
 
         return false;
     }
-
 }

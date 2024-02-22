@@ -4,77 +4,66 @@
             "id": "Event",
             "name": "Event",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "EventID",
-                    "name": "EventID",
+                    "name": "Event ID",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "PartName",
                     "name": "Part Name",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "RegionName",
                     "name": "Region Name",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "EntityID",
                     "name": "Entity ID",
                     "description": "Identifies the Event in event scripts.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "Unk14",
                     "name": "Unk14",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "MapID",
                     "name": "Map ID",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "UnkE0C",
                     "name": "UnkE0C",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "UnkS04",
                     "name": "UnkS04",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "UnkS08",
                     "name": "UnkS08",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "UnkS0C",
                     "name": "UnkS0C",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -83,49 +72,42 @@
             "id": "Treasure",
             "name": "Treasure",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "TreasurePartName",
                     "name": "Attached Part Name",
                     "description": "The part that the treasure is attached to.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "ItemLotID",
                     "name": "Item Lot ID",
                     "description": "The item lot to be given.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "ActionButtonID",
                     "name": "Action Button ID",
                     "description": "If not -1, uses an entry from ActionButtonParam for the pickup prompt.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "PickupAnimID",
                     "name": "Pickup Anim ID",
                     "description": "Animation to play when taking this treasure.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "InChest",
                     "name": "Is in Chest",
                     "description": "Changes the text of the pickup prompt.",
-                    "type": "",
                     "attributes": "IsBool"
                 },
                 {
                     "id": "StartDisabled",
                     "name": "Starts Disabled",
                     "description": "Whether the treasure should be hidden by default.",
-                    "type": "",
                     "attributes": "IsBool"
                 }
             ]
@@ -134,91 +116,78 @@
             "id": "Generator",
             "name": "Generator",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "MaxNum",
                     "name": "Maximum Generated Count",
                     "description": "The maximum number of enemies that this generator can generate in total.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "GenType",
                     "name": "Generator Type",
                     "description": "The spawn location behavior to use upon a generation interval.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "LimitNum",
                     "name": "Maximum Spawn Count",
                     "description": "The maximum number of enemies that this generator can generate upon a generation interval.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "MinGenNum",
                     "name": "Random Spawn Count: Minimum",
                     "description": "The minimum number to use when determining the amount of enemies to generate within a generation interval.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "MaxGenNum",
                     "name": "Random Spawn Count: Maximum",
                     "description": "The maximum number to use when determining the amount of enemies to generate within a generation interval.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "MinInterval",
                     "name": "Generation Interval: Minimum",
                     "description": "The minimum time interval (in seconds) between each generation interval.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "MaxInterval",
                     "name": "Generation Interval: Maximum",
                     "description": "The maximum time interval (in seconds) between each generation interval.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "InitialSpawnCount",
                     "name": "Initial Spawn Count",
                     "description": "The initial number of enemies to spawn upon initialization of the generator.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "UnkT14",
                     "name": "UnkT14",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "UnkT18",
                     "name": "UnkT18",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "SpawnRegionNames",
                     "name": "Spawn Region Names",
                     "description": "Regions where parts will spawn from.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "SpawnPartNames",
                     "name": "Spawn Part Names",
                     "description": "Parts that will be respawned.",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -227,42 +196,36 @@
             "id": "ObjAct",
             "name": "Obj Act",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "ObjActEntityID",
                     "name": "ObjAct Entity ID",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "ObjActPartName",
                     "name": "ObjAct Part Name",
                     "description": "The part to be interacted with.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "ObjActID",
                     "name": "ObjAct ID",
                     "description": "A row in ObjActParam.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "StateType",
                     "name": "State Type",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "EventFlagID",
                     "name": "Event Flag ID",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -271,14 +234,12 @@
             "id": "Navmesh",
             "name": "Navmesh",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "NavmeshRegionName",
                     "name": "Region Name",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -287,28 +248,24 @@
             "id": "PseudoMultiplayer",
             "name": "Pseudo Multiplayer",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "HostEntityID",
                     "name": "Host Entity ID",
                     "description": "The NPC whose world you're entering.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "EventFlagID",
                     "name": "Event Flag ID",
                     "description": "Set when inside the event's region, unset when outside it.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "ActivateGoodsID",
                     "name": "Activation Goods ID",
                     "description": "ID of a goods item that is used to trigger the event.",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -317,28 +274,24 @@
             "id": "PlatoonInfo",
             "name": "PlatoonInfo",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "PlatoonIDScriptActivate",
                     "name": "Platoon Script ID",
                     "description": "The platoon script to apply when activated.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "State",
                     "name": "State",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "GroupPartsNames",
                     "name": "Group Part Names",
                     "description": "The parts that belong to this platoon.",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -347,21 +300,18 @@
             "id": "PatrolInfo",
             "name": "PatrolInfo",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "PatrolType",
                     "name": "Patrol Type",
                     "description": "Determines patrol behavior. 0 = return to first region on loop, 1 = go through list backwards on loop, etc.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "WalkRegionNames",
                     "name": "Walk Region Names",
                     "description": "The regions that belong to this patrol.",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -370,21 +320,18 @@
             "id": "Mount",
             "name": "Mount",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "RiderPartName",
                     "name": "Rider Part Name",
                     "description": "The rider Part that may ride the mount Part.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "MountPartName",
                     "name": "Mount Part Name",
                     "description": "The mount Part.",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -393,21 +340,18 @@
             "id": "SignPool",
             "name": "Sign Pool",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "SignPartName",
                     "name": "Sign Part Name",
                     "description": "The Part that the signpool is associated with.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "SignPuddleParamID",
                     "name": "Sign Puddle Param ID",
                     "description": "The ID of the SignPuddleParam row to use for this signpool.",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -416,44 +360,24 @@
             "id": "RetryPoint",
             "name": "Retry Point",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "RetryPartName",
                     "name": "Retry Part Name",
                     "description": "The Part that is associated with this retry point.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "EventFlagID",
                     "name": "Event Flag ID",
                     "description": "Flag that must be set for retry point to be available.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "RetryRegionName",
                     "name": "Retry Region Name",
                     "description": "The Region that this retry point covers.",
-                    "type": "",
-                    "attributes": ""
-                }
-            ]
-        },
-        {
-            "id": "Entry",
-            "name": "Entry",
-            "description": "",
-            "type": "",
-            "attributes": "",
-            "members": [
-                {
-                    "id": "Name",
-                    "name": "Name",
-                    "description": "The name of this entry.",
-                    "type": "",
                     "attributes": ""
                 }
             ]
@@ -462,70 +386,380 @@
             "id": "Part",
             "name": "Part",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
+                {
+                    "id": "Name",
+                    "name": "Name",
+                    "description": "The name of this entry.",
+                    "attributes": ""
+                },
                 {
                     "id": "ModelName",
                     "name": "Model Name",
                     "description": "The model used by this part; requires an entry in ModelParam.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "InstanceID",
                     "name": "Instance ID",
                     "description": "Involved with serialization.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "SibPath",
                     "name": "Layout Path",
                     "description": "A path to a .sib file, presumably some kind of editor placeholder.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "Position",
                     "name": "Position",
                     "description": "The position of this part.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "Rotation",
                     "name": "Rotation",
                     "description": "The rotation of this part.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "Scale",
                     "name": "Scale",
                     "description": "The scale of this part. Scale will NOT affect the scale of enemies or the scale of in-built collision for objects and assets (except for assets in Elden Ring).",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "GameEditionDisable",
                     "name": "Game Edition Disable Type",
                     "description": "Toggles the loading of this part.",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "MapStudioLayer",
                     "name": "Map Studio Layer",
                     "description": "",
-                    "type": "",
                     "attributes": ""
                 },
                 {
                     "id": "EntityID",
                     "name": "Entity ID",
                     "description": "Identifies the part in event scripts.",
-                    "type": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "isUsePartsDrawParamID",
+                    "name": "Uses Parts Draw Param ID",
+                    "description": "Enables use of PartsDrawParamID. If false, asset param is used instead.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "PartsDrawParamID",
+                    "name": "Parts Draw Param ID",
+                    "description": "The Parts Draw Param ID to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "IsPointLightShadowSrc",
+                    "name": "Is Point Light Shadow Source",
+                    "description": "Is this part to be considered a Point Light shadow source.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsShadowSrc",
+                    "name": "Is Shadow Source",
+                    "description": "Is this part to be considered a shadow source.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsStaticShadowSrc",
+                    "name": "Is Static Shadow Source",
+                    "description": "Is this part to be considered a static shadow source.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsCascade3ShadowSrc",
+                    "name": "Is Cascade Shadow Source",
+                    "description": "Is this part to be considered a cascade shadow source.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsShadowDest",
+                    "name": "Is Shadow Destination",
+                    "description": "Is this part to be considered a shadow destination.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "IsShadowOnly",
+                    "name": "Is Shadow Only",
+                    "description": "Is this part only rendered when calculating the shadow pass.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "DrawByReflectCam",
+                    "name": "Is Drawn by Reflection Camera",
+                    "description": "Is this part drawn by the reflection camera.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "DrawOnlyReflectCam",
+                    "name": "Is Drawn Only by the Reflection Camera",
+                    "description": "Is this part only drawn within the reflection camera.",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "EnableOnAboveShadow",
+                    "name": "Enable on Above Shadow",
+                    "description": "",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "DisablePointLightEffect",
+                    "name": "Disable Point Light Effect",
+                    "description": "",
+                    "attributes": "IsBool"
+                },
+                {
+                    "id": "EntityGroupIDs",
+                    "name": "Entity Group ID",
+                    "description": "A entity group ID associated with this part. Allows multiple parts to be identified with a single entity ID.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DisplayGroups",
+                    "name": "Display Group",
+                    "description": "A display group for this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DrawGroups",
+                    "name": "Draw Group",
+                    "description": "A draw group for this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CollisionMask",
+                    "name": "Collision Mask",
+                    "description": "A collision mask for this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DispGroups",
+                    "name": "Display Group",
+                    "description": "A display group for this part.",
+                    "attributes": ""
+                },
+                {
+                    "id": "LightSetID",
+                    "name": "Light Set ID",
+                    "description": "ID of the value set from LightSet ParamEditor to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "FogParamID",
+                    "name": "Fog Param ID",
+                    "description": "ID of the value set from FogParamEditor to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "LightScatteringID",
+                    "name": "Light Scattering ID",
+                    "description": "ID of the value set from LightScattering : ParamEditor to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EnvMapID",
+                    "name": "Environment Map ID",
+                    "description": "ID of the value set from Env Map:Editor to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TransitionTime",
+                    "name": "Transition Time",
+                    "description": "Transition time between scenes.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GparamSubID_Base",
+                    "name": "Graphics Param Override: [1]",
+                    "description": "Value of the hundredths place of a Gparam to override use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SceneGparamConfig-GparamSubID_Override1",
+                    "name": "Graphics Param Override: [2]",
+                    "description": "Value of the hundredths place of a Gparam to override [1] with.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GparamSubID_Override2",
+                    "name": "Graphics Param Override: [3]",
+                    "description": "Value of the hundredths place of a Gparam to override [1] and [2] with.",
+                    "attributes": ""
+                },
+                {
+                    "id": "GparamSubID_Override3",
+                    "name": "Graphics Param Override: [4]",
+                    "description": "Value of the hundredths place of a Gparam to override [1], [2] and [3] with.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MapID",
+                    "name": "Map ID",
+                    "description": "The four ID parts of the map that this map object belongs to. Used in overworld map tiles to link the map object to a specific overworld tile. Order is reverse of map ID string.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Enemy",
+            "name": "Enemy",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "ThinkParamID",
+                    "name": "Think Param ID",
+                    "description": "An ID in NPCThinkParam that determines the enemy's AI characteristics.",
+                    "attributes": ""
+                },
+                {
+                    "id": "NPCParamID",
+                    "name": "NPC Param ID",
+                    "description": "An ID in NPCParam that determines a variety of enemy properties.",
+                    "attributes": ""
+                },
+                {
+                    "id": "TalkID",
+                    "name": "Talk ID",
+                    "description": "An ID pointing to an .ESD file that contains the a Talk setup.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PlatoonID",
+                    "name": "Platoon ID",
+                    "description": "An ID pointing to a platoon type, used by patrolling groups of enemies.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CharaInitID",
+                    "name": "Character Init ID",
+                    "description": "An ID in CharaInitParam that determines a human's inventory and stats.",
+                    "attributes": ""
+                },
+                {
+                    "id": "CollisionPartName",
+                    "name": "Collision Part Name",
+                    "description": "The Name of the collision that this Enemy starts on.",
+                    "attributes": ""
+                },
+                {
+                    "id": "WalkRouteName",
+                    "name": "Walk Route Name",
+                    "description": "Walk route followed by this enemy.",
+                    "attributes": ""
+                },
+                {
+                    "id": "ChrActivateCondParamID",
+                    "name": "Activation Condition ID",
+                    "description": "ID in ChrActivateConditionParam that affects enemy appearance conditions.",
+                    "attributes": ""
+                },
+                {
+                    "id": "BackupEventAnimID",
+                    "name": "Backup Event Anim ID",
+                    "description": "Default event animation to apply to the enemy whilst it is idle.",
+                    "attributes": ""
+                },
+                {
+                    "id": "SpEffectSetParamID",
+                    "name": "SpEffect Set ID",
+                    "description": "Refers to SpEffectSetParam ID. Applies SpEffects to an enemy.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Collision",
+            "name": "Collision",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "HitFilterID",
+                    "name": "Hit Filter ID",
+                    "description": "Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.",
+                    "attributes": ""
+                },
+                {
+                    "id": "PlayRegionID",
+                    "name": "Play Region ID",
+                    "description": "Used to determine invasion eligibility.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DisableTorrent",
+                    "name": "Disable Torrent",
+                    "description": "Disable being able to summon/ride Torrent.",
+                    "attributes": ""
+                },
+                {
+                    "id": "EnableFastTravelEventFlagID",
+                    "name": "Fast Travel Enabled Flag",
+                    "description": "Disables Fast Travel if Event Flag is not set.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "ConnectCollision",
+            "name": "ConnectCollision",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "CollisionName",
+                    "name": "Collision Name",
+                    "description": "The collision part to attach to.",
+                    "attributes": ""
+                },
+                {
+                    "id": "MapID",
+                    "name": "Map ID",
+                    "description": "The map to load when on this collision.",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "Asset",
+            "name": "Asset",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "AssetSfxParamRelativeID",
+                    "name": "Asset SFX Param Relative ID",
+                    "description": "Value added onto model ID determining AssetModelSfxParam to use.",
+                    "attributes": ""
+                },
+                {
+                    "id": "UnkModelMaskAndAnimID",
+                    "name": "Model Mask and Anim ID",
+                    "description": "",
+                    "attributes": ""
+                },
+                {
+                    "id": "DisableTorrentAssetOnly",
+                    "name": "Disable Torrent",
+                    "description": "Disable being able to summon/ride Torrent, but only when asset isn't referencing collision DisableTorrent.",
+                    "attributes": ""
+                },
+                {
+                    "id": "DisableWhenMapLoadedMapID",
+                    "name": "Disable upon Map Load - Map ID",
+                    "description": "Disables the asset when the specified map is loaded.",
                     "attributes": ""
                 }
             ]
@@ -534,14 +768,54 @@
             "id": "XXX",
             "name": "XXXX",
             "description": "",
-            "type": "",
             "attributes": "",
             "members": [
                 {
                     "id": "",
                     "name": "",
                     "description": "",
-                    "type": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "XXX",
+            "name": "XXXX",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "XXX",
+            "name": "XXXX",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "",
+                    "name": "",
+                    "description": "",
+                    "attributes": ""
+                }
+            ]
+        },
+        {
+            "id": "XXX",
+            "name": "XXXX",
+            "description": "",
+            "attributes": "",
+            "members": [
+                {
+                    "id": "",
+                    "name": "",
+                    "description": "",
                     "attributes": ""
                 }
             ]

@@ -6,6 +6,7 @@ using System.Text.Json.Serialization.Metadata;
 using System.Text.Json;
 using System.Text;
 using StudioCore.UserProject;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Banks.AliasBank;
 
@@ -33,9 +34,7 @@ public class AliasBank
 
     private string AliasName = "";
 
-    private AliasBankType aliasType;
-
-    public Dictionary<string, string> MapNames;
+    public AliasBankType aliasType;
 
     public AliasBank(AliasBankType _aliasType)
     {
@@ -100,6 +99,11 @@ public class AliasBank
                 try
                 {
                     _loadedAliasBank = new AliasContainer(aliasType, Project.GetGameIDForDir(), Project.GameModDirectory);
+
+                    if (aliasType == AliasBankType.Map)
+                    {
+                        MapAliasBank.ReloadMapNames();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -112,8 +116,6 @@ public class AliasBank
             {
                 IsLoadingAliases = false;
             }
-
-            UpdateMapNames();
         }));
     }
 
@@ -289,31 +291,6 @@ public class AliasBank
             }
 
             WriteTargetAliasBank(targetResource, assetType);
-        }
-    }
-
-    public void UpdateMapNames()
-    {
-        if (aliasType is AliasBankType.Map)
-        {
-            var _mapNames = new Dictionary<string, string>();
-
-            foreach (var entry in AliasNames.GetEntries("Maps"))
-            {
-                if (!CFG.Current.MapAliases_ShowUnusedNames)
-                {
-                    if (entry.tags[0] != "unused")
-                    {
-                        _mapNames.Add(entry.id, entry.name);
-                    }
-                    else
-                    {
-                        _mapNames.Add(entry.id, entry.name);
-                    }
-                }
-            }
-
-            MapNames = _mapNames;
         }
     }
 }

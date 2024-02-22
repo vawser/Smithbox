@@ -74,9 +74,8 @@ public class MapPropertyEditor
         else if (typ == typeof(int))
         {
             var val = (int)oldval;
-            var att = prop?.GetCustomAttribute<IntBoolean>();
 
-            if (att != null)
+            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -107,9 +106,8 @@ public class MapPropertyEditor
         {
             var val = (uint)oldval;
             var strval = $@"{val}";
-            var att = prop?.GetCustomAttribute<UIntBoolean>();
 
-            if (att != null)
+            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -143,9 +141,8 @@ public class MapPropertyEditor
         else if (typ == typeof(short))
         {
             int val = (short)oldval;
-            var att = prop?.GetCustomAttribute<ShortBoolean>();
-
-            if (att != null)
+            
+            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -177,9 +174,7 @@ public class MapPropertyEditor
             var val = (ushort)oldval;
             var strval = $@"{val}";
 
-            var att = prop?.GetCustomAttribute<UShortBoolean>();
-
-            if (att != null)
+            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -213,9 +208,8 @@ public class MapPropertyEditor
         else if (typ == typeof(sbyte))
         {
             int val = (sbyte)oldval;
-            var att = prop?.GetCustomAttribute<SByteBoolean>();
 
-            if (att != null)
+            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -246,9 +240,8 @@ public class MapPropertyEditor
         {
             var val = (byte)oldval;
             var strval = $@"{val}";
-            var att = prop?.GetCustomAttribute<ByteBoolean>();
 
-            if (att != null)
+            if (MsbFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -278,22 +271,6 @@ public class MapPropertyEditor
                     }
                 }
             }
-
-            /*
-            // TODO: Set Next Unique Value
-            // (needs prop search to scan through structs)
-            if (obj != null && ImGui.BeginPopupContextItem(propname))
-            {
-                if (ImGui.Selectable("Set Next Unique Value"))
-                {
-                    newval = obj.Container.GetNextUnique(propname, val);
-                    _forceCommit = true;
-                    ImGui.EndPopup();
-                    edited = true;
-                }
-                ImGui.EndPopup();
-            }
-            */
         }
         else if (typ == typeof(bool))
         {
@@ -1250,14 +1227,7 @@ public class MapPropertyEditor
                             // but only the RootObject has the TransformNode and Viewport integration.
                             var mapid = r.Name;
                             var prettyName = $"{ForkAwesome.Cube} {mapid}";
-
-                            if (MapAliasBank.Bank.MapNames != null)
-                            {
-                                if (MapAliasBank.Bank.MapNames.TryGetValue(mapid, out var metaName))
-                                {
-                                    prettyName += $" <{metaName}>";
-                                }
-                            }
+                            prettyName = MapAliasBank.GetMapName(mapid, prettyName);
 
                             if (ImGui.Button(prettyName + "##MSBRefTo" + refID))
                             {
@@ -1326,7 +1296,7 @@ public class MapPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            name = MsbFormatBank.Bank.GetNameForProperty(name, _selected);
+            name = MsbFormatBank.Bank.GetReferenceName(name, name);
         }
 
         return name;
@@ -1334,13 +1304,13 @@ public class MapPropertyEditor
 
     public void ShowFieldHint(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
-        string desc = "";
+        string name = prop.Name;
 
         if (CFG.Current.MapEditor_Enable_Commmunity_Hints)
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            desc = MsbFormatBank.Bank.GetDescriptionForProperty(desc, _selected);
+            var desc = MsbFormatBank.Bank.GetReferenceDescription(name);
 
             ImguiUtils.ShowHelpMarker(desc);
         }

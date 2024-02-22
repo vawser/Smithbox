@@ -171,15 +171,7 @@ public class MapAssetBrowser
 
             if (_loadedMaps.Contains(mapId))
             {
-                var labelName = mapId;
-
-                if (MapAliasBank.Bank.MapNames != null)
-                {
-                    if (MapAliasBank.Bank.MapNames.ContainsKey(mapId))
-                    {
-                        labelName = labelName + $" <{MapAliasBank.Bank.MapNames[mapId]}>";
-                    }
-                }
+                var labelName = MapAliasBank.GetMapName(mapId, mapId);
 
                 if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                 {

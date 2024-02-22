@@ -79,9 +79,8 @@ public class ModelPropertyEditor
         else if (typ == typeof(int))
         {
             var val = (int)oldval;
-            var att = prop?.GetCustomAttribute<IntBoolean>();
 
-            if (att != null)
+            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -112,9 +111,8 @@ public class ModelPropertyEditor
         {
             var val = (uint)oldval;
             var strval = $@"{val}";
-            var att = prop?.GetCustomAttribute<UIntBoolean>();
 
-            if (att != null)
+            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -148,9 +146,8 @@ public class ModelPropertyEditor
         else if (typ == typeof(short))
         {
             int val = (short)oldval;
-            var att = prop?.GetCustomAttribute<ShortBoolean>();
 
-            if (att != null)
+            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -182,9 +179,7 @@ public class ModelPropertyEditor
             var val = (ushort)oldval;
             var strval = $@"{val}";
 
-            var att = prop?.GetCustomAttribute<UShortBoolean>();
-
-            if (att != null)
+            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -218,9 +213,8 @@ public class ModelPropertyEditor
         else if (typ == typeof(sbyte))
         {
             int val = (sbyte)oldval;
-            var att = prop?.GetCustomAttribute<SByteBoolean>();
 
-            if (att != null)
+            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -251,9 +245,8 @@ public class ModelPropertyEditor
         {
             var val = (byte)oldval;
             var strval = $@"{val}";
-            var att = prop?.GetCustomAttribute<ByteBoolean>();
 
-            if (att != null)
+            if (FlverFormatBank.Bank.IsBooleanProperty(prop.Name))
             {
                 bool bVar = false;
 
@@ -1097,14 +1090,7 @@ public class ModelPropertyEditor
                             // but only the RootObject has the TransformNode and Viewport integration.
                             var mapid = r.Name;
                             var prettyName = $"{ForkAwesome.Cube} {mapid}";
-
-                            if (MapAliasBank.Bank.MapNames != null)
-                            {
-                                if (MapAliasBank.Bank.MapNames.TryGetValue(mapid, out var metaName))
-                                {
-                                    prettyName += $" <{metaName}>";
-                                }
-                            }
+                            prettyName = MapAliasBank.GetMapName(mapid, prettyName);
 
                             if (ImGui.Button(prettyName + "##MSBRefTo" + refID))
                             {
@@ -1173,7 +1159,7 @@ public class ModelPropertyEditor
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            name = FlverFormatBank.Bank.GetNameForProperty(name, _selected);
+            name = FlverFormatBank.Bank.GetReferenceName(name, name);
         }
 
         return name;
@@ -1182,13 +1168,12 @@ public class ModelPropertyEditor
     public void ShowFieldHint(Type classType, PropertyInfo prop, ViewportSelection sel)
     {
         string name = prop.Name;
-        string desc = "";
 
         if (CFG.Current.ModelEditor_Enable_Commmunity_Hints)
         {
             Entity _selected = sel.GetFilteredSelection<Entity>().First();
 
-            desc = FlverFormatBank.Bank.GetDescriptionForProperty(name, _selected);
+            var desc = FlverFormatBank.Bank.GetReferenceDescription(name);
 
             ImguiUtils.ShowHelpMarker(desc);
         }

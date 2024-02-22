@@ -206,31 +206,24 @@ namespace StudioCore.Editors.ModelEditor
             foreach (var mapId in _mapModelNameCache.Keys)
             {
                 var labelName = mapId;
+                labelName = MapAliasBank.GetMapName(mapId, labelName);
 
-                if (MapAliasBank.Bank.MapNames != null)
+                if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                 {
-                    if (MapAliasBank.Bank.MapNames.ContainsKey(mapId))
+                    if (_mapModelNameCache[mapId] == null)
                     {
-                        labelName = labelName + $" <{MapAliasBank.Bank.MapNames[mapId]}>";
-                    }
-
-                    if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
-                    {
-                        if (_mapModelNameCache[mapId] == null)
+                        var modelList = ModelAssetLocator.GetMapModels(mapId);
+                        var cache = new List<string>();
+                        foreach (var model in modelList)
                         {
-                            var modelList = ModelAssetLocator.GetMapModels(mapId);
-                            var cache = new List<string>();
-                            foreach (var model in modelList)
-                            {
-                                cache.Add(model.AssetName);
-                            }
-
-                            _mapModelNameCache[mapId] = cache;
+                            cache.Add(model.AssetName);
                         }
 
-                        _selectedAssetMapId = mapId;
-                        _selectedAssetType = SelectedCategoryType.MapPiece;
+                        _mapModelNameCache[mapId] = cache;
                     }
+
+                    _selectedAssetMapId = mapId;
+                    _selectedAssetType = SelectedCategoryType.MapPiece;
                 }
             }
         }

@@ -4,6 +4,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,9 @@ public static class BankUtils
         ParticleAliasBank.Bank = new AliasBank(AliasBankType.Particle);
 
         // Format
-        MsbFormatBank.Bank = new FormatBank(FormatBankType.MSB);
-        FlverFormatBank.Bank = new FormatBank(FormatBankType.FLVER);
-        GparamFormatBank.Bank = new FormatBank(FormatBankType.GPARAM);
+        MsbFormatBank.Bank = new FormatBank(FormatBankType.MSB, true);
+        FlverFormatBank.Bank = new FormatBank(FormatBankType.FLVER, false);
+        GparamFormatBank.Bank = new FormatBank(FormatBankType.GPARAM, false);
 
         // Data
         MaterialResourceBank.Setup();
@@ -53,22 +54,72 @@ public static class BankUtils
 // Alias
 public static class ModelAliasBank
 {
-public static AliasBank Bank { get; set; }
+    public static AliasBank Bank { get; set; }
 }
 
 public static class FlagAliasBank
 {
-public static AliasBank Bank { get; set; }
+    public static AliasBank Bank { get; set; }
 }
 
 public static class ParticleAliasBank
 {
-public static AliasBank Bank { get; set; }
+    public static AliasBank Bank { get; set; }
 }
 
 public static class MapAliasBank
 {
-public static AliasBank Bank { get; set; }
+    public static AliasBank Bank { get; set; }
+
+    public static Dictionary<string, string> MapNames;
+
+    public static void ReloadMapNames()
+    {
+        TaskManager.Run(new TaskManager.LiveTask($"Alias Bank - Load Map Names", TaskManager.RequeueType.None, false,
+        () =>
+        {
+            if (Project.Type != ProjectType.Undefined)
+            {
+                if (Bank.AliasNames != null)
+                {
+                    if (Bank.aliasType is AliasBankType.Map)
+                    {
+                        var _mapNames = new Dictionary<string, string>();
+
+                        foreach (var entry in Bank.AliasNames.GetEntries("Maps"))
+                        {
+                            if (!CFG.Current.MapAliases_ShowUnusedNames)
+                            {
+                                if (entry.tags[0] != "unused")
+                                {
+                                    _mapNames.Add(entry.id, entry.name);
+                                }
+                                else
+                                {
+                                    _mapNames.Add(entry.id, entry.name);
+                                }
+                            }
+                        }
+
+                        MapNames = _mapNames;
+                    }
+                }
+            }
+        }));
+    }
+
+    public static string GetMapName(string mapId, string baseName)
+    {
+        if (MapNames == null)
+            return baseName;
+
+        if (MapNames.ContainsKey(mapId))
+        {
+            return $"{baseName}{MapNames[mapId]}";
+        }
+
+        return $"{baseName}";
+    }
 }
 
 // Format

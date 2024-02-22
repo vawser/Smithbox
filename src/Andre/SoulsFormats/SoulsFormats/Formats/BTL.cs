@@ -124,314 +124,262 @@ namespace SoulsFormats
             /// <summary>
             /// Name of this light.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Name")]
             public string Name { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Type")]
             public LightType Type { get; set; }
 
             /// <summary>
             /// Center of the light.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Position")]
             public Vector3 Position { get; set; }
 
             /// <summary>
             /// Rotation of a spot light.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Rotation")]
             [RotationRadians]
             public Vector3 Rotation { get; set; }
 
             /// <summary>
             /// Distance the light shines.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Radius")]
             public float Radius { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Sharpness")]
             public float Sharpness { get; set; }
 
             /// <summary>
             /// Distance from start before light appears.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-LightStartCutoff")]
             public float LightStartCutoff { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-ShadowModelCullFlip")]
             public bool ShadowModelCullFlip { get; set; }
 
             /// <summary>
             /// Distance required for a light to transition into view. 0 = always enabled.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-EnableDist")]
             public float EnableDist { get; set; }
 
             /// <summary>
             /// Unknown; 4 bytes.
             /// Affects if a light appears normally, but details are unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-EnableState_UnkC0")]
-            [ByteBoolean]
             public byte[] EnableState_UnkC0 { get; set; }
 
             /// <summary>
             /// Color of the light on diffuse surfaces.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-DiffuseColor")]
             [SupportsAlpha(false)]
             public Color DiffuseColor { get; set; }
 
             /// <summary>
             /// Intensity of diffuse lighting.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-DiffusePower")]
             public float DiffusePower { get; set; }
 
             /// <summary>
             /// Color of the light on reflective surfaces.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-SpecularColor")]
             [SupportsAlpha(false)]
             public Color SpecularColor { get; set; }
 
             /// <summary>
             /// Intensity of specular lighting.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-SpecularPower")]
             public float SpecularPower { get; set; }
 
             /// <summary>
             /// Whether the light casts shadows.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-CastShadows")]
             public bool CastShadows { get; set; }
 
             /// <summary>
             /// Color of shadows cast by the light; alpha is relative to 100.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-ShadowColor")]
             [SupportsAlpha(true)]
             public Color ShadowColor { get; set; }
 
             /// <summary>
             /// Minimum time between flickers.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-FlickerIntervalMin")]
             public float FlickerIntervalMin { get; set; }
 
             /// <summary>
             /// Maximum time between flickers.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-FlickerIntervalMax")]
             public float FlickerIntervalMax { get; set; }
 
             /// <summary>
             /// Multiplies the brightness of the light while flickering.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-FlickerBrightnessMult")]
             public float FlickerBrightnessMult { get; set; }
 
             /// <summary>
             /// Stretches the spot light beam.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Width")]
             public float Width { get; set; }
 
             /// <summary>
             /// Distance at which spot light beam starts.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-NearClip")]
             public float NearClip { get; set; }
 
             /// <summary>
             /// Tightness of the spot light beam.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-ConeAngle")]
             public float ConeAngle { get; set; }
 
             /// <summary>
             /// Referenced by map events. Only used in DS2.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-EventID")]
             public int EventID { get; set; }
 
             /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-VolumeDensity")]
             public float VolumeDensity { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk1C")]
             public bool Unk1C { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk30")]
             public float Unk30 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk34")]
             public float Unk34 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk50")]
             public int Unk50 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk54")]
             public float Unk54 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk5C")]
             public int Unk5C { get; set; }
 
             /// <summary>
             /// Unknown; 4 bytes.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk64")]
             public byte[] Unk64 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk68")]
             public float Unk68 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk70")]
             public float Unk70 { get; set; }
 
             
             /// <summary>
             /// Unknown; 4 bytes.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk84")]
             public byte[] Unk84 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk88")]
             public float Unk88 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk90")]
             public float Unk90 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk98")]
             public float Unk98 { get; set; }
             
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkA0")]
             public byte UnkA0 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkA1")]
             public byte UnkA1 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkA2")]
             public byte UnkA2 { get; set; }
             
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkAC")]
             public float UnkAC { get; set; }
             
             /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkC8")]
             public float UnkC8 { get; set; }
 
             /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkCC")]
             public float UnkCC { get; set; }
 
             /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkD4")]
             public float UnkD4 { get; set; }
 
             /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkD8")]
             public float UnkD8 { get; set; }
 
             /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkDC")]
             public int UnkDC { get; set; }
 
             /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkE0")]
             public float UnkE0 { get; set; }
 
             /// <summary>
             /// Unknown; not present before Sekiro.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkE4")]
             public int UnkE4 { get; set; }
 
             /// <summary>
             /// Unknown; only present in version 15 BTLs in ER (of which there are only 2).
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkE8")]
             public int UnkE8 { get; set; }
 
             /// <summary>
             /// Unknown; only present in version 15 BTLs in ER (of which there are only 2).
             /// </summary>
-            [FormatReference(ReferenceName = "Light-UnkEB")]
             public int UnkEB { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [FormatReference(ReferenceName = "Light-Unk00")]
             public byte[] Unk00 { get; private set; }
 
             /// <summary>

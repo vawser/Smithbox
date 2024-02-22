@@ -731,13 +731,7 @@ public class MapSceneTree : IActionEventHandler
                     continue;
                 }
 
-                if (MapAliasBank.Bank.MapNames != null)
-                {
-                    if (MapAliasBank.Bank.MapNames.ContainsKey(mapid))
-                    {
-                        metaName = MapAliasBank.Bank.MapNames[mapid];
-                    }
-                }
+                metaName = MapAliasBank.GetMapName(mapid, metaName);
 
                 // Map name search filter
                 if (_mapNameSearchStr != ""
