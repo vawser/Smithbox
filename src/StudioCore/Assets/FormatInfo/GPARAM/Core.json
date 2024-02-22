@@ -404,7 +404,7 @@
                 },
                 {
                     "id": "GS Presents - Chromatic Aberration Enable",
-                    "name": "Enable Chromatic Aberratio",
+                    "name": "Enable Chromatic Aberration",
                     "description": "",
                     "attributes": "IsType[IntB]"
                 },
@@ -1334,10 +1334,232 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "Sea Wave BubbleTex: Id",
+                    "name": "Bubble ID",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Sea Wave BubbleMask: Id",
+                    "name": "Bubble Mask ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Sea Wave Normal: Id",
+                    "name": "Normal ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Sea Wave Light: Id",
+                    "name": "Light ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "Sea Wave Time Rate",
+                    "name": "Time Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave  Enable",
+                    "name": "Enable Sea Wave",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "Sea Wave Wave Angle",
+                    "name": "Wave Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Wavelength Scale",
+                    "name": "Wavelength Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Amplitude Scale",
+                    "name": "Amplitude Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave  Enable Choppy",
+                    "name": "Enable Choppy Waves",
+                    "description": "",
+                    "attributes": "IsType[BoolA]"
+                },
+                {
+                    "id": "Sea Wave WindAng",
+                    "name": "Wind Angle",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave WindSpeed",
+                    "name": "Wind Speed",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave WaveAmp",
+                    "name": "Wave Amplitude",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave WaveNumberCoef",
+                    "name": "Wave Number Coefficient",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Blend Begin Depth",
+                    "name": "Wave Blend: Begin Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Blend End Depth",
+                    "name": "Wave Blend: End Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflection Max",
+                    "name": "Wave Reflection: Maximum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflection Min",
+                    "name": "Wave Reflection: Minimum",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflectance",
+                    "name": "Wave Reflectance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Shininess",
+                    "name": "Wave Shininess",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflection Distortion Scale(near)",
+                    "name": "Wave Reflection Distortion Scale: Near",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Reflection Distortion Scale(far)",
+                    "name": "Wave Reflection Distortion Scale: Far",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave FFT Tex Tiling Size",
+                    "name": "FFT Texture Tiling Size",
+                    "description": "FFT means Fast Fourier Transform.",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave BumpMap Tiling Size",
+                    "name": "Bump Map Tiling Size",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Basis Height",
+                    "name": "Basis Height",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Depth Limit",
+                    "name": "Depth Limit",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Area Max",
+                    "name": "Area Max",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Transparent Depth",
+                    "name": "Transparent Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Border Feed Depth",
+                    "name": "Border Feed Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Border Bubble Depth",
+                    "name": "Border Bubble Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Border Bubble Flat Scale",
+                    "name": "Border Bubble Flat Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Border Wave Scale",
+                    "name": "Border Wave Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Sea Wave Shallow Water",
+                    "name": "Shallow Water Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Sea Wave Deep Water",
+                    "name": "Deep Water Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Sea Wave Use Inner Simulation Time",
+                    "name": "Use Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Sea Wave Enable Average Inner Simulation Time",
+                    "name": "Enable Average Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Sea Wave Enable Fixed Inner Simulation Time",
+                    "name": "Enable Fixed Inner Simulation Time",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "Sea Wave Fix Fps",
+                    "name": "Fix FPS",
+                    "description": "",
+                    "attributes": "IsType[Float]"
                 }
             ]
         },
@@ -1582,10 +1804,28 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "Wet-OverrideAlbedo",
+                    "name": "Override Albedo Color",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "Wet-OverrideShininess",
+                    "name": "Override Shininess",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Wet-AlbedoRate",
+                    "name": "Albedo Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "Wet-ShininessRate",
+                    "name": "Shininess Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
                 }
             ]
         },
@@ -1596,10 +1836,88 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "SSR Enable",
+                    "name": "Enable Screen Space Reflections",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "SSR TraverseMode",
+                    "name": "Traverse Mode",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "SSR Shininess Reject Threshold",
+                    "name": "Shininess Reject Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Depth Reject Threshold",
+                    "name": "Depth Reject Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Fade To Viewer Start",
+                    "name": "Fade to Viewer Start",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Fresnel Reject Threshold",
+                    "name": "Fresnel Reject Threshold",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Ray Trace Step Scale Min",
+                    "name": "Ray Trace Step Scale Min",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Ray Trace Step Scale Max",
+                    "name": "Ray Trace Step Scale Max",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Display Mip Scale",
+                    "name": "Display Mip Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Display Mip Offset",
+                    "name": "Display Mip Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Depth Fade Range",
+                    "name": "Depth Fade Range",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Geom Crack Detect Factor",
+                    "name": "Geom Crack Detect Factor",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Tex Blur Sigma",
+                    "name": "Texture Blur Sigma",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "SSR Tex Blur Sigma for Mip",
+                    "name": "Texture Blur Sigma for Mip",
+                    "description": "",
+                    "attributes": "IsType[Float]"
                 }
             ]
         },
@@ -1610,10 +1928,274 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "VolumetricFog Enable",
+                    "name": "Enable Volumetric Fog",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog VolumeWidth",
+                    "name": "Volume Width",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog VolumeDepth",
+                    "name": "Volume Depth",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog GameScale",
+                    "name": "Game Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog NearDepth",
+                    "name": "Near Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog FarDepth",
+                    "name": "Far Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog NearOffset",
+                    "name": "Near Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog FogEndDepth",
+                    "name": "Fog End Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DrawTiming",
+                    "name": "Draw Timing",
+                    "description": "",
+                    "attributes": "IsType[IntA]"
+                },
+                {
+                    "id": "VolumetricFog EnableAnalyticalFog",
+                    "name": "Enable Analytical Fog",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog VolumeSliceSampleOffset",
+                    "name": "Volume Slice Sample Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog CullingBySceneDepth",
+                    "name": "Culling By Scene Depth",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog CancelInScatteringRateFromSSR",
+                    "name": "Cancel in Scattering Rate From Screen Space Reflection",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global FixedDensity",
+                    "name": "Fixed Density",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global ScatteringG",
+                    "name": "Scattering G",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global LocalLightScale",
+                    "name": "Local Light Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global LocalLightDistScale",
+                    "name": "Local Light Distance Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogDistribution",
+                    "name": "Height Fog Distribution",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogOffset",
+                    "name": "Height Fog Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogReferenceOffset",
+                    "name": "Height Fog Reference Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogReferenceModeRate",
+                    "name": "Height Fog Reference Mode Rate",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global HeightFogDensity Scale",
+                    "name": "Height Fog Density Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Global AbsorptionScale",
+                    "name": "Absorption Scale",
+                    "description": "",
+                    "attributes": "IsType[Float3]"
+                },
+                {
+                    "id": "VolumetricFog SkyLight SkyColor",
+                    "name": "Sky Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "VolumetricFog SkyLight HeightAtten",
+                    "name": "Sky Height Attenuation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog SkyLight StartDist",
+                    "name": "Sky Start Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight LightBankId",
+                    "name": "Directional Light: Light Bank ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight LightId",
+                    "name": "Directional Light: Light ID",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight DirectColor",
+                    "name": "Directional Light: Direct Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "VolumetricFog DirLight OppositeColor",
+                    "name": "Directional Light: Opposite Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "VolumetricFog DirLight HeightAtten",
+                    "name": "Directional Light: Height Attenuation",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight StartDist",
+                    "name": "Directional Light: Start Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight ShadowSampleCount",
+                    "name": "Directional Light: Shadow Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight ShadowDither",
+                    "name": "Directional Light: Shadow Dither",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight AngleClip",
+                    "name": "Directional Light: Angle Clip",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight EnableReproj",
+                    "name": "Directional Light: Enable Reprojection",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight JitterCount",
+                    "name": "Directional Light: Jitter Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog DirLight JitterXYSize",
+                    "name": "Directional Light: Jitter XY Size",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog DirLight FeedbackWeight",
+                    "name": "Directional Light: Feedback Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog FogVolume InjectingSampleCount",
+                    "name": "Injecting Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog FogVolume InjectingDither",
+                    "name": "Injecting Dither",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog FogVolume InjectingReprojEnabled",
+                    "name": "Injecting Reprojection Enabled",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "VolumetricFog FogVolume InjectingFeedbackWeight",
+                    "name": "Injecting Feedback Weight",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "VolumetricFog Config SampleCount",
+                    "name": "Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "VolumetricFog Config Dither",
+                    "name": "Dither",
+                    "description": "",
+                    "attributes": "IsType[Float]"
                 }
             ]
         },
@@ -1624,10 +2206,184 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "FogVolume DrawArea NearFadeMinDistance",
+                    "name": "Draw Area: Near Fade Minimum Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea NearFadeMaxDistance",
+                    "name": "Draw Area: Near Fade Maximum Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea EdgeFadeDistance",
+                    "name": "Draw Area: Edge Fade Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea EdgeFadeExponent",
+                    "name": "Draw Area: Edge Fade Exponent",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea HeightFallOff",
+                    "name": "Draw Area: Height Fall Off",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea FadeDistanceForHeightMap",
+                    "name": "Draw Area: Fade Distance for Height Map",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume DrawArea MaxInjectingDepth",
+                    "name": "Draw Area: Max Injecting Depth",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume RayMarching MaxSampleCount",
+                    "name": "Ray Marching: Max Sample Count",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "FogVolume RayMarching SteppingDistance",
+                    "name": "Ray Marching: Stepping Distance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume RayMarching SuspendedTransmittance",
+                    "name": "Ray Marching: Suspended Transmittance",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume RayMarching LightProcessingInterval",
+                    "name": "Ray Marching: Light Processing Interval",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "FogVolume RayMarching LightProcessingIntervalThreshold",
+                    "name": "Ray Marching: Light Processing Interval Threshold",
                     "description": "",
                     "attributes": "IsType[XXXXXX]"
+                },
+                {
+                    "id": "FogVolume Light Overwrite",
+                    "name": "Light: Overwrite",
+                    "description": "",
+                    "attributes": "IsType[BoolB]"
+                },
+                {
+                    "id": "FogVolume Light DirectionalLightAngle",
+                    "name": "Light: Directional Light Angle",
+                    "description": "",
+                    "attributes": "IsType[Float2]"
+                },
+                {
+                    "id": "FogVolume Light DirectionalLightColor",
+                    "name": "Light: Directional Light Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "FogVolume Light DirectionalLightOppositeColor",
+                    "name": "Light: Directional Light Opposite Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "FogVolume Light AmbientColor",
+                    "name": "Light: Ambient Color",
+                    "description": "",
+                    "attributes": "IsType[Float4]"
+                },
+                {
+                    "id": "FogVolume Light ShadowingIntensity",
+                    "name": "Light: Shadowing Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Light AttenuationIntensity",
+                    "name": "Light: Attenuation Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Light AttenuationOffset",
+                    "name": "Light: Attenuation Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Light OctaveNumPerlinNoise",
+                    "name": "Light: Octave Number of Perlin Noise",
+                    "description": "",
+                    "attributes": "IsType[IntB]"
+                },
+                {
+                    "id": "FogVolume Density Intensity",
+                    "name": "Density: Intensity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume PerlinNoise Frequency",
+                    "name": "Perlin Noise: Frequency",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume PerlinNoise Lacunarity",
+                    "name": "Perlin Noise: Lacunarity",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume PerlinNoise Gain",
+                    "name": "Perlin Noise: Gain",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume PerlinNoise Offset",
+                    "name": "Perlin Noise: Offset",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Scroll Speed-x",
+                    "name": "Scroll Speed: X",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Scroll Speed-y",
+                    "name": "Scroll Speed: Y",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Scroll Speed-z",
+                    "name": "Scroll Speed: Z",
+                    "description": "",
+                    "attributes": "IsType[Float]"
+                },
+                {
+                    "id": "FogVolume Scroll DetailScale",
+                    "name": "Scroll Detail Scale",
+                    "description": "",
+                    "attributes": "IsType[Float]"
                 }
             ]
         },
