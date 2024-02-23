@@ -104,6 +104,7 @@ public class Smithbox
         PlatformUtils.InitializeWindows(null);
         CFG.AttemptLoadOrDefault();
         UI.SetupThemes();
+        UI.SetTheme(true);
 
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");

@@ -174,7 +174,7 @@ public class GparamEditorScreen : EditorScreen
                     ImGui.SameLine();
                     ImGui.PushTextWrapPos();
 
-                    ImGui.TextColored(new Vector4(1.0f, 1.0f, 0.0f, 1.0f), @$"<{prettyName}>");
+                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
 
                     ImGui.PopTextWrapPos();
                 }

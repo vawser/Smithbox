@@ -769,7 +769,7 @@ public class SettingsWindow
 
             if(ImGui.ListBox("##themeSelect", ref CFG.Current.SelectedTheme, UI.LoadedThemeNames, UI.LoadedThemeNames.Length))
             {
-                UI.SetTheme();
+                UI.SetTheme(false);
             }
 
             if (ImGui.Button("Reset to Default"))
@@ -876,6 +876,7 @@ public class SettingsWindow
                 ImGui.ColorEdit4("Auxiliary Added Text", ref CFG.Current.ImGui_AuxAdded_Text);
                 ImGui.ColorEdit4("Primary Changed Text", ref CFG.Current.ImGui_PrimaryChanged_Text);
                 ImGui.ColorEdit4("Param Row Text", ref CFG.Current.ImGui_ParamRow_Text);
+                ImGui.ColorEdit4("Aliased Name Text", ref CFG.Current.ImGui_AliasName_Text);
             }
 
             if (ImGui.CollapsingHeader("Miscellaneous", ImGuiTreeNodeFlags.DefaultOpen))

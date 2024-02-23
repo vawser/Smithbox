@@ -773,11 +773,11 @@ public class MapSceneTree : IActionEventHandler
                     ImGui.PushTextWrapPos();
                     if (metaName.StartsWith("--")) // Marked as normally unused (use red text)
                     {
-                        ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), @$"<{metaName.Replace("--", "")}>");
+                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{metaName.Replace("--", "")}>");
                     }
                     else
                     {
-                        ImGui.TextColored(new Vector4(1.0f, 1.0f, 0.0f, 1.0f), @$"<{metaName}>");
+                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{metaName}>");
                     }
 
                     ImGui.PopTextWrapPos();

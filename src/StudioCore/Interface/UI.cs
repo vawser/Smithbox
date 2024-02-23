@@ -94,6 +94,7 @@ namespace StudioCore.Interface
             CFG.Current.ImGui_AuxAdded_Text = CFG.Default.ImGui_AuxAdded_Text;
             CFG.Current.ImGui_PrimaryChanged_Text = CFG.Default.ImGui_PrimaryChanged_Text;
             CFG.Current.ImGui_ParamRow_Text = CFG.Default.ImGui_ParamRow_Text;
+            CFG.Current.ImGui_AliasName_Text = CFG.Default.ImGui_AliasName_Text;
 
             // Misc
             CFG.Current.DisplayGroupEditor_Border_Highlight = CFG.Default.DisplayGroupEditor_Border_Highlight;
@@ -247,6 +248,7 @@ namespace StudioCore.Interface
             theme.ImGui_AuxAdded_Text = GetFloatList(CFG.Current.ImGui_AuxAdded_Text);
             theme.ImGui_PrimaryChanged_Text = GetFloatList(CFG.Current.ImGui_PrimaryChanged_Text);
             theme.ImGui_ParamRow_Text = GetFloatList(CFG.Current.ImGui_ParamRow_Text);
+            theme.ImGui_AliasName_Text = GetFloatList(CFG.Current.ImGui_AliasName_Text);
 
             theme.DisplayGroupEditor_Border_Highlight = GetFloatList(CFG.Current.DisplayGroupEditor_Border_Highlight);
             theme.DisplayGroupEditor_DisplayActive_Frame = GetFloatList(CFG.Current.DisplayGroupEditor_DisplayActive_Frame);
@@ -280,9 +282,14 @@ namespace StudioCore.Interface
             SetupThemes();
         }
 
-        public static void SetTheme()
+        public static void SetTheme(bool ignoreId)
         {
-            var ThemeName = LoadedThemeNames[CFG.Current.SelectedTheme];
+            var ThemeName = CFG.Current.SelectedThemeName;
+
+            if (!ignoreId)
+            {
+                ThemeName = LoadedThemeNames[CFG.Current.SelectedTheme];
+            }
 
             InterfaceTheme theme = null;
 
@@ -299,6 +306,8 @@ namespace StudioCore.Interface
                 PlatformUtils.Instance.MessageBox("Theme does not exist.", "Warning", MessageBoxButtons.OK);
                 return;
             }
+
+            CFG.Current.SelectedThemeName = theme.name;
 
             // Update CFG vars with values from json
 
@@ -374,6 +383,7 @@ namespace StudioCore.Interface
             CFG.Current.ImGui_AuxAdded_Text = GetVectorValue(theme.ImGui_AuxAdded_Text);
             CFG.Current.ImGui_PrimaryChanged_Text = GetVectorValue(theme.ImGui_PrimaryChanged_Text);
             CFG.Current.ImGui_ParamRow_Text = GetVectorValue(theme.ImGui_ParamRow_Text);
+            CFG.Current.ImGui_AliasName_Text = GetVectorValue(theme.ImGui_AliasName_Text);
 
             // Misc
             CFG.Current.DisplayGroupEditor_Border_Highlight = GetVectorValue(theme.DisplayGroupEditor_Border_Highlight);
@@ -478,6 +488,7 @@ namespace StudioCore.Interface
         public List<float> ImGui_AuxAdded_Text { get; set; }
         public List<float> ImGui_PrimaryChanged_Text { get; set; }
         public List<float> ImGui_ParamRow_Text { get; set; }
+        public List<float> ImGui_AliasName_Text { get; set; }
         public List<float> DisplayGroupEditor_Border_Highlight { get; set; }
         public List<float> DisplayGroupEditor_DisplayActive_Frame { get; set; }
         public List<float> DisplayGroupEditor_DisplayActive_Checkbox { get; set; }

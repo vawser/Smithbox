@@ -128,6 +128,7 @@ public class CFG
     public Vector4 ImGui_AuxAdded_Text = new Vector4(0.7f, 0.7f, 1, 1);
     public Vector4 ImGui_PrimaryChanged_Text = new Vector4(0.7f, 1, 0.7f, 1);
     public Vector4 ImGui_ParamRow_Text = new Vector4(0.8f, 0.8f, 0.8f, 1.0f);
+    public Vector4 ImGui_AliasName_Text = new Vector4(1.0f, 0.0f, 0.0f, 1.0f);
 
     // Misc
     public Vector4 DisplayGroupEditor_Border_Highlight = new Vector4(1.0f, 0.2f, 0.2f, 1.0f);
@@ -139,6 +140,7 @@ public class CFG
     public Vector4 DisplayGroupEditor_CombinedActive_Checkbox = new Vector4(1f, 1f, 0.02f, 1.0f);
 
     // Setup
+    public string SelectedThemeName = "";
     public int SelectedTheme = 0;
     public string NewThemeName = "";
 

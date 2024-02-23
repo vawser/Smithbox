@@ -198,6 +198,7 @@ public static class TaskLogs
             ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
             ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
             ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             if (ImGui.Begin("Logger##TaskLogger", ref _loggerWindowOpen, ImGuiWindowFlags.NoDocking))
             {
                 if (ImGui.Button("Clear##TaskLogger"))
@@ -242,7 +243,7 @@ public static class TaskLogs
             }
 
             ImGui.End();
-            ImGui.PopStyleColor(4);
+            ImGui.PopStyleColor(5);
         }
 
         if (_lastLogEntry != null)
