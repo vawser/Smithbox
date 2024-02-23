@@ -250,26 +250,26 @@ public class DisplayGroupEditor
                     {
                         // Selection dispgroup and drawgroup is ticked
                         // Yellow
-                        ImGui.PushStyleColor(ImGuiCol.FrameBg, new Vector4(0.4f, 0.4f, 0.06f, 1.0f));
-                        ImGui.PushStyleColor(ImGuiCol.CheckMark, new Vector4(1f, 1f, 0.02f, 1.0f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBg,  CFG.Current.DisplayGroupEditor_CombinedActive_Frame);
+                        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.DisplayGroupEditor_CombinedActive_Checkbox);
                     }
                     else if (drawActive)
                     {
                         // Selection drawgroup is ticked
                         // Green
-                        ImGui.PushStyleColor(ImGuiCol.FrameBg, new Vector4(0.02f, 0.3f, 0.02f, 1.0f));
-                        ImGui.PushStyleColor(ImGuiCol.CheckMark, new Vector4(0.2f, 1.0f, 0.2f, 1.0f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.DisplayGroupEditor_DrawActive_Frame);
+                        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.DisplayGroupEditor_DrawActive_Checkbox);
                     }
                     else if (dispActive)
                     {
                         // Selection dispGroup is ticked
                         // Red
-                        ImGui.PushStyleColor(ImGuiCol.FrameBg, new Vector4(0.4f, 0.06f, 0.06f, 1.0f));
-                        ImGui.PushStyleColor(ImGuiCol.CheckMark, new Vector4(1.0f, 0.2f, 0.2f, 1.0f));
+                        ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.DisplayGroupEditor_DisplayActive_Frame);
+                        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.DisplayGroupEditor_DisplayActive_Checkbox);
                     }
                     if (HighlightedGroups.Contains(cellKey))
                     {
-                        ImGui.PushStyleColor(ImGuiCol.Border, new Vector4(1.0f, 0.2f, 0.2f, 1.0f));
+                        ImGui.PushStyleColor(ImGuiCol.Border, CFG.Current.DisplayGroupEditor_Border_Highlight);
                     }
 
                     if (ImGui.Checkbox($@"##cell_{cellKey}", ref check))

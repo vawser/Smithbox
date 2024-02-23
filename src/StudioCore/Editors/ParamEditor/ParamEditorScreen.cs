@@ -21,6 +21,7 @@ using AddParamsAction = StudioCore.Editor.AddParamsAction;
 using CompoundAction = StudioCore.Editor.CompoundAction;
 using DeleteParamsAction = StudioCore.Editor.DeleteParamsAction;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -109,8 +110,6 @@ public static class ParamRowIdFinder
 
 public class FMGItemParamDecorator : IParamDecorator
 {
-    private static readonly Vector4 FMGLINKCOLOUR = new(1.0f, 1.0f, 0.0f, 1.0f);
-
     private readonly FmgEntryCategory _category = FmgEntryCategory.None;
 
     private readonly Dictionary<int, FMG.Entry> _entryCache = new();
@@ -136,7 +135,7 @@ public class FMGItemParamDecorator : IParamDecorator
         if (entry != null)
         {
             ImGui.SameLine();
-            ImGui.PushStyleColor(ImGuiCol.Text, FMGLINKCOLOUR);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_FmgLink_Color);
             ImGui.TextUnformatted($@" <{entry.Text}>");
             ImGui.PopStyleColor();
         }
@@ -1215,7 +1214,7 @@ public class ParamEditorScreen : EditorScreen
         {
             if (!_paramUpgraderLoaded)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 0.3f, 0.3f, 1.0f));
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.UpgradeParam_Text_Available_Color);
 
                 if (ImGui.BeginMenu("Upgrade Params"))
                 {
@@ -1230,7 +1229,7 @@ public class ParamEditorScreen : EditorScreen
             }
             else if (ParamBank.VanillaBank.ParamVersion <= ParamUpgradeVersionSoftWhitelist)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(0.0f, 1f, 0f, 1.0f));
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.UpgradeParam_Text_OutOfDate_Color);
 
                 if (ImGui.Button("Upgrade Params"))
                 {
@@ -1260,7 +1259,7 @@ public class ParamEditorScreen : EditorScreen
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 0.3f, 0.3f, 1.0f));
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.UpgradeParam_Text_Invalid_Color);
 
                 if (ImGui.BeginMenu("Upgrade Params"))
                 {

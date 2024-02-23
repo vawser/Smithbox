@@ -87,7 +87,7 @@ public class ModelSceneTree : IActionEventHandler
     {
         var scale = Smithbox.GetUIScale();
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0.145f, 0.145f, 0.149f, 1.0f));
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ModelEditor_SceneTree_ChildBg);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 2.0f) * scale);
 
         DisplaySceneTree();

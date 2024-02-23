@@ -55,8 +55,10 @@ public class MapNameWindow
             return;
 
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0f, 0f, 0f, 0.98f));
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, new Vector4(0.25f, 0.25f, 0.25f, 1.0f));
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Floating_WindowBg_Color);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Floating_TitleBg_Color);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Floating_TitleBgActive_Color);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Floating_ChildBg_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
@@ -147,7 +149,7 @@ public class MapNameWindow
         ImGui.End();
 
         ImGui.PopStyleVar(3);
-        ImGui.PopStyleColor(2);
+        ImGui.PopStyleColor(4);
 
         if (MapAliasBank.Bank.mayReloadAliasBank)
         {

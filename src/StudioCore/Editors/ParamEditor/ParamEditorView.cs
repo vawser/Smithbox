@@ -16,11 +16,6 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamEditorView
 {
-    private static readonly Vector4 AUXCONFLICTCOLOUR = new(1, 0.7f, 0.7f, 1);
-    private static readonly Vector4 AUXADDEDCOLOUR = new(0.7f, 0.7f, 1, 1);
-    private static readonly Vector4 PRIMARYCHANGEDCOLOUR = new(0.7f, 1, 0.7f, 1);
-    private static readonly Vector4 ALLVANILLACOLOUR = new(0.9f, 0.9f, 0.9f, 1);
-
     private readonly ParamRowEditor _propEditor;
     private readonly Dictionary<string, string> lastRowSearch = new();
     private bool _arrowKeyPressed;
@@ -257,11 +252,11 @@ public class ParamEditorView
 
             if (primary != null ? primary.Any() : false)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, PRIMARYCHANGEDCOLOUR);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_PrimaryChanged_Color);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, ALLVANILLACOLOUR);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_AllVanilla_Color);
             }
 
             if (ImGui.Selectable($"{paramKey}", paramKey == _selection.GetActiveParam()))
@@ -610,22 +605,22 @@ public class ParamEditorView
 
             if (auxDiffVanilla && auxDiffPrimaryAndVanilla)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, AUXCONFLICTCOLOUR);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_AuxConflict_Color);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, PRIMARYCHANGEDCOLOUR);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_PrimaryChanged_Color);
             }
         }
         else
         {
             if (auxDiffVanilla)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, AUXADDEDCOLOUR);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_AuxAdded_Color);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, ALLVANILLACOLOUR);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_AllVanilla_Color);
             }
         }
 

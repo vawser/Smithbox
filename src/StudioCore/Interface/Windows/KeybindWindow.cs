@@ -133,8 +133,10 @@ public class KeybindWindow
             return;
 
         ImGui.SetNextWindowSize(new Vector2(900.0f, 800.0f) * scale, ImGuiCond.FirstUseEver);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0f, 0f, 0f, 0.98f));
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, new Vector4(0.25f, 0.25f, 0.25f, 1.0f));
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Floating_WindowBg_Color);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Floating_TitleBg_Color);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Floating_TitleBgActive_Color);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Floating_ChildBg_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
@@ -142,7 +144,7 @@ public class KeybindWindow
         if (ImGui.Begin("Keybinds##Popup", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
             ImGui.BeginTabBar("#KeybindsMenuTabBar");
-            ImGui.PushStyleColor(ImGuiCol.Header, new Vector4(0.3f, 0.3f, 0.6f, 0.4f));
+            ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Floating_Header_Color);
             ImGui.PushItemWidth(300f);
 
             DisplaySettings_Keybinds();
@@ -155,6 +157,6 @@ public class KeybindWindow
         ImGui.End();
 
         ImGui.PopStyleVar(3);
-        ImGui.PopStyleColor(2);
+        ImGui.PopStyleColor(4);
     }
 }

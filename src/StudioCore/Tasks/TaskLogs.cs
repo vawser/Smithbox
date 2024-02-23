@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
@@ -152,10 +153,10 @@ public static class TaskLogs
         // Warning List
         if (_warningList.Count > 0)
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 0f, 0f, 1.0f));
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Logger_Text_Warning_Color);
             if (ImGui.BeginMenu("!! WARNINGS!! "))
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, new Vector4(1.0f, 1.0f, 1.0f, 1.0f));
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Logger_Text_Warning_Color);
                 ImGui.Text("Click warnings to remove them from list");
                 if (ImGui.Button("Remove All Warnings"))
                 {
@@ -193,10 +194,10 @@ public static class TaskLogs
 
         if (_loggerWindowOpen)
         {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0f, 0f, 0f, 0.98f));
-            ImGui.PushStyleColor(ImGuiCol.TitleBg, new Vector4(0.1f, 0.1f, 0.1f, 1.0f));
-            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, new Vector4(0.25f, 0.25f, 0.25f, 1.0f));
-            ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0.1f, 0.1f, 0.1f, 0.98f));
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Logger_WindowBg_Color);
+            ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Logger_TitleBg_Color);
+            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Logger_TitleBgActive_Color);
+            ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Logger_ChildBg_Color);
             if (ImGui.Begin("Logger##TaskLogger", ref _loggerWindowOpen, ImGuiWindowFlags.NoDocking))
             {
                 if (ImGui.Button("Clear##TaskLogger"))

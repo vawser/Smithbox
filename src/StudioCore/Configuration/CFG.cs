@@ -9,6 +9,7 @@ using System.Text.Json.Serialization;
 using System.Drawing;
 using StudioCore.MsbEditor;
 using StudioCore.UserProject;
+using Veldrid;
 
 namespace StudioCore;
 
@@ -49,6 +50,116 @@ public class CFG
     public Vector3 SavedPosition = new Vector3();
     public Vector3 SavedRotation = new Vector3();
     public Vector3 SavedScale = new Vector3();
+
+    //**************
+    // Interface
+    //**************
+    public float ImGui_FrameBorderSize = 1.0f;
+    public float ImGui_TabRounding = 0.0f;
+    public float ImGui_ScrollbarRounding = 0.0f;
+
+    // Core
+    public Vector4 ImGui_WindowBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
+    public Vector4 ImGui_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
+    public Vector4 ImGui_PopupBg = new Vector4(0.106f, 0.106f, 0.110f, 1.0f);
+    public Vector4 ImGui_Border = new Vector4(0.247f, 0.247f, 0.275f, 1.0f);
+    public Vector4 ImGui_FrameBg = new Vector4(0.200f, 0.200f, 0.216f, 1.0f);
+    public Vector4 ImGui_FrameBgHovered = new Vector4(0.247f, 0.247f, 0.275f, 1.0f);
+    public Vector4 ImGui_FrameBgActive = new Vector4(0.200f, 0.200f, 0.216f, 1.0f);
+    public Vector4 ImGui_TitleBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
+    public Vector4 ImGui_TitleBgActive = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
+    public Vector4 ImGui_MenuBarBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
+    public Vector4 ImGui_ScrollbarBg = new Vector4(0.243f, 0.243f, 0.249f, 1.0f);
+    public Vector4 ImGui_ScrollbarGrab = new Vector4(0.408f, 0.408f, 0.408f, 1.0f);
+    public Vector4 ImGui_ScrollbarGrabHovered = new Vector4(0.635f, 0.635f, 0.635f, 1.0f);
+    public Vector4 ImGui_ScrollbarGrabActive = new Vector4(1.000f, 1.000f, 1.000f, 1.0f);
+    public Vector4 ImGui_CheckMark = new Vector4(1.000f, 1.000f, 1.000f, 1.0f);
+    public Vector4 ImGui_SliderGrab = new Vector4(0.635f, 0.635f, 0.635f, 1.0f);
+    public Vector4 ImGui_SliderGrabActive = new Vector4(1.000f, 1.000f, 1.000f, 1.0f);
+    public Vector4 ImGui_Button = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
+    public Vector4 ImGui_ButtonHovered = new Vector4(0.247f, 0.247f, 0.275f, 1.0f);
+    public Vector4 ImGui_ButtonActive = new Vector4(0.200f, 0.600f, 1.000f, 1.0f);
+    public Vector4 ImGui_Selection = new Vector4(0.000f, 0.478f, 0.800f, 1.0f);
+    public Vector4 ImGui_SelectionHovered = new Vector4(0.247f, 0.247f, 0.275f, 1.0f);
+    public Vector4 ImGui_SelectionActive = new Vector4(0.161f, 0.550f, 0.939f, 1.0f);
+    public Vector4 ImGui_Tab = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
+    public Vector4 ImGui_TabHovered = new Vector4(0.110f, 0.592f, 0.918f, 1.0f);
+    public Vector4 ImGui_TabActive = new Vector4(0.200f, 0.600f, 1.000f, 1.0f);
+    public Vector4 ImGui_TabUnfocused = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
+    public Vector4 ImGui_TabUnfocusedActive = new Vector4(0.247f, 0.247f, 0.275f, 1.0f);
+
+    // Logger
+    public Vector4 Logger_WindowBg_Color = new Vector4(0f, 0f, 0f, 0.98f);
+    public Vector4 Logger_TitleBg_Color = new Vector4(0.1f, 0.1f, 0.1f, 1.0f);
+    public Vector4 Logger_TitleBgActive_Color = new Vector4(0.25f, 0.25f, 0.25f, 1.0f);
+    public Vector4 Logger_ChildBg_Color = new Vector4(0.1f, 0.1f, 0.1f, 0.98f);
+    public Vector4 Logger_Text_Warning_Color = new Vector4(1.0f, 0f, 0f, 1.0f);
+
+    // Float Window
+    public Vector4 Floating_WindowBg_Color = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+    public Vector4 Floating_TitleBg_Color = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
+    public Vector4 Floating_TitleBgActive_Color = new Vector4(0.25f, 0.25f, 0.25f, 1.0f);
+    public Vector4 Floating_ChildBg_Color = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
+    public Vector4 Floating_Header_Color = new Vector4(0.3f, 0.3f, 0.6f, 0.4f);
+
+    // Shared Editor
+    public Vector4 Editor_ParamRef_Text = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
+    public Vector4 Editor_ParamNoEntry_Text = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
+    public Vector4 Editor_ParamRefInactive_Text = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
+    public Vector4 Editor_ParamFormatting_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+    public Vector4 Editor_FmgRef_Text = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
+    public Vector4 Editor_FmgRefInactive_Text = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
+    public Vector4 Editor_FmgRefFormatting_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+    public Vector4 Editor_EnumName_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+    public Vector4 Editor_EnumValue_Text = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
+
+    // Param Editor
+    public Vector4 ParamEditor_RowField_Color = new Vector4(0.8f, 0.8f, 1.0f, 1.0f);
+    public Vector4 ParamEditor_Row_Frame_Conflict_Color = new Vector4(0.25f, 0.2f, 0.2f, 1.0f);
+    public Vector4 ParamEditor_Row_Frame_Vanilla_Color = new Vector4(0.2f, 0.22f, 0.2f, 1.0f);
+    public Vector4 ParamEditor_Row_Text_IsRef_Color = new Vector4(1.0f, 0.5f, 1.0f, 1.0f);
+    public Vector4 ParamEditor_Row_Text_Match = new Vector4(0.75f, 0.75f, 0.75f, 1.0f);
+    public Vector4 ParamEditor_Row_Frame_Default_Color = new Vector4(0.180f, 0.180f, 0.196f, 1.0f);
+    public Vector4 ParamEditor_Row_Text_Default = new Vector4(0.9f, 0.9f, 0.9f, 1.0f);
+    public Vector4 ParamEditor_Row_Frame_AuxVanilla_Color = new Vector4(0.2f, 0.2f, 0.35f, 1.0f);
+    public Vector4 ParamEditor_Row_Frame_DiffCompare_Color = new Vector4(0.2f, 0.2f, 0.35f, 1.0f);
+    public Vector4 ParamEditor_Row_Text_VirtualRef_Color = new Vector4(1.0f, 0.75f, 1.0f, 1.0f);
+    public Vector4 ParamEditor_Row_Text_Ref_Color = new Vector4(1.0f, 0.75f, 0.75f, 1.0f);
+    public Vector4 ParamEditor_Row_View_AuxConflict_Color = new Vector4(1, 0.7f, 0.7f, 1);
+    public Vector4 ParamEditor_Row_View_AuxAdded_Color = new Vector4(0.7f, 0.7f, 1, 1);
+    public Vector4 ParamEditor_Row_View_PrimaryChanged_Color = new Vector4(0.7f, 1, 0.7f, 1);
+    public Vector4 ParamEditor_Row_View_AllVanilla_Color = new Vector4(0.9f, 0.9f, 0.9f, 1);
+    public Vector4 ParamEditor_Row_View_FmgLink_Color = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+
+    // Model Editor
+    public Vector4 ModelEditor_SceneTree_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
+    public Vector4 ModelEditor_Properties_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
+    public Vector4 ModelEditor_MultipleEdit_Frame = new Vector4(0.0f, 0.5f, 0.0f, 0.1f);
+
+    // Map Editor
+    public Vector4 MapEditor_SceneTree_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
+    public Vector4 MapEditor_Properties_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
+    public Vector4 MapEditor_Error_Frame = new Vector4(0.8f, 0.2f, 0.2f, 1.0f);
+    public Vector4 MapEditor_MultipleEdit_Frame = new Vector4(0.0f, 0.5f, 0.0f, 0.1f);
+
+    public Vector4 MapEditor_ParamRow_Text = new Vector4(0.8f, 0.8f, 0.8f, 1.0f);
+
+    public Vector4 DisplayGroupEditor_Border_Highlight = new Vector4(1.0f, 0.2f, 0.2f, 1.0f);
+    public Vector4 DisplayGroupEditor_DisplayActive_Frame = new Vector4(0.4f, 0.06f, 0.06f, 1.0f);
+    public Vector4 DisplayGroupEditor_DisplayActive_Checkbox = new Vector4(1.0f, 0.2f, 0.2f, 1.0f);
+    public Vector4 DisplayGroupEditor_DrawActive_Frame = new Vector4(0.02f, 0.3f, 0.02f, 1.0f);
+    public Vector4 DisplayGroupEditor_DrawActive_Checkbox = new Vector4(0.2f, 1.0f, 0.2f, 1.0f);
+    public Vector4 DisplayGroupEditor_CombinedActive_Frame = new Vector4(0.4f, 0.4f, 0.06f, 1.0f);
+    public Vector4 DisplayGroupEditor_CombinedActive_Checkbox = new Vector4(1f, 1f, 0.02f, 1.0f);
+
+    // Misc
+    public Vector4 ProgramUpdate_Available_Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f);
+    public Vector4 UpgradeParam_Text_Available_Color = new Vector4(1.0f, 0.3f, 0.3f, 1.0f);
+    public Vector4 UpgradeParam_Text_OutOfDate_Color = new Vector4(0.0f, 1f, 0f, 1.0f);
+    public Vector4 UpgradeParam_Text_Invalid_Color = new Vector4(1.0f, 0.3f, 0.3f, 1.0f);
+
+    // Setup
+    public int SelectedTheme = 0;
 
     //****************************
     // Settings: System

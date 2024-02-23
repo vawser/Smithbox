@@ -47,6 +47,8 @@ struct sceneParams
 	float indirectLightMult;
 	float emissiveMapMult;
 	float sceneBrightness;
+    
+    vec4 SimpleFlverSelectColor;
 };
 
 layout(set = 0, binding = 0) uniform SceneParamBuffer
@@ -95,5 +97,5 @@ layout(set = 6, binding = 0, std140) buffer pickingBuffer
 
 void main()
 {
-	fsout_color = vec4(1.0, 0.5, 0.0, 1.0);
+	fsout_color = sceneparam.SimpleFlverSelectColor;
 }

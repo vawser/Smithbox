@@ -193,7 +193,7 @@ public class MapSceneTree : IActionEventHandler
             ImGui.SetNextItemWidth(100);
             if (_chaliceLoadError)
             {
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, new Vector4(0.8f, 0.2f, 0.2f, 1.0f));
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.MapEditor_Error_Frame);
             }
 
             if (ImGui.InputText("##chalicename", ref pname, 12))
@@ -620,7 +620,7 @@ public class MapSceneTree : IActionEventHandler
     {
         var scale = Smithbox.GetUIScale();
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, new Vector4(0.145f, 0.145f, 0.149f, 1.0f));
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.MapEditor_SceneTree_ChildBg);
         if (_configuration == Configuration.MapEditor)
         {
             ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
