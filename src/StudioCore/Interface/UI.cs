@@ -299,7 +299,6 @@ namespace StudioCore.Interface
                 PlatformUtils.Instance.MessageBox("Theme does not exist.", "Warning", MessageBoxButtons.OK);
                 return;
             }
-            TaskLogs.AddLog($"{theme.id} {theme.name}");
 
             // Update CFG vars with values from json
 

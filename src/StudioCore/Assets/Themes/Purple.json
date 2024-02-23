@@ -1,0 +1,400 @@
+{
+  "id": 1,
+  "name": "Purple",
+  "ImGui_MainBg": [
+    0.18846947,
+    0.18846951,
+    0.40930235,
+    1
+  ],
+  "ImGui_ChildBg": [
+    0.16549484,
+    0.16549498,
+    0.3488372,
+    1
+  ],
+  "ImGui_PopupBg": [
+    0.10896701,
+    0.10896707,
+    0.33953488,
+    1
+  ],
+  "ImGui_Border": [
+    0.20322333,
+    0.20322344,
+    0.5674418,
+    1
+  ],
+  "ImGui_TitleBarBg": [
+    0.18448892,
+    0.18448897,
+    0.38139534,
+    1
+  ],
+  "ImGui_TitleBarBg_Active": [
+    0.19305572,
+    0.19305578,
+    0.45116282,
+    1
+  ],
+  "ImGui_MenuBarBg": [
+    0.15290427,
+    0.15290432,
+    0.3534884,
+    1
+  ],
+  "Imgui_Moveable_MainBg": [
+    0.09975122,
+    0.09975125,
+    0.24651164,
+    1
+  ],
+  "Imgui_Moveable_ChildBg": [
+    0.10980392,
+    0.10980392,
+    0.3019608,
+    1
+  ],
+  "Imgui_Moveable_TitleBg": [
+    0.18431373,
+    0.18431373,
+    0.38039216,
+    1
+  ],
+  "Imgui_Moveable_TitleBg_Active": [
+    0.19215687,
+    0.19215687,
+    0.4509804,
+    1
+  ],
+  "Imgui_Moveable_Header": [
+    0.26258516,
+    0.26258522,
+    0.5534884,
+    0.4
+  ],
+  "ImGui_ScrollbarBg": [
+    0.15749054,
+    0.17312689,
+    0.32558137,
+    1
+  ],
+  "ImGui_ScrollbarGrab": [
+    0.408,
+    0.408,
+    0.408,
+    1
+  ],
+  "ImGui_ScrollbarGrab_Hover": [
+    0.635,
+    0.635,
+    0.635,
+    1
+  ],
+  "ImGui_ScrollbarGrab_Active": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "ImGui_SliderGrab": [
+    0.635,
+    0.635,
+    0.635,
+    1
+  ],
+  "ImGui_SliderGrab_Active": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "ImGui_Tab": [
+    0.20647441,
+    0.19521904,
+    0.4372093,
+    1
+  ],
+  "ImGui_Tab_Hover": [
+    0.18983236,
+    0.24280892,
+    0.627907,
+    1
+  ],
+  "ImGui_Tab_Active": [
+    0.28365606,
+    0.333161,
+    0.69302326,
+    1
+  ],
+  "ImGui_UnfocusedTab": [
+    0.20784314,
+    0.19607843,
+    0.43529412,
+    1
+  ],
+  "ImGui_UnfocusedTab_Active": [
+    0.28235295,
+    0.33333334,
+    0.69411767,
+    1
+  ],
+  "ImGui_Button": [
+    0.13209301,
+    0.13209306,
+    0.33023256,
+    1
+  ],
+  "ImGui_Button_Hovered": [
+    0.111433215,
+    0.111433305,
+    0.46976745,
+    1
+  ],
+  "ImGui_ButtonActive": [
+    0.12439158,
+    0.3528936,
+    0.5813954,
+    1
+  ],
+  "ImGui_Selection": [
+    0.27450982,
+    0.31764707,
+    0.7529412,
+    1
+  ],
+  "ImGui_Selection_Hover": [
+    0.3575987,
+    0.35759878,
+    0.80930233,
+    1
+  ],
+  "ImGui_Selection_Active": [
+    0.27335858,
+    0.31802183,
+    0.75348836,
+    1
+  ],
+  "ImGui_Input_Background": [
+    0.13174689,
+    0.149778,
+    0.32558137,
+    1
+  ],
+  "ImGui_Input_Background_Hover": [
+    0.12668468,
+    0.12668477,
+    0.44651163,
+    1
+  ],
+  "ImGui_Input_Background_Active": [
+    0.15151973,
+    0.15151982,
+    0.47906977,
+    1
+  ],
+  "ImGui_Input_CheckMark": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "ImGui_Input_Conflict_Background": [
+    0.25,
+    0.2,
+    0.2,
+    1
+  ],
+  "ImGui_Input_Vanilla_Background": [
+    0.2,
+    0.22,
+    0.2,
+    1
+  ],
+  "ImGui_Input_Default_Background": [
+    0.18,
+    0.18,
+    0.196,
+    1
+  ],
+  "ImGui_Input_AuxVanilla_Background": [
+    0.2,
+    0.2,
+    0.35,
+    1
+  ],
+  "ImGui_Input_DiffCompare_Background": [
+    0.2,
+    0.2,
+    0.35,
+    1
+  ],
+  "ImGui_MultipleInput_Background": [
+    0,
+    0.5,
+    0,
+    0.1
+  ],
+  "ImGui_ErrorInput_Background": [
+    0.8,
+    0.2,
+    0.2,
+    1
+  ],
+  "ImGui_Default_Text_Color": [
+    0.9,
+    0.9,
+    0.9,
+    1
+  ],
+  "ImGui_Warning_Text_Color": [
+    1,
+    0,
+    0,
+    1
+  ],
+  "ImGui_Benefit_Text_Color": [
+    0,
+    1,
+    0,
+    1
+  ],
+  "ImGui_Invalid_Text_Color": [
+    1,
+    0.3,
+    0.3,
+    1
+  ],
+  "ImGui_ParamRef_Text": [
+    1,
+    0.5,
+    0.5,
+    1
+  ],
+  "ImGui_ParamRefMissing_Text": [
+    0,
+    0,
+    0,
+    1
+  ],
+  "ImGui_ParamRefInactive_Text": [
+    0.7,
+    0.7,
+    0.7,
+    1
+  ],
+  "ImGui_EnumName_Text": [
+    1,
+    1,
+    0,
+    1
+  ],
+  "ImGui_EnumValue_Text": [
+    1,
+    0.5,
+    0.5,
+    1
+  ],
+  "ImGui_FmgLink_Text": [
+    1,
+    1,
+    0,
+    1
+  ],
+  "ImGui_FmgRef_Text": [
+    1,
+    0.5,
+    0.5,
+    1
+  ],
+  "ImGui_FmgRefInactive_Text": [
+    0.7,
+    0.7,
+    0.7,
+    1
+  ],
+  "ImGui_IsRef_Text": [
+    1,
+    0.5,
+    1,
+    1
+  ],
+  "ImGui_VirtualRef_Text": [
+    1,
+    0.75,
+    1,
+    1
+  ],
+  "ImGui_Ref_Text": [
+    1,
+    0.75,
+    0.75,
+    1
+  ],
+  "ImGui_AuxConflict_Text": [
+    1,
+    0.7,
+    0.7,
+    1
+  ],
+  "ImGui_AuxAdded_Text": [
+    0.7,
+    0.8,
+    1,
+    1
+  ],
+  "ImGui_PrimaryChanged_Text": [
+    0.7,
+    1,
+    0.7,
+    1
+  ],
+  "ImGui_ParamRow_Text": [
+    0.8,
+    0.8,
+    0.8,
+    1
+  ],
+  "DisplayGroupEditor_Border_Highlight": [
+    1,
+    0.2,
+    0.2,
+    1
+  ],
+  "DisplayGroupEditor_DisplayActive_Frame": [
+    0.4,
+    0.06,
+    0.06,
+    1
+  ],
+  "DisplayGroupEditor_DisplayActive_Checkbox": [
+    1,
+    0.2,
+    0.2,
+    1
+  ],
+  "DisplayGroupEditor_DrawActive_Frame": [
+    0.02,
+    0.3,
+    0.02,
+    1
+  ],
+  "DisplayGroupEditor_DrawActive_Checkbox": [
+    0.2,
+    1,
+    0.2,
+    1
+  ],
+  "DisplayGroupEditor_CombinedActive_Frame": [
+    0.4,
+    0.4,
+    0.06,
+    1
+  ],
+  "DisplayGroupEditor_CombinedActive_Checkbox": [
+    1,
+    1,
+    0,
+    1
+  ]
+}
