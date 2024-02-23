@@ -40,7 +40,7 @@ public class EditorDecorations
         }
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_ParamFormatting_Text);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.TextUnformatted(@"   <");
         List<string> inactiveRefs = new();
         var first = true;
@@ -68,7 +68,7 @@ public class EditorDecorations
             }
         }
 
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_ParamRefInactive_Text);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRefInactive_Text);
         foreach (var inactive in inactiveRefs)
         {
             ImGui.SameLine();
@@ -102,7 +102,7 @@ public class EditorDecorations
         if (CFG.Current.Param_HideReferenceRows == false) //Move preference
         {
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_FmgRefFormatting_Text);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             ImGui.TextUnformatted(@"   [");
             List<string> inactiveRefs = new();
             var first = true;
@@ -131,7 +131,7 @@ public class EditorDecorations
                 }
             }
 
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_FmgRefInactive_Text);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgRefInactive_Text);
             foreach (var inactive in inactiveRefs)
             {
                 ImGui.SameLine();
@@ -169,7 +169,7 @@ public class EditorDecorations
         // May span lines
         List<(string, Param.Row, string)> matches = resolveRefs(bank, paramRefs, context, oldval);
         var entryFound = matches.Count > 0;
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_ParamRef_Text);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRef_Text);
         ImGui.BeginGroup();
         foreach ((var param, Param.Row row, var adjName) in matches)
         {
@@ -179,7 +179,7 @@ public class EditorDecorations
         ImGui.PopStyleColor();
         if (!entryFound)
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_ParamNoEntry_Text);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRefMissing_Text);
             ImGui.TextUnformatted("___");
             ImGui.PopStyleColor();
         }
@@ -319,7 +319,7 @@ public class EditorDecorations
                     return toPrint.TrimStart();
                 }).ToList();
         });
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_FmgRef_Text);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgRef_Text);
         foreach (var text in textsToPrint)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -339,7 +339,7 @@ public class EditorDecorations
     {
         if (pEnum != null && pEnum.name != null && CFG.Current.Param_HideEnums == false) //Move preference
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_EnumName_Text);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
             ImGui.TextUnformatted($@"   {pEnum.name}");
             ImGui.PopStyleColor();
         }
@@ -347,7 +347,7 @@ public class EditorDecorations
 
     public static void EnumValueText(Dictionary<string, string> enumValues, string value)
     {
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Editor_EnumValue_Text);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
         ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
         ImGui.PopStyleColor();
     }

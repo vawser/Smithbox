@@ -765,160 +765,128 @@ public class SettingsWindow
         if (ImGui.BeginTabItem("User Interface"))
         {
             ImGui.Text("Current Theme");
-            string[] themes = UI.GetThemes();
-            if(ImGui.ListBox("##themeSelect", ref CFG.Current.SelectedTheme, themes, themes.Length))
+            
+
+            if(ImGui.ListBox("##themeSelect", ref CFG.Current.SelectedTheme, UI.LoadedThemeNames, UI.LoadedThemeNames.Length))
             {
-                UI.SetTheme(CFG.Current.SelectedTheme);
+                UI.SetTheme();
+            }
+
+            if (ImGui.Button("Reset to Default"))
+            {
+                UI.ResetInterface();
+            }
+            ImGui.SameLine();
+            if (ImGui.Button("Open Theme Folder"))
+            {
+                Process.Start("explorer.exe", $"{AppContext.BaseDirectory}\\Assets\\Themes\\");
             }
 
             if (ImGui.Button("Export Theme"))
             {
-                UI.CopyUIStatetoClipboard();
+                UI.ExportThemeJson();
+            }
+            ImGui.SameLine();
+            ImGui.InputText("##themeName", ref CFG.Current.NewThemeName, 255);
+
+            if (ImGui.CollapsingHeader("Editor Window", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.ColorEdit4("Main Background", ref CFG.Current.ImGui_MainBg);
+                ImGui.ColorEdit4("Child Background", ref CFG.Current.ImGui_ChildBg);
+                ImGui.ColorEdit4("Popup Background", ref CFG.Current.ImGui_PopupBg);
+                ImGui.ColorEdit4("Border", ref CFG.Current.ImGui_Border);
+                ImGui.ColorEdit4("Title Bar Background", ref CFG.Current.ImGui_TitleBarBg);
+                ImGui.ColorEdit4("Title Bar Background (Active)", ref CFG.Current.ImGui_TitleBarBg_Active);
+                ImGui.ColorEdit4("Menu Bar Background", ref CFG.Current.ImGui_MenuBarBg);
             }
 
-            if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Moveable Window", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.ColorEdit4("Main Window", ref CFG.Current.ImGui_WindowBg);
-                ImGui.ColorEdit4("Child Window", ref CFG.Current.ImGui_ChildBg);
-                ImGui.ColorEdit4("Popup Window", ref CFG.Current.ImGui_PopupBg);
-                ImGui.ColorEdit4("Window Border", ref CFG.Current.ImGui_Border);
-            }
-
-            if (ImGui.CollapsingHeader("Menu Bar", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.ColorEdit4("Menu Bar", ref CFG.Current.ImGui_MenuBarBg);
-            }
-
-            if (ImGui.CollapsingHeader("Title Bar", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.ColorEdit4("Title Bar", ref CFG.Current.ImGui_TitleBg);
-                ImGui.ColorEdit4("Title Bar (Active)", ref CFG.Current.ImGui_TitleBgActive);
-            }
-
-            if (ImGui.CollapsingHeader("Tab", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.ColorEdit4("Tab", ref CFG.Current.ImGui_Tab);
-                ImGui.ColorEdit4("Tab (Hover)", ref CFG.Current.ImGui_TabHovered);
-                ImGui.ColorEdit4("Tab (Active)", ref CFG.Current.ImGui_TabActive);
-                ImGui.ColorEdit4("Tab (Unfocused)", ref CFG.Current.ImGui_TabUnfocused);
-                ImGui.ColorEdit4("Tab (Unfocused Active)", ref CFG.Current.ImGui_TabUnfocusedActive);
-            }
-
-            if (ImGui.CollapsingHeader("Selection", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.ColorEdit4("Selection", ref CFG.Current.ImGui_Selection);
-                ImGui.ColorEdit4("Selection (Hover)", ref CFG.Current.ImGui_SelectionHovered);
-                ImGui.ColorEdit4("Selection (Active)", ref CFG.Current.ImGui_SelectionActive);
+                ImGui.ColorEdit4("Main Background", ref CFG.Current.Imgui_Moveable_MainBg);
+                ImGui.ColorEdit4("Child Background", ref CFG.Current.Imgui_Moveable_ChildBg);
+                ImGui.ColorEdit4("Header", ref CFG.Current.Imgui_Moveable_Header);
+                ImGui.ColorEdit4("Title Bar Background", ref CFG.Current.Imgui_Moveable_TitleBg);
+                ImGui.ColorEdit4("Title Bar Background (Active)", ref CFG.Current.Imgui_Moveable_TitleBg_Active);
             }
 
             if (ImGui.CollapsingHeader("Scrollbar", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.ColorEdit4("Scrollbar", ref CFG.Current.ImGui_ScrollbarBg);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_ScrollbarBg);
                 ImGui.ColorEdit4("Scrollbar Grab", ref CFG.Current.ImGui_ScrollbarGrab);
-                ImGui.ColorEdit4("Scrollbar Grab (Hover)", ref CFG.Current.ImGui_ScrollbarGrabHovered);
-                ImGui.ColorEdit4("Scrollbar Grab (Active)", ref CFG.Current.ImGui_ScrollbarGrabActive);
+                ImGui.ColorEdit4("Scrollbar Grab (Hover)", ref CFG.Current.ImGui_ScrollbarGrab_Hover);
+                ImGui.ColorEdit4("Scrollbar Grab (Active)", ref CFG.Current.ImGui_ScrollbarGrab_Active);
                 ImGui.ColorEdit4("Slider Grab", ref CFG.Current.ImGui_SliderGrab);
-                ImGui.ColorEdit4("Slider Grab (Active)", ref CFG.Current.ImGui_SliderGrabActive);
+                ImGui.ColorEdit4("Slider Grab (Active)", ref CFG.Current.ImGui_SliderGrab_Active);
             }
 
-            if (ImGui.CollapsingHeader("Buttons", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Tab", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.ColorEdit4("Button", ref CFG.Current.ImGui_Button);
-                ImGui.ColorEdit4("Button (Hover)", ref CFG.Current.ImGui_ButtonHovered);
-                ImGui.ColorEdit4("Button (Active)", ref CFG.Current.ImGui_ButtonActive);
-                ImGui.ColorEdit4("Checkmark", ref CFG.Current.ImGui_CheckMark);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Tab);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Tab_Hover);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Tab_Active);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_UnfocusedTab);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_UnfocusedTab_Active);
             }
 
-            if (ImGui.CollapsingHeader("Input Box", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Button", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.ColorEdit4("Input Box", ref CFG.Current.ImGui_FrameBg);
-                ImGui.ColorEdit4("Input Box (Hover)", ref CFG.Current.ImGui_FrameBgHovered);
-                ImGui.ColorEdit4("Input Box (Active)", ref CFG.Current.ImGui_FrameBgActive);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Button);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Button_Hovered);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_ButtonActive);
             }
 
-            if (ImGui.CollapsingHeader("Shared Editor", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Selection", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.ColorEdit4("Param Reference", ref CFG.Current.Editor_ParamRef_Text);
-                ImGui.ColorEdit4("Param Reference (Missing)", ref CFG.Current.Editor_ParamNoEntry_Text);
-                ImGui.ColorEdit4("Param Reference (Inactive)", ref CFG.Current.Editor_ParamRefInactive_Text);
-                ImGui.ColorEdit4("Param Reference (Formatting)", ref CFG.Current.Editor_ParamFormatting_Text);
-                ImGui.ColorEdit4("FMG Reference", ref CFG.Current.Editor_FmgRef_Text);
-                ImGui.ColorEdit4("FMG Reference (Inactive)", ref CFG.Current.Editor_FmgRefInactive_Text);
-                ImGui.ColorEdit4("FMG Reference (Formatting)", ref CFG.Current.Editor_FmgRefFormatting_Text);
-                ImGui.ColorEdit4("Enum Name", ref CFG.Current.Editor_EnumName_Text);
-                ImGui.ColorEdit4("Enum Value", ref CFG.Current.Editor_EnumValue_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Selection);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Selection_Hover);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Selection_Active);
             }
 
-            if (ImGui.CollapsingHeader("Param Editor", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Inputs", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if(ImGui.ColorEdit4("Default Text", ref CFG.Current.ParamEditor_Row_View_AllVanilla_Color))
-                {
-                    CFG.Current.ParamEditor_Row_Text_Match = CFG.Current.ParamEditor_Row_View_AllVanilla_Color;
-                    CFG.Current.ParamEditor_Row_Text_Default = CFG.Current.ParamEditor_Row_View_AllVanilla_Color;
-                    CFG.Current.ParamEditor_RowField_Color = CFG.Current.ParamEditor_Row_View_AllVanilla_Color;
-                }
-
-                ImGui.ColorEdit4("Vanilla Row Text", ref CFG.Current.ParamEditor_Row_Frame_AuxVanilla_Color);
-                ImGui.ColorEdit4("Row Reference Text", ref CFG.Current.ParamEditor_Row_Text_IsRef_Color);
-                ImGui.ColorEdit4("Difference Comparison Text", ref CFG.Current.ParamEditor_Row_Frame_DiffCompare_Color);
-                ImGui.ColorEdit4("Virtual Reference Text", ref CFG.Current.ParamEditor_Row_Text_VirtualRef_Color);
-                ImGui.ColorEdit4("Reference Text", ref CFG.Current.ParamEditor_Row_Text_Ref_Color);
-                ImGui.ColorEdit4("Aux Conflict Text", ref CFG.Current.ParamEditor_Row_View_AuxConflict_Color);
-                ImGui.ColorEdit4("Aux Added Text", ref CFG.Current.ParamEditor_Row_View_AuxAdded_Color);
-                ImGui.ColorEdit4("Primary Changed Text", ref CFG.Current.ParamEditor_Row_View_PrimaryChanged_Color);
-
-                ImGui.ColorEdit4("Row Conflict Input", ref CFG.Current.ParamEditor_Row_Frame_Conflict_Color);
-                ImGui.ColorEdit4("Current Row Input", ref CFG.Current.ParamEditor_Row_Frame_Vanilla_Color);
-                ImGui.ColorEdit4("Comparison Input", ref CFG.Current.ParamEditor_Row_Frame_Default_Color);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_Background);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_Background_Hover);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_Background_Active);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_CheckMark);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_Conflict_Background);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_Vanilla_Background);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_Default_Background);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_AuxVanilla_Background);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Input_DiffCompare_Background);
             }
 
-            if (ImGui.CollapsingHeader("Model Editor", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("Text", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.ColorEdit4("Scene Tree View##modelSceneTree", ref CFG.Current.ModelEditor_SceneTree_ChildBg);
-                ImGui.ColorEdit4("Properties View##modelProperties", ref CFG.Current.ModelEditor_Properties_ChildBg);
-                ImGui.ColorEdit4("Multiple Edit Input##modelMultEdit", ref CFG.Current.ModelEditor_MultipleEdit_Frame);
-            }
-
-            if (ImGui.CollapsingHeader("Map Editor", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.ColorEdit4("Scene Tree View##mapSceneTree", ref CFG.Current.MapEditor_SceneTree_ChildBg);
-                ImGui.ColorEdit4("Properties View##mapProperties", ref CFG.Current.MapEditor_Properties_ChildBg);
-                ImGui.ColorEdit4("Error Input", ref CFG.Current.MapEditor_Error_Frame);
-                ImGui.ColorEdit4("Multiple Edit Input##mapMultEdit", ref CFG.Current.MapEditor_MultipleEdit_Frame);
-                ImGui.ColorEdit4("Param Row Text", ref CFG.Current.MapEditor_ParamRow_Text);
-
-                ImGui.ColorEdit4("Display Group Border Highlight", ref CFG.Current.DisplayGroupEditor_Border_Highlight);
-                ImGui.ColorEdit4("Display Group Active Input", ref CFG.Current.DisplayGroupEditor_DisplayActive_Frame);
-                ImGui.ColorEdit4("Display Group Active Checkbox", ref CFG.Current.DisplayGroupEditor_DisplayActive_Checkbox);
-                ImGui.ColorEdit4("Draw Group Active Input", ref CFG.Current.DisplayGroupEditor_DrawActive_Frame);
-                ImGui.ColorEdit4("Draw Group Active Checkbox", ref CFG.Current.DisplayGroupEditor_DrawActive_Checkbox);
-                ImGui.ColorEdit4("Display/Draw Group Active Input", ref CFG.Current.DisplayGroupEditor_CombinedActive_Frame);
-                ImGui.ColorEdit4("Display/Draw Group Active Checkbox", ref CFG.Current.DisplayGroupEditor_CombinedActive_Checkbox);
-            }
-
-            if (ImGui.CollapsingHeader("Floating Windows", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.ColorEdit4("Float Window", ref CFG.Current.Floating_WindowBg_Color);
-                ImGui.ColorEdit4("Float Window Title", ref CFG.Current.Floating_TitleBg_Color);
-                ImGui.ColorEdit4("Float Window Title (Active)", ref CFG.Current.Floating_TitleBgActive_Color);
-                ImGui.ColorEdit4("Float Child Window", ref CFG.Current.Floating_ChildBg_Color);
-            }
-
-            if (ImGui.CollapsingHeader("Logger", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.ColorEdit4("Logger Window", ref CFG.Current.Logger_WindowBg_Color);
-                ImGui.ColorEdit4("Logger Window Title", ref CFG.Current.Logger_TitleBg_Color);
-                ImGui.ColorEdit4("Logger Window Title (Active)", ref CFG.Current.Logger_TitleBgActive_Color);
-                ImGui.ColorEdit4("Logger Child Window", ref CFG.Current.Logger_ChildBg_Color);
-                ImGui.ColorEdit4("Logger Warning Text", ref CFG.Current.Logger_Text_Warning_Color);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Default_Text_Color);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Warning_Text_Color);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Benefit_Text_Color);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Invalid_Text_Color);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_ParamRef_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_ParamRefMissing_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_ParamRefInactive_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_EnumName_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_EnumValue_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_FmgLink_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_FmgRef_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_FmgRefInactive_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_IsRef_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_VirtualRef_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_Ref_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_AuxConflict_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_AuxAdded_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_PrimaryChanged_Text);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.ImGui_ParamRow_Text);
             }
 
             if (ImGui.CollapsingHeader("Miscellaneous", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.ColorEdit4("Smithbox Update Text", ref CFG.Current.ProgramUpdate_Available_Color);
-                ImGui.ColorEdit4("Upgrade Param Text", ref CFG.Current.UpgradeParam_Text_Available_Color);
-                ImGui.ColorEdit4("Upgrade Param Text (Out of Date)", ref CFG.Current.UpgradeParam_Text_OutOfDate_Color);
-                ImGui.ColorEdit4("Upgrade Param Text (Invalid)", ref CFG.Current.UpgradeParam_Text_Invalid_Color);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.DisplayGroupEditor_Border_Highlight);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.DisplayGroupEditor_DisplayActive_Frame);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.DisplayGroupEditor_DisplayActive_Checkbox);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.DisplayGroupEditor_DrawActive_Frame);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.DisplayGroupEditor_DrawActive_Checkbox);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.DisplayGroupEditor_CombinedActive_Frame);
+                ImGui.ColorEdit4("Scrollbar Background", ref CFG.Current.DisplayGroupEditor_CombinedActive_Checkbox);
             }
 
             ImGui.EndTabItem();
@@ -932,10 +900,11 @@ public class SettingsWindow
             return;
 
         ImGui.SetNextWindowSize(new Vector2(900.0f, 800.0f) * scale, ImGuiCond.FirstUseEver);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Floating_WindowBg_Color);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Floating_TitleBg_Color);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Floating_TitleBgActive_Color);
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Floating_ChildBg_Color);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Imgui_Moveable_MainBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
@@ -943,7 +912,7 @@ public class SettingsWindow
         if (ImGui.Begin("Settings##Popup", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
             ImGui.BeginTabBar("#SettingsMenuTabBar");
-            ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Floating_Header_Color);
+            ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.Imgui_Moveable_Header);
             ImGui.PushItemWidth(300f);
 
             // Settings Order
@@ -964,7 +933,7 @@ public class SettingsWindow
         ImGui.End();
 
         ImGui.PopStyleVar(3);
-        ImGui.PopStyleColor(4);
+        ImGui.PopStyleColor(5);
     }
 
     private void SettingsRenderFilterPresetEditor(CFG.RenderFilterPreset preset)

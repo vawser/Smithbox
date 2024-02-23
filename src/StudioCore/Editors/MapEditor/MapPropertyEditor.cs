@@ -630,7 +630,7 @@ public class MapPropertyEditor
         var id = 0;
 
         // This should be rewritten somehow it's super ugly
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.MapEditor_ParamRow_Text);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_ParamRow_Text);
         PropertyInfo nameProp = row.GetType().GetProperty("Name");
         PropertyInfo idProp = row.GetType().GetProperty("ID");
         PropEditorPropInfoRow(row, nameProp, "Name", ref id, null);
@@ -1321,7 +1321,8 @@ public class MapPropertyEditor
         var scale = Smithbox.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.MapEditor_Properties_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(w - 370, 20) * scale, ImGuiCond.FirstUseEver);
         ImGui.Begin($@"Properties##{id}");
@@ -1344,7 +1345,7 @@ public class MapPropertyEditor
                 ImGui.TextColored(new Vector4(0.5f, 1.0f, 0.0f, 1.0f),
                     " Editing Multiple Objects.\n Changes will be applied to all selected objects.");
                 ImGui.Separator();
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.MapEditor_MultipleEdit_Frame);
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_MultipleInput_Background);
                 ImGui.BeginChild("MSB_EditingMultipleObjsChild");
                 PropEditorGeneric(selection, entSelection);
                 ImGui.PopStyleColor();
@@ -1388,7 +1389,7 @@ public class MapPropertyEditor
 
         ImGui.EndChild();
         ImGui.End();
-        ImGui.PopStyleColor();
+        ImGui.PopStyleColor(2);
     }
 
     internal enum RegionShape

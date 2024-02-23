@@ -301,8 +301,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             }
         }
 
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);  
 
         Vector3 clear_color = new(114f / 255f, 144f / 255f, 154f / 255f);
         //ImGui.Text($@"Viewport size: {Viewport.Width}x{Viewport.Height}");
@@ -313,6 +314,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _sceneTree.OnGui();
         _propEditor.OnGui(_selection, "modeleditprop", Viewport.Width, Viewport.Height);
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
+        ImGui.PopStyleColor(1);
     }
 
     public void DuplicateSelection()

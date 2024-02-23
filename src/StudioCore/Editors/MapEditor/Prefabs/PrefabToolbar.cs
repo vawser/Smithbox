@@ -99,6 +99,7 @@ namespace StudioCore.Editors.MapEditor
             MonitorPrefabShortcuts();
 
             // Window
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
             if (ImGui.Begin($@"Prefabs##PrefabToolbar"))
@@ -130,6 +131,7 @@ namespace StudioCore.Editors.MapEditor
                 ImGui.Columns(1);
             }
             ImGui.End();
+            ImGui.PopStyleColor(1);
         }
 
         public void MonitorPrefabShortcuts()

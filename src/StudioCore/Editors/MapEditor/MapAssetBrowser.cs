@@ -84,6 +84,7 @@ public class MapAssetBrowser
             return;
         }
 
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin($@"Asset Browser##MsbAssetBrowser"))
@@ -123,6 +124,7 @@ public class MapAssetBrowser
             ImGui.EndChild();
         }
         ImGui.End();
+        ImGui.PopStyleColor(1);
 
         if (ModelAliasBank.Bank.mayReloadAliasBank)
         {

@@ -74,6 +74,7 @@ public class GparamEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -86,6 +87,7 @@ public class GparamEditorScreen : EditorScreen
         {
             ImGui.Text($"This editor does not support {Project.Type}.");
             ImGui.PopStyleVar();
+            ImGui.PopStyleColor(1);
             return;
         }
         else if (_projectSettings == null)
@@ -118,6 +120,7 @@ public class GparamEditorScreen : EditorScreen
         }
 
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
     }
 
     public void GparamShortcuts()

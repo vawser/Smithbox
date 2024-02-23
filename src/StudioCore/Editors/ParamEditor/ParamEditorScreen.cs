@@ -135,7 +135,7 @@ public class FMGItemParamDecorator : IParamDecorator
         if (entry != null)
         {
             ImGui.SameLine();
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_FmgLink_Color);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgLink_Text);
             ImGui.TextUnformatted($@" <{entry.Text}>");
             ImGui.PopStyleColor();
         }
@@ -1047,6 +1047,7 @@ public class ParamEditorScreen : EditorScreen
                                     ? "Param Editor View"
                                     : Utils.ImGuiEscape(name, "null")) + (view == _activeView ? "**" : "");
 
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
                 ImGui.SetNextWindowSize(new Vector2(1280.0f, 720.0f) * scale, ImGuiCond.Once);
                 ImGui.SetNextWindowDockID(ImGui.GetID("DockSpace_ParamEditorViews"), ImGuiCond.Once);
                 ImGui.Begin($@"{toDisplay}###ParamEditorView##{view._viewIndex}");
@@ -1070,6 +1071,7 @@ public class ParamEditorScreen : EditorScreen
 
                 view.ParamView(doFocus && view == _activeView, view == _activeView);
                 ImGui.End();
+                ImGui.PopStyleColor(1);
             }
         }
 
@@ -1214,7 +1216,7 @@ public class ParamEditorScreen : EditorScreen
         {
             if (!_paramUpgraderLoaded)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.UpgradeParam_Text_Available_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Benefit_Text_Color);
 
                 if (ImGui.BeginMenu("Upgrade Params"))
                 {
@@ -1229,7 +1231,7 @@ public class ParamEditorScreen : EditorScreen
             }
             else if (ParamBank.VanillaBank.ParamVersion <= ParamUpgradeVersionSoftWhitelist)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.UpgradeParam_Text_OutOfDate_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
 
                 if (ImGui.Button("Upgrade Params"))
                 {
@@ -1259,7 +1261,7 @@ public class ParamEditorScreen : EditorScreen
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.UpgradeParam_Text_Invalid_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Invalid_Text_Color);
 
                 if (ImGui.BeginMenu("Upgrade Params"))
                 {

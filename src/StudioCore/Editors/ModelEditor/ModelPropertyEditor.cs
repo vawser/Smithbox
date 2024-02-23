@@ -1184,7 +1184,8 @@ public class ModelPropertyEditor
         var scale = Smithbox.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ModelEditor_Properties_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(w - 370, 20) * scale, ImGuiCond.FirstUseEver);
         ImGui.Begin($@"Properties##{id}");
@@ -1208,7 +1209,7 @@ public class ModelPropertyEditor
                 ImGui.TextColored(new Vector4(0.5f, 1.0f, 0.0f, 1.0f),
                     " Editing Multiple Objects.\n Changes will be applied to all selected objects.");
                 ImGui.Separator();
-                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ModelEditor_MultipleEdit_Frame);
+                ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_MultipleInput_Background);
                 ImGui.BeginChild("MSB_EditingMultipleObjsChild");
 
                 PropEditorGeneric(selection, entSelection);
@@ -1248,6 +1249,6 @@ public class ModelPropertyEditor
 
         ImGui.EndChild();
         ImGui.End();
-        ImGui.PopStyleColor();
+        ImGui.PopStyleColor(2);
     }
 }

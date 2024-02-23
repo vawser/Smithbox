@@ -153,10 +153,10 @@ public static class TaskLogs
         // Warning List
         if (_warningList.Count > 0)
         {
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Logger_Text_Warning_Color);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
             if (ImGui.BeginMenu("!! WARNINGS!! "))
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.Logger_Text_Warning_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Warning_Text_Color);
                 ImGui.Text("Click warnings to remove them from list");
                 if (ImGui.Button("Remove All Warnings"))
                 {
@@ -194,10 +194,10 @@ public static class TaskLogs
 
         if (_loggerWindowOpen)
         {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Logger_WindowBg_Color);
-            ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Logger_TitleBg_Color);
-            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Logger_TitleBgActive_Color);
-            ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Logger_ChildBg_Color);
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Imgui_Moveable_MainBg);
+            ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
+            ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
+            ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
             if (ImGui.Begin("Logger##TaskLogger", ref _loggerWindowOpen, ImGuiWindowFlags.NoDocking))
             {
                 if (ImGui.Button("Clear##TaskLogger"))

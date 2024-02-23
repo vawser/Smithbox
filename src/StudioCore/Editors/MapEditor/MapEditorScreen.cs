@@ -728,6 +728,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
         }
 
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
 
@@ -773,6 +774,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 _activeModal = null;
             }
         }
+
+        ImGui.PopStyleColor(1);
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)

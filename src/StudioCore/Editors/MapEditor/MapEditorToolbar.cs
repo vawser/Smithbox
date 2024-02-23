@@ -100,6 +100,7 @@ namespace StudioCore.Editors.MapEditor
 
             _loadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
 
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
             if (ImGui.Begin($@"Toolbar##MsbMenubar"))
@@ -1348,6 +1349,7 @@ namespace StudioCore.Editors.MapEditor
             }
 
             ImGui.End();
+            ImGui.PopStyleColor(1);
         }
 
         /// <summary>

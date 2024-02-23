@@ -182,6 +182,7 @@ public class TextEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -283,6 +284,7 @@ public class TextEditorScreen : EditorScreen
 
         EditorGUI(doFocus);
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)

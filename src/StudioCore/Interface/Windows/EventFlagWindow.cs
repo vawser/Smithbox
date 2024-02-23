@@ -55,10 +55,11 @@ public class EventFlagWindow
             return;
 
         ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Floating_WindowBg_Color);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Floating_TitleBg_Color);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Floating_TitleBgActive_Color);
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Floating_ChildBg_Color);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Imgui_Moveable_MainBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
+        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
@@ -148,7 +149,7 @@ public class EventFlagWindow
         ImGui.End();
 
         ImGui.PopStyleVar(3);
-        ImGui.PopStyleColor(4);
+        ImGui.PopStyleColor(5);
 
         if (FlagAliasBank.Bank.mayReloadAliasBank)
         {

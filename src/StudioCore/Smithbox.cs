@@ -103,6 +103,7 @@ public class Smithbox
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
         CFG.AttemptLoadOrDefault();
+        UI.SetupThemes();
 
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
@@ -505,39 +506,40 @@ public class Smithbox
         ImGuiStylePtr style = ImGui.GetStyle();
 
         // Colors
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.ImGui_WindowBg);
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.ImGui_MainBg);
         ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
         ImGui.PushStyleColor(ImGuiCol.PopupBg, CFG.Current.ImGui_PopupBg);
         ImGui.PushStyleColor(ImGuiCol.Border, CFG.Current.ImGui_Border);
-        ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_FrameBg);
-        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, CFG.Current.ImGui_FrameBgHovered);
-        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, CFG.Current.ImGui_FrameBgActive);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.ImGui_TitleBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.ImGui_TitleBgActive);
+        ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_Background);
+        ImGui.PushStyleColor(ImGuiCol.FrameBgHovered, CFG.Current.ImGui_Input_Background_Hover);
+        ImGui.PushStyleColor(ImGuiCol.FrameBgActive, CFG.Current.ImGui_Input_Background_Active);
+        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.ImGui_TitleBarBg);
+        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.ImGui_TitleBarBg_Active);
         ImGui.PushStyleColor(ImGuiCol.MenuBarBg, CFG.Current.ImGui_MenuBarBg);
         ImGui.PushStyleColor(ImGuiCol.ScrollbarBg, CFG.Current.ImGui_ScrollbarBg);
         ImGui.PushStyleColor(ImGuiCol.ScrollbarGrab, CFG.Current.ImGui_ScrollbarGrab);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabHovered, CFG.Current.ImGui_ScrollbarGrabHovered);
-        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabActive, CFG.Current.ImGui_ScrollbarGrabActive);
-        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.ImGui_CheckMark);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabHovered, CFG.Current.ImGui_ScrollbarGrab_Hover);
+        ImGui.PushStyleColor(ImGuiCol.ScrollbarGrabActive, CFG.Current.ImGui_ScrollbarGrab_Active);
+        ImGui.PushStyleColor(ImGuiCol.CheckMark, CFG.Current.ImGui_Input_CheckMark);
         ImGui.PushStyleColor(ImGuiCol.SliderGrab, CFG.Current.ImGui_SliderGrab);
-        ImGui.PushStyleColor(ImGuiCol.SliderGrabActive, CFG.Current.ImGui_SliderGrabActive);
+        ImGui.PushStyleColor(ImGuiCol.SliderGrabActive, CFG.Current.ImGui_SliderGrab_Active);
         ImGui.PushStyleColor(ImGuiCol.Button, CFG.Current.ImGui_Button);
-        ImGui.PushStyleColor(ImGuiCol.ButtonHovered, CFG.Current.ImGui_ButtonHovered);
+        ImGui.PushStyleColor(ImGuiCol.ButtonHovered, CFG.Current.ImGui_Button_Hovered);
         ImGui.PushStyleColor(ImGuiCol.ButtonActive, CFG.Current.ImGui_ButtonActive);
         ImGui.PushStyleColor(ImGuiCol.Header, CFG.Current.ImGui_Selection);
-        ImGui.PushStyleColor(ImGuiCol.HeaderHovered, CFG.Current.ImGui_SelectionHovered);
-        ImGui.PushStyleColor(ImGuiCol.HeaderActive, CFG.Current.ImGui_SelectionActive);
+        ImGui.PushStyleColor(ImGuiCol.HeaderHovered, CFG.Current.ImGui_Selection_Hover);
+        ImGui.PushStyleColor(ImGuiCol.HeaderActive, CFG.Current.ImGui_Selection_Active);
         ImGui.PushStyleColor(ImGuiCol.Tab, CFG.Current.ImGui_Tab);
-        ImGui.PushStyleColor(ImGuiCol.TabHovered, CFG.Current.ImGui_TabHovered);
-        ImGui.PushStyleColor(ImGuiCol.TabActive, CFG.Current.ImGui_TabActive);
-        ImGui.PushStyleColor(ImGuiCol.TabUnfocused, CFG.Current.ImGui_TabUnfocused);
-        ImGui.PushStyleColor(ImGuiCol.TabUnfocusedActive, CFG.Current.ImGui_TabUnfocusedActive);
+        ImGui.PushStyleColor(ImGuiCol.TabHovered, CFG.Current.ImGui_Tab_Hover);
+        ImGui.PushStyleColor(ImGuiCol.TabActive, CFG.Current.ImGui_Tab_Active);
+        ImGui.PushStyleColor(ImGuiCol.TabUnfocused, CFG.Current.ImGui_UnfocusedTab);
+        ImGui.PushStyleColor(ImGuiCol.TabUnfocusedActive, CFG.Current.ImGui_UnfocusedTab_Active);
 
         // Sizes
-        ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, CFG.Current.ImGui_FrameBorderSize);
-        ImGui.PushStyleVar(ImGuiStyleVar.TabRounding, CFG.Current.ImGui_TabRounding);
-        ImGui.PushStyleVar(ImGuiStyleVar.ScrollbarRounding, CFG.Current.ImGui_ScrollbarRounding);
+        ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 1.0f);
+        ImGui.PushStyleVar(ImGuiStyleVar.TabRounding, 0.0f);
+        ImGui.PushStyleVar(ImGuiStyleVar.ScrollbarRounding, 0.0f);
 
         ImGui.PushStyleVar(ImGuiStyleVar.ScrollbarSize, 16.0f * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowMinSize, new Vector2(100f, 100f) * scale);
@@ -550,7 +552,7 @@ public class Smithbox
 
     public void UnapplyStyle()
     {
-        ImGui.PopStyleColor(28);
+        ImGui.PopStyleColor(29);
         ImGui.PopStyleVar(10);
     }
 
@@ -1013,7 +1015,7 @@ public class Smithbox
             {
                 ImGui.Separator();
 
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ProgramUpdate_Available_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Benefit_Text_Color);
                 if (ImGui.Button("Update Available"))
                 {
                     Process myProcess = new();

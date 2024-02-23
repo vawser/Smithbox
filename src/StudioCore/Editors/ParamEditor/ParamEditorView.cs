@@ -252,11 +252,11 @@ public class ParamEditorView
 
             if (primary != null ? primary.Any() : false)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_PrimaryChanged_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_PrimaryChanged_Text);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_AllVanilla_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             }
 
             if (ImGui.Selectable($"{paramKey}", paramKey == _selection.GetActiveParam()))
@@ -605,22 +605,22 @@ public class ParamEditorView
 
             if (auxDiffVanilla && auxDiffPrimaryAndVanilla)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_AuxConflict_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_AuxConflict_Text);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_PrimaryChanged_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_PrimaryChanged_Text);
             }
         }
         else
         {
             if (auxDiffVanilla)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_AuxAdded_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_AuxAdded_Text);
             }
             else
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ParamEditor_Row_View_AllVanilla_Color);
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             }
         }
 
