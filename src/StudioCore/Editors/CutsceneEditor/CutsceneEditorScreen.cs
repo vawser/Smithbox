@@ -66,6 +66,10 @@ public class CutsceneEditorScreen : EditorScreen
     public string CommandEndpoint => "cutscene";
     public string SaveType => "Cutscene";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
     }

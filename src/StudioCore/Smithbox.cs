@@ -199,6 +199,11 @@ public class Smithbox
 
         _soapstoneService = new SoapstoneService(_version);
 
+        foreach (EditorScreen editor in _editors)
+        {
+            editor.Init();
+        }
+
         ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
         SetupFonts();
         _context.ImguiRenderer.OnSetupDone();

@@ -41,6 +41,10 @@ public class MaterialEditorScreen : EditorScreen
     public string CommandEndpoint => "material";
     public string SaveType => "Material";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
     }

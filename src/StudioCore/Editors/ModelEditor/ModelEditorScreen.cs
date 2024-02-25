@@ -79,6 +79,11 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser");
     }
 
+    public void Init()
+    {
+
+    }
+
     public void UpdateLoadedModelInfo(string modelName, string mapID = "")
     {
         _loadedModelInfo = new LoadedModelInfo(modelName, CurrentlyLoadedModelType, mapID);

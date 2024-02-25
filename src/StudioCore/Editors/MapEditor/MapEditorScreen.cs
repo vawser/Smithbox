@@ -134,6 +134,11 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public string CommandEndpoint => "map";
     public string SaveType => "Maps";
 
+    public void Init()
+    {
+
+    }
+
     public void Update(float dt)
     {
         if (GCNeedsCollection)

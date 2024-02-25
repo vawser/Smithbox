@@ -38,6 +38,10 @@ public class EventScriptEditorScreen : EditorScreen
     public string CommandEndpoint => "emevd";
     public string SaveType => "EMEVD";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
     }

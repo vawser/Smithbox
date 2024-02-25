@@ -322,6 +322,7 @@ public class CFG
     public bool UI_CompactParams = false;
     public bool Param_QuickNameEdit = false;
     public int Param_DuplicateAmount = 1;
+    public bool Param_ShowInvertedPercentages = false;
 
     //****************************
     // Settings: Text Editor

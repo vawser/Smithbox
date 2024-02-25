@@ -20,6 +20,7 @@ using System.Text.RegularExpressions;
 using Veldrid;
 using Veldrid.Sdl2;
 using static SoulsFormats.GPARAM;
+using static StudioCore.Editors.GraphicsEditor.GparamParamBank;
 
 namespace StudioCore.GraphicsEditor;
 
@@ -64,6 +65,11 @@ public class GparamEditorScreen : EditorScreen
     public string EditorName => "Gparam Editor##GparamEditor";
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
+
+    public void Init()
+    {
+        
+    }
 
     public void DrawEditorMenu()
     {
@@ -125,10 +131,7 @@ public class GparamEditorScreen : EditorScreen
 
     public void GparamShortcuts()
     {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
-        {
-            
-        }
+        
     }
 
     private void GparamListView()
@@ -293,6 +296,8 @@ public class GparamEditorScreen : EditorScreen
     {
         GPARAM data = _selectedGparam;
 
+        // TODO: change this to instead use the FormatBank as the source of truth,
+        // as the file itself may not have all groups as stubs
         for (int i = 0; i < data.Params.Count; i++)
         {
             GPARAM.Param entry = data.Params[i];
@@ -304,7 +309,7 @@ public class GparamEditorScreen : EditorScreen
             {
                 if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
                 {
-                    if (ImGui.Button($"Add"))
+                    if (ImGui.Button($"Add##{i}"))
                     {
                         AddGroupToGparam();
                     }
@@ -353,7 +358,7 @@ public class GparamEditorScreen : EditorScreen
 
                 if (SearchFilters.IsEditorSearchMatch(_paramFieldSearchInput, entry.Name, " "))
                 {
-                    if (ImGui.Selectable($@" {name}##{entry.Key}", i == _selectedParamFieldKey))
+                    if (ImGui.Selectable($@" {name}##{entry.Key}{i}", i == _selectedParamFieldKey))
                     {
                         ResetValueSelection();
 

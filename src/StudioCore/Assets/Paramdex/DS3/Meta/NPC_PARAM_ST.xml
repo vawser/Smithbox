@@ -283,14 +283,14 @@
     <autoFootEffectDecalBaseId1 AltName="Automatic Foot Effect - Decal Base ID [1]" Wiki="Decal to be attached when a foot effect occurs. Floor material is also taken into consideration" />
     <toughness AltName="Toughness" Wiki="Basic value of toughness" />
     <toughnessRecoverCorrection AltName="Toughness Correction" Wiki="Correction value for toughness recovery time" />
-    <regainRate_PhysNeutral AltName="Absorption: Standard" />
-    <regainRate_PhysSlash AltName="Absorption: Slash" />
-    <regainRate_PhysBlow AltName="Absorption: Strike" />
-    <regainRate_PhysThrust AltName="Absorption: Thrust" />
-    <regainRate_Magic AltName="Absorption: Magic" />
-    <regainRate_Fire AltName="Absorption: Fire" />
-    <regainRate_Thunder AltName="Absorption: Lightning" />
-    <regainRate_Dark AltName="Absorption: Dark" />
+    <regainRate_PhysNeutral AltName="Absorption: Standard"  IsInvertedPercentage=""/>
+    <regainRate_PhysSlash AltName="Absorption: Slash" IsInvertedPercentage=""/>
+    <regainRate_PhysBlow AltName="Absorption: Strike" IsInvertedPercentage=""/>
+    <regainRate_PhysThrust AltName="Absorption: Thrust" IsInvertedPercentage=""/>
+    <regainRate_Magic AltName="Absorption: Magic" IsInvertedPercentage=""/>
+    <regainRate_Fire AltName="Absorption: Fire" IsInvertedPercentage=""/>
+    <regainRate_Thunder AltName="Absorption: Lightning" IsInvertedPercentage=""/>
+    <regainRate_Dark AltName="Absorption: Dark" IsInvertedPercentage=""/>
 	<darkGuardCutRate AltName="Guard Absorption: Dark" />
     <clothUpdateOffset AltName="Cloth Update Offset" Wiki="Cross update priority offset [m]" />
     <npcPlayerWeightType AltName="NPC Player Weight Type" Wiki="Equipment weight type applied for NPC players" Enum="NPC_WEIGHT_TYPE" />

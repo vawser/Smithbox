@@ -63,6 +63,27 @@ public static class Project
         }
     }
 
+    public static string GetProjectTypeString()
+    {
+        var projTypeString = "None";
+
+        switch (Project.Type)
+        {
+            case ProjectType.DS1: projTypeString = "DS1"; break;
+            case ProjectType.DS1R: projTypeString = "DS1R"; break;
+            case ProjectType.DS2S: projTypeString = "DS1S"; break;
+            case ProjectType.DS3: projTypeString = "DS3"; break;
+            case ProjectType.BB: projTypeString = "BB"; break;
+            case ProjectType.DES: projTypeString = "DES"; break;
+            case ProjectType.SDT: projTypeString = "SDT"; break;
+            case ProjectType.ER: projTypeString = "ER"; break;
+            case ProjectType.AC6: projTypeString = "AC6"; break;
+            default: projTypeString = "None"; break;
+        }
+
+        return projTypeString;
+    }
+
     /// <summary>
     /// Get a ProjectType based on the executable name.
     /// </summary>

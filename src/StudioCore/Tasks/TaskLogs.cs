@@ -266,34 +266,34 @@ public static class TaskLogs
         if (level is LogLevel.Information)
         {
             return new Vector4(
-                0.8f + (0.1f * mult),
-                1.0f - (0.1f * mult),
-                0.4f + (0.5f * mult),
+                CFG.Current.ImGui_Benefit_Text_Color.X + (0.1f * mult),
+                CFG.Current.ImGui_Benefit_Text_Color.Y - (0.1f * mult),
+                CFG.Current.ImGui_Benefit_Text_Color.Z + (0.5f * mult),
                 alpha);
         }
 
         if (level is LogLevel.Warning)
         {
             return new Vector4(
-                1.0f - (0.1f * mult),
-                1.0f - (0.1f * mult),
-                0.3f + (0.6f * mult),
+                CFG.Current.ImGui_Warning_Text_Color.X - (0.1f * mult),
+                CFG.Current.ImGui_Warning_Text_Color.Y - (0.1f * mult),
+                CFG.Current.ImGui_Warning_Text_Color.Z + (0.6f * mult),
                 alpha);
         }
 
         if (level is LogLevel.Error or LogLevel.Critical)
         {
             return new Vector4(
-                1.0f - (0.1f * mult),
-                0.3f + (0.6f * mult),
-                0.3f + (0.6f * mult),
+                CFG.Current.ImGui_Warning_Text_Color.X - (0.1f * mult),
+                CFG.Current.ImGui_Warning_Text_Color.Y + (0.6f * mult),
+                CFG.Current.ImGui_Warning_Text_Color.Z + (0.6f * mult),
                 alpha);
         }
 
         return new Vector4(
-            1.0f - (0.1f * mult),
-            1.0f - (0.1f * mult),
-            1.0f - (0.1f * mult),
+            CFG.Current.ImGui_Default_Text_Color.X - (0.1f * mult),
+            CFG.Current.ImGui_Default_Text_Color.Y - (0.1f * mult),
+            CFG.Current.ImGui_Default_Text_Color.Z - (0.1f * mult),
             alpha);
     }
 

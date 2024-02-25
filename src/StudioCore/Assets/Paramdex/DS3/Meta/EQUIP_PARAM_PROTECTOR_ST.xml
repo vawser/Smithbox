@@ -186,13 +186,13 @@ InvisibleFlag00,InvisibleFlag01,InvisibleFlag02,InvisibleFlag03,InvisibleFlag04,
     <Unk3 IsBool="" />
     <Unk4 IsBool="" />
     <Unk5 IsBool="" />
-    <PhysDamageCutRate AltName="Absorption - Physical" />
-    <SlashDamageCutRate AltName="Absorption - Slash" />
-    <StrikeDamageCutRate AltName="Absorption - Strike" />
-    <ThrustDamageCutRate AltName="Absorption - Thrust" />
-    <MagicDamageCutRate AltName="Absorption - Magic" />
-    <FireDamageCutRate AltName="Absorption - Fire" />
-    <ThunderDamageCutRate AltName="Absorption - Lightning" />
+    <PhysDamageCutRate AltName="Absorption - Physical" IsInvertedPercentage="" />
+    <SlashDamageCutRate AltName="Absorption - Slash" IsInvertedPercentage=""/>
+    <StrikeDamageCutRate AltName="Absorption - Strike" IsInvertedPercentage=""/>
+    <ThrustDamageCutRate AltName="Absorption - Thrust" IsInvertedPercentage=""/>
+    <MagicDamageCutRate AltName="Absorption - Magic" IsInvertedPercentage=""/>
+    <FireDamageCutRate AltName="Absorption - Fire" IsInvertedPercentage=""/>
+    <ThunderDamageCutRate AltName="Absorption - Lightning" IsInvertedPercentage=""/>
     <defenseMaterialSfx1 AltName="Defence Material SFX 1" Wiki="For SFX when moving / defending. 1" />
     <defenseMaterialSfx_Weak1 AltName="Defence Material SFX - Weakness 1" Wiki="For SFX when weak points are damaged 1" />
     <defenseMaterial1 AltName="Defence Material - SE 1" Wiki="For SE when moving / defending. 1" Enum="WEP_MATERIAL_DEF" />
@@ -202,8 +202,8 @@ InvisibleFlag00,InvisibleFlag01,InvisibleFlag02,InvisibleFlag03,InvisibleFlag04,
     <footMaterialSe AltName="Foot Material SE" Wiki="Material for foot equipment SE. Only foot equipment is referenced. ([GR] SEQ10061) In the case of 139: None, the defense material 1 [SE] is referred to." />
     <defenseMaterial_Weak2 AltName="Defence Material SE - Weakness 2" Wiki="2 for SE when weak points are damaged" />
     <autoFootEffectDecalBaseId1 AltName="Auto Foot Effect Decal Base ID" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
-    <toughnessDamageCutRate AltName="Toughness Absorption" Wiki="Toughness version cut rate" />
-    <DarkDamageCutRate AltName="Absorption - Dark" />
+    <toughnessDamageCutRate AltName="Toughness Absorption" Wiki="Toughness version cut rate" IsInvertedPercentage=""/>
+    <DarkDamageCutRate AltName="Absorption - Dark" IsInvertedPercentage=""/>
 	<defenseDark AltName="Defense - Dark" />
     <Unk6 AltName="Unknown" />
     <Unk7 AltName="Unknown" />

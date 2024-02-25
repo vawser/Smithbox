@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using Andre.Formats;
+using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using System;
@@ -15,7 +16,7 @@ public class ParamEditorCommon
     private static bool _changedCache;
     private static bool _committedCache;
 
-    public static unsafe void PropertyField(Type typ, object oldval, ref object newval, bool isBool)
+    public static unsafe void PropertyField(Type typ, object oldval, ref object newval, bool isBool, bool isInvertedPercentage)
     {
         _changedCache = false;
         _committedCache = false;
@@ -144,12 +145,29 @@ public class ParamEditorCommon
         }
         else if (typ == typeof(float))
         {
-            var val = (float)oldval;
-            if (ImGui.InputFloat("##value", ref val, 0.1f, 1.0f, Utils.ImGui_InputFloatFormat(val)))
+            // Display in-game form of this property (i.e. 75% instead of 0.25)
+            if (isInvertedPercentage && CFG.Current.Param_ShowInvertedPercentages)
             {
-                newval = val;
-                _editedPropCache = newval;
-                _changedCache = true;
+                float fakeVal = (1 - (float)oldval) * 100;
+
+                if (ImGui.InputFloat("##value", ref fakeVal, 0.0f, 1.0f, Utils.ImGui_InputFloatFormat(fakeVal, 3, 3)))
+                {
+                    // Restore actual value
+                    float realVal = (1 - (fakeVal / 100));
+                    newval = realVal;
+                    _editedPropCache = newval;
+                    _changedCache = true;
+                }
+            }
+            else
+            {
+                var val = (float)oldval;
+                if (ImGui.InputFloat("##value", ref val, 0.1f, 1.0f, Utils.ImGui_InputFloatFormat(val)))
+                {
+                    newval = val;
+                    _editedPropCache = newval;
+                    _changedCache = true;
+                }
             }
         }
         else if (typ == typeof(double))

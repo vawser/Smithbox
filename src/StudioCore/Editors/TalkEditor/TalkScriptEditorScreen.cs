@@ -42,6 +42,10 @@ public class TalkScriptEditorScreen : EditorScreen
     public string CommandEndpoint => "esd";
     public string SaveType => "ESD";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
     }

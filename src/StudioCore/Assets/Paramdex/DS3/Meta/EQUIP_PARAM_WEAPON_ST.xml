@@ -217,10 +217,10 @@ trophySGradeId,trophySeqId,-,"/>
     <correctAgility AltName="Correction: DEX" Wiki=" 	The base scaling value used for Dexterity.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
     <corretMagic AltName="Correction: INT" Wiki="The base scaling value used for Intelligence.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
     <corretFaith AltName="Correction: FTH" Wiki="The base scaling value used for Faith.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
-    <physGuardCutRate AltName="Guard Absorption: Physical" Wiki="The Physical absorption to use when guarding." />
-    <magGuardCutRate AltName="Guard Absorption: Magic" Wiki="The Magic absorption to use when guarding." />
-    <fireGuardCutRate AltName="Guard Absorption: Fire" Wiki="The Fire absorption to use when guarding." />
-    <thunGuardCutRate AltName="Guard Absorption: Lightning" Wiki="The Lightning absorption to use when guarding." />
+    <physGuardCutRate AltName="Guard Absorption: Physical" Wiki="The Physical absorption to use when guarding." IsInvertedPercentage=""/>
+    <magGuardCutRate AltName="Guard Absorption: Magic" Wiki="The Magic absorption to use when guarding." IsInvertedPercentage=""/>
+    <fireGuardCutRate AltName="Guard Absorption: Fire" Wiki="The Fire absorption to use when guarding." IsInvertedPercentage=""/>
+    <thunGuardCutRate AltName="Guard Absorption: Lightning" Wiki="The Lightning absorption to use when guarding." IsInvertedPercentage=""/>
     <spEffectBehaviorId0 Refs="SpEffectParam" AltName="Behavior Speffect ID 0" Wiki="The SpEffect to apply to the enemy on hit." />
     <spEffectBehaviorId1 Refs="SpEffectParam" AltName="Behavior Speffect ID 1" Wiki="The SpEffect to apply to the enemy on hit." />
     <spEffectBehaviorId2 Refs="SpEffectParam" AltName="Behavior Speffect ID 2" Wiki="The SpEffect to apply to the enemy on hit." />
@@ -386,7 +386,7 @@ trophySGradeId,trophySeqId,-,"/>
     <correctType_Thunder Refs="CalcCorrectGraph" AltName="Correction Type: Lightning" Wiki="Determines the stat graph used for Lightning damage (i.e. how effective a stat is).\nAlso affects FTH portion of Spell buff if applicable." />
     <weakE_DamageRate AltName="Damage Multiplier %: Type E" Wiki="Damage multiplier for special attack E" />
     <weakF_DamageRate AltName="Damage Multiplier %: Type F" Wiki="Damage multiplier for special attack F" />
-	<darkGuardCutRate AltName="Guard Absorption: Dark" Wiki="The Dark absorption to use when guarding." />
+	<darkGuardCutRate AltName="Guard Absorption: Dark" Wiki="The Dark absorption to use when guarding."/>
     <atkBaseDark AltName="Damage: Dark" Wiki="The base Dark damage.\nNote that this is multiplied by reinforcement (via ReinforceParamWeapon)." />
     <correctType_Dark Refs="CalcCorrectGraph" AltName="Correction Type: Dark" Wiki="Determines the stat graph used for Dark damage (i.e. how effective a stat is)." />
     <correctType_Poison AltName="Correction Type: Poison" Refs="CalcCorrectGraph" Wiki="Determines the stat graph used for Poison buildup (i.e. how effective a stat is)." />

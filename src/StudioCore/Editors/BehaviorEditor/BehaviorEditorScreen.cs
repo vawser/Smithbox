@@ -37,6 +37,10 @@ public class BehaviorEditorScreen : EditorScreen
     public string CommandEndpoint => "behavior";
     public string SaveType => "Behavior";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
     }

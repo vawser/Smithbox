@@ -28,6 +28,10 @@ public class TextureViewerScreen : EditorScreen
     public string CommandEndpoint => "texture";
     public string SaveType => "Texture";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
     }

@@ -251,6 +251,10 @@ public class ParamEditorScreen : EditorScreen
     public string CommandEndpoint => "param";
     public string SaveType => "Params";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
         // Menu Options

@@ -34,6 +34,10 @@ public class ParticleEditorScreen : EditorScreen
     public string CommandEndpoint => "particle";
     public string SaveType => "Particle";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
     }
@@ -113,7 +117,7 @@ public class ParticleEditorScreen : EditorScreen
         // File List
         ImGui.Begin("Particles##ParticleList");
 
-        if (_selectedFileInfo.ParticleFiles != null)
+        if (_selectedFileInfo != null && _selectedFileInfo.ParticleFiles != null)
         {
             ImGui.Text($"Particles");
             ImGui.Separator();

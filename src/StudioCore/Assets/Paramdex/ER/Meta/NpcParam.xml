@@ -441,14 +441,14 @@
     <autoFootEffectDecalBaseId1 AltName="Automatic Foot Effect - Decal Base ID [1]" Wiki="Decal to be attached when a foot effect occurs. Floor material is also taken into consideration" />
     <toughness AltName="Toughness" Wiki="Basic value of toughness" />
     <toughnessRecoverCorrection AltName="Toughness Correction" Wiki="Correction value for toughness recovery time" />
-    <neutralDamageCutRate AltName="Absorption % - Standard" Wiki="Non-attribute damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." />
-    <slashDamageCutRate AltName="Absorption % - Slash" Wiki="Slash damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." />
-    <blowDamageCutRate AltName="Absorption % - Strike" Wiki="Batter damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." />
-    <thrustDamageCutRate AltName="Absorption % - Thrust" Wiki="Puncture damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." />
-    <magicDamageCutRate AltName="Absorption % - Magic" Wiki="Magic damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." />
-    <fireDamageCutRate AltName="Absorption % - Fire" Wiki="Flame damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." />
-    <thunderDamageCutRate AltName="Absorption % - Lightning" Wiki="Electric shock damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." />
-    <darkDamageCutRate AltName="Absorption % - Holy" Wiki="Dark damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." />
+    <neutralDamageCutRate AltName="Absorption % - Standard" Wiki="Non-attribute damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <slashDamageCutRate AltName="Absorption % - Slash" Wiki="Slash damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value. IsInvertedPercentage=""" />
+    <blowDamageCutRate AltName="Absorption % - Strike" Wiki="Batter damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <thrustDamageCutRate AltName="Absorption % - Thrust" Wiki="Puncture damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <magicDamageCutRate AltName="Absorption % - Magic" Wiki="Magic damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <fireDamageCutRate AltName="Absorption % - Fire" Wiki="Flame damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <thunderDamageCutRate AltName="Absorption % - Lightning" Wiki="Electric shock damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
+    <darkDamageCutRate AltName="Absorption % - Holy" Wiki="Dark damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
     <darkGuardCutRate AltName="Guard Absorption % - Holy" Wiki="How much to cut the dark attack?" />
     <clothUpdateOffset AltName="Cloth Update Offset" Wiki="Cross update priority offset [m]" />
     <npcPlayerWeightType AltName="NPC Player Weight Type" Wiki="Equipment weight type applied for NPC players" Enum="NPC_WEIGHT_TYPE" />

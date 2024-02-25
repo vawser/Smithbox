@@ -674,6 +674,13 @@ public class SettingsWindow
                 ImguiUtils.ShowHelpMarker("Split the field context menu into separate menus for separate right-click locations.");
             }
 
+            // Values
+            if (ImGui.CollapsingHeader("Values"))
+                {
+                    ImGui.Checkbox("Show inverted percentages in traditional form", ref CFG.Current.Param_ShowInvertedPercentages);
+                ImguiUtils.ShowHelpMarker("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
+            }
+
             ImGui.EndTabItem();
         }
     }

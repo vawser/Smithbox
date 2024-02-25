@@ -21,7 +21,7 @@ public static class BankUtils
         // Format
         MsbFormatBank.Bank = new FormatBank(FormatBankType.MSB, true);
         FlverFormatBank.Bank = new FormatBank(FormatBankType.FLVER, false);
-        GparamFormatBank.Bank = new FormatBank(FormatBankType.GPARAM, false);
+        GparamFormatBank.Bank = new FormatBank(FormatBankType.GPARAM, true);
 
         // Data
         MaterialResourceBank.Setup();

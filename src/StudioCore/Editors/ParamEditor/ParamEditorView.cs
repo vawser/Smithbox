@@ -856,7 +856,7 @@ public class ParamEditorView
                 object newval = null;
                 ImGui.PushID("compareCol_" + selectionCacheIndex);
                 ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(0, 0));
-                ParamEditorCommon.PropertyField(compareCol.ValueType, c.Value, ref newval, false);
+                ParamEditorCommon.PropertyField(compareCol.ValueType, c.Value, ref newval, false, false);
 
                 if (ParamEditorCommon.UpdateProperty(_propEditor.ContextActionManager, c, compareColProp,
                         c.Value) && !ParamBank.VanillaBank.IsLoadingParams)

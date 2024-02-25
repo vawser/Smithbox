@@ -257,13 +257,13 @@
     <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type " Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
     <pad AltName=""/>
-    <neutralDamageCutRate AltName="Absorption - Physical" Wiki="Non-attribute damage multiplier" />
-    <slashDamageCutRate AltName="Absorption - Slash" Wiki="Slash damage multiplier" />
-    <blowDamageCutRate AltName="Absorption - Strike" Wiki="Batter damage multiplier" />
-    <thrustDamageCutRate AltName="Absorption - Thrust" Wiki="Puncture damage ratio" />
-    <magicDamageCutRate AltName="Absorption - Magic" Wiki="Magic damage multiplier" />
-    <fireDamageCutRate AltName="Absorption - Fire" Wiki="Flame damage multiplier" />
-    <thunderDamageCutRate AltName="Absorption - Lightning" Wiki="Electric shock damage ratio" />
+    <neutralDamageCutRate AltName="Absorption - Physical" Wiki="Non-attribute damage multiplier"  IsInvertedPercentage="" />
+    <slashDamageCutRate AltName="Absorption - Slash" Wiki="Slash damage multiplier" IsInvertedPercentage="" />
+    <blowDamageCutRate AltName="Absorption - Strike" Wiki="Batter damage multiplier" IsInvertedPercentage="" />
+    <thrustDamageCutRate AltName="Absorption - Thrust" Wiki="Puncture damage ratio" IsInvertedPercentage="" />
+    <magicDamageCutRate AltName="Absorption - Magic" Wiki="Magic damage multiplier" IsInvertedPercentage="" />
+    <fireDamageCutRate AltName="Absorption - Fire" Wiki="Flame damage multiplier" IsInvertedPercentage="" />
+    <thunderDamageCutRate AltName="Absorption - Lightning" Wiki="Electric shock damage ratio" IsInvertedPercentage="" />
     <defenseMaterialSfx1 AltName="Defence Material SFX [1]" Wiki="For SFX when moving / defending. 1" Enum="WEP_MATERIAL_DEF_SFX" />
     <defenseMaterialSfx_Weak1 AltName="Defence Material SFX - Weakness [1]" Wiki="For SFX when weak points are damaged 1" Enum="WEP_MATERIAL_DEF_SFX" />
     <defenseMaterial1 AltName="Defence Material - SE [1]" Wiki="For SE when moving / defending. 1" Enum="WEP_MATERIAL_DEF" />
@@ -273,9 +273,9 @@
     <footMaterialSe AltName="Foot Material SE" Wiki="Material for foot equipment SE. Only foot equipment is referenced. ([GR] SEQ10061) In the case of 139: None, the defense material 1 [SE] is referred to." Enum="WEP_MATERIAL_DEF" />
     <defenseMaterial_Weak2 AltName="Defence Material SE - Weakness [2]" Wiki="2 for SE when weak points are damaged" Enum="WEP_MATERIAL_DEF" />
     <autoFootEffectDecalBaseId1 AltName="Auto Foot Effect Decal Base ID [1]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
-    <toughnessDamageCutRate AltName="Toughness Absorption" Wiki="Toughness version cut rate" />
+    <toughnessDamageCutRate AltName="Toughness Absorption" Wiki="Toughness version cut rate" IsInvertedPercentage="" />
     <toughnessRecoverCorrection AltName="Toughness Recovery Correction" Wiki="Correction value for toughness recovery time" />
-    <darkDamageCutRate AltName="Absorption - Holy" Wiki="Dark damage multiplier" />
+    <darkDamageCutRate AltName="Absorption - Holy" Wiki="Dark damage multiplier" IsInvertedPercentage="" />
     <defenseDark AltName="Defence - Holy" Wiki="Dark attack damage protection." />
     <invisibleFlag48 IsBool="" AltName=""/>
     <invisibleFlag49 IsBool="" AltName=""/>

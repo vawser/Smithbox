@@ -34,6 +34,10 @@ public class TimeActEditorScreen : EditorScreen
     public string CommandEndpoint => "timeact";
     public string SaveType => "TAE";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
     }

@@ -1946,7 +1946,7 @@
                     "attributes": "IsType[IntB]"
                 },
                 {
-                    "id": "VolumetricFog GameScale",
+                    "id": "VolumetricFog ale",
                     "name": "Game Scale",
                     "description": "",
                     "attributes": "IsType[Float]"

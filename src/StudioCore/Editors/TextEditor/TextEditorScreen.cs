@@ -47,6 +47,10 @@ public class TextEditorScreen : EditorScreen
     public string CommandEndpoint => "text";
     public string SaveType => "Text";
 
+    public void Init()
+    {
+
+    }
     public void DrawEditorMenu()
     {
         if (ImGui.BeginMenu("Edit", FMGBank.IsLoaded))

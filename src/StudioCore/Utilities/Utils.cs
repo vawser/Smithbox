@@ -947,10 +947,10 @@ public static class Utils
     ///     Made to display trailing zeroes even if value is an integer,
     ///     and limit number of decimals to appropriate values.
     /// </summary>
-    public static string ImGui_InputFloatFormat(float f)
+    public static string ImGui_InputFloatFormat(float f, int min = 3, int max = 6)
     {
         var split = f.ToString("F6").TrimEnd('0').Split('.');
-        return $"%.{Math.Clamp(split.Last().Length, 3, 6)}f";
+        return $"%.{Math.Clamp(split.Last().Length, min, max)}f";
     }
 
     /// <summary>

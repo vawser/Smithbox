@@ -488,6 +488,12 @@ public class FieldMetaData
         {
             ExtRefs = ExRef.InnerText.Split(';').Select(x => new ExtRef(x)).ToList();
         }
+
+        XmlAttribute IsInvertedFloat = fieldMeta.Attributes["IsInvertedPercentage"];
+        if (IsInvertedFloat != null)
+        {
+            IsInvertedPercentage = true;
+        }
     }
 
     /// <summary>
@@ -524,6 +530,11 @@ public class FieldMetaData
     ///     Is this u8 field actually a boolean?
     /// </summary>
     public bool IsBool { get; set; }
+
+    /// <summary>
+    ///     Is this float displayed as an inverted percentage
+    /// </summary>
+    public bool IsInvertedPercentage { get; set; }
 
     /// <summary>
     ///     Path (and subpath) filters for files linked by this field.

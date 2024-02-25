@@ -300,6 +300,7 @@ public class ParamRowEditor
 
         ParamEnum Enum = cellMeta?.EnumType;
         var IsBool = cellMeta?.IsBool ?? false;
+        var IsInvertedPercentage = cellMeta?.IsInvertedPercentage ?? false;
 
         var displayRefTypes = !CFG.Current.Param_HideReferenceRows && RefTypes != null;
         var displayFmgRef = !CFG.Current.Param_HideReferenceRows && FmgRef != null;
@@ -416,7 +417,7 @@ public class ParamRowEditor
             }
 
             // Property Editor UI
-            ParamEditorCommon.PropertyField(propType, oldval, ref newval, IsBool);
+            ParamEditorCommon.PropertyField(propType, oldval, ref newval, IsBool, IsInvertedPercentage);
 
             if (isRef || matchDefault) //if diffVanilla, remove styling later
             {

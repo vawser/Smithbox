@@ -21,6 +21,11 @@ public interface EditorScreen
     public string SaveType { get; }
 
     /// <summary>
+    ///     Init function for setting up the editor
+    /// </summary>
+    public void Init();
+
+    /// <summary>
     ///     Called when a new project has been opened
     /// </summary>
     /// <param name="newSettings">New settings for the project</param>

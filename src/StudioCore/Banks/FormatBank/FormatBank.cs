@@ -1,6 +1,12 @@
 ﻿using StudioCore.Editor;
 using System;
 using StudioCore.UserProject;
+using Veldrid;
+using System.Text.RegularExpressions;
+using Org.BouncyCastle.Asn1.Cms;
+using System.Linq;
+using DotNext.Collections.Generic;
+using System.Collections.Generic;
 
 namespace StudioCore.Banks.FormatBank;
 
@@ -134,6 +140,27 @@ public class FormatBank
         }
 
         return desc;
+    }
+
+    public List<string> GetListAttributeContents(string attributeStr, string targetAttribute)
+    {
+        List<string> contentList = new List<string>();
+
+        if(attributeStr.Contains(","))
+        {
+            string[] attributeList = attributeStr.Split(",");
+
+            foreach (string attr in attributeList)
+            {
+                Match contents = Regex.Match(attr, $@"{targetAttribute}\[(.*)\]");
+                if (contents.Success)
+                {
+                    contentList = contents.Groups[0].Value.Split(",").ToList();
+                }
+            }
+        }
+
+        return contentList;
     }
 
     // Hides property in editor view
