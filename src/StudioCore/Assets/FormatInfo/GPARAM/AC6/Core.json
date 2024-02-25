@@ -627,7 +627,7 @@
                     "id": "GS Presents - LightShaft SkyColorSaturate",
                     "name": "Sky Color Saturation",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Float]"
                 },
                 {
                     "id": "GS Presents - LightShaft SkyColorThreshold",
@@ -1306,10 +1306,10 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "Unknown",
+                    "name": "Unknown",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Unknown]"
                 }
             ]
         },
@@ -1320,10 +1320,10 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "Unknown",
+                    "name": "Unknown",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Unknown]"
                 }
             ]
         },
@@ -1790,10 +1790,10 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "Unknown",
+                    "name": "Unknown",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Unknown]"
                 }
             ]
         },
@@ -2275,7 +2275,7 @@
                     "id": "FogVolume RayMarching LightProcessingIntervalThreshold",
                     "name": "Ray Marching: Light Processing Interval Threshold",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Float]"
                 },
                 {
                     "id": "FogVolume Light Overwrite",
@@ -2394,10 +2394,10 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "Unknown",
+                    "name": "Unknown",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Unknown]"
                 }
             ]
         },
@@ -2408,10 +2408,10 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "Unknown",
+                    "name": "Unknown",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Unknown]"
                 }
             ]
         },
@@ -2505,7 +2505,7 @@
                     "id": "ColorParaffin Radiation - Curvature",
                     "name": "Curvature",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Float]"
                 }
             ]
         },
@@ -2516,10 +2516,10 @@
             "attributes": "",
             "members": [
                 {
-                    "id": "XXXXXX",
-                    "name": "XXXXXX",
+                    "id": "Unknown",
+                    "name": "Unknown",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Unknown]"
                 }
             ]
         }

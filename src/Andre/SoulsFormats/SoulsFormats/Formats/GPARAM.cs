@@ -652,6 +652,10 @@ namespace SoulsFormats
         {
             private protected override GPARAM.FieldType Type => GPARAM.FieldType.Color;
 
+            public ColorField()
+            {
+            }
+
             internal ColorField(
               BinaryReaderEx br,
               GPARAM.GparamVersion version,
@@ -937,6 +941,7 @@ namespace SoulsFormats
 
         public class UnkParamExtra
         {
+            // group index
             public int Unk00 { get; set; }
 
             public List<int> Ids { get; set; }

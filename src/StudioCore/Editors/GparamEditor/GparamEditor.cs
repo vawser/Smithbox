@@ -17,10 +17,9 @@ using static SoulsFormats.GPARAM;
 namespace StudioCore.Editors.GparamEditor;
 public class GparamEditor
 {
-    public static unsafe void PropertyField(int idx, IField field, IFieldValue value)
+    public static unsafe void ValueField(int idx, IField field, IFieldValue value)
     {
         ImGui.SetNextItemWidth(-1);
-
 
         // INT
         if (field is GPARAM.IntField intField)
@@ -288,5 +287,171 @@ public class GparamEditor
         {
             TaskLogs.AddLog($"{field.Name} {field.GetType()} is not supported");
         }
+    }
+
+    public static unsafe void TimeOfDayField(int idx, IField field, IFieldValue value)
+    {
+        ImGui.SetNextItemWidth(-1);
+
+        // INT
+        if (field is GPARAM.IntField intField)
+        {
+            float fieldValue = intField.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                intField.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // UINT
+        else if (field is GPARAM.UintField uintField)
+        {
+            float fieldValue = uintField.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                uintField.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // SHORT
+        else if (field is GPARAM.ShortField shortField)
+        {
+            float fieldValue = shortField.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                shortField.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // SBYTE
+        else if (field is GPARAM.SbyteField sbyteField)
+        {
+            float fieldValue = sbyteField.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                sbyteField.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // BYTE
+        else if (field is GPARAM.ByteField byteField)
+        {
+            float fieldValue = byteField.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                byteField.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // BOOL
+        else if (field is GPARAM.BoolField boolField)
+        {
+            float fieldValue = boolField.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                boolField.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // FLOAT
+        else if (field is GPARAM.FloatField floatField)
+        {
+            float fieldValue = floatField.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                floatField.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // VECTOR2
+        else if (field is GPARAM.Vector2Field vector2Field)
+        {
+            float fieldValue = vector2Field.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                vector2Field.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // VECTOR3
+        else if (field is GPARAM.Vector3Field vector3Field)
+        {
+            float fieldValue = vector3Field.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                vector3Field.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // VECTOR4
+        else if (field is GPARAM.Vector4Field vector4Field)
+        {
+            float fieldValue = vector4Field.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                vector4Field.Values[idx].Unk04 = floatInput;
+            }
+        }
+        // COLOR
+        else if (field is GPARAM.ColorField colorField)
+        {
+            float fieldValue = colorField.Values[idx].Unk04;
+            float floatInput = fieldValue;
+
+            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            {
+                colorField.Values[idx].Unk04 = floatInput;
+            }
+        }
+        else
+        {
+            TaskLogs.AddLog($"{field.Name} {field.GetType()} is not supported");
+        }
+    }
+
+    /// <summary>
+    /// Update the UnkParamExtras lists to reflect the new state of the GPARAM
+    /// </summary>
+    public static void UpdateGroupIndexes(GPARAM gparam)
+    {
+        var newGroupIndexes = new List<UnkParamExtra>();
+        int idx = 0;
+
+        foreach (var param in gparam.Params)
+        {
+            var newGroupIndexList = new UnkParamExtra();
+            newGroupIndexList.Unk00 = idx;
+            newGroupIndexList.Unk0c = 0; // Always 0
+
+            foreach (var field in param.Fields)
+            {
+                var values = field.Values;
+
+                foreach(var val in values)
+                {
+                    if (!newGroupIndexList.Ids.Contains(val.Id))
+                    {
+                        newGroupIndexList.Ids.Add(val.Id);
+                    }
+                }
+            }
+
+            newGroupIndexes.Add(newGroupIndexList);
+
+            ++idx;
+        }
+
+        gparam.UnkParamExtras = newGroupIndexes;
     }
 }

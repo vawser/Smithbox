@@ -337,9 +337,10 @@ public class CFG
     // Settings: Gparam Editor
     //****************************
     public bool Gparam_DisplayColorEditForVector4Fields = true;
-    public bool Gparam_DisplayUnk04 = true;
     public bool Gparam_DisplayMapNames = true;
-    public bool Gparam_DisplayGroupAdd = true;
+    public bool Gparam_DisplayEmptyGroups = true;
+    public bool Gparam_DisplayAddGroups = true;
+    public bool Gparam_DisplayAddFields = true;
 
     //****************************
     // Windows

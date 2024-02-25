@@ -584,7 +584,7 @@
                     "id": "Yebis-DepthOfFieldQuality",
                     "name": "Depth of Field Quaility",
                     "description": "",
-                    "attributes": "IsType[XXX]"
+                    "attributes": "IsType[IntA]"
                 },
                 {
                     "id": "SceneSetting-  LightCollect- Auto Compute Enable",
@@ -826,7 +826,7 @@
                     "id": "Yebis-ToneUniformDispersion[1]",
                     "name": "Tone Uniform Dispersion [0]",
                     "description": "",
-                    "attributes": "IsType[XXX]"
+                    "attributes": "IsType[Float]"
                 },
                 {
                     "id": "GS Presents - ToneMap-Exposure",
@@ -1451,7 +1451,7 @@
                     "id": "Yebis-DofFar DistanceThrethold",
                     "name": "Far Distance Threshold",
                     "description": "",
-                    "attributes": "IsType[XXX]"
+                    "attributes": "IsType[Float]"
                 },
                 {
                     "id": "Yebis-DepthOfField AutoFocus-Enable",
@@ -1701,7 +1701,7 @@
                     "id": "MotionBlur[GS Presents] Fix Fps",
                     "name": "Base FPS",
                     "description": "",
-                    "attributes": "IsType[XXX]"
+                    "attributes": "IsType[Float]"
                 }
             ]
         },
@@ -2541,7 +2541,7 @@
                     "id": "ColorParaffin Radiation - Curvature",
                     "name": "Curvature",
                     "description": "",
-                    "attributes": "IsType[XXXXXX]"
+                    "attributes": "IsType[Float]"
                 }
             ]
         },

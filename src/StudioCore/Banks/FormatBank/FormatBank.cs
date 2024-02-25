@@ -156,6 +156,24 @@ public class FormatBank
         return desc;
     }
 
+    public string GetTypeForProperty(string fieldKey)
+    {
+        string typeName = "";
+
+        foreach (var entry in GparamFormatBank.Bank.Entries.list)
+        {
+            foreach (var subentry in entry.members)
+            {
+                if (subentry.id == fieldKey)
+                {
+                    typeName = GetAttributeContents(subentry.attributes, "IsType");
+                }
+            }
+        }
+
+        return typeName;
+    }
+
     public FormatEnumEntry GetEnumForProperty(string fieldKey)
     {
         FormatEnumEntry formatEnum = null;
@@ -167,7 +185,7 @@ public class FormatBank
             {
                 if (subentry.id == fieldKey)
                 {
-                    enumName = GetEnumName(subentry.attributes, "Enum");
+                    enumName = GetAttributeContents(subentry.attributes, "Enum");
                 }
             }
         }
@@ -180,7 +198,7 @@ public class FormatBank
         return formatEnum;
     }
 
-    public string GetEnumName(string attributeStr, string targetAttribute)
+    public string GetAttributeContents(string attributeStr, string targetAttribute)
     {
         string[] attributeList = new string[] { attributeStr };
 

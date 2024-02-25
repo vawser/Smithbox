@@ -713,25 +713,30 @@ public class SettingsWindow
         {
             if (ImGui.CollapsingHeader("Files", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Show Map Names", ref CFG.Current.Gparam_DisplayMapNames);
+                ImGui.Checkbox("Show map names", ref CFG.Current.Gparam_DisplayMapNames);
                 ImguiUtils.ShowHelpMarker("Show map names in the GPARAM file list.");
             }
 
             if (ImGui.CollapsingHeader("Groups", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Show add button for missing groups", ref CFG.Current.Gparam_DisplayAddGroups);
+                ImguiUtils.ShowHelpMarker("Show the Add button for groups that are not present.");
 
-                ImGui.Checkbox("Show Add Group options", ref CFG.Current.Gparam_DisplayGroupAdd);
-                ImguiUtils.ShowHelpMarker("Show the Add Group options, which allow the addition of GPARAM groups that are not already present within a GPARAM file.");
+                ImGui.Checkbox("Show empty groups", ref CFG.Current.Gparam_DisplayEmptyGroups);
+                ImguiUtils.ShowHelpMarker("Display empty groups in the group list.");
             }
 
             if (ImGui.CollapsingHeader("Fields", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Show add button for missing fields", ref CFG.Current.Gparam_DisplayAddFields);
+                ImguiUtils.ShowHelpMarker("Show the Add button for fields that are not present.");
+            }
+
+            if (ImGui.CollapsingHeader("Values", ImGuiTreeNodeFlags.DefaultOpen))
+            {
                 ImGui.Checkbox("Show color edit for 4 digit properties", ref CFG.Current.Gparam_DisplayColorEditForVector4Fields);
                 ImguiUtils.ShowHelpMarker("Show the color edit tool for 4 digit properties.");
 
-                ImGui.Checkbox("Show Time of Day value", ref CFG.Current.Gparam_DisplayUnk04);
-                ImguiUtils.ShowHelpMarker("Show the time of day value for a field.");
-                
             }
 
             ImGui.EndTabItem();
