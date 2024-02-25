@@ -677,7 +677,7 @@ public class SettingsWindow
             // Values
             if (ImGui.CollapsingHeader("Values"))
                 {
-                    ImGui.Checkbox("Show inverted percentages in traditional form", ref CFG.Current.Param_ShowInvertedPercentages);
+                    ImGui.Checkbox("Show inverted percentages as traditional percentages", ref CFG.Current.Param_ShowTraditionalPercentages);
                 ImguiUtils.ShowHelpMarker("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
             }
 

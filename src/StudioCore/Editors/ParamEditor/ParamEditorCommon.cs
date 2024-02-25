@@ -146,7 +146,7 @@ public class ParamEditorCommon
         else if (typ == typeof(float))
         {
             // Display in-game form of this property (i.e. 75% instead of 0.25)
-            if (isInvertedPercentage && CFG.Current.Param_ShowInvertedPercentages)
+            if (isInvertedPercentage && CFG.Current.Param_ShowTraditionalPercentages)
             {
                 float fakeVal = (1 - (float)oldval) * 100;
 
