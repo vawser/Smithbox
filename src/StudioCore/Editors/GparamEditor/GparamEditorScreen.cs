@@ -139,6 +139,9 @@ public class GparamEditorScreen : EditorScreen
         
     }
 
+    /// <summary>
+    /// Files list: selectable files
+    /// </summary>
     private void GparamListView()
     {
         ImGui.Begin("Files##GparamFileList");
@@ -196,48 +199,9 @@ public class GparamEditorScreen : EditorScreen
         ImGui.End();
     }
 
-    public void GparamFileContextMenu(string name, GparamParamBank.GparamInfo info)
-    {
-        if (info.Name == _selectedGparamKey)
-        {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
-            {
-                if (ImGui.Selectable("Duplicate"))
-                {
-                    DuplicateGparamFile();
-
-                    ImGui.CloseCurrentPopup();
-                }
-                ImguiUtils.ShowButtonTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
-
-                if (ImGui.Selectable("Copy"))
-                {
-                    CopyGparamFile(info);
-
-                    ImGui.CloseCurrentPopup();
-                }
-                ImguiUtils.ShowButtonTooltip("Copy the selected file and rename it to the name specified below");
-
-                if (ImGui.Selectable("Remove"))
-                {
-                    RemoveGparamFile(info);
-
-                    ImGui.CloseCurrentPopup();
-                }
-                ImguiUtils.ShowButtonTooltip("Delete the selected file from your project.");
-                ImGui.Separator();
-
-                // Copy
-                if (_copyFileNewName == "")
-                    _copyFileNewName = name;
-
-                ImGui.InputText("##copyInputName", ref _copyFileNewName, 255);
-
-                ImGui.EndPopup();
-            }
-        }
-    }
-
+    /// <summary>
+    /// Groups list: selectable groups
+    /// </summary>
     public void GparamGroupList()
     {
         ImGui.Begin("Groups##GparamGroups");
@@ -308,25 +272,9 @@ public class GparamEditorScreen : EditorScreen
         ImGui.End();
     }
 
-    public void ShowGparamGroupContext(int index)
-    {
-        if (index == _selectedParamGroupKey)
-        {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
-            {
-                if (ImGui.Selectable("Remove"))
-                {
-                    _selectedGparam.Params.Remove(_selectedParamGroup);
-
-                    ImGui.CloseCurrentPopup();
-                }
-                ImguiUtils.ShowButtonTooltip("Delete the selected group.");
-
-                ImGui.EndPopup();
-            }
-        }
-    }
-
+    /// <summary>
+    /// Groups List: add buttons
+    /// </summary>
     public void GparamGroupAddSection()
     {
         GPARAM data = _selectedGparam;
@@ -363,16 +311,9 @@ public class GparamEditorScreen : EditorScreen
         }
     }
 
-    public void AddMissingGroup(FormatReference missingGroup)
-    {
-        var newGroup = new GPARAM.Param();
-        newGroup.Key = missingGroup.id;
-        newGroup.Name = missingGroup.name;
-        newGroup.Fields = new List<GPARAM.IField>();
-
-        _selectedGparam.Params.Add(newGroup);
-    }
-
+    /// <summary>
+    /// Fields List: selectable fields
+    /// </summary>
     public void GparamFieldList()
     {
         ImGui.Begin("Fields##GparamFields");
@@ -428,6 +369,9 @@ public class GparamEditorScreen : EditorScreen
         ImGui.End();
     }
 
+    /// <summary>
+    /// Fields list: Add buttons
+    /// </summary>
     public void GparamFieldAddSection()
     {
         GPARAM.Param data = _selectedParamGroup;
@@ -474,6 +418,591 @@ public class GparamEditorScreen : EditorScreen
         }
     }
 
+    /// <summary>
+    /// Values table
+    /// </summary>
+    private void GparamValueProperties()
+    {
+        ImGui.Begin("Values##GparamValues");
+
+        ImGui.Separator();
+
+        ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
+        ImGui.SameLine();
+        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+
+        ImGui.Separator();
+
+        if (_fieldIdSearchInput != _fieldIdSearchInputCache)
+        {
+            _fieldIdSearchInputCache = _fieldIdSearchInput;
+        }
+
+        if (_selectedParamField != null && _selectedParamFieldKey != -1)
+        {
+            GPARAM.IField field = _selectedParamField;
+
+            ResetDisplayTruth(field);
+
+            ImGui.Columns(4);
+
+            // ID
+            ImGui.BeginChild("IdList##GparamPropertyIds");
+            ImGui.Text($"ID");
+            ImGui.Separator();
+
+            for (int i = 0; i < field.Values.Count; i++)
+            {
+                GPARAM.IFieldValue entry = field.Values[i];
+
+                displayTruth[i] = SearchFilters.IsIdSearchMatch(_fieldIdSearchInput, entry.Id.ToString());
+
+                if (displayTruth[i])
+                {
+                    GparamProperty_ID(i, field, entry);
+                }
+            }
+
+            ImGui.EndChild();
+
+            ImGui.NextColumn();
+
+            // Time of Day
+            ImGui.BeginChild("IdList##GparamTimeOfDay");
+            ImGui.Text($"Time of Day");
+            ImGui.Separator();
+
+            for (int i = 0; i < field.Values.Count; i++)
+            {
+                if (displayTruth[i])
+                {
+                    GPARAM.IFieldValue entry = field.Values[i];
+                    GparamProperty_TimeOfDay(i, field, entry);
+                }
+            }
+
+            ImGui.EndChild();
+
+            ImGui.NextColumn();
+
+            // Value
+            ImGui.BeginChild("ValueList##GparamPropertyValues");
+            ImGui.Text($"Value");
+            ImGui.Separator();
+
+            for (int i = 0; i < field.Values.Count; i++)
+            {
+                if (displayTruth[i])
+                {
+                    GPARAM.IFieldValue entry = field.Values[i];
+                    GparamProperty_Value(i, field, entry);
+                }
+            }
+
+            ImGui.EndChild();
+
+            // Information
+            ImGui.NextColumn();
+
+            // Value
+            ImGui.BeginChild("InfoList##GparamPropertyInfo");
+            ImGui.Text($"Information");
+            ImGui.Separator();
+
+            // Only show once
+            GparamProperty_Info(field);
+
+            ImGui.EndChild();
+        }
+
+        ImGui.End();
+    }
+
+    /// <summary>
+    /// Reset the Values display truth list
+    /// </summary>
+    /// <param name="field"></param>
+    public void ResetDisplayTruth(IField field)
+    {
+        displayTruth = new bool[field.Values.Count];
+
+        for (int i = 0; i < field.Values.Count; i++)
+        {
+            displayTruth[i] = true;
+        }
+    }
+
+    /// <summary>
+    /// Extend the Values display truth list in preparation for value row addition.
+    /// </summary>
+    /// <param name="field"></param>
+    public void ExtendDisplayTruth(IField field)
+    {
+        displayTruth = new bool[field.Values.Count + 1];
+
+        for (int i = 0; i < field.Values.Count + 1; i++)
+        {
+            displayTruth[i] = true;
+        }
+    }
+
+    /// <summary>
+    /// Values table: ID column
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="field"></param>
+    /// <param name="value"></param>
+    public void GparamProperty_ID(int index, IField field, IFieldValue value)
+    {
+        ImGui.AlignTextToFramePadding();
+
+        string name = value.Id.ToString();
+
+        if (ImGui.Selectable($"{name}##{index}", index == _selectedFieldValueKey))
+        {
+            _selectedFieldValue = value;
+            _selectedFieldValueKey = index;
+            _duplicateValueRowId = value.Id;
+        }
+
+        DisplayPropertyIdContext(index);
+    }
+
+    /// <summary>
+    /// Values table: Time of Day column
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="field"></param>
+    /// <param name="value"></param>
+    public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
+    {
+        ImGui.AlignTextToFramePadding();
+        GparamEditor.TimeOfDayField(index, field, value);
+    }
+
+    /// <summary>
+    /// Values table: Value column
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="field"></param>
+    /// <param name="value"></param>
+    public void GparamProperty_Value(int index, IField field, IFieldValue value)
+    {
+        ImGui.AlignTextToFramePadding();
+        GparamEditor.ValueField(index, field, value);
+    }
+
+    /// <summary>
+    /// Values table: Information column
+    /// </summary>
+    /// <param name="field"></param>
+    public void GparamProperty_Info(IField field)
+    {
+        ImGui.AlignTextToFramePadding();
+
+        string desc = GparamFormatBank.Bank.GetReferenceDescription(_selectedParamField.Key);
+
+        // Skip if empty
+        if (desc != "")
+        {
+            ImGui.Text($"{desc}");
+        }
+
+        // Show enum list if they exist
+        var propertyEnum = GparamFormatBank.Bank.GetEnumForProperty(field.Key);
+        if (propertyEnum != null)
+        {
+            foreach (var entry in propertyEnum.members)
+            {
+                ImGui.Text($"{entry.id} - {entry.name}");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Context menu for File list
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="info"></param>
+    public void GparamFileContextMenu(string name, GparamParamBank.GparamInfo info)
+    {
+        if (info.Name == _selectedGparamKey)
+        {
+            if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
+            {
+                // Only show if the file exists in the project directory
+                if (info.Path.Contains(Project.GameModDirectory))
+                {
+                    if (ImGui.Selectable("Remove"))
+                    {
+                        RemoveGparamFile(info);
+
+                        ImGui.CloseCurrentPopup();
+                    }
+                    ImguiUtils.ShowButtonTooltip("Delete the selected file from your project.");
+                }
+
+                if (ImGui.Selectable("Duplicate"))
+                {
+                    DuplicateGparamFile();
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
+
+                if (ImGui.Selectable("Copy"))
+                {
+                    CopyGparamFile(info);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Copy the selected file and rename it to the name specified below");
+
+                ImGui.Separator();
+
+                // Copy
+                if (_copyFileNewName == "")
+                    _copyFileNewName = name;
+
+                ImGui.InputText("##copyInputName", ref _copyFileNewName, 255);
+
+                ImGui.EndPopup();
+            }
+        }
+    }
+
+
+    /// <summary>
+    /// Context menu for Groups list
+    /// </summary>
+    /// <param name="index"></param>
+    public void ShowGparamGroupContext(int index)
+    {
+        if (index == _selectedParamGroupKey)
+        {
+            if (ImGui.BeginPopupContextItem($"Options##Gparam_Group_Context"))
+            {
+                if (ImGui.Selectable("Remove"))
+                {
+                    _selectedGparam.Params.Remove(_selectedParamGroup);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Delete the selected group.");
+
+                ImGui.EndPopup();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Context menu for Fields list
+    /// </summary>
+    /// <param name="index"></param>
+    public void ShowGparamFieldContext(int index)
+    {
+        if (index == _selectedParamFieldKey)
+        {
+            if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
+            {
+                if (ImGui.Selectable("Remove"))
+                {
+                    _selectedParamGroup.Fields.Remove(_selectedParamField);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Delete the selected row.");
+
+                ImGui.EndPopup();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Context menu for Values table, ID column
+    /// </summary>
+    /// <param name="index"></param>
+    public void DisplayPropertyIdContext(int index)
+    {
+        if (index == _selectedFieldValueKey)
+        {
+            if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
+            {
+                if (ImGui.Selectable("Remove"))
+                {
+                    GparamEditor.RemovePropertyValueRow(_selectedParamField, _selectedFieldValue);
+
+                    // Update the group index lists to account for the removed ID.
+                    GparamEditor.UpdateGroupIndexes(_selectedGparam);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Delete the value row.");
+
+                if (ImGui.Selectable("Duplicate"))
+                {
+                    ExtendDisplayTruth(_selectedParamField);
+                    GparamEditor.AddPropertyValueRow(_selectedParamField, _selectedFieldValue, _duplicateValueRowId);
+
+                    // Update the group index lists to account for the new ID.
+                    GparamEditor.UpdateGroupIndexes(_selectedGparam);
+
+                    ImGui.CloseCurrentPopup();
+                }
+                ImguiUtils.ShowButtonTooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+
+                ImGui.InputInt("##valueIdInput", ref _duplicateValueRowId);
+
+                if (_duplicateValueRowId < 0)
+                {
+                    _duplicateValueRowId = 0;
+                }
+
+                ImGui.EndPopup();
+            }
+        }
+    }
+
+
+    public void OnProjectChanged(ProjectSettings newSettings)
+    {
+        _projectSettings = newSettings;
+
+        if (CFG.Current.AutoLoadBank_Gparam)
+            GparamParamBank.LoadGraphicsParams();
+
+        ResetActionManager();
+    }
+
+    public void Save()
+    {
+        if (GparamParamBank.IsLoaded)
+            GparamParamBank.SaveGraphicsParam(_selectedGparamInfo);
+    }
+
+    public void SaveAll()
+    {
+        if (GparamParamBank.IsLoaded)
+            GparamParamBank.SaveGraphicsParams();
+    }
+
+    private void ResetActionManager()
+    {
+        EditorActionManager.Clear();
+    }
+
+
+    private void ResetAllSelection()
+    {
+        ResetFileSelection();
+        ResetGroupSelection();
+        ResetFieldSelection();
+        ResetValueSelection();
+    }
+
+    private void ResetFileSelection()
+    {
+        _selectedGparam = null;
+        _selectedGparamKey = "";
+    }
+
+    private void ResetGroupSelection()
+    {
+        _selectedParamGroup = null;
+        _selectedParamGroupKey = -1;
+    }
+
+    private void ResetFieldSelection()
+    {
+        _selectedParamField = null;
+        _selectedParamFieldKey = -1;
+    }
+
+    private void ResetValueSelection()
+    {
+        _selectedFieldValue = null;
+        _selectedFieldValueKey = -1;
+    }
+
+    /// <summary>
+    /// Remove target GPARAM file from project
+    /// </summary>
+    /// <param name="info"></param>
+    public void RemoveGparamFile(GparamParamBank.GparamInfo info)
+    {
+        string filePath = info.Path;
+        string baseFileName = info.Name;
+
+        filePath = filePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+
+        if (File.Exists(filePath))
+        {
+            TaskLogs.AddLog($"{baseFileName} was removed from your project.");
+            File.Delete(filePath);
+        }
+        else
+        {
+            TaskLogs.AddLog($"{baseFileName} does not exist within your project.");
+        }
+
+        GparamParamBank.LoadGraphicsParams();
+    }
+
+    /// <summary>
+    /// Copy and rename target GPARAM file
+    /// </summary>
+    /// <param name="info"></param>
+    public void CopyGparamFile(GparamParamBank.GparamInfo info)
+    {
+        string filePath = info.Path;
+        string baseFileName = info.Name;
+        string tryFileName = _copyFileNewName;
+
+        string newFilePath = filePath.Replace(baseFileName, tryFileName);
+
+        // If the original is in the root dir, change the path to mod
+        newFilePath = newFilePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+
+        if (!File.Exists(newFilePath))
+        {
+            File.Copy(filePath, newFilePath);
+        }
+        else
+        {
+            TaskLogs.AddLog($"{newFilePath} already exists!");
+        }
+
+        GparamParamBank.LoadGraphicsParams();
+    }
+
+    /// <summary>
+    /// Duplicate target GPARAM file, increment sub ID if valid
+    /// </summary>
+    public void DuplicateGparamFile()
+    {
+        bool isValidFile = false;
+        string filePath = _selectedGparamInfo.Path;
+        string baseFileName = _selectedGparamInfo.Name;
+        string tryFileName = _selectedGparamInfo.Name;
+
+        do
+        {
+            string currentfileName = CreateDuplicateFileName(tryFileName);
+            string newFilePath = filePath.Replace(baseFileName, currentfileName);
+
+            // If the original is in the root dir, change the path to mod
+            newFilePath = newFilePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
+
+            if (!File.Exists(newFilePath))
+            {
+                File.Copy(filePath, newFilePath);
+                isValidFile = true;
+            }
+            else
+            {
+                TaskLogs.AddLog($"{newFilePath} already exists!");
+                tryFileName = currentfileName;
+            }
+        }
+        while (!isValidFile);
+
+        GparamParamBank.LoadGraphicsParams();
+    }
+
+    /// <summary>
+    /// Search for valid duplicate name for a GPARAM file
+    /// </summary>
+    /// <param name="fileName"></param>
+    /// <returns></returns>
+    public string CreateDuplicateFileName(string fileName)
+    {
+        Match mapMatch = Regex.Match(fileName, @"[0-9]{4}");
+
+        if(mapMatch.Success)
+        {
+            var res = mapMatch.Groups[0].Value;
+
+            int slot = 0;
+            string slotStr = "";
+
+            try
+            {
+                int number;
+                int.TryParse(res, out number);
+
+                slot = number + 1;
+            }
+            catch { }
+
+            if(slot >= 100 && slot < 999)
+            {
+                slotStr = "0";
+            }
+            if (slot >= 10 && slot < 99)
+            {
+                slotStr = "00";
+            }
+            if (slot >= 0 && slot < 9)
+            {
+                slotStr = "000";
+            }
+
+            var finalSlotStr = $"{slotStr}{slot}";
+            var final = fileName.Replace(res, finalSlotStr);
+
+            return final;
+        }
+        else
+        {
+            Match dupeMatch = Regex.Match(fileName, @"__[0-9]{1}");
+
+            if (dupeMatch.Success)
+            {
+                var res = dupeMatch.Groups[0].Value;
+
+                Match numMatch = Regex.Match(res, @"[0-9]{1}");
+
+                var num = numMatch.Groups[0].Value;
+                try
+                {
+                    int number;
+                    int.TryParse(res, out number);
+
+                    number = number + 1;
+
+                    return $"{fileName}__{number}";
+                }
+                catch 
+                {
+                    return $"{fileName}__1";
+                }
+            }
+            else
+            {
+                return $"{fileName}__1";
+            }
+        }
+    }
+
+    /// <summary>
+    /// Add missing param group to target GPARAM
+    /// </summary>
+    /// <param name="missingGroup"></param>
+    public void AddMissingGroup(FormatReference missingGroup)
+    {
+        var newGroup = new GPARAM.Param();
+        newGroup.Key = missingGroup.id;
+        newGroup.Name = missingGroup.name;
+        newGroup.Fields = new List<GPARAM.IField>();
+
+        _selectedGparam.Params.Add(newGroup);
+    }
+
+    /// <summary>
+    /// Add missing field to target Param Group
+    /// </summary>
+    /// <param name="targetParam"></param>
+    /// <param name="missingField"></param>
     public void AddMissingField(Param targetParam, FormatMember missingField)
     {
         var typeName = GparamFormatBank.Bank.GetTypeForProperty(missingField.id);
@@ -608,622 +1137,5 @@ public class GparamEditorScreen : EditorScreen
         }
 
         // Unknown
-    }
-
-    public void ShowGparamFieldContext(int index)
-    {
-        if (index == _selectedParamFieldKey)
-        {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
-            {
-                if (ImGui.Selectable("Remove"))
-                {
-                    _selectedParamGroup.Fields.Remove(_selectedParamField);
-
-                    ImGui.CloseCurrentPopup();
-                }
-                ImguiUtils.ShowButtonTooltip("Delete the selected row.");
-
-                ImGui.EndPopup();
-            }
-        }
-    }
-
-    private void GparamValueProperties()
-    {
-        ImGui.Begin("Values##GparamValues");
-
-        ImGui.Separator();
-
-        ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
-        ImGui.SameLine();
-        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
-
-        ImGui.Separator();
-
-        if (_fieldIdSearchInput != _fieldIdSearchInputCache)
-        {
-            _fieldIdSearchInputCache = _fieldIdSearchInput;
-        }
-
-        if (_selectedParamField != null && _selectedParamFieldKey != -1)
-        {
-            GPARAM.IField field = _selectedParamField;
-
-            ResetDisplayTruth(field);
-
-            ImGui.Columns(4);
-
-            // ID
-            ImGui.BeginChild("IdList##GparamPropertyIds");
-            ImGui.Text($"ID");
-            ImGui.Separator();
-
-            for (int i = 0; i < field.Values.Count; i++)
-            {
-                GPARAM.IFieldValue entry = field.Values[i];
-
-                displayTruth[i] = SearchFilters.IsIdSearchMatch(_fieldIdSearchInput, entry.Id.ToString());
-
-                if (displayTruth[i])
-                {
-                    GparamProperty_ID(i, field, entry);
-                }
-            }
-
-            ImGui.EndChild();
-
-            ImGui.NextColumn();
-
-            // Time of Day
-            ImGui.BeginChild("IdList##GparamTimeOfDay");
-            ImGui.Text($"Time of Day");
-            ImGui.Separator();
-
-            for (int i = 0; i < field.Values.Count; i++)
-            {
-                if (displayTruth[i])
-                {
-                    GPARAM.IFieldValue entry = field.Values[i];
-                    GparamProperty_TimeOfDay(i, field, entry);
-                }
-            }
-
-            ImGui.EndChild();
-
-            ImGui.NextColumn();
-
-            // Value
-            ImGui.BeginChild("ValueList##GparamPropertyValues");
-            ImGui.Text($"Value");
-            ImGui.Separator();
-
-            for (int i = 0; i < field.Values.Count; i++)
-            {
-                if (displayTruth[i])
-                {
-                    GPARAM.IFieldValue entry = field.Values[i];
-                    GparamProperty_Value(i, field, entry);
-                }
-            }
-
-            ImGui.EndChild();
-
-            // Information
-            ImGui.NextColumn();
-
-            // Value
-            ImGui.BeginChild("InfoList##GparamPropertyInfo");
-            ImGui.Text($"Information");
-            ImGui.Separator();
-
-            // Only show once
-            GparamProperty_Info(field);
-
-            ImGui.EndChild();
-        }
-
-        ImGui.End();
-    }
-
-    public void ResetDisplayTruth(IField field)
-    {
-        displayTruth = new bool[field.Values.Count];
-
-        for (int i = 0; i < field.Values.Count; i++)
-        {
-            displayTruth[i] = true;
-        }
-    }
-
-    public void ExtendDisplayTruth(IField field)
-    {
-        displayTruth = new bool[field.Values.Count + 1];
-
-        for (int i = 0; i < field.Values.Count + 1; i++)
-        {
-            displayTruth[i] = true;
-        }
-    }
-
-    public void GparamProperty_ID(int index, IField field, IFieldValue value)
-    {
-        ImGui.AlignTextToFramePadding();
-
-        string name = value.Id.ToString();
-
-        if (ImGui.Selectable($"{name}##{index}", index == _selectedFieldValueKey))
-        {
-            _selectedFieldValue = value;
-            _selectedFieldValueKey = index;
-            _duplicateValueRowId = value.Id;
-        }
-
-        DisplayPropertyIdContext(index);
-    }
-
-    public void DisplayPropertyIdContext(int index)
-    {
-        if (index == _selectedFieldValueKey)
-        {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
-            {
-                if (ImGui.Selectable("Remove"))
-                {
-                    RemoveProperyValueRow();
-
-                    // Update the group index lists to account for the removed ID.
-                    GparamEditor.UpdateGroupIndexes(_selectedGparam);
-
-                    ImGui.CloseCurrentPopup();
-                }
-                ImguiUtils.ShowButtonTooltip("Delete the value row.");
-
-                if (ImGui.Selectable("Duplicate"))
-                {
-                    DuplicateProperyValueRow();
-
-                    // Update the group index lists to account for the new ID.
-                    GparamEditor.UpdateGroupIndexes(_selectedGparam);
-
-                    ImGui.CloseCurrentPopup();
-                }
-                ImguiUtils.ShowButtonTooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
-
-                ImGui.InputInt("##valueIdInput", ref _duplicateValueRowId);
-
-                if (_duplicateValueRowId < 0)
-                {
-                    _duplicateValueRowId = 0;
-                }
-
-                ImGui.EndPopup();
-            }
-        }
-    }
-
-    public void DuplicateProperyValueRow()
-    {
-        ExtendDisplayTruth(_selectedParamField);
-
-        if (_selectedParamField is SbyteField sbyteField)
-        {
-            GPARAM.SbyteField castField = (SbyteField)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<sbyte>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (sbyte)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is ByteField byteField)
-        {
-            GPARAM.ByteField castField = (ByteField)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<byte>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (byte)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is ShortField shortField)
-        {
-            GPARAM.ShortField castField = (ShortField)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<short>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (short)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is IntField intField)
-        {
-            GPARAM.IntField castField = (IntField)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<int>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (int)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is UintField uintField)
-        {
-            GPARAM.UintField castField = (UintField)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<uint>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (uint)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is FloatField floatField)
-        {
-            GPARAM.FloatField castField = (FloatField)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<float>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (float)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is BoolField boolField)
-        {
-            GPARAM.BoolField castField = (BoolField)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<bool>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (bool)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is Vector2Field vector2Field)
-        {
-            GPARAM.Vector2Field castField = (Vector2Field)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<Vector2>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (Vector2)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is Vector3Field vector3Field)
-        {
-            GPARAM.Vector3Field castField = (Vector3Field)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<Vector3>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (Vector3)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is Vector4Field vector4Field)
-        {
-            GPARAM.Vector4Field castField = (Vector4Field)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<Vector4>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (Vector4)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-        if (_selectedParamField is ColorField colorField)
-        {
-            GPARAM.ColorField castField = (ColorField)_selectedParamField;
-
-            var dupeVal = new GPARAM.FieldValue<Color>();
-            dupeVal.Id = _duplicateValueRowId;
-            dupeVal.Unk04 = _selectedFieldValue.Unk04;
-            dupeVal.Value = (Color)_selectedFieldValue.Value;
-
-            castField.Values.Add(dupeVal);
-        }
-    }
-
-    public void RemoveProperyValueRow()
-    {
-        if (_selectedParamField is SbyteField sbyteField)
-        {
-            GPARAM.SbyteField castField = (SbyteField)_selectedParamField;
-            castField.Values.Remove((FieldValue<sbyte>)_selectedFieldValue);
-        }
-        if (_selectedParamField is ByteField byteField)
-        {
-            GPARAM.ByteField castField = (ByteField)_selectedParamField;
-            castField.Values.Remove((FieldValue<byte>)_selectedFieldValue);
-        }
-        if (_selectedParamField is ShortField shortField)
-        {
-            GPARAM.ShortField castField = (ShortField)_selectedParamField;
-            castField.Values.Remove((FieldValue<short>)_selectedFieldValue);
-        }
-        if (_selectedParamField is IntField intField)
-        {
-            GPARAM.IntField castField = (IntField)_selectedParamField;
-            castField.Values.Remove((FieldValue<int>)_selectedFieldValue);
-        }
-        if (_selectedParamField is UintField uintField)
-        {
-            GPARAM.UintField castField = (UintField)_selectedParamField;
-            castField.Values.Remove((FieldValue<uint>)_selectedFieldValue);
-        }
-        if (_selectedParamField is FloatField floatField)
-        {
-            GPARAM.FloatField castField = (FloatField)_selectedParamField;
-            castField.Values.Remove((FieldValue<float>)_selectedFieldValue);
-        }
-        if (_selectedParamField is BoolField boolField)
-        {
-            GPARAM.BoolField castField = (BoolField)_selectedParamField;
-            castField.Values.Remove((FieldValue<bool>)_selectedFieldValue);
-        }
-        if (_selectedParamField is Vector2Field vector2Field)
-        {
-            GPARAM.Vector2Field castField = (Vector2Field)_selectedParamField;
-            castField.Values.Remove((FieldValue<Vector2>)_selectedFieldValue);
-        }
-        if (_selectedParamField is Vector3Field vector3Field)
-        {
-            GPARAM.Vector3Field castField = (Vector3Field)_selectedParamField;
-            castField.Values.Remove((FieldValue<Vector3>)_selectedFieldValue);
-        }
-        if (_selectedParamField is Vector4Field vector4Field)
-        {
-            GPARAM.Vector4Field castField = (Vector4Field)_selectedParamField;
-            castField.Values.Remove((FieldValue<Vector4>)_selectedFieldValue);
-        }
-        if (_selectedParamField is ColorField colorField)
-        {
-            GPARAM.ColorField castField = (ColorField)_selectedParamField;
-            castField.Values.Remove((FieldValue<Color>)_selectedFieldValue);
-        }
-    }
-
-    public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
-    {
-        ImGui.AlignTextToFramePadding();
-        GparamEditor.TimeOfDayField(index, field, value);
-    }
-
-    public void GparamProperty_Value(int index, IField field, IFieldValue value)
-    {
-        ImGui.AlignTextToFramePadding();
-        GparamEditor.ValueField(index, field, value);
-    }
-
-    public void GparamProperty_Info(IField field)
-    {
-        ImGui.AlignTextToFramePadding();
-
-        string desc = GparamFormatBank.Bank.GetReferenceDescription(_selectedParamField.Key);
-
-        // Skip if empty
-        if (desc != "")
-        {
-            ImGui.Text($"{desc}");
-        }
-
-        // Show enum list if they exist
-        var propertyEnum = GparamFormatBank.Bank.GetEnumForProperty(field.Key);
-        if (propertyEnum != null)
-        {
-            foreach (var entry in propertyEnum.members)
-            {
-                ImGui.Text($"{entry.id} - {entry.name}");
-            }
-        }
-    }
-
-    public void OnProjectChanged(ProjectSettings newSettings)
-    {
-        _projectSettings = newSettings;
-
-        if (CFG.Current.AutoLoadBank_Gparam)
-            GparamParamBank.LoadGraphicsParams();
-
-        ResetActionManager();
-    }
-
-    public void Save()
-    {
-        if (GparamParamBank.IsLoaded)
-            GparamParamBank.SaveGraphicsParam(_selectedGparamInfo);
-    }
-
-    public void SaveAll()
-    {
-        if (GparamParamBank.IsLoaded)
-            GparamParamBank.SaveGraphicsParams();
-    }
-
-    private void ResetActionManager()
-    {
-        EditorActionManager.Clear();
-    }
-
-
-    private void ResetAllSelection()
-    {
-        ResetFileSelection();
-        ResetGroupSelection();
-        ResetFieldSelection();
-        ResetValueSelection();
-    }
-
-    private void ResetFileSelection()
-    {
-        _selectedGparam = null;
-        _selectedGparamKey = "";
-    }
-
-    private void ResetGroupSelection()
-    {
-        _selectedParamGroup = null;
-        _selectedParamGroupKey = -1;
-    }
-
-    private void ResetFieldSelection()
-    {
-        _selectedParamField = null;
-        _selectedParamFieldKey = -1;
-    }
-
-    private void ResetValueSelection()
-    {
-        _selectedFieldValue = null;
-        _selectedFieldValueKey = -1;
-    }
-
-    public void RemoveGparamFile(GparamParamBank.GparamInfo info)
-    {
-        string filePath = info.Path;
-        string baseFileName = info.Name;
-
-        filePath = filePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
-
-        if (File.Exists(filePath))
-        {
-            TaskLogs.AddLog($"{baseFileName} was removed from your project.");
-            File.Delete(filePath);
-        }
-        else
-        {
-            TaskLogs.AddLog($"{baseFileName} does not exist within your project.");
-        }
-
-        GparamParamBank.LoadGraphicsParams();
-    }
-
-    public void CopyGparamFile(GparamParamBank.GparamInfo info)
-    {
-        string filePath = info.Path;
-        string baseFileName = info.Name;
-        string tryFileName = _copyFileNewName;
-
-        string newFilePath = filePath.Replace(baseFileName, tryFileName);
-
-        // If the original is in the root dir, change the path to mod
-        newFilePath = newFilePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
-
-        if (!File.Exists(newFilePath))
-        {
-            File.Copy(filePath, newFilePath);
-        }
-        else
-        {
-            TaskLogs.AddLog($"{newFilePath} already exists!");
-        }
-
-        GparamParamBank.LoadGraphicsParams();
-    }
-
-    public void DuplicateGparamFile()
-    {
-        bool isValidFile = false;
-        string filePath = _selectedGparamInfo.Path;
-        string baseFileName = _selectedGparamInfo.Name;
-        string tryFileName = _selectedGparamInfo.Name;
-
-        do
-        {
-            string currentfileName = CreateDuplicateFileName(tryFileName);
-            string newFilePath = filePath.Replace(baseFileName, currentfileName);
-
-            // If the original is in the root dir, change the path to mod
-            newFilePath = newFilePath.Replace($"{Project.GameRootDirectory}", $"{Project.GameModDirectory}");
-
-            if (!File.Exists(newFilePath))
-            {
-                File.Copy(filePath, newFilePath);
-                isValidFile = true;
-            }
-            else
-            {
-                TaskLogs.AddLog($"{newFilePath} already exists!");
-                tryFileName = currentfileName;
-            }
-        }
-        while (!isValidFile);
-
-        GparamParamBank.LoadGraphicsParams();
-    }
-
-    public string CreateDuplicateFileName(string fileName)
-    {
-        Match mapMatch = Regex.Match(fileName, @"[0-9]{4}");
-
-        if(mapMatch.Success)
-        {
-            var res = mapMatch.Groups[0].Value;
-
-            int slot = 0;
-            string slotStr = "";
-
-            try
-            {
-                int number;
-                int.TryParse(res, out number);
-
-                slot = number + 1;
-            }
-            catch { }
-
-            if(slot >= 100 && slot < 999)
-            {
-                slotStr = "0";
-            }
-            if (slot >= 10 && slot < 99)
-            {
-                slotStr = "00";
-            }
-            if (slot >= 0 && slot < 9)
-            {
-                slotStr = "000";
-            }
-
-            var finalSlotStr = $"{slotStr}{slot}";
-            var final = fileName.Replace(res, finalSlotStr);
-
-            return final;
-        }
-        else
-        {
-            Match dupeMatch = Regex.Match(fileName, @"__[0-9]{1}");
-
-            if (dupeMatch.Success)
-            {
-                var res = dupeMatch.Groups[0].Value;
-
-                Match numMatch = Regex.Match(res, @"[0-9]{1}");
-
-                var num = numMatch.Groups[0].Value;
-                try
-                {
-                    int number;
-                    int.TryParse(res, out number);
-
-                    number = number + 1;
-
-                    return $"{fileName}__{number}";
-                }
-                catch 
-                {
-                    return $"{fileName}__1";
-                }
-            }
-            else
-            {
-                return $"{fileName}__1";
-            }
-        }
     }
 }

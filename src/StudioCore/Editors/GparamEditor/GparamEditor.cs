@@ -421,7 +421,8 @@ public class GparamEditor
     }
 
     /// <summary>
-    /// Update the UnkParamExtras lists to reflect the new state of the GPARAM
+    /// Update the group index lists to reflect any additions
+    /// or removals in terms of value row ids
     /// </summary>
     public static void UpdateGroupIndexes(GPARAM gparam)
     {
@@ -453,5 +454,200 @@ public class GparamEditor
         }
 
         gparam.UnkParamExtras = newGroupIndexes;
+    }
+
+    /// <summary>
+    /// Add selected value row (with specified new ID) to target field value list
+    /// </summary>
+    /// <param name="targetField"></param>
+    /// <param name="targetValue"></param>
+    /// <param name="newRowId"></param>
+    public static void AddPropertyValueRow(IField targetField, IFieldValue targetValue, int newRowId)
+    {
+        if (targetField is SbyteField sbyteField)
+        {
+            GPARAM.SbyteField castField = (SbyteField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<sbyte>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (sbyte)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is ByteField byteField)
+        {
+            GPARAM.ByteField castField = (ByteField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<byte>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (byte)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is ShortField shortField)
+        {
+            GPARAM.ShortField castField = (ShortField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<short>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (short)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is IntField intField)
+        {
+            GPARAM.IntField castField = (IntField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<int>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (int)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is UintField uintField)
+        {
+            GPARAM.UintField castField = (UintField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<uint>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (uint)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is FloatField floatField)
+        {
+            GPARAM.FloatField castField = (FloatField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<float>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (float)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is BoolField boolField)
+        {
+            GPARAM.BoolField castField = (BoolField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<bool>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (bool)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is Vector2Field vector2Field)
+        {
+            GPARAM.Vector2Field castField = (Vector2Field)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<Vector2>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (Vector2)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is Vector3Field vector3Field)
+        {
+            GPARAM.Vector3Field castField = (Vector3Field)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<Vector3>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (Vector3)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is Vector4Field vector4Field)
+        {
+            GPARAM.Vector4Field castField = (Vector4Field)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<Vector4>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (Vector4)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+        if (targetField is ColorField colorField)
+        {
+            GPARAM.ColorField castField = (ColorField)targetField;
+
+            var dupeVal = new GPARAM.FieldValue<Color>();
+            dupeVal.Id = newRowId;
+            dupeVal.Unk04 = targetValue.Unk04;
+            dupeVal.Value = (Color)targetValue.Value;
+
+            castField.Values.Add(dupeVal);
+        }
+    }
+
+    /// <summary>
+    /// Removed selected value row from target field value list
+    /// </summary>
+    /// <param name="targetField"></param>
+    /// <param name="targetValue"></param>
+    public static void RemovePropertyValueRow(IField targetField, IFieldValue targetValue)
+    {
+        if (targetField is SbyteField sbyteField)
+        {
+            GPARAM.SbyteField castField = (SbyteField)targetField;
+            castField.Values.Remove((FieldValue<sbyte>)targetValue);
+        }
+        if (targetField is ByteField byteField)
+        {
+            GPARAM.ByteField castField = (ByteField)targetField;
+            castField.Values.Remove((FieldValue<byte>)targetValue);
+        }
+        if (targetField is ShortField shortField)
+        {
+            GPARAM.ShortField castField = (ShortField)targetField;
+            castField.Values.Remove((FieldValue<short>)targetValue);
+        }
+        if (targetField is IntField intField)
+        {
+            GPARAM.IntField castField = (IntField)targetField;
+            castField.Values.Remove((FieldValue<int>)targetValue);
+        }
+        if (targetField is UintField uintField)
+        {
+            GPARAM.UintField castField = (UintField)targetField;
+            castField.Values.Remove((FieldValue<uint>)targetValue);
+        }
+        if (targetField is FloatField floatField)
+        {
+            GPARAM.FloatField castField = (FloatField)targetField;
+            castField.Values.Remove((FieldValue<float>)targetValue);
+        }
+        if (targetField is BoolField boolField)
+        {
+            GPARAM.BoolField castField = (BoolField)targetField;
+            castField.Values.Remove((FieldValue<bool>)targetValue);
+        }
+        if (targetField is Vector2Field vector2Field)
+        {
+            GPARAM.Vector2Field castField = (Vector2Field)targetField;
+            castField.Values.Remove((FieldValue<Vector2>)targetValue);
+        }
+        if (targetField is Vector3Field vector3Field)
+        {
+            GPARAM.Vector3Field castField = (Vector3Field)targetField;
+            castField.Values.Remove((FieldValue<Vector3>)targetValue);
+        }
+        if (targetField is Vector4Field vector4Field)
+        {
+            GPARAM.Vector4Field castField = (Vector4Field)targetField;
+            castField.Values.Remove((FieldValue<Vector4>)targetValue);
+        }
+        if (targetField is ColorField colorField)
+        {
+            GPARAM.ColorField castField = (ColorField)targetField;
+            castField.Values.Remove((FieldValue<Color>)targetValue);
+        }
     }
 }
