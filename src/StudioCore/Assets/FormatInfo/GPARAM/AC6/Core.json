@@ -1557,7 +1557,7 @@
                 },
                 {
                     "id": "Sea Wave Fix Fps",
-                    "name": "Fix FPS",
+                    "name": "Base FPS",
                     "description": "",
                     "attributes": "IsType[Float]"
                 }
