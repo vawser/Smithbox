@@ -25,3 +25,20 @@ public class FormatResource
 {
     public List<FormatReference> list { get; set; }
 }
+
+public class FormatReference
+{
+    public string id { get; set; }
+    public string name { get; set; }
+    public string description { get; set; }
+    public string attributes { get; set; }
+    public List<FormatMember> members { get; set; }
+}
+
+public class FormatMember
+{
+    public string id { get; set; }
+    public string name { get; set; }
+    public string description { get; set; }
+    public string attributes { get; set; }
+}

@@ -334,7 +334,7 @@
                     "id": "GS Presents - ToneMap-ToneMapMode",
                     "name": "Mode",
                     "description": "",
-                    "attributes": "IsType[IntA]"
+                    "attributes": "IsType[IntA],Enum[ToneMapMode]"
                 },
                 {
                     "id": "GS Presents - ToneMap-Contrast",

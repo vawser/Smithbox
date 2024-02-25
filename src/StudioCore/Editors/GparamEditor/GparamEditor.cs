@@ -21,6 +21,7 @@ public class GparamEditor
     {
         ImGui.SetNextItemWidth(-1);
 
+
         // INT
         if (field is GPARAM.IntField intField)
         {

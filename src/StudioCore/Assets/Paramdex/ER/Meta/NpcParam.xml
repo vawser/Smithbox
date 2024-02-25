@@ -442,7 +442,7 @@
     <toughness AltName="Toughness" Wiki="Basic value of toughness" />
     <toughnessRecoverCorrection AltName="Toughness Correction" Wiki="Correction value for toughness recovery time" />
     <neutralDamageCutRate AltName="Absorption % - Standard" Wiki="Non-attribute damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
-    <slashDamageCutRate AltName="Absorption % - Slash" Wiki="Slash damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value. IsInvertedPercentage=""" />
+    <slashDamageCutRate AltName="Absorption % - Slash" Wiki="Slash damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
     <blowDamageCutRate AltName="Absorption % - Strike" Wiki="Batter damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
     <thrustDamageCutRate AltName="Absorption % - Thrust" Wiki="Puncture damage ratio. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />
     <magicDamageCutRate AltName="Absorption % - Magic" Wiki="Magic damage multiplier. The final damage value is the value obtained by multiplying the damage calculation result by this value." IsInvertedPercentage="" />

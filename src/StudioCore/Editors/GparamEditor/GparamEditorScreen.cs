@@ -486,7 +486,21 @@ public class GparamEditorScreen : EditorScreen
 
         string desc = GparamFormatBank.Bank.GetReferenceDescription(_selectedParamField.Key);
 
-        ImGui.Text($"{desc}");
+        // Skip if empty
+        if (desc != "")
+        {
+            ImGui.Text($"{desc}");
+        }
+
+        // Show enum list if they exist
+        var propertyEnum = GparamFormatBank.Bank.GetEnumForProperty(field.Key);
+        if (propertyEnum != null)
+        {
+            foreach (var entry in propertyEnum.members)
+            {
+                ImGui.Text($"{entry.id} - {entry.name}");
+            }
+        }
     }
 
     public void OnProjectChanged(ProjectSettings newSettings)

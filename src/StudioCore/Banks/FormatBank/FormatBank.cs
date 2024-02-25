@@ -7,6 +7,7 @@ using Org.BouncyCastle.Asn1.Cms;
 using System.Linq;
 using DotNext.Collections.Generic;
 using System.Collections.Generic;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Banks.FormatBank;
 
@@ -59,6 +60,19 @@ public class FormatBank
             }
 
             return _FormatBank.Data;
+        }
+    }
+
+    public FormatEnum Enums
+    {
+        get
+        {
+            if (IsFormatBankLoaded)
+            {
+                return new FormatEnum();
+            }
+
+            return _FormatBank.Enums;
         }
     }
 
@@ -142,25 +156,49 @@ public class FormatBank
         return desc;
     }
 
-    public List<string> GetListAttributeContents(string attributeStr, string targetAttribute)
+    public FormatEnumEntry GetEnumForProperty(string fieldKey)
     {
-        List<string> contentList = new List<string>();
+        FormatEnumEntry formatEnum = null;
+        string enumName = "";
 
-        if(attributeStr.Contains(","))
+        foreach(var entry in GparamFormatBank.Bank.Entries.list)
         {
-            string[] attributeList = attributeStr.Split(",");
-
-            foreach (string attr in attributeList)
+            foreach(var subentry in entry.members)
             {
-                Match contents = Regex.Match(attr, $@"{targetAttribute}\[(.*)\]");
-                if (contents.Success)
+                if (subentry.id == fieldKey)
                 {
-                    contentList = contents.Groups[0].Value.Split(",").ToList();
+                    enumName = GetEnumName(subentry.attributes, "Enum");
                 }
             }
         }
 
-        return contentList;
+        if(enumName != "")
+        {
+            formatEnum = GparamFormatBank.Bank.Enums.list.Find(x => x.id == enumName);
+        }
+
+        return formatEnum;
+    }
+
+    public string GetEnumName(string attributeStr, string targetAttribute)
+    {
+        string[] attributeList = new string[] { attributeStr };
+
+        if (attributeStr.Contains(","))
+        {
+            attributeList = attributeStr.Split(",");
+        }
+
+        foreach (string attr in attributeList)
+        {
+            Match contents = Regex.Match(attr, $@"{targetAttribute}\[(.*)\]");
+            if (contents.Success)
+            {
+                return contents.Groups[1].Value;
+            }
+        }
+
+        return "";
     }
 
     // Hides property in editor view

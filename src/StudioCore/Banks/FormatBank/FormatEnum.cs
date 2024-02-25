@@ -1,5 +1,4 @@
-﻿using StudioCore.Banks.AliasBank;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace StudioCore.Banks.AliasBank;
+namespace StudioCore.Banks.FormatBank;
 
 [JsonSourceGenerationOptions(
     WriteIndented = true,
@@ -15,20 +14,26 @@ namespace StudioCore.Banks.AliasBank;
     IncludeFields = true,
     ReadCommentHandling = JsonCommentHandling.Skip)
 ]
-[JsonSerializable(typeof(AliasResource))]
-[JsonSerializable(typeof(AliasReference))]
-public partial class AliasResourceSerializationContext
+[JsonSerializable(typeof(FormatEnum))]
+[JsonSerializable(typeof(FormatReference))]
+public partial class FormatEnumSerializationContext
     : JsonSerializerContext
 { }
 
-public class AliasResource
+public class FormatEnum
 {
-    public List<AliasReference> list { get; set; }
+    public List<FormatEnumEntry> list { get; set; }
 }
 
-public class AliasReference
+public class FormatEnumEntry
 {
     public string id { get; set; }
     public string name { get; set; }
-    public List<string> tags { get; set; }
+    public List<FormatEnumMember> members { get; set; }
+}
+
+public class FormatEnumMember
+{
+    public string id { get; set; }
+    public string name { get; set; }
 }

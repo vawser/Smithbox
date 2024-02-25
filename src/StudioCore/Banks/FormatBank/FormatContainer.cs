@@ -11,6 +11,7 @@ namespace StudioCore.Banks.FormatBank;
 public class FormatContainer
 {
     public FormatResource Data;
+    public FormatEnum Enums;
 
     private FormatBankType FormatBankType;
     private bool IsGameSpecific;
@@ -18,6 +19,8 @@ public class FormatContainer
     public FormatContainer()
     {
         Data = new FormatResource();
+        Enums = new FormatEnum();
+
         FormatBankType = FormatBankType.None;
     }
     public FormatContainer(FormatBankType formatBankType, bool isGameSpecific)
@@ -25,10 +28,11 @@ public class FormatContainer
         IsGameSpecific = isGameSpecific;
         FormatBankType = formatBankType;
 
-        Data = LoadJSON();
+        Data = LoadFormatJSON();
+        Enums = LoadEnumJSON();
     }
 
-    private FormatResource LoadJSON()
+    private FormatResource LoadFormatJSON()
     {
         var baseResource = new FormatResource();
 
@@ -47,6 +51,35 @@ public class FormatContainer
             using (var stream = File.OpenRead(baseResourcePath))
             {
                 baseResource = JsonSerializer.Deserialize(stream, FormatResourceSerializationContext.Default.FormatResource);
+            }
+        }
+        else
+        {
+            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+        }
+
+        return baseResource;
+    }
+
+    private FormatEnum LoadEnumJSON()
+    {
+        var baseResource = new FormatEnum();
+
+        if (FormatBankType is FormatBankType.None)
+            return null;
+
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{GetFormatTypeDir()}\\Enums.json";
+
+        if (IsGameSpecific)
+        {
+            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{GetFormatTypeDir()}\\{Project.GetGameIDForDir()}\\Enums.json";
+        }
+
+        if (File.Exists(baseResourcePath))
+        {
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, FormatEnumSerializationContext.Default.FormatEnum);
             }
         }
         else

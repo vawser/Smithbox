@@ -2,26 +2,27 @@
     "list": [
         {
             "id": "FSFlags",
+            "name": "Flags",
             "members": [
                 {
                     "id": "0",
-                    "name": "None",
+                    "name": "None"
                 },
                 {
                     "id": "0x0100_0000",
-                    "name": "Low Detail",
+                    "name": "Low Detail"
                 },
                 {
                     "id": "0x0200_0000",
-                    "name": "Very Low Detail",
+                    "name": "Very Low Detail"
                 },
                 {
                     "id": "0x4000_0000",
-                    "name": "Edge Compressed",
+                    "name": "Edge Compressed"
                 },
                 {
                     "id": "0x8000_0000",
-                    "name": "Motion Blur",
+                    "name": "Motion Blur"
                 }
             ]
         }
