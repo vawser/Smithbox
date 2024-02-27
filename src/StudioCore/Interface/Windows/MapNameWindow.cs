@@ -164,14 +164,10 @@ public class MapNameWindow
     /// </summary>
     private void DisplaySelectionList(List<AliasReference> referenceList)
     {
-        var referenceDict = new Dictionary<string, AliasReference>();
-
-        foreach (AliasReference v in referenceList)
-            if (!referenceDict.ContainsKey(v.id))
-                referenceDict.Add(v.id, v);
-
         if (_searchInput != _searchInputCache)
+        {
             _searchInputCache = _searchInput;
+        }
 
         var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
 
@@ -185,8 +181,12 @@ public class MapNameWindow
 
             // Skip the unused names if this is disabled
             if (!CFG.Current.MapAliases_ShowUnusedNames)
+            {
                 if (refTagList[0] == "unused")
+                {
                     continue;
+                }
+            }
 
             // Append tags to to displayed name
             if (CFG.Current.MapAliases_ShowTagsInBrowser)
