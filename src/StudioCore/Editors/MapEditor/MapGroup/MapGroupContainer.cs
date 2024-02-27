@@ -54,6 +54,7 @@ public class MapGroupContainer
                 var baseId = bEntry.id;
                 var baseName = bEntry.name;
                 var baseDesc = bEntry.description;
+                var baseCategory = bEntry.category;
                 var baseMembers = bEntry.members;
 
                 foreach (var mEntry in modResource.list)
@@ -61,6 +62,7 @@ public class MapGroupContainer
                     var modId = mEntry.id;
                     var modName = mEntry.name;
                     var modDesc = mEntry.description;
+                    var modCategory = mEntry.category;
                     var modMembers = mEntry.members;
 
                     // Mod override exists
@@ -69,6 +71,7 @@ public class MapGroupContainer
                         bEntry.id = modId;
                         bEntry.name = modName;
                         bEntry.description = modDesc;
+                        bEntry.category = modCategory;
                         bEntry.members = modMembers;
                     }
                 }

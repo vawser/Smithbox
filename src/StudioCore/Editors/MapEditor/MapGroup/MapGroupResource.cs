@@ -31,6 +31,7 @@ public class MapGroupReference
     public string id { get; set; }
     public string name { get; set; }
     public string description { get; set; }
+    public string category { get; set; }
     public List<MapGroupMember> members { get; set; }
 }
 

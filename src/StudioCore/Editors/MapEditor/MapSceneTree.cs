@@ -756,8 +756,7 @@ public class MapSceneTree : IActionEventHandler
         _selection.ClearGotoTarget();
     }
 
-    private bool isUsingMapGroupFilter = false;
-    private int selectedMapGroup = 0;
+    private string currentMapGroupCategory;
     private MapGroupReference currentMapGroup;
 
     public void DisplayMapGroups()
@@ -769,6 +768,47 @@ public class MapSceneTree : IActionEventHandler
             currentMapGroup = MapGroupsBank.Bank.Entries.list.First();
         }
 
+        // Map Group Category
+        ImGui.AlignTextToFramePadding();
+        ImGui.Text("Map Group Category:");
+
+        ImGui.SameLine();
+
+        ImGui.SetNextItemWidth(-1);
+        if (ImGui.BeginCombo("##mapGroupCatCombo", currentMapGroupCategory))
+        {
+            List<string> categoryOptions = new List<string>() { "All" };
+
+            // Add the map group category options
+            foreach (var entry in MapGroupsBank.Bank.Entries.list)
+            {
+                if(!categoryOptions.Contains(entry.category))
+                {
+                    categoryOptions.Add(entry.category);
+                }
+            }
+
+            categoryOptions.Sort();
+
+            // Add the map group category options
+            foreach (var entry in categoryOptions)
+            {
+                bool isSelected = (currentMapGroupCategory == entry);
+                if (ImGui.Selectable($"{entry}##{entry}", isSelected))
+                {
+                    currentMapGroupCategory = entry;
+                }
+                if (isSelected)
+                {
+                    ImGui.SetItemDefaultFocus();
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+        ImguiUtils.ShowButtonTooltip($"Filters the map group selection by location.");
+
+        // Map Group Selection
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Map Group:");
 
@@ -779,14 +819,17 @@ public class MapSceneTree : IActionEventHandler
         {
             foreach(var entry in MapGroupsBank.Bank.Entries.list)
             {
-                bool isSelected = (currentMapGroup == entry);
-                if(ImGui.Selectable($"{entry.name}##{entry.id}", isSelected))
+                if (entry.category == currentMapGroupCategory || currentMapGroupCategory == "All")
                 {
-                    currentMapGroup = entry;
-                }
-                if(isSelected)
-                {
-                    ImGui.SetItemDefaultFocus();
+                    bool isSelected = (currentMapGroup == entry);
+                    if (ImGui.Selectable($"{entry.name}##{entry.id}", isSelected))
+                    {
+                        currentMapGroup = entry;
+                    }
+                    if (isSelected)
+                    {
+                        ImGui.SetItemDefaultFocus();
+                    }
                 }
             }
 
