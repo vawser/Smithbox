@@ -125,6 +125,7 @@ public class Smithbox
         WindowContainer.EventFlagWindow = new EventFlagWindow();
         WindowContainer.DebugWindow = new DebugWindow();
         WindowContainer.MapNameWindow = new MapNameWindow();
+        WindowContainer.MapGroupWindow = new MapGroupWindow();
         WindowContainer.KeybindWindow = new KeybindWindow();
 
         // Editors
@@ -1016,6 +1017,12 @@ public class Smithbox
             }
             ImguiUtils.ShowButtonTooltip("Map Names");
 
+            if (ImGui.Button($"{ForkAwesome.BuildingO}"))
+            {
+                WindowContainer.MapGroupWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowButtonTooltip("Map Groups");
+
             // Program Update
             if (_programUpdateAvailable)
             {
@@ -1041,6 +1048,7 @@ public class Smithbox
         WindowContainer.EventFlagWindow.Display();
         WindowContainer.DebugWindow.Display();
         WindowContainer.MapNameWindow.Display();
+        WindowContainer.MapGroupWindow.Display();
         WindowContainer.KeybindWindow.Display();
 
         ImGui.PopStyleVar();

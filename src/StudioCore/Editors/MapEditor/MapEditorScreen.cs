@@ -208,7 +208,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (ImGui.BeginMenu("Duplicate to Map", _selection.IsSelection()))
             {
-                ComboTargetMapUI();
+                DuplicateToTargetMapUI();
                 ImGui.EndMenu();
             }
 

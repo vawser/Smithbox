@@ -1,0 +1,23 @@
+{
+    "list": [
+        {
+            "id": "0",
+            "name": "None",
+            "description": "Nothing",
+            "members": [ ]
+        },
+        {
+            "id": "1",
+            "name": "Weeping Penisula (South-West)",
+            "description": "POI:\n- Castle Morne\n\nGraces:\n- Morne Moangrave\n- Beside the Rampart Gaol\n- Behind the Castle\n- Castle Morne Lift",
+            "members": [
+                {  "id": "m60_10_07_02" },
+                {  "id": "m60_21_15_01" },
+                {  "id": "m60_42_31_00" },
+                {  "id": "m60_43_31_00" },
+                {  "id": "m60_42_30_00" },
+                {  "id": "m60_43_30_00" }
+            ]
+        }
+   ]
+}
