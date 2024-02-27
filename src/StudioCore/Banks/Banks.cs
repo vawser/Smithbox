@@ -103,14 +103,26 @@ public static class MapAliasBank
         }));
     }
 
-    public static string GetMapName(string mapId, string baseName)
+    public static string GetMapName(string mapId)
+    {
+        if (MapNames == null)
+            return "";
+
+        if (MapNames.ContainsKey(mapId))
+        {
+            return $"{MapNames[mapId]}";
+        }
+
+        return $"";
+    }
+    public static string GetFormattedMapName(string mapId, string baseName)
     {
         if (MapNames == null)
             return baseName;
 
         if (MapNames.ContainsKey(mapId))
         {
-            return $"{baseName}{MapNames[mapId]}";
+            return $"{baseName} <{MapNames[mapId]}>";
         }
 
         return $"{baseName}";

@@ -21,6 +21,7 @@ using Veldrid.Sdl2;
 using Veldrid.Utilities;
 using Viewport = StudioCore.Gui.Viewport;
 using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor.Toolbar;
 
 namespace StudioCore.Editors.MapEditor;
 

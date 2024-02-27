@@ -205,8 +205,7 @@ namespace StudioCore.Editors.ModelEditor
 
             foreach (var mapId in _mapModelNameCache.Keys)
             {
-                var labelName = mapId;
-                labelName = MapAliasBank.GetMapName(mapId, labelName);
+                var labelName = MapAliasBank.GetFormattedMapName(mapId, mapId);
 
                 if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                 {

@@ -7,6 +7,7 @@ using StudioCore.Banks.FormatBank;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Gui;
 using StudioCore.Interface;
 using StudioCore.Scene;
@@ -1090,7 +1091,7 @@ public class ModelPropertyEditor
                             // but only the RootObject has the TransformNode and Viewport integration.
                             var mapid = r.Name;
                             var prettyName = $"{ForkAwesome.Cube} {mapid}";
-                            prettyName = MapAliasBank.GetMapName(mapid, prettyName);
+                            prettyName = $"{prettyName} {MapAliasBank.GetMapName(mapid)}";
 
                             if (ImGui.Button(prettyName + "##MSBRefTo" + refID))
                             {

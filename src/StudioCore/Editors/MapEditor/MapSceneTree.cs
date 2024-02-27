@@ -731,7 +731,7 @@ public class MapSceneTree : IActionEventHandler
                     continue;
                 }
 
-                metaName = MapAliasBank.GetMapName(mapid, metaName);
+                metaName = MapAliasBank.GetMapName(mapid);
 
                 // Map name search filter
                 if (_mapNameSearchStr != ""
@@ -773,11 +773,11 @@ public class MapSceneTree : IActionEventHandler
                     ImGui.PushTextWrapPos();
                     if (metaName.StartsWith("--")) // Marked as normally unused (use red text)
                     {
-                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{metaName.Replace("--", "")}>");
+                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{metaName.Replace("--", "")}");
                     }
                     else
                     {
-                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{metaName}>");
+                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{metaName}");
                     }
 
                     ImGui.PopTextWrapPos();

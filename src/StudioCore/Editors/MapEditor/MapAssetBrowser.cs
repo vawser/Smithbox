@@ -173,7 +173,7 @@ public class MapAssetBrowser
 
             if (_loadedMaps.Contains(mapId))
             {
-                var labelName = MapAliasBank.GetMapName(mapId, mapId);
+                var labelName = MapAliasBank.GetFormattedMapName(mapId, mapId);
 
                 if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                 {

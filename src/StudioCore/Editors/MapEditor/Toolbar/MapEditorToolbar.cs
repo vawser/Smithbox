@@ -18,7 +18,7 @@ using StudioCore.Banks;
 using StudioCore.MsbEditor;
 using StudioCore.BanksMain;
 
-namespace StudioCore.Editors.MapEditor
+namespace StudioCore.Editors.MapEditor.Toolbar
 {
     public enum SelectedTool
     {

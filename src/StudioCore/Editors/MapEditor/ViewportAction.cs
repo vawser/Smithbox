@@ -14,6 +14,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor.Toolbar;
 
 namespace StudioCore.Editors.MapEditor;
 
