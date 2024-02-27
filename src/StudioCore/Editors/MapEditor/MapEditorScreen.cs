@@ -217,13 +217,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (ImGui.BeginMenu("Display", RenderScene != null && Viewport != null))
         {
-            /*
-            // Does nothing at the moment. Maybe add to settings menu if this is ever implemented
-            if (ImGui.MenuItem("Grid", "", Viewport.DrawGrid))
-            {
-                Viewport.DrawGrid = !Viewport.DrawGrid;
-            }
-            */
             if (ImGui.BeginMenu("Object Types"))
             {
                 bool ticked;
@@ -668,7 +661,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (ImGui.BeginPopup("##DupeToTargetMapPopup"))
         {
-            ComboTargetMapUI();
+            DuplicateToTargetMapUI();
             ImGui.EndPopup();
         }
 
