@@ -1533,7 +1533,7 @@
             "id": "107",
             "name": "Mountaintops of the Giants - Yelough Anix",
             "description": "POI:\n- Yelough Anix Ruins\n Yelough Anix Tunnel\n\nGraces:\n- Yelough Anix Tunnel",
-			"category": "Any",
+			"category": "Mountaintops of the Giants",
             "members": [ 
                 {  "id": "m60_46_55_00" },
                 {  "id": "m60_47_55_00" },
@@ -1763,7 +1763,7 @@
             "id": "123",
             "name": "Mountaintops of the Giants - Forge Approach",
             "description": "Graces:\n- Foot of the Forge\n- Fire Giant",
-			"category": "Any",
+			"category": "Mountaintops of the Giants",
             "members": [ 
                 {  "id": "m60_52_53_00" },
                 {  "id": "m60_53_53_00" },
@@ -2142,7 +2142,7 @@
             ]
         },
         {
-            "id": "150",
+            "id": "151",
             "name": "Mountaintops of the Giants - North-Eastern Cliffs",
             "description": "",
 			"category": "Mountaintops of the Giants",

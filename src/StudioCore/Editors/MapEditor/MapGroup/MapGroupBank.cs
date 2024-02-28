@@ -156,6 +156,7 @@ public class MapGroupBank
                 var entry = new MapGroupReference();
                 entry.id = refID;
                 entry.name = refName;
+                entry.description = refDesc;
                 entry.category = refCategory;
                 entry.members = refMembers;
 
@@ -188,6 +189,54 @@ public class MapGroupBank
             }
 
             WriteTargetBank(targetResource);
+        }
+    }
+
+    public bool IsLocalMapGroup(string refID)
+    {
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\MapGroups\\{Project.GetGameIDForDir()}.json";
+
+        var resourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\MapGroups\\{Project.GetGameIDForDir()}.json";
+
+        var isInBase = false;
+
+        if (File.Exists(baseResourcePath))
+        {
+            var targetResource = LoadTargetBank(baseResourcePath);
+
+            for (var i = 0; i <= targetResource.list.Count - 1; i++)
+            {
+                var entry = targetResource.list[i];
+                if (entry.id == refID)
+                {
+                    isInBase = true;
+                }
+            }
+        }
+
+        var isInProject = false;
+
+        if (File.Exists(resourcePath))
+        {
+            var targetResource = LoadTargetBank(resourcePath);
+
+            for (var i = 0; i <= targetResource.list.Count - 1; i++)
+            {
+                var entry = targetResource.list[i];
+                if (entry.id == refID)
+                {
+                    isInProject = true;
+                }
+            }
+        }
+
+        if(isInProject && !isInBase)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

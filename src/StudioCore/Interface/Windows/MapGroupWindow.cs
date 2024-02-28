@@ -36,6 +36,8 @@ public class MapGroupWindow
     private string _refUpdateCategory = "";
     private string _refUpdateMembers = "";
 
+    private bool ShowMapGroupAddSection = false;
+
     public MapGroupWindow() { }
 
     public void ToggleMenuVisibility()
@@ -68,110 +70,148 @@ public class MapGroupWindow
 
         if (ImGui.Begin("Map Groups##MapGroupWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImGui.InputText($"ID", ref _newRefId, 255);
-            ImguiUtils.ShowHelpMarker("The numeric ID of the map group to add.");
-
-            ImGui.InputText($"Name", ref _newRefName, 255);
-            ImguiUtils.ShowHelpMarker("The name of the map group to add.");
-
-            ImGui.InputText($"Description", ref _newRefDescription, 255);
-            ImguiUtils.ShowHelpMarker("The description of this map group.");
-
-            ImGui.InputText($"Category", ref _newRefCategory, 255);
-            ImguiUtils.ShowHelpMarker("The category this map group should be placed under");
-
-            ImGui.InputText($"Members", ref _newRefMembers, 255);
-            ImguiUtils.ShowHelpMarker("The map ids to associate with this map group.\nEach map id should be separated by the ',' character.");
-
-            if (ImGui.Button("Add Map Group"))
+            if (ShowMapGroupAddSection)
             {
-                try
+                if (ImGui.Button("Show Map Group List"))
                 {
-                    var isNumeric = int.TryParse(_newRefId, out _);
+                    ShowMapGroupAddSection = false;
+                }
+            }
+            else
+            {
+                if (ImGui.Button("Add New Map Group"))
+                {
+                    ShowMapGroupAddSection = true;
+                }
+            }
 
-                    // Make sure the ref ID is a number
-                    if (isNumeric)
+            ImGui.Separator();
+
+            if (ShowMapGroupAddSection)
+            {
+                DisplayMapGroupAddSection();
+            }
+            else
+            {
+                DisplayMapGroupList();
+            }
+
+            ImGui.End();
+
+            ImGui.PopStyleVar(3);
+            ImGui.PopStyleColor(5);
+
+            if (MapGroupsBank.Bank.CanReloadMapGroupBank)
+            {
+                MapGroupsBank.Bank.CanReloadMapGroupBank = false;
+                MapGroupsBank.Bank.ReloadMapGroupBank();
+            }
+        }
+    }
+
+    public void DisplayMapGroupAddSection()
+    {
+        ImGui.Text("ID");
+        ImGui.InputText($"##ID", ref _newRefId, 255);
+        ImguiUtils.ShowHelpMarker("The numeric ID of the map group to add.");
+
+        ImGui.Text("Name");
+        ImGui.InputText($"##Name", ref _newRefName, 255);
+        ImguiUtils.ShowHelpMarker("The name of the map group to add.");
+
+        ImGui.Text("Description");
+        ImGui.InputTextMultiline($"##Description", ref _newRefDescription, 255, new Vector2(255, 200));
+        ImguiUtils.ShowHelpMarker("The description of this map group.");
+
+        ImGui.Text("Category");
+        ImGui.InputText($"##Category", ref _newRefCategory, 255);
+        ImguiUtils.ShowHelpMarker("The category this map group should be placed under");
+
+        ImGui.Text("Members");
+        ImGui.InputText($"##Members", ref _newRefMembers, 255);
+        ImguiUtils.ShowHelpMarker("The map ids to associate with this map group.\nEach map id should be separated by the ',' character.");
+
+        if (ImGui.Button("Add Map Group"))
+        {
+            try
+            {
+                var isNumeric = int.TryParse(_newRefId, out _);
+
+                // Make sure the ref ID is a number
+                if (isNumeric)
+                {
+                    var isValid = true;
+
+                    var entries = MapGroupsBank.Bank.Entries.list;
+
+                    foreach (var entry in entries)
                     {
-                        var isValid = true;
-
-                        var entries = MapGroupsBank.Bank.Entries.list;
-
-                        foreach (var entry in entries)
+                        if (_newRefId == entry.id)
                         {
-                            if (_newRefId == entry.id)
-                                isValid = false;
+                            isValid = false;
                         }
+                    }
 
-                        if (isValid)
+                    if (isValid)
+                    {
+                        var mapGroupMembers = new List<MapGroupMember>();
+
+                        // Convert string to MapGroupMember
+                        if (_newRefMembers != "")
                         {
-                            var mapGroupMembers = new List<MapGroupMember>();
-
-                            // Convert string to MapGroupMember
-                            if (_newRefMembers != "")
+                            var members = _newRefMembers.Split(",");
+                            if (members.Length > 0)
                             {
-                                var members = _newRefMembers.Split(",");
-                                if (members.Length > 0)
-                                {
-                                    foreach (var member in members)
-                                    {
-                                        var newMember = new MapGroupMember();
-                                        newMember.id = member;
-                                        mapGroupMembers.Add(newMember);
-                                    }
-                                }
-                                else
+                                foreach (var member in members)
                                 {
                                     var newMember = new MapGroupMember();
-                                    newMember.id = _newRefMembers;
+                                    newMember.id = member;
                                     mapGroupMembers.Add(newMember);
                                 }
                             }
-
-                            MapGroupsBank.Bank.AddToLocalBank(_newRefId, _newRefName, _newRefDescription, _newRefCategory, mapGroupMembers);
-                            ImGui.CloseCurrentPopup();
-                            MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+                            else
+                            {
+                                var newMember = new MapGroupMember();
+                                newMember.id = _newRefMembers;
+                                mapGroupMembers.Add(newMember);
+                            }
                         }
-                        else
-                            PlatformUtils.Instance.MessageBox($"Map Group with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        MapGroupsBank.Bank.AddToLocalBank(_newRefId, _newRefName, _newRefDescription, _newRefCategory, mapGroupMembers);
+                        ImGui.CloseCurrentPopup();
+                        MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+                    }
+                    else
+                    {
+                        PlatformUtils.Instance.MessageBox($"Map Group with {_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch
+                else
                 {
-                    TaskLogs.AddLog($"Map Group ID must be a numeric value!");
+                    PlatformUtils.Instance.MessageBox($"Map Group ID must be numeric.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            ImguiUtils.ShowHelpMarker("Adds a new map group to the project-specific bank.");
-
-            ImGui.Separator();
-
-            ImGui.BeginChild("MapGroupListSearch");
-            ImGui.InputText($"Search", ref _searchInput, 255);
-
-            ImGui.SameLine();
-            ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
-
-            ImGui.Spacing();
-            ImGui.Separator();
-            ImGui.Spacing();
-
-            ImGui.BeginChild("MapGroupList");
-
-            DisplaySelectionList(MapGroupsBank.Bank.Entries.list);
-
-            ImGui.EndChild();
-            ImGui.EndChild();
+            catch { }
         }
+        ImguiUtils.ShowHelpMarker("Adds a new map group to the project-specific bank.");
+    }
 
-        ImGui.End();
+    public void DisplayMapGroupList()
+    {
+        ImGui.InputText($"Search", ref _searchInput, 255);
 
-        ImGui.PopStyleVar(3);
-        ImGui.PopStyleColor(5);
+        ImGui.SameLine();
+        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
 
-        if (MapGroupsBank.Bank.CanReloadMapGroupBank)
-        {
-            MapGroupsBank.Bank.CanReloadMapGroupBank = false;
-            MapGroupsBank.Bank.ReloadMapGroupBank();
-        }
+        ImGui.Spacing();
+        ImGui.Separator();
+        ImGui.Spacing();
+
+        ImGui.BeginChild("MapGroupList");
+
+        DisplaySelectionList(MapGroupsBank.Bank.Entries.list);
+
+        ImGui.EndChild();
     }
 
     private void DisplaySelectionList(List<MapGroupReference> referenceList)
@@ -193,14 +233,22 @@ public class MapGroupWindow
 
             var refMembersString = "";
 
-            foreach(var member in refMembers) 
+            for(int i = 0; i < refMembers.Count; i++)
             {
-                refMembersString = refMembersString + $"{member.id},";
+                if(i == refMembers.Count - 1)
+                {
+                    refMembersString = refMembersString + $"{refMembers[i].id}";
+                }
+                else
+                {
+                    refMembersString = refMembersString + $"{refMembers[i].id},";
+                }
             }
+
 
             if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, null))
             {
-                if (ImGui.Selectable(displayedName))
+                if (ImGui.Selectable($"{displayedName}##{refID}"))
                 {
                     _selectedId = refID;
                     _refUpdateId = refID;
@@ -212,58 +260,81 @@ public class MapGroupWindow
 
                 if (_selectedId == refID)
                 {
-                    if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                    {
-                        ImGui.InputText($"Name", ref _refUpdateName, 255);
-                        ImGui.InputText($"Description", ref _refUpdateDesc, 255);
-                        ImGui.InputText($"Category", ref _refUpdateCategory, 255);
-                        ImGui.InputText($"Members", ref _refUpdateMembers, 255);
-
-                        if (ImGui.Button("Update"))
-                        {
-                            var mapGroupMembers = new List<MapGroupMember>();
-
-                            // Convert string to MapGroupMember
-                            if (_refUpdateMembers != "")
-                            {
-                                var members = _refUpdateMembers.Split(",");
-                                if (members.Length > 0)
-                                {
-                                    foreach (var member in members)
-                                    {
-                                        var newMember = new MapGroupMember();
-                                        newMember.id = member;
-                                        mapGroupMembers.Add(newMember);
-                                    }
-                                }
-                                else
-                                {
-                                    var newMember = new MapGroupMember();
-                                    newMember.id = _newRefMembers;
-                                    mapGroupMembers.Add(newMember);
-                                }
-                            }
-
-                            MapGroupsBank.Bank.AddToLocalBank(_refUpdateId, _refUpdateName, _refUpdateDesc, _refUpdateCategory, mapGroupMembers);
-                            ImGui.CloseCurrentPopup();
-                            MapGroupsBank.Bank.CanReloadMapGroupBank = true;
-                        }
-                        ImGui.SameLine();
-                        if (ImGui.Button("Restore Default"))
-                        {
-                            MapGroupsBank.Bank.RemoveFromLocalBank(_refUpdateId);
-                            ImGui.CloseCurrentPopup();
-                            MapGroupsBank.Bank.CanReloadMapGroupBank = true;
-                        }
-
-                        ImGui.EndPopup();
-                    }
+                    EditMapGroupPopup(refID);
                 }
 
                 if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                 {
                 }
             }
+        }
+    }
+
+    public void EditMapGroupPopup(string refID)
+    {
+        if (ImGui.BeginPopupContextItem($"{refID}##context{refID}"))
+        {
+            ImGui.Text("Name");
+            ImGui.InputText($"##Name", ref _refUpdateName, 255);
+            ImGui.Text("Description");
+            ImGui.InputTextMultiline($"##Description", ref _refUpdateDesc, 255, new Vector2(255, 200));
+            ImGui.Text("Category");
+            ImGui.InputText($"##Category", ref _refUpdateCategory, 255);
+            ImGui.Text("Members");
+            ImGui.InputText($"##Members", ref _refUpdateMembers, 255);
+
+            if (ImGui.Button("Update"))
+            {
+                var mapGroupMembers = new List<MapGroupMember>();
+
+                // Convert string to MapGroupMember
+                if (_refUpdateMembers != "")
+                {
+                    var members = _refUpdateMembers.Split(",");
+                    if (members.Length > 0)
+                    {
+                        foreach (var member in members)
+                        {
+                            var newMember = new MapGroupMember();
+                            newMember.id = member;
+                            mapGroupMembers.Add(newMember);
+                        }
+                    }
+                    else
+                    {
+                        var newMember = new MapGroupMember();
+                        newMember.id = _newRefMembers;
+                        mapGroupMembers.Add(newMember);
+                    }
+                }
+
+                MapGroupsBank.Bank.AddToLocalBank(_refUpdateId, _refUpdateName, _refUpdateDesc, _refUpdateCategory, mapGroupMembers);
+                ImGui.CloseCurrentPopup();
+                MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+            }
+            ImguiUtils.ShowButtonTooltip("Edit this map group.");
+
+            ImGui.SameLine();
+
+            // Is from base, delete local instance to restore base read
+            if (!MapGroupsBank.Bank.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Restore Default"))
+            {
+                MapGroupsBank.Bank.RemoveFromLocalBank(_refUpdateId);
+                ImGui.CloseCurrentPopup();
+                MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+            }
+            ImguiUtils.ShowButtonTooltip("Restore this map group to its default values.");
+
+            // Is local only, this will delete it
+            if (MapGroupsBank.Bank.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Delete"))
+            {
+                MapGroupsBank.Bank.RemoveFromLocalBank(_refUpdateId);
+                ImGui.CloseCurrentPopup();
+                MapGroupsBank.Bank.CanReloadMapGroupBank = true;
+            }
+            ImguiUtils.ShowButtonTooltip("Delete this map group.");
+
+            ImGui.EndPopup();
         }
     }
 }
