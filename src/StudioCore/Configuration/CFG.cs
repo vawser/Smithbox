@@ -190,7 +190,7 @@ public class CFG
     public bool Viewport_Enable_ER_Auto_Map_Offset = true;
     public bool Viewport_Enable_Selection_Outline = true;
 
-    public Vector3 Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
+    public Vector3 Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
 
     // Camera
     public float Viewport_Camera_FOV { get; set; } = 60.0f;

@@ -141,9 +141,6 @@ public class KeyBindings
         public KeyBind Map_RenderGroup_HideAll = new("Render Group: Hide All", KeybindCategory.MapEditor);
         public KeyBind Map_RenderGroup_ShowAll = new("Render Group: Show All", KeybindCategory.MapEditor, Key.R, true);
         public KeyBind Map_RenderGroup_SelectHighlights = new("Render Group: Select Highlights", KeybindCategory.MapEditor);
-        public KeyBind Map_ViewportGrid_Lower = new("Map Grid: Lower", KeybindCategory.MapEditor, Key.Q, true);
-        public KeyBind Map_ViewportGrid_Raise = new("Map Grid: Raise", KeybindCategory.MapEditor, Key.E, true);
-        public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.MapEditor);
 
         // Param
         public KeyBind Param_Copy = new("Copy", KeybindCategory.ParamEditor, Key.C, true);
@@ -176,6 +173,10 @@ public class KeyBindings
         public KeyBind Viewport_ToggleGizmoOrigin = new("Toggle Gizmo Origin", KeybindCategory.Viewport, Key.Home);
         public KeyBind Viewport_ToggleGizmoSpace = new("Toggle Gizmo Space", KeybindCategory.Viewport);
         public KeyBind Viewport_TranslateMode = new("Gizmo Translate Mode", KeybindCategory.Viewport, Key.W);
+        public KeyBind Map_ViewportGrid_Lower = new("Map Grid: Lower", KeybindCategory.Viewport, Key.Q, true);
+        public KeyBind Map_ViewportGrid_Raise = new("Map Grid: Raise", KeybindCategory.Viewport, Key.E, true);
+        public KeyBind Map_ViewportGrid_Bring_to_Selection = new("Map Grid: Bring to Selection", KeybindCategory.Viewport, Key.K, true);
+        public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.Viewport);
 
 #pragma warning disable IDE0051
         // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.

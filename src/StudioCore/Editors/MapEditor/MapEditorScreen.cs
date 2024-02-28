@@ -455,6 +455,12 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 offset = offset + increment;
                 CFG.Current.Viewport_Grid_Height = offset;
             }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ViewportGrid_Bring_to_Selection))
+            {
+                MsbEntity sel = _selection.GetFilteredSelection<MsbEntity>().ToList().First();
+                Vector3 pos = (Vector3)sel.GetPropertyValue("Position");
+                CFG.Current.Viewport_Grid_Height = pos.Y;
+            }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _selection.IsSelection())
             {
