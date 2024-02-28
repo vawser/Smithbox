@@ -127,6 +127,7 @@ public class Smithbox
         WindowContainer.MapNameWindow = new MapNameWindow();
         WindowContainer.MapGroupWindow = new MapGroupWindow();
         WindowContainer.KeybindWindow = new KeybindWindow();
+        WindowContainer.MemoryWindow = new MemoryWindow();
 
         // Editors
         EditorContainer.MsbEditor = new MapEditorScreen(_context.Window, _context.Device);
@@ -142,6 +143,8 @@ public class Smithbox
         EditorContainer.TalkEditor = new TalkScriptEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
         EditorContainer.BehaviorEditor = new BehaviorEditorScreen(_context.Window, _context.Device);
+
+        WindowContainer.MemoryWindow._activeView = EditorContainer.ParamEditor._activeView;
 
         _editors = new List<EditorScreen>();
 
@@ -1005,6 +1008,12 @@ public class Smithbox
             ImGui.Separator();
 
             // Shared Tool Bar
+            if (ImGui.Button($"{ForkAwesome.Database}"))
+            {
+                WindowContainer.MemoryWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowButtonTooltip("Memory");
+
             if (ImGui.Button($"{ForkAwesome.LightbulbO}"))
             {
                 WindowContainer.EventFlagWindow.ToggleMenuVisibility();
@@ -1050,6 +1059,7 @@ public class Smithbox
         WindowContainer.MapNameWindow.Display();
         WindowContainer.MapGroupWindow.Display();
         WindowContainer.KeybindWindow.Display();
+        WindowContainer.MemoryWindow.Display();
 
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);

@@ -40,9 +40,9 @@ internal class ParamReloader
         return _supportedGames.Contains(gameType);
     }
 
-    public static bool CanReloadMemoryParams(ParamBank bank, ProjectSettings projectSettings)
+    public static bool CanReloadMemoryParams(ParamBank bank)
     {
-        if (projectSettings != null && GameIsSupported(projectSettings.GameType) && bank.IsLoadingParams == false)
+        if (GameIsSupported(Project.Type) && bank.IsLoadingParams == false)
         {
             return true;
         }

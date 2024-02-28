@@ -763,6 +763,12 @@ public class MapSceneTree : IActionEventHandler
     {
         var scale = Smithbox.GetUIScale();
 
+        // If there are no entries, don't display anything
+        if(MapGroupsBank.Bank.Entries.list == null)
+        {
+            return;
+        }
+
         if(currentMapGroup == null)
         {
             currentMapGroup = MapGroupsBank.Bank.Entries.list.First();
@@ -868,21 +874,24 @@ public class MapSceneTree : IActionEventHandler
             }
 
             // Map Groups
-            if (currentMapGroup.members.Count > 0)
+            if (currentMapGroup != null)
             {
-                var display = false;
-
-                foreach(var entry in currentMapGroup.members)
+                if (currentMapGroup.members.Count > 0)
                 {
-                    if (entry.id == mapid)
+                    var display = false;
+
+                    foreach (var entry in currentMapGroup.members)
                     {
-                        display = true;
+                        if (entry.id == mapid)
+                        {
+                            display = true;
+                        }
                     }
-                }
 
-                if(!display)
-                {
-                    continue;
+                    if (!display)
+                    {
+                        continue;
+                    }
                 }
             }
 

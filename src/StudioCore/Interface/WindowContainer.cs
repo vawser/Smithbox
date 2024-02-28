@@ -10,5 +10,6 @@ public static class WindowContainer
     public static MapNameWindow MapNameWindow { get; set; }
     public static MapGroupWindow MapGroupWindow { get; set; }
     public static KeybindWindow KeybindWindow { get; set; }
+    public static MemoryWindow MemoryWindow { get; set; }
 }
 

@@ -129,7 +129,6 @@ public class MapNameWindow
 
             ImGui.Columns(1);
 
-            ImGui.BeginChild("MapNameListSearch");
             ImGui.InputText($"Search", ref _searchInput, 255);
 
             ImGui.SameLine();
@@ -143,7 +142,6 @@ public class MapNameWindow
 
             DisplaySelectionList(MapAliasBank.Bank.AliasNames.GetEntries("Maps"));
 
-            ImGui.EndChild();
             ImGui.EndChild();
         }
 

@@ -128,7 +128,6 @@ public class EventFlagWindow
 
             ImGui.Columns(1);
 
-            ImGui.BeginChild("FlagListSearch");
             ImGui.InputText($"Search", ref _searchInput, 255);
 
             ImGui.SameLine();
@@ -142,7 +141,6 @@ public class EventFlagWindow
 
             DisplaySelectionList(FlagAliasBank.Bank.AliasNames.GetEntries("Flags"));
 
-            ImGui.EndChild();
             ImGui.EndChild();
         }
 

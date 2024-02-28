@@ -626,54 +626,6 @@ public class ParamEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Game"))
-        {
-            if (ImGui.BeginMenu("Hot Reload Params"))
-            {
-                if (!ParamReloader.GameIsSupported(_projectSettings.GameType))
-                {
-                    ImGui.TextColored(new Vector4(1.0f, 0.75f, 0.25f, 1.0f), "Param hot reloading is not supported for this game at the moment.");
-                }
-                else
-                {
-                    ImGui.TextColored(new Vector4(1.0f, 1.0f, 0.0f, 1.0f), "WARNING: Hot Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
-
-                    ImGui.Separator();
-
-                    var canHotReload = ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank, _projectSettings);
-
-                    if (ImGui.MenuItem("Current Param", KeyBindings.Current.Param_HotReload.HintText, false, canHotReload && _activeView._selection.GetActiveParam() != null))
-                    {
-                        ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, _activeView._selection.GetActiveParam());
-                    }
-
-                    if (ImGui.MenuItem("All Params", KeyBindings.Current.Param_HotReloadAll.HintText, false, canHotReload))
-                    {
-                        ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, ParamBank.PrimaryBank.Params.Keys.ToArray());
-                    }
-
-                    foreach (var param in ParamReloader.GetReloadableParams())
-                    {
-                        if (ImGui.MenuItem(param, "", false, canHotReload))
-                        {
-                            ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, new[] { param });
-                        }
-                    }
-                }
-
-                ImGui.EndMenu();
-            }
-
-            var activeParam = _activeView._selection.GetActiveParam();
-
-            if (activeParam != null && _projectSettings.GameType == ProjectType.DS3)
-            {
-                ParamReloader.GiveItemMenu(_activeView._selection.GetSelectedRows(), _activeView._selection.GetActiveParam());
-            }
-
-            ImGui.EndMenu();
-        }
-
         if (ImGui.BeginMenu("Compare"))
         {
             if (ImGui.MenuItem("Show Vanilla Params", null, CFG.Current.Param_ShowVanillaParams))
@@ -877,7 +829,7 @@ public class ParamEditorScreen : EditorScreen
         }
 
         //Hot Reload shortcut keys
-        if (ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank, _projectSettings))
+        if (ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank))
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.Param_HotReloadAll))
             {
