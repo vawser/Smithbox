@@ -484,15 +484,21 @@ public class SettingsWindow
             // General
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                
+                ImGui.Checkbox("Enable map load on double-click", ref CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click);
+                ImguiUtils.ShowHelpMarker("This option will cause double-clicking on a map in the map object list to load it.");
+
                 ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
                 ImguiUtils.ShowHelpMarker("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
 
                 if (ProjSettings != null)
+                {
                     if (ProjSettings.GameType is ProjectType.ER)
                     {
                         ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
                         ImguiUtils.ShowHelpMarker("");
                     }
+                }
             }
 
             // Property View

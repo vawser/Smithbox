@@ -269,6 +269,7 @@ public class CFG
     public bool MapEditor_Enable_Commmunity_Names = true;
     public bool MapEditor_Enable_Commmunity_Hints = true;
     public bool MapEditor_Enable_Property_Info = false;
+    public bool MapEditor_Enable_Map_Load_on_Double_Click = false;
 
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;

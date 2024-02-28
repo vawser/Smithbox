@@ -756,7 +756,7 @@ public class MapSceneTree : IActionEventHandler
         _selection.ClearGotoTarget();
     }
 
-    private string currentMapGroupCategory;
+    private string currentMapGroupCategory = "All";
     private MapGroupReference currentMapGroup;
 
     public void DisplayMapGroups()
@@ -908,7 +908,23 @@ public class MapSceneTree : IActionEventHandler
             }
             else
             {
-                ImGui.Selectable($@"   {ForkAwesome.Cube} {mapid}", selected);
+                if(ImGui.Selectable($@"   {ForkAwesome.Cube} {mapid}", selected, ImGuiSelectableFlags.AllowDoubleClick))
+                {
+                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    {
+                        TaskLogs.AddLog($"Double Click");
+
+                        if (CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click)
+                        {
+                            if (selected)
+                            {
+                                _selection.ClearSelection();
+                            }
+
+                            _universe.LoadMap(mapid, selected);
+                        }
+                    }
+                }
             }
 
             if (metaName != "")
