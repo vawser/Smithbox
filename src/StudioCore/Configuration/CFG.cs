@@ -350,14 +350,10 @@ public class CFG
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_ShowLowDetailParts = false;
 
-    public bool EventFlagBrowser_Open = false;
-    public bool EventFlagBrowser_ShowTagsInBrowser = true;
-    public bool EventFlagBrowser_ShowAliasAddition = false;
+    public bool EventFlagAtlas_ShowTags = true;
 
-    public bool MapAliases_ShowMapAliasEditList = false;
-    public bool MapAliases_ShowUnusedNames = false;
-    public bool MapAliases_ShowTagsInBrowser = true;
-    public bool MapAliases_ShowAliasAddition = false;
+    public bool MapNameAtlas_ShowUnused = false;
+    public bool MapNameAtlas_ShowTags = true;
 
     //****************************
     // Map Toolbar

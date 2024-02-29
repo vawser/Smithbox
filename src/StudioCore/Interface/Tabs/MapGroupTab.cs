@@ -13,12 +13,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace StudioCore.Interface.Windows;
+namespace StudioCore.Interface.Tabs;
 
-public class MapGroupWindow
+public class MapGroupTab
 {
-    private bool MenuOpenState;
-
     private string _searchInput = "";
     private string _searchInputCache = "";
 
@@ -38,74 +36,46 @@ public class MapGroupWindow
 
     private bool ShowMapGroupAddSection = false;
 
-    public MapGroupWindow() { }
-
-    public void ToggleMenuVisibility()
-    {
-        MenuOpenState = !MenuOpenState;
-    }
+    public MapGroupTab() { }
 
     public void Display()
     {
-        var scale = Smithbox.GetUIScale();
-
-        if (!MenuOpenState)
-            return;
-
         if (Project.Type == ProjectType.Undefined)
             return;
 
         if (MapGroupsBank.Bank.IsMapGroupBankLoaded)
             return;
 
-        ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * scale, ImGuiCond.FirstUseEver);
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, CFG.Current.Imgui_Moveable_MainBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBg, CFG.Current.Imgui_Moveable_TitleBg);
-        ImGui.PushStyleColor(ImGuiCol.TitleBgActive, CFG.Current.Imgui_Moveable_TitleBg_Active);
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.Imgui_Moveable_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(10.0f, 10.0f) * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
-        ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
-
-        if (ImGui.Begin("Map Groups##MapGroupWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
+        if (ShowMapGroupAddSection)
         {
-            if (ShowMapGroupAddSection)
+            if (ImGui.Button("Show Map Group List"))
             {
-                if (ImGui.Button("Show Map Group List"))
-                {
-                    ShowMapGroupAddSection = false;
-                }
+                ShowMapGroupAddSection = false;
             }
-            else
+        }
+        else
+        {
+            if (ImGui.Button("Add New Map Group"))
             {
-                if (ImGui.Button("Add New Map Group"))
-                {
-                    ShowMapGroupAddSection = true;
-                }
+                ShowMapGroupAddSection = true;
             }
+        }
 
-            ImGui.Separator();
+        ImGui.Separator();
 
-            if (ShowMapGroupAddSection)
-            {
-                DisplayMapGroupAddSection();
-            }
-            else
-            {
-                DisplayMapGroupList();
-            }
+        if (ShowMapGroupAddSection)
+        {
+            DisplayMapGroupAddSection();
+        }
+        else
+        {
+            DisplayMapGroupList();
+        }
 
-            ImGui.End();
-
-            ImGui.PopStyleVar(3);
-            ImGui.PopStyleColor(5);
-
-            if (MapGroupsBank.Bank.CanReloadMapGroupBank)
-            {
-                MapGroupsBank.Bank.CanReloadMapGroupBank = false;
-                MapGroupsBank.Bank.ReloadMapGroupBank();
-            }
+        if (MapGroupsBank.Bank.CanReloadMapGroupBank)
+        {
+            MapGroupsBank.Bank.CanReloadMapGroupBank = false;
+            MapGroupsBank.Bank.ReloadMapGroupBank();
         }
     }
 
@@ -113,23 +83,23 @@ public class MapGroupWindow
     {
         ImGui.Text("ID");
         ImGui.InputText($"##ID", ref _newRefId, 255);
-        ImguiUtils.ShowHelpMarker("The numeric ID of the map group to add.");
+        ImguiUtils.ShowHoverTooltip("The numeric ID of the map group to add.");
 
         ImGui.Text("Name");
         ImGui.InputText($"##Name", ref _newRefName, 255);
-        ImguiUtils.ShowHelpMarker("The name of the map group to add.");
+        ImguiUtils.ShowHoverTooltip("The name of the map group to add.");
 
         ImGui.Text("Description");
         ImGui.InputTextMultiline($"##Description", ref _newRefDescription, 255, new Vector2(255, 200));
-        ImguiUtils.ShowHelpMarker("The description of this map group.");
+        ImguiUtils.ShowHoverTooltip("The description of this map group.");
 
         ImGui.Text("Category");
         ImGui.InputText($"##Category", ref _newRefCategory, 255);
-        ImguiUtils.ShowHelpMarker("The category this map group should be placed under");
+        ImguiUtils.ShowHoverTooltip("The category this map group should be placed under");
 
         ImGui.Text("Members");
         ImGui.InputText($"##Members", ref _newRefMembers, 255);
-        ImguiUtils.ShowHelpMarker("The map ids to associate with this map group.\nEach map id should be separated by the ',' character.");
+        ImguiUtils.ShowHoverTooltip("The map ids to associate with this map group.\nEach map id should be separated by the ',' character.");
 
         if (ImGui.Button("Add Map Group"))
         {
@@ -193,15 +163,12 @@ public class MapGroupWindow
             }
             catch { }
         }
-        ImguiUtils.ShowHelpMarker("Adds a new map group to the project-specific bank.");
     }
 
     public void DisplayMapGroupList()
     {
         ImGui.InputText($"Search", ref _searchInput, 255);
-
-        ImGui.SameLine();
-        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Spacing();
         ImGui.Separator();
@@ -233,9 +200,9 @@ public class MapGroupWindow
 
             var refMembersString = "";
 
-            for(int i = 0; i < refMembers.Count; i++)
+            for (int i = 0; i < refMembers.Count; i++)
             {
-                if(i == refMembers.Count - 1)
+                if (i == refMembers.Count - 1)
                 {
                     refMembersString = refMembersString + $"{refMembers[i].id}";
                 }
@@ -312,7 +279,7 @@ public class MapGroupWindow
                 ImGui.CloseCurrentPopup();
                 MapGroupsBank.Bank.CanReloadMapGroupBank = true;
             }
-            ImguiUtils.ShowButtonTooltip("Edit this map group.");
+            ImguiUtils.ShowHoverTooltip("Edit this map group.");
 
             ImGui.SameLine();
 
@@ -323,7 +290,7 @@ public class MapGroupWindow
                 ImGui.CloseCurrentPopup();
                 MapGroupsBank.Bank.CanReloadMapGroupBank = true;
             }
-            ImguiUtils.ShowButtonTooltip("Restore this map group to its default values.");
+            ImguiUtils.ShowHoverTooltip("Restore this map group to its default values.");
 
             // Is local only, this will delete it
             if (MapGroupsBank.Bank.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Delete"))
@@ -332,7 +299,7 @@ public class MapGroupWindow
                 ImGui.CloseCurrentPopup();
                 MapGroupsBank.Bank.CanReloadMapGroupBank = true;
             }
-            ImguiUtils.ShowButtonTooltip("Delete this map group.");
+            ImguiUtils.ShowHoverTooltip("Delete this map group.");
 
             ImGui.EndPopup();
         }

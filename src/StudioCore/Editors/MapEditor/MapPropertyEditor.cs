@@ -1313,7 +1313,7 @@ public class MapPropertyEditor
 
             var desc = MsbFormatBank.Bank.GetReferenceDescription(name);
 
-            ImguiUtils.ShowHelpMarker(desc);
+            ImguiUtils.ShowHoverTooltip(desc);
         }
     }
 

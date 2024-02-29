@@ -101,18 +101,15 @@ public class MapAssetBrowser
             // Asset List
             ImGui.NextColumn();
 
-            ImGui.BeginChild("AssetListSearch");
             ImGui.InputText($"Search", ref _searchInput, 255);
-
-            ImGui.SameLine();
-            ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+            ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
             ImGui.Spacing();
             ImGui.Separator();
             ImGui.Spacing();
 
             ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-            ImguiUtils.ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
+            ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
 
             ImGui.BeginChild("AssetList");
 
@@ -120,7 +117,6 @@ public class MapAssetBrowser
             DisplayAssetSelectionList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
             DisplayMapAssetSelectionList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
 
-            ImGui.EndChild();
             ImGui.EndChild();
         }
         ImGui.End();

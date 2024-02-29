@@ -86,7 +86,7 @@ public static class MapAliasBank
 
                         foreach (var entry in Bank.AliasNames.GetEntries("Maps"))
                         {
-                            if (!CFG.Current.MapAliases_ShowUnusedNames)
+                            if (!CFG.Current.MapNameAtlas_ShowUnused)
                             {
                                 if (entry.tags[0] != "unused")
                                 {

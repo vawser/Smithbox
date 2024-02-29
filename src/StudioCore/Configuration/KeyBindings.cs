@@ -104,7 +104,6 @@ public class KeyBindings
 
         // Windows
         public KeyBind Window_Help = new("Toggle Help Window", KeybindCategory.Window, Key.F2);
-        public KeyBind Window_FlagBrowser = new("Toggle Event Flag Window", KeybindCategory.Window, Key.F3);
 
         // Map Toolbar
         public KeyBind Toolbar_Rotate_X = new("Rotate X", KeybindCategory.MapEditor, Key.J);

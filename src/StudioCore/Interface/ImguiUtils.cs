@@ -37,7 +37,7 @@ public static class ImguiUtils
         }
     }
 
-    public static void ShowButtonTooltip(string desc)
+    public static void ShowHoverTooltip(string desc)
     {
         if (CFG.Current.System_Show_UI_Tooltips)
         {

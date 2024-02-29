@@ -764,7 +764,7 @@ public class ParamEditorView
                 {
                     CFG.Current.Param_DuplicateAmount = 1;
                 }
-                ImguiUtils.ShowHelpMarker("The number of times to duplicate this entry.");
+                ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
 
                 ImGui.Separator();
             }

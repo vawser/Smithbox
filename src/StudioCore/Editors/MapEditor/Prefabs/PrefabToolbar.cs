@@ -108,14 +108,14 @@ namespace StudioCore.Editors.MapEditor
 
                 ImGui.Separator();
                 ImGui.Text("Prefab Export");
-                ImguiUtils.ShowHelpMarker($"Shortcut: {KeyBindings.Current.Toolbar_ExportPrefab.HintText}");
+                ImguiUtils.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.Toolbar_ExportPrefab.HintText}");
                 ImGui.Separator();
 
                 DisplayPrefabSaveMenu();
 
                 ImGui.Separator();
                 ImGui.Text("Prefab Import");
-                ImguiUtils.ShowHelpMarker($"Shortcut: {KeyBindings.Current.Toolbar_ImportPrefab.HintText}");
+                ImguiUtils.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.Toolbar_ImportPrefab.HintText}");
                 ImGui.Separator();
 
                 DisplayTargetMapMenu();
@@ -157,7 +157,7 @@ namespace StudioCore.Editors.MapEditor
         public void DisplayPrefabActionMenu()
         {
             ImGui.Text("Actions");
-            ImguiUtils.ShowHelpMarker($"The actions we can apply with this prefab.");
+            ImguiUtils.ShowHoverTooltip($"The actions we can apply with this prefab.");
             ImGui.Separator();
 
             if (_selectedPrefabInfo != null)
@@ -166,7 +166,7 @@ namespace StudioCore.Editors.MapEditor
                 {
                     ImportSelectedPrefab(_selectedPrefabInfo);
                 }
-                ImguiUtils.ShowHelpMarker("Spawn the prefab objects into the current target map.");
+                ImguiUtils.ShowHoverTooltip("Spawn the prefab objects into the current target map.");
 
                 if (ImGui.Button("Delete Prefab"))
                 {
@@ -180,7 +180,7 @@ namespace StudioCore.Editors.MapEditor
                     _selectedPrefabInfo = null;
                     RefreshPrefabList();
                 }
-                ImguiUtils.ShowHelpMarker("Delete this prefab.");
+                ImguiUtils.ShowHoverTooltip("Delete this prefab.");
 
                 if (ImGui.Button("Rename Prefab"))
                 {
@@ -201,27 +201,27 @@ namespace StudioCore.Editors.MapEditor
                 }
                 ImGui.SameLine();
                 ImGui.InputText("##prefabRename", ref _newPrefabName, 255);
-                ImguiUtils.ShowHelpMarker("Rename this prefab.");
+                ImguiUtils.ShowHoverTooltip("Rename this prefab.");
 
                 // Options
                 ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
-                ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
+                ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
 
                 if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT || Project.Type == ProjectType.ER)
                 {
                     ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
                     ImGui.SameLine();
                     ImGui.InputInt("##entityGroupIdInput", ref CFG.Current.Prefab_SpecificEntityGroupID);
-                    ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
+                    ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
                 }
 
                 if (Project.Type == ProjectType.ER)
                 {
                     ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
-                    ImguiUtils.ShowHelpMarker("Spawned prefab objects will be given unique Entity IDs.");
+                    ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
 
                     ImGui.Checkbox("Apply Asset UnkPartNames", ref CFG.Current.Prefab_ApplySelfPartNames);
-                    ImguiUtils.ShowHelpMarker("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
+                    ImguiUtils.ShowHoverTooltip("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
                 }
             }
         }
@@ -246,7 +246,7 @@ namespace StudioCore.Editors.MapEditor
                     ExportCurrentSelection(_prefabName);
                 }
             }
-            ImguiUtils.ShowHelpMarker("Save the current selection as a prefab.\n\nNote, map object fields that refer other map objects will be set to empty when saved as a prefab.");
+            ImguiUtils.ShowHoverTooltip("Save the current selection as a prefab.\n\nNote, map object fields that refer other map objects will be set to empty when saved as a prefab.");
 
             if (_selection.GetSelection().Count != 0)
             {
@@ -255,17 +255,17 @@ namespace StudioCore.Editors.MapEditor
                 {
                     _prefabName = GetUniquePrefabName();
                 }
-                ImguiUtils.ShowHelpMarker("Get an unique prefab name based on the first element of the current selection.");
+                ImguiUtils.ShowHoverTooltip("Get an unique prefab name based on the first element of the current selection.");
             }
 
             ImGui.InputText("Tags##prefabTags", ref _prefabTags, 255);
-            ImguiUtils.ShowHelpMarker("The set of tags to save this prefab under. Split each tag with the , character.");
+            ImguiUtils.ShowHoverTooltip("The set of tags to save this prefab under. Split each tag with the , character.");
 
             ImGui.Checkbox("Retain Entity ID", ref CFG.Current.Prefab_IncludeEntityID);
-            ImguiUtils.ShowHelpMarker("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
+            ImguiUtils.ShowHoverTooltip("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
 
             ImGui.Checkbox("Retain Entity Group IDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
-            ImguiUtils.ShowHelpMarker("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
+            ImguiUtils.ShowHoverTooltip("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
         }
 
         public void DisplayTargetMapMenu()
@@ -285,7 +285,7 @@ namespace StudioCore.Editors.MapEditor
                 }
                 ImGui.EndCombo();
             }
-            ImguiUtils.ShowHelpMarker("The target map to spawn a prefab in.");
+            ImguiUtils.ShowHoverTooltip("The target map to spawn a prefab in.");
         }
 
         public void DisplayPrefabSearch()

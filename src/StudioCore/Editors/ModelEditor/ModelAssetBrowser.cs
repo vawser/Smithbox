@@ -140,21 +140,19 @@ namespace StudioCore.Editors.ModelEditor
 
                 ImGui.BeginChild("AssetListSearch");
                 ImGui.InputText($"Search", ref _searchStrInput, 255);
-
-                ImGui.SameLine();
-                ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+                ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
                 ImGui.Spacing();
                 ImGui.Separator();
                 ImGui.Spacing();
 
                 ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-                ImguiUtils.ShowHelpMarker("Show the tags for each entry within the browser list as part of their displayed name.");
+                ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
 
                 if(_selectedAssetType == SelectedCategoryType.Part)
                 {
                     ImGui.Checkbox("Show low detail models", ref CFG.Current.AssetBrowser_ShowLowDetailParts);
-                    ImguiUtils.ShowHelpMarker("Show the low detail part models in this list.");
+                    ImguiUtils.ShowHoverTooltip("Show the low detail part models in this list.");
                 }
 
                 ImGui.BeginChild("AssetList");

@@ -149,8 +149,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _fileSearchInput, 255);
-        ImGui.SameLine();
-        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -209,8 +208,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _paramGroupSearchInput, 255);
-        ImGui.SameLine();
-        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -321,8 +319,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _paramFieldSearchInput, 255);
-        ImGui.SameLine();
-        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -428,8 +425,7 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
 
         ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
-        ImGui.SameLine();
-        ImguiUtils.ShowHelpMarker("Separate terms are split via the + character.");
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.Separator();
 
@@ -639,7 +635,7 @@ public class GparamEditorScreen : EditorScreen
 
                         ImGui.CloseCurrentPopup();
                     }
-                    ImguiUtils.ShowButtonTooltip("Delete the selected file from your project.");
+                    ImguiUtils.ShowHoverTooltip("Delete the selected file from your project.");
                 }
 
                 if (ImGui.Selectable("Duplicate"))
@@ -648,7 +644,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowButtonTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
+                ImguiUtils.ShowHoverTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
 
                 if (ImGui.Selectable("Copy"))
                 {
@@ -656,7 +652,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowButtonTooltip("Copy the selected file and rename it to the name specified below");
+                ImguiUtils.ShowHoverTooltip("Copy the selected file and rename it to the name specified below");
 
                 ImGui.Separator();
 
@@ -688,7 +684,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowButtonTooltip("Delete the selected group.");
+                ImguiUtils.ShowHoverTooltip("Delete the selected group.");
 
                 ImGui.EndPopup();
             }
@@ -711,7 +707,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowButtonTooltip("Delete the selected row.");
+                ImguiUtils.ShowHoverTooltip("Delete the selected row.");
 
                 ImGui.EndPopup();
             }
@@ -737,7 +733,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowButtonTooltip("Delete the value row.");
+                ImguiUtils.ShowHoverTooltip("Delete the value row.");
 
                 if (ImGui.Selectable("Duplicate"))
                 {
@@ -749,7 +745,7 @@ public class GparamEditorScreen : EditorScreen
 
                     ImGui.CloseCurrentPopup();
                 }
-                ImguiUtils.ShowButtonTooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+                ImguiUtils.ShowHoverTooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
 
                 ImGui.InputInt("##valueIdInput", ref _duplicateValueRowId);
 

@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using SoapstoneLib;
-using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.UserProject;
 using StudioCore.Scene;
@@ -13,7 +12,6 @@ using Veldrid;
 using StudioCore.Editors;
 using StudioCore.Settings;
 using SoulsFormats;
-using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.Interface.Windows;
 
@@ -44,10 +42,10 @@ public class SettingsWindow
             {
                 ImGui.Checkbox("Check for new versions of Smithbox during startup",
                     ref CFG.Current.System_Check_Program_Update);
-                ImguiUtils.ShowHelpMarker("When enabled Smithbox will automatically check for new versions upon program start.");
+                ImguiUtils.ShowHoverTooltip("When enabled Smithbox will automatically check for new versions upon program start.");
 
                 ImGui.Checkbox("Show UI tooltips", ref CFG.Current.System_Show_UI_Tooltips);
-                ImguiUtils.ShowHelpMarker("This is a tooltip.");
+                ImguiUtils.ShowHoverTooltip("This is a tooltip.");
 
                 ImGui.SliderFloat("UI scale", ref CFG.Current.System_UI_Scale, 0.5f, 4.0f);
                 if (ImGui.IsItemDeactivatedAfterEdit())
@@ -56,10 +54,10 @@ public class SettingsWindow
                     CFG.Current.System_UI_Scale = (float)Math.Round(CFG.Current.System_UI_Scale * 20) / 20;
                     Smithbox.FontRebuildRequest = true;
                 }
-                ImguiUtils.ShowHelpMarker("Adjusts the scale of the user interface throughout all of Smithbox.");
+                ImguiUtils.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
                 ImGui.SliderFloat("Frame Rate", ref CFG.Current.System_Frame_Rate, 20.0f, 240.0f);
-                ImguiUtils.ShowHelpMarker("Adjusts the frame rate of the viewport.");
+                ImguiUtils.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
 
                 // Round FPS to the nearest whole number
                 CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
@@ -75,7 +73,7 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("Formats"))
             {
                 ImGui.Checkbox("Flexible Unpack", ref CFG.Current.System_FlexibleUnpack);
-                ImguiUtils.ShowHelpMarker("Enable this if you are attempting to mod files that are 'encrypted'.");
+                ImguiUtils.ShowHoverTooltip("Enable this if you are attempting to mod files that are 'encrypted'.");
 
                 BinaryReaderEx.IsFlexible = CFG.Current.System_FlexibleUnpack;
             }
@@ -95,106 +93,64 @@ public class SettingsWindow
             {
                 if (ImGui.Checkbox("Chinese", ref CFG.Current.System_Font_Chinese))
                     Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHelpMarker("Include Chinese font.\nAdditional fonts take more VRAM and increase startup time.");
+                ImguiUtils.ShowHoverTooltip("Include Chinese font.\nAdditional fonts take more VRAM and increase startup time.");
 
                 if (ImGui.Checkbox("Korean", ref CFG.Current.System_Font_Korean))
                     Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHelpMarker("Include Korean font.\nAdditional fonts take more VRAM and increase startup time.");
+                ImguiUtils.ShowHoverTooltip("Include Korean font.\nAdditional fonts take more VRAM and increase startup time.");
 
                 if (ImGui.Checkbox("Thai", ref CFG.Current.System_Font_Thai))
                     Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHelpMarker("Include Thai font.\nAdditional fonts take more VRAM and increase startup time.");
+                ImguiUtils.ShowHoverTooltip("Include Thai font.\nAdditional fonts take more VRAM and increase startup time.");
 
                 if (ImGui.Checkbox("Vietnamese", ref CFG.Current.System_Font_Vietnamese))
                     Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHelpMarker("Include Vietnamese font.\nAdditional fonts take more VRAM and increase startup time.");
+                ImguiUtils.ShowHoverTooltip("Include Vietnamese font.\nAdditional fonts take more VRAM and increase startup time.");
 
                 if (ImGui.Checkbox("Cyrillic", ref CFG.Current.System_Font_Cyrillic))
                     Smithbox.FontRebuildRequest = true;
-                ImguiUtils.ShowHelpMarker("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
+                ImguiUtils.ShowHoverTooltip("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
             }
 
             if(ImGui.CollapsingHeader("Resources"))
             {
                 ImGui.Checkbox("Alias Banks - Editor Mode", ref CFG.Current.AliasBank_EditorMode);
-                ImguiUtils.ShowHelpMarker("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
+                ImguiUtils.ShowHoverTooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
 
                 if (FeatureFlags.EnableEditor_TimeAct)
                 {
                     ImGui.Checkbox("Time Act Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_TimeAct);
-                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                    ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
                 }
 
                 if (FeatureFlags.EnableEditor_Cutscene)
                 {
                     ImGui.Checkbox("Cutscene Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Cutscene);
-                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                    ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
                 }
 
                 if (FeatureFlags.EnableEditor_Gparam)
                 {
                     ImGui.Checkbox("Gparam Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Gparam);
-                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                    ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
                 }
 
                 if (FeatureFlags.EnableEditor_Material)
                 {
                     ImGui.Checkbox("Material Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Material);
-                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                    ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
                 }
 
                 if (FeatureFlags.EnableEditor_Particle)
                 {
                     ImGui.Checkbox("Particle Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Particle);
-                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
+                    ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
                 }
 
                 if (FeatureFlags.EnableEditor_TextureViewer)
                 {
                     ImGui.Checkbox("Texture Viewer - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Textures);
-                    ImguiUtils.ShowHelpMarker("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-                }
-            }
-
-            if (ImGui.CollapsingHeader("Project"))
-            {
-                if (ProjSettings == null || ProjSettings.ProjectName == null)
-                {
-                    ImGui.Text("No project loaded");
-                    ImguiUtils.ShowHelpMarker("No project has been loaded yet.");
-                }
-                else if (TaskManager.AnyActiveTasks())
-                {
-                    ImGui.Text("Waiting for program tasks to finish...");
-                    ImguiUtils.ShowHelpMarker("DSMS must finished all program tasks before it can load a project.");
-                }
-                else
-                {
-                    ImGui.Text($@"Project: {ProjSettings.ProjectName}");
-                    ImguiUtils.ShowHelpMarker("This is the currently loaded project.");
-
-                    if (ImGui.Button("Open project settings file"))
-                    {
-                        var projectPath = CFG.Current.LastProjectFile;
-                        Process.Start("explorer.exe", projectPath);
-                    }
-
-                    var useLoose = ProjSettings.UseLooseParams;
-                    if (ProjSettings.GameType is ProjectType.DS2S or ProjectType.DS3)
-                    {
-                        if (ImGui.Checkbox("Use loose params", ref useLoose))
-                            ProjSettings.UseLooseParams = useLoose;
-                        ImguiUtils.ShowHelpMarker("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
-                    }
-
-                    var usepartial = ProjSettings.PartialParams;
-                    if (FeatureFlags.EnablePartialParam || usepartial)
-                    {
-                        if (ProjSettings.GameType == ProjectType.ER &&
-                        ImGui.Checkbox("Partial params", ref usepartial))
-                            ProjSettings.PartialParams = usepartial;
-                        ImguiUtils.ShowHelpMarker("Partial params.");
-                    }
+                    ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
                 }
             }
 
@@ -210,22 +166,22 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Enable model texturing", ref CFG.Current.Viewport_Enable_Texturing);
-                ImguiUtils.ShowHelpMarker("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
+                ImguiUtils.ShowHoverTooltip("Enabling this option will allow DSMS to render the textures of models within the viewport.\n\nNote, this feature is in an alpha state.");
 
                 ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.Viewport_Frustum_Culling);
-                ImguiUtils.ShowHelpMarker("Enabling this option will cause entities outside of the camera frustrum to be culled.");
+                ImguiUtils.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustrum to be culled.");
             }
 
             if (ImGui.CollapsingHeader("Rendering", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.InputFloat("Default Model Render: Brightness", ref CFG.Current.Viewport_DefaultRender_Brightness);
-                ImguiUtils.ShowHelpMarker("Change the brightness modifier for the Default Model Rendering shader.");
+                ImguiUtils.ShowHoverTooltip("Change the brightness modifier for the Default Model Rendering shader.");
                 ImGui.InputFloat("Default Model Render: Saturation", ref CFG.Current.Viewport_DefaultRender_Saturation);
-                ImguiUtils.ShowHelpMarker("Change the saturation modifier for the Default Model Rendering shader.");
+                ImguiUtils.ShowHoverTooltip("Change the saturation modifier for the Default Model Rendering shader.");
 
 
                 ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
-                ImguiUtils.ShowHelpMarker("Enabling this option will cause a selection outline to appear on selected objects.");
+                ImguiUtils.ShowHoverTooltip("Enabling this option will cause a selection outline to appear on selected objects.");
 
                 ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
 
@@ -234,7 +190,7 @@ public class SettingsWindow
                     CFG.Current.Viewport_DefaultRender_Brightness = 1.0f;
                     CFG.Current.Viewport_DefaultRender_Saturation = 0.5f;
                 }
-                ImguiUtils.ShowHelpMarker("Resets all of the values within this section to their default values.");
+                ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
             }
 
             if (ImGui.CollapsingHeader("Camera"))
@@ -255,40 +211,40 @@ public class SettingsWindow
                     EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
                     CFG.Current.Viewport_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
                 }
-                ImguiUtils.ShowHelpMarker("Resets all of the values within this section to their default values.");
+                ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
                 var cam_fov = CFG.Current.Viewport_Camera_FOV;
 
                 if (ImGui.SliderFloat("Camera FOV", ref cam_fov, 40.0f, 140.0f))
                     CFG.Current.Viewport_Camera_FOV = cam_fov;
-                ImguiUtils.ShowHelpMarker("Set the field of view used by the camera within DSMS.");
+                ImguiUtils.ShowHoverTooltip("Set the field of view used by the camera within DSMS.");
 
                 var cam_sensitivity = CFG.Current.Viewport_Camera_Sensitivity;
 
                 if (ImGui.SliderFloat("Camera sensitivity", ref cam_sensitivity, 0.0f, 0.1f))
                     CFG.Current.Viewport_Camera_Sensitivity = cam_sensitivity;
-                ImguiUtils.ShowHelpMarker("Mouse sensitivty for turning the camera.");
+                ImguiUtils.ShowHoverTooltip("Mouse sensitivty for turning the camera.");
 
                 var farClip = CFG.Current.Viewport_RenderDistance_Max;
 
                 if (ImGui.SliderFloat("Map max render distance", ref farClip, 10.0f, 500000.0f))
                     CFG.Current.Viewport_RenderDistance_Max = farClip;
-                ImguiUtils.ShowHelpMarker("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
+                ImguiUtils.ShowHoverTooltip("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
 
                 if (ImGui.SliderFloat("Map camera speed (slow)",
                         ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow, 0.1f, 999.0f))
                     CFG.Current.Viewport_Camera_MoveSpeed_Slow = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Slow;
-                ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
+                ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
 
                 if (ImGui.SliderFloat("Map camera speed (normal)",
                         ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal, 0.1f, 999.0f))
                     CFG.Current.Viewport_Camera_MoveSpeed_Normal = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Normal;
-                ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move whilst moving normally.");
+                ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move whilst moving normally.");
 
                 if (ImGui.SliderFloat("Map camera speed (fast)",
                         ref EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast, 0.1f, 999.0f))
                     CFG.Current.Viewport_Camera_MoveSpeed_Fast = EditorContainer.MsbEditor.Viewport.WorldView.CameraMoveSpeed_Fast;
-                ImguiUtils.ShowHelpMarker("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
+                ImguiUtils.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
             }
 
             // Limits
@@ -300,7 +256,7 @@ public class SettingsWindow
                     CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
                     CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
                 }
-                ImguiUtils.ShowHelpMarker("Reset the values within this section to their default values.");
+                ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
 
                 ImGui.Text("Please restart the program for changes to take effect.");
 
@@ -310,13 +266,13 @@ public class SettingsWindow
                 if (ImGui.InputInt("Renderables", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
                     if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
                         CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
-                ImguiUtils.ShowHelpMarker("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
+                ImguiUtils.ShowHoverTooltip("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
 
                 Utils.ImGui_InputUint("Indirect Draw buffer", ref CFG.Current.Viewport_Limit_Buffer_Indirect_Draw);
-                ImguiUtils.ShowHelpMarker("This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.");
+                ImguiUtils.ShowHoverTooltip("This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.");
 
                 Utils.ImGui_InputUint("FLVER Bone buffer", ref CFG.Current.Viewport_Limit_Buffer_Flver_Bone);
-                ImguiUtils.ShowHelpMarker("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
+                ImguiUtils.ShowHoverTooltip("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
             }
 
             // Grid
@@ -326,18 +282,18 @@ public class SettingsWindow
                     CFG.Current.Viewport_RegenerateMapGrid = true;
 
                 ImGui.Checkbox("Enable viewport grid", ref CFG.Current.Viewport_EnableGrid);
-                ImguiUtils.ShowHelpMarker("Enable the viewport grid.");
+                ImguiUtils.ShowHoverTooltip("Enable the viewport grid.");
 
                 ImGui.SliderInt("Grid size", ref CFG.Current.Viewport_Grid_Size, 100, 1000);
-                ImguiUtils.ShowHelpMarker("The overall maximum size of the grid.\nThe grid will only update upon restarting DSMS after changing this value.");
+                ImguiUtils.ShowHoverTooltip("The overall maximum size of the grid.\nThe grid will only update upon restarting DSMS after changing this value.");
 
                 ImGui.SliderInt("Grid increment", ref CFG.Current.Viewport_Grid_Square_Size, 1, 100);
-                ImguiUtils.ShowHelpMarker("The increment size of the grid.");
+                ImguiUtils.ShowHoverTooltip("The increment size of the grid.");
 
                 var height = CFG.Current.Viewport_Grid_Height;
 
                 ImGui.InputFloat("Grid height", ref height);
-                ImguiUtils.ShowHelpMarker("The height at which the horizontal grid sits.");
+                ImguiUtils.ShowHoverTooltip("The height at which the horizontal grid sits.");
 
                 if (height < -10000)
                     height = -10000;
@@ -348,7 +304,7 @@ public class SettingsWindow
                 CFG.Current.Viewport_Grid_Height = height;
 
                 ImGui.SliderFloat("Grid height increment", ref CFG.Current.Viewport_Grid_Height_Increment, 0.1f, 100);
-                ImguiUtils.ShowHelpMarker("The amount to lower or raise the viewport grid height via the shortcuts.");
+                ImguiUtils.ShowHoverTooltip("The amount to lower or raise the viewport grid height via the shortcuts.");
 
                 ImGui.ColorEdit3("Grid color", ref CFG.Current.Viewport_Grid_Color);
 
@@ -359,7 +315,7 @@ public class SettingsWindow
                     CFG.Current.Viewport_Grid_Square_Size = 10;
                     CFG.Current.Viewport_Grid_Height = 0;
                 }
-                ImguiUtils.ShowHelpMarker("Resets all of the values within this section to their default values.");
+                ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
             }
 
             // Wireframes
@@ -418,7 +374,7 @@ public class SettingsWindow
 
                     CFG.Current.GFX_Wireframe_Color_Variance = CFG.Default.GFX_Wireframe_Color_Variance;
                 }
-                ImguiUtils.ShowHelpMarker("Resets all of the values within this section to their default values.");
+                ImguiUtils.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
                 ImGui.SliderFloat("Wireframe color variance", ref CFG.Current.GFX_Wireframe_Color_Variance, 0.0f, 1.0f);
 
@@ -486,17 +442,17 @@ public class SettingsWindow
             {
                 
                 ImGui.Checkbox("Enable map load on double-click", ref CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click);
-                ImguiUtils.ShowHelpMarker("This option will cause double-clicking on a map in the map object list to load it.");
+                ImguiUtils.ShowHoverTooltip("This option will cause double-clicking on a map in the map object list to load it.");
 
                 ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
-                ImguiUtils.ShowHelpMarker("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
+                ImguiUtils.ShowHoverTooltip("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
 
                 if (ProjSettings != null)
                 {
                     if (ProjSettings.GameType is ProjectType.ER)
                     {
                         ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
-                        ImguiUtils.ShowHelpMarker("");
+                        ImguiUtils.ShowHoverTooltip("");
                     }
                 }
             }
@@ -505,20 +461,20 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("Property View"))
             {
                 ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
-                ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
+                ImguiUtils.ShowHoverTooltip("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
 
                 ImGui.Checkbox("Display community descriptions", ref CFG.Current.MapEditor_Enable_Commmunity_Hints);
-                ImguiUtils.ShowHelpMarker("The MSB property fields will be given crowd-sourced descriptions.");
+                ImguiUtils.ShowHoverTooltip("The MSB property fields will be given crowd-sourced descriptions.");
 
                 ImGui.Checkbox("Display property info", ref CFG.Current.MapEditor_Enable_Property_Info);
-                ImguiUtils.ShowHelpMarker("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
+                ImguiUtils.ShowHoverTooltip("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
             }
 
             // Scene View
             if (ImGui.CollapsingHeader("Scene View"))
             {
                 ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_Show_Character_Names_in_Scene_Tree);
-                ImguiUtils.ShowHelpMarker("Characters names will be displayed within the scene view list.");
+                ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
             }
 
             // Map Object Display Presets
@@ -541,7 +497,7 @@ public class SettingsWindow
                     CFG.Current.SceneFilter_Preset_06.Name = CFG.Default.SceneFilter_Preset_06.Name;
                     CFG.Current.SceneFilter_Preset_06.Filters = CFG.Default.SceneFilter_Preset_06.Filters;
                 }
-                ImguiUtils.ShowHelpMarker("Reset the values within this section to their default values.");
+                ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
 
                 SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_01);
                 SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_02);
@@ -555,52 +511,52 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("Global Actions"))
             {
                 ImGui.Checkbox("Check Duplicate Entity ID", ref CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID);
-                ImguiUtils.ShowHelpMarker("If enabled, the Check Duplicate Entity ID action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Check Duplicate Entity ID action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Patrol Routes", ref CFG.Current.Toolbar_Show_Render_Patrol_Routes);
-                ImguiUtils.ShowHelpMarker("If enabled, the Patrol Routes action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Patrol Routes action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Generate Navigation Data", ref CFG.Current.Toolbar_Show_Navigation_Data);
-                ImguiUtils.ShowHelpMarker("If enabled, the Generate Navigation Data action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Generate Navigation Data action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Toggle Object Visibility by Tag", ref CFG.Current.Toolbar_Show_Toggle_Object_Visibility_by_Tag);
-                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Object Visibility by Tag action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Toggle Object Visibility by Tag action will be visible in the map toolbar window.");
             }
 
             if (ImGui.CollapsingHeader("Map Actions"))
             {
                 ImGui.Checkbox("Go to in Object List", ref CFG.Current.Toolbar_Show_Go_to_in_Object_List);
-                ImguiUtils.ShowHelpMarker("If enabled, the Go to in Object List action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Go to in Object List action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Move to Camera", ref CFG.Current.Toolbar_Show_Move_to_Camera);
-                ImguiUtils.ShowHelpMarker("If enabled, the Move to Camera action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Move to Camera action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Frame in Viewport", ref CFG.Current.Toolbar_Show_Frame_in_Viewport);
-                ImguiUtils.ShowHelpMarker("If enabled, the Frame in Viewport action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Frame in Viewport action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Toggle Visibility", ref CFG.Current.Toolbar_Show_Toggle_Visibility);
-                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Visibility action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Toggle Visibility action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Create", ref CFG.Current.Toolbar_Show_Create);
-                ImguiUtils.ShowHelpMarker("If enabled, the Create action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Create action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Duplicate", ref CFG.Current.Toolbar_Show_Duplicate);
-                ImguiUtils.ShowHelpMarker("If enabled, the Duplicate action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Duplicate action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Rotate", ref CFG.Current.Toolbar_Show_Rotate);
-                ImguiUtils.ShowHelpMarker("If enabled, the Rotate action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Rotate action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Toggle Presence", ref CFG.Current.Toolbar_Show_Toggle_Presence);
-                ImguiUtils.ShowHelpMarker("If enabled, the Toggle Presence action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Toggle Presence action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Scramble", ref CFG.Current.Toolbar_Show_Scramble);
-                ImguiUtils.ShowHelpMarker("If enabled, the Scramble action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Scramble action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Replicate", ref CFG.Current.Toolbar_Show_Replicate);
-                ImguiUtils.ShowHelpMarker("If enabled, the Replicate action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Replicate action will be visible in the map toolbar window.");
 
                 ImGui.Checkbox("Move to Grid", ref CFG.Current.Toolbar_Show_Move_to_Grid);
-                ImguiUtils.ShowHelpMarker("If enabled, the Move to Grid action will be visible in the map toolbar window.");
+                ImguiUtils.ShowHoverTooltip("If enabled, the Move to Grid action will be visible in the map toolbar window.");
             }
 
             ImGui.Unindent();
@@ -616,13 +572,13 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Use compact param editor", ref CFG.Current.UI_CompactParams);
-                ImguiUtils.ShowHelpMarker("Reduces the line height within the the Param Editor screen.");
+                ImguiUtils.ShowHoverTooltip("Reduces the line height within the the Param Editor screen.");
 
                 ImGui.Checkbox("Show advanced options in massedit popup", ref CFG.Current.Param_AdvancedMassedit);
-                ImguiUtils.ShowHelpMarker("Show additional options for advanced users within the massedit popup.");
+                ImguiUtils.ShowHoverTooltip("Show additional options for advanced users within the massedit popup.");
 
                 ImGui.Checkbox("Show shortcut tools in context menus", ref CFG.Current.Param_ShowHotkeysInContextMenu);
-                ImguiUtils.ShowHelpMarker("Show the shortcut tools in the right-click context menu.");
+                ImguiUtils.ShowHoverTooltip("Show the shortcut tools in the right-click context menu.");
             }
 
             // Params
@@ -630,61 +586,61 @@ public class SettingsWindow
             {
                 if (ImGui.Checkbox("Sort params alphabetically", ref CFG.Current.Param_AlphabeticalParams))
                     UICache.ClearCaches();
-                ImguiUtils.ShowHelpMarker("Sort the Param View list alphabetically.");
+                ImguiUtils.ShowHoverTooltip("Sort the Param View list alphabetically.");
             }
 
             // Rows
             if (ImGui.CollapsingHeader("Rows"))
             {
                 ImGui.Checkbox("Disable line wrapping", ref CFG.Current.Param_DisableLineWrapping);
-                ImguiUtils.ShowHelpMarker("Disable the row names from wrapping within the Row View list.");
+                ImguiUtils.ShowHoverTooltip("Disable the row names from wrapping within the Row View list.");
 
                 ImGui.Checkbox("Disable row grouping", ref CFG.Current.Param_DisableRowGrouping);
-                ImguiUtils.ShowHelpMarker("Disable the grouping of connected rows in certain params, such as ItemLotParam within the Row View list.");
+                ImguiUtils.ShowHoverTooltip("Disable the grouping of connected rows in certain params, such as ItemLotParam within the Row View list.");
 
                 ImGui.Checkbox("Enable direct row name editing", ref CFG.Current.Param_QuickNameEdit);
-                ImguiUtils.ShowHelpMarker("Enable the ability to change a row name within the right-click context menu.");
+                ImguiUtils.ShowHoverTooltip("Enable the ability to change a row name within the right-click context menu.");
             }
 
             // Fields
             if (ImGui.CollapsingHeader("Fields"))
             {
                 ImGui.Checkbox("Show community field names first", ref CFG.Current.Param_MakeMetaNamesPrimary);
-                ImguiUtils.ShowHelpMarker("Crowd-sourced names will appear before the canonical name in the Field View list.");
+                ImguiUtils.ShowHoverTooltip("Crowd-sourced names will appear before the canonical name in the Field View list.");
 
                 ImGui.Checkbox("Show secondary field names", ref CFG.Current.Param_ShowSecondaryNames);
-                ImguiUtils.ShowHelpMarker("The crowd-sourced name (or the canonical name if the above option is enabled) will appear after the initial name in the Field View list.");
+                ImguiUtils.ShowHoverTooltip("The crowd-sourced name (or the canonical name if the above option is enabled) will appear after the initial name in the Field View list.");
 
                 ImGui.Checkbox("Show field data offsets", ref CFG.Current.Param_ShowFieldOffsets);
-                ImguiUtils.ShowHelpMarker("The field offset within the .PARAM file will be show to the left in the Field View List.");
+                ImguiUtils.ShowHoverTooltip("The field offset within the .PARAM file will be show to the left in the Field View List.");
 
                 ImGui.Checkbox("Hide field references", ref CFG.Current.Param_HideReferenceRows);
-                ImguiUtils.ShowHelpMarker("Hide the generated param references for fields that link to other params.");
+                ImguiUtils.ShowHoverTooltip("Hide the generated param references for fields that link to other params.");
 
                 ImGui.Checkbox("Hide field enums", ref CFG.Current.Param_HideEnums);
-                ImguiUtils.ShowHelpMarker("Hide the crowd-sourced namelist for index-based enum fields.");
+                ImguiUtils.ShowHoverTooltip("Hide the crowd-sourced namelist for index-based enum fields.");
 
                 ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
-                ImguiUtils.ShowHelpMarker("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
+                ImguiUtils.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
 
                 ImGui.Checkbox("Field name in context menu", ref CFG.Current.Param_FieldNameInContextMenu);
-                ImguiUtils.ShowHelpMarker("Repeat the field name in the context menu.");
+                ImguiUtils.ShowHoverTooltip("Repeat the field name in the context menu.");
 
                 ImGui.Checkbox("Field description in context menu", ref CFG.Current.Param_FieldDescriptionInContextMenu);
-                ImguiUtils.ShowHelpMarker("Repeat the field description in the context menu.");
+                ImguiUtils.ShowHoverTooltip("Repeat the field description in the context menu.");
 
                 ImGui.Checkbox("Full massedit popup in context menu", ref CFG.Current.Param_MasseditPopupInContextMenu);
-                ImguiUtils.ShowHelpMarker(@"If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
+                ImguiUtils.ShowHoverTooltip(@"If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
 
                 ImGui.Checkbox("Split context menu", ref CFG.Current.Param_SplitContextMenu);
-                ImguiUtils.ShowHelpMarker("Split the field context menu into separate menus for separate right-click locations.");
+                ImguiUtils.ShowHoverTooltip("Split the field context menu into separate menus for separate right-click locations.");
             }
 
             // Values
             if (ImGui.CollapsingHeader("Values"))
                 {
                     ImGui.Checkbox("Show inverted percentages as traditional percentages", ref CFG.Current.Param_ShowTraditionalPercentages);
-                ImguiUtils.ShowHelpMarker("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
+                ImguiUtils.ShowHoverTooltip("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
             }
 
             ImGui.EndTabItem();
@@ -698,15 +654,15 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Show original FMG names", ref CFG.Current.FMG_ShowOriginalNames);
-                ImguiUtils.ShowHelpMarker("Show the original FMG file names within the Text Editor file list.");
+                ImguiUtils.ShowHoverTooltip("Show the original FMG file names within the Text Editor file list.");
 
                 if (ImGui.Checkbox("Separate related FMGs and entries", ref CFG.Current.FMG_NoGroupedFmgEntries))
                     EditorContainer.TextEditor.OnProjectChanged(ProjSettings);
-                ImguiUtils.ShowHelpMarker("If enabled then FMG entries will not be grouped automatically.");
+                ImguiUtils.ShowHoverTooltip("If enabled then FMG entries will not be grouped automatically.");
 
                 if (ImGui.Checkbox("Separate patch FMGs", ref CFG.Current.FMG_NoFmgPatching))
                     EditorContainer.TextEditor.OnProjectChanged(ProjSettings);
-                ImguiUtils.ShowHelpMarker("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
+                ImguiUtils.ShowHoverTooltip("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
             }
 
             ImGui.EndTabItem();
@@ -720,28 +676,28 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("Files", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Show map names", ref CFG.Current.Gparam_DisplayMapNames);
-                ImguiUtils.ShowHelpMarker("Show map names in the GPARAM file list.");
+                ImguiUtils.ShowHoverTooltip("Show map names in the GPARAM file list.");
             }
 
             if (ImGui.CollapsingHeader("Groups", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Show add button for missing groups", ref CFG.Current.Gparam_DisplayAddGroups);
-                ImguiUtils.ShowHelpMarker("Show the Add button for groups that are not present.");
+                ImguiUtils.ShowHoverTooltip("Show the Add button for groups that are not present.");
 
                 ImGui.Checkbox("Show empty groups", ref CFG.Current.Gparam_DisplayEmptyGroups);
-                ImguiUtils.ShowHelpMarker("Display empty groups in the group list.");
+                ImguiUtils.ShowHoverTooltip("Display empty groups in the group list.");
             }
 
             if (ImGui.CollapsingHeader("Fields", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Show add button for missing fields", ref CFG.Current.Gparam_DisplayAddFields);
-                ImguiUtils.ShowHelpMarker("Show the Add button for fields that are not present.");
+                ImguiUtils.ShowHoverTooltip("Show the Add button for fields that are not present.");
             }
 
             if (ImGui.CollapsingHeader("Values", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Show color edit for 4 digit properties", ref CFG.Current.Gparam_DisplayColorEditForVector4Fields);
-                ImguiUtils.ShowHelpMarker("Show the color edit tool for 4 digit properties.");
+                ImguiUtils.ShowHoverTooltip("Show the color edit tool for 4 digit properties.");
 
             }
 
@@ -757,10 +713,10 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("Property View", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Display community names", ref CFG.Current.ModelEditor_Enable_Commmunity_Names);
-                ImguiUtils.ShowHelpMarker("The FLVER property fields will be given crowd-sourced names instead of the canonical name.");
+                ImguiUtils.ShowHoverTooltip("The FLVER property fields will be given crowd-sourced names instead of the canonical name.");
 
                 ImGui.Checkbox("Display community descriptions", ref CFG.Current.ModelEditor_Enable_Commmunity_Hints);
-                ImguiUtils.ShowHelpMarker("The FLVER property fields will be given crowd-sourced descriptions.");
+                ImguiUtils.ShowHoverTooltip("The FLVER property fields will be given crowd-sourced descriptions.");
 
             }
 
@@ -768,10 +724,10 @@ public class SettingsWindow
             if (ImGui.CollapsingHeader("Scene View", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Display material names with meshes", ref CFG.Current.ModelEditor_DisplayMatNameOnMesh);
-                ImguiUtils.ShowHelpMarker("Display the material name that a mesh uses by the scene tree name.");
+                ImguiUtils.ShowHoverTooltip("Display the material name that a mesh uses by the scene tree name.");
 
                 ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
-                ImguiUtils.ShowHelpMarker("Display the reference ID of a dummy polygon by the scene tree name.");
+                ImguiUtils.ShowHoverTooltip("Display the reference ID of a dummy polygon by the scene tree name.");
             }
 
             ImGui.EndTabItem();

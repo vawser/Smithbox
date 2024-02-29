@@ -1176,7 +1176,7 @@ public class ModelPropertyEditor
 
             var desc = FlverFormatBank.Bank.GetReferenceDescription(name);
 
-            ImguiUtils.ShowHelpMarker(desc);
+            ImguiUtils.ShowHoverTooltip(desc);
         }
     }
 

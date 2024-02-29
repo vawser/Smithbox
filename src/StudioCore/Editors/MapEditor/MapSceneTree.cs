@@ -812,7 +812,7 @@ public class MapSceneTree : IActionEventHandler
 
             ImGui.EndCombo();
         }
-        ImguiUtils.ShowButtonTooltip($"Filters the map group selection by location.");
+        ImguiUtils.ShowHoverTooltip($"Filters the map group selection by location.");
 
         // Map Group Selection
         ImGui.AlignTextToFramePadding();
@@ -841,7 +841,7 @@ public class MapSceneTree : IActionEventHandler
 
             ImGui.EndCombo();
         }
-        ImguiUtils.ShowButtonTooltip($"Filters map list by selected map group.\n\n{currentMapGroup.description}");
+        ImguiUtils.ShowHoverTooltip($"Filters map list by selected map group.\n\n{currentMapGroup.description}");
     }
 
     public void DisplayMapTreeList()

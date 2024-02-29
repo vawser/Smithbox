@@ -722,11 +722,11 @@ public class TextEditorScreen : EditorScreen
                     ImGui.InputInt("##dupeAmount", ref CFG.Current.FMG_DuplicateAmount);
                     if (CFG.Current.FMG_DuplicateAmount < 1)
                         CFG.Current.FMG_DuplicateAmount = 1;
-                    ImguiUtils.ShowHelpMarker("The number of times to duplicate this entry.");
+                    ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
                     ImGui.InputInt("##dupeIncrement", ref CFG.Current.FMG_DuplicateIncrement);
                     if (CFG.Current.FMG_DuplicateIncrement < 1)
                         CFG.Current.FMG_DuplicateIncrement = 1;
-                    ImguiUtils.ShowHelpMarker("The increment to apply to the text id when duplicating.");
+                    ImguiUtils.ShowHoverTooltip("The increment to apply to the text id when duplicating.");
 
                     ImGui.EndPopup();
                 }
