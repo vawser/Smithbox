@@ -11,6 +11,7 @@ using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
 using StudioCore.Interface;
+using StudioCore.Interface.Contexts;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
@@ -59,12 +60,16 @@ namespace StudioCore.Editors.ModelEditor
 
         private string _selectedName;
 
+        private AssetAliasPopup AssetAliasContext;
+
         public ModelAssetBrowser(AssetBrowserEventHandler handler, string id)
         {
             _id = id;
             _handler = handler;
 
             _selectedName = null;
+
+            AssetAliasContext = new AssetAliasPopup();
         }
         public string GetSelectedCategoryNameForAliasBank()
         {
@@ -290,53 +295,12 @@ namespace StudioCore.Editors.ModelEditor
 
                             _refUpdateId = refID;
                             _refUpdateName = refName;
-
-                            if (refTagList.Count > 0)
-                            {
-                                var tagStr = refTagList[0];
-                                foreach (var entry in refTagList.Skip(1))
-                                {
-                                    tagStr = $"{tagStr},{entry}";
-                                }
-                                _refUpdateTags = tagStr;
-                            }
-                            else
-                            {
-                                _refUpdateTags = "";
-                            }
+                            _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
                         }
 
                         if (_selectedName == refID)
                         {
-                            if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                            {
-                                if (ImGui.InputText($"Name", ref _refUpdateName, 255))
-                                {
-
-                                }
-
-                                if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
-                                {
-
-                                }
-
-                                if (ImGui.Button("Update"))
-                                {
-                                    ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId, _refUpdateName, _refUpdateTags);
-                                    ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
-                                }
-
-                                ImGui.SameLine();
-                                if (ImGui.Button("Restore Default"))
-                                {
-                                    ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId);
-                                    ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
-                                }
-
-                                ImGui.EndPopup();
-                            }
+                            AssetAliasContext.Show(refID, _refUpdateId, _refUpdateName, _refUpdateTags, GetSelectedCategoryNameForAliasBank());
                         }
 
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
@@ -430,54 +394,12 @@ namespace StudioCore.Editors.ModelEditor
 
                                 _refUpdateId = refID;
                                 _refUpdateName = refName;
-
-                                if (refTagList.Count > 0)
-                                {
-                                    var tagStr = refTagList[0];
-                                    foreach (var entry in refTagList.Skip(1))
-                                    {
-                                        tagStr = $"{tagStr},{entry}";
-                                    }
-
-                                    _refUpdateTags = tagStr;
-                                }
-                                else
-                                {
-                                    _refUpdateTags = "";
-                                }
+                                _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
                             }
 
                             if (_selectedName == refID)
                             {
-                                if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                                {
-                                    if (ImGui.InputText($"Name", ref _refUpdateName, 255))
-                                    {
-
-                                    }
-
-                                    if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
-                                    {
-
-                                    }
-
-                                    if (ImGui.Button("Update"))
-                                    {
-                                        ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId, _refUpdateName, _refUpdateTags);
-                                        ImGui.CloseCurrentPopup();
-                                        ModelAliasBank.Bank.mayReloadAliasBank = true;
-                                    }
-
-                                    ImGui.SameLine();
-                                    if (ImGui.Button("Restore Default"))
-                                    {
-                                        ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId);
-                                        ImGui.CloseCurrentPopup();
-                                        ModelAliasBank.Bank.mayReloadAliasBank = true;
-                                    }
-
-                                    ImGui.EndPopup();
-                                }
+                                AssetAliasContext.Show(refID, _refUpdateId, _refUpdateName, _refUpdateTags, GetSelectedCategoryNameForAliasBank());
                             }
 
                             if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))

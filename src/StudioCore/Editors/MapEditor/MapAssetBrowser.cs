@@ -16,6 +16,7 @@ using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.BanksMain;
+using StudioCore.Interface.Contexts;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -54,6 +55,8 @@ public class MapAssetBrowser
 
     private Universe _universe;
 
+    private AssetAliasPopup AssetAliasContext;
+
     public MapAssetBrowser(Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, MapEditorScreen editor, IViewport viewport)
     {
         _scene = scene;
@@ -65,6 +68,8 @@ public class MapAssetBrowser
         _viewport = viewport;
 
         _selectedName = null;
+
+        AssetAliasContext = new AssetAliasPopup();
     }
 
     /// <summary>
@@ -274,35 +279,7 @@ public class MapAssetBrowser
 
                     if (_selectedName == refID)
                     {
-                        if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                        {
-                            if (ImGui.InputText($"Name", ref _refUpdateName, 255))
-                            {
-
-                            }
-
-                            if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
-                            {
-
-                            }
-
-                            if (ImGui.Button("Update"))
-                            {
-                                ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
-                                ImGui.CloseCurrentPopup();
-                                ModelAliasBank.Bank.mayReloadAliasBank = true;
-                            }
-
-                            ImGui.SameLine();
-                            if (ImGui.Button("Restore Default"))
-                            {
-                                ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
-                                ImGui.CloseCurrentPopup();
-                                ModelAliasBank.Bank.mayReloadAliasBank = true;
-                            }
-
-                            ImGui.EndPopup();
-                        }
+                        AssetAliasContext.Show(refID, _refUpdateId, _refUpdateName, _refUpdateTags, assetType);
                     }
 
                     if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
@@ -387,51 +364,12 @@ public class MapAssetBrowser
 
                             _refUpdateId = refID;
                             _refUpdateName = refName;
-
-                            if (refTagList.Count > 0)
-                            {
-                                var tagStr = refTagList[0];
-                                foreach (var entry in refTagList.Skip(1))
-                                    tagStr = $"{tagStr},{entry}";
-                                _refUpdateTags = tagStr;
-                            }
-                            else
-                            {
-                                _refUpdateTags = "";
-                            }
+                            _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
                         }
 
                         if (_selectedName == refID)
                         {
-                            if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                            {
-                                if (ImGui.InputText($"Name", ref _refUpdateName, 255))
-                                {
-
-                                }
-
-                                if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
-                                {
-
-                                }
-
-                                if (ImGui.Button("Update"))
-                                {
-                                    ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
-                                    ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
-                                }
-
-                                ImGui.SameLine();
-                                if (ImGui.Button("Restore Default"))
-                                {
-                                    ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
-                                    ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
-                                }
-
-                                ImGui.EndPopup();
-                            }
+                            AssetAliasContext.Show(refID, _refUpdateId, _refUpdateName, _refUpdateTags, assetType);
                         }
 
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))

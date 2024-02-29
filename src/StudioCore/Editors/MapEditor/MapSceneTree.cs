@@ -921,8 +921,6 @@ public class MapSceneTree : IActionEventHandler
                 {
                     if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
-                        TaskLogs.AddLog($"Double Click");
-
                         if (CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click)
                         {
                             if (selected)
