@@ -480,8 +480,18 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
             }
 
+            // Substitutions
+            if (ImGui.CollapsingHeader("Substitutions"))
+            {
+                ImGui.Checkbox("Substitute c0000 entity", ref CFG.Current.MapEditor_Substitute_PseudoPlayer_Model);
+                ImguiUtils.ShowHoverTooltip("The c0000 enemy that represents the player-like enemies will be given a visual model substitution so it is visible.");
+
+                ImGui.InputText("##modelString", ref CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID, 255);
+                ImguiUtils.ShowHoverTooltip("The Chr ID of the model you want to use as the replacement.");
+            }
+
             // Map Object Display Presets
-            if (ImGui.CollapsingHeader("Map Object Display Presets"))
+            if (ImGui.CollapsingHeader("Display Presets"))
             {
                 ImGui.Text("Configure each of the six display presets available.");
 
@@ -511,7 +521,7 @@ public class SettingsWindow
             }
 
             // Toolbar
-            if (ImGui.CollapsingHeader("Global Actions"))
+            if (ImGui.CollapsingHeader("Toolbar Action Visibility"))
             {
                 ImGui.Checkbox("Check Duplicate Entity ID", ref CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID);
                 ImguiUtils.ShowHoverTooltip("If enabled, the Check Duplicate Entity ID action will be visible in the map toolbar window.");
@@ -524,10 +534,7 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Toggle Object Visibility by Tag", ref CFG.Current.Toolbar_Show_Toggle_Object_Visibility_by_Tag);
                 ImguiUtils.ShowHoverTooltip("If enabled, the Toggle Object Visibility by Tag action will be visible in the map toolbar window.");
-            }
-
-            if (ImGui.CollapsingHeader("Map Actions"))
-            {
+            
                 ImGui.Checkbox("Go to in Object List", ref CFG.Current.Toolbar_Show_Go_to_in_Object_List);
                 ImguiUtils.ShowHoverTooltip("If enabled, the Go to in Object List action will be visible in the map toolbar window.");
 

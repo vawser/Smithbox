@@ -272,6 +272,9 @@ public class CFG
     public bool MapEditor_Enable_Map_Load_on_Double_Click = false;
     public bool MapEditor_Show_Only_Important_Properties = false;
 
+    public bool MapEditor_Substitute_PseudoPlayer_Model = false;
+    public string MapEditor_Substitute_PseudoPlayer_ChrID = "c0000";
+
     // Scene Filters
     public RenderFilter LastSceneFilter { get; set; } = RenderFilter.All ^ RenderFilter.Light;
     public RenderFilterPreset SceneFilter_Preset_01 { get; set; } = new("Map", RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character | RenderFilter.Region);

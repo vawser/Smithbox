@@ -429,14 +429,23 @@ public class Universe
         }
         else if (loadflver)
         {
-            var model = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                _renderScene, asset.AssetVirtualPath, modelMarkerType);
+            if (CFG.Current.MapEditor_Substitute_PseudoPlayer_Model)
+            {
+                if (asset.AssetName == "c0000")
+                {
+                    asset = ModelAssetLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+                    TaskLogs.AddLog($"{asset.AssetName}");
+                    TaskLogs.AddLog($"{asset.AssetVirtualPath}");
+                }
+            }
+
+            var model = MeshRenderableProxy.MeshRenderableFromFlverResource(_renderScene, asset.AssetVirtualPath, modelMarkerType);
             model.DrawFilter = filt;
             model.World = obj.GetWorldMatrix();
             obj.RenderSceneMesh = model;
             model.SetSelectable(obj);
-            if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath,
-                    AccessLevel.AccessGPUOptimizedOnly))
+
+            if (load && !ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {
@@ -780,6 +789,16 @@ public class Universe
             map.LoadMSB(msb);
 
             var amapid = MapAssetLocator.GetAssetMapID(mapid);
+
+            // Add substitution model to the chrsToLoad set
+            AssetDescription subAsset = ModelAssetLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+            chrsToLoad.Add(subAsset);
+            AssetDescription tSubAsset = TextureAssetLocator.GetChrTextures(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+            if (tSubAsset.AssetVirtualPath != null || tSubAsset.AssetArchiveVirtualPath != null)
+            {
+                chrsToLoad.Add(tSubAsset);
+            }
+
             foreach (IMsbModel model in msb.Models.GetEntries())
             {
                 AssetDescription asset;
