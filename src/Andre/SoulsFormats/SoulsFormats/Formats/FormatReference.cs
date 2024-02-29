@@ -23,4 +23,9 @@ namespace SoulsFormats
     public class IndexProperty : Attribute
     {
     }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class MsbIgnorableProperty : Attribute
+    {
+    }
 }

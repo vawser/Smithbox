@@ -460,6 +460,9 @@ public class SettingsWindow
             // Property View
             if (ImGui.CollapsingHeader("Property View"))
             {
+                ImGui.Checkbox("Display important properties only", ref CFG.Current.MapEditor_Show_Only_Important_Properties);
+                ImguiUtils.ShowHoverTooltip("The rarely used or unknown MSB property fields will be hidden.");
+
                 ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
                 ImguiUtils.ShowHoverTooltip("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
 

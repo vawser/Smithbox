@@ -862,13 +862,13 @@ public class MapPropertyEditor
                     continue;
                 }
 
-                // Is Hidden
-                /*
-                if (MsbFormatBank.Bank.IsHiddenProperty(prop.Name))
+                if (CFG.Current.MapEditor_Show_Only_Important_Properties)
                 {
-                    continue;
+                    if (prop.GetCustomAttribute<MsbIgnorableProperty>() != null)
+                    {
+                        continue;
+                    }
                 }
-                */
 
                 ImGui.PushID(id);
                 ImGui.AlignTextToFramePadding();

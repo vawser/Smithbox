@@ -172,6 +172,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown network path to a .sib file.
             /// </summary>
+            [MsbIgnorableProperty]
             public string SibPath { get; set; }
 
             /// <summary>
@@ -232,71 +233,85 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public sbyte UnkE04 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public sbyte UnkE05 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public sbyte LanternID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public sbyte LodParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public sbyte UnkE0E { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public bool PointLightShadowSource { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public bool ShadowSource { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public bool ShadowDest { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public bool IsShadowOnly { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public bool DrawByReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public bool DrawOnlyReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public bool UseDepthBiasFloat { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public bool DisablePointLightEffect { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public int UnkE18 { get; set; }
 
             private protected Part(string name)
@@ -992,11 +1007,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public int UnkT78 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public float UnkT84 { get; set; }
 
                 private protected EnemyBase() : base("cXXXX_XXXX")
@@ -1297,16 +1314,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public byte UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public byte UnkT35 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public byte UnkT36 { get; set; }
 
                 /// <summary>

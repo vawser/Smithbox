@@ -177,6 +177,7 @@ namespace SoulsFormats
             /// <summary>
             /// A path to a .sib file, presumed to be some kind of editor placeholder.
             /// </summary>
+            [MsbIgnorableProperty]
             public string SibPath { get; set; }
 
             /// <summary>
@@ -255,46 +256,55 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte LanternID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte LodParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte IsShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte IsShadowDest { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte IsShadowOnly { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte DrawByReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte DrawOnlyReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte UseDepthBiasFloat { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            [MsbIgnorableProperty]
             public byte DisablePointLightEffect { get; set; }
 
             private protected Part(string name)
@@ -520,6 +530,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public short UnkT0E { get; set; }
 
                 /// <summary>
@@ -824,6 +835,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public byte UnkT27 { get; set; }
 
                 /// <summary>
@@ -834,16 +846,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown value only used in m99 maps.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public int M99Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown value only used in m99 maps.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public int M99Unk04 { get; set; }
 
                 /// <summary>
                 /// Unknown value only used in m99 maps.
                 /// </summary>
+                [MsbIgnorableProperty]
                 public int M99Unk08 { get; set; }
 
                 /// <summary>
