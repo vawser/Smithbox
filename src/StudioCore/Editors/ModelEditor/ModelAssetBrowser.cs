@@ -133,6 +133,18 @@ namespace StudioCore.Editors.ModelEditor
             {
                 ImGui.Columns(2);
 
+                ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
+                ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
+
+                if (_selectedAssetType == SelectedCategoryType.Part)
+                {
+                    ImGui.Checkbox("Show low detail models", ref CFG.Current.AssetBrowser_ShowLowDetailParts);
+                    ImguiUtils.ShowHoverTooltip("Show the low detail part models in this list.");
+                }
+
+                ImGui.Spacing();
+                ImGui.Spacing();
+
                 // Asset Type List
                 ImGui.BeginChild("AssetTypeList");
 
@@ -143,22 +155,12 @@ namespace StudioCore.Editors.ModelEditor
                 // Asset List
                 ImGui.NextColumn();
 
-                ImGui.BeginChild("AssetListSearch");
                 ImGui.InputText($"Search", ref _searchStrInput, 255);
                 ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
                 ImGui.Spacing();
                 ImGui.Separator();
                 ImGui.Spacing();
-
-                ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-                ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
-
-                if(_selectedAssetType == SelectedCategoryType.Part)
-                {
-                    ImGui.Checkbox("Show low detail models", ref CFG.Current.AssetBrowser_ShowLowDetailParts);
-                    ImguiUtils.ShowHoverTooltip("Show the low detail part models in this list.");
-                }
 
                 ImGui.BeginChild("AssetList");
 
@@ -167,7 +169,6 @@ namespace StudioCore.Editors.ModelEditor
                 DisplayAssetSelectionList(SelectedCategoryType.Part, ModelAliasBank.Bank.AliasNames.GetEntries("Parts"));
                 DisplayMapAssetSelectionList(SelectedCategoryType.MapPiece, ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
 
-                ImGui.EndChild();
                 ImGui.EndChild();
             }
             ImGui.End();

@@ -96,6 +96,23 @@ public class MapAssetBrowser
         {
             ImGui.Columns(2);
 
+            ImGui.Checkbox("Show Tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
+            ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
+
+            ImGui.SameLine();
+            ImGui.Checkbox("Update Name", ref CFG.Current.AssetBrowser_UpdateName);
+            ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
+
+            if (Project.Type == ProjectType.ER)
+            {
+                ImGui.SameLine();
+                ImGui.Checkbox("Update Instance ID", ref CFG.Current.AssetBrowser_UpdateInstanceID);
+                ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
+            }
+
+            ImGui.Spacing();
+            ImGui.Spacing();
+
             // Asset Type List
             ImGui.BeginChild("AssetTypeList");
 
@@ -112,9 +129,6 @@ public class MapAssetBrowser
             ImGui.Spacing();
             ImGui.Separator();
             ImGui.Spacing();
-
-            ImGui.Checkbox("Show tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-            ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
 
             ImGui.BeginChild("AssetList");
 
@@ -531,14 +545,20 @@ public class MapAssetBrowser
                 actlist.Add(s.ChangeObjectProperty("ModelName", modelName));
 
                 // Name
-                var name = GetUniqueNameString(modelName);
-                s.Name = name;
-                actlist.Add(s.ChangeObjectProperty("Name", name));
-
-                // Name
-                if (s.WrappedObject is MSBE.Part)
+                if (CFG.Current.AssetBrowser_UpdateName)
                 {
-                    SetUniqueInstanceID((MsbEntity)s, modelName);
+                    var name = GetUniqueNameString(modelName);
+                    s.Name = name;
+                    actlist.Add(s.ChangeObjectProperty("Name", name));
+                }
+
+                if (CFG.Current.AssetBrowser_UpdateInstanceID)
+                {
+                    // Name
+                    if (s.WrappedObject is MSBE.Part)
+                    {
+                        SetUniqueInstanceID((MsbEntity)s, modelName);
+                    }
                 }
             }
         }

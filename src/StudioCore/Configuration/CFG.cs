@@ -351,8 +351,11 @@ public class CFG
     // Windows
     //****************************
     public bool AliasBank_EditorMode = false;
+
     public bool AssetBrowser_ShowTagsInBrowser = true;
     public bool AssetBrowser_ShowLowDetailParts = false;
+    public bool AssetBrowser_UpdateName = true;
+    public bool AssetBrowser_UpdateInstanceID = true;
 
     public bool EventFlagAtlas_ShowTags = true;
 
