@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_ToggleObjectVisibilityByTag
+    public static class MapAction_ToggleObjectVisibilityByTag
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Toggle Object Visibility by Tag##tool_Selection_Toggle_Object_Visibility_by_Tag", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Toggle_Object_Visibility_by_Tag;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Toggle_Object_Visibility_by_Tag;
 
                     if (ImGui.IsMouseDoubleClicked(0))
                     {
@@ -29,7 +29,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         }
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Toggle_Object_Visibility_by_Tag)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Toggle_Object_Visibility_by_Tag)
             {
                 ImGui.Text("Toggle the visibility of map objects, filtering the targets by tag\n(you can view tags in the Model or Map Asset Browsers).");
                 ImGui.Separator();
@@ -54,7 +54,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         }
         public static void Act(ViewportSelection _selection)
         {
-            foreach (ObjectContainer m in MapToolbar.Universe.LoadedObjectContainers.Values)
+            foreach (ObjectContainer m in MapEditorState.Universe.LoadedObjectContainers.Values)
             {
                 if (m == null)
                 {

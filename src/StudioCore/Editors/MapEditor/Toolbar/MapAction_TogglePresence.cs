@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_TogglePresence
+    public static class MapAction_TogglePresence
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -20,7 +20,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Toggle Presence##tool_Selection_Presence", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Toggle_Presence;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Toggle_Presence;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -32,7 +32,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Toggle_Presence)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Toggle_Presence)
             {
                 if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
                     ImGui.Text("Toggle the load status of the current selection.");
@@ -170,8 +170,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
             List<MsbEntity> sourceList = _selection.GetFilteredSelection<MsbEntity>().ToList();
 
-            ChangeMapObjectType action = new(MapToolbar.Universe, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
-            MapToolbar.ActionManager.ExecuteAction(action);
+            ChangeMapObjectType action = new(MapEditorState.Universe, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
+            MapEditorState.ActionManager.ExecuteAction(action);
         }
     }
 }

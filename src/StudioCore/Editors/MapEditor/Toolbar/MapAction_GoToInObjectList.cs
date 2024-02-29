@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_GoToInObjectList
+    public static class MapAction_GoToInObjectList
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -16,7 +16,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Go to in Object List##tool_Selection_GoToInObjectList", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Go_to_in_Object_List;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Go_to_in_Object_List;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -33,7 +33,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Go_to_in_Object_List)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Go_to_in_Object_List)
             {
                 ImGui.Text("Move the camera to the current selection (first if multiple are selected).");
                 ImGui.Separator();

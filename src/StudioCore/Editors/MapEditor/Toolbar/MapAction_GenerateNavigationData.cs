@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_GenerateNavigationData
+    public static class MapAction_GenerateNavigationData
     {
         private static bool NavigationDataProcessed = false;
         private static int FrameCount = 0;
@@ -24,7 +24,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 {
                     if (ImGui.Selectable("Navigation Data##tool_Selection_Generate_Navigation_Data", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        MapToolbar.CurrentTool = SelectedTool.Selection_Generate_Navigation_Data;
+                        MapEditorState.CurrentTool = SelectedTool.Selection_Generate_Navigation_Data;
 
                         if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                         {
@@ -37,7 +37,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Act(ViewportSelection _selection)
         {
-            Dictionary<string, ObjectContainer> orderedMaps = MapToolbar.Universe.LoadedObjectContainers;
+            Dictionary<string, ObjectContainer> orderedMaps = MapEditorState.Universe.LoadedObjectContainers;
 
             HashSet<string> idCache = new();
             foreach (var map in orderedMaps)
@@ -82,7 +82,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Generate_Navigation_Data)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Generate_Navigation_Data)
             {
                 ImGui.Text("Regenerate the navigation data files used for pathfinding.");
                 ImGui.Separator();

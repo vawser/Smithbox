@@ -10,7 +10,7 @@ using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_FrameInViewport
+    public static class MapAction_FrameInViewport
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Frame in Viewport##tool_Selection_FrameInViewport", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Frame_in_Viewport;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Frame_in_Viewport;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -30,7 +30,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Frame_in_Viewport)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Frame_in_Viewport)
             {
                 ImGui.Text("Frame the current selection in the viewport (first if multiple are selected).");
                 ImGui.Separator();
@@ -78,7 +78,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             if (first)
             {
-                MapToolbar.Viewport.FrameBox(box);
+                MapEditorState.Viewport.FrameBox(box);
             }
         }
     }

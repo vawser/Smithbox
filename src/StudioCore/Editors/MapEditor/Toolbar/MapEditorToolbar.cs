@@ -40,11 +40,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             _viewport = viewport;
 
-            MapToolbar.ActionManager = _actionManager;
-            MapToolbar.Scene = _scene;
-            MapToolbar.Universe = _universe;
-            MapToolbar.Viewport = _viewport;
-            MapToolbar.Toolbar = this;
+            MapEditorState.ActionManager = _actionManager;
+            MapEditorState.Scene = _scene;
+            MapEditorState.Universe = _universe;
+            MapEditorState.Viewport = _viewport;
+            MapEditorState.Toolbar = this;
         }
 
         public void OnGui()
@@ -54,8 +54,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             if (Project.Type == ProjectType.Undefined)
                 return;
 
-            Action_GenerateNavigationData.OnTextReset();
-            MapToolbar.LoadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
+            MapAction_GenerateNavigationData.OnTextReset();
+            MapEditorState.LoadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
 
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
@@ -86,19 +86,19 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             ImGui.Separator();
 
             // Contextual
-            Action_GoToInObjectList.Select(_selection);
-            Action_FrameInViewport.Select(_selection);
-            Action_MoveToCamera.Select(_selection);
-            Action_MoveToGrid.Select(_selection);
+            MapAction_GoToInObjectList.Select(_selection);
+            MapAction_FrameInViewport.Select(_selection);
+            MapAction_MoveToCamera.Select(_selection);
+            MapAction_MoveToGrid.Select(_selection);
 
-            Action_TogglePresence.Select(_selection);
-            Action_ToggleVisibility.Select(_selection);
+            MapAction_TogglePresence.Select(_selection);
+            MapAction_ToggleVisibility.Select(_selection);
 
-            Action_Create.Select(_selection);
-            Action_Duplicate.Select(_selection);
-            Action_Rotate.Select(_selection);
-            Action_Scramble.Select(_selection);
-            Action_Replicate.Select(_selection);
+            MapAction_Create.Select(_selection);
+            MapAction_Duplicate.Select(_selection);
+            MapAction_Rotate.Select(_selection);
+            MapAction_Scramble.Select(_selection);
+            MapAction_Replicate.Select(_selection);
 
             ImGui.Separator();
             ImGui.Text("Global actions");
@@ -106,10 +106,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             ImGui.Separator();
 
             // Global
-            Action_ToggleObjectVisibilityByTag.Select(_selection);
-            Action_TogglePatrolRoutes.Select(_selection);
-            Action_CheckDuplicateEntityID.Select(_selection);
-            Action_GenerateNavigationData.Select(_selection);
+            MapAction_AssignEntityGroupID.Select(_selection);
+            MapAction_ToggleObjectVisibilityByTag.Select(_selection);
+            MapAction_TogglePatrolRoutes.Select(_selection);
+            MapAction_CheckDuplicateEntityID.Select(_selection);
+            MapAction_GenerateNavigationData.Select(_selection);
 
             ImGui.EndChild();
         }
@@ -119,97 +120,28 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             ImGui.BeginChild("toolconfiguration");
 
             // Contextual
-            Action_GoToInObjectList.Configure(_selection);
-            Action_FrameInViewport.Configure(_selection);
-            Action_MoveToCamera.Configure(_selection);
-            Action_MoveToGrid.Configure(_selection);
+            MapAction_GoToInObjectList.Configure(_selection);
+            MapAction_FrameInViewport.Configure(_selection);
+            MapAction_MoveToCamera.Configure(_selection);
+            MapAction_MoveToGrid.Configure(_selection);
 
-            Action_TogglePresence.Configure(_selection);
-            Action_ToggleVisibility.Configure(_selection);
+            MapAction_TogglePresence.Configure(_selection);
+            MapAction_ToggleVisibility.Configure(_selection);
 
-            Action_Create.Configure(_selection);
-            Action_Duplicate.Configure(_selection);
-            Action_Rotate.Configure(_selection);
-            Action_Scramble.Configure(_selection);
-            Action_Replicate.Configure(_selection);
+            MapAction_Create.Configure(_selection);
+            MapAction_Duplicate.Configure(_selection);
+            MapAction_Rotate.Configure(_selection);
+            MapAction_Scramble.Configure(_selection);
+            MapAction_Replicate.Configure(_selection);
 
             // Global
-            Action_ToggleObjectVisibilityByTag.Configure(_selection);
-            Action_TogglePatrolRoutes.Configure(_selection);
-            Action_CheckDuplicateEntityID.Configure(_selection);
-            Action_GenerateNavigationData.Configure(_selection);
+            MapAction_AssignEntityGroupID.Configure(_selection);
+            MapAction_ToggleObjectVisibilityByTag.Configure(_selection);
+            MapAction_TogglePatrolRoutes.Configure(_selection);
+            MapAction_CheckDuplicateEntityID.Configure(_selection);
+            MapAction_GenerateNavigationData.Configure(_selection);
 
             ImGui.EndChild();
-        }
-
-
-        /// <summary>
-        /// Save selected object's position to Position clipboard
-        /// </summary>
-        public void CopyCurrentPosition(PropertyInfo prop, object obj)
-        {
-            CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
-        }
-
-        /// <summary>
-        /// Paste saved position to current selection Position property
-        /// </summary>
-        public void PasteSavedPosition()
-        {
-            List<ViewportAction> actlist = new();
-            foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
-            {
-                actlist.Add(sel.ApplySavedPosition());
-            }
-
-            CompoundAction action = new(actlist);
-            _actionManager.ExecuteAction(action);
-        }
-
-        /// <summary>
-        /// Save selected object's position to Rotation clipboard
-        /// </summary>
-        public void CopyCurrentRotation(PropertyInfo prop, object obj)
-        {
-            CFG.Current.SavedRotation = (Vector3)prop.GetValue(obj, null);
-        }
-
-        /// <summary>
-        /// Paste saved rotation to current selection Rotation property
-        /// </summary>
-        public void PasteSavedRotation()
-        {
-            List<ViewportAction> actlist = new();
-            foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
-            {
-                actlist.Add(sel.ApplySavedRotation());
-            }
-
-            CompoundAction action = new(actlist);
-            _actionManager.ExecuteAction(action);
-        }
-
-        /// <summary>
-        /// Save selected object's scale to Scale clipboard
-        /// </summary>
-        public void CopyCurrentScale(PropertyInfo prop, object obj)
-        {
-            CFG.Current.SavedScale = (Vector3)prop.GetValue(obj, null);
-        }
-
-        /// <summary>
-        /// Paste saved scale to current selection Scale property
-        /// </summary>
-        public void PasteSavedScale()
-        {
-            List<ViewportAction> actlist = new();
-            foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
-            {
-                actlist.Add(sel.ApplySavedScale());
-            }
-
-            CompoundAction action = new(actlist);
-            _actionManager.ExecuteAction(action);
         }
     }
 }

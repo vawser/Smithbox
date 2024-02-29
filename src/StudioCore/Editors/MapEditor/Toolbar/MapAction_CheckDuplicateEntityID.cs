@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_CheckDuplicateEntityID
+    public static class MapAction_CheckDuplicateEntityID
     {
         public static List<string> entityIdentifiers = new List<string>();
 
@@ -19,11 +19,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Check Duplicate Entity ID##tool_Selection_Duplicate_Entity_ID", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Duplicate_Entity_ID;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Duplicate_Entity_ID;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
-                        if (MapToolbar.LoadedMaps.Any())
+                        if (MapEditorState.LoadedMaps.Any())
                         {
                             Act(_selection);
                         }
@@ -34,12 +34,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Duplicate_Entity_ID)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Duplicate_Entity_ID)
             {
                 ImGui.Text("Output:");
                 ImGui.Separator();
 
-                if (MapToolbar.LoadedMaps.Any())
+                if (MapEditorState.LoadedMaps.Any())
                 {
                     string totalText = "";
 
@@ -66,7 +66,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             HashSet<uint> vals = new();
             string badVals = "";
-            foreach (var loadedMap in MapToolbar.LoadedMaps)
+            foreach (var loadedMap in MapEditorState.LoadedMaps)
             {
                 foreach (var e in loadedMap?.Objects)
                 {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_ToggleVisibility
+    public static class MapAction_ToggleVisibility
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -17,7 +17,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Toggle Visibility##tool_Selection_ToggleVisibility", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Toggle_Visibility;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Toggle_Visibility;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -29,7 +29,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Toggle_Visibility)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Toggle_Visibility)
             {
                 ImGui.Text("Toggle the visibility of the current selection or all objects.");
                 ImGui.Separator();
@@ -102,7 +102,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
             if (CFG.Current.Toolbar_Visibility_Target_All)
             {
-                foreach (ObjectContainer m in MapToolbar.Universe.LoadedObjectContainers.Values)
+                foreach (ObjectContainer m in MapEditorState.Universe.LoadedObjectContainers.Values)
                 {
                     if (m == null)
                     {

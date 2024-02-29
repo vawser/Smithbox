@@ -1740,7 +1740,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     {
         if (CFG.Current.Replicator_Apply_Scramble_Configuration)
         {
-            Transform scrambledTransform = Action_Scramble.GetScrambledTransform(newobj);
+            Transform scrambledTransform = MapAction_Scramble.GetScrambledTransform(newobj);
 
             if (Project.Type == ProjectType.DS2S)
             {

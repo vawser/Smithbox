@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Banks;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Gui;
@@ -726,11 +727,11 @@ public class MapPropertyEditor
             {
                 if (ImGui.Selectable(@"Copy##CopyPosition"))
                 {
-                    _msbToolbar.CopyCurrentPosition(prop, obj);
+                    PropAction_Position.CopyCurrentPosition(prop, obj);
                 }
                 if (ImGui.Selectable(@"Paste##PastePosition"))
                 {
-                    _msbToolbar.PasteSavedPosition();
+                    PropAction_Position.PasteSavedPosition(selection);
                 }
             }
 
@@ -740,11 +741,11 @@ public class MapPropertyEditor
             {
                 if (ImGui.Selectable(@"Copy##CopyRotation"))
                 {
-                    _msbToolbar.CopyCurrentRotation(prop, obj);
+                    PropAction_Rotation.CopyCurrentRotation(prop, obj);
                 }
                 if (ImGui.Selectable(@"Paste##PasteRotation"))
                 {
-                    _msbToolbar.PasteSavedRotation();
+                    PropAction_Rotation.PasteSavedRotation(selection);
                 }
             }
 
@@ -754,11 +755,11 @@ public class MapPropertyEditor
             {
                 if (ImGui.Selectable(@"Copy##CopyScale"))
                 {
-                    _msbToolbar.CopyCurrentScale(prop, obj);
+                    PropAction_Scale.CopyCurrentScale(prop, obj);
                 }
                 if (ImGui.Selectable(@"Paste##PasteScale"))
                 {
-                    _msbToolbar.PasteSavedScale();
+                    PropAction_Scale.PasteSavedScale(selection);
                 }
             }
 

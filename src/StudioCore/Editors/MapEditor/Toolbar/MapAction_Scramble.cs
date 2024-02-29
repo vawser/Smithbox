@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_Scramble
+    public static class MapAction_Scramble
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Scramble##tool_Selection_Scramble", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Scramble;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Scramble;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -30,7 +30,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Scramble)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Scramble)
             {
                 ImGui.Text("Scramble the current selection's position, rotation and scale by the following parameters.");
                 ImGui.Separator();
@@ -248,7 +248,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
 
             CompoundAction action = new(actlist);
-            MapToolbar.ActionManager.ExecuteAction(action);
+            MapEditorState.ActionManager.ExecuteAction(action);
         }
 
         public static Transform GetScrambledTransform(Entity sel)

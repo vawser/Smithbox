@@ -13,7 +13,7 @@ using static SoulsFormats.MSBB.Event.ObjAct;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_Create
+    public static class MapAction_Create
     {
         private static Type _createPartSelectedType;
         private static Type _createRegionSelectedType;
@@ -31,7 +31,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Create##tool_Selection_Create", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Create;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Create;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -43,22 +43,22 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Create)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Create)
             {
                 ImGui.Text("Create a new object within the target map.");
                 ImGui.Separator();
                 ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Create.HintText)}");
                 ImGui.Separator();
 
-                if (!MapToolbar.LoadedMaps.Any())
+                if (!MapEditorState.LoadedMaps.Any())
                 {
                     ImGui.Text("No maps have been loaded yet.");
                 }
                 else
                 {
-                    var map = (Map)MapToolbar.LoadedMaps.ElementAt(_createEntityMapIndex);
+                    var map = (Map)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
 
-                    ImGui.Combo("Target Map", ref _createEntityMapIndex, MapToolbar.LoadedMaps.Select(e => e.Name).ToArray(), MapToolbar.LoadedMaps.Count());
+                    ImGui.Combo("Target Map", ref _createEntityMapIndex, MapEditorState.LoadedMaps.Select(e => e.Name).ToArray(), MapEditorState.LoadedMaps.Count());
 
                     if (map.BTLParents.Any())
                     {
@@ -168,7 +168,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Act(ViewportSelection _selection)
         {
-            var map = (Map)MapToolbar.LoadedMaps.ElementAt(_createEntityMapIndex);
+            var map = (Map)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
 
             if (CFG.Current.Toolbar_Create_Light)
             {
@@ -200,8 +200,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MsbEntity obj = new(map, newent, etype);
             parent ??= map.RootObject;
 
-            AddMapObjectsAction act = new(MapToolbar.Universe, map, MapToolbar.Scene, new List<MsbEntity> { obj }, true, parent);
-            MapToolbar.ActionManager.ExecuteAction(act);
+            AddMapObjectsAction act = new(MapEditorState.Universe, map, MapEditorState.Scene, new List<MsbEntity> { obj }, true, parent);
+            MapEditorState.ActionManager.ExecuteAction(act);
         }
 
         public static void PopulateClassNames()

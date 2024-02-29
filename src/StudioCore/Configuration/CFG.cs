@@ -369,6 +369,7 @@ public class CFG
     public bool Toolbar_Show_Render_Patrol_Routes = true;
     public bool Toolbar_Show_Navigation_Data = true;
     public bool Toolbar_Show_Toggle_Object_Visibility_by_Tag = true;
+    public bool Toolbar_Show_Assign_Entity_Group_ID = true;
 
     public bool Toolbar_Show_Go_to_in_Object_List = true;
     public bool Toolbar_Show_Move_to_Camera = true;
@@ -495,6 +496,9 @@ public class CFG
     public int Replicator_Sphere_Size = 1;
     public float Replicator_Sphere_Horizontal_Radius = 1;
     public float Replicator_Sphere_Vertical_Radius = 1;
+
+    public int Toolbar_EntityGroupID = 0;
+    public string Toolbar_EntityGroup_Attribute = "";
 
     //****************************
     // CFG

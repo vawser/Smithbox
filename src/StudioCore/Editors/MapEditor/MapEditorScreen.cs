@@ -517,75 +517,75 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Flip) && _selection.IsSelection())
             {
-                Action_ToggleVisibility.ForceVisibilityState(false, false, true);
-                Action_ToggleVisibility.Act(_selection);
+                MapAction_ToggleVisibility.ForceVisibilityState(false, false, true);
+                MapAction_ToggleVisibility.Act(_selection);
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Enabled) && _selection.IsSelection())
             {
-                Action_ToggleVisibility.ForceVisibilityState(true, false, false);
-                Action_ToggleVisibility.Act(_selection);
+                MapAction_ToggleVisibility.ForceVisibilityState(true, false, false);
+                MapAction_ToggleVisibility.Act(_selection);
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Selection_Visibility_Disabled) && _selection.IsSelection())
             {
-                Action_ToggleVisibility.ForceVisibilityState(false, true, false);
-                Action_ToggleVisibility.Act(_selection);
+                MapAction_ToggleVisibility.ForceVisibilityState(false, true, false);
+                MapAction_ToggleVisibility.Act(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Flip))
             {
-                Action_ToggleVisibility.ForceVisibilityState(false, false, true);
-                Action_ToggleVisibility.Act(_selection);
+                MapAction_ToggleVisibility.ForceVisibilityState(false, false, true);
+                MapAction_ToggleVisibility.Act(_selection);
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Enabled))
             {
-                Action_ToggleVisibility.ForceVisibilityState(true, false, false);
-                Action_ToggleVisibility.Act(_selection);
+                MapAction_ToggleVisibility.ForceVisibilityState(true, false, false);
+                MapAction_ToggleVisibility.Act(_selection);
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Toggle_Map_Visibility_Disabled))
             {
-                Action_ToggleVisibility.ForceVisibilityState(false, true, false);
-                Action_ToggleVisibility.Act(_selection);
+                MapAction_ToggleVisibility.ForceVisibilityState(false, true, false);
+                MapAction_ToggleVisibility.Act(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport))
             {
-                Action_FrameInViewport.Act(_selection);
+                MapAction_FrameInViewport.Act(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Go_to_Selection_in_Object_List))
             {
-                Action_GoToInObjectList.Act(_selection);
+                MapAction_GoToInObjectList.Act(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_X))
             {
-                Action_Rotate.ArbitraryRotation_Selection(_selection, new Vector3(1, 0, 0), false);
+                MapAction_Rotate.ArbitraryRotation_Selection(_selection, new Vector3(1, 0, 0), false);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_Y))
             {
-                Action_Rotate.ArbitraryRotation_Selection(_selection, new Vector3(0, 1, 0), false);
+                MapAction_Rotate.ArbitraryRotation_Selection(_selection, new Vector3(0, 1, 0), false);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Rotate_Y_Pivot))
             {
-                Action_Rotate.ArbitraryRotation_Selection(_selection, new Vector3(0, 1, 0), true);
+                MapAction_Rotate.ArbitraryRotation_Selection(_selection, new Vector3(0, 1, 0), true);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Reset_Rotation))
             {
-                Action_Rotate.SetSelectionToFixedRotation(_selection);
+                MapAction_Rotate.SetSelectionToFixedRotation(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Dummify) && _selection.IsSelection())
             {
                 if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
                 {
-                    Action_TogglePresence.ER_UnDummySelection(_selection);
+                    MapAction_TogglePresence.ER_UnDummySelection(_selection);
                 }
                 else
                 {
-                    Action_TogglePresence.UnDummySelection(_selection);
+                    MapAction_TogglePresence.UnDummySelection(_selection);
                 }
             }
 
@@ -593,17 +593,17 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             {
                 if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
                 {
-                    Action_TogglePresence.ER_DummySelection(_selection);
+                    MapAction_TogglePresence.ER_DummySelection(_selection);
                 }
                 else
                 {
-                    Action_TogglePresence.DummySelection(_selection);
+                    MapAction_TogglePresence.DummySelection(_selection);
                 }
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Move_Selection_to_Camera) && _selection.IsSelection())
             {
-                Action_MoveToCamera.Act(_selection);
+                MapAction_MoveToCamera.Act(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_RenderEnemyPatrolRoutes))
@@ -613,22 +613,22 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Set_to_Grid) && _selection.IsSelection())
             {
-                Action_MoveToGrid.Act(_selection);
+                MapAction_MoveToGrid.Act(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Scramble) && _selection.IsSelection())
             {
-                Action_Scramble.Act(_selection);
+                MapAction_Scramble.Act(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Replicate) && _selection.IsSelection())
             {
-                Action_Replicate.Act(_selection);
+                MapAction_Replicate.Act(_selection);
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_Create) && _selection.IsSelection())
             {
-                Action_Create.Act(_selection);
+                MapAction_Create.Act(_selection);
             }
 
             // Render settings
@@ -737,7 +737,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 Universe.Selection.ClearSelection();
                 Universe.Selection.AddSelection(target);
                 Universe.Selection.GotoTreeTarget = target;
-                Action_FrameInViewport.Act(_selection);
+                MapAction_FrameInViewport.Act(_selection);
             }
         }
 
@@ -951,7 +951,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         if (Project.Type != ProjectType.Undefined)
         {
-            Action_Create.PopulateClassNames();
+            MapAction_Create.PopulateClassNames();
         }
     }
 
@@ -977,7 +977,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                         {
                             _selection.ClearSelection();
                             _selection.AddSelection(obj);
-                            Action_FrameInViewport.Act(_selection);
+                            MapAction_FrameInViewport.Act(_selection);
                             return;
                         }
                     }

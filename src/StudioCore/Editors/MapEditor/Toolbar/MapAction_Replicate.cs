@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_Replicate
+    public static class MapAction_Replicate
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -19,7 +19,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Replicate##tool_Selection_Replicate", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Replicate;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Replicate;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -31,7 +31,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Replicate)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Replicate)
             {
                 ImGui.Text("Replicate the current selection by the following parameters.");
                 ImGui.Separator();
@@ -260,9 +260,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Act(ViewportSelection _selection)
         {
-            ReplicateMapObjectsAction action = new(MapToolbar.Toolbar, MapToolbar.Universe, MapToolbar.Scene,
-                    _selection.GetFilteredSelection<MsbEntity>().ToList(), MapToolbar.ActionManager);
-            MapToolbar.ActionManager.ExecuteAction(action);
+            ReplicateMapObjectsAction action = new(MapEditorState.Toolbar, MapEditorState.Universe, MapEditorState.Scene,
+                    _selection.GetFilteredSelection<MsbEntity>().ToList(), MapEditorState.ActionManager);
+            MapEditorState.ActionManager.ExecuteAction(action);
         }
     }
 }

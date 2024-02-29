@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_Duplicate
+    public static class MapAction_Duplicate
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -19,7 +19,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Duplicate##tool_Selection_Duplicate", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Duplicate;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Duplicate;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -31,13 +31,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Act(ViewportSelection _selection)
         {
-            CloneMapObjectsAction action = new(MapToolbar.Universe, MapToolbar.Scene, _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
-            MapToolbar.ActionManager.ExecuteAction(action);
+            CloneMapObjectsAction action = new(MapEditorState.Universe, MapEditorState.Scene, _selection.GetFilteredSelection<MsbEntity>().ToList(), true);
+            MapEditorState.ActionManager.ExecuteAction(action);
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Duplicate)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Duplicate)
             {
                 ImGui.Text("Duplicate the current selection.");
                 ImGui.Separator();

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_Rotate
+    public static class MapAction_Rotate
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Rotate##tool_Selection_Rotate", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Rotate;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Rotate;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -30,7 +30,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Rotate)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Rotate)
             {
                 ImGui.Text("Rotate the current selection by the following parameters.");
                 ImGui.Separator();
@@ -206,7 +206,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             if (actlist.Any())
             {
                 CompoundAction action = new(actlist);
-                MapToolbar.ActionManager.ExecuteAction(action);
+                MapEditorState.ActionManager.ExecuteAction(action);
             }
         }
 
@@ -229,7 +229,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             if (actlist.Any())
             {
                 CompoundAction action = new(actlist);
-                MapToolbar.ActionManager.ExecuteAction(action);
+                MapEditorState.ActionManager.ExecuteAction(action);
             }
         }
     }

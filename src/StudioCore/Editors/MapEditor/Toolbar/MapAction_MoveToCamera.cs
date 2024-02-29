@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_MoveToCamera
+    public static class MapAction_MoveToCamera
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (ImGui.Selectable("Move to Camera##tool_Selection_MoveToCamera", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    MapToolbar.CurrentTool = SelectedTool.Selection_Move_to_Camera;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Move_to_Camera;
 
                     if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                     {
@@ -30,7 +30,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Move_to_Camera)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Move_to_Camera)
             {
                 ImGui.Text("Move the current selection to the camera position.");
                 ImGui.Separator();
@@ -73,8 +73,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             List<ViewportAction> actlist = new();
             HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
-            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, MapToolbar.Viewport.WorldView.CameraTransform.RotationMatrix);
-            Vector3 camPos = MapToolbar.Viewport.WorldView.CameraTransform.Position;
+            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, MapEditorState.Viewport.WorldView.CameraTransform.RotationMatrix);
+            Vector3 camPos = MapEditorState.Viewport.WorldView.CameraTransform.Position;
             Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
             // Get the accumulated center position of all selections
@@ -119,7 +119,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             if (actlist.Any())
             {
                 CompoundAction action = new(actlist);
-                MapToolbar.ActionManager.ExecuteAction(action);
+                MapEditorState.ActionManager.ExecuteAction(action);
             }
         }
     }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_TogglePatrolRoutes
+    public static class MapAction_TogglePatrolRoutes
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -20,7 +20,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 {
                     if (ImGui.Selectable("Patrol Routes##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        MapToolbar.CurrentTool = SelectedTool.Selection_Render_Patrol_Routes;
+                        MapEditorState.CurrentTool = SelectedTool.Selection_Render_Patrol_Routes;
 
                         if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                         {
@@ -35,13 +35,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (Project.Type is not ProjectType.DS2S)
             {
-                PatrolDrawManager.Generate(MapToolbar.Universe);
+                PatrolDrawManager.Generate(MapEditorState.Universe);
             }
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Render_Patrol_Routes)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Render_Patrol_Routes)
             {
                 ImGui.Text("Toggle the rendering of patrol route connections.");
                 ImGui.Separator();

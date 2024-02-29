@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
-    public static class Action_MoveToGrid
+    public static class MapAction_MoveToGrid
     {
         public static void Select(ViewportSelection _selection)
         {
@@ -20,7 +20,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 {
                     if (ImGui.Selectable("Move to Grid##tool_Selection_Move_to_Grid", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        MapToolbar.CurrentTool = SelectedTool.Selection_Move_to_Grid;
+                        MapEditorState.CurrentTool = SelectedTool.Selection_Move_to_Grid;
 
                         if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
                         {
@@ -33,7 +33,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapToolbar.CurrentTool == SelectedTool.Selection_Move_to_Grid)
+            if (MapEditorState.CurrentTool == SelectedTool.Selection_Move_to_Grid)
             {
                 ImGui.Text("Set the current selection to the closest grid position.");
                 ImGui.Separator();
@@ -91,7 +91,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
 
             CompoundAction action = new(actlist);
-            MapToolbar.ActionManager.ExecuteAction(action);
+            MapEditorState.ActionManager.ExecuteAction(action);
         }
 
         public static Transform GetGridTransform(Entity sel)
