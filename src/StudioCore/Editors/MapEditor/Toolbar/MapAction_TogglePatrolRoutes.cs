@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (Project.Type is not ProjectType.DS2S)
                 {
-                    if (ImGui.Selectable("Patrol Routes##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable("Toggle Patrol Route Visibility##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         MapEditorState.CurrentTool = SelectedTool.Selection_Render_Patrol_Routes;
 
