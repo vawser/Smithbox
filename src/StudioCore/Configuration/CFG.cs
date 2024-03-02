@@ -342,8 +342,6 @@ public class CFG
     public bool FMG_Toolbar_Prompt_User_Action = true;
 
     public int FMG_SyncWeaponEntries_Modulus = 10000;
-    public int FMG_SyncWeaponEntries_StartID = 100000;
-    public int FMG_SyncWeaponEntries_EndID = 10000000;
 
     public string FMG_SearchAndReplace_SearchText = "";
     public string FMG_SearchAndReplace_ReplaceText = "";

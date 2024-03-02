@@ -15,29 +15,13 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 {
     public class TextAction_SearchAndReplace
     {
-        private static List<string> TargetTypes = new List<string>
-        {
-            "Selected Category",
-            "Selected Entry"
-        };
-
-        private static List<string> TextCategories = new List<string>
-        {
-            "Title",
-            "Description",
-            "Summary",
-            "Text Body",
-            "Extra Text",
-            "All"
-        };
-
-        private static string CurrentSearchTarget;
-        private static string CurrentSearchTextCategory;
+        private static string CurrentTargetType;
+        private static string CurrentTextCategory;
 
         public static void Setup()
         {
-            CurrentSearchTarget = "Selected Entry";
-            CurrentSearchTextCategory = "Description";
+            CurrentTargetType = "Selected Entry";
+            CurrentTextCategory = "Description";
         }
 
         public static void Select()
@@ -76,13 +60,13 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                 ImGui.InputText("Replace##replaceText", ref CFG.Current.FMG_SearchAndReplace_ReplaceText, 255);
                 ImguiUtils.ShowHoverTooltip("Text to replace the search text with. Supports regular expressions.");
 
-                if (ImGui.BeginCombo("Text Category", CurrentSearchTextCategory))
+                if (ImGui.BeginCombo("Text Category", CurrentTextCategory))
                 {
-                    foreach (string e in TextCategories)
+                    foreach (string e in TextEditorToolbar.TextCategories)
                     {
                         if (ImGui.Selectable(e))
                         {
-                            CurrentSearchTextCategory = e;
+                            CurrentTextCategory = e;
                             break;
                         }
                     }
@@ -90,13 +74,13 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                 }
                 ImguiUtils.ShowHoverTooltip("Text category to search in.");
 
-                if (ImGui.BeginCombo("Search Target", CurrentSearchTarget))
+                if (ImGui.BeginCombo("Target Type", CurrentTargetType))
                 {
-                    foreach (string e in TargetTypes)
+                    foreach (string e in TextEditorToolbar.TargetTypes)
                     {
                         if (ImGui.Selectable(e.ToString()))
                         {
-                            CurrentSearchTarget = e;
+                            CurrentTargetType = e;
                             break;
                         }
                     }
@@ -123,12 +107,12 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             var CurrentFmgInfo = TextEditorScreen._activeFmgInfo;
             var CurrentEntryGroup = TextEditorScreen._activeEntryGroup;
 
-            if (CurrentSearchTarget == "Selected Entry")
+            if (CurrentTargetType == "Selected Entry")
             {
                 StartSearchAndReplace(CurrentEntryGroup);
             }
 
-            if (CurrentSearchTarget == "Selected Category")
+            if (CurrentTargetType == "Selected Category")
             {
                 foreach (var fmgEntry in CurrentFmgInfo.Fmg.Entries)
                 {
@@ -147,31 +131,31 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             }
 
             // Title
-            if(CurrentSearchTextCategory is "Title" or "All")
+            if(CurrentTextCategory is "Title" or "All")
             {
                 PerformSearchAndReplace(entry.Title);
             }
 
             // TextBody
-            if (CurrentSearchTextCategory is "Text Body" or "All")
+            if (CurrentTextCategory is "Text Body" or "All")
             {
                 PerformSearchAndReplace(entry.TextBody);
             }
 
             // Summary
-            if (CurrentSearchTextCategory is "Summary" or "All")
+            if (CurrentTextCategory is "Summary" or "All")
             {
                 PerformSearchAndReplace(entry.Summary);
             }
 
             // ExtraText
-            if (CurrentSearchTextCategory is "Extra Text" or "All")
+            if (CurrentTextCategory is "Extra Text" or "All")
             {
                 PerformSearchAndReplace(entry.ExtraText);
             }
 
             // Description
-            if (CurrentSearchTextCategory is "Description" or "All")
+            if (CurrentTextCategory is "Description" or "All")
             {
                 PerformSearchAndReplace(entry.Description);
             }
