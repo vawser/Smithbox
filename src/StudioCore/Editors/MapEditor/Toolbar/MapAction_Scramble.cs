@@ -14,16 +14,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Scramble)
+            if (ImGui.Selectable("Scramble##tool_Selection_Scramble", false, ImGuiSelectableFlags.AllowDoubleClick))
             {
-                if (ImGui.Selectable("Scramble##tool_Selection_Scramble", false, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Scramble;
+                MapEditorState.CurrentTool = SelectedTool.Selection_Scramble;
 
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        Act(_selection);
-                    }
+                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                {
+                    Act(_selection);
                 }
             }
         }

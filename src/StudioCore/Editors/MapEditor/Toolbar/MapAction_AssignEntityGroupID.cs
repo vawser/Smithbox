@@ -42,16 +42,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT || Project.Type == ProjectType.DS3)
             {
-                if (CFG.Current.Toolbar_Show_Assign_Entity_Group_ID)
+                if (ImGui.Selectable("Mass Entity Group ID Assignment##tool_Selection_Assign_Entity_Group_ID", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    if (ImGui.Selectable("Mass Entity Group ID Assignment##tool_Selection_Assign_Entity_Group_ID", false, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        MapEditorState.CurrentTool = SelectedTool.Selection_Assign_Entity_Group_ID;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Assign_Entity_Group_ID;
 
-                        if (ImGui.IsMouseDoubleClicked(0))
-                        {
-                            Act(_selection);
-                        }
+                    if (ImGui.IsMouseDoubleClicked(0))
+                    {
+                        Act(_selection);
                     }
                 }
             }
@@ -62,7 +59,6 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             if (MapEditorState.CurrentTool == SelectedTool.Selection_Assign_Entity_Group_ID)
             {
                 ImGui.Text("Assign an Entity Group ID to all entities across all maps,\noptionally filtering by specific attributes.");
-                ImGui.Text("WARNING: this action cannot be undone.");
 
                 ImGui.Separator();
                 ImGui.Text("Entity Group ID");
@@ -124,18 +120,32 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Act(ViewportSelection _selection)
         {
-            DialogResult result = DialogResult.None;
+            bool proceed = false;
 
-            if (SelectedMapFilter == "All")
+            if (CFG.Current.MSB_Toolbar_Prompt_User_Action)
             {
-                result = PlatformUtils.Instance.MessageBox($"You are about to assign an Entity Group ID to entities across all maps. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult result = DialogResult.None;
+
+                if (SelectedMapFilter == "All")
+                {
+                    result = PlatformUtils.Instance.MessageBox($"You are about to assign an Entity Group ID to entities across all maps. This action cannot be undone. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    result = PlatformUtils.Instance.MessageBox($"You are about to assign an Entity Group ID to entities across {SelectedMapFilter}. This action cannot be undone. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                }
+
+                if (result == DialogResult.Yes)
+                {
+                    proceed = true;
+                }
             }
             else
             {
-                 result = PlatformUtils.Instance.MessageBox($"You are about to assign an Entity Group ID to entities across {SelectedMapFilter}. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                proceed = true;
             }
 
-            if (result == DialogResult.Yes)
+            if (proceed)
             {
                 // Save current and then unload
                 EditorContainer.MsbEditor.Save();

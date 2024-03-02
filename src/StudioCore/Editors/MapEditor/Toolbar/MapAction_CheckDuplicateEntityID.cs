@@ -15,18 +15,15 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID)
+            if (ImGui.Selectable("Check Duplicate Entity ID##tool_Selection_Duplicate_Entity_ID", false, ImGuiSelectableFlags.AllowDoubleClick))
             {
-                if (ImGui.Selectable("Check Duplicate Entity ID##tool_Selection_Duplicate_Entity_ID", false, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Duplicate_Entity_ID;
+                MapEditorState.CurrentTool = SelectedTool.Selection_Duplicate_Entity_ID;
 
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                {
+                    if (MapEditorState.LoadedMaps.Any())
                     {
-                        if (MapEditorState.LoadedMaps.Any())
-                        {
-                            Act(_selection);
-                        }
+                        Act(_selection);
                     }
                 }
             }

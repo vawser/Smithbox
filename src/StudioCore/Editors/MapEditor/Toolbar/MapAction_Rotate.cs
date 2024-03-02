@@ -14,16 +14,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Rotate)
+            if (ImGui.Selectable("Rotate##tool_Selection_Rotate", false, ImGuiSelectableFlags.AllowDoubleClick))
             {
-                if (ImGui.Selectable("Rotate##tool_Selection_Rotate", false, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Rotate;
+                MapEditorState.CurrentTool = SelectedTool.Selection_Rotate;
 
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        Act(_selection);
-                    }
+                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                {
+                    Act(_selection);
                 }
             }
         }

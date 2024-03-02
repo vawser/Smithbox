@@ -18,18 +18,15 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Navigation_Data)
+            if (Project.Type is ProjectType.DES || Project.Type is ProjectType.DS1 || Project.Type is ProjectType.DS1R)
             {
-                if (Project.Type is ProjectType.DES || Project.Type is ProjectType.DS1 || Project.Type is ProjectType.DS1R)
+                if (ImGui.Selectable("Navigation Data##tool_Selection_Generate_Navigation_Data", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    if (ImGui.Selectable("Navigation Data##tool_Selection_Generate_Navigation_Data", false, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        MapEditorState.CurrentTool = SelectedTool.Selection_Generate_Navigation_Data;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Generate_Navigation_Data;
 
-                        if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                        {
-                            Act(_selection);
-                        }
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        Act(_selection);
                     }
                 }
             }

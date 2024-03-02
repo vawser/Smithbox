@@ -10,6 +10,7 @@ using System.Drawing;
 using StudioCore.MsbEditor;
 using StudioCore.UserProject;
 using Veldrid;
+using StudioCore.Editors.TextEditor.Toolbar;
 
 namespace StudioCore;
 
@@ -338,6 +339,19 @@ public class CFG
     public int FMG_DuplicateAmount = 1;
     public int FMG_DuplicateIncrement = 1;
 
+    public bool FMG_Toolbar_Prompt_User_Action = true;
+
+    public int FMG_SyncWeaponEntries_Modulus = 10000;
+    public int FMG_SyncWeaponEntries_StartID = 100000;
+    public int FMG_SyncWeaponEntries_EndID = 10000000;
+
+    public string FMG_SearchAndReplace_SearchText = "";
+    public string FMG_SearchAndReplace_ReplaceText = "";
+    public bool FMG_SearchAndReplace_Regex_IgnoreCase = false;
+    public bool FMG_SearchAndReplace_Regex_Multiline = false;
+    public bool FMG_SearchAndReplace_Regex_Singleline = false;
+    public bool FMG_SearchAndReplace_Regex_IgnorePatternWhitespace = false;
+
     //****************************
     // Settings: Gparam Editor
     //****************************
@@ -365,23 +379,7 @@ public class CFG
     //****************************
     // Map Toolbar
     //****************************
-    public bool Toolbar_Show_Check_Duplicate_Entity_ID = true;
-    public bool Toolbar_Show_Render_Patrol_Routes = true;
-    public bool Toolbar_Show_Navigation_Data = true;
-    public bool Toolbar_Show_Toggle_Object_Visibility_by_Tag = true;
-    public bool Toolbar_Show_Assign_Entity_Group_ID = true;
-
-    public bool Toolbar_Show_Go_to_in_Object_List = true;
-    public bool Toolbar_Show_Move_to_Camera = true;
-    public bool Toolbar_Show_Frame_in_Viewport = true;
-    public bool Toolbar_Show_Toggle_Visibility = true;
-    public bool Toolbar_Show_Create = true;
-    public bool Toolbar_Show_Duplicate = true;
-    public bool Toolbar_Show_Rotate = true;
-    public bool Toolbar_Show_Toggle_Presence = true;
-    public bool Toolbar_Show_Scramble = true;
-    public bool Toolbar_Show_Replicate = true;
-    public bool Toolbar_Show_Move_to_Grid = true;
+    public bool MSB_Toolbar_Prompt_User_Action = true;
 
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
     public bool Toolbar_Duplicate_Increment_UnkPartNames = false;

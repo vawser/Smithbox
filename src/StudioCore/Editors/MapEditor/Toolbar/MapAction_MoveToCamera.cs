@@ -14,16 +14,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Move_to_Camera)
+            if (ImGui.Selectable("Move to Camera##tool_Selection_MoveToCamera", false, ImGuiSelectableFlags.AllowDoubleClick))
             {
-                if (ImGui.Selectable("Move to Camera##tool_Selection_MoveToCamera", false, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Move_to_Camera;
+                MapEditorState.CurrentTool = SelectedTool.Selection_Move_to_Camera;
 
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        Act(_selection);
-                    }
+                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                {
+                    Act(_selection);
                 }
             }
         }

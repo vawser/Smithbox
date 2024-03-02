@@ -14,18 +14,15 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Render_Patrol_Routes)
+            if (Project.Type is not ProjectType.DS2S)
             {
-                if (Project.Type is not ProjectType.DS2S)
+                if (ImGui.Selectable("Toggle Patrol Route Visibility##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    if (ImGui.Selectable("Toggle Patrol Route Visibility##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        MapEditorState.CurrentTool = SelectedTool.Selection_Render_Patrol_Routes;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Render_Patrol_Routes;
 
-                        if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                        {
-                            Act(_selection);
-                        }
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        Act(_selection);
                     }
                 }
             }

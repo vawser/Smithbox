@@ -14,18 +14,15 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Move_to_Grid)
+            if (CFG.Current.Viewport_EnableGrid)
             {
-                if (CFG.Current.Viewport_EnableGrid)
+                if (ImGui.Selectable("Move to Grid##tool_Selection_Move_to_Grid", false, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    if (ImGui.Selectable("Move to Grid##tool_Selection_Move_to_Grid", false, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        MapEditorState.CurrentTool = SelectedTool.Selection_Move_to_Grid;
+                    MapEditorState.CurrentTool = SelectedTool.Selection_Move_to_Grid;
 
-                        if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                        {
-                            Act(_selection);
-                        }
+                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                    {
+                        Act(_selection);
                     }
                 }
             }

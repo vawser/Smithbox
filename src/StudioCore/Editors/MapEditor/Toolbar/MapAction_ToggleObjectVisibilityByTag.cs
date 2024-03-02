@@ -14,16 +14,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Toggle_Object_Visibility_by_Tag)
+            if (ImGui.Selectable("Toggle Object Visibility by Tag##tool_Selection_Toggle_Object_Visibility_by_Tag", false, ImGuiSelectableFlags.AllowDoubleClick))
             {
-                if (ImGui.Selectable("Toggle Object Visibility by Tag##tool_Selection_Toggle_Object_Visibility_by_Tag", false, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Toggle_Object_Visibility_by_Tag;
+                MapEditorState.CurrentTool = SelectedTool.Selection_Toggle_Object_Visibility_by_Tag;
 
-                    if (ImGui.IsMouseDoubleClicked(0))
-                    {
-                        Act(_selection);
-                    }
+                if (ImGui.IsMouseDoubleClicked(0))
+                {
+                    Act(_selection);
                 }
             }
         }

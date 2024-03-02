@@ -431,6 +431,37 @@ public class SettingsWindow
             ImGui.Unindent();
             ImGui.EndTabItem();
         }
+
+        // Map Object Display Presets
+        if (ImGui.CollapsingHeader("Display Presets"))
+        {
+            ImGui.Text("Configure each of the six display presets available.");
+
+            if (ImGui.Button("Reset##DisplayPresets"))
+            {
+                CFG.Current.SceneFilter_Preset_01.Name = CFG.Default.SceneFilter_Preset_01.Name;
+                CFG.Current.SceneFilter_Preset_01.Filters = CFG.Default.SceneFilter_Preset_01.Filters;
+                CFG.Current.SceneFilter_Preset_02.Name = CFG.Default.SceneFilter_Preset_02.Name;
+                CFG.Current.SceneFilter_Preset_02.Filters = CFG.Default.SceneFilter_Preset_02.Filters;
+                CFG.Current.SceneFilter_Preset_03.Name = CFG.Default.SceneFilter_Preset_03.Name;
+                CFG.Current.SceneFilter_Preset_03.Filters = CFG.Default.SceneFilter_Preset_03.Filters;
+                CFG.Current.SceneFilter_Preset_04.Name = CFG.Default.SceneFilter_Preset_04.Name;
+                CFG.Current.SceneFilter_Preset_04.Filters = CFG.Default.SceneFilter_Preset_04.Filters;
+                CFG.Current.SceneFilter_Preset_05.Name = CFG.Default.SceneFilter_Preset_05.Name;
+                CFG.Current.SceneFilter_Preset_05.Filters = CFG.Default.SceneFilter_Preset_05.Filters;
+                CFG.Current.SceneFilter_Preset_06.Name = CFG.Default.SceneFilter_Preset_06.Name;
+                CFG.Current.SceneFilter_Preset_06.Filters = CFG.Default.SceneFilter_Preset_06.Filters;
+            }
+            ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
+
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_01);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_02);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_03);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_04);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_05);
+            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_06);
+        }
+
     }
 
     private void DisplaySettings_MapEditor()
@@ -490,83 +521,10 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("The Chr ID of the model you want to use as the replacement.");
             }
 
-            // Map Object Display Presets
-            if (ImGui.CollapsingHeader("Display Presets"))
+            if (ImGui.CollapsingHeader("Toolbar", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Text("Configure each of the six display presets available.");
-
-                if (ImGui.Button("Reset##DisplayPresets"))
-                {
-                    CFG.Current.SceneFilter_Preset_01.Name = CFG.Default.SceneFilter_Preset_01.Name;
-                    CFG.Current.SceneFilter_Preset_01.Filters = CFG.Default.SceneFilter_Preset_01.Filters;
-                    CFG.Current.SceneFilter_Preset_02.Name = CFG.Default.SceneFilter_Preset_02.Name;
-                    CFG.Current.SceneFilter_Preset_02.Filters = CFG.Default.SceneFilter_Preset_02.Filters;
-                    CFG.Current.SceneFilter_Preset_03.Name = CFG.Default.SceneFilter_Preset_03.Name;
-                    CFG.Current.SceneFilter_Preset_03.Filters = CFG.Default.SceneFilter_Preset_03.Filters;
-                    CFG.Current.SceneFilter_Preset_04.Name = CFG.Default.SceneFilter_Preset_04.Name;
-                    CFG.Current.SceneFilter_Preset_04.Filters = CFG.Default.SceneFilter_Preset_04.Filters;
-                    CFG.Current.SceneFilter_Preset_05.Name = CFG.Default.SceneFilter_Preset_05.Name;
-                    CFG.Current.SceneFilter_Preset_05.Filters = CFG.Default.SceneFilter_Preset_05.Filters;
-                    CFG.Current.SceneFilter_Preset_06.Name = CFG.Default.SceneFilter_Preset_06.Name;
-                    CFG.Current.SceneFilter_Preset_06.Filters = CFG.Default.SceneFilter_Preset_06.Filters;
-                }
-                ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
-
-                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_01);
-                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_02);
-                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_03);
-                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_04);
-                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_05);
-                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_06);
-            }
-
-            // Toolbar
-            if (ImGui.CollapsingHeader("Toolbar Action Visibility"))
-            {
-                ImGui.Checkbox("Check Duplicate Entity ID", ref CFG.Current.Toolbar_Show_Check_Duplicate_Entity_ID);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Check Duplicate Entity ID action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Patrol Routes", ref CFG.Current.Toolbar_Show_Render_Patrol_Routes);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Patrol Routes action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Generate Navigation Data", ref CFG.Current.Toolbar_Show_Navigation_Data);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Generate Navigation Data action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Toggle Object Visibility by Tag", ref CFG.Current.Toolbar_Show_Toggle_Object_Visibility_by_Tag);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Toggle Object Visibility by Tag action will be visible in the map toolbar window.");
-            
-                ImGui.Checkbox("Go to in Object List", ref CFG.Current.Toolbar_Show_Go_to_in_Object_List);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Go to in Object List action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Move to Camera", ref CFG.Current.Toolbar_Show_Move_to_Camera);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Move to Camera action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Frame in Viewport", ref CFG.Current.Toolbar_Show_Frame_in_Viewport);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Frame in Viewport action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Toggle Visibility", ref CFG.Current.Toolbar_Show_Toggle_Visibility);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Toggle Visibility action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Create", ref CFG.Current.Toolbar_Show_Create);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Create action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Duplicate", ref CFG.Current.Toolbar_Show_Duplicate);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Duplicate action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Rotate", ref CFG.Current.Toolbar_Show_Rotate);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Rotate action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Toggle Presence", ref CFG.Current.Toolbar_Show_Toggle_Presence);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Toggle Presence action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Scramble", ref CFG.Current.Toolbar_Show_Scramble);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Scramble action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Replicate", ref CFG.Current.Toolbar_Show_Replicate);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Replicate action will be visible in the map toolbar window.");
-
-                ImGui.Checkbox("Move to Grid", ref CFG.Current.Toolbar_Show_Move_to_Grid);
-                ImguiUtils.ShowHoverTooltip("If enabled, the Move to Grid action will be visible in the map toolbar window.");
+                ImGui.Checkbox("Prompt user confirmation", ref CFG.Current.MSB_Toolbar_Prompt_User_Action);
+                ImguiUtils.ShowHoverTooltip("Show a prompt before executing a irrevocable toolbar action to confirm user's intent.");
             }
 
             ImGui.Unindent();
@@ -673,6 +631,12 @@ public class SettingsWindow
                 if (ImGui.Checkbox("Separate patch FMGs", ref CFG.Current.FMG_NoFmgPatching))
                     EditorContainer.TextEditor.OnProjectChanged(ProjSettings);
                 ImguiUtils.ShowHoverTooltip("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
+            }
+
+            if (ImGui.CollapsingHeader("Toolbar", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Prompt user confirmation", ref CFG.Current.FMG_Toolbar_Prompt_User_Action);
+                ImguiUtils.ShowHoverTooltip("Show a prompt before executing an irrevocable toolbar action to confirm user's intent.");
             }
 
             ImGui.EndTabItem();

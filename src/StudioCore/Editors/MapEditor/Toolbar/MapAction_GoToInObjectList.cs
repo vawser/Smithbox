@@ -12,16 +12,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Go_to_in_Object_List)
+            if (ImGui.Selectable("Go to in Object List##tool_Selection_GoToInObjectList", false, ImGuiSelectableFlags.AllowDoubleClick))
             {
-                if (ImGui.Selectable("Go to in Object List##tool_Selection_GoToInObjectList", false, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Go_to_in_Object_List;
+                MapEditorState.CurrentTool = SelectedTool.Selection_Go_to_in_Object_List;
 
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        Act(_selection);
-                    }
+                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                {
+                    Act(_selection);
                 }
             }
         }

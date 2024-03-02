@@ -13,6 +13,7 @@ using Veldrid;
 using Veldrid.Sdl2;
 using StudioCore.Interface;
 using static StudioCore.Editors.TextEditor.FMGBank;
+using StudioCore.Editors.TextEditor.Toolbar;
 
 namespace StudioCore.TextEditor;
 
@@ -20,8 +21,8 @@ public class TextEditorScreen : EditorScreen
 {
     private readonly PropertyEditor _propEditor;
 
-    private FMGBank.EntryGroup _activeEntryGroup;
-    private FMGBank.FMGInfo _activeFmgInfo;
+    public static FMGBank.EntryGroup _activeEntryGroup;
+    public static FMGBank.FMGInfo _activeFmgInfo;
     private int _activeIDCache = -1;
     private bool _arrowKeyPressed;
 
@@ -38,9 +39,12 @@ public class TextEditorScreen : EditorScreen
     private List<FMGBank.FMGInfo> _filteredFmgInfo = new();
     public ActionManager EditorActionManager = new();
 
+    private TextEditorToolbar Toolbar;
+
     public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _propEditor = new PropertyEditor(EditorActionManager);
+        Toolbar = new TextEditorToolbar();
     }
 
     public string EditorName => "Text Editor";
@@ -49,8 +53,8 @@ public class TextEditorScreen : EditorScreen
 
     public void Init()
     {
-
     }
+
     public void DrawEditorMenu()
     {
         if (ImGui.BeginMenu("Edit", FMGBank.IsLoaded))
@@ -82,37 +86,6 @@ public class TextEditorScreen : EditorScreen
             {
                 DuplicateFMGEntries(_activeEntryGroup);
             }
-
-            /*
-            if (ImGui.MenuItem("Vawser Action"))
-            {
-                var addText = @"<img src='img://LB_Description_Header.png' height='94' width='620' vspace='0'/>";
-
-                foreach (var entry in FMGBank.FmgInfoBank)
-                {
-                    if(entry.EntryCategory == FmgEntryCategory.Weapons)
-                    {
-                        if (entry.EntryType == FmgEntryTextType.Description)
-                        {
-                            foreach (var fmg in entry.Fmg.Entries)
-                            {
-                                if (fmg.Text != null)
-                                {
-                                    if (!fmg.Text.Contains(addText))
-                                    {
-                                        fmg.Text = $"{addText}\n\n{fmg.Text}";
-                                    }
-                                    else
-                                    {
-                                        TaskLogs.AddLog($"{fmg.ID} already contains addText");
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            */
 
             ImGui.EndMenu();
         }
@@ -814,6 +787,26 @@ public class TextEditorScreen : EditorScreen
         }
 
         ImGui.End();
+
+        ImGui.Begin("Toolbar##textEditorToolbar");
+
+        ImGui.Text("Actions:");
+        ImGui.Separator();
+
+        Toolbar.ShowActionList();
+
+        ImGui.Separator();
+
+        ImGui.BeginChild("##toolbarConfigurationPanel");
+
+        ImGui.Text("Configuration:");
+        ImGui.Separator();
+
+        Toolbar.ShowActionConfiguration();
+
+        ImGui.EndChild();
+
+        ImGui.End();
     }
 
     private void ChangeLanguage(string path)
@@ -825,4 +818,9 @@ public class TextEditorScreen : EditorScreen
         ResetActionManager();
         FMGBank.ReloadFMGs(path);
     }
+
+    
+
+
+    
 }

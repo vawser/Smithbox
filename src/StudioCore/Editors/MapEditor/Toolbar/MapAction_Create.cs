@@ -27,16 +27,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Toolbar_Show_Create)
+            if (ImGui.Selectable("Create##tool_Selection_Create", false, ImGuiSelectableFlags.AllowDoubleClick))
             {
-                if (ImGui.Selectable("Create##tool_Selection_Create", false, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Create;
+                MapEditorState.CurrentTool = SelectedTool.Selection_Create;
 
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        Act(_selection);
-                    }
+                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                {
+                    Act(_selection);
                 }
             }
         }
