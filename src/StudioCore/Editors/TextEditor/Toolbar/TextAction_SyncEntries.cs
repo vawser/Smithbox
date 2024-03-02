@@ -67,7 +67,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                 }
                 ImguiUtils.ShowHoverTooltip("Text category to sync.");
 
-                ImGui.InputInt("Modulus", ref CFG.Current.FMG_SyncWeaponEntries_Modulus);
+                ImGui.InputInt("Modulus", ref CFG.Current.FMG_SyncEntries_Modulus);
                 ImguiUtils.ShowHoverTooltip("The modulus used to detect which FMG entries are considered 'base' entries.\n\nExample:\nThe weapon entries are spaced by 10000 or more. Therefore the modulus will match with the 'base' entries, but 'sub' entries will not. This means we can then assume any entries after the 'base' entry but below the 'base' entry ID plus the modulus are 'sub' entries.");
             }
         }
@@ -158,7 +158,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         private static void SyncText(FMG.Entry entry)
         {
             // Grab base text
-            if (entry.ID % CFG.Current.FMG_SyncWeaponEntries_Modulus == 0)
+            if (entry.ID % CFG.Current.FMG_SyncEntries_Modulus == 0)
             {
                 holdingSyncText = true;
                 syncText = entry.Text;
@@ -170,14 +170,14 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             {
                 // If current FMG is a child of the base ID, then apply the
                 // new description
-                if (entry.ID > syncBaseId && entry.ID < (syncBaseId + CFG.Current.FMG_SyncWeaponEntries_Modulus))
+                if (entry.ID > syncBaseId && entry.ID < (syncBaseId + CFG.Current.FMG_SyncEntries_Modulus))
                 {
                     TaskLogs.AddLog($"Updated FMG entry {entry.ID}.");
                     entry.Text = syncText;
                 }
 
                 // After exceeding the child id range, reset the grab bool
-                if (entry.ID > (syncBaseId + CFG.Current.FMG_SyncWeaponEntries_Modulus))
+                if (entry.ID > (syncBaseId + CFG.Current.FMG_SyncEntries_Modulus))
                 {
                     holdingSyncText = false;
                 }

@@ -17,7 +17,8 @@ namespace StudioCore.Editors.TextEditor.Toolbar
     {
         None,
         SearchAndReplace,
-        SyncEntries
+        SyncEntries,
+        BlockDuplicate
     }
 
     public class TextEditorToolbar
@@ -50,12 +51,14 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         {
             TextAction_SearchAndReplace.Select();
             TextAction_SyncEntries.Select();
+            //TextAction_BlockDuplicate.Select();
         }
 
         public void ShowActionConfiguration()
         {
             TextAction_SearchAndReplace.Configure();
             TextAction_SyncEntries.Configure();
+            //TextAction_BlockDuplicate.Configure();
         }
     }
 }

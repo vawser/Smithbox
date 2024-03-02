@@ -336,6 +336,7 @@ public static class LocatorUtils
             if (pathElements[i].Equals("model") || pathElements[i].Equals("tex"))
             {
                 bndpath = "";
+
                 if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                     return GetOverridenFilePath($@"parts\{partsId}.partsbnd");
 
@@ -374,9 +375,6 @@ public static class LocatorUtils
 
                     return GetOverridenFilePath($@"model\parts\{partType}\{partsId}.bnd");
                 }
-
-                if (Project.Type == ProjectType.ER)
-                    return GetOverridenFilePath($@"parts\{partsId}\{partsId}.partsbnd.dcx");
 
                 if (Project.Type == ProjectType.AC6 && pathElements[i].Equals("tex"))
                 {

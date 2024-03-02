@@ -138,6 +138,7 @@ namespace StudioCore.Editors.ModelEditor
 
                 if (_selectedAssetType == SelectedCategoryType.Part)
                 {
+                    ImGui.SameLine();
                     ImGui.Checkbox("Show low detail models", ref CFG.Current.AssetBrowser_ShowLowDetailParts);
                     ImguiUtils.ShowHoverTooltip("Show the low detail part models in this list.");
                 }

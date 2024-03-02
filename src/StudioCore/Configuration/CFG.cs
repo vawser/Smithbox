@@ -341,7 +341,7 @@ public class CFG
 
     public bool FMG_Toolbar_Prompt_User_Action = true;
 
-    public int FMG_SyncWeaponEntries_Modulus = 10000;
+    public int FMG_SyncEntries_Modulus = 10000;
 
     public string FMG_SearchAndReplace_SearchText = "";
     public string FMG_SearchAndReplace_ReplaceText = "";
@@ -349,6 +349,10 @@ public class CFG
     public bool FMG_SearchAndReplace_Regex_Multiline = false;
     public bool FMG_SearchAndReplace_Regex_Singleline = false;
     public bool FMG_SearchAndReplace_Regex_IgnorePatternWhitespace = false;
+
+    public int FMG_BlockDuplicate_StartID = 0;
+    public int FMG_BlockDuplicate_EndID = 10000;
+    public int FMG_BlockDuplicate_RebaseID = 20000;
 
     //****************************
     // Settings: Gparam Editor

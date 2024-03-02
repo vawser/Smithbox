@@ -24,6 +24,8 @@ using System.Linq;
 using Org.BouncyCastle.Utilities;
 using static SoulsFormats.BTPB;
 using static SoulsFormats.MSB_AC6.Region;
+using DotNext.Collections.Generic;
+using System.Xml;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -324,7 +326,15 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void DuplicateSelection()
     {
+        // WIP
+        return;
+
         ViewportSelection sel = _sceneTree.GetCurrentSelection();
+
+        if (sel.GetSelection().Count < 1)
+        {
+            return;
+        }
 
         ISelectable first = sel.GetSelection().First();
         Entity selected = first as Entity;
@@ -338,13 +348,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         {
             FLVER2.Mesh newMesh = r.Flver.Meshes[nameEnt.Index];
 
-            var newIdx = r.Flver.Meshes.Count;
             r.Flver.Meshes.Add(newMesh);
-
-            var node = new NamedEntity(_sceneTree.Model, r.Flver.Meshes[newIdx], $@"Mesh {newIdx}", newIdx);
-
-            _sceneTree.Model.Objects.Add(node);
-            _sceneTree.Model.meshesNode.AddChild(node);
         }
 
         // Material
@@ -352,13 +356,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         {
             FLVER2.Material newMaterial = r.Flver.Materials[nameEnt.Index];
 
-            var newIdx = r.Flver.Materials.Count;
             r.Flver.Materials.Add(newMaterial);
-
-            var node = new NamedEntity(_sceneTree.Model, r.Flver.Materials[newIdx], $@"{newMaterial.Name}", newIdx);
-
-            _sceneTree.Model.Objects.Add(node);
-            _sceneTree.Model.materialsNode.AddChild(node);
         }
 
         // Bone
@@ -366,13 +364,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         {
             FLVER.Bone newBone = r.Flver.Bones[transformableNamedEntity.Index];
 
-            var newIdx = r.Flver.Bones.Count;
             r.Flver.Bones.Add(newBone);
-
-            var node = new NamedEntity(_sceneTree.Model, r.Flver.Bones[newIdx], $@"{newBone.Name}", newIdx);
-
-            _sceneTree.Model.Objects.Add(node);
-            _sceneTree.Model.bonesNode.AddChild(node);
         }
 
         // Dummy
@@ -380,13 +372,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         {
             FLVER.Dummy newDummy = r.Flver.Dummies[transformableNamedEntity.Index];
 
-            var newIdx = r.Flver.Dummies.Count;
             r.Flver.Dummies.Add(newDummy);
-
-            var node = new NamedEntity(_sceneTree.Model, r.Flver.Dummies[newIdx], $@"Dummy {newIdx}", newIdx);
-
-            _sceneTree.Model.Objects.Add(node);
-            _sceneTree.Model.dmysNode.AddChild(node);
         }
     }
 
@@ -396,6 +382,11 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         return;
 
         ViewportSelection sel = _sceneTree.GetCurrentSelection();
+
+        if (sel.GetSelection().Count < 1)
+        {
+            return;
+        }
 
         ISelectable first = sel.GetSelection().First();
         Entity selected = first as Entity;
@@ -407,59 +398,36 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         // Mesh
         if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
         {
-            FLVER2.Mesh oldMesh = r.Flver.Meshes[nameEnt.Index-1];
+            FLVER2.Mesh oldMesh = r.Flver.Meshes[nameEnt.Index - 1];
 
             r.Flver.Meshes.Remove(oldMesh);
-
-            var removedEnt = _sceneTree.Model.Objects[nameEnt.Index];
-
-            _sceneTree.Model.Objects.Remove(removedEnt);
-            _sceneTree.Model.meshesNode.RemoveChild(removedEnt);
         }
 
         // Material
         if (selected.WrappedObject.GetType() == typeof(FLVER2.Material))
         {
-            FLVER2.Material newMaterial = r.Flver.Materials[nameEnt.Index];
+            FLVER2.Material oldMaterial = r.Flver.Materials[nameEnt.Index - 1];
 
-            var newIdx = r.Flver.Materials.Count;
-            r.Flver.Materials.Add(newMaterial);
-
-            var node = new NamedEntity(_sceneTree.Model, r.Flver.Materials[newIdx], $@"{newMaterial.Name}", newIdx);
-
-            _sceneTree.Model.Objects.Add(node);
-            _sceneTree.Model.materialsNode.AddChild(node);
+            r.Flver.Materials.Remove(oldMaterial);
         }
 
         // Bone
         if (selected.WrappedObject.GetType() == typeof(FLVER.Bone))
         {
-            FLVER.Bone newBone = r.Flver.Bones[transformableNamedEntity.Index];
+            FLVER.Bone oldBone = r.Flver.Bones[transformableNamedEntity.Index - 1];
 
-            var newIdx = r.Flver.Bones.Count;
-            r.Flver.Bones.Add(newBone);
-
-            var node = new NamedEntity(_sceneTree.Model, r.Flver.Bones[newIdx], $@"{newBone.Name}", newIdx);
-
-            _sceneTree.Model.Objects.Add(node);
-            _sceneTree.Model.bonesNode.AddChild(node);
+            r.Flver.Bones.Remove(oldBone);
         }
 
         // Dummy
         if (selected.WrappedObject.GetType() == typeof(FLVER.Dummy))
         {
-            FLVER.Dummy newDummy = r.Flver.Dummies[transformableNamedEntity.Index];
+            _sceneTree.Model.Objects.Remove(transformableNamedEntity);
+            _sceneTree.Model.RootObject.RemoveChild(transformableNamedEntity);
 
-            var newIdx = r.Flver.Dummies.Count;
-            r.Flver.Dummies.Add(newDummy);
-
-            var node = new NamedEntity(_sceneTree.Model, r.Flver.Dummies[newIdx], $@"Dummy {newIdx}", newIdx);
-
-            _sceneTree.Model.Objects.Add(node);
-            _sceneTree.Model.dmysNode.AddChild(node);
+            FLVER.Dummy oldDummy = r.Flver.Dummies[transformableNamedEntity.Index-1];
+            r.Flver.Dummies.Remove(oldDummy);
         }
-
-        sel.ClearSelection();
     }
 
     public bool InputCaptured()
