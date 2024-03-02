@@ -21,6 +21,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     // This would allow for all of a user's desired assignments to be done in one iteration,
     // which is important since it takes longer than a minute to save all Elden Ring's MSBs
 
+    // TODO:
+    // Allow user to select attribute, rather than pre-defined list
+
     public static class MapAction_AssignEntityGroupID
     {
         public static List<string> FilterType = new List<string>()

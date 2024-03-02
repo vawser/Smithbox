@@ -35,6 +35,75 @@
       <Option Value="0" Name="Type 0" />
       <Option Value="1" Name="Type 1" />
     </Enum>
+    <Enum Name="WORLD_MAP_ICON_ID" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Grace" />
+      <Option Value="2" Name="Blocked Grace" />
+      <Option Value="3" Name="Collapsed Church" />
+      <Option Value="4" Name="Catacombs Entrance" />
+      <Option Value="5" Name="Pillar Ruins" />
+      <Option Value="6" Name="Wooden Shack" />
+      <Option Value="7" Name="Distant Village" />
+      <Option Value="8" Name="Collapsed Tower" />
+      <Option Value="9" Name="Evergaol" />
+      <Option Value="10" Name="Gatehouse" />
+      <Option Value="11" Name="Bridge of Sacrifice" />
+      <Option Value="13" Name="Cave" />
+      <Option Value="14" Name="Tunnel" />
+      <Option Value="15" Name="River Well" />
+      <Option Value="16" Name="Hero's Grave" />
+      <Option Value="17" Name="Mage's Rise" />
+      <Option Value="18" Name="Fort" />
+      <Option Value="19" Name="Windmill" />
+      <Option Value="20" Name="Cathedral of Manus Celes" />
+      <Option Value="21" Name="Grand Lift" />
+      <Option Value="22" Name="Encampment" />
+      <Option Value="23" Name="Divine Tower" />
+      <Option Value="24" Name="Colosseum" />
+      <Option Value="25" Name="Castle Morne" />
+      <Option Value="26" Name="Caria Manor" />
+      <Option Value="27" Name="Shaded Castle" />
+      <Option Value="28" Name="Redmane Castle" />
+      <Option Value="29" Name="Castle Sol" />
+      <Option Value="30" Name="Minor Erdtree" />
+      <Option Value="32" Name="Academy Gate Town" />
+      <Option Value="33" Name="Sellia Town of Sorcery" />
+      <Option Value="34" Name="Ordina Liturgical Town" />
+      <Option Value="35" Name="Frenzied Village" />
+      <Option Value="36" Name="Windmill Village" />
+      <Option Value="37" Name="Ailing Village" />
+      <Option Value="38" Name="Jarburg" />
+      <Option Value="39" Name="Village of the Albinaurics" />
+      <Option Value="40" Name="Hermit Village" />
+      <Option Value="45" Name="Mohgwyn Dynasty Mausoleum" />
+      <Option Value="46" Name="Eternal City" />
+      <Option Value="47" Name="Hallowed Grounds" />
+      <Option Value="50" Name="Stormveil Castle" />
+      <Option Value="51" Name="Academy of Raya Lucaria" />
+      <Option Value="52" Name="The Four Belfries" />
+      <Option Value="53" Name="Ruin-Strewn Precipice" />
+      <Option Value="54" Name="Bestial Sanctum" />
+      <Option Value="55" Name="Miquella's Haligtree" />
+      <Option Value="56" Name="Elphael, Brace of the Haligtree" />
+      <Option Value="57" Name="Forge of the Giants" />
+      <Option Value="58" Name="Volcano Manor" />
+      <Option Value="59" Name="Crumbling Farum Azula" />
+      <Option Value="60" Name="Leyndell, Royal Capital" />
+      <Option Value="61" Name="Subterranean Shunning-Grounds" />
+      <Option Value="62" Name="Leyndell, Ashen Capital" />
+      <Option Value="65" Name="Chapel of Anticipation" />
+      <Option Value="66" Name="Carian Study Hall" />
+      <Option Value="70" Name="White Circle with Figure Within" />
+      <Option Value="80" Name="NPC Marker" />
+      <Option Value="83" Name="Grace Guidance" />
+      <Option Value="84" Name="Starlight Guidance" />
+      <Option Value="85" Name="Catacomb Guidance" />
+      <Option Value="86" Name="NPC Marker (White Fog behind)" />
+      <Option Value="87" Name="Red Invasion Marker" />
+      <Option Value="88" Name="Red Invasion Marker (faded)" />
+      <Option Value="89" Name="Catacomb" />
+      <Option Value="90" Name="Catacomb" />
+    </Enum>
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
@@ -42,7 +111,7 @@
     <disableParamReserve2 AltName=""/>
     <eventFlagId AltName="Open - Event Flag ID" Wiki="Event flag ID of open condition" />
     <distViewEventFlagId AltName="Distant View - Event Flag ID" Wiki="Event flag ID to be set when found on the distant view" />
-    <iconId AltName="Icon ID" Wiki="Icon ID" />
+    <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" />
     <bgmPlaceType AltName="BGM Location Type" Wiki="Bgm location type" Enum="SOUND_BGM_MAP_PLACE_TYPE" />
     <isAreaIcon AltName="Is Area Icon" Wiki="Is it an icon that represents a range? Same size as the map" IsBool="" />
     <isOverrideDistViewMarkPos AltName="Overwrite Coordinates when Distant View Marker" Wiki="Whether to overwrite the coordinates when using it as a distant view marker" IsBool="" />

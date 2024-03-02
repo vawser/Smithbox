@@ -228,7 +228,7 @@ public class PropertyEditor
         ImGui.Separator();
     }
 
-    public void PropEditorFMG(FMG.Entry entry, string name)
+    public void PropEditorFMG(FMG.Entry entry, string name, float baseHeight)
     {
         ImGui.PushID(_fmgID);
         ImGui.AlignTextToFramePadding();
@@ -242,7 +242,7 @@ public class PropertyEditor
             val = "";
         }
 
-        var height = (20.0f + ImGui.CalcTextSize(val).Y) * Smithbox.GetUIScale();
+        var height = (baseHeight + ImGui.CalcTextSize(val).Y) * Smithbox.GetUIScale();
 
         if (ImGui.InputTextMultiline("##value", ref val, 2000, new Vector2(-1, height)))
         {

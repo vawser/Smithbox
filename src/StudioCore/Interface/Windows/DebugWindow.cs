@@ -3,7 +3,9 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
+using StudioCore.BanksMain;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Help;
 using StudioCore.Platform;
 using StudioCore.Resource;
@@ -57,6 +59,12 @@ public class DebugWindow
         if (ImGui.Begin("Tests##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
             ImGui.Columns(4);
+
+            // DISABLE this when not using it for custom code stuff
+            if (ImGui.Button("Vawser Custom Action"))
+            {
+                AssignEntityGroupsForAllCharacters();
+            }
 
             // Actions
             if (ImGui.Button("Force Crash"))
@@ -157,6 +165,67 @@ public class DebugWindow
                     file.WriteLine();
                 }
             }
+        }
+    }
+
+    private void AssignEntityGroupsForAllCharacters()
+    {
+        IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = MapEditorState.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
+
+        int printId = 400005300;
+
+        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
+        {
+            TaskLogs.AddLog($"{entry.id} - {entry.name} - {printId}");
+            printId = printId + 1;
+        }
+
+        foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
+        {
+            var rootPath = $"{Project.GameRootDirectory}\\map\\MapStudio\\{lm.Key}.msb.dcx";
+            var filepath = $"{Project.GameModDirectory}\\map\\MapStudio\\{lm.Key}.msb.dcx";
+
+            if(!File.Exists(filepath)) 
+            { 
+                File.Copy(rootPath, filepath);
+            }
+
+            MSBE map = MSBE.Read(filepath);
+
+            // Enemies
+            foreach (var part in map.Parts.Enemies)
+            {
+                MSBE.Part.Enemy enemy = part;
+
+                int currentChrEntityID = 400005300;
+
+                foreach(var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
+                {
+                    if(entry.id == enemy.ModelName)
+                    {
+                        // Break out and then use the currentChrEntityID
+                        break;
+                    }
+
+                    currentChrEntityID = currentChrEntityID + 1;
+                }
+
+                if (!enemy.EntityGroupIDs.Any(x => x == currentChrEntityID))
+                {
+                    for (int i = 0; i < enemy.EntityGroupIDs.Length; i++)
+                    {
+                        if (enemy.EntityGroupIDs[i] == 0)
+                        {
+                            enemy.EntityGroupIDs[i] = (uint)currentChrEntityID;
+
+                            TaskLogs.AddLog($"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
+                            break;
+                        }
+                    }
+                }
+            }
+
+            map.Write(filepath);
         }
     }
 }

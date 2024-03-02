@@ -83,6 +83,37 @@ public class TextEditorScreen : EditorScreen
                 DuplicateFMGEntries(_activeEntryGroup);
             }
 
+            /*
+            if (ImGui.MenuItem("Vawser Action"))
+            {
+                var addText = @"<img src='img://LB_Description_Header.png' height='94' width='620' vspace='0'/>";
+
+                foreach (var entry in FMGBank.FmgInfoBank)
+                {
+                    if(entry.EntryCategory == FmgEntryCategory.Weapons)
+                    {
+                        if (entry.EntryType == FmgEntryTextType.Description)
+                        {
+                            foreach (var fmg in entry.Fmg.Entries)
+                            {
+                                if (fmg.Text != null)
+                                {
+                                    if (!fmg.Text.Contains(addText))
+                                    {
+                                        fmg.Text = $"{addText}\n\n{fmg.Text}";
+                                    }
+                                    else
+                                    {
+                                        TaskLogs.AddLog($"{fmg.ID} already contains addText");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            */
+
             ImGui.EndMenu();
         }
 
@@ -756,27 +787,27 @@ public class TextEditorScreen : EditorScreen
             _propEditor.PropEditorFMGBegin();
             if (_activeEntryGroup.TextBody != null)
             {
-                _propEditor.PropEditorFMG(_activeEntryGroup.TextBody, "Text");
+                _propEditor.PropEditorFMG(_activeEntryGroup.TextBody, "Text", 200.0f);
             }
 
             if (_activeEntryGroup.Title != null)
             {
-                _propEditor.PropEditorFMG(_activeEntryGroup.Title, "Title");
+                _propEditor.PropEditorFMG(_activeEntryGroup.Title, "Title", 20.0f);
             }
 
             if (_activeEntryGroup.Summary != null)
             {
-                _propEditor.PropEditorFMG(_activeEntryGroup.Summary, "Summary");
+                _propEditor.PropEditorFMG(_activeEntryGroup.Summary, "Summary", 80.0f);
             }
 
             if (_activeEntryGroup.Description != null)
             {
-                _propEditor.PropEditorFMG(_activeEntryGroup.Description, "Description");
+                _propEditor.PropEditorFMG(_activeEntryGroup.Description, "Description", 200.0f);
             }
 
             if (_activeEntryGroup.ExtraText != null)
             {
-                _propEditor.PropEditorFMG(_activeEntryGroup.ExtraText, "Extra");
+                _propEditor.PropEditorFMG(_activeEntryGroup.ExtraText, "Extra", 80.0f);
             }
 
             _propEditor.PropEditorFMGEnd();
