@@ -15,7 +15,7 @@ public class MapGroupBank
 {
     public MapGroupContainer _MapGroupBank { get; set; }
 
-    public bool IsMapGroupBankLoaded { get; set; }
+    public bool IsMapGroupBankLoading { get; set; }
     public bool CanReloadMapGroupBank { get; set; }
 
     private string FormatInfoName = "";
@@ -37,7 +37,7 @@ public class MapGroupBank
     {
         get
         {
-            if (IsMapGroupBankLoaded)
+            if (IsMapGroupBankLoading)
             {
                 return new MapGroupResource();
             }
@@ -52,7 +52,7 @@ public class MapGroupBank
         () =>
         {
             _MapGroupBank = new MapGroupContainer();
-            IsMapGroupBankLoaded = true;
+            IsMapGroupBankLoading = true;
 
             if (Project.Type != ProjectType.Undefined)
             {
@@ -65,10 +65,10 @@ public class MapGroupBank
                     TaskLogs.AddLog($"FAILED LOAD: {e.Message}");
                 }
 
-                IsMapGroupBankLoaded = false;
+                IsMapGroupBankLoading = false;
             }
             else
-                IsMapGroupBankLoaded = false;
+                IsMapGroupBankLoading = false;
         }));
     }
 

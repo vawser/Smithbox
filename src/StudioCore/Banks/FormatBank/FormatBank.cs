@@ -19,7 +19,7 @@ public class FormatBank
 {
     public FormatContainer _FormatBank { get; set; }
 
-    public bool IsFormatBankLoaded { get; set; }
+    public bool IsFormatBankLoading { get; set; }
     public bool CanReloadFormatBank { get; set; }
 
     private string FormatInfoName = "";
@@ -54,7 +54,7 @@ public class FormatBank
     {
         get
         {
-            if (IsFormatBankLoaded)
+            if (IsFormatBankLoading)
             {
                 return new FormatResource();
             }
@@ -67,7 +67,7 @@ public class FormatBank
     {
         get
         {
-            if (IsFormatBankLoaded)
+            if (IsFormatBankLoading)
             {
                 return new FormatEnum();
             }
@@ -82,7 +82,7 @@ public class FormatBank
         () =>
         {
             _FormatBank = new FormatContainer();
-            IsFormatBankLoaded = true;
+            IsFormatBankLoading = true;
 
             if (Project.Type != ProjectType.Undefined)
             {
@@ -95,10 +95,10 @@ public class FormatBank
                     TaskLogs.AddLog($"FAILED LOAD: {e.Message}");
                 }
 
-                IsFormatBankLoaded = false;
+                IsFormatBankLoading = false;
             }
             else
-                IsFormatBankLoaded = false;
+                IsFormatBankLoading = false;
         }));
     }
 

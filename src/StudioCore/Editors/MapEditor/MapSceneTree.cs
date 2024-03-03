@@ -763,6 +763,11 @@ public class MapSceneTree : IActionEventHandler
     {
         var scale = Smithbox.GetUIScale();
 
+        if(Project.Type == ProjectType.Undefined)
+        {
+            return;
+        }
+
         // If there are no entries, don't display anything
         if(MapGroupsBank.Bank.Entries.list == null)
         {

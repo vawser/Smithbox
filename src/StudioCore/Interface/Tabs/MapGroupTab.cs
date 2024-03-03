@@ -43,7 +43,7 @@ public class MapGroupTab
         if (Project.Type == ProjectType.Undefined)
             return;
 
-        if (MapGroupsBank.Bank.IsMapGroupBankLoaded)
+        if (MapGroupsBank.Bank.IsMapGroupBankLoading)
             return;
 
         if (ShowMapGroupAddSection)
