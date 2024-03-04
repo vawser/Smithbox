@@ -10,8 +10,8 @@ using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
+using StudioCore.Configuration;
 using StudioCore.Interface;
-using StudioCore.Interface.Contexts;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
@@ -60,7 +60,6 @@ namespace StudioCore.Editors.ModelEditor
 
         private string _selectedName;
 
-        private AssetAliasPopup AssetAliasContext;
 
         public ModelAssetBrowser(AssetBrowserEventHandler handler, string id)
         {
@@ -68,8 +67,6 @@ namespace StudioCore.Editors.ModelEditor
             _handler = handler;
 
             _selectedName = null;
-
-            AssetAliasContext = new AssetAliasPopup();
         }
         public string GetSelectedCategoryNameForAliasBank()
         {
@@ -302,7 +299,39 @@ namespace StudioCore.Editors.ModelEditor
 
                         if (_selectedName == refID)
                         {
-                            AssetAliasContext.Show(refID, _refUpdateId, _refUpdateName, _refUpdateTags, GetSelectedCategoryNameForAliasBank());
+                            if (ImGui.BeginPopupContextItem($"{refID}##context"))
+                            {
+                                if (ImGui.InputText($"Name", ref _refUpdateName, 255))
+                                {
+
+                                }
+                                ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
+
+                                if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
+                                {
+
+                                }
+                                ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
+
+                                if (ImGui.Button("Update") || InputTracker.GetKeyDown(Key.Enter))
+                                {
+                                    ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId, _refUpdateName, _refUpdateTags);
+                                    ImGui.CloseCurrentPopup();
+                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                }
+                                ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
+
+                                ImGui.SameLine();
+                                if (ImGui.Button("Restore Default"))
+                                {
+                                    ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId);
+                                    ImGui.CloseCurrentPopup();
+                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                }
+                                ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
+
+                                ImGui.EndPopup();
+                            }
                         }
 
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
@@ -401,7 +430,39 @@ namespace StudioCore.Editors.ModelEditor
 
                             if (_selectedName == refID)
                             {
-                                AssetAliasContext.Show(refID, _refUpdateId, _refUpdateName, _refUpdateTags, GetSelectedCategoryNameForAliasBank());
+                                if (ImGui.BeginPopupContextItem($"{refID}##context"))
+                                {
+                                    if (ImGui.InputText($"Name", ref _refUpdateName, 255))
+                                    {
+
+                                    }
+                                    ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
+
+                                    if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
+                                    {
+
+                                    }
+                                    ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
+
+                                    if (ImGui.Button("Update"))
+                                    {
+                                        ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId, _refUpdateName, _refUpdateTags);
+                                        ImGui.CloseCurrentPopup();
+                                        ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                    }
+                                    ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
+
+                                    ImGui.SameLine();
+                                    if (ImGui.Button("Restore Default"))
+                                    {
+                                        ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId);
+                                        ImGui.CloseCurrentPopup();
+                                        ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                    }
+                                    ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
+
+                                    ImGui.EndPopup();
+                                }
                             }
 
                             if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))

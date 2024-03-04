@@ -16,7 +16,6 @@ using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.BanksMain;
-using StudioCore.Interface.Contexts;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -55,8 +54,6 @@ public class MapAssetBrowser
 
     private Universe _universe;
 
-    private AssetAliasPopup AssetAliasContext;
-
     public MapAssetBrowser(Universe universe, RenderScene scene, ViewportSelection sel, ViewportActionManager manager, MapEditorScreen editor, IViewport viewport)
     {
         _scene = scene;
@@ -68,8 +65,6 @@ public class MapAssetBrowser
         _viewport = viewport;
 
         _selectedName = null;
-
-        AssetAliasContext = new AssetAliasPopup();
     }
 
     /// <summary>
@@ -293,7 +288,39 @@ public class MapAssetBrowser
 
                     if (_selectedName == refID)
                     {
-                        AssetAliasContext.Show(refID, _refUpdateId, _refUpdateName, _refUpdateTags, assetType);
+                        if (ImGui.BeginPopupContextItem($"{refID}##context"))
+                        {
+                            if (ImGui.InputText($"Name", ref _refUpdateName, 255))
+                            {
+
+                            }
+                            ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
+
+                            if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
+                            {
+
+                            }
+                            ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
+
+                            if (ImGui.Button("Update"))
+                            {
+                                ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                ImGui.CloseCurrentPopup();
+                                ModelAliasBank.Bank.mayReloadAliasBank = true;
+                            }
+                            ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
+
+                            ImGui.SameLine();
+                            if (ImGui.Button("Restore Default"))
+                            {
+                                ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+                                ImGui.CloseCurrentPopup();
+                                ModelAliasBank.Bank.mayReloadAliasBank = true;
+                            }
+                            ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
+
+                            ImGui.EndPopup();
+                        }
                     }
 
                     if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
@@ -383,7 +410,39 @@ public class MapAssetBrowser
 
                         if (_selectedName == refID)
                         {
-                            AssetAliasContext.Show(refID, _refUpdateId, _refUpdateName, _refUpdateTags, assetType);
+                            if (ImGui.BeginPopupContextItem($"{refID}##context"))
+                            {
+                                if (ImGui.InputText($"Name", ref _refUpdateName, 255))
+                                {
+
+                                }
+                                ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
+
+                                if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
+                                {
+
+                                }
+                                ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
+
+                                if (ImGui.Button("Update"))
+                                {
+                                    ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+                                    ImGui.CloseCurrentPopup();
+                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                }
+                                ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
+
+                                ImGui.SameLine();
+                                if (ImGui.Button("Restore Default"))
+                                {
+                                    ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+                                    ImGui.CloseCurrentPopup();
+                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                }
+                                ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
+
+                                ImGui.EndPopup();
+                            }
                         }
 
                         if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
