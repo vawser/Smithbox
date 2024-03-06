@@ -478,14 +478,18 @@ namespace StudioCore.Editors.GparamEditor
                         // BOOL
                         else if (SelectedParamField is GPARAM.BoolField boolField)
                         {
-                            bool commandValue = false;
-                            var valid = bool.TryParse(setValue, out commandValue);
+                            int commandValue = 0;
+                            var valid = int.TryParse(setValue, out commandValue);
+                            var boolean = false;
+
+                            if (commandValue == 1)
+                                boolean = true;
 
                             if (valid)
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    boolField.Values[i].Value = commandValue;
+                                    boolField.Values[i].Value = boolean;
 
                                     //TaskLogs.AddLog($"Command: Set Value BOOL {commandValue} - {entry.Id}");
                                 }
