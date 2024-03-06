@@ -363,6 +363,23 @@ public class CFG
     public bool Gparam_DisplayAddGroups = true;
     public bool Gparam_DisplayAddFields = true;
 
+    public bool Gparam_ColorEdit_RGB = true;
+    public bool Gparam_ColorEdit_Decimal = false;
+    public bool Gparam_ColorEdit_HSV = false;
+
+    public string Gparam_QuickEdit_Chain = "+";
+
+    public string Gparam_QuickEdit_ID = "id";
+    public string Gparam_QuickEdit_TimeOfDay = "tod";
+    public string Gparam_QuickEdit_Value = "value";
+
+    public string Gparam_QuickEdit_Set = "set";
+    public string Gparam_QuickEdit_Add = "add";
+    public string Gparam_QuickEdit_Subtract = "sub";
+    public string Gparam_QuickEdit_Multiply = "mult";
+    public string Gparam_QuickEdit_SetByRow = "setbyrow";
+
+
     //****************************
     // Windows
     //****************************

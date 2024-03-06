@@ -348,6 +348,7 @@ public class GparamEditorScreen : EditorScreen
                         ResetValueSelection();
 
                         _selectedParamField = entry;
+                        GparamQuickEdit.SelectedParamField = entry;
                         _selectedParamFieldKey = i;
                     }
                 }
@@ -426,6 +427,8 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.InputText($"Search", ref _fieldIdSearchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+
+        GparamQuickEdit.OnGui();
 
         ImGui.Separator();
 

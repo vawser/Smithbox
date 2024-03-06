@@ -127,7 +127,7 @@ public class GparamEditor
         // SBYTE
         else if (field is GPARAM.SbyteField sbyteField)
         {
-            short fieldValue = sbyteField.Values[idx].Value;
+            sbyte fieldValue = sbyteField.Values[idx].Value;
             int sbyteInput = fieldValue;
 
             if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
@@ -259,7 +259,22 @@ public class GparamEditor
             Vector4 fieldValue = vectorColorField.Values[idx].Value;
             Vector4 colorInput = fieldValue;
 
-            if (ImGui.ColorEdit4($"##value{idx}", ref colorInput))
+            var flags = ImGuiColorEditFlags.None;
+
+            if(CFG.Current.Gparam_ColorEdit_RGB)
+            {
+                flags = ImGuiColorEditFlags.DisplayRGB;
+            }
+            if (CFG.Current.Gparam_ColorEdit_Decimal)
+            {
+                flags = ImGuiColorEditFlags.Float;
+            }
+            if (CFG.Current.Gparam_ColorEdit_HSV)
+            {
+                flags = ImGuiColorEditFlags.DisplayHSV;
+            }
+
+            if (ImGui.ColorEdit4($"##value{idx}", ref colorInput, flags))
             {
                 vectorColorField.Values[idx].Value = colorInput;
             }

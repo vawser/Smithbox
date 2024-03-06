@@ -52,6 +52,21 @@ public static class ImguiUtils
         }
     }
 
+    public static void ShowWideHoverTooltip(string desc)
+    {
+        if (CFG.Current.System_Show_UI_Tooltips)
+        {
+            if (ImGui.IsItemHovered())
+            {
+                ImGui.BeginTooltip();
+                ImGui.PushTextWrapPos(800.0f);
+                ImGui.TextUnformatted(desc);
+                ImGui.PopTextWrapPos();
+                ImGui.EndTooltip();
+            }
+        }
+    }
+
     public static string GetKeybindHint(string hint)
     {
         if (hint == "")
