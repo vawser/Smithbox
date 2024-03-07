@@ -665,4 +665,111 @@ public class GparamEditor
             castField.Values.Remove((FieldValue<Color>)targetValue);
         }
     }
+
+    public static unsafe void AddValueField(IField field)
+    {
+        // INT
+        if (field is GPARAM.IntField intField)
+        {
+            FieldValue<int> fieldValueRow = new FieldValue<int>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = 0;
+            intField.Values.Add(fieldValueRow);
+        }
+        // UINT
+        else if (field is GPARAM.UintField uintField)
+        {
+            FieldValue<uint> fieldValueRow = new FieldValue<uint>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = 0;
+            uintField.Values.Add(fieldValueRow);
+        }
+        // SHORT
+        else if (field is GPARAM.ShortField shortField)
+        {
+            FieldValue<short> fieldValueRow = new FieldValue<short>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = 0;
+            shortField.Values.Add(fieldValueRow);
+        }
+        // SBYTE
+        else if (field is GPARAM.SbyteField sbyteField)
+        {
+            FieldValue<sbyte> fieldValueRow = new FieldValue<sbyte>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = 0;
+            sbyteField.Values.Add(fieldValueRow);
+        }
+        // BYTE
+        else if (field is GPARAM.ByteField byteField)
+        {
+            FieldValue<byte> fieldValueRow = new FieldValue<byte>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = 0;
+            byteField.Values.Add(fieldValueRow);
+        }
+        // BOOL
+        else if (field is GPARAM.BoolField boolField)
+        {
+            FieldValue<bool> fieldValueRow = new FieldValue<bool>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = false;
+            boolField.Values.Add(fieldValueRow);
+        }
+        // FLOAT
+        else if (field is GPARAM.FloatField floatField)
+        {
+            FieldValue<float> fieldValueRow = new FieldValue<float>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = 0;
+            floatField.Values.Add(fieldValueRow);
+        }
+        // VECTOR2
+        else if (field is GPARAM.Vector2Field vector2Field)
+        {
+            FieldValue<Vector2> fieldValueRow = new FieldValue<Vector2>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = new Vector2(0, 0);
+            vector2Field.Values.Add(fieldValueRow);
+        }
+        // VECTOR3
+        else if (field is GPARAM.Vector3Field vector3Field)
+        {
+            FieldValue<Vector3> fieldValueRow = new FieldValue<Vector3>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = new Vector3(0, 0, 0);
+            vector3Field.Values.Add(fieldValueRow);
+        }
+        // VECTOR4
+        else if (field is GPARAM.Vector4Field vector4Field)
+        {
+            FieldValue<Vector4> fieldValueRow = new FieldValue<Vector4>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = new Vector4(0, 0, 0, 0);
+            vector4Field.Values.Add(fieldValueRow);
+        }
+        // COLOR
+        else if (field is GPARAM.ColorField colorField)
+        {
+            FieldValue<Color> fieldValueRow = new FieldValue<Color>();
+            fieldValueRow.Id = 0;
+            fieldValueRow.Unk04 = 0;
+            fieldValueRow.Value = new Color();
+            colorField.Values.Add(fieldValueRow);
+        }
+        else
+        {
+            TaskLogs.AddLog($"{field.Name} {field.GetType()} is not supported");
+        }
+    }
 }

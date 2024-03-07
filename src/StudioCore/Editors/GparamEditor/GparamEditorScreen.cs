@@ -1,4 +1,5 @@
 ﻿using DotNext.Collections.Generic;
+using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Banks;
@@ -231,14 +232,21 @@ public class GparamEditorScreen : EditorScreen
 
                 var name = GparamFormatBank.Bank.GetReferenceName(entry.Key, entry.Name);
 
-                var display = true;
+                var display = false;
 
                 if (!CFG.Current.Gparam_DisplayEmptyGroups)
                 {
-                    if(entry.Fields.Count < 1)
+                    foreach(var fieldEntry in entry.Fields)
                     {
-                        display = false;
+                        if(fieldEntry.Values.Count > 0)
+                        {
+                            display = true;
+                        }
                     }
+                }
+                else
+                {
+                    display = true;
                 }
 
                 if (SearchFilters.IsEditorSearchMatch(_paramGroupSearchInput, entry.Name, " "))
@@ -459,6 +467,16 @@ public class GparamEditorScreen : EditorScreen
                 if (displayTruth[i])
                 {
                     GparamProperty_ID(i, field, entry);
+                }
+            }
+
+            // Display "Add" button if field has no value rows.
+            if(field.Values.Count <= 0)
+            {
+                if (ImGui.Button("Add"))
+                {
+                    GparamEditor.AddValueField(field);
+                    ResetDisplayTruth(field);
                 }
             }
 
