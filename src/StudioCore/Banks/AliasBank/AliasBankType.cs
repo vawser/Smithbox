@@ -11,6 +11,7 @@ public enum AliasBankType
     Model,
     EventFlag,
     Particle,
-    Map
+    Map,
+    Gparam
 }
 

@@ -27,12 +27,14 @@ public class ProjectWindow
     private EventFlagTab EventFlagTab;
     private MapNameTab MapNameTab;
     private MapGroupTab MapGroupTab;
+    private GparamNameTab GparamNameTab;
 
     public ProjectWindow()
     {
         EventFlagTab = new EventFlagTab();
         MapNameTab = new MapNameTab();
         MapGroupTab = new MapGroupTab();
+        GparamNameTab = new GparamNameTab();
     }
 
     public void ToggleMenuVisibility()
@@ -62,9 +64,10 @@ public class ProjectWindow
             ImGui.BeginTabBar("##ProjectTabs");
 
             DisplayProjectTab();
+            DisplayMapGroupTab();
             DisplayEventFlagTab();
             DisplayMapNameTab();
-            DisplayMapGroupTab();
+            DisplayGparamNameTab();
 
             ImGui.EndTabBar();
         }
@@ -127,6 +130,15 @@ public class ProjectWindow
             ImGui.EndTabItem();
         }
     }
+    public void DisplayMapGroupTab()
+    {
+        if (ImGui.BeginTabItem("Map Groups"))
+        {
+            MapGroupTab.Display();
+
+            ImGui.EndTabItem();
+        }
+    }
 
     public void DisplayEventFlagTab()
     {
@@ -148,11 +160,11 @@ public class ProjectWindow
         }
     }
 
-    public void DisplayMapGroupTab()
+    public void DisplayGparamNameTab()
     {
-        if (ImGui.BeginTabItem("Map Groups"))
+        if (ImGui.BeginTabItem("Gparam Names"))
         {
-            MapGroupTab.Display();
+            GparamNameTab.Display();
 
             ImGui.EndTabItem();
         }

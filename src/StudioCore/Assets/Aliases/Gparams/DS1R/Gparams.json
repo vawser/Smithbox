@@ -1,0 +1,249 @@
+{
+    "list": [
+        {
+            "id": "m10_00_00_00",
+            "name": "Depths",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_01_00_00",
+            "name": "Undead Burg / Undead Parish",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_02_00_00",
+            "name": "Firelink Shrine",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_00_00_00",
+            "name": "Painted World",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_00_00_00",
+            "name": "Darkroot Garden (no DLC)",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m12_00_00_01",
+            "name": "Darkroot Garden",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_01_00_00",
+            "name": "Oolacile",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m13_00_00_00",
+            "name": "Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m13_01_00_00",
+            "name": "Tomb of the Giants",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m13_02_00_00",
+            "name": "Great Hollow / Ash Lake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m14_00_00_00",
+            "name": "Blighttown",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m14_01_00_00",
+            "name": "Demon Ruins / Lost Izalith",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m15_00_00_00",
+            "name": "Sen's Fortress",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m15_01_00_00",
+            "name": "Anor Londo",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m16_00_00_00",
+            "name": "New Londo Ruins / Valley of Drakes",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m17_00_00_00",
+            "name": "Duke's Archives",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m18_00_00_00",
+            "name": "Kiln of the First Flame",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m18_01_00_00",
+            "name": "Northern Undead Asylum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m99_80_00_00",
+            "name": "Layout: Cathedral Ward 1",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_80_00_01",
+            "name": "Layout: Oolacile Township",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_80_00_02",
+            "name": "Layout: Chasm of the Abyss",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_80_10_00",
+            "name": "Layout: Demon Ruins",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_80_10_01",
+            "name": "Layout: New Londo Ruins",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_80_10_02",
+            "name": "Layout: Firelink / Blighttown",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_80_20_00",
+            "name": "Test Map: Kishi SFX",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_97_00",
+            "name": "Test Map: DLC Planning",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_98_00",
+            "name": "Layout: Cathedral Ward 2",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_98_03",
+            "name": "Test Map: Indoors",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_98_07",
+            "name": "Test Map: AI",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_98_08",
+            "name": "Test Map: Gimmick",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_98_09",
+            "name": "Test Map: Routes, Stairs",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_98_20",
+            "name": "Test Map: Old Dragon Test",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_98_23",
+            "name": "Test Map: Enemy Old",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_98_25",
+            "name": "Test Map: Camera & Ladder",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m99_99_99_99",
+            "name": "Test Map: PG Test",
+            "tags": [
+                "unused"
+            ]
+        }
+    ]
+}

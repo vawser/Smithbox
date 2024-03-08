@@ -19,7 +19,7 @@ public class AliasBank
     public AliasContainer _loadedAliasBank { get; set; }
 
     public bool IsLoadingAliases { get; set; }
-    public bool mayReloadAliasBank { get; set; }
+    public bool CanReloadBank { get; set; }
 
     private string TemplateName = "Template.json";
 
@@ -37,7 +37,7 @@ public class AliasBank
 
     public AliasBank(AliasBankType _aliasType)
     {
-        mayReloadAliasBank = false;
+        CanReloadBank = false;
 
         aliasType = _aliasType;
 
@@ -70,6 +70,14 @@ public class AliasBank
             AliasName = "Maps";
             AliasDirectory = "Maps";
             FileName = "Maps";
+            IsAssetFileType = false;
+        }
+
+        if (aliasType is AliasBankType.Gparam)
+        {
+            AliasName = "Gparams";
+            AliasDirectory = "Gparams";
+            FileName = "Gparams";
             IsAssetFileType = false;
         }
     }

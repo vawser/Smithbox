@@ -647,12 +647,6 @@ public class SettingsWindow
     {
         if (ImGui.BeginTabItem("Gparam Editor"))
         {
-            if (ImGui.CollapsingHeader("Files", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Show map names", ref CFG.Current.Gparam_DisplayMapNames);
-                ImguiUtils.ShowHoverTooltip("Show map names in the GPARAM file list.");
-            }
-
             if (ImGui.CollapsingHeader("Groups", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Show add button for missing groups", ref CFG.Current.Gparam_DisplayAddGroups);

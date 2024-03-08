@@ -682,7 +682,10 @@ public class MapSceneTree : IActionEventHandler
             ImGui.SetNextItemWidth(-1);
             ImGui.InputText("##treeSearch", ref _mapNameSearchStr, 99);
 
-            DisplayMapGroups();
+            if (CFG.Current.Interface_DisplayMapGroups)
+            {
+                DisplayMapGroups();
+            }
 
             ImGui.Unindent(30 * scale);
 
@@ -939,20 +942,23 @@ public class MapSceneTree : IActionEventHandler
                 }
             }
 
-            if (metaName != "")
+            if (CFG.Current.Interface_Display_Alias_for_Msb)
             {
-                ImGui.SameLine();
-                ImGui.PushTextWrapPos();
-                if (metaName.StartsWith("--")) // Marked as normally unused (use red text)
+                if (metaName != "")
                 {
-                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{metaName.Replace("--", "")}");
-                }
-                else
-                {
-                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{metaName}");
-                }
+                    ImGui.SameLine();
+                    ImGui.PushTextWrapPos();
+                    if (metaName.StartsWith("--")) // Marked as normally unused (use red text)
+                    {
+                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{metaName.Replace("--", "")}");
+                    }
+                    else
+                    {
+                        ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"{metaName}");
+                    }
 
-                ImGui.PopTextWrapPos();
+                    ImGui.PopTextWrapPos();
+                }
             }
 
             ImGui.EndGroup();

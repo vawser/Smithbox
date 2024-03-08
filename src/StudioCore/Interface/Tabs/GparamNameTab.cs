@@ -12,10 +12,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
+using static SoulsFormats.MSB_AC6.Part;
 
 namespace StudioCore.Interface.Tabs;
 
-public class EventFlagTab
+public class GparamNameTab
 {
     private string _searchInput = "";
     private string _searchInputCache = "";
@@ -30,114 +31,107 @@ public class EventFlagTab
 
     private string _selectedName;
 
-    private bool ShowEventFlagAddSection = false;
+    private bool ShowNameAddSection = false;
 
-    public EventFlagTab() { }
+    public GparamNameTab() { }
 
     public void Display()
     {
         if (Project.Type == ProjectType.Undefined)
             return;
 
-        if (FlagAliasBank.Bank.IsLoadingAliases)
+        if (GparamAliasBank.Bank.IsLoadingAliases)
             return;
 
-
-        if (ShowEventFlagAddSection)
+        if (ShowNameAddSection)
         {
             if (ImGui.Button("Show Alias List"))
             {
-                ShowEventFlagAddSection = false;
+                ShowNameAddSection = false;
             }
         }
         else
         {
             if (ImGui.Button("Add New Alias"))
             {
-                ShowEventFlagAddSection = true;
+                ShowNameAddSection = true;
             }
         }
 
+        ImGui.SameLine();
+        ImGui.Checkbox("Toggle Display in Editor", ref CFG.Current.Interface_Display_Alias_for_Gparam);
+        ImguiUtils.ShowHoverTooltip("Toggle the display of the File aliases in the Gparam Editor.");
+
         ImGui.Separator();
 
-        if (ShowEventFlagAddSection)
+        if (ShowNameAddSection)
         {
-            DisplayEventFlagAddSection();
+            DisplayNameAddSection();
         }
         else
         {
-            DisplayEventFlagGroupList();
+            DisplayNameGroupList();
         }
 
-        if (FlagAliasBank.Bank.CanReloadBank)
+
+        if (GparamAliasBank.Bank.CanReloadBank)
         {
-            FlagAliasBank.Bank.CanReloadBank = false;
-            FlagAliasBank.Bank.ReloadAliasBank();
+            GparamAliasBank.Bank.CanReloadBank = false;
+            GparamAliasBank.Bank.ReloadAliasBank();
         }
     }
 
-    public void DisplayEventFlagAddSection()
+    public void DisplayNameAddSection()
     {
         ImGui.Text("ID");
         ImGui.InputText($"##ID", ref _newRefId, 255);
-        ImguiUtils.ShowHoverTooltip("The numeric ID of the event flag to add.");
+        ImguiUtils.ShowHoverTooltip("The map ID of the map name to add.");
 
         ImGui.Text("Name");
         ImGui.InputText($"##Name", ref _newRefName, 255);
-        ImguiUtils.ShowHoverTooltip("The alias name to give to the added event flag.");
+        ImguiUtils.ShowHoverTooltip("The alias name to give to the added map name.");
 
         ImGui.Text("Tags");
         ImGui.InputText($"##Tags", ref _newRefTags, 255);
-        ImguiUtils.ShowHoverTooltip("The tags to associate with this event flag.");
+        ImguiUtils.ShowHoverTooltip("The tags to associate with this map name.");
 
         if (ImGui.Button("Add New Alias"))
         {
-            // Make sure the ref ID is a number
-            if (Regex.IsMatch(_newRefId, @"^\d+$"))
+            bool isValid = true;
+
+            var entries = GparamAliasBank.Bank.AliasNames.GetEntries("Gparams");
+
+            foreach (var entry in entries)
             {
-                var isValid = true;
+                if (_newRefId == entry.id)
+                    isValid = false;
+            }
 
-                var entries = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
-
-                foreach (var entry in entries)
-                {
-                    if (_newRefId == entry.id)
-                        isValid = false;
-                }
-
-                if (isValid)
-                {
-                    FlagAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
-                    ImGui.CloseCurrentPopup();
-                    FlagAliasBank.Bank.CanReloadBank = true;
-                }
-                else
-                {
-                    PlatformUtils.Instance.MessageBox($"{_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            if (isValid)
+            {
+                GparamAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                ImGui.CloseCurrentPopup();
+                GparamAliasBank.Bank.CanReloadBank = true;
             }
             else
             {
-                PlatformUtils.Instance.MessageBox($"{_newRefId} ID must be numeric.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PlatformUtils.Instance.MessageBox($"{_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 
-    public void DisplayEventFlagGroupList()
+    public void DisplayNameGroupList()
     {
         ImGui.InputText($"Search", ref _searchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
-        ImGui.SameLine();
-        ImGui.Checkbox("Show Tags", ref CFG.Current.EventFlagAtlas_ShowTags);
-        ImguiUtils.ShowHoverTooltip("When enabled the list will display the tags next to the name.");
 
         ImGui.Spacing();
         ImGui.Separator();
         ImGui.Spacing();
 
-        ImGui.BeginChild("EventFlagList");
+        ImGui.BeginChild("GparamNameList");
 
-        DisplaySelectionList(FlagAliasBank.Bank.AliasNames.GetEntries("Flags"));
+        DisplaySelectionList(GparamAliasBank.Bank.AliasNames.GetEntries("Gparams"));
 
         ImGui.EndChild();
     }
@@ -147,18 +141,12 @@ public class EventFlagTab
     /// </summary>
     private void DisplaySelectionList(List<AliasReference> referenceList)
     {
-        var referenceDict = new Dictionary<string, AliasReference>();
-
-        foreach (AliasReference v in referenceList)
+        if (_searchInput != _searchInputCache)
         {
-            if (!referenceDict.ContainsKey(v.id))
-                referenceDict.Add(v.id, v);
+            _searchInputCache = _searchInput;
         }
 
-        if (_searchInput != _searchInputCache)
-            _searchInputCache = _searchInput;
-
-        var entries = FlagAliasBank.Bank.AliasNames.GetEntries("Flags");
+        var entries = GparamAliasBank.Bank.AliasNames.GetEntries("Gparams");
 
         foreach (var entry in entries)
         {
@@ -169,7 +157,7 @@ public class EventFlagTab
             var refTagList = entry.tags;
 
             // Append tags to to displayed name
-            if (CFG.Current.EventFlagAtlas_ShowTags)
+            if (CFG.Current.GparamNameAtlas_ShowTags)
             {
                 var tagString = string.Join(" ", refTagList);
                 displayedName = $"{displayedName} {{ {tagString} }}";
@@ -187,7 +175,9 @@ public class EventFlagTab
                     {
                         var tagStr = refTagList[0];
                         foreach (var tEntry in refTagList.Skip(1))
+                        {
                             tagStr = $"{tagStr},{tEntry}";
+                        }
                         _refUpdateTags = tagStr;
                     }
                     else
@@ -203,16 +193,16 @@ public class EventFlagTab
 
                         if (ImGui.Button("Update"))
                         {
-                            FlagAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                            GparamAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            FlagAliasBank.Bank.CanReloadBank = true;
+                            GparamAliasBank.Bank.CanReloadBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
-                            FlagAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
+                            GparamAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            FlagAliasBank.Bank.CanReloadBank = true;
+                            GparamAliasBank.Bank.CanReloadBank = true;
                         }
 
                         ImGui.EndPopup();
@@ -221,9 +211,6 @@ public class EventFlagTab
 
                 if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
                 {
-                    var num = long.Parse(refID.Replace("f", ""));
-
-                    PlatformUtils.Instance.SetClipboardText($"{num}");
                 }
             }
         }

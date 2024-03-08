@@ -1,0 +1,130 @@
+{
+    "list": [
+        {
+            "id": "m10_00_00_00",
+            "name": "Depths",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_01_00_00",
+            "name": "Undead Burg / Undead Parish",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_02_00_00",
+            "name": "Firelink Shrine",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_00_00_00",
+            "name": "Painted World",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_00_00_00",
+            "name": "Darkroot Garden (no DLC)",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m12_00_00_01",
+            "name": "Darkroot Garden",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_01_00_00",
+            "name": "Oolacile",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m13_00_00_00",
+            "name": "Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m13_01_00_00",
+            "name": "Tomb of the Giants",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m13_02_00_00",
+            "name": "Great Hollow / Ash Lake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m14_00_00_00",
+            "name": "Blighttown",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m14_01_00_00",
+            "name": "Demon Ruins / Lost Izalith",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m15_00_00_00",
+            "name": "Sen's Fortress",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m15_01_00_00",
+            "name": "Anor Londo",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m16_00_00_00",
+            "name": "New Londo Ruins / Valley of Drakes",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m17_00_00_00",
+            "name": "Duke's Archives",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m18_00_00_00",
+            "name": "Kiln of the First Flame",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m18_01_00_00",
+            "name": "Northern Undead Asylum",
+            "tags": [
+                ""
+            ]
+        }
+    ]
+}

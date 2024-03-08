@@ -171,9 +171,9 @@ namespace StudioCore.Editors.ModelEditor
             }
             ImGui.End();
 
-            if (ModelAliasBank.Bank.mayReloadAliasBank)
+            if (ModelAliasBank.Bank.CanReloadBank)
             {
-                ModelAliasBank.Bank.mayReloadAliasBank = false;
+                ModelAliasBank.Bank.CanReloadBank = false;
                 ModelAliasBank.Bank.ReloadAliasBank();
             }
         }
@@ -317,7 +317,7 @@ namespace StudioCore.Editors.ModelEditor
                                 {
                                     ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId, _refUpdateName, _refUpdateTags);
                                     ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                    ModelAliasBank.Bank.CanReloadBank = true;
                                 }
                                 ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
 
@@ -326,7 +326,7 @@ namespace StudioCore.Editors.ModelEditor
                                 {
                                     ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId);
                                     ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                    ModelAliasBank.Bank.CanReloadBank = true;
                                 }
                                 ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
 
@@ -448,7 +448,7 @@ namespace StudioCore.Editors.ModelEditor
                                     {
                                         ModelAliasBank.Bank.AddToLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId, _refUpdateName, _refUpdateTags);
                                         ImGui.CloseCurrentPopup();
-                                        ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                        ModelAliasBank.Bank.CanReloadBank = true;
                                     }
                                     ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
 
@@ -457,7 +457,7 @@ namespace StudioCore.Editors.ModelEditor
                                     {
                                         ModelAliasBank.Bank.RemoveFromLocalAliasBank(GetSelectedCategoryNameForAliasBank(), _refUpdateId);
                                         ImGui.CloseCurrentPopup();
-                                        ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                        ModelAliasBank.Bank.CanReloadBank = true;
                                     }
                                     ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
 

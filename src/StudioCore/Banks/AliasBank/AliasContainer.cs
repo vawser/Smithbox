@@ -51,6 +51,9 @@ public class AliasContainer
 
         if (aliasType is AliasBankType.Map)
             aliasMap.Add("Maps", LoadJSON("Maps"));
+
+        if (aliasType is AliasBankType.Gparam)
+            aliasMap.Add("Gparams", LoadJSON("Gparams"));
     }
 
     private AliasResource LoadJSON(string filename)
@@ -143,6 +146,9 @@ public class AliasContainer
 
         if (aliasType is AliasBankType.Map)
             typDir = "Maps";
+
+        if (aliasType is AliasBankType.Gparam)
+            typDir = "Gparams";
 
         return typDir;
     }

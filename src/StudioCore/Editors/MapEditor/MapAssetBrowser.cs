@@ -136,9 +136,9 @@ public class MapAssetBrowser
         ImGui.End();
         ImGui.PopStyleColor(1);
 
-        if (ModelAliasBank.Bank.mayReloadAliasBank)
+        if (ModelAliasBank.Bank.CanReloadBank)
         {
-            ModelAliasBank.Bank.mayReloadAliasBank = false;
+            ModelAliasBank.Bank.CanReloadBank = false;
             ModelAliasBank.Bank.ReloadAliasBank();
         }
     }
@@ -306,7 +306,7 @@ public class MapAssetBrowser
                             {
                                 ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
                                 ImGui.CloseCurrentPopup();
-                                ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                ModelAliasBank.Bank.CanReloadBank = true;
                             }
                             ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
 
@@ -315,7 +315,7 @@ public class MapAssetBrowser
                             {
                                 ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
                                 ImGui.CloseCurrentPopup();
-                                ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                ModelAliasBank.Bank.CanReloadBank = true;
                             }
                             ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
 
@@ -428,7 +428,7 @@ public class MapAssetBrowser
                                 {
                                     ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
                                     ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                    ModelAliasBank.Bank.CanReloadBank = true;
                                 }
                                 ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
 
@@ -437,7 +437,7 @@ public class MapAssetBrowser
                                 {
                                     ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
                                     ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.mayReloadAliasBank = true;
+                                    ModelAliasBank.Bank.CanReloadBank = true;
                                 }
                                 ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
 

@@ -1,0 +1,3329 @@
+{
+    "list": [
+        {
+            "id": "m10_00_00_00",
+            "name": "Stormveil Castle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_01_00_00",
+            "name": "Chapel of Anticipation",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_00_00_00",
+            "name": "Leyndell, Royal Capital",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_05_00_00",
+            "name": "Leyndell, Ashen Capital",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_10_00_00",
+            "name": "Roundtable Hold",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_71_00_00",
+            "name": "Ending Cutscenes",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_01_00_00",
+            "name": "Ainsel River",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_02_00_00",
+            "name": "Siofra River",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_03_00_00",
+            "name": "Deeproot Depths",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_04_00_00",
+            "name": "Ainsel River - Boss",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_05_00_00",
+            "name": "Mohgwyn Palace",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_07_00_00",
+            "name": "Siofra River Start",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_08_00_00",
+            "name": "Siofra River - Boss",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_09_00_00",
+            "name": "Nokron, Eternal City - Boss",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m13_00_00_00",
+            "name": "Crumbling Farum Azula",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m14_00_00_00",
+            "name": "Academy of Raya Lucaria",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m15_00_00_00",
+            "name": "Miquella's Haligtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m16_00_00_00",
+            "name": "Volcano Manor",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m18_00_00_00",
+            "name": "Stranded Graveyard",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m19_00_00_00",
+            "name": "Stone Platform",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_00_00_00",
+            "name": "Tombsward Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_01_00_00",
+            "name": "Impaler's Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_02_00_00",
+            "name": "Stormfoot Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_03_00_00",
+            "name": "Road's End Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_04_00_00",
+            "name": "Murkwater Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_05_00_00",
+            "name": "Black Knife Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_06_00_00",
+            "name": "Cliffbottom Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_07_00_00",
+            "name": "Wyndham Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_08_00_00",
+            "name": "Sainted Hero's Grave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_09_00_00",
+            "name": "Gelmir Hero's Grave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_10_00_00",
+            "name": "Auriza Hero's Grave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_11_00_00",
+            "name": "Deathtouched Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_12_00_00",
+            "name": "Unsightly Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_13_00_00",
+            "name": "Auriza Side Tomb",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_14_00_00",
+            "name": "Minor Erdtree Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_15_00_00",
+            "name": "Caelid Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_16_00_00",
+            "name": "War-Dead Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_17_00_00",
+            "name": "Giant-Conquering Hero's Grave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_18_00_00",
+            "name": "Giants' Mountaintop Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_19_00_00",
+            "name": "Consecrated Snowfield Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_20_00_00",
+            "name": "Hidden Path to the Haligtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_00_00_00",
+            "name": "Murkwater Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_01_00_00",
+            "name": "Earthbore Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_02_00_00",
+            "name": "Tombsward Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_03_00_00",
+            "name": "Groveside Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_04_00_00",
+            "name": "Stillwater Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_05_00_00",
+            "name": "Lakeside Crystal Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_06_00_00",
+            "name": "Academy Crystal Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_07_00_00",
+            "name": "Seethewater Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_09_00_00",
+            "name": "Volcano Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_10_00_00",
+            "name": "Dragonbarrow Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_11_00_00",
+            "name": "Sellia Hideaway",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_12_00_00",
+            "name": "Cave of the Forlorn",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_15_00_00",
+            "name": "Coastal Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_17_00_00",
+            "name": "Highroad Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_18_00_00",
+            "name": "Perfumer's Grotto",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_19_00_00",
+            "name": "Sage's Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_20_00_00",
+            "name": "Abandoned Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_21_00_00",
+            "name": "Gaol Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m31_22_00_00",
+            "name": "Spiritcaller Cave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_00_00_00",
+            "name": "Morne Tunnel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_01_00_00",
+            "name": "Limgrave Tunnels",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_02_00_00",
+            "name": "Raya Lucaria Crystal Tunnel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_04_00_00",
+            "name": "Old Altus Tunnel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_05_00_00",
+            "name": "Altus Tunnel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_07_00_00",
+            "name": "Gael Tunnel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_08_00_00",
+            "name": "Sellia Crystal Tunnel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m32_11_00_00",
+            "name": "Yelough Anix Tunnel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_10_00_00",
+            "name": "Divine Tower of Limgrave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_11_00_00",
+            "name": "Divine Tower of Liurnia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_12_00_00",
+            "name": "Divine Tower of West Altus",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_13_00_00",
+            "name": "Divine Tower of Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_14_00_00",
+            "name": "Divine Tower of East Altus",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_15_00_00",
+            "name": "Isolated Divine Tower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m35_00_00_00",
+            "name": "Subterranean Shunning-Grounds",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m39_20_00_00",
+            "name": "Ruin-Strewn Precipice",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m45_00_00_00",
+            "name": "Royal Colosseum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m45_01_00_00",
+            "name": "Caelid Colosseum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m45_02_00_00",
+            "name": "Limgrave Colosseum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_00_00_99",
+            "name": "Super Overworld",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_08_10_02",
+            "name": "Southwest Liurnia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_16_20_01",
+            "name": "Southwest Moonlight Altar",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_33_40_00",
+            "name": "Moonlight Altar - Altar South, Chelona's Rise",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_33_41_00",
+            "name": "Moonlight Altar - West of Deep Ainsel Well",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_16_21_01",
+            "name": "Northwest Moonlight Altar; Liurnia Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_33_42_00",
+            "name": "Liurnia of the Lakes - Southwest of Converted Tower; Moonlight Altar - Ringleader's Evergaol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_33_43_00",
+            "name": "Liurnia of the Lakes - Minor Erdtree, Road's End Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_17_20_01",
+            "name": "Southeast Moonlight Altar",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_41_00",
+            "name": "Moonlight Altar - Deep Ainsel Well",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_41_00",
+            "name": "Moonlight Altar - Lunar Estate Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_17_21_01",
+            "name": "Northeast Moonlight Altar; Liurnia Southwest Lake Shore",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_42_00",
+            "name": "Liurnia of the Lakes - Village of the Albinaurics; Moonlight Altar - Moonfolk Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_43_00",
+            "name": "Liurnia of the Lakes - Converted Tower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_42_00",
+            "name": "Liurnia of the Lakes - West Albinauric Village; Moonlight Altar - Cathedral of Manus Celes",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_43_00",
+            "name": "Liurnia of the Lakes - Folly on the Lake, South Rose Church",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_08_11_02",
+            "name": "West Liurnia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_16_22_01",
+            "name": "South of Four Belfries",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_33_44_00",
+            "name": "Liurnia of the Lakes - Revenger's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_33_45_00",
+            "name": "Liurnia of the Lakes - Cuckoo's Evergaol, West of Meeting Place",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_16_23_01",
+            "name": "Four Belries",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_33_46_00",
+            "name": "Liurnia of the Lakes - Foot of the Four Belfries",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_33_47_00",
+            "name": "Liurnia of the Lakes - The Four Belfries, Giant's Caravan Below",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_17_22_01",
+            "name": "South Raya Lucaria Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_44_00",
+            "name": "Liurnia of the Lakes - Temple Quarter",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_45_00",
+            "name": "Liurnia of the Lakes - Meeting Place, Academy Crystal Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_44_00",
+            "name": "Liurnia of the Lakes - Far West Gate Town, North Rose Church",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_45_00",
+            "name": "Liurnia of the Lakes - South Raya Lucaria Gate",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_17_23_01",
+            "name": "North Raya Lucaria Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_46_00",
+            "name": "Liurnia of the Lakes - Crystalline Woods, Path to the Four Belfries",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_47_00",
+            "name": "Liurnia of the Lakes - Sorcerer's Isle West, East Belfry",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_46_00",
+            "name": "Liurnia of the Lakes - Main Academy Gate, Academy of Raya Lucaria Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_47_00",
+            "name": "Liurnia of the Lakes - Testu's Rise, East Gate Bridge Trestle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_08_12_02",
+            "name": "Northwest Liurnia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_17_24_01",
+            "name": "South of Caria Manor",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_48_00",
+            "name": "Liurnia of the Lakes - Northern Liurnia Lake Shore, Kingsrealm Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_49_00",
+            "name": "Liurnia of the Lakes - Road to the Manor",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_48_00",
+            "name": "Liurnia of the Lakes - North of Sorcerer's Isle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_49_00",
+            "name": "Liurnia of the Lakes - South of Caria Manor, West of Ravine Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_17_25_01",
+            "name": "Caria Manor; Three Sisters",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_50_00",
+            "name": "Liurnia of the Lakes - Ranni's Rise, Seluvis's Rise",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_34_51_00",
+            "name": "Liurnia of the Lakes - Renna's Rise",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_50_00",
+            "name": "Liurnia of the Lakes - Caria Manor",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_51_00",
+            "name": "Liurnia of the Lakes - North of Caria Manor",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_08_13_02",
+            "name": "Far West Altus Plateau",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_17_26_01",
+            "name": "South of Fort Laiedd",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_52_00",
+            "name": "Mt. Gelmir - Before Hermit Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_53_00",
+            "name": "Mt. Gelmir - Seethewater Terminus",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_17_27_01",
+            "name": "Fort Laiedd",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_35_54_00",
+            "name": "Mt. Gelmir - Fort Laiedd",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_09_09_02",
+            "name": "Far West Limgrave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_19_01",
+            "name": "South of Liurnia Lake-Facing Cliffs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_39_00",
+            "name": "Liurnia of the Lakes - West of Church of Irith",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_39_00",
+            "name": "Liurnia of the Lakes - Church of Irith",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_09_10_02",
+            "name": "Southeast Liurnia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_18_20_01",
+            "name": "Liurnia Far South Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_41_00",
+            "name": "Liurnia of the Lakes - Slumbering Wolf's Shack, Lakeside Crystal Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_41_00",
+            "name": "Liurnia of the Lakes - South of Scenic Isle, East of Slumbering Wolf's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_18_21_01",
+            "name": "South of Gate Town",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_42_00",
+            "name": "Liurnia of the Lakes - West of Scenic Isle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_43_00",
+            "name": "Liurnia of the Lakes - Boilprawn Shack, Fallen Ruins of the Lake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_42_00",
+            "name": "Liurnia of the Lakes - Scenic Isle, Laskyar Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_43_00",
+            "name": "Liurnia of the Lakes - North of Scenic Isle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_20_01",
+            "name": "Liurnia Highway South; Southeast Lake Shore",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_40_00",
+            "name": "Liurnia of the Lakes - Liurnia Lake Shore",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_41_00",
+            "name": "Liurnia of the Lakes - Laskyar Ruins, Malefactor's Evergaol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_40_00",
+            "name": "Liurnia of the Lakes - Lake-Facing Cliffs, Stormveil Castle Exit, Stillwater Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_41_00",
+            "name": "Liurnia of the Lakes - Liurnia Highway South, Purified Ruins, Cliffbottom Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_21_01",
+            "name": "Liurnia Highway North",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_42_00",
+            "name": "Liurnia of the Lakes - Highway Lookout Tower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_43_00",
+            "name": "Liurnia of the Lakes - Gate Town Bridge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_42_00",
+            "name": "Liurnia of the Lakes - Liurnia Highway North",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_43_00",
+            "name": "Liurnia of the Lakes - Liurnia Highway Far North",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_09_11_02",
+            "name": "East Liurnia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_18_22_01",
+            "name": "Liurnia of the Lakes - Gate Town",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_44_00",
+            "name": "Liurnia of the Lakes - Gate Town Southwest",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_45_00",
+            "name": "Liurnia of the Lakes - Gate Town Northwest",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_44_00",
+            "name": "Liurnia of the Lakes - Gate Town Southeast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_45_00",
+            "name": "Liurnia of the Lakes - Gate Town Northeast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_18_23_01",
+            "name": "Liurnia Lake Mausoleum; Church of Vows",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_46_00",
+            "name": "Liurnia of the Lakes - West of Church of Vows",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_47_00",
+            "name": "Liurnia of the Lakes - West of Raya Lucaria Crystal Tunnel; Bellum Highway - South of East Raya Lucaria Gate",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_46_00",
+            "name": "Liurnia of the Lakes - Church of Vows",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_47_00",
+            "name": "Liurnia of the Lakes - South of Mausoleum Compound, Raya Lucaria Crystal Tunnel Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_22_01",
+            "name": "Liurnia Eastern Lake Shore",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_44_00",
+            "name": "Liurnia of the Lakes - North of Gate Town Bridge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_45_00",
+            "name": "Liurnia of the Lakes - Artist's Shack, Eastern Liurnia Lake Shore",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_44_00",
+            "name": "Liurnia of the Lakes - Jarburg, Divine Tower of Liurnia Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_45_00",
+            "name": "Liurnia of the Lakes - Eastern Tableland Southeast Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_23_01",
+            "name": "Liurnia Eastern Tableland",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_46_00",
+            "name": "Liurnia of the Lakes - Eastern Tableland, Ainsel River Well",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_47_00",
+            "name": "Liurnia of the Lakes - Ruined Labyrinth, Uld Palace Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_46_00",
+            "name": "Liurnia of the Lakes - Eastern Tableland Northeast Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_09_12_02",
+            "name": "Liurnia to Altus Plateau",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_18_24_01",
+            "name": "Main Bellum Highway",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_48_00",
+            "name": "Bellum Highway - East Raya Lucaria Gate",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_49_00",
+            "name": "Liurnia of the Lakes - Southeast Ravine, Lake at Caria Manor Entrance; Bellum Highway - Bellum Church",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_48_00",
+            "name": "Liurnia of the Lakes - Mausoleum Compound",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_49_00",
+            "name": "Bellum Highway - Church of Inhibition, Southwest of Grand Lift of Dectus",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_18_25_01",
+            "name": "Behind Caria Manor; Ruin-Strewn Precipice to Altus Plateau",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_50_00",
+            "name": "Liurnia of the Lakes - Behind Caria Manor, Royal Grave Evergaol, Part of Ravine",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_51_00",
+            "name": "Altus Plateau - Perfumer's Ruins, Unsightly Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_50_00",
+            "name": "Liurnia of the Lake - Northeast Ravine; Bellum Highway - West of Grand Lift of Dectus",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_51_00",
+            "name": "Altus Plateau - Abandoned Coffin, Ruin-Strewn Precipice Exit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_24_01",
+            "name": "Frenzied Flame Village; Bellum Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_48_00",
+            "name": "Bellum Highway - Frenzied Flame Village, Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_49_00",
+            "name": "Bellum Highway - Frenzy-Flaming Tower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_48_00",
+            "name": "Bellum Highway - Converted Fringe Tower; Liurnia of the Lakes - Black Knife Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_49_00",
+            "name": "Bellum Highway - Converted Fringe Tower North Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_25_01",
+            "name": "Grand Lift of Dectus",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_50_00",
+            "name": "Liurnia of the Lakes - Ravine-Veiled Village; Bellum Highway - Grand Lift of Dectus; Altus Plateau - Altus Plateau; Ruin-Strewn Precipice Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_51_00",
+            "name": "Altus Plateau - Erdtree-Gazing Hill, Lux Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_50_00",
+            "name": "Altus Plateau - Golden Lineage Evergaol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_51_00",
+            "name": "Altus Plateau - Altus Highway Junction",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_09_13_02",
+            "name": "West Altus Plateau",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_18_26_01",
+            "name": "Volcano Manor Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_52_00",
+            "name": "Mt. Gelmir - Craftsman's Shack, Hermit's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_53_00",
+            "name": "Mt. Gelmir - Outside Volcano Manor",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_52_00",
+            "name": "Mt. Gelmir - Seethewater River, Hermit Village, Wyndham Catacombs Entrance, Sage's Cave Entrance, Abductor Virgins Exit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_53_00",
+            "name": "Mt. Gelmir - Primeval Sorcerer Azur, Gelmir Hero's Grave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_18_27_01",
+            "name": "North Mt. Gelmir",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_36_54_00",
+            "name": "Mt. Gelmir - Ninth Mt. Gelmir Campsite, Road of Iniquity, Volcano Manor Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_54_00",
+            "name": "Mt. Gelmir - Minor Erdtree, Seethewater Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_37_55_00",
+            "name": "Mt. Gelmir - Volcano Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_26_01",
+            "name": "Altus Plateau to Mt. Gelmir",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_52_00",
+            "name": "Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_53_00",
+            "name": "Altus Plateau - Old Altus Tunnel Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_52_00",
+            "name": "Altus Plateau - Second Church of Marika",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_53_00",
+            "name": "Altus Plateau - Mirage Rise; Mt. Gelmir - Bridge of Iniquity",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_19_27_01",
+            "name": "Shaded Castle; Northeast Mt. Gelmir",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_38_54_00",
+            "name": "Mt. Gelmir - First Mt. Gelmir Campsite, Corpse-Stench Shack; Altus Plateau - West of Shaded Castle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_39_54_00",
+            "name": "Altus Plateau - Shaded Castle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_10_07_02",
+            "name": "South Weeping Peninsula",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_15_01",
+            "name": "Castle Morne",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_30_00",
+            "name": "Weeping Peninsula - Morne Moangrave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_31_00",
+            "name": "Weeping Peninsula - Castle Morne",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_10_08_02",
+            "name": "West Weeping Peninsula",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_20_16_01",
+            "name": "Weeping Peninsula West Shore",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_33_00",
+            "name": "Weeping Peninsula - Far West Shore",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_32_00",
+            "name": "Weeping Peninsula - Isolated Merchant's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_33_00",
+            "name": "Weeping Peninsula - Fourth Church of Marika, Witchbane Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_20_17_01",
+            "name": "Limgrave Dragon Church",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_34_00",
+            "name": "Weeping Peninsula - North of Fourth Church of Marika",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_35_00",
+            "name": "Limgrave - Church of Dragon Communion, Coastal Cave Exit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_16_01",
+            "name": "Central Weeping Peninsula",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_32_00",
+            "name": "Weeping Peninsula - Tower of Return",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_33_00",
+            "name": "Weeping Peninsula - Tombsward; Weeping Evergaol; Tombsward Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_32_00",
+            "name": "Weeping Peninsula - Castle Morne Approach Northwest Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_33_00",
+            "name": "Weeping Peninsula - Minor Erdtree, Tombsward Catacombs Entrance, Morne Tunnel Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_17_01",
+            "name": "Weeping Peninsula Central North Shore",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_34_00",
+            "name": "Weeping Peninsula - Tombsward Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_35_00",
+            "name": "Limgrave - South of Stranded Graveyard Exit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_34_00",
+            "name": "Weeping Peninsula - Church of Pilgrimage, Demi-Human Forest Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_35_00",
+            "name": "Limgrave - Seaside Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_10_09_02",
+            "name": "West Limgrave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_20_18_01",
+            "name": "Limgrave West Coast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_36_00",
+            "name": "Limgrave - Coastal Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_37_00",
+            "name": "Limgrave - Stormfoot Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_20_19_01",
+            "name": "Stormveil Outskirts in Stormhill",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_38_00",
+            "name": "Stormhill - Forested West Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_39_00",
+            "name": "Stormhill - Path to Liurnia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_38_00",
+            "name": "Stormhill - Stormhill Shack, Stormveil Castle Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_39_00",
+            "name": "Stormhill - North of Stormhill Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_18_01",
+            "name": "Limgrave Start; Lake Agheel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_36_00",
+            "name": "Limgrave - Church of Elleh, Stranded Graveyard Exit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_37_00",
+            "name": "Limgrave - Gatefront, Stormhill Evergaol, Groveside Cave Entrance, Limgrave Tunnels Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_36_00",
+            "name": "Limgrave - Agheel Lake, Dragon-Burnt Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_37_00",
+            "name": "Limgrave - Agheel Lake North, Murkwater Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_19_01",
+            "name": "East Stormhill",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_38_00",
+            "name": "Stormhill - Warmaster's Shack, Stormgate",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_39_00",
+            "name": "Stormhill - North of Warmaster's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_38_00",
+            "name": "Limgrave - Murkwater Coast, Murkwater Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_39_00",
+            "name": "Stormhill - Saintsbridge, Deathtouched Catacombs Entrance, Highroad Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_10_10_02",
+            "name": "Northwest Limgrave Coast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_20_20_01",
+            "name": "Far South Liurnia Highway",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_40_00",
+            "name": "Liurnia - Liurnia Highway South Endpoint, Path to Stormhill",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_20_01",
+            "name": "Stormhill North Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_40_00",
+            "name": "Stormhill - Northwest Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_40_00",
+            "name": "Stormhill - Northeast Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_10_12_02",
+            "name": "South Altus Plateau",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_20_25_01",
+            "name": "Altus Plateau to Capital Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_50_00",
+            "name": "Altus Plateau - Southwest of Tree Sentinel Duo",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_51_00",
+            "name": "Altus Plateau - West of Tree Sentinel Duo, Stormcaller Church",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_50_00",
+            "name": "Altus Plateau - South of Tree Sentinel Duo",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_51_00",
+            "name": "Altus Plateau - Tree Sentinel Duo, Perfumer's Grotto Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_25_01",
+            "name": "South Capital Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_50_00",
+            "name": "Capital Outskirts - South of Outer Wall Phantom Tree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_51_00",
+            "name": "Capital Outskirts - Outer Wall Phantom Tree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_50_00",
+            "name": "Capital Outskirts - Minor Erdtree Church, Sealed Tunnel Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_51_00",
+            "name": "Capital Outskirts - East of Outer Wall Phantom Tree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_10_13_02",
+            "name": "North Altus Plateau",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_20_26_01",
+            "name": "Altus Plateau South Forest",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_52_00",
+            "name": "Altus Plateau - Forest-Spanning Greatbridge, St. Trina's Hideaway, Sainted Hero's Grave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_53_00",
+            "name": "Altus Plateau - Bower of Bounty, Writheblood Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_52_00",
+            "name": "Altus Plateau - Rampartside Path, Altus Tunnel Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_53_00",
+            "name": "Altus Plateau - Woodfolk Ruins, Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_20_27_01",
+            "name": "Altus Plateau North Forest; West Windmill Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_54_00",
+            "name": "Altus Plateau - Road of Iniquity Side Path",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_40_55_00",
+            "name": "Altus Plateau - West Windmill Pasture",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_54_00",
+            "name": "Altus Plateau - West Windmill Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_41_55_00",
+            "name": "Altus Plateau - Village Windmill Pasture, East Windmill Pasture",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_26_01",
+            "name": "Capital Outskirts Outer Wall Battleground",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_52_00",
+            "name": "Capital Outskirts - Southwest Outer Wall Battleground",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_53_00",
+            "name": "Capital Outskirts - Northwest Outer Wall Battleground",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_52_00",
+            "name": "Capital Outskirts - Southeast Outer Wall Battleground",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_53_00",
+            "name": "Capital Outskirts - Northeast Outer Wall Battleground, Hermit Merchant's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_21_27_01",
+            "name": "Altus Plateau East Windmill Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_54_00",
+            "name": "Altus Plateau - East Windmill Village, Highway Lookout Tower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_42_55_00",
+            "name": "Altus Plateau - Windmill Heights",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_43_54_00",
+            "name": "Altus Plateau - Cliffside Northeast of Outer Wall Battlefield",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_07_02",
+            "name": "Southeast Weeping Peninsula Coast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_15_01",
+            "name": "Weeping Peninsula Southern West Coast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_31_00",
+            "name": "Weeping Peninsula - Castle Morne Approach South",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_08_02",
+            "name": "East Weeping Peninsula",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_16_01",
+            "name": "Weeping Peninsula Road to Castle Morne",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_32_00",
+            "name": "Weeping Peninsula - Castle Morne Approach North",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_33_00",
+            "name": "Weeping Peninsula - Castle Morne Rampart, Ailing Village Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_32_00",
+            "name": "Weeping Peninsula - Castle Morne Approach Northeast Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_33_00",
+            "name": "Weeping Peninsula - Beside the Crater-Pocked Glade, Oridys's Rise",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_17_01",
+            "name": "Limgrave to Weeping Peninsula",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_34_00",
+            "name": "Weeping Peninsula - Bridge of Sacrifice, Forest Lookout Tower, Earthbore Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_35_00",
+            "name": "Limgrave - Agheel Lake South, Forlorn Hound Evergaol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_34_00",
+            "name": "Weeping Peninsula - Impaler's Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_35_00",
+            "name": "Limgrave - Southwest of Fort Haight",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_09_02",
+            "name": "East Limgrave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_09_12",
+            "name": "East Limgrave (Meteored)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_18_01",
+            "name": "Limgrave Waypoint Fork; Mistwood",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_18_11",
+            "name": "Limgrave Waypoint Fork; Mistwood (Meteored)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_36_00",
+            "name": "Limgrave - Waypoint Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_37_00",
+            "name": "Limgrave - Mistwood Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_36_00",
+            "name": "Limgrave - Fort Haight West",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_36_10",
+            "name": "Limgrave - Fort Haight West (Meteored)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_37_00",
+            "name": "Limgrave - Siofra River Well, Mistwood Ruins, Minor Erdtree, Nokron Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_19_01",
+            "name": "Summonwater Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_38_00",
+            "name": "Limgrave - Artist's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_39_00",
+            "name": "Limgrave - Summonwater Village Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_38_00",
+            "name": "Limgrave - South of Summonwater Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_39_00",
+            "name": "Limgrave - Summonwater Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_23_18_01",
+            "name": "Fort Haight; Caelid Southwest Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_46_36_00",
+            "name": "Limgrave - Fort Haight",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_46_37_00",
+            "name": "Limgrave - East of Siofra River Well",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_37_00",
+            "name": "Caelid - West of Caelid Highway South",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_23_19_01",
+            "name": "East Limgrave to Central West Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_46_38_00",
+            "name": "Limgrave - Third Church of Marika, Gaol Cave Exit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_46_39_00",
+            "name": "Limgrave - Rear Gael Tunnel Entrance; Caelid - Gael Tunnel Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_38_00",
+            "name": "Caelid - Fort Gael, Caelid Waypoint Ruins, Gaol Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_39_00",
+            "name": "Caelid - Fort Gael North",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_10_02",
+            "name": "Northwest Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_20_01",
+            "name": "North of Summonwater Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_40_00",
+            "name": "Limgrave - North of Summonwater Village",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_23_20_01",
+            "name": "Far Northwest Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_46_40_00",
+            "name": "Caelid - Smoldering Church, Rotview Balcony",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_40_00",
+            "name": "Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_41_00",
+            "name": "Caelid - South Great-Jar Area",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_23_21_01",
+            "name": "North of Great-Jar",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_42_00",
+            "name": "Caelid - North Great-Jar Area",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_12_02",
+            "name": "Southeast Altus Plateau",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_25_01",
+            "name": "Capital Outskirts Southeast Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_51_00",
+            "name": "Capital Outskirts - Auriza Hero's Grave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_23_25_01",
+            "name": "Forbidden Lands Start",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_51_00",
+            "name": "Leyndell - Divine Tower of East Altus Entrance; Mountaintops of the Giants - Forbidden Lands Start",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_13_02",
+            "name": "Northeast Altus Plateau",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_13_12",
+            "name": "Northeast Altus Plateau (Ashen)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_26_01",
+            "name": "Northeast Capital Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_22_26_11",
+            "name": "Northeast Capital Outskirts (Ashen)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_52_00",
+            "name": "Capital Outskirts - South of Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_44_53_00",
+            "name": "Capital Outskirts - Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_52_00",
+            "name": "Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_52_10",
+            "name": "Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance (Ashen)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_45_53_00",
+            "name": "Capital Outskirts - Capital Rampart North Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_23_27_01",
+            "name": "Consecrated Snowfield Southwest Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_46_55_00",
+            "name": "Consecrated Snowfield - Yelough Anix Ruins West Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_55_00",
+            "name": "Consecrated Snowfield - Yelough Anix Ruins, Yelough Anix Tunnel Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_11_14_02",
+            "name": "West Consecrated Snowfield",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_23_28_01",
+            "name": "Consecrated Snowfield West Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_46_57_00",
+            "name": "Consecrated Snowfield - Far West Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_56_00",
+            "name": "Consecrated Snowfield - North of Yelough Anix Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_57_00",
+            "name": "Consecrated Snowfield - West of Ordina",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_23_29_01",
+            "name": "Consecrated Snowfield Northwest Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_47_58_00",
+            "name": "Consecrated Snowfield - Apostate Derelict",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_12_08_02",
+            "name": "Far South Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_17_01",
+            "name": "Redmane Castle South Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_35_00",
+            "name": "Caelid - Redmane Castle South Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_12_09_02",
+            "name": "South Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_24_18_01",
+            "name": "South of Aeonia Swamp",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_36_00",
+            "name": "Caelid - Cathedral of Dragon Communion, Caelid Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_37_00",
+            "name": "Caelid - Caelid Highway South",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_36_00",
+            "name": "Caelid - Southwest of Caelid Highway South",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_37_00",
+            "name": "Caelid - Southern Aeonia Swamp Bank",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_24_19_01",
+            "name": "Aeonia Swamp; West Sellia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_38_00",
+            "name": "Caelid - West Aeonia Swamp",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_39_00",
+            "name": "Caelid - Smoldering Wall, Abandoned Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_38_00",
+            "name": "Caelid - East Aeonia Swamp",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_39_00",
+            "name": "Caelid - West Sellia, Sellia Crystal Tunnel Entrance, Sellia Evergaol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_18_01",
+            "name": "Redmane Castle; Southwest Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_36_00",
+            "name": "Caelid - Impassable Greatbridge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_37_00",
+            "name": "Caelid - Far Southwest Radahn Arena, Aeonia Swamp Bank Southeast Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_36_00",
+            "name": "Caelid - Redmane Castle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_37_00",
+            "name": "Caelid - Southwest Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_19_01",
+            "name": "East Sellia; West Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_38_00",
+            "name": "Caelid - Gowry's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_39_00",
+            "name": "Caelid - East Sellia, Church of the Plague",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_38_00",
+            "name": "Caelid - West Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_39_00",
+            "name": "Greyoll's Dragonbarrow - Fort Faroth",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_12_10_02",
+            "name": "North Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_24_20_01",
+            "name": "West Dragonbarrow",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_40_00",
+            "name": "Caelid - Deep Siofra Well; Greyoll's Dragonbarrow - Dragonbarrow West",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_41_00",
+            "name": "Greyoll's Dragonbarrow - Isolated Merchant's Shack",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_40_00",
+            "name": "Greyoll's Dragonbarrow - South of Divine Tower of Caelid, Deep Siofra Well",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_41_00",
+            "name": "Greyoll's Dragonbarrow - Divine Tower of Caelid Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_20_01",
+            "name": "Central Dragonbarrow",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_40_00",
+            "name": "Greyoll's Dragonbarrow - Dragonbarrow Fork",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_41_00",
+            "name": "Greyoll's Dragonbarrow - North of Dragonbarrow Fork",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_40_00",
+            "name": "Greyoll's Dragonbarrow - Minor Erdtree, Dragonbarrow Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_41_00",
+            "name": "Greyoll's Dragonbarrow - Southwest Farum Greatbridge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_21_01",
+            "name": "Bestial Sanctum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_42_00",
+            "name": "Greyoll's Dragonbarrow - Northwest Farum Greatbridge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_43_00",
+            "name": "Greyoll's Dragonbarrow - Bestial Sanctum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_12_12_02",
+            "name": "Forbidden Lands",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_24_25_01",
+            "name": "Forbidden Lands Midway",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_51_00",
+            "name": "Mountaintops of the Giants - Forbidden Lands Midway",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_12_13_02",
+            "name": "Southwest Mountaintops",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_24_26_01",
+            "name": "Grand Lift of Rold; West Zamor Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_52_00",
+            "name": "Mountaintops of the Giants - Before Grand Lift of Rold",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_53_00",
+            "name": "Mountaintops of the Giants - West Zamor Ruins, Grand Lift of Rold",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_24_27_01",
+            "name": "Consecrated Snowfield Foggy Area",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_54_00",
+            "name": "Consecrated Snowfield - Southwest Foggy Area",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_55_00",
+            "name": "Consecrated Snowfield - Northwest Foggy Area, East of Yelough Anix Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_54_00",
+            "name": "Consecrated Snowfield - Hidden Path to the Haligtree, Southeast Foggy Area",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_55_00",
+            "name": "Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_26_01",
+            "name": "Southwest Flame Peak; East Zamor Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_53_00",
+            "name": "Mountaintops of the Giants - East Zamor Ruins; Flame Peak - Giant-Conquering Hero's Grave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_52_00",
+            "name": "Flame Peak - Giants' Gravepost South Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_53_00",
+            "name": "Flame Peak - Southwest Giants' Gravepost",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_27_01",
+            "name": "Bridge to Snow Valley Ruins; Northwest Flame Peak",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_54_00",
+            "name": "Mountaintops of the Giants - North of Zamor Ruins; Flame Peak - Hero's Grave North Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_55_00",
+            "name": "Consecrated Snowfield - Consecrated Snowfield Catacombs Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_54_00",
+            "name": "Flame Peak - Northwest Giants' Gravepost",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_55_00",
+            "name": "Mountaintops of the Giants - Before Ancient Snow Valley Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_12_14_02",
+            "name": "Northwest Mountaintops",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_24_28_01",
+            "name": "Ordina; Ordina Outskirts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_56_00",
+            "name": "Consecrated Snowfield - South of Ordina",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_57_00",
+            "name": "Consecrated Snowfield - Ordina, Liturgical Town",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_56_00",
+            "name": "Consecrated Snowfield - Southeast of Ordina",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_49_57_00",
+            "name": "Consecrated Snowfield - East of Ordina",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_24_29_01",
+            "name": "Apostate Derelict East Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_48_58_00",
+            "name": "Consecrated Snowfield - East of Apostate Derelict",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_28_01",
+            "name": "Northwest Mountaintops; Eastern Consecrated Snowfield",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_56_00",
+            "name": "Mountaintops of the Giants - Shack of the Lofty; Consecrated Snowfield - Minor Erdtree, Albinauric Rise, Cave of the Forlorn Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_50_57_00",
+            "name": "Mountaintops of the Giants - West of Castle Sol; Consecrated Snowfield - North of Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_56_00",
+            "name": "Mountaintops of the Giants - Ancient Snow Valley Ruins, Stargazers' Ruins",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_57_00",
+            "name": "Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_25_29_01",
+            "name": "North Castle Sol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_51_58_00",
+            "name": "Mountaintops of the Giants - North Castle Sol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_13_09_02",
+            "name": "Southeast Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_26_18_01",
+            "name": "Southeast Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_37_00",
+            "name": "Caelid - South Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_26_19_01",
+            "name": "East Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_38_00",
+            "name": "Caelid - Central Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_39_00",
+            "name": "Caelid - North Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_38_00",
+            "name": "Caelid - East Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_39_00",
+            "name": "Caelid - Northeast Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_13_10_02",
+            "name": "Northeast Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_26_20_01",
+            "name": "North Radahn Arena; Southeast Dragonbarrow",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_40_00",
+            "name": "Caelid - Far North Radahn Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_41_00",
+            "name": "Greyoll's Dragonbarrow - Southeast Farum Greatbridge, Lenne's Rise",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_26_21_01",
+            "name": "Northeast Dragonbarrow",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_42_00",
+            "name": "Greyoll's Dragonbarrow - Northeast Farum Greatbridge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_43_00",
+            "name": "Greyoll's Dragonbarrow - Northeast Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_13_13_02",
+            "name": "Southeast Mountaintops - Fire Giant Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_26_26_01",
+            "name": "Southeast Flame Peak",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_52_00",
+            "name": "Flame Peak - Southwest Fire Giant Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_53_00",
+            "name": "Flame Peak - Northwest Fire Giant Arena, Foot of the Forge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_52_00",
+            "name": "Flame Peak - Southeast Fire Giant Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_53_00",
+            "name": "Flame Peak - Northeast Fire Giant Arena",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_26_27_01",
+            "name": "Northeast Flame Peak",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_54_00",
+            "name": "Flame Peak - Northeast Giants' Gravepost",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_55_00",
+            "name": "Mountaintops of the Giants - Guardians' Garrison",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_54_00",
+            "name": "Flame Peak - Giants' Gravepost Northeast Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_55_00",
+            "name": "Mountaintops of the Giants - West of First Church of Marika",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_27_26_01",
+            "name": "Forge of the Giants",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_54_53_00",
+            "name": "Flame Peak - Forge of the Giants",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_27_27_01",
+            "name": "South of Freezing Lake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_54_55_00",
+            "name": "Mountaintops of the Giants - First Church of Marika",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_13_14_02",
+            "name": "Northeast Mountaintops",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_26_28_01",
+            "name": "Freezing Lake; Mountaintops Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_56_00",
+            "name": "Mountaintops of the Giants - Whiteridge Road, Minor Erdtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_57_00",
+            "name": "Mountaintops of the Giants - Before Freezing Lake, Heretical Rise",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_56_00",
+            "name": "Mountaintops of the Giants - Southwest Freezing Lake, Lord Contender's Evergaol, Spiritcaller Cave Entrance",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_57_00",
+            "name": "Mountaintops of the Giants - Northwest Freezing Lake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_26_29_01",
+            "name": "North of Freezing Lake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_52_58_00",
+            "name": "Mountaintops of the Giants - Northwest of Freezing Lake, East of Castle Sol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_53_58_00",
+            "name": "Mountaintops of the Giants - Freezing Lake North Cliffside",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_27_28_01",
+            "name": "East Freezing Lake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_54_56_00",
+            "name": "Mountaintops of the Giants - Southeast Freezing Lake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_54_57_00",
+            "name": "Mountaintops of the Giants - Northeast Freezing Lake",
+            "tags": [
+                ""
+            ]
+        }
+    ]
+}

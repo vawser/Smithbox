@@ -191,12 +191,6 @@ public class GparamEditorScreen : EditorScreen
         {
             if (SearchFilters.IsEditorSearchMatch(_fileSearchInput, info.Name, "_"))
             {
-                var prettyName = "";
-                if (CFG.Current.Gparam_DisplayMapNames)
-                {
-                    prettyName = MapAliasBank.GetMapNameFromFilename(info.Name);
-                }
-
                 ImGui.BeginGroup();
                 if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedGparamKey))
                 {
@@ -208,14 +202,33 @@ public class GparamEditorScreen : EditorScreen
                     _selectedGparamInfo = info;
                     _selectedGparam = info.Gparam;
                 }
-                if (prettyName != "")
+
+                if (CFG.Current.Interface_Display_Alias_for_Gparam)
                 {
-                    ImGui.SameLine();
-                    ImGui.PushTextWrapPos();
+                    if (GparamAliasBank.Bank.AliasNames != null)
+                    {
+                        var prettyName = "";
 
-                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
+                        var entries = GparamAliasBank.Bank.AliasNames.GetEntries("Gparams");
+                        foreach (var entry in entries)
+                        {
+                            if (name == entry.id)
+                            {
+                                prettyName = entry.name;
+                                break;
+                            }
+                        }
 
-                    ImGui.PopTextWrapPos();
+                        if (prettyName != "")
+                        {
+                            ImGui.SameLine();
+                            ImGui.PushTextWrapPos();
+
+                            ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
+
+                            ImGui.PopTextWrapPos();
+                        }
+                    }
                 }
 
                 ImGui.EndGroup();

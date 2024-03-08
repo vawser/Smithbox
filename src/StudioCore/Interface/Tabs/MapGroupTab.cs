@@ -61,6 +61,11 @@ public class MapGroupTab
             }
         }
 
+        ImGui.SameLine();
+        ImGui.Checkbox("Toggle Display in Editor", ref CFG.Current.Interface_DisplayMapGroups);
+        ImguiUtils.ShowHoverTooltip("Toggle the display of the Map Group list boxes in the Map Editor.");
+
+
         ImGui.Separator();
 
         if (ShowMapGroupAddSection)

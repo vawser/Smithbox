@@ -57,6 +57,10 @@ public class MapNameTab
             }
         }
 
+        ImGui.SameLine();
+        ImGui.Checkbox("Toggle Display in Editor", ref CFG.Current.Interface_Display_Alias_for_Msb);
+        ImguiUtils.ShowHoverTooltip("Toggle the display of the Map Name aliases in the Map Editor.");
+
         ImGui.Separator();
 
         if (ShowMapNameAddSection)
@@ -69,9 +73,9 @@ public class MapNameTab
         }
 
 
-        if (MapAliasBank.Bank.mayReloadAliasBank)
+        if (MapAliasBank.Bank.CanReloadBank)
         {
-            MapAliasBank.Bank.mayReloadAliasBank = false;
+            MapAliasBank.Bank.CanReloadBank = false;
             MapAliasBank.Bank.ReloadAliasBank();
         }
     }
@@ -109,7 +113,7 @@ public class MapNameTab
                 {
                     MapAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                     ImGui.CloseCurrentPopup();
-                    MapAliasBank.Bank.mayReloadAliasBank = true;
+                    MapAliasBank.Bank.CanReloadBank = true;
                 }
                 else
                 {
@@ -208,14 +212,14 @@ public class MapNameTab
                         {
                             MapAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                             ImGui.CloseCurrentPopup();
-                            MapAliasBank.Bank.mayReloadAliasBank = true;
+                            MapAliasBank.Bank.CanReloadBank = true;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Restore Default"))
                         {
                             MapAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
                             ImGui.CloseCurrentPopup();
-                            MapAliasBank.Bank.mayReloadAliasBank = true;
+                            MapAliasBank.Bank.CanReloadBank = true;
                         }
 
                         ImGui.EndPopup();

@@ -55,6 +55,10 @@ public class CFG
     //**************
     // Interface
     //**************
+    public bool Interface_DisplayMapGroups = true;
+    public bool Interface_Display_Alias_for_Gparam = true;
+    public bool Interface_Display_Alias_for_Msb = true;
+
     // Fixed Window
     public Vector4 ImGui_MainBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
     public Vector4 ImGui_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
@@ -358,7 +362,6 @@ public class CFG
     // Settings: Gparam Editor
     //****************************
     public bool Gparam_DisplayColorEditForVector4Fields = true;
-    public bool Gparam_DisplayMapNames = true;
     public bool Gparam_DisplayEmptyGroups = true;
     public bool Gparam_DisplayAddGroups = true;
     public bool Gparam_DisplayAddFields = true;
@@ -394,6 +397,8 @@ public class CFG
 
     public bool MapNameAtlas_ShowUnused = false;
     public bool MapNameAtlas_ShowTags = true;
+
+    public bool GparamNameAtlas_ShowTags = true;
 
     //****************************
     // Map Toolbar
