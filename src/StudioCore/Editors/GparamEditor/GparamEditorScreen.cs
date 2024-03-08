@@ -30,7 +30,7 @@ public class GparamEditorScreen : EditorScreen
 {
     private ProjectSettings _projectSettings;
 
-    private ActionManager EditorActionManager = new();
+    public static ActionManager EditorActionManager = new();
 
     private GparamParamBank.GparamInfo _selectedGparamInfo;
     private GPARAM _selectedGparam;
@@ -79,6 +79,25 @@ public class GparamEditorScreen : EditorScreen
 
     public void DrawEditorMenu()
     {
+        if (ImGui.BeginMenu("Edit"))
+        {
+            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAction();
+            }
+
+            if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAllAction();
+            }
+
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
+            {
+                EditorActionManager.RedoAction();
+            }
+
+            ImGui.EndMenu();
+        }
     }
 
     public void OnGUI(string[] initcmd)
@@ -137,7 +156,16 @@ public class GparamEditorScreen : EditorScreen
 
     public void GparamShortcuts()
     {
-        
+        // Keyboard shortcuts
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+        {
+            EditorActionManager.RedoAction();
+        }
     }
 
     /// <summary>

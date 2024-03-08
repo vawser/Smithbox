@@ -1,9 +1,12 @@
 ﻿using Andre.Formats;
+using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Reflection;
 
 namespace StudioCore.Editor;
@@ -407,5 +410,267 @@ public class CompoundAction : EditorAction
         }
 
         return evt;
+    }
+}
+
+
+/// <summary>
+/// GPARAM Editor Actions
+/// </summary>
+public class GparamValueChangeAction : EditorAction
+{
+    private readonly List<GparamValueChange> Changes = new();
+
+    public GparamValueChangeAction(SoulsFormats.GPARAM.IField field, SoulsFormats.GPARAM.IFieldValue fieldValue, object newValue, int index)
+    {
+        var change = new GparamValueChange();
+        change.Index = index;
+        change.Field = field;
+        change.OldValue = fieldValue.Value;
+        change.NewValue = newValue;
+        Changes.Add(change);
+    }
+
+    public override ActionEvent Execute()
+    {
+        foreach (GparamValueChange change in Changes)
+        {
+            if (change.Field is GPARAM.IntField intField)
+            {
+                intField.Values[change.Index].Value = (int)change.NewValue;
+            }
+            if (change.Field is GPARAM.UintField uintField)
+            {
+                uintField.Values[change.Index].Value = (uint)change.NewValue;
+            }
+            if (change.Field is GPARAM.ShortField shortField)
+            {
+                shortField.Values[change.Index].Value = (short)change.NewValue;
+            }
+            if (change.Field is GPARAM.SbyteField sbyteField)
+            {
+                sbyteField.Values[change.Index].Value = (sbyte)change.NewValue;
+            }
+            if (change.Field is GPARAM.ByteField byteField)
+            {
+                byteField.Values[change.Index].Value = (byte)change.NewValue;
+            }
+            if (change.Field is GPARAM.BoolField boolField)
+            {
+                boolField.Values[change.Index].Value = (bool)change.NewValue;
+            }
+            if (change.Field is GPARAM.FloatField floatField)
+            {
+                floatField.Values[change.Index].Value = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.Vector2Field vector2Field)
+            {
+                vector2Field.Values[change.Index].Value = (Vector2)change.NewValue;
+            }
+            if (change.Field is GPARAM.Vector3Field vector3Field)
+            {
+                vector3Field.Values[change.Index].Value = (Vector3)change.NewValue;
+            }
+            if (change.Field is GPARAM.Vector4Field vector4Field)
+            {
+                vector4Field.Values[change.Index].Value = (Vector4)change.NewValue;
+            }
+            if (change.Field is GPARAM.ColorField colorField)
+            {
+                colorField.Values[change.Index].Value = (Color)change.NewValue;
+            }
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        foreach (GparamValueChange change in Changes)
+        {
+            if (change.Field is GPARAM.IntField intField)
+            {
+                intField.Values[change.Index].Value = (int)change.OldValue;
+            }
+            if (change.Field is GPARAM.UintField uintField)
+            {
+                uintField.Values[change.Index].Value = (uint)change.OldValue;
+            }
+            if (change.Field is GPARAM.ShortField shortField)
+            {
+                shortField.Values[change.Index].Value = (short)change.OldValue;
+            }
+            if (change.Field is GPARAM.SbyteField sbyteField)
+            {
+                sbyteField.Values[change.Index].Value = (sbyte)change.OldValue;
+            }
+            if (change.Field is GPARAM.ByteField byteField)
+            {
+                byteField.Values[change.Index].Value = (byte)change.OldValue;
+            }
+            if (change.Field is GPARAM.BoolField boolField)
+            {
+                boolField.Values[change.Index].Value = (bool)change.OldValue;
+            }
+            if (change.Field is GPARAM.FloatField floatField)
+            {
+                floatField.Values[change.Index].Value = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.Vector2Field vector2Field)
+            {
+                vector2Field.Values[change.Index].Value = (Vector2)change.OldValue;
+            }
+            if (change.Field is GPARAM.Vector3Field vector3Field)
+            {
+                vector3Field.Values[change.Index].Value = (Vector3)change.OldValue;
+            }
+            if (change.Field is GPARAM.Vector4Field vector4Field)
+            {
+                vector4Field.Values[change.Index].Value = (Vector4)change.OldValue;
+            }
+            if (change.Field is GPARAM.ColorField colorField)
+            {
+                colorField.Values[change.Index].Value = (Color)change.OldValue;
+            }
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    private class GparamValueChange
+    {
+        public int Index;
+        public object NewValue;
+        public object OldValue;
+        public SoulsFormats.GPARAM.IField Field;
+    }
+}
+
+public class GparamTimeOfDayChangeAction : EditorAction
+{
+    private readonly List<GparamValueChange> Changes = new();
+
+    public GparamTimeOfDayChangeAction(SoulsFormats.GPARAM.IField field, SoulsFormats.GPARAM.IFieldValue fieldValue, object newValue, int index)
+    {
+        var change = new GparamValueChange();
+        change.Index = index;
+        change.Field = field;
+        change.OldValue = fieldValue.Unk04;
+        change.NewValue = newValue;
+        Changes.Add(change);
+    }
+
+    public override ActionEvent Execute()
+    {
+        foreach (GparamValueChange change in Changes)
+        {
+            if (change.Field is GPARAM.IntField intField)
+            {
+                intField.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.UintField uintField)
+            {
+                uintField.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.ShortField shortField)
+            {
+                shortField.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.SbyteField sbyteField)
+            {
+                sbyteField.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.ByteField byteField)
+            {
+                byteField.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.BoolField boolField)
+            {
+                boolField.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.FloatField floatField)
+            {
+                floatField.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.Vector2Field vector2Field)
+            {
+                vector2Field.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.Vector3Field vector3Field)
+            {
+                vector3Field.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.Vector4Field vector4Field)
+            {
+                vector4Field.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+            if (change.Field is GPARAM.ColorField colorField)
+            {
+                colorField.Values[change.Index].Unk04 = (float)change.NewValue;
+            }
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    public override ActionEvent Undo()
+    {
+        foreach (GparamValueChange change in Changes)
+        {
+            if (change.Field is GPARAM.IntField intField)
+            {
+                intField.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.UintField uintField)
+            {
+                uintField.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.ShortField shortField)
+            {
+                shortField.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.SbyteField sbyteField)
+            {
+                sbyteField.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.ByteField byteField)
+            {
+                byteField.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.BoolField boolField)
+            {
+                boolField.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.FloatField floatField)
+            {
+                floatField.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.Vector2Field vector2Field)
+            {
+                vector2Field.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.Vector3Field vector3Field)
+            {
+                vector3Field.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.Vector4Field vector4Field)
+            {
+                vector4Field.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+            if (change.Field is GPARAM.ColorField colorField)
+            {
+                colorField.Values[change.Index].Unk04 = (float)change.OldValue;
+            }
+        }
+
+        return ActionEvent.NoEvent;
+    }
+
+    private class GparamValueChange
+    {
+        public int Index;
+        public object NewValue;
+        public object OldValue;
+        public SoulsFormats.GPARAM.IField Field;
     }
 }

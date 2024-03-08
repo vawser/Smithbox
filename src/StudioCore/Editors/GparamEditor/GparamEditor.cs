@@ -1,31 +1,43 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using SoulsFormats;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor;
-using System;
+using StudioCore.GraphicsEditor;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
 public class GparamEditor
 {
+    private static object _editedValueCache;
+
+    // Value has been changed via input
+    private static bool _changedCache;
+
+    // Value can be changed in the GPARAM
+    private static bool _committedCache;
+
     public static unsafe void ValueField(int idx, IField field, IFieldValue value)
     {
+        _changedCache = false;
+        _committedCache = false;
+
         ImGui.SetNextItemWidth(-1);
+
+        object oldValue = null;
+        object newValue = null;
 
         // INT
         if (field is GPARAM.IntField intField)
         {
             int fieldValue = intField.Values[idx].Value;
             int intInput = fieldValue;
+            oldValue = fieldValue;
 
             if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
             {
@@ -35,22 +47,31 @@ public class GparamEditor
 
                 if (ImGui.Checkbox($"##value{idx}", ref boolInput))
                 {
-                    if(boolInput)
+                    if (boolInput)
                     {
-                        intField.Values[idx].Value = 1;
+                        newValue = 1;
                     }
                     else
                     {
-                        intField.Values[idx].Value = 0;
+                        newValue = 0;
                     }
+
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
+
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
             else
             {
                 if (ImGui.InputInt($"##value{idx}", ref intInput))
                 {
-                    intField.Values[idx].Value = intInput;
+                    newValue = intInput;
+
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
         }
         // UINT
@@ -58,6 +79,7 @@ public class GparamEditor
         {
             uint fieldValue = uintField.Values[idx].Value;
             uint uintInput = fieldValue;
+            oldValue = fieldValue;
 
             var strval = $@"{uintInput}";
 
@@ -71,13 +93,16 @@ public class GparamEditor
                 {
                     if (boolInput)
                     {
-                        uintField.Values[idx].Value = 1;
+                        newValue = 1;
                     }
                     else
                     {
-                        uintField.Values[idx].Value = 0;
+                        newValue = 0;
                     }
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
             else
             {
@@ -87,9 +112,12 @@ public class GparamEditor
 
                     if (result)
                     {
-                        uintField.Values[idx].Value = uintInput;
+                        newValue = uintInput;
+                        _editedValueCache = newValue;
+                        _changedCache = true;
                     }
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
         }
         // SHORT
@@ -97,6 +125,7 @@ public class GparamEditor
         {
             short fieldValue = shortField.Values[idx].Value;
             int shortInput = fieldValue;
+            oldValue = fieldValue;
 
             if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
             {
@@ -108,20 +137,26 @@ public class GparamEditor
                 {
                     if (boolInput)
                     {
-                        shortField.Values[idx].Value = 1;
+                        newValue = 1;
                     }
                     else
                     {
-                        shortField.Values[idx].Value = 0;
+                        newValue = 0;
                     }
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
             else
             {
                 if (ImGui.InputInt($"##value{idx}", ref shortInput))
                 {
-                    shortField.Values[idx].Value = (short)shortInput;
+                     newValue = shortInput;
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
         }
         // SBYTE
@@ -129,6 +164,7 @@ public class GparamEditor
         {
             sbyte fieldValue = sbyteField.Values[idx].Value;
             int sbyteInput = fieldValue;
+            oldValue = fieldValue;
 
             if (GparamFormatBank.Bank.IsBooleanProperty(field.Key))
             {
@@ -140,20 +176,26 @@ public class GparamEditor
                 {
                     if (boolInput)
                     {
-                        sbyteField.Values[idx].Value = 1;
+                        newValue = 1;
                     }
                     else
                     {
-                        sbyteField.Values[idx].Value = 0;
+                        newValue = 0;
                     }
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
             else
             {
                 if (ImGui.InputInt($"##value{idx}", ref sbyteInput))
                 {
-                    sbyteField.Values[idx].Value = (sbyte)sbyteInput;
+                    newValue = sbyteInput;
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
         }
         // BYTE
@@ -161,6 +203,7 @@ public class GparamEditor
         {
             byte fieldValue = byteField.Values[idx].Value;
             byte byteInput = fieldValue;
+            oldValue = fieldValue;
 
             var strval = $@"{byteInput}";
 
@@ -174,13 +217,16 @@ public class GparamEditor
                 {
                     if (boolInput)
                     {
-                        byteField.Values[idx].Value = 1;
+                        newValue = 1;
                     }
                     else
                     {
-                        byteField.Values[idx].Value = 0;
+                        newValue = 0;
                     }
+                    _editedValueCache = newValue;
+                    _changedCache = true;
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
             else
             {
@@ -190,9 +236,12 @@ public class GparamEditor
 
                     if (result)
                     {
-                        byteField.Values[idx].Value = byteInput;
+                        newValue = byteInput;
+                        _editedValueCache = newValue;
+                        _changedCache = true;
                     }
                 }
+                _committedCache = ImGui.IsItemDeactivatedAfterEdit();
             }
         }
         // BOOL
@@ -200,45 +249,61 @@ public class GparamEditor
         {
             bool fieldValue = boolField.Values[idx].Value;
             bool boolInput = fieldValue;
+            oldValue = fieldValue;
 
             if (ImGui.Checkbox($"##value{idx}", ref boolInput))
             {
-                boolField.Values[idx].Value = boolInput;
+                newValue = boolInput;
+                _editedValueCache = newValue;
+                _changedCache = true;
             }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // FLOAT
         else if (field is GPARAM.FloatField floatField)
         {
             float fieldValue = floatField.Values[idx].Value;
             float floatInput = fieldValue;
+            oldValue = fieldValue;
 
             if (ImGui.InputFloat($"##value{idx}", ref floatInput, 0.1f, 1.0f, 
                 Utils.ImGui_InputFloatFormat(floatInput)))
             {
-                floatField.Values[idx].Value = floatInput;
+                newValue = floatInput;
+                _editedValueCache = newValue;
+                _changedCache = true;
             }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // VECTOR2
         else if (field is GPARAM.Vector2Field vector2Field)
         {
             Vector2 fieldValue = vector2Field.Values[idx].Value;
             Vector2 vector2Input = fieldValue;
+            oldValue = fieldValue;
 
             if (ImGui.InputFloat2($"##value{idx}", ref vector2Input))
             {
-                vector2Field.Values[idx].Value = vector2Input;
+                newValue = vector2Input;
+                _editedValueCache = newValue;
+                _changedCache = true;
             }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // VECTOR3
         else if (field is GPARAM.Vector3Field vector3Field)
         {
             Vector3 fieldValue = vector3Field.Values[idx].Value;
             Vector3 vector3Input = fieldValue;
+            oldValue = fieldValue;
 
             if (ImGui.InputFloat3($"##value{idx}", ref vector3Input))
             {
-                vector3Field.Values[idx].Value = vector3Input;
+                newValue = vector3Input;
+                _editedValueCache = newValue;
+                _changedCache = true;
             }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // VECTOR4
         else if (field is GPARAM.Vector4Field vector4Field &&
@@ -246,11 +311,15 @@ public class GparamEditor
         {
             Vector4 fieldValue = vector4Field.Values[idx].Value;
             Vector4 vector4Input = fieldValue;
+            oldValue = fieldValue;
 
             if (ImGui.InputFloat4($"##value{idx}", ref vector4Input))
             {
-                vector4Field.Values[idx].Value = vector4Input;
+                newValue = vector4Input;
+                _editedValueCache = newValue;
+                _changedCache = true;
             }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         // VECTOR4 (COLOR EDIT)
         else if (field is GPARAM.Vector4Field vectorColorField && 
@@ -258,6 +327,7 @@ public class GparamEditor
         {
             Vector4 fieldValue = vectorColorField.Values[idx].Value;
             Vector4 colorInput = fieldValue;
+            oldValue = fieldValue;
 
             var flags = ImGuiColorEditFlags.None;
 
@@ -276,7 +346,11 @@ public class GparamEditor
 
             if (ImGui.ColorEdit4($"##value{idx}", ref colorInput, flags))
             {
-                vectorColorField.Values[idx].Value = colorInput;
+                newValue = colorInput;
+                _editedValueCache = newValue;
+                _changedCache = true;
+
+                _committedCache = true;
             }
         }
         // COLOR
@@ -285,6 +359,7 @@ public class GparamEditor
             Color raw = colorField.Values[idx].Value;
             Vector4 fieldValue = new(raw.R / 255.0f, raw.G / 255.0f, raw.B / 255.0f, raw.A / 255.0f);
             Vector4 colorInput = fieldValue;
+            oldValue = fieldValue;
 
             if (ImGui.ColorEdit4($"##value{idx}", ref colorInput))
             {
@@ -295,143 +370,84 @@ public class GparamEditor
                     (int)(colorInput.Z * 255.0f)
                     );
 
-                colorField.Values[idx].Value = trueColorInput;
+                newValue = trueColorInput;
+                _editedValueCache = newValue;
+                _changedCache = true;
             }
+            _committedCache = ImGui.IsItemDeactivatedAfterEdit();
         }
         else
         {
             TaskLogs.AddLog($"{field.Name} {field.GetType()} is not supported");
+        }
+
+        // Update and Commit
+        if (_editedValueCache != null && _editedValueCache != oldValue)
+        {
+            _changedCache = true;
+        }
+
+        if (_changedCache)
+        {
+            if (_committedCache)
+            {
+                if (newValue == null)
+                {
+                    return;
+                }
+                else
+                {
+                    GparamValueChangeAction action = null;
+                    action = new GparamValueChangeAction(field, value, newValue, idx);
+                    GparamEditorScreen.EditorActionManager.ExecuteAction(action);
+                }
+            }
         }
     }
 
     public static unsafe void TimeOfDayField(int idx, IField field, IFieldValue value)
     {
+        _changedCache = false;
+        _committedCache = false;
+
         ImGui.SetNextItemWidth(-1);
 
-        // INT
-        if (field is GPARAM.IntField intField)
-        {
-            float fieldValue = intField.Values[idx].Unk04;
-            float floatInput = fieldValue;
+        object oldValue = null;
+        object newValue = null;
 
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                intField.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // UINT
-        else if (field is GPARAM.UintField uintField)
-        {
-            float fieldValue = uintField.Values[idx].Unk04;
-            float floatInput = fieldValue;
+        float fieldValue = field.Values[idx].Unk04;
+        float floatInput = fieldValue;
+        oldValue = fieldValue;
 
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                uintField.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // SHORT
-        else if (field is GPARAM.ShortField shortField)
+        if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
         {
-            float fieldValue = shortField.Values[idx].Unk04;
-            float floatInput = fieldValue;
+            newValue = floatInput;
+            _editedValueCache = newValue;
+            _changedCache = true;
+        }
+        _committedCache = ImGui.IsItemDeactivatedAfterEdit();
 
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                shortField.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // SBYTE
-        else if (field is GPARAM.SbyteField sbyteField)
+        // Update and Commit
+        if (_editedValueCache != null && _editedValueCache != oldValue)
         {
-            float fieldValue = sbyteField.Values[idx].Unk04;
-            float floatInput = fieldValue;
+            _changedCache = true;
+        }
 
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                sbyteField.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // BYTE
-        else if (field is GPARAM.ByteField byteField)
+        if (_changedCache)
         {
-            float fieldValue = byteField.Values[idx].Unk04;
-            float floatInput = fieldValue;
-
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
+            if (_committedCache)
             {
-                byteField.Values[idx].Unk04 = floatInput;
+                if (newValue == null)
+                {
+                    return;
+                }
+                else
+                {
+                    GparamTimeOfDayChangeAction action = null;
+                    action = new GparamTimeOfDayChangeAction(field, value, newValue, idx);
+                    GparamEditorScreen.EditorActionManager.ExecuteAction(action);
+                }
             }
-        }
-        // BOOL
-        else if (field is GPARAM.BoolField boolField)
-        {
-            float fieldValue = boolField.Values[idx].Unk04;
-            float floatInput = fieldValue;
-
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                boolField.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // FLOAT
-        else if (field is GPARAM.FloatField floatField)
-        {
-            float fieldValue = floatField.Values[idx].Unk04;
-            float floatInput = fieldValue;
-
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                floatField.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // VECTOR2
-        else if (field is GPARAM.Vector2Field vector2Field)
-        {
-            float fieldValue = vector2Field.Values[idx].Unk04;
-            float floatInput = fieldValue;
-
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                vector2Field.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // VECTOR3
-        else if (field is GPARAM.Vector3Field vector3Field)
-        {
-            float fieldValue = vector3Field.Values[idx].Unk04;
-            float floatInput = fieldValue;
-
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                vector3Field.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // VECTOR4
-        else if (field is GPARAM.Vector4Field vector4Field)
-        {
-            float fieldValue = vector4Field.Values[idx].Unk04;
-            float floatInput = fieldValue;
-
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                vector4Field.Values[idx].Unk04 = floatInput;
-            }
-        }
-        // COLOR
-        else if (field is GPARAM.ColorField colorField)
-        {
-            float fieldValue = colorField.Values[idx].Unk04;
-            float floatInput = fieldValue;
-
-            if (ImGui.InputFloat($"##tod{idx}", ref floatInput))
-            {
-                colorField.Values[idx].Unk04 = floatInput;
-            }
-        }
-        else
-        {
-            TaskLogs.AddLog($"{field.Name} {field.GetType()} is not supported");
         }
     }
 
