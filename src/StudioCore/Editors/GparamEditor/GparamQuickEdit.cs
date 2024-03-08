@@ -3,6 +3,8 @@ using HKX2;
 using ImGuiNET;
 using SoulsFormats;
 using StudioCore.BanksMain;
+using StudioCore.Editor;
+using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -13,7 +15,9 @@ using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static SoulsFormats.FFXDLSE;
 using static SoulsFormats.GPARAM;
+using static StudioCore.Editor.GparamValueChangeAction;
 
 namespace StudioCore.Editors.GparamEditor
 {
@@ -38,6 +42,8 @@ namespace StudioCore.Editors.GparamEditor
         private static string _commandString = "";
 
         private static bool[] filterTruth = null;
+
+        public static List<GparamValueChangeAction> actions = new List<GparamValueChangeAction>();
 
         public static void OnGui()
         {
@@ -100,6 +106,8 @@ namespace StudioCore.Editors.GparamEditor
 
         private static void ExecuteQuickEdit()
         {
+            actions = new List<GparamValueChangeAction>();
+
             for (int i = 0; i < SelectedParamField.Values.Count; i++)
             {
                 filterTruth[i] = false;
@@ -125,6 +133,11 @@ namespace StudioCore.Editors.GparamEditor
                 CommandAdjust(command, EditEffectType.Multiply);
                 CommandAdjust(command, EditEffectType.SetByRow);
             }
+
+            // Combine all the individual changes into a single action
+            // so Undo/Redo treats the Quick Edit changes as one discrete change
+            GparamBatchChangeAction batchAction = new GparamBatchChangeAction(actions);
+            GparamEditorScreen.EditorActionManager.ExecuteAction(batchAction);
         }
 
         private static void CommandAdjust(string commandArg, EditEffectType effectType)
@@ -159,6 +172,15 @@ namespace StudioCore.Editors.GparamEditor
                 return;
             }
 
+            // Ignore commands that are not set for bools
+            if (SelectedParamField is GPARAM.BoolField)
+            {
+                if (effectType != EditEffectType.Set)
+                {
+                    return;
+                }
+            }
+
             if (setValueMatch.Success && setValueMatch.Groups.Count >= 2)
             {
                 string setValue = setValueMatch.Groups[1].Value;
@@ -185,52 +207,32 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    intField.Values[i].Value = commandValue;
-
-                                    //TaskLogs.AddLog($"Command: Set Value INT {commandValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    var addValue = intField.Values[i].Value + commandValue;
-
-                                    if (addValue > int.MaxValue)
-                                        addValue = int.MaxValue;
-
-                                    intField.Values[i].Value = addValue;
-
-                                    //TaskLogs.AddLog($"Command: Add Value INT {addValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    var subValue = intField.Values[i].Value - commandValue;
-
-                                    if (subValue < int.MinValue)
-                                        subValue = int.MinValue;
-
-                                    intField.Values[i].Value = subValue;
-
-                                    //TaskLogs.AddLog($"Command: Subtract Value INT {subValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    var multValue = intField.Values[i].Value * commandValue;
-
-                                    if (multValue > int.MaxValue)
-                                        multValue = int.MaxValue;
-
-                                    if (multValue < int.MinValue)
-                                        multValue = int.MinValue;
-
-                                    intField.Values[i].Value = multValue;
-
-                                    //TaskLogs.AddLog($"Command: Multiply Value INT {multValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    actions.Add(action);
                                 }
                                 if(effectType == EditEffectType.SetByRow)
                                 {
                                     if (intField.Values.Any(x => x.Id == rowsetId))
                                     {
-                                        intField.Values[i].Value = intField.Values.Find(x => x.Id == rowsetId).Value;
-                                        //TaskLogs.AddLog($"Command: Row Set INT {intField.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                        commandValue = intField.Values.Find(x => x.Id == rowsetId).Value;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                 }
                             }
@@ -245,52 +247,32 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    uintField.Values[i].Value = commandValue;
-
-                                    //TaskLogs.AddLog($"Command: Set Value UINT {commandValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    var addValue = uintField.Values[i].Value + commandValue;
-
-                                    if (addValue > uint.MaxValue)
-                                        addValue = uint.MaxValue;
-
-                                    uintField.Values[i].Value = addValue;
-
-                                    //TaskLogs.AddLog($"Command: Add Value UINT {addValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    var subValue = uintField.Values[i].Value - commandValue;
-
-                                    if (subValue < uint.MinValue)
-                                        subValue = uint.MinValue;
-
-                                    uintField.Values[i].Value = subValue;
-
-                                    //TaskLogs.AddLog($"Command: Subtract Value UINT {subValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    var multValue = uintField.Values[i].Value * commandValue;
-
-                                    if (multValue > uint.MaxValue)
-                                        multValue = uint.MaxValue;
-
-                                    if (multValue < uint.MinValue)
-                                        multValue = uint.MinValue;
-
-                                    uintField.Values[i].Value = multValue;
-
-                                    //TaskLogs.AddLog($"Command: Multiply Value UINT {multValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
                                 {
                                     if (uintField.Values.Any(x => x.Id == rowsetId))
                                     {
-                                        uintField.Values[i].Value = uintField.Values.Find(x => x.Id == rowsetId).Value;
-                                        //TaskLogs.AddLog($"Command: Row Set UINT {uintField.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                        commandValue = uintField.Values.Find(x => x.Id == rowsetId).Value;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                 }
                             }
@@ -305,52 +287,32 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    shortField.Values[i].Value = commandValue;
-
-                                    //TaskLogs.AddLog($"Command: Set Value SHORT {commandValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    var addValue = shortField.Values[i].Value + commandValue;
-
-                                    if (addValue > short.MaxValue)
-                                        addValue = short.MaxValue;
-
-                                    shortField.Values[i].Value = (short)addValue;
-
-                                    //TaskLogs.AddLog($"Command: Add Value SHORT {addValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    var subValue = shortField.Values[i].Value - commandValue;
-
-                                    if (subValue < short.MinValue)
-                                        subValue = short.MinValue;
-
-                                    shortField.Values[i].Value = (short)subValue;
-
-                                    //TaskLogs.AddLog($"Command: Subtract Value SHORT {subValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    var multValue = shortField.Values[i].Value * commandValue;
-
-                                    if (multValue > short.MaxValue)
-                                        multValue = short.MaxValue;
-
-                                    if (multValue < short.MinValue)
-                                        multValue = short.MinValue;
-
-                                    shortField.Values[i].Value = (short)multValue;
-
-                                    //TaskLogs.AddLog($"Command: Multiply Value SHORT {multValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
                                 {
                                     if (shortField.Values.Any(x => x.Id == rowsetId))
                                     {
-                                        shortField.Values[i].Value = shortField.Values.Find(x => x.Id == rowsetId).Value;
-                                        //TaskLogs.AddLog($"Command: Row Set SHORT {shortField.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                        commandValue = shortField.Values.Find(x => x.Id == rowsetId).Value;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                 }
                             }
@@ -365,52 +327,32 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    sbyteField.Values[i].Value = commandValue;
-
-                                    //TaskLogs.AddLog($"Command: Set Value SBYTE {commandValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    var addValue = sbyteField.Values[i].Value + commandValue;
-
-                                    if (addValue > sbyte.MaxValue)
-                                        addValue = sbyte.MaxValue;
-
-                                    sbyteField.Values[i].Value = (sbyte)addValue;
-
-                                    //TaskLogs.AddLog($"Command: Add Value SBYTE {addValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    var subValue = sbyteField.Values[i].Value - commandValue;
-
-                                    if (subValue < sbyte.MinValue)
-                                        subValue = sbyte.MinValue;
-
-                                    sbyteField.Values[i].Value = (sbyte)subValue;
-
-                                    //TaskLogs.AddLog($"Command: Subtract Value SBYTE {subValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    var multValue = sbyteField.Values[i].Value * commandValue;
-
-                                    if (multValue > sbyte.MaxValue)
-                                        multValue = sbyte.MaxValue;
-
-                                    if (multValue < sbyte.MinValue)
-                                        multValue = sbyte.MinValue;
-
-                                    sbyteField.Values[i].Value = (sbyte)multValue;
-
-                                    //TaskLogs.AddLog($"Command: Multiply Value SBYTE {multValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
                                 {
                                     if (sbyteField.Values.Any(x => x.Id == rowsetId))
                                     {
-                                        sbyteField.Values[i].Value = sbyteField.Values.Find(x => x.Id == rowsetId).Value;
-                                        //TaskLogs.AddLog($"Command: Row Set SBYTE {sbyteField.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                        commandValue = sbyteField.Values.Find(x => x.Id == rowsetId).Value;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                 }
                             }
@@ -425,52 +367,32 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    byteField.Values[i].Value = commandValue;
-
-                                    //TaskLogs.AddLog($"Command: Set Value BYTE {commandValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    var addValue = byteField.Values[i].Value + commandValue;
-
-                                    if (addValue > byte.MaxValue)
-                                        addValue = byte.MaxValue;
-
-                                    byteField.Values[i].Value = (byte)addValue;
-
-                                    //TaskLogs.AddLog($"Command: Add Value BYTE {addValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    var subValue = byteField.Values[i].Value - commandValue;
-
-                                    if (subValue < byte.MinValue)
-                                        subValue = byte.MinValue;
-
-                                    byteField.Values[i].Value = (byte)subValue;
-
-                                    //TaskLogs.AddLog($"Command: Subtract Value BYTE {subValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    var multValue = byteField.Values[i].Value * commandValue;
-
-                                    if (multValue > byte.MaxValue)
-                                        multValue = byte.MaxValue;
-
-                                    if (multValue < byte.MinValue)
-                                        multValue = byte.MinValue;
-
-                                    byteField.Values[i].Value = (byte)multValue;
-
-                                    //TaskLogs.AddLog($"Command: Multiply Value BYTE {multValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
                                 {
                                     if (byteField.Values.Any(x => x.Id == rowsetId))
                                     {
-                                        byteField.Values[i].Value = byteField.Values.Find(x => x.Id == rowsetId).Value;
-                                        //TaskLogs.AddLog($"Command: Row Set BYTE {byteField.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                        commandValue = byteField.Values.Find(x => x.Id == rowsetId).Value;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                 }
                             }
@@ -487,20 +409,9 @@ namespace StudioCore.Editors.GparamEditor
 
                             if (valid)
                             {
-                                if (effectType == EditEffectType.Set)
-                                {
-                                    boolField.Values[i].Value = boolean;
-
-                                    //TaskLogs.AddLog($"Command: Set Value BOOL {commandValue} - {entry.Id}");
-                                }
-                                if (effectType == EditEffectType.SetByRow)
-                                {
-                                    if (boolField.Values.Any(x => x.Id == rowsetId))
-                                    {
-                                        boolField.Values[i].Value = boolField.Values.Find(x => x.Id == rowsetId).Value;
-                                        //TaskLogs.AddLog($"Command: Row Set BOOL {boolField.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
-                                    }
-                                }
+                                // Always set bools
+                                GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                actions.Add(action);
                             }
                         }
                         // FLOAT
@@ -513,52 +424,32 @@ namespace StudioCore.Editors.GparamEditor
                             {
                                 if (effectType == EditEffectType.Set)
                                 {
-                                    floatField.Values[i].Value = commandValue;
-
-                                    //TaskLogs.AddLog($"Command: Set Value FLOAT {commandValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Add)
                                 {
-                                    var addValue = floatField.Values[i].Value + commandValue;
-
-                                    if (addValue > float.MaxValue)
-                                        addValue = float.MaxValue;
-
-                                    floatField.Values[i].Value = addValue;
-
-                                    //TaskLogs.AddLog($"Command: Add Value FLOAT {addValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Subtract)
                                 {
-                                    var subValue = floatField.Values[i].Value - commandValue;
-
-                                    if (subValue < float.MinValue)
-                                        subValue = float.MinValue;
-
-                                    floatField.Values[i].Value = subValue;
-
-                                    //TaskLogs.AddLog($"Command: Subtract Value FLOAT {subValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.Multiply)
                                 {
-                                    var multValue = floatField.Values[i].Value * commandValue;
-
-                                    if (multValue > float.MaxValue)
-                                        multValue = float.MaxValue;
-
-                                    if (multValue < float.MinValue)
-                                        multValue = float.MinValue;
-
-                                    floatField.Values[i].Value = multValue;
-
-                                    //TaskLogs.AddLog($"Command: Multiply Value FLOAT {multValue} - {entry.Id}");
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                    actions.Add(action);
                                 }
                                 if (effectType == EditEffectType.SetByRow)
                                 {
                                     if (floatField.Values.Any(x => x.Id == rowsetId))
                                     {
-                                        floatField.Values[i].Value = floatField.Values.Find(x => x.Id == rowsetId).Value;
-                                        //TaskLogs.AddLog($"Command: Row Set FLOAT {floatField.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                        commandValue = floatField.Values.Find(x => x.Id == rowsetId).Value;
+
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                 }
                             }
@@ -566,12 +457,16 @@ namespace StudioCore.Editors.GparamEditor
                         // VECTOR2
                         else if (SelectedParamField is GPARAM.Vector2Field vector2Field)
                         {
+                            Vector2 commandValue = new Vector2(0, 0);
+
                             if (effectType == EditEffectType.SetByRow)
                             {
                                 if (vector2Field.Values.Any(x => x.Id == rowsetId))
                                 {
-                                    vector2Field.Values[i].Value = vector2Field.Values.Find(x => x.Id == rowsetId).Value;
-                                    //TaskLogs.AddLog($"Command: Row Set VECTOR2 {vector2Field.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                    commandValue = vector2Field.Values.Find(x => x.Id == rowsetId).Value;
+
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                             }
 
@@ -592,66 +487,27 @@ namespace StudioCore.Editors.GparamEditor
 
                                 if(valid1 && valid2)
                                 {
+                                    commandValue = new Vector2(commandValue1, commandValue2);
+
                                     if (effectType == EditEffectType.Set)
                                     {
-                                        Vector2 commandVector = new Vector2(commandValue1, commandValue2);
-                                        vector2Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Set Value VECTOR2 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Add)
                                     {
-                                        var addValue1 = vector2Field.Values[i].Value.X + commandValue1;
-                                        var addValue2 = vector2Field.Values[i].Value.Y + commandValue2;
-
-                                        if (addValue1 > float.MaxValue)
-                                            addValue1 = float.MaxValue;
-                                        
-                                        if (addValue2 > float.MaxValue)
-                                            addValue2 = float.MaxValue;
-
-                                        Vector2 commandVector = new Vector2(addValue1, addValue2);
-                                        vector2Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Add Value VECTOR2 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Subtract)
                                     {
-                                        var subValue1 = vector2Field.Values[i].Value.X - commandValue1;
-                                        var subValue2 = vector2Field.Values[i].Value.Y - commandValue2;
-
-                                        if (subValue1 < float.MinValue)
-                                            subValue1 = float.MinValue;
-
-                                        if (subValue2 < float.MinValue)
-                                            subValue2 = float.MinValue;
-
-                                        Vector2 commandVector = new Vector2(subValue1, subValue2);
-                                        vector2Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Subtract Value VECTOR2 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Multiply)
                                     {
-                                        var multValue1 = vector2Field.Values[i].Value.X * commandValue1;
-                                        var multValue2 = vector2Field.Values[i].Value.Y * commandValue2;
-
-                                        if (multValue1 > float.MaxValue)
-                                            multValue1 = float.MaxValue;
-
-                                        if (multValue2 > float.MaxValue)
-                                            multValue2 = float.MaxValue;
-
-                                        if (multValue1 < float.MinValue)
-                                            multValue1 = float.MinValue;
-
-                                        if (multValue2 < float.MinValue)
-                                            multValue2 = float.MinValue;
-
-                                        Vector2 commandVector = new Vector2(multValue1, multValue2);
-                                        vector2Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Multiply Value VECTOR2 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                        actions.Add(action);
                                     }
                                 }
                             }
@@ -659,12 +515,16 @@ namespace StudioCore.Editors.GparamEditor
                         // VECTOR3
                         else if (SelectedParamField is GPARAM.Vector3Field vector3Field)
                         {
+                            Vector3 commandValue = new Vector3(0, 0, 0);
+
                             if (effectType == EditEffectType.SetByRow)
                             {
                                 if (vector3Field.Values.Any(x => x.Id == rowsetId))
                                 {
-                                    vector3Field.Values[i].Value = vector3Field.Values.Find(x => x.Id == rowsetId).Value;
-                                    //TaskLogs.AddLog($"Command: Row Set VECTOR3 {vector3Field.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                    commandValue = vector3Field.Values.Find(x => x.Id == rowsetId).Value;
+
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                             }
 
@@ -688,81 +548,27 @@ namespace StudioCore.Editors.GparamEditor
 
                                 if (valid1 && valid2 && valid3)
                                 {
+                                    commandValue = new Vector3(commandValue1, commandValue2, commandValue3);
+
                                     if (effectType == EditEffectType.Set)
                                     {
-                                        Vector3 commandVector = new Vector3(commandValue1, commandValue2, commandValue3);
-                                        vector3Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Set Value VECTOR3 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Add)
                                     {
-                                        var addValue1 = vector3Field.Values[i].Value.X + commandValue1;
-                                        var addValue2 = vector3Field.Values[i].Value.Y + commandValue2;
-                                        var addValue3 = vector3Field.Values[i].Value.Z + commandValue3;
-
-                                        if (addValue1 > float.MaxValue)
-                                            addValue1 = float.MaxValue;
-
-                                        if (addValue2 > float.MaxValue)
-                                            addValue2 = float.MaxValue;
-
-                                        if (addValue3 > float.MaxValue)
-                                            addValue3 = float.MaxValue;
-
-                                        Vector3 commandVector = new Vector3(addValue1, addValue2, addValue3);
-                                        vector3Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Add Value VECTOR3 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Subtract)
                                     {
-                                        var subValue1 = vector3Field.Values[i].Value.X - commandValue1;
-                                        var subValue2 = vector3Field.Values[i].Value.Y - commandValue2;
-                                        var subValue3 = vector3Field.Values[i].Value.Z - commandValue3;
-
-                                        if (subValue1 < float.MinValue)
-                                            subValue1 = float.MinValue;
-
-                                        if (subValue2 < float.MinValue)
-                                            subValue2 = float.MinValue;
-
-                                        if (subValue3 < float.MinValue)
-                                            subValue3 = float.MinValue;
-
-                                        Vector3 commandVector = new Vector3(subValue1, subValue2, subValue3);
-                                        vector3Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Subtract Value VECTOR3 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Multiply)
                                     {
-                                        var multValue1 = vector3Field.Values[i].Value.X * commandValue1;
-                                        var multValue2 = vector3Field.Values[i].Value.Y * commandValue2;
-                                        var multValue3 = vector3Field.Values[i].Value.Z * commandValue3;
-
-                                        if (multValue1 > float.MaxValue)
-                                            multValue1 = float.MaxValue;
-
-                                        if (multValue2 > float.MaxValue)
-                                            multValue2 = float.MaxValue;
-
-                                        if (multValue3 > float.MaxValue)
-                                            multValue3 = float.MaxValue;
-
-                                        if (multValue1 < float.MinValue)
-                                            multValue1 = float.MinValue;
-
-                                        if (multValue2 < float.MinValue)
-                                            multValue2 = float.MinValue;
-
-                                        if (multValue3 < float.MinValue)
-                                            multValue3 = float.MinValue;
-
-                                        Vector3 commandVector = new Vector3(multValue1, multValue2, multValue2);
-                                        vector3Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Multiply Value VECTOR3 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                        actions.Add(action);
                                     }
                                 }
                             }
@@ -770,12 +576,16 @@ namespace StudioCore.Editors.GparamEditor
                         // VECTOR4
                         else if (SelectedParamField is GPARAM.Vector4Field vector4Field)
                         {
+                            Vector4 commandValue = new Vector4(0, 0, 0, 0);
+
                             if (effectType == EditEffectType.SetByRow)
                             {
                                 if (vector4Field.Values.Any(x => x.Id == rowsetId))
                                 {
-                                    vector4Field.Values[i].Value = vector4Field.Values.Find(x => x.Id == rowsetId).Value;
-                                    //TaskLogs.AddLog($"Command: Row Set VECTOR4 {vector4Field.Values.Find(x => x.Id == rowsetId).Value} - {entry.Id}");
+                                    commandValue = vector4Field.Values.Find(x => x.Id == rowsetId).Value;
+
+                                    GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                    actions.Add(action);
                                 }
                             }
 
@@ -802,96 +612,27 @@ namespace StudioCore.Editors.GparamEditor
 
                                 if (valid1 && valid2 && valid3 && valid4)
                                 {
+                                    commandValue = new Vector4(commandValue1, commandValue2, commandValue3, commandValue4);
+
                                     if (effectType == EditEffectType.Set)
                                     {
-                                        Vector4 commandVector = new Vector4(commandValue1, commandValue2, commandValue3, commandValue4);
-                                        vector4Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Set Value VECTOR4 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Set);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Add)
                                     {
-                                        var addValue1 = vector4Field.Values[i].Value.X + commandValue1;
-                                        var addValue2 = vector4Field.Values[i].Value.Y + commandValue2;
-                                        var addValue3 = vector4Field.Values[i].Value.Z + commandValue3;
-                                        var addValue4 = vector4Field.Values[i].Value.W + commandValue4;
-
-                                        if (addValue1 > float.MaxValue)
-                                            addValue1 = float.MaxValue;
-
-                                        if (addValue2 > float.MaxValue)
-                                            addValue2 = float.MaxValue;
-
-                                        if (addValue3 > float.MaxValue)
-                                            addValue3 = float.MaxValue;
-
-                                        if (addValue4 > float.MaxValue)
-                                            addValue4 = float.MaxValue;
-
-                                        Vector4 commandVector = new Vector4(addValue1, addValue2, addValue3, addValue4);
-                                        vector4Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Add Value VECTOR4 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Addition);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Subtract)
                                     {
-                                        var subValue1 = vector4Field.Values[i].Value.X - commandValue1;
-                                        var subValue2 = vector4Field.Values[i].Value.Y - commandValue2;
-                                        var subValue3 = vector4Field.Values[i].Value.Z - commandValue3;
-                                        var subValue4 = vector4Field.Values[i].Value.W - commandValue4;
-
-                                        if (subValue1 < float.MinValue)
-                                            subValue1 = float.MinValue;
-
-                                        if (subValue2 < float.MinValue)
-                                            subValue2 = float.MinValue;
-
-                                        if (subValue3 < float.MinValue)
-                                            subValue3 = float.MinValue;
-
-                                        if (subValue4 < float.MinValue)
-                                            subValue4 = float.MinValue;
-
-                                        Vector4 commandVector = new Vector4(subValue1, subValue2, subValue3, subValue4);
-                                        vector4Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Subtract Value VECTOR4 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Subtraction);
+                                        actions.Add(action);
                                     }
                                     if (effectType == EditEffectType.Multiply)
                                     {
-                                        var multValue1 = vector4Field.Values[i].Value.X * commandValue1;
-                                        var multValue2 = vector4Field.Values[i].Value.Y * commandValue2;
-                                        var multValue3 = vector4Field.Values[i].Value.Z * commandValue3;
-                                        var multValue4 = vector4Field.Values[i].Value.W * commandValue4;
-
-                                        if (multValue1 > float.MaxValue)
-                                            multValue1 = float.MaxValue;
-
-                                        if (multValue2 > float.MaxValue)
-                                            multValue2 = float.MaxValue;
-
-                                        if (multValue3 > float.MaxValue)
-                                            multValue3 = float.MaxValue;
-
-                                        if (multValue4 > float.MaxValue)
-                                            multValue4 = float.MaxValue;
-
-                                        if (multValue1 < float.MinValue)
-                                            multValue1 = float.MinValue;
-
-                                        if (multValue2 < float.MinValue)
-                                            multValue2 = float.MinValue;
-
-                                        if (multValue3 < float.MinValue)
-                                            multValue3 = float.MinValue;
-
-                                        if (multValue4 < float.MinValue)
-                                            multValue4 = float.MinValue;
-
-                                        Vector4 commandVector = new Vector4(multValue1, multValue2, multValue2, multValue4);
-                                        vector4Field.Values[i].Value = commandVector;
-
-                                        //TaskLogs.AddLog($"Command: Multiply Value VECTOR4 {commandVector} - {entry.Id}");
+                                        GparamValueChangeAction action = new GparamValueChangeAction(SelectedParamField, entry, commandValue, i, ValueChangeType.Multiplication);
+                                        actions.Add(action);
                                     }
                                 }
                             }

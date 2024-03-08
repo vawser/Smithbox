@@ -398,7 +398,7 @@ public class GparamEditor
                 else
                 {
                     GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(field, value, newValue, idx);
+                    action = new GparamValueChangeAction(field, value, newValue, idx, GparamValueChangeAction.ValueChangeType.Set);
                     GparamEditorScreen.EditorActionManager.ExecuteAction(action);
                 }
             }
