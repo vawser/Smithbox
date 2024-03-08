@@ -81,6 +81,28 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         if (e.WrappedObject is MSBE.Part)
                         {
                             MSBE.Part part = (MSBE.Part)e.WrappedObject;
+
+                            List<uint> checkedEntityGroups = new List<uint>();
+
+                            for (int i = 0; i < part.EntityGroupIDs.Length; i++)
+                            {
+                                if (part.EntityGroupIDs[i] == -1)
+                                    continue;
+
+                                if (checkedEntityGroups.Count > 0)
+                                {
+                                    foreach (var group in checkedEntityGroups)
+                                    {
+                                        if (part.EntityGroupIDs[i] == group)
+                                        {
+                                            hasError = true;
+                                            TaskLogs.AddLog($"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
+                                        }
+                                    }
+                                }
+
+                                checkedEntityGroups.Add(part.EntityGroupIDs[i]);
+                            }
                         }
                     }
                     if (Project.Type == ProjectType.SDT)
@@ -88,6 +110,28 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         if (e.WrappedObject is MSBS.Part)
                         {
                             MSBS.Part part = (MSBS.Part)e.WrappedObject;
+
+                            List<int> checkedEntityGroups = new List<int>();
+
+                            for (int i = 0; i < part.EntityGroupIDs.Length; i++)
+                            {
+                                if (part.EntityGroupIDs[i] == -1)
+                                    continue;
+
+                                if (checkedEntityGroups.Count > 0)
+                                {
+                                    foreach (var group in checkedEntityGroups)
+                                    {
+                                        if (part.EntityGroupIDs[i] == group)
+                                        {
+                                            hasError = true;
+                                            TaskLogs.AddLog($"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
+                                        }
+                                    }
+                                }
+
+                                checkedEntityGroups.Add(part.EntityGroupIDs[i]);
+                            }
                         }
                     }
                     if (Project.Type == ProjectType.DS3)
