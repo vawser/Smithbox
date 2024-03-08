@@ -109,7 +109,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MapAction_AssignEntityGroupID.Select(_selection);
             MapAction_ToggleObjectVisibilityByTag.Select(_selection);
             MapAction_TogglePatrolRoutes.Select(_selection);
-            MapAction_CheckDuplicateEntityID.Select(_selection);
+            MapAction_CheckForErrors.Select(_selection);
             MapAction_GenerateNavigationData.Select(_selection);
 
             ImGui.EndChild();
@@ -138,7 +138,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MapAction_AssignEntityGroupID.Configure(_selection);
             MapAction_ToggleObjectVisibilityByTag.Configure(_selection);
             MapAction_TogglePatrolRoutes.Configure(_selection);
-            MapAction_CheckDuplicateEntityID.Configure(_selection);
+            MapAction_CheckForErrors.Configure(_selection);
             MapAction_GenerateNavigationData.Configure(_selection);
 
             ImGui.EndChild();

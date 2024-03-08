@@ -34,7 +34,7 @@ namespace StudioCore.Editors.MapEditor
         Selection_Assign_Entity_Group_ID,
         Selection_Toggle_Object_Visibility_by_Tag,
         Selection_Render_Patrol_Routes,
-        Selection_Duplicate_Entity_ID,
+        Selection_Check_for_Errors,
         Selection_Generate_Navigation_Data
     }
 
