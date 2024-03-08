@@ -1,8 +1,10 @@
-﻿using ImGuiNET;
+﻿using DotNext.Collections.Generic;
+using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.CutsceneEditor;
 using StudioCore.UserProject;
+using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -180,7 +182,7 @@ public class CutsceneEditorScreen : EditorScreen
     {
         ImGui.Begin("Cutscenes##CutsceneList");
 
-        if (_selectedFileInfo.CutsceneFiles != null)
+        if (_selectedFileInfo != null)
         {
             for (int i = 0; i < _selectedFileInfo.CutsceneFiles.Count; i++)
             {
