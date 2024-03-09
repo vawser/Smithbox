@@ -554,6 +554,7 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("View"))
         {
+            /*
             if (ImGui.MenuItem("New View"))
             {
                 AddView();
@@ -570,6 +571,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 EditorCommandQueue.AddCommand(@"param/back");
             }
+            */
 
             ImGui.Separator();
 

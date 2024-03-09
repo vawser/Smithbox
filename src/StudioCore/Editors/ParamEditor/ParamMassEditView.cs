@@ -3,6 +3,7 @@ using StudioCore.AssetLocator;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -199,6 +200,12 @@ namespace StudioCore.Editors.ParamEditor
                         _currentMEditRegexInput = _selectedMassEditScript.GenerateMassedit();
                         SelectMassEditTab = true;
                     }
+                    ImGui.SameLine();
+                    if (ImGui.Button("Edit"))
+                    {
+                        _newScriptName = _selectedMassEditScript.name;
+                        _newScriptBody = _selectedMassEditScript.GenerateMassedit();
+                    }
                 }
             }
 
@@ -210,21 +217,51 @@ namespace StudioCore.Editors.ParamEditor
             ImGui.InputText("##scriptName", ref _newScriptName, 255);
             ImguiUtils.ShowHoverTooltip("The file name used for this script.");
 
+            ImGui.SameLine();
+            ImGui.Checkbox("Is Common Script", ref _newScriptIsCommon);
+            ImguiUtils.ShowHoverTooltip($"Save the script as a common script for all project types.\nIf not, then the script will only appear for {Project.Type} projects.");
+
             ImGui.Text("Script:");
             ImguiUtils.ShowHoverTooltip("The mass edit script.");
             ImGui.InputTextMultiline("##newMassEditScript", ref _newScriptBody, 65536, new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 24) * scale);
 
             if (ImGui.Button("Save"))
             {
-                var dir = ParamAssetLocator.GetMassEditScriptGameDir();
-                var path = Path.Combine(dir, $"{_newScriptName}.txt");
-
-                if(!Directory.Exists(path))
+                if(_newScriptName == "")
                 {
-                    Directory.CreateDirectory(path);
+                    PlatformUtils.Instance.MessageBox($"Name must not be empty.", "Smithbox", MessageBoxButtons.OK);
+                    return;
                 }
 
-                if (!File.Exists(path))
+                var path = "";
+                var commonPath = "";
+                var gameDirPath = "";
+
+                var commonDir = ParamAssetLocator.GetMassEditScriptCommonDir();
+                commonPath = Path.Combine(commonDir, $"{_newScriptName}.txt");
+
+                var gameDir = ParamAssetLocator.GetMassEditScriptGameDir();
+                gameDirPath = Path.Combine(gameDir, $"{_newScriptName}.txt");
+
+                if (_newScriptIsCommon)
+                {
+                    path = commonPath;
+                    if (!Directory.Exists(commonDir))
+                    {
+                        Directory.CreateDirectory(commonDir);
+                    }
+                }
+                else
+                {
+                    path = gameDirPath;
+                    if (!Directory.Exists(gameDir))
+                    {
+                        Directory.CreateDirectory(gameDir);
+                    }
+                }
+
+                // Check both so the name is unique everywhere
+                if (!File.Exists(gameDirPath) && !File.Exists(commonPath))
                 {
                     try
                     {
@@ -239,11 +276,15 @@ namespace StudioCore.Editors.ParamEditor
                         TaskLogs.AddLog($"{ex}");
                     }
                 }
+                else
+                {
+                    PlatformUtils.Instance.MessageBox($"{_newScriptName}.txt already exists within the MassEditScripts folder.", "Smithbox", MessageBoxButtons.OK);
+                }
 
                 MassEditScript.ReloadScripts();
             }
             ImGui.SameLine();
-            if(ImGui.Button("Open Script Folder"))
+            if (ImGui.Button("Open Script Folder"))
             {
                 var dir = ParamAssetLocator.GetMassEditScriptGameDir();
                 Process.Start("explorer.exe", dir);
@@ -252,6 +293,7 @@ namespace StudioCore.Editors.ParamEditor
 
         private string _newScriptName = "";
         private string _newScriptBody = "";
+        private bool _newScriptIsCommon = true;
 
         public void DisplayMassEditWiki()
         {
