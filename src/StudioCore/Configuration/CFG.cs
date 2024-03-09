@@ -312,7 +312,8 @@ public class CFG
     //****************************
     // Settings: Param Editor
     //****************************
-    public bool Param_MasseditPopupInContextMenu = true;
+    public bool UI_CompactParams = false;
+
     public bool Param_AdvancedMassedit = false;
     public bool Param_AllowFieldReorder = true;
     public bool Param_AlphabeticalParams = true;
@@ -323,16 +324,33 @@ public class CFG
     public bool Param_MakeMetaNamesPrimary = true;
     public bool Param_PasteAfterSelection = false;
     public bool Param_ShowFieldOffsets = false;
-    public bool Param_ShowHotkeysInContextMenu = true;
     public bool Param_ShowSecondaryNames = true;
     public bool Param_ShowVanillaParams = true;
-    public bool Param_FieldNameInContextMenu = true;
-    public bool Param_FieldDescriptionInContextMenu = true;
-    public bool Param_SplitContextMenu = false;
-    public bool UI_CompactParams = false;
-    public bool Param_QuickNameEdit = false;
+
     public int Param_DuplicateAmount = 1;
     public bool Param_ShowTraditionalPercentages = false;
+
+    public bool Param_MassEdit_ShowWiki = true;
+    public bool Param_MassEdit_ShowAddButtons = true;
+
+    public bool Param_RowContextMenu_NameInput = true;
+    public bool Param_RowContextMenu_ShortcutTools = true;
+    public bool Param_RowContextMenu_PinOptions = true;
+    public bool Param_RowContextMenu_CompareOptions = true;
+    public bool Param_RowContextMenu_ReverseLoopup = true;
+    public bool Param_RowContextMenu_CopyID = true;
+
+    public bool Param_FieldContextMenu_Split = false;
+    public bool Param_FieldContextMenu_Name = false;
+    public bool Param_FieldContextMenu_Description = false;
+    public bool Param_FieldContextMenu_PropertyInfo = false;
+    public bool Param_FieldContextMenu_PinOptions = true;
+    public bool Param_FieldContextMenu_CompareOptions = true;
+    public bool Param_FieldContextMenu_ValueDistribution = true;
+    public bool Param_FieldContextMenu_AddOptions = true;
+    public bool Param_FieldContextMenu_ReferenceSearch = true;
+    public bool Param_FieldContextMenu_MassEdit = true;
+    public bool Param_FieldContextMenu_FullMassEdit = true;
 
     //****************************
     // Settings: Text Editor

@@ -1,3 +1,5 @@
+##@@Generate Affinity
+##@@False
 ##This script is based on Vawser's work in Yapped Rune Bear.
 ##Some values and adjustments may not be as expected as this script expects a regularly upgrading, physical weapon.
 ##This script only handles 1 row at a time (baseID).

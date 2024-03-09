@@ -12,12 +12,12 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class MassEditScript
 {
-    private static List<MassEditScript> scriptList = new List<MassEditScript>();
+    public static List<MassEditScript> scriptList = new List<MassEditScript>();
     private readonly List<string[]> args;
 
-    private readonly string name;
-    private readonly List<string> preamble;
-    private readonly string[] text;
+    public readonly string name;
+    public readonly List<string> preamble;
+    public readonly string[] text;
 
     private MassEditScript(string path, string name)
     {

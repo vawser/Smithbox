@@ -9,14 +9,21 @@ public class UIHints
     public static string MassEditHint =
         @"For help with regex or examples, consult the main help menu.
 Mass Edit Commands exist to make large batch-edits according to a simple scheme.
-Specific help with individual components of massedit can be found in the autofill menu by clicking the ?
-The autofill is a valuable tool to help understand massedits. Feel free to experiment, you can ctrl-z a massedit.
+Specific help with individual components of massedit can be found in the autofill menu by 
+clicking the ?
+
+The autofill is a valuable tool to help understand massedits. Feel free to experiment, 
+you can ctrl-z a massedit.
 
 A mass edit command is formed of selectors and an operation.
-There are multiple stages of selection when making a param massedit, going from params, to rows, to cells (fields).
+There are multiple stages of selection when making a param massedit, going from params, 
+to rows, to cells (fields).
+
 Finally, an operation is applied to everything selected.
 
-A selector has a name, such as the row selector 'prop', and can have arguments, separated by spaces.
+A selector has a name, such as the row selector 'prop', and can have arguments,
+separated by spaces.
+
 In this case, prop expects the property name, and a value that the row should have to be selected.
 All rows which match this are kept, while everything else is discarded.
 This process repeats for each condition, and across each stage of selection.

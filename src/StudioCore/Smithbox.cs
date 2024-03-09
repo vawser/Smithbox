@@ -142,7 +142,7 @@ public class Smithbox
         EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
         EditorContainer.BehaviorEditor = new BehaviorEditorScreen(_context.Window, _context.Device);
 
-        WindowContainer.MemoryWindow._activeView = EditorContainer.ParamEditor._activeView;
+        WindowContainer.MemoryWindow._activeView = ParamEditorScreen._activeView;
 
         _editors = new List<EditorScreen>();
 

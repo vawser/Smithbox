@@ -27,6 +27,10 @@ public class ParamEditorView
 
     internal ParamEditorScreen _paramEditor;
 
+    internal ParamToolbarView _toolbarView;
+    internal ParamMassEditView _massEditView;
+    internal ParamDataView _dataView;
+
     internal ParamEditorSelectionState _selection;
     internal int _viewIndex;
 
@@ -37,11 +41,20 @@ public class ParamEditorView
         _paramEditor = parent;
         _viewIndex = index;
         _propEditor = new ParamRowEditor(parent.EditorActionManager, _paramEditor);
+        _toolbarView = new ParamToolbarView(parent.EditorActionManager);
+        _dataView = new ParamDataView(parent.EditorActionManager);
+        _massEditView = new ParamMassEditView(parent.EditorActionManager);
         _selection = new ParamEditorSelectionState(_paramEditor);
     }
 
+    //------------------------------------
+    // Param
+    //------------------------------------
     private void ParamView_ParamList_Header(bool isActiveView)
     {
+        ImGui.Text("Params");
+        ImGui.Separator();
+
         if (ParamBank.PrimaryBank.ParamVersion != 0)
         {
             ImGui.Text($"Param version {Utils.ParseParamVersion(ParamBank.PrimaryBank.ParamVersion)}");
@@ -89,8 +102,6 @@ public class ParamEditorView
             {
                 UICache.ClearCaches();
             }
-
-            ImGui.Separator();
         }
         else if (Project.Type is ProjectType.DS2S)
         {
@@ -99,8 +110,6 @@ public class ParamEditorView
             {
                 UICache.ClearCaches();
             }
-
-            ImGui.Separator();
         }
         else if (Project.Type is ProjectType.ER || Project.Type is ProjectType.AC6)
         {
@@ -114,9 +123,9 @@ public class ParamEditorView
                 _eventParamView = false;
                 UICache.ClearCaches();
             }
-
-            ImGui.Separator();
         }
+
+        ImGui.Separator();
     }
 
     private void ParamView_ParamList_Pinned(float scale)
@@ -317,10 +326,15 @@ public class ParamEditorView
         ParamView_ParamList_Main(doFocus, scale, scrollTo);
         ImGui.EndChild();
     }
-
+    //------------------------------------
+    // Row
+    //------------------------------------
     private void ParamView_RowList_Header(ref bool doFocus, bool isActiveView, ref float scrollTo,
         string activeParam)
     {
+        ImGui.Text("Rows");
+        ImGui.Separator();
+
         scrollTo = 0;
 
         if (ImGui.Button($"Go to selected <{KeyBindings.Current.Param_GotoSelectedRow.HintText}>") ||
@@ -385,6 +399,8 @@ public class ParamEditorView
         }
 
         UIHints.AddImGuiHintButton("MassEditHint", ref UIHints.SearchBarHint);
+
+        ImGui.Separator();
     }
 
     private void ParamView_RowList(bool doFocus, bool isActiveView, float scrollTo, string activeParam)
@@ -530,8 +546,19 @@ public class ParamEditorView
         }
     }
 
+    //------------------------------------
+    // Field
+    //------------------------------------
+    private void ParamView_FieldList_Header(bool isActiveView, string activeParam, Param.Row activeRow)
+    {
+        ImGui.Text("Fields");
+        ImGui.Separator();
+    }
+
     private void ParamView_FieldList(bool isActiveView, string activeParam, Param.Row activeRow)
     {
+        ParamView_FieldList_Header(isActiveView, activeParam, activeRow);
+
         if (activeRow == null)
         {
             ImGui.BeginChild("columnsNONE");
@@ -563,30 +590,72 @@ public class ParamEditorView
     {
         var scale = Smithbox.GetUIScale();
 
-        if (EditorDecorations.ImGuiTableStdColumns("paramsT", 3, true))
+        var dsid = ImGui.GetID("DockSpace_ParamView");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        if (ImGui.Begin("Param Editor##ParamViewWindow"))
         {
-            ImGui.TableSetupColumn("paramsCol", ImGuiTableColumnFlags.None, 0.5f);
-            ImGui.TableSetupColumn("paramsCol2", ImGuiTableColumnFlags.None, 0.5f);
-            var scrollTo = 0f;
-            if (ImGui.TableNextColumn())
+            if (EditorDecorations.ImGuiTableStdColumns("paramsT", 3, true))
             {
-                ParamView_ParamList(doFocus, isActiveView, scale, scrollTo);
+                ImGui.TableSetupColumn("paramsCol", ImGuiTableColumnFlags.None, 0.5f);
+                ImGui.TableSetupColumn("paramsCol2", ImGuiTableColumnFlags.None, 0.5f);
+                var scrollTo = 0f;
+                if (ImGui.TableNextColumn())
+                {
+                    ParamView_ParamList(doFocus, isActiveView, scale, scrollTo);
+                }
+
+                var activeParam = _selection.GetActiveParam();
+                if (ImGui.TableNextColumn())
+                {
+                    ParamView_RowList(doFocus, isActiveView, scrollTo, activeParam);
+                }
+
+                Param.Row activeRow = _selection.GetActiveRow();
+                if (ImGui.TableNextColumn())
+                {
+                    ParamView_FieldList(isActiveView, activeParam, activeRow);
+                }
+
+                ImGui.EndTable();
             }
 
-            var activeParam = _selection.GetActiveParam();
-            if (ImGui.TableNextColumn())
-            {
-                ParamView_RowList(doFocus, isActiveView, scrollTo, activeParam);
-            }
-
-            Param.Row activeRow = _selection.GetActiveRow();
-            if (ImGui.TableNextColumn())
-            {
-                ParamView_FieldList(isActiveView, activeParam, activeRow);
-            }
-
-            ImGui.EndTable();
+            ImGui.End();
         }
+
+        // Toolbar
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+        if (ImGui.Begin("Toolbar##ParamToolbar"))
+        {
+            _toolbarView.OnGui();
+        }
+        ImGui.End();
+        ImGui.PopStyleColor(1);
+
+        // Mass Edit
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+        if (ImGui.Begin("Mass Edit##MassEditView"))
+        {
+            _massEditView.OnGui();
+        }
+
+        ImGui.End();
+        ImGui.PopStyleColor(1);
+
+        // Data Export/Import
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+        if (ImGui.Begin("Data##DataView"))
+        {
+            _dataView.OnGui();
+        }
+        ImGui.End();
+        ImGui.PopStyleColor(1);
     }
 
     private void ParamView_RowList_Entry_Row(bool[] selectionCache, int selectionCacheIndex, string activeParam,
@@ -710,7 +779,7 @@ public class ParamEditorView
         // Param Context Menu
         if (ImGui.BeginPopupContextItem(r.ID.ToString()))
         {
-            if (CFG.Current.Param_QuickNameEdit)
+            if (CFG.Current.Param_RowContextMenu_NameInput)
             {
                 if (_selection.RowSelectionExists())
                 {
@@ -720,7 +789,7 @@ public class ParamEditorView
                 }
             }
 
-            if (CFG.Current.Param_ShowHotkeysInContextMenu)
+            if (CFG.Current.Param_RowContextMenu_ShortcutTools)
             {
                 if (ImGui.Selectable(@$"Copy selection ({KeyBindings.Current.Param_Copy.HintText})", false,
                         _selection.RowSelectionExists()
@@ -769,47 +838,60 @@ public class ParamEditorView
                 ImGui.Separator();
             }
 
-            if (ImGui.Selectable((isPinned ? "Unpin " : "Pin ") + r.ID))
+            if (CFG.Current.Param_RowContextMenu_PinOptions)
             {
-                if (!_paramEditor._projectSettings.PinnedRows.ContainsKey(activeParam))
+                if (ImGui.Selectable((isPinned ? "Unpin " : "Pin ") + r.ID))
                 {
-                    _paramEditor._projectSettings.PinnedRows.Add(activeParam, new List<int>());
+                    if (!_paramEditor._projectSettings.PinnedRows.ContainsKey(activeParam))
+                    {
+                        _paramEditor._projectSettings.PinnedRows.Add(activeParam, new List<int>());
+                    }
+
+                    List<int> pinned = _paramEditor._projectSettings.PinnedRows[activeParam];
+
+                    if (isPinned)
+                    {
+                        pinned.Remove(r.ID);
+                    }
+                    else if (!pinned.Contains(r.ID))
+                    {
+                        pinned.Add(r.ID);
+                    }
                 }
 
-                List<int> pinned = _paramEditor._projectSettings.PinnedRows[activeParam];
 
                 if (isPinned)
                 {
-                    pinned.Remove(r.ID);
+                    EditorDecorations.PinListReorderOptions(_paramEditor._projectSettings.PinnedRows[activeParam], r.ID);
                 }
-                else if (!pinned.Contains(r.ID))
-                {
-                    pinned.Add(r.ID);
-                }
-            }
 
-            if (isPinned)
-            {
-                EditorDecorations.PinListReorderOptions(_paramEditor._projectSettings.PinnedRows[activeParam], r.ID);
+                ImGui.Separator();
             }
-
-            ImGui.Separator();
 
             if (decorator != null)
             {
                 decorator.DecorateContextMenuItems(r);
             }
 
-            if (ImGui.Selectable("Compare..."))
+            if (CFG.Current.Param_RowContextMenu_CompareOptions)
             {
-                _selection.SetCompareRow(r);
+                if (ImGui.Selectable("Compare..."))
+                {
+                    _selection.SetCompareRow(r);
+                }
             }
 
-            EditorDecorations.ParamRefReverseLookupSelectables(_paramEditor, ParamBank.PrimaryBank, activeParam, r.ID);
-
-            if (ImGui.Selectable("Copy ID to clipboard"))
+            if (CFG.Current.Param_RowContextMenu_ReverseLoopup)
             {
-                PlatformUtils.Instance.SetClipboardText($"{r.ID}");
+                EditorDecorations.ParamRefReverseLookupSelectables(_paramEditor, ParamBank.PrimaryBank, activeParam, r.ID);
+            }
+
+            if (CFG.Current.Param_RowContextMenu_CopyID)
+            {
+                if (ImGui.Selectable("Copy ID to clipboard"))
+                {
+                    PlatformUtils.Instance.SetClipboardText($"{r.ID}");
+                }
             }
 
             ImGui.EndPopup();

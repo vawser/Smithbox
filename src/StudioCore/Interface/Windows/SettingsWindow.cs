@@ -544,9 +544,6 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Show advanced options in massedit popup", ref CFG.Current.Param_AdvancedMassedit);
                 ImguiUtils.ShowHoverTooltip("Show additional options for advanced users within the massedit popup.");
-
-                ImGui.Checkbox("Show shortcut tools in context menus", ref CFG.Current.Param_ShowHotkeysInContextMenu);
-                ImguiUtils.ShowHoverTooltip("Show the shortcut tools in the right-click context menu.");
             }
 
             // Params
@@ -565,9 +562,6 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Disable row grouping", ref CFG.Current.Param_DisableRowGrouping);
                 ImguiUtils.ShowHoverTooltip("Disable the grouping of connected rows in certain params, such as ItemLotParam within the Row View list.");
-
-                ImGui.Checkbox("Enable direct row name editing", ref CFG.Current.Param_QuickNameEdit);
-                ImguiUtils.ShowHoverTooltip("Enable the ability to change a row name within the right-click context menu.");
             }
 
             // Fields
@@ -590,18 +584,6 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
                 ImguiUtils.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
-
-                ImGui.Checkbox("Field name in context menu", ref CFG.Current.Param_FieldNameInContextMenu);
-                ImguiUtils.ShowHoverTooltip("Repeat the field name in the context menu.");
-
-                ImGui.Checkbox("Field description in context menu", ref CFG.Current.Param_FieldDescriptionInContextMenu);
-                ImguiUtils.ShowHoverTooltip("Repeat the field description in the context menu.");
-
-                ImGui.Checkbox("Full massedit popup in context menu", ref CFG.Current.Param_MasseditPopupInContextMenu);
-                ImguiUtils.ShowHoverTooltip(@"If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
-
-                ImGui.Checkbox("Split context menu", ref CFG.Current.Param_SplitContextMenu);
-                ImguiUtils.ShowHoverTooltip("Split the field context menu into separate menus for separate right-click locations.");
             }
 
             // Values
@@ -609,6 +591,76 @@ public class SettingsWindow
                 {
                     ImGui.Checkbox("Show inverted percentages as traditional percentages", ref CFG.Current.Param_ShowTraditionalPercentages);
                 ImguiUtils.ShowHoverTooltip("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
+            }
+
+            // Mass Edit
+            if (ImGui.CollapsingHeader("Mass Edit"))
+            {
+                ImGui.Checkbox("Display wiki tabs", ref CFG.Current.Param_MassEdit_ShowWiki);
+                ImguiUtils.ShowHoverTooltip("Display the wiki tabs in the Mass Edit window.");
+
+                ImGui.Checkbox("Display quick add buttons", ref CFG.Current.Param_MassEdit_ShowAddButtons);
+                ImguiUtils.ShowHoverTooltip("Display the quick add buttons in the Mass Edit window.");
+            }
+
+            // Context Menu
+            if (ImGui.CollapsingHeader("Row Context Menu"))
+            {
+                ImGui.Checkbox("Display row name input", ref CFG.Current.Param_RowContextMenu_NameInput);
+                ImguiUtils.ShowHoverTooltip("Display a row name input within the right-click context menu.");
+
+                ImGui.Checkbox("Display row shortcut tools", ref CFG.Current.Param_RowContextMenu_ShortcutTools);
+                ImguiUtils.ShowHoverTooltip("Show the shortcut tools in the right-click row context menu.");
+
+                ImGui.Checkbox("Display row pin options", ref CFG.Current.Param_RowContextMenu_PinOptions);
+                ImguiUtils.ShowHoverTooltip("Show the pin options in the right-click row context menu.");
+
+                ImGui.Checkbox("Display row compare options", ref CFG.Current.Param_RowContextMenu_CompareOptions);
+                ImguiUtils.ShowHoverTooltip("Show the compare options in the right-click row context menu.");
+
+                ImGui.Checkbox("Display row reverse lookup option", ref CFG.Current.Param_RowContextMenu_ReverseLoopup);
+                ImguiUtils.ShowHoverTooltip("Show the reverse lookup option in the right-click row context menu.");
+
+                ImGui.Checkbox("Display row copy id option", ref CFG.Current.Param_RowContextMenu_CopyID);
+                ImguiUtils.ShowHoverTooltip("Show the copy id option in the right-click row context menu.");
+            }
+
+            // Context Menu
+            if (ImGui.CollapsingHeader("Field Context Menu"))
+            {
+
+                ImGui.Checkbox("Split context menu", ref CFG.Current.Param_FieldContextMenu_Split);
+                ImguiUtils.ShowHoverTooltip("Split the field context menu into separate menus for separate right-click locations.");
+
+                ImGui.Checkbox("Display field name", ref CFG.Current.Param_FieldContextMenu_Name);
+                ImguiUtils.ShowHoverTooltip("Display the field name in the context menu.");
+
+                ImGui.Checkbox("Display field description", ref CFG.Current.Param_FieldContextMenu_Description);
+                ImguiUtils.ShowHoverTooltip("Display the field description in the context menu.");
+
+                ImGui.Checkbox("Display field property info", ref CFG.Current.Param_FieldContextMenu_PropertyInfo);
+                ImguiUtils.ShowHoverTooltip("Display the field property info in the context menu.");
+
+                ImGui.Checkbox("Display field pin options", ref CFG.Current.Param_FieldContextMenu_PinOptions);
+                ImguiUtils.ShowHoverTooltip("Display the field pin options in the context menu.");
+
+                ImGui.Checkbox("Display field compare options", ref CFG.Current.Param_FieldContextMenu_CompareOptions);
+                ImguiUtils.ShowHoverTooltip("Display the field compare options in the context menu.");
+
+                ImGui.Checkbox("Display field value distribution option", ref CFG.Current.Param_FieldContextMenu_ValueDistribution);
+                ImguiUtils.ShowHoverTooltip("Display the field value distribution option in the context menu.");
+
+                ImGui.Checkbox("Display field add options", ref CFG.Current.Param_FieldContextMenu_AddOptions);
+                ImguiUtils.ShowHoverTooltip("Display the field add to searchbar and mass edit options in the context menu.");
+
+                ImGui.Checkbox("Display field reference search", ref CFG.Current.Param_FieldContextMenu_ReferenceSearch);
+                ImguiUtils.ShowHoverTooltip("Display the field reference search in the context menu.");
+
+                ImGui.Checkbox("Display field mass edit options", ref CFG.Current.Param_FieldContextMenu_MassEdit);
+                ImguiUtils.ShowHoverTooltip("Display the field mass edit options in the context menu.");
+
+                ImGui.Checkbox("Display full mass edit submenu", ref CFG.Current.Param_FieldContextMenu_FullMassEdit);
+                ImguiUtils.ShowHoverTooltip("If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
             }
 
             ImGui.EndTabItem();

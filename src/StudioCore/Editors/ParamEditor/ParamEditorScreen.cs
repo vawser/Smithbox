@@ -178,7 +178,7 @@ public class ParamEditorScreen : EditorScreen
     /// </summary>
     public readonly List<ProjectType> ParamUpgrade_SupportedGames = new() { ProjectType.ER, ProjectType.AC6 };
 
-    internal ParamEditorView _activeView;
+    public static ParamEditorView _activeView;
 
     private string[] _autoFillArgsCop = Enumerable
         .Repeat("", MEValueOperation.valueOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
@@ -983,6 +983,10 @@ public class ParamEditorScreen : EditorScreen
                 style.ItemSpacing * scale - new Vector2(3.5f, 0f) * scale);
         }
 
+        // Remove the multiple View feature for now
+        _activeView.ParamView(doFocus, true);
+
+        /*
         if (CountViews() == 1)
         {
             _activeView.ParamView(doFocus, true);
@@ -1030,6 +1034,7 @@ public class ParamEditorScreen : EditorScreen
                 ImGui.PopStyleColor(1);
             }
         }
+        */
 
         if (CFG.Current.UI_CompactParams)
         {

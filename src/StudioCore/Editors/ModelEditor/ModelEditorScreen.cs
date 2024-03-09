@@ -131,8 +131,11 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         if (CFG.Current.ModelEditor_RenderingUpdate)
         {
             CFG.Current.ModelEditor_RenderingUpdate = false;
-            FlverResource r = _flverhandle.Get();
-            _universe.LoadFlver(r.Flver, _renderMesh, _currentModel);
+            if (_flverhandle != null)
+            {
+                FlverResource r = _flverhandle.Get();
+                _universe.LoadFlver(r.Flver, _renderMesh, _currentModel);
+            }
         }
 
         if (_loadingTask != null && _loadingTask.IsCompleted)

@@ -332,7 +332,7 @@ public class ParamRowEditor
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
-                if (!CFG.Current.Param_SplitContextMenu)
+                if (!CFG.Current.Param_FieldContextMenu_Split)
                 {
                     ImGui.OpenPopup("ParamRowCommonMenu");
                 }
@@ -369,7 +369,7 @@ public class ParamRowEditor
 
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
                 {
-                    if (!CFG.Current.Param_SplitContextMenu)
+                    if (!CFG.Current.Param_FieldContextMenu_Split)
                     {
                         ImGui.OpenPopup("ParamRowCommonMenu");
                     }
@@ -426,7 +426,7 @@ public class ParamRowEditor
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
-                if (!CFG.Current.Param_SplitContextMenu)
+                if (!CFG.Current.Param_FieldContextMenu_Split)
                 {
                     ImGui.OpenPopup("ParamRowCommonMenu");
                 }
@@ -460,7 +460,7 @@ public class ParamRowEditor
 
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
                 {
-                    if (!CFG.Current.Param_SplitContextMenu)
+                    if (!CFG.Current.Param_FieldContextMenu_Split)
                     {
                         ImGui.OpenPopup("ParamRowCommonMenu");
                     }
@@ -677,13 +677,17 @@ public class ParamRowEditor
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);
 
+        // Field Information
         if (col != null)
         {
-            EditorDecorations.ImGui_DisplayPropertyInfo(propType, internalName, isNameMenu, !isNameMenu, altName,
-                col.Def.ArrayLength,
-                col.Def.BitSize);
+            if (CFG.Current.Param_FieldContextMenu_PropertyInfo)
+            {
+                EditorDecorations.ImGui_DisplayPropertyInfo(propType, internalName, isNameMenu, !isNameMenu, altName,
+                    col.Def.ArrayLength,
+                    col.Def.BitSize);
+            }
 
-            if (isNameMenu && CFG.Current.Param_FieldDescriptionInContextMenu)
+            if (isNameMenu && CFG.Current.Param_FieldContextMenu_Description)
             {
                 if (Wiki != null)
                 {
@@ -699,14 +703,13 @@ public class ParamRowEditor
         else
         {
             // Headers
-            if (CFG.Current.Param_FieldNameInContextMenu)
+            if (CFG.Current.Param_FieldContextMenu_Name)
             {
                 ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.4f, 1.0f), Utils.ImGuiEscape(internalName, "", true));
             }
         }
 
-
-        if (isNameMenu && (CFG.Current.Param_FieldNameInContextMenu || CFG.Current.Param_FieldDescriptionInContextMenu))
+        if (isNameMenu && (CFG.Current.Param_FieldContextMenu_Name || CFG.Current.Param_FieldContextMenu_Description || CFG.Current.Param_FieldContextMenu_PropertyInfo))
         {
             ImGui.Separator();
         }
@@ -717,7 +720,41 @@ public class ParamRowEditor
             return;
         }
 
-        if (showPinOptions)
+        // Add to Search
+        if (ImGui.MenuItem("Add to Searchbar"))
+        {
+            if (col != null)
+            {
+                EditorCommandQueue.AddCommand($@"param/search/prop {internalName.Replace(" ", "\\s")} ");
+            }
+            else
+            {
+                // Headers
+                EditorCommandQueue.AddCommand($@"param/search/{internalName.Replace(" ", "\\s")} ");
+            }
+        }
+
+        // Add to Mass Edit
+        if (ImGui.MenuItem("Add to Mass Edit"))
+        {
+            var propertyName = internalName.Replace(" ", "\\s");
+            string currInput = ParamMassEditView._currentMEditRegexInput;
+
+            if(currInput == "")
+            {
+                // Add selection section if input is empty
+                ParamMassEditView._currentMEditRegexInput = $"selection: {propertyName}: ";
+            }
+            else
+            {
+                // Otherwise just add the property name
+                currInput = $"{currInput}{propertyName}";
+                ParamMassEditView._currentMEditRegexInput = currInput;
+            }
+        }
+
+        // Pin Options
+        if (showPinOptions && CFG.Current.Param_FieldContextMenu_PinOptions)
         {
             if (ImGui.MenuItem(isPinned ? "Unpin " : "Pin " + internalName))
             {
@@ -747,29 +784,25 @@ public class ParamRowEditor
             ImGui.Separator();
         }
 
-        if (ImGui.MenuItem("Add to Searchbar"))
+        // Compare
+        if (CFG.Current.Param_FieldContextMenu_CompareOptions)
         {
-            if (col != null)
+            if (col != null && ImGui.MenuItem("Compare field"))
             {
-                EditorCommandQueue.AddCommand($@"param/search/prop {internalName.Replace(" ", "\\s")} ");
-            }
-            else
-            {
-                // Headers
-                EditorCommandQueue.AddCommand($@"param/search/{internalName.Replace(" ", "\\s")} ");
+                selection.SetCompareCol(col);
             }
         }
 
-        if (col != null && ImGui.MenuItem("Compare field"))
+        // Value Distribution
+        if (CFG.Current.Param_FieldContextMenu_ValueDistribution)
         {
-            selection.SetCompareCol(col);
+            if (ImGui.Selectable("View value distribution in selected rows..."))
+            {
+                EditorCommandQueue.AddCommand($@"param/menu/distributionPopup/{internalName}");
+            }
         }
 
-        if (ImGui.Selectable("View value distribution in selected rows..."))
-        {
-            EditorCommandQueue.AddCommand($@"param/menu/distributionPopup/{internalName}");
-        }
-
+        // Editor Mode
         if (ParamEditorScreen.EditorMode && cellMeta != null)
         {
             if (ImGui.BeginMenu("Add Reference"))
@@ -833,69 +866,75 @@ public class ParamRowEditor
         string VirtualRef, List<ExtRef> ExtRefs, dynamic oldval, ref object newval, List<ParamRef> RefTypes,
         List<FMGRef> FmgRef, ParamEnum Enum)
     {
-        if (VirtualRef != null || ExtRefs != null)
+        if (CFG.Current.Param_FieldContextMenu_ReferenceSearch)
         {
-            ImGui.Separator();
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_VirtualRef_Text);
-            EditorDecorations.VirtualParamRefSelectables(bank, VirtualRef, oldval, row, internalName, ExtRefs,
-                _paramEditor);
-            ImGui.PopStyleColor();
-        }
-
-        if (RefTypes != null || FmgRef != null || Enum != null)
-        {
-            ImGui.Separator();
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Ref_Text);
-
-            if (EditorDecorations.ParamRefEnumContextMenuItems(bank, oldval, ref newval, RefTypes, row, FmgRef, Enum, ContextActionManager))
-            {
-                ParamEditorCommon.SetLastPropertyManual(newval);
-            }
-
-            ImGui.PopStyleColor();
-        }
-
-        ImGui.Separator();
-
-        if (!CFG.Current.Param_MasseditPopupInContextMenu)
-        {
-            if (ImGui.Selectable("Mass edit"))
-            {
-                EditorCommandQueue.AddCommand(
-                    $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
-            }
-
-            if (ImGui.Selectable("Reset to vanilla"))
-            {
-                MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
-                    $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
-                    _paramEditor._activeView._selection);
-            }
-        }
-        else
-        {
-            if (ImGui.CollapsingHeader("Mass edit", ImGuiTreeNodeFlags.SpanFullWidth))
+            if (VirtualRef != null || ExtRefs != null)
             {
                 ImGui.Separator();
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_VirtualRef_Text);
+                EditorDecorations.VirtualParamRefSelectables(bank, VirtualRef, oldval, row, internalName, ExtRefs,
+                    _paramEditor);
+                ImGui.PopStyleColor();
+            }
 
-                if (ImGui.Selectable("Manually..."))
+            if (RefTypes != null || FmgRef != null || Enum != null)
+            {
+                ImGui.Separator();
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Ref_Text);
+
+                if (EditorDecorations.ParamRefEnumContextMenuItems(bank, oldval, ref newval, RefTypes, row, FmgRef, Enum, ContextActionManager))
+                {
+                    ParamEditorCommon.SetLastPropertyManual(newval);
+                }
+
+                ImGui.PopStyleColor();
+            }
+        }
+
+        if (CFG.Current.Param_FieldContextMenu_MassEdit)
+        {
+            ImGui.Separator();
+
+            if (!CFG.Current.Param_FieldContextMenu_FullMassEdit)
+            {
+                if (ImGui.Selectable("Mass edit"))
                 {
                     EditorCommandQueue.AddCommand(
                         $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
                 }
 
-                if (ImGui.Selectable("Reset to vanilla..."))
+                if (ImGui.Selectable("Reset to vanilla"))
                 {
-                    EditorCommandQueue.AddCommand(
-                        $@"param/menu/massEditRegex/selection && !added: {Regex.Escape(internalName)}: = vanilla;");
+                    MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
+                        $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
+                        ParamEditorScreen._activeView._selection);
                 }
-
-                ImGui.Separator();
-                var res = AutoFill.MassEditOpAutoFill();
-                if (res != null)
+            }
+            else
+            {
+                if (ImGui.CollapsingHeader("Mass edit", ImGuiTreeNodeFlags.SpanFullWidth))
                 {
-                    EditorCommandQueue.AddCommand(
-                        $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: " + res);
+                    ImGui.Separator();
+
+                    if (ImGui.Selectable("Manually..."))
+                    {
+                        EditorCommandQueue.AddCommand(
+                            $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: ");
+                    }
+
+                    if (ImGui.Selectable("Reset to vanilla..."))
+                    {
+                        EditorCommandQueue.AddCommand(
+                            $@"param/menu/massEditRegex/selection && !added: {Regex.Escape(internalName)}: = vanilla;");
+                    }
+
+                    ImGui.Separator();
+                    var res = AutoFill.MassEditOpAutoFill();
+                    if (res != null)
+                    {
+                        EditorCommandQueue.AddCommand(
+                            $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: " + res);
+                    }
                 }
             }
         }
