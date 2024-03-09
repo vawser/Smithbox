@@ -47,52 +47,48 @@ namespace StudioCore.Editors.GparamEditor
 
         public static void OnGui()
         {
-            filterArguments = "" +
-            "\n-----------------------------------" +
-            $"\nFilters can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character." +
-            "\n-----------------------------------" +
+            filterArguments = $"Filter arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character." +
+            "\n" +
             "\n*" +
             "\nTargets all rows." +
-            "\n-----------------------------------" +
+            "\n" +
             $"\n{CFG.Current.Gparam_QuickEdit_ID}:<x>" +
             "\nTargets all rows with <x> ID." +
-            "\n-----------------------------------" +
+            "\n" +
             $"\n{CFG.Current.Gparam_QuickEdit_TimeOfDay}:<x>" +
             "\nTargets all rows with <x> Time of Day." +
-            "\n-----------------------------------" +
+            "\n" +
             $"\n{CFG.Current.Gparam_QuickEdit_Value}:[<x>]" +
             "\nTargets all rows with <x> Value." +
             "\nFor multi-values split them like so: [<x>,<x>]" +
-            "\n-----------------------------------";
+            "\n";
 
-            commandArguments = "" +
-            "\n-----------------------------------" +
-            $"\nCommands can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character." +
-            "\n-----------------------------------" +
+            commandArguments = $"Command arguments can be chained by using the '{CFG.Current.Gparam_QuickEdit_Chain}' character." +
+            "\n" +
             $"\n{CFG.Current.Gparam_QuickEdit_Set}:[<x>]" +
             "\nSets target rows to <x> Value." +
-            "\n-----------------------------------" +
+            "\n" +
             $"\n{CFG.Current.Gparam_QuickEdit_Add}:[<x>]" +
             "\nAdds <x> to the Value of the target rows." +
-            "\n-----------------------------------" +
+            "\n" +
             $"\n{CFG.Current.Gparam_QuickEdit_Subtract}:[<x>]" +
             "\nSubtracts <x> from the Value of the target rows." +
-            "\n-----------------------------------" +
+            "\n" +
             $"\n{CFG.Current.Gparam_QuickEdit_Multiply}:[<x>]" +
             "\nMultiplies the Value of the target rows by <x>." +
-            "\n-----------------------------------" +
+            "\n" +
             $"\n{CFG.Current.Gparam_QuickEdit_SetByRow}:<x>" +
             "\nSets target rows to the Value of row ID <x>." +
-            "\n-----------------------------------";
+            "\n";
 
             ImGui.Text("Filter: ");
-            ImguiUtils.ShowWideHoverTooltip($"Filter arguments:{filterArguments}");
+            ImguiUtils.ShowWideHoverTooltip($"{filterArguments}");
             ImGui.SameLine();
 
             ImGui.InputText("##filterString", ref _filterString, 255);
 
             ImGui.Text("Command:");
-            ImguiUtils.ShowWideHoverTooltip($"Command arguments:{commandArguments}");
+            ImguiUtils.ShowWideHoverTooltip($"{commandArguments}");
             ImGui.SameLine();
 
             ImGui.InputText("##commandString", ref _commandString, 255);
