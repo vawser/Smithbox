@@ -14,6 +14,8 @@ namespace StudioCore.TextureViewer;
 
 public class TextureViewerScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 

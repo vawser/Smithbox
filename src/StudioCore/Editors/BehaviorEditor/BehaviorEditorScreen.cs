@@ -16,6 +16,8 @@ namespace StudioCore.BehaviorEditor;
 
 public class BehaviorEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 

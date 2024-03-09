@@ -20,6 +20,8 @@ public interface EditorScreen
     /// </summary>
     public string SaveType { get; }
 
+    public bool FirstFrame { get; set; }
+
     /// <summary>
     ///     Init function for setting up the editor
     /// </summary>

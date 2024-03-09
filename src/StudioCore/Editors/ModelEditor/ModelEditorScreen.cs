@@ -31,6 +31,8 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResourceEventListener
 {
+    public bool FirstFrame { get; set; }
+
     private ModelAssetBrowser _assetBrowser;
 
     private readonly ModelPropertyEditor _propEditor;

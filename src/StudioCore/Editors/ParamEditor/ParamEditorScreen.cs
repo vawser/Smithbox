@@ -170,6 +170,8 @@ public class FMGItemParamDecorator : IParamDecorator
 
 public class ParamEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     public static bool EditorMode;
 
     /// <summary>
@@ -1019,6 +1021,14 @@ public class ParamEditorScreen : EditorScreen
         else
         {
             ImGui.PopStyleVar();
+        }
+
+        // Focus on Mass Edit by default when this editor is made focused
+        if (FirstFrame)
+        {
+            ImGui.SetWindowFocus("Mass Edit##MassEditView");
+
+            FirstFrame = false;
         }
     }
 

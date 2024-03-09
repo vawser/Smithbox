@@ -34,6 +34,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     /// Lock variable used to handle pauses to the Update() function.
     /// </summary>
     private static readonly object _lock_PauseUpdate = new();
+    public bool FirstFrame { get; set; }
 
     /// <summary>
     /// Current entity selection within the viewport.
@@ -753,6 +754,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         SceneTree.OnGui();
         PropSearch.OnGui(propSearchCmd);
+
         if (Smithbox.FirstFrame)
         {
             ImGui.SetNextWindowFocus();
@@ -789,6 +791,14 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         }
 
         ImGui.PopStyleColor(1);
+
+        // Focus on Properties by default when this editor is made focused
+        if (FirstFrame)
+        {
+            ImGui.SetWindowFocus("Properties##mapeditprop");
+
+            FirstFrame = false;
+        }
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)

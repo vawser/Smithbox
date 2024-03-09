@@ -20,6 +20,8 @@ namespace StudioCore.MaterialEditor;
 
 public class MaterialEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 

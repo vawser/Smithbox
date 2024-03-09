@@ -19,6 +19,8 @@ namespace StudioCore.TextEditor;
 
 public class TextEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private readonly PropertyEditor _propEditor;
 
     public static FMGBank.EntryGroup _activeEntryGroup;

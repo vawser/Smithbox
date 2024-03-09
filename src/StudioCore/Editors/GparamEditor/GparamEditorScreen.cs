@@ -28,6 +28,8 @@ namespace StudioCore.GraphicsEditor;
 
 public class GparamEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private ProjectSettings _projectSettings;
 
     public static ActionManager EditorActionManager = new();

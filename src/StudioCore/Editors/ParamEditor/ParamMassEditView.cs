@@ -89,19 +89,19 @@ namespace StudioCore.Editors.ParamEditor
                 // This is done so the Scripts tab can force user focus to the Execution tab
                 if (SelectMassEditTab)
                 {
-                    SelectMassEditTab = false;
                     if (ImGui.BeginTabItem("Mass Edit##massEditExecution", ref massEditTab, ImGuiTabItemFlags.SetSelected))
                     {
                         DisplayMassEdit();
 
                         ImGui.EndTabItem();
                     }
+                    SelectMassEditTab = false;
                 }
                 // But we don't want to allow the tab to be closed, so switch back
                 // to the flagless version as soon as possible
                 else
                 {
-                    if (ImGui.BeginTabItem("Edit##massEditExecution"))
+                    if (ImGui.BeginTabItem("Mass Edit##massEditExecution"))
                     {
                         DisplayMassEdit();
 
@@ -199,8 +199,6 @@ namespace StudioCore.Editors.ParamEditor
                         _currentMEditRegexInput = _selectedMassEditScript.GenerateMassedit();
                         SelectMassEditTab = true;
                     }
-
-
                 }
             }
 
@@ -228,9 +226,18 @@ namespace StudioCore.Editors.ParamEditor
 
                 if (!File.Exists(path))
                 {
-                    File.WriteAllText(path, _newScriptBody);
-                    _newScriptName = "";
-                    _newScriptBody = "";
+                    try
+                    {
+                        var fs = new FileStream(path, System.IO.FileMode.Create);
+                        var data = Encoding.ASCII.GetBytes(_newScriptBody);
+                        fs.Write(data, 0, data.Length);
+                        fs.Flush();
+                        fs.Dispose();
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"{ex}");
+                    }
                 }
 
                 MassEditScript.ReloadScripts();

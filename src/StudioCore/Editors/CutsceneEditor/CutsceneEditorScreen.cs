@@ -14,6 +14,8 @@ namespace StudioCore.CutsceneEditor;
 
 public class CutsceneEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 

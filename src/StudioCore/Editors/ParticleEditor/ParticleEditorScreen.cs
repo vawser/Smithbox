@@ -13,6 +13,8 @@ namespace StudioCore.ParticleEditor;
 
 public class ParticleEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 

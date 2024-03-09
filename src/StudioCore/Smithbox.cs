@@ -1365,6 +1365,7 @@ public class Smithbox
             }
 
             ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
+
             if (ImGui.Begin(editor.EditorName))
             {
                 ImGui.PopStyleColor(1);
@@ -1376,6 +1377,8 @@ public class Smithbox
             }
             else
             {
+                // Reset this so on Focus the first frame focusing happens
+                editor.FirstFrame = true;
                 ImGui.PopStyleColor(1);
                 ImGui.PopStyleVar(1);
                 ImGui.End();

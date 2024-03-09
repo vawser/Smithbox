@@ -21,6 +21,8 @@ namespace StudioCore.TalkEditor;
 
 public class TalkScriptEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 

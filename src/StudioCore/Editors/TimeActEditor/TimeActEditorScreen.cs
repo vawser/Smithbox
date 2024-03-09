@@ -13,6 +13,8 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActEditorScreen : EditorScreen
 {
+    public bool FirstFrame { get; set; }
+
     private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
