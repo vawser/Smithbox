@@ -1,10 +1,13 @@
 ﻿using ImGuiNET;
+using StudioCore.AssetLocator;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -23,7 +26,6 @@ namespace StudioCore.Editors.ParamEditor
         private string _mEditRegexResult = "";
 
         private MassEditScript _selectedMassEditScript;
-        private string _newMassEditScriptInput = "";
 
         public static bool SelectMassEditTab = false;
         private bool massEditTab = true;
@@ -84,18 +86,27 @@ namespace StudioCore.Editors.ParamEditor
 
             if (ImGui.BeginTabBar("##massEditTools"))
             {
-                var flags = ImGuiTabItemFlags.None;
+                // This is done so the Scripts tab can force user focus to the Execution tab
                 if (SelectMassEditTab)
                 {
                     SelectMassEditTab = false;
-                    flags = ImGuiTabItemFlags.SetSelected;
+                    if (ImGui.BeginTabItem("Mass Edit##massEditExecution", ref massEditTab, ImGuiTabItemFlags.SetSelected))
+                    {
+                        DisplayMassEdit();
+
+                        ImGui.EndTabItem();
+                    }
                 }
-
-                if (ImGui.BeginTabItem("Edit##massEditExecution", ref massEditTab, flags))
+                // But we don't want to allow the tab to be closed, so switch back
+                // to the flagless version as soon as possible
+                else
                 {
-                    DisplayMassEdit();
+                    if (ImGui.BeginTabItem("Edit##massEditExecution"))
+                    {
+                        DisplayMassEdit();
 
-                    ImGui.EndTabItem();
+                        ImGui.EndTabItem();
+                    }
                 }
 
                 if (ImGui.BeginTabItem("Scripts##massEditScripts"))
@@ -154,6 +165,10 @@ namespace StudioCore.Editors.ParamEditor
         {
             var scale = Smithbox.GetUIScale();
 
+            ImGui.Separator();
+            ImGui.Text("Configured Scripts:");
+            ImGui.Separator();
+
             // Ignore the combo box if no files exist
             if (MassEditScript.scriptList.Count > 0)
             {
@@ -190,10 +205,46 @@ namespace StudioCore.Editors.ParamEditor
             }
 
             ImGui.Separator();
+            ImGui.Text("New Script:");
+            ImGui.Separator();
 
-            // New Script
-            ImGui.InputTextMultiline("##newMassEditScript", ref _newMassEditScriptInput, 65536, new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
+            ImGui.Text("Name:");
+            ImGui.InputText("##scriptName", ref _newScriptName, 255);
+            ImguiUtils.ShowHoverTooltip("The file name used for this script.");
+
+            ImGui.Text("Script:");
+            ImguiUtils.ShowHoverTooltip("The mass edit script.");
+            ImGui.InputTextMultiline("##newMassEditScript", ref _newScriptBody, 65536, new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 24) * scale);
+
+            if (ImGui.Button("Save"))
+            {
+                var dir = ParamAssetLocator.GetMassEditScriptGameDir();
+                var path = Path.Combine(dir, $"{_newScriptName}.txt");
+
+                if(!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                if (!File.Exists(path))
+                {
+                    File.WriteAllText(path, _newScriptBody);
+                    _newScriptName = "";
+                    _newScriptBody = "";
+                }
+
+                MassEditScript.ReloadScripts();
+            }
+            ImGui.SameLine();
+            if(ImGui.Button("Open Script Folder"))
+            {
+                var dir = ParamAssetLocator.GetMassEditScriptGameDir();
+                Process.Start("explorer.exe", dir);
+            }
         }
+
+        private string _newScriptName = "";
+        private string _newScriptBody = "";
 
         public void DisplayMassEditWiki()
         {

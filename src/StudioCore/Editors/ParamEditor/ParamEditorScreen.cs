@@ -302,30 +302,6 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Mass Edit", KeyBindings.Current.Param_MassEdit.HintText))
-            {
-                EditorCommandQueue.AddCommand(@"param/menu/massEditRegex");
-            }
-
-            if (ImGui.BeginMenu("Mass Edit Script"))
-            {
-                if (ImGui.Selectable("Open Scripts Folder"))
-                {
-                    Process.Start("explorer.exe", ParamAssetLocator.GetMassEditScriptGameDir());
-                }
-
-                if (ImGui.Selectable("Reload Scripts"))
-                {
-                    MassEditScript.ReloadScripts();
-                }
-
-                ImGui.Separator();
-
-                MassEditScript.EditorScreenMenuItems(ref _currentMEditRegexInput);
-
-                ImGui.EndMenu();
-            }
-
             if (ImGui.BeginMenu("Export CSV", _activeView._selection.ActiveParamExists()))
             {
                 DelimiterInputText();
