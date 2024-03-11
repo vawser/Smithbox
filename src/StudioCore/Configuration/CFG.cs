@@ -327,7 +327,6 @@ public class CFG
     public bool Param_ShowSecondaryNames = true;
     public bool Param_ShowVanillaParams = true;
 
-    public int Param_DuplicateAmount = 1;
     public bool Param_ShowTraditionalPercentages = false;
 
     public bool Param_MassEdit_ShowWiki = true;
@@ -351,6 +350,10 @@ public class CFG
     public bool Param_FieldContextMenu_ReferenceSearch = true;
     public bool Param_FieldContextMenu_MassEdit = true;
     public bool Param_FieldContextMenu_FullMassEdit = true;
+
+    public bool Param_Toolbar_Prompt_User_Action = true;
+
+    public int Param_Toolbar_Duplicate_Amount = 1;
 
     //****************************
     // Settings: Text Editor

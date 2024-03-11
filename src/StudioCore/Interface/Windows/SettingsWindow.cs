@@ -663,6 +663,12 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
             }
 
+            if (ImGui.CollapsingHeader("Toolbar", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Prompt user confirmation", ref CFG.Current.Param_Toolbar_Prompt_User_Action);
+                ImguiUtils.ShowHoverTooltip("Show a prompt before executing a irrevocable toolbar action to confirm user's intent.");
+            }
+
             ImGui.EndTabItem();
         }
     }

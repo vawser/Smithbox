@@ -230,17 +230,29 @@ public class ParamBank
         }
     }
 
-    public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false)
+    public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool useProjectNames = false)
     {
         var dir = ParamAssetLocator.GetParamNamesDir();
+
+        if (useProjectNames)
+        {
+            dir = $"{Project.GameModDirectory}\\.smithbox\\{Project.GetGameIDForDir()}\\Names";
+        }
+
         var files = param == null
             ? Directory.GetFiles(dir, "*.txt")
             : new[] { Path.Combine(dir, $"{param}.txt") };
+
         List<EditorAction> actions = new();
 
         foreach (var f in files)
         {
             var fName = Path.GetFileNameWithoutExtension(f);
+
+            if(!File.Exists(f))
+            {
+                continue;
+            }
 
             if (!_params.ContainsKey(fName))
             {
@@ -248,6 +260,7 @@ public class ParamBank
             }
 
             var names = File.ReadAllText(f);
+
             (var result, CompoundAction action) =
                 ParamIO.ApplySingleCSV(this, names, fName, "Name", ' ', true, onlyAffectEmptyNames, onlyAffectVanillaNames);
             if (action == null)

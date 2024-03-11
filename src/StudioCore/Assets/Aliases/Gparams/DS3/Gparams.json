@@ -1,20 +1,6 @@
 {
   "list": [
     {
-      "id": "dummy",
-      "name": "Dummy",
-      "tags": [
-        "dummy"
-      ]
-    },
-    {
-      "id": "m99_00_77_00",
-      "name": "Fukuda enemy test",
-      "tags": [
-        "unused"
-      ]
-    },
-    {
       "id": "default",
       "name": "Default",
       "tags": [
@@ -31,6 +17,90 @@
     {
       "id": "empty",
       "name": "Empty",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_00_0000",
+      "name": "High Wall of Lothric",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_00_0010",
+      "name": "High Wall of Lothric",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_00_0020",
+      "name": "High Wall of Lothric",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_00_0050",
+      "name": "High Wall of Lothric",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_00_0100",
+      "name": "High Wall of Lothric",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_00_0110",
+      "name": "High Wall of Lothric",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_00_0200",
+      "name": "High Wall of Lothric",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_01_0000",
+      "name": "Lothric Castle",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_01_0010",
+      "name": "Lothric Castle",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_01_0050",
+      "name": "Lothric Castle",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_01_0100",
+      "name": "Lothric Castle",
+      "tags": [
+        ""
+      ]
+    },
+    {
+      "id": "m30_01_0110",
+      "name": "Lothric Castle",
       "tags": [
         ""
       ]

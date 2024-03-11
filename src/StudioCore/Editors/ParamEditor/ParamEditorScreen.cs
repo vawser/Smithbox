@@ -22,6 +22,7 @@ using CompoundAction = StudioCore.Editor.CompoundAction;
 using DeleteParamsAction = StudioCore.Editor.DeleteParamsAction;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
+using StudioCore.Editors.ParamEditor.Toolbar;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -302,7 +303,11 @@ public class ParamEditorScreen : EditorScreen
                 GotoSelectedRow = true;
             }
 
-            ImGui.Separator();
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("Data"))
+        {
 
             if (ImGui.BeginMenu("Export CSV", _activeView._selection.ActiveParamExists()))
             {
@@ -320,8 +325,8 @@ public class ParamEditorScreen : EditorScreen
                         if (SaveCsvDialog(out var path))
                         {
                             IReadOnlyList<Param.Row> rows = ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()].Rows;
-                            TryWriteFile(path, ParamIO.GenerateCSV(rows, 
-                                ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()], 
+                            TryWriteFile(path, ParamIO.GenerateCSV(rows,
+                                ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()],
                                 CFG.Current.Param_Export_Delimiter[0]));
                         }
                     }
@@ -489,71 +494,7 @@ public class ParamEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            if (ImGui.MenuItem("Sort rows by ID", _activeView._selection.ActiveParamExists()))
-            {
-                EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(ParamBank.PrimaryBank, _activeView._selection.GetActiveParam()));
-            }
 
-            if (ImGui.BeginMenu("Import row names"))
-            {
-                ImGui.Checkbox("Only replace unmodified row names", ref _rowNameImporter_VanillaOnly);
-
-                if (_rowNameImporter_VanillaOnly)
-                {
-                    ImGui.BeginDisabled();
-                    ImGui.Checkbox("Only replace empty row names", ref _rowNameImporter_EmptyOnly);
-                    ImGui.EndDisabled();
-                }
-                else
-                {
-                    ImGui.Checkbox("Only replace empty row names", ref _rowNameImporter_EmptyOnly);
-                }
-
-                void ImportRowNames(bool currentParamOnly, string title)
-                {
-                    const string importRowQuestion =
-                        "Would you like to replace row names with default names defined within Smithbox?";
-
-                    var currentParam = currentParamOnly ? _activeView._selection.GetActiveParam() : null;
-                    DialogResult question = PlatformUtils.Instance.MessageBox(importRowQuestion, title,
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
-                    if (question == DialogResult.OK)
-                    {
-                        EditorActionManager.ExecuteAction(ParamBank.PrimaryBank.
-                            LoadParamDefaultNames(currentParam, _rowNameImporter_EmptyOnly, _rowNameImporter_VanillaOnly));
-                    }
-                }
-
-                if (ImGui.MenuItem("All", "", false, ParamBank.PrimaryBank.Params != null))
-                {
-                    ImportRowNames(false, "Replace row names?");
-                }
-
-                if (ImGui.MenuItem("Current Param", "", false, ParamBank.PrimaryBank.Params != null && _activeView._selection.ActiveParamExists()))
-                {
-                    ImportRowNames(true, $"Replace row names in {_activeView._selection.GetActiveParam()}?");
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.MenuItem("Trim hidden newlines in names", "", false, ParamBank.PrimaryBank.Params != null))
-            {
-                try
-                {
-                    EditorActionManager.PushSubManager(ParamBank.PrimaryBank.TrimNewlineChrsFromNames());
-                }
-                catch
-                {
-                }
-            }
-
-            ImGui.EndMenu();
-        }
-
-        if (ImGui.BeginMenu("View"))
-        {
             /*
             if (ImGui.MenuItem("New View"))
             {
@@ -572,36 +513,6 @@ public class ParamEditorScreen : EditorScreen
                 EditorCommandQueue.AddCommand(@"param/back");
             }
             */
-
-            ImGui.Separator();
-
-            if (ImGui.MenuItem("Check all params for edits", null, false, !ParamBank.PrimaryBank.IsLoadingParams && !ParamBank.VanillaBank.IsLoadingParams))
-            {
-                ParamBank.RefreshAllParamDiffCaches(true);
-            }
-
-            ImGui.Separator();
-
-            if (!EditorMode && ImGui.MenuItem("Editor Mode", null, EditorMode))
-            {
-                EditorMode = true;
-            }
-
-            if (EditorMode && ImGui.BeginMenu("Editor Mode"))
-            {
-                if (ImGui.MenuItem("Save Changes"))
-                {
-                    ParamMetaData.SaveAll();
-                    EditorMode = false;
-                }
-
-                if (ImGui.MenuItem("Discard Changes"))
-                {
-                    EditorMode = false;
-                }
-
-                ImGui.EndMenu();
-            }
 
             ImGui.EndMenu();
         }
@@ -719,6 +630,32 @@ public class ParamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Tools"))
         {
             ParamRowIdFinder.Display();
+
+            if (ImGui.MenuItem("Check all params for edits", null, false, !ParamBank.PrimaryBank.IsLoadingParams && !ParamBank.VanillaBank.IsLoadingParams))
+            {
+                ParamBank.RefreshAllParamDiffCaches(true);
+            }
+
+            if (!EditorMode && ImGui.MenuItem("Editor Mode", null, EditorMode))
+            {
+                EditorMode = true;
+            }
+
+            if (EditorMode && ImGui.BeginMenu("Editor Mode"))
+            {
+                if (ImGui.MenuItem("Save Changes"))
+                {
+                    ParamMetaData.SaveAll();
+                    EditorMode = false;
+                }
+
+                if (ImGui.MenuItem("Discard Changes"))
+                {
+                    EditorMode = false;
+                }
+
+                ImGui.EndMenu();
+            }
 
             ImGui.EndMenu();
         }
@@ -1611,31 +1548,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void DuplicateSelection()
     {
-        DuplicateSelection(_activeView._selection);
-    }
-
-    public void DuplicateSelection(ParamEditorSelectionState selectionState)
-    {
-        Param param = ParamBank.PrimaryBank.Params[selectionState.GetActiveParam()];
-        List<Param.Row> rows = selectionState.GetSelectedRows();
-
-        if (rows.Count == 0)
-        {
-            return;
-        }
-
-        List<Param.Row> rowsToInsert = new();
-
-        foreach (Param.Row r in rows)
-        {
-            Param.Row newrow = new(r);
-            rowsToInsert.Add(newrow);
-        }
-
-        for (int i = 0; i < CFG.Current.Param_DuplicateAmount; i++)
-        {
-            EditorActionManager.ExecuteAction(new AddParamsAction(param, "legacystring", rowsToInsert, false, false));
-        }
+        ParamAction_DuplicateRow.DuplicateSelection(_activeView._selection);
     }
 
     public void OpenMassEditPopup(string popup)

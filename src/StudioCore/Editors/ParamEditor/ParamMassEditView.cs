@@ -731,7 +731,7 @@ namespace StudioCore.Editors.ParamEditor
                     ImGui.Text("\n");
 
                     QuickAdd("%");
-                    ImGui.TextColored(CFG.Current.ImGui_Benefit_Text_Color, "% <value>");
+                    ImGui.TextColored(CFG.Current.ImGui_Benefit_Text_Color, @"% <value>");
                     ImGui.Text("Gives the remainder when the selected values are divided by the number.");
                     ImGui.Text("\n");
 

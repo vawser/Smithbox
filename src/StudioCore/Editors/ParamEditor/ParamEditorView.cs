@@ -2,6 +2,7 @@
 using ImGuiNET;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.UserProject;
@@ -29,7 +30,6 @@ public class ParamEditorView
 
     internal ParamToolbarView _toolbarView;
     internal ParamMassEditView _massEditView;
-    internal ParamDataView _dataView;
 
     internal ParamEditorSelectionState _selection;
     internal int _viewIndex;
@@ -42,7 +42,6 @@ public class ParamEditorView
         _viewIndex = index;
         _propEditor = new ParamRowEditor(parent.EditorActionManager, _paramEditor);
         _toolbarView = new ParamToolbarView(parent.EditorActionManager);
-        _dataView = new ParamDataView(parent.EditorActionManager);
         _massEditView = new ParamMassEditView(parent.EditorActionManager);
         _selection = new ParamEditorSelectionState(_paramEditor);
     }
@@ -645,17 +644,6 @@ public class ParamEditorView
 
         ImGui.End();
         ImGui.PopStyleColor(1);
-
-        // Data Export/Import
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-        if (ImGui.Begin("Data##DataView"))
-        {
-            _dataView.OnGui();
-        }
-        ImGui.End();
-        ImGui.PopStyleColor(1);
     }
 
     private void ParamView_RowList_Entry_Row(bool[] selectionCache, int selectionCacheIndex, string activeParam,
@@ -784,8 +772,11 @@ public class ParamEditorView
                 if (_selection.RowSelectionExists())
                 {
                     var name = _selection.GetActiveRow().Name;
-                    ImGui.InputText("##rowName", ref name, 255);
-                    _selection.GetActiveRow().Name = name;
+                    if (name != null)
+                    {
+                        ImGui.InputText("##rowName", ref name, 255);
+                        _selection.GetActiveRow().Name = name;
+                    }
                 }
             }
 
@@ -824,16 +815,8 @@ public class ParamEditorView
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    _paramEditor.DuplicateSelection(_selection);
+                    ParamAction_DuplicateRow.DuplicateSelection(_selection);
                 }
-
-                ImGui.InputInt("##dupeAmount", ref CFG.Current.Param_DuplicateAmount);
-
-                if (CFG.Current.Param_DuplicateAmount < 1)
-                {
-                    CFG.Current.Param_DuplicateAmount = 1;
-                }
-                ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
 
                 ImGui.Separator();
             }
