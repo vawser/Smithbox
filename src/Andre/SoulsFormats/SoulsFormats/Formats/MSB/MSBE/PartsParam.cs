@@ -1345,10 +1345,9 @@ namespace SoulsFormats
                 public int Unk10 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown culling behaviour field for extreme height differences. Values 0000 - 10000.
                 /// </summary>
-                [MsbIgnorableProperty]
-                public int Unk14 { get; set; }
+                public int CullingHeightBehavior { get; set; }
 
                 /// <summary>
                 /// Creates an UnkStruct7 with default values.
@@ -1375,7 +1374,7 @@ namespace SoulsFormats
                     br.AssertInt32(0);
                     Unk0C = br.ReadInt32();
                     Unk10 = br.AssertInt32([0, 1]);
-                    Unk14 = br.ReadInt32();
+                    CullingHeightBehavior = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                 }
@@ -1387,7 +1386,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(Unk0C);
                     bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(CullingHeightBehavior);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                 }
@@ -2024,10 +2023,9 @@ namespace SoulsFormats
                 public float UnkT14 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// ID of location text to display when stepping onto this collision.
                 /// </summary>
-                [MsbIgnorableProperty]
-                public int UnkT18 { get; set; }
+                public int LocationTextID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -2150,7 +2148,7 @@ namespace SoulsFormats
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     UnkT14 = br.ReadSingle();
-                    UnkT18 = br.ReadInt32();
+                    LocationTextID = br.ReadInt32();
                     UnkT1C = br.ReadInt32();
                     PlayRegionID = br.ReadInt32();
                     UnkT24 = br.ReadInt16();
@@ -2191,7 +2189,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteSingle(UnkT14);
-                    bw.WriteInt32(UnkT18);
+                    bw.WriteInt32(LocationTextID);
                     bw.WriteInt32(UnkT1C);
                     bw.WriteInt32(PlayRegionID);
                     bw.WriteInt16(UnkT24);

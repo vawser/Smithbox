@@ -50,6 +50,7 @@
 175 HKS - Unk Guard Break & Block Animation Resist
 176 HKS - Unk Guard Block Animation Resist
 183 Spiritspring - In Range
+184 Spirit Spring - Fall Immune (Torrent)
 185 Spiritspring - Fall Immune
 186 Spiritspring - Is Jumping
 210 PLAN_SP_EFFECT_BUDDY_ORDER_GO
@@ -793,6 +794,10 @@
 8970 PLAN_SP_EFFECT_STRAGGLER_DEACT
 8971 PLAN_SP_EFFECT_STRAGGLER_ACT
 8972 PLAN_SP_EFFECT_STRAGGLER_ACT_HOSTILE
+9540 Spirit Summon Active
+9560 Spirit Summon Disappeared
+9630 Lipsync
+9631 Lipsync (Subtle)
 9820 Animation Offset - Unk
 9821 Animation Offset - Unk
 9822 Animation Offset - Unk
@@ -2949,7 +2954,8 @@
 290208 Spirit Summon Adjustment - Mimic Tear +8
 290209 Spirit Summon Adjustment - Mimic Tear +9
 290210 Spirit Summon Adjustment - Mimic Tear +10
-295000 Phantom Color - Spirit Summon
+295000 Spirit Summon - Color
+295200 Spirit Summon - Color (Puppet)
 295900 Spirit Summon -
 295901 Spirit Summon -
 295902 Spirit Summon -

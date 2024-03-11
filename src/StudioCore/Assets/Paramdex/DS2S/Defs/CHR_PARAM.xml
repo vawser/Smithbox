@@ -11,7 +11,7 @@
     <Field Def="s32 common_param_id" />
     <Field Def="s32 move_param_id" />
     <Field Def="s32 npc_player_status_param_id" />
-    <Field Def="u8 Unk00_1" />
+    <Field Def="u8 prevent_resting_related" />
     <Field Def="u8 Unk00_2" />
     <Field Def="u16 Unk01" />
     <Field Def="s32 Unk02" />
@@ -19,7 +19,7 @@
     <Field Def="s32 chr_phantom_param_id" />
     <Field Def="u8 Unk04" />
     <Field Def="u8 spawn_limit" />
-    <Field Def="u8 Unk05" />
+    <Field Def="u8 can_revive_related" />
     <Field Def="u8 Unk06" />
     <Field Def="s32 stat_hp" />
     <Field Def="f32 stat_stamina" />
