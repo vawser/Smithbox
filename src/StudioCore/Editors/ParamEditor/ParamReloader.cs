@@ -277,35 +277,31 @@ internal class ParamReloader
         // If this can be simplified, that would be ideal. Currently we have to reconcile DefType, a numerical size in bits, and the Type used for the bitField array
         if (cell.Def.BitSize != -1)
         {
-            if (displayType == PARAMDEF.DefType.u8 || displayType == PARAMDEF.DefType.dummy8)
+            int bitSizeTotal;
+            switch (displayType)
             {
-                if (bitFieldPos == 0)
-                {
-                    bits = new BitArray(8);
-                }
-
-                return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
+                case PARAMDEF.DefType.u8:
+                case PARAMDEF.DefType.s8:
+                    bitSizeTotal = 8; break;
+                case PARAMDEF.DefType.u16:
+                case PARAMDEF.DefType.s16:
+                    bitSizeTotal = 16; break;
+                case PARAMDEF.DefType.u32:
+                case PARAMDEF.DefType.s32:
+                case PARAMDEF.DefType.b32:
+                    bitSizeTotal = 32; break;
+                //Only handle non-array dummy8 bitfields. Not that we should expect array bitfields.
+                case PARAMDEF.DefType.dummy8:
+                    bitSizeTotal = 8; break;
+                default:
+                    throw new Exception("Unexpected BitField Type");
+            }
+            if (bitFieldPos == 0)
+            {
+                bits = new BitArray(bitSizeTotal);
             }
 
-            if (displayType == PARAMDEF.DefType.u16)
-            {
-                if (bitFieldPos == 0)
-                {
-                    bits = new BitArray(16);
-                }
-
-                return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
-            }
-
-            if (displayType == PARAMDEF.DefType.u32)
-            {
-                if (bitFieldPos == 0)
-                {
-                    bits = new BitArray(32);
-                }
-
-                return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
-            }
+            return WriteBitArray(cell, CellDataPtr, ref bitFieldPos, ref bits, memoryHandler, false);
         }
         else if (bits != null && bitFieldPos != 0)
         {
@@ -315,7 +311,21 @@ internal class ParamReloader
                        memoryHandler); //should recomplete current cell
         }
 
-        if (displayType == PARAMDEF.DefType.f32)
+        if (displayType == PARAMDEF.DefType.f64)
+        {
+            var valueRead = 0.0;
+            memoryHandler.ReadProcessMemory(CellDataPtr, ref valueRead);
+
+            var value = Convert.ToDouble(cell.Value);
+            if (valueRead != value)
+            {
+                memoryHandler.WriteProcessMemory(CellDataPtr, ref value);
+            }
+
+            return sizeof(double);
+        }
+
+        if (displayType == PARAMDEF.DefType.f32 || displayType == PARAMDEF.DefType.angle32)
         {
             var valueRead = 0f;
             memoryHandler.ReadProcessMemory(CellDataPtr, ref valueRead);
@@ -329,7 +339,7 @@ internal class ParamReloader
             return sizeof(float);
         }
 
-        if (displayType == PARAMDEF.DefType.s32)
+        if (displayType == PARAMDEF.DefType.s32 || displayType == PARAMDEF.DefType.b32)
         {
             var valueRead = 0;
             memoryHandler.ReadProcessMemory(CellDataPtr, ref valueRead);
@@ -413,8 +423,10 @@ internal class ParamReloader
             return sizeof(byte);
         }
 
-        if (displayType == PARAMDEF.DefType.dummy8 || displayType == PARAMDEF.DefType.fixstr || displayType == PARAMDEF.DefType.fixstrW)
+        if (displayType == PARAMDEF.DefType.dummy8 || displayType == PARAMDEF.DefType.fixstr ||
+            displayType == PARAMDEF.DefType.fixstrW)
         {
+            //We don't handle dummy8[] or strings in reloader
             return cell.Def.ArrayLength * (displayType == PARAMDEF.DefType.fixstrW ? 2 : 1);
         }
 
