@@ -679,7 +679,7 @@ public class EditorDecorations
                     {
                         if (ImGui.BeginMenu($@"in {fieldName}"))
                         {
-                            List<Param.Row> rows = UICache.GetCached(screen, (bank, currentParam, currentID, pref),
+                            List<Param.Row> rows = UICache.GetCached(screen, (bank, currentParam, currentID, paramitems.Key, fieldName),
                                 () => ParamRefReverseLookupRowItems(bank, paramitems.Key, fieldName, currentID,
                                     pref));
                             foreach (Param.Row row in rows)
