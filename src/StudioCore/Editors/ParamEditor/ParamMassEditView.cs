@@ -31,6 +31,8 @@ namespace StudioCore.Editors.ParamEditor
         public static bool SelectMassEditTab = false;
         private bool massEditTab = true;
 
+        private bool retainMassEditCommand = false;
+
         public ParamMassEditView(ActionManager actionManager)
         {
             EditorActionManager = actionManager;
@@ -144,7 +146,12 @@ namespace StudioCore.Editors.ParamEditor
             // Execute 
             if (ImGui.Button("Execute"))
             {
+                var command = _currentMEditRegexInput;
                 ExecuteMassEdit();
+                if(retainMassEditCommand)
+                {
+                    _currentMEditRegexInput = command;
+                }
             }
             ImGui.SameLine();
             // Clear
@@ -152,6 +159,9 @@ namespace StudioCore.Editors.ParamEditor
             {
                 _currentMEditRegexInput = "";
             }
+            ImGui.SameLine();
+            ImGui.Checkbox("Retain Input", ref retainMassEditCommand);
+            ImguiUtils.ShowWideHoverTooltip("Retain the mass edit command in the input text area after execution.");
 
             // Output
             ImGui.Separator();
