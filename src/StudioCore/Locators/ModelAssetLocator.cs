@@ -349,10 +349,20 @@ public static class ModelAssetLocator
 
             // Directories to search for obj models
             List<string> searchDirs = new();
+            List<string> searchRootDirs = new();
+            List<string> searchModDirs = new();
+
             if (Project.Type == ProjectType.ER)
-                searchDirs = Directory.GetFileSystemEntries(Project.GameRootDirectory + modelDir, @"aeg*").ToList();
+            {
+                searchRootDirs = Directory.GetFileSystemEntries(Project.GameRootDirectory + modelDir, @"aeg*").ToList();
+                searchModDirs = Directory.GetFileSystemEntries(Project.GameModDirectory + modelDir, @"aeg*").ToList();
+
+                searchDirs = searchRootDirs.Concat(searchModDirs).ToList();
+            }
             else
+            {
                 searchDirs.Add(Project.GameRootDirectory + modelDir);
+            }
 
             foreach (var searchDir in searchDirs)
             {
@@ -412,24 +422,30 @@ public static class ModelAssetLocator
 
             var modelDir = @"\parts";
             var modelExt = @".partsbnd.dcx";
+
             if (Project.Type == ProjectType.DS1)
+            {
                 modelExt = ".partsbnd";
+            }
             else if (Project.Type == ProjectType.DS2S)
             {
                 modelDir = @"\model\parts";
                 modelExt = ".bnd";
-                var partsGatheredFiles =
-                    Directory.GetFiles(Project.GameRootDirectory + modelDir, "*", SearchOption.AllDirectories);
+                var partsGatheredFiles = Directory.GetFiles(Project.GameRootDirectory + modelDir, "*", SearchOption.AllDirectories);
+
                 foreach (var f in partsGatheredFiles)
+                {
                     if (!f.EndsWith("common.commonbnd.dcx") && !f.EndsWith("common_cloth.commonbnd.dcx") &&
                         !f.EndsWith("facepreset.bnd"))
                         ret.Add(Path.GetFileNameWithoutExtension(f));
+                }
 
                 return ret;
             }
 
             var partsFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + modelDir, $@"*{modelExt}")
                 .ToList();
+
             foreach (var f in partsFiles)
             {
                 var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
