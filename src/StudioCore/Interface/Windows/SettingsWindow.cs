@@ -428,40 +428,40 @@ public class SettingsWindow
                 ImGui.ColorEdit3("Gizmo - Z Axis - highlight color", ref CFG.Current.GFX_Gizmo_Z_HighlightColor);
             }
 
+
+            // Map Object Display Presets
+            if (ImGui.CollapsingHeader("Display Presets"))
+            {
+                ImGui.Text("Configure each of the six display presets available.");
+
+                if (ImGui.Button("Reset##DisplayPresets"))
+                {
+                    CFG.Current.SceneFilter_Preset_01.Name = CFG.Default.SceneFilter_Preset_01.Name;
+                    CFG.Current.SceneFilter_Preset_01.Filters = CFG.Default.SceneFilter_Preset_01.Filters;
+                    CFG.Current.SceneFilter_Preset_02.Name = CFG.Default.SceneFilter_Preset_02.Name;
+                    CFG.Current.SceneFilter_Preset_02.Filters = CFG.Default.SceneFilter_Preset_02.Filters;
+                    CFG.Current.SceneFilter_Preset_03.Name = CFG.Default.SceneFilter_Preset_03.Name;
+                    CFG.Current.SceneFilter_Preset_03.Filters = CFG.Default.SceneFilter_Preset_03.Filters;
+                    CFG.Current.SceneFilter_Preset_04.Name = CFG.Default.SceneFilter_Preset_04.Name;
+                    CFG.Current.SceneFilter_Preset_04.Filters = CFG.Default.SceneFilter_Preset_04.Filters;
+                    CFG.Current.SceneFilter_Preset_05.Name = CFG.Default.SceneFilter_Preset_05.Name;
+                    CFG.Current.SceneFilter_Preset_05.Filters = CFG.Default.SceneFilter_Preset_05.Filters;
+                    CFG.Current.SceneFilter_Preset_06.Name = CFG.Default.SceneFilter_Preset_06.Name;
+                    CFG.Current.SceneFilter_Preset_06.Filters = CFG.Default.SceneFilter_Preset_06.Filters;
+                }
+                ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
+
+                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_01);
+                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_02);
+                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_03);
+                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_04);
+                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_05);
+                SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_06);
+            }
+
             ImGui.Unindent();
             ImGui.EndTabItem();
         }
-
-        // Map Object Display Presets
-        if (ImGui.CollapsingHeader("Display Presets"))
-        {
-            ImGui.Text("Configure each of the six display presets available.");
-
-            if (ImGui.Button("Reset##DisplayPresets"))
-            {
-                CFG.Current.SceneFilter_Preset_01.Name = CFG.Default.SceneFilter_Preset_01.Name;
-                CFG.Current.SceneFilter_Preset_01.Filters = CFG.Default.SceneFilter_Preset_01.Filters;
-                CFG.Current.SceneFilter_Preset_02.Name = CFG.Default.SceneFilter_Preset_02.Name;
-                CFG.Current.SceneFilter_Preset_02.Filters = CFG.Default.SceneFilter_Preset_02.Filters;
-                CFG.Current.SceneFilter_Preset_03.Name = CFG.Default.SceneFilter_Preset_03.Name;
-                CFG.Current.SceneFilter_Preset_03.Filters = CFG.Default.SceneFilter_Preset_03.Filters;
-                CFG.Current.SceneFilter_Preset_04.Name = CFG.Default.SceneFilter_Preset_04.Name;
-                CFG.Current.SceneFilter_Preset_04.Filters = CFG.Default.SceneFilter_Preset_04.Filters;
-                CFG.Current.SceneFilter_Preset_05.Name = CFG.Default.SceneFilter_Preset_05.Name;
-                CFG.Current.SceneFilter_Preset_05.Filters = CFG.Default.SceneFilter_Preset_05.Filters;
-                CFG.Current.SceneFilter_Preset_06.Name = CFG.Default.SceneFilter_Preset_06.Name;
-                CFG.Current.SceneFilter_Preset_06.Filters = CFG.Default.SceneFilter_Preset_06.Filters;
-            }
-            ImguiUtils.ShowHoverTooltip("Reset the values within this section to their default values.");
-
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_01);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_02);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_03);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_04);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_05);
-            SettingsRenderFilterPresetEditor(CFG.Current.SceneFilter_Preset_06);
-        }
-
     }
 
     private void DisplaySettings_MapEditor()
