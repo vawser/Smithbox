@@ -548,6 +548,11 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Show advanced options in massedit popup", ref CFG.Current.Param_AdvancedMassedit);
                 ImguiUtils.ShowHoverTooltip("Show additional options for advanced users within the massedit popup.");
+
+
+                ImGui.Checkbox("Display toolbar and massedit window", ref CFG.Current.Param_DisplaySideWindow);
+                ImguiUtils.ShowHoverTooltip("Toggle the appearance of the toolbar and massedit window.");
+                // 
             }
 
             // Params

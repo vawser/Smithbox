@@ -965,7 +965,10 @@ public class ParamEditorScreen : EditorScreen
         // Focus on Mass Edit by default when this editor is made focused
         if (FirstFrame)
         {
-            ImGui.SetWindowFocus("Mass Edit##MassEditView");
+            if (CFG.Current.Param_DisplaySideWindow)
+            {
+                ImGui.SetWindowFocus("Mass Edit##MassEditView");
+            }
 
             FirstFrame = false;
         }

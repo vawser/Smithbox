@@ -622,28 +622,31 @@ public class ParamEditorView
             ImGui.End();
         }
 
-        // Toolbar
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-        if (ImGui.Begin("Toolbar##ParamToolbar"))
+        if (CFG.Current.Param_DisplaySideWindow)
         {
-            _toolbarView.OnGui();
+            // Toolbar
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+            if (ImGui.Begin("Toolbar##ParamToolbar"))
+            {
+                _toolbarView.OnGui();
+            }
+            ImGui.End();
+            ImGui.PopStyleColor(1);
+
+            // Mass Edit
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+            if (ImGui.Begin("Mass Edit##MassEditView"))
+            {
+                _massEditView.OnGui();
+            }
+
+            ImGui.End();
+            ImGui.PopStyleColor(1);
         }
-        ImGui.End();
-        ImGui.PopStyleColor(1);
-
-        // Mass Edit
-        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-        if (ImGui.Begin("Mass Edit##MassEditView"))
-        {
-            _massEditView.OnGui();
-        }
-
-        ImGui.End();
-        ImGui.PopStyleColor(1);
     }
 
     private void ParamView_RowList_Entry_Row(bool[] selectionCache, int selectionCacheIndex, string activeParam,

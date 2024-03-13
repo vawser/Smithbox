@@ -334,6 +334,7 @@ public class CFG
 
     public bool Param_ShowTraditionalPercentages = false;
 
+    public bool Param_DisplaySideWindow = true;
     public bool Param_MassEdit_ShowWiki = true;
     public bool Param_MassEdit_ShowAddButtons = true;
 
