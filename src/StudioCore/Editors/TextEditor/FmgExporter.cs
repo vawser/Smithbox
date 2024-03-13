@@ -284,12 +284,12 @@ public static partial class FMGBank
                     if (merge)
                     {
                         // Merge mode. Add and replace FMG entries instead of overwriting FMG entirely
-                        foreach (var entry in fmg.Entries.ToList())
+                        foreach (var entry in fmg.Entries)
                         {
                             var currentEntry = info.Fmg.Entries.Find(e => e.ID == entry.ID);
                             if (currentEntry == null)
                             {
-                                fmg.Entries.Add(entry);
+                                info.Fmg.Entries.Add(entry);
                             }
                             else if (currentEntry.Text != entry.Text)
                             {
