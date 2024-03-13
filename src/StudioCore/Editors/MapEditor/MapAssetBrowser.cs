@@ -16,6 +16,7 @@ using StudioCore.UserProject;
 using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.BanksMain;
+using StudioCore.Editor;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -644,7 +645,7 @@ public class MapAssetBrowser
                 continue;
             }
 
-            if (o is Map m)
+            if (o is MapContainer m)
             {
                 foreach (var ob in m.Objects)
                 {
@@ -689,10 +690,10 @@ public class MapAssetBrowser
 
     public void SetUniqueInstanceID(MsbEntity selected, string modelName)
     {
-        Map m;
+        MapContainer m;
         m = _universe.GetLoadedMap(selected.MapID);
 
-        Dictionary<Map, HashSet<MsbEntity>> mapPartEntities = new();
+        Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
         if (selected.WrappedObject is MSBE.Part msbePart)
         {

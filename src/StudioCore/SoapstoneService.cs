@@ -368,7 +368,7 @@ public class SoapstoneService : SoapstoneServiceV1
                     obj.AddRequestedProperties(properties, key => AccessMapFile(fileKey, key));
                     results.Add(obj);
                 }
-                else if (getKey is SoulsKey.MsbEntryKey msbEntryKey && container is Map m)
+                else if (getKey is SoulsKey.MsbEntryKey msbEntryKey && container is MapContainer m)
                 {
                     foreach (Entity ob in m.GetObjectsByName(msbEntryKey.Name))
                     {
@@ -540,7 +540,7 @@ public class SoapstoneService : SoapstoneServiceV1
                     }
                 }
 
-                if (resultType.Matches(typeof(SoulsKey.MsbEntryKey)) && entry.Value is Map m)
+                if (resultType.Matches(typeof(SoulsKey.MsbEntryKey)) && entry.Value is MapContainer m)
                 {
                     // Use similar enumeration as SearchProperties
                     foreach (Entity ob in m.Objects)

@@ -1106,7 +1106,7 @@ public class ModelPropertyEditor
 
                             if (ImGui.BeginPopupContextItem())
                             {
-                                Map map = firstEnt.Universe.GetLoadedMap(mapid);
+                                MapContainer map = firstEnt.Universe.GetLoadedMap(mapid);
                                 if (map == null)
                                 {
                                     if (ImGui.Selectable("Load Map"))

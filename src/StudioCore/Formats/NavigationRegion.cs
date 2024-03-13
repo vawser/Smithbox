@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Scene;
 using System;

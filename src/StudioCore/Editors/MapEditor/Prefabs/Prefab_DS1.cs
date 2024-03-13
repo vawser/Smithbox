@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using SoulsFormats;
 using StudioCore.Banks;
 using StudioCore.BanksMain;
+using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Scene;
@@ -585,7 +586,7 @@ namespace StudioCore.Editors.MapEditor.Prefabs
             }
         }
 
-        public List<MsbEntity> GenerateMapEntities(Map targetMap)
+        public List<MsbEntity> GenerateMapEntities(MapContainer targetMap)
         {
             List<MsbEntity> ents = new();
             foreach (var assetInfo in PrefabInfoChildren)
@@ -958,7 +959,7 @@ namespace StudioCore.Editors.MapEditor.Prefabs
             Prefab_DS1 _selectedAssetPrefab;
 
             _selectedAssetPrefab = Prefab_DS1.ImportJson(info.Path);
-            Map targetMap = (Map)_comboTargetMap.Item2;
+            MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
 
             if (targetMap != null)
             {
@@ -1015,7 +1016,7 @@ namespace StudioCore.Editors.MapEditor.Prefabs
             Prefab_DS1 _selectedAssetPrefab;
 
             _selectedAssetPrefab = Prefab_DS1.ImportJson(info.Path);
-            Map targetMap = (Map)_comboTargetMap.Item2;
+            MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
 
             if (targetMap != null)
             {

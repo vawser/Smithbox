@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.UserProject;
 using StudioCore.Utilities;

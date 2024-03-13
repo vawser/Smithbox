@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using SoulsFormats.Util;
+using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;
@@ -439,7 +440,7 @@ public class MapSearchProperties
                             continue;
                         }
 
-                        if (o is Map m)
+                        if (o is MapContainer m)
                         {
                             foreach (Entity ob in m.Objects)
                             {

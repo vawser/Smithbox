@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.UserProject;
 using System;

@@ -15,6 +15,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
+using StudioCore.Editor;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -356,12 +357,12 @@ public class CloneMapObjectsAction : ViewportAction
     private readonly List<MsbEntity> Clones = new();
     private readonly bool SetSelection;
     private readonly Entity TargetBTL;
-    private readonly Map TargetMap;
+    private readonly MapContainer TargetMap;
     private readonly Universe Universe;
     private RenderScene Scene;
 
     public CloneMapObjectsAction(Universe univ, RenderScene scene, List<MsbEntity> objects, bool setSelection,
-        Map targetMap = null, Entity targetBTL = null)
+        MapContainer targetMap = null, Entity targetBTL = null)
     {
         Universe = univ;
         Scene = scene;
@@ -376,7 +377,7 @@ public class CloneMapObjectsAction : ViewportAction
         var clonesCached = Clones.Count() > 0;
 
         var objectnames = new Dictionary<string, HashSet<string>>();
-        Dictionary<Map, HashSet<MsbEntity>> mapPartEntities = new();
+        Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
         for (var i = 0; i < Clonables.Count(); i++)
         {
@@ -387,7 +388,7 @@ public class CloneMapObjectsAction : ViewportAction
                 continue;
             }
 
-            Map m;
+            MapContainer m;
             if (TargetMap != null)
             {
                 m = Universe.GetLoadedMap(TargetMap.Name);
@@ -528,7 +529,7 @@ public class CloneMapObjectsAction : ViewportAction
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    public void ChangePartNames(MsbEntity sel, Map map)
+    public void ChangePartNames(MsbEntity sel, MapContainer map)
     {
         if (Project.Type != ProjectType.ER)
             return;
@@ -604,15 +605,15 @@ public class AddMapObjectsAction : ViewportAction
     private static Regex TrailIDRegex = new(@"_(?<id>\d+)$");
     private readonly List<MsbEntity> Added = new();
     private readonly List<ObjectContainer> AddedMaps = new();
-    private readonly Map Map;
+    private readonly MapContainer Map;
     private readonly Entity Parent;
     private readonly bool SetSelection;
     private readonly Universe Universe;
     private RenderScene Scene;
-    private Map TargetMap;
+    private MapContainer TargetMap;
 
-    public AddMapObjectsAction(Universe univ, Map map, RenderScene scene, List<MsbEntity> objects,
-        bool setSelection, Entity parent, Map targetMap = null)
+    public AddMapObjectsAction(Universe univ, MapContainer map, RenderScene scene, List<MsbEntity> objects,
+        bool setSelection, Entity parent, MapContainer targetMap = null)
     {
         Universe = univ;
         Map = map;
@@ -644,7 +645,7 @@ public class AddMapObjectsAction : ViewportAction
                 }
 
                 MsbEntity ent = Added[i];
-                Map m;
+                MapContainer m;
 
                 if (TargetMap != null)
                 {
@@ -813,7 +814,7 @@ public class DeleteMapObjectsAction : ViewportAction
     {
         foreach (MsbEntity obj in Deletables)
         {
-            Map m = Universe.GetLoadedMap(obj.MapID);
+            MapContainer m = Universe.GetLoadedMap(obj.MapID);
             if (m != null)
             {
                 RemoveMaps.Add(m);
@@ -1256,7 +1257,7 @@ public class ChangeMapObjectType : ViewportAction
                 Type currentType = ent.WrappedObject.GetType();
                 if (currentType == sourceType)
                 {
-                    Map map = Universe.GetLoadedMap(ent.MapID);
+                    MapContainer map = Universe.GetLoadedMap(ent.MapID);
                     map.HasUnsavedChanges = true;
 
                     var sourceObj = ent.WrappedObject;
@@ -1449,7 +1450,7 @@ public class ReplicateMapObjectsAction : ViewportAction
         }
 
         var objectnames = new Dictionary<string, HashSet<string>>();
-        Dictionary<Map, HashSet<MsbEntity>> mapPartEntities = new();
+        Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
         var clonesCached = Clones.Count() > 0;
 
@@ -1464,7 +1465,7 @@ public class ReplicateMapObjectsAction : ViewportAction
                     continue;
                 }
 
-                Map m;
+                MapContainer m;
                 m = Universe.GetLoadedMap(Clonables[i].MapID);
 
                 if (m != null)

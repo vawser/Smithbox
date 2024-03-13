@@ -1237,7 +1237,7 @@ public class Prefab_ER
         }
     }
 
-    public List<MsbEntity> GenerateMapEntities(Map targetMap)
+    public List<MsbEntity> GenerateMapEntities(MapContainer targetMap)
     {
         List<MsbEntity> ents = new();
         foreach (var assetInfo in PrefabInfoChildren)
@@ -1927,7 +1927,7 @@ public class Prefab_ER
         Prefab_ER _selectedAssetPrefab;
 
         _selectedAssetPrefab = Prefab_ER.ImportJson(info.Path);
-        Map targetMap = (Map)_comboTargetMap.Item2;
+        MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
 
         if (targetMap != null)
         {
@@ -1984,7 +1984,7 @@ public class Prefab_ER
         Prefab_ER _selectedAssetPrefab;
 
         _selectedAssetPrefab = Prefab_ER.ImportJson(info.Path);
-        Map targetMap = (Map)_comboTargetMap.Item2;
+        MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
 
         if (targetMap != null)
         {

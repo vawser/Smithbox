@@ -697,7 +697,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             if (initcmd[0] == "load")
             {
                 var mapid = initcmd[1];
-                if (Universe.GetLoadedMap(mapid) is Map m)
+                if (Universe.GetLoadedMap(mapid) is MapContainer m)
                 {
                     target = m.RootObject;
                 }
@@ -712,7 +712,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 var mapid = initcmd[1];
                 if (initcmd.Length > 2)
                 {
-                    if (Universe.GetLoadedMap(mapid) is Map m)
+                    if (Universe.GetLoadedMap(mapid) is MapContainer m)
                     {
                         var name = initcmd[2];
                         if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntity.MsbEntityType entityType))
@@ -875,7 +875,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     /// <summary>
     ///     Adds a new entity to the targeted map. If no parent is specified, RootObject will be used.
     /// </summary>
-    private void AddNewEntity(Type typ, MsbEntity.MsbEntityType etype, Map map, Entity parent = null)
+    private void AddNewEntity(Type typ, MsbEntity.MsbEntityType etype, MapContainer map, Entity parent = null)
     {
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
         MsbEntity obj = new(map, newent, etype);
@@ -915,7 +915,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         if (_comboTargetMap.Item2 == null)
             return;
 
-        Map targetMap = (Map)_comboTargetMap.Item2;
+        MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
 
         var sel = _selection.GetFilteredSelection<MsbEntity>().ToList();
 

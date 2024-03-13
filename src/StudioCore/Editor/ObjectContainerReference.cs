@@ -1,7 +1,7 @@
 ﻿using StudioCore.MsbEditor;
 using StudioCore.Scene;
 
-namespace StudioCore.Editors.MapEditor;
+namespace StudioCore.Editor;
 
 /// <summary>
 ///     Reference to a top-level container entity, regardless of whether it is loaded or not.

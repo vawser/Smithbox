@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Gui;
 using StudioCore.Interface;

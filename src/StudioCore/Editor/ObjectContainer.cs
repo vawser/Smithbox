@@ -12,8 +12,9 @@ using System.Numerics;
 using System.Xml.Serialization;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.Editors.MapEditor;
 
-namespace StudioCore.Editors.MapEditor;
+namespace StudioCore.Editor;
 
 /// <summary>
 ///     High level class that stores a single map (msb) and can serialize/
@@ -147,7 +148,7 @@ public class ObjectContainer
         {
             var mat = flver.Materials[i];
 
-            if(!MaterialDictionary.ContainsKey(i))
+            if (!MaterialDictionary.ContainsKey(i))
             {
                 MaterialDictionary.Add(i, mat.Name);
             }
@@ -243,13 +244,13 @@ public class ObjectContainer
     }
 }
 
-public class Map : ObjectContainer
+public class MapContainer : ObjectContainer
 {
     // This keeps all models that exist when loading a map, so that saves
     // can be byte perfect
     private readonly Dictionary<string, IMsbModel> LoadedModels = new();
 
-    public Map(Universe u, string mapid)
+    public MapContainer(Universe u, string mapid)
     {
         Name = mapid;
         Universe = u;

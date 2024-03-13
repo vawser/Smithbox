@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
 using StudioCore.Utilities;
@@ -254,7 +255,7 @@ public class Entity : ISelectable, IDisposable
         child.Parent = this;
 
         // Update the containing map for map entities.
-        if (Container.GetType() == typeof(Map) && child.Container.GetType() == typeof(Map))
+        if (Container.GetType() == typeof(MapContainer) && child.Container.GetType() == typeof(MapContainer))
         {
             child.Container = Container;
         }
@@ -1340,7 +1341,7 @@ public class MsbEntity : Entity
     /// <summary>
     /// The map container this entity belongs to.
     /// </summary>
-    public Map ContainingMap => (Map)Container;
+    public MapContainer ContainingMap => (MapContainer)Container;
 
     /// <summary>
     /// The Map Editor name for this entity.

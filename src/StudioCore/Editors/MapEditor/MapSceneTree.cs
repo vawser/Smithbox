@@ -23,6 +23,7 @@ using StudioCore.MsbEditor;
 using StudioCore.BanksMain;
 using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Interface;
+using StudioCore.Editor;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -133,7 +134,7 @@ public class MapSceneTree : IActionEventHandler
     }
 
 
-    private void RebuildTypeViewCache(Map map)
+    private void RebuildTypeViewCache(MapContainer map)
     {
         if (_cachedTypeView == null)
         {
@@ -500,7 +501,7 @@ public class MapSceneTree : IActionEventHandler
         }
     }
 
-    private void FlatView(Map map)
+    private void FlatView(MapContainer map)
     {
         foreach (Entity obj in map.Objects)
         {
@@ -511,7 +512,7 @@ public class MapSceneTree : IActionEventHandler
         }
     }
 
-    private void TypeView(Map map)
+    private void TypeView(MapContainer map)
     {
         if (_cachedTypeView == null || !_cachedTypeView.ContainsKey(map.Name))
         {
@@ -994,7 +995,7 @@ public class MapSceneTree : IActionEventHandler
                         _universe.LoadMap(mapid, selected);
                     }
                 }
-                else if (map is Map m)
+                else if (map is MapContainer m)
                 {
                     if (ImGui.Selectable("Save Map"))
                     {
@@ -1141,11 +1142,11 @@ public class MapSceneTree : IActionEventHandler
                 }
                 else if (_viewMode == ViewMode.Flat)
                 {
-                    FlatView((Map)map);
+                    FlatView((MapContainer)map);
                 }
                 else if (_viewMode == ViewMode.ObjectType)
                 {
-                    TypeView((Map)map);
+                    TypeView((MapContainer)map);
                 }
 
                 ImGui.PopStyleVar();

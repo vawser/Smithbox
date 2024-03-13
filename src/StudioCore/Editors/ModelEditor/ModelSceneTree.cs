@@ -24,6 +24,7 @@ using StudioCore.Editors.MapEditor;
 using Microsoft.AspNetCore.Components.Forms;
 using Silk.NET.OpenGL;
 using StudioCore.BanksMain;
+using StudioCore.Editor;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -37,7 +38,7 @@ public struct DragDropPayloadReference
     public int Index;
 }
 
-public class ModelSceneTree : IActionEventHandler
+public class ModelSceneTree : MapEditor.IActionEventHandler
 {
     private readonly ViewportActionManager _editorActionManager;
 
@@ -56,10 +57,6 @@ public class ModelSceneTree : IActionEventHandler
 
     private bool _setNextFocus;
 
-    private Dictionary<string, string> _chrAliasCache;
-    private Dictionary<string, string> _objAliasCache;
-    private Dictionary<string, string> _mapPieceAliasCache;
-
     public ObjectContainer Model { get;  set; }
 
     private ModelEditorScreen _editor;
@@ -72,10 +69,6 @@ public class ModelSceneTree : IActionEventHandler
         _selection = sel;
         _editorActionManager = aman;
         _viewport = vp;
-
-        _chrAliasCache = null;
-        _objAliasCache = null;
-        _mapPieceAliasCache = null;
     }
 
     public ViewportSelection GetCurrentSelection()
@@ -529,7 +522,7 @@ public class ModelSceneTree : IActionEventHandler
 
         return metaName;
     }
-    public void OnActionEvent(ActionEvent evt)
+    public void OnActionEvent(MapEditor.ActionEvent evt)
     {
 
     }

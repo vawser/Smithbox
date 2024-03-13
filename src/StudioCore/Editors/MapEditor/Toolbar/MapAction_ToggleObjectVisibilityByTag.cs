@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.BanksMain;
+using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using System;

@@ -53,7 +53,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 }
                 else
                 {
-                    var map = (Map)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
+                    var map = (MapContainer)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
 
                     ImGui.Combo("Target Map", ref _createEntityMapIndex, MapEditorState.LoadedMaps.Select(e => e.Name).ToArray(), MapEditorState.LoadedMaps.Count());
 
@@ -165,7 +165,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Act(ViewportSelection _selection)
         {
-            var map = (Map)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
+            var map = (MapContainer)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
 
             if (CFG.Current.Toolbar_Create_Light)
             {
@@ -191,7 +191,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         /// <summary>
         /// Adds a new entity to the targeted map. If no parent is specified, RootObject will be used.
         /// </summary>
-        private static void AddNewEntity(Type typ, MsbEntity.MsbEntityType etype, Map map, Entity parent = null)
+        private static void AddNewEntity(Type typ, MsbEntity.MsbEntityType etype, MapContainer map, Entity parent = null)
         {
             var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
             MsbEntity obj = new(map, newent, etype);

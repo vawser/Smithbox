@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Configuration;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Prefabs;
 using StudioCore.Gui;
 using StudioCore.Interface;

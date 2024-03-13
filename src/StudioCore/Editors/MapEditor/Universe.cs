@@ -19,6 +19,7 @@ using StudioCore.AssetLocator;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors;
+using StudioCore.Editor;
 
 namespace StudioCore.MsbEditor;
 
@@ -55,11 +56,11 @@ public class Universe
 
     public ProjectType GameType => Project.Type;
 
-    public Map GetLoadedMap(string id)
+    public MapContainer GetLoadedMap(string id)
     {
         if (id != null)
         {
-            if (LoadedObjectContainers.ContainsKey(id) && LoadedObjectContainers[id] is Map m)
+            if (LoadedObjectContainers.ContainsKey(id) && LoadedObjectContainers[id] is MapContainer m)
             {
                 return m;
             }
@@ -155,7 +156,7 @@ public class Universe
         return modelMarker;
     }
 
-    public RenderableProxy GetRegionDrawable(Map map, Entity obj)
+    public RenderableProxy GetRegionDrawable(MapContainer map, Entity obj)
     {
         if (obj.WrappedObject is IMsbRegion r && r.Shape is MSB.Shape.Box)
         {
@@ -224,7 +225,7 @@ public class Universe
         throw new NotSupportedException($"No region model proxy was specified for {obj.WrappedObject.GetType()}");
     }
 
-    public RenderableProxy GetLightDrawable(Map map, Entity obj)
+    public RenderableProxy GetLightDrawable(MapContainer map, Entity obj)
     {
         var light = (BTL.Light)obj.WrappedObject;
         if (light.Type is BTL.LightType.Directional)
@@ -258,7 +259,7 @@ public class Universe
         throw new Exception($"Unexpected BTL LightType: {light.Type}");
     }
 
-    public RenderableProxy GetDS2EventLocationDrawable(Map map, Entity obj)
+    public RenderableProxy GetDS2EventLocationDrawable(MapContainer map, Entity obj)
     {
         DebugPrimitiveRenderableProxy mesh = DebugPrimitiveRenderableProxy.GetBoxRegionProxy(_renderScene);
         mesh.World = obj.GetWorldMatrix();
@@ -311,7 +312,7 @@ public class Universe
     /// </summary>
     /// <param name="modelname"></param>
     /// <returns></returns>
-    public RenderableProxy GetModelDrawable(Map map, Entity obj, string modelname, bool load)
+    public RenderableProxy GetModelDrawable(MapContainer map, Entity obj, string modelname, bool load)
     {
         AssetDescription asset;
         var loadcol = false;
@@ -471,7 +472,7 @@ public class Universe
         return null;
     }
 
-    public void LoadDS2Generators(string mapid, Map map)
+    public void LoadDS2Generators(string mapid, MapContainer map)
     {
         Dictionary<long, Param.Row> registParams = new();
         Dictionary<long, MergedParamRow> generatorParams = new();
@@ -711,7 +712,7 @@ public class Universe
         try
         {
             postLoad = false;
-            Map map = new(this, mapid);
+            MapContainer map = new(this, mapid);
 
             List<Task> tasks = new();
             Task task;
@@ -794,6 +795,7 @@ public class Universe
             AssetDescription subAsset = ModelAssetLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
             chrsToLoad.Add(subAsset);
             AssetDescription tSubAsset = TextureAssetLocator.GetChrTextures(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+
             if (tSubAsset.AssetVirtualPath != null || tSubAsset.AssetArchiveVirtualPath != null)
             {
                 chrsToLoad.Add(tSubAsset);
@@ -1082,7 +1084,7 @@ public class Universe
         }
     }
 
-    public static void CheckDupeEntityIDs(Map map)
+    public static void CheckDupeEntityIDs(MapContainer map)
     {
         /* Notes about dupe Entity ID behavior in-game:
          * Entity ID dupes exist in vanilla (including dupe regions)
@@ -1152,7 +1154,7 @@ public class Universe
         }
     }
 
-    private void SaveDS2Generators(Map map)
+    private void SaveDS2Generators(MapContainer map)
     {
         // Load all the params
         AssetDescription regparamad = ParamAssetLocator.GetDS2GeneratorRegistParam(map.Name);
@@ -1389,7 +1391,7 @@ public class Universe
     /// <summary>
     ///     Save BTL light data
     /// </summary>
-    public void SaveBTL(Map map)
+    public void SaveBTL(MapContainer map)
     {
         List<AssetDescription> BTLs = MapAssetLocator.GetMapBTLs(map.Name);
         List<AssetDescription> BTLs_w = MapAssetLocator.GetMapBTLs(map.Name, true);
@@ -1441,7 +1443,7 @@ public class Universe
         }
     }
 
-    public void SaveMap(Map map)
+    public void SaveMap(MapContainer map)
     {
         SaveBTL(map);
         try
@@ -1578,7 +1580,7 @@ public class Universe
             {
                 if (m.Value != null)
                 {
-                    if (m.Value is Map ma)
+                    if (m.Value is MapContainer ma)
                     {
                         SaveMap(ma);
                     }
@@ -1621,7 +1623,7 @@ public class Universe
 
         foreach (ObjectContainer un in toUnload)
         {
-            if (un is Map ma)
+            if (un is MapContainer ma)
             {
                 UnloadContainer(ma);
             }

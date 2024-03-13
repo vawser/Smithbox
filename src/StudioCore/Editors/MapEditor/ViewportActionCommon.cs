@@ -1,5 +1,6 @@
 ﻿using Silk.NET.SDL;
 using SoulsFormats;
+using StudioCore.Editor;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
@@ -15,7 +16,7 @@ namespace StudioCore.Editors.MapEditor
     /// </summary>
     public static class ViewportActionCommon
     {
-        public static void SetUniqueEntityID(MsbEntity sel, Map map)
+        public static void SetUniqueEntityID(MsbEntity sel, MapContainer map)
         {
             if (Project.Type == ProjectType.DS2S)
                 return;
@@ -33,7 +34,7 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
-        public static void SetUniqueEntityID_Uint(MsbEntity sel, Map map)
+        public static void SetUniqueEntityID_Uint(MsbEntity sel, MapContainer map)
         {
             uint originalID = (uint)sel.GetPropertyValue("EntityID");
             sel.SetPropertyValue("EntityID", (uint)0);
@@ -147,7 +148,7 @@ namespace StudioCore.Editors.MapEditor
             sel.SetPropertyValue("EntityID", newID);
         }
 
-        public static void SetUniqueEntityID_Int(MsbEntity sel, Map map)
+        public static void SetUniqueEntityID_Int(MsbEntity sel, MapContainer map)
         {
             int originalID = (int)sel.GetPropertyValue("EntityID");
             sel.SetPropertyValue("EntityID", -1);
@@ -227,7 +228,7 @@ namespace StudioCore.Editors.MapEditor
             sel.SetPropertyValue("EntityID", newID);
         }
 
-        public static void SetSelfPartNames(MsbEntity sel, Map map)
+        public static void SetSelfPartNames(MsbEntity sel, MapContainer map)
         {
             if (Project.Type != ProjectType.ER)
                 return;
@@ -264,14 +265,14 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
-        public static void SetUniqueInstanceID(MsbEntity ent, Map m)
+        public static void SetUniqueInstanceID(MsbEntity ent, MapContainer m)
         {
             if (Project.Type != ProjectType.ER)
                 return;
 
             if (Project.Type == ProjectType.ER)
             {
-                Dictionary<Map, HashSet<MsbEntity>> mapPartEntities = new();
+                Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
                 if (ent.WrappedObject is MSBE.Part msbePart)
                 {
@@ -300,7 +301,7 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
-        public static void SetSpecificEntityGroupID(MsbEntity ent, Map m)
+        public static void SetSpecificEntityGroupID(MsbEntity ent, MapContainer m)
         {
             if (Project.Type == ProjectType.ER)
             {
