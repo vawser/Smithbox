@@ -318,7 +318,7 @@ public static class ModelAssetLocator
         return ret;
     }
 
-    public static List<string> GetObjModels()
+    public static List<string> GetObjModels(bool useProject = false)
     {
         try
         {
@@ -349,15 +349,20 @@ public static class ModelAssetLocator
 
             // Directories to search for obj models
             List<string> searchDirs = new();
-            List<string> searchRootDirs = new();
-            List<string> searchModDirs = new();
-
             if (Project.Type == ProjectType.ER)
             {
-                searchRootDirs = Directory.GetFileSystemEntries(Project.GameRootDirectory + modelDir, @"aeg*").ToList();
-                searchModDirs = Directory.GetFileSystemEntries(Project.GameModDirectory + modelDir, @"aeg*").ToList();
+                var modDir = Directory.GetFileSystemEntries(Project.GameModDirectory + modelDir, @"aeg*").ToList();
+                var rootDir = Directory.GetFileSystemEntries(Project.GameRootDirectory + modelDir, @"aeg*").ToList();
 
-                searchDirs = searchRootDirs.Concat(searchModDirs).ToList();
+                foreach(var entry in modDir)
+                {
+                    if(!rootDir.Contains(entry))
+                    {
+                        rootDir.Add(entry);
+                    }
+                }
+
+                searchDirs = rootDir;
             }
             else
             {
@@ -389,6 +394,8 @@ public static class ModelAssetLocator
                 }
             }
 
+            ret.Sort();
+
             return ret;
         }
         catch (DirectoryNotFoundException e)
@@ -403,6 +410,7 @@ public static class ModelAssetLocator
         AssetDescription ret = new();
         ret.AssetName = obj;
         ret.AssetArchiveVirtualPath = $@"obj/{obj}/model";
+
         if (Project.Type == ProjectType.DS2S)
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj}.flv";
         else if (Project.Type is ProjectType.ER or ProjectType.AC6)
