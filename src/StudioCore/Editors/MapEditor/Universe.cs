@@ -50,6 +50,7 @@ public class Universe
     }
 
     public Dictionary<string, ObjectContainer> LoadedObjectContainers { get; } = new();
+    public Dictionary<string, ModelContainer> LoadedModelContainers { get; } = new();
     public ViewportSelection Selection { get; }
 
     public List<string> EnvMapTextures { get; private set; } = new();
@@ -1140,17 +1141,17 @@ public class Universe
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy, string name)
     {
-        ObjectContainer container = new(this, name);
+        ModelContainer container = new(this, name);
 
         container.LoadFlver(flver, proxy);
 
-        if (!LoadedObjectContainers.ContainsKey(name))
+        if (!LoadedModelContainers.ContainsKey(name))
         {
-            LoadedObjectContainers.Add(name, container);
+            LoadedModelContainers.Add(name, container);
         }
         else
         {
-            LoadedObjectContainers[name] = container;
+            LoadedModelContainers[name] = container;
         }
     }
 
@@ -1589,6 +1590,44 @@ public class Universe
         }
     }
 
+    public void UnloadModels(bool clearFromList = false)
+    {
+        List<ModelContainer> toUnload = new();
+        foreach (var key in LoadedModelContainers.Keys)
+        {
+            if (LoadedModelContainers[key] != null)
+            {
+                toUnload.Add(LoadedModelContainers[key]);
+            }
+        }
+
+        foreach (ModelContainer un in toUnload)
+        {
+            UnloadModelContainer(un, clearFromList);
+        }
+    }
+
+    public void UnloadModelContainer(ObjectContainer container, bool clearFromList = false)
+    {
+        if (LoadedModelContainers.ContainsKey(container.Name))
+        {
+            foreach (Entity obj in container.Objects)
+            {
+                if (obj != null)
+                {
+                    obj.Dispose();
+                }
+            }
+
+            container.Clear();
+            LoadedModelContainers[container.Name] = null;
+            if (clearFromList)
+            {
+                LoadedModelContainers.Remove(container.Name);
+            }
+        }
+    }
+
     public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
     {
         if (LoadedObjectContainers.ContainsKey(container.Name))
@@ -1646,6 +1685,7 @@ public class Universe
             UnloadContainer(un, clearFromList);
         }
     }
+
     public void ScheduleTextureRefresh()
     {
         if (GameType == ProjectType.DS1)

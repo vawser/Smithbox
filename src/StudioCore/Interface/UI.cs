@@ -303,7 +303,9 @@ namespace StudioCore.Interface
 
             if(theme == null)
             {
-                PlatformUtils.Instance.MessageBox("Theme does not exist.", "Warning", MessageBoxButtons.OK);
+                // Reset to Dark if theme is null
+                CFG.Current.SelectedThemeName = "Dark";
+                //PlatformUtils.Instance.MessageBox("Theme does not exist.", "Warning", MessageBoxButtons.OK);
                 return;
             }
 

@@ -629,7 +629,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             FlverResource r = _flverhandle.Get();
             if (r.Flver != null)
             {
-                _universe.UnloadAll(true);
+                _universe.UnloadModels(true);
                 _universe.LoadFlver(r.Flver, _renderMesh, _currentModel);
             }
         }

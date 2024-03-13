@@ -57,7 +57,7 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
 
     private bool _setNextFocus;
 
-    public ObjectContainer Model { get;  set; }
+    public ModelContainer Model { get;  set; }
 
     private ModelEditorScreen _editor;
 
@@ -107,14 +107,14 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
             // Tree List
             ImGui.BeginChild("listtree");
 
-            IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> fakeMaps =
-                _universe.LoadedObjectContainers.OrderBy(k => k.Key);
+            IOrderedEnumerable<KeyValuePair<string, ModelContainer>> loadedModels =
+                _universe.LoadedModelContainers.OrderBy(k => k.Key);
 
             _mapEnt_ImGuiID = 0;
 
-            foreach (KeyValuePair<string, ObjectContainer> lm in fakeMaps)
+            foreach (KeyValuePair<string, ModelContainer> lm in loadedModels)
             {
-                ObjectContainer map = lm.Value;
+                ModelContainer loadedModel = lm.Value;
                 var assetName = lm.Key;
 
                 if (assetName == null)
@@ -122,9 +122,9 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                     continue;
                 }
 
-                Model = map;
+                Model = loadedModel;
 
-                Entity mapRoot = map?.RootObject;
+                Entity mapRoot = loadedModel?.RootObject;
                 ObjectContainerReference mapRef = new(assetName, _universe);
                 ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
@@ -138,12 +138,12 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                 }
 
                 var nodeopen = false;
-                var unsaved = map != null && map.HasUnsavedChanges ? "*" : "";
+                var unsaved = loadedModel != null && loadedModel.HasUnsavedChanges ? "*" : "";
 
                 // Model ID and Name
                 ImGui.BeginGroup();
 
-                if (map != null)
+                if (loadedModel != null)
                 {
                     nodeopen = ImGui.TreeNodeEx($@"{ForkAwesome.Cube} {assetName}", treeflags,
                         $@"{ForkAwesome.Cube} {assetName}{unsaved}");
@@ -241,7 +241,7 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                 {
                     ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
 
-                    HierarchyView(map.RootObject);
+                    HierarchyView(loadedModel.RootObject);
 
                     ImGui.PopStyleVar();
                     ImGui.TreePop();
