@@ -177,9 +177,12 @@ public class ModelContainer : ObjectContainer
 
         if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
         {
-            FLVER2.Mesh newMesh = r.Flver.Meshes[nameEnt.Index];
+            FLVER2.Mesh newMesh = (FLVER2.Mesh)selected.WrappedObject;
             r.Flver.Meshes.Add(newMesh);
-            CFG.Current.ModelEditor_RenderingUpdate = true;
+
+            // TODO: support the updating of the scene view so this makes sense
+            // Technically it works fine, but the DSMS stuff with the proxy
+            // and the flver are messy and need to be hashed out.
         }
     }
 
@@ -190,7 +193,10 @@ public class ModelContainer : ObjectContainer
             FLVER2.Mesh oldMesh = (FLVER2.Mesh)selected.WrappedObject;
 
             r.Flver.Meshes.Remove(oldMesh);
-            CFG.Current.ModelEditor_RenderingUpdate = true;
+
+            // TODO: support the updating of the scene view so this makes sense
+            // Technically it works fine, but the DSMS stuff with the proxy
+            // and the flver are messy and need to be hashed out.
         }
     }
 }

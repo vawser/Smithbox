@@ -572,7 +572,14 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void OnEntityContextMenu(Entity ent)
     {
-        
+        if (ImGui.MenuItem("Duplicate"))
+        {
+            DuplicateSelection();
+        }
+        if (ImGui.MenuItem("Delete"))
+        {
+            DeleteSelection();
+        }
     }
 
     public AssetDescription loadedAsset;
