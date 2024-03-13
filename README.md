@@ -2,6 +2,7 @@
 A personal version of DSMapStudio, which is a standalone integrated modding tool for modern FromSoft games, which include Demon's Souls (PS3), the Dark Souls series, Bloodborne, Sekiro, and Elden Ring. It currently includes a map editor, a game param editor, and a text editor for editing in game text.
 
 ## Key Features
+- Gparam Editor: a editor for quickly creating and editing GPARAM files.
 - Map Asset Browser: view a list of all assets available for the current project type. Double-click to change current selection to chosen asset.
 - Viewport Grid: support for a wireframe grid for use within the Map and Model Editor.
 - Action Toolbar: support for quickly configuring various Map Editor actions.
