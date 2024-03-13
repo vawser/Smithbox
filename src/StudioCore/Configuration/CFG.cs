@@ -328,6 +328,7 @@ public class CFG
     public bool Param_HideReferenceRows = false;
     public bool Param_MakeMetaNamesPrimary = true;
     public bool Param_PasteAfterSelection = false;
+    public bool Param_PasteThenSelect = true;
     public bool Param_ShowFieldOffsets = false;
     public bool Param_ShowSecondaryNames = true;
     public bool Param_ShowVanillaParams = true;

@@ -241,6 +241,11 @@ public class AddParamsAction : EditorAction
         return ActionEvent.NoEvent;
     }
 
+    public List<Param.Row> GetResultantRows()
+    {
+        return Clones;
+    }
+
     public override ActionEvent Undo()
     {
         for (var i = 0; i < Clones.Count(); i++)
