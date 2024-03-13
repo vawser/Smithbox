@@ -177,7 +177,7 @@ namespace SoulsFormats
             /// <summary>
             /// A path to a .sib file, presumed to be some kind of editor placeholder.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public string SibPath { get; set; }
 
             /// <summary>
@@ -211,6 +211,7 @@ namespace SoulsFormats
             /// <summary>
             /// Identifies the part in external files.
             /// </summary>
+            [EnemyProperty]
             public int EntityID { get; set; }
 
             /// <summary>
@@ -256,55 +257,55 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte LanternID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte LodParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte IsShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte IsShadowDest { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte IsShadowOnly { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte DrawByReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte DrawOnlyReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UseDepthBiasFloat { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte DisablePointLightEffect { get; set; }
 
             private protected Part(string name)
@@ -530,7 +531,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short UnkT0E { get; set; }
 
                 /// <summary>
@@ -605,38 +606,45 @@ namespace SoulsFormats
                 /// ID in NPCThinkParam determining AI properties.
                 /// </summary>
                 [MSBParamReference(ParamName = "NpcThinkParam")]
+                [EnemyProperty]
                 public int ThinkParamID { get; set; }
 
                 /// <summary>
                 /// ID in NPCParam determining character properties.
                 /// </summary>
                 [MSBParamReference(ParamName = "NpcParam")]
+                [EnemyProperty]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
                 /// ID of a talk ESD used by the character.
                 /// </summary>
+                [EnemyProperty]
                 public int TalkID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EnemyProperty]
                 public byte PointMoveType { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EnemyProperty]
                 public ushort PlatoonID { get; set; }
 
                 /// <summary>
                 /// ID in CharaInitParam determining equipment and stats for humans.
                 /// </summary>
+                [EnemyProperty]
                 [MSBParamReference(ParamName = "CharaInitParam")]
                 public int CharaInitID { get; set; }
 
                 /// <summary>
                 /// Collision that controls loading of the enemy.
                 /// </summary>
+                [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
                 [IndexProperty]
@@ -645,6 +653,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Regions for the enemy to patrol.
                 /// </summary>
+                [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] MovePointNames { get; set; }
                 [IndexProperty]
@@ -653,11 +662,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EnemyProperty]
                 public int InitAnimID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EnemyProperty]
                 public int DamageAnimID { get; set; }
 
                 private protected EnemyBase() : base("cXXXX_XXXX")
@@ -835,7 +846,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte UnkT27 { get; set; }
 
                 /// <summary>
@@ -846,19 +857,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown value only used in m99 maps.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int M99Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown value only used in m99 maps.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int M99Unk04 { get; set; }
 
                 /// <summary>
                 /// Unknown value only used in m99 maps.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int M99Unk08 { get; set; }
 
                 /// <summary>

@@ -488,12 +488,22 @@ public class SettingsWindow
                 }
             }
 
-            // Property View
-            if (ImGui.CollapsingHeader("Property View"))
+            // Scene View
+            if (ImGui.CollapsingHeader("Map Object List"))
             {
-                ImGui.Checkbox("Display important properties only", ref CFG.Current.MapEditor_Show_Only_Important_Properties);
-                ImguiUtils.ShowHoverTooltip("The rarely used or unknown MSB property fields will be hidden.");
+                ImGui.Checkbox("Display list sorting type", ref CFG.Current.MapEditor_MapObjectList_ShowListSortingType);
+                ImguiUtils.ShowHoverTooltip("Display the list sorting type combo box.");
 
+                ImGui.Checkbox("Display map id search", ref CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch);
+                ImguiUtils.ShowHoverTooltip("Display the map id search text box.");
+
+                ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_MapObjectList_ShowChrNames);
+                ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
+            }
+
+            // Property View
+            if (ImGui.CollapsingHeader("Properties"))
+            {
                 ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
                 ImguiUtils.ShowHoverTooltip("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
 
@@ -504,11 +514,11 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
             }
 
-            // Scene View
-            if (ImGui.CollapsingHeader("Scene View"))
+            // Toolbar
+            if (ImGui.CollapsingHeader("Toolbar", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_Show_Character_Names_in_Scene_Tree);
-                ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
+                ImGui.Checkbox("Prompt user confirmation", ref CFG.Current.MSB_Toolbar_Prompt_User_Action);
+                ImguiUtils.ShowHoverTooltip("Show a prompt before executing a irrevocable toolbar action to confirm user's intent.");
             }
 
             // Substitutions
@@ -519,12 +529,6 @@ public class SettingsWindow
 
                 ImGui.InputText("##modelString", ref CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID, 255);
                 ImguiUtils.ShowHoverTooltip("The Chr ID of the model you want to use as the replacement.");
-            }
-
-            if (ImGui.CollapsingHeader("Toolbar", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Prompt user confirmation", ref CFG.Current.MSB_Toolbar_Prompt_User_Action);
-                ImguiUtils.ShowHoverTooltip("Show a prompt before executing a irrevocable toolbar action to confirm user's intent.");
             }
 
             ImGui.Unindent();

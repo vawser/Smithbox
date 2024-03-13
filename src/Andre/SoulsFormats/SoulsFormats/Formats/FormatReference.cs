@@ -24,11 +24,6 @@ namespace SoulsFormats
     {
     }
 
-    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
-    public class MsbIgnorableProperty : Attribute
-    {
-    }
-
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class MSBEnum : Attribute
     {
@@ -37,6 +32,16 @@ namespace SoulsFormats
 
     [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
     public class EldenRingAssetMask : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class IgnoreProperty : Attribute
+    {
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class EnemyProperty : Attribute
     {
     }
 }

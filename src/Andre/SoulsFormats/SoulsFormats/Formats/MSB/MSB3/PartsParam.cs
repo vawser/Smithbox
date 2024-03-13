@@ -172,7 +172,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown network path to a .sib file.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public string SibPath { get; set; }
 
             /// <summary>
@@ -223,95 +223,97 @@ namespace SoulsFormats
             /// <summary>
             /// Used to identify the part in event scripts.
             /// </summary>
+            [EnemyProperty]
             public int EntityID { get; set; }
 
             /// <summary>
             /// Used to identify multiple parts with the same ID in event scripts.
             /// </summary>
+            [EnemyProperty]
             public int[] EntityGroups { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public sbyte UnkE04 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public sbyte UnkE05 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public sbyte LanternID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public sbyte LodParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public sbyte UnkE0E { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public bool PointLightShadowSource { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public bool ShadowSource { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public bool ShadowDest { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public bool IsShadowOnly { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public bool DrawByReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public bool DrawOnlyReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public bool UseDepthBiasFloat { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public bool DisablePointLightEffect { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public int UnkE18 { get; set; }
 
             private protected Part(string name)
@@ -954,6 +956,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionName { get; set; }
                 [IndexProperty]
@@ -962,39 +965,46 @@ namespace SoulsFormats
                 /// <summary>
                 /// Controls enemy AI.
                 /// </summary>
+                [EnemyProperty]
                 [MSBParamReference(ParamName = "NpcThinkParam")]
                 public int ThinkParamID { get; set; }
 
                 /// <summary>
                 /// Controls enemy stats.
                 /// </summary>
+                [EnemyProperty]
                 [MSBParamReference(ParamName = "NpcParam")]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
                 /// Controls enemy speech.
                 /// </summary>
+                [EnemyProperty]
                 public int TalkID { get; set; }
 
                 /// <summary>
                 /// Controls enemy equipment.
                 /// </summary>
+                [EnemyProperty]
                 [MSBParamReference(ParamName = "CharaInitParam")]
                 public int CharaInitID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EnemyProperty]
                 public byte PointMoveType { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EnemyProperty]
                 public short PlatoonID { get; set; }
 
                 /// <summary>
                 /// Walk route followed by this enemy.
                 /// </summary>
+                [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
                 [IndexProperty]
@@ -1003,18 +1013,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EnemyProperty]
                 public int BackupEventAnimID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int UnkT78 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public float UnkT84 { get; set; }
 
                 private protected EnemyBase() : base("cXXXX_XXXX")
@@ -1315,19 +1326,19 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte UnkT34 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte UnkT35 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte UnkT36 { get; set; }
 
                 /// <summary>

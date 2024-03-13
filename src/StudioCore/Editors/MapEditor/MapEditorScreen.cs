@@ -109,7 +109,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         MapEditorToolbar = new MapEditorToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
         PrefabToolbar = new PrefabToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
-        PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport, MapEditorToolbar);
+        PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }

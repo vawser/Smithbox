@@ -270,12 +270,17 @@ public class CFG
     // Settings: Map Editor
     //****************************
     public bool MapEditor_Always_List_Loaded_Maps = true;
-    public bool MapEditor_Show_Character_Names_in_Scene_Tree = true;
+
+
     public bool MapEditor_Enable_Commmunity_Names = true;
     public bool MapEditor_Enable_Commmunity_Hints = true;
     public bool MapEditor_Enable_Property_Info = false;
     public bool MapEditor_Enable_Map_Load_on_Double_Click = false;
     public bool MapEditor_Show_Only_Important_Properties = false;
+
+    public bool MapEditor_MapObjectList_ShowListSortingType = true;
+    public bool MapEditor_MapObjectList_ShowMapIdSearch = true;
+    public bool MapEditor_MapObjectList_ShowChrNames = true;
 
     public bool MapEditor_Substitute_PseudoPlayer_Model = false;
     public string MapEditor_Substitute_PseudoPlayer_ChrID = "c0000";

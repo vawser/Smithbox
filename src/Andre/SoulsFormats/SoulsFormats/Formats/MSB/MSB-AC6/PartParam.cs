@@ -299,7 +299,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public int UnkT44 { get; set; }
 
             // COMMON
@@ -307,95 +307,97 @@ namespace SoulsFormats
             /// <summary>
             /// Identifies the part in event scripts.
             /// </summary>
+            [EnemyProperty]
             public uint EntityID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public int UnkE04 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public int UnkE08 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE0C { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE0D { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE0E { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE0F { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE10 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE11 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE14 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE15 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE16 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public byte UnkE17 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public int UnkE18 { get; set; }
 
             /// <summary>
             /// Allows multiple parts to be identified by the same entity ID.
             /// </summary>
+            [EnemyProperty]
             public uint[] EntityGroupIDs { get; private set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            [MsbIgnorableProperty]
+            [IgnoreProperty]
             public short UnkE3C { get; set; }
 
             /// <summary>
@@ -818,7 +820,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte UnkC0 { get; set; }
 
                 /// <summary>
@@ -883,7 +885,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk00 { get; set; }
 
                 /// <summary>
@@ -951,13 +953,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk04 { get; set; }
 
                 /// <summary>
@@ -1118,37 +1120,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk08 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk0C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk14 { get; set; }
 
                 /// <summary>
@@ -1197,13 +1199,13 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk01 { get; set; }
 
                 /// <summary>
@@ -1256,7 +1258,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk00 { get; set; }
 
                 /// <summary>
@@ -1531,41 +1533,46 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk00 { get; set; }
 
                 /// <summary>
                 /// An ID in NPCParam that determines a variety of enemy properties.
                 /// </summary>
+                [EnemyProperty]
                 [MSBParamReference(ParamName = "NpcParam")]
                 public int NPCParamID { get; set; }
 
                 /// <summary>
                 /// An ID in NPCThinkParam that determines the enemy's AI characteristics.
                 /// </summary>
+                [EnemyProperty]
                 [MSBParamReference(ParamName = "NpcThinkParam")]
                 public int ThinkParamID { get; set; }
 
                 /// <summary>
                 /// Talk ID
                 /// </summary>
+                [EnemyProperty]
                 public int TalkID { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short Unk16 { get; set; }
 
                 /// <summary>
                 /// An ID in CharaInitParam that determines a human's inventory and stats.
                 /// </summary>
+                [EnemyProperty]
                 [MSBParamReference(ParamName = "CharaInitParam")]
                 public int CharaInitID { get; set; }
 
                 /// <summary>
                 /// Should reference the collision the enemy starts on.
                 /// </summary>
+                [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionPartName { get; set; }
                 private int CollisionPartIndex;
@@ -1573,6 +1580,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Walk route followed by this enemy.
                 /// </summary>
+                [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
                 private short WalkRouteIndex;
@@ -1580,67 +1588,67 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short Unk22 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk38 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk3C { get; set; }
 
                 /// <summary>
                 /// Unknown. Entity ID?
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk40 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk44 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk48 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk50 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk54 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk55 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public sbyte Unk56 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk58 { get; set; }
 
                 /// <summary>
@@ -2127,37 +2135,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk01 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk02 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk03 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public float Unk04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short Unk26 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short Unk36 { get; set; }
 
                 /// <summary>
@@ -2556,91 +2564,91 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public bool Unk00 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk01 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public sbyte Unk03 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk04 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk10 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public bool Unk11 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public bool Unk12 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public bool Unk13 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short Unk14 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short Unk1C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short Unk1E { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk20 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk24 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk28 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk2C { get; set; }
 
                 /// <summary>
@@ -2653,49 +2661,49 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk44 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk48 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk4C { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public byte Unk4D { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public short Unk4E { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk50 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk54 { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [MsbIgnorableProperty]
+                [IgnoreProperty]
                 public int Unk5C { get; set; }
 
                 /// <summary>
@@ -2797,13 +2805,13 @@ namespace SoulsFormats
                     /// <summary>
                     /// Unknown.
                     /// </summary>
-                    [MsbIgnorableProperty]
+                    [IgnoreProperty]
                     public float Unk14 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
-                    [MsbIgnorableProperty]
+                    [IgnoreProperty]
                     public int Unk1C { get; set; }
 
                     /// <summary>
@@ -2872,13 +2880,13 @@ namespace SoulsFormats
                     /// <summary>
                     /// Unknown.
                     /// </summary>
-                    [MsbIgnorableProperty]
+                    [IgnoreProperty]
                     public int Unk00 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
-                    [MsbIgnorableProperty]
+                    [IgnoreProperty]
                     public float Unk04 { get; set; }
 
                     /// <summary>
@@ -2947,19 +2955,19 @@ namespace SoulsFormats
                     /// <summary>
                     /// Unknown.
                     /// </summary>
-                    [MsbIgnorableProperty]
+                    [IgnoreProperty]
                     public byte Unk00 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
-                    [MsbIgnorableProperty]
+                    [IgnoreProperty]
                     public sbyte Unk01 { get; set; }
 
                     /// <summary>
                     /// Unknown.
                     /// </summary>
-                    [MsbIgnorableProperty]
+                    [IgnoreProperty]
                     public sbyte Unk02 { get; set; }
 
                     /// <summary>

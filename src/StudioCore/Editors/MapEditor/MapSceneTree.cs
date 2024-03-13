@@ -279,7 +279,7 @@ public class MapSceneTree : IActionEventHandler
             if (modelName == null)
                 modelName = "";
 
-            if (CFG.Current.MapEditor_Show_Character_Names_in_Scene_Tree)
+            if (CFG.Current.MapEditor_MapObjectList_ShowChrNames)
             {
                 if (e.IsPartEnemy())
                 {
@@ -665,22 +665,28 @@ public class MapSceneTree : IActionEventHandler
             ImGui.Spacing();
             ImGui.Indent(30 * scale);
 
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("List Sorting Style:");
-            ImGui.SameLine();
-            ImGui.SetNextItemWidth(-1);
-
-            var mode = (int)_viewMode;
-            if (ImGui.Combo("##typecombo", ref mode, _viewModeStrings, _viewModeStrings.Length))
+            if (CFG.Current.MapEditor_MapObjectList_ShowListSortingType)
             {
-                _viewMode = (ViewMode)mode;
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("List Sorting Style:");
+                ImGui.SameLine();
+                ImGui.SetNextItemWidth(-1);
+
+                var mode = (int)_viewMode;
+                if (ImGui.Combo("##typecombo", ref mode, _viewModeStrings, _viewModeStrings.Length))
+                {
+                    _viewMode = (ViewMode)mode;
+                }
             }
 
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text("Map ID Search:");
-            ImGui.SameLine();
-            ImGui.SetNextItemWidth(-1);
-            ImGui.InputText("##treeSearch", ref _mapNameSearchStr, 99);
+            if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Map ID Search:");
+                ImGui.SameLine();
+                ImGui.SetNextItemWidth(-1);
+                ImGui.InputText("##treeSearch", ref _mapNameSearchStr, 99);
+            }
 
             if (CFG.Current.Interface_DisplayMapGroups)
             {

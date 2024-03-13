@@ -42,14 +42,11 @@ public class MapPropertyEditor
 
     private IViewport _viewport;
 
-    private MapEditorToolbar _msbToolbar;
-
-    public MapPropertyEditor(ViewportActionManager manager, MapPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
+    public MapPropertyEditor(ViewportActionManager manager, MapPropertyCache propCache, IViewport viewport)
     {
         ContextActionManager = manager;
         _propCache = propCache;
         _viewport = viewport;
-        _msbToolbar = msbToolbar;
     }
 
     private (bool, bool) PropertyRow(Type typ, object oldval, out object newval, PropertyInfo prop)
@@ -811,6 +808,15 @@ public class MapPropertyEditor
         }
     }
 
+    List<string> MsbPropertyFilters = new List<string>()
+    {
+        "All",
+        "Vital",
+        "Enemy"
+    };
+
+    private string SelectedMsbPropertyFilter = "All";
+
     private void PropEditorGeneric(ViewportSelection selection, HashSet<Entity> entSelection, object target = null,
         bool decorate = true, int classIndex = -1)
     {
@@ -823,6 +829,23 @@ public class MapPropertyEditor
 
         if (decorate)
         {
+            ImGui.Indent(5.0f);
+            // MSB Property Filter list
+            if (ImGui.BeginCombo("##PropertyFilterList", SelectedMsbPropertyFilter))
+            {
+                foreach (var filter in MsbPropertyFilters)
+                {
+                    if (ImGui.Selectable(filter, filter == SelectedMsbPropertyFilter))
+                    {
+                        SelectedMsbPropertyFilter = filter;
+                        break;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            ImguiUtils.ShowHoverTooltip("Filter the property view, narrowing down what is visible.");
+
             ImGui.Columns(2);
             ImGui.Separator();
             ImGui.Text("Object Type");
@@ -853,19 +876,24 @@ public class MapPropertyEditor
                     continue;
                 }
 
+                // Index Properties are hidden by default
                 if (prop.GetCustomAttribute<IndexProperty>() != null)
                 {
                     continue;
                 }
 
-                if (prop.GetCustomAttribute<HideProperty>() != null)
+                if (SelectedMsbPropertyFilter == "Vital")
                 {
-                    continue;
+                    // Filter: Vital Properties
+                    if (prop.GetCustomAttribute<IgnoreProperty>() != null)
+                    {
+                        continue;
+                    }
                 }
-
-                if (CFG.Current.MapEditor_Show_Only_Important_Properties)
+                if (SelectedMsbPropertyFilter == "Enemy")
                 {
-                    if (prop.GetCustomAttribute<MsbIgnorableProperty>() != null)
+                    // Filter: Vital Properties
+                    if (prop.GetCustomAttribute<EnemyProperty>() == null)
                     {
                         continue;
                     }
