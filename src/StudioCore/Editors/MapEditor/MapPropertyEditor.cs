@@ -1165,6 +1165,16 @@ public class MapPropertyEditor
                         committed = true;
                     }
 
+                    // Special enum for the Elden Ring Asset mask and anim ID property
+                    if(prop.GetCustomAttribute<EldenRingAssetMask>() != null)
+                    {
+                        if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(prop, oldval, ref newval, selection))
+                        {
+                            changed = true;
+                            committed = true;
+                        }
+                    }
+
                     UpdateProperty(prop, entSelection, newval, changed, committed, -1, classIndex);
 
                     ImGui.NextColumn();

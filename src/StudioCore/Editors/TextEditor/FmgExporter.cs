@@ -284,7 +284,7 @@ public static partial class FMGBank
                     if (merge)
                     {
                         // Merge mode. Add and replace FMG entries instead of overwriting FMG entirely
-                        foreach (var entry in fmg.Entries)
+                        foreach (var entry in fmg.Entries.ToList())
                         {
                             var currentEntry = info.Fmg.Entries.Find(e => e.ID == entry.ID);
                             if (currentEntry == null)
@@ -394,7 +394,17 @@ public static partial class FMGBank
                     for (var i = 1; i < file.Length; i++)
                     {
                         var line = file[i];
-                        if (line.StartsWith(_entrySeparator) || i + 1 == file.Length)
+
+                        if (i + 1 == file.Length)
+                        {
+                            text.Add(line);
+                            string str = string.Join("\r\n", text);
+                            while (entryIds.Count > 0)
+                            {
+                                fmg.Entries.Add(new(entryIds.Dequeue(), str));
+                            }
+                        }
+                        else if (line.StartsWith(_entrySeparator) || i + 1 == file.Length)
                         {
                             if (text.Count > 0)
                             {

@@ -28,4 +28,15 @@ namespace SoulsFormats
     public class MsbIgnorableProperty : Attribute
     {
     }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public class MSBEnum : Attribute
+    {
+        public string EnumType;
+    }
+
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
+    public class EldenRingAssetMask : Attribute
+    {
+    }
 }

@@ -15,7 +15,8 @@ namespace StudioCore.Banks.FormatBank;
     ReadCommentHandling = JsonCommentHandling.Skip)
 ]
 [JsonSerializable(typeof(FormatEnum))]
-[JsonSerializable(typeof(FormatReference))]
+[JsonSerializable(typeof(FormatEnumEntry))]
+[JsonSerializable(typeof(FormatEnumMember))]
 public partial class FormatEnumSerializationContext
     : JsonSerializerContext
 { }

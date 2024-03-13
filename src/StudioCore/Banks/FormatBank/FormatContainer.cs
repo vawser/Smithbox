@@ -12,6 +12,7 @@ public class FormatContainer
 {
     public FormatResource Data;
     public FormatEnum Enums;
+    public FormatMask Masks;
 
     private FormatBankType FormatBankType;
     private bool IsGameSpecific;
@@ -20,6 +21,7 @@ public class FormatContainer
     {
         Data = new FormatResource();
         Enums = new FormatEnum();
+        Masks = new FormatMask();
 
         FormatBankType = FormatBankType.None;
     }
@@ -30,6 +32,7 @@ public class FormatContainer
 
         Data = LoadFormatJSON();
         Enums = LoadEnumJSON();
+        Masks = LoadMaskJSON();
     }
 
     private FormatResource LoadFormatJSON()
@@ -80,6 +83,35 @@ public class FormatContainer
             using (var stream = File.OpenRead(baseResourcePath))
             {
                 baseResource = JsonSerializer.Deserialize(stream, FormatEnumSerializationContext.Default.FormatEnum);
+            }
+        }
+        else
+        {
+            TaskLogs.AddLog($"{baseResourcePath} does not exist!");
+        }
+
+        return baseResource;
+    }
+
+    private FormatMask LoadMaskJSON()
+    {
+        var baseResource = new FormatMask();
+
+        if (FormatBankType is FormatBankType.None)
+            return null;
+
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{GetFormatTypeDir()}\\Masks.json";
+
+        if (IsGameSpecific)
+        {
+            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\FormatInfo\\{GetFormatTypeDir()}\\{Project.GetGameIDForDir()}\\Masks.json";
+        }
+
+        if (File.Exists(baseResourcePath))
+        {
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, FormatMaskSerializationContext.Default.FormatMask);
             }
         }
         else

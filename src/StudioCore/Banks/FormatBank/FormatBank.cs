@@ -76,6 +76,19 @@ public class FormatBank
         }
     }
 
+    public FormatMask Masks
+    {
+        get
+        {
+            if (IsFormatBankLoading)
+            {
+                return new FormatMask();
+            }
+
+            return _FormatBank.Masks;
+        }
+    }
+
     public void ReloadFormatBank()
     {
         TaskManager.Run(new TaskManager.LiveTask($"Format Info - Load {FormatInfoName}", TaskManager.RequeueType.None, false,

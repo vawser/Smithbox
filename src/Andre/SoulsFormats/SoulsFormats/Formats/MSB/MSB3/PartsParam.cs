@@ -855,6 +855,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Automatically playing animations; only the first is actually used, according to Pav.
                 /// </summary>
+                [MSBEnum(EnumType = "PartsPose_DS3")]
                 public short[] AnimIDs { get; private set; }
 
                 /// <summary>

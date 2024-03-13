@@ -2629,6 +2629,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                [EldenRingAssetMask]
                 public int UnkModelMaskAndAnimID { get; set; }
 
                 /// <summary>
