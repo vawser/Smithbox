@@ -57,7 +57,7 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
 
     private bool _setNextFocus;
 
-    public ModelContainer Model { get;  set; }
+    public static ModelContainer Model { get;  set; }
 
     private ModelEditorScreen _editor;
 
@@ -124,13 +124,13 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
 
                 Model = loadedModel;
 
-                Entity mapRoot = loadedModel?.RootObject;
+                Entity rootEntity = loadedModel?.RootObject;
                 ObjectContainerReference mapRef = new(assetName, _universe);
-                ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
+                ISelectable selectTarget = (ISelectable)rootEntity ?? mapRef;
 
                 ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
 
-                var selected = _selection.GetSelection().Contains(mapRoot) ||
+                var selected = _selection.GetSelection().Contains(rootEntity) ||
                                _selection.GetSelection().Contains(mapRef);
                 if (selected)
                 {
@@ -172,7 +172,7 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
 
                 ImGui.EndGroup();
 
-                if (_selection.ShouldGoto(mapRoot) || _selection.ShouldGoto(mapRef))
+                if (_selection.ShouldGoto(rootEntity) || _selection.ShouldGoto(mapRef))
                 {
                     ImGui.SetScrollHereY();
                     _selection.ClearGotoTarget();
@@ -188,18 +188,18 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                     _pendingClick = selectTarget;
                 }
 
-                if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && mapRoot == _pendingClick)
+                if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && rootEntity == _pendingClick)
                 {
-                    _viewport.FramePosition(mapRoot.GetLocalTransform().Position, 10f);
+                    _viewport.FramePosition(rootEntity.GetLocalTransform().Position, 10f);
                 }
 
-                if ((_pendingClick == mapRoot || mapRef.Equals(_pendingClick)) &&
+                if ((_pendingClick == rootEntity || mapRef.Equals(_pendingClick)) &&
                     ImGui.IsMouseReleased(ImGuiMouseButton.Left))
                 {
                     if (ImGui.IsItemHovered())
                     {
                         // Only select if a node is not currently being opened/closed
-                        if (mapRoot == null || nodeopen && _treeOpenEntities.Contains(mapRoot) || !nodeopen && !_treeOpenEntities.Contains(mapRoot))
+                        if (rootEntity == null || nodeopen && _treeOpenEntities.Contains(rootEntity) || !nodeopen && !_treeOpenEntities.Contains(rootEntity))
                         {
                             if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
                             {
@@ -221,15 +221,15 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                         }
 
                         // Update the open/closed state
-                        if (mapRoot != null)
+                        if (rootEntity != null)
                         {
-                            if (nodeopen && !_treeOpenEntities.Contains(mapRoot))
+                            if (nodeopen && !_treeOpenEntities.Contains(rootEntity))
                             {
-                                _treeOpenEntities.Add(mapRoot);
+                                _treeOpenEntities.Add(rootEntity);
                             }
-                            else if (!nodeopen && _treeOpenEntities.Contains(mapRoot))
+                            else if (!nodeopen && _treeOpenEntities.Contains(rootEntity))
                             {
-                                _treeOpenEntities.Remove(mapRoot);
+                                _treeOpenEntities.Remove(rootEntity);
                             }
                         }
                     }
@@ -260,9 +260,9 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
         _selection.ClearGotoTarget();
     }
 
-    private void HierarchyView(Entity rootObject)
+    private void HierarchyView(Entity ent)
     {
-        foreach (Entity obj in rootObject.Children)
+        foreach (Entity obj in ent.Children)
         {
             if (obj is Entity e)
             {
@@ -278,7 +278,7 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
         ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth | ImGuiTreeNodeFlags.DefaultOpen;
 
         // Don't auto-open these objects
-        if (e is NamedEntity && e.Name == "Bones" || e.WrappedObject is FLVER.Bone)
+        if (e.WrappedObject is ModelRootNode rootNode && rootNode.Name == "Bones")
         {
             treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
         }

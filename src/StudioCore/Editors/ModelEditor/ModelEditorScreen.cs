@@ -182,7 +182,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             if (ImGui.MenuItem("Unload"))
             {
                 _loadedModelInfo = null;
-                _universe.UnloadAll(true); 
+                _universe.UnloadModels(true); 
             }
 
             // TODO: Select other Flvers within the same container (e.g. _1, _2, etc)
@@ -331,9 +331,6 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void DuplicateSelection()
     {
-        // WIP
-        return;
-
         ViewportSelection sel = _sceneTree.GetCurrentSelection();
 
         if (sel.GetSelection().Count < 1)
@@ -345,47 +342,12 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         Entity selected = first as Entity;
 
         FlverResource r = _flverhandle.Get();
-        NamedEntity nameEnt = selected as NamedEntity;
-        TransformableNamedEntity transformableNamedEntity = selected as TransformableNamedEntity;
-
-        // Mesh
-        if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
-        {
-            FLVER2.Mesh newMesh = r.Flver.Meshes[nameEnt.Index];
-
-            r.Flver.Meshes.Add(newMesh);
-        }
-
-        // Material
-        if (selected.WrappedObject.GetType() == typeof(FLVER2.Material))
-        {
-            FLVER2.Material newMaterial = r.Flver.Materials[nameEnt.Index];
-
-            r.Flver.Materials.Add(newMaterial);
-        }
-
-        // Bone
-        if (selected.WrappedObject.GetType() == typeof(FLVER.Bone))
-        {
-            FLVER.Bone newBone = r.Flver.Bones[transformableNamedEntity.Index];
-
-            r.Flver.Bones.Add(newBone);
-        }
-
-        // Dummy
-        if (selected.WrappedObject.GetType() == typeof(FLVER.Dummy))
-        {
-            FLVER.Dummy newDummy = r.Flver.Dummies[transformableNamedEntity.Index];
-
-            r.Flver.Dummies.Add(newDummy);
-        }
+        
+        ModelSceneTree.Model.DuplicateMeshIfValid(selected, r);
     }
 
     public void DeleteSelection()
     {
-        // WIP
-        return;
-
         ViewportSelection sel = _sceneTree.GetCurrentSelection();
 
         if (sel.GetSelection().Count < 1)
@@ -397,42 +359,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         Entity selected = first as Entity;
 
         FlverResource r = _flverhandle.Get();
-        NamedEntity nameEnt = selected as NamedEntity;
-        TransformableNamedEntity transformableNamedEntity = selected as TransformableNamedEntity;
 
-        // Mesh
-        if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
-        {
-            FLVER2.Mesh oldMesh = r.Flver.Meshes[nameEnt.Index - 1];
-
-            r.Flver.Meshes.Remove(oldMesh);
-        }
-
-        // Material
-        if (selected.WrappedObject.GetType() == typeof(FLVER2.Material))
-        {
-            FLVER2.Material oldMaterial = r.Flver.Materials[nameEnt.Index - 1];
-
-            r.Flver.Materials.Remove(oldMaterial);
-        }
-
-        // Bone
-        if (selected.WrappedObject.GetType() == typeof(FLVER.Bone))
-        {
-            FLVER.Bone oldBone = r.Flver.Bones[transformableNamedEntity.Index - 1];
-
-            r.Flver.Bones.Remove(oldBone);
-        }
-
-        // Dummy
-        if (selected.WrappedObject.GetType() == typeof(FLVER.Dummy))
-        {
-            _sceneTree.Model.Objects.Remove(transformableNamedEntity);
-            _sceneTree.Model.RootObject.RemoveChild(transformableNamedEntity);
-
-            FLVER.Dummy oldDummy = r.Flver.Dummies[transformableNamedEntity.Index-1];
-            r.Flver.Dummies.Remove(oldDummy);
-        }
+        ModelSceneTree.Model.DeleteMeshIfValid(selected, r);
     }
 
     public bool InputCaptured()

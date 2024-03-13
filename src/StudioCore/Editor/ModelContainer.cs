@@ -1,7 +1,10 @@
-﻿using SoulsFormats;
+﻿using DotNext.Collections.Generic;
+using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.MsbEditor;
+using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.UserProject;
 using System;
@@ -11,17 +14,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using static SoulsFormats.BTPB;
+using static SoulsFormats.MSB_AC6.Region;
 
 namespace StudioCore.Editor;
 
 public class ModelContainer : ObjectContainer
 {
-    public NamedEntity meshesNode;
-    public NamedEntity materialsNode;
-    public NamedEntity matbinsNode;
-    public NamedEntity layoutsNode;
-    public NamedEntity bonesNode;
-    public NamedEntity dmysNode;
+    public Entity Mesh_RootNode { get; set; }
+    public Entity MTD_RootNode { get; set; }
+    public Entity Matbin_RootNode { get; set; }
+    public Entity Layout_RootNode { get; set; }
+    public Entity Bone_RootNode { get; set; }
+    public Entity DummyPoly_RootNode { get; set; }
 
     public Dictionary<int, string> MaterialDictionary = new Dictionary<int, string>();
 
@@ -33,7 +38,27 @@ public class ModelContainer : ObjectContainer
     {
         Name = name;
         Universe = u;
-        RootObject = new Entity(this, new MapTransformNode());
+
+        RootObject = new Entity(this, new ModelRootNode("Root"));
+
+        Mesh_RootNode = new Entity(this, new ModelRootNode("Meshes"));
+        MTD_RootNode = new Entity(this, new ModelRootNode("Materials"));
+        Matbin_RootNode = new Entity(this, new ModelRootNode("Matbins"));
+        Layout_RootNode = new Entity(this, new ModelRootNode("Layouts"));
+        Bone_RootNode = new Entity(this, new ModelRootNode("Bones"));
+        DummyPoly_RootNode = new Entity(this, new ModelRootNode("Dummy Polygons"));
+
+        RootObject.AddChild(Mesh_RootNode);
+        RootObject.AddChild(MTD_RootNode);
+
+        if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
+        {
+            RootObject.AddChild(Matbin_RootNode);
+        }
+
+        RootObject.AddChild(Layout_RootNode);
+        RootObject.AddChild(Bone_RootNode);
+        RootObject.AddChild(DummyPoly_RootNode);
     }
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy)
@@ -41,46 +66,37 @@ public class ModelContainer : ObjectContainer
         MaterialDictionary.Clear();
 
         // Meshes
-        meshesNode = new NamedEntity(this, null, "Meshes", 0);
-        Objects.Add(meshesNode);
-        RootObject.AddChild(meshesNode);
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
-            var meshnode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
+            var meshNode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
             if (proxy.Submeshes.Count > 0)
             {
-                meshnode.RenderSceneMesh = proxy.Submeshes[i];
-                proxy.Submeshes[i].SetSelectable(meshnode);
+                meshNode.RenderSceneMesh = proxy.Submeshes[i];
+                proxy.Submeshes[i].SetSelectable(meshNode);
             }
 
-            Objects.Add(meshnode);
-            meshesNode.AddChild(meshnode);
+            Objects.Add(meshNode);
+            Mesh_RootNode.AddChild(meshNode);
         }
 
-        // Materials
-        materialsNode = new NamedEntity(this, null, "Materials", 0);
-        Objects.Add(materialsNode);
-        RootObject.AddChild(materialsNode);
+        // MTDs
         for (var i = 0; i < flver.Materials.Count; i++)
         {
-            var mat = flver.Materials[i];
+            var mtd = flver.Materials[i];
 
             if (!MaterialDictionary.ContainsKey(i))
             {
-                MaterialDictionary.Add(i, mat.Name);
+                MaterialDictionary.Add(i, mtd.Name);
             }
 
-            var matnode = new NamedEntity(this, flver.Materials[i], mat.Name, i);
-            Objects.Add(matnode);
-            materialsNode.AddChild(matnode);
+            var mtdNode = new NamedEntity(this, flver.Materials[i], mtd.Name, i);
+            Objects.Add(mtdNode);
+            MTD_RootNode.AddChild(mtdNode);
         }
 
-        // Matbin
+        // Matbins
         if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
         {
-            matbinsNode = new NamedEntity(this, null, "Matbin (Read-only)", 0);
-            Objects.Add(matbinsNode);
-            RootObject.AddChild(matbinsNode);
             for (var i = 0; i < flver.Materials.Count; i++)
             {
                 var mat = flver.Materials[i];
@@ -96,47 +112,42 @@ public class ModelContainer : ObjectContainer
 
                         var name = Path.GetFileNameWithoutExtension(matbin.SourcePath);
 
-                        var matbinnode = new NamedEntity(this, matbin, $"{name}", i);
-                        Objects.Add(matbinnode);
-                        matbinsNode.AddChild(matbinnode);
+                        var matbinNode = new NamedEntity(this, matbin, $"{name}", i);
+                        Objects.Add(matbinNode);
+                        Matbin_RootNode.AddChild(matbinNode);
                     }
                 }
             }
         }
 
         // Layouts
-        layoutsNode = new NamedEntity(this, null, "Layouts", 0);
-        Objects.Add(layoutsNode);
-        RootObject.AddChild(layoutsNode);
         for (var i = 0; i < flver.BufferLayouts.Count; i++)
         {
-            var laynode = new NamedEntity(this, flver.BufferLayouts[i], $@"Layout {i}", i);
-            Objects.Add(laynode);
-            layoutsNode.AddChild(laynode);
+            var layoutNode = new NamedEntity(this, flver.BufferLayouts[i], $@"Layout {i}", i);
+            Objects.Add(layoutNode);
+            Layout_RootNode.AddChild(layoutNode);
         }
 
         // Bones
-        bonesNode = new NamedEntity(this, null, "Bones", 0);
-        Objects.Add(bonesNode);
-        RootObject.AddChild(bonesNode);
         var boneEntList = new List<TransformableNamedEntity>();
         for (var i = 0; i < flver.Bones.Count; i++)
         {
-            var bonenode =
-                new TransformableNamedEntity(this, flver.Bones[i], flver.Bones[i].Name, i);
+            var boneNode = new TransformableNamedEntity(this, flver.Bones[i], flver.Bones[i].Name, i);
 
             if (CFG.Current.Model_ViewBones)
-                bonenode.RenderSceneMesh = Universe.GetBoneDrawable(this, bonenode);
+            {
+                boneNode.RenderSceneMesh = Universe.GetBoneDrawable(this, boneNode);
+            }
 
-            Objects.Add(bonenode);
-            boneEntList.Add(bonenode);
+            Objects.Add(boneNode);
+            boneEntList.Add(boneNode);
         }
 
         for (var i = 0; i < flver.Bones.Count; i++)
         {
             if (flver.Bones[i].ParentIndex == -1)
             {
-                bonesNode.AddChild(boneEntList[i]);
+                Bone_RootNode.AddChild(boneEntList[i]);
             }
             else
             {
@@ -145,18 +156,41 @@ public class ModelContainer : ObjectContainer
         }
 
         // Dummy Polygons
-        dmysNode = new NamedEntity(this, null, "DummyPolys", 0);
-        Objects.Add(dmysNode);
-        RootObject.AddChild(dmysNode);
         for (var i = 0; i < flver.Dummies.Count; i++)
         {
-            var dmynode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}", i);
+            var dummyPolyNode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}", i);
 
             if (CFG.Current.ModelEditor_ViewDummyPolys)
-                dmynode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dmynode);
+            {
+                dummyPolyNode.RenderSceneMesh = Universe.GetDummyPolyDrawable(this, dummyPolyNode);
+            }
 
-            Objects.Add(dmynode);
-            dmysNode.AddChild(dmynode);
+            Objects.Add(dummyPolyNode);
+            DummyPoly_RootNode.AddChild(dummyPolyNode);
+        }
+    }
+
+    // Mesh
+    public void DuplicateMeshIfValid(Entity selected, FlverResource r)
+    {
+        NamedEntity nameEnt = selected as NamedEntity;
+
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
+        {
+            FLVER2.Mesh newMesh = r.Flver.Meshes[nameEnt.Index];
+            r.Flver.Meshes.Add(newMesh);
+            CFG.Current.ModelEditor_RenderingUpdate = true;
+        }
+    }
+
+    public void DeleteMeshIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
+        {
+            FLVER2.Mesh oldMesh = (FLVER2.Mesh)selected.WrappedObject;
+
+            r.Flver.Meshes.Remove(oldMesh);
+            CFG.Current.ModelEditor_RenderingUpdate = true;
         }
     }
 }

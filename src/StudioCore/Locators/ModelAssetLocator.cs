@@ -105,6 +105,8 @@ public static class ModelAssetLocator
             }
         }
 
+        ret.Sort();
+
         return ret;
     }
 
@@ -252,6 +254,7 @@ public static class ModelAssetLocator
 
             var modelDir = @"\chr";
             var modelExt = @".chrbnd.dcx";
+
             if (Project.Type == ProjectType.DS1)
                 modelExt = ".chrbnd";
             else if (Project.Type == ProjectType.DS2S)
@@ -295,6 +298,8 @@ public static class ModelAssetLocator
                     }
                 }
             }
+
+            ret.Sort();
 
             return ret;
         }
@@ -474,6 +479,8 @@ public static class ModelAssetLocator
                     }
                 }
             }
+
+            ret.Sort();
 
             return ret;
         }

@@ -43,6 +43,12 @@ public class ObjectContainer
         RootObject.AddChild(obj);
     }
 
+    public void RemoveObject(Entity obj)
+    {
+        Objects.Remove(obj);
+        RootObject.RemoveChild(obj);
+    }
+
     public void Clear()
     {
         Objects.Clear();
