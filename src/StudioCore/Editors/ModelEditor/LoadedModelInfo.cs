@@ -56,9 +56,14 @@ namespace StudioCore.Editors.ModelEditor
                     File.Copy(RootBinderPath, ModBinderPath);
                 }
             }
+            // Mod-only model, no need to copy to mod
+            else if(File.Exists(ModBinderPath))
+            {
+                return true;
+            }
             else
             {
-                TaskLogs.AddLog($"Root container path does not exist during Model Save: {RootBinderPath}");
+                TaskLogs.AddLog($"Container path does not exist: {RootBinderPath}");
                 return false;
             }
 
