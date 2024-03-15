@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Numerics;
 using System.Reflection;
 using static SoulsFormats.GPARAM;
+using static StudioCore.Editors.GraphicsEditor.GparamParamBank;
 
 namespace StudioCore.Editors.GparamEditor;
 public class GparamEditor
@@ -22,7 +23,7 @@ public class GparamEditor
     // Value can be changed in the GPARAM
     private static bool _committedCache;
 
-    public static unsafe void ValueField(int idx, IField field, IFieldValue value)
+    public static unsafe void ValueField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
     {
         _changedCache = false;
         _committedCache = false;
@@ -397,6 +398,7 @@ public class GparamEditor
                 }
                 else
                 {
+                    _selectedGparamInfo.WasModified = true;
                     GparamValueChangeAction action = null;
                     action = new GparamValueChangeAction(field, value, newValue, idx, GparamValueChangeAction.ValueChangeType.Set);
                     GparamEditorScreen.EditorActionManager.ExecuteAction(action);
@@ -405,7 +407,7 @@ public class GparamEditor
         }
     }
 
-    public static unsafe void TimeOfDayField(int idx, IField field, IFieldValue value)
+    public static unsafe void TimeOfDayField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
     {
         _changedCache = false;
         _committedCache = false;
@@ -443,6 +445,7 @@ public class GparamEditor
                 }
                 else
                 {
+                    _selectedGparamInfo.WasModified = true;
                     GparamTimeOfDayChangeAction action = null;
                     action = new GparamTimeOfDayChangeAction(field, value, newValue, idx);
                     GparamEditorScreen.EditorActionManager.ExecuteAction(action);

@@ -354,6 +354,7 @@ public class GparamEditorScreen : EditorScreen
             if (ImGui.Button($"Add##{missing.id}"))
             {
                 AddMissingGroup(missing);
+                _selectedGparamInfo.WasModified = true;
             }
             ImGui.SameLine();
             ImGui.Text($"{missing.name}");
@@ -460,6 +461,7 @@ public class GparamEditorScreen : EditorScreen
                 if (ImGui.Button($"Add##{missing.id}"))
                 {
                     AddMissingField(_selectedParamGroup, missing);
+                    _selectedGparamInfo.WasModified = true;
                 }
                 ImGui.SameLine();
                 ImGui.Text($"{missing.name}");
@@ -637,7 +639,7 @@ public class GparamEditorScreen : EditorScreen
     public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        GparamEditor.TimeOfDayField(index, field, value);
+        GparamEditor.TimeOfDayField(index, field, value, _selectedGparamInfo);
     }
 
     /// <summary>
@@ -649,7 +651,8 @@ public class GparamEditorScreen : EditorScreen
     public void GparamProperty_Value(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        GparamEditor.ValueField(index, field, value);
+        GparamEditor.ValueField(index, field, value,
+        _selectedGparamInfo);
     }
 
     /// <summary>
@@ -745,6 +748,7 @@ public class GparamEditorScreen : EditorScreen
                 if (ImGui.Selectable("Remove"))
                 {
                     _selectedGparam.Params.Remove(_selectedParamGroup);
+                    _selectedGparamInfo.WasModified = true;
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -768,6 +772,7 @@ public class GparamEditorScreen : EditorScreen
                 if (ImGui.Selectable("Remove"))
                 {
                     _selectedParamGroup.Fields.Remove(_selectedParamField);
+                    _selectedGparamInfo.WasModified = true;
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -791,6 +796,7 @@ public class GparamEditorScreen : EditorScreen
                 if (ImGui.Selectable("Remove"))
                 {
                     GparamEditor.RemovePropertyValueRow(_selectedParamField, _selectedFieldValue);
+                    _selectedGparamInfo.WasModified = true;
 
                     // Update the group index lists to account for the removed ID.
                     GparamEditor.UpdateGroupIndexes(_selectedGparam);
@@ -803,6 +809,7 @@ public class GparamEditorScreen : EditorScreen
                 {
                     ExtendDisplayTruth(_selectedParamField);
                     GparamEditor.AddPropertyValueRow(_selectedParamField, _selectedFieldValue, _duplicateValueRowId);
+                    _selectedGparamInfo.WasModified = true;
 
                     // Update the group index lists to account for the new ID.
                     GparamEditor.UpdateGroupIndexes(_selectedGparam);

@@ -24,7 +24,11 @@ public static class GparamParamBank
     {
         foreach (var (name, info) in ParamBank)
         {
-            SaveGraphicsParam(info);
+            if (info.WasModified)
+            {
+                SaveGraphicsParam(info);
+                info.WasModified = false;
+            }
         }
     }
 
@@ -214,6 +218,7 @@ public static class GparamParamBank
         {
             Name = name;
             Path = path;
+            WasModified = false;
         }
 
         public GPARAM Gparam { get; set; }
@@ -221,6 +226,8 @@ public static class GparamParamBank
         public string Path { get; set; }
 
         public bool IsModFile { get; set; }
+
+        public bool WasModified { get; set; }
 
         public int CompareTo(string other)
         {
