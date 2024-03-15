@@ -494,8 +494,12 @@ public class ParamEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
+            ImGui.EndMenu();
+        }
 
-            /*
+
+        if (ImGui.BeginMenu("Views"))
+        {
             if (ImGui.MenuItem("New View"))
             {
                 AddView();
@@ -512,7 +516,6 @@ public class ParamEditorScreen : EditorScreen
             {
                 EditorCommandQueue.AddCommand(@"param/back");
             }
-            */
 
             ImGui.EndMenu();
         }
@@ -906,58 +909,99 @@ public class ParamEditorScreen : EditorScreen
                 style.ItemSpacing * scale - new Vector2(3.5f, 0f) * scale);
         }
 
-        // Remove the multiple View feature for now
-        _activeView.ParamView(doFocus, true);
+        // Views
+        var dsid = ImGui.GetID("DockSpace_ParamView");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        /*
-        if (CountViews() == 1)
+        foreach (ParamEditorView view in _views)
         {
-            _activeView.ParamView(doFocus, true);
-        }
-        else
-        {
-            ImGui.DockSpace(ImGui.GetID("DockSpace_ParamEditorViews"));
-            foreach (ParamEditorView view in _views)
+            if (view == null)
             {
-                if (view == null)
-                {
-                    continue;
-                }
+                continue;
+            }
 
-                var name = view._selection.GetActiveRow() != null ? view._selection.GetActiveRow().Name : null;
-                var toDisplay = (view == _activeView ? "**" : "") +
-                                (name == null || name.Trim().Equals("")
-                                    ? "Param Editor View"
-                                    : Utils.ImGuiEscape(name, "null")) + (view == _activeView ? "**" : "");
+            var name = view._selection.GetActiveRow() != null ? view._selection.GetActiveRow().Name : null;
+            var toDisplay = (view == _activeView ? "**" : "") +
+                            (name == null || name.Trim().Equals("")
+                                ? "Param Editor View"
+                                : Utils.ImGuiEscape(name, "null")) + (view == _activeView ? "**" : "");
 
-                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-                ImGui.SetNextWindowSize(new Vector2(1280.0f, 720.0f) * scale, ImGuiCond.Once);
-                ImGui.SetNextWindowDockID(ImGui.GetID("DockSpace_ParamEditorViews"), ImGuiCond.Once);
-                ImGui.Begin($@"{toDisplay}###ParamEditorView##{view._viewIndex}");
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
+            if(CountViews() == 1)
+            {
+                toDisplay = "Param Editor";
+            }
+
+            if (ImGui.Begin($@"{toDisplay}###ParamEditorView##{view._viewIndex}"))
+            {
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
                 {
                     _activeView = view;
                 }
 
-                if (ImGui.BeginPopupContextItem())
+                // Don't let the user close if their is only 1 view
+                if (CountViews() > 1)
                 {
-                    if (ImGui.MenuItem("Close View"))
+                    if (ImGui.BeginPopupContextItem())
                     {
-                        RemoveView(view);
-                        ImGui.EndMenu();
-                        break; //avoid concurrent modification
-                    }
+                        if (ImGui.MenuItem("Close View"))
+                        {
+                            RemoveView(view);
+                            ImGui.EndMenu();
+                            ImGui.End();
+                            ImGui.PopStyleColor(1);
+                            break; //avoid concurrent modification
+                        }
 
-                    ImGui.EndMenu();
+                        ImGui.EndMenu();
+                    }
+                }
+            }
+
+            view.ParamView(doFocus && view == _activeView, view == _activeView);
+
+            ImGui.End();
+            ImGui.PopStyleColor(1);
+        }
+
+        if (CFG.Current.Param_DisplaySideWindow)
+        {
+            // Toolbar
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+            if (ImGui.Begin("Toolbar##ParamToolbar"))
+            {
+                _activeView._toolbarView.OnGui();
+            }
+            ImGui.End();
+            ImGui.PopStyleColor(1);
+
+            // Mass Edit
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+            if (ImGui.Begin("Mass Edit##MassEditView"))
+            {
+                _activeView._massEditView.OnGui();
+            }
+
+            // Focus on Mass Edit by default when this editor is made focused
+            if (FirstFrame)
+            {
+                if (CFG.Current.Param_DisplaySideWindow)
+                {
+                    ImGui.SetWindowFocus("Mass Edit##MassEditView");
                 }
 
-                view.ParamView(doFocus && view == _activeView, view == _activeView);
-                ImGui.End();
-                ImGui.PopStyleColor(1);
+                FirstFrame = false;
             }
+
+            ImGui.End();
+            ImGui.PopStyleColor(1);
         }
-        */
 
         if (CFG.Current.UI_CompactParams)
         {
@@ -966,17 +1010,6 @@ public class ParamEditorScreen : EditorScreen
         else
         {
             ImGui.PopStyleVar();
-        }
-
-        // Focus on Mass Edit by default when this editor is made focused
-        if (FirstFrame)
-        {
-            if (CFG.Current.Param_DisplaySideWindow)
-            {
-                ImGui.SetWindowFocus("Mass Edit##MassEditView");
-            }
-
-            FirstFrame = false;
         }
     }
 

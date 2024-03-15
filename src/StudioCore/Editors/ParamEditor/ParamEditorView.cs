@@ -28,8 +28,8 @@ public class ParamEditorView
 
     internal ParamEditorScreen _paramEditor;
 
-    internal ParamToolbarView _toolbarView;
-    internal ParamMassEditView _massEditView;
+    public ParamToolbarView _toolbarView;
+    public ParamMassEditView _massEditView;
 
     internal ParamEditorSelectionState _selection;
     internal int _viewIndex;
@@ -589,63 +589,29 @@ public class ParamEditorView
     {
         var scale = Smithbox.GetUIScale();
 
-        var dsid = ImGui.GetID("DockSpace_ParamView");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        if (ImGui.Begin("Param Editor##ParamViewWindow"))
+        if (EditorDecorations.ImGuiTableStdColumns("paramsT", 3, true))
         {
-            if (EditorDecorations.ImGuiTableStdColumns("paramsT", 3, true))
+            ImGui.TableSetupColumn("paramsCol", ImGuiTableColumnFlags.None, 0.5f);
+            ImGui.TableSetupColumn("paramsCol2", ImGuiTableColumnFlags.None, 0.5f);
+            var scrollTo = 0f;
+            if (ImGui.TableNextColumn())
             {
-                ImGui.TableSetupColumn("paramsCol", ImGuiTableColumnFlags.None, 0.5f);
-                ImGui.TableSetupColumn("paramsCol2", ImGuiTableColumnFlags.None, 0.5f);
-                var scrollTo = 0f;
-                if (ImGui.TableNextColumn())
-                {
-                    ParamView_ParamList(doFocus, isActiveView, scale, scrollTo);
-                }
-
-                var activeParam = _selection.GetActiveParam();
-                if (ImGui.TableNextColumn())
-                {
-                    ParamView_RowList(doFocus, isActiveView, scrollTo, activeParam);
-                }
-
-                Param.Row activeRow = _selection.GetActiveRow();
-                if (ImGui.TableNextColumn())
-                {
-                    ParamView_FieldList(isActiveView, activeParam, activeRow);
-                }
-
-                ImGui.EndTable();
+                ParamView_ParamList(doFocus, isActiveView, scale, scrollTo);
             }
 
-            ImGui.End();
-        }
-
-        if (CFG.Current.Param_DisplaySideWindow)
-        {
-            // Toolbar
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-            if (ImGui.Begin("Toolbar##ParamToolbar"))
+            var activeParam = _selection.GetActiveParam();
+            if (ImGui.TableNextColumn())
             {
-                _toolbarView.OnGui();
-            }
-            ImGui.End();
-            ImGui.PopStyleColor(1);
-
-            // Mass Edit
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-            if (ImGui.Begin("Mass Edit##MassEditView"))
-            {
-                _massEditView.OnGui();
+                ParamView_RowList(doFocus, isActiveView, scrollTo, activeParam);
             }
 
-            ImGui.End();
-            ImGui.PopStyleColor(1);
+            Param.Row activeRow = _selection.GetActiveRow();
+            if (ImGui.TableNextColumn())
+            {
+                ParamView_FieldList(isActiveView, activeParam, activeRow);
+            }
+
+            ImGui.EndTable();
         }
     }
 
