@@ -79,7 +79,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             }
         }
 
-        private static void Act()
+        public static void Act()
         {
             var selectedParam = ParamEditorScreen._activeView._selection;
 

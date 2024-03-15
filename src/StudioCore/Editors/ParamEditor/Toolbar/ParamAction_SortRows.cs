@@ -62,7 +62,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             }
         }
 
-        private static void Act()
+        public static void Act()
         {
             if(ParamEditorScreen._activeView._selection.ActiveParamExists())
             {

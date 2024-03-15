@@ -49,7 +49,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         private static bool _rowNameExporter_VanillaOnly = false;
         private static bool _rowNameExporter_EmptyOnly = false;
-        private static string CurrentTargetCategory = ParamToolbarView.TargetTypes[0];
+        public static string CurrentTargetCategory = ParamToolbarView.TargetTypes[0];
 
         public static void Configure()
         {
@@ -81,7 +81,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             }
         }
 
-        private static void Act()
+        public static void Act()
         {
             var selectedParam = ParamEditorScreen._activeView._selection;
 

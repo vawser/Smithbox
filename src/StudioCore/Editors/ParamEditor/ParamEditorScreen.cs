@@ -632,6 +632,8 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Tools"))
         {
+            ParamToolbarView.ToolbarView();
+
             ParamRowIdFinder.Display();
 
             if (ImGui.MenuItem("Check all params for edits", null, false, !ParamBank.PrimaryBank.IsLoadingParams && !ParamBank.VanillaBank.IsLoadingParams))

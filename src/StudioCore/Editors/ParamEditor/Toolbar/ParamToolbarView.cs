@@ -51,6 +51,51 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             ParamAction_DuplicateRow.Setup();
         }
 
+        // Tool dropdown list if the side window is disabled
+        public static void ToolbarView()
+        {
+            if (!CFG.Current.Param_DisplaySideWindow)
+            {
+                if (ImGui.MenuItem("Export Row Names (All)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
+                {
+                    ParamAction_ExportRowNames.CurrentTargetCategory = "All Params";
+                    ParamAction_ExportRowNames.Act();
+                }
+
+                if (ImGui.MenuItem("Export Row Names (Selected)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
+                {
+                    ParamAction_ExportRowNames.CurrentTargetCategory = "Selected Param";
+                    ParamAction_ExportRowNames.Act();
+                }
+
+                ImGui.Separator();
+
+                if (ImGui.MenuItem("Import Row Names (All)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
+                {
+                    ParamAction_ImportRowNames.CurrentTargetCategory = "All Params";
+                    ParamAction_ImportRowNames.Act();
+                }
+
+                if (ImGui.MenuItem("Import Row Names (Selected)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
+                {
+                    ParamAction_ExportRowNames.CurrentTargetCategory = "Selected Param";
+                    ParamAction_ExportRowNames.Act();
+                }
+
+                ImGui.Separator();
+
+                if (ImGui.MenuItem("Sort Rows", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
+                {
+                    ParamAction_SortRows.Act();
+                }
+
+                if (ImGui.MenuItem("Trim Row Names", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
+                {
+                    ParamAction_TrimRowNames.Act();
+                }
+            }
+        }
+
         public void OnGui()
         {
             if (Project.Type == ProjectType.Undefined)
