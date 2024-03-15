@@ -115,6 +115,12 @@ public static class GparamParamBank
             paramExt = @".fltparam";
         }
 
+        // TODO: add support for DS2
+        if(Project.Type == ProjectType.DS2S)
+        {
+            return;
+        }
+
         foreach (var name in GetGparamFileNames())
         {
             var filePath = $"{paramDir}\\{name}{paramExt}";
