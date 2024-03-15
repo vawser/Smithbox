@@ -319,6 +319,8 @@ public class CFG
     //****************************
     public bool UI_CompactParams = false;
 
+    public bool Param_UseProjectMeta = false;
+
     public bool Param_AdvancedMassedit = false;
     public bool Param_AllowFieldReorder = true;
     public bool Param_AlphabeticalParams = true;

@@ -656,6 +656,7 @@ public class Smithbox
             }
 
             _projectSettings = settings;
+            Project.CurrentProjectSettings = settings;
             ChangeProjectSettings(_projectSettings, Path.GetDirectoryName(filename), options);
             _context.Window.Title = $"{_projectSettings.ProjectName}  -  {_programTitle}";
 

@@ -12,6 +12,7 @@ using Veldrid;
 using StudioCore.Editors;
 using StudioCore.Settings;
 using SoulsFormats;
+using StudioCore.Editors.ParamEditor;
 
 namespace StudioCore.Interface.Windows;
 
@@ -543,6 +544,17 @@ public class SettingsWindow
             // General
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                if(ImGui.Checkbox("Use project meta", ref CFG.Current.Param_UseProjectMeta))
+                {
+                    if (CFG.Current.Param_UseProjectMeta)
+                    {
+                        ParamBank.CreateProjectMeta();
+                    }
+
+                    ParamBank.ReloadParams(Project.CurrentProjectSettings, null);
+                }
+                ImguiUtils.ShowHoverTooltip("Use project-specific Paramdex meta instead of Smithbox's base version.");
+
                 ImGui.Checkbox("Use compact param editor", ref CFG.Current.UI_CompactParams);
                 ImguiUtils.ShowHoverTooltip("Reduces the line height within the the Param Editor screen.");
 

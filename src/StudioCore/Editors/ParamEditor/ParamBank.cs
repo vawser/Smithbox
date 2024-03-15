@@ -219,14 +219,52 @@ public class ParamBank
         return defPairs;
     }
 
+    public static void CreateProjectMeta()
+    {
+        var metaDir = ParamAssetLocator.GetParammetaDir();
+        var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
+        var projectDir = $"{Project.GameModDirectory}\\.smithbox\\{metaDir}";
+
+        if (!Directory.Exists(projectDir))
+        {
+            Directory.CreateDirectory(projectDir);
+            var files = Directory.GetFileSystemEntries(rootDir);
+
+            foreach (var f in files)
+            {
+                var name = Path.GetFileName(f);
+                var tPath = Path.Combine(rootDir, name);
+                var pPath = Path.Combine(projectDir, name);
+                if (File.Exists(tPath) && !File.Exists(pPath))
+                {
+                    File.Copy(tPath, pPath);
+                }
+            }
+        }
+    }
+
     public static void LoadParamMeta(List<(string, PARAMDEF)> defPairs)
     {
         var mdir = ParamAssetLocator.GetParammetaDir();
 
+        if (CFG.Current.Param_UseProjectMeta)
+        {
+            CreateProjectMeta();
+        }
+
         foreach ((var f, PARAMDEF pdef) in defPairs)
         {
             var fName = f.Substring(f.LastIndexOf('\\') + 1);
-            ParamMetaData.XmlDeserialize($@"{mdir}\{fName}", pdef);
+            if (CFG.Current.Param_UseProjectMeta)
+            {
+                var metaDir = ParamAssetLocator.GetParammetaDir();
+                var projectDir = $"{Project.GameModDirectory}\\.smithbox\\{metaDir}";
+                ParamMetaData.XmlDeserialize($@"{projectDir}\{fName}", pdef);
+            }
+            else
+            {
+                ParamMetaData.XmlDeserialize($@"{mdir}\{fName}", pdef);
+            }
         }
     }
 

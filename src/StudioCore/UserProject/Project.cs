@@ -31,6 +31,8 @@ public static class Project
     /// </summary>
     public static string ProjectDataDir => @$"{GameModDirectory}\.smithbox";
 
+    public static ProjectSettings CurrentProjectSettings;
+
     /// <summary>
     /// Return the ProjectType as a string for a filepath.
     /// </summary>
