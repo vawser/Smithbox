@@ -30,6 +30,5 @@ public static class FeatureFlags
     public static bool EnableEditor_TextureViewer = false;
     public static bool EnableEditor_BehaviorEditor = false;
 
-    // This is temporary until the Pipeline mess is fixed.
     public static bool EnableCollisionPipeline = true;
 }
