@@ -274,7 +274,7 @@ public class ParamBank
 
         if (useProjectNames)
         {
-            dir = $"{Project.GameModDirectory}\\.smithbox\\Paramdex\\{Project.GetGameIDForDir()}\\Names";
+            dir = $"{Project.GameModDirectory}\\.smithbox\\Assets\\Paramdex\\{Project.GetGameIDForDir()}\\Names";
         }
 
         var files = param == null
