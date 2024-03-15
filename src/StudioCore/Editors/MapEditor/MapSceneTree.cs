@@ -91,7 +91,7 @@ public class MapSceneTree : IActionEventHandler
     private ulong
         _mapEnt_ImGuiID; // Needed to avoid issue with identical IDs during keyboard navigation. May be unecessary when ImGUI is updated.
 
-    private string _mapNameSearchStr = "";
+    private string _mapObjectListSearchInput = "";
 
     private ISelectable _pendingClick;
     private bool _pendingDragDrop;
@@ -231,6 +231,13 @@ public class MapSceneTree : IActionEventHandler
     private unsafe void MapObjectSelectable(Entity e, bool visicon, bool hierarchial = false)
     {
         var scale = Smithbox.GetUIScale();
+
+        string tName = e.PrettyName;
+
+        if (_mapObjectListSearchInput != "" && !tName.Contains(_mapObjectListSearchInput))
+        {
+            return;
+        }
 
         // Main selectable
         if (e is MsbEntity me)
@@ -680,18 +687,19 @@ public class MapSceneTree : IActionEventHandler
                 }
             }
 
-            if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
-            {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Map ID Search:");
-                ImGui.SameLine();
-                ImGui.SetNextItemWidth(-1);
-                ImGui.InputText("##treeSearch", ref _mapNameSearchStr, 99);
-            }
-
             if (CFG.Current.Interface_DisplayMapGroups)
             {
                 DisplayMapGroups();
+            }
+
+            if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
+            {
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Search:");
+                ImGui.SameLine();
+                ImGui.SetNextItemWidth(-1);
+                ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
+                ImguiUtils.ShowHoverTooltip("Filter the map object list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
             }
 
             ImGui.Unindent(30 * scale);
@@ -880,10 +888,10 @@ public class MapSceneTree : IActionEventHandler
             metaName = MapAliasBank.GetMapName(mapid);
 
             // Map name search filter
-            if (_mapNameSearchStr != ""
+            if (_mapObjectListSearchInput != ""
                 && (!CFG.Current.MapEditor_Always_List_Loaded_Maps || map == null)
-                && !lm.Key.Contains(_mapNameSearchStr, StringComparison.CurrentCultureIgnoreCase)
-                && !metaName.Contains(_mapNameSearchStr, StringComparison.CurrentCultureIgnoreCase))
+                && !lm.Key.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase)
+                && !metaName.Contains(_mapObjectListSearchInput, StringComparison.CurrentCultureIgnoreCase))
             {
                 continue;
             }

@@ -495,8 +495,8 @@ public class SettingsWindow
                 ImGui.Checkbox("Display list sorting type", ref CFG.Current.MapEditor_MapObjectList_ShowListSortingType);
                 ImguiUtils.ShowHoverTooltip("Display the list sorting type combo box.");
 
-                ImGui.Checkbox("Display map id search", ref CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch);
-                ImguiUtils.ShowHoverTooltip("Display the map id search text box.");
+                ImGui.Checkbox("Display map object list search", ref CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch);
+                ImguiUtils.ShowHoverTooltip("Display the map object list search text box.");
 
                 ImGui.Checkbox("Display character names", ref CFG.Current.MapEditor_MapObjectList_ShowChrNames);
                 ImguiUtils.ShowHoverTooltip("Characters names will be displayed within the scene view list.");
