@@ -118,7 +118,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         private static void ExportRowNamesForParam(string param)
         {
-            var dir = $"{Project.GameModDirectory}\\.smithbox\\{Project.GetGameIDForDir()}\\Names";
+            var dir = $"{Project.GameModDirectory}\\.smithbox\\Paramdex\\{Project.GetGameIDForDir()}\\Names";
             var path = Path.Combine(dir, $"{param}.txt");
 
             Param p = ParamBank.PrimaryBank.Params[param];
