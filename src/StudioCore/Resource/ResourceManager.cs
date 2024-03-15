@@ -118,6 +118,36 @@ public static class ResourceManager
         try
         {
             action.ProcessBinder();
+            if (!action.PopulateResourcesOnly)
+            {
+                var doasync = action.PendingResources.Count() + action.PendingTPFs.Count() > 1;
+                var i = 0;
+                foreach (Tuple<IResourceLoadPipeline, string, BinderFileHeader> p in action.PendingResources)
+                {
+                    Memory<byte> f = action.Binder.ReadFile(p.Item3);
+                    p.Item1.LoadByteResourceBlock.Post(new LoadByteResourceRequest(p.Item2, f, action.AccessLevel,
+                        Project.Type));
+                    action._job.IncrementEstimateTaskSize(1);
+                    i++;
+                }
+
+                foreach (Tuple<string, BinderFileHeader> t in action.PendingTPFs)
+                {
+                    try
+                    {
+                        TPF f = TPF.Read(action.Binder.ReadFile(t.Item2));
+                        action._job.AddLoadTPFResources(new LoadTPFResourcesAction(action._job, t.Item1, f,
+                            action.AccessLevel, Project.Type));
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"Failed to load TPF \"{t.Item1}\"",
+                            LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                    }
+
+                    i++;
+                }
+            }
         }
         catch (Exception e)
         {
@@ -594,38 +624,11 @@ public static class ResourceManager
                 }
             }
 
-            if (!this.PopulateResourcesOnly)
+            if(ResourceMask.HasFlag(ResourceType.CollisionHKX) || Project.Type == ProjectType.DS2S)
             {
-                var doasync = this.PendingResources.Count() + this.PendingTPFs.Count() > 1;
-                var i = 0;
-                foreach (Tuple<IResourceLoadPipeline, string, BinderFileHeader> p in this.PendingResources)
-                {
-                    Memory<byte> f = this.Binder.ReadFile(p.Item3);
-                    p.Item1.LoadByteResourceBlock.Post(new LoadByteResourceRequest(p.Item2, f, this.AccessLevel,
-                        Project.Type));
-                    this._job.IncrementEstimateTaskSize(1);
-                    i++;
-                }
-
-                foreach (Tuple<string, BinderFileHeader> t in this.PendingTPFs)
-                {
-                    try
-                    {
-                        TPF f = TPF.Read(this.Binder.ReadFile(t.Item2));
-                        this._job.AddLoadTPFResources(new LoadTPFResourcesAction(this._job, t.Item1, f, this.AccessLevel, Project.Type));
-                    }
-                    catch (Exception e)
-                    {
-                        TaskLogs.AddLog($"Failed to load TPF \"{t.Item1}\"",
-                            LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
-                    }
-
-                    i++;
-                }
+                // Ignore dispose if the resource is a Collision, or we are working with DS2
             }
-
-            // Ignore this for DS2
-            if(Project.Type != ProjectType.DS2S)
+            else
             {
                 Binder.Dispose();
             }
