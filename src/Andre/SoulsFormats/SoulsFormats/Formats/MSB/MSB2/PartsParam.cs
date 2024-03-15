@@ -388,8 +388,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
-                public short UnkT04 { get; set; }
+                public short MapObjectBonfireParamID { get; set; }
 
                 /// <summary>
                 /// Creates an Object with default values.
@@ -401,7 +400,7 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     MapObjectInstanceParamID = br.ReadInt32();
-                    UnkT04 = br.ReadInt16();
+                    MapObjectBonfireParamID = br.ReadInt16();
                     br.AssertInt16(0);
                     br.AssertInt32(0);
                     br.AssertInt32(0);
@@ -410,7 +409,7 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(MapObjectInstanceParamID);
-                    bw.WriteInt16(UnkT04);
+                    bw.WriteInt16(MapObjectBonfireParamID);
                     bw.WriteInt16(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);

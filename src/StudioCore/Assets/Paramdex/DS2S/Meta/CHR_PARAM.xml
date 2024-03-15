@@ -87,5 +87,6 @@
     <name_text_id AltName="Name Text ID"/>
     <drops_awestone AltName="Drops Awestone" IsBool=""/>
     <speffect_id AltName="SpEffect ID"/>
+    <chr_fade_in_on_spawn AltName="Fade-In Time on Spawn" />
   </Field>
 </PARAMMETA>

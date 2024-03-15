@@ -90,7 +90,7 @@
     <Field Def="f32 stat_posture_regen" />
     <Field Def="f32 Unk36" />
     <Field Def="f32 Unk37" />
-    <Field Def="f32 Unk38" />
+    <Field Def="f32 chr_fade_in_on_spawn" />
     <Field Def="s32 chr_full_body_sfx_param_id" />
     <Field Def="f32 Unk39" />
     <Field Def="f32 stat_poise" />
