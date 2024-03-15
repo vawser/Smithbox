@@ -30,7 +30,7 @@
 	</Enum>
   </Enums>
   <Field>
-    <behaviorVariationId Wiki="Behavior that this weapon can use, must match variationId in BehaviorParam_Pc" />
+    <behaviorVariationId Wiki="Behavior that this weapon can use, must match variationId in BehaviorParam_Pc" VRef="behaviorVariation" />
     <sortId Wiki="Position of this weapon in your inventory" />
     <wanderingEquipId Wiki="If your character becomes a wandering ghost this weapon will be replaced with the weapon referenced here" />
     <weight Wiki="Weapon weight" />
@@ -98,14 +98,14 @@
     <bowDistRate Wiki="Amount of range to add the weapons base range" />
     <equipModelCategory Wiki="Equipment model type" />
     <equipModelGender Wiki="Equipment model gender" />
-    <weaponCategory Enum="WEAPON_CATEGORY" />
+    <weaponCategory Wiki="Weapon Type" Enum="WEAPON_CATEGORY" />
     <wepmotionCategory Wiki="Detemines what set of animations this weapon will use" Enum="WEPMOTION_CATEGORY" />
     <guardmotionCategory Wiki="Determines what set of guard animations this weapon will use" />
     <atkMaterial />
     <defSeMaterial1 />
     <correctType_Physics Wiki="Defines the scaling curve for physical damage" Refs="CalcCorrectGraph" />
-    <spAttribute />
-    <spAtkcategory />
+    <spAttribute Wiki="Weapon special attribute values" />
+    <spAtkcategory Wiki="Overwrites default wepMotionCategory animations with ones in this TAE group" />
     <wepmotionOneHandId />
     <wepmotionBothHandId />
     <properStrength Wiki="Strength requirment" />
@@ -164,30 +164,30 @@
     <wepCollidableType0 />
     <wepCollidableType1 />
     <staminaJustGuardDef Wiki="Percentage of stamina damage that can be deflected with this weapon" />
-    <traceSfxId0 />
-    <traceDmyIdHead0 />
-    <traceDmyIdTail0 />
-    <traceSfxId1 />
-    <traceDmyIdHead1 />
-    <traceDmyIdTail1 />
-    <traceSfxId2 />
-    <traceDmyIdHead2 />
-    <traceDmyIdTail2 />
-    <traceSfxId3 />
-    <traceDmyIdHead3 />
-    <traceDmyIdTail3 />
-    <traceSfxId4 />
-    <traceDmyIdHead4 />
-    <traceDmyIdTail4 />
-    <traceSfxId5 />
-    <traceDmyIdHead5 />
-    <traceDmyIdTail5 />
-    <traceSfxId6 />
-    <traceDmyIdHead6 />
-    <traceDmyIdTail6 />
-    <traceSfxId7 />
-    <traceDmyIdHead7 />
-    <traceDmyIdTail7 />
+    <traceSfxId0 Wiki="Sfx that appears during attacks" />
+    <traceDmyIdHead0 Wiki="Dummypoly for traceSfxId0" />
+    <traceDmyIdTail0 Wiki="Dummypoly for traceSfxId0" />
+    <traceSfxId1 Wiki="Sfx that appears during attacks" />
+    <traceDmyIdHead1 Wiki="Dummypoly for traceSfxId1" />
+    <traceDmyIdTail1 Wiki="Dummypoly for traceSfxId1" />
+    <traceSfxId2 Wiki="Sfx that appears during attacks" />
+    <traceDmyIdHead2 Wiki="Dummypoly for traceSfxId2" />
+    <traceDmyIdTail2 Wiki="Dummypoly for traceSfxId2" />
+    <traceSfxId3 Wiki="Sfx that appears during attacks" />
+    <traceDmyIdHead3 Wiki="Dummypoly for traceSfxId3" />
+    <traceDmyIdTail3 Wiki="Dummypoly for traceSfxId3" />
+    <traceSfxId4 Wiki="Sfx that appears during attacks" />
+    <traceDmyIdHead4 Wiki="Dummypoly for traceSfxId4" />
+    <traceDmyIdTail4 Wiki="Dummypoly for traceSfxId4" />
+    <traceSfxId5 Wiki="Sfx that appears during attacks" />
+    <traceDmyIdHead5 Wiki="Dummypoly for traceSfxId5" />
+    <traceDmyIdTail5 Wiki="Dummypoly for traceSfxId5" />
+    <traceSfxId6 Wiki="Sfx that appears during attacks" />
+    <traceDmyIdHead6 Wiki="Dummypoly for traceSfxId6" />
+    <traceDmyIdTail6 Wiki="Dummypoly for traceSfxId6" />
+    <traceSfxId7 Wiki="Sfx that appears during attacks" />
+    <traceDmyIdHead7 Wiki="Dummypoly for traceSfxId7" />
+    <traceDmyIdTail7 Wiki="Dummypoly for traceSfxId7" />
     <defSfxMaterial2 />
     <defSeMaterial2 />
     <absorpParamId Wiki="Id of weapon adsorption position parameter. This value determines the position where the weapon will stick (-1: refer to the value directly written in the old source code)" Refs="WepAbsorpPosParam" />
@@ -207,14 +207,14 @@
     <attackBaseDark Wiki="Base dark damage" />
     <correctType_Dark Wiki="Defines the scaling curve for dark damage" Refs="CalcCorrectGraph" />
     <correctType_Poison Wiki="Defines the scaling curve for Poison build-up" Refs="CalcCorrectGraph" />
-    <swordArtsId />
+    <swordArtsId Wiki="Default weapon art" Refs="SwordArtsParam" />
     <correctType_Blood Wiki="Defines the scaling curve for Burn build-up" Refs="CalcCorrectGraph" />
     <properLuck Wiki="Luck requirment" />
     <freezeGuardResist Wiki="Percentage of Shock build-up this weapon can block" />
     <autoReplenishType />
     <swordArtsParamId Refs="SwordArtsParam" />
     <correctLuck Wiki="Luck scaling" />
-    <arrowBoltEquipId />
+    <arrowBoltEquipId Wiki="Model used for displaying arrows in the quiver" />
     <residentSfxId_1 Wiki="Sfx spawned when this weapon is equipped" />
     <residentSfxId_2 Wiki="Sfx spawned when this weapon is equipped" />
     <residentSfxId_3 Wiki="Sfx spawned when this weapon is equipped" />
@@ -262,9 +262,9 @@
     <attainmentWepStatusFai Wiki="This is to change the R2 attack to a special action if the status is X or higher when using a specific weapon." />
     <attainmentWepStatusLuc Wiki="This is to change the R2 attack to a special action if the status is X or higher when using a specific weapon." />
     <attackElementCorrectId Wiki="Detemines what damage type each stat can scale" Refs="AttackElementCorrectParam" />
-    <saleValue />
-    <reinforceShopCategory />
-    <maxArrowQuantity />
+    <saleValue Wiki="Price of the weapon when purchasing at a shop" />
+    <reinforceShopCategory Wiki="When upgrading, what menu slot will the weapon be in" />
+    <maxArrowQuantity Wiki="Maximum number of arrows" />
     <wepSeIdOffset Wiki="SEID offset value" />
     <pad4 />
     <baseChangePrice />

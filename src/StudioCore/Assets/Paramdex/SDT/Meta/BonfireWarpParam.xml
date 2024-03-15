@@ -3,7 +3,7 @@
   <Field>
     <eventflagId Wiki="Event flag for unlocking this Idol" />
     <bonfireEntityId Wiki="EntityId of the Idol object, defined in the map" />
-    <msgId Wiki="Display message ID" />
+    <msgId Wiki="Display message ID" FmgRef="MenuText" />
     <menuTextId Wiki="Warp menu description text ID" />
     <menuImageId Wiki="Warp menu thumbnail image ID" />
     <menuPageNo Wiki="Which map menu will this Idol warp appear in?" />
@@ -11,5 +11,8 @@
     <blockCultId Wiki="Changes the Ceremony Id when warping to this Idol" />
     <grayoutEventflagId Wiki="Event flag that prevents you from warping to this Idol after it's already been unlocked" />
   </Field>
-  <Self Wiki="Settings for Sculptor's Idol menu and warps" />
+  <Self Wiki="Settings for Sculptor's Idol menu and warps" AlternativeOrder="bonfireEntityId,isHome,-,
+eventflagId,grayoutEventflagId,-,
+blockCultId,-,
+msgId,menuTextId,menuImageId,menuPageNo,-" />
 </PARAMMETA>

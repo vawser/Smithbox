@@ -18,7 +18,7 @@
     </Enum>
   </Enums>
   <Field>
-    <variationId Wiki="For Npc's - References the behavioVariationId of the Npc in NpcParam, will only work for Npc's with the same behaviorVariationId. For Player - References behaviorVariationId on weapons, will only work with weapons that have the same behaviorVariationId." />
+    <variationId Wiki="For Npc's - References the behavioVariationId of the Npc in NpcParam, will only work for Npc's with the same behaviorVariationId. For Player - References behaviorVariationId on weapons, will only work with weapons that have the same behaviorVariationId." VRef="behaviorVariation" />
     <behaviorJudgeId Wiki="Id used in animations to reference this behavior" />
     <ezStateBehaviorType_old />
     <refType Wiki="Defines what param this behavior references" Enum="BEHAVIOR_REF_TYPE" />

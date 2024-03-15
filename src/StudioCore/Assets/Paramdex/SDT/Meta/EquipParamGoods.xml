@@ -58,31 +58,31 @@
   </Enums>
   <Field>
     <refId_default Wiki="Defines what Bullet or SpEffects will be invoked when the item is used" Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
-    <sfxVariationId />
+    <sfxVariationId Wiki="Specify SFX variation (used in combination with TimeActEditor ID to identify SFX)" />
     <weight Wiki="Item weight" />
     <basicPrice />
     <sellValue Wiki="Amount of Sen that will be obtained when selling this item" />
-    <behaviorId Refs="BehaviorParam,BehaviorParam_Pc" />
+    <behaviorId Wiki="Behavior entry referenced when using this item" Refs="BehaviorParam,BehaviorParam_Pc" />
     <replaceItemId Wiki="When the item is empty it will be replaced with this item" Refs="EquipParamGoods" />
-    <sortId />
+    <sortId Wiki="Position the item appears in menus"/>
     <qwcId Wiki="World Tendency shenanigans, not relevant to Sekiro" />
     <yesNoDialogMessageId Wiki="Message ID used when displaying the YesNo dialog" />
     <actionUnlockParamId Wiki="When this item is in your inventory the Action referenced here will be unlocked" Refs="ActionUnlockParam" />
     <iconId Wiki="Icon displayed in inventory" />
     <modelId />
-    <shopLv />
+    <shopLv Wiki="Level that can be sold in stores" />
     <compTrophySedId Wiki="Category for unlocking trophies/achievements, when you have all the items with same category the corresponding trophy will be unlocked" />
-    <trophySeqId />
+    <trophySeqId Wiki="Trophy Sequence Id" />
     <maxNum Wiki="Maximum amount of this item that can be held" />
     <consumeHeroPoint Wiki="Consume humanity when using the item, not relevant to Sekiro" />
-    <overDexterity />
-    <goodsType Enum="GOODS_TYPE" />
+    <overDexterity Wiki="Skill over start value" />
+    <goodsType Wiki="Item Type" Enum="GOODS_TYPE" />
     <refCategory Wiki="Determines what param is referenced when this item is used" Enum="BEHAVIOR_REF_TYPE" />
-    <spEffectCategory />
+    <spEffectCategory Wiki="There are effects whose parameters change depending on skills, magic, items, etc. (enchantment weapons, etc.), so the fixed effect should be set for each action so that it can correspond to an effect such as 'powering up only weapon attacks'. Set 'None' for items that do not require settings, such as baristas." />
     <goodsCategory />
-    <goodsUseAnim Enum="GOODS_USE_ANIM" Wiki="Defines the animation used when the item is used" />
+    <goodsUseAnim Wiki="Defines the animation used when the item is used" Enum="GOODS_USE_ANIM" />
     <opmeMenuType Wiki="What menu type does this item open if it opens a menu at all?" />
-    <useLimitCategory />
+    <useLimitCategory Wiki="Specified to control whether it can be used depending on the special effect being applied." />
     <replaceCategory />
     <vowType0 IsBool="" />
     <vowType1 IsBool="" />
@@ -109,7 +109,7 @@
     <isEquip Wiki="Can the item be equipped to the item bar?" IsBool="" />
     <isConsume Wiki="Will the item be consumed when it is used?" IsBool="" />
     <isAutoEquip Wiki="Will the item be equipped to the item bar automatically when the item is obtained" IsBool="" />
-    <isEstablishment IsBool="" />
+    <isEstablishment Wiki="Is it a stationary item?" IsBool="" />
     <isOnlyOne Wiki="Can you have more than one of this item?" IsBool="" />
     <isDiscard Wiki="Can the item be discarded?" IsBool="" />
     <isDeposit Wiki="Can the item be sent to storage" IsBool="" />
@@ -117,14 +117,14 @@
     <IsTravelItem IsBool="" />
     <isSuppleItem Wiki="If the item is replensiable(i.e. Gourds) this item is considered the empty item" IsBool="" />
     <isFullSuppleItem Wiki="If this item is replensiable(i.e. Gourds) this item is considered the full item" IsBool="" />
-    <isEnhance IsBool="" />
+    <isEnhance Wiki="Do you want to enchant your weapon?" IsBool="" />
     <isFixItem Wiki="Will this item repair equipment?" IsBool="" />
     <disableMultiDropShare Wiki="Can this item be dropped during multiplayer?" IsBool="" />
     <disableUseAtColiseum Wiki="Can this item be used in the arena?" IsBool="" />
     <disableUseAtOutOfColiseum Wiki="Can this item be used outside the arena?" IsBool="" />
     <isEnableFastUseItem Wiki="Is it possible to cancel early?" IsBool="" />
     <isApplySpecialEffect Wiki="Will this item be affect by SpEffect corrections?" IsBool="" />
-    <syncNumVaryId />
+    <syncNumVaryId Wiki="When the number of items is changed, items with the same ID will also be changed. 0: Do not synchronize" />
     <refId_1 Wiki="Defines what Bullet or SpEffects will be invoked when the item is used" />
     <refVirtualWepId Wiki="References weapons to apply base damage and scaling" Refs="EquipParamWeapon" />
     <vagrantItemLotId />
@@ -133,11 +133,11 @@
     <castSfxId Wiki="Sfx spawned when the item is used but before the effect is activated" />
     <fireSfxId Wiki="Sfx spawned when the item's effect is triggered" />
     <effectSfxId Wiki="Sfx spawned after the item's effect has been triggered" />
-    <enable_LoadOfCinder IsBool="" />
+    <enable_LoadOfCinder Wiki="Can it be used in Firewood King status?" IsBool="" />
     <isBonfireWarpItem Wiki="When set to TRUE, if the status change type 'warp prohibition' is applied, remove the function that makes the item unusable." IsBool="" />
     <enable_Ladder Wiki="Item can be used while on a ladder" IsBool="" />
     <isUseMultiPlayPreparation Wiki="Session probability - whether items can be used during initial synchronization" IsBool="" />
-    <canMultiUse IsBool="" />
+    <canMultiUse Wiki="Can they be used together?" IsBool="" />
     <isUseRefId1ForEnchant Wiki="Enchant with left hand and both hands? If true, use call ID 1" IsBool="" />
     <isWarpProhibited Wiki="When this is TRUE, if the status change type 'warp prohibited' is applied, the item will be unusable." IsBool="" />
     <isUseMultiPenaltyOnly Wiki="Flag to allow determining whether an item is only available when a client disconnection penalty is occurring" IsBool="" />
@@ -152,7 +152,7 @@
     <enable_CantStand Wiki="Can it be used while crouching in a place where the ceiling is too low to stand up?" IsBool="" />
     <enable_CantClimbHang Wiki="Can it be used while hanging without being able to climb?" IsBool="" />
     <maxRepositoryNum Wiki="Maximum amount that can be stored in storage" />
-    <enable_FallWallCling IsBool="" />
+    <enable_FallWallCling Wiki="Can it be used even when stuck to a falling wall?" IsBool="" />
     <enable_DragonsCough Wiki="Dragon Cough item" IsBool="" />
     <enable_Hang Wiki="Can the item be used while hanging while being able to climb up?" IsBool="" />
     <saleValue Wiki="Amount of Sen this item is sold for" />

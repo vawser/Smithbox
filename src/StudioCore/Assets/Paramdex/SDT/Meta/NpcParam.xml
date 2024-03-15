@@ -2,37 +2,42 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
     <Enum Name="TEAM_TYPE" type="u8">
-      <Option Value="-1" Name="Default" />
-      <Option Value="0" Name="Disabled" />
-      <Option Value="1" Name="Human" />
-      <Option Value="2" Name="White Phantom" />
-      <Option Value="3" Name="Black Phantom" />
-      <Option Value="4" Name="Hollow" />
-      <Option Value="5" Name="Wandering Phantom" />
-      <Option Value="6" Name="Enemy" />
-      <Option Value="7" Name="Strong Enemy" />
-      <Option Value="8" Name="Ally" />
-      <Option Value="9" Name="Hostile Ally" />
-      <Option Value="10" Name="Decoy Enemy" />
-      <Option Value="11" Name="Child or Red" />
-      <Option Value="12" Name="Friendly Enemy" />
-      <Option Value="13" Name="Invader" />
-      <Option Value="19" Name="Host" />
-      <Option Value="20" Name="Coop" />
-      <Option Value="21" Name="Hostile" />
-      <Option Value="22" Name="Wandering Phantom 1" />
-      <Option Value="23" Name="Enemy 1" />
-      <Option Value="24" Name="Enemy 2" />
-      <Option Value="25" Name="Strong Enemy 1" />
-      <Option Value="26" Name="Friendly NPC" />
-      <Option Value="27" Name="Hostile NPC" />
-      <Option Value="28" Name="Coop NPC" />
-      <Option Value="29" Name="Indiscriminate" />
-      <Option Value="30" Name="Object" />
-      <Option Value="31" Name="White Berserker" />
-      <Option Value="32" Name="Red Berserker" />
-      <Option Value="33" Name="ArchEnemy Team" />
+		<Option Value="-1" Name="Default" />
+		<Option Value="0" Name="Disabled" />
+		<Option Value="1" Name="Human" />
+		<Option Value="2" Name="White Phantom" />
+		<Option Value="3" Name="Black Phantom" />
+		<Option Value="4" Name="Hollow" />
+		<Option Value="5" Name="Wandering Phantom" />
+		<Option Value="6" Name="Enemy" />
+		<Option Value="7" Name="Strong Enemy" />
+		<Option Value="8" Name="Ally" />
+		<Option Value="9" Name="Hostile Ally" />
+		<Option Value="10" Name="Decoy Enemy" />
+		<Option Value="11" Name="Child or Red" />
+		<Option Value="12" Name="Friendly Enemy" />
+		<Option Value="13" Name="Invader" />
+		<Option Value="19" Name="Host" />
+		<Option Value="20" Name="Coop" />
+		<Option Value="21" Name="Hostile" />
+		<Option Value="22" Name="Wandering Phantom 1" />
+		<Option Value="23" Name="Enemy 1" />
+		<Option Value="24" Name="Enemy 2" />
+		<Option Value="25" Name="Strong Enemy 1" />
+		<Option Value="26" Name="Friendly NPC" />
+		<Option Value="27" Name="Hostile NPC" />
+		<Option Value="28" Name="Coop NPC" />
+		<Option Value="29" Name="Indiscriminate" />
+		<Option Value="30" Name="Object" />
+		<Option Value="31" Name="White Berserker" />
+		<Option Value="32" Name="Red Berserker" />
+		<Option Value="33" Name="ArchEnemy Team" />
     </Enum>
+	<Enum Name="NPC_ITEMDROP_TYPE" type="u16">
+		<Option Value="0" Name="Corpse Glow" />
+		<Option Value="1" Name="Item Display" />
+		<Option Value="2" Name="Suction Drop" />
+	</Enum>
   </Enums>
   <Field>
     <behaviorVariationId Wiki="Used to determine what Behavior is used for this Npc" />
@@ -117,7 +122,7 @@
     <thrustGuardCutRate Wiki="Amount of thrust damage this Npc can block" />
     <superArmorDurability Wiki="Base super armor" />
     <normalChangeTexChrId />
-    <dropType Wiki="Display method at the time of item drop (corpse glow, item display, suction drop)" />
+    <dropType Wiki="Display method at the time of item drop" Enum="NPC_ITEMDROP_TYPE" />
     <knockbackRate_vsPlayer_DirectHit Wiki="Alters knockback of attacks that directly hit the player" />
     <knockbackRate_vsPlayer_Guard Wiki="Alters knockback of attacks that hit the player blocks" />
     <knockbackRate_vsPlayer_JustGuard Wiki="Alters knockback of attacks that the player deflects" />
@@ -377,12 +382,12 @@
     <damageDropSoul Wiki="Amount of Sen dropped when hit with Golden Vortex" />
     <damageDropItemLotId_1 Wiki="ItemLot rolled when hit with Golden Vortex" Refs="ItemLotParam" />
     <damageDropItemLotId_2 Wiki="ItemLot rolled when hit with Golden Vortex" Refs="ItemLotParam" />
-    <camDitherFadeMinDist />
-    <camDitherFadeMaxDist />
-    <lifeCountItemLotId />
+    <camDitherFadeMinDist Wiki="Minimum camera dither fade distance. Setting both 'Camera dither fade minimum distance' and 'Camera dither fade maximum distance' to '0.0' disables camera dither fade. This parameter is valid only for parameters whose last 4 digits of the number are 0000'" />
+    <camDitherFadeMaxDist Wiki="Maximum camera dither fade distance. Setting both 'Camera dither fade minimum distance' and 'Camera dither fade maximum distance' to '0.0' disables camera dither fade. This parameter is valid only for parameters whose last 4 digits of the number are '0000'" />
+    <lifeCountItemLotId Wiki="Specify the lottery ID of the remaining life item to be obtained upon death" />
     <skillPoint Wiki="Amount of XP dropped when the Npc is killed" />
     <HardModeSpEffectID Wiki="Scaling speffect for Charmless difficulty, only applied when the player doesn't have Kuro's Charm" Refs="SpEffectParam" />
-    <offsetSeID />
+    <offsetSeID Wiki="If the SE to be played is 'cX?????????' and X is 1 to 8, offset the ID of the SE to be played by the specified value. This is a function to play different SEs when the models are different but the animation is the same, such as a dog and an Innsmouth dog" />
     <ninsatsuResourceItemLotId_1 Wiki="Resource Item dropped when the Npc recieves ninsatsu damage (deathblows)" Refs="ResourceItemLotParam" />
     <ninsatsuResourceItemLotId_2 Wiki="Resource Item dropped when the Npc recieves ninsatsu damage (deathblows)" Refs="ResourceItemLotParam" />
     <growthDopingSpEffectID Wiki="Area Scaling, when the player doesn't have Kuro's Charm and is not in NG+ the speffects Id is offset by 700" Refs="SpEffectParam" />
