@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Numerics;
 using System.Reflection;
 using static SoulsFormats.GPARAM;
+using static StudioCore.Editor.GparamValueChangeAction;
 using static StudioCore.Editors.GraphicsEditor.GparamParamBank;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -23,10 +24,17 @@ public class GparamEditor
     // Value can be changed in the GPARAM
     private static bool _committedCache;
 
+    // Value to change without commit
+    private static bool _uncommittedCache;
+
+    private static bool _isHoldingColor;
+    private static Vector4 _heldColor;
+
     public static unsafe void ValueField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
     {
         _changedCache = false;
         _committedCache = false;
+        _uncommittedCache = false;
 
         ImGui.SetNextItemWidth(-1);
 
@@ -330,6 +338,12 @@ public class GparamEditor
             Vector4 colorInput = fieldValue;
             oldValue = fieldValue;
 
+            if (!_isHoldingColor)
+            {
+                _isHoldingColor = true;
+                _heldColor = (Vector4)oldValue;
+            }
+
             var flags = ImGuiColorEditFlags.None;
 
             if(CFG.Current.Gparam_ColorEdit_RGB)
@@ -350,8 +364,16 @@ public class GparamEditor
                 newValue = colorInput;
                 _editedValueCache = newValue;
                 _changedCache = true;
+                _uncommittedCache = true;
+            }
 
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                newValue = colorInput;
+                _editedValueCache = newValue;
+                _changedCache = true;
                 _committedCache = true;
+                TaskLogs.AddLog($"IsItemDeactivatedAfterEdit");
             }
         }
         // COLOR
@@ -392,6 +414,18 @@ public class GparamEditor
         {
             if (_committedCache)
             {
+                if(_isHoldingColor)
+                {
+                    _isHoldingColor = false;
+
+                    // Reset color to original color befor edit
+                    // so undo reverts in the expected fashion
+                    if (field is GPARAM.Vector4Field vector4Field)
+                    {
+                        vector4Field.Values[idx].Value = _heldColor;
+                    }
+                }
+
                 if (newValue == null)
                 {
                     return;
@@ -402,6 +436,25 @@ public class GparamEditor
                     GparamValueChangeAction action = null;
                     action = new GparamValueChangeAction(field, value, newValue, idx, GparamValueChangeAction.ValueChangeType.Set);
                     GparamEditorScreen.EditorActionManager.ExecuteAction(action);
+                    TaskLogs.AddLog($"GparamValueChangeAction");
+                }
+            }
+            // Only used for Vec4 color
+            else if(_uncommittedCache)
+            {
+                if (newValue == null)
+                {
+                    return;
+                }
+                else
+                {
+                    if (field is GPARAM.Vector4Field vector4Field)
+                    {
+                        var assignedValue = (Vector4)newValue;
+                        var result = assignedValue;
+
+                        vector4Field.Values[idx].Value = result;
+                    }
                 }
             }
         }
