@@ -373,7 +373,6 @@ public class GparamEditor
                 _editedValueCache = newValue;
                 _changedCache = true;
                 _committedCache = true;
-                TaskLogs.AddLog($"IsItemDeactivatedAfterEdit");
             }
         }
         // COLOR
@@ -436,7 +435,6 @@ public class GparamEditor
                     GparamValueChangeAction action = null;
                     action = new GparamValueChangeAction(field, value, newValue, idx, GparamValueChangeAction.ValueChangeType.Set);
                     GparamEditorScreen.EditorActionManager.ExecuteAction(action);
-                    TaskLogs.AddLog($"GparamValueChangeAction");
                 }
             }
             // Only used for Vec4 color
