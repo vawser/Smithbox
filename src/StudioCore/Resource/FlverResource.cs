@@ -205,6 +205,14 @@ public class FlverResource : IResource, IDisposable
             var aetid = splits[splits.Length - 1].Substring(0, 6);
             return $@"aet/{aetid}/{Path.GetFileNameWithoutExtension(texpath)}";
         }
+
+        // AAT texture references
+
+        if (texpath.Contains(@"\aat") || texpath.StartsWith("aat"))
+        {
+            var name = Path.GetFileName(texpath);
+            return $@"aat/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
         // Parts texture reference
 
         if (texpath.Contains(@"\parts\"))

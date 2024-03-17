@@ -433,7 +433,17 @@ public static class ResourceManager
             return;
         }
 
+        ImGui.AlignTextToFramePadding();
         ImGui.Text("List of Resources Loaded & Unloaded");
+        ImGui.SameLine();
+        if (ImGui.Button("Purge"))
+        {
+            foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
+            {
+                item.Value.Unload();
+            }
+        }
+
         ImGui.Columns(4);
         ImGui.Separator();
         var id = 0;
@@ -938,6 +948,21 @@ public static class ResourceManager
                             path = TextureAssetLocator.GetAetTexture(fullaetid).AssetPath;
 
                             assetTpfs.Add(fullaetid);
+                        }
+
+                        // Common Body
+                        if (texpath.StartsWith("aat"))
+                        {
+                            var aatname = Path.GetFileName(texpath);
+
+                            if (assetTpfs.Contains(aatname))
+                            {
+                                continue;
+                            }
+
+                            path = TextureAssetLocator.GetAatTexture(aatname).AssetPath;
+
+                            assetTpfs.Add(aatname);
                         }
                     }
 

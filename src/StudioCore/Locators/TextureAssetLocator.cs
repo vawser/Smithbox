@@ -269,6 +269,27 @@ public static class TextureAssetLocator
         return ad;
     }
 
+    public static AssetDescription GetAatTexture(string aatname)
+    {
+        AssetDescription ad = new();
+        ad.AssetPath = null;
+        ad.AssetArchiveVirtualPath = null;
+        string path;
+
+        if (Project.Type == ProjectType.ER)
+            path = LocatorUtils.GetOverridenFilePath($@"parts\common_body.tpf.dcx");
+        else
+            throw new NotSupportedException();
+
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetArchiveVirtualPath = $@"aat/tex";
+        }
+
+        return ad;
+    }
+
     public static AssetDescription GetPartTextures(string partsId)
     {
         AssetDescription ad = new();
