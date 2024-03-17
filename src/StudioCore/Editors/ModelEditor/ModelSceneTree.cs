@@ -80,6 +80,9 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
     {
         var scale = Smithbox.GetUIScale();
 
+        if (!CFG.Current.Interface_ModelEditor_ModelHierarchy)
+            return;
+
         ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 2.0f) * scale);
 

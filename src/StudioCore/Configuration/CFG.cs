@@ -68,6 +68,24 @@ public class CFG
     public bool Interface_MapEditor_RenderGroups = true;
     public bool Interface_MapEditor_ResourceList = true;
 
+    public bool Interface_ModelEditor_ModelHierarchy = true;
+    public bool Interface_ModelEditor_Properties = true;
+    public bool Interface_ModelEditor_AssetBrowser = true;
+    public bool Interface_ModelEditor_Toolbar = true;
+
+    public bool Interface_ParamEditor_Table = true;
+    public bool Interface_ParamEditor_MassEdit = true;
+    public bool Interface_ParamEditor_Toolbar = true;
+
+    public bool Interface_TextEditor_TextCategories = true;
+    public bool Interface_TextEditor_TextEntry = true;
+    public bool Interface_TextEditor_Toolbar = true;
+
+    public bool Interface_GparamEditor_Files = true;
+    public bool Interface_GparamEditor_Groups = true;
+    public bool Interface_GparamEditor_Fields = true;
+    public bool Interface_GparamEditor_Values = true;
+    public bool Interface_GparamEditor_Toolbar = true;
 
     public bool Interface_DisplayMapGroups = true;
     public bool Interface_Display_Alias_for_Gparam = true;

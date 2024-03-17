@@ -14,6 +14,7 @@ using Veldrid.Sdl2;
 using StudioCore.Interface;
 using static StudioCore.Editors.TextEditor.FMGBank;
 using StudioCore.Editors.TextEditor.Toolbar;
+using StudioCore.Utilities;
 
 namespace StudioCore.TextEditor;
 
@@ -61,29 +62,36 @@ public class TextEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Edit", FMGBank.IsLoaded))
         {
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false,
                     EditorActionManager.CanUndo()))
+            {
                 EditorActionManager.UndoAllAction();
+            }
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
                     EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
             }
 
-            if (ImGui.MenuItem("Delete Entry", KeyBindings.Current.Core_Delete.HintText, false,
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
+            if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false,
                     _activeEntryGroup != null))
             {
                 DeleteFMGEntries(_activeEntryGroup);
             }
 
-            if (ImGui.MenuItem("Duplicate Entry", KeyBindings.Current.Core_Duplicate.HintText, false,
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
+            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
                     _activeEntryGroup != null))
             {
                 DuplicateFMGEntries(_activeEntryGroup);
@@ -92,29 +100,34 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Text Language", !FMGBank.IsLoading))
+        if (ImGui.BeginMenu("View"))
         {
-            Dictionary<string, string> folders = TextAssetLocator.GetMsgLanguages();
-            if (folders.Count == 0)
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Text Categories"))
             {
-                ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), "Cannot find language folders.");
+                CFG.Current.Interface_TextEditor_TextCategories = !CFG.Current.Interface_TextEditor_TextCategories;
             }
-            else
-            {
-                foreach (KeyValuePair<string, string> path in folders)
-                {
-                    if (ImGui.MenuItem(path.Key, "", FMGBank.LanguageFolder == path.Key))
-                    {
-                        ChangeLanguage(path.Key);
-                    }
-                }
-            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextCategories);
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Text Entry"))
+            {
+                CFG.Current.Interface_TextEditor_TextEntry = !CFG.Current.Interface_TextEditor_TextEntry;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntry);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Toolbar"))
+            {
+                CFG.Current.Interface_TextEditor_Toolbar = !CFG.Current.Interface_TextEditor_Toolbar;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextEditor_Toolbar);
             ImGui.EndMenu();
         }
 
-        if(ImGui.BeginMenu("Import/Export", FMGBank.IsLoaded))
+        if (ImGui.BeginMenu("Data", FMGBank.IsLoaded))
         {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
             if (ImGui.BeginMenu("Merge"))
             {
                 ImGui.TextColored(new Vector4(0.75f, 0.75f, 0.75f, 1.0f),
@@ -139,6 +152,7 @@ public class TextEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Database}");
             if (ImGui.BeginMenu("All"))
             {
                 ImGui.TextColored(new Vector4(0.75f, 0.75f, 0.75f, 1.0f),
@@ -178,6 +192,28 @@ public class TextEditorScreen : EditorScreen
                 }
                 ImGui.EndMenu();
             }
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("Text Language", !FMGBank.IsLoading))
+        {
+            Dictionary<string, string> folders = TextAssetLocator.GetMsgLanguages();
+            if (folders.Count == 0)
+            {
+                ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), "Cannot find language folders.");
+            }
+            else
+            {
+                foreach (KeyValuePair<string, string> path in folders)
+                {
+                    ImguiUtils.ShowMenuIcon($"{ForkAwesome.Bookmark}");
+                    if (ImGui.MenuItem(path.Key, "", FMGBank.LanguageFolder == path.Key))
+                    {
+                        ChangeLanguage(path.Key);
+                    }
+                }
+            }
+
             ImGui.EndMenu();
         }
     }
@@ -546,269 +582,278 @@ public class TextEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TextEntries");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        ImGui.Begin("Text Categories");
-        ImGui.Indent();
-        ImGui.InputText("##SearchAllFmgsInput", ref _fmgSearchAllString, 255);
-        ImGui.Unindent();
-        ImGui.SameLine();
+        if (CFG.Current.Interface_TextEditor_TextCategories)
+        {
+            ImGui.Begin("Text Categories");
+            ImGui.Indent();
+            ImGui.InputText("##SearchAllFmgsInput", ref _fmgSearchAllString, 255);
+            ImGui.Unindent();
+            ImGui.SameLine();
 
-        if (_fmgSearchAllString == "")
-        {
-            _fmgSearchAllActive = false;
-            ImGui.BeginDisabled();
-        }
-        if (ImGui.Button("Search All FMGs##FmgSearchAll"))
-        {
-            _fmgSearchAllActive = true;
-            _filteredFmgInfo.Clear();
-            foreach (var info in FMGBank.FmgInfoBank)
+            if (_fmgSearchAllString == "")
             {
-                if (info.PatchParent == null)
+                _fmgSearchAllActive = false;
+                ImGui.BeginDisabled();
+            }
+            if (ImGui.Button("Search All FMGs##FmgSearchAll"))
+            {
+                _fmgSearchAllActive = true;
+                _filteredFmgInfo.Clear();
+                foreach (var info in FMGBank.FmgInfoBank)
                 {
-                    foreach (var entry in info.GetPatchedEntries(false))
+                    if (info.PatchParent == null)
                     {
-                        if ((entry.Text != null && entry.Text.Contains(_fmgSearchAllString, StringComparison.CurrentCultureIgnoreCase))
-                            || entry.ID.ToString().Contains(_fmgSearchAllString))
+                        foreach (var entry in info.GetPatchedEntries(false))
                         {
-                            if (info.EntryType is not FmgEntryTextType.Title and not FmgEntryTextType.TextBody)
+                            if ((entry.Text != null && entry.Text.Contains(_fmgSearchAllString, StringComparison.CurrentCultureIgnoreCase))
+                                || entry.ID.ToString().Contains(_fmgSearchAllString))
                             {
-                                _filteredFmgInfo.Add(info.GetTitleFmgInfo());
+                                if (info.EntryType is not FmgEntryTextType.Title and not FmgEntryTextType.TextBody)
+                                {
+                                    _filteredFmgInfo.Add(info.GetTitleFmgInfo());
+                                }
+                                else
+                                {
+                                    _filteredFmgInfo.Add(info);
+                                }
+                                break;
                             }
-                            else
-                            {
-                                _filteredFmgInfo.Add(info);
-                            }
-                            break;
                         }
                     }
                 }
+                _filteredFmgInfo = _filteredFmgInfo.Distinct().ToList();
             }
-            _filteredFmgInfo = _filteredFmgInfo.Distinct().ToList();
-        }
-        if (_fmgSearchAllString == "")
-        {
-            ImGui.EndDisabled();
-        }
-
-        ImGui.SameLine();
-        if (ImGui.Button("Reset##FmgSearchAll"))
-        {
-            _fmgSearchAllActive = false;
-            _fmgSearchAllString = "";
-            _filteredFmgInfo.Clear();
-        }
-        ImGui.Separator();
-
-        foreach (KeyValuePair<FmgUICategory, bool> v in FMGBank.ActiveUITypes)
-        {
-            if (v.Value)
+            if (_fmgSearchAllString == "")
             {
-                ImGui.Separator();
-                ImGui.Text($"  {v.Key} Text");
-                ImGui.Separator();
-                // Categories
-                CategoryListUI(v.Key, doFocus);
-                ImGui.Spacing();
+                ImGui.EndDisabled();
             }
-        }
 
-        if (_activeFmgInfo != null)
-        {
-            _entryLabelCache = UICache.GetCached(this, "FMGEntryCache", () =>
+            ImGui.SameLine();
+            if (ImGui.Button("Reset##FmgSearchAll"))
             {
-                return _activeFmgInfo.GetPatchedEntries();
+                _fmgSearchAllActive = false;
+                _fmgSearchAllString = "";
+                _filteredFmgInfo.Clear();
+            }
+            ImGui.Separator();
+
+            foreach (KeyValuePair<FmgUICategory, bool> v in FMGBank.ActiveUITypes)
+            {
+                if (v.Value)
+                {
+                    ImGui.Separator();
+                    ImGui.Text($"  {v.Key} Text");
+                    ImGui.Separator();
+                    // Categories
+                    CategoryListUI(v.Key, doFocus);
+                    ImGui.Spacing();
+                }
+            }
+
+            if (_activeFmgInfo != null)
+            {
+                _entryLabelCache = UICache.GetCached(this, "FMGEntryCache", () =>
+                {
+                    return _activeFmgInfo.GetPatchedEntries();
+                });
+            }
+
+            // Needed to ensure EntryGroup is still valid after undo/redo actions while also maintaining highlight-duped-row functionality.
+            // It's a bit dumb and probably overthinking things.
+            _clearEntryGroup = UICache.GetCached(this, "FMGClearEntryGroup", () =>
+            {
+                if (_clearEntryGroup)
+                {
+                    return false;
+                }
+
+                return true;
             });
-        }
-
-        // Needed to ensure EntryGroup is still valid after undo/redo actions while also maintaining highlight-duped-row functionality.
-        // It's a bit dumb and probably overthinking things.
-        _clearEntryGroup = UICache.GetCached(this, "FMGClearEntryGroup", () =>
-        {
             if (_clearEntryGroup)
             {
-                return false;
+                if (!doFocus)
+                {
+                    _activeEntryGroup = null;
+                }
+
+                UICache.RemoveCache(this, "FMGClearEntryGroup");
             }
 
-            return true;
-        });
-        if (_clearEntryGroup)
-        {
-            if (!doFocus)
+            ImGui.End();
+
+            ImGui.Begin("Text Entries");
+            if (ImGui.Button("Clear Text"))
             {
-                _activeEntryGroup = null;
+                _searchFilter = "";
             }
 
-            UICache.RemoveCache(this, "FMGClearEntryGroup");
-        }
+            ImGui.SameLine();
 
-        ImGui.End();
-
-        ImGui.Begin("Text Entries");
-        if (ImGui.Button("Clear Text"))
-        {
-            _searchFilter = "";
-        }
-
-        ImGui.SameLine();
-
-        // Search
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TextFMG_Search))
-        {
-            ImGui.SetKeyboardFocusHere();
-        }
-
-        ImGui.InputText($"Search <{KeyBindings.Current.TextFMG_Search.HintText}>", ref _searchFilter, 255);
-
-        FMGSearchLogic(ref doFocus);
-
-        ImGui.BeginChild("Text Entry List");
-        if (_activeFmgInfo == null)
-        {
-            ImGui.Text("Select a category to see entries");
-        }
-        else if (_EntryLabelCacheFiltered == null)
-        {
-            ImGui.Text("No entries match search filter");
-        }
-        else
-        {
-            if (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down))
+            // Search
+            if (InputTracker.GetKeyDown(KeyBindings.Current.TextFMG_Search))
             {
-                _arrowKeyPressed = true;
+                ImGui.SetKeyboardFocusHere();
             }
 
-            for (var i = 0; i < _EntryLabelCacheFiltered.Count; i++)
+            ImGui.InputText($"Search <{KeyBindings.Current.TextFMG_Search.HintText}>", ref _searchFilter, 255);
+
+            FMGSearchLogic(ref doFocus);
+
+            ImGui.BeginChild("Text Entry List");
+            if (_activeFmgInfo == null)
             {
-                FMG.Entry r = _EntryLabelCacheFiltered[i];
-                // Entries
-                var text = r.Text == null
-                    ? "%null%"
-                    : r.Text.Replace("\n", "\n".PadRight(r.ID.ToString().Length + 2));
-                var label = $@"{r.ID} {text}";
-                label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth());
-                if (ImGui.Selectable(label, _activeIDCache == r.ID))
+                ImGui.Text("Select a category to see entries");
+            }
+            else if (_EntryLabelCacheFiltered == null)
+            {
+                ImGui.Text("No entries match search filter");
+            }
+            else
+            {
+                if (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down))
                 {
-                    _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                }
-                else if (_activeIDCache == r.ID && _activeEntryGroup == null)
-                {
-                    _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                    _searchFilterCached = "";
+                    _arrowKeyPressed = true;
                 }
 
-                if (_arrowKeyPressed && ImGui.IsItemFocused()
-                                     && _activeEntryGroup?.ID != r.ID)
+                for (var i = 0; i < _EntryLabelCacheFiltered.Count; i++)
                 {
-                    // Up/Down arrow key selection
-                    _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                    _arrowKeyPressed = false;
-                }
-
-                if (doFocus && _activeEntryGroup?.ID == r.ID)
-                {
-                    ImGui.SetScrollHereY();
-                    doFocus = false;
-                }
-
-                if (ImGui.BeginPopupContextItem())
-                {
-                    if (ImGui.Selectable("Delete Entry"))
+                    FMG.Entry r = _EntryLabelCacheFiltered[i];
+                    // Entries
+                    var text = r.Text == null
+                        ? "%null%"
+                        : r.Text.Replace("\n", "\n".PadRight(r.ID.ToString().Length + 2));
+                    var label = $@"{r.ID} {text}";
+                    label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth());
+                    if (ImGui.Selectable(label, _activeIDCache == r.ID))
                     {
                         _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                        DeleteFMGEntries(_activeEntryGroup);
                     }
-
-                    ImGui.Separator();
-
-                    if (ImGui.Selectable("Duplicate Entry"))
+                    else if (_activeIDCache == r.ID && _activeEntryGroup == null)
                     {
                         _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                        DuplicateFMGEntries(_activeEntryGroup);
+                        _searchFilterCached = "";
                     }
-                    ImGui.InputInt("##dupeAmount", ref CFG.Current.FMG_DuplicateAmount);
-                    if (CFG.Current.FMG_DuplicateAmount < 1)
-                        CFG.Current.FMG_DuplicateAmount = 1;
-                    ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
-                    ImGui.InputInt("##dupeIncrement", ref CFG.Current.FMG_DuplicateIncrement);
-                    if (CFG.Current.FMG_DuplicateIncrement < 1)
-                        CFG.Current.FMG_DuplicateIncrement = 1;
-                    ImguiUtils.ShowHoverTooltip("The increment to apply to the text id when duplicating.");
 
-                    ImGui.EndPopup();
+                    if (_arrowKeyPressed && ImGui.IsItemFocused()
+                                         && _activeEntryGroup?.ID != r.ID)
+                    {
+                        // Up/Down arrow key selection
+                        _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                        _arrowKeyPressed = false;
+                    }
+
+                    if (doFocus && _activeEntryGroup?.ID == r.ID)
+                    {
+                        ImGui.SetScrollHereY();
+                        doFocus = false;
+                    }
+
+                    if (ImGui.BeginPopupContextItem())
+                    {
+                        if (ImGui.Selectable("Delete Entry"))
+                        {
+                            _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                            DeleteFMGEntries(_activeEntryGroup);
+                        }
+
+                        ImGui.Separator();
+
+                        if (ImGui.Selectable("Duplicate Entry"))
+                        {
+                            _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                            DuplicateFMGEntries(_activeEntryGroup);
+                        }
+                        ImGui.InputInt("##dupeAmount", ref CFG.Current.FMG_DuplicateAmount);
+                        if (CFG.Current.FMG_DuplicateAmount < 1)
+                            CFG.Current.FMG_DuplicateAmount = 1;
+                        ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
+                        ImGui.InputInt("##dupeIncrement", ref CFG.Current.FMG_DuplicateIncrement);
+                        if (CFG.Current.FMG_DuplicateIncrement < 1)
+                            CFG.Current.FMG_DuplicateIncrement = 1;
+                        ImguiUtils.ShowHoverTooltip("The increment to apply to the text id when duplicating.");
+
+                        ImGui.EndPopup();
+                    }
                 }
             }
+
+            ImGui.EndChild();
+            ImGui.End();
         }
 
-        ImGui.EndChild();
-        ImGui.End();
-
-        ImGui.Begin("Text");
-        if (_activeEntryGroup == null)
+        if(CFG.Current.Interface_TextEditor_TextEntry)
         {
-            ImGui.Text("Select an item to edit text");
+            ImGui.Begin("Text");
+            if (_activeEntryGroup == null)
+            {
+                ImGui.Text("Select an item to edit text");
+            }
+            else
+            {
+                ImGui.Columns(2);
+                ImGui.SetColumnWidth(0, 100 * scale);
+                ImGui.Text("ID");
+                ImGui.NextColumn();
+
+                _propEditor.PropIDFMG(_activeEntryGroup, _entryLabelCache);
+                _activeIDCache = _activeEntryGroup.ID;
+
+                ImGui.NextColumn();
+
+                _propEditor.PropEditorFMGBegin();
+                if (_activeEntryGroup.TextBody != null)
+                {
+                    _propEditor.PropEditorFMG(_activeEntryGroup.TextBody, "Text", 200.0f);
+                }
+
+                if (_activeEntryGroup.Title != null)
+                {
+                    _propEditor.PropEditorFMG(_activeEntryGroup.Title, "Title", 20.0f);
+                }
+
+                if (_activeEntryGroup.Summary != null)
+                {
+                    _propEditor.PropEditorFMG(_activeEntryGroup.Summary, "Summary", 80.0f);
+                }
+
+                if (_activeEntryGroup.Description != null)
+                {
+                    _propEditor.PropEditorFMG(_activeEntryGroup.Description, "Description", 200.0f);
+                }
+
+                if (_activeEntryGroup.ExtraText != null)
+                {
+                    _propEditor.PropEditorFMG(_activeEntryGroup.ExtraText, "Extra", 80.0f);
+                }
+
+                _propEditor.PropEditorFMGEnd();
+            }
+
+            ImGui.End();
         }
-        else
+
+        if (CFG.Current.Interface_TextEditor_Toolbar)
         {
-            ImGui.Columns(2);
-            ImGui.SetColumnWidth(0, 100 * scale);
-            ImGui.Text("ID");
-            ImGui.NextColumn();
+            ImGui.Begin("Toolbar##textEditorToolbar");
 
-            _propEditor.PropIDFMG(_activeEntryGroup, _entryLabelCache);
-            _activeIDCache = _activeEntryGroup.ID;
+            ImGui.Text("Actions:");
+            ImGui.Separator();
 
-            ImGui.NextColumn();
+            Toolbar.ShowActionList();
 
-            _propEditor.PropEditorFMGBegin();
-            if (_activeEntryGroup.TextBody != null)
-            {
-                _propEditor.PropEditorFMG(_activeEntryGroup.TextBody, "Text", 200.0f);
-            }
+            ImGui.Separator();
 
-            if (_activeEntryGroup.Title != null)
-            {
-                _propEditor.PropEditorFMG(_activeEntryGroup.Title, "Title", 20.0f);
-            }
+            ImGui.BeginChild("##toolbarConfigurationPanel");
 
-            if (_activeEntryGroup.Summary != null)
-            {
-                _propEditor.PropEditorFMG(_activeEntryGroup.Summary, "Summary", 80.0f);
-            }
+            ImGui.Text("Configuration:");
+            ImGui.Separator();
 
-            if (_activeEntryGroup.Description != null)
-            {
-                _propEditor.PropEditorFMG(_activeEntryGroup.Description, "Description", 200.0f);
-            }
+            Toolbar.ShowActionConfiguration();
 
-            if (_activeEntryGroup.ExtraText != null)
-            {
-                _propEditor.PropEditorFMG(_activeEntryGroup.ExtraText, "Extra", 80.0f);
-            }
+            ImGui.EndChild();
 
-            _propEditor.PropEditorFMGEnd();
+            ImGui.End();
         }
-
-        ImGui.End();
-
-        ImGui.Begin("Toolbar##textEditorToolbar");
-
-        ImGui.Text("Actions:");
-        ImGui.Separator();
-
-        Toolbar.ShowActionList();
-
-        ImGui.Separator();
-
-        ImGui.BeginChild("##toolbarConfigurationPanel");
-
-        ImGui.Text("Configuration:");
-        ImGui.Separator();
-
-        Toolbar.ShowActionConfiguration();
-
-        ImGui.EndChild();
-
-        ImGui.End();
     }
 
     private void ChangeLanguage(string path)

@@ -26,6 +26,8 @@ using static SoulsFormats.BTPB;
 using static SoulsFormats.MSB_AC6.Region;
 using DotNext.Collections.Generic;
 using System.Xml;
+using StudioCore.Interface;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -165,42 +167,179 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
     {
         if (ImGui.BeginMenu("Edit"))
         {
-            if (ImGui.MenuItem("Duplicate"))
+            /*
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
+                    EditorActionManager.CanUndo()))
             {
-                DuplicateSelection();
+                EditorActionManager.UndoAction();
             }
-            if (ImGui.MenuItem("Delete"))
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem("Undo All", "", false,
+                    EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAllAction();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false,
+                    EditorActionManager.CanRedo()))
+            {
+                EditorActionManager.RedoAction();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
+            if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false, _selection.IsSelection()))
             {
                 DeleteSelection();
             }
 
-            ImGui.EndMenu();
-        }
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
+            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
+                    _selection.IsSelection()))
+            {
+                DuplicateSelection();
+            }
+            */
 
-        if (ImGui.BeginMenu("Model"))
-        {
-            if (ImGui.MenuItem("Unload"))
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eraser}");
+            if (ImGui.MenuItem("Unload Current Model"))
             {
                 _loadedModelInfo = null;
-                _universe.UnloadModels(true); 
+                _universe.UnloadModels(true);
             }
-
-            // TODO: Select other Flvers within the same container (e.g. _1, _2, etc)
 
             ImGui.EndMenu();
         }
 
         if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.MenuItem("Dummy Polygons", "", CFG.Current.ModelEditor_ViewDummyPolys, true))
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Viewport"))
+            {
+                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Model Hierarchy"))
+            {
+                CFG.Current.Interface_ModelEditor_ModelHierarchy = !CFG.Current.Interface_ModelEditor_ModelHierarchy;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelHierarchy);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Properties"))
+            {
+                CFG.Current.Interface_ModelEditor_Properties = !CFG.Current.Interface_ModelEditor_Properties;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Properties);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Asset Browser"))
+            {
+                CFG.Current.Interface_ModelEditor_AssetBrowser = !CFG.Current.Interface_ModelEditor_AssetBrowser;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_AssetBrowser);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Toolbar"))
+            {
+                CFG.Current.Interface_ModelEditor_Toolbar = !CFG.Current.Interface_ModelEditor_Toolbar;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Toolbar);
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+            if (ImGui.MenuItem("Dummy Polygons"))
             {
                 CFG.Current.ModelEditor_ViewDummyPolys = !CFG.Current.ModelEditor_ViewDummyPolys;
                 CFG.Current.ModelEditor_RenderingUpdate = true;
             }
-            if (ImGui.MenuItem("Bones", "", CFG.Current.Model_ViewBones, true))
+            ImguiUtils.ShowActiveStatus(CFG.Current.ModelEditor_ViewDummyPolys);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eye}");
+            if (ImGui.MenuItem("Bones"))
             {
                 CFG.Current.Model_ViewBones = !CFG.Current.Model_ViewBones;
                 CFG.Current.ModelEditor_RenderingUpdate = true;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Model_ViewBones);
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("Viewport"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.LightbulbO}");
+            if (ImGui.BeginMenu("Scene Lighting"))
+            {
+                Viewport.SceneParamsGui();
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("Gizmos"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Compass}");
+            if (ImGui.BeginMenu("Mode"))
+            {
+                if (ImGui.MenuItem("Translate", KeyBindings.Current.Viewport_TranslateMode.HintText,
+                        Gizmos.Mode == Gizmos.GizmosMode.Translate))
+                {
+                    Gizmos.Mode = Gizmos.GizmosMode.Translate;
+                }
+
+                if (ImGui.MenuItem("Rotate", KeyBindings.Current.Viewport_RotationMode.HintText,
+                        Gizmos.Mode == Gizmos.GizmosMode.Rotate))
+                {
+                    Gizmos.Mode = Gizmos.GizmosMode.Rotate;
+                }
+
+                ImGui.EndMenu();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cube}");
+            if (ImGui.BeginMenu("Space"))
+            {
+                if (ImGui.MenuItem("Local", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
+                        Gizmos.Space == Gizmos.GizmosSpace.Local))
+                {
+                    Gizmos.Space = Gizmos.GizmosSpace.Local;
+                }
+
+                if (ImGui.MenuItem("World", KeyBindings.Current.Viewport_ToggleGizmoSpace.HintText,
+                        Gizmos.Space == Gizmos.GizmosSpace.World))
+                {
+                    Gizmos.Space = Gizmos.GizmosSpace.World;
+                }
+
+                ImGui.EndMenu();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Cubes}");
+            if (ImGui.BeginMenu("Origin"))
+            {
+                if (ImGui.MenuItem("World", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
+                        Gizmos.Origin == Gizmos.GizmosOrigin.World))
+                {
+                    Gizmos.Origin = Gizmos.GizmosOrigin.World;
+                }
+
+                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.Viewport_ToggleGizmoOrigin.HintText,
+                        Gizmos.Origin == Gizmos.GizmosOrigin.BoundingBox))
+                {
+                    Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
+                }
+
+                ImGui.EndMenu();
             }
 
             ImGui.EndMenu();

@@ -10,6 +10,14 @@ using System.Threading.Tasks;
 namespace StudioCore.Interface;
 public static class ImguiUtils
 {
+    public static void ShowMenuIcon(string iconStr)
+    {
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+        ImGui.TextUnformatted(iconStr);
+        ImGui.PopStyleVar(1);
+        ImGui.SameLine();
+    }
+
     public static void ShowActiveStatus(bool isActive)
     {
         if (isActive)

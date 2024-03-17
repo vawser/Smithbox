@@ -9,8 +9,11 @@ using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GraphicsEditor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
 using StudioCore.Platform;
+using StudioCore.Scene;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
@@ -83,20 +86,65 @@ public class GparamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Edit"))
         {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
             }
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAllAction();
             }
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
             if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
             {
                 EditorActionManager.RedoAction();
             }
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("View"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Files"))
+            {
+                CFG.Current.Interface_GparamEditor_Files = !CFG.Current.Interface_GparamEditor_Files;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Files);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Groups"))
+            {
+                CFG.Current.Interface_GparamEditor_Groups = !CFG.Current.Interface_GparamEditor_Groups;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Groups);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Fields"))
+            {
+                CFG.Current.Interface_GparamEditor_Fields = !CFG.Current.Interface_GparamEditor_Fields;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Fields);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Values"))
+            {
+                CFG.Current.Interface_GparamEditor_Values = !CFG.Current.Interface_GparamEditor_Values;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Values);
+
+            /*
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Toolbar"))
+            {
+                CFG.Current.Interface_GparamEditor_Toolbar = !CFG.Current.Interface_GparamEditor_Toolbar;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Toolbar);
+            */
 
             ImGui.EndMenu();
         }
@@ -146,10 +194,26 @@ public class GparamEditorScreen : EditorScreen
 
         if (GparamParamBank.IsLoaded)
         {
-            GparamListView();
-            GparamGroupList();
-            GparamFieldList();
-            GparamValueProperties();
+            if(CFG.Current.Interface_GparamEditor_Files)
+            {
+                GparamListView();
+            }
+            if (CFG.Current.Interface_GparamEditor_Groups)
+            {
+                GparamGroupList();
+            }
+            if (CFG.Current.Interface_GparamEditor_Fields)
+            {
+                GparamFieldList();
+            }
+            if (CFG.Current.Interface_GparamEditor_Values)
+            {
+                GparamValueProperties();
+            }
+            if (CFG.Current.Interface_GparamEditor_Toolbar)
+            {
+                
+            }
         }
 
         ImGui.PopStyleVar();

@@ -800,6 +800,8 @@ public class Smithbox
         }
     }
 
+    private static CFG.RecentProject recentProject;
+
     private unsafe void Update(float deltaseconds)
     {
         Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, "Imgui");
@@ -863,11 +865,15 @@ public class Smithbox
             // Dropdown: File
             if (ImGui.BeginMenu("File"))
             {
+                // New Project
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.File}");
                 if (ImGui.MenuItem("New Project", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     newProject = true;
                 }
 
+                // Open Project
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
                 if (ImGui.MenuItem("Open Project", "", false, !TaskManager.AnyActiveTasks()))
                 {
                     if (PlatformUtils.Instance.OpenFileDialog(
@@ -883,72 +889,126 @@ public class Smithbox
                     }
                 }
 
+                // Recent Projects
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.FolderOpen}");
                 if (ImGui.BeginMenu("Recent Projects",
                         !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
                 {
-                    CFG.RecentProject recent = null;
+                    recentProject = null;
                     var id = 0;
+
                     foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
                     {
-                        if (ImGui.MenuItem($@"{p.GameType}: {p.Name}##{id}"))
+                        // DES
+                        if (p.GameType == ProjectType.DES)
                         {
-                            if (File.Exists(p.ProjectFile))
-                            {
-                                ProjectSettings settings = ProjectSettings.Deserialize(p.ProjectFile);
-                                if (settings != null)
-                                {
-                                    if (AttemptLoadProject(settings, p.ProjectFile))
-                                    {
-                                        recent = p;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                DialogResult result = PlatformUtils.Instance.MessageBox(
-                                    $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
-                                    $"Remove project from list of recent projects?",
-                                    $"Project.json cannot be found", MessageBoxButtons.YesNo);
-                                if (result == DialogResult.Yes)
-                                {
-                                    CFG.RemoveRecentProject(p);
-                                }
-                            }
-                        }
+                            RecentProjectEntry(p, id);
 
-                        if (ImGui.BeginPopupContextItem())
+                            id++;
+                        }
+                    }
+                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+                    {
+                        // DS1
+                        if (p.GameType == ProjectType.DS1)
                         {
-                            if (ImGui.Selectable("Remove from list"))
-                            {
-                                CFG.RemoveRecentProject(p);
-                                CFG.Save();
-                            }
+                            RecentProjectEntry(p, id);
 
-                            ImGui.EndPopup();
+                            id++;
                         }
+                    }
+                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+                    {
+                        // DS1R
+                        if (p.GameType == ProjectType.DS1R)
+                        {
+                            RecentProjectEntry(p, id);
 
-                        id++;
+                            id++;
+                        }
+                    }
+                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+                    {
+                        // DS2S
+                        if (p.GameType == ProjectType.DS2S)
+                        {
+                            RecentProjectEntry(p, id);
+
+                            id++;
+                        }
+                    }
+                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+                    {
+                        // BB
+                        if (p.GameType == ProjectType.BB)
+                        {
+                            RecentProjectEntry(p, id);
+
+                            id++;
+                        }
+                    }
+                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+                    {
+                        // DS3
+                        if (p.GameType == ProjectType.DS3)
+                        {
+                            RecentProjectEntry(p, id);
+
+                            id++;
+                        }
+                    }
+                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+                    {
+                        // SDT
+                        if (p.GameType == ProjectType.SDT)
+                        {
+                            RecentProjectEntry(p, id);
+
+                            id++;
+                        }
+                    }
+                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+                    {
+                        // ER
+                        if (p.GameType == ProjectType.ER)
+                        {
+                            RecentProjectEntry(p, id);
+
+                            id++;
+                        }
+                    }
+                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+                    {
+                        // AC6
+                        if (p.GameType == ProjectType.AC6)
+                        {
+                            RecentProjectEntry(p, id);
+
+                            id++;
+                        }
                     }
 
                     ImGui.EndMenu();
                 }
 
+                // Open in Explorer
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.Archive}");
                 if (ImGui.BeginMenu("Open in Explorer",
                         !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
                 {
-                    if (ImGui.MenuItem("Open Project Folder", "", false, !TaskManager.AnyActiveTasks()))
+                    if (ImGui.MenuItem("Project Folder", "", false, !TaskManager.AnyActiveTasks()))
                     {
                         var projectPath = Project.GameModDirectory;
                         Process.Start("explorer.exe", projectPath);
                     }
 
-                    if (ImGui.MenuItem("Open Game Folder", "", false, !TaskManager.AnyActiveTasks()))
+                    if (ImGui.MenuItem("Game Folder", "", false, !TaskManager.AnyActiveTasks()))
                     {
                         var gamePath = Project.GameRootDirectory;
                         Process.Start("explorer.exe", gamePath);
                     }
 
-                    if (ImGui.MenuItem("Open Config Folder", "", false, !TaskManager.AnyActiveTasks()))
+                    if (ImGui.MenuItem("Config Folder", "", false, !TaskManager.AnyActiveTasks()))
                     {
                         var configPath = CFG.GetConfigFolderPath();
                         Process.Start("explorer.exe", configPath);
@@ -957,13 +1017,17 @@ public class Smithbox
                     ImGui.EndMenu();
                 }
 
-                if (ImGui.MenuItem($"Save {_focusedEditor.SaveType}",
+                // Save
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
+                if (ImGui.MenuItem($"Save Selected {_focusedEditor.SaveType}",
                         KeyBindings.Current.Core_SaveCurrentEditor.HintText))
                 {
                     SaveFocusedEditor();
                 }
 
-                if (ImGui.MenuItem("Save All", KeyBindings.Current.Core_SaveAllEditors.HintText))
+                // Save All
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.FloppyO}");
+                if (ImGui.MenuItem($"Save All Modified {_focusedEditor.SaveType}", KeyBindings.Current.Core_SaveAllEditors.HintText))
                 {
                     SaveAll();
                 }
@@ -1429,6 +1493,47 @@ public class Smithbox
 
         _firstframe = false;
     }
+
+    private void RecentProjectEntry(CFG.RecentProject p, int id)
+    {
+        if (ImGui.MenuItem($@"{p.GameType}: {p.Name}##{id}"))
+        {
+            if (File.Exists(p.ProjectFile))
+            {
+                ProjectSettings settings = ProjectSettings.Deserialize(p.ProjectFile);
+                if (settings != null)
+                {
+                    if (AttemptLoadProject(settings, p.ProjectFile))
+                    {
+                        recentProject = p;
+                    }
+                }
+            }
+            else
+            {
+                DialogResult result = PlatformUtils.Instance.MessageBox(
+                    $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
+                    $"Remove project from list of recent projects?",
+                    $"Project.json cannot be found", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    CFG.RemoveRecentProject(p);
+                }
+            }
+        }
+
+        if (ImGui.BeginPopupContextItem())
+        {
+            if (ImGui.Selectable("Remove from list"))
+            {
+                CFG.RemoveRecentProject(p);
+                CFG.Save();
+            }
+
+            ImGui.EndPopup();
+        }
+    }
+
 
     private const float DefaultDpi = 96f;
     private static float _dpi = DefaultDpi;

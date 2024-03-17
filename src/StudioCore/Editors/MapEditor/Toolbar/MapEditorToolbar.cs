@@ -97,7 +97,6 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MapAction_TogglePresence.Select(_selection);
             MapAction_ToggleVisibility.Select(_selection);
 
-            MapAction_Create.Select(_selection);
             MapAction_Duplicate.Select(_selection);
             MapAction_Rotate.Select(_selection);
             MapAction_Scramble.Select(_selection);
@@ -109,6 +108,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             ImGui.Separator();
 
             // Global
+            MapAction_Create.Select(_selection);
             MapAction_AssignEntityGroupID.Select(_selection);
             MapAction_ToggleObjectVisibilityByTag.Select(_selection);
             MapAction_TogglePatrolRoutes.Select(_selection);
@@ -131,13 +131,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MapAction_TogglePresence.Configure(_selection);
             MapAction_ToggleVisibility.Configure(_selection);
 
-            MapAction_Create.Configure(_selection);
             MapAction_Duplicate.Configure(_selection);
             MapAction_Rotate.Configure(_selection);
             MapAction_Scramble.Configure(_selection);
             MapAction_Replicate.Configure(_selection);
 
             // Global
+            MapAction_Create.Configure(_selection);
             MapAction_AssignEntityGroupID.Configure(_selection);
             MapAction_ToggleObjectVisibilityByTag.Configure(_selection);
             MapAction_TogglePatrolRoutes.Configure(_selection);

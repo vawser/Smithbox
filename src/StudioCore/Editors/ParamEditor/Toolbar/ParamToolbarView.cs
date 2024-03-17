@@ -3,6 +3,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.UserProject;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,14 +55,16 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         // Tool dropdown list if the side window is disabled
         public static void ToolbarView()
         {
-            if (!CFG.Current.Param_DisplaySideWindow)
+            if (!CFG.Current.Interface_ParamEditor_Toolbar)
             {
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
                 if (ImGui.MenuItem("Export Row Names (All)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
                 {
                     ParamAction_ExportRowNames.CurrentTargetCategory = "All Params";
                     ParamAction_ExportRowNames.Act();
                 }
 
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
                 if (ImGui.MenuItem("Export Row Names (Selected)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
                 {
                     ParamAction_ExportRowNames.CurrentTargetCategory = "Selected Param";
@@ -70,12 +73,14 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
                 ImGui.Separator();
 
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
                 if (ImGui.MenuItem("Import Row Names (All)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
                 {
                     ParamAction_ImportRowNames.CurrentTargetCategory = "All Params";
                     ParamAction_ImportRowNames.Act();
                 }
 
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
                 if (ImGui.MenuItem("Import Row Names (Selected)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
                 {
                     ParamAction_ExportRowNames.CurrentTargetCategory = "Selected Param";
@@ -84,15 +89,19 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
                 ImGui.Separator();
 
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
                 if (ImGui.MenuItem("Sort Rows", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
                 {
                     ParamAction_SortRows.Act();
                 }
 
+                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
                 if (ImGui.MenuItem("Trim Row Names", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
                 {
                     ParamAction_TrimRowNames.Act();
                 }
+
+                ImGui.Separator();
             }
         }
 

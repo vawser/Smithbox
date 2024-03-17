@@ -117,14 +117,13 @@ namespace StudioCore.Editors.ModelEditor
         public void Display()
         {
             if (Project.Type == ProjectType.Undefined)
-            {
                 return;
-            }
 
-            if (ModelAliasBank.Bank.IsLoadingAliases)
-            {
+            if (!CFG.Current.Interface_ModelEditor_AssetBrowser)
                 return;
-            }
+            
+            if (ModelAliasBank.Bank.IsLoadingAliases)
+                return;
 
             if (ImGui.Begin($@"Asset Browser##{_id}"))
             {

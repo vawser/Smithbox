@@ -1079,6 +1079,9 @@ public class ModelPropertyEditor
         var scale = Smithbox.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
+        if (!CFG.Current.Interface_ModelEditor_Properties)
+            return;
+
         ImGui.PushStyleColor(ImGuiCol.ChildBg, CFG.Current.ImGui_ChildBg);
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);

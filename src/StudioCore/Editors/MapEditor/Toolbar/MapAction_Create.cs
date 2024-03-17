@@ -31,7 +31,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 MapEditorState.CurrentTool = SelectedTool.Selection_Create;
 
-                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
+                if (ImGui.IsMouseDoubleClicked(0))
                 {
                     Act(_selection);
                 }
