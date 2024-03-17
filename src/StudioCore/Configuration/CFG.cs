@@ -57,18 +57,17 @@ public class CFG
     //**************
     // View Toggles
     public bool Interface_Editor_Viewport = true;
+    public bool Interface_Editor_Profiling = true;
 
     public bool Interface_MapEditor_MapObjectList = true;
     public bool Interface_MapEditor_Properties = true;
     public bool Interface_MapEditor_PropertySearch = true;
-    public bool Interface_MapEditor_Prefabs = true;
-    public bool Interface_MapEditor_Profiling = true;
     public bool Interface_MapEditor_RenderGroups = true;
-    public bool Interface_MapEditor_ResourceList = true;
     public bool Interface_MapEditor_AssetBrowser = true;
     public bool Interface_MapEditor_AssetBrowser_HorizontalOrientation = true;
     public bool Interface_MapEditor_Toolbar = true;
     public bool Interface_MapEditor_Toolbar_HorizontalOrientation = true;
+    public bool Interface_MapEditor_ResourceList = true;
 
     public bool Interface_ModelEditor_ModelHierarchy = true;
     public bool Interface_ModelEditor_Properties = true;
@@ -76,6 +75,7 @@ public class CFG
     public bool Interface_ModelEditor_AssetBrowser_HorizontalOrientation = true;
     public bool Interface_ModelEditor_Toolbar = true;
     public bool Interface_ModelEditor_Toolbar_HorizontalOrientation = true;
+    public bool Interface_ModelEditor_ResourceList = true;
 
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_MassEdit = true;

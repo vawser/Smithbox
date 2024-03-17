@@ -173,7 +173,7 @@ public class Viewport : IViewport
             ImGui.End();
         }
 
-        if (CFG.Current.Interface_MapEditor_Profiling)
+        if (CFG.Current.Interface_Editor_Profiling)
         {
             if (ImGui.Begin($@"Profiling##{_vpid}"))
             {

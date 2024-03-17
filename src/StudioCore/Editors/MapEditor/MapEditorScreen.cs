@@ -270,18 +270,18 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_AssetBrowser);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Profiling"))
-            {
-                CFG.Current.Interface_MapEditor_Profiling = !CFG.Current.Interface_MapEditor_Profiling;
-            }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Profiling);
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Render Groups"))
             {
                 CFG.Current.Interface_MapEditor_RenderGroups = !CFG.Current.Interface_MapEditor_RenderGroups;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_RenderGroups);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Profiling"))
+            {
+                CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Resource List"))
@@ -894,7 +894,10 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         }
 
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
-        ResourceManager.OnGuiDrawResourceList();
+        if (CFG.Current.Interface_MapEditor_ResourceList)
+        {
+            ResourceManager.OnGuiDrawResourceList("mapResourceList");
+        }
 
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         AssetBrowser.OnGui();

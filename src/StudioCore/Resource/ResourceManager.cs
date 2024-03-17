@@ -425,14 +425,9 @@ public static class ResourceManager
         }
     }
 
-    public static void OnGuiDrawResourceList()
+    public static void OnGuiDrawResourceList(string menuId)
     {
-        if (!CFG.Current.Interface_MapEditor_ResourceList)
-        {
-            return;
-        }
-
-        if (!ImGui.Begin("Resource List"))
+        if (!ImGui.Begin($"Resource List##{menuId}"))
         {
             ImGui.End();
             return;

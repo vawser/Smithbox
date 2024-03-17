@@ -261,6 +261,20 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Toolbar);
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Profiling"))
+            {
+                CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Resource List"))
+            {
+                CFG.Current.Interface_ModelEditor_ResourceList = !CFG.Current.Interface_ModelEditor_ResourceList;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
+
             ImGui.EndMenu();
         }
 
@@ -489,6 +503,11 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _toolbarView.OnGui();
 
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
+
+        if (CFG.Current.Interface_ModelEditor_ResourceList)
+        {
+            ResourceManager.OnGuiDrawResourceList("modelResourceList");
+        }
         ImGui.PopStyleColor(1);
     }
 

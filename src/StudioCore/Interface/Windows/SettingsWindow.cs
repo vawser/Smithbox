@@ -515,13 +515,6 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
             }
 
-            // Asset Browser
-            if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Orient horizontally##assetBrowserOrientation", ref CFG.Current.Interface_MapEditor_AssetBrowser_HorizontalOrientation);
-                ImguiUtils.ShowHoverTooltip("Display the asset browser categories in a horizontal fashion. By default they will be displayed vertically.");
-            }
-
             // Substitutions
             if (ImGui.CollapsingHeader("Substitutions"))
             {
@@ -562,12 +555,6 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
                 ImguiUtils.ShowHoverTooltip("Display the reference ID of a dummy polygon by the scene tree name.");
-            }
-
-            if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Orient horizontally##assetBrowserOrientation", ref CFG.Current.Interface_ModelEditor_AssetBrowser_HorizontalOrientation);
-                ImguiUtils.ShowHoverTooltip("Display the asset browser categories in a horizontal fashion. By default they will be displayed vertically.");
             }
 
             ImGui.EndTabItem();
