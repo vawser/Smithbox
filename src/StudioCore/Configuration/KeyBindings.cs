@@ -145,7 +145,7 @@ public class KeyBindings
         // Model Editor
         public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L);
 
-        public KeyBind ModelEditor_UnloadCurrentSelection = new("Unload Current Model", KeybindCategory.ModelEditor, Key.U);
+        public KeyBind ModelEditor_UnloadCurrentSelection = new("Unload Current Asset", KeybindCategory.ModelEditor, Key.U);
 
         // Param
         public KeyBind Param_Copy = new("Copy", KeybindCategory.ParamEditor, Key.C, true);

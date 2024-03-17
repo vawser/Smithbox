@@ -94,6 +94,12 @@ public class CFG
     public bool Interface_GparamEditor_Toolbar = true;
     public bool Interface_GparamEditor_Toolbar_HorizontalOrientation = true;
 
+    public bool Interface_MapEditor_PromptUser = true;
+    public bool Interface_GparamEditor_PromptUser = true;
+    public bool Interface_ModelEditor_PromptUser = true;
+    public bool Interface_ParamEditor_PromptUser = true;
+    public bool Interface_TextEditor_PromptUser = true;
+
     public bool Interface_DisplayMapGroups = true;
     public bool Interface_Display_Alias_for_Gparam = true;
     public bool Interface_Display_Alias_for_Msb = true;
@@ -353,7 +359,6 @@ public class CFG
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
     public bool ModelEditor_DisplayMatNameOnMesh = true;
 
-    public bool ModelEditor_Toolbar_Prompt_User_Action = true;
 
     //****************************
     // Settings: Param Editor
@@ -399,8 +404,6 @@ public class CFG
     public bool Param_FieldContextMenu_MassEdit = true;
     public bool Param_FieldContextMenu_FullMassEdit = true;
 
-    public bool Param_Toolbar_Prompt_User_Action = true;
-
     public int Param_Toolbar_Duplicate_Amount = 1;
 
     //****************************
@@ -412,7 +415,7 @@ public class CFG
     public int FMG_DuplicateAmount = 1;
     public int FMG_DuplicateIncrement = 1;
 
-    public bool FMG_Toolbar_Prompt_User_Action = true;
+
 
     public int FMG_SyncEntries_Modulus = 10000;
 
@@ -435,7 +438,6 @@ public class CFG
     public bool Gparam_DisplayAddGroups = true;
     public bool Gparam_DisplayAddFields = true;
 
-    public bool Gparam_Toolbar_Prompt_User_Action = true;
 
     public bool Gparam_ColorEdit_RGB = true;
     public bool Gparam_ColorEdit_Decimal = false;
@@ -474,7 +476,6 @@ public class CFG
     //****************************
     // Map Toolbar
     //****************************
-    public bool MSB_Toolbar_Prompt_User_Action = true;
 
     public bool Toolbar_Duplicate_Increment_Entity_ID = false;
     public bool Toolbar_Duplicate_Increment_UnkPartNames = false;

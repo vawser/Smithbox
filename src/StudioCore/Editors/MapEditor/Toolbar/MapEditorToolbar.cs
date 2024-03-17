@@ -117,14 +117,14 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             if (ImGui.Button($"{ForkAwesome.ExclamationTriangle}##PromptUser"))
             {
-                if(CFG.Current.MSB_Toolbar_Prompt_User_Action)
+                if(CFG.Current.Interface_MapEditor_PromptUser)
                 {
-                    CFG.Current.MSB_Toolbar_Prompt_User_Action = false;
+                    CFG.Current.Interface_MapEditor_PromptUser = false;
                     PlatformUtils.Instance.MessageBox("Map Editor Toolbar will no longer prompt the user.", "Smithbox", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    CFG.Current.MSB_Toolbar_Prompt_User_Action = true;
+                    CFG.Current.Interface_MapEditor_PromptUser = true;
                     PlatformUtils.Instance.MessageBox("Map Editor Toolbar will prompt user before applying certain toolbar actions.", "Smithbox", MessageBoxButtons.OK);
                 }
             }

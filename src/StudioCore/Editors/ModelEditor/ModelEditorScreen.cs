@@ -28,6 +28,8 @@ using DotNext.Collections.Generic;
 using System.Xml;
 using StudioCore.Interface;
 using StudioCore.Utilities;
+using StudioCore.Editors.ParamEditor.Toolbar;
+using StudioCore.Editors.ModelEditor.Toolbar;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -63,6 +65,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public LoadedModelInfo _loadedModelInfo;
 
+    public ModelToolbarView _toolbarView;
+
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
@@ -83,6 +87,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _sceneTree = new ModelSceneTree(this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
         _propEditor = new ModelPropertyEditor(EditorActionManager, _propCache, Viewport, null);
         _assetBrowser = new ModelAssetBrowser(this);
+        _toolbarView = new ModelToolbarView(this);
     }
 
     public void Init()
@@ -210,7 +215,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
-            if (ImGui.MenuItem("Unload Current Model", KeyBindings.Current.ModelEditor_UnloadCurrentSelection.HintText, true))
+            if (ImGui.MenuItem("Unload Current Asset", KeyBindings.Current.ModelEditor_UnloadCurrentSelection.HintText, true))
             {
                 _loadedModelInfo = null;
                 _universe.UnloadModels(true);
@@ -481,6 +486,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _assetBrowser.OnGui();
         _sceneTree.OnGui();
         _propEditor.OnGui(_selection, "modeleditprop", Viewport.Width, Viewport.Height);
+        _toolbarView.OnGui();
+
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
         ImGui.PopStyleColor(1);
     }

@@ -137,7 +137,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             bool proceed = false;
 
-            if (CFG.Current.MSB_Toolbar_Prompt_User_Action)
+            if (CFG.Current.Interface_MapEditor_PromptUser)
             {
                 DialogResult result = DialogResult.None;
 

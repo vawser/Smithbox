@@ -8,8 +8,10 @@ using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
+using StudioCore.Editors.GparamEditor.Toolbar;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -68,9 +70,11 @@ public class GparamEditorScreen : EditorScreen
 
     private bool[] displayTruth;
 
+    public GparamToolbarView _toolbarView;
+
     public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        
+        _toolbarView = new GparamToolbarView(this);
     }
 
     public string EditorName => "Gparam Editor##GparamEditor";
@@ -137,14 +141,12 @@ public class GparamEditorScreen : EditorScreen
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Values);
 
-            /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Toolbar"))
             {
                 CFG.Current.Interface_GparamEditor_Toolbar = !CFG.Current.Interface_GparamEditor_Toolbar;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Toolbar);
-            */
 
             ImGui.EndMenu();
         }
@@ -218,6 +220,8 @@ public class GparamEditorScreen : EditorScreen
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
+
+        _toolbarView.OnGui();
     }
 
     public void GparamShortcuts()

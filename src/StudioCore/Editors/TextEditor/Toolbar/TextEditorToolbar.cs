@@ -116,14 +116,14 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
             if (ImGui.Button($"{ForkAwesome.ExclamationTriangle}##PromptUser"))
             {
-                if (CFG.Current.FMG_Toolbar_Prompt_User_Action)
+                if (CFG.Current.Interface_TextEditor_PromptUser)
                 {
-                    CFG.Current.FMG_Toolbar_Prompt_User_Action = false;
+                    CFG.Current.Interface_TextEditor_PromptUser = false;
                     PlatformUtils.Instance.MessageBox("Text Editor Toolbar will no longer prompt the user.", "Smithbox", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    CFG.Current.FMG_Toolbar_Prompt_User_Action = true;
+                    CFG.Current.Interface_TextEditor_PromptUser = true;
                     PlatformUtils.Instance.MessageBox("Text Editor Toolbar will prompt user before applying certain toolbar actions.", "Smithbox", MessageBoxButtons.OK);
                 }
             }

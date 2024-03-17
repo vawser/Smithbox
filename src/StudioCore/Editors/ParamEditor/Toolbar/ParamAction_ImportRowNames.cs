@@ -91,7 +91,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             {
                 if (ImGui.Button("Apply##action_Selection_ImportRowNames", new Vector2(200, 32)))
                 {
-                    if (CFG.Current.Param_Toolbar_Prompt_User_Action)
+                    if (CFG.Current.Interface_ParamEditor_PromptUser)
                     {
                         var result = PlatformUtils.Instance.MessageBox($"You are about to use the Import Row Names action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 

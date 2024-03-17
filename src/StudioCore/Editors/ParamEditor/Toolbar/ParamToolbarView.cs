@@ -113,14 +113,14 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             if (ImGui.Button($"{ForkAwesome.ExclamationTriangle}##PromptUser"))
             {
-                if (CFG.Current.Param_Toolbar_Prompt_User_Action)
+                if (CFG.Current.Interface_ParamEditor_PromptUser)
                 {
-                    CFG.Current.Param_Toolbar_Prompt_User_Action = false;
+                    CFG.Current.Interface_ParamEditor_PromptUser = false;
                     PlatformUtils.Instance.MessageBox("Param Editor Toolbar will no longer prompt the user.", "Smithbox", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    CFG.Current.Param_Toolbar_Prompt_User_Action = true;
+                    CFG.Current.Interface_ParamEditor_PromptUser = true;
                     PlatformUtils.Instance.MessageBox("Param Editor Toolbar will prompt user before applying certain toolbar actions.", "Smithbox", MessageBoxButtons.OK);
                 }
             }

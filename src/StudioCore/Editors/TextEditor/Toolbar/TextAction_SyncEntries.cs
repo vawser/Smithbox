@@ -73,7 +73,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             {
                 if (ImGui.Button("Apply##action_Selection_SyncEntries", new Vector2(200, 32)))
                 {
-                    if (CFG.Current.Param_Toolbar_Prompt_User_Action)
+                    if (CFG.Current.Interface_ParamEditor_PromptUser)
                     {
                         var result = PlatformUtils.Instance.MessageBox($"You are about to use the Sync Entries action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
