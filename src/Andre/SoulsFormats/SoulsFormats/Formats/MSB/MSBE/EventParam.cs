@@ -988,6 +988,7 @@ namespace SoulsFormats
                 /// </summary>
                 public PatrolInfo() : base($"{nameof(Event)}: {nameof(PatrolInfo)}")
                 {
+                    WalkRegionIndices = new short[64];
                     WalkRegionNames = new string[64];
                 }
 
