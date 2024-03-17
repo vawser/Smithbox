@@ -326,13 +326,6 @@ public class ParamEditorScreen : EditorScreen
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Table);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Mass Edit"))
-            {
-                CFG.Current.Interface_ParamEditor_MassEdit = !CFG.Current.Interface_ParamEditor_MassEdit;
-            }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParamEditor_MassEdit);
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Toolbar"))
             {
                 CFG.Current.Interface_ParamEditor_Toolbar = !CFG.Current.Interface_ParamEditor_Toolbar;
@@ -679,8 +672,6 @@ public class ParamEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Tools"))
         {
-            ParamToolbarView.ToolbarView();
-
             ParamRowIdFinder.Display();
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
@@ -1034,39 +1025,7 @@ public class ParamEditorScreen : EditorScreen
 
         if (CFG.Current.Interface_ParamEditor_Toolbar)
         {
-            // Toolbar
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-            if (ImGui.Begin("Toolbar##ParamToolbar"))
-            {
-                _activeView._toolbarView.OnGui();
-            }
-            ImGui.End();
-            ImGui.PopStyleColor(1);
-        }
-
-        if (CFG.Current.Interface_ParamEditor_MassEdit)
-        {
-            // Mass Edit
-            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-            if (ImGui.Begin("Mass Edit##MassEditView"))
-            {
-                _activeView._massEditView.OnGui();
-            }
-
-            // Focus on Mass Edit by default when this editor is made focused
-            if (FirstFrame)
-            {
-                ImGui.SetWindowFocus("Mass Edit##MassEditView");
-
-                FirstFrame = false;
-            }
-
-            ImGui.End();
-            ImGui.PopStyleColor(1);
+            _activeView._toolbarView.OnGui();
         }
 
         if (CFG.Current.UI_CompactParams)

@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,27 +15,20 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.Selectable("Move to Camera##tool_Selection_MoveToCamera", false, ImGuiSelectableFlags.AllowDoubleClick))
+            if (ImGui.RadioButton("Move to Camera##tool_Selection_MoveToCamera", MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera))
             {
-                MapEditorState.CurrentTool = SelectedTool.Selection_Move_to_Camera;
-
-                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                {
-                    Act(_selection);
-                }
+                MapEditorState.SelectedAction = MapEditorAction.Selection_Move_to_Camera;
             }
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Move_to_Camera)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera)
             {
                 ImGui.Text("Move the current selection to the camera position.");
-                ImGui.Separator();
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText)}");
-                ImGui.Separator();
+                ImGui.Text("");
 
-
+                ImGui.Text("Camera Offset Distance:");
                 if (ImGui.Button("Switch"))
                 {
                     CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input = !CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input;
@@ -45,7 +39,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     var offset = CFG.Current.Toolbar_Move_to_Camera_Offset;
 
                     ImGui.PushItemWidth(200);
-                    ImGui.InputFloat("Offset distance", ref offset);
+                    ImGui.InputFloat("##Offset distance", ref offset);
                     ImguiUtils.ShowHoverTooltip("Set the distance at which the current selection is offset from the camera when this action is used.");
 
                     if (offset < 0)
@@ -59,13 +53,39 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 else
                 {
                     ImGui.PushItemWidth(200);
-                    ImGui.SliderFloat("Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100);
+                    ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100);
                     ImguiUtils.ShowHoverTooltip("Set the distance at which the current selection is offset from the camera when this action is used.");
                 }
+                ImGui.Text("");
             }
         }
 
         public static void Act(ViewportSelection _selection)
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera)
+            {
+                if (ImGui.Button("Apply##action_Selection_Move_to_Camera", new Vector2(200, 32)))
+                {
+                    if (_selection.IsSelection())
+                    {
+                        ApplyMoveToCamera(_selection);
+                    }
+                    else
+                    {
+                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera)
+            {
+                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText)}");
+            }
+        }
+
+        public static void ApplyMoveToCamera(ViewportSelection _selection)
         {
             List<ViewportAction> actlist = new();
             HashSet<Entity> sels = _selection.GetFilteredSelection<Entity>(o => o.HasTransform);

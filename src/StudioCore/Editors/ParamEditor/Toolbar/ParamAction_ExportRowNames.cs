@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,56 +16,35 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 {
     public static class ParamAction_ExportRowNames
     {
-
-        public static void Setup()
-        {
-
-        }
-
-        public static void Select()
-        {
-            if (ImGui.Selectable("Export Row Names", ParamToolbarView.SelectedAction == ParamEditorAction.ExportRowNames, ImGuiSelectableFlags.AllowDoubleClick))
-            {
-                ParamToolbarView.SelectedAction = ParamEditorAction.ExportRowNames;
-
-                if (ImGui.IsMouseDoubleClicked(0))
-                {
-                    if (CFG.Current.Param_Toolbar_Prompt_User_Action)
-                    {
-                        var result = PlatformUtils.Instance.MessageBox($"You are about to use the Export Row Names action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            Act();
-                        }
-                    }
-                    else
-                    {
-                        Act();
-                    }
-                }
-            }
-            ImguiUtils.ShowHoverTooltip("Use this to export row names to text.");
-        }
-
         private static bool _rowNameExporter_VanillaOnly = false;
         private static bool _rowNameExporter_EmptyOnly = false;
         public static string CurrentTargetCategory = ParamToolbarView.TargetTypes[0];
+
+        public static void Select()
+        {
+            if (ImGui.RadioButton("Export Row Names##tool_ExportRowNames", ParamToolbarView.SelectedAction == ParamEditorAction.ExportRowNames))
+            {
+                ParamToolbarView.SelectedAction = ParamEditorAction.ExportRowNames;
+            }
+            ImguiUtils.ShowHoverTooltip("Use this to export row names to text.");
+        }
 
         public static void Configure()
         {
             if (ParamToolbarView.SelectedAction == ParamEditorAction.ExportRowNames)
             {
                 ImGui.Text("Export row names for the currently selected param, or for all params.");
-                ImGui.Separator();
+                ImGui.Text("");
 
                 if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
                 {
                     ImGui.Text("You must select a param before you can use this action.");
+                    ImGui.Text("");
                 }
                 else
                 {
-                    if (ImGui.BeginCombo("Target", CurrentTargetCategory))
+                    ImGui.Text("Target Category:");
+                    if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
                     {
                         foreach (string e in ParamToolbarView.TargetTypes)
                         {
@@ -77,11 +57,36 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         ImGui.EndCombo();
                     }
                     ImguiUtils.ShowHoverTooltip("The target for the Row Name export.");
+                    ImGui.Text("");
                 }
             }
         }
 
         public static void Act()
+        {
+            if (ParamToolbarView.SelectedAction == ParamEditorAction.ExportRowNames)
+            {
+                if (ImGui.Button("Apply##action_Selection_ExportRowNames", new Vector2(200, 32)))
+                {
+                    if (CFG.Current.Param_Toolbar_Prompt_User_Action)
+                    {
+                        var result = PlatformUtils.Instance.MessageBox($"You are about to use the Export Row Names action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            ApplyRowNamesExport();
+                        }
+                    }
+                    else
+                    {
+                        ApplyRowNamesExport();
+                    }
+                }
+
+            }
+        }
+
+        public static void ApplyRowNamesExport()
         {
             var selectedParam = ParamEditorScreen._activeView._selection;
 

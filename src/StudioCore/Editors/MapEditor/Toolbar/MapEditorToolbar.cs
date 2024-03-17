@@ -17,6 +17,7 @@ using StudioCore.UserProject;
 using StudioCore.Banks;
 using StudioCore.MsbEditor;
 using StudioCore.BanksMain;
+using StudioCore.Platform;
 
 namespace StudioCore.Editors.MapEditor.Toolbar
 {
@@ -63,29 +64,71 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-            if (ImGui.Begin($@"Toolbar##MsbMenubar"))
+            if (ImGui.Begin($"Toolbar##MapEditorToolbar"))
             {
-                ImGui.Columns(2);
+                if (CFG.Current.Interface_MapEditor_Toolbar_HorizontalOrientation)
+                {
+                    ImGui.Columns(2);
 
-                DisplayToolSelectionList();
+                    ImGui.BeginChild("##MapEditorToolbar_Selection");
 
-                ImGui.NextColumn();
+                    ShowActionList();
 
-                DisplayToolConfiguration();
+                    ImGui.EndChild();
+
+                    ImGui.NextColumn();
+
+                    ImGui.BeginChild("##MapEditorToolbar_Configuration");
+
+                    ShowSelectedConfiguration();
+
+                    ImGui.EndChild();
+                }
+                else
+                {
+                    ShowActionList();
+
+                    ImGui.BeginChild("##MapEditorToolbar_Configuration");
+
+                    ShowSelectedConfiguration();
+
+                    ImGui.EndChild();
+                }
             }
 
             ImGui.End();
             ImGui.PopStyleColor(1);
         }
 
-        public void DisplayToolSelectionList()
+        public void ShowActionList()
         {
-            // Selection List
-            ImGui.BeginChild("toolselection");
-
             ImGui.Separator();
-            ImGui.Text("Selection actions");
-            ImguiUtils.ShowHoverTooltip("Double-click to use. These actions are done in the context of a selection.");
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Actions");
+            ImguiUtils.ShowHoverTooltip("Click to select a toolbar action.");
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{ForkAwesome.Refresh}##SwitchOrientation"))
+            {
+                CFG.Current.Interface_MapEditor_Toolbar_HorizontalOrientation = !CFG.Current.Interface_MapEditor_Toolbar_HorizontalOrientation;
+            }
+            ImguiUtils.ShowHoverTooltip("Toggle the orientation of the toolbar.");
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{ForkAwesome.ExclamationTriangle}##PromptUser"))
+            {
+                if(CFG.Current.MSB_Toolbar_Prompt_User_Action)
+                {
+                    CFG.Current.MSB_Toolbar_Prompt_User_Action = false;
+                    PlatformUtils.Instance.MessageBox("Map Editor Toolbar will no longer prompt the user.", "Smithbox", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    CFG.Current.MSB_Toolbar_Prompt_User_Action = true;
+                    PlatformUtils.Instance.MessageBox("Map Editor Toolbar will prompt user before applying certain toolbar actions.", "Smithbox", MessageBoxButtons.OK);
+                }
+            }
+            ImguiUtils.ShowHoverTooltip("Toggle whether certain toolbar actions prompt the user before applying.");
             ImGui.Separator();
 
             // Contextual
@@ -102,11 +145,6 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MapAction_Scramble.Select(_selection);
             MapAction_Replicate.Select(_selection);
 
-            ImGui.Separator();
-            ImGui.Text("Global actions");
-            ImguiUtils.ShowHoverTooltip("Double-click to use. These actions are done in the global context.");
-            ImGui.Separator();
-
             // Global
             MapAction_Create.Select(_selection);
             MapAction_AssignEntityGroupID.Select(_selection);
@@ -114,15 +152,38 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MapAction_TogglePatrolRoutes.Select(_selection);
             MapAction_CheckForErrors.Select(_selection);
             MapAction_GenerateNavigationData.Select(_selection);
-
-            ImGui.EndChild();
         }
 
-        public void DisplayToolConfiguration()
+        public void ShowSelectedConfiguration()
         {
-            ImGui.BeginChild("toolconfiguration");
+            ImGui.Indent(10.0f);
+            ImGui.Separator();
+            ImGui.Text("Configuration");
+            ImGui.Separator();
 
-            // Contextual
+            // Shortcut: Contextual
+            MapAction_GoToInObjectList.Shortcuts();
+            MapAction_FrameInViewport.Shortcuts();
+            MapAction_MoveToCamera.Shortcuts();
+            MapAction_MoveToGrid.Shortcuts();
+
+            MapAction_TogglePresence.Shortcuts();
+            MapAction_ToggleVisibility.Shortcuts();
+
+            MapAction_Duplicate.Shortcuts();
+            MapAction_Rotate.Shortcuts();
+            MapAction_Scramble.Shortcuts();
+            MapAction_Replicate.Shortcuts();
+
+            // Shortcut: Global
+            MapAction_Create.Shortcuts();
+            MapAction_AssignEntityGroupID.Shortcuts();
+            MapAction_ToggleObjectVisibilityByTag.Shortcuts();
+            MapAction_TogglePatrolRoutes.Shortcuts();
+            MapAction_CheckForErrors.Shortcuts();
+            MapAction_GenerateNavigationData.Shortcuts();
+
+            // Configure: Contextual
             MapAction_GoToInObjectList.Configure(_selection);
             MapAction_FrameInViewport.Configure(_selection);
             MapAction_MoveToCamera.Configure(_selection);
@@ -136,7 +197,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MapAction_Scramble.Configure(_selection);
             MapAction_Replicate.Configure(_selection);
 
-            // Global
+            // Configure: Global
             MapAction_Create.Configure(_selection);
             MapAction_AssignEntityGroupID.Configure(_selection);
             MapAction_ToggleObjectVisibilityByTag.Configure(_selection);
@@ -144,7 +205,27 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             MapAction_CheckForErrors.Configure(_selection);
             MapAction_GenerateNavigationData.Configure(_selection);
 
-            ImGui.EndChild();
+            // Act: Contextual
+            MapAction_GoToInObjectList.Act(_selection);
+            MapAction_FrameInViewport.Act(_selection);
+            MapAction_MoveToCamera.Act(_selection);
+            MapAction_MoveToGrid.Act(_selection);
+
+            MapAction_TogglePresence.Act(_selection);
+            MapAction_ToggleVisibility.Act(_selection);
+
+            MapAction_Duplicate.Act(_selection);
+            MapAction_Rotate.Act(_selection);
+            MapAction_Scramble.Act(_selection);
+            MapAction_Replicate.Act(_selection);
+
+            // Act: Global
+            MapAction_Create.Act(_selection);
+            MapAction_AssignEntityGroupID.Act(_selection);
+            MapAction_ToggleObjectVisibilityByTag.Act(_selection);
+            MapAction_TogglePatrolRoutes.Act(_selection);
+            MapAction_CheckForErrors.Act(_selection);
+            MapAction_GenerateNavigationData.Act(_selection);
         }
     }
 }

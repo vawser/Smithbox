@@ -18,6 +18,7 @@ public enum KeybindCategory
     Core,
     Window,
     MapEditor,
+    ModelEditor,
     ParamEditor,
     TextEditor,
     Viewport
@@ -130,7 +131,7 @@ public class KeyBindings
         public KeyBind Toolbar_ExportPrefab = new("Export Prefab", KeybindCategory.MapEditor, Key.E, true, true);
         public KeyBind Toolbar_ImportPrefab = new("Import Prefab", KeybindCategory.MapEditor, Key.I, true, true);
 
-        // Map
+        // Map Editor
         public KeyBind Map_DuplicateToMap = new("Duplicate to Map", KeybindCategory.MapEditor, Key.D, false, false, true);
         public KeyBind Map_PropSearch = new("Property Search", KeybindCategory.MapEditor, Key.F, true);
         public KeyBind Map_RenderGroup_GetDisp = new("Render Group: Get Display Group", KeybindCategory.MapEditor, Key.G, true);
@@ -140,6 +141,11 @@ public class KeyBindings
         public KeyBind Map_RenderGroup_HideAll = new("Render Group: Hide All", KeybindCategory.MapEditor);
         public KeyBind Map_RenderGroup_ShowAll = new("Render Group: Show All", KeybindCategory.MapEditor, Key.R, true);
         public KeyBind Map_RenderGroup_SelectHighlights = new("Render Group: Select Highlights", KeybindCategory.MapEditor);
+
+        // Model Editor
+        public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L);
+
+        public KeyBind ModelEditor_UnloadCurrentSelection = new("Unload Current Model", KeybindCategory.ModelEditor, Key.U);
 
         // Param
         public KeyBind Param_Copy = new("Copy", KeybindCategory.ParamEditor, Key.C, true);

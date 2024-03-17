@@ -82,7 +82,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
         _sceneTree = new ModelSceneTree(this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
         _propEditor = new ModelPropertyEditor(EditorActionManager, _propCache, Viewport, null);
-        _assetBrowser = new ModelAssetBrowser(this, "modelEditorBrowser");
+        _assetBrowser = new ModelAssetBrowser(this);
     }
 
     public void Init()
@@ -203,8 +203,14 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             }
             */
 
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Eraser}");
-            if (ImGui.MenuItem("Unload Current Model"))
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
+            if (ImGui.MenuItem("Load Asset Selection", KeyBindings.Current.ModelEditor_LoadCurrentSelection.HintText, true))
+            {
+                _assetBrowser.LoadAssetSelection();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
+            if (ImGui.MenuItem("Unload Current Model", KeyBindings.Current.ModelEditor_UnloadCurrentSelection.HintText, true))
             {
                 _loadedModelInfo = null;
                 _universe.UnloadModels(true);
@@ -381,6 +387,17 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             DeleteSelection();
         }
 
+        if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_LoadCurrentSelection))
+        {
+            _assetBrowser.LoadAssetSelection();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_UnloadCurrentSelection))
+        {
+            _loadedModelInfo = null;
+            _universe.UnloadModels(true);
+        }
+
         if (!ViewportUsingKeyboard && !ImGui.GetIO().WantCaptureKeyboard)
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.Viewport_TranslateMode))
@@ -461,7 +478,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         //ImGui.Text(string.Format("Application average {0:F3} ms/frame ({1:F1} FPS)", 1000f / ImGui.GetIO().Framerate, ImGui.GetIO().Framerate));
 
         Viewport.OnGui();
-        _assetBrowser.Display();
+        _assetBrowser.OnGui();
         _sceneTree.OnGui();
         _propEditor.OnGui(_selection, "modeleditprop", Viewport.Width, Viewport.Height);
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);

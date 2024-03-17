@@ -7,6 +7,7 @@ using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,30 +17,26 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.Selectable("Toggle Presence##tool_Selection_Presence", false, ImGuiSelectableFlags.AllowDoubleClick))
+            if (ImGui.RadioButton("Toggle Presence##tool_Selection_Presence", MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Presence))
             {
-                MapEditorState.CurrentTool = SelectedTool.Selection_Toggle_Presence;
-
-                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                {
-                    Act(_selection);
-                }
+                MapEditorState.SelectedAction = MapEditorAction.Selection_Toggle_Presence;
             }
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Toggle_Presence)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Presence)
             {
                 if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
+                {
                     ImGui.Text("Toggle the load status of the current selection.");
+                    ImGui.Text("");
+                }
                 else
+                {
                     ImGui.Text("Toggle the Dummy status of the current selection.");
-
-                ImGui.Separator();
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Dummify.HintText)} for Disable");
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Undummify.HintText)} for Enable");
-                ImGui.Separator();
+                    ImGui.Text("");
+                }
 
                 if (ImGui.Checkbox("Disable", ref CFG.Current.Toolbar_Presence_Dummify))
                 {
@@ -64,10 +61,33 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImGui.Checkbox("Use Game Edition Disable", ref CFG.Current.Toolbar_Presence_Dummy_Type_ER);
                     ImguiUtils.ShowHoverTooltip("Use the GameEditionDisable property to disable entities instead of the Dummy entity system.");
                 }
+                ImGui.Text("");
             }
         }
 
         public static void Act(ViewportSelection _selection)
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Presence)
+            {
+                if (ImGui.Button("Apply##action_Selection_Toggle_Presence", new Vector2(200, 32)))
+                {
+                    if (_selection.IsSelection())
+                    {
+                        ApplyTogglePresence(_selection);
+                    }
+                }
+            }
+        }
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Presence)
+            {
+                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Dummify.HintText)} for Disable");
+                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Undummify.HintText)} for Enable");
+            }
+        }
+
+        public static void ApplyTogglePresence(ViewportSelection _selection)
         {
             if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
             {

@@ -6,6 +6,7 @@ using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,10 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 {
     public static class TextAction_SyncEntries
     {
+        private static bool holdingSyncText = false;
+        private static string syncText = "";
+        private static int syncBaseId = 0;
+
         private static string CurrentTargetType;
         private static string CurrentTextCategory;
 
@@ -25,26 +30,9 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.Selectable("Sync Entries", TextEditorToolbar.SelectedAction == TextEditorAction.SyncEntries, ImGuiSelectableFlags.AllowDoubleClick))
+            if (ImGui.RadioButton("Sync Entries##tool_SyncEntries", TextEditorToolbar.SelectedAction == TextEditorAction.SyncEntries))
             {
                 TextEditorToolbar.SelectedAction = TextEditorAction.SyncEntries;
-
-                if (ImGui.IsMouseDoubleClicked(0))
-                {
-                    if (CFG.Current.FMG_Toolbar_Prompt_User_Action)
-                    {
-                        var result = PlatformUtils.Instance.MessageBox($"You are about to use the Sync Entries action. This action cannot be undone. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                        if(result == DialogResult.Yes)
-                        {
-                            Act();
-                        }
-                    }
-                    else
-                    {
-                        Act();
-                    }
-                }
             }
             ImguiUtils.ShowHoverTooltip("Use this to change all 'sub' entries that link to a 'base' entry.\n\nFor example, a weapon has a 'sub' entry for each infusion. This action can change all of the infusion entry descriptions to match the base entry.");
         }
@@ -53,7 +41,11 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         {
             if (TextEditorToolbar.SelectedAction == TextEditorAction.SyncEntries)
             {
-                if (ImGui.BeginCombo("Text Category", CurrentTextCategory))
+                ImGui.Text("Synchronize child entries (as defined below) with their parent entry.");
+                ImGui.Text("");
+
+                ImGui.Text("Text Category:");
+                if (ImGui.BeginCombo("##Text Category", CurrentTextCategory))
                 {
                     foreach (string e in TextEditorToolbar.TextCategories)
                     {
@@ -66,13 +58,40 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("Text category to sync.");
+                ImGui.Text("");
 
-                ImGui.InputInt("Modulus", ref CFG.Current.FMG_SyncEntries_Modulus);
+                ImGui.Text("Parent Modulus:");
+                ImGui.InputInt("##Modulus", ref CFG.Current.FMG_SyncEntries_Modulus);
                 ImguiUtils.ShowHoverTooltip("The modulus used to detect which FMG entries are considered 'base' entries.\n\nExample:\nThe weapon entries are spaced by 10000 or more. Therefore the modulus will match with the 'base' entries, but 'sub' entries will not. This means we can then assume any entries after the 'base' entry but below the 'base' entry ID plus the modulus are 'sub' entries.");
+                ImGui.Text("");
             }
         }
 
-        private static void Act()
+        public static void Act()
+        {
+            if (TextEditorToolbar.SelectedAction == TextEditorAction.SyncEntries)
+            {
+                if (ImGui.Button("Apply##action_Selection_SyncEntries", new Vector2(200, 32)))
+                {
+                    if (CFG.Current.Param_Toolbar_Prompt_User_Action)
+                    {
+                        var result = PlatformUtils.Instance.MessageBox($"You are about to use the Sync Entries action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            PerformEntrySync();
+                        }
+                    }
+                    else
+                    {
+                        PerformEntrySync();
+                    }
+                }
+
+            }
+        }
+
+        private static void PerformEntrySync()
         {
             foreach (var entry in StudioCore.TextEditor.FMGBank.FmgInfoBank)
             {
@@ -150,10 +169,6 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                 }
             }
         }
-
-        private static bool holdingSyncText = false;
-        private static string syncText = "";
-        private static int syncBaseId = 0;
 
         private static void SyncText(FMG.Entry entry)
         {

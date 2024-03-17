@@ -29,7 +29,6 @@ public class ParamEditorView
     internal ParamEditorScreen _paramEditor;
 
     public ParamToolbarView _toolbarView;
-    public ParamMassEditView _massEditView;
 
     internal ParamEditorSelectionState _selection;
     internal int _viewIndex;
@@ -42,7 +41,6 @@ public class ParamEditorView
         _viewIndex = index;
         _propEditor = new ParamRowEditor(parent.EditorActionManager, _paramEditor);
         _toolbarView = new ParamToolbarView(parent.EditorActionManager);
-        _massEditView = new ParamMassEditView(parent.EditorActionManager);
         _selection = new ParamEditorSelectionState(_paramEditor);
     }
 

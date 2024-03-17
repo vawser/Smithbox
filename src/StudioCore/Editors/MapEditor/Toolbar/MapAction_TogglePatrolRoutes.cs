@@ -5,6 +5,7 @@ using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,39 +17,46 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (Project.Type is not ProjectType.DS2S)
             {
-                if (ImGui.Selectable("Toggle Patrol Route Visibility##tool_Selection_Render_Patrol_Routes", false, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.RadioButton("Toggle Patrol Route Visibility##tool_Selection_Render_Patrol_Routes", MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes))
                 {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Render_Patrol_Routes;
-
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        Act(_selection);
-                    }
+                    MapEditorState.SelectedAction = MapEditorAction.Selection_Render_Patrol_Routes;
                 }
-            }
-        }
-
-        public static void Act(ViewportSelection _selection)
-        {
-            if (Project.Type is not ProjectType.DS2S)
-            {
-                PatrolDrawManager.Generate(MapEditorState.Universe);
             }
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Render_Patrol_Routes)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes)
             {
                 ImGui.Text("Toggle the rendering of patrol route connections.");
-                ImGui.Separator();
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_RenderEnemyPatrolRoutes.HintText)}");
-                ImGui.Separator();
+                ImGui.Text("");
+            }
+        }
 
-                if (ImGui.Button("Clear"))
+        public static void Act(ViewportSelection _selection)
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes)
+            {
+                if (Project.Type is not ProjectType.DS2S)
                 {
-                    PatrolDrawManager.Clear();
+                    if (ImGui.Button("Apply##action_Selection_Render_Patrol_Routes", new Vector2(200, 32)))
+                    {
+                        PatrolDrawManager.Generate(MapEditorState.Universe);
+                    }
+                    ImGui.SameLine();
+                    if (ImGui.Button("Clear##action_Selection_Clear_Patrol_Routes", new Vector2(200, 32)))
+                    {
+                        PatrolDrawManager.Clear();
+                    }
                 }
+            }
+        }
+
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes)
+            {
+                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_RenderEnemyPatrolRoutes.HintText)}");
             }
         }
     }

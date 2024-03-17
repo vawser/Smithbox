@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,25 +15,18 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.Selectable("Scramble##tool_Selection_Scramble", false, ImGuiSelectableFlags.AllowDoubleClick))
+            if (ImGui.RadioButton("Scramble##tool_Selection_Scramble", MapEditorState.SelectedAction == MapEditorAction.Selection_Scramble))
             {
-                MapEditorState.CurrentTool = SelectedTool.Selection_Scramble;
-
-                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                {
-                    Act(_selection);
-                }
+                MapEditorState.SelectedAction = MapEditorAction.Selection_Scramble;
             }
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Scramble)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Scramble)
             {
                 ImGui.Text("Scramble the current selection's position, rotation and scale by the following parameters.");
-                ImGui.Separator();
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Scramble.HintText)}");
-                ImGui.Separator();
+                ImGui.Text("");
 
                 var randomOffsetMin_Pos_X = CFG.Current.Scrambler_OffsetMin_Position_X;
                 var randomOffsetMin_Pos_Y = CFG.Current.Scrambler_OffsetMin_Position_Y;
@@ -65,12 +59,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinPosX", ref randomOffsetMin_Pos_X);
+                ImGui.InputFloat("##offsetMinPosX", ref randomOffsetMin_Pos_X);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the position X co-ordinate.");
 
                 ImGui.SameLine();
 
-                ImGui.InputFloat("Upper Bound##offsetMaxPosX", ref randomOffsetMax_Pos_X);
+                ImGui.InputFloat("##offsetMaxPosX", ref randomOffsetMax_Pos_X);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the position X co-ordinate.");
 
                 ImGui.Checkbox("Y##scramblePosY", ref CFG.Current.Scrambler_RandomisePosition_Y);
@@ -78,12 +72,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinPosY", ref randomOffsetMin_Pos_Y);
+                ImGui.InputFloat("##offsetMinPosY", ref randomOffsetMin_Pos_Y);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the position Y co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Upper Bound##offsetMaxPosY", ref randomOffsetMax_Pos_Y);
+                ImGui.InputFloat("##offsetMaxPosY", ref randomOffsetMax_Pos_Y);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the position Y co-ordinate.");
 
                 ImGui.Checkbox("Z##scramblePosZ", ref CFG.Current.Scrambler_RandomisePosition_Z);
@@ -91,13 +85,14 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinPosZ", ref randomOffsetMin_Pos_Z);
+                ImGui.InputFloat("##offsetMinPosZ", ref randomOffsetMin_Pos_Z);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the position Z co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Upper Bound##offsetMaxPosZ", ref randomOffsetMax_Pos_Z);
+                ImGui.InputFloat("##offsetMaxPosZ", ref randomOffsetMax_Pos_Z);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the position Z co-ordinate.");
+                ImGui.Text("");
 
                 // Rotation
                 ImGui.Text("Rotation");
@@ -106,12 +101,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinRotX", ref randomOffsetMin_Rot_X);
+                ImGui.InputFloat("##offsetMinRotX", ref randomOffsetMin_Rot_X);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the rotation X co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Upper Bound##offsetMaxRotX", ref randomOffsetMax_Rot_X);
+                ImGui.InputFloat("##offsetMaxRotX", ref randomOffsetMax_Rot_X);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the rotation X co-ordinate.");
 
                 ImGui.Checkbox("Y##scrambleRotY", ref CFG.Current.Scrambler_RandomiseRotation_Y);
@@ -119,12 +114,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinRotY", ref randomOffsetMin_Rot_Y);
+                ImGui.InputFloat("##offsetMinRotY", ref randomOffsetMin_Rot_Y);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the rotation Y co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Upper Bound##offsetMaxRotY", ref randomOffsetMax_Rot_Y);
+                ImGui.InputFloat("##offsetMaxRotY", ref randomOffsetMax_Rot_Y);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the rotation Y co-ordinate.");
 
                 ImGui.Checkbox("Z##scrambleRotZ", ref CFG.Current.Scrambler_RandomiseRotation_Z);
@@ -132,13 +127,14 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinRotZ", ref randomOffsetMin_Rot_Z);
+                ImGui.InputFloat("##offsetMinRotZ", ref randomOffsetMin_Rot_Z);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the rotation Z co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Upper Bound##offsetMaxRotZ", ref randomOffsetMax_Rot_Z);
+                ImGui.InputFloat("##offsetMaxRotZ", ref randomOffsetMax_Rot_Z);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the rotation Z co-ordinate.");
+                ImGui.Text("");
 
                 // Scale
                 ImGui.Text("Scale");
@@ -147,12 +143,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinScaleX", ref randomOffsetMin_Scale_X);
+                ImGui.InputFloat("##offsetMinScaleX", ref randomOffsetMin_Scale_X);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the scale X co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Upper Bound##offsetMaxScaleX", ref randomOffsetMax_Scale_X);
+                ImGui.InputFloat("##offsetMaxScaleX", ref randomOffsetMax_Scale_X);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the scale X co-ordinate.");
 
                 ImGui.Checkbox("Y##scrambleScaleY", ref CFG.Current.Scrambler_RandomiseScale_Y);
@@ -160,12 +156,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinScaleY", ref randomOffsetMin_Scale_Y);
+                ImGui.InputFloat("##offsetMinScaleY", ref randomOffsetMin_Scale_Y);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the scale Y co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Upper Bound##offsetMaxScaleY", ref randomOffsetMax_Scale_Y);
+                ImGui.InputFloat("##offsetMaxScaleY", ref randomOffsetMax_Scale_Y);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the scale Y co-ordinate.");
 
                 ImGui.Checkbox("Z##scrambleScaleZ", ref CFG.Current.Scrambler_RandomiseScale_Z);
@@ -173,16 +169,18 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Lower Bound##offsetMinScaleZ", ref randomOffsetMin_Scale_Z);
+                ImGui.InputFloat("##offsetMinScaleZ", ref randomOffsetMin_Scale_Z);
                 ImguiUtils.ShowHoverTooltip("Minimum amount to add to the scale Z co-ordinate.");
 
                 ImGui.SameLine();
                 ImGui.PushItemWidth(100);
-                ImGui.InputFloat("Upper Bound##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
+                ImGui.InputFloat("##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the scale Z co-ordinate.");
+                ImGui.Text("");
 
                 ImGui.Checkbox("Scale Proportionally##scrambleSharedScale", ref CFG.Current.Scrambler_RandomiseScale_SharedScale);
                 ImguiUtils.ShowHoverTooltip("When scrambling the scale, the Y and Z values will follow the X value, making the scaling proportional.");
+                ImGui.Text("");
 
                 // Clamp floats
                 randomOffsetMin_Pos_X = Math.Clamp(randomOffsetMin_Pos_X, -10000f, 10000f);
@@ -236,6 +234,32 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         }
 
         public static void Act(ViewportSelection _selection)
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Scramble)
+            {
+                if (ImGui.Button("Apply##action_Selection_Scramble", new Vector2(200, 32)))
+                {
+                    if (_selection.IsSelection())
+                    {
+                        ApplyScramble(_selection);
+                    }
+                    else
+                    {
+                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
+
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Scramble)
+            {
+                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Scramble.HintText)}");
+            }
+        }
+
+        public static void ApplyScramble(ViewportSelection _selection)
         {
             List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))

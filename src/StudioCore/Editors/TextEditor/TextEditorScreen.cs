@@ -47,7 +47,7 @@ public class TextEditorScreen : EditorScreen
     public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _propEditor = new PropertyEditor(EditorActionManager);
-        Toolbar = new TextEditorToolbar();
+        Toolbar = new TextEditorToolbar(EditorActionManager);
     }
 
     public string EditorName => "Text Editor";
@@ -834,25 +834,7 @@ public class TextEditorScreen : EditorScreen
 
         if (CFG.Current.Interface_TextEditor_Toolbar)
         {
-            ImGui.Begin("Toolbar##textEditorToolbar");
-
-            ImGui.Text("Actions:");
-            ImGui.Separator();
-
-            Toolbar.ShowActionList();
-
-            ImGui.Separator();
-
-            ImGui.BeginChild("##toolbarConfigurationPanel");
-
-            ImGui.Text("Configuration:");
-            ImGui.Separator();
-
-            Toolbar.ShowActionConfiguration();
-
-            ImGui.EndChild();
-
-            ImGui.End();
+            Toolbar.OnGui();
         }
     }
 

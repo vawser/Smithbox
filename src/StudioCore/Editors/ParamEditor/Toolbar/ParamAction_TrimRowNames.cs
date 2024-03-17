@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,53 +18,33 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
     public static class ParamAction_TrimRowNames
     {
 
-        public static void Setup()
-        {
-
-        }
+        private static string CurrentTargetCategory = ParamToolbarView.TargetTypes[0];
 
         public static void Select()
         {
-            if (ImGui.Selectable("Trim Row Names", ParamToolbarView.SelectedAction == ParamEditorAction.        TrimRowNames, ImGuiSelectableFlags.AllowDoubleClick))
+            if (ImGui.RadioButton("Trim Row Names##tool_TrimRowNames", ParamToolbarView.SelectedAction == ParamEditorAction.TrimRowNames))
             {
                 ParamToolbarView.SelectedAction = ParamEditorAction.TrimRowNames;
-
-                if (ImGui.IsMouseDoubleClicked(0))
-                {
-                    if (CFG.Current.Param_Toolbar_Prompt_User_Action)
-                    {
-                        var result = PlatformUtils.Instance.MessageBox($"You are about to use the Trim Row Names action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            Act();
-                        }
-                    }
-                    else
-                    {
-                        Act();
-                    }
-                }
             }
             ImguiUtils.ShowHoverTooltip("Use this to trim newlines from row names.");
         }
-
-        private static string CurrentTargetCategory = ParamToolbarView.TargetTypes[0];
 
         public static void Configure()
         {
             if (ParamToolbarView.SelectedAction == ParamEditorAction.TrimRowNames)
             {
-                ImGui.Text("Trim Carriage Return (\\r) characters from row names for the currently selected param, or for all params.");
-                ImGui.Separator();
+                ImGui.Text("Trim Carriage Return (\\r) characters from row names\nfor the currently selected param, or for all params.");
+                ImGui.Text("");
 
                 if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
                 {
                     ImGui.Text("You must select a param before you can use this action.");
+                    ImGui.Text("");
                 }
                 else
                 {
-                    if (ImGui.BeginCombo("Target", CurrentTargetCategory))
+                    ImGui.Text("Target Category:");
+                    if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
                     {
                         foreach (string e in ParamToolbarView.TargetTypes)
                         {
@@ -75,11 +57,36 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         ImGui.EndCombo();
                     }
                     ImguiUtils.ShowHoverTooltip("The target for the Row Name export.");
+                    ImGui.Text("");
                 }
             }
         }
 
         public static void Act()
+        {
+            if (ParamToolbarView.SelectedAction == ParamEditorAction.TrimRowNames)
+            {
+                if (ImGui.Button("Apply##action_Selection_TrimRowNames", new Vector2(200, 32)))
+                {
+                    if (CFG.Current.Param_Toolbar_Prompt_User_Action)
+                    {
+                        var result = PlatformUtils.Instance.MessageBox($"You are about to use the Trim Row Names action. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            ApplyRowNameTrim();
+                        }
+                    }
+                    else
+                    {
+                        ApplyRowNameTrim();
+                    }
+                }
+                
+            }
+        }
+
+        public static void ApplyRowNameTrim()
         {
             var selectedParam = ParamEditorScreen._activeView._selection;
 

@@ -59,33 +59,40 @@ public class CFG
     public bool Interface_Editor_Viewport = true;
 
     public bool Interface_MapEditor_MapObjectList = true;
-    public bool Interface_MapEditor_Toolbar = true;
     public bool Interface_MapEditor_Properties = true;
     public bool Interface_MapEditor_PropertySearch = true;
     public bool Interface_MapEditor_Prefabs = true;
-    public bool Interface_MapEditor_AssetBrowser = true;
     public bool Interface_MapEditor_Profiling = true;
     public bool Interface_MapEditor_RenderGroups = true;
     public bool Interface_MapEditor_ResourceList = true;
+    public bool Interface_MapEditor_AssetBrowser = true;
+    public bool Interface_MapEditor_AssetBrowser_HorizontalOrientation = true;
+    public bool Interface_MapEditor_Toolbar = true;
+    public bool Interface_MapEditor_Toolbar_HorizontalOrientation = true;
 
     public bool Interface_ModelEditor_ModelHierarchy = true;
     public bool Interface_ModelEditor_Properties = true;
     public bool Interface_ModelEditor_AssetBrowser = true;
+    public bool Interface_ModelEditor_AssetBrowser_HorizontalOrientation = true;
     public bool Interface_ModelEditor_Toolbar = true;
+    public bool Interface_ModelEditor_Toolbar_HorizontalOrientation = true;
 
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_MassEdit = true;
     public bool Interface_ParamEditor_Toolbar = true;
+    public bool Interface_ParamEditor_Toolbar_HorizontalOrientation = true;
 
     public bool Interface_TextEditor_TextCategories = true;
     public bool Interface_TextEditor_TextEntry = true;
     public bool Interface_TextEditor_Toolbar = true;
+    public bool Interface_TextEditor_Toolbar_HorizontalOrientation = true;
 
     public bool Interface_GparamEditor_Files = true;
     public bool Interface_GparamEditor_Groups = true;
     public bool Interface_GparamEditor_Fields = true;
     public bool Interface_GparamEditor_Values = true;
     public bool Interface_GparamEditor_Toolbar = true;
+    public bool Interface_GparamEditor_Toolbar_HorizontalOrientation = true;
 
     public bool Interface_DisplayMapGroups = true;
     public bool Interface_Display_Alias_for_Gparam = true;
@@ -346,6 +353,8 @@ public class CFG
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
     public bool ModelEditor_DisplayMatNameOnMesh = true;
 
+    public bool ModelEditor_Toolbar_Prompt_User_Action = true;
+
     //****************************
     // Settings: Param Editor
     //****************************
@@ -369,8 +378,6 @@ public class CFG
 
     public bool Param_ShowTraditionalPercentages = false;
 
-    public bool Param_DisplaySideWindow = true;
-    public bool Param_MassEdit_ShowWiki = true;
     public bool Param_MassEdit_ShowAddButtons = true;
 
     public bool Param_RowContextMenu_NameInput = true;
@@ -427,6 +434,8 @@ public class CFG
     public bool Gparam_DisplayEmptyGroups = true;
     public bool Gparam_DisplayAddGroups = true;
     public bool Gparam_DisplayAddFields = true;
+
+    public bool Gparam_Toolbar_Prompt_User_Action = true;
 
     public bool Gparam_ColorEdit_RGB = true;
     public bool Gparam_ColorEdit_Decimal = false;

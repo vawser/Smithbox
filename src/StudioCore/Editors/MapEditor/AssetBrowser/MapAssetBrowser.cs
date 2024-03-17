@@ -17,8 +17,9 @@ using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
+using static SoulsFormats.ACB;
 
-namespace StudioCore.Editors.MapEditor;
+namespace StudioCore.Editors.MapEditor.AssetBrowser;
 
 public class MapAssetBrowser
 {
@@ -87,51 +88,93 @@ public class MapAssetBrowser
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin($@"Asset Browser##MsbAssetBrowser"))
+        if (ImGui.Begin($@"Asset Browser##MapEditor_AssetBrowser"))
         {
-            ImGui.Columns(2);
+            DisplayTopSection();
 
-            ImGui.Checkbox("Show Tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
-            ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
-
-            ImGui.SameLine();
-            ImGui.Checkbox("Update Name", ref CFG.Current.AssetBrowser_UpdateName);
-            ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
-
-            if (Project.Type == ProjectType.ER)
+            if (CFG.Current.Interface_MapEditor_AssetBrowser_HorizontalOrientation)
             {
-                ImGui.SameLine();
-                ImGui.Checkbox("Update Instance ID", ref CFG.Current.AssetBrowser_UpdateInstanceID);
-                ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
+                ImGui.Columns(3);
+
+                ImGui.BeginChild("##MapEditor_AssetBrowser_CategoryList");
+
+                ImGui.Separator();
+                ImGui.Text("Categories:");
+                ImGui.Separator();
+
+                DisplayCategoryList();
+
+                ImGui.EndChild();
+
+                ImGui.NextColumn();
+
+                ImGui.BeginChild("##MapEditor_AssetBrowser_CategoryContentsList");
+
+                ImGui.Separator();
+                ImGui.Text("Assets:");
+                ImGui.Separator();
+
+                DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                DisplayMapPieceContentsList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+
+                ImGui.EndChild();
+
+                ImGui.NextColumn();
+
+                ImGui.BeginChild("##MapEditor_AssetBrowser_SelectedMenu");
+
+                ImGui.Indent(10.0f);
+
+                ImGui.Separator();
+                ImGui.Text("Actions:");
+                ImGui.Separator();
+
+                DisplayActionSection();
+
+                ImGui.EndChild();
             }
+            else
+            {
+                var width = ImGui.GetWindowWidth();
+                var height = ImGui.GetWindowHeight();
 
-            ImGui.Spacing();
-            ImGui.Spacing();
+                ImGui.Separator();
+                ImGui.Text("Categories:");
+                ImGui.Separator();
 
-            // Asset Type List
-            ImGui.BeginChild("AssetTypeList");
+                ImGui.BeginChild("##MapEditor_AssetBrowser_CategoryList", new Vector2((width - 10), (height / 4)));
 
-            DisplayAssetTypeSelectionList();
+                DisplayCategoryList();
 
-            ImGui.EndChild();
+                ImGui.EndChild();
 
-            // Asset List
-            ImGui.NextColumn();
+                ImGui.Separator();
 
-            ImGui.InputText($"Search", ref _searchInput, 255);
-            ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+                ImGui.BeginChild("##MapEditor_AssetBrowser_CategoryContentsList", new Vector2((width-10), (height/3)));
 
-            ImGui.Spacing();
-            ImGui.Separator();
-            ImGui.Spacing();
+                ImGui.Separator();
+                ImGui.Text("Assets:");
+                ImGui.Separator();
 
-            ImGui.BeginChild("AssetList");
+                DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+                DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                DisplayMapPieceContentsList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
 
-            DisplayAssetSelectionList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
-            DisplayAssetSelectionList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
-            DisplayMapAssetSelectionList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+                ImGui.EndChild();
 
-            ImGui.EndChild();
+                ImGui.BeginChild("##MapEditor_AssetBrowser_SelectedMenu");
+
+                ImGui.Indent(10.0f);
+
+                ImGui.Separator();
+                ImGui.Text("Actions:");
+                ImGui.Separator();
+
+                DisplayActionSection();
+
+                ImGui.EndChild();
+            }
         }
         ImGui.End();
         ImGui.PopStyleColor(1);
@@ -143,10 +186,81 @@ public class MapAssetBrowser
         }
     }
 
+    private void DisplayTopSection()
+    {
+        ImGui.Separator();
+        ImGui.InputText($"Search", ref _searchInput, 255);
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{ForkAwesome.Refresh}##SwitchOrientation"))
+        {
+            CFG.Current.Interface_MapEditor_AssetBrowser_HorizontalOrientation = !CFG.Current.Interface_MapEditor_AssetBrowser_HorizontalOrientation;
+        }
+        ImguiUtils.ShowHoverTooltip("Toggle the orientation of the asset browser.");
+
+        ImGui.Checkbox("Display Tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
+        ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");
+
+        ImGui.Separator();
+    }
+
+    private void DisplayActionSection()
+    {
+        if (_selectedName == null || _selectedName == "")
+            return;
+
+        ImGui.Text("Apply the selected asset attributes to your current object selection.");
+        ImGui.Text("");
+
+        ImGui.Checkbox("Update Name of Selected Object", ref CFG.Current.AssetBrowser_UpdateName);
+        ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
+
+        if (Project.Type == ProjectType.ER)
+        {
+            ImGui.Checkbox("Update Instance ID of Selected Object", ref CFG.Current.AssetBrowser_UpdateInstanceID);
+            ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
+            ImGui.Text("");
+        }
+
+        if (ImGui.Button("Apply##action_Asset_Apply", new Vector2(200, 32)))
+        {
+            ApplyAssetSelection();
+        }
+        ImGui.Text("");
+
+        ImGui.Separator();
+        ImGui.Text("Alias:");
+        ImGui.Separator();
+
+        ImGui.Text("Update the stored name and tag list for the selected asset here.");
+        ImGui.Text("");
+
+        ImGui.Text("Name:");
+        ImGui.InputText($"##Name", ref _refUpdateName, 255);
+        ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
+        ImGui.Text("");
+
+        ImGui.Text("Tags:");
+        ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
+        ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
+        ImGui.Text("");
+
+        if (ImGui.Button("Update##action_AssetAlias_Update", new Vector2(200, 32)))
+        {
+            UpdateAssetAlias();
+        }
+        ImGui.SameLine();
+        if (ImGui.Button("Restore Default##action_AssetAlias_Restore", new Vector2(200, 32)))
+        {
+            RestoreAssetAlias();
+        }
+    }
+
     /// <summary>
     /// Display the asset category type selection list: Chr, Obj/AEG, Part and each map id for Map Pieces.
     /// </summary>
-    private void DisplayAssetTypeSelectionList()
+    private void DisplayCategoryList()
     {
         var objLabel = "Obj";
 
@@ -210,7 +324,7 @@ public class MapAssetBrowser
     /// <summary>
     /// Display the asset selection list for Chr, Obj/AEG and Parts.
     /// </summary>
-    private void DisplayAssetSelectionList(string assetType, List<AliasReference> referenceList)
+    private void DisplayCategoryContentsList(string assetType, List<AliasReference> referenceList)
     {
         if (updateScrollPosition)
         {
@@ -264,75 +378,14 @@ public class MapAssetBrowser
 
                 if (SearchFilters.IsSearchMatch(_searchInput, lowerName, refName, refTagList, true))
                 {
-                    if (ImGui.Selectable(displayedName))
+                    if (ImGui.Selectable(displayedName, _selectedName == name))
                     {
                         _currentScrollY = ImGui.GetScrollY();
 
                         _selectedName = refID;
-
                         _refUpdateId = refID;
                         _refUpdateName = refName;
-
-                        if (refTagList.Count > 0)
-                        {
-                            var tagStr = refTagList[0];
-                            foreach (var entry in refTagList.Skip(1))
-                                tagStr = $"{tagStr},{entry}";
-                            _refUpdateTags = tagStr;
-                        }
-                        else
-                        {
-                            _refUpdateTags = "";
-                        }
-                    }
-
-                    if (_selectedName == refID)
-                    {
-                        if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                        {
-                            if (ImGui.InputText($"Name", ref _refUpdateName, 255))
-                            {
-
-                            }
-                            ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
-
-                            if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
-                            {
-
-                            }
-                            ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
-
-                            if (ImGui.Button("Update"))
-                            {
-                                ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
-                                ImGui.CloseCurrentPopup();
-                                ModelAliasBank.Bank.CanReloadBank = true;
-                            }
-                            ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
-
-                            ImGui.SameLine();
-                            if (ImGui.Button("Restore Default"))
-                            {
-                                ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
-                                ImGui.CloseCurrentPopup();
-                                ModelAliasBank.Bank.CanReloadBank = true;
-                            }
-                            ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
-
-                            ImGui.EndPopup();
-                        }
-                    }
-
-                    if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-                    {
-                        var modelName = name;
-
-                        if (modelName.Contains("aeg"))
-                        {
-                            modelName = modelName.Replace("aeg", "AEG");
-                        }
-
-                        SetObjectModelForSelection(modelName, assetType, "");
+                        _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
                     }
                 }
             }
@@ -342,7 +395,7 @@ public class MapAssetBrowser
     /// <summary>
     /// Display the asset selection list for Map Pieces.
     /// </summary>
-    private void DisplayMapAssetSelectionList(string assetType, List<AliasReference> referenceList)
+    private void DisplayMapPieceContentsList(string assetType, List<AliasReference> referenceList)
     {
         var referenceDict = new Dictionary<string, AliasReference>();
 
@@ -399,7 +452,7 @@ public class MapAssetBrowser
 
                     if (SearchFilters.IsSearchMatch(_searchInput, lowerName, refName, refTagList, true))
                     {
-                        if (ImGui.Selectable(displayedName))
+                        if (ImGui.Selectable(displayedName, _selectedName == name))
                         {
                             _selectedName = refID;
 
@@ -407,51 +460,46 @@ public class MapAssetBrowser
                             _refUpdateName = refName;
                             _refUpdateTags = PresentationUtils.GetTagListString(refTagList);
                         }
-
-                        if (_selectedName == refID)
-                        {
-                            if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                            {
-                                if (ImGui.InputText($"Name", ref _refUpdateName, 255))
-                                {
-
-                                }
-                                ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
-
-                                if (ImGui.InputText($"Tags", ref _refUpdateTags, 255))
-                                {
-
-                                }
-                                ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
-
-                                if (ImGui.Button("Update"))
-                                {
-                                    ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
-                                    ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.CanReloadBank = true;
-                                }
-                                ImguiUtils.ShowHoverTooltip("Save changes to the alias name and tags for this asset.");
-
-                                ImGui.SameLine();
-                                if (ImGui.Button("Restore Default"))
-                                {
-                                    ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
-                                    ImGui.CloseCurrentPopup();
-                                    ModelAliasBank.Bank.CanReloadBank = true;
-                                }
-                                ImguiUtils.ShowHoverTooltip("Restore the base alias name and tag for this asset.");
-
-                                ImGui.EndPopup();
-                            }
-                        }
-
-                        if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-                        {
-                            SetObjectModelForSelection(modelName, assetType, _selectedAssetMapId);
-                        }
                     }
                 }
             }
+        }
+    }
+
+    private void UpdateAssetAlias()
+    {
+        var assetType = _selectedAssetType;
+
+        ModelAliasBank.Bank.AddToLocalAliasBank(assetType, _refUpdateId, _refUpdateName, _refUpdateTags);
+        ImGui.CloseCurrentPopup();
+        ModelAliasBank.Bank.CanReloadBank = true;
+    }
+
+    private void RestoreAssetAlias()
+    {
+        var assetType = _selectedAssetType;
+
+        ModelAliasBank.Bank.RemoveFromLocalAliasBank(assetType, _refUpdateId);
+        ModelAliasBank.Bank.CanReloadBank = true;
+    }
+
+    private void ApplyAssetSelection()
+    {
+        var modelName = _selectedName;
+        var assetType = _selectedAssetType;
+
+        if (modelName.Contains("aeg"))
+        {
+            modelName = modelName.Replace("aeg", "AEG");
+        }
+
+        if (assetType == "MapPiece")
+        {
+            SetObjectModelForSelection(modelName, assetType, _selectedAssetMapId);
+        }
+        else
+        {
+            SetObjectModelForSelection(modelName, assetType, "");
         }
     }
 

@@ -43,32 +43,25 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT || Project.Type == ProjectType.DS3)
             {
-                if (ImGui.Selectable("Mass Entity Group ID Assignment##tool_Selection_Assign_Entity_Group_ID", false, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.RadioButton("Mass Entity Group ID Assignment##tool_Selection_Assign_Entity_Group_ID", MapEditorState.SelectedAction == MapEditorAction.Selection_Assign_Entity_Group_ID))
                 {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Assign_Entity_Group_ID;
-
-                    if (ImGui.IsMouseDoubleClicked(0))
-                    {
-                        Act(_selection);
-                    }
+                    MapEditorState.SelectedAction = MapEditorAction.Selection_Assign_Entity_Group_ID;
                 }
             }
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Assign_Entity_Group_ID)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Assign_Entity_Group_ID)
             {
                 ImGui.Text("Assign an Entity Group ID to all entities across all maps,\noptionally filtering by specific attributes.");
+                ImGui.Text("");
 
-                ImGui.Separator();
                 ImGui.Text("Entity Group ID");
-                ImGui.Separator();
                 ImGui.InputInt("##entityGroupInput", ref CFG.Current.Toolbar_EntityGroupID);
+                ImGui.Text("");
 
-                ImGui.Separator();
                 ImGui.Text("Filter");
-                ImGui.Separator();
 
                 if (ImGui.BeginCombo("##filterAttribute", SelectedFilterType))
                 {
@@ -84,12 +77,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
+                ImGui.Text("");
+
+                ImGui.Text("Filter Input");
                 ImGui.InputText("##entityGroupAttribute", ref CFG.Current.Toolbar_EntityGroup_Attribute, 255);
+                ImGui.Text("");
 
-                ImGui.Separator();
-                ImGui.Text("Target");
-                ImGui.Separator();
-
+                ImGui.Text("Target Map");
                 if (ImGui.BeginCombo("##mapTargetFilter", SelectedMapFilter))
                 {
                     IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = MapEditorState.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
@@ -111,15 +105,35 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
-                
+                ImGui.Text("");
+
                 if (SelectedMapFilter == "All")
                 {
                     ImGui.Text("WARNING: applying this to all maps will take a few minutes,\nexpect Smithbox to hang until it finishes.");
+                    ImGui.Text("");
                 }
             }
         }
 
         public static void Act(ViewportSelection _selection)
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Assign_Entity_Group_ID)
+            {
+                if (ImGui.Button("Apply##action_Selection_Assign_Entity_Group_ID", new Vector2(200, 32)))
+                {
+                    ApplyEntityGroupIdAssignment(_selection);
+                }
+            }
+        }
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Assign_Entity_Group_ID)
+            {
+                
+            }
+        }
+
+        public static void ApplyEntityGroupIdAssignment(ViewportSelection _selection)
         {
             bool proceed = false;
 

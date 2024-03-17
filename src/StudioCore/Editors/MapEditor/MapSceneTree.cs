@@ -295,7 +295,7 @@ public class MapSceneTree : IActionEventHandler
                     {
                         aliasedName = $"{name} {_chrAliasCache[modelName]}";
                     }
-                    else
+                    else if(ModelAliasBank.Bank.AliasNames != null)
                     {
                         foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
                         {

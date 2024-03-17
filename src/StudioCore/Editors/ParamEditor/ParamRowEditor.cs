@@ -3,6 +3,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Settings;
 using System;
@@ -738,18 +739,18 @@ public class ParamRowEditor
         if (ImGui.MenuItem("Add to Mass Edit"))
         {
             var propertyName = internalName.Replace(" ", "\\s");
-            string currInput = ParamMassEditView._currentMEditRegexInput;
+            string currInput = ParamAction_MassEdit._currentMEditRegexInput;
 
             if(currInput == "")
             {
                 // Add selection section if input is empty
-                ParamMassEditView._currentMEditRegexInput = $"selection: {propertyName}: ";
+                ParamAction_MassEdit._currentMEditRegexInput = $"selection: {propertyName}: ";
             }
             else
             {
                 // Otherwise just add the property name
                 currInput = $"{currInput}{propertyName}";
-                ParamMassEditView._currentMEditRegexInput = currInput;
+                ParamAction_MassEdit._currentMEditRegexInput = currInput;
             }
         }
 

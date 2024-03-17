@@ -515,11 +515,11 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("The MSB property fields show the property info, such as minimum and maximum values, when right-clicked.");
             }
 
-            // Toolbar
-            if (ImGui.CollapsingHeader("Toolbar", ImGuiTreeNodeFlags.DefaultOpen))
+            // Asset Browser
+            if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Prompt user confirmation", ref CFG.Current.MSB_Toolbar_Prompt_User_Action);
-                ImguiUtils.ShowHoverTooltip("Show a prompt before executing a irrevocable toolbar action to confirm user's intent.");
+                ImGui.Checkbox("Orient horizontally##assetBrowserOrientation", ref CFG.Current.Interface_MapEditor_AssetBrowser_HorizontalOrientation);
+                ImguiUtils.ShowHoverTooltip("Display the asset browser categories in a horizontal fashion. By default they will be displayed vertically.");
             }
 
             // Substitutions
@@ -533,6 +533,43 @@ public class SettingsWindow
             }
 
             ImGui.Unindent();
+            ImGui.EndTabItem();
+        }
+    }
+
+
+
+    private void DisplaySettings_ModelEditor()
+    {
+        if (ImGui.BeginTabItem("Model Editor"))
+        {
+            // Property View
+            if (ImGui.CollapsingHeader("Properties", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Display community names", ref CFG.Current.ModelEditor_Enable_Commmunity_Names);
+                ImguiUtils.ShowHoverTooltip("The FLVER property fields will be given crowd-sourced names instead of the canonical name.");
+
+                ImGui.Checkbox("Display community descriptions", ref CFG.Current.ModelEditor_Enable_Commmunity_Hints);
+                ImguiUtils.ShowHoverTooltip("The FLVER property fields will be given crowd-sourced descriptions.");
+
+            }
+
+            // Scene View
+            if (ImGui.CollapsingHeader("Model Hierarchy", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Display material names with meshes", ref CFG.Current.ModelEditor_DisplayMatNameOnMesh);
+                ImguiUtils.ShowHoverTooltip("Display the material name that a mesh uses by the scene tree name.");
+
+                ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
+                ImguiUtils.ShowHoverTooltip("Display the reference ID of a dummy polygon by the scene tree name.");
+            }
+
+            if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Orient horizontally##assetBrowserOrientation", ref CFG.Current.Interface_ModelEditor_AssetBrowser_HorizontalOrientation);
+                ImguiUtils.ShowHoverTooltip("Display the asset browser categories in a horizontal fashion. By default they will be displayed vertically.");
+            }
+
             ImGui.EndTabItem();
         }
     }
@@ -609,16 +646,6 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Displays field values that utilise the (1 - x) pattern as traditional percentages (e.g. -20 instead of 1.2).");
             }
 
-            // Mass Edit
-            if (ImGui.CollapsingHeader("Mass Edit"))
-            {
-                ImGui.Checkbox("Display wiki tabs", ref CFG.Current.Param_MassEdit_ShowWiki);
-                ImguiUtils.ShowHoverTooltip("Display the wiki tabs in the Mass Edit window.");
-
-                ImGui.Checkbox("Display quick add buttons", ref CFG.Current.Param_MassEdit_ShowAddButtons);
-                ImguiUtils.ShowHoverTooltip("Display the quick add buttons in the Mass Edit window.");
-            }
-
             // Context Menu
             if (ImGui.CollapsingHeader("Row Context Menu"))
             {
@@ -679,12 +706,6 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
             }
 
-            if (ImGui.CollapsingHeader("Toolbar", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Prompt user confirmation", ref CFG.Current.Param_Toolbar_Prompt_User_Action);
-                ImguiUtils.ShowHoverTooltip("Show a prompt before executing a irrevocable toolbar action to confirm user's intent.");
-            }
-
             ImGui.EndTabItem();
         }
     }
@@ -705,12 +726,6 @@ public class SettingsWindow
                 if (ImGui.Checkbox("Separate patch FMGs", ref CFG.Current.FMG_NoFmgPatching))
                     EditorContainer.TextEditor.OnProjectChanged(ProjSettings);
                 ImguiUtils.ShowHoverTooltip("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
-            }
-
-            if (ImGui.CollapsingHeader("Toolbar", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Prompt user confirmation", ref CFG.Current.FMG_Toolbar_Prompt_User_Action);
-                ImguiUtils.ShowHoverTooltip("Show a prompt before executing an irrevocable toolbar action to confirm user's intent.");
             }
 
             ImGui.EndTabItem();
@@ -809,35 +824,6 @@ public class SettingsWindow
                     CFG.Current.Gparam_QuickEdit_Multiply = "mult";
                     CFG.Current.Gparam_QuickEdit_SetByRow = "setbyrow";
                 }
-            }
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    private void DisplaySettings_ModelEditor()
-    {
-        if (ImGui.BeginTabItem("Model Editor"))
-        {
-            // Property View
-            if (ImGui.CollapsingHeader("Property View", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Display community names", ref CFG.Current.ModelEditor_Enable_Commmunity_Names);
-                ImguiUtils.ShowHoverTooltip("The FLVER property fields will be given crowd-sourced names instead of the canonical name.");
-
-                ImGui.Checkbox("Display community descriptions", ref CFG.Current.ModelEditor_Enable_Commmunity_Hints);
-                ImguiUtils.ShowHoverTooltip("The FLVER property fields will be given crowd-sourced descriptions.");
-
-            }
-
-            // Scene View
-            if (ImGui.CollapsingHeader("Scene View", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.Checkbox("Display material names with meshes", ref CFG.Current.ModelEditor_DisplayMatNameOnMesh);
-                ImguiUtils.ShowHoverTooltip("Display the material name that a mesh uses by the scene tree name.");
-
-                ImGui.Checkbox("Display dummy polygon reference ids", ref CFG.Current.ModelEditor_DisplayDmyPolyReferenceID);
-                ImguiUtils.ShowHoverTooltip("Display the reference ID of a dummy polygon by the scene tree name.");
             }
 
             ImGui.EndTabItem();

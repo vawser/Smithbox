@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor
 {
-    public enum SelectedTool
+    public enum MapEditorAction
     {
         None,
 
@@ -42,7 +42,7 @@ namespace StudioCore.Editors.MapEditor
     public static class MapEditorState
     {
 
-        public static SelectedTool CurrentTool;
+        public static MapEditorAction SelectedAction;
 
         public static IEnumerable<ObjectContainer> LoadedMaps;
 

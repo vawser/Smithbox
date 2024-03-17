@@ -6,6 +6,7 @@ using StudioCore.MsbEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,26 +16,23 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.Selectable("Toggle Object Visibility by Tag##tool_Selection_Toggle_Object_Visibility_by_Tag", false, ImGuiSelectableFlags.AllowDoubleClick))
+            if (ImGui.RadioButton("Toggle Object Visibility by Tag##tool_Selection_Toggle_Object_Visibility_by_Tag", MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Object_Visibility_by_Tag))
             {
-                MapEditorState.CurrentTool = SelectedTool.Selection_Toggle_Object_Visibility_by_Tag;
-
-                if (ImGui.IsMouseDoubleClicked(0))
-                {
-                    Act(_selection);
-                }
+                MapEditorState.SelectedAction = MapEditorAction.Selection_Toggle_Object_Visibility_by_Tag;
             }
         }
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Toggle_Object_Visibility_by_Tag)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Object_Visibility_by_Tag)
             {
-                ImGui.Text("Toggle the visibility of map objects, filtering the targets by tag\n(you can view tags in the Model or Map Asset Browsers).");
-                ImGui.Separator();
+                ImGui.Text("Toggle the visibility of map objects, filtering the " +
+                    "\ntargets by tag.");
+                ImGui.Text("");
 
                 ImGui.Text("Target Tag:");
                 ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
                 ImguiUtils.ShowHoverTooltip("Specific which tag the map objects will be filtered by.");
+                ImGui.Text("");
 
                 ImGui.Text("State:");
                 if (ImGui.Checkbox("Visible", ref CFG.Current.Toolbar_Tag_Visibility_State_Enabled))
@@ -48,83 +46,97 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     CFG.Current.Toolbar_Tag_Visibility_State_Enabled = false;
                 }
                 ImguiUtils.ShowHoverTooltip("Set the visible state to disabled.");
+                ImGui.Text("");
             }
         }
         public static void Act(ViewportSelection _selection)
         {
-            foreach (ObjectContainer m in MapEditorState.Universe.LoadedObjectContainers.Values)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Object_Visibility_by_Tag)
             {
-                if (m == null)
+                if (ImGui.Button("Apply##action_Selection_Toggle_Object_Visibility_by_Tag", new Vector2(200, 32)))
                 {
-                    continue;
-                }
-
-                foreach (Entity obj in m.Objects)
-                {
-                    if (obj.IsPart())
+                    foreach (ObjectContainer m in MapEditorState.Universe.LoadedObjectContainers.Values)
                     {
-                        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
+                        if (m == null)
                         {
-                            var modelName = obj.GetPropertyValue<string>("ModelName");
-
-                            if (entry.id == modelName)
-                            {
-                                bool change = false;
-
-                                foreach (var tag in entry.tags)
-                                {
-                                    if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
-                                        change = true;
-                                }
-
-                                if (change)
-                                {
-                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
-                                    {
-                                        obj.EditorVisible = true;
-                                    }
-                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
-                                    {
-                                        obj.EditorVisible = false;
-                                    }
-                                }
-                            }
+                            continue;
                         }
 
-                        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
+                        foreach (Entity obj in m.Objects)
                         {
-                            var entryName = $"m{entry.id.Split("_").Last()}";
-                            var modelName = obj.GetPropertyValue<string>("ModelName");
-
-                            if (entryName == modelName)
+                            if (obj.IsPart())
                             {
-                                bool change = false;
-
-                                foreach (var tag in entry.tags)
+                                foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Objects"))
                                 {
-                                    if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
-                                        change = true;
+                                    var modelName = obj.GetPropertyValue<string>("ModelName");
+
+                                    if (entry.id == modelName)
+                                    {
+                                        bool change = false;
+
+                                        foreach (var tag in entry.tags)
+                                        {
+                                            if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
+                                                change = true;
+                                        }
+
+                                        if (change)
+                                        {
+                                            if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
+                                            {
+                                                obj.EditorVisible = true;
+                                            }
+                                            if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
+                                            {
+                                                obj.EditorVisible = false;
+                                            }
+                                        }
+                                    }
                                 }
 
-                                if (change)
+                                foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"))
                                 {
-                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
+                                    var entryName = $"m{entry.id.Split("_").Last()}";
+                                    var modelName = obj.GetPropertyValue<string>("ModelName");
+
+                                    if (entryName == modelName)
                                     {
-                                        obj.EditorVisible = true;
-                                    }
-                                    if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
-                                    {
-                                        obj.EditorVisible = false;
+                                        bool change = false;
+
+                                        foreach (var tag in entry.tags)
+                                        {
+                                            if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
+                                                change = true;
+                                        }
+
+                                        if (change)
+                                        {
+                                            if (CFG.Current.Toolbar_Tag_Visibility_State_Enabled)
+                                            {
+                                                obj.EditorVisible = true;
+                                            }
+                                            if (CFG.Current.Toolbar_Tag_Visibility_State_Disabled)
+                                            {
+                                                obj.EditorVisible = false;
+                                            }
+                                        }
                                     }
                                 }
+
+                                obj.UpdateRenderModel();
                             }
                         }
-
-                        obj.UpdateRenderModel();
                     }
                 }
             }
         }
 
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Object_Visibility_by_Tag)
+            {
+
+            }
+        }
     }
 }

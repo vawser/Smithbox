@@ -1,6 +1,7 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,26 +17,19 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (CFG.Current.Viewport_EnableGrid)
             {
-                if (ImGui.Selectable("Move to Grid##tool_Selection_Move_to_Grid", false, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.RadioButton("Move to Grid##tool_Selection_Move_to_Grid", MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid))
                 {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Move_to_Grid;
-
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        Act(_selection);
-                    }
+                    MapEditorState.SelectedAction = MapEditorAction.Selection_Move_to_Grid;
                 }
             }
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Move_to_Grid)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid)
             {
                 ImGui.Text("Set the current selection to the closest grid position.");
-                ImGui.Separator();
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Set_to_Grid.HintText)}");
-                ImGui.Separator();
+                ImGui.Text("");
 
                 ImGui.Checkbox("X", ref CFG.Current.Toolbar_Move_to_Grid_X);
                 ImguiUtils.ShowHoverTooltip("Move the current selection to the closest X co-ordinate within the map grid.");
@@ -79,6 +73,32 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         }
 
         public static void Act(ViewportSelection _selection)
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid)
+            {
+                if (ImGui.Button("Apply##action_Selection_Move_to_Grid", new Vector2(200, 32)))
+                {
+                    if (_selection.IsSelection())
+                    {
+                        ApplyMovetoGrid(_selection);
+                    }
+                    else
+                    {
+                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
+
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid)
+            {
+                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Set_to_Grid.HintText)}");
+            }
+        }
+
+        public static void ApplyMovetoGrid(ViewportSelection _selection)
         {
             List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))

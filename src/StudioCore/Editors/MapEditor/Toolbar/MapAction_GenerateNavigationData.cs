@@ -1,12 +1,15 @@
 ﻿using ImGuiNET;
 using StudioCore.Editor;
+using StudioCore.Interface;
 using StudioCore.MsbEditor;
+using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,19 +24,53 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (Project.Type is ProjectType.DES || Project.Type is ProjectType.DS1 || Project.Type is ProjectType.DS1R)
             {
-                if (ImGui.Selectable("Navigation Data##tool_Selection_Generate_Navigation_Data", false, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.RadioButton("Navigation Data##tool_Selection_Generate_Navigation_Data", MapEditorState.SelectedAction == MapEditorAction.Selection_Generate_Navigation_Data))
                 {
-                    MapEditorState.CurrentTool = SelectedTool.Selection_Generate_Navigation_Data;
+                    MapEditorState.SelectedAction = MapEditorAction.Selection_Generate_Navigation_Data;
+                }
+            }
+        }
 
-                    if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                    {
-                        Act(_selection);
-                    }
+        public static void Configure(ViewportSelection _selection)
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Generate_Navigation_Data)
+            {
+                ImGui.Text("Regenerate the navigation data files used for pathfinding.");
+                ImGui.Text("");
+
+                if (NavigationDataProcessed)
+                {
+                    ImGui.Text("Navigation data has been regenerated for all maps.");
                 }
             }
         }
 
         public static void Act(ViewportSelection _selection)
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Generate_Navigation_Data)
+            {
+                if (ImGui.Button("Apply##action_Selection_Generate_Navigation_Data", new Vector2(200, 32)))
+                {
+                    if (_selection.IsSelection())
+                    {
+                        ApplyNavigationGeneration(_selection);
+                    }
+                    else
+                    {
+                        PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+                    }
+                }
+            }
+        }
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Generate_Navigation_Data)
+            {
+
+            }
+        }
+
+        public static void ApplyNavigationGeneration(ViewportSelection _selection)
         {
             Dictionary<string, ObjectContainer> orderedMaps = MapEditorState.Universe.LoadedObjectContainers;
 
@@ -76,20 +113,6 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
 
             NavigationDataProcessed = true;
-        }
-
-        public static void Configure(ViewportSelection _selection)
-        {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Generate_Navigation_Data)
-            {
-                ImGui.Text("Regenerate the navigation data files used for pathfinding.");
-                ImGui.Separator();
-
-                if (NavigationDataProcessed)
-                {
-                    ImGui.Text("Navigation data has been regenerated for all maps.");
-                }
-            }
         }
 
         public static void OnTextReset()

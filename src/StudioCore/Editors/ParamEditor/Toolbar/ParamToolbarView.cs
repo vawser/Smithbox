@@ -2,11 +2,13 @@
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +22,9 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         ImportRowNames,
         ExportRowNames,
         TrimRowNames,
-        DuplicateRow
+        DuplicateRow,
+        MassEdit,
+        MassEditScripts
     }
 
     public class ParamToolbarView
@@ -44,65 +48,6 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         public ParamToolbarView(ActionManager actionManager)
         {
             EditorActionManager = actionManager;
-
-            ParamAction_SortRows.Setup();
-            ParamAction_ImportRowNames.Setup();
-            ParamAction_ExportRowNames.Setup();
-            ParamAction_TrimRowNames.Setup();
-            ParamAction_DuplicateRow.Setup();
-        }
-
-        // Tool dropdown list if the side window is disabled
-        public static void ToolbarView()
-        {
-            if (!CFG.Current.Interface_ParamEditor_Toolbar)
-            {
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.MenuItem("Export Row Names (All)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
-                {
-                    ParamAction_ExportRowNames.CurrentTargetCategory = "All Params";
-                    ParamAction_ExportRowNames.Act();
-                }
-
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.MenuItem("Export Row Names (Selected)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
-                {
-                    ParamAction_ExportRowNames.CurrentTargetCategory = "Selected Param";
-                    ParamAction_ExportRowNames.Act();
-                }
-
-                ImGui.Separator();
-
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.MenuItem("Import Row Names (All)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
-                {
-                    ParamAction_ImportRowNames.CurrentTargetCategory = "All Params";
-                    ParamAction_ImportRowNames.Act();
-                }
-
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.MenuItem("Import Row Names (Selected)", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
-                {
-                    ParamAction_ExportRowNames.CurrentTargetCategory = "Selected Param";
-                    ParamAction_ExportRowNames.Act();
-                }
-
-                ImGui.Separator();
-
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.MenuItem("Sort Rows", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
-                {
-                    ParamAction_SortRows.Act();
-                }
-
-                ImguiUtils.ShowMenuIcon($"{ForkAwesome.List}");
-                if (ImGui.MenuItem("Trim Row Names", null, false, ParamEditorScreen._activeView._selection.ActiveParamExists()))
-                {
-                    ParamAction_TrimRowNames.Act();
-                }
-
-                ImGui.Separator();
-            }
         }
 
         public void OnGui()
@@ -112,48 +57,107 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             var selectedParam = ParamEditorScreen._activeView._selection;
 
-            ImGui.Columns(2);
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
-            // Actions
-            ImGui.BeginChild("##toolbarActionPanel");
-            ImGui.Text("Actions:");
-            ImGui.Separator();
+            if (ImGui.Begin("Toolbar##ParamEditorToolbar"))
+            {
+                if (CFG.Current.Interface_ParamEditor_Toolbar_HorizontalOrientation)
+                {
+                    ImGui.Columns(2);
 
-            ShowActionList();
-            ImGui.EndChild();
+                    ImGui.BeginChild("##ParamEditorToolbar_Selection");
 
-            ImGui.NextColumn();
+                    ShowActionList();
 
-            // Configuration
-            ImGui.BeginChild("##toolbarConfigurationPanel");
+                    ImGui.EndChild();
 
-            ImGui.Text("Configuration:");
-            ImguiUtils.ShowHoverTooltip($"Current Selection: {selectedParam.GetActiveParam()}");
-            ImGui.Separator();
+                    ImGui.NextColumn();
 
-            ShowActionConfiguration();
+                    ImGui.BeginChild("##ParamEditorToolbar_Configuration");
 
-            ImGui.EndChild();
+                    ShowSelectedConfiguration();
 
-            ImGui.Columns(1);
+                    ImGui.EndChild();
+                }
+                else
+                {
+                    ShowActionList();
+
+                    ImGui.BeginChild("##ParamEditorToolbar_Configuration");
+
+                    ShowSelectedConfiguration();
+
+                    ImGui.EndChild();
+                }
+            }
+
+            ImGui.End();
+            ImGui.PopStyleColor(1);
         }
 
         public void ShowActionList()
         {
+            ImGui.Separator();
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Actions");
+            ImguiUtils.ShowHoverTooltip("Click to select a toolbar action.");
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{ForkAwesome.Refresh}##SwitchOrientation"))
+            {
+                CFG.Current.Interface_ParamEditor_Toolbar_HorizontalOrientation = !CFG.Current.Interface_ParamEditor_Toolbar_HorizontalOrientation;
+            }
+            ImguiUtils.ShowHoverTooltip("Toggle the orientation of the toolbar.");
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{ForkAwesome.ExclamationTriangle}##PromptUser"))
+            {
+                if (CFG.Current.Param_Toolbar_Prompt_User_Action)
+                {
+                    CFG.Current.Param_Toolbar_Prompt_User_Action = false;
+                    PlatformUtils.Instance.MessageBox("Param Editor Toolbar will no longer prompt the user.", "Smithbox", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    CFG.Current.Param_Toolbar_Prompt_User_Action = true;
+                    PlatformUtils.Instance.MessageBox("Param Editor Toolbar will prompt user before applying certain toolbar actions.", "Smithbox", MessageBoxButtons.OK);
+                }
+            }
+            ImguiUtils.ShowHoverTooltip("Toggle whether certain toolbar actions prompt the user before applying.");
+            ImGui.Separator();
+
             ParamAction_DuplicateRow.Select();
             ParamAction_SortRows.Select();
             ParamAction_ImportRowNames.Select();
             ParamAction_ExportRowNames.Select();
             ParamAction_TrimRowNames.Select();
+            ParamAction_MassEdit.Select();
+            ParamAction_MassEditScripts.Select();
         }
 
-        public void ShowActionConfiguration()
+        public void ShowSelectedConfiguration()
         {
+            ImGui.Indent(10.0f);
+            ImGui.Separator();
+            ImGui.Text("Configuration");
+            ImGui.Separator();
+
             ParamAction_DuplicateRow.Configure();
             ParamAction_SortRows.Configure();
             ParamAction_ImportRowNames.Configure();
             ParamAction_ExportRowNames.Configure();
             ParamAction_TrimRowNames.Configure();
+            ParamAction_MassEdit.Configure();
+            ParamAction_MassEditScripts.Configure();
+
+            ParamAction_DuplicateRow.Act();
+            ParamAction_SortRows.Act();
+            ParamAction_ImportRowNames.Act();
+            ParamAction_ExportRowNames.Act();
+            ParamAction_TrimRowNames.Act();
+            ParamAction_MassEdit.Act();
+            ParamAction_MassEditScripts.Act();
         }
     }
 }

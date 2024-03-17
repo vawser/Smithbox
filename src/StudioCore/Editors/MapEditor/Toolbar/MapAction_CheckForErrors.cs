@@ -1,6 +1,8 @@
 ﻿using HKX2;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
@@ -16,31 +18,45 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.Selectable("Check for Errors##tool_Selection_Check_for_Errors", false, ImGuiSelectableFlags.AllowDoubleClick))
+            if (ImGui.RadioButton("Check for Errors##tool_Selection_Check_for_Errors", MapEditorState.SelectedAction == MapEditorAction.Selection_Check_for_Errors))
             {
-                MapEditorState.CurrentTool = SelectedTool.Selection_Check_for_Errors;
-
-                if (ImGui.IsMouseDoubleClicked(0) && _selection.IsSelection())
-                {
-                    if (MapEditorState.LoadedMaps.Any())
-                    {
-                        Act(_selection);
-                    }
-                }
+                MapEditorState.SelectedAction = MapEditorAction.Selection_Check_for_Errors;
             }
         }
 
         public static void Configure(ViewportSelection _selection)
         {
-            if (MapEditorState.CurrentTool == SelectedTool.Selection_Check_for_Errors)
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Check_for_Errors)
             {
                 ImGui.Text("This tool will check for any incorrect property assignments.");
                 ImGui.Text("Invalid assignments will be noted in the logger.");
+                ImGui.Text("");
             }
         }
 
         public static void Act(ViewportSelection _selection)
         {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Check_for_Errors)
+            {
+                if (ImGui.Button("Apply##action_Selection_Check_for_Errors", new Vector2(200, 32)))
+                {
+                    ApplyErrorCheck(_selection);
+                }
+            }
+
+        }
+        public static void Shortcuts()
+        {
+            if (MapEditorState.SelectedAction == MapEditorAction.Selection_Check_for_Errors)
+            {
+            }
+        }
+
+        public static void ApplyErrorCheck(ViewportSelection _selection)
+        {
+            if (!MapEditorState.LoadedMaps.Any())
+                return;
+
             HashSet<uint> vals = new();
             bool hasError = false;
 
