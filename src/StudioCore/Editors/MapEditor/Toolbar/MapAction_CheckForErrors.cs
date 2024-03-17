@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (ImGui.RadioButton("Check for Errors##tool_Selection_Check_for_Errors", MapEditorState.SelectedAction == MapEditorAction.Selection_Check_for_Errors))
+            if (ImGui.RadioButton("Check Entity ID Errors##tool_Selection_Check_for_Errors", MapEditorState.SelectedAction == MapEditorAction.Selection_Check_for_Errors))
             {
                 MapEditorState.SelectedAction = MapEditorAction.Selection_Check_for_Errors;
             }

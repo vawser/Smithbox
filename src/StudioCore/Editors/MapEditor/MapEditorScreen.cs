@@ -64,7 +64,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetBrowser AssetBrowser;
     public MapEditorToolbar MapEditorToolbar;
-    public PrefabToolbar PrefabToolbar;
 
     private bool GCNeedsCollection;
 
@@ -110,8 +109,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         PropSearch = new MapSearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
-        MapEditorToolbar = new MapEditorToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport);
-        PrefabToolbar = new PrefabToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
+        MapEditorToolbar = new MapEditorToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
 
         EditorActionManager.AddEventHandler(SceneTree);
@@ -263,13 +261,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 CFG.Current.Interface_MapEditor_PropertySearch = !CFG.Current.Interface_MapEditor_PropertySearch;
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_PropertySearch);
-
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
-            if (ImGui.MenuItem("Prefabs"))
-            {
-                CFG.Current.Interface_MapEditor_Prefabs = !CFG.Current.Interface_MapEditor_Prefabs;
-            }
-            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Prefabs);
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
             if (ImGui.MenuItem("Asset Browser"))
@@ -749,6 +740,23 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 MapAction_Create.ApplyObjectCreation(_selection);
             }
 
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_ExportPrefab))
+            {
+                MapAction_ExportPrefab.AssignUniquePrefabName(_selection);
+                MapAction_ExportPrefab.ExportCurrentSelection(_selection);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_ImportPrefab))
+            {
+                if (MapEditorToolbar._selectedPrefabInfo != null)
+                {
+                    MapAction_ImportPrefab.ImportSelectedPrefab();
+                }
+                else
+                {
+                    PlatformUtils.Instance.MessageBox("No prefab has been selected to import.", "Prefab Error", MessageBoxButtons.OK);
+                }
+            }
+
             // Render settings
             if (RenderScene != null)
             {
@@ -891,7 +899,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         AssetBrowser.OnGui();
         MapEditorToolbar.OnGui();
-        PrefabToolbar.OnGui();
 
         if (_activeModal != null)
         {
@@ -936,7 +943,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         _projectSettings = newSettings;
         _selection.ClearSelection();
         EditorActionManager.Clear();
-        PrefabToolbar.OnProjectChanged();
+        MapEditorToolbar.OnProjectChanged();
 
         ReloadUniverse();
     }

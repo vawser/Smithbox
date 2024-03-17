@@ -36,6 +36,9 @@ namespace StudioCore.Editors.GparamEditor.Toolbar
 
             if (ImGui.Begin("Toolbar##GparamEditorToolbar"))
             {
+                var width = ImGui.GetWindowWidth();
+                var height = ImGui.GetWindowHeight();
+
                 if (CFG.Current.Interface_GparamEditor_Toolbar_HorizontalOrientation)
                 {
                     ImGui.Columns(2);
@@ -56,7 +59,11 @@ namespace StudioCore.Editors.GparamEditor.Toolbar
                 }
                 else
                 {
+                    ImGui.BeginChild("##GparamEditorToolbar_Selection", new Vector2((width - 10), (height / 3)));
+
                     ShowActionList();
+
+                    ImGui.EndChild();
 
                     ImGui.BeginChild("##GparamEditorToolbar_Configuration");
 

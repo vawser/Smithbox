@@ -35,6 +35,9 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
             if (ImGui.Begin("Toolbar##ModelEditorToolbar"))
             {
+                var width = ImGui.GetWindowWidth();
+                var height = ImGui.GetWindowHeight();
+
                 if (CFG.Current.Interface_ModelEditor_Toolbar_HorizontalOrientation)
                 {
                     ImGui.Columns(2);
@@ -55,7 +58,11 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
                 }
                 else
                 {
+                    ImGui.BeginChild("##ModelEditorToolbar_Selection", new Vector2((width - 10), (height / 3)));
+
                     ShowActionList();
+
+                    ImGui.EndChild();
 
                     ImGui.BeginChild("##ModelEditorToolbar_Configuration");
 

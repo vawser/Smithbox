@@ -62,6 +62,9 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             if (ImGui.Begin("Toolbar##ParamEditorToolbar"))
             {
+                var width = ImGui.GetWindowWidth();
+                var height = ImGui.GetWindowHeight();
+
                 if (CFG.Current.Interface_ParamEditor_Toolbar_HorizontalOrientation)
                 {
                     ImGui.Columns(2);
@@ -82,7 +85,11 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 }
                 else
                 {
+                    ImGui.BeginChild("##ParamEditorToolbar_Selection", new Vector2((width - 10), (height / 3)));
+
                     ShowActionList();
+
+                    ImGui.EndChild();
 
                     ImGui.BeginChild("##ParamEditorToolbar_Configuration");
 

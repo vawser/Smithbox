@@ -36,7 +36,12 @@ namespace StudioCore.Editors.MapEditor
         Selection_Toggle_Object_Visibility_by_Tag,
         Selection_Render_Patrol_Routes,
         Selection_Check_for_Errors,
-        Selection_Generate_Navigation_Data
+        Selection_Generate_Navigation_Data,
+
+        // Prefabs
+        EditPrefab,
+        ImportPrefab,
+        ExportPrefab
     }
 
     public static class MapEditorState

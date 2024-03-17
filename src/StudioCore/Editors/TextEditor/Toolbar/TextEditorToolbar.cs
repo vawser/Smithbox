@@ -65,6 +65,9 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
             if (ImGui.Begin("Toolbar##TextEditorToolbar"))
             {
+                var width = ImGui.GetWindowWidth();
+                var height = ImGui.GetWindowHeight();
+
                 if (CFG.Current.Interface_TextEditor_Toolbar_HorizontalOrientation)
                 {
                     ImGui.Columns(2);
@@ -85,7 +88,11 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                 }
                 else
                 {
+                    ImGui.BeginChild("##TextEditorToolbar_Selection", new Vector2((width - 10), (height / 3)));
+
                     ShowActionList();
+
+                    ImGui.EndChild();
 
                     ImGui.BeginChild("##TextEditorToolbar_Configuration");
 
