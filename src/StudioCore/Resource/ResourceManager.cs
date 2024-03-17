@@ -427,6 +427,11 @@ public static class ResourceManager
 
     public static void OnGuiDrawResourceList()
     {
+        if (!CFG.Current.Interface_MapEditor_ResourceList)
+        {
+            return;
+        }
+
         if (!ImGui.Begin("Resource List"))
         {
             ImGui.End();

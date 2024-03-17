@@ -76,14 +76,13 @@ public class MapAssetBrowser
         var scale = Smithbox.GetUIScale();
 
         if (Project.Type == ProjectType.Undefined)
-        {
             return;
-        }
+
+        if (!CFG.Current.Interface_MapEditor_AssetBrowser)
+            return;
 
         if (ModelAliasBank.Bank.IsLoadingAliases)
-        {
             return;
-        }
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);

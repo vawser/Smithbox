@@ -39,23 +39,29 @@ public class NullViewport : IViewport
 
     public void OnGui()
     {
-        if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
+        if (CFG.Current.Interface_Editor_Viewport)
         {
-            Vector2 p = ImGui.GetWindowPos();
-            Vector2 s = ImGui.GetWindowSize();
-            var newvp = new Rectangle((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
-            ResizeViewport(null, newvp);
-            ImGui.Text("Disabled...");
+            if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
+            {
+                Vector2 p = ImGui.GetWindowPos();
+                Vector2 s = ImGui.GetWindowSize();
+                var newvp = new Rectangle((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
+                ResizeViewport(null, newvp);
+                ImGui.Text("Disabled...");
+            }
+
+            ImGui.End();
         }
 
-        ImGui.End();
-
-        if (ImGui.Begin($@"Profiling##{_vpid}"))
+        if (CFG.Current.Interface_MapEditor_Profiling)
         {
-            ImGui.Text(@"Disabled...");
-        }
+            if (ImGui.Begin($@"Profiling##{_vpid}"))
+            {
+                ImGui.Text(@"Disabled...");
+            }
 
-        ImGui.End();
+            ImGui.End();
+        }
     }
 
     public void SceneParamsGui()

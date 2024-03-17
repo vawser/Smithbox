@@ -143,49 +143,55 @@ public class Viewport : IViewport
 
     public void OnGui()
     {
-        if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
+        if (CFG.Current.Interface_Editor_Viewport)
         {
-            Vector2 p = ImGui.GetWindowPos();
-            Vector2 s = ImGui.GetWindowSize();
-            Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
-            ResizeViewport(_device, newvp);
-
-            if (InputTracker.GetMouseButtonDown(MouseButton.Right) && MouseInViewport())
+            if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
             {
-                ImGui.SetWindowFocus();
-                ViewportSelected = true;
-            }
-            else if (!InputTracker.GetMouseButton(MouseButton.Right))
-            {
-                ViewportSelected = false;
+                Vector2 p = ImGui.GetWindowPos();
+                Vector2 s = ImGui.GetWindowSize();
+                Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
+                ResizeViewport(_device, newvp);
+
+                if (InputTracker.GetMouseButtonDown(MouseButton.Right) && MouseInViewport())
+                {
+                    ImGui.SetWindowFocus();
+                    ViewportSelected = true;
+                }
+                else if (!InputTracker.GetMouseButton(MouseButton.Right))
+                {
+                    ViewportSelected = false;
+                }
+
+                _canInteract = ImGui.IsWindowFocused();
+                _vpvisible = true;
+                Matrix4x4 proj = Matrix4x4.Transpose(_projectionMat);
+                Matrix4x4 view = Matrix4x4.Transpose(WorldView.CameraTransform.CameraViewMatrixLH);
+                Matrix4x4 identity = Matrix4x4.Identity;
+                //ImGui.DrawGrid(ref view.M11, ref proj.M11, ref identity.M11, 100.0f);
             }
 
-            _canInteract = ImGui.IsWindowFocused();
-            _vpvisible = true;
-            Matrix4x4 proj = Matrix4x4.Transpose(_projectionMat);
-            Matrix4x4 view = Matrix4x4.Transpose(WorldView.CameraTransform.CameraViewMatrixLH);
-            Matrix4x4 identity = Matrix4x4.Identity;
-            //ImGui.DrawGrid(ref view.M11, ref proj.M11, ref identity.M11, 100.0f);
+            ImGui.End();
         }
 
-        ImGui.End();
-
-        if (ImGui.Begin($@"Profiling##{_vpid}"))
+        if (CFG.Current.Interface_MapEditor_Profiling)
         {
-            ImGui.Text($@"Cull time: {_renderScene.OctreeCullTime} ms");
-            ImGui.Text($@"Work creation time: {_renderScene.CPUDrawTime} ms");
-            ImGui.Text($@"Scene Render CPU time: {_viewPipeline.CPURenderTime} ms");
-            ImGui.Text($@"Visible objects: {_renderScene.RenderObjectCount}");
-            ImGui.Text(
-                $@"Vertex Buffers Size: {Renderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024} MB");
-            ImGui.Text(
-                $@"Index Buffers Size: {Renderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
-            ImGui.Text($@"FLVER Read Caches: {FlverResource.CacheCount}");
-            ImGui.Text($@"FLVER Read Caches Size: {FlverResource.CacheFootprint / 1024 / 1024} MB");
-            //ImGui.Text($@"Selected renderable:  { _viewPipeline._pickingEntity }");
-        }
+            if (ImGui.Begin($@"Profiling##{_vpid}"))
+            {
+                ImGui.Text($@"Cull time: {_renderScene.OctreeCullTime} ms");
+                ImGui.Text($@"Work creation time: {_renderScene.CPUDrawTime} ms");
+                ImGui.Text($@"Scene Render CPU time: {_viewPipeline.CPURenderTime} ms");
+                ImGui.Text($@"Visible objects: {_renderScene.RenderObjectCount}");
+                ImGui.Text(
+                    $@"Vertex Buffers Size: {Renderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024} MB");
+                ImGui.Text(
+                    $@"Index Buffers Size: {Renderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
+                ImGui.Text($@"FLVER Read Caches: {FlverResource.CacheCount}");
+                ImGui.Text($@"FLVER Read Caches Size: {FlverResource.CacheFootprint / 1024 / 1024} MB");
+                //ImGui.Text($@"Selected renderable:  { _viewPipeline._pickingEntity }");
+            }
 
-        ImGui.End();
+            ImGui.End();
+        }
     }
 
     public void SceneParamsGui()

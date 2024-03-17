@@ -22,6 +22,8 @@ using Veldrid.Utilities;
 using Viewport = StudioCore.Gui.Viewport;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
+using StudioCore.Utilities;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -172,9 +174,10 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void DrawEditorMenu()
     {
+        // Dropdown: Edit
         if (ImGui.BeginMenu("Edit"))
         {
-            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false,
+            if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
                     EditorActionManager.CanUndo()))
             {
                 EditorActionManager.UndoAction();
@@ -216,9 +219,75 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             ImGui.EndMenu();
         }
 
-        if (ImGui.BeginMenu("Display", RenderScene != null && Viewport != null))
+        // Dropdown: View
+        if (ImGui.BeginMenu("View"))
         {
-            if (ImGui.BeginMenu("Object Types"))
+            if (ImGui.MenuItem("Viewport"))
+            {
+                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
+
+            if (ImGui.MenuItem("Map Object List"))
+            {
+                CFG.Current.Interface_MapEditor_MapObjectList = !CFG.Current.Interface_MapEditor_MapObjectList;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapObjectList);
+
+            if (ImGui.MenuItem("Toolbar"))
+            {
+                CFG.Current.Interface_MapEditor_Toolbar = !CFG.Current.Interface_MapEditor_Toolbar;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Toolbar);
+
+            if (ImGui.MenuItem("Properties"))
+            {
+                CFG.Current.Interface_MapEditor_Properties = !CFG.Current.Interface_MapEditor_Properties;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Properties);
+
+            if (ImGui.MenuItem("Search Properties"))
+            {
+                CFG.Current.Interface_MapEditor_PropertySearch = !CFG.Current.Interface_MapEditor_PropertySearch;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_PropertySearch);
+
+            if (ImGui.MenuItem("Prefabs"))
+            {
+                CFG.Current.Interface_MapEditor_Prefabs = !CFG.Current.Interface_MapEditor_Prefabs;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Prefabs);
+
+            if (ImGui.MenuItem("Asset Browser"))
+            {
+                CFG.Current.Interface_MapEditor_AssetBrowser = !CFG.Current.Interface_MapEditor_AssetBrowser;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_AssetBrowser);
+
+            if (ImGui.MenuItem("Profiling"))
+            {
+                CFG.Current.Interface_MapEditor_Profiling = !CFG.Current.Interface_MapEditor_Profiling;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Profiling);
+
+            if (ImGui.MenuItem("Render Groups"))
+            {
+                CFG.Current.Interface_MapEditor_RenderGroups = !CFG.Current.Interface_MapEditor_RenderGroups;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_RenderGroups);
+
+            if (ImGui.MenuItem("Resource List"))
+            {
+                CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("Viewport", RenderScene != null && Viewport != null))
+        {
+            if (ImGui.BeginMenu("Filters"))
             {
                 bool ticked;
                 ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Debug);
@@ -272,7 +341,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("Display Presets"))
+            if (ImGui.BeginMenu("Filter Presets"))
             {
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_01.Name, "Ctrl+1"))
                 {

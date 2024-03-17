@@ -54,6 +54,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             if (Project.Type == ProjectType.Undefined)
                 return;
 
+            if (!CFG.Current.Interface_MapEditor_Toolbar)
+                return;
+
             MapAction_GenerateNavigationData.OnTextReset();
             MapEditorState.LoadedMaps = _universe.LoadedObjectContainers.Values.Where(x => x != null);
 

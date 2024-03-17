@@ -1,13 +1,33 @@
 ﻿using ImGuiNET;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Interface;
 public static class ImguiUtils
 {
+    public static void ShowActiveStatus(bool isActive)
+    {
+        if (isActive)
+        {
+            ImGui.SameLine();
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+            ImGui.TextUnformatted($"{ForkAwesome.CheckSquare}");
+            ImGui.PopStyleVar(1);
+        }
+        else
+        {
+            ImGui.SameLine();
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
+            ImGui.TextUnformatted($"{ForkAwesome.Square}");
+            ImGui.PopStyleVar(1);
+        }
+    }
+
     public static void ShowHelpButton(string title, string desc, string id)
     {
         if (ImGui.Button($"{title}"))

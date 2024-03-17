@@ -55,6 +55,20 @@ public class CFG
     //**************
     // Interface
     //**************
+    // View Toggles
+    public bool Interface_Editor_Viewport = true;
+
+    public bool Interface_MapEditor_MapObjectList = true;
+    public bool Interface_MapEditor_Toolbar = true;
+    public bool Interface_MapEditor_Properties = true;
+    public bool Interface_MapEditor_PropertySearch = true;
+    public bool Interface_MapEditor_Prefabs = true;
+    public bool Interface_MapEditor_AssetBrowser = true;
+    public bool Interface_MapEditor_Profiling = true;
+    public bool Interface_MapEditor_RenderGroups = true;
+    public bool Interface_MapEditor_ResourceList = true;
+
+
     public bool Interface_DisplayMapGroups = true;
     public bool Interface_Display_Alias_for_Gparam = true;
     public bool Interface_Display_Alias_for_Msb = true;

@@ -332,6 +332,9 @@ public class MapSearchProperties
             _propertyNameSearchString = "";
         }
 
+        if (!CFG.Current.Interface_MapEditor_PropertySearch)
+            return;
+
         if (ImGui.Begin("Search Properties"))
         {
 

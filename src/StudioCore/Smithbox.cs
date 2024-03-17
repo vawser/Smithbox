@@ -860,6 +860,7 @@ public class Smithbox
 
         if (ImGui.BeginMainMenuBar())
         {
+            // Dropdown: File
             if (ImGui.BeginMenu("File"))
             {
                 if (ImGui.MenuItem("New Project", "", false, !TaskManager.AnyActiveTasks()))

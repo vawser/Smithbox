@@ -93,6 +93,9 @@ namespace StudioCore.Editors.MapEditor
             if (Project.Type == ProjectType.Undefined)
                 return;
 
+            if (!CFG.Current.Interface_MapEditor_Prefabs)
+                return;
+
             // Supported Games
             if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS2S or ProjectType.DS1 or ProjectType.DS1R))
                 return;
