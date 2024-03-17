@@ -9,7 +9,7 @@ namespace StudioCore.AssetLocator;
 /// <summary>
 ///     Generic asset description for a generic game asset
 /// </summary>
-public class AssetDescription
+public class AssetDescription : IComparable<AssetDescription>
 {
     public string AssetArchiveVirtualPath;
 
@@ -57,5 +57,11 @@ public class AssetDescription
         }
 
         return base.Equals(obj);
+    }
+
+    public int CompareTo(AssetDescription other)
+    {
+        // Use string default CompareTo logic
+        return AssetName.CompareTo(other.AssetName);
     }
 }
