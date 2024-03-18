@@ -143,9 +143,9 @@ public class KeyBindings
         public KeyBind Map_RenderGroup_SelectHighlights = new("Render Group: Select Highlights", KeybindCategory.MapEditor);
 
         // Model Editor
-        public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L);
+        public KeyBind ModelEditor_LoadCurrentSelection = new("Load Asset Selection", KeybindCategory.ModelEditor, Key.L, true);
 
-        public KeyBind ModelEditor_UnloadCurrentSelection = new("Unload Current Asset", KeybindCategory.ModelEditor, Key.U);
+        public KeyBind ModelEditor_UnloadCurrentSelection = new("Unload Current Asset", KeybindCategory.ModelEditor, Key.U, true);
 
         // Param
         public KeyBind Param_Copy = new("Copy", KeybindCategory.ParamEditor, Key.C, true);
