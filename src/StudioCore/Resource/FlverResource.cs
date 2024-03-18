@@ -175,30 +175,31 @@ public class FlverResource : IResource, IDisposable
 
     private string TexturePathToVirtual(string texpath)
     {
+        // MAP Texture
         if (texpath.Contains(@"\map\"))
         {
             var splits = texpath.Split('\\');
             var mapid = splits[splits.Length - 3];
             return $@"map/tex/{mapid}/{Path.GetFileNameWithoutExtension(texpath)}";
         }
-        // Chr texture reference
 
+        // CHR Texture
         if (texpath.Contains(@"\chr\"))
         {
             var splits = texpath.Split('\\');
             var chrid = splits[splits.Length - 3];
             return $@"chr/{chrid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
         }
-        // Obj texture reference
 
+        // OBJ Texture
         if (texpath.Contains(@"\obj\"))
         {
             var splits = texpath.Split('\\');
             var objid = splits[splits.Length - 3];
             return $@"obj/{objid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
         }
-        // Asset (aet) texture references
 
+        // AET Texture
         if (texpath.Contains(@"\aet") || texpath.StartsWith("aet"))
         {
             var splits = texpath.Split('\\');
@@ -206,15 +207,21 @@ public class FlverResource : IResource, IDisposable
             return $@"aet/{aetid}/{Path.GetFileNameWithoutExtension(texpath)}";
         }
 
-        // AAT texture references
-
+        // AAT Texture
         if (texpath.Contains(@"\aat") || texpath.StartsWith("aat"))
         {
             var name = Path.GetFileName(texpath);
             return $@"aat/{Path.GetFileNameWithoutExtension(texpath)}";
         }
-        // Parts texture reference
 
+        // SYSTEX Texture
+        if (texpath.Contains(@"\systex") || texpath.StartsWith("systex"))
+        {
+            var name = Path.GetFileName(texpath);
+            return $@"systex/{Path.GetFileNameWithoutExtension(texpath)}";
+        }
+
+        // PARTS Texture
         if (texpath.Contains(@"\parts\"))
         {
             var splits = texpath.Split('\\');

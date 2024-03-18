@@ -31,4 +31,7 @@ public static class FeatureFlags
     public static bool EnableEditor_BehaviorEditor = false;
 
     public static bool EnableCollisionPipeline = true;
+
+    // Disable for release
+    public static bool EnableResourcePurge = true;
 }

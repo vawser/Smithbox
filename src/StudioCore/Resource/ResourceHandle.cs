@@ -193,15 +193,32 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     public void Release()
     {
         var unload = false;
-        ReferenceCount--;
-        if (ReferenceCount == 0 && IsLoaded)
-        {
-            unload = true;
-        }
 
+        // Original
+        /*
+        ReferenceCount--;
         if (ReferenceCount < 0)
         {
             throw new Exception($@"Resource {AssetVirtualPath} reference count already 0");
+        }
+        */
+
+        // New section
+        if (ReferenceCount < 0)
+        {
+            ResourceManager.UnloadResource(this, true);
+            return;
+            //throw new Exception($@"Resource {AssetVirtualPath} reference count already 0");
+        }
+        else
+        {
+            ReferenceCount--;
+        }
+
+        // Original
+        if (ReferenceCount == 0 && IsLoaded)
+        {
+            unload = true;
         }
 
         if (unload)

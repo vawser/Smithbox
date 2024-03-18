@@ -436,11 +436,18 @@ public static class ResourceManager
         ImGui.AlignTextToFramePadding();
         ImGui.Text("List of Resources Loaded & Unloaded");
         ImGui.SameLine();
-        if (ImGui.Button("Purge"))
+
+        if (FeatureFlags.EnableResourcePurge)
         {
-            foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
+            if (ImGui.Button("Purge"))
             {
-                item.Value.Unload();
+                foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
+                {
+                    while (item.Value.GetReferenceCounts() >= 0)
+                    {
+                        item.Value.Release();
+                    }
+                }
             }
         }
 
@@ -449,6 +456,9 @@ public static class ResourceManager
         var id = 0;
         foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
         {
+            if (item.Key == "")
+                continue;
+
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();
             ImGui.Text(item.Key);
@@ -573,6 +583,7 @@ public static class ResourceManager
 
                 var binderpath = f.Name;
                 var filevirtpath = LocatorUtils.GetBinderVirtualPath(BinderVirtualPath, binderpath);
+
                 if (AssetWhitelist != null && !AssetWhitelist.Contains(filevirtpath))
                 {
                     continue;
@@ -963,6 +974,24 @@ public static class ResourceManager
                             path = TextureAssetLocator.GetAatTexture(aatname).AssetPath;
 
                             assetTpfs.Add(aatname);
+                        }
+                    }
+
+                    if (Project.Type == ProjectType.AC6 || Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT || Project.Type == ProjectType.DS3)
+                    {
+                        // Systex
+                        if (texpath.Contains("systex"))
+                        {
+                            var systexname = Path.GetFileName(texpath);
+
+                            if (assetTpfs.Contains(systexname))
+                            {
+                                continue;
+                            }
+
+                            path = TextureAssetLocator.GetSystexTexture(systexname).AssetPath;
+
+                            assetTpfs.Add(systexname);
                         }
                     }
 

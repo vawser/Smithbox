@@ -290,6 +290,31 @@ public static class TextureAssetLocator
         return ad;
     }
 
+    public static AssetDescription GetSystexTexture(string aatname)
+    {
+        AssetDescription ad = new();
+        ad.AssetPath = null;
+        ad.AssetArchiveVirtualPath = null;
+        string path;
+
+        if (Project.Type == ProjectType.AC6 || Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT || Project.Type == ProjectType.DS3)
+        {
+            path = LocatorUtils.GetOverridenFilePath($@"other\systex.tpf.dcx");
+        }
+        else
+        {
+            throw new NotSupportedException();
+        }
+
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetArchiveVirtualPath = $@"systex/tex";
+        }
+
+        return ad;
+    }
+
     public static AssetDescription GetPartTextures(string partsId)
     {
         AssetDescription ad = new();
