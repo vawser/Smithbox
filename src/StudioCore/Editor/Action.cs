@@ -620,14 +620,7 @@ public class GparamValueChangeAction : EditorAction
             }
             if (change.Field is GPARAM.BoolField boolField)
             {
-                var assignedValue = (int)change.NewValue;
-
-                bool result = true;
-
-                if(assignedValue == 0)
-                {
-                    result = false;
-                }
+                var result = (bool)change.NewValue;
 
                 boolField.Values[change.Index].Value = result;
             }
