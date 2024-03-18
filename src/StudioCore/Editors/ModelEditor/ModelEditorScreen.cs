@@ -821,20 +821,24 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 break;
         }
 
-        // Ignore this if we are only loading textures
-        if (!skipModel)
+        if (Universe.IsRendering)
         {
-            if (_renderMesh != null)
+            // Ignore this if we are only loading textures
+            if (!skipModel)
             {
-                _renderMesh.Dispose();
-            }
+                if (_renderMesh != null)
+                {
+                    _renderMesh.Dispose();
+                }
 
-            _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                RenderScene, asset.AssetVirtualPath, ModelMarkerType.None);
-            //_renderMesh.DrawFilter = filt;
-            _renderMesh.World = Matrix4x4.Identity;
-            _currentModel = modelid;
+                _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
+                    RenderScene, asset.AssetVirtualPath, ModelMarkerType.None);
+                //_renderMesh.DrawFilter = filt;
+                _renderMesh.World = Matrix4x4.Identity;
+            }
         }
+
+        _currentModel = modelid;
 
         if (!ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessFull))
         {
@@ -851,13 +855,16 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 }
             }
 
-            if (assettex.AssetArchiveVirtualPath != null)
+            if (Universe.IsRendering)
             {
-                job.AddLoadArchiveTask(assettex.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
-            }
-            else if (assettex.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(assettex.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                if (assettex.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(assettex.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
+                }
+                else if (assettex.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(assettex.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
             }
 
             _loadingTask = job.Complete();

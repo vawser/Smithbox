@@ -43,10 +43,18 @@ public class Universe
 
     public bool postLoad;
 
+    // This handles all rendering-specific stuff. Used to allow Map Editor and Model Editor usage without viewport if needed.
+    public static bool IsRendering = true;
+
     public Universe(RenderScene scene, ViewportSelection sel)
     {
         _renderScene = scene;
         Selection = sel;
+
+        if(_renderScene == null)
+        {
+            IsRendering = false;
+        }
     }
 
     public Dictionary<string, ObjectContainer> LoadedObjectContainers { get; } = new();
@@ -792,71 +800,75 @@ public class Universe
 
             var amapid = MapAssetLocator.GetAssetMapID(mapid);
 
-            // Add substitution model to the chrsToLoad set
-            AssetDescription subAsset = ModelAssetLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
-            chrsToLoad.Add(subAsset);
-            AssetDescription tSubAsset = TextureAssetLocator.GetChrTextures(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
-
-            if (tSubAsset.AssetVirtualPath != null || tSubAsset.AssetArchiveVirtualPath != null)
+            if (IsRendering)
             {
-                chrsToLoad.Add(tSubAsset);
-            }
 
-            foreach (IMsbModel model in msb.Models.GetEntries())
-            {
-                AssetDescription asset;
-                if (model.Name.StartsWith("m"))
+                // Add substitution model to the chrsToLoad set
+                AssetDescription subAsset = ModelAssetLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+                chrsToLoad.Add(subAsset);
+                AssetDescription tSubAsset = TextureAssetLocator.GetChrTextures(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+
+                if (tSubAsset.AssetVirtualPath != null || tSubAsset.AssetArchiveVirtualPath != null)
                 {
-                    asset = ModelAssetLocator.GetMapModel(amapid,
-                        ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name));
-                    mappiecesToLoad.Add(asset);
+                    chrsToLoad.Add(tSubAsset);
                 }
-                else if (model.Name.StartsWith("c"))
+
+                foreach (IMsbModel model in msb.Models.GetEntries())
                 {
-                    asset = ModelAssetLocator.GetChrModel(model.Name);
-                    chrsToLoad.Add(asset);
-                    AssetDescription tasset = TextureAssetLocator.GetChrTextures(model.Name);
-                    if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+                    AssetDescription asset;
+                    if (model.Name.StartsWith("m"))
                     {
-                        chrsToLoad.Add(tasset);
+                        asset = ModelAssetLocator.GetMapModel(amapid,
+                            ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name));
+                        mappiecesToLoad.Add(asset);
+                    }
+                    else if (model.Name.StartsWith("c"))
+                    {
+                        asset = ModelAssetLocator.GetChrModel(model.Name);
+                        chrsToLoad.Add(asset);
+                        AssetDescription tasset = TextureAssetLocator.GetChrTextures(model.Name);
+                        if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+                        {
+                            chrsToLoad.Add(tasset);
+                        }
+                    }
+                    else if (model.Name.StartsWith("o"))
+                    {
+                        asset = ModelAssetLocator.GetObjModel(model.Name);
+                        objsToLoad.Add(asset);
+                        AssetDescription tasset = TextureAssetLocator.GetObjTexture(model.Name);
+                        if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
+                        {
+                            objsToLoad.Add(tasset);
+                        }
+                    }
+                    else if (model.Name.StartsWith("AEG"))
+                    {
+                        asset = ModelAssetLocator.GetObjModel(model.Name);
+                        objsToLoad.Add(asset);
+                    }
+                    else if (model.Name.StartsWith("h"))
+                    {
+                        asset = ModelAssetLocator.GetMapCollisionModel(amapid,
+                            ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name), false);
+                        colsToLoad.Add(asset);
+                    }
+                    else if (model.Name.StartsWith("n") && Project.Type != ProjectType.DS2S &&
+                             Project.Type != ProjectType.BB)
+                    {
+                        asset = ModelAssetLocator.GetMapNVMModel(amapid,
+                            ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name));
+                        navsToLoad.Add(asset);
                     }
                 }
-                else if (model.Name.StartsWith("o"))
-                {
-                    asset = ModelAssetLocator.GetObjModel(model.Name);
-                    objsToLoad.Add(asset);
-                    AssetDescription tasset = TextureAssetLocator.GetObjTexture(model.Name);
-                    if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
-                    {
-                        objsToLoad.Add(tasset);
-                    }
-                }
-                else if (model.Name.StartsWith("AEG"))
-                {
-                    asset = ModelAssetLocator.GetObjModel(model.Name);
-                    objsToLoad.Add(asset);
-                }
-                else if (model.Name.StartsWith("h"))
-                {
-                    asset = ModelAssetLocator.GetMapCollisionModel(amapid,
-                        ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name), false);
-                    colsToLoad.Add(asset);
-                }
-                else if (model.Name.StartsWith("n") && Project.Type != ProjectType.DS2S &&
-                         Project.Type != ProjectType.BB)
-                {
-                    asset = ModelAssetLocator.GetMapNVMModel(amapid,
-                        ModelAssetLocator.MapModelNameToAssetName(amapid, model.Name));
-                    navsToLoad.Add(asset);
-                }
-            }
 
-            foreach (Entity obj in map.Objects)
-            {
-                if (obj.WrappedObject is IMsbPart mp && mp.ModelName != null && mp.ModelName != "" &&
-                    obj.RenderSceneMesh == null)
+                foreach (Entity obj in map.Objects)
                 {
-                    GetModelDrawable(map, obj, mp.ModelName, false);
+                    if (obj.WrappedObject is IMsbPart mp && mp.ModelName != null && mp.ModelName != "" &&
+                        obj.RenderSceneMesh == null)
+                    {
+                        GetModelDrawable(map, obj, mp.ModelName, false);
+                    }
                 }
             }
 
@@ -871,12 +883,15 @@ public class Universe
                 }
             }
 
-            if (Project.Type == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
+            if (IsRendering)
             {
-                if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
-                    loadTransform)
+                if (Project.Type == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
                 {
-                    map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
+                    if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
+                        loadTransform)
+                    {
+                        map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
+                    }
                 }
             }
 
@@ -889,12 +904,15 @@ public class Universe
                 LoadedObjectContainers[mapid] = map;
             }
 
-            // Intervene in the UI to change selection if requested.
-            // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
-            if (selectOnLoad)
+            if (IsRendering)
             {
-                Selection.ClearSelection();
-                Selection.AddSelection(map.RootObject);
+                // Intervene in the UI to change selection if requested.
+                // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
+                if (selectOnLoad)
+                {
+                    Selection.ClearSelection();
+                    Selection.AddSelection(map.RootObject);
+                }
             }
 
             if (Project.Type == ProjectType.DS2S)
@@ -902,171 +920,177 @@ public class Universe
                 LoadDS2Generators(amapid, map);
             }
 
-            // Temporary DS3 navmesh loading
-            if (Project.Type == ProjectType.DS3)
+            if (IsRendering)
             {
-                AssetDescription nvaasset = MapAssetLocator.GetMapNVA(amapid);
-                if (nvaasset.AssetPath != null)
+                // Temporary DS3 navmesh loading
+                if (Project.Type == ProjectType.DS3)
                 {
-                    var nva = NVA.Read(nvaasset.AssetPath);
-                    foreach (NVA.Navmesh nav in nva.Navmeshes)
+                    AssetDescription nvaasset = MapAssetLocator.GetMapNVA(amapid);
+                    if (nvaasset.AssetPath != null)
                     {
-                        // TODO2: set parent to MapOffset
-                        MsbEntity n = new(map, nav, MsbEntity.MsbEntityType.Editor);
-                        map.AddObject(n);
-                        var navid = $@"n{nav.ModelID:D6}";
-                        var navname = "n" + ModelAssetLocator.MapModelNameToAssetName(amapid, navid).Substring(1);
-                        AssetDescription nasset = ModelAssetLocator.GetHavokNavmeshModel(amapid, navname);
+                        var nva = NVA.Read(nvaasset.AssetPath);
+                        foreach (NVA.Navmesh nav in nva.Navmeshes)
+                        {
+                            // TODO2: set parent to MapOffset
+                            MsbEntity n = new(map, nav, MsbEntity.MsbEntityType.Editor);
+                            map.AddObject(n);
+                            var navid = $@"n{nav.ModelID:D6}";
+                            var navname = "n" + ModelAssetLocator.MapModelNameToAssetName(amapid, navid).Substring(1);
+                            AssetDescription nasset = ModelAssetLocator.GetHavokNavmeshModel(amapid, navname);
 
-                        var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                            _renderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
-                        mesh.World = n.GetWorldMatrix();
-                        mesh.SetSelectable(n);
-                        mesh.DrawFilter = RenderFilter.Navmesh;
-                        n.RenderSceneMesh = mesh;
+                            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                                _renderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
+                            mesh.World = n.GetWorldMatrix();
+                            mesh.SetSelectable(n);
+                            mesh.DrawFilter = RenderFilter.Navmesh;
+                            n.RenderSceneMesh = mesh;
+                        }
                     }
                 }
-            }
 
-            ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading {amapid} geometry");
-            foreach (AssetDescription mappiece in mappiecesToLoad)
-            {
-                if (mappiece.AssetArchiveVirtualPath != null)
+                ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading {amapid} geometry");
+                foreach (AssetDescription mappiece in mappiecesToLoad)
                 {
-                    job.AddLoadArchiveTask(mappiece.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false, ResourceManager.ResourceType.Flver);
-                }
-                else if (mappiece.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(mappiece.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-            }
-
-            task = job.Complete();
-            tasks.Add(task);
-
-            if (CFG.Current.Viewport_Enable_Texturing)
-            {
-                job = ResourceManager.CreateNewJob($@"Loading {amapid} textures");
-                foreach (AssetDescription asset in TextureAssetLocator.GetMapTextures(amapid))
-                {
-                    if (asset.AssetArchiveVirtualPath != null)
+                    if (mappiece.AssetArchiveVirtualPath != null)
                     {
-                        job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                            false);
+                        job.AddLoadArchiveTask(mappiece.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                            false, ResourceManager.ResourceType.Flver);
                     }
-                    else if (asset.AssetVirtualPath != null)
+                    else if (mappiece.AssetVirtualPath != null)
                     {
-                        job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                        job.AddLoadFileTask(mappiece.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                     }
                 }
 
                 task = job.Complete();
                 tasks.Add(task);
-            }
 
-            if (FeatureFlags.EnableCollisionPipeline)
-            {
-                job = ResourceManager.CreateNewJob($@"Loading {amapid} collisions");
-                string archive = null;
-                HashSet<string> colassets = new();
-                foreach (AssetDescription col in colsToLoad)
+                if (CFG.Current.Viewport_Enable_Texturing)
                 {
-                    if (col.AssetArchiveVirtualPath != null)
+                    job = ResourceManager.CreateNewJob($@"Loading {amapid} textures");
+                    foreach (AssetDescription asset in TextureAssetLocator.GetMapTextures(amapid))
                     {
-                        //job.AddLoadArchiveTask(col.AssetArchiveVirtualPath, false);
-                        archive = col.AssetArchiveVirtualPath;
-                        colassets.Add(col.AssetVirtualPath);
+                        if (asset.AssetArchiveVirtualPath != null)
+                        {
+                            job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                                false);
+                        }
+                        else if (asset.AssetVirtualPath != null)
+                        {
+                            job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                        }
                     }
-                    else if (col.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(col.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                    }
+
+                    task = job.Complete();
+                    tasks.Add(task);
                 }
 
-                if (archive != null)
+                if (FeatureFlags.EnableCollisionPipeline)
                 {
-                    job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, colassets);
+                    job = ResourceManager.CreateNewJob($@"Loading {amapid} collisions");
+                    string archive = null;
+                    HashSet<string> colassets = new();
+                    foreach (AssetDescription col in colsToLoad)
+                    {
+                        if (col.AssetArchiveVirtualPath != null)
+                        {
+                            //job.AddLoadArchiveTask(col.AssetArchiveVirtualPath, false);
+                            archive = col.AssetArchiveVirtualPath;
+                            colassets.Add(col.AssetVirtualPath);
+                        }
+                        else if (col.AssetVirtualPath != null)
+                        {
+                            job.AddLoadFileTask(col.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                        }
+                    }
+
+                    if (archive != null)
+                    {
+                        job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, colassets);
+                    }
+
+                    task = job.Complete();
+                    tasks.Add(task);
+                }
+
+
+                job = ResourceManager.CreateNewJob(@"Loading chrs");
+                foreach (AssetDescription chr in chrsToLoad)
+                {
+                    if (chr.AssetArchiveVirtualPath != null)
+                    {
+                        job.AddLoadArchiveTask(chr.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                            ResourceManager.ResourceType.Flver);
+                    }
+                    else if (chr.AssetVirtualPath != null)
+                    {
+                        job.AddLoadFileTask(chr.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                    }
                 }
 
                 task = job.Complete();
                 tasks.Add(task);
-            }
 
-
-            job = ResourceManager.CreateNewJob(@"Loading chrs");
-            foreach (AssetDescription chr in chrsToLoad)
-            {
-                if (chr.AssetArchiveVirtualPath != null)
+                job = ResourceManager.CreateNewJob(@"Loading objs");
+                foreach (AssetDescription obj in objsToLoad)
                 {
-                    job.AddLoadArchiveTask(chr.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.Flver);
-                }
-                else if (chr.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(chr.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-            }
-
-            task = job.Complete();
-            tasks.Add(task);
-
-            job = ResourceManager.CreateNewJob(@"Loading objs");
-            foreach (AssetDescription obj in objsToLoad)
-            {
-                if (obj.AssetArchiveVirtualPath != null)
-                {
-                    job.AddLoadArchiveTask(obj.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.Flver);
-                }
-                else if (obj.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(obj.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-            }
-
-            task = job.Complete();
-            tasks.Add(task);
-
-            job = ResourceManager.CreateNewJob(@"Loading Navmeshes");
-            if (Project.Type == ProjectType.DS3)
-            {
-                AssetDescription nav = ModelAssetLocator.GetHavokNavmeshes(amapid);
-                job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                    ResourceManager.ResourceType.NavmeshHKX);
-            }
-            else
-            {
-                foreach (AssetDescription nav in navsToLoad)
-                {
-                    if (nav.AssetArchiveVirtualPath != null)
+                    if (obj.AssetArchiveVirtualPath != null)
                     {
-                        job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                            false);
+                        job.AddLoadArchiveTask(obj.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                            ResourceManager.ResourceType.Flver);
                     }
-                    else if (nav.AssetVirtualPath != null)
+                    else if (obj.AssetVirtualPath != null)
                     {
-                        job.AddLoadFileTask(nav.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                        job.AddLoadFileTask(obj.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                     }
                 }
+
+                task = job.Complete();
+                tasks.Add(task);
+
+                job = ResourceManager.CreateNewJob(@"Loading Navmeshes");
+                if (Project.Type == ProjectType.DS3)
+                {
+                    AssetDescription nav = ModelAssetLocator.GetHavokNavmeshes(amapid);
+                    job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceManager.ResourceType.NavmeshHKX);
+                }
+                else
+                {
+                    foreach (AssetDescription nav in navsToLoad)
+                    {
+                        if (nav.AssetArchiveVirtualPath != null)
+                        {
+                            job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                                false);
+                        }
+                        else if (nav.AssetVirtualPath != null)
+                        {
+                            job.AddLoadFileTask(nav.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                        }
+                    }
+                }
+
+                task = job.Complete();
+                tasks.Add(task);
+
+                // Real bad hack
+                EnvMapTextures = TextureAssetLocator.GetEnvMapTextureNames(amapid);
+
+                ScheduleTextureRefresh();
             }
-
-            task = job.Complete();
-            tasks.Add(task);
-
-            // Real bad hack
-            EnvMapTextures = TextureAssetLocator.GetEnvMapTextureNames(amapid);
-
-            ScheduleTextureRefresh();
 
             // After everything loads, do some additional checks:
             await Task.WhenAll(tasks);
             postLoad = true;
 
-            // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
-            foreach (Entity obj in map.Objects)
+            if (IsRendering)
             {
-                obj.UpdateRenderModel();
+                // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
+                foreach (Entity obj in map.Objects)
+                {
+                    obj.UpdateRenderModel();
+                }
             }
 
             // Check for duplicate EntityIDs

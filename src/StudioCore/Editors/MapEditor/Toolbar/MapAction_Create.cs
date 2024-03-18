@@ -37,6 +37,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Configure(ViewportSelection _selection)
         {
+            var width = ImGui.GetWindowWidth();
+            var height = ImGui.GetWindowHeight();
+
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Create)
             {
                 ImGui.Text("Create a new object within the target map.");
@@ -100,7 +103,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     if (CFG.Current.Toolbar_Create_Part)
                     {
                         ImGui.Text("Part Type:");
-                        ImGui.BeginChild("msb_part_selection");
+                        ImGui.BeginChild("msb_part_selection", new Vector2((width - 10), (height / 4)));
 
                         foreach ((string, Type) p in _partsClasses)
                         {
@@ -123,7 +126,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         else
                         {
                             ImGui.Text("Region Type:");
-                            ImGui.BeginChild("msb_region_selection");
+
+                            ImGui.BeginChild("msb_region_selection", new Vector2((width - 10), (height / 4)));
 
                             foreach ((string, Type) p in _regionClasses)
                             {
@@ -140,7 +144,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     if (CFG.Current.Toolbar_Create_Event)
                     {
                         ImGui.Text("Event Type:");
-                        ImGui.BeginChild("msb_event_selection");
+                        ImGui.BeginChild("msb_event_selection", new Vector2((width - 10), (height / 4)));
 
                         foreach ((string, Type) p in _eventClasses)
                         {

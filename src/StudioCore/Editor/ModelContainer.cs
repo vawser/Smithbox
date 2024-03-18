@@ -69,10 +69,13 @@ public class ModelContainer : ObjectContainer
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
             var meshNode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
-            if (proxy.Submeshes.Count > 0)
+            if (Universe.IsRendering)
             {
-                meshNode.RenderSceneMesh = proxy.Submeshes[i];
-                proxy.Submeshes[i].SetSelectable(meshNode);
+                if (proxy.Submeshes.Count > 0)
+                {
+                    meshNode.RenderSceneMesh = proxy.Submeshes[i];
+                    proxy.Submeshes[i].SetSelectable(meshNode);
+                }
             }
 
             Objects.Add(meshNode);

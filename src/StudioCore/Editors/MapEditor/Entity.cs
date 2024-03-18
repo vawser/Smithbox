@@ -884,6 +884,7 @@ public class Entity : ISelectable, IDisposable
     {
         TempTransform = t;
         UseTempTransform = true;
+
         UpdateRenderModel();
     }
 
@@ -1094,6 +1095,11 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public virtual void UpdateRenderModel()
     {
+        if(!Universe.IsRendering)
+        {
+            return;
+        }
+
         if (!HasTransform)
         {
             return;
@@ -1430,6 +1436,11 @@ public class MsbEntity : Entity
     /// </summary>
     public override void UpdateRenderModel()
     {
+        if(!Universe.IsRendering)
+        {
+            return;
+        }
+
         if (Type == MsbEntityType.DS2Generator)
         {
         }

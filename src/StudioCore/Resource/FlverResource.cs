@@ -17,6 +17,7 @@ using StudioCore.Editors.MaterialEditor;
 using StudioCore.BanksMain;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Banks.BlockedTextureBank;
+using StudioCore.MsbEditor;
 
 namespace StudioCore.Resource;
 
@@ -1671,6 +1672,11 @@ public class FlverResource : IResource, IDisposable
 
     private bool LoadInternalDeS(AccessLevel al, ProjectType type)
     {
+        if (!Universe.IsRendering)
+        {
+            return true;
+        }
+
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
             GPUMeshes = new FlverSubmesh[FlverDeS.Meshes.Count()];
@@ -1719,6 +1725,11 @@ public class FlverResource : IResource, IDisposable
 
     private bool LoadInternal(AccessLevel al, ProjectType type)
     {
+        if (!Universe.IsRendering)
+        {
+            return true;
+        }
+
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
             GPUMeshes = new FlverSubmesh[Flver.Meshes.Count()];

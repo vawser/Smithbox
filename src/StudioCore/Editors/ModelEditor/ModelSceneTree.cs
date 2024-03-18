@@ -98,15 +98,6 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
         {
             ImGui.PopStyleVar();
 
-            if (Smithbox.LowRequirementsMode)
-            {
-                ImGui.NewLine();
-                ImGui.Text("  This editor is not available in low requirements mode.");
-                ImGui.End();
-                ImGui.PopStyleColor();
-                return;
-            }
-
             // Tree List
             ImGui.BeginChild("listtree");
 

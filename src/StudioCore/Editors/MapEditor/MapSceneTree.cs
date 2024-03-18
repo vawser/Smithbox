@@ -651,16 +651,6 @@ public class MapSceneTree : IActionEventHandler
 
             ImGui.PopStyleVar();
 
-            // Low Requirements
-            if (Smithbox.LowRequirementsMode)
-            {
-                ImGui.NewLine();
-                ImGui.Text("  This editor is not available in low requirements mode.");
-                ImGui.End();
-                ImGui.PopStyleColor();
-                return;
-            }
-
             if (Project.Type is ProjectType.DS2S)
             {
                 if (ParamBank.PrimaryBank.IsLoadingParams)
