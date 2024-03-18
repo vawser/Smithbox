@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace StudioCore.Banks.MappingBank;
+namespace StudioCore.Banks.CorrectedTextureBank;
 
 [JsonSourceGenerationOptions(
     WriteIndented = true,
@@ -14,18 +14,18 @@ namespace StudioCore.Banks.MappingBank;
     IncludeFields = true,
     ReadCommentHandling = JsonCommentHandling.Skip)
 ]
-[JsonSerializable(typeof(TexturePathCorrectionResource))]
-[JsonSerializable(typeof(TexturePathCorrectionReference))]
-public partial class TexturePathCorrectionSerializationContext
+[JsonSerializable(typeof(CorrectedTextureResource))]
+[JsonSerializable(typeof(CorrectedTextureReference))]
+public partial class CorrectedTextureSerializationContext
     : JsonSerializerContext
 { }
 
-public class TexturePathCorrectionResource
+public class CorrectedTextureResource
 {
-    public List<TexturePathCorrectionReference> list { get; set; }
+    public List<CorrectedTextureReference> list { get; set; }
 }
 
-public class TexturePathCorrectionReference
+public class CorrectedTextureReference
 {
     public string VirtualPath { get; set; }
     public string CorrectedPath { get; set; }

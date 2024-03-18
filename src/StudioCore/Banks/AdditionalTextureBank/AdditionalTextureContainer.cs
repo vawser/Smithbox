@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Banks.ChrLinkBank
 {
-    public class AssetLinkContainer
+    public class AdditionalTextureContainer
     {
-        public AssetLinkResource Data;
+        public AdditionalTextureResource Data;
 
-        public AssetLinkContainer(bool load)
+        public AdditionalTextureContainer(bool load)
         {
             if(load)
             {
@@ -26,19 +26,19 @@ namespace StudioCore.Banks.ChrLinkBank
             }
         }
 
-        private AssetLinkResource LoadMappingJSON()
+        private AdditionalTextureResource LoadMappingJSON()
         {
-            var baseResource = new AssetLinkResource();
+            var baseResource = new AdditionalTextureResource();
 
             var baseResourcePath = "";
 
-            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Mappings\\{Project.GetGameIDForDir()}\\AssetLinks.json";
+            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Mappings\\{Project.GetGameIDForDir()}\\AdditionalTextures.json";
 
             if (File.Exists(baseResourcePath))
             {
                 using (var stream = File.OpenRead(baseResourcePath))
                 {
-                    baseResource = JsonSerializer.Deserialize(stream, AssetLinkSerializationContext.Default.AssetLinkResource);
+                    baseResource = JsonSerializer.Deserialize(stream, AdditionalTextureSerializationContext.Default.AdditionalTextureResource);
                 }
             }
             else

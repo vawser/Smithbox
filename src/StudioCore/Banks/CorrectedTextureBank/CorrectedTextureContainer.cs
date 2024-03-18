@@ -8,30 +8,30 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace StudioCore.Banks.MappingBank
+namespace StudioCore.Banks.CorrectedTextureBank
 {
-    public class TexturePathCorrectionContainer
+    public class CorrectedTextureContainer
     {
-        public TexturePathCorrectionResource Data;
+        public CorrectedTextureResource Data;
 
-        public TexturePathCorrectionContainer()
+        public CorrectedTextureContainer()
         {
             Data = LoadMappingJSON();
         }
 
-        private TexturePathCorrectionResource LoadMappingJSON()
+        private CorrectedTextureResource LoadMappingJSON()
         {
-            var baseResource = new TexturePathCorrectionResource();
+            var baseResource = new CorrectedTextureResource();
 
             var baseResourcePath = "";
 
-            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Mappings\\{Project.GetGameIDForDir()}\\TexturePathCorrections.json";
+            baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Mappings\\{Project.GetGameIDForDir()}\\CorrectedTextures.json";
 
             if (File.Exists(baseResourcePath))
             {
                 using (var stream = File.OpenRead(baseResourcePath))
                 {
-                    baseResource = JsonSerializer.Deserialize(stream, TexturePathCorrectionSerializationContext.Default.TexturePathCorrectionResource);
+                    baseResource = JsonSerializer.Deserialize(stream, CorrectedTextureSerializationContext.Default.CorrectedTextureResource);
                 }
             }
             else

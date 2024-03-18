@@ -83,6 +83,73 @@
             "VirtualPath": "chr/3950/tex/c3950_a", 
             "CorrectedPath": "chr/c3950/tex/c3950_a",
             "AssetID": "c3950"
+        },
+        // Vulgar Militia
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_bd_hair_a", 
+            "CorrectedPath": "chr/c4321/tex/c4320_bd_hair_a",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_bd_hair_n", 
+            "CorrectedPath": "chr/c4321/tex/c4320_bd_hair_n",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_am_a", 
+            "CorrectedPath": "chr/c4321/tex/c4320_am_a",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_am_n", 
+            "CorrectedPath": "chr/c4321/tex/c4320_am_n",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_face_a", 
+            "CorrectedPath": "chr/c4321/tex/c4320_face_a",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_face_n", 
+            "CorrectedPath": "chr/c4321/tex/c4320_face_n",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_lg_a", 
+            "CorrectedPath": "chr/c4321/tex/c4320_lg_a",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_lg_n", 
+            "CorrectedPath": "chr/c4321/tex/c4320_lg_n",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_bd_a", 
+            "CorrectedPath": "chr/c4321/tex/c4320_bd_a",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_bd_n", 
+            "CorrectedPath": "chr/c4321/tex/c4320_bd_n",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_hd_a", 
+            "CorrectedPath": "chr/c4321/tex/c4320_hd_a",
+            "AssetID": "c4321"
+        },
+        { 
+            "VirtualPath": "chr/c4320/tex/c4320_hd_n", 
+            "CorrectedPath": "chr/c4321/tex/c4320_hd_n",
+            "AssetID": "c4321"
+        },
+        // Magma Wyrm
+        { 
+            "VirtualPath": "chr/c4910/tex/aat100_leather_04_n", 
+            "CorrectedPath": "aat/aat100_leather_01_a",
+            "AssetID": "c4910"
         }
     ]
 }

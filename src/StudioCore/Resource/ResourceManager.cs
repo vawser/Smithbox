@@ -997,8 +997,6 @@ public static class ResourceManager
 
                     if (path != null && File.Exists(path))
                     {
-                        //TaskLogs.AddLog($"texpath: {texpath}");
-
                         _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
                             Path.GetDirectoryName(texpath).Replace('\\', '/'), path,
                             AccessLevel.AccessGPUOptimizedOnly, Project.Type));

@@ -16,6 +16,7 @@ using Veldrid.Utilities;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.BanksMain;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Banks.BlockedTextureBank;
 
 namespace StudioCore.Resource;
 
@@ -271,13 +272,8 @@ public class FlverResource : IResource, IDisposable
         {
             string virtualPath = TexturePathToVirtual(path.ToLower());
 
-            // Correct texture paths if needed
-            var texturePathCorrection = TexturePathCorrections.Bank.Entries.list.Find(x => x.VirtualPath == virtualPath);
-            if (texturePathCorrection != null)
-            {
-                var overridePath = texturePathCorrection.CorrectedPath;
-                virtualPath = overridePath;
-            }
+            // Correct path if it is malformed (as game itself ignores this)
+            virtualPath = CorrectedTextures.Bank.CorrectTexturePath(virtualPath);
 
             ResourceManager.AddResourceListener<TextureResource>(virtualPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;

@@ -1,0 +1,291 @@
+{
+    "list": [
+        // Phillia, Towering Little Sister
+        { 
+            "BaseID": "c3171",
+            "AdditionalIDs": [
+                "c3170"
+            ]
+        },
+        // Oracle Envoy (Large)
+        { 
+            "BaseID": "c3620",
+            "AdditionalIDs": [
+                "c3610"
+            ]
+        },
+        // Oracle Envoy (Giant)
+        { 
+            "BaseID": "c3630",
+            "AdditionalIDs": [
+                "c3610"
+            ]
+        },
+        // Lusat
+        { 
+            "BaseID": "c3720",
+            "AdditionalIDs": [
+                "c3710"
+            ]
+        },
+        // White Wolf
+        { 
+            "BaseID": "c4071",
+            "AdditionalIDs": [
+                "c4070"
+            ]
+        },
+        // Demi-Human (Large)
+        { 
+            "BaseID": "c4101",
+            "AdditionalIDs": [
+                "c4100"
+            ]
+        },
+        // Scarab
+        { 
+            "BaseID": "c4191",
+            "AdditionalIDs": [
+                "c4190"
+            ]
+        },
+        // Giant Scarab
+        { 
+            "BaseID": "c4192",
+            "AdditionalIDs": [
+                "c4190"
+            ]
+        },
+        // Fingercreeper (Large)
+        { 
+            "BaseID": "c4241",
+            "AdditionalIDs": [
+                "c4240"
+            ]
+        },
+        // Fingercreeper (Small)
+        { 
+            "BaseID": "c4250",
+            "AdditionalIDs": [
+                "c4240"
+            ]
+        },
+        // Godrick Soldier
+        { 
+            "BaseID": "c4311",
+            "AdditionalIDs": [
+                "c4310"
+            ]
+        },
+        // Raya Lucaria Soldier
+        { 
+            "BaseID": "c4312",
+            "AdditionalIDs": [
+                "c4310"
+            ]
+        },
+        // Leyndell Soldier
+        { 
+            "BaseID": "c4313",
+            "AdditionalIDs": [
+                "c4310"
+            ]
+        },
+        // Radahn Soldier
+        { 
+            "BaseID": "c4314",
+            "AdditionalIDs": [
+                "c4310"
+            ]
+        },
+        // Mausoleum Soldier
+        { 
+            "BaseID": "c4315",
+            "AdditionalIDs": [
+                "c4310"
+            ]
+        },
+        // Haligtree Soldier
+        { 
+            "BaseID": "c4316",
+            "AdditionalIDs": [
+                "c4310"
+            ]
+        },
+        // Godrick Knight
+        { 
+            "BaseID": "c4351",
+            "AdditionalIDs": [
+                "c4350"
+            ]
+        },
+        // Cuckoo Knight
+        { 
+            "BaseID": "c4352",
+            "AdditionalIDs": [
+                "c4350"
+            ]
+        },
+        // Leyndell Knight
+        { 
+            "BaseID": "c4353",
+            "AdditionalIDs": [
+                "c4350"
+            ]
+        },
+        // Redmane Knight
+        { 
+            "BaseID": "c4354",
+            "AdditionalIDs": [
+                "c4350"
+            ]
+        },
+        // Mausoleum Knight
+        { 
+            "BaseID": "c4355",
+            "AdditionalIDs": [
+                "c4350"
+            ]
+        },
+        // Haligtree Knight
+        { 
+            "BaseID": "c4356",
+            "AdditionalIDs": [
+                "c4350"
+            ]
+        },
+        // Godrick Foot Soldier
+        { 
+            "BaseID": "c4371",
+            "AdditionalIDs": [
+                "c4370"
+            ]
+        },
+        // Raya Lucaria Foot Soldier
+        { 
+            "BaseID": "c4372",
+            "AdditionalIDs": [
+                "c4370"
+            ]
+        },
+        // Leyndell Foot Soldier
+        { 
+            "BaseID": "c4373",
+            "AdditionalIDs": [
+                "c4370"
+            ]
+        },
+        // Radahn Foot Soldier
+        { 
+            "BaseID": "c4374",
+            "AdditionalIDs": [
+                "c4370"
+            ]
+        },
+        // Mausoleum Foot Soldier
+        { 
+            "BaseID": "c4375",
+            "AdditionalIDs": [
+                "c4370"
+            ]
+        },
+        // Haligtree Foot Soldier
+        { 
+            "BaseID": "c4376",
+            "AdditionalIDs": [
+                "c4370"
+            ]
+        },
+        // Highwayman
+        { 
+            "BaseID": "c4377",
+            "AdditionalIDs": [
+                "c4370"
+            ]
+        },
+        // Glintstone Digger (Small Sack)
+        { 
+            "BaseID": "c4384",
+            "AdditionalIDs": [
+                "c4383"
+            ]
+        },
+        // Miranda Sprout
+        { 
+            "BaseID": "c4481",
+            "AdditionalIDs": [
+                "c4480"
+            ]
+        },
+        // Rotten Miranda Sprout
+        { 
+            "BaseID": "c4483",
+            "AdditionalIDs": [
+                "c4482"
+            ]
+        },
+        // Large Wormface
+        { 
+            "BaseID": "c4580",
+            "AdditionalIDs": [
+                "c4570"
+            ]
+        },
+        // Living Jar
+        { 
+            "BaseID": "c4491",
+            "AdditionalIDs": [
+                "c4490"
+            ]
+        },
+        // War Counselor Iji
+        { 
+            "BaseID": "c4604",
+            "AdditionalIDs": [
+                "c4600"
+            ]
+        },
+        // Rykard's Corpse
+        { 
+            "BaseID": "c4711",
+            "AdditionalIDs": [
+                "c4710"
+            ]
+        },
+        // Carrier Pigeon
+        { 
+            "BaseID": "c6072",
+            "AdditionalIDs": [
+                "c6070"
+            ]
+        },
+        // Malenia
+        { 
+            "BaseID": "c8900",
+            "AdditionalIDs": [
+                "c2120"
+            ]
+        },
+        // Beast Clergyman
+        { 
+            "BaseID": "c8901",
+            "AdditionalIDs": [
+                "c2110"
+            ]
+        },
+        // Rennala
+        { 
+            "BaseID": "c8903",
+            "AdditionalIDs": [
+                "c2030"
+            ]
+        },
+        // Mohg
+        { 
+            "BaseID": "c8905",
+            "AdditionalIDs": [
+                "c4800"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "list": [
+        { 
+            "BaseID": "dummy",
+            "AdditionalIDs": [
+                "dummy"
+            ]
+        }
+    ]
+}

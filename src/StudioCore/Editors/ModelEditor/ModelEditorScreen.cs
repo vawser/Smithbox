@@ -778,23 +778,14 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void LoadModel(string modelid, ModelEditorModelType modelType, string mapid = null)
     {
-        // Load passed model id
         LoadModelInternal(modelid, modelType, mapid);
 
-        // If present in the Asset Links list
-        // Load the textures of the additional IDs
-        if (AssetLinks.Bank.Entries != null)
+        // If model ID has additional textures associated with it, load them
+        if (AdditionalTextures.Bank.HasAdditionalTextures(modelid))
         {
-            if (AssetLinks.Bank.Entries.list.Any(x => x.BaseID == modelid))
+            foreach (var entry in AdditionalTextures.Bank.GetAdditionalTextures(modelid))
             {
-                TaskLogs.AddLog($"Detected {modelid}, loading additional models:");
-                var assetLink = AssetLinks.Bank.Entries.list.Find(x => x.BaseID == modelid);
-
-                foreach (var entry in assetLink.AdditionalIDs)
-                {
-                    TaskLogs.AddLog($"Texture Load: {entry}");
-                    LoadModelInternal(entry, modelType, mapid, true);
-                }
+                LoadModelInternal(entry, modelType, mapid, true);
             }
         }
     }

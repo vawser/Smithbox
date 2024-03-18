@@ -1,13 +1,14 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.ChrLinkBank;
 using StudioCore.Banks.FormatBank;
-using StudioCore.Banks.MappingBank;
+using StudioCore.Banks.CorrectedTextureBank;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.UserProject;
 using System.Collections.Generic;
+using StudioCore.Banks.BlockedTextureBank;
 
 namespace StudioCore.BanksMain;
 
@@ -32,8 +33,9 @@ public static class BankUtils
         MapGroupsBank.Bank = new MapGroupBank();
 
         // Mappings
-        TexturePathCorrections.Bank = new TexturePathCorrectionBank();
-        AssetLinks.Bank = new AssetLinkBank();
+        CorrectedTextures.Bank = new CorrectedTextureBank();
+        AdditionalTextures.Bank = new AdditionalTextureBank();
+        BlockedTextures.Bank = new BlockedTextureBank();
     }
 
     public static void ReloadBanks(ProjectSettings projectSettings, NewProjectOptions projectOptions)
@@ -56,8 +58,9 @@ public static class BankUtils
         MapGroupsBank.Bank.ReloadMapGroupBank();
 
         // Mappings
-        TexturePathCorrections.Bank.ReloadBank();
-        AssetLinks.Bank.ReloadBank();
+        CorrectedTextures.Bank.ReloadBank();
+        AdditionalTextures.Bank.ReloadBank();
+        BlockedTextures.Bank.ReloadBank();
     }
 }
 
@@ -207,11 +210,16 @@ public static class MapGroupsBank
 }
 
 // Mappings
-public static class TexturePathCorrections
+public static class CorrectedTextures
 {
-    public static TexturePathCorrectionBank Bank { get; set; }
+    public static CorrectedTextureBank Bank { get; set; }
 }
-public static class AssetLinks
+public static class AdditionalTextures
 {
-    public static AssetLinkBank Bank { get; set; }
+    public static AdditionalTextureBank Bank { get; set; }
 }
+public static class BlockedTextures
+{
+    public static BlockedTextureBank Bank { get; set; }
+}
+
