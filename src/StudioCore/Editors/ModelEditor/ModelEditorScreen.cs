@@ -30,6 +30,7 @@ using StudioCore.Interface;
 using StudioCore.Utilities;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Editors.ModelEditor.Toolbar;
+using System.Security.Cryptography;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -67,6 +68,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public ModelToolbarView _toolbarView;
 
+    public static string SelectedAssetID;
+
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         Rect = window.Bounds;
@@ -102,6 +105,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void OnInstantiateChr(string chrid)
     {
+        SelectedAssetID = chrid;
         CurrentlyLoadedModelType = ModelEditorModelType.Character;
         LoadModel(chrid, ModelEditorModelType.Character);
         UpdateLoadedModelInfo(chrid);
@@ -109,6 +113,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void OnInstantiateObj(string objid)
     {
+        SelectedAssetID = objid;
         CurrentlyLoadedModelType = ModelEditorModelType.Object;
         LoadModel(objid, ModelEditorModelType.Object);
         UpdateLoadedModelInfo(objid);
@@ -116,6 +121,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void OnInstantiateParts(string partsid)
     {
+        SelectedAssetID = partsid;
         CurrentlyLoadedModelType = ModelEditorModelType.Parts;
         LoadModel(partsid, ModelEditorModelType.Parts);
         UpdateLoadedModelInfo(partsid);
@@ -123,6 +129,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void OnInstantiateMapPiece(string mapid, string modelid)
     {
+        SelectedAssetID = $"{mapid}{modelid}";
         CurrentlyLoadedModelType = ModelEditorModelType.MapPiece;
         LoadModel(modelid, ModelEditorModelType.MapPiece, mapid);
         UpdateLoadedModelInfo(modelid, mapid);

@@ -431,6 +431,7 @@
     <None Update="Assets\FormatInfo\GPARAM\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Themes\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\MapGroups\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Mappings\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

@@ -16,6 +16,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using StudioCore.Settings;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Resource;
 
@@ -941,7 +942,6 @@ public static class ResourceManager
                 {
                     var texpath = r.Key;
                     string path = null;
-
                     if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
                     {
                         if (texpath.StartsWith("aet/"))
@@ -997,8 +997,10 @@ public static class ResourceManager
 
                     if (path != null && File.Exists(path))
                     {
+                        TaskLogs.AddLog($"texpath: {texpath}");
+
                         _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                            Path.GetDirectoryName(r.Key).Replace('\\', '/'), path,
+                            Path.GetDirectoryName(texpath).Replace('\\', '/'), path,
                             AccessLevel.AccessGPUOptimizedOnly, Project.Type));
                     }
                 }

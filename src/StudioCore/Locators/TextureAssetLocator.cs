@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.BanksMain;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -113,8 +114,12 @@ public static class TextureAssetLocator
 
     public static string GetChrTexturePath(string chrid)
     {
+        var overrideFilePath = "";
+
         if (Project.Type is ProjectType.DES)
-            return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}\{chrid}.tpf");
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}\{chrid}.tpf");
+        }
 
         if (Project.Type is ProjectType.DS1)
         {
@@ -122,40 +127,59 @@ public static class TextureAssetLocator
             if (path != null)
                 return path;
 
-            return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
         }
 
         if (Project.Type is ProjectType.DS2S)
-            return LocatorUtils.GetOverridenFilePath($@"model\chr\{chrid}.texbnd");
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"model\chr\{chrid}.texbnd");
+        }
 
         if (Project.Type is ProjectType.DS1R)
+        {
             // TODO: Some textures require getting chrtpfbhd from chrbnd, then using it with chrtpfbdt in chr folder.
-            return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
+        }
 
         if (Project.Type is ProjectType.BB)
-            return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_2.tpf.dcx");
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_2.tpf.dcx");
+        }
 
         if (Project.Type is ProjectType.DS3 or ProjectType.SDT)
-            return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
+        }
 
         if (Project.Type is ProjectType.ER)
+        {
             // TODO: Maybe add an option down the line to load lower quality
-            return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_h.texbnd.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_h.texbnd.dcx");
+        }
 
         if (Project.Type is ProjectType.AC6)
-            return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
+        }
+
+        if(overrideFilePath != null)
+        {
+            return overrideFilePath;
+        }
 
         return null;
     }
 
     public static AssetDescription GetChrTextures(string chrid)
     {
+        var path = "";
         AssetDescription ad = new();
         ad.AssetArchiveVirtualPath = null;
         ad.AssetPath = null;
+
         if (Project.Type is ProjectType.DES)
         {
-            var path = GetChrTexturePath(chrid);
+            path = GetChrTexturePath(chrid);
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -164,7 +188,7 @@ public static class TextureAssetLocator
         }
         else if (Project.Type is ProjectType.DS1)
         {
-            var path = GetChrTexturePath(chrid);
+            path = GetChrTexturePath(chrid);
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -177,7 +201,7 @@ public static class TextureAssetLocator
         else if (Project.Type is ProjectType.DS1R)
         {
             // TODO: Some textures require getting chrtpfbhd from chrbnd, then using it with chrtpfbdt in chr folder.
-            var path = GetChrTexturePath(chrid);
+            path = GetChrTexturePath(chrid);
             if (path != null)
             {
                 ad = new AssetDescription();
@@ -187,7 +211,7 @@ public static class TextureAssetLocator
         }
         else if (Project.Type is ProjectType.DS2S)
         {
-            var path = GetChrTexturePath(chrid);
+            path = GetChrTexturePath(chrid);
             if (path != null)
             {
                 ad = new AssetDescription();
@@ -197,7 +221,7 @@ public static class TextureAssetLocator
         }
         else if (Project.Type is ProjectType.BB)
         {
-            var path = GetChrTexturePath(chrid);
+            path = GetChrTexturePath(chrid);
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -206,7 +230,7 @@ public static class TextureAssetLocator
         }
         else if (Project.Type is ProjectType.DS3 or ProjectType.SDT)
         {
-            var path = GetChrTexturePath(chrid);
+            path = GetChrTexturePath(chrid);
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -215,7 +239,7 @@ public static class TextureAssetLocator
         }
         else if (Project.Type is ProjectType.ER or ProjectType.AC6)
         {
-            var path = GetChrTexturePath(chrid);
+            path = GetChrTexturePath(chrid);
             if (path != null)
             {
                 ad.AssetPath = path;

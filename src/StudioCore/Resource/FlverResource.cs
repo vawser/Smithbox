@@ -14,6 +14,8 @@ using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Utilities;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.BanksMain;
+using StudioCore.Editors.ModelEditor;
 
 namespace StudioCore.Resource;
 
@@ -268,7 +270,35 @@ public class FlverResource : IResource, IDisposable
         if (!dest.TextureResourceFilled[(int)textureType])
         {
             string virtualPath = TexturePathToVirtual(path.ToLower());
-            //TaskLogs.AddLog($"Virtual: {virtualPath}");
+
+            TaskLogs.AddLog($"***{ModelEditorScreen.SelectedAssetID}***");
+            TaskLogs.AddLog($"virtualPath: {virtualPath}");
+
+            // Texture Path Mappings
+            if (TextureMappingBank.Bank.Entries.list != null)
+            {
+                foreach (var entry in TextureMappingBank.Bank.Entries.list)
+                {
+                    bool match = false;
+                    //TaskLogs.AddLog($"entry.AssetID: {entry.AssetID}");
+                    //TaskLogs.AddLog($"ModelEditorScreen.SelectedAssetID: {ModelEditorScreen.SelectedAssetID}");
+
+                    if (entry.AssetID == ModelEditorScreen.SelectedAssetID)
+                    {
+                        if (virtualPath == entry.VirtualPath)
+                        {
+                            virtualPath = entry.OverridePath;
+                            match = true;
+                        }
+                    }
+
+                    if(match)
+                    {
+                        TaskLogs.AddLog($"overridePath: {virtualPath}");
+                        continue;
+                    }
+                }
+            }
 
             ResourceManager.AddResourceListener<TextureResource>(virtualPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;

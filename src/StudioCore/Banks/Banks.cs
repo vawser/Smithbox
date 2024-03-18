@@ -1,5 +1,6 @@
 ﻿using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
+using StudioCore.Banks.MappingBank;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Editors.MaterialEditor;
@@ -28,6 +29,9 @@ public static class BankUtils
         // Data
         MaterialResourceBank.Setup();
         MapGroupsBank.Bank = new MapGroupBank();
+
+        // Mappings
+        TextureMappingBank.Bank = new MappingBank(MappingBankType.Texture);
     }
 
     public static void ReloadBanks(ProjectSettings projectSettings, NewProjectOptions projectOptions)
@@ -48,6 +52,9 @@ public static class BankUtils
         ParamBank.ReloadParams(projectSettings, projectOptions);
         MaterialResourceBank.Setup();
         MapGroupsBank.Bank.ReloadMapGroupBank();
+
+        // Mappings
+        TextureMappingBank.Bank.ReloadBank();
     }
 }
 
@@ -194,4 +201,10 @@ public static class GparamFormatBank
 public static class MapGroupsBank
 {
     public static MapGroupBank Bank { get; set; }
+}
+
+// Mappings
+public static class TextureMappingBank
+{
+    public static MappingBank Bank { get; set; }
 }
