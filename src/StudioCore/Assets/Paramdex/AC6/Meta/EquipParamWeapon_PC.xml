@@ -321,6 +321,7 @@
     <weaponOverheatedCoolingDelay AltName="Overheated Weapon Cooling Delay" />
     <inheritanceWeaponParamId AltName="Weapon Inheritance" Refs="EquipParamWeapon" Wiki="Inherits fields from referenced weapon." />
     <menuShootCount AltName="Displayed Shoot Count" />
+    <menuChargeStateCategory AltName="Display Charged State Category" Wiki="Whether to show base charge or full charge values in menu. Value 100 for regular weapons, 110 for two stage weapons. Unknown if this value is derived or just an enum.">
     <demonstrationVideoBinkId AltName="Demostration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" />
     <pulseArmorRadius AltName="Pulse Armor: Radius" Wiki="Size of effective pulse armor (see pulseArmorVisualRadius for visual radius)." />
     <pulseArmorVisualRadius AltName="Pulse Armor: Visual Radius" Wiki="Size of pulse armor visuals (see pulseArmorRadius for effective radius)." />

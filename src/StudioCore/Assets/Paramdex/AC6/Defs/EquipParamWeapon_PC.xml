@@ -593,7 +593,7 @@
     <Field Def="s16 Unk0x5B6"></Field>
     <Field Def="s8 UnkSbyte0x5B8"></Field>
     <Field Def="u8 UnkByte0x5B9"></Field>
-    <Field Def="s16 UnkShort0x5BA"></Field>
+    <Field Def="s16 menuChargeStateCategory"></Field>
     <Field Def="u8 UnkByte0x5BC"></Field>
     <Field Def="u8 UnkByte0x5BD"></Field>
     <Field Def="u8 UnkByte0x5BE"></Field>
