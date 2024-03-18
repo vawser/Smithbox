@@ -31,6 +31,7 @@ using StudioCore.Utilities;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Editors.ModelEditor.Toolbar;
 using System.Security.Cryptography;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -78,7 +79,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         if (device != null)
         {
             RenderScene = new RenderScene();
-            Viewport = new Viewport(ViewportType.ModelEditor,"Modeleditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width, Rect.Height);
+            Viewport = new Viewport(ViewportType.ModelEditor, "Modeleditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width, Rect.Height);
         }
         else
         {
@@ -497,7 +498,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);  
+        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
 
         Vector3 clear_color = new(114f / 255f, 144f / 255f, 154f / 255f);
         //ImGui.Text($@"Viewport size: {Viewport.Width}x{Viewport.Height}");
@@ -531,7 +532,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         Entity selected = first as Entity;
 
         FlverResource r = _flverhandle.Get();
-        
+
         ModelSceneTree.Model.DuplicateMeshIfValid(selected, r);
     }
 
@@ -570,7 +571,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void Save()
     {
-        if(_loadedModelInfo != null)
+        if (_loadedModelInfo != null)
         {
             // Copy the binder to the mod directory if it does not already exist.
 
@@ -777,6 +778,29 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void LoadModel(string modelid, ModelEditorModelType modelType, string mapid = null)
     {
+        // Load passed model id
+        LoadModelInternal(modelid, modelType, mapid);
+
+        // If present in the Asset Links list
+        // Load the textures of the additional IDs
+        if (AssetLinks.Bank.Entries != null)
+        {
+            if (AssetLinks.Bank.Entries.list.Any(x => x.BaseID == modelid))
+            {
+                TaskLogs.AddLog($"Detected {modelid}, loading additional models:");
+                var assetLink = AssetLinks.Bank.Entries.list.Find(x => x.BaseID == modelid);
+
+                foreach (var entry in assetLink.AdditionalIDs)
+                {
+                    TaskLogs.AddLog($"Texture Load: {entry}");
+                    LoadModelInternal(entry, modelType, mapid, true);
+                }
+            }
+        }
+    }
+
+    public void LoadModelInternal(string modelid, ModelEditorModelType modelType, string mapid = null, bool skipModel = false)
+    {
         AssetDescription asset;
         AssetDescription assettex;
         var filt = RenderFilter.All;
@@ -806,26 +830,34 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 break;
         }
 
-        if (_renderMesh != null)
+        // Ignore this if we are only loading textures
+        if (!skipModel)
         {
-            _renderMesh.Dispose();
-        }
+            if (_renderMesh != null)
+            {
+                _renderMesh.Dispose();
+            }
 
-        _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-            RenderScene, asset.AssetVirtualPath, ModelMarkerType.None);
-        //_renderMesh.DrawFilter = filt;
-        _renderMesh.World = Matrix4x4.Identity;
-        _currentModel = modelid;
+            _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
+                RenderScene, asset.AssetVirtualPath, ModelMarkerType.None);
+            //_renderMesh.DrawFilter = filt;
+            _renderMesh.World = Matrix4x4.Identity;
+            _currentModel = modelid;
+        }
 
         if (!ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessFull))
         {
-            if (asset.AssetArchiveVirtualPath != null)
+            // Ignore this if we are only loading textures
+            if (!skipModel)
             {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessFull);
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessFull);
+                }
             }
 
             if (assettex.AssetArchiveVirtualPath != null)

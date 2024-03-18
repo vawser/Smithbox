@@ -271,33 +271,12 @@ public class FlverResource : IResource, IDisposable
         {
             string virtualPath = TexturePathToVirtual(path.ToLower());
 
-            TaskLogs.AddLog($"***{ModelEditorScreen.SelectedAssetID}***");
-            TaskLogs.AddLog($"virtualPath: {virtualPath}");
-
-            // Texture Path Mappings
-            if (TextureMappingBank.Bank.Entries.list != null)
+            // Correct texture paths if needed
+            var texturePathCorrection = TexturePathCorrections.Bank.Entries.list.Find(x => x.VirtualPath == virtualPath);
+            if (texturePathCorrection != null)
             {
-                foreach (var entry in TextureMappingBank.Bank.Entries.list)
-                {
-                    bool match = false;
-                    //TaskLogs.AddLog($"entry.AssetID: {entry.AssetID}");
-                    //TaskLogs.AddLog($"ModelEditorScreen.SelectedAssetID: {ModelEditorScreen.SelectedAssetID}");
-
-                    if (entry.AssetID == ModelEditorScreen.SelectedAssetID)
-                    {
-                        if (virtualPath == entry.VirtualPath)
-                        {
-                            virtualPath = entry.OverridePath;
-                            match = true;
-                        }
-                    }
-
-                    if(match)
-                    {
-                        TaskLogs.AddLog($"overridePath: {virtualPath}");
-                        continue;
-                    }
-                }
+                var overridePath = texturePathCorrection.CorrectedPath;
+                virtualPath = overridePath;
             }
 
             ResourceManager.AddResourceListener<TextureResource>(virtualPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);

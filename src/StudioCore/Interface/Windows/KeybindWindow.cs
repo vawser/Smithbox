@@ -39,11 +39,11 @@ public class KeybindWindow
 
         KeybindSection("Core", binds, KeybindCategory.Core, 0);
         KeybindSection("Window", binds, KeybindCategory.Window, 1);
-        KeybindSection("Viewport", binds, KeybindCategory.Viewport, 2);
-        KeybindSection("Map Editor", binds, KeybindCategory.MapEditor, 3);
-        KeybindSection("Model Editor", binds, KeybindCategory.ModelEditor, 4);
-        KeybindSection("Param Editor", binds, KeybindCategory.ParamEditor, 5);
-        KeybindSection("Text Editor", binds, KeybindCategory.TextEditor, 6);
+        KeybindSection("Map Editor", binds, KeybindCategory.MapEditor, 2);
+        KeybindSection("Model Editor", binds, KeybindCategory.ModelEditor, 3);
+        KeybindSection("Param Editor", binds, KeybindCategory.ParamEditor, 4);
+        KeybindSection("Text Editor", binds, KeybindCategory.TextEditor, 5);
+        KeybindSection("Viewport", binds, KeybindCategory.Viewport, 6);
 
         if (ImGui.BeginTabItem($"Defaults"))
         {

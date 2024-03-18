@@ -1,4 +1,5 @@
 ﻿using StudioCore.Banks.AliasBank;
+using StudioCore.Banks.ChrLinkBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.MappingBank;
 using StudioCore.Editor;
@@ -31,7 +32,8 @@ public static class BankUtils
         MapGroupsBank.Bank = new MapGroupBank();
 
         // Mappings
-        TextureMappingBank.Bank = new MappingBank(MappingBankType.Texture);
+        TexturePathCorrections.Bank = new TexturePathCorrectionBank();
+        AssetLinks.Bank = new AssetLinkBank();
     }
 
     public static void ReloadBanks(ProjectSettings projectSettings, NewProjectOptions projectOptions)
@@ -54,7 +56,8 @@ public static class BankUtils
         MapGroupsBank.Bank.ReloadMapGroupBank();
 
         // Mappings
-        TextureMappingBank.Bank.ReloadBank();
+        TexturePathCorrections.Bank.ReloadBank();
+        AssetLinks.Bank.ReloadBank();
     }
 }
 
@@ -204,7 +207,11 @@ public static class MapGroupsBank
 }
 
 // Mappings
-public static class TextureMappingBank
+public static class TexturePathCorrections
 {
-    public static MappingBank Bank { get; set; }
+    public static TexturePathCorrectionBank Bank { get; set; }
+}
+public static class AssetLinks
+{
+    public static AssetLinkBank Bank { get; set; }
 }

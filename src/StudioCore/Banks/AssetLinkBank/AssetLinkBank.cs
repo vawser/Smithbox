@@ -7,38 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Banks.MappingBank
+namespace StudioCore.Banks.ChrLinkBank
 {
-    public class MappingBank
+    /// <summary>
+    /// For textures that are pointing to other file locations, and actually reside there.
+    /// This forces the Model Loading processes to load both the original and variant 
+    /// </summary>
+    public class AssetLinkBank
     {
-        public MappingContainer _MappingBank { get; set; }
+        public AssetLinkContainer _MappingBank { get; set; }
 
         public bool IsMappingBankLoading { get; set; }
         public bool CanReloadMappingBank { get; set; }
 
-        private string MappingInfoName = "";
-
-        private MappingBankType MappingBankType;
-
-        public MappingBank(MappingBankType mappingBankType)
+        public AssetLinkBank()
         {
             CanReloadMappingBank = false;
-
-            MappingBankType = mappingBankType;
-
-            if (MappingBankType is MappingBankType.Texture)
-            {
-                MappingInfoName = "Texture";
-            }
         }
 
-        public MappingResource Entries
+        public AssetLinkResource Entries
         {
             get
             {
                 if (IsMappingBankLoading)
                 {
-                    return new MappingResource();
+                    return new AssetLinkResource();
                 }
 
                 return _MappingBank.Data;
@@ -47,17 +40,17 @@ namespace StudioCore.Banks.MappingBank
 
         public void ReloadBank()
         {
-            TaskManager.Run(new TaskManager.LiveTask($"Mapping Info - Load {MappingInfoName} Mappings", TaskManager.RequeueType.None, false,
+            TaskManager.Run(new TaskManager.LiveTask($"Character ID Links - Load Mappings", TaskManager.RequeueType.None, false,
             () =>
             {
-                _MappingBank = new MappingContainer();
+                _MappingBank = new AssetLinkContainer(false);
                 IsMappingBankLoading = true;
 
                 if (Project.Type != ProjectType.Undefined)
                 {
                     try
                     {
-                        _MappingBank = new MappingContainer(MappingBankType);
+                        _MappingBank = new AssetLinkContainer(true);
                     }
                     catch (Exception e)
                     {

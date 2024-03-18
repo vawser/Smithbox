@@ -14,20 +14,20 @@ namespace StudioCore.Banks.MappingBank;
     IncludeFields = true,
     ReadCommentHandling = JsonCommentHandling.Skip)
 ]
-[JsonSerializable(typeof(MappingResource))]
-[JsonSerializable(typeof(MappingReference))]
-public partial class MappingResourceSerializationContext
+[JsonSerializable(typeof(TexturePathCorrectionResource))]
+[JsonSerializable(typeof(TexturePathCorrectionReference))]
+public partial class TexturePathCorrectionSerializationContext
     : JsonSerializerContext
 { }
 
-public class MappingResource
+public class TexturePathCorrectionResource
 {
-    public List<MappingReference> list { get; set; }
+    public List<TexturePathCorrectionReference> list { get; set; }
 }
 
-public class MappingReference
+public class TexturePathCorrectionReference
 {
     public string VirtualPath { get; set; }
-    public string OverridePath { get; set; }
+    public string CorrectedPath { get; set; }
     public string AssetID { get; set; }
 }

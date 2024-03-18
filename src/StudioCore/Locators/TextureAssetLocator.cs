@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.BanksMain;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -153,7 +154,7 @@ public static class TextureAssetLocator
 
         if (Project.Type is ProjectType.ER)
         {
-            // TODO: Maybe add an option down the line to load lower quality
+
             overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_h.texbnd.dcx");
         }
 
@@ -222,6 +223,7 @@ public static class TextureAssetLocator
         else if (Project.Type is ProjectType.BB)
         {
             path = GetChrTexturePath(chrid);
+
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -240,6 +242,7 @@ public static class TextureAssetLocator
         else if (Project.Type is ProjectType.ER or ProjectType.AC6)
         {
             path = GetChrTexturePath(chrid);
+
             if (path != null)
             {
                 ad.AssetPath = path;
@@ -250,6 +253,7 @@ public static class TextureAssetLocator
         return ad;
     }
 
+    
     public static AssetDescription GetObjTexture(string obj)
     {
         AssetDescription ad = new();
