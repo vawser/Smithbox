@@ -33,5 +33,5 @@ public static class FeatureFlags
     public static bool EnableCollisionPipeline = true;
 
     // Disable for release
-    public static bool EnableResourceListActions = true;
+    public static bool EnableResourceListActions = false;
 }
