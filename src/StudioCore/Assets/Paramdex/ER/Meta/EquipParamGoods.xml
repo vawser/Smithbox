@@ -216,18 +216,18 @@
         <Option Value="300" Name="Enemies attack Invaders" />
         <Option Value="301" Name="Law of Regression" />
         <Option Value="302" Name="Warp to Grace" />
-        <Option Value="303" Name="Conditional 1" />
-        <Option Value="304" Name="Conditional 2" />
-        <Option Value="305" Name="Conditional 3" />
-        <Option Value="306" Name="Conditional 4" />
-        <Option Value="307" Name="Conditional 5" />
-        <Option Value="308" Name="Conditional 6" />
-        <Option Value="309" Name="Conditional 7" />
-        <Option Value="310" Name="Conditional 8" />
-        <Option Value="311" Name="Conditional 9" />
+        <Option Value="303" Name="Accumulator 1" />
+        <Option Value="304" Name="Accumulator 2" />
+        <Option Value="305" Name="Accumulator 3" />
+        <Option Value="306" Name="Accumulator 4" />
+        <Option Value="307" Name="Accumulator 5" />
+        <Option Value="308" Name="Accumulator 6" />
+        <Option Value="309" Name="Accumulator 7" />
+        <Option Value="310" Name="Accumulator 8" />
+        <Option Value="311" Name="Accumulator 9" />
         <Option Value="312" Name="Unknown" />
         <Option Value="313" Name="Seek Guidance" />
-        <Option Value="314" Name="Add Guard Stability" />
+        <Option Value="314" Name="All Active Accumulators" />
         <Option Value="315" Name="Scale Attack Power with Equip Load" />
         <Option Value="316" Name="CalcCorrectGraph_33" />
         <Option Value="317" Name="Revoke Online Penalty" />

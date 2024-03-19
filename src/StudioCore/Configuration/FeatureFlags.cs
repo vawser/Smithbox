@@ -23,7 +23,7 @@ public static class FeatureFlags
     public static bool EnableEditor_TimeAct = false;
     public static bool EnableEditor_Cutscene = false;
     public static bool EnableEditor_Material = false;
-    public static bool EnableEditor_Particle = false;
+    public static bool EnableEditor_Particle = true;
     public static bool EnableEditor_Gparam = true;
     public static bool EnableEditor_EventScript = false;
     public static bool EnableEditor_TalkScript = false;
