@@ -604,12 +604,12 @@
     <Field Def="u8 UnkByte0x5C4"></Field>
     <Field Def="u8 Unk0x5C5"></Field>
     <Field Def="u8 Unk0x5C6"></Field>
-    <Field Def="u8 UnkByte0x5C7"></Field>
+    <Field Def="u8 displayChargedBlastRadius"></Field>
     <Field Def="s16 Unk0x5C8"></Field>
     <Field Def="s8 UnkSbyte0x5CA"></Field>
     <Field Def="s8 UnkSbyte0x5CB"></Field>
     <Field Def="s16 Unk0x5CC"></Field>
-    <Field Def="u8 UnkByte0x5CE"></Field>
+    <Field Def="u8 displayFullChargeTimeValue"></Field>
     <Field Def="u8 Unk0x5CF"></Field>
     <Field Def="s32 Unk0x5D0"></Field>
     <Field Def="s32 demonstrationVideoBinkId">

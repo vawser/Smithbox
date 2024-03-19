@@ -325,6 +325,8 @@
     <demonstrationVideoBinkId AltName="Demostration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" />
     <pulseArmorRadius AltName="Pulse Armor: Radius" Wiki="Size of effective pulse armor (see pulseArmorVisualRadius for visual radius)." />
     <pulseArmorVisualRadius AltName="Pulse Armor: Visual Radius" Wiki="Size of pulse armor visuals (see pulseArmorRadius for effective radius)." />
+    <displayFullChargeTimeValue AltName="Display Full Charge Time in Menu" />
+    <displayChargedBlastRadius AltName="Display Charged Blast Radius in Menu" />
   </Field>
   <Self />
 </PARAMMETA>

@@ -816,9 +816,9 @@
 Requires State Info 132" Enum="SP_EFFECT_CHANGE_TEAM_TYPE" />
     <dmypolyId AltName="Bullet Behavior ID - DmyPoly ID" Wiki="Damipoli ID. Damipoli ID range is 0 to 999.1000, 10000 is the category number." />
     <vfxId AltName="Effect VFX [0]" Wiki="Special effect VfxId (-1 disabled)" Refs="SpEffectVfxParam" />
-    <accumuOverFireId AltName="Accumulator - Over Value - SpEffect ID" Wiki="Special effect Id activated at the upper limit of the spirit ball" />
+    <accumuOverFireId AltName="Accumulator - Over Value - SpEffect ID" Wiki="Special effect Id activated at the upper limit of the spirit ball" Refs="SpEffectParam" />
     <accumuOverVal AltName="Accumulator - Over Value" Wiki="Genkitama upper limit" />
-    <accumuUnderFireId AltName="Accumulator - Under Value - SpEffect ID" Wiki="Special effect Id activated at the lower limit of the spirit ball" />
+    <accumuUnderFireId AltName="Accumulator - Under Value - SpEffect ID" Wiki="Special effect Id activated at the lower limit of the spirit ball" Refs="SpEffectParam" />
     <accumuUnderVal AltName="Accumulator - Under Value" Wiki="Genkitama lower limit" />
     <accumuVal AltName="Accumulator - Increment Value" Wiki="Genkitama accumulation value" />
     <eye_angX AltName="Vision - Overwrite Height Angle" Wiki="Override the findability angle x
