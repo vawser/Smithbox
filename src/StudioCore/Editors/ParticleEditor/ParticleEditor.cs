@@ -7,6 +7,7 @@ using ImGuiNET;
 using SoulsFormats;
 using StudioCore.Editor;
 using System.Reflection;
+using StudioCore.Editors;
 
 namespace StudioCore.ParticleEditor;
 
@@ -16,8 +17,19 @@ public class PropertyEditor
 
     public ActionManager ContextActionManager;
 
+    public FXR3 currentParticle;
+
     public PropertyEditor(ActionManager manager)
     {
         ContextActionManager = manager;
     }
+
+    public void OnGui(FXR3 particle)
+    {
+        currentParticle = particle;
+
+
+
+    }
 }
+

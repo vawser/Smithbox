@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -129,36 +130,33 @@ public static class ParticleBank
         TaskLogs.AddLog($"Particle File Bank - Load Complete");
     }
 
-    // TODO: FXR and FFXResourceList Load on click
-    /*
-    public static void LoadParticle(string path)
+    public static bool LoadParticle(string name, ParticleFileInfo info)
     {
-        if (path == null)
+        if(LoadedFXR.ContainsKey(name))
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading ffx file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading ffx file.",
-                    LogLevel.Warning);
-            return;
+            // Skip if already loaded
+            //TaskLogs.AddLog($"{name} has already been loaded.", LogLevel.Warning);
+            return false;
         }
 
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        ParticleFileInfo fileStruct = new ParticleFileInfo(name, path);
-
-        
-
-        foreach (var file in binder.Files)
+        foreach (var file in info.Binder.Files)
         {
-            if (file.Name.Contains(".fxr"))
+            var fileName = Path.GetFileNameWithoutExtension(file.Name);
+
+            if (fileName == name)
             {
                 try
                 {
                     FXR3 cFile = FXR3.Read(file.Bytes);
-                    fileStruct.ParticleFiles.Add(cFile);
+
+                    FxrInfo newFxrInfo = new FxrInfo();
+                    newFxrInfo.Parent = info;
+                    newFxrInfo.Name = fileName;
+                    newFxrInfo.Content = cFile;
+
+                    LoadedFXR.Add(name, newFxrInfo);
+
+                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -167,9 +165,8 @@ public static class ParticleBank
             }
         }
 
-        FileBank.Add(fileStruct, binder);
+        return false;
     }
-    */
 
     public static void SaveParticles()
     {

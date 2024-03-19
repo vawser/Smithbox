@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.BanksMain;
 using StudioCore.Configuration;
@@ -24,6 +25,8 @@ public class ParticleEditorScreen : EditorScreen
     public bool FirstFrame { get; set; }
 
     private ProjectSettings _projectSettings;
+
+    public PropertyEditor _propEditor;
 
     public ActionManager EditorActionManager = new();
 
@@ -52,6 +55,7 @@ public class ParticleEditorScreen : EditorScreen
     public ParticleEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _toolbarView = new ParticleToolbarView(this);
+        //_propEditor.OnGui();
     }
 
     public string EditorName => "Particle Editor##ParticleEditor";
@@ -280,8 +284,16 @@ public class ParticleEditorScreen : EditorScreen
                     {
                         _selectedParticleKey = i;
 
-                        // TODO: load FXR3
-                        _selectedParticleInfo = null;
+                        ParticleBank.LoadParticle(name, _selectedFileInfo);
+
+                        if (LoadedFXR.ContainsKey(name))
+                        {
+                            _selectedParticleInfo = LoadedFXR[name];
+                        }
+                        else
+                        {
+                            TaskLogs.AddLog($"LoadedFXR does not contain FxrInfo for {name}", LogLevel.Warning);
+                        }
                     }
 
                     DisplayAlias(name);
@@ -309,6 +321,13 @@ public class ParticleEditorScreen : EditorScreen
         if (_particleDataSearchInput != _particleDataSearchInputCache)
         {
             _particleDataSearchInputCache = _particleDataSearchInput;
+        }
+
+        if(_selectedParticleInfo != null && _selectedParticleKey != -1)
+        {
+            FXR3 particle = _selectedParticleInfo.Content;
+
+            _propEditor.OnGui(particle);
         }
 
         ImGui.End();
