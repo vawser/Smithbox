@@ -2,6 +2,7 @@
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
+using StudioCore.ParticleEditor;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
@@ -12,13 +13,13 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.GparamEditor.Toolbar
+namespace StudioCore.Editors.ParticleEditor.Toolbar
 {
-    public class GparamToolbarView
+    public class ParticleToolbarView
     {
-        private GparamEditorScreen _screen;
+        private ParticleEditorScreen _screen;
 
-        public GparamToolbarView(GparamEditorScreen screen)
+        public ParticleToolbarView(ParticleEditorScreen screen)
         {
             _screen = screen;
         }
@@ -28,22 +29,22 @@ namespace StudioCore.Editors.GparamEditor.Toolbar
             if (Project.Type == ProjectType.Undefined)
                 return;
 
-            if (!CFG.Current.Interface_GparamEditor_Toolbar)
+            if (!CFG.Current.Interface_ParticleEditor_Toolbar)
                 return;
 
             ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * Smithbox.GetUIScale(), ImGuiCond.FirstUseEver);
 
-            if (ImGui.Begin("Toolbar##GparamEditorToolbar"))
+            if (ImGui.Begin("Toolbar##ParticleEditorToolbar"))
             {
                 var width = ImGui.GetWindowWidth();
                 var height = ImGui.GetWindowHeight();
 
-                if (CFG.Current.Interface_GparamEditor_Toolbar_HorizontalOrientation)
+                if (CFG.Current.Interface_ParticleEditor_Toolbar_HorizontalOrientation)
                 {
                     ImGui.Columns(2);
 
-                    ImGui.BeginChild("##GparamEditorToolbar_Selection");
+                    ImGui.BeginChild("##ParticleEditorToolbar_Selection");
 
                     ShowActionList();
 
@@ -51,7 +52,7 @@ namespace StudioCore.Editors.GparamEditor.Toolbar
 
                     ImGui.NextColumn();
 
-                    ImGui.BeginChild("##GparamEditorToolbar_Configuration");
+                    ImGui.BeginChild("##ParticleEditorToolbar_Configuration");
 
                     ShowSelectedConfiguration();
 
@@ -59,13 +60,13 @@ namespace StudioCore.Editors.GparamEditor.Toolbar
                 }
                 else
                 {
-                    ImGui.BeginChild("##GparamEditorToolbar_Selection", new Vector2((width - 10), (height / 3)));
+                    ImGui.BeginChild("##ParticleEditorToolbar_Selection", new Vector2((width - 10), (height / 3)));
 
                     ShowActionList();
 
                     ImGui.EndChild();
 
-                    ImGui.BeginChild("##GparamEditorToolbar_Configuration");
+                    ImGui.BeginChild("##ParticleEditorToolbar_Configuration");
 
                     ShowSelectedConfiguration();
 
@@ -87,22 +88,22 @@ namespace StudioCore.Editors.GparamEditor.Toolbar
 
             if (ImGui.Button($"{ForkAwesome.Refresh}##SwitchOrientation"))
             {
-                CFG.Current.Interface_GparamEditor_Toolbar_HorizontalOrientation = !CFG.Current.Interface_GparamEditor_Toolbar_HorizontalOrientation;
+                CFG.Current.Interface_ParticleEditor_Toolbar_HorizontalOrientation = !CFG.Current.Interface_ParticleEditor_Toolbar_HorizontalOrientation;
             }
             ImguiUtils.ShowHoverTooltip("Toggle the orientation of the toolbar.");
             ImGui.SameLine();
 
             if (ImGui.Button($"{ForkAwesome.ExclamationTriangle}##PromptUser"))
             {
-                if (CFG.Current.Interface_GparamEditor_PromptUser)
+                if (CFG.Current.Interface_ParticleEditor_PromptUser)
                 {
-                    CFG.Current.Interface_GparamEditor_PromptUser = false;
-                    PlatformUtils.Instance.MessageBox("Gparam Editor Toolbar will no longer prompt the user.", "Smithbox", MessageBoxButtons.OK);
+                    CFG.Current.Interface_ParticleEditor_PromptUser = false;
+                    PlatformUtils.Instance.MessageBox("Particle Editor Toolbar will no longer prompt the user.", "Smithbox", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    CFG.Current.Interface_GparamEditor_PromptUser = true;
-                    PlatformUtils.Instance.MessageBox("Gparam Editor Toolbar will prompt user before applying certain toolbar actions.", "Smithbox", MessageBoxButtons.OK);
+                    CFG.Current.Interface_ParticleEditor_PromptUser = true;
+                    PlatformUtils.Instance.MessageBox("Particle Editor Toolbar will prompt user before applying certain toolbar actions.", "Smithbox", MessageBoxButtons.OK);
                 }
             }
             ImguiUtils.ShowHoverTooltip("Toggle whether certain toolbar actions prompt the user before applying.");

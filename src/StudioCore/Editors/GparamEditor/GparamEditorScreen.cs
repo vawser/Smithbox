@@ -212,10 +212,6 @@ public class GparamEditorScreen : EditorScreen
             {
                 GparamValueProperties();
             }
-            if (CFG.Current.Interface_GparamEditor_Toolbar)
-            {
-                
-            }
         }
 
         ImGui.PopStyleVar();

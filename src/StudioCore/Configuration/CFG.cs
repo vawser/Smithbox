@@ -94,15 +94,18 @@ public class CFG
     public bool Interface_GparamEditor_Toolbar = true;
     public bool Interface_GparamEditor_Toolbar_HorizontalOrientation = true;
 
+    public bool Interface_ParticleEditor_Files = true;
+    public bool Interface_ParticleEditor_Particles = true;
+    public bool Interface_ParticleEditor_Data = true;
+    public bool Interface_ParticleEditor_Toolbar = true;
+    public bool Interface_ParticleEditor_Toolbar_HorizontalOrientation = true;
+
     public bool Interface_MapEditor_PromptUser = true;
     public bool Interface_GparamEditor_PromptUser = true;
     public bool Interface_ModelEditor_PromptUser = true;
     public bool Interface_ParamEditor_PromptUser = true;
     public bool Interface_TextEditor_PromptUser = true;
-
-    public bool Interface_DisplayMapGroups = true;
-    public bool Interface_Display_Alias_for_Gparam = true;
-    public bool Interface_Display_Alias_for_Msb = true;
+    public bool Interface_ParticleEditor_PromptUser = true;
 
     // Fixed Window
     public Vector4 ImGui_MainBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
@@ -215,7 +218,7 @@ public class CFG
     public bool AutoLoadBank_Cutscene = false;
     public bool AutoLoadBank_Gparam = true;
     public bool AutoLoadBank_Material = false;
-    public bool AutoLoadBank_Particle = false;
+    public bool AutoLoadBank_Particle = true;
     public bool AutoLoadBank_EventScript = false;
     public bool AutoLoadBank_TalkScript = false;
     public bool AutoLoadBank_Textures = false;
@@ -314,8 +317,10 @@ public class CFG
     //****************************
     // Settings: Map Editor
     //****************************
-    public bool MapEditor_Always_List_Loaded_Maps = true;
+    public bool Interface_DisplayMapGroups = true;
+    public bool Interface_Display_Alias_for_Msb = true;
 
+    public bool MapEditor_Always_List_Loaded_Maps = true;
 
     public bool MapEditor_Enable_Commmunity_Names = true;
     public bool MapEditor_Enable_Commmunity_Hints = true;
@@ -433,6 +438,8 @@ public class CFG
     //****************************
     // Settings: Gparam Editor
     //****************************
+    public bool Interface_Display_Alias_for_Gparam = true;
+
     public bool Gparam_DisplayColorEditForVector4Fields = true;
     public bool Gparam_DisplayEmptyGroups = true;
     public bool Gparam_DisplayAddGroups = true;
@@ -455,6 +462,10 @@ public class CFG
     public string Gparam_QuickEdit_Multiply = "mult";
     public string Gparam_QuickEdit_SetByRow = "setbyrow";
 
+    //****************************
+    // Settings: Particle Editor
+    //****************************
+    public bool Interface_Display_Alias_for_Particles = true;
 
     //****************************
     // Windows

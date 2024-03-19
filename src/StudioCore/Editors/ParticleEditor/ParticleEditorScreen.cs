@@ -1,9 +1,17 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.BanksMain;
+using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Toolbar;
 using StudioCore.Editors.ParticleEditor;
+using StudioCore.Editors.ParticleEditor.Toolbar;
 using StudioCore.Editors.TalkEditor;
+using StudioCore.Interface;
 using StudioCore.UserProject;
+using StudioCore.Utilities;
+using System;
+using System.IO;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -15,21 +23,35 @@ public class ParticleEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
-    private readonly PropertyEditor _propEditor;
     private ProjectSettings _projectSettings;
 
     public ActionManager EditorActionManager = new();
 
+    // Files
     private ParticleFileInfo _selectedFileInfo;
     private IBinder _selectedBinder;
     private string _selectedBinderKey;
 
-    private FXR3 _selectedParticle;
+    private string _fileSearchInput = "";
+    private string _fileSearchInputCache = "";
+
+    // Particles
+    private FxrInfo _selectedParticleInfo;
     private int _selectedParticleKey;
+
+    private string _particleSearchInput = "";
+    private string _particleSearchInputCache = "";
+
+    private string _particleDataSearchInput = "";
+    private string _particleDataSearchInputCache = "";
+
+    private bool[] displayTruth;
+
+    public ParticleToolbarView _toolbarView;
 
     public ParticleEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _propEditor = new PropertyEditor(EditorActionManager);
+        _toolbarView = new ParticleToolbarView(this);
     }
 
     public string EditorName => "Particle Editor##ParticleEditor";
@@ -42,6 +64,61 @@ public class ParticleEditorScreen : EditorScreen
     }
     public void DrawEditorMenu()
     {
+        if (ImGui.BeginMenu("Edit"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem("Undo", KeyBindings.Current.Core_Undo.HintText, false, EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAction();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
+            if (ImGui.MenuItem("Undo All", "", false, EditorActionManager.CanUndo()))
+            {
+                EditorActionManager.UndoAllAction();
+            }
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Repeat}");
+            if (ImGui.MenuItem("Redo", KeyBindings.Current.Core_Redo.HintText, false, EditorActionManager.CanRedo()))
+            {
+                EditorActionManager.RedoAction();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        if (ImGui.BeginMenu("View"))
+        {
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Files"))
+            {
+                CFG.Current.Interface_ParticleEditor_Files = !CFG.Current.Interface_ParticleEditor_Files;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Files);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Particles"))
+            {
+                CFG.Current.Interface_ParticleEditor_Particles = !CFG.Current.Interface_ParticleEditor_Particles;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Particles);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Data"))
+            {
+                CFG.Current.Interface_ParticleEditor_Data = !CFG.Current.Interface_ParticleEditor_Data;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Data);
+
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Toolbar"))
+            {
+                CFG.Current.Interface_ParticleEditor_Toolbar = !CFG.Current.Interface_ParticleEditor_Toolbar;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ParticleEditor_Toolbar);
+
+            ImGui.EndMenu();
+        }
     }
 
     public void OnGUI(string[] initcmd)
@@ -49,6 +126,7 @@ public class ParticleEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -82,63 +160,190 @@ public class ParticleEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_ParticleEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
+        ParticleShortcuts();
+
         if (ParticleBank.IsLoaded)
         {
-            ParticleFileView();
+            if (CFG.Current.Interface_ParticleEditor_Files)
+            {
+                ParticleFileView();
+            }
+            if (CFG.Current.Interface_ParticleEditor_Particles)
+            {
+                ParticleListView();
+            }
+            if (CFG.Current.Interface_ParticleEditor_Data)
+            {
+                ParticleDataView();
+            }
         }
 
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
+
+        _toolbarView.OnGui();
     }
 
+    //*****************************
+    // Shortcuts
+    //*****************************
+    public void ParticleShortcuts()
+    {
+        // Keyboard shortcuts
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+        {
+            EditorActionManager.RedoAction();
+        }
+    }
+
+    //*****************************
+    // Windows
+    //*****************************
+    // Files
     public void ParticleFileView()
     {
         // File List
         ImGui.Begin("Files##ParticleFileList");
 
-        ImGui.Text($"File");
         ImGui.Separator();
 
-        foreach (var (info, binder) in ParticleBank.FileBank)
-        {
-            // Ignore the resource ffxbnd files
-            if (info.ParticleFiles.Count > 0)
-            {
-                if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
-                {
-                    _selectedParticleKey = -1; // Clear particle key if file is changed
+        ImGui.InputText($"Search", ref _fileSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
 
-                    _selectedBinderKey = info.Name;
-                    _selectedFileInfo = info;
-                    _selectedBinder = binder;
+        ImGui.Separator();
+
+        if (_fileSearchInput != _fileSearchInputCache)
+        {
+            _fileSearchInputCache = _fileSearchInput;
+        }
+
+        foreach (var info in ParticleBank.FileBank)
+        {
+            if (SearchFilters.IsEditorSearchMatch(_fileSearchInput, info.Name, "_"))
+            {
+                // Ignore the resource ffxbnd files
+                if (info.FxrFiles.Count > 0)
+                {
+                    ImGui.BeginGroup();
+                    if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
+                    {
+                        _selectedParticleKey = -1; // Clear particle key if file is changed
+
+                        _selectedBinderKey = info.Name;
+                        _selectedFileInfo = info;
+                        _selectedBinder = info.Binder;
+                    }
+                    ImGui.EndGroup();
                 }
             }
+
+            ParticleFileContextMenu(info);
         }
 
         ImGui.End();
+    }
 
-        // File List
+    // Particles
+    public void ParticleListView()
+    {
         ImGui.Begin("Particles##ParticleList");
 
-        if (_selectedFileInfo != null && _selectedFileInfo.ParticleFiles != null)
+        ImGui.Separator();
+
+        ImGui.InputText($"Search", ref _particleSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+
+        ImGui.Separator();
+
+        if (_particleSearchInput != _particleSearchInputCache)
+        {
+            _particleSearchInputCache = _particleSearchInput;
+        }
+
+        if (_selectedFileInfo != null && _selectedFileInfo.FxrFiles != null)
         {
             ImGui.Text($"Particles");
             ImGui.Separator();
 
-            for (int i = 0; i < _selectedFileInfo.ParticleFiles.Count; i++)
+            for (int i = 0; i < _selectedFileInfo.FxrFiles.Count; i++)
             {
-                FXR3 entry = _selectedFileInfo.ParticleFiles[i];
+                var name = Path.GetFileNameWithoutExtension(_selectedFileInfo.FxrFiles[i]);
 
-                if (ImGui.Selectable($@" {entry.ID}", i == _selectedParticleKey))
+                if (SearchFilters.IsEditorSearchMatch(_particleSearchInput, name, " "))
                 {
-                    _selectedParticleKey = i;
-                    _selectedParticle = entry;
+                    if (ImGui.Selectable($@" {name}", i == _selectedParticleKey))
+                    {
+                        _selectedParticleKey = i;
+
+                        // TODO: load FXR3
+                        _selectedParticleInfo = null;
+                    }
+
+                    DisplayAlias(name);
                 }
+
+                ParticleListContextMenu(i);
             }
         }
 
         ImGui.End();
     }
 
+    // Data
+    public void ParticleDataView()
+    {
+        ImGui.Begin("Particle Data##ParticleDataView");
+
+        ImGui.Separator();
+
+        ImGui.InputText($"Search", ref _particleDataSearchInput, 255);
+        ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
+
+        ImGui.Separator();
+
+        if (_particleDataSearchInput != _particleDataSearchInputCache)
+        {
+            _particleDataSearchInputCache = _particleDataSearchInput;
+        }
+
+        ImGui.End();
+    }
+
+    //*****************************
+    // Context Menus
+    //*****************************
+    public void ParticleFileContextMenu(ParticleFileInfo info)
+    {
+        if (info.Name == _selectedBinderKey)
+        {
+            if (ImGui.BeginPopupContextItem($"Options##FileListContext"))
+            {
+
+                ImGui.EndPopup();
+            }
+        }
+    }
+
+    public void ParticleListContextMenu(int index)
+    {
+        if (index == _selectedParticleKey)
+        {
+            if (ImGui.BeginPopupContextItem($"Options##ParticleListContext"))
+            {
+                
+                ImGui.EndPopup();
+            }
+        }
+    }
+
+    //*****************************
+    // Editor
+    //*****************************
     public void OnProjectChanged(ProjectSettings newSettings)
     {
         _projectSettings = newSettings;
@@ -156,7 +361,7 @@ public class ParticleEditorScreen : EditorScreen
     public void Save()
     {
         if (ParticleBank.IsLoaded)
-            ParticleBank.SaveParticle(_selectedFileInfo, _selectedBinder);
+            ParticleBank.SaveParticle(_selectedParticleInfo);
     }
 
     public void SaveAll()
@@ -168,5 +373,39 @@ public class ParticleEditorScreen : EditorScreen
     private void ResetActionManager()
     {
         EditorActionManager.Clear();
+    }
+
+    //*****************************
+    // Utility
+    //*****************************
+    private void DisplayAlias(string name)
+    {
+        if (CFG.Current.Interface_Display_Alias_for_Particles)
+        {
+            if (ParticleAliasBank.Bank.AliasNames != null)
+            {
+                var prettyName = "";
+
+                var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
+                foreach (var entry in entries)
+                {
+                    if (name == entry.id)
+                    {
+                        prettyName = entry.name;
+                        break;
+                    }
+                }
+
+                if (prettyName != "")
+                {
+                    ImGui.SameLine();
+                    ImGui.PushTextWrapPos();
+
+                    ImGui.TextColored(CFG.Current.ImGui_AliasName_Text, @$"<{prettyName}>");
+
+                    ImGui.PopTextWrapPos();
+                }
+            }
+        }
     }
 }

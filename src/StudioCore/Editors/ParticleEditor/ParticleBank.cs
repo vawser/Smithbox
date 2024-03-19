@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Locators;
 using StudioCore.UserProject;
@@ -15,76 +16,49 @@ public static class ParticleBank
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }
 
-    public static Dictionary<ParticleFileInfo, IBinder> FileBank { get; private set; } = new();
+    public static List<ParticleFileInfo> FileBank { get; set; } = new();
 
-    public static void SaveParticles()
+    public static Dictionary<string, FxrInfo> LoadedFXR { get; set; } = new();
+
+    public static Dictionary<string, ResourceInfo> LoadedResourceLists { get; set; } = new();
+
+    // File Info:
+    // Holds the file name list(s), and the binder itself
+    public class ParticleFileInfo
     {
-        foreach (var (info, binder) in FileBank)
+        public ParticleFileInfo(string name, string path, IBinder binder, List<string> fxrFiles, List<string> resourceFiles)
         {
-            SaveParticle(info, binder);
+            Name = name;
+            Path = path;
+            FxrFiles = fxrFiles;
+            ResourceFiles = resourceFiles;
+            Binder = binder;
         }
+
+        public string Name { get; set; }
+        public string Path { get; set; }
+        public IBinder Binder { get; set; }
+
+        public List<String> FxrFiles { get; set; }
+        public List<String> ResourceFiles { get; set; }
     }
 
-    public static void SaveParticle(ParticleFileInfo info, IBinder binder)
+    // Particle Info:
+    // Holds the particle FXR3 contents, and a link to the parent (thus the binder it is in)
+    public class FxrInfo
     {
-        if (binder == null)
-            return;
+        public ParticleFileInfo Parent { get; set; }
+        public string Name { get; set; }
+        public FXR3 Content { get; set; }
+    }
 
-        //TaskLogs.AddLog($"SaveParticle: {info.Path}");
-
-        var fileDir = @"\sfx";
-        var fileExt = @".ffxbnd.dcx";
-
-        foreach (BinderFile file in binder.Files)
-        {
-            foreach (FXR3 cFile in info.ParticleFiles)
-            {
-                file.Bytes = cFile.Write();
-            }
-        }
-
-        BND4 writeBinder = binder as BND4;
-        byte[] fileBytes = null;
-
-        var assetRoot = $@"{Project.GameRootDirectory}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Project.GameModDirectory}\{fileDir}\{info.Name}{fileExt}";
-
-        switch (Project.Type)
-        {
-            case ProjectType.DS3:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                break;
-            case ProjectType.SDT:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.ER:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.AC6:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                break;
-            default:
-                TaskLogs.AddLog($"Invalid ProjectType during SaveCutscene");
-                return;
-        }
-
-        // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.GameModDirectory}\\{fileDir}\\"))
-        {
-            Directory.CreateDirectory($"{Project.GameModDirectory}\\{fileDir}\\");
-        }
-
-        // Make a backup of the original file if a mod path doesn't exist
-        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-        {
-            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-        }
-
-        if (fileBytes != null)
-        {
-            File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
-        }
+    // Resource Info:
+    // Holds the ffx resource list contents, and a link to the parent (thus the binder it is in)
+    public class ResourceInfo
+    {
+        public ParticleFileInfo Parent { get; set; }
+        public string Name { get; set; }
+        public FFXResourceList Content { get; set; }
     }
 
     public static void LoadParticles()
@@ -108,15 +82,44 @@ public static class ParticleBank
         {
             var filePath = $"{fileDir}\\{name}{fileExt}";
 
+            var realPath = "";
+
             if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
-                LoadParticle($"{Project.GameModDirectory}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
+                realPath = $"{Project.GameModDirectory}\\{filePath}";
             }
             else
             {
-                LoadParticle($"{Project.GameRootDirectory}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+                realPath = $"{Project.GameRootDirectory}\\{filePath}";
+            }
+
+            if (realPath != "")
+            {
+                IBinder binder = BND4.Read(DCX.Decompress(realPath));
+                List<string> fxrFiles = new List<string>();
+                List<string> resourceFiles = new List<string>();
+
+                foreach (var file in binder.Files)
+                {
+                    // FXR
+                    if (file.Name.Contains(".fxr"))
+                    {
+                        fxrFiles.Add(file.Name);
+                    }
+
+                    // FFXRESLIST
+                    if (file.Name.Contains(".ffxreslist"))
+                    {
+                        resourceFiles.Add(file.Name);
+                    }
+                }
+
+                var fileInfo = new ParticleFileInfo(name, realPath, binder, fxrFiles, resourceFiles);
+
+                if(!FileBank.Contains(fileInfo))
+                {
+                    FileBank.Add(fileInfo);
+                }
             }
         }
 
@@ -126,6 +129,8 @@ public static class ParticleBank
         TaskLogs.AddLog($"Particle File Bank - Load Complete");
     }
 
+    // TODO: FXR and FFXResourceList Load on click
+    /*
     public static void LoadParticle(string path)
     {
         if (path == null)
@@ -144,7 +149,7 @@ public static class ParticleBank
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
         ParticleFileInfo fileStruct = new ParticleFileInfo(name, path);
 
-        IBinder binder = BND4.Read(DCX.Decompress(path));
+        
 
         foreach (var file in binder.Files)
         {
@@ -164,19 +169,147 @@ public static class ParticleBank
 
         FileBank.Add(fileStruct, binder);
     }
+    */
 
-    public class ParticleFileInfo
+    public static void SaveParticles()
     {
-        public ParticleFileInfo(string name, string path)
+        // Iterate through each loaded particle
+        foreach (var (name, info) in LoadedFXR)
         {
-            Name = name;
-            Path = path;
-            ParticleFiles = new List<FXR3>();
+            SaveParticle(info);
         }
 
-        public string Name { get; set; }
-        public string Path { get; set; }
+        // Iterate through each loaded resource list
+        foreach (var (name, info) in LoadedResourceLists)
+        {
+            SaveResourceList(info);
+        }
+    }
 
-        public List<FXR3> ParticleFiles { get; set; }
+    public static void SaveParticle(FxrInfo info)
+    {
+        ParticleFileInfo parent = info.Parent;
+
+        if (parent.Binder == null)
+            return;
+
+        //TaskLogs.AddLog($"SaveParticle: {info.Path}");
+
+        var fileDir = @"\sfx";
+        var fileExt = @".ffxbnd.dcx";
+
+        // Enter parent binder and then write the current particle's data
+        foreach (BinderFile file in parent.Binder.Files)
+        {
+            file.Bytes = info.Content.Write();
+        }
+
+        BND4 writeBinder = parent.Binder as BND4;
+        byte[] fileBytes = null;
+
+        var assetRoot = $@"{Project.GameRootDirectory}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Project.GameModDirectory}\{fileDir}\{info.Name}{fileExt}";
+
+        switch (Project.Type)
+        {
+            case ProjectType.DS3:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                break;
+            case ProjectType.SDT:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
+            case ProjectType.ER:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
+            case ProjectType.AC6:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                break;
+            default:
+                TaskLogs.AddLog($"Invalid ProjectType during SaveParticle");
+                return;
+        }
+
+        // Add folder if it does not exist in GameModDirectory
+        if (!Directory.Exists($"{Project.GameModDirectory}\\{fileDir}\\"))
+        {
+            Directory.CreateDirectory($"{Project.GameModDirectory}\\{fileDir}\\");
+        }
+
+        // Make a backup of the original file if a mod path doesn't exist
+        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        {
+            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+        }
+
+        if (fileBytes != null)
+        {
+            File.WriteAllBytes(assetMod, fileBytes);
+            //TaskLogs.AddLog($"Saved at: {assetMod}");
+        }
+    }
+
+    public static void SaveResourceList(ResourceInfo info)
+    {
+        ParticleFileInfo parent = info.Parent;
+
+        if (parent.Binder == null)
+            return;
+
+        //TaskLogs.AddLog($"SaveParticle: {info.Path}");
+
+        var fileDir = @"\sfx";
+        var fileExt = @".ffxbnd.dcx";
+
+        // Enter parent binder and then write the current resource list data
+        foreach (BinderFile file in parent.Binder.Files)
+        {
+            Encoding u8 = Encoding.UTF8;
+            byte[] result = info.Content.Entries.SelectMany(x => u8.GetBytes(x)).ToArray();
+
+            file.Bytes = result;
+        }
+
+        BND4 writeBinder = parent.Binder as BND4;
+        byte[] fileBytes = null;
+
+        var assetRoot = $@"{Project.GameRootDirectory}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Project.GameModDirectory}\{fileDir}\{info.Name}{fileExt}";
+
+        switch (Project.Type)
+        {
+            case ProjectType.DS3:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                break;
+            case ProjectType.SDT:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
+            case ProjectType.ER:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
+            case ProjectType.AC6:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                break;
+            default:
+                TaskLogs.AddLog($"Invalid ProjectType during SaveResourceList");
+                return;
+        }
+
+        // Add folder if it does not exist in GameModDirectory
+        if (!Directory.Exists($"{Project.GameModDirectory}\\{fileDir}\\"))
+        {
+            Directory.CreateDirectory($"{Project.GameModDirectory}\\{fileDir}\\");
+        }
+
+        // Make a backup of the original file if a mod path doesn't exist
+        if (Project.GameModDirectory == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        {
+            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+        }
+
+        if (fileBytes != null)
+        {
+            File.WriteAllBytes(assetMod, fileBytes);
+            //TaskLogs.AddLog($"Saved at: {assetMod}");
+        }
     }
 }
