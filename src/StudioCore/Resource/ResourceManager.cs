@@ -436,9 +436,8 @@ public static class ResourceManager
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("List of Resources Loaded & Unloaded");
-        ImGui.SameLine();
 
-        if (FeatureFlags.EnableResourcePurge)
+        if (FeatureFlags.EnableResourceListActions)
         {
             if (ImGui.Button("Purge"))
             {
@@ -455,6 +454,7 @@ public static class ResourceManager
         ImGui.Columns(4);
         ImGui.Separator();
         var id = 0;
+
         foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
         {
             if (item.Key == "")
