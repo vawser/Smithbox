@@ -356,14 +356,18 @@ public static class ModelAssetLocator
             List<string> searchDirs = new();
             if (Project.Type == ProjectType.ER)
             {
-                var modDir = Directory.GetFileSystemEntries(Project.GameModDirectory + modelDir, @"aeg*").ToList();
                 var rootDir = Directory.GetFileSystemEntries(Project.GameRootDirectory + modelDir, @"aeg*").ToList();
 
-                foreach(var entry in modDir)
+                if (Directory.Exists(Project.GameModDirectory + modelDir))
                 {
-                    if(!rootDir.Contains(entry))
+                    var modDir = Directory.GetFileSystemEntries(Project.GameModDirectory + modelDir, @"aeg*").ToList();
+
+                    foreach (var entry in modDir)
                     {
-                        rootDir.Add(entry);
+                        if (!rootDir.Contains(entry))
+                        {
+                            rootDir.Add(entry);
+                        }
                     }
                 }
 

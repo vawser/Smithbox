@@ -55,7 +55,7 @@ public class ParticleEditorScreen : EditorScreen
     public ParticleEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _toolbarView = new ParticleToolbarView(this);
-        //_propEditor.OnGui();
+        _propEditor = new PropertyEditor(EditorActionManager);
     }
 
     public string EditorName => "Particle Editor##ParticleEditor";
@@ -66,6 +66,7 @@ public class ParticleEditorScreen : EditorScreen
     {
 
     }
+
     public void DrawEditorMenu()
     {
         if (ImGui.BeginMenu("Edit"))
