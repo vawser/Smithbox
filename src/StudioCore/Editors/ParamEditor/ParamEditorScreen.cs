@@ -1067,7 +1067,7 @@ public class ParamEditorScreen : EditorScreen
         {
             if (_projectSettings != null)
             {
-                ParamBank.PrimaryBank.SaveParams(_projectSettings.UseLooseParams, _projectSettings.PartialParams);
+                ParamBank.PrimaryBank.SaveParams(_projectSettings);
                 TaskLogs.AddLog("Saved params");
             }
         }
@@ -1089,7 +1089,7 @@ public class ParamEditorScreen : EditorScreen
         {
             if (_projectSettings != null)
             {
-                ParamBank.PrimaryBank.SaveParams(_projectSettings.UseLooseParams, _projectSettings.PartialParams);
+                ParamBank.PrimaryBank.SaveParams(_projectSettings);
                 TaskLogs.AddLog("Saved params");
             }
         }

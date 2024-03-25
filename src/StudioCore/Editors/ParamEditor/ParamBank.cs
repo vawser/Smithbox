@@ -744,7 +744,7 @@ public class ParamBank
         return looseParams;
     }
 
-    private void LoadParamsDS2(bool loose)
+    private void LoadParamsDS2(ProjectSettings settings)
     {
         var dir = Project.GameRootDirectory;
         var mod = Project.GameModDirectory;
@@ -790,11 +790,11 @@ public class ParamBank
             enemyFile = $@"{dir}\Param\EnemyParam.param";
         }
 
-        LoadParamsDS2FromFile(looseParams, param, enemyFile, loose);
+        LoadParamsDS2FromFile(looseParams, param, enemyFile, settings);
         LoadExternalRowNames();
     }
 
-    private void LoadVParamsDS2(bool loose)
+    private void LoadVParamsDS2(ProjectSettings settings)
     {
         if (!File.Exists($@"{Project.GameRootDirectory}\enc_regulation.bnd.dcx"))
         {
@@ -812,10 +812,10 @@ public class ParamBank
         List<string> looseParams = GetLooseParamsInDir(Project.GameRootDirectory);
 
         LoadParamsDS2FromFile(looseParams, $@"{Project.GameRootDirectory}\enc_regulation.bnd.dcx",
-            $@"{Project.GameRootDirectory}\Param\EnemyParam.param", loose);
+            $@"{Project.GameRootDirectory}\Param\EnemyParam.param", settings);
     }
 
-    private void LoadParamsDS2FromFile(List<string> looseParams, string path, string enemypath, bool loose)
+    private void LoadParamsDS2FromFile(List<string> looseParams, string path, string enemypath, ProjectSettings settings)
     {
         BND4 paramBnd = null;
         if (!BND4.Is(path))
@@ -877,7 +877,7 @@ public class ParamBank
 
             try
             {
-                if (loose)
+                if (settings.UseLooseParams)
                 {
                     // Loose params: override params already loaded via regulation
                     PARAMDEF def = _paramdefs[lp.ParamType];
@@ -916,7 +916,7 @@ public class ParamBank
         paramBnd.Dispose();
     }
 
-    private void LoadParamsDS3(bool loose)
+    private void LoadParamsDS3(ProjectSettings settings)
     {
         var dir = Project.GameRootDirectory;
         var mod = Project.GameModDirectory;
@@ -928,9 +928,9 @@ public class ParamBank
 
         var vparam = $@"{dir}\Data0.bdt";
         // Load loose params if they exist
-        if (loose && File.Exists($@"{mod}\\param\gameparam\gameparam_dlc2.parambnd.dcx"))
+        if (settings.UseLooseParams && File.Exists($@"{mod}\\param\gameparam\gameparam_dlc2.parambnd.dcx"))
         {
-            LoadParamsDS3FromFile($@"{mod}\param\gameparam\gameparam_dlc2.parambnd.dcx", true);
+            LoadParamsDS3FromFile($@"{mod}\param\gameparam\gameparam_dlc2.parambnd.dcx", settings);
         }
         else
         {
@@ -941,20 +941,20 @@ public class ParamBank
                 param = vparam;
             }
 
-            LoadParamsDS3FromFile(param, false);
+            LoadParamsDS3FromFile(param, settings);
         }
     }
 
-    private void LoadVParamsDS3()
+    private void LoadVParamsDS3(ProjectSettings settings)
     {
-        LoadParamsDS3FromFile($@"{Project.GameRootDirectory}\Data0.bdt", false);
+        LoadParamsDS3FromFile($@"{Project.GameRootDirectory}\Data0.bdt", settings);
     }
 
-    private void LoadParamsDS3FromFile(string path, bool isLoose)
+    private void LoadParamsDS3FromFile(string path, ProjectSettings settings)
     {
         try
         {
-            using BND4 lparamBnd = isLoose ? BND4.Read(path) : SFUtil.DecryptDS3Regulation(path);
+            using BND4 lparamBnd = settings.UseLooseParams ? BND4.Read(path) : SFUtil.DecryptDS3Regulation(path);
             LoadParamFromBinder(lparamBnd, ref _params, out _paramVersion);
         }
         catch
@@ -963,7 +963,7 @@ public class ParamBank
         }
     }
 
-    private void LoadParamsER(bool partial)
+    private void LoadParamsER(ProjectSettings settings)
     {
         var dir = Project.GameRootDirectory;
         var mod = Project.GameModDirectory;
@@ -976,7 +976,7 @@ public class ParamBank
         // Load params
         var param = $@"{mod}\regulation.bin";
 
-        if (!File.Exists(param) || partial)
+        if (!File.Exists(param) || settings.PartialParams)
         {
             param = $@"{dir}\regulation.bin";
         }
@@ -985,7 +985,7 @@ public class ParamBank
 
         param = $@"{mod}\regulation.bin";
 
-        if (partial && File.Exists(param))
+        if (settings.PartialParams && File.Exists(param))
         {
             using BND4 pParamBnd = SFUtil.DecryptERRegulation(param);
             Dictionary<string, Param> cParamBank = new();
@@ -1231,12 +1231,12 @@ public class ParamBank
 
                 if (Project.Type == ProjectType.DS2S)
                 {
-                    PrimaryBank.LoadParamsDS2(settings.UseLooseParams);
+                    PrimaryBank.LoadParamsDS2(settings);
                 }
 
                 if (Project.Type == ProjectType.DS3)
                 {
-                    PrimaryBank.LoadParamsDS3(settings.UseLooseParams);
+                    PrimaryBank.LoadParamsDS3(settings);
                 }
 
                 if (Project.Type == ProjectType.BB || Project.Type == ProjectType.SDT)
@@ -1246,7 +1246,7 @@ public class ParamBank
 
                 if (Project.Type == ProjectType.ER)
                 {
-                    PrimaryBank.LoadParamsER(settings.PartialParams);
+                    PrimaryBank.LoadParamsER(settings);
                 }
 
                 if (Project.Type == ProjectType.AC6)
@@ -1279,12 +1279,12 @@ public class ParamBank
 
                         if (Project.Type == ProjectType.DS2S)
                         {
-                            VanillaBank.LoadVParamsDS2(settings.UseLooseParams);
+                            VanillaBank.LoadVParamsDS2(settings);
                         }
 
                         if (Project.Type == ProjectType.DS3)
                         {
-                            VanillaBank.LoadVParamsDS3();
+                            VanillaBank.LoadVParamsDS3(settings);
                         }
 
                         if (Project.Type == ProjectType.BB || Project.Type == ProjectType.SDT)
@@ -1316,7 +1316,7 @@ public class ParamBank
                         try
                         {
                             new ActionManager().ExecuteAction(PrimaryBank.LoadParamDefaultNames());
-                            PrimaryBank.SaveParams(settings.UseLooseParams);
+                            PrimaryBank.SaveParams(settings);
                         }
                         catch
                         {
@@ -1348,7 +1348,7 @@ public class ParamBank
         }
         else if (Project.Type == ProjectType.DS3)
         {
-            newBank.LoadParamsDS3FromFile(path, path.Trim().ToLower().EndsWith(".dcx"));
+            newBank.LoadParamsDS3FromFile(path, settings);
         }
         else if (Project.Type == ProjectType.BB)
         {
@@ -1357,7 +1357,7 @@ public class ParamBank
         else if (Project.Type == ProjectType.DS2S)
         {
             List<string> looseParams = GetLooseParamsInDir(looseDir);
-            newBank.LoadParamsDS2FromFile(looseParams, path, enemyPath, settings.UseLooseParams);
+            newBank.LoadParamsDS2FromFile(looseParams, path, enemyPath, settings);
         }
         else if (Project.Type == ProjectType.DS1R)
         {
@@ -1651,7 +1651,7 @@ public class ParamBank
         }
     }
 
-    private void SaveParamsDS2(bool loose)
+    private void SaveParamsDS2(ProjectSettings settings)
     {
         var dir = Project.GameRootDirectory;
         var mod = Project.GameModDirectory;
@@ -1695,7 +1695,7 @@ public class ParamBank
             paramBnd = BND4.Read(param);
         }
 
-        if (!loose)
+        if (!settings.UseLooseParams)
         {
             // Save params non-loosely: Replace params regulation and write remaining params loosely.
 
@@ -1796,7 +1796,7 @@ public class ParamBank
         paramBnd.Dispose();
     }
 
-    private void SaveParamsDS3(bool loose)
+    private void SaveParamsDS3(ProjectSettings settings)
     {
         var dir = Project.GameRootDirectory;
         var mod = Project.GameModDirectory;
@@ -1827,7 +1827,7 @@ public class ParamBank
         }
 
         // If not loose write out the new regulation
-        if (!loose)
+        if (!settings.UseLooseParams)
         {
             Utils.WriteWithBackup(dir, mod, @"Data0.bdt", paramBnd, ProjectType.DS3);
         }
@@ -1984,7 +1984,7 @@ public class ParamBank
         }
     }
 
-    private void SaveParamsER(bool partial)
+    private void SaveParamsER(ProjectSettings settings)
     {
         void OverwriteParamsER(BND4 paramBnd)
         {
@@ -1997,7 +1997,7 @@ public class ParamBank
                     IReadOnlyList<Param.Row> backup = paramFile.Rows;
                     List<Param.Row> changed = new();
 
-                    if (partial)
+                    if (settings.PartialParams)
                     {
                         TaskManager.WaitAll(); //wait on dirtycache update
                         HashSet<int> dirtyCache = _vanillaDiffCache[Path.GetFileNameWithoutExtension(p.Name)];
@@ -2138,7 +2138,7 @@ public class ParamBank
         _pendingUpgrade = false;
     }
 
-    public void SaveParams(bool loose = false, bool partialParams = false)
+    public void SaveParams(ProjectSettings settings)
     {
         if (_params == null)
         {
@@ -2162,12 +2162,12 @@ public class ParamBank
 
         if (Project.Type == ProjectType.DS2S)
         {
-            SaveParamsDS2(loose);
+            SaveParamsDS2(settings);
         }
 
         if (Project.Type == ProjectType.DS3)
         {
-            SaveParamsDS3(loose);
+            SaveParamsDS3(settings);
         }
 
         if (Project.Type == ProjectType.BB || Project.Type == ProjectType.SDT)
@@ -2177,7 +2177,7 @@ public class ParamBank
 
         if (Project.Type == ProjectType.ER)
         {
-            SaveParamsER(partialParams);
+            SaveParamsER(settings);
         }
 
         if (Project.Type == ProjectType.AC6)

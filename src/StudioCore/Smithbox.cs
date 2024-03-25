@@ -1269,7 +1269,8 @@ public class Smithbox
                     _newProjectOptions.settings.UseLooseParams = looseparams;
                 }
             }
-            else if (FeatureFlags.EnablePartialParam && _newProjectOptions.settings.GameType == ProjectType.ER)
+
+            if (FeatureFlags.EnablePartialParam && _newProjectOptions.settings.GameType == ProjectType.ER)
             {
                 ImGui.NewLine();
                 ImGui.AlignTextToFramePadding();
@@ -1287,10 +1288,6 @@ public class Smithbox
                 ImGui.SameLine();
                 ImGui.TextUnformatted(
                     "Warning: partial params require merging before use in game.\nRow names on unchanged rows will be forgotten between saves");
-            }
-            else if (_newProjectOptions.settings.GameType is ProjectType.AC6)
-            {
-                //TODO AC6
             }
 
             ImGui.NewLine();
