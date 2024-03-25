@@ -15,6 +15,7 @@ using System.Numerics;
 using System.Reflection;
 using Veldrid;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editor;
 
@@ -638,20 +639,28 @@ public class EditorDecorations
         }
     }
 
+    public static string enumSearchStr = "";
+
     public static bool PropertyRowEnumContextItems(ParamEnum en, object oldval, ref object newval)
     {
-        if (ImGui.BeginChild("EnumList",
-                new Vector2(0, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, en.values.Count))))
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, en.values.Count))))
         {
             try
             {
                 foreach (KeyValuePair<string, string> option in en.values)
                 {
-                    if (ImGui.Selectable($"{option.Key}: {option.Value}"))
+                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, option.Key, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, option.Value, " ")
+                        || enumSearchStr == "")
                     {
-                        newval = Convert.ChangeType(option.Key, oldval.GetType());
-                        ImGui.EndChild();
-                        return true;
+                        if (ImGui.Selectable($"{option.Key}: {option.Value}"))
+                        {
+                            newval = Convert.ChangeType(option.Key, oldval.GetType());
+                            ImGui.EndChild();
+                            return true;
+                        }
                     }
                 }
             }
