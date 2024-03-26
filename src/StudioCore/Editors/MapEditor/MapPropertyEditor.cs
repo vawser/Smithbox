@@ -1193,7 +1193,6 @@ public class MapPropertyEditor
                         committed = true;
                     }
 
-                    // Special enum for the Elden Ring Asset mask and anim ID property
                     if(prop.GetCustomAttribute<EldenRingAssetMask>() != null)
                     {
                         if (MapEditorDecorations.EldenRingAssetMaskAndAnimRow(prop, oldval, ref newval, selection))
@@ -1381,7 +1380,7 @@ public class MapPropertyEditor
                     ImGui.Text("Cannot edit multiples of this object at once.");
                     ImGui.EndChild();
                     ImGui.End();
-                    ImGui.PopStyleColor();
+                    ImGui.PopStyleColor(2);
                     return;
                 }
 
@@ -1399,7 +1398,7 @@ public class MapPropertyEditor
                 ImGui.Text("Not all selected objects are the same type.");
                 ImGui.EndChild();
                 ImGui.End();
-                ImGui.PopStyleColor();
+                ImGui.PopStyleColor(2);
                 return;
             }
         }
@@ -1412,7 +1411,7 @@ public class MapPropertyEditor
                 ImGui.Text("Select a map object to edit its properties.");
                 ImGui.EndChild();
                 ImGui.End();
-                ImGui.PopStyleColor();
+                ImGui.PopStyleColor(2);
                 return;
             }
 
