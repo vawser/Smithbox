@@ -347,6 +347,11 @@ public class ParamEditorScreen : EditorScreen
 
                 if (ImGui.BeginMenu("Quick action"))
                 {
+                    if (ImGui.MenuItem("Export selected Names to window", KeyBindings.Current.Param_ExportCSV.HintText))
+                    {
+                        EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
+                    }
+
                     if (ImGui.MenuItem("Export entire param to window", KeyBindings.Current.Param_ExportCSV.HintText))
                     {
                         EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
