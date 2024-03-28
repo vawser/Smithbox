@@ -21,6 +21,8 @@ namespace StudioCore.Editors.TextEditor.Toolbar
     public enum TextEditorAction
     {
         None,
+        Duplicate,
+        Delete,
         SearchAndReplace,
         SyncEntries
     }
@@ -53,6 +55,8 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
             TextAction_SearchAndReplace.Setup();
             TextAction_SyncEntries.Setup();
+            TextAction_Duplicate.Setup();
+            TextAction_Delete.Setup();
         }
 
         public void OnGui()
@@ -139,6 +143,8 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
             TextAction_SearchAndReplace.Select();
             TextAction_SyncEntries.Select();
+            TextAction_Duplicate.Select();
+            TextAction_Delete.Select();
         }
 
         public void ShowSelectedConfiguration()
@@ -148,9 +154,13 @@ namespace StudioCore.Editors.TextEditor.Toolbar
             ImGui.Text("Configuration");
             ImGui.Separator();
 
+            TextAction_Duplicate.Configure();
+            TextAction_Delete.Configure();
             TextAction_SearchAndReplace.Configure();
             TextAction_SyncEntries.Configure();
 
+            TextAction_Duplicate.Act();
+            TextAction_Delete.Act();
             TextAction_SearchAndReplace.Act();
             TextAction_SyncEntries.Act();
         }

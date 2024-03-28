@@ -26,7 +26,7 @@ public class TextEditorScreen : EditorScreen
 
     public static FMGBank.EntryGroup _activeEntryGroup;
     public static FMGBank.FMGInfo _activeFmgInfo;
-    private int _activeIDCache = -1;
+    public static int _activeIDCache = -1;
     private bool _arrowKeyPressed;
 
     private bool _clearEntryGroup;
@@ -36,11 +36,11 @@ public class TextEditorScreen : EditorScreen
     private ProjectSettings _projectSettings;
 
     private string _searchFilter = "";
-    private string _searchFilterCached = "";
+    public static string _searchFilterCached = "";
     private string _fmgSearchAllString = "";
     private bool _fmgSearchAllActive = false;
     private List<FMGBank.FMGInfo> _filteredFmgInfo = new();
-    public ActionManager EditorActionManager = new();
+    public static ActionManager EditorActionManager = new();
 
     private TextEditorToolbar Toolbar;
 
@@ -87,14 +87,14 @@ public class TextEditorScreen : EditorScreen
             if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false,
                     _activeEntryGroup != null))
             {
-                DeleteFMGEntries(_activeEntryGroup);
+                TextAction_Delete.DeleteSelectedEntry();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
                     _activeEntryGroup != null))
             {
-                DuplicateFMGEntries(_activeEntryGroup);
+                TextAction_Duplicate.DuplicateSelectedEntry();
             }
 
             ImGui.EndMenu();
@@ -252,12 +252,12 @@ public class TextEditorScreen : EditorScreen
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete) && _activeEntryGroup != null)
             {
-                DeleteFMGEntries(_activeEntryGroup);
+                TextAction_Delete.DeleteSelectedEntry();
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _activeEntryGroup != null)
             {
-                DuplicateFMGEntries(_activeEntryGroup);
+                TextAction_Duplicate.DuplicateSelectedEntry();
             }
         }
 
@@ -368,23 +368,6 @@ public class TextEditorScreen : EditorScreen
     private void ResetActionManager()
     {
         EditorActionManager.Clear();
-    }
-
-    /// <summary>
-    ///     Duplicates all Entries in active EntryGroup from their FMGs
-    /// </summary>
-    private void DuplicateFMGEntries(FMGBank.EntryGroup entry)
-    {
-        for (int i = 0; i < CFG.Current.FMG_DuplicateAmount; i++)
-        {
-            _activeIDCache = entry.GetNextUnusedID(CFG.Current.FMG_DuplicateIncrement);
-            var action = new DuplicateFMGEntryAction(entry);
-            EditorActionManager.ExecuteAction(action);
-        }
-
-        // Lazy method to refresh search filter
-        // TODO: _searchFilterCached should be cleared whenever CacheBank is cleared.
-        _searchFilterCached = "";
     }
 
     /// <summary>
@@ -753,6 +736,7 @@ public class TextEditorScreen : EditorScreen
                         if (ImGui.Selectable("Delete Entry"))
                         {
                             _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
+                            TextAction_Delete.DeleteSelectedEntry();
                             DeleteFMGEntries(_activeEntryGroup);
                         }
 
@@ -761,16 +745,8 @@ public class TextEditorScreen : EditorScreen
                         if (ImGui.Selectable("Duplicate Entry"))
                         {
                             _activeEntryGroup = FMGBank.GenerateEntryGroup(r.ID, _activeFmgInfo);
-                            DuplicateFMGEntries(_activeEntryGroup);
+                            TextAction_Duplicate.DuplicateSelectedEntry();
                         }
-                        ImGui.InputInt("##dupeAmount", ref CFG.Current.FMG_DuplicateAmount);
-                        if (CFG.Current.FMG_DuplicateAmount < 1)
-                            CFG.Current.FMG_DuplicateAmount = 1;
-                        ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
-                        ImGui.InputInt("##dupeIncrement", ref CFG.Current.FMG_DuplicateIncrement);
-                        if (CFG.Current.FMG_DuplicateIncrement < 1)
-                            CFG.Current.FMG_DuplicateIncrement = 1;
-                        ImguiUtils.ShowHoverTooltip("The increment to apply to the text id when duplicating.");
 
                         ImGui.EndPopup();
                     }

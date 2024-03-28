@@ -430,9 +430,10 @@ public class CFG
     public bool FMG_SearchAndReplace_Regex_Singleline = false;
     public bool FMG_SearchAndReplace_Regex_IgnorePatternWhitespace = false;
 
-    public int FMG_BlockDuplicate_StartID = 0;
-    public int FMG_BlockDuplicate_EndID = 10000;
-    public int FMG_BlockDuplicate_RebaseID = 20000;
+    public bool FMG_StandardDelete = true;
+    public bool FMG_BlockDelete = false;
+    public int FMG_BlockDelete_StartID = 100;
+    public int FMG_BlockDelete_EndID = 1000;
 
     //****************************
     // Settings: Gparam Editor

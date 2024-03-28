@@ -102,7 +102,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         {
             if (TextEditorToolbar.SelectedAction == TextEditorAction.SearchAndReplace)
             {
-                if (ImGui.Button("Apply##action_Selection_SortRows", new Vector2(200, 32)))
+                if (ImGui.Button("Apply##action_Selection_SearchAndReplace", new Vector2(200, 32)))
                 {
                     if (CFG.Current.Interface_ParamEditor_PromptUser)
                     {
