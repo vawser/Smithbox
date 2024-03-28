@@ -234,11 +234,6 @@ public class MapSceneTree : IActionEventHandler
 
         string tName = e.PrettyName;
 
-        if (_mapObjectListSearchInput != "" && !tName.Contains(_mapObjectListSearchInput))
-        {
-            return;
-        }
-
         // Main selectable
         if (e is MsbEntity me)
         {
@@ -688,11 +683,11 @@ public class MapSceneTree : IActionEventHandler
             if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
             {
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text("Search:");
+                ImGui.Text("Map ID Search:");
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth(-1);
                 ImGui.InputText("##treeSearch", ref _mapObjectListSearchInput, 99);
-                ImguiUtils.ShowHoverTooltip("Filter the map object list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
+                ImguiUtils.ShowHoverTooltip("Filter the map list by name.\nFuzzy search, so name only needs to contain the string within part of it to appear.");
             }
 
             ImGui.Unindent(30 * scale);

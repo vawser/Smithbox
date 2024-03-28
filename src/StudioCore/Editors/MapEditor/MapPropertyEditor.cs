@@ -1212,8 +1212,6 @@ public class MapPropertyEditor
             }
         }
 
-        bool editAlias = false;
-
         var refID = 0; // ID for ImGui distinction
         if (decorate && entSelection.Count == 1)
         {

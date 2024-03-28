@@ -529,46 +529,6 @@ public class CloneMapObjectsAction : ViewportAction
         return ActionEvent.ObjectAddedRemoved;
     }
 
-    public void ChangePartNames(MsbEntity sel, MapContainer map)
-    {
-        if (Project.Type != ProjectType.ER)
-            return;
-
-        if (CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames)
-        {
-            if (Project.Type == ProjectType.ER)
-            {
-                if (sel.WrappedObject is MSBE.Part.Asset)
-                {
-                    string partName = (string)sel.GetPropertyValue("Name");
-                    string modelName = (string)sel.GetPropertyValue("ModelName");
-                    string[] names = (string[])sel.GetPropertyValue("UnkPartNames");
-                    string[] newNames = new string[names.Length];
-
-                    for (int i = 0; i < names.Length; i++)
-                    {
-                        var name = names[i];
-
-                        if (name != null)
-                        {
-                            // Name is a AEG reference
-                            if (name.Contains(modelName) && name.Contains("AEG"))
-                            {
-                                TaskLogs.AddLog($"{name}");
-
-                                name = partName;
-                            }
-                        }
-
-                        newNames[i] = name;
-                    }
-
-                    sel.SetPropertyValue("UnkPartNames", newNames);
-                }
-            }
-        }
-    }
-
     public override ActionEvent Undo()
     {
         for (var i = 0; i < Clones.Count(); i++)

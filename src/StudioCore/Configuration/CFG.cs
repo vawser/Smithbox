@@ -417,10 +417,9 @@ public class CFG
     public bool FMG_NoFmgPatching = false;
     public bool FMG_NoGroupedFmgEntries = false;
     public bool FMG_ShowOriginalNames = false;
+
     public int FMG_DuplicateAmount = 1;
     public int FMG_DuplicateIncrement = 1;
-
-
 
     public int FMG_SyncEntries_Modulus = 10000;
 

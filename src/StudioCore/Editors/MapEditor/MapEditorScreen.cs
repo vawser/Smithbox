@@ -49,7 +49,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     /// </summary>
     private IModal _activeModal;
 
-    private int _createEntityMapIndex;
     private (string, ObjectContainer) _comboTargetMap = ("None", null);
     private (string, Entity) _dupeSelectionTargetedParent = ("None", null);
 
@@ -997,20 +996,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             _activeModal = new CreatePrefabModal(Universe, ent);
         }
         */
-    }
-
-    /// <summary>
-    ///     Adds a new entity to the targeted map. If no parent is specified, RootObject will be used.
-    /// </summary>
-    private void AddNewEntity(Type typ, MsbEntity.MsbEntityType etype, MapContainer map, Entity parent = null)
-    {
-        var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
-        MsbEntity obj = new(map, newent, etype);
-
-        parent ??= map.RootObject;
-
-        AddMapObjectsAction act = new(Universe, map, RenderScene, new List<MsbEntity> { obj }, true, parent);
-        EditorActionManager.ExecuteAction(act);
     }
 
     private void ComboTargetMapUI()
