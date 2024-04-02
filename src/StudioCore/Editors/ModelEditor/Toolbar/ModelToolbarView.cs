@@ -1,5 +1,8 @@
 ﻿using ImGuiNET;
+using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor.Toolbar;
+using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.UserProject;
@@ -13,12 +16,25 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Toolbar
 {
+    public enum ModelEditorAction
+    {
+        None,
+        DuplicateFile,
+        DuplicateProperty,
+        DeleteProperty
+    }
+
     public class ModelToolbarView
     {
-        private ModelEditorScreen _screen;
+        public static ModelEditorScreen _screen;
 
-        public ModelToolbarView(ModelEditorScreen screen)
+        public static ViewportActionManager EditorActionManager;
+
+        public static ModelEditorAction SelectedAction;
+
+        public ModelToolbarView(ViewportActionManager actionManager, ModelEditorScreen screen)
         {
+            EditorActionManager = actionManager;
             _screen = screen;
         }
 
@@ -107,7 +123,9 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
             ImguiUtils.ShowHoverTooltip("Toggle whether certain toolbar actions prompt the user before applying.");
             ImGui.Separator();
 
-            //ParamAction_DuplicateRow.Select();
+            //ModelAction_DuplicateFile.Select();
+            ModelAction_DuplicateProperty.Select();
+            ModelAction_DeleteProperty.Select();
         }
 
         public void ShowSelectedConfiguration()
@@ -117,9 +135,13 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
             ImGui.Text("Configuration");
             ImGui.Separator();
 
-            //ParamAction_DuplicateRow.Configure();
+            //ModelAction_DuplicateFile.Configure();
+            ModelAction_DuplicateProperty.Configure();
+            ModelAction_DeleteProperty.Configure();
 
-            //ParamAction_DuplicateRow.Act();
+            //ModelAction_DuplicateFile.Act();
+            ModelAction_DuplicateProperty.Act();
+            ModelAction_DeleteProperty.Act();
         }
     }
 }

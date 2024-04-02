@@ -1,23 +1,18 @@
 ﻿using ImGuiNET;
-using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Banks;
-using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Help;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
+using StudioCore.Settings;
 using StudioCore.Tests;
 using StudioCore.UserProject;
-using StudioCore.Utilities;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text.RegularExpressions;
 
 namespace StudioCore.Interface.Windows;
 
@@ -58,12 +53,17 @@ public class DebugWindow
 
         if (ImGui.Begin("Tests##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImGui.Columns(4);
-
-            // DISABLE this when not using it for custom code stuff
-            if (ImGui.Button("Vawser Custom Action"))
+            if (FeatureFlags.VawserActions)
             {
-                AssignEntityGroupsForAllCharacters();
+                ImGui.Columns(5);
+
+                DisplayVawserActions();
+
+                ImGui.NextColumn();
+            }
+            else
+            {
+                ImGui.Columns(4);
             }
 
             // Actions
@@ -147,6 +147,10 @@ public class DebugWindow
         ImGui.PopStyleColor(5);
     }
 
+    private string sourceMap = "";
+    private string sourcePath = "";
+    private string destPath = "";
+
     private void DumpFlverLayouts()
     {
         if (PlatformUtils.Instance.SaveFileDialog("Save Flver layout dump", new[] { FilterStrings.TxtFilter },
@@ -227,5 +231,112 @@ public class DebugWindow
 
             map.Write(filepath);
         }
+    }
+
+    private void DisplayVawserActions()
+    {
+        ImGui.Text("Collect Textures");
+
+        ImGui.InputText("Source Map:", ref sourceMap, 1024);
+
+        ImGui.InputText("Destination:", ref destPath, 1024);
+        ImGui.SameLine();
+        if (ImGui.Button("Select##destSelect"))
+        {
+            if (PlatformUtils.Instance.OpenFolderDialog("Choose destination directory", out var path))
+            {
+                destPath = path;
+            }
+        }
+
+        if (ImGui.Button("Collect"))
+        {
+            List<string> sourcePaths = new List<string>
+            {
+                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0000-tpfbhd",
+                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0001-tpfbhd",
+                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0002-tpfbhd",
+                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0003-tpfbhd"
+            };
+
+            List<string> witchyEntries = new List<string>();
+
+            foreach(var srcPath in sourcePaths)
+            {
+                List<string> newEntries = MoveTextures(srcPath, destPath);
+                foreach(var entry in newEntries)
+                {
+                    witchyEntries.Add(entry);
+                }
+            }
+
+            File.WriteAllLines(Path.Combine(destPath, "_entries.txt"), witchyEntries);
+        }
+    }
+
+    private List<string> MoveTextures(string pSrcPath, string pDstPath)
+    {
+        List<string> entries = new List<string>();
+
+        if (Directory.Exists(pSrcPath))
+        {
+            foreach (var entry in Directory.GetDirectories(pSrcPath))
+            {
+                TaskLogs.AddLog($"{entry}");
+
+                foreach (var fEntry in Directory.GetFiles(entry))
+                {
+                    var srcPath = fEntry;
+                    var filename = Path.GetFileName(fEntry);
+                    var dstPath = Path.Combine(pDstPath, filename);
+
+                    if (fEntry.Contains(".dds"))
+                    {
+                        TaskLogs.AddLog($"{fEntry}");
+
+                        var format = 0;
+                        // Color
+                        if (fEntry.Contains("_a.dds"))
+                        {
+                            TaskLogs.AddLog($"Color");
+                            format = 0;
+                        }
+                        // Metallic
+                        if (fEntry.Contains("_m.dds"))
+                        {
+                            TaskLogs.AddLog($"Metallic");
+                            format = 103;
+                        }
+                        // Reflectance
+                        if (fEntry.Contains("_r.dds"))
+                        {
+                            TaskLogs.AddLog($"Reflectance");
+                            format = 0;
+                        }
+                        // Normal
+                        if (fEntry.Contains("_n.dds"))
+                        {
+                            TaskLogs.AddLog($"Normal");
+                            format = 106;
+                        }
+                        // Normal
+                        if (fEntry.Contains("_v.dds"))
+                        {
+                            TaskLogs.AddLog($"Volume");
+                            format = 104;
+                        }
+
+                        if (File.Exists(srcPath))
+                        {
+                            entries.Add($"<texture>\r\n      <name>{filename}</name>\r\n      <format>{format}</format>\r\n      <flags1>0x00</flags1>\r\n    </texture>");
+
+                            File.Copy(srcPath, dstPath, true);
+                        }
+                    }
+                }
+            }
+        }
+
+        return entries;
     }
 }

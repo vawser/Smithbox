@@ -1216,6 +1216,38 @@ namespace SoulsFormats
             public class Collision : Part
             {
                 /// <summary>
+                /// HitFilterType
+                /// </summary>
+                public enum HitFilterType : byte
+                {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+                    Standard_NoHighHit_NoFootIK = 0,
+                    Standard_NoHighHit_1 = 1,
+                    Standard_NoHighHit_2 = 2,
+                    Standard_NoHighHit_3 = 3,
+                    Standard_NoHighHit_4 = 4,
+                    Standard_NoHighHit_5 = 5,
+                    Standard_NoHighHit_6 = 6,
+                    Standard_NoHighHit_7 = 7,
+                    Standard = 8,
+                    BlockCameraOnly = 9,
+                    BlockEnemyOnly = 11,
+                    FallDeathCam = 13,
+                    LethalFall = 14,
+                    KillPlane = 15,
+                    Unk16 = 16,
+                    Unk17 = 17,
+                    BlockEnemyOnly_2 = 19,
+                    Unk20 = 20,
+                    Slide = 21,
+                    FallDamageImmunity = 22,
+                    Unk23 = 23,
+                    Unk24 = 24,
+                    Unk29 = 29,
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+                }
+
+                /// <summary>
                 /// Amount of reverb to apply to sounds.
                 /// </summary>
                 public enum SoundSpace : byte
@@ -1260,9 +1292,9 @@ namespace SoulsFormats
                 public SceneGparamConfig SceneGparam { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.
                 /// </summary>
-                public byte HitFilterID { get; set; }
+                public HitFilterType HitFilterID { get; set; } = HitFilterType.Standard;
 
                 /// <summary>
                 /// Modifies sounds while the player is touching this collision.
@@ -1372,7 +1404,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    HitFilterID = br.ReadByte();
+                    HitFilterID = br.ReadEnum8<HitFilterType>();
                     SoundSpaceType = br.ReadEnum8<SoundSpace>();
                     EnvLightMapSpotIndex = br.ReadInt16();
                     ReflectPlaneHeight = br.ReadSingle();
@@ -1407,7 +1439,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(HitFilterID);
+                    bw.WriteByte((byte)HitFilterID);
                     bw.WriteByte((byte)SoundSpaceType);
                     bw.WriteInt16(EnvLightMapSpotIndex);
                     bw.WriteSingle(ReflectPlaneHeight);

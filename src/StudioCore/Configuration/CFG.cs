@@ -364,6 +364,9 @@ public class CFG
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
     public bool ModelEditor_DisplayMatNameOnMesh = true;
 
+    public string ModelEditor_Toolbar_DuplicateFile_NewName = "";
+
+    public int ModelEditor_Toolbar_DuplicateProperty_Amount = 1;
 
     //****************************
     // Settings: Param Editor

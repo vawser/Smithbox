@@ -63,6 +63,8 @@ public class ModelContainer : ObjectContainer
 
     public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy)
     {
+        //ModelEditorScreen.UpdateLoadedRenderMesh();
+
         MaterialDictionary.Clear();
 
         // Meshes

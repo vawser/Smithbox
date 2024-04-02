@@ -1,4 +1,5 @@
 ﻿
+using SoulsFormats.KF4;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -352,53 +353,25 @@ public static class ModelAssetLocator
                 modelExt = ".geombnd.dcx";
             }
 
-            // Directories to search for obj models
-            List<string> searchDirs = new();
-            if (Project.Type == ProjectType.ER)
+            var objectFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + modelDir, $@"*{modelExt}")
+                .ToList();
+            foreach (var f in objectFiles)
             {
-                var rootDir = Directory.GetFileSystemEntries(Project.GameRootDirectory + modelDir, @"aeg*").ToList();
-
-                if (Directory.Exists(Project.GameModDirectory + modelDir))
-                {
-                    var modDir = Directory.GetFileSystemEntries(Project.GameModDirectory + modelDir, @"aeg*").ToList();
-
-                    foreach (var entry in modDir)
-                    {
-                        if (!rootDir.Contains(entry))
-                        {
-                            rootDir.Add(entry);
-                        }
-                    }
-                }
-
-                searchDirs = rootDir;
-            }
-            else
-            {
-                searchDirs.Add(Project.GameRootDirectory + modelDir);
+                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                ret.Add(name);
+                objs.Add(name);
             }
 
-            foreach (var searchDir in searchDirs)
+            if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + modelDir))
             {
-                var objfiles = Directory.GetFileSystemEntries(searchDir, $@"*{modelExt}").ToList();
-                foreach (var f in objfiles)
+                objectFiles = Directory.GetFileSystemEntries(Project.GameModDirectory + modelDir, $@"*{modelExt}").ToList();
+                foreach (var f in objectFiles)
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-                    ret.Add(name);
-                    objs.Add(name);
-                }
-
-                if (Project.GameModDirectory != null && Directory.Exists(searchDir))
-                {
-                    objfiles = Directory.GetFileSystemEntries(searchDir, $@"*{modelExt}").ToList();
-                    foreach (var f in objfiles)
+                    if (!objs.Contains(name))
                     {
-                        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-                        if (!objs.Contains(name))
-                        {
-                            ret.Add(name);
-                            objs.Add(name);
-                        }
+                        ret.Add(name);
+                        objs.Add(name);
                     }
                 }
             }

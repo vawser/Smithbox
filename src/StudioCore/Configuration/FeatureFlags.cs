@@ -8,6 +8,7 @@ public static class FeatureFlags
 {
     public static bool DebugMenu = true;
     public static bool TestMenu = false;
+    public static bool VawserActions = true;
 
     public static bool StrictResourceChecking = true;
 

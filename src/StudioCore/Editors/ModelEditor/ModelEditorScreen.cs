@@ -32,6 +32,7 @@ using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Editors.ModelEditor.Toolbar;
 using System.Security.Cryptography;
 using StudioCore.BanksMain;
+using static SoulsFormats.MSB_AC6;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -44,20 +45,19 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
     private readonly ModelPropertyEditor _propEditor;
     private readonly ModelPropertyCache _propCache = new();
 
-    private readonly ModelSceneTree _sceneTree;
-    private readonly ViewportSelection _selection = new();
+    public static ModelSceneTree _sceneTree;
+    public static ViewportSelection _selection = new();
 
-    private readonly Universe _universe;
-    private string _currentModel;
+    public static Universe _universe;
 
-    private ResourceHandle<FlverResource> _flverhandle;
+    public static ResourceHandle<FlverResource> _flverhandle;
 
     private Task _loadingTask;
-    private MeshRenderableProxy _renderMesh;
+    public static MeshRenderableProxy _renderMesh;
 
-    public MapEditor.ViewportActionManager EditorActionManager = new();
+    public static MapEditor.ViewportActionManager EditorActionManager = new();
     public Rectangle Rect;
-    public RenderScene RenderScene;
+    public static RenderScene RenderScene;
     public IViewport Viewport;
 
     private bool ViewportUsingKeyboard;
@@ -65,11 +65,11 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-    public LoadedModelInfo _loadedModelInfo;
 
     public ModelToolbarView _toolbarView;
 
     public static string SelectedAssetID;
+    public static LoadedModelInfo CurrentModelInfo;
 
     public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
@@ -91,7 +91,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _sceneTree = new ModelSceneTree(this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
         _propEditor = new ModelPropertyEditor(EditorActionManager, _propCache, Viewport, null);
         _assetBrowser = new ModelAssetBrowser(this);
-        _toolbarView = new ModelToolbarView(this);
+        _toolbarView = new ModelToolbarView(EditorActionManager, this);
     }
 
     public void Init()
@@ -101,7 +101,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void UpdateLoadedModelInfo(string modelName, string mapID = "")
     {
-        _loadedModelInfo = new LoadedModelInfo(modelName, CurrentlyLoadedModelType, mapID);
+        CurrentModelInfo = new LoadedModelInfo(modelName, CurrentlyLoadedModelType, mapID);
     }
 
     public void OnInstantiateChr(string chrid)
@@ -148,11 +148,14 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         if (CFG.Current.ModelEditor_RenderingUpdate)
         {
             CFG.Current.ModelEditor_RenderingUpdate = false;
+
             if (_flverhandle != null)
             {
                 FlverResource r = _flverhandle.Get();
-                _universe.LoadFlver(r.Flver, _renderMesh, _currentModel);
+                _universe.LoadFlver(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
             }
+
+            _universe.ScheduleTextureRefresh();
         }
 
         if (_loadingTask != null && _loadingTask.IsCompleted)
@@ -180,7 +183,6 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
     {
         if (ImGui.BeginMenu("Edit"))
         {
-            /*
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Undo}");
             if (ImGui.MenuItem($"Undo", KeyBindings.Current.Core_Undo.HintText, false,
                     EditorActionManager.CanUndo()))
@@ -205,16 +207,15 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.Scissors}");
             if (ImGui.MenuItem("Remove", KeyBindings.Current.Core_Delete.HintText, false, _selection.IsSelection()))
             {
-                DeleteSelection();
+                ModelAction_DeleteProperty.DeleteFLVERProperty();
             }
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.Core_Duplicate.HintText, false,
                     _selection.IsSelection()))
             {
-                DuplicateSelection();
+                ModelAction_DuplicateProperty.DuplicateFLVERProperty();
             }
-            */
 
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.FilesO}");
             if (ImGui.MenuItem("Load Asset Selection", KeyBindings.Current.ModelEditor_LoadCurrentSelection.HintText, true))
@@ -225,7 +226,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             ImguiUtils.ShowMenuIcon($"{ForkAwesome.WindowClose}");
             if (ImGui.MenuItem("Unload Current Asset", KeyBindings.Current.ModelEditor_UnloadCurrentSelection.HintText, true))
             {
-                _loadedModelInfo = null;
+                CurrentModelInfo = null;
                 _universe.UnloadModels(true);
             }
 
@@ -406,12 +407,12 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate))
         {
-            DuplicateSelection();
+            ModelAction_DuplicateProperty.DuplicateFLVERProperty();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete))
         {
-            DeleteSelection();
+            ModelAction_DeleteProperty.DeleteFLVERProperty();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_LoadCurrentSelection))
@@ -421,7 +422,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.ModelEditor_UnloadCurrentSelection))
         {
-            _loadedModelInfo = null;
+            CurrentModelInfo = null;
             _universe.UnloadModels(true);
         }
 
@@ -519,40 +520,6 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         ImGui.PopStyleColor(1);
     }
 
-    public void DuplicateSelection()
-    {
-        ViewportSelection sel = _sceneTree.GetCurrentSelection();
-
-        if (sel.GetSelection().Count < 1)
-        {
-            return;
-        }
-
-        ISelectable first = sel.GetSelection().First();
-        Entity selected = first as Entity;
-
-        FlverResource r = _flverhandle.Get();
-
-        ModelSceneTree.Model.DuplicateMeshIfValid(selected, r);
-    }
-
-    public void DeleteSelection()
-    {
-        ViewportSelection sel = _sceneTree.GetCurrentSelection();
-
-        if (sel.GetSelection().Count < 1)
-        {
-            return;
-        }
-
-        ISelectable first = sel.GetSelection().First();
-        Entity selected = first as Entity;
-
-        FlverResource r = _flverhandle.Get();
-
-        ModelSceneTree.Model.DeleteMeshIfValid(selected, r);
-    }
-
     public bool InputCaptured()
     {
         return Viewport.ViewportSelected;
@@ -565,23 +532,23 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             _assetBrowser.OnProjectChanged();
         }
 
-        _loadedModelInfo = null;
+        CurrentModelInfo = null;
         _universe.UnloadAll(true);
     }
 
     public void Save()
     {
-        if (_loadedModelInfo != null)
+        if (CurrentModelInfo != null)
         {
             // Copy the binder to the mod directory if it does not already exist.
 
-            var exists = _loadedModelInfo.CopyBinderToMod();
+            var exists = CurrentModelInfo.CopyBinderToMod();
 
             if (exists)
             {
                 if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
                 {
-                    if (_loadedModelInfo.Type == ModelEditorModelType.MapPiece)
+                    if (CurrentModelInfo.Type == ModelEditorModelType.MapPiece)
                     {
                         WriteModelFlver(); // DS1 doesn't wrap the mappiece flver within a container
                     }
@@ -600,7 +567,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void WriteModelBinderBND4()
     {
-        LoadedModelInfo info = _loadedModelInfo;
+        LoadedModelInfo info = CurrentModelInfo;
         FlverResource flvResource = _flverhandle.Get();
 
         byte[] fileBytes = null;
@@ -656,7 +623,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void WriteModelBinderBND3()
     {
-        LoadedModelInfo info = _loadedModelInfo;
+        LoadedModelInfo info = CurrentModelInfo;
         FlverResource flvResource = _flverhandle.Get();
         byte[] fileBytes = null;
 
@@ -703,7 +670,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void WriteModelFlver()
     {
-        LoadedModelInfo info = _loadedModelInfo;
+        LoadedModelInfo info = CurrentModelInfo;
         FlverResource flvResource = _flverhandle.Get();
         byte[] fileBytes = null;
 
@@ -748,7 +715,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             if (r.Flver != null)
             {
                 _universe.UnloadModels(true);
-                _universe.LoadFlver(r.Flver, _renderMesh, _currentModel);
+                _universe.LoadFlver(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
             }
         }
 
@@ -762,16 +729,14 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void OnEntityContextMenu(Entity ent)
     {
-        /*
         if (ImGui.MenuItem("Duplicate"))
         {
-            DuplicateSelection();
+            ModelAction_DuplicateProperty.DuplicateFLVERProperty();
         }
         if (ImGui.MenuItem("Delete"))
         {
-            DeleteSelection();
+            ModelAction_DeleteProperty.DeleteFLVERProperty();
         }
-        */
     }
 
     public AssetDescription loadedAsset;
@@ -792,35 +757,65 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public void LoadModelInternal(string modelid, ModelEditorModelType modelType, string mapid = null, bool skipModel = false)
     {
-        AssetDescription asset;
-        AssetDescription assettex;
-        var filt = RenderFilter.All;
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
-        switch (modelType)
+
+        AssetDescription modelAsset = GetModelAssetDescriptor(modelid, modelType, mapid);
+        AssetDescription textureAsset = GetTextureAssetDescriptor(modelid, modelType, mapid);
+
+        UpdateRenderMesh(modelAsset, skipModel);
+
+        if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
         {
-            case ModelEditorModelType.Character:
-                asset = ModelAssetLocator.GetChrModel(modelid);
-                assettex = TextureAssetLocator.GetChrTextures(modelid);
-                break;
-            case ModelEditorModelType.Object:
-                asset = ModelAssetLocator.GetObjModel(modelid);
-                assettex = TextureAssetLocator.GetObjTexture(modelid);
-                break;
-            case ModelEditorModelType.Parts:
-                asset = ModelAssetLocator.GetPartsModel(modelid);
-                assettex = TextureAssetLocator.GetPartTextures(modelid);
-                break;
-            case ModelEditorModelType.MapPiece:
-                asset = ModelAssetLocator.GetMapModel(mapid, modelid);
-                assettex = ModelAssetLocator.GetNullAsset();
-                break;
-            default:
-                //Uh oh
-                asset = ModelAssetLocator.GetNullAsset();
-                assettex = ModelAssetLocator.GetNullAsset();
-                break;
+            // Ignore this if we are only loading textures
+            if (!skipModel)
+            {
+                if (modelAsset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
+                }
+                else if (modelAsset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
+                }
+            }
+
+            if (Universe.IsRendering)
+            {
+                if (textureAsset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(textureAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
+                }
+                else if (textureAsset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(textureAsset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            _loadingTask = job.Complete();
         }
 
+        ResourceManager.AddResourceListener<FlverResource>(modelAsset.AssetVirtualPath, this, AccessLevel.AccessFull);
+    }
+
+    public static void UpdateLoadedRenderMesh()
+    {
+        AssetDescription asset = GetModelAssetDescriptor(CurrentModelInfo.ModelName, CurrentModelInfo.Type, CurrentModelInfo.MapID);
+
+        if (Universe.IsRendering)
+        {
+            if (_renderMesh != null)
+            {
+                _renderMesh.Dispose();
+            }
+
+            _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
+                RenderScene, asset.AssetVirtualPath, ModelMarkerType.None);
+            _renderMesh.World = Matrix4x4.Identity;
+        }
+    }
+
+    public void UpdateRenderMesh(AssetDescription modelAsset, bool skipModel = false)
+    {
         if (Universe.IsRendering)
         {
             // Ignore this if we are only loading textures
@@ -832,44 +827,62 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 }
 
                 _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                    RenderScene, asset.AssetVirtualPath, ModelMarkerType.None);
-                //_renderMesh.DrawFilter = filt;
+                    RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None);
                 _renderMesh.World = Matrix4x4.Identity;
             }
         }
+    }
 
-        _currentModel = modelid;
+    public static AssetDescription GetModelAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
+    {
+        AssetDescription asset;
 
-        if (!ResourceManager.IsResourceLoadedOrInFlight(asset.AssetVirtualPath, AccessLevel.AccessFull))
+        switch (modelType)
         {
-            // Ignore this if we are only loading textures
-            if (!skipModel)
-            {
-                if (asset.AssetArchiveVirtualPath != null)
-                {
-                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
-                }
-                else if (asset.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessFull);
-                }
-            }
-
-            if (Universe.IsRendering)
-            {
-                if (assettex.AssetArchiveVirtualPath != null)
-                {
-                    job.AddLoadArchiveTask(assettex.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
-                }
-                else if (assettex.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(assettex.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-            }
-
-            _loadingTask = job.Complete();
+            case ModelEditorModelType.Character:
+                asset = ModelAssetLocator.GetChrModel(modelid);
+                break;
+            case ModelEditorModelType.Object:
+                asset = ModelAssetLocator.GetObjModel(modelid);
+                break;
+            case ModelEditorModelType.Parts:
+                asset = ModelAssetLocator.GetPartsModel(modelid);
+                break;
+            case ModelEditorModelType.MapPiece:
+                asset = ModelAssetLocator.GetMapModel(mapid, modelid);
+                break;
+            default:
+                asset = ModelAssetLocator.GetNullAsset();
+                break;
         }
 
-        ResourceManager.AddResourceListener<FlverResource>(asset.AssetVirtualPath, this, AccessLevel.AccessFull);
+        return asset;
     }
+
+    public static AssetDescription GetTextureAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
+    {
+        AssetDescription asset;
+
+        switch (modelType)
+        {
+            case ModelEditorModelType.Character:
+                asset = TextureAssetLocator.GetChrTextures(modelid);
+                break;
+            case ModelEditorModelType.Object:
+                asset = TextureAssetLocator.GetObjTexture(modelid);
+                break;
+            case ModelEditorModelType.Parts:
+                asset = TextureAssetLocator.GetPartTextures(modelid);
+                break;
+            case ModelEditorModelType.MapPiece:
+                asset = ModelAssetLocator.GetNullAsset();
+                break;
+            default:
+                asset = ModelAssetLocator.GetNullAsset();
+                break;
+        }
+
+        return asset;
+    }
+
 }
