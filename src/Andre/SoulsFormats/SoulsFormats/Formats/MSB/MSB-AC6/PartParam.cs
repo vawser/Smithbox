@@ -31,7 +31,7 @@ namespace SoulsFormats
         /// </summary>
         public class PartsParam : Param<Part>, IMsbParam<IMsbPart>
         {
-            private int version;
+            private int ParamVersion;
 
             /// <summary>
             /// All of the fixed visual geometry of the map.
@@ -106,9 +106,9 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty PartsParam with the default version.
             /// </summary>
-            public PartsParam(int _version) : base(_version, "PARTS_PARAM_ST")
+            public PartsParam() : base("PARTS_PARAM_ST")
             {
-                version = _version;
+                ParamVersion = base.Version;
 
                 MapPieces = new List<Part.MapPiece>();
                 Enemies = new List<Part.Enemy>();
@@ -195,7 +195,7 @@ namespace SoulsFormats
             }
             IReadOnlyList<IMsbPart> IMsbParam<IMsbPart>.GetEntries() => GetEntries();
 
-            internal override Part ReadEntry(BinaryReaderEx br, int version, long offsetLength)
+            internal override Part ReadEntry(BinaryReaderEx br, long offsetLength)
             {
                 PartType type = br.GetEnum32<PartType>(br.Position + 8);
 
@@ -223,7 +223,7 @@ namespace SoulsFormats
                         return ConnectCollisions.EchoAdd(new Part.ConnectCollision(br));
 
                     case PartType.Asset:
-                        return Assets.EchoAdd(new Part.Asset(br));
+                        return Assets.EchoAdd(new Part.Asset(br, ParamVersion));
 
                     case PartType.Object:
                         return Objects.EchoAdd(new Part.Object(br, offsetLength));
@@ -3059,8 +3059,6 @@ namespace SoulsFormats
                 /// </summary>
                 public Asset() : base("AEGxxx_xxx_xxxx")
                 {
-                    version = 52;
-
                     UnkStruct50 = new UnkStruct50();
                     UnkStruct58 = new UnkStruct58();
                     UnkStruct70 = new UnkStruct70();
@@ -3113,9 +3111,9 @@ namespace SoulsFormats
                     PartNames = (string[])PartNames.Clone();
                 }
 
-                internal Asset(BinaryReaderEx br) : base(br) 
+                internal Asset(BinaryReaderEx br, int _version) : base(br) 
                 {
-                    
+                    version = _version;
                 }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)

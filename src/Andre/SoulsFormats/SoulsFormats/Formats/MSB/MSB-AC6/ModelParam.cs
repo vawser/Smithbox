@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.GPARAM;
 
 namespace SoulsFormats
 {
@@ -29,7 +30,7 @@ namespace SoulsFormats
         /// </summary>
         public class ModelParam : Param<Model>, IMsbParam<IMsbModel>
         {
-            public int version;
+            private int ParamVersion { get; set; }
 
             /// <summary>
             /// Models for fixed terrain and scenery.
@@ -59,9 +60,9 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty ModelParam with the default version.
             /// </summary>
-            public ModelParam(int _version) : base(_version, "MODEL_PARAM_ST")
+            public ModelParam() : base("MODEL_PARAM_ST")
             {
-                version = _version;
+                ParamVersion = base.Version;
 
                 MapPieces = new List<Model.MapPiece>();
                 Enemies = new List<Model.Enemy>();
@@ -110,7 +111,7 @@ namespace SoulsFormats
             }
             IReadOnlyList<IMsbModel> IMsbParam<IMsbModel>.GetEntries() => GetEntries();
             
-            internal override Model ReadEntry(BinaryReaderEx br, int Version, long offsetLength)
+            internal override Model ReadEntry(BinaryReaderEx br, long offsetLength)
             {
                 ModelType type = br.GetEnum32<ModelType>(br.Position + 8);
                 switch (type)

@@ -97,6 +97,14 @@ namespace SoulsFormats
             return names;
         }
 
+        internal static string[] FindNames<T>(List<T> list, short[] indices) where T : IMsbEntry
+        {
+            var names = new string[indices.Length];
+            for (int i = 0; i < indices.Length; i++)
+                names[i] = FindName(list, indices[i]);
+            return names;
+        }
+
         internal static int FindIndex<T>(List<T> list, string name) where T : IMsbEntry
         {
             if (name == null || name == "")
@@ -147,6 +155,14 @@ namespace SoulsFormats
             var indices = new int[names.Length];
             for (int i = 0; i < names.Length; i++)
                 indices[i] = FindIndex(referrer, list, names[i]);
+            return indices;
+        }
+
+        internal static short[] FindShortIndices<T>(IMsbEntry referrer, List<T> list, string[] names) where T : IMsbEntry
+        {
+            var indices = new short[names.Length];
+            for (int i = 0; i < names.Length; i++)
+                indices[i] = (short)FindIndex(referrer, list, names[i]);
             return indices;
         }
     }

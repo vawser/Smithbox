@@ -15,7 +15,7 @@ namespace SoulsFormats
         /// </summary>
         public class LayerParam : Param<Layer>
         {
-            public int version;
+            public int ParamVersion;
 
             /// <summary>
             /// The layers in this section.
@@ -25,9 +25,9 @@ namespace SoulsFormats
             /// <summary>
             /// Creates a new LayerParam with no layers.
             /// </summary>
-            public LayerParam(int _version) : base(_version, "LAYER_PARAM_ST")
+            public LayerParam() : base("LAYER_PARAM_ST")
             {
-                version = _version;
+                ParamVersion = base.Version;
 
                 Layers = new List<Layer>();
             }
@@ -39,7 +39,7 @@ namespace SoulsFormats
             {
                 return Layers;
             }
-            internal override Layer ReadEntry(BinaryReaderEx br, int Version, long offsetLength)
+            internal override Layer ReadEntry(BinaryReaderEx br, long offsetLength)
             {
                 return Layers.EchoAdd(new Layer(br));
             }

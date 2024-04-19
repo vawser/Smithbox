@@ -9,8 +9,6 @@ namespace SoulsFormats
     /// </summary>
     public partial class MSB_AC6 : SoulsFile<MSB_AC6>, IMsb
     {
-        public int version;
-
         /// <summary>
         /// Model files that are available for parts to use.
         /// </summary>
@@ -50,14 +48,12 @@ namespace SoulsFormats
         /// </summary>
         public MSB_AC6()
         {
-            version = 52;
-
-            Models = new ModelParam(version);
-            Events = new EventParam(version);
-            Regions = new PointParam(version);
-            Routes = new RouteParam(version);
-            Layers = new LayerParam(version);
-            Parts = new PartsParam(version);
+            Models = new ModelParam();
+            Events = new EventParam();
+            Regions = new PointParam();
+            Routes = new RouteParam();
+            Layers = new LayerParam();
+            Parts = new PartsParam();
         }
 
         /// <summary>
@@ -81,17 +77,17 @@ namespace SoulsFormats
             MSB.AssertHeader(br);
 
             Entries entries;
-            Models = new ModelParam(version);
+            Models = new ModelParam();
             entries.Models = Models.Read(br);
-            Events = new EventParam(version);
+            Events = new EventParam();
             entries.Events = Events.Read(br);
-            Regions = new PointParam(version);
+            Regions = new PointParam();
             entries.Regions = Regions.Read(br);
-            Routes = new RouteParam(version);
+            Routes = new RouteParam();
             entries.Routes = Routes.Read(br);
-            Layers = new LayerParam(version);
+            Layers = new LayerParam();
             entries.Layers = Layers.Read(br);
-            Parts = new PartsParam(version);
+            Parts = new PartsParam();
             entries.Parts = Parts.Read(br);
 
             if (br.Position != 0)
@@ -176,9 +172,8 @@ namespace SoulsFormats
 
             private protected string Name { get; }
 
-            internal Param(int version, string name)
+            internal Param(string name)
             {
-                Version = version;
                 Name = name;
             }
 
@@ -199,13 +194,13 @@ namespace SoulsFormats
                 {
                     br.Position = offset;
 
-                    entries.Add(ReadEntry(br, Version, offset));
+                    entries.Add(ReadEntry(br, offset));
                 }
                 br.Position = nextParamOffset;
                 return entries;
             }
 
-            internal abstract T ReadEntry(BinaryReaderEx br, int version, long offsetLength);
+            internal abstract T ReadEntry(BinaryReaderEx br, long offsetLength);
 
             internal virtual void Write(BinaryWriterEx bw, List<T> entries)
             {

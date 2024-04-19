@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoulsFormats.GPARAM;
 using static SoulsFormats.PARAM;
 
 namespace SoulsFormats
@@ -15,7 +16,7 @@ namespace SoulsFormats
         /// </summary>
         public class RouteParam : Param<Route>
         {
-            private int version;
+            private int ParamVersion;
 
             /// <summary>
             /// The routes in this section.
@@ -25,9 +26,9 @@ namespace SoulsFormats
             /// <summary>
             /// Creates a new RouteParam with no routes.
             /// </summary>
-            public RouteParam(int _version) : base(_version, "ROUTE_PARAM_ST")
+            public RouteParam() : base("ROUTE_PARAM_ST")
             {
-                version = _version;
+                ParamVersion = base.Version;
                 Routes = new List<Route>();
             }
 
@@ -39,7 +40,7 @@ namespace SoulsFormats
                 return Routes;
             }
 
-            internal override Route ReadEntry(BinaryReaderEx br, int version, long offsetLength)
+            internal override Route ReadEntry(BinaryReaderEx br, long offsetLength)
             {
                 return Routes.EchoAdd(new Route(br));
             }
