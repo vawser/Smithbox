@@ -204,7 +204,11 @@ namespace SoulsFormats
 
             internal virtual void Write(BinaryWriterEx bw, List<T> entries)
             {
-                bw.WriteInt32(Version);
+                // TODO: for some reason Version returns 0 for Model/Event/Point/Parts params
+                // Forced the version to 52 for now
+                bw.WriteInt32(52);
+                //bw.WriteInt32(Version);
+
                 bw.WriteInt32(entries.Count + 1);
                 bw.ReserveInt64("ParamNameOffset");
                 for (int i = 0; i < entries.Count; i++)

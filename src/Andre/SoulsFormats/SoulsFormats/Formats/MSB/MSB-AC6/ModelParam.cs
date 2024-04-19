@@ -30,7 +30,7 @@ namespace SoulsFormats
         /// </summary>
         public class ModelParam : Param<Model>, IMsbParam<IMsbModel>
         {
-            private int ParamVersion { get; set; }
+            private int ParamVersion;
 
             /// <summary>
             /// Models for fixed terrain and scenery.

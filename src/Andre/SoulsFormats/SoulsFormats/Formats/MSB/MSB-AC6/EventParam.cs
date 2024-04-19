@@ -44,7 +44,7 @@ namespace SoulsFormats
         /// </summary>
         public class EventParam : Param<Event>, IMsbParam<IMsbEvent>
         {
-            private int ParamVersion { get; set; }
+            private int ParamVersion;
 
             /// <summary>
             /// Item pickups out in the open or inside containers.

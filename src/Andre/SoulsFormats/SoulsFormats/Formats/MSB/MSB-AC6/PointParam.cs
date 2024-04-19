@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.MSBE.Region.HorseRideOverride;
@@ -1056,12 +1057,20 @@ namespace SoulsFormats
                     ReadTypeData(br);
                 }
 
+                if(Type == RegionType.Other)
+                {
+                    long otherSize = Struct98Offset - TypeOffset;
+                    otherStuff = br.ReadBytes((int)otherSize);
+                }
+
                 // Struct98 Offset
                 br.Position = start + Struct98Offset;
                 br.AssertInt32(-1);
                 br.AssertInt32(new int[1]);
                 br.AssertInt32(-1);
             }
+
+            private byte[] otherStuff;
 
             private protected virtual void ReadTypeData(BinaryReaderEx br)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
@@ -1142,6 +1151,11 @@ namespace SoulsFormats
                 else
                 {
                     bw.FillInt64("TypeOffset", 0L);
+                }
+
+                if (Type == RegionType.Other)
+                {
+                    bw.WriteBytes(otherStuff);
                 }
 
                 if (Type <= RegionType.MufflingBox && Type != RegionType.Other)
