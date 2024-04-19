@@ -53,6 +53,11 @@ public class CFG
     public Vector3 SavedScale = new Vector3();
 
     //**************
+    // Feature Flags
+    //**************
+    public bool FeatureFlag_EnableAC6Saving = false;
+
+    //**************
     // Interface
     //**************
     // View Toggles

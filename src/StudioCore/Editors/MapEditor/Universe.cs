@@ -1595,7 +1595,7 @@ public class Universe
 
     public void SaveAllMaps()
     {
-        if (Project.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
+        if (Project.Type == ProjectType.AC6 && !CFG.Current.FeatureFlag_EnableAC6Saving)
         {
             TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
         }

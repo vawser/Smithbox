@@ -61,6 +61,7 @@
     <channelAttackHeatBuildup AltName="Heat Build-up on Channeled Attack" />
     <heatBuildup AltName="Heat Build-up" />
     <burstFireAmount AltName="Burst Fire Amount" />
+    <weaponFiringAngle_UpwardsAdjust AltName="Weapon Firing Angle: Upwards Adjustment" />
   </Field>
   <Self Row0Dummy="" />
 </PARAMMETA>

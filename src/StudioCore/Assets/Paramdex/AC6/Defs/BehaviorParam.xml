@@ -33,7 +33,7 @@
     <Field Def="s32 dummyPolyRange_Max"></Field>
     <Field Def="s16 UnkAngleShort0x2C"></Field>
     <Field Def="s16 UnkAngleShort0x2E"></Field>
-    <Field Def="u8 UnkByte0x30"></Field>
+    <Field Def="u8 weaponFiringAngle_UpwardsAdjust"></Field>
     <Field Def="u8 UnkByte0x31"></Field>
     <Field Def="s16 Unk0x32"></Field>
     <Field Def="u16 UnkUshort0x34"></Field>

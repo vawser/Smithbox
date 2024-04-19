@@ -18,7 +18,6 @@ public static class FeatureFlags
 
     // MSB Toggles
     public static bool AC6_MSB = true;
-    public static bool AC6_MSB_Saving = false;
 
     // Editor Toggles
     public static bool EnableEditor_TimeAct = false;

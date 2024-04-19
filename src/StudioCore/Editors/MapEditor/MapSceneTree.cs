@@ -997,7 +997,7 @@ public class MapSceneTree : IActionEventHandler
                     {
                         try
                         {
-                            if (Project.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB_Saving == false)
+                            if (Project.Type == ProjectType.AC6 && !CFG.Current.FeatureFlag_EnableAC6Saving)
                             {
                                 TaskLogs.AddLog("AC6 Map saving has been disabled", LogLevel.Warning, TaskLogs.LogPriority.Normal);
                             }
