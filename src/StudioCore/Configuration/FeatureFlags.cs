@@ -16,9 +16,6 @@ public static class FeatureFlags
     public static bool EnableNavmeshBuilder = false;
     public static bool EnablePartialParam = false;
 
-    // MSB Toggles
-    public static bool AC6_MSB = true;
-
     // Editor Toggles
     public static bool EnableEditor_TimeAct = false;
     public static bool EnableEditor_Cutscene = false;

@@ -707,27 +707,11 @@ public class MapSceneTree : IActionEventHandler
                 }
             }
 
-            // AC6 Map Saving Disabled
-            if (Project.Type == ProjectType.AC6 && FeatureFlags.AC6_MSB == false)
-            {
-                ImGui.Indent();
-                ImGui.Spacing();
-                ImGui.Text("AC6 map editing is unsupported for now.");
-                ImGui.Spacing();
-                ImGui.BeginDisabled();
-            }
-
             DisplayMapTreeList();
 
             if (Project.Type == ProjectType.BB && _configuration == Configuration.MapEditor)
             {
                 ChaliceDungeonImportButton();
-            }
-
-            if (_configuration == Configuration.MapEditor && Project.Type == ProjectType.AC6 &&
-                FeatureFlags.AC6_MSB == false)
-            {
-                ImGui.EndDisabled();
             }
 
             ImGui.EndChild();
@@ -997,14 +981,7 @@ public class MapSceneTree : IActionEventHandler
                     {
                         try
                         {
-                            if (Project.Type == ProjectType.AC6 && !CFG.Current.FeatureFlag_EnableAC6Saving)
-                            {
-                                TaskLogs.AddLog("AC6 Map saving has been disabled", LogLevel.Warning, TaskLogs.LogPriority.Normal);
-                            }
-                            else
-                            {
-                                _universe.SaveMap(m);
-                            }
+                            _universe.SaveMap(m);
                         }
                         catch (SavingFailedException e)
                         {

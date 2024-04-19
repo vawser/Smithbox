@@ -71,15 +71,6 @@ public class SettingsWindow
                 }
             }
 
-            if (ImGui.CollapsingHeader("Features"))
-            {
-                ImGui.Text("Unstable features supported by Smithbox may be enabled here.");
-                ImGui.Text("WARNING: enable and use these features at your own risk.");
-
-                ImGui.Checkbox("Allow AC6 Maps to Save", ref CFG.Current.FeatureFlag_EnableAC6Saving);
-                ImguiUtils.ShowHoverTooltip("Enable this to allow AC6 maps to be saved.\nWARNING: map saving is not currently 100% accurate and saved maps may cause AC6 to hang or crash in-game.");
-            }
-
             if (ImGui.CollapsingHeader("Formats"))
             {
                 ImGui.Checkbox("Flexible Unpack", ref CFG.Current.System_FlexibleUnpack);

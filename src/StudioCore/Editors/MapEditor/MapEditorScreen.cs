@@ -952,39 +952,25 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public void Save()
     {
-        if (Project.Type == ProjectType.AC6 && !CFG.Current.FeatureFlag_EnableAC6Saving)
+        try
         {
-            TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
+            Universe.SaveAllMaps();
         }
-        else
+        catch (SavingFailedException e)
         {
-            try
-            {
-                Universe.SaveAllMaps();
-            }
-            catch (SavingFailedException e)
-            {
-                HandleSaveException(e);
-            }
+            HandleSaveException(e);
         }
     }
 
     public void SaveAll()
     {
-        if (Project.Type == ProjectType.AC6 && !CFG.Current.FeatureFlag_EnableAC6Saving)
+        try
         {
-            TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
+            Universe.SaveAllMaps();
         }
-        else
+        catch (SavingFailedException e)
         {
-            try
-            {
-                Universe.SaveAllMaps();
-            }
-            catch (SavingFailedException e)
-            {
-                HandleSaveException(e);
-            }
+            HandleSaveException(e);
         }
     }
 

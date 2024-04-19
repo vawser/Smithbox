@@ -1595,20 +1595,13 @@ public class Universe
 
     public void SaveAllMaps()
     {
-        if (Project.Type == ProjectType.AC6 && !CFG.Current.FeatureFlag_EnableAC6Saving)
+        foreach (KeyValuePair<string, ObjectContainer> m in LoadedObjectContainers)
         {
-            TaskLogs.AddLog("AC6 map saving has been disabled.", LogLevel.Warning, TaskLogs.LogPriority.Normal);
-        }
-        else
-        {
-            foreach (KeyValuePair<string, ObjectContainer> m in LoadedObjectContainers)
+            if (m.Value != null)
             {
-                if (m.Value != null)
+                if (m.Value is MapContainer ma)
                 {
-                    if (m.Value is MapContainer ma)
-                    {
-                        SaveMap(ma);
-                    }
+                    SaveMap(ma);
                 }
             }
         }
