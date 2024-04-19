@@ -53,7 +53,7 @@ public class DebugWindow
 
         if (ImGui.Begin("Tests##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            if (FeatureFlags.VawserActions)
+            if (FeatureFlags.VawserHackyActions)
             {
                 ImGui.Columns(5);
 
