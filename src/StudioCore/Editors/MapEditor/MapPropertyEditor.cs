@@ -1349,7 +1349,10 @@ public class MapPropertyEditor
 
             var desc = MsbFormatBank.Bank.GetReferenceDescription(name);
 
-            ImguiUtils.ShowHoverTooltip(desc);
+            if (desc != "")
+            {
+                ImguiUtils.ShowHoverTooltip(desc);
+            }
         }
     }
 

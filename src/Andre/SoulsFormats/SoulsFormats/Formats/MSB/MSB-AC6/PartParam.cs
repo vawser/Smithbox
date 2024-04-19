@@ -1592,10 +1592,9 @@ namespace SoulsFormats
                 public short Unk22 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Default idle anim ID.
                 /// </summary>
-                [IgnoreProperty]
-                public int Unk38 { get; set; }
+                public int BackupEventAnimID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1646,10 +1645,11 @@ namespace SoulsFormats
                 public sbyte Unk56 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Maybe PartsTokenParam?
                 /// </summary>
-                [IgnoreProperty]
-                public int Unk58 { get; set; }
+                [EnemyProperty]
+                [MSBParamReference(ParamName = "PartsTokenParam")] // CONFIRM
+                public int PartsTokenParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1809,12 +1809,12 @@ namespace SoulsFormats
                     CollisionPartIndex = -1;
                     WalkRouteIndex = (short)-1;
                     Unk22 = (short)-1;
-                    Unk38 = -1;
+                    BackupEventAnimID = -1;
                     Unk3C = -1;
                     Unk44 = -1;
                     Unk50 = -1;
                     Unk56 = (sbyte)-1;
-                    Unk58 = -1;
+                    PartsTokenParamID = -1;
 
                     UnkEnemyStruct78 = new EnemyUnkStruct78();
                 }
@@ -1839,8 +1839,8 @@ namespace SoulsFormats
 
                     Unk00 = br.ReadInt32();
                     br.AssertInt32(new int[1]);
-                    NPCParamID = br.ReadInt32();
                     ThinkParamID = br.ReadInt32();
+                    NPCParamID = br.ReadInt32();
                     TalkID = br.ReadInt32();
                     br.AssertInt16(new short[1]);
                     Unk16 = br.ReadInt16();
@@ -1853,7 +1853,7 @@ namespace SoulsFormats
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
-                    Unk38 = br.ReadInt32();
+                    BackupEventAnimID = br.ReadInt32();
                     Unk3C = br.ReadInt32();
                     Unk40 = br.ReadInt32(); // Entity id?
                     Unk44 = br.ReadInt32();
@@ -1864,7 +1864,7 @@ namespace SoulsFormats
                     Unk55 = br.ReadByte();
                     Unk56 = br.ReadSByte();
                     br.AssertByte(new byte[1]);
-                    Unk58 = br.ReadInt32();
+                    PartsTokenParamID = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -1893,8 +1893,8 @@ namespace SoulsFormats
 
                     bw.WriteInt32(Unk00);
                     bw.WriteInt32(0);
-                    bw.WriteInt32(NPCParamID);
                     bw.WriteInt32(ThinkParamID);
+                    bw.WriteInt32(NPCParamID);
                     bw.WriteInt32(TalkID);
                     bw.WriteInt16((short)0);
                     bw.WriteInt16(Unk16);
@@ -1907,7 +1907,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
-                    bw.WriteInt32(Unk38);
+                    bw.WriteInt32(BackupEventAnimID);
                     bw.WriteInt32(Unk3C);
                     bw.WriteInt32(Unk40);
                     bw.WriteInt32(Unk44);
@@ -1918,7 +1918,7 @@ namespace SoulsFormats
                     bw.WriteByte(Unk55);
                     bw.WriteSByte(Unk56);
                     bw.WriteByte((byte)0);
-                    bw.WriteInt32(Unk58);
+                    bw.WriteInt32(PartsTokenParamID);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
