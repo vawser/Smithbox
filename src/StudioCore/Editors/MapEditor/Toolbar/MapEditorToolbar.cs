@@ -75,7 +75,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static bool IsSupportedProjectTypeForPrefabs()
         {
-            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS2S or ProjectType.DS1 or ProjectType.DS1R))
+            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS2S or ProjectType.DS1 or ProjectType.DS1R or ProjectType.AC6))
                 return false;
 
             return true;
@@ -340,6 +340,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             switch (Project.Type)
             {
+                case ProjectType.AC6:
+                    var prefab_AC6 = new Prefab_AC6();
+                    using (var stream = File.OpenRead(filepath))
+                        prefab_AC6 = JsonSerializer.Deserialize<Prefab_AC6>(File.OpenRead(filepath), options);
+
+                    tags = prefab_AC6.TagList;
+                    break;
                 case ProjectType.ER:
                     var prefab_ER = new Prefab_ER();
                     using (var stream = File.OpenRead(filepath))

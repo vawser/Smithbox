@@ -607,6 +607,8 @@ public class AddMapObjectsAction : ViewportAction
                 MsbEntity ent = Added[i];
                 MapContainer m;
 
+                AddedMaps.Add(Map);
+
                 if (TargetMap != null)
                 {
                     m = Universe.GetLoadedMap(TargetMap.Name);
@@ -629,8 +631,6 @@ public class AddMapObjectsAction : ViewportAction
                         ViewportActionCommon.SetSpecificEntityGroupID(ent, m);
                     }
                 }
-
-                AddedMaps.Add(Map);
             }
             else
             {

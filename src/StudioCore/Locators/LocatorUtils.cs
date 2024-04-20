@@ -66,7 +66,7 @@ public static class LocatorUtils
 
     public static bool CheckFilesExpanded(string gamepath, ProjectType game)
     {
-        if (game == ProjectType.ER)
+        if (game is ProjectType.ER or ProjectType.AC6)
         {
             if (!Directory.Exists($@"{gamepath}\map"))
                 return false;
@@ -90,15 +90,6 @@ public static class LocatorUtils
                 return false;
 
             if (!Directory.Exists($@"{gamepath}\model\obj"))
-                return false;
-        }
-
-        if (game == ProjectType.AC6)
-        {
-            if (!Directory.Exists($@"{gamepath}\map"))
-                return false;
-
-            if (!Directory.Exists($@"{gamepath}\asset"))
                 return false;
         }
 
@@ -201,10 +192,7 @@ public static class LocatorUtils
                     if (Project.Type == ProjectType.BB || Project.Type == ProjectType.DES)
                         return GetAssetPath($@"map\{mapid}\{pathElements[i]}.flver.dcx");
 
-                    if (Project.Type == ProjectType.ER)
-                        return GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
-
-                    if (Project.Type == ProjectType.AC6)
+                    if (Project.Type is ProjectType.ER or ProjectType.AC6)
                         return GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
 
                     return GetAssetPath($@"map\{mapid}\{pathElements[i]}.mapbnd.dcx");

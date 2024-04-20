@@ -26,8 +26,8 @@ public static class MapAssetLocator
         if (mapid.Length != 12)
             return ad;
 
-        string preferredPath;
-        string backupPath;
+        string preferredPath = "";
+        string backupPath = "";
 
         // SOFTS
         if (Project.Type == ProjectType.DS2S)
@@ -47,13 +47,8 @@ public static class MapAssetLocator
             preferredPath = $@"\map\MapStudio\{mapid}.msb";
             backupPath = $@"\map\MapStudio\{mapid}.msb.dcx";
         }
-        // BB, DS3, ER, SSDT
-        else if (Project.Type == ProjectType.BB || Project.Type == ProjectType.DS3 || Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT)
-        {
-            preferredPath = $@"\map\MapStudio\{mapid}.msb.dcx";
-            backupPath = $@"\map\MapStudio\{mapid}.msb";
-        }
-        else
+        // BB, DS3, ER, SDT, AC6
+        else if (Project.Type is ProjectType.BB or ProjectType.DS3 or ProjectType.ER or ProjectType.SDT or ProjectType.AC6)
         {
             preferredPath = $@"\map\MapStudio\{mapid}.msb.dcx";
             backupPath = $@"\map\MapStudio\{mapid}.msb";

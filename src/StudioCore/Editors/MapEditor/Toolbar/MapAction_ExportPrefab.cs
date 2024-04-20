@@ -125,6 +125,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             switch (Project.Type)
             {
+                case ProjectType.AC6:
+                    Prefab_AC6.ExportSelection(filepath, _selection, MapEditorToolbar._prefabTags);
+                    break;
                 case ProjectType.ER:
                     Prefab_ER.ExportSelection(filepath, _selection, MapEditorToolbar._prefabTags);
                     break;

@@ -59,6 +59,9 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
         {
             switch(Project.Type)
             {
+                case ProjectType.AC6:
+                    DuplicateAsset_AC6();
+                    break;
                 case ProjectType.ER:
                     DuplicateAsset_ER();
                     break;
@@ -69,6 +72,26 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
                     PlatformUtils.Instance.MessageBox("This asset cannot be duplicated by this action.", "Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
+        }
+
+        public static void DuplicateAsset_AC6()
+        {
+            //*** Chr
+
+            // anibnd
+
+            // behbnd
+
+            // chrbnd
+
+            // texbnd
+
+            //*** AEG
+
+
+            //*** Part
+
+            //*** MapPiece
         }
 
         public static void DuplicateAsset_ER()

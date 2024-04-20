@@ -425,11 +425,11 @@ namespace SoulsFormats
             /// Event: EventCommon
             [MSBReference(ReferenceType = typeof(Part))]
             public string PartName { get; set; }
-            private int PartIndex;
+            public int PartIndex;
 
             [MSBReference(ReferenceType = typeof(Region))]
             public string RegionName { get; set; }
-            private int RegionIndex;
+            public int RegionIndex;
 
             public int EntityID { get; set; }
 
@@ -566,7 +566,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string TreasurePartName { get; set; }
-                private int TreasurePartIndex;
+                public int TreasurePartIndex;
 
                 /// <summary>
                 /// Itemlot given by the treasure.
@@ -730,14 +730,14 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] SpawnRegionNames { get; private set; }
-                private int[] SpawnRegionIndices;
+                public int[] SpawnRegionIndices;
 
                 /// <summary>
                 /// Enemies to be respawned.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] SpawnPartNames { get; private set; }
-                private int[] SpawnPartIndices;
+                public int[] SpawnPartIndices;
 
                 /// <summary>
                 /// Creates a Generator with default values.
@@ -921,7 +921,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] GroupPartsNames { get; private set; }
-                private int[] GroupPartsIndices;
+                public int[] GroupPartsIndices;
 
                 /// <summary>
                 /// Creates a GroupTour with default values.
@@ -994,7 +994,7 @@ namespace SoulsFormats
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] WalkPointNames { get; private set; }
-                private short[] WalkPointIndices;
+                public short[] WalkPointIndices;
 
                 /// <summary>
                 /// Creates a WalkRoute with default values.
@@ -1082,7 +1082,7 @@ namespace SoulsFormats
                 
                 [MSBReference(ReferenceType = typeof(Part))]
                 public string[] PartNamesT0C { get; private set; }
-                private short[] PartIndicesT0C;
+                public short[] PartIndicesT0C;
 
                 /// <summary>
                 /// Unknown.
@@ -1090,7 +1090,7 @@ namespace SoulsFormats
                 
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] PointNamesT28 { get; private set; }
-                private short[] PointIndicesT28;
+                public short[] PointIndicesT28;
 
                 /// <summary>
                 /// Creates a MultiSummon with default values.

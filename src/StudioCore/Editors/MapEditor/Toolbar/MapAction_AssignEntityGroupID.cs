@@ -41,7 +41,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Select(ViewportSelection _selection)
         {
-            if (Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT || Project.Type == ProjectType.DS3)
+            if (Project.Type == ProjectType.AC6 || Project.Type == ProjectType.ER || Project.Type == ProjectType.SDT || Project.Type == ProjectType.DS3)
             {
                 if (ImGui.RadioButton("Mass Entity Group ID Assignment##tool_Selection_Assign_Entity_Group_ID", MapEditorState.SelectedAction == MapEditorAction.Selection_Assign_Entity_Group_ID))
                 {
@@ -186,6 +186,66 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             var filepath = $"{Project.GameModDirectory}\\map\\MapStudio\\{mapid}.msb.dcx";
 
+            // Armored Core
+            if (Project.Type == ProjectType.AC6)
+            {
+                MSB_AC6 map = MSB_AC6.Read(filepath);
+
+                // Enemies
+                foreach (var part in map.Parts.Enemies)
+                {
+                    MSB_AC6.Part.Enemy enemy = part;
+
+                    bool isApplied = true;
+
+                    if (SelectedFilterType == "Character ID")
+                    {
+                        isApplied = false;
+
+                        if (enemy.ModelName == CFG.Current.Toolbar_EntityGroup_Attribute)
+                        {
+                            isApplied = true;
+                        }
+                    }
+
+                    if (SelectedFilterType == "NPC Param ID")
+                    {
+                        isApplied = false;
+
+                        if (enemy.NPCParamID.ToString() == CFG.Current.Toolbar_EntityGroup_Attribute)
+                        {
+                            isApplied = true;
+                        }
+                    }
+
+                    if (SelectedFilterType == "NPC Think Param ID")
+                    {
+                        isApplied = false;
+
+                        if (enemy.NPCParamID.ToString() == CFG.Current.Toolbar_EntityGroup_Attribute)
+                        {
+                            isApplied = true;
+                        }
+                    }
+
+                    if (isApplied)
+                    {
+                        for (int i = 0; i < enemy.EntityGroupIDs.Length; i++)
+                        {
+                            if (enemy.EntityGroupIDs[i] == 0)
+                            {
+                                enemy.EntityGroupIDs[i] = (uint)CFG.Current.Toolbar_EntityGroupID;
+
+                                TaskLogs.AddLog($"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                map.Write(filepath);
+            }
+
             // Elden Ring
             if (Project.Type == ProjectType.ER)
             {
@@ -247,7 +307,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
 
             // Sekiro
-            if (Project.Type == ProjectType.ER)
+            if (Project.Type == ProjectType.SDT)
             {
                 MSBS map = MSBS.Read(filepath);
 
@@ -307,7 +367,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             }
 
             // DS3
-            if (Project.Type == ProjectType.ER)
+            if (Project.Type == ProjectType.DS3)
             {
                 MSB3 map = MSB3.Read(filepath);
 

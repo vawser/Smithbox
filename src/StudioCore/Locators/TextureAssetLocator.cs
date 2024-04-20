@@ -154,7 +154,6 @@ public static class TextureAssetLocator
 
         if (Project.Type is ProjectType.ER)
         {
-
             overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}_h.texbnd.dcx");
         }
 
@@ -304,7 +303,7 @@ public static class TextureAssetLocator
         ad.AssetArchiveVirtualPath = null;
         string path;
 
-        if (Project.Type == ProjectType.ER)
+        if (Project.Type is ProjectType.ER or ProjectType.AC6)
             path = LocatorUtils.GetOverridenFilePath($@"parts\common_body.tpf.dcx");
         else
             throw new NotSupportedException();

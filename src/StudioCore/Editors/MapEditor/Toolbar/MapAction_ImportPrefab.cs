@@ -101,16 +101,16 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
                 ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
 
-                if (Project.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Apply Unique Instance ID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
-                    ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
+                    ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Instance IDs.");
 
                     ImGui.Checkbox("Apply Asset UnkPartNames", ref CFG.Current.Prefab_ApplySelfPartNames);
                     ImguiUtils.ShowHoverTooltip("Spawned prefab objects that are Assets will be given UnkPartNames matching themselves.");
                 }
 
-                if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT || Project.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT || Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
                     ImGui.Text("");
@@ -161,6 +161,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             switch (Project.Type)
             {
+                case ProjectType.AC6:
+                    Prefab_AC6.ImportSelectedPrefab(info, comboMap, universe, scene, actionManager);
+                    break;
                 case ProjectType.ER:
                     Prefab_ER.ImportSelectedPrefab(info, comboMap, universe, scene, actionManager);
                     break;
@@ -211,6 +214,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 switch (Project.Type)
                 {
+                    case ProjectType.AC6:
+                        MapEditorToolbar._selectedPrefabObjectNames = Prefab_AC6.GetSelectedPrefabObjects(prefabInfo, comboMap);
+                        break;
                     case ProjectType.ER:
                         MapEditorToolbar._selectedPrefabObjectNames = Prefab_ER.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;

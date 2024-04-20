@@ -30,25 +30,25 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.Text("Duplicate the current selection.");
                 ImGui.Text("");
 
-                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.AC6)
+                if (Project.Type != ProjectType.DS2S)
                 {
                     ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID);
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
                 }
 
-                if (Project.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
                 }
 
-                if (Project.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
                 }
 
-                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.AC6)
+                if (Project.Type != ProjectType.DS2S)
                 {
                     ImGui.Text("");
                 }

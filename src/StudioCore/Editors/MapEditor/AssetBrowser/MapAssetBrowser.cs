@@ -216,7 +216,7 @@ public class MapAssetBrowser
         ImGui.Checkbox("Update Name of Selected Object", ref CFG.Current.AssetBrowser_UpdateName);
         ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
 
-        if (Project.Type == ProjectType.ER)
+        if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
         {
             ImGui.Checkbox("Update Instance ID of Selected Object", ref CFG.Current.AssetBrowser_UpdateInstanceID);
             ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");

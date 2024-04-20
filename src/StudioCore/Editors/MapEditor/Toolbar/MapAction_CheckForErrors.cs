@@ -92,7 +92,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 // Entity Group ID
                 foreach (var e in loadedMap?.Objects)
                 {
-                    if (Project.Type == ProjectType.ER)
+                    if (Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
                     {
                         if (e.WrappedObject is MSBE.Part)
                         {
@@ -102,7 +102,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                             for (int i = 0; i < part.EntityGroupIDs.Length; i++)
                             {
-                                if (part.EntityGroupIDs[i] == -1)
+                                if (part.EntityGroupIDs[i] == 0)
                                     continue;
 
                                 if (checkedEntityGroups.Count > 0)

@@ -392,7 +392,7 @@ namespace SoulsFormats
             /// Allows multiple parts to be identified by the same entity ID.
             /// </summary>
             [EnemyProperty]
-            public uint[] EntityGroupIDs { get; private set; }
+            public uint[] EntityGroupIDs { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -1575,7 +1575,7 @@ namespace SoulsFormats
                 [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string CollisionPartName { get; set; }
-                private int CollisionPartIndex;
+                public int CollisionPartIndex;
 
                 /// <summary>
                 /// Walk route followed by this enemy.
@@ -1583,7 +1583,7 @@ namespace SoulsFormats
                 [EnemyProperty]
                 [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
                 public string WalkRouteName { get; set; }
-                private short WalkRouteIndex;
+                public short WalkRouteIndex;
 
                 /// <summary>
                 /// Unknown.
@@ -2430,7 +2430,7 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
                 public string CollisionName { get; set; }
-                private int CollisionIndex;
+                public int CollisionIndex;
 
                 /// <summary>
                 /// The map to load when on this collision.
@@ -2612,8 +2612,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                [IgnoreProperty]
-                public short Unk14 { get; set; }
+                public short AssetSfxParamRelativeID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3069,7 +3068,7 @@ namespace SoulsFormats
                     UnkStructA0 = new UnkStructA0();
 
                     Unk04 = -1;
-                    Unk14 = (short)-1;
+                    AssetSfxParamRelativeID = (short)-1;
                     Unk1C = (short)-1;
                     Unk1E = (short)-1;
                     Unk20 = -1;
@@ -3131,7 +3130,7 @@ namespace SoulsFormats
                     Unk11 = br.ReadBoolean(); 
                     Unk12 = br.ReadBoolean();
                     Unk13 = br.ReadBoolean();
-                    Unk14 = br.ReadInt16();
+                    AssetSfxParamRelativeID = br.ReadInt16();
                     br.AssertInt16((short)-1);
                     br.AssertInt32(-1);
                     Unk1C = br.ReadInt16();
@@ -3213,7 +3212,7 @@ namespace SoulsFormats
                     bw.WriteBoolean(Unk11);
                     bw.WriteBoolean(Unk12);
                     bw.WriteBoolean(Unk13);
-                    bw.WriteInt16(Unk14);
+                    bw.WriteInt16(AssetSfxParamRelativeID);
                     bw.WriteInt16((short)-1);
                     bw.WriteInt32(-1);
                     bw.WriteInt16(Unk1C);

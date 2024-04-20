@@ -148,6 +148,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 switch (Project.Type)
                 {
+                    case ProjectType.AC6:
+                        MapEditorToolbar._selectedPrefabObjectNames = Prefab_AC6.GetSelectedPrefabObjects(prefabInfo, comboMap);
+                        break;
                     case ProjectType.ER:
                         MapEditorToolbar._selectedPrefabObjectNames = Prefab_ER.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;

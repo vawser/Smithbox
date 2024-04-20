@@ -22,11 +22,12 @@ namespace StudioCore.Editors.MapEditor
                 return;
 
             if (Project.Type == ProjectType.AC6)
-                return;
-
-            if (Project.Type == ProjectType.ER)
             {
-                SetUniqueEntityID_Uint(sel, map);
+                SetUniqueEntityID_AC6(sel, map);
+            }
+            else if (Project.Type == ProjectType.ER)
+            {
+                SetUniqueEntityID_ER(sel, map);
             }
             else
             {
@@ -34,7 +35,79 @@ namespace StudioCore.Editors.MapEditor
             }
         }
 
-        public static void SetUniqueEntityID_Uint(MsbEntity sel, MapContainer map)
+        public static void SetUniqueEntityID_AC6(MsbEntity sel, MapContainer map)
+        {
+            uint originalID = (uint)sel.GetPropertyValue("EntityID");
+            sel.SetPropertyValue("EntityID", (uint)0);
+
+            HashSet<uint> vals = new();
+
+            foreach (var e in map?.Objects)
+            {
+                var val = PropFinderUtil.FindPropertyValue("EntityID", e.WrappedObject);
+                if (val == null)
+                    continue;
+
+                uint entUint;
+                if (val is int entInt)
+                    entUint = (uint)entInt;
+                else
+                    entUint = (uint)val;
+
+                if (entUint == 0 || entUint == uint.MaxValue)
+                    continue;
+
+                vals.Add(entUint);
+            }
+
+            var mapIdParts = map.Name.Replace("m", "").Split("_");
+
+            uint minId = 0;
+            uint maxId = 9999;
+
+            minId = uint.Parse($"0000");
+            maxId = uint.Parse($"9999");
+
+            // Build base entity ID list
+            var baseVals = new HashSet<uint>();
+            for (uint i = minId; i < maxId; i++)
+            {
+                baseVals.Add(i);
+            }
+
+            // Remove elements that are present in both hashsets, to get the list of unique IDs
+            baseVals.SymmetricExceptWith(vals);
+
+            bool hasMatch = false;
+            uint newID = 0;
+
+            // Prefer IDs after the original ID first
+            foreach (var entry in baseVals)
+            {
+                if (!hasMatch)
+                {
+                    if (entry > originalID)
+                    {
+                        newID = entry;
+                        hasMatch = true;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            // No match in preferred range, get first of possible values.
+            if (!hasMatch)
+            {
+                newID = baseVals.First();
+            }
+
+            sel.SetPropertyValue("EntityID", newID);
+        }
+
+        public static void SetUniqueEntityID_ER(MsbEntity sel, MapContainer map)
         {
             uint originalID = (uint)sel.GetPropertyValue("EntityID");
             sel.SetPropertyValue("EntityID", (uint)0);
@@ -230,16 +303,15 @@ namespace StudioCore.Editors.MapEditor
 
         public static void SetSelfPartNames(MsbEntity sel, MapContainer map)
         {
-            if (Project.Type != ProjectType.ER)
-                return;
-
             if (Project.Type == ProjectType.ER)
             {
                 if (sel.WrappedObject is MSBE.Part.Asset)
                 {
                     string partName = (string)sel.GetPropertyValue("Name");
                     string modelName = (string)sel.GetPropertyValue("ModelName");
+
                     string[] names = (string[])sel.GetPropertyValue("UnkPartNames");
+
                     string[] newNames = new string[names.Length];
 
                     for (int i = 0; i < names.Length; i++)
@@ -263,13 +335,43 @@ namespace StudioCore.Editors.MapEditor
                     sel.SetPropertyValue("UnkPartNames", newNames);
                 }
             }
+
+            if (Project.Type == ProjectType.AC6)
+            {
+                if (sel.WrappedObject is MSB_AC6.Part.Asset)
+                {
+                    string partName = (string)sel.GetPropertyValue("Name");
+                    string modelName = (string)sel.GetPropertyValue("ModelName");
+
+                    string[] names = (string[])sel.GetPropertyValue("PartNames");
+
+                    string[] newNames = new string[names.Length];
+
+                    for (int i = 0; i < names.Length; i++)
+                    {
+                        var name = names[i];
+
+                        if (name != null)
+                        {
+                            // Name is a AEG reference
+                            if (name.Contains(modelName) && name.Contains("AEG"))
+                            {
+                                TaskLogs.AddLog($"{name}");
+
+                                name = partName;
+                            }
+                        }
+
+                        newNames[i] = name;
+                    }
+
+                    sel.SetPropertyValue("PartNames", newNames);
+                }
+            }
         }
 
         public static void SetUniqueInstanceID(MsbEntity ent, MapContainer m)
         {
-            if (Project.Type != ProjectType.ER)
-                return;
-
             if (Project.Type == ProjectType.ER)
             {
                 Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
@@ -299,16 +401,46 @@ namespace StudioCore.Editors.MapEditor
                     mapPartEntities[m].Add(ent);
                 }
             }
+
+            if (Project.Type == ProjectType.AC6)
+            {
+                Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
+
+                if (ent.WrappedObject is MSB_AC6.Part msbPart)
+                {
+                    if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
+                    {
+                        foreach (Entity tent in m.Objects)
+                        {
+                            if (ent.WrappedObject != null && tent.WrappedObject is MSB_AC6.Part)
+                            {
+                                mapPartEntities[m].Add((MsbEntity)tent);
+                            }
+                        }
+                    }
+
+                    var newInstanceID = msbPart.LocalIndex;
+                    while (mapPartEntities[m].FirstOrDefault(e =>
+                               ((MSB_AC6.Part)e.WrappedObject).ModelName == msbPart.ModelName
+                               && ((MSB_AC6.Part)e.WrappedObject).LocalIndex == newInstanceID) != null)
+                    {
+                        newInstanceID++;
+                    }
+
+                    msbPart.LocalIndex = newInstanceID;
+                    mapPartEntities[m].Add(ent);
+                }
+            }
         }
 
         public static void SetSpecificEntityGroupID(MsbEntity ent, MapContainer m)
         {
-            if (Project.Type == ProjectType.ER)
+            if (Project.Type == ProjectType.AC6)
             {
                 var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
                 var added = false;
 
-                var part = ent.WrappedObject as MSBE.Part;
+                var part = ent.WrappedObject as MSB_AC6.Part;
 
                 uint[] newEntityGroupIDs = new uint[part.EntityGroupIDs.Length];
 
@@ -317,6 +449,28 @@ namespace StudioCore.Editors.MapEditor
                     newEntityGroupIDs[i] = part.EntityGroupIDs[i];
 
                     if(!added && part.EntityGroupIDs[i] == 0)
+                    {
+                        added = true;
+                        newEntityGroupIDs[i] = newID;
+                    }
+                }
+
+                part.EntityGroupIDs = newEntityGroupIDs;
+            }
+            else if (Project.Type == ProjectType.ER)
+            {
+                var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
+                var added = false;
+
+                var part = ent.WrappedObject as MSBE.Part;
+
+                uint[] newEntityGroupIDs = new uint[part.EntityGroupIDs.Length];
+
+                for (int i = 0; i < part.EntityGroupIDs.Length; i++)
+                {
+                    newEntityGroupIDs[i] = part.EntityGroupIDs[i];
+
+                    if (!added && part.EntityGroupIDs[i] == 0)
                     {
                         added = true;
                         newEntityGroupIDs[i] = newID;
