@@ -493,6 +493,14 @@ public class CloneMapObjectsAction : ViewportAction
                 {
                     ViewportActionCommon.SetSelfPartNames(newobj, m);
                 }
+                if (CFG.Current.Toolbar_Duplicate_Clear_Entity_ID)
+                {
+                    ViewportActionCommon.ClearEntityID(newobj, m);
+                }
+                if (CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs)
+                {
+                    ViewportActionCommon.ClearEntityGroupID(newobj, m);
+                }
 
                 newobj.UpdateRenderModel();
                 if (newobj.RenderSceneMesh != null)
@@ -1513,6 +1521,14 @@ public class ReplicateMapObjectsAction : ViewportAction
                     if (CFG.Current.Replicator_Increment_UnkPartNames)
                     {
                         ViewportActionCommon.SetSelfPartNames(newobj, m);
+                    }
+                    if (CFG.Current.Replicator_Clear_Entity_ID)
+                    {
+                        ViewportActionCommon.ClearEntityID(newobj, m);
+                    }
+                    if (CFG.Current.Replicator_Clear_Entity_Group_IDs)
+                    {
+                        ViewportActionCommon.ClearEntityGroupID(newobj, m);
                     }
 
                     newobj.UpdateRenderModel();

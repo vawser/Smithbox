@@ -170,7 +170,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.AC6)
                 {
-                    ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID);
+                    if(ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID))
+                    {
+                        if(CFG.Current.Replicator_Increment_Entity_ID)
+                        {
+                            CFG.Current.Replicator_Clear_Entity_ID = false;
+                        }
+                    }
                     ImguiUtils.ShowHoverTooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
                 }
 
@@ -184,6 +190,21 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 {
                     ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_UnkPartNames);
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
+                }
+
+                if (Project.Type != ProjectType.DS2S)
+                {
+                    if(ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Replicator_Clear_Entity_ID))
+                    {
+                        if(CFG.Current.Replicator_Clear_Entity_ID)
+                        {
+                            CFG.Current.Replicator_Increment_Entity_ID = false;
+                        }
+                    }
+                    ImguiUtils.ShowHoverTooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
+
+                    ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.Replicator_Clear_Entity_Group_IDs);
+                    ImguiUtils.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
                 }
 
                 ImGui.Text("");

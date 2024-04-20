@@ -62,11 +62,8 @@ namespace StudioCore.Editors.MapEditor
 
             var mapIdParts = map.Name.Replace("m", "").Split("_");
 
-            uint minId = 0;
+            uint minId = 100;
             uint maxId = 9999;
-
-            minId = uint.Parse($"0000");
-            maxId = uint.Parse($"9999");
 
             // Build base entity ID list
             var baseVals = new HashSet<uint>();
@@ -420,9 +417,7 @@ namespace StudioCore.Editors.MapEditor
                     }
 
                     var newInstanceID = msbPart.LocalIndex;
-                    while (mapPartEntities[m].FirstOrDefault(e =>
-                               ((MSB_AC6.Part)e.WrappedObject).ModelName == msbPart.ModelName
-                               && ((MSB_AC6.Part)e.WrappedObject).LocalIndex == newInstanceID) != null)
+                    while (mapPartEntities[m].FirstOrDefault(e => ((MSB_AC6.Part)e.WrappedObject).LocalIndex == newInstanceID) != null)
                     {
                         newInstanceID++;
                     }
@@ -519,6 +514,94 @@ namespace StudioCore.Editors.MapEditor
                         added = true;
                         newEntityGroupIDs[i] = newID;
                     }
+                }
+
+                part.EntityGroupIDs = newEntityGroupIDs;
+            }
+        }
+
+        public static void ClearEntityID(MsbEntity sel, MapContainer map)
+        {
+            if (Project.Type == ProjectType.DS2S)
+                return;
+
+            if (Project.Type is ProjectType.AC6 or ProjectType.ER)
+            {
+                ClearEntityID_UINT(sel, map);
+            }
+            else
+            {
+                ClearEntityID_INT(sel, map);
+            }
+        }
+
+        public static void ClearEntityID_UINT(MsbEntity sel, MapContainer map)
+        {
+            sel.SetPropertyValue("EntityID", (uint)0);
+        }
+
+        public static void ClearEntityID_INT(MsbEntity sel, MapContainer map)
+        {
+            sel.SetPropertyValue("EntityID", (int)0);
+        }
+
+        public static void ClearEntityGroupID(MsbEntity ent, MapContainer map)
+        {
+            if (Project.Type == ProjectType.DS2S)
+                return;
+
+            if (Project.Type == ProjectType.AC6)
+            {
+                var part = ent.WrappedObject as MSB_AC6.Part;
+
+                uint[] newEntityGroupIDs = new uint[part.EntityGroupIDs.Length];
+
+                for (int i = 0; i < part.EntityGroupIDs.Length; i++)
+                {
+                    newEntityGroupIDs[i] = part.EntityGroupIDs[i];
+                    newEntityGroupIDs[i] = 0;
+                }
+
+                part.EntityGroupIDs = newEntityGroupIDs;
+            }
+            else if (Project.Type == ProjectType.ER)
+            {
+                var part = ent.WrappedObject as MSBE.Part;
+
+                uint[] newEntityGroupIDs = new uint[part.EntityGroupIDs.Length];
+
+                for (int i = 0; i < part.EntityGroupIDs.Length; i++)
+                {
+                    newEntityGroupIDs[i] = part.EntityGroupIDs[i];
+                    newEntityGroupIDs[i] = 0;
+                }
+
+                part.EntityGroupIDs = newEntityGroupIDs;
+            }
+            else if (Project.Type == ProjectType.DS3)
+            {
+                var part = ent.WrappedObject as MSB3.Part;
+
+                int[] newEntityGroupIDs = new int[part.EntityGroups.Length];
+
+                for (int i = 0; i < part.EntityGroups.Length; i++)
+                {
+                    newEntityGroupIDs[i] = part.EntityGroups[i];
+                    newEntityGroupIDs[i] = 0;
+                }
+
+                part.EntityGroups = newEntityGroupIDs;
+            }
+            else if (Project.Type == ProjectType.SDT)
+            {
+                var part = ent.WrappedObject as MSBS.Part;
+
+                int[] newEntityGroupIDs = new int[part.EntityGroupIDs.Length];
+
+                for (int i = 0; i < part.EntityGroupIDs.Length; i++)
+                {
+                    newEntityGroupIDs[i] = part.EntityGroupIDs[i];
+                    newEntityGroupIDs[i] = 0;
                 }
 
                 part.EntityGroupIDs = newEntityGroupIDs;

@@ -500,6 +500,9 @@ public class CFG
     public bool Toolbar_Duplicate_Increment_UnkPartNames = false;
     public bool Toolbar_Duplicate_Increment_InstanceID = true;
 
+    public bool Toolbar_Duplicate_Clear_Entity_ID = false;
+    public bool Toolbar_Duplicate_Clear_Entity_Group_IDs = false;
+
     public bool Toolbar_Presence_Dummy_Type_ER = false;
     public bool Toolbar_Presence_Dummify = true;
     public bool Toolbar_Presence_Undummify = false;
@@ -585,6 +588,9 @@ public class CFG
     public bool Replicator_Increment_Entity_ID = false;
     public bool Replicator_Increment_UnkPartNames = false;
     public bool Replicator_Increment_InstanceID = true;
+
+    public bool Replicator_Clear_Entity_ID = false;
+    public bool Replicator_Clear_Entity_Group_IDs = false;
 
     public bool Replicator_Mode_Line = true;
     public bool Replicator_Mode_Circle = false;

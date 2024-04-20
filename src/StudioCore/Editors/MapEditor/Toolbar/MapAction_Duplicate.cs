@@ -32,7 +32,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 if (Project.Type != ProjectType.DS2S)
                 {
-                    ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID);
+                    if(ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID))
+                    {
+                        if(CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
+                        {
+                            CFG.Current.Toolbar_Duplicate_Clear_Entity_ID = false;
+                        }
+                    }
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
                 }
 
@@ -46,6 +52,21 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 {
                     ImGui.Checkbox("Increment UnkPartNames for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_UnkPartNames);
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
+                }
+
+                if (Project.Type != ProjectType.DS2S)
+                {
+                    if(ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_ID))
+                    {
+                        if (CFG.Current.Toolbar_Duplicate_Clear_Entity_ID)
+                        {
+                            CFG.Current.Toolbar_Duplicate_Increment_Entity_ID = false;
+                        }
+                    }
+                    ImguiUtils.ShowHoverTooltip("When enabled, the Entity ID assigned to the duplicated entities will be set to 0");
+
+                    ImGui.Checkbox("Clear Entity Group IDs", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_Group_IDs);
+                    ImguiUtils.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
                 }
 
                 if (Project.Type != ProjectType.DS2S)
