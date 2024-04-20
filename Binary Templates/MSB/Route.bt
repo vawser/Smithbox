@@ -1,0 +1,55 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSB-AC6/Route.bt
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>; Assert(nameOffset);
+    int unk08;
+    int unk0c;
+    int unk10; Assert(unk10 == -1);
+    int unk14 <hidden=true>; Assert(!unk14);
+    int unk18 <hidden=true>; Assert(!unk18);
+    int unk1c <hidden=true>; Assert(!unk1c);
+    int unk20 <hidden=true>; Assert(!unk20);
+    int unk24 <hidden=true>; Assert(!unk24);
+    int unk28 <hidden=true>; Assert(!unk28);
+    int unk2c <hidden=true>; Assert(!unk2c);
+    int unk30 <hidden=true>; Assert(!unk30);
+    int unk34 <hidden=true>; Assert(!unk34);
+    int unk38 <hidden=true>; Assert(!unk38);
+    int unk3c <hidden=true>; Assert(!unk3c);
+    int unk40 <hidden=true>; Assert(!unk40);
+    int unk44 <hidden=true>; Assert(!unk44);
+    int unk48 <hidden=true>; Assert(!unk48);
+    int unk4c <hidden=true>; Assert(!unk4c);
+    int unk50 <hidden=true>; Assert(!unk50);
+    int unk54 <hidden=true>; Assert(!unk54);
+    int unk58 <hidden=true>; Assert(!unk58);
+    int unk5c <hidden=true>; Assert(!unk5c);
+    int unk60 <hidden=true>; Assert(!unk60);
+    int unk64 <hidden=true>; Assert(!unk64);
+    int unk68 <hidden=true>; Assert(!unk68);
+    int unk6c <hidden=true>; Assert(!unk6c);
+    int unk70 <hidden=true>; Assert(!unk70);
+    int unk74 <hidden=true>; Assert(!unk74);
+    int unk78 <hidden=true>; Assert(!unk78);
+    int unk7c <hidden=true>; Assert(!unk7c);
+    
+    FSeek(start + nameOffset);
+    wstring name;
+} Route <read=ReadRoute, bgcolor=cRed>;
+
+wstring ReadRoute(Route &route) {
+    return Str("(%d, %d) ", route.unk08, route.unk0c) + route.name;    
+}

@@ -1,0 +1,59 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSB-AC6/Model.bt
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> ModelType {
+    M_MAP = 0,
+    M_OBJ = 1,
+    M_ENE = 2,
+    M_ITEM = 3,
+    M_PLAYER = 4,
+    M_HIT = 5,
+    M_NAVIMESH = 6,
+    M_DUMMY_OBJ = 7,
+    M_DUMMY_ENE = 8,
+    M_INVALID = 9,
+    M_GEOM = 10,
+};
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>; Assert(nameOffset);
+    ModelType type;
+    int localIndex; // Index among models of the same type
+    quad sourceOffset <format=hex>; Assert(sourceOffset);
+    int instanceCount; // Number of parts using this model
+    int unk1c <hidden=true>; Assert(!unk1c);
+    int unk20 <hidden=true>; Assert(!unk20);
+    int unk24 <hidden=true>; Assert(!unk24);
+    
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    FSeek(start + sourceOffset);
+    wstring sourcePath; // Path to a .sib or .hkt file
+    
+    switch (type) {
+        case M_MAP:
+        case M_ENE:
+        case M_PLAYER:
+        case M_HIT:
+        case M_GEOM: break;
+        
+        default: Assert(false, Str("Unexpected model type: %d"));    
+    }
+} Model <read=ReadModel, bgcolor=cLtGreen>;
+
+wstring ReadModel(Model &model) {
+    return Str("<%s> ", EnumToString(model.type)) + model.name;    
+}

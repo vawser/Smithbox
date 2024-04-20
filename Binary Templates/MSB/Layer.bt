@@ -1,0 +1,25 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSB-AC6/Layer.bt
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>;
+    int unk08; // Not an index
+    int unk0c <hidden=true>; Assert(!unk0c);
+    int unk10; // Probably the local index
+    int unk14; // Not an index
+    
+    FSeek(start + nameOffset);
+    wstring name;
+} Layer <read=name, bgcolor=cDkRed>;

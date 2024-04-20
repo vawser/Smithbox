@@ -1,0 +1,67 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSB-AC6/Form.bt
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> FormType {
+    P_POINT = 0,
+    P_CIRCLE = 1,
+    P_SPHERE = 2,
+    P_CYLINDER = 3,
+    P_SQUARE = 4,
+    P_BOX = 5,
+    P_COMPOSITE = 6
+};
+
+typedef struct {
+    float radius;
+} FormCircle;
+
+typedef struct {
+    float radius;
+} FormSphere;
+
+typedef struct {
+    float radius;
+    float height;
+} FormCylinder;
+
+typedef struct {
+    float width;
+    float depth;
+} FormSquare;
+
+typedef struct {
+    float width;
+    float depth;
+    float height;
+} FormBox;
+
+typedef struct {
+    struct {
+        int pointIndex;
+        int unk04;
+    } points[8];
+} FormComposite;
+
+void ReadForm(FormType type) {
+    switch (type) {
+        case P_POINT: break;
+        case P_CIRCLE: FormCircle formCircle; break;
+        case P_SPHERE: FormSphere formSphere; break;
+        case P_CYLINDER: FormCylinder formCylinder; break;
+        case P_SQUARE: FormSquare formSquare; break;
+        case P_BOX: FormBox formBox; break;
+        case P_COMPOSITE: FormComposite formComposite; break;
+        
+        default: Assert(false, Str("Unknown point form type: %d", type));
+    }    
+}

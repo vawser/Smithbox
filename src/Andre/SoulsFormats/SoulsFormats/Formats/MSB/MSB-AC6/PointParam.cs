@@ -2193,7 +2193,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Unknown.
+                /// Unknown. Probably Navigation Weighting?
                 /// </summary>
                 public int UnkT00 { get; set; }
 
