@@ -29,12 +29,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
                 {
-                    ImGui.Text("Toggle the load status of the current selection.");
+                    ImGui.Text("Toggle the load status of the current selection in-game.");
                     ImGui.Text("");
                 }
                 else
                 {
-                    ImGui.Text("Toggle the Dummy status of the current selection.");
+                    ImGui.Text("Toggle the Dummy status of the current selection in-game.");
                     ImGui.Text("");
                 }
 

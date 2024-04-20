@@ -26,7 +26,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Visibility)
             {
-                ImGui.Text("Toggle the visibility of the current selection or all objects.");
+                ImGui.Text("Toggle the visibility of the current selection or all objects within Smithbox.");
                 ImGui.Text("");
 
                 ImGui.Text("Target:");
