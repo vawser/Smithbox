@@ -25,6 +25,7 @@ using StudioCore.Editors.MapEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Interface;
 using StudioCore.Editors.MapEditor.AssetBrowser;
+using StudioCore.Editors.MapEditor.EntryFileList;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -62,6 +63,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetBrowser AssetBrowser;
+    public EntryFileListEditor EntryFileListViewer;
     public MapEditorToolbar MapEditorToolbar;
 
     private bool GCNeedsCollection;
@@ -110,6 +112,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
         MapEditorToolbar = new MapEditorToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
+        EntryFileListViewer = new EntryFileListEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -900,6 +903,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
 
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         AssetBrowser.OnGui();
+        EntryFileListViewer.OnGui();
         MapEditorToolbar.OnGui();
 
         if (_activeModal != null)
