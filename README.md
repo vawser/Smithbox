@@ -1,5 +1,5 @@
 # Smithbox
-A personal version of DSMapStudio, which is a standalone integrated modding tool for modern FromSoft games, which include Demon's Souls (PS3), the Dark Souls series, Bloodborne, Sekiro, and Elden Ring. It currently includes a map editor, a game param editor, and a text editor for editing in game text.
+A personal version of DSMapStudio, which is a standalone integrated modding tool for modern FromSoft games, which include Demon's Souls (PS3), the Dark Souls series, Bloodborne, Sekiro, Elden Ring and Armored Core VI. It currently includes a map editor, a game param editor, and a text editor for editing in game text.
 
 ## Key Features
 - Gparam Editor: a editor for quickly creating and editing GPARAM files.
