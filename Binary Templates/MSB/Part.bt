@@ -479,22 +479,22 @@ typedef struct (int version) {
     quad offset78 <format=hex>; Assert(offset78);
     
     if (version >= 52) {
-        int unk80 <hidden=true>; Assert(!unk80);
-        int unk84 <hidden=true>; Assert(!unk84);
-        int unk88 <hidden=true>; Assert(!unk88);
-        int unk8c <hidden=true>; Assert(!unk8c);
-        int unk90 <hidden=true>; Assert(!unk90);
-        int unk94 <hidden=true>; Assert(!unk94);
-        int unk98 <hidden=true>; Assert(!unk98);
-        int unk9c <hidden=true>; Assert(!unk9c);
-        int unka0 <hidden=true>; Assert(!unka0);
-        int unka4 <hidden=true>; Assert(!unka4);
-        int unka8 <hidden=true>; Assert(!unka8);
-        int unkac <hidden=true>; Assert(!unkac);
-        int unkb0 <hidden=true>; Assert(!unkb0);
-        int unkb4 <hidden=true>; Assert(!unkb4);
-        int unkb8 <hidden=true>; Assert(!unkb8);
-        int unkbc <hidden=true>; Assert(!unkbc);
+        int unk80; Assert(!unk80);
+        int unk84; Assert(!unk84);
+        int unk88; Assert(!unk88);
+        int unk8c; Assert(!unk8c);
+        int unk90; Assert(!unk90);
+        int unk94; Assert(!unk94);
+        int unk98; Assert(!unk98);
+        int unk9c; Assert(!unk9c);
+        int unka0; Assert(!unka0);
+        int unka4; Assert(!unka4);
+        int unka8; Assert(!unka8);
+        int unkac; Assert(!unkac);
+        int unkb0; Assert(!unkb0);
+        int unkb4; Assert(!unkb4);
+        int unkb8; Assert(!unkb8);
+        int unkbc; Assert(!unkbc);
     }
     
     FSeek(start + offset60);

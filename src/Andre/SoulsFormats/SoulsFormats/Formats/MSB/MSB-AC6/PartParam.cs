@@ -2577,7 +2577,7 @@ namespace SoulsFormats
                 /// Unknown.
                 /// </summary>
                 [IgnoreProperty]
-                public sbyte Unk03 { get; set; }
+                public byte Unk03 { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3122,7 +3122,7 @@ namespace SoulsFormats
                     Unk00 = br.ReadBoolean();
                     Unk01 = br.ReadByte();
                     br.AssertByte(new byte[1]);
-                    Unk03 = br.ReadSByte();
+                    Unk03 = br.ReadByte();
                     Unk04 = br.ReadInt32();
                     br.AssertInt32(new int[1]);
                     br.AssertInt32(new int[1]);
@@ -3204,7 +3204,7 @@ namespace SoulsFormats
                     bw.WriteBoolean(Unk00);
                     bw.WriteByte(Unk01);
                     bw.WriteByte((byte)0);
-                    bw.WriteSByte(Unk03);
+                    bw.WriteByte(Unk03);
                     bw.WriteInt32(Unk04);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);

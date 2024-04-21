@@ -180,6 +180,8 @@ namespace SoulsFormats
             internal List<T> Read(BinaryReaderEx br)
             {
                 Version = br.ReadInt32();
+                // TODO: work out why Version is read/kept at 0 for Part/Event/Region/Model
+                Version = 52;
                 int offsetCount = br.ReadInt32();
                 long nameOffset = br.ReadInt64();
                 long[] entryOffsets = br.ReadInt64s(offsetCount - 1);
@@ -204,10 +206,7 @@ namespace SoulsFormats
 
             internal virtual void Write(BinaryWriterEx bw, List<T> entries)
             {
-                // TODO: for some reason Version returns 0 for Model/Event/Point/Parts params
-                // Forced the version to 52 for now
-                bw.WriteInt32(52);
-                //bw.WriteInt32(Version);
+                bw.WriteInt32(Version);
 
                 bw.WriteInt32(entries.Count + 1);
                 bw.ReserveInt64("ParamNameOffset");
