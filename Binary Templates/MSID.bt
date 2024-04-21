@@ -1,0 +1,49 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSID.bt
+//   Authors: Vawser
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: *.msId
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+typedef struct {
+    char magic[4]; Assert(magic == "MSLD");
+    int unk04; Assert(unk04 == 1);
+    int fileSize;
+    int unk0c; Assert(unk0c == 3);
+    int unk10; Assert(unk10 == 0);
+    int unk14; Assert(unk14 == 1);
+    int unk18; Assert(unk18 == 16);
+    int unk1c; Assert(unk1c == 1);
+    int unk20;
+    int unk24; Assert(unk24 == 0);
+    int unk28; Assert(unk28 == 0);
+    int unk2c; Assert(unk2c == 0);
+    int unk30; Assert(unk30 == 1);
+    int unk34; Assert(unk34 == 1);
+    int unk38; 
+    int unk3c; 
+} Header <bgcolor=cLtRed>;
+
+typedef struct {
+    int unk00; // ID?
+    int unk04; // Count?
+    ubyte data[0x38];
+} Entry <bgcolor=cGreen>;
+
+//------------------------------------------------
+
+Header header;
+
+// TEMP
+while(!FEof())
+{
+    Entry entry;
+}

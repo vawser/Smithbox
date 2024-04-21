@@ -53,20 +53,25 @@ public class DebugWindow
 
         if (ImGui.Begin("Tests##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            if (FeatureFlags.VawserHackyActions)
+            ImGui.Columns(4);
+
+            // Actions 
+            if (ImGui.Button("Dump Uncompressed Files"))
             {
-                ImGui.Columns(5);
+                string sourcePath = "F:\\SteamLibrary\\steamapps\\common\\ARMORED CORE VI FIRES OF RUBICON\\Game\\map\\msld";
+                string destPath = "C:\\Users\\benja\\Programming\\C#\\Smithbox\\Dump";
+                string ext = $"*.msld.dcx";
 
-                DisplayVawserActions();
+                foreach(string path in Directory.GetFiles(sourcePath, ext) )
+                {
+                    TaskLogs.AddLog($"{path}");
+                    string name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
 
-                ImGui.NextColumn();
+                    var bnd = BND4.Read(path);
+                    bnd.Files.Where(f => f.Name.EndsWith(".msld")).ToList().ForEach(f => File.WriteAllBytes($@"{destPath}\\msld\\{name}", f.Bytes.ToArray()));
+                }
             }
-            else
-            {
-                ImGui.Columns(4);
-            }
 
-            // Actions
             if (ImGui.Button("Force Crash"))
             {
                 var badArray = new int[2];
@@ -233,7 +238,7 @@ public class DebugWindow
         }
     }
 
-    private void DisplayVawserActions()
+    private void CollectTextures()
     {
         ImGui.Text("Collect Textures");
 
