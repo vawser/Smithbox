@@ -377,7 +377,7 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty PointParam with the default version.
             /// </summary>
-            public PointParam() : base("POINT_PARAM_ST")
+            public PointParam() : base(52, "POINT_PARAM_ST")
             {
                 ParamVersion = base.Version;
 

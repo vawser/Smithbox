@@ -172,16 +172,15 @@ namespace SoulsFormats
 
             private protected string Name { get; }
 
-            internal Param(string name)
+            internal Param(int version, string name)
             {
+                Version = version;
                 Name = name;
             }
 
             internal List<T> Read(BinaryReaderEx br)
             {
                 Version = br.ReadInt32();
-                // TODO: work out why Version is read/kept at 0 for Part/Event/Region/Model
-                Version = 52;
                 int offsetCount = br.ReadInt32();
                 long nameOffset = br.ReadInt64();
                 long[] entryOffsets = br.ReadInt64s(offsetCount - 1);

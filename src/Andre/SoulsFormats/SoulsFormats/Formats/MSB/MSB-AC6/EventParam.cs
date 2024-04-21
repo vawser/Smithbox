@@ -179,7 +179,7 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty EventParam with the default version.
             /// </summary>
-            public EventParam() : base("EVENT_PARAM_ST")
+            public EventParam() : base(52, "EVENT_PARAM_ST")
             {
                 ParamVersion = base.Version;
 

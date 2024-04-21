@@ -25,7 +25,7 @@ namespace SoulsFormats
             /// <summary>
             /// Creates a new LayerParam with no layers.
             /// </summary>
-            public LayerParam() : base("LAYER_PARAM_ST")
+            public LayerParam() : base(52, "LAYER_PARAM_ST")
             {
                 ParamVersion = base.Version;
 

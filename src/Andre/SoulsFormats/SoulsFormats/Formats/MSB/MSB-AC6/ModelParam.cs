@@ -60,7 +60,7 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty ModelParam with the default version.
             /// </summary>
-            public ModelParam() : base("MODEL_PARAM_ST")
+            public ModelParam() : base(52, "MODEL_PARAM_ST")
             {
                 ParamVersion = base.Version;
 

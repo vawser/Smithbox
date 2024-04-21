@@ -26,7 +26,7 @@ namespace SoulsFormats
             /// <summary>
             /// Creates a new RouteParam with no routes.
             /// </summary>
-            public RouteParam() : base("ROUTE_PARAM_ST")
+            public RouteParam() : base(52, "ROUTE_PARAM_ST")
             {
                 ParamVersion = base.Version;
                 Routes = new List<Route>();

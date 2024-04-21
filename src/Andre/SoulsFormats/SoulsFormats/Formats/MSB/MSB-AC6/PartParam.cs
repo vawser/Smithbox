@@ -106,7 +106,7 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty PartsParam with the default version.
             /// </summary>
-            public PartsParam() : base("PARTS_PARAM_ST")
+            public PartsParam() : base(52, "PARTS_PARAM_ST")
             {
                 ParamVersion = base.Version;
 
