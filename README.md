@@ -49,11 +49,6 @@ A personal version of DSMapStudio, which is a standalone integrated modding tool
 #### Elden Ring
 * Use [UXM Selective Unpack](https://github.com/Nordgaren/UXM-Selective-Unpack) to extract the game files.
 
-## Limitations
-* **Dark Souls Remastered**: Cannot render map collision in the viewport at this time.
-* **Sekiro**: Cannot render map collision and navmesh in the viewport at this time.
-* **Elden Ring**: Cannot render map collision and navmesh in the viewport at this time.
-
 # Links
 [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
