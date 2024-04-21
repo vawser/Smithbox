@@ -1,0 +1,145 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+//------------------------------------------------
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk04 == 0);
+} StructABA1 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04;
+} StructABA4 <bgcolor=cDkYellow>;
+
+typedef struct {
+    float unk00;
+    int unk04;
+} StructABA6 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk04 == 0);
+} StructABA3 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk04 == 0);
+} StructABA11 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    float unk04;
+    float unk08;
+} StructABA12 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk04 == 0);
+    int unk08; Assert(unk08 == 0);
+} StructABA19 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+} StructABA25 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00; Assert(unk00 == 0 || unk00 == 1);
+} StructABA26 <bgcolor=cDkYellow>;
+
+typedef struct {
+    float unk00;
+    int unk04;
+} StructABA27 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04;
+} StructABA28 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk04 == 0);
+    int unk08; Assert(unk08 == 0);
+    int unk0c; Assert(unk0c == 0);
+} StructABA29 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+} StructABA30 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+} StructABA31 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk04 == 0);
+} StructABA32 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+} StructABA33 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+} StructABA34 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04; Assert(unk0c == 0);
+} StructABA35 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+    int unk04;
+    float unk08;
+    int unk0c; Assert(unk0c == 0xff);
+} StructABA39 <bgcolor=cDkYellow>;
+
+typedef struct {
+    float unk00;
+} StructABA40 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00; 
+    int unk04; Assert(unk04 == 0);
+} StructABA41 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04; // SpEffectParam
+} StructABA43 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00;
+} StructABA45 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+} StructABA47 <bgcolor=cDkYellow>;
+
+typedef struct {
+    int unk00; Assert(unk00 == 0);
+    int unk04; 
+    int unk08; Assert(unk08 == 0);
+    int unk0c; Assert(unk0c == 0);
+} StructABA48 <bgcolor=cDkYellow>;
+
+typedef struct {
+    short unk00; Assert(unk00 == -1);
+    short unk02;
+} StructABA57 <bgcolor=cDkYellow>;
