@@ -49,6 +49,13 @@
 4200100 AI: PrisonBreak - TurretShotRayChk
 5040000 White EN Anomaly
 7920000 AI: EV SBMTutorialLayerA AtkDistLimit
+
+9990400 AI: Repair Kit Usage 0
+9990401 AI: Repair Kit Usage 1
+9990402 AI: Repair Kit Usage 2
+9990403 AI: Repair Kit Usage 3
+9990404 AI: Repair Kit Usage 4
+9990405 AI: Repair Kit Usage 5
 30000000 BAWS Guard MT (Walker)
 30001000 BAWS Guard MT (Walker)
 30002000 BAWS Guard MT (Walker)
