@@ -192,7 +192,7 @@ unknown1,unknown2,unknown3,unknown4,unknown5,unknown6,unknown,enableMulti,enable
     <refId2 AltName="Reference ID [2]" Refs="Bullet,SpEffectParam,BehaviorParam_PC" />
     <refId3 AltName="Reference ID [3]" Refs="Bullet,SpEffectParam,BehaviorParam_PC" />
     <refId4 AltName="Reference ID [4]" Refs="Bullet,SpEffectParam,BehaviorParam_PC" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -281,6 +281,6 @@ Hit0_Radius,Hit0_DmyPoly1,Hit0_DmyPoly2,Hit0_hitType,Hit0_VfxId,Hit0_DummyPolyId
     <RumbleId2 AltName="Hit Rumble ID [2]" Wiki="Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies" />
     <RumbleId3 AltName="Hit Rumble ID [3]" Wiki="Vibration ID at the time of hit (-1 invalid). It is a vibration ID when none of the following three applies" />
     
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
 </PARAMMETA>

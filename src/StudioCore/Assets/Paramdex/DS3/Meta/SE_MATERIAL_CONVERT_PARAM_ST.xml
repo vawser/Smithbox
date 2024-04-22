@@ -96,7 +96,7 @@
   </Enums>
   <Field>
     <seMaterialId AltName="SE Material ID" Wiki="Conversion from SFX material ID (3 digits) to SE material ID (2 digits)" Enum="MATERIAL_SE_TYPE" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

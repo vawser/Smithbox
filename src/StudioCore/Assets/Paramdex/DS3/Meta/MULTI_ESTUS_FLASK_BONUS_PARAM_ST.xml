@@ -17,7 +17,7 @@
     <GuardianOfAnor AltName="Flask Recovery - Aldrich Faithful" Wiki="Map Guardian Spirit (Anor) Est Recovery Number" />
     <BattleRoyal AltName="Flask Recovery - Arena" Wiki="Number of est recovery in the arena" />
     <YellowMonk AltName="Flask Recovery - Spears of the Church" Wiki="The number of est recovery of the old man in yellow" />
-    <pad4 AltName="" />
+    <pad4 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Retrieve Charges For Estus Flask by killing invaders/phantoms"/>
 </PARAMMETA>

@@ -6,7 +6,7 @@
     <lv12_BorderDist AltName="Border Distance: 1 -> 2" />
     <lv12_PlayDist AltName="Play Distance: 1 -> 2" />
     <textureLod AltName="Texture LOD" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
     <lv23_BorderDist AltName="Border Distance: 2 -> 3" />
     <lv23_PlayDist AltName="Play Distance: 2 -> 3" />
     <lv34_BorderDist AltName="Border Distance: 3 -> 4" />
@@ -14,7 +14,7 @@
     <lv45_BorderDist AltName="Border Distance: 4 -> 5" />
     <lv45_PlayDist AltName="Play Distance: 4 -> 5" />
     <DistanceScaleId AltName="Distance Scale ID" />
-    <pad2 AltName="" />
+    <pad2 AltName="" IsHidden=""/>
     
   </Field>
   <Self Wiki="Low Res. Model Load Distance"/>

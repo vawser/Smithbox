@@ -3,7 +3,7 @@
   <Field>
     <EventFlagId AltName="Event Flag ID" />
     <ProgressId AltName="Progress ID" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Game Progress data - Handles progress event flags"/>
 </PARAMMETA>

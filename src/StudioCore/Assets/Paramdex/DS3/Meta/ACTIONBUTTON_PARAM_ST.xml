@@ -34,10 +34,10 @@
     <execInvalidTime AltName="Execution Invalid Time" Wiki="Invalid time after execution (-infinite by value)" />
     <execButtonCircle AltName="Execution Button" />
     
-    <pad1 AltName=""/>
-    <pad2 AltName=""/>
-    <pad3 AltName=""/>
-    <pad4 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
+    <pad3 AltName="" IsHidden=""/>
+    <pad4 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Prompts near bonfires, ladders, etc."/>
 </PARAMMETA>

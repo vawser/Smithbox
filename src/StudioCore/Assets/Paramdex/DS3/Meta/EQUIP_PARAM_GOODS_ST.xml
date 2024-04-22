@@ -117,7 +117,7 @@ pad1,pad2,-" />
     <goodsType AltName="Goods Type" Wiki="Types of tools" Enum="GOODS_TYPE"/>
     <refCategory AltName="Reference Type" Wiki=" ID category - Attack, Projectile, Special" Enum="BEHAVIOR_REF_TYPE"  />
     <spEffectCategory AltName="SpEffect Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="SP_EFFECT_CATEGORY" />
-    <pad3 AltName=""/>
+    <pad3 AltName="" IsHidden=""/>
     <goodsUseAnim AltName="Goods Use Animation" Wiki="Set the animation to play when using the tool" Enum="GOODS_USE_ANIM" />
     <opmeMenuType AltName="Interaction Menu Type" Wiki="Menu type that opens when using an item" Enum="GOODS_OPEN_MENU" />
 	<useLimitCategory AltName="Use Limit Category" Wiki="Specified to control whether it can be used by the special effect applied" Enum="SP_EFFECT_USELIMIT_CATEGORY" />
@@ -194,7 +194,7 @@ pad1,pad2,-" />
     <shopId AltName="Shop Price" />
     <consumeMP AltName="FP Cost" Wiki="MP consumption" />
 	<useLimitCategory2 AltName="Disabled by State Info" />
-    <pad1 AltName="" />
-    <pad2 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
 </PARAMMETA>

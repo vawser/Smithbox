@@ -10,7 +10,7 @@
 	<LightGroupID AltName="Light Group ID" />
 	<IsReload AltName="Can Reload" IsBool="" />
 	<IsDisableOnline AltName="Play Region Offset" Wiki="Offsets PlayRegion IDs by given x 100\nEx: 400000 -> 400100 for value of 1." />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Map ceremony data"/>
 </PARAMMETA>

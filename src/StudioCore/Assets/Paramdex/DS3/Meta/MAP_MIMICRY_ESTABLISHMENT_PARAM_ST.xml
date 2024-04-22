@@ -13,7 +13,7 @@
     <mimicryBeginSfxId2 AltName="Mimicry - Transform VFX ID [2]" Wiki="Mimicry 2 SFXID Forward swing" />
     <mimicrySfxId2 AltName="Mimicry - Loop VFX ID [2]" Wiki="Mimicry 2 SFXID body" />
     <mimicryEndSfxId2 AltName="Mimicry - Destroy VFX ID [2]" Wiki="Mimicry 2 SFXID cancellation" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Chameleon Visuals data"/>
 </PARAMMETA>

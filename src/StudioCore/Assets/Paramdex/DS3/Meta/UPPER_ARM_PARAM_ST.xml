@@ -21,7 +21,7 @@
 	<ArmXY8 AltName="a15 - Arm Forward Angle" />
 	<ArmZ9 AltName="a16 - Arm Out Angle" />
 	<ArmXY9 AltName="a16 - Arm Forward Angle" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Chestpiece Arm Position Correction"/>
 </PARAMMETA>

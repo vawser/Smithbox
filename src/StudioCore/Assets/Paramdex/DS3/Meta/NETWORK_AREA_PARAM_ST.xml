@@ -10,10 +10,10 @@
 	<enableMultiPlay AltName="Enable Multiplayer" IsBool="" />
 	<enableRingSearch AltName="Enable Covenant Search" IsBool="" />
 	<enableBreakInSearch AltName="Enable Orb Search" IsBool="" />
-    <pad1 AltName="" />
-    <unkb4 AltName="" />
-    <unkb5 AltName="" />
-    <pad2 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
+    <unkb4 AltName="" IsHidden=""/>
+    <unkb5 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Area Network Activity"/>
 </PARAMMETA>

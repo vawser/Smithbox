@@ -19,7 +19,7 @@
     <bulletMaxRadius_forD AltName="Attack Capture - Bullet - Max Radius (Dark)" Wiki="Automatic lock-on judgment distance at non-lock-on _ darkness bullet" />
     <bulletMaxRadius_forPD AltName="Attack Capture - Bullet - Max Radius (Pitch Dark" Wiki="Automatic lock-on judgment distance at non-lock-on _ pitch black bullet" />
     <bulletAngRange AltName="Attack Capture - Bullet - Angle Range Left/Right" Wiki="Automatic lock-on left / right angle when non-lock-on bullet" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Location Camera data"/>
 </PARAMMETA>

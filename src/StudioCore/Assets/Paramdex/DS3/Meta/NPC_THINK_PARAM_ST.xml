@@ -11,7 +11,7 @@
     <callHelp_CallActionId AltName="Call Help - Call Action ID" Wiki="Action ID (EzStateAnimID) when calling a friend" />
     <eye_dist AltName="Vision - Distance" Wiki="Visual search range." />
     <isGuard_Act AltName="Use Guard during Action" Wiki="Whether to guard against actions (assumed when returning home, looking toward the target)" IsBool="" />
-    <pad6 AltName=""/>
+    <pad6 AltName="" IsHidden=""/>
     <ear_soundcut_dist AltName="Listen - Sound Cutoff Distance" Wiki="The distance to reduce the size of the sound source. You will not hear any sound below this distance." />
     <nose_dist AltName="Sense - Distance" Wiki="Search range by smell." />
     <maxBackhomeDist AltName="Retreat Home - Max Distance" Wiki="COMMON_SetBattleActLogic argument" />
@@ -59,7 +59,7 @@
     <battleEye_updateDist AltName="Battle Vision - Overwrite Distance" Wiki="Battle Vision_Overwrite Distance [m]" />
     <battleEye_updateAngX AltName="Battle Vision - Overwrite Height Angle" Wiki="Battle Vision_Overwrite Angle (Height) [deg]" />
     <battleEye_updateAngY AltName="Battle Vision - Overwrite Width Angle" Wiki="Battle Vision_Overwrite Angle (Width) [deg]" />
-    <pad4 AltName=""/>
+    <pad4 AltName="" IsHidden=""/>
     <eye_BackOffsetDist AltName="Vision - Start Position - Backward Offset" Wiki="The viewing angle start position is behind this distance from the center of the character." />
     <eye_BeginDist AltName="Vision - Start Distance" Wiki="This distance is not recognized from the viewing angle generation position" />
     <actTypeOnFailedPath AltName="Act Type on Failed Path" Wiki="Default action type to be performed when the path search fails, when the end point of the alternative path is reached / when the homecoming limit distance is reached" Enum="NPC_THINK_ACTTYPE_ON_FAILEDPATH" />
@@ -79,9 +79,9 @@
     <useFall_onSearchBattle AltName="Use Fall Jump - In Combat" Wiki="Allow AI to pass through the jumping edge in combat" Enum="NPC_THINK_JUMPUSEREDGE_USE_TYPE" />
     <enableJumpMove_onBattle AltName="Enable Jump - In Combat" Wiki="Whether to jump over the user edge for jumping (combat state)" Enum="NPC_THINK_JUMPUSEREDGE_USE_TYPE" />
     <backToHomeStuckAct AltName="Back to Home Stuck Act" Wiki="Behavior when addicted to the homecoming limit" Enum="NPC_THINK_BackToHomeStuckAct" />
-    <pad1 AltName=""/>
-    <pad2 AltName=""/>
-    <pad3 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
+    <pad3 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="NPC AI data" AlternativeOrder="logicId,battleGoalID,TeamAttackEffectivity,-,
 BattleStartDist,nonBattleActLife,-,

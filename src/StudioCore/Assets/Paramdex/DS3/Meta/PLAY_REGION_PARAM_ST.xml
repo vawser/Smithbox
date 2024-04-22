@@ -35,9 +35,9 @@
     <redSignLimitEventFlagId_2_targetFlagState AltName="Target Flag State - Red Sign Start Limit ID [2]" Wiki="Flag state that limits red sign limit event flag ID2" IsBool="" />
     <redSignLimitEventFlagId_3_targetFlagState AltName="Target Flag State - Red Sign Start Limit ID [3]" Wiki="Flag state that limits red sign limit event flag ID3" IsBool="" />
     <isAutoIntrudePoint AltName="Is Automatic Invasion Point" Wiki="Is it an intrusion point automatic generation? If it is set to , the intrusion position is searched by the automatically generated logic for the intrusion point." IsBool="" />
-    <pad1 AltName=""/>
-    <pad2 AltName=""/>
-    <pad3 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
+    <pad3 AltName="" IsHidden=""/>
     <multiPlayHASHostLimitEventFlagId AltName="Block Yellow Monk Multiplayer - Event Flag ID" Wiki="Yellow Coat Host Restriction Event Flag - When this flag is turned on, multiplayer as a host of Yellow Coat is prohibited. It is assumed that the block clear flag will be inserted. 0 - No limit" />
     <otherMaxDistance AltName="Other Ghost Invasion Range - Max Limit" Wiki="Other ghost invasion range upper limit. The intrusion position is searched for the intrusion points within the other ghost invasion impossible distance to the other ghost invasion range upper limit from the host position." />
     <signPuddleOpenEventFlagId AltName="Summoning Pool Open - Event Flag ID" Wiki="Sign accumulation release event flag ID" />

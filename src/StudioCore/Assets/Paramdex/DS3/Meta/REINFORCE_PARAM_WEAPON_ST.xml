@@ -35,7 +35,7 @@
     <freezeGuardDefRate AltName="Guard Absorption %: Frostbite" Wiki="Correction value of cold air attack cut rate when guarding" />
     <reinforcePriceRate AltName="Reinforce Price Rate" Wiki="Correction value to multiply the enhancement price of the weapon parameter" />
     <baseChangePriceRate AltName="Base Change Price Rate" Wiki="Correction value to multiply the evolution price of the weapon parameter" />
-    <pad2 AltName="" />
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self ConsecutiveIDs="" Wiki="Defines upgrades of weapons, include stat changes and upgrade cost (EquipMtrlSetParam id offset)" AlternativeOrder="materialSetId,maxReinforceLevel,reinforcePriceRate,baseChangePriceRate,-,
 physicsAtkRate,magicAtkRate,fireAtkRate,thunderAtkRate,darkAtkRate,-,

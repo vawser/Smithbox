@@ -21,7 +21,7 @@
 	<fakeTargetType AltName="Fake Target Type" Enum="AI_SOUND_FAKE_TARGET_TYPE" />
     <UseHitDamageTeam AltName="Is Hit Damage Team" IsBool="" />
     
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="How AIs react to sound"/>
 </PARAMMETA>

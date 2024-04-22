@@ -31,7 +31,7 @@
     <sfxId_27 AltName="SFX ID 27" Wiki="ID of SFX to use" />
     <sfxId_28 AltName="SFX ID 28" Wiki="ID of SFX to use" />
     <sfxId_29 AltName="SFX ID 29" Wiki="ID of SFX to use" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Throws Visual and Sound Effects"/>
 </PARAMMETA>

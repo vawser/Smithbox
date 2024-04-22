@@ -13,7 +13,7 @@
     <camRotXMin AltName="Camera Rotation - Minimum" Wiki="Minimum orientation when operating the camera" />
     <camRotXMax AltName="Camera Rotation - Maximum" Wiki="Maximum orientation when operating the camera" />
     <GparamID AltName="GPARAM ID" Wiki="GparamID" />
-    <pad2 AltName="" />
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Menu Content Render"/>
 </PARAMMETA>

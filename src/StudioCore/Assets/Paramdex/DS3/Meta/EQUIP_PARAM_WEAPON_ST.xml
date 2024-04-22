@@ -380,7 +380,7 @@ trophySGradeId,trophySeqId,-,"/>
     <isAutoEquip AltName="Is Auto Equipped" IsBool="" Wiki="Automatically equips the item when picked up, if slots are empty." />
     <isEnableEmergencyStep AltName="Is Emergency Avoidance Possible" IsBool="" />
     <invisibleOnRemo AltName="Is Hidden in Cutscene" IsBool="" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <correctType_Magic Refs="CalcCorrectGraph" AltName="Correction Type: Magic" Wiki="Determines the stat graph used for Magic damage (i.e. how effective a stat is).\nAlso affects INT portion of Spell buff if applicable." />
     <correctType_Fire Refs="CalcCorrectGraph" AltName="Correction Type: Fire" Wiki="Determines the stat graph used for Fire damage (i.e. how effective a stat is)." />
     <correctType_Thunder Refs="CalcCorrectGraph" AltName="Correction Type: Lightning" Wiki="Determines the stat graph used for Lightning damage (i.e. how effective a stat is).\nAlso affects FTH portion of Spell buff if applicable." />

@@ -26,8 +26,8 @@
 	<MsgId20 AltName="NPC 3 (Player vs Leonhard)" />
 	<MsgId21 AltName="NPC 4 (Anri vs Aldrich)" />
 	<MsgId22 AltName="Arena" />
-    <pad1 AltName="" />
-    <pad2 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
     
   </Field>
   <Self Wiki="Network Messages"/>

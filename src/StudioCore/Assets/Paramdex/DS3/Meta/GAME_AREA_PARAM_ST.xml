@@ -16,7 +16,7 @@
     <humanityDropPoint10 AltName="Humanity Drop Threshold [10]" Wiki="Threshold 10 for acquiring humanity" />
     <soloBreakInPoint_Min AltName="Min Invasion Spawns added after Boss Defeat" Wiki="The minimum value of solo intrusion points to be added when defeating an area boss." />
     <soloBreakInPoint_Max AltName="Max Invasion Spawns added after Boss Defeat" Wiki="The maximum value of solo intrusion points to be added when defeating an area boss." />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Level Data - Handles boss soul drops"/>
 </PARAMMETA>

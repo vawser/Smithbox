@@ -87,7 +87,7 @@
     <isFinishFullbody AltName="Is End SFX Full Body" Wiki="Do you use the whole body Damipoli for equipping SFX at the time of release? Play SFX from torso: 190, head: 191, hands: 192, legs: 193 at 1" IsBool="" />
     <isVisibleDeadChr AltName="Is Visible on Dead Chr" Wiki="If , VFX will be displayed even when the corpse is dead." IsBool="" />
     <isUseOffsetEnchantSfxSize AltName="Use Enchant SFX Size to Offset SFX ID" Wiki="Whether to offset the SfxId according to the enchantment Sfx size of the weapon para" IsBool="" />
-    <pad_1 AltName=""/>
+    <pad_1 AltName="" IsHidden=""/>
     <decalId1 AltName="Decal ID [0]" Wiki="Decal ID 1 (-1: invalid)" Refs="DecalParam"/>
     <decalId2 AltName="Decal ID [1]" Wiki="Decal ID 2 (-1: invalid)" Refs="DecalParam"/>
     <footEffectPriority AltName="Foot Effect Priority" Wiki="Foot effect offset priority (lower is higher)" />
@@ -120,12 +120,12 @@
     <materialParamTargetValue AltName="Material Param - End Fade" Wiki="The value at the end of the fade of the material parameter. The target is specified by the material parameter ID. If the material parameter ID is -1, do nothing" />
     <materialParamFadeTime AltName="Material Param - Fade Time" Wiki="Fade time for material parameter values. Gradually reach the target value over this time. If the material parameter ID is -1, do nothing" />
     <footDecalMaterialOffsetOverwriteId AltName="Foot Decal Material Offset Overwrite ID" Wiki="Forcibly rewrite the floor material ID offset of the foot decal (-1 unused)" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
     <emissiveIntensityScale AltName="Emissive Intensity Scale" />
     <unknown2 AltName="" />
     <emberEffectGlow AltName="Ember Effect Glow" />
     <unknown3 AltName="" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="All Visual Effects for Special Effects"/>
 </PARAMMETA>

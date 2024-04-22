@@ -12,7 +12,7 @@
   <Field>
     <LoadscreenCategoryId AltName="Loadscreen Category ID" Enum="ItemCategory" />
 	<KnowledgeId AltName="Knowledge ID" Refs="EquipParamAccessory,EquipParamGoods,EquipParamProtector,EquipParamWeapon" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Items to display during the loadscreen"/>
 </PARAMMETA>

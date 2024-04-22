@@ -22,7 +22,7 @@
     <Lv18 AltName="Draw Distance Level 18" Wiki="Lv18 Drawing distance scale" />
     <Lv19 AltName="Draw Distance Level 19" Wiki="Lv19 Drawing distance scale" />
     <Lv20 AltName="Draw Distance Level 20" Wiki="Lv20 Drawing distance scale" />
-    <reserve AltName=""/>
+    <reserve AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="LOD Scale Distance Draw"/>
 </PARAMMETA>

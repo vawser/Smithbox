@@ -15,15 +15,15 @@
     <eventFlag_forStock AltName="Quantity - Event Flag ID" Wiki="Event flag value that holds the number" />
     <eventFlag_forRelease AltName="Visibility - Event Flag ID" Wiki="Sales ban event flag" />
     <sellQuantity AltName="Amount to Sell" Wiki="Number of units sold" />
-    <pad3 AltName=""/>
+    <pad3 AltName="" IsHidden=""/>
     <equipType AltName="Equipment Type" Wiki="Types of equipment for sale" Enum="SHOP_LINEUP_EQUIPTYPE" />
     <costType AltName="Currency Type" Wiki="Price type. Applies only when overwriting the selling price" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <setNum AltName="Amount on Purchase" Wiki="Number of sets sold. Number of pieces you can get with one purchase (default: 1)" />
     <value_Add AltName="Price Addition" Wiki="Correction (addition) to the selling price of equipment. Equipment para selling price x magnification + addition" />
     <value_Magnification AltName="Price Multiplier" Wiki="Correction (magnification) to the selling price of equipment. Equipment para selling price x magnification + addition" />
-    <pad1 AltName="" />
-    <pad2 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self AlternativeOrder="equipId,equipType,mtrlId,-,
 sellQuantity,setNum,-,

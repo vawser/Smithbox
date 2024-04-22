@@ -53,7 +53,7 @@
     <isGrayoutLeftHand AltName="Is Greyout Left-hand" Wiki="Whether to gray out when displaying the arts name of the left hand (one-handed)" IsBool="" />
     <isGrayoutRightHand AltName="Is Greyout Right-hand" Wiki="Whether to gray out when displaying the arts name of the right hand (one-handed)" IsBool="" />
     <isGrayoutBothHand AltName="Is Greyout Both-hand" Wiki="Whether to gray out when displaying the arts name of both hands" IsBool="" />
-    <reserve2 AltName=""/>
+    <reserve2 AltName="" IsHidden=""/>
     <usePoint_L1 AltName="Arts Points - L1" Wiki="Points to spend when putting out arts by L1" />
     <usePoint_L2 AltName="Arts Points - L2" Wiki="Points to spend when putting out arts by L2" />
     <usePoint_R1 AltName="Arts Points - R1" Wiki="Points to spend when putting out arts by R1" />
@@ -64,7 +64,7 @@
     <useMagicPoint_R1 AltName="FP Consumption - R1" Wiki="MP consumed when issuing arts by R1" />
     <useMagicPoint_R2 AltName="FP Consumption - R2" Wiki="MP consumed when issuing arts by R2" />
     <shieldIconType AltName="Shield Icon Type" Wiki="If you do not overwrite it, the icon will be displayed based on the swashbuckler ID of the weapon para." Enum="SWORD_ARTS_SHIELD_ICON_TYPE" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="All Action Ids for Weapon Arts"/>
 </PARAMMETA>

@@ -31,7 +31,7 @@
     <disableFallDamage AltName="Disable Fall Damage" Wiki="Set to 1 for floors that are not subject to fall damage" />
     <isHardnessForSoundReverb AltName="Is Hardness for Sound Reverb" Wiki="Is it a hard material for sound echo? (0: soft, 1: hard)" />
     <hardnessType AltName="Hardness Type" Wiki="The hardness of the material. Used for soft contact processing of rigid bodies." Enum="HMP_HARDNESS_TYPE" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <spEffectIdOnHit0_ClearCount_2 AltName="On Hit [0] - NG+1 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 2nd lap" Refs="SpEffectParam"/>
     <spEffectIdOnHit0_ClearCount_3 AltName="On Hit [0] - NG+2 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 3rd lap" Refs="SpEffectParam"/>
     <spEffectIdOnHit0_ClearCount_4 AltName="On Hit [0] - NG+3 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 0 4th lap" Refs="SpEffectParam"/>
@@ -47,8 +47,8 @@
     <spEffectIdOnHit1_ClearCount_7 AltName="On Hit [1] - NG+6 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 1 7th lap" Refs="SpEffectParam"/>
     <spEffectIdOnHit1_ClearCount_8 AltName="On Hit [1] - NG+7 - SpEffect ID" Wiki="Special effect applied when stepping on the hit material 1 8th lap" Refs="SpEffectParam"/>
     <replaceMateiralId_Rain AltName="Rain - Replace Material ID" Wiki="Hit material change destination ID due to weather (rain) (-1: No change)" Refs="HitMtrlParam"/>
-    <pad1 AltName=""/>
-    <pad2 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
     <spEffectId_forWet AltName="Wetness [0] - SpEffect ID" Wiki="Special effect for wetting 00" Refs="SpEffectParam"/>
   </Field>
 </PARAMMETA>

@@ -11,10 +11,10 @@
     <atkBody_2 AltName="Flesh [2]" Wiki="Meat: Concept 2"  />
     <atkStone_1 AltName="Stone [1]" Wiki="Corrosion: Concept 1"  />
     <atkStone_2 AltName="Stone [2]" Wiki="Corrosion: Concept 2"  />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
     <atkNone_1 AltName="None [1]" Wiki="None: Concept 1"  />
     <atkNone_2 AltName="None [2]" Wiki="None: Concept 2"  />
-    <reserve AltName=""/>
+    <reserve AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Related to Hit Sound Effects"/>
 </PARAMMETA>

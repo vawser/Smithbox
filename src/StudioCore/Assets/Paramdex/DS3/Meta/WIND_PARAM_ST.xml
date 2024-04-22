@@ -4,11 +4,11 @@
     <commonCapsuleBeginDmyId AltName="Common Capsule - Start Dummy Poly ID" />
     <commonCapsuleEndDmyId AltName="Common Capsule - End Dummy Poly ID" />
     <commonCapsuleRadius AltName="Common Capsule - Radius" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
     <sfxWindEnable AltName="Enable Windx VFX" IsBool="" />
     <sfxIgnorePlayerSfx AltName="Ignore Player VFX" IsBool=""/>
     <sfxIsCollision AltName="Is Collision" IsBool="" />
-    <pad2 AltName="" />
+    <pad2 AltName="" IsHidden=""/>
     <SfxDirPitchMin AltName="VFX Direction - Pitch Min" />
     <SfxDirPitchMax AltName="VFX Direction - Pitch Max" />
     <SfxDirYawMin AltName="VFX Direction - Yaw Min" />
@@ -18,10 +18,10 @@
     <SfxSpeedMin AltName="VFX Direction - Speed Min" />
     <SfxSpeedMax AltName="VFX Direction - Speed Min" />
     <SfxMaximumDrag AltName="VFX Direction - Max Drag" />
-    <pad3 AltName="" />
+    <pad3 AltName="" IsHidden=""/>
     <clothWindEnable AltName="Enable Wind Effect on Cloth" />
     <clothVertexWind AltName="Enable Vertex Wind" />
-    <pad4 AltName="" />
+    <pad4 AltName="" IsHidden=""/>
     <clothDirPitchMin AltName="Cloth Direction - Pitch Min" />
     <clothDirPitchMax AltName="Cloth Direction - Pitch Max" />
     <clothDirYawMin AltName="Cloth Direction - Yaw Min" />
@@ -31,7 +31,7 @@
     <clothSpeedMin AltName="Cloth Direction - Speed Min" />
     <clothSpeedMax AltName="Cloth Direction - Speed Max" />
     <clothMaximumDrag AltName="Cloth Direction - Maximum Drag" />
-    <pad5 AltName="" />
+    <pad5 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

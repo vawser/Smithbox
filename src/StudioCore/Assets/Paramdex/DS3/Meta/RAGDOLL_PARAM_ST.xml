@@ -11,7 +11,7 @@
     <snapGain AltName="Snap Gain" />
     <enable AltName="Enable" IsBool="" />
     <partsHitMaskNo AltName="Parts Hit Mask No." />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Ragdoll data"/>
 </PARAMMETA>

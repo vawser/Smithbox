@@ -21,7 +21,7 @@
 	<materialSetId AltName="Material ID Offset" />
 	<darkDefRate AltName="Defense %: Dark" />
 	<resistFrost AltName="Resist %: Frost" />
-    <pad1 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self ConsecutiveIDs="" Wiki="Defines upgrades of Armor." />
 </PARAMMETA>

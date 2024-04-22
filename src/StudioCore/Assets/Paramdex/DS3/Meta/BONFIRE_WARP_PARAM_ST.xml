@@ -28,7 +28,7 @@
 	<IsDisableQuickwarp AltName="Is Home Bonfire" IsBool="" Wiki="Seems to enable bonfire level display at menu."/>
 	<CeremonyId AltName="Ceremony ID" Wiki="Forces map into ceremony if value is not -1." />
 	<onlineAreaId AltName="Play Region ID" Refs="PlayRegionParam" Wiki="For displaying online activity embers." />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Bonfire configuration"/>
 </PARAMMETA>

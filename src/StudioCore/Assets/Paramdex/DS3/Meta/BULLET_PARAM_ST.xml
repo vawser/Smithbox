@@ -141,8 +141,8 @@
 	<lockShootCorrectionAng AltName="Lock Direction Limit Correction"/>
     <externalForce AltName="External Force in Bullet Direction" Wiki="External force applied in the direction of shooting. (Y-axis is removed)" />
     <lockShootLimitAng AltName="Lock Direction Limit Angle" Wiki="Limit angle when facing the lock direction" />
-    <pad1 AltName=""/>
-    <pad2 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
     <unknown AltName="Unknown" />
   </Field>
 </PARAMMETA>

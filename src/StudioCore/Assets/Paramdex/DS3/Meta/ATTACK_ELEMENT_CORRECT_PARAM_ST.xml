@@ -84,14 +84,14 @@
     <corrRate23 AltName="Dark Correction Ratio: FTH" />
     <corrRate24 AltName="Dark Correction Ratio: LCK" />
     
-    <pad1 AltName=""/>
-    <Unk1 AltName=""/>
-    <Unk2 AltName=""/>
-    <Unk3 AltName=""/>
-    <Unk4 AltName=""/>
-    <Unk5 AltName=""/>
-    <Unk6 AltName=""/>
-    <Unk7 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
+    <Unk1 AltName="" IsHidden=""/>
+    <Unk2 AltName="" IsHidden=""/>
+    <Unk3 AltName="" IsHidden=""/>
+    <Unk4 AltName="" IsHidden=""/>
+    <Unk5 AltName="" IsHidden=""/>
+    <Unk6 AltName="" IsHidden=""/>
+    <Unk7 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Damage correction configuration for damage types"/>
 </PARAMMETA>

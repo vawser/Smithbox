@@ -46,7 +46,7 @@
     <PadType AltName="Operation Type" Wiki="Operation type" Enum="THROW_PAD_TYPE" />
     <AtkEnableState AltName="Attack Enable State" Wiki="Please set the state type that can be thrown on the throwing side" Enum="THROW_ENABLE_STATE" />
     <throwFollowingType AltName="Throw Following Type" Wiki="How to follow the character possessed by Adsorbed Damipoli while throwing. * Follow-up period is controlled by TAE action" Enum="THROW_FOLLOWING_TYPE" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <throwType AltName="Throw Type" Wiki="Type of throw" Enum="THROW_TYPE" />
     <selfEscCycleCnt AltName="Self Escape - Cycle Count" Wiki="Number of self-throwing cycles" />
     <dmyHasChrDirType AltName="Character Throw - Dummy Poly Direction Type" Wiki="Direction of Damipoli possession character when throwing occurs" Enum="THROW_DMY_CHR_DIR_TYPE" />
@@ -56,7 +56,7 @@
     <isEnableCorrectPos_forThrowAdjust AltName="Enable Correct Position for Throw Adjustment" Wiki="If it is set to , the location of the throwing position will be the position of the adsorption Damipoli that has returned to the positional relationship equivalent to the flat ground." IsBool="" />
     <isEnableThrowFollowingFallAssist AltName="Enable Throw Following Fall Assist" Wiki="Is the same treatment as the wall removal prevention applied to the fall prevention wall so that it does not fall from the step when the follow-up is released?" IsBool="" />
     <isEnableThrowFollowingFeedback AltName="Enable Throw Following Feedback" Wiki="Do you want to return the character with the Adsorbed Damipoli when it comes in contact with a hit or fall prevention wall so that it does not look like it will get stuck in the middle wall or fall from a step?" IsBool="" />
-    <pad0 AltName=""/>
+    <pad0 AltName="" IsHidden=""/>
     <atkSorbDmyId AltName="Attacker - Absorb Dummy ID" Wiki="Where on the throwing side should the receiving side be attracted?" />
     <defSorbDmyId AltName="Defender - Absorb Dummy ID" Wiki="Where on the receiving side should the throwing side be adsorbed?" />
     <Dist_start AltName="Backstab - Max Throw Distance " Wiki="Only throw at a distance closer than this value [m] Used for throwing at the start of the Backstab" />
@@ -69,7 +69,7 @@
     <judgeRangeBasePosDmyId2 AltName="Defender - Throwing Range Judgment - Dummy Poly ID" Wiki="Damipoli that the thrower considers to be his position when calculating the throw range. If -1, the capsule origin" />
     <adsrobModelPosInterpolationTime AltName="Absorb Model Position Interpolation Time" Wiki="After the capsule is adsorbed on Damipoli, the time it takes for the character model to interpolate and move to the position according to the throwing animation data (when 0 is set, the model position is not interpolated and playback starts immediately after adsorption with the positional relationship according to the animation data. Will be)" />
     <throwFollowingEndEasingTime AltName="Throw Following End Easing Time" Wiki="Model position interpolation time at the end of tracking" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Boss Grabs, Backstabbs, etc"/>
 </PARAMMETA>

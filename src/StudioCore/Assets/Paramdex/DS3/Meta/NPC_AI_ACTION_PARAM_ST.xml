@@ -47,7 +47,7 @@
     <bKeyHold3 AltName="Handle Key [3] Hold as Long Press" Wiki="Whether to treat the key to be entered as a long press" IsBool="" />
     <gestureId AltName="Gesture ID" Wiki="Gesture ID" />
     <bLifeEndSuccess AltName="AI Goal Waits For Duration End" Wiki="If this is ON, the AI goal will not be successful until the end of its life" IsBool="" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

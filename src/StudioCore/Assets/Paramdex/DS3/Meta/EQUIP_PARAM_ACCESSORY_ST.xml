@@ -71,7 +71,7 @@ showLogCondType,showDialogCondType,-," />
     <isDrop AltName="Can Drop" IsBool="" />
 	<showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
-	<pad2 AltName=""/>
+	<pad2 AltName="" IsHidden=""/>
     <saleValue AltName="Sale Price" Wiki="Selling price" />
     <accessoryGroup AltName="Accessory Group" Wiki="Items of the same group cannot be equipped at the same time" VRef="accessoryGroup" />
     <vowId AltName="Vow ID" />
@@ -80,8 +80,8 @@ showLogCondType,showDialogCondType,-," />
     <residentSpEffectId2 AltName="SpEffect ID 2" Wiki="Resident special effect ID2" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
     <residentSpEffectId3 AltName="SpEffect ID 3" Wiki="Resident special effect ID3" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
     <residentSpEffectId4 AltName="SpEffect ID 4" Wiki="Resident special effect ID4" Refs="SpEffectParam(refCategory=2),Bullet(refCategory=1),BehaviorParam_Pc(refCategory=0)" />
-    <pad1 AltName="" />
-    <pad3 AltName="" />
+    <pad1 AltName="" IsHidden=""/>
+    <pad3 AltName="" IsHidden=""/>
     
   </Field>
 </PARAMMETA>
