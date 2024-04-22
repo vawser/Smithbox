@@ -6,7 +6,7 @@
     <sssEnabled AltName="SSS Enabled" Wiki="SSS enabled" IsBool="" />
     <tessellationEnabled AltName="Tessellation Enabled" Wiki="Tessellation enabled" IsBool="" />
     <highPrecisionNormalEnabled AltName="High Precision Normal Enabled" Wiki="High precision normal valid (setting the accuracy of the normal stored in G-Buffer)" IsBool="" />
-    <dmy AltName="dmy" Wiki="" />
+    <dmy IsHidden="" />
   </Field>
   <Self />
 </PARAMMETA>

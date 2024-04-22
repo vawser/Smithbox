@@ -24,6 +24,9 @@
     <Field Def="u8 Unk0x26"></Field>
     <Field Def="u8 Unk0x27"></Field>
     <Field Def="s32 Unk0x28"></Field>
-    <Field Def="s32 Unk0x2C"></Field>
+    <Field Def="u8 Unk0x2C"></Field>
+    <Field Def="u8 Unk0x2D"></Field>
+    <Field Def="u8 Unk0x2E"></Field>
+    <Field Def="u8 Unk0x2F"></Field>
   </Fields>
 </PARAMDEF>

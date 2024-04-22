@@ -11,7 +11,7 @@
   <Field>
     <fogEnabled AltName="Fog Enabled" Wiki="Fog enabled" IsBool="" />
     <fogShadowEnabled AltName="Fog Shadow Enabled" Wiki="Fog shadow permission" IsBool="" />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
     <fogShadowSampleCountBias AltName="Shadow Sample Count Offset" Wiki="Shadow sample count offset." />
     <fogLocalLightDistScale AltName="Local Light Distance Scale" Wiki="Local light calculation distance scale (0 does not calculate local light)" />
     <fogVolueSizeScaler AltName="Fog Volume Size Scaler" Wiki="Fog volume size scaler" />

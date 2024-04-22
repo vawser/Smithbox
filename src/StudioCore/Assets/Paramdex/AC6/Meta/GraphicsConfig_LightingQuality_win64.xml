@@ -7,7 +7,7 @@
     <localLightShadowEnabled AltName="Local Light Shadow Enabled" Wiki="Local light shadow enabled" IsBool="" />
     <forwardPassLightingEnabled AltName="Forward Pass Write Enabled" Wiki="Forward pass writing enabled" IsBool="" />
     <localLightShadowSpecLevelMax AltName="Local Light Shadow Specular Level" Wiki="Local light shadow spec level. The larger the value, the more light sources will be shadowed." />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

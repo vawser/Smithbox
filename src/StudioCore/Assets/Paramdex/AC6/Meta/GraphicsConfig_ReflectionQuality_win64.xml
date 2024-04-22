@@ -6,11 +6,11 @@
     <enabled AltName="Reflection Enabled" Wiki="Reflective effective" IsBool="" />
     <localLightEnabled AltName="Local Light Enabled" Wiki="Local light enabled" IsBool="" />
     <localLightForceEnabled AltName="Local Light Forced Enabled" Wiki="Local light forced enable" IsBool="" />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
     <resolutionDivider AltName="Resolution Scale" Wiki="Resolution scale" />
     <ssrEnabled AltName="SSR Enabled" Wiki="SSR enabled" IsBool="" />
     <ssrGaussianBlurEnabled AltName="Gaussian Blur Enabled" Wiki="Gaussian blur permission" IsBool="" />
-    <dmy2 AltName=""/>
+    <dmy2 AltName="" IsHidden=""/>
     <ssrDepthRejectThresholdScale AltName="Calculated Distance Scale" Wiki="Calculated distance scale" />
     <ssrRayTraceStepScale AltName="Raytrace Step Scale" Wiki="Raytrace step factor (multiply by SSR parameter)" />
     <ssrFadeToViewerBias AltName="Fade Angle Bias" Wiki="Fade angle bias. High quality when made smaller" />

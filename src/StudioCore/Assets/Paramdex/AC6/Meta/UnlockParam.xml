@@ -1,7 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="UNLOCK_TYPE" type="s32">
+        <Option Value="1" Name="Archive" />
+        <Option Value="2" Name="Event Flag" />
+        <Option Value="3" Name="Unknown" />
+        <Option Value="4" Name="Unknown" />
+        <Option Value="5" Name="Unknown" />
+        <Option Value="13" Name="Unknown" />
+    </Enum>
+  </Enums>
   <Field>
-    
+    <unlockType AltName="Unlock Type" />
+    <value AltName="Value"/>
+    <pad1 IsHidden=""/>
+    <pad2 IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

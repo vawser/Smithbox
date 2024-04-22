@@ -220,11 +220,25 @@ public class ParamEditorView
 
                 if (_gConfigParamView)
                 {
-                    keyList = keyList.FindAll(p => p.StartsWith("Gconfig"));
+                    if(Project.Type == ProjectType.AC6)
+                    {
+                        keyList = keyList.FindAll(p => p.StartsWith("GraphicsConfig"));
+                    }
+                    else
+                    {
+                        keyList = keyList.FindAll(p => p.StartsWith("Gconfig"));
+                    }
                 }
                 else
                 {
-                    keyList = keyList.FindAll(p => !p.StartsWith("Gconfig"));
+                    if (Project.Type == ProjectType.AC6)
+                    {
+                        keyList = keyList.FindAll(p => !p.StartsWith("GraphicsConfig"));
+                    }
+                    else
+                    {
+                        keyList = keyList.FindAll(p => !p.StartsWith("Gconfig"));
+                    }
                 }
             }
 

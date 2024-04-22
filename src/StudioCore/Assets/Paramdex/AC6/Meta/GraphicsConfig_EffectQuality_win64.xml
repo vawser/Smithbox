@@ -16,7 +16,7 @@
     <fLodDistance3Scale AltName="3rd LOD Distance Scale" Wiki="3rd stage LOD distance scale" />
     <fLodDistance4Scale AltName="4th LOD Distance Scale" Wiki="4th stage LOD distance scale" />
     <fScaleRenderDistanceScale AltName="Scale Render Distance Scale" Wiki="Magnification to the distance registered in the reduction buffer" />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

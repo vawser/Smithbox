@@ -6,7 +6,7 @@
   </Enums>
   <Field>
     <filter AltName="Texture Filter" Wiki="filter" Enum="GX_TEXTURE_FILTER" />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
     <maxAnisoLevel AltName="Anisotropic Level" Wiki="Aniso level" />
   </Field>
   <Self />

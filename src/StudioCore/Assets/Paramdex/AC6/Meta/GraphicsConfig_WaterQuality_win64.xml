@@ -4,7 +4,7 @@
   </Enums>
   <Field>
     <interactionEnabled AltName="Interaction Enabled" Wiki="Interaction enabled" IsBool="" />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

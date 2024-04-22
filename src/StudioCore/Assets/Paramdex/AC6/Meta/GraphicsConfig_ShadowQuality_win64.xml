@@ -7,7 +7,7 @@
   <Field>
     <enabled AltName="Shadow Enabled" Wiki="Shadow is enabled" IsBool="" />
     <maxFilterLevel AltName="Maximum Filter Level" Wiki="Maximum filter quality allowed" Enum="GX_SHADOW_FILTER_LEVEL" />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
     <textureSizeScaler AltName="Texture Size Scalar" Wiki="Scaler with set shadow map resolution" />
     <textureSizeDivider AltName="Texture Size Division" Wiki="Divide the set shadow map resolution" />
     <textureMinSize AltName="Minimum Resolution" Wiki="Clamp resolution" />

@@ -4,7 +4,7 @@
   </Enums>
   <Field>
     <enabled AltName="Decal Enabled" Wiki="Decal valid" IsBool="" />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

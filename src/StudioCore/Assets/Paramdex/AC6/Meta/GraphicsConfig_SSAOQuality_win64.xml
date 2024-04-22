@@ -9,7 +9,7 @@
     <cs_reprojEnabledType AltName="Reprojection Enabled" Wiki="When reprojection is forcibly enabled, Prevent Ghost is also enabled." Enum="CS_GCONFIG_ENABLED_TYPE" />
     <cs_upScaleEnabledType AltName="Bilateral Upscale Enable Type" Wiki="Bilateral upscale effective" Enum="CS_GCONFIG_ENABLED_TYPE" />
     <cs_useNormalEnabledType AltName="Use Normal Enabled Type" Wiki="Valid to use normals" Enum="CS_GCONFIG_ENABLED_TYPE" />
-    <dmy AltName=""/>
+    <dmy AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>
