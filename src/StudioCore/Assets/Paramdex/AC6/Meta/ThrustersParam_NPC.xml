@@ -1,5 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <thrusterSfxParamId_1 AltName="Thruster SFX ID [1]"  />
+    <thrusterSfxParamId_2 AltName="Thruster SFX ID [2]"  />
+    <thrusterSfxParamId_3 AltName="Thruster SFX ID [3]"  />
+    <thrusterSfxParamId_4 AltName="Thruster SFX ID [4]"  />
+    <thrusterSfxParamId_5 AltName="Thruster SFX ID [5]"  />
+    <thrusterSfxParamId_6 AltName="Thruster SFX ID [6]"  />
+    <thrusterSfxParamId_7 AltName="Thruster SFX ID [7]"  />
+    <thrusterSfxParamId_8 AltName="Thruster SFX ID [8]"  />
+    <thrusterSfxParamId_9 AltName="Thruster SFX ID [9]"  />
+    <thrusterSfxParamId_10 AltName="Thruster SFX ID [10]"  />
+    <thrusterSfxParamId_11 AltName="Thruster SFX ID [11]"  />
+    <thrusterSfxParamId_12 AltName="Thruster SFX ID [12]"  />
+    <thrusterSfxParamId_13 AltName="Thruster SFX ID [13]"  />
+    <thrusterSfxParamId_14 AltName="Thruster SFX ID [14]"  />
+    <thrusterSfxParamId_15 AltName="Thruster SFX ID [15]"  />
+    <thrusterSfxParamId_16 AltName="Thruster SFX ID [16]"  />
+    <thrusterSfxParamId_17 AltName="Thruster SFX ID [17]"  />
+    <thrusterSfxParamId_18 AltName="Thruster SFX ID [18]"  />
+    <thrusterSfxParamId_19 AltName="Thruster SFX ID [19]"  />
+    <thrusterSfxParamId_20 AltName="Thruster SFX ID [20]"  />
+    <thrusterSfxParamId_21 AltName="Thruster SFX ID [21]"  />
+    <thrusterSfxParamId_22 AltName="Thruster SFX ID [22]"  />
+    <thrusterSfxParamId_23 AltName="Thruster SFX ID [23]"  />
+    <thrusterSfxParamId_24 AltName="Thruster SFX ID [24]"  />
+  </Field>
   <Self />
 </PARAMMETA>

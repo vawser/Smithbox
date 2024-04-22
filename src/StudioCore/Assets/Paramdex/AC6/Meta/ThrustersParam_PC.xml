@@ -1,5 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <thrusterSfxParamId_1 AltName="Thruster SFX ID [1]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_2 AltName="Thruster SFX ID [2]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_3 AltName="Thruster SFX ID [3]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_4 AltName="Thruster SFX ID [4]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_5 AltName="Thruster SFX ID [5]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_6 AltName="Thruster SFX ID [6]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_7 AltName="Thruster SFX ID [7]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_8 AltName="Thruster SFX ID [8]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_9 AltName="Thruster SFX ID [9]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_10 AltName="Thruster SFX ID [10]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_11 AltName="Thruster SFX ID [11]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_12 AltName="Thruster SFX ID [12]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_13 AltName="Thruster SFX ID [13]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_14 AltName="Thruster SFX ID [14]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_15 AltName="Thruster SFX ID [15]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_16 AltName="Thruster SFX ID [16]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_17 AltName="Thruster SFX ID [17]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_18 AltName="Thruster SFX ID [18]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_19 AltName="Thruster SFX ID [19]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_20 AltName="Thruster SFX ID [20]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_21 AltName="Thruster SFX ID [21]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_22 AltName="Thruster SFX ID [22]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_23 AltName="Thruster SFX ID [23]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_24 AltName="Thruster SFX ID [24]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_25 AltName="Thruster SFX ID [25]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_26 AltName="Thruster SFX ID [26]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_27 AltName="Thruster SFX ID [27]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_28 AltName="Thruster SFX ID [28]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_29 AltName="Thruster SFX ID [29]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_30 AltName="Thruster SFX ID [30]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_31 AltName="Thruster SFX ID [31]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_32 AltName="Thruster SFX ID [32]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_33 AltName="Thruster SFX ID [33]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_34 AltName="Thruster SFX ID [34]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_35 AltName="Thruster SFX ID [35]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_36 AltName="Thruster SFX ID [36]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_37 AltName="Thruster SFX ID [37]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_38 AltName="Thruster SFX ID [38]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_39 AltName="Thruster SFX ID [39]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_40 AltName="Thruster SFX ID [40]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_41 AltName="Thruster SFX ID [41]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_42 AltName="Thruster SFX ID [42]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_43 AltName="Thruster SFX ID [43]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_44 AltName="Thruster SFX ID [44]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_45 AltName="Thruster SFX ID [45]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_46 AltName="Thruster SFX ID [46]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_47 AltName="Thruster SFX ID [47]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_48 AltName="Thruster SFX ID [48]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_49 AltName="Thruster SFX ID [49]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_50 AltName="Thruster SFX ID [50]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_51 AltName="Thruster SFX ID [51]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_52 AltName="Thruster SFX ID [52]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_53 AltName="Thruster SFX ID [53]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_54 AltName="Thruster SFX ID [54]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_55 AltName="Thruster SFX ID [55]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_56 AltName="Thruster SFX ID [56]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_57 AltName="Thruster SFX ID [57]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_58 AltName="Thruster SFX ID [58]" Refs="ThrustersSfxIdParam_PC" />
+  </Field>
   <Self />
 </PARAMMETA>
