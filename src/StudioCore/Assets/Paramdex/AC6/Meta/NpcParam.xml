@@ -9,6 +9,23 @@
       <Option Value="0" Name="Low" />
       <Option Value="1" Name="Normal" />
     </Enum>
+    <Enum Name="TEAM_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Guest" />
+      <Option Value="2" Name="Host" />
+      <Option Value="3" Name="Wingman" />
+      <Option Value="4" Name="Junior Wingman" />
+      <Option Value="5" Name="Enemy" />
+      <Option Value="6" Name="Strong Enemy" />
+      <Option Value="7" Name="Third Force" />
+      <Option Value="8" Name="Beserker" />
+      <Option Value="9" Name="Character for Object Destruction" />
+      <Option Value="10" Name="Character for Object Destruction (Wingman)" />
+      <Option Value="11" Name="Character for Object Destruction (Enemy)" />
+      <Option Value="12" Name="Object" />
+      <Option Value="13" Name="Third Force (Ally)" />
+      <Option Value="14" Name="Gimmick Battery (Ally)" />
+    </Enum>
   </Enums>
   <Field>
     <damageLevelConvThresholdParamId AltName="Stability Threshold Ref (DamageLevelConvThresholdParam ID)" Refs="DamageLevelConvThresholdParam" Wiki="Determines attitude stability behavior." />
@@ -18,6 +35,8 @@
     <penetrateDefense AltName="Penetration Defense" Enum="NPC_BULLET_PENETRATE_DEF_TYPE" Wiki="Affects which bullets penetrate this character. See Bullet param chrPenetrateType." />
     <movementEnemyTypeParamId AltName="MovementEnemyTypeParam ID" Refs="MovementEnemyTypeParam" Wiki="Determines movement specifics, such as what types of movement can be made and various speeds." />
     <chrActTurnParamId AltName="ChrActTurnParam_Npc ID" Refs="ChrActTurnParam_Npc" />
+    
+    <teamType AltName="Team Type" Wiki="NPC attack hit / not hit, aim / not aim setting" Enum="TEAM_TYPE" />
   </Field>
   <Self />
 </PARAMMETA>

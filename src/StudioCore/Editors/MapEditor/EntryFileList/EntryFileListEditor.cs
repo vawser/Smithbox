@@ -52,7 +52,6 @@ public class EntryFileListEditor
         // WIP: only a viewer for AC6 at the moment
         // TODO: add ability to change the entries:
         // -> Struct1 and Struct2 need to be changed in-line with the String
-
         return;
 
         if (Project.Type == ProjectType.Undefined)

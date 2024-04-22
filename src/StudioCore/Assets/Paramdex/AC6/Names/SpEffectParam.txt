@@ -1,3 +1,8 @@
+4850 AI: Interrupt
+5000 AI: Move Type: Boost
+5003 AI: Move Type: Run
+5450 AI: Is Special Stay Action
+5451 AI: Is Cover Action
 6100 ACS Failure - 100
 6101 ACS Failure - 100
 6102 ACS Failure - 100
@@ -13,6 +18,13 @@
 6602 Stun - 100
 6603 Stun - 100
 6700 Camera Disruption
+8000 AI: Deactivate Interrupt
+8001 AI: Deactivate Interrupt
+8002 AI: Deactivate Interrupt
+8010 AI: Deactivate Interrupt
+8011 AI: Deactivate Interrupt
+8020 AI: Deactivate Interrupt
+8021 AI: Deactivate Interrupt
 9080 Baby Boost Legs
 9090 Tetrapod Hover Mode
 9403 Repair Kit (Default)
@@ -22,11 +34,21 @@
 9407 Repair Kit (Upgrade 3)
 2010090 Prologue (Illegal Entry) Initial AP Damage
 2120600 ACS Failure - 50
+2170032 AI: First Flare Exclusive
+2170037 AI: Out of Line
+2170042 AI: Camera Taken
+2170043 AI: Camera Only Once MssnF
+2220900 AI: EV BigMissileSuppBoostRise
+2220910 AI: EV BigMissileSuppAtkCtl
+2220911 AI: EV BigMissileSuppAtkCtlNear
 3420005 Red EN Anomaly
 4021000 Stun - 500
 4100000 ACS Failure - 70
 4100001 ACS Failure - 70
+4200005 AI: PrisonBreak - Narrow AI
+4200100 AI: PrisonBreak - TurretShotRayChk
 5040000 White EN Anomaly
+7920000 AI: EV SBMTutorialLayerA AtkDistLimit
 30000000 BAWS Guard MT (Walker)
 30001000 BAWS Guard MT (Walker)
 30002000 BAWS Guard MT (Walker)
@@ -41,19 +63,19 @@
 30010000 Junker Coyotes "Puncher" MT (Walker)
 30020000 Junker Coyotes "Kicker" MT (Walker)
 30021000 Junker Coyotes "Kicker" MT (Walker)
-30200000 BAWS Bipedal MT
-30200100 BAWS Bipedal MT
-30200200 BAWS Bipedal MT
-30200300 BAWS Bipedal MT
-30200400 BAWS Bipedal MT
-30200500 BAWS Bipedal MT
-30200600 BAWS Bipedal MT
-30200700 BAWS Bipedal MT
-30200800 BAWS Bipedal MT
-30200810 BAWS Bipedal MT
-30200820 BAWS Bipedal MT
-30200830 BAWS Bipedal MT
-30201000 BAWS Bipedal MT
+30200000 BAWS Bipedal MT - Rifle Throwing Gun
+30200100 BAWS Bipedal MT - Double Machine Gun
+30200200 BAWS Bipedal MT - MG Hand Rocket
+30200300 BAWS Bipedal MT - Shotgun & Shield
+30200400 BAWS Bipedal MT - Missle Rifle 
+30200500 BAWS Bipedal MT - Cannon MG
+30200600 BAWS Bipedal MT - Rifle & Shield
+30200700 BAWS Bipedal MT - Hand Rocket Rifle
+30200800 BAWS Bipedal MT - MG Shield
+30200810 BAWS Bipedal MT - MG
+30200820 BAWS Bipedal MT - Shield
+30200830 BAWS Bipedal MT - Camera Rifle
+30201000 BAWS Bipedal MT - 
 30201001 BAWS Bipedal MT
 30201010 BAWS Bipedal MT
 30201020 BAWS Bipedal MT
@@ -68,20 +90,20 @@
 30202000 BAWS Bipedal MT
 30202001 BAWS Bipedal MT
 30202010 BAWS Bipedal MT
-30202020 BAWS Bipedal MT
+30202020 BAWS Bipedal MT - Is Aim: Double MG
 30206000 BAWS Bipedal MT
 30207000 BAWS Bipedal MT
-30208000 BAWS Bipedal MT
-30208001 BAWS Bipedal MT
-30208010 BAWS Bipedal MT
+30208000 BAWS Bipedal MT - First Flare
+30208001 BAWS Bipedal MT - First Flare Anim Check
+30208010 BAWS Bipedal MT - Allow Send Camera Data
 30208100 BAWS Bipedal MT
 30208101 BAWS Bipedal MT
 30209001 BAWS Bipedal MT
 30209002 BAWS Bipedal MT
 30209003 BAWS Bipedal MT
 30209004 BAWS Bipedal MT
-30209100 BAWS Bipedal MT
-30209200 BAWS Bipedal MT
+30209100 BAWS Bipedal MT - Left Cover
+30209200 BAWS Bipedal MT - Right Cover
 30209310 BAWS Bipedal MT
 30209400 BAWS Bipedal MT
 30209999 BAWS Bipedal MT
@@ -1708,8 +1730,8 @@
 81359990 ENFORCER
 81450000 ENFORCER (Defense Mode)
 81450001 ENFORCER (Defense Mode)
-81450100 ENFORCER (Defense Mode)
-81450101 ENFORCER (Defense Mode)
+81450100 ENFORCER (Defense Mode) - Interrupt
+81450101 ENFORCER (Defense Mode) - Interrupt
 81450102 ENFORCER (Defense Mode)
 81450110 ENFORCER (Defense Mode)
 81450120 ENFORCER (Defense Mode)
@@ -1722,6 +1744,38 @@
 81456610 ENFORCER (Defense Mode)
 81456611 ENFORCER (Defense Mode)
 81459900 ENFORCER (Defense Mode)
+99600000 AI: Interrupt 1
+99600001 AI: Interrupt 2
+99600002 AI: Interrupt 3
+99600003 AI: Interrupt 4
+99600004 AI: Interrupt 5
+99600005 AI: Interrupt 6
+99600006 AI: Interrupt 7
+99600007 AI: Interrupt 8
+99600008 AI: Interrupt 9
+99600009 AI: Interrupt 10
+99600010 AI: Interrupt 11
+99600011 AI: Interrupt 12
+99600012 AI: Interrupt 13
+99600013 AI: Interrupt 14
+99600014 AI: Interrupt 15
+99600015 AI: Interrupt 16
+99991000 AI: Mode A
+99991001 AI: Mode B
+99991002 AI: Mode C
+99991003 AI: Mode D
+99991004 AI: Mode E
+99992010 AI: Land Action
+99993000 AI: Return to Home
+99993101 AI: No Reaction on Player Death
+99993300 AI: Is Possible Cover Action
+99993400 AI: Is Search Event Asset Shoot Point
+99993410 AI: IS Local Player Search Event Asset Shoot Point
+99995000 AI: Follow
+99997000 AI: Is NPC AC Damaged Stagger: Small
+99997010 AI: Is NPC AC Damaged Stagger: Large
+99997020 AI: Is NPC AC Damaged Stagger: Blow Away
+99997030 AI: Is NPC AC Damaged Stagger: Guard Break
 200000000 Hit by Explosive
 200001630 PULSE ARMOR / TERMINAL ARMOR
 200001631 PULSE ARMOR / TERMINAL ARMOR
