@@ -1,37 +1,37 @@
-0 No
+0 None
 1 Handgun
 2 Rifle
 3 Cannon
 4 Machinegun
-5 AssaultRifle
+5 Assault Rifle
 6 Gatling
 7 Shotgun
-8 SniperRifle
-9 HandGrenade
-10 bazooka
-11 GrenadeCannon
+8 Sniper Rifle
+9 Hand Grenade
+10 Bazooka
+11 Grenade Cannon
 12 BombS
 13 BombM
 14 BombL
 15 Missile
 16 Rocket
-17 PulseHandgun
-18 PulseRifle
-19 PulseCannon
-20 PulseMachinegun
-21 PulseShotgun
-22 PulseBombS
-23 PulseBombM
-24 PulseBombL
-25 LaserRifle
-26 HighLaserRifle
-27 LaserSniperRifle
-28 LaserMachinegun
-29 PlasmaRifle
-30 PlasmaCannon
-31 PlasmaBombS
-32 PlasmaBombM
-33 PlasmaBombL
+17 Pulse Handgun
+18 Pulse Rifle
+19 Pulse Cannon
+20 Pulse Machinegun
+21 Pulse Shotgun
+22 Pulse Bomb: Small
+23 Pulse Bomb: Medium
+24 Pulse Bomb: Large
+25 Laser Rifle
+26 High Laser Rifle
+27 Laser Sniper Rifle
+28 Laser Machinegun
+29 Plasma Rifle
+30 Plasma Cannon
+31 Plasma Bomb: Small
+32 Plasma Bomb: Medium
+33 Plasma Bomb: Large
 34 Melee
-100 SpWeapon
+100 Special Weapon
 255 item

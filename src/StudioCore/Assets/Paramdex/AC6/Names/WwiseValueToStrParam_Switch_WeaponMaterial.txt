@@ -1,0 +1,16 @@
+0 Iron
+1 Fire
+2 Stun
+3 EMP
+4 Ice
+5 Green Energy
+6 None
+7 None
+8 None
+9 None
+10 None
+11 Coral
+12 Assault Armor
+20 Pulse
+21 Laser
+22 Plasma

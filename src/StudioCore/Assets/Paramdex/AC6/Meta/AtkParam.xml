@@ -191,17 +191,18 @@
         <Option Value="4" Name="Ice Worm" />
     </Enum>
     <Enum Name="ATKPARAM_ATKATTR_TYPE" type="u8">
-        <Option Value="0" Name="Do not overwrite" />
-        <Option Value="1" Name="Slash" />
-        <Option Value="2" Name="Strike" />
-        <Option Value="3" Name="Thrust" />
-        <Option Value="4" Name="None" />
+        <Option Value="0" Name="Slash" />
+        <Option Value="1" Name="Blow" />
+        <Option Value="2" Name="Thrust" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
     </Enum>
     <Enum Name="BEHAVIOR_ATK_TYPE" type="u8">
         <Option Value="0" Name="Slash" />
-        <Option Value="1" Name="Strike" />
+        <Option Value="1" Name="Blow" />
         <Option Value="2" Name="Thrust" />
-        <Option Value="3" Name="None" />
+        <Option Value="3" Name="Explosion" />
+        <Option Value="4" Name="Bullet" />
     </Enum>
     <Enum Name="ATKPARAM_BEHAVIOR_ID" type="u8">
         <Option Value="0" Name="None" />
