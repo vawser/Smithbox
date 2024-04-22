@@ -5,8 +5,8 @@
   <Field>
     <limitNum_byGroup AltName="Max Amount - By Group" Wiki="Maximum number of creations in the same group" />
     <isLimitEachOwner AltName="Is Limited for each Owner" Wiki="Is it restricted for each owner?" IsBool="" />
-    <pad2 AltName=""/>
-    <pad AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

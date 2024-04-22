@@ -19,7 +19,7 @@
     <GuardianOfAnor AltName="Rune Reward Multiplier - Darkmoon Blade" Wiki="Map Guardian Spirit (Anor) Reward Soul Multiplier" />
     <BattleRoyal AltName="Rune Reward Multiplier - Arena" Wiki="Arena reward soul multiplier" />
     <YellowMonk AltName="Rune Reward Multiplier - Yellow Monk" Wiki="Yellow robe's old man's reward soul multiplier" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

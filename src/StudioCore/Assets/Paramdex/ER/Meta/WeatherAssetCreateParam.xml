@@ -10,11 +10,11 @@
     <AssetId AltName="Asset ID" Wiki="Specify the asset ID to generate. AEG999_999-> 999999" Refs="AssetEnvironmentGeometryParam" />
     <SlotNo AltName="Slot Number" Wiki="This is the number for generation control. Only one asset can be generated in the same slot. You can control whether you want to generate duplicates or not." />
     <CreateConditionType AltName="Create Condition Type" Wiki="The type of condition of occurrence" Enum="WEATHER_ASSET_CREATE_CONDITION_TYPE" />
-    <padding0 AltName=""/>
+    <padding0 AltName="" IsHidden=""/>
     <TransitionSrcWeather AltName="Transition Source Weather" Wiki="Specify the transition source weather. It is referenced only when the occurrence condition is transition." Refs="WeatherParam" />
     <TransitionDstWeather AltName="Transition Destination Weather" Wiki="Specify the transition destination weather. It is referenced only when the occurrence condition is transition." Refs="WeatherParam" />
     <ElapsedTimeCheckweather AltName="Check Weather Elapsed Time" Wiki="Specify the weather to check the elapsed time." Refs="WeatherParam" />
-    <padding1 AltName=""/>
+    <padding1 AltName="" IsHidden=""/>
     <ElapsedTime AltName="Elapsed Time" Wiki="Specify the elapsed time. It is referenced only when the occurrence condition is time elapsed. Real time Specify in seconds." />
     <CreateDelayTime AltName="Create Delay Time" Wiki="Specifies the time to delay after the generation is determined. The created slot will be in use while it is delayed. Created immediately with 0 or less." />
     <CreateProbability AltName="Create Probability" Wiki="Specifies the probability of occurrence when conditions for weather transitions or elapsed time are met." />
@@ -30,7 +30,7 @@
     <CreateAssetLimitId1 AltName="Create Asset Limit ID [1]" Wiki="ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)." />
     <CreateAssetLimitId2 AltName="Create Asset Limit ID [2]" Wiki="ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)." />
     <CreateAssetLimitId3 AltName="Create Asset Limit ID [3]" Wiki="ID for production restriction. -1: Unlimited. Generation is allowed only if it matches the generation limit ID in Map default parameter .xlsm (SEQ08921)." />
-    <Reserved2 AltName=""/>
+    <Reserved2 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

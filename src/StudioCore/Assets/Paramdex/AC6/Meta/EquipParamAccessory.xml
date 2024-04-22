@@ -70,16 +70,16 @@
     <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
     <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <saleValue AltName="Sale Price" Wiki="Selling price" />
     <accessoryGroup AltName="Accessory Group" Wiki="Items of the same group cannot be equipped at the same time" />
-    <pad3 AltName=""/>
+    <pad3 AltName="" IsHidden=""/>
     <compTrophySedId AltName="Number of Completed Achievement ID" Wiki="SEQ number of complete trophy" />
     <residentSpEffectId1 AltName="SpEffect ID [1]" Wiki="Resident special effect ID1" Refs="SpEffectParam" />
     <residentSpEffectId2 AltName="SpEffect ID [2]" Wiki="Resident special effect ID2" Refs="SpEffectParam" />
     <residentSpEffectId3 AltName="SpEffect ID [3]" Wiki="Resident special effect ID3" Refs="SpEffectParam" />
     <residentSpEffectId4 AltName="SpEffect ID [4]" Wiki="Resident special effect ID4" Refs="SpEffectParam" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -127,8 +127,8 @@
         <override_eye_scleraColor AltName="Override - Eyes - L Eye White Color"
                                   Wiki="Do you want to overwrite the white eye color?" IsBool=""/>
         <override_burn_scar AltName="Override - Burn Marks" Wiki="Do you want to overwrite the burn scars?" IsBool=""/>
-        <pad2 AltName=""/>
-        <pad AltName=""/>
+        <pad2 AltName="" IsHidden=""/>
+        <pad AltName="" IsHidden=""/>
         <age AltName="Adjust Face Template - Apparent Age" Wiki="age"/>
         <gender AltName="Adjust Face Template - Facial Aesthetic" Wiki="sex"/>
         <caricatureGeometry AltName="Adjust Face Template - Form Emphasis" Wiki="Exaggeration (model)"/>

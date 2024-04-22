@@ -4,8 +4,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <ParamStr AltName="Param String" Wiki="Wwise parameter string" />
   </Field>
   <Self />

@@ -4,8 +4,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <bonusSoul_single AltName="Bonus Runes - Singleplayer" Wiki="Amount of soul that can be obtained when defeating an area boss (in single play)" />
     <bonusSoul_multi AltName="Bonus Runes - Multiplayer" Wiki="Amount of soul that can be obtained when defeating an area boss (during multiplayer)" />
     <humanityPointCountFlagIdTop AltName="Humanity Point Count Flag ID" Wiki="First flag ID for managing humanity drop points (using 20 Bit)" />
@@ -34,7 +34,7 @@
     <bossMapAreaNo AltName="Map Area" Wiki="Boss position_area number (mXX_00_00_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
     <bossMapBlockNo AltName="Map Block" Wiki="Boss position_grid X number (m00_XX_00_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
     <bossMapMapNo AltName="Map Region" Wiki="Boss position_grid Z number (m00_00_XX_00). It is used to check the distance between the host and the boss in the intrusion position search when Is the intrusion point automatically generated? In the multiplayer area para." />
-    <reserve AltName=""/>
+    <reserve AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -346,7 +346,7 @@
     <isVsRideAtk AltName="Is Ride Special Attack" Wiki="If you hit the target of the riding special attack while riding, the SA damage will be multiplied by the multiplier." IsBool="" />
     <isAddBaseAtk AltName="Is Base Attack Added" Wiki="Do you refer to the additional attack power even in weapon attacks?" IsBool="" />
     <excludeThreatLvNotify AltName="Is Excluded from Threat Level Notification" Wiki="Is it excluded from threat level notification?" IsBool="" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <atkBehaviorId AltName="Attack Behavior ID" Wiki="Behavior identification value: Extra large damage transition" Enum="ATKPARAM_BEHAVIOR_ID" />
     <atkPow_forSe AltName="Attack Power - SE Effect" Wiki="Attack strength [SE]" Enum="ATKPARAM_SE_ATK_POW" />
     <atkSuperArmor AltName="Damage: Poise" Wiki="NPCs only. Value used for SA break calculation formula" />

@@ -13,10 +13,10 @@
     <bgmSoundId AltName="BGM Sound ID" Wiki="Background music to play during the mission." />
     <rankTextureId AltName="Rank Texture ID" Wiki="Texture ID defined in the SB_ArenaRank layout." />
     <outroCutsceneId AltName="Outro Cutscene ID" Wiki="Cutscene ID to play at the end of the mission." />
-    <pad08 AltName="" />
-    <pad24 AltName="" />
-    <pad34 AltName="" />
-    <pad50 AltName="" />
+    <pad08 AltName="" IsHidden=""/>
+    <pad24 AltName="" IsHidden=""/>
+    <pad34 AltName="" IsHidden=""/>
+    <pad50 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

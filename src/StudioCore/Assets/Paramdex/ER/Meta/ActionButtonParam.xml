@@ -33,7 +33,7 @@
   <Field>
     <regionType AltName="Region Type" Wiki="Range shape (cylinder, prism, capsule)" Enum="ACTION_BUTTON_REGION_TYPE" />
     <category AltName="Category" Wiki="category. The number on the left side of the name is the priority when multiple action buttons overlap (the closer it is to 0, the higher the priority is displayed)." Enum="ACTION_BUTTON_CATEGORY" />
-    <padding1 AltName=""/>
+    <padding1 AltName="" IsHidden=""/>
     <dummyPoly1 AltName="Dummy Poly [1]" Wiki="Specify the Damipoli ID that is the center of the bottom of the range. If there is no Damipoly or -1 is entered, the center coordinates will be the reference." />
     <dummyPoly2 AltName="Dummy Poly [2]" Wiki="Used only when the range type is a capsule. Additional Damipoly (capsule) that creates a line segment with two Damipoly" />
     <radius AltName="Radius" Wiki="Radius (cylinder / capsule)" />
@@ -43,23 +43,23 @@
     <height AltName="Height" Wiki="Height (cylinder / prism)" />
     <baseHeightOffset AltName="Bottom Height Offset" Wiki="How much to raise or lower the Y coordinate of the bottom (cylinder / prism)" />
     <angleCheckType AltName="Angle Difference Check Type" Wiki="Angle difference judgment type (cylinder / prism)" Enum="ACTION_BUTTON_ANGLE_CHECK_TYPE" />
-    <padding2 AltName=""/>
+    <padding2 AltName="" IsHidden=""/>
     <allowAngle AltName="Allowable Angle Difference" Wiki="Allowable angle difference (cylinder / prism)" />
     <spotDummyPoly AltName="Action Spot Dummy Poly" Wiki="If there is no Damipoli that specifies the Damipoli ID that will be the position of the action spot, or if -1 is entered, the center coordinates will be the reference." />
     <textBoxType AltName="Textbox Type" Wiki="Text box type" Enum="ACTION_BUTTON_TEXT_BOX_TYPE" />
-    <padding3 AltName=""/>
-    <padding5 AltName=""/>
+    <padding3 AltName="" IsHidden=""/>
+    <padding5 AltName="" IsHidden=""/>
     <isInvalidForRide AltName="Invalid for Ride" Wiki="If this item is YES, the action button will not appear when riding and no judgment will be made." IsBool="" />
     <isGrayoutForRide AltName="Greyout for Ride" Wiki="If this item is YES, the action button will be grayed out when riding and no judgment will be made." IsBool="" />
     <isInvalidForCrouching AltName="Invalid for Crouching" Wiki="If this item is YES, the action button will not appear when crouching, and no judgment will be made." IsBool="" />
     <isGrayoutForCrouching AltName="Greyout for Crouching" Wiki="If this item is YES, the action button will be grayed out when crouching and no judgment will be made." IsBool="" />
-    <padding4 AltName=""/>
+    <padding4 AltName="" IsHidden=""/>
     <textId AltName="Text ID" Wiki="Text ID to display" FmgRef="ActionButtonText" />
     <invalidFlag AltName="Invalid Flag" Wiki="If this flag is ON, the action button will not appear and no judgment will be made." />
     <grayoutFlag AltName="Grayout Flag" Wiki="If this flag is ON, the action button will be grayed out and no judgment will be made." />
     <overrideActionButtonIdForRide AltName="Override Button ID for Ride" Wiki="Replace with this action button ID parameter while riding (-1: No replacement)" Refs="ActionButtonParam" />
     <execInvalidTime AltName="Execution Invalid Time" Wiki="Invalid time after execution (-infinite by value)" />
-    <padding6 AltName=""/>
+    <padding6 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

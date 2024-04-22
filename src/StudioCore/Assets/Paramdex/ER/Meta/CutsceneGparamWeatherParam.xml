@@ -9,8 +9,8 @@
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParam_Debug AltName="Disable Param - Debug" Wiki="Parameters marked with a circle are excluded from all packages (because they are for debugging)." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <DstWeather_Sunny AltName="Destination Weather: Sunny" Wiki="Sunny" Refs="WeatherParam" />
     <DstWeather_ClearSky AltName="Destination Weather: Clear Sky" Wiki="Sunny" Refs="WeatherParam" />
     <DstWeather_WeakCloudy AltName="Destination Weather: Light Cloud" Wiki="Light cloudy" Refs="WeatherParam" />
@@ -41,7 +41,7 @@
     <TakeOverDstWeather_HeavyFog AltName="Replacement Weather: Heavy Fog" Wiki="Will the in-game weather SFX be taken over? _ Thick fog" IsBool="" />
     <TakeOverDstWeather_SandStorm AltName="Replacement Weather: Sandstorm" Wiki="In-game weather SFX to take over? _ Sandstorm" IsBool="" />
     <TakeOverDstWeather_HeavyFogRain AltName="Replacement Weather: Heavy Fog and Rain" Wiki="In-game weather SFX to take over? _ Thick fog (rain)" IsBool="" />
-    <reserved AltName=""/>
+    <reserved AltName="" IsHidden=""/>
     <DstWeather_Snowstorm AltName="Destination Weather: Snowstorm" Wiki="Snowstorm" Refs="WeatherParam" />
     <DstWeather_LightningStorm AltName="Destination Weather: Lightning Storm" Wiki="Preliminary weather 2" Refs="WeatherParam" />
     <DstWeather_Reserved3 AltName="Destination Weather: Reserved 3" Wiki="Preliminary weather 3" Refs="WeatherParam" />
@@ -59,9 +59,9 @@
     <TakeOverDstWeather_Reserved7 AltName="Replacement Weather: Reserved 7" Wiki="Will the in-game weather SFX be taken over? _ Preliminary weather 7" IsBool="" />
     <TakeOverDstWeather_Reserved8 AltName="Replacement Weather: Reserved 8" Wiki="In-game weather SFX to take over? _ Preliminary weather 8" IsBool="" />
     <IsEnableApplyMapGdRegionIdForGparam AltName="Apply MapGdRegionID for GPARAM Enabled" Wiki="Do you want to apply the mapGD local ID changes to the cutscene weather Gparam as in the in-game? ([GR] SEQ30194)" IsBool="" />
-    <reserved2 AltName=""/>
+    <reserved2 AltName="" IsHidden=""/>
     <OverrideMapGdRegionId AltName="Override MapGdRegion ID" Wiki="Overwrite the ID used for cutscene weather Gparam (-1: No overwrite. MapGD local ID during cutscene playback is used). If Do you want to apply MapGD local ID to weather Gparam? Is x, it is not referenced." />
-    <reserved1 AltName=""/>
+    <reserved1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

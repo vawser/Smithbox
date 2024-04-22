@@ -103,7 +103,7 @@
     <act97 AltName="Action 97" Wiki="Action 97 ratio" />
     <act98 AltName="Action 98" Wiki="Action 98 ratio" />
     <act99 AltName="Action 99" Wiki="Action 99 ratio" />
-    <pad0 AltName=""/>
+    <pad0 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

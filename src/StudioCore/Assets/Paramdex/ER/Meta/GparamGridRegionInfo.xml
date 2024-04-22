@@ -4,7 +4,7 @@
   </Enums>
   <Field>
     <GparamGridRegionId AltName="GPARAM Grid Region ID" Wiki="Open local ID for MapGparam. Used for the XX part of m60_00_00XX.gparamxml" />
-    <Reserve AltName=""/>
+    <Reserve AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

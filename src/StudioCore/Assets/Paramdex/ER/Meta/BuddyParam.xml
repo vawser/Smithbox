@@ -9,8 +9,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <triggerSpEffectId AltName="Trigger SpEffect ID" Wiki="Set the special effect ID that will be the summoning condition" Refs="SpEffectParam"/>
     <npcParamId AltName="NPC Param ID" Wiki="Set the NPC parameter ID of the summoned buddy" Refs="NpcParam" />
     <npcThinkParamId AltName="NPC Think Param ID" Wiki="Sets the NPC Thinking Parameter ID of the summoned buddy" Refs="NpcThinkParam" />
@@ -22,7 +22,7 @@
     <appearOnAroundSekihi AltName="Appear near Stone Monument" Wiki="Forces summon to spawn at summon monument." IsBool="" />
     <disablePCTargetShare AltName="Disable Player Target Share" Wiki="Disables summon targeting whoever PC locked-onto." IsBool="" />
     <pcFollowType AltName="Player Follow Type" Wiki="Determines PC tracking and non-combat behavior." Enum="BUDDY_PC_FOLLOW_TYPE" />
-    <Reserve AltName=""/>
+    <Reserve AltName="" IsHidden=""/>
     <dopingSpEffect_lv0 AltName="Reinforcement SpEffect: +0" Wiki="SpEffect granted when reinforced to +0" Refs="SpEffectParam" />
     <dopingSpEffect_lv1 AltName="Reinforcement SpEffect: +1" Wiki="SpEffect granted when reinforced to +1." Refs="SpEffectParam" />
     <dopingSpEffect_lv2 AltName="Reinforcement SpEffect: +2" Wiki="SpEffect granted when reinforced to +2." Refs="SpEffectParam" />
@@ -36,7 +36,7 @@
     <dopingSpEffect_lv10 AltName="Reinforcement SpEffect: +10" Wiki="SpEffect granted when reinforced to +10." Refs="SpEffectParam" />
     <npcPlayerInitParamId AltName="Character Init ID" Wiki="CharaInitParam ID this c0000 summon will use." Refs="CharaInitParam" />
     <generateAnimId AltName="Generate Anim ID" Wiki="Generate Anime ID" />
-    <Reserve2 AltName=""/>
+    <Reserve2 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

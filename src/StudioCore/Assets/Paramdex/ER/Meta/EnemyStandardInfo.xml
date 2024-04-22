@@ -19,16 +19,16 @@
     <UpperDefState AltName="Upper body initial state" Wiki="Upper body initial state (PG input)" />
     <ActionDefState AltName="Initial state of action" Wiki="Action initial state (PG input)" />
     <RotY_per_Second AltName="Angle that can be turned per unit time [deg / s]" Wiki="Y-axis turning angle per unit time [deg / s]" />
-    <reserve0 AltName=""/>
+    <reserve0 AltName="" IsHidden=""/>
     <RotY_per_Second_old AltName="unused" Wiki="unused" />
     <EnableSideStep AltName="Can you move left and right?" Wiki="Can you move left and right?" />
     <UseRagdollHit AltName="Whether to use a ragdoll per character" Wiki="Whether to use a ragdoll per character" />
-    <reserve_last AltName=""/>
+    <reserve_last AltName="" IsHidden=""/>
     <stamina AltName="Amount of stamina" Wiki="Total amount of stamina" />
     <staminaRecover AltName="Stamina recovery" Wiki="Stamina recovery amount per second" />
     <staminaConsumption AltName="Stamina basic consumption" Wiki="Basic value of stamina consumption used when attacking and guarding" />
     <deffenct_Phys AltName="Physical defense" Wiki="Damage reduction base value for physical attacks" />
-    <reserve_last2 AltName=""/>
+    <reserve_last2 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

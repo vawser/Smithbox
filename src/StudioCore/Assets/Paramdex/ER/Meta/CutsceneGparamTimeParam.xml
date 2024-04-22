@@ -14,8 +14,8 @@
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParam_Debug AltName="Disable Param - Debug" Wiki="Parameters marked with a circle are excluded from all packages (because they are for debugging)." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <DstTimezone_Morning AltName="Destination Timezone: Morning" Wiki="Morning (Refer to the cutscene time conversion setting sheet for the conversion time)" Enum="CUTSCENE_TIMEZONE_TYPE" />
     <DstTimezone_Noon AltName="Destination Timezone: Noon" Wiki="Day A (Refer to the cutscene time conversion setting sheet for the conversion time)" Enum="CUTSCENE_TIMEZONE_TYPE" />
     <DstTimezone_AfterNoon AltName="Destination Timezone: Afternoon" Wiki="Noon-B (Refer to the cutscene time conversion setting sheet for the conversion time)" Enum="CUTSCENE_TIMEZONE_TYPE" />
@@ -23,7 +23,7 @@
     <DstTimezone_Night AltName="Destination Timezone: Night" Wiki="Night (Refer to the cutscene time conversion setting sheet for the conversion time)" Enum="CUTSCENE_TIMEZONE_TYPE" />
     <DstTimezone_DeepNightA AltName="Destination Timezone: Deep Night A" Wiki="Midnight A (Refer to the cutscene time conversion setting sheet for the conversion time)" Enum="CUTSCENE_TIMEZONE_TYPE" />
     <DstTimezone_DeepNightB AltName="Destination Timezone: Deep Night B" Wiki="Midnight B (Refer to the cutscene time conversion setting sheet for the conversion time)" Enum="CUTSCENE_TIMEZONE_TYPE" />
-    <reserved AltName=""/>
+    <reserved AltName="" IsHidden=""/>
     <PostPlayIngameTime AltName="Post Cutscene In-game Time" Wiki="Specify in-game time at the end of playback [hour] [-1.0 to 24.0] (-1 (less than 0): do nothing)" />
   </Field>
   <Self />

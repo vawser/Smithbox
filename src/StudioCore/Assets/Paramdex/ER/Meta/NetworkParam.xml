@@ -6,7 +6,7 @@
     <signVerticalOffset AltName="Common - Sign Height Offset" Wiki="" />
     <maxSignPosCorrectionRange AltName="Common - Max Sign Position Correction Range" Wiki="" />
     <summonTimeoutTime AltName="Common - Summon Timeout Time" Wiki="" />
-    <pad_0 AltName=""/>
+    <pad_0 AltName="" IsHidden=""/>
     <signPuddleActiveMessageIntervalSec AltName="Summon Sign - Sign Puddle Active Message Interval" Wiki="" />
     <keyGuideHeight_0 AltName="Summon Sign - Key Guide Height" Wiki="" />
     <reloadSignIntervalTime1 AltName="Summon Sign - Reload Sign Interval Time [1]" Wiki="" />
@@ -30,7 +30,7 @@
     <singGetMax AltName="Summon Sign - Sign Get Max" Wiki="Actually u8 is enough" />
     <signDownloadSpan AltName="Summon Sign - Sign Download Span" Wiki="" />
     <signUpdateSpan AltName="Summon Sign - Sign Update Span" Wiki="" />
-    <signPad AltName=""/>
+    <signPad AltName="" IsHidden=""/>
     <maxBreakInTargetListCount AltName="Intrusion - Max Intruder List Count" Wiki="" />
     <breakInRequestIntervalTimeSec AltName="Intrusion - Intruder Request Interval Time" Wiki="" />
     <breakInRequestTimeOutSec AltName="Intrusion - Intruder Request Timeout" Wiki="" />
@@ -54,7 +54,7 @@
     <lifeTime_0 AltName="Blood Message - Lifetime" Wiki="Actually u16 is enough" />
     <downloadSpan_0 AltName="Blood Message - Download Span" Wiki="" />
     <downloadEvaluationSpan AltName="Blood Message - Download Evaluation Span" Wiki="" />
-    <pad_2 AltName=""/>
+    <pad_2 AltName="" IsHidden=""/>
     <deadingGhostStartPosThreshold AltName="Bloodstain - Dead Ghost Start Position Threshold" Wiki="If the distance between the bloodstain position and the illusion start position is farther than this value, the server will not be registered." />
     <keyGuideHeight_2 AltName="Bloodstain - Key Guide Height" Wiki="" />
     <keyGuideRangePlayer AltName="Bloodstain - Key Guide Range Player" Wiki="" />
@@ -98,7 +98,7 @@
     <replayBonfirePhantomParamIdForCodename AltName="Ghost - Replay Bonfire Phantom Param ID (CodeDisplayName)" Wiki="Phantom bonfire mode phantom parameter ID used when codename matches" />
     <replayBonfireModeRange AltName="Ghost - Replay Bonfire Mode Range" Wiki="" />
     <replayBonfirePhantomParamId AltName="Ghost - Replay Bonfire Phantom Param ID" Wiki="Phantom bonfire mode phantom parameter ID" />
-    <ghostpad AltName=""/>
+    <ghostpad AltName="" IsHidden=""/>
     <reloadVisitListCoolTime AltName="Visit - Reload Visit List Cool time" Wiki="" />
     <maxCoopBlueSummonCount AltName="Visit - Max Coop Blue Summon Count" Wiki="Actually u8 is enough" />
     <maxBellGuardSummonCount AltName="Visit - Max Bell Guard Summon Count" Wiki="Actually u8 is enough" />
@@ -109,7 +109,7 @@
     <reloadSearch_BellGuard_Max AltName="Visit - Reload Search - Bell Guard - Max" Wiki="" />
     <reloadSearch_RatKing_Min AltName="Visit - Reload Search - Rat King - Min" Wiki="" />
     <reloadSearch_RatKing_Max AltName="Visit - Reload Search - Rat King - Max" Wiki="" />
-    <visitpad00 AltName=""/>
+    <visitpad00 AltName="" IsHidden=""/>
     <srttMaxLimit AltName="Extra - SSRT Max Limit" Wiki="" />
     <srttMeanLimit AltName="Extra - SSRT Mean Limit" Wiki="" />
     <srttMeanDeviationLimit AltName="Extra - SSRT Mean Deviation Limit" Wiki="" />
@@ -134,8 +134,8 @@
     <signDisplayMax AltName="Extra - Sign Display Max" Wiki="" />
     <bloodStainDisplayMax AltName="Extra - Bloodstain Display Max" Wiki="" />
     <bloodMessageDisplayMax AltName="Extra - Blood Message Display Max" Wiki="" />
-    <pad00 AltName=""/>
-    <pad10 AltName=""/>
+    <pad00 AltName="" IsHidden=""/>
+    <pad10 AltName="" IsHidden=""/>
     <summonMessageInterval AltName="Quick Match - Summon Message Interval" Wiki="" />
     <hostRegisterUpdateTime AltName="Quick Match - Host Register Update Time" Wiki="" />
     <hostTimeOutTime AltName="Quick Match - Host Time Out Time" Wiki="" />
@@ -146,18 +146,18 @@
     <AvatarMatchSearchMax AltName="Quick Match - Avatar Match Search Max" Wiki="Actually u8 is enough" />
     <BattleRoyalMatchSearchMin AltName="Quick Match - Battle Royale Match Search Min" Wiki="Actually u8 is enough" />
     <BattleRoyalMatchSearchMax AltName="Quick Match - Battle Royale Match Search Max" Wiki="Actually u8 is enough" />
-    <pad11 AltName=""/>
+    <pad11 AltName="" IsHidden=""/>
     <VisitorListMax AltName="Visitor - Visitor List Max" Wiki="Actually u8 is enough" />
     <VisitorTimeOutTime AltName="Visitor - Visitor Time Out Time" Wiki="" />
     <DownloadSpan_2 AltName="Visitor - Download Span" Wiki="" />
     <VisitorGuestRequestMessageIntervalSec AltName="Visitor - Visitor Guest Request Message Interval" Wiki="Display interval [seconds] of messages sent by visiting guests while searching for a destination" />
     <wanderGhostIntervalLifeTime AltName="Ghost Addition - Wandering Ghost Interval Lifetime" Wiki="Wandering illusion life" />
-    <pad13 AltName=""/>
+    <pad13 AltName="" IsHidden=""/>
     <YellowMonkTimeOutTime AltName="Yellow Monk - Yellow Monk Timeout Time" Wiki="" />
     <YellowMonkDownloadSpan AltName="Yellow Monk - Yellow Monk Download Span" Wiki="" />
     <YellowMonkOverallFlowTimeOutTime AltName="Yellow Monk - Yellow Monk Overall Flow Time Out Time" Wiki="" />
-    <pad14_0 AltName=""/>
-    <pad14_1 AltName=""/>
+    <pad14_0 AltName="" IsHidden=""/>
+    <pad14_1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

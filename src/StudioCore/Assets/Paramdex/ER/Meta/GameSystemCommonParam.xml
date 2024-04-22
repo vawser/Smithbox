@@ -193,7 +193,7 @@
     <aiSightRate_evening AltName="AI Sight Multiplier - Evening" Wiki="[Evening] AI visibility magnification" />
     <aiSightRate_night AltName="AI Sight Multiplier - Night" Wiki="[Night] AI visibility magnification" />
     <aiSightRate_midnightA AltName="AI Sight Multiplier - Midnight" Wiki="[Midnight] AI visibility magnification" />
-    <reserve4_2 AltName=""/>
+    <reserve4_2 AltName="" IsHidden=""/>
     <aiSightRate_sunloss_light AltName="AI Sight Multiplier - Sunloss - Light" Wiki="AI visibility magnification_place where the sun cannot be seen (bright)" />
     <aiSightRate_sunloss_dark AltName="AI Sight Multiplier - Sunloss - Darkness" Wiki="AI visibility magnification_place where the sun cannot be seen (darkness)" />
     <aiSightRate_sunloss_veryDark AltName="AI Sight Multiplier - Sunloss - Total Darkness" Wiki="AI visibility magnification_place where the sun cannot be seen (total darkness)" />
@@ -214,7 +214,7 @@
     <weatherLotConditionStart_Night_Minute AltName="Weather Lottery Condition - Night Minute" Wiki="Weather lottery conditions_night_start time_minutes (SEQ09371)" />
     <weatherLotConditionStart_DayBreak_Hour AltName="Weather Lottery Condition - Dawn Hour" Wiki="Weather lottery conditions_dawn_start time_hour (SEQ09371)" />
     <weatherLotConditionStart_DayBreak_Minute AltName="Weather Lottery Condition - Dawn Minute" Wiki="Weather lottery conditions_dawn_start time_minutes (SEQ09371)" />
-    <weatherLotCondition_reserved AltName=""/>
+    <weatherLotCondition_reserved AltName="" IsHidden=""/>
     <pclightScaleChangeStart_Hour AltName="Player Light Intensity Scale - Start Hour" Wiki="Player Light Intensity Scale Change Time Zone_Start Time_Hour (SEQ16562)" />
     <pclightScaleChangeStart_Minute AltName="Player Light Intensity Scale - Start Minute" Wiki="Player Light Intensity Scale Change Time Zone_Start Time_Minute (SEQ16562)" />
     <pclightScaleChangeEnd_Hour AltName="Player Light Intensity Scale - End Hour" Wiki="Player Light intensity scale change time zone_end time_hour (SEQ16562)" />
@@ -286,7 +286,7 @@
     <actionButtonInputCancelTime AltName="Action Button Input Cancel Time" Wiki="Time to disable action button operation by holding down the action button" />
     <blockClearBonusDelayTime AltName="Boss Kill - Rune Acquisition Delay Time" Wiki="Clear bonus acquisition delay time after boss defeat processing" />
     <bonfireCheckEnemyRange AltName="Bonfire Check Enemy Range" Wiki="[Unused] (Refer to SEQ25048) Distance from PC to bonfire that determines invalidation of bonfire by enemy [m] (0 or less PC distance is not checked. Checked at all distances)" />
-    <reserved_124_0 AltName=""/>
+    <reserved_124_0 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

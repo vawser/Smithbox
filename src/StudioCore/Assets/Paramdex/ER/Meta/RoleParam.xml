@@ -57,7 +57,7 @@
   </Enums>
   <Field>
     <teamType AltName="Team Type" Wiki="Team type" Enum="TEAM_TYPE" />
-    <pad10 AltName=""/>
+    <pad10 AltName="" IsHidden=""/>
     <phantomParamId AltName="Phantom Param ID - Vow [0]" Wiki="Phantom parameter ID when pledge rank is 0" />
     <spEffectID0 AltName="SpEffect ID [0]" Wiki="Resident special effect 0" Refs="SpEffectParam"/>
     <spEffectID1 AltName="SpEffect ID [1]" Wiki="Resident special effect 1" Refs="SpEffectParam"/>
@@ -75,7 +75,7 @@
     <itemlotParamId AltName="Map Itemlot Param ID" Wiki="Acquisition reward item lottery parameter ID_for map (not -1)" Refs="ItemLotParam_map"/>
     <voiceChatGroup AltName="Voice Chat Group" Wiki="Voice chat group" Enum="VOICE_CHAT_GROUP_Type" />
     <roleNameColor AltName="Role Name Color" Wiki="The color of the role name text displayed on the FE of the network PC" Enum="ROLE_NAME_COLOR_TYPE" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <roleNameId AltName="Role Name - Text ID" Wiki="Text ID of the role name to be displayed on the FE of the network PC" FmgRef="Modern_MenuText" />
     <threatLv AltName="Threat Level" Wiki="Threat level" />
     <phantomParamId_vowRank1 AltName="Phantom Param ID - Vow Rank [1]" Wiki="Phantom parameter ID when pledge rank is 1" Refs="PhantomParam"/>
@@ -87,7 +87,7 @@
     <spEffectID_vowRank3 AltName="Phantom Param ID - Vow Rank [7]" Wiki="Special effect ID for SFX when pledge rank 3" Refs="SpEffectParam"/>
     <signPhantomId AltName="Ghost Phantom ID" Wiki="Multiplayer pledge ghost body sign phantom ID designation for illusion" />
     <nonPlayerSummonStartAnimId AltName="NPC Summon Start - Animation ID" Wiki="Anime ID to play when a player other than the player is summoned and the game starts" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

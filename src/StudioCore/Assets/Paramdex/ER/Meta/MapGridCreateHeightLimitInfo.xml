@@ -5,7 +5,7 @@
   <Field>
     <GridEnableCreateHeightMin AltName="Min Height - Grid Creation (LOD2)" Wiki="Minimum height that can be built in the grid [m]. (LOD 2 units)" />
     <GridEnableCreateHeightMax AltName="Max Height - Grid Creation (LOD2)" Wiki="Maximum height that can be constructed in the grid [m]. (LOD 2 units)" />
-    <Reserve AltName=""/>
+    <Reserve AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

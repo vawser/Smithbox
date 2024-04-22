@@ -27,8 +27,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <iconId AltName="Icon ID" Wiki="Menu icon ID" ExtRefs="hi,menu\hi\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds;low,menu\low\00_solo.tpfbhd,00_Solo\MENU_Knowledge_{0:D5}.tpf.dcx,MENU_Knowledge_{0:D5}.dds" />
     <rank AltName="Rank" Wiki="Magic stone rank" />
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
@@ -74,9 +74,9 @@
     <disableMultiDropShare AltName="Is Drop Disabled in Multiplayer" Wiki="Is multi-drop sharing prohibited?" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type" Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
     <showLogCondType AltName="Item Acquisition Show Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
     <defaultWepAttr AltName="Default Weapon Affinity" Wiki="Default weapon attribute ID. Can be installed even with unopened weapon attributes" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <canMountWep_Dagger AltName="Available: Dagger" Wiki="Can it be attached to Weapon type: Dagger? No input becomes x" IsBool="" />
     <canMountWep_SwordNormal AltName="Available: Straight Sword" Wiki="Can it be attached to Weapon type: Straight sword? No input becomes x" IsBool="" />
     <canMountWep_SwordLarge AltName="Available: Greatsword" Wiki="Can it be attached to Weapon Type: Large Sword? No input becomes x" IsBool="" />
@@ -113,15 +113,15 @@
     <canMountWep_ShieldNormal AltName="Available: Medium Shield" Wiki="Can it be attached to Weapon Type: Middle Shield? No input becomes x" IsBool="" />
     <canMountWep_ShieldLarge AltName="Available: Greatshield" Wiki="Can it be attached to Weapon Type: Large Shield? No input becomes x" IsBool="" />
     <canMountWep_Torch AltName="Available: Torch" Wiki="Can it be attached to Weapon type: Torch? No input becomes x" IsBool="" />
-    <reserved_canMountWep AltName=""/>
-    <reserved2_canMountWep AltName=""/>
+    <reserved_canMountWep AltName="" IsHidden=""/>
+    <reserved2_canMountWep AltName="" IsHidden=""/>
     <spEffectMsgId0 AltName="SpEffect Message ID [0]" Wiki="Effect text ID 00 (Gem_Effect). Magic stone effect text to display in status" />
     <spEffectMsgId1 AltName="SpEffect Message ID [1]" Wiki="Effect text ID 01 (Gem_Effect). Magic stone effect text to display in status" />
     <spEffectId_forAtk0 AltName="SpEffect ID - Attack Hit [0]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
     <spEffectId_forAtk1 AltName="SpEffect ID - Attack Hit [1]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
     <spEffectId_forAtk2 AltName="SpEffect ID - Attack Hit [2]" Wiki="Special effect parameter ID for attack hit" Refs="SpEffectParam" />
     <mountWepTextId AltName="Mount Weapon Text ID" Wiki="Corresponding Weapon Type Overwrite Text ID (-1: Do not overwrite) [Menu Text]" />
-    <pad6 AltName=""/>
+    <pad6 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Defines an Ash of War item. Determines what weapons it can be applied to and with what affinities.\nDoes not manage unique Ashes of War. Ashes of war may not immediately function on arbitrary weapons." AlternativeOrder="
 sortId,sortGroupId,rank,rarity,iconId,-,

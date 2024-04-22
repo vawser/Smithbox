@@ -9,8 +9,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <weatherType0 AltName="Weather Type [0]" Wiki="Weather type 0" Refs="WeatherParam" />
     <weatherType1 AltName="Weather Type [1]" Wiki="Weather type 1" Refs="WeatherParam" />
     <weatherType2 AltName="Weather Type [2]" Wiki="Weather type 2" Refs="WeatherParam" />
@@ -48,7 +48,7 @@
     <timezoneStartMinute AltName="Timezone Start Minute" Wiki="Direct time specification_start_minute" />
     <timezoneEndHour AltName="Timezone End Hour" Wiki="Direct time specification_start_hour" />
     <timezoneEndMinute AltName="Timezone End Minute" Wiki="Direct time specification_start_minute" />
-    <reserve AltName=""/>
+    <reserve AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

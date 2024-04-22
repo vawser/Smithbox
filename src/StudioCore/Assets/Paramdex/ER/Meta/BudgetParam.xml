@@ -20,7 +20,7 @@
     <vram_menu_tex AltName="VRAM: Menu" Wiki="VRAM: Menu (unit is MB)" />
     <vram_decal_rt AltName="VRAM: DECAL_RT" Wiki="VRAM: DECAL render target (unit is MB)" />
     <vram_decal AltName="VRAM: DECAL" Wiki="VRAM: DECAL (unit is MB)" />
-    <reserve_0 AltName=""/>
+    <reserve_0 AltName="" IsHidden=""/>
     <vram_other_tex AltName="VRAM: Other textures" Wiki="VRAM: Other models (in MB)" />
     <vram_other_mdl AltName="VRAM: Other models" Wiki="VRAM: Other textures (in MB)" />
     <havok_anim AltName="HAVOK: Anime" Wiki="HAVOK: Animation (unit is MB)" />
@@ -30,7 +30,7 @@
     <vram_detail_all AltName="VRAM: Total Value" Wiki="VRAM: Total value (unit is MB)" />
     <vram_chr_and_parts AltName="VRAM: Characters and Parts" Wiki="VRAM: Total value of characters and parts (unit is MB)" />
     <havok_navimesh AltName="HAVOK: Navimesh" Wiki="HAVOK: Navimesh (unit is MB)" />
-    <reserve_1 AltName=""/>
+    <reserve_1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

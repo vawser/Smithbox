@@ -15,7 +15,7 @@
     <mimicryBeginSfxId2 AltName="Mimicry - Init SFX ID [2]" Wiki="Mimicry 2 SFXID Forward swing" />
     <mimicrySfxId2 AltName="Mimicry - Midst SFX ID [2]" Wiki="Mimicry 2 SFXID body" />
     <mimicryEndSfxId2 AltName="Mimicry - End SFX ID [2]" Wiki="Mimicry 2 SFXID cancellation" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

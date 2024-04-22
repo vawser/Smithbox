@@ -19,7 +19,7 @@
     <GuardianOfAnor AltName="Flask Recovery - Darkmoon Blade" Wiki="Map Guardian Spirit (Anor) Est Recovery Number" />
     <BattleRoyal AltName="Flask Recovery - Arena" Wiki="Number of est recovery in the arena" />
     <YellowMonk AltName="Flask Recovery - Yellow Monk" Wiki="The number of est recovery of the old man in yellow" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

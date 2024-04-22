@@ -47,7 +47,7 @@
     <doesSelectOnInnerRange AltName="Whether to select within the appropriate distance" Wiki="Whether to select when within the appropriate distance" Enum="AI_ATTACK_BOOL" />
     <enableAttackOnBattleStart AltName="Whether to use it as the first hit" Wiki="Whether to use it as the first hit" Enum="AI_ATTACK_BOOL" />
     <doesSelectOnTargetDown AltName="Whether to select when the target is down" Wiki="Whether to select when the target is down" Enum="AI_ATTACK_BOOL" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <minArriveDistance AltName="Minimum reach judgment distance" Wiki="Minimum reach judgment distance" />
     <maxArriveDistance AltName="Maximum reach judgment distance" Wiki="Maximum reach judgment distance" />
     <comboExecDistance AltName="Continuous attack execution distance" Wiki="Distance used to determine the execution of attacks from the second stage onward" />

@@ -4,8 +4,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <AssetId_0 AltName="Asset ID [0]" Wiki="AssetId_0 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
     <AssetId_1 AltName="Asset ID [1]" Wiki="AssetId_1 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
     <AssetId_2 AltName="Asset ID [2]" Wiki="AssetId_2 (-1 Ignore)" Refs="AssetEnvironmentGeometryParam" />
@@ -22,7 +22,7 @@
     <CreateWeight_5 AltName="Appearance Weight [5]" Wiki="Appearance ratio point (weight) _5" />
     <CreateWeight_6 AltName="Appearance Weight [6]" Wiki="Appearance ratio point (weight) _6" />
     <CreateWeight_7 AltName="Appearance Weight [7]" Wiki="Appearance ratio point (weight) _7" />
-    <Reserve_0 AltName=""/>
+    <Reserve_0 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Governs the appearance of random AEGs like glowing skulls and tumbleweed. Each row corresponds to a map ID. The AEGs referenced must have a param row and asset behavior type set to 'Dynamic'." />
 </PARAMMETA>

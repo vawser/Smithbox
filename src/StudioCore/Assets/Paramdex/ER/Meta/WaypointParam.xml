@@ -14,7 +14,7 @@
     <attribute2 AltName="Attribute [2]" Wiki="" Enum="WAYPOINT_ATTRIBUTE" />
     <attribute3 AltName="Attribute [3]" Wiki="" Enum="WAYPOINT_ATTRIBUTE" />
     <attribute4 AltName="Attribute [4]" Wiki="" Enum="WAYPOINT_ATTRIBUTE" />
-    <padding4 AltName=""/>
+    <padding4 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

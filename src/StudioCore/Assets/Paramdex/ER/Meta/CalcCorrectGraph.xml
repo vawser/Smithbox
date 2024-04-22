@@ -22,7 +22,7 @@
     <adjustment_value AltName="Leveling Cost - Initial Offset" Wiki="Growth soul Early soul adjustment 2" />
     <boundry_inclination_soul AltName="Leveling Cost - Cost Increase" Wiki="Affects the slope of the graph after the growth soul threshold 3" />
     <boundry_value AltName="Leveling Cost - Increase Interval" Wiki="Growth soul threshold t" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Provides growth functions for various mechanics. Handles all stat scaling." CalcCorrectDef="stageMaxVal0,stageMaxVal1,stageMaxVal2,stageMaxVal3,stageMaxVal4,stageMaxGrowVal0,stageMaxGrowVal1,stageMaxGrowVal2,stageMaxGrowVal3,stageMaxGrowVal4,adjPt_maxGrowVal0,adjPt_maxGrowVal1,adjPt_maxGrowVal2,adjPt_maxGrowVal3" SoulCostDef="init_inclination_soul,adjustment_value,boundry_inclination_soul,boundry_value,200,713" />
 </PARAMMETA>

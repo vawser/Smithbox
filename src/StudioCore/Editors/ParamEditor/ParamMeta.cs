@@ -19,6 +19,8 @@ public class ParamMetaData
 
     internal Dictionary<string, ParamEnum> enums = new();
 
+    public static string CurrentMetaFile = "";
+
     private ParamMetaData(PARAMDEF def, string path)
     {
         Add(def, this);
@@ -53,6 +55,9 @@ public class ParamMetaData
     {
         _xml = xml;
         _path = path;
+
+        CurrentMetaFile = _path;
+
         XmlNode root = xml.SelectSingleNode("PARAMMETA");
         var xmlVersion = int.Parse(root.Attributes["XmlVersion"].InnerText);
         if (xmlVersion != XML_VERSION)
@@ -494,6 +499,12 @@ public class FieldMetaData
         {
             IsInvertedPercentage = true;
         }
+
+        XmlAttribute IsHide = fieldMeta.Attributes["IsHidden"];
+        if (IsHide != null)
+        {
+            IsHidden = true;
+        }
     }
 
     /// <summary>
@@ -530,6 +541,11 @@ public class FieldMetaData
     ///     Is this u8 field actually a boolean?
     /// </summary>
     public bool IsBool { get; set; }
+
+    /// <summary>
+    ///     Is this field hidden?
+    /// </summary>
+    public bool IsHidden { get; set; }
 
     /// <summary>
     ///     Is this float displayed as an inverted percentage

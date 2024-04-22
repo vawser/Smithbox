@@ -12,7 +12,7 @@
     <actionPanelChangeThreshold_PassTime AltName="Action Panel Change Threshold - Pass Time" Wiki="Action panel Consideration time to increase the speed of switchable players. Use the average speed of this time (systematically up to 4 seconds)" />
     <kgIconVspace AltName="Vertical Position of Key Guide Icon" Wiki="Vertical position of key guide icon (+ - top,- - bottom)" />
     <worldMapCursorSelectRadius AltName="World Map - Cursor Select Radius" Wiki="If the cursor position is within this radius, it means that it is selected." />
-    <reserved8 AltName=""/>
+    <reserved8 AltName="" IsHidden=""/>
     <decalPosOffsetX AltName="Decal Position Offset - X" Wiki="Decal display position offset left and right" />
     <decalPosOffsetY AltName="Decal Position Offset - Y" Wiki="Decal display position offset vertical direction" />
     <targetStateSearchDurationTime AltName="FE Search Icon Fade Time" Wiki="The number of seconds it takes for the FE Search icon to start fading in and then fading out." />
@@ -31,7 +31,7 @@
     <systemAnnounceScrollSpeed AltName="System Announcement - Scroll Speed" Wiki="Scrolling speed (pixels / second) when scrolling long sentences in the operation announcement. It does not depend on the screen size. Think of the entire menu as 1920x1080" />
     <systemAnnounceNoScrollWaitTime AltName="System Announcement - No Scroll Wait Time" Wiki="The number of seconds to display when it is a short sentence that does not require scrolling of the operation announcement" />
     <systemAnnounceScrollCount AltName="System Announcement - Scroll Count" Wiki="Number of times to repeat when scrolling long sentences of management announcement" />
-    <reserved17 AltName=""/>
+    <reserved17 AltName="" IsHidden=""/>
     <compassMemoDispDistance AltName="Compass Memo Display Distance" Wiki="Display distance [m] of the memo marker displayed on the compass. Anything closer than this distance will be displayed" />
     <compassBonfireDispDistance AltName="Compass Bonfire Display Distance" Wiki="The display distance of the bonfire displayed on the compass [m]. Anything closer than this distance will be displayed" />
     <markerGoalThreshold AltName="Destination Marrker Threshold" Wiki="Goal judgment distance [m] of the destination marker. The destination marker disappears when you get closer than this distance" />
@@ -62,7 +62,7 @@
     <enemyTagSafeTop AltName="Enemy HP Guage - Max Top Justification" Wiki="How far can the center coordinates of the enemy HP gauge go to the upper end? Since it is the center coordinate, the size of the gauge body is included." />
     <enemyTagSafeBottom AltName="Enemy HP Guage - Max Bottom Justification" Wiki="How far can the center coordinates of the enemy HP gauge go to the lower end? Since it is the center coordinate, the size of the gauge body is included." />
     <pcHorseHpRecoverDispThreshold AltName="HP Threshold to display Horse HP" Wiki="Threshold for displaying the PC horse HP gauge at the time of recovery. Constant value of Display HP bar when it increases more than a certain value at a time" />
-    <reserved33 AltName=""/>
+    <reserved33 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

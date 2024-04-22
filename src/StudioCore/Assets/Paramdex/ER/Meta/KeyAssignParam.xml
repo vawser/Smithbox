@@ -16,7 +16,7 @@
     <keyboardKeyId AltName="Keyboard Key ID" Wiki="Keyboard (physical keys)" Enum="CS_KEYBOARD_KEY" />
     <mouseModifyKey AltName="Mouse Modify Key" Wiki="Mouse modifier key" Enum="CS_MODIFIER_KEY" />
     <mouseKeyId AltName="Mouse Key ID" Wiki="Mouse (physical key)" Enum="CS_MOUSE_KEY" />
-    <reserved AltName=""/>
+    <reserved AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

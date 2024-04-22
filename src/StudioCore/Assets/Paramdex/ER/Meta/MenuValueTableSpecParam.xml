@@ -11,7 +11,7 @@
     <value AltName="Value" Wiki="Value to compare" />
     <textId AltName="Text ID" Wiki="Converted text ID" FmgRef="Modern_MenuText"/>
     <compareType AltName="Compare Type" Wiki="Comparison type" Enum="MENU_VALUE_TABLE_CMP_TYPE" />
-    <padding AltName=""/>
+    <padding AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

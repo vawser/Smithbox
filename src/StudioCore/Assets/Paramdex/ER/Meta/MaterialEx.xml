@@ -10,7 +10,7 @@
     <materialParamValue2 AltName="Material Param Value - B" Wiki="NPC Para - Resident Material Expansion Para ID Settings" />
     <materialParamValue3 AltName="Material Param Value - A" Wiki="NPC Para - Resident Material Extended Para ID Settings" />
     <materialParamValue4 AltName="Material Param Value - I" Wiki="NPC Para - Resident Material Expansion Para ID Settings" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

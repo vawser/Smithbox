@@ -4,8 +4,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <openEventFlagId AltName="Open - Event Flag ID" Wiki="Event flag ID of open condition" />
     <openTravelAreaLeft AltName="Open - Traversal Area - X Min" Wiki="Coordinates of the traversal area that expands when opened (Xmin)" />
     <openTravelAreaRight AltName="Open - Traversal Area - X Max" Wiki="Coordinates of the traversal area that expands when opened (Xmax)" />
@@ -18,7 +18,7 @@
     <acquisitionEventResScale AltName="Acquisition - Display Resource Scale" Wiki="Display magnification of blindfold resources for acquisition production" />
     <acquisitionEventResOffsetX AltName="Acquisition - Resource Offset X" Wiki="Display position offset (X) of blindfold resource for acquisition production" />
     <acquisitionEventResOffsetY AltName="Acquisition - Resource Offset Y" Wiki="Offset of display position of blindfold resource for acquisition production (Y)" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -5,8 +5,8 @@
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParam_Debug AltName="Disable Param - Debug" Wiki="Parameters marked with a circle are excluded from all packages (because they are for debugging)." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <texName_00 AltName="Texture DisplayName [00]" Wiki="Texture DisplayName [00]" />
     <texName_01 AltName="Texture DisplayName [01]" Wiki="Texture DisplayName [01]" />
     <texName_02 AltName="Texture DisplayName [02]" Wiki="Texture DisplayName [02]" />

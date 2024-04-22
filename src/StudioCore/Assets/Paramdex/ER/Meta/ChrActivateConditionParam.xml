@@ -17,12 +17,12 @@
     <weatherHeavyFog AltName="Appear during Weather: Heavy Fog" Wiki="Will it appear when the weather is dense fog?" IsBool="" />
     <weatherHeavyFogRain AltName="Appear during Weather: Heavy Fog and Rain" Wiki="Does it appear when the weather is dense fog (rain)?" IsBool="" />
     <weatherSandStorm AltName="Appear during Weather: Sandstorm" Wiki="Will it appear when the weather is a sandstorm?" IsBool="" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <timeStartHour AltName="Time: Start Hour" Wiki="Appearance start in game time_hour" />
     <timeStartMin AltName="Time: Start Minute" Wiki="Appearance start in-game time_minutes" />
     <timeEndHour AltName="Time: End Hour" Wiki="Appearance end in game time_hour" />
     <timeEndMin AltName="Time: End Minute" Wiki="End of appearance In-game time_minutes" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

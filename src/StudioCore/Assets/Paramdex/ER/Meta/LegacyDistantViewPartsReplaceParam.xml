@@ -17,7 +17,7 @@
     <LimitedMapRegionId1 AltName="Limited Map Region ID [1]" Wiki="MapGD Local ID Restriction 1 Valid only when Natural Disaster Event ID is 0. The part is valid only with the MapGD local ID you set (SEQ16039)." />
     <LimitedMapRegionId2 AltName="Limited Map Region ID [2]" Wiki="MapGD Local ID restriction 2 Valid only when Natural disaster event ID is 0. The part is valid only with the MapGD local ID you set (SEQ16039)." />
     <LimitedMapRegionId3 AltName="Limited Map Region ID [3]" Wiki="MapGD Local ID restriction 3 Valid only when Natural disaster event ID is 0. The part is valid only with the MapGD local ID you set (SEQ16039)." />
-    <reserve AltName=""/>
+    <reserve AltName="" IsHidden=""/>
     <LimitedMapRegionAssetId AltName="Limited Map Region Asset ID" Wiki="MapGD Valid assets specified by local ID AssetId AEG123_456_9999  123456" Refs="AssetEnvironmentGeometryParam" />
     <LimitedMapRegioAssetPartsNo AltName="Limited Map Region Parts ID" Wiki="MapGD Valid assets specified by local ID PartsNo AEG123_456_9999  9999" />
     <LimitedMapRegioAssetIdRangeMin AltName="Limited Map Region Asset ID - Range Min" Wiki="MapGD Valid asset specification with local ID Asset ID range specification Min" />

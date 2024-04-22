@@ -4,13 +4,13 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <ContactLandSeId AltName="Contact Land on Death - SE ID" Wiki="SEID pronounced when contacting the ground after death. (-1: Invalid). SEID category is fixed to c" />
     <ContactLandAddSeId AltName="Contact Land on Death - Additional SE ID" Wiki="Additional SEID (for material) that sounds when it comes into contact with the ground after death. (-1: Invalid). SEID category is fixed to c" />
     <ContactLandPlayNum AltName="Contact Land on Death - Play Count" Wiki="Number of pronunciations when touching the ground after death" />
     <IsEnablePlayCountPerRigid AltName="Enable Play Count per Rigid Body Unit" Wiki="Do you count the number of pronunciations of surface contact after death in rigid body units? (: Rigid body unit, : Character unit)" IsBool="" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
     <ContactLandMinImpuse AltName="Contact Land on Death - Min Impulse" Wiki="Minimum impulse value required for ground contact determination after death" />
     <ContactLandMinSpeed AltName="Contact Land on Death - Min Speed" Wiki="Minimum speed value required for ground contact determination after death" />
     <ContactPlayerSeId AltName="Contact Player on Death - SE ID" Wiki="SEID that sounds when you come into contact with Player after death. (-1: Invalid). SEID category is fixed to c" />

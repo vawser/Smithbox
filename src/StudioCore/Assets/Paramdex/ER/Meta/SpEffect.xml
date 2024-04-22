@@ -975,7 +975,7 @@ Requires State Info 66" />
     <fakeTargetIgnoreMirageArts AltName="Ignore Fake Target - Phantom" Wiki="You will not be caught by the fake target of the phantom arts system that occurred" IsBool="" />
     <requestForceJoinBlackSOS_B AltName="Force Invasion" Wiki="If checked, issue an intrusion_B request when activated" IsBool="" />
     <isDestinedDeathHpMult AltName="Is Destined Death HP Mult" Wiki="Makes portion of HP bar in UI black when used with max HP multipliers." IsBool="" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <changeSuperArmorPoint AltName="Poise +" Wiki="Value to add to the super armor value" />
     <changeSaPoint AltName="Apply Poise Damage +" Wiki="Set how many points to subtract (or add) with one activation" />
     <hugeEnemyPickupHeightOverwrite AltName="Giant Enemy Height Overwrite" Wiki="Giant enemy lift height overwrite [m]" />

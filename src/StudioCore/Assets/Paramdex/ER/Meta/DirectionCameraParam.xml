@@ -4,8 +4,8 @@
   </Enums>
   <Field>
     <isUseOption AltName="Is Use Option" Wiki="Is it affected by the production camera ON / OFF option?" IsBool="" />
-    <pad2 AltName=""/>
-    <pad1 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -14,8 +14,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <modelMemoryType AltName="Model Memory Type" Wiki="Model used memory type" Enum="CHR_MEMORY_TYPE" />
     <texMemoryType AltName="Texture Memory Type" Wiki="Texture usage memory type" Enum="CHR_MEMORY_TYPE" />
     <cameraDitherFadeId AltName="Camera Dither Fade ID" Wiki="Camera fade parameter ID (-1 refer to material, 0: do not disappear, 1 parameter ID)" />

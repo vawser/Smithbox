@@ -8,7 +8,7 @@
     <IndoorOutdoor AltName="Condition: Indoor/Outdoor" Wiki="Condition: Indoor / outdoor designation (0: outdoor, 1: indoor) (-1: invalid)" />
     <useDistNoA AltName="Condition: Evaluation Distance A" Wiki="Condition: Evaluation distance number A to use (-1: invalid)" />
     <useDistNoB AltName="Condition: Evaluation Distance B" Wiki="Condition: Evaluation distance number B to be used (-1: invalid)" />
-    <pad0 AltName=""/>
+    <pad0 AltName="" IsHidden=""/>
     <DistMinA AltName="Condition: Evaluation Distance A - Min" Wiki="Condition: For evaluation distance minimum specification A (less than 0: invalid)" />
     <DistMaxA AltName="Condition: Evaluation Distance A - Max" Wiki="Condition: For evaluation distance maximum specification A (less than 0: invalid)" />
     <DistMinB AltName="Condition: Evaluation Distance B - Min" Wiki="Condition: For evaluation distance minimum specification A (less than 0: invalid)" />

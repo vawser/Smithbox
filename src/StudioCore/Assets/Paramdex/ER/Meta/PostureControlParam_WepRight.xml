@@ -57,7 +57,7 @@
     <a016_leftArmFB AltName="[a016] Left Arm - Front/Back" Wiki="Left arm_front and back" />
     <a016_leftWristFB AltName="[a016] Left Wrist - Front/Back" Wiki="Left wrist_front and back" />
     <a016_leftWristIO AltName="[a016] Left Wrist - Inside/Outside" Wiki="Left wrist_inside and outside" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

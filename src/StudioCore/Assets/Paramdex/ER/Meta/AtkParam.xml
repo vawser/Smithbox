@@ -353,7 +353,7 @@
     <atkStam AltName="Damage: Stamina" Wiki="NPCs only. Amount of damage to enemy (player) stamina" />
     <guardAtkRate AltName="Damage: Guard Attack Rate" Wiki="NPCs only. Flick value" />
     <guardBreakRate AltName="Damage: Guard Break Rate" Wiki="NPCs only. Value used to determine if an attack is repelled" />
-    <pad6 AltName=""/>
+    <pad6 AltName="" IsHidden=""/>
     <isEnableCalcDamageForBushesObj AltName="Is Considered Special Attack for Asset Destruction" Wiki="Do you want to calculate damage for assets that are Break due to bush damage? To set. : Calculate, : Do not calculate (that is, you cannot inflict damage) [GR] SEQ20617" IsBool="" />
     <atkThrowEscape AltName="Damage: Throw Escape" Wiki="Throw-through attack power" />
     <atkObj AltName="Damage: Object" Wiki="Attack power against OBJ" />
@@ -396,7 +396,7 @@
     <isVsRideAtk AltName="Is Ride Special Attack" Wiki="If you hit the target of the riding special attack while riding, the SA damage will be multiplied by the multiplier." IsBool="" />
     <isAddBaseAtk AltName="Is Base Attack Added" Wiki="Do you refer to the additional attack power even in weapon attacks?" IsBool="" />
     <excludeThreatLvNotify AltName="Is Excluded from Threat Level Notification" Wiki="Is it excluded from threat level notification?" IsBool="" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <atkBehaviorId AltName="Attack Behavior ID" Wiki="Behavior identification value: Extra large damage transition" Enum="ATKPARAM_BEHAVIOR_ID" />
     <atkPow_forSe AltName="Attack Power - SE Effect" Wiki="Attack strength [SE]" Enum="ATKPARAM_SE_ATK_POW" />
     <atkSuperArmor AltName="Damage: Poise" Wiki="NPCs only. Value used for SA break calculation formula" />
@@ -497,11 +497,11 @@
     <defSfxMaterial2 AltName="Defence SFX Material [2]" Wiki="Used for SFX when guarding. 2" Enum="WEP_MATERIAL_DEF_SFX" />
     <atkDarkCorrection AltName="Attack Correction: Holy" Wiki="PC only. Multiply the dark attack power (in the case of a bow, correct the missile)" />
     <atkDark AltName="Damage: Holy" Wiki="NPCs only. Additional damage from dark attacks" />
-    <pad5 AltName=""/>
+    <pad5 AltName="" IsHidden=""/>
     <isDisableParry AltName="Is Disable Parry" Wiki="This is a flag to disable the new parry control. A process that determines that the damage on the attacking side has been parried when it comes into contact with a character in the parry state on the defending side." IsBool="" />
     <isDisableBothHandsAtkBonus AltName="Is Disable 2H ATK Bonus" Wiki="Avoid using the 1.5x growth status adaptation with both hands" IsBool="" />
     <isInvalidatedByNoDamageInAir AltName="Is Invalidated by No Damage in Air" Wiki="If Do you want to penetrate invincibility is , this setting will be ignored." IsBool="" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <dmgLevel_vsPlayer AltName="Damage Level - Vs. Player" Wiki="Damage level to the player. If it is 0 (default), it is not used. The meaning of the range other than 0 (default) is the same as Damage level." Enum="ATKPARAM_REP_DMGTYPE" />
     <statusAilmentAtkPowerCorrectRate AltName="Status Ailment Correction" Wiki="Magnification correction is performed for the abnormal state attack power of special effects." />
     <spEffectAtkPowerCorrectRate_byPoint AltName="Attack Correction - By SpEffect Point" Wiki="Magnification correction is performed for the special effect ~ ~ attack power [point]." />
@@ -523,7 +523,7 @@
     <atkSuperArmorCorrection AltName="Attack Correction: Poise" Wiki="PC only. Correction value to be applied to the [basic value] set for the weapon" />
     <defSfxMaterialVariationValue AltName="Defence SFX Material Variation Offset" Wiki="A value to have variations of damage SFX and SE in combination with defense material 1 or 2 used when guarding. (SEQ16473)" />
     <finalDamageRateId AltName="Final Damage % ID" Refs="FinalDamageRateParam" />
-    <pad4 AltName=""/>
+    <pad4 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Governs hitboxes and damage of attacks" AlternativeOrder="
 hit0_Radius,hit1_Radius,hit2_Radius,hit3_Radius,

@@ -11,7 +11,7 @@
     <TerritorySize AltName="Territory distance [m]" Wiki="The distance of your territory. If the recognizing player deviates from this distance, it will return to the initial position." />
     <ThreatBeforeAttackRate AltName="Intimidation rate before attack [0-100]" Wiki="Probability of threatening before attack" />
     <ForceThreatOnFirstLocked AltName="First recognition menacing" Wiki="Whether to intimidate when recognizing the first player" IsBool="" />
-    <reserve0 AltName=""/>
+    <reserve0 AltName="" IsHidden=""/>
     <Attack1_Distance AltName="Attack 1 Maai [m]" Wiki="Time to attack [m]" />
     <Attack1_Margin AltName="Attack 1 Maai play [m]" Wiki="Play between attacks. Do not vibrate near the distance" />
     <Attack1_Rate AltName="Attack 1 ratio [0-100]" Wiki="Frequency of attacks" />
@@ -19,7 +19,7 @@
     <Attack1_DelayMin AltName="Attack 1 Minimum delay time [frame]" Wiki="The minimum delay time from the time when an attack becomes possible to the time when an attack is possible." />
     <Attack1_DelayMax AltName="Attack 1 Maximum delay time [frame]" Wiki="The longest delay time from the time when an attack becomes possible to the time when an attack is possible." />
     <Attack1_ConeAngle AltName="Attack 1 Attack permission Conical angle [deg]" Wiki="If the angle between the line-of-sight direction and the direction vector to the target is within this angle, the attack is OK." />
-    <reserve10 AltName=""/>
+    <reserve10 AltName="" IsHidden=""/>
     <Attack2_Distance AltName="Attack 2 Maai [m]" Wiki="Time to attack [m]" />
     <Attack2_Margin AltName="Attack 2 Maai play [m]" Wiki="Play between attacks. Do not vibrate near the distance" />
     <Attack2_Rate AltName="Attack 1 ratio [0-100]" Wiki="Frequency of attacks" />
@@ -27,7 +27,7 @@
     <Attack2_DelayMin AltName="Attack 2 Minimum delay time [frame]" Wiki="The minimum delay time from the time when an attack becomes possible to the time when an attack is possible." />
     <Attack2_DelayMax AltName="Attack 2 Maximum delay time [frame]" Wiki="The longest delay time from the time when an attack becomes possible to the time when an attack is possible." />
     <Attack2_ConeAngle AltName="Attack 2 Attack permission Conical angle [deg]" Wiki="If the angle between the line-of-sight direction and the direction vector to the target is within this angle, the attack is OK." />
-    <reserve11 AltName=""/>
+    <reserve11 AltName="" IsHidden=""/>
     <Attack3_Distance AltName="Attack 3 Maai [m]" Wiki="Time to attack [m]" />
     <Attack3_Margin AltName="Attack 3 Maai play [m]" Wiki="Play between attacks. Do not vibrate near the distance" />
     <Attack3_Rate AltName="Attack 1 ratio [0-100]" Wiki="Frequency of attacks" />
@@ -35,7 +35,7 @@
     <Attack3_DelayMin AltName="Attack 3 Minimum delay time [frame]" Wiki="The minimum delay time from the time when an attack becomes possible to the time when an attack is possible." />
     <Attack3_DelayMax AltName="Attack 3 Maximum delay time [frame]" Wiki="The longest delay time from the time when an attack becomes possible to the time when an attack is possible." />
     <Attack3_ConeAngle AltName="Attack 3 Attack permission Conical angle [deg]" Wiki="If the angle between the line-of-sight direction and the direction vector to the target is within this angle, the attack is OK." />
-    <reserve12 AltName=""/>
+    <reserve12 AltName="" IsHidden=""/>
     <Attack4_Distance AltName="Attack 4 Maai [m]" Wiki="Time to attack [m]" />
     <Attack4_Margin AltName="Attack 4 Maai play [m]" Wiki="Play between attacks. Do not vibrate near the distance" />
     <Attack4_Rate AltName="Attack 1 ratio [0-100]" Wiki="Frequency of attacks" />
@@ -43,8 +43,8 @@
     <Attack4_DelayMin AltName="Attack 4 Minimum delay time [frame]" Wiki="The minimum delay time from the time when an attack becomes possible to the time when an attack is possible." />
     <Attack4_DelayMax AltName="Attack 4 Maximum delay time [frame]" Wiki="The longest delay time from the time when an attack becomes possible to the time when an attack is possible." />
     <Attack4_ConeAngle AltName="Attack 4 Attack permission Conical angle [deg]" Wiki="If the angle between the line-of-sight direction and the direction vector to the target is within this angle, the attack is OK." />
-    <reserve13 AltName=""/>
-    <reserve_last AltName=""/>
+    <reserve13 AltName="" IsHidden=""/>
+    <reserve_last AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

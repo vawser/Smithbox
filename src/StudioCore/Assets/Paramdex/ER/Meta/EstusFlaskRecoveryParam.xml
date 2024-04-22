@@ -23,7 +23,7 @@
     <invadeRing_Anor AltName="Invasion Ring - Darkmoon Blade" Wiki="The number of est recovery of the power of the ring whose invasion route is" />
     <paramReplaceRate AltName="Replacement Rate" Wiki="Recovery number Parameter replacement rate" />
     <paramReplaceId AltName="Replace ID" Wiki="Recovery number Parameter replacement destination ID" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

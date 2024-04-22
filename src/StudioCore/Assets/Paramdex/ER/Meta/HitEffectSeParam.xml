@@ -138,7 +138,7 @@
     <EnergyStrong_Blow_S AltName="Strong Energy - Strike - Small" Wiki="Energy (strong) - Batter - Small" />
     <EnergyStrong_Blow_L AltName="Strong Energy - Strike - Large" Wiki="Energy (strong) - Batter - Large" />
     <EnergyStrong_Blow_LL AltName="Strong Energy - Strike - Giant" Wiki="Energy (strong) - Batter - Oversized" />
-    <reserve AltName=""/>
+    <reserve AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

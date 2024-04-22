@@ -302,12 +302,18 @@ public class ParamRowEditor
         ParamEnum Enum = cellMeta?.EnumType;
         var IsBool = cellMeta?.IsBool ?? false;
         var IsInvertedPercentage = cellMeta?.IsInvertedPercentage ?? false;
+        var IsHiddenField = cellMeta?.IsHidden ?? false;
 
         var displayRefTypes = !CFG.Current.Param_HideReferenceRows && RefTypes != null;
         var displayFmgRef = !CFG.Current.Param_HideReferenceRows && FmgRef != null;
         var displayEnum = !CFG.Current.Param_HideEnums && Enum != null;
 
         object newval = null;
+
+        if(CFG.Current.Param_HidePaddingFields && IsHiddenField)
+        {
+            return;
+        }
 
         ImGui.PushID(imguiId);
 

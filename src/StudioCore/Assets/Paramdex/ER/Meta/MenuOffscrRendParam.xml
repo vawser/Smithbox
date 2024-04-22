@@ -18,7 +18,7 @@
     <envTexId AltName="Env Texture ID" Wiki="Environment map texture ID. It corresponds to 4 digits of N \ GR \ data \ Other \ SysEnvTex \ GILM _rem.dds." />
     <Grapm_ID_forPS4 AltName="GPARAM ID - PS4" Wiki="Gparam ID (for PS4)" />
     <Grapm_ID_forXB1 AltName="GPARAM ID - XB1" Wiki="Gparam ID (for Xbox One)" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

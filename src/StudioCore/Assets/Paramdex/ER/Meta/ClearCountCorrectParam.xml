@@ -34,7 +34,7 @@
     <MadnessResistRate AltName="Resist %: Madness" Wiki="Madness resistance change rate" />
     <SleepDamageRate AltName="Damage %: Sleep" Wiki="Sleep damage correction factor" />
     <MadnessDamageRate AltName="Damage %: Madness" Wiki="Mad damage correction factor" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

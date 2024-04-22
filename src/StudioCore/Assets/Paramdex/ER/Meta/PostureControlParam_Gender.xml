@@ -30,7 +30,7 @@
     <a016_rightElbowIO AltName="[a016] Right Elbow - Inside/Outside" Wiki="Right elbow _ inside and outside" />
     <a016_leftElbowIO AltName="[a016] Left Elbow - Inside/Outside" Wiki="Left elbow_inside and outside" />
     <a016_bothLegsIO AltName="[a016] Both Legs - Inside/Outside" Wiki="Both feet _ inside and outside" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

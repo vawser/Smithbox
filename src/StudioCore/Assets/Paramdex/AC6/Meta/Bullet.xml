@@ -206,7 +206,7 @@
     <damageDamp_Unknown AltName="Damage Falloff %: Unknown" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
     <shootAngleXZ AltName="Launch Elevation Angle" Wiki="Additional elevation angle from the horizontal." />
     <lockShootLimitAng AltName="Lock Direction Limit Angle" Wiki="Limit angle when facing the lock direction" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <prevVelocityDirRate AltName="Previous Velocity Direction Rate" Wiki="Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall" />
     <atkAttribute AltName="Attack Attribute" Wiki="Set the physical attributes to set for the bullet" Enum="ATKPARAM_ATKATTR_TYPE" />
     <spAttribute AltName="Special Attribute" Wiki="Set special attributes to set for bullets" Enum="ATKPARAM_SPATTR_TYPE" />
@@ -214,7 +214,7 @@
     <Material_AttackMaterial AltName="Material Attack Material" Wiki="Used for SFX / SE during attack" Enum="WEP_MATERIAL_ATK" />
     <isPenetrateChr AltName="Is Penetrate Character" Wiki="If it is ON, it will penetrate without landing when it hits the character." IsBool="" />
     <isPenetrateObj AltName="Is Penetrate Object" Wiki="If it is ON, it will penetrate without landing when hitting a dynamic / partial destruction asset." IsBool="" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
     <launchConditionType AltName="Hit Bullet Condition" Enum="BULLET_LAUNCH_CONDITION_TYPE" Wiki="Conditions required for HitBulletID to generate." />
     <followType AltName="Follow Type" Enum="BULLET_FOLLOW_TYPE" Wiki="Affects bullet position and behavior." />
     <emittePosType AltName="Emit Position" Enum="BULLET_EMITTE_POS_TYPE" Wiki="Where bullet appears when created." />

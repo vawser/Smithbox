@@ -163,8 +163,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <sortId AltName="Sort ID" Wiki="Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)" />
     <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
     <resistSleep AltName="Resist - Sleep" Wiki="Difficulty in getting sleep abnormalities" />
@@ -213,7 +213,7 @@
     <knockbackBounceRate AltName="Knockback Bounce Rate" Wiki="Knockback repulsion rate." />
     <durability AltName="Durability" Wiki="Initial durability." />
     <durabilityMax AltName="Max Durability" Wiki="New durability." />
-    <pad03 AltName=""/>
+    <pad03 AltName="" IsHidden=""/>
     <defFlickPower AltName="Weapon Repel Power" Wiki="Used to determine the repulsion of enemy attacks." />
     <defensePhysics AltName="Defence - Physical" Wiki="Physical attack damage protection." />
     <defenseMagic AltName="Defence - Magic" Wiki="Magic attack damage protection." />
@@ -237,7 +237,7 @@
     <rarity AltName="Rarity" Wiki="Rarity used in item acquisition logs" Enum="RARITY" />
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." Enum="DISPLAY_CATEGORY_ID" />
     <partsDmgType AltName="Parts Damage Type" Wiki="Set the attack type to judge the part damage" Enum="ATK_PARAM_PARTSDMGTYPE" />
-    <pad04 AltName=""/>
+    <pad04 AltName="" IsHidden=""/>
     <isDeposit AltName="Can Deposit" Wiki="Can you leave it in the warehouse?" IsBool="" />
     <headEquip AltName="Is Head Equipment" Wiki="Is it head equipment?" IsBool="" />
     <bodyEquip AltName="Is Body Equipment" Wiki="Is it torso equipment?" IsBool="" />
@@ -245,7 +245,7 @@
     <legEquip AltName="Is Leg Equipment" Wiki="Is it leg equipment?" IsBool="" />
     <useFaceScale AltName="Use Facescale" Wiki="Whether to use a face scale" IsBool="" />
     <isSkipWeakDamageAnim AltName="Skip Weak Damage Anim" Wiki="Weakness damage Whether to skip animation playback. Part damage rate and defense material are treated as weak points just by not playing the animation." IsBool="" />
-    <pad06 AltName=""/>
+    <pad06 AltName="" IsHidden=""/>
     <defenseMaterialVariationValue_Weak AltName="Defence Material - Variation Value - Weak" Wiki="It is a value used for variation of abnormal condition, damage SFX, SE in combination with weak point defense material. SEQ16473" />
     <autoFootEffectDecalBaseId2 AltName="Auto Foot Effect Decal Base ID [2]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
     <autoFootEffectDecalBaseId3 AltName="Auto Foot Effect Decal Base ID [3]" Wiki="Decal ID for automatic foot effects. Floor material is also considered. Only used when the armor category is legs." />
@@ -256,7 +256,7 @@
     <simpleModelForDlc AltName="Simple Model for DLC1" Wiki="Is there a simple model for DLC?" IsBool="" />
     <showLogCondType AltName="Item Acquisition Log Condition Type" Wiki="Whether to display in the item acquisition log when acquiring the item (not entered: )" IsBool="" />
     <showDialogCondType AltName="Item Acquisition Dialog Condition Type " Wiki="Whether to display it in the item acquisition dialog when acquiring an item (not entered: new only)" Enum="GET_DIALOG_CONDITION_TYPE" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
     <neutralDamageCutRate AltName="Absorption - Physical" Wiki="Non-attribute damage multiplier"  IsInvertedPercentage="" />
     <slashDamageCutRate AltName="Absorption - Slash" Wiki="Slash damage multiplier" IsInvertedPercentage="" />
     <blowDamageCutRate AltName="Absorption - Strike" Wiki="Batter damage multiplier" IsInvertedPercentage="" />
@@ -310,9 +310,9 @@
     <invisibleFlag78 IsBool="" AltName=""/>
     <invisibleFlag79 IsBool="" AltName=""/>
     <invisibleFlag80 IsBool="" AltName=""/>
-    <padbit AltName=""/>
+    <padbit AltName="" IsHidden=""/>
     <postureControlId AltName="Posture Control ID" Wiki="Attitude control ID (torso)" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <saleValue AltName="Shop Price" Wiki="Selling price" />
     <resistFreeze AltName="Resist - Frost" Wiki="Difficulty in getting cold air condition abnormal" />
     <invisibleFlag_SexVer00 IsBool="" AltName="Mask 00 - Hide upper front face" Wiki="Bangs tip" />
@@ -411,7 +411,7 @@
     <invisibleFlag_SexVer93 IsBool="" AltName="Mask 93 - Alter Armor Part" Wiki="" />
     <invisibleFlag_SexVer94 IsBool="" AltName="Mask 94 - Alter Armor Part" Wiki="" />
     <invisibleFlag_SexVer95 IsBool="" AltName="Mask 95 - Alter Armor Part" Wiki="" />
-    <pad404 AltName=""/>
+    <pad404 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Defines all types of equippable Armor, including no armor. Responsible for model masks." AlternativeOrder="rarity,sortId,sortGroupId,iconIdM,iconIdF,-,
 sellValue,saleValue,basicPrice,fixPrice,-,

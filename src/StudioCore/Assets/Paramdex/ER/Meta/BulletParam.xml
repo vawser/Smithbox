@@ -132,7 +132,7 @@
     <knockbackDamp AltName="Damage Falloff %: Knockback" Wiki="Correction value that decreases in 1 second after the attenuation distance." />
     <shootAngleXZ AltName="Launch Elevation Angle" Wiki="Additional elevation angle from the horizontal." />
     <lockShootLimitAng AltName="Lock Direction Limit Angle" Wiki="Limit angle when facing the lock direction" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <prevVelocityDirRate AltName="Previous Velocity Direction Rate" Wiki="Ratio to add the previous movement direction to the current direction when the sliding bullet hits the wall" />
     <atkAttribute AltName="Attack Attribute" Wiki="Set the physical attributes to set for the bullet" Enum="ATKPARAM_ATKATTR_TYPE" />
     <spAttribute AltName="Special Attribute" Wiki="Set special attributes to set for bullets" Enum="ATKPARAM_SPATTR_TYPE" />
@@ -140,7 +140,7 @@
     <Material_AttackMaterial AltName="Material Attack Material" Wiki="Used for SFX / SE during attack" Enum="WEP_MATERIAL_ATK" />
     <isPenetrateChr AltName="Is Penetrate Character" Wiki="If it is ON, it will penetrate without landing when it hits the character." IsBool="" />
     <isPenetrateObj AltName="Is Penetrate Object" Wiki="If it is ON, it will penetrate without landing when hitting a dynamic / partial destruction asset." IsBool="" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
     <launchConditionType AltName="Launch Condition Type" Wiki="Specify the condition to judge whether to generate a bullet when it lands or the life is extinguished" Enum="BULLET_LAUNCH_CONDITION_TYPE" />
     <FollowType AltName="Follow Type" Wiki="Follow-up type. Do not follow is the default." Enum="BULLET_FOLLOW_TYPE" />
     <EmittePosType AltName="Emitter Source Type" Wiki="Source type. Usually from Damipoli. (Introduced to judge meteo)" Enum="BULLET_EMITTE_POS_TYPE" />
@@ -174,13 +174,13 @@
     <intervalCreateWaitTime AltName="Bullet Emitter: Initial Wait Time" Wiki="Waiting time to start making bullets at regular intervals" />
     <sfxPostureType AltName="SFX Posture Type" Wiki="Set the initial attitude of an SFX or sub-bullet created from a bullet" Enum="BULLET_SFX_CREATE_POSTURE_TYPE" />
     <createLimitGroupId AltName="Create Limit Group ID" Wiki="If it is 0, it is unused. If the upper limit is reached when creating a bullet set in the same group Id, that bullet will not be created. (Bullets created synchronously on the network will be released regardless)" Refs="BulletCreateLimitParam" />
-    <pad5 AltName=""/>
+    <pad5 AltName="" IsHidden=""/>
     <isInheritSpeedToChild AltName="Is Speed Inherited by Child Bullet" Wiki="Take over the speed of the timing to replace the submunition. Ignore the speed set for the submunition" IsBool="" />
     <isDisableHitSfx_byChrAndObj AltName="Is SFX Disabled on Chr/Object Hit" Wiki="When ON, the bullet parameter landing SFX does not play even if it hits a character / object." IsBool="" />
     <isCheckWall_byCenterRay AltName="Is Wall Checked by Center Ray" Wiki="There was a problem with the digging judgment when firing a bullet, so it is for error handling. SEQ23101 [Own character] If you use a soul short arrow or a strong soul short arrow in close contact with a character with a high lock-on position, the direction of the bullet will be reversed." IsBool="" />
     <isHitFlare AltName="Is Hit Flare" Wiki="Do you hit flare magic?" IsBool="" />
     <isUseBulletWallFilter AltName="Is Bullet Wall Filter Used" Wiki="Do you use primitive magic Atari? It will change to a filter that corresponds to the Atari dedicated to primitive magic." IsBool="" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <isNonDependenceMagicForFunnleNum AltName="Is Follow Bullet Count not scaled by INT" Wiki="The number of funnels on the PC does not fluctuate by force. Become the number of shots" IsBool="" />
     <isAiInterruptShootNoDamageBullet AltName="Is AI Interrupted by Bullet" Wiki="Does it react to AI bullets (even with 0 attack power)?" IsBool="" />
     <randomCreateRadius AltName="Emitter Source Radius" Wiki="The range of bullets used when the source type is set to occur at random locations." />
@@ -200,12 +200,12 @@
     <howitzerInitMaxVelocity AltName="Howitzer - Initial Max Velocity" Wiki="[Song firing] Maximum speed limit for song firing calculation [m / s]." />
     <sfxId_ForceErase AltName="SFX ID - Force Erase" Wiki="SFX ID at the time of forced erasure. -1 does not occur." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <bulletSfxDeleteType_byForceErase AltName="Bullet SFX Delete Type - By Force Erase" Wiki="Bullet SFX extinction type at the time of forced erasure" Enum="BULLET_SFX_DELETE_TYPE" />
-    <pad3 AltName=""/>
+    <pad3 AltName="" IsHidden=""/>
     <followDmypoly_forSfxPose AltName="Follow Bullet - Dummy Poly for SFX Pose" Wiki="SFX direction specification when following Damipoli" />
     <followOffset_Radius AltName="Follow Bullet - Radius Offset" Wiki="Funnel tracking position_radius [m]" />
     <spBulletDistUpRate AltName="SpEffect Bullet Distance - Magnification" Wiki="Special effect flight distance correction magnification" />
     <nolockTargetDist AltName="Target Range when Unlocked" Wiki="Target range when unlocked (-1: Refer to range, 0: No target)" />
-    <pad4 AltName=""/>
+    <pad4 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Governs motion, hitbox and appearance of projetiles. Can reference AtkParam for damage."/>
 </PARAMMETA>

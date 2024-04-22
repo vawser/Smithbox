@@ -21,6 +21,7 @@ public class ParamEditorCommon
         _changedCache = false;
         _committedCache = false;
         ImGui.SetNextItemWidth(-1);
+
         try
         {
             if (isBool)

@@ -17,7 +17,7 @@
     <postProcessDOF AltName="Post Process Depth of Field" Wiki="DOF" />
     <postProcessMotionBlur AltName="Post Process Motion Blur" Wiki="Motion Blur" />
     <postProcessMotionBlurIteration AltName="Post Process Motion Blur Iteration" Wiki="Reduce the number of Motion Blur iterations" />
-    <reserve0 AltName=""/>
+    <reserve0 AltName="" IsHidden=""/>
     <shadowBlur AltName="Cut Shadow Blur" Wiki="Cut the shadow blur" />
     <sfxParticleHalf AltName="Halve SFX Particle" Wiki="Emit interval, number of emits, LOD distance halved in graphics config" />
     <sfxReflection AltName="Omit SFX Reflection" Wiki="Omit the reflection scene SFX" />
@@ -35,7 +35,7 @@
     <chrWetDisableEnemy AltName="Disable Wetness for NPC" Wiki="Turn off the water wetting process of enemy characters" />
     <dynamicResolutionPercentageMin AltName="Lower Limit of Resolution Reduction" Wiki="Resolution reduction lower limit (%)" />
     <dynamicResolutionPercentageMax AltName="Upper Limit of Resolution Reduction" Wiki="Resolution reduction upper limit (%)" />
-    <reserve1 AltName=""/>
+    <reserve1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

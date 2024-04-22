@@ -140,7 +140,7 @@
     <isAnimBreak AltName="Is Animated Destruction" Wiki="Is it animation destruction (0: physical destruction, 1: animation destruction)" />
     <isDamageCover AltName="Is Damage Transferred" Wiki="Whether to pass the damage to the other side when receiving damage (0: pass, 1: do not pass)" />
     <isAttackBacklash AltName="Is Attack Backlash" Wiki="Do you play the attack (0: do not play, 1: play)" />
-    <Reserve_2 AltName=""/>
+    <Reserve_2 AltName="" IsHidden=""/>
     <isLadder AltName="Is Ladder" Wiki="Is it a ladder (0: different, 1: yes)" />
     <isMoveObj AltName="Is Moving Object" Wiki="Is it a moving object? It is a flag used for branching of movement processing at the time of multi (0: different, 1: yes)" />
     <isSkydomeFlag AltName="Is Celestial Sphere" Wiki="Processing that treats the celestial sphere (player tracking, etc.) is performed (0: different, 1: yes)" />
@@ -202,8 +202,8 @@
     <slidingBulletHitType AltName="Sliding Bullet Hit Type" Wiki="When a bullet of the follow-up type Crawling on the ground even if it collides collides with an asset, does it bend in the direction along the landing point? Behavior" Enum="ASSET_SLIDING_BULLET_HIT_TYPE" />
     <isBushesForDamage AltName="Is Damaged by Special Attacks" Wiki=" Assets can only be damaged by damage to bushes  and object attack power> defense power attacks [GR] SEQ20617" IsBool="" />
     <penetrationBulletType AltName="Penetration Bullet Type" Wiki="Will the bullet hit and land? Which bullet para to refer to when deciding? The value that determines." Enum="ASSET_PENETRATION_BULLET_TYPE" />
-    <Reserve_3 AltName=""/>
-    <Reserve_4 AltName=""/>
+    <Reserve_3 AltName="" IsHidden=""/>
+    <Reserve_4 AltName="" IsHidden=""/>
     <soundBreakSECpId AltName="Destruction - Sound SE Dummy Poly ID" Wiki="Damipoli ID of the place where the destruction sound is played (-1: Placement position)" />
     <debug_HeightCheckCapacityMin AltName="Debug - Height Check Minimum" Wiki="Debug_Allowable ground height_Minimum [m] See SEQ07876 for details. Must be smaller than maximum" />
     <debug_HeightCheckCapacityMax AltName="Debug - Height Check Maximum" Wiki="Debug_Allowable ground height_Max [m] See SEQ07876 for details. Must be larger than minimum" />
@@ -220,7 +220,7 @@
     <isDisableBulletHitSfx AltName="Is Bullet Hit SFX Disabled" Wiki="In the case of , the landing SFX does not occur regardless of whether the hit bullet penetrates or lands." IsBool="" />
     <isEnableSignPreBreak AltName="Is Bloodstain/Sign Enabled before Destruction" Wiki="Set whether sign / blood character can be created when on the asset (before destruction) : Possible, : Impossible (Details: SEQ122568)" IsBool="" />
     <isEnableSignPostBreak AltName="Is Bloodstain/Sign Enabled after Destruction" Wiki="Set whether sign / blood character can be created when on the asset (after destruction) : Possible, : Impossible (Details: SEQ122568)" IsBool="" />
-    <Reserve_1 AltName=""/>
+    <Reserve_1 AltName="" IsHidden=""/>
     <generateMultiForbiddenRegion AltName="Multiplayer Forbidden Region Type" Wiki="Summoning prohibited / intrusion prohibited area generation (Damipoli)" Enum="MULTI_FORBIDDEN_REGION_GENERATE_ATTRIBUTE" />
     <residentSeId0 AltName="Resident SE ID [0]" Wiki="Sound ID 0 (9 digits) to be resident in the asset (-1: No resident)" />
     <residentSeId1 AltName="Resident SE ID [1]" Wiki="Sound ID 1 (9 digits) to be resident in the asset (-1: No resident)" />
@@ -234,7 +234,7 @@
     <excludeActivateRatio_Xboxone_Legacy AltName="Exclude Activate Ratio - Xbox One Legacy" Wiki="Legacy_XB1 exclusion rate [GR] SEQ25310" Enum="ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE" />
     <excludeActivateRatio_PS4_Grid AltName="Exclude Activate Ratio - PS4 Grid" Wiki="Open_PS4 exclusion rate [GR] SEQ25310" Enum="ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE" />
     <excludeActivateRatio_PS4_Legacy AltName="Exclude Activate Ratio - PS4 Legacy" Wiki="Legacy_PS4 exclusion rate [GR] SEQ25310" Enum="ASSET_EXCLUDE_ACTIVATE_RATIO_TYPE" />
-    <Reserve_0 AltName=""/>
+    <Reserve_0 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

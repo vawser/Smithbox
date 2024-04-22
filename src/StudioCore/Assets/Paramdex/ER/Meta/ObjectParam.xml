@@ -69,13 +69,13 @@
     <BreakAiSoundID AltName="Destruction AI Sound ID" Wiki="AI sound ID generated at the time of destruction" Refs="AiSoundParam" />
     <FragmentInvisibleWaitTime AltName="Hidden Debris - Wait Time" Wiki="Material ID of debris (-1 Do not hide)" />
     <FragmentInvisibleTime AltName="Hidden Debris - Invisibility Time" Wiki="Time to hide debris (seconds)" />
-    <pad_3 AltName=""/>
+    <pad_3 AltName="" IsHidden=""/>
     <RigidPenetrationScale_Soft AltName="Rigid Body Collision - Soft" Wiki="Rigid body soft contact setting Collision point distance coefficient [soft]" />
     <RigidPenetrationScale_Normal AltName="Rigid Body Collision - Normal" Wiki="Rigid soft contact setting Collision point distance coefficient [Normal]" />
     <RigidPenetrationScale_Hard AltName="Rigid Body Collision - Hard" Wiki="Rigid soft contact setting Collision point distance coefficient [hard]" />
     <LandTouchSfxId AltName="Land Touch - SFX ID" Wiki="SFX ID at terrain contact (-1 offset by terrain material)" />
     <isDamageCover AltName="Is Damage blocked after Passing Through" Wiki="Whether to pass the damage to the other side when receiving damage (0 pass, 1 do not pass)" />
-    <pad_4 AltName=""/>
+    <pad_4 AltName="" IsHidden=""/>
     <paintDecalTargetTextureSize AltName="Paint Decal Size" Wiki="Paint decal target size (only powers of 0 to 4096 2 allowed)" />
     <lifeTime_forDC AltName="Dynamic Object Duration" Wiki="Time until dynamically generated Obj disappears after generation (0 does not disappear)" />
     <clothUpdateDist AltName="Cloth Update Distance from Camera" Wiki="Distance from the camera to update havokCloth (0 always update)" />
@@ -86,9 +86,9 @@
     <soundBankId AltName="Sound Bank ID" Wiki="Sound bank ID (-1 no bank, other bank with specified ID)" />
     <refDrawParamId AltName="Reference Draw Param ID" Wiki="Reference ID of drawing parameter" />
     <autoCreateDynamicOffsetHeight AltName="Automatica Generation - Appearance Height Offset" Wiki="Map automatic generation OBJ appearance height offset [m], does it float from where the ray cast hits?" />
-    <reserved0 AltName="Blank" Wiki="Reserve" />
+    <reserved0 IsHidden="" />
     <soundBreakSEId AltName="Destruction - SE ID" Wiki="Destruction sound SEID (9 digits) -1 Generated from objId" />
-    <pad_5 AltName=""/>
+    <pad_5 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

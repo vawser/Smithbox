@@ -28,9 +28,9 @@
     <IconID AltName="Icon ID" Wiki="" />
     <RequiredPropertyID AltName="Required Property ID" Wiki="" Refs="MenuPropertySpecParam" />
     <CompareType AltName="Compare Type" Wiki="" Enum="MENU_PROPERTY_CMP_TYPE" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <FormatType AltName="Format Type" Wiki="" Enum="MENU_PROPERTY_FORMAT_TYPE" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

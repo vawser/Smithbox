@@ -16,7 +16,7 @@
     <lowerYRange AltName="Mount Distance - Min Height" Wiki="Is it possible to ride even if the target to be ridden is below the target to be ridden? Is set in meters" />
     <diffAngMin AltName="Ride Angle Tolerance - Min" Wiki="In what range (angle) of the rider can ride? Set the minimum value of" />
     <diffAngMax AltName="Ride Angle Tolerance - Max" Wiki="In what range (angle) of the rider can ride? Set the maximum value of" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

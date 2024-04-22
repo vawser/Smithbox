@@ -8,7 +8,7 @@
     <toughnessRecoverCorrection AltName="Toughness Recovery Correction" Wiki="A correction value used to calculate the player's toughness recovery time." />
     <baseMagicSlotSize AltName="Base Memory Slot Count" Wiki="Magic memory slot initial value" />
     <baseAccSlotNum AltName="Base Talisman Slot Count" Wiki="Talisman equipment slot initial value" />
-    <reserved02 AltName=""/>
+    <reserved02 AltName="" IsHidden=""/>
     <animeID_DropItemPick AltName="Item Pick-up - Animation ID" Wiki="Animation ID when picking up a drop item" />
     <resistRecoverPoint_Sleep_Player AltName="Player Resist Recovery - Sleep" Wiki="Player resistance value recovery amount_sleep point / s" />
     <flareOverrideHomingAngle AltName="Flare Overwrite Homing Angle" Wiki="Flare overwrite guidance performance deg / s (-1 no overwrite)" />
@@ -26,23 +26,23 @@
     <retributionMagic_burstDmypolyId AltName="Retribution Magic - Explosion Dummy Poly ID" Wiki="Causal Retribution_Counterattack Magic Damipoli ID" />
     <retributionMagic_burstMagicParamId AltName="Retribution Magic - Explosion Magic Param ID" Wiki="Causal Retribution_Counterattack Magic Param ID" />
     <chrAimCam_rideOffsetHeight AltName="Mounted Precision Shoot - Camera Offset Height" Wiki="Riding precision shooting camera offset height" />
-    <reserved23 AltName=""/>
+    <reserved23 AltName="" IsHidden=""/>
     <arrowCaseWepBindDmypolyId AltName="Quiver Dummy Poly ID" Wiki="Quiver adsorption Damipoly ID" />
     <boltPouchWepBindDmypolyId AltName="Bolt Case Dummy Poly ID" Wiki="Bolt cylinder adsorption Damipoly ID (However, if the bolt cylinder is used alone, the quiver Damipoly ID is used)" />
     <estusFlaskAllocateRate AltName="Multiplayer Flask Reduction" Wiki="Multi-time client bottle correction magnification (0.5 specified to halve the number of possessions)" />
-    <reserved38 AltName=""/>
+    <reserved38 AltName="" IsHidden=""/>
     <kickAcceptanceDeg AltName="Kick Acceptance Angle" Wiki="Angle at which a kick can be taken when viewed from the front of the player" />
     <npcPlayerAnalogWeightRate_Light AltName="NPC Player - Weight Rate Light" Wiki="Analog weight ratio for NPC players %. lightweight." />
     <npcPlayerAnalogWeightRate_Normal AltName="NPC Player - Weight Rate Normal" Wiki="Analog weight ratio for NPC players %. Medium weight." />
     <npcPlayerAnalogWeightRate_Heavy AltName="NPC Player - Weight Rate Heavy" Wiki="Analog weight ratio for NPC players %. weight." />
     <npcPlayerAnalogWeightRate_WeightOver AltName="NPC Player - Weight Rate Encumbered" Wiki="Analog weight ratio for NPC players %. Overweight." />
     <npcPlayerAnalogWeightRate_SuperLight AltName="NPC Player - Weight Rate Ninja" Wiki="Analog weight ratio for NPC players %. Super lightweight." />
-    <reserved45 AltName=""/>
+    <reserved45 AltName="" IsHidden=""/>
     <clearCountCorrectBaseSpEffectId AltName="Game Clear - Base SpEffect ID" Wiki="Criteria ID for special effects applied for lap correction" />
     <arrowBoltModelIdOffset AltName="Ammunition Model ID Offset" Wiki="Offset added to the model ID when equipped in slot 1 when displaying the arrow and bolt models. (Model Id + offset value)" />
     <arrowBoltRemainingNumModelMaskThreshold1 AltName="Ammunition Count Model Mask Threshold 1" Wiki="When displaying the arrow and bolt models, the one-step judgment value % of the threshold value when applying the display mask by the number. (If it is more than this value, it is displayed in one step)" />
     <arrowBoltRemainingNumModelMaskThreshold2 AltName="Ammunition Count Model Mask Threshold 2" Wiki="Two-step judgment value % of the threshold value when applying a display mask based on the number of arrows and bolt models. (If it is more than this value, it is displayed in 2 steps)" />
-    <reserved27 AltName=""/>
+    <reserved27 AltName="" IsHidden=""/>
     <resistRecoverPoint_Poision_Player AltName="Player Resist Recovery - Poison" Wiki="Player resistance recovery amount_poison point / s" />
     <resistRecoverPoint_Desease_Player AltName="Player Resist Recovery - Scarlet Rot" Wiki="Player resistance value recovery amount_plague point / s" />
     <resistRecoverPoint_Blood_Player AltName="Player Resist Recovery - Hemorrhage" Wiki="Player resistance recovery amount_bleeding point / s" />
@@ -64,10 +64,10 @@
     <resistRecoverPoint_Madness_Enemy AltName="Enemy Resist Recovery - Madness" Wiki="Enemy resistance value recovery amount_madness point / s" />
     <resistCurseItemId AltName="Resist Blight Item ID" Wiki="Abnormal condition_immediate death_immediate death Item ID" Refs="EquipParamGoods"/>
     <resistCurseItemMaxNum AltName="Resist Blight Item Max Count" Wiki="Abnormal condition_immediate death_maximum number of instant death items" />
-    <reserved_123 AltName=""/>
+    <reserved_123 AltName="" IsHidden=""/>
     <resistCurseItemSpEffectBaseId AltName="Resist Blight Item - Base SpEffect ID" Wiki="Abnormal condition_Instant death_Instant death Item possession Special effect base ID" Refs="SpEffectParam"/>
     <resistCurseItemLotParamId_map AltName="Resist Blight Item - Map Item Lot ID" Wiki="Abnormal condition_immediate death_immediate death item lottery ID_for map" Refs="ItemLotParam_map"/>
-    <reserved41 AltName=""/>
+    <reserved41 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

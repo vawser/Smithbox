@@ -23,7 +23,7 @@
     <bulletAngRange AltName="Attack Capture - Bullet - Angle Range Left/Right" Wiki="Automatic lock-on left / right angle when non-lock-on bullet" />
     <lockTgtKeepTime AltName="Lock Target Keep Time" Wiki="Time to continue locking even if the lock condition is not met (disabled at 0.0)" />
     <chrTransChaseRateForNormal AltName="Transition Chase Factor for Normal Character" Wiki="Normal character translation tracking rate (disabled at -1.0)" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

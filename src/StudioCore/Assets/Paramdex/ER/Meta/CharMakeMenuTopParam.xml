@@ -41,13 +41,13 @@
     <tableId AltName="Table ID - Male" Wiki="First ID (male) in the list of items to select. The command type is [Slider: Text ID of minimum label (n) and maximum label (n + 1), Color: ID of color table, Grid or text: First ID of character make list item, Other: Ignore]" />
     <viewCondition AltName="View Condition" Wiki="Conditions for displaying this command" Enum="CHARMAKEMENU_VIEW_CONDITION" />
     <previewMode AltName="Preview Mode" Wiki="Display mode of the character model displayed in preview" Enum="CHARMAKEMENU_PREVIEW_MODE" />
-    <reserved2 AltName=""/>
+    <reserved2 AltName="" IsHidden=""/>
     <tableId2 AltName="Table ID - Female" Wiki="For women with table ID. If -1, refer to for men" />
     <refFaceParamId AltName="Reference Face Param ID" Wiki="Face param ID of the matching destination for matching to XX" Enum="FACE_PARAM" />
     <refTextId AltName="Reference Text ID" Wiki="Display text ID for fit to XX" FmgRef="Modern_MenuText" />
     <helpTextId AltName="Help Text ID" Wiki="1-line help text ID (-1: Get 1-line help with item text ID). Basically, item text ID = 1 line help text ID, but if you want to overwrite part of it, specify it with this parameter." FmgRef="Modern_LineHelp" />
     <unlockEventFlagId AltName="Unlock Event Flag ID" Wiki="Event flag to unlock this item (0: invalid value). Invalid value will always be unlocked" />
-    <reserved AltName=""/>
+    <reserved AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

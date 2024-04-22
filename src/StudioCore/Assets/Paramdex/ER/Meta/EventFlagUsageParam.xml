@@ -9,9 +9,9 @@
   <Field>
     <usageType AltName="Use" Wiki="Use of the flag." Enum="EVENT_FLAG_USAGE_TYPE" />
     <playlogCategory AltName="Playlog category" Wiki="Valid only when the usage is ON / OFF. If this is set, the play log will be collected when the flag is turned ON." Enum="EVENT_FLAG_USAGE_PLAYLOG_CATEGORY" />
-    <padding1 AltName=""/>
+    <padding1 AltName="" IsHidden=""/>
     <flagNum AltName="Number of secured flags" Wiki="Set to 1 for ON / OFF. In the case of frame allocation and integer, parameter number-parameter number + number of secured flags-1 is secured." />
-    <padding2 AltName=""/>
+    <padding2 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

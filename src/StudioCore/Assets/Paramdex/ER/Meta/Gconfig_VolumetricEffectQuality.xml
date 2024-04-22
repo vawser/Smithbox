@@ -25,7 +25,7 @@
     <fogVolumeShadowEnabled AltName="Fog Volume Shadow Enabled" Wiki="Shadow permission (refers to shadow processing due to density changes in the area, where shadows are cast on the area)" IsBool="" />
     <fogVolumeForceShadowing AltName="Fog Volume - Force Shadowing" Wiki="Forcibly casts a shadow on the area regardless of the setting when shadow is permitted (shadow processing is not affected)" IsBool="" />
     <fogVolumeResolution AltName="Fog Volume Resolution" Wiki="" Enum="GRAPHICS_CONFIG_CS_GCONFIG_FOG_VOLUME_RESOLUTION" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

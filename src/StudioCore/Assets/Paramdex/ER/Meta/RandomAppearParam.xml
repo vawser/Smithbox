@@ -103,7 +103,7 @@
     <slot97 AltName="Random Slot [97]" Wiki="Will it appear if the slot is won?" />
     <slot98 AltName="Random Slot [98]" Wiki="Will it appear if the slot is won?" />
     <slot99 AltName="Random Slot [99]" Wiki="Will it appear if the slot is won?" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

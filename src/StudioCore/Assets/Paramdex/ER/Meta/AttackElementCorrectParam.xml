@@ -28,7 +28,7 @@
     <isMagicCorrect_byDark AltName="Holy Correction: INT" IsBool="" />
     <isFaithCorrect_byDark AltName="Holy Correction: FTH" IsBool="" />
     <isLuckCorrect_byDark AltName="Holy Correction: ARC" IsBool="" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <overwriteStrengthCorrectRate_byPhysics AltName="Physical Replacement Correction: STR" />
     <overwriteDexterityCorrectRate_byPhysics AltName="Physical Replacement Correction: DEX" />
     <overwriteMagicCorrectRate_byPhysics AltName="Physical Replacement Correction: INT" />
@@ -79,7 +79,7 @@
     <InfluenceMagicCorrectRate_byDark AltName="Holy Correction Ratio: INT" Wiki="The rate of influence of the correction factor." />
     <InfluenceFaithCorrectRate_byDark AltName="Holy Correction Ratio: FTH" Wiki="The rate of influence of the correction factor." />
     <InfluenceLuckCorrectRate_byDark AltName="Holy Correction Ratio: ARC" Wiki="The rate of influence of the correction factor." />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Governs which damage types scale with which stats. Includes correction values." />
 </PARAMMETA>

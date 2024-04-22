@@ -40,8 +40,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <logicId AltName="Logic ID" Wiki="Set the ID of the logic created by the script." />
     <battleGoalID AltName="Battle Goal ID" Wiki="Battle goal ID" />
     <searchEye_dist AltName="Vision - Distance" Wiki="Search range by visual search." />
@@ -49,7 +49,7 @@
     <isNoAvoidHugeEnemy AltName="Don't Avoid Giant Enemy" Wiki="Do you not detour a huge enemy?" IsBool="" />
     <enableWeaponOnOff AltName="Enable Weapon Switch" Wiki="Do you want to pull out the sword?" IsBool="" />
     <targetAILockDmyPoly AltName="Aim for AI Target Lock Dummy Poly ID" Wiki="Do you aim for Rock Damipoli (for enemies)?" IsBool="" />
-    <pad8 AltName=""/>
+    <pad8 AltName="" IsHidden=""/>
     <spEffectId_RangedAttack AltName="Ranged Attack - SpEffect ID" Wiki="Special effects ID for ranged attacks" Refs="SpEffectParam" />
     <searchTargetLv1ForgetTime AltName="Search Forget Time - Level 1" Wiki="Search enemy Lv1 Target Time to forget." />
     <searchTargetLv2ForgetTime AltName="Search Forget Time - Level 2" Wiki="Search enemy Lv2 time to forget the target." />
@@ -61,7 +61,7 @@
     <callHelp_CallActionId AltName="Call Help - Call Action ID" Wiki="Action ID (EzStateAnimID) when calling a friend" />
     <eye_dist AltName="Vision - Distance" Wiki="Visual search range." />
     <isGuard_Act AltName="Use Guard during Action" Wiki="Whether to guard against actions (assumed when returning home, looking toward the target)" IsBool="" />
-    <pad6 AltName=""/>
+    <pad6 AltName="" IsHidden=""/>
     <ear_soundcut_dist AltName="Listen - Sound Cutoff Distance" Wiki="The distance to reduce the size of the sound source. You will not hear any sound below this distance." />
     <nose_dist AltName="Sense - Distance" Wiki="Search range by smell." />
     <maxBackhomeDist AltName="Retreat Home - Max Distance" Wiki="COMMON_SetBattleActLogic argument" />
@@ -109,7 +109,7 @@
     <battleEye_updateDist AltName="Battle Vision - Overwrite Distance" Wiki="Battle Vision_Overwrite Distance [m]" />
     <battleEye_updateAngX AltName="Battle Vision - Overwrite Height Angle" Wiki="Battle Vision_Overwrite Angle (Height) [deg]" />
     <battleEye_updateAngY AltName="Battle Vision - Overwrite Width Angle" Wiki="Battle Vision_Overwrite Angle (Width) [deg]" />
-    <pad4 AltName=""/>
+    <pad4 AltName="" IsHidden=""/>
     <eye_BackOffsetDist AltName="Vision - Start Position - Backward Offset" Wiki="The viewing angle start position is behind this distance from the center of the character." />
     <eye_BeginDist AltName="Vision - Start Distance" Wiki="This distance is not recognized from the viewing angle generation position" />
     <actTypeOnFailedPath AltName="Act Type on Failed Path" Wiki="Default action type to be performed when the path search fails, when the end point of the alternative path is reached / when the homecoming limit distance is reached" Enum="NPC_THINK_ACTTYPE_ON_FAILEDPATH" />
@@ -129,7 +129,7 @@
     <useFall_onSearchBattle AltName="Use Fall Jump - In Combat" Wiki="Allow AI to pass through the jumping edge in combat" Enum="NPC_THINK_JUMPUSEREDGE_USE_TYPE" />
     <enableJumpMove_onBattle AltName="Enable Jump - In Combat" Wiki="Whether to jump over the user edge for jumping (combat state)" Enum="NPC_THINK_JUMPUSEREDGE_USE_TYPE" />
     <backToHomeStuckAct AltName="Back to Home Stuck Act" Wiki="Behavior when addicted to the homecoming limit" Enum="NPC_THINK_BackToHomeStuckAct" />
-    <pad3 AltName=""/>
+    <pad3 AltName="" IsHidden=""/>
     <soundBehaviorId01 AltName="Sound Behavior ID [1]" Wiki="Corresponds to the behavior ID of the sound target that can be heard" />
     <soundBehaviorId02 AltName="Sound Behavior ID [2]" Wiki="Corresponds to the behavior ID of the sound target that can be heard" />
     <soundBehaviorId03 AltName="Sound Behavior ID [3]" Wiki="Corresponds to the behavior ID of the sound target that can be heard" />

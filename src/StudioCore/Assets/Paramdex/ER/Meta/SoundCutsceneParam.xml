@@ -8,16 +8,16 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <ReverbType AltName="Reverb Type" Wiki="Specifies the reverb type to apply during the cutscene" />
-    <pad0 AltName=""/>
+    <pad0 AltName="" IsHidden=""/>
     <BgmBehaviorTypeOnStart AltName="BGM Behavior Type On Start" Wiki="Specifies normal BGM behavior at the start of cutscenes" Enum="SOUND_CUTSCENE_BGM_BEHAVIOR_TYPE" />
     <OneShotBgmBehaviorOnStart AltName="One-shot BGM Behavior Type On Start" Wiki="Specifies the one-shot BGM behavior at the start of the cutscene" Enum="SOUND_CUTSCENE_BGM_BEHAVIOR_TYPE" />
     <PostPlaySeId AltName="Post Play SE ID" Wiki="SEID (category: p) specification to post at the end of the cutscene (-1: do not post)" />
     <PostPlaySeIdForSkip AltName="Post Play SE ID for Skip" Wiki="SEID_ for skipping to post at the end of the cutscene (category: p) specified (-1: not posted)" />
     <EnterMapMuteStopTimeOnDrawCutscene AltName="Enter Map Mute Stop Time on Draw Cutscene" Wiki="Cutscene drawing time to unmute immediately after entering [seconds] (less than 0: not canceled in drawing time)" />
-    <reserved AltName=""/>
+    <reserved AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -624,6 +624,9 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Allow field reordering", ref CFG.Current.Param_AllowFieldReorder);
                 ImguiUtils.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
+
+                ImGui.Checkbox("Hide padding fields", ref CFG.Current.Param_HidePaddingFields);
+                ImguiUtils.ShowHoverTooltip("Hides fields that are considered 'padding' in the property editor view..");
             }
 
             // Values

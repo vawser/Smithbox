@@ -9,7 +9,7 @@
   <Field>
     <chrId AltName="Character ID" Wiki="Character ID" />
     <ctrlType AltName="Bone Control Type" Wiki="Control type" Enum="RUNTIME_BONE_CONTROL_TYPE" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
     <applyBone AltName="Applicable Joint" Wiki="Applicable joint" />
     <targetBone1 AltName="Target Joint [1]" Wiki="Target joint 1" />
     <targetBone2 AltName="Target Joint [2]" Wiki="Target joint 2" />

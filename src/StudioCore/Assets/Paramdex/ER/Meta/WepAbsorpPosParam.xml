@@ -20,11 +20,11 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <hangPosType AltName="Sheath Position Type" Wiki="The animation at the time of sword delivery changes depending on this value" Enum="WEP_HANG_POS_TYPE" />
     <isSkeletonBind AltName="Is Skeleton Bind" Wiki="Do you want to combine skeletons?" IsBool="" />
-    <pad0 AltName=""/>
+    <pad0 AltName="" IsHidden=""/>
     <right_0 AltName="Right Hand - Dummy Poly - Model [0]" Wiki="Model 0 adsorption Damipoli when holding the weapon in one hand." />
     <left_0 AltName="Left Hand - Dummy Poly - Model [0]" Wiki="Model 0 adsorption Damipoli when holding the weapon in one hand." />
     <both_0 AltName="Both Hand - Dummy Poly - Model [0]" Wiki="Model 0 adsorption Damipoli when holding a right-handed weapon with both hands." />
@@ -77,7 +77,7 @@
     <dispPosType_leftBoth_3 AltName="Display Position - Left Both-Hand - Model [3]" Wiki="Model 3_ Left-handed two-handed display position (used to specify hidden position from TAE)" Enum="WEP_DISP_POS_TYPE" />
     <dispPosType_rightHang_3 AltName="Display Position - Right Sheath - Model [3]" Wiki="Model 3_Right-handed sword display position (used to specify the non-display position from TAE)" Enum="WEP_DISP_POS_TYPE" />
     <dispPosType_leftHang_3 AltName="Display Position - Left Sheath - Model [3]" Wiki="Model 3_ Left hand sword display position (used to specify the non-display position from TAE)" Enum="WEP_DISP_POS_TYPE" />
-    <reserve AltName=""/>
+    <reserve AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

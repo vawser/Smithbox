@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -78,6 +79,8 @@ public class TaskManager
             AggregateException ex = task.Value.Task.Exception;
             if (ex != null)
             {
+                // Use this for XML errors to see the file before the file with the bad syntax
+                //throw new Exception($"{ParamMetaData.CurrentMetaFile}");
                 throw ex;
             }
         }

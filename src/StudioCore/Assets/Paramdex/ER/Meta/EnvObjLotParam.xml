@@ -19,7 +19,7 @@
     <CreateWeight_5 AltName="Create Weight [5]" Wiki="Appearance ratio point (weight) _5" />
     <CreateWeight_6 AltName="Create Weight [6]" Wiki="Appearance ratio point (weight) _6" />
     <CreateWeight_7 AltName="Create Weight [7]" Wiki="Appearance ratio point (weight) _7" />
-    <Reserve_0 AltName=""/>
+    <Reserve_0 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -83,8 +83,8 @@
     <GameClearOffset AltName="Game Clear Offset" Wiki="Offset during lap play" />
     <canExecByFriendlyGhost AltName="Can Friendly Phantom Acquire" Wiki="Do you draw lots even when you are a cooperating spirit?" IsBool="" />
     <canExecByHostileGhost AltName="Can Hostile Phantom Acquire" Wiki="Do you draw lots even when you are a hostile spirit?" IsBool="" />
-    <PAD1 AltName="Blank" Wiki="PAD1" />
-    <PAD2 AltName="Blank" Wiki="PAD2" />
+    <PAD1 IsHidden="" />
+    <PAD2 IsHidden="" />
   </Field>
   <Self Wiki="Defines item lots that can be rolled upon item pickup, enemy death or granted via script.\nWhen doing this, consecutive IDs are also rolled.\nA single result is produced by each row.\nA row will not be rolled if the flag is already set." ConsecutiveIDs="" AlternativeOrder="
 GameClearOffset,canExecByFriendlyGhost,canExecByHostileGhost,-,

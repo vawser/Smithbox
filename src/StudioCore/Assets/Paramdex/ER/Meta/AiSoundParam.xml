@@ -39,7 +39,7 @@
     <soundBehaviorId AltName="Sound Behavior ID" Wiki="Behavior ID" />
     <aiSoundLevel AltName="AI Sound Level" Wiki="How hard it is to hear" />
     <replaningState AltName="Replanning State" Wiki="AI state setting to run replanning when listening to AI sound" Enum="AI_SOUND_REPLANNING_STATE_TYPE" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

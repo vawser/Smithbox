@@ -39,7 +39,7 @@
     <a016_rightArmFB AltName="[a016] Right Arm - Front/Back" Wiki="Right arm_front and back" />
     <a016_leftArmIO AltName="[a016] Left Arm - Inside/Outside" Wiki="Left arm_inside and outside" />
     <a016_leftArmFB AltName="[a016] Left Arm - Front/Back" Wiki="Left arm_front and back" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

@@ -8,11 +8,11 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <eventflagId AltName="Event Flag ID" Wiki="Release condition event flag ID" />
     <bonfireEntityId AltName="Bonfire Entity ID" Wiki="Bonfire entity ID" />
-    <pad4 AltName=""/>
+    <pad4 AltName="" IsHidden=""/>
     
     <bonfireSubCategorySortId AltName="Sort ID" Wiki="Bonfire Warp Subcategory Sort ID. Specify the order (ascending order) in the same subcategory" />
     <forbiddenIconId AltName="Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited" />
@@ -24,12 +24,12 @@
     <iconId AltName="Icon ID" Wiki="Icon ID" />
     <dispMask00 AltName="Display Setting M00" Wiki="Whether to display with M00" IsBool="" />
     <dispMask01 AltName="Display Setting M01" Wiki="Whether to display with M01" IsBool="" />
-    <pad1 AltName=""/>
-    <pad2 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
+    <pad2 AltName="" IsHidden=""/>
     <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />
     <gridXNo AltName="Map Block" Wiki="BB part of mAA_BB_CC_DD" />
     <gridZNo AltName="Map Region" Wiki="CC part of mAA_BB_CC_DD" />
-    <pad3 AltName=""/>
+    <pad3 AltName="" IsHidden=""/>
     <posX AltName="Coordinate: X" Wiki="X coordinate" />
     <posY AltName="Coordinate: Y" Wiki="Y coordinate (not used)" />
     <posZ AltName="Coordinate: Z" Wiki="Z coordinate" />

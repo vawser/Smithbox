@@ -32,14 +32,14 @@
     <behaviorJudgeId AltName="Behavior Judge ID" Wiki="Used when calculating the ID for attack parameters. This ID matches the action judgment ID entered in TimeActEditor. It is not used directly on the actual machine."  />
     <ezStateBehaviorType_old AltName="State Behavior Type" Wiki="For ID calculation rules" Enum="STATE_BEHAVIOR_TYPE" />
     <refType AltName="Reference Type" Wiki="Specify the reference ID so that it is correct." Enum="BEHAVIOR_REF_TYPE" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <refId AltName="Reference ID" Wiki="It can be used properly according to the attack power, missile, ID of special effect parameter, and refType." Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
     <consumeSA AltName="Poise Cost" Wiki="Set the amount of SA consumed during action." />
     <stamina AltName="Stamina Cost" Wiki="Set the amount of stamina consumed during action." />
     <consumeDurability AltName="Durability Cost" Wiki="Set the durability of weapons consumed during action." />
     <category AltName="Category" Wiki="Since there are effects (enchantment weapons, etc.) whose parameters fluctuate depending on skills, magic, items, etc., set each action so that the determined effect can correspond to the effect such as power up only weapon attack. Set None for items that do not need to be set, such as varistor." Enum="BEHAVIOR_CATEGORY" />
     <heroPoint AltName="Humanity Cost" Wiki="Set the amount of humanity consumed during action" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Handles animation events, including attack frames or firing bullets.\nResponsible for stamina consumption.\nNote that in Elden Ring, SpEffects are applied directly from the animation." AlternativeOrder="variationId,behaviorJudgeId,-,category,ezStateBehaviorType_old,-,refId,refType,-,consumeSA,stamina,consumeDurability,heroPoint,-"/>
 </PARAMMETA>

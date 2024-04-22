@@ -8,7 +8,7 @@
     <multiPlayAreaOffset AltName="Play Region ID Offset" Wiki="Multiplayer area ID offset. For example, if you enter 100, the multiplayer area ID will be offset by 100." />
     <overrideMapPlaceNameId AltName="Override Map Place Name ID" Wiki="Override the map name ID_place name display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID." FmgRef="TitleLocations" />
     <overrideSaveMapNameId AltName="Override Save Map Name ID" Wiki="Map name ID_Overwrites the save data display with the specified ID. -1: No overwrite, -2 or less, 0 or more: Overwrite the ID." FmgRef="TitleLocations" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

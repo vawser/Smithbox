@@ -130,7 +130,7 @@
     <atk27_AtkDistType AltName="Attack 28 attack success distance type" Wiki="Attack 28 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
     <atk28_AtkDistType AltName="Attack 29 attack success distance type" Wiki="Attack 29 attack success distance type" Enum="AI_ATK_DIST_TYPE" />
     <atk29_AtkDistType AltName="Attack success distance type of attack 30" Wiki="Attack success distance type of attack 30" Enum="AI_ATK_DIST_TYPE" />
-    <pad0 AltName=""/>
+    <pad0 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

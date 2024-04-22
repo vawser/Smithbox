@@ -9,9 +9,9 @@
   </Enums>
   <Field>
     <lerpMode AltName="Lerp Mode" Wiki="Interpolation method" Enum="MENU_COLOR_LERP_MODE" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <h AltName="Hue" Wiki="Hue. Treat as a fixed value in interpolation" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <s1 AltName="Saturation [1]" Wiki="Saturation 1. Treated as the first point of interpolation" />
     <v1 AltName="Brightness [1]" Wiki="Brightness 1. Treated as the first point of interpolation" />
     <s2 AltName="Saturation [2]" Wiki="Saturation 2. Treated as the second point of interpolation" />

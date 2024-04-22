@@ -36,19 +36,19 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <menuType AltName="Menu Type" Wiki="Specifies the type of tutorial menu to display" Enum="TUTORIAL_MENU_TYPE" />
     <triggerType AltName="Trigger Type" Wiki="Display timing (default: 0: -). You will see this tutorial when you open this menu. Specify 0: - if you do not want to display it when you open the menu." Enum="TUTORIAL_TRIGGER_TYPE" />
     <repeatType AltName="Repeat Type" Wiki="Number of times a tutorial can be displayed" Enum="TUTORIAL_REPEAT_TYPE" />
-    <pad1 AltName=""/>
+    <pad1 AltName="" IsHidden=""/>
     <imageId AltName="Image ID" Wiki="Specifies the tutorial image ID to display (default: 0). Specify 0 if you do not want to display the image" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <unlockEventFlagId AltName="Unlock Event Flag ID" Wiki="Event flag ID for display permission (default: 0). It will not be displayed until this flag is set. Specify 0 if you always want to allow" />
     <textId AltName="Text ID" Wiki="ID of the text to be displayed in the tutorial [TutorialText.xlsm]. This text ID is used for both Title and Body" FmgRef="TutorialBody" />
     <displayMinTime AltName="Display Minimum Time" Wiki="Shortest display guaranteed time [seconds]. Even if it is closed due to an event etc., it will be closed after displaying at least this time. It's only for toast, so it's ignored in modals" />
     <displayTime AltName="Display Time" Wiki="Display time [seconds]. It will close automatically after this time has passed since the toast was displayed. It's only for toast, so it's ignored in modals" />
-    <pad3 AltName=""/>
+    <pad3 AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

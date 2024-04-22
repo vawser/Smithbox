@@ -33,7 +33,7 @@
     <guard_L_DecTime AltName="Guard Damage Level - Heavy - Deceleration Time" Wiki="Set the deceleration time used for guard receiving large animation" />
     <guard_LL_DecTime AltName="Guard Damage Level - Very Break - Deceleration Time" Wiki="Set the deceleration time used for guard receiving oversized animation" />
     <guardBrake_DecTime AltName="Guard Damage Level - Break - Deceleration Time" Wiki="Set the deceleration time specified at the time of guard breaking animation" />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>

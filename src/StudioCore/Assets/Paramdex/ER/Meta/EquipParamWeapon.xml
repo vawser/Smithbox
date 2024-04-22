@@ -410,8 +410,8 @@
   </Enums>
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName=""/>
-    <disableParamReserve2 AltName=""/>
+    <disableParamReserve1 AltName="" IsHidden=""/>
+    <disableParamReserve2 AltName="" IsHidden=""/>
     <behaviorVariationId AltName="Behavior Variation ID" Wiki="Used when determining the action parameter ID to be referenced during an attack" VRef="behaviorVariation" />
     <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect) (7 digits is the limit in s32 to add the enhancement level in the program)" />
     <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
@@ -580,7 +580,7 @@
     <isAutoEquip AltName="Is Auto Equipped" Wiki="Only valid for arrows and bolts. Whether to automatically equip this weapon if the target equipment slot is empty when picking up this weapon" IsBool="" />
     <isEnableEmergencyStep AltName="Is Emergency Avoidance Possible" Wiki="Is it an emergency avoidable weapon? Pass it to the behavior script." IsBool="" />
     <invisibleOnRemo AltName="Is Hidden in Cutscene" Wiki="Is it hidden during cutscenes?" IsBool="" />
-    <pad2 AltName=""/>
+    <pad2 AltName="" IsHidden=""/>
     <correctType_Magic AltName="Correction Type: Magic" Wiki="Determining the type of magic attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <correctType_Fire AltName="Correction Type: Fire" Wiki="Determine the type of flame attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <correctType_Thunder AltName="Correction Type: Lightning" Wiki="Determine the type of lightning attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
@@ -678,7 +678,7 @@
     <stealthAtkRate AltName="Stealth Attack Multiplier" Wiki="Stealth attack power multiplier" />
     <vsPlayerDmgCorrectRate_Disease AltName="Vs. Player - Scarlet Rot Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <vsPlayerDmgCorrectRate_Curse AltName="Vs. Player - Blight Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <pad AltName=""/>
+    <pad AltName="" IsHidden=""/>
   </Field>
   <Self Wiki="Defines weapon types and each affinity.\nIncludes arrows and bolts. Responsible for scaling shown on certain consumables.\nIDs not ending in a multiple of 100 are ignored.\nPermitting affinities on a weapon without affinity rows at the correct IDs will result in the nearest 10000 being used.\nSpEffects specified here can be modified by upgrades in ReinforceParamWeapon." OffsetSize="100" AlternativeOrder="sortId,trophySGradeId,-,
 behaviorVariationId,swordArtsParamId,wepmotionCategory,guardmotionCategory,wepmotionOneHandId,wepmotionBothHandId,-,

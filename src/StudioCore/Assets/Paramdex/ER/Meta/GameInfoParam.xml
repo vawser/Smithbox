@@ -8,7 +8,7 @@
     <value AltName="Price" Wiki="price" />
     <sortId AltName="Sort ID" Wiki="Sort ID" />
     <eventId AltName="Action ID" Wiki="This is the action ID that determines the sales status." />
-    <Pad AltName=""/>
+    <Pad AltName="" IsHidden=""/>
   </Field>
   <Self />
 </PARAMMETA>
