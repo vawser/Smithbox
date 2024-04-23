@@ -488,6 +488,8 @@ public class CFG
 
     public bool EventFlagAtlas_ShowTags = true;
 
+    public bool ParticleAtlas_ShowTags = true;
+
     public bool MapNameAtlas_ShowUnused = false;
     public bool MapNameAtlas_ShowTags = true;
 

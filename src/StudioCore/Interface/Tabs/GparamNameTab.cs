@@ -29,7 +29,7 @@ public class GparamNameTab
     private string _newRefName = "";
     private string _newRefTags = "";
 
-    private string _selectedName;
+    private AliasReference _selectedEntry;
 
     private bool ShowNameAddSection = false;
 
@@ -129,11 +129,23 @@ public class GparamNameTab
         ImGui.Separator();
         ImGui.Spacing();
 
-        ImGui.BeginChild("GparamNameList");
+        ImGui.Columns(2);
+
+        ImGui.BeginChild("ParticleList");
 
         DisplaySelectionList(GparamAliasBank.Bank.AliasNames.GetEntries("Gparams"));
 
         ImGui.EndChild();
+
+        ImGui.NextColumn();
+
+        ImGui.BeginChild("EditWindow");
+
+        DisplayEditWindow();
+
+        ImGui.EndChild();
+
+        ImGui.Columns(1);
     }
 
     /// <summary>
@@ -165,9 +177,10 @@ public class GparamNameTab
 
             if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList))
             {
-                if (ImGui.Selectable(displayedName))
+                if (ImGui.Selectable(displayedName, entry == _selectedEntry))
                 {
-                    _selectedName = refID;
+                    _selectedEntry = entry;
+
                     _refUpdateId = refID;
                     _refUpdateName = refName;
 
@@ -183,36 +196,46 @@ public class GparamNameTab
                     else
                         _refUpdateTags = "";
                 }
-
-                if (_selectedName == refID)
-                {
-                    if (ImGui.BeginPopupContextItem($"{refID}##context"))
-                    {
-                        ImGui.InputText($"Name", ref _refUpdateName, 255);
-                        ImGui.InputText($"Tags", ref _refUpdateTags, 255);
-
-                        if (ImGui.Button("Update"))
-                        {
-                            GparamAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
-                            ImGui.CloseCurrentPopup();
-                            GparamAliasBank.Bank.CanReloadBank = true;
-                        }
-                        ImGui.SameLine();
-                        if (ImGui.Button("Restore Default"))
-                        {
-                            GparamAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
-                            ImGui.CloseCurrentPopup();
-                            GparamAliasBank.Bank.CanReloadBank = true;
-                        }
-
-                        ImGui.EndPopup();
-                    }
-                }
-
-                if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-                {
-                }
             }
+        }
+    }
+
+    private void DisplayEditWindow()
+    {
+        if (_selectedEntry != null)
+        {
+            var refID = $"{_selectedEntry.id}";
+
+            ImGui.Text($"Alias for {refID}");
+
+            ImGui.Text($"Name");
+            ImGui.InputText($"##Name", ref _refUpdateName, 255);
+
+            ImGui.Text($"Tags");
+            ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
+
+            if (ImGui.Button("Update"))
+            {
+                GparamAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                ImGui.CloseCurrentPopup();
+                GparamAliasBank.Bank.CanReloadBank = true;
+            }
+            ImGui.SameLine();
+            if (ImGui.Button("Restore Default"))
+            {
+                GparamAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
+                ImGui.CloseCurrentPopup();
+                GparamAliasBank.Bank.CanReloadBank = true;
+            }
+            ImGui.SameLine();
+            if (ImGui.Button("Copy ID to Clipboard"))
+            {
+                PlatformUtils.Instance.SetClipboardText($"{refID}");
+            }
+        }
+        else
+        {
+            ImGui.Text("Select an entry to edit its properties.");
         }
     }
 }

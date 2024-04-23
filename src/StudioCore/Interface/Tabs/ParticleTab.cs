@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Interface.Tabs;
 
-public class MapNameTab
+public class ParticleTab
 {
     private string _searchInput = "";
     private string _searchInputCache = "";
@@ -30,78 +30,74 @@ public class MapNameTab
 
     private AliasReference _selectedEntry;
 
-    private bool ShowMapNameAddSection = false;
+    private bool ShowEventFlagAddSection = false;
 
-    public MapNameTab() { }
+    public ParticleTab() { }
 
     public void Display()
     {
         if (Project.Type == ProjectType.Undefined)
             return;
 
-        if (MapAliasBank.Bank.IsLoadingAliases)
+        if (ParticleAliasBank.Bank.IsLoadingAliases)
             return;
 
-        if (ShowMapNameAddSection)
+
+        if (ShowEventFlagAddSection)
         {
             if (ImGui.Button("Show Alias List"))
             {
-                ShowMapNameAddSection = false;
+                ShowEventFlagAddSection = false;
             }
         }
         else
         {
             if (ImGui.Button("Add New Alias"))
             {
-                ShowMapNameAddSection = true;
+                ShowEventFlagAddSection = true;
             }
         }
 
-        ImGui.SameLine();
-        ImGui.Checkbox("Toggle Display in Editor", ref CFG.Current.Interface_Display_Alias_for_Msb);
-        ImguiUtils.ShowHoverTooltip("Toggle the display of the Map Name aliases in the Map Editor.");
-
         ImGui.Separator();
 
-        if (ShowMapNameAddSection)
+        if (ShowEventFlagAddSection)
         {
-            DisplayMapNameAddSection();
+            DisplayEventFlagAddSection();
         }
         else
         {
-            DisplayMapNameGroupList();
+            DisplayEventFlagGroupList();
         }
 
-
-        if (MapAliasBank.Bank.CanReloadBank)
+        if (ParticleAliasBank.Bank.CanReloadBank)
         {
-            MapAliasBank.Bank.CanReloadBank = false;
-            MapAliasBank.Bank.ReloadAliasBank();
+            ParticleAliasBank.Bank.CanReloadBank = false;
+            ParticleAliasBank.Bank.ReloadAliasBank();
         }
     }
 
-    public void DisplayMapNameAddSection()
+    public void DisplayEventFlagAddSection()
     {
         ImGui.Text("ID");
         ImGui.InputText($"##ID", ref _newRefId, 255);
-        ImguiUtils.ShowHoverTooltip("The map ID of the map name to add.");
+        ImguiUtils.ShowHoverTooltip("The numeric ID of the event flag to add.");
 
         ImGui.Text("Name");
         ImGui.InputText($"##Name", ref _newRefName, 255);
-        ImguiUtils.ShowHoverTooltip("The alias name to give to the added map name.");
+        ImguiUtils.ShowHoverTooltip("The alias name to give to the added event flag.");
 
         ImGui.Text("Tags");
         ImGui.InputText($"##Tags", ref _newRefTags, 255);
-        ImguiUtils.ShowHoverTooltip("The tags to associate with this map name.");
+        ImguiUtils.ShowHoverTooltip("The tags to associate with this event flag.");
 
         if (ImGui.Button("Add New Alias"))
         {
             // Make sure the ref ID is a number
-            if (Regex.IsMatch(_newRefId, @"m\d{2}_\d{2}_\d{2}_\d{2}"))
+            if (Regex.IsMatch(_newRefId, @"^\d+$"))
             {
                 var isValid = true;
 
-                var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
+                var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Flags");
 
                 foreach (var entry in entries)
                 {
@@ -111,9 +107,9 @@ public class MapNameTab
 
                 if (isValid)
                 {
-                    MapAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
+                    ParticleAliasBank.Bank.AddToLocalAliasBank("", _newRefId, _newRefName, _newRefTags);
                     ImGui.CloseCurrentPopup();
-                    MapAliasBank.Bank.CanReloadBank = true;
+                    ParticleAliasBank.Bank.CanReloadBank = true;
                 }
                 else
                 {
@@ -122,19 +118,18 @@ public class MapNameTab
             }
             else
             {
-                PlatformUtils.Instance.MessageBox($"ID must match map name format - mXX_XX_XX_XX.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PlatformUtils.Instance.MessageBox($"{_newRefId} ID must be numeric.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 
-    public void DisplayMapNameGroupList()
+    public void DisplayEventFlagGroupList()
     {
         ImGui.InputText($"Search", ref _searchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
         ImGui.SameLine();
-        ImGui.Checkbox("Show unused map names", ref CFG.Current.MapNameAtlas_ShowUnused);
-        ImguiUtils.ShowHoverTooltip("Enabling this option will allow unused or debug map names to appear in the scene tree view.");
-
+        ImGui.Checkbox("Show Tags", ref CFG.Current.ParticleAtlas_ShowTags);
+        ImguiUtils.ShowHoverTooltip("When enabled the list will display the tags next to the name.");
 
         ImGui.Spacing();
         ImGui.Separator();
@@ -142,9 +137,9 @@ public class MapNameTab
 
         ImGui.Columns(2);
 
-        ImGui.BeginChild("MapNameList");
+        ImGui.BeginChild("ParticleList");
 
-        DisplaySelectionList(MapAliasBank.Bank.AliasNames.GetEntries("Maps"));
+        DisplaySelectionList(ParticleAliasBank.Bank.AliasNames.GetEntries("Particles"));
 
         ImGui.EndChild();
 
@@ -164,12 +159,18 @@ public class MapNameTab
     /// </summary>
     private void DisplaySelectionList(List<AliasReference> referenceList)
     {
-        if (_searchInput != _searchInputCache)
+        var referenceDict = new Dictionary<string, AliasReference>();
+
+        foreach (AliasReference v in referenceList)
         {
-            _searchInputCache = _searchInput;
+            if (!referenceDict.ContainsKey(v.id))
+                referenceDict.Add(v.id, v);
         }
 
-        var entries = MapAliasBank.Bank.AliasNames.GetEntries("Maps");
+        if (_searchInput != _searchInputCache)
+            _searchInputCache = _searchInput;
+
+        var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
 
         foreach (var entry in entries)
         {
@@ -179,17 +180,8 @@ public class MapNameTab
             var refName = $"{entry.name}";
             var refTagList = entry.tags;
 
-            // Skip the unused names if this is disabled
-            if (!CFG.Current.MapNameAtlas_ShowUnused)
-            {
-                if (refTagList[0] == "unused")
-                {
-                    continue;
-                }
-            }
-
             // Append tags to to displayed name
-            if (CFG.Current.MapNameAtlas_ShowTags)
+            if (CFG.Current.ParticleAtlas_ShowTags)
             {
                 var tagString = string.Join(" ", refTagList);
                 displayedName = $"{displayedName} {{ {tagString} }}";
@@ -222,7 +214,7 @@ public class MapNameTab
 
     private void DisplayEditWindow()
     {
-        if (_selectedEntry != null)
+        if(_selectedEntry != null)
         {
             var refID = $"{_selectedEntry.id}";
 
@@ -236,21 +228,23 @@ public class MapNameTab
 
             if (ImGui.Button("Update"))
             {
-                MapAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                ParticleAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
                 ImGui.CloseCurrentPopup();
-                MapAliasBank.Bank.CanReloadBank = true;
+                ParticleAliasBank.Bank.CanReloadBank = true;
             }
             ImGui.SameLine();
             if (ImGui.Button("Restore Default"))
             {
-                MapAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
+                ParticleAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
                 ImGui.CloseCurrentPopup();
-                MapAliasBank.Bank.CanReloadBank = true;
+                ParticleAliasBank.Bank.CanReloadBank = true;
             }
             ImGui.SameLine();
             if (ImGui.Button("Copy ID to Clipboard"))
             {
-                PlatformUtils.Instance.SetClipboardText($"{refID}");
+                var num = long.Parse(refID.Replace("f", ""));
+
+                PlatformUtils.Instance.SetClipboardText($"{num}");
             }
         }
         else

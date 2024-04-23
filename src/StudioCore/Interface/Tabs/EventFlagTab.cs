@@ -28,7 +28,7 @@ public class EventFlagTab
     private string _newRefName = "";
     private string _newRefTags = "";
 
-    private string _selectedName;
+    private AliasReference _selectedEntry;
 
     private bool ShowEventFlagAddSection = false;
 
@@ -135,11 +135,23 @@ public class EventFlagTab
         ImGui.Separator();
         ImGui.Spacing();
 
+        ImGui.Columns(2);
+
         ImGui.BeginChild("EventFlagList");
 
         DisplaySelectionList(FlagAliasBank.Bank.AliasNames.GetEntries("Flags"));
 
         ImGui.EndChild();
+
+        ImGui.NextColumn();
+
+        ImGui.BeginChild("EditWindow");
+
+        DisplayEditWindow();
+
+        ImGui.EndChild();
+
+        ImGui.Columns(1);
     }
 
     /// <summary>
@@ -177,9 +189,10 @@ public class EventFlagTab
 
             if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, refTagList))
             {
-                if (ImGui.Selectable(displayedName))
+                if (ImGui.Selectable(displayedName, entry == _selectedEntry))
                 {
-                    _selectedName = refID;
+                    _selectedEntry = entry;
+
                     _refUpdateId = refID;
                     _refUpdateName = refName;
 
@@ -191,41 +204,50 @@ public class EventFlagTab
                         _refUpdateTags = tagStr;
                     }
                     else
-                        _refUpdateTags = "";
-                }
-
-                if (_selectedName == refID)
-                {
-                    if (ImGui.BeginPopupContextItem($"{refID}##context"))
                     {
-                        ImGui.InputText($"Name", ref _refUpdateName, 255);
-                        ImGui.InputText($"Tags", ref _refUpdateTags, 255);
-
-                        if (ImGui.Button("Update"))
-                        {
-                            FlagAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
-                            ImGui.CloseCurrentPopup();
-                            FlagAliasBank.Bank.CanReloadBank = true;
-                        }
-                        ImGui.SameLine();
-                        if (ImGui.Button("Restore Default"))
-                        {
-                            FlagAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
-                            ImGui.CloseCurrentPopup();
-                            FlagAliasBank.Bank.CanReloadBank = true;
-                        }
-
-                        ImGui.EndPopup();
+                        _refUpdateTags = "";
                     }
                 }
-
-                if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-                {
-                    var num = long.Parse(refID.Replace("f", ""));
-
-                    PlatformUtils.Instance.SetClipboardText($"{num}");
-                }
             }
+        }
+    }
+
+    private void DisplayEditWindow()
+    {
+        if (_selectedEntry != null)
+        {
+            var refID = $"{_selectedEntry.id}";
+
+            ImGui.Text($"Alias for {refID}");
+
+            ImGui.Text($"Name");
+            ImGui.InputText($"##Name", ref _refUpdateName, 255);
+
+            ImGui.Text($"Tags");
+            ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
+
+            if (ImGui.Button("Update"))
+            {
+                FlagAliasBank.Bank.AddToLocalAliasBank("", _refUpdateId, _refUpdateName, _refUpdateTags);
+                ImGui.CloseCurrentPopup();
+                FlagAliasBank.Bank.CanReloadBank = true;
+            }
+            ImGui.SameLine();
+            if (ImGui.Button("Restore Default"))
+            {
+                FlagAliasBank.Bank.RemoveFromLocalAliasBank("", _refUpdateId);
+                ImGui.CloseCurrentPopup();
+                FlagAliasBank.Bank.CanReloadBank = true;
+            }
+            ImGui.SameLine();
+            if (ImGui.Button("Copy ID to Clipboard"))
+            {
+                PlatformUtils.Instance.SetClipboardText($"{refID}");
+            }
+        }
+        else
+        {
+            ImGui.Text("Select an entry to edit its properties.");
         }
     }
 }

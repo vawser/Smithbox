@@ -26,7 +26,7 @@ public class MapGroupTab
     private string _newRefCategory = "";
     private string _newRefMembers = "";
 
-    private string _selectedId;
+    private MapGroupReference _selectedEntry;
 
     private string _refUpdateId = "";
     private string _refUpdateName = "";
@@ -179,11 +179,23 @@ public class MapGroupTab
         ImGui.Separator();
         ImGui.Spacing();
 
+        ImGui.Columns(2);
+
         ImGui.BeginChild("MapGroupList");
 
         DisplaySelectionList(MapGroupsBank.Bank.Entries.list);
 
         ImGui.EndChild();
+
+        ImGui.NextColumn();
+
+        ImGui.BeginChild("EditWindow");
+
+        DisplayEditWindow();
+
+        ImGui.EndChild();
+
+        ImGui.Columns(1);
     }
 
     private void DisplaySelectionList(List<MapGroupReference> referenceList)
@@ -220,38 +232,35 @@ public class MapGroupTab
 
             if (SearchFilters.IsSearchMatch(_searchInput, refID, refName, null))
             {
-                if (ImGui.Selectable($"{displayedName}##{refID}"))
+                if (ImGui.Selectable($"{displayedName}##{refID}", entry == _selectedEntry))
                 {
-                    _selectedId = refID;
+                    _selectedEntry = entry;
+
                     _refUpdateId = refID;
                     _refUpdateName = refName;
                     _refUpdateDesc = refDesc;
                     _refUpdateCategory = refCategory;
                     _refUpdateMembers = refMembersString;
                 }
-
-                if (_selectedId == refID)
-                {
-                    EditMapGroupPopup(refID);
-                }
-
-                if (ImGui.IsItemClicked() && ImGui.IsMouseDoubleClicked(0))
-                {
-                }
             }
         }
     }
 
-    public void EditMapGroupPopup(string refID)
+    private void DisplayEditWindow()
     {
-        if (ImGui.BeginPopupContextItem($"{refID}##context{refID}"))
+        if (_selectedEntry != null)
         {
+            ImGui.Text($"Alias for {_selectedEntry.id}");
+
             ImGui.Text("Name");
             ImGui.InputText($"##Name", ref _refUpdateName, 255);
+
             ImGui.Text("Description");
             ImGui.InputTextMultiline($"##Description", ref _refUpdateDesc, 255, new Vector2(255, 200));
+
             ImGui.Text("Category");
             ImGui.InputText($"##Category", ref _refUpdateCategory, 255);
+
             ImGui.Text("Members");
             ImGui.InputText($"##Members", ref _refUpdateMembers, 255);
 
@@ -281,7 +290,6 @@ public class MapGroupTab
                 }
 
                 MapGroupsBank.Bank.AddToLocalBank(_refUpdateId, _refUpdateName, _refUpdateDesc, _refUpdateCategory, mapGroupMembers);
-                ImGui.CloseCurrentPopup();
                 MapGroupsBank.Bank.CanReloadMapGroupBank = true;
             }
             ImguiUtils.ShowHoverTooltip("Edit this map group.");
@@ -292,7 +300,6 @@ public class MapGroupTab
             if (!MapGroupsBank.Bank.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Restore Default"))
             {
                 MapGroupsBank.Bank.RemoveFromLocalBank(_refUpdateId);
-                ImGui.CloseCurrentPopup();
                 MapGroupsBank.Bank.CanReloadMapGroupBank = true;
             }
             ImguiUtils.ShowHoverTooltip("Restore this map group to its default values.");
@@ -301,12 +308,13 @@ public class MapGroupTab
             if (MapGroupsBank.Bank.IsLocalMapGroup(_refUpdateId) && ImGui.Button("Delete"))
             {
                 MapGroupsBank.Bank.RemoveFromLocalBank(_refUpdateId);
-                ImGui.CloseCurrentPopup();
                 MapGroupsBank.Bank.CanReloadMapGroupBank = true;
             }
             ImguiUtils.ShowHoverTooltip("Delete this map group.");
-
-            ImGui.EndPopup();
+        }
+        else
+        {
+            ImGui.Text("Select an entry to edit its properties.");
         }
     }
 }

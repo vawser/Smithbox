@@ -24,6 +24,7 @@ public class ProjectWindow
 
     public ProjectSettings ProjSettings = null;
 
+    private ParticleTab ParticleTab;
     private EventFlagTab EventFlagTab;
     private MapNameTab MapNameTab;
     private MapGroupTab MapGroupTab;
@@ -31,6 +32,7 @@ public class ProjectWindow
 
     public ProjectWindow()
     {
+        ParticleTab = new ParticleTab();
         EventFlagTab = new EventFlagTab();
         MapNameTab = new MapNameTab();
         MapGroupTab = new MapGroupTab();
@@ -65,9 +67,10 @@ public class ProjectWindow
 
             DisplayProjectTab();
             DisplayMapGroupTab();
-            DisplayEventFlagTab();
             DisplayMapNameTab();
             DisplayGparamNameTab();
+            DisplayEventFlagTab();
+            DisplayParticleTab();
 
             ImGui.EndTabBar();
         }
@@ -165,6 +168,16 @@ public class ProjectWindow
         if (ImGui.BeginTabItem("Gparam Names"))
         {
             GparamNameTab.Display();
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void DisplayParticleTab()
+    {
+        if (ImGui.BeginTabItem("Particles"))
+        {
+            ParticleTab.Display();
 
             ImGui.EndTabItem();
         }
