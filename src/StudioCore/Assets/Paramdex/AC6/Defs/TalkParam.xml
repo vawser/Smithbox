@@ -6,7 +6,7 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 Unk0x00"></Field>
+    <Field Def="s32 pad1"></Field>
     <Field Def="s32 msgId"></Field>
     <Field Def="s32 voiceId"></Field>
     <Field Def="s32 spEffectId0"></Field>
@@ -16,7 +16,7 @@
     <Field Def="s32 returnPos"></Field>
     <Field Def="s32 reactionId"></Field>
     <Field Def="s32 eventId"></Field>
-    <Field Def="f32 msgId_female"></Field>
+    <Field Def="f32 UnkFloat0x18"></Field>
     <Field Def="s16 UnkShort0x2C"></Field>
     <Field Def="s16 UnkShort0x2E"></Field>
     <Field Def="s32 characterNameTextId"></Field>

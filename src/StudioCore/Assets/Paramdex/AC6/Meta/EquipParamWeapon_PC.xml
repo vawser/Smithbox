@@ -325,9 +325,23 @@
     <demonstrationVideoBinkId AltName="Demostration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" />
     <pulseArmorRadius AltName="Pulse Armor: Radius" Wiki="Size of effective pulse armor (see pulseArmorVisualRadius for visual radius)." />
     <pulseArmorVisualRadius AltName="Pulse Armor: Visual Radius" Wiki="Size of pulse armor visuals (see pulseArmorRadius for effective radius)." />
-    <displayFullChargeTimeValue AltName="Display Full Charge Time in Menu" />
-    <displayChargedBlastRadius AltName="Display Charged Blast Radius in Menu" />
-    <chargedBurstFire_ProjectileCount AltName="Projectile Count Display for Charged Burst Attributes" />
+    <menuChargeTimeType AltName="Menu: Show Full Charge Time" Wiki="Determines if a weapon reports its Full Charge Time in the menu for weapons with multiple charge stages. No gameplay effect." />
+    <menuSecondaryChargedBlastRadius AltName="Menu: Show Secondary Charged Blast Radius" Wiki="Determines if a weapon reports Charged Blast Radius from secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuSecondaryAttackPower AltName="Menu: Show Secondary Attack Power" Wiki="Determines if a weapon reports Attack Power from secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuSecondaryDamageField AltName="Menu: Show Secondary Damage Field" Wiki="Determines if a weapon reports multiple ticks of damage from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
+    <menuSecondaryDirectHitAdjustment AltName="Menu: Show Secondary Direct Hit Adjustment" Wiki="Determines if a weapon reports Direct Hit Adjustment from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
+    <menuSecondaryImpact AltName="Menu: Show Secondary Impact" Wiki="Determines if a weapon reports Impact from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
+    <menuSecondaryAccumulativeImpact AltName="Menu: Show Secondary Accumulative Impact" Wiki="Determines if a weapon reports Accumulative Impact from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
+    <menuSecondaryBlastRadius AltName="Menu: Show Secondary Blast Radius" Wiki="Determines if a weapon reports Blast Radius from its secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <unkSecondaryDamageField AltName="Menu: Show Unk Secondary Damage Field" Wiki="Appears to relate to the same information as menuSecondaryDamageField. Why two fields do this is unknown but both seem required." />
+    <menuSecondaryChargedAttackPower AltName="Menu: Show Secondary Charged Attack Power" Wiki="Determines if a weapon reports Charged Attack Power from secondary bullets, such as a laser shotgun explosion. No gameplay effect." />
+    <menuSecondaryChargedDamageField AltName="Menu: Show Secondary Charged Damage Field" Wiki="Determines if a weapon reports multiple ticks of damage from its secondary charged bullets, such as plasma AoE fields. No gameplay effect." />
+    <unkSecondaryChargedDamageField AltName="Menu: Show Unk Secondary Charged Damage Field" Wiki="Appears to relate to the same information as menuSecondaryChargedDamageField. Why two fields do this is unknown but both seem required." />
+    <menuSecondaryChargedImpact AltName="Menu: Show Secondary Charged Impact" Wiki="Determines if a weapon reports Charged Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuSecondaryChargedAccumulativeImpact AltName="Menu: Show Secondary Charged Accumulative Impact" Wiki="Determines if a weapon reports Charged Accumulative Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuBurstFire AltName="Menu: Show Burst Fire" Wiki="Determines if a weapon's standard fire reports its burst fire count to the menu, causing its displayed Attack Power, Impact, and Accumulative Impact to display said burst fire count. No gameplay effect." />
+    <menuChargedBurstFire AltName="Menu: Show Charged Burst Fire" Wiki="Determines if a weapon's charge fire reports its burst fire to the menu, causing its displayed Chg Attack Power, Chg Impact, and Chg Accum Impact to display said burst fire count. No gameplay effect." />
+    
   </Field>
   <Self />
 </PARAMMETA>
