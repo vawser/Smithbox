@@ -140,7 +140,7 @@ typedef struct {
     int offset08 <format=hex>;
     int count0c;
     short unk10;
-    short unk12; Assert(unk12 == -1);
+    short unk12; 
     short unk14; Assert(unk14 == -1);
     short unk16;
     if(header.version > 0xa) 

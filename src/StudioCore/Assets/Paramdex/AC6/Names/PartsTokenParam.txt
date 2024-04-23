@@ -1,0 +1,82 @@
+790000 Combat Log - Destroy The Transport Helicopters - BAWS Tetrapod MT (Silver)
+798000 Combat Log - Destroy The Tester AC - Dafeng Student Pilot
+202001 Combat Log - Attack The Dam Complex - Index Dunham (Burn Pickaxe) (Gold)
+202000 Combat Log - Attack The Dam Complex - BAWS Tetrapod MT c3400_0000
+203020 Combat Log - Operation Wallclimber - BAWS Bipedal MT c3020_0023
+203030 Combat Log - Operation Wallclimber - BAWS Bipedal MT c3020_0025
+203040 Combat Log - Operation Wallclimber - BAWS Bipedal MT c3020_0022
+210000 Combat Log - Retrieve Combat Logs - Little Ziyi (Yue Yu)
+205000 (this is probably supposed to be Invincible Rummy MAD STOMP)
+212000 Combat Log - Infiltrate Grid 086 - BAWS Tetrapod MT c3400_0010
+212010 Combat Log - Infiltrate Grid 086 - BAWS Tetrapod MT c3400_0001
+212020 Combat Log - Infiltrate Grid 086 - Nosaac (Bitter Promise)
+212025 Combat Log - Attack The Watchpoint - Sulla (Entangle) AND Infiltrate Grid 086 - Invincible Rummy (MAD STOMP)
+212030 Combat Log - Infiltrate Grid 086 - RaD TOYBOX c4150_0002
+212040 Combat Log - Infiltrate Grid 086 - RaD TOYBOX c4150_0003
+212060 Combat Log - Infiltrate Grid 086 - RaD TOYBOX c4150_0005
+212062 Combat Log - Infiltrate Grid 086 - RaD Tetrapod MT c3600_0012
+212064 Combat Log - Infiltrate Grid 086 - RaD Tetrapod MT c3600_0052
+218000 Combat Log - Ocean Crossing - Tiny Laser Drone c5300_0046
+218010 Combat Log - Ocean Crossing - Tiny Laser Drone c5300_0070
+218020 Combat Log - Ocean Crossing - Tiny Laser Drone c5300_0071
+218030 Combat Log - Ocean Crossing - Tiny Laser Drone c5300_0072
+301110 Combat Log - Steal The Survey Data - BAWS Tetrapod MT c3400_0003
+303010 Combat Log - Attack The Refueling Base - Light Cavalry c3250_0003
+303015 Combat Log - Attack The Refueling Base - Light Cavalry c3250_0004
+342000 Combat Log - Tunnel Sabotage - Light Cavalry c3250_0001
+217000 Combat Log - Eliminate V.VII - V.II Swinburne (Guidance)
+217010 Combat Log - Eliminate V.VII - BAWS Tetrapod MT c3400_0004
+217020 Combat Log - Eliminate V.VII - Rokumonsen (Shinobi)
+510010 Combat Log - Survey The Uninhabited Floating City - Xylem Wing Drone c3100_0006
+510500 Combat Log - Survey The Uninhabited Floating City - Thumb Dolmayan (Astghik)
+799000 Combat Log - Eliminate The Enforcement Squads - Ring Freddie (Candle Ring)
+304330 Combat Log - Attack The Old Spaceport - Light Cavalry c3250_0005
+304340 Combat Log - Attack The Old Spaceport - Light Cavalry c3250_0010
+304350 Combat Log - Attack The Old Spaceport - Light Cavalry c3250_0011
+332010 Combat Log - Eliminate "Honest" Brute - RaD TOYBOX c4150_0012
+332020 Combat Log - Eliminate "Honest" Brute - RaD TOYBOX c4150_0010
+332030 Combat Log - Eliminate "Honest" Brute - RaD TOYBOX c4150_0004
+332040 Combat Log - Eliminate "Honest" Brute - BAWS Tetrapod MT c3400_0000
+332050 Combat Log - Eliminate "Honest" Brute - "Honest" Brute (Milk Tooth) (Platinum)
+795000 Combat Log - Defend The Old Spaceport - Raven (Nightfall)
+401000 Combat Log - Underground Depth Exploration Depth 2 - PCA Heavy MT c3700_0008
+401010 Combat Log - Underground Depth Exploration Depth 2 - PCA Heavy MT c3700_0009
+401020 Combat Log - Underground Depth Exploration Depth 2 - G5 Iguazu (Head Bringer)
+401500 Combat Log - Underground Depth Exploration Depth 2 - Coldcall (Deadsled)
+402010 Combat Log - Underground Depth Exploration Depth 3 - PCA Heavy MT c3700_0016
+402020 Combat Log - Underground Depth Exploration Depth 3 - PCA Heavy MT c3700_0009
+402030 Combat Log - Underground Depth Exploration Depth 3 - IA-C01 Ephemera
+411000 Combat Log - Ambush The Vespers - V.V Hawkins (Reconfig)
+411010 Combat Log - Ambush The Vespers - V.VIII Pater (Dual Nature)
+402100 Combat Log - Unknown Territory Survey - V.IV Rusty (Steel Haze)
+402610 Combat Log - Unknown Territory Survey - Middle Flatwell (Tsubasa)
+403030 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0001
+403040 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0004
+403050 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0006
+403060 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0007
+403070 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0008
+403080 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0009
+403090 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0012
+403100 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0013
+403110 Combat Log - Reach The Coral Convergence - Bonewheel c5250_0005
+403120 Combat Log - Reach The Coral Convergence - Institute MT c3500_0000
+403130 Combat Log - Reach The Coral Convergence - Institute MT c3500_0001
+403140 Combat Log - Reach The Coral Convergence - G3 Wu Huahai (Li Long)
+403150 Combat Log - Reach The Coral Convergence - V.VI Maeterlinck (Infection)
+502000 Combat Log - Intercept The Corporate Forces - Light Cavalry c3250_0002
+502010 Combat Log - Intercept The Corporate Forces - V.I Freud (Locksmith)
+202500 Combat Log - Attack The Dam Complex - G4 Volta (Cannon Head)
+214000 Combat Log - Prisoner Rescue - BAWS Tetrapod MT c3400_0000
+214020 Combat Log - Prisoner Rescue - G2 Nile (Deep Down)
+224010 Combat Log - Defend The Dam Complex - King (Aster Crown)
+224020 Combat Log - Defend The Dam Complex - Chartreuse (Umber Ox)
+793000 Combat Log - Intercept The Redguns - G1 Michigan (Liger Tail)
+505000 Combat Log - Eliminate "Cinder" Carla - V.II Snail (Open Faith)
+505010 Combat Log - Eliminate "Cinder" Carla - "Cinder" Carla (Full Course)
+505020 Combat Log - Eliminate "Cinder" Carla - "Chatty" Stick (CIRCUS)
+223000 Combat Log - Stop The Secret Data Breach - BAWS Tetrapod MT c3400_0001
+223010 Combat Log - Stop The Secret Data Breach - RaD Tetrapod MT c3600_0010
+223020 Combat Log - Stop The Secret Data Breach - RaD Tetrapod MT c3600_0011
+223030 Combat Log - Stop The Secret Data Breach - RaD Tetrapod MT c3600_0012
+794000 Combat Log - Eliminate V.VIII - V.VIII O'Keeffe (Barren Flower)
+410020 Combat Log - MIA - G6 Red (Hermit)

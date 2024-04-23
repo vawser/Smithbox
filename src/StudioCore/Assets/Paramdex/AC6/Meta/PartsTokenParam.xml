@@ -1,5 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Enums>
+    <Enum Name="GRADES_1" type="u16">
+        <Option Value="1" Name="Bronze" />
+        <Option Value="2" Name="Silver" />
+        <Option Value="3" Name="Gold" />
+        <Option Value="4" Name="Platinum" />
+    </Enum> 
+    <Enum Name="GRADES_2" type="u8">
+        <Option Value="0" Name="Bronze" />
+        <Option Value="1" Name="Silver" />
+        <Option Value="2" Name="Gold" />
+        <Option Value="3" Name="Platinum" />
+    </Enum> 
+  </Enums>
+  <Field>
+    <pad1 IsHidden="" />
+    <grade1 AltName="Grade" Enum="GRADES_1" />
+    <grade2 AltName="Grade" Enum="GRADES_2" />
+    <pad2 IsHidden="" />
+    <pad3 IsHidden="" />
+    <pad4 IsHidden="" />
+  </Field>
   <Self />
 </PARAMMETA>
