@@ -121,6 +121,7 @@ public class Smithbox
 
         // Windows
         WindowContainer.ProjectWindow = new ProjectWindow();
+        WindowContainer.AliasWindow = new AliasWindow();
         WindowContainer.SettingsWindow = new SettingsWindow();
         WindowContainer.HelpWindow = new HelpWindow();
         WindowContainer.DebugWindow = new DebugWindow();
@@ -1079,6 +1080,12 @@ public class Smithbox
             }
             ImguiUtils.ShowHoverTooltip("Project");
 
+            if (ImGui.Button($"{ForkAwesome.FileText}##AliasWindow"))
+            {
+                WindowContainer.AliasWindow.ToggleMenuVisibility();
+            }
+            ImguiUtils.ShowHoverTooltip("Aliases");
+
             if (ImGui.Button($"{ForkAwesome.Database}##MemoryWindow"))
             {
                 WindowContainer.MemoryWindow.ToggleMenuVisibility();
@@ -1111,6 +1118,7 @@ public class Smithbox
         WindowContainer.KeybindWindow.Display();
         WindowContainer.MemoryWindow.Display();
         WindowContainer.ProjectWindow.Display();
+        WindowContainer.AliasWindow.Display();
 
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);

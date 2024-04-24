@@ -24,21 +24,11 @@ public class ProjectWindow
 
     public ProjectSettings ProjSettings = null;
 
-    private ParticleTab ParticleAliasTab;
-    private EventFlagTab EventFlagAliasTab;
-    private MapNameTab MapAliasTab;
     private MapGroupTab MapGroupTab;
-    private GparamNameTab GparamAliasTab;
-    private SoundTab SoundAliasTab;
 
     public ProjectWindow()
     {
-        ParticleAliasTab = new ParticleTab();
-        EventFlagAliasTab = new EventFlagTab();
-        MapAliasTab = new MapNameTab();
         MapGroupTab = new MapGroupTab();
-        GparamAliasTab = new GparamNameTab();
-        SoundAliasTab = new SoundTab();
     }
 
     public void ToggleMenuVisibility()
@@ -69,11 +59,6 @@ public class ProjectWindow
 
             DisplayProjectTab();
             DisplayMapGroupTab();
-            DisplayMapNameTab();
-            DisplayGparamNameTab();
-            DisplayEventFlagTab();
-            DisplayParticleTab();
-            DisplaySoundTab();
 
             ImGui.EndTabBar();
         }
@@ -141,56 +126,6 @@ public class ProjectWindow
         if (ImGui.BeginTabItem("Map Groups"))
         {
             MapGroupTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayEventFlagTab()
-    {
-        if (ImGui.BeginTabItem("Event Flags"))
-        {
-            EventFlagAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayMapNameTab()
-    {
-        if (ImGui.BeginTabItem("Map Names"))
-        {
-            MapAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayGparamNameTab()
-    {
-        if (ImGui.BeginTabItem("Gparam Names"))
-        {
-            GparamAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplayParticleTab()
-    {
-        if (ImGui.BeginTabItem("Particles"))
-        {
-            ParticleAliasTab.Display();
-
-            ImGui.EndTabItem();
-        }
-    }
-
-    public void DisplaySoundTab()
-    {
-        if (ImGui.BeginTabItem("Sounds"))
-        {
-            SoundAliasTab.Display();
 
             ImGui.EndTabItem();
         }

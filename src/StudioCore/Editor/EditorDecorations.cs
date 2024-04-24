@@ -16,6 +16,7 @@ using System.Reflection;
 using Veldrid;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Editor;
 
@@ -345,13 +346,54 @@ public class EditorDecorations
             ImGui.PopStyleColor();
         }
     }
-
     public static void EnumValueText(Dictionary<string, string> enumValues, string value)
     {
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
         ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
         ImGui.PopStyleColor();
     }
+
+    public static void AliasEnumNameText(string name, Param.Row row, string limitField, string limitValue)
+    {
+        var inactiveEnum = false;
+
+        if (limitField != "")
+        {
+            Param.Cell? c = row?[limitField];
+            inactiveEnum = row != null && c != null && Convert.ToInt32(c.Value.Value) != Convert.ToInt32(limitValue);
+        }
+
+        if (CFG.Current.Param_HideEnums == false) //Move preference
+        {
+            if(!inactiveEnum)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                ImGui.TextUnformatted($@"   {name}");
+                ImGui.PopStyleColor();
+            }
+        }
+    }
+    public static void AliasEnumValueText(Dictionary<string, string> enumValues, string value, Param.Row row, string limitField, string limitValue)
+    {
+        var inactiveEnum = false;
+
+        if (limitField != "")
+        {
+            Param.Cell? c = row?[limitField];
+            inactiveEnum = row != null && c != null && Convert.ToInt32(c.Value.Value) != Convert.ToInt32(limitValue);
+        }
+
+        if (CFG.Current.Param_HideEnums == false) //Move preference
+        {
+            if (!inactiveEnum)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
+                ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                ImGui.PopStyleColor();
+            }
+        }
+    }
+
 
     public static void VirtualParamRefSelectables(ParamBank bank, string virtualRefName, object searchValue,
         Param.Row context, string fieldName, List<ExtRef> ExtRefs, EditorScreen cacheOwner)
@@ -478,7 +520,7 @@ public class EditorDecorations
     }
 
     public static bool ParamRefEnumContextMenuItems(ParamBank bank, object oldval, ref object newval,
-        List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, ParamEnum Enum, ActionManager executor)
+        List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, ParamEnum Enum, bool showParticleEnum, bool showSoundEnum, bool showFlagEnum, ActionManager executor)
     {
         var result = false;
         if (RefTypes != null)
@@ -494,6 +536,21 @@ public class EditorDecorations
         if (Enum != null)
         {
             result |= PropertyRowEnumContextItems(Enum, oldval, ref newval);
+        }
+
+        if (showParticleEnum)
+        {
+            result |= PropertyRowAliasEnumContextItems(ParticleAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+        }
+
+        if (showSoundEnum)
+        {
+            result |= PropertyRowAliasEnumContextItems(SoundAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+        }
+
+        if (showFlagEnum)
+        {
+            result |= PropertyRowAliasEnumContextItems(FlagAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
         }
 
         return result;
@@ -640,6 +697,38 @@ public class EditorDecorations
     }
 
     public static string enumSearchStr = "";
+
+    public static bool PropertyRowAliasEnumContextItems(Dictionary<string, string> en, object oldval, ref object newval)
+    {
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(7, en.Count))))
+        {
+            try
+            {
+                foreach (KeyValuePair<string, string> option in en)
+                {
+                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, option.Key, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, option.Value, " ")
+                        || enumSearchStr == "")
+                    {
+                        if (ImGui.Selectable($"{option.Key}: {option.Value}"))
+                        {
+                            newval = Convert.ChangeType(option.Key, oldval.GetType());
+                            ImGui.EndChild();
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        ImGui.EndChild();
+        return false;
+    }
 
     public static bool PropertyRowEnumContextItems(ParamEnum en, object oldval, ref object newval)
     {

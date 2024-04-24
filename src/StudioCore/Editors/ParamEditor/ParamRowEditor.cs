@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Toolbar;
@@ -308,6 +309,20 @@ public class ParamRowEditor
         var displayFmgRef = !CFG.Current.Param_HideReferenceRows && FmgRef != null;
         var displayEnum = !CFG.Current.Param_HideEnums && Enum != null;
 
+        bool showParticleEnum = false;
+        bool showSoundEnum = false;
+        bool showFlagEnum = false;
+
+        var limitField = cellMeta?.LimitField;
+        var limitValue = cellMeta?.LimitValue;
+
+        if (cellMeta != null)
+        {
+            showParticleEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowParticleEnumList;
+            showSoundEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowSoundEnumList;
+            showFlagEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowFlagEnumList;
+        }
+
         object newval = null;
 
         if(CFG.Current.Param_HidePaddingFields && IsHiddenField)
@@ -353,7 +368,7 @@ public class ParamRowEditor
 
             PropertyRowName(fieldOffset, ref internalName, cellMeta);
 
-            if (displayRefTypes || displayFmgRef || displayEnum)
+            if (displayRefTypes || displayFmgRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum)
             {
                 ImGui.BeginGroup();
 
@@ -370,6 +385,24 @@ public class ParamRowEditor
                 if (displayEnum)
                 {
                     EditorDecorations.EnumNameText(Enum);
+                }
+
+                // Particle list
+                if (showParticleEnum)
+                {
+                    EditorDecorations.AliasEnumNameText("PARTICLES", row, limitField, limitValue);
+                }
+
+                // Sound list
+                if (showSoundEnum)
+                {
+                    EditorDecorations.AliasEnumNameText("SOUNDS", row, limitField, limitValue);
+                }
+
+                // Flag list
+                if (showFlagEnum)
+                {
+                    EditorDecorations.AliasEnumNameText("FLAGS", row, limitField, limitValue);
                 }
 
                 ImGui.EndGroup();
@@ -399,9 +432,7 @@ public class ParamRowEditor
         var conflict = (diffVanilla ? 1 : 0) + diffAuxPrimaryAndVanilla.Where(x => x).Count() > 1;
 
         var matchDefault = nullableCell?.Def.Default != null && nullableCell.Value.Def.Default.Equals(oldval);
-        var isRef = CFG.Current.Param_HideReferenceRows == false && (RefTypes != null || FmgRef != null) ||
-                    CFG.Current.Param_HideEnums == false && Enum != null || VirtualRef != null ||
-                    ExtRefs != null;
+        var isRef = CFG.Current.Param_HideReferenceRows == false && (RefTypes != null || FmgRef != null) || CFG.Current.Param_HideEnums == false && Enum != null || VirtualRef != null || ExtRefs != null || CFG.Current.Param_HideEnums == false && showParticleEnum;
 
         if (ImGui.TableNextColumn())
         {
@@ -443,7 +474,7 @@ public class ParamRowEditor
                 }
             }
 
-            if (displayRefTypes || displayFmgRef || displayEnum)
+            if (displayRefTypes || displayFmgRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum)
             {
                 ImGui.BeginGroup();
 
@@ -460,6 +491,21 @@ public class ParamRowEditor
                 if (displayEnum)
                 {
                     EditorDecorations.EnumValueText(Enum.values, oldval.ToString());
+                }
+
+                if (showParticleEnum)
+                {
+                    EditorDecorations.AliasEnumValueText(ParticleAliasBank.Bank.GetEnumDictionary(), oldval.ToString(), row, limitField, limitValue);
+                }
+
+                if (showSoundEnum)
+                {
+                    EditorDecorations.AliasEnumValueText(SoundAliasBank.Bank.GetEnumDictionary(), oldval.ToString(), row, limitField, limitValue);
+                }
+
+                if (showFlagEnum)
+                {
+                    EditorDecorations.AliasEnumValueText(FlagAliasBank.Bank.GetEnumDictionary(), oldval.ToString(), row, limitField, limitValue);
                 }
 
                 ImGui.EndGroup();
@@ -537,7 +583,7 @@ public class ParamRowEditor
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, true);
             PropertyRowValueContextMenuItems(bank, row, internalName, VirtualRef, ExtRefs, oldval, ref newval,
-                RefTypes, FmgRef, Enum);
+                RefTypes, FmgRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum);
 
             ImGui.EndPopup();
         }
@@ -555,7 +601,7 @@ public class ParamRowEditor
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, false);
             PropertyRowValueContextMenuItems(bank, row, internalName, VirtualRef, ExtRefs, oldval, ref newval,
-                RefTypes, FmgRef, Enum);
+                RefTypes, FmgRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum);
 
             ImGui.EndPopup();
         }
@@ -871,7 +917,7 @@ public class ParamRowEditor
 
     private void PropertyRowValueContextMenuItems(ParamBank bank, Param.Row row, string internalName,
         string VirtualRef, List<ExtRef> ExtRefs, dynamic oldval, ref object newval, List<ParamRef> RefTypes,
-        List<FMGRef> FmgRef, ParamEnum Enum)
+        List<FMGRef> FmgRef, ParamEnum Enum, bool showParticleEnum, bool showSoundEnum, bool showFlagEnum)
     {
         if (CFG.Current.Param_FieldContextMenu_ReferenceSearch)
         {
@@ -884,12 +930,12 @@ public class ParamRowEditor
                 ImGui.PopStyleColor();
             }
 
-            if (RefTypes != null || FmgRef != null || Enum != null)
+            if (RefTypes != null || FmgRef != null || Enum != null || showParticleEnum || showSoundEnum || showFlagEnum)
             {
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Ref_Text);
 
-                if (EditorDecorations.ParamRefEnumContextMenuItems(bank, oldval, ref newval, RefTypes, row, FmgRef, Enum, ContextActionManager))
+                if (EditorDecorations.ParamRefEnumContextMenuItems(bank, oldval, ref newval, RefTypes, row, FmgRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum, ContextActionManager))
                 {
                     ParamEditorCommon.SetLastPropertyManual(newval);
                 }

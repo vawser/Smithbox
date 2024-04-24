@@ -159,10 +159,10 @@
   </Enums>
   <Field>
     <atkId_Bullet AltName="AtkParam ID" Wiki="References AtkParam. Used to apply the damage characteristics to a project." Refs="AtkParam_Pc,AtkParam_Npc" />
-    <sfxId_Bullet AltName="Projectile FFX ID" Wiki="Visual effect for projectile in transit." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <sfxId_Hit AltName="Impact FFX ID" Wiki="Visual effect when projectile hits something." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <sfxId_Flick AltName="Repel FFX ID" Wiki="Visual effect when projectile is deflected off of a shield." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <sfxId_Muzzle AltName="Muzzle FFX ID" Wiki="Visual effect when producing projectile." ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,FNR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <sfxId_Bullet AltName="Projectile FFX ID" Wiki="Visual effect for projectile in transit." ParticleAlias="" />
+    <sfxId_Hit AltName="Impact FFX ID" Wiki="Visual effect when projectile hits something." ParticleAlias="" />
+    <sfxId_Flick AltName="Repel FFX ID" Wiki="Visual effect when projectile is deflected off of a shield." ParticleAlias="" />
+    <sfxId_Muzzle AltName="Muzzle FFX ID" Wiki="Visual effect when producing projectile." ParticleAlias="" />
     <life AltName="Duration" Wiki="Time for missiles to continue to exist (-1 is infinite)." />
     <distance AltName="Attenuation Range" Wiki="Distance at which attenuation begins (not actual flight distance)." />
     <shootInterval AltName="Shoot Interval" Wiki="Specify how many seconds the missile will be fired." />
@@ -280,6 +280,8 @@
     <homingOffsetRate AltName="Homing Offset Rate" />
     <cartridgeBehaviorParamId AltName="Cartridge Behavior Param ID" Refs="CartridgeBehaviorParam" />
     <padRumbleParamId AltName="Pad Rumble ID" Refs="PadRumble" />
+    
+    <UnkInt0x1E0 AltName="Unknown FFX ID" ParticleAlias=""/>
   </Field>
   <Self />
 </PARAMMETA>

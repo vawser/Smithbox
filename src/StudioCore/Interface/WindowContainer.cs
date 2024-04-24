@@ -9,5 +9,6 @@ public static class WindowContainer
     public static DebugWindow DebugWindow { get; set; }
     public static KeybindWindow KeybindWindow { get; set; }
     public static MemoryWindow MemoryWindow { get; set; }
+    public static AliasWindow AliasWindow { get; set; }
 }
 

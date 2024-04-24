@@ -137,28 +137,28 @@
     <wepCollidableType1 AltName="Weapon Collidable Type [1]" Wiki="Weapon 1 collaborative setting" />
     <postureControlId_Right AltName="Posture Control ID - Weapon Right" Wiki="Attitude control ID (right hand)" />
     <postureControlId_Left AltName="Posture Control ID - Weapon Left" Wiki="Attitude control ID (left hand)" />
-    <traceSfxId0 AltName="Trace SFX ID [0]" Wiki="Sword flash SfxID_0 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceSfxId0 AltName="Trace SFX ID [0]" Wiki="Sword flash SfxID_0 (-1 invalid)" ParticleAlias="" />
     <traceDmyIdHead0 AltName="Trace SFX ID [0] - Dummy Poly ID - Head" Wiki="Sword flash root Damipoli ID_0 (-1 invalid)" />
     <traceDmyIdTail0 AltName="Trace SFX ID [0] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_0" />
-    <traceSfxId1 AltName="Trace SFX ID [1]" Wiki="Sword flash SfxID_1 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceSfxId1 AltName="Trace SFX ID [1]" Wiki="Sword flash SfxID_1 (-1 invalid)" ParticleAlias="" />
     <traceDmyIdHead1 AltName="Trace SFX ID [1] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_1 (-1 invalid)" />
     <traceDmyIdTail1 AltName="Trace SFX ID [1] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_1" />
-    <traceSfxId2 AltName="Trace SFX ID [2]" Wiki="Sword flash SfxID_2 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceSfxId2 AltName="Trace SFX ID [2]" Wiki="Sword flash SfxID_2 (-1 invalid)" ParticleAlias="" />
     <traceDmyIdHead2 AltName="Trace SFX ID [2] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_2 (-1 invalid)" />
     <traceDmyIdTail2 AltName="Trace SFX ID [2] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_2" />
-    <traceSfxId3 AltName="Trace SFX ID [3]" Wiki="Sword Flash SfxID_3 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceSfxId3 AltName="Trace SFX ID [3]" Wiki="Sword Flash SfxID_3 (-1 invalid)" ParticleAlias="" />
     <traceDmyIdHead3 AltName="Trace SFX ID [3] - Dummy Poly ID - Head" Wiki="Sword flash root Damipoli ID_3 (-1 invalid)" />
     <traceDmyIdTail3 AltName="Trace SFX ID [3] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_3" />
-    <traceSfxId4 AltName="Trace SFX ID [4]" Wiki="Sword Flash SfxID_4 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceSfxId4 AltName="Trace SFX ID [4]" Wiki="Sword Flash SfxID_4 (-1 invalid)" ParticleAlias="" />
     <traceDmyIdHead4 AltName="Trace SFX ID [4] - Dummy Poly ID - Head" Wiki="Sword flash root Damipoli ID_4 (-1 invalid)" />
     <traceDmyIdTail4 AltName="Trace SFX ID [4] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_4" />
-    <traceSfxId5 AltName="Trace SFX ID [5]" Wiki="Sword Flash SfxID_5 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceSfxId5 AltName="Trace SFX ID [5]" Wiki="Sword Flash SfxID_5 (-1 invalid)" ParticleAlias="" />
     <traceDmyIdHead5 AltName="Trace SFX ID [5] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_5 (-1 invalid)" />
     <traceDmyIdTail5 AltName="Trace SFX ID [5] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_5" />
-    <traceSfxId6 AltName="Trace SFX ID [6]" Wiki="Sword Flash SfxID_6 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceSfxId6 AltName="Trace SFX ID [6]" Wiki="Sword Flash SfxID_6 (-1 invalid)" ParticleAlias="" />
     <traceDmyIdHead6 AltName="Trace SFX ID [6] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_6 (-1 invalid)" />
     <traceDmyIdTail6 AltName="Trace SFX ID [6] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_6" />
-    <traceSfxId7 AltName="Trace SFX ID [7]" Wiki="Sword Flash SfxID_7 (-1 invalid)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <traceSfxId7 AltName="Trace SFX ID [7]" Wiki="Sword Flash SfxID_7 (-1 invalid)" ParticleAlias="" />
     <traceDmyIdHead7 AltName="Trace SFX ID [7] - Dummy Poly ID - Head" Wiki="Sword Flash Root Damipoli ID_7 (-1 invalid)" />
     <traceDmyIdTail7 AltName="Trace SFX ID [7] - Dummy Poly ID - Tail" Wiki="Sword Flash Sword Tip Damipoli ID_7" />
     <defSfxMaterial2 AltName="Defence SFX Material [2]" Wiki="Defensive SFX material used from attack para 2" />
@@ -193,10 +193,10 @@
     <wepType AltName="Weapon Type" Wiki="Weapon type. Used for linking text and magic stones (* It is now used for other than text)" />
     <isBackSwapWeapon AltName="Is Back Swap Weapon" IsBool="" Wiki="If true, this weapon will swap to hands from back instead of firing from back." />
     <thrustersParamId AltName="Thruster Param ID" Refs="ThrustersParam_PC" />
-    <residentSfxId_1 AltName="Resident SFX [1]" />
-    <residentSfxId_2 AltName="Resident SFX [2]" />
-    <residentSfxId_3 AltName="Resident SFX [3]" />
-    <residentSfxId_4 AltName="Resident SFX [4]" />
+    <residentSfxId_1 AltName="Resident SFX [1]" ParticleAlias="" />
+    <residentSfxId_2 AltName="Resident SFX [2]" ParticleAlias="" />
+    <residentSfxId_3 AltName="Resident SFX [3]" ParticleAlias="" />
+    <residentSfxId_4 AltName="Resident SFX [4]" ParticleAlias="" />
     <residentSfx_DmyId_1 AltName="Resident SFX Dummy Poly [1]" />
     <residentSfx_DmyId_2 AltName="Resident SFX Dummy Poly [2]" />
     <residentSfx_DmyId_3 AltName="Resident SFX Dummy Poly [3]" />

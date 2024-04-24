@@ -35,6 +35,8 @@ public class AliasBank
 
     public AliasBankType aliasType;
 
+    public Dictionary<string, string> enumDict;
+
     public AliasBank(AliasBankType _aliasType)
     {
         CanReloadBank = false;
@@ -307,5 +309,26 @@ public class AliasBank
 
             WriteTargetAliasBank(targetResource, assetType);
         }
+    }
+
+    public Dictionary<string, string> GetEnumDictionary()
+    {
+        if (enumDict == null)
+        {
+            enumDict = new Dictionary<string, string>();
+            var entries = AliasNames.GetEntries(AliasName);
+            foreach (var entry in entries)
+            {
+                var name = entry.name;
+                if(name == "")
+                {
+                    name = "Not named";
+                }
+
+                enumDict[entry.id] = name;
+            }
+        }
+
+        return enumDict;
     }
 }

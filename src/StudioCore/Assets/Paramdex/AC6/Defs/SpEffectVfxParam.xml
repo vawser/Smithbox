@@ -6,15 +6,15 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
+    <Field Def="s32 Unk0x00"></Field>
     <Field Def="s32 midstSfxId"></Field>
     <Field Def="s32 midstSeId"></Field>
     <Field Def="s32 initSfxId"></Field>
     <Field Def="s32 initSeId"></Field>
     <Field Def="s32 finishSfxId"></Field>
     <Field Def="s32 finishSeId"></Field>
-    <Field Def="s32 Unk0x18"></Field>
-    <Field Def="f32 Unk0x1C"></Field>
-    <Field Def="f32 Unk0x20"></Field>
+    <Field Def="f32 camouflageBeginDist"></Field>
+    <Field Def="f32 camouflageEndDist"></Field>
     <Field Def="s16 midstDmyId"></Field>
     <Field Def="s16 initDmyId"></Field>
     <Field Def="s16 finishDmyId"></Field>
@@ -22,6 +22,41 @@
     <Field Def="u8 soulParamIdForWepEnchant"></Field>
     <Field Def="u8 playCategory"></Field>
     <Field Def="u8 playPriority"></Field>
+    
+    <!-- I suspect these are bitfield bools, however testing is needed to confirm -->
+    <Field Def="u8 Unk0x2E_a:1"></Field>
+    <Field Def="u8 Unk0x2E_b:1"></Field>
+    <Field Def="u8 Unk0x2E_c:1"></Field>
+    <Field Def="u8 Unk0x2E_d:1"></Field>
+    <Field Def="u8 Unk0x2E_e:1"></Field>
+    <Field Def="u8 Unk0x2E_f:1"></Field>
+    <Field Def="u8 Unk0x2E_g:1"></Field>
+    <Field Def="u8 Unk0x2E_h:1"></Field>
+    <Field Def="u8 Unk0x2F_a:1"></Field>
+    <Field Def="u8 Unk0x2F_b:1"></Field>
+    <Field Def="u8 Unk0x2F_c:1"></Field>
+    <Field Def="u8 Unk0x2F_d:1"></Field>
+    <Field Def="u8 Unk0x2F_e:1"></Field>
+    <Field Def="u8 Unk0x2F_f:1"></Field>
+    <Field Def="u8 Unk0x2F_g:1"></Field>
+    <Field Def="u8 Unk0x2F_h:1"></Field>
+    <Field Def="u8 Unk0x30_a:1"></Field>
+    <Field Def="u8 Unk0x30_b:1"></Field>
+    <Field Def="u8 Unk0x30_c:1"></Field>
+    <Field Def="u8 Unk0x30_d:1"></Field>
+    <Field Def="u8 Unk0x30_e:1"></Field>
+    <Field Def="u8 Unk0x30_f:1"></Field>
+    <Field Def="u8 Unk0x30_g:1"></Field>
+    <Field Def="u8 Unk0x30_h:1"></Field>
+    <Field Def="u8 Unk0x31_a:1"></Field>
+    <Field Def="u8 Unk0x31_b:1"></Field>
+    <Field Def="u8 Unk0x31_c:1"></Field>
+    <Field Def="u8 Unk0x31_d:1"></Field>
+    <Field Def="u8 Unk0x31_e:1"></Field>
+    <Field Def="u8 Unk0x31_f:1"></Field>
+    <Field Def="u8 Unk0x31_g:1"></Field>
+    <Field Def="u8 Unk0x31_h:1"></Field>
+    
     <Field Def="u8 existEffectForLarge:1"></Field>
     <Field Def="u8 existEffectForSoul:1"></Field>
     <Field Def="u8 effectInvisibleAtCamouflage:1"></Field>
@@ -30,6 +65,7 @@
     <Field Def="u8 isHideFootEffect_forCamouflage:1"></Field>
     <Field Def="u8 halfCamouflage:1"></Field>
     <Field Def="u8 isFullBodyTransformProtectorId:1"></Field>
+    
     <Field Def="u8 isInvisibleWeapon:1"></Field>
     <Field Def="u8 isSilence:1"></Field>
     <Field Def="u8 isMidstFullbody:1"></Field>
@@ -38,7 +74,8 @@
     <Field Def="u8 isVisibleDeadChr:1"></Field>
     <Field Def="u8 isUseOffsetEnchantSfxSize:1"></Field>
     <Field Def="dummy8 pad_1:1"></Field>
-    <Field Def="s32 Unk0x30"></Field>
+    
+    
     <Field Def="s32 decalId1"></Field>
     <Field Def="s32 decalId2"></Field>
     <Field Def="u8 footEffectPriority"></Field>
@@ -78,7 +115,7 @@
     <Field Def="f32 Unk0xA8"></Field>
     <Field Def="f32 Unk0xAC"></Field>
     <Field Def="f32 Unk0xB0"></Field>
-    <Field Def="s32 Unk0xB4"></Field>
+    <Field Def="s32 unkDmyPolyId"></Field>
     <Field Def="s32 Unk0xB8"></Field>
     <Field Def="s32 Unk0xBC"></Field>
     <Field Def="s32 Unk0xC0"></Field>

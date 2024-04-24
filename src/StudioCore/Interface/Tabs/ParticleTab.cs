@@ -97,7 +97,7 @@ public class ParticleTab
             {
                 var isValid = true;
 
-                var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Flags");
+                var entries = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
 
                 foreach (var entry in entries)
                 {

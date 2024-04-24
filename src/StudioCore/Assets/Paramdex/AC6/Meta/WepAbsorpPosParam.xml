@@ -2,21 +2,21 @@
 <PARAMMETA XmlVersion="0">
    <Enums>
     <Enum Name="WEP_HANG_POS_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
-        <Option Value="3" Name="Type 3" />
-        <Option Value="4" Name="Type 4" />
+        <Option Value="0" Name="Back" />
+        <Option Value="1" Name="Left hip" />
+        <Option Value="2" Name="Right Hip" />
+        <Option Value="3" Name="Left shoulder" />
+        <Option Value="4" Name="Right shoulder" />
     </Enum>
     <Enum Name="WEP_INVISIBLE_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Sheath" />
+        <Option Value="2" Name="Two Swords Left Hand" />
     </Enum>
     <Enum Name="WEP_DISP_POS_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="Right hand" />
+        <Option Value="1" Name="Left hand" />
+        <Option Value="2" Name="Other" />
     </Enum>
   </Enums>
   <Field>

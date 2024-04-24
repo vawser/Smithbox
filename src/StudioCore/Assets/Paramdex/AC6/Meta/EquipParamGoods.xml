@@ -63,9 +63,9 @@
     <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1 No vagrant 0 No lottery 1  With lottery" />
     <vagrantBonusEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
     <vagrantItemEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
-    <castSfxId AltName="Usage VFX - Cast" Wiki="SFXID until the effect is activated when you try to use the item" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <fireSfxId AltName="Usage VFX  - Activate" Wiki="SFX ID when the item is activated" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
-    <effectSfxId AltName="Usage VFX - Effect" Wiki="After the item is activated, the SFX ID in effect" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <castSfxId AltName="Usage VFX - Cast" Wiki="SFXID until the effect is activated when you try to use the item" ParticleAlias="" />
+    <fireSfxId AltName="Usage VFX  - Activate" Wiki="SFX ID when the item is activated" ParticleAlias="" />
+    <effectSfxId AltName="Usage VFX - Effect" Wiki="After the item is activated, the SFX ID in effect" ParticleAlias="" />
     <enable_ActiveBigRune AltName="Usable with Great Rune Active" Wiki="Can it be used with a large rune activated?" IsBool="" />
     <isBonfireWarpItem AltName="Is Bonfire Warp Item" Wiki="If the state change type Warp Prohibition is applied when TRUE, remove the function to disable the item." IsBool="" />
     <enable_Ladder AltName="Enable on Ladder" Wiki="Check here for items available in the ladder" IsBool="" />

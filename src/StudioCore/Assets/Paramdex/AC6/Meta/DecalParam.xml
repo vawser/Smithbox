@@ -59,7 +59,7 @@
     <intpIntervalDist AltName="Interpolation Interval Distance" Wiki="Distance to interpolate decals generated between TAE bars when interpolation is enabled" />
     <beginIntpTextureId AltName="Interpolation Start - Texture ID" Wiki="Texture ID at the start of interpolation (-1 uses the same value as the texture ID)" />
     <endIntpTextureId AltName="Interpolation End - Texture ID" Wiki="Texture at the end of interpolation Texture ID (-1 uses the same value as the texture ID)" />
-    <appearSfxId AltName="Appearance SFX ID" Wiki="SFXID issued when the decal is affixed (Nothing is issued with -1)" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    <appearSfxId AltName="Appearance SFX ID" Wiki="SFXID issued when the decal is affixed (Nothing is issued with -1)" ParticleAlias="" />
     <appearSfxOffsetPos AltName="Appearance SFX Offset Position" Wiki="Offset distance of SFX generation position" />
     <maskTextureId AltName="Mask Texture ID" Wiki="Mask texture ID (see texture ID with -1)" />
     <diffuseTextureId AltName="Diffuse Texture ID" Wiki="Albedo Texture ID (See Texture ID with -1)" />

@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Banks.AliasBank;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
+using StudioCore.BanksMain;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -440,6 +442,12 @@ public class FieldMetaData
         _parent = parent;
         Add(field, this);
         // Blank Metadata
+
+        ShowParticleEnumList = false;
+        ShowSoundEnumList = false;
+        ShowFlagEnumList = false;
+        LimitField = "";
+        LimitValue = "";
     }
 
     public FieldMetaData(ParamMetaData parent, XmlNode fieldMeta, PARAMDEF.Field field)
@@ -505,6 +513,26 @@ public class FieldMetaData
         {
             IsHidden = true;
         }
+
+        XmlAttribute ParticleAlias = fieldMeta.Attributes["ParticleAlias"];
+        if (ParticleAlias != null)
+        {
+            ShowParticleEnumList = true;
+        }
+
+        XmlAttribute SoundAlias = fieldMeta.Attributes["SoundAlias"];
+        if (SoundAlias != null)
+        {
+            ShowSoundEnumList = true;
+        }
+
+        XmlAttribute FlagAlias = fieldMeta.Attributes["FlagAlias"];
+        if (FlagAlias != null)
+        {
+            ShowFlagEnumList = true;
+            LimitField = FlagAlias.InnerText.Split("=")[0];
+            LimitValue = FlagAlias.InnerText.Split("=")[1];
+        }
     }
 
     /// <summary>
@@ -551,6 +579,23 @@ public class FieldMetaData
     ///     Is this float displayed as an inverted percentage
     /// </summary>
     public bool IsInvertedPercentage { get; set; }
+
+    /// <summary>
+    /// Boolean for display the Particle alias derived Enum list
+    /// </summary>
+    public bool ShowParticleEnumList { get; set; }
+
+    /// <summary>
+    /// Boolean for display the Sound alias derived Enum list
+    /// </summary>
+    public bool ShowSoundEnumList { get; set; }
+
+    /// <summary>
+    /// Boolean for display the Event Flag alias derived Enum list
+    /// </summary>
+    public bool ShowFlagEnumList { get; set; }
+    public string LimitField { get; set; }
+    public string LimitValue { get; set; }
 
     /// <summary>
     ///     Path (and subpath) filters for files linked by this field.
