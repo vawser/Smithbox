@@ -92,7 +92,7 @@ public class AliasWindow
 
     public void DisplayMapNameTab()
     {
-        if (ImGui.BeginTabItem("Map Names"))
+        if (ImGui.BeginTabItem("Maps"))
         {
             MapAliasTab.Display();
 
@@ -102,7 +102,7 @@ public class AliasWindow
 
     public void DisplayGparamNameTab()
     {
-        if (ImGui.BeginTabItem("Gparam Names"))
+        if (ImGui.BeginTabItem("Gparams"))
         {
             GparamAliasTab.Display();
 
