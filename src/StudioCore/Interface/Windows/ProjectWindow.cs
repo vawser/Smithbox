@@ -24,19 +24,21 @@ public class ProjectWindow
 
     public ProjectSettings ProjSettings = null;
 
-    private ParticleTab ParticleTab;
-    private EventFlagTab EventFlagTab;
-    private MapNameTab MapNameTab;
+    private ParticleTab ParticleAliasTab;
+    private EventFlagTab EventFlagAliasTab;
+    private MapNameTab MapAliasTab;
     private MapGroupTab MapGroupTab;
-    private GparamNameTab GparamNameTab;
+    private GparamNameTab GparamAliasTab;
+    private SoundTab SoundAliasTab;
 
     public ProjectWindow()
     {
-        ParticleTab = new ParticleTab();
-        EventFlagTab = new EventFlagTab();
-        MapNameTab = new MapNameTab();
+        ParticleAliasTab = new ParticleTab();
+        EventFlagAliasTab = new EventFlagTab();
+        MapAliasTab = new MapNameTab();
         MapGroupTab = new MapGroupTab();
-        GparamNameTab = new GparamNameTab();
+        GparamAliasTab = new GparamNameTab();
+        SoundAliasTab = new SoundTab();
     }
 
     public void ToggleMenuVisibility()
@@ -71,6 +73,7 @@ public class ProjectWindow
             DisplayGparamNameTab();
             DisplayEventFlagTab();
             DisplayParticleTab();
+            DisplaySoundTab();
 
             ImGui.EndTabBar();
         }
@@ -147,7 +150,7 @@ public class ProjectWindow
     {
         if (ImGui.BeginTabItem("Event Flags"))
         {
-            EventFlagTab.Display();
+            EventFlagAliasTab.Display();
 
             ImGui.EndTabItem();
         }
@@ -157,7 +160,7 @@ public class ProjectWindow
     {
         if (ImGui.BeginTabItem("Map Names"))
         {
-            MapNameTab.Display();
+            MapAliasTab.Display();
 
             ImGui.EndTabItem();
         }
@@ -167,7 +170,7 @@ public class ProjectWindow
     {
         if (ImGui.BeginTabItem("Gparam Names"))
         {
-            GparamNameTab.Display();
+            GparamAliasTab.Display();
 
             ImGui.EndTabItem();
         }
@@ -177,7 +180,17 @@ public class ProjectWindow
     {
         if (ImGui.BeginTabItem("Particles"))
         {
-            ParticleTab.Display();
+            ParticleAliasTab.Display();
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void DisplaySoundTab()
+    {
+        if (ImGui.BeginTabItem("Sounds"))
+        {
+            SoundAliasTab.Display();
 
             ImGui.EndTabItem();
         }

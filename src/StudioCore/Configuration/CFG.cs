@@ -495,6 +495,8 @@ public class CFG
 
     public bool GparamNameAtlas_ShowTags = true;
 
+    public bool SoundAtlas_ShowTags = true;
+
     //****************************
     // Map Toolbar
     //****************************

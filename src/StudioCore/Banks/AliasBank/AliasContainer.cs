@@ -54,6 +54,9 @@ public class AliasContainer
 
         if (aliasType is AliasBankType.Gparam)
             aliasMap.Add("Gparams", LoadJSON("Gparams"));
+
+        if (aliasType is AliasBankType.Sound)
+            aliasMap.Add("Sounds", LoadJSON("Sound"));
     }
 
     private AliasResource LoadJSON(string filename)
@@ -149,6 +152,9 @@ public class AliasContainer
 
         if (aliasType is AliasBankType.Gparam)
             typDir = "Gparams";
+
+        if (aliasType is AliasBankType.Sound)
+            typDir = "Sounds";
 
         return typDir;
     }

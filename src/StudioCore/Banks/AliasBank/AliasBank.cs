@@ -80,6 +80,14 @@ public class AliasBank
             FileName = "Gparams";
             IsAssetFileType = false;
         }
+
+        if (aliasType is AliasBankType.Sound)
+        {
+            AliasName = "Sounds";
+            AliasDirectory = "Sounds";
+            FileName = "Sound";
+            IsAssetFileType = false;
+        }
     }
 
     public AliasContainer AliasNames

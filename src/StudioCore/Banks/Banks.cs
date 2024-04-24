@@ -22,6 +22,7 @@ public static class BankUtils
         FlagAliasBank.Bank = new AliasBank(AliasBankType.EventFlag);
         ParticleAliasBank.Bank = new AliasBank(AliasBankType.Particle);
         GparamAliasBank.Bank = new AliasBank(AliasBankType.Gparam);
+        SoundAliasBank.Bank = new AliasBank(AliasBankType.Sound);
 
         // Format
         MsbFormatBank.Bank = new FormatBank(FormatBankType.MSB, true);
@@ -46,6 +47,7 @@ public static class BankUtils
         ParticleAliasBank.Bank.ReloadAliasBank();
         MapAliasBank.Bank.ReloadAliasBank();
         GparamAliasBank.Bank.ReloadAliasBank();
+        SoundAliasBank.Bank.ReloadAliasBank();
 
         // Format
         MsbFormatBank.Bank.ReloadFormatBank();
@@ -183,6 +185,11 @@ public static class MapAliasBank
 }
 
 public static class GparamAliasBank
+{
+    public static AliasBank Bank { get; set; }
+}
+
+public static class SoundAliasBank
 {
     public static AliasBank Bank { get; set; }
 }

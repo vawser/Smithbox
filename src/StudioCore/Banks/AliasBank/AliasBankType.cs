@@ -12,6 +12,7 @@ public enum AliasBankType
     EventFlag,
     Particle,
     Map,
-    Gparam
+    Gparam,
+    Sound
 }
 
