@@ -728,6 +728,8 @@ Requires State Info 66" />
     <coreExpansionShieldDecayRate AltName="Core Expansion: Shield Decay Rate" />
     <attitudeStabilityRecoveryRate AltName="Attitude Stability Recovery %" Wiki="Affects the recovery rate of Attitude Stability." />
     
+    <endPadding IsHidden="" />
+    
   </Field>
   <Self Wiki="Defines various effects that can be applied to the player and to enemies.\nCan define passive, activated, single-use and repeated or continuous application effects with indefinite duration.\nSuccessful application may depend on spCategory or invocationConditions." Row0Dummy="" />
 </PARAMMETA>

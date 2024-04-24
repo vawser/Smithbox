@@ -530,8 +530,11 @@ public class FieldMetaData
         if (FlagAlias != null)
         {
             ShowFlagEnumList = true;
-            LimitField = FlagAlias.InnerText.Split("=")[0];
-            LimitValue = FlagAlias.InnerText.Split("=")[1];
+            if (FlagAlias.InnerText != "")
+            {
+                LimitField = FlagAlias.InnerText.Split("=")[0];
+                LimitValue = FlagAlias.InnerText.Split("=")[1];
+            }
         }
     }
 

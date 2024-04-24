@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <boneName1 AltName="Bone [1]" />
+    <boneName2 AltName="Bone [2]" />
+    <boneName3 AltName="Bone [3]" />
+    <boneName4 AltName="Bone [4]" />
+    
+    <endPadding IsHidden="" />
+  </Field>
   <Self />
 </PARAMMETA>

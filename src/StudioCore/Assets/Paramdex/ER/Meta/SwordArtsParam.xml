@@ -35,6 +35,7 @@
     <iconId AltName="Icon ID" Wiki="ID of the icon displayed in FE etc." />
     <aiUsageId AltName="AI Usage Judgment ID" Wiki="AI usage judgment ID" />
     <swordArtsTypeNew AltName="Sword Arts Type" Wiki="Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler" />
+    
   </Field>
   <Self Wiki="Defines Ashes of War, including unique AoW. Determines AoW animation.\nBehaviour data remains in BehaviourParam. Unique AoW data is with the weapon and not with other AoW data." AlternativeOrder="textId,iconId,shieldIconType,-,
 swordArtsTypeNew,artsSpeedType,refStatus,aiUsageId,-,

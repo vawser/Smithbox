@@ -12,9 +12,11 @@
     <Field Def="s32 eventFlag_forStock"></Field>
     <Field Def="s32 eventFlag_forRelease"></Field>
     <Field Def="s16 sellQuantity"></Field>
-    <Field Def="s16 Unk0x16"></Field>
-    <Field Def="s16 Unk0x18"></Field>
-    <Field Def="u16 UnkUshort0x1A"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
+    <Field Def="dummy8 pad3[1]"></Field>
+    <Field Def="u8 equipType"></Field>
+    <Field Def="u8 costType"></Field>
+    <Field Def="dummy8 pad1[1]"></Field>
+    <Field Def="u16 setNum"></Field>
+    <Field Def="s32 value_Add"></Field>
   </Fields>
 </PARAMDEF>

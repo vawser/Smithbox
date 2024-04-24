@@ -1,0 +1,36 @@
+10100000 Western Belius - Grid 086
+10100010 Western Belius - Grid 086
+10100020 Western Belius - Grid 086
+10100030 Western Belius - Grid 086
+30000000 Atmosphere - LOC Station 31
+30000030 Atmosphere - LOC Station 31
+30000032 Atmosphere - LOC Station 31
+20000000 Alean Ocean - Xylem, the Floating City
+20000010 Alean Ocean - Xylem, the Floating City
+20200000 Atmosphere - Xylem Upper Districts
+20200010 Atmosphere - Xylem Upper Districts
+20200030 Atmosphere - Xylem Upper Districts
+20200050 Atmosphere - Xylem Upper Districts
+20300000 Atmosphere - Xylem Drive Block/Control Block
+20300040 Atmosphere - Xylem Drive Block/Control Block
+41000010 Institute City
+41100010 Institute City
+41100040 Institute City
+50000000 Southern Belius - Contaminated City
+50000010 Southern Belius - Contaminated City
+50000020 Southern Belius - Contaminated City
+50000040 Southern Belius - Contaminated City
+50000060 Southern Belius - Contaminated City
+50100000 Southern Belius - Gallia Dam Complex
+50100030 Southern Belius - Gallia Dam Complex
+50300000 Central Belius - The Wall
+50300010 Central Belius - The Wall
+50300020 Central Belius - The Wall
+50300040 Central Belius - The Wall
+50300050 Central Belius - The Wall
+50400000 Northern Belius - Watchpoint Delta
+50400040 Northern Belius - Watchpoint Delta
+50500000 Northern Belius - BAWS Arsenal No. 2
+50500040 Northern Belius - BAWS Arsenal No. 2
+50600000 Western Belius - Bona Dea Dunes
+50600040 Western Belius - Bona Dea Dunes

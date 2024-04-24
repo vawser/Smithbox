@@ -353,15 +353,6 @@
     <Field Def="f32 UnkFloat0x388"></Field>
     <Field Def="f32 attackRate_Impact"></Field>
     <Field Def="s32 Unk0x390"></Field>
-    <Field Def="s32 Unk0x394"></Field>
-    <Field Def="s32 Unk0x398"></Field>
-    <Field Def="s32 Unk0x39C"></Field>
-    <Field Def="s32 Unk0x3A0"></Field>
-    <Field Def="s32 Unk0x3A4"></Field>
-    <Field Def="s32 Unk0x3A8"></Field>
-    <Field Def="s32 Unk0x3AC"></Field>
-    <Field Def="s32 Unk0x3B0"></Field>
-    <Field Def="s32 Unk0x3B4"></Field>
-    <Field Def="s32 Unk0x3B8"></Field>
+    <Field Def="dummy8 endPadding[40]"></Field>
   </Fields>
 </PARAMDEF>

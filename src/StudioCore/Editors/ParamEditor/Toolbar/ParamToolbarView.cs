@@ -24,7 +24,9 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         TrimRowNames,
         DuplicateRow,
         MassEdit,
-        MassEditScripts
+        MassEditScripts,
+        FindRowIdInstances,
+        FindValueInstances
     }
 
     public class ParamToolbarView
@@ -141,6 +143,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             ParamAction_TrimRowNames.Select();
             ParamAction_MassEdit.Select();
             ParamAction_MassEditScripts.Select();
+            ParamAction_FindRowIdInstances.Select();
+            ParamAction_FindValueInstances.Select();
         }
 
         public void ShowSelectedConfiguration()
@@ -157,6 +161,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             ParamAction_TrimRowNames.Configure();
             ParamAction_MassEdit.Configure();
             ParamAction_MassEditScripts.Configure();
+            ParamAction_FindRowIdInstances.Configure();
+            ParamAction_FindValueInstances.Configure();
 
             ParamAction_DuplicateRow.Act();
             ParamAction_SortRows.Act();
@@ -165,6 +171,8 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             ParamAction_TrimRowNames.Act();
             ParamAction_MassEdit.Act();
             ParamAction_MassEditScripts.Act();
+            ParamAction_FindRowIdInstances.Act();
+            ParamAction_FindValueInstances.Act();
         }
     }
 }

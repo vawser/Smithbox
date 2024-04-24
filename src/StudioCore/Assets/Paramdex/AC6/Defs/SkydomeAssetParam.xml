@@ -6,15 +6,15 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
-    <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 UnkInt0x18"></Field>
-    <Field Def="s32 UnkInt0x1C"></Field>
-    <Field Def="s32 UnkInt0x20"></Field>
-    <Field Def="s32 UnkInt0x24"></Field>
+    <Field Def="s32 assetEnvironmentGeometryParamId1"></Field>
+    <Field Def="s32 assetEnvironmentGeometryParamId2"></Field>
+    <Field Def="s32 assetEnvironmentGeometryParamId3"></Field>
+    <Field Def="s32 assetEnvironmentGeometryParamId4"></Field>
+    <Field Def="s32 assetEnvironmentGeometryParamId5"></Field>
+    <Field Def="s32 assetEnvironmentGeometryParamId6"></Field>
+    <Field Def="s32 assetEnvironmentGeometryParamId7"></Field>
+    <Field Def="s32 assetEnvironmentGeometryParamId8"></Field>
+    <Field Def="s32 pad1"></Field>
+    <Field Def="s32 pad2"></Field>
   </Fields>
 </PARAMDEF>
