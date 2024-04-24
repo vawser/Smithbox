@@ -9,6 +9,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.UserProject;
 using System.Collections.Generic;
 using StudioCore.Banks.BlockedTextureBank;
+using StudioCore.Memory;
 
 namespace StudioCore.BanksMain;
 
@@ -32,6 +33,7 @@ public static class BankUtils
         // Data
         MaterialResourceBank.Setup();
         MapGroupsBank.Bank = new MapGroupBank();
+        GameOffsetsBank.Bank = new GameOffsetBank();
 
         // Mappings
         CorrectedTextures.Bank = new CorrectedTextureBank();
@@ -58,6 +60,7 @@ public static class BankUtils
         ParamBank.ReloadParams(projectSettings, projectOptions);
         MaterialResourceBank.Setup();
         MapGroupsBank.Bank.ReloadMapGroupBank();
+        GameOffsetsBank.Bank.ReloadBank();
 
         // Mappings
         CorrectedTextures.Bank.ReloadBank();
@@ -214,6 +217,10 @@ public static class GparamFormatBank
 public static class MapGroupsBank
 {
     public static MapGroupBank Bank { get; set; }
+}
+public static class GameOffsetsBank
+{
+    public static GameOffsetBank Bank { get; set; }
 }
 
 // Mappings

@@ -3,9 +3,11 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
+using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Help;
+using StudioCore.Memory;
 using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.Tests;
@@ -28,8 +30,11 @@ public class MemoryWindow
 
     private bool ShowParamList = false;
 
+    private GameOffsetResource SelectedGameOffsetData { get; set; }
+
     public MemoryWindow()
     {
+        SelectedGameOffsetData = null;
     }
 
     public void ToggleMenuVisibility()
@@ -60,6 +65,7 @@ public class MemoryWindow
 
             DisplayParamHotReloader();
             DisplayParamItemGib();
+            DisplayMemorySettings();
 
             ImGui.EndTabBar();
         }
@@ -146,6 +152,35 @@ public class MemoryWindow
             }
 
             ImGui.EndTabItem();
+        }
+    }
+
+    public void DisplayMemorySettings()
+    {
+        if (SelectedGameOffsetData != null)
+        {
+            if (ImGui.BeginTabItem("Settings"))
+            {
+                ImGui.Text("Game Offset Version");
+                ImguiUtils.ShowHoverTooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
+
+                var index = CFG.Current.SelectedGameOffsetData;
+                string[] options = GameOffsetsBank.Bank.Entries.list.Select(entry => entry.exeVersion).ToArray();
+
+                if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
+                {
+                    CFG.Current.SelectedGameOffsetData = index;
+                }
+
+                ImGui.EndTabItem();
+            }
+        }
+        else
+        {
+            if (Project.Type != ProjectType.Undefined)
+            {
+                SelectedGameOffsetData = GameOffsetsBank.Bank.Entries;
+            }
         }
     }
 }

@@ -1,7 +1,0 @@
-exeName:sekiro.exe
-paramBase:0x3D978B0
-paramInnerPath:0x70/0x70
-paramCountOffset:0xA
-paramDataOffset:0x40
-rowPointerOffset:0x8
-rowHeaderSize:0x18

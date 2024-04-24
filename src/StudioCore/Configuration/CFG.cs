@@ -625,6 +625,11 @@ public class CFG
     public string Toolbar_EntityGroup_Attribute = "";
 
     //****************************
+    // Memory
+    //****************************
+    public int SelectedGameOffsetData = 0;
+
+    //****************************
     // CFG
     //****************************
     public static CFG Current { get; private set; }

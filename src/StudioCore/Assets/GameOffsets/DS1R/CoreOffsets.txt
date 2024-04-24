@@ -1,8 +1,0 @@
-exeName:DarkSoulsRemastered.exe
-paramBase:0x1C7E000
-paramInnerPath:0x38
-paramCountOffset:0xA
-paramDataOffset:0x30
-rowPointerOffset:0x4
-rowHeaderSize:0xC
-throwParamBase:0x1C7E1E0

@@ -24,6 +24,7 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Utilities;
+using StudioCore.Memory;
 
 namespace StudioCore.Editors.ParamEditor;
 
