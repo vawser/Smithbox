@@ -220,11 +220,6 @@ public class TextEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        if (Project.Type == ProjectType.Undefined)
-        {
-            return;
-        }
-
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
@@ -237,98 +232,113 @@ public class TextEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (!ImGui.IsAnyItemActive() && FMGBank.IsLoaded)
+        var dsid = ImGui.GetID("DockSpace_TextEntries");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        if (Project.Type == ProjectType.Undefined)
         {
-            // Only allow key shortcuts when an item [text box] is not currently activated
-            if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+            ImGui.Begin("Editor##InvalidTextEditor");
+
+            ImGui.Text($"This editor does not support {Project.Type}.");
+
+            ImGui.End();
+        }
+        else
+        {
+            if (!ImGui.IsAnyItemActive() && FMGBank.IsLoaded)
             {
-                EditorActionManager.UndoAction();
+                // Only allow key shortcuts when an item [text box] is not currently activated
+                if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
+                {
+                    EditorActionManager.UndoAction();
+                }
+
+                if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+                {
+                    EditorActionManager.RedoAction();
+                }
+
+                if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete) && _activeEntryGroup != null)
+                {
+                    TextAction_Delete.DeleteSelectedEntry();
+                }
+
+                if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _activeEntryGroup != null)
+                {
+                    TextAction_Duplicate.DuplicateSelectedEntry();
+                }
             }
 
-            if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Redo))
+            var doFocus = false;
+            // Parse select commands
+            if (initcmd != null && initcmd[0] == "select")
             {
-                EditorActionManager.RedoAction();
+                if (initcmd.Length > 1)
+                {
+                    // Select FMG
+                    doFocus = true;
+                    // Use three possible keys: entry category is for param references,
+                    // binder id and FMG name are for soapstone references.
+                    // This can be revisited as more high-level categories get added.
+                    int? searchId = null;
+                    FmgEntryCategory? searchCategory = null;
+                    string searchName = null;
+                    if (int.TryParse(initcmd[1], out var intId) && intId >= 0)
+                    {
+                        searchId = intId;
+                    }
+                    // Enum.TryParse allows arbitrary ints (thanks C#), so checking definition is required
+                    else if (Enum.TryParse(initcmd[1], out FmgEntryCategory cat)
+                             && Enum.IsDefined(typeof(FmgEntryCategory), cat))
+                    {
+                        searchCategory = cat;
+                    }
+                    else
+                    {
+                        searchName = initcmd[1];
+                    }
+
+                    foreach (FMGBank.FMGInfo info in FMGBank.FmgInfoBank)
+                    {
+                        var match = false;
+                        // This matches top-level item FMGs
+                        if (info.EntryCategory.Equals(searchCategory) && info.PatchParent == null
+                                                                      && info.EntryType is FmgEntryTextType.Title
+                                                                          or FmgEntryTextType.TextBody)
+                        {
+                            match = true;
+                        }
+                        else if (searchId is int binderId && binderId == (int)info.FmgID)
+                        {
+                            match = true;
+                        }
+                        else if (info.Name == searchName)
+                        {
+                            match = true;
+                        }
+
+                        if (match)
+                        {
+                            _activeFmgInfo = info;
+                            break;
+                        }
+                    }
+
+                    if (initcmd.Length > 2 && _activeFmgInfo != null)
+                    {
+                        // Select Entry
+                        var parsed = int.TryParse(initcmd[2], out var id);
+                        if (parsed)
+                        {
+                            _activeEntryGroup = FMGBank.GenerateEntryGroup(id, _activeFmgInfo);
+                        }
+                    }
+                }
             }
 
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Delete) && _activeEntryGroup != null)
-            {
-                TextAction_Delete.DeleteSelectedEntry();
-            }
-
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _activeEntryGroup != null)
-            {
-                TextAction_Duplicate.DuplicateSelectedEntry();
-            }
+            EditorGUI(doFocus);
         }
 
-        var doFocus = false;
-        // Parse select commands
-        if (initcmd != null && initcmd[0] == "select")
-        {
-            if (initcmd.Length > 1)
-            {
-                // Select FMG
-                doFocus = true;
-                // Use three possible keys: entry category is for param references,
-                // binder id and FMG name are for soapstone references.
-                // This can be revisited as more high-level categories get added.
-                int? searchId = null;
-                FmgEntryCategory? searchCategory = null;
-                string searchName = null;
-                if (int.TryParse(initcmd[1], out var intId) && intId >= 0)
-                {
-                    searchId = intId;
-                }
-                // Enum.TryParse allows arbitrary ints (thanks C#), so checking definition is required
-                else if (Enum.TryParse(initcmd[1], out FmgEntryCategory cat)
-                         && Enum.IsDefined(typeof(FmgEntryCategory), cat))
-                {
-                    searchCategory = cat;
-                }
-                else
-                {
-                    searchName = initcmd[1];
-                }
-
-                foreach (FMGBank.FMGInfo info in FMGBank.FmgInfoBank)
-                {
-                    var match = false;
-                    // This matches top-level item FMGs
-                    if (info.EntryCategory.Equals(searchCategory) && info.PatchParent == null
-                                                                  && info.EntryType is FmgEntryTextType.Title
-                                                                      or FmgEntryTextType.TextBody)
-                    {
-                        match = true;
-                    }
-                    else if (searchId is int binderId && binderId == (int)info.FmgID)
-                    {
-                        match = true;
-                    }
-                    else if (info.Name == searchName)
-                    {
-                        match = true;
-                    }
-
-                    if (match)
-                    {
-                        _activeFmgInfo = info;
-                        break;
-                    }
-                }
-
-                if (initcmd.Length > 2 && _activeFmgInfo != null)
-                {
-                    // Select Entry
-                    var parsed = int.TryParse(initcmd[2], out var id);
-                    if (parsed)
-                    {
-                        _activeEntryGroup = FMGBank.GenerateEntryGroup(id, _activeFmgInfo);
-                    }
-                }
-            }
-        }
-
-        EditorGUI(doFocus);
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
     }
@@ -561,9 +571,6 @@ public class TextEditorScreen : EditorScreen
 
             return;
         }
-
-        var dsid = ImGui.GetID("DockSpace_TextEntries");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
         if (CFG.Current.Interface_TextEditor_TextCategories)
         {

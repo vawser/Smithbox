@@ -140,53 +140,54 @@ public class ParticleEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
-        {
-            ImGui.Text($"This editor does not support {Project.Type}.");
-            ImGui.PopStyleVar();
-            return;
-        }
-        else if (_projectSettings == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-        }
-
-        if (!ParticleBank.IsLoaded)
-        {
-            if (!CFG.Current.AutoLoadBank_Particle)
-            {
-                if (ImGui.Button("Load Particle Editor"))
-                {
-                    ParticleBank.LoadParticles();
-                }
-            }
-        }
-
         var dsid = ImGui.GetID("DockSpace_ParticleEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        ParticleShortcuts();
-
-        if (ParticleBank.IsLoaded)
+        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
         {
-            if (CFG.Current.Interface_ParticleEditor_Files)
+            ImGui.Begin("Editor##InvalidParticleEditor");
+
+            ImGui.Text($"This editor does not support {Project.Type}.");
+
+            ImGui.End();
+        }
+        else
+        {
+
+            if (!ParticleBank.IsLoaded)
             {
-                ParticleFileView();
+                if (!CFG.Current.AutoLoadBank_Particle)
+                {
+                    if (ImGui.Button("Load Particle Editor"))
+                    {
+                        ParticleBank.LoadParticles();
+                    }
+                }
             }
-            if (CFG.Current.Interface_ParticleEditor_Particles)
+
+            ParticleShortcuts();
+
+            if (ParticleBank.IsLoaded)
             {
-                ParticleListView();
+                if (CFG.Current.Interface_ParticleEditor_Files)
+                {
+                    ParticleFileView();
+                }
+                if (CFG.Current.Interface_ParticleEditor_Particles)
+                {
+                    ParticleListView();
+                }
+                if (CFG.Current.Interface_ParticleEditor_Data)
+                {
+                    ParticleDataView();
+                }
             }
-            if (CFG.Current.Interface_ParticleEditor_Data)
-            {
-                ParticleDataView();
-            }
+
+            _toolbarView.OnGui();
         }
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
-
-        _toolbarView.OnGui();
     }
 
     //*****************************

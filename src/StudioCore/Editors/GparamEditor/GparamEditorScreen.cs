@@ -166,58 +166,57 @@ public class GparamEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
-        {
-            ImGui.Text($"This editor does not support {Project.Type}.");
-            ImGui.PopStyleVar();
-            ImGui.PopStyleColor(1);
-            return;
-        }
-        else if (_projectSettings == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-        }
-
-        if (!GparamParamBank.IsLoaded)
-        {
-            if (!CFG.Current.AutoLoadBank_Gparam)
-            {
-                if (ImGui.Button("Load Gparam Editor"))
-                {
-                    GparamParamBank.LoadGraphicsParams();
-                }
-            }
-        }
-
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        GparamShortcuts();
-
-        if (GparamParamBank.IsLoaded)
+        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
         {
-            if(CFG.Current.Interface_GparamEditor_Files)
+            ImGui.Begin("Editor##InvalidGparamEditor");
+
+            ImGui.Text($"This editor does not support {Project.Type}.");
+
+            ImGui.End();
+        }
+        else
+        {
+            if (!GparamParamBank.IsLoaded)
             {
-                GparamListView();
+                if (!CFG.Current.AutoLoadBank_Gparam)
+                {
+                    if (ImGui.Button("Load Gparam Editor"))
+                    {
+                        GparamParamBank.LoadGraphicsParams();
+                    }
+                }
             }
-            if (CFG.Current.Interface_GparamEditor_Groups)
+
+            GparamShortcuts();
+
+            if (GparamParamBank.IsLoaded)
             {
-                GparamGroupList();
+                if (CFG.Current.Interface_GparamEditor_Files)
+                {
+                    GparamListView();
+                }
+                if (CFG.Current.Interface_GparamEditor_Groups)
+                {
+                    GparamGroupList();
+                }
+                if (CFG.Current.Interface_GparamEditor_Fields)
+                {
+                    GparamFieldList();
+                }
+                if (CFG.Current.Interface_GparamEditor_Values)
+                {
+                    GparamValueProperties();
+                }
             }
-            if (CFG.Current.Interface_GparamEditor_Fields)
-            {
-                GparamFieldList();
-            }
-            if (CFG.Current.Interface_GparamEditor_Values)
-            {
-                GparamValueProperties();
-            }
+
+            _toolbarView.OnGui();
         }
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
-
-        _toolbarView.OnGui();
     }
 
     public void GparamShortcuts()

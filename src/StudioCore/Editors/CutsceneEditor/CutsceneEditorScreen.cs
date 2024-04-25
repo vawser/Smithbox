@@ -83,6 +83,7 @@ public class CutsceneEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -91,64 +92,65 @@ public class CutsceneEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
-        {
-            ImGui.Text($"This editor does not support {Project.Type}.");
-            ImGui.PopStyleVar();
-            return;
-        }
-        else if (_projectSettings == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-        }
-
-        if (!CutsceneBank.IsLoaded)
-        {
-            if (!CFG.Current.AutoLoadBank_Cutscene)
-            {
-                if (ImGui.Button("Load Cutscene Editor"))
-                {
-                    CutsceneBank.LoadCutscenes();
-                }
-            }
-        }
-
         var dsid = ImGui.GetID("DockSpace_CutsceneEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (CutsceneBank.IsLoaded)
+        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
         {
-            // Cutscene
-            CutsceneFileView();
-            CutsceneListView();
-            CutscenePropertiesView();
+            ImGui.Begin("Editor##InvalidCutsceneEditor");
 
-            CutListView();
-            CutPropertiesView();
+            ImGui.Text($"This editor does not support {Project.Type}.");
 
-            TimelineListView();
-            TimelineCustomDataListView();
-            TimelineCustomDataPropertiesView();
-            TimelineCustomDataSequencesView();
-            TimelineCustomDataSequencePropertiesView();
-            TimelineSequencePointsListView();
-            TimelineSequencePointPropertiesView();
+            ImGui.End();
+        }
+        else
+        {
+            if (!CutsceneBank.IsLoaded)
+            {
+                if (!CFG.Current.AutoLoadBank_Cutscene)
+                {
+                    if (ImGui.Button("Load Cutscene Editor"))
+                    {
+                        CutsceneBank.LoadCutscenes();
+                    }
+                }
+            }
 
-            DispositionListView();
-            DispositionPropertiesView();
-            DispositionCustomDataListView();
-            DispositionTransformListView();
-            DispositionTransformPropertiesView();
-            DispositionCustomDataPropertiesView();
-            DispositionCustomDataSequencesView();
-            DispositionCustomDataSequencePropertiesView();
-            DispositionSequencePointsListView();
-            DispositionSequencePointPropertiesView();
+            if (CutsceneBank.IsLoaded)
+            {
+                // Cutscene
+                CutsceneFileView();
+                CutsceneListView();
+                CutscenePropertiesView();
 
-            ResourceListView();
+                CutListView();
+                CutPropertiesView();
+
+                TimelineListView();
+                TimelineCustomDataListView();
+                TimelineCustomDataPropertiesView();
+                TimelineCustomDataSequencesView();
+                TimelineCustomDataSequencePropertiesView();
+                TimelineSequencePointsListView();
+                TimelineSequencePointPropertiesView();
+
+                DispositionListView();
+                DispositionPropertiesView();
+                DispositionCustomDataListView();
+                DispositionTransformListView();
+                DispositionTransformPropertiesView();
+                DispositionCustomDataPropertiesView();
+                DispositionCustomDataSequencesView();
+                DispositionCustomDataSequencePropertiesView();
+                DispositionSequencePointsListView();
+                DispositionSequencePointPropertiesView();
+
+                ResourceListView();
+            }
         }
 
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
     }
 
     public void CutsceneFileView()

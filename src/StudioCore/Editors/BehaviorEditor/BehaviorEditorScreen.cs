@@ -52,6 +52,7 @@ public class BehaviorEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -60,39 +61,40 @@ public class BehaviorEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (Project.Type != ProjectType.DS3)
-        {
-            ImGui.Text($"This editor does not support {Project.Type}.");
-            ImGui.PopStyleVar();
-            return;
-        }
-        else if (_projectSettings == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-        }
-
-        if (!BehaviorBank.IsLoaded)
-        {
-            if (!CFG.Current.AutoLoadBank_Behavior)
-            {
-                if (ImGui.Button("Load Behavior Editor"))
-                {
-                    BehaviorBank.LoadBehaviors();
-                }
-            }
-        }
-
         var dsid = ImGui.GetID("DockSpace_BehaviorEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (BehaviorBank.IsLoaded)
+        if (Project.Type != ProjectType.DS3)
         {
-            BehaviorFileView();
-            BehaviorHkxSelectView();
-            BehaviorHkxTreeView();
+            ImGui.Begin("Editor##InvalidBehaviorEditor");
+
+            ImGui.Text($"This editor does not support {Project.Type}.");
+
+            ImGui.End();
+        }
+        else
+        {
+            if (!BehaviorBank.IsLoaded)
+            {
+                if (!CFG.Current.AutoLoadBank_Behavior)
+                {
+                    if (ImGui.Button("Load Behavior Editor"))
+                    {
+                        BehaviorBank.LoadBehaviors();
+                    }
+                }
+            }
+
+            if (BehaviorBank.IsLoaded)
+            {
+                BehaviorFileView();
+                BehaviorHkxSelectView();
+                BehaviorHkxTreeView();
+            }
         }
 
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
     }
 
     public void BehaviorFileView()

@@ -53,6 +53,7 @@ public class EventScriptEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -61,31 +62,38 @@ public class EventScriptEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (_projectSettings == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-        }
-
-        if (!EventScriptBank.IsLoaded)
-        {
-            if (!CFG.Current.AutoLoadBank_EventScript)
-            {
-                if (ImGui.Button("Load Event Script Editor"))
-                {
-                    EventScriptBank.LoadEventScripts();
-                }
-            }
-        }
-
         var dsid = ImGui.GetID("DockSpace_EventScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (EventScriptBank.IsLoaded)
+        if (false)
         {
-            EventScriptFileView();
+            ImGui.Begin("Editor##InvalidEventScriptEditor");
+
+            ImGui.Text($"This editor does not support {Project.Type}.");
+
+            ImGui.End();
+        }
+        else
+        {
+            if (!EventScriptBank.IsLoaded)
+            {
+                if (!CFG.Current.AutoLoadBank_EventScript)
+                {
+                    if (ImGui.Button("Load Event Script Editor"))
+                    {
+                        EventScriptBank.LoadEventScripts();
+                    }
+                }
+            }
+
+            if (EventScriptBank.IsLoaded)
+            {
+                EventScriptFileView();
+            }
         }
 
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
     }
 
     public void EventScriptFileView()

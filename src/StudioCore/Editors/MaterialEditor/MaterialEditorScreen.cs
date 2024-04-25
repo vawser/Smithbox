@@ -56,6 +56,7 @@ public class MaterialEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -64,37 +65,39 @@ public class MaterialEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (Project.Type is ProjectType.BB or ProjectType.DS2S)
-        {
-            ImGui.Text($"This editor does not support {Project.Type}.");
-            ImGui.PopStyleVar();
-            return;
-        }
-        else if (_projectSettings == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-        }
-
-        if (!MaterialBank.IsLoaded)
-        {
-            if (!CFG.Current.AutoLoadBank_Material)
-            {
-                if (ImGui.Button("Load Material Editor"))
-                {
-                    MaterialBank.LoadMaterials();
-                }
-            }
-        }
-
         var dsid = ImGui.GetID("DockSpace_MaterialEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (MaterialBank.IsLoaded)
+        if (Project.Type is ProjectType.BB or ProjectType.DS2S)
         {
-            MaterialFileView();
+            ImGui.Begin("Editor##InvalidMaterialEditor");
+
+            ImGui.Text($"This editor does not support {Project.Type}.");
+
+            ImGui.End();
+        }
+        else
+        {
+
+            if (!MaterialBank.IsLoaded)
+            {
+                if (!CFG.Current.AutoLoadBank_Material)
+                {
+                    if (ImGui.Button("Load Material Editor"))
+                    {
+                        MaterialBank.LoadMaterials();
+                    }
+                }
+            }
+
+            if (MaterialBank.IsLoaded)
+            {
+                MaterialFileView();
+            }
         }
 
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
     }
 
     public void MaterialFileView()

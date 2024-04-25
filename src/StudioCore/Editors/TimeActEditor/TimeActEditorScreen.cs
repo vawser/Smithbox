@@ -49,6 +49,7 @@ public class TimeActEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -57,37 +58,39 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
-        {
-            ImGui.Text($"This editor does not support {Project.Type}.");
-            ImGui.PopStyleVar();
-            return;
-        }
-        else if (_projectSettings == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-        }
-
-        if (!AnimationBank.IsLoaded)
-        {
-            if (!CFG.Current.AutoLoadBank_TimeAct)
-            {
-                if (ImGui.Button("Load Time Act Editor"))
-                {
-                    AnimationBank.LoadTimeActs();
-                }
-            }
-        }
-
         var dsid = ImGui.GetID("DockSpace_TimeActEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (AnimationBank.IsLoaded)
+        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
         {
-            TimeActFileView();
+            ImGui.Begin("Editor##InvalidTaeEditor");
+
+            ImGui.Text($"This editor does not support {Project.Type}.");
+
+            ImGui.End();
+        }
+        else
+        {
+
+            if (!AnimationBank.IsLoaded)
+            {
+                if (!CFG.Current.AutoLoadBank_TimeAct)
+                {
+                    if (ImGui.Button("Load Time Act Editor"))
+                    {
+                        AnimationBank.LoadTimeActs();
+                    }
+                }
+            }
+
+            if (AnimationBank.IsLoaded)
+            {
+                TimeActFileView();
+            }
         }
 
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
     }
 
     public void TimeActFileView()

@@ -7,6 +7,7 @@ using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.Settings;
+using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,7 @@ public class TalkScriptEditorScreen : EditorScreen
         var scale = Smithbox.GetUIScale();
 
         // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
         Vector2 wins = ImGui.GetWindowSize();
         Vector2 winp = ImGui.GetWindowPos();
@@ -65,31 +67,38 @@ public class TalkScriptEditorScreen : EditorScreen
         ImGui.SetNextWindowPos(winp);
         ImGui.SetNextWindowSize(wins);
 
-        if (_projectSettings == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-        }
-
-        if (!TalkScriptBank.IsLoaded)
-        {
-            if (!CFG.Current.AutoLoadBank_TalkScript)
-            {
-                if (ImGui.Button("Load Talk Script Editor"))
-                {
-                    TalkScriptBank.LoadTalkScripts();
-                }
-            }
-        }
-
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (TalkScriptBank.IsLoaded)
+        if (false)
         {
-            TalkScriptFileView();
+            ImGui.Begin("Editor##InvalidTalkEditor");
+
+            ImGui.Text($"This editor does not support {Project.Type}.");
+
+            ImGui.End();
+        }
+        else
+        {
+            if (!TalkScriptBank.IsLoaded)
+            {
+                if (!CFG.Current.AutoLoadBank_TalkScript)
+                {
+                    if (ImGui.Button("Load Talk Script Editor"))
+                    {
+                        TalkScriptBank.LoadTalkScripts();
+                    }
+                }
+            }
+
+            if (TalkScriptBank.IsLoaded)
+            {
+                TalkScriptFileView();
+            }
         }
 
         ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
     }
 
     public void TalkScriptFileView()
