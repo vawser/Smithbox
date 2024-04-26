@@ -26,7 +26,7 @@
     </Enum>
   </Enums>
   <Field>
-    <lodRange AltName="LOD Distance" Wiki="" />
+    <lodRange AltName="LOD Distance" Wiki="" Refs="GrassLodRangeParam,GrassLodRangeParam+100,GrassLodRangeParam+200" />
     <lod0ClusterType AltName="LOD 0 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />
     <lod1ClusterType AltName="LOD 1 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />
     <lod2ClusterType AltName="LOD 2 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />

@@ -1,0 +1,93 @@
+7 Green Grass
+8 Tall Green Grass Patches
+42 Orange Grass
+43 Orange Grass Patches
+44 Grey Grass
+45 Red Tall Grass
+98 Grey Grass
+100 Bricks
+101 Sticks
+102 Common Ivy
+103 Light-Grey Bricks
+104 Roots
+105 Pebbles
+106 Mixed Leaves
+107 Planks
+108 Fruits & Vegetables
+109 Ropes
+110 Books & Scrolls
+111 Hay
+112 Documents
+113 Sand with Pebbles
+114 Broken Crates
+115 Silverware
+116 Bushy Green Grass
+117 Bricks
+118 Mixed Leaves
+119 Skulls & Bones
+120 Stalactites
+121 Rocks
+122 Cursed Roots
+123 Bricks
+124 Green Grass Varied
+125 Rocks
+126 Pebbles
+130 Pebbles
+135 Ropes
+138 Dead Leaves
+139 Tall Brown Grass
+140 Short Dark Green Grass
+145 Rocks
+155 Gravel
+160 Animal Bones
+170 Green Grass Patches
+171 Tiny Reeds
+172 Tiny Reeds
+173 Grain
+180 Small Green Leaves
+185 Skulls and Bones
+187 Bigger Pebbles
+195 Red Flowers
+196 White Tall Flowers
+197 Tall Reeds
+202 Medium Bushes
+206 Small Bushes
+208 Blue Flowers
+209 Waterlily-like Plants
+210 Waterlily-like Plants (Thick)
+211 Dead Twigs 
+213 Tall Reed Patches
+227 Short Grey Grass
+263 Green Grass Varied
+280 Dead Grey Leaves
+281 Tall Dark-Grey Grass
+282 Short Dark-Grey Grass
+284 Snow-White Grass
+288 Feathers
+295 Corpses
+296 Rocks
+300 Yellow Grass
+311 Golden Leaves
+317 Snow-White Grass & Red Flowers
+322 Grey Plants
+323 Mushrooms
+326 Glintstone Fragments
+337 Small Pebbles
+338 Green Grass Varied
+339 Cattail Plants
+340 Clovers
+342 Yellow & Orange Grass
+343 Orange Grass Patches
+349 Dark-Grey Grass & Grey Flowers
+358 Short Dark-Green Grass
+361 Dark-Green Grass
+362 Blue Flowers
+363 Pebbles
+364 Small Pebbles
+365 Rocks
+366 Bricks
+367 Green Grass Varied
+407 Green Grass
+408 Tall Green Grass
+442 Orange & Yellow Grass
+443 Orange & Yellow Grass Patches

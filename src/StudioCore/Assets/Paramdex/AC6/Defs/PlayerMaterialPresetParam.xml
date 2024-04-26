@@ -6,9 +6,9 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="f32 UnkFloat0x00"></Field>
-    <Field Def="f32 intensity"></Field>
-    <Field Def="f32 UnkFloat0x08"></Field>
+    <Field Def="f32 luster"></Field>
+    <Field Def="f32 reflectiveness"></Field>
+    <Field Def="f32 colorIntensity"></Field>
     <Field Def="s32 UnkInt0x0C"></Field>
     <Field Def="s32 UnkInt0x10"></Field>
     <Field Def="s32 UnkInt0x14"></Field>

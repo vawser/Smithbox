@@ -12,5 +12,5 @@
     
     <endPadding IsHidden="" />
   </Field>
-  <Self />
+  <Self Wiki="Defines the Weathering options for Armored Cores.\n\nRow ID links the Preset to the icon texture in SB_Weathering.dds and SB_Weathering.layout\n\nRow ID + 210801 links the Preset to the FMG name it uses in the menu."/>
 </PARAMMETA>
