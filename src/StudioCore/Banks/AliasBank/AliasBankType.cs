@@ -13,6 +13,8 @@ public enum AliasBankType
     Particle,
     Map,
     Gparam,
-    Sound
+    Sound,
+    Cutscene,
+    Movie
 }
 

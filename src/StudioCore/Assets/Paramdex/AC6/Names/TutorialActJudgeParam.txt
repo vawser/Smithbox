@@ -1,31 +1,31 @@
 0 None
 1 Jump
-2 Boost increase
+2 Ascend
 3 Quick Boost
 4 Boost Move
-5 Assault Boost
-6 Vertical catapult
-8 Assault Boost Stop
-10 Repair
+5 Assault Boost: Start
+6 Vertical Launch
+8 Assault Boost: Cancel
+10 Repair Kit
 20 Target Switching
-21 Target assist on/off
-22 Dovetail
-30 Drift turn 
-31 Hovering
-100 Right hand: normal fire
-101 Right hand: charge shot
-102 Right Hand: Guard Attack
-103 Right hand: reload
-110 Left Hand: Conventional Fire
-111 Left Hand: Charge Shot
-112 Blade
-113 Blade: Consecutive Attacks
-114 Blade: Charge attack
-115 Left hand: reload
-116 Right hand: charge interruption
-117 Left hand: charge interruption
-120 Right Back: Normal Fire
-121 Right Back: Guard Attack
-122 Right Back: Multi-locked Missile Attack
-130 Left Dorsal: Conventional Fire
-131 Shield
+21 Target Assist ON/OFF
+22 Rapid-Fire Both Hand Weapons
+30 Drift Turn
+31 Hover
+100 Use Right Hand Weapon: Shoot
+101 Use Right Hand Weapon: Charge
+102 Use Right Hand Weapon: Guard
+103 Use Right Hand Weapon: Reload
+110 Use Left Hand Weapon: Shoot
+111 Use Left Hand Weapon: Charge
+112 Use Left Hand Weapon: Melee
+113 Use Left Hand Weapon: Melee - Chain
+114 Use Left Hand Weapon: Melee - Charge
+115 Use Left Hand Weapon: Reload
+116 Use Right Hand Weapon: Interupt Charge
+117 Use Left Hand Weapon: Interupt Charge
+120 Use Right Shoulder Weapon: Normal Fire
+121 Use Right Shoulder Weapon: Guard Attack
+122 Use Right Shoulder Weapon: Multi-Lock Attack
+130 Use Left Shoulder Weapon: Normal Fire
+131 Use Left Shoulder Weapon: Shield

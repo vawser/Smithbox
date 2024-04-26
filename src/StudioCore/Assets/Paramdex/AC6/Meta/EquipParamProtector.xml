@@ -213,7 +213,7 @@
     <tetrapodHoverQuickBoostVelocity AltName="Tetrapod: Hover Quick Boost Velocity" />
     <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" />
     <equipmentMenuManageCategoryParamId AltName="Equipment Menu Management Category" Refs="EquipmentMenuManageCategoryParam" />
-    <demonstrationVideoBinkId AltName="Demonstration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" />
+    <demonstrationVideoBinkId AltName="Demonstration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" MovieAlias="" />
     <recoilKnockbackVelocityCorrection_Grounded AltName="Recoil Knockback % (Grounded)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon on the ground.\nApplies conditionally, such as not applying when AC has tank legs."/>
     <recoilKnockbackVelocityCorrection_Airborne AltName="Recoil Knockback % (Airborne)" Wiki="Multiplier of backwards velocity applied to the shooter when using a weapon in the air."/>
     <armsLoadLimit AltName="Arms Load Limit" Wiki="Maximum weapon weight arms can handle before being overloaded." />

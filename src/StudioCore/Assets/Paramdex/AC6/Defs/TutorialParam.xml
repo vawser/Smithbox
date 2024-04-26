@@ -10,16 +10,16 @@
     <Field Def="s32 Unk0x04"></Field>
     <Field Def="s32 Unk0x08"></Field>
     <Field Def="u32 Unk0x0C"></Field>
-    <Field Def="s32 movieClipId"></Field>
+    <Field Def="s32 menuResourceId"></Field>
     <Field Def="s32 Unk0x14"></Field>
     <Field Def="s32 Unk0x18"></Field>
     <Field Def="s32 Unk0x1C"></Field>
     <Field Def="s32 Unk0x20"></Field>
     <Field Def="s32 Unk0x24"></Field>
     <Field Def="s32 Unk0x28"></Field>
-    <Field Def="u8 Unk0x2C"></Field>
-    <Field Def="u8 Unk0x2D"></Field>
-    <Field Def="u8 Unk0x2E"></Field>
-    <Field Def="u8 Unk0x2F"></Field>
+    <Field Def="u8 tutorialActJudgeId1"></Field>
+    <Field Def="u8 tutorialActJudgeId2"></Field>
+    <Field Def="u8 tutorialActJudgeId3"></Field>
+    <Field Def="u8 tutorialActJudgeId4"></Field>
   </Fields>
 </PARAMDEF>

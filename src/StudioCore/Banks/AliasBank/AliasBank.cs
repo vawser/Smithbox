@@ -90,6 +90,22 @@ public class AliasBank
             FileName = "Sound";
             IsAssetFileType = false;
         }
+
+        if (aliasType is AliasBankType.Cutscene)
+        {
+            AliasName = "Cutscenes";
+            AliasDirectory = "Cutscenes";
+            FileName = "Cutscene";
+            IsAssetFileType = false;
+        }
+
+        if (aliasType is AliasBankType.Movie)
+        {
+            AliasName = "Movies";
+            AliasDirectory = "Movies";
+            FileName = "Movie";
+            IsAssetFileType = false;
+        }
     }
 
     public AliasContainer AliasNames

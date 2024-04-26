@@ -446,8 +446,13 @@ public class FieldMetaData
         ShowParticleEnumList = false;
         ShowSoundEnumList = false;
         ShowFlagEnumList = false;
-        LimitField = "";
-        LimitValue = "";
+        ShowCutsceneEnumList = false;
+        ShowMovieEnumList = false;
+
+        FlagAliasEnum_ConditionalField = "";
+        FlagAliasEnum_ConditionalValue = "";
+        MovieAliasEnum_ConditionalField = "";
+        MovieAliasEnum_ConditionalValue = "";
     }
 
     public FieldMetaData(ParamMetaData parent, XmlNode fieldMeta, PARAMDEF.Field field)
@@ -532,8 +537,25 @@ public class FieldMetaData
             ShowFlagEnumList = true;
             if (FlagAlias.InnerText != "")
             {
-                LimitField = FlagAlias.InnerText.Split("=")[0];
-                LimitValue = FlagAlias.InnerText.Split("=")[1];
+                FlagAliasEnum_ConditionalField = FlagAlias.InnerText.Split("=")[0];
+                FlagAliasEnum_ConditionalValue = FlagAlias.InnerText.Split("=")[1];
+            }
+        }
+
+        XmlAttribute CutsceneAlias = fieldMeta.Attributes["CutsceneAlias"];
+        if (CutsceneAlias != null)
+        {
+            ShowCutsceneEnumList = true;
+        }
+
+        XmlAttribute MovieAlias = fieldMeta.Attributes["MovieAlias"];
+        if (MovieAlias != null)
+        {
+            ShowMovieEnumList = true;
+            if (MovieAlias.InnerText != "")
+            {
+                MovieAliasEnum_ConditionalField = MovieAlias.InnerText.Split("=")[0];
+                MovieAliasEnum_ConditionalValue = MovieAlias.InnerText.Split("=")[1];
             }
         }
     }
@@ -597,8 +619,20 @@ public class FieldMetaData
     /// Boolean for display the Event Flag alias derived Enum list
     /// </summary>
     public bool ShowFlagEnumList { get; set; }
-    public string LimitField { get; set; }
-    public string LimitValue { get; set; }
+    public string FlagAliasEnum_ConditionalField { get; set; }
+    public string FlagAliasEnum_ConditionalValue { get; set; }
+
+    /// <summary>
+    /// Boolean for display the Cutscene alias derived Enum list
+    /// </summary>
+    public bool ShowCutsceneEnumList { get; set; }
+
+    /// <summary>
+    /// Boolean for display the Movie alias derived Enum list
+    /// </summary>
+    public bool ShowMovieEnumList { get; set; }
+    public string MovieAliasEnum_ConditionalField { get; set; }
+    public string MovieAliasEnum_ConditionalValue { get; set; }
 
     /// <summary>
     ///     Path (and subpath) filters for files linked by this field.

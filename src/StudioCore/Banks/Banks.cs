@@ -24,6 +24,8 @@ public static class BankUtils
         ParticleAliasBank.Bank = new AliasBank(AliasBankType.Particle);
         GparamAliasBank.Bank = new AliasBank(AliasBankType.Gparam);
         SoundAliasBank.Bank = new AliasBank(AliasBankType.Sound);
+        CutsceneAliasBank.Bank = new AliasBank(AliasBankType.Cutscene);
+        MovieAliasBank.Bank = new AliasBank(AliasBankType.Movie);
 
         // Format
         MsbFormatBank.Bank = new FormatBank(FormatBankType.MSB, true);
@@ -50,6 +52,8 @@ public static class BankUtils
         MapAliasBank.Bank.ReloadAliasBank();
         GparamAliasBank.Bank.ReloadAliasBank();
         SoundAliasBank.Bank.ReloadAliasBank();
+        CutsceneAliasBank.Bank.ReloadAliasBank();
+        MovieAliasBank.Bank.ReloadAliasBank();
 
         // Format
         MsbFormatBank.Bank.ReloadFormatBank();
@@ -193,6 +197,16 @@ public static class GparamAliasBank
 }
 
 public static class SoundAliasBank
+{
+    public static AliasBank Bank { get; set; }
+}
+
+public static class CutsceneAliasBank
+{
+    public static AliasBank Bank { get; set; }
+}
+
+public static class MovieAliasBank
 {
     public static AliasBank Bank { get; set; }
 }

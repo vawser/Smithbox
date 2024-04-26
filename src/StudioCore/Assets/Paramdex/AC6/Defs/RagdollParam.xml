@@ -6,18 +6,16 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="f32 UnkFloat0x00"></Field>
-    <Field Def="f32 UnkFloat0x04"></Field>
-    <Field Def="f32 UnkFloat0x08"></Field>
-    <Field Def="f32 UnkFloat0x0C"></Field>
-    <Field Def="f32 UnkFloat0x10"></Field>
-    <Field Def="f32 UnkFloat0x14"></Field>
-    <Field Def="f32 UnkFloat0x18"></Field>
-    <Field Def="f32 UnkFloat0x1C"></Field>
-    <Field Def="u16 UnkUshort0x20"></Field>
-    <Field Def="u16 UnkUshort0x22"></Field>
-    <Field Def="s32 UnkInt0x24"></Field>
-    <Field Def="s32 UnkInt0x28"></Field>
-    <Field Def="s32 UnkInt0x2C"></Field>
+    <Field Def="f32 hierarchyGain"></Field>
+    <Field Def="f32 velocityDamping"></Field>
+    <Field Def="f32 accelGain"></Field>
+    <Field Def="f32 velocityGain"></Field>
+    <Field Def="f32 positionGain"></Field>
+    <Field Def="f32 maxLinerVelocity"></Field>
+    <Field Def="f32 maxAngularVelocity"></Field>
+    <Field Def="f32 snapGain"></Field>
+    <Field Def="u8 enable"></Field>
+    <Field Def="s8 partsHitMaskNo"></Field>
+    <Field Def="dummy8 endPadding[14]"></Field>
   </Fields>
 </PARAMDEF>

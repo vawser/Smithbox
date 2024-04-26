@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-      <menuTabCategory Wiki="Which tab in menu emblem will appear in. Menu uses text 212110 + value" />
+      <decalTextureId AltName="Decal Texture ID" />
+      <menuTabCategoryOffset AltName="Menu Tab Category Offset" Wiki="Which tab in menu emblem will appear in. Menu uses text 212110 + offset" />
+      <endPadding IsHidden="" />
   </Field>
   <Self />
 </PARAMMETA>

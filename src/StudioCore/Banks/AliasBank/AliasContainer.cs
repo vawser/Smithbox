@@ -57,6 +57,12 @@ public class AliasContainer
 
         if (aliasType is AliasBankType.Sound)
             aliasMap.Add("Sounds", LoadJSON("Sound"));
+
+        if (aliasType is AliasBankType.Cutscene)
+            aliasMap.Add("Cutscenes", LoadJSON("Cutscene"));
+
+        if (aliasType is AliasBankType.Movie)
+            aliasMap.Add("Movies", LoadJSON("Movie"));
     }
 
     private AliasResource LoadJSON(string filename)
@@ -155,6 +161,12 @@ public class AliasContainer
 
         if (aliasType is AliasBankType.Sound)
             typDir = "Sounds";
+
+        if (aliasType is AliasBankType.Cutscene)
+            typDir = "Cutscenes";
+
+        if (aliasType is AliasBankType.Movie)
+            typDir = "Movies";
 
         return typDir;
     }

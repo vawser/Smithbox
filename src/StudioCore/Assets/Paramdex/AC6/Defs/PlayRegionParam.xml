@@ -7,10 +7,10 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     <Field Def="s32 Unk0x00"></Field>
-    <Field Def="s32 Unk0x04"></Field>
-    <Field Def="s32 Unk0x08"></Field>
-    <Field Def="f32 Unk0x0C"></Field>
-    <Field Def="s32 Unk0x10"></Field>
+    <Field Def="s32 matchAreaId"></Field>
+    <Field Def="u32 multiPlayStartLimitEventFlagId"></Field>
+    <Field Def="f32 otherDisableDistance"></Field>
+    <Field Def="u32 pcPositionSaveLimitEventFlagId"></Field>
     <Field Def="u32 bossAreaId"></Field>
     <Field Def="s32 Unk0x18"></Field>
     <Field Def="s32 Unk0x1C"></Field>

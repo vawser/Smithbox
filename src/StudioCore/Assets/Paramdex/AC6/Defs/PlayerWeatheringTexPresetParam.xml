@@ -6,14 +6,14 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="f32 UnkFloat0x04"></Field>
-    <Field Def="f32 UnkFloat0x08"></Field>
-    <Field Def="f32 UnkFloat0x0C"></Field>
-    <Field Def="f32 UnkFloat0x10"></Field>
-    <Field Def="f32 UnkFloat0x14"></Field>
-    <Field Def="f32 UnkFloat0x18"></Field>
+    <Field Def="s32 abrasedTextureId"></Field>
+    <Field Def="f32 abrasedTextureCoverageFactor"></Field>
+    <Field Def="f32 mainRustTextureCoverageFactor"></Field>
+    <Field Def="f32 trimRustTextureCoverageFactor"></Field>
+    <Field Def="f32 abrasedTextureBrightnessFactor"></Field>
+    <Field Def="f32 mainRustTextureBrightnessFactor"></Field>
+    <Field Def="f32 trimRustTextureBrightnessFactor"></Field>
     <Field Def="s32 UnkInt0x1C"></Field>
-    <Field Def="s32 UnkInt0x20"></Field>
+    <Field Def="s32 endPadding"></Field>
   </Fields>
 </PARAMDEF>

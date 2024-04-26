@@ -29,6 +29,8 @@ public class AliasWindow
     private MapNameTab MapAliasTab;
     private GparamNameTab GparamAliasTab;
     private SoundTab SoundAliasTab;
+    private CutsceneTab CutsceneAliasTab;
+    private MovieTab MovieAliasTab;
 
     public AliasWindow()
     {
@@ -37,6 +39,8 @@ public class AliasWindow
         MapAliasTab = new MapNameTab();
         GparamAliasTab = new GparamNameTab();
         SoundAliasTab = new SoundTab();
+        CutsceneAliasTab = new CutsceneTab();
+        MovieAliasTab = new MovieTab();
     }
 
     public void ToggleMenuVisibility()
@@ -68,6 +72,8 @@ public class AliasWindow
             DisplayEventFlagTab();
             DisplayParticleTab();
             DisplaySoundTab();
+            DisplayCutsceneTab();
+            DisplayMovieTab();
             DisplayMapNameTab();
             DisplayGparamNameTab();
 
@@ -125,6 +131,26 @@ public class AliasWindow
         if (ImGui.BeginTabItem("Sounds"))
         {
             SoundAliasTab.Display();
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void DisplayCutsceneTab()
+    {
+        if (ImGui.BeginTabItem("Cutscenes"))
+        {
+            CutsceneAliasTab.Display();
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void DisplayMovieTab()
+    {
+        if (ImGui.BeginTabItem("Movies"))
+        {
+            MovieAliasTab.Display();
 
             ImGui.EndTabItem();
         }

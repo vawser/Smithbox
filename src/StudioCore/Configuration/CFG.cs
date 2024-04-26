@@ -487,15 +487,13 @@ public class CFG
     public bool AssetBrowser_UpdateInstanceID = true;
 
     public bool EventFlagAtlas_ShowTags = true;
-
     public bool ParticleAtlas_ShowTags = true;
-
     public bool MapNameAtlas_ShowUnused = false;
     public bool MapNameAtlas_ShowTags = true;
-
     public bool GparamNameAtlas_ShowTags = true;
-
     public bool SoundAtlas_ShowTags = true;
+    public bool CutsceneAtlas_ShowTags = true;
+    public bool MovieAtlas_ShowTags = true;
 
     //****************************
     // Map Toolbar

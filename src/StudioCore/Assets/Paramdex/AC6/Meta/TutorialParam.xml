@@ -48,15 +48,12 @@
   <Field>
     <menuResourceType AltName="Menu Resource Type" Enum="TUTORIAL_MENU_RESOURCE_TYPE" />
     
-    <menuType AltName="Menu Type" Wiki="Specifies the type of tutorial menu to display" Enum="TUTORIAL_MENU_TYPE" />
+    <menuResourceId AltName="Menu Resource ID" Wiki="ID of the resource to use." MovieAlias="menuResourceType=105" />
     
-    <triggerType AltName="Trigger Type" Wiki="Display timing (default: 0: -). You will see this tutorial when you open this menu. Specify 0: - if you do not want to display it when you open the menu." Enum="TUTORIAL_TRIGGER_TYPE" />
-    
-    <repeatType AltName="Repeat Type" Wiki="Number of times a tutorial can be displayed" Enum="TUTORIAL_REPEAT_TYPE" />
-    
-    <imageId AltName="Image ID" Wiki="Specifies the tutorial image ID to display (default: 0). Specify 0 if you do not want to display the image" />
-    
-    <movieClipId AltName="Movie Clip ID" Wiki="ID of the movie clip to play." />
+    <tutorialActJudgeId1 AltName="Tutorial Act Judge ID [1]" Refs="TutorialActJudgeParam" />
+    <tutorialActJudgeId2 AltName="Tutorial Act Judge ID [2]" Refs="TutorialActJudgeParam" />
+    <tutorialActJudgeId3 AltName="Tutorial Act Judge ID [3]" Refs="TutorialActJudgeParam" />
+    <tutorialActJudgeId4 AltName="Tutorial Act Judge ID [4]" Refs="TutorialActJudgeParam" />
   </Field>
   <Self />
 </PARAMMETA>

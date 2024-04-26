@@ -353,15 +353,9 @@ public class EditorDecorations
         ImGui.PopStyleColor();
     }
 
-    public static void AliasEnumNameText(string name, Param.Row row, string limitField, string limitValue)
+    public static void AliasEnumNameText(string name)
     {
         var inactiveEnum = false;
-
-        if (limitField != "")
-        {
-            Param.Cell? c = row?[limitField];
-            inactiveEnum = row != null && c != null && Convert.ToInt32(c.Value.Value) != Convert.ToInt32(limitValue);
-        }
 
         if (CFG.Current.Param_HideEnums == false) //Move preference
         {
@@ -373,7 +367,8 @@ public class EditorDecorations
             }
         }
     }
-    public static void AliasEnumValueText(Dictionary<string, string> enumValues, string value, Param.Row row, string limitField, string limitValue)
+
+    public static void ConditionalAliasEnumNameText(string name, Param.Row row, string limitField, string limitValue)
     {
         var inactiveEnum = false;
 
@@ -387,13 +382,47 @@ public class EditorDecorations
         {
             if (!inactiveEnum)
             {
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumName_Text);
+                ImGui.TextUnformatted($@"   {name}");
+                ImGui.PopStyleColor();
+            }
+        }
+    }
+
+    public static void AliasEnumValueText(Dictionary<string, string> enumValues, string value)
+    {
+        var inactiveEnum = false;
+
+        if (CFG.Current.Param_HideEnums == false) //Move preference
+        {
+            if (!inactiveEnum)
+            {
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
                 ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
                 ImGui.PopStyleColor();
             }
         }
     }
+    public static void ConditionalAliasEnumValueText(Dictionary<string, string> enumValues, string value, Param.Row row, string conditionalField, string conditionalValue)
+    {
+        var inactiveEnum = false;
 
+        if (conditionalField != "")
+        {
+            Param.Cell? c = row?[conditionalField];
+            inactiveEnum = row != null && c != null && Convert.ToInt32(c.Value.Value) != Convert.ToInt32(conditionalValue);
+        }
+
+        if (CFG.Current.Param_HideEnums == false) //Move preference
+        {
+            if (!inactiveEnum)
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_EnumValue_Text);
+                ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                ImGui.PopStyleColor();
+            }
+        }
+    }
 
     public static void VirtualParamRefSelectables(ParamBank bank, string virtualRefName, object searchValue,
         Param.Row context, string fieldName, List<ExtRef> ExtRefs, EditorScreen cacheOwner)
@@ -520,7 +549,7 @@ public class EditorDecorations
     }
 
     public static bool ParamRefEnumContextMenuItems(ParamBank bank, object oldval, ref object newval,
-        List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, ParamEnum Enum, bool showParticleEnum, bool showSoundEnum, bool showFlagEnum, ActionManager executor)
+        List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, ParamEnum Enum, ActionManager executor, bool showParticleEnum = false, bool showSoundEnum = false, bool showFlagEnum = false, bool showCutsceneEnum = false, bool showMovieEnum = false)
     {
         var result = false;
         if (RefTypes != null)
@@ -551,6 +580,16 @@ public class EditorDecorations
         if (showFlagEnum)
         {
             result |= PropertyRowAliasEnumContextItems(FlagAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+        }
+
+        if (showCutsceneEnum)
+        {
+            result |= PropertyRowAliasEnumContextItems(CutsceneAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
+        }
+
+        if (showMovieEnum)
+        {
+            result |= PropertyRowAliasEnumContextItems(MovieAliasBank.Bank.GetEnumDictionary(), oldval, ref newval);
         }
 
         return result;

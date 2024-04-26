@@ -1369,7 +1369,7 @@
 12020820 [LD - Nokron / Siofra] Rune Arc
 12020830 [LD - Nokron / Siofra] Smithing Stone [4]
 12020840 [LD - Nokron / Siofra] Golden Rune [1]
-12020850 [LD - Nokron / Siofra] Voidbane Talisman
+12020850 [LD - Nokron / Siofra] 
 12020860 [LD - Nokron / Siofra] Rune Arc
 12020870 [LD - Nokron / Siofra] Celestial Dew
 12020880 [LD - Nokron / Siofra] Mimic Tear Ashes
@@ -2275,7 +2275,7 @@
 32070000 [Caelid - Gael Tunnel] Somber Smithing Stone [2]
 32070010 [Caelid - Gael Tunnel] Golden Rune [5]
 32070020 [Caelid - Gael Tunnel] Cross-Naginata
-32070030 [Caelid - Gael Tunnel] Dragonbane Talisman
+32070030 [Caelid - Gael Tunnel] 
 32070060 [Caelid - Gael Tunnel] Large Glintstone Scrap
 32070070 [Caelid - Gael Tunnel] Grace Mimic
 32080000 [Caelid - Sellia Crystal Tunnel] Rot Grease
