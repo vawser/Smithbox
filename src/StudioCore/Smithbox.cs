@@ -760,7 +760,7 @@ public class Smithbox
         ImGui.Text("Project Name:      ");
         ImGui.SameLine();
         Utils.ImGuiGenericHelpPopup("?", "##Help_ProjectName",
-            "Project's display name. Only affects visuals within DSMS.");
+            "Project's display name. Only affects visuals within Smithbox.");
         ImGui.SameLine();
         var pname = _newProjectOptions.settings.ProjectName;
         if (ImGui.InputText("##pname", ref pname, 255))

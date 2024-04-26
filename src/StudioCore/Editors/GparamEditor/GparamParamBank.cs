@@ -189,28 +189,31 @@ public static class GparamParamBank
         HashSet<string> paramNames = new();
         List<string> ret = new();
 
-        // ROOT
-        var paramFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + paramDir, $@"*{paramExt}").ToList();
-        foreach (var f in paramFiles)
+        if (Directory.Exists(Project.GameRootDirectory + paramDir))
         {
-            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
-            ret.Add(name);
-            paramNames.Add(name);
-        }
-
-        // MOD
-        if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + paramDir))
-        {
-            paramFiles = Directory.GetFileSystemEntries(Project.GameModDirectory + paramDir, $@"*{paramExt}").ToList();
-
+            // ROOT
+            var paramFiles = Directory.GetFileSystemEntries(Project.GameRootDirectory + paramDir, $@"*{paramExt}").ToList();
             foreach (var f in paramFiles)
             {
                 var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+                ret.Add(name);
+                paramNames.Add(name);
+            }
 
-                if (!paramNames.Contains(name))
+            // MOD
+            if (Project.GameModDirectory != null && Directory.Exists(Project.GameModDirectory + paramDir))
+            {
+                paramFiles = Directory.GetFileSystemEntries(Project.GameModDirectory + paramDir, $@"*{paramExt}").ToList();
+
+                foreach (var f in paramFiles)
                 {
-                    ret.Add(name);
-                    paramNames.Add(name);
+                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
+
+                    if (!paramNames.Contains(name))
+                    {
+                        ret.Add(name);
+                        paramNames.Add(name);
+                    }
                 }
             }
         }
