@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Material Color">
+        <Field Name="colorRed" Type="f32"/> 
+        <Field Name="colorGreen" Type="f32"/> 
+        <Field Name="colorBlue" Type="f32"/> 
+        <Field Name="colorAlpha" Type="f32"/>
+    </ColorEditor>
+  </ColorEdit>
   <Field>
     <materialExParamId AltName="Material Ex Param ID" Refs="MaterialExParam"/>
     <colorRed AltName="Color: Red" />

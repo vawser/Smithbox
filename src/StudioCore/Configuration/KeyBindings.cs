@@ -104,7 +104,14 @@ public class KeyBindings
         public KeyBind Core_Undo = new("Undo", KeybindCategory.Core, Key.Z, true);
 
         // Windows
-        public KeyBind Window_Help = new("Toggle Help Window", KeybindCategory.Window, Key.F2);
+        public KeyBind ToggleWindow_Project = new("Toggle Project Window", KeybindCategory.Window, Key.F1);
+        public KeyBind ToggleWindow_Help = new("Toggle Help Window", KeybindCategory.Window, Key.F2);
+        public KeyBind ToggleWindow_Keybind = new("Toggle Keybind Window", KeybindCategory.Window, Key.F3);
+        public KeyBind ToggleWindow_Memory = new("Toggle Memory Window", KeybindCategory.Window, Key.F4);
+        public KeyBind ToggleWindow_Settings = new("Toggle Settings Window", KeybindCategory.Window, Key.F5);
+        public KeyBind ToggleWindow_Alias = new("Toggle Alias Window", KeybindCategory.Window, Key.F6);
+        public KeyBind ToggleWindow_ColorPicker = new("Toggle Color Picker Window", KeybindCategory.Window, Key.F7);
+        public KeyBind ToggleWindow_Debug = new("Toggle Debug Window", KeybindCategory.Window, Key.F8);
 
         // Map Toolbar
         public KeyBind Toolbar_Rotate_X = new("Rotate X", KeybindCategory.MapEditor, Key.J);

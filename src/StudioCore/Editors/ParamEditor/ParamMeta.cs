@@ -21,6 +21,8 @@ public class ParamMetaData
 
     internal Dictionary<string, ParamEnum> enums = new();
 
+    internal Dictionary<string, ParamColorEdit> colorEditors = new();
+
     public static string CurrentMetaFile = "";
 
     private ParamMetaData(PARAMDEF def, string path)
@@ -140,12 +142,21 @@ public class ParamMetaData
             }
         }
 
+        // Enums
         foreach (XmlNode node in root.SelectNodes("Enums/Enum"))
         {
             ParamEnum en = new(node);
             enums.Add(en.name, en);
         }
 
+        // Color Edits
+        foreach (XmlNode node in root.SelectNodes("ColorEdit/ColorEditor"))
+        {
+            ParamColorEdit colorEditor = new(node);
+            colorEditors.Add(colorEditor.name, colorEditor);
+        }
+
+        // Fields
         Dictionary<string, int> nameCount = new();
         foreach (PARAMDEF.Field f in def.Fields)
         {
@@ -683,6 +694,22 @@ public class FieldMetaData
         XmlNode thisNode = ParamMetaData.GetXmlNode(_parent._xml, "PARAMMETA", "Field", field);
         if (thisNode.Attributes.Count == 0 && thisNode.ChildNodes.Count == 0)
             ParamMetaData.GetXmlNode(_parent._xml, "PARAMMETA", "Field").RemoveChild(thisNode);
+    }
+}
+
+public class ParamColorEdit
+{
+    public string name;
+
+    public Dictionary<string, string> values = new();
+
+    public ParamColorEdit(XmlNode enumNode)
+    {
+        name = enumNode.Attributes["Name"].InnerText;
+        foreach (XmlNode option in enumNode.SelectNodes("Field"))
+        {
+            values[option.Attributes["Name"].InnerText] = option.Attributes["Type"].InnerText;
+        }
     }
 }
 

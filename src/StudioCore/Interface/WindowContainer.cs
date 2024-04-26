@@ -10,5 +10,6 @@ public static class WindowContainer
     public static KeybindWindow KeybindWindow { get; set; }
     public static MemoryWindow MemoryWindow { get; set; }
     public static AliasWindow AliasWindow { get; set; }
+    public static ColorPickerWindow ColorPickerWindow { get; set; }
 }
 

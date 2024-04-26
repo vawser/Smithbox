@@ -394,6 +394,7 @@ public class CFG
     public bool Param_ShowSecondaryNames = true;
     public bool Param_ShowVanillaParams = true;
     public bool Param_HidePaddingFields = true;
+    public bool Param_ShowColorPreview = true;
 
     public bool Param_ShowTraditionalPercentages = false;
 

@@ -15,6 +15,26 @@
         <Option Value="1" Name="Mode 1" />
     </Enum>
   </Enums>
+  <ColorEdit>
+    <ColorEditor Name="Diffuse Color">
+        <Field Name="diffuseColorR" Type="u8"/> 
+        <Field Name="diffuseColorG" Type="u8"/> 
+        <Field Name="diffuseColorB" Type="u8"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Reflection Color">
+        <Field Name="reflecColorR" Type="u8"/> 
+        <Field Name="reflecColorG" Type="u8"/> 
+        <Field Name="reflecColorB" Type="u8"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Emissive Color">
+        <Field Name="emissiveColorR" Type="u8"/> 
+        <Field Name="emissiveColorG" Type="u8"/> 
+        <Field Name="emissiveColorB" Type="u8"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+  </ColorEdit>
   <Field>
     <textureId AltName="Texture ID" Wiki="Texture ID" />
     <dmypolyId AltName="Dummy Poly ID" Wiki="Damipoly ID of decal generation standard. If specified by TAE, it will be the value of TAE." />
@@ -72,9 +92,9 @@
     <diffuseColorG AltName="Diffuse Color G" Wiki="Albedo color G" />
     <diffuseColorB AltName="Diffuse Color B" Wiki="Albedo color B" />
     <pad_03 AltName="" IsHidden=""/>
-    <reflecColorR AltName="Reflect Color R" Wiki="Reflect color R" />
-    <reflecColorG AltName="Reflect Color G" Wiki="Reflect color G" />
-    <reflecColorB AltName="Reflect Color B" Wiki="Reflect color B" />
+    <reflecColorR AltName="Reflection Color R" Wiki="Reflect color R" />
+    <reflecColorG AltName="Reflection Color G" Wiki="Reflect color G" />
+    <reflecColorB AltName="Reflection Color B" Wiki="Reflect color B" />
     <bLifeEnable AltName="Life Enable" Wiki="Is the life effective?" IsBool="" />
     <siniScale AltName="Shininess Scale" Wiki="The strength of shinyness" />
     <lifeTimeSec AltName="Decal Duration" Wiki="Lifespan [seconds] (Time after decal is applied, fade-in time does not matter)" />

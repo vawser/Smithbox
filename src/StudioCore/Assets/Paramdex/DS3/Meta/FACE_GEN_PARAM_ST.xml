@@ -1,5 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+    <ColorEdit>
+        <ColorEditor Name="Skin Color">
+            <Field Name="skinColor_R" Type="u8"/> 
+            <Field Name="skinColor_G" Type="u8"/> 
+            <Field Name="skinColor_B" Type="u8"/> 
+            <Field Name="null" Type="f32"/>
+        </ColorEditor>
+        <ColorEditor Name="Right Eye Color">
+            <Field Name="eyeRColor_R" Type="u8"/> 
+            <Field Name="eyeRColor_G" Type="u8"/> 
+            <Field Name="eyeRColor_B" Type="u8"/> 
+            <Field Name="null" Type="f32"/>
+        </ColorEditor>
+        <ColorEditor Name="Left Eye Color">
+            <Field Name="eyeLColor_R" Type="u8"/> 
+            <Field Name="eyeLColor_G" Type="u8"/> 
+            <Field Name="eyeLColor_B" Type="u8"/> 
+            <Field Name="null" Type="f32"/>
+        </ColorEditor>
+        <ColorEditor Name="Hair Color">
+            <Field Name="hairColor_R" Type="u8"/> 
+            <Field Name="hairColor_G" Type="u8"/> 
+            <Field Name="hairColor_B" Type="u8"/> 
+            <Field Name="null" Type="f32"/>
+        </ColorEditor>
+        <ColorEditor Name="Eyebrow Color">
+            <Field Name="eyeBrowColor_R" Type="u8"/> 
+            <Field Name="eyeBrowColor_G" Type="u8"/> 
+            <Field Name="eyeBrowColor_B" Type="u8"/> 
+            <Field Name="null" Type="f32"/>
+        </ColorEditor>
+        <ColorEditor Name="Beard Color">
+            <Field Name="beardColor_R" Type="u8"/> 
+            <Field Name="beardColor_G" Type="u8"/> 
+            <Field Name="beardColor_B" Type="u8"/> 
+            <Field Name="null" Type="f32"/>
+        </ColorEditor>
+        <ColorEditor Name="Accessories Color">
+            <Field Name="accessoriesColor_R" Type="u8"/> 
+            <Field Name="accessoriesColor_G" Type="u8"/> 
+            <Field Name="accessoriesColor_B" Type="u8"/> 
+            <Field Name="null" Type="f32"/>
+        </ColorEditor>
+        <ColorEditor Name="Decal Color">
+            <Field Name="decalColor_R" Type="u8"/> 
+            <Field Name="decalColor_G" Type="u8"/> 
+            <Field Name="decalColor_B" Type="u8"/> 
+            <Field Name="null" Type="f32"/>
+        </ColorEditor>
+    </ColorEdit>
   <Field>
     <FaceGeoData01 AltName="Face Geo Data 01" />
     <FaceGeoData02 AltName="Face Geo Data 02" />

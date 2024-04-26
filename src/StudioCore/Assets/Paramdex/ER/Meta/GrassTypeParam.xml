@@ -25,6 +25,20 @@
         <Option Value="0" Name="Type 0" />
     </Enum>
   </Enums>
+  <ColorEdit>
+    <ColorEditor Name="Color Shade 1">
+        <Field Name="colorShade1_r" Type="u8"/> 
+        <Field Name="colorShade1_g" Type="u8"/> 
+        <Field Name="colorShade1_b" Type="u8"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Color Shade 2">
+        <Field Name="colorShade2_r" Type="u8"/> 
+        <Field Name="colorShade2_g" Type="u8"/> 
+        <Field Name="colorShade2_b" Type="u8"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+  </ColorEdit>
   <Field>
     <lodRange AltName="LOD Distance" Wiki="" Refs="GrassLodRangeParam,GrassLodRangeParam+100,GrassLodRangeParam+200" />
     <lod0ClusterType AltName="LOD 0 - Cluster Type" Wiki="" Enum="GRASS_CLUSTER_TYPE_ENUM" />

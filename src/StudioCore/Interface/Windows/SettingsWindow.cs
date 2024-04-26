@@ -626,7 +626,11 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Allow the field order to be changed by an alternative order as defined within the Paramdex META file.");
 
                 ImGui.Checkbox("Hide padding fields", ref CFG.Current.Param_HidePaddingFields);
-                ImguiUtils.ShowHoverTooltip("Hides fields that are considered 'padding' in the property editor view..");
+                ImguiUtils.ShowHoverTooltip("Hides fields that are considered 'padding' in the property editor view.");
+
+                ImGui.Checkbox("Show color preview", ref CFG.Current.Param_ShowColorPreview);
+                ImguiUtils.ShowHoverTooltip("Show color preview in field column if applicable.");
+                
             }
 
             // Values

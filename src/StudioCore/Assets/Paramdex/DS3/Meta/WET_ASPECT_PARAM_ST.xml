@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <ColorEdit>
+    <ColorEditor Name="Base Color">
+        <Field Name="baseColorR" Type="u8"/> 
+        <Field Name="baseColorG" Type="u8"/> 
+        <Field Name="baseColorB" Type="u8"/> 
+        <Field Name="baseColorA" Type="f32"/>
+    </ColorEditor>
+  </ColorEdit>
   <Field>
     <baseColorR AltName="Base Color: R" Wiki="Base color color R." />
     <baseColorG AltName="Base Color: G" Wiki="Base color color G." />

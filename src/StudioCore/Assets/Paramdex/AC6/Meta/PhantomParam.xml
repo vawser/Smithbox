@@ -9,6 +9,38 @@
       <Option Value="4" Name="Type 4" />
     </Enum>
   </Enums>
+  <ColorEdit>
+    <ColorEditor Name="Edge Color">
+        <Field Name="edgeColorR" Type="u8"/> 
+        <Field Name="edgeColorG" Type="u8"/> 
+        <Field Name="edgeColorB" Type="u8"/> 
+        <Field Name="edgeColorA" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Front Color">
+        <Field Name="frontColorR" Type="u8"/> 
+        <Field Name="frontColorG" Type="u8"/> 
+        <Field Name="frontColorB" Type="u8"/> 
+        <Field Name="frontColorA" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Diffuse Color">
+        <Field Name="diffMulColorR" Type="u8"/> 
+        <Field Name="diffMulColorG" Type="u8"/> 
+        <Field Name="diffMulColorB" Type="u8"/> 
+        <Field Name="specMulColorA" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Specular Color">
+        <Field Name="specMulColorR" Type="u8"/> 
+        <Field Name="specMulColorG" Type="u8"/> 
+        <Field Name="specMulColorB" Type="u8"/> 
+        <Field Name="specMulColorA" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Light Color">
+        <Field Name="lightColorR" Type="u8"/> 
+        <Field Name="lightColorG" Type="u8"/> 
+        <Field Name="lightColorB" Type="u8"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+  </ColorEdit>
   <Field>
     <edgeColorA AltName="Edge Color: Alpha" Wiki="Edge color A." />
     <frontColorA AltName="Front Color: Alpha" Wiki="The front color is A." />

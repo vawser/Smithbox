@@ -37,27 +37,33 @@ public class KeybindWindow
 
         FieldInfo[] binds = KeyBindings.Current.GetType().GetFields();
 
-        KeybindSection("Core", binds, KeybindCategory.Core, 0);
-        KeybindSection("Window", binds, KeybindCategory.Window, 1);
-        KeybindSection("Map Editor", binds, KeybindCategory.MapEditor, 2);
-        KeybindSection("Model Editor", binds, KeybindCategory.ModelEditor, 3);
-        KeybindSection("Param Editor", binds, KeybindCategory.ParamEditor, 4);
-        KeybindSection("Text Editor", binds, KeybindCategory.TextEditor, 5);
-        KeybindSection("Viewport", binds, KeybindCategory.Viewport, 6);
+        KeybindSection("Core", binds, KeybindCategory.Core, 0, "These keybinds are available across all editors.");
+        KeybindSection("Window", binds, KeybindCategory.Window, 1, "These keybinds are available across all editors.");
+        KeybindSection("Map Editor", binds, KeybindCategory.MapEditor, 2, "These keybinds are only available in the Map Editor.");
+        KeybindSection("Model Editor", binds, KeybindCategory.ModelEditor, 3, "These keybinds are only available in the Model Editor.");
+        KeybindSection("Param Editor", binds, KeybindCategory.ParamEditor, 4, "These keybinds are only available in the Param Editor.");
+        KeybindSection("Text Editor", binds, KeybindCategory.TextEditor, 5, "These keybinds are only available in the Text Editor.");
+        KeybindSection("Viewport", binds, KeybindCategory.Viewport, 6, "These keybinds are only available within the Viewport of the Map or Model Editor.");
 
         if (ImGui.BeginTabItem($"Defaults"))
         {
-            if (ImGui.Button("Restore defaults"))
+            ImGui.Text("This button will reset your shortcuts to the default assignments.");
+
+            if (ImGui.Button("Restore keybinds"))
+            {
                 KeyBindings.ResetKeyBinds();
+            }
 
             ImGui.EndTabItem();
         }
     }
 
-    public void KeybindSection(string title, FieldInfo[] binds, KeybindCategory keyCategory, int idx)
+    public void KeybindSection(string title, FieldInfo[] binds, KeybindCategory keyCategory, int idx, string contextInfo)
     {
         if (ImGui.BeginTabItem($"{title}##KeyBind{title}{idx}"))
         {
+            ImGui.Text(contextInfo);
+
             ImGui.Columns(2);
 
             foreach (FieldInfo bind in binds)

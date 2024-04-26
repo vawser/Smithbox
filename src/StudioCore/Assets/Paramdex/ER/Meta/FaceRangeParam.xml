@@ -2,6 +2,123 @@
 <PARAMMETA XmlVersion="0">
   <Enums>
   </Enums>
+  <ColorEdit>
+    <ColorEditor Name="Skin Color">
+        <Field Name="skin_color_R" Type="f32"/> 
+        <Field Name="skin_color_G" Type="f32"/> 
+        <Field Name="skin_color_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Around Eye Color">
+        <Field Name="face_aroundEyeColor_R" Type="f32"/> 
+        <Field Name="face_aroundEyeColor_G" Type="f32"/> 
+        <Field Name="face_aroundEyeColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Cheek Color">
+        <Field Name="face_cheekColor_R" Type="f32"/> 
+        <Field Name="face_cheekColor_G" Type="f32"/> 
+        <Field Name="face_cheekColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Eyeline Color">
+        <Field Name="face_eyeLineColor_R" Type="f32"/> 
+        <Field Name="face_eyeLineColor_G" Type="f32"/> 
+        <Field Name="face_eyeLineColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Eye Shadow Down Color">
+        <Field Name="face_eyeShadowDownColor_R" Type="f32"/> 
+        <Field Name="face_eyeShadowDownColor_G" Type="f32"/> 
+        <Field Name="face_eyeShadowDownColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Eye Shadow Up Color">
+        <Field Name="face_eyeShadowUpColor_R" Type="f32"/> 
+        <Field Name="face_eyeShadowUpColor_G" Type="f32"/> 
+        <Field Name="face_eyeShadowUpColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Lip Color">
+        <Field Name="face_lipColor_R" Type="f32"/> 
+        <Field Name="face_lipColor_G" Type="f32"/> 
+        <Field Name="face_lipColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Body Hair Color">
+        <Field Name="body_hairColor_R" Type="f32"/> 
+        <Field Name="body_hairColor_G" Type="f32"/> 
+        <Field Name="body_hairColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Right Iris Color">
+        <Field Name="eyeR_irisColor_R" Type="f32"/> 
+        <Field Name="eyeR_irisColor_G" Type="f32"/> 
+        <Field Name="eyeR_irisColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Right Cataract Color">
+        <Field Name="eyeR_cataractColor_R" Type="f32"/> 
+        <Field Name="eyeR_cataractColor_G" Type="f32"/> 
+        <Field Name="eyeR_cataractColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Right Sclera Color">
+        <Field Name="eyeR_scleraColor_R" Type="f32"/> 
+        <Field Name="eyeR_scleraColor_G" Type="f32"/> 
+        <Field Name="eyeR_scleraColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Left Iris Color">
+        <Field Name="eyeL_irisColor_R" Type="f32"/> 
+        <Field Name="eyeL_irisColor_G" Type="f32"/> 
+        <Field Name="eyeL_irisColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Left Cataract Color">
+        <Field Name="eyeL_cataractColor_R" Type="f32"/> 
+        <Field Name="eyeL_cataractColor_G" Type="f32"/> 
+        <Field Name="eyeL_cataractColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Left Sclera Color">
+        <Field Name="eyeL_scleraColor_R" Type="f32"/> 
+        <Field Name="eyeL_scleraColor_G" Type="f32"/> 
+        <Field Name="eyeL_scleraColor_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Hair Color">
+        <Field Name="hair_color_R" Type="f32"/> 
+        <Field Name="hair_color_G" Type="f32"/> 
+        <Field Name="hair_color_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Eyebrow Color">
+        <Field Name="eyebrow_color_R" Type="f32"/> 
+        <Field Name="eyebrow_color_G" Type="f32"/> 
+        <Field Name="eyebrow_color_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Eyelash Color">
+        <Field Name="eyelash_color_R" Type="f32"/> 
+        <Field Name="eyelash_color_G" Type="f32"/> 
+        <Field Name="eyelash_color_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Accessories Color">
+        <Field Name="accessories_color_R" Type="f32"/> 
+        <Field Name="accessories_color_G" Type="f32"/> 
+        <Field Name="accessories_color_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+    <ColorEditor Name="Decal Color">
+        <Field Name="decal_color_R" Type="f32"/> 
+        <Field Name="decal_color_G" Type="f32"/> 
+        <Field Name="decal_color_B" Type="f32"/> 
+        <Field Name="null" Type="f32"/>
+    </ColorEditor>
+  </ColorEdit>
+  
   <Field>
     <face_partsId AltName="Face - Parts ID" Wiki="Face part ID" />
     <skin_color_R AltName="Skin - Color R" Wiki="Skin color (R)" />

@@ -58,6 +58,85 @@ public class ParamRowEditor
         }
     }
 
+    private static void PropEditorParamRow_ColorEditors(bool isActiveView, ParamMetaData meta, Param.Row row, List<(PseudoColumn, Param.Column)> cols)
+    {
+        if(meta.colorEditors.Count > 0)
+        {
+            foreach (var colorEditor in meta.colorEditors)
+            {
+                var name = colorEditor.Value.name;
+                var rInfo = colorEditor.Value.values.ElementAt(0);
+                var gInfo = colorEditor.Value.values.ElementAt(1);
+                var bInfo = colorEditor.Value.values.ElementAt(2);
+                var aInfo = colorEditor.Value.values.ElementAt(3);
+
+                var rField = rInfo.Key;
+                var rType = rInfo.Value;
+
+                var gField = gInfo.Key;
+                var gType = gInfo.Value;
+
+                var bField = bInfo.Key;
+                var bType = bInfo.Value;
+
+                var aField = aInfo.Key;
+                var aType = aInfo.Value;
+
+                // RED
+                float rVal = 0.0f;
+                float.TryParse(GetColorValue(row, cols, rField), out rVal);
+                if (rType != "f32") // If not a float, then the value will need to be divided to work with ColorEdit4
+                {
+                    rVal = (rVal / 255);
+                }
+
+                // GREEN
+                float gVal = 0.0f;
+                float.TryParse(GetColorValue(row, cols, gField), out gVal);
+                if (gType != "f32")
+                {
+                    gVal = (gVal / 255);
+                }
+
+                // BLUE
+                float bVal = 0.0f;
+                float.TryParse(GetColorValue(row, cols, bField), out bVal);
+                if (bType != "f32")
+                {
+                    bVal = (bVal / 255);
+                }
+
+                // ALPHA
+                float aVal = 0.0f;
+                if (aField != "null")
+                {
+                    float.TryParse(GetColorValue(row, cols, aField), out aVal);
+                }
+                if(aType != "f32")
+                {
+                    aVal = (aVal / 255);
+                }
+
+                var color = new Vector4(rVal, gVal, bVal, aVal);
+
+                var flags = ImGuiColorEditFlags.NoPicker | ImGuiColorEditFlags.NoInputs;
+
+                ImGui.ColorEdit4($"{name}##ColorEdit_{name}", ref color, flags);
+            }
+        }
+    }
+
+    private static string GetColorValue(Param.Row row, List<(PseudoColumn, Param.Column)> cols, string fieldName)
+    {
+        var matchVal = "";
+
+        var matches = cols?.Where((x, i) => x.Item2 != null && x.Item2.Def.InternalName == fieldName).ToList();
+        var match = matches.FirstOrDefault();
+        matchVal = row.Get(match).ToString();
+
+        return (string)matchVal;
+    }
+
     private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection)
     {
@@ -208,8 +287,9 @@ public class ParamRowEditor
                 }
             }
 
-            PropEditorParamRow_RowFields(bank, row, vrow, auxRows, crow, ref imguiId, selection);
             EditorDecorations.ImguiTableSeparator();
+
+            PropEditorParamRow_RowFields(bank, row, vrow, auxRows, crow, ref imguiId, selection);
 
             var search = propSearchString;
             List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(_paramEditor, row, "fieldFilter",
@@ -221,11 +301,17 @@ public class ParamRowEditor
             List<List<(PseudoColumn, Param.Column)>> auxCols = UICache.GetCached(_paramEditor, auxRows,
                 "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(ParamBank.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
+
             if (pinnedFields?.Count > 0)
             {
                 PropEditorParamRow_PinnedFields(pinnedFields, bank, row, vrow, auxRows, crow, cols, vcols, auxCols,
                     ref imguiId, activeParam, selection);
                 EditorDecorations.ImguiTableSeparator();
+            }
+
+            if (CFG.Current.Param_ShowColorPreview)
+            {
+                PropEditorParamRow_ColorEditors(isActiveView, meta, row, cols);
             }
 
             PropEditorParamRow_MainFields(meta, bank, row, vrow, auxRows, crow, cols, vcols, auxCols, ref imguiId,
