@@ -58,6 +58,10 @@ public interface IResourceHandle
     public void UnloadIfUnused();
 
     public bool IsLoaded();
+
+    public bool IsPersistent();
+
+    public void UnloadPersistent();
 }
 
 /// <summary>
@@ -75,11 +79,26 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
     protected int ReferenceCount;
 
+    /// <summary>
+    /// Mark resources that shouldn't be unloaded automatically
+    /// </summary>
+    public bool Persistent { get; protected set; }
+
     protected T Resource;
 
     public ResourceHandle(string virtualPath)
     {
         AssetVirtualPath = virtualPath;
+
+        // Hacky but simple
+        if(virtualPath.Contains("menu"))
+        {
+            Persistent = true;
+        }
+        else
+        {
+            Persistent = false;
+        }
     }
 
     public bool IsLoaded { get; protected set; }
@@ -169,7 +188,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
     public void UnloadIfUnused()
     {
-        if (ReferenceCount <= 0)
+        if (ReferenceCount <= 0 && !Persistent)
         {
             ResourceManager.UnloadResource(this, true);
         }
@@ -178,6 +197,19 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     bool IResourceHandle.IsLoaded()
     {
         return IsLoaded;
+    }
+
+    bool IResourceHandle.IsPersistent()
+    {
+        return Persistent;
+    }
+
+    public void UnloadPersistent()
+    {
+        if (Persistent)
+        {
+            ResourceManager.UnloadResource(this, true);
+        }
     }
 
     public int GetReferenceCounts()
@@ -204,7 +236,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
         */
 
         // New section
-        if (ReferenceCount < 0)
+        if (ReferenceCount < 0 && !Persistent)
         {
             ResourceManager.UnloadResource(this, true);
             return;

@@ -422,4 +422,35 @@ public static class TextureAssetLocator
 
         return ad;
     }
+
+    public static AssetDescription GetMenuTextures(string menuTpfName)
+    {
+        var path = "";
+        AssetDescription ad = new();
+        ad.AssetVirtualPath = null;
+        ad.AssetPath = null;
+
+        path = GetMenuTexturePath(menuTpfName);
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetVirtualPath = $@"menu/{menuTpfName}/tex";
+        }
+
+        return ad;
+    }
+
+    public static string GetMenuTexturePath(string menuTpfName)
+    {
+        var overrideFilePath = "";
+
+        overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{menuTpfName}.tpf.dcx");
+
+        if (overrideFilePath != null)
+        {
+            return overrideFilePath;
+        }
+
+        return null;
+    }
 }

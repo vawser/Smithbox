@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using StudioCore.Settings;
 using StudioCore.BanksMain;
+using HKX2;
 
 namespace StudioCore.Resource;
 
@@ -60,6 +61,11 @@ public static class ResourceManager
     private static bool _scheduleUnloadedTexturesLoad;
 
     private static bool TaskWindowOpen = true;
+
+    public static Dictionary<string, IResourceHandle> GetResourceDatabase()
+    {
+        return ResourceDatabase;
+    }
 
     private static IResourceHandle InstantiateResource(ResourceType type, string path)
     {
@@ -239,6 +245,17 @@ public static class ResourceManager
             if (r.Value.IsLoaded() && r.Value.GetReferenceCounts() == 0)
             {
                 r.Value.UnloadIfUnused();
+            }
+        }
+    }
+
+    public static void UnloadMenuTextures()
+    {
+        foreach (KeyValuePair<string, IResourceHandle> r in ResourceDatabase)
+        {
+            if (r.Value.IsLoaded() && r.Value.IsPersistent())
+            {
+                r.Value.UnloadPersistent();
             }
         }
     }
@@ -571,9 +588,6 @@ public static class ResourceManager
                 }
             }
 
-            // TODO:
-            // The issue here is that to save a model, the resource files must not be held by a process.
-            // However, this current framework requires some resources to be held for longer than this function, causing a crash on map load.
             for (var i = 0; i < Binder.Files.Count(); i++)
             {
                 BinderFileHeader f = Binder.Files[i];
@@ -855,8 +869,10 @@ public static class ResourceManager
         ///     Loads a loose virtual file
         /// </summary>
         /// <param name="virtualPath"></param>
-        public void AddLoadFileTask(string virtualPath, AccessLevel al)
+        public void AddLoadFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
         {
+            bool IsPersistent = isPersistent;
+
             if (InFlightFiles.Contains(virtualPath))
             {
                 return;

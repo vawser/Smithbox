@@ -118,6 +118,7 @@ public static class LocatorUtils
         return null;
     }
 
+    // THE DEFUCKANATE PATH FUNCTION
     /// <summary>
     ///     Converts a virtual path to an actual filesystem path. Only resolves virtual paths up to the bnd level,
     ///     which the remaining string is output for additional handling
@@ -132,6 +133,7 @@ public static class LocatorUtils
 
         // Parse the virtual path with a DFA and convert it to a game path
         var i = 0;
+
         if (pathElements[i].Equals("map"))
         {
             i++;
@@ -388,6 +390,18 @@ public static class LocatorUtils
                 }
 
                 return GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            }
+        }
+        else if (pathElements[i].Equals("menu"))
+        {
+            i++;
+            var menuTpfName = pathElements[i];
+            i++;
+
+            if (pathElements[i].Equals("tex"))
+            {
+                bndpath = "";
+                return TextureAssetLocator.GetMenuTexturePath(menuTpfName);
             }
         }
 
