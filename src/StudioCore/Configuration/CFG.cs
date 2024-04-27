@@ -232,6 +232,9 @@ public class CFG
     //****************************
     // Settings: Viewport
     //****************************
+
+    public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
+
     // View Grid
     public bool Viewport_EnableGrid = true;
 

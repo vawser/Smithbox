@@ -63,6 +63,8 @@ public class Smithbox
 
     private static IGraphicsContext _context;
 
+    public static GraphicsDevice _graphicsDevice;
+
     public static bool FontRebuildRequest;
 
     private readonly NewProjectOptions _newProjectOptions = new();
@@ -112,6 +114,8 @@ public class Smithbox
         _context = context;
         _context.Initialize();
         _context.Window.Title = _programTitle;
+        _graphicsDevice = context.Device;
+
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
         // SoulsFormats toggles
@@ -1121,7 +1125,7 @@ public class Smithbox
 
         WindowContainer.SettingsWindow.Display();
         WindowContainer.HelpWindow.Display();
-        WindowContainer.DebugWindow.Display();
+        WindowContainer.DebugWindow.Display(_graphicsDevice);
         WindowContainer.KeybindWindow.Display();
         WindowContainer.MemoryWindow.Display();
         WindowContainer.ProjectWindow.Display();

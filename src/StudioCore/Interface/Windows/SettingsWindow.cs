@@ -171,6 +171,10 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Enable frustrum culling", ref CFG.Current.Viewport_Frustum_Culling);
                 ImguiUtils.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustrum to be culled.");
+
+                //ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_BackgroundColor);
+                //ImguiUtils.ShowHoverTooltip("Change the background color in the viewport. Requires a restart of Smithbox to take effect.");
+
             }
 
             if (ImGui.CollapsingHeader("Rendering", ImGuiTreeNodeFlags.DefaultOpen))

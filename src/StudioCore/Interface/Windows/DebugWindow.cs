@@ -3,16 +3,20 @@ using SoulsFormats;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.Settings;
+using StudioCore.Scene;
 using StudioCore.Tests;
 using StudioCore.UserProject;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Drawing;
+using Veldrid;
+using DirectXTexNet;
+using Vortice.Vulkan;
 
 namespace StudioCore.Interface.Windows;
 
@@ -34,7 +38,111 @@ public class DebugWindow
         MenuOpenState = !MenuOpenState;
     }
 
-    public void Display()
+    private unsafe void ImageTest(GraphicsDevice gDevice)
+    {
+        var filepath = "F:\\SteamLibrary\\steamapps\\common\\ARMORED CORE VI FIRES OF RUBICON\\Game\\menu\\hi\\01_common-tpf-dcx\\SB_Weathering.dds";
+
+        using (FileStream stream = File.OpenRead(filepath))
+        {
+            ScratchImage image = TexHelper.Instance.LoadFromDDSFile(filepath, DDS_FLAGS.NONE);
+            TexMetadata meta = TexHelper.Instance.GetMetadataFromDDSFile(filepath, DDS_FLAGS.NONE);
+
+            // Veldrid
+            TexturePool.TextureHandle _testTexture = Renderer.GlobalTexturePool.AllocateTextureDescriptor();
+            ResourceFactory factory = gDevice.ResourceFactory;
+
+            // Use the format from the DDS file metadata
+            VkFormat veldridFormat = ConvertToVeldridFormat(meta.Format);
+
+            Texture tex = factory.CreateTexture(
+                TextureDescription.Texture2D(
+                    (uint)meta.Width,
+                    (uint)meta.Height,
+                    1,
+                    1,
+                    veldridFormat,
+                    VkImageUsageFlags.Sampled,
+                    VkImageCreateFlags.None,
+                    VkImageTiling.Linear,
+                    VkSampleCountFlags.Count1
+                )
+            );
+
+            // Calculate the size of the data to be uploaded
+            uint dataSize = CalculateMipSize(meta.Width, meta.Height, meta.Format);
+
+            gDevice.UpdateTexture(
+                tex,
+                (IntPtr)image.GetPixels(),
+                (uint)dataSize,
+                0,
+                0,
+                0,
+                (uint)meta.Width,
+                (uint)meta.Height,
+                1,
+                0,
+                0);
+
+            // TODO: work out way to use FillWithTPF without requiring TPF stuff, just the DDS file
+            // WIP: image is rendered as gray color currently
+            _testTexture.FillWithGPUTexture(tex);
+
+            ImGui.Image((IntPtr)_testTexture.TexHandle, new Vector2(tex.Width, tex.Height));
+
+            _testTexture.Dispose();
+            tex.Dispose();
+        }
+    }
+
+    // Calculate the size of a single MIP level in bytes
+    uint CalculateMipSize(int width, int height, DXGI_FORMAT format)
+    {
+        /// Calculate the number of bytes per pixel based on the format
+        int bytesPerPixel = CalculateBytesPerPixel(format);
+
+        // Calculate the size of the MIP level in bytes
+        uint mipSize = (uint)(width * height * bytesPerPixel);
+
+        // Ensure the size is aligned to 4 bytes (required by Veldrid)
+        mipSize = (mipSize + 3) & ~3u;
+
+        return mipSize;
+    }
+
+    // Calculate bytes per pixel based on the DXGI format
+    int CalculateBytesPerPixel(DXGI_FORMAT format)
+    {
+        // Add cases for different formats as needed
+        switch (format)
+        {
+            case DXGI_FORMAT.BC7_UNORM:
+                return 16; // BC7 compressed format
+            case DXGI_FORMAT.R8G8B8A8_UNORM:
+                return 4; // Assuming 4 bytes per pixel for R8G8B8A8_UNORM format
+                          // Add cases for other formats as needed
+            default:
+                throw new NotSupportedException($"Unsupported DXGI format: {format}");
+        }
+    }
+
+    // Convert DXGI format to Veldrid format
+    VkFormat ConvertToVeldridFormat(DXGI_FORMAT format)
+    {
+        // Add conversions for supported formats as needed
+        switch (format)
+        {
+            case DXGI_FORMAT.BC7_UNORM:
+                return VkFormat.Bc7UnormBlock;
+            case DXGI_FORMAT.R8G8B8A8_UNORM:
+                return VkFormat.R8G8B8A8Unorm;
+            // Add conversions for other formats as needed
+            default:
+                throw new NotSupportedException($"Unsupported DXGI format: {format}");
+        }
+    }
+
+    public void Display(GraphicsDevice gDevice)
     {
         var scale = Smithbox.GetUIScale();
 
@@ -51,8 +159,11 @@ public class DebugWindow
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
 
+        
         if (ImGui.Begin("Tests##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
+            ImageTest(gDevice);
+
             ImGui.Columns(4);
 
             // Actions 

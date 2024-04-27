@@ -22,7 +22,7 @@ public class Renderer
         EnvMap = 3
     }
 
-    private static GraphicsDevice Device;
+    public static GraphicsDevice Device;
 
     private static List<RenderQueue> RenderQueues;
     private static Queue<Action<GraphicsDevice, CommandList>> BackgroundUploadQueue;
