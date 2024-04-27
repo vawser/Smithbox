@@ -112,6 +112,13 @@ public class CFG
     public bool Interface_TextEditor_PromptUser = true;
     public bool Interface_ParticleEditor_PromptUser = true;
 
+    public bool Interface_TextureViewer_Files = true;
+    public bool Interface_TextureViewer_Textures = true;
+    public bool Interface_TextureViewer_Viewer = true;
+    public bool Interface_TextureViewer_Properties = true;
+    public bool Interface_TextureViewer_Toolbar = true;
+    public bool Interface_TextureViewer_Toolbar_HorizontalOrientation = true;
+
     // Fixed Window
     public Vector4 ImGui_MainBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
     public Vector4 ImGui_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
@@ -479,6 +486,11 @@ public class CFG
     // Settings: Particle Editor
     //****************************
     public bool Interface_Display_Alias_for_Particles = true;
+
+
+    //****************************
+    // Settings: Texture Viewer
+    //****************************
 
     //****************************
     // Windows

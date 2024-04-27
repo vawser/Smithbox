@@ -24,7 +24,7 @@ public static class FeatureFlags
     public static bool EnableEditor_Gparam = true;
     public static bool EnableEditor_EventScript = false;
     public static bool EnableEditor_TalkScript = false;
-    public static bool EnableEditor_TextureViewer = false;
+    public static bool EnableEditor_TextureViewer = true;
     public static bool EnableEditor_BehaviorEditor = false;
 
     public static bool EnableCollisionPipeline = true;

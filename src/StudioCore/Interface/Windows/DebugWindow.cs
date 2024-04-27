@@ -93,6 +93,8 @@ public class DebugWindow : IResourceEventListener
                 break;
             }
         }
+
+        // Match with AssetVirtualPath (selection with generate this, ResourceHandle will have it)
     }
 
     public void Display(GraphicsDevice gDevice)

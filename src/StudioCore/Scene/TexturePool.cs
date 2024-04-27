@@ -350,6 +350,9 @@ public class TexturePool
         internal Texture _staging;
         internal Texture _texture;
 
+        public uint Width { get; set; }
+        public uint Height { get; set; }
+
         public TextureHandle(TexturePool pool, uint handle)
         {
             _pool = pool;
@@ -375,6 +378,7 @@ public class TexturePool
             string name)
         {
             DDS dds;
+
             Memory<byte> bytes = tex.Bytes;
             if (platform != TPF.TPFPlatform.PC)
             {
@@ -388,10 +392,16 @@ public class TexturePool
 
             var width = (uint)dds.dwWidth;
             var height = (uint)dds.dwHeight;
+
+            Width = width;
+            Height = height;
+
             VkFormat format;
             if (dds.header10 != null)
             {
                 format = GetPixelFormatFromDXGI(dds.header10.dxgiFormat);
+
+                //TaskLogs.AddLog($"header10 - {name}: {format}");
             }
             else
             {
@@ -410,6 +420,8 @@ public class TexturePool
                 {
                     format = GetPixelFormatFromFourCC(dds.ddspf.dwFourCC);
                 }
+
+                //TaskLogs.AddLog($"{name}: {format}");
             }
 
             if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))

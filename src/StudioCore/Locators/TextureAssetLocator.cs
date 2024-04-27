@@ -444,7 +444,15 @@ public static class TextureAssetLocator
     {
         var overrideFilePath = "";
 
-        overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{menuTpfName}.tpf.dcx");
+        if (Project.Type is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{menuTpfName}.tpf.dcx");
+        }
+
+        if(Project.Type is ProjectType.DS3)
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\{menuTpfName}.tpf.dcx");
+        }
 
         if (overrideFilePath != null)
         {
