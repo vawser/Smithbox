@@ -21,7 +21,8 @@ public enum KeybindCategory
     ModelEditor,
     ParamEditor,
     TextEditor,
-    Viewport
+    Viewport,
+    TextureViewer
 }
 
 public class KeyBind
@@ -30,6 +31,7 @@ public class KeyBind
     public bool Ctrl_Pressed;
     public Key PrimaryKey;
     public bool Shift_Pressed;
+    public bool FixedKey;
 
     public string PresentationName;
     public KeybindCategory KeyCategory;
@@ -40,7 +42,7 @@ public class KeyBind
         PresentationName = "";
     }
 
-    public KeyBind(string name, KeybindCategory category, Key primaryKey = Key.Unknown, bool ctrlKey = false, bool altKey = false, bool shiftKey = false)
+    public KeyBind(string name, KeybindCategory category, Key primaryKey = Key.Unknown, bool ctrlKey = false, bool altKey = false, bool shiftKey = false, bool fixedKey = false)
     {
         PresentationName = name;
         KeyCategory = category;
@@ -49,6 +51,7 @@ public class KeyBind
         Ctrl_Pressed = ctrlKey;
         Alt_Pressed = altKey;
         Shift_Pressed = shiftKey;
+        FixedKey = fixedKey;
     }
 
     [JsonIgnore]
@@ -189,6 +192,10 @@ public class KeyBindings
         public KeyBind Map_ViewportGrid_Raise = new("Map Grid: Raise", KeybindCategory.Viewport, Key.E, true);
         public KeyBind Map_ViewportGrid_Bring_to_Selection = new("Map Grid: Bring to Selection", KeybindCategory.Viewport, Key.K, true);
         public KeyBind Map_ToggleRenderOutline = new("Toggle Selection Outline", KeybindCategory.Viewport);
+
+        // Texture Viewer
+        public KeyBind TextureViewer_ZoomMode = new("Zoom Mode", KeybindCategory.TextureViewer, Key.LControl, false, false, false, true);
+        public KeyBind TextureViewer_ZoomReset = new("Reset Zoom", KeybindCategory.TextureViewer, Key.R);
 
 #pragma warning disable IDE0051
         // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.

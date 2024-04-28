@@ -25,28 +25,10 @@ public static class TextureViewBank
 
         TextureBank = new();
 
-        var paramDir = @"\menu";
-        var paramExt = @".tpf.dcx";
-
-        if (Project.Type is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
+        // MENU
+        if (CFG.Current.TextureViewer_IncludeTextures_Menu)
         {
-            paramDir = @"\menu\hi";
-        }
-
-        foreach (var name in GetFileNames())
-        {
-            var filePath = $"{paramDir}\\{name}{paramExt}";
-
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-            {
-                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", true);
-                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
-            }
-            else
-            {
-                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", false);
-                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
-            }
+            LoadMenuTextureFolders();
         }
 
         IsLoaded = true;
@@ -55,7 +37,34 @@ public static class TextureViewBank
         //TaskLogs.AddLog($"Graphics Param Bank - Load Complete");
     }
 
-    private static void LoadTextureFolder(string path, bool isModFile)
+    // MENU
+    private static void LoadMenuTextureFolders()
+    {
+        var paramDir = @"\menu";
+        var paramExt = @".tpf.dcx";
+
+        if (Project.Type is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
+        {
+            paramDir = @"\menu\hi";
+        }
+
+        foreach (var name in GetFileNames(paramDir, paramExt))
+        {
+            var filePath = $"{paramDir}\\{name}{paramExt}";
+
+            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            {
+                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", true, TextureViewCategory.Menu);
+            }
+            else
+            {
+                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", false, TextureViewCategory.Menu);
+            }
+        }
+    }
+
+    // General
+    private static void LoadTextureFolder(string path, bool isModFile, TextureViewCategory category)
     {
         if (path == null)
         {
@@ -73,6 +82,7 @@ public static class TextureViewBank
         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
         TextureViewInfo tStruct = new TextureViewInfo(name, path);
         tStruct.IsModFile = isModFile;
+        tStruct.Category = category;
 
         var tpf = TPF.Read(path);
         tStruct.Textures = tpf.Textures;
@@ -80,16 +90,8 @@ public static class TextureViewBank
         TextureBank.Add(name, tStruct);
     }
 
-    public static List<string> GetFileNames()
+    public static List<string> GetFileNames(string paramDir, string paramExt)
     {
-        var paramDir = @"\menu";
-        var paramExt = @".tpf.dcx";
-
-        if (Project.Type is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
-        {
-            paramDir = @"\menu\hi";
-        }
-
         HashSet<string> paramNames = new();
         List<string> ret = new();
 
@@ -134,6 +136,8 @@ public static class TextureViewBank
             WasModified = false;
         }
 
+        public TextureViewCategory Category { get; set; }
+
         public string Name { get; set; }
         public string Path { get; set; }
 
@@ -147,5 +151,11 @@ public static class TextureViewBank
         {
             return Name.CompareTo(other);
         }
+    }
+
+    public enum TextureViewCategory
+    {
+        None = 0,
+        Menu = 1
     }
 }

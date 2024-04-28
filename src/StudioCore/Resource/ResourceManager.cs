@@ -249,7 +249,7 @@ public static class ResourceManager
         }
     }
 
-    public static void UnloadMenuTextures()
+    public static void UnloadPersistentTextures()
     {
         foreach (KeyValuePair<string, IResourceHandle> r in ResourceDatabase)
         {

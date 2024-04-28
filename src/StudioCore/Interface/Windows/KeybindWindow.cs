@@ -44,6 +44,7 @@ public class KeybindWindow
         KeybindSection("Param Editor", binds, KeybindCategory.ParamEditor, 4, "These keybinds are only available in the Param Editor.");
         KeybindSection("Text Editor", binds, KeybindCategory.TextEditor, 5, "These keybinds are only available in the Text Editor.");
         KeybindSection("Viewport", binds, KeybindCategory.Viewport, 6, "These keybinds are only available within the Viewport of the Map or Model Editor.");
+        KeybindSection("Texture Viewer", binds, KeybindCategory.TextureViewer, 7, "These keybinds are only available within the Texture Viewer.");
 
         if (ImGui.BeginTabItem($"Defaults"))
         {
@@ -107,30 +108,41 @@ public class KeybindWindow
 
     public void KeybindEntry(FieldInfo bind, KeyBind bindVal, KeybindCategory keyCategory, int idx)
     {
+        var fixedKey = bindVal.FixedKey;
         var keyText = bindVal.HintText;
-        if (keyText == "")
-            keyText = "[None]";
 
-        if (_currentKeyBind == bindVal)
+        if (!fixedKey)
         {
-            ImGui.Button("Press Key <Esc - Clear>");
-            if (InputTracker.GetKeyDown(Key.Escape))
+            if (keyText == "")
+                keyText = "[None]";
+
+            if (_currentKeyBind == bindVal)
             {
-                bind.SetValue(KeyBindings.Current, new KeyBind());
-                _currentKeyBind = null;
-            }
-            else
-            {
-                KeyBind newkey = InputTracker.GetNewKeyBind(bindVal.PresentationName, bindVal.KeyCategory);
-                if (newkey != null)
+                ImGui.Button("Press Key <Esc - Clear>");
+                if (InputTracker.GetKeyDown(Key.Escape))
                 {
-                    bind.SetValue(KeyBindings.Current, newkey);
+                    bind.SetValue(KeyBindings.Current, new KeyBind());
                     _currentKeyBind = null;
                 }
+                else
+                {
+                    KeyBind newkey = InputTracker.GetNewKeyBind(bindVal.PresentationName, bindVal.KeyCategory);
+                    if (newkey != null)
+                    {
+                        bind.SetValue(KeyBindings.Current, newkey);
+                        _currentKeyBind = null;
+                    }
+                }
+            }
+            else if (ImGui.Button($"{keyText}##{bind.Name}{keyCategory}{idx}"))
+            {
+                _currentKeyBind = bindVal;
             }
         }
-        else if (ImGui.Button($"{keyText}##{bind.Name}{keyCategory}{idx}"))
-            _currentKeyBind = bindVal;
+        else
+        {
+            ImGui.Text($"{keyText}");
+        }
     }
 
     public void Display()

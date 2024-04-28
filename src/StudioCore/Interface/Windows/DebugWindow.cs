@@ -46,55 +46,7 @@ public class DebugWindow : IResourceEventListener
 
     private unsafe void ImageTest(GraphicsDevice gDevice)
     {
-        if (_loadingTask != null && _loadingTask.IsCompleted)
-        {
-            _loadingTask = null;
-        }
-
-        if (ImGui.Button("Load Menu Textures"))
-        {
-            ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading texture");
-
-            AssetDescription ad = TextureAssetLocator.GetMenuTextures("01_common");
-
-            if (!ResourceManager.IsResourceLoadedOrInFlight(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
-            {
-                if (ad.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly, true);
-                }
-
-                _loadingTask = job.Complete();
-            }
-
-            ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
-        }
-
-        if (ImGui.Button("Purge Menu Textures"))
-        {
-            ResourceManager.UnloadMenuTextures();
-        }
-
-        var resources = ResourceManager.GetResourceDatabase();
-
-        foreach (var (key, val) in ResourceManager.GetResourceDatabase())
-        {
-            ResourceHandle<TextureResource> resHandle = (ResourceHandle<TextureResource>)val;
-            TextureResource texRes = resHandle.Get();
-
-            if (texRes != null)
-            {
-                IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
-                Vector2 size = new Vector2(100, 100);
-
-                ImGui.Text($"{key}");
-                ImGui.Image(handle, size);
-
-                break;
-            }
-        }
-
-        // Match with AssetVirtualPath (selection with generate this, ResourceHandle will have it)
+        
     }
 
     public void Display(GraphicsDevice gDevice)

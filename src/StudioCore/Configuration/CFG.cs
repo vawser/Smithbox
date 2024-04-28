@@ -117,6 +117,7 @@ public class CFG
     public bool Interface_TextureViewer_Viewer = true;
     public bool Interface_TextureViewer_Properties = true;
     public bool Interface_TextureViewer_Toolbar = true;
+    public bool Interface_TextureViewer_PromptUser = true;
     public bool Interface_TextureViewer_Toolbar_HorizontalOrientation = true;
 
     // Fixed Window
@@ -491,6 +492,9 @@ public class CFG
     //****************************
     // Settings: Texture Viewer
     //****************************
+    public bool TextureViewer_IncludeTextures_Menu = true;
+
+    public string TextureViewerToolbar_ExportTextureLocation = "";
 
     //****************************
     // Windows

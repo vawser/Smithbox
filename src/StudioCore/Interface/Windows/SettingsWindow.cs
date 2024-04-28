@@ -13,6 +13,8 @@ using StudioCore.Editors;
 using StudioCore.Settings;
 using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextureViewer;
+using StudioCore.TextureViewer;
 
 namespace StudioCore.Interface.Windows;
 
@@ -828,6 +830,22 @@ public class SettingsWindow
         }
     }
 
+    private void DisplaySettings_TextureViewer()
+    {
+        if (ImGui.BeginTabItem("Texture Viewer"))
+        {
+            if (ImGui.CollapsingHeader("Textures", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                if(ImGui.Checkbox("Include Menu Textures", ref CFG.Current.TextureViewer_IncludeTextures_Menu))
+                {
+                    TextureViewerScreen.ResetTextureViewer();
+                }
+                ImguiUtils.ShowHoverTooltip("Include textures from the /menu/ folder.");
+            }
+
+            ImGui.EndTabItem();
+        }
+    }
     private void DisplaySettings_Interface()
     {
         if (ImGui.BeginTabItem("User Interface"))
@@ -992,6 +1010,7 @@ public class SettingsWindow
             DisplaySettings_ParamEditor();
             DisplaySettings_TextEditor();
             DisplaySettings_GparamEditor();
+            DisplaySettings_TextureViewer();
             DisplaySettings_Interface();
 
             ImGui.PopItemWidth();
