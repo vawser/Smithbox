@@ -59,6 +59,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void ApplyErrorCheck(ViewportSelection _selection)
         {
+            if (MapEditorState.LoadedMaps == null)
+                return;
+
             if (!MapEditorState.LoadedMaps.Any())
                 return;
 

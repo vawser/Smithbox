@@ -67,7 +67,7 @@ public class ModelToolbar_ActionList
         ImGui.Separator();
 
         //ModelAction_DuplicateFile.Select();
-        ModelAction_DuplicateProperty.Select();
-        ModelAction_DeleteProperty.Select();
+        //ModelAction_DuplicateProperty.Select();
+        //ModelAction_DeleteProperty.Select();
     }
 }
