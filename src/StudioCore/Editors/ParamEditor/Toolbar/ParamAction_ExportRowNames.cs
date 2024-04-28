@@ -18,20 +18,25 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
     {
         private static bool _rowNameExporter_VanillaOnly = false;
         private static bool _rowNameExporter_EmptyOnly = false;
-        public static string CurrentTargetCategory = ParamToolbarView.TargetTypes[0];
+        public static string CurrentTargetCategory = ParamToolbar.TargetTypes[0];
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Export Row Names##tool_ExportRowNames", ParamToolbarView.SelectedAction == ParamEditorAction.ExportRowNames))
+            if (ImGui.RadioButton("Export Row Names##tool_ExportRowNames", ParamToolbar.SelectedAction == ParamToolbarAction.ExportRowNames))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.ExportRowNames;
+                ParamToolbar.SelectedAction = ParamToolbarAction.ExportRowNames;
             }
             ImguiUtils.ShowHoverTooltip("Use this to export row names to text.");
+
+            if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.ExportRowNames)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.ExportRowNames)
             {
                 ImGui.Text("Export row names for the currently selected param, or for all params.");
                 ImGui.Text("");
@@ -46,7 +51,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                     ImGui.Text("Target Category:");
                     if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
                     {
-                        foreach (string e in ParamToolbarView.TargetTypes)
+                        foreach (string e in ParamToolbar.TargetTypes)
                         {
                             if (ImGui.Selectable(e))
                             {
@@ -64,7 +69,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.ExportRowNames)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.ExportRowNames)
             {
                 if (ImGui.Button("Apply##action_Selection_ExportRowNames", new Vector2(200, 32)))
                 {

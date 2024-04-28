@@ -15,16 +15,21 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
     {
         public static void Select()
         {
-            if (ImGui.RadioButton("Sort Rows##tool_SortRows", ParamToolbarView.SelectedAction == ParamEditorAction.SortRows))
+            if (ImGui.RadioButton("Sort Rows##tool_SortRows", ParamToolbar.SelectedAction == ParamToolbarAction.SortRows))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.SortRows;
+                ParamToolbar.SelectedAction = ParamToolbarAction.SortRows;
             }
             ImguiUtils.ShowHoverTooltip("Use this to sort rows by their ID.");
+
+            if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.SortRows)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.SortRows)
             {
                 ImGui.Text("Sort the rows for the currently selected param by their ID.");
                 ImGui.Text("");
@@ -39,7 +44,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.SortRows)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.SortRows)
             {
                 if (ImGui.Button("Apply##action_Selection_SortRows", new Vector2(200, 32)))
                 {
@@ -65,7 +70,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamEditorScreen._activeView._selection.ActiveParamExists())
             {
-                ParamToolbarView.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(ParamBank.PrimaryBank, ParamEditorScreen._activeView._selection.GetActiveParam()));
+                ParamToolbar.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(ParamBank.PrimaryBank, ParamEditorScreen._activeView._selection.GetActiveParam()));
             }
         }
     }

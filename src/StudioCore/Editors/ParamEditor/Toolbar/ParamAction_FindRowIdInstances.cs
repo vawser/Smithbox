@@ -26,16 +26,21 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Find Instances of Row ID##tool_SearchRowID", ParamToolbarView.SelectedAction == ParamEditorAction.FindRowIdInstances))
+            if (ImGui.RadioButton("Find Instances of Row ID##tool_SearchRowID", ParamToolbar.SelectedAction == ParamToolbarAction.FindRowIdInstances))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.FindRowIdInstances;
+                ParamToolbar.SelectedAction = ParamToolbarAction.FindRowIdInstances;
             }
             ImguiUtils.ShowHoverTooltip("Use this to search for all instances of a specific row ID.");
+
+            if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.FindRowIdInstances)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.FindRowIdInstances)
             {
                 ImGui.Text("Display all instances of a specificed row ID.");
                 ImGui.Text("");
@@ -76,7 +81,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.FindRowIdInstances)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.FindRowIdInstances)
             {
                 if (ImGui.Button("Apply##action_Selection_SearchRowID", new Vector2(200, 32)))
                 {

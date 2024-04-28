@@ -27,16 +27,16 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Search and Replace##tool_SearchAndReplace", TextEditorToolbar.SelectedAction == TextEditorAction.SearchAndReplace))
+            if (ImGui.RadioButton("Search and Replace##tool_SearchAndReplace", TextToolbar.SelectedAction == TextEditorAction.SearchAndReplace))
             {
-                TextEditorToolbar.SelectedAction = TextEditorAction.SearchAndReplace;
+                TextToolbar.SelectedAction = TextEditorAction.SearchAndReplace;
             }
             ImguiUtils.ShowHoverTooltip("Search and replace text.");
         }
 
         public static void Configure()
         {
-            if (TextEditorToolbar.SelectedAction == TextEditorAction.SearchAndReplace)
+            if (TextToolbar.SelectedAction == TextEditorAction.SearchAndReplace)
             {
                 ImGui.Text("Perform a search and replace upon FMG text.");
                 ImGui.Text("");
@@ -54,7 +54,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                 ImGui.Text("Text Category:");
                 if (ImGui.BeginCombo("##Text Category", CurrentTextCategory))
                 {
-                    foreach (string e in TextEditorToolbar.TextCategories)
+                    foreach (string e in TextToolbar.TextCategories)
                     {
                         if (ImGui.Selectable(e))
                         {
@@ -70,7 +70,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                 ImGui.Text("Text Context:");
                 if (ImGui.BeginCombo("##Target Type", CurrentTargetType))
                 {
-                    foreach (string e in TextEditorToolbar.TargetTypes)
+                    foreach (string e in TextToolbar.TargetTypes)
                     {
                         if (ImGui.Selectable(e.ToString()))
                         {
@@ -100,7 +100,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Act()
         {
-            if (TextEditorToolbar.SelectedAction == TextEditorAction.SearchAndReplace)
+            if (TextToolbar.SelectedAction == TextEditorAction.SearchAndReplace)
             {
                 if (ImGui.Button("Apply##action_Selection_SearchAndReplace", new Vector2(200, 32)))
                 {

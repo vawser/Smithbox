@@ -47,6 +47,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 {
                     MapEditorState.SelectedAction = MapEditorAction.Selection_Assign_Entity_Group_ID;
                 }
+
+                if (!CFG.Current.Interface_MapEditor_Toolbar_ActionList_TopToBottom)
+                {
+                    ImGui.SameLine();
+                }
             }
         }
 

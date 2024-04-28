@@ -23,16 +23,16 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Duplicate Asset##tool_DuplicateFile", ModelToolbarView.SelectedAction == ModelEditorAction.DuplicateFile))
+            if (ImGui.RadioButton("Duplicate Asset##tool_DuplicateFile", ModelToolbar.SelectedAction == ModelEditorAction.DuplicateFile))
             {
-                ModelToolbarView.SelectedAction = ModelEditorAction.DuplicateFile;
+                ModelToolbar.SelectedAction = ModelEditorAction.DuplicateFile;
             }
             ImguiUtils.ShowHoverTooltip("Duplicate and rename the current asset selected in the Asset Browser.");
         }
 
         public static void Configure()
         {
-            if (ModelToolbarView.SelectedAction == ModelEditorAction.DuplicateFile)
+            if (ModelToolbar.SelectedAction == ModelEditorAction.DuplicateFile)
             {
                 ImGui.Text("Duplicate and rename the current asset selected in the Asset Browser.");
                 ImGui.Text("");
@@ -46,7 +46,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void Act()
         {
-            if (ModelToolbarView.SelectedAction == ModelEditorAction.DuplicateFile)
+            if (ModelToolbar.SelectedAction == ModelEditorAction.DuplicateFile)
             {
                 if (ImGui.Button("Apply##action_Selection_DuplicateFile", new Vector2(200, 32)))
                 {

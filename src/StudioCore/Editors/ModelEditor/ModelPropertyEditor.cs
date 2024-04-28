@@ -45,9 +45,9 @@ public class ModelPropertyEditor
 
     private IViewport _viewport;
 
-    private MapEditorToolbar _msbToolbar;
+    private MapToolbar _msbToolbar;
 
-    public ModelPropertyEditor(ViewportActionManager manager, ModelPropertyCache propCache, IViewport viewport, MapEditorToolbar msbToolbar)
+    public ModelPropertyEditor(ViewportActionManager manager, ModelPropertyCache propCache, IViewport viewport, MapToolbar msbToolbar)
     {
         ContextActionManager = manager;
         _propCache = propCache;

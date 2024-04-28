@@ -33,6 +33,7 @@ using StudioCore.Editors.ModelEditor.Toolbar;
 using System.Security.Cryptography;
 using StudioCore.BanksMain;
 using static SoulsFormats.MSB_AC6;
+using ModelCore.Editors.ModelEditor.Toolbar;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -65,8 +66,9 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public ModelEditorModelType CurrentlyLoadedModelType;
 
-
-    public ModelToolbarView _toolbarView;
+    public ModelToolbar _modelToolbar;
+    public ModelToolbar_ActionList _modelToolbar_ActionList;
+    public ModelToolbar_Configuration _modelToolbar_Configuration;
 
     public static string SelectedAssetID;
     public static LoadedModelInfo CurrentModelInfo;
@@ -91,7 +93,10 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _sceneTree = new ModelSceneTree(this, "modeledittree", _universe, _selection, EditorActionManager, Viewport);
         _propEditor = new ModelPropertyEditor(EditorActionManager, _propCache, Viewport, null);
         _assetBrowser = new ModelAssetBrowser(this);
-        _toolbarView = new ModelToolbarView(EditorActionManager, this);
+
+        _modelToolbar = new ModelToolbar(EditorActionManager, this);
+        _modelToolbar_ActionList = new ModelToolbar_ActionList();
+        _modelToolbar_Configuration = new ModelToolbar_Configuration();
     }
 
     public void Init()
@@ -509,7 +514,12 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         _assetBrowser.OnGui();
         _sceneTree.OnGui();
         _propEditor.OnGui(_selection, "modeleditprop", Viewport.Width, Viewport.Height);
-        _toolbarView.OnGui();
+
+        if(CFG.Current.Interface_ModelEditor_Toolbar)
+        {
+            _modelToolbar_ActionList.OnGui();
+            _modelToolbar_Configuration.OnGui();
+        }
 
         ResourceManager.OnGuiDrawTasks(Viewport.Width, Viewport.Height);
 

@@ -35,16 +35,21 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Find Instances of Value##tool_SearchValueInstances", ParamToolbarView.SelectedAction == ParamEditorAction.FindValueInstances))
+            if (ImGui.RadioButton("Find Instances of Value##tool_SearchValueInstances", ParamToolbar.SelectedAction == ParamToolbarAction.FindValueInstances))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.FindValueInstances;
+                ParamToolbar.SelectedAction = ParamToolbarAction.FindValueInstances;
             }
             ImguiUtils.ShowHoverTooltip("Use this to search for all instances of a specific value.");
+
+            if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.FindValueInstances)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.FindValueInstances)
             {
                 ImGui.Text("Display all instances of a specificed value.");
                 ImGui.Text("");
@@ -86,7 +91,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.FindValueInstances)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.FindValueInstances)
             {
                 if (ImGui.Button("Apply##action_Selection_FindValueInstances", new Vector2(200, 32)))
                 {

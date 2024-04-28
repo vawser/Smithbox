@@ -956,9 +956,11 @@ public class ParamEditorScreen : EditorScreen
             ImGui.PopStyleColor(1);
         }
 
+        // Toolbar
         if (CFG.Current.Interface_ParamEditor_Toolbar)
         {
-            _activeView._toolbarView.OnGui();
+            _activeView._paramToolbar_ActionList.OnGui();
+            _activeView._paramToolbar_Configuration.OnGui();
         }
 
         if (CFG.Current.UI_CompactParams)

@@ -70,11 +70,15 @@ public class GparamEditorScreen : EditorScreen
 
     private bool[] displayTruth;
 
-    public GparamToolbarView _toolbarView;
+    public GparamToolbar _gparamToolbar;
+    public GparamToolbar_ActionList _gparamToolbar_ActionList;
+    public GparamToolbar_Configuration _gparamToolbar_Configuration;
 
     public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _toolbarView = new GparamToolbarView(this);
+        _gparamToolbar = new GparamToolbar(EditorActionManager);
+        _gparamToolbar_ActionList = new GparamToolbar_ActionList();
+        _gparamToolbar_Configuration = new GparamToolbar_Configuration();
     }
 
     public string EditorName => "Gparam Editor##GparamEditor";
@@ -212,7 +216,11 @@ public class GparamEditorScreen : EditorScreen
                 }
             }
 
-            _toolbarView.OnGui();
+            if (CFG.Current.Interface_GparamEditor_Toolbar)
+            {
+                _gparamToolbar_ActionList.OnGui();
+                _gparamToolbar_Configuration.OnGui();
+            }
         }
 
         ImGui.PopStyleVar();

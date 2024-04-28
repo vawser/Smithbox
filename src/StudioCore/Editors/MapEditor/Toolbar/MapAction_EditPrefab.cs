@@ -22,12 +22,17 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void Select(ViewportSelection _selection)
         {
-            if (!MapEditorToolbar.IsSupportedProjectTypeForPrefabs())
+            if (!MapToolbar.IsSupportedProjectTypeForPrefabs())
                 return;
 
             if (ImGui.RadioButton("Prefab Information##tool_Selection_EditPrefab", MapEditorState.SelectedAction == MapEditorAction.EditPrefab))
             {
                 MapEditorState.SelectedAction = MapEditorAction.EditPrefab;
+            }
+
+            if (!CFG.Current.Interface_MapEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
             }
         }
 
@@ -36,8 +41,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             var width = ImGui.GetWindowWidth();
             var height = ImGui.GetWindowHeight();
 
-            var comboMap = MapEditorToolbar._comboTargetMap;
-            var universe = MapEditorToolbar._universe;
+            var comboMap = MapToolbar._comboTargetMap;
+            var universe = MapToolbar._universe;
 
             if (MapEditorState.SelectedAction == MapEditorAction.EditPrefab)
             {
@@ -86,7 +91,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         {
                             if (ImGui.Selectable(obj.Key))
                             {
-                                MapEditorToolbar._comboTargetMap = (obj.Key, obj.Value);
+                                MapToolbar._comboTargetMap = (obj.Key, obj.Value);
                                 break;
                             }
                         }
@@ -124,16 +129,16 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             ImGui.Text("Available Prefabs");
             ImGui.Separator();
 
-            foreach (var info in MapEditorToolbar._prefabInfos)
+            foreach (var info in MapToolbar._prefabInfos)
             {
                 var name = info.Name;
 
                 if (SearchFilters.IsSearchMatch(_searchInput, name, name, info.Tags, false, false, true, "_"))
                 {
-                    if (ImGui.Selectable($"{name}##{name}", MapEditorToolbar._selectedPrefabInfo == info))
+                    if (ImGui.Selectable($"{name}##{name}", MapToolbar._selectedPrefabInfo == info))
                     {
-                        MapEditorToolbar._selectedPrefabInfo = info;
-                        MapEditorToolbar._newPrefabName = info.Name;
+                        MapToolbar._selectedPrefabInfo = info;
+                        MapToolbar._newPrefabName = info.Name;
                     }
                 }
             }
@@ -141,31 +146,31 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void DisplayPrefabContentsList()
         {
-            var comboMap = MapEditorToolbar._comboTargetMap;
-            var prefabInfo = MapEditorToolbar._selectedPrefabInfo;
+            var comboMap = MapToolbar._comboTargetMap;
+            var prefabInfo = MapToolbar._selectedPrefabInfo;
 
             if (prefabInfo != null)
             {
                 switch (Project.Type)
                 {
                     case ProjectType.AC6:
-                        MapEditorToolbar._selectedPrefabObjectNames = Prefab_AC6.GetSelectedPrefabObjects(prefabInfo, comboMap);
+                        MapToolbar._selectedPrefabObjectNames = Prefab_AC6.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;
                     case ProjectType.ER:
-                        MapEditorToolbar._selectedPrefabObjectNames = Prefab_ER.GetSelectedPrefabObjects(prefabInfo, comboMap);
+                        MapToolbar._selectedPrefabObjectNames = Prefab_ER.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;
                     case ProjectType.SDT:
-                        MapEditorToolbar._selectedPrefabObjectNames = Prefab_SDT.GetSelectedPrefabObjects(prefabInfo, comboMap);
+                        MapToolbar._selectedPrefabObjectNames = Prefab_SDT.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;
                     case ProjectType.DS3:
-                        MapEditorToolbar._selectedPrefabObjectNames = Prefab_DS3.GetSelectedPrefabObjects(prefabInfo, comboMap);
+                        MapToolbar._selectedPrefabObjectNames = Prefab_DS3.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;
                     case ProjectType.DS2S:
-                        MapEditorToolbar._selectedPrefabObjectNames = Prefab_DS2.GetSelectedPrefabObjects(prefabInfo, comboMap);
+                        MapToolbar._selectedPrefabObjectNames = Prefab_DS2.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;
                     case ProjectType.DS1:
                     case ProjectType.DS1R:
-                        MapEditorToolbar._selectedPrefabObjectNames = Prefab_DS1.GetSelectedPrefabObjects(prefabInfo, comboMap);
+                        MapToolbar._selectedPrefabObjectNames = Prefab_DS1.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;
                     default: break;
                 }
@@ -191,7 +196,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.Separator();
                 if (prefabInfo != null)
                 {
-                    foreach (var name in MapEditorToolbar._selectedPrefabObjectNames)
+                    foreach (var name in MapToolbar._selectedPrefabObjectNames)
                     {
                         ImGui.Text(name);
                     }
@@ -201,7 +206,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void UpdatePrefab(ViewportSelection _selection)
         {
-            if (!MapEditorToolbar.IsSupportedProjectTypeForPrefabs())
+            if (!MapToolbar.IsSupportedProjectTypeForPrefabs())
                 return;
         }
     }

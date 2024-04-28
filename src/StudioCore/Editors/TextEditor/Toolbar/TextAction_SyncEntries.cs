@@ -30,16 +30,16 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Sync Entries##tool_SyncEntries", TextEditorToolbar.SelectedAction == TextEditorAction.SyncEntries))
+            if (ImGui.RadioButton("Sync Entries##tool_SyncEntries", TextToolbar.SelectedAction == TextEditorAction.SyncEntries))
             {
-                TextEditorToolbar.SelectedAction = TextEditorAction.SyncEntries;
+                TextToolbar.SelectedAction = TextEditorAction.SyncEntries;
             }
             ImguiUtils.ShowHoverTooltip("Use this to change all 'sub' entries that link to a 'base' entry.\n\nFor example, a weapon has a 'sub' entry for each infusion. This action can change all of the infusion entry descriptions to match the base entry.");
         }
 
         public static void Configure()
         {
-            if (TextEditorToolbar.SelectedAction == TextEditorAction.SyncEntries)
+            if (TextToolbar.SelectedAction == TextEditorAction.SyncEntries)
             {
                 ImGui.Text("Synchronize child entries (as defined below) with their parent entry.");
                 ImGui.Text("");
@@ -47,7 +47,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                 ImGui.Text("Text Category:");
                 if (ImGui.BeginCombo("##Text Category", CurrentTextCategory))
                 {
-                    foreach (string e in TextEditorToolbar.TextCategories)
+                    foreach (string e in TextToolbar.TextCategories)
                     {
                         if (ImGui.Selectable(e))
                         {
@@ -69,7 +69,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Act()
         {
-            if (TextEditorToolbar.SelectedAction == TextEditorAction.SyncEntries)
+            if (TextToolbar.SelectedAction == TextEditorAction.SyncEntries)
             {
                 if (ImGui.Button("Apply##action_Selection_SyncEntries", new Vector2(200, 32)))
                 {

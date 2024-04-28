@@ -20,16 +20,16 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Delete##tool_Delete", TextEditorToolbar.SelectedAction == TextEditorAction.Delete))
+            if (ImGui.RadioButton("Delete##tool_Delete", TextToolbar.SelectedAction == TextEditorAction.Delete))
             {
-                TextEditorToolbar.SelectedAction = TextEditorAction.Delete;
+                TextToolbar.SelectedAction = TextEditorAction.Delete;
             }
             ImguiUtils.ShowHoverTooltip("Delete selected entry.");
         }
 
         public static void Configure()
         {
-            if (TextEditorToolbar.SelectedAction == TextEditorAction.Delete)
+            if (TextToolbar.SelectedAction == TextEditorAction.Delete)
             {
                 ImGui.Text("Delete the current selection.");
                 ImGui.Text("");
@@ -71,7 +71,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Act()
         {
-            if (TextEditorToolbar.SelectedAction == TextEditorAction.Delete)
+            if (TextToolbar.SelectedAction == TextEditorAction.Delete)
             {
                 if (ImGui.Button("Apply##action_Selection_Delete", new Vector2(200, 32)))
                 {

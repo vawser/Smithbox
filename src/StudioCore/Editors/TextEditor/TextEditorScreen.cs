@@ -42,12 +42,17 @@ public class TextEditorScreen : EditorScreen
     private List<FMGBank.FMGInfo> _filteredFmgInfo = new();
     public static ActionManager EditorActionManager = new();
 
-    private TextEditorToolbar Toolbar;
+    private TextToolbar _textToolbar;
+    private TextToolbar_ActionList _textToolbar_ActionList;
+    private TextToolbar_Configuration _textToolbar_Configuration;
 
     public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _propEditor = new PropertyEditor(EditorActionManager);
-        Toolbar = new TextEditorToolbar(EditorActionManager);
+
+        _textToolbar = new TextToolbar(EditorActionManager);
+        _textToolbar_ActionList = new TextToolbar_ActionList();
+        _textToolbar_Configuration = new TextToolbar_Configuration();
     }
 
     public string EditorName => "Text Editor";
@@ -821,7 +826,8 @@ public class TextEditorScreen : EditorScreen
 
         if (CFG.Current.Interface_TextEditor_Toolbar)
         {
-            Toolbar.OnGui();
+            _textToolbar_ActionList.OnGui();
+            _textToolbar_Configuration.OnGui();
         }
     }
 

@@ -21,16 +21,16 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Duplicate Selected Property##tool_DuplicateProperty", ModelToolbarView.SelectedAction == ModelEditorAction.DuplicateProperty))
+            if (ImGui.RadioButton("Duplicate Selected Property##tool_DuplicateProperty", ModelToolbar.SelectedAction == ModelEditorAction.DuplicateProperty))
             {
-                ModelToolbarView.SelectedAction = ModelEditorAction.DuplicateProperty;
+                ModelToolbar.SelectedAction = ModelEditorAction.DuplicateProperty;
             }
             ImguiUtils.ShowHoverTooltip("Duplicate selected FLVER property.");
         }
 
         public static void Configure()
         {
-            if (ModelToolbarView.SelectedAction == ModelEditorAction.DuplicateProperty)
+            if (ModelToolbar.SelectedAction == ModelEditorAction.DuplicateProperty)
             {
                 ImGui.Text("Duplicate selected FLVER property.");
                 ImGui.Text("");
@@ -44,7 +44,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void Act()
         {
-            if (ModelToolbarView.SelectedAction == ModelEditorAction.DuplicateProperty)
+            if (ModelToolbar.SelectedAction == ModelEditorAction.DuplicateProperty)
             {
                 if (ImGui.Button("Apply##action_Selection_DuplicateProperty", new Vector2(200, 32)))
                 {

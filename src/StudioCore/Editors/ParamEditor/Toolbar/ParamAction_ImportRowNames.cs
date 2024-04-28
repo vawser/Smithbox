@@ -15,23 +15,28 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
     {
         private static bool _rowNameImporter_VanillaOnly = false;
         private static bool _rowNameImporter_EmptyOnly = false;
-        public static string CurrentSourceCategory = ParamToolbarView.SourceTypes[0];
-        public static string CurrentTargetCategory = ParamToolbarView.TargetTypes[0];
+        public static string CurrentSourceCategory = ParamToolbar.SourceTypes[0];
+        public static string CurrentTargetCategory = ParamToolbar.TargetTypes[0];
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Import Row Names##tool_ImportRowNames", ParamToolbarView.SelectedAction == ParamEditorAction.ImportRowNames))
+            if (ImGui.RadioButton("Import Row Names##tool_ImportRowNames", ParamToolbar.SelectedAction == ParamToolbarAction.ImportRowNames))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.ImportRowNames;
+                ParamToolbar.SelectedAction = ParamToolbarAction.ImportRowNames;
             }
             ImguiUtils.ShowHoverTooltip("Use this to import community-sourced row names.");
+
+            if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
         {
             var selectedParam = ParamEditorScreen._activeView._selection;
 
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.ImportRowNames)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.ImportRowNames)
             {
                 ImGui.Text("Import row names for the currently selected param, or for all params.");
                 ImGui.Text("");
@@ -46,7 +51,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                     ImGui.Text("Target Category:");
                     if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
                     {
-                        foreach (string e in ParamToolbarView.TargetTypes)
+                        foreach (string e in ParamToolbar.TargetTypes)
                         {
                             if (ImGui.Selectable(e))
                             {
@@ -62,7 +67,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                     ImGui.Text("Source Category:");
                     if (ImGui.BeginCombo("##Source", CurrentSourceCategory))
                     {
-                        foreach (string e in ParamToolbarView.SourceTypes)
+                        foreach (string e in ParamToolbar.SourceTypes)
                         {
                             if (ImGui.Selectable(e))
                             {
@@ -87,7 +92,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.ImportRowNames)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.ImportRowNames)
             {
                 if (ImGui.Button("Apply##action_Selection_ImportRowNames", new Vector2(200, 32)))
                 {
@@ -125,7 +130,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 {
                     if (CurrentTargetCategory == "All Params")
                     {
-                        ParamToolbarView.EditorActionManager.ExecuteAction(
+                        ParamToolbar.EditorActionManager.ExecuteAction(
                             ParamBank.PrimaryBank.LoadParamDefaultNames(
                                 null,
                                 _rowNameImporter_EmptyOnly,
@@ -136,7 +141,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
                     if (CurrentTargetCategory == "Selected Param")
                     {
-                        ParamToolbarView.EditorActionManager.ExecuteAction(
+                        ParamToolbar.EditorActionManager.ExecuteAction(
                             ParamBank.PrimaryBank.LoadParamDefaultNames(
                                 selectedParam.GetActiveParam(),
                                 _rowNameImporter_EmptyOnly,

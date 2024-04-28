@@ -28,7 +28,9 @@ public class ParamEditorView
 
     internal ParamEditorScreen _paramEditor;
 
-    public ParamToolbarView _toolbarView;
+    public ParamToolbar _paramToolbar;
+    public ParamToolbar_ActionList _paramToolbar_ActionList;
+    public ParamToolbar_Configuration _paramToolbar_Configuration;
 
     internal ParamEditorSelectionState _selection;
     internal int _viewIndex;
@@ -40,8 +42,12 @@ public class ParamEditorView
         _paramEditor = parent;
         _viewIndex = index;
         _propEditor = new ParamRowEditor(parent.EditorActionManager, _paramEditor);
-        _toolbarView = new ParamToolbarView(parent.EditorActionManager);
         _selection = new ParamEditorSelectionState(_paramEditor);
+
+        // Toolbar
+        _paramToolbar = new ParamToolbar(parent.EditorActionManager);
+        _paramToolbar_ActionList = new ParamToolbar_ActionList();
+        _paramToolbar_Configuration = new ParamToolbar_Configuration();
     }
 
     //------------------------------------

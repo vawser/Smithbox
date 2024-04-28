@@ -21,6 +21,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 {
                     MapEditorState.SelectedAction = MapEditorAction.Selection_Move_to_Grid;
                 }
+
+                if (!CFG.Current.Interface_MapEditor_Toolbar_ActionList_TopToBottom)
+                {
+                    ImGui.SameLine();
+                }
             }
         }
 

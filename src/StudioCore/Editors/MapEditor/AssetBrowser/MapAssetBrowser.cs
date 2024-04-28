@@ -88,94 +88,51 @@ public class MapAssetBrowser
         ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin($@"Asset Browser##MapEditor_AssetBrowser"))
+        if (ImGui.Begin($@"Asset Browser: Category##MapEditor_AssetBrowser_CategoryList"))
         {
             DisplayTopSection();
 
-            if (CFG.Current.Interface_MapEditor_AssetBrowser_HorizontalOrientation)
-            {
-                ImGui.Columns(3);
+            ImGui.Separator();
+            ImGui.Text("Categories:");
+            ImGui.Separator();
 
-                ImGui.BeginChild("##MapEditor_AssetBrowser_CategoryList");
-
-                ImGui.Separator();
-                ImGui.Text("Categories:");
-                ImGui.Separator();
-
-                DisplayCategoryList();
-
-                ImGui.EndChild();
-
-                ImGui.NextColumn();
-
-                ImGui.BeginChild("##MapEditor_AssetBrowser_CategoryContentsList");
-
-                ImGui.Separator();
-                ImGui.Text("Assets:");
-                ImGui.Separator();
-
-                DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
-                DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
-                DisplayMapPieceContentsList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
-
-                ImGui.EndChild();
-
-                ImGui.NextColumn();
-
-                ImGui.BeginChild("##MapEditor_AssetBrowser_SelectedMenu");
-
-                ImGui.Indent(10.0f);
-
-                ImGui.Separator();
-                ImGui.Text("Actions:");
-                ImGui.Separator();
-
-                DisplayActionSection();
-
-                ImGui.EndChild();
-            }
-            else
-            {
-                var width = ImGui.GetWindowWidth();
-                var height = ImGui.GetWindowHeight();
-
-                ImGui.Separator();
-                ImGui.Text("Categories:");
-                ImGui.Separator();
-
-                ImGui.BeginChild("##MapEditor_AssetBrowser_CategoryList", new Vector2((width - 10), (height / 4)));
-
-                DisplayCategoryList();
-
-                ImGui.EndChild();
-
-                ImGui.Separator();
-
-                ImGui.BeginChild("##MapEditor_AssetBrowser_CategoryContentsList", new Vector2((width-10), (height/3)));
-
-                ImGui.Separator();
-                ImGui.Text("Assets:");
-                ImGui.Separator();
-
-                DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
-                DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
-                DisplayMapPieceContentsList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
-
-                ImGui.EndChild();
-
-                ImGui.BeginChild("##MapEditor_AssetBrowser_SelectedMenu");
-
-                ImGui.Indent(10.0f);
-
-                ImGui.Separator();
-                ImGui.Text("Actions:");
-                ImGui.Separator();
-
-                DisplayActionSection();
-
-                ImGui.EndChild();
-            }
+            DisplayCategoryList();
         }
+
+        ImGui.End();
+        ImGui.PopStyleColor(1);
+
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+        if (ImGui.Begin($@"Asset Browser: Contents##MapEditor_AssetBrowser_ContentList"))
+        {
+            ImGui.Separator();
+            ImGui.Text("Assets:");
+            ImGui.Separator();
+
+            DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
+            DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+            DisplayMapPieceContentsList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
+        }
+
+        ImGui.End();
+        ImGui.PopStyleColor(1);
+
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+        if (ImGui.Begin($@"Asset Browser: Actions##MapEditor_AssetBrowser_CategoryList"))
+        {
+            ImGui.Indent(10.0f);
+
+            ImGui.Separator();
+            ImGui.Text("Actions:");
+            ImGui.Separator();
+
+            DisplayActionSection();
+        }
+        
         ImGui.End();
         ImGui.PopStyleColor(1);
 
@@ -192,12 +149,6 @@ public class MapAssetBrowser
         ImGui.InputText($"Search", ref _searchInput, 255);
         ImguiUtils.ShowHoverTooltip("Separate terms are split via the + character.");
         ImGui.SameLine();
-
-        if (ImGui.Button($"{ForkAwesome.Refresh}##SwitchOrientation"))
-        {
-            CFG.Current.Interface_MapEditor_AssetBrowser_HorizontalOrientation = !CFG.Current.Interface_MapEditor_AssetBrowser_HorizontalOrientation;
-        }
-        ImguiUtils.ShowHoverTooltip("Toggle the orientation of the asset browser.");
 
         ImGui.Checkbox("Display Tags", ref CFG.Current.AssetBrowser_ShowTagsInBrowser);
         ImguiUtils.ShowHoverTooltip("Show the tags for each entry within the browser list as part of their displayed name.");

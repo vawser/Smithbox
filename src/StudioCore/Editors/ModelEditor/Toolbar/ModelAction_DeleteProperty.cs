@@ -21,16 +21,16 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Delete Property##tool_DeleteProperty", ModelToolbarView.SelectedAction == ModelEditorAction.DeleteProperty))
+            if (ImGui.RadioButton("Delete Property##tool_DeleteProperty", ModelToolbar.SelectedAction == ModelEditorAction.DeleteProperty))
             {
-                ModelToolbarView.SelectedAction = ModelEditorAction.DeleteProperty;
+                ModelToolbar.SelectedAction = ModelEditorAction.DeleteProperty;
             }
             ImguiUtils.ShowHoverTooltip("Delete selected FLVER property.");
         }
 
         public static void Configure()
         {
-            if (ModelToolbarView.SelectedAction == ModelEditorAction.DeleteProperty)
+            if (ModelToolbar.SelectedAction == ModelEditorAction.DeleteProperty)
             {
                 ImGui.Text("Delete selected FLVER property.");
                 ImGui.Text("");
@@ -39,7 +39,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void Act()
         {
-            if (ModelToolbarView.SelectedAction == ModelEditorAction.DeleteProperty)
+            if (ModelToolbar.SelectedAction == ModelEditorAction.DeleteProperty)
             {
                 if (ImGui.Button("Apply##action_Selection_DeleteProperty", new Vector2(200, 32)))
                 {

@@ -19,12 +19,17 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (!MapEditorToolbar.IsSupportedProjectTypeForPrefabs())
+            if (!MapToolbar.IsSupportedProjectTypeForPrefabs())
                 return;
 
             if (ImGui.RadioButton("Export Prefab##tool_Selection_ExportPrefab", MapEditorState.SelectedAction == MapEditorAction.ExportPrefab))
             {
                 MapEditorState.SelectedAction = MapEditorAction.ExportPrefab;
+            }
+
+            if (!CFG.Current.Interface_MapEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
             }
         }
         public static void Configure(ViewportSelection _selection)
@@ -35,7 +40,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.Text("");
 
                 ImGui.Text("Prefab Name:");
-                ImGui.InputText("##prefabName", ref MapEditorToolbar._prefabName, 255);
+                ImGui.InputText("##prefabName", ref MapToolbar._prefabName, 255);
 
                 if (_selection.GetSelection().Count != 0)
                 {
@@ -48,7 +53,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 }
 
                 ImGui.Text("Prefab Tags:");
-                ImGui.InputText("##prefabTags", ref MapEditorToolbar._prefabTags, 255);
+                ImGui.InputText("##prefabTags", ref MapToolbar._prefabTags, 255);
                 ImguiUtils.ShowHoverTooltip("The set of tags to save this prefab under. Split each tag with the , character.");
                 ImGui.Text("");
 
@@ -84,14 +89,14 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void ExportPrefab(ViewportSelection _selection)
         {
-            if (!MapEditorToolbar.IsSupportedProjectTypeForPrefabs())
+            if (!MapToolbar.IsSupportedProjectTypeForPrefabs())
                 return;
 
-            if (File.Exists($"{MapEditorToolbar._prefabDir}{MapEditorToolbar._prefabName}{MapEditorToolbar._prefabExt}"))
+            if (File.Exists($"{MapToolbar._prefabDir}{MapToolbar._prefabName}{MapToolbar._prefabExt}"))
             {
                 PlatformUtils.Instance.MessageBox("Prefab already exists with this name, try another.", "Prefab Error", MessageBoxButtons.OK);
             }
-            else if (MapEditorToolbar._prefabName == "" || MapEditorToolbar._prefabName == null)
+            else if (MapToolbar._prefabName == "" || MapToolbar._prefabName == null)
             {
                 PlatformUtils.Instance.MessageBox("Prefab name cannot be blank.", "Prefab Error", MessageBoxButtons.OK);
             }
@@ -105,13 +110,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             var ent = _selection.GetSelection().First() as Entity;
             int count = 1000;
-            MapEditorToolbar._prefabName = $"{ent.Name}_{count}"; // Use First entity's name as prefab name
+            MapToolbar._prefabName = $"{ent.Name}_{count}"; // Use First entity's name as prefab name
 
             // Loop until we reach a filename that isn't used
-            while (File.Exists($"{MapEditorToolbar._prefabDir}{MapEditorToolbar._prefabName}{MapEditorToolbar._prefabExt}"))
+            while (File.Exists($"{MapToolbar._prefabDir}{MapToolbar._prefabName}{MapToolbar._prefabExt}"))
             {
                 count++;
-                MapEditorToolbar._prefabName = $"{ent.Name}_{count}";
+                MapToolbar._prefabName = $"{ent.Name}_{count}";
             }
         }
 
@@ -121,33 +126,33 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         /// <param name="filepath"></param>
         public static void ExportCurrentSelection(ViewportSelection _selection)
         {
-            var filepath = $"{MapEditorToolbar._prefabDir}{MapEditorToolbar._prefabName}{MapEditorToolbar._prefabExt}";
+            var filepath = $"{MapToolbar._prefabDir}{MapToolbar._prefabName}{MapToolbar._prefabExt}";
 
             switch (Project.Type)
             {
                 case ProjectType.AC6:
-                    Prefab_AC6.ExportSelection(filepath, _selection, MapEditorToolbar._prefabTags);
+                    Prefab_AC6.ExportSelection(filepath, _selection, MapToolbar._prefabTags);
                     break;
                 case ProjectType.ER:
-                    Prefab_ER.ExportSelection(filepath, _selection, MapEditorToolbar._prefabTags);
+                    Prefab_ER.ExportSelection(filepath, _selection, MapToolbar._prefabTags);
                     break;
                 case ProjectType.SDT:
-                    Prefab_SDT.ExportSelection(filepath, _selection, MapEditorToolbar._prefabTags);
+                    Prefab_SDT.ExportSelection(filepath, _selection, MapToolbar._prefabTags);
                     break;
                 case ProjectType.DS3:
-                    Prefab_DS3.ExportSelection(filepath, _selection, MapEditorToolbar._prefabTags);
+                    Prefab_DS3.ExportSelection(filepath, _selection, MapToolbar._prefabTags);
                     break;
                 case ProjectType.DS2S:
-                    Prefab_DS2.ExportSelection(filepath, _selection, MapEditorToolbar._prefabTags);
+                    Prefab_DS2.ExportSelection(filepath, _selection, MapToolbar._prefabTags);
                     break;
                 case ProjectType.DS1:
                 case ProjectType.DS1R:
-                    Prefab_DS1.ExportSelection(filepath, _selection, MapEditorToolbar._prefabTags);
+                    Prefab_DS1.ExportSelection(filepath, _selection, MapToolbar._prefabTags);
                     break;
                 default: break;
             }
 
-            MapEditorToolbar.RefreshPrefabList();
+            MapToolbar.RefreshPrefabList();
         }
     }
 }

@@ -1359,7 +1359,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     private readonly List<MsbEntity> Clones = new();
     private readonly Universe Universe;
     private RenderScene Scene;
-    private MapEditorToolbar Toolbar;
+    private MapToolbar Toolbar;
     private ViewportActionManager ActionManager;
 
     private int idxCache;
@@ -1380,7 +1380,7 @@ public class ReplicateMapObjectsAction : ViewportAction
 
     private SquareSide currentSquareSide;
 
-    public ReplicateMapObjectsAction(MapEditorToolbar toolbar, Universe univ, RenderScene scene, List<MsbEntity> objects, ViewportActionManager _actionManager)
+    public ReplicateMapObjectsAction(MapToolbar toolbar, Universe univ, RenderScene scene, List<MsbEntity> objects, ViewportActionManager _actionManager)
     {
         Toolbar = toolbar;
         Universe = univ;

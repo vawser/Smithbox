@@ -69,41 +69,47 @@ public class CFG
     public bool Interface_MapEditor_PropertySearch = true;
     public bool Interface_MapEditor_RenderGroups = true;
     public bool Interface_MapEditor_AssetBrowser = true;
-    public bool Interface_MapEditor_AssetBrowser_HorizontalOrientation = true;
     public bool Interface_MapEditor_Toolbar = true;
-    public bool Interface_MapEditor_Toolbar_HorizontalOrientation = true;
     public bool Interface_MapEditor_ResourceList = true;
 
     public bool Interface_ModelEditor_ModelHierarchy = true;
     public bool Interface_ModelEditor_Properties = true;
     public bool Interface_ModelEditor_AssetBrowser = true;
-    public bool Interface_ModelEditor_AssetBrowser_HorizontalOrientation = true;
     public bool Interface_ModelEditor_Toolbar = true;
-    public bool Interface_ModelEditor_Toolbar_HorizontalOrientation = true;
     public bool Interface_ModelEditor_ResourceList = true;
 
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_MassEdit = true;
     public bool Interface_ParamEditor_Toolbar = true;
-    public bool Interface_ParamEditor_Toolbar_HorizontalOrientation = true;
 
     public bool Interface_TextEditor_TextCategories = true;
     public bool Interface_TextEditor_TextEntry = true;
     public bool Interface_TextEditor_Toolbar = true;
-    public bool Interface_TextEditor_Toolbar_HorizontalOrientation = true;
 
     public bool Interface_GparamEditor_Files = true;
     public bool Interface_GparamEditor_Groups = true;
     public bool Interface_GparamEditor_Fields = true;
     public bool Interface_GparamEditor_Values = true;
     public bool Interface_GparamEditor_Toolbar = true;
-    public bool Interface_GparamEditor_Toolbar_HorizontalOrientation = true;
 
     public bool Interface_ParticleEditor_Files = true;
     public bool Interface_ParticleEditor_Particles = true;
     public bool Interface_ParticleEditor_Data = true;
     public bool Interface_ParticleEditor_Toolbar = true;
-    public bool Interface_ParticleEditor_Toolbar_HorizontalOrientation = true;
+
+    public bool Interface_TextureViewer_Files = true;
+    public bool Interface_TextureViewer_Textures = true;
+    public bool Interface_TextureViewer_Viewer = true;
+    public bool Interface_TextureViewer_Properties = true;
+    public bool Interface_TextureViewer_Toolbar = true;
+
+    public bool Interface_MapEditor_Toolbar_ActionList_TopToBottom = true;
+    public bool Interface_ModelEditor_Toolbar_ActionList_TopToBottom = true;
+    public bool Interface_ParamEditor_Toolbar_ActionList_TopToBottom = true;
+    public bool Interface_TextEditor_Toolbar_ActionList_TopToBottom = true;
+    public bool Interface_GparamEditor_Toolbar_ActionList_TopToBottom = true;
+    public bool Interface_ParticleEditor_Toolbar_ActionList_TopToBottom = true;
+    public bool Interface_TextureViewer_Toolbar_ActionList_TopToBottom = true;
 
     public bool Interface_MapEditor_PromptUser = true;
     public bool Interface_GparamEditor_PromptUser = true;
@@ -111,14 +117,7 @@ public class CFG
     public bool Interface_ParamEditor_PromptUser = true;
     public bool Interface_TextEditor_PromptUser = true;
     public bool Interface_ParticleEditor_PromptUser = true;
-
-    public bool Interface_TextureViewer_Files = true;
-    public bool Interface_TextureViewer_Textures = true;
-    public bool Interface_TextureViewer_Viewer = true;
-    public bool Interface_TextureViewer_Properties = true;
-    public bool Interface_TextureViewer_Toolbar = true;
     public bool Interface_TextureViewer_PromptUser = true;
-    public bool Interface_TextureViewer_Toolbar_HorizontalOrientation = true;
 
     // Fixed Window
     public Vector4 ImGui_MainBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);

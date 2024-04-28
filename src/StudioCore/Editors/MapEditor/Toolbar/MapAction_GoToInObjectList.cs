@@ -18,6 +18,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 MapEditorState.SelectedAction = MapEditorAction.Selection_Go_to_in_Object_List;
             }
+
+            if (!CFG.Current.Interface_MapEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
         public static void Configure(ViewportSelection _selection)
         {

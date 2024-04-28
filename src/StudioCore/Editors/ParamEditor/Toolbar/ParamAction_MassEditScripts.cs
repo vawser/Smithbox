@@ -26,11 +26,16 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Mass Edit Scripts##tool_MassEditScripts", ParamToolbarView.SelectedAction == ParamEditorAction.MassEditScripts))
+            if (ImGui.RadioButton("Mass Edit Scripts##tool_MassEditScripts", ParamToolbar.SelectedAction == ParamToolbarAction.MassEditScripts))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.MassEditScripts;
+                ParamToolbar.SelectedAction = ParamToolbarAction.MassEditScripts;
             }
             ImguiUtils.ShowHoverTooltip("Use this to load and edit Mass Edit scripts.");
+
+            if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
@@ -43,7 +48,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 }
             }
 
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.MassEditScripts)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.MassEditScripts)
             {
                 ImGui.Text("Load and edit mass edit scripts here.");
                 ImGui.Text("");
@@ -73,7 +78,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         if (ImGui.Button("Load", new Vector2(150, 32)))
                         {
                             ParamAction_MassEdit._currentMEditRegexInput = _selectedMassEditScript.GenerateMassedit();
-                            ParamToolbarView.SelectedAction = ParamEditorAction.MassEdit;
+                            ParamToolbar.SelectedAction = ParamToolbarAction.MassEdit;
                         }
                         ImGui.SameLine();
                         if (ImGui.Button("Edit", new Vector2(150, 32)))
@@ -121,7 +126,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.MassEditScripts)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.MassEditScripts)
             {
                 
             }

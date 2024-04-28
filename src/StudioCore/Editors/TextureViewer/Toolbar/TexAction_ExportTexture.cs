@@ -18,16 +18,16 @@ public static class TexAction_ExportTexture
 {
     public static void Select()
     {
-        if (ImGui.RadioButton("Export Texture##tool_ExportTexture", TextureViewerToolbarView.SelectedAction == TextureViewerAction.ExportTexture))
+        if (ImGui.RadioButton("Export Texture##tool_ExportTexture", TextureToolbar.SelectedAction == TextureViewerAction.ExportTexture))
         {
-            TextureViewerToolbarView.SelectedAction = TextureViewerAction.ExportTexture;
+            TextureToolbar.SelectedAction = TextureViewerAction.ExportTexture;
         }
         ImguiUtils.ShowHoverTooltip("Use this to export the currently viewed texture.");
     }
 
     public static void Configure()
     {
-        if (TextureViewerToolbarView.SelectedAction == TextureViewerAction.ExportTexture)
+        if (TextureToolbar.SelectedAction == TextureViewerAction.ExportTexture)
         {
             ImGui.Text("Export the viewed texture.");
             ImGui.Text("");
@@ -41,7 +41,7 @@ public static class TexAction_ExportTexture
 
     public static void Act()
     {
-        if (TextureViewerToolbarView.SelectedAction == TextureViewerAction.ExportTexture)
+        if (TextureToolbar.SelectedAction == TextureViewerAction.ExportTexture)
         {
             if (ImGui.Button("Apply##action_Selection_ExportTexture", new Vector2(200, 32)))
             {

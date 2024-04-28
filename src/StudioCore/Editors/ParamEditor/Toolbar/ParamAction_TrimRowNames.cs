@@ -18,20 +18,25 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
     public static class ParamAction_TrimRowNames
     {
 
-        private static string CurrentTargetCategory = ParamToolbarView.TargetTypes[0];
+        private static string CurrentTargetCategory = ParamToolbar.TargetTypes[0];
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Trim Row Names##tool_TrimRowNames", ParamToolbarView.SelectedAction == ParamEditorAction.TrimRowNames))
+            if (ImGui.RadioButton("Trim Row Names##tool_TrimRowNames", ParamToolbar.SelectedAction == ParamToolbarAction.TrimRowNames))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.TrimRowNames;
+                ParamToolbar.SelectedAction = ParamToolbarAction.TrimRowNames;
             }
             ImguiUtils.ShowHoverTooltip("Use this to trim newlines from row names.");
+
+            if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.TrimRowNames)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.TrimRowNames)
             {
                 ImGui.Text("Trim Carriage Return (\\r) characters from row names\nfor the currently selected param, or for all params.");
                 ImGui.Text("");
@@ -46,7 +51,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                     ImGui.Text("Target Category:");
                     if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
                     {
-                        foreach (string e in ParamToolbarView.TargetTypes)
+                        foreach (string e in ParamToolbar.TargetTypes)
                         {
                             if (ImGui.Selectable(e))
                             {
@@ -64,7 +69,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.TrimRowNames)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.TrimRowNames)
             {
                 if (ImGui.Button("Apply##action_Selection_TrimRowNames", new Vector2(200, 32)))
                 {

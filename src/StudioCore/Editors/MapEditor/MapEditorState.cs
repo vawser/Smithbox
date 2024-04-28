@@ -59,6 +59,6 @@ namespace StudioCore.Editors.MapEditor
 
         public static IViewport Viewport;
 
-        public static MapEditorToolbar Toolbar;
+        public static MapToolbar Toolbar;
     }
 }

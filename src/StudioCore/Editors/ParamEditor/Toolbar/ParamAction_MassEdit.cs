@@ -25,16 +25,21 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Mass Edit##tool_MassEdit", ParamToolbarView.SelectedAction == ParamEditorAction.MassEdit))
+            if (ImGui.RadioButton("Mass Edit##tool_MassEdit", ParamToolbar.SelectedAction == ParamToolbarAction.MassEdit))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.MassEdit;
+                ParamToolbar.SelectedAction = ParamToolbarAction.MassEdit;
             }
             ImguiUtils.ShowHoverTooltip("Use this to apply Mass Edit commands.");
+
+            if (!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.MassEdit)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.MassEdit)
             {
                 ImGui.Text("Write and execute mass edit commands here.");
                 ImGui.Text("");
@@ -62,7 +67,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.MassEdit)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.MassEdit)
             {
                 if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", new Vector2(200, 32)))
                 {
@@ -89,7 +94,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             if (child != null)
             {
-                ParamToolbarView.EditorActionManager.PushSubManager(child);
+                ParamToolbar.EditorActionManager.PushSubManager(child);
             }
 
             if (r.Type == MassEditResultType.SUCCESS)

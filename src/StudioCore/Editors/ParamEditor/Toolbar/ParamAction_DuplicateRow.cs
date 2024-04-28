@@ -20,16 +20,21 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
     {
         public static void Select()
         {
-            if (ImGui.RadioButton("Duplicate Row##tool_DuplicateRow", ParamToolbarView.SelectedAction == ParamEditorAction.DuplicateRow))
+            if (ImGui.RadioButton("Duplicate Row##tool_DuplicateRow", ParamToolbar.SelectedAction == ParamToolbarAction.DuplicateRow))
             {
-                ParamToolbarView.SelectedAction = ParamEditorAction.DuplicateRow;
+                ParamToolbar.SelectedAction = ParamToolbarAction.DuplicateRow;
             }
             ImguiUtils.ShowHoverTooltip("Use this to duplicate selected rows.");
+
+            if(!CFG.Current.Interface_ParamEditor_Toolbar_ActionList_TopToBottom)
+            {
+                ImGui.SameLine();
+            }
         }
 
         public static void Configure()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.DuplicateRow)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.DuplicateRow)
             {
                 ImGui.Text("Duplicate the selected rows.");
                 ImGui.Text("");
@@ -51,7 +56,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
         public static void Act()
         {
-            if (ParamToolbarView.SelectedAction == ParamEditorAction.DuplicateRow)
+            if (ParamToolbar.SelectedAction == ParamToolbarAction.DuplicateRow)
             {
                 if (ImGui.Button("Apply##action_Selection_DuplicateRow", new Vector2(200, 32)))
                 {
@@ -99,7 +104,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             var compoundAction = new CompoundAction(actions);
 
-            ParamToolbarView.EditorActionManager.ExecuteAction(compoundAction);
+            ParamToolbar.EditorActionManager.ExecuteAction(compoundAction);
         }
     }
 }

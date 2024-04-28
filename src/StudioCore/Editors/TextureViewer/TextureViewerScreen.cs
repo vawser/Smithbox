@@ -48,11 +48,15 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     private Task _loadingTask;
 
-    public TextureViewerToolbarView _toolbarView;
+    public TextureToolbar _textureToolbar;
+    public TextureToolbar_ActionList _textureToolbar_ActionList;
+    public TextureToolbar_Configuration _textureToolbar_Configuration;
 
     public TextureViewerScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _toolbarView = new TextureViewerToolbarView(this);
+        _textureToolbar = new TextureToolbar();
+        _textureToolbar_ActionList = new TextureToolbar_ActionList();
+        _textureToolbar_Configuration = new TextureToolbar_Configuration();
     }
 
     public string EditorName => "Texture Viewer##TextureViewerEditor";
@@ -177,7 +181,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             }
         }
 
-        _toolbarView.OnGui();
+        if(CFG.Current.Interface_TextureViewer_Toolbar)
+        {
+            _textureToolbar_ActionList.OnGui();
+            _textureToolbar_Configuration.OnGui();
+        }
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);

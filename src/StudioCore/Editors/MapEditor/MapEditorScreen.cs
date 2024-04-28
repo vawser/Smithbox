@@ -64,7 +64,10 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     public DisplayGroupEditor DispGroupEditor;
     public MapAssetBrowser AssetBrowser;
     public EntryFileListEditor EntryFileListViewer;
-    public MapEditorToolbar MapEditorToolbar;
+
+    public MapToolbar _mapToolbar;
+    public MapToolbar_ActionList _mapToolbar_ActionList;
+    public MapToolbar_Configuration _mapToolbar_Configuration;
 
     private bool GCNeedsCollection;
 
@@ -110,9 +113,12 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         PropSearch = new MapSearchProperties(Universe, _propCache);
         NavMeshEditor = new NavmeshEditor(RenderScene, _selection);
         AssetBrowser = new MapAssetBrowser(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
-        MapEditorToolbar = new MapEditorToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
         PropEditor = new MapPropertyEditor(EditorActionManager, _propCache, Viewport);
         EntryFileListViewer = new EntryFileListEditor(Universe, RenderScene, _selection, EditorActionManager, this, Viewport);
+
+        _mapToolbar = new MapToolbar(RenderScene, _selection, EditorActionManager, Universe, Viewport, _comboTargetMap);
+        _mapToolbar_ActionList = new MapToolbar_ActionList();
+        _mapToolbar_Configuration = new MapToolbar_Configuration();
 
         EditorActionManager.AddEventHandler(SceneTree);
     }
@@ -749,7 +755,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Toolbar_ImportPrefab))
             {
-                if (MapEditorToolbar._selectedPrefabInfo != null)
+                if (MapToolbar._selectedPrefabInfo != null)
                 {
                     MapAction_ImportPrefab.ImportSelectedPrefab();
                 }
@@ -904,7 +910,12 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         DispGroupEditor.OnGui(Universe._dispGroupCount);
         AssetBrowser.OnGui();
         EntryFileListViewer.OnGui();
-        MapEditorToolbar.OnGui();
+
+        if (CFG.Current.Interface_MapEditor_Toolbar)
+        {
+            _mapToolbar_ActionList.OnGui();
+            _mapToolbar_Configuration.OnGui();
+        }
 
         if (_activeModal != null)
         {
@@ -949,7 +960,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         _projectSettings = newSettings;
         _selection.ClearSelection();
         EditorActionManager.Clear();
-        MapEditorToolbar.OnProjectChanged();
+
+        _mapToolbar.OnProjectChanged();
 
         ReloadUniverse();
     }

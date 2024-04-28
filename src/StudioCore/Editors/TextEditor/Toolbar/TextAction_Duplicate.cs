@@ -24,16 +24,16 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Duplicate##tool_Duplicate", TextEditorToolbar.SelectedAction == TextEditorAction.Duplicate))
+            if (ImGui.RadioButton("Duplicate##tool_Duplicate", TextToolbar.SelectedAction == TextEditorAction.Duplicate))
             {
-                TextEditorToolbar.SelectedAction = TextEditorAction.Duplicate;
+                TextToolbar.SelectedAction = TextEditorAction.Duplicate;
             }
             ImguiUtils.ShowHoverTooltip("Duplicate selected entry.");
         }
 
         public static void Configure()
         {
-            if (TextEditorToolbar.SelectedAction == TextEditorAction.Duplicate)
+            if (TextToolbar.SelectedAction == TextEditorAction.Duplicate)
             {
                 ImGui.Text("Duplicate the current selection.");
                 ImGui.Text("");
@@ -58,7 +58,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
         public static void Act()
         {
-            if (TextEditorToolbar.SelectedAction == TextEditorAction.Duplicate)
+            if (TextToolbar.SelectedAction == TextEditorAction.Duplicate)
             {
                 if (ImGui.Button("Apply##action_Selection_Duplicate", new Vector2(200, 32)))
                 {

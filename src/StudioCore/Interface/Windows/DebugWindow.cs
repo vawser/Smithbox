@@ -44,7 +44,7 @@ public class DebugWindow : IResourceEventListener
 
     private Task _loadingTask;
 
-    private unsafe void ImageTest(GraphicsDevice gDevice)
+    private unsafe void TestSection(GraphicsDevice gDevice)
     {
         
     }
@@ -69,7 +69,7 @@ public class DebugWindow : IResourceEventListener
         
         if (ImGui.Begin("Tests##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImageTest(gDevice);
+            TestSection(gDevice);
 
             ImGui.Columns(4);
 

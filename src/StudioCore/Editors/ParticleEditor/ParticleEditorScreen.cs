@@ -50,12 +50,17 @@ public class ParticleEditorScreen : EditorScreen
 
     private bool[] displayTruth;
 
-    public ParticleToolbarView _toolbarView;
+    public ParticleToolbar _particleToolbar;
+    public ParticleToolbar_ActionList _particleToolbar_ActionList;
+    public ParticleToolbar_Configuration _particleToolbar_Configuration;
 
     public ParticleEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
-        _toolbarView = new ParticleToolbarView(this);
         _propEditor = new PropertyEditor(EditorActionManager);
+
+        _particleToolbar = new ParticleToolbar(EditorActionManager);
+        _particleToolbar_ActionList = new ParticleToolbar_ActionList();
+        _particleToolbar_Configuration = new ParticleToolbar_Configuration();
     }
 
     public string EditorName => "Particle Editor##ParticleEditor";
@@ -183,7 +188,11 @@ public class ParticleEditorScreen : EditorScreen
                 }
             }
 
-            _toolbarView.OnGui();
+            if(CFG.Current.Interface_ParticleEditor_Toolbar)
+            {
+                _particleToolbar_ActionList.OnGui();
+                _particleToolbar_Configuration.OnGui();
+            }
         }
 
         ImGui.PopStyleVar();
