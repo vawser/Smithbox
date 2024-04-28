@@ -375,11 +375,17 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
                 ImGui.Text("Width:");
                 ImGui.Text("Height:");
+                ImGui.Text("Format:");
 
                 ImGui.NextColumn();
 
                 ImGui.Text($"{size.X}");
                 ImGui.Text($"{size.Y}");
+
+                if (CurrentTextureInView.GPUTexture != null)
+                {
+                    ImGui.Text($"{CurrentTextureInView.GPUTexture.Format}".ToUpper());
+                }
 
                 ImGui.Columns(1);
             }
@@ -408,7 +414,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             {
                 if (ad.AssetVirtualPath != null)
                 {
-                    job.AddLoadFileTask(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly, true);
+                    job.AddLoadFileTask(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                 }
 
                 _loadingTask = job.Complete();

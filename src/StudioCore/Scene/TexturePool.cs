@@ -350,9 +350,6 @@ public class TexturePool
         internal Texture _staging;
         internal Texture _texture;
 
-        public uint Width { get; set; }
-        public uint Height { get; set; }
-
         public TextureHandle(TexturePool pool, uint handle)
         {
             _pool = pool;
@@ -362,6 +359,11 @@ public class TexturePool
         public uint TexHandle { get; }
 
         public bool Resident { get; private set; }
+
+        // Information
+        public uint Width { get; set; }
+        public uint Height { get; set; }
+        public VkFormat Format { get; set; }
 
         public static bool IsTPFCube(TPF.Texture tex, TPF.TPFPlatform platform)
         {
@@ -423,10 +425,13 @@ public class TexturePool
 
                 //TaskLogs.AddLog($"{name}: {format}");
             }
+            
+            Format = format;
 
             if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))
             {
-                return;
+                //Removed to allow Texture Viewer to load all textures
+                //return;
             }
 
             width = FormatHelpers.IsCompressedFormat(format) ? (uint)((width + 3) & ~0x3) : width;
