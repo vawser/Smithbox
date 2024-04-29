@@ -486,7 +486,15 @@ public static class TextureAssetLocator
         if (path != null)
         {
             ad.AssetPath = path;
-            ad.AssetVirtualPath = $@"menu/{resourceName}/tex";
+
+            if(path.Contains(".tpfbhd"))
+            {
+                ad.AssetArchiveVirtualPath = $@"menu/{resourceName}/tex";
+            }
+            else
+            {
+                ad.AssetVirtualPath = $@"menu/{resourceName}/tex";
+            }
         }
 
         return ad;
@@ -496,6 +504,7 @@ public static class TextureAssetLocator
     {
         var overrideFilePath = "";
 
+        // TPF
         if (Project.Type is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
         {
             overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{resourceName}.tpf.dcx");
@@ -509,6 +518,24 @@ public static class TextureAssetLocator
         if (overrideFilePath != null)
         {
             return overrideFilePath;
+        }
+        // TPFBHD
+        else
+        {
+            if (Project.Type is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
+            {
+                overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{resourceName}.tpfbhd");
+            }
+
+            if (Project.Type is ProjectType.DS3)
+            {
+                overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpfbhd");
+            }
+
+            if (overrideFilePath != null)
+            {
+                return overrideFilePath;
+            }
         }
 
         return null;

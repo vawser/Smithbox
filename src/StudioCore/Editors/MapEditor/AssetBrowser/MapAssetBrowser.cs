@@ -18,6 +18,7 @@ using StudioCore.Banks;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
 using static SoulsFormats.ACB;
+using StudioCore.Locators;
 
 namespace StudioCore.Editors.MapEditor.AssetBrowser;
 
@@ -222,13 +223,13 @@ public class MapAssetBrowser
 
         if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
         {
-            _modelNameCache = ModelAssetLocator.GetChrModels();
+            _modelNameCache = BrowserFileLocator.GetChrModels();
             _selectedAssetType = "Chr";
             _selectedAssetMapId = "";
         }
         if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
         {
-            _modelNameCache = ModelAssetLocator.GetObjModels();
+            _modelNameCache = BrowserFileLocator.GetObjModels();
             _selectedAssetType = "Obj";
             _selectedAssetMapId = "";
         }
@@ -254,7 +255,7 @@ public class MapAssetBrowser
                 {
                     if (_mapModelNameCache[mapId] == null)
                     {
-                        List<AssetDescription> modelList = ModelAssetLocator.GetMapModels(mapId);
+                        List<AssetDescription> modelList = BrowserFileLocator.GetMapModels(mapId);
                         var cache = new List<string>();
 
                         foreach (AssetDescription model in modelList)

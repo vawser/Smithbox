@@ -41,9 +41,6 @@ public static class TextureFolderBank
         // Characters
         CollectCharacterFolders(TextureViewCategory.Character);
 
-        // TODO: support tpfbnd
-        //CollectMenuFolders(TextureViewCategory.Menu, @".tpfbhd", true);
-
         IsLoaded = true;
         IsLoading = false;
 
@@ -73,6 +70,25 @@ public static class TextureFolderBank
                 LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
             }
         }
+
+        // TODO: fix issue with tpfbhd load before re-enabling
+        /*
+        fileExt = @".tpfbhd";
+
+        foreach (var name in GetFileNames(folderDir, fileExt))
+        {
+            var filePath = $"{folderDir}\\{name}{fileExt}";
+
+            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            {
+                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
+            }
+            else
+            {
+                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
+            }
+        }
+        */
     }
 
     private static void CollectAssetFolders(TextureViewCategory category)

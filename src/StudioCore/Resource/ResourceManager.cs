@@ -629,6 +629,7 @@ public static class ResourceManager
                         }
                     }
 
+                    // TODO: fix issue with tpfbhd load
                     PendingTPFs.Add(new Tuple<string, BinderFileHeader, bool>(virt, f, PersistentTPF));
                 }
                 else

@@ -13,6 +13,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Interface;
+using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Utilities;
@@ -125,6 +126,7 @@ namespace StudioCore.Editors.ModelEditor
 
                 DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
                 DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
+                DisplayCategoryContentsList("Parts", ModelAliasBank.Bank.AliasNames.GetEntries("Parts"));
                 DisplayMapPieceContentsList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
             }
 
@@ -221,19 +223,19 @@ namespace StudioCore.Editors.ModelEditor
 
             if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
             {
-                _modelNameCache = ModelAssetLocator.GetChrModels();
+                _modelNameCache = BrowserFileLocator.GetChrModels();
                 _selectedAssetType = "Chr";
                 _selectedAssetMapId = "";
             }
             if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
             {
-                _modelNameCache = ModelAssetLocator.GetObjModels();
+                _modelNameCache = BrowserFileLocator.GetObjModels();
                 _selectedAssetType = "Obj";
                 _selectedAssetMapId = "";
             }
             if (ImGui.Selectable("Part", _selectedAssetType == "Parts"))
             {
-                _modelNameCache = ModelAssetLocator.GetPartsModels();
+                _modelNameCache = BrowserFileLocator.GetPartsModels();
                 _selectedAssetType = "Parts";
                 _selectedAssetMapId = "";
             }
@@ -246,7 +248,7 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     if (_mapModelNameCache[mapId] == null)
                     {
-                        var modelList = ModelAssetLocator.GetMapModels(mapId);
+                        var modelList = BrowserFileLocator.GetMapModels(mapId);
                         var cache = new List<string>();
                         foreach (var model in modelList)
                         {

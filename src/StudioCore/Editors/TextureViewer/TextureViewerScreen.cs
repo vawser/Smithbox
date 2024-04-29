@@ -17,6 +17,7 @@ using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Threading;
@@ -326,8 +327,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
                 ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
 
-                var tpf = TPF.Read(info.Path);
-                _selectedTextureContainer.Textures = tpf.Textures;
+                _selectedTextureContainer.Textures = TPF.Read(info.Path).Textures;
             }
 
             // Load bnd archive
@@ -345,25 +345,40 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
                 ResourceManager.AddResourceListener<TextureResource>(ad.AssetArchiveVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
 
-                var binder = BND4.Read(info.Path);
 
-                List<TPF.Texture> textures = new List<TPF.Texture>();
-
-                foreach(var file in binder.Files)
-                {
-                    if(file.Name.Contains(".tpf"))
-                    {
-                        var tpf = TPF.Read(file.Bytes);
-                        foreach(var tex in tpf.Textures)
-                        {
-                            textures.Add(tex);
-                        }
-                    }
-                }
-
-                _selectedTextureContainer.Textures = textures;
+                _selectedTextureContainer.Textures = GetTexturesFromBinder(info.Path);
             }
         }
+    }
+
+    private List<TPF.Texture> GetTexturesFromBinder(string path)
+    {
+        List<TPF.Texture> textures = new List<TPF.Texture>();
+
+        if (path == null || !File.Exists(path))
+        {
+            return textures;
+        }
+
+        var reader = ResourceManager.InstantiateBinderReaderForFile(path, Project.Type);
+        if (reader != null)
+        {
+            foreach (var file in reader.Files)
+            {
+                Memory<byte> bytes = reader.ReadFile(file);
+
+                if (file.Name.Contains(".tpf"))
+                {
+                    var tpf = TPF.Read(bytes);
+                    foreach (var tex in tpf.Textures)
+                    {
+                        textures.Add(tex);
+                    }
+                }
+            }
+        }
+
+        return textures;
     }
 
     private void TextureList()
