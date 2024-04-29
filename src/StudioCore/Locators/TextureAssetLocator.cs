@@ -423,35 +423,87 @@ public static class TextureAssetLocator
         return ad;
     }
 
-    public static AssetDescription GetMenuTextures(string menuTpfName)
+
+    public static AssetDescription GetAssetTextureContainer(string resourceName)
+    {
+        AssetDescription ad = new();
+
+        ad.AssetPath = null;
+        ad.AssetVirtualPath = null;
+
+        string path = null;
+
+        if (Project.Type == ProjectType.ER)
+        {
+            path = LocatorUtils.GetOverridenFilePath($@"asset\aet\{resourceName.Substring(0, 6)}\{resourceName}.tpf.dcx");
+        }
+        else if (Project.Type is ProjectType.AC6)
+        {
+            path = LocatorUtils.GetOverridenFilePath($@"\asset\environment\texture\{resourceName}.tpf.dcx");
+        }
+
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetVirtualPath = $@"aet/{resourceName}/tex";
+        }
+
+        return ad;
+    }
+
+    // TPF
+    public static string GetAssetTextureContainerPath(string resourceName)
+    {
+        var overrideFilePath = "";
+
+        if (Project.Type is ProjectType.AC6)
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"asset\environment\texture\{resourceName}.tpf.dcx");
+        }
+
+        if (Project.Type is ProjectType.ER)
+        {
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"asset\aet\{resourceName.Substring(0, 6)}\{resourceName}.tpf.dcx");
+        }
+
+        if (overrideFilePath != null)
+        {
+            return overrideFilePath;
+        }
+
+        return null;
+    }
+
+    public static AssetDescription GetMenuTextureContainer(string resourceName)
     {
         var path = "";
         AssetDescription ad = new();
         ad.AssetVirtualPath = null;
         ad.AssetPath = null;
 
-        path = GetMenuTexturePath(menuTpfName);
+        path = GetMenuTextureContainerPath(resourceName);
+
         if (path != null)
         {
             ad.AssetPath = path;
-            ad.AssetVirtualPath = $@"menu/{menuTpfName}/tex";
+            ad.AssetVirtualPath = $@"menu/{resourceName}/tex";
         }
 
         return ad;
     }
 
-    public static string GetMenuTexturePath(string menuTpfName)
+    public static string GetMenuTextureContainerPath(string resourceName)
     {
         var overrideFilePath = "";
 
         if (Project.Type is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
         {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{menuTpfName}.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{resourceName}.tpf.dcx");
         }
 
         if(Project.Type is ProjectType.DS3)
         {
-            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\{menuTpfName}.tpf.dcx");
+            overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpf.dcx");
         }
 
         if (overrideFilePath != null)

@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using DotNext;
+using ImGuiNET;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using SoulsFormats;
 using StudioCore.AssetLocator;
@@ -12,15 +13,17 @@ using StudioCore.Editors.TextureViewer.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Settings;
+using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Threading;
 using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Editors.TextureViewer.TextureViewBank;
+using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.TextureViewer;
 
@@ -35,8 +38,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     private static string _fileSearchInput = "";
     private static string _fileSearchInputCache = "";
 
-    private static TextureViewBank.TextureViewInfo _selectedTextureView;
-    private static string _selectedTextureViewKey = "";
+    private static TextureFolderBank.TextureViewInfo _selectedTextureContainer;
+    private static string _selectedTextureContainerKey = "";
+    private static AssetDescription _selectedAssetDescription;
 
     private static string _textureSearchInput = "";
     private static string _textureSearchInputCache = "";
@@ -79,13 +83,14 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public static void ResetTextureViewer()
     {
-        TextureViewBank.LoadTextureFolders();
+        TextureFolderBank.LoadTextureFolders();
 
         _fileSearchInput = "";
         _fileSearchInputCache = "";
 
-        _selectedTextureView = null;
-        _selectedTextureViewKey = "";
+        _selectedTextureContainer = null;
+        _selectedTextureContainerKey = "";
+        _selectedAssetDescription = null;
 
         _textureSearchInput = "";
         _textureSearchInputCache = "";
@@ -133,6 +138,13 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Toolbar);
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Resource List"))
+            {
+                CFG.Current.Interface_TextureViewer_ResourceList = !CFG.Current.Interface_TextureViewer_ResourceList;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ResourceList);
+
             ImGui.EndMenu();
         }
     }
@@ -154,14 +166,14 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         var dsid = ImGui.GetID("DockSpace_TextureViewer");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!TextureViewBank.IsLoaded)
+        if (!TextureFolderBank.IsLoaded)
         {
-            TextureViewBank.LoadTextureFolders();
+            TextureFolderBank.LoadTextureFolders();
         }
 
         TextureViewerShortcuts();
 
-        if (TextureViewBank.IsLoaded)
+        if (TextureFolderBank.IsLoaded)
         {
             if (CFG.Current.Interface_TextureViewer_Files)
             {
@@ -185,6 +197,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         {
             _textureToolbar_ActionList.OnGui();
             _textureToolbar_Configuration.OnGui();
+        }
+
+        if (CFG.Current.Interface_TextureViewer_ResourceList)
+        {
+            ResourceManager.OnGuiDrawResourceList("textureViewerResourceList");
         }
 
         ImGui.PopStyleVar();
@@ -223,30 +240,27 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             _fileSearchInputCache = _fileSearchInput;
         }
 
-        // Section: MENU
-        DisplayFileSection("Menu", CFG.Current.TextureViewer_IncludeTextures_Menu, TextureViewCategory.Menu);
+        DisplayFileSection("Asset", TextureViewCategory.Asset);
 
-        // Section: Chr
+        DisplayFileSection("Characters", TextureViewCategory.Character);
+
+        DisplayFileSection("Menu", TextureViewCategory.Menu);
 
         ImGui.End();
     }
 
-    private void DisplayFileSection(string title, bool displaySection, TextureViewCategory displayCategory)
+    private void DisplayFileSection(string title, TextureViewCategory displayCategory)
     {
-        if (displaySection)
+        if (ImGui.CollapsingHeader($"{title}", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Separator();
-            ImGui.Text($"{title}");
-            ImGui.Separator();
-
-            foreach (var (name, info) in TextureViewBank.TextureBank)
+            foreach (var (name, info) in TextureFolderBank.FolderBank)
             {
                 if (info.Category == displayCategory)
                 {
                     if (SearchFilters.IsEditorSearchMatch(_fileSearchInput, info.Name, "_"))
                     {
                         ImGui.BeginGroup();
-                        if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedTextureViewKey))
+                        if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedTextureContainerKey))
                         {
                             SelectTextureContainer(info);
                         }
@@ -255,17 +269,101 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                     }
                 }
             }
+
         }
     }
 
     private void SelectTextureContainer(TextureViewInfo info)
     {
-        _selectedTextureViewKey = info.Name;
-        _selectedTextureView = info;
+        _selectedTextureContainerKey = info.Name;
+        _selectedTextureContainer = info;
+
+        // TODO: fix issue with selection causing the job to unload at the same time it is loaded (only occurs every second press)
 
         ResourceManager.UnloadPersistentTextures();
 
-        LoadSelectedTextureContainer(info.Category);
+        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading {info.Name} textures");
+
+        AssetDescription ad = null;
+
+        if (info.Category == TextureViewCategory.Menu)
+        {
+            ad = TextureAssetLocator.GetMenuTextureContainer(_selectedTextureContainerKey);
+        }
+
+        if (info.Category == TextureViewCategory.Asset)
+        {
+            ad = TextureAssetLocator.GetAssetTextureContainer(_selectedTextureContainerKey);
+        }
+
+        if (info.Category == TextureViewCategory.Character)
+        {
+            var chrId = _selectedTextureContainerKey;
+            if(Project.Type ==ProjectType.ER)
+            {
+                chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
+            }
+
+            ad = TextureAssetLocator.GetChrTextures(chrId);
+        }
+
+        if (ad != null)
+        {
+            _selectedAssetDescription = ad;
+
+            // Load direct file
+            if (ad.AssetVirtualPath != null)
+            {
+                if (!ResourceManager.IsResourceLoadedOrInFlight(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+                {
+                    if (ad.AssetVirtualPath != null)
+                    {
+                        job.AddLoadFileTask(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly, true);
+                    }
+
+                    _loadingTask = job.Complete();
+                }
+
+                ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
+
+                var tpf = TPF.Read(info.Path);
+                _selectedTextureContainer.Textures = tpf.Textures;
+            }
+
+            // Load bnd archive
+            if (ad.AssetArchiveVirtualPath != null)
+            {
+                if (!ResourceManager.IsResourceLoadedOrInFlight(ad.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+                {
+                    if (ad.AssetArchiveVirtualPath != null)
+                    {
+                        job.AddLoadArchiveTask(ad.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture, null, true);
+                    }
+
+                    _loadingTask = job.Complete();
+                }
+
+                ResourceManager.AddResourceListener<TextureResource>(ad.AssetArchiveVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
+
+                var binder = BND4.Read(info.Path);
+
+                List<TPF.Texture> textures = new List<TPF.Texture>();
+
+                foreach(var file in binder.Files)
+                {
+                    if(file.Name.Contains(".tpf"))
+                    {
+                        var tpf = TPF.Read(file.Bytes);
+                        foreach(var tex in tpf.Textures)
+                        {
+                            textures.Add(tex);
+                        }
+                    }
+                }
+
+                _selectedTextureContainer.Textures = textures;
+            }
+        }
     }
 
     private void TextureList()
@@ -284,21 +382,24 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             _textureSearchInputCache = _textureSearchInput;
         }
 
-        if (_selectedTextureView != null && _selectedTextureViewKey != "")
+        if (_selectedTextureContainer != null && _selectedTextureContainerKey != "")
         {
-            TextureViewInfo data = _selectedTextureView;
+            TextureViewInfo data = _selectedTextureContainer;
 
             ImGui.Text($"Textures");
             ImGui.Separator();
 
-            foreach(var tex in data.Textures)
+            if (data.Textures != null)
             {
-                if (SearchFilters.IsEditorSearchMatch(_textureSearchInput, tex.Name, "_"))
+                foreach (var tex in data.Textures)
                 {
-                    if (ImGui.Selectable($@" {tex.Name}", tex.Name == _selectedTextureKey))
+                    if (SearchFilters.IsEditorSearchMatch(_textureSearchInput, tex.Name, "_"))
                     {
-                        _selectedTextureKey = tex.Name;
-                        _selectedTexture = tex;
+                        if (ImGui.Selectable($@" {tex.Name}", tex.Name == _selectedTextureKey))
+                        {
+                            _selectedTextureKey = tex.Name;
+                            _selectedTexture = tex;
+                        }
                     }
                 }
             }
@@ -313,7 +414,14 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (_selectedTexture != null)
         {
-            var virtName = $"menu/{_selectedTextureViewKey}/tex/{_selectedTextureKey}".ToLower();
+            var path = _selectedAssetDescription.AssetVirtualPath;
+
+            if (_selectedAssetDescription.AssetArchiveVirtualPath != null)
+            {
+                path = _selectedAssetDescription.AssetArchiveVirtualPath;
+            }
+            var virtName = $@"{path}/{_selectedTextureKey}".ToLower();
+
             var resources = ResourceManager.GetResourceDatabase();
 
             if (resources.ContainsKey(virtName))
@@ -392,36 +500,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         }
 
         ImGui.End();
-    }
-
-    private void LoadSelectedTextureContainer(TextureViewCategory category)
-    {
-        if (category == TextureViewCategory.Menu)
-        {
-            ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading menu textures");
-
-            AssetDescription ad = TextureAssetLocator.GetMenuTextures(_selectedTextureViewKey);
-
-            LoadTextureContainer(ad, job);
-        }
-    }
-
-    private void LoadTextureContainer(AssetDescription ad, ResourceManager.ResourceJobBuilder job)
-    {
-        if (ad.AssetVirtualPath != null)
-        {
-            if (!ResourceManager.IsResourceLoadedOrInFlight(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
-            {
-                if (ad.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-
-                _loadingTask = job.Complete();
-            }
-
-            ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
-        }
     }
 
     public void Save()

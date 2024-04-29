@@ -109,16 +109,18 @@ public static class LocatorUtils
 
     public static string GetOverridenFilePath(string relpath)
     {
-        if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{relpath}"))
-            return $@"{Project.GameModDirectory}\{relpath}";
+        var rootPath = $@"{Project.GameRootDirectory}\{relpath}";
+        var modPath = $@"{Project.GameModDirectory}\{relpath}";
 
-        if (File.Exists($@"{Project.GameRootDirectory}\{relpath}"))
-            return $@"{Project.GameRootDirectory}\{relpath}";
+        if (Project.GameModDirectory != null && File.Exists(modPath))
+            return modPath;
+
+        if (File.Exists($@"{rootPath}"))
+            return rootPath;
 
         return null;
     }
 
-    // THE DEFUCKANATE PATH FUNCTION
     /// <summary>
     ///     Converts a virtual path to an actual filesystem path. Only resolves virtual paths up to the bnd level,
     ///     which the remaining string is output for additional handling
@@ -395,13 +397,27 @@ public static class LocatorUtils
         else if (pathElements[i].Equals("menu"))
         {
             i++;
-            var menuTpfName = pathElements[i];
+
+            var containerName = pathElements[i];
             i++;
 
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return TextureAssetLocator.GetMenuTexturePath(menuTpfName);
+                return TextureAssetLocator.GetMenuTextureContainerPath(containerName);
+            }
+        }
+        else if (pathElements[i].Equals("aet"))
+        {
+            i++;
+
+            var containerName = pathElements[i];
+            i++;
+
+            if (pathElements[i].Equals("tex"))
+            {
+                bndpath = "";
+                return TextureAssetLocator.GetAssetTextureContainerPath(containerName);
             }
         }
 

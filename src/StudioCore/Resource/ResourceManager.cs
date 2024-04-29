@@ -138,17 +138,22 @@ public static class ResourceManager
                     i++;
                 }
 
-                foreach (Tuple<string, BinderFileHeader> t in action.PendingTPFs)
+                foreach (Tuple<string, BinderFileHeader, bool> t in action.PendingTPFs)
                 {
+                    string name = t.Item1;
+                    BinderFileHeader binderFileHeader = t.Item2;
+                    bool isPersistent = t.Item3;
+
                     try
                     {
-                        TPF f = TPF.Read(action.Binder.ReadFile(t.Item2));
-                        action._job.AddLoadTPFResources(new LoadTPFResourcesAction(action._job, t.Item1, f,
-                            action.AccessLevel, Project.Type));
+                        TPF f = TPF.Read(action.Binder.ReadFile(binderFileHeader));
+
+                        action._job.AddLoadTPFResources(
+                            new LoadTPFResourcesAction(action._job, t.Item1, f, action.AccessLevel, Project.Type), isPersistent);
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to load TPF \"{t.Item1}\"",
+                        TaskLogs.AddLog($"Failed to load TPF \"{name}\"",
                             LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
                     }
 
@@ -166,7 +171,7 @@ public static class ResourceManager
         action.Binder = null;
     }
 
-    private static IResourceHandle ConstructHandle(Type t, string virtualpath)
+    private static IResourceHandle ConstructHandle(Type t, string virtualpath, bool isPersistent = false)
     {
         if (t == typeof(FlverResource))
         {
@@ -190,7 +195,7 @@ public static class ResourceManager
 
         if (t == typeof(TextureResource))
         {
-            return new ResourceHandle<TextureResource>(virtualpath);
+            return new ResourceHandle<TextureResource>(virtualpath, isPersistent);
         }
 
         throw new Exception("Unhandled resource type");
@@ -557,15 +562,16 @@ public static class ResourceManager
         public List<Task> LoadingTasks = new();
 
         public List<Tuple<IResourceLoadPipeline, string, BinderFileHeader>> PendingResources = new();
-        public List<Tuple<string, BinderFileHeader>> PendingTPFs = new();
+        public List<Tuple<string, BinderFileHeader, bool>> PendingTPFs = new();
         public bool PopulateResourcesOnly;
         public ResourceType ResourceMask = ResourceType.All;
         public List<int> TaskProgress = new();
         public List<int> TaskSizes = new();
         public int TotalSize = 0;
 
-        public LoadBinderResourcesAction(ResourceJob job, string virtpath, AccessLevel accessLevel,
-            bool populateOnly, ResourceType mask, HashSet<string> whitelist)
+        public bool PersistentTPF = false;
+
+        public LoadBinderResourcesAction(ResourceJob job, string virtpath, AccessLevel accessLevel, bool populateOnly, ResourceType mask, HashSet<string> whitelist, bool isPersistentTPF = false)
         {
             _job = job;
             BinderVirtualPath = virtpath;
@@ -573,6 +579,7 @@ public static class ResourceManager
             ResourceMask = mask;
             AssetWhitelist = whitelist;
             AccessLevel = accessLevel;
+            PersistentTPF = isPersistentTPF;
         }
 
         public void ProcessBinder()
@@ -581,6 +588,7 @@ public static class ResourceManager
             {
                 string o;
                 var path = LocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
+
                 Binder = InstantiateBinderReaderForFile(path, Project.Type);
                 if (Binder == null)
                 {
@@ -621,7 +629,7 @@ public static class ResourceManager
                         }
                     }
 
-                    PendingTPFs.Add(new Tuple<string, BinderFileHeader>(virt, f));
+                    PendingTPFs.Add(new Tuple<string, BinderFileHeader, bool>(virt, f, PersistentTPF));
                 }
                 else
                 {
@@ -687,6 +695,8 @@ public static class ResourceManager
 
         public ResourceJob(string name)
         {
+            IsPersistent = false;
+
             ExecutionDataflowBlockOptions options = new() { MaxDegreeOfParallelism = DataflowBlockOptions.Unbounded };
             Name = name;
             _loadTPFResources =
@@ -713,6 +723,8 @@ public static class ResourceManager
         public string Name { get; }
         public int Progress { get; private set; }
 
+        public bool IsPersistent { get; private set; }
+
         // Asset load pipelines
         internal IResourceLoadPipeline FlverLoadPipeline { get; }
         internal IResourceLoadPipeline HavokCollisionLoadPipeline { get; }
@@ -737,13 +749,15 @@ public static class ResourceManager
             return Math.Max(TotalSize, _courseSize);
         }
 
-        internal void AddLoadTPFResources(LoadTPFResourcesAction action)
+        internal void AddLoadTPFResources(LoadTPFResourcesAction action, bool isPersistent = false)
         {
+            IsPersistent = isPersistent;
             _loadTPFResources.Post(action);
         }
 
-        internal void AddLoadBinderResources(LoadBinderResourcesAction action)
+        internal void AddLoadBinderResources(LoadBinderResourcesAction action, bool isPersistent = false)
         {
+            IsPersistent = isPersistent;
             _courseSize++;
             _loadBinderResources.Post(action);
         }
@@ -795,7 +809,7 @@ public static class ResourceManager
                     var lPath = p.VirtualPath.ToLower();
                     if (!ResourceDatabase.ContainsKey(lPath))
                     {
-                        ResourceDatabase.Add(lPath, ConstructHandle(p.Resource.GetType(), p.VirtualPath));
+                        ResourceDatabase.Add(lPath, ConstructHandle(p.Resource.GetType(), p.VirtualPath, IsPersistent));
                     }
 
                     IResourceHandle reg = ResourceDatabase[lPath];
@@ -822,7 +836,7 @@ public static class ResourceManager
         /// </summary>
         /// <param name="virtualPath"></param>
         public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly,
-            HashSet<string> assets = null)
+            HashSet<string> assets = null, bool isPersistent = false)
         {
             if (InFlightFiles.Contains(virtualPath))
             {
@@ -838,13 +852,11 @@ public static class ResourceManager
             if (!archivesToLoad.Contains(virtualPath))
             {
                 archivesToLoad.Add(virtualPath);
-                _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly,
-                    ResourceType.All, assets));
+                _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, ResourceType.All, assets, isPersistent), isPersistent);
             }
         }
 
-        public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly, ResourceType filter,
-            HashSet<string> assets = null)
+        public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly, ResourceType filter, HashSet<string> assets = null, bool isPersistent = false)
         {
             if (InFlightFiles.Contains(virtualPath))
             {
@@ -860,8 +872,7 @@ public static class ResourceManager
             if (!archivesToLoad.Contains(virtualPath))
             {
                 archivesToLoad.Add(virtualPath);
-                _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly,
-                    filter, assets));
+                _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, filter, assets, isPersistent), isPersistent);
             }
         }
 
@@ -869,7 +880,7 @@ public static class ResourceManager
         ///     Loads a loose virtual file
         /// </summary>
         /// <param name="virtualPath"></param>
-        public void AddLoadFileTask(string virtualPath, AccessLevel al)
+        public void AddLoadFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
         {
             if (InFlightFiles.Contains(virtualPath))
             {
@@ -907,7 +918,7 @@ public static class ResourceManager
                     }
                 }
 
-                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, path, al, Project.Type));
+                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, path, al, Project.Type), true);
                 return;
             }
             else
@@ -963,7 +974,13 @@ public static class ResourceManager
                             var splits = texpath.Split('/');
                             var aetid = splits[1];
                             var aetname = splits[2];
-                            var fullaetid = aetname.Substring(0, 10);
+
+                            var fullaetid = aetid;
+
+                            if (aetname.Length >= 10)
+                            {
+                                fullaetid = aetname.Substring(0, 10);
+                            }
 
                             if (assetTpfs.Contains(fullaetid))
                             {

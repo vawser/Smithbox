@@ -86,19 +86,10 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
     protected T Resource;
 
-    public ResourceHandle(string virtualPath)
+    public ResourceHandle(string virtualPath, bool isPersistent = false)
     {
         AssetVirtualPath = virtualPath;
-
-        // Hacky but simple
-        if(virtualPath.Contains("menu"))
-        {
-            Persistent = true;
-        }
-        else
-        {
-            Persistent = false;
-        }
+        Persistent = isPersistent;
     }
 
     public bool IsLoaded { get; protected set; }
@@ -273,7 +264,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     /// <returns></returns>
     public static ResourceHandle<T> TempHandleFromResource(T res)
     {
-        var ret = new ResourceHandle<T>("temp");
+        var ret = new ResourceHandle<T>("temp", false);
         ret.AccessLevel = AccessLevel.AccessFull;
         ret.IsLoaded = true;
         ret.Resource = res;

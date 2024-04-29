@@ -102,6 +102,7 @@ public class CFG
     public bool Interface_TextureViewer_Viewer = true;
     public bool Interface_TextureViewer_Properties = true;
     public bool Interface_TextureViewer_Toolbar = true;
+    public bool Interface_TextureViewer_ResourceList = true;
 
     public bool Interface_MapEditor_Toolbar_ActionList_TopToBottom = true;
     public bool Interface_ModelEditor_Toolbar_ActionList_TopToBottom = true;
@@ -491,8 +492,6 @@ public class CFG
     //****************************
     // Settings: Texture Viewer
     //****************************
-    public bool TextureViewer_IncludeTextures_Menu = true;
-
     public string TextureViewerToolbar_ExportTextureLocation = "";
 
     //****************************

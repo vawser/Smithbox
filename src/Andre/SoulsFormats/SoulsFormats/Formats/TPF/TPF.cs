@@ -386,6 +386,11 @@ namespace SoulsFormats
             /// One 3D texture.
             /// </summary>
             Volume = 2,
+
+            /// <summary>
+            /// Unknown
+            /// </summary>
+            UnknownAC6 = 3,
         }
 
         /// <summary>
