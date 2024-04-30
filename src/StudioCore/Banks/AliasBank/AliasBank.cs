@@ -23,8 +23,6 @@ public class AliasBank
 
     private string TemplateName = "Template.json";
 
-    private string ProgramDirectory = ".smithbox";
-
     private string AliasDirectory = "";
 
     private string FileName = "";
@@ -131,7 +129,7 @@ public class AliasBank
             {
                 try
                 {
-                    _loadedAliasBank = new AliasContainer(aliasType, Project.GetGameIDForDir(), Project.GameModDirectory);
+                    _loadedAliasBank = new AliasContainer(aliasType);
 
                     if (aliasType == AliasBankType.Map)
                     {
@@ -169,7 +167,7 @@ public class AliasBank
 
     public void WriteTargetAliasBank(AliasResource targetBank, string assetType)
     {
-        var resourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        var resourcePath =  $"{Project.ProjectDataDir}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
 
         if(CFG.Current.AliasBank_EditorMode)
         {
@@ -206,7 +204,7 @@ public class AliasBank
     {
         var templateResource = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{TemplateName}";
 
-        var resourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        var resourcePath = $"{Project.ProjectDataDir}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
 
         if (CFG.Current.AliasBank_EditorMode)
         {
@@ -293,7 +291,7 @@ public class AliasBank
     /// </summary>
     public void RemoveFromLocalAliasBank(string assetType, string refID)
     {
-        var resourcePath = Project.GameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
+        var resourcePath = $"{Project.ProjectDataDir}\\Assets\\Aliases\\{AliasDirectory}\\{Project.GetGameIDForDir()}\\";
 
         if (CFG.Current.AliasBank_EditorMode)
         {

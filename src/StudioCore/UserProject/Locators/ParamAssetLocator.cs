@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.AssetLocator;
+namespace StudioCore.UserProject.Locators;
 public static class ParamAssetLocator
 {
     internal static AssetDescription GetDS2Param(string paramStr, string appendStr, string mapid, bool writemode = false)

@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.AssetLocator;
+namespace StudioCore.UserProject.Locators;
 public static class TextureAssetLocator
 {
     public static List<AssetDescription> GetMapTextures(string mapid)
@@ -162,7 +162,7 @@ public static class TextureAssetLocator
             overrideFilePath = LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.texbnd.dcx");
         }
 
-        if(overrideFilePath != null)
+        if (overrideFilePath != null)
         {
             return overrideFilePath;
         }
@@ -486,7 +486,7 @@ public static class TextureAssetLocator
         {
             ad.AssetPath = path;
 
-            if(path.Contains(".tpfbhd"))
+            if (path.Contains(".tpfbhd"))
             {
                 ad.AssetArchiveVirtualPath = $@"menu/{resourceName}/tex";
             }
@@ -509,7 +509,7 @@ public static class TextureAssetLocator
             overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\hi\{resourceName}.tpf.dcx");
         }
 
-        if(Project.Type is ProjectType.DS3)
+        if (Project.Type is ProjectType.DS3)
         {
             overrideFilePath = LocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpf.dcx");
         }

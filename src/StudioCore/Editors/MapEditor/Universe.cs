@@ -15,11 +15,11 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Numerics;
 using StudioCore.UserProject;
-using StudioCore.AssetLocator;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors;
 using StudioCore.Editor;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.MsbEditor;
 

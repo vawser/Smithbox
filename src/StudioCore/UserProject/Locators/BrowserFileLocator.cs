@@ -1,5 +1,4 @@
-﻿using StudioCore.AssetLocator;
-using StudioCore.UserProject;
+﻿using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Locators;
+namespace StudioCore.UserProject.Locators;
 
 public static class BrowserFileLocator
 {
@@ -175,7 +174,7 @@ public static class BrowserFileLocator
 
             var modelDir = @"\obj";
             var modelExt = @".objbnd.dcx";
-            
+
             if (Project.Type == ProjectType.DS1)
                 modelExt = ".objbnd";
             else if (Project.Type == ProjectType.DS2S)
@@ -236,7 +235,7 @@ public static class BrowserFileLocator
                     }
                 }
 
-                if(Project.Type == ProjectType.ER)
+                if (Project.Type == ProjectType.ER)
                 {
                     foreach (var folder in Directory.GetDirectories(modDir).ToList())
                     {

@@ -2,7 +2,6 @@
 using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.AssetLocator;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Platform;
@@ -25,6 +24,7 @@ using StudioCore.Interface;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Memory;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Editors.ParamEditor;
 

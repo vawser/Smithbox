@@ -13,12 +13,11 @@ using Action = StudioCore.Editors.MapEditor.ViewportAction;
 using StudioCore.Interface;
 using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
-using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
 using static SoulsFormats.ACB;
-using StudioCore.Locators;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Editors.MapEditor.AssetBrowser;
 

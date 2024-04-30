@@ -1,5 +1,4 @@
-﻿
-using StudioCore.UserProject;
+﻿using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.AssetLocator;
+namespace StudioCore.UserProject.Locators;
 public static class TextAssetLocator
 {
     /// <summary>

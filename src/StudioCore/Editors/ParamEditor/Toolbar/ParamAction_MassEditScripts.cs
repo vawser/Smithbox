@@ -1,11 +1,11 @@
 ﻿using Andre.Formats;
 using ImGuiNET;
-using StudioCore.AssetLocator;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.UserProject;
+using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

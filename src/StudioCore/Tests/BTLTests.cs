@@ -1,6 +1,6 @@
 ﻿using SoulsFormats;
-using StudioCore.AssetLocator;
 using StudioCore.UserProject;
+using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

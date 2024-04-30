@@ -2,7 +2,6 @@
 using ImGuiNET;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using SoulsFormats;
-using StudioCore.AssetLocator;
 using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -14,6 +13,7 @@ using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Settings;
 using StudioCore.UserProject;
+using StudioCore.UserProject.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

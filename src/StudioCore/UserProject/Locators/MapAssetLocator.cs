@@ -1,5 +1,4 @@
-﻿
-using StudioCore.UserProject;
+﻿using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace StudioCore.AssetLocator;
+namespace StudioCore.UserProject.Locators;
 public static class MapAssetLocator
 {
     public static List<string> FullMapList;
@@ -74,7 +73,7 @@ public static class MapAssetLocator
         ad.AssetName = mapid;
         return ad;
     }
-    
+
     /// <summary>
     /// Get a BTL asset.
     /// </summary>

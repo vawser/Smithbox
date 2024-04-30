@@ -1,6 +1,5 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
-using StudioCore.AssetLocator;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.UserProject;
@@ -15,6 +14,7 @@ using StudioCore.Interface;
 using static StudioCore.Editors.TextEditor.FMGBank;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Utilities;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.TextEditor;
 

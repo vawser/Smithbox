@@ -1,8 +1,7 @@
-﻿using StudioCore.AssetLocator;
-using StudioCore.UserProject;
+﻿using StudioCore.UserProject;
 using System.Collections.Generic;
 
-namespace StudioCore.Locators;
+namespace StudioCore.UserProject.Locators;
 public static class FileAssetLocator
 {
     // TAE
@@ -28,7 +27,7 @@ public static class FileAssetLocator
     public static List<string> GetBehaviorBinders()
     {
         // Not supported
-        if (Project.Type is ProjectType.DS1 
+        if (Project.Type is ProjectType.DS1
             or ProjectType.DS1R
             or ProjectType.DS2S
             or ProjectType.BB
@@ -107,7 +106,7 @@ public static class FileAssetLocator
         var paramDir = @"\mtd";
         var paramExt = @".mtdbnd.dcx";
 
-        if(Project.Type is ProjectType.ER or ProjectType.AC6)
+        if (Project.Type is ProjectType.ER or ProjectType.AC6)
         {
             paramDir = @"\material";
             paramExt = @".matbinbnd.dcx";

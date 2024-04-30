@@ -17,7 +17,6 @@ using System.IO;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.UserProject;
-using StudioCore.AssetLocator;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using System.Linq;
@@ -34,6 +33,7 @@ using System.Security.Cryptography;
 using StudioCore.BanksMain;
 using static SoulsFormats.MSB_AC6;
 using ModelCore.Editors.ModelEditor.Toolbar;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Editors.ModelEditor;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.AssetLocator;
+namespace StudioCore.UserProject.Locators;
 
 /// <summary>
 ///     Generic asset description for a generic game asset

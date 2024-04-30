@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.AssetLocator;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using System;
@@ -9,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using StudioCore.Editors.MapEditor;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.TextEditor;
 

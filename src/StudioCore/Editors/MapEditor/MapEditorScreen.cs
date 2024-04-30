@@ -4,7 +4,6 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Gui;
-using StudioCore.AssetLocator;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Resource;
@@ -26,6 +25,7 @@ using StudioCore.Utilities;
 using StudioCore.Interface;
 using StudioCore.Editors.MapEditor.AssetBrowser;
 using StudioCore.Editors.MapEditor.EntryFileList;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Editors.MapEditor;
 

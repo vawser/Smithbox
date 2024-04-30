@@ -1,17 +1,6 @@
-﻿using Andre.Formats;
-using SoulsFormats;
-using StudioCore.AssetLocator;
-using StudioCore.Platform;
-using StudioCore.UserProject;
-using StudioCore.Scene;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Numerics;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 using StudioCore.MsbEditor;
-using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.Editor;

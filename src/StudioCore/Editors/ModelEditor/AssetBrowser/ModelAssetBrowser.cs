@@ -7,15 +7,14 @@ using System.Text;
 using Google.Protobuf.WellKnownTypes;
 using ImGuiNET;
 using SoulsFormats.KF4;
-using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Interface;
-using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.UserProject;
+using StudioCore.UserProject.Locators;
 using StudioCore.Utilities;
 using Veldrid;
 

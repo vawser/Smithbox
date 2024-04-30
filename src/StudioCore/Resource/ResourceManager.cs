@@ -1,7 +1,6 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.AssetLocator;
 using StudioCore.UserProject;
 using StudioCore.Scene;
 using StudioCore.Tasks;
@@ -18,6 +17,7 @@ using System.Threading.Tasks.Dataflow;
 using StudioCore.Settings;
 using StudioCore.BanksMain;
 using HKX2;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Resource;
 

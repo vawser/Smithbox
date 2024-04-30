@@ -1,6 +1,5 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
-using StudioCore.AssetLocator;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Scene;
@@ -13,6 +12,7 @@ using System.Xml.Serialization;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.MapEditor;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Editor;
 

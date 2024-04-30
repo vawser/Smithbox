@@ -1,10 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.AssetLocator;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Locators;
-using StudioCore.TextEditor;
 using StudioCore.UserProject;
+using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;

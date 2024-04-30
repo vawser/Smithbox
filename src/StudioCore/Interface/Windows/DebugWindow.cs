@@ -5,7 +5,6 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.Scene;
 using StudioCore.Tests;
 using StudioCore.UserProject;
 using System;
@@ -13,14 +12,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Drawing;
 using Veldrid;
-using DirectXTexNet;
-using Vortice.Vulkan;
-using static SoulsFormats.MSB_AC6;
-using StudioCore.AssetLocator;
 using System.Threading.Tasks;
-using HKX2;
 
 namespace StudioCore.Interface.Windows;
 

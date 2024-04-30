@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Pqc.Crypto.Lms;
+using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -18,22 +19,14 @@ public class AliasContainer
 
     private AliasBankType aliasType;
 
-    private string gametype;
-
-    private string gameModDirectory;
-
-    private string ProgramDirectory = ".smithbox";
-
     public AliasContainer()
     {
         aliasMap = null;
         aliasType = AliasBankType.None;
     }
-    public AliasContainer(AliasBankType _aliasType, string _gametype, string _gameModDirectory)
+    public AliasContainer(AliasBankType _aliasType)
     {
         aliasType = _aliasType;
-        gametype = _gametype;
-        gameModDirectory = _gameModDirectory;
 
         if (aliasType is AliasBankType.Model)
         {
@@ -73,7 +66,7 @@ public class AliasContainer
         if (aliasType is AliasBankType.None)
             return null;
 
-        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{GetAliasTypeDir()}\\{gametype}\\{filename}.json";
+        var baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\Aliases\\{GetAliasTypeDir()}\\{Project.Type}\\{filename}.json";
 
         if (File.Exists(baseResourcePath))
         {
@@ -83,7 +76,7 @@ public class AliasContainer
             }
         }
 
-        var modResourcePath = gameModDirectory + $"\\{ProgramDirectory}\\Assets\\Aliases\\{GetAliasTypeDir()}\\{gametype}\\{filename}.json";
+        var modResourcePath = $"{Project.ProjectDataDir}\\Assets\\Aliases\\{GetAliasTypeDir()}\\{Project.Type}\\{filename}.json";
 
         // If path does not exist, use baseResource only
         if (File.Exists(modResourcePath))

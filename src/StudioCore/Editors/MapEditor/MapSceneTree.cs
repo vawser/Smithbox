@@ -4,7 +4,6 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Gui;
-using StudioCore.AssetLocator;
 using StudioCore.Platform;
 using StudioCore.UserProject;
 using StudioCore.Scene;
@@ -24,6 +23,7 @@ using StudioCore.BanksMain;
 using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Interface;
 using StudioCore.Editor;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Editors.MapEditor;
 

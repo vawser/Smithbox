@@ -1,5 +1,4 @@
-﻿using StudioCore.AssetLocator;
-using StudioCore.BanksMain;
+﻿using StudioCore.BanksMain;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;

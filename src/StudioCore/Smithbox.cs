@@ -35,7 +35,6 @@ using Veldrid.Sdl2;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
-using StudioCore.AssetLocator;
 using StudioCore.Banks;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface.Windows;
@@ -47,6 +46,7 @@ using StudioCore.Editors.BehaviorEditor;
 using StudioCore.BehaviorEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.BanksMain;
+using StudioCore.UserProject.Locators;
 
 namespace StudioCore;
 

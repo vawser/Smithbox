@@ -1,8 +1,8 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
-using StudioCore.AssetLocator;
 using StudioCore.Editor;
 using StudioCore.UserProject;
+using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -1,23 +1,15 @@
 ﻿using Andre.Formats;
-using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using ProcessMemoryUtilities.Managed;
 using ProcessMemoryUtilities.Native;
-using SoulsFormats;
-using StudioCore.AssetLocator;
-using StudioCore.Editor;
-using StudioCore.Memory;
 using StudioCore.UserProject;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Memory;
 
