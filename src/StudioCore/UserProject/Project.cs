@@ -18,6 +18,8 @@ using StudioCore.Settings;
 using StudioCore.Utilities;
 using System.Numerics;
 using System.Timers;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors;
 
 namespace StudioCore.UserProject;
 
@@ -97,9 +99,37 @@ public static class Project
         {
             if (Project.Type != ProjectType.Undefined)
             {
-                SaveProjectJson();
+                if (CFG.Current.System_EnableAutoSave_Project)
+                {
+                    SaveProjectJson();
+                }
 
-                TaskLogs.AddLog($"Automatic Save: project.json at {e.SignalTime}");
+                if (CFG.Current.System_EnableAutoSave_MapEditor)
+                {
+                    EditorContainer.MsbEditor.SaveAll();
+                }
+
+                if (CFG.Current.System_EnableAutoSave_ModelEditor)
+                {
+                    EditorContainer.ModelEditor.SaveAll();
+                }
+
+                if (CFG.Current.System_EnableAutoSave_ParamEditor)
+                {
+                    EditorContainer.ParamEditor.SaveAll();
+                }
+
+                if (CFG.Current.System_EnableAutoSave_TextEditor)
+                {
+                    EditorContainer.TextEditor.SaveAll();
+                }
+
+                if (CFG.Current.System_EnableAutoSave_GparamEditor)
+                {
+                    EditorContainer.GparamEditor.SaveAll();
+                }
+
+                TaskLogs.AddLog($"Automatic Save occured at {e.SignalTime}");
             }
         }
     }

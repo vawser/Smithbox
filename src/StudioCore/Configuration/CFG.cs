@@ -223,6 +223,12 @@ public class CFG
 
     public bool System_EnableAutoSave = true;
     public int System_AutoSaveIntervalSeconds = 300;
+    public bool System_EnableAutoSave_Project = true;
+    public bool System_EnableAutoSave_MapEditor = false;
+    public bool System_EnableAutoSave_ModelEditor = false;
+    public bool System_EnableAutoSave_ParamEditor = false;
+    public bool System_EnableAutoSave_TextEditor = false;
+    public bool System_EnableAutoSave_GparamEditor = false;
 
     public bool System_EnableRecoveryFolder = true;
 
