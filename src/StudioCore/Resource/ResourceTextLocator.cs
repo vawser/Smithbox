@@ -6,8 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.UserProject.Locators;
-public static class TextAssetLocator
+namespace StudioCore.Resource;
+public static class ResourceTextLocator
 {
     /// <summary>
     /// Get folders with msgbnds used in-game
@@ -47,7 +47,7 @@ public static class TextAssetLocator
     /// <summary>
     /// Get path of item.msgbnd (english by default)
     /// </summary>
-    public static AssetDescription GetItemMsgbnd(string langFolder, bool writemode = false)
+    public static ResourceDescriptor GetItemMsgbnd(string langFolder, bool writemode = false)
     {
         return GetMsgbnd("item", langFolder, writemode);
     }
@@ -55,14 +55,14 @@ public static class TextAssetLocator
     /// <summary>
     /// Get path of menu.msgbnd (english by default)
     /// </summary>
-    public static AssetDescription GetMenuMsgbnd(string langFolder, bool writemode = false)
+    public static ResourceDescriptor GetMenuMsgbnd(string langFolder, bool writemode = false)
     {
         return GetMsgbnd("menu", langFolder, writemode);
     }
 
-    public static AssetDescription GetMsgbnd(string msgBndType, string langFolder, bool writemode = false)
+    public static ResourceDescriptor GetMsgbnd(string msgBndType, string langFolder, bool writemode = false)
     {
-        AssetDescription ad = new();
+        ResourceDescriptor ad = new();
         var path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
         if (Project.Type == ProjectType.DES)
         {
@@ -79,7 +79,7 @@ public static class TextAssetLocator
         {
             // DS2 does not have an msgbnd but loose fmg files instead
             path = $@"menu\text\{langFolder}";
-            AssetDescription ad2 = new();
+            ResourceDescriptor ad2 = new();
             ad2.AssetPath = writemode ? path : $@"{Project.GameRootDirectory}\{path}";
             //TODO: doesn't support project files
             return ad2;

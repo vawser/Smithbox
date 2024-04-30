@@ -13,7 +13,6 @@ using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Settings;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -39,7 +38,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     private static TextureFolderBank.TextureViewInfo _selectedTextureContainer;
     private static string _selectedTextureContainerKey = "";
-    private static AssetDescription _selectedAssetDescription;
+    private static ResourceDescriptor _selectedAssetDescription;
 
     private static string _textureSearchInput = "";
     private static string _textureSearchInputCache = "";
@@ -290,26 +289,26 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading {info.Name} textures");
 
-        AssetDescription ad = null;
+        ResourceDescriptor ad = null;
 
         if (info.Category == TextureViewCategory.Menu)
         {
-            ad = TextureAssetLocator.GetMenuTextureContainer(_selectedTextureContainerKey);
+            ad = ResourceTextureLocator.GetMenuTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Asset)
         {
-            ad = TextureAssetLocator.GetAssetTextureContainer(_selectedTextureContainerKey);
+            ad = ResourceTextureLocator.GetAssetTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Object)
         {
-            ad = TextureAssetLocator.GetObjTextureContainer(_selectedTextureContainerKey);
+            ad = ResourceTextureLocator.GetObjTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Other)
         {
-            ad = TextureAssetLocator.GetOtherTextureContainer(_selectedTextureContainerKey);
+            ad = ResourceTextureLocator.GetOtherTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Character)
@@ -320,7 +319,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
 
-            ad = TextureAssetLocator.GetChrTextures(chrId);
+            ad = ResourceTextureLocator.GetChrTextures(chrId);
         }
 
         if (ad != null)

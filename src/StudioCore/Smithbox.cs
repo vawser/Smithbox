@@ -46,7 +46,6 @@ using StudioCore.Editors.BehaviorEditor;
 using StudioCore.BehaviorEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.BanksMain;
-using StudioCore.UserProject.Locators;
 using static SoulsFormats.MCP;
 using static SoulsFormats.DRB.Control;
 

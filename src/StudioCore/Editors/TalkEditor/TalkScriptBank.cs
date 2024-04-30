@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -102,7 +102,7 @@ public static class TalkScriptBank
         var fileDir = @"\script\talk";
         var fileExt = @".talkesdbnd.dcx";
 
-        List<string> talkNames = FileAssetLocator.GetTalkBinders();
+        List<string> talkNames = ResourceMiscLocator.GetTalkBinders();
 
         foreach (var name in talkNames)
         {

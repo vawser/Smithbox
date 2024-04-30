@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -110,7 +110,7 @@ public static class EventScriptBank
             paramExt = @".emevd";
         }
 
-        List<string> paramNames = FileAssetLocator.GetEventBinders();
+        List<string> paramNames = ResourceMiscLocator.GetEventBinders();
 
         foreach (var name in paramNames)
         {

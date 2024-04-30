@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.UserProject.Locators;
+namespace StudioCore.Resource;
 
 /// <summary>
 ///     Generic asset description for a generic game asset
 /// </summary>
-public class AssetDescription : IComparable<AssetDescription>
+public class ResourceDescriptor : IComparable<ResourceDescriptor>
 {
     public string AssetArchiveVirtualPath;
 
@@ -47,7 +47,7 @@ public class AssetDescription : IComparable<AssetDescription>
 
     public override bool Equals(object obj)
     {
-        if (obj is AssetDescription ad)
+        if (obj is ResourceDescriptor ad)
         {
             if (AssetVirtualPath != null)
                 return AssetVirtualPath.Equals(ad.AssetVirtualPath);
@@ -59,7 +59,7 @@ public class AssetDescription : IComparable<AssetDescription>
         return base.Equals(obj);
     }
 
-    public int CompareTo(AssetDescription other)
+    public int CompareTo(ResourceDescriptor other)
     {
         // Use string default CompareTo logic
         return AssetName.CompareTo(other.AssetName);

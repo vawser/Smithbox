@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.UserProject.Locators;
-public static class ModelAssetLocator
+namespace StudioCore.Resource;
+public static class ResourceModelLocator
 {
-    public static AssetDescription GetNullAsset()
+    public static ResourceDescriptor GetNullAsset()
     {
-        AssetDescription ret = new();
+        ResourceDescriptor ret = new();
         ret.AssetPath = "null";
         ret.AssetName = "null";
         ret.AssetArchiveVirtualPath = "null";
@@ -35,21 +35,21 @@ public static class ModelAssetLocator
         return $@"{mapid}_{modelname.Substring(1)}";
     }
 
-    public static AssetDescription GetMapModel(string mapid, string model)
+    public static ResourceDescriptor GetMapModel(string mapid, string model)
     {
-        AssetDescription ret = new();
+        ResourceDescriptor ret = new();
         if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.BB || Project.Type == ProjectType.DES)
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver");
+            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver");
         else if (Project.Type == ProjectType.DS1R)
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver.dcx");
+            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver.dcx");
         else if (Project.Type == ProjectType.DS2S)
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
+            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
         else if (Project.Type == ProjectType.ER)
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
+            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
         else if (Project.Type == ProjectType.AC6)
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
+            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
         else
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.mapbnd.dcx");
+            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.mapbnd.dcx");
 
         ret.AssetName = model;
         if (Project.Type == ProjectType.DS2S)
@@ -71,27 +71,27 @@ public static class ModelAssetLocator
         return ret;
     }
 
-    public static AssetDescription GetMapCollisionModel(string mapid, string model, bool hi = true)
+    public static ResourceDescriptor GetMapCollisionModel(string mapid, string model, bool hi = true)
     {
-        AssetDescription ret = new();
+        ResourceDescriptor ret = new();
         if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DES)
         {
             if (hi)
             {
-                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.hkx");
+                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.hkx");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx";
             }
             else
             {
-                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\l{model.Substring(1)}.hkx");
+                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\l{model.Substring(1)}.hkx");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx";
             }
         }
         else if (Project.Type == ProjectType.DS2S)
         {
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
+            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
             ret.AssetName = model;
             ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/{model}.hkx.dcx";
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
@@ -100,14 +100,14 @@ public static class ModelAssetLocator
         {
             if (hi)
             {
-                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/hi/h{model.Substring(1)}.hkx.dcx";
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/hi";
             }
             else
             {
-                ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+                ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
                 ret.AssetName = model;
                 ret.AssetVirtualPath = $@"map/{mapid}/hit/lo/l{model.Substring(1)}.hkx.dcx";
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
@@ -120,12 +120,12 @@ public static class ModelAssetLocator
 
         return ret;
     }
-    public static AssetDescription GetMapNVMModel(string mapid, string model)
+    public static ResourceDescriptor GetMapNVMModel(string mapid, string model)
     {
-        AssetDescription ret = new();
+        ResourceDescriptor ret = new();
         if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R || Project.Type == ProjectType.DES)
         {
-            ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{model}.nvm");
+            ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.nvm");
             ret.AssetName = model;
             ret.AssetArchiveVirtualPath = $@"map/{mapid}/nav";
             ret.AssetVirtualPath = $@"map/{mapid}/nav/{model}.nvm";
@@ -136,19 +136,19 @@ public static class ModelAssetLocator
         return ret;
     }
 
-    public static AssetDescription GetHavokNavmeshes(string mapid)
+    public static ResourceDescriptor GetHavokNavmeshes(string mapid)
     {
-        AssetDescription ret = new();
-        ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
+        ResourceDescriptor ret = new();
+        ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
         ret.AssetName = mapid;
         ret.AssetArchiveVirtualPath = $@"map/{mapid}/nav";
         return ret;
     }
 
-    public static AssetDescription GetHavokNavmeshModel(string mapid, string model)
+    public static ResourceDescriptor GetHavokNavmeshModel(string mapid, string model)
     {
-        AssetDescription ret = new();
-        ret.AssetPath = LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
+        ResourceDescriptor ret = new();
+        ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
         ret.AssetName = model;
         ret.AssetArchiveVirtualPath = $@"map/{mapid}/nav";
         ret.AssetVirtualPath = $@"map/{mapid}/nav/{model}.hkx";
@@ -156,9 +156,9 @@ public static class ModelAssetLocator
         return ret;
     }
 
-    public static AssetDescription GetChrModel(string chr)
+    public static ResourceDescriptor GetChrModel(string chr)
     {
-        AssetDescription ret = new();
+        ResourceDescriptor ret = new();
         ret.AssetName = chr;
         ret.AssetArchiveVirtualPath = $@"chr/{chr}/model";
         if (Project.Type == ProjectType.DS2S)
@@ -169,9 +169,9 @@ public static class ModelAssetLocator
         return ret;
     }
 
-    public static AssetDescription GetObjModel(string obj)
+    public static ResourceDescriptor GetObjModel(string obj)
     {
-        AssetDescription ret = new();
+        ResourceDescriptor ret = new();
         ret.AssetName = obj;
         ret.AssetArchiveVirtualPath = $@"obj/{obj}/model";
 
@@ -185,9 +185,9 @@ public static class ModelAssetLocator
         return ret;
     }
 
-    public static AssetDescription GetPartsModel(string part)
+    public static ResourceDescriptor GetPartsModel(string part)
     {
-        AssetDescription ret = new();
+        ResourceDescriptor ret = new();
         ret.AssetName = part;
         ret.AssetArchiveVirtualPath = $@"parts/{part}/model";
 

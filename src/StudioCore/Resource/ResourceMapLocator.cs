@@ -7,8 +7,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace StudioCore.UserProject.Locators;
-public static class MapAssetLocator
+namespace StudioCore.Resource;
+public static class ResourceMapLocator
 {
     public static List<string> FullMapList;
 
@@ -18,9 +18,9 @@ public static class MapAssetLocator
     /// <param name="mapid"></param>
     /// <param name="writemode"></param>
     /// <returns></returns>
-    public static AssetDescription GetMapMSB(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetMapMSB(string mapid, bool writemode = false)
     {
-        AssetDescription ad = new();
+        ResourceDescriptor ad = new();
         ad.AssetPath = null;
         if (mapid.Length != 12)
             return ad;
@@ -80,16 +80,16 @@ public static class MapAssetLocator
     /// <param name="mapid"></param>
     /// <param name="writemode"></param>
     /// <returns></returns>
-    public static List<AssetDescription> GetMapBTLs(string mapid, bool writemode = false)
+    public static List<ResourceDescriptor> GetMapBTLs(string mapid, bool writemode = false)
     {
-        List<AssetDescription> adList = new();
+        List<ResourceDescriptor> adList = new();
         if (mapid.Length != 12)
             return adList;
 
         if (Project.Type is ProjectType.DS2S)
         {
             // DS2 BTL is located inside map's .gibdt file
-            AssetDescription ad = new();
+            ResourceDescriptor ad = new();
             var path = $@"model\map\g{mapid[1..]}.gibhd";
 
             if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") || writemode && Project.GameModDirectory != null)
@@ -108,7 +108,7 @@ public static class MapAssetLocator
                 adList.Add(ad);
             }
 
-            AssetDescription ad2 = new();
+            ResourceDescriptor ad2 = new();
             path = $@"model_lq\map\g{mapid[1..]}.gibhd";
 
             if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}") || writemode && Project.GameModDirectory != null)
@@ -157,7 +157,7 @@ public static class MapAssetLocator
 
             foreach (var file in files)
             {
-                AssetDescription ad = new();
+                ResourceDescriptor ad = new();
                 var fileName = file.Split("\\").Last();
 
                 if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}\{fileName}") || writemode && Project.GameModDirectory != null)
@@ -186,9 +186,9 @@ public static class MapAssetLocator
     /// <param name="mapid"></param>
     /// <param name="writemode"></param>
     /// <returns></returns>
-    public static AssetDescription GetMapNVA(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetMapNVA(string mapid, bool writemode = false)
     {
-        AssetDescription ad = new();
+        ResourceDescriptor ad = new();
         ad.AssetPath = null;
 
         if (mapid.Length != 12)

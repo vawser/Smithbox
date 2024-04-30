@@ -25,7 +25,6 @@ using StudioCore.Utilities;
 using StudioCore.Interface;
 using StudioCore.Editors.MapEditor.AssetBrowser;
 using StudioCore.Editors.MapEditor.EntryFileList;
-using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -1037,7 +1036,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             {
                 foreach (Entity btl in targetMap.BTLParents)
                 {
-                    var ad = (AssetDescription)btl.WrappedObject;
+                    var ad = (ResourceDescriptor)btl.WrappedObject;
                     if (ImGui.Selectable(ad.AssetName))
                     {
                         _dupeSelectionTargetedParent = (ad.AssetName, btl);

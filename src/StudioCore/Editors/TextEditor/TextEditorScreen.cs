@@ -14,7 +14,7 @@ using StudioCore.Interface;
 using static StudioCore.Editors.TextEditor.FMGBank;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Utilities;
-using StudioCore.UserProject.Locators;
+using StudioCore.Resource;
 
 namespace StudioCore.TextEditor;
 
@@ -201,7 +201,7 @@ public class TextEditorScreen : EditorScreen
 
         if (ImGui.BeginMenu("Text Language", !FMGBank.IsLoading))
         {
-            Dictionary<string, string> folders = TextAssetLocator.GetMsgLanguages();
+            Dictionary<string, string> folders = ResourceTextLocator.GetMsgLanguages();
             if (folders.Count == 0)
             {
                 ImGui.TextColored(new Vector4(1.0f, 0.0f, 0.0f, 1.0f), "Cannot find language folders.");

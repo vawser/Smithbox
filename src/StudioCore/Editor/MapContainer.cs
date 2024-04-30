@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.UserProject.Locators;
+using StudioCore.Resource;
 
 namespace StudioCore.Editor;
 
@@ -129,7 +129,7 @@ public class MapContainer : ObjectContainer
         RootObject.BuildReferenceMap();
     }
 
-    public void LoadBTL(AssetDescription ad, BTL btl)
+    public void LoadBTL(ResourceDescriptor ad, BTL btl)
     {
         var btlParent = new MsbEntity(this, ad, MsbEntity.MsbEntityType.Editor);
         MapOffsetNode.AddChild(btlParent);
@@ -710,7 +710,7 @@ public class MapContainer : ObjectContainer
         List<BTL.Light> lights = new();
         foreach (Entity p in BTLParents)
         {
-            var ad = (AssetDescription)p.WrappedObject;
+            var ad = (ResourceDescriptor)p.WrappedObject;
             if (ad.AssetName == btlName)
             {
                 foreach (Entity e in p.Children)

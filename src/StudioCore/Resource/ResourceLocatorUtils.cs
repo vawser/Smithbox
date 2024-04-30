@@ -9,9 +9,9 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace StudioCore.UserProject.Locators;
+namespace StudioCore.Resource;
 
-public static class LocatorUtils
+public static class ResourceLocatorUtils
 {
     public static List<string> GetAssetFiles(string paramDir, string paramExt)
     {
@@ -283,7 +283,7 @@ public static class LocatorUtils
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return TextureAssetLocator.GetChrTexturePath(chrid);
+                return ResourceTextureLocator.GetChrTexturePath(chrid);
             }
         }
         else if (pathElements[i].Equals("obj"))
@@ -404,7 +404,7 @@ public static class LocatorUtils
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return TextureAssetLocator.GetMenuTextureContainerPath(containerName);
+                return ResourceTextureLocator.GetMenuTextureContainerPath(containerName);
             }
         }
         else if (pathElements[i].Equals("aet"))
@@ -417,7 +417,7 @@ public static class LocatorUtils
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return TextureAssetLocator.GetAssetTextureContainerPath(containerName);
+                return ResourceTextureLocator.GetAssetTextureContainerPath(containerName);
             }
         }
         else if (pathElements[i].Equals("other"))
@@ -430,7 +430,7 @@ public static class LocatorUtils
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return TextureAssetLocator.GetOtherTextureContainerPath(containerName);
+                return ResourceTextureLocator.GetOtherTextureContainerPath(containerName);
             }
         }
 

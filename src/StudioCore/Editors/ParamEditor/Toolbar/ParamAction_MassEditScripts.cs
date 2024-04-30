@@ -4,8 +4,8 @@ using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -118,7 +118,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImGui.SameLine();
                 if (ImGui.Button("Open Script Folder", new Vector2(150, 32)))
                 {
-                    var dir = ParamAssetLocator.GetMassEditScriptGameDir();
+                    var dir = ResourceParamLocator.GetMassEditScriptGameDir();
                     Process.Start("explorer.exe", dir);
                 }
             }
@@ -144,10 +144,10 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
             var commonPath = "";
             var gameDirPath = "";
 
-            var commonDir = ParamAssetLocator.GetMassEditScriptCommonDir();
+            var commonDir = ResourceParamLocator.GetMassEditScriptCommonDir();
             commonPath = Path.Combine(commonDir, $"{_newScriptName}.txt");
 
-            var gameDir = ParamAssetLocator.GetMassEditScriptGameDir();
+            var gameDir = ResourceParamLocator.GetMassEditScriptGameDir();
             gameDirPath = Path.Combine(gameDir, $"{_newScriptName}.txt");
 
             if (_newScriptIsCommon)

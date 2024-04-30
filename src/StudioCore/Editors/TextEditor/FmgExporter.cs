@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using static SoulsFormats.HKXPWV;
 using static StudioCore.TextEditor.FMGBank;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
+using StudioCore.Resource;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -93,8 +93,8 @@ public static partial class FMGBank
                 return;
             }
 
-            var itemPath = TextAssetLocator.GetItemMsgbnd(LanguageFolder).AssetPath;
-            var menuPath = TextAssetLocator.GetMenuMsgbnd(LanguageFolder).AssetPath;
+            var itemPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder).AssetPath;
+            var menuPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder).AssetPath;
             var itemPath_Vanilla = itemPath.Replace(Project.GameModDirectory, Project.GameRootDirectory);
             var menuPath_Vanilla = menuPath.Replace(Project.GameModDirectory, Project.GameRootDirectory);
 

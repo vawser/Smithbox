@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using StudioCore.UserProject.Locators;
+using StudioCore.Resource;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -189,7 +189,7 @@ public class ParamBank
     {
         _paramdefs = new Dictionary<string, PARAMDEF>();
         _tentativeParamType = new Dictionary<string, string>();
-        var dir = ParamAssetLocator.GetParamdefDir();
+        var dir = ResourceParamLocator.GetParamdefDir();
         var files = Directory.GetFiles(dir, "*.xml");
         List<(string, PARAMDEF)> defPairs = new();
 
@@ -200,7 +200,7 @@ public class ParamBank
             defPairs.Add((f, pdef));
         }
 
-        var tentativeMappingPath = ParamAssetLocator.GetTentativeParamTypePath();
+        var tentativeMappingPath = ResourceParamLocator.GetTentativeParamTypePath();
 
         if (File.Exists(tentativeMappingPath))
         {
@@ -221,7 +221,7 @@ public class ParamBank
 
     public static void CreateProjectMeta()
     {
-        var metaDir = ParamAssetLocator.GetParammetaDir();
+        var metaDir = ResourceParamLocator.GetParammetaDir();
         var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
         var projectDir = $"{Project.GameModDirectory}\\.smithbox\\{metaDir}";
 
@@ -245,7 +245,7 @@ public class ParamBank
 
     public static void LoadParamMeta(List<(string, PARAMDEF)> defPairs)
     {
-        var mdir = ParamAssetLocator.GetParammetaDir();
+        var mdir = ResourceParamLocator.GetParammetaDir();
 
         if (CFG.Current.Param_UseProjectMeta)
         {
@@ -257,7 +257,7 @@ public class ParamBank
             var fName = f.Substring(f.LastIndexOf('\\') + 1);
             if (CFG.Current.Param_UseProjectMeta)
             {
-                var metaDir = ParamAssetLocator.GetParammetaDir();
+                var metaDir = ResourceParamLocator.GetParammetaDir();
                 var projectDir = $"{Project.GameModDirectory}\\.smithbox\\{metaDir}";
                 ParamMetaData.XmlDeserialize($@"{projectDir}\{fName}", pdef);
             }
@@ -270,7 +270,7 @@ public class ParamBank
 
     public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool useProjectNames = false)
     {
-        var dir = ParamAssetLocator.GetParamNamesDir();
+        var dir = ResourceParamLocator.GetParamNamesDir();
 
         if (useProjectNames)
         {
@@ -1018,7 +1018,7 @@ public class ParamBank
             }
         }
 
-        var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        var sysParam = ResourceLocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
             LoadParamsERFromFile(sysParam, false);
@@ -1028,7 +1028,7 @@ public class ParamBank
             TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
         }
 
-        var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        var eventParam = ResourceLocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
             LoadParamsERFromFile(eventParam, false);
@@ -1103,7 +1103,7 @@ public class ParamBank
 
         LoadParamsAC6FromFile(param);
 
-        var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        var sysParam = ResourceLocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
             LoadParamsAC6FromFile(sysParam, false);
@@ -1113,7 +1113,7 @@ public class ParamBank
             TaskLogs.AddLog("Systemparam could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
         }
 
-        var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+        var graphicsConfigParam = ResourceLocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
         if (File.Exists(graphicsConfigParam))
         {
             LoadParamsAC6FromFile(graphicsConfigParam, false);
@@ -1123,7 +1123,7 @@ public class ParamBank
             TaskLogs.AddLog("Graphicsconfig could not be found. These require an unpacked game to modify.", LogLevel.Information, TaskLogs.LogPriority.Normal);
         }
 
-        var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        var eventParam = ResourceLocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
             LoadParamsAC6FromFile(eventParam, false);
@@ -2039,7 +2039,7 @@ public class ParamBank
         OverwriteParamsER(regParams);
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.ER);
 
-        var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        var sysParam = ResourceLocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
             using var sysParams = BND4.Read(sysParam);
@@ -2047,7 +2047,7 @@ public class ParamBank
             Utils.WriteWithBackup(dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
         }
 
-        var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        var eventParam = ResourceLocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
             using var eventParams = BND4.Read(eventParam);
@@ -2111,7 +2111,7 @@ public class ParamBank
         OverwriteParamsAC6(regParams);
         Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.AC6);
 
-        var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        var sysParam = ResourceLocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
             using var sysParams = BND4.Read(sysParam);
@@ -2119,7 +2119,7 @@ public class ParamBank
             Utils.WriteWithBackup(dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
         }
 
-        var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+        var graphicsConfigParam = ResourceLocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
         if (File.Exists(graphicsConfigParam))
         {
             using var graphicsConfigParams = BND4.Read(graphicsConfigParam);
@@ -2127,7 +2127,7 @@ public class ParamBank
             Utils.WriteWithBackup(dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
         }
 
-        var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        var eventParam = ResourceLocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
             using var eventParams = BND4.Read(eventParam);
@@ -2602,7 +2602,7 @@ public class ParamBank
         var failCount = 0;
         foreach (KeyValuePair<string, Param> p in _params)
         {
-            var path = ParamAssetLocator.GetStrippedRowNamesPath(p.Key);
+            var path = ResourceParamLocator.GetStrippedRowNamesPath(p.Key);
             if (File.Exists(path))
             {
                 var names = File.ReadAllLines(path);
@@ -2644,7 +2644,7 @@ public class ParamBank
                 r.Name = "";
             }
 
-            var path = ParamAssetLocator.GetStrippedRowNamesPath(p.Key);
+            var path = ResourceParamLocator.GetStrippedRowNamesPath(p.Key);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllLines(path, list);
         }

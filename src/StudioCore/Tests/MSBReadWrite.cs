@@ -1,6 +1,6 @@
 ﻿using SoulsFormats;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,10 +11,10 @@ public static class MSBReadWrite
 {
     public static bool Run()
     {
-        List<string> msbs = MapAssetLocator.GetFullMapList();
+        List<string> msbs = ResourceMapLocator.GetFullMapList();
         foreach (var msb in msbs)
         {
-            AssetDescription path = MapAssetLocator.GetMapMSB(msb);
+            ResourceDescriptor path = ResourceMapLocator.GetMapMSB(msb);
             var bytes = File.ReadAllBytes(path.AssetPath);
             Memory<byte> decompressed = DCX.Decompress(bytes);
             MSBE m = MSBE.Read(decompressed);

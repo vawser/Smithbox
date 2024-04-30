@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using StudioCore.Platform;
-using StudioCore.UserProject.Locators;
 using StudioCore.BanksMain;
 using static StudioCore.CFG;
 using ImGuiNET;
@@ -20,6 +19,7 @@ using System.Numerics;
 using System.Timers;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors;
+using StudioCore.Resource;
 
 namespace StudioCore.UserProject;
 
@@ -284,7 +284,7 @@ public static class Project
 
         if (success)
         {
-            if (!LocatorUtils.CheckFilesExpanded(Config.GameRoot, Config.GameType))
+            if (!ResourceLocatorUtils.CheckFilesExpanded(Config.GameRoot, Config.GameType))
             {
                 if (!GameNotUnpackedWarning(Config.GameType))
                 {
@@ -310,7 +310,7 @@ public static class Project
             Project.Type = Project.Config.GameType;
             Project.GameRootDirectory = Project.Config.GameRoot;
             Project.GameModDirectory = Path.GetDirectoryName(ProjectJsonPath);
-            MapAssetLocator.FullMapList = null;
+            ResourceMapLocator.FullMapList = null;
 
             BankUtils.ReloadBanks();
 
@@ -900,7 +900,7 @@ public static class Project
             }
 
             var gameroot = Config.GameRoot;
-            if (!LocatorUtils.CheckFilesExpanded(gameroot, Config.GameType))
+            if (!ResourceLocatorUtils.CheckFilesExpanded(gameroot, Config.GameType))
             {
                 if (!GameNotUnpackedWarning(Config.GameType))
                 {

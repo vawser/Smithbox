@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using StudioCore.Editors.MapEditor;
-using StudioCore.UserProject.Locators;
+using StudioCore.Resource;
 
 namespace StudioCore.TextEditor;
 
@@ -596,7 +596,7 @@ public static partial class FMGBank
     ///     Loads item and menu MsgBnds from paths, generates FMGInfo, and fills FmgInfoBank.
     /// </summary>
     /// <returns>True if successful; false otherwise.</returns>
-    private static bool LoadItemMenuMsgBnds(AssetDescription itemMsgPath, AssetDescription menuMsgPath)
+    private static bool LoadItemMenuMsgBnds(ResourceDescriptor itemMsgPath, ResourceDescriptor menuMsgPath)
     {
         if (!LoadMsgBnd(itemMsgPath.AssetPath, "item.msgbnd")
             || !LoadMsgBnd(menuMsgPath.AssetPath, "menu.msgbnd"))
@@ -715,8 +715,8 @@ public static partial class FMGBank
 
                 SetDefaultLanguagePath();
 
-                AssetDescription itemMsgPath = TextAssetLocator.GetItemMsgbnd(LanguageFolder);
-                AssetDescription menuMsgPath = TextAssetLocator.GetMenuMsgbnd(LanguageFolder);
+                ResourceDescriptor itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder);
+                ResourceDescriptor menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder);
 
                 FmgInfoBank = new List<FMGInfo>();
                 if (!LoadItemMenuMsgBnds(itemMsgPath, menuMsgPath))
@@ -735,7 +735,7 @@ public static partial class FMGBank
     private static bool ReloadDS2FMGs()
     {
         SetDefaultLanguagePath();
-        AssetDescription desc = TextAssetLocator.GetItemMsgbnd(LanguageFolder, true);
+        ResourceDescriptor desc = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true);
 
         if (desc.AssetPath == null)
         {
@@ -783,7 +783,7 @@ public static partial class FMGBank
         if (LanguageFolder == "")
         {
             // By default, try to find path to English folder.
-            foreach (KeyValuePair<string, string> lang in TextAssetLocator.GetMsgLanguages())
+            foreach (KeyValuePair<string, string> lang in ResourceTextLocator.GetMsgLanguages())
             {
                 var folder = lang.Value.Split("\\").Last();
                 if (folder.Contains("eng", StringComparison.CurrentCultureIgnoreCase))
@@ -1180,8 +1180,8 @@ public static partial class FMGBank
             // Load the fmg bnd, replace fmgs, and save
             IBinder fmgBinderItem;
             IBinder fmgBinderMenu;
-            AssetDescription itemMsgPath = TextAssetLocator.GetItemMsgbnd(LanguageFolder);
-            AssetDescription menuMsgPath = TextAssetLocator.GetMenuMsgbnd(LanguageFolder);
+            ResourceDescriptor itemMsgPath = ResourceTextLocator.GetItemMsgbnd(LanguageFolder);
+            ResourceDescriptor menuMsgPath = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder);
             if (Project.Type == ProjectType.DES || Project.Type == ProjectType.DS1 ||
                 Project.Type == ProjectType.DS1R)
             {
@@ -1212,8 +1212,8 @@ public static partial class FMGBank
                 }
             }
 
-            AssetDescription itemMsgPathDest = TextAssetLocator.GetItemMsgbnd(LanguageFolder, true);
-            AssetDescription menuMsgPathDest = TextAssetLocator.GetMenuMsgbnd(LanguageFolder, true);
+            ResourceDescriptor itemMsgPathDest = ResourceTextLocator.GetItemMsgbnd(LanguageFolder, true);
+            ResourceDescriptor menuMsgPathDest = ResourceTextLocator.GetMenuMsgbnd(LanguageFolder, true);
             if (fmgBinderItem is BND3 bnd3)
             {
                 Utils.WriteWithBackup(Project.GameRootDirectory,

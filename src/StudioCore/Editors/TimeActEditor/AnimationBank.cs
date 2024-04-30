@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -102,7 +102,7 @@ public static class AnimationBank
         var fileDir = @"\chr";
         var fileExt = @".anibnd.dcx";
 
-        List<string> fileNames = FileAssetLocator.GetAnimationBinders();
+        List<string> fileNames = ResourceMiscLocator.GetAnimationBinders();
 
         foreach (var name in fileNames)
         {

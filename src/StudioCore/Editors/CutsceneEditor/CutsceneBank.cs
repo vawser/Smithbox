@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -121,7 +121,7 @@ public static class CutsceneBank
             fileExt = @".cutscenebnd.dcx";
         }
 
-        List<string> fileNames = FileAssetLocator.GetCutsceneBinders();
+        List<string> fileNames = ResourceMiscLocator.GetCutsceneBinders();
 
         foreach (var name in fileNames)
         {

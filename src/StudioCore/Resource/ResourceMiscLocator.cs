@@ -1,8 +1,8 @@
 ﻿using StudioCore.UserProject;
 using System.Collections.Generic;
 
-namespace StudioCore.UserProject.Locators;
-public static class FileAssetLocator
+namespace StudioCore.Resource;
+public static class ResourceMiscLocator
 {
     // TAE
     public static List<string> GetAnimationBinders()
@@ -19,7 +19,7 @@ public static class FileAssetLocator
         var paramDir = @"\chr";
         var paramExt = @".anibnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -40,7 +40,7 @@ public static class FileAssetLocator
         var paramDir = @"\chr";
         var paramExt = @".behbnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
 
@@ -59,7 +59,7 @@ public static class FileAssetLocator
         var paramDir = @"\chr";
         var paramExt = @".chrbnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -86,7 +86,7 @@ public static class FileAssetLocator
             paramExt = @".cutscenebnd.dcx";
         }
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -113,7 +113,7 @@ public static class FileAssetLocator
             // Account for .devpatch in ER (e.g. matbinbnd.devpatch.dcx)
         }
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -133,7 +133,7 @@ public static class FileAssetLocator
         var paramDir = @"\sfx";
         var paramExt = @".ffxbnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -153,7 +153,7 @@ public static class FileAssetLocator
         var paramDir = @"\event";
         var paramExt = @".emevd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }
@@ -173,7 +173,7 @@ public static class FileAssetLocator
         var paramDir = @"\script\talk";
         var paramExt = @".talkesdbnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = ResourceLocatorUtils.GetAssetFiles(paramDir, paramExt);
 
         return ret;
     }

@@ -33,7 +33,6 @@ using System.Security.Cryptography;
 using StudioCore.BanksMain;
 using static SoulsFormats.MSB_AC6;
 using ModelCore.Editors.ModelEditor.Toolbar;
-using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -749,7 +748,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         }
     }
 
-    public AssetDescription loadedAsset;
+    public ResourceDescriptor loadedAsset;
 
     public void LoadModel(string modelid, ModelEditorModelType modelType, string mapid = null)
     {
@@ -769,8 +768,8 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
     {
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
 
-        AssetDescription modelAsset = GetModelAssetDescriptor(modelid, modelType, mapid);
-        AssetDescription textureAsset = GetTextureAssetDescriptor(modelid, modelType, mapid);
+        ResourceDescriptor modelAsset = GetModelAssetDescriptor(modelid, modelType, mapid);
+        ResourceDescriptor textureAsset = GetTextureAssetDescriptor(modelid, modelType, mapid);
 
         UpdateRenderMesh(modelAsset, skipModel);
 
@@ -809,7 +808,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
     public static void UpdateLoadedRenderMesh()
     {
-        AssetDescription asset = GetModelAssetDescriptor(CurrentModelInfo.ModelName, CurrentModelInfo.Type, CurrentModelInfo.MapID);
+        ResourceDescriptor asset = GetModelAssetDescriptor(CurrentModelInfo.ModelName, CurrentModelInfo.Type, CurrentModelInfo.MapID);
 
         if (Universe.IsRendering)
         {
@@ -824,7 +823,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         }
     }
 
-    public void UpdateRenderMesh(AssetDescription modelAsset, bool skipModel = false)
+    public void UpdateRenderMesh(ResourceDescriptor modelAsset, bool skipModel = false)
     {
         if (Universe.IsRendering)
         {
@@ -843,52 +842,52 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         }
     }
 
-    public static AssetDescription GetModelAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
+    public static ResourceDescriptor GetModelAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
     {
-        AssetDescription asset;
+        ResourceDescriptor asset;
 
         switch (modelType)
         {
             case ModelEditorModelType.Character:
-                asset = ModelAssetLocator.GetChrModel(modelid);
+                asset = ResourceModelLocator.GetChrModel(modelid);
                 break;
             case ModelEditorModelType.Object:
-                asset = ModelAssetLocator.GetObjModel(modelid);
+                asset = ResourceModelLocator.GetObjModel(modelid);
                 break;
             case ModelEditorModelType.Parts:
-                asset = ModelAssetLocator.GetPartsModel(modelid);
+                asset = ResourceModelLocator.GetPartsModel(modelid);
                 break;
             case ModelEditorModelType.MapPiece:
-                asset = ModelAssetLocator.GetMapModel(mapid, modelid);
+                asset = ResourceModelLocator.GetMapModel(mapid, modelid);
                 break;
             default:
-                asset = ModelAssetLocator.GetNullAsset();
+                asset = ResourceModelLocator.GetNullAsset();
                 break;
         }
 
         return asset;
     }
 
-    public static AssetDescription GetTextureAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
+    public static ResourceDescriptor GetTextureAssetDescriptor(string modelid, ModelEditorModelType modelType, string mapid = null)
     {
-        AssetDescription asset;
+        ResourceDescriptor asset;
 
         switch (modelType)
         {
             case ModelEditorModelType.Character:
-                asset = TextureAssetLocator.GetChrTextures(modelid);
+                asset = ResourceTextureLocator.GetChrTextures(modelid);
                 break;
             case ModelEditorModelType.Object:
-                asset = TextureAssetLocator.GetObjTextureContainer(modelid);
+                asset = ResourceTextureLocator.GetObjTextureContainer(modelid);
                 break;
             case ModelEditorModelType.Parts:
-                asset = TextureAssetLocator.GetPartTextures(modelid);
+                asset = ResourceTextureLocator.GetPartTextures(modelid);
                 break;
             case ModelEditorModelType.MapPiece:
-                asset = ModelAssetLocator.GetNullAsset();
+                asset = ResourceModelLocator.GetNullAsset();
                 break;
             default:
-                asset = ModelAssetLocator.GetNullAsset();
+                asset = ResourceModelLocator.GetNullAsset();
                 break;
         }
 

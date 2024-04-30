@@ -1,6 +1,6 @@
 ﻿using SoulsFormats;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,15 +13,15 @@ public static class BTLReadWrite
 {
     public static bool Run()
     {
-        List<string> msbs = MapAssetLocator.GetFullMapList();
+        List<string> msbs = ResourceMapLocator.GetFullMapList();
         List<string> floats = new();
         List<string> noWrite = new();
         List<string> ver = new();
         foreach (var msb in msbs)
         {
-            List<AssetDescription> btls = MapAssetLocator.GetMapBTLs(msb);
+            List<ResourceDescriptor> btls = ResourceMapLocator.GetMapBTLs(msb);
 
-            foreach (AssetDescription file in btls)
+            foreach (ResourceDescriptor file in btls)
             {
                 BTL btl;
                 /*

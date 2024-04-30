@@ -23,7 +23,7 @@ using StudioCore.BanksMain;
 using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Interface;
 using StudioCore.Editor;
-using StudioCore.UserProject.Locators;
+using StudioCore.Resource;
 
 namespace StudioCore.Editors.MapEditor;
 
@@ -548,7 +548,7 @@ public class MapSceneTree : IActionEventHandler
                             {
                                 foreach (Entity parent in map.BTLParents)
                                 {
-                                    var parentAD = (AssetDescription)parent.WrappedObject;
+                                    var parentAD = (ResourceDescriptor)parent.WrappedObject;
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentAD.AssetName}",
                                             ImGuiTreeNodeFlags.OpenOnArrow))
                                     {

@@ -17,7 +17,6 @@ using System.Threading.Tasks.Dataflow;
 using StudioCore.Settings;
 using StudioCore.BanksMain;
 using HKX2;
-using StudioCore.UserProject.Locators;
 
 namespace StudioCore.Resource;
 
@@ -587,7 +586,7 @@ public static class ResourceManager
             if (Binder == null)
             {
                 string o;
-                var path = LocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
+                var path = ResourceLocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
                 //TaskLogs.AddLog($"LoadBinderResourcesAction: {path}");
 
                 Binder = InstantiateBinderReaderForFile(path, Project.Type);
@@ -606,7 +605,7 @@ public static class ResourceManager
                 }
 
                 var binderpath = f.Name;
-                var filevirtpath = LocatorUtils.GetBinderVirtualPath(BinderVirtualPath, binderpath);
+                var filevirtpath = ResourceLocatorUtils.GetBinderVirtualPath(BinderVirtualPath, binderpath);
 
                 if (AssetWhitelist != null && !AssetWhitelist.Contains(filevirtpath))
                 {
@@ -892,7 +891,7 @@ public static class ResourceManager
             InFlightFiles.Add(virtualPath);
 
             string bndout;
-            var path = LocatorUtils.VirtualToRealPath(virtualPath, out bndout);
+            var path = ResourceLocatorUtils.VirtualToRealPath(virtualPath, out bndout);
             //TaskLogs.AddLog($"AddLoadFileTask: {path}");
 
             IResourceLoadPipeline pipeline;
@@ -990,7 +989,7 @@ public static class ResourceManager
                                 continue;
                             }
 
-                            path = TextureAssetLocator.GetAetTexture(fullaetid).AssetPath;
+                            path = ResourceTextureLocator.GetAetTexture(fullaetid).AssetPath;
 
                             assetTpfs.Add(fullaetid);
                         }
@@ -1005,7 +1004,7 @@ public static class ResourceManager
                                 continue;
                             }
 
-                            path = TextureAssetLocator.GetAatTexture(aatname).AssetPath;
+                            path = ResourceTextureLocator.GetAatTexture(aatname).AssetPath;
 
                             assetTpfs.Add(aatname);
                         }
@@ -1023,7 +1022,7 @@ public static class ResourceManager
                                 continue;
                             }
 
-                            path = TextureAssetLocator.GetSystexTexture(systexname).AssetPath;
+                            path = ResourceTextureLocator.GetSystexTexture(systexname).AssetPath;
 
                             assetTpfs.Add(systexname);
                         }

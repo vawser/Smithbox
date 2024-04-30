@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.UserProject.Locators;
+namespace StudioCore.Resource;
 
 public static class BrowserFileLocator
 {
-    public static List<AssetDescription> GetMapModels(string mapid)
+    public static List<ResourceDescriptor> GetMapModels(string mapid)
     {
-        List<AssetDescription> ret = new();
+        List<ResourceDescriptor> ret = new();
         if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT)
         {
             if (!Directory.Exists(Project.GameRootDirectory + $@"\map\{mapid}\"))
@@ -22,7 +22,7 @@ public static class BrowserFileLocator
                 .GetFileSystemEntries(Project.GameRootDirectory + $@"\map\{mapid}\", @"*.mapbnd.dcx").ToList();
             foreach (var f in mapfiles)
             {
-                AssetDescription ad = new();
+                ResourceDescriptor ad = new();
                 ad.AssetPath = f;
                 var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
                 ad.AssetName = name;
@@ -33,7 +33,7 @@ public static class BrowserFileLocator
         }
         else if (Project.Type == ProjectType.DS2S)
         {
-            AssetDescription ad = new();
+            ResourceDescriptor ad = new();
             var name = mapid;
             ad.AssetName = name;
             ad.AssetArchiveVirtualPath = $@"map/{mapid}/model";
@@ -48,7 +48,7 @@ public static class BrowserFileLocator
             var mapfiles = Directory.GetFileSystemEntries(mapPath, @"*.mapbnd.dcx").ToList();
             foreach (var f in mapfiles)
             {
-                AssetDescription ad = new();
+                ResourceDescriptor ad = new();
                 ad.AssetPath = f;
                 var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
                 ad.AssetName = name;
@@ -66,7 +66,7 @@ public static class BrowserFileLocator
             var mapfiles = Directory.GetFileSystemEntries(mapPath, @"*.mapbnd.dcx").ToList();
             foreach (var f in mapfiles)
             {
-                AssetDescription ad = new();
+                ResourceDescriptor ad = new();
                 ad.AssetPath = f;
                 var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
                 ad.AssetName = name;
@@ -85,7 +85,7 @@ public static class BrowserFileLocator
                 .ToList();
             foreach (var f in mapfiles)
             {
-                AssetDescription ad = new();
+                ResourceDescriptor ad = new();
                 ad.AssetPath = f;
                 var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
                 ad.AssetName = name;

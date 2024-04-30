@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -77,7 +77,7 @@ public static class ParticleBank
         var fileDir = @"\sfx";
         var fileExt = @".ffxbnd.dcx";
 
-        List<string> fileNames = FileAssetLocator.GetParticleBinders();
+        List<string> fileNames = ResourceMiscLocator.GetParticleBinders();
 
         foreach (var name in fileNames)
         {

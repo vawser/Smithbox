@@ -17,7 +17,7 @@ using StudioCore.Banks;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
 using static SoulsFormats.ACB;
-using StudioCore.UserProject.Locators;
+using StudioCore.Resource;
 
 namespace StudioCore.Editors.MapEditor.AssetBrowser;
 
@@ -254,10 +254,10 @@ public class MapAssetBrowser
                 {
                     if (_mapModelNameCache[mapId] == null)
                     {
-                        List<AssetDescription> modelList = BrowserFileLocator.GetMapModels(mapId);
+                        List<ResourceDescriptor> modelList = BrowserFileLocator.GetMapModels(mapId);
                         var cache = new List<string>();
 
-                        foreach (AssetDescription model in modelList)
+                        foreach (ResourceDescriptor model in modelList)
                         {
                             cache.Add(model.AssetName);
                         }

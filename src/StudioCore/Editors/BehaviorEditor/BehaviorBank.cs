@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -94,7 +94,7 @@ public static class BehaviorBank
         var fileDir = @"\chr";
         var fileExt = @".behbnd.dcx";
 
-        List<string> fileNames = FileAssetLocator.GetBehaviorBinders();
+        List<string> fileNames = ResourceMiscLocator.GetBehaviorBinders();
 
         foreach (var name in fileNames)
         {

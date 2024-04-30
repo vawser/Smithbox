@@ -24,7 +24,7 @@ using StudioCore.Interface;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Utilities;
 using StudioCore.Memory;
-using StudioCore.UserProject.Locators;
+using StudioCore.Resource;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -1049,9 +1049,9 @@ public class ParamEditorScreen : EditorScreen
 
         try
         {
-            var baseDir = ParamAssetLocator.GetUpgraderAssetsDir();
-            var wlFile = Path.Join(ParamAssetLocator.GetUpgraderAssetsDir(), "version.txt");
-            var massEditFile = Path.Join(ParamAssetLocator.GetUpgraderAssetsDir(), "massedit.txt");
+            var baseDir = ResourceParamLocator.GetUpgraderAssetsDir();
+            var wlFile = Path.Join(ResourceParamLocator.GetUpgraderAssetsDir(), "version.txt");
+            var massEditFile = Path.Join(ResourceParamLocator.GetUpgraderAssetsDir(), "massedit.txt");
 
             if (!File.Exists(wlFile) || !File.Exists(massEditFile))
             {

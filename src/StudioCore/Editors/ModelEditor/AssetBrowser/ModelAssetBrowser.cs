@@ -13,8 +13,8 @@ using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Resource;
 using StudioCore.UserProject;
-using StudioCore.UserProject.Locators;
 using StudioCore.Utilities;
 using Veldrid;
 
@@ -72,11 +72,11 @@ namespace StudioCore.Editors.ModelEditor
                 _selectedAssetType = null;
                 _selectedAssetTypeCache = null;
 
-                List<string> mapList = MapAssetLocator.GetFullMapList();
+                List<string> mapList = ResourceMapLocator.GetFullMapList();
 
                 foreach (var mapId in mapList)
                 {
-                    var assetMapId = MapAssetLocator.GetAssetMapID(mapId);
+                    var assetMapId = ResourceMapLocator.GetAssetMapID(mapId);
 
                     if (!_mapModelNameCache.ContainsKey(assetMapId))
                         _mapModelNameCache.Add(assetMapId, null);

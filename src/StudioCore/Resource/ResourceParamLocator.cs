@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.UserProject.Locators;
-public static class ParamAssetLocator
+namespace StudioCore.Resource;
+public static class ResourceParamLocator
 {
-    internal static AssetDescription GetDS2Param(string paramStr, string appendStr, string mapid, bool writemode = false)
+    internal static ResourceDescriptor GetDS2Param(string paramStr, string appendStr, string mapid, bool writemode = false)
     {
-        AssetDescription ad = new();
+        ResourceDescriptor ad = new();
         var path = $@"Param\{paramStr}_{mapid}";
 
         if (Project.GameModDirectory != null && File.Exists($@"{Project.GameModDirectory}\{path}.param") || writemode && Project.GameModDirectory != null)
@@ -29,32 +29,32 @@ public static class ParamAssetLocator
         return ad;
     }
 
-    public static AssetDescription GetDS2GeneratorParam(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetDS2GeneratorParam(string mapid, bool writemode = false)
     {
         return GetDS2Param("generatorparam", "generators", mapid, writemode);
     }
 
-    public static AssetDescription GetDS2GeneratorLocationParam(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetDS2GeneratorLocationParam(string mapid, bool writemode = false)
     {
         return GetDS2Param("generatorlocation", "generator_locations", mapid, writemode);
     }
 
-    public static AssetDescription GetDS2GeneratorRegistParam(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetDS2GeneratorRegistParam(string mapid, bool writemode = false)
     {
         return GetDS2Param("generatorregistparam", "generator_registrations", mapid, writemode);
     }
 
-    public static AssetDescription GetDS2EventParam(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetDS2EventParam(string mapid, bool writemode = false)
     {
         return GetDS2Param("eventparam", "event_params", mapid, writemode);
     }
 
-    public static AssetDescription GetDS2EventLocationParam(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetDS2EventLocationParam(string mapid, bool writemode = false)
     {
         return GetDS2Param("eventlocation", "event_locations", mapid, writemode);
     }
 
-    public static AssetDescription GetDS2ObjInstanceParam(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetDS2ObjInstanceParam(string mapid, bool writemode = false)
     {
         return GetDS2Param("mapobjectinstanceparam", "object_instance_params", mapid, writemode);
     }
