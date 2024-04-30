@@ -879,7 +879,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 asset = TextureAssetLocator.GetChrTextures(modelid);
                 break;
             case ModelEditorModelType.Object:
-                asset = TextureAssetLocator.GetObjTexture(modelid);
+                asset = TextureAssetLocator.GetObjTextureContainer(modelid);
                 break;
             case ModelEditorModelType.Parts:
                 asset = TextureAssetLocator.GetPartTextures(modelid);

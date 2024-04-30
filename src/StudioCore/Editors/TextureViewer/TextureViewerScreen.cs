@@ -241,18 +241,27 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             _fileSearchInputCache = _fileSearchInput;
         }
 
-        DisplayFileSection("Asset", TextureViewCategory.Asset);
+        if (Project.Type is ProjectType.AC6 or ProjectType.ER)
+        {
+            DisplayFileSection("Asset", TextureViewCategory.Asset);
+        }
+        else
+        {
+            DisplayFileSection("Object", TextureViewCategory.Object);
+        }
 
         DisplayFileSection("Characters", TextureViewCategory.Character);
 
         DisplayFileSection("Menu", TextureViewCategory.Menu);
+
+        DisplayFileSection("Other", TextureViewCategory.Other);
 
         ImGui.End();
     }
 
     private void DisplayFileSection(string title, TextureViewCategory displayCategory)
     {
-        if (ImGui.CollapsingHeader($"{title}", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader($"{title}"))
         {
             foreach (var (name, info) in TextureFolderBank.FolderBank)
             {
@@ -295,6 +304,16 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         if (info.Category == TextureViewCategory.Asset)
         {
             ad = TextureAssetLocator.GetAssetTextureContainer(_selectedTextureContainerKey);
+        }
+
+        if (info.Category == TextureViewCategory.Object)
+        {
+            ad = TextureAssetLocator.GetObjTextureContainer(_selectedTextureContainerKey);
+        }
+
+        if (info.Category == TextureViewCategory.Other)
+        {
+            ad = TextureAssetLocator.GetOtherTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Character)

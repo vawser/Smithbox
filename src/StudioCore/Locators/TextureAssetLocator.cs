@@ -252,8 +252,7 @@ public static class TextureAssetLocator
         return ad;
     }
 
-    
-    public static AssetDescription GetObjTexture(string obj)
+    public static AssetDescription GetObjTextureContainer(string obj)
     {
         AssetDescription ad = new();
         ad.AssetPath = null;
@@ -536,6 +535,38 @@ public static class TextureAssetLocator
             {
                 return overrideFilePath;
             }
+        }
+
+        return null;
+    }
+
+    public static AssetDescription GetOtherTextureContainer(string resourceName)
+    {
+        var path = "";
+        AssetDescription ad = new();
+        ad.AssetVirtualPath = null;
+        ad.AssetPath = null;
+
+        path = GetOtherTextureContainerPath(resourceName);
+
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetVirtualPath = $@"other/{resourceName}/tex";
+        }
+
+        return ad;
+    }
+
+    public static string GetOtherTextureContainerPath(string resourceName)
+    {
+        var overrideFilePath = "";
+
+        overrideFilePath = LocatorUtils.GetOverridenFilePath($@"other\{resourceName}.tpf.dcx");
+
+        if (overrideFilePath != null)
+        {
+            return overrideFilePath;
         }
 
         return null;

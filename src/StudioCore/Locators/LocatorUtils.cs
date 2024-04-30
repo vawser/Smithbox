@@ -420,6 +420,19 @@ public static class LocatorUtils
                 return TextureAssetLocator.GetAssetTextureContainerPath(containerName);
             }
         }
+        else if (pathElements[i].Equals("other"))
+        {
+            i++;
+
+            var containerName = pathElements[i];
+            i++;
+
+            if (pathElements[i].Equals("tex"))
+            {
+                bndpath = "";
+                return TextureAssetLocator.GetOtherTextureContainerPath(containerName);
+            }
+        }
 
         bndpath = virtualPath;
         return null;

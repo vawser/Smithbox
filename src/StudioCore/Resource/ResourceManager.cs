@@ -588,6 +588,7 @@ public static class ResourceManager
             {
                 string o;
                 var path = LocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
+                //TaskLogs.AddLog($"LoadBinderResourcesAction: {path}");
 
                 Binder = InstantiateBinderReaderForFile(path, Project.Type);
                 if (Binder == null)
@@ -892,6 +893,7 @@ public static class ResourceManager
 
             string bndout;
             var path = LocatorUtils.VirtualToRealPath(virtualPath, out bndout);
+            //TaskLogs.AddLog($"AddLoadFileTask: {path}");
 
             IResourceLoadPipeline pipeline;
             if (path == null || virtualPath == "null")

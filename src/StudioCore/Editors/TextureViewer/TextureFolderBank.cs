@@ -18,7 +18,9 @@ public static class TextureFolderBank
         None = 0,
         Menu = 1,
         Asset = 2,
-        Character = 3
+        Character = 3,
+        Object = 4,
+        Other = 5
     }
 
     public static bool IsLoaded { get; private set; }
@@ -33,13 +35,20 @@ public static class TextureFolderBank
 
         FolderBank = new();
 
-        CollectMenuFolders(TextureViewCategory.Menu);
+        // Menu
+        FindFolderNames_Menu(TextureViewCategory.Menu);
 
-        // AC6 and ER only
-        CollectAssetFolders(TextureViewCategory.Asset);
+        // Assets: AC6 and ER only
+        FindFolderNames_Asset(TextureViewCategory.Asset);
+
+        // Objects: Sekiro and before
+        FindFolderNames_Object(TextureViewCategory.Object);
 
         // Characters
-        CollectCharacterFolders(TextureViewCategory.Character);
+        FindFolderNames_Characters(TextureViewCategory.Character);
+
+        // Other
+        FindFolderNames_Other(TextureViewCategory.Other);
 
         IsLoaded = true;
         IsLoading = false;
@@ -47,7 +56,7 @@ public static class TextureFolderBank
         TaskLogs.AddLog($"Texture Folder Bank - Load Complete");
     }
 
-    private static void CollectMenuFolders(TextureViewCategory category)
+    private static void FindFolderNames_Menu(TextureViewCategory category)
     {
         var folderDir = @"\menu";
         var fileExt = @".tpf.dcx";
@@ -91,7 +100,7 @@ public static class TextureFolderBank
         */
     }
 
-    private static void CollectAssetFolders(TextureViewCategory category)
+    private static void FindFolderNames_Asset(TextureViewCategory category)
     {
         var folderDir = @"";
         var fileExt = @".tpf.dcx";
@@ -154,7 +163,32 @@ public static class TextureFolderBank
         }
     }
 
-    private static void CollectCharacterFolders(TextureViewCategory category)
+    private static void FindFolderNames_Object(TextureViewCategory category)
+    {
+        var folderDir = @"\obj";
+        var fileExt = @".objbnd.dcx";
+
+        if (Project.Type == ProjectType.DS1)
+        {
+            fileExt = @".objbnd";
+        }
+
+        foreach (var name in GetFileNames(folderDir, fileExt))
+        {
+            var filePath = $"{folderDir}\\{name}{fileExt}";
+
+            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            {
+                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
+            }
+            else
+            {
+                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
+            }
+        }
+    }
+
+    private static void FindFolderNames_Characters(TextureViewCategory category)
     {
         var folderDir = @"\chr";
         var fileExt = ".texbnd.dcx";
@@ -169,6 +203,26 @@ public static class TextureFolderBank
             folderDir = @"\model\chr\";
             fileExt = ".texbnd";
         }
+
+        foreach (var name in GetFileNames(folderDir, fileExt))
+        {
+            var filePath = $"{folderDir}\\{name}{fileExt}";
+
+            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            {
+                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
+            }
+            else
+            {
+                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
+            }
+        }
+    }
+
+    private static void FindFolderNames_Other(TextureViewCategory category)
+    {
+        var folderDir = @"\other";
+        var fileExt = @".tpf.dcx";
 
         foreach (var name in GetFileNames(folderDir, fileExt))
         {

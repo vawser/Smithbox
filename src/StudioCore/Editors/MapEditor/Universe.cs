@@ -836,7 +836,7 @@ public class Universe
                     {
                         asset = ModelAssetLocator.GetObjModel(model.Name);
                         objsToLoad.Add(asset);
-                        AssetDescription tasset = TextureAssetLocator.GetObjTexture(model.Name);
+                        AssetDescription tasset = TextureAssetLocator.GetObjTextureContainer(model.Name);
                         if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                         {
                             objsToLoad.Add(tasset);
