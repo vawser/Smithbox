@@ -15,6 +15,8 @@ using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.TextureViewer;
+using System.IO;
+using StudioCore.Platform;
 
 namespace StudioCore.Interface.Windows;
 
@@ -838,6 +840,7 @@ public class SettingsWindow
         }
         */
     }
+
     private void DisplaySettings_Interface()
     {
         if (ImGui.BeginTabItem("User Interface"))
@@ -859,6 +862,7 @@ public class SettingsWindow
             {
                 Process.Start("explorer.exe", $"{AppContext.BaseDirectory}\\Assets\\Themes\\");
             }
+            ImGui.SameLine();
 
             if (ImGui.Button("Export Theme"))
             {

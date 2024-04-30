@@ -2,6 +2,7 @@
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -10,6 +11,18 @@ using System.Threading.Tasks;
 namespace StudioCore.Interface;
 public static class ImguiUtils
 {
+    public static void RestoreImguiIfMissing()
+    {
+        var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
+        var defaultImgui = $@"{AppContext.BaseDirectory}\imgui.default";
+
+        if (!File.Exists(curImgui) && File.Exists(defaultImgui))
+        {
+            var bytes = File.ReadAllBytes(defaultImgui);
+            File.WriteAllBytes(curImgui, bytes);
+        }
+    }
+
     public static void ShowMenuIcon(string iconStr)
     {
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));

@@ -100,6 +100,8 @@ public class Smithbox
         _version = version;
         _programTitle = $"Smithbox - Version {_version}";
 
+        ImguiUtils.RestoreImguiIfMissing();
+
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
         CFG.AttemptLoadOrDefault();
@@ -354,28 +356,9 @@ public class Smithbox
         }
     }
 
-    public void ManageImGuiConfigBackups()
-    {
-        if (!File.Exists("imgui.ini"))
-        {
-            if (File.Exists("imgui.ini.backup"))
-            {
-                File.Copy("imgui.ini.backup", "imgui.ini");
-            }
-        }
-        else if (!File.Exists("imgui.ini.backup"))
-        {
-            if (File.Exists("imgui.ini"))
-            {
-                File.Copy("imgui.ini", "imgui.ini.backup");
-            }
-        }
-    }
-
     public void Run()
     {
         SetupCSharpDefaults();
-        ManageImGuiConfigBackups();
 
         if (CFG.Current.System_Enable_Soapstone_Server)
         {

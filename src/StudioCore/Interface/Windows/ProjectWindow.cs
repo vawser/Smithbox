@@ -122,6 +122,8 @@ public class ProjectWindow
             ImGui.Checkbox("Enable Recovery Folder", ref CFG.Current.System_EnableRecoveryFolder);
             ImguiUtils.ShowHoverTooltip("Enable a recovery project to be created upon an unexpected crash.");
 
+            ImGui.Separator();
+
             ImGui.Checkbox("Enable Automatic Save", ref CFG.Current.System_EnableAutoSave);
             ImguiUtils.ShowHoverTooltip("All changes will be saved at the interval specificed below.");
 
