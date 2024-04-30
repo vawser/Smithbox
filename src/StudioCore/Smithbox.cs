@@ -440,14 +440,6 @@ public class Smithbox
         CFG.Save();
     }
 
-    // Try to shutdown things gracefully on a crash
-    public void CrashShutdown()
-    {
-        Tracy.Shutdown();
-        ResourceManager.Shutdown();
-        _context.Dispose();
-    }
-
     public void ApplyStyle()
     {
         var scale = GetUIScale();
@@ -526,7 +518,19 @@ public class Smithbox
         _focusedEditor.Save();
     }
 
-    // Saves modded files to a recovery directory in the mod folder on crash
+    /// <summary>
+    /// Called from Program.cs - Try to shutdown things gracefully on a crash
+    /// </summary>
+    public void CrashShutdown()
+    {
+        Tracy.Shutdown();
+        ResourceManager.Shutdown();
+        _context.Dispose();
+    }
+
+    /// <summary>
+    /// Called from Program.cs - Saves modded files to a recovery directory in the mod folder on crash
+    /// </summary>
     public void AttemptSaveOnCrash()
     {
         if (!_initialLoadComplete)

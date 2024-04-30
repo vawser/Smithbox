@@ -157,7 +157,7 @@ DockId=0x00000017,2
 
 [Window][###ParamEditorView##0]
 Pos=0,40
-Size=2046,1329
+Size=2560,1329
 Collapsed=0
 DockId=0x0000007B,0
 
@@ -1270,14 +1270,14 @@ Collapsed=0
 DockId=0x0000008D,0
 
 [Window][Actions##Toolbar_ParamEditor_Actions]
-Pos=2048,40
-Size=512,401
+Pos=0,0
+Size=100,100
 Collapsed=0
 DockId=0x00000090,0
 
 [Window][Toolbar##Toolbar_ParamEditor_Configuration]
-Pos=2048,443
-Size=512,926
+Pos=0,0
+Size=100,100
 Collapsed=0
 DockId=0x00000091,0
 
@@ -1388,6 +1388,12 @@ Pos=2215,254
 Size=345,1115
 Collapsed=0
 DockId=0x000000AD,0
+
+[Window][Resource List##textureViewerResourceList]
+Pos=1998,40
+Size=562,438
+Collapsed=0
+DockId=0x000000AE,1
 
 [Table][0x26F51C17,3]
 Column 0  Weight=1.0000
