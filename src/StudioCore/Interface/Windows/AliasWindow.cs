@@ -22,8 +22,7 @@ public class AliasWindow
 {
     private bool MenuOpenState;
 
-    public ProjectSettings ProjSettings = null;
-
+    private MapGroupTab MapGroupTab;
     private ParticleTab ParticleAliasTab;
     private EventFlagTab EventFlagAliasTab;
     private MapNameTab MapAliasTab;
@@ -34,6 +33,7 @@ public class AliasWindow
 
     public AliasWindow()
     {
+        MapGroupTab = new MapGroupTab();
         ParticleAliasTab = new ParticleTab();
         EventFlagAliasTab = new EventFlagTab();
         MapAliasTab = new MapNameTab();
@@ -69,6 +69,7 @@ public class AliasWindow
         {
             ImGui.BeginTabBar("##AliasTabs");
 
+            DisplayMapGroupTab();
             DisplayEventFlagTab();
             DisplayParticleTab();
             DisplaySoundTab();
@@ -151,6 +152,16 @@ public class AliasWindow
         if (ImGui.BeginTabItem("Movies"))
         {
             MovieAliasTab.Display();
+
+            ImGui.EndTabItem();
+        }
+    }
+
+    public void DisplayMapGroupTab()
+    {
+        if (ImGui.BeginTabItem("Map Groups"))
+        {
+            MapGroupTab.Display();
 
             ImGui.EndTabItem();
         }

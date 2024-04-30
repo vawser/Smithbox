@@ -47,6 +47,8 @@ using StudioCore.BehaviorEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.BanksMain;
 using StudioCore.UserProject.Locators;
+using static SoulsFormats.MCP;
+using static SoulsFormats.DRB.Control;
 
 namespace StudioCore;
 
@@ -61,17 +63,16 @@ public class Smithbox
 
     public static bool LowRequirementsMode;
 
-    private static IGraphicsContext _context;
+    public static IGraphicsContext _context;
 
     public static GraphicsDevice _graphicsDevice;
 
     public static bool FontRebuildRequest;
 
-    private readonly NewProjectOptions _newProjectOptions = new();
-    private readonly string _programTitle;
+    public static string _programTitle;
 
     // Editors
-    private readonly List<EditorScreen> _editors;
+    public static List<EditorScreen> _editors;
     private EditorScreen _focusedEditor;
 
     private readonly SoapstoneService _soapstoneService;
@@ -86,7 +87,6 @@ public class Smithbox
     };
 
     private bool _programUpdateAvailable;
-    private ProjectSettings _projectSettings;
     private string _releaseUrl = "";
     private bool _showImGuiDebugLogWindow;
 
@@ -94,8 +94,6 @@ public class Smithbox
     private bool _showImGuiDemoWindow;
     private bool _showImGuiMetricsWindow;
     private bool _showImGuiStackToolWindow;
-
-    private bool _standardProjectUIOpened = true;
 
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
@@ -219,42 +217,14 @@ public class Smithbox
         ImGuiStylePtr style = ImGui.GetStyle();
         style.TabBorderSize = 0;
 
-        if (CFG.Current.LastProjectFile != null && CFG.Current.LastProjectFile != "")
-        {
-            if (File.Exists(CFG.Current.LastProjectFile))
-            {
-                ProjectSettings settings = ProjectSettings.Deserialize(CFG.Current.LastProjectFile);
+        Project.CheckForLastProject();
 
-                if (settings == null)
-                {
-                    CFG.Current.LastProjectFile = "";
-                    CFG.Save();
-                }
-                else
-                {
-                    try
-                    {
-                        AttemptLoadProject(settings, CFG.Current.LastProjectFile);
-                    }
-                    catch
-                    {
-                        CFG.Current.LastProjectFile = "";
-                        CFG.Save();
-                        PlatformUtils.Instance.MessageBox(
-                            "Failed to load last project. Project will not be loaded after restart.",
-                            "Project Load Error", MessageBoxButtons.OK);
-                        throw;
-                    }
-                }
-            }
-            else
-            {
-                CFG.Current.LastProjectFile = "";
-                CFG.Save();
-                TaskLogs.AddLog($"Cannot load project: \"{CFG.Current.LastProjectFile}\" does not exist.",
-                    LogLevel.Warning, TaskLogs.LogPriority.High);
-            }
-        }
+        Project.UpdateTimer();
+    }
+
+    public static void SetProgramTitle(string projectName)
+    {
+        _context.Window.Title = $"{projectName} - {_programTitle}";
     }
 
     private unsafe void SetupFonts()
@@ -495,26 +465,6 @@ public class Smithbox
         _context.Dispose();
     }
 
-    private void ChangeProjectSettings(ProjectSettings projectSettings, string moddir, NewProjectOptions projectOptions)
-    {
-        _projectSettings = projectSettings;
-
-        Project.Type = projectSettings.GameType;
-        Project.GameRootDirectory = projectSettings.GameRoot;
-        Project.GameModDirectory = moddir;
-        MapAssetLocator.FullMapList = null;
-
-        WindowContainer.SettingsWindow.ProjSettings = _projectSettings;
-        WindowContainer.ProjectWindow.ProjSettings = _projectSettings;
-
-        BankUtils.ReloadBanks(projectSettings, projectOptions);
-
-        foreach (EditorScreen editor in _editors)
-        {
-            editor.OnProjectChanged(_projectSettings);
-        }
-    }
-
     public void ApplyStyle()
     {
         var scale = GetUIScale();
@@ -571,134 +521,6 @@ public class Smithbox
         ImGui.PopStyleVar(10);
     }
 
-    private bool GameNotUnpackedWarning(ProjectType gameType)
-    {
-        if (gameType is ProjectType.DS1 or ProjectType.DS2S)
-        {
-            TaskLogs.AddLog(
-                $"The files for {gameType} do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
-                LogLevel.Error, TaskLogs.LogPriority.High);
-
-            return false;
-        }
-
-        TaskLogs.AddLog(
-            $"The files for {gameType} do not appear to be fully unpacked. Functionality will be limited. Please use UXM selective unpacker to unpack game files",
-            LogLevel.Warning);
-        return true;
-    }
-
-    private bool AttemptLoadProject(ProjectSettings settings, string filename, NewProjectOptions options = null)
-    {
-        var success = true;
-        // Check if game exe exists
-        if (!Directory.Exists(settings.GameRoot))
-        {
-            success = false;
-            PlatformUtils.Instance.MessageBox(
-                $@"Could not find game data directory for {settings.GameType}. Please select the game executable.",
-                "Error",
-                MessageBoxButtons.OK);
-
-            while (true)
-            {
-                if (PlatformUtils.Instance.OpenFileDialog(
-                        $"Select executable for {settings.GameType}...",
-                        new[] { FilterStrings.GameExecutableFilter },
-                        out var path))
-                {
-                    settings.GameRoot = path;
-                    ProjectType gametype = Project.GetProjectTypeFromExecutable(settings.GameRoot);
-
-                    if (gametype == settings.GameType)
-                    {
-                        success = true;
-                        settings.GameRoot = Path.GetDirectoryName(settings.GameRoot);
-
-                        if (settings.GameType == ProjectType.BB)
-                        {
-                            settings.GameRoot += @"\dvdroot_ps4";
-                        }
-
-                        settings.Serialize(filename);
-                        break;
-                    }
-
-                    PlatformUtils.Instance.MessageBox(
-                        $@"Selected executable was not for {settings.GameType}. Please select the correct game executable.",
-                        "Error",
-                        MessageBoxButtons.OK);
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
-
-        if (success)
-        {
-            if (!LocatorUtils.CheckFilesExpanded(settings.GameRoot, settings.GameType))
-            {
-                if (!GameNotUnpackedWarning(settings.GameType))
-                {
-                    return false;
-                }
-            }
-
-            if (settings.GameType == ProjectType.SDT || settings.GameType == ProjectType.ER)
-            {
-                if (!StealGameDllIfMissing(settings, "oo2core_6_win64"))
-                {
-                    return false;
-                }
-            }
-            else if (settings.GameType == ProjectType.AC6)
-            {
-                if (!StealGameDllIfMissing(settings, "oo2core_8_win64"))
-                {
-                    return false;
-                }
-            }
-
-            _projectSettings = settings;
-            Project.CurrentProjectSettings = settings;
-            ChangeProjectSettings(_projectSettings, Path.GetDirectoryName(filename), options);
-            _context.Window.Title = $"{_projectSettings.ProjectName}  -  {_programTitle}";
-
-            CFG.RecentProject recent = new()
-            {
-                Name = _projectSettings.ProjectName,
-                GameType = _projectSettings.GameType,
-                ProjectFile = filename
-            };
-            CFG.AddMostRecentProject(recent);
-        }
-
-        return success;
-    }
-
-    private bool StealGameDllIfMissing(ProjectSettings settings, string dllName)
-    {
-        dllName = dllName + ".dll";
-        if (File.Exists(Path.Join(Path.GetFullPath("."), dllName)))
-        {
-            return true;
-        }
-
-        if (!File.Exists(Path.Join(settings.GameRoot, dllName)))
-        {
-            PlatformUtils.Instance.MessageBox(
-                $"Could not find file \"{dllName}\" in \"{settings.GameRoot}\", which should be included by default.\n\nTry verifying or reinstalling the game.",
-                "Error",
-                MessageBoxButtons.OK);
-            return false;
-        }
-
-        File.Copy(Path.Join(settings.GameRoot, dllName), Path.Join(Path.GetFullPath("."), dllName));
-        return true;
-    }
-
     //Unhappy with this being here
     [DllImport("user32.dll", EntryPoint = "ShowWindow")]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -706,10 +528,19 @@ public class Smithbox
 
     public void SaveAll()
     {
+        Project.SaveProjectJson();
+
         foreach (EditorScreen editor in _editors)
         {
             editor.SaveAll();
         }
+    }
+
+    private void SaveFocusedEditor()
+    {
+        Project.SaveProjectJson();
+
+        _focusedEditor.Save();
     }
 
     // Saves modded files to a recovery directory in the mod folder on crash
@@ -734,79 +565,23 @@ public class Smithbox
             }
         }
 
-        var success = Project.CreateRecoveryProject();
-        if (success)
+        if (CFG.Current.System_EnableRecoveryFolder)
         {
-            SaveAll();
-            PlatformUtils.Instance.MessageBox(
-                $"Attempted to save project files to {Project.GameModDirectory} for manual recovery.\n" +
-                "You must manually replace your project files with these recovery files should you wish to restore them.\n" +
-                "Given the program has crashed, these files may be corrupt and you should backup your last good saved\n" +
-                "files before attempting to use these.",
-                "Saved recovery",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
-        }
-    }
-
-    private void SaveFocusedEditor()
-    {
-        if (_projectSettings != null && _projectSettings.ProjectName != null)
-        {
-            // Danger zone assuming on lastProjectFile
-            _projectSettings.Serialize(CFG.Current.LastProjectFile);
-            _focusedEditor.Save();
-        }
-    }
-
-    private void NewProject_NameGUI()
-    {
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Project Name:      ");
-        ImGui.SameLine();
-        Utils.ImGuiGenericHelpPopup("?", "##Help_ProjectName",
-            "Project's display name. Only affects visuals within Smithbox.");
-        ImGui.SameLine();
-        var pname = _newProjectOptions.settings.ProjectName;
-        if (ImGui.InputText("##pname", ref pname, 255))
-        {
-            _newProjectOptions.settings.ProjectName = pname;
-        }
-    }
-
-    private void NewProject_ProjectDirectoryGUI()
-    {
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text("Project Directory: ");
-        ImGui.SameLine();
-        Utils.ImGuiGenericHelpPopup("?", "##Help_ProjectDirectory",
-            "The location mod files will be saved.\nTypically, this should be Mod Engine's Mod folder.");
-        ImGui.SameLine();
-        ImGui.InputText("##pdir", ref _newProjectOptions.directory, 255);
-        ImGui.SameLine();
-        if (ImGui.Button($@"{ForkAwesome.FileO}"))
-        {
-            if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
+            var success = Project.CreateRecoveryProject();
+            if (success)
             {
-                _newProjectOptions.directory = path;
+                SaveAll();
+                PlatformUtils.Instance.MessageBox(
+                    $"Attempted to save project files to {Project.GameModDirectory} for manual recovery.\n" +
+                    "You must manually replace your project files with these recovery files should you wish to restore them.\n" +
+                    "Given the program has crashed, these files may be corrupt and you should backup your last good saved\n" +
+                    "files before attempting to use these.",
+                    "Saved recovery",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
     }
-
-    private void NewProject_GameTypeComboGUI()
-    {
-        ImGui.AlignTextToFramePadding();
-        ImGui.Text(@"Game Type:         ");
-        ImGui.SameLine();
-        var games = Enum.GetNames(typeof(ProjectType));
-        var gameIndex = Array.IndexOf(games, _newProjectOptions.settings.GameType.ToString());
-        if (ImGui.Combo("##GameTypeCombo", ref gameIndex, games, games.Length))
-        {
-            _newProjectOptions.settings.GameType = Enum.Parse<ProjectType>(games[gameIndex]);
-        }
-    }
-
-    private static CFG.RecentProject recentProject;
 
     private unsafe void Update(float deltaseconds)
     {
@@ -882,17 +657,7 @@ public class Smithbox
                 ImguiUtils.ShowMenuIcon($"{ForkAwesome.Folder}");
                 if (ImGui.MenuItem("Open Project", "", false, !TaskManager.AnyActiveTasks()))
                 {
-                    if (PlatformUtils.Instance.OpenFileDialog(
-                            "Choose the project json file",
-                            new[] { FilterStrings.ProjectJsonFilter },
-                            out var path))
-                    {
-                        ProjectSettings settings = ProjectSettings.Deserialize(path);
-                        if (settings != null)
-                        {
-                            AttemptLoadProject(settings, path);
-                        }
-                    }
+                    Project.OpenProjectDialog();
                 }
 
                 // Recent Projects
@@ -900,99 +665,7 @@ public class Smithbox
                 if (ImGui.BeginMenu("Recent Projects",
                         !TaskManager.AnyActiveTasks() && CFG.Current.RecentProjects.Count > 0))
                 {
-                    recentProject = null;
-                    var id = 0;
-
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // DES
-                        if (p.GameType == ProjectType.DES)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // DS1
-                        if (p.GameType == ProjectType.DS1)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // DS1R
-                        if (p.GameType == ProjectType.DS1R)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // DS2S
-                        if (p.GameType == ProjectType.DS2S)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // BB
-                        if (p.GameType == ProjectType.BB)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // DS3
-                        if (p.GameType == ProjectType.DS3)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // SDT
-                        if (p.GameType == ProjectType.SDT)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // ER
-                        if (p.GameType == ProjectType.ER)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
-                    foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
-                    {
-                        // AC6
-                        if (p.GameType == ProjectType.AC6)
-                        {
-                            RecentProjectEntry(p, id);
-
-                            id++;
-                        }
-                    }
+                    Project.DisplayRecentProjects();
 
                     ImGui.EndMenu();
                 }
@@ -1164,259 +837,12 @@ public class Smithbox
         // New project modal
         if (newProject)
         {
-            _newProjectOptions.settings = new ProjectSettings();
-            _newProjectOptions.directory = "";
             ImGui.OpenPopup("New Project");
         }
 
         if (ImGui.BeginPopupModal("New Project", ref open, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            //
-            ImGui.BeginTabBar("NewProjectTabBar");
-            if (ImGui.BeginTabItem("Standard"))
-            {
-                if (!_standardProjectUIOpened)
-                {
-                    _newProjectOptions.settings.GameType = ProjectType.Undefined;
-                }
-
-                _standardProjectUIOpened = true;
-
-                NewProject_NameGUI();
-                NewProject_ProjectDirectoryGUI();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Game Executable:   ");
-                ImGui.SameLine();
-                Utils.ImGuiGenericHelpPopup("?", "##Help_GameExecutable",
-                    "The location of the game's .EXE or EBOOT.BIN file.\nThe folder with the executable will be used to obtain unpacked game data.");
-                ImGui.SameLine();
-                var gname = _newProjectOptions.settings.GameRoot;
-                if (ImGui.InputText("##gdir", ref gname, 255))
-                {
-                    if (File.Exists(gname))
-                    {
-                        _newProjectOptions.settings.GameRoot = Path.GetDirectoryName(gname);
-                    }
-                    else
-                    {
-                        _newProjectOptions.settings.GameRoot = gname;
-                    }
-
-                    _newProjectOptions.settings.GameType = Project.GetProjectTypeFromExecutable(gname);
-
-                    if (_newProjectOptions.settings.GameType == ProjectType.BB)
-                    {
-                        _newProjectOptions.settings.GameRoot += @"\dvdroot_ps4";
-                    }
-                }
-
-                ImGui.SameLine();
-                if (ImGui.Button($@"{ForkAwesome.FileO}##fd2"))
-                {
-                    if (PlatformUtils.Instance.OpenFileDialog(
-                            "Select executable for the game you want to mod...",
-                            new[] { FilterStrings.GameExecutableFilter },
-                            out var path))
-                    {
-                        _newProjectOptions.settings.GameRoot = Path.GetDirectoryName(path);
-                        _newProjectOptions.settings.GameType = Project.GetProjectTypeFromExecutable(path);
-
-                        if (_newProjectOptions.settings.GameType == ProjectType.BB)
-                        {
-                            _newProjectOptions.settings.GameRoot += @"\dvdroot_ps4";
-                        }
-                    }
-                }
-
-                ImGui.Text($@"Detected Game:      {_newProjectOptions.settings.GameType}");
-
-                ImGui.EndTabItem();
-            }
-            else
-            {
-                _standardProjectUIOpened = false;
-            }
-
-            if (ImGui.BeginTabItem("Advanced"))
-            {
-                NewProject_NameGUI();
-                NewProject_ProjectDirectoryGUI();
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Game Directory:    ");
-                ImGui.SameLine();
-                Utils.ImGuiGenericHelpPopup("?", "##Help_GameDirectory",
-                    "The location of game files.\nTypically, this should be the location of the game executable.");
-                ImGui.SameLine();
-                var gname = _newProjectOptions.settings.GameRoot;
-                if (ImGui.InputText("##gdir", ref gname, 255))
-                {
-                    _newProjectOptions.settings.GameRoot = gname;
-                }
-
-                ImGui.SameLine();
-                if (ImGui.Button($@"{ForkAwesome.FileO}##fd2"))
-                {
-                    if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
-                    {
-                        _newProjectOptions.settings.GameRoot = path;
-                    }
-                }
-
-                NewProject_GameTypeComboGUI();
-                ImGui.EndTabItem();
-            }
-
-            ImGui.EndTabBar();
-            //
-
-            ImGui.Separator();
-            if (_newProjectOptions.settings.GameType is ProjectType.DS2S or ProjectType.DS3)
-            {
-                ImGui.NewLine();
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text(@"Loose Params:      ");
-                ImGui.SameLine();
-                Utils.ImGuiGenericHelpPopup("?", "##Help_LooseParams",
-                    "Default: OFF\n" +
-                    "DS2: Save and Load parameters as individual .param files instead of regulation.\n" +
-                    "DS3: Save and Load parameters as decrypted .parambnd instead of regulation.");
-                ImGui.SameLine();
-                var looseparams = _newProjectOptions.settings.UseLooseParams;
-                if (ImGui.Checkbox("##looseparams", ref looseparams))
-                {
-                    _newProjectOptions.settings.UseLooseParams = looseparams;
-                }
-            }
-
-            if (FeatureFlags.EnablePartialParam && _newProjectOptions.settings.GameType == ProjectType.ER)
-            {
-                ImGui.NewLine();
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text(@"Save partial regulation:  ");
-                ImGui.SameLine();
-                Utils.ImGuiGenericHelpPopup("TODO (disbababled)", "##Help_PartialParam",
-                    "TODO: why does this setting exist separately from loose params?");
-                ImGui.SameLine();
-                var partialReg = _newProjectOptions.settings.PartialParams;
-                if (ImGui.Checkbox("##partialparams", ref partialReg))
-                {
-                    _newProjectOptions.settings.PartialParams = partialReg;
-                }
-
-                ImGui.SameLine();
-                ImGui.TextUnformatted(
-                    "Warning: partial params require merging before use in game.\nRow names on unchanged rows will be forgotten between saves");
-            }
-
-            ImGui.NewLine();
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(@"Import row names:  ");
-            ImGui.SameLine();
-            Utils.ImGuiGenericHelpPopup("?", "##Help_ImportRowNames",
-                "Default: ON\nImports and applies row names from lists stored in Assets folder.\nRow names can be imported at any time in the param editor's Edit menu.");
-            ImGui.SameLine();
-            ImGui.Checkbox("##loadDefaultNames", ref _newProjectOptions.loadDefaultNames);
-            ImGui.NewLine();
-
-            if (_newProjectOptions.settings.GameType == ProjectType.Undefined)
-            {
-                ImGui.BeginDisabled();
-            }
-
-            if (ImGui.Button("Create", new Vector2(120, 0) * scale))
-            {
-                var validated = true;
-                if (_newProjectOptions.settings.GameRoot == null ||
-                    !Directory.Exists(_newProjectOptions.settings.GameRoot))
-                {
-                    PlatformUtils.Instance.MessageBox(
-                        "Your game executable path does not exist. Please select a valid executable.", "Error",
-                        MessageBoxButtons.OK);
-                    validated = false;
-                }
-
-                if (validated && _newProjectOptions.settings.GameType == ProjectType.Undefined)
-                {
-                    PlatformUtils.Instance.MessageBox("Your game executable is not a valid supported game.",
-                        "Error",
-                        MessageBoxButtons.OK);
-                    validated = false;
-                }
-
-                if (validated && (_newProjectOptions.directory == null ||
-                                  !Directory.Exists(_newProjectOptions.directory)))
-                {
-                    PlatformUtils.Instance.MessageBox("Your selected project directory is not valid.", "Error",
-                        MessageBoxButtons.OK);
-                    validated = false;
-                }
-
-                if (validated && File.Exists($@"{_newProjectOptions.directory}\project.json"))
-                {
-                    DialogResult message = PlatformUtils.Instance.MessageBox(
-                        "Your selected project directory already contains a project.json. Would you like to replace it?",
-                        "Error",
-                        MessageBoxButtons.YesNo);
-                    if (message == DialogResult.No)
-                    {
-                        validated = false;
-                    }
-                }
-
-                if (validated && _newProjectOptions.settings.GameRoot == _newProjectOptions.directory)
-                {
-                    DialogResult message = PlatformUtils.Instance.MessageBox(
-                        "Project Directory is the same as Game Directory, which allows game files to be overwritten directly.\n\n" +
-                        "It's highly recommended you use the Mod Engine mod folder as your project folder instead (if possible).\n\n" +
-                        "Continue and create project anyway?", "Caution",
-                        MessageBoxButtons.OKCancel);
-                    if (message != DialogResult.OK)
-                    {
-                        validated = false;
-                    }
-                }
-
-                if (validated && (_newProjectOptions.settings.ProjectName == null ||
-                                  _newProjectOptions.settings.ProjectName == ""))
-                {
-                    PlatformUtils.Instance.MessageBox("You must specify a project name.", "Error",
-                        MessageBoxButtons.OK);
-                    validated = false;
-                }
-
-                var gameroot = _newProjectOptions.settings.GameRoot;
-                if (!LocatorUtils.CheckFilesExpanded(gameroot, _newProjectOptions.settings.GameType))
-                {
-                    if (!GameNotUnpackedWarning(_newProjectOptions.settings.GameType))
-                    {
-                        validated = false;
-                    }
-                }
-
-                if (validated)
-                {
-                    _newProjectOptions.settings.GameRoot = gameroot;
-                    _newProjectOptions.settings.Serialize($@"{_newProjectOptions.directory}\project.json");
-                    AttemptLoadProject(_newProjectOptions.settings, $@"{_newProjectOptions.directory}\project.json",
-                        _newProjectOptions);
-
-                    ImGui.CloseCurrentPopup();
-                }
-            }
-
-            if (_newProjectOptions.settings.GameType == ProjectType.Undefined)
-            {
-                ImGui.EndDisabled();
-            }
-
-            ImGui.SameLine();
-            if (ImGui.Button("Cancel", new Vector2(120, 0) * scale))
-            {
-                ImGui.CloseCurrentPopup();
-            }
+            Project.CreateNewProjectModal();
 
             ImGui.EndPopup();
         }
@@ -1553,47 +979,6 @@ public class Smithbox
 
         _firstframe = false;
     }
-
-    private void RecentProjectEntry(CFG.RecentProject p, int id)
-    {
-        if (ImGui.MenuItem($@"{p.GameType}: {p.Name}##{id}"))
-        {
-            if (File.Exists(p.ProjectFile))
-            {
-                ProjectSettings settings = ProjectSettings.Deserialize(p.ProjectFile);
-                if (settings != null)
-                {
-                    if (AttemptLoadProject(settings, p.ProjectFile))
-                    {
-                        recentProject = p;
-                    }
-                }
-            }
-            else
-            {
-                DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
-                    $"Remove project from list of recent projects?",
-                    $"Project.json cannot be found", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    CFG.RemoveRecentProject(p);
-                }
-            }
-        }
-
-        if (ImGui.BeginPopupContextItem())
-        {
-            if (ImGui.Selectable("Remove from list"))
-            {
-                CFG.RemoveRecentProject(p);
-                CFG.Save();
-            }
-
-            ImGui.EndPopup();
-        }
-    }
-
 
     private const float DefaultDpi = 96f;
     private static float _dpi = DefaultDpi;

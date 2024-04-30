@@ -35,8 +35,6 @@ public class GparamEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
-    private ProjectSettings _projectSettings;
-
     public static ActionManager EditorActionManager = new();
 
     private GparamParamBank.GparamInfo _selectedGparamInfo;
@@ -902,10 +900,8 @@ public class GparamEditorScreen : EditorScreen
     }
 
 
-    public void OnProjectChanged(ProjectSettings newSettings)
+    public void OnProjectChanged()
     {
-        _projectSettings = newSettings;
-
         if (CFG.Current.AutoLoadBank_Gparam)
             GparamParamBank.LoadGraphicsParams();
 

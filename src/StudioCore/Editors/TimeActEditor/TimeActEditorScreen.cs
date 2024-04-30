@@ -16,7 +16,6 @@ public class TimeActEditorScreen : EditorScreen
     public bool FirstFrame { get; set; }
 
     private readonly PropertyEditor _propEditor;
-    private ProjectSettings _projectSettings;
 
     public ActionManager EditorActionManager = new();
 
@@ -138,10 +137,8 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.End();
     }
 
-    public void OnProjectChanged(ProjectSettings newSettings)
+    public void OnProjectChanged()
     {
-        _projectSettings = newSettings;
-
         if (CFG.Current.AutoLoadBank_TimeAct)
             AnimationBank.LoadTimeActs();
 

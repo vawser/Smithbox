@@ -22,13 +22,8 @@ public class ProjectWindow
 {
     private bool MenuOpenState;
 
-    public ProjectSettings ProjSettings = null;
-
-    private MapGroupTab MapGroupTab;
-
     public ProjectWindow()
     {
-        MapGroupTab = new MapGroupTab();
     }
 
     public void ToggleMenuVisibility()
@@ -58,7 +53,6 @@ public class ProjectWindow
             ImGui.BeginTabBar("##ProjectTabs");
 
             DisplayProjectTab();
-            DisplayMapGroupTab();
 
             ImGui.EndTabBar();
         }
@@ -71,9 +65,9 @@ public class ProjectWindow
 
     public void DisplayProjectTab()
     {
-        if(ImGui.BeginTabItem("General"))
+        if (ImGui.BeginTabItem("General"))
         {
-            if (ProjSettings == null || ProjSettings.ProjectName == null)
+            if (Project.Config == null || Project.Config.ProjectName == null)
             {
                 ImGui.Text("No project loaded");
                 ImguiUtils.ShowHoverTooltip("No project has been loaded yet.");
@@ -85,7 +79,7 @@ public class ProjectWindow
             }
             else
             {
-                ImGui.Text($"Project Name: {ProjSettings.ProjectName}");
+                ImGui.Text($"Project Name: {Project.Config.ProjectName}");
                 ImGui.Text($"Project Type: {Project.Type}");
                 ImGui.Text($"Project Root Directory: {Project.GameRootDirectory}");
                 ImGui.Text($"Project Mod Directory: {Project.GameModDirectory}");
@@ -100,32 +94,48 @@ public class ProjectWindow
 
                 ImGui.Separator();
 
-                var useLoose = ProjSettings.UseLooseParams;
-                if (ProjSettings.GameType is ProjectType.DS2S or ProjectType.DS3)
+                var useLoose = Project.Config.UseLooseParams;
+                if (Project.Config.GameType is ProjectType.DS2S or ProjectType.DS3)
                 {
                     if (ImGui.Checkbox("Use loose params", ref useLoose))
-                        ProjSettings.UseLooseParams = useLoose;
+                        Project.Config.UseLooseParams = useLoose;
                     ImguiUtils.ShowHoverTooltip("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
                 }
 
-                var usepartial = ProjSettings.PartialParams;
+                var usepartial = Project.Config.PartialParams;
                 if (FeatureFlags.EnablePartialParam || usepartial)
                 {
-                    if (ProjSettings.GameType == ProjectType.ER &&
+                    if (Project.Config.GameType == ProjectType.ER &&
                     ImGui.Checkbox("Partial params", ref usepartial))
-                        ProjSettings.PartialParams = usepartial;
+                        Project.Config.PartialParams = usepartial;
                     ImguiUtils.ShowHoverTooltip("Partial params.");
                 }
+
+
             }
 
             ImGui.EndTabItem();
         }
-    }
-    public void DisplayMapGroupTab()
-    {
-        if (ImGui.BeginTabItem("Map Groups"))
+
+        if (ImGui.BeginTabItem("Project Tools"))
         {
-            MapGroupTab.Display();
+            ImGui.Checkbox("Enable Recovery Folder", ref CFG.Current.System_EnableRecoveryFolder);
+            ImguiUtils.ShowHoverTooltip("Enable a recovery project to be created upon an unexpected crash.");
+
+            ImGui.Checkbox("Enable Automatic Save", ref CFG.Current.System_EnableAutoSave);
+            ImguiUtils.ShowHoverTooltip("All changes will be saved at the interval specificed below.");
+
+            ImGui.Text("Automatic Save Interval");
+            if (ImGui.InputInt("##AutomaticSaveInterval", ref CFG.Current.System_AutoSaveIntervalSeconds))
+            {
+                if (CFG.Current.System_AutoSaveIntervalSeconds < 10)
+                {
+                    CFG.Current.System_AutoSaveIntervalSeconds = 10;
+                }
+
+                Project.UpdateTimer();
+            }
+            ImguiUtils.ShowHoverTooltip("Interval in seconds between each automatic save.");
 
             ImGui.EndTabItem();
         }

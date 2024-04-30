@@ -163,7 +163,6 @@ public class ParamEditorScreen : EditorScreen
     private bool _rowNameImporter_EmptyOnly = false;
     private bool _rowNameImporter_VanillaOnly = true;
 
-    internal ProjectSettings _projectSettings;
     private string _statisticPopupOutput = "";
     private string _statisticPopupParameter = "";
 
@@ -525,11 +524,11 @@ public class ParamEditorScreen : EditorScreen
 
                 try
                 {
-                    if (_projectSettings.GameType != ProjectType.DS2S)
+                    if (Project.Type != ProjectType.DS2S)
                     {
                         if (PlatformUtils.Instance.OpenFileDialog("Select file containing params", allParamTypes, out var path))
                         {
-                            ParamBank.LoadAuxBank(path, null, null, _projectSettings);
+                            ParamBank.LoadAuxBank(path, null, null);
                         }
                     }
                     else
@@ -562,7 +561,7 @@ public class ParamEditorScreen : EditorScreen
                                         "Select file containing enemyparam",
                                         new[] { FilterStrings.ParamLooseFilter }, out var enemyPath))
                                 {
-                                    ParamBank.LoadAuxBank(fpath, folder, enemyPath, _projectSettings);
+                                    ParamBank.LoadAuxBank(fpath, folder, enemyPath);
                                 }
                             }
                         }
@@ -709,7 +708,7 @@ public class ParamEditorScreen : EditorScreen
             }
         }
 
-        if (_projectSettings == null)
+        if (Project.Config == null)
         {
             ImGui.Text("No project loaded. File -> New Project");
             return;
@@ -973,10 +972,8 @@ public class ParamEditorScreen : EditorScreen
         }
     }
 
-    public void OnProjectChanged(ProjectSettings newSettings)
+    public void OnProjectChanged()
     {
-        _projectSettings = newSettings;
-
         foreach (ParamEditorView view in _views)
         {
             if (view != null)
@@ -1000,11 +997,8 @@ public class ParamEditorScreen : EditorScreen
     {
         try
         {
-            if (_projectSettings != null)
-            {
-                ParamBank.PrimaryBank.SaveParams(_projectSettings);
-                TaskLogs.AddLog("Saved params");
-            }
+            ParamBank.PrimaryBank.SaveParams();
+            TaskLogs.AddLog("Saved params");
         }
         catch (SavingFailedException e)
         {
@@ -1022,11 +1016,8 @@ public class ParamEditorScreen : EditorScreen
     {
         try
         {
-            if (_projectSettings != null)
-            {
-                ParamBank.PrimaryBank.SaveParams(_projectSettings);
-                TaskLogs.AddLog("Saved params");
-            }
+            ParamBank.PrimaryBank.SaveParams();
+            TaskLogs.AddLog("Saved params");
         }
         catch (SavingFailedException e)
         {

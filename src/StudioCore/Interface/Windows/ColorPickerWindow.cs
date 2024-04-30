@@ -22,8 +22,6 @@ public class ColorPickerWindow
 {
     private bool MenuOpenState;
 
-    public ProjectSettings ProjSettings = null;
-
     private Vector4 currentColor;
 
     public ColorPickerWindow()

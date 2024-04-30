@@ -33,7 +33,6 @@ public class TextEditorScreen : EditorScreen
 
     private List<FMG.Entry> _entryLabelCache;
     private List<FMG.Entry> _EntryLabelCacheFiltered;
-    private ProjectSettings _projectSettings;
 
     private string _searchFilter = "";
     public static string _searchFilterCached = "";
@@ -348,14 +347,13 @@ public class TextEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    public void OnProjectChanged(ProjectSettings newSettings)
+    public void OnProjectChanged()
     {
-        _projectSettings = newSettings;
         _fmgSearchAllString = "";
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();
         ResetActionManager();
-        FMGBank.ReloadFMGs(_projectSettings.LastFmgLanguageUsed);
+        FMGBank.ReloadFMGs(Project.Config.LastFmgLanguageUsed);
     }
 
     public void Save()
@@ -558,7 +556,7 @@ public class TextEditorScreen : EditorScreen
 
         if (!FMGBank.IsLoaded)
         {
-            if (_projectSettings == null)
+            if (Project.Config == null)
             {
                 ImGui.Text("No project loaded. File -> New Project");
             }
@@ -833,7 +831,7 @@ public class TextEditorScreen : EditorScreen
 
     private void ChangeLanguage(string path)
     {
-        _projectSettings.LastFmgLanguageUsed = path;
+        Project.Config.LastFmgLanguageUsed = path;
         _fmgSearchAllString = "";
         _filteredFmgInfo.Clear();
         ClearTextEditorCache();

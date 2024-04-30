@@ -22,8 +22,6 @@ public class SettingsWindow
 {
     public bool MenuOpenState;
 
-    public ProjectSettings ProjSettings = null;
-
     public SettingsWindow()
     {
     }
@@ -485,9 +483,9 @@ public class SettingsWindow
                 ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
                 ImguiUtils.ShowHoverTooltip("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
 
-                if (ProjSettings != null)
+                if (Project.Config != null)
                 {
-                    if (ProjSettings.GameType is ProjectType.ER)
+                    if (Project.Type is ProjectType.ER)
                     {
                         ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
                         ImguiUtils.ShowHoverTooltip("");
@@ -581,7 +579,7 @@ public class SettingsWindow
                         ParamBank.CreateProjectMeta();
                     }
 
-                    ParamBank.ReloadParams(Project.CurrentProjectSettings, null);
+                    ParamBank.ReloadParams();
                 }
                 ImguiUtils.ShowHoverTooltip("Use project-specific Paramdex meta instead of Smithbox's base version.");
 
@@ -720,11 +718,11 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("Show the original FMG file names within the Text Editor file list.");
 
                 if (ImGui.Checkbox("Separate related FMGs and entries", ref CFG.Current.FMG_NoGroupedFmgEntries))
-                    EditorContainer.TextEditor.OnProjectChanged(ProjSettings);
+                    EditorContainer.TextEditor.OnProjectChanged();
                 ImguiUtils.ShowHoverTooltip("If enabled then FMG entries will not be grouped automatically.");
 
                 if (ImGui.Checkbox("Separate patch FMGs", ref CFG.Current.FMG_NoFmgPatching))
-                    EditorContainer.TextEditor.OnProjectChanged(ProjSettings);
+                    EditorContainer.TextEditor.OnProjectChanged();
                 ImguiUtils.ShowHoverTooltip("If enabled then FMG files added from DLCs will not be grouped with vanilla FMG files.");
             }
 

@@ -1,4 +1,5 @@
-﻿using Veldrid;
+﻿using StudioCore.UserProject;
+using Veldrid;
 using Veldrid.Sdl2;
 
 namespace StudioCore.Editor;
@@ -31,7 +32,7 @@ public interface EditorScreen
     ///     Called when a new project has been opened
     /// </summary>
     /// <param name="newSettings">New settings for the project</param>
-    public void OnProjectChanged(ProjectSettings newSettings);
+    public void OnProjectChanged();
 
     /// <summary>
     ///     Draw the ImGui menu specific to this editor

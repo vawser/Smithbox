@@ -43,7 +43,7 @@ public static class BankUtils
         BlockedTextures.Bank = new BlockedTextureBank();
     }
 
-    public static void ReloadBanks(ProjectSettings projectSettings, NewProjectOptions projectOptions)
+    public static void ReloadBanks()
     {
         // Alias
         ModelAliasBank.Bank.ReloadAliasBank();
@@ -61,7 +61,7 @@ public static class BankUtils
         GparamFormatBank.Bank.ReloadFormatBank();
 
         // Data
-        ParamBank.ReloadParams(projectSettings, projectOptions);
+        ParamBank.ReloadParams();
         MaterialResourceBank.Setup();
         MapGroupsBank.Bank.ReloadMapGroupBank();
         GameOffsetsBank.Bank.ReloadBank();

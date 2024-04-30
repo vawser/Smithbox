@@ -54,7 +54,6 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
     private (string, Entity) _dupeSelectionTargetedParent = ("None", null);
 
     private bool _PauseUpdate;
-    private ProjectSettings _projectSettings;
 
     public bool AltHeld;
     public bool CtrlHeld;
@@ -955,9 +954,8 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         return Viewport.ViewportSelected;
     }
 
-    public void OnProjectChanged(ProjectSettings newSettings)
+    public void OnProjectChanged()
     {
-        _projectSettings = newSettings;
         _selection.ClearSelection();
         EditorActionManager.Clear();
 

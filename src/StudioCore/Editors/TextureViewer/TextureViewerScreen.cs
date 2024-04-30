@@ -32,8 +32,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 {
     public bool FirstFrame { get; set; }
 
-    private ProjectSettings _projectSettings;
-
     public ActionManager EditorActionManager = new();
 
     private static string _fileSearchInput = "";
@@ -73,10 +71,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     }
 
-    public void OnProjectChanged(ProjectSettings newSettings)
+    public void OnProjectChanged()
     {
-        _projectSettings = newSettings;
-
         ResetTextureViewer();
 
         ResetActionManager();

@@ -24,8 +24,6 @@ public class ParticleEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
-    private ProjectSettings _projectSettings;
-
     public PropertyEditor _propEditor;
 
     public ActionManager EditorActionManager = new();
@@ -374,10 +372,8 @@ public class ParticleEditorScreen : EditorScreen
     //*****************************
     // Editor
     //*****************************
-    public void OnProjectChanged(ProjectSettings newSettings)
+    public void OnProjectChanged()
     {
-        _projectSettings = newSettings;
-
         // Only support FXR3 for now
         if(Project.Type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {

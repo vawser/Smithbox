@@ -535,7 +535,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         return Viewport.ViewportSelected;
     }
 
-    public void OnProjectChanged(ProjectSettings newSettings)
+    public void OnProjectChanged()
     {
         if (Project.Type != ProjectType.Undefined)
         {

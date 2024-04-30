@@ -133,7 +133,7 @@ public class ParamEditorView
 
     private void ParamView_ParamList_Pinned(float scale)
     {
-        List<string> pinnedParamKeyList = new(_paramEditor._projectSettings.PinnedParams);
+        List<string> pinnedParamKeyList = new(Project.Config.PinnedParams);
 
         if (pinnedParamKeyList.Count > 0)
         {
@@ -165,10 +165,15 @@ public class ParamEditorView
                 {
                     if (ImGui.Selectable("Unpin " + paramKey))
                     {
-                        _paramEditor._projectSettings.PinnedParams.Remove(paramKey);
+                        Project.Config.PinnedParams.Remove(paramKey);
                     }
 
-                    EditorDecorations.PinListReorderOptions(_paramEditor._projectSettings.PinnedParams, paramKey);
+                    EditorDecorations.PinListReorderOptions(Project.Config.PinnedParams, paramKey);
+
+                    if (ImGui.Selectable("Unpin all"))
+                    {
+                        Project.Config.PinnedParams.RemoveAll(x => true);
+                    }
 
                     ImGui.EndPopup();
                 }
@@ -301,9 +306,9 @@ public class ParamEditorView
             if (ImGui.BeginPopupContextItem())
             {
                 if (ImGui.Selectable("Pin " + paramKey) &&
-                    !_paramEditor._projectSettings.PinnedParams.Contains(paramKey))
+                    !Project.Config.PinnedParams.Contains(paramKey))
                 {
-                    _paramEditor._projectSettings.PinnedParams.Add(paramKey);
+                    Project.Config.PinnedParams.Add(paramKey);
                 }
 
                 if (ParamEditorScreen.EditorMode && p != null)
@@ -448,7 +453,7 @@ public class ParamEditorView
             //ImGui.BeginChild("rows" + activeParam);
             if (EditorDecorations.ImGuiTableStdColumns("rowList", compareCol == null ? 1 : 2, false))
             {
-                var pinnedRowList = _paramEditor._projectSettings.PinnedRows
+                var pinnedRowList = Project.Config.PinnedRows
                     .GetValueOrDefault(activeParam, new List<int>()).Select(id => para[id]).ToList();
 
                 ImGui.TableSetupColumn("rowCol", ImGuiTableColumnFlags.None, 1f);
@@ -812,12 +817,12 @@ public class ParamEditorView
             {
                 if (ImGui.Selectable((isPinned ? "Unpin " : "Pin ") + r.ID))
                 {
-                    if (!_paramEditor._projectSettings.PinnedRows.ContainsKey(activeParam))
+                    if (!Project.Config.PinnedRows.ContainsKey(activeParam))
                     {
-                        _paramEditor._projectSettings.PinnedRows.Add(activeParam, new List<int>());
+                        Project.Config.PinnedRows.Add(activeParam, new List<int>());
                     }
 
-                    List<int> pinned = _paramEditor._projectSettings.PinnedRows[activeParam];
+                    List<int> pinned = Project.Config.PinnedRows[activeParam];
 
                     if (isPinned)
                     {
@@ -829,10 +834,14 @@ public class ParamEditorView
                     }
                 }
 
-
                 if (isPinned)
                 {
-                    EditorDecorations.PinListReorderOptions(_paramEditor._projectSettings.PinnedRows[activeParam], r.ID);
+                    EditorDecorations.PinListReorderOptions(Project.Config.PinnedRows[activeParam], r.ID);
+                }
+
+                if (ImGui.Selectable("Unpin all"))
+                {
+                    Project.Config.PinnedRows.Clear();
                 }
 
                 ImGui.Separator();

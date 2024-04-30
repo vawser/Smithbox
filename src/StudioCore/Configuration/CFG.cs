@@ -53,11 +53,6 @@ public class CFG
     public Vector3 SavedScale = new Vector3();
 
     //**************
-    // Feature Flags
-    //**************
-    public bool FeatureFlag_EnableAC6Saving = false;
-
-    //**************
     // Interface
     //**************
     // View Toggles
@@ -225,6 +220,11 @@ public class CFG
     public float System_Frame_Rate = 60.0f;
 
     public bool System_FlexibleUnpack = true;
+
+    public bool System_EnableAutoSave = true;
+    public int System_AutoSaveIntervalSeconds = 300;
+
+    public bool System_EnableRecoveryFolder = true;
 
     // Resource Banks
     public bool AutoLoadBank_TimeAct = false;

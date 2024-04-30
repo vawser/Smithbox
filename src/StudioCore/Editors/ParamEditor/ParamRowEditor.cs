@@ -7,6 +7,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Toolbar;
 using StudioCore.Interface;
 using StudioCore.Settings;
+using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -262,7 +263,7 @@ public class ParamRowEditor
         if (EditorDecorations.ImGuiTableStdColumns("ParamFieldsT", columnCount, false))
         {
             List<string> pinnedFields =
-                _paramEditor._projectSettings.PinnedFields.GetValueOrDefault(activeParam, null);
+                Project.Config.PinnedFields.GetValueOrDefault(activeParam, null);
 
             ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
             if (showParamCompare)
@@ -928,12 +929,12 @@ public class ParamRowEditor
         {
             if (ImGui.MenuItem(isPinned ? "Unpin " : "Pin " + internalName))
             {
-                if (!_paramEditor._projectSettings.PinnedFields.ContainsKey(activeParam))
+                if (!Project.Config.PinnedFields.ContainsKey(activeParam))
                 {
-                    _paramEditor._projectSettings.PinnedFields.Add(activeParam, new List<string>());
+                    Project.Config.PinnedFields.Add(activeParam, new List<string>());
                 }
 
-                List<string> pinned = _paramEditor._projectSettings.PinnedFields[activeParam];
+                List<string> pinned = Project.Config.PinnedFields[activeParam];
 
                 if (isPinned)
                 {
@@ -947,8 +948,13 @@ public class ParamRowEditor
 
             if (isPinned)
             {
-                EditorDecorations.PinListReorderOptions(_paramEditor._projectSettings.PinnedFields[activeParam],
+                EditorDecorations.PinListReorderOptions(Project.Config.PinnedFields[activeParam],
                     internalName);
+            }
+
+            if (ImGui.Selectable("Unpin all"))
+            {
+                Project.Config.PinnedFields.Clear();
             }
 
             ImGui.Separator();
