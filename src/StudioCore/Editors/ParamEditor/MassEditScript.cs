@@ -1,7 +1,7 @@
 ﻿using ImGuiNET;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
-using StudioCore.Resource;
+using StudioCore.Locators;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;

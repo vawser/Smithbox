@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Resource;
+using StudioCore.Locators;
 
 namespace StudioCore.TextEditor;
 

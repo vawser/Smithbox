@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using StudioCore.Resource;
+using StudioCore.Locators;
 
 namespace StudioCore.Editors.ParamEditor;
 

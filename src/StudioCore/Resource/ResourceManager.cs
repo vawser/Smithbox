@@ -17,6 +17,7 @@ using System.Threading.Tasks.Dataflow;
 using StudioCore.Settings;
 using StudioCore.BanksMain;
 using HKX2;
+using StudioCore.Locators;
 
 namespace StudioCore.Resource;
 

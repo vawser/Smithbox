@@ -19,7 +19,7 @@ using System.Numerics;
 using System.Timers;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors;
-using StudioCore.Resource;
+using StudioCore.Locators;
 
 namespace StudioCore.UserProject;
 

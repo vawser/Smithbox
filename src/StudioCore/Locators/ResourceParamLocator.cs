@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Locators;
 public static class ResourceParamLocator
 {
     internal static ResourceDescriptor GetDS2Param(string paramStr, string appendStr, string mapid, bool writemode = false)

@@ -19,6 +19,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors;
 using StudioCore.Editor;
+using StudioCore.Locators;
 
 namespace StudioCore.MsbEditor;
 

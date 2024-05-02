@@ -23,7 +23,7 @@ using StudioCore.BanksMain;
 using StudioCore.Editors.MapEditor.MapGroup;
 using StudioCore.Interface;
 using StudioCore.Editor;
-using StudioCore.Resource;
+using StudioCore.Locators;
 
 namespace StudioCore.Editors.MapEditor;
 

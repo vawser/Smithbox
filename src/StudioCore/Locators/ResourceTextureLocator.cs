@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Locators;
 public static class ResourceTextureLocator
 {
     public static List<ResourceDescriptor> GetMapTextures(string mapid)

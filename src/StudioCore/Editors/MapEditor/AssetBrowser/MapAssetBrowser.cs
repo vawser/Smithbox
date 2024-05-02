@@ -17,7 +17,7 @@ using StudioCore.Banks;
 using StudioCore.BanksMain;
 using StudioCore.Editor;
 using static SoulsFormats.ACB;
-using StudioCore.Resource;
+using StudioCore.Locators;
 
 namespace StudioCore.Editors.MapEditor.AssetBrowser;
 

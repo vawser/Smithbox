@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using static SoulsFormats.HKXPWV;
 using static StudioCore.TextEditor.FMGBank;
 using StudioCore.UserProject;
-using StudioCore.Resource;
+using StudioCore.Locators;
 
 namespace StudioCore.Editors.TextEditor;
 

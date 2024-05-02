@@ -1,7 +1,7 @@
 ﻿using StudioCore.UserProject;
 using System.Collections.Generic;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Locators;
 public static class ResourceMiscLocator
 {
     // TAE

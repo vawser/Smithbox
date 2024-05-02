@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Locators;
 public static class ResourceMapLocator
 {
     public static List<string> FullMapList;

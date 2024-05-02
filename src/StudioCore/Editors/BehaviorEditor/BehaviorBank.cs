@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Resource;
+using StudioCore.Locators;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;

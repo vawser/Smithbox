@@ -25,6 +25,7 @@ using StudioCore.Utilities;
 using StudioCore.Interface;
 using StudioCore.Editors.MapEditor.AssetBrowser;
 using StudioCore.Editors.MapEditor.EntryFileList;
+using StudioCore.Locators;
 
 namespace StudioCore.Editors.MapEditor;
 

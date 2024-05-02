@@ -9,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Locators;
 
 public static class ResourceLocatorUtils
 {

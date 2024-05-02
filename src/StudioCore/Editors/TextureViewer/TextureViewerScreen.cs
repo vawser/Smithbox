@@ -10,6 +10,7 @@ using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TextureViewer.Toolbar;
 using StudioCore.Interface;
+using StudioCore.Locators;
 using StudioCore.Resource;
 using StudioCore.Settings;
 using StudioCore.UserProject;

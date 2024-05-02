@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Resource;
+using StudioCore.Locators;
 
 namespace StudioCore.Editor;
 

@@ -33,6 +33,7 @@ using System.Security.Cryptography;
 using StudioCore.BanksMain;
 using static SoulsFormats.MSB_AC6;
 using ModelCore.Editors.ModelEditor.Toolbar;
+using StudioCore.Locators;
 
 namespace StudioCore.Editors.ModelEditor;
 
