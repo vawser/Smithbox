@@ -4,30 +4,30 @@ using System.Collections.Generic;
 namespace StudioCore.Resource;
 
 /// <summary>
-///     Requested access level to a given resource
+/// Requested access level to a given resource
 /// </summary>
 public enum AccessLevel
 {
     /// <summary>
-    ///     Resource is not loaded
+    /// Resource is not loaded
     /// </summary>
     AccessUnloaded,
 
     /// <summary>
-    ///     Access to this resource is intended for low level editing only
+    /// Access to this resource is intended for low level editing only
     /// </summary>
     AccessEditOnly,
 
     /// <summary>
-    ///     Access to this resource is intended to be from the GPU in an optimized form
-    ///     only, and is not intended to be mutated or read from the CPU. Used for textures
-    ///     and models that aren't being edited primarily.
+    /// Access to this resource is intended to be from the GPU in an optimized form
+    /// only, and is not intended to be mutated or read from the CPU. Used for textures
+    /// and models that aren't being edited primarily.
     /// </summary>
     AccessGPUOptimizedOnly,
 
     /// <summary>
-    ///     This resource is intended to be accessed by both the GPU and accessed/modified
-    ///     by the CPU.
+    /// This resource is intended to be accessed by both the GPU and accessed/modified
+    /// by the CPU.
     /// </summary>
     AccessFull
 }
@@ -42,7 +42,7 @@ public interface IResourceHandle
 
     public int GetReferenceCounts();
     public void Acquire();
-    public void Release();
+    public void Release(bool force = false);
 
     /// <summary>
     ///     Should only be used by ResourceManager
@@ -95,22 +95,21 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     public bool IsLoaded { get; protected set; }
 
     /// <summary>
-    ///     Virtual path of the entire asset. Used to implement loading
+    /// Virtual path of the entire asset. Used to implement loading
     /// </summary>
     public string AssetVirtualPath { get; }
 
     public AccessLevel AccessLevel { get; protected set; } = AccessLevel.AccessUnloaded;
 
     /// <summary>
-    ///     Adds a handler that is called every time this resource is loaded. If the resource
-    ///     is loaded at the time this handler is added, the handler is called immediately
-    ///     To prevent deadlock, these handlers should not trigger a load/unload of the resource
+    /// Adds a handler that is called every time this resource is loaded. If the resource
+    /// is loaded at the time this handler is added, the handler is called immediately
+    /// To prevent deadlock, these handlers should not trigger a load/unload of the resource
     /// </summary>
     /// <param name="handler"></param>
     public void AddResourceEventListener(IResourceEventListener listener, AccessLevel accessLevel, int tag = 0)
     {
-        EventListeners.Add(new EventListener(
-            new WeakReference<IResourceEventListener>(listener), accessLevel, tag));
+        EventListeners.Add(new EventListener(new WeakReference<IResourceEventListener>(listener), accessLevel, tag));
 
         if (IsLoaded)
         {
@@ -213,7 +212,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
         ReferenceCount++;
     }
 
-    public void Release()
+    public void Release(bool force = false)
     {
         var unload = false;
 
@@ -235,7 +234,8 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
         }
         else
         {
-            ReferenceCount--;
+            if(ReferenceCount >= 0)
+                ReferenceCount--;
         }
 
         // Original
@@ -247,6 +247,14 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
         if (unload)
         {
             ResourceManager.UnloadResource(this, true);
+        }
+
+        if(force)
+        {
+            ResourceManager.UnloadResource(this, true);
+
+            if (ReferenceCount >= 0)
+                ReferenceCount--;
         }
     }
 

@@ -459,21 +459,15 @@ public static class ResourceManager
         ImGui.AlignTextToFramePadding();
         ImGui.Text("List of Resources Loaded & Unloaded");
 
-        if (FeatureFlags.EnableResourceListActions)
+        if (ImGui.Button("Unload All"))
         {
-            if (ImGui.Button("Purge"))
+            foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
             {
-                foreach (KeyValuePair<string, IResourceHandle> item in ResourceDatabase)
-                {
-                    while (item.Value.GetReferenceCounts() >= 0)
-                    {
-                        item.Value.Release();
-                    }
-                }
+                item.Value.Release(true);
             }
         }
 
-        ImGui.Columns(4);
+        ImGui.Columns(5);
         ImGui.Separator();
         var id = 0;
 
@@ -495,7 +489,13 @@ public static class ResourceManager
             ImGui.AlignTextToFramePadding();
             ImGui.Text(item.Value.GetReferenceCounts().ToString());
             ImGui.NextColumn();
+            if(ImGui.Button("Unload"))
+            {
+                item.Value.Release(true);
+            }
+            ImGui.NextColumn();
             ImGui.PopID();
+            id++;
         }
 
         ImGui.Columns(1);
