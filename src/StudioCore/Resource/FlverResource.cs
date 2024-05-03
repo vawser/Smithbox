@@ -18,6 +18,7 @@ using StudioCore.BanksMain;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Banks.BlockedTextureBank;
 using StudioCore.MsbEditor;
+using StudioCore.Locators;
 
 namespace StudioCore.Resource;
 
@@ -78,29 +79,29 @@ public class FlverResource : IResource, IDisposable
 
     public GPUBufferAllocator.GPUBufferHandle StaticBoneBuffer { get; private set; }
 
-    public bool _Load(Memory<byte> bytes, AccessLevel al, ProjectType type)
+    public bool _Load(Memory<byte> bytes, AccessLevel al)
     {
         bool ret;
-        if (type == ProjectType.DES)
+        if (Project.Type is ProjectType.DES)
         {
             FlverDeS = FLVER0.Read(bytes);
-            ret = LoadInternalDeS(al, type);
+            ret = LoadInternalDeS(al);
         }
         else
         {
-            if (al == AccessLevel.AccessGPUOptimizedOnly && type != ProjectType.DS1R &&
-                type != ProjectType.DS1)
+            if (al == AccessLevel.AccessGPUOptimizedOnly && Project.Type != ProjectType.DS1R &&
+                Project.Type != ProjectType.DS1)
             {
                 BinaryReaderEx br = new(false, bytes);
                 DCX.Type ctype;
                 br = SFUtil.GetDecompressedBR(br, out ctype);
-                ret = LoadInternalFast(br, type);
+                ret = LoadInternalFast(br);
             }
             else
             {
                 FlverCache? cache = al == AccessLevel.AccessGPUOptimizedOnly ? GetCache() : null;
                 Flver = FLVER2.Read(bytes, cache);
-                ret = LoadInternal(al, type);
+                ret = LoadInternal(al);
                 ReleaseCache(cache);
             }
         }
@@ -108,18 +109,18 @@ public class FlverResource : IResource, IDisposable
         return ret;
     }
 
-    public bool _Load(string path, AccessLevel al, ProjectType type)
+    public bool _Load(string path, AccessLevel al)
     {
         bool ret;
-        if (type == ProjectType.DES)
+        if (Project.Type is ProjectType.DES)
         {
             FlverDeS = FLVER0.Read(path);
-            ret = LoadInternalDeS(al, type);
+            ret = LoadInternalDeS(al);
         }
         else
         {
-            if (al == AccessLevel.AccessGPUOptimizedOnly && type != ProjectType.DS1R &&
-                type != ProjectType.DS1)
+            if (al == AccessLevel.AccessGPUOptimizedOnly && Project.Type != ProjectType.DS1R &&
+                Project.Type != ProjectType.DS1)
             {
                 using var file =
                     MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
@@ -127,13 +128,13 @@ public class FlverResource : IResource, IDisposable
                 BinaryReaderEx br = new(false, accessor.Memory);
                 DCX.Type ctype;
                 br = SFUtil.GetDecompressedBR(br, out ctype);
-                ret = LoadInternalFast(br, type);
+                ret = LoadInternalFast(br);
             }
             else
             {
                 FlverCache? cache = al == AccessLevel.AccessGPUOptimizedOnly ? GetCache() : null;
                 Flver = FLVER2.Read(path, cache);
-                ret = LoadInternal(al, type);
+                ret = LoadInternal(al);
                 ReleaseCache(cache);
             }
         }
@@ -177,65 +178,6 @@ public class FlverResource : IResource, IDisposable
         //GC.Collect();
     }
 
-    private string TexturePathToVirtual(string texpath)
-    {
-        // MAP Texture
-        if (texpath.Contains(@"\map\"))
-        {
-            var splits = texpath.Split('\\');
-            var mapid = splits[splits.Length - 3];
-            return $@"map/tex/{mapid}/{Path.GetFileNameWithoutExtension(texpath)}";
-        }
-
-        // CHR Texture
-        if (texpath.Contains(@"\chr\"))
-        {
-            var splits = texpath.Split('\\');
-            var chrid = splits[splits.Length - 3];
-            return $@"chr/{chrid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
-        }
-
-        // OBJ Texture
-        if (texpath.Contains(@"\obj\"))
-        {
-            var splits = texpath.Split('\\');
-            var objid = splits[splits.Length - 3];
-            return $@"obj/{objid}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
-        }
-
-        // AET Texture
-        if (texpath.Contains(@"\aet") || texpath.StartsWith("aet"))
-        {
-            var splits = texpath.Split('\\');
-            var aetid = splits[splits.Length - 1].Substring(0, 6);
-            return $@"aet/{aetid}/{Path.GetFileNameWithoutExtension(texpath)}";
-        }
-
-        // AAT Texture
-        if (texpath.Contains(@"\aat") || texpath.StartsWith("aat"))
-        {
-            var name = Path.GetFileName(texpath);
-            return $@"aat/{Path.GetFileNameWithoutExtension(texpath)}";
-        }
-
-        // SYSTEX Texture
-        if (texpath.Contains(@"\systex") || texpath.StartsWith("systex"))
-        {
-            var name = Path.GetFileName(texpath);
-            return $@"systex/{Path.GetFileNameWithoutExtension(texpath)}";
-        }
-
-        // PARTS Texture
-        if (texpath.Contains(@"\parts\"))
-        {
-            var splits = texpath.Split('\\');
-            var partsId = splits[splits.Length - 3];
-            return $@"parts/{partsId}/tex/{Path.GetFileNameWithoutExtension(texpath)}";
-        }
-
-        return texpath;
-    }
-
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string type, string mpath,
         string mtd)
     {
@@ -271,7 +213,7 @@ public class FlverResource : IResource, IDisposable
 
         if (!dest.TextureResourceFilled[(int)textureType])
         {
-            string virtualPath = TexturePathToVirtual(path.ToLower());
+            string virtualPath = ResourcePathLocator.TexturePathToVirtual(path.ToLower());
 
             // Correct path if it is malformed (as game itself ignores this)
             virtualPath = CorrectedTextures.Bank.CorrectTexturePath(virtualPath);
@@ -282,7 +224,6 @@ public class FlverResource : IResource, IDisposable
     }
 
     private void ProcessMaterialTexture(FlverMaterial dest, string texType, string mpath, string mtd,
-        ProjectType gameType,
         out bool blend, out bool hasNormal2, out bool hasSpec2, out bool hasShininess2, out bool blendMask)
     {
         blend = false;
@@ -328,7 +269,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE2" || paramNameCheck == "G_SPECULAR2" ||
                  paramNameCheck.Contains("SPECULAR_2"))
         {
-            if (gameType is ProjectType.DS1R or ProjectType.DS2S)
+            if (Project.Type is ProjectType.DS1R or ProjectType.DS2S)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource2, dest, texType, mpath, mtd);
                 blend = true;
@@ -344,7 +285,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE" || paramNameCheck == "G_SPECULAR" ||
                  paramNameCheck.Contains("SPECULAR"))
         {
-            if (gameType is ProjectType.DS1R or ProjectType.DS2S)
+            if (Project.Type is ProjectType.DS1R or ProjectType.DS2S)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource, dest, texType, mpath, mtd);
             }
@@ -372,14 +313,14 @@ public class FlverResource : IResource, IDisposable
         }
     }
 
-    private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest, ProjectType type)
+    private unsafe void ProcessMaterial(IFlverMaterial mat, FlverMaterial dest)
     {
         dest.MaterialName = Path.GetFileNameWithoutExtension(mat.MTD);
         dest.MaterialBuffer = Renderer.MaterialBufferAllocator.Allocate((uint)sizeof(Material), sizeof(Material));
         dest.MaterialData = new Material();
 
         //FLVER0 stores layouts directly in the material
-        if (type == ProjectType.DES)
+        if (Project.Type == ProjectType.DES)
         {
             var desMat = (FLVER0.Material)mat;
             var foundBoneIndices = false;
@@ -434,8 +375,7 @@ public class FlverResource : IResource, IDisposable
 
         foreach (IFlverTexture? matparam in mat.Textures)
         {
-            ProcessMaterialTexture(dest, matparam.Type, matparam.Path, mat.MTD, type,
-                out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
+            ProcessMaterialTexture(dest, matparam.Type, matparam.Path, mat.MTD, out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
         }
 
         if (blendMask)
@@ -455,7 +395,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         List<SpecializationConstant> specConstants = new();
-        specConstants.Add(new SpecializationConstant(0, (uint)type));
+        specConstants.Add(new SpecializationConstant(0, (uint)Project.Type));
         if (blend || blendMask)
         {
             specConstants.Add(new SpecializationConstant(1, hasNormal2));
@@ -470,7 +410,7 @@ public class FlverResource : IResource, IDisposable
         dest.UpdateMaterial();
     }
 
-    private unsafe void ProcessMaterial(FlverMaterial dest, ProjectType type, BinaryReaderEx br,
+    private unsafe void ProcessMaterial(FlverMaterial dest, BinaryReaderEx br,
         ref FlverMaterialDef mat, Span<FlverTexture> textures, bool isUTF)
     {
         var mtd = isUTF ? br.GetUTF16(mat.mtdOffset) : br.GetShiftJIS(mat.mtdOffset);
@@ -498,8 +438,7 @@ public class FlverResource : IResource, IDisposable
         {
             var ttype = isUTF ? br.GetUTF16(textures[i].typeOffset) : br.GetShiftJIS(textures[i].typeOffset);
             var tpath = isUTF ? br.GetUTF16(textures[i].pathOffset) : br.GetShiftJIS(textures[i].pathOffset);
-            ProcessMaterialTexture(dest, ttype, tpath, mtd, type,
-                out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
+            ProcessMaterialTexture(dest, ttype, tpath, mtd, out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
         }
 
         if (blendMask)
@@ -519,7 +458,7 @@ public class FlverResource : IResource, IDisposable
         }
 
         List<SpecializationConstant> specConstants = new();
-        specConstants.Add(new SpecializationConstant(0, (uint)type));
+        specConstants.Add(new SpecializationConstant(0, (uint)Project.Type));
         if (blend || blendMask)
         {
             specConstants.Add(new SpecializationConstant(1, hasNormal2));
@@ -1670,7 +1609,7 @@ public class FlverResource : IResource, IDisposable
         Marshal.FreeHGlobal(dest.PickingVertices);
     }
 
-    private bool LoadInternalDeS(AccessLevel al, ProjectType type)
+    private bool LoadInternalDeS(AccessLevel al)
     {
         if (!Universe.IsRendering)
         {
@@ -1693,7 +1632,7 @@ public class FlverResource : IResource, IDisposable
             for (var i = 0; i < FlverDeS.Materials.Count(); i++)
             {
                 GPUMaterials[i] = new FlverMaterial();
-                ProcessMaterial(FlverDeS.Materials[i], GPUMaterials[i], type);
+                ProcessMaterial(FlverDeS.Materials[i], GPUMaterials[i]);
             }
 
             for (var i = 0; i < FlverDeS.Meshes.Count(); i++)
@@ -1723,7 +1662,7 @@ public class FlverResource : IResource, IDisposable
         return true;
     }
 
-    private bool LoadInternal(AccessLevel al, ProjectType type)
+    private bool LoadInternal(AccessLevel al)
     {
         if (!Universe.IsRendering)
         {
@@ -1740,7 +1679,7 @@ public class FlverResource : IResource, IDisposable
             for (var i = 0; i < Flver.Materials.Count(); i++)
             {
                 GPUMaterials[i] = new FlverMaterial();
-                ProcessMaterial(Flver.Materials[i], GPUMaterials[i], type);
+                ProcessMaterial(Flver.Materials[i], GPUMaterials[i]);
             }
 
             for (var i = 0; i < Flver.Meshes.Count(); i++)
@@ -1782,7 +1721,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     // Read only flver loader designed to be very fast at reading with low memory usage
-    private bool LoadInternalFast(BinaryReaderEx br, ProjectType type)
+    private bool LoadInternalFast(BinaryReaderEx br)
     {
         // Parse header
         br.BigEndian = false;
@@ -1887,7 +1826,7 @@ public class FlverResource : IResource, IDisposable
         for (var i = 0; i < materialCount; i++)
         {
             GPUMaterials[i] = new FlverMaterial();
-            ProcessMaterial(GPUMaterials[i], type, br, ref materials[i], textures, unicode);
+            ProcessMaterial(GPUMaterials[i], br, ref materials[i], textures, unicode);
         }
 
         for (var i = 0; i < meshCount; i++)

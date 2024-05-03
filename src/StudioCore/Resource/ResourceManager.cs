@@ -112,7 +112,7 @@ public static class ResourceManager
         {
             TPF.Texture tex = action._tpf.Textures[i];
             ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", action._tpf, i,
-                action._accessLevel, action._game);
+                action._accessLevel);
         }
 
         action._tpf = null;
@@ -132,8 +132,7 @@ public static class ResourceManager
                 foreach (Tuple<IResourceLoadPipeline, string, BinderFileHeader> p in action.PendingResources)
                 {
                     Memory<byte> f = action.Binder.ReadFile(p.Item3);
-                    p.Item1.LoadByteResourceBlock.Post(new LoadByteResourceRequest(p.Item2, f, action.AccessLevel,
-                        Project.Type));
+                    p.Item1.LoadByteResourceBlock.Post(new LoadByteResourceRequest(p.Item2, f, action.AccessLevel));
                     action._job.IncrementEstimateTaskSize(1);
                     i++;
                 }
@@ -149,7 +148,7 @@ public static class ResourceManager
                         TPF f = TPF.Read(action.Binder.ReadFile(binderFileHeader));
 
                         action._job.AddLoadTPFResources(
-                            new LoadTPFResourcesAction(action._job, t.Item1, f, action.AccessLevel, Project.Type), isPersistent);
+                            new LoadTPFResourcesAction(action._job, t.Item1, f, action.AccessLevel), isPersistent);
                     }
                     catch (Exception e)
                     {
@@ -521,32 +520,50 @@ public static class ResourceManager
         public int GetEstimateTaskSize();
     }
 
+    /// <summary>
+    /// TPF Resource Action
+    /// </summary>
     internal struct LoadTPFResourcesAction
     {
+        /// <summary>
+        /// Job this action belongs to.
+        /// </summary>
         public ResourceJob _job;
-        public string _virtpathbase = null;
-        public TPF _tpf = null;
-        public string _filePath = null;
-        public AccessLevel _accessLevel = AccessLevel.AccessGPUOptimizedOnly;
-        public ProjectType _game;
 
-        public LoadTPFResourcesAction(ResourceJob job, string virtpathbase, TPF tpf, AccessLevel al, ProjectType type)
+        /// <summary>
+        /// Virtual resource path used for this TPF
+        /// </summary>
+        public string _virtpathbase = null;
+
+        /// <summary>
+        /// TPF container
+        /// </summary>
+        public TPF _tpf = null;
+
+        /// <summary>
+        /// Absolute resource path used for this TPF
+        /// </summary>
+        public string _filePath = null;
+
+        /// <summary>
+        /// Resource access level
+        /// </summary>
+        public AccessLevel _accessLevel = AccessLevel.AccessGPUOptimizedOnly;
+
+        public LoadTPFResourcesAction(ResourceJob job, string virtpathbase, TPF tpf, AccessLevel al)
         {
             _job = job;
             _virtpathbase = virtpathbase;
             _tpf = tpf;
             _accessLevel = al;
-            _game = type;
         }
 
-        public LoadTPFResourcesAction(ResourceJob job, string virtpathbase, string filePath, AccessLevel al,
-            ProjectType type)
+        public LoadTPFResourcesAction(ResourceJob job, string virtpathbase, string filePath, AccessLevel al)
         {
             _job = job;
             _virtpathbase = virtpathbase;
             _filePath = filePath;
             _accessLevel = al;
-            _game = type;
         }
     }
 
@@ -584,88 +601,117 @@ public static class ResourceManager
 
         public void ProcessBinder()
         {
+            // Read binder
             if (Binder == null)
             {
                 string o;
-                var path = ResourceLocatorUtils.VirtualToRealPath(BinderVirtualPath, out o);
-                //TaskLogs.AddLog($"LoadBinderResourcesAction: {path}");
+                var absoluteBinderPath = ResourcePathLocator.VirtualToRealPath(BinderVirtualPath, out o);
+                TaskLogs.AddResourceLog($@" absolutePath: {absoluteBinderPath}");
 
-                Binder = InstantiateBinderReaderForFile(path, Project.Type);
+                Binder = InstantiateBinderReaderForFile(absoluteBinderPath, Project.Type);
                 if (Binder == null)
                 {
+                    TaskLogs.AddResourceLog($@"Return due to failure to read binder.");
                     return;
                 }
             }
 
+            // Iterate through each file in the binder
             for (var i = 0; i < Binder.Files.Count(); i++)
             {
                 BinderFileHeader f = Binder.Files[i];
+
+                // Skip entry if entry ID is not in binder load mask (if defined)
                 if (BinderLoadMask != null && !BinderLoadMask.Contains(i))
                 {
                     continue;
                 }
 
-                var binderpath = f.Name;
-                var filevirtpath = ResourceLocatorUtils.GetBinderVirtualPath(BinderVirtualPath, binderpath);
+                // Append internal filename to the BinderVirtualPath
+                var curFileBinderPath = BinderVirtualPath;
+                var curBinderFilename = Path.GetFileNameWithoutExtension($@"{f.Name}.blah");
 
-                if (AssetWhitelist != null && !AssetWhitelist.Contains(filevirtpath))
+                if (curBinderFilename.Length > 0)
+                    curFileBinderPath = $@"{BinderVirtualPath}/{curBinderFilename}";
+
+                TaskLogs.AddResourceLog($@"+ {curFileBinderPath}");
+
+                // Skip entry if entry Path is not in AssetWhitelist
+                if (AssetWhitelist != null && !AssetWhitelist.Contains(curFileBinderPath))
                 {
                     continue;
                 }
 
                 IResourceLoadPipeline pipeline = null;
-                if (filevirtpath.ToUpper().EndsWith(".TPF") || filevirtpath.ToUpper().EndsWith(".TPF.DCX"))
+
+                // TPF
+                if (ResourceLocatorUtils.IsTPF(curFileBinderPath))
                 {
-                    var virt = BinderVirtualPath;
-                    if (virt.StartsWith(@"map/tex"))
+                    var bndvirt = BinderVirtualPath;
+
+                    // Handles the 4 TPFBHDs used to hold map textures
+                    // e.g. map/tex/m10_00_00_00/0001
+                    if (bndvirt.StartsWith(@"map/tex"))
                     {
                         Regex regex = new(@"\d{4}$");
-                        if (regex.IsMatch(virt))
+                        if (regex.IsMatch(bndvirt))
                         {
-                            virt = virt.Substring(0, virt.Length - 5);
+                            bndvirt = bndvirt.Substring(0, bndvirt.Length - 5);
                         }
-                        else if (virt.EndsWith("tex"))
+                        else if (bndvirt.EndsWith("tex"))
                         {
-                            virt = virt.Substring(0, virt.Length - 4);
+                            bndvirt = bndvirt.Substring(0, bndvirt.Length - 4);
                         }
                     }
 
-                    // TODO: fix issue with tpfbhd load
-                    PendingTPFs.Add(new Tuple<string, BinderFileHeader, bool>(virt, f, PersistentTPF));
+                    Tuple<string, BinderFileHeader, bool> sentTpf = new(bndvirt, f, PersistentTPF);
+                    PendingTPFs.Add(sentTpf);
                 }
                 else
                 {
-                    if (ResourceMask.HasFlag(ResourceType.Flver) &&
-                        (filevirtpath.ToUpper().EndsWith(".FLVER") ||
-                            filevirtpath.ToUpper().EndsWith(".FLV") ||
-                            filevirtpath.ToUpper().EndsWith(".FLV.DCX")))
+                    // FLVER
+                    if (ResourceMask.HasFlag(ResourceType.Flver))
                     {
-                        //handle = new ResourceHandle<FlverResource>();
-                        pipeline = _job.FlverLoadPipeline;
-                    }
-                    else if (ResourceMask.HasFlag(ResourceType.Navmesh) && filevirtpath.ToUpper().EndsWith(".NVM"))
-                    {
-                        pipeline = _job.NVMNavmeshLoadPipeline;
-                    }
-                    else if (ResourceMask.HasFlag(ResourceType.NavmeshHKX) &&
-                                (filevirtpath.ToUpper().EndsWith(".HKX") ||
-                                filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
-                    {
-                        pipeline = _job.HavokNavmeshLoadPipeline;
+                        if (ResourceLocatorUtils.IsFLVER(curFileBinderPath))
+                        {
+                            //handle = new ResourceHandle<FlverResource>();
+                            pipeline = _job.FlverLoadPipeline;
+                        }
                     }
 
-                    if (FeatureFlags.EnableCollisionPipeline)
+                    // NAVMESH
+                    if (ResourceMask.HasFlag(ResourceType.Navmesh))
                     {
-                        if (ResourceMask.HasFlag(ResourceType.CollisionHKX) && (filevirtpath.ToUpper().EndsWith(".HKX") || filevirtpath.ToUpper().EndsWith(".HKX.DCX")))
+                        if (ResourceLocatorUtils.IsNavmesh(curFileBinderPath))
+                        {
+                            pipeline = _job.NVMNavmeshLoadPipeline;
+                        }
+                    }
+
+                    // HAVOK NAVMESH
+                    if (ResourceMask.HasFlag(ResourceType.NavmeshHKX))
+                    {
+                        if (ResourceLocatorUtils.IsHavokNavmesh(curFileBinderPath))
+                        {
+                            pipeline = _job.HavokNavmeshLoadPipeline;
+                        }
+                    }
+
+                    // HAVOK COLLISION
+                    if (ResourceMask.HasFlag(ResourceType.CollisionHKX))
+                    {
+                        if (ResourceLocatorUtils.IsHavokCollision(curFileBinderPath))
                         {
                             pipeline = _job.HavokCollisionLoadPipeline;
                         }
                     }
 
+                    // Send pipeline (if valid)
                     if (pipeline != null)
                     {
-                        PendingResources.Add(
-                            new Tuple<IResourceLoadPipeline, string, BinderFileHeader>(pipeline, filevirtpath, f));
+                        Tuple<IResourceLoadPipeline, string, BinderFileHeader> sentPipeline = new(pipeline, curFileBinderPath, f);
+
+                        PendingResources.Add(sentPipeline);
                     }
                 }
             }
@@ -711,10 +757,7 @@ public static class ResourceManager
 
             FlverLoadPipeline = new ResourceLoadPipeline<FlverResource>(_processedResources);
 
-            if(FeatureFlags.EnableCollisionPipeline)
-            {
-                HavokCollisionLoadPipeline = new ResourceLoadPipeline<HavokCollisionResource>(_processedResources);
-            }
+            HavokCollisionLoadPipeline = new ResourceLoadPipeline<HavokCollisionResource>(_processedResources);
 
             HavokNavmeshLoadPipeline = new ResourceLoadPipeline<HavokNavmeshResource>(_processedResources);
             NVMNavmeshLoadPipeline = new ResourceLoadPipeline<NVMNavmeshResource>(_processedResources);
@@ -770,31 +813,37 @@ public static class ResourceManager
             {
                 _loadBinderResources.Complete();
                 _loadBinderResources.Completion.Wait();
+
+                // FLVER
                 FlverLoadPipeline.LoadByteResourceBlock.Complete();
                 FlverLoadPipeline.LoadFileResourceRequest.Complete();
 
-                if (FeatureFlags.EnableCollisionPipeline)
-                {
-                    HavokCollisionLoadPipeline.LoadByteResourceBlock.Complete();
-                    HavokCollisionLoadPipeline.LoadFileResourceRequest.Complete();
-                }
+                // HAVOK COLLISION
+                HavokCollisionLoadPipeline.LoadByteResourceBlock.Complete();
+                HavokCollisionLoadPipeline.LoadFileResourceRequest.Complete();
 
+                // HAVOK NAVMESH
                 HavokNavmeshLoadPipeline.LoadByteResourceBlock.Complete();
                 HavokNavmeshLoadPipeline.LoadFileResourceRequest.Complete();
+
+                // TPF
                 _loadTPFResources.Complete();
                 _loadTPFResources.Completion.Wait();
                 TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Complete();
+
+                // FLVER
                 FlverLoadPipeline.LoadByteResourceBlock.Completion.Wait();
                 FlverLoadPipeline.LoadFileResourceRequest.Completion.Wait();
 
-                if (FeatureFlags.EnableCollisionPipeline)
-                {
-                    HavokCollisionLoadPipeline.LoadByteResourceBlock.Completion.Wait();
-                    HavokCollisionLoadPipeline.LoadFileResourceRequest.Completion.Wait();
-                }
+                // HAVOK COLLISION
+                HavokCollisionLoadPipeline.LoadByteResourceBlock.Completion.Wait();
+                HavokCollisionLoadPipeline.LoadFileResourceRequest.Completion.Wait();
 
+                // HAVOK NAVMESH
                 HavokNavmeshLoadPipeline.LoadByteResourceBlock.Completion.Wait();
                 HavokNavmeshLoadPipeline.LoadFileResourceRequest.Completion.Wait();
+
+                // TPF
                 TPFTextureLoadPipeline.LoadTPFTextureResourceRequest.Completion.Wait();
 
                 Finished = true;
@@ -834,25 +883,36 @@ public static class ResourceManager
         }
 
         /// <summary>
-        ///     Loads an entire archive in this virtual path
+        /// Loads an entire archive in this virtual path
         /// </summary>
         /// <param name="virtualPath"></param>
         public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly,
             HashSet<string> assets = null, bool isPersistent = false)
         {
+            TaskLogs.AddResourceLog($@"-------------------------");
+            TaskLogs.AddResourceLog($@"AddLoadArchiveTask");
+            TaskLogs.AddResourceLog($@" virtualPath: {virtualPath}");
+            TaskLogs.AddResourceLog($@" al: {al}");
+            TaskLogs.AddResourceLog($@" populateOnly: {populateOnly}");
+            TaskLogs.AddResourceLog($@" isPersistent: {isPersistent}");
+
             if (InFlightFiles.Contains(virtualPath))
             {
+                TaskLogs.AddResourceLog($@"Return due to file in flight.");
                 return;
             }
 
             InFlightFiles.Add(virtualPath);
             if (virtualPath == "null")
             {
+                TaskLogs.AddResourceLog($@"Return due to null virtual path.");
                 return;
             }
 
             if (!archivesToLoad.Contains(virtualPath))
             {
+                TaskLogs.AddResourceLog($@"Added {virtualPath} to archivesToLoad");
+
                 archivesToLoad.Add(virtualPath);
                 _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, ResourceType.All, assets, isPersistent), isPersistent);
             }
@@ -860,19 +920,30 @@ public static class ResourceManager
 
         public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly, ResourceType filter, HashSet<string> assets = null, bool isPersistent = false)
         {
+            TaskLogs.AddResourceLog($@"-------------------------");
+            TaskLogs.AddResourceLog($@"AddLoadArchiveTask");
+            TaskLogs.AddResourceLog($@" virtualPath: {virtualPath}");
+            TaskLogs.AddResourceLog($@" al: {al}");
+            TaskLogs.AddResourceLog($@" populateOnly: {populateOnly}");
+            TaskLogs.AddResourceLog($@" isPersistent: {isPersistent}");
+
             if (InFlightFiles.Contains(virtualPath))
             {
+                TaskLogs.AddResourceLog($@"Return due to file in flight.");
                 return;
             }
 
             InFlightFiles.Add(virtualPath);
             if (virtualPath == "null")
             {
+                TaskLogs.AddResourceLog($@"Return due to null virtual path.");
                 return;
             }
 
             if (!archivesToLoad.Contains(virtualPath))
             {
+                TaskLogs.AddResourceLog($@"Added {virtualPath} to archivesToLoad");
+
                 archivesToLoad.Add(virtualPath);
                 _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, filter, assets, isPersistent), isPersistent);
             }
@@ -884,16 +955,24 @@ public static class ResourceManager
         /// <param name="virtualPath"></param>
         public void AddLoadFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
         {
+            TaskLogs.AddResourceLog($@"-------------------------");
+            TaskLogs.AddResourceLog($@"AddLoadFileTask");
+            TaskLogs.AddResourceLog($@" virtualPath: {virtualPath}");
+            TaskLogs.AddResourceLog($@" al: {al}");
+            TaskLogs.AddResourceLog($@" isPersistent: {isPersistent}");
+
             if (InFlightFiles.Contains(virtualPath))
             {
+                TaskLogs.AddResourceLog($@"Return due to file in flight.");
                 return;
             }
 
             InFlightFiles.Add(virtualPath);
 
             string bndout;
-            var path = ResourceLocatorUtils.VirtualToRealPath(virtualPath, out bndout);
-            //TaskLogs.AddLog($"AddLoadFileTask: {path}");
+            var path = ResourcePathLocator.VirtualToRealPath(virtualPath, out bndout);
+
+            TaskLogs.AddResourceLog($@" absolutePath: {path}");
 
             IResourceLoadPipeline pipeline;
             if (path == null || virtualPath == "null")
@@ -921,7 +1000,7 @@ public static class ResourceManager
                     }
                 }
 
-                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, path, al, Project.Type), true);
+                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, path, al), true);
                 return;
             }
             else
@@ -929,7 +1008,7 @@ public static class ResourceManager
                 pipeline = _job.FlverLoadPipeline;
             }
 
-            pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, path, al, Project.Type));
+            pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, path, al));
         }
 
         /// <summary>
@@ -952,7 +1031,7 @@ public static class ResourceManager
                     {
                         _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
                             Path.GetDirectoryName(r.Key).Replace('\\', '/'),
-                            path, AccessLevel.AccessGPUOptimizedOnly, Project.Type));
+                            path, AccessLevel.AccessGPUOptimizedOnly));
                     }
                 }
             }
@@ -1033,7 +1112,7 @@ public static class ResourceManager
                     {
                         _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
                             Path.GetDirectoryName(texpath).Replace('\\', '/'), path,
-                            AccessLevel.AccessGPUOptimizedOnly, Project.Type));
+                            AccessLevel.AccessGPUOptimizedOnly));
                     }
                 }
             }

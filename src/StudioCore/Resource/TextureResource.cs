@@ -117,12 +117,12 @@ public class TextureResource : IResource, IDisposable
         GC.SuppressFinalize(this);
     }
 
-    bool IResource._Load(Memory<byte> bytes, AccessLevel al, ProjectType type)
+    bool IResource._Load(Memory<byte> bytes, AccessLevel al)
     {
         return _LoadTexture(al);
     }
 
-    bool IResource._Load(string file, AccessLevel al, ProjectType type)
+    bool IResource._Load(string file, AccessLevel al)
     {
         return _LoadTexture(al);
     }

@@ -985,33 +985,30 @@ public class Universe
                     tasks.Add(task);
                 }
 
-                if (FeatureFlags.EnableCollisionPipeline)
+                job = ResourceManager.CreateNewJob($@"Loading {amapid} collisions");
+                string archive = null;
+                HashSet<string> colassets = new();
+                foreach (ResourceDescriptor col in colsToLoad)
                 {
-                    job = ResourceManager.CreateNewJob($@"Loading {amapid} collisions");
-                    string archive = null;
-                    HashSet<string> colassets = new();
-                    foreach (ResourceDescriptor col in colsToLoad)
+                    if (col.AssetArchiveVirtualPath != null)
                     {
-                        if (col.AssetArchiveVirtualPath != null)
-                        {
-                            //job.AddLoadArchiveTask(col.AssetArchiveVirtualPath, false);
-                            archive = col.AssetArchiveVirtualPath;
-                            colassets.Add(col.AssetVirtualPath);
-                        }
-                        else if (col.AssetVirtualPath != null)
-                        {
-                            job.AddLoadFileTask(col.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                        }
+                        //job.AddLoadArchiveTask(col.AssetArchiveVirtualPath, false);
+                        archive = col.AssetArchiveVirtualPath;
+                        colassets.Add(col.AssetVirtualPath);
                     }
-
-                    if (archive != null)
+                    else if (col.AssetVirtualPath != null)
                     {
-                        job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, colassets);
+                        job.AddLoadFileTask(col.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
                     }
-
-                    task = job.Complete();
-                    tasks.Add(task);
                 }
+
+                if (archive != null)
+                {
+                    job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, colassets);
+                }
+
+                task = job.Complete();
+                tasks.Add(task);
 
 
                 job = ResourceManager.CreateNewJob(@"Loading chrs");
