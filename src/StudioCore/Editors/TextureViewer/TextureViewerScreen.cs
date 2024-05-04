@@ -48,6 +48,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     private static TPF.Texture _selectedTexture;
 
     public static TextureResource CurrentTextureInView;
+    public static string CurrentTextureName;
+    public static string CurrentTextureContainerName;
 
     private Task _loadingTask;
 
@@ -248,6 +250,12 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         DisplayFileSection("Characters", TextureViewCategory.Character);
 
+        // AC6 needs some adjustments to support its parts properly
+        if (Project.Type != ProjectType.AC6)
+        {
+            DisplayFileSection("Parts", TextureViewCategory.Part);
+        }
+
         DisplayFileSection("Menu", TextureViewCategory.Menu);
 
         DisplayFileSection("Other", TextureViewCategory.Other);
@@ -283,6 +291,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     {
         _selectedTextureContainerKey = info.Name;
         _selectedTextureContainer = info;
+        CurrentTextureContainerName = _selectedTextureContainerKey;
 
         // TODO: fix issue with selection causing the job to unload at the same time it is loaded (only occurs every second press)
 
@@ -307,6 +316,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             ad = ResourceTextureLocator.GetObjTextureContainer(_selectedTextureContainerKey);
         }
 
+        if (info.Category == TextureViewCategory.Part)
+        {
+            ad = ResourceTextureLocator.GetPartTextureContainer(_selectedTextureContainerKey);
+        }
+
         if (info.Category == TextureViewCategory.Other)
         {
             ad = ResourceTextureLocator.GetOtherTextureContainer(_selectedTextureContainerKey);
@@ -315,7 +329,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         if (info.Category == TextureViewCategory.Character)
         {
             var chrId = _selectedTextureContainerKey;
-            if(Project.Type ==ProjectType.ER)
+            if(Project.Type is ProjectType.ER)
             {
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
@@ -460,6 +474,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 TextureResource texRes = resHandle.Get();
 
                 CurrentTextureInView = texRes;
+                CurrentTextureName = _selectedTextureKey;
 
                 if (texRes != null)
                 {

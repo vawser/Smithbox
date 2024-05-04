@@ -365,6 +365,8 @@ public class TexturePool
         public uint Height { get; set; }
         public VkFormat Format { get; set; }
 
+        public TPF.Texture TpfTexture { get; set; }
+
         public static bool IsTPFCube(TPF.Texture tex, TPF.TPFPlatform platform)
         {
             if (platform == TPF.TPFPlatform.PC)
@@ -379,6 +381,8 @@ public class TexturePool
         public unsafe void FillWithTPF(GraphicsDevice d, CommandList cl, TPF.TPFPlatform platform, TPF.Texture tex,
             string name)
         {
+            TpfTexture = tex;
+
             DDS dds;
 
             Memory<byte> bytes = tex.Bytes;

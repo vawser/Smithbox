@@ -79,6 +79,7 @@ public static class ResourcePathLocator
         // Parse the virtual path with a DFA and convert it to a game path
         var i = 0;
 
+        // MAP
         if (pathElements[i].Equals("map"))
         {
             i++;

@@ -28,5 +28,5 @@ public static class FeatureFlags
     public static bool EnableEditor_BehaviorEditor = false;
 
     // Disable for release
-    public static bool EnableResourceLogging = true;
+    public static bool EnableResourceLogging = false;
 }

@@ -261,6 +261,28 @@ public static class ResourceTextureLocator
         return ad;
     }
 
+    public static ResourceDescriptor GetPartTextureContainer(string part)
+    {
+        ResourceDescriptor ad = new();
+        ad.AssetPath = null;
+        ad.AssetArchiveVirtualPath = null;
+        string path = null;
+
+        if (Project.Type == ProjectType.DS1)
+            path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd");
+        else if (Project.Type is ProjectType.DES or ProjectType.DS1R or ProjectType.BB
+                 or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+            path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd.dcx");
+
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetArchiveVirtualPath = $@"parts/{part}/tex";
+        }
+
+        return ad;
+    }
+
     public static ResourceDescriptor GetAetTexture(string aetid)
     {
         ResourceDescriptor ad = new();

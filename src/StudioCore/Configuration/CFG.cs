@@ -11,6 +11,7 @@ using StudioCore.MsbEditor;
 using StudioCore.UserProject;
 using Veldrid;
 using StudioCore.Editors.TextEditor.Toolbar;
+using static StudioCore.Editors.TextureViewer.Toolbar.TexAction_ExportTexture;
 
 namespace StudioCore;
 
@@ -499,6 +500,9 @@ public class CFG
     // Settings: Texture Viewer
     //****************************
     public string TextureViewerToolbar_ExportTextureLocation = "";
+    public bool TextureViewerToolbar_ExportTexture_IncludeFolder = true;
+    public bool TextureViewerToolbar_ExportTexture_DisplayConfirm = true;
+    public int TextureViewerToolbar_ExportTextureType = 0;
 
     //****************************
     // Windows

@@ -19,7 +19,8 @@ public static class TextureFolderBank
         Asset = 2,
         Character = 3,
         Object = 4,
-        Other = 5
+        Other = 5,
+        Part = 6
     }
 
     public static bool IsLoaded { get; private set; }
@@ -45,6 +46,9 @@ public static class TextureFolderBank
 
         // Characters
         FindFolderNames_Characters(TextureViewCategory.Character);
+
+        // Parts
+        FindFolderNames_Parts(TextureViewCategory.Part);
 
         // Other
         FindFolderNames_Other(TextureViewCategory.Other);
@@ -201,6 +205,31 @@ public static class TextureFolderBank
         {
             folderDir = @"\model\chr\";
             fileExt = ".texbnd";
+        }
+
+        foreach (var name in GetFileNames(folderDir, fileExt))
+        {
+            var filePath = $"{folderDir}\\{name}{fileExt}";
+
+            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            {
+                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
+            }
+            else
+            {
+                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
+            }
+        }
+    }
+
+    private static void FindFolderNames_Parts(TextureViewCategory category)
+    {
+        var folderDir = @"\parts";
+        var fileExt = @".partsbnd.dcx";
+
+        if (Project.Type == ProjectType.DS1)
+        {
+            fileExt = @".partsbnd";
         }
 
         foreach (var name in GetFileNames(folderDir, fileExt))
