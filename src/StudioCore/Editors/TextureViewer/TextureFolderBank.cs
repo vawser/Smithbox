@@ -20,7 +20,8 @@ public static class TextureFolderBank
         Character = 3,
         Object = 4,
         Other = 5,
-        Part = 6
+        Part = 6,
+        Particle = 7
     }
 
     public static bool IsLoaded { get; private set; }
@@ -49,6 +50,9 @@ public static class TextureFolderBank
 
         // Parts
         FindFolderNames_Parts(TextureViewCategory.Part);
+
+        // SFX
+        FindFolderNames_Particles(TextureViewCategory.Particle);
 
         // Other
         FindFolderNames_Other(TextureViewCategory.Other);
@@ -231,6 +235,26 @@ public static class TextureFolderBank
         {
             fileExt = @".partsbnd";
         }
+
+        foreach (var name in GetFileNames(folderDir, fileExt))
+        {
+            var filePath = $"{folderDir}\\{name}{fileExt}";
+
+            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
+            {
+                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
+            }
+            else
+            {
+                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
+            }
+        }
+    }
+
+    private static void FindFolderNames_Particles(TextureViewCategory category)
+    {
+        var folderDir = @"\sfx";
+        var fileExt = @".ffxbnd.dcx";
 
         foreach (var name in GetFileNames(folderDir, fileExt))
         {

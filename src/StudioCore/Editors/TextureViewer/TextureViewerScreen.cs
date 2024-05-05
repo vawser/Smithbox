@@ -81,12 +81,14 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     private List<AliasReference> _chrNameCache = new List<AliasReference>();
     private List<AliasReference> _objNameCache = new List<AliasReference>();
     private List<AliasReference> _partNameCache = new List<AliasReference>();
+    private List<AliasReference> _sfxNameCache = new List<AliasReference>();
 
     public void OnProjectChanged()
     {
         _chrNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
         _objNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
         _partNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
+        _sfxNameCache = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
 
         ResetTextureViewer();
 
@@ -271,6 +273,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             DisplayFileSection("Parts", TextureViewCategory.Part);
         }
 
+        DisplayFileSection("Particles", TextureViewCategory.Particle);
+
         DisplayFileSection("Menu", TextureViewCategory.Menu);
 
         DisplayFileSection("Other", TextureViewCategory.Other);
@@ -339,6 +343,12 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         if (displayCategory == TextureViewCategory.Part)
         {
             newName = AppendAliasToName(newName, _partNameCache, displayCategory);
+        }
+
+        // Particles
+        if (displayCategory == TextureViewCategory.Particle)
+        {
+            newName = AppendAliasToName(newName, _sfxNameCache, displayCategory);
         }
 
         // MapPieces
@@ -417,6 +427,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         if (info.Category == TextureViewCategory.Other)
         {
             ad = ResourceTextureLocator.GetOtherTextureContainer(_selectedTextureContainerKey);
+        }
+
+        if (info.Category == TextureViewCategory.Particle)
+        {
+            ad = ResourceTextureLocator.GetParticleTextureContainer(_selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Character)
@@ -552,9 +567,15 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         ImGui.End();
     }
 
+    private Vector2 TextureViewWindowPosition = new Vector2(0, 0);
+    private Vector2 TextureViewScrollPosition = new Vector2(0, 0);
+
     private void TextureViewer()
     {
         ImGui.Begin("Viewer##TextureViewer", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
+
+        TextureViewWindowPosition = ImGui.GetWindowPos();
+        TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
 
         if (_selectedTexture != null)
         {
@@ -645,12 +666,33 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 {
                     ImGui.Text($"{CurrentTextureInView.GPUTexture.Format}".ToUpper());
                 }
-
                 ImGui.Columns(1);
+
+                ImGui.Text("");
+                ImGui.Text($"Relative Position: {GetRelativePosition(size, TextureViewWindowPosition, TextureViewScrollPosition)}");
             }
         }
 
         ImGui.End();
+    }
+
+    private Vector2 GetRelativePosition(Vector2 imageSize, Vector2 windowPos, Vector2 scrollPos)
+    {
+        Vector2 relativePos = new Vector2(0, 0);
+
+        var fixedX = 3;
+        var fixedY = 24;
+        var cursorPos = ImGui.GetMousePos();
+
+        // Account for window positiona and scroll
+        relativePos.X = cursorPos.X - ((windowPos.X + fixedX) - scrollPos.X);
+        relativePos.Y = cursorPos.Y - ((windowPos.Y + fixedY) - scrollPos.Y);
+
+        // Account for zoom
+        relativePos.X = relativePos.X / zoomFactor.X;
+        relativePos.Y = relativePos.Y / zoomFactor.Y;
+
+        return relativePos;
     }
 
     public void Save()

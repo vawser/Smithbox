@@ -608,4 +608,36 @@ public static class ResourceTextureLocator
 
         return null;
     }
+
+    public static ResourceDescriptor GetParticleTextureContainer(string resourceName)
+    {
+        var path = "";
+        ResourceDescriptor ad = new();
+        ad.AssetVirtualPath = null;
+        ad.AssetPath = null;
+
+        path = GetParticleTextureContainerPath(resourceName);
+
+        if (path != null)
+        {
+            ad.AssetPath = path;
+            ad.AssetArchiveVirtualPath = $@"sfx/{resourceName}/tex";
+        }
+
+        return ad;
+    }
+
+    public static string GetParticleTextureContainerPath(string resourceName)
+    {
+        var overrideFilePath = "";
+
+        overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"sfx\{resourceName}.ffxbnd.dcx");
+
+        if (overrideFilePath != null)
+        {
+            return overrideFilePath;
+        }
+
+        return null;
+    }
 }

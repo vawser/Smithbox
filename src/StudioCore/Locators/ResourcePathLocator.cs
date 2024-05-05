@@ -396,6 +396,20 @@ public static class ResourcePathLocator
                 return ResourceTextureLocator.GetAssetTextureContainerPath(containerName);
             }
         }
+        // Particle
+        else if (pathElements[i].Equals("sfx"))
+        {
+            i++;
+
+            var containerName = pathElements[i];
+            i++;
+
+            if (pathElements[i].Equals("tex"))
+            {
+                bndpath = "";
+                return ResourceTextureLocator.GetParticleTextureContainerPath(containerName);
+            }
+        }
         // OTHER
         else if (pathElements[i].Equals("other"))
         {
