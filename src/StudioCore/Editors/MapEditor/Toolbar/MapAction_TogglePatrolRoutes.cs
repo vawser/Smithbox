@@ -33,8 +33,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes)
             {
-                ImGui.Text("Toggle the rendering of patrol route connections.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Toggle the rendering of patrol route connections.");
+                ImguiUtils.WrappedText("");
             }
         }
 
@@ -61,7 +61,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_RenderEnemyPatrolRoutes.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_RenderEnemyPatrolRoutes.HintText)}");
             }
         }
     }

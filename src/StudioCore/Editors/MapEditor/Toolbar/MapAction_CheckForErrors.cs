@@ -33,9 +33,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Check_for_Errors)
             {
-                ImGui.Text("This tool will check for any incorrect property assignments.");
-                ImGui.Text("Invalid assignments will be noted in the logger.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("This tool will check for any incorrect property assignments.");
+                ImguiUtils.WrappedText("Invalid assignments will be noted in the logger.");
+                ImguiUtils.WrappedText("");
             }
         }
 

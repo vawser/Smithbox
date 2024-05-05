@@ -1,4 +1,5 @@
 ﻿using ImGuiNET;
+using StudioCore.Interface;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ public class TextToolbar_Configuration
     {
         ImGui.Indent(10.0f);
         ImGui.Separator();
-        ImGui.Text("Configuration");
+        ImguiUtils.WrappedText("Configuration");
         ImGui.Separator();
 
         TextAction_Duplicate.Configure();

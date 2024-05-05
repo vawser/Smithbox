@@ -28,8 +28,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Go_to_in_Object_List)
             {
-                ImGui.Text("Move the camera to the current selection (first if multiple are selected).");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Move the camera to the current selection (first if multiple are selected).");
+                ImguiUtils.WrappedText("");
             }
         }
 
@@ -54,7 +54,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Go_to_in_Object_List)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Go_to_Selection_in_Object_List.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Go_to_Selection_in_Object_List.HintText)}");
             }
         }
 

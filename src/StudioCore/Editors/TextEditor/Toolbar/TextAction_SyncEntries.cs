@@ -41,8 +41,8 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         {
             if (TextToolbar.SelectedAction == TextEditorAction.SyncEntries)
             {
-                ImGui.Text("Synchronize child entries (as defined below) with their parent entry.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Synchronize child entries (as defined below) with their parent entry.");
+                ImguiUtils.WrappedText("");
 
                 ImGui.Text("Text Category:");
                 if (ImGui.BeginCombo("##Text Category", CurrentTextCategory))
@@ -58,12 +58,12 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("Text category to sync.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Parent Modulus:");
+                ImguiUtils.WrappedText("Parent Modulus:");
                 ImGui.InputInt("##Modulus", ref CFG.Current.FMG_SyncEntries_Modulus);
                 ImguiUtils.ShowHoverTooltip("The modulus used to detect which FMG entries are considered 'base' entries.\n\nExample:\nThe weapon entries are spaced by 10000 or more. Therefore the modulus will match with the 'base' entries, but 'sub' entries will not. This means we can then assume any entries after the 'base' entry but below the 'base' entry ID plus the modulus are 'sub' entries.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 

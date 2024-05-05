@@ -32,10 +32,10 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Replicate)
             {
-                ImGui.Text("Replicate the current selection by the following parameters.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Replicate the current selection by the following parameters.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Replicate Style:");
+                ImguiUtils.WrappedText("Replicate Style:");
                 if (ImGui.Checkbox("Line", ref CFG.Current.Replicator_Mode_Line))
                 {
                     CFG.Current.Replicator_Mode_Circle = false;
@@ -62,24 +62,24 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     CFG.Current.Replicator_Mode_Box = false;
                 }
                 ImguiUtils.ShowHoverTooltip("Replicate the first selection in the Square shape.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
                 
                 // Line
                 if (CFG.Current.Replicator_Mode_Line)
                 {
-                    ImGui.Text("Amount to Replicate:");
+                    ImguiUtils.WrappedText("Amount to Replicate:");
                     ImGui.PushItemWidth(300);
                     ImGui.InputInt("##Amount", ref CFG.Current.Replicator_Line_Clone_Amount);
                     ImguiUtils.ShowHoverTooltip("The amount of new entities to create (from the first selection).");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("Offset per Replicate:");
+                    ImguiUtils.WrappedText("Offset per Replicate:");
                     ImGui.PushItemWidth(300);
                     ImGui.InputInt("##Offset", ref CFG.Current.Replicator_Line_Position_Offset);
                     ImguiUtils.ShowHoverTooltip("The distance between each newly created entity.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("Replicate Direction:");
+                    ImguiUtils.WrappedText("Replicate Direction:");
                     if (ImGui.Checkbox("X", ref CFG.Current.Replicator_Line_Position_Offset_Axis_X))
                     {
                         CFG.Current.Replicator_Line_Position_Offset_Axis_Y = false;
@@ -100,7 +100,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         CFG.Current.Replicator_Line_Position_Offset_Axis_Y = false;
                     }
                     ImguiUtils.ShowHoverTooltip("Replicate on the Z-axis.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     ImGui.Checkbox("Flip Offset Direction", ref CFG.Current.Replicator_Line_Offset_Direction_Flipped);
                     ImguiUtils.ShowHoverTooltip("When enabled, the position offset will be applied in the opposite direction.");
@@ -109,13 +109,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 // Circle
                 if (CFG.Current.Replicator_Mode_Circle)
                 {
-                    ImGui.Text("Amount to Replicate:");
+                    ImguiUtils.WrappedText("Amount to Replicate:");
                     ImGui.PushItemWidth(300);
                     ImGui.InputInt("##Size", ref CFG.Current.Replicator_Circle_Size);
                     ImguiUtils.ShowHoverTooltip("The number of points within the circle on which the entities are placed.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("Circle Radius:");
+                    ImguiUtils.WrappedText("Circle Radius:");
                     if (ImGui.Button("Switch"))
                     {
                         CFG.Current.Replicator_Circle_Radius_Specific_Input = !CFG.Current.Replicator_Circle_Radius_Specific_Input;
@@ -132,7 +132,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         ImGui.SliderFloat("##Radius", ref CFG.Current.Replicator_Circle_Radius, 0.1f, 100);
                     }
                     ImguiUtils.ShowHoverTooltip("The radius of the circle on which to place the entities.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     if (CFG.Current.Replicator_Circle_Size < 1)
                         CFG.Current.Replicator_Circle_Size = 1;
@@ -142,23 +142,23 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 // Square
                 if (CFG.Current.Replicator_Mode_Square)
                 {
-                    ImGui.Text("Amount to Replicate:");
+                    ImguiUtils.WrappedText("Amount to Replicate:");
                     ImGui.PushItemWidth(300);
                     ImGui.InputInt("##Size", ref CFG.Current.Replicator_Square_Size);
                     ImguiUtils.ShowHoverTooltip("The number of points on one side of the square on which the entities are placed.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("Square Width:");
+                    ImguiUtils.WrappedText("Square Width:");
                     ImGui.PushItemWidth(300);
                     ImGui.InputFloat("##Width", ref CFG.Current.Replicator_Square_Width);
                     ImguiUtils.ShowHoverTooltip("The width of the square on which to place the entities.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("Square Height:");
+                    ImguiUtils.WrappedText("Square Height:");
                     ImGui.PushItemWidth(300);
                     ImGui.InputFloat("##Depth", ref CFG.Current.Replicator_Square_Depth);
                     ImguiUtils.ShowHoverTooltip("The depth of the square on which to place the entities.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     if (CFG.Current.Replicator_Square_Width < 1)
                         CFG.Current.Replicator_Square_Width = 1;
@@ -212,7 +212,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImguiUtils.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
                 }
 
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 
@@ -238,7 +238,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Replicate)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Replicate.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Replicate.HintText)}");
             }
         }
 

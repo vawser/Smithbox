@@ -36,10 +36,10 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.ExportPrefab)
             {
-                ImGui.Text("Export the current selection as a prefab.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Export the current selection as a prefab.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Prefab Name:");
+                ImguiUtils.WrappedText("Prefab Name:");
                 ImGui.InputText("##prefabName", ref MapToolbar._prefabName, 255);
 
                 if (_selection.GetSelection().Count != 0)
@@ -52,17 +52,17 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImguiUtils.ShowHoverTooltip("Get an unique prefab name based on the first element of the current selection.");
                 }
 
-                ImGui.Text("Prefab Tags:");
+                ImguiUtils.WrappedText("Prefab Tags:");
                 ImGui.InputText("##prefabTags", ref MapToolbar._prefabTags, 255);
                 ImguiUtils.ShowHoverTooltip("The set of tags to save this prefab under. Split each tag with the , character.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("Retain Entity ID", ref CFG.Current.Prefab_IncludeEntityID);
                 ImguiUtils.ShowHoverTooltip("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
 
                 ImGui.Checkbox("Retain Entity Group IDs", ref CFG.Current.Prefab_IncludeEntityGroupIDs);
                 ImguiUtils.ShowHoverTooltip("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 

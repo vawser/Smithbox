@@ -228,7 +228,20 @@ public static class ResourcePathLocator
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return ResourceTextureLocator.GetChrTexturePath(chrid);
+
+                var isLowDetail = false;
+
+                // This is so the ER chr textures _l will display in the Texture Viewer
+                if (pathElements.Length == 4)
+                {
+                    i++;
+                    if (pathElements[i].Equals("low"))
+                    {
+                        isLowDetail = true;
+                    }
+                }
+
+                return ResourceTextureLocator.GetChrTexturePath(chrid, isLowDetail);
             }
         }
         // OBJECTS

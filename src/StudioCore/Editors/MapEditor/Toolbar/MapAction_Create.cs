@@ -47,23 +47,28 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Create)
             {
-                ImGui.Text("Create a new object within the target map.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Create a new object within the target map.");
+                ImguiUtils.WrappedText("");
 
-                if (!MapEditorState.LoadedMaps.Any())
+                if (MapEditorState.LoadedMaps == null)
                 {
-                    ImGui.Text("No maps have been loaded yet.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("No maps have been loaded yet.");
+                    ImguiUtils.WrappedText("");
+                }
+                else if (MapEditorState.LoadedMaps != null && !MapEditorState.LoadedMaps.Any())
+                {
+                    ImguiUtils.WrappedText("No maps have been loaded yet.");
+                    ImguiUtils.WrappedText("");
                 }
                 else
                 {
                     var map = (MapContainer)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
 
-                    ImGui.Text("Target Map:");
+                    ImguiUtils.WrappedText("Target Map:");
                     ImGui.Combo("##Target Map", ref _createEntityMapIndex, MapEditorState.LoadedMaps.Select(e => e.Name).ToArray(), MapEditorState.LoadedMaps.Count());
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("Target Type:");
+                    ImguiUtils.WrappedText("Target Type:");
                     if (map.BTLParents.Any())
                     {
                         if (ImGui.Checkbox("BTL Light", ref CFG.Current.Toolbar_Create_Light))
@@ -98,7 +103,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         CFG.Current.Toolbar_Create_Part = false;
                     }
                     ImguiUtils.ShowHoverTooltip("Create an Event object.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     if (CFG.Current.Toolbar_Create_Light)
                     {
@@ -107,7 +112,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                     if (CFG.Current.Toolbar_Create_Part)
                     {
-                        ImGui.Text("Part Type:");
+                        ImguiUtils.WrappedText("Part Type:");
                         ImGui.BeginChild("msb_part_selection", new Vector2((width - 10), (height / 4)));
 
                         foreach ((string, Type) p in _partsClasses)
@@ -130,7 +135,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         }
                         else
                         {
-                            ImGui.Text("Region Type:");
+                            ImguiUtils.WrappedText("Region Type:");
 
                             ImGui.BeginChild("msb_region_selection", new Vector2((width - 10), (height / 4)));
 
@@ -148,7 +153,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                     if (CFG.Current.Toolbar_Create_Event)
                     {
-                        ImGui.Text("Event Type:");
+                        ImguiUtils.WrappedText("Event Type:");
                         ImGui.BeginChild("msb_event_selection", new Vector2((width - 10), (height / 4)));
 
                         foreach ((string, Type) p in _eventClasses)
@@ -180,7 +185,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Create)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Create.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Create.HintText)}");
             }
         }
 

@@ -105,7 +105,7 @@ namespace StudioCore.Editors.ModelEditor
                 DisplayTopSection();
 
                 ImGui.Separator();
-                ImGui.Text("Categories:");
+                ImguiUtils.WrappedText("Categories:");
                 ImGui.Separator();
 
                 DisplayCategoryList();
@@ -120,7 +120,7 @@ namespace StudioCore.Editors.ModelEditor
             if (ImGui.Begin($@"Asset Browser: Contents##ModelEditor_AssetBrowser_ContentList"))
             {
                 ImGui.Separator();
-                ImGui.Text("Assets:");
+                ImguiUtils.WrappedText("Assets:");
                 ImGui.Separator();
 
                 DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
@@ -140,7 +140,7 @@ namespace StudioCore.Editors.ModelEditor
                 ImGui.Indent(10.0f);
 
                 ImGui.Separator();
-                ImGui.Text("Actions:");
+                ImguiUtils.WrappedText("Actions:");
                 ImGui.Separator();
 
                 DisplayActionSection();
@@ -174,31 +174,31 @@ namespace StudioCore.Editors.ModelEditor
             if (_selectedName == null || _selectedName == "")
                 return;
 
-            ImGui.Text("Load the selected asset.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("Load the selected asset.");
+            ImguiUtils.WrappedText("");
 
             if (ImGui.Button("Load##action_Asset_Load", new Vector2(200, 32)))
             {
                 LoadAssetSelection();
             }
-            ImGui.Text("");
+            ImguiUtils.WrappedText("");
 
             ImGui.Separator();
-            ImGui.Text("Alias:");
+            ImguiUtils.WrappedText("Alias:");
             ImGui.Separator();
 
-            ImGui.Text("Update the stored name and tag list for the selected asset here.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("Update the stored name and tag list for the selected asset here.");
+            ImguiUtils.WrappedText("");
 
-            ImGui.Text("Name:");
+            ImguiUtils.WrappedText("Name:");
             ImGui.InputText($"##Name", ref _refUpdateName, 255);
             ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("");
 
-            ImGui.Text("Tags:");
+            ImguiUtils.WrappedText("Tags:");
             ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
             ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("");
 
             if (ImGui.Button("Update##action_AssetAlias_Update", new Vector2(200, 32)))
             {

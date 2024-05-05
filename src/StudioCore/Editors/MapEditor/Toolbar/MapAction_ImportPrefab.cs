@@ -48,8 +48,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             if (MapEditorState.SelectedAction == MapEditorAction.ImportPrefab)
             {
-                ImGui.Text("Import the selected prefab into a loaded map.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Import the selected prefab into a loaded map.");
+                ImguiUtils.WrappedText("");
 
                 ImGui.InputText($"Search", ref _searchInput, 255);
                 if (_searchInput != _searchInputCache)
@@ -62,7 +62,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ShowPrefabContents = !ShowPrefabContents;
                 }
                 ImguiUtils.ShowHoverTooltip("Toggle the visibility of the tags and content section.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 // Prefab Select
                 ImGui.BeginChild("##PrefabList_Names", new Vector2((width - 10), (height / 5)));
@@ -81,10 +81,10 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 }
 
                 ImGui.Separator();
-                ImGui.Text("Action:");
+                ImguiUtils.WrappedText("Action:");
                 ImGui.Separator();
 
-                ImGui.Text("Targeted Map:");
+                ImguiUtils.WrappedText("Targeted Map:");
                 if (ImGui.BeginCombo("##Targeted Map", comboMap.Item1))
                 {
                     foreach (var obj in universe.LoadedObjectContainers)
@@ -101,7 +101,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("The target map to spawn a prefab in.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("Apply Unique Entity ID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
                 ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
@@ -118,14 +118,14 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT || Project.Type == ProjectType.ER || Project.Type == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Apply Entity Group ID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("Applied Entity Group ID:");
+                    ImguiUtils.WrappedText("Applied Entity Group ID:");
                     ImGui.InputInt("##entityGroupIdInput", ref CFG.Current.Prefab_SpecificEntityGroupID);
                     ImguiUtils.ShowHoverTooltip("Spawned prefab objects will be given this specific Entity Group ID within an empty Entity Group ID slot.");
                 }
 
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 
@@ -145,7 +145,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.ImportPrefab)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_ImportPrefab.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_ImportPrefab.HintText)}");
             }
         }
 
@@ -192,7 +192,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         public static void DisplayPrefabList()
         {
             ImGui.Separator();
-            ImGui.Text("Available Prefabs");
+            ImguiUtils.WrappedText("Available Prefabs");
             ImGui.Separator();
 
             foreach (var info in MapToolbar._prefabInfos)
@@ -243,28 +243,28 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 // Tags
                 ImGui.Separator();
-                ImGui.Text("Tags:");
+                ImguiUtils.WrappedText("Tags:");
                 ImGui.Separator();
 
                 if (prefabInfo.Tags != null)
                 {
                     foreach (var tag in prefabInfo.Tags)
                     {
-                        ImGui.Text(tag);
+                        ImguiUtils.WrappedText(tag);
                     }
                 }
 
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 // Contents
                 ImGui.Separator();
-                ImGui.Text("Contents:");
+                ImguiUtils.WrappedText("Contents:");
                 ImGui.Separator();
                 if (prefabInfo != null)
                 {
                     foreach (var name in MapToolbar._selectedPrefabObjectNames)
                     {
-                        ImGui.Text(name);
+                        ImguiUtils.WrappedText(name);
                     }
                 }
             }

@@ -30,16 +30,16 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Object_Visibility_by_Tag)
             {
-                ImGui.Text("Toggle the visibility of map objects, filtering the " +
+                ImguiUtils.WrappedText("Toggle the visibility of map objects, filtering the " +
                     "\ntargets by tag.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Target Tag:");
+                ImguiUtils.WrappedText("Target Tag:");
                 ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
                 ImguiUtils.ShowHoverTooltip("Specific which tag the map objects will be filtered by.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("State:");
+                ImguiUtils.WrappedText("State:");
                 if (ImGui.Checkbox("Visible", ref CFG.Current.Toolbar_Tag_Visibility_State_Enabled))
                 {
                     CFG.Current.Toolbar_Tag_Visibility_State_Disabled = false;
@@ -51,7 +51,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     CFG.Current.Toolbar_Tag_Visibility_State_Enabled = false;
                 }
                 ImguiUtils.ShowHoverTooltip("Set the visible state to disabled.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
         public static void Act(ViewportSelection _selection)

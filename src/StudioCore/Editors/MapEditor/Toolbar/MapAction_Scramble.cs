@@ -30,8 +30,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Scramble)
             {
-                ImGui.Text("Scramble the current selection's position, rotation and scale by the following parameters.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Scramble the current selection's position, rotation and scale by the following parameters.");
+                ImguiUtils.WrappedText("");
 
                 var randomOffsetMin_Pos_X = CFG.Current.Scrambler_OffsetMin_Position_X;
                 var randomOffsetMin_Pos_Y = CFG.Current.Scrambler_OffsetMin_Position_Y;
@@ -58,7 +58,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 var randomOffsetMax_Scale_Z = CFG.Current.Scrambler_OffsetMax_Scale_Z;
 
                 // Position
-                ImGui.Text("Position");
+                ImguiUtils.WrappedText("Position");
                 ImGui.Checkbox("X##scramblePosX", ref CFG.Current.Scrambler_RandomisePosition_X);
                 ImguiUtils.ShowHoverTooltip("Include the X co-ordinate of the selection's Position in the scramble.");
 
@@ -100,7 +100,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.Text("");
 
                 // Rotation
-                ImGui.Text("Rotation");
+                ImguiUtils.WrappedText("Rotation");
                 ImGui.Checkbox("X##scrambleRotX", ref CFG.Current.Scrambler_RandomiseRotation_X);
                 ImguiUtils.ShowHoverTooltip("Include the X co-ordinate of the selection's Rotation in the scramble.");
 
@@ -142,7 +142,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.Text("");
 
                 // Scale
-                ImGui.Text("Scale");
+                ImguiUtils.WrappedText("Scale");
                 ImGui.Checkbox("X##scrambleScaleX", ref CFG.Current.Scrambler_RandomiseScale_X);
                 ImguiUtils.ShowHoverTooltip("Include the X co-ordinate of the selection's Scale in the scramble.");
 
@@ -181,11 +181,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.PushItemWidth(100);
                 ImGui.InputFloat("##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
                 ImguiUtils.ShowHoverTooltip("Maximum amount to add to the scale Z co-ordinate.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("Scale Proportionally##scrambleSharedScale", ref CFG.Current.Scrambler_RandomiseScale_SharedScale);
                 ImguiUtils.ShowHoverTooltip("When scrambling the scale, the Y and Z values will follow the X value, making the scaling proportional.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 // Clamp floats
                 randomOffsetMin_Pos_X = Math.Clamp(randomOffsetMin_Pos_X, -10000f, 10000f);
@@ -260,7 +260,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Scramble)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Scramble.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Scramble.HintText)}");
             }
         }
 

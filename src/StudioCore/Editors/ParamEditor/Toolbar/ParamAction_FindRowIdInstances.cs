@@ -42,29 +42,29 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamToolbar.SelectedAction == ParamToolbarAction.FindRowIdInstances)
             {
-                ImGui.Text("Display all instances of a specificed row ID.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Display all instances of a specificed row ID.");
+                ImguiUtils.WrappedText("");
 
                 if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
                 {
-                    ImGui.Text("You must select a param before you can use this action.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
+                    ImguiUtils.WrappedText("");
                 }
                 else
                 {
-                    ImGui.Text("Row ID:");
+                    ImguiUtils.WrappedText("Row ID:");
                     ImGui.InputInt("##searchRowId", ref _searchID);
                     ImguiUtils.ShowHoverTooltip("The row ID to search for.");
 
-                    ImGui.Text("Row Index:");
+                    ImguiUtils.WrappedText("Row Index:");
                     ImGui.InputInt("##searchRowIndex", ref _searchIndex);
                     ImguiUtils.ShowHoverTooltip("The row index to search for. -1 for any");
 
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     if (_paramResults.Count > 0)
                     {
-                        ImGui.TextDisabled($"ID {_cachedSearchID}: {_paramResults.Count} matches");
+                        ImguiUtils.WrappedText($"ID {_cachedSearchID}: {_paramResults.Count} matches");
                         foreach (var paramName in _paramResults)
                         {
                             if (ImGui.Selectable($"{paramName}##RowSearcher"))
@@ -74,7 +74,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         }
                     }
 
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
                 }
             }
         }

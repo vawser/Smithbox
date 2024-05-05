@@ -30,12 +30,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Rotate)
             {
-                ImGui.Text("Rotate the current selection by the following parameters.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Rotate the current selection by the following parameters.");
+                ImguiUtils.WrappedText("");
 
                 var rot = CFG.Current.Toolbar_Rotate_Increment;
 
-                ImGui.Text("Rotation Type:");
+                ImguiUtils.WrappedText("Rotation Type:");
                 if (ImGui.Checkbox("X", ref CFG.Current.Toolbar_Rotate_X))
                 {
                     CFG.Current.Toolbar_Rotate_Y = false;
@@ -67,11 +67,11 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     CFG.Current.Toolbar_Rotate_Y_Pivot = false;
                 }
                 ImguiUtils.ShowHoverTooltip("Set the rotation axis to specified values below.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 if (!CFG.Current.Toolbar_Fixed_Rotate)
                 {
-                    ImGui.Text("Degree Increment:");
+                    ImguiUtils.WrappedText("Degree Increment:");
                     if (ImGui.Button("Switch"))
                     {
                         CFG.Current.Toolbar_Rotate_Specific_Input = !CFG.Current.Toolbar_Rotate_Specific_Input;
@@ -92,7 +92,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         ImGui.SliderFloat("##Degree Increment", ref rot, -180.0f, 180.0f);
                     }
                     ImguiUtils.ShowHoverTooltip("Set the angle increment amount used by the rotation.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
                 }
                 else
                 {
@@ -100,7 +100,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     var y = CFG.Current.Toolbar_Rotate_FixedAngle[1];
                     var z = CFG.Current.Toolbar_Rotate_FixedAngle[2];
 
-                    ImGui.Text("Fixed Rotation");
+                    ImguiUtils.WrappedText("Fixed Rotation");
                     ImGui.PushItemWidth(100);
                     if (ImGui.InputFloat("X##fixedRotationX", ref x))
                     {
@@ -121,7 +121,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                         z = Math.Clamp(z, -360f, 360f);
                     }
                     ImguiUtils.ShowHoverTooltip("Set the Z component of the fixed rotation action.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     CFG.Current.Toolbar_Rotate_FixedAngle = new Vector3(x, y, z);
                 }
@@ -165,10 +165,10 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Rotate)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_X.HintText)} for Rotate X");
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_Y.HintText)} for Rotate Y");
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_Y_Pivot.HintText)} for Rotate Pivot Y");
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Reset_Rotation.HintText)} for Fixed Rotation");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_X.HintText)} for Rotate X");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_Y.HintText)} for Rotate Y");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Rotate_Y_Pivot.HintText)} for Rotate Pivot Y");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Reset_Rotation.HintText)} for Fixed Rotation");
             }
         }
 

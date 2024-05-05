@@ -32,13 +32,13 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
         {
             if (ModelToolbar.SelectedAction == ModelEditorAction.DuplicateProperty)
             {
-                ImGui.Text("Duplicate selected FLVER property.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Duplicate selected FLVER property.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Amount:");
+                ImguiUtils.WrappedText("Amount:");
                 ImGui.InputInt("##amount", ref CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount);
                 ImguiUtils.ShowHoverTooltip("Number of times to duplicate the selected property.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 

@@ -33,8 +33,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid)
             {
-                ImGui.Text("Set the current selection to the closest grid position.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Set the current selection to the closest grid position.");
+                ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("X", ref CFG.Current.Toolbar_Move_to_Grid_X);
                 ImguiUtils.ShowHoverTooltip("Move the current selection to the closest X co-ordinate within the map grid.");
@@ -99,7 +99,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Set_to_Grid.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Set_to_Grid.HintText)}");
             }
         }
 

@@ -101,7 +101,7 @@ public static class ResourceTextureLocator
         return l;
     }
 
-    public static string GetChrTexturePath(string chrid)
+    public static string GetChrTexturePath(string chrid, bool isLowDetail = false)
     {
         var overrideFilePath = "";
 
@@ -143,6 +143,11 @@ public static class ResourceTextureLocator
         if (Project.Type is ProjectType.ER)
         {
             overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}_h.texbnd.dcx");
+
+            if(isLowDetail)
+            {
+                overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}_l.texbnd.dcx");
+            }
         }
 
         if (Project.Type is ProjectType.AC6)
@@ -158,7 +163,7 @@ public static class ResourceTextureLocator
         return null;
     }
 
-    public static ResourceDescriptor GetChrTextures(string chrid)
+    public static ResourceDescriptor GetChrTextures(string chrid, bool isLowDetail = false)
     {
         var path = "";
         ResourceDescriptor ad = new();
@@ -226,7 +231,22 @@ public static class ResourceTextureLocator
                 ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
             }
         }
-        else if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        else if (Project.Type is ProjectType.ER)
+        {
+            path = GetChrTexturePath(chrid);
+
+            if (path != null)
+            {
+                ad.AssetPath = path;
+                ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
+
+                if(isLowDetail)
+                {
+                    ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex/low";
+                }
+            }
+        }
+        else if (Project.Type is ProjectType.AC6)
         {
             path = GetChrTexturePath(chrid);
 

@@ -30,8 +30,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Frame_in_Viewport)
             {
-                ImGui.Text("Frame the current selection in the viewport (first if multiple are selected).");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Frame the current selection in the viewport (first if multiple are selected).");
+                ImguiUtils.WrappedText("");
             }
         }
 
@@ -56,7 +56,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Frame_in_Viewport)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Frame_Selection_in_Viewport.HintText)}");
             }
         }
 

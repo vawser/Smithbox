@@ -30,10 +30,10 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera)
             {
-                ImGui.Text("Move the current selection to the camera position.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Move the current selection to the camera position.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Camera Offset Distance:");
+                ImguiUtils.WrappedText("Camera Offset Distance:");
                 if (ImGui.Button("Switch"))
                 {
                     CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input = !CFG.Current.Toolbar_Move_to_Camera_Offset_Specific_Input;
@@ -61,7 +61,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100);
                     ImguiUtils.ShowHoverTooltip("Set the distance at which the current selection is offset from the camera when this action is used.");
                 }
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 
@@ -86,7 +86,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Camera)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Move_Selection_to_Camera.HintText)}");
             }
         }
 

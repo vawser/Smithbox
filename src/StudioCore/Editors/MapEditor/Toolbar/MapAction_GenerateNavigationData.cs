@@ -40,12 +40,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Generate_Navigation_Data)
             {
-                ImGui.Text("Regenerate the navigation data files used for pathfinding.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Regenerate the navigation data files used for pathfinding.");
+                ImguiUtils.WrappedText("");
 
                 if (NavigationDataProcessed)
                 {
-                    ImGui.Text("Navigation data has been regenerated for all maps.");
+                    ImguiUtils.WrappedText("Navigation data has been regenerated for all maps.");
                 }
             }
         }

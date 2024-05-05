@@ -38,17 +38,17 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamToolbar.SelectedAction == ParamToolbarAction.ExportRowNames)
             {
-                ImGui.Text("Export row names for the currently selected param, or for all params.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Export row names for the currently selected param, or for all params.");
+                ImguiUtils.WrappedText("");
 
                 if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
                 {
-                    ImGui.Text("You must select a param before you can use this action.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
+                    ImguiUtils.WrappedText("");
                 }
                 else
                 {
-                    ImGui.Text("Target Category:");
+                    ImguiUtils.WrappedText("Target Category:");
                     if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
                     {
                         foreach (string e in ParamToolbar.TargetTypes)
@@ -62,7 +62,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         ImGui.EndCombo();
                     }
                     ImguiUtils.ShowHoverTooltip("The target for the Row Name export.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
                 }
             }
         }

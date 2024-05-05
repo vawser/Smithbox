@@ -38,20 +38,20 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         {
             if (TextToolbar.SelectedAction == TextEditorAction.SearchAndReplace)
             {
-                ImGui.Text("Perform a search and replace upon FMG text.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Perform a search and replace upon FMG text.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Search Text:");
+                ImguiUtils.WrappedText("Search Text:");
                 ImGui.InputText("##searchText", ref CFG.Current.FMG_SearchAndReplace_SearchText, 255);
                 ImguiUtils.ShowHoverTooltip("Text to search for. Supports regular expressions.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Replace Text:");
+                ImguiUtils.WrappedText("Replace Text:");
                 ImGui.InputText("##replaceText", ref CFG.Current.FMG_SearchAndReplace_ReplaceText, 255);
                 ImguiUtils.ShowHoverTooltip("Text to replace the search text with. Supports regular expressions.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Text Category:");
+                ImguiUtils.WrappedText("Text Category:");
                 if (ImGui.BeginCombo("##Text Category", CurrentTextCategory))
                 {
                     foreach (string e in TextToolbar.TextCategories)
@@ -65,9 +65,9 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("Text category to search in.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Text Context:");
+                ImguiUtils.WrappedText("Text Context:");
                 if (ImGui.BeginCombo("##Target Type", CurrentTargetType))
                 {
                     foreach (string e in TextToolbar.TargetTypes)
@@ -81,7 +81,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("The target text context for the search and replace.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("Ignore Case", ref CFG.Current.FMG_SearchAndReplace_Regex_IgnoreCase);
                 ImguiUtils.ShowHoverTooltip("Specifies case-insensitive matching for regex.");
@@ -94,7 +94,7 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
                 ImGui.Checkbox("Ignore Pattern Whitespace", ref CFG.Current.FMG_SearchAndReplace_Regex_IgnorePatternWhitespace);
                 ImguiUtils.ShowHoverTooltip("Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 

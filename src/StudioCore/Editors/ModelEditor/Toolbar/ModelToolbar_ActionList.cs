@@ -39,7 +39,7 @@ public class ModelToolbar_ActionList
     {
         ImGui.Separator();
         ImGui.AlignTextToFramePadding();
-        ImGui.Text("Actions");
+        ImguiUtils.WrappedText("Actions");
         ImguiUtils.ShowHoverTooltip("Click to select a toolbar action.");
         ImGui.SameLine();
 

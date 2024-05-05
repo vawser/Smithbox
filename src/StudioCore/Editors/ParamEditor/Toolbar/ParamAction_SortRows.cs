@@ -31,13 +31,13 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamToolbar.SelectedAction == ParamToolbarAction.SortRows)
             {
-                ImGui.Text("Sort the rows for the currently selected param by their ID.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Sort the rows for the currently selected param by their ID.");
+                ImguiUtils.WrappedText("");
 
                 if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
                 {
-                    ImGui.Text("You must select a param before you can use this action.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
+                    ImguiUtils.WrappedText("");
                 }
             }
         }

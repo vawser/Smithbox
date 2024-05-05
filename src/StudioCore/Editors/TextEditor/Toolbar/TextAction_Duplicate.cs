@@ -35,21 +35,21 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         {
             if (TextToolbar.SelectedAction == TextEditorAction.Duplicate)
             {
-                ImGui.Text("Duplicate the current selection.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Duplicate the current selection.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Amount:");
+                ImguiUtils.WrappedText("Amount:");
                 ImGui.InputInt("##dupeamount", ref CFG.Current.FMG_DuplicateAmount);
                 ImguiUtils.ShowHoverTooltip("The number of times to duplicate this entry.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 if (CFG.Current.FMG_DuplicateAmount < 1)
                     CFG.Current.FMG_DuplicateAmount = 1;
 
-                ImGui.Text("Increment:");
+                ImguiUtils.WrappedText("Increment:");
                 ImGui.InputInt("##dupeIncrement", ref CFG.Current.FMG_DuplicateIncrement);
                 ImguiUtils.ShowHoverTooltip("The increment to apply to the text id when duplicating.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 if (CFG.Current.FMG_DuplicateIncrement < 1)
                     CFG.Current.FMG_DuplicateIncrement = 1;

@@ -32,8 +32,8 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
         {
             if (ModelToolbar.SelectedAction == ModelEditorAction.DeleteProperty)
             {
-                ImGui.Text("Delete selected FLVER property.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Delete selected FLVER property.");
+                ImguiUtils.WrappedText("");
             }
         }
 

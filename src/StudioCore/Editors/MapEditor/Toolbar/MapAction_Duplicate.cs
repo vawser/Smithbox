@@ -32,8 +32,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Duplicate)
             {
-                ImGui.Text("Duplicate the current selection.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Duplicate the current selection.");
+                ImguiUtils.WrappedText("");
 
                 if (Project.Type != ProjectType.DS2S)
                 {
@@ -76,7 +76,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                 if (Project.Type != ProjectType.DS2S)
                 {
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
                 }
             }
         }
@@ -101,7 +101,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Duplicate)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Core_Duplicate.HintText)}");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Core_Duplicate.HintText)}");
             }
         }
 

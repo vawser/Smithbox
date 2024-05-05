@@ -41,26 +41,26 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamToolbar.SelectedAction == ParamToolbarAction.MassEdit)
             {
-                ImGui.Text("Write and execute mass edit commands here.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Write and execute mass edit commands here.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Input:");
+                ImguiUtils.WrappedText("Input:");
                 ImguiUtils.ShowWideHoverTooltip("Input your mass edit command here.");
 
                 ImGui.InputTextMultiline("##MEditRegexInput", ref _currentMEditRegexInput, 65536,
                 new Vector2(500, ImGui.GetTextLineHeightWithSpacing() * 4) * Smithbox.GetUIScale());
                 ImGui.Text("");
 
-                ImGui.Text($"Output: {_mEditRegexResult}");
+                ImguiUtils.WrappedText($"Output: {_mEditRegexResult}");
                 ImguiUtils.ShowWideHoverTooltip("Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
 
                 ImGui.InputTextMultiline("##MEditRegexOutput", ref _lastMEditRegexInput, 65536,
                     new Vector2(500, ImGui.GetTextLineHeightWithSpacing() * 4) * Smithbox.GetUIScale(), ImGuiInputTextFlags.ReadOnly);
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("Retain Input", ref retainMassEditCommand);
                 ImguiUtils.ShowWideHoverTooltip("Retain the mass edit command in the input text area after execution.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
             }
         }

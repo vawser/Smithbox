@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.Editors.ParamEditor.Toolbar;
+using StudioCore.Interface;
 using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ public class ModelToolbar_Configuration
     {
         ImGui.Indent(10.0f);
         ImGui.Separator();
-        ImGui.Text("Configuration");
+        ImguiUtils.WrappedText("Configuration");
         ImGui.Separator();
 
         //ModelAction_DuplicateFile.Configure();

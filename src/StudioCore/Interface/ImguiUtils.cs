@@ -93,6 +93,15 @@ public static class ImguiUtils
         }
     }
 
+    public static void WrappedText(string text)
+    {
+        var size = ImGui.GetWindowSize();
+
+        ImGui.PushTextWrapPos(size.X);
+        ImGui.TextUnformatted(text);
+        ImGui.PopTextWrapPos();
+    }
+
     public static void ShowWideHoverTooltip(string desc)
     {
         if (CFG.Current.System_Show_UI_Tooltips)

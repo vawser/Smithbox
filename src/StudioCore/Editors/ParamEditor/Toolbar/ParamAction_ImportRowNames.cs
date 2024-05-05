@@ -38,17 +38,17 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             if (ParamToolbar.SelectedAction == ParamToolbarAction.ImportRowNames)
             {
-                ImGui.Text("Import row names for the currently selected param, or for all params.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Import row names for the currently selected param, or for all params.");
+                ImguiUtils.WrappedText("");
 
                 if (!selectedParam.ActiveParamExists())
                 {
-                    ImGui.Text("You must select a param before you can use this action.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
+                    ImguiUtils.WrappedText("");
                 }
                 else
                 {
-                    ImGui.Text("Target Category:");
+                    ImguiUtils.WrappedText("Target Category:");
                     if (ImGui.BeginCombo("##Target", CurrentTargetCategory))
                     {
                         foreach (string e in ParamToolbar.TargetTypes)
@@ -62,9 +62,9 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         ImGui.EndCombo();
                     }
                     ImguiUtils.ShowHoverTooltip("The target for the Row Name import.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("Source Category:");
+                    ImguiUtils.WrappedText("Source Category:");
                     if (ImGui.BeginCombo("##Source", CurrentSourceCategory))
                     {
                         foreach (string e in ParamToolbar.SourceTypes)
@@ -78,14 +78,14 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         ImGui.EndCombo();
                     }
                     ImguiUtils.ShowHoverTooltip("The source of the names used in by the Row Name import.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     ImGui.Checkbox("Only replace unmodified row names", ref _rowNameImporter_VanillaOnly);
                     ImguiUtils.ShowHoverTooltip("Row name import will only replace the name of unmodified rows.");
 
                     ImGui.Checkbox("Only replace empty row names", ref _rowNameImporter_EmptyOnly);
                     ImguiUtils.ShowHoverTooltip("Row name import will only replace the name of un-named rows.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
                 }
             }
         }

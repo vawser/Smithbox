@@ -59,14 +59,14 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Assign_Entity_Group_ID)
             {
-                ImGui.Text("Assign an Entity Group ID to all entities across all maps,\noptionally filtering by specific attributes.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Assign an Entity Group ID to all entities across all maps,\noptionally filtering by specific attributes.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Entity Group ID");
+                ImguiUtils.WrappedText("Entity Group ID");
                 ImGui.InputInt("##entityGroupInput", ref CFG.Current.Toolbar_EntityGroupID);
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Filter");
+                ImguiUtils.WrappedText("Filter");
 
                 if (ImGui.BeginCombo("##filterAttribute", SelectedFilterType))
                 {
@@ -82,13 +82,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Filter Input");
+                ImguiUtils.WrappedText("Filter Input");
                 ImGui.InputText("##entityGroupAttribute", ref CFG.Current.Toolbar_EntityGroup_Attribute, 255);
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Target Map");
+                ImguiUtils.WrappedText("Target Map");
                 if (ImGui.BeginCombo("##mapTargetFilter", SelectedMapFilter))
                 {
                     IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = MapEditorState.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
@@ -110,12 +110,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImGui.EndCombo();
                 }
                 ImguiUtils.ShowHoverTooltip("When assigning the Entity Group ID, the action will only assign it to entities that match this attribute.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 if (SelectedMapFilter == "All")
                 {
-                    ImGui.Text("WARNING: applying this to all maps will take a few minutes,\nexpect Smithbox to hang until it finishes.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("WARNING: applying this to all maps will take a few minutes,\nexpect Smithbox to hang until it finishes.");
+                    ImguiUtils.WrappedText("");
                 }
             }
         }

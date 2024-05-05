@@ -36,20 +36,20 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamToolbar.SelectedAction == ParamToolbarAction.DuplicateRow)
             {
-                ImGui.Text("Duplicate the selected rows.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Duplicate the selected rows.");
+                ImguiUtils.WrappedText("");
 
                 if (!ParamEditorScreen._activeView._selection.RowSelectionExists())
                 {
-                    ImGui.Text("You must select a row before you can use this action.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("You must select a row before you can use this action.");
+                    ImguiUtils.WrappedText("");
                 }
                 else
                 {
-                    ImGui.Text("Amount to Duplicate:");
+                    ImguiUtils.WrappedText("Amount to Duplicate:");
                     ImGui.InputInt("##Amount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
                     ImguiUtils.ShowHoverTooltip("The number of times the current selection will be duplicated.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
                 }
             }
         }

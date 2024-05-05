@@ -29,20 +29,20 @@ public static class TexAction_ExportTexture
     {
         if (TextureToolbar.SelectedAction == TextureViewerAction.ExportTexture)
         {
-            ImGui.Text("Export the viewed texture.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("Export the viewed texture.");
+            ImguiUtils.WrappedText("");
 
             var index = CFG.Current.TextureViewerToolbar_ExportTextureType;
 
-            ImGui.Text("Export File Type:");
+            ImguiUtils.WrappedText("Export File Type:");
             if (ImGui.Combo("##ExportType", ref index, exportTypes, exportTypes.Length))
             {
                 CFG.Current.TextureViewerToolbar_ExportTextureType = index;
             }
             ImguiUtils.ShowHoverTooltip("The file type the exported texture will be saved as.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("");
 
-            ImGui.Text("Export Destination:");
+            ImguiUtils.WrappedText("Export Destination:");
             ImGui.InputText("##exportDestination", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation, 255);
             if(ImGui.Button("Select"))
             {
@@ -54,14 +54,14 @@ public static class TexAction_ExportTexture
                 }
             }
             ImguiUtils.ShowHoverTooltip("The folder destination to export the texture to.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("");
 
             ImGui.Checkbox("Include Container Folder", ref CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder);
             ImguiUtils.ShowHoverTooltip("Place the exported texture in a folder with the title of the texture container.");
 
             ImGui.Checkbox("Display Export Confirmation", ref CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm);
             ImguiUtils.ShowHoverTooltip("Display the confirmation message box after each export.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("");
         }
     }
 

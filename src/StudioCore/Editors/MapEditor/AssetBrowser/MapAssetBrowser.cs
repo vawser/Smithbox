@@ -93,7 +93,7 @@ public class MapAssetBrowser
             DisplayTopSection();
 
             ImGui.Separator();
-            ImGui.Text("Categories:");
+            ImguiUtils.WrappedText("Categories:");
             ImGui.Separator();
 
             DisplayCategoryList();
@@ -108,7 +108,7 @@ public class MapAssetBrowser
         if (ImGui.Begin($@"Asset Browser: Contents##MapEditor_AssetBrowser_ContentList"))
         {
             ImGui.Separator();
-            ImGui.Text("Assets:");
+            ImguiUtils.WrappedText("Assets:");
             ImGui.Separator();
 
             DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
@@ -127,7 +127,7 @@ public class MapAssetBrowser
             ImGui.Indent(10.0f);
 
             ImGui.Separator();
-            ImGui.Text("Actions:");
+            ImguiUtils.WrappedText("Actions:");
             ImGui.Separator();
 
             DisplayActionSection();
@@ -161,8 +161,8 @@ public class MapAssetBrowser
         if (_selectedName == null || _selectedName == "")
             return;
 
-        ImGui.Text("Apply the selected asset attributes to your current object selection.");
-        ImGui.Text("");
+        ImguiUtils.WrappedText("Apply the selected asset attributes to your current object selection.");
+        ImguiUtils.WrappedText("");
 
         ImGui.Checkbox("Update Name of Selected Object", ref CFG.Current.AssetBrowser_UpdateName);
         ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
@@ -171,31 +171,31 @@ public class MapAssetBrowser
         {
             ImGui.Checkbox("Update Instance ID of Selected Object", ref CFG.Current.AssetBrowser_UpdateInstanceID);
             ImguiUtils.ShowHoverTooltip("Update the Name property of the selected entity when it is changed to a selected asset.");
-            ImGui.Text("");
+            ImguiUtils.WrappedText("");
         }
 
         if (ImGui.Button("Apply##action_Asset_Apply", new Vector2(200, 32)))
         {
             ApplyAssetSelection();
         }
-        ImGui.Text("");
+        ImguiUtils.WrappedText("");
 
         ImGui.Separator();
-        ImGui.Text("Alias:");
+        ImguiUtils.WrappedText("Alias:");
         ImGui.Separator();
 
-        ImGui.Text("Update the stored name and tag list for the selected asset here.");
-        ImGui.Text("");
+        ImguiUtils.WrappedText("Update the stored name and tag list for the selected asset here.");
+        ImguiUtils.WrappedText("");
 
-        ImGui.Text("Name:");
+        ImguiUtils.WrappedText("Name:");
         ImGui.InputText($"##Name", ref _refUpdateName, 255);
         ImguiUtils.ShowHoverTooltip("Alias name given to this asset.");
-        ImGui.Text("");
+        ImguiUtils.WrappedText("");
 
-        ImGui.Text("Tags:");
+        ImguiUtils.WrappedText("Tags:");
         ImGui.InputText($"##Tags", ref _refUpdateTags, 255);
         ImguiUtils.ShowHoverTooltip("Tags associated with this asset. Tags are separated with the , character.");
-        ImGui.Text("");
+        ImguiUtils.WrappedText("");
 
         if (ImGui.Button("Update##action_AssetAlias_Update", new Vector2(200, 32)))
         {

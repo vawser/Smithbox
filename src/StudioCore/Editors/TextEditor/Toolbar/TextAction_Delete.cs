@@ -31,8 +31,8 @@ namespace StudioCore.Editors.TextEditor.Toolbar
         {
             if (TextToolbar.SelectedAction == TextEditorAction.Delete)
             {
-                ImGui.Text("Delete the current selection.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Delete the current selection.");
+                ImguiUtils.WrappedText("");
 
                 /*
                 if(ImGui.Checkbox("Standard", ref CFG.Current.FMG_StandardDelete))
@@ -57,12 +57,12 @@ namespace StudioCore.Editors.TextEditor.Toolbar
 
                 if (CFG.Current.FMG_BlockDelete)
                 {
-                    ImGui.Text("Start ID:");
+                    ImguiUtils.WrappedText("Start ID:");
                     ImGui.InputInt("##startId", ref CFG.Current.FMG_BlockDelete_StartID);
                     ImguiUtils.ShowHoverTooltip("Text ID at which to start deletion.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
-                    ImGui.Text("End ID:");
+                    ImguiUtils.WrappedText("End ID:");
                     ImGui.InputInt("##endId", ref CFG.Current.FMG_BlockDelete_EndID);
                     ImguiUtils.ShowHoverTooltip("Text ID at which to end deletion.");
                 }

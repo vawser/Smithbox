@@ -51,25 +51,25 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
         {
             if (ParamToolbar.SelectedAction == ParamToolbarAction.FindValueInstances)
             {
-                ImGui.Text("Display all instances of a specificed value.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Display all instances of a specificed value.");
+                ImguiUtils.WrappedText("");
 
                 if (!ParamEditorScreen._activeView._selection.ActiveParamExists())
                 {
-                    ImGui.Text("You must select a param before you can use this action.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("You must select a param before you can use this action.");
+                    ImguiUtils.WrappedText("");
                 }
                 else
                 {
-                    ImGui.Text("Value:");
+                    ImguiUtils.WrappedText("Value:");
                     ImGui.InputText("##searchValue", ref _searchValue, 255);
                     ImguiUtils.ShowHoverTooltip("The value to search for.");
 
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     if (_paramResults.Count > 0)
                     {
-                        ImGui.TextDisabled($"Value {_cachedSearchValue}: {_paramResults.Count} matches");
+                        ImguiUtils.WrappedText($"Value {_cachedSearchValue}: {_paramResults.Count} matches");
 
                         for(int i = 0; i < _paramResults.Count; i++)
                         {
@@ -84,7 +84,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                         }
                     }
 
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
                 }
             }
         }

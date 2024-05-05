@@ -422,12 +422,19 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         if (info.Category == TextureViewCategory.Character)
         {
             var chrId = _selectedTextureContainerKey;
-            if(Project.Type is ProjectType.ER)
+
+            var isLowDetail = false;
+            if (chrId.Substring(chrId.Length - 2, 2) == "_l")
+            {
+                isLowDetail = true;
+            }
+
+            if (Project.Type is ProjectType.ER)
             {
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
 
-            ad = ResourceTextureLocator.GetChrTextures(chrId);
+            ad = ResourceTextureLocator.GetChrTextures(chrId, isLowDetail);
         }
 
         if (ad != null)
@@ -610,6 +617,12 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     private void TextureProperties()
     {
         ImGui.Begin("Properties##PropertiesView");
+
+        ImguiUtils.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
+        ImguiUtils.WrappedText($"Reset zoom to 100% by pressing {KeyBindings.Current.TextureViewer_ZoomReset.HintText}.");
+
+        ImguiUtils.WrappedText($"");
+        ImguiUtils.WrappedText($"Properties of {CurrentTextureName}:");
 
         if (_selectedTexture != null)
         {

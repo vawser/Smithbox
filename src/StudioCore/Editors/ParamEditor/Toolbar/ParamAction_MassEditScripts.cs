@@ -50,13 +50,13 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
             if (ParamToolbar.SelectedAction == ParamToolbarAction.MassEditScripts)
             {
-                ImGui.Text("Load and edit mass edit scripts here.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Load and edit mass edit scripts here.");
+                ImguiUtils.WrappedText("");
 
                 // Ignore the combo box if no files exist
                 if (MassEditScript.scriptList.Count > 0)
                 {
-                    ImGui.Text("Existing Scripts:");
+                    ImguiUtils.WrappedText("Existing Scripts:");
 
                     // Scripts
                     if (ImGui.BeginCombo("##massEditScripts", _selectedMassEditScript.name))
@@ -71,7 +71,7 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
 
                         ImGui.EndCombo();
                     }
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("");
 
                     if (_selectedMassEditScript != null)
                     {
@@ -95,21 +95,21 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                     }
                 }
 
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("New Script:");
+                ImguiUtils.WrappedText("New Script:");
                 ImGui.InputText("##scriptName", ref _newScriptName, 255);
                 ImguiUtils.ShowHoverTooltip("The file name used for this script.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("Is Common Script", ref _newScriptIsCommon);
                 ImguiUtils.ShowHoverTooltip($"Save the script as a common script for all project types.\nIf not, then the script will only appear for {Project.Type} projects.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("Script:");
+                ImguiUtils.WrappedText("Script:");
                 ImguiUtils.ShowHoverTooltip("The mass edit script.");
                 ImGui.InputTextMultiline("##newMassEditScript", ref _newScriptBody, 65536, new Vector2(500, ImGui.GetTextLineHeightWithSpacing() * 24) * Smithbox.GetUIScale());
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
 
                 if (ImGui.Button("Save", new Vector2(150, 32)))
                 {

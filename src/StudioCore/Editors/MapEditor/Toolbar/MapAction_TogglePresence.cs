@@ -34,13 +34,13 @@ namespace StudioCore.Editors.MapEditor.Toolbar
             {
                 if (CFG.Current.Toolbar_Presence_Dummy_Type_ER)
                 {
-                    ImGui.Text("Toggle the load status of the current selection in-game.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("Toggle the load status of the current selection in-game.");
+                    ImguiUtils.WrappedText("");
                 }
                 else
                 {
-                    ImGui.Text("Toggle the Dummy status of the current selection in-game.");
-                    ImGui.Text("");
+                    ImguiUtils.WrappedText("Toggle the Dummy status of the current selection in-game.");
+                    ImguiUtils.WrappedText("");
                 }
 
                 if (ImGui.Checkbox("Disable", ref CFG.Current.Toolbar_Presence_Dummify))
@@ -66,7 +66,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImGui.Checkbox("Use Game Edition Disable", ref CFG.Current.Toolbar_Presence_Dummy_Type_ER);
                     ImguiUtils.ShowHoverTooltip("Use the GameEditionDisable property to disable entities instead of the Dummy entity system.");
                 }
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 
@@ -87,8 +87,8 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Toggle_Presence)
             {
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Dummify.HintText)} for Disable");
-                ImGui.Text($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Undummify.HintText)} for Enable");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Dummify.HintText)} for Disable");
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Toolbar_Undummify.HintText)} for Enable");
             }
         }
 

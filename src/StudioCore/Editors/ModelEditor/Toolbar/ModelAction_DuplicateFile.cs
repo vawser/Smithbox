@@ -34,13 +34,13 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
         {
             if (ModelToolbar.SelectedAction == ModelEditorAction.DuplicateFile)
             {
-                ImGui.Text("Duplicate and rename the current asset selected in the Asset Browser.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("Duplicate and rename the current asset selected in the Asset Browser.");
+                ImguiUtils.WrappedText("");
 
-                ImGui.Text("New ID:");
+                ImguiUtils.WrappedText("New ID:");
                 ImGui.InputText("##newId", ref CFG.Current.ModelEditor_Toolbar_DuplicateFile_NewName, 255);
                 ImguiUtils.ShowHoverTooltip("Model ID with which to rename the duplicated asset.");
-                ImGui.Text("");
+                ImguiUtils.WrappedText("");
             }
         }
 
