@@ -51,7 +51,8 @@
     <walkFlightVelocity0xF4 AltName="Walk: Flight - Continuous Velocity" />
     <assaultBoostVelocity_Initial AltName="Assault Boost: Initial Velocity" />
     <assaultBoostVelocity_During AltName="Assault Boost: Continuous Velocity" />
-    <assaultBoostGraceTime AltName="Assault Boost: Grace Time" Wiki="Amount of time (in frames at 60fps) for assault boost to continue after losing all EN." />
+    <assaultBoostGraceTimeStart AltName="Assault Boost: Grace Time Start" Wiki="Amount of time (in frames at 60fps) for assault boost to continue after losing all EN." />
+    <assaultBoostGraceTimeEnd AltName="Assault Boost: Grace Time End" Wiki="Amount of time (in frames at 60fps) for assault boost to continue after losing all EN." />
     <assaultBoostReloadTime AltName="Assault Boost Reload Time" />
     <assaultBoostEnergyCost_Initial AltName="Assault Boost: Initial Energy Cost" />
     <assaultBoostEnergyCost_During AltName="Assault Boost: Continuous Energy Cost" />
@@ -68,6 +69,7 @@
     <assaultBoostDodgeDuration AltName="Assault Boost Dodge Duration" />
     <assaultBoostDodgeEnergyCost AltName="Assault Boost Dodge: Energy Cost" />
     <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" />
+    <upwardThrustMomentum AltName="Boost Mode - Upwards Thrust - Momentum" Wiki="Determines the distance you will continue to rise after the end of upwards boosting." />
   </Field>
   <Self />
 </PARAMMETA>

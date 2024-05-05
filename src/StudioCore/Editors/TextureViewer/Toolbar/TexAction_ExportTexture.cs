@@ -8,6 +8,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System;
 using Org.BouncyCastle.Utilities;
+using StudioCore.Resource;
 
 namespace StudioCore.Editors.TextureViewer.Toolbar;
 
@@ -76,26 +77,27 @@ public static class TexAction_ExportTexture
 
                     if (result == DialogResult.Yes)
                     {
-                        ExportTexture();
+                        ExportTexture(TextureViewerScreen.CurrentTextureInView, TextureViewerScreen.CurrentTextureName);
                     }
                 }
                 else
                 {
-                    ExportTexture();
+                    ExportTexture(TextureViewerScreen.CurrentTextureInView, TextureViewerScreen.CurrentTextureName);
                 }
             }
         }
     }
 
-    public static void ExportTexture()
+    public static void ExportTexture(TextureResource texResource, string texName)
     {
-        if(TextureViewerScreen.CurrentTextureInView != null)
+        if(texResource != null)
         {
-            var filename = TextureViewerScreen.CurrentTextureName;
+            var filename = texName;
+            var exportPath = CFG.Current.TextureViewerToolbar_ExportTextureLocation;
 
-            if (CFG.Current.TextureViewerToolbar_ExportTextureLocation != "")
+            if (exportPath != "")
             {
-                var exportFilePath = $@"{CFG.Current.TextureViewerToolbar_ExportTextureLocation}\{filename}";
+                var exportFilePath = $@"{exportPath}\{filename}";
                 var write = true;
 
                 if (File.Exists(exportFilePath))
@@ -111,18 +113,18 @@ public static class TexAction_ExportTexture
                 {
                     if(CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder)
                     {
-                        var folder = TextureViewerScreen.CurrentTextureContainerName;
-                        var newFolderPath = $@"{CFG.Current.TextureViewerToolbar_ExportTextureLocation}\{folder}";
+                        var folder = texName;
+                        var newFolderPath = $@"{exportPath}\{folder}";
 
                         if(!Directory.Exists(newFolderPath))
                         {
                             Directory.CreateDirectory(newFolderPath);
                         }
 
-                        exportFilePath = $@"{CFG.Current.TextureViewerToolbar_ExportTextureLocation}\{folder}\{filename}";
+                        exportFilePath = $@"{exportPath}\{folder}\{filename}";
                     }
 
-                    ExportTextureFile(exportFilePath);
+                    ExportTextureFile(texResource, exportFilePath);
 
                     if (CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm)
                     {
@@ -141,9 +143,9 @@ public static class TexAction_ExportTexture
         }
     }
 
-    private static void ExportTextureFile(string exportFilePath)
+    private static void ExportTextureFile(TextureResource texResource, string exportFilePath)
     {
-        var tex = TextureViewerScreen.CurrentTextureInView.GPUTexture.TpfTexture;
+        var tex = texResource.GPUTexture.TpfTexture;
         var bytes = tex.Bytes.ToArray();
 
         // DDS

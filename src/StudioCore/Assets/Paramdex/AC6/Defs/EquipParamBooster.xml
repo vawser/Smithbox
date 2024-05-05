@@ -50,7 +50,7 @@
     <Field Def="f32 displayQuickBoostThrust">
       <Description>Only affects value in UI.</Description>
     </Field>
-    <Field Def="f32 UnkFloat0x6C"></Field>
+    <Field Def="f32 upwardThrustMomentum"></Field>
     <Field Def="f32 upwardThrustMaxVelocity_BoostMode"></Field>
     <Field Def="f32 UnkFloatBoostModeJumpVelocity0x74"></Field>
     <Field Def="f32 upwardThrustEnergyCost_BoostMode"></Field>
@@ -95,8 +95,8 @@
     <Field Def="f32 assaultBoostVelocity_During">
       <Description>Velocity after initial boost during an Assault Boost.</Description>
     </Field>
-    <Field Def="f32 assaultBoostGraceTime"></Field>
-    <Field Def="f32 UnkFloat0x10C"></Field>
+    <Field Def="f32 assaultBoostGraceTimeEnd"></Field>
+    <Field Def="f32 assaultBoostGraceTimeStart"></Field>
     <Field Def="f32 assaultBoostReloadTime">
       <Description>Duration after which Assault Boost will be available again.</Description>
     </Field>

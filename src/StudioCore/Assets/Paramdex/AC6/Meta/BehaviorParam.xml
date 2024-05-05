@@ -47,8 +47,8 @@
     <refId AltName="Reference ID" Wiki="ID of param to use for attack behavior. Param used determined by refType" Refs="AtkParam_Pc(refType=0),AtkParam_Npc(refType=0),Bullet(refType=1),SpEffectParam(refType=2)" />
     <bulletShotgunParamId1 AltName="BulletShotgunParam ID (1)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
     <bulletShotgunParamId2 AltName="BulletShotgunParam ID (2)" Wiki="Affects bullet spread behavior." Refs="BulletShotgunParam_PC" />
-    <dummyPolyRange_Min AltName="Bullet Spawn - DummyPoly Range (Min)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the start of a range that ends with dummyPolyRange_Max. If max is -1, then a single dummypoly will be used." />
-    <dummyPolyRange_Max AltName="Bullet Spawn - DummyPoly Range (Max)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the end of a range that starts with dummyPolyRange_Min. If max is -1, then a single dummypoly will be used." />
+    <dummyPolyRange_Min AltName="Bullet Emit: DummyPoly Range (Min)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the start of a range that ends with dummyPolyRange_Max. If max is -1, then a single dummypoly will be used." />
+    <dummyPolyRange_Max AltName="Bullet Emit: DummyPoly Range (Max)" Wiki="ID of DummyPoly to use for bullet spawn positions. Value is the end of a range that starts with dummyPolyRange_Min. If max is -1, then a single dummypoly will be used." />
     <weaponBulletNum AltName="Bullet Count" />
     <burstFireInterval AltName="Burst Fire Interval" />
     <rapidFireInterval AltName="Rapid Fire Interval" />
@@ -61,7 +61,14 @@
     <channelAttackHeatBuildup AltName="Heat Build-up on Channeled Attack" />
     <heatBuildup AltName="Heat Build-up" />
     <burstFireAmount AltName="Burst Fire Amount" />
-    <weaponFiringAngle_UpwardsAdjust AltName="Weapon Firing Angle: Upwards Adjustment" />
+    <bulletEmit_VerticalAdjustment AltName="Bullet Emit: Vertical Angle Adjustment" Wiki="Adjusts the emitted angle of any bullets on the vertical axis. Values between 0 and 128 adjust upwards, values 129 to 255 adjust downwards." />
+    <bulletEmit_UnknownAdjustment AltName="Bullet Emit: Unknown Angle Adjustment" Wiki="Adjusts the emitted angle of any bullets, although exact behavior is not known." />
+    <bulletEmit_HorizontalAdjustment AltName="Bullet Emit: Horizontal Angle Adjustment" Wiki="Adjusts the emitted angle of any bullets on the horizontal axis. Values 0 to 126 adjust to the right, values 127 to 256 adjust to left." />
+    <bulletEmit_Orientation AltName="Bullet Emit: Orientation Angle" Wiki="Affects the emitted bullet's direction.\n0 - Across\n50 - Left Diagonal\n100 - Right Straight\n150 - Right Diagonal\n-50 - Right Diagonal\n-100 - Left Straight\n-150 - Left Diagonal" />
+    <bulletEmit_RandomAngleChance AltName="Bullet Emit: Random Angle Adjustment Chance" Wiki="0 is no never randomly adjust angle, 100 is always randomly adjust angle" />
+    <bulletEmit_ProjectileCurving AltName="Bullet Emit: Projectile Curve Angle" Wiki="Larger the value, the more aggressive the angle. Positive is right, negative is left.\nIgnores lock-on." />
+    <bulletEmit_InitialEmitHeight AltName="Bullet Emit: Initial Height" Wiki="The initial height the bullet will go to after being emitted. Negative goes below, positive above." />
+    <bulletEmit_BulletAccuracy AltName="Bullet Emit: Accuracy" Wiki="Assuming 0 is the target's location, positive values will land ahead of target, negative values will land behind." />
   </Field>
   <Self Row0Dummy="" />
 </PARAMMETA>
