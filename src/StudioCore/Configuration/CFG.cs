@@ -499,6 +499,9 @@ public class CFG
     //****************************
     // Settings: Texture Viewer
     //****************************
+    public bool TextureViewer_FileList_ShowAliasName = true;
+    public bool TextureViewer_TextureList_ShowAliasName = false;
+
     public string TextureViewerToolbar_ExportTextureLocation = "";
     public bool TextureViewerToolbar_ExportTexture_IncludeFolder = true;
     public bool TextureViewerToolbar_ExportTexture_DisplayConfirm = true;

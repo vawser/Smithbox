@@ -832,13 +832,16 @@ public class SettingsWindow
 
     private void DisplaySettings_TextureViewer()
     {
-        /*
         if (ImGui.BeginTabItem("Texture Viewer"))
         {
-            
+            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Checkbox("Show alias name in file list", ref CFG.Current.TextureViewer_FileList_ShowAliasName);
+                ImguiUtils.ShowHoverTooltip("Show matching alias names along side the texture container in the file list if possible.");
+            }
+
             ImGui.EndTabItem();
         }
-        */
     }
 
     private void DisplaySettings_Interface()

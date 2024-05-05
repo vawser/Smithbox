@@ -386,8 +386,6 @@ public static class ResourceTextureLocator
         }
         else if (Project.Type == ProjectType.ER)
         {
-            TaskLogs.AddLog($"{partsId}");
-
             var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
 
             if (path != null)
