@@ -151,181 +151,43 @@ public static class TexAction_ExportTexture
         // DDS
         if (CFG.Current.TextureViewerToolbar_ExportTextureType == 0)
         {
-            File.WriteAllBytes($"{exportFilePath}.dds", bytes);
+            TexUtils.ExportDDSImage(exportFilePath, bytes);
         }
 
         // PNG
         if (CFG.Current.TextureViewerToolbar_ExportTextureType == 1)
         {
-            ExportPNGImage(exportFilePath, bytes);
+            TexUtils.ExportPNGImage(exportFilePath, bytes);
         }
 
         // BMP
         if (CFG.Current.TextureViewerToolbar_ExportTextureType == 2)
         {
-            ExportBMPImage(exportFilePath, bytes);
+            TexUtils.ExportBMPImage(exportFilePath, bytes);
         }
 
         // TGA
         if (CFG.Current.TextureViewerToolbar_ExportTextureType == 3)
         {
-            ExportTGAImage(exportFilePath, bytes);
+            TexUtils.ExportTGAImage(exportFilePath, bytes);
         }
 
         // TIFF
         if (CFG.Current.TextureViewerToolbar_ExportTextureType == 4)
         {
-            ExportTIFFImage(exportFilePath, bytes);
+            TexUtils.ExportTIFFImage(exportFilePath, bytes);
         }
 
         // JPEG
         if (CFG.Current.TextureViewerToolbar_ExportTextureType == 5)
         {
-            ExportJPEGImage(exportFilePath, bytes);
+            TexUtils.ExportJPEGImage(exportFilePath, bytes);
         }
 
         // WEBP
         if (CFG.Current.TextureViewerToolbar_ExportTextureType == 6)
         {
-            ExportWEBPImage(exportFilePath, bytes);
+            TexUtils.ExportWEBPImage(exportFilePath, bytes);
         }
-    }
-
-    private static void ExportPNGImage(string exportFilePath, byte[] bytes)
-    {
-        Pfim.IImage _image = GetPfimImage(bytes);
-
-        if (_image.Format == Pfim.ImageFormat.Rgba32)
-        {
-            Image<Bgra32> image = Image.LoadPixelData<Bgra32>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsPng($"{exportFilePath}.png");
-
-        }
-        else if (_image.Format == Pfim.ImageFormat.Rgb24)
-        {
-            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsPng($"{exportFilePath}.png");
-        }
-        else
-        {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
-        }
-    }
-
-    private static void ExportBMPImage(string exportFilePath, byte[] bytes)
-    {
-        Pfim.IImage _image = GetPfimImage(bytes);
-
-        if (_image.Format == Pfim.ImageFormat.Rgba32)
-        {
-            Image<Bgra32> image = Image.LoadPixelData<Bgra32>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsBmp($"{exportFilePath}.bmp");
-
-        }
-        else if (_image.Format == Pfim.ImageFormat.Rgb24)
-        {
-            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsBmp($"{exportFilePath}.bmp");
-        }
-        else
-        {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
-        }
-    }
-
-    private static void ExportTGAImage(string exportFilePath, byte[] bytes)
-    {
-        Pfim.IImage _image = GetPfimImage(bytes);
-
-        if (_image.Format == Pfim.ImageFormat.Rgba32)
-        {
-            Image<Bgra32> image = Image.LoadPixelData<Bgra32>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsTga($"{exportFilePath}.tga");
-
-        }
-        else if (_image.Format == Pfim.ImageFormat.Rgb24)
-        {
-            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsTga($"{exportFilePath}.tga");
-        }
-        else
-        {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
-        }
-    }
-
-    private static void ExportTIFFImage(string exportFilePath, byte[] bytes)
-    {
-        Pfim.IImage _image = GetPfimImage(bytes);
-
-        if (_image.Format == Pfim.ImageFormat.Rgba32)
-        {
-            Image<Bgra32> image = Image.LoadPixelData<Bgra32>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsTiff($"{exportFilePath}.tiff");
-
-        }
-        else if (_image.Format == Pfim.ImageFormat.Rgb24)
-        {
-            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsTiff($"{exportFilePath}.tiff");
-        }
-        else
-        {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
-        }
-    }
-
-    private static void ExportJPEGImage(string exportFilePath, byte[] bytes)
-    {
-        Pfim.IImage _image = GetPfimImage(bytes);
-
-        if (_image.Format == Pfim.ImageFormat.Rgba32)
-        {
-            Image<Bgra32> image = Image.LoadPixelData<Bgra32>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsJpeg($"{exportFilePath}.jpeg");
-
-        }
-        else if (_image.Format == Pfim.ImageFormat.Rgb24)
-        {
-            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsJpeg($"{exportFilePath}.jpeg");
-        }
-        else
-        {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
-        }
-    }
-
-    private static void ExportWEBPImage(string exportFilePath, byte[] bytes)
-    {
-        Pfim.IImage _image = GetPfimImage(bytes);
-
-        if (_image.Format == Pfim.ImageFormat.Rgba32)
-        {
-            Image<Bgra32> image = Image.LoadPixelData<Bgra32>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsWebp($"{exportFilePath}.webp");
-
-        }
-        else if (_image.Format == Pfim.ImageFormat.Rgb24)
-        {
-            Image<Bgr24> image = Image.LoadPixelData<Bgr24>(_image.Data, _image.Width, _image.Height);
-            image.SaveAsWebp($"{exportFilePath}.webp");
-        }
-        else
-        {
-            throw new Exception("Unsupported pixel format (" + _image.Format + ")");
-        }
-    }
-
-    private static Pfim.IImage GetPfimImage(byte[] bytes)
-    {
-        Pfim.IImage _image = Pfim.Dds.Create(bytes, new Pfim.PfimConfig());
-
-        if (_image.Compressed)
-        {
-            _image.Decompress();
-        }
-
-        return _image;
     }
 }

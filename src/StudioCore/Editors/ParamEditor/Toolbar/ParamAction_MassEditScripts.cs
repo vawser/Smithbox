@@ -106,9 +106,13 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.ShowHoverTooltip($"Save the script as a common script for all project types.\nIf not, then the script will only appear for {Project.Type} projects.");
                 ImguiUtils.WrappedText("");
 
+                var Size = ImGui.GetWindowSize();
+                float EditX = (Size.X / 100) * 95;
+                float EditY = (Size.Y / 100) * 25;
+
                 ImguiUtils.WrappedText("Script:");
                 ImguiUtils.ShowHoverTooltip("The mass edit script.");
-                ImGui.InputTextMultiline("##newMassEditScript", ref _newScriptBody, 65536, new Vector2(500, ImGui.GetTextLineHeightWithSpacing() * 24) * Smithbox.GetUIScale());
+                ImGui.InputTextMultiline("##newMassEditScript", ref _newScriptBody, 65536, new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
                 ImguiUtils.WrappedText("");
 
                 if (ImGui.Button("Save", new Vector2(150, 32)))

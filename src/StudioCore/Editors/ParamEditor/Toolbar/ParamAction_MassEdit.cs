@@ -47,15 +47,19 @@ namespace StudioCore.Editors.ParamEditor.Toolbar
                 ImguiUtils.WrappedText("Input:");
                 ImguiUtils.ShowWideHoverTooltip("Input your mass edit command here.");
 
+                var Size = ImGui.GetWindowSize();
+                float EditX = (Size.X / 100) * 95;
+                float EditY = (Size.Y / 100) * 25;
+
                 ImGui.InputTextMultiline("##MEditRegexInput", ref _currentMEditRegexInput, 65536,
-                new Vector2(500, ImGui.GetTextLineHeightWithSpacing() * 4) * Smithbox.GetUIScale());
+                new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()));
                 ImGui.Text("");
 
                 ImguiUtils.WrappedText($"Output: {_mEditRegexResult}");
                 ImguiUtils.ShowWideHoverTooltip("Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
 
                 ImGui.InputTextMultiline("##MEditRegexOutput", ref _lastMEditRegexInput, 65536,
-                    new Vector2(500, ImGui.GetTextLineHeightWithSpacing() * 4) * Smithbox.GetUIScale(), ImGuiInputTextFlags.ReadOnly);
+                    new Vector2(EditX * Smithbox.GetUIScale(), EditY * Smithbox.GetUIScale()), ImGuiInputTextFlags.ReadOnly);
                 ImguiUtils.WrappedText("");
 
                 ImGui.Checkbox("Retain Input", ref retainMassEditCommand);
