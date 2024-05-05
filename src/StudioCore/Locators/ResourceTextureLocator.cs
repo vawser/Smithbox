@@ -246,38 +246,20 @@ public static class ResourceTextureLocator
         ad.AssetPath = null;
         ad.AssetArchiveVirtualPath = null;
         string path = null;
+
         if (Project.Type == ProjectType.DS1)
+        {
             path = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd");
-        else if (Project.Type is ProjectType.DES or ProjectType.DS1R or ProjectType.BB
-                 or ProjectType.DS3 or ProjectType.SDT)
+        }
+        else if (Project.Type is ProjectType.DES or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT)
+        {
             path = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd.dcx");
+        }
 
         if (path != null)
         {
             ad.AssetPath = path;
             ad.AssetArchiveVirtualPath = $@"obj/{obj}/tex";
-        }
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetPartTextureContainer(string part)
-    {
-        ResourceDescriptor ad = new();
-        ad.AssetPath = null;
-        ad.AssetArchiveVirtualPath = null;
-        string path = null;
-
-        if (Project.Type == ProjectType.DS1)
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd");
-        else if (Project.Type is ProjectType.DES or ProjectType.DS1R or ProjectType.BB
-                 or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
-            path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{part}.partsbnd.dcx");
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetArchiveVirtualPath = $@"parts/{part}/tex";
         }
 
         return ad;
@@ -289,12 +271,19 @@ public static class ResourceTextureLocator
         ad.AssetPath = null;
         ad.AssetArchiveVirtualPath = null;
         string path;
+
         if (Project.Type == ProjectType.ER)
+        {
             path = ResourceLocatorUtils.GetOverridenFilePath($@"asset\aet\{aetid.Substring(0, 6)}\{aetid}.tpf.dcx");
+        }
         else if (Project.Type is ProjectType.AC6)
+        {
             path = ResourceLocatorUtils.GetOverridenFilePath($@"\asset\environment\texture\{aetid}.tpf.dcx");
+        }
         else
+        {
             throw new NotSupportedException();
+        }
 
         if (path != null)
         {
@@ -351,13 +340,15 @@ public static class ResourceTextureLocator
         return ad;
     }
 
-    public static ResourceDescriptor GetPartTextures(string partsId)
+    public static ResourceDescriptor GetPartTextureContainer(string partsId, bool isLowDetail = false)
     {
         ResourceDescriptor ad = new();
         ad.AssetArchiveVirtualPath = null;
         ad.AssetPath = null;
+
         if (Project.Type == ProjectType.AC6)
         {
+            /*
             string path;
             if (partsId.Substring(0, 2) == "wp")
             {
@@ -374,22 +365,40 @@ public static class ResourceTextureLocator
                 }
             }
             else
+            {
                 path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}_u.tpf.dcx");
+            }
 
             if (path != null)
             {
                 ad.AssetPath = path;
                 ad.AssetVirtualPath = $@"parts/{partsId}/tex";
             }
-        }
-        else if (Project.Type == ProjectType.ER)
-        {
-            // Maybe add an option down the line to load lower quality
+            */
+
             var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+
             if (path != null)
             {
                 ad.AssetPath = path;
                 ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
+            }
+        }
+        else if (Project.Type == ProjectType.ER)
+        {
+            TaskLogs.AddLog($"{partsId}");
+
+            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+
+            if (path != null)
+            {
+                ad.AssetPath = path;
+                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
+
+                if(isLowDetail)
+                {
+                    ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex/low";
+                }
             }
         }
         else if (Project.Type == ProjectType.DS3 || Project.Type == ProjectType.SDT)

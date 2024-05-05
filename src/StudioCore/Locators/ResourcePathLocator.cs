@@ -204,6 +204,7 @@ public static class ResourcePathLocator
                 }
             }
         }
+        // CHARACTERS
         else if (pathElements[i].Equals("chr"))
         {
             i++;
@@ -230,6 +231,7 @@ public static class ResourcePathLocator
                 return ResourceTextureLocator.GetChrTexturePath(chrid);
             }
         }
+        // OBJECTS
         else if (pathElements[i].Equals("obj"))
         {
             i++;
@@ -264,11 +266,13 @@ public static class ResourcePathLocator
                 return ResourceLocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd.dcx");
             }
         }
+        // PARTS
         else if (pathElements[i].Equals("parts"))
         {
             i++;
             var partsId = pathElements[i];
             i++;
+
             if (pathElements[i].Equals("model") || pathElements[i].Equals("tex"))
             {
                 bndpath = "";
@@ -312,6 +316,19 @@ public static class ResourcePathLocator
                     return ResourceLocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{partsId}.bnd");
                 }
 
+                if (Project.Type is ProjectType.ER)
+                {
+                    // This is so the ER parts _l will display in the Texture Viewer
+                    if (pathElements.Length == 4)
+                    {
+                        i++;
+                        if (pathElements[i].Equals("low"))
+                        {
+                            ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}_l.partsbnd.dcx");
+                        }
+                    }
+                }
+
                 if (Project.Type == ProjectType.AC6 && pathElements[i].Equals("tex"))
                 {
                     string path;
@@ -338,6 +355,7 @@ public static class ResourcePathLocator
                 return ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
             }
         }
+        // MENU
         else if (pathElements[i].Equals("menu"))
         {
             i++;
@@ -351,6 +369,7 @@ public static class ResourcePathLocator
                 return ResourceTextureLocator.GetMenuTextureContainerPath(containerName);
             }
         }
+        // ASSET
         else if (pathElements[i].Equals("aet"))
         {
             i++;
@@ -364,6 +383,7 @@ public static class ResourcePathLocator
                 return ResourceTextureLocator.GetAssetTextureContainerPath(containerName);
             }
         }
+        // OTHER
         else if (pathElements[i].Equals("other"))
         {
             i++;

@@ -882,7 +882,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                 asset = ResourceTextureLocator.GetObjTextureContainer(modelid);
                 break;
             case ModelEditorModelType.Parts:
-                asset = ResourceTextureLocator.GetPartTextures(modelid);
+                asset = ResourceTextureLocator.GetPartTextureContainer(modelid);
                 break;
             case ModelEditorModelType.MapPiece:
                 asset = ResourceModelLocator.GetNullAsset();

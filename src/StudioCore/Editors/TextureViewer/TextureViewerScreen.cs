@@ -289,6 +289,10 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     private void SelectTextureContainer(TextureViewInfo info)
     {
+        // Ignore this if it is already loaded (e.g. same entry is double clicked)
+        if (_selectedTextureContainer == info)
+            return;
+
         _selectedTextureContainerKey = info.Name;
         _selectedTextureContainer = info;
         CurrentTextureContainerName = _selectedTextureContainerKey;
@@ -318,7 +322,14 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (info.Category == TextureViewCategory.Part)
         {
-            ad = ResourceTextureLocator.GetPartTextureContainer(_selectedTextureContainerKey);
+            var isLowDetail = false;
+            var name = info.Path;
+            if (name.Contains("_l."))
+            {
+                isLowDetail = true;
+            }
+
+            ad = ResourceTextureLocator.GetPartTextureContainer(_selectedTextureContainerKey, isLowDetail);
         }
 
         if (info.Category == TextureViewCategory.Other)
