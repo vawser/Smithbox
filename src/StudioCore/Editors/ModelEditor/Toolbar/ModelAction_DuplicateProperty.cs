@@ -21,7 +21,7 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void Select()
         {
-            if (ImGui.RadioButton("Duplicate Selected Property##tool_DuplicateProperty", ModelToolbar.SelectedAction == ModelEditorAction.DuplicateProperty))
+            if (ImGui.RadioButton("Duplicate Property##tool_DuplicateProperty", ModelToolbar.SelectedAction == ModelEditorAction.DuplicateProperty))
             {
                 ModelToolbar.SelectedAction = ModelEditorAction.DuplicateProperty;
             }

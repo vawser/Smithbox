@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Banks;
 using StudioCore.Banks.FormatBank;
 using StudioCore.BanksMain;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Toolbar;
@@ -20,6 +21,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Veldrid;
 using Veldrid.Utilities;
 using static StudioCore.Editors.MapEditor.MapPropertyEditor;
 
@@ -1087,6 +1089,7 @@ public class ModelPropertyEditor
         ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(w - 370, 20) * scale, ImGuiCond.FirstUseEver);
         ImGui.Begin($@"Properties##{id}");
+
         ImGui.BeginChild("propedit");
 
         if (entSelection.Count > 1)

@@ -67,14 +67,14 @@ public class CFG
     public bool Interface_MapEditor_AssetBrowser = true;
     public bool Interface_MapEditor_Toolbar = true;
     public bool Interface_MapEditor_ResourceList = true;
-    public bool Interface_MapEditor_Viewport_Grid = false;
+    public bool Interface_MapEditor_Viewport_Grid = true;
 
     public bool Interface_ModelEditor_ModelHierarchy = true;
     public bool Interface_ModelEditor_Properties = true;
     public bool Interface_ModelEditor_AssetBrowser = true;
     public bool Interface_ModelEditor_Toolbar = true;
     public bool Interface_ModelEditor_ResourceList = true;
-    public bool Interface_ModelEditor_Viewport_Grid = false;
+    public bool Interface_ModelEditor_Viewport_Grid = true;
 
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_MassEdit = true;
