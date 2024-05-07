@@ -1,5 +1,6 @@
 ﻿using ImGuiNET;
 using StudioCore.DebugPrimitives;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -24,10 +25,10 @@ public class MapViewGrid
     {
         _renderlist = renderlist;
 
-        WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.Viewport_Grid_Size, CFG.Current.Viewport_Grid_Square_Size);
+        WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.MapEditor_Viewport_Grid_Size, CFG.Current.MapEditor_Viewport_Grid_Square_Size);
 
         ViewportGrid = new DebugPrimitiveRenderableProxy(_renderlist, WireGrid);
-        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.Viewport_Grid_Color);
+        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
     }
 
     private Color GetViewGridColor(Vector3 color)
@@ -37,31 +38,33 @@ public class MapViewGrid
 
     public void Regenerate()
     {
-        WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.Viewport_Grid_Size, CFG.Current.Viewport_Grid_Square_Size);
+        WireGrid.Dispose();
+        ViewportGrid.Dispose();
+
+        WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.MapEditor_Viewport_Grid_Size, CFG.Current.MapEditor_Viewport_Grid_Square_Size);
 
         ViewportGrid = new DebugPrimitiveRenderableProxy(_renderlist, WireGrid);
-        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.Viewport_Grid_Color);
+        ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
     }
 
     public void Update(Ray ray)
     {
-        if (CFG.Current.Viewport_EnableGrid)
+        if (CFG.Current.MapEditor_Viewport_RegenerateMapGrid)
         {
-            ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.Viewport_Grid_Color);
+            CFG.Current.MapEditor_Viewport_RegenerateMapGrid = false;
+
+            Regenerate();
+        }
+
+        if (CFG.Current.Interface_MapEditor_Viewport_Grid && Smithbox._focusedEditor is MapEditorScreen)
+        {
+            ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;
-            ViewportGrid.World = new Transform(0, CFG.Current.Viewport_Grid_Height, 0, 0, 0, 0).WorldMatrix;
+            ViewportGrid.World = new Transform(0, CFG.Current.MapEditor_Viewport_Grid_Height, 0, 0, 0, 0).WorldMatrix;
         }
         else
         {
             ViewportGrid.Visible = false;
-        }
-
-        if (CFG.Current.Viewport_RegenerateMapGrid)
-        {
-            CFG.Current.Viewport_RegenerateMapGrid = false;
-
-            Regenerate();
-            Regenerate();
         }
     }
 }

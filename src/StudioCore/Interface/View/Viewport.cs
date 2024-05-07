@@ -3,6 +3,7 @@ using StudioCore.Configuration;
 using StudioCore.DebugPrimitives;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
@@ -40,7 +41,8 @@ public class Viewport : IViewport
     //private DebugPrimitives.DbgPrimGizmoTranslate TranslateGizmo = null;
     private readonly Gizmos _gizmos;
 
-    private readonly MapViewGrid _viewGrid;
+    private readonly MapViewGrid _mapEditor_Viewport_Grid;
+    private readonly ModelViewGrid _modelEditor_Viewport_Grid;
 
     private readonly DbgPrimWire _rayDebug = null;
 
@@ -117,7 +119,8 @@ public class Viewport : IViewport
         _gizmos = new Gizmos(_actionManager, _selection, _renderScene.OverlayRenderables);
 
         // Create view grid
-        _viewGrid = new MapViewGrid(_renderScene.OpaqueRenderables);
+        _mapEditor_Viewport_Grid = new MapViewGrid(_renderScene.OpaqueRenderables);
+        _modelEditor_Viewport_Grid = new ModelViewGrid(_renderScene.OpaqueRenderables);
 
         _clearQuad = new FullScreenQuad();
         Renderer.AddBackgroundUploadTask((gd, cl) =>
@@ -222,7 +225,8 @@ public class Viewport : IViewport
         _cursorY = (int)pos.Y; // - Y;
 
         _gizmos.Update(ray, _canInteract && MouseInViewport());
-        _viewGrid.Update(ray);
+        _mapEditor_Viewport_Grid.Update(ray);
+        _modelEditor_Viewport_Grid.Update(ray);
 
         _viewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_DefaultRender_Brightness;
         _viewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_DefaultRender_Saturation;

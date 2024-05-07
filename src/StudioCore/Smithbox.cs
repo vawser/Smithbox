@@ -72,7 +72,7 @@ public class Smithbox
 
     // Editors
     public static List<EditorScreen> _editors;
-    private EditorScreen _focusedEditor;
+    public static EditorScreen _focusedEditor;
 
     private readonly SoapstoneService _soapstoneService;
     private readonly string _version;

@@ -289,6 +289,14 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Viewport Grid"))
+            {
+                CFG.Current.Interface_ModelEditor_Viewport_Grid = !CFG.Current.Interface_ModelEditor_Viewport_Grid;
+                CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = true;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Viewport_Grid);
+
             ImGui.EndMenu();
         }
 

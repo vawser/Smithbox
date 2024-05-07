@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (CFG.Current.Viewport_EnableGrid)
+            if (CFG.Current.Interface_MapEditor_Viewport_Grid)
             {
                 if (ImGui.RadioButton("Move to Grid##tool_Selection_Move_to_Grid", MapEditorState.SelectedAction == MapEditorAction.Selection_Move_to_Grid))
                 {
@@ -54,7 +54,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.SameLine();
                 if (CFG.Current.Toolbar_Move_to_Grid_Specific_Height_Input)
                 {
-                    var height = CFG.Current.Viewport_Grid_Height;
+                    var height = CFG.Current.MapEditor_Viewport_Grid_Height;
 
                     ImGui.PushItemWidth(200);
                     ImGui.InputFloat("Grid height", ref height);
@@ -66,12 +66,12 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     if (height > 10000)
                         height = 10000;
 
-                    CFG.Current.Viewport_Grid_Height = height;
+                    CFG.Current.MapEditor_Viewport_Grid_Height = height;
                 }
                 else
                 {
                     ImGui.PushItemWidth(200);
-                    ImGui.SliderFloat("Grid height", ref CFG.Current.Viewport_Grid_Height, -10000, 10000);
+                    ImGui.SliderFloat("Grid height", ref CFG.Current.MapEditor_Viewport_Grid_Height, -10000, 10000);
                     ImguiUtils.ShowHoverTooltip("Set the current height of the map grid.");
                 }
             }
@@ -127,23 +127,23 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
             if (CFG.Current.Toolbar_Move_to_Grid_X)
             {
-                float temp = newPos[0] / CFG.Current.Viewport_Grid_Square_Size;
-                float newPosX = (float)Math.Round(temp, 0) * CFG.Current.Viewport_Grid_Square_Size;
+                float temp = newPos[0] / CFG.Current.MapEditor_Viewport_Grid_Square_Size;
+                float newPosX = (float)Math.Round(temp, 0) * CFG.Current.MapEditor_Viewport_Grid_Square_Size;
 
                 newPos = new Vector3(newPosX, newPos[1], newPos[2]);
             }
 
             if (CFG.Current.Toolbar_Move_to_Grid_Z)
             {
-                float temp = newPos[2] / CFG.Current.Viewport_Grid_Square_Size;
-                float newPosZ = (float)Math.Round(temp, 0) * CFG.Current.Viewport_Grid_Square_Size;
+                float temp = newPos[2] / CFG.Current.MapEditor_Viewport_Grid_Square_Size;
+                float newPosZ = (float)Math.Round(temp, 0) * CFG.Current.MapEditor_Viewport_Grid_Square_Size;
 
                 newPos = new Vector3(newPos[0], newPos[1], newPosZ);
             }
 
             if (CFG.Current.Toolbar_Move_to_Grid_Y)
             {
-                newPos = new Vector3(newPos[0], CFG.Current.Viewport_Grid_Height, newPos[2]);
+                newPos = new Vector3(newPos[0], CFG.Current.MapEditor_Viewport_Grid_Height, newPos[2]);
             }
 
             newTransform.Position = newPos;

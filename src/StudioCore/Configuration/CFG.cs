@@ -67,12 +67,14 @@ public class CFG
     public bool Interface_MapEditor_AssetBrowser = true;
     public bool Interface_MapEditor_Toolbar = true;
     public bool Interface_MapEditor_ResourceList = true;
+    public bool Interface_MapEditor_Viewport_Grid = false;
 
     public bool Interface_ModelEditor_ModelHierarchy = true;
     public bool Interface_ModelEditor_Properties = true;
     public bool Interface_ModelEditor_AssetBrowser = true;
     public bool Interface_ModelEditor_Toolbar = true;
     public bool Interface_ModelEditor_ResourceList = true;
+    public bool Interface_ModelEditor_Viewport_Grid = false;
 
     public bool Interface_ParamEditor_Table = true;
     public bool Interface_ParamEditor_MassEdit = true;
@@ -245,28 +247,33 @@ public class CFG
     public bool AutoLoadBank_Behavior = false;
 
     //****************************
+    // Settings: Viewport Grid
+    //****************************
+    public bool MapEditor_Viewport_RegenerateMapGrid = false;
+    public int MapEditor_Viewport_GridType = 0;
+    public int MapEditor_Viewport_Grid_Size = 1000;
+    public int MapEditor_Viewport_Grid_Square_Size = 10;
+    public float MapEditor_Viewport_Grid_Height = 0;
+    public float MapEditor_Viewport_Grid_Height_Increment = 1;
+    public Vector3 MapEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public bool ModelEditor_Viewport_RegenerateMapGrid = false;
+    public int ModelEditor_Viewport_GridType = 0;
+    public int ModelEditor_Viewport_Grid_Size = 1000;
+    public int ModelEditor_Viewport_Grid_Square_Size = 10;
+    public float ModelEditor_Viewport_Grid_Height = 0;
+    public float ModelEditor_Viewport_Grid_Height_Increment = 1;
+    public Vector3 ModelEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    //****************************
     // Settings: Viewport
     //****************************
-
-    public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
-
-    // View Grid
-    public bool Viewport_EnableGrid = true;
-
-    public int Viewport_GridType = 0;
-    public int Viewport_Grid_Size = 1000;
-    public int Viewport_Grid_Square_Size = 10;
-
-    public float Viewport_Grid_Height = 0;
-    public float Viewport_Grid_Height_Increment = 1;
-
-    public bool Viewport_RegenerateMapGrid = false;
     public bool Viewport_Frustum_Culling = true;
     public bool Viewport_Enable_Texturing = false;
     public bool Viewport_Enable_ER_Auto_Map_Offset = true;
     public bool Viewport_Enable_Selection_Outline = true;
 
-    public Vector3 Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+    public Vector3 Viewport_BackgroundColor = Utils.GetDecimalColor(Color.Gray);
 
     // Camera
     public float Viewport_Camera_FOV { get; set; } = 60.0f;

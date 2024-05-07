@@ -297,6 +297,14 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             }
             ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
 
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.Link}");
+            if (ImGui.MenuItem("Viewport Grid"))
+            {
+                CFG.Current.Interface_MapEditor_Viewport_Grid = !CFG.Current.Interface_MapEditor_Viewport_Grid;
+                CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
+            }
+            ImguiUtils.ShowActiveStatus(CFG.Current.Interface_MapEditor_Viewport_Grid);
+
             ImGui.EndMenu();
         }
 
@@ -544,7 +552,7 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
         // Keyboard shortcuts
         if (!ViewportUsingKeyboard && !ImGui.IsAnyItemActive())
         {
-            var type = CFG.Current.Viewport_GridType;
+            var type = CFG.Current.MapEditor_Viewport_GridType;
 
             if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.Core_Undo))
             {
@@ -559,23 +567,23 @@ public class MapEditorScreen : EditorScreen, SceneTreeEventHandler
             // Viewport Grid
             if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ViewportGrid_Lower))
             {
-                var offset = CFG.Current.Viewport_Grid_Height;
-                var increment = CFG.Current.Viewport_Grid_Height_Increment;
+                var offset = CFG.Current.MapEditor_Viewport_Grid_Height;
+                var increment = CFG.Current.MapEditor_Viewport_Grid_Height_Increment;
                 offset = offset - increment;
-                CFG.Current.Viewport_Grid_Height = offset;
+                CFG.Current.MapEditor_Viewport_Grid_Height = offset;
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ViewportGrid_Raise))
             {
-                var offset = CFG.Current.Viewport_Grid_Height;
-                var increment = CFG.Current.Viewport_Grid_Height_Increment;
+                var offset = CFG.Current.MapEditor_Viewport_Grid_Height;
+                var increment = CFG.Current.MapEditor_Viewport_Grid_Height_Increment;
                 offset = offset + increment;
-                CFG.Current.Viewport_Grid_Height = offset;
+                CFG.Current.MapEditor_Viewport_Grid_Height = offset;
             }
             if (InputTracker.GetKeyDown(KeyBindings.Current.Map_ViewportGrid_Bring_to_Selection))
             {
                 MsbEntity sel = _selection.GetFilteredSelection<MsbEntity>().ToList().First();
                 Vector3 pos = (Vector3)sel.GetPropertyValue("Position");
-                CFG.Current.Viewport_Grid_Height = pos.Y;
+                CFG.Current.MapEditor_Viewport_Grid_Height = pos.Y;
             }
 
             if (InputTracker.GetKeyDown(KeyBindings.Current.Core_Duplicate) && _selection.IsSelection())
