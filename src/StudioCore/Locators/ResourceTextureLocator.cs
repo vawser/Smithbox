@@ -209,7 +209,7 @@ public static class ResourceTextureLocator
             {
                 ad = new ResourceDescriptor();
                 ad.AssetPath = path;
-                ad.AssetVirtualPath = $@"chr/{chrid}/tex";
+                ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
             }
         }
         else if (Project.Type is ProjectType.BB)
@@ -270,6 +270,10 @@ public static class ResourceTextureLocator
         if (Project.Type == ProjectType.DS1)
         {
             path = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd");
+        }
+        else if (Project.Type == ProjectType.DS2S)
+        {
+            path = ResourceLocatorUtils.GetOverridenFilePath($@"model\obj\{obj}.bnd");
         }
         else if (Project.Type is ProjectType.DES or ProjectType.DS1R or ProjectType.BB or ProjectType.DS3 or ProjectType.SDT)
         {
@@ -435,6 +439,47 @@ public static class ResourceTextureLocator
             {
                 ad.AssetPath = path;
                 ad.AssetVirtualPath = $@"parts/{partsId}/tex";
+            }
+        }
+        else if (Project.Type == ProjectType.DS2S)
+        {
+            var partType = "";
+            switch (partsId.Substring(0, 2))
+            {
+                case "as":
+                    partType = "accessories";
+                    break;
+                case "am":
+                    partType = "arm";
+                    break;
+                case "bd":
+                    partType = "body";
+                    break;
+                case "fa":
+                case "fc":
+                case "fg":
+                    partType = "face";
+                    break;
+                case "hd":
+                    partType = "head";
+                    break;
+                case "leg":
+                    partType = "leg";
+                    break;
+                case "sd":
+                    partType = "shield";
+                    break;
+                case "wp":
+                    partType = "weapon";
+                    break;
+            }
+
+            var path = ResourceLocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{partsId}.bnd");
+
+            if (path != null)
+            {
+                ad.AssetPath = path;
+                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
             }
         }
         else if (Project.Type == ProjectType.DS1R)

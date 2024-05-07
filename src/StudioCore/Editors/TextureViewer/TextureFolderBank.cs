@@ -37,25 +37,25 @@ public static class TextureFolderBank
         FolderBank = new();
 
         // Menu
-        FindFolderNames_Menu(TextureViewCategory.Menu);
+        ScanMenuFolder(TextureViewCategory.Menu);
 
         // Assets: AC6 and ER only
-        FindFolderNames_Asset(TextureViewCategory.Asset);
+        ScanAssetFolder(TextureViewCategory.Asset);
 
         // Objects: Sekiro and before
-        FindFolderNames_Object(TextureViewCategory.Object);
+        ScanObjectFolder(TextureViewCategory.Object);
 
         // Characters
-        FindFolderNames_Characters(TextureViewCategory.Character);
+        ScanCharacterFolder(TextureViewCategory.Character);
 
         // Parts
-        FindFolderNames_Parts(TextureViewCategory.Part);
+        ScanPartsFolder(TextureViewCategory.Part);
 
         // SFX
-        FindFolderNames_Particles(TextureViewCategory.Particle);
+        ScanParticleFolder(TextureViewCategory.Particle);
 
         // Other
-        FindFolderNames_Other(TextureViewCategory.Other);
+        ScanOtherFolder(TextureViewCategory.Other);
 
         IsLoaded = true;
         IsLoading = false;
@@ -63,7 +63,7 @@ public static class TextureFolderBank
         TaskLogs.AddLog($"Texture Folder Bank - Load Complete");
     }
 
-    private static void FindFolderNames_Menu(TextureViewCategory category)
+    private static void ScanMenuFolder(TextureViewCategory category)
     {
         var folderDir = @"\menu";
         var fileExt = @".tpf.dcx";
@@ -73,41 +73,47 @@ public static class TextureFolderBank
             folderDir = @"\menu\hi";
         }
 
-        foreach (var name in GetFileNames(folderDir, fileExt))
+        FindTextureFolder(folderDir, fileExt, category);
+
+        if (Project.Type is ProjectType.DS2S)
         {
-            var filePath = $"{folderDir}\\{name}{fileExt}";
+            folderDir = @"\menu\tex\icon";
+            fileExt = @".tpf";
 
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-            {
-                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
-            }
-            else
-            {
-                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
-            }
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\menu\tex\icon\bonfire_area";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\menu\tex\icon\bonfire_list";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\menu\tex\icon\charamaking";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\menu\tex\icon\effect";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\menu\tex\icon\item_category";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            // TODO: support all the languages
+            folderDir = @"\menu\tex\icon\mapname\english";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\menu\tex\icon\vow";
+
+            FindTextureFolder(folderDir, fileExt, category);
         }
-
-        // TODO: fix issue with tpfbhd load before re-enabling
-        /*
-        fileExt = @".tpfbhd";
-
-        foreach (var name in GetFileNames(folderDir, fileExt))
-        {
-            var filePath = $"{folderDir}\\{name}{fileExt}";
-
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-            {
-                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
-            }
-            else
-            {
-                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
-            }
-        }
-        */
     }
 
-    private static void FindFolderNames_Asset(TextureViewCategory category)
+    private static void ScanAssetFolder(TextureViewCategory category)
     {
         var folderDir = @"";
         var fileExt = @".tpf.dcx";
@@ -116,19 +122,7 @@ public static class TextureFolderBank
         {
             folderDir = @"\asset\environment\texture";
 
-            foreach (var name in GetFileNames(folderDir, fileExt))
-            {
-                var filePath = $"{folderDir}\\{name}{fileExt}";
-
-                if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-                {
-                    LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
-                }
-                else
-                {
-                    LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
-                }
-            }
+            FindTextureFolder(folderDir, fileExt, category);
         }
 
         if (Project.Type is ProjectType.ER)
@@ -152,25 +146,13 @@ public static class TextureFolderBank
 
                     folderDir = $@"\asset\aet\{folderName}";
 
-                    foreach (var name in GetFileNames(folderDir, fileExt))
-                    {
-                        var filePath = $"{folderDir}\\{name}{fileExt}";
-
-                        if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-                        {
-                            LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
-                        }
-                        else
-                        {
-                            LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
-                        }
-                    }
+                    FindTextureFolder(folderDir, fileExt, category);
                 }
             }
         }
     }
 
-    private static void FindFolderNames_Object(TextureViewCategory category)
+    private static void ScanObjectFolder(TextureViewCategory category)
     {
         var folderDir = @"\obj";
         var fileExt = @".objbnd.dcx";
@@ -180,22 +162,16 @@ public static class TextureFolderBank
             fileExt = @".objbnd";
         }
 
-        foreach (var name in GetFileNames(folderDir, fileExt))
+        if (Project.Type == ProjectType.DS2S)
         {
-            var filePath = $"{folderDir}\\{name}{fileExt}";
-
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-            {
-                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
-            }
-            else
-            {
-                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
-            }
+            folderDir = @"\model\obj";
+            fileExt = @".bnd";
         }
+
+        FindTextureFolder(folderDir, fileExt, category);
     }
 
-    private static void FindFolderNames_Characters(TextureViewCategory category)
+    private static void ScanCharacterFolder(TextureViewCategory category)
     {
         var folderDir = @"\chr";
         var fileExt = ".texbnd.dcx";
@@ -211,22 +187,10 @@ public static class TextureFolderBank
             fileExt = ".texbnd";
         }
 
-        foreach (var name in GetFileNames(folderDir, fileExt))
-        {
-            var filePath = $"{folderDir}\\{name}{fileExt}";
-
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-            {
-                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
-            }
-            else
-            {
-                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
-            }
-        }
+        FindTextureFolder(folderDir, fileExt, category);
     }
 
-    private static void FindFolderNames_Parts(TextureViewCategory category)
+    private static void ScanPartsFolder(TextureViewCategory category)
     {
         var folderDir = @"\parts";
         var fileExt = @".partsbnd.dcx";
@@ -236,63 +200,90 @@ public static class TextureFolderBank
             fileExt = @".partsbnd";
         }
 
-        foreach (var name in GetFileNames(folderDir, fileExt))
-        {
-            var filePath = $"{folderDir}\\{name}{fileExt}";
+        FindTextureFolder(folderDir, fileExt, category);
 
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-            {
-                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
-            }
-            else
-            {
-                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
-            }
+        if (Project.Type == ProjectType.DS2S)
+        {
+            folderDir = @"\model\parts";
+            fileExt = @".commonbnd.dcx";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            fileExt = @".bnd";
+            folderDir = @"\model\parts";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            fileExt = @".bnd";
+            folderDir = @"\model\parts\accessories";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\model\parts\arm";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\model\parts\body";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\model\parts\face";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\model\parts\head";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\model\parts\leg";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\model\parts\shield";
+
+            FindTextureFolder(folderDir, fileExt, category);
+
+            folderDir = @"\model\parts\weapon";
+
+            FindTextureFolder(folderDir, fileExt, category);
         }
     }
 
-    private static void FindFolderNames_Particles(TextureViewCategory category)
+    private static void ScanParticleFolder(TextureViewCategory category)
     {
         var folderDir = @"\sfx";
         var fileExt = @".ffxbnd.dcx";
 
-        foreach (var name in GetFileNames(folderDir, fileExt))
-        {
-            var filePath = $"{folderDir}\\{name}{fileExt}";
-
-            if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
-            {
-                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
-            }
-            else
-            {
-                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
-            }
-        }
+        FindTextureFolder(folderDir, fileExt, category);
     }
 
-    private static void FindFolderNames_Other(TextureViewCategory category)
+    private static void ScanOtherFolder(TextureViewCategory category)
     {
         var folderDir = @"\other";
         var fileExt = @".tpf.dcx";
 
+        FindTextureFolder(folderDir, fileExt, category);
+    }
+
+    // General
+    private static void FindTextureFolder(string folderDir, string fileExt, TextureViewCategory category)
+    {
         foreach (var name in GetFileNames(folderDir, fileExt))
         {
             var filePath = $"{folderDir}\\{name}{fileExt}";
 
             if (File.Exists($"{Project.GameModDirectory}\\{filePath}"))
             {
-                LoadTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
+                AddTextureFolder($"{Project.GameModDirectory}\\{filePath}", category, true);
             }
             else
             {
-                LoadTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
+                AddTextureFolder($"{Project.GameRootDirectory}\\{filePath}", category, false);
             }
         }
     }
 
-    // General
-    private static void LoadTextureFolder(string path, TextureViewCategory category, bool isModFile)
+    private static void AddTextureFolder(string path, TextureViewCategory category, bool isModFile)
     {
         if (path == null)
         {

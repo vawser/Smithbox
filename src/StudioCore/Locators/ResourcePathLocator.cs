@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static SoulsFormats.MSB_AC6;
 
 namespace StudioCore.Locators;
 
@@ -379,6 +380,44 @@ public static class ResourcePathLocator
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
+
+                if (Project.Type == ProjectType.DS2S)
+                {
+                    var path = $@"menu\tex\icon\{containerName}.tpf";
+
+                    if (containerName.Contains("ic_area_"))
+                    {
+                        path = $@"menu\tex\icon\bonfire_area\{containerName}.tpf";
+                    }
+                    else if (containerName.Contains("ic_list_"))
+                    {
+                        path = $@"menu\tex\icon\bonfire_list\{containerName}.tpf";
+                    }
+                    else if (containerName.Contains("ic_cm_"))
+                    {
+                        path = $@"menu\tex\icon\charamaking\{containerName}.tpf";
+                    }
+                    else if (containerName.Contains("ei_"))
+                    {
+                        path = $@"menu\tex\icon\effect\{containerName}.tpf";
+                    }
+                    else if (containerName.Contains("ic_ca"))
+                    {
+                        path = $@"menu\tex\icon\item_category\{containerName}.tpf";
+                    }
+                    else if (containerName.Contains("map_name_"))
+                    {
+                        // TODO: support all the languages
+                        path = $@"menu\tex\icon\mapname\english\{containerName}.tpf";
+                    }
+                    else if (containerName.Contains("vi_"))
+                    {
+                        path = $@"menu\tex\icon\vow\{containerName}.tpf";
+                    }
+
+                    return ResourceLocatorUtils.GetOverridenFilePath(path);
+                }
+
                 return ResourceTextureLocator.GetMenuTextureContainerPath(containerName);
             }
         }

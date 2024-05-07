@@ -414,6 +414,7 @@ public class Smithbox
             InputTracker.UpdateFrameInput(snapshot, _context.Window);
             Update((float)deltaSeconds);
             Tracy.TracyCZoneEnd(ctx);
+
             if (!_context.Window.Exists)
             {
                 break;
@@ -422,7 +423,9 @@ public class Smithbox
             if (true) //_window.Focused)
             {
                 ctx = Tracy.TracyCZoneNC(1, "Draw", 0xFFFF0000);
+
                 _context.Draw(_editors, _focusedEditor);
+
                 Tracy.TracyCZoneEnd(ctx);
             }
             else

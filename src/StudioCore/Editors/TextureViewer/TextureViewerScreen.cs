@@ -296,7 +296,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         DisplayFileSection("Menu", TextureViewCategory.Menu);
 
-        DisplayFileSection("Other", TextureViewCategory.Other);
+        // DS2S doesn't have an other folder
+        if (Project.Type != ProjectType.DS2S)
+        {
+            DisplayFileSection("Other", TextureViewCategory.Other);
+        }
 
         ImGui.End();
     }

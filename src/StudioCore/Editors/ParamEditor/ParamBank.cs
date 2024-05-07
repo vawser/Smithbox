@@ -756,9 +756,7 @@ public class ParamBank
 
         if (!BND4.Is($@"{dir}\enc_regulation.bnd.dcx"))
         {
-            PlatformUtils.Instance.MessageBox(
-                "Attempting to decrypt DS2 regulation file, else functionality will be limited.", "",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
         }
 
         // Load loose params (prioritizing ones in mod folder)
@@ -791,6 +789,7 @@ public class ParamBank
         }
 
         LoadParamsDS2FromFile(looseParams, param, enemyFile);
+
         LoadExternalRowNames();
     }
 
@@ -803,9 +802,7 @@ public class ParamBank
 
         if (!BND4.Is($@"{Project.GameRootDirectory}\enc_regulation.bnd.dcx"))
         {
-            PlatformUtils.Instance.MessageBox(
-                "Attempting to decrypt DS2 regulation file, else functionality will be limited.", "",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
         }
 
         // Load loose params
