@@ -3,6 +3,7 @@ using SoulsFormats;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ModelEditor.Toolbar;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
@@ -73,7 +74,7 @@ public class ModelContainer : ObjectContainer
             var meshNode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
             if (Universe.IsRendering)
             {
-                if (proxy.Submeshes.Count > 0)
+                if (proxy.Submeshes.Count > 0 && i < proxy.Submeshes.Count)
                 {
                     meshNode.RenderSceneMesh = proxy.Submeshes[i];
                     proxy.Submeshes[i].SetSelectable(meshNode);
@@ -178,19 +179,69 @@ public class ModelContainer : ObjectContainer
     // Mesh
     public void DuplicateMeshIfValid(Entity selected, FlverResource r)
     {
-        NamedEntity nameEnt = selected as NamedEntity;
-
         if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
         {
             FLVER2.Mesh newMesh = (FLVER2.Mesh)selected.WrappedObject;
-            r.Flver.Meshes.Add(newMesh);
-
-            // TODO: support the updating of the scene view so this makes sense
-            // Technically it works fine, but the DSMS stuff with the proxy
-            // and the flver are messy and need to be hashed out.
+            for(int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
+            {
+                r.Flver.Meshes.Add(newMesh);
+            }
         }
     }
 
+    // Material
+    public void DuplicateMaterialIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.Material))
+        {
+            FLVER2.Material newMaterial = (FLVER2.Material)selected.WrappedObject;
+            for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
+            {
+                r.Flver.Materials.Add(newMaterial);
+            }
+        }
+    }
+
+    // Layout
+    public void DuplicateLayoutIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.BufferLayout))
+        {
+            FLVER2.BufferLayout newLayout = (FLVER2.BufferLayout)selected.WrappedObject;
+            for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
+            {
+                r.Flver.BufferLayouts.Add(newLayout);
+            }
+        }
+    }
+
+    // Bone
+    public void DuplicateBoneIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER.Bone))
+        {
+            FLVER.Bone newBone = (FLVER.Bone)selected.WrappedObject;
+            for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
+            {
+                r.Flver.Bones.Add(newBone);
+            }
+        }
+    }
+
+    // Dummy Poly
+    public void DuplicateDummyPolyIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER.Dummy))
+        {
+            FLVER.Dummy newDummy = (FLVER.Dummy)selected.WrappedObject;
+            for (int i = 0; i < CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount; i++)
+            {
+                r.Flver.Dummies.Add(newDummy);
+            }
+        }
+    }
+
+    // Mesh
     public void DeleteMeshIfValid(Entity selected, FlverResource r)
     {
         if (selected.WrappedObject.GetType() == typeof(FLVER2.Mesh))
@@ -198,10 +249,51 @@ public class ModelContainer : ObjectContainer
             FLVER2.Mesh oldMesh = (FLVER2.Mesh)selected.WrappedObject;
 
             r.Flver.Meshes.Remove(oldMesh);
+        }
+    }
 
-            // TODO: support the updating of the scene view so this makes sense
-            // Technically it works fine, but the DSMS stuff with the proxy
-            // and the flver are messy and need to be hashed out.
+    // Material
+    public void DeleteMaterialIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.Material))
+        {
+            FLVER2.Material oldMaterial = (FLVER2.Material)selected.WrappedObject;
+
+            r.Flver.Materials.Remove(oldMaterial);
+        }
+    }
+
+    // Layout
+    public void DeleteLayoutIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER2.BufferLayout))
+        {
+            FLVER2.BufferLayout oldLayout = (FLVER2.BufferLayout)selected.WrappedObject;
+
+            r.Flver.BufferLayouts.Remove(oldLayout);
+        }
+    }
+
+
+    // Bone
+    public void DeleteBoneIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER.Bone))
+        {
+            FLVER.Bone oldBone = (FLVER.Bone)selected.WrappedObject;
+
+            r.Flver.Bones.Remove(oldBone);
+        }
+    }
+
+    // DummyPoly
+    public void DeleteDummyPolyIfValid(Entity selected, FlverResource r)
+    {
+        if (selected.WrappedObject.GetType() == typeof(FLVER.Dummy))
+        {
+            FLVER.Dummy oldDummy = (FLVER.Dummy)selected.WrappedObject;
+
+            r.Flver.Dummies.Remove(oldDummy);
         }
     }
 }

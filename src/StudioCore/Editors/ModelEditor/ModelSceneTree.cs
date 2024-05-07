@@ -74,6 +74,10 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 2.0f) * scale);
 
         DisplaySceneTree();
+
+        ImGui.PopStyleVar(1);
+        ImGui.PopStyleColor(1);
+        _selection.ClearGotoTarget();
     }
 
     public void DisplaySceneTree()
@@ -83,8 +87,6 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
         // Scene Tree
         if (ImGui.Begin($@"Model Hierarchy##{_id}"))
         {
-            ImGui.PopStyleVar();
-
             // Tree List
             ImGui.BeginChild("listtree");
 
@@ -231,14 +233,8 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
 
             ImGui.EndChild();
         }
-        else
-        {
-            ImGui.PopStyleVar();
-        }
 
         ImGui.End();
-        ImGui.PopStyleColor();
-        _selection.ClearGotoTarget();
     }
 
     private void HierarchyView(Entity ent)

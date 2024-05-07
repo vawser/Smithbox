@@ -157,7 +157,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             if (_flverhandle != null)
             {
                 FlverResource r = _flverhandle.Get();
-                _universe.LoadFlver(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
+                _universe.LoadFlverInModelEditor(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
             }
 
             _universe.ScheduleTextureRefresh();
@@ -725,7 +725,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
             if (r.Flver != null)
             {
                 _universe.UnloadModels(true);
-                _universe.LoadFlver(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
+                _universe.LoadFlverInModelEditor(r.Flver, _renderMesh, CurrentModelInfo.ModelName);
             }
         }
 

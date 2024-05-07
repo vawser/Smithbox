@@ -34,6 +34,8 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
             {
                 ImguiUtils.WrappedText("Duplicate selected FLVER property.");
                 ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedText("WARNING: there are no safeguards ensuring that the model will still load correctly in-game, use this action with caution.");
+                ImguiUtils.WrappedText("");
 
                 ImguiUtils.WrappedText("Amount:");
                 ImGui.InputInt("##amount", ref CFG.Current.ModelEditor_Toolbar_DuplicateProperty_Amount);
@@ -55,6 +57,8 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
 
         public static void DuplicateFLVERProperty()
         {
+            CFG.Current.ModelEditor_RenderingUpdate = false;
+
             ViewportSelection sel = ModelEditorScreen._sceneTree.GetCurrentSelection();
 
             if (sel.GetSelection().Count < 1)
@@ -62,12 +66,19 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
                 return;
             }
 
-            ISelectable first = sel.GetSelection().First();
-            Entity selected = first as Entity;
-
             FlverResource r = ModelEditorScreen._flverhandle.Get();
 
-            ModelSceneTree.Model.DuplicateMeshIfValid(selected, r);
+            foreach(var curSel in sel.GetSelection())
+            {
+                Entity selected = curSel as Entity;
+                ModelSceneTree.Model.DuplicateMeshIfValid(selected, r);
+                ModelSceneTree.Model.DuplicateMaterialIfValid(selected, r);
+                ModelSceneTree.Model.DuplicateLayoutIfValid(selected, r);
+                ModelSceneTree.Model.DuplicateBoneIfValid(selected, r);
+                ModelSceneTree.Model.DuplicateDummyPolyIfValid(selected, r);
+            }
+
+            ModelToolbar._screen.Save();
 
             CFG.Current.ModelEditor_RenderingUpdate = true;
         }

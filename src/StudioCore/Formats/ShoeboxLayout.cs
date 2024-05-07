@@ -44,14 +44,11 @@ public class ShoeboxLayoutContainer
         {
             foreach(var tex in entry.Value.TextureAtlases)
             {
-                TaskLogs.AddLog($"TextureAtlas: {tex.ImagePath}");
-
                 var path = Path.GetFileNameWithoutExtension(tex.ImagePath);
                 string Name = path;
 
                 if(!Textures.ContainsKey(Name))
                 {
-                    TaskLogs.AddLog($"Name: {Name}");
                     Textures.Add(Name, tex.SubTextures);
                 }
             }

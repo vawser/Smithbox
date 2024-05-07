@@ -34,6 +34,8 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
             {
                 ImguiUtils.WrappedText("Delete selected FLVER property.");
                 ImguiUtils.WrappedText("");
+                ImguiUtils.WrappedText("WARNING: there are no safeguards ensuring that the model will still load correctly in-game, use this action with caution.");
+                ImguiUtils.WrappedText("");
             }
         }
 
@@ -57,12 +59,19 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
                 return;
             }
 
-            ISelectable first = sel.GetSelection().First();
-            Entity selected = first as Entity;
-
             FlverResource r = ModelEditorScreen._flverhandle.Get();
 
-            ModelSceneTree.Model.DeleteMeshIfValid(selected, r);
+            foreach (var curSel in sel.GetSelection())
+            {
+                Entity selected = curSel as Entity;
+                ModelSceneTree.Model.DeleteMeshIfValid(selected, r);
+                ModelSceneTree.Model.DeleteMaterialIfValid(selected, r);
+                ModelSceneTree.Model.DeleteLayoutIfValid(selected, r);
+                ModelSceneTree.Model.DeleteBoneIfValid(selected, r);
+                ModelSceneTree.Model.DeleteDummyPolyIfValid(selected, r);
+            }
+
+            ModelToolbar._screen.Save();
 
             CFG.Current.ModelEditor_RenderingUpdate = true;
         }

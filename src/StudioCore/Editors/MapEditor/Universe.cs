@@ -1160,7 +1160,7 @@ public class Universe
         }
     }
 
-    public void LoadFlver(FLVER2 flver, MeshRenderableProxy proxy, string name)
+    public void LoadFlverInModelEditor(FLVER2 flver, MeshRenderableProxy proxy, string name)
     {
         ModelContainer container = new(this, name);
 
