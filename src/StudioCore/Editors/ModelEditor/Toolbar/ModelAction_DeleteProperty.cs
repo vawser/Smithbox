@@ -36,6 +36,11 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
                 ImguiUtils.WrappedText("");
                 ImguiUtils.WrappedText("WARNING: there are no safeguards ensuring that the model will still load correctly in-game, use this action with caution.");
                 ImguiUtils.WrappedText("");
+
+                ImguiUtils.WrappedText("Mesh:");
+                ImGui.Checkbox("Affect Face Sets Only##facesetsOnly", ref CFG.Current.ModelEditor_Toolbar_DeleteProperty_FaceSetsOnly);
+                ImguiUtils.ShowHoverTooltip("Deleting mesh properties will clear the Face Sets instead of deleting the mesh itself.\n\nThis is required if you want to retain any Havok Physics setup already associated with a mesh.");
+                ImguiUtils.WrappedText("");
             }
         }
 

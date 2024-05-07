@@ -391,6 +391,8 @@ public class CFG
 
     public int ModelEditor_Toolbar_DuplicateProperty_Amount = 1;
 
+    public bool ModelEditor_Toolbar_DeleteProperty_FaceSetsOnly = true;
+
     //****************************
     // Settings: Param Editor
     //****************************

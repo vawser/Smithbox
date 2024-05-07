@@ -41,7 +41,7 @@ public class ModelToolbar_Configuration
 
         //ModelAction_DuplicateFile.Configure();
         ModelAction_DuplicateProperty.Configure();
-        //ModelAction_DeleteProperty.Configure();
+        ModelAction_DeleteProperty.Configure();
 
         //ModelAction_DuplicateFile.Act();
         ModelAction_DuplicateProperty.Act();

@@ -248,7 +248,14 @@ public class ModelContainer : ObjectContainer
         {
             FLVER2.Mesh oldMesh = (FLVER2.Mesh)selected.WrappedObject;
 
-            r.Flver.Meshes.Remove(oldMesh);
+            if(CFG.Current.ModelEditor_Toolbar_DeleteProperty_FaceSetsOnly)
+            {
+                oldMesh.FaceSets.Clear();
+            }
+            else
+            {
+                r.Flver.Meshes.Remove(oldMesh);
+            }
         }
     }
 

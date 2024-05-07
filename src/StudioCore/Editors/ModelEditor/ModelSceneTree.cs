@@ -182,7 +182,9 @@ public class ModelSceneTree : MapEditor.IActionEventHandler
                     if (ImGui.IsItemHovered())
                     {
                         // Only select if a node is not currently being opened/closed
-                        if (rootEntity == null || nodeopen && _treeOpenEntities.Contains(rootEntity) || !nodeopen && !_treeOpenEntities.Contains(rootEntity))
+                        if (rootEntity == null ||
+                            nodeopen && _treeOpenEntities.Contains(rootEntity) || 
+                            !nodeopen && !_treeOpenEntities.Contains(rootEntity))
                         {
                             if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
                             {
