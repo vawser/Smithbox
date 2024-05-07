@@ -689,8 +689,14 @@ public static class ResourceTextureLocator
     public static string GetParticleTextureContainerPath(string resourceName)
     {
         var overrideFilePath = "";
+        var fileExt = @".ffxbnd.dcx";
 
-        overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"sfx\{resourceName}.ffxbnd.dcx");
+        if (Project.Type is ProjectType.DS2S)
+        {
+            fileExt = @".ffxbnd";
+        }
+
+        overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"sfx\{resourceName}{fileExt}");
 
         if (overrideFilePath != null)
         {

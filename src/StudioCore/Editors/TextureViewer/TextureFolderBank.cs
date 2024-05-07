@@ -254,6 +254,11 @@ public static class TextureFolderBank
         var folderDir = @"\sfx";
         var fileExt = @".ffxbnd.dcx";
 
+        if(Project.Type is ProjectType.DS2S)
+        {
+            fileExt = @".ffxbnd";
+        }
+
         FindTextureFolder(folderDir, fileExt, category);
     }
 
