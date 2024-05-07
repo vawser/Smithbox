@@ -6,7 +6,7 @@
 /// </summary>
 public static class FeatureFlags
 {
-    public static bool DebugMenu = false;
+    public static bool DebugMenu = true;
     public static bool TestMenu = false;
     public static bool VawserHackyActions = false;
 
