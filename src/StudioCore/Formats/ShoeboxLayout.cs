@@ -114,6 +114,14 @@ public class SubTexture
         Y = node.Attributes["y"].Value;
         Width = node.Attributes["width"].Value;
         Height = node.Attributes["height"].Value;
-        Half = node.Attributes["half"].Value;
+
+        if (node.Attributes["half"] != null)
+        {
+            Half = node.Attributes["half"].Value;
+        }
+        else
+        {
+            Half = "";
+        }
     }
 }
