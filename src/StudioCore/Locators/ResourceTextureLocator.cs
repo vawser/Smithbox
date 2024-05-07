@@ -437,6 +437,15 @@ public static class ResourceTextureLocator
                 ad.AssetVirtualPath = $@"parts/{partsId}/tex";
             }
         }
+        else if (Project.Type == ProjectType.DS1R)
+        {
+            var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+            if (path != null)
+            {
+                ad.AssetPath = path;
+                ad.AssetArchiveVirtualPath = $@"parts/{partsId}/tex";
+            }
+        }
         else if (Project.Type == ProjectType.DS1)
         {
             var path = ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd");
@@ -547,6 +556,11 @@ public static class ResourceTextureLocator
         }
 
         if (Project.Type is ProjectType.DS3)
+        {
+            overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpf.dcx");
+        }
+
+        if (Project.Type is ProjectType.DS1R)
         {
             overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"menu\{resourceName}.tpf.dcx");
         }

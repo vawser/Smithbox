@@ -290,7 +290,7 @@ public static class ResourcePathLocator
             {
                 bndpath = "";
 
-                if (Project.Type == ProjectType.DS1 || Project.Type == ProjectType.DS1R)
+                if (Project.Type == ProjectType.DS1)
                     return ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd");
 
                 if (Project.Type == ProjectType.DS2S)
