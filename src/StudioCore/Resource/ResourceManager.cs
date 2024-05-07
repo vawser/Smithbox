@@ -606,12 +606,10 @@ public static class ResourceManager
             {
                 string o;
                 var absoluteBinderPath = ResourcePathLocator.VirtualToRealPath(BinderVirtualPath, out o);
-                TaskLogs.AddResourceLog($@" absolutePath: {absoluteBinderPath}");
 
                 Binder = InstantiateBinderReaderForFile(absoluteBinderPath, Project.Type);
                 if (Binder == null)
                 {
-                    TaskLogs.AddResourceLog($@"Return due to failure to read binder.");
                     return;
                 }
             }
@@ -633,8 +631,6 @@ public static class ResourceManager
 
                 if (curBinderFilename.Length > 0)
                     curFileBinderPath = $@"{BinderVirtualPath}/{curBinderFilename}";
-
-                TaskLogs.AddResourceLog($@"+ {curFileBinderPath}");
 
                 // Skip entry if entry Path is not in AssetWhitelist
                 if (AssetWhitelist != null && !AssetWhitelist.Contains(curFileBinderPath))
@@ -889,29 +885,19 @@ public static class ResourceManager
         public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly,
             HashSet<string> assets = null, bool isPersistent = false)
         {
-            TaskLogs.AddResourceLog($@"-------------------------");
-            TaskLogs.AddResourceLog($@"AddLoadArchiveTask");
-            TaskLogs.AddResourceLog($@" virtualPath: {virtualPath}");
-            TaskLogs.AddResourceLog($@" al: {al}");
-            TaskLogs.AddResourceLog($@" populateOnly: {populateOnly}");
-            TaskLogs.AddResourceLog($@" isPersistent: {isPersistent}");
-
             if (InFlightFiles.Contains(virtualPath))
             {
-                TaskLogs.AddResourceLog($@"Return due to file in flight.");
                 return;
             }
 
             InFlightFiles.Add(virtualPath);
             if (virtualPath == "null")
             {
-                TaskLogs.AddResourceLog($@"Return due to null virtual path.");
                 return;
             }
 
             if (!archivesToLoad.Contains(virtualPath))
             {
-                TaskLogs.AddResourceLog($@"Added {virtualPath} to archivesToLoad");
 
                 archivesToLoad.Add(virtualPath);
                 _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, ResourceType.All, assets, isPersistent), isPersistent);
@@ -920,29 +906,19 @@ public static class ResourceManager
 
         public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly, ResourceType filter, HashSet<string> assets = null, bool isPersistent = false)
         {
-            TaskLogs.AddResourceLog($@"-------------------------");
-            TaskLogs.AddResourceLog($@"AddLoadArchiveTask");
-            TaskLogs.AddResourceLog($@" virtualPath: {virtualPath}");
-            TaskLogs.AddResourceLog($@" al: {al}");
-            TaskLogs.AddResourceLog($@" populateOnly: {populateOnly}");
-            TaskLogs.AddResourceLog($@" isPersistent: {isPersistent}");
-
             if (InFlightFiles.Contains(virtualPath))
             {
-                TaskLogs.AddResourceLog($@"Return due to file in flight.");
                 return;
             }
 
             InFlightFiles.Add(virtualPath);
             if (virtualPath == "null")
             {
-                TaskLogs.AddResourceLog($@"Return due to null virtual path.");
                 return;
             }
 
             if (!archivesToLoad.Contains(virtualPath))
             {
-                TaskLogs.AddResourceLog($@"Added {virtualPath} to archivesToLoad");
 
                 archivesToLoad.Add(virtualPath);
                 _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, filter, assets, isPersistent), isPersistent);
@@ -955,15 +931,8 @@ public static class ResourceManager
         /// <param name="virtualPath"></param>
         public void AddLoadFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
         {
-            TaskLogs.AddResourceLog($@"-------------------------");
-            TaskLogs.AddResourceLog($@"AddLoadFileTask");
-            TaskLogs.AddResourceLog($@" virtualPath: {virtualPath}");
-            TaskLogs.AddResourceLog($@" al: {al}");
-            TaskLogs.AddResourceLog($@" isPersistent: {isPersistent}");
-
             if (InFlightFiles.Contains(virtualPath))
             {
-                TaskLogs.AddResourceLog($@"Return due to file in flight.");
                 return;
             }
 
@@ -971,8 +940,6 @@ public static class ResourceManager
 
             string bndout;
             var path = ResourcePathLocator.VirtualToRealPath(virtualPath, out bndout);
-
-            TaskLogs.AddResourceLog($@" absolutePath: {path}");
 
             IResourceLoadPipeline pipeline;
             if (path == null || virtualPath == "null")

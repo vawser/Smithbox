@@ -14,6 +14,9 @@ using System.Linq;
 using System.Numerics;
 using Veldrid;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Collections;
+using StudioCore.Formats;
 
 namespace StudioCore.Interface.Windows;
 
@@ -67,6 +70,28 @@ public class DebugWindow : IResourceEventListener
             ImGui.Columns(4);
 
             // Actions 
+            if (ImGui.Button("Read Layout File"))
+            {
+                string sourcePath = $@"F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game\\menu\\hi\01_common.sblytbnd.dcx";
+
+                ShoeboxLayoutContainer container = new ShoeboxLayoutContainer(sourcePath);
+                foreach(var layout in container.Layouts)
+                {
+                    foreach(var texAtlas in layout.Value.TextureAtlases)
+                    {
+                        foreach (var subText in texAtlas.SubTextures)
+                        {
+                            TaskLogs.AddLog($"{subText.Name}");
+                            TaskLogs.AddLog($"{subText.X}");
+                            TaskLogs.AddLog($"{subText.Y}");
+                            TaskLogs.AddLog($"{subText.Width}");
+                            TaskLogs.AddLog($"{subText.Height}");
+                            TaskLogs.AddLog($"{subText.Half}");
+                        }
+                    }
+                }
+            }
+
             if (ImGui.Button("Dump Uncompressed Files"))
             {
                 string sourcePath = "F:\\SteamLibrary\\steamapps\\common\\ARMORED CORE VI FIRES OF RUBICON\\Game\\map\\msld";

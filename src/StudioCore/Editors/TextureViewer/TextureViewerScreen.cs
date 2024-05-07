@@ -10,6 +10,7 @@ using StudioCore.Editors.GparamEditor.Toolbar;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TextureViewer.Toolbar;
+using StudioCore.Formats;
 using StudioCore.Interface;
 using StudioCore.Locators;
 using StudioCore.Resource;
@@ -83,12 +84,30 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     private List<AliasReference> _partNameCache = new List<AliasReference>();
     private List<AliasReference> _sfxNameCache = new List<AliasReference>();
 
+    private ShoeboxLayoutContainer shoeboxContainer = null;
+
     public void OnProjectChanged()
     {
         _chrNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Characters");
         _objNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Objects");
         _partNameCache = ModelAliasBank.Bank.AliasNames.GetEntries("Parts");
         _sfxNameCache = ParticleAliasBank.Bank.AliasNames.GetEntries("Particles");
+
+        if (Project.Type is ProjectType.ER or ProjectType.AC6)
+        {
+            string sourcePath = $@"menu\hi\01_common.sblytbnd.dcx";
+            if(File.Exists($@"{Project.GameModDirectory}\{sourcePath}"))
+            {
+                sourcePath = $@"{Project.GameModDirectory}\{sourcePath}";
+            }
+            else
+            {
+                sourcePath = $@"{Project.GameRootDirectory}\{sourcePath}";
+            }
+
+            shoeboxContainer = new ShoeboxLayoutContainer(sourcePath);
+            shoeboxContainer.BuildTextureDictionary();
+        }
 
         ResetTextureViewer();
 
@@ -650,6 +669,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             if (CurrentTextureInView != null)
             {
                 Vector2 size = GetImageSize(CurrentTextureInView, false);
+                Vector2 relativePos = GetRelativePosition(size, TextureViewWindowPosition, TextureViewScrollPosition);
 
                 ImGui.Columns(2);
 
@@ -669,11 +689,51 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 ImGui.Columns(1);
 
                 ImGui.Text("");
-                ImGui.Text($"Relative Position: {GetRelativePosition(size, TextureViewWindowPosition, TextureViewScrollPosition)}");
+                ImGui.Text($"Relative Position: {relativePos}");
+
+                if(shoeboxContainer != null)
+                {
+                    if(shoeboxContainer.Textures.ContainsKey(CurrentTextureName))
+                    {
+                        var subTexs = shoeboxContainer.Textures[CurrentTextureName];
+                        foreach(var entry in subTexs)
+                        {
+                            string IconName;
+                            bool IsMatch;
+                            (IconName, IsMatch) = MatchMousePosToIcon(entry, relativePos);
+
+                            if (IsMatch)
+                            {
+                                ImGui.Text($"Icon: {IconName}");
+                            }
+                        }
+                    }
+                }
             }
         }
 
         ImGui.End();
+    }
+
+    private (string, bool) MatchMousePosToIcon(SubTexture entry, Vector2 relativePos)
+    {
+        var cursorPos = relativePos;
+
+        var SubTexName = entry.Name.Replace(".png", "");
+
+        var success = false;
+
+        float Xmin = float.Parse(entry.X);
+        float Xmax = (Xmin + float.Parse(entry.Width));
+        float Ymin = float.Parse(entry.Y);
+        float Ymax = (Ymin + float.Parse(entry.Height));
+
+        if (cursorPos.X > Xmin && cursorPos.X < Xmax && cursorPos.Y > Ymin && cursorPos.Y < Ymax)
+        {
+            success = true;
+        }
+
+        return (SubTexName, success);
     }
 
     private Vector2 GetRelativePosition(Vector2 imageSize, Vector2 windowPos, Vector2 scrollPos)
