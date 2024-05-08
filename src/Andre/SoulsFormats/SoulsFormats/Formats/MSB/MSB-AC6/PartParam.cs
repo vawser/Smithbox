@@ -260,12 +260,12 @@ namespace SoulsFormats
             private protected abstract PartType Type { get; }
             private protected abstract bool HasUnkOffsetT50 { get; }
             private protected abstract bool HasUnkOffsetT58 { get; }
-            private protected abstract bool HasUnkOffsetT70 { get; }
-            private protected abstract bool HasUnkOffsetT78 { get; }
-            private protected abstract bool HasUnkOffsetT80 { get; }
+            private protected abstract bool HasUnkOffsetT70 { get; } // Gparam
+            private protected abstract bool HasUnkOffsetT78 { get; } // SceneGparam
+            private protected abstract bool HasUnkOffsetT80 { get; } // Grass
             private protected abstract bool HasUnkOffsetT88 { get; }
             private protected abstract bool HasUnkOffsetT90 { get; }
-            private protected abstract bool HasUnkOffsetT98 { get; }
+            private protected abstract bool HasUnkOffsetT98 { get; } // Tile Load
             private protected abstract bool HasUnkOffsetTA0 { get; }
 
             public int LocalIndex { get; set; }

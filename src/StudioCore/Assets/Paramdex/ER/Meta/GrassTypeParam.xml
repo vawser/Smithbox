@@ -61,8 +61,8 @@
     <colorShade1_g AltName="Color Shade [1] G" Wiki="" />
     <colorShade1_b AltName="Color Shade [1] B" Wiki="" />
     <colorShade2_r AltName="Color Shade [2] R" Wiki="" />
-    <colorShade2_g AltName="Color Shade [1] G" Wiki="" />
-    <colorShade2_b AltName="Color Shade [1] B" Wiki="" />
+    <colorShade2_g AltName="Color Shade [2] G" Wiki="" />
+    <colorShade2_b AltName="Color Shade [2] B" Wiki="" />
     <flatSplitType AltName="Plane Split Type" Wiki="" Enum="GRASS_FLAT_SPLIT_TYPE_ENUM" />
     <flatBladeCount AltName="Number of Planes" Wiki="" />
     <flatSlant AltName="Plane Angle" Wiki="" />
@@ -79,5 +79,5 @@
     <simpleModelName AltName="Simple Model Name" Wiki="" />
     <model1Name AltName="Model Name [1]" Wiki="" />
   </Field>
-  <Self />
+  <Self Wiki="Dynamic instanced assets, combined with a flat or billboard texture. Used to generate scattered grass or other such arrangements without the need for manual placement." />
 </PARAMMETA>
