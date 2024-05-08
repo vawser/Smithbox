@@ -32,6 +32,9 @@ namespace StudioCore.Editors.ModelEditor.Toolbar
         {
             if (ModelToolbar.SelectedAction == ModelEditorAction.DeleteProperty)
             {
+                ImguiUtils.WrappedText($"Shortcut: {ImguiUtils.GetKeybindHint(KeyBindings.Current.Core_Delete.HintText)}");
+                ImguiUtils.WrappedText("");
+
                 ImguiUtils.WrappedText("Delete selected FLVER property.");
                 ImguiUtils.WrappedText("");
                 ImguiUtils.WrappedText("WARNING: there are no safeguards ensuring that the model will still load correctly in-game, use this action with caution.");
