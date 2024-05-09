@@ -198,11 +198,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     private Matrix4x4 _world = Matrix4x4.Identity;
     protected GPUBufferAllocator.GPUBufferHandle? _worldBuffer;
 
-    public MeshRenderableProxy(
-        MeshRenderables renderables,
-        MeshProvider provider,
-        ModelMarkerType placeholderType = ModelMarkerType.None,
-        bool autoregister = true)
+    public MeshRenderableProxy(MeshRenderables renderables, MeshProvider provider, ModelMarkerType placeholderType = ModelMarkerType.None, bool autoregister = true)
     {
         AutoRegister = autoregister;
         _registered = AutoRegister;
@@ -856,35 +852,39 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
                               cameraDistanceInt));
     }
 
-    public static MeshRenderableProxy MeshRenderableFromFlverResource(
-        RenderScene scene, string virtualPath, ModelMarkerType modelType)
+    public static MeshRenderableProxy MeshRenderableFromFlverResource(RenderScene scene, string virtualPath, ModelMarkerType modelType)
     {
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables,
-            MeshProviderCache.GetFlverMeshProvider(virtualPath), modelType);
+        var meshProvider = MeshProviderCache.GetFlverMeshProvider(virtualPath);
+
+        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
+
         return renderable;
     }
 
-    public static MeshRenderableProxy MeshRenderableFromCollisionResource(
-        RenderScene scene, string virtualPath, ModelMarkerType modelType)
+    public static MeshRenderableProxy MeshRenderableFromCollisionResource(RenderScene scene, string virtualPath, ModelMarkerType modelType)
     {
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables,
-            MeshProviderCache.GetCollisionMeshProvider(virtualPath), modelType);
+        var meshProvider = MeshProviderCache.GetCollisionMeshProvider(virtualPath);
+
+        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
+
         return renderable;
     }
 
-    public static MeshRenderableProxy MeshRenderableFromNVMResource(
-        RenderScene scene, string virtualPath, ModelMarkerType modelType)
+    public static MeshRenderableProxy MeshRenderableFromNVMResource(RenderScene scene, string virtualPath, ModelMarkerType modelType)
     {
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables,
-            MeshProviderCache.GetNVMMeshProvider(virtualPath), modelType);
+        var meshProvider = MeshProviderCache.GetNVMMeshProvider(virtualPath);
+
+        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
+
         return renderable;
     }
 
-    public static MeshRenderableProxy MeshRenderableFromHavokNavmeshResource(
-        RenderScene scene, string virtualPath, ModelMarkerType modelType, bool temp = false)
+    public static MeshRenderableProxy MeshRenderableFromHavokNavmeshResource(RenderScene scene, string virtualPath, ModelMarkerType modelType, bool temp = false)
     {
-        MeshRenderableProxy renderable = new(scene.OpaqueRenderables,
-            MeshProviderCache.GetHavokNavMeshProvider(virtualPath, temp), modelType);
+        var meshProvider = MeshProviderCache.GetHavokNavMeshProvider(virtualPath, temp);
+
+        MeshRenderableProxy renderable = new(scene.OpaqueRenderables, meshProvider, modelType);
+
         return renderable;
     }
 }

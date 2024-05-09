@@ -33,6 +33,7 @@ public static class MeshProviderCache
         }
 
         FlverMeshProvider nfmp = new(virtualResourcePath);
+
         _cache.Add(virtualResourcePath, nfmp);
         return nfmp;
     }

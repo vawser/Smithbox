@@ -34,6 +34,11 @@ public interface IResourceLoadPipeline
     public ITargetBlock<LoadTPFTextureResourceRequest> LoadTPFTextureResourceRequest { get; }
 }
 
+// PIPELINE: resolve processed resources for:
+// - FlverResource
+// - HavokCollisionResource
+// - HavokNavmeshResource
+// - NVMNavmeshResource
 public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IResource, new()
 {
     private readonly ActionBlock<LoadByteResourceRequest> _loadByteResourcesTransform;
@@ -46,30 +51,53 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
         var options = new ExecutionDataflowBlockOptions();
         options.MaxDegreeOfParallelism = 6;
         _loadedResources = target;
+
+        // PIPELINE: Byte Requests
         _loadByteResourcesTransform = new ActionBlock<LoadByteResourceRequest>(r =>
         {
             var res = new T();
+
+            // PIPELINE: Load the byte resource (as the <T> type)
             var success = res._Load(r.Data, r.AccessLevel);
+
+            // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
             if (success)
             {
-                _loadedResources.Post(new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res));
+                var request = new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res);
+
+                _loadedResources.Post(request);
             }
         }, options);
+
+        // PIPELINE: File Requests
         _loadFileResourcesTransform = new ActionBlock<LoadFileResourceRequest>(r =>
         {
             try
             {
                 var res = new T();
+
+                // PIPELINE: Load the byte resource (as the <T> type)
                 var success = res._Load(r.File, r.AccessLevel);
+
+                // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
                 if (success)
                 {
-                    _loadedResources.Post(new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res));
+                    var request = new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res);
+
+                    _loadedResources.Post(request);
                 }
             }
-            catch (FileNotFoundException e1) { TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e1); }
-            catch (DirectoryNotFoundException e2) { TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e2); }
+            catch (FileNotFoundException e1) 
+            { 
+                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e1); 
+            }
+            catch (DirectoryNotFoundException e2) { 
+                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e2); 
+            }
             // Some DSR FLVERS can't be read due to mismatching layout and vertex sizes
-            catch (InvalidDataException e3) { TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e3); }
+            catch (InvalidDataException e3) { 
+                TaskLogs.AddLog("Resource load error", Microsoft.Extensions.Logging.LogLevel.Warning, TaskLogs.LogPriority.Low, e3); 
+            }
         }, options);
     }
 

@@ -773,6 +773,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
         }
     }
 
+    // PIPELINE: find resource desciptor for passed parameters and then start a new Resource Job for loading the resource.
     public void LoadModelInternal(string modelid, ModelEditorModelType modelType, string mapid = null, bool skipModel = false)
     {
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
@@ -782,15 +783,18 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
 
         UpdateRenderMesh(modelAsset, skipModel);
 
+        // PIPELINE: resource has not already been loaded
         if (!ResourceManager.IsResourceLoadedOrInFlight(modelAsset.AssetVirtualPath, AccessLevel.AccessFull))
         {
             // Ignore this if we are only loading textures
             if (!skipModel)
             {
+                // PIPELINE: resource path is a archive path (MAPBND.DCX or MAPBHD/MAPBDT)
                 if (modelAsset.AssetArchiveVirtualPath != null)
                 {
                     job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
                 }
+                // PIPELINE: resource path is adirect path (FLVER.DCX)
                 else if (modelAsset.AssetVirtualPath != null)
                 {
                     job.AddLoadFileTask(modelAsset.AssetVirtualPath, AccessLevel.AccessFull);
@@ -844,8 +848,7 @@ public class ModelEditorScreen : EditorScreen, AssetBrowserEventHandler, IResour
                     _renderMesh.Dispose();
                 }
 
-                _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
-                    RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None);
+                _renderMesh = MeshRenderableProxy.MeshRenderableFromFlverResource(RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None);
                 _renderMesh.World = Matrix4x4.Identity;
             }
         }

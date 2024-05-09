@@ -120,6 +120,7 @@ public static class ResourceManager
         return ret;
     }
 
+    // PIPELINE: reads the binder file (BND or BXF) and starts the required requests
     private static void LoadBinderResources(LoadBinderResourcesAction action)
     {
         try
@@ -129,31 +130,45 @@ public static class ResourceManager
             {
                 var doasync = action.PendingResources.Count() + action.PendingTPFs.Count() > 1;
                 var i = 0;
+
+                // PIPELINE: non-TPF files within the binder
                 foreach (Tuple<IResourceLoadPipeline, string, BinderFileHeader> p in action.PendingResources)
                 {
-                    Memory<byte> f = action.Binder.ReadFile(p.Item3);
-                    p.Item1.LoadByteResourceBlock.Post(new LoadByteResourceRequest(p.Item2, f, action.AccessLevel));
+                    var pipeline = p.Item1;
+                    var virtualPath = p.Item2;
+                    var binder = p.Item3;
+
+                    Memory<byte> binderData = action.Binder.ReadFile(binder);
+
+                    // PIPELINE: create request to load resource from bytes
+                    var request = new LoadByteResourceRequest(virtualPath, binderData, action.AccessLevel);
+
+                    // PIPELINE: add request to pipeline action block
+                    pipeline.LoadByteResourceBlock.Post(request);
+
                     action._job.IncrementEstimateTaskSize(1);
+
                     i++;
                 }
 
+                // PIPELINE: TPF files within the binder
                 foreach (Tuple<string, BinderFileHeader, bool> t in action.PendingTPFs)
                 {
-                    string name = t.Item1;
-                    BinderFileHeader binderFileHeader = t.Item2;
-                    bool isPersistent = t.Item3;
+                    var tpfName = t.Item1;
+                    var binder = t.Item2;
+                    var isPersistent = t.Item3;
 
                     try
                     {
-                        TPF f = TPF.Read(action.Binder.ReadFile(binderFileHeader));
+                        TPF tpfData = TPF.Read(action.Binder.ReadFile(binder));
 
-                        action._job.AddLoadTPFResources(
-                            new LoadTPFResourcesAction(action._job, t.Item1, f, action.AccessLevel), isPersistent);
+                        var request = new LoadTPFResourcesAction(action._job, tpfName, tpfData, action.AccessLevel);
+
+                        action._job.AddLoadTPFResources(request, isPersistent);
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to load TPF \"{name}\"",
-                            LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
+                        TaskLogs.AddLog($"Failed to load TPF \"{tpfName}\"", LogLevel.Warning, TaskLogs.LogPriority.Normal, e);
                     }
 
                     i++;
@@ -728,6 +743,7 @@ public static class ResourceManager
     /// </summary>
     public class ResourceJob
     {
+        // PIPELINE: holds all the Load Binder Resources actions for processing.
         private readonly ActionBlock<LoadBinderResourcesAction> _loadBinderResources;
 
         private readonly TransformManyBlock<LoadTPFResourcesAction, LoadTPFTextureResourceRequest>
@@ -748,6 +764,8 @@ public static class ResourceManager
                     options);
 
             //options.MaxDegreeOfParallelism = 4;
+
+            // PIPELINE: fill the action block with actions via the LoadBinderResources func
             _loadBinderResources = new ActionBlock<LoadBinderResourcesAction>(LoadBinderResources, options);
             _processedResources = new BufferBlock<ResourceLoadedReply>();
 
@@ -796,6 +814,7 @@ public static class ResourceManager
             _loadTPFResources.Post(action);
         }
 
+        // PIPELINE: fill Binder Resources ActionBlock with the passed Load Binder Resources action
         internal void AddLoadBinderResources(LoadBinderResourcesAction action, bool isPersistent = false)
         {
             IsPersistent = isPersistent;
@@ -807,7 +826,9 @@ public static class ResourceManager
         {
             return JobTaskFactory.StartNew(() =>
             {
+                // PIPELINE: complete all Load Binder Resources actions within the ActionBlock
                 _loadBinderResources.Complete();
+                // PIPELINE: wait for compleition
                 _loadBinderResources.Completion.Wait();
 
                 // FLVER
@@ -885,20 +906,24 @@ public static class ResourceManager
         public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly,
             HashSet<string> assets = null, bool isPersistent = false)
         {
+            // PIPELINE: resource is not already being loaded
             if (InFlightFiles.Contains(virtualPath))
             {
                 return;
             }
 
             InFlightFiles.Add(virtualPath);
+
+
+            // PIPELINE: resource path is not invalid
             if (virtualPath == "null")
             {
                 return;
             }
 
+            // PIPELINE: add Lond Binder Resources job to Resource Job
             if (!archivesToLoad.Contains(virtualPath))
             {
-
                 archivesToLoad.Add(virtualPath);
                 _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, ResourceType.All, assets, isPersistent), isPersistent);
             }
@@ -906,20 +931,23 @@ public static class ResourceManager
 
         public void AddLoadArchiveTask(string virtualPath, AccessLevel al, bool populateOnly, ResourceType filter, HashSet<string> assets = null, bool isPersistent = false)
         {
+            // PIPELINE: resource is not already being loaded
             if (InFlightFiles.Contains(virtualPath))
             {
                 return;
             }
 
             InFlightFiles.Add(virtualPath);
+
+            // PIPELINE: resource path is not invalid
             if (virtualPath == "null")
             {
                 return;
             }
 
+            // PIPELINE: add Lond Binder Resources job to Resource Job
             if (!archivesToLoad.Contains(virtualPath))
             {
-
                 archivesToLoad.Add(virtualPath);
                 _job.AddLoadBinderResources(new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, filter, assets, isPersistent), isPersistent);
             }
@@ -931,6 +959,7 @@ public static class ResourceManager
         /// <param name="virtualPath"></param>
         public void AddLoadFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
         {
+            // PIPELINE: resource is not already being loaded
             if (InFlightFiles.Contains(virtualPath))
             {
                 return;
@@ -939,9 +968,13 @@ public static class ResourceManager
             InFlightFiles.Add(virtualPath);
 
             string bndout;
+
+            // PIPELINE: convert resource path to absolute path
             var path = ResourcePathLocator.VirtualToRealPath(virtualPath, out bndout);
 
             IResourceLoadPipeline pipeline;
+
+            // PIPELINE: resource path is not invalid
             if (path == null || virtualPath == "null")
             {
                 return;
@@ -967,6 +1000,7 @@ public static class ResourceManager
                     }
                 }
 
+                // PIPELINE: add Load TPF Resources job to Resource Job
                 _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, path, al), true);
                 return;
             }
@@ -975,6 +1009,7 @@ public static class ResourceManager
                 pipeline = _job.FlverLoadPipeline;
             }
 
+            // PIPELINE: add Load File Resource request to target pipeline
             pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, path, al));
         }
 
