@@ -1,4 +1,5 @@
-﻿using StudioCore.UserProject;
+﻿using SoulsFormats;
+using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,8 +9,51 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Locators;
 
-public static class BrowserFileLocator
+public static class AssetListLocator
 {
+    // Used to get the map model list from within the mapbhd/bdt
+    public static List<ResourceDescriptor> GetMapModelsFromBXF(string mapid)
+    {
+        List<ResourceDescriptor> ret = new();
+
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+        {
+            var path = $@"{Project.GameModDirectory}/model/map/{mapid}.mapbdt";
+
+            if (!File.Exists(path))
+            {
+                path = $@"{Project.GameRootDirectory}/model/map/{mapid}.mapbdt";
+            }
+
+            if (File.Exists(path))
+            {
+                var bdtPath = path;
+                var bhdPath = path.Replace("bdt", "bhd");
+
+                var bxf = BXF4.Read(bhdPath, bdtPath);
+
+                if (bxf != null)
+                {
+                    foreach (var file in bxf.Files)
+                    {
+                        if (file.Name.Contains(".flv"))
+                        {
+                            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(file.Name));
+
+                            ResourceDescriptor ad = new();
+                            ad.AssetName = name;
+                            ad.AssetArchiveVirtualPath = $@"map/{name}/model/";
+
+                            ret.Add(ad);
+                        }
+                    }
+                }
+            }
+        }
+
+        return ret;
+    }
+
     public static List<ResourceDescriptor> GetMapModels(string mapid)
     {
         List<ResourceDescriptor> ret = new();
@@ -30,14 +74,6 @@ public static class BrowserFileLocator
                 ad.AssetVirtualPath = $@"map/{mapid}/model/{name}/{name}.flver";
                 ret.Add(ad);
             }
-        }
-        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
-        {
-            ResourceDescriptor ad = new();
-            var name = mapid;
-            ad.AssetName = name;
-            ad.AssetArchiveVirtualPath = $@"map/{mapid}/model/";
-            ret.Add(ad);
         }
         else if (Project.Type == ProjectType.ER)
         {

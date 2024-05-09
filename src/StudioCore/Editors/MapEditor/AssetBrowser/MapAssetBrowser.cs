@@ -222,13 +222,13 @@ public class MapAssetBrowser
 
         if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
         {
-            _modelNameCache = BrowserFileLocator.GetChrModels();
+            _modelNameCache = AssetListLocator.GetChrModels();
             _selectedAssetType = "Chr";
             _selectedAssetMapId = "";
         }
         if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
         {
-            _modelNameCache = BrowserFileLocator.GetObjModels();
+            _modelNameCache = AssetListLocator.GetObjModels();
             _selectedAssetType = "Obj";
             _selectedAssetMapId = "";
         }
@@ -254,7 +254,7 @@ public class MapAssetBrowser
                 {
                     if (_mapModelNameCache[mapId] == null)
                     {
-                        List<ResourceDescriptor> modelList = BrowserFileLocator.GetMapModels(mapId);
+                        List<ResourceDescriptor> modelList = AssetListLocator.GetMapModels(mapId);
                         var cache = new List<string>();
 
                         foreach (ResourceDescriptor model in modelList)

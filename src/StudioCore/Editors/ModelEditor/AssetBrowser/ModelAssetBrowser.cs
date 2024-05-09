@@ -32,8 +32,10 @@ namespace StudioCore.Editors.ModelEditor
     {
         private AssetBrowserEventHandler _handler;
 
-        private List<string> _modelNameCache = new List<string>();
-        private Dictionary<string, List<string>> _mapModelNameCache = new Dictionary<string, List<string>>();
+        private List<string> _characterNameCache = new List<string>();
+        private List<string> _objectNameCache = new List<string>();
+        private List<string> _partNameCache = new List<string>();
+        private Dictionary<string, List<string>> _mapPieceNameCache = new Dictionary<string, List<string>>();
 
         private string _selectedAssetType = null;
         private string _selectedAssetTypeCache = null;
@@ -65,8 +67,11 @@ namespace StudioCore.Editors.ModelEditor
         {
             if (Project.Type != ProjectType.Undefined)
             {
-                _modelNameCache = new List<string>();
-                _mapModelNameCache = new Dictionary<string, List<string>>();
+                _characterNameCache = AssetListLocator.GetChrModels();
+                _objectNameCache = AssetListLocator.GetObjModels();
+                _partNameCache = AssetListLocator.GetPartsModels();
+                _mapPieceNameCache = new Dictionary<string, List<string>>();
+
                 _selectedAssetMapId = "";
                 _selectedAssetMapIdCache = null;
                 _selectedAssetType = null;
@@ -78,8 +83,27 @@ namespace StudioCore.Editors.ModelEditor
                 {
                     var assetMapId = ResourceMapLocator.GetAssetMapID(mapId);
 
-                    if (!_mapModelNameCache.ContainsKey(assetMapId))
-                        _mapModelNameCache.Add(assetMapId, null);
+                    List<ResourceDescriptor> modelList = new List<ResourceDescriptor>();
+
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
+                    {
+                        modelList = AssetListLocator.GetMapModelsFromBXF(mapId);
+                    }
+                    else
+                    {
+                        modelList = AssetListLocator.GetMapModels(mapId);
+                    }
+
+                    var cache = new List<string>();
+                    foreach (var model in modelList)
+                    {
+                        cache.Add(model.AssetName);
+                    }
+
+                    if (!_mapPieceNameCache.ContainsKey(assetMapId))
+                    {
+                        _mapPieceNameCache.Add(assetMapId, cache);
+                    }
                 }
             }
         }
@@ -123,9 +147,9 @@ namespace StudioCore.Editors.ModelEditor
                 ImguiUtils.WrappedText("Assets:");
                 ImGui.Separator();
 
-                DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"));
-                DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"));
-                DisplayCategoryContentsList("Parts", ModelAliasBank.Bank.AliasNames.GetEntries("Parts"));
+                DisplayCategoryContentsList("Chr", ModelAliasBank.Bank.AliasNames.GetEntries("Characters"), _characterNameCache);
+                DisplayCategoryContentsList("Obj", ModelAliasBank.Bank.AliasNames.GetEntries("Objects"), _objectNameCache);
+                DisplayCategoryContentsList("Parts", ModelAliasBank.Bank.AliasNames.GetEntries("Parts"), _partNameCache);
                 DisplayMapPieceContentsList("MapPiece", ModelAliasBank.Bank.AliasNames.GetEntries("MapPieces"));
             }
 
@@ -222,41 +246,26 @@ namespace StudioCore.Editors.ModelEditor
 
             if (ImGui.Selectable("Chr", _selectedAssetType == "Chr"))
             {
-                _modelNameCache = BrowserFileLocator.GetChrModels();
                 _selectedAssetType = "Chr";
                 _selectedAssetMapId = "";
             }
             if (ImGui.Selectable(objLabel, _selectedAssetType == "Obj"))
             {
-                _modelNameCache = BrowserFileLocator.GetObjModels();
                 _selectedAssetType = "Obj";
                 _selectedAssetMapId = "";
             }
             if (ImGui.Selectable("Part", _selectedAssetType == "Parts"))
             {
-                _modelNameCache = BrowserFileLocator.GetPartsModels();
                 _selectedAssetType = "Parts";
                 _selectedAssetMapId = "";
             }
 
-            foreach (var mapId in _mapModelNameCache.Keys)
+            foreach (var mapId in _mapPieceNameCache.Keys)
             {
                 var labelName = MapAliasBank.GetFormattedMapName(mapId, mapId);
 
                 if (ImGui.Selectable(labelName, _selectedAssetMapId == mapId))
                 {
-                    if (_mapModelNameCache[mapId] == null)
-                    {
-                        var modelList = BrowserFileLocator.GetMapModels(mapId);
-                        var cache = new List<string>();
-                        foreach (var model in modelList)
-                        {
-                            cache.Add(model.AssetName);
-                        }
-
-                        _mapModelNameCache[mapId] = cache;
-                    }
-
                     _selectedAssetMapId = mapId;
                     _selectedAssetType = "MapPiece";
                 }
@@ -266,7 +275,7 @@ namespace StudioCore.Editors.ModelEditor
         /// <summary>
         /// Display the asset selection list for Chr, Obj/AEG and Parts.
         /// </summary>
-        private void DisplayCategoryContentsList(string assetType, List<AliasReference> referenceList)
+        private void DisplayCategoryContentsList(string assetType, List<AliasReference> referenceList, List<string> nameCache)
         {
             if (updateScrollPosition)
             {
@@ -292,7 +301,7 @@ namespace StudioCore.Editors.ModelEditor
                     _selectedAssetTypeCache = _selectedAssetType;
                 }
 
-                foreach (var name in _modelNameCache)
+                foreach (var name in nameCache)
                 {
                     var displayedName = $"{name}";
                     var lowerName = name.ToLower();
@@ -359,7 +368,7 @@ namespace StudioCore.Editors.ModelEditor
 
             if (_selectedAssetType == assetType)
             {
-                if (_mapModelNameCache.ContainsKey(_selectedAssetMapId))
+                if (_mapPieceNameCache.ContainsKey(_selectedAssetMapId))
                 {
                     if (_searchInput != _searchInputCache || _selectedAssetType != _selectedAssetTypeCache || _selectedAssetMapId != _selectedAssetMapIdCache)
                     {
@@ -367,7 +376,7 @@ namespace StudioCore.Editors.ModelEditor
                         _selectedAssetTypeCache = _selectedAssetType;
                         _selectedAssetMapIdCache = _selectedAssetMapId;
                     }
-                    foreach (var name in _mapModelNameCache[_selectedAssetMapId])
+                    foreach (var name in _mapPieceNameCache[_selectedAssetMapId])
                     {
                         var modelName = name.Replace($"{_selectedAssetMapId}_", "m");
 

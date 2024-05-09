@@ -31,7 +31,7 @@ public static class ResourceLocatorUtils
         string upperPath = path.ToUpper();
         bool success = false;
 
-        if (upperPath.EndsWith(".FLVER") || upperPath.EndsWith(".FLV") || upperPath.EndsWith(".FLVER.DCX"))
+        if (upperPath.EndsWith(".FLVER") || upperPath.EndsWith(".FLV") || upperPath.EndsWith(".FLVER.DCX") || upperPath.EndsWith(".FLV.DCX"))
         {
             success = true;
         }
