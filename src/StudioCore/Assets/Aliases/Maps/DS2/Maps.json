@@ -1,0 +1,284 @@
+{
+    "list": [
+        {
+            "id": "m10_02_00_00",
+            "name": "Things Betwixt",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_04_00_00",
+            "name": "Majula",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_10_00_00",
+            "name": "Forest of Fallen Giants",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_11_00_00",
+            "name": "Shrine of Amana (alt)",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m10_14_00_00",
+            "name": "Brightstone Cove Tseldora",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_15_00_00",
+            "name": "Aldia's Keep",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_16_00_00",
+            "name": "The Lost Bastille & Belfry Luna",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_17_00_00",
+            "name": "Harvest Valley & Earthen Peak",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_18_00_00",
+            "name": "No-man's Wharf",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_19_00_00",
+            "name": "Iron Keep & Belfry Sol",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_21_00_00",
+            "name": "Drangleic Castle (alt)",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m10_23_00_00",
+            "name": "Huntsman's Copse & Undead Purgatory",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_24_00_00",
+            "name": "Mausoleum",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m10_25_00_00",
+            "name": "The Gutter & Black Gulch",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_27_00_00",
+            "name": "Dragon Aerie & Dragon Shrine",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_28_00_00",
+            "name": "Firelink Throne",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m10_29_00_00",
+            "name": "Majula <-> Shaded Woods",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_30_00_00",
+            "name": "Heide's Tower <-> No-man's Wharf",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_31_00_00",
+            "name": "Heide's Tower of Flame",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_32_00_00",
+            "name": "Shaded Woods & Shrine of Winter",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_33_00_00",
+            "name": "Doors of Pharros",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_34_00_00",
+            "name": "Grave of Saints",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_03_00_00",
+            "name": "Dark Chasm of Old (alt)",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m20_10_00_00",
+            "name": "Memory of Vammar, Orro, and Jeigh",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_11_00_00",
+            "name": "Shrine of Amana",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_15_00_00",
+            "name": "Aldia's Keep (alt)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_21_00_00",
+            "name": "Drangleic Castle & Throne of Want",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_24_00_00",
+            "name": "Undead Crypt",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_26_00_00",
+            "name": "Dragon Memories",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_27_00_00",
+            "name": "Dragon Aerie & Dragon Shrine (alt)",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m20_62_00_00",
+            "name": "",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m20_63_00_00",
+            "name": "",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m40_03_00_00",
+            "name": "Dark Chasm of Old",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m40_50_00_00",
+            "name": "Abyss Map 1",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m40_51_00_00",
+            "name": "Abyss Map 2",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m40_52_00_00",
+            "name": "Abyss Map 3",
+            "tags": [
+                "unused"
+            ]
+        },
+        {
+            "id": "m50_35_00_00",
+            "name": "Shulva, Sanctum City",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_36_00_00",
+            "name": "Brume Tower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_37_00_00",
+            "name": "Frozen Eleum Loyce",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_38_00_00",
+            "name": "Memory of the King",
+            "tags": [
+                ""
+            ]
+        }
+    ]
+}

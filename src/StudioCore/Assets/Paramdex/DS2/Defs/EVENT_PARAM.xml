@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>EVENT_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 event_id" />
+    <Field Def="s32 flag_id" />
+    <Field Def="u8 Unk08" />
+    <Field Def="u8 Unk09" />
+    <Field Def="u8 Unk0A" />
+    <Field Def="u8 Unk0B" />
+    <Field Def="u8 Unk0C" />
+    <Field Def="u8 Unk0D" />
+    <Field Def="u8 Unk0E" />
+    <Field Def="u8 Unk0F" />
+  </Fields>
+</PARAMDEF>

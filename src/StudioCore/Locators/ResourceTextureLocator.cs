@@ -16,7 +16,7 @@ public static class ResourceTextureLocator
     {
         List<ResourceDescriptor> ads = new();
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             ResourceDescriptor t = new();
             t.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\t{mapid.Substring(1)}.tpfbhd");
@@ -119,7 +119,7 @@ public static class ResourceTextureLocator
             overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
         }
 
-        if (Project.Type is ProjectType.DS2S)
+        if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
         {
             overrideFilePath = ResourceLocatorUtils.GetOverridenFilePath($@"model\chr\{chrid}.texbnd");
         }
@@ -202,7 +202,7 @@ public static class ResourceTextureLocator
                 ad.AssetVirtualPath = $@"chr/{chrid}/tex";
             }
         }
-        else if (Project.Type is ProjectType.DS2S)
+        else if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
         {
             path = GetChrTexturePath(chrid);
             if (path != null)
@@ -271,7 +271,7 @@ public static class ResourceTextureLocator
         {
             path = ResourceLocatorUtils.GetOverridenFilePath($@"obj\{obj}.objbnd");
         }
-        else if (Project.Type == ProjectType.DS2S)
+        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             path = ResourceLocatorUtils.GetOverridenFilePath($@"model\obj\{obj}.bnd");
         }
@@ -441,7 +441,7 @@ public static class ResourceTextureLocator
                 ad.AssetVirtualPath = $@"parts/{partsId}/tex";
             }
         }
-        else if (Project.Type == ProjectType.DS2S)
+        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             var partType = "";
             switch (partsId.Substring(0, 2))
@@ -691,7 +691,7 @@ public static class ResourceTextureLocator
         var overrideFilePath = "";
         var fileExt = @".ffxbnd.dcx";
 
-        if (Project.Type is ProjectType.DS2S)
+        if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
         {
             fileExt = @".ffxbnd";
         }

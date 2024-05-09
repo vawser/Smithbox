@@ -477,6 +477,7 @@ public class MapAssetBrowser
                         if (s.WrappedObject is MSB1.Part.Enemy)
                             isValidObjectType = true;
                         break;
+                    case ProjectType.DS2:
                     case ProjectType.DS2S:
                         break;
                     case ProjectType.DS3:
@@ -516,6 +517,7 @@ public class MapAssetBrowser
                         if (s.WrappedObject is MSB1.Part.Object)
                             isValidObjectType = true;
                         break;
+                    case ProjectType.DS2:
                     case ProjectType.DS2S:
                         if (s.WrappedObject is MSB2.Part.Object)
                             isValidObjectType = true;
@@ -557,6 +559,7 @@ public class MapAssetBrowser
                         if (s.WrappedObject is MSB1.Part.MapPiece)
                             isValidObjectType = true;
                         break;
+                    case ProjectType.DS2:
                     case ProjectType.DS2S:
                         if (s.WrappedObject is MSB2.Part.MapPiece)
                             isValidObjectType = true;

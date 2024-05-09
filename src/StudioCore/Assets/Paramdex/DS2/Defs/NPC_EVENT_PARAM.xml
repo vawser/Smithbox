@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>NPC_EVENT_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 Unk00" />
+    <Field Def="u8 Unk01" />
+    <Field Def="u8 Unk02" />
+    <Field Def="u8 Unk03" />
+    <Field Def="s32 conversation_id" />
+    <Field Def="s32 conversation_exit_id" />
+    <Field Def="s32 Unk04" />
+    <Field Def="s32 item_id" />
+    <Field Def="s32 Unk05" />
+    <Field Def="s32 Unk06" />
+    <Field Def="u16 npc_info_id" />
+    <Field Def="u8 Unk07" />
+    <Field Def="u8 Unk08" />
+    <Field Def="u8 Unk09" />
+    <Field Def="u8 Unk10" />
+    <Field Def="u8 Unk11" />
+    <Field Def="u8 Unk12" />
+    <Field Def="s32 Unk13" />
+    <Field Def="s32 Unk14" />
+    <Field Def="s32 Unk15" />
+  </Fields>
+</PARAMDEF>

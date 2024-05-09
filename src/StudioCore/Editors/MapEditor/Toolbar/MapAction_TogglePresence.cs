@@ -168,6 +168,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 case ProjectType.DS1R:
                     msbclass = typeof(MSB1);
                     break;
+                case ProjectType.DS2:
                 case ProjectType.DS2S:
                     msbclass = typeof(MSB2);
                     //break;

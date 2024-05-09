@@ -31,12 +31,12 @@ public static class BrowserFileLocator
                 ret.Add(ad);
             }
         }
-        else if (Project.Type == ProjectType.DS2S)
+        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             ResourceDescriptor ad = new();
             var name = mapid;
             ad.AssetName = name;
-            ad.AssetArchiveVirtualPath = $@"map/{mapid}/model";
+            ad.AssetArchiveVirtualPath = $@"map/{mapid}/model/";
             ret.Add(ad);
         }
         else if (Project.Type == ProjectType.ER)
@@ -112,7 +112,7 @@ public static class BrowserFileLocator
 
             if (Project.Type == ProjectType.DS1)
                 modelExt = ".chrbnd";
-            else if (Project.Type == ProjectType.DS2S)
+            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 modelDir = @"\model\chr";
                 modelExt = ".bnd";
@@ -177,7 +177,7 @@ public static class BrowserFileLocator
 
             if (Project.Type == ProjectType.DS1)
                 modelExt = ".objbnd";
-            else if (Project.Type == ProjectType.DS2S)
+            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 modelDir = @"\model\obj";
                 modelExt = ".bnd";
@@ -279,7 +279,7 @@ public static class BrowserFileLocator
             {
                 modelExt = ".partsbnd";
             }
-            else if (Project.Type == ProjectType.DS2S)
+            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 modelDir = @"\model\parts";
                 modelExt = ".bnd";

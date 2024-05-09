@@ -1,0 +1,224 @@
+340 [GEN:340] Retainer
+342 [GEN:342] Voice Marker (Alsanna)
+343 [GEN:343] Voice Marker (Alsanna)
+344 [GEN:344] Voice Marker (Alsanna)
+760 [GEN:760] Castaway Witch Donna
+761 [GEN:761] Hexer Nicholai
+762 [GEN:762] Holy Knight Aurheim
+770 [GEN:770] Lucatiel of Mirrah
+771 [GEN:771] Twiggy Shei
+772 [GEN:772] Masterless Glencour
+773 [GEN:773] Steelheart Ellie
+774 [GEN:774] Vengarl
+775 [GEN:775] Abbess Feeva
+776 [GEN:776] Manhunter O'Harrah
+777 [GEN:777] Sellsword Luet
+790 [GEN:790] Loyce Knight
+791 [GEN:791] Loyce Knight
+792 [GEN:792] Loyce Knight
+794 [GEN:794] Loyce Knight
+795 [GEN:795] Loyce Knight
+796 [GEN:796] Loyce Knight
+797 [GEN:797] Loyce Knight
+907 [GEN:907] Lud- the King's Pet
+908 [GEN:908] Burnt Ivory King
+909 [GEN:909] Aava- the King's Pet
+910 [GEN:910] Aava- the King's Pet
+980 [GEN:980] Forlorn (Scythe)
+1000 [GEN:1000] Spellsword
+1001 [GEN:1001] Spellsword
+1002 [GEN:1002] Spellsword
+1003 [GEN:1003] Spellsword
+1010 [GEN:1010] Spellsword
+1100 [GEN:1100] Retainer
+1200 [GEN:1200] Spellsword
+1201 [GEN:1201] Spellsword
+1210 [GEN:1210] Stray Dog
+1211 [GEN:1211] Stray Dog
+1212 [GEN:1212] Stray Dog
+1300 [GEN:1300] Retainer
+1400 [GEN:1400] Retainer
+1402 [GEN:1402] Retainer
+1410 [GEN:1410] Spellsword
+1411 [GEN:1411] Spellsword
+1412 [GEN:1412] Spellsword
+1420 [GEN:1420] Spellsword
+1502 [GEN:1502] Retainer
+1510 [GEN:1510] Spellsword
+1511 [GEN:1511] Spellsword
+1600 [GEN:1600] Spellsword
+1610 [GEN:1610] Spellsword
+1611 [GEN:1611] Spellsword
+1613 [GEN:1613] Spellsword
+1614 [GEN:1614] Spellsword
+1615 [GEN:1615] Spellsword
+1620 [GEN:1620] Retainer
+1621 [GEN:1621] Retainer
+1630 [GEN:1630] Ice Golem
+1640 [GEN:1640] Stray Dog
+1710 [GEN:1710] Retainer
+1800 [GEN:1800] Flexile Sentry
+1801 [GEN:1801] Flexile Sentry
+1810 [GEN:1810] Retainer
+1811 [GEN:1811] Retainer
+1812 [GEN:1812] Retainer
+1813 [GEN:1813] Retainer
+1814 [GEN:1814] Retainer
+1815 [GEN:1815] Retainer
+1816 [GEN:1816] Retainer
+1900 [GEN:1900] Spellsword
+1901 [GEN:1901] Spellsword
+1911 [GEN:1911] Retainer
+1912 [GEN:1912] Retainer
+1913 [GEN:1913] Retainer
+1920 [GEN:1920] Undead Laborer
+1923 [GEN:1923] Undead Laborer
+1930 [GEN:1930] Ice Golem
+1931 [GEN:1931] Ice Golem
+1932 [GEN:1932] Ice Golem
+2000 [GEN:2000] Ice Golem
+2001 [GEN:2001] Ice Golem
+2010 [GEN:2010] Spellsword
+2020 [GEN:2020] Retainer
+2021 [GEN:2021] Retainer
+2022 [GEN:2022] Retainer
+2023 [GEN:2023] Retainer
+2030 [GEN:2030] Ice Golem
+2031 [GEN:2031] Ice Golem
+2100 [GEN:2100] Rampart Golem
+2200 [GEN:2200] Rampart Golem
+2210 [GEN:2210] Undead Laborer
+2212 [GEN:2212] Undead Laborer
+2214 [GEN:2214] Undead Laborer
+2300 [GEN:2300] Mimic
+2310 [GEN:2310] Spellsword
+2400 [GEN:2400] Rampart Golem
+2410 [GEN:2410] Retainer
+2500 [GEN:2500] Rampart Golem
+2602 [GEN:2602] Spellsword
+2620 [GEN:2620] Wall Watchman
+2621 [GEN:2621] Wall Watchman
+2630 [GEN:2630] Retainer
+2700 [GEN:2700] Wall Watchman
+2800 [GEN:2800] Spellsword
+2801 [GEN:2801] Spellsword
+2810 [GEN:2810] Stray Dog
+2811 [GEN:2811] Stray Dog
+2812 [GEN:2812] Stray Dog
+2813 [GEN:2813] Stray Dog
+2814 [GEN:2814] Stray Dog
+2900 [GEN:2900] Rampart Golem
+2910 [GEN:2910] Rampart Golem
+3000 [GEN:3000] Retainer
+3010 [GEN:3010] Facsimile Giant
+3011 [GEN:3011] Facsimile Giant
+3020 [GEN:3020] Mimic
+3100 [GEN:3100] Spellsword
+3101 [GEN:3101] Spellsword
+3102 [GEN:3102] Spellsword
+3110 [GEN:3110] Retainer
+3111 [GEN:3111] Retainer
+3200 [GEN:3200] Retainer
+3400 [GEN:3400] Spellsword
+3700 [GEN:3700] Facsimile Giant
+3701 [GEN:3701] Facsimile Giant
+3702 [GEN:3702] Facsimile Giant
+3710 [GEN:3710] Spellsword
+3810 [GEN:3810] Rampart Golem
+3811 [GEN:3811] Rampart Golem
+3812 [GEN:3812] Spellsword
+3813 [GEN:3813] Spellsword
+3900 [GEN:3900] Retainer
+3901 [GEN:3901] Spellsword
+3902 [GEN:3902] Spellsword
+3911 [GEN:3911] Facsimile Giant
+3912 [GEN:3912] Facsimile Giant
+4110 [GEN:4110] Charred Loyce Knight
+4111 [GEN:4111] Charred Loyce Knight
+4112 [GEN:4112] Charred Loyce Knight
+4113 [GEN:4113] Charred Loyce Knight
+4114 [GEN:4114] Charred Loyce Knight
+4115 [GEN:4115] Charred Loyce Knight
+4116 [GEN:4116] Charred Loyce Knight
+4117 [GEN:4117] Charred Loyce Knight
+4118 [GEN:4118] Charred Loyce Knight
+4119 [GEN:4119] Charred Loyce Knight
+4120 [GEN:4120] Charred Loyce Knight
+4121 [GEN:4121] Charred Loyce Knight
+5000 [GEN:5000] Rampart Hedgehog
+5100 [GEN:5100] Rampart Hedgehog
+5101 [GEN:5101] Rampart Hedgehog
+5102 [GEN:5102] Rampart Hedgehog
+5200 [GEN:5200] Rampart Hedgehog
+5201 [GEN:5201] Rampart Hedgehog
+5202 [GEN:5202] Rampart Hedgehog
+5203 [GEN:5203] Rampart Hedgehog
+5210 [GEN:5210] Forest Spirit
+5211 [GEN:5211] Forest Spirit
+5212 [GEN:5212] Forest Spirit
+5320 [GEN:5320] Teeth-chattering Dan
+5330 [GEN:5330] Rampart Hedgehog
+5500 [GEN:5500] Facsimile Giant
+5501 [GEN:5501] Facsimile Giant
+5503 [GEN:5503] Facsimile Giant
+5504 [GEN:5504] Facsimile Giant
+5510 [GEN:5510] Rampart Hedgehog
+5511 [GEN:5511] Rampart Hedgehog
+5512 [GEN:5512] Rampart Hedgehog
+5513 [GEN:5513] Rampart Hedgehog
+5514 [GEN:5514] Rampart Hedgehog
+5700 [GEN:5700] Ice Golem
+5701 [GEN:5701] Ice Golem
+5702 [GEN:5702] Ice Golem
+5710 [GEN:5710] Rampart Golem
+5730 [GEN:5730] Rampart Hedgehog
+5731 [GEN:5731] Rampart Hedgehog
+5732 [GEN:5732] Rampart Hedgehog
+5800 [GEN:5800] Ice Golem
+5801 [GEN:5801] Ice Golem
+5802 [GEN:5802] Ice Golem
+5900 [GEN:5900] Covetous Demon (snow)
+5910 [GEN:5910] Rampart Hedgehog
+5911 [GEN:5911] Rampart Hedgehog
+5912 [GEN:5912] Rampart Hedgehog
+5913 [GEN:5913] Rampart Hedgehog
+6000 [GEN:6000] Spellsword
+6001 [GEN:6001] Spellsword
+6002 [GEN:6002] Spellsword
+6003 [GEN:6003] Spellsword
+6004 [GEN:6004] Spellsword
+6010 [GEN:6010] Spellsword
+6100 [GEN:6100] Spellsword
+6110 [GEN:6110] Rampart Golem
+6200 [GEN:6200] Stray Dog
+6201 [GEN:6201] Stray Dog
+6202 [GEN:6202] Stray Dog
+6203 [GEN:6203] Stray Dog
+6204 [GEN:6204] Stray Dog
+6205 [GEN:6205] Stray Dog
+6206 [GEN:6206] Stray Dog
+6300 [GEN:6300] Rampart Golem
+7000 [GEN:7000] Frozen Reindeer
+7001 [GEN:7001] Frozen Reindeer
+7004 [GEN:7004] Frozen Reindeer
+7005 [GEN:7005] Frozen Reindeer
+7008 [GEN:7008] Frozen Reindeer
+7009 [GEN:7009] Frozen Reindeer
+7010 [GEN:7010] Frozen Reindeer
+7012 [GEN:7012] Frozen Reindeer
+7020 [GEN:7020] Frozen Reindeer
+7101 [GEN:7101] Undead Laborer
+7102 [GEN:7102] Undead Laborer
+7103 [GEN:7103] Undead Laborer
+7104 [GEN:7104] Undead Laborer
+7105 [GEN:7105] Undead Laborer
+7107 [GEN:7107] Undead Laborer
+7108 [GEN:7108] Undead Laborer
+7200 [GEN:7200] Rampart Golem
+7201 [GEN:7201] Rampart Golem
+7202 [GEN:7202] Rampart Golem
+7505 [GEN:7505] Unknown Phantom
+7506 [GEN:7506] Unknown Phantom
+7600 [GEN:7600] Unknown Phantom
+7602 [GEN:7602] Unknown Phantom
+7603 [GEN:7603] Unknown Phantom

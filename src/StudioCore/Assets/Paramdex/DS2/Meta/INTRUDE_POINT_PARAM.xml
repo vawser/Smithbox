@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Row0Dummy="" />
+  <Field>
+    <play_area_param_id AltName="Play Area ID"/>
+    <intrusion_point_id AltName="Intrusion Point ID" Wiki="This is UnkT00 for the point objects in the msb"/>
+  </Field>
+</PARAMMETA>

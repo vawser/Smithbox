@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the lock-on target for the lock-on camera." Row0Dummy="" />
+  <Field>
+    <value_0 AltName="Value [0]"/>
+    <value_1 AltName="Value [1]"/>
+  </Field>
+</PARAMMETA>

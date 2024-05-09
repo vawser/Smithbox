@@ -1,0 +1,59 @@
+205 [GEN:205] Emerald Herald
+600 [GEN:600] Royal Sorcerer Navlaan
+601 [GEN:601] Dragonfang Villard
+602 [GEN:602] Black Dragon Knight
+603 [GEN:603] Black Dragon Knight
+604 [GEN:604] Bashful Ray
+606 [GEN:606] Vengarl
+607 [GEN:607] Melinda the Butcher
+608 [GEN:608] Transcendent Edde
+609 [GEN:609] Fencer Sharron
+800 [GEN:800] Ancient Dragon
+916 [GEN:916] Aldia- Scholar of the First Sin
+950 [GEN:950] Invisible Hollow
+1100 [GEN:1100] Guardian Dragon
+1101 [GEN:1101] Guardian Dragon
+1102 [GEN:1102] Guardian Dragon
+1200 [GEN:1200] Crystal Lizard
+1300 [GEN:1300] Crystal Lizard
+1400 [GEN:1400] Crystal Lizard
+1401 [GEN:1401] Crystal Lizard
+1402 [GEN:1402] Crystal Lizard
+1403 [GEN:1403] Crystal Lizard
+1404 [GEN:1404] Crystal Lizard
+1500 [GEN:1500] Crystal Lizard
+1501 [GEN:1501] Crystal Lizard
+1600 [GEN:1600] Crystal Lizard
+1601 [GEN:1601] Crystal Lizard
+2005 [GEN:2005] Drakekeeper
+2010 [GEN:2010] Drakekeeper
+2030 [GEN:2030] Drakekeeper
+2033 [GEN:2033] Drakekeeper
+3100 [GEN:3100] Drakekeeper
+3101 [GEN:3101] Drakekeeper
+3102 [GEN:3102] Drakekeeper
+3103 [GEN:3103] Drakekeeper
+3104 [GEN:3104] Drakekeeper
+3105 [GEN:3105] Drakekeeper
+3106 [GEN:3106] Drakekeeper
+3107 [GEN:3107] Drakekeeper
+4000 [GEN:4000] Black Dragon Knight
+4001 [GEN:4001] Black Dragon Knight
+4005 [GEN:4005] Black Dragon Knight
+4009 [GEN:4009] Black Dragon Knight
+4010 [GEN:4010] Black Dragon Knight
+4011 [GEN:4011] Black Dragon Knight
+4020 [GEN:4020] Black Dragon Knight
+4030 [GEN:4030] Black Dragon Knight
+4031 [GEN:4031] Black Dragon Knight
+4032 [GEN:4032] Black Dragon Knight
+4033 [GEN:4033] Black Dragon Knight
+4036 [GEN:4036] Black Dragon Knight
+4037 [GEN:4037] Black Dragon Knight
+4038 [GEN:4038] Black Dragon Knight
+4039 [GEN:4039] Black Dragon Knight
+4040 [GEN:4040] Black Dragon Knight
+4041 [GEN:4041] Black Dragon Knight
+4042 [GEN:4042] Black Dragon Knight
+6000 [GEN:6000] Undead Traveler
+6100 [GEN:6100] Dark Priestess

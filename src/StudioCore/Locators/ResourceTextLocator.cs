@@ -27,7 +27,7 @@ public static class ResourceTextLocator
                     File.Exists(Project.GameRootDirectory + @"\msg\item.msgbnd.dcx"))
                     dict.Add("Japanese", "");
             }
-            else if (Project.Type == ProjectType.DS2S)
+            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 folders = Directory.GetDirectories(Project.GameRootDirectory + @"\menu\text").ToList();
             else
                 // Exclude folders that don't have typical msgbnds
@@ -75,7 +75,7 @@ public static class ResourceTextLocator
             path = $@"msg\{langFolder}\{msgBndType}.msgbnd";
         else if (Project.Type == ProjectType.DS1R)
             path = $@"msg\{langFolder}\{msgBndType}.msgbnd.dcx";
-        else if (Project.Type == ProjectType.DS2S)
+        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             // DS2 does not have an msgbnd but loose fmg files instead
             path = $@"menu\text\{langFolder}";

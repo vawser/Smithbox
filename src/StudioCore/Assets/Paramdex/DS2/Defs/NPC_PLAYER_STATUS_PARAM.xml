@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>NPC_PLAYER_STATUS_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 body_type" />
+    <Field Def="u8 hollowing_type" />
+    <Field Def="u16 body_build_type" />
+    <Field Def="s32 face_model_id" />
+    <Field Def="u8 soul_level" />
+    <Field Def="u8 vigor" />
+    <Field Def="u8 unk00" />
+    <Field Def="u8 endurance" />
+    <Field Def="u8 attunement" />
+    <Field Def="u8 vitality" />
+    <Field Def="u8 strength" />
+    <Field Def="u8 dexterity" />
+    <Field Def="u8 intelligence" />
+    <Field Def="u8 faith" />
+    <Field Def="u8 adaptability" />
+    <Field Def="u8 unk01" />
+    <Field Def="f32 equip_load" />
+    <Field Def="f32 invincibility_time" />
+    <Field Def="u32 recovery_item_id" />
+    <Field Def="s32 item_1" />
+    <Field Def="s32 item_2" />
+    <Field Def="s32 item_3" />
+    <Field Def="s32 item_4" />
+    <Field Def="s32 item_5" />
+    <Field Def="s32 item_6" />
+    <Field Def="s32 item_7" />
+    <Field Def="s32 item_8" />
+    <Field Def="s32 item_9" />
+    <Field Def="s32 spell_item_1" />
+    <Field Def="s32 spell_item_2" />
+    <Field Def="s32 spell_item_3" />
+    <Field Def="s32 spell_item_4" />
+    <Field Def="s32 spell_item_5" />
+    <Field Def="s32 spell_item_6" />
+    <Field Def="s32 spell_item_7" />
+    <Field Def="s32 spell_item_8" />
+    <Field Def="s32 spell_item_9" />
+    <Field Def="s32 spell_item_10" />
+    <Field Def="s32 right_weapon_item_1" />
+    <Field Def="s32 right_weapon_item_2" />
+    <Field Def="s32 right_weapon_item_3" />
+    <Field Def="s32 left_weapon_item_1" />
+    <Field Def="s32 left_weapon_item_2" />
+    <Field Def="s32 left_weapon_item_3" />
+    <Field Def="s32 head_item" />
+    <Field Def="s32 chest_item" />
+    <Field Def="s32 hands_item" />
+    <Field Def="s32 legs_item" />
+    <Field Def="s32 ring_item_1" />
+    <Field Def="s32 ring_item_2" />
+    <Field Def="s32 ring_item_3" />
+    <Field Def="s32 ring_item_4" />
+    <Field Def="s32 arrow_item_1" />
+    <Field Def="s32 arrow_item_2" />
+    <Field Def="s32 bolt_item_1" />
+    <Field Def="s32 bolt_item_2" />
+    <Field Def="s32 gesture_1" />
+    <Field Def="s32 gesture_2" />
+    <Field Def="s32 gesture_3" />
+    <Field Def="s32 gesture_4" />
+    <Field Def="s32 gesture_5" />
+    <Field Def="s32 gesture_6" />
+    <Field Def="s32 gesture_7" />
+    <Field Def="s32 gesture_8" />
+  </Fields>
+</PARAMDEF>

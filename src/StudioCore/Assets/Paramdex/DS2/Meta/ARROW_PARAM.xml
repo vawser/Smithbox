@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+    <Enum Name="AmmoType">
+      <Option Value="1" Name="Arrow" />
+      <Option Value="2" Name="Greatarrow" />
+      <Option Value="4" Name="Bolt" />
+    </Enum>
+  </Enums>
+  <Self Wiki="Defines parameters for ammunition, covering arrows, greatarrows and bolts." Row0Dummy="" />
+  <Field>
+    <sort_id AltName="Sort ID" />
+    <damage_id_0 AltName="Damage ID [0]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_1 AltName="Damage ID [1]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_2 AltName="Damage ID [2]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_3 AltName="Damage ID [3]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_4 AltName="Damage ID [4]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_5 AltName="Damage ID [5]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_6 AltName="Damage ID [6]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_7 AltName="Damage ID [7]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_8 AltName="Damage ID [8]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_9 AltName="Damage ID [9]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_10 AltName="Damage ID [10]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_11 AltName="Damage ID [11]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_12 AltName="Damage ID [12]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_13 AltName="Damage ID [13]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_14 AltName="Damage ID [14]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_id_15 AltName="Damage ID [15]" Refs="EnemyDamageParam,PlayerDamageParam,SystemDamageParam"/>
+    <damage_dead_motion_id AltName="Damage Dead Motion ID"/>
+    <damage_physical AltName="Damage: Physical" />
+    <damage_magic AltName="Damage: Magic" />
+    <damage_lightning AltName="Damage: Lightning" />
+    <damage_fire AltName="Damage: Fire" />
+    <damage_dark AltName="Damage: Dark" />
+    <damage_poison AltName="Damage: Poison" />
+    <apply_poison AltName="Inflict Poison" IsBool="" />
+    <damage_bleed AltName="Damage: Bleed" />
+    <apply_bleed AltName="Inflict Bleed" IsBool="" />
+    <ammo_type AltName="Ammunition Type" Enum="AmmoType"/>
+    <damage_durability AltName="Damage: Durability" />
+  </Field>
+</PARAMMETA>

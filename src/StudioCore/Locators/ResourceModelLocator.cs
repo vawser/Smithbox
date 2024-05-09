@@ -29,7 +29,7 @@ public static class ResourceModelLocator
         if (Project.Type == ProjectType.DES)
             return $@"{modelname}";
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             return modelname;
 
         return $@"{mapid}_{modelname.Substring(1)}";
@@ -42,7 +42,7 @@ public static class ResourceModelLocator
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver");
         else if (Project.Type == ProjectType.DS1R)
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.flver.dcx");
-        else if (Project.Type == ProjectType.DS2S)
+        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
         else if (Project.Type == ProjectType.ER)
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid[..3]}\{mapid}\{model}.mapbnd.dcx");
@@ -52,9 +52,9 @@ public static class ResourceModelLocator
             ret.AssetPath = ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{model}.mapbnd.dcx");
 
         ret.AssetName = model;
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
-            ret.AssetArchiveVirtualPath = $@"map/{mapid}/model";
+            ret.AssetArchiveVirtualPath = $@"map/{mapid}/model/";
             ret.AssetVirtualPath = $@"map/{mapid}/model/{model}.flv.dcx";
         }
         else
@@ -161,7 +161,7 @@ public static class ResourceModelLocator
         ResourceDescriptor ret = new();
         ret.AssetName = chr;
         ret.AssetArchiveVirtualPath = $@"chr/{chr}/model";
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             ret.AssetVirtualPath = $@"chr/{chr}/model/{chr}.flv";
         else
             ret.AssetVirtualPath = $@"chr/{chr}/model/{chr}.flver";
@@ -175,7 +175,7 @@ public static class ResourceModelLocator
         ret.AssetName = obj;
         ret.AssetArchiveVirtualPath = $@"obj/{obj}/model";
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj}.flv";
         else if (Project.Type is ProjectType.ER or ProjectType.AC6)
             ret.AssetVirtualPath = $@"obj/{obj}/model/{obj.ToUpper()}.flver";
@@ -191,7 +191,7 @@ public static class ResourceModelLocator
         ret.AssetName = part;
         ret.AssetArchiveVirtualPath = $@"parts/{part}/model";
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             ret.AssetVirtualPath = $@"parts/{part}/model/{part}.flv";
         }

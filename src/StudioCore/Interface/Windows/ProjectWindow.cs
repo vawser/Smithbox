@@ -95,7 +95,7 @@ public class ProjectWindow
                 ImGui.Separator();
 
                 var useLoose = Project.Config.UseLooseParams;
-                if (Project.Config.GameType is ProjectType.DS2S or ProjectType.DS3)
+                if (Project.Config.GameType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3)
                 {
                     if (ImGui.Checkbox("Use loose params", ref useLoose))
                         Project.Config.UseLooseParams = useLoose;

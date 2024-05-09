@@ -1,0 +1,22 @@
+1 Without -- なし
+1010 Very small - small -- 極小-小
+1020 Very small - medium -- 極小-中
+1030 Very small - large -- 極小-大
+2010 Small - Small -- 小-小
+2020 Small to Medium -- 小-中
+2030 Small - Large -- 小-大
+3010 Medium - Small -- 中-小
+3020 Medium to Medium -- 中-中
+3030 Medium-Large -- 中-大
+4010 Large - Small -- 大-小
+4020 Large-middle -- 大-中
+4030 Large- Large -- 大-大
+5010 Extra large - small -- 特大-小
+5020 Oversized - Medium -- 特大-中
+5030 Extra Large - Large -- 特大-大
+6010 Extra large - small -- 特特大-小
+6020 Extra large - medium -- 特特大-中
+6030 Extra Large - Large -- 特特大-大
+7010 Special size - Small -- 特特特大-小
+7020 Special oversized - medium -- 特特特大-中
+7030 Special Oversized - Large -- 特特特大-大

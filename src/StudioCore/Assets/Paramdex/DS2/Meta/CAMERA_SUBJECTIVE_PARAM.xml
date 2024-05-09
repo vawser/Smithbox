@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters relating to the camera when precision aiming." Row0Dummy="" />
+  <Field>
+    <camera_fov AltName="Camera FOV"/>
+    <camera_vertical_offset AltName="Camera Vertical Offset"/>
+  </Field>
+</PARAMMETA>

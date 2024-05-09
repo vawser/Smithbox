@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the player HP interface." Row0Dummy="" />
+  <Field>
+    <damage_threshold_major_damage_player AltName="Major Damage Threshold: Player"/>
+    <damage_threshold_major_damage_enemy AltName="Major Damage Threshold: Enemy"/>
+    <player_bar_hp_min_length AltName="HP Bar: Minimum Length"/>
+    <player_bar_stamina_min_length AltName="Stamina Bar: Minimum Length"/>
+    <player_bar_hp_max_length AltName="HP Bar: Maximum Length"/>
+    <player_bar_stamina_max_length AltName="Stamina Bar: Maximum Length"/>
+  </Field>
+</PARAMMETA>

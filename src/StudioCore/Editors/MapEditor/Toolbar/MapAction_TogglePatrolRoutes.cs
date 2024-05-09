@@ -15,7 +15,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
     {
         public static void Select(ViewportSelection _selection)
         {
-            if (Project.Type is not ProjectType.DS2S)
+            if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
             {
                 if (ImGui.RadioButton("Toggle Patrol Route Visibility##tool_Selection_Render_Patrol_Routes", MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes))
                 {
@@ -42,7 +42,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         {
             if (MapEditorState.SelectedAction == MapEditorAction.Selection_Render_Patrol_Routes)
             {
-                if (Project.Type is not ProjectType.DS2S)
+                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
                 {
                     if (ImGui.Button("Apply##action_Selection_Render_Patrol_Routes", new Vector2(200, 32)))
                     {

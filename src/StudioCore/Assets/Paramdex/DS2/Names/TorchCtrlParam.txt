@@ -1,0 +1,4 @@
+0 Without -- なし
+1 Small (8m:5 min) -- 小（８ｍ：５分）
+2 Medium (12m:10 min)) -- 中（１２ｍ：１０分）
+3 Large (20m: 15 min) -- 大（２０ｍ：１５分）

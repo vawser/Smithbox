@@ -1,0 +1,5 @@
+1 Super close range -- 超近距離
+2 Short -- 近距離
+3 Medium -- 中距離
+4 Long distance -- 遠距離
+5 Super long distance -- 超遠距離

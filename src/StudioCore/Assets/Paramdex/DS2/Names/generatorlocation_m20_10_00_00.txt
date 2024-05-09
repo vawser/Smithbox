@@ -1,0 +1,76 @@
+30 [GEN:30] Captain Drummond
+32 [GEN:32] Captain Drummond
+60 [GEN:60] Benhart of Jugo
+61 [GEN:61] Benhart of Jugo
+656 [GEN:656] Benhart of Jugo
+657 [GEN:657] Captain Drummond
+800 [GEN:800] Giant Lord
+1120 [GEN:1120] Giant
+1130 [GEN:1130] Giant
+1210 [GEN:1210] Royal Soldier
+1211 [GEN:1211] NO MATCH
+1212 [GEN:1212] NO MATCH
+1230 [GEN:1230] NO MATCH
+1231 [GEN:1231] Royal Soldier
+1232 [GEN:1232] Royal Soldier
+1233 [GEN:1233] NO MATCH
+1234 [GEN:1234] Ironclad Soldier
+1235 [GEN:1235] Ironclad Soldier
+1236 [GEN:1236] Royal Soldier
+1237 [GEN:1237] NO MATCH
+1238 [GEN:1238] Royal Soldier
+1239 [GEN:1239] Royal Soldier
+1240 [GEN:1240] Royal Soldier
+1300 [GEN:1300] Giant
+1310 [GEN:1310] Giant
+1311 [GEN:1311] Giant
+1330 [GEN:1330] NO MATCH
+1331 [GEN:1331] Giant
+1400 [GEN:1400] Forgotten Giant
+1600 [GEN:1600] Forgotten Giant
+2200 [GEN:2200] Drangleic Infantry
+2201 [GEN:2201] Drangleic Infantry
+2202 [GEN:2202] Drangleic Infantry
+2230 [GEN:2230] Drangleic Infantry
+2300 [GEN:2300] Royal Soldier
+2301 [GEN:2301] NO MATCH
+2302 [GEN:2302] Royal Soldier
+2303 [GEN:2303] Royal Soldier
+2400 [GEN:2400] Forgotten Giant
+2410 [GEN:2410] Royal Soldier
+2411 [GEN:2411] Royal Soldier
+2412 [GEN:2412] NO MATCH
+2420 [GEN:2420] Ironclad Soldier
+2421 [GEN:2421] Ironclad Soldier
+2510 [GEN:2510] Royal Soldier
+2511 [GEN:2511] Royal Soldier
+2520 [GEN:2520] Giant
+2600 [GEN:2600] Royal Soldier
+2610 [GEN:2610] Royal Soldier
+2620 [GEN:2620] Royal Soldier
+2630 [GEN:2630] NO MATCH
+2640 [GEN:2640] Royal Soldier
+2900 [GEN:2900] Giant
+2910 [GEN:2910] Giant
+2920 [GEN:2920] Giant
+3000 [GEN:3000] Forgotten Giant
+3010 [GEN:3010] Royal Soldier
+3011 [GEN:3011] NO MATCH
+3012 [GEN:3012] Royal Soldier
+3020 [GEN:3020] NO MATCH
+3021 [GEN:3021] Royal Soldier
+3022 [GEN:3022] Royal Soldier
+3030 [GEN:3030] NO MATCH
+3031 [GEN:3031] Ironclad Soldier
+3032 [GEN:3032] Ironclad Soldier
+3100 [GEN:3100] Forgotten Giant
+3110 [GEN:3110] Royal Soldier
+3111 [GEN:3111] NO MATCH
+3112 [GEN:3112] NO MATCH
+3120 [GEN:3120] Royal Soldier
+3121 [GEN:3121] Royal Soldier
+3122 [GEN:3122] Royal Soldier
+3130 [GEN:3130] NO MATCH
+3131 [GEN:3131] Ironclad Soldier
+3132 [GEN:3132] Royal Soldier
+9990 [GEN:9990] Giant

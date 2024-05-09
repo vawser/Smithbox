@@ -173,7 +173,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
                 ImguiUtils.ShowHoverTooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
 
-                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.AC6)
+                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2 && Project.Type != ProjectType.AC6)
                 {
                     if(ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID))
                     {
@@ -197,7 +197,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
                 }
 
-                if (Project.Type != ProjectType.DS2S)
+                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
                 {
                     if(ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Replicator_Clear_Entity_ID))
                     {

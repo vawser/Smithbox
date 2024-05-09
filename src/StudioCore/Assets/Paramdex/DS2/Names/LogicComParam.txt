@@ -1,0 +1,280 @@
+9500 009500 For evasion test -- 009500 回避テスト用
+9501 009501 Lock movement confirmation -- 009501 ロック移動確認用
+9502 009502 For mobile area testing -- 009502 移動領域テスト用
+9503 009503 For barista test -- 009503 バリスタテスト用
+9504 009504 I'm in ○○ or for testing -- 009504 自分は○○中かテスト用
+9505 009505 Thrown for test -- 009505 投げられテスト用
+9506 009506 For state acquisition test -- 009506 状態取得テスト用
+9507 009507 For startup state termination test -- 009507 起動ステート終了テスト用
+9508 009508 Dummy Object Use Test -- 009508 ダミーオブジェクト使用テスト
+9509 009509 For sound reaction test -- 009509 音反応テスト用
+9510 009510 for bullet reaction test -- 009510 弾反応テスト用
+9511 009511 For click movement test -- 009511 クリック移動テスト用
+9512 009512 For group testing -- 009512 グループテスト用
+9513 009513 For translation test -- 009513 平行移動テスト用
+9514 009514 For last siting test -- 009514 ラストサイティングテスト用
+9515 009515 For general purpose object testing -- 009515 汎用オブジェクトテスト用
+9516 009516 For item testing -- 009516 アイテムテスト用
+9517 009517 For multiple boot tests -- 009517 多重起動テスト用
+9518 009518 For speed test -- 009518 移動速度テスト用
+9519 009519 For Pariy Test -- 009519 パリィテスト用
+9520 009520 For attack turn test -- 009520 攻撃旋回テスト用
+9521 009521 Combo cancellation test -- 009521 コンボキャンセルテスト用
+9522 009522 Network verification -- 009522 ネットワーク確認用
+9523 009523 For confirmation of moving parameters -- 009523 移動パラメータ確認用
+9524 009524 Brake test -- 009524 ブレーキテスト
+9525 009525 Navimesh Test -- 009525 ナビメッシュテスト
+9526 009526 Target Test -- 009526 索敵ターゲットテスト
+9527 009527 Site Damage Test -- 009527 部位ダメージテスト
+9528 009528 White Spirit NPC Test -- 009528 白霊NPCテスト
+9550 009550 Planning for: Lock move (normal) -- 009550 企画用：ロック移動（通常）
+9551 009551 Planning for: Lock Movement (Large) -- 009551 企画用：ロック移動（大型）
+9552 009552 Planning: Attack canceled -- 009552 企画用：攻撃キャンセル
+9553 009553 Planning for: Avoidance Cancel -- 009553 企画用：回避キャンセル
+9554 009554 Planning for: Transfer canceled -- 009554 企画用：移動キャンセル
+9555 009555 For planning: Damage stiffness adjustment -- 009555 企画用：ダメージ硬直調整
+9556 009556 Planning: Step Cancel -- 009556 企画用：ステップキャンセル
+100010 100010 Top: Goblin (Live): Generic -- 100010 上位：ゴブリン（生者）：汎用
+101010 100010 Top: Cobold (Raw): Generic -- 100010 上位：コボルト（生者）：汎用
+102010 102010 Top: Kingdom Soldier (deceased): General -- 102010 上位：王国兵士（亡者）：汎用
+102030 102030 Top: Kingdom Soldier (deceased): Area & Visual Response -- 102030 上位：王国兵士（亡者）：領域＆視認即反応
+102040 102040 Top: Kingdom Soldier (deceased): Bow transfer shot -- 102040 上位：王国兵士（亡者）：弓持ち替え射撃
+102052 102052 Top: Kingdom Soldier (deceased): Corpse mimetic (no group) -- 102052 上位：王国兵士（亡者）：死体擬態（グループ無）
+102053 102053 Top: Kingdom Soldier (dead): Corpse mimetic: close range -- 102053 上位：王国兵士（亡者）：死体擬態：近距離
+102054 102054 Top: Kingdom Soldier (deceased): Corpse mimetic: Treasure corpse -- 102054 上位：王国兵士（亡者）：死体擬態：宝死体
+102055 102055 Top: Kingdom Soldier (deceased): Wait until attacked (for verification) -- 102055 上位：王国兵士（亡者）：攻撃されるまで待機（検証用）
+102090 102090 Top: Kingdom Soldier (Dead): Treasure Chest Trap (Logic Flag Launch) -- 102090 上位：王国兵士（亡者）：宝箱罠（ロジックフラグ起動）
+102092 102092 Top: Kingdom Soldier (Dead): Treasure Corpse Trap (Logic Flag Launch) -- 102092 上位：王国兵士（亡者）：宝死体罠（ロジックフラグ起動）
+102110 102110 Top: Kingdom Soldier (Live): General -- 102110 上位：王国兵士（生者）：汎用
+103010 103010 Top: Lower soldier (deceased): General -- 103010 上位：下級兵士（亡者）：汎用
+103025 103025 Top: Lower-level soldier (deceased): General purpose (group none: for FC) -- 103025 上位：下級兵士（亡者）：汎用（グループ無：FC用）
+103030 103030 Top: Lower soldier (deceased): Area & visual response -- 103030 上位：下級兵士（亡者）：領域＆視認即反応
+103040 103040 Top: Lower-level soldiers (deceased) wandering routes -- 103040 上位：下級兵士（亡者）：ルート徘徊
+103041 103041_Top: Lower-level soldier (dead): Dash Tracking -- 103041_上位：下級兵士（亡者）：ダッシュ追跡
+103050 103050 Top: Lower soldier (dead): Corpse mimetic -- 103050 上位：下級兵士（亡者）：死体擬態
+103051 103051 Top: Lower soldier (deceased): Corpse mimetic (no group) -- 103051 上位：下級兵士（亡者）：死体擬態（グループ無）
+103090 103090 Top: Lower soldier (deceased): BS wait -- 103090 上位：下級兵士（亡者）：BS待ち
+103110 103110 Top: Lower-class soldier (raw): General -- 103110 上位：下級兵士（生者）：汎用
+105010 105010 Top: Fairy Shrine Maiden (Deceased): General -- 105010 上位：妖精の巫女（亡者）：汎用
+105030 105030 Top: Fairy Shrine Maiden (Deceased): Ambush -- 105030 上位：妖精の巫女（亡者）：待ち伏せ
+106010 106010 Top: Dark Priest (Deceased): Generic -- 106010 上位：ダークプリースト（亡者）：汎用
+106030 106030 Top: Dark Priest (Deceased): Wait for the Line of Sight -- 106030 上位：ダークプリースト（亡者）：視線待機
+106090 106090_Top: Dark Priest (Deceased): For Gerdra_Zacobos -- 106090_上位：ダークプリースト（亡者）：ジェルドラ_ザコボス戦用
+107010 107010 Top: Parasite Spider (Parasitic): Generic -- 107010 上位：パラサイトスパイダー（寄生）：汎用
+107030 107030 Top: Parasite Spider (Parasitic): Immediately Launched -- 107030 上位：パラサイトスパイダー（寄生）：即起動
+108010 108010 Top: Rogue (deceased): Generic -- 108010 上位：ローグ（亡者）：汎用
+108040 108040 Top: Rogue: Busher -- 108040 上位：ローグ：伏兵
+108050 108050 Top: Rogue: Attack from Launch State (for FC) -- 108050 上位：ローグ：起動ステートから攻撃（FC用）
+113010 113010 Top: Sailor (deceased): Generic -- 113010 上位：水兵（亡者）：汎用
+113020 113020 Top: Sailor (deceased): Sleeping in a chair -- 113020 上位：水兵（亡者）：椅子で寝ている
+113030 113030 Top: Sailor (deceased): Boss Front Ship Room -- 113030 上位：水兵（亡者）：ボス前船室
+115010 115010 Top: Dead_Traveler's Clothing:Generic -- 115010 上位：亡者_旅人の服：汎用
+115020 115020 Top: Dead_Traveler's Clothing: General Purpose (for FC) -- 115020 上位：亡者_旅人の服：汎用（FC用）
+117010 117010 Top: Statue: Pawn: Generic -- 117010 上位：スタチュー：ポーン：汎用
+118010 118010 Top: Dark Wizard: Generic -- 118010 上位：ダークウィザード：汎用
+118090 118090 Top: Dark Wizard: For Boss -- 118090 上位：ダークウィザード：ボス用
+119010 119010 Top: Lion Black Madoshi (Born): General -- 119010 上位：獅子黒魔道士（生者）：汎用
+121010 121010 Top: Giants lower-level soldiers: general -- 121010 上位：巨人下級兵士：汎用
+121020 121020 Top: Giants lower-class soldier: General purpose (for FC) -- 121020 上位：巨人下級兵士：汎用（FC用）
+123010 123010 Top: Deformed Shadow (Raw): Generic -- 123010 上位：異形の影（生者）：汎用
+124010 124010 Top: Assassin (live man): Generic -- 124010 上位：暗殺者（生者）：汎用
+125010 125010 Top: Undead Citizen: Generic -- 125010 上位：アンデッド市民：汎用
+125030 125030 Top: Undead Citizen: Sound Reaction -- 125030 上位：アンデッド市民：音反応
+125040 125040 Top: Undead Citizen: Kuzbottom -- 125040 上位：アンデッド市民：クズ底
+127010 127010 Top: Dead Workers (Deceased): Generic -- 127010 上位：死者の労働者（亡者）：汎用
+127020 127020 Top: Dead Workers (Deceased): General Purpose (for FC) -- 127020 上位：死者の労働者（亡者）：汎用（FC用）
+127030 127030 Top: Dead workers (dead): Wait until attack -- 127030 上位：死者の労働者（亡者）：攻撃されるまで待機
+127040 127040 Top: Dead Workers (Deceased): Sound Reaction -- 127040 上位：死者の労働者（亡者）：音反応
+127050 127050 Top: Dead Workers (Dead): Tracking with Torches -- 127050 上位：死者の労働者（亡者）：松明を持って追尾
+127060 127060 Top: Dead Workers (Dead): Warp (Tomb) -- 127060 上位：死者の労働者（亡者）：ワープ（墓）
+127061 127061 Top: Dead Workers (Dead): Warp (Bell) -- 127061 上位：死者の労働者（亡者）：ワープ（鐘）
+127070 127070 Top: Dead Workers (Deceased): Torch Reaction (Scumbottom) -- 127070 上位：死者の労働者（亡者）：松明反応（クズ底）
+127090 127090_Top: Dead Workers (Deceased): For The Javazahat War -- 127090_上位：死者の労働者（亡者）：ジャバザハット戦用
+127091 127091_Top: Dead Workers (Deceased): For Gerdra_Zakovos -- 127091_上位：死者の労働者（亡者）：ジェルドラ_ザコボス戦用
+129010 129010 Top: Forest Keeper: General -- 129010 上位：森の番人：汎用
+131010 131010 Top: Cleric: Generic -- 131010 上位：クレリック：汎用
+132010 132010 Top: Skeleton: Generic -- 132010 上位：スケルトン：汎用
+132030 132030 Top: Skeleton: Corpse Mimetic -- 132030 上位：スケルトン：死体擬態
+132040 132040 Top: Skeleton: Warp -- 132040 上位：スケルトン：ワープ
+132100 132100 Top: Skeleton: For Boss -- 132100 上位：スケルトン：ボス用
+133010 133010_Top:Wheel Skeleton: Generic -- 133010_上位：車輪スケルトン：汎用
+133100 133100_Top: Wheel Skeleton: For Boss -- 133100_上位：車輪スケルトン：ボス用
+134010 134010_Top:Dwarf: Generic -- 134010_上位：ドワーフ：汎用
+135010 135010_Top:Heavy Dwarf: Generic -- 135010_上位：重ドワーフ：汎用
+137010 137010_Top: Necromancer (Immortal): General Purpose -- 137010_上位：ネクロマンサー（イモータル）：汎用
+137090 137090_Top: Necromancer (Immortal): For Gerdra_Zacobos -- 137090_上位：ネクロマンサー（イモータル）：ジェルドラ_ザコボス戦用
+138010 138010 Top: Tortureman: Generic -- 138010 上位：拷問人：汎用
+139010 139010_Top:Man-made Immortals (Immortals): General -- 139010_上位：人造不死人（不死人）：汎用
+139030 139030_Top: Man-made Immortals (Immortals): Only for Narrow Road -- 139030_上位：人造不死人（不死人）：狭路専用
+140010 140010_Top:Belka Crow: Generic -- 140010_上位：ベルカの鴉人：汎用
+141010 141010 Top: Strengthened Immortals: General -- 141010 上位：強化不死人：汎用
+146010 146010 Top: Clothes for the wealthy: Generic -- 146010 上位：富裕層の服：汎用
+147010 147010 Top: Dead_ Sick Clothes: Generic -- 147010 上位：亡者_病人の服：汎用
+147090 147090_Top: Dead_Sick Clothes: For Gerdra_Zacobos -- 147090_上位：亡者_病人の服：ジェルドラ_ザコボス戦用
+148010 148010_Top:The Dead: Peasant Clothing: Generic -- 148010_上位：亡者：農民の服：汎用
+149010 149010_Top:Deceased:Steel mill staff:General -- 149010_上位：亡者：製鉄所所員：汎用
+150010 150010_Top:Statue:Night:Generic -- 150010_上位：スタチュー：ナイト：汎用
+150011 150011_Top:Statue:Night:Region Launch -- 150011_上位：スタチュー：ナイト：領域起動
+150012 150012_Top:Statue: Night: Region Launch 1 -- 150012_上位：スタチュー：ナイト：領域起動1
+150013 150013_Top:Statue:Night:Region Launch 2 -- 150013_上位：スタチュー：ナイト：領域起動2
+150014 150014_Top:Statue: Night: Region Launch 3 -- 150014_上位：スタチュー：ナイト：領域起動3
+151010 151010 Top: Kingdom Heavy Soldier (deceased): General -- 151010 上位：王国重兵士（亡者）：汎用
+151040 151040 Top: Kingdom Heavy Soldier (deceased): For narrow road warfare -- 151040 上位：王国重兵士（亡者）：狭路戦用
+152010 152010 Top: Kingdom Warrior: General -- 152010 上位：王国兵戦士：汎用
+153010 153010 Top: Kingdom Guards: General -- 153010 上位：王国護衛兵：汎用
+154010 154010 Top: Skeleton aristocracy -- 154010 上位：スケルトン貴族
+155010 155010 Top: Lizard Man: Generic -- 155010 上位：トカゲ人：汎用
+201110 201110 Top: Slave Beasts: Piglets: Generic -- 201110 上位：奴隷獣：子豚：汎用
+202010 202010 Top: Slave Beast (without iron pot): General purpose -- 202010 上位：奴隷獣（熔鉄壺無し）：汎用
+203010 203010 Top: Parasite Spider: Generic -- 203010 上位：パラサイトスパイダー：汎用
+203012 203012 Top: Parasite Spider: Area Surprise -- 203012 上位：パラサイトスパイダー：領域奇襲
+203020 203020 Top: Parasite Spider: General Purpose (for FC) -- 203020 上位：パラサイトスパイダー：汎用（FC用）
+203030 203030 Top: Parasite Spider: Sound Reaction -- 203030 上位：パラサイトスパイダー：音反応
+203040 203040 Top: Parasite Spider: Launch -- 203040 上位：パラサイトスパイダー：即起動
+203050 203050 Top: Parasite Spider: For Bosses -- 203050 上位：パラサイトスパイダー：ボス用
+204010 204010 Top: Great Moss: Generic -- 204010 上位：グレートモス：汎用
+204020 204020 Top: Great Moss: General Purpose (for FC) -- 204020 上位：グレートモス：汎用（FC用）
+205010 205010 Top: Poisonous horn: generic -- 205010 上位：毒角虫：汎用
+206010 206010 Top: Needle maggots: Generic -- 206010 上位：針ウジ虫：汎用
+209010 209010_Top:Hunting Dogs:Generic -- 209010_上位：狩猟犬：汎用
+210010 210010_Top:Basilrisk: Generic -- 210010_上位：バジリスク：汎用
+210020 210020_Top:Basilisk: Eyeball Pear -- 210020_上位：バジリスク：目玉ナシ
+212010 212010_Top:Wyvern:Generic -- 212010_上位：ワイバーン：汎用
+212020 212020_Top: Wyburn: Normal Warfare -- 212020_上位：ワイバーン：通常戦用
+213010 213010 Top: Stone Defense: General Purpose -- 213010 上位：石守：汎用
+213110 213110 Top: Stone Defense: Explosion: General -- 213110 上位：石守：爆発：汎用
+214010 214010_Top:Fang: General -- 214010_上位：牙獣：汎用
+216010 216010_Top:Door-possessed:General -- 216010_上位：扉憑き：汎用
+217010 217010_Top: The Hermit in The Dark: General -- 217010_上位：闇に隠れし者：汎用
+217020 217020_Top: Hideaway in The Dark: General Purpose (for FC) -- 217020_上位：闇に隠れし者：汎用（FC用）
+220010 220010_Top:Giant VenomOus: Generic -- 220010_上位：巨大毒角虫：汎用
+222010 222010_Top:Giant Basilrisk: Generic -- 222010_上位：巨大バジリスク：汎用
+223010 223010 Top: Dead rat:Generic -- 223010 上位：死体あさりネズミ：汎用
+224010 224010 Top: Coal Tar: Generic -- 224010 上位：コールタール：汎用
+224030 224030 Top: Coal Tar: Surprise -- 224030 上位：コールタール：奇襲
+226010 226010 Top: Dog rat: Generic -- 226010 上位：犬ネズミ：汎用
+226020 226020 Top: Dog Rat: For Boss -- 226020 上位：犬ネズミ：ボス用
+226030 226030 Top: Dog Rat: Boss -- 226030 上位：犬ネズミ：ボス取り巻き用
+227010 227010 Top: Wild Dogs: General -- 227010 上位：野犬：汎用
+300010 300010 Top: Auger: General Purpose -- 300010 上位：オーガ：汎用
+300020 300020 Top: Auger: Circumferential Enemy -- 300020 上位：オーガ：周回索敵
+300030 300030 Top: Auger: Auditory Reaction -- 300030 上位：オーガ：聴覚反応
+300040 300040 Top: Auger: Petrified Stop -- 300040 上位：オーガ：石化ストップ
+300080 300080 Top: Auga: Dragon Institute Event -- 300080 上位：オーガ：龍の研究所イベント
+301010 301010 Top: Wandering Knight: General Purpose -- 301010 上位：彷徨える騎士：汎用
+302010 302010 Top: Prison man: General -- 302010 上位：獄吏：汎用
+302011 302011 Top: Prison Man: Soul Black -- 302011 上位：獄吏：ソウルブラック
+302020 302020 Top: Prison man: General purpose (for FC) -- 302020 上位：獄吏：汎用（FC用）
+303310 303310 Top: Double-sided warrior: snake head -- 303310 上位：両面戦士：ヘビ頭
+303320 303320_Top: Two-sided warrior: snake head: normal warfare -- 303320_上位：両面戦士：ヘビ頭：通常戦
+304010 304010 Top: Banshee (deceased): Generic -- 304010 上位：バンシー（亡者）：汎用
+305010 305010_Top: Daemon Knight -- 305010_上位：デーモンナイト
+306010 306010 Top: Daemon Armor: Generic -- 306010 上位：デーモン鎧：汎用
+306020 306020 Top: Daemon Armor: General Purpose (for FC) -- 306020 上位：デーモン鎧：汎用（FC用）
+307010 307010_Top: Durahan (deceased): Generic -- 307010_上位：デュラハン（亡者）：汎用
+307110 307110 Top: Durahan (Raw) -- 307110 上位：デュラハン（生者）
+308010 308010_Top:Lion Warrior:General -- 308010_上位：獅子戦士：汎用
+308030 308030_Top:Lion Warrior: Petrified Stop -- 308030_上位：獅子戦士：石化ストップ
+309010 309010_Top: Giant Senior Soldiers: Generic -- 309010_上位：巨人上級兵士：汎用
+309610 309610 Top: New Giant Senior Soldier (Deceased) -- 309610 上位：新・巨人上級兵士（亡者）
+309710 309710 Top: New Giant Senior Soldier (Live) -- 309710 上位：新・巨人上級兵士（生者）
+311010 311010_Top: Cavalry: Cavalry Soldiers (Live Man): General -- 311010_上位：騎人兵：騎乗兵士（生者）：汎用
+312010 312010_Top: Immortal Advanced Soldier (Immortal): General Purpose -- 312010_上位：イモータル上級兵士（イモータル）：汎用
+313010 313010_Top:Falcon Warrior:General -- 313010_上位：鷹匠戦士：汎用
+314010 314010_Top: Elephant (deceased): Generic -- 314010_上位：象人（亡者）：汎用
+315010 315010_Top: Elephant (live): Generic -- 315010_上位：象人（生者）：汎用
+316010 316010_Top: Captured Mage (Live): General -- 316010_上位：捕らわれた魔道士（生者）：汎用
+317010 317010_Top:Professor of Dragon: General -- 317010_上位：龍の教授：汎用
+318010 318010_Top: Bay Ground -- 318010_上位：ベイグランド
+319010 319010 Top: Daemon Armor (Mass Production): General Purpose -- 319010 上位：デーモン鎧（量産型）：汎用
+321010 321010_Top:η Micic: General -- 321010_上位：νミミック：汎用
+324010 324010_Top:Gargoyle:Generic -- 324010_上位：ガーゴイル：汎用
+325010 325010_Top: Warrior in the Mirror: Generic -- 325010_上位：鏡の中の戦士：汎用
+325020 325020_Top: Warriorin the Mirror: For Normal Warfare -- 325020_上位：鏡の中の戦士：通常戦用
+326010 326010_Top: Butcher -- 326010_上位：ブッチャー
+327010 327010 Top: Bone Dragon: For events -- 327010 上位：骨ドラゴン：イベント用
+330010 330010_Top: Ancient Warriors: Generic -- 330010_上位：古代の戦士：汎用
+332010 332010_Top: Queen Knight A -- 332010_上位：王妃の騎士Ａ
+333010 333010_Top: Queen Knight B -- 333010_上位：王妃の騎士B
+334010 334010_Top: Queen Knight C -- 334010_上位：王妃の騎士Ｃ
+500010 500010_Top: Javaza Hat -- 500010_上位：ジャバザハット
+501010 501010_Top: Naga -- 501010_上位：ナーガ
+502010 502010 Top: Manscorpion (Man) -- 502010 上位：マンスコーピオン（男）
+503010 503010 Top: Manscorpion ♀ -- 503010 上位：マンスコーピオン♀
+504010 504010 Top: Mirror Night -- 504010 上位：ミラーナイト
+506010 506010 Top: Tomb Guard -- 506010 上位：墓守
+506110 506110_Top: Agaduran Stand -- 506110_上位：アガドゥランのスタンド
+506210 506210 Top: Wormhole -- 506210 上位：ワームホール
+509010 509010 Top: Dark Bishop: Generic -- 509010 上位：ダークビショップ：汎用
+511010 511010 Top: Phantom Night: Generic -- 511010 上位：ファントムナイト：汎用
+511030 511030 Top: Phantom Night: Narrow Road Only -- 511030 上位：ファントムナイト：狭路専用
+512010 512010 Top: Phantom Mage: Generic -- 512010 上位：ファントムメイジ：汎用
+512030 512030 Top: Phantom Mage: Sound Reaction -- 512030 上位：ファントムメイジ：音反応
+512040 512040 Top: Phantom Mage: Warp (Tomb of Immortality) -- 512040 上位：ファントムメイジ：ワープ（不死廟）
+514610 514610 Top: Old King -- 514610 上位：年老いた王
+600010 600010 Top: Old Dragon -- 600010 上位：古の龍
+601010 601010 Top: Salamander -- 601010 上位：サラマンダー
+601030 601030 Top: Salamander: Fixed turret -- 601030 上位：サラマンダー：固定砲台
+602010 602010 Top: Beautiful Voice Frog -- 602010 上位：美声カエル
+603010 603010 Top: Spider Queen: Boss Room -- 603010 上位：蜘蛛の女王：ボス部屋
+603020 603020 Top: Spider Queen: First Encounter Event -- 603020 上位：蜘蛛の女王：初遭遇イベント
+607010 607010 Top: Iron Daemon -- 607010 上位：熔鉄デーモン
+611010 611010 Top: Heavy Cavalry: Walking -- 611010 上位：重騎馬兵：歩行
+619110 619110 Top: Silver Chariot -- 619110 上位：シルバーチャリオット
+625010 625010 Top: Ornstein -- 625010 上位：オーンスタイン
+626010 626010 Top: Forgotten Sinners -- 626010 上位：忘れられた罪人
+627010 627010 Top: Queen's armor form -- 627010 上位：王妃の鎧形態
+628010 628010 Top: Giant rat -- 628010 上位：巨大ネズミ
+690000 690000 Top: NPC General -- 690000 上位：NPC汎用
+700010 700010 Top: Shrine Maiden -- 700010 上位：巫女
+701010 701010 Top: Shrine Maiden (Child) -- 701010 上位：巫女（子供）
+702010 702010 Top: Queen (corpse) -- 702010 上位：王妃（死骸）
+703010 703010 Top: Queen -- 703010 上位：王妃
+704010 704010 Top: Ladder Shop -- 704010 上位：梯子屋
+705010 705010 Top: Retired Fire Protection Woman 1 -- 705010 上位：退役の火防女１
+705110 705110 Top: Retired Fire Protection Woman 2 -- 705110 上位：退役の火防女２
+705310 705310 Top: Retired Fire Protection Woman 3 -- 705310 上位：退役の火防女３
+721110 721110 Top: Spirit of the Army Master -- 721110 上位：軍師の霊
+723010 723010 Top: Fire Protection Woman's Housekeeper -- 723010 上位：火防女の家政婦
+724010 724010 Top: Captain of the Kingdom -- 724010 上位：王国隊長
+724020 724020 Top: Captain of the Kingdom: White Spirit -- 724020 上位：王国隊長：白霊
+725010 725010 Top: Pilgrims in the Abyss -- 725010 上位：深淵の巡礼者
+726010 726010 Top: Dwarf -- 726010 上位：ドワーフ
+729010 729010 Top: Loyal Dogs -- 729010 上位：忠犬
+730010 730010 Top: Mirror Night Under Me -- 730010 上位：ミラーナイトの下僕
+730020 730020 Top: Mirror Knight Under Me (Hunting Forest) -- 730020 上位：ミラーナイトの下僕（狩猟の森）
+730030 730030 Top: Mirror Knight Under Me (Andy) -- 730030 上位：ミラーナイトの下僕（アンディール）
+741010 741010 Top: Heartbroken Blue Warrior -- 741010 上位：心折れた青教戦士
+742010 742010 Top: Avenger Warrior -- 742010 上位：仇討ちの戦士
+743010 743010 Top: Tsukiko Grandfather -- 743010 上位：月光爺
+744010 744010 Top: Patch -- 744010 上位：パッチ
+751010 751010 Top: Map -- 751010 上位：地図書き
+752010 752010 Top: Female Knight -- 752010 上位：女騎士
+753010 753010 Top: Bell Guard -- 753010 上位：鐘守
+754010 754010 Top: Yorozu Babaa -- 754010 上位：よろずババア
+756010 756010 Top: King of mice -- 756010 上位：ねずみの王
+760010 760010 Top: Bard Girl 1 -- 760010 上位：吟遊詩人の少女１
+760110 760110 Top: Bard Poet Girl 2 -- 760110 上位：吟遊詩人の少女２
+760210 760210 Top: Captive Girl -- 760210 上位：虜囚の少女
+761010 761010 Top: Armorshop -- 761010 上位：防具屋
+762010 762010 Top: Material shop -- 762010 上位：素材屋
+763010 763010 Top: Sorcerer -- 763010 上位：呪術屋
+764010 764010 Top: Blacksmith -- 764010 上位：鍛冶屋
+764310 764310 Top: EX Blacksmith -- 764310 上位：ＥＸ鍛冶屋
+766010 766010 Top: Sorcerer -- 766010 上位：魔術屋
+768010 768010 Top: Spell Mania -- 768010 上位：スペルマニア
+769010 769010 Top: Miracle Man -- 769010 上位：奇跡の人
+770010 770010 Top: Dark Man -- 770010 上位：闇術屋
+771010 771010 Top: Spell Master -- 771010 上位：スペルマスター
+772010 772010 Top: Rinsis -- 772010 上位：珍品屋
+776010 776010 Top: Top Weapons Store -- 776010 上位：上位武器屋
+777010 777010 Top: Cat -- 777010 上位：猫
+783010 783010 Top: Black Phantom Shop -- 783010 上位：黒ファントム屋
+784010 784010 Top: The Teacher of The Sin -- 784010 上位：免罪の教戒師
+785010 785010 Top: Guardian Knight -- 785010 上位：守護の騎士
+786010 786010 Top: Glitter Girl -- 786010 上位：キラキラ娘
+810010 810010 Top: White Spirit Generic -- 810010 上位：白霊汎用
+820010 821010 Top: Dark Spirit -- 821010 上位：闇霊汎用
+837110 837110 Top: Tutorial (short view) -- 837110 上位：チュートリアル（視界短い）
+837120 837120 Top: Tutorial (long field of view) -- 837120 上位：チュートリアル（視界長い）
+900010 900010 Top: Sniper Generic -- 900010 上位：スナイパー汎用

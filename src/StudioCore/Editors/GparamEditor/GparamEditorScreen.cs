@@ -171,7 +171,7 @@ public class GparamEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S)
+        if (Project.Type is ProjectType.DS1 or ProjectType.DS1R or ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
         {
             ImGui.Begin("Editor##InvalidGparamEditor");
 

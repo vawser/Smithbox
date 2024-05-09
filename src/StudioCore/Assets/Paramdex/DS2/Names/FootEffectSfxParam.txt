@@ -1,0 +1,8 @@
+0 No -- 無
+1 Minimal -- 極小
+2 Small -- 小
+3 In -- 中
+4 Large -- 大
+5 Oversized -- 特大
+6 Extra large -- 特特大
+7 Special size -- 特特特大

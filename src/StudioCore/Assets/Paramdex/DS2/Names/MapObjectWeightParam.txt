@@ -1,0 +1,9 @@
+0 Object weight_no -- オブジェ重量_無
+1 Object weight_very small -- オブジェ重量_極小
+2 Object weight_small -- オブジェ重量_小
+3 Object weight_medium -- オブジェ重量_中
+4 Object weight_large -- オブジェ重量_大
+5 Object weight_oversized -- オブジェ重量_特大
+6 Object weight_super-oversized -- オブジェ重量_超特大
+7 Object weight_≥ -- オブジェ重量_∞
+8 Object weight_for stone statues -- オブジェ重量_石像用

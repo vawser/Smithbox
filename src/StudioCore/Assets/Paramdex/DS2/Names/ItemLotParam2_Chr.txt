@@ -1,0 +1,749 @@
+0 UNKNOWN
+10 UNKNOWN
+20 UNKNOWN
+30 UNKNOWN
+40 UNKNOWN
+1020000 [Unknown] Fading Soul
+1020100 [Unknown] None
+1020200 [Unknown] None
+1020300 [Unknown] Petrified Something
+1040000 [Unknown] Human Effigy
+1040100 [Unknown] Cracked Red Eye Orb
+1040200 [Unknown] None
+1040300 [Unknown] Cracked Red Eye Orb
+1040400 [Unknown] Cracked Red Eye Orb
+1040500 [Unknown] Rusted Coin
+1100000 [Unknown] Cracked Red Eye Orb
+1100100 [Unknown] Hollow Soldier Set- Winged Spear- Hollow Soldier Shield- Firebomb
+1100200 [Unknown] Heide Knight Sword
+1100201 [Unknown] Heide Knight Set- Heide Knight Sword
+1100500 [Unknown] None
+1101000 [Unknown] Titanite Shard
+1105000 [Unknown] Hollow Infantry Set- Lifegem- Throwing Knife
+1105100 [Unknown] Hollow Infantry Set- Bandit's Knife- Lifegem- Throwing Knife
+1105200 [Unknown] Hollow Infantry Set- Foot Soldier Sword- Foot Soldier Shield- Lifegem- Throwing Knife
+1105300 [Unknown] Hollow Infantry Set- Infantry Axe- Lifegem- Throwing Knife
+1105400 [Unknown] Hollow Infantry Set- Bandit's Knife- Short Bow- Lifegem- Throwing Knife
+1106000 [Unknown] Human Effigy
+1107000 [Unknown] Titanite Shard- Soul of a Proud Knight
+1140000 [Unknown] None
+1140100 [Unknown] Smooth & Silky Stone- Green Blossom
+1140200 [Unknown] Cracked Red Eye Orb
+1140300 [Unknown] Brightstone Key- Fragrant Branch of Yore- Dark Quartz Ring+1
+1140400 [Unknown] Peasant Set- Small Smooth & Silky Stone- Flame Butterfly- Torch
+1140500 [Unknown] Peasant Set- Titanite Shard- Large Titanite Shard- Titanite Chunk- Torch
+1141000 [Unknown] Titanite Chunk- Twinkling Titanite
+1141100 [Unknown] Titanite Chunk- Petrified Dragon Bone
+1141200 [Unknown] None
+1143000 [Unknown] Staff of Wisdom- Dark Leggings
+1148000 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1150000 [Unknown] Dragon Acolyte Mask
+1151000 [Unknown] None
+1153000 [Unknown] Malformed Skull- Dark Mask
+1153100 [Mimic - Aldia's Keep] Fragrant Branch of Yore
+1153200 [Unknown] Black Witch's Staff
+1153300 [Mimic - Aldia's Keep] Bonfire Ascetic
+1153400 [Mimic - Aldia's Keep] Cracked Red Eye Orb
+1153500 [Unknown] Wilted Dusk Herb
+1154000 [Unknown] Twinkling Titanite
+1154100 [Unknown] Warlock Mask- Cursed Bone Shield- Wilted Dusk Herb
+1154200 [Unknown] Twinkling Titanite
+1154300 [Unknown] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone
+1154400 [Unknown] Corrosive Urn
+1156000 [Unknown] Human Effigy
+1156100 [Unknown] Human Effigy
+1156200 [Unknown] Human Effigy
+1157000 [Unknown] Human Effigy
+1157100 [Unknown] Elizabeth Mushroom- Wilted Dusk Herb
+1158000 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1160000 [Unknown] Wanderer Set
+1164000 [Unknown] Rusted Coin- Bell Keeper Bow- Bell Keeper Shield
+1164100 [Unknown] Large Titanite Shard
+1165000 [Unknown] Titanite Chunk- Twinkling Titanite
+1165100 [Unknown] Twinkling Titanite
+1165200 [Unknown] Twinkling Titanite
+1165300 [Unknown] Twinkling Titanite
+1165400 [Unknown] Twinkling Titanite
+1166000 [Unknown] Human Effigy
+1166100 [Unknown] Human Effigy
+1166200 [Unknown] Human Effigy
+1168000 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1171000 [Unknown] Titanite Shard- Large Titanite Shard- Palestone
+1171100 [Unknown] Titanite Shard- Large Titanite Shard- Palestone
+1171200 [Unknown] Titanite Shard- Large Titanite Shard- Palestone
+1173000 [Unknown] Work Hook- Dark Gauntlets
+1178000 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1181000 [Unknown] Titanite Shard- Large Titanite Shard
+1186000 [Unknown] Human Effigy
+1190000 [Unknown] Alonne Captain Set- Alonne Greatbow- Destructive Greatarrow- Monastery Charm
+1190001 [Unknown] Alonne Greatbow
+1190500 [Unknown] Ring of Blades+1
+1191000 [Unknown] Large Titanite Shard- Titanite Chunk- Firedrake Stone
+1193000 [Unknown] Thunder Quartz Ring+1
+1194100 [Unknown] Rusted Coin- Flame Swathe- Fire Whip- Bell Keeper Bow- Bell Keeper Shield
+1230000 [Unknown] Soul of a Great Hero
+1230001 [Unknown] Heide Knight Set- Heide Greatlance
+1230200 [Unknown] None
+1230500 [Unknown] Lifegem- Amber Herb- Repair Powder- Smooth & Silky Stone- Cracked Red Eye Orb
+1231000 [Unknown] Titanite Shard- Large Titanite Shard- Titanite Chunk
+1236000 [Unknown] Human Effigy
+1238000 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1238100 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1238200 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1238300 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1238400 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1250000 [Unknown] Poison Moss- Firestorm
+1250500 [Unknown] Heide Knight Iron Mask- Heide Lance
+1250501 [Unknown] Heide Knight Iron Mask- Heide Knight Set- Heide Greatlance
+1253000 [Unknown] Winged Spear- Dark Armor
+1256000 [Unknown] Human Effigy
+1256100 [Unknown] Human Effigy
+1256200 [Unknown] Human Effigy
+1256300 [Unknown] Human Effigy
+1256400 [Unknown] Human Effigy
+1270000 [Unknown] Petrified Something- Twinkling Titanite- Petrified Dragon Bone
+1270100 [Unknown] Flame Quartz Ring+2
+1270200 [Unknown] Fire Tempest
+1271000 [Unknown] Large Titanite Shard- Titanite Chunk- Petrified Dragon Bone
+1271100 [Unknown] Titanite Shard- Twinkling Titanite- Faintstone
+1271200 [Unknown] Large Titanite Shard- Twinkling Titanite- Palestone
+1271300 [Unknown] Large Titanite Shard- Petrified Dragon Bone- Raw Stone
+1271400 [Unknown] Titanite Chunk- Petrified Dragon Bone- Old Mundane Stone
+1271500 [Unknown] Titanite Chunk- Twinkling Titanite- Darknight Stone
+1271600 [Unknown] Titanite Shard- Large Titanite Shard- Titanite Slab
+1271700 [Unknown] Titanite Shard- Twinkling Titanite- Magic Stone
+1271800 [Unknown] Large Titanite Shard- Titanite Chunk- Petrified Dragon Bone
+1271900 [Unknown] Twinkling Titanite- Boltstone- Palestone
+1272000 [Unknown] Titanite Shard- Large Titanite Shard- Titanite Slab
+1310000 [Unknown] Old Knight Set- Old Knight Greatsword- Old Knight's Shield- Cracked Blue Eye Orb- Palestone
+1310100 [Unknown] Old Knight Set- Old Knight Ultra Greatsword- Cracked Blue Eye Orb- Palestone
+1310200 [Unknown] Old Knight Set- Old Knight Pike- Old Knight Greatshield- Cracked Blue Eye Orb- Palestone
+1310300 [Unknown] Old Knight Set- Old Knight Halberd- Cracked Blue Eye Orb- Palestone
+1310400 [Unknown] Old Knight Set- Old Knight Hammer- Cracked Blue Eye Orb- Palestone
+1310500 [Unknown] Sublime Bone Dust
+1311000 [Unknown] Petrified Dragon Bone- Watchdragon Parma
+1320000 [Unknown] None
+1320100 [Unknown] Warlock Mask
+1320200 [Unknown] Lion Warrior Set- Lion Greataxe- Lion Clan Shield- Triclops Snake Troches
+1320500 [Unknown] Twinkling Titanite
+1321000 [Unknown] Titanite Shard- Titanite Chunk- Boltstone
+1328000 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1328100 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1328200 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+1330000 [Unknown] Gyrm Warrior Set- Gyrm Greataxe- Old Mundane Stone- Magic Stone- Titanite Chunk
+1330100 [Unknown] Gyrm Warrior Set- Gyrm Great Hammer- Gyrm Greatshield- Old Mundane Stone- Magic Stone- Titanite Chunk
+1330200 [Unknown] Gyrm Warrior Greathelm- Gyrm Warrior Set- Gyrm Greataxe- Old Mundane Stone- Magic Stone- Titanite Chunk
+1330300 [Unknown] Gyrm Warrior Greathelm- Gyrm Warrior Set- Gyrm Great Hammer- Gyrm Greatshield- Old Mundane Stone- Magic Stone- Titanite Chunk
+1331000 [Unknown] Large Titanite Shard- Raw Stone
+1333000 [Unknown] Black Scorpion Stinger- Dark Leggings
+1336000 [Unknown] Human Effigy
+1341000 [Unknown] Titanite Shard- Titanite Shard- Darknight Stone
+2110000 [Unknown] Warlock Mask- Cursed Bone Shield- Wilted Dusk Herb
+2115000 [Unknown] Titanite Slab- Petrified Dragon Bone
+2115100 [Unknown] Bonfire Ascetic
+2116000 [Unknown] Human Effigy
+2118000 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+2118100 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+2118200 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+2210501 [Unknown] Ring of Blades+2
+2210601 [Unknown] Twinkling Titanite
+2210602 [Unknown] Washing Pole- Twinkling Titanite
+2210700 [Unknown] Ruin Set
+2211000 [Unknown] Titanite Chunk- Titanite Slab
+2213000 [Unknown] Washing Pole- Petrified Dragon Bone
+2213001 [Unknown] Petrified Something- Petrified Dragon Bone
+2214000 [Unknown] Twinkling Titanite
+2214100 [Unknown] Gower's Ring of Protection
+2216000 [Unknown] Human Effigy
+2216100 [Unknown] Human Effigy
+2216200 [Unknown] Human Effigy
+2240000 [Unknown] None
+2240001 [Unknown] None
+2240100 [Unknown] Fragrant Branch of Yore
+2240200 [Unknown] Insolent Set- Shield of the Insolent- Simpleton's Spice- Skeptic's Spice- Twinkling Titanite- Bonfire Ascetic
+2240500 [Unknown] Titanite Slab- Petrified Dragon Bone
+2246000 [Unknown] Human Effigy
+2246100 [Unknown] Human Effigy
+2246200 [Unknown] Human Effigy
+2246300 [Unknown] Human Effigy
+2246400 [Unknown] Human Effigy
+2246500 [Unknown] Human Effigy
+2246600 [Unknown] Human Effigy
+2246700 [Unknown] Human Effigy
+2246800 [Unknown] Human Effigy
+2246900 [Unknown] Human Effigy
+2247000 [Unknown] Human Effigy
+2247100 [Unknown] Human Effigy
+2247200 [Unknown] Human Effigy
+2247300 [Unknown] Human Effigy
+2247400 [Unknown] Human Effigy
+2248000 [Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb
+4030000 [Unknown] Bonfire Ascetic
+4030001 [Unknown] Bonfire Ascetic
+4030002 [Unknown] Bonfire Ascetic
+4030003 [Unknown] Bonfire Ascetic
+4030004 [Unknown] Bonfire Ascetic
+4030005 [Unknown] Bonfire Ascetic
+4030006 [Unknown] Bonfire Ascetic
+4030007 [Unknown] Bonfire Ascetic
+5000000 [Unknown] Lifegem
+5001000 [Unknown] Lifegem
+5002000 [Unknown] Lifegem
+5003000 [Unknown] Lifegem
+5004000 [Unknown] Lifegem
+5005000 [Unknown] Lifegem
+5006000 [Unknown] Lifegem
+5007000 [Unknown] Lifegem
+5008000 [Unknown] Lifegem
+5009000 [Unknown] Lifegem
+5035000 [Unknown] Twinkling Titanite- Faintstone
+5035100 [Unknown] Titanite Slab- Firedrake Stone
+5035200 [Unknown] Twinkling Titanite- Old Mundane Stone
+5035300 [Unknown] Petrified Dragon Bone- Titanite Chunk- Raw Stone
+5036000 [Unknown] Twinkling Titanite- Titanite Chunk- Titanite Slab
+5037100 [Unknown] Catarina Armor
+5037200 [Unknown] Symbol of Avarice
+5037300 [Unknown] Dried Root- Retainer Robe
+5037400 [Unknown] Dried Root- Retainer Robe
+5037500 [Unknown] Torch
+6000000 [Unknown] Awestone
+10000000 [Forest Grotesque] Lifegem- Battle Axe- Spear- Caestus
+10000100 [Forest Grotesque] Lifegem
+10001000 [Forest Grotesque] Lifegem- Longsword- Broadsword- Estoc- Rapier- Falchion
+10002000 [Forest Grotesque] Lifegem- Club- Mace- Wood Arrow
+10100000 [Kobold] Shotel- Black Knight Greatsword- Crescent Axe- Black Knight Greataxe- Drakekeeper's Greataxe- Black Knight Halberd- Black Knight Ultra Greatsword
+10100100 [Kobold] Shotel- Black Knight Greatsword- Crescent Axe- Black Knight Greataxe- Drakekeeper's Greataxe- Black Knight Halberd- Black Knight Ultra Greatsword
+10200000 [Hollow Soldier] Hollow Soldier Set- Winged Spear- Hollow Soldier Shield- Lifegem- Radiant Lifegem
+10201000 [Hollow Soldier] Hollow Soldier Set- Bastard Sword- Firebomb
+10202000 [Hollow Soldier] Hollow Soldier Set- Halberd- Lifegem- Radiant Lifegem
+10203000 [Hollow Soldier] Hollow Soldier Set- Estoc- Hollow Soldier Shield- Lifegem- Radiant Lifegem
+10204000 [Hollow Soldier] Hollow Soldier Set- Bastard Sword- Long Bow- Wood Arrow
+10205000 [Hollow Soldier] Hollow Soldier Set- Lifegem- Radiant Lifegem
+10210000 [Royal Soldier] Royal Soldier Set- Winged Spear- Hollow Soldier Shield
+10211000 [Royal Soldier] Royal Soldier Set- Bastard Sword
+10213000 [Royal Soldier] Royal Soldier Set
+10214000 [Royal Soldier] Royal Soldier Set- Bastard Sword- Long Bow
+10300000 [Hollow Infantry] Hollow Infantry Set- Throwing Knife
+10300100 [Hollow Infantry] Hollow Infantry Set- Throwing Knife
+10301000 [Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Throwing Knife
+10301100 [Hollow Infantry] Hollow Infantry Set- Bandit's Knife
+10302000 [Hollow Infantry] Hollow Infantry Set- Foot Soldier Sword- Foot Soldier Shield
+10302100 [Hollow Infantry] Hollow Infantry Set- Foot Soldier Sword- Foot Soldier Shield
+10302200 [Hollow Infantry] Hollow Infantry Set- Foot Soldier Sword- Foot Soldier Shield
+10303000 [Hollow Infantry] Hollow Infantry Set- Infantry Axe- Throwing Knife
+10303100 [Hollow Infantry] Hollow Infantry Set- Infantry Axe- Throwing Knife
+10303200 [Hollow Infantry] Hollow Infantry Set- Infantry Axe- Throwing Knife
+10304000 [Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Short Bow- Wood Arrow
+10304100 [Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Short Bow- Wood Arrow
+10305000 [Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Short Bow- Fire Arrow
+10305100 [Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Short Bow- Fire Arrow
+10310000 [Infantry] Infantry Set- Bandit's Knife
+10310100 [Infantry] Infantry Set- Bandit's Knife
+10311000 [Infantry] Infantry Set- Foot Soldier Sword- Foot Soldier Shield
+10311100 [Infantry] Infantry Set- Foot Soldier Sword- Foot Soldier Shield
+10312000 [Infantry] Infantry Set- Infantry Axe
+10312100 [Infantry] Infantry Set- Infantry Axe
+10313000 [Infantry] Infantry Set- Bandit's Knife- Short Bow
+10313100 [Infantry] Infantry Set- Bandit's Knife- Short Bow
+10500000 [Amana Shrine Maiden] Radiant Lifegem- Crimson Water- Dragon Charm- Holy Water Urn- Twinkling Titanite
+10501000 [Amana Shrine Maiden] Staff of Amana- Radiant Lifegem- Crimson Water- Dragon Charm- Holy Water Urn- Twinkling Titanite
+10600000 [Hollow Priest] White Priest Set- Cleric's Sacred Chime- Cleric's Small Shield- Twilight Herb- Human Effigy
+10620000 [Dark Priestess] Priestess Set- Priest's Chime- Cleric's Parma- Silver Talisman
+10700000 [Parasitized Undead] Human Effigy- Prism Stone- Tseldora Set- Large Titanite Shard
+10800000 [Hollow Rogue] Rogue Set- Broken Thief Sword- Thief Dagger- Throwing Knife- Flame Butterfly
+10801000 [Hollow Rogue] Rogue Set- Club- Throwing Knife- Flame Butterfly
+10802000 [Hollow Rogue] Rogue Set- Short Bow- Broken Thief Sword- Thief Dagger- Poison Arrow- Flame Butterfly
+11300000 [Varangian Sailor] Varangian Set- Varangian Sword- Varangian Shield- Iron Arrow
+11301000 [Varangian Sailor] Varangian Set- Scimitar- Iron Arrow
+11302000 [Varangian Sailor] Varangian Set- Sea Bow- Varangian Sword- Varangian Shield- Iron Arrow
+11500000 [Undead Traveler] None
+11500100 [Undead Traveler] None
+11501000 [Undead Traveler] Dagger
+11700000 [Stone Soldier] Stone Soldier Spear- Titanite Slab- Llewellyn Shield
+11800000 [Black Hollow Mage] Black Hollow Mage Set- Lizard Staff- Amber Herb
+11800100 [Black Hollow Mage] Black Hollow Mage Set- Lizard Staff- Amber Herb
+11820000 [White Hollow Mage] White Hollow Mage Set- Bat Staff- Dark Troches- Rouge Water- Skeptic's Spice
+11900000 [Lion Clan Mage] Lion Mage Set- Amber Herb- Wilted Dusk Herb
+12100000 [Giant] None
+12101000 [Giant] Giant Warrior Club
+12102000 [Giant] None
+12103000 [Giant] None
+12300000 [Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws
+12300001 [Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws
+12300100 [Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws
+12300200 [Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws
+12300300 [Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws
+12301000 [Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws
+12302000 [Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws
+12303000 [Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws
+12400000 [Manikin] Manikin Set- Manikin Claws- Poison Throwing Knife
+12400100 [Manikin] Manikin Set- Manikin Claws- Poison Throwing Knife
+12401000 [Manikin] Manikin Set- Manikin Knife- Manikin Shield- Poison Throwing Knife
+12402000 [Manikin] Manikin Set- Manikin Sabre- Manikin Shield- Poison Throwing Knife
+12403000 [Manikin] Manikin Set- Manikin Knife- Short Bow- Poison Arrow- Iron Arrow
+12500000 [Rupturing Hollow] Charcoal Pine Resin- Flame Butterfly
+12500100 [Rupturing Hollow] Alluring Skull
+12500200 [Rupturing Hollow] Rotten Pine Resin
+12501000 [Rupturing Hollow] Rotten Pine Resin
+12502000 [Rupturing Hollow] Gold Pine Resin- Dark Pine Resin
+12503000 [Rupturing Hollow] Alluring Skull
+12504000 [Rupturing Hollow] Alluring Skull
+12504100 [Rupturing Hollow] Rotten Pine Resin
+12505000 [Rupturing Hollow] None
+12700000 [Abandoned Hollow] Prisoner Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Lifegem
+12700100 [Abandoned Hollow] Prisoner Set- Triclops Snake Troches
+12700200 [Abandoned Hollow] Prisoner Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+12700300 [Abandoned Hollow] Prisoner Set- Red Leech Troches
+12700400 [Abandoned Hollow] Prisoner Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+12700500 [Abandoned Hollow] Prisoner Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+12701000 [Abandoned Hollow] Prisoner Set- Torch- Lifegem
+12701100 [Abandoned Hollow] Prisoner Set- Torch
+12702000 [Abandoned Hollow] Prisoner Set- Broken Straight Sword- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+12900000 [Forest Spirit] Witchtree Branch
+12901000 [Forest Spirit] Witchtree Bellvine
+13100000 [Lindelt Cleric] Archdrake Set- Archdrake Mace- Slumbering Dragon Shield- Old Radiant Lifegem- Twinkling Titanite
+13101000 [Lindelt Cleric] Archdrake Set- Archdrake Chime- Archdrake Shield- Old Radiant Lifegem- Twinkling Titanite
+13102000 [Lindelt Cleric] Archdrake Set- Archdrake Staff- Archdrake Shield- Old Radiant Lifegem- Twinkling Titanite
+13200000 [Skeleton] Falchion- Titanite Shard- Human Effigy
+13200100 [Skeleton] Falchion- Alluring Skull- Human Effigy
+13200600 [Skeleton] Falchion- Alluring Skull- Human Effigy
+13200700 [Skeleton] Falchion- Titanite Shard- Human Effigy
+13201000 [Skeleton] Falchion- Foot Soldier Shield- Alluring Skull- Human Effigy
+13201500 [Skeleton] Falchion- Foot Soldier Shield- Alluring Skull- Human Effigy
+13202000 [Skeleton] Mail Breaker- Foot Soldier Shield- Alluring Skull- Human Effigy
+13203000 [Skeleton] Falchion- Foot Soldier Shield- Long Bow- Alluring Skull- Wood Arrow- Human Effigy
+13300000 [Skeleton] None
+13301000 [Skeleton] Falchion
+13302000 [Skeleton] Murakumo
+13400000 [Gyrm] Gyrm Set- Large Titanite Shard
+13500000 [Gyrm Warrior] Gyrm Warrior Set- Gyrm Greataxe- Old Mundane Stone- Magic Stone- Titanite Chunk
+13501000 [Gyrm Warrior] Gyrm Warrior Set- Gyrm Great Hammer- Gyrm Greatshield- Old Mundane Stone- Magic Stone- Titanite Chunk
+13502000 [Gyrm Warrior] Gyrm Warrior Set- Gyrm Greataxe- Heavy Crossbow- Old Mundane Stone- Magic Stone- Titanite Chunk
+13503000 [Gyrm Warrior] Gyrm Set- Gyrm Greataxe- Old Mundane Stone- Magic Stone- Titanite Chunk
+13504000 [Gyrm Warrior] Gyrm Set- Gyrm Great Hammer- Gyrm Greatshield- Old Mundane Stone- Magic Stone- Titanite Chunk
+13505000 [Gyrm Warrior] Gyrm Set- Gyrm Greataxe- Heavy Crossbow- Old Mundane Stone- Magic Stone- Titanite Chunk
+13701000 [Dragon Acolyte] Warlock Mask- Cursed Bone Shield- Wilted Dusk Herb
+13800000 [Torturer] Cracked Red Eye Orb
+13801000 [Torturer] Bloodied Whip- Cracked Red Eye Orb
+13900000 [Artificial Undead] Full Moon Sickle- Soul of a Nameless Soldier- Lifegem
+13900100 [Artificial Undead] Full Moon Sickle- Dark Pine Resin- Rotten Pine Resin
+13900200 [Artificial Undead] Full Moon Sickle- Dark Pine Resin- Rotten Pine Resin
+13901000 [Artificial Undead] Soul of a Nameless Soldier- Lifegem
+14100000 [Undead Aberration] Malformed Skull- Chaos Rapier- Chaos Shield
+14100100 [Undead Aberration] Twinkling Titanite- Malformed Skull
+14600000 [Headless Vengarl] Tseldora Set- Bandit's Knife- Silver Talisman
+14601000 [Headless Vengarl] Tseldora Set- Estoc- Silver Talisman
+14602000 [Headless Vengarl] Tseldora Set- Bandit's Knife- Silver Talisman
+14700000 [Undead with Head Bandage] Poison Stone- Bleed Stone
+14700100 [Undead with Head Bandage] Poison Stone- Bleed Stone
+14800000 [Undead Peasant] Peasant Set- Small Smooth & Silky Stone- Flame Butterfly
+14801000 [Undead Peasant] Peasant Set- Titanite Shard- Large Titanite Shard- Titanite Chunk
+14802000 [Undead Peasant] Peasant Set- Titanite Shard- Large Titanite Shard- Titanite Chunk
+14803000 [Undead Peasant] Peasant Set- Titanite Shard- Large Titanite Shard- Titanite Chunk
+14900000 [Undead Steelworker] Titanite Shard- Old Mundane Stone- Small Smooth & Silky Stone
+15000000 [Stone Knight] Stone Twinblade- Stone Parma- Titanite Slab
+15100000 [Ironclad Soldier] Ironclad Set- Firedrake Stone- Large Titanite Shard
+15120000 [Ironclad Soldier] Old Ironclad Set- Human Effigy
+15120100 [Ironclad Soldier] Old Ironclad Set- Human Effigy
+15121000 [Ironclad Soldier] Old Ironclad Set- Human Effigy
+15200000 [Royal Soldier] Royal Swordsman Set- Royal Greatsword
+15200100 [Royal Soldier] Royal Swordsman Set- Royal Greatsword- Lifegem- Common Fruit
+15200101 [Royal Soldier] Royal Swordsman Set- Royal Greatsword- Radiant Lifegem- Common Fruit
+15201000 [Royal Soldier] Royal Swordsman Set- Royal Greatsword- Heavy Crossbow
+15201100 [Royal Soldier] Royal Swordsman Set- Royal Greatsword- Heavy Crossbow- Lifegem- Common Fruit
+15201101 [Royal Soldier] Royal Swordsman Set- Royal Greatsword- Heavy Crossbow- Radiant Lifegem- Common Fruit
+15300000 [Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm
+15300100 [Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm
+15300200 [Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm
+15300300 [Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm
+15300900 [Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm
+15301000 [Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm
+15301100 [Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm
+15301200 [Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm
+15301300 [Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm
+15301900 [Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm
+15400000 [Skeleton Lord] None
+15500000 [Amana Aberration] Human Effigy- Red Leech Troches- Bleeding Serum- Bleed Stone- Smooth & Silky Stone
+15500100 [Amana Aberration] Human Effigy- Red Leech Troches- Bleeding Serum- Bleed Stone- Smooth & Silky Stone
+15700000 [Skeleton Lords - Skeleton] Falchion- Alluring Skull
+15701000 [Skeleton Lords - Skeleton] Falchion- Foot Soldier Shield- Alluring Skull
+15702000 [Skeleton Lords - Skeleton] Mail Breaker- Foot Soldier Shield- Alluring Skull
+15703000 [Skeleton Lords - Skeleton] Falchion- Foot Soldier Shield- Long Bow- Alluring Skull- Wood Arrow
+20300000 [Parasite Spider] Mail Breaker- Parrying Dagger- Ricard's Rapier- Mastodon Greatsword- Bandit Axe- Great Scythe- Zweihander
+20300001 [Parasite Spider] Mail Breaker- Parrying Dagger- Ricard's Rapier- Mastodon Greatsword- Bandit Axe- Great Scythe- Zweihander
+20400000 [Poison Moth] Poison Moss
+20500000 [Poison Horn Beetle] Lifegem- Green Blossom
+20500100 [Poison Horn Beetle] Lifegem- Smooth & Silky Stone- Firestorm
+20510000 [Acid Horn Beetle] None
+20510100 [Acid Horn Beetle] None
+20510200 [Acid Horn Beetle] Lifegem
+20600000 [Razorback Nightcrawler] Poison Stone- Dead Again
+20600100 [Razorback Nightcrawler] Puzzling Stone Sword- Twinkling Titanite
+20600200 [Razorback Nightcrawler] Puzzling Stone Sword- Twinkling Titanite
+20900000 [Hunting Dog] Aromatic Ooze
+20900100 [Hunting Dog] None
+20900200 [Hunting Dog] Aromatic Ooze
+21000000 [Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone
+21000100 [Basilisk] Human Effigy
+21000200 [Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone
+21000300 [Basilisk] Human Effigy
+21000400 [Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone
+21000500 [Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone
+21000600 [Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone
+21200000 [Guardian Dragon] None
+21300000 [Crystal Lizard] None
+21400000 [Giant Undead Boar] Divine Blessing
+21600000 [Wall Ghost] None
+21700000 [Dark Stalker] Tattered Cloth Set- Radiant Lifegem- Longsword- Broadsword
+21700100 [Dark Stalker] Judgment Set- Radiant Lifegem- Longsword- Broadsword
+22000000 [Giant Acid Horn Beetle] None
+22000100 [Giant Acid Horn Beetle] Corrosive Urn
+22000200 [Giant Acid Horn Beetle] Corrosive Urn
+22200000 [Giant Basilisk] Magic Stone- Dragon Sage Hood
+22200100 [Giant Basilisk] Petrified Dragon Bone
+22200200 [Giant Basilisk] Large Titanite Shard
+22300000 [Mongrel Rat] Pharros' Lockstone- Old Radiant Lifegem- Rat Tail
+22400000 [Darksucker] Large Titanite Shard- Titanite Chunk
+22600000 [Corpse Rat] Old Radiant Lifegem- Poison Moss- Repair Powder- Warmth- Rat Tail
+22610000 [Corpse Rat] None
+22620000 [Corpse Rat] Pharros' Lockstone
+22700000 [Stray Dog] Soul of a Nameless Soldier- Soul of a Lost Undead- Human Effigy
+22700100 [Stray Dog] Soul of a Nameless Soldier- Soul of a Lost Undead- Human Effigy
+22700200 [Stray Dog] Soul of a Nameless Soldier- Soul of a Lost Undead- Human Effigy
+30000000 [Ogre] Stone Ring
+30000100 [Ogre] Common Fruit- Soul of a Brave Warrior
+30000200 [Ogre] Old Radiant Lifegem
+30100000 [Heide Knight] Heide Lance
+30100001 [Heide Knight] Heide Knight Set- Heide Lance- Heide Greatlance
+30100100 [Heide Knight] Heide Knight Set- Heide Knight Sword
+30101000 [Heide Knight] Heide Spear
+30101001 [Heide Knight] Heide Knight Set- Heide Spear
+30101100 [Heide Knight] Heide Knight Set- Heide Spear
+30102000 [Heide Knight] Soul of a Great Hero
+30102001 [Heide Knight] Heide Knight Set- Heide Lance
+30103000 [Heide Knight] Soul of a Great Hero
+30103001 [Heide Knight] Heide Knight Set- Heide Greatlance
+30200000 [Undead Jailer] Great Machete- Twilight Herb- Lingering Flame
+30330000 [Flexile Sentry] None
+30400000 [Milfanito] None
+30401000 [Milfanito] None
+30500000 [Smelter Demon] None
+30501000 [Smelter Demon] None
+30600000 [Alonne Captain] Alonne Captain Set- Monastery Charm
+30601000 [Alonne Captain] Alonne Captain Set- Alonne Greatbow- Destructive Greatarrow- Monastery Charm
+30601100 [Alonne Captain] Alonne Captain Set- Alonne Greatbow- Iron Greatarrow
+30700000 [Headless Vengarl] Vengarl's Armor- Vengarl's Gloves- Vengarl's Boots
+30710000 [Vengarl] Vengarl's Set
+30711000 [Vengarl] Vengarl's Helm
+30800000 [Lion Clan Warrior] Lion Warrior Cape- Lion Warrior Cuffs- Lion Warrior Skirt- Lion Greataxe- Lion Clan Shield- Triclops Snake Troches
+30810000 [Lion Clan Warrior] Lion Warrior Set- Lion Greataxe- Triclops Snake Troches
+30900000 [Forgotten Giant] None
+30900100 [Forgotten Giant] None
+30960000 [Last Giant] None
+30970000 [Giant Lord] None
+31100000 [Mounted Overseer] Smooth & Silky Stone- Sunlight Medal
+31200000 [Grave Warden] Grave Warden Set- Silverblack Sickle- Repair Powder
+31201000 [Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier
+31201100 [Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier
+31202000 [Grave Warden] Grave Warden Set- Silverblack Sickle- Large Soul of a Nameless Soldier
+31202100 [Grave Warden] Grave Warden Set- Silverblack Sickle- Repair Powder
+31203000 [Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier
+31203100 [Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier
+31203200 [Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier
+31204000 [Grave Warden] Grave Warden Mask- Grave Warden Cuffs- Silverblack Sickle- Large Soul of a Nameless Soldier
+31205000 [Grave Warden] Grave Warden Mask- Grave Warden Cuffs- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier
+31300000 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Sunlight Medal
+31300100 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Sunlight Medal
+31300200 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Sunlight Medal
+31301000 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Rapier- Sunlight Medal
+31301100 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Rapier- Sunlight Medal
+31301200 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Rapier- Sunlight Medal
+31302000 [Hollow Falconer] Falconer Set- Rapier- Sunlight Medal
+31303000 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Short Bow- Sunlight Medal
+31303100 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Short Bow- Sunlight Medal
+31303200 [Hollow Falconer] Falconer Set- Golden Falcon Shield- Short Bow- Sunlight Medal
+31400000 [Hollow Primal Knight] Rusted Mastodon Set- Mastodon Halberd- Mastodon Greatshield- Radiant Lifegem
+31400100 [Hollow Primal Knight] Rusted Mastodon Set- Mastodon Halberd- Mastodon Greatshield- Radiant Lifegem
+31500000 [Primal Knight] Mastodon Set- Mastodon Halberd- Mastodon Greatshield- Old Mundane Stone
+31600000 [Desert Sorceress] Desert Sorceress Set- Dragon Charm- Wilted Dusk Herb- Magic Stone- Lingering Dragoncrest Ring+1
+31600100 [Desert Sorceress] Desert Sorceress Set- Dragon Charm- Wilted Dusk Herb- Magic Stone- Lingering Dragoncrest Ring+1
+31700000 [Dragon Acolyte] Dragon Acolyte Set- Aldia Hammer- Bone Shield- Petrified Dragon Bone- Elizabeth Mushroom
+31800000 [The Pursuer] None
+31801000 [The Pursuer] None
+31900000 [Alonne Knight] Alonne Knight Set- Blacksteel Katana
+31901000 [Alonne Knight] Alonne Knight Set- Alonne Greatbow- Blacksteel Katana- Iron Greatarrow
+32100000 [Mimic] None
+32101000 [Mimic] None
+32400000 [Belfry Gargoyle] None
+32500000 [Ruin Sentinel] None
+32600000 [The Rotten] None
+32700000 [Dragon Skeleton] None
+33000000 [Old Knight] Old Knight Set- Old Knight Greatsword- Old Knight's Shield- Human Effigy- Amber Herb- Green Blossom
+33001000 [Old Knight] Old Knight Set- Old Knight Ultra Greatsword- Human Effigy- Amber Herb- Green Blossom
+33001100 [Old Knight] Old Knight Set- Old Knight Ultra Greatsword- Human Effigy- Amber Herb- Green Blossom
+33002000 [Old Knight] Old Knight Set- Human Effigy- Amber Herb- Green Blossom
+33003000 [Old Knight] Old Knight Set- Human Effigy- Amber Herb- Green Blossom
+33004000 [Old Knight] Old Knight Set- Old Knight Hammer- Human Effigy- Amber Herb- Green Blossom
+33004100 [Old Knight] Old Knight Set- Old Knight Hammer- Human Effigy- Amber Herb- Green Blossom
+33004200 [Old Knight] Old Knight Set- Old Knight Hammer- Human Effigy- Amber Herb- Green Blossom
+33100000 [Drakekeeper] Drakekeeper Set- Drakekeeper's Sword- Drakekeeper's Shield- Dragon Charm
+33101000 [Drakekeeper] Drakekeeper Set- Drakekeeper's Ultra Greatsword- Dragon Charm
+33102000 [Drakekeeper] Drakekeeper Set- Dragon Charm
+33103000 [Drakekeeper] Drakekeeper Set- Drakekeeper's Great Hammer- Dragon Charm
+33104000 [Drakekeeper] Drakekeeper Set- Drakekeeper's Warpick- Greatshield of Glory- Dragon Charm
+33200000 [Throne Defender] None
+33300000 [Velstadt] None
+33400000 [Throne Watcher] None
+33700000 [Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Lifegem
+33700100 [Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+33700200 [Abandoned Hollow] Prisoner's Set- Poison Throwing Knife
+33700300 [Abandoned Hollow] Prisoner's Set- Simpleton's Spice- Homeward Bone
+33700400 [Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+33700500 [Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+33700600 [Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+33701000 [Abandoned Hollow] Prisoner's Set- Torch- Lifegem
+33701100 [Abandoned Hollow] Prisoner's Set- Poison Throwing Knife- Torch
+33702000 [Abandoned Hollow] Prisoner's Set- Broken Straight Sword- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Lifegem
+33702100 [Abandoned Hollow] Prisoner's Set- Broken Straight Sword- Poison Throwing Knife
+33702200 [Abandoned Hollow] Prisoner's Set- Broken Straight Sword- Simpleton's Spice- Homeward Bone
+33702300 [Abandoned Hollow] Prisoner's Set- Broken Straight Sword- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead
+50000000 [Covetous Demon] None
+50001000 [Covetous Demon] Ivory Warrior Ring
+50100000 [Mytha- the Baneful Queen] None
+50200000 [Manscorpion Tark] Black Scorpion Stinger- Second Dragon Ring
+50300000 [Scorpioness Najka] None
+50400000 [Looking Glass Knight] None
+50610000 [Darklurker] None
+50620000 [Unknown] None
+50650000 [Grave Warden Agdayne] None
+50700000 [Unknown] None
+50800000 [Unknown] None
+50900000 [Leydia Witch] Leydia Black Set- Black Witch's Staff- Simpleton's Spice- Skeptic's Spice- Magic Stone- Dark Quartz Ring+2
+51100000 [Imperious Knight] Imperious Set- Orma's Greatshield- Reeve's Greatshield
+51200000 [Leydia Pyromancer] Leydia White Set- Blue Flame- Magic Shield- Faintstone- Darknight Stone
+51460000 [Vendrick - Hollow] None
+60000000 [Ancient Dragon] None
+60100000 [Flame Lizard] Cracked Red Eye Orb- Fireball- Fire Orb- Great Fireball
+60101000 [Flame Lizard] Cracked Red Eye Orb- Titanite Slab- Petrified Dragon Bone
+60200000 [Rampart Hedgehog] None
+60300000 [The Duke's Dear Freja] None
+60310000 [The Duke's Dear Freja] None
+60700000 [Old Iron King] None
+60800000 [Rotten Vermin] Poison Moss
+61100000 [Dragonrider] None
+61911000 [Executioner's Chariot] None
+62500000 [Old Dragonslayer] None
+62600000 [Lost Sinner] None
+62700000 [Nashandra] Ring of Lords
+62800000 [Royal Rat Authority] None
+65000000 [Iron Warrior] Smelter Hammer- Firedrake Stone- Titanite Slab- Minotaur Helm
+65000100 [Iron Warrior] Smelter Hammer- Firedrake Stone- Titanite Slab- Minotaur Helm
+65100000 [Fume Sorcerer] Blue Dagger- Umbral Dagger- Fume Sorcerer Set
+65100100 [Fume Sorcerer] Blue Dagger- Umbral Dagger- Fume Sorcerer Set
+65300000 [Ashen Warrior] Battle Axe- Charcoal Pine Resin- Small Orange Burr
+65300100 [Ashen Warrior] Battle Axe- Charcoal Pine Resin- Small Orange Burr
+65301000 [Ashen Warrior] Ashen Warrior Sword- Charcoal Pine Resin- Small Orange Burr
+65301100 [Ashen Warrior] Ashen Warrior Sword- Charcoal Pine Resin- Small Orange Burr
+65302000 [Ashen Warrior] Halberd- Charcoal Pine Resin- Small Orange Burr
+65302100 [Ashen Warrior] Halberd- Charcoal Pine Resin- Small Orange Burr
+65303000 [Ashen Warrior] Ashen Warrior Sword- Charcoal Pine Resin- Small Orange Burr
+65303100 [Ashen Warrior] Ashen Warrior Sword- Charcoal Pine Resin- Small Orange Burr
+65400000 [Ashen Crawler] Bonfire Ascetic- Wilted Dusk Herb- Dung Pie
+65600000 [Possessed Armor] Possessed Armor Sword- Possessed Armor Greatbow- Titanite Chunk
+65600100 [Possessed Armor] Possessed Armor Sword- Possessed Armor Greatbow- Titanite Chunk
+65700000 [Barrel Carrier] Human Effigy- Black Firebomb
+65900000 [Rampart Golem] Rampart Golem Lance- Rampart Golem Shield- Rampart Golem Set
+65901000 [Rampart Golem] Rampart Golem Lance- Rampart Golem Shield- Rampart Golem Set
+66000000 [Crystal Golem] Wilted Dusk Herb- Old Radiant Lifegem
+66100000 [Frozen Reindeer] Old Radiant Lifegem- Petrified Dragon Bone
+66101000 [Frozen Reindeer] Old Radiant Lifegem- Petrified Dragon Bone- Bone Fist
+66200000 [Rampart Hedgehog] Human Effigy
+66300000 [Rampart Spearman] Ice Rapier- Radiant Lifegem- Amber Herb
+66301000 [Rampart Spearman] Ice Rapier- Radiant Lifegem- Amber Herb
+66500000 [Sanctum Knight] Sanctum Knight Set- Repair Powder
+66501000 [Sanctum Knight] Sanctum Knight Set- Sanctum Crossbow- Sanctum Repeating Crossbow- Repair Powder
+66600000 [Sanctum Soldier] Sanctum Soldier Gauntlet- Sanctum Mace- Poison Moss- Poison Stone
+66600100 [Sanctum Soldier] Sanctum Mace- Dragon Charm- Poison Stone- Dried Root
+66601000 [Sanctum Soldier] Sanctum Soldier Gauntlet- Poison Moss- Old Growth Balm
+66602000 [Sanctum Soldier] Sanctum Soldier Gauntlet- Poison Moss- Old Growth Balm
+66604000 [Sanctum Soldier] Sanctum Soldier Gauntlet- Sanctum Mace- Dragon Charm- Poison Stone
+66604100 [Sanctum Soldier] Sanctum Mace- Dragon Charm- Poison Stone- Dried Root
+66605000 [Sanctum Soldier] Sanctum Soldier Gauntlet- Dragon Charm- Vine Balm
+66606000 [Sanctum Soldier] Sanctum Soldier Gauntlet- Dragon Charm- Vine Balm
+67000000 [Sanctum Priestess] Sanctum Priestess Tiara- Dragon Charm- Crimson Water
+67100000 [Poison Statue Cluster] Human Effigy- Twinkling Titanite- Common Fruit
+67100100 [Poison Statue Cluster] Human Effigy- Twinkling Titanite- Common Fruit
+67110000 [Poison Statue Cluster] Human Effigy- Twinkling Titanite- Triclops Snake Troches- Promised Walk of Peace- Lightning Clutch Ring
+67110100 [Poison Statue Cluster] Human Effigy- Twinkling Titanite- Triclops Snake Troches- Promised Walk of Peace- Lightning Clutch Ring
+67200000 [Rotten Vermin] Blackweed Balm- Goldenfruit Balm
+67400000 [Pagan Tree] Dried Root
+67500000 [Fume Knight] None
+67700000 [Retainer Sorcerer] Retainer's Short Sword- Retainer Robe
+67701000 [Retainer Sorcerer] Retainer Staff- Retainer Robe
+67800000 [Ice Golem] Human Effigy- Twinkling Titanite
+68000000 [Sir Alonne] None
+68000100 [Sir Alonne] Alonne's Set
+68100000 [Sinh- the Slumbering Dragon] None
+68100100 [Sinh- the Slumbering Dragon] None
+68200000 [Elana- Squalid Queen] None
+68300000 [Imperfect] Petrified Dragon Bone- Titanite Slab- Dragon Scale
+68400000 [Vendrick] None
+68800000 [Loyce Knight] None
+68900000 [Charred Loyce Knight] Charred Loyce Greatsword- Charred Loyce Set- Charred Loyce Shield- Loyce Soul
+68901000 [Charred Loyce Knight] Charred Loyce Greatsword- Charred Loyce Set- Charred Loyce Shield- Loyce Soul
+69600000 [Unknown] Small Smooth & Silky Stone- Smooth & Silky Stone- Petrified Something
+70050000 [Shanalotte] Aged Feather
+70150000 [Unknown] None
+70360000 [Human Nashandra] None
+70450000 [Laddersmith Gilligan] Melu Scimitar- Ladder Miniature
+70550000 [Strowen] Human Effigy
+70560000 [Morrel] None
+70580000 [Griant] None
+72110000 [Chancellor Wellager] None
+72300000 [Milibeth] Human Effigy
+72400000 [Captain Drummond] Drangleic Helm
+72500000 [Darkdiver Grandahl] Dragon Chime
+72600000 [Unknown] Gyrm Greataxe
+73000000 [Unknown] None
+73101000 [Unknown] None
+73200000 [Unknown] None
+73300000 [Unknown] None
+74100000 [Unknown] Ring of Steel Protection
+74200000 [Creighton the Wanderer] Creighton's Steel Mask
+74201000 [Creighton the Wanderer] Creighton's Steel Mask
+74300000 [Benhart of Jugo] Bluemoon Greatsword
+74400000 [Mild Mannered Pate] Pate's Spear
+75100000 [Cale the Cartographer] Cale's Helm
+75200000 [Lucatiel of Mirrah] Lucatiel's Mask
+75300000 [Bell Keeper] Rusted Coin
+75400000 [Merchant Hag Melentia] Covetous Silver Serpent Ring+1
+75500000 [Unknown] None
+76000000 [Milfanito] None
+76010000 [Milfanito] None
+76020000 [Milfanito] Ring of the Dead
+76100000 [Maughlin the Armourer] Tseldora Set
+76200000 [Stone Trader Chloanne] Palestone
+76300000 [Rosabeth of Melfia] Fire Seed
+76400000 [Blacksmith Lenigrast] Blacksmith's Hammer
+76401000 [Blacksmith Lenigrast] Blacksmith's Hammer
+76430000 [Steady Hand McDuff] Titanite Slab
+76600000 [Carhillion of the Fold] Northern Ritual Band+1
+76800000 [Straid of Olaphis] Black Hood
+76900000 [Licia of Lindeldt] Idol's Chime
+77000000 [Felkin the Outcast] Sunset Staff
+77001000 [Felkin the Outcast] None
+77100000 [Royal Sorcerer Navlaan] Chaos Hood
+77200000 [Magerold of Lanafir] Covetous Gold Serpent Ring+1
+77600000 [Unknown] None
+77700000 [Sweet Shalquoir] None
+78300000 [Titchy Gren] Nahr Alma Hood
+78400000 [Cromwell the Pardoner] Ring of Resistance
+78500000 [Blue Sentinel Targray] Blue Knight's Halberd
+78501000 [Blue Sentinel Targray] Blue Knight's Halberd
+78600000 [Unknown] None
+81000000 [Unknown] Hollow Soldier Set- Zweihander- Varangian Shield
+81000100 [Unknown] None
+81000200 [Unknown] Hollow Soldier Set- Zweihander- Varangian Shield
+81000300 [Unknown] None
+81000400 [Unknown] None
+81100000 [Unknown] None
+81200000 [Unknown] None
+81200100 [Unknown] None
+81300000 [Unknown] None
+81400000 [Unknown] None
+81400800 [Unknown] Prisoner's Hood- Prisoner's Tatters- Prisoner's Gloves- Greataxe
+81400900 [Unknown] Greataxe
+82000000 [Unknown] Winged Spear
+82000100 [Unknown] Hollow Soldier Set- Winged Spear- Hollow Soldier Shield
+82000200 [Unknown] Hollow Soldier Set- Winged Spear- Hollow Soldier Shield
+82100000 [Unknown] Warlock Mask- Priestess Robe- Priestess Gloves- Priestess Skirt- Cursed Bone Shield
+82100100 [Unknown] Warlock Mask- Priestess Robe- Priestess Gloves- Priestess Skirt- Cursed Bone Shield
+82200000 [Unknown] Leydia Black Hood- Leydia Black Robe- Priestess Gloves- Priestess Skirt- Black Witch's Staff- Cleric's Parma
+82200100 [Unknown] Leydia Black Hood- Leydia Black Robe- Priestess Gloves- Priestess Skirt- Black Witch's Staff- Cleric's Parma
+82200200 [Unknown] Leydia Black Hood- Leydia Black Robe- Priestess Gloves- Priestess Skirt- Black Witch's Staff- Cleric's Parma
+82200300 [Unknown] Leydia Black Hood- Leydia Black Robe- Priestess Gloves- Priestess Skirt- Black Witch's Staff- Cleric's Parma
+82300000 [Unknown] Dragon Scale
+82400000 [Unknown] Old Mirrah Greatsword
+82400001 [Unknown] Old Mirrah Greatsword
+83100000 [Unknown] Dingy Set
+83110000 [Unknown] Soul of a Great Hero
+83200000 [Unknown] Wood Arrow
+83210000 [Unknown] Wood Arrow
+83220000 [Unknown] Wood Arrow
+83230000 [Unknown] Wood Arrow
+83240000 [Unknown] Wood Arrow
+83250000 [Unknown] Wood Arrow
+83260000 [Unknown] Wood Arrow
+83270000 [Unknown] Wood Arrow
+83300000 [Unknown] Tattered Cloth Set
+83400000 [Unknown] Jester's Set
+83410000 [Unknown] Aurous Set- Stone Twinblade- Old Knight's Shield
+83500000 [Unknown] Black Dragon Greataxe
+83505000 [Unknown] Monastery Scimitar- Monastery- Set
+83510000 [Unknown] Black Dragon Warpick- Black Dragon Shield
+83520000 [Unknown] Black Dragon Sword- Black Dragon Shield
+83600000 [Unknown] Mad Warrior Set- Berserker Blade
+83600001 [Unknown] Mad Warrior Set- Berserker Blade
+83610000 [Unknown] Orma's Greatshield
+83620000 [Unknown] Black Witch Domino Mask
+83630000 [Unknown] Black Witch Veil
+83640000 [Unknown] Ironclad Helm- Ironclad Armor- Drakekeeper's Great Hammer
+83700000 [Unknown] Imported Set- Shortsword- Heavy Crossbow
+83700001 [Unknown] Imported Set- Shortsword- Heavy Crossbow
+83710000 [Unknown] Wood Arrow
+83720000 [Unknown] Wood Arrow
+83730000 [Unknown] Wood Arrow
+83800000 [Unknown] None
+83810000 [Unknown] None
+84000000 [Unknown] Wood Arrow
+84100000 [Unknown] Wood Arrow
+84200000 [Unknown] Syan's Set- Mastodon Greatsword- Mastodon Greatshield
+84300000 [Unknown] Knight Set- Heide Knight Sword- Dagger
+84400000 [Unknown] Catarina Set- Broadsword- Heavy Crossbow
+84400001 [Unknown] Catarina Set- Broadsword- Heavy Crossbow
+84500000 [Unknown] Falconer Set- Scimitar
+84600000 [Unknown] Peasant Set
+84700000 [Unknown] Token of Spite- Cracked Red Eye Orb
+84710000 [Unknown] Token of Fidelity- Cracked Blue Eye Orb
+84800000 [Unknown] Leydia White Set- Imperious Leggings- Blue Flame
+84810000 [Unknown] None
+84900000 [Unknown] None
+84900001 [Unknown] None
+84910000 [Unknown] None
+84920000 [Unknown] Aurous Set- Shotel- Heavy Crossbow
+85000000 [Unknown] Monastery Set- Monastery Scimitar
+85000001 [Unknown] Monastery Set- Monastery Scimitar
+85100000 [Unknown] Brigand Set- Full Moon Sickle
+85200000 [Unknown] Greatsword- Orma's Greatshield
+85300000 [Unknown] Royal Swordsman Set- Avelyn
+85310000 [Unknown] None
+85320000 [Unknown] Drakekeeper Set- Drakekeeper's Warpick
+85330000 [Unknown] Elite Knight Set- Longsword
+85340000 [Unknown] Durgo's Hat
+85340001 [Unknown] Durgo's Hat
+85350000 [Unknown] Syan's Set- Tower Shield
+85400000 [Unknown] Aurous Set- Stone Twinblade- Old Knight's Shield
+85400001 [Unknown] Aurous Set- Stone Twinblade- Old Knight's Shield
+86200000 [Unknown] Puzzling Stone Sword
+86300000 [Unknown] Puzzling Stone Sword
+86400000 [Unknown] Puzzling Stone Sword
+87110000 [Unknown] Alva Set- Human Effigy
+87200000 [Unknown] Black Hollow Mage Set- Caitha's Chime
+87300000 [Unknown] Wanderer Set- Notched Whip- Crimson Parma
+87900000 [Unknown] None
+88100000 [Unknown] Mad Warrior Set- Berserker Blade
+88200000 [Unknown] Mad Warrior Set- Berserker Blade
+88300000 [Unknown] Knight Set- Divine Blessing
+88310000 [Unknown] Elite Knight Set- Divine Blessing
+88320000 [Unknown] Elite Knight Set- Divine Blessing
+88500000 [Unknown] Faraam Set- Radiant Lifegem
+88510000 [Unknown] Archdrake Helm- Twilight Herb
+88700000 [Unknown] Black Witch Set
+89600000 [Unknown] Orma's Greatshield
+89650000 [Unknown] Orma's Greatshield
+89700000 [Unknown] Sanctum Priestess Tiara
+89750000 [Unknown] Clear Bluestone Ring+2
+89800000 [Unknown] Minotaur Helm
+99900000 UNKNOWN
+99990000 UNKNOWN
+99990001 UNKNOWN

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Enums>
+  	<Enum Name="AttackType" type="s32">
+		<Option Value="0" Name="Throw" />
+		<Option Value="1" Name="Heavy" />
+		<Option Value="2" Name="Standard" />
+		<Option Value="4" Name="Shield Poke - Thrusting Sword" />
+		<Option Value="5" Name="Shield Poke - Spear/Lance/Halberd" />
+		<Option Value="7" Name="Jump/Fall" />
+		<Option Value="8" Name="Bow Shoot" />
+		<Option Value="9" Name="Greatbow Shoot" />
+		<Option Value="10" Name="Crossbow Shoot" />
+		<Option Value="11" Name="Dual Wield Crossbow Shoot" />
+		<Option Value="12" Name="Spell Cast" />
+		<Option Value="13" Name="Guard" />
+		<Option Value="15" Name="1H Shoot" />
+		<Option Value="16" Name="2H Shoot" />
+		<Option Value="17" Name="Binocular - Precision Shoot" />
+	</Enum>
+  </Enums>
+  <Self Wiki="Defines parameters relating to weapon animations." Row0Dummy="" />
+  <Field>
+    <animation_id AltName="Animation ID" />
+    <attack_type AltName="Attack Type" Enum="AttackType" />
+    <startup_speed AltName="Startup Speed" />
+    <recovery_speed AltName="Recovery Speed" />
+    <tracking_start AltName="Tracking Start" />
+    <tracking_middle AltName="Tracking Middle" />
+    <tracking_end AltName="Tracking End" />
+    <weapon_y_orientation AltName="Weapon Y Orientation" />
+    <self_pushback_1 AltName="Self Pushback 1" />
+    <self_pushback_2 AltName="Self Pushback 2" />
+    <damage_param_id_1 AltName="Damage Param ID 1" Refs="PlayerDamageParam" />
+    <damage_param_id_2 AltName="Damage Param ID 2" Refs="PlayerDamageParam" />
+    <damage_param_id_3 AltName="Damage Param ID 3" Refs="PlayerDamageParam" />
+    <swing_bullet_id_1 AltName="Swing - Bullet ID [1]" Refs="BulletParam" />
+    <swing_bullet_damage_id_1 AltName="Swing - Bullet Damage ID [1]" Refs="PlayerDamageParam" />
+    <swing_bullet_id_2 AltName="Swing - Bullet ID [2]" Refs="BulletParam" />
+    <swing_bullet_damage_id_2 AltName="Swing - Bullet Damage ID [2]" Refs="PlayerDamageParam" />
+    <swing_bullet_id_3 AltName="Swing - Bullet ID [3]" Refs="BulletParam" />
+    <swing_bullet_damage_id_3 AltName="Swing - Bullet Damage ID [3]" Refs="PlayerDamageParam" />
+  </Field>
+</PARAMMETA>

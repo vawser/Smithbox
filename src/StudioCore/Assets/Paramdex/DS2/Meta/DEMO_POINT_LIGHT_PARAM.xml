@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Row0Dummy="" />
+  <Field>
+    <diffuse_color_R AltName="Diffuse: R"/>
+    <diffuse_color_G AltName="Diffuse: G"/>
+    <diffuse_color_B AltName="Diffuse: B"/>
+    <diffuse_color_A AltName="Diffuse: A"/>
+    <specular_color_R AltName="Specular: R"/>
+    <specular_color_G AltName="Specular: G"/>
+    <specular_color_B AltName="Specular: B"/>
+    <specular_color_A AltName="Specular: A"/>
+  </Field>
+</PARAMMETA>

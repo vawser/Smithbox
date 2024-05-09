@@ -75,7 +75,7 @@ public static class TextureFolderBank
 
         FindTextureFolder(folderDir, fileExt, category);
 
-        if (Project.Type is ProjectType.DS2S)
+        if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
         {
             folderDir = @"\menu\tex\icon";
             fileExt = @".tpf";
@@ -162,7 +162,7 @@ public static class TextureFolderBank
             fileExt = @".objbnd";
         }
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             folderDir = @"\model\obj";
             fileExt = @".bnd";
@@ -181,7 +181,7 @@ public static class TextureFolderBank
             fileExt = ".tpf";
         }
 
-        if (Project.Type is ProjectType.DS2S)
+        if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
         {
             folderDir = @"\model\chr\";
             fileExt = ".texbnd";
@@ -202,7 +202,7 @@ public static class TextureFolderBank
 
         FindTextureFolder(folderDir, fileExt, category);
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             folderDir = @"\model\parts";
             fileExt = @".commonbnd.dcx";
@@ -254,7 +254,7 @@ public static class TextureFolderBank
         var folderDir = @"\sfx";
         var fileExt = @".ffxbnd.dcx";
 
-        if(Project.Type is ProjectType.DS2S)
+        if(Project.Type is ProjectType.DS2S or ProjectType.DS2)
         {
             fileExt = @".ffxbnd";
         }

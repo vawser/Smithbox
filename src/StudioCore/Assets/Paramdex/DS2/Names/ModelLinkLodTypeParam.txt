@@ -1,0 +1,28 @@
+0 Default -- デフォルト
+1 Map -- マップ
+2 Map Medium -- マップ　中物
+3 Map Accessories -- マップ　小物
+4 Map (50 m) -- マップ　（影50m）
+5 Map (Tree) -- マップ（木）
+100 Chara Small (within 1m) -- キャラ　小　(1m以内)
+101 Character Medium (1~2.5m) -- キャラ　中　(1～2.5m)
+102 Chara Dai (2.5-10m) -- キャラ　大　(2.5～10m)
+103 Character Boss -- キャラ　ボス
+104 Chara Oversized Boss -- キャラ　特大ボス
+150 NPC Human Size -- NPC　人間サイズ
+200 Player Armor -- プレイヤー防具
+210 Player Eyebrows -- プレイヤー眉毛
+211 Player beard and hair -- プレイヤーヒゲ・髪
+212 Player Face -- プレイヤー顔
+220 Player Weapon Small -- プレイヤー武器　小
+221 Player Weapon In -- プレイヤー武器　中
+222 Player Weapons Large -- プレイヤー武器　大
+230 Player Phantom Simple Model -- プレイヤー幻影簡易モデル
+3000 Auga (Fossil Forest) -- オーガ(化石の森)
+3001 Chara GGD c1350 Heavy Dwarf -- キャラ　GGD　c1350重ドワーフ
+3002 c3180 Bay ground -- c3180　ベイグランド
+3003 c3270 Dragon Bone -- c3270 竜の骨
+3004 c7055 Old Woman -- c7055　老婆
+3005 c7036 Queen -- c7036　王妃
+3006 c2120 Wyvern -- c2120　ワイバーン
+3007 c6000 Old Dragon -- c6000　古龍

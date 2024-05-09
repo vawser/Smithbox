@@ -1,0 +1,152 @@
+0 Without -- なし
+100 [General purpose] ladder up -- 【汎用】梯子上り
+101 [General purpose] ladder down -- 【汎用】梯子下り
+102 [General purpose] ladder kicking -- 【汎用】梯子蹴り
+200 【General purpose】Rope -- 【汎用】ロープ
+300 【General purpose】Open one door -- 【汎用】片扉開ける
+301 【General purpose】Close one door -- 【汎用】片扉閉める
+310 【General purpose】Both doors open -- 【汎用】両扉開ける
+311 [General purpose] both doors close -- 【汎用】両扉閉める
+400 【General purpose】White door S -- 【汎用】白扉S
+401 [General purpose] white door M -- 【汎用】白扉M
+402 [General purpose] white door L -- 【汎用】白扉L
+410 [General purpose] reverse white door S -- 【汎用】逆白扉S
+411 [General purpose] reverse white door M -- 【汎用】逆白扉M
+412 [General purpose] reverse white door L -- 【汎用】逆白扉L
+500 【General purpose】Rescue -- 【汎用】救助
+600 【General purpose】 NPC Conversation -- 【汎用】NPC会話
+610 【General purpose】 NPC Tomb -- 【汎用】NPC墓
+620 【General purpose】Touch -- 【汎用】触れる
+630 【General purpose】Magic Team -- 【汎用】魔法陣
+700 【General purpose】Treasure chest -- 【汎用】宝箱
+750 【General Purpose】Mimic -- 【汎用】ミミック
+800 【General purpose】Barista -- 【汎用】バリスタ
+900 【General purpose】Light light -- 【汎用】篝火灯す
+901 【General purpose】Bonfire menu -- 【汎用】篝火メニュー
+1000 【General purpose】Lever pulling -- 【汎用】レバー引く
+1001 【General purpose】Lever continues to pull -- 【汎用】レバー引き続ける
+1010 【General purpose】Lever (wall hole- strap) -- 【汎用】レバー（壁穴、つり革）
+1020 【General purpose】Valve -- 【汎用】バルブ
+1100 【General purpose】Torch -- 【汎用】松明
+1101 【General purpose】Torch (wall-to-wall) -- 【汎用】松明（壁際）
+1110 【General purpose】Light with torches (sphere) -- 【汎用】松明で火をつける（球）
+1111 【General purpose】Light with torches (wall-to-wall) -- 【汎用】松明で火をつける（壁際）
+1200 【General purpose】Stand board -- 【汎用】立て板
+1300 【General purpose】Boss weakness -- 【汎用】ボス弱点
+1400 【General purpose】Insect key -- 【汎用】虫鍵
+1410 【General purpose】Insect key (floor) -- 【汎用】虫鍵（床）
+1500 [General purpose] no display key guide -- 【汎用】表示無しキーガイド
+1510 【General purpose】No display key guide (both sides) -- 【汎用】表示無しキーガイド（両面）
+1600 【General purpose】Petrification stop -- 【汎用】石化ストップ
+1700 【General purpose】For terminating bonfire warp -- 【汎用】終端篝火ワープ用
+10020400 Gap Sinus_ Tutorial Start Soon -- 隙間の洞_チュートリアル開始すぐ
+10020401 Gap sinus_glitter girl front -- 隙間の洞_キラキラ娘前
+10020402 In front of the cave in the gap_ fallen trees -- 隙間の洞_倒木の前
+10020403 Gap Sinus_ Tutorial Second -- 隙間の洞_チュートリアル二つ目
+10020404 Gap sinus_ tutorial goal front left hand -- 隙間の洞_チュートリアルゴール前左手
+10020405 Gap sinus_ Tutorial goal stairs front upper passage -- 隙間の洞_チュートリアルゴール階段手前右手の上部通路
+10020410 Gap sinus_ tutorial start soon_ reverse -- 隙間の洞_チュートリアル開始すぐ_逆
+10020411 gap sinus_glitter daughter front_reverse -- 隙間の洞_キラキラ娘前_逆
+10020412 In front of the cave of the gap_ fallen tree reverse -- 隙間の洞_倒木の前_逆
+10020413 Gap sinus_ tutorial second_ reverse -- 隙間の洞_チュートリアル二つ目_逆
+10020414 Gap sinus_ tutorial goal front left hand_reverse -- 隙間の洞_チュートリアルゴール前左手_逆
+10020415 Gap sinus_ tutorial goal stairs front right hand upper passage_ reverse -- 隙間の洞_チュートリアルゴール階段手前右手の上部通路_逆
+10029010 Lithographic -- 石版
+10029020 knock down the sinus of the gap -- 隙間の洞_立板を倒す
+10029030 go into the sinus of the gap -- 隙間の洞_かんおけに入る
+10049010 For the gimmick of the madura_ rotating door -- マデューラ_回転扉のギミック用
+10049020 Madura_ Strong Man's Stone Monument -- マデューラ_強者の石碑
+10049030 Madura _NPC Cat Conversation Key Guide -- マデューラ_NPC猫の会話用キーガイド
+10049040 Key Guide for Madura_Obelisk -- マデューラ_オベリスク用キーガイド
+10100400 Decayed Giant Forest_ Boss New Giant Senior Soldier (Entrance) -- 朽ちた巨人の森_ボス新・巨人上級兵士(入口)
+10100401 Decayed Giant Forest_Bosbay Grand (Entrance) -- 朽ちた巨人の森_ボスベイグランド（入口）
+10100402 The Forest of The Decaying Giant_ Matsumei Room - Submerged Square -- 朽ちた巨人の森_松明部屋～水没広場
+10100403 Decayed Giant Forest_ Amphitheater -- 朽ちた巨人の森_円形闘技場
+10100404 The Forest of Decayed Giants -- 朽ちた巨人の森_巨人剣～昇降機
+10100412 Decayed Giant Forest_ Torchroom - Submerged Square_ Reverse -- 朽ちた巨人の森_松明部屋～水没広場_逆
+10100413 Decayed Giant Forest_Amphitheater_Reverse -- 朽ちた巨人の森_円形闘技場_逆
+10100414 Decayed Giant Forest_ Giant Sword - Elevator_ Reverse -- 朽ちた巨人の森_巨人剣～昇降機_逆
+10109000 The Nest of Birds in the Forest of Decayed Giants -- 朽ちた巨人の森_鳥の巣
+10109010 For the decaying giant forest_ giant tree warp -- 朽ちた巨人の森_巨人の木ワープ用
+10109020 Decayed Giant Forest_ Giant Tree (Practical Use of Wood) -- 朽ちた巨人の森_巨人の木（木の実用）
+10140400 The boss of The Wedding Town Gerdra_Church (entrance) -- 輝石街ジェルドラ_教会のボス（入口）
+10140401 The Boss Under the Web Zone of The Gelderla- Kiseki Street (Entrance) -- 輝石街ジェルドラ_蜘蛛の巣ゾーン下ボス（入口）
+10149010 The Memory Invasion of The Kiishi-gai Gerdra_Fururyu -- 輝石街ジェルドラ_古竜の記憶侵入
+10149020 For the acquisition of The Red Soul -- 輝石街ジェルドラ_赤いソウル取得用
+10150400 Anne Deal's House_Boss -- アン・ディールの館_ボス前
+10159000 Anne Deal's House -- アン・ディールの館_石化解除
+10159010 Key Guide to The Door of The Museum of Anne Deal_Auger Destruction Wall -- アン・ディールの館_オーガ破壊壁の扉用キーガイド
+10160400 Forgotten Prisoners -- 忘却の牢_ボス忘れられた罪人
+10160401 Forgetting Prison_Bosgargoyle -- 忘却の牢_ボスガーゴイル
+10160402 The Prisoner of Oblivion_ The Warrior in the Boss Mirror -- 忘却の牢_ボス鏡の中の戦士
+10160403 The tower entrance of the prison of oblivion -- 忘却の牢_離れの塔入口
+10160413 The prison of oblivion _ the tower entrance of the away _ reverse -- 忘却の牢_離れの塔入口_逆
+10169000 Forgetting Prison_ No Display Key Guide (both sides) -- 忘却の牢_表示無しキーガイド（両面）
+10170400 Reservoir Valley_Bosjabazahat -- 溜りの谷_ボスジャバザハット
+10170401 Valley of the reservoir_Bosnagha -- 溜りの谷_ボスナーガ
+10170412 The valley of the reservoir_before the bonfire of the atrium_reverse -- 溜りの谷_吹き抜けの篝火前_逆
+10174002 Before the bonfire of the valley of the reservoir -- 溜りの谷_吹き抜けの篝火前
+10179000 light a windmill shaft -- 風車のシャフトに火をつける
+10179010 Valley of the reservoir _ Altar of the sun -- 溜りの谷_太陽の祭壇
+10180400 Hidden Port_Boss Double-Sided Warrior -- 隠れ港_ボス両面戦士
+10189000 Hidden Port_Compass -- 隠れ港_羅針盤
+10190400 Molten Castle_Boss Demon Night -- 熔鉄城_ボスデーモンナイト
+10190401 Molten Iron Castle_Boss Molten Iron Daemon -- 熔鉄城_ボス熔鉄デーモン
+10190402 The end of the lift ing lift -- 熔鉄城_昇降リフトの先
+10190403 Ming-iron castle_pledge entrance -- 熔鉄城_誓約入口
+10190404 Molten Castle_Pledge Exit -- 熔鉄城_誓約出口
+10190412 Molten Iron Castle_Lift lift destination_reverse -- 熔鉄城_昇降リフトの先_逆
+10230400 Hunting Forest_Boss White Door (Entrance) _ Silver Chariot -- 狩猟の森_ボス白扉(入口)_シルバーチャリオット
+10230410 Hunting Forest_Boss White Door (Entrance) _ Skeleton Aristocracy -- 狩猟の森_ボス白扉(入口)_スケルトン貴族
+10231020 Hunting Forest_ Shortcut Fallen Trees -- 狩猟の森_ショートカット倒木
+10239000 Hunting Forest_ Pledge Stone Statue_ Matching Start -- 狩猟の森_誓約の石像_マッチング開始
+10239001 Hunting Forest_ Pledge Stone Statue_ Matching Cancellation -- 狩猟の森_誓約の石像_マッチングキャンセル
+10250400 Kuzbottom_Boss Butcher -- クズ底_ボスブッチャー
+10250401 Scum bottom_ ladder room -- クズ底_梯子部屋
+10250402 In front of the bottom coal tar area -- クズ底_下層コールタールエリア前
+10250411 Scum bottom_ladder room_reverse -- クズ底_梯子部屋_逆
+10250412 Kuzbottom_Lower coal tar area front_reverse -- クズ底_下層コールタールエリア前_逆
+10270400 The Nest of The Guardian Dragon_ Boss Old Dragon -- 守り竜の巣_ボス古の龍
+10279000 Defending Dragon's Nest_ Old Dragon_ For Conversation -- 守り竜の巣_古の龍_会話用
+10310400 Heide Great Fire Tower_Boss Heavy Cavalry -- ハイデ大火塔_ボス重騎馬兵
+10310401 Heide Great Fire Tower_Ornstein -- ハイデ大火塔_オーンスタイン
+10319000 Heide Great Fire Tower_Pledge Stone Statue_Matching Begins -- ハイデ大火塔_誓約石像_マッチング開始
+10319001 Heide Great Fire Tower_Pledge Stone Statue_Matching Cancellation -- ハイデ大火塔_誓約石像_マッチングキャンセル
+10319010 Heide Great Fire Tower_Lever Pull -- ハイデ大火塔_レバー引く
+10320400 Forest of Shadows of The Void_Bosman Scorpion -- 虚ろの影の森_ボスマンスコーピオン
+10320401 Forest of Shadows of The Void_ Dranggreig Connection -- 虚ろの影の森_ドラングレイグ接続
+10320411 Forest of Shadows of The Void_ DrangGreig Connection_ Reverse -- 虚ろの影の森_ドラングレイグ接続_逆
+10329000 Forest of The Shadow of The Void_ Gate Stone Statue -- 虚ろの影の森_ゲート石像
+10329010 _NPC Forest of Shadows: Manscorpion -- 虚ろの影の森_NPC：マンスコーピオン
+10330400 Faros Door Way_Boss Dog Rat -- ファロスの扉道_ボス犬ネズミ
+10330401 Faros Door Way_Rat Pledge White Door -- ファロスの扉道_ネズミ誓約白扉
+10330411 Faros door way_rat pledge white door_reverse -- ファロスの扉道_ネズミ誓約白扉_逆
+10340400 Saint's Tomb_Boss Giant Rat -- 聖人墓所_ボス巨大ネズミ
+10340401 Saint's Tomb_Pledge Goal -- 聖人墓所_誓約ゴール
+10340411 Saint's Tomb_Pledge Goal_Reverse -- 聖人墓所_誓約ゴール_逆
+10349000 _NPC The Saint's Cemetery: The King of Rats -- 聖人墓地_NPC：ネズミの王
+20100400 Giant's Memory_ Boss New Giant Senior Soldier -- 巨人の記憶_ボス新・巨人上級兵
+20109000 Giant Memory _ Giant Corpse Warp -- 巨人の記憶_巨人死体ワープ
+20110400 Amana Altar Boss Beautiful Voice Frog -- アマナの祭壇ボス美声ガエル
+20110401 Amana altar _ cave ahead of the house of girl 1 -- アマナの祭壇_少女１の家の先の洞窟
+20110402 Amana altar _ cave ahead of girl 2 house -- アマナの祭壇_少女２の家の先の洞窟
+20110411 amana altar_girl one house ahead of the cave_reverse -- アマナの祭壇_少女１の家の先の洞窟_逆
+20110412 Amana altar_girl 2 house ahead of the cave_ reverse -- アマナの祭壇_少女２の家の先の洞窟_逆
+20119000 Fairy's Edge Past_Altar Offering -- 妖精のほとり過去_祭壇お供え
+20119100 Altar of Amana_The Altar Prayer Point of the Living -- アマナの祭壇_生者の祭壇祈りポイント
+20119200 Banshee Ascension -- バンシー昇天
+20210400 In front of The King's Castle Doran Greygrass Boss -- 王城ドラングレイグラスボス前
+20210401 King's Castle Doran Greig Boss Miller Night -- 王城ドラングレイグボスミラーナイト
+20210402 King's Castle Doran Greig Boss Heavy Cavalry -- 王城ドラングレイグボス重騎馬兵
+20219000 Queen of the King's Castle _NPC Drangeig -- 王城ドラングレイグ＿NPC王妃
+20219010 King's Castle D'Angheig_Keyman -- 王城ドラングレイグ_鍵人
+20240400 Knight B of the Tomb Of The Lord Boss -- 不死廟ボス王妃の騎士B
+20240401 In front of the Tomb area -- 不死廟_墓エリア前
+20240402 King of the Immortal Mausoleum Boss -- 不死廟ボス王
+20240411 Immortal Mausoleum_Tomb Area Front_Reverse -- 不死廟_墓エリア前_逆
+20269000 Memories of the Old Dragon_Feedback Point -- 古竜の記憶_帰還ポイント
+20620900 E3 Resistance Fort_Bonfire Warp -- E3抵抗の砦_篝火ワープ
+20620910 E3 Resistance Fort_ Bonfire -- E3抵抗の砦_篝火灯す
+20630400 E3 Iwamine Castle_Boss White Door (Entrance) -- E3岩峰城_ボス白扉(入口)
+20630410 E3 Iwamine Castle_Boss White Door (Entrance)_Reverse -- E3岩峰城_ボス白扉(入口)_逆
+40039000 A light stand for the pledge -- 誓約用の灯火台

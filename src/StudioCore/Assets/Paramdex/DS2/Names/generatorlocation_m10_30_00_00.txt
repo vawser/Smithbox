@@ -1,0 +1,20 @@
+90 [GEN:90] Lucatiel of Mirrah
+91 [GEN:91] Lucatiel of Mirrah
+566 [GEN:566] Lucatiel of Mirrah
+1000 [GEN:1000] Old Knight
+1010 [GEN:1010] NO MATCH
+1040 [GEN:1040] NO MATCH
+1050 [GEN:1050] NO MATCH
+1500 [GEN:1500] Syan Knight
+2500 [GEN:2500] Basilisk
+2550 [GEN:2550] Hollow Infantry
+2560 [GEN:2560] Hollow Infantry
+2570 [GEN:2570] Hollow Infantry
+2700 [GEN:2700] Hollow Primal Knight
+3000 [GEN:3000] Hollow Infantry
+3001 [GEN:3001] Hollow Infantry
+3002 [GEN:3002] Hollow Infantry
+3003 [GEN:3003] Varangian Sailor
+3004 [GEN:3004] Varangian Sailor
+3005 [GEN:3005] Varangian Sailor
+9000 [GEN:9000] Undead Traveler

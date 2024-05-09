@@ -149,7 +149,7 @@ public static class ResourceLocatorUtils
                 return false;
         }
 
-        if (game == ProjectType.DS2S)
+        if (game == ProjectType.DS2S || game == ProjectType.DS2)
         {
             if (!Directory.Exists($@"{gamepath}\map"))
                 return false;

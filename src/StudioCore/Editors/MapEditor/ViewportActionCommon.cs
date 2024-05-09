@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor
     {
         public static void SetUniqueEntityID(MsbEntity sel, MapContainer map)
         {
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 return;
 
             if (Project.Type == ProjectType.AC6)
@@ -522,7 +522,7 @@ namespace StudioCore.Editors.MapEditor
 
         public static void ClearEntityID(MsbEntity sel, MapContainer map)
         {
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 return;
 
             if (Project.Type is ProjectType.AC6 or ProjectType.ER)
@@ -547,7 +547,7 @@ namespace StudioCore.Editors.MapEditor
 
         public static void ClearEntityGroupID(MsbEntity ent, MapContainer map)
         {
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 return;
 
             if (Project.Type == ProjectType.AC6)

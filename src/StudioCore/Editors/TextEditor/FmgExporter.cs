@@ -216,7 +216,7 @@ public static partial class FMGBank
             }
 
             var filecount = 0;
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 Directory.CreateDirectory(path);
 

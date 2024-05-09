@@ -1,0 +1,3 @@
+0 Template parameters -- テンプレートパラメータ
+1 Body for equipment test -- 装備テスト用素体
+9200 Body for new bone test -- 新ボーンテスト用素体

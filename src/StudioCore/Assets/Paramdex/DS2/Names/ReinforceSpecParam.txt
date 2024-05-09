@@ -1,0 +1,6 @@
+0 Enhanced specification test -- 強化仕様テスト
+100100 Dagger -- 短剣
+100200 Direct sword -- 直剣
+100300 Two-handed sword -- 両手剣
+100400 Two-handed oversized sword -- 両手特大剣
+100500 Test Moonlight Sword -- テスト月光剣

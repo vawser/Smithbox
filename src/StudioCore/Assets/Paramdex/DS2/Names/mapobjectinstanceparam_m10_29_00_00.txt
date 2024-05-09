@@ -1,0 +1,25 @@
+10290700 Brazier
+10290701 Brazier
+10290702 Brazier
+10290703 Brazier
+10290704 Brazier
+10290705 Brazier
+10290706 Brazier
+10290707 Brazier
+10290708 Brazier
+10290709 Brazier
+10290710 Brazier
+10290711 Brazier
+10290712 Brazier
+10290713 Brazier
+10290714 Brazier
+10290715 Brazier
+10290716 Brazier
+10290717 Brazier
+10290718 Brazier
+10290719 Brazier
+10290720 Brazier
+10295000 [Chest] Treasure
+10296000 [Corpse] Treasure
+10296010 [Corpse] Treasure
+10296020 [Corpse] Treasure

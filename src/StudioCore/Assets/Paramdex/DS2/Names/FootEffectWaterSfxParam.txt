@@ -1,0 +1,16 @@
+0 Without -- なし
+10 Water - Small -- 水-小
+11 Water - Medium -- 水-中
+12 Water - Large -- 水-大
+20 Acid - Small -- 酸-小
+21 Acid - medium -- 酸-中
+22 Acid - Large -- 酸-大
+30 Swamp-Small -- 沼-小
+31 Swamp - Medium -- 沼-中
+32 Numa-Dai -- 沼-大
+40 Poison Swamp - Small -- 毒沼-小
+41 Poison Marsh - Medium -- 毒沼-中
+42 Poison Marsh - Large -- 毒沼-大
+50 Oil (coal tar) - small -- 油（コールタール）-小
+51 Oil (coal tar) - medium -- 油（コールタール）-中
+52 Oil (coal tar) - Large -- 油（コールタール）-大

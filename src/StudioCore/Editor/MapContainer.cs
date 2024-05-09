@@ -676,7 +676,7 @@ public class MapContainer : ObjectContainer
         {
             AddModelsDS1(msb);
         }
-        else if (game == ProjectType.DS2S)
+        else if (game == ProjectType.DS2 || game == ProjectType.DS2S)
         {
             AddModelsDS2(msb);
         }

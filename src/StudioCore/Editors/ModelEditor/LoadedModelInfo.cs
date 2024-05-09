@@ -74,7 +74,7 @@ namespace StudioCore.Editors.ModelEditor
         {
             string ext = ".flver";
 
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 ext = ".flv";
             }
@@ -89,7 +89,7 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Character:
                     string chrDir = @"\chr\";
 
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         chrDir = @"\model\chr\";
                     }
@@ -98,7 +98,7 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Object:
                     string objDir = @"\obj\";
 
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         objDir = @"\model\obj\";
                     }
@@ -116,7 +116,7 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.Parts:
                     string partDir = @"\parts\";
 
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         partDir = @"\model\parts\";
                     }
@@ -131,7 +131,7 @@ namespace StudioCore.Editors.ModelEditor
                         mapPieceDir = $@"\map\{shortMapId}\{MapID}\";
                     }
 
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         mapPieceDir = $@"\model\map\";
                     }
@@ -154,7 +154,7 @@ namespace StudioCore.Editors.ModelEditor
                     {
                         chrExt = ".chrbnd";
                     }
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         chrExt = ".bnd";
                     }
@@ -167,7 +167,7 @@ namespace StudioCore.Editors.ModelEditor
                     {
                         objExt = ".objbnd";
                     }
-                    else if (Project.Type == ProjectType.DS2S)
+                    else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         objExt = ".bnd";
                     }
@@ -188,7 +188,7 @@ namespace StudioCore.Editors.ModelEditor
                     {
                         partExt = ".partsbnd";
                     }
-                    else if (Project.Type == ProjectType.DS2S)
+                    else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         partExt = ".bnd";
                     }
@@ -197,7 +197,7 @@ namespace StudioCore.Editors.ModelEditor
                 case ModelEditorModelType.MapPiece:
                     string mapPieceExt = ".mapbnd.dcx";
 
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         mapPieceExt = ".mapbdt";
                     }

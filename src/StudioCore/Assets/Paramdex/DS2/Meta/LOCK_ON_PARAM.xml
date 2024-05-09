@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the lock-on camera." Row0Dummy="" />
+  <Field>   
+    <max_distance_auto_release AltName="Max Distance Auto Release"/>
+    <max_distance_initiate AltName="Max Distance Initiate"/>
+    <max_distance_switch_target AltName="Max Distance Switch Target"/>
+    <fov_0 AltName="FOV [0]"/>
+    <fov_1 AltName="FOV [1]"/>
+    <max_angle_initiate AltName="Max Angle Initiate"/>
+    <max_angle_switch_target AltName="Max Angle Switch Target"/>
+    <max_distance_behind_player AltName="Max Distance Behind Player"/>
+  </Field>
+</PARAMMETA>

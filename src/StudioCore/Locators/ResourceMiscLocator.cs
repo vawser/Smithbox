@@ -9,6 +9,7 @@ public static class ResourceMiscLocator
     {
         // Not supported
         if (Project.Type is ProjectType.DS2S
+            or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
         {
@@ -30,6 +31,7 @@ public static class ResourceMiscLocator
         if (Project.Type is ProjectType.DS1
             or ProjectType.DS1R
             or ProjectType.DS2S
+            or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
         {
@@ -49,6 +51,7 @@ public static class ResourceMiscLocator
     {
         // Not supported
         if (Project.Type is ProjectType.DS2S
+            or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
         {
@@ -69,6 +72,7 @@ public static class ResourceMiscLocator
     {
         // Not supported
         if (Project.Type is ProjectType.DS2S
+            or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
         {
@@ -96,6 +100,7 @@ public static class ResourceMiscLocator
     {
         // Not supported
         if (Project.Type is ProjectType.DS2S
+            or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
         {
@@ -123,6 +128,7 @@ public static class ResourceMiscLocator
     {
         // Not supported
         if (Project.Type is ProjectType.DS2S
+            or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
         {
@@ -143,6 +149,7 @@ public static class ResourceMiscLocator
     {
         // Not supported
         if (Project.Type is ProjectType.DS2S
+            or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
         {
@@ -163,6 +170,7 @@ public static class ResourceMiscLocator
     {
         // Not supported + Sekiro
         if (Project.Type is ProjectType.DS2S
+            or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
         {

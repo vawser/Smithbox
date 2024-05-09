@@ -1,0 +1,12 @@
+0 Dummy (not allowed) -- ダミー（使用禁止）
+1 No destruction. -- 破壊なし
+5 Gust -- 突風
+10 Tossing -- 投げつかみ
+15 No stabbing- font destruction -- 刺突-壷破壊不可
+20 Stabbing -- 刺突
+30 Slashing -- 斬撃
+40 Blow -- 打撃
+50 Explosion -- 爆発
+100 Giant -- 巨人
+150 Oversized explosion -- 特大爆発
+200 Can't be destroyed -- 破壊不可

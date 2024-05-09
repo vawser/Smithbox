@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to the Estus Flask." Row0Dummy="" />
+  <Field>
+    <estus_item_id AltName="Estus Item ID" Refs="ItemParam"/>
+    <estus_held_count AltName="Estus Held Count"/>
+  </Field>
+</PARAMMETA>

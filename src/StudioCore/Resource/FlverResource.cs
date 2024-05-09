@@ -269,7 +269,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE2" || paramNameCheck == "G_SPECULAR2" ||
                  paramNameCheck.Contains("SPECULAR_2"))
         {
-            if (Project.Type is ProjectType.DS1R or ProjectType.DS2S)
+            if (Project.Type is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource2, dest, texType, mpath, mtd);
                 blend = true;
@@ -285,7 +285,7 @@ public class FlverResource : IResource, IDisposable
         else if (paramNameCheck == "G_SPECULARTEXTURE" || paramNameCheck == "G_SPECULAR" ||
                  paramNameCheck.Contains("SPECULAR"))
         {
-            if (Project.Type is ProjectType.DS1R or ProjectType.DS2S)
+            if (Project.Type is ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2)
             {
                 LookupTexture(FlverMaterial.TextureType.ShininessTextureResource, dest, texType, mpath, mtd);
             }

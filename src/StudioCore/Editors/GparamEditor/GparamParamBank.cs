@@ -43,6 +43,7 @@ public static class GparamParamBank
 
         switch (Project.Type)
         {
+            case ProjectType.DS2:
             case ProjectType.DS2S:
                 fileBytes = param.Write(DCX.Type.None);
                 break;
@@ -107,14 +108,14 @@ public static class GparamParamBank
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
 
-        if(Project.Type == ProjectType.DS2S)
+        if(Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             paramDir = @"\filter";
             paramExt = @".fltparam";
         }
 
         // TODO: add support for DS2
-        if(Project.Type == ProjectType.DS2S)
+        if(Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             return;
         }
@@ -161,7 +162,7 @@ public static class GparamParamBank
         gStruct.Gparam = new GPARAM();
         gStruct.IsModFile = isModFile;
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             gStruct.Gparam = GPARAM.Read(path);
         }
@@ -178,7 +179,7 @@ public static class GparamParamBank
         var paramDir = @"\param\drawparam";
         var paramExt = @".gparam.dcx";
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             paramDir = @"\filter";
             paramExt = @".fltparam";

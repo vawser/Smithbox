@@ -1,0 +1,3606 @@
+1 N1 
+2 N1
+3 DW = Dual Wield, LD = Ladder Attack, # denotes a variant
+10000000 Fists: 1H Weak 1
+10000300 Fists: 1H Weak 2
+10000400 Fists: 1H Weak 2 #1
+10000500 Fists: 1H Strong 1
+10000510 Fists: 1H Strong 2
+10000520 Fists: 1H Strong 3
+10000800 Fists: 1H Dash 
+10001000 Fists: 1H Roll 
+10001100 Fists: 1H Guard Break
+10001200 Fists: 1H Jump 
+10001300 Fists: 1H Fall 
+10001500 Fists: 1H Jump Fall 
+10001600 Fists: 1H Parry 
+10001700 Fists: 2H Weak 1
+10001710 Fists: 2H Weak 1 #1
+10001900 Fists: 2H Weak 2
+10001910 Fists: 2H Weak 2 #1
+10002100 Fists: 2H Strong 1
+10002110 Fists: 2H Strong 1 #1
+10002400 Fists: 2H Dash 
+10002500 Fists: 2H Roll 
+10002600 Fists: 2H Guard Break
+10003110 Fists: DW 1H Weak 1
+10003200 Fists: DW 2H Weak 1 #1
+10003300 Fists: DW 2H Weak 2
+10003400 Fists: DW 2H Strong 1
+10003600 Fists: 2H Guard 
+10003700 Fists: LD Weak 1
+10003710 Fists: LD Weak 1 #1
+10003800 Fists: LD Strong 1
+10003810 Fists: LD Strong 1 #1
+10003900 Fists: LD Weak Kick 1
+10003910 Fists: LD Weak Kick 1 #1
+10004000 Fists: LD Strong Kick 1
+10004001 Bare Fists: 1H Weak 1
+10004004 Bare Fists: 1H Weak 2
+10004006 Bare Fists: 1H Strong 1
+10004007 Bare Fists: 1H Strong 2
+10004009 Bare Fists: 1H Dash 
+10004010 Bare Fists: LD Strong Kick 1
+10004011 Bare Fists: 1H Roll 
+10004012 Bare Fists: 1H Guard Break
+10004013 Bare Fists: 1H Jump 
+10004014 Bare Fists: 1H Fall 
+10004015 Bare Fists: 1H Jump Fall 
+10004016 Bare Fists: 1H Jump Fall -> Follow
+10004017 Bare Fists: 1H Parry
+10004018 Bare Fists: 2H Weak 1
+10004020 Bare Fists: 2H Weak 2
+10004022 Bare Fists: 2H Strong 1
+10004025 Bare Fists: 2H Dash
+10004026 Bare Fists: 2H Roll  
+10004027 Bare Fists: 2H Guard Break
+10004033 Bare Fists: DW 1H Weak 1 #1
+10004034 Bare Fists: DW 2H Weak 2
+10004035 Bare Fists: DW 2H Strong 1
+10004037 Bare Fists: 2H Guard 
+10004100 Dagger: 1H Weak 1
+10004200 Dagger: 1H Weak 1 #1
+10004300 Dagger: DW 1H Weak 1
+10004310 Dagger: 1H Weak 1 #2
+10004320 Dagger: DW 1H Weak 1 #1
+10004330 Dagger: 1H Weak 1 #3
+10004340 Dagger: 1H Weak 1 #4
+10004350 Dagger: 1H Weak 1 #5
+10004400 Dagger: 1H Weak 2
+10004500 Dagger: 1H Weak 2 #1
+10004510 Dagger: 1H Weak 2 #2
+10004520 Dagger: 1H Weak 2 #3
+10004530 Dagger: 1H Weak 2 #4
+10004540 Dagger: 1H Weak 2 #5
+10004600 Dagger: 1H Strong 1
+10004700 Dagger: 1H Strong 1 #1
+10004810 Dagger: 1H Strong 1 #2
+10004820 Dagger: 1H Strong 1 #3
+10004830 Dagger: 1H Strong 1 #4
+10004840 Dagger: 1H Strong 1 #5
+10004850 Dagger: 1H Strong 1 #6
+10004860 Dagger: 1H Strong 1 #7
+10004870 Dagger: 1H Strong 1 #8
+10004900 Dagger: 1H Dash 
+10005000 Dagger: 1H Roll 
+10005010 Dagger: 1H Roll #1
+10005100 Dagger: 1H Guard Break
+10005200 Dagger: 1H Jump 
+10005300 Dagger: 1H Fall 
+10005400 Dagger: 1H Jump Fall 
+10005500 Dagger: DW 1H Weak 1 #2
+10005600 Dagger: 1H Parry
+10005700 Dagger: 2H Weak 1
+10005710 Dagger: 2H Weak 1 #1
+10005720 Dagger: 2H Weak 1 #2
+10005730 Dagger: 2H Weak 1 #3
+10005800 Dagger: 2H Weak 1 #4
+10005900 Dagger: 2H Weak 2
+10005910 Dagger: 2H Weak 2 #1
+10005920 Dagger: 2H Weak 2 #2
+10005930 Dagger: 2H Weak 2 #3
+10006000 Dagger: 2H Weak 2 #4
+10006100 Dagger: 2H Strong 1 
+10006110 Dagger: 2H Strong 1 #1
+10006120 Dagger: 2H Strong 1 #2
+10006130 Dagger: 2H Strong 1 #3
+10006140 Dagger: 2H Strong 1 #4
+10006200 Dagger: 2H Strong 1 #5
+10006400 Dagger: 2H Dash 
+10006500 Dagger: 2H Roll 
+10006510 Dagger: 2H Roll #1
+10006600 Dagger: 2H Guard Break
+10007200 Dagger: DW 2H Weak 1 
+10007210 Dagger: DW 2H Weak 1 #1
+10007300 Dagger: DW 2H Weak 2
+10007310 Dagger: DW 2H Weak 1 #1
+10007400 Dagger: DW 2H Strong 1
+10007410 Dagger: DW 2H Strong 1 #1
+10007500 Dagger: 2H Guard 
+10007600 Thrusting Sword: 1H Weak 1 
+10007710 Thrusting Sword: 1H Weak 1 Shield Poke #1
+10007711 Thrusting Sword: 1H Weak 1 Shield Poke #2
+10007712 Thrusting Sword: DW 1H Weak 1
+10007713 Thrusting Sword: DW 1H Weak 1 #1
+10007800 Thrusting Sword: 1H Weak 2
+10008000 Thrusting Sword: 1H Strong 1
+10008004 Thrusting Sword: 1H Strong 1 #1
+10008005 Thrusting Sword: 1H Strong 1 #2
+10008010 Thrusting Sword: 1H Strong 1 #3
+10008100 Thrusting Sword: 1H Strong 1 #4
+10008110 Thrusting Sword: 1H Strong 1 #5
+10008200 Thrusting Sword: 1H Strong 1 #6
+10008300 Thrusting Sword: 1H Dash 
+10008400 Thrusting Sword: 1H Roll 
+10008500 Thrusting Sword: 1H Guard Break
+10008600 Thrusting Sword: 1H Jump 
+10008700 Thrusting Sword: 1H Fall 
+10008800 Thrusting Sword: 1H Jump Fall 
+10008900 Thrusting Sword: 1H Jump Fall -> Follow 
+10009000 Thrusting Sword: 1H Parry 
+10009100 Thrusting Sword: 2H Weak 1
+10009300 Thrusting Sword: 2H Weak 2
+10009500 Thrusting Sword: 2H Strong 1
+10009505 Thrusting Sword: 2H Strong 1 #1
+10009510 Thrusting Sword: 2H Strong 1 #2
+10009600 Thrusting Sword: 2H Strong 1 #3
+10009700 Thrusting Sword: 2H Strong 1 #4
+10009800 Thrusting Sword: 2H Dash 
+10009900 Thrusting Sword: 2H Roll 
+10010000 Thrusting Sword: 2H Guard Break
+10010600 Thrusting Sword: DW 2H Weak 1
+10010700 Thrusting Sword: DW 2H Weak 2
+10010800 Thrusting Sword: DW 2H Strong 1
+10010900 Thrusting Sword: 2H Guard 
+10011000 Whip: 1H Weak 1
+10011010 Whip: 1H Weak 1 #1
+10011200 Whip: 1H Weak 2
+10011400 Whip: 1H Strong 1
+10011405 Whip: 1H Strong 1 #1
+10011410 Whip: 1H Strong 1 #2
+10011410 Whip: 1H Strong 1 #3
+10011700 Whip: 1H Dash 
+10011800 Whip: 1H Roll 
+10011900 Whip: 1H Guard Break
+10012000 Whip: 1H Jump 
+10012100 Whip: 1H Fall 
+10012300 Whip: 1H Jump Fall  
+10012400 Whip: 1H Parry 
+10012500 Whip: 2H Weak 1
+10012510 Whip: 2H Weak 1 #1
+10012700 Whip: 2H Weak 2
+10012710 Whip: 2H Weak 2 #1
+10012900 Whip: 2H Strong 1
+10012905 Whip: 2H Strong 1 #1
+10012910 Whip: 2H Strong 1 #2
+10013200 Whip: 2H Dash 
+10013300 Whip: 2H Roll
+10013400 Whip: 2H Guard Break
+10014000 Whip: DW 1H Weak 1
+10014010 Whip: DW 1H Weak 1 #1
+10014100 Whip: DW 2H Weak 2
+10014200 Whip: DW 2H Strong 1
+10014250 Whip: DW 2H Strong 1 #1
+10014300 Whip: 2H Guard 
+10014400 Twinblade: 1H Weak 1
+10014410 Twinblade: 1H Weak 1 #1
+10014600 Twinblade: 1H Weak 2
+10014610 Twinblade: 1H Weak 2 #1
+10014800 Twinblade: 1H Strong 1
+10014810 Twinblade: 1H Strong 1 #2
+10014820 Twinblade: 1H Strong 1 #3
+10014830 Twinblade: 1H Strong 1 #4
+10015100 Twinblade: 1H Dash 
+10015200 Twinblade: 1H Roll 
+10015210 Twinblade: 1H Roll #1
+10015300 Twinblade: 1H Guard Break
+10015400 Twinblade: 1H Jump 
+10015500 Twinblade: 1H Fall 
+10015700 Twinblade: DW 1H Weak 1
+10015800 Twinblade: 1H Parry 
+10015900 Twinblade: 2H Weak 1
+10015910 Twinblade: 2H Weak 1 #1
+10016100 Twinblade: DW 1H Weak 1 #1
+10016110 Twinblade: 2H Weak 1 #2
+10016120 Twinblade: 2H Weak 1 #3
+10016200 Twinblade: 2H Weak 2
+10016300 Twinblade: 2H Strong 1
+10016310 Twinblade: 2H Strong 1 #1
+10016400 Twinblade: 2H Strong 1 #2
+10016500 Twinblade: 2H Strong 1 #3
+10016600 Twinblade: 2H Dash 
+10016610 Twinblade: 2H Dash #1
+10016700 Twinblade: 2H Roll 
+10016710 Twinblade: 2H Roll #1
+10016800 Twinblade: 2H Guard Break
+10017400 Twinblade: DW 1H Weak 1 #1
+10017500 Twinblade: DW 2H Weak 2
+10017600 Twinblade: DW 2H Strong 1
+10017700 Twinblade: 2H Guard 
+10017800 Spear: 1H Weak 1
+10017810 Spear: 1H Weak 1 #1
+10017820 Spear: 1H Weak 1 #2
+10017910 Spear: 1H Weak 1 Shield Poke #1
+10017920 Spear: 1H Weak 1 Shield Poke #2
+10017930 Katana: DW 1H Weak 1
+10017940 Spear: DW 2H Strong 1 #2 
+10018000 Spear: 1H Weak 2
+10018010 Spear: 1H Weak 2 #1
+10018200 Spear: 1H Strong
+10018210 Spear: 1H Strong #1
+10018220 Spear: 1H Strong #2
+10018230 Spear: 1H Strong #3
+10018240 Spear: 1H Strong #4
+10018250 Spear: 1H Strong #5
+10018600 Spear: 1H Dash 
+10018610 Spear: 1H Dash #1
+10018700 Spear: DW 1H Weak 1 #1
+10018705 Spear: 1H Roll 
+10018710 Spear: 1H Roll #1
+10018800 Spear: 1H Guard Break
+10018900 Spear: 1H Jump 
+10019000 Spear: 1H Fall 
+10019100 Spear: 1H Jump Fall 
+10019200 Greatsword: DW 1H Weak 1
+10019400 Spear: 2H Weak 1
+10019405 Spear: 2H Weak 1 #1
+10019406 Spear: 2H Weak 1 #2
+10019410 Spear: 2H Weak 1 #3
+10019600 Spear: 2H Weak 2
+10019610 Spear: 2H Weak 2 #1
+10019800 Spear: 2H Strong 1
+10019805 Spear: 2H Strong 1 #1
+10019810 Spear: 2H Strong 1 #2
+10019820 Spear: 2H Strong 1 #3
+10019830 Spear: 2H Strong 1 #4
+10020100 Spear: 2H Strong 1 #5
+10020200 Spear: 2H Dash 
+10020210 Spear: 2H Dash #1
+10020300 Greataxe: DW 1H Weak
+10020305 Spear: 2H Roll
+10020310 Spear: 2H Roll #1
+10020400 Spear: 2H Guard Break
+10021000 Spear: DW 2H Weak 1
+10021050 Spear: DW 2H Weak 1 #1
+10021100 Spear: DW 2H Weak 2
+10021150 Spear: DW 2H Weak 2 #1
+10021200 Spear: DW 2H Strong 2
+10021250 Spear: DW 2H Strong 2 #1
+10021300 Spear: 2H Guard 
+10021400 Lance: 1H Weak 1
+10021510 Lance: 1H Weak 1 Shield Poke #1
+10021520 Lance: 1H Weak 1 Shield Poke #2
+10021600 Lance: 1H Weak 2
+10021610 Lance: 1H Weak 2 #1
+10021800 Lance: 1H Strong 1
+10021810 Lance: 1H Strong 1 #1
+10022100 Lance: 1H Dash 
+10022200 Lance: 1H Roll 
+10022300 Lance: 1H Guard Break
+10022400 Lance: 1H Jump 
+10022500 Lance: 1H Fall 
+10022600 Lance: 1H Jump Fall 
+10022700 Lance: DW 1H Weak 1
+10022900 Lance: 2H Weak 1 
+10023100 Lance: 2H Weak 2 
+10023110 Lance: 2H Weak 2 #1
+10023300 Lance: 2H Strong 1 
+10023310 Lance: 2H Strong 1 #1 
+10023600 Lance: 2H Dash 
+10023700 Lance: 2H Roll 
+10023800 Lance: 2H Guard Break
+10024350 Lance: DW 2H Dash
+10024400 Lance: DW 2H Weak 1
+10024500 Lance: DW 2H Weak 2
+10024600 Lance: DW 2H Strong 1
+10024700 Lance: 2H Guard 
+10024800 Curved Sword: 1H Weak 1 
+10024810 Curved Sword: 1H Weak 1 #1
+10025000 Curved Sword: 1H Weak 2 
+10025005 Curved Sword: 1H Weak 2 #1
+10025010 Curved Sword: 1H Weak 2 #2 
+10025100 Curved Sword: 1H Weak 2 #3
+10025200 Curved Sword: 1H Strong 1 
+10025210 Curved Sword: 1H Strong 1 #1
+10025220 Curved Sword: 1H Strong 1 #2 
+10025230 Curved Sword: 1H Strong 1 #3 
+10025300 Curved Sword: 1H Strong 1 #4
+10025500 Curved Sword: 1H Dash 
+10025600 Curved Sword: 1H Roll 
+10025700 Curved Sword: 1H Guard Break
+10025800 Curved Sword: 1H Jump 
+10025900 Curved Sword: 1H Fall 
+10026000 Curved Sword: 1H Jump Fall 
+10026100 Curved Sword: 1H Jump Fall -> Follow 
+10026200 Curved Sword: 1H Parry 
+10026300 Curved Sword: 2H Weak 1
+10026310 Curved Sword: 2H Weak 1 #1
+10026400 Curved Sword: 2H Weak 1 #2
+10026500 Curved Sword: 2H Weak 2 
+10026510 Curved Sword: 2H Weak 2 #1
+10026710 Curved Sword: 2H Strong 1
+10026800 Curved Sword: 2H Strong 1 #1
+10027000 Curved Sword: 2H Dash 
+10027100 Curved Sword: 2H Roll 
+10027200 Curved Sword: 2H Guard Break
+10027800 Curved Sword: DW 2H Weak 1 
+10027900 Curved Sword: DW 2H Weak 2 
+10028000 Curved Sword: DW 2H Strong 1 
+10028050 Curved Sword: DW 2H Strong 1 #1
+10028100 Curved Sword: 2H Guard 
+10028200 Katana: 1H Weak 1 
+10028400 Katana: 1H Weak 2 
+10028600 Katana: 1H Strong 1 
+10028610 Katana: 1H Strong 1 #1
+10028700 Katana: 1H Strong 1 #2
+10028900 Katana: 1H Dash 
+10029000 Katana: 1H Roll 
+10029100 Katana: 1H Guard Break
+10029200 Katana: 1H Jump 
+10029300 Katana: 1H Fall 
+10029400 Katana: 1H Jump Fall 
+10029500 Katana: 1H Strong 1 #3
+10029600 Katana: 1H Parry 
+10029700 Katana: 2H Weak 1 
+10029900 Katana: 2H Weak 2 
+10030100 Katana: 2H Strong 1 
+10030110 Katana: 2H Strong 1 #1
+10030120 Katana: 2H Strong 1 #2 
+10030130 Katana: 2H Strong 1 #3 
+10030140 Katana: 2H Strong 1 #4
+10030200 Katana: 2H Strong 1 #5
+10030300 Katana: 2H Strong 1 #6
+10030400 Katana: 2H Dash 
+10030500 Katana: 2H Roll 
+10030600 Katana: 2H Guard Break
+10031200 Katana: DW 2H Weak 1 
+10031300 Katana: DW 2H Weak 2 
+10031400 Katana: DW 2H Strong 1 
+10031500 Katana: 2H Guard 
+10031600 Straight Sword: 1H Weak 1
+10031610 Straight Sword: 1H Weak 1 #1
+10031700 Straight Sword: 1H Weak 1 #2
+10031800 Straight Sword: 1H Weak 1 #3
+10031900 Straight Sword: 1H Weak 2 
+10031910 Straight Sword: 1H Weak 2 #1
+10032000 Straight Sword: 1H Weak 2 #2
+10032050 Straight Sword: 1H Weak 2 #3
+10032100 Straight Sword: 1H Strong 1 
+10032200 Straight Sword: 1H Strong 1 #1
+10032400 Straight Sword: 1H Strong 1 #2
+10032410 Straight Sword: 1H Strong 1 #3
+10032420 Straight Sword: 1H Strong 1 #4
+10032430 Straight Sword: 1H Strong 1 #5
+10032440 Straight Sword: 1H Strong 1 #6
+10032500 Straight Sword: 1H Dash 
+10032510 Straight Sword: 1H Dash #1
+10032600 Straight Sword: 1H Roll 
+10032605 Straight Sword: 1H Roll #1
+10032610 Straight Sword: 1H Roll #2
+10032700 Straight Sword: 1H Guard Break
+10032800 Straight Sword: 1H Jump 
+10032900 Straight Sword: 1H Fall 
+10033100 Straight Sword: DW 1H Weak 1
+10033200 Straight Sword: 1H Parry 
+10033300 Straight Sword: 2H Weak 1
+10033510 Straight Sword: 2H Weak 1 #1
+10033520 Straight Sword: 2H Weak 1 #3
+10033600 Straight Sword: 2H Weak 2 
+10033710 Straight Sword: 2H Weak 2 #1
+10033720 Straight Sword: 2H Weak 2 #2
+10033800 Straight Sword: 2H Strong 1
+10033810 Straight Sword: 2H Strong 1 #1
+10033820 Straight Sword: 2H Strong 1 #2
+10033830 Straight Sword: 2H Strong 1 #3
+10033840 Straight Sword: 2H Strong 1 #4
+10033850 Straight Sword: 2H Strong 1 #5
+10034200 Straight Sword: 2H Dash 
+10034210 Straight Sword: 2H Dash #1
+10034220 Straight Sword: 2H Dash #2 
+10034300 Straight Sword: 2H Roll 
+10034310 Straight Sword: 2H Roll #1 
+10034320 Straight Sword: 2H Roll #2 
+10034400 Straight Sword: 2H Guard Break
+10035000 Straight Sword: DW 2H Weak 1 
+10035010 Straight Sword: DW 2H Weak_02 
+10035100 Straight Sword: DW 2H Weak 2 
+10035110 Straight Sword: DW 2H Weak_02 
+10035200 Straight Sword: DW 2H Strong 1 
+10035210 Straight Sword: DW 2H Strong_02 
+10035300 Straight Sword: 2H Guard 
+10035400 Scythe: 1H Weak 1
+10035410 Scythe: 1H Weak 1 #1
+10035600 Scythe: 1H Weak 2 
+10035800 Scythe: 1H Strong 1 
+10035810 Scythe: 1H Strong 1 #1
+10036100 Scythe: 1H Dash 
+10036210 Scythe: 1H Roll 
+10036300 Scythe: 1H Guard Break
+10036400 Scythe: 1H Jump 
+10036500 Scythe: 1H Fall 
+10036600 Scythe: 1H Jump Fall 
+10036700 Scythe: DW 1H Weak 1
+10036900 Scythe: 2H Weak 1
+10036910 Scythe: 2H Weak 1 #2
+10037100 Scythe: 2H Weak 2
+10037300 Scythe: 2H Strong 1 
+10037310 Scythe: 2H Strong 1 #1
+10037500 Scythe: 2H Strong 1 #2
+10037600 Scythe: 2H Dash 
+10037700 Scythe: 2H Roll
+10037800 Scythe: 2H Guard Break
+10038400 Scythe: DW 2H Weak 1
+10038500 Scythe: DW 2H Weak 2
+10038600 Scythe: DW 2H Strong 1
+10038700 Scythe: 2H Guard 
+10038800 Greatsword: 1H Weak 1
+10038810 Greatsword: 1H Weak 1 (Moonlight Sword)
+10039100 Greatsword: 1H Weak 2
+10039410 Greatsword: 1H Strong 2
+10039500 Greatsword: 1H Strong 2 #1
+10039600 Greatsword: 1H Strong 2 #2
+10039700 Greatsword: 1H Strong 2 #3 
+10039900 Greatsword: 1H Dash 
+10039910 Greatsword: 1H Dash (Moonlight Sword)
+10040000 Greatsword: 1H Roll 
+10040100 Greatsword: 1H Guard Break
+10040200 Greatsword: 1H Jump 
+10040300 Greatsword: 1H Fall 
+10040400 Greatsword: 1H Jump Fall 
+10040500 Greatsword: 1H Jump Fall -> Follow 
+10040700 Greatsword: 2H Weak 1
+10040800 Greatsword: 2H Weak 1 #1
+10040810 Greatsword: 2H Weak 1 #2
+10040900 Greatsword: 2H Weak 2 
+10041000 Greatsword: 2H Weak 2 #1
+10041020 Greatsword: 2H Weak 2 #2
+10041100 Greatsword: 2H Strong 1 
+10041110 Greatsword: 2H Strong 1 #1
+10041120 Greatsword: 2H Strong 1 #2
+10041200 Greatsword: 2H Strong 1 #3
+10041300 Greatsword: 2H Strong 1 #4
+10041350 Greatsword: 2H Strong 1 #5
+10041400 Greatsword: 2H Dash 
+10041410 Greatsword: 2H Dash (Moonlight Sword)
+10041500 Greatsword: 2H Roll
+10041510 Greatsword: 2H Roll #1
+10041520 Greatsword: 2H Roll #2 
+10041600 Greatsword: 2H Guard Break
+10042100 Greatsword: 2H Parry 
+10042200 Greatsword: DW 2H Weak 1
+10042300 Greatsword: DW 2H Weak 2
+10042400 Greatsword: DW 2H Strong 1
+10042500 Greatsword: 2H Guard 
+10042600 Ultra Greatsword: 1H Weak 1
+10042610 Ultra Greatsword: 1H Weak 1 #1
+10042620 Ultra Greatsword: 1H Weak 1 #2
+10042630 Ultra Greatsword: 1H Weak 1 #3
+10042700 Ultra Greatsword: 1H Weak 1 #4
+10042800 Ultra Greatsword: 1H Weak 2
+10042810 Ultra Greatsword: 1H Weak 2 #1
+10042900 Ultra Greatsword: 1H Weak 2 #2
+10042910 Ultra Greatsword: 1H Weak 2 #3
+10042920 Ultra Greatsword: 1H Weak 2 #4
+10042930 Ultra Greatsword: 1H Weak 2 #5
+10043000 Ultra Greatsword: 1H Strong 1 
+10043010 Ultra Greatsword: 1H Strong 1 #1
+10043020 Ultra Greatsword: 1H Strong 1 #2
+10043030 Ultra Greatsword: 1H Strong 1 #3
+10043040 Ultra Greatsword: 1H Strong 1 #4
+10043050 Ultra Greatsword: 1H Strong 1 #5
+10043200 Ultra Greatsword: 1H Strong 1 #6
+10043600 Ultra Greatsword: 1H Dash 
+10043610 Ultra Greatsword: 1H Dash #1 
+10043620 Ultra Greatsword: 1H Dash #2
+10043700 Ultra Greatsword: 1H Roll 
+10043710 Ultra Greatsword: 1H Roll #1
+10043720 Ultra Greatsword: 1H Roll #2
+10043800 Ultra Greatsword: 1H Guard Break
+10043810 Ultra Greatsword: 1H Guard Break #1
+10043900 Ultra Greatsword: 1H Jump 
+10043910 Ultra Greatsword: 1H Jump #1
+10044000 Ultra Greatsword: 1H Fall 
+10044010 Ultra Greatsword: 1H Fall #1 
+10044100 Ultra Greatsword: 1H Jump Fall 
+10044110 Ultra Greatsword: 1H Jump Fall #1 
+10044200 Ultra Greatsword: DW 1H Weak 1
+10044210 Ultra Greatsword: DW 1H Weak 1 #1
+10044400 Ultra Greatsword: 2H Weak 1 
+10044410 Ultra Greatsword: 2H Weak 1 #1
+10044420 Ultra Greatsword: 2H Weak 1 #2
+10044500 Ultra Greatsword: 2H Weak 1 #3
+10044510 Ultra Greatsword: DW 1H Weak 1 #2
+10044600 Ultra Greatsword: 2H Weak 2 
+10044610 Ultra Greatsword: 2H Weak 2 #1
+10044620 Ultra Greatsword: 2H Weak 2 #2
+10044700 Ultra Greatsword: 2H Weak 2 #3
+10044710 Ultra Greatsword: 2H Weak 2 #4
+10044800 Ultra Greatsword: 2H Strong 1 
+10044900 Ultra Greatsword: 2H Strong 1 #1
+10044910 Ultra Greatsword: 2H Strong 1 #2
+10044920 Ultra Greatsword: 2H Strong 1 #3
+10044930 Ultra Greatsword: 2H Strong 1 #4
+10044940 Ultra Greatsword: 2H Strong 1 #5
+10044950 Ultra Greatsword: 2H Strong 1 #6
+10045200 Ultra Greatsword: 2H Strong 1 #7
+10045300 Ultra Greatsword: 2H Dash 
+10045310 Ultra Greatsword: 2H Dash #1
+10045320 Ultra Greatsword: 2H Dash #2 
+10045400 Ultra Greatsword: 2H Roll 
+10045410 Ultra Greatsword: 2H Roll #1
+10045420 Ultra Greatsword: 2H Roll #2 
+10045430 Ultra Greatsword: 2H Roll #3 
+10045500 Ultra Greatsword: 2H Guard Break
+10045510 Ultra Greatsword: DW 1H Weak 1 #3
+10046000 Ultra Greatsword: 2H Parry 
+10046010 Ultra Greatsword: 2H Parry #1
+10046100 Ultra Greatsword: DW 2H Weak 1
+10046110 Ultra Greatsword: DW 2H Weak 1 #1
+10046120 Ultra Greatsword: DW 2H Weak 1 #2
+10046200 Ultra Greatsword: DW 2H Weak 2
+10046210 Ultra Greatsword: DW 2H Weak 2 #1
+10046220 Ultra Greatsword: DW 2H Weak 2 #3
+10046300 Ultra Greatsword: DW 2H Strong 1
+10046310 Ultra Greatsword: DW 2H Strong 1 #1
+10046320 Ultra Greatsword: DW 2H Strong 1 #2
+10046400 Ultra Greatsword: 2H Guard 
+10046410 Ultra Greatsword: 2H Guard #1 
+10046510 Hammer: 1H Weak 1
+10046520 Hammer: 1H Weak 1 #1
+10046530 Hammer: 1H Weak 1 #2
+10046710 Hammer: 1H Weak 2 #1
+10046720 Hammer: 1H Weak 2 #2
+10046900 Hammer: 1H Strong 1
+10046910 Hammer: 1H Strong 1 #1
+10046920 Hammer: 1H Strong 1 #2
+10047200 Hammer: 1H Dash 
+10047300 Hammer: 1H Roll 
+10047400 Hammer: 1H Guard Break
+10047500 Hammer: 1H Jump 
+10047600 Hammer: 1H Fall 
+10047700 Hammer: 1H Jump Fall 
+10047800 Hammer: 1H Jump Fall -> Follow 
+10047900 Hammer: 1H Blank
+10048010 Hammer: 2H Weak 1
+10048210 Hammer: 2H Weak 2
+10048410 Hammer: 2H Strong 1
+10048420 Hammer: 2H Strong 1 #1
+10048700 Hammer: 2H Dash 
+10048810 Hammer: 2H Roll
+10048900 Hammer: 2H Guard Break
+10049500 Hammer: DW 2H Weak 1
+10049600 Hammer: DW 2H Weak 2
+10049700 Hammer: DW 2H Strong 1
+10049800 Hammer: 2H Guard 
+10050000 Great Hammer: 1H Weak 1
+10050010 Great Hammer: 1H Weak 1 #1
+10050100 Great Hammer: 1H Weak 2 
+10050200 Great Hammer: 1H Weak 2 #1
+10050300 Great Hammer: 1H Strong 1
+10050310 Great Hammer: 1H Strong 1 #1
+10050320 Great Hammer: 1H Strong 1 #2
+10050330 Great Hammer: 1H Strong 1 #3
+10050600 Great Hammer: 1H Dash 
+10050700 Great Hammer: 1H Roll 
+10050800 Great Hammer: 1H Guard Break
+10050900 Great Hammer: 1H Jump 
+10051000 Great Hammer: 1H Fall 
+10051100 Great Hammer: 1H Jump Fall 
+10051200 Great Hammer: 1H Jump Fall -> Follow 
+10051400 Great Hammer: 2H Weak 1 
+10051410 Great Hammer: 2H Weak 1 #1 
+10051500 Great Hammer: 2H Weak 1 #2
+10051610 Great Hammer: 2H Weak 2 
+10051620 Great Hammer: 2H Weak 2 #2 
+10051800 Great Hammer: 2H Strong 1 
+10051810 Great Hammer: 2H Strong 1 #1
+10051900 Great Hammer: 2H Strong 1 #2
+10052100 Great Hammer: 2H Dash 
+10052200 Great Hammer: 2H Roll 
+10052210 Great Hammer: 2H Roll #1
+10052300 Great Hammer: 2H Guard Break
+10052900 Great Hammer: DW 2H Weak 1 
+10053000 Great Hammer: DW 2H Weak 2 
+10053100 Great Hammer: DW 2H Strong 1
+10053200 Great Hammer: 2H Guard 
+10053300 Axe: 1H Weak 1 
+10053400 Axe: 1H Weak 1 #1
+10053410 Axe: 1H Weak 1 #2
+10053500 Axe: 1H Weak 2 
+10053700 Axe: 1H Strong 1 
+10053800 Axe: 1H Strong 1 #1
+10053900 Axe: 1H Strong 1 #2
+10054010 Axe: 1H Strong 1 #3
+10054080 Axe: 1H Dash 
+10054090 Axe: 1H Dash #1
+10054100 Axe: 1H Roll 
+10054200 Axe: 1H Guard Break
+10054300 Axe: 1H Jump 
+10054400 Axe: 1H Fall 
+10054500 Axe: 1H Jump Fall 
+10054600 Axe: 1H Jump Fall -> Follow 
+10054700 Axe: 1H Parry 
+10054800 Axe: 2H Weak 1 
+10055000 Axe: 2H Weak 2 
+10055200 Axe: 2H Strong 1 
+10055400 Axe: 2H Strong 1 #1
+10055510 Axe: 2H Strong 1 #2
+10055520 Axe: 2H Strong 1 #3
+10055600 Axe: 2H Dash 
+10055700 Axe: 2H Roll 
+10055800 Axe: 2H Guard Break
+10056400 Axe: DW 2H Weak 1 
+10056500 Axe: DW 2H Weak 2 
+10056600 Axe: DW 2H Strong 
+10056700 Axe: 2H Guard 
+10056800 Great Axe: 1H Weak 1 
+10056900 Great Axe: 1H Weak 1 #1
+10056910 Great Axe: 1H Weak 1 #2
+10057000 Great Axe: 1H Weak 2 
+10057110 Great Axe: 1H Weak 2 #1
+10057120 Great Axe: 1H Weak 2 #2
+10057200 Great Axe: 1H Strong 1 
+10057300 Great Axe: 1H Strong 1 #1
+10057310 Great Axe: 1H Strong 1 #2
+10057600 Great Axe: 1H Dash 
+10057700 Great Axe: 1H Roll 
+10057800 Great Axe: 1H Guard Break
+10057810 Great Axe: 1H Guard Break #1
+10057900 Great Axe: 1H Jump 
+10058000 Great Axe: 1H Fall 
+10058100 Great Axe: 1H Jump Fall 
+10058200 Great Axe: 1H Jump Fall -> Follow 
+10058400 Great Axe: 2H Weak 1 
+10058410 Great Axe: 2H Weak 1 #1
+10058500 Great Axe: 2H Weak 1 #2
+10058600 Great Axe: 2H Weak 1 #3
+10058700 Great Axe: 2H Weak 2 
+10058710 Great Axe: 2H Weak 2 #1
+10058900 Great Axe: 2H Weak 2 #2
+10059000 Great Axe: 2H Strong 1 
+10059310 Great Axe: 2H Strong 1 #1
+10059320 Great Axe: 2H Strong 1 #2
+10059330 Great Axe: 2H Strong 1 #3
+10059400 Great Axe: 2H Dash 
+10059500 Great Axe: 2H Roll 
+10059510 Great Axe: 2H Roll #1
+10059600 Great Axe: 2H Guard Break
+10059610 Great Axe: 2H Guard Break #1
+10059620 Great Axe: 2H Guard Break #2 
+10060100 Great Axe: 2H Parry 
+10060200 Great Axe: DW 2H Weak 1 
+10060210 Great Axe: DW 2H Weak 1 #1
+10060220 Great Axe: DW 2H Weak 1 #2 
+10060300 Great Axe: DW 2H Weak 2 
+10060310 Great Axe: DW 2H Weak 2 #1
+10060320 Great Axe: DW 2H Weak 2 #2 
+10060400 Great Axe: DW 2H Strong 1
+10060410 Great Axe: DW 2H Strong 1 #1
+10060420 Great Axe: DW 2H Strong 1 #2
+10060500 Great Axe: 2H Guard 
+10060610 Halberd: 1H Weak 1
+10060620 Halberd: 1H Weak 1 #1
+10060710 Halberd: 1H Weak 1 #2
+10060720 Halberd: 1H Weak 1 #3
+10060730 Halberd: 1H Weak 1 #4
+10060740 Halberd: 1H Weak 1 #5
+10060900 Halberd: 1H Weak 1 #6
+10060910 Halberd: 1H Weak 2
+10061000 Halberd: 1H Strong 1 
+10061010 Halberd: 1H Strong 1 #1
+10061020 Halberd: 1H Strong 1 #2
+10061100 Halberd: 1H Strong 1 #3
+10061400 Halberd: 1H Dash 
+10061410 Halberd: 1H Dash #1
+10061500 Halberd: 1H Roll 
+10061600 Halberd: 1H Guard Break
+10061700 Halberd: 1H Jump 
+10061800 Halberd: 1H Fall 
+10061900 Halberd: 1H Jump Fall 
+10062000 Halberd: DW 1H Weak 1
+10062200 Halberd: 2H Weak 1 
+10062210 Halberd: 2H Weak 1 #1
+10062220 Halberd: 2H Weak 1 #2
+10062300 Halberd: 2H Weak 1 #3
+10062410 Halberd: 2H Weak 2
+10062420 Halberd: 2H Weak 2 #1
+10062500 Halberd: 2H Weak 2 #2
+10062600 Halberd: 2H Strong 1 
+10062610 Halberd: 2H Strong 1 #1
+10062700 Halberd: 2H Strong 1 #2
+10063000 Halberd: 2H Dash 
+10063010 Halberd: 2H Dash #1
+10063110 Halberd: 2H Roll
+10063200 Halberd: 2H Guard Break
+10063800 Halberd: DW 2H Weak 1 
+10063900 Halberd: DW 2H Weak 2 
+10064000 Halberd: DW 2H Strong 
+10064100 Halberd: 2H Guard 
+10065110 Small Shield: Spell Cast
+10065700 Small Shield: 1H Jump 
+10065800 Small Shield: 1H Fall 
+10065900 Small Shield: 1H Jump Fall 
+10066000 Small Shield: 1H Jump Fall -> Follow 
+10066100 Small Shield: 1H Parry 
+10066105 Small Shield: 1H Parry #1
+10066110 Small Shield: 1H Parry #2 
+10066115 Small Shield: 1H Parry #3
+10066310 Small Shield: 2H Weak 1
+10066810 Small Shield: 2H Strong 1
+10067600 Small Shield: 2H Parry  
+10067605 Small Shield: 2H Parry #1
+10067610 Small Shield: 2H Parry #2
+10067615 Small Shield: 2H Parry #3
+10068000 Small Shield: 1H Guard 
+10068010 Small Shield: 1H Guard #1 
+10068100 Small Shield: 2H Guard 
+10068110 Small Shield: 2H Guard #1 
+10068600 Medium Shield 1H Strong 1 
+10069200 Medium Shield 1H Jump 
+10069300 Medium Shield 1H Fall 
+10069400 Medium Shield 1H Jump Fall 
+10069500 Medium Shield 1H Jump Fall -> Follow 
+10069600 Medium Shield 1H Parry 
+10069605 Medium Shield 1H Parry #1
+10069700 Medium Shield 2H Weak 1 
+10069900 Medium Shield 2H Weak 2 
+10070100 Medium Shield 2H Strong 1 
+10071100 Medium Shield 2H Parry 
+10071105 Medium Shield 2H Parry #1
+10071500 Medium Shield 1H Guard 
+10071600 Medium Shield 2H Guard 
+10072100 Greatshield: 1H Strong 1 
+10072200 Greatshield: 1H Strong 1 #1
+10072700 Greatshield: 1H Jump 
+10072800 Greatshield: 1H Fall 
+10073000 Greatshield: 1H Jump Fall -> Follow 
+10073200 Greatshield: 2H Weak 1 
+10073600 Greatshield: 2H Strong 1 
+10073700 Greatshield: 2H Strong 1 #1
+10074200 Greatshield: 2H Jump 
+10074300 Greatshield: 2H Falling 
+10074400 Greatshield: 2H Jump Fall 
+10074900 Greatshield: DW 2H Strong 1 
+10075000 Greatshield: 1H Guard 
+10075100 Greatshield: 2H Guard 
+10080800 Spear: 1H Fall - Giant Lower Soldier 
+10080900 Spear: 1H Fall - Giant Basilisk 
+10081000 Spear: 1H Fall - Ogre 
+10081100 Spear: 1H Fall - Bayground 
+10081200 Spear: 1H Fall - Covetous Demon
+10081300 Spear: 1H Fall - Flame Lizard
+10081900 Straight Sword: 1H Fall - Giant Lower Soldier 
+10082000 Straight Sword: 1H Fall - Giant Basilisk 
+10082100 Straight Sword: 1H Fall - Ogre
+10082200 Straight Sword: 1H Fall - Bayground
+10082300 Straight Sword: 1H Fall - Covetous Demon
+10082400 Straight Sword: 1H Fall - Flame Lizard
+20000000 Staff: 1H Weak 1
+20000100 Staff: 1H Weak 2
+20000200 Staff: 1H Strong 1
+20000300 Staff: 1H Strong 2
+20000600 Staff: 1H Jump Fall -> Follow 
+20000700 Staff: 1H Fall 
+20000800 Staff: 1H Jump 
+20000900 Staff: 1H Jump Fall 
+20001000 Staff: 1H Guard Break
+20001100 Staff: 2H Weak 1
+20001200 Staff: 2H Weak 2
+20001300 Staff: 2H Strong 1 
+20001400 Staff: 2H Strong 2 
+20002100 Staff: 2H Guard Break
+20002500 Staff: 2H Guard 
+20002510 Staff: 2H Precision Shoot
+20002600 Chime: 1H Weak 1 
+20002700 Chime: 1H Weak 2 
+20002800 Chime: 1H Strong 1 
+20002900 Chime: 1H Strong 2 
+20003200 Chime: 1H Jump Fall -> Follow
+20003300 Chime: 1H Fall 
+20003400 Chime: 1H Jump 
+20003500 Chime: 1H Jump Fall 
+20003600 Chime: 1H Guard Break
+20003700 Chime: 2H Weak 1 
+20003800 Chime: 2H Weak 2 
+20003900 Chime: 2H Strong 1 
+20004000 Chime: 2H Strong 2 
+20004700 Chime: 2H Guard Break
+20005100 Chime: 2H Guard 
+20005110 Chime: 2H Precision Shoot
+20005200 Bow: 1H Shoot
+20005300 Bow: 1H Fall 
+20005400 Bow: 1H Jump 
+20005500 Bow: 2H Shoot Early
+20005600 Bow: 1H Guard Break
+20005700 Bow: 2H Shoot
+20005800 Bow: 2H Precision Shoot
+20006200 Bow: 2H Guard Break
+20006300 Bow: 2H Shoot Slow
+20006400 Bow: 2H Guard 
+20006500 Binoculars: 1H Precision Shoot
+20006600 Binoculars: 2H Precision Shoot
+20006700 Binoculars: 2H Guard 
+20006800 Crossbow: 1H Shoot 
+20006900 Crossbow: 1H Fall 
+20007000 Crossbow: 1H Jump 
+20007200 Crossbow: 1H Guard Break
+20007300 Crossbow: 2H Shoot
+20007400 Crossbow: 2H Precision Shoot
+20007800 Crossbow: 2H Guard Break
+20007900 Crossbow: 1H Shoot Early
+20008000 Crossbow: 2H Guard 
+20008100 Crossbow: DW 2H Shoot
+20008600 Crossbow: DW 2H Guard Break
+20008700 Crossbow: DW 2H Shoot Early
+20008800 Greatbow: 1H Shoot
+20008900 Greatbow: 1H Fall 
+20009000 Greatbow: 1H Jump 
+20009100 Greatbow: 1H Jump Fall 
+20009200 Greatbow: 1H Guard Break
+20009300 Greatbow: 2H Shoot
+20009400 Greatbow: 2H Precision Shoot
+20009800 Greatbow: 2H Guard Break
+20009900 Greatbow: 2H Shoot
+20010000 Greatbow: 2H Guard 
+20010100 Greatbow: 1H Shoot
+20010200 Greatbow: 1H Fall 
+20010300 Greatbow: 1H Jump 
+20010400 Greatbow: 1H Jump Fall 
+20010500 Greatbow: 1H Guard Break
+20010600 Greatbow: 2H Shoot
+20010700 Greatbow: 2H Precision Shoot
+20011100 Greatbow: 2H Guard Break
+20011200 Greatbow: 2H Shoot
+20011300 Greatbow: 2H Guard 
+20011400 Avelyn: 1H Shoot
+20011500 Avelyn: 1H Fall 
+20011600 Avelyn: 1H Jump 
+20011700 Avelyn: 1H Jump Fall 
+20011800 Avelyn: 1H Guard Break
+20011900 Avelyn: 2H Shoot
+20012000 Avelyn: 2H Precision Shoot
+20012400 Avelyn: 2H Guard Break
+20012600 Avelyn: 2H Guard 
+20012700 Avelyn: DW 2H Shoot
+20012800 Avelyn: DW 2H Precision Shoot
+20013200 Avelyn: DW 2H Guard Break
+20013300 Avelyn: DW 2H Shoot
+20013600 Torch: 1H Strong 1
+20013700 Torch: 1H Strong 2
+20014100 Torch: 1H Fall 
+20014200 Torch: 1H Jump 
+20014400 Torch: 1H Guard Break
+20014500 Torch: 1H Guard 
+20014600 Torch: 2H Weak 1
+20014700 Torch: 2H Weak 2
+20014800 Torch: 2H Strong 1
+20014900 Torch: 2H Strong 2
+20015000 Torch: 2H Dash
+20015100 Torch: 2H Roll
+20015600 Torch: 2H Guard Break
+20015700 Torch: 2H Guard 
+20015800 Pyromancy Flame: 1H Weak 1 
+20015900 Pyromancy Flame: 1H Weak 2 
+20016000 Pyromancy Flame: 1H Strong 1 
+20016100 Pyromancy Flame: 1H Strong 2 
+20016400 Pyromancy Flame: 1H After-Attack
+20016500 Pyromancy Flame: 1H Fall 
+20016600 Pyromancy Flame: 1H Jump 
+20016700 Pyromancy Flame: 1H Jump Fall 
+20016800 Pyromancy Flame: 1H Guard Break
+20016900 Pyromancy Flame: 2H Weak 1 
+20017000 Pyromancy Flame: 2H Weak 2 
+20017100 Pyromancy Flame: 2H Strong 1 
+20017200 Pyromancy Flame: 2H Strong 2 
+20017900 Pyromancy Flame: 2H Guard Break
+20018300 Pyromancy Flame: 2H Guard 
+20018400 Pyromancy Flame: 2H Precision Shooting 
+20018500 Mytha's Bent Blade: 1H Weak 1
+20018600 Mytha's Bent Blade: 1H Weak 2 
+20018700 Mytha's Bent Blade: 1H Strong 1
+20018800 Mytha's Bent Blade: 1H Strong 2
+20018900 Mytha's Bent Blade: 1H Dash 
+20019000 Mytha's Bent Blade: 1H Roll 
+20019100 Mytha's Bent Blade: 1H Guard Break
+20019200 Mytha's Bent Blade: 1H Jump 
+20019300 Mytha's Bent Blade: 1H Fall 
+20019400 Mytha's Bent Blade: 1H Jump Fall 
+20019500 Mytha's Bent Blade: 1H Jump Fall -> Follow 
+20019600 Mytha's Bent Blade: 1H Parry 
+20019700 Mytha's Bent Blade: 2H Weak 1 
+20019800 Mytha's Bent Blade: 2H Weak 2 
+20019900 Mytha's Bent Blade: 2H Strong 1 
+20020000 Mytha's Bent Blade: 2H Strong 2 
+20020100 Mytha's Bent Blade: 2H Dash 
+20020200 Mytha's Bent Blade: 2H Roll 
+20020300 Mytha's Bent Blade: 2H Guard Break
+20020900 Mytha's Bent Blade: DW 2H Weak 1 
+20021000 Mytha's Bent Blade: DW 2H Weak 2 
+20021100 Mytha's Bent Blade: DW 2H Strong 1 
+20021200 Mytha's Bent Blade: 2H Guard 
+20021300 Curved Sword: 1H Weak 1 
+20021400 Curved Sword: 1H Weak 2 
+20021500 Curved Sword: 1H Strong 1 
+20021600 Curved Sword: 1H Strong 2 
+20021700 Curved Sword: 1H Dash 
+20021800 Curved Sword: 1H Roll 
+20021900 Curved Sword: 1H Guard Break
+20022000 Curved Sword: 1H Jump 
+20022100 Curved Sword: 1H Fall 
+20022200 Curved Sword: 1H Jump Fall 
+20022300 Curved Sword: 1H Jump Fall -> Follow 
+20022400 Curved Sword: 1H Parry 
+20022500 Curved Sword: 2H Weak 1 
+20022600 Curved Sword: 2H Weak 2 
+20022700 Curved Sword: 2H Strong 1 
+20022800 Curved Sword: 2H Strong 2 
+20022900 Curved Sword: 2H Dash 
+20023000 Curved Sword: 2H Roll
+20023100 Curved Sword: 2H Guard Break
+20023700 Curved Sword: DW 2H Weak 1 
+20023800 Curved Sword: DW 2H Weak 2 
+20023900 Curved Sword: DW 2H Strong 1 
+20024000 Curved Sword: 2H Guard 
+20024100 Spider Fang: 1H Strong 1 
+20024200 Spider Fang: 1H Strong 2 
+20024300 Spider Fang: 2H Strong 1 
+20024400 Spider Fang: 2H Strong 2 
+20024500 Chaos Blade: 1H Weak 1 
+20024600 Chaos Blade: 1H Weak 2 
+20024700 Chaos Blade: 1H Strong 1 
+20024800 Chaos Blade: 1H Strong 2 
+20024900 Chaos Blade: 1H Dash 
+20025000 Chaos Blade: 1H Roll 
+20025100 Chaos Blade: 1H Guard Break
+20025200 Chaos Blade: 1H Jump 
+20025300 Chaos Blade: 1H Fall 
+20025400 Chaos Blade: 1H Jump Fall 
+20025500 Chaos Blade: 1H Jump Fall -> Follow 
+20025600 Chaos Blade: 1H Parry 
+20025700 Chaos Blade: 2H Weak 1 
+20025800 Chaos Blade: 2H Weak 2 
+20025900 Chaos Blade: 2H Strong 1 
+20026000 Chaos Blade: 2H Strong 2 
+20026100 Chaos Blade: 2H Dash 
+20026200 Chaos Blade: 2H Roll 
+20026300 Chaos Blade: 2H Guard Break
+20026900 Chaos Blade: DW 2H Weak 1 
+20027000 Chaos Blade: DW 2H Weak 2 
+20027100 Chaos Blade: DW 2H Strong 1 
+20027200 Chaos Blade: 2H Guard 
+20027300 Darkdrift: 1H Weak 1 
+20027400 Darkdrift: 1H Weak 2 
+20027500 Darkdrift: 1H Strong 1 
+20027600 Darkdrift: 1H Strong 2 
+20027700 Darkdrift: 1H Dash 
+20027800 Darkdrift: 1H Roll 
+20027900 Darkdrift: 1H Guard Break
+20028000 Darkdrift: 1H Jump 
+20028100 Darkdrift: 1H Fall 
+20028200 Darkdrift: 1H Jump Fall 
+20028300 Darkdrift: 1H Jump Fall -> Follow 
+20028400 Darkdrift: 1H Parry 
+20028500 Darkdrift: 2H Weak 1 
+20028600 Darkdrift: 2H Weak 2 
+20028700 Darkdrift: 2H Strong 1 
+20028800 Darkdrift: 2H Strong 2 
+20028900 Darkdrift: 2H Dash 
+20029000 Darkdrift: 2H Roll 
+20029100 Darkdrift: 2H Guard Break
+20029700 Darkdrift: DW 2H Weak 1 
+20029800 Darkdrift: DW 2H Weak 2 
+20029900 Darkdrift: DW 2H Strong 1 
+20030000 Darkdrift: 2H Guard 
+20030100 Thorned Greatsword: 1H Strong 1 
+20030200 Thorned Greatsword: 1H Strong 2 
+20030300 Thorned Greatsword: 2H Strong 1 
+20030400 Thorned Greatsword: 2H Strong 2 
+20030500 Moonlight Greatsword: 1H Strong 1 
+20030600 Moonlight Greatsword: 1H Strong 2 
+20030700 Moonlight Greatsword: 2H Strong 1 
+20030800 Moonlight Greatsword: 2H Strong 2 
+20030900 Butcher's Knife: 1H Weak 1 
+20030910 Butcher's Knife: 1H Weak 1 #1
+20031000 Butcher's Knife: 1H Weak 2 
+20031100 Butcher's Knife: 1H Strong 1 
+20031200 Butcher's Knife: 1H Strong 2 
+20031300 Butcher's Knife: 1H Dash 
+20031400 Butcher's Knife: 1H Roll 
+20031500 Butcher's Knife: 1H Guard Break
+20031600 Butcher's Knife: 1H Jump 
+20031700 Butcher's Knife: 1H Fall 
+20031800 Butcher's Knife: 1H Jump Fall 
+20031900 Butcher's Knife: 1H Jump Fall -> Follow 
+20032000 Butcher's Knife: 1H Parry 
+20032100 Butcher's Knife: 2H Weak 1 
+20032200 Butcher's Knife: 2H Weak 2 
+20032300 Butcher's Knife: 2H Strong 1 
+20032400 Butcher's Knife: 2H Strong 2 
+20032500 Butcher's Knife: 2H Dash 
+20032600 Butcher's Knife: 2H Roll 
+20032700 Butcher's Knife: 2H Guard Break
+20033300 Butcher's Knife: DW 2H Weak 1 
+20033400 Butcher's Knife: DW 2H Weak 2 
+20033500 Butcher's Knife: DW 2H Strong 1 
+20033600 Butcher's Knife: 2H Guard 
+20033700 Defender Greatsword: Special Attack: Lightning Buff
+20033800 Watcher Greatsword: Special Attack: Magic Buff
+20033900 Spitfire Spear: 1H Breath 
+20034000 Spitfire Spear: 2H Breath
+20034050 Spitfire Spear: DW 2H Breath
+20034100 Pickaxe: 1H Weak 1 
+20034110 Pickaxe: 1H Weak 1 #1
+20034200 Pickaxe: 1H Weak 2 
+20034300 Pickaxe: 1H Strong 1 
+20034400 Pickaxe: 1H Strong 2 
+20034500 Pickaxe: 1H Dash 
+20034600 Pickaxe: 1H Roll 
+20034700 Pickaxe: 1H Guard Break
+20034800 Pickaxe: 1H Jump 
+20034900 Pickaxe: 1H Falling 
+20035000 Pickaxe: 1H Jump Fall 
+20035100 Pickaxe: 1H Jump Fall -> Follow 
+20035200 Pickaxe: 1H Parry
+20035300 Pickaxe: 2H Weak 1 
+20035400 Pickaxe: 2H Weak 2 
+20035500 Pickaxe: 2H Strong 1 
+20035600 Pickaxe: 2H Strong 2 
+20035700 Pickaxe: 2H Dash 
+20035800 Pickaxe: 2H Roll
+20035900 Pickaxe: 2H Guard Break
+20036500 Pickaxe: DW 2H Weak 1 
+20036600 Pickaxe: DW 2H Weak 2 
+20036700 Pickaxe: DW 2H Strong 
+20036800 Pickaxe: 2H Guard 
+20036900 Archdrake Mace: 1H Weak 1 
+20036910 Archdrake Mace: 1H Weak 1 #1
+20037000 Archdrake Mace: 1H Weak 2 
+20037100 Archdrake Mace: 1H Strong 1 
+20037200 Archdrake Mace: 1H Strong 2 
+20037300 Archdrake Mace: 1H Dash 
+20037400 Archdrake Mace: 1H Roll 
+20037500 Archdrake Mace: 1H Guard Break
+20037600 Archdrake Mace: 1H Jump 
+20037700 Archdrake Mace: 1H Fall 
+20037800 Archdrake Mace: 1H Jump Fall 
+20037900 Archdrake Mace: 1H Jump Fall -> Follow 
+20038000 Archdrake Mace: 1H Parry 
+20038100 Archdrake Mace: 2H Weak 1 
+20038200 Archdrake Mace: 2H Weak 2 
+20038300 Archdrake Mace: 2H Strong 1 
+20038400 Archdrake Mace: 2H Strong 2 
+20038500 Archdrake Mace: 2H Dash 
+20038600 Archdrake Mace: 2H Roll 
+20038700 Archdrake Mace: 2H Guard Break
+20039300 Archdrake Mace: DW 2H Weak 1 
+20039400 Archdrake Mace: DW 2H Weak 2 
+20039500 Archdrake Mace: DW 2H Strong 1 
+20039600 Archdrake Mace: 2H Guard 
+20039700 Iron King Hammer: 1H Special Attack
+20039800 Iron King Hammer: 2H Special Attack 
+20039900 Sacred Chime Hammer: 2H Special Attack
+20040000 Helix Halberd: 1H Strong 1 
+20040100 Helix Halberd: 1H Strong 2 
+20040200 Helix Halberd: 2H Strong 1 
+20040300 Helix Halberd: 2H Strong 2 
+20040400 Helix Halberd: DW 2H Weak 1
+20040500 Helix Halberd: DW 2H Weak 2
+20040600 Helix Halberd: DW 2H Strong 1
+20040700 Staff: 1H Strong 1 
+20040800 Staff: 1H Strong 2 
+20040900 Staff: 2H Strong 1 
+20041000 Staff: 2H Strong 2 
+20041500 Chime: 1H Strong 1 
+20041600 Chime: 1H Strong 2 
+20041700 Chime: 2H Strong 1 
+20041800 Chime: 2H Strong 2 
+20041900 Pyromancy Flame: 1H Strong 1 
+20042000 Pyromancy Flame: 1H Strong 2 
+20042100 Pyromancy Flame: 2H Strong 1 
+20042200 Pyromancy Flame: 2H Strong 2 
+20042300 Washing Pole: 1H Weak 1 
+20042400 Washing Pole: 1H Weak 2 
+20042500 Washing Pole: 1H Strong 1 
+20042600 Washing Pole: 1H Strong 2 
+20042700 Washing Pole: 1H Dash
+20042800 Washing Pole: 1H Roll 
+20042900 Washing Pole: 1H Guard Break
+20043000 Washing Pole: 1H Jumping 
+20043100 Washing Pole: 1H Falling 
+20043200 Washing Pole: 1H Jump Fall 
+20043300 Washing Pole: 1H Jump Fall -> Follow 
+20043400 Washing Pole: 1H Parry 
+20043500 Washing Pole: 2H Weak 1 
+20043600 Washing Pole: 2H Weak 2 
+20043700 Washing Pole: 2H Strong 1 
+20043800 Washing Pole: 2H Strong 2 
+20043900 Washing Pole: 2H Dash 
+20044000 Washing Pole: 2H Roll 
+20044100 Washing Pole: 2H Guard Break
+20044700 Washing Pole: DW 2H Weak 1 
+20044800 Washing Pole: DW 2H Weak 2 
+20044900 Washing Pole: DW 2H Strong 1 
+20045000 Washing Pole: 2H Guard 
+20045100 Crescent Axe: 1H Weak 1 
+20045110 Crescent Axe: 1H Weak 1 #1
+20045200 Crescent Axe: 1H Weak 2 
+20045300 Crescent Axe: 1H Strong 1 
+20045400 Crescent Axe: 1H Strong 2 
+20045500 Crescent Axe: 1H Dash 
+20045600 Crescent Axe: 1H Roll 
+20045700 Crescent Axe: 1H Guard Break
+20045800 Crescent Axe: 1H Jump 
+20045900 Crescent Axe: 1H Fall 
+20046000 Crescent Axe: 1H Jump Fall 
+20046100 Crescent Axe: 1H Jump Fall -> Follow 
+20046200 Crescent Axe: 1H Parry 
+20046300 Crescent Axe: 2H Weak 1 
+20046400 Crescent Axe: 2H Weak 2 
+20046500 Crescent Axe: 2H Strong 1 
+20046600 Crescent Axe: 2H Strong 2 
+20046700 Crescent Axe: 2H Dash 
+20046800 Crescent Axe: 2H Roll
+20046900 Crescent Axe: 2H Guard Break
+20047500 Crescent Axe: DW 2H Weak 1 
+20047600 Crescent Axe: DW 2H Weak 2 
+20047700 Crescent Axe: DW 2H Strong 
+20047800 Crescent Axe: 2H Guard 
+20048200 Black Knight Greataxe: 1H Weak 1 
+20048210 Black Knight Greataxe: 1H Weak 1 #1
+20048300 Black Knight Greataxe: 1H Weak 2
+20048400 Black Knight Greataxe: 1H Strong 1 
+20048500 Black Knight Greataxe: 1H Strong 2 
+20048600 Black Knight Greataxe: 1H Dash 
+20048700 Black Knight Greataxe: 1H Roll 
+20048800 Black Knight Greataxe: 1H Guard Break
+20048900 Black Knight Greataxe: 1H Jump 
+20049000 Black Knight Greataxe: 1H Fall 
+20049100 Black Knight Greataxe: 1H Jump Fall 
+20049200 Black Knight Greataxe: 1H Jump Fall -> Follow 
+20049300 Black Knight Greataxe: 1H Parry 
+20049400 Black Knight Greataxe: 2H Weak 1 
+20049500 Black Knight Greataxe: 2H Weak 2
+20049600 Black Knight Greataxe: 2H Strong 1 
+20049700 Black Knight Greataxe: 2H Strong 2 
+20049800 Black Knight Greataxe: 2H Dash 
+20049900 Black Knight Greataxe: 2H Roll
+20050000 Black Knight Greataxe: 2H Guard Break
+20050500 Black Knight Greataxe: 2H Parry 
+20050600 Black Knight Greataxe: DW 2H Weak 1
+20050800 Black Knight Greataxe: DW 2H Weak 2
+20051000 Black Knight Greataxe: DW 2H Strong 1 
+20051200 Black Knight Greataxe: 2H Guard 
+20051400 Handmaid's Ladle: 1H Weak 1 
+20051600 Handmaid's Ladle: 1H Weak 2 
+20051800 Handmaid's Ladle: 1H Strong 1 
+20052000 Handmaid's Ladle: 1H Strong 2 
+20052200 Handmaid's Ladle: 1H Dash 
+20052400 Handmaid's Ladle: 1H Roll 
+20052600 Handmaid's Ladle: 1H Guard Break
+20052800 Handmaid's Ladle: 1H Jump 
+20053000 Handmaid's Ladle: 1H Fall 
+20053200 Handmaid's Ladle: 1H Jump Fall 
+20053400 Handmaid's Ladle: 1H Jump Fall -> Follow 
+20053600 Handmaid's Ladle: 1H Parry 
+20053800 Handmaid's Ladle: 2H Weak 1 
+20054000 Handmaid's Ladle: 2H Weak 2 
+20054200 Handmaid's Ladle: 2H Strong 1 
+20054400 Handmaid's Ladle: 2H Strong 2 
+20054600 Handmaid's Ladle: 2H Dash 
+20054800 Handmaid's Ladle: 2H Roll 
+20055000 Handmaid's Ladle: 2H Guard Break
+20056200 Handmaid's Ladle: DW 2H Weak 1 
+20056400 Handmaid's Ladle: DW 2H Weak 2 
+20056600 Handmaid's Ladle: DW 2H Strong 1 
+20056800 Handmaid's Ladle: 2H Guard 
+20057000 Black Dragon Warpick: 1H Weak 1
+20057010 Black Dragon Warpick: 1H Weak 1 #1
+20057200 Black Dragon Warpick: 1H Weak 2
+20057400 Black Dragon Warpick: 1H Strong 1
+20057600 Black Dragon Warpick: 1H Strong 2
+20057800 Black Dragon Warpick: 1H Dash 
+20058000 Black Dragon Warpick: 1H Roll 
+20058200 Black Dragon Warpick: 1H Guard Break
+20058400 Black Dragon Warpick: 1H Jump 
+20058600 Black Dragon Warpick: 1H Fall 
+20058800 Black Dragon Warpick: 1H Jump Fall 
+20059000 Black Dragon Warpick: 1H Jump Fall -> Follow 
+20059200 Black Dragon Warpick: 1H Parry 
+20059400 Black Dragon Warpick: 2H Weak 1
+20059600 Black Dragon Warpick: 2H Weak 2
+20059800 Black Dragon Warpick: 2H Strong 1 
+20060000 Black Dragon Warpick: 2H Strong 2 
+20060200 Black Dragon Warpick: 2H Dash
+20060400 Black Dragon Warpick: 2H Roll  
+20060600 Black Dragon Warpick: 2H Guard Break
+20061800 Black Dragon Warpick: DW 2H Weak 1
+20062000 Black Dragon Warpick: DW 2H Weak 2
+20062200 Black Dragon Warpick: DW 2H Strong 1
+20062400 Black Dragon Warpick: 2H Guard 
+20062500 Claw: 1H Weak 1 
+20062600 Claw: 1H Weak 2 
+20062700 Claw: 1H Strong 1 
+20062800 Claw: 1H Strong 2 
+20062900 Claw: 1H Dash 
+20063000 Claw: 1H Roll 
+20063100 Claw: 1H Guard Break
+20063200 Claw: 1H Jump 
+20063300 Claw: 1H Fall 
+20063400 Claw: 1H Jump Fall 
+20063500 Claw: 1H Jump Fall -> Follow 
+20063600 Claw: 1H Parry 
+20063700 Claw: 2H Weak 1 
+20063800 Claw: 2H Weak 2 
+20063900 Claw: 2H Strong 1 
+20064000 Claw: 2H Strong 2 
+20064100 Claw: 2H Dash 
+20064200 Claw: 2H Roll
+20064300 Claw: 2H Guard Break
+20064900 Claw: DW 2H Weak 1 
+20065000 Claw: DW 2H Weak 2 
+20065100 Claw: DW 2H Strong 1 
+20065200 Claw: 2H Guard 
+20065300 Scythe of Want: 1H Weak 1 
+20065400 Scythe of Want: 1H Weak 2 
+20065500 Scythe of Want: 1H Strong 1 
+20065600 Scythe of Want: 1H Strong 2 
+20065700 Scythe of Want: 1H Dash 
+20065800 Scythe of Want: 1H Roll
+20065900 Scythe of Want: 1H Guard Break
+20066000 Scythe of Want: 1H Jump 
+20066100 Scythe of Want: 1H Fall 
+20066200 Scythe of Want: 1H Jump Fall 
+20066300 Scythe of Want: 1H Jump Fall -> Follow
+20066400 Scythe of Want: 1H Parry
+20066500 Scythe of Want: 2H Weak 1 
+20066600 Scythe of Want: 2H Weak 2 
+20066700 Scythe of Want: 2H Strong 1 
+20066800 Scythe of Want: 2H Strong 2 
+20066900 Scythe of Want: 2H Dash 
+20067000 Scythe of Want: 2H Roll
+20067100 Scythe of Want: 2H Guard Break
+20067700 Scythe of Want: DW 2H Weak 1 
+20067800 Scythe of Want: DW 2H Weak 2 
+20067900 Scythe of Want: DW 2H Strong 1 
+20068000 Scythe of Want: 2H Guard 
+20068100 Santier's Spear: 1H Weak 1
+20068200 Santier's Spear: 1H Weak 2 
+20068300 Santier's Spear: 1H Strong 1 
+20068400 Santier's Spear: 1H Strong 2 
+20068500 Santier's Spear: 1H Dash 
+20068600 Santier's Spear: 1H Roll 
+20068700 Santier's Spear: 1H Guard Break
+20068800 Santier's Spear: 1H Jump 
+20068900 Santier's Spear: 1H Fall 
+20069000 Santier's Spear: 1H Jump Fall 
+20069100 Santier's Spear: 1H Jump Fall -> Follow
+20069200 Santier's Spear: 1H Parry 
+20069300 Santier's Spear: 2H Weak 1 
+20069400 Santier's Spear: 2H Weak 2 
+20069500 Santier's Spear: 2H Strong 1 
+20069600 Santier's Spear: 2H Strong 2 
+20069700 Santier's Spear: 2H Dash 
+20069800 Santier's Spear: 2H Roll
+20069900 Santier's Spear: 2H Guard Break
+20070500 Santier's Spear: DW 2H Weak 1 
+20070600 Santier's Spear: DW 2H Weak 2 
+20070700 Santier's Spear: DW 2H Strong 1 
+20070800 Santier's Spear: 2H Guard 
+20070900 Smelter Sword: 1H Strong 1 
+20071000 Smelter Sword: 1H Strong 2 
+20071100 Smelter Sword: 2H Strong 1 
+20071200 Smelter Sword: 2H Strong 2 
+20071250 Smelter Sword: 2H Strong 2 #1
+20071300 Curved Dragon Greatsword: 1H Strong 1 
+20071400 Curved Dragon Greatsword: 1H Strong 2 
+20071500 Curved Dragon Greatsword: 2H Strong 1 
+20071600 Curved Dragon Greatsword: 2H Strong 2 
+20071900 Bow of Want: 2H Strong 1 
+20072000 Bow of Want: 2H Strong 2 
+20072100 Lost Sinner's Sword: 1H Weak 1 
+20072200 Lost Sinner's Sword: 1H Weak 2 
+20072300 Lost Sinner's Sword: 1H Strong 1 
+20072400 Lost Sinner's Sword: 1H Strong 2 
+20072500 Lost Sinner's Sword: 1H Dash 
+20072600 Lost Sinner's Sword: 1H Roll 
+20072700 Lost Sinner's Sword: 1H Guard Break
+20072800 Lost Sinner's Sword: 1H Jump 
+20072900 Lost Sinner's Sword: 1H Fall 
+20073000 Lost Sinner's Sword: 1H Jump Fall 
+20073100 Lost Sinner's Sword: 1H Jump Fall -> Follow 
+20073300 Lost Sinner's Sword: 2H Weak 1 
+20073400 Lost Sinner's Sword: 2H Weak 2 
+20073500 Lost Sinner's Sword: 2H Strong 1 
+20073600 Lost Sinner's Sword: 2H Strong 2 
+20073700 Lost Sinner's Sword: 2H Dash 
+20073800 Lost Sinner's Sword: 2H Roll 
+20073900 Lost Sinner's Sword: 2H Guard Break
+20074400 Lost Sinner's Sword: 2H Parry 
+20074500 Lost Sinner's Sword: DW 2H Weak 1 
+20074600 Lost Sinner's Sword: DW 2H Weak 2 
+20074700 Lost Sinner's Sword: DW 2H Strong 1 
+20074800 Lost Sinner's Sword: 2H Guard 
+20074900 Fists (Strong): 1H Weak 1 
+20075000 Fists (Strong): 1H Weak 2 
+20075100 Fists (Strong): 1H Strong 1 
+20075200 Fists (Strong): 1H Strong 2 
+20075300 Fists (Strong): 1H Dash 
+20075400 Fists (Strong): 1H Roll 
+20075500 Fists (Strong): 1H Guard Break
+20075600 Fists (Strong): 1H Jump 
+20075700 Fists (Strong): 1H Fall 
+20075800 Fists (Strong): 1H Jump Fall 
+20075900 Fists (Strong): 1H Jump Fall -> Follow 
+20076000 Fists (Strong): 1H Parry 
+20076100 Fists (Strong): 2H Weak 1 
+20076200 Fists (Strong): 2H Weak 2 
+20076300 Fists (Strong): 2H Strong 1 
+20076400 Fists (Strong): 2H Strong 2 
+20076500 Fists (Strong): 2H Dash
+20076600 Fists (Strong): 2H Roll 
+20076700 Fists (Strong): 2H Guard Break
+20077300 Fists (Strong): DW 2H Weak 1 
+20077400 Fists (Strong): DW 2H Weak 2 
+20077500 Fists (Strong): DW 2H Strong 
+20077600 Fists (Strong): 2H Guard 
+20078100 Dragon Tooth: 1H Weak 1 
+20078110 Dragon Tooth: 1H Weak 1 #1
+20078200 Dragon Tooth: 1H Weak 2 
+20078300 Dragon Tooth: 1H Strong 1 
+20078400 Dragon Tooth: 1H Strong 2 
+20078500 Dragon Tooth: 1H Dash 
+20078600 Dragon Tooth: 1H Roll 
+20078700 Dragon Tooth: 1H Guard Break
+20078800 Dragon Tooth: 1H Jump 
+20078900 Dragon Tooth: 1H Fall 
+20079000 Dragon Tooth: 1H Jump Fall 
+20079100 Dragon Tooth: 1H Jump Fall -> Follow 
+20079300 Dragon Tooth: 2H Weak 1
+20079400 Dragon Tooth: 2H Weak 2 
+20079500 Dragon Tooth: 2H Strong 1 
+20079600 Dragon Tooth: 2H Strong 2 
+20079700 Dragon Tooth: 2H Dash 
+20079800 Dragon Tooth: 2H Roll 
+20079900 Dragon Tooth: 2H Guard Break
+20080400 Dragon Tooth: 2H Parry 
+20080500 Dragon Tooth: DW 2H Weak 1 
+20080600 Dragon Tooth: DW 2H Weak 2 
+20080700 Dragon Tooth: DW 2H Strong 1 
+20080800 Dragon Tooth: 2H Guard 
+20080900 Drakewing Ultra Greatsword: 2H Strong 1 
+20081000 Drakewing Ultra Greatsword: 2H Strong 2 
+20081100 Dragonslayer Spear: 1H Strong 1 
+20081200 Dragonslayer Spear: 1H Strong 2 
+20081300 Dragonslayer Spear: 2H Strong 1 
+20081400 Dragonslayer Spear: 2H Strong 2 
+20081500 Old Whip: 1H Weak 1 
+20081600 Old Whip: 1H Weak 2 
+20081700 Old Whip: 1H Strong 1 
+20081800 Old Whip: 1H Strong 2
+20081900 Old Whip: 1H Dash 
+20082000 Old Whip: 1H Roll 
+20082100 Old Whip: 1H Jump 
+20082200 Old Whip: 1H Fall 
+20082300 Old Whip: 2H Weak 1 
+20082400 Old Whip: 2H Weak 2 
+20082500 Old Whip: 2H Weak 2 #1
+20082600 Old Whip: 2H Strong 1 
+20082700 Old Whip: 2H Strong 2 
+20082800 Old Whip: 2H Dash 
+20082900 Old Whip: 2H Roll 
+20083000 Old Whip: DW 2H Weak 1 
+20083100 Old Whip: DW 2H Weak 2 
+20083200 Old Whip: DW 2H Strong 1 
+20083300 Ivory Straight Sword: 1H Weak 1
+20083400 Ivory Straight Sword: 1H Weak 1 #1
+20083500 Ivory Straight Sword: 1H Weak 2
+20083600 Ivory Straight Sword: 1H Strong 1
+20083700 Ivory Straight Sword: 1H Strong 2
+20083800 Ivory Straight Sword: 1H Dash
+20083900 Ivory Straight Sword: 1H Roll
+20084000 Ivory Straight Sword: 1H Guard Break
+20084100 Ivory Straight Sword: 1H Jump
+20084200 Ivory Straight Sword: 1H Fall
+20084300 Ivory Straight Sword: 1H Parry
+20084400 Ivory Straight Sword: 2H Weak 1
+20084500 Ivory Straight Sword: 2H Weak 2
+20084600 Ivory Straight Sword: 2H Strong 1
+20084700 Ivory Straight Sword: 2H Strong 2
+20084800 Ivory Straight Sword: 2H Dash
+20084900 Ivory Straight Sword: 2H Roll
+20085000 Ivory Straight Sword: 2H Guard Break
+20085100 Ivory Straight Sword: 2H Parry
+20085200 Ivory Straight Sword: DW 2H Weak 1
+20085300 Ivory Straight Sword: DW 2H Weak 2
+20085400 Ivory Straight Sword: DW 2H Strong 1
+20085500 Ivory Straight Sword: 2H Guard
+20085609 Ice Rapier: 1H Weak 2
+20085610 Ice Rapier: 1H Weak 2 #1
+20085611 Ice Rapier: 1H Strong 
+20085612 Ice Rapier: 1H Dash
+20085613 Ice Rapier: 1H Roll
+20085620 Ice Rapier: 2H Weak 2
+20085621 Ice Rapier: 2H Weak 2 #1
+20085622 Ice Rapier: 2H Dash
+20085623 Ice Rapier: 2H Roll
+20085700 Ice Rapier: 1H Strong 1
+20085800 Ice Rapier: 1H Strong 2
+20085900 Ice Rapier: 2H Strong 1
+20086000 Ice Rapier: 2H Strong 2
+20086100 Majestic Greatsword: 1H Strong 1
+20086200 Majestic Greatsword: 1H Strong 2
+20086300 Majestic Greatsword: 2H Strong 1 - Mid-air
+20086500 Majestic Greatsword: DW 2H Strong 1
+20086600 Bone Fist: 1H Weak 1
+20086700 Bone Fist: DW 1H Weak 1
+20086800 Bone Fist: 1H Weak 2
+20086900 Bone Fist: 1H Strong 1
+20087000 Bone Fist: 1H Strong 2
+20087100 Bone Fist: 1H Dash
+20087200 Bone Fist: 1H Roll
+20087300 Bone Fist: 1H Guard Break
+20087400 Bone Fist: 1H Jump
+20087500 Bone Fist: 1H Fall
+20087600 Bone Fist: 1H Parry
+20087700 Bone Fist: 2H Weak 1
+20087800 Bone Fist: 2H Weak 2
+20087900 Bone Fist: 2H Strong 1
+20088000 Bone Fist: 2H Strong 2
+20088100 Bone Fist: 2H Dash
+20088200 Bone Fist: 2H Roll
+20088300 Bone Fist: 2H Guard Break
+20088400 Bone Fist: 2H Parry
+20088500 Bone Fist: DW 2H Weak 1
+20088600 Bone Fist: DW 2H Weak 2
+20088700 Bone Fist: DW 2H Strong 1
+20088800 Bone Fist: 2H Guard
+20088900 Bewitched Alonne Sword: Special Attack (Seppuku)
+20089000 Eleum Loyce: 1H Strong 1
+20089100 Eleum Loyce: 2H Strong 1
+20089200 Fume Ultra Greatsword: 1H Strong 1
+20089210 Fume Ultra Greatsword: 1H Strong 1 #1
+20089300 Fume Ultra Greatsword: 2H Strong 1
+20089380 Curved Nil Greatsword: 2H Weak 1
+20089390 Curved Nil Greatsword: 2H Weak 2
+20089400 Curved Nil Greatsword: 2H Strong 1
+20089410 Curved Nil Greatsword: DW 2H Weak 1
+20089420 Curved Nil Greatsword: DW 2H Weak 2
+20089500 Curved Nil Greatsword: DW 2H Strong 1
+20089600 Puzzling Stone Sword: 1H Strong 1
+20089700 Puzzling Stone Sword: 1H Strong 2
+20089800 Puzzling Stone Sword: 2H Strong 1
+20089900 Puzzling Stone Sword: 2H Strong 2
+20090000 Sanctum Repeating Crossbow: 1H Strong 1
+20090100 Sanctum Repeating Crossbow: 2H Strong 1
+20090200 Smelter Hammer: 1H Weak 1
+20090300 Smelter Hammer: DW 1H Weak 1
+20090400 Smelter Hammer: 1H Weak 2
+20090500 Smelter Hammer: 1H Strong 1
+20090600 Smelter Hammer: 1H Strong 2
+20090700 Smelter Hammer: 1H Dash
+20090800 Smelter Hammer: 1H Roll
+20090900 Smelter Hammer: 1H Guard Break
+20091000 Smelter Hammer: 1H Jump
+20091100 Smelter Hammer: 1H Fall
+20091300 Smelter Hammer: 2H Weak 1
+20091400 Smelter Hammer: 2H Weak 2
+20091500 Smelter Hammer: 2H Strong 1
+20091600 Smelter Hammer: 2H Strong 2
+20091610 Smelter Hammer: 2H Strong 2 #1
+20091700 Smelter Hammer: 2H Dash
+20091800 Smelter Hammer: 2H Roll
+20091900 Smelter Hammer: 2H Guard Break
+20092100 Smelter Hammer: DW 2H Weak 1
+20092200 Smelter Hammer: DW 2H Weak 2
+20092300 Smelter Hammer: DW 2H Strong 1
+20092400 Smelter Hammer: 2H Guard
+20092500 Sorcerer's Twinblade: 1H Weak 1
+20092600 Sorcerer's Twinblade: 1H Weak 2
+20092700 Sorcerer's Twinblade: 1H Strong 1
+20093000 Sorcerer's Twinblade: 1H Dash
+20093100 Sorcerer's Twinblade: 1H Roll
+20093300 Sorcerer's Twinblade: 1H Jump
+20093600 Sorcerer's Twinblade: 2H Weak 1
+20093700 Sorcerer's Twinblade: 2H Weak 2
+20093800 Sorcerer's Twinblade: 2H Strong 1
+20094000 Sorcerer's Twinblade: 2H Strong 2
+20094100 Sorcerer's Twinblade: 2H Dash
+20094400 Sorcerer's Twinblade: 
+20094500 Sorcerer's Twinblade: 
+20094600 Sorcerer's Twinblade: 
+20094800 Sanctum Mace: 1H Weak 1
+20094900 Sanctum Mace: DW 1H Weak 1
+20095000 Sanctum Mace: 1H Weak 2
+20095100 Sanctum Mace: 1H Strong 1
+20095200 Sanctum Mace: 1H Strong 2
+20095300 Sanctum Mace: 1H Dash
+20095400 Sanctum Mace: 1H Roll
+20095600 Sanctum Mace: 1H Jump
+20095700 Sanctum Mace: 1H Fall
+20095900 Sanctum Mace: 2H Weak 1
+20096000 Sanctum Mace: 2H Weak 2
+20096100 Sanctum Mace: 2H Strong 1
+20096200 Sanctum Mace: 2H Strong 2
+20096300 Sanctum Mace: 2H Dash
+20096400 Sanctum Mace: 2H Roll
+20096700 Sanctum Mace: DW 2H Weak 1
+20096800 Sanctum Mace: DW 2H Weak 2
+20096900 Sanctum Mace: DW 2H Strong 1
+20098000 Possessed Armor Greatbow: 2H Shoot
+20099000 Possessed Armor Greatbow: 2H Shoot
+20100000 Bewitched Alonne Sword: 1H Weak 1
+20101000 Bewitched Alonne Sword: 1H Weak 1 #1
+20102000 Bewitched Alonne Sword: 1H Weak 2
+20103000 Bewitched Alonne Sword: 1H Weak 2 #1
+20104000 Bewitched Alonne Sword: 1H Strong 1
+20105000 Bewitched Alonne Sword: 1H Strong 2
+20106000 Bewitched Alonne Sword: 1H Dash
+20107000 Bewitched Alonne Sword: 1H Roll
+20108000 Bewitched Alonne Sword: 1H Jump
+20109000 Bewitched Alonne Sword: 1H Fall
+20111000 Bewitched Alonne Sword: 2H Weak 1
+20112000 Bewitched Alonne Sword: 2H Weak 2
+20113000 Bewitched Alonne Sword: 2H Strong 1
+20114000 Bewitched Alonne Sword: 2H Strong 2
+20115000 Bewitched Alonne Sword: 2H Dash
+20116000 Bewitched Alonne Sword: 2H Roll
+20117000 Bewitched Alonne Sword: 2H Guard Break
+20119000 Bewitched Alonne Sword: DW 2H Weak 1
+20120000 Bewitched Alonne Sword: DW 2H Weak 2
+20121000 Bewitched Alonne Sword: DW 2H Strong 1
+20123000 Wrathful Axe: 2H Special Attack
+20124000 Umbral Dagger: Blank
+20125000 Umbral Dagger: Blank
+20126000 Umbral Dagger: Blank
+20127000 Umbral Dagger: Blank
+20128000 Yorgh's Spear: 1H Weak 1
+20129000 Yorgh's Spear: 1H Weak 1 #1
+20130000 Yorgh's Spear: 1H Weak 2
+20131000 Yorgh's Spear: 1H Weak 2 #1
+20132000 Yorgh's Spear: 1H Strong 1
+20133000 Yorgh's Spear: 1H Strong 2
+20134000 Yorgh's Spear: 1H Dash
+20135000 Yorgh's Spear: 1H Roll
+20136000 Yorgh's Spear: 1H Jump
+20137000 Yorgh's Spear: 1H Fall
+20139000 Yorgh's Spear: 2H Weak 1
+20140000 Yorgh's Spear: 2H Weak 2
+20141000 Yorgh's Spear: 2H Strong 1
+20142000 Yorgh's Spear: 2H Strong 2
+20143000 Yorgh's Spear: 2H Dash
+20144000 Yorgh's Spear: 2H Roll
+20145000 Yorgh's Spear: 2H Guard Break
+20147000 Yorgh's Spear: DW 2H Weak 1
+20148000 Yorgh's Spear: DW 2H Weak 2
+20149000 Yorgh's Spear: DW 2H Strong 1
+20151000 Sanctum Shield: Blank
+20153000 Sanctum Shield: Blank
+20154000 Sanctum Shield: Blank
+20157000 Possessed Armor Sword: 
+20158000 Possessed Armor Sword: 
+20159000 Drakeblood Greatsword: 
+20160000 Drakeblood Greatsword: 
+20161000 Pilgrim's Spontoon: 1H Weak 1
+20162000 Pilgrim's Spontoon: 1H Weak 2
+20163000 Pilgrim's Spontoon: 1H Strong 1
+20166000 Pilgrim's Spontoon: 1H Dash
+20167000 Pilgrim's Spontoon: 1H Roll
+20169000 Pilgrim's Spontoon: 1H Jump
+20170000 Pilgrim's Spontoon: 1H Fall
+20172000 Pilgrim's Spontoon: 2H Weak 1
+20173000 Pilgrim's Spontoon: 2H Weak 2
+20177000 Pilgrim's Spontoon: 2H Strong 1
+20178000 Pilgrim's Spontoon: 2H Strong 2
+20181000 Pilgrim's Spontoon: 2H Dash
+20182000 Pilgrim's Spontoon: 2H Roll
+20183000 Pilgrim's Spontoon: 2H Guard Break
+20187000 Drakekeeper's Warpick: Blank
+20187100 Drakekeeper's Warpick: Blank
+20188000 Drakekeeper's Warpick: Blank
+20189000 Drakekeeper's Warpick: Blank
+20190000 Drakekeeper's Warpick: Blank
+20191000 Drakekeeper's Warpick: Blank
+20192000 Drakekeeper's Warpick: Blank
+20193000 Drakekeeper's Warpick: Blank
+20194000 Drakekeeper's Warpick: Blank
+20195000 Drakekeeper's Warpick: Blank
+20196000 Drakekeeper's Warpick: Blank
+20197000 Drakekeeper's Warpick: Blank
+20198000 Drakekeeper's Warpick: Blank
+20199000 Drakekeeper's Warpick: Blank
+20199100 Drakekeeper's Warpick: Blank
+20199200 Drakekeeper's Warpick: Blank
+20199300 Drakekeeper's Warpick: Blank
+20200000 King's Ultra Greatsword: Blank
+20200010 King's Ultra Greatsword: Blank
+20201000 King's Ultra Greatsword: Blank
+20202000 King's Ultra Greatsword: Blank
+20203000 King's Ultra Greatsword: Blank
+20204000 King's Ultra Greatsword: Blank
+20205000 King's Ultra Greatsword: Blank
+20206000 King's Ultra Greatsword: Blank
+20207000 King's Ultra Greatsword: Blank
+20208000 King's Ultra Greatsword: Blank
+20209000 King's Ultra Greatsword: Blank
+20210000 King's Ultra Greatsword: Blank
+20211000 King's Ultra Greatsword: Blank
+20212000 King's Ultra Greatsword: Blank
+20213000 King's Ultra Greatsword: Blank
+20214000 King's Ultra Greatsword: Blank
+20215000 King's Ultra Greatsword: Blank
+20216000 King's Ultra Greatsword: Blank
+20217000 Greatsword (Special): Blank
+20218000 Greatsword (Special): Blank
+20219000 Greatsword (Special): Blank
+20220000 Greatsword (Special): Blank
+20220010 Greatsword (Special): Blank
+20221000 Greatsword (Special): Blank
+20222000 Greatsword (Special): Blank
+20223000 Black Knight Greatsword: Blank
+20224000 Gyrm Great Hammer: Blank
+20224010 Gyrm Great Hammer: Blank
+20225000 Sacred Chime Hammer: Blank
+20225010 Sacred Chime Hammer: Blank
+20226000 Black Knight Halberd: Blank
+20227000 Curved Dragon Greatsword: Blank
+20228000 Curved Dragon Greatsword: Blank
+20229000 Possessed Armor Sword: Blank
+20230100 Loyce Greatsword / Charred Loyce Greatsword: Blank
+20230200 Loyce Greatsword / Charred Loyce Greatsword: Blank
+20230300 Loyce Greatsword: Blank
+20230400 Loyce Greatsword: Blank
+20230500 Loyce Greatsword: Blank
+20230600 Aged Smelter Sword: Blank
+20230700 Aged Smelter Sword: Blank
+20230800 Aged Smelter Sword: Blank
+20230900 Aged Smelter Sword: Blank
+20231000 Aged Smelter Sword: Blank
+20232200 Aged Smelter Sword: Blank
+20232300 Aged Smelter Sword: Blank
+20232400 Aged Smelter Sword: Blank
+20232500 Aged Smelter Sword: Blank
+20232600 Aged Smelter Sword: Blank
+20232700 Aged Smelter Sword: Blank
+21001000 Throw (Backstab): Fists
+21001010 Throw (Backstab): Fists (Stong)
+21002000 Throw (Backstab): Caestus
+21003000 Throw (Backstab): Claw
+21004000 Throw (Backstab): Dagger
+21004010 Throw (Backstab): Mytha's Bent Blade
+21004020 Throw (Backstab): Mail Breaker
+21004030 Throw (Backstab): Umbral Dagger 
+21004040 Throw (Backstab): Dagger 
+21004050 Throw (Backstab): Blue Dagger 
+21005000 Throw (Backstab): Whip
+21005010 Throw (Backstab): Old Whip
+21006000 Throw (Backstab): Twinblade
+21007000 Throw (Backstab): Thrusting Sword
+21008000 Throw (Backstab): Spear
+21008010 Throw (Backstab): Pilgrim's Spontoon
+21009000 Throw (Backstab): Lance
+21010000 Throw (Backstab): Curved Sword
+21011000 Throw (Backstab): Katana
+21011010 Throw (Backstab): Chaos Blade
+21011020 Throw (Backstab): Bewitched Alonne Sword
+21012000 Throw (Backstab): Scythe
+21013000 Throw (Backstab): Straight Sword
+21013010 Throw (Backstab): Ivory Straight Sword
+21014000 Throw (Backstab): Greatsword
+21015000 Throw (Backstab): Ultra Greatsword
+21016000 Throw (Backstab): Curved Greatsword
+21017000 Throw (Backstab): Hammer
+21017010 Throw (Backstab): Warpick
+21018000 Throw (Backstab): Great Hammer
+21018010 Throw (Backstab): Archdrake Mace
+21018020 Throw (Backstab): Pickaxe
+21019000 Throw (Backstab): Axe
+21020000 Throw (Backstab): Greataxe
+21021000 Throw (Backstab): Halberd
+21022000 Throw (Backstab): Staff
+21023000 Throw (Backstab): Chime
+21024000 Throw (Backstab): Bow
+21025000 Throw (Backstab): Greatbow
+21026000 Throw (Backstab): Crossbow
+21027000 Throw (Backstab): Small Shield:
+21028000 Throw (Backstab): Medium Shield
+21029000 Throw (Backstab): Greatshield:
+21030000 Throw (Backstab): Binoculars
+21031000 Throw (Backstab): Torch
+21032000 Throw (Backstab): Pyromancy Flame
+22001000 Throw (Guard Break): Fists
+22001010 Throw (Guard Break): Fists (Stong)
+22002000 Throw (Guard Break): Caestus
+22003000 Throw (Guard Break): Claw
+22004000 Throw (Guard Break): Dagger
+22004010 Throw (Guard Break): Mytha's Bent Blade
+22004020 Throw (Guard Break): Mail Breaker
+22004030 Throw (Guard Break): Umbral Dagger  
+22004040 Throw (Guard Break): Dagger 
+22004050 Throw (Guard Break): Blue Dagger 
+22005000 Throw (Guard Break): Whip
+22005010 Throw (Guard Break): Old Whip
+22006000 Throw (Guard Break): Twinblade
+22007000 Throw (Guard Break): Thrusting Sword
+22008000 Throw (Guard Break): Spear
+22008010 Throw (Guard Break): Pilgrim's Spontoon
+22009000 Throw (Guard Break): Lance
+22010000 Throw (Guard Break): Curved Sword
+22011000 Throw (Guard Break): Katana
+22011010 Throw (Guard Break): Chaos Blade
+22011020 Throw (Guard Break): Bewitched Alonne Sword
+22012000 Throw (Guard Break): Scythe
+22013000 Throw (Guard Break): Straight Sword
+22013010 Throw (Guard Break): Ivory Straight Sword
+22014000 Throw (Guard Break): Greatsword
+22015000 Throw (Guard Break): Ultra Greatsword
+22016000 Throw (Guard Break): Curved Greatsword
+22017000 Throw (Guard Break): Hammer
+22017010 Throw (Guard Break): Warpick
+22018000 Throw (Guard Break): Great Hammer
+22018010 Throw (Guard Break): Archdrake Mace
+22018020 Throw (Guard Break): Pickaxe
+22019000 Throw (Guard Break): Axe
+22020000 Throw (Guard Break): Greataxe
+22021000 Throw (Guard Break): Halberd
+22022000 Throw (Guard Break): Staff
+22023000 Throw (Guard Break): Chime
+22024000 Throw (Guard Break): Bow
+22025000 Throw (Guard Break): Greatbow
+22026000 Throw (Guard Break): Crossbow
+22027000 Throw (Guard Break): Small Shield:
+22028000 Throw (Guard Break): Medium Shield
+22029000 Throw (Guard Break): Greatshield:
+22030000 Throw (Guard Break): Binoculars
+22031000 Throw (Guard Break): Torch
+22032000 Throw (Guard Break): Pyromancy Flame
+23001000 Throw (Riposte): Fists
+23001010 Throw (Riposte): Fists (Stong)
+23002000 Throw (Riposte): Caestus 
+23003000 Throw (Riposte): Claw 
+23004000 Throw (Riposte): Dagger 
+23004010 Throw (Riposte): Mytha's Bent Blade
+23004020 Throw (Riposte): Mail Breaker 
+23004030 Throw (Riposte): Umbral Dagger  
+23004040 Throw (Riposte): Dagger 
+23004050 Throw (Riposte): Blue Dagger 
+23005000 Throw (Riposte): Whip 
+23005010 Throw (Riposte): Old Whip
+23006000 Throw (Riposte): Twinblade
+23007000 Throw (Riposte): Thrusting Sword
+23008000 Throw (Riposte): Spear 
+23008010 Throw (Riposte): Pilgrim's Spontoon
+23009000 Throw (Riposte): Lance 
+23010000 Throw (Riposte): Curved Sword
+23011000 Throw (Riposte): Katana 
+23011010 Throw (Riposte): Chaos Blade
+23011020 Throw (Riposte): Bewitched Alonne Sword
+23012000 Throw (Riposte): Scythe
+23013000 Throw (Riposte): Straight Sword
+23013010 Throw (Riposte): Ivory Straight Sword
+23014000 Throw (Riposte): Greatsword
+23015000 Throw (Riposte): Ultra Greatsword
+23016000 Throw (Riposte): Curved Greatsword
+23017000 Throw (Riposte): Hammer
+23017010 Throw (Riposte): Warpick
+23018000 Throw (Riposte): Great Hammer
+23018010 Throw (Riposte): Archdrake Mace
+23018020 Throw (Riposte): Pickaxe
+23019000 Throw (Riposte): Axe
+23020000 Throw (Riposte): Greataxe
+23021000 Throw (Riposte): Halberd
+23022000 Throw (Riposte): Staff
+23023000 Throw (Riposte): Chime
+23024000 Throw (Riposte): Bow
+23025000 Throw (Riposte): Greatbow
+23026000 Throw (Riposte): Crossbow
+23027000 Throw (Riposte): Small Shield: 
+23028000 Throw (Riposte): Medium Shield 
+23029000 Throw (Riposte): Greatshield: 
+23030000 Throw (Riposte): Binoculars 
+23031000 Throw (Riposte): Torch 
+23032000 Throw (Riposte): Pyromancy Flame
+180000110 NPC: Fist: LD Weak 1
+180000120 NPC: Fist: LD Strong 1
+180000130 NPC: Fist: LD Weak Kick 1
+180000140 NPC: Fist: LD Weak Strong 1
+180010010 NPC: Fist: 1H Weak 1
+180010020 NPC: Fist: 1H Weak 2
+180010030 NPC: Fist: 1H Strong 1
+180010040 NPC: Fist: 1H Strong 2
+180010050 NPC: Fist: 1H Dash 
+180010060 NPC: Fist: 1H Roll 
+180010070 NPC: Fist: 1H Step 
+180010080 NPC: Fist: 1H Down 
+180010090 NPC: Fist: 1H Fall 
+180010100 NPC: Fist: 1H Jump 
+180010110 NPC: Fist: 2H Weak 1
+180010120 NPC: Fist: 2H Weak 2
+180010130 NPC: Fist: 2H Strong 1
+180010140 NPC: Fist: 2H Strong 2
+180010150 NPC: Fist: 2H Dash 
+180010160 NPC: Fist: 2H Roll 
+180010170 NPC: Fist: 2H Step 
+180010180 NPC: Fist: 2H Guard 
+180010190 NPC- Fist: DW 2H Weak 1 
+180010200 NPC: Fist: DW 2H Weak 2 
+180010210 NPC: Fist: DW 2H Strong 
+180010220 NPC: Fist: 1H Guard Break
+180010230 NPC: Fist: 2H Guard Break
+180010240 NPC: Fist: Riposte 
+180010250 NPC: Fist: Guard Break 
+180010260 NPC: Fist: Backstab 
+180100100 NPC: Bandit's Knife: 1H Weak 1 
+180100200 NPC: Bandit's Knife: 1H Weak 2 
+180100300 NPC: Bandit's Knife: 1H Strong 1 
+180100400 NPC: Bandit's Knife: 1H Strong 2 
+180100500 NPC: Bandit's Knife: 1H Dash 
+180100600 NPC: Bandit's Knife: 1H Roll 
+180100700 NPC: Bandit's Knife: 1H Step 
+180100800 NPC: Bandit's Knife: 1H Down 
+180100900 NPC: Bandit's Knife: 1H Fall 
+180101000 NPC: Bandit's Knife: 1H Jump 
+180101100 NPC: Bandit's Knife: 2H Weak 1 
+180101200 NPC: Bandit's Knife: 2H Weak 2 
+180101300 NPC: Bandit's Knife: 2H Strong 1 
+180101400 NPC: Bandit's Knife: 2H Strong 2 
+180101500 NPC: Bandit's Knife: 2H Dash 
+180101600 NPC: Bandit's Knife: 2H Roll 
+180101700 NPC: Bandit's Knife: 2H Step 
+180101800 NPC: Bandit's Knife: 2H Inverted Arm Weak 
+180101900 NPC: Bandit's Knife: DW 2H Weak 1 
+180102000 NPC: Bandit's Knife: DW 2H Weak 2 
+180102100 NPC: Bandit's Knife: DW 2H Strong 
+180102200 NPC: Bandit's Knife: 1H Guard Break
+180102300 NPC: Bandit's Knife: 2H Guard Break
+180102400 NPC: Bandit's Knife: Riposte
+180102500 NPC: Bandit's Knife: Guard Break 
+180102600 NPC: Bandit's Knife: Backstab 
+180110100 NPC: Mytha's Bent Blade: 1H Weak 1 
+180110200 NPC: Mytha's Bent Blade: 1H Weak 2 
+180110300 NPC: Mytha's Bent Blade: 1H Strong 1 
+180110400 NPC: Mytha's Bent Blade: 1H Strong 2 
+180110500 NPC: Mytha's Bent Blade: 1H Dash 
+180110600 NPC: Mytha's Bent Blade: 1H Roll 
+180110700 NPC: Mytha's Bent Blade: 1H Step 
+180110800 NPC: Mytha's Bent Blade: 1H Down 
+180110900 NPC: Mytha's Bent Blade: 1H Fall 
+180111000 NPC: Mytha's Bent Blade: 1H Jump 
+180111100 NPC: Mytha's Bent Blade: 2H Weak 1 
+180111200 NPC: Mytha's Bent Blade: 2H Weak 2 
+180111300 NPC: Mytha's Bent Blade: 2H Strong 1 
+180111400 NPC: Mytha's Bent Blade: 2H Strong 2 
+180111500 NPC: Mytha's Bent Blade: 2H Dash 
+180111600 NPC: Mytha's Bent Blade: 2H Roll 
+180111700 NPC: Mytha's Bent Blade: 2H Step 
+180111800 NPC: Mytha's Bent Blade: DW 2H Weak 1 - Back Arm
+180111900 NPC: Mytha's Bent Blade: DW 2H Weak 1 
+180112000 NPC: Mytha's Bent Blade: DW 2H Weak 2 
+180112100 NPC: Mytha's Bent Blade: DW 2H strong 1
+180112200 NPC: Mytha's Bent Blade: 1H Guard Break
+180112300 NPC: Mytha's Bent Blade: 2H Guard Break
+180112400 NPC: Mytha's Bent Blade: Riposte 
+180112500 NPC: Mytha's Bent Blade: Guard Break 
+180112600 NPC: Mytha's Bent Blade: Backstab 
+180200100 NPC: Ricard's Rapier: 1H Weak 1 
+180200200 NPC: Ricard's Rapier: 1H Weak 2 
+180200300 NPC: Ricard's Rapier: 1H Strong 1 
+180200400 NPC: Ricard's Rapier: 1H Strong 2 
+180200500 NPC: Ricard's Rapier: 1H Dash 
+180200600 NPC: Ricard's Rapier: 1H Roll 
+180200700 NPC: Ricard's Rapier: 1H Step 
+180200800 NPC: Ricard's Rapier: 1H Down 
+180200900 NPC: Ricard's Rapier: 1H Fall 
+180201000 NPC: Ricard's Rapier: 1H Jump 
+180201100 NPC: Ricard's Rapier: 2H Weak 1 
+180201200 NPC: Ricard's Rapier: 2H Weak 2 
+180201300 NPC: Ricard's Rapier: 2H Strong 1 
+180201400 NPC: Ricard's Rapier: 2H Strong 2 
+180201500 NPC: Ricard's Rapier: 2H Dash 
+180201600 NPC: Ricard's Rapier: 2H Roll 
+180201700 NPC: Ricard's Rapier: 2H Step 
+180201800 NPC: Ricard's Rapier: 2H Weak 
+180201900 NPC: Ricard's Rapier: DW 2H Weak 1 
+180202000 NPC: Ricard's Rapier: DW 2H Weak 2 
+180202100 NPC: Ricard's Rapier: DW 2H Strong 1
+180202200 NPC: Ricard's Rapier: 1H Guard Break
+180202300 NPC: Ricard's Rapier: 2H Guard Break
+180202400 NPC: Ricard's Rapier: Riposte 
+180202500 NPC: Ricard's Rapier: Guard Break 
+180202600 NPC: Ricard's Rapier: Backstab 
+180210100 NPC: Estoc: 1H Weak 1 
+180210200 NPC: Estoc: 1H Weak 2 
+180210300 NPC: Estoc: 1H Strong 1 
+180210400 NPC: Estoc: 1H Strong 2 
+180210500 NPC: Estoc: 1H Dash 
+180210600 NPC: Estoc: 1H Roll 
+180210700 NPC: Estoc: 1H Step 
+180210800 NPC: Estoc: 1H Down 
+180210900 NPC: Estoc: 1H Fall 
+180211000 NPC: Estoc: 1H Jump 
+180211100 NPC: Estoc: 2H Weak 1 
+180211200 NPC: Estoc: 2H Weak 2 
+180211300 NPC: Estoc: 2H Strong 1 
+180211400 NPC: Estoc: 2H Strong 2 
+180211500 NPC: Estoc: 2H Dash 
+180211600 NPC: Estoc: 2H Roll 
+180211700 NPC: Estoc: 2H Step 
+180211800 NPC: Estoc: DW 2H Weak 1 - Back Arm
+180211900 NPC: Estoc: DW 2H Weak 1 
+180212000 NPC: Estoc: DW 2H Weak 2 
+180212100 NPC: Estoc: DW 2H Strong 
+180212200 NPC: Estoc: 1H Guard Break
+180212300 NPC: Estoc: 2H Guard Break
+180212400 NPC: Estoc: Riposte
+180212500 NPC: Estoc: Guard Break 
+180212600 NPC: Estoc: Backstab 
+180220100 NPC: Dagger: 1H Weak 1 
+180220200 NPC: Dagger: 1H Weak 2 
+180220300 NPC: Dagger: 1H Strong 1 
+180220400 NPC: Dagger: 1H Strong 2 
+180220500 NPC: Dagger: 1H Dash 
+180220600 NPC: Dagger: 1H Roll 
+180220700 NPC: Dagger: 1H Step 
+180220800 NPC: Dagger: 1H Down 
+180220900 NPC: Dagger: 1H Fall 
+180221000 NPC: Dagger: 1H Jump 
+180221100 NPC: Dagger: 2H Weak 1 
+180221200 NPC: Dagger: 2H Weak 2 
+180221300 NPC: Dagger: 2H 1 
+180221400 NPC: Dagger: 2H 2 
+180221500 NPC: Dagger: 2H Dash 
+180221600 NPC: Dagger: 2H Roll 
+180221700 NPC: Dagger: 2H Step 
+180221800 NPC: Dagger: DW 2H Weak 1 - Back Arm
+180221900 NPC: Dagger: DW 2H Weak 1 
+180222000 NPC: Dagger: DW 2H Weak 2 
+180222100 NPC: Dagger: DW 2H Strong 
+180222200 NPC: Dagger: 1H Guard Break
+180222300 NPC: Dagger: 2H Guard Break
+180222400 NPC: Dagger: Riposte
+180222500 NPC: Dagger: Guard Break 
+180222600 NPC: Dagger: Backstab 
+180230100 NPC: Shadow Dagger: 1H Weak 1 
+180230200 NPC: Shadow Dagger: 1H Weak 2 
+180230300 NPC: Shadow Dagger: 1H Strong 1 
+180230400 NPC: Shadow Dagger: 1H Strong 2 
+180230500 NPC: Shadow Dagger: 1H Dash 
+180230600 NPC: Shadow Dagger: 1H Roll 
+180230700 NPC: Shadow Dagger: 1H Step 
+180230800 NPC: Shadow Dagger: 1H Down 
+180230900 NPC: Shadow Dagger: 1H Fall 
+180231000 NPC: Shadow Dagger: 1H Jump 
+180231100 NPC: Shadow Dagger: 2H Weak 1 
+180231200 NPC: Shadow Dagger: 2H Weak 2 
+180231300 NPC: Shadow Dagger: 2H Strong 1 
+180231400 NPC: Shadow Dagger: 2H Strong 2 
+180231500 NPC: Shadow Dagger: 2H Dash 
+180231600 NPC: Shadow Dagger: 2H Roll 
+180231700 NPC: Shadow Dagger: 2H Step 
+180231800 NPC: Shadow Dagger: DW 2H Weak 1 - Back Arm
+180231900 NPC: Shadow Dagger: DW 2H Weak 1 
+180232000 NPC: Shadow Dagger: DW 2H Weak 2 
+180232100 NPC: Shadow Dagger: DW 2H Strong 
+180232200 NPC: Shadow Dagger: 1H Guard Break
+180232300 NPC: Shadow Dagger: 2H Guard Break
+180232400 NPC: Shadow Dagger: Riposte 
+180232500 NPC: Shadow Dagger: Guard Break 
+180232600 NPC: Shadow Dagger: Backstab 
+180240100 NPC: Broken Thief Sword: 1H Weak 1 
+180240200 NPC: Broken Thief Sword: 1H Weak 2 
+180240300 NPC: Broken Thief Sword: 1H Strong 1 
+180240400 NPC: Broken Thief Sword: 1H Strong 2 
+180240500 NPC: Broken Thief Sword: 1H Dash 
+180240600 NPC: Broken Thief Sword: 1H Roll 
+180240700 NPC: Broken Thief Sword: 1H Step 
+180240800 NPC: Broken Thief Sword: 1H Down 
+180240900 NPC: Broken Thief Sword: 1H Fall 
+180241000 NPC: Broken Thief Sword: 1H Jump 
+180241100 NPC: Broken Thief Sword: 2H Weak 1 
+180241200 NPC: Broken Thief Sword: 2H Weak 2 
+180241300 NPC: Broken Thief Sword: 2H Strong 1 
+180241400 NPC: Broken Thief Sword: 2H Strong 2 
+180241500 NPC: Broken Thief Sword: 2H Dash 
+180241600 NPC: Broken Thief Sword: 2H Roll 
+180241700 NPC: Broken Thief Sword: 2H Step 
+180241800 NPC: Broken Thief Sword: DW 2H Weak 1 - Back Arm 
+180241900 NPC: Broken Thief Sword: DW 2H Weak 1 
+180242000 NPC: Broken Thief Sword: DW 2H Weak 2 
+180242100 NPC: Broken Thief Sword: DW 2H Strong 
+180242200 NPC: Broken Thief Sword: 1H Guard Break
+180242300 NPC: Broken Thief Sword: 2H Guard Break
+180242400 NPC: Broken Thief Sword: Riposte 
+180242500 NPC: Broken Thief Sword: Guard Break 
+180242600 NPC: Broken Thief Sword: Backstab 
+180300100 NPC: Falchion: 1H Weak 1 
+180300200 NPC: Falchion: 1H Weak 2 
+180300300 NPC: Falchion: 1H Strong 1 
+180300400 NPC: Falchion: 1H Strong 2 
+180300500 NPC: Falchion: 1H Dash 
+180300600 NPC: Falchion: 1H Roll 
+180300700 NPC: Falchion: 1H Step 
+180300800 NPC: Falchion: 1H Down 
+180300900 NPC: Falchion: 1H Fall 
+180301000 NPC: Falchion: 1H Jump 
+180301100 NPC: Falchion: 2H Weak 1 
+180301200 NPC: Falchion: 2H Weak 2 
+180301300 NPC: Falchion: 2H Strong 1 
+180301400 NPC: Falchion: 2H Strong 2 
+180301500 NPC: Falchion: 2H Dash 
+180301600 NPC: Falchion: 2H Roll 
+180301700 NPC: Falchion: 2H Step 
+180301800 NPC: Falchion: DW 2H Weak 1 - Back Arm 
+180301900 NPC: Falchion: DW 2H Weak 1 
+180302000 NPC: Falchion: DW 2H Weak 2 
+180302100 NPC: Falchion: DW 2H Strong 
+180302200 NPC: Falchion: 1H Guard Break
+180302300 NPC: Falchion: 2H Guard Break
+180302400 NPC: Falchion: Riposte
+180302500 NPC: Falchion: Guard Break 
+180302600 NPC: Falchion: Backstab 
+180310100 NPC: Monastery Scimitar: 1H Weak 1 
+180310200 NPC: Monastery Scimitar: 1H Weak 2 
+180310300 NPC: Monastery Scimitar: 1H Strong 1 
+180310400 NPC: Monastery Scimitar: 1H Strong 2 
+180310500 NPC: Monastery Scimitar: 1H Dash 
+180310600 NPC: Monastery Scimitar: 1H Roll 
+180310700 NPC: Monastery Scimitar: 1H Step 
+180310800 NPC: Monastery Scimitar: 1H Down 
+180310900 NPC: Monastery Scimitar: 1H Fall 
+180311000 NPC: Monastery Scimitar: 1H Jump 
+180311100 NPC: Monastery Scimitar: 2H Weak 1 
+180311200 NPC: Monastery Scimitar: 2H Weak 2 
+180311300 NPC: Monastery Scimitar: 2H Strong 1 
+180311400 NPC: Monastery Scimitar: 2H Strong 2 
+180311500 NPC: Monastery Scimitar: 2H Dash 
+180311600 NPC: Monastery Scimitar: 2H Roll 
+180311700 NPC: Monastery Scimitar: 2H Step 
+180311800 NPC: Monastery Scimitar: DW 2H Weak 1 - Back Arm
+180311900 NPC: Monastery Scimitar: DW 2H Weak 1 
+180312000 NPC: Monastery Scimitar: DW 2H Weak 2 
+180312100 NPC: Monastery Scimitar: DW 2H Arms Strong 
+180312200 NPC: Monastery Scimitar: 1H Guard Break
+180312300 NPC: Monastery Scimitar: 2H Guard Break
+180312400 NPC: Monastery Scimitar: Riposte 
+180312500 NPC: Monastery Scimitar: Guard Break 
+180312600 NPC: Monastery Scimitar: Backstab 
+180320100 NPC: Shotel: 1H Weak 1 
+180320200 NPC: Shotel: 1H Weak 2 
+180320300 NPC: Shotel: 1H Strong 1 
+180320400 NPC: Shotel: 1H Strong 2 
+180320500 NPC: Shotel: 1H Dash 
+180320600 NPC: Shotel: 1H Roll 
+180320700 NPC: Shotel: 1H Step 
+180320800 NPC: Shotel: 1H Down 
+180320900 NPC: Shotel: 1H Fall 
+180321000 NPC: Shotel: 1H Jump 
+180321100 NPC: Shotel: 2H Weak 1 
+180321200 NPC: Shotel: 2H Weak 2 
+180321300 NPC: Shotel: 2H Strong 1 
+180321400 NPC: Shotel: 2H Strong 2 
+180321500 NPC: Shotel: 2H Dash 
+180321600 NPC: Shotel: 2H Roll 
+180321700 NPC: Shotel: 2H Steps 
+180321800 NPC: Shotel: DW 2H Weak 1 - Back Arm 
+180321900 NPC: Shotel: DW 2H Weak 1 
+180322000 NPC: Shotel: DW 2H Weak 2 
+180322100 NPC: Shotel: DW 2H Strong 
+180322200 NPC: Shotel: 1H Guard Break
+180322300 NPC: Shotel: 2H Guard Break
+180322400 NPC: Shotel: Riposte
+180322500 NPC: Shotel: Guard Break 
+180322600 NPC: Shotel: Backstab 
+180330100 NPC: Warped Sword: 1H Weak 1 
+180330200 NPC: Warped Sword: 1H Weak 2 
+180330300 NPC: Warped Sword: 1H Strong 1 
+180330400 NPC: Warped Sword: 1H Strong 2 
+180330500 NPC: Warped Sword: 1H Dash 
+180330600 NPC: Warped Sword: 1H Roll 
+180330700 NPC: Warped Sword: 1H step 
+180330800 NPC: Warped Sword: 1H Down 
+180330900 NPC: Warped Sword: 1H Fall 
+180331000 NPC: Warped Sword: 1H Jump 
+180331100 NPC: Warped Sword: 2H Weak 1 
+180331200 NPC: Warped Sword: 2H Weak 2 
+180331300 NPC: Warped Sword: 2H Strong 1 
+180331400 NPC: Warped Sword: 2H Strong 2 
+180331500 NPC: Warped Sword: 2H Dash 
+180331600 NPC: Warped Sword: 2H Roll 
+180331700 NPC: Warped Sword: 2H step 
+180331800 NPC: Warped Sword: DW 2H Weak 1 - Back Arm 
+180331900 NPC: Warped Sword: DW 2H Weak 1 
+180332000 NPC: Warped Sword: DW 2H Weak 2 
+180332100 NPC: Warped Sword: DW 2H Strong 
+180332200 NPC: Warped Sword: 1H Guard Break
+180332300 NPC: Warped Sword: 2H Guard Break
+180332400 NPC: Warped Sword: Riposte 
+180332500 NPC: Warped Sword: Guard Break 
+180332600 NPC: Warped Sword: Backstab 
+180340100 NPC: Scimitar: 1H Weak 1 
+180340200 NPC: Scimitar: 1H Weak 2 
+180340300 NPC: Scimitar: 1H Strong 1 
+180340400 NPC: Scimitar: 1H Strong 2 
+180340500 NPC: Scimitar: 1H Dash 
+180340600 NPC: Scimitar: 1H Roll 
+180340700 NPC: Scimitar: 1H step 
+180340800 NPC: Scimitar: 1H Down 
+180340900 NPC: Scimitar: 1H Fall 
+180341000 NPC: Scimitar: 1H Jump 
+180341100 NPC: Scimitar: 2H Weak 1 
+180341200 NPC: Scimitar: 2H Weak 2 
+180341300 NPC: Scimitar: 2H Strong 1
+180341400 NPC: Scimitar: 2H Strong 2
+180341500 NPC: Scimitar: 2H Dash 
+180341600 NPC: Scimitar: 2H Roll 
+180341700 NPC: Scimitar: 2H Step 
+180341800 NPC: Scimitar: DW 2H Weak 1 - Back Arm 
+180341900 NPC: Scimitar: DW 2H Weak 1 
+180342000 NPC: Scimitar: DW 2H Weak 2 
+180342100 NPC: Scimitar: DW 2H Strong 
+180342200 NPC: Scimitar: 1H Guard Break
+180342300 NPC: Scimitar: 2H Guard Break
+180342400 NPC: Scimitar: Riposte
+180342500 NPC: Scimitar: Guard Break 
+180342600 NPC: Scimitar: Backstab 
+180400100 NPC: Berserker Blade: 1H Weak 1 
+180400200 NPC: Berserker Blade: 1H Weak 2 
+180400300 NPC: Berserker Blade: 1H Strong 1
+180400400 NPC: Berserker Blade: 1H Strong 2 
+180400500 NPC: Berserker Blade: 1H Dash 
+180400600 NPC: Berserker Blade: 1H Roll 
+180400700 NPC: Berserker Blade: 1H Step 
+180400800 NPC: Berserker Blade: 1H Dummy 
+180400900 NPC: Berserker Blade: 1H Fall 
+180401000 NPC: Berserker Blade: 1H Jump 
+180401100 NPC: Berserker Blade: 2H Weak 1 
+180401200 NPC: Berserker Blade: 2H Weak 2 
+180401300 NPC: Berserker Blade: 2H Strong 1 
+180401400 NPC: Berserker Blade: 2H Strong 2 
+180401500 NPC: Berserker Blade: 2H Dash 
+180401600 NPC: Berserker Blade: 2H Roll 
+180401700 NPC: Berserker Blade: 2H Step 
+180401800 NPC: Berserker Blade: DW 2H Weak 1
+180401900 NPC: Berserker Blade: DW 2H Weak 1
+180402000 NPC: Berserker Blade: DW 2H Weak 2
+180402100 NPC: Berserker Blade: DW 2H Strong 1
+180402200 NPC: Berserker Blade: 1H Guard Break
+180402300 NPC: Berserker Blade: 2H Guard Break
+180402400 NPC: Berserker Blade: Riposte 
+180402500 NPC: Berserker Blade: Guard Break 
+180402600 NPC: Berserker Blade: Backstab 
+180410100 NPC: Washing Pole: 1H Weak 1 
+180410200 NPC: Washing Pole: 1H Weak 2 
+180410300 NPC: Washing Pole: 1H Strong 1 
+180410400 NPC: Washing Pole: 1H Strong 2 
+180410500 NPC: Washing Pole: 1H Dash 
+180410600 NPC: Washing Pole: 1H Roll 
+180410700 NPC: Washing Pole: 1H Step 
+180410800 NPC: Washing Pole: 1H Down 
+180410900 NPC: Washing Pole: 1H Fall 
+180411000 NPC: Washing Pole: 1H Jump 
+180411100 NPC: Washing Pole: 2H Weak 1 
+180411200 NPC: Washing Pole: 2H Weak 2 
+180411300 NPC: Washing Pole: 2H Strong 1 
+180411400 NPC: Washing Pole: 2H Strong 2 
+180411500 NPC: Washing Pole: 2H Dash 
+180411600 NPC: Washing Pole: 2H Roll 
+180411700 NPC: Washing Pole: 2H Step 
+180411800 NPC: Washing Pole: DW 2H Weak 1 - Back Arm
+180411900 NPC: Washing Pole: DW 2H Weak 1 
+180412000 NPC: Washing Pole: DW 2H Weak 2
+180412100 NPC: Washing Pole: DW 2H Strong 
+180412200 NPC: Washing Pole: 1H Guard Break
+180412300 NPC: Washing Pole: 2H Guard Break
+180412400 NPC: Washing Pole: Riposte 
+180412500 NPC: Washing Pole: Guard Break 
+180412600 NPC: Washing Pole: Backstab 
+180500100 NPC: Broadsword: 1H Weak 1 
+180500200 NPC: Broadsword: 1H Weak 2 
+180500300 NPC: Broadsword: 1H Strong 1 
+180500400 NPC: Broadsword: 1H Strong 2 
+180500500 NPC: Broadsword: 1H Dash 
+180500600 NPC: Broadsword: 1H Roll 
+180500700 NPC: Broadsword: 1H Step 
+180500800 NPC: Broadsword: 1H Down 
+180500900 NPC: Broadsword: 1H Fall 
+180501000 NPC: Broadsword: 1H Jump 
+180501100 NPC: Broadsword: 2H Weak 1 
+180501200 NPC: Broadsword: 2H Weak 2 
+180501300 NPC: Broadsword: 2H Strong 1 
+180501400 NPC: Broadsword: 2H Strong 2 
+180501500 NPC: Broadsword: 2H Dash 
+180501600 NPC: Broadsword: 2H Roll 
+180501700 NPC: Broadsword: 2H Step 
+180501800 NPC: Broadsword: DDW 2H Weak 1 - Back Arm
+180501900 NPC: Broadsword: DW 2H Weak 1 
+180502000 NPC: Broadsword: DW 2H Weak 2 
+180502100 NPC: Broadsword: DW 2H Strong 
+180502200 NPC: Broadsword: 1H Guard Break
+180502300 NPC: Broadsword: 2H Guard Break
+180502400 NPC: Broadsword: Riposte
+180502500 NPC: Broadsword: Guard Break 
+180502600 NPC: Broadsword: Backstab 
+180510100 NPC: Broken Straight Sword: 1H Weak 1 
+180510200 NPC: Broken Straight Sword: 1H Weak 2 
+180510300 NPC: Broken Straight Sword: 1H Strong 1 
+180510400 NPC: Broken Straight Sword: 1H Strong 2 
+180510500 NPC: Broken Straight Sword: 1H Dash 
+180510600 NPC: Broken Straight Sword: 1H Roll 
+180510700 NPC: Broken Straight Sword: 1H Step 
+180510800 NPC: Broken Straight Sword: 1H Down 
+180510900 NPC: Broken Straight Sword: 1H Fall 
+180511000 NPC: Broken Straight Sword: 1H Jump 
+180511100 NPC: Broken Straight Sword: 2H Weak 1 
+180511200 NPC: Broken Straight Sword: 2H Weak 2 
+180511300 NPC: Broken Straight Sword: 2H Strong 1 
+180511400 NPC: Broken Straight Sword: 2H Strong 2 
+180511500 NPC: Broken Straight Sword: 2H Dash 
+180511600 NPC: Broken Straight Sword: 2H Roll 
+180511700 NPC: Broken Straight Sword: 2H Step 
+180511800 NPC: Broken Straight Sword: DW 2H Weak 1 - Back Arm
+180511900 NPC: Broken Straight Sword: DW 2H Weak 1
+180512000 NPC: Broken Straight Sword: DW 2H Weak 2
+180512100 NPC: Broken Straight Sword: DW 2H Strong 
+180512200 NPC: Broken Straight Sword: 1H Guard Break
+180512300 NPC: Broken Straight Sword: 2H Guard Break
+180512400 NPC: Broken Straight Sword: Riposte 
+180512500 NPC: Broken Straight Sword: Guard Break 
+180512600 NPC: Broken Straight Sword: Backstab 
+180520100 NPC: Longsword: 1H Weak 1 
+180520200 NPC: Longsword: 1H Weak 2 
+180520300 NPC: Longsword: 1H Strong 1 
+180520400 NPC: Longsword: 1H Strong 2 
+180520500 NPC: Longsword: 1H Dash 
+180520600 NPC: Longsword: 1H Roll 
+180520700 NPC: Longsword: 1H Step 
+180520800 NPC: Longsword: 1H Down 
+180520900 NPC: Longsword: 1H Fall 
+180521000 NPC: Longsword: 1H Jump 
+180521100 NPC: Longsword: 2H Weak 1 
+180521200 NPC: Longsword: 2H Weak 2 
+180521300 NPC: Longsword: 2H Strong 1 
+180521400 NPC: Longsword: 2H Strong 2 
+180521500 NPC: Longsword: 2H Dash 
+180521600 NPC: Longsword: 2H Roll 
+180521700 NPC: Longsword: 2H Step 
+180521800 NPC: Longsword: 2H Weak 
+180521900 NPC: Longsword: DW 2H Weak 1 
+180522000 NPC: Longsword: DW 2H Weak 2 
+180522100 NPC: Longsword: DW 2H Strong 
+180522200 NPC: Longsword: 1H Guard Break
+180522300 NPC: Longsword: 2H Guard Break
+180522400 NPC: Longsword: Riposte
+180522500 NPC: Longsword: Guard Break 
+180522600 NPC: Longsword: Backstab 
+180530100 NPC: Shortsword: 1H Weak 1 
+180530200 NPC: Shortsword: 1H Weak 2 
+180530300 NPC: Shortsword: 1H Strong 1 
+180530400 NPC: Shortsword: 1H Strong 2 
+180530500 NPC: Shortsword: 1H Dash 
+180530600 NPC: Shortsword: 1H Roll 
+180530700 NPC: Shortsword: 1H Step 
+180530800 NPC: Shortsword: 1H Down 
+180530900 NPC: Shortsword: 1H Fall 
+180531000 NPC: Shortsword: 1H Jump 
+180531100 NPC: Shortsword: 2H Weak 1 
+180531200 NPC: Shortsword: 2H Weak 2 
+180531300 NPC: Shortsword: 2H 1 
+180531400 NPC: Shortsword: 2H 2 
+180531500 NPC: Shortsword: 2H Dash 
+180531600 NPC: Shortsword: 2H Roll 
+180531700 NPC: Shortsword: 2H Step 
+180531800 NPC: Shortsword: DW 2H Weak 1 - Back Arm
+180531900 NPC: Shortsword: DW 2H Weak 1
+180532000 NPC: Shortsword: DW 2H Weak 2
+180532100 NPC: Shortsword: DW 2H Strong 1
+180532200 NPC: Shortsword: 1H Guard Break
+180532300 NPC: Shortsword: 2H Guard Break
+180532400 NPC: Shortsword: Riposte
+180532500 NPC: Shortsword: Guard Break 
+180532600 NPC: Shortsword: Backstab 
+180540100 NPC: Heide Knight Sword: 1H Weak 1 
+180540200 NPC: Heide Knight Sword: 1H Weak 2 
+180540300 NPC: Heide Knight Sword: 1H Strong 1 
+180540400 NPC: Heide Knight Sword: 1H Strong 2 
+180540500 NPC: Heide Knight Sword: 1H Dash 
+180540600 NPC: Heide Knight Sword: 1H Roll 
+180540700 NPC: Heide Knight Sword: 1H Step 
+180540800 NPC: Heide Knight Sword: 1H Down 
+180540900 NPC: Heide Knight Sword: 1H Fall 
+180541000 NPC: Heide Knight Sword: 1H Jump 
+180541100 NPC: Heide Knight Sword: 2H Weak 1 
+180541200 NPC: Heide Knight Sword: 2H Weak 2 
+180541300 NPC: Heide Knight Sword: 2H Strong 1 
+180541400 NPC: Heide Knight Sword: 2H Strong 2 
+180541500 NPC: Heide Knight Sword: 2H Dash 
+180541600 NPC: Heide Knight Sword: 2H Roll 
+180541700 NPC: Heide Knight Sword: 2H Step 
+180541800 NPC: Heide Knight Sword: DW 2H Weak 1 - Back Arm
+180541900 NPC: Heide Knight Sword: DW 2H Weak 1 
+180542000 NPC: Heide Knight Sword: DW 2H Weak 2 
+180542100 NPC: Heide Knight Sword: DW 2H Strong 
+180542200 NPC: Heide Knight Sword: 1H Guard Break
+180542300 NPC: Heide Knight Sword: 2H Guard Break
+180542400 NPC: Heide Knight Sword: Riposte 
+180542500 NPC: Heide Knight Sword: Guard Break 
+180542600 NPC: Heide Knight Sword: Backstab 
+180550100 NPC: Black Dragon Sword: 1H Weak 1 
+180550200 NPC: Black Dragon Sword: 1H Weak 2 
+180550300 NPC: Black Dragon Sword: 1H Strong 1 
+180550400 NPC: Black Dragon Sword: 1H Strong 2 
+180550500 NPC: Black Dragon Sword: 1H Dash 
+180550600 NPC: Black Dragon Sword: 1H Roll 
+180550700 NPC: Black Dragon Sword: 1H Step 
+180550800 NPC: Black Dragon Sword: 1H Down 
+180550900 NPC: Black Dragon Sword: 1H Fall 
+180551000 NPC: Black Dragon Sword: 1H Jump 
+180551100 NPC: Black Dragon Sword: 2H Weak 1 
+180551200 NPC: Black Dragon Sword: 2H Weak 2 
+180551300 NPC: Black Dragon Sword: 2H Strong 1 
+180551400 NPC: Black Dragon Sword: 2H Strong 2 
+180551500 NPC: Black Dragon Sword: 2H Dash 
+180551600 NPC: Black Dragon Sword: 2H Roll 
+180551700 NPC: Black Dragon Sword: 2H Step 
+180551800 NPC: Black Dragon Sword: DW 2H Weak 1 - Back Arm
+180551900 NPC: Black Dragon Sword: DW 2H Weak 1 
+180552000 NPC: Black Dragon Sword: DW 2H Weak 2 
+180552100 NPC: Black Dragon Sword: DW 2H Strong 
+180552200 NPC: Black Dragon Sword: 1H Guard Break
+180552300 NPC: Black Dragon Sword: 2H Guard Break
+180552400 NPC: Black Dragon Sword: Riposte 
+180552500 NPC: Black Dragon Sword: Guard Break 
+180552600 NPC: Black Dragon Sword: Backstab 
+180560100 NPC: Blue Flame: 1H Weak 1 
+180560200 NPC: Blue Flame: 1H Weak 2 
+180560300 NPC: Blue Flame: 1H Strong 1 
+180560400 NPC: Blue Flame: 1H Strong 2 
+180560500 NPC: Blue Flame: 1H Dash 
+180560600 NPC: Blue Flame: 1H Roll 
+180560700 NPC: Blue Flame: 1H Step 
+180560800 NPC: Blue Flame: 1H Down 
+180560900 NPC: Blue Flame: 1H Fall 
+180561000 NPC: Blue Flame: 1H Jump 
+180561100 NPC: Blue Flame: 2H Weak 1 
+180561200 NPC: Blue Flame: 2H Weak 2 
+180561300 NPC: Blue Flame: 2H Strong 1 
+180561400 NPC: Blue Flame: 2H Strong 2 
+180561500 NPC: Blue Flame: 2H Dash 
+180561600 NPC: Blue Flame: 2H Roll 
+180561700 NPC: Blue Flame: 2H Step 
+180561800 NPC: Blue Flame: DW 2H Weak 1  - Back Arm
+180561900 NPC: Blue Flame: DW 2H Weak 1 
+180562000 NPC: Blue Flame: DW 2H Weak 2 
+180562100 NPC: Blue Flame: DW 2H Strong 1
+180562200 NPC: Blue Flame: 1H Guard Break
+180562300 NPC: Blue Flame: 2H Guard Break
+180562400 NPC: Blue Flame: Riposte
+180562500 NPC: Blue Flame: Guard Break 
+180562600 NPC: Blue Flame: Backstab 
+180600100 NPC: Bastard Sword: 1H Weak 1 
+180600200 NPC: Bastard Sword: 1H Weak 2 
+180600300 NPC: Bastard Sword: 1H Strong 1 
+180600400 NPC: Bastard Sword: 1H Strong 2 
+180600500 NPC: Bastard Sword: 1H Dash 
+180600600 NPC: Bastard Sword: 1H Roll 
+180600700 NPC: Bastard Sword: 1H Step 
+180600800 NPC: Bastard Sword: 1H Down 
+180600900 NPC: Bastard Sword: 1H Fall 
+180601000 NPC: Bastard Sword: 1H Jump 
+180601100 NPC: Bastard Sword: 2H Weak 1 
+180601200 NPC: Bastard Sword: 2H Weak 2 
+180601300 NPC: Bastard Sword: 2H Strong 1 
+180601400 NPC: Bastard Sword: 2H Strong 2 
+180601500 NPC: Bastard Sword: 2H Dash 
+180601600 NPC: Bastard Sword: 2H Roll 
+180601700 NPC: Bastard Sword: 2H Step 
+180601800 NPC: Bastard Sword: DW 2H Weak 1 - Back Arm
+180601900 NPC: Bastard Sword: DW 2H Weak 1
+180602000 NPC: Bastard Sword: DW 2H Weak 2 
+180602100 NPC: Bastard Sword: DW 2H Strong 1
+180602200 NPC: Bastard Sword: 1H Guard Break
+180602300 NPC: Bastard Sword: 2H Guard Break
+180602400 NPC: Bastard Sword: Riposte 
+180602500 NPC: Bastard Sword: Guard Break 
+180602600 NPC: Bastard Sword: Backstab 
+180610100 NPC: Black Dragon Greatsword: 1H Weak 1 
+180610200 NPC: Black Dragon Greatsword: 1H Weak 2 
+180610300 NPC: Black Dragon Greatsword: 1H Strong 1 
+180610400 NPC: Black Dragon Greatsword: 1H Strong 2 
+180610500 NPC: Black Dragon Greatsword: 1H Dash 
+180610600 NPC: Black Dragon Greatsword: 1H Roll 
+180610700 NPC: Black Dragon Greatsword: 1H Step 
+180610800 NPC: Black Dragon Greatsword: 1H Down 
+180610900 NPC: Black Dragon Greatsword: 1H Fall 
+180611000 NPC: Black Dragon Greatsword: 1H Jump 
+180611100 NPC: Black Dragon Greatsword: 2H Weak 1 
+180611200 NPC: Black Dragon Greatsword: 2H Weak 2 
+180611300 NPC: Black Dragon Greatsword: 2H Strong 1 
+180611400 NPC: Black Dragon Greatsword: 2H Strong 2 
+180611500 NPC: Black Dragon Greatsword: 2H Dash 
+180611600 NPC: Black Dragon Greatsword: 2H Roll 
+180611700 NPC: Black Dragon Greatsword: 2H Step 
+180611800 NPC: Black Dragon Greatsword: DW 2H Weak 1 - Back Arm
+180611900 NPC: Black Dragon Greatsword: DW 2H Weak 1 
+180612000 NPC: Black Dragon Greatsword: DW 2H Weak 2 
+180612100 NPC: Black Dragon Greatsword: DW 2H Strong 1
+180612200 NPC: Black Dragon Greatsword: 1H Guard Break
+180612300 NPC: Black Dragon Greatsword: 2H Guard Break
+180612400 NPC: Black Dragon Greatsword: Riposte 
+180612500 NPC: Black Dragon Greatsword: Guard Break 
+180612600 NPC: Black Dragon Greatsword: Backstab 
+180620100 NPC: Mirrah Greatsword: 1H Weak 1 
+180620200 NPC: Mirrah Greatsword: 1H Weak 2 
+180620300 NPC: Mirrah Greatsword: 1H Strong 1 
+180620400 NPC: Mirrah Greatsword: 1H Strong 2 
+180620500 NPC: Mirrah Greatsword: 1H Dash 
+180620600 NPC: Mirrah Greatsword: 1H Roll 
+180620700 NPC: Mirrah Greatsword: 1H Step 
+180620800 NPC: Mirrah Greatsword: 1H Down 
+180620900 NPC: Mirrah Greatsword: 1H Fall 
+180621000 NPC: Mirrah Greatsword: 1H Jump 
+180621100 NPC: Mirrah Greatsword: 2H Weak 1 
+180621200 NPC: Mirrah Greatsword: 2H Weak 2 
+180621300 NPC: Mirrah Greatsword: 2H Strong 1 
+180621400 NPC: Mirrah Greatsword: 2H Strong 2 
+180621500 NPC: Mirrah Greatsword: 2H Dash 
+180621600 NPC: Mirrah Greatsword: 2H Roll 
+180621700 NPC: Mirrah Greatsword: 2H Step 
+180621800 NPC: Mirrah Greatsword: DW 2H Weak 1 - Back Arm
+180621900 NPC: Mirrah Greatsword: DW 2H Weak 1
+180622000 NPC: Mirrah Greatsword: DW 2H Weak 2
+180622100 NPC: Mirrah Greatsword: DW 2H Strong 1
+180622200 NPC: Mirrah Greatsword: 1H Guard Break
+180622300 NPC: Mirrah Greatsword: 2H Guard Break
+180622400 NPC: Mirrah Greatsword: Riposte
+180622500 NPC: Mirrah Greatsword: Guard Break 
+180622600 NPC: Mirrah Greatsword: Backstab 
+180630100 NPC: Ruler's Sword: 1H Weak 1 
+180630200 NPC: Ruler's Sword: 1H Weak 2 
+180630300 NPC: Ruler's Sword: 1H Strong 1 
+180630400 NPC: Ruler's Sword: 1H Strong 2 
+180630500 NPC: Ruler's Sword: 1H Dash 
+180630600 NPC: Ruler's Sword: 1H Roll 
+180630700 NPC: Ruler's Sword: 1H Step 
+180630800 NPC: Ruler's Sword: 1H Down 
+180630900 NPC: Ruler's Sword: 1H Fall 
+180631000 NPC: Ruler's Sword: 1H Jump 
+180631100 NPC: Ruler's Sword: 2H Weak 1 
+180631200 NPC: Ruler's Sword: 2H Weak 2 
+180631300 NPC: Ruler's Sword: 2H Strong 1 
+180631400 NPC: Ruler's Sword: 2H Strong 2 
+180631500 NPC: Ruler's Sword: 2H Dash 
+180631600 NPC: Ruler's Sword: 2H Roll 
+180631700 NPC: Ruler's Sword: 2H Step 
+180631800 NPC: Ruler's Sword: DW 2H Weak 1 - Back Arm
+180631900 NPC: Ruler's Sword: DW 2H Weak 1
+180632000 NPC: Ruler's Sword: DW 2H Weak 2
+180632100 NPC: Ruler's Sword: DW 2H Strong 1
+180632200 NPC: Ruler's Sword: 1H Guard Break
+180632300 NPC: Ruler's Sword: 2H Guard Break
+180632400 NPC: Ruler's Sword: Riposte 
+180632500 NPC: Ruler's Sword: Guard Break 
+180632600 NPC: Ruler's Sword: Backstab 
+180640100 NPC: Mastodon Greatsword: 1H Weak 1 
+180640200 NPC: Mastodon Greatsword: 1H Weak 2 
+180640300 NPC: Mastodon Greatsword: 1H Strong 1 
+180640400 NPC: Mastodon Greatsword: 1H Strong 2 
+180640500 NPC: Mastodon Greatsword: 1H Dash 
+180640600 NPC: Mastodon Greatsword: 1H Roll 
+180640700 NPC: Mastodon Greatsword: 1H Step 
+180640800 NPC: Mastodon Greatsword: 1H Down 
+180640900 NPC: Mastodon Greatsword: 1H Fall 
+180641000 NPC: Mastodon Greatsword: 1H Jump 
+180641100 NPC: Mastodon Greatsword: 2H Weak 1 
+180641200 NPC: Mastodon Greatsword: 2H Weak 2 
+180641300 NPC: Mastodon Greatsword: 2H Strong 1 
+180641400 NPC: Mastodon Greatsword: 2H Strong 2 
+180641500 NPC: Mastodon Greatsword: 2H Dash 
+180641600 NPC: Mastodon Greatsword: 2H Roll 
+180641700 NPC: Mastodon Greatsword: 2H Step 
+180641800 NPC: Mastodon Greatsword: DW 2H Weak 1 - Back Arm
+180641900 NPC: Mastodon Greatsword: DW 2H Weak 1 
+180642000 NPC: Mastodon Greatsword: DW 2H Weak 2 
+180642100 NPC: Mastodon Greatsword: DW 2H Strong 1
+180642200 NPC: Mastodon Greatsword: 1H Guard Break
+180642300 NPC: Mastodon Greatsword: 2H Guard Break
+180642400 NPC: Mastodon Greatsword: Riposte 
+180642500 NPC: Mastodon Greatsword: Guard Break 
+180642600 NPC: Mastodon Greatsword: Backstab 
+180700100 NPC: Zweihander: 1H Weak 1 
+180700200 NPC: Zweihander: 1H Weak 2 
+180700300 NPC: Zweihander: 1H Strong 1 
+180700400 NPC: Zweihander: 1H Strong 2 
+180700500 NPC: Zweihander: 1H Dash 
+180700600 NPC: Zweihander: 1H Roll 
+180700700 NPC: Zweihander: 1H Step 
+180700800 NPC: Zweihander: 1H Down 
+180700900 NPC: Zweihander: 1H Fall 
+180701000 NPC: Zweihander: 1H Jump 
+180701100 NPC: Zweihander: 2H Weak 1 
+180701200 NPC: Zweihander: 2H Weak 2 
+180701300 NPC: Zweihander: 2H Strong 1 
+180701400 NPC: Zweihander: 2H Strong 2 
+180701500 NPC: Zweihander: 2H Dash 
+180701600 NPC: Zweihander: 2H Roll 
+180701700 NPC: Zweihander: 2H Step 
+180701800 NPC: Zweihander: DW 2H Weak 1 - Back Arm
+180701900 NPC: Zweihander: DW 2H Weak 1 
+180702000 NPC: Zweihander: DW 2H Weak 2 
+180702100 NPC: Zweihander: DW 2H Strong 1
+180702200 NPC: Zweihander: 1H Guard Break
+180702300 NPC: Zweihander: 2H Guard Break
+180702400 NPC: Zweihander: Riposte
+180702500 NPC: Zweihander: Guard Break 
+180702600 NPC: Zweihander: Backstab 
+180710100 NPC: Greatsword: 1H Weak 1 
+180710200 NPC: Greatsword: 1H Weak 2 
+180710300 NPC: Greatsword: 1H Strong 1 
+180710400 NPC: Greatsword: 1H Strong 2 
+180710500 NPC: Greatsword: 1H Dash 
+180710600 NPC: Greatsword: 1H Roll 
+180710700 NPC: Greatsword: 1H Step 
+180710800 NPC: Greatsword: 1H Down 
+180710900 NPC: Greatsword: 1H Fall 
+180711000 NPC: Greatsword: 1H Jump 
+180711100 NPC: Greatsword: 2H Weak 1 
+180711200 NPC: Greatsword: 2H Weak 2 
+180711300 NPC: Greatsword: 2H Strong 1 
+180711400 NPC: Greatsword: 2H Strong 2 
+180711500 NPC: Greatsword: 2H Dash 
+180711600 NPC: Greatsword: 2H Roll 
+180711700 NPC: Greatsword: 2H Steps 
+180711800 NPC: Greatsword: DW 2H Weak 1  - Back Arm
+180711900 NPC: Greatsword: DW 2H Weak 1 
+180712000 NPC: Greatsword: DW 2H Weak 2 
+180712100 NPC: Greatsword: DW 2H Strong 1
+180712200 NPC: Greatsword: 1H Guard Break
+180712300 NPC: Greatsword: 2H Guard Break
+180712400 NPC: Greatsword: Riposte
+180712500 NPC: Greatsword: Guard Break 
+180712600 NPC: Greatsword: Backstab 
+180800100 NPC: Great Scythe: 1H Weak 1 
+180800200 NPC: Great Scythe: 1H Weak 2 
+180800300 NPC: Great Scythe: 1H Strong 1 
+180800400 NPC: Great Scythe: 1H Strong 2 
+180800500 NPC: Great Scythe: 1H Dash 
+180800600 NPC: Great Scythe: 1H Roll 
+180800700 NPC: Great Scythe: 1H Step 
+180800800 NPC: Great Scythe: 1H Down 
+180800900 NPC: Great Scythe: 1H Fall 
+180801000 NPC: Great Scythe: 1H Jump 
+180801100 NPC: Great Scythe: 2H Weak 1 
+180801200 NPC: Great Scythe: 2H Weak 2 
+180801300 NPC: Great Scythe: 2H Strong 1 
+180801400 NPC: Great Scythe: 2H Strong 2 
+180801500 NPC: Great Scythe: 2H Dash 
+180801600 NPC: Great Scythe: 2H Roll 
+180801700 NPC: Great Scythe: 2H Step 
+180801800 NPC: Great Scythe: DW 2H Weak 1 - Back Arm
+180801900 NPC: Great Scythe: DW 2H Weak 1 
+180802000 NPC: Great Scythe: DW 2H Weak 2 
+180802100 NPC: Great Scythe: DW 2H Strong 1
+180802200 NPC: Great Scythe: 1H Guard Break
+180802300 NPC: Great Scythe: 2H Guard Break
+180802400 NPC: Great Scythe: Riposte
+180802500 NPC: Great Scythe: Guard Break 
+180802600 NPC: Great Scythe: Backstab 
+180810100 NPC: B1 Scythe: 1H Weak 1 
+180810200 NPC: B1 Scythe: 1H Weak 2 
+180810300 NPC: B1 Scythe: 1H Strong 1 
+180810400 NPC: B1 Scythe: 1H Strong 2 
+180810500 NPC: B1 Scythe: 1H Dash 
+180810600 NPC: B1 Scythe: 1H Roll 
+180810700 NPC: B1 Scythe: 1H Step 
+180810800 NPC: B1 Scythe: 1H Down 
+180810900 NPC: B1 Scythe: 1H Fall 
+180811000 NPC: B1 Scythe: 1H Jump 
+180811100 NPC: B1 Scythe: 2H Weak 1 
+180811200 NPC: B1 Scythe: 2H Weak 2 
+180811300 NPC: B1 Scythe: 2H Strong 1 
+180811400 NPC: B1 Scythe: 2H Strong 2 
+180811500 NPC: B1 Scythe: 2H Dash 
+180811600 NPC: B1 Scythe: 2H Roll 
+180811700 NPC: B1 Scythe: 2H Step 
+180811800 NPC: B1 Scythe: DW 2H Weak 1 - Back Arm
+180811900 NPC: B1 Scythe: DW 2H Weak 1
+180812000 NPC: B1 Scythe: DW 2H Weak 2 
+180812100 NPC: B1 Scythe: DW 2H Strong 1
+180812200 NPC: B1 Scythe: 1H Guard Break
+180812300 NPC: B1 Scythe: 2H Guard Break
+180812400 NPC: B1 Scythe: Riposte
+180812500 NPC: B1 Scythe: Guard Break 
+180812600 NPC: B1 Scythe: Backstab 
+180820100 NPC: Full Moon Sickle: 1H Weak 1 
+180820200 NPC: Full Moon Sickle: 1H Weak 2 
+180820300 NPC: Full Moon Sickle: 1H Strong 1 
+180820400 NPC: Full Moon Sickle: 1H Strong 2 
+180820500 NPC: Full Moon Sickle: 1H Dash 
+180820600 NPC: Full Moon Sickle: 1H Roll 
+180820700 NPC: Full Moon Sickle: 1H Step 
+180820800 NPC: Full Moon Sickle: 1H Down 
+180820900 NPC: Full Moon Sickle: 1H Fall 
+180821000 NPC: Full Moon Sickle: 1H Jump 
+180821100 NPC: Full Moon Sickle: 2H Weak 1 
+180821200 NPC: Full Moon Sickle: 2H Weak 2 
+180821300 NPC: Full Moon Sickle: 2H Strong 1 
+180821400 NPC: Full Moon Sickle: 2H Strong 2 
+180821500 NPC: Full Moon Sickle: 2H Dash 
+180821600 NPC: Full Moon Sickle: 2H Roll 
+180821700 NPC: Full Moon Sickle: 2H Step 
+180821800 NPC: Full Moon Sickle: DW 2H Weak 1 - Back Arm
+180821900 NPC: Full Moon Sickle: DW 2H Weak 1 
+180822000 NPC: Full Moon Sickle: DW 2H Weak 2 
+180822100 NPC: Full Moon Sickle: DW 2H Strong 1
+180822200 NPC: Full Moon Sickle: 1H Guard Break
+180822300 NPC: Full Moon Sickle: 2H Guard Break
+180822400 NPC: Full Moon Sickle: Riposte 
+180822500 NPC: Full Moon Sickle: Guard Break
+180822600 NPC: Full Moon Sickle: Backstab 
+180900100 NPC: Stone Twinblade: 1H Weak 1 
+180900200 NPC: Stone Twinblade: 1H Weak 2 
+180900300 NPC: Stone Twinblade: 1H Strong 1 
+180900400 NPC: Stone Twinblade: 1H Strong 2 
+180900500 NPC: Stone Twinblade: 1H Dash 
+180900600 NPC: Stone Twinblade: 1H Roll 
+180900700 NPC: Stone Twinblade: 1H Step 
+180900800 NPC: Stone Twinblade: 1H Down 
+180900900 NPC: Stone Twinblade: 1H Fall 
+180901000 NPC: Stone Twinblade: 1H Jump 
+180901100 NPC: Stone Twinblade: 2H Weak 1 
+180901200 NPC: Stone Twinblade: 2H Weak 2 
+180901300 NPC: Stone Twinblade: 2H Strong 1 
+180901400 NPC: Stone Twinblade: 2H Strong 2 
+180901500 NPC: Stone Twinblade: 2H Dash 
+180901600 NPC: Stone Twinblade: 2H Roll 
+180901700 NPC: Stone Twinblade: 2H Step 
+180901800 NPC: Stone Twinblade: DW 2H Weak 1 - Back Arm
+180901900 NPC: Stone Twinblade: DW 2H Weak 1 
+180902000 NPC: Stone Twinblade: DW 2H Weak 2 
+180902100 NPC: Stone Twinblade: DW 2H Strong 1
+180902200 NPC: Stone Twinblade: 1H Guard Break
+180902300 NPC: Stone Twinblade: 2H Guard Break
+180902400 NPC: Stone Twinblade: Riposte 
+180902500 NPC: Stone Twinblade: Guard Break 
+180902600 NPC: Stone Twinblade: Backstab 
+181000100 NPC: Butcher's Knife: 1H Weak 1 
+181000200 NPC: Butcher's Knife: 1H Weak 2 
+181000300 NPC: Butcher's Knife: 1H Strong 1 
+181000400 NPC: Butcher's Knife: 1H Strong 2 
+181000500 NPC: Butcher's Knife: 1H Dash 
+181000600 NPC: Butcher's Knife: 1H Roll 
+181000700 NPC: Butcher's Knife: 1H Step 
+181000800 NPC: Butcher's Knife: 1H Down 
+181000900 NPC: Butcher's Knife: 1H Fall 
+181001000 NPC: Butcher's Knife: 1H Jump 
+181001100 NPC: Butcher's Knife: 2H Weak 1 
+181001200 NPC: Butcher's Knife: 2H Weak 2 
+181001300 NPC: Butcher's Knife: 2H Strong 1 
+181001400 NPC: Butcher's Knife: 2H Strong 2 
+181001500 NPC: Butcher's Knife: 2H Dash 
+181001600 NPC: Butcher's Knife: 2H Roll 
+181001700 NPC: Butcher's Knife: 2H Step 
+181001800 NPC: Butcher's Knife: DW 2H Weak 1 - Back Arm
+181001900 NPC: Butcher's Knife: DW 2H Weak 1
+181002000 NPC: Butcher's Knife: DW 2H Weak 2
+181002100 NPC: Butcher's Knife: DW 2H Strong 1
+181002200 NPC: Butcher's Knife: 1H Guard Break
+181002300 NPC: Butcher's Knife: 2H Guard Break
+181002400 NPC: Butcher's Knife: Riposte 
+181002500 NPC: Butcher's Knife: Guard Break 
+181002600 NPC: Butcher's Knife: Backstab 
+181100100 NPC: Greataxe: 1H Weak 1 
+181100200 NPC: Greataxe: 1H Weak 2 
+181100300 NPC: Greataxe: 1H Strong 1 
+181100400 NPC: Greataxe: 1H Strong 2 
+181100500 NPC: Greataxe: 1H Dash 
+181100600 NPC: Greataxe: 1H Roll 
+181100700 NPC: Greataxe: 1H Step 
+181100800 NPC: Greataxe: 1H Down 
+181100900 NPC: Greataxe: 1H Fall 
+181101000 NPC: Greataxe: 1H Jump 
+181101100 NPC: Greataxe: 2H Weak 1 
+181101200 NPC: Greataxe: 2H Weak 2 
+181101300 NPC: Greataxe: 2H Strong 1 
+181101400 NPC: Greataxe: 2H Strong 2 
+181101500 NPC: Greataxe: 2H Dash 
+181101600 NPC: Greataxe: 2H Roll 
+181101700 NPC: Greataxe: 2H Step
+181101800 NPC: Greataxe: DW 2H Weak 1  - Back Arm
+181101900 NPC: Greataxe: DW 2H Weak 1 
+181102000 NPC: Greataxe: DW 2H Weak 2 
+181102100 NPC: Greataxe: DW 2H Strong 1
+181102200 NPC: Greataxe: 1H Guard Break
+181102300 NPC: Greataxe: 2H Guard Break
+181102400 NPC: Greataxe: Riposte
+181102500 NPC: Greataxe: Guard Break 
+181102600 NPC: Greataxe: Backstab 
+181200100 NPC: Mace: 1H Weak 1 
+181200200 NPC: Mace: 1H Weak 2 
+181200300 NPC: Mace: 1H Strong 1 
+181200400 NPC: Mace: 1H Strong 2 
+181200500 NPC: Mace: 1H Dash 
+181200600 NPC: Mace: 1H Roll 
+181200700 NPC: Mace: 1H Step 
+181200800 NPC: Mace: 1H Down 
+181200900 NPC: Mace: 1H Fall 
+181201000 NPC: Mace: 1H Jump 
+181201100 NPC: Mace: 2H Weak 1 
+181201200 NPC: Mace: 2H Weak 2 
+181201300 NPC: Mace: 2H Strong 1 
+181201400 NPC: Mace: 2H Strong 2 
+181201500 NPC: Mace: 2H Dash 
+181201600 NPC: Mace: 2H Roll 
+181201700 NPC: Mace: 2H Step 
+181201800 NPC: Mace: DW 2H Weak 1 - Back Arm
+181201900 NPC: Mace: DW 2H Weak 1
+181202000 NPC: Mace: DW 2H Weak 2
+181202100 NPC: Mace: DW 2H Strong 1
+181202200 NPC: Mace: 1H Guard Break
+181202300 NPC: Mace: 2H Guard Break
+181202400 NPC: Mace: Riposte
+181202500 NPC: Mace: Guard Break 
+181202600 NPC: Mace: Backstab 
+181300100 NPC: Drakekeeper's Great Hammer: 1H Weak 1 
+181300200 NPC: Drakekeeper's Great Hammer: 1H Weak 2 
+181300300 NPC: Drakekeeper's Great Hammer: 1H Strong 1 
+181300400 NPC: Drakekeeper's Great Hammer: 1H Strong 2 
+181300500 NPC: Drakekeeper's Great Hammer: 1H Dash 
+181300600 NPC: Drakekeeper's Great Hammer: 1H Roll 
+181300700 NPC: Drakekeeper's Great Hammer: 1H Step 
+181300800 NPC: Drakekeeper's Great Hammer: 1H Down 
+181300900 NPC: Drakekeeper's Great Hammer: 1H Fall 
+181301000 NPC: Drakekeeper's Great Hammer: 1H Jump 
+181301100 NPC: Drakekeeper's Great Hammer: 2H Weak 1 
+181301200 NPC: Drakekeeper's Great Hammer: 2H Weak 2 
+181301300 NPC: Drakekeeper's Great Hammer: 2H Strong 1 
+181301400 NPC: Drakekeeper's Great Hammer: 2H Strong 2 
+181301500 NPC: Drakekeeper's Great Hammer: 2H Dash 
+181301600 NPC: Drakekeeper's Great Hammer: 2H Roll 
+181301700 NPC: Drakekeeper's Great Hammer: 2H Step 
+181301800 NPC: Drakekeeper's Great Hammer: DW 2H Weak 1 - Back Arm
+181301900 NPC: Drakekeeper's Great Hammer: DW 2H Weak 1
+181302000 NPC: Drakekeeper's Great Hammer: DW 2H Weak 2 
+181302100 NPC: Drakekeeper's Great Hammer: DW 2H Strong 1
+181302200 NPC: Drakekeeper's Great Hammer: 1H Guard Break
+181302300 NPC: Drakekeeper's Great Hammer: 2H Guard Break
+181302400 NPC: Drakekeeper's Great Hammer: Riposte
+181302500 NPC: Drakekeeper's Great Hammer: Guard Break 
+181302600 NPC: Drakekeeper's Great Hammer: Backstab 
+181310100 NPC: Pickaxe: 1H Weak 1 
+181310200 NPC: Pickaxe: 1H Weak 2 
+181310300 NPC: Pickaxe: 1H Strong 1 
+181310400 NPC: Pickaxe: 1H Strong 2 
+181310500 NPC: Pickaxe: 1H Dash 
+181310600 NPC: Pickaxe: 1H Roll 
+181310700 NPC: Pickaxe: 1H Step 
+181310800 NPC: Pickaxe: 1H Down 
+181310900 NPC: Pickaxe: 1H Fall 
+181311000 NPC: Pickaxe: 1H Jump 
+181311100 NPC: Pickaxe: 2H Weak 1 
+181311200 NPC: Pickaxe: 2H Weak 2 
+181311300 NPC: Pickaxe: 2H Strong 1 
+181311400 NPC: Pickaxe: 2H Strong 2
+181311500 NPC: Pickaxe: 2H Dash 
+181311600 NPC: Pickaxe: 2H Roll 
+181311700 NPC: Pickaxe: 2H Step 
+181311800 NPC: Pickaxe: DW 2H Weak 1 - Back Arm
+181311900 NPC: Pickaxe: DW 2H Weak 1 
+181312000 NPC: Pickaxe: DW 2H Weak 2 
+181312100 NPC: Pickaxe: DW 2H Strong 1
+181312200 NPC: Pickaxe: 1H Guard Break
+181312300 NPC: Pickaxe: 2H Guard Break
+181312400 NPC: Pickaxe: Riposte 
+181312500 NPC: Pickaxe: Guard Break 
+181312600 NPC: Pickaxe: Backstab 
+181320100 NPC: Dragon Tooth: 1H Weak 1 
+181320200 NPC: Dragon Tooth: 1H Weak 2 
+181320300 NPC: Dragon Tooth: 1H Strong 1 
+181320400 NPC: Dragon Tooth: 1H Strong 2 
+181320500 NPC: Dragon Tooth: 1H Dash 
+181320600 NPC: Dragon Tooth: 1H Roll 
+181320700 NPC: Dragon Tooth: 1H Step 
+181320800 NPC: Dragon Tooth: 1H Down 
+181320900 NPC: Dragon Tooth: 1H Fall 
+181321000 NPC: Dragon Tooth: 1H Jump 
+181321100 NPC: Dragon Tooth: 2H Weak 1 
+181321200 NPC: Dragon Tooth: 2H Weak 2 
+181321300 NPC: Dragon Tooth: 2H Strong 1 
+181321400 NPC: Dragon Tooth: 2H Strong 2 
+181321500 NPC: Dragon Tooth: 2H Dash 
+181321600 NPC: Dragon Tooth: 2H Roll 
+181321700 NPC: Dragon Tooth: 2H Step
+181321800 NPC: Dragon Tooth: DW 2H Weak 1 - Back Arm
+181321900 NPC: Dragon Tooth: DW 2H Weak 1 
+181322000 NPC: Dragon Tooth: DW 2H Weak 2 
+181322100 NPC: Dragon Tooth: DW 2H Strong 1
+181322200 NPC: Dragon Tooth: 1H Guard Break
+181322300 NPC: Dragon Tooth: 2H Guard Break
+181322400 NPC: Dragon Tooth: Riposte
+181322500 NPC: Dragon Tooth: Guard Break 
+181322600 NPC: Dragon Tooth: Backstab 
+181400100 NPC: Winged Spear: 1H Weak 1 
+181400200 NPC: Winged Spear: 1H Weak 2 
+181400300 NPC: Winged Spear: 1H Strong 1 
+181400400 NPC: Winged Spear: 1H Strong 2 
+181400500 NPC: Winged Spear: 1H Dash 
+181400600 NPC: Winged Spear: 1H Roll 
+181400700 NPC: Winged Spear: 1H Step 
+181400800 NPC: Winged Spear: 1H Down 
+181400900 NPC: Winged Spear: 1H Fall 
+181401000 NPC: Winged Spear: 1H Jump 
+181401100 NPC: Winged Spear: 2H Weak 1 
+181401200 NPC: Winged Spear: 2H Weak 2 
+181401300 NPC: Winged Spear: 2H Strong 1 
+181401400 NPC: Winged Spear: 2H Strong 2 
+181401500 NPC: Winged Spear: 2H Dash 
+181401600 NPC: Winged Spear: 2H Roll 
+181401700 NPC: Winged Spear: 2H Step 
+181401800 NPC: Winged Spear: DW 2H Weak 1 - Back Arm
+181401900 NPC: Winged Spear: DW 2H Weak 1 
+181402000 NPC: Winged Spear: DW 2H Weak 2 
+181402100 NPC: Winged Spear: DW 2H Strong 1
+181402200 NPC: Winged Spear: 1H Guard Break
+181402300 NPC: Winged Spear: 2H Guard Break
+181402400 NPC: Winged Spear: Riposte
+181402500 NPC: Winged Spear: Guard Break 
+181402600 NPC: Winged Spear: Backstab 
+181410100 NPC: Spitfire Spear: 1H Weak 1 
+181410200 NPC: Spitfire Spear: 1H Weak 2 
+181410300 NPC: Spitfire Spear: 1H Strong 1 
+181410400 NPC: Spitfire Spear: 1H Strong 2 
+181410500 NPC: Spitfire Spear: 1H Dash 
+181410600 NPC: Spitfire Spear: 1H Roll 
+181410700 NPC: Spitfire Spear: 1H Step 
+181410800 NPC: Spitfire Spear: 1H Down 
+181410900 NPC: Spitfire Spear: 1H Fall 
+181411000 NPC: Spitfire Spear: 1H Jump 
+181411100 NPC: Spitfire Spear: 2H Weak 1 
+181411200 NPC: Spitfire Spear: 2H Weak 2 
+181411300 NPC: Spitfire Spear: 2H Strong 1
+181411400 NPC: Spitfire Spear: 2H Strong 2 
+181411500 NPC: Spitfire Spear: 2H Dash 
+181411600 NPC: Spitfire Spear: 2H Roll 
+181411700 NPC: Spitfire Spear: 2H Step 
+181411800 NPC: Spitfire Spear: DW 2H Weak 1 - Back Arm
+181411900 NPC: Spitfire Spear: DW 2H Weak 1 
+181412000 NPC: Spitfire Spear: DW 2H Weak 2 
+181412100 NPC: Spitfire Spear: DW 2H Strong 1
+181412200 NPC: Spitfire Spear: 1H Guard Break
+181412300 NPC: Spitfire Spear: 2H Guard Break
+181412400 NPC: Spitfire Spear: Riposte 
+181412500 NPC: Spitfire Spear: Guard Break 
+181412600 NPC: Spitfire Spear: Backstab 
+181500100 NPC: Heide Greatlance: 1H Weak 1 
+181500200 NPC: Heide Greatlance: 1H Weak 2 
+181500300 NPC: Heide Greatlance: 1H Strong 1 
+181500400 NPC: Heide Greatlance: 1H Strong 2 
+181500500 NPC: Heide Greatlance: 1H Dash 
+181500600 NPC: Heide Greatlance: 1H Roll 
+181500700 NPC: Heide Greatlance: 1H Step 
+181500800 NPC: Heide Greatlance: 1H Down 
+181500900 NPC: Heide Greatlance: 1H Fall 
+181501000 NPC: Heide Greatlance: 1H Jump 
+181501100 NPC: Heide Greatlance: 2H Weak 1 
+181501200 NPC: Heide Greatlance: 2H Weak 2 
+181501300 NPC: Heide Greatlance: 2H Strong 1 
+181501400 NPC: Heide Greatlance: 2H Strong 2 
+181501500 NPC: Heide Greatlance: 2H Dash 
+181501600 NPC: Heide Greatlance: 2H Roll 
+181501700 NPC: Heide Greatlance: 2H Step 
+181501800 NPC: Heide Greatlance: DW 2H Weak 1 - Back Arm
+181501900 NPC: Heide Greatlance: DW 2H Weak 1 
+181502000 NPC: Heide Greatlance: DW 2H Weak 2 
+181502100 NPC: Heide Greatlance: DW 2H Strong 1
+181502200 NPC: Heide Greatlance: 1H Guard Break
+181502300 NPC: Heide Greatlance: 2H Guard Break
+181502400 NPC: Heide Greatlance: Riposte 
+181502500 NPC: Heide Greatlance: Guard Break 
+181502600 NPC: Heide Greatlance: Backstab 
+181510100 NPC: Chariot Lance: 1H Weak 1 
+181510200 NPC: Chariot Lance: 1H Weak 2 
+181510300 NPC: Chariot Lance: 1H Strong 1 
+181510400 NPC: Chariot Lance: 1H Strong 2 
+181510500 NPC: Chariot Lance: 1H Dash 
+181510600 NPC: Chariot Lance: 1H Roll 
+181510700 NPC: Chariot Lance: 1H Step 
+181510800 NPC: Chariot Lance: 1H Down 
+181510900 NPC: Chariot Lance: 1H Fall 
+181511000 NPC: Chariot Lance: 1H Jump 
+181511100 NPC: Chariot Lance: 2H Weak 1 
+181511200 NPC: Chariot Lance: 2H Weak 2 
+181511300 NPC: Chariot Lance: 2H Strong 1 
+181511400 NPC: Chariot Lance: 2H Strong 2 
+181511500 NPC: Chariot Lance: 2H Dash 
+181511600 NPC: Chariot Lance: 2H Roll 
+181511700 NPC: Chariot Lance: 2H Step 
+181511800 NPC: Chariot Lance: DW 2H Weak 1 - Back Arm 
+181511900 NPC: Chariot Lance: DW 2H Weak 1 
+181512000 NPC: Chariot Lance: DW 2H Weak 2 
+181512100 NPC: Chariot Lance: DW 2H Strong 1
+181512200 NPC: Chariot Lance: 1H Guard Break
+181512300 NPC: Chariot Lance: 2H Guard Break
+181512400 NPC: Chariot Lance: Riposte 
+181512500 NPC: Chariot Lance: Guard Break 
+181512600 NPC: Chariot Lance: Backstab 
+181600100 NPC: Scythe: 1H Weak 1 
+181600200 NPC: Scythe: 1H Weak 2 
+181600300 NPC: Scythe: 1H Strong 1 
+181600400 NPC: Scythe: 1H Strong 2 
+181600500 NPC: Scythe: 1H Dash 
+181600600 NPC: Scythe: 1H Roll 
+181600700 NPC: Scythe: 1H Step 
+181600800 NPC: Scythe: 1H Down 
+181600900 NPC: Scythe: 1H Fall 
+181601000 NPC: Scythe: 1H Jump 
+181601100 NPC: Scythe: 2H Weak 1 
+181601200 NPC: Scythe: 2H Weak 2 
+181601300 NPC: Scythe: 2H Strong 1 
+181601400 NPC: Scythe: 2H Strong 2 
+181601500 NPC: Scythe: 2H Dash 
+181601600 NPC: Scythe: 2H Roll 
+181601700 NPC: Scythe: 2H Step 
+181601800 NPC: Scythe: DW 2H Weak 1 - Back Arm
+181601900 NPC: Scythe: DW 2H Weak 1 
+181602000 NPC: Scythe: DW 2H Weak 2 
+181602100 NPC: Scythe: DW 2H Strong 1
+181602200 NPC: Scythe: 1H Guard Break
+181602300 NPC: Scythe: 2H Guard Break
+181602400 NPC: Scythe: Riposte
+181602500 NPC: Scythe: Guard Break 
+181602600 NPC: Scythe: Backstab 
+181610100 NPC: Blue Knight's Halberd: 1H Weak 1 
+181610200 NPC: Blue Knight's Halberd: 1H Weak 2 
+181610300 NPC: Blue Knight's Halberd: 1H Strong 1 
+181610400 NPC: Blue Knight's Halberd: 1H Strong 2 
+181610500 NPC: Blue Knight's Halberd: 1H Dash 
+181610600 NPC: Blue Knight's Halberd: 1H Roll 
+181610700 NPC: Blue Knight's Halberd: 1H Step
+181610800 NPC: Blue Knight's Halberd: 1H Down 
+181610900 NPC: Blue Knight's Halberd: 1H Fall 
+181611000 NPC: Blue Knight's Halberd: 1H Jump 
+181611100 NPC: Blue Knight's Halberd: 2H Weak 1 
+181611200 NPC: Blue Knight's Halberd: 2H Weak 2 
+181611300 NPC: Blue Knight's Halberd: 2H Strong 1 
+181611400 NPC: Blue Knight's Halberd: 2H Strong 2 
+181611500 NPC: Blue Knight's Halberd: 2H Dash 
+181611600 NPC: Blue Knight's Halberd: 2H Roll 
+181611700 NPC: Blue Knight's Halberd: 2H Step
+181611800 NPC: Blue Knight's Halberd: DW 2H Weak 1 - Back Arm
+181611900 NPC: Blue Knight's Halberd: DW 2H Weak 1
+181612000 NPC: Blue Knight's Halberd: DW 2H Weak 2 
+181612100 NPC: Blue Knight's Halberd: DW 2H Strong 1
+181612200 NPC: Blue Knight's Halberd: 1H Guard Break
+181612300 NPC: Blue Knight's Halberd: 2H Guard
+181612400 NPC: Blue Knight's Halberd: Riposte 
+181612500 NPC: Blue Knight's Halberd: Guard Break 
+181612600 NPC: Blue Knight's Halberd: Backstab 
+181620100 NPC: Drakekeeper's Warpick: 1H Weak 1 
+181620200 NPC: Drakekeeper's Warpick: 1H Weak 2 
+181620300 NPC: Drakekeeper's Warpick: 1H Strong 1 
+181620400 NPC: Drakekeeper's Warpick: 1H Strong 2 
+181620500 NPC: Drakekeeper's Warpick: 1H Dash 
+181620600 NPC: Drakekeeper's Warpick: 1H Roll 
+181620700 NPC: Drakekeeper's Warpick: 1H Step 
+181620800 NPC: Drakekeeper's Warpick: 1H Down 
+181620900 NPC: Drakekeeper's Warpick: 1H Fall 
+181621000 NPC: Drakekeeper's Warpick: 1H Jump 
+181621100 NPC: Drakekeeper's Warpick: 2H Weak 1 
+181621200 NPC: Drakekeeper's Warpick: 2H Weak 2 
+181621300 NPC: Drakekeeper's Warpick: 2H Strong 1 
+181621400 NPC: Drakekeeper's Warpick: 2H-Strong 2 
+181621500 NPC: Drakekeeper's Warpick: 2H Dash 
+181621600 NPC: Drakekeeper's Warpick: 2H Roll 
+181621700 NPC: Drakekeeper's Warpick: 2H Step 
+181621800 NPC: Drakekeeper's Warpick: DW 2H Weak 1 - Back Arm
+181621900 NPC: Drakekeeper's Warpick: DW 2H Weak 1
+181622000 NPC: Drakekeeper's Warpick: DW 2H Weak 2 
+181622100 NPC: Drakekeeper's Warpick: DW 2H Strong 1
+181622200 NPC: Drakekeeper's Warpick: 1H Guard Break
+181622300 NPC: Drakekeeper's Warpick: 2H Guard Break
+181622400 NPC: Drakekeeper's Warpick: Riposte
+181622500 NPC: Drakekeeper's Warpick: Guard Break 
+181622600 NPC: Drakekeeper's Warpick: Backstab 
+181700100 NPC: Notched Whip: 1H Weak 1 
+181700200 NPC: Notched Whip: 1H Weak 2 
+181700300 NPC: Notched Whip: 1H Strong 1 
+181700400 NPC: Notched Whip: 1H Strong 2 
+181700500 NPC: Notched Whip: 1H Dash 
+181700600 NPC: Notched Whip: 1H Roll 
+181700700 NPC: Notched Whip: 1H Step 
+181700800 NPC: Notched Whip: 1H Down 
+181700900 NPC: Notched Whip: 1H Fall 
+181701000 NPC: Notched Whip: 1H Jump 
+181701100 NPC: Notched Whip: 2H Weak 1 
+181701200 NPC: Notched Whip: 2H Weak 2 
+181701300 NPC: Notched Whip: 2H Strong 1 
+181701400 NPC: Notched Whip: 2H Strong 2 
+181701500 NPC: Notched Whip: 2H Dash 
+181701600 NPC: Notched Whip: 2H Roll 
+181701700 NPC: Notched Whip: 2H Step 
+181701800 NPC: Notched Whip: DW 2H Weak 1 - Back Arm
+181701900 NPC: Notched Whip: DW 2H Weak 1 
+181702000 NPC: Notched Whip: DW 2H Weak 2 
+181702100 NPC: Notched Whip: DW 2H Strong 1
+181702200 NPC: Notched Whip: 1H Guard Break
+181702300 NPC: Notched Whip: 2H Guard Break
+181702400 NPC: Notched Whip: Riposte 
+181702500 NPC: Notched Whip: Guard Break 
+181702600 NPC: Notched Whip: Backstab 
+181800100 NPC: Catalyst: 1H Weak 1 
+181800200 NPC: Catalyst: 1H Weak 2 
+181800300 NPC: Catalyst: 1H Strong 1 
+181800400 NPC: Catalyst: 1H Strong 2 
+181800500 NPC: Catalyst: 1H Dash 
+181800600 NPC: Catalyst: 1H Roll 
+181800700 NPC: Catalyst: 1H Step 
+181800800 NPC: Catalyst: 1H Down 
+181800900 NPC: Catalyst: 1H Fall 
+181801000 NPC: Catalyst: 1H Jump 
+181801100 NPC: Catalyst: 2H Weak 1 
+181801200 NPC: Catalyst: 2H Weak 2 
+181801300 NPC: Catalyst: 2H Strong 1 
+181801400 NPC: Catalyst: 2H Strong 2 
+181801500 NPC: Catalyst: 2H Dash 
+181801600 NPC: Catalyst: 2H Roll 
+181801700 NPC: Catalyst: 2H Step 
+181801800 NPC: Catalyst: DW 2H Weak 1 - Back Arm
+181801900 NPC: Catalyst: DW 2H Weak 1
+181802000 NPC: Catalyst: DW 2H Weak 2
+181802100 NPC: Catalyst: DW 2H Strong 1
+181802200 NPC: Catalyst: 1H Guard Break
+181802300 NPC: Catalyst: 2H Guard Break
+181802400 NPC: Catalyst: Riposte 
+181802500 NPC: Catalyst: Guard Break 
+181802600 NPC: Catalyst: Backstab 
+181900100 NPC: Short Bow: 1H Weak 1 
+181900200 NPC: Short Bow: 1H Weak 2 
+181900300 NPC: Short Bow: 1H Strong 1 
+181900400 NPC: Short Bow: 1H Strong 2 
+181900500 NPC: Short Bow: 1H Dash 
+181900600 NPC: Short Bow: 1H Roll 
+181900700 NPC: Short Bow: 1H Step 
+181900800 NPC: Short Bow: 1H Down 
+181900900 NPC: Short Bow: 1H Fall 
+181901000 NPC: Short Bow: 1H Jump 
+181901100 NPC: Short Bow: 2H Weak 1 
+181901200 NPC: Short Bow: 2H Weak 2 
+181901300 NPC: Short Bow: 2H Strong 1 
+181901400 NPC: Short Bow: 2H Strong 2 
+181901500 NPC: Short Bow: 2H Dash 
+181901600 NPC: Short Bow: 2H Roll 
+181901700 NPC: Short Bow: 2H Step 
+181901800 NPC: Short Bow: DW 2H Weak 1 - Back Arm
+181901900 NPC: Short Bow: DW 2H Weak 1 
+181902000 NPC: Short Bow: DW 2H Weak 2 
+181902100 NPC: Short Bow: DW 2H Strong 1
+181902200 NPC: Short Bow: 1H Guard Break
+181902300 NPC: Short Bow: 2H Guard Break
+181902400 NPC: Short Bow: Riposte
+181902500 NPC: Short Bow: Guard Break 
+181902600 NPC: Short Bow: Backstab 
+182000100 NPC: Avelyn: 1H Weak 1 
+182000200 NPC: Avelyn: 1H Weak 2 
+182000300 NPC: Avelyn: 1H Strong 1 
+182000400 NPC: Avelyn: 1H Strong 2 
+182000500 NPC: Avelyn: 1H Dash 
+182000600 NPC: Avelyn: 1H Roll 
+182000700 NPC: Avelyn: 1H Step 
+182000800 NPC: Avelyn: 1H Down 
+182000900 NPC: Avelyn: 1H Fall 
+182001000 NPC: Avelyn: 1H Jump 
+182001100 NPC: Avelyn: 2H Weak 1 
+182001200 NPC: Avelyn: 2H Weak 2 
+182001300 NPC: Avelyn: 2H Strong 1 
+182001400 NPC: Avelyn: 2H Strong 2 
+182001500 NPC: Avelyn: 2H Dash 
+182001600 NPC: Avelyn: 2H Roll 
+182001700 NPC: Avelyn: 2H Steps 
+182001800 NPC: Avelyn: DW 2H Weak 1 - Back Arm
+182001900 NPC: Avelyn: DW 2H Weak 1 
+182002000 NPC: Avelyn: DW 2H Weak 2 
+182002100 NPC: Avelyn: DW 2H Strong 1
+182002200 NPC: Avelyn: 1H Guard Break
+182002300 NPC: Avelyn: Hands Guard Break
+182002400 NPC: Avelyn: Riposte
+182002500 NPC: Avelyn: Guard Break 
+182002600 NPC: Avelyn: Backstab 
+183000100 NPC: Black Dragon Greataxe: 1H Weak 1 
+183000200 NPC: Black Dragon Greataxe: 1H Weak 2 
+183000300 NPC: Black Dragon Greataxe: 1H Strong 1 
+183000400 NPC: Black Dragon Greataxe: 1H Strong 2 
+183000500 NPC: Black Dragon Greataxe: 1H Dash 
+183000600 NPC: Black Dragon Greataxe: 1H Roll 
+183000700 NPC: Black Dragon Greataxe: 1H Step 
+183000800 NPC: Black Dragon Greataxe: 1H Down 
+183000900 NPC: Black Dragon Greataxe: 1H Fall 
+183001000 NPC: Black Dragon Greataxe: 1H Jump 
+183001100 NPC: Black Dragon Greataxe: 2H Weak 1 
+183001200 NPC: Black Dragon Greataxe: 2H Weak 2 
+183001300 NPC: Black Dragon Greataxe: 2H Strong 1 
+183001400 NPC: Black Dragon Greataxe: 2H Strong 2 
+183001500 NPC: Black Dragon Greataxe: 2H Dash 
+183001600 NPC: Black Dragon Greataxe: 2H Roll 
+183001700 NPC: Black Dragon Greataxe: 2H Step 
+183001800 NPC: Black Dragon Greataxe: DW 2H Weak 1 - Back Arm
+183001900 NPC: Black Dragon Greataxe: DW 2H Weak 1 
+183002000 NPC: Black Dragon Greataxe: DW 2H Weak 2 
+183002100 NPC: Black Dragon Greataxe: DW 2H Strong 1
+183002200 NPC: Black Dragon Greataxe: 1H Guard Break
+183002300 NPC: Black Dragon Greataxe: 2H Guard Break
+183002400 NPC: Black Dragon Greataxe: Riposte
+183002500 NPC: Black Dragon Greataxe: Guard Break 
+183002600 NPC: Black Dragon Greataxe: Backstab 
+184000100 NPC: Black Dragon Warpick: 1H Weak 1 
+184000200 NPC: Black Dragon Warpick: 1H Weak 2 
+184000300 NPC: Black Dragon Warpick: 1H Strong 1 
+184000400 NPC: Black Dragon Warpick: 1H Strong 2 
+184000500 NPC: Black Dragon Warpick: 1H Dash 
+184000600 NPC: Black Dragon Warpick: 1H Roll 
+184000700 NPC: Black Dragon Warpick: 1H Step 
+184000800 NPC: Black Dragon Warpick: 1H Down 
+184000900 NPC: Black Dragon Warpick: 1H Fall 
+184001000 NPC: Black Dragon Warpick: 1H Jump 
+184001100 NPC: Black Dragon Warpick: 2H Weak 1 
+184001200 NPC: Black Dragon Warpick: 2H Weak 2 
+184001300 NPC: Black Dragon Warpick: 2H Strong 1 
+184001400 NPC: Black Dragon Warpick: 2H Strong 2 
+184001500 NPC: Black Dragon Warpick: 2H Dash 
+184001600 NPC: Black Dragon Warpick: 2H Roll 
+184001700 NPC: Black Dragon Warpick: 2H Step 
+184001800 NPC: Black Dragon Warpick: DW 2H Weak 1 - Back Arm
+184001900 NPC: Black Dragon Warpick: DW 2H Weak 1 
+184002000 NPC: Black Dragon Warpick: DW 2H Weak 2 
+184002100 NPC: Black Dragon Warpick: DW 2H Strong 1
+184002200 NPC: Black Dragon Warpick: 1H Guard Break
+184002300 NPC: Black Dragon Warpick: 2H Guard Break
+184002400 NPC: Black Dragon Warpick: Riposte 
+184002500 NPC: Black Dragon Warpick: Guard Break 
+184002600 NPC: Black Dragon Warpick: Backstab 
+184100100 NPC: Dragonslayer Greatbow: 1H Weak 1 
+184100200 NPC: Dragonslayer Greatbow: 1H Weak 2 
+184100300 NPC: Dragonslayer Greatbow: 1H Strong 1 
+184100400 NPC: Dragonslayer Greatbow: 1H Strong 2 
+184100500 NPC: Dragonslayer Greatbow: 1H Dash 
+184100600 NPC: Dragonslayer Greatbow: 1H Roll 
+184100700 NPC: Dragonslayer Greatbow: 1H Step 
+184100800 NPC: Dragonslayer Greatbow: 1H Down 
+184100900 NPC: Dragonslayer Greatbow: 1H Fall 
+184101000 NPC: Dragonslayer Greatbow: 1H Jump 
+184101100 NPC: Dragonslayer Greatbow: 2H Weak 1 
+184101200 NPC: Dragonslayer Greatbow: 2H Weak 2 
+184101300 NPC: Dragonslayer Greatbow: 2H Strong 1 
+184101400 NPC: Dragonslayer Greatbow: 2H Strong 2 
+184101500 NPC: Dragonslayer Greatbow: 2H Dash 
+184101600 NPC: Dragonslayer Greatbow: 2H Roll 
+184101700 NPC: Dragonslayer Greatbow: 2H Step 
+184101800 NPC: Dragonslayer Greatbow: DW 2H Weak 1 - Back Arm
+184101900 NPC: Dragonslayer Greatbow: DW 2H Weak 1 
+184102000 NPC: Dragonslayer Greatbow: DW 2H Weak 2 
+184102100 NPC: Dragonslayer Greatbow: DW 2H Strong 1
+184102200 NPC: Dragonslayer Greatbow: 1H Guard Break
+184102300 NPC: Dragonslayer Greatbow: 2H Guard Break
+184102400 NPC: Dragonslayer Greatbow: Riposte 
+184102500 NPC: Dragonslayer Greatbow: Guard Break 
+184102600 NPC: Dragonslayer Greatbow: Backstab 
+185000100 NPC: Caestus: 1H Weak 1
+185000200 NPC: Caestus: 1H Weak 2 
+185000300 NPC: Caestus: 1H Strong 1 
+185000400 NPC: Caestus: 1H Strong 2 
+185000500 NPC: Caestus: 1H Dash 
+185000600 NPC: Caestus: 1H Roll 
+185000700 NPC: Caestus: 1H Step 
+185000800 NPC: Caestus: 1H Down 
+185000900 NPC: Caestus: 1H Fall 
+185001000 NPC: Caestus: 1H Jump 
+185001100 NPC: Caestus: 2H Weak 1 
+185001200 NPC: Caestus: 2H Weak 2 
+185001300 NPC: Caestus: 2H Strong 1 
+185001400 NPC: Caestus: 2H Strong 2 
+185001500 NPC: Caestus: 2H Dash 
+185001600 NPC: Caestus: 2H Roll 
+185001700 NPC: Caestus: 2H Step 
+185001800 NPC: Caestus: DW 2H Weak 1 - Back Arm
+185001900 NPC: Caestus: DW 2H Weak 1 
+185002000 NPC: Caestus: DW 2H Weak 2 
+185002100 NPC: Caestus: DW 2H Strong 1
+185002200 NPC: Caestus: 1H Guard Break 
+185002300 NPC: Caestus: 2H Guard Break 
+185002400 NPC: Caestus: 2H Riposte 
+185002500 NPC: Caestus: Guard Break 
+185002600 NPC: Caestus: Backstab 
+185100100 NPC: Drakeblood Greatsword: 1H Weak 1
+185100200 NPC: Drakeblood Greatsword: 1H Weak 2 
+185100300 NPC: Drakeblood Greatsword: 1H Strong 1 
+185100400 NPC: Drakeblood Greatsword: 1H Strong 2 
+185100500 NPC: Drakeblood Greatsword: 1H Dash 
+185100600 NPC: Drakeblood Greatsword: 1H Roll 
+185100700 NPC: Drakeblood Greatsword: 1H Step 
+185100800 NPC: Drakeblood Greatsword: 1H Down 
+185100900 NPC: Drakeblood Greatsword: 1H Fall 
+185101000 NPC: Drakeblood Greatsword: 1H Jump 
+185101100 NPC: Drakeblood Greatsword: 2H Weak 1 
+185101200 NPC: Drakeblood Greatsword: 2H Weak 2 
+185101300 NPC: Drakeblood Greatsword: 2H Strong 1 
+185101400 NPC: Drakeblood Greatsword: 2H Strong 2 
+185101500 NPC: Drakeblood Greatsword: 2H Dash 
+185101600 NPC: Drakeblood Greatsword: 2H Roll 
+185101700 NPC: Drakeblood Greatsword: 2H Step 
+185101800 NPC: Drakeblood Greatsword: DW 2H Weak 1 - Back Arm
+185101900 NPC: Drakeblood Greatsword: DW 2H Weak 1 
+185102000 NPC: Drakeblood Greatsword: DW 2H Weak 2 
+185102100 NPC: Drakeblood Greatsword: DW 2H Strong 
+185102200 NPC: Drakeblood Greatsword: 1H Guard Break 
+185102300 NPC: Drakeblood Greatsword: 2H Guard Break 
+185102400 NPC: Drakeblood Greatsword: 2H Riposte 
+185102500 NPC: Drakeblood Greatsword: Guard Break 
+185102600 NPC: Drakeblood Greatsword: Backstab 
+185250100 NPC: Puzzling Stone Sword: 1H Weak 1
+185250200 NPC: Puzzling Stone Sword: 1H Weak 2 
+185250300 NPC: Puzzling Stone Sword: 1H Strong 1 
+185250400 NPC: Puzzling Stone Sword: 1H Strong 2 
+185250500 NPC: Puzzling Stone Sword: 1H Dash 
+185250600 NPC: Puzzling Stone Sword: 1H Roll 
+185250700 NPC: Puzzling Stone Sword: 1H Step 
+185250800 NPC: Puzzling Stone Sword: 1H Down 
+185250900 NPC: Puzzling Stone Sword: 1H Fall 
+185251000 NPC: Puzzling Stone Sword: 1H Jump 
+185251100 NPC: Puzzling Stone Sword: 2H Weak 1 
+185251200 NPC: Puzzling Stone Sword: 2H Weak 2 
+185251300 NPC: Puzzling Stone Sword: 2H Strong 1 
+185251400 NPC: Puzzling Stone Sword: 2H Strong 2 
+185251500 NPC: Puzzling Stone Sword: 2H Dash 
+185251600 NPC: Puzzling Stone Sword: 2H Roll 
+185251700 NPC: Puzzling Stone Sword: 2H Step 
+185251800 NPC: Puzzling Stone Sword: DW 2H Weak 1 - Back Arm 
+185251900 NPC: Puzzling Stone Sword: DW 2H Weak 1 
+185252000 NPC: Puzzling Stone Sword: DW 2H Weak 2 
+185252100 NPC: Puzzling Stone Sword: DW 2H Strong 
+185252200 NPC: Puzzling Stone Sword: 1H Guard Break 
+185252300 NPC: Puzzling Stone Sword: 2H Guard Break 
+185252400 NPC: Puzzling Stone Sword: 2H Riposte 
+185252500 NPC: Puzzling Stone Sword: Guard Break 
+185252600 NPC: Puzzling Stone Sword: Backstab 
+185300100 NPC: Greatshield: of Glory: 1H Weak 1
+185300200 NPC: Greatshield: of Glory: 1H Weak 2 
+185300300 NPC: Greatshield: of Glory: 1H Strong 1 
+185300400 NPC: Greatshield: of Glory: 1H Strong 2 
+185300500 NPC: Greatshield: of Glory: 1H Dash 
+185300600 NPC: Greatshield: of Glory: 1H Roll 
+185300700 NPC: Greatshield: of Glory: 1H Step 
+185300800 NPC: Greatshield: of Glory: 1H Down 
+185300900 NPC: Greatshield: of Glory: 1H Fall 
+185301000 NPC: Greatshield: of Glory: 1H Jump 
+185301100 NPC: Greatshield: of Glory: 1H Jump Fall
+185400100 NPC: Giant Stone Axe: 1H Weak 1
+185400200 NPC: Giant Stone Axe: 1H Weak 2 
+185400300 NPC: Giant Stone Axe: 1H Strong 1 
+185400400 NPC: Giant Stone Axe: 1H Strong 2 
+185400500 NPC: Giant Stone Axe: 1H Dash 
+185400600 NPC: Giant Stone Axe: 1H Roll 
+185400700 NPC: Giant Stone Axe: 1H Step 
+185400800 NPC: Giant Stone Axe: 1H Down 
+185400900 NPC: Giant Stone Axe: 1H Fall 
+185401000 NPC: Giant Stone Axe: 1H Jump 
+185401100 NPC: Giant Stone Axe: 2H Weak 1 
+185401200 NPC: Giant Stone Axe: 2H Weak 2 
+185401300 NPC: Giant Stone Axe: 2H Strong 1 
+185401400 NPC: Giant Stone Axe: 2H Strong 2 
+185401500 NPC: Giant Stone Axe: 2H Dash 
+185401600 NPC: Giant Stone Axe: 2H Roll 
+185401700 NPC: Giant Stone Axe: 2H Step 
+185401800 NPC: Giant Stone Axe: DW 2H Weak 1 - Back Arm
+185401900 NPC: Giant Stone Axe: DW 2H Weak 1 
+185402000 NPC: Giant Stone Axe: DW 2H Weak 2 
+185402100 NPC: Giant Stone Axe: DW 2H Strong 
+185402200 NPC: Giant Stone Axe: 1H Guard Break 
+185402300 NPC: Giant Stone Axe: 2H Guard Break 
+185402400 NPC: Giant Stone Axe: 2H Riposte 
+185402500 NPC: Giant Stone Axe: Guard Break 
+185402600 NPC: Giant Stone Axe: Backstab 
+185500100 NPC: Spider Fang: 1H Weak 1
+185500200 NPC: Spider Fang: 1H Weak 2 
+185500300 NPC: Spider Fang: 1H Strong 1 
+185500400 NPC: Spider Fang: 1H Strong 2 
+185500500 NPC: Spider Fang: 1H Dash 
+185500600 NPC: Spider Fang: 1H Roll 
+185500700 NPC: Spider Fang: 1H Step 
+185500800 NPC: Spider Fang: 1H Down 
+185500900 NPC: Spider Fang: 1H Fall 
+185501000 NPC: Spider Fang: 1H Jump 
+185501100 NPC: Spider Fang: 2H Weak 1 
+185501200 NPC: Spider Fang: 2H Weak 2 
+185501300 NPC: Spider Fang: 2H Strong 1 
+185501400 NPC: Spider Fang: 2H Strong 2 
+185501500 NPC: Spider Fang: 2H Dash 
+185501600 NPC: Spider Fang: 2H Roll 
+185501700 NPC: Spider Fang: 2H Step 
+185501800 NPC: Spider Fang: DW 2H Weak 1 - Back Arm
+185501900 NPC: Spider Fang: DW 2H Weak 1 
+185502000 NPC: Spider Fang: DW 2H Weak 2 
+185502100 NPC: Spider Fang: DW 2H Strong 
+185502200 NPC: Spider Fang: 1H Guard Break 
+185502300 NPC: Spider Fang: 2H Guard Break 
+185502400 NPC: Spider Fang: 2H Riposte 
+185502500 NPC: Spider Fang: Guard Break 
+185502600 NPC: Spider Fang: Backstab 
+185600100 NPC: Umbral Dagger: 1H Weak 1
+185600200 NPC: Umbral Dagger: 1H Weak 2 
+185600300 NPC: Umbral Dagger: 1H Strong 1 
+185600400 NPC: Umbral Dagger: 1H Strong 2 
+185600500 NPC: Umbral Dagger: 1H Dash 
+185600600 NPC: Umbral Dagger: 1H Roll 
+185600700 NPC: Umbral Dagger: 1H Step 
+185600800 NPC: Umbral Dagger: 1H Down 
+185600900 NPC: Umbral Dagger: 1H Fall 
+185601000 NPC: Umbral Dagger: 1H Jump 
+185601100 NPC: Umbral Dagger: 2H Weak 1 
+185601200 NPC: Umbral Dagger: 2H Weak 2 
+185601300 NPC: Umbral Dagger: 2H Strong 1 
+185601400 NPC: Umbral Dagger: 2H Strong 2 
+185601500 NPC: Umbral Dagger: 2H Dash 
+185601600 NPC: Umbral Dagger: 2H Roll 
+185601700 NPC: Umbral Dagger: 2H Step 
+185601800 NPC: Umbral Dagger: DW 2H Weak 1 - Back Arm
+185601900 NPC: Umbral Dagger: DW 2H Weak 1 
+185602000 NPC: Umbral Dagger: DW 2H Weak 2 
+185602100 NPC: Umbral Dagger: DW 2H Strong 
+185602200 NPC: Umbral Dagger: 1H Guard Break 
+185602300 NPC: Umbral Dagger: 2H Guard Break 
+185602400 NPC: Umbral Dagger: 2H Riposte 
+185602500 NPC: Umbral Dagger: Guard Break 
+185700100 NPC: Claws: 1H Weak 1
+185700200 NPC: Claws: 1H Weak 2 
+185700300 NPC: Claws: 1H Strong 1 
+185700400 NPC: Claws: 1H Strong 2 
+185700500 NPC: Claws: 1H Dash 
+185700600 NPC: Claws: 1H Roll 
+185700700 NPC: Claws: 1H Step 
+185700800 NPC: Claws: 1H Down 
+185700900 NPC: Claws: 1H Fall 
+185701000 NPC: Claws: 1H Jump 
+185701100 NPC: Claws: 2H Weak 1 
+185701200 NPC: Claws: 2H Weak 2 
+185701300 NPC: Claws: 2H Strong 1 
+185701400 NPC: Claws: 2H Strong 2 
+185701500 NPC: Claws: 2H Dash 
+185701600 NPC: Claws: 2H Roll 
+185701700 NPC: Claws: 2H Step 
+185701800 NPC: Claws: DW 2H Weak 1 - Back Arm
+185701900 NPC: Claws: DW 2H Weak 1 
+185702000 NPC: Claws: DW 2H Weak 2 
+185702100 NPC: Claws: DW 2H Strong 
+185702200 NPC: Claws: 1H Guard Break 
+185702300 NPC: Claws: 2H Guard Break 
+185702400 NPC: Claws: 2H Riposte 
+185702500 NPC: Claws: Guard Break 
+185800100 NPC: Blue Flame: 1H Weak 1
+185800200 NPC: Blue Flame: 1H Weak 2 
+185800300 NPC: Blue Flame: 1H Strong 1 
+185800400 NPC: Blue Flame: 1H Strong 2 
+185800500 NPC: Blue Flame: 1H Dash 
+185800600 NPC: Blue Flame: 1H Roll 
+185800700 NPC: Blue Flame: 1H Step 
+185800800 NPC: Blue Flame: 1H Down 
+185800900 NPC: Blue Flame: 1H Fall 
+185801000 NPC: Blue Flame: 1H Jump 
+185801100 NPC: Blue Flame: 2H Weak 1 
+185801200 NPC: Blue Flame: 2H Weak 2 
+185801300 NPC: Blue Flame: 2H Strong 1 
+185801400 NPC: Blue Flame: 2H Strong 2 
+185801500 NPC: Blue Flame: 2H Dash 
+185801600 NPC: Blue Flame: 2H Roll 
+185801700 NPC: Blue Flame: 2H Step 
+185801800 NPC: Blue Flame: DW 2H Weak 1 - Back Arm
+185801900 NPC: Blue Flame: DW 2H Weak 1 
+185802000 NPC: Blue Flame: DW 2H Weak 2 
+185802100 NPC: Blue Flame: DW 2H Strong 1
+185802200 NPC: Blue Flame: 1H Guard Break 
+185802300 NPC: Blue Flame: 2H Guard Break 
+185900100 NPC: Heide Spear: 1H Weak 1
+185900200 NPC: Heide Spear: 1H Weak 2 
+185900300 NPC: Heide Spear: 1H Strong 1 
+185900400 NPC: Heide Spear: 1H Strong 2 
+185900500 NPC: Heide Spear: 1H Dash 
+185900600 NPC: Heide Spear: 1H Roll 
+185900700 NPC: Heide Spear: 1H Step 
+185900800 NPC: Heide Spear: 1H Down 
+185900900 NPC: Heide Spear: 1H Fall 
+185901000 NPC: Heide Spear: 1H Jump 
+185901100 NPC: Heide Spear: 2H Weak 1 
+185901200 NPC: Heide Spear: 2H Weak 2 
+185901300 NPC: Heide Spear: 2H Strong 1 
+185901400 NPC: Heide Spear: 2H Strong 2 
+185901500 NPC: Heide Spear: 2H Dash 
+185901600 NPC: Heide Spear: 2H Roll 
+185901700 NPC: Heide Spear: 2H Step 
+185901800 NPC: Heide Spear: DW 2H Weak 1 - Back Arm
+185901900 NPC: Heide Spear: DW 2H Weak 1 
+185902000 NPC: Heide Spear: DW 2H Weak 2 
+185902100 NPC: Heide Spear: DW 2H Strong 1
+185902200 NPC: Heide Spear: 1H Guard Break 
+185902300 NPC: Heide Spear: 2H Guard Break 
+185902400 NPC: Heide Spear: 2H Riposte 
+185902500 NPC: Heide Spear: Guard Break 
+185902600 NPC: Heide Spear: Backstab 
+186000100 NPC: Mace of the Insolent: 1H Weak 1
+186000200 NPC: Mace of the Insolent: 1H Weak 2 
+186000300 NPC: Mace of the Insolent: 1H Strong 1 
+186000400 NPC: Mace of the Insolent: 1H Strong 2 
+186000500 NPC: Mace of the Insolent: 1H Dash 
+186000600 NPC: Mace of the Insolent: 1H Roll 
+186000700 NPC: Mace of the Insolent: 1H Step 
+186000800 NPC: Mace of the Insolent: 1H Down 
+186000900 NPC: Mace of the Insolent: 1H Fall 
+186001000 NPC: Mace of the Insolent: 1H Jump 
+186001100 NPC: Mace of the Insolent: 2H Weak 1 
+186001200 NPC: Mace of the Insolent: 2H Weak 2 
+186001300 NPC: Mace of the Insolent: 2H Strong 1 
+186001400 NPC: Mace of the Insolent: 2H Strong 2 
+186001500 NPC: Mace of the Insolent: 2H Dash 
+186001600 NPC: Mace of the Insolent: 2H Roll 
+186001700 NPC: Mace of the Insolent: 2H Step 
+186001800 NPC: Mace of the Insolent: DW 2H Weak 1 - Back Arm 
+186001900 NPC: Mace of the Insolent: DW 2H Weak 1 
+186002000 NPC: Mace of the Insolent: DW 2H Weak 2 
+186002100 NPC: Mace of the Insolent: DW 2H Strong 1
+186002200 NPC: Mace of the Insolent: 1H Guard Break 
+186002300 NPC: Mace of the Insolent: 2H Guard Break 
+186002400 NPC: Mace of the Insolent: 2H Riposte 
+186002500 NPC: Mace of the Insolent: Guard Break 
+186002600 NPC: Mace of the Insolent: Backstab 
+186100100 NPC: Santier's Spear: 1H Weak 1
+186100200 NPC: Santier's Spear: 1H Weak 2 
+186100300 NPC: Santier's Spear: 1H Strong 1 
+186100400 NPC: Santier's Spear: 1H Strong 2 
+186100500 NPC: Santier's Spear: 1H Dash 
+186100600 NPC: Santier's Spear: 1H Roll 
+186100700 NPC: Santier's Spear: 1H Step 
+186100800 NPC: Santier's Spear: 1H Down 
+186100900 NPC: Santier's Spear: 1H Fall 
+186101000 NPC: Santier's Spear: 1H Jump 
+186101100 NPC: Santier's Spear: 2H Weak 1 
+186101200 NPC: Santier's Spear: 2H Weak 2 
+186101300 NPC: Santier's Spear: 2H Strong 1 
+186101400 NPC: Santier's Spear: 2H Strong 2 
+186101500 NPC: Santier's Spear: 2H Dash 
+186101600 NPC: Santier's Spear: 2H Roll 
+186101700 NPC: Santier's Spear: 2H Step 
+186101800 NPC: Santier's Spear: DW 2H Weak 1 - Back Arm
+186101900 NPC: Santier's Spear: DW 2H Weak 1 
+186102000 NPC: Santier's Spear: DW 2H Weak 2 
+186102100 NPC: Santier's Spear: DW 2H Strong 1
+186102200 NPC: Santier's Spear: 1H Guard Break 
+186102300 NPC: Santier's Spear: 2H Guard Break 
+186102400 NPC: Santier's Spear: 2H Riposte 
+186200100 NPC: Majestic Greatsword: 1H Weak 1
+186200200 NPC: Majestic Greatsword: 1H Weak 2 
+186200300 NPC: Majestic Greatsword: 1H Strong 1 
+186200400 NPC: Majestic Greatsword: 1H Strong 2 
+186200500 NPC: Majestic Greatsword: 1H Dash 
+186200600 NPC: Majestic Greatsword: 1H Roll 
+186200700 NPC: Majestic Greatsword: 1H Step 
+186200800 NPC: Majestic Greatsword: 1H Down 
+186200900 NPC: Majestic Greatsword: 1H Fall 
+186201000 NPC: Majestic Greatsword: 1H Jump 
+186201100 NPC: Majestic Greatsword: 2H Weak 1 
+186201200 NPC: Majestic Greatsword: 2H Weak 2 
+186201300 NPC: Majestic Greatsword: 2H Strong 1 
+186201400 NPC: Majestic Greatsword: 2H Strong 2 
+186201500 NPC: Majestic Greatsword: 2H Dash 
+186201600 NPC: Majestic Greatsword: 2H Roll 
+186201700 NPC: Majestic Greatsword: 2H Step 
+186201800 NPC: Majestic Greatsword: DW 2H Weak 1 - Back Arm
+186201900 NPC: Majestic Greatsword: DW 2H Weak 1 
+186202000 NPC: Majestic Greatsword: DW 2H Weak 2 
+186202100 NPC: Majestic Greatsword: DW 2H Strong 1
+186202200 NPC: Majestic Greatsword: 1H Guard Break 
+186202300 NPC: Majestic Greatsword: 2H Guard Break 
+186202400 NPC: Majestic Greatsword: 2H Riposte 
+186202500 NPC: Majestic Greatsword: Guard Break 
+186202600 NPC: Majestic Greatsword: Backstab 
+186300100 NPC: Bone Fist: 1H Weak 1
+186300200 NPC: Bone Fist: 1H Weak 2 
+186300300 NPC: Bone Fist: 1H Strong 1 
+186300400 NPC: Bone Fist: 1H Strong 2 
+186300500 NPC: Bone Fist: 1H Dash 
+186300600 NPC: Bone Fist: 1H Roll 
+186300700 NPC: Bone Fist: 1H Step 
+186300800 NPC: Bone Fist: 1H Down 
+186300900 NPC: Bone Fist: 1H Fall 
+186301000 NPC: Bone Fist: 1H Jump 
+186301100 NPC: Bone Fist: 2H Weak 1 
+186301200 NPC: Bone Fist: 2H Weak 2 
+186301300 NPC: Bone Fist: 2H Strong 1 
+186301400 NPC: Bone Fist: 2H Strong 2 
+186301500 NPC: Bone Fist: 2H Dash 
+186301600 NPC: Bone Fist: 2H Roll 
+186301700 NPC: Bone Fist: 2H Step 
+186301800 NPC: Bone Fist: DW 2H Weak 1 - Back Arm
+186301900 NPC: Bone Fist: DW 2H Weak 1 
+186302000 NPC: Bone Fist: DW 2H Weak 2 
+186302100 NPC: Bone Fist: DW 2H Strong 1
+186302200 NPC: Bone Fist: 1H Guard Break 
+186302300 NPC: Bone Fist: 2H Guard Break 
+186302400 NPC: Bone Fist: 2H Riposte 
+186302500 NPC: Bone Fist: Guard Break 
+186400100 NPC: Smelter Hammer: 1H Weak 1
+186400200 NPC: Smelter Hammer: 1H Weak 2 
+186400300 NPC: Smelter Hammer: 1H Strong 1 
+186400400 NPC: Smelter Hammer: 1H Strong 2 
+186400500 NPC: Smelter Hammer: 1H Dash 
+186400600 NPC: Smelter Hammer: 1H Roll 
+186400700 NPC: Smelter Hammer: 1H Step 
+186400800 NPC: Smelter Hammer: 1H Down 
+186400900 NPC: Smelter Hammer: 1H Fall 
+186401000 NPC: Smelter Hammer: 1H Jump 
+186401100 NPC: Smelter Hammer: 2H Weak 1 
+186401200 NPC: Smelter Hammer: 2H Weak 2 
+186401300 NPC: Smelter Hammer: 2H Strong 1 
+186401400 NPC: Smelter Hammer: 2H Strong 2 
+186401500 NPC: Smelter Hammer: 2H Dash 
+186401600 NPC: Smelter Hammer: 2H Roll 
+186401700 NPC: Smelter Hammer: 2H Step 
+186401800 NPC: Smelter Hammer: DW 2H Weak 1 - Back Arm
+186401900 NPC: Smelter Hammer: DW 2H Weak 1 
+186402000 NPC: Smelter Hammer: DW 2H Weak 2 
+186402100 NPC: Smelter Hammer: DW 2H Strong 1
+186402200 NPC: Smelter Hammer: 1H Guard Break 
+186402300 NPC: Smelter Hammer: 2H Guard Break 
+186402400 NPC: Smelter Hammer: 2H Riposte 
+186402500 NPC: Smelter Hammer: Guard Break 
+186500100 NPC: Greatsword of the Forlorn: 1H Weak 1
+186500200 NPC: Greatsword of the Forlorn: 1H Weak 2 
+186500300 NPC: Greatsword of the Forlorn: 1H Strong 1 
+186500400 NPC: Greatsword of the Forlorn: 1H Strong 2 
+186500500 NPC: Greatsword of the Forlorn: 1H Dash 
+186500600 NPC: Greatsword of the Forlorn: 1H Roll 
+186500700 NPC: Greatsword of the Forlorn: 1H Step 
+186500800 NPC: Greatsword of the Forlorn: 1H Down 
+186500900 NPC: Greatsword of the Forlorn: 1H Fall 
+186501000 NPC: Greatsword of the Forlorn: 1H Jump 
+186501100 NPC: Greatsword of the Forlorn: 2H Weak 1 
+186501200 NPC: Greatsword of the Forlorn: 2H Weak 2 
+186501300 NPC: Greatsword of the Forlorn: 2H Strong 1 
+186501400 NPC: Greatsword of the Forlorn: 2H Strong 2 
+186501500 NPC: Greatsword of the Forlorn: 2H Dash 
+186501600 NPC: Greatsword of the Forlorn: 2H Roll 
+186501700 NPC: Greatsword of the Forlorn: 2H Step 
+186501800 NPC: Greatsword of the Forlorn: DW 2H Weak 1 - Back Arm
+186501900 NPC: Greatsword of the Forlorn: DW 2H Weak 1 
+186502000 NPC: Greatsword of the Forlorn: DW 2H Weak 2 
+186502100 NPC: Greatsword of the Forlorn: DW 2H Strong 1
+186502200 NPC: Greatsword of the Forlorn: 1H Guard Break 
+186502300 NPC: Greatsword of the Forlorn: 2H Guard Break 
+186502400 NPC: Greatsword of the Forlorn: 2H Riposte 
+186502500 NPC: Greatsword of the Forlorn: Guard Break 
+186502600 NPC: Greatsword of the Forlorn: Backstab 
+186502700 NPC: Greatsword of the Forlorn: Guard Break
+186502800 NPC: Greatsword of the Forlorn: Riposte
+186600100 NPC: Scythe of the Forlorn: 1H Weak 1
+186600200 NPC: Scythe of the Forlorn: 1H Weak 2
+186600300 NPC: Scythe of the Forlorn: 1H Strong 1
+186600400 NPC: Scythe of the Forlorn: 1H Strong 2
+186600500 NPC: Scythe of the Forlorn: 1H Dash
+186600600 NPC: Scythe of the Forlorn: 1H Roll
+186600700 NPC: Scythe of the Forlorn: 1H Step
+186600800 NPC: Scythe of the Forlorn: 1H Jump
+186600900 NPC: Scythe of the Forlorn: 1H Fall
+186601000 NPC: Scythe of the Forlorn: 1H Jump
+186601100 NPC: Scythe of the Forlorn: 2H Weak 1
+186601200 NPC: Scythe of the Forlorn: 2H Weak 2
+186601300 NPC: Scythe of the Forlorn: 2H Strong 1
+186601400 NPC: Scythe of the Forlorn: 2H Strong 2
+186601500 NPC: Scythe of the Forlorn: 2H Dash
+186601600 NPC: Scythe of the Forlorn: 2H Roll
+186601700 NPC: Scythe of the Forlorn: 2H Step
+186601800 NPC: Scythe of the Forlorn: DW 2H Weak 1 - Back Arm
+186601900 NPC: Scythe of the Forlorn: DW 2H Weak 1
+186602000 NPC: Scythe of the Forlorn: DW 2H Weak 2
+186602100 NPC: Scythe of the Forlorn: DW 2H Strong 1
+186602200 NPC: Scythe of the Forlorn: Backstab
+186602300 NPC: Scythe of the Forlorn: Guard Break
+186602400 NPC: Scythe of the Forlorn: Riposte
+900100000 Test: Landing: Small 
+900100010 Test: Landing: Medium 
+900100020 Test: Landing: Large 
+900100030 Test: Landing: Oversized 
+900100040 Test: Landing: Extra Large 

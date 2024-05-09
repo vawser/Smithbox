@@ -366,7 +366,7 @@ public static class Project
     /// <returns></returns>
     private static bool GameNotUnpackedWarning(ProjectType gameType)
     {
-        if (gameType is ProjectType.DS1 or ProjectType.DS2S)
+        if (gameType is ProjectType.DS1 or ProjectType.DS2S or ProjectType.DS2)
         {
             TaskLogs.AddLog(
                 $"The files for {gameType} do not appear to be unpacked. Please use UDSFM for DS1:PTDE and UXM for DS2 to unpack game files",
@@ -396,6 +396,8 @@ public static class Project
                 return "DS1";
             case ProjectType.DS1R:
                 return "DS1R";
+            case ProjectType.DS2:
+                return "DS2";
             case ProjectType.DS2S:
                 return "DS2S";
             case ProjectType.BB:
@@ -432,7 +434,7 @@ public static class Project
         }
         else if (exePath.ToLower().Contains("darksoulsii.exe"))
         {
-            type = ProjectType.DS2S;
+            type = ProjectType.DS2S; // Default to SOTFS
         }
         else if (exePath.ToLower().Contains("darksoulsiii.exe"))
         {
@@ -546,6 +548,16 @@ public static class Project
         {
             // DS1R
             if (p.GameType == ProjectType.DS1R)
+            {
+                RecentProjectEntry(p, id);
+
+                id++;
+            }
+        }
+        foreach (CFG.RecentProject p in CFG.Current.RecentProjects.ToArray())
+        {
+            // DS2
+            if (p.GameType == ProjectType.DS2)
             {
                 RecentProjectEntry(p, id);
 
@@ -784,7 +796,7 @@ public static class Project
         //
 
         ImGui.Separator();
-        if (Config.GameType is ProjectType.DS2S or ProjectType.DS3)
+        if (Config.GameType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3)
         {
             ImGui.NewLine();
             ImGui.AlignTextToFramePadding();

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Row0Dummy="" />
+  <Field>
+    <event_id AltName="Event ID"/>
+    <flag_id AltName="Flag ID"/>
+  </Field>
+</PARAMMETA>

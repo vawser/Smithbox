@@ -11,5 +11,6 @@ public enum ProjectType
     BB = 6, // Bloodborne
     SDT = 7, // Sekiro: Shadows Die Twice
     ER = 8, // Elden Ring
-    AC6 = 9 // Armored Core VI: Fires of Rubicon
+    AC6 = 9, // Armored Core VI: Fires of Rubicon
+    DS2 = 10 // Dark Souls II
 }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>KEY_CONFIG_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 Unk00" />
+    <Field Def="u8 Unk01" />
+    <Field Def="u8 Unk02" />
+    <Field Def="u8 Unk03" />
+    <Field Def="u8 Unk04" />
+    <Field Def="u8 Unk05" />
+    <Field Def="u8 Unk06" />
+    <Field Def="u8 Unk07" />
+    <Field Def="u8 Unk08" />
+    <Field Def="u8 Unk09" />
+    <Field Def="u8 Unk10" />
+    <Field Def="u8 Unk11" />
+    <Field Def="u8 Unk12" />
+    <Field Def="u8 Unk13" />
+    <Field Def="u8 Unk14" />
+    <Field Def="u8 Unk15" />
+    <Field Def="u8 Unk16" />
+    <Field Def="u8 Unk17" />
+    <Field Def="u8 Unk18" />
+    <Field Def="u8 Unk19" />
+    <Field Def="u8 Unk20" />
+    <Field Def="u8 Unk21" />
+    <Field Def="u8 Unk22" />
+    <Field Def="u8 Unk23" />
+    <Field Def="u8 Unk24" />
+    <Field Def="u8 Unk25" />
+    <Field Def="u8 Unk26" />
+    <Field Def="u8 Unk27" />
+    <Field Def="u8 Unk28" />
+    <Field Def="u8 Unk29" />
+    <Field Def="u8 Unk30" />
+    <Field Def="u8 Unk31" />
+    <Field Def="u8 Unk32" />
+    <Field Def="u8 Unk33" />
+    <Field Def="u8 Unk34" />
+    <Field Def="u8 Unk35" />
+    <Field Def="u8 Unk36" />
+    <Field Def="u8 Unk37" />
+    <Field Def="u8 Unk38" />
+    <Field Def="u8 Unk39" />
+    <Field Def="u8 Unk40" />
+    <Field Def="u8 Unk41" />
+    <Field Def="u8 Unk42" />
+    <Field Def="u8 Unk43" />
+    <Field Def="u8 Unk44" />
+    <Field Def="u8 Unk45" />
+    <Field Def="u8 Unk46" />
+    <Field Def="u8 Unk47" />
+    <Field Def="u8 Unk48" />
+    <Field Def="u8 Unk49" />
+    <Field Def="u8 Unk50" />
+    <Field Def="u8 Unk51" />
+    <Field Def="u8 Unk52" />
+    <Field Def="u8 Unk53" />
+    <Field Def="u8 Unk54" />
+    <Field Def="u8 Unk55" />
+    <Field Def="u8 Unk56" />
+    <Field Def="u8 Unk57" />
+    <Field Def="u8 Unk58" />
+    <Field Def="u8 Unk59" />
+    <Field Def="u8 Unk60" />
+    <Field Def="u8 Unk61" />
+    <Field Def="u8 Unk62" />
+    <Field Def="u8 Unk63" />
+    <Field Def="u8 Unk64" />
+    <Field Def="u8 Unk65" />
+    <Field Def="u8 Unk66" />
+    <Field Def="u8 Unk67" />
+    <Field Def="u8 Unk68" />
+    <Field Def="u8 Unk69" />
+    <Field Def="u8 Unk70" />
+    <Field Def="u8 Unk71" />
+    <Field Def="u8 Unk72" />
+    <Field Def="u8 Unk73" />
+    <Field Def="u8 Unk74" />
+    <Field Def="u8 Unk75" />
+  </Fields>
+</PARAMDEF>

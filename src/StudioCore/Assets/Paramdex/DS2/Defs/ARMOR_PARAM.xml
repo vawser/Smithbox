@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ARMOR_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u32 armor_set_id" />
+    <Field Def="u8 Unk00" />
+    <Field Def="u8 slot_category" />
+    <Field Def="u8 Unk06" />
+    <Field Def="u8 Unk07" />
+    <Field Def="u32 model_id" />
+    <Field Def="u8 has_gendered_armor" />
+    <Field Def="u8 Unk08" />
+    <Field Def="s16 Unk09" />
+    <Field Def="u32 equip_interfere_id" />
+    <Field Def="s32 Unk10" />
+    <Field Def="u32 armor_reinforce_id" />
+    <Field Def="f32 physical_defence_scaling" />
+    <Field Def="f32 Unk11" />
+    <Field Def="f32 Unk12" />
+    <Field Def="f32 Unk13" />
+    <Field Def="u16 strength_requirement" />
+    <Field Def="u16 dexterity_requirement" />
+    <Field Def="u16 intelligence_requirement" />
+    <Field Def="u16 faith_requirement" />
+    <Field Def="f32 weight" />
+    <Field Def="f32 durability" />
+    <Field Def="u32 repair_cost" />
+    <Field Def="f32 poise" />
+    <Field Def="u8 control_parameters_blend_weight_1h" />
+    <Field Def="u8 control_parameters_blend_weight_2h" />
+    <Field Def="s16 item_discovery" />
+    <Field Def="s32 Unk15" />
+    <Field Def="s32 Unk16" />
+    <Field Def="s32 Unk17" />
+  </Fields>
+</PARAMDEF>

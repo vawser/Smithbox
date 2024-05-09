@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CHR_CULLING_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 Unk00" />
+    <Field Def="s32 Unk01" />
+    <Field Def="s32 Unk02" />
+    <Field Def="s32 Unk03" />
+    <Field Def="s32 Unk04" />
+    <Field Def="s32 Unk05" />
+    <Field Def="s32 Unk06" />
+    <Field Def="s32 Unk07" />
+    <Field Def="s32 Unk08" />
+    <Field Def="s32 Unk09" />
+    <Field Def="s32 Unk10" />
+    <Field Def="s32 Unk11" />
+    <Field Def="s32 Unk12" />
+    <Field Def="s32 Unk13" />
+    <Field Def="s32 Unk14" />
+    <Field Def="s32 Unk15" />
+    <Field Def="s32 Unk16" />
+    <Field Def="s32 Unk17" />
+    <Field Def="s32 Unk18" />
+    <Field Def="s32 Unk19" />
+    <Field Def="s32 Unk20" />
+    <Field Def="s32 Unk21" />
+    <Field Def="s32 Unk22" />
+    <Field Def="s32 Unk23" />
+    <Field Def="s32 Unk24" />
+    <Field Def="s32 Unk25" />
+    <Field Def="s32 Unk26" />
+    <Field Def="s32 Unk27" />
+    <Field Def="s32 Unk28" />
+    <Field Def="s32 Unk29" />
+    <Field Def="s32 Unk30" />
+    <Field Def="s32 Unk31" />
+  </Fields>
+</PARAMDEF>

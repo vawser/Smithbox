@@ -33,6 +33,7 @@ public class SoapstoneService : SoapstoneServiceV1
         [ProjectType.DS1] = FromSoftGame.DarkSoulsPtde,
         [ProjectType.DS1R] = FromSoftGame.DarkSoulsRemastered,
         [ProjectType.DS2S] = FromSoftGame.DarkSouls2Sotfs,
+        [ProjectType.DS2] = FromSoftGame.DarkSouls2,
         [ProjectType.DS3] = FromSoftGame.DarkSouls3,
         [ProjectType.BB] = FromSoftGame.Bloodborne,
         [ProjectType.SDT] = FromSoftGame.Sekiro,

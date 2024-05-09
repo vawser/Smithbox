@@ -35,7 +35,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImguiUtils.WrappedText("Duplicate the current selection.");
                 ImguiUtils.WrappedText("");
 
-                if (Project.Type != ProjectType.DS2S)
+                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
                 {
                     if(ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID))
                     {
@@ -59,7 +59,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImguiUtils.ShowHoverTooltip("When enabled, the duplicated Asset entities UnkPartNames property will be updated.");
                 }
 
-                if (Project.Type != ProjectType.DS2S)
+                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
                 {
                     if(ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_ID))
                     {
@@ -74,7 +74,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     ImguiUtils.ShowHoverTooltip("When enabled, the Entity Group IDs assigned to the duplicated entities will be set to 0");
                 }
 
-                if (Project.Type != ProjectType.DS2S)
+                if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
                 {
                     ImguiUtils.WrappedText("");
                 }

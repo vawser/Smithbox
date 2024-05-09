@@ -1,0 +1,141 @@
+40 [GEN:40] Darkdiver Grandahl
+41 [GEN:41] Darkdiver Grandahl
+90 [GEN:90] Lucatiel of Mirrah
+91 [GEN:91] Lucatiel of Mirrah
+590 [GEN:590] Melinda the Butcher
+591 [GEN:591] Royal Sorcerer Navlaan
+592 [GEN:592] Woodland Child Victor
+593 [GEN:593] Woodland Child Gully
+594 [GEN:594] Gutter Denizen
+596 [GEN:596] Lucatiel of Mirrah
+597 [GEN:597] Lone Hunter Schmidt
+598 [GEN:598] Bashful Ray
+851 [GEN:851] The Rotten
+914 [GEN:914] Aldia- Scholar of the First Sin
+947 [GEN:947] Forlorn
+1000 [GEN:1000] Captive Undead
+1100 [GEN:1100] Captive Undead
+1110 [GEN:1110] Captive Undead
+1111 [GEN:1111] Captive Undead
+1120 [GEN:1120] Captive Undead
+1210 [GEN:1210] Captive Undead
+1211 [GEN:1211] Captive Undead
+1300 [GEN:1300] NO MATCH
+1301 [GEN:1301] Captive Undead
+1305 [GEN:1305] Captive Undead
+1310 [GEN:1310] Captive Undead
+1324 [GEN:1324] Captive Undead
+1325 [GEN:1325] Captive Undead
+1326 [GEN:1326] NO MATCH
+1327 [GEN:1327] Captive Undead
+1328 [GEN:1328] NO MATCH
+1329 [GEN:1329] Captive Undead
+1360 [GEN:1360] Darksucker
+1400 [GEN:1400] Captive Undead
+1401 [GEN:1401] NO MATCH
+1402 [GEN:1402] Captive Undead
+1410 [GEN:1410] Captive Undead
+1411 [GEN:1411] Captive Undead
+1420 [GEN:1420] Rupturing Hollow
+1421 [GEN:1421] Rupturing Hollow
+1490 [GEN:1490] Mimic
+1500 [GEN:1500] Captive Undead
+1501 [GEN:1501] NO MATCH
+1502 [GEN:1502] NO MATCH
+1503 [GEN:1503] NO MATCH
+1530 [GEN:1530] Rupturing Hollow
+1531 [GEN:1531] Rupturing Hollow
+1532 [GEN:1532] Rupturing Hollow
+1560 [GEN:1560] Captive Undead
+1561 [GEN:1561] Captive Undead
+1562 [GEN:1562] Hunting Dog
+1570 [GEN:1570] Captive Undead
+1571 [GEN:1571] Captive Undead
+1580 [GEN:1580] Captive Undead
+1900 [GEN:1900] NO MATCH
+2020 [GEN:2020] Captive Undead
+2021 [GEN:2021] Captive Undead
+2070 [GEN:2070] NO MATCH
+2080 [GEN:2080] Captive Undead
+2081 [GEN:2081] Captive Undead
+2090 [GEN:2090] Heide Knight
+2100 [GEN:2100] NO MATCH
+2101 [GEN:2101] NO MATCH
+2102 [GEN:2102] NO MATCH
+2300 [GEN:2300] Hunting Dog
+2400 [GEN:2400] Captive Undead
+2500 [GEN:2500] Captive Undead
+2503 [GEN:2503] Captive Undead
+2505 [GEN:2505] Rupturing Hollow
+2510 [GEN:2510] Hunting Dog
+2520 [GEN:2520] Rotten Vermin
+2521 [GEN:2521] Rotten Vermin
+2522 [GEN:2522] Rotten Vermin
+2523 [GEN:2523] Rotten Vermin
+2700 [GEN:2700] Rotten Vermin
+2710 [GEN:2710] Poison Horn Beetle
+2711 [GEN:2711] Poison Horn Beetle
+2712 [GEN:2712] Poison Horn Beetle
+3000 [GEN:3000] Rupturing Hollow
+3100 [GEN:3100] Captive Undead
+3101 [GEN:3101] Captive Undead
+3102 [GEN:3102] NO MATCH
+3110 [GEN:3110] Captive Undead
+3111 [GEN:3111] Captive Undead
+3112 [GEN:3112] Rupturing Hollow
+3120 [GEN:3120] Captive Undead
+3121 [GEN:3121] Captive Undead
+3122 [GEN:3122] NO MATCH
+3123 [GEN:3123] Captive Undead
+3124 [GEN:3124] Captive Undead
+4210 [GEN:4210] Darksucker
+4211 [GEN:4211] Darksucker
+4212 [GEN:4212] Darksucker
+4213 [GEN:4213] Darksucker
+4260 [GEN:4260] Razorback Nightcrawler
+4310 [GEN:4310] Razorback Nightcrawler
+4400 [GEN:4400] Darksucker
+4401 [GEN:4401] Darksucker
+4402 [GEN:4402] Darksucker
+4403 [GEN:4403] Darksucker
+4404 [GEN:4404] Darksucker
+4405 [GEN:4405] Darksucker
+4500 [GEN:4500] Poison Statue Cluster
+6000 [GEN:6000] Forgotten Giant
+6001 [GEN:6001] Forgotten Giant
+6010 [GEN:6010] Forgotten Giant
+6020 [GEN:6020] Forgotten Giant
+7000 [GEN:7000] NO MATCH
+7001 [GEN:7001] Captive Undead
+7002 [GEN:7002] Captive Undead
+7003 [GEN:7003] Captive Undead
+7004 [GEN:7004] NO MATCH
+7005 [GEN:7005] Captive Undead
+7006 [GEN:7006] Captive Undead
+8000 [GEN:8000] Undead Traveler
+8500 [GEN:8500] Poison Moth
+9000 [GEN:9000] NO MATCH
+9001 [GEN:9001] NO MATCH
+9002 [GEN:9002] NO MATCH
+9003 [GEN:9003] NO MATCH
+9004 [GEN:9004] NO MATCH
+9005 [GEN:9005] NO MATCH
+9006 [GEN:9006] NO MATCH
+9007 [GEN:9007] NO MATCH
+9008 [GEN:9008] NO MATCH
+9009 [GEN:9009] NO MATCH
+9010 [GEN:9010] NO MATCH
+9011 [GEN:9011] NO MATCH
+9012 [GEN:9012] NO MATCH
+9013 [GEN:9013] NO MATCH
+9014 [GEN:9014] NO MATCH
+9015 [GEN:9015] NO MATCH
+9016 [GEN:9016] NO MATCH
+9017 [GEN:9017] NO MATCH
+9018 [GEN:9018] NO MATCH
+9019 [GEN:9019] NO MATCH
+9500 [GEN:9500] Invisible Hollow
+9501 [GEN:9501] Invisible Hollow
+9502 [GEN:9502] Invisible Hollow
+9503 [GEN:9503] Invisible Hollow
+9504 [GEN:9504] Invisible Hollow

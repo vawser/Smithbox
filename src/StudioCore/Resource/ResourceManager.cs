@@ -712,7 +712,7 @@ public static class ResourceManager
                 }
             }
 
-            if(ResourceMask.HasFlag(ResourceType.CollisionHKX) || Project.Type == ProjectType.DS2S)
+            if(ResourceMask.HasFlag(ResourceType.CollisionHKX) || Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 // Ignore dispose if the resource is a Collision, or we are working with DS2
             }

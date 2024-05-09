@@ -178,6 +178,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 case ProjectType.DS3:
                     Prefab_DS3.ImportSelectedPrefab(info, comboMap, universe, scene, actionManager);
                     break;
+                case ProjectType.DS2:
                 case ProjectType.DS2S:
                     Prefab_DS2.ImportSelectedPrefab(info, comboMap, universe, scene, actionManager);
                     break;
@@ -231,6 +232,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     case ProjectType.DS3:
                         MapToolbar._selectedPrefabObjectNames = Prefab_DS3.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;
+                    case ProjectType.DS2:
                     case ProjectType.DS2S:
                         MapToolbar._selectedPrefabObjectNames = Prefab_DS2.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;

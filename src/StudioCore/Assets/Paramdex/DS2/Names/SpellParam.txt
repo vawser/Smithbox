@@ -1,0 +1,219 @@
+1 UNKNOWN
+10 UNKNOWN
+20 UNKNOWN
+31010000 Soul Arrow
+31020000 Great Soul Arrow
+31030000 Heavy Soul Arrow
+31040000 Great Heavy Soul Arrow
+31050000 Homing Soul Arrow
+31060000 Heavy Homing Soul Arrow
+31070000 Homing Soulmass
+31080000 Homing Crystal Soulmass
+31090000 Soul Spear
+31100000 Crystal Soul Spear
+31110000 Shockwave
+31120000 Soul Spear Barrage
+31130000 Soul Shower
+31140000 Soul Greatsword
+31150000 Soul Vortex
+31160000 Soul Bolt
+31170000 Soul Geyser
+31180000 Magic Weapon
+31190000 Great Magic Weapon
+31200000 Crystal Magic Weapon
+31210000 Strong Magic Shield
+31220000 Yearn
+31230000 Hush
+31240000 Fall Control
+31250000 Hidden Weapon
+31260000 Repair
+31270000 Cast Light
+31280000 Chameleon
+31290000 Unleash Magic
+31300000 Soul Flash
+31310000 Focus Souls
+32010000 Heal
+32020000 Med Heal
+32030000 Great Heal Excerpt
+32040000 Great Heal
+32050000 Soothing Sunlight
+32060000 Replenishment
+32070000 Resplendent Life
+32080000 Bountiful Sunlight
+32090000 Caressing Prayer
+32100000 Force
+32110000 Wrath of the Gods
+32120000 Emit Force
+32130000 Heavenly Thunder
+32140000 Lightning Spear
+32150000 Great Lightning Spear
+32160000 Sunlight Spear
+32170000 Soul Appease
+32180000 Blinding Bolt
+32190000 Magic Barrier
+32200000 Great Magic Barrier
+32210000 Homeward
+32220000 Guidance
+32230000 Sacred Oath
+32240000 Unveil
+32250000 Perseverance
+32260000 Sunlight Blade
+32300000 Denial
+32310000 Splintering Lightning Spear
+33010000 Fireball
+33020000 Fire Orb
+33030000 Great Fireball
+33040000 Great Chaos Fireball
+33050000 Firestorm
+33060000 Fire Tempest
+33070000 Chaos Storm
+33080000 Combustion
+33090000 Great Combustion
+33100000 Fire Whip
+33110000 Poison Mist
+33120000 Toxic Mist
+33130000 Acid Surge
+33140000 Lingering Flame
+33150000 Flame Swathe
+33160000 Forbidden Sun
+33170000 Flame Weapon
+33180000 Flash Sweat
+33190000 Iron Flesh
+33200000 Warmth
+33210000 Immolation
+33300000 Fire Snake
+33310000 Dance of Fire
+33320000 Outcry
+34010000 Dark Orb
+34020000 Dark Hail
+34030000 Dark Fog
+34040000 Affinity
+34050000 Dead Again
+34060000 Dark Weapon
+34070000 Whisper of Despair
+34080000 Repel
+34090000 Twisted Barricade
+34100000 Numbness
+34300000 Dark Greatsword
+34310000 Recollection
+35010000 Scraps of Life
+35020000 Darkstorm
+35030000 Resonant Soul
+35040000 Great Resonant Soul
+35050000 Climax
+35060000 Resonant Flesh
+35070000 Resonant Weapon
+35080000 Lifedrain Patch
+35090000 Profound Still
+35300000 Promised Walk of Peace
+35310000 Dark Dance
+71010000 NPC - Soul Arrow
+71020000 NPC - Great Soul Arrow
+71030000 NPC - Heavy Soul Arrow
+71040000 NPC - Great Heavy Soul Arrow
+71050000 NPC - Homing Soul Arrow
+71060000 NPC - Heavy Homing Soul Arrow
+71090000 NPC - Soul Spear
+71100000 NPC - Crystal Soul Spear
+71110000 NPC - Shockwave
+71120000 NPC - Soul Spear Barrage
+71130000 NPC - Soul Shower
+71140000 NPC - Soul Greatsword
+71150000 NPC - Soul Vortex
+71160000 NPC - Soul Bolt
+71170000 NPC - Soul Geyser
+71180000 NPC - Magic Weapon
+71190000 NPC - Great Magic Weapon
+71200000 NPC - Crystal Magic Weapon
+71210000 NPC - Strong Magic Shield
+71220000 NPC - Yearn
+71230000 NPC - Hush
+71240000 NPC - Fall Control
+71250000 NPC - Hidden Weapon
+71260000 NPC - Repair
+71270000 NPC - Cast Light
+71280000 NPC - Chameleon
+71290000 NPC - Unleash Magic
+71300000 NPC - Soul Flash
+71310000 NPC - Focus Souls
+72010000 NPC - Heal
+72020000 NPC - Med Heal
+72030000 NPC - Great Heal Excerpt
+72040000 NPC - Great Heal
+72050000 NPC - Soothing Sunlight
+72060000 NPC - Replenishment
+72070000 NPC - Resplendent Life
+72080000 NPC - Bountiful Sunlight
+72090000 NPC - Caressing Prayer
+72100000 NPC - Force
+72110000 NPC - Wrath of the Gods
+72120000 NPC - Emit Force
+72130000 NPC - Heavenly Thunder
+72130001 NPC - Heavenly Thunder
+72140000 NPC - Lightning Spear
+72150000 NPC - Great Lightning Spear
+72160000 NPC - Sunlight Spear
+72160001 NPC - Sunlight Spear
+72170000 NPC - Soul Appease
+72180000 NPC - Blinding Bolt
+72180001 NPC - Blinding Bolt
+72190000 NPC - Magic Barrier
+72200000 NPC - Great Magic Barrier
+72210000 NPC - Homeward
+72220000 NPC - Guidance
+72230000 NPC - Sacred Oath
+72230010 NPC - Sacred Oath
+72240000 NPC - Unveil
+72250000 NPC - Perseverance
+72260000 NPC - Sunlight Blade
+72300000 NPC - Denial
+72310000 NPC - Splintering Lightning Spear
+73010000 NPC - Fireball
+73020000 NPC - Fire Orb
+73030000 NPC - Great Fireball
+73040000 NPC - Great Chaos Fireball
+73050000 NPC - Firestorm
+73060000 NPC - Fire Tempest
+73070000 NPC - Chaos Storm
+73080000 NPC - Combustion
+73090000 NPC - Great Combustion
+73100000 NPC - Fire Whip
+73110000 NPC -  Poison Mist
+73120000 NPC - Toxic Mist
+73130000 NPC - Acid Surge
+73140000 NPC - Lingering Flame
+73150000 NPC - Flame Swathe
+73150001 NPC - Flame Swathe
+73160000 NPC - Forbidden Sun
+73170000 NPC - Flame Weapon
+73180000 NPC - Flash Sweat
+73190000 NPC - Iron Flesh
+73200000 NPC - Warmth
+73210000 NPC - Immolation
+73300000 NPC - Fire Snake
+73310000 NPC - Dance of Fire
+73320000 NPC - Outcry
+74010000 NPC - Dark Orb
+74010001 NPC - Dark Orb
+74020000 NPC - Dark Hail
+74020001 NPC - Dark Hail
+74030000 NPC - Dark Fog
+74040000 NPC - Affinity
+74050000 NPC - Dead Again
+74060000 NPC - Dark Weapon
+74070000 NPC - Whisper of Despair
+74080000 NPC - Repel
+74100000 NPC - Numbness
+74300000 NPC - Dark Greatsword
+74310000 NPC - Recollection
+75010000 NPC - Scraps of Life
+75020000 NPC - Darkstorm
+75030000 NPC - Resonant Soul
+75040000 NPC - Great Resonant Soul
+75050000 NPC - Climax
+75060000 NPC - Resonant Flesh
+75070000 NPC - Resonant Weapon
+75080000 NPC - Lifedrain Patch
+75090000 NPC - Profound Still
+75300000 NPC - Promised Walk of Peace
+75310000 NPC - Dark Dance

@@ -40,7 +40,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(bytes);
         }
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2 || Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -77,7 +77,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(file);
         }
 
-        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2 || Project.Type == ProjectType.DS3 || Project.Type == ProjectType.BB)
         {
             FrontFace = VkFrontFace.Clockwise;
         }

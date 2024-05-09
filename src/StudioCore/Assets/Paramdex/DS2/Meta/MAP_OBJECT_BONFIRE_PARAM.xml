@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to bonfire map objects." Row0Dummy="" />
+  <Field>
+    <area_id AltName="Area ID" Refs="AreaParam" />
+    <fog_door_id AltName="Fog Door ID" Refs="MapObjectWhiteDoorParam" />
+    <bonfire_lit_flag AltName="Bonfire Lit ID" />
+    <menu_sort_id AltName="Menu Sort ID" />
+  </Field>
+</PARAMMETA>

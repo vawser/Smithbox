@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>ARROW_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 sort_id" />
+    <Field Def="u32 damage_id_0" />
+    <Field Def="u32 damage_id_1" />
+    <Field Def="u32 damage_id_2" />
+    <Field Def="u32 damage_id_3" />
+    <Field Def="u32 damage_id_4" />
+    <Field Def="u32 damage_id_5" />
+    <Field Def="u32 damage_id_6" />
+    <Field Def="u32 damage_id_7" />
+    <Field Def="u32 damage_id_8" />
+    <Field Def="u32 damage_id_9" />
+    <Field Def="u32 damage_id_10" />
+    <Field Def="u32 damage_id_11" />
+    <Field Def="u32 damage_id_12" />
+    <Field Def="u32 damage_id_13" />
+    <Field Def="u32 damage_id_14" />
+    <Field Def="u32 damage_id_15" />
+    <Field Def="u16 damage_dead_motion_id" />
+    <Field Def="u16 damage_physical" />
+    <Field Def="u16 damage_magic" />
+    <Field Def="u16 damage_lightning" />
+    <Field Def="u16 damage_fire" />
+    <Field Def="u16 damage_dark" />
+    <Field Def="u8 damage_poison" />
+    <Field Def="u8 apply_poison" />
+    <Field Def="u8 damage_bleed" />
+    <Field Def="u8 apply_bleed" />
+    <Field Def="u8 damage_durability" />
+    <Field Def="u8 Unk55" />
+    <Field Def="u8 ammo_type" />
+    <Field Def="u8 Unk57" />
+    <Field Def="u8 Unk58" />
+    <Field Def="u8 Unk59" />
+    <Field Def="u8 Unk5A" />
+    <Field Def="u8 Unk5B" />
+  </Fields>
+</PARAMDEF>

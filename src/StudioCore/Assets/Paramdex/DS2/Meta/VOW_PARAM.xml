@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters relating to covenants." Row0Dummy="" />
+  <Field>
+    <rank_1_requirement AltName="Rank 1 Requirement" />
+    <rank_2_requirement AltName="Rank 2 Requirement" />
+    <rank_3_requirement AltName="Rank 3 Requirement" />
+  </Field>
+</PARAMMETA>

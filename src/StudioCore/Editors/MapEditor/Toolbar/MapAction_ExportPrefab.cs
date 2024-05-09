@@ -142,6 +142,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 case ProjectType.DS3:
                     Prefab_DS3.ExportSelection(filepath, _selection, MapToolbar._prefabTags);
                     break;
+                case ProjectType.DS2:
                 case ProjectType.DS2S:
                     Prefab_DS2.ExportSelection(filepath, _selection, MapToolbar._prefabTags);
                     break;

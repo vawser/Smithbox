@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to NPC stats and equipment." Row0Dummy="" />
+  <Enums>
+    <Enum Name="PlayerStatusBodyType">
+      <Option Value="0" Name="Male" />
+      <Option Value="1" Name="Female" />
+    </Enum>
+    <Enum Name="PlayerStatusHollowType">
+      <Option Value="0" Name="Not Hollow" />
+      <Option Value="1" Name="Hollow" />
+      <Option Value="2" Name="Fully Hollow" />
+    </Enum>
+    <Enum Name="PlayerStatusBuildType">
+      <Option Value="0" Name="Average"/>
+      <Option Value="1" Name="Slim" />
+      <Option Value="2" Name="Very Slim"/>
+      <Option Value="3" Name="Large"/>
+      <Option Value="4" Name="Very Large"/>
+      <Option Value="5" Name="Large Upper Body"/>
+      <Option Value="6" Name="Large Lower Body"/>
+      <Option Value="7" Name="Big-Head"/>
+    </Enum>
+  </Enums>
+  <Field>
+    <body_type AltName="Body Type" Enum="PlayerStatusBodyType"/>
+    <hollowing_type AltName="Hollowing Type" Enum="PlayerStatusHollowType"/>
+    <body_build_type AltName="Body Build Type" Enum="PlayerStatusBuildType"/>
+    <face_model_id AltName="Face Model ID"/>
+    <soul_level AltName="Soul Level"/>
+    <vigor AltName="Vigor"/>
+    <unk00 AltName="Unknown"/>
+    <endurance AltName="Endurance"/>
+    <attunement AltName="Attunement"/>
+    <vitality AltName="Vitality"/>
+    <strength AltName="Strength"/>
+    <dexterity AltName="Dexterity"/>
+    <intelligence AltName="Intelligence"/>
+    <faith AltName="Faith"/>
+    <adaptability AltName="Adaptability"/>
+    <unk01 AltName="Unknown"/>
+    <equip_load AltName="Equip Load %"/>
+    <invincibility_time AltName="Invincibility Duration"/>
+    <recovery_item_id AltName="Estus Item ID" Refs="ItemParam"/>
+    <item_1 AltName="[1] Item ID" Refs="ItemParam"/>
+    <item_2 AltName="[2] Item ID" Refs="ItemParam"/>
+    <item_3 AltName="[3] Item ID" Refs="ItemParam"/>
+    <item_4 AltName="[4] Item ID" Refs="ItemParam"/>
+    <item_5 AltName="[5] Item ID" Refs="ItemParam"/>
+    <item_6 AltName="[6] Item ID" Refs="ItemParam"/>
+    <item_7 AltName="[7] Item ID" Refs="ItemParam"/>
+    <item_8 AltName="[8] Item ID" Refs="ItemParam"/>
+    <item_9 AltName="[9] Item ID" Refs="ItemParam"/>
+    <spell_item_1 AltName="[1] Spell ID" Refs="SpellParam"/>
+    <spell_item_2 AltName="[2] Spell ID" Refs="SpellParam"/>
+    <spell_item_3 AltName="[3] Spell ID" Refs="SpellParam"/>
+    <spell_item_4 AltName="[4] Spell ID" Refs="SpellParam"/>
+    <spell_item_5 AltName="[5] Spell ID" Refs="SpellParam"/>
+    <spell_item_6 AltName="[6] Spell ID" Refs="SpellParam"/>
+    <spell_item_7 AltName="[7] Spell ID" Refs="SpellParam"/>
+    <spell_item_8 AltName="[8] Spell ID" Refs="SpellParam"/>
+    <spell_item_9 AltName="[9] Spell ID" Refs="SpellParam"/>
+    <spell_item_10 AltName="[10] Spell ID" Refs="SpellParam"/>
+    <right_weapon_item_1 AltName="[1] Right Weapon ID" Refs="WeaponParam"/>
+    <right_weapon_item_2 AltName="[2] Right Weapon ID" Refs="WeaponParam"/>
+    <right_weapon_item_3 AltName="[3] Right Weapon ID" Refs="WeaponParam"/>
+    <left_weapon_item_1 AltName="[1] Left Weapon ID" Refs="WeaponParam"/>
+    <left_weapon_item_2 AltName="[2] Left Weapon ID" Refs="WeaponParam"/>
+    <left_weapon_item_3 AltName="[3] Left Weapon ID" Refs="WeaponParam"/>
+    <head_item AltName="Head Armor ID" Refs="ArmorParam"/>
+    <chest_item AltName="Chest Armor ID" Refs="ArmorParam"/>
+    <hands_item AltName="Hands Armor ID" Refs="ArmorParam"/>
+    <legs_item AltName="Legs Armor ID" Refs="ArmorParam"/>
+    <ring_item_1 AltName="[1] Ring ID" Refs="RingParam"/>
+    <ring_item_2 AltName="[2] Ring ID" Refs="RingParam"/>
+    <ring_item_3 AltName="[3] Ring ID" Refs="RingParam"/>
+    <ring_item_4 AltName="[4] Ring ID" Refs="RingParam"/>
+    <arrow_item_1 AltName="[1] Arrow ID" Refs="ArrowParam"/>
+    <arrow_item_2 AltName="[2] Arrow ID" Refs="ArrowParam"/>
+    <bolt_item_1 AltName="[1] Bolt ID" Refs="ArrowParam"/>
+    <bolt_item_2 AltName="[2] Bolt ID" Refs="ArrowParam"/>
+    <gesture_1 AltName="[1] Gesture ID" Refs="ItemParam"/>
+    <gesture_2 AltName="[2] Gesture ID" Refs="ItemParam"/>
+    <gesture_3 AltName="[3] Gesture ID" Refs="ItemParam"/>
+    <gesture_4 AltName="[4] Gesture ID" Refs="ItemParam"/>
+    <gesture_5 AltName="[5] Gesture ID" Refs="ItemParam"/>
+    <gesture_6 AltName="[6] Gesture ID" Refs="ItemParam"/>
+    <gesture_7 AltName="[7] Gesture ID" Refs="ItemParam"/>
+    <gesture_8 AltName="[8] Gesture ID" Refs="ItemParam"/>
+  </Field>
+</PARAMMETA>

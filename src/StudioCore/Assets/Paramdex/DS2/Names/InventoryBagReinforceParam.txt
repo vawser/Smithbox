@@ -1,0 +1,15 @@
+0 Enhanced Level 0 -- 強化レベル0
+1 Enhanced Level 1 -- 強化レベル1
+2 Enhanced Level 2 -- 強化レベル2
+3 Enhanced Level 3 -- 強化レベル3
+4 Enhanced Level 4 -- 強化レベル4
+5 Enhanced Level 5 -- 強化レベル5
+6 Enhanced Level 6 -- 強化レベル6
+7 Enhanced Level 7 -- 強化レベル7
+8 Enhanced Level 8 -- 強化レベル8
+9 Enhanced Level 9 -- 強化レベル9
+10 Enhanced Level 10 -- 強化レベル10
+11 Enhanced Level 11 -- 強化レベル11
+12 Enhanced Level 12 -- 強化レベル12
+13 Enhanced Level 13 -- 強化レベル13
+14 Enhanced Level 14 -- 強化レベル14

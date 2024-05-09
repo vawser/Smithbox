@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters related to item lots." Row0Dummy=""/>
+  <Enums>
+    <Enum Name="ItemLotInfusionType">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Fire" />
+      <Option Value="2" Name="Magic" />
+      <Option Value="3" Name="Lightning" />
+      <Option Value="4" Name="Dark" />
+      <Option Value="5" Name="Poison" />
+      <Option Value="6" Name="Bleed" />
+      <Option Value="7" Name="Raw" />
+      <Option Value="8" Name="Enchanted" />
+    </Enum>
+    <Enum Name="ItemLotDropOrderType">
+      <Option Value="0" Name="Random" />
+      <Option Value="1" Name="Unknown" />
+      <Option Value="2" Name="Unknown (Dyna and Tillo)" />
+      <Option Value="3" Name="In order" />
+    </Enum>
+  </Enums>
+  <Field>
+    
+  </Field>
+</PARAMMETA>

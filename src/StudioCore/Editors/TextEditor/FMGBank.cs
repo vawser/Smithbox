@@ -702,7 +702,7 @@ public static partial class FMGBank
                     return;
                 }
 
-                if (Project.Type == ProjectType.DS2S)
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 {
                     if (ReloadDS2FMGs())
                     {
@@ -1170,7 +1170,7 @@ public static partial class FMGBank
                 return;
             }
 
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 SaveFMGsDS2();
                 TaskLogs.AddLog("Saved FMG text");

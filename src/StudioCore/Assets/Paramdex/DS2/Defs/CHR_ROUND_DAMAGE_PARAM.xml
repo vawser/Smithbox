@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CHR_ROUND_DAMAGE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u16 ng0_damage_mult" />
+    <Field Def="u16 ng0_stamina_damage_mult" />
+    <Field Def="u16 ng0_posture_damage_mult" />
+    <Field Def="u16 ng1_damage_mult" />
+    <Field Def="u16 ng1_stamina_damage_mult" />
+    <Field Def="u16 ng1_posture_damage_mult" />
+    <Field Def="u16 ng2_damage_mult" />
+    <Field Def="u16 ng2_stamina_damage_mult" />
+    <Field Def="u16 ng2_posture_damage_mult" />
+    <Field Def="u16 ng3_damage_mult" />
+    <Field Def="u16 ng3_stamina_damage_mult" />
+    <Field Def="u16 ng3_posture_damage_mult" />
+    <Field Def="u16 ng4_damage_mult" />
+    <Field Def="u16 ng4_stamina_damage_mult" />
+    <Field Def="u16 ng4_posture_damage_mult" />
+    <Field Def="u16 ng5_damage_mult" />
+    <Field Def="u16 ng5_stamina_damage_mult" />
+    <Field Def="u16 ng5_posture_damage_mult" />
+    <Field Def="u16 ng6_damage_mult" />
+    <Field Def="u16 ng6_stamina_damage_mult" />
+    <Field Def="u16 ng6_posture_damage_mult" />
+    <Field Def="u16 ng7_damage_mult" />
+    <Field Def="u16 ng7_stamina_damage_mult" />
+    <Field Def="u16 ng7_posture_damage_mult" />
+    <Field Def="u16 ng0_stamina_damage_taken_mult" />
+    <Field Def="u16 ng0_posture_damage_taken_mult" />
+    <Field Def="u16 ng1_stamina_damage_taken_mult" />
+    <Field Def="u16 ng1_posture_damage_taken_mult" />
+    <Field Def="u16 ng2_stamina_damage_taken_mult" />
+    <Field Def="u16 ng2_posture_damage_taken_mult" />
+    <Field Def="u16 ng3_stamina_damage_taken_mult" />
+    <Field Def="u16 ng3_posture_damage_taken_mult" />
+    <Field Def="u16 ng4_stamina_damage_taken_mult" />
+    <Field Def="u16 ng4_posture_damage_taken_mult" />
+    <Field Def="u16 ng5_stamina_damage_taken_mult" />
+    <Field Def="u16 ng5_posture_damage_taken_mult" />
+    <Field Def="u16 ng6_stamina_damage_taken_mult" />
+    <Field Def="u16 ng6_posture_damage_taken_mult" />
+    <Field Def="u16 ng7_stamina_damage_taken_mult" />
+    <Field Def="u16 ng7_posture_damage_taken_mult" />
+  </Fields>
+</PARAMDEF>

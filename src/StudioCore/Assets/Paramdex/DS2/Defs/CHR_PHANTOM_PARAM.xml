@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>CHR_PHANTOM_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="u8 phantom_color_1_r" />
+    <Field Def="u8 phantom_color_1_g" />
+    <Field Def="u8 phantom_color_1_b" />
+    <Field Def="u8 phantom_color_1_a" />
+    <Field Def="u8 phantom_color_2_r" />
+    <Field Def="u8 phantom_color_2_g" />
+    <Field Def="u8 phantom_color_2_b" />
+    <Field Def="u8 phantom_color_2_a" />
+    <Field Def="u8 phantom_color_3_r" />
+    <Field Def="u8 phantom_color_3_g" />
+    <Field Def="u8 phantom_color_3_b" />
+    <Field Def="u8 phantom_color_3_a" />
+    <Field Def="u8 phantom_color_4_r" />
+    <Field Def="u8 phantom_color_4_g" />
+    <Field Def="u8 phantom_color_4_b" />
+    <Field Def="u8 phantom_color_4_a" />
+    <Field Def="u8 phantom_color_5_r" />
+    <Field Def="u8 phantom_color_5_g" />
+    <Field Def="u8 phantom_color_5_b" />
+    <Field Def="u8 phantom_color_5_a" />
+    <Field Def="f32 phantom_fade_alpha_start" />
+    <Field Def="f32 phantom_fade_alpha_end" />
+    <Field Def="u8 Unk00" />
+    <Field Def="u8 Unk01" />
+    <Field Def="u8 Unk02" />
+    <Field Def="u8 Unk03" />
+  </Fields>
+</PARAMDEF>

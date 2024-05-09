@@ -1,0 +1,71 @@
+10320700 Brazier
+10320701 Brazier
+10320702 Brazier
+10320703 Brazier
+10320704 Brazier
+10320705 Brazier
+10320706 Brazier
+10320707 Brazier
+10320708 Brazier
+10320709 Brazier
+10320710 Brazier
+10320711 Brazier
+10320712 Brazier
+10320713 Brazier
+10320714 Brazier
+10320715 Brazier
+10320716 Brazier
+10320717 Brazier
+10320718 Brazier
+10320719 Brazier
+10320720 Brazier
+10320721 Brazier
+10320722 Brazier
+10320723 Brazier
+10320724 Brazier
+10320725 Brazier
+10320726 Brazier
+10320727 Brazier
+10320728 Brazier
+10320729 Brazier
+10320730 Brazier
+10325000 [Chest] Treasure
+10325010 [Chest] Treasure
+10325020 [Chest] Treasure
+10325030 [Chest] Treasure
+10325040 [Chest] Treasure
+10325050 [Chest] Treasure
+10325060 [Chest] Treasure
+10325080 [Chest] Treasure
+10325100 [Chest] Treasure
+10325110 [Chest] Treasure
+10325120 [Chest] Treasure
+10326000 [Corpse] Treasure
+10326010 [Corpse] Treasure
+10326020 [Corpse] Treasure
+10326030 [Corpse] Treasure
+10326040 [Corpse] Treasure
+10326050 [Corpse] Treasure
+10326060 [Corpse] Treasure
+10326070 [Corpse] Treasure
+10326080 [Corpse] Treasure
+10326090 [Corpse] Treasure
+10326100 [Corpse] Treasure
+10326110 [Corpse] Treasure
+10326120 [Corpse] Treasure
+10326130 [Corpse] Treasure
+10326140 [Corpse] Treasure
+10326150 [Corpse] Treasure
+10326160 [Corpse] Treasure
+10326170 [Corpse] Treasure
+10326180 [Corpse] Treasure
+10326190 [Corpse] Treasure
+10326200 [Corpse] Treasure
+10326210 [Corpse] Treasure
+10326220 [Corpse] Treasure
+10326230 [Corpse] Treasure
+10326240 [Corpse] Treasure
+10326250 [Corpse] Treasure
+10326260 [Corpse] Treasure
+10326270 [Corpse] Treasure
+10326280 [Corpse] Treasure

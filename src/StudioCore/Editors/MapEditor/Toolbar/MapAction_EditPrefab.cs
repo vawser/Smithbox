@@ -165,6 +165,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                     case ProjectType.DS3:
                         MapToolbar._selectedPrefabObjectNames = Prefab_DS3.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;
+                    case ProjectType.DS2:
                     case ProjectType.DS2S:
                         MapToolbar._selectedPrefabObjectNames = Prefab_DS2.GetSelectedPrefabObjects(prefabInfo, comboMap);
                         break;

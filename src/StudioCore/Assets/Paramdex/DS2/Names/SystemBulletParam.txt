@@ -1,0 +1,191 @@
+200001010 General-purpose - Treasure chest traps - Gas - Weak -- 汎用-宝箱トラップ-ガス-弱
+200001011 Generic - Treasure Chest Trap - Gas - Weak - Child Barrett A -- 汎用-宝箱トラップ-ガス-弱-子バレットA
+200001012 Generic - Treasure Chest Trap - Gas - Weak - Child Barrett B -- 汎用-宝箱トラップ-ガス-弱-子バレットB
+200001020 General Purpose - Treasure Chest Trap - Gas - Medium -- 汎用-宝箱トラップ-ガス-中
+200001021 Generic - Treasure Chest Trap - Gas - Medium - Child Barrett -- 汎用-宝箱トラップ-ガス-中-子バレット
+200001022 Generic - Treasure Chest Trap - Gas - Medium - Child Barrett -- 汎用-宝箱トラップ-ガス-中-子バレット
+200001030 General-purpose - Treasure Chest Trap - Gas - Strong -- 汎用-宝箱トラップ-ガス-強
+200001031 Generic - Treasure Chest Trap - Gas - Strong - Child Barrett -- 汎用-宝箱トラップ-ガス-強-子バレット
+200001032 Generic - Treasure Chest Trap - Gas - Strong - Child Barrett -- 汎用-宝箱トラップ-ガス-強-子バレット
+200001110 General Purpose - Treasure Chest Trap - Recovery Gas - Weak -- 汎用-宝箱トラップ-回復ガス-弱
+200001111 Generic - Treasure Chest Trap - Recovery Gas - Weak - Child Barrett -- 汎用-宝箱トラップ-回復ガス-弱-子バレット
+200001112 Generic - Treasure Chest Trap - Recovery Gas - Weak - Child Barrett -- 汎用-宝箱トラップ-回復ガス-弱-子バレット
+200001120 General Purpose - Treasure Chest Trap - Recovery Gas - Medium -- 汎用-宝箱トラップ-回復ガス-中
+200001121 Generic - Treasure Chest Trap - Recovery Gas - Medium - Child Barrett -- 汎用-宝箱トラップ-回復ガス-中-子バレット
+200001122 Generic - Treasure Chest Trap - Recovery Gas - Medium - Child Barrett -- 汎用-宝箱トラップ-回復ガス-中-子バレット
+200001130 General Purpose - Treasure Chest Trap - Recovery Gas - Strong -- 汎用-宝箱トラップ-回復ガス-強
+200001131 Generic - Treasure Chest Trap - Recovery Gas - Strong - Child Barrett -- 汎用-宝箱トラップ-回復ガス-強-子バレット
+200001132 Generic - Treasure Chest Trap - Recovery Gas - Strong - Child Barrett -- 汎用-宝箱トラップ-回復ガス-強-子バレット
+200001210 General-purpose - Treasure chest trap - continuous arrow - weak -- 汎用-宝箱トラップ-連続矢-弱
+200001211 Generic - Treasure Chest Trap - Continuous Arrow - Weak - Child Barrett -- 汎用-宝箱トラップ-連続矢-弱-子バレット
+200001220 General Purpose - Treasure Chest Trap - Continuous Arrow - Medium -- 汎用-宝箱トラップ-連続矢-中
+200001221 Generic - Treasure Chest Trap - Continuous Arrow - Medium - Child Barrett -- 汎用-宝箱トラップ-連続矢-中-子バレット
+200001230 General-purpose - Treasure Chest Trap - Continuous Arrow - Strong -- 汎用-宝箱トラップ-連続矢-強
+200001231 Generic - Treasure Chest Trap - Continuous Arrow - Strong - Child Barrett -- 汎用-宝箱トラップ-連続矢-強-子バレット
+200001310 General -Treasure Chest Trap-Explosion-Weak -- 汎用-宝箱トラップ-爆発-弱
+200001311 Generic - Treasure Chest Trap - Explosion - Weak - Child Barrett -- 汎用-宝箱トラップ-爆発-弱-子バレット
+200001320 General -Treasure Chest Trap-Explosion-Medium -- 汎用-宝箱トラップ-爆発-中
+200001321 Generic - Treasure Chest Trap - Explosion - Medium - Child Barrett -- 汎用-宝箱トラップ-爆発-中-子バレット
+200001330 General -Treasure Chest Trap-Explosion-Strong -- 汎用-宝箱トラップ-爆発-強
+200001331 Generic - Treasure Chest Trap - Explosion - Strong - Child Barrett -- 汎用-宝箱トラップ-爆発-強-子バレット
+200003010 General-purpose-map trap-arrow-weak -- 汎用-マップトラップ-矢-弱
+200003011 Generic - Map Trap - Arrow - Weak - Child Barrett -- 汎用-マップトラップ-矢-弱-子バレット
+200003020 Generic - Map Trap - Arrow - Medium -- 汎用-マップトラップ-矢-中
+200003021 Generic - Map Trap - Arrow - Medium - Child Barrett -- 汎用-マップトラップ-矢-中-子バレット
+200003030 Generic - Map Trap - Arrow - Strong -- 汎用-マップトラップ-矢-強
+200003031 Generic - Map Trap - Arrow - Strong - Child Barrett -- 汎用-マップトラップ-矢-強-子バレット
+200003110 Generic - Map Trap - Poison Arrow - Weak -- 汎用-マップトラップ-毒矢-弱
+200003111 Generic - Map Trap - Poison Arrow - Weak - Child Barrett -- 汎用-マップトラップ-毒矢-弱-子バレット
+200003120 Generic - Map Trap - Poison Arrow - Medium -- 汎用-マップトラップ-毒矢-中
+200003121 Generic - Map Trap - Poison Arrow - Medium - Child Barrett -- 汎用-マップトラップ-毒矢-中-子バレット
+200003130 Generic - Map Trap - Poison Arrow - Strong -- 汎用-マップトラップ-毒矢-強
+200003131 Generic - Map Trap - Poison Arrow - Strong - Child Barrett -- 汎用-マップトラップ-毒矢-強-子バレット
+200004010 General -Stumble-Corpse-No-Motion -- 汎用-躓き-死体-ノーモーション
+200004011 General-purpose - Stumble - Corpse - Lower body damage -- 汎用-躓き-死体-下半身ダメージ
+200005010 General-purpose -Map Trap - Poison Pot - Weak -- 汎用-マップトラップ-毒壷-弱
+200005011 Generic - Map Trap - Poison Pot - Weak - Child Barrett -- 汎用-マップトラップ-毒壷-弱-子バレット
+200005012 General-purpose-map trap-poison pot-weak-child barrett (directing) -- 汎用-マップトラップ-毒壷-弱-子バレット（演出）
+200005020 General-purpose - Map Trap - Poison Pot - Medium -- 汎用-マップトラップ-毒壷-中
+200005021 Generic - Map Trap - Poison Pot - Medium - Child Barrett -- 汎用-マップトラップ-毒壷-中-子バレット
+200005022 General-purpose-map trap-poison pot-middle-child barrett (production) -- 汎用-マップトラップ-毒壷-中-子バレット（演出）
+200005030 General-purpose - Map Trap - Poison Pot - Strong -- 汎用-マップトラップ-毒壷-強
+200005031 Generic - Map Trap - Poison Pot - Strong - Child Barrett -- 汎用-マップトラップ-毒壷-強-子バレット
+200005032 General-purpose-map trap-poison pot-strong-child barrett (directing) -- 汎用-マップトラップ-毒壷-強-子バレット（演出）
+200005110 General-purpose-map traps-water pots-weak -- 汎用-マップトラップ-水壷-弱
+200005111 Generic - Map Trap - Water Vase - Weak - Child Barrett -- 汎用-マップトラップ-水壷-弱-子バレット
+200005112 General-purpose-map trap-water jar-weak-child barrett (directing) -- 汎用-マップトラップ-水壷-弱-子バレット（演出）
+200005120 General Purpose - Map Trap - Water Vase - Medium -- 汎用-マップトラップ-水壷-中
+200005121 General Purpose - Map Trap - Water Vase - Medium - Child Barrett -- 汎用-マップトラップ-水壷-中-子バレット
+200005122 General Purpose - Map Trap - Water Vase - Medium - Child Barrett (Production) -- 汎用-マップトラップ-水壷-中-子バレット（演出）
+200005130 General-purpose -Map Trap - Water Vase - Strong -- 汎用-マップトラップ-水壷-強
+200005131 Generic - Map Trap - Water Vase - Strong - Child Barrett -- 汎用-マップトラップ-水壷-強-子バレット
+200005132 General Purpose - Map Trap - Water Vase - Strong - Child Barrett (Production) -- 汎用-マップトラップ-水壷-強-子バレット（演出）
+200005210 General-purpose -Map Trap - Acid Vase - Weak -- 汎用-マップトラップ-酸壷-弱
+200005211 Generic - Map Trap - Acid Pot - Weak - Child Barrett -- 汎用-マップトラップ-酸壷-弱-子バレット
+200005212 General-purpose-map trap-acid pot-weak-child barrett (directing) -- 汎用-マップトラップ-酸壷-弱-子バレット（演出）
+200005220 General-purpose -Map Trap - Acid Pot - Medium -- 汎用-マップトラップ-酸壷-中
+200005221 Generic - Map Trap - Acid Vase - Medium - Child Barrett -- 汎用-マップトラップ-酸壷-中-子バレット
+200005222 General-purpose-map trap-acid pot-middle-child barrett (production) -- 汎用-マップトラップ-酸壷-中-子バレット（演出）
+200005230 General-purpose -Map Trap - Acid Vase - Strong -- 汎用-マップトラップ-酸壷-強
+200005231 Generic - Map Trap - Acid Vase - Strong - Child Barrett -- 汎用-マップトラップ-酸壷-強-子バレット
+200005232 General-purpose-map trap-acid pot-strong-child barrett (directing) -- 汎用-マップトラップ-酸壷-強-子バレット（演出）
+200006010 General-purpose-map trap-tar flame -- 汎用-マップトラップ-タール炎上
+200008010 Generic - Map Trap - Dwarf Stone Throwing Axe -- 汎用-マップトラップ-ドワーフ石造投てき斧
+200008110 Generic - Map Trap - Dwarf Stone Throwing Hammer -- 汎用-マップトラップ-ドワーフ石造投てきハンマー
+200009010 Generic - Map Trap - Explosion Barrel - Weak -- 汎用-マップトラップ-爆発樽-弱
+200009020 Generic - Map Trap - Explosion Barrel - Medium -- 汎用-マップトラップ-爆発樽-中
+200009030 General-purpose -map trap -explosion barrel-strong -- 汎用-マップトラップ-爆発樽-強
+200010000 Generic - Map Trap - Poison Fog - For Damage -- 汎用-マップトラップ-毒霧-ダメージ用
+200010010 General-purpose-map traps-venom-weak-for-directing -- 汎用-マップトラップ-毒霧-弱-演出用
+200010020 General-purpose-map traps-venom fog-medium-for-production -- 汎用-マップトラップ-毒霧-中-演出用
+200010030 General-purpose-map traps-venom-strong-for-production -- 汎用-マップトラップ-毒霧-強-演出用
+200011010 General-purpose-map traps-scorching-weak -- 汎用-マップトラップ-灼熱-弱
+200011020 General-purpose-map trap-scorching-medium -- 汎用-マップトラップ-灼熱-中
+200011030 General-purpose-map traps-scorching-strong -- 汎用-マップトラップ-灼熱-強
+200012010 General-purpose-map traps-insects-weak -- 汎用-マップトラップ-虫-弱
+200013010 General-purpose - Map Trap - Fire-sespraystone Statue - Small -- 汎用-マップトラップ-火噴き石像-小
+200013020 General-purpose -map trap- fire-spraystone statue - Medium -- 汎用-マップトラップ-火噴き石像-中
+200013030 General-purpose -map trap - fire-spraystone statue - Large -- 汎用-マップトラップ-火噴き石像-大
+200014020 Generic - Map Trap - Poison Fountain -- 汎用-マップトラップ-毒の泉
+200015010 Generic - Map Trap - Statue of poison edrat -- 汎用-マップトラップ-毒吐きネズミの像
+200017010 Generic - Map Trap - Varistor - Physics -- 汎用-マップトラップ-バリスタ-物理
+200017011 Generic - Map Trap - Barista - Physics - Landing -- 汎用-マップトラップ-バリスタ-物理-着弾
+200017110 Generic - Map Trap - Barista - Flame -- 汎用-マップトラップ-バリスタ-炎
+200017111 Generic - Map Trap - Barista - Flame - Landing -- 汎用-マップトラップ-バリスタ-炎-着弾
+200017210 General-purpose-map trap-varistor-firing type -- 汎用-マップトラップ-バリスタ-連射型
+200017211 General-purpose-map traps-barista-fire-type-landing -- 汎用-マップトラップ-バリスタ-連射型-着弾
+200018010 Generic - Map Trap - Curse Jar - Weak -- 汎用-マップトラップ-呪い壷-弱
+200018020 General -Map Trap-Curse Daint-Medium -- 汎用-マップトラップ-呪い壷-中
+200018030 Generic - Map Trap - Curse Font - Strong -- 汎用-マップトラップ-呪い壷-強
+210030010 I'm surprised at the flies that flock to the corpses of the dragon. -- 龍の住処（現代）　死体に群がるハエに驚く
+210100010 The Decaying Giant Forest- the cave's salamander blows flames- continuous damage -- 朽ちた巨人の森　洞窟のサラマンダーが吹く炎-連続ダメージ
+210100011 The Forest of Decayed Giants- the salamander of the cave- blows the flames- and dies instantly. -- 朽ちた巨人の森　洞窟のサラマンダーが吹く炎-即死
+210100012 The Forest of Decayed Giants The Salamander of the Cave Blows The Flame-Child Barrett A -- 朽ちた巨人の森　洞窟のサラマンダーが吹く炎-子バレットA
+210100013 The Forest of Decayed Giants: The Flame of The Salamander in the Cave -- 朽ちた巨人の森　洞窟のサラマンダーが吹く炎-子バレットB
+210100014 The Forest of Decayed Giants The Salamander blows flames in the cave- Grandson Barrett A -- 朽ちた巨人の森　洞窟のサラマンダーが吹く炎-孫バレットA
+210100015 The Forest of Decayed Giants: The Flame blowing of the cave's salamander - Grandson Barrett B (no landing) -- 朽ちた巨人の森　洞窟のサラマンダーが吹く炎-孫バレットB（着弾なし）
+210100020 The Forest of Decayed Giants: The Flames Blowing By Salamander in the Underground Passage - Parents -- 朽ちた巨人の森　地下通路のサラマンダーが吹く炎-親
+210100021 The Forest of Decayed Giants: The Flame of The Salamander In the Underground Passage - Child Barrett A -- 朽ちた巨人の森　地下通路のサラマンダーが吹く炎-子バレットA
+210100022 The Forest of Decayed Giants: The Flame of The Salamander In the Underground Passage - Child Barrett B -- 朽ちた巨人の森　地下通路のサラマンダーが吹く炎-子バレットB
+210100023 The Forest of Decayed Giants: The Flame of The Salamander Blowing In the Underground Passage - Child Barrett C -- 朽ちた巨人の森　地下通路のサラマンダーが吹く炎-子バレットC
+210100024 The Forest of Decayed Giants: The Flame blowing by salamander in the underground passage - Grandson Barrett A -- 朽ちた巨人の森　地下通路のサラマンダーが吹く炎-孫バレットA
+210100025 The Forest of Decayed Giants: The Flame blowing by the Salamander in the underground passage - Grandson Barrett B (no landing) -- 朽ちた巨人の森　地下通路のサラマンダーが吹く炎-孫バレットB（着弾なし）
+210100026 The Forest of Decayed Giants: The Flame blowing by the Salamander in the underground passage - Grandson Barrett C (no landing) -- 朽ちた巨人の森　地下通路のサラマンダーが吹く炎-孫バレットC（着弾なし）
+210100100 The forest of decaying giants- the flames that erupt from the ground (parent) -- 朽ちた巨人の森　地面から噴出す炎（親）
+210100101 The forest of decaying giants erupts from the ground (for bullet generation 1) -- 朽ちた巨人の森　地面から噴出す（弾生成用１）
+210100102 The forest of decaying giants erupts from the ground (for bullet generation 2) -- 朽ちた巨人の森　地面から噴出す（弾生成用２）
+210100110 The forest of decaying giants- the flames that erupt from the ground. -- 朽ちた巨人の森　地面から噴出す炎１
+210100120 The forest of decaying giants- the flames erupting from the ground. -- 朽ちた巨人の森　地面から噴出す炎２
+210100130 The forest of decaying giants- the flames erupting from the ground. -- 朽ちた巨人の森　地面から噴出す炎３
+210100140 The forest of decaying giants- the flames erupting from the ground. -- 朽ちた巨人の森　地面から噴出す炎４
+210100150 The forest of decaying giants- the flames erupting from the ground. -- 朽ちた巨人の森　地面から噴出す炎５
+210140010 Spider's City Gun Sand - For Generation -- 蜘蛛の街　鉄砲砂-生成用
+210140011 Spider's City Gun Sand - Entrance Stagnation -- 蜘蛛の街　鉄砲砂-入口停滞
+210140012 Spider's City Gun Sand - Children -- 蜘蛛の街　鉄砲砂-子供
+210150110 Anne Deal's House - Togetge Wall (Parent) -- アン・ディールの館-トゲトゲ壁（親）
+210150111 Anne Deal's House - Togetge Wall A -- アン・ディールの館-トゲトゲ壁A
+210150112 Anne Deal's House - Togetge Wall B -- アン・ディールの館-トゲトゲ壁B
+210170110 Reservoir Valley - Hanging Poison Pot -- 溜まりの谷-吊り毒壷
+210170111 Valley of The Reservoir - Hanging Poison Pot - Child Barrett -- 溜まりの谷-吊り毒壷-子バレット
+210170112 The Valley of The Reservoir - Hanging Poison Pot - Ko Barrett (Director) -- 溜まりの谷-吊り毒壷-子バレット（演出）
+210170210 Reservoir Valley - Suspended Ceiling -- 溜まりの谷-吊り天井
+210170310 Reservoir Valley - Floor Switch Arrow -- 溜まりの谷-床スイッチ矢
+210170311 Reservoir Valley - Floor Switch Arrow (Bullet) -- 溜まりの谷-床スイッチ矢（弾）
+210170410 Reservoir Valley - Rotating Floor Blade - Parent -- 溜まりの谷-回転する床の刃-親
+210170411 Reservoir Valley - Rotating Floor Blade - Child Barrett A -- 溜まりの谷-回転する床の刃-子バレットA
+210170412 Reservoir Valley - Rotating Floor Blade - Child Barrett B -- 溜まりの谷-回転する床の刃-子バレットB
+210170420 Reservoir Valley - Rotating Floor Blade - Grandson Barrett A1 -- 溜まりの谷-回転する床の刃-孫バレットA1
+210170430 Reservoir Valley - Rotating Floor Blade - Grandson Barrett A2 -- 溜まりの谷-回転する床の刃-孫バレットA2
+210170440 Reservoir Valley - Rotating Floor Blade - Grandson Barrett B1 -- 溜まりの谷-回転する床の刃-孫バレットB1
+210170450 Reservoir Valley - Rotating Floor Blade - Grandson Barrett B2 -- 溜まりの谷-回転する床の刃-孫バレットB2
+210190010 Molten Castle - Explosion Furnace - Explosion -- 熔鉄城-爆発炎上する炉-爆発
+210190011 Molten Castle - Explosion Furnace - On Fire -- 熔鉄城-爆発炎上する炉-炎上
+210190110 Molten Castle - Flame Statue - 3 seconds -- 熔鉄城-火炎を吐く像-３秒
+210190210 Molten Iron Castle - Scorching Furnace - Door -- 熔鉄城-灼熱の炉-扉
+210190310 Molten Iron Castle - Scorching Furnace - Ladder -- 熔鉄城-灼熱の炉-はしご
+210190410 Ming-iron castle -Togetge wall (parent) -- 熔鉄城-トゲトゲ壁（親）
+210190411 Molten Iron Castle - Togetge Wall A -- 熔鉄城-トゲトゲ壁A
+210190412 Molten Iron Castle - Togetge Wall B -- 熔鉄城-トゲトゲ壁B
+210210010 King's Castle D'Angheig - Acid-spitting Statue - Parents -- 王城ドラングレイグ-酸を吐く像-親
+210210011 King's Castle D'Angheig - Statue of Acid -Child -- 王城ドラングレイグ-酸を吐く像-子
+210210110 King's Castle D'Angheig - Painting of the Curse -- 王城ドラングレイグ-呪いの絵画
+210210111 King's Castle D'Angheig - Curse Painting - Character Attachment -- 王城ドラングレイグ-呪いの絵画-キャラアタッチ
+210250010 Scum bottom - glowing kokesi - poison arrow -- クズ底-光るコケシ-毒矢
+210250110 Scum bottom - glowing kokesi - venom ous -- クズ底-光るコケシ-毒塊
+210250210 Scum Bottom - Burning Treasure Chest - Flame Damage -- クズ底-燃える宝箱-炎上ダメージ
+210330100 The Door way of Faros Iron Disk - Multiple Blades -- ファロスの扉道　鉄の円盤-多数刃
+210330101 The Door way of Faros Iron Disk - Multiple Blades (Landing) -- ファロスの扉道　鉄の円盤-多数刃（着弾）
+210330200 The Door way of Faros Iron Disk - Wide Blade -- ファロスの扉道　鉄の円盤-幅広刃
+210330201 The Door way of Faros Iron Disk - Wide Blade (Landing) -- ファロスの扉道　鉄の円盤-幅広刃（着弾）
+210330310 Faros Door Way - Togetge Wall 1 (Parent) -- ファロスの扉道-トゲトゲ壁1（親）
+210330311 Faros Door Way - Togetge Wall 1A -- ファロスの扉道-トゲトゲ壁1A
+210330312 Faros Door Way - Togetge Wall 1B -- ファロスの扉道-トゲトゲ壁1B
+210330320 Faros Door Way - Togetge Wall 2 (Parent) -- ファロスの扉道-トゲトゲ壁2（親）
+210330321 Faros Door Way - Togetge Wall 2A -- ファロスの扉道-トゲトゲ壁2A
+210330322 Faros Door Way - Togetge Wall 2B -- ファロスの扉道-トゲトゲ壁2B
+220100060 Memories of giants- fireball landings_mid-view -- 巨人の記憶　火球着弾_中景
+220100070 Memory of giants- fireball landings- mid-view- explosion. -- 巨人の記憶　火球着弾_中景_爆発
+220100400 Giant Memory Stone throwing machine fireball -- 巨人の記憶　投石機の火の玉
+220100410 Memory of giants- the fireball explosion of the stone thrower -- 巨人の記憶　投石機の火の玉_爆発
+220100600 Giant's Memory Fire Damage -- 巨人の記憶　炎上ダメージ
+220100700 Giant's memory fireball on the front -- 巨人の記憶　前線に降り注ぐ火球
+290000010 Blood splash -- 血しぶき
+290000011 Blood Splash - Child (Direct Down) -- 血しぶき-子（真下）
+290000012 Blood Splash - Child (Scattered) -- 血しぶき-子（飛び散り）
+290000110 Earn Soul Sphere - Small -- 獲得ソウル球-小
+290000111 Acquisition Soul Sphere - Small - Landing -- 獲得ソウル球-小-着弾
+290000120 Earn Soul Sphere - Medium -- 獲得ソウル球-中
+290000121 Acquisition Soul Sphere - Medium - Landing -- 獲得ソウル球-中-着弾
+290000130 Earning Soul Sphere - Large -- 獲得ソウル球-大
+290000131 Acquisition Soul Ball - Large - Landing -- 獲得ソウル球-大-着弾
+290000135 Earning Soul Ball - Medium Boss -- 獲得ソウル球-中ボス
+290000136 Acquisition Soul Ball - Medium Boss (Small) -- 獲得ソウル球-中ボス（小）
+290000137 Acquisition Soul Ball - Medium Boss (Middle) -- 獲得ソウル球-中ボス（中）
+290000140 Earn Soul Ball - Boss -- 獲得ソウル球-ボス
+290000141 Win Soul Ball - Boss (Small) -- 獲得ソウル球-ボス（小）
+290000142 Win Soul Ball - Boss (Medium) -- 獲得ソウル球-ボス（中）
+290000143 Win Soul Ball - Boss (Large) -- 獲得ソウル球-ボス（大）
+290001010 For The Dark Spirits - Blue Spirit Position Supplement -- 闇霊（赤霊）用-青霊位置補足
+290001011 For The Dark Spirits - Blue Spirit Position Supplement (Landing) -- 闇霊（赤霊）用-青霊位置補足（着弾）
+290001020 For The Blue Spirit - Dark Spirit (Red Example) Position Supplement -- 青霊用-闇霊（赤例）位置補足
+290001021 For The Blue Spirit - Dark Spirit (Red Example) Position Supplement (Landing) -- 青霊用-闇霊（赤例）位置補足（着弾）

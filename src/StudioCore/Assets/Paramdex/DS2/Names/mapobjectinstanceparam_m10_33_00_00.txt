@@ -1,0 +1,34 @@
+10330720 Brazier
+10330721 Brazier
+10330722 Brazier
+10330723 Brazier
+10330724 Brazier
+10330725 Brazier
+10330726 Brazier
+10330727 Brazier
+10330728 Brazier
+10330729 Brazier
+10330730 Brazier
+10330731 Brazier
+10330732 Brazier
+10330733 Brazier
+10330734 Brazier
+10330735 Brazier
+10330736 Brazier
+10330737 Brazier
+10330738 Brazier
+10330739 Brazier
+10330740 Brazier
+10335000 [Chest] Treasure
+10335010 [Chest] Treasure
+10335020 [Chest] Treasure
+10335030 [Chest] Treasure
+10335040 [Chest] Treasure
+10336000 [Corpse] Treasure
+10336010 [Corpse] Treasure
+10336020 [Corpse] Treasure
+10336040 [Corpse] Treasure
+10336050 [Corpse] Treasure
+10336060 [Corpse] Treasure
+10336070 [Corpse] Treasure
+10336080 [Corpse] Treasure

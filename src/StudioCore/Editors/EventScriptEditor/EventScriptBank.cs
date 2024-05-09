@@ -42,6 +42,7 @@ public static class EventScriptBank
             case ProjectType.DS1R:
                 fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_24_9);
                 break;
+            case ProjectType.DS2:
             case ProjectType.DS2S:
                 fileBytes = script.Write(DCX.Type.None);
                 break;
@@ -65,7 +66,7 @@ public static class EventScriptBank
         var paramDir = @"\event\";
         var paramExt = @".emevd.dcx";
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             paramDir = @"\param";
             paramExt = @".emevd";

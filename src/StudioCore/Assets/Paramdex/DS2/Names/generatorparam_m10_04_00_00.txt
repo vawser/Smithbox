@@ -1,0 +1,56 @@
+45 [GEN:45] Laddersmith Gilligan
+46 [GEN:46] Laddersmith Gilligan
+47 [GEN:47] Laddersmith Gilligan
+60 [GEN:60] Benhart of Jugo
+85 [GEN:85] Cartographer Cale
+86 [GEN:86] Cartographer Cale
+100 [GEN:100] Crestfallen Saulden
+101 [GEN:101] Crestfallen Saulden
+105 [GEN:105] Maughlin the Armourer
+106 [GEN:106] Maughlin the Armourer
+107 [GEN:107] Maughlin the Armourer
+108 [GEN:108] Maughlin the Armourer
+110 [GEN:110] Stone Trader Chloanne
+111 [GEN:111] Stone Trader Chloanne
+115 [GEN:115] Rosabeth of Melfia
+116 [GEN:116] Rosabeth of Melfia
+120 [GEN:120] Blacksmith Lenigrast
+121 [GEN:121] Blacksmith Lenigrast
+122 [GEN:122] Blacksmith Lenigrast
+135 [GEN:135] Carhillion of the Fold
+136 [GEN:136] Carhillion of the Fold
+150 [GEN:150] Licia of Lindeldt
+151 [GEN:151] Licia of Lindeldt
+152 [GEN:152] Licia of Lindeldt
+205 [GEN:205] Emerald Herald
+207 [GEN:207] Emerald Herald
+260 [GEN:260] Merchant Hag Melentia
+261 [GEN:261] Merchant Hag Melentia
+270 [GEN:270] Sweet Shalquoir
+400 [GEN:400] Emerald Herald
+401 [GEN:401] Emerald Herald
+402 [GEN:402] Emerald Herald
+405 [GEN:405] Emerald Herald
+410 [GEN:410] Sweet Shalquoir
+413 [GEN:413] Sweet Shalquoir
+414 [GEN:414] Sweet Shalquoir
+415 [GEN:415] Sweet Shalquoir
+1000 [GEN:1000] Small Boar
+1001 [GEN:1001] Small Boar
+1002 [GEN:1002] Small Boar
+1010 [GEN:1010] Undead Boar
+1011 [GEN:1011] Undead Boar
+1020 [GEN:1020] Giant Undead Boar
+1100 [GEN:1100] Skeleton
+1101 [GEN:1101] Skeleton
+1102 [GEN:1102] Skeleton
+1103 [GEN:1103] Dual-wielding Skeleton
+1104 [GEN:1104] Dual-wielding Skeleton
+1105 [GEN:1105] Dual-wielding Skeleton
+1106 [GEN:1106] Skeleton
+1107 [GEN:1107] Skeleton
+2000 [GEN:2000] Mimic
+3101 [GEN:3101] Foreign Wanderer
+3230 [GEN:3230] Greatsword Foreigner Phantom
+4000 [GEN:4000] Foreign Wanderer Phantom
+9000 [GEN:9000] Voice Marker

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>LOCK_ON_CAMERA_OFFSET_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 Unk00" />
+    <Field Def="f32 Unk04" />
+    <Field Def="f32 Unk08" />
+    <Field Def="f32 camera_vertical_distance" />
+    <Field Def="f32 Unk10" />
+    <Field Def="f32 camera_horizontal_distance" />
+    <Field Def="f32 Unk18" />
+    <Field Def="f32 Unk1C" />
+    <Field Def="f32 Unk20" />
+    <Field Def="f32 Unk24" />
+    <Field Def="f32 Unk28" />
+    <Field Def="f32 Unk2C" />
+    <Field Def="f32 Unk30" />
+    <Field Def="f32 Unk34" />
+    <Field Def="f32 Unk38" />
+    <Field Def="f32 Unk3C" />
+    <Field Def="f32 camera_tilt" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,66 @@
+95 [GEN:95] Bell Keeper
+96 [GEN:96] Bell Keeper
+175 [GEN:175] Magerold of Lanafir
+176 [GEN:176] Magerold of Lanafir
+570 [GEN:570] Bell Keeper
+571 [GEN:571] Oliver the Collector
+572 [GEN:572] Fencer Sharron
+573 [GEN:573] Armorer Dennis
+576 [GEN:576] Lucatiel of Mirrah
+577 [GEN:577] Manhunter O'Harrah
+578 [GEN:578] Drifter Swordsman Aidel
+806 [GEN:806] Smelter Demon
+807 [GEN:807] Old Iron King
+913 [GEN:913] Aldia- Scholar of the First Sin
+941 [GEN:941] Forlorn
+2020 [GEN:2020] Alonne Knight
+2040 [GEN:2040] Alonne Captain
+3021 [GEN:3021] Alonne Knight
+3030 [GEN:3030] Alonne Captain
+3070 [GEN:3070] Alonne Captain
+3080 [GEN:3080] Alonne Captain
+3095 [GEN:3095] Alonne Knight
+3096 [GEN:3096] Alonne Knight
+3121 [GEN:3121] Alonne Knight
+4010 [GEN:4010] Ironclad Soldier
+4020 [GEN:4020] Alonne Captain
+4025 [GEN:4025] Alonne Knight
+4026 [GEN:4026] Alonne Knight
+4029 [GEN:4029] Alonne Knight
+4030 [GEN:4030] Alonne Knight
+4031 [GEN:4031] Ironclad Soldier
+4032 [GEN:4032] Ironclad Soldier
+4033 [GEN:4033] Alonne Captain
+4035 [GEN:4035] Mimic
+4036 [GEN:4036] Alonne Knight
+4037 [GEN:4037] Alonne Knight
+4039 [GEN:4039] Crystal Lizard
+4040 [GEN:4040] Alonne Knight
+4041 [GEN:4041] Alonne Knight
+4050 [GEN:4050] Alonne Captain
+4051 [GEN:4051] Alonne Captain
+4100 [GEN:4100] Ironclad Soldier
+4200 [GEN] Iron Warrior
+4201 [GEN] Iron Warrior
+4400 [GEN] Possessed Armor
+4401 [GEN] Possessed Armor
+4402 [GEN] Possessed Armor
+4403 [GEN] Possessed Armor
+5000 [GEN:5000] The Pursuer
+7002 [GEN:7002] Alonne Captain
+7003 [GEN:7003] Ironclad Soldier
+7005 [GEN:7005] Ironclad Soldier
+7006 [GEN:7006] Ironclad Warrior Phantom
+7007 [GEN:7007] Mad Warrior Phantom
+7009 [GEN:7009] Alonne Knight
+7011 [GEN:7011] Ironclad Soldier
+8000 [GEN:8000] Greatsword Bell Keeper Phantom
+8005 [GEN:8005] Dual Avelyn Bell Keeper Phantom
+8015 [GEN:8015] Bell Keeper Mage Phantom
+8020 [GEN:8020] Greatsword Bell Keeper Phantom
+8025 [GEN:8025] Dual Avelyn Bell Keeper Phantom
+8100 [GEN:8100] Bell Keeper
+8110 [GEN:8110] Bell Keeper
+8120 [GEN:8120] Bell Keeper
+8130 [GEN:8130] Bell Keeper
+8140 [GEN:8140] Bell Keeper

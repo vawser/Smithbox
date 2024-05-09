@@ -1,0 +1,343 @@
+3500 【Hostility】Durahan -- 【敵対】デュラハン
+3510 【Hostile】Tomb Guard -- 【敵対】墓守
+3520 【Hostile】Dragon Shrine Maiden -- 【敵対】龍の巫女
+3521 【Hostile Map】Dragon Shrine Maiden: Madura -- 【敵対マップ】龍の巫女：マデューラ
+3522 【Hostile Map】Dragon Shrine Maiden: King's Castle D'Angerig First Half -- 【敵対マップ】龍の巫女：王城ドラングレイグ前半
+3523 【Hostile Map】Dragon Shrine Maiden: Immortal Mausoleum -- 【敵対マップ】龍の巫女：不死廟
+3524 【Hostile Map】Dragon Shrine Maiden: King's Castle D'Angeheig Late -- 【敵対マップ】龍の巫女：王城ドラングレイグ後半
+3525 【Hostile Map】The Shrine Maiden of the Dragon (Child): An Deal's House -- 【敵対マップ】龍の巫女（子供）：アン・ディールの館
+3540 [Hostility] Queen -- 【敵対】王妃
+3550 【Hostile】Ladder Shop -- 【敵対】梯子屋
+3551 【Hostile Map】Ladder Shop: Valley of The Reservoir -- 【敵対マップ】梯子屋：溜りの谷
+3552 【Hostile Map】Ladder Shop: Maduro -- 【敵対マップ】梯子屋：マデューラ
+3560 [Hostile] fire protection woman of the retirement 1 -- 【敵対】退役の火防女１
+3570 [Hostile] fire protection woman 2 of the retirement -- 【敵対】退役の火防女２
+3580 [Hostile] fire protection woman 3 of the retirement -- 【敵対】退役の火防女３
+3590 The Spirit of the Prime Minister -- 【敵対】宰相の霊
+3600 【Hostile】Fire Prevention Woman's Housekeeper -- 【敵対】火防女の家政婦
+3610 [Hostile] Captain of the Kingdom -- 【敵対】王国隊長
+3620 【Hostile】Pilgrims in the Abyss -- 【敵対】深淵の巡礼者
+3621 【Hostile Map】Pilgrims of the Abyss: Kuzbottom -- 【敵対マップ】深淵の巡礼者：クズ底
+3622 【Hostile Map】Pilgrims of the Abyss: The Shadow forest of emptiness -- 【敵対マップ】深淵の巡礼者：虚ろの影の森
+3623 【Hostile Map】Pilgrims of the Abyss: King's Castle D'Angreig -- 【敵対マップ】深淵の巡礼者：王城ドラングレイグ
+3630 Dwarves -- 【敵対】ドワーフ
+3631 [Hostile map] Dwarf: Hidden Port -- 【敵対マップ】ドワーフ：隠れ港
+3632 【Hostile Map】Dwarf: Valley of The Reservoir -- 【敵対マップ】ドワーフ：溜りの谷
+3634 【Hostile Map】Dwarf: The Door way of Faros -- 【敵対マップ】ドワーフ：ファロスの扉道
+3640 [Hostility] heartbroken blue warrior -- 【敵対】心折れた青教戦士
+3650 Warrior of wandering -- 【敵対】放浪の戦士
+3651 【Hostile Map】Wandering Warriors: Hunting Forest -- 【敵対マップ】放浪の戦士：狩猟の森
+3652 Hostile Map: Wandering Warrior: Forest of Shadows of The Void -- 【敵対マップ】放浪の戦士：虚ろの影の森
+3653 【Hostile Map】Wandering Warrior: Jedra- Kiishi Street -- 【敵対マップ】放浪の戦士：輝石街ジェルドラ
+3660 【Hostile】Tsukiko Grandfather -- 【敵対】月光爺
+3661 【Hostile Map】Tsukiko Ya: Maduro's Shadow Forest Connection -- 【敵対マップ】月光爺：マデューラ虚ろの影の森接続
+3662 【Hostile Map】Tsukiko Grandfather: King's Castle D'Angreig -- 【敵対マップ】月光爺：王城ドラングレイグ
+3663 【Hostile Map】Tsukiko Ya: The Forest of Decaying Giants -- 【敵対マップ】月光爺：朽ちた巨人の森
+3664 【Hostile Map】Memories of The Giant -- 【敵対マップ】月光爺：巨人の記憶
+3670 【Hostility】Patch -- 【敵対】パッチ
+3671 【Hostile Map】Patch: Decaying Giant Forest -- 【敵対マップ】パッチ：朽ちた巨人の森
+3672 【Hostile Map】Patch: Valley of The Reservoir -- 【敵対マップ】パッチ：溜りの谷
+3673 【Hostile Map】Patch: Kiseki-gai Gerdra -- 【敵対マップ】パッチ：輝石街ジェルドラ
+3680 【Hostility】Map -- 【敵対】地図書き
+3681 【Hostile Map】Map: The Forest of Decayed Giants -- 【敵対マップ】地図書き：朽ちた巨人の森
+3682 【Hostile Map】Map: Maduro -- 【敵対マップ】地図書き：マデューラ
+3690 [Hostility] Female Knight -- 【敵対】女騎士
+3691 【Hostile Map】Female Knight: Hidden Port -- 【敵対マップ】女騎士：隠れ港
+3692 【Hostile Map】Female Knight: Prison of Oblivion -- 【敵対マップ】女騎士：忘却の牢城
+3693 【Hostile Map】Female Knight: Valley of The Reservoir -- 【敵対マップ】女騎士：溜りの谷
+3694 【Hostile Map】Female Knight: Kuzbottom -- 【敵対マップ】女騎士：クズ底
+3695 【Hostile Map】Female Knight: The House of Anne Deal -- 【敵対マップ】女騎士：アン・ディールの館
+3700 【Hostility】Bell Guard -- 【敵対】鐘守
+3710 【Hostile】Yorozu Babaa -- 【敵対】よろずババア
+3711 【Hostile Map】Yorozu Babaa: The Forest of Decaying Giants -- 【敵対マップ】よろずババア：朽ちた巨人の森
+3712 【Hostile Map】Yorozu Babaa: Maduro -- 【敵対マップ】よろずババア：マデューラ
+3713 【Hostile NT】Yorozu Babaa: Hunting Forest -- 【敵対NT】よろずババア：狩猟の森
+3720 【Hostile】Girl 1 of the Bard -- 【敵対】吟遊詩人の少女１
+3730 【Hostile】Girl 2 of the Bard -- 【敵対】吟遊詩人の少女２
+3740 [Hostile] girl in captivity -- 【敵対】虜囚の少女
+3750 【Hostile】Armor shop -- 【敵対】防具屋
+3760 【Hostile】Material shop -- 【敵対】素材屋
+3761 【Hostile Map】Material Shop: Valley of The Reservoir -- 【敵対マップ】素材屋：溜りの谷
+3762 【Hostile Map】Material Shop: Madura -- 【敵対マップ】素材屋：マデューラ
+3770 【Hostile】Sorcerer's Shop -- 【敵対】呪術屋
+3771 【Hostile Map】Sorcerer's Shop: Maduro's Shadow Forest Connection -- 【敵対マップ】呪術屋：マデューラ虚ろの影の森接続
+3772 【Hostile Map】Sorcerer: Maduro -- 【敵対マップ】呪術屋：マデューラ
+3780 【Hostile】Blacksmith -- 【敵対】鍛冶屋
+3790 【Hostile】EX Blacksmith -- 【敵対】ＥＸ鍛冶屋
+3800 【Hostile】Sorcerer -- 【敵対】魔術屋
+3801 【Hostile Map】Sorcerer's Harbor -- 【敵対マップ】魔術屋：隠れ港
+3802 【Hostile Map】Sorcerer: Madura -- 【敵対マップ】魔術屋：マデューラ
+3810 【Hostile】Spell Mania -- 【敵対】スペルマニア
+3820 A man of miracles -- 【敵対】奇跡の人
+3821 【Hostile Map】Miracle Man: Heide Great Fire Tower -- 【敵対マップ】奇跡の人：ハイデ大火塔
+3822 【Hostile Map】Miracle Man: Maduro -- 【敵対マップ】奇跡の人：マデューラ
+3830 【Hostile】Dark Art Shop -- 【敵対】闇術屋
+3840 The Person Who Was Sealed -- 【敵対】封じられた人
+3850 【Hostile】A rare goods shop -- 【敵対】珍品屋
+3860 【Hostile】Top Weapons Store -- 【敵対】上位武器屋
+3861 【Hostile Map】Top Weapons Store: Forest of Shadows of The Void -- 【敵対マップ】上位武器屋：虚ろの影の森
+3862 【Hostile Map】Top Weapons Store: Kiseki-gai Gerdra -- 【敵対マップ】上位武器屋：輝石街ジェルドラ
+3870 【Hostile】Cat -- 【敵対】猫
+3880 【Hostile】Black Phantom Shop -- 【敵対】黒ファントム屋
+3890 【Hostility】The Teacher of The Sin -- 【敵対】免罪の教戒師
+3900 [Hostility] Guardian Knight -- 【敵対】守護の騎士
+3910 [Hostile] Glitter Daughter -- 【敵対】キラキラ娘
+3920 The King of Mice -- 【敵対】ねずみの王
+3930 Manscorpion Man -- 【敵対】マンスコーピオン男
+3940 【Hostility】Three Sisters 1 -- 【敵対】三姉妹１
+3950 【Hostility】Three Sisters 2 -- 【敵対】三姉妹２
+3960 【Hostility】Three Sisters 3 -- 【敵対】三姉妹３
+3970 【Hostility】Old Dragon -- 【敵対】古の龍
+3999 【Hostility】For total hostility management -- 【敵対】全体敵対管理用
+1002000 【Regeneration Spark】Bonfire 01_Fire Guard Woman's House -- 【再生の種火】篝火01_火守女の家
+1002099 【Regeneration Spark】Bonfire 01_Fire Guard Woman's House -- 【再生の種火】篝火01_火守女の家
+1004000 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004001 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004002 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004003 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004004 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004005 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004006 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004007 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004008 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1004009 【Regeneration Spark】Bonfire 02_The Middle Main Bonfire in the Village -- 【再生の種火】篝火02_村の真ん中メイン篝火
+1004099 【Regeneration Spark】Bonfire 01_The Middle Main Bonfire in the Village -- 【再生の種火】篝火01_村の真ん中メイン篝火
+1010000 【Regeneration Spark】Bonfire 01_Main Tower -- 【再生の種火】篝火01_主塔
+1010001 【Regeneration Spark】Bonfire 01_Main Tower -- 【再生の種火】篝火01_主塔
+1010002 【Regeneration Spark】Bonfire 01_Main Tower -- 【再生の種火】篝火01_主塔
+1010003 【Regeneration Spark】Bonfire 01_Main Tower -- 【再生の種火】篝火01_主塔
+1010004 【Regeneration Spark】Bonfire 01_Main Tower -- 【再生の種火】篝火01_主塔
+1010005 【Regeneration Spark】Bonfire 01_Main Tower -- 【再生の種火】篝火01_主塔
+1010099 【Regeneration Spark】Bonfire 01_Main Tower -- 【再生の種火】篝火01_主塔
+1010100 【Regeneration Spark】Bonfire 02_Ground Cracking Square -- 【再生の種火】篝火02_地割れ広場
+1010199 【Regeneration Spark】Bonfire 02_Ground Cracking Square -- 【再生の種火】篝火02_地割れ広場
+1010300 【Regeneration Spark】Fire 04_Riverbank after connection with Maduro -- 【再生の種火】篝火04_マデューラとの接続後の川岸
+1010399 【Regeneration Spark】Fire 04_Riverbank after connection with Maduro -- 【再生の種火】篝火04_マデューラとの接続後の川岸
+1014000 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014001 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014002 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014003 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014004 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014005 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014006 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014007 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014008 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014009 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014010 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014011 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014012 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014099 【Regeneration Spark】Bonfire 01_Ant Hell Next Building -- 【再生の種火】篝火01_蟻地獄横の建物
+1014100 【Regeneration Spark】Bonfire 02_Map Entrance Tent -- 【再生の種火】篝火02_マップ入口のテント
+1014101 【Regeneration Spark】Bonfire 02_Map Entrance Tent -- 【再生の種火】篝火02_マップ入口のテント
+1014199 【Regeneration Spark】Bonfire 02_Map Entrance Tent -- 【再生の種火】篝火02_マップ入口のテント
+1014200 【Regeneration Spark】Bonfire 03_Cave after Church -- 【再生の種火】篝火03_教会後の洞窟
+1014299 【Regeneration Spark】Bonfire 03_Cave after Church -- 【再生の種火】篝火03_教会後の洞窟
+1015000 【Regeneration Spark】Bonfire 01_Entrance Building -- 【再生の種火】篝火01_入口の建物
+1015001 【Regeneration Spark】Bonfire 01_Entrance Building -- 【再生の種火】篝火01_入口の建物
+1015099 【Regeneration Spark】Bonfire 01_Entrance Building -- 【再生の種火】篝火01_入口の建物
+1015100 【Regeneration Spark】Bonfire 02_Stairs Hidden Door Room to Basement -- 【再生の種火】篝火02_地下室への階段隠し扉部屋
+1015101 【Regeneration Spark】Bonfire 02_Stairs Hidden Door Room to Basement -- 【再生の種火】篝火02_地下室への階段隠し扉部屋
+1015102 【Regeneration Spark】Bonfire 02_Stairs Hidden Door Room to Basement -- 【再生の種火】篝火02_地下室への階段隠し扉部屋
+1015199 【Regeneration Spark】Bonfire 02_Stairs Hidden Door Room to Basement -- 【再生の種火】篝火02_地下室への階段隠し扉部屋
+1016000 【Regeneration Spark】Bonfire 01_Petrified Stop Destination Prison -- 【再生の種火】篝火01_石化ストップ先の牢
+1016099 【Regeneration Spark】Bonfire 01_Petrified Stop Destination Prison -- 【再生の種火】篝火01_石化ストップ先の牢
+1016100 【Regeneration Spark】Bonfire 02_Start point left-hand room -- 【再生の種火】篝火02_スタート地点左手の部屋
+1016101 【Regeneration Spark】Bonfire 02_Start point left-hand room -- 【再生の種火】篝火02_スタート地点左手の部屋
+1016199 【Regeneration Spark】Bonfire 02_Start point left-hand room -- 【再生の種火】篝火02_スタート地点左手の部屋
+1016200 [Regeneration of the spark] bonfire 03_ outer wall advanced to the previous collapsed tower (hawk warp point) -- 【再生の種火】篝火03_外壁進んだ先の崩れた塔（鷹ワープ地点）
+1016299 [Regeneration of the spark] bonfire 03_ outer wall advanced to the previous collapsed tower (hawk warp point) -- 【再生の種火】篝火03_外壁進んだ先の崩れた塔（鷹ワープ地点）
+1016300 【Regeneration Spark】On the outer wall of the stoion area -- 【再生の種火】篝火04_鐘守エリア先の外壁の上
+1016399 【Regeneration Spark】On the outer wall of the stoion area -- 【再生の種火】篝火04_鐘守エリア先の外壁の上
+1016400 【Regeneration Spark】Bonfire 05_After The Flame Barrel Destruction Wall -- 【再生の種火】篝火05_火炎樽破壊壁後
+1016499 【Regeneration Spark】Bonfire 05_After The Flame Barrel Destruction Wall -- 【再生の種火】篝火05_火炎樽破壊壁後
+1016500 【Regeneration Spark】Bonfire 06_Boss In The Mirror After Warrior Steen -- 【再生の種火】篝火06_ボス鏡の中の戦士後の食堂
+1016599 【Regeneration Spark】Bonfire 06_Boss In The Mirror After Warrior Steen -- 【再生の種火】篝火06_ボス鏡の中の戦士後の食堂
+1016700 【Regeneration Spark】Bonfire 08_ Outside the Tower Away -- 【再生の種火】篝火08_離れの塔の外
+1016701 【Regeneration Spark】Bonfire 08_ Outside the Tower Away -- 【再生の種火】篝火08_離れの塔の外
+1016799 【Regeneration Spark】Bonfire 08_ Outside the Tower Away -- 【再生の種火】篝火08_離れの塔の外
+1017000 【Regeneration Spark】A cave in front of the mining square in the village of Bonfire 01_ -- 【再生の種火】篝火01_村の採掘広場前の洞窟
+1017001 【Regeneration Spark】A cave in front of the mining square in the village of Bonfire 01_ -- 【再生の種火】篝火01_村の採掘広場前の洞窟
+1017002 【Regeneration Spark】A cave in front of the mining square in the village of Bonfire 01_ -- 【再生の種火】篝火01_村の採掘広場前の洞窟
+1017003 【Regeneration Spark】A cave in front of the mining square in the village of Bonfire 01_ -- 【再生の種火】篝火01_村の採掘広場前の洞窟
+1017004 【Regeneration Spark】A cave in front of the mining square in the village of Bonfire 01_ -- 【再生の種火】篝火01_村の採掘広場前の洞窟
+1017099 【Regeneration Spark】A cave in front of the mining square in the village of Bonfire 01_ -- 【再生の種火】篝火01_村の採掘広場前の洞窟
+1017100 [Regeneration of the spark] after the bonfire 02_Bosjabazahat- the lower layer of the tower -- 【再生の種火】篝火02_ボスジャバザハット後、塔下層
+1017199 [Regeneration of the spark] after the bonfire 02_Bosjabazahat- the lower layer of the tower -- 【再生の種火】篝火02_ボスジャバザハット後、塔下層
+1017200 【Regeneration Spark】Bonfire 03_Cave at The Entrance Poison Reservoir -- 【再生の種火】篝火03_入口毒溜り先の洞窟
+1017299 【Regeneration Spark】Bonfire 03_Cave at The Entrance Poison Reservoir -- 【再生の種火】篝火03_入口毒溜り先の洞窟
+1017300 [Regeneration of the spark] bonfire 04_ after a huge windmill- the middle belly of the tower -- 【再生の種火】篝火04_巨大風車後、塔中腹
+1017399 [Regeneration of the spark] bonfire 04_ after a huge windmill- the middle belly of the tower -- 【再生の種火】篝火04_巨大風車後、塔中腹
+1017400 [Regeneration of the spark] bonfire 05_ boss front of the hidden door- upper tower -- 【再生の種火】篝火05_ボス部屋前の隠し扉先、塔上層
+1017499 [Regeneration of the spark] bonfire 05_ boss front of the hidden door- upper tower -- 【再生の種火】篝火05_ボス部屋前の隠し扉先、塔上層
+1018000 【Regeneration Spark】Bonfire 01_Inlet Cave -- 【再生の種火】篝火01_入口鍾乳洞
+1018099 【Regeneration Spark】Bonfire 01_Inlet Cave -- 【再生の種火】篝火01_入口鍾乳洞
+1019000 [Regeneration spark] bonfire 01_ boss demon night after- one-way door room -- 【再生の種火】篝火01_ボスデーモンナイト後、一方通行扉の部屋
+1019099 [Regeneration spark] bonfire 01_ boss demon night after- one-way door room -- 【再生の種火】篝火01_ボスデーモンナイト後、一方通行扉の部屋
+1019100 【Regeneration Spark】Stairs toward sfire 02_entrance bridge -- 【再生の種火】篝火02_入口橋の下に向かう階段
+1019101 【Regeneration Spark】Stairs toward sfire 02_entrance bridge -- 【再生の種火】篝火02_入口橋の下に向かう階段
+1019102 【Regeneration Spark】Stairs toward sfire 02_entrance bridge -- 【再生の種火】篝火02_入口橋の下に向かう階段
+1019199 【Regeneration Spark】Stairs toward sfire 02_entrance bridge -- 【再生の種火】篝火02_入口橋の下に向かう階段
+1019200 【Regeneration Spark】Bonfire 03_Giant Cow Statue Head -- 【再生の種火】篝火03_巨大牛像の頭
+1019201 【Regeneration Spark】Bonfire 03_Giant Cow Statue Head -- 【再生の種火】篝火03_巨大牛像の頭
+1019202 【Regeneration Spark】Bonfire 03_Giant Cow Statue Head -- 【再生の種火】篝火03_巨大牛像の頭
+1019299 【Regeneration Spark】Bonfire 03_Giant Cow Statue Head -- 【再生の種火】篝火03_巨大牛像の頭
+1019300 【Regeneration Spark】A depression in front of the bell guard area -- 【再生の種火】篝火04_鐘守エリア前の窪み
+1019399 【Regeneration Spark】A depression in front of the bell guard area -- 【再生の種火】篝火04_鐘守エリア前の窪み
+1023000 【Regeneration Spark】Bonfire 01_Starting Point -- 【再生の種火】篝火01_スタート地点
+1023099 【Regeneration Spark】Bonfire 01_Starting Point -- 【再生の種火】篝火01_スタート地点
+1023100 【Regeneration Spark】Bonfire 02_Under the Pillar of the Suspension Bridge -- 【再生の種火】篝火02_吊り橋の柱の下
+1023199 【Regeneration Spark】Bonfire 02_Under the Pillar of the Suspension Bridge -- 【再生の種火】篝火02_吊り橋の柱の下
+1023200 【Regeneration Spark】Bonfire 03_Inside The Locked Door Torch -- 【再生の種火】篝火03_鍵付き扉トーチカ内
+1023299 【Regeneration Spark】Bonfire 03_Inside The Locked Door Torch -- 【再生の種火】篝火03_鍵付き扉トーチカ内
+1023300 【Regeneration Spark】Bonfire 04_Death Penalty Post Boss -- 【再生の種火】篝火04_不死刑場ボス後
+1023301 【Regeneration Spark】Bonfire 04_Death Penalty Post Boss -- 【再生の種火】篝火04_不死刑場ボス後
+1023399 【Regeneration Spark】Bonfire 04_Death Penalty Post Boss -- 【再生の種火】篝火04_不死刑場ボス後
+1025000 【Regeneration Spark】Bonfire 01_Black Valley Hole along Cliff -- 【再生の種火】篝火01_黒渓谷崖沿いの穴
+1025099 【Regeneration Spark】Bonfire 01_Black Valley Hole along Cliff -- 【再生の種火】篝火01_黒渓谷崖沿いの穴
+1025100 【Regeneration Spark】Bonfire 02_Next to the building of a continuous staircase in the back of the village -- 【再生の種火】篝火02_村奥の連続階段の建物横
+1025199 【Regeneration Spark】Bonfire 02_Next to the building of a continuous staircase in the back of the village -- 【再生の種火】篝火02_村奥の連続階段の建物横
+1025200 【Regeneration Spark】Bonfire 03_Black Valley Boss Front Hole -- 【再生の種火】篝火03_黒渓谷ボス前の穴
+1025201 【Regeneration Spark】Bonfire 03_Black Valley Boss Front Hole -- 【再生の種火】篝火03_黒渓谷ボス前の穴
+1025299 【Regeneration Spark】Bonfire 03_Black Valley Boss Front Hole -- 【再生の種火】篝火03_黒渓谷ボス前の穴
+1025300 【Regeneration Spark】Building under The Bonfire 04_Starting Point -- 【再生の種火】篝火04_スタート地点下の建物
+1025399 【Regeneration Spark】Building under The Bonfire 04_Starting Point -- 【再生の種火】篝火04_スタート地点下の建物
+1027000 【Regeneration Spark】Bonfire 01_In the rock at the starting point -- 【再生の種火】篝火01_スタート地点先の岩の中
+1027001 【Regeneration Spark】Bonfire 01_In the rock at the starting point -- 【再生の種火】篝火01_スタート地点先の岩の中
+1027002 【Regeneration Spark】Bonfire 01_In the rock at the starting point -- 【再生の種火】篝火01_スタート地点先の岩の中
+1027099 【Regeneration Spark】Bonfire 01_In the rock at the starting point -- 【再生の種火】篝火01_スタート地点先の岩の中
+1027100 【Regeneration Spark】Bonfire 02_Wyburn breaks the bridge -- 【再生の種火】篝火02_ワイバーンが壊す橋を抜けた先
+1027101 【Regeneration Spark】Bonfire 02_Wyburn breaks the bridge -- 【再生の種火】篝火02_ワイバーンが壊す橋を抜けた先
+1027199 【Regeneration Spark】Bonfire 02_Wyburn breaks the bridge -- 【再生の種火】篝火02_ワイバーンが壊す橋を抜けた先
+1029000 【Regeneration Spark】Bonfire 01_Maduro- Imaginary Shadow Forest Connection Road -- 【再生の種火】篝火01_マデューラ～虚ろの影の森接続路
+1029099 【Regeneration Spark】Bonfire 01_Maduro- Imaginary Shadow Forest Connection Road -- 【再生の種火】篝火01_マデューラ～虚ろの影の森接続路
+1030000 【Regeneration Spark】Bonfire 01_Heide Large Fire Tower_Boss Heavy Equestrian After Lighthouse -- 【再生の種火】篝火01_ハイデ大火塔_ボス重騎馬兵後の灯台
+1030099 【Regeneration Spark】Bonfire 01_Heide Large Fire Tower_Boss Heavy Equestrian After Lighthouse -- 【再生の種火】篝火01_ハイデ大火塔_ボス重騎馬兵後の灯台
+1031000 【Regeneration Spark】Bonfire 01_Boss Heavy Equestrian Lighthouse After -- 【再生の種火】篝火01_ボス重騎馬兵後の灯台
+1031099 【Regeneration Spark】Bonfire 01_Boss Heavy Equestrian Lighthouse After -- 【再生の種火】篝火01_ボス重騎馬兵後の灯台
+1031100 【Regeneration Spark】Bonfire 02_Rock next to the starting point -- 【再生の種火】篝火02_スタート地点先の横の岩場
+1031199 【Regeneration Spark】Bonfire 02_Rock next to the starting point -- 【再生の種火】篝火02_スタート地点先の横の岩場
+1031200 [Regeneration spark] after bonfire 03_Bosonstein -- 【再生の種火】篝火03_ボスオーンスタイン後
+1031299 [Regeneration spark] after bonfire 03_Bosonstein -- 【再生の種火】篝火03_ボスオーンスタイン後
+1032000 【Regeneration Spark】Bonfire 01_Branch Of The Building -- 【再生の種火】篝火01_分岐路の建物内
+1032099 【Regeneration Spark】Bonfire 01_Branch Of The Building -- 【再生の種火】篝火01_分岐路の建物内
+1032100 【Regeneration Spark】Bonfire 02_Inside a Huge Bridge -- 【再生の種火】篝火02_巨大橋の中
+1032199 【Regeneration Spark】Bonfire 02_Inside a Huge Bridge -- 【再生の種火】篝火02_巨大橋の中
+1033000 【Regeneration Spark】Bonfire 01_In front of the pledge area of the start destination -- 【再生の種火】篝火01_スタート先の誓約エリア前
+1033099 【Regeneration Spark】Bonfire 01_In front of the pledge area of the start destination -- 【再生の種火】篝火01_スタート先の誓約エリア前
+1033100 [Regeneration spark] after the bonfire 02_ pledge area- in front of the boss room -- 【再生の種火】篝火02_誓約エリア後、ボス部屋前
+1033199 [Regeneration spark] after the bonfire 02_ pledge area- in front of the boss room -- 【再生の種火】篝火02_誓約エリア後、ボス部屋前
+1034000 [Regeneration spark] after the bonfire 01_ pledge area- in front of the boss room -- 【再生の種火】篝火01_誓約エリア後、ボス部屋前
+1034099 [Regeneration spark] after the bonfire 01_ pledge area- in front of the boss room -- 【再生の種火】篝火01_誓約エリア後、ボス部屋前
+1034100 【Regeneration Spark】Bonfire 02_In front of the pledge area of the start destination -- 【再生の種火】篝火02_スタート先の誓約エリア前
+1034199 【Regeneration Spark】Bonfire 02_In front of the pledge area of the start destination -- 【再生の種火】篝火02_スタート先の誓約エリア前
+2010000 [Regeneration spark] bonfire 01_ after the door of the king of the forest of the decaying giant -- 【再生の種火】篝火01_朽ちた巨人の森_王の扉の後
+2010001 [Regeneration spark] bonfire 01_ after the door of the king of the forest of the decaying giant -- 【再生の種火】篝火01_朽ちた巨人の森_王の扉の後
+2010002 [Regeneration spark] bonfire 01_ after the door of the king of the forest of the decaying giant -- 【再生の種火】篝火01_朽ちた巨人の森_王の扉の後
+2010003 [Regeneration spark] bonfire 01_ after the door of the king of the forest of the decaying giant -- 【再生の種火】篝火01_朽ちた巨人の森_王の扉の後
+2010099 [Regeneration spark] bonfire 01_ after the door of the king of the forest of the decaying giant -- 【再生の種火】篝火01_朽ちた巨人の森_王の扉の後
+2011000 【Regeneration Spark】The upper layer of the tower of the entrance of the bonfire 01_ -- 【再生の種火】篝火01_入口の塔の上層
+2011099 【Regeneration Spark】The upper layer of the tower of the entrance of the bonfire 01_ -- 【再生の種火】篝火01_入口の塔の上層
+2011100 【Regeneration Spark】Bonfire 02_Collapsed Building next to Water Grass -- 【再生の種火】篝火02_水草横の崩れた建物
+2011199 【Regeneration Spark】Bonfire 02_Collapsed Building next to Water Grass -- 【再生の種火】篝火02_水草横の崩れた建物
+2011200 【Regeneration Spark】Bonfire 03_Cave to Parent Tree -- 【再生の種火】篝火03_親木への洞窟
+2011201 【Regeneration Spark】Bonfire 03_Cave to Parent Tree -- 【再生の種火】篝火03_親木への洞窟
+2011299 【Regeneration Spark】Bonfire 03_Cave to Parent Tree -- 【再生の種火】篝火03_親木への洞窟
+2011300 【Regeneration Spark】Bonfire 04_The lower layer of the tower in front of the altar of the living -- 【再生の種火】篝火04_生者の祭壇前の塔下層
+2011399 【Regeneration Spark】Bonfire 04_The lower layer of the tower in front of the altar of the living -- 【再生の種火】篝火04_生者の祭壇前の塔下層
+2021000 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021001 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021002 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021003 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021004 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021005 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021006 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021007 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021008 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021009 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021010 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021011 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021012 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021013 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021014 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021015 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021016 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021017 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021099 【Regeneration Spark】Bonfire 01_In front of the king's door to Rasbos -- 【再生の種火】篝火01_ラスボスへの王の扉前
+2021100 [Regeneration of the fire] bonfire 02_ boss after heavy cavalry -- 【再生の種火】篝火02_ボス重騎馬兵の後
+2021101 [Regeneration of the fire] bonfire 02_ boss after heavy cavalry -- 【再生の種火】篝火02_ボス重騎馬兵の後
+2021102 [Regeneration of the fire] bonfire 02_ boss after heavy cavalry -- 【再生の種火】篝火02_ボス重騎馬兵の後
+2021199 [Regeneration of the fire] bonfire 02_ boss after heavy cavalry -- 【再生の種火】篝火02_ボス重騎馬兵の後
+2021200 【Regeneration Spark】Bonfire 03_Inside the Hidden Door -- 【再生の種火】篝火03_隠し扉の中
+2021299 【Regeneration Spark】Bonfire 03_Inside the Hidden Door -- 【再生の種火】篝火03_隠し扉の中
+2024000 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024001 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024002 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024003 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024004 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024005 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024006 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024007 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024008 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024009 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024010 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024011 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024012 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024013 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024014 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024099 【Regeneration Spark】Bonfire 01_Before The Stairwell Passage -- 【再生の種火】篝火01_吹き抜け通路前
+2024100 【Regeneration Spark】The gap under the inlet stairs -- 【再生の種火】篝火02_入口階段の下の隙間
+2024199 【Regeneration Spark】The gap under the inlet stairs -- 【再生の種火】篝火02_入口階段の下の隙間
+4003000 【Regeneration Spark】Bonfire 01_King's Castle D'Angerig_Underground Abyss Before Pilgrims -- 【再生の種火】篝火01_王城ドラングレイグ_地下の深淵の巡礼者前
+4003099 【Regeneration Spark】Bonfire 01_King's Castle D'Angerig_Underground Abyss Before Pilgrims -- 【再生の種火】篝火01_王城ドラングレイグ_地下の深淵の巡礼者前
+10000000 Reward: Clear without death -- 褒賞：死亡せずクリア
+10000001 Reward: Clear without resting bonfire -- 褒賞：篝火休息せずクリア
+10000002 Reward: 1000 repulsed by the Dark Spirit -- 褒賞：闇霊1000回撃退
+10000003 Reward: Host 1000 defeats -- 褒賞：ホスト1000回撃破
+10000004 DLC: DLC Available Flags -- DLC：DLC使用可能フラグ
+10001000 Dragon Shrine Maiden: Est Bottle -- 龍の巫女：エスト瓶
+10001001 Patch: White Sign Wax Stone -- パッチ：白サインろう石
+10001002 Have you ever leveled up? -- レベルアップしたことがあるか
+10001010 Pledge Ring Transfer: Pilgrims in the Abyss -- 誓約指輪譲渡：深淵の巡礼者
+10001011 Reward 1 -- 報酬１
+10001012 Reward 2 -- 報酬２
+10001013 Reward 3 -- 報酬３
+10001014 Pledge Ring Transfer: The Blue Religion -- 誓約指輪譲渡：青教
+10001015 Reward 1 -- 報酬１
+10001016 Reward 2 -- 報酬２
+10001017 Reward 3 -- 報酬３
+10001018 Pledge Ring Transfer: Bell Guard -- 誓約指輪譲渡：鐘守
+10001019 Reward 1 -- 報酬１
+10001020 Reward 2 -- 報酬２
+10001021 Reward 3 -- 報酬３
+10001022 Pledge Ring Transfer: A Glimpse of the Old Dragon -- 誓約指輪譲渡：古竜の片鱗
+10001023 Reward 1 -- 報酬１
+10001024 Reward 2 -- 報酬２
+10001025 Reward 3 -- 報酬３
+10001026 Pledge Ring Transfer: The Dark Spirit of Blood -- 誓約指輪譲渡：血の闇霊
+10001027 Reward 1 -- 報酬１
+10001028 Reward 2 -- 報酬２
+10001029 Reward 3 -- 報酬３
+10001030 Pledge Ring Transfer: Guardian Knight -- 誓約指輪譲渡：守護の騎士
+10001031 Reward 1 -- 報酬１
+10001032 Reward 2 -- 報酬２
+10001033 Reward 3 -- 報酬３
+10001034 Pledge Ring Transfer: King of mice -- 誓約指輪譲渡：ねずみの王
+10001035 Reward 1 -- 報酬１
+10001036 Reward 2 -- 報酬２
+10001037 Reward 3 -- 報酬３
+10001038 Pledge First Stone Transfer: Strong man -- 誓約初回石版譲渡：強者
+10001039 Reward 1 -- 報酬１
+10001040 Reward 2 -- 報酬２
+10001041 Reward 3 -- 報酬３
+10001042 Pledge Ring Transfer: The Warrior of the Sun -- 誓約指輪譲渡：太陽の戦士
+10001043 Reward 1 -- 報酬１
+10001044 Reward 2 -- 報酬２
+10001045 Reward 3 -- 報酬３
+10001100 Captain of the Kingdom: Gesture Transfer -- 王国隊長：ジェスチャー譲渡
+10001101 Wandering Warrior: Gesture Transfer -- 放浪の戦士：ジェスチャー譲渡
+10001102 Tsukiko Old Man: Gesture Transfer -- 月光爺：ジェスチャー譲渡
+10001103 Manscorpion ♂: Gesture Transfer -- マンスコーピオン♂：ジェスチャー譲渡
+10001150 2nd: Defeat ing the Spider Queen -- 2回目：蜘蛛の女王撃破
+10001151 2nd: Defeat of the Molten Iron Daemon -- 2回目：熔鉄デーモン撃破
+10001152 The Second: Destroying the Forgotten Sinners -- 2回目：忘れられた罪人撃破
+10001153 2nd: Butcher Defeat -- 2回目：ブッチャー撃破

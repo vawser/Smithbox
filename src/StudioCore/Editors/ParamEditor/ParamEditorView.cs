@@ -106,7 +106,7 @@ public class ParamEditorView
                 UICache.ClearCaches();
             }
         }
-        else if (Project.Type is ProjectType.DS2S)
+        else if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
         {
             // DS2 has map params, add UI element to toggle viewing map params and GameParams.
             if (ImGui.Checkbox("Edit Map Params", ref _mapParamView))
@@ -207,7 +207,7 @@ public class ParamEditorView
                     keyList = keyList.FindAll(p => !p.EndsWith("Bank"));
                 }
             }
-            else if (Project.Type is ProjectType.DS2S)
+            else if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
             {
                 if (_mapParamView)
                 {

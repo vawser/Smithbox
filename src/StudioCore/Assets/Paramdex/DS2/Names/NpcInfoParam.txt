@@ -1,0 +1,43 @@
+2262 UNKNOWN
+3070 Head of Vengarl
+5020 Manscorpion Tark
+5060 Grave Warden Agdayne
+7000 Emerald Herald
+7030 Nashandra
+7040 Laddersmith Gilligan
+7050 Strowen
+7051 Griant
+7053 Morrel
+7211 Chancellor Wellager
+7230 Milibeth
+7240 Captain Drummond
+7250 Darkdiver Grandahl
+7260 Lonesome Gavlan
+7410 Crestfallen Saulden
+7420 Creighton the Wanderer
+7430 Benhart of Jugo
+7440 Mild-mannered Pate
+7510 Cartographer Cale
+7520 Lucatiel of Mirrah
+7530 Bell Keeper
+7540 Merchant Hag Melentia
+7600 Milfanito
+7601 Milfanito
+7602 Imprisoned Milfanito
+7610 Maughlin the Armourer
+7620 Stone Trader Chloanne
+7630 Rosabeth of Melfia
+7640 Blacksmith Lenigrast
+7643 Steady Hand McDuff
+7660 Carhillion of the Fold
+7680 Straid of Olaphis
+7690 Licia of Lindeldt
+7700 Felkin the Outcast
+7710 Royal Sorcerer Navlaan
+7720 Magerold of Lanafir
+7760 Weaponsmith Ornifex
+7770 Sweet Shalquoir
+7830 Titchy Gren
+7840 Cromwell the Pardoner
+7850 Blue Sentinel Targray
+7900 UNKNOWN

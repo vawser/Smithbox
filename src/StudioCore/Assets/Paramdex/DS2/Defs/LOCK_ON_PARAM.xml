@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>LOCK_ON_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="f32 max_distance_auto_release" />
+    <Field Def="f32 max_distance_initiate" />
+    <Field Def="f32 max_distance_switch_target" />
+    <Field Def="f32 fov_0" />
+    <Field Def="f32 fov_1" />
+    <Field Def="f32 max_angle_initiate" />
+    <Field Def="f32 max_angle_switch_target" />
+    <Field Def="f32 max_dist_behind_player" />
+  </Fields>
+</PARAMDEF>

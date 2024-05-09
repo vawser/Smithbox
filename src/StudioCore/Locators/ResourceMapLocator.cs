@@ -29,7 +29,7 @@ public static class ResourceMapLocator
         string backupPath = "";
 
         // SOFTS
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             preferredPath = $@"map\{mapid}\{mapid}.msb";
             backupPath = $@"map\{mapid}\{mapid}.msb";
@@ -86,7 +86,7 @@ public static class ResourceMapLocator
         if (mapid.Length != 12)
             return adList;
 
-        if (Project.Type is ProjectType.DS2S)
+        if (Project.Type is ProjectType.DS2S or ProjectType.DS2)
         {
             // DS2 BTL is located inside map's .gibdt file
             ResourceDescriptor ad = new();
@@ -251,7 +251,7 @@ public static class ResourceMapLocator
             HashSet<string> mapSet = new();
 
             // DS2 has its own structure for msbs, where they are all inside individual folders
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 var maps = Directory.GetFileSystemEntries(Project.GameRootDirectory + @"\map", @"m*").ToList();
 

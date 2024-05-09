@@ -1,0 +1,11 @@
+0 Unused -- 未使用
+5 Stone Defense -- 石守
+8 Weakest -- 最弱
+10 Zako -- ザコ
+20 Single class -- 単体戦級
+30 Mimic -- ミミック
+40 Formidable -- 強敵
+50 Soul Black -- ソウルブラック
+60 Npc -- NPC
+70 Medium Boss -- 中ボス
+100 Boss -- ボス

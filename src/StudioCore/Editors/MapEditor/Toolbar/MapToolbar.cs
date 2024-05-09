@@ -75,7 +75,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static bool IsSupportedProjectTypeForPrefabs()
         {
-            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS2S or ProjectType.DS1 or ProjectType.DS1R or ProjectType.AC6))
+            if (!(Project.Type is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT or ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS1 or ProjectType.DS1R or ProjectType.AC6))
                 return false;
 
             return true;
@@ -161,6 +161,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
                     tags = prefab_DS3.TagList;
                     break;
+                case ProjectType.DS2:
                 case ProjectType.DS2S:
                     var prefab_DS2 = new Prefab_DS2();
                     using (var stream = File.OpenRead(filepath))

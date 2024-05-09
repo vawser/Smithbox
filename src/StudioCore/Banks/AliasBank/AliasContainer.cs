@@ -166,6 +166,13 @@ public class AliasContainer
 
     public List<AliasReference> GetEntries(string name)
     {
-        return aliasMap[name].list;
+        var ret = new List<AliasReference>();
+
+        if(aliasMap[name].list != null)
+        {
+            ret = aliasMap[name].list;
+        }
+
+        return ret;
     }
 }

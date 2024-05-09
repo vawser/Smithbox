@@ -1,0 +1,8 @@
+1 Strength effect threshold -- 筋力影響閾値
+2 Workmanship impact threshold -- 技量影響閾値
+3 Magic impact threshold -- 魔法影響閾値
+4 Flame impact threshold -- 炎影響閾値
+5 Lightning (faith) impact threshold -- 雷（信仰）影響閾値
+6 Dark effect threshold -- 闇影響閾値
+7 Magic impact threshold -- 魔力影響閾値
+8 Durability impact threshold -- 耐久力影響閾値

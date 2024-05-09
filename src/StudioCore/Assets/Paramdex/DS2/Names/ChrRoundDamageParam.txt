@@ -1,0 +1,70 @@
+0 Unused -- 未使用
+1 Lap strengthening table Lv1 -- 周回強化テーブル　Lv1
+2 Circumferential Strengthening Table Lv2 -- 周回強化テーブル　Lv2
+3 Circumferential Strengthening Table Lv3 -- 周回強化テーブル　Lv3
+4 Circumferential Strengthening Table Lv4 -- 周回強化テーブル　Lv4
+5 Circumferential Strengthening Table Lv5 -- 周回強化テーブル　Lv5
+6 Circumferential Strengthening Table Lv6 -- 周回強化テーブル　Lv6
+7 Circumferential Strengthening Table Lv7 -- 周回強化テーブル　Lv7
+8 Circumferential Strengthening Table Lv8 -- 周回強化テーブル　Lv8
+9 Circumferential Strengthening Table Lv9 -- 周回強化テーブル　Lv9
+10 Circumferential Strengthening Table Lv10 -- 周回強化テーブル　Lv10
+11 Strong Enemy - Circumferential Strengthening Table Lv1 -- 強敵-周回強化テーブル　Lv1
+12 Strong Enemy - Circumferential Strengthening Table Lv2 -- 強敵-周回強化テーブル　Lv2
+13 Strong Enemy - Circumferential Strengthening Table Lv3 -- 強敵-周回強化テーブル　Lv3
+14 Strong Enemy - Circumferential Strengthening Table Lv4 -- 強敵-周回強化テーブル　Lv4
+15 Strong Enemy - Circumferential Strengthening Table Lv5 -- 強敵-周回強化テーブル　Lv5
+16 Strong Enemy - Circumferential Strengthening Table Lv6 -- 強敵-周回強化テーブル　Lv6
+17 Strong Enemy - Circumferential Strengthening Table Lv7 -- 強敵-周回強化テーブル　Lv7
+18 Strong Enemy - Circumferential Strengthening Table Lv8 -- 強敵-周回強化テーブル　Lv8
+19 Strong Enemy - Circumferential Strengthening Table Lv9 -- 強敵-周回強化テーブル　Lv9
+20 Strong Enemy - Circumferential Strengthening Table Lv10 -- 強敵-周回強化テーブル　Lv10
+21 NPC-Lap Strengthening Table Lv1 -- NPC-周回強化テーブル　Lv1
+22 NPC-Lap Strengthening Table Lv2 -- NPC-周回強化テーブル　Lv2
+23 NPC-Lap Strengthening Table Lv3 -- NPC-周回強化テーブル　Lv3
+24 NPC-Lap Strengthening Table Lv4 -- NPC-周回強化テーブル　Lv4
+25 NPC-Lap Strengthening Table Lv5 -- NPC-周回強化テーブル　Lv5
+26 NPC-Lap Strengthening Table Lv6 -- NPC-周回強化テーブル　Lv6
+27 NPC-Lap Strengthening Table Lv7 -- NPC-周回強化テーブル　Lv7
+28 NPC-Lap Strengthening Table Lv8 -- NPC-周回強化テーブル　Lv8
+29 NPC-Lap Strengthening Table Lv9 -- NPC-周回強化テーブル　Lv9
+30 NPC-Lap Strengthening Table Lv10 -- NPC-周回強化テーブル　Lv10
+31 Boss - Lap Strengthening Table Lv1 -- ボス-周回強化テーブル　Lv1
+32 Boss - Lap Strengthening Table Lv2 -- ボス-周回強化テーブル　Lv2
+33 Boss - Lap Strengthening Table Lv3 -- ボス-周回強化テーブル　Lv3
+34 Boss - Lap Strengthening Table Lv4 -- ボス-周回強化テーブル　Lv4
+35 Boss - Lap Strengthening Table Lv5 -- ボス-周回強化テーブル　Lv5
+36 Boss - Lap Strengthening Table Lv6 -- ボス-周回強化テーブル　Lv6
+37 Boss - Lap Strengthening Table Lv7 -- ボス-周回強化テーブル　Lv7
+38 Boss - Lap Strengthening Table Lv8 -- ボス-周回強化テーブル　Lv8
+39 Boss - Lap Strengthening Table Lv9 -- ボス-周回強化テーブル　Lv9
+40 Boss - Lap Strengthening Table Lv10 -- ボス-周回強化テーブル　Lv10
+41 Spare frame 31 -- 予備枠３１
+42 Spare frame 32 -- 予備枠３２
+43 Spare frame 33 -- 予備枠３３
+44 Spare frame 34 -- 予備枠３４
+45 Spare frame 35 -- 予備枠３５
+46 Spare frame 36 -- 予備枠３６
+47 Spare frame 37 -- 予備枠３７
+48 Spare frame 38 -- 予備枠３８
+49 Spare frame 39 -- 予備枠３９
+50 Spare frame 40 -- 予備枠４０
+51 Spare frame 41 -- 予備枠４１
+52 Spare frame 42 -- 予備枠４２
+53 Spare frame 43 -- 予備枠４３
+54 Spare frame 44 -- 予備枠４４
+55 Spare frame 45 -- 予備枠４５
+56 Spare frame 46 -- 予備枠４６
+57 Spare frame 47 -- 予備枠４７
+58 Spare frame 48 -- 予備枠４８
+59 Spare frame 49 -- 予備枠４９
+60 Spare frame 50 -- 予備枠５０
+61 Spare frame 51 -- 予備枠５１
+62 Spare frame 52 -- 予備枠５２
+63 Spare frame 53 -- 予備枠５３
+64 Spare frame 54 -- 予備枠５４
+65 Spare frame 55 -- 予備枠５５
+66 Spare frame 56 -- 予備枠５６
+67 Spare frame 57 -- 予備枠５７
+68 Spare frame 58 -- 予備枠５８
+69 Spare frame 59 -- 予備枠５９

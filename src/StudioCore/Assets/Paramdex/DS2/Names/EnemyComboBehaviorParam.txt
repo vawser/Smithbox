@@ -1,0 +1,353 @@
+1000 UNKNOWN
+1001 UNKNOWN
+9111 UNKNOWN
+9113 UNKNOWN
+9150 UNKNOWN
+9170 UNKNOWN
+100000 Forest Grotesque
+100001 Forest Grotesque
+100010 Forest Grotesque
+100020 Forest Grotesque
+101000 Kobold
+101001 Kobold
+102000 Hollow Soldier
+102010 Hollow Soldier
+102020 Hollow Soldier
+102030 Hollow Soldier
+102040 Hollow Soldier
+102050 Hollow Soldier
+102100 Royal Soldier
+102110 Royal Soldier
+102140 Royal Soldier
+102150 Royal Soldier
+103000 Hollow Infantry
+103010 Hollow Infantry
+103020 Hollow Infantry
+103030 Hollow Infantry
+103040 Hollow Infantry
+103050 Hollow Infantry
+103100 Drangleic Infantry
+103110 Drangleic Infantry
+103120 Drangleic Infantry
+103130 Drangleic Infantry
+105000 Amana Shrine Maiden
+105010 Amana Shrine Maiden
+106000 Hollow Priest
+106010 Hollow Priest
+106020 Hollow Priest
+106030 Hollow Priest
+106200 Dark Priestess
+106210 Dark Priestess
+107000 Parasitized Undead
+107001 Parasitized Undead
+108000 Hollow Rogue
+108010 Hollow Rogue
+108020 Hollow Rogue
+113000 Varangian Sailor
+113010 Varangian Sailor
+113020 Varangian Sailor
+115000 Undead Traveler
+115010 Undead Traveler
+117000 Stone Soldier
+117010 Stone Soldier
+118000 Black Hollow Mage
+118100 Black Hollow Mage
+118200 White Hollow Mage
+119000 Lion Clan Mage
+121000 Giant
+121010 Giant
+121020 Giant
+121030 Giant
+123000 Suspicious Shadow
+123010 Suspicious Shadow
+124000 Manikin
+124010 Manikin
+124020 Manikin
+124030 Manikin
+124100 Manikin
+124110 Manikin
+124120 Manikin
+124130 Manikin
+125000 Rupturing Hollow
+125001 Rupturing Hollow
+125002 Rupturing Hollow
+125003 Rupturing Hollow
+125004 Rupturing Hollow
+127000 Captive Undead
+127010 Captive Undead
+127020 Captive Undead
+129000 Forest Spirit
+129010 Forest Spirit
+131000 Lindelt Cleric
+131010 Lindelt Cleric
+131020 Lindelt Cleric
+132000 Skeleton
+132010 Skeleton
+132020 Skeleton
+132030 Skeleton
+133000 Skeleton
+133010 Skeleton
+133020 Skeleton
+134000 Gyrm
+135000 Gyrm Warrior
+135010 Gyrm Warrior
+135020 Gyrm Warrior
+137000 Prowling Magus
+137010 Prowling Magus
+137020 Prowling Magus
+138000 Torturer
+138010 Torturer
+139000 Artificial Undead
+139010 Artificial Undead
+140000 UNKNOWN
+141000 Undead Aberration
+146000 Lord Tseldora
+146010 Lord Tseldora
+147000 Undead Supplicant
+148000 Undead Peasant
+148020 Undead Peasant
+148040 Undead Peasant
+149000 Undead Steelworker
+149020 Undead Steelworker
+150000 Stone Knight
+151000 Ironclad Soldier
+151110 Ironclad Soldier
+152000 Royal Soldier
+152010 Royal Soldier
+152020 Royal Soldier
+152030 Royal Soldier
+153000 Syan Knight
+153010 Syan Knight
+154000 Skeleton Lord
+154010 Skeleton Lord
+154020 Skeleton Lord
+155000 Amana Aberration
+201100 Small Boar
+202000 Undead Boar
+203000 Parasite Spider
+203001 Parasite Spider
+204000 Poison Moth
+205000 Poison Horn Beetle
+205100 Acid Horn Beetle
+206000 Razorback Nightcrawler
+209000 Hunting Dog
+210000 Basilisk
+212000 Guardian Dragon
+212010 Guardian Dragon
+213000 Crystal Lizard
+213100 Red Crystal Lizard
+214000 Giant Undead Boar
+216000 Wall Ghost
+217000 Dark Stalker
+220000 Giant Acid Horn Beetle
+222000 Giant Basilisk
+223000 Mongrel Rat
+223500 Mongrel Rat
+223510 Mongrel Rat
+224000 Darksucker
+226000 Corpse Rat
+226100 Corpse Rat
+226200 Corpse Rat
+227000 Stray Dog
+300000 Ogre
+301000 Heide Knight
+301010 Heide Knight
+301020 Heide Knight
+301030 Heide Knight
+302000 Undead Jailer
+302100 Undead Jailer
+303300 Flexile Sentry
+304000 Milfanito
+305000 Smelter Demon
+305001 Smelter Demon
+305010 Blue Smelter Demon
+305011 Blue Smelter Demon
+306000 Alonne Captain
+306010 Alonne Captain
+307000 Headless Vengarl
+307010 Headless Vengarl
+307100 Headless Vengarl
+308000 Lion Clan Warrior
+309000 Forgotten Giant
+309600 Last Giant
+309610 Last Giant
+309700 Giant Lord
+311000 Mounted Overseer
+312000 Grave Warden
+312010 Grave Warden
+312011 Grave Warden
+313000 Hollow Falconer
+313010 Hollow Falconer
+313020 Hollow Falconer
+313030 Hollow Falconer
+314000 Hollow Primal Knight
+315000 Primal Knight
+316000 Desert Sorceress
+317000 Dragon Acolyte
+318000 The Pursuer
+319000 Alonne Knight
+319010 Alonne Knight
+321000 Mimic
+324000 Belfry Gargoyle
+325000 Ruin Sentinel
+326000 The Rotten
+327000 Dragon Skeleton
+330000 Old Knight
+330010 Old Knight
+330020 Old Knight
+330030 Old Knight
+330040 Old Knight
+331000 Drakekeeper
+331010 Drakekeeper
+331020 Drakekeeper
+331030 Drakekeeper
+331040 Drakekeeper
+332000 Throne Defender
+332010 Throne Defender
+333000 Velstadt
+334000 Throne Watcher
+337000 Captive Undead
+337010 Captive Undead
+337020 Captive Undead
+337021 Captive Undead
+500000 Covetous Demon
+501000 Mytha- the Baneful Queen
+502000 Manscorpion Tark
+503000 Scorpioness Najka
+504000 Mirror Knight
+506100 Darklurker
+506200 Darklurker (Clone)
+506500 Grave Warden Agdayne
+509000 Leydia Witch
+509100 Leydia Witch
+511000 Imperious Knight
+512000 Leydia Pyromancer
+514500 UNKNOWN
+514600 Vendrick (hollow)
+600000 Ancient Dragon
+601000 Flame Lizard
+601001 Flame Lizard
+602000 Rampart Hedgehog
+602010 Rampart Hedgehog
+602020 Rampart Hedgehog
+603000 The Duke's Dear Freja
+603100 The Duke's Dear Freja
+607000 Old Iron King
+608000 Rotten Vermin
+611000 Dragonrider
+611010 Dragonrider
+619100 Executioner's Chariot
+619110 Executioner's Chariot
+625000 Old Dragonslayer
+626000 Lost Sinner
+627000 Nashandra
+650000 Iron Warrior
+650010 Iron Warrior
+651000 Fume Sorcerer
+653000 Ashen Warrior
+653010 Ashen Warrior
+653020 Ashen Warrior
+653030 Ashen Warrior
+654000 Ashen Crawler
+656000 Possessed Armor
+657000 Barrel Carrier
+658000 Retainer
+659000 Rampart Golem
+660000 Crystal Golem
+661000 Frozen Reindeer
+662000 Rampart Hedgehog
+663000 Rampart Spearman
+663010 Rampart Spearman
+665000 Sanctum Knight
+665010 Sanctum Knight
+666000 Sanctum Soldier
+666010 Sanctum Soldier
+666020 Sanctum Soldier
+666030 Sanctum Soldier
+670000 Sanctum Priestess
+671000 Poison Statue Cluster
+671100 Poison Statue Cluster
+672000 Rotten Vermin
+674000 Pagan Tree
+675000 Fume Knight
+675010 Fume Knight
+677000 Retainer Sorcerer
+677010 Retainer Sorcerer
+678000 Ice Golem
+679000 Aava- the King's Pet
+680000 Sir Alonne
+681000 Sinh- the Slumbering Dragon
+682000 Elana- Squalid Queen
+683000 Imperfect
+688000 Loyce Knight
+688010 Loyce Knight
+688020 Loyce Knight
+688030 Loyce Knight
+689000 Charred Loyce Knight
+689010 Charred Loyce Knight
+689020 Charred Loyce Knight
+689030 Charred Loyce Knight
+690000 Burnt Ivory King
+690010 Burnt Ivory King
+692000 Aldia- Scholar of the First Sin
+692010 Aldia- Scholar of the First Sin
+700000 UNKNOWN
+700500 Emerald Herald
+700510 Emerald Herald
+701000 Emerald Herald
+701500 Emerald Herald
+704500 Laddersmith Gilligan
+705100 Morrel
+705300 Griant
+705500 Strowen
+721000 Chancellor Wellager
+723000 Milibeth
+724000 Captain Drummond
+725000 Darkdiver Grandahl
+730000 Looking Glass Phantom (Faraam)
+730010 Looking Glass Phantom (Faraam)
+730020 Looking Glass Phantom (Faraam)
+731000 Looking Glass Phantom (Knight)
+731010 Looking Glass Phantom (Knight)
+731020 Looking Glass Phantom (Knight)
+741000 Crestfallen Saulden
+742000 Creighton the Wanderer
+742010 Creighton the Wanderer
+743000 Benhart of Jugo
+743001 Benhart of Jugo
+743010 Benhart of Jugo
+744000 Mild Mannered Pate
+751000 Cartographer Cale
+752000 Lucatiel of Mirrah
+753000 Bell Keeper
+753001 Bell Keeper
+753010 Bell Keeper
+754000 Merchant Hag Melentia
+760000 Milfanito
+760100 Milfanito
+760200 Imprisoned Milfanito
+761000 Maughlin the Armourer
+762000 Stone Trader Chloanne
+763000 Rosabeth of Melfia
+764000 Blacksmith Lenigrast
+764300 Steady Hand McDuff
+765000 UNKNOWN
+766000 Carhillion of the Fold
+767000 UNKNOWN
+768000 Straid of Olaphis
+769000 Licia of Lindeldt
+770000 Felkin the Outcast
+770010 Felkin the Outcast
+771000 Royal Sorcerer Navlaan
+772000 Magerold of Lanafir
+777000 Sweet Shalquoir
+783000 Titchy Gren
+784000 Cromwell the Pardoner
+785000 Blue Sentinel Targray
+785010 Blue Sentinel Targray
+786000 Dyna & Tillo
+800000 UNKNOWN
+800100 UNKNOWN
+800300 UNKNOWN
+810000 Masterless Glencour
+890000 Unknown Phantom

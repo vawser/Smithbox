@@ -1,0 +1,255 @@
+1000000 Dagger
+1010000 Bandit's Knife
+1060000 Thief Dagger
+1100000 Parrying Dagger
+1130000 Royal Dirk
+1200000 Broken Straight Sword
+1210000 Shortsword
+1220000 Longsword
+1230000 Broadsword
+1320000 Heide Knight Sword
+1360000 Sun Sword
+1400000 Estoc
+1410000 Mail Breaker
+1500000 Rapier
+1600000 Falchion
+1610000 Shotel
+1650000 Scimitar
+1660000 Red Rust Scimitar
+1700000 Uchigatana
+1710000 Washing Pole
+1730000 Blacksteel Katana
+1740000 Manslayer
+1760000 Darkdrift
+1770000 Berserker Blade
+1800000 Bastard Sword
+1810000 Flamberge
+1820000 Claymore
+1950000 Old Knight Greatsword
+1980000 Key to the Embedded
+2000000 Hand Axe
+2010000 Battle Axe
+2200000 Crescent Axe
+2210000 Greataxe
+2220000 Bandit Greataxe
+2250000 Giant Stone Axe
+2400000 Club
+2410000 Mace
+2420000 Morning Star
+2430000 Reinforced Club
+2520000 Blacksmith's Hammer
+2600000 Large Club
+2610000 Pickaxe
+2620000 Great Club
+2720000 Archdrake Mace
+2750000 Sacred Chime Hammer
+2800000 Spear
+2810000 Winged Spear
+2820000 Pike
+2830000 Partizan
+3000000 Great Scythe
+3010000 Great Machete
+3020000 Full Moon Sickle
+3040000 Crescent Sickle
+3200000 Lucerne
+3210000 Scythe
+3220000 Halberd
+3250000 Santier's Spear
+3410000 Claws
+3440000 Work Hook
+3500000 Caestus
+3600000 Whip
+3610000 Notched Whip
+3620000 Bloodied Whip
+3800000 Sorcerer's Staff
+3830000 Lizard Staff
+3860000 Archdrake Staff
+4010000 Cleric's Sacred Chime
+4030000 Priest's Chime
+4100000 Protective Chime
+4200000 Short Bow
+4210000 Long Bow
+4220000 Composite Bow
+4290000 Hunter's Blackbow
+4600000 Light Crossbow
+4610000 Heavy Crossbow
+5200000 Zweihander
+5210000 Greatsword
+5340000 Twinblade
+5400000 Pyromancy Flame
+11010000 Small Leather Shield
+11040000 Target Shield
+11091000 Crimson Parma
+11110000 Cleric's Parma
+11200000 Large Leather Shield
+11230000 Drangleic Shield
+11270000 Mirrah Shield
+11280000 Old Knight's Shield
+11370000 Grand Spirit Tree Shield
+11390000 Slumbering Dragon Shield
+11400000 Wooden Shield
+11420000 Hollow Soldier Shield
+11510000 Tower Shield
+11530000 Orma's Greatshield
+11540000 Reeve's Greatshield
+11650000 Greatshield of Glory
+11700000 Phoenix Parma
+11740000 Rebel's Greatshield
+21020101 Black Leather Armor
+21030101 Wanderer Coat
+21060101 Elite Knight Armor
+21100101 Imported Tunic
+21140101 Traveling Merchant Coat
+21230102 Astrologist's Gauntlets
+21360101 Armor of Aurous
+21361101 Armor of Aurous
+21430100 Durgo's Hat
+21490101 Alva Armor
+21501100 Black Witch Hat
+22182101 White Hollow Mage Robe
+22270103 Prisoner's Waistcloth
+22310101 Archdrake Robes
+22350100 Gyrm Warrior Helm
+22460101 Tseldora Robe
+23040101 Singer's Dress
+23070100 Vengarl's Helm
+23130101 Falconer Armor
+23300101 Old Knight Armor
+25100101 Insolent Armor
+25110101 Imperious Armor
+27830100 Nahr Alma Hood
+31010000 Soul Arrow
+31020000 Great Soul Arrow
+31030000 Heavy Soul Arrow
+31050000 Homing Soul Arrow
+31180000 Magic Weapon
+31210000 Strong Magic Shield
+31220000 Yearn
+31240000 Fall Control
+31260000 Repair
+31270000 Cast Light
+32010000 Heal
+32020000 Med Heal
+32030000 Great Heal Excerpt
+32040000 Great Heal
+32070000 Resplendent Life
+32100000 Force
+32190000 Magic Barrier
+32210000 Homeward
+32220000 Guidance
+32230000 Sacred Oath
+33010000 Fireball
+33020000 Fire Orb
+33050000 Firestorm
+33180000 Flash Sweat
+33200000 Warmth
+33210000 Immolation
+34010000 Dark Orb
+34020000 Dark Hail
+34030000 Dark Fog
+34050000 Dead Again
+40010000 Life Ring
+40020000 Chloranthy Ring
+40030000 Royal Soldier's Ring
+40040000 First Dragon Ring
+40060000 Spell Quartz Ring
+40120000 Bracing Knuckle Ring
+40160000 Ring of Blades
+40260000 Red Tearstone Ring
+40290000 Ring of Giants
+40310000 Ring of Life Protection
+40400000 Ring of Restoration
+40410000 Ring of Binding
+40420000 Silvercat Ring
+40440000 Gower's Ring of Protection
+40450000 Name-engraved Ring
+40480000 Old Sun Ring
+40510000 King's Ring
+40520000 Ring of the Dead
+40540000 Delicate String
+40550000 White Ring
+40610000 Ring of Whispers
+40700000 Crest of the Rat
+40710000 Bell Keeper's Seal
+40720000 Guardian's Seal
+40730000 Crest of Blood
+40740000 Blue Seal
+40750000 Abyss Seal
+40760000 Vanquisher's Seal
+40770000 Sun Seal
+40780000 Ancient Dragon Seal
+50880000 Smooth &amp; Silky Stone
+50900000 Giant's Kinship
+50910000 Ashen Mist Heart
+50960000 Soul Vessel
+50990000 Dull Ember
+51000000 Crushed Eye Orb
+51010000 Simpleton's Spice
+51020000 Skeptic's Spice
+60010000 Lifegem
+60020000 Radiant Lifegem
+60030000 Old Radiant Lifegem
+60035000 Elizabeth Mushroom
+60040000 Amber Herb
+60070000 Poison Moss
+60090000 Monastery Charm
+60110000 Rouge Water
+60151000 Human Effigy
+60155000 Estus Flask
+60160000 Small Blue Burr
+60200000 Common Fruit
+60320000 Rusted Coin
+60350000 Homeward Bone
+60360000 Darksign
+60410000 Repair Powder
+60420000 Torch
+60430000 Flame Butterfly
+60450000 Prism Stone
+60525000 Estus Flask Shard
+60526000 Sublime Bone Dust
+60527000 Bonfire Ascetic
+60530000 Alluring Skull
+60536000 Pharros' Lockstone
+60537000 Fragrant Branch of Yore
+60625000 Fading Soul
+60760000 Wood Arrow
+60770000 Iron Arrow
+60800000 Fire Arrow
+60820000 Poison Arrow
+60910000 Wood Bolt
+60920000 Heavy Bolt
+60930000 Magic Bolt
+60950000 Fire Bolt
+60970000 Titanite Shard
+60975000 Large Titanite Shard
+60980000 Titanite Chunk
+60990000 Titanite Slab
+61000000 Twinkling Titanite
+61060000 Faintstone
+61070000 Boltstone
+61080000 Firedrake Stone
+61090000 Darknight Stone
+61100000 Poison Stone
+61110000 Bleed Stone
+61130000 Raw Stone
+61140000 Magic Stone
+61150000 Old Mundane Stone
+61160000 Palestone
+62000000 Dried Fingers
+62030000 White Sign Soapstone
+62040000 Small White Sign Soapstone
+62045000 Red Sign Soapstone
+62050000 Cracked Blue Eye Orb
+62060000 Cracked Red Eye Orb
+62100000 Token of Fidelity
+62110000 Token of Spite
+62160000 Black Separation Crystal
+62170000 Seed of a Tree of Giants
+64000000 Soul of the Pursuer
+64060000 Soul of the Lost Sinner
+64120000 Old Iron King Soul
+64140000 Soul of the Rotten
+64170000 Soul of the Duke's Dear Freja
+64200000 Soul of Velstadt
+64210000 Soul of the King
+64240000 Giant Lord Soul

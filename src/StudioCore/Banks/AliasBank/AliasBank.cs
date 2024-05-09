@@ -111,7 +111,7 @@ public class AliasBank
         get
         {
             if (IsLoadingAliases)
-                return null;
+                return new AliasContainer();
 
             return _loadedAliasBank;
         }

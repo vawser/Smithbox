@@ -524,7 +524,7 @@ public class ParamEditorScreen : EditorScreen
 
                 try
                 {
-                    if (Project.Type != ProjectType.DS2S)
+                    if (Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
                     {
                         if (PlatformUtils.Instance.OpenFileDialog("Select file containing params", allParamTypes, out var path))
                         {

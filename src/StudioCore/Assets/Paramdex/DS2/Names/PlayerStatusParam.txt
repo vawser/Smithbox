@@ -1,0 +1,18 @@
+10 Default
+20 [Class] Warrior
+30 [Class] Knight
+50 [Class] Bandit
+70 [Class] Cleric
+80 [Class] Sorcerer
+90 [Class] Explorer
+100 [Class] Swordsman
+110 [Class] Deprived
+500 [Gift] Nothing
+510 [Gift] Life Ring
+520 [Gift] Human Effigy
+530 [Gift] Lifegem / Radiant Lifegem / Old Radiant Lifegem / Poison Moss
+540 [Gift] Homeward Bone
+550 [Gift] Seed of a Tree of Giants
+560 [Gift] Bonfire Ascetic
+570 [Gift] Petrified Something
+999999999 UNKNOWN

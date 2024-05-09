@@ -67,7 +67,7 @@ public class MaterialEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_MaterialEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (Project.Type is ProjectType.BB or ProjectType.DS2S)
+        if (Project.Type is ProjectType.BB or ProjectType.DS2S or ProjectType.DS2)
         {
             ImGui.Begin("Editor##InvalidMaterialEditor");
 

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self Wiki="Defines parameters for armor reinforcement." Row0Dummy="" />
+  <Field>
+    <defence_slash AltName="Defence: Slash" />
+    <defence_thrust AltName="Defence: Thrust" />
+    <defence_strike AltName="Defence: Strike" />
+    <defence_standard AltName="Defence: Standard" />
+    <absorption_magic AltName="Absorption: Magic" />
+    <absorption_lightning AltName="Absorption: Lightning" />
+    <absorption_fire AltName="Absorption: Fire" />
+    <absorption_dark AltName="Absorption: Dark" />
+    <absorption_poison AltName="Resist: Poison" />
+    <absorption_bleed AltName="Resist: Bleed" />
+    <absorption_petrify AltName="Resist: Petrify" />
+    <absorption_curse AltName="Resist: Curse" />
+    <max_defence_slash AltName="Max Defence: Slash" />
+    <max_defence_thrust AltName="Max Defence: Thrust" />
+    <max_defence_strike AltName="Max Defence: Strike" />
+    <max_defence_standard AltName="Max Defence: Standard" />
+    <max_absorption_magic AltName="Max Absorption: Magic" />
+    <max_absorption_lightning AltName="Max Absorption: Lightning" />
+    <max_absorption_fire AltName="Max Absorption: Fire" />
+    <max_absorption_dark AltName="Max Absorption: Dark" />
+    <max_absorption_poison AltName="Max Resist: Poison" />
+    <max_absorption_bleed AltName="Max Resist: Bleed" />
+    <max_absorption_petrify AltName="Max Resist: Petrify" />
+    <max_absorption_curse AltName="Max Resist: Curse" />
+    <max_reinforcement_level AltName="Max Reinforcement Level" />
+    <reinforce_material AltName="Reinforcement Material" />
+    <reinforce_cost_id AltName="Reinforcement Cost ID" Refs="ReinforceCostParam" />
+  </Field>
+</PARAMMETA>

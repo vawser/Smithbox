@@ -151,7 +151,7 @@ public class MapSceneTree : IActionEventHandler
         {
             mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
         }
-        else if (Project.Type is ProjectType.DS2S)
+        else if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
         {
             mapcache.Add(MsbEntity.MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
             mapcache.Add(MsbEntity.MsbEntityType.DS2Event, new Dictionary<Type, List<MsbEntity>>());
@@ -646,7 +646,7 @@ public class MapSceneTree : IActionEventHandler
 
             ImGui.PopStyleVar();
 
-            if (Project.Type is ProjectType.DS2S)
+            if (Project.Type is ProjectType.DS2S || Project.Type is ProjectType.DS2)
             {
                 if (ParamBank.PrimaryBank.IsLoadingParams)
                 {

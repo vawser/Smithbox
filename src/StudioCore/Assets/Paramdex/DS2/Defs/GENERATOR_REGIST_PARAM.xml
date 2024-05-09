@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>GENERATOR_REGIST_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 EnemyParamID" />
+    <Field Def="s32 LogicParamID" >
+      <Description>Refers to LogicComParam</Description>
+    </Field>
+    <Field Def="s32 DefaultLogicParamID" >
+      <Description>Refers to EnemyDefaultLogicParam</Description>
+    </Field>
+    <Field Def="u16 SpawnState" />
+    <Field Def="u8 DrawGroup" />
+    <Field Def="u8 Unk0F" />
+  </Fields>
+</PARAMDEF>

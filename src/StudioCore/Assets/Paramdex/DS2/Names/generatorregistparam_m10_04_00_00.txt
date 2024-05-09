@@ -1,0 +1,54 @@
+13200000 [REG:13200000] Skeleton
+13200100 [REG:13200100] Skeleton
+13200200 [REG:13200200] Skeleton
+13300000 [REG:13300000] Skeleton
+15700000 [REG:15700000] Dual-wielding Skeleton
+15700100 [REG:15700100] Dual-wielding Skeleton
+20110000 [REG:20110000] Small Boar
+20210000 [REG:20210000] Undead Boar
+21400000 [REG:21400000] Giant Undead Boar
+32100000 [REG:32100000] Mimic
+70050000 [REG:70050000] Emerald Herald
+70050001 [REG:70050001] Emerald Herald
+70050002 [REG:70050002] Emerald Herald
+70050003 [REG:70050003] Emerald Herald
+70050004 [REG:70050004] Emerald Herald
+70050007 [REG:70050007] Emerald Herald
+70450000 [REG:70450000] Laddersmith Gilligan
+70450001 [REG:70450001] Laddersmith Gilligan
+70451000 [REG:70451000] Laddersmith Gilligan
+74100000 [REG:74100000] Crestfallen Saulden
+74100001 [REG:74100001] Crestfallen Saulden
+74300000 [REG:74300000] Benhart of Jugo
+75100000 [REG:75100000] Cartographer Cale
+75100001 [REG:75100001] Cartographer Cale
+75400000 [REG:75400000] Merchant Hag Melentia
+75400001 [REG:75400001] Merchant Hag Melentia
+76100000 [REG:76100000] Maughlin the Armourer
+76100001 [REG:76100001] Maughlin the Armourer
+76100002 [REG:76100002] Maughlin the Armourer
+76100003 [REG:76100003] Maughlin the Armourer
+76200000 [REG:76200000] Stone Trader Chloanne
+76200001 [REG:76200001] Stone Trader Chloanne
+76300000 [REG:76300000] Rosabeth of Melfia
+76300001 [REG:76300001] Rosabeth of Melfia
+76400000 [REG:76400000] Blacksmith Lenigrast
+76400001 [REG:76400001] Blacksmith Lenigrast
+76400002 [REG:76400002] Blacksmith Lenigrast
+76600000 [REG:76600000] Carhillion of the Fold
+76600001 [REG:76600001] Carhillion of the Fold
+76900000 [REG:76900000] Licia of Lindeldt
+76900001 [REG:76900001] Licia of Lindeldt
+76900002 [REG:76900002] Licia of Lindeldt
+77700000 [REG:77700000] Sweet Shalquoir
+77700001 [REG:77700001] Sweet Shalquoir
+77700002 [REG:77700002] Sweet Shalquoir
+77700003 [REG:77700003] Sweet Shalquoir
+77700004 [REG:77700004] Sweet Shalquoir
+77700005 [REG:77700005] Sweet Shalquoir
+77700006 [REG:77700006] Sweet Shalquoir
+77700007 [REG:77700007] Sweet Shalquoir
+78600000 [REG:78600000] Victor's Stone
+83700000 [REG:83700000] Foreign Wanderer Phantom
+83710001 [REG:83710001] Foreign Wanderer
+83720000 [REG:83720000] Greatsword Foreigner Phantom

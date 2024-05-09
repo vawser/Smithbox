@@ -1,0 +1,57 @@
+1 Small White Phantom -- 小白ファントム
+2 White Phantom -- 白ファントム
+3 Blue Phantom 0 -- 青ファントム0
+4 Blue Phantom 1 -- 青ファントム1
+5 Blue Phantom 2 -- 青ファントム2
+6 Small Gold Phantom -- 小金ファントム
+7 Gold Phantom -- 金ファントム
+8 Red Phantom 0 -- 赤ファントム0
+9 Red Phantom 1 -- 赤ファントム1
+10 Red Phantom 2 -- 赤ファントム2
+11 Black Phantom -- 黒ファントム
+12 Dragon Spirit Phantom -- 竜霊ファントム
+13 Abyss Phantom -- 深淵ファントム
+14 Lower Me Phantom -- 下僕ファントム
+15 Usually Phantom Phantom -- 通常幻影ファントム
+16 Bonfire Phantom Phantom -- 篝火幻影ファントム
+17 Tomb Phantom -- 墓霊ファントム
+18 Weapon Enchantment_Physical Enhancement -- 武器エンチャント_物理強化
+19 Weapon Enchantment_Magic Enhancement -- 武器エンチャント_魔力強化
+20 Weapon Enchantment_ Lightning Enhancement -- 武器エンチャント_雷強化
+21 Weapon Enchantment_ Flame Strengthening -- 武器エンチャント_炎強化
+22 Weapon Enchantment_Darkness Enhancement -- 武器エンチャント_闇強化
+23 Weapon Enchantment_Poison Enhancement -- 武器エンチャント_毒強化
+24 Weapon Enchantment_Bleeding Enhancement -- 武器エンチャント_出血強化
+25 Weapon Enchantment_ Weapon Destruction Enhancement -- 武器エンチャント_武器破壊強化
+26 Weapon Enchantment_ Curse Enhancement -- 武器エンチャント_呪強化
+27 Phantom Phantom (Tentative Name) -- 幻影霊ファントム（仮称）
+28 Blue Phantom 3 -- 青ファントム3
+29 Red Phantom 3 -- 赤ファントム3
+30 Weapon Enchantment_Magic Enhancement (Large) -- 武器エンチャント_魔力強化（大）
+50 Shield Enchantment_Physical Enhancement -- 盾エンチャント_物理強化
+51 Shield Enchantment_Magic Enhancement -- 盾エンチャント_魔力強化
+52 Shield Enchantment_Lightning Enhancement -- 盾エンチャント_雷強化
+53 Shield Enchantment_Flame Enhancement -- 盾エンチャント_炎強化
+54 Shield Enchantment_Darkness Enhancement -- 盾エンチャント_闇強化
+55 Shield Enchantment_Poison Enhancement -- 盾エンチャント_毒強化
+56 Shield Enchantment_Bleeding Enhancement -- 盾エンチャント_出血強化
+57 Shield Enchantment_Shield Destruction Enhancement -- 盾エンチャント_盾破壊強化
+58 Shield Enchantment_Curse Enhancement -- 盾エンチャント_呪強化
+101 Small White Phantom - Remaining Time - Medium -- 小白ファントム-残り時間-中
+102 White Phantom - Remaining Time - Medium -- 白ファントム-残り時間-中
+103 Small Gold Phantom - Remaining Time - Medium -- 小金ファントム-残り時間-中
+104 Gold Phantom - Remaining Time - Medium -- 金ファントム-残り時間-中
+105 Red Phantom 0 - Remaining Time - Medium -- 赤ファントム0-残り時間-中
+106 Red Phantom 1 - Remaining Time - Medium -- 赤ファントム1-残り時間-中
+107 Red Phantom 2 - Remaining Time - Medium -- 赤ファントム2-残り時間-中
+108 Red Phantom 3 - Remaining Time - Medium -- 赤ファントム3-残り時間-中
+109 Black Phantom - Remaining Time - Medium -- 黒ファントム-残り時間-中
+201 Small White Phantom - Remaining Time - Small -- 小白ファントム-残り時間-小
+202 White Phantom - Remaining Time - Small -- 白ファントム-残り時間-小
+203 Small Gold Phantom - Remaining Time - Small -- 小金ファントム-残り時間-小
+204 Gold Phantom - Remaining Time - Small -- 金ファントム-残り時間-小
+205 Red Phantom 0 - Remaining Time - Small -- 赤ファントム0-残り時間-小
+206 Red Phantom 1 - Remaining Time - Small -- 赤ファントム1-残り時間-小
+207 Red Phantom 2 - Remaining Time - Small -- 赤ファントム2-残り時間-小
+208 Red Phantom 3 - Remaining Time - Small -- 赤ファントム3-残り時間-小
+209 Black Phantom - Remaining Time - Small -- 黒ファントム-残り時間-小

@@ -1,0 +1,117 @@
+10 UNKNOWN
+6940 Forlorn
+6950 Forlorn
+6960 Invisible Hollow
+7320 Belfry Gargoyle
+7330 Belfry Gargoyle
+7410 Crestfallen Saulden
+7610 Maughlin the Armourer
+7630 Rosabeth of Melfia
+7660 Carhillion of the Fold
+7720 Magerold of Lanafir
+7840 Cromwell the Pardoner
+8100 Masterless Glencour
+8110 Lone Hunter Schmidt
+8120 Pilgrim Bellclaire
+8130 Felicia the Brave
+8140 Melinda the Butcher
+8200 Vorgel the Sinner
+8210 Merciless Roenna
+8220 Peculiar Kindalur
+8230 Dragonfang Villard
+8240 Aslatiel of Mirrah
+8310 Dingy Cleric Phantom
+8311 Faraam Knight Phantom
+8320 Underworld Deadeye
+8321 Abyss Ironclad
+8322 Pretender to the Xanthous Throne
+8323 Pretender to the Xanthous Throne
+8324 Tenebrous Rogue
+8325 The Ghost of Princes Past
+8326 A Chip Off the Ol Rock
+8327 Shadowveil Assasin
+8330 Peculiar Kindalur Phantom
+8350 Black Dragon Knight
+8351 Black Dragon Knight
+8352 Black Dragon Knight
+8353 Black Dragon Knight
+8354 Black Dragon Knight
+8360 Mad Warrior Phantom
+8361 Greatsword Bell Keeper Phantom
+8362 Dual Avelyn Bell Keeper Phantom
+8363 Bell Keeper Mage Phantom
+8364 Ironclad Warrior Phantom
+8370 Foreign Wanderer Phantom
+8371 Foreign Wanderer
+8372 Greatsword Foreigner Phantom
+8374 Player Character - Start
+8382 Forest Guardian
+8383 Forest Guardian
+8420 Syan Knight Phantom
+8430 Knight Phantom
+8440 Catarina Knight Phantom
+8450 Unknown Phantom
+8460 Porcine Peasant Phantom
+8470 Executioner Phantom
+8471 Sentinel Phantom
+8480 Dual Wielding Swordsman Phantom
+8481 Unknown Phantom
+8490 Nameless Usurper
+8491 Jester Thomas
+8492 Rhoy the Explorer
+8500 Painting Guardian Phantom
+8510 Unknown Phantom
+8520 Greatsword Phantom
+8530 Bowman Guthry
+8531 Ashen Knight Boyd
+8532 Drakekeeper Knight Phantom
+8533 Elite Knight Phantom
+8534 Greatbow Phantom
+8535 Washing Pole Phantom
+8540 Unknown Phantom
+8600 Rockshield Baldyr
+8610 Jester Thomas
+8620 Cerah the Old Explorer
+8630 Ancient Soldier Varg
+8640 Afflicted Graverobber
+8650 Abbess Feeva
+8660 Ruined Aflis
+8670 Steelheart Ellie
+8671 Steelheart Ellie
+8680 Transcendent Edde
+8681 Transcendent Edde
+8690 Rapacious Andrei
+8700 Quicksword Rachel
+8710 Maldron the Assassin
+8711 Teeth-chattering Dan
+8720 Evangelist Scion Waslo
+8730 Swashbuckling Matelas
+8740 Carhillion of the Fold
+8750 Steel-willed Lorrie
+8760 Drifter Swordsman Aidel
+8770 Castaway Witch Donna
+8780 Hexer Nicholai
+8790 Holy Knight Aurheim
+8800 Drakeblood Knight Rondor
+8810 Prowlers
+8820 Prowlers
+8830 Wall Watchman
+8831 Wall Watchman
+8832 Wall Watchman
+8840 Twiggy Shei
+8850 Unknown Phantom
+8851 Unknown Phantom
+8860 Insolent Knight
+8870 Gutter Denizen
+8880 Butcher Phantom
+8900 Unknown Phantom
+8910 Sellsword Luet
+8915 Devotee Scarlett
+8920 Manhunter O'Harrah
+8925 Bashful Ray
+8930 Bradley of the Old Guard
+8960 Woodland Child Victor
+8965 Woodland Child Gully
+8970 Fencer Sharron
+8975 Armorer Dennis
+8980 Oliver the Collector

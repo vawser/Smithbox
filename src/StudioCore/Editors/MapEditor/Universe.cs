@@ -403,7 +403,7 @@ public class Universe
             return mesh;
         }
 
-        if (loadnav && Project.Type != ProjectType.DS2S)
+        if (loadnav && Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2)
         {
             var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
                 _renderScene, asset.AssetVirtualPath, modelMarkerType);
@@ -433,9 +433,6 @@ public class Universe
             }
 
             return mesh;
-        }
-        else if (loadnav && Project.Type == ProjectType.DS2S)
-        {
         }
         else if (loadflver)
         {
@@ -658,13 +655,15 @@ public class Universe
 
     public bool LoadMap(string mapid, bool selectOnLoad = false)
     {
-        if (Project.Type == ProjectType.DS2S
-            && ParamBank.PrimaryBank.Params == null)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2S)
         {
-            // ParamBank must be loaded for DS2 maps
-            TaskLogs.AddLog("Cannot load DS2 maps when params are not loaded.",
-                LogLevel.Warning, TaskLogs.LogPriority.High);
-            return false;
+            if (ParamBank.PrimaryBank.Params == null)
+            {
+                // ParamBank must be loaded for DS2 maps
+                TaskLogs.AddLog("Cannot load DS2 maps when params are not loaded.",
+                    LogLevel.Warning, TaskLogs.LogPriority.High);
+                return false;
+            }
         }
 
         ResourceDescriptor ad = ResourceMapLocator.GetMapMSB(mapid);
@@ -683,7 +682,7 @@ public class Universe
         {
             BTL btl;
 
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 using var bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
                 BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
@@ -739,6 +738,7 @@ public class Universe
                 case ProjectType.DES:
                 case ProjectType.DS1:
                 case ProjectType.DS1R:
+                case ProjectType.DS2:
                 case ProjectType.DS2S:
                     _dispGroupCount = 4;
                     break;
@@ -779,7 +779,7 @@ public class Universe
             {
                 msb = MSB_AC6.Read(ad.AssetPath);
             }
-            else if (Project.Type == ProjectType.DS2S)
+            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 msb = MSB2.Read(ad.AssetPath);
             }
@@ -853,8 +853,7 @@ public class Universe
                             ResourceModelLocator.MapModelNameToAssetName(amapid, model.Name), false);
                         colsToLoad.Add(asset);
                     }
-                    else if (model.Name.StartsWith("n") && Project.Type != ProjectType.DS2S &&
-                             Project.Type != ProjectType.BB)
+                    else if (model.Name.StartsWith("n") && Project.Type != ProjectType.DS2S && Project.Type != ProjectType.DS2 && Project.Type != ProjectType.BB)
                     {
                         asset = ResourceModelLocator.GetMapNVMModel(amapid,
                             ResourceModelLocator.MapModelNameToAssetName(amapid, model.Name));
@@ -915,7 +914,7 @@ public class Universe
                 }
             }
 
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 LoadDS2Generators(amapid, map);
             }
@@ -1390,7 +1389,7 @@ public class Universe
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (Project.Type == ProjectType.DS2S)
+        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             return DCX.Type.None;
         }
@@ -1418,7 +1417,7 @@ public class Universe
         List<ResourceDescriptor> BTLs = ResourceMapLocator.GetMapBTLs(map.Name);
         List<ResourceDescriptor> BTLs_w = ResourceMapLocator.GetMapBTLs(map.Name, true);
         DCX.Type compressionType = GetCompressionType();
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             for (var i = 0; i < BTLs.Count; i++)
             {
@@ -1499,7 +1498,7 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Project.Type == ProjectType.DS2S)
+            else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 var prev = MSB2.Read(ad.AssetPath);
                 MSB2 n = new();
@@ -1575,7 +1574,7 @@ public class Universe
 
             File.Move(mapPath + ".temp", mapPath);
 
-            if (Project.Type == ProjectType.DS2S)
+            if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
             {
                 SaveDS2Generators(map);
             }

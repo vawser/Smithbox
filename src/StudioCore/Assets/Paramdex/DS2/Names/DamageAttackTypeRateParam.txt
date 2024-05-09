@@ -1,0 +1,4 @@
+0 Weak -- 弱
+1 Strong -- 強
+2 Jump -- ジャンプ
+3 Fall -- 落下

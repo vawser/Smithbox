@@ -87,7 +87,7 @@ public static class ResourcePathLocator
             if (pathElements[i].Equals("tex"))
             {
                 i++;
-                if (Project.Type == ProjectType.DS2S)
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 {
                     var mid = pathElements[i];
                     i++;
@@ -135,7 +135,7 @@ public static class ResourcePathLocator
                     if (Project.Type == ProjectType.DS1R)
                         return ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.flver.dcx");
 
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                         return ResourceLocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
 
                     if (Project.Type == ProjectType.BB || Project.Type == ProjectType.DES)
@@ -158,7 +158,7 @@ public static class ResourcePathLocator
                         return ResourceLocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}");
                     }
 
-                    if (Project.Type == ProjectType.DS2S)
+                    if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     {
                         bndpath = "";
                         return ResourceLocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
@@ -217,7 +217,7 @@ public static class ResourcePathLocator
                 if (Project.Type == ProjectType.DS1)
                     return ResourceLocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
 
-                if (Project.Type == ProjectType.DS2S)
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     return ResourceLocatorUtils.GetOverridenFilePath($@"model\chr\{chrid}.bnd");
 
                 if (Project.Type == ProjectType.DES)
@@ -257,7 +257,7 @@ public static class ResourcePathLocator
                 if (Project.Type == ProjectType.DS1)
                     return ResourceLocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd");
 
-                if (Project.Type == ProjectType.DS2S)
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                     return ResourceLocatorUtils.GetOverridenFilePath($@"model\obj\{objid}.bnd");
 
                 if (Project.Type == ProjectType.ER)
@@ -294,7 +294,7 @@ public static class ResourcePathLocator
                 if (Project.Type == ProjectType.DS1)
                     return ResourceLocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd");
 
-                if (Project.Type == ProjectType.DS2S)
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 {
                     var partType = "";
                     switch (partsId.Substring(0, 2))
@@ -381,7 +381,7 @@ public static class ResourcePathLocator
             {
                 bndpath = "";
 
-                if (Project.Type == ProjectType.DS2S)
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 {
                     var path = $@"menu\tex\icon\{containerName}.tpf";
 

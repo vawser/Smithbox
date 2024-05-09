@@ -1,0 +1,878 @@
+1 Without -- なし
+1000 Goblin (Test) -- ゴブリン（テスト）
+1001 Goblin (Test 2) -- ゴブリン（テスト2）
+1002 Goblin (Official Test) -- ゴブリン（正式テスト）
+1010 Cobold (Test) -- コボルト（テスト）
+2910 Auger (Test) -- オーガ（テスト）
+3000 Auger (test for actual use) -- オーガ(実機用テスト)
+3060 Demon Soldier (Captain) (Test for actual aircraft) -- デーモン兵士(隊長)(実機用テスト)
+3061 Demon soldier (test for actual use) -- デーモン兵士(実機用テスト)
+6010 Salamander (tentative) -- サラマンダー（仮）
+6060 Yadokari Castle (tentative) -- ヤドカリ城（仮）
+8100 White Phantom Test -- 白ファントムテスト
+9000 Player character for proto version -- プロト版用プレイヤーキャラクタ
+9010 Proto version enemy character -- プロト版用敵キャラクタ
+9020 New player character for proto version -- プロト版用新プレイヤーキャラクタ
+9030 New enemy character for proto version -- プロト版用新敵キャラクタ
+9061 Flamto -- フラムト
+9062 Flamto (no environmental map) -- フラムト(環境マップ無し)
+9100 Giant Boss Test (Morinaga) -- 巨大ボステスト（森永）
+9101 Giant Lower Soldier (Test) -- 巨人下級兵士（テスト）
+9111 Ueda Test (Goblin) Yoshida Param Adjustment Version -- 上田テスト（ゴブリン）吉田Param調整版
+9112 Ueda Test (Goblin) -- 上田テスト（ゴブリン）
+9113 Ueda Test (Goblin: Floating) -- 上田テスト（ゴブリン：浮遊）
+9120 Captain of the Giant SS (Morinaga Test) -- 巨人親衛隊長（森永テスト）
+9140 Okawachi Test -- 大河内テスト
+9150 For NPC testing -- NPCテスト用
+9160 Imazu Test -- 今津テスト
+9170 For barrett bullet test -- バレット弾きテスト用
+9200 Character for new bone structure -- 新ボーン構造用キャラ
+9300 GgD - Dead: Traveler's Clothing ♂ -- GGD用-亡者：旅人の服♂
+9333 Ohki NPC Test 1 -- 大木ＮＰＣテスト1
+9334 Ohki NPC Test 2 -- 大木ＮＰＣテスト2
+9400 Oil Wet Test - Kingdom Soldier (Dead): Bow -- 油濡れテスト-王国兵士（亡者）：弓
+9500 Dark Spirit Double Sword Man -- 闇霊ダブルソードマン
+9501 Red Spirit Level 0 -- 赤霊レベル０
+9502 Red Spirit Level 1 -- 赤霊レベル１
+9503 Red Spirit Level 2 -- 赤霊レベル２
+9504 Red Spirit Level 3 -- 赤霊レベル３
+9601 Blue Spirit Level 0 -- 青霊レベル０
+9602 Blue Spirit Level 1 -- 青霊レベル１
+9603 Blue Spirit Level 2 -- 青霊レベル２
+9604 Blue Spirit Level 3 -- 青霊レベル３
+9605 Small White Phantom -- 小白ファントム
+9606 White Phantom -- 白ファントム
+9607 Small Gold Phantom -- 小金ファントム
+9608 Gold Phantom -- 金ファントム
+9609 Dragon Spirit Phantom -- 竜霊ファントム
+9610 Abyss Phantom -- 深淵ファントム
+9611 Usually Phantom Phantom -- 通常幻影ファントム
+9612 Bonfire Phantom Phantom -- 篝火幻影ファントム
+9613 Tomb Phantom -- 墓霊ファントム
+9700 Phantom - Naked (Man) -- 幻影-裸（男）
+9701 Phantom - Clothes (Man) -- 幻影-服（男）
+9702 Phantom - Light Clothing (Male) -- 幻影-軽装（男）
+9703 Phantom - Heavy Wear (Male) -- 幻影-重装（男）
+9704 Phantom - Naked (Female) -- 幻影-裸（女）
+9705 Phantom - Clothes (Woman) -- 幻影-服（女）
+9706 Phantom - Light Clothing (Female) -- 幻影-軽装（女）
+9707 Phantom - Heavy Clothing (Female) -- 幻影-重装（女）
+9900 For test characters -- テストキャラクター用
+100000 Goblin :Bare hands: Gaping Cave -- ゴブリン（生者）：素手：隙間の洞
+100008 Goblin :Bare hands: Forest of Shadows: Soul Black -- ゴブリン（生者）：素手：虚ろの影の森：ソウルブラック
+100009 Goblin (Live): Bare Hands: Gap's Cave: Soul Black -- ゴブリン（生者）：素手：隙間の洞：ソウルブラック
+100010 Goblin :Sword: Cave of Gaps -- ゴブリン（生者）：剣：隙間の洞
+100020 Goblin (Live): Sling: Gap ing sinus -- ゴブリン（生者）：スリング：隙間の洞
+101000 Cobold: Gap Cave -- コボルト：隙間の洞
+101001 Kobold: Anne Deal's House -- コボルト：アン・ディールの館
+102000 Kingdom Soldier (Dead): Spear: Medium Shield -- 王国兵士（亡者）：槍：中盾
+102010 Kingdom Soldier (Dead): Two-Handed Sword -- 王国兵士（亡者）：両手剣
+102011 Kingdom Soldier (Deceased): Two-Handed Sword: Soul Black -- 王国兵士（亡者）：両手剣：ソウルブラック
+102020 Kingdom Soldier (Dead): Two-Handed Axe -- 王国兵士（亡者）：両手長斧
+102030 Kingdom Soldier (Deceased): Stabbing Sword: Medium Shield -- 王国兵士（亡者）：刺突剣：中盾
+102040 Kingdom Soldier (Dead): Bow -- 王国兵士（亡者）：弓
+102050 Kingdom Soldier (Deceased): Bare Hands: Two-Handed Sword -- 王国兵士（亡者）：素手：両手剣
+102100 Kingdom Soldier (Alive): Spear: Medium Shield -- 王国兵士（生者）：槍：中盾
+102110 Kingdom Soldier (Living): Two-Handed Sword: Bow -- 王国兵士（生者）：両手剣：弓
+102130 Kingdom Soldier (Born): Dying -- 王国兵士（生者）：瀕死
+102140 Kingdom Soldier (Live): Bow -- 王国兵士（生者）：弓
+102150 Kingdom Soldier (Live): Torch -- 王国兵士（生者）：松明
+103000 Lower Soldier (Deceased): Bare hands: The Bastion of Resistance (modern) -- 下級兵士（亡者）：素手：抵抗の砦（現代）
+103001 Lower-class soldier (deceased): Bare hands: Underground port -- 下級兵士（亡者）：素手：地下の港
+103002 Lower-class soldier (deceased): Bare hands: Fairy's side -- 下級兵士（亡者）：素手：妖精のほとり
+103010 Lower Soldier (Deceased): Dagger: Fort of Resistance (Modern) -- 下級兵士（亡者）：短剣：抵抗の砦（現代）
+103011 Lower Soldier (deceased): Dagger: Underground port -- 下級兵士（亡者）：短剣：地下の港
+103012 Lower Soldier (Deceased): Dagger: Fairy's Side -- 下級兵士（亡者）：短剣：妖精のほとり
+103019 Lower Soldier (Deceased): Dagger: Soul Black -- 下級兵士（亡者）：短剣：ソウルブラック
+103020 Lower Soldier (Deceased): One-handed sword: Small shield: Fort of resistance (modern) -- 下級兵士（亡者）：片手剣：小盾：抵抗の砦（現代）
+103021 Lower Soldier (Deceased): One Hand Sword: Small Shield: Underground Port -- 下級兵士（亡者）：片手剣：小盾：地下の港
+103022 Lower Soldier (Deceased): One-handed sword: Small shield: Hidden Port -- 下級兵士（亡者）：片手剣：小盾：隠れ港
+103030 Lower Soldier (Deceased): One-handed axe: Fort of resistance (modern) -- 下級兵士（亡者）：片手斧：抵抗の砦（現代）
+103031 Lower Soldier (Deceased): One-handed axe: Underground port -- 下級兵士（亡者）：片手斧：地下の港
+103032 Lower Soldier (Deceased): One-handed axe: Fairy's side -- 下級兵士（亡者）：片手斧：妖精のほとり
+103040 Lower Soldier (Deceased): Two-Handed Bow: Fort of Resistance (Modern) -- 下級兵士（亡者）：両手弓：抵抗の砦（現代）
+103041 Lower Soldier (Deceased): Two-Handed Bow: Underground Port -- 下級兵士（亡者）：両手弓：地下の港
+103050 Lower Soldier (Deceased): Bow: Fire and Arrow -- 下級兵士（亡者）：両手弓：火矢
+103051 Lower Soldier (Deceased): Bow: Fire and Arrow: Hidden Port -- 下級兵士（亡者）：両手弓：火矢：隠れ港
+103100 Lower Soldier (Raw): Dagger -- 下級兵士（生者）：短剣
+103110 Lower Soldier (Raw): One-handed sword -- 下級兵士（生者）：片手剣
+103111 Lower Soldier (Raw Man): One Hand Sword: The Memory of the Giant -- 下級兵士（生者）：片手剣：巨人の記憶
+103120 Lower Soldier (Live): One-handed axe -- 下級兵士（生者）：片手斧
+103121 Lower Soldier (Raw): One Hand Axe: The Memory of the Giant -- 下級兵士（生者）：片手斧：巨人の記憶
+103130 Lower soldier (raw): Bow -- 下級兵士（生者）：弓
+103131 Lower Soldier (Raw): Bow: Memories of giants -- 下級兵士（生者）：弓：巨人の記憶
+105000 Fairy Shrine Maiden: Bare Hands -- 妖精の巫女：素手
+105010 Fairy Shrine Maiden: Cane -- 妖精の巫女：杖
+106000 Dark Priest (Deceased): Color (1)_No Mask -- ダークプリースト（亡者）：色①_仮面無し
+106001 Dark Priest (Dead): Color (1)_Maskless Against GerdrazaCobos -- ダークプリースト（亡者）：色①_仮面無し  ジェルドラザコボス戦
+106009 Dark Priest (Deceased): Color (1)_No Mask:Soul Black: Kiseki Street Gerdra -- ダークプリースト（亡者）：色①_仮面無し：ソウルブラック：輝石街ジェルドラ
+106010 Dark Priest (Deceased): Color (1)_No Mask: Shield -- ダークプリースト（亡者）：色①_仮面無し：盾
+106020 Dark Priest (Deceased): Color (1)_Mask -- ダークプリースト（亡者）：色①_仮面有り
+106021 Dark Priest (Deceased): Color (1)_Masked: Tomb of Immortality -- ダークプリースト（亡者）：色①_仮面有り：不死廟
+106030 Dark Priest (Deceased): Color (1)_Masked: Shield -- ダークプリースト（亡者）：色①_仮面有り：盾
+106200 Dark Priest (Deceased): Color (3) _ Head C -- ダークプリースト（亡者）：色③_頭部Ｃ
+106210 Dark Priest (Deceased): Color (3) _ Head C: Shield -- ダークプリースト（亡者）：色③_頭部Ｃ：盾
+107000 Parasite Spider (Parasitic) -- パラサイトスパイダー（寄生）
+107001 Parasite Spider (Parasitic): Poison: Kiseki Town Gerdra -- パラサイトスパイダー（寄生）：毒：輝石街ジェルドラ
+108000 Rogue :Dagger x 2: Hunting Forest -- ローグ（亡者）：短剣×２：狩猟の森
+108001 Rogue: Dagger x 2: Castle in Ruins -- ローグ（亡者）：短剣×２：廃墟の城
+108010 Rogue (deceased): One hand mallet × 2: Hunting Forest -- ローグ（亡者）：片手槌×２：狩猟の森
+108011 Rogue (deceased): One hand mallet × 2: Castle in ruins -- ローグ（亡者）：片手槌×２：廃墟の城
+108020 Rogue (Deceased): Two Bows x 2: Hunting Forest -- ローグ（亡者）：両手弓×２：狩猟の森
+108021 Rogue :Two Bows x 2: Castle in Ruins -- ローグ（亡者）：両手弓×２：廃墟の城
+113000 Sailor (deceased): One-handed sword; small shield: underground port -- 水兵（亡者）：片手剣；小盾：地下の港
+113001 Sailor (deceased): One-handed sword; small shield: Dsuke village -- 水兵（亡者）：片手剣；小盾：Dすけ村
+113010 Sailor (deceased): Song sword x 2: Underground port -- 水兵（亡者）：曲剣×２：地下の港
+113011 Sailor (deceased): Song sword × 2:D Suke mura -- 水兵（亡者）：曲剣×２：Dすけ村
+113020 Sailor (deceased): Two-handed bow: underground port -- 水兵（亡者）：両手弓：地下の港
+113021 Sailor (deceased): Two-handed bow: D-Suke-mura -- 水兵（亡者）：両手弓：Dすけ村
+115000 Deceased: Traveler's Clothing ♂: Bare hands: Maduro (modern) -- 亡者：旅人の服♂：素手：マデューラ（現代）
+115001 Dead: Traveler's Clothes ♂: Bare Hands: The Edge of the Fairy -- 亡者：旅人の服♂：素手：妖精のほとり
+115002 Dead: Traveler's Clothes ♂: Bare Hands: The Castle of Ruins -- 亡者：旅人の服♂：素手：廃墟の城
+115003 Dead: Traveler's Clothing ♂: Bare Hands: Torture -- 亡者：旅人の服♂：素手：拷問場
+115004 Deceased: Traveler's Clothing ♂: Bare Hands: The Home of the Dragon -- 亡者：旅人の服♂：素手：龍の住処
+115005 Dead: Traveler's Clothing ♂: Bare Hands: The City of Spiders -- 亡者：旅人の服♂：素手：蜘蛛の街
+115006 Deceased: Traveler's Clothing ♂: Bare Hands: Gap's Cave -- 亡者：旅人の服♂：素手：隙間の洞
+115010 Deceased: Traveler's Clothing ♂: Dagger: Maduro (Modern) -- 亡者：旅人の服♂：短剣：マデューラ（現代）
+115011 The Dead: The Traveler's Clothing ♂: Dagger: The Castle of Ruins -- 亡者：旅人の服♂：短剣：廃墟の城
+115012 Dead: Traveller's Clothing ♂: Dagger: Torture -- 亡者：旅人の服♂：短剣：拷問場
+115013 Deceased: Traveler's Clothing ♂: Dagger: The Home of the Dragon -- 亡者：旅人の服♂：短剣：龍の住処
+115014 The Dead: Traveler's Clothes ♂: Dagger: The City of Spiders -- 亡者：旅人の服♂：短剣：蜘蛛の街
+115015 Deceased: Traveler's Clothing ♂: Dagger: Cave -- 亡者：旅人の服♂：短剣：隙間の洞
+115019 Deceased: Traveler's Clothing ♂: Dagger: The Dragon's Home: Soul Black -- 亡者：旅人の服♂：短剣：龍の住処：ソウルブラック
+117000 Statue: Pawn: Spear: Shield -- スタチュー：ポーン：槍：盾
+117010 Statue: Pawn: Spear -- スタチュー：ポーン：槍
+118000 Dark Wizard (Deceased): Color (1): Head A: Hunting Forest -- ダークウィザード（亡者）：色①：頭部A：狩猟の森
+118001 Dark Wizard (Deceased): Color (1): Head A: Death penalty -- ダークウィザード（亡者）：色①：頭部A：不死刑場
+118100 Dark Wizard (Deceased): Color (2): Head A -- ダークウィザード（亡者）：色②：頭部A
+118110 Dark Wizard (Deceased): Color (2): Head B: Castle Town of Fog (Modern) -- ダークウィザード（亡者）：色②：頭部B：霧の城下町（現代）
+118111 Dark Wizard (Deceased): Color (2): Head B: Dragon's Shrine -- ダークウィザード（亡者）：色②：頭部B：龍の祠祭場
+118112 Dark Wizard (Deceased): Color (2): Head B: Institute of Dragons -- ダークウィザード（亡者）：色②：頭部B：龍の研究所
+118200 Dark Wizard (Deceased): Color (3): Head B -- ダークウィザード（亡者）：色③：頭部B
+118201 Dark Wizard (Deceased): Color (3): Head B: Kiseki Street Gerdra -- ダークウィザード（亡者）：色③：頭部B：輝石街ジェルドラ
+119000 Lion Black Mage (Born) -- 獅子黒魔道士（生者）
+121000 Giant Lower Soldier (Giant): Bare Hands -- 巨人下級兵士（巨人）：素手
+121001 Giant Lower Soldier (Giant): Bare hands: Flying and appearing -- 巨人下級兵士（巨人）：素手：飛んできて登場
+121010 Giant Lower Soldier (Giant): Two-Handed Club -- 巨人下級兵士（巨人）：両手棍棒
+121020 Giant Lower Soldier Poison (Giant): Bare Hands -- 巨人下級兵士 毒（巨人）：素手
+121030 Giant Lower Soldier Fire (Giant): Bare Hands -- 巨人下級兵士 火（巨人）：素手
+122000 Bernice Knight: Two-Handed Sword -- バーニスの騎士：両手剣
+122010 Bernice Knight: Assault Spear -- バーニスの騎士：突撃槍
+122020 Bernice Knight: One Hand Mallet -- バーニスの騎士：片手槌
+122030 Bernice Knight: Crossbow -- バーニスの騎士：クロスボウ
+122100 Knight of Bernice: Color (2): Two-Handed Sword -- バーニスの騎士：色②：両手剣
+122110 Knight of Bernice: Color (2): Assault Spear -- バーニスの騎士：色②：突撃槍
+122120 Knight of Bernice: Color (2): One Hand Mallet -- バーニスの騎士：色②：片手槌
+122130 Bernice Knight: Color (2): Crossbow -- バーニスの騎士：色②：クロスボウ
+123000 Deformed Shadow (Born): Mask A:2 Swordnails -- 異形の影（生者）：仮面A：２刀爪
+123002 The Shadow of the Metamorphosis (Born): Mask A:2 Swordclaw: Hidden Port -- 異形の影（生者）：仮面A：２刀爪：隠れ港
+123010 Deformed Shadow (Born): Mask A: Dagger: Stabbing Sword -- 異形の影（生者）：仮面A：短剣：刺突剣
+123020 Deformed Shadow (Born): Mask B:2 Swordnails -- 異形の影（生者）：仮面B：２刀爪
+123022 The Shadow of the Metamorphosis (Born): Mask B:2 Swordclaw: Hidden Port -- 異形の影（生者）：仮面B：２刀爪：隠れ港
+123030 Deformed Shadow (Born): Mask B: Dagger: Stabbing Sword -- 異形の影（生者）：仮面B：短剣：刺突剣
+124000 Assassin (Born): Mask A:2 Swordnails -- 暗殺者（生者）：仮面A：２刀爪
+124010 Assassin (Born): Mask A: Dagger -- 暗殺者（生者）：仮面A：短剣
+124020 Assassin (Born): Mask A: Song Sword -- 暗殺者（生者）：仮面A：曲剣
+124030 Assassin (Born): Mask A: Bow -- 暗殺者（生者）：仮面A：弓
+124040 Assassin (Born): Mask B:2 Swordnails -- 暗殺者（生者）：仮面B：２刀爪
+124050 Assassin (Born): Mask B: Dagger -- 暗殺者（生者）：仮面B：短剣
+124060 Assassin (Born): Mask B: Song Sword -- 暗殺者（生者）：仮面B：曲剣
+124070 Assassin (Born): Mask B: Bow -- 暗殺者（生者）：仮面B：弓
+124100 Assassin (Born): Color (2): Mask A:2 Swords: Castle of Ruins -- 暗殺者（生者）：色②：仮面Ａ：２刀爪：廃墟の城
+124101 Assassin (Born): Color (2): Mask A:2 Swords: Torture Pit -- 暗殺者（生者）：色②：仮面Ａ：２刀爪：拷問場
+124110 Assassin (Born): Color (2): Mask A: Dagger: Castle of Ruins -- 暗殺者（生者）：色②：仮面A：短剣：廃墟の城
+124111 Assassin (Born): Color (2): Mask A: Dagger: Torture Site -- 暗殺者（生者）：色②：仮面A：短剣：拷問場
+124120 Assassin (Born): Color (2): Mask A: Song Sword: Castle of Ruins -- 暗殺者（生者）：色②：仮面A：曲剣：廃墟の城
+124121 Assassin (Born): Color (2): Mask A: Song Sword: Torture Site -- 暗殺者（生者）：色②：仮面A：曲剣：拷問場
+124130 Assassin (Born): Color (2): Mask A: Bow: Castle of Ruins -- 暗殺者（生者）：色②：仮面A：弓：廃墟の城
+124131 Assassin (Born): Color (2): Mask A: Bow: Torture Place -- 暗殺者（生者）：色②：仮面A：弓：拷問場
+124140 Assassin (Born): Color (2): Mask B:2 Swords: Castle of Ruins -- 暗殺者（生者）：色②：仮面B：２刀爪：廃墟の城
+124141 Assassin (Born): Color (2): Mask B:2 Swords: Torture Ground -- 暗殺者（生者）：色②：仮面B：２刀爪：拷問場
+124150 Assassin (Born): Color (2): Mask B: Dagger: Castle of Ruins -- 暗殺者（生者）：色②：仮面B：短剣：廃墟の城
+124151 Assassin (Born): Color (2): Mask B: Dagger: Torture Site -- 暗殺者（生者）：色②：仮面B：短剣：拷問場
+124160 Assassin (Born): Color (2): Mask B: Song Sword: Castle of Ruins -- 暗殺者（生者）：色②：仮面B：曲剣：廃墟の城
+124161 Assassin (Born): Color (2): Mask B: Song Sword: Torture Site -- 暗殺者（生者）：色②：仮面B：曲剣：拷問場
+124170 Assassin (Born): Color (2): Mask B: Bow: Castle of Ruins -- 暗殺者（生者）：色②：仮面B：弓：廃墟の城
+124171 Assassin (Born): Color (2): Mask B: Bow: Torture Place -- 暗殺者（生者）：色②：仮面B：弓：拷問場
+125001 Undead Citizen: Poison: Scum Bottom -- アンデッド市民：毒：クズ底
+125004 Undead Citizen: Explosion: Saint's Tomb -- アンデッド市民：爆発：聖人墓所
+125009 Undead Citizens: Explosion: Soul Black: Prison of Oblivion -- アンデッド市民：爆発：ソウルブラック：忘却の牢
+125010 Undead Citizen: Explosion: Trap After Boss -- アンデッド市民：爆発：ボス後トラップ
+125011 Undead Citizens: Normal: Prison of Oblivion -- アンデッド市民：ノーマル：忘却の牢
+125012 Undead Citizen: Normal: Prison of Oblivion (Tower of Sinners) -- アンデッド市民：ノーマル：忘却の牢（罪人の塔）
+125013 Undead Citizen: Normal: Kuzbottom -- アンデッド市民：ノーマル：クズ底
+125014 Undead Citizen: Acid: The Nest of The Guarded Dragon -- アンデッド市民：酸：守り竜の巣
+125015 Undead Citizens: Petrified: Prisons of Oblivion -- アンデッド市民：石化：忘却の牢
+125016 Undead Citizen: Explosion: Soul Black: Kuz Bottom -- アンデッド市民：爆発：ソウルブラック：クズ底
+125017 Undead Citizens: Petrified: Prison of Oblivion (Tower of Sinners) -- アンデッド市民：石化：忘却の牢（罪人の塔）
+127000 Dead Workers (Dead): Bare Hands: Hunting Forest -- 死者の労働者（亡者）：素手：狩猟の森
+127001 Dead Workers (Dead): Bare Hands: The Tomb of Immortality -- 死者の労働者（亡者）：素手：不死廟
+127002 Dead Workers (Dead): Bare hands: Gerdraza Kobos -- 死者の労働者（亡者）：素手：ジェルドラザコボス戦
+127003 Dead Workers (Dead): Bare Hands: Valley of The Reservoir -- 死者の労働者（亡者）：素手：溜まりの谷
+127004 Dead Workers (Dead): Bare hands: The Tomb of the Saints -- 死者の労働者（亡者）：素手：聖人墓所
+127005 The Worker of the Dead :Bare hands: The Old Dark Hole -- 死者の労働者（亡者）：素手：古き闇の穴
+127010 Dead Workers (Dead): Torch: Hunting Forest -- 死者の労働者（亡者）：松明：狩猟の森
+127011 Dead Workers (Dead): Torch: The Tomb of Immortality -- 死者の労働者（亡者）：松明：不死廟
+127020 Dead Workers (Dead): Broken Sword: Hunting Forest -- 死者の労働者（亡者）：折れた直剣：狩猟の森
+127030 Dead Workers (Dead): Bare Hands (Equipment 4): Valley of The Reservoir -- 死者の労働者（亡者）：素手（装備4）：溜まりの谷
+129000 The Keeper of the Forest: Color (1): Cane: Old Dark Hole -- 森の番人：色①：杖：古き闇の穴
+129010 The Keeper of the Forest: Color (1): Bell: The Old Dark Hole -- 森の番人：色①：ベル：古き闇の穴
+129020 The Keeper of the Forest: Color (1): Bell: Wand -- 森の番人：色①：ベル：杖
+129030 The Keeper of the Forest: Color (1): Bare Hands: Bell -- 森の番人：色①：素手：ベル
+129040 The Keeper of the Forest: Color (1): Cane: Bell -- 森の番人：色①：杖：ベル
+129050 The Keeper of the Forest: Color (1): Bell: Bell -- 森の番人：色①：ベル：ベル
+129100 The Keeper of the Forest: Color (2): Bare Hands: Wand -- 森の番人：色②：素手：杖
+129110 The Keeper of the Forest: Color (2): Cane: Wand -- 森の番人：色②：杖：杖
+129120 The Keeper of the Forest: Color (2): Bell: Wand -- 森の番人：色②：ベル：杖
+129130 The Keeper of the Forest: Color (2): Bare Hands: Bell -- 森の番人：色②：素手：ベル
+129140 The Keeper of the Forest: Color (2): Cane: Bell -- 森の番人：色②：杖：ベル
+129150 The Keeper of the Forest: Color (2): Bell: Bell -- 森の番人：色②：ベル：ベル
+131000 Cleric: War -- クレリック：戦鎚
+131010 Cleric: Bell -- クレリック：ベル
+131020 Cleric: Cane -- クレリック：杖
+132000 Skeleton: 2 Swords: Hunting Forest *Immortality -- スケルトン：２刀流：狩猟の森　※不死
+132001 Skeleton: 2 Swords: Hunting Forest *Death -- スケルトン：２刀流：狩猟の森　※死亡する
+132002 Skeleton: 2 Swords: Immortal Temple *Immortal -- スケルトン：２刀流：不死廟　※不死
+132003 Skeleton: 2 Swords: Reservoir Valley *Death -- スケルトン：２刀流：溜まりの谷　※死亡する
+132010 Skeleton: One-handed sword: Hunting Forest ※Immortality -- スケルトン：片手曲剣：狩猟の森　※不死
+132011 Skeleton: One-handed bent sword: Hunting Forest * Death -- スケルトン：片手曲剣：狩猟の森　※死亡する
+132012 Skeleton: One-handed sword: Immortal Temple of Immortality *Immortal -- スケルトン：片手曲剣：不死廟　※不死
+132013 Skeleton: One-handed sword: Maduro * Dead -- スケルトン：片手曲剣：マデューラ　※死亡する
+132020 Skeleton: One-handed stabbing: Hunting Forest *Immortality -- スケルトン：片手刺突：狩猟の森　※不死
+132021 Skeleton: One-handed stabbing: Hunting Forest * Dead -- スケルトン：片手刺突：狩猟の森　※死亡する
+132022 Skeleton: One-handed stabbing: Hunting forest ※ dead- skeleton aristocratic war version -- スケルトン：片手刺突：狩猟の森　※死亡する・スケルトン貴族戦版
+132023 Skeleton: One-handed stabbing: Immortal Temple of Immortality -- スケルトン：片手刺突：不死廟　※不死
+132030 Skeleton: Bow: Hunting Forest *Immortality -- スケルトン：弓：狩猟の森　※不死
+132031 Skeleton: Bow: Hunting Forest * Death -- スケルトン：弓：狩猟の森　※死亡する
+132032 Skeleton: Bow: Mausoleum of Immortality *Immortal -- スケルトン：弓：不死霊廟　※不死
+132090 Skeleton: For cut scenes -- スケルトン：カットシーン用
+133000 Wheel Skeleton: Bare Hands: Hunting Forest -- 車輪スケルトン：素手：狩猟の森
+133001 Wheel skeleton: bare hands: hunting forest- skeleton aristocratic war version -- 車輪スケルトン：素手：狩猟の森・スケルトン貴族戦版
+133010 Wheel Skeleton: Song Sword: Hunting Forest -- 車輪スケルトン：曲剣：狩猟の森
+133020 Wheel Skeleton: The Great Sword: Hunting Forest -- 車輪スケルトン：大曲剣：狩猟の森
+134000 Dwarf -- ドワーフ
+135000 Heavy Dwarf: Two-Handed Axe x 2: Head A -- 重ドワーフ：両手斧×２：頭部A
+135010 Heavy Dwarf: Two-handed mallet: Head A -- 重ドワーフ：両手槌：頭部A
+135020 Heavy Dwarf: Bow: Head A -- 重ドワーフ：弓：頭部A
+135030 Heavy Dwarf: Two-Handed Axe x 2: Head B -- 重ドワーフ：両手斧×２：頭部B
+135040 Heavy Dwarf: Two Hands Mallet: Head B -- 重ドワーフ：両手槌：頭部B
+135050 Heavy Dwarf: Bow: Head B -- 重ドワーフ：弓：頭部B
+136000 Dark Reith (deceased): The Great Sword of Both Hands: The Castle Town of Fog (past) -- ダークレイス(亡者)：両手大剣：霧の城下町（過去）
+136001 Dark Reis (Deceased): Two-Handed Sword: Submerged Castle (Full) -- ダークレイス(亡者)：両手大剣：水没城（全貌）
+136020 Dark Reith (Dead) -- ダークレイス(亡者)
+137000 Necromancer (Immortal): Bare Hands -- ネクロマンサー（イモータル）：素手
+137010 Necromancer (Immortal): Shield: Wand -- ネクロマンサー（イモータル）：盾：杖
+137020 Necromancer (Immortal): Cane -- ネクロマンサー（イモータル）：杖
+137021 Necromancer (Immortal): Shield: Cane: Boss: Kiseki Street Gerdra -- ネクロマンサー（イモータル）：盾：杖：ボス戦用：輝石街ジェルドラ
+137022 Necromancer (Immortal): Shield: Cane: Altar of Amana -- ネクロマンサー（イモータル）：盾：杖：アマナの祭壇
+138000 Tortureman: Torture Instruments -- 拷問人：拷問器具
+138001 Tortureman: Torture Instruments: Soul Black -- 拷問人：拷問器具：ソウルブラック
+138010 Tortureman: Whip -- 拷問人：鞭
+138011 Tortureman: Whip: Soul Black -- 拷問人：鞭：ソウルブラック
+139000 Man-made Immortal: Sickle: Hunting Forest -- 人造不死人：鎌：狩猟の森
+139001 Man-made Immortal: Sickle: Valley of The Reservoir -- 人造不死人：鎌：溜まりの谷
+139008 Man-made Immortals: Sickle: Soul Black: Hunting Forest -- 人造不死人：鎌：ソウルブラック：狩猟の森
+139009 Man-made Immortal: Sickle: Soul Black -- 人造不死人：鎌：ソウルブラック
+139010 Man-made Immortal: Bare Hands: Hunting Forest -- 人造不死人：素手：狩猟の森
+140000 Belka's Crow -- ベルカの鴉人
+141000 Reinforced Immortals: Anne Deal's House -- 強化不死人：アン・ディールの館
+141002 Strengthening Immortals: Prison of Oblivion -- 強化不死人：忘却の牢
+146000 The Dead: The Clothes of the Wealthy ♂: Dagger: The City of Spiders -- 亡者：富裕層の服♂：短剣：蜘蛛の街
+146001 The Dead: The Clothes of the Wealthy ♂: Dagger: Underground Harbor -- 亡者：富裕層の服♂：短剣：地下の港
+146010 The Dead: The Clothes of the Wealthy♂: Stabbing Sword: The City of Spiders -- 亡者：富裕層の服♂：刺突剣：蜘蛛の街
+146011 Deceased: ♂ the Clothes of the Wealthy: Stabbing: Underground Harbor -- 亡者：富裕層の服♂：刺突剣：地下の港
+146020 Deceased: Clothes of the Wealthy ♂: Daggers & Torches: The City of Spiders -- 亡者：富裕層の服♂：短剣＆松明：蜘蛛の街
+147000 Deceased: Sick ♂: The Living House of the Dragon (Modern) -- 亡者：病人の服♂：龍の住処（現代）
+147001 Deceased: Sick ♂: Altar of Amana -- 亡者：病人の服♂：アマナの祭壇
+147002 Dead: Sick ♂: The Fairy's Edge -- 亡者：病人の服♂：妖精のほとり
+147003 Dead: ♂ sick man's clothes: a castle in ruins -- 亡者：病人の服♂：廃墟の城
+147004 Dead: Sick ♂: Gerdraza Kobos -- 亡者：病人の服♂：ジェルドラザコボス戦
+148000 Deceased: Farmer's Clothes ♂: Two Hands Mallet: Head Part 1: Volcanic Steel Mill -- 亡者：農民の服♂：両手槌：頭パーツ１：火山の製鉄所
+148001 Deceased: Farmer's Clothes ♂: Two Hands Mallet: Head Part 1: Coal Mine Village -- 亡者：農民の服♂：両手槌：頭パーツ１：炭鉱の村
+148010 Deceased: Farmer's Clothes ♂: Two Hands Mallet: Head Part 2: Volcanic Steel Mill -- 亡者：農民の服♂：両手槌：頭パーツ２：火山の製鉄所
+148011 Deceased: Farmer's Clothes ♂: Two Hands Mallet: Head Part 2: Coal Mine Village -- 亡者：農民の服♂：両手槌：頭パーツ２：炭鉱の村
+148020 Deceased: Farmer's Clothes ♂: Two-Handed Sickle: Head Part 1: Volcano Steel Mill -- 亡者：農民の服♂：両手鎌：頭パーツ１：火山の製鉄所
+148021 Deceased: Farmer's Clothes ♂: Two-Handed Sickle: Head Part 1: Coal Mine Village -- 亡者：農民の服♂：両手鎌：頭パーツ１：炭鉱の村
+148030 Deceased: Farmer's Clothing ♂: Two-Handed Sickle: Head Part 2: Volcano Steel Mill -- 亡者：農民の服♂：両手鎌：頭パーツ２：火山の製鉄所
+148031 Deceased: Farmer's Clothing ♂: Two-Handed Sickle: Head Part 2: Coal Mine Village -- 亡者：農民の服♂：両手鎌：頭パーツ２：炭鉱の村
+148040 Deceased: Farmer's Clothes ♂: Torch: Head Part 1: Kiseki Street Gerdra -- 亡者：農民の服♂：松明：頭パーツ１：輝石街ジェルドラ
+148041 Deceased: Farmer's Clothing ♂: Torch: Head Part 2: Kiseki Street Gerdra -- 亡者：農民の服♂：松明：頭パーツ２：輝石街ジェルドラ
+149000 Deceased: Steel mill staff_Apron: Mingiron Castle -- 亡者：製鉄所員_エプロン有り：熔鉄城
+149010 Deceased: Steelmill man _ No apron: Molten Castle -- 亡者：製鉄所員_エプロン無し：熔鉄城
+150000 Statue: Night -- スタチュー：ナイト
+151000 Kingdom Soldier Heavy Warrior: Color (1): Two-Handed Mallet: Molten Castle -- 王国兵重戦士：色①：両手戦槌：熔鉄城
+151009 Kingdom Soldier Heavy Warrior: Color (1): Two-Handed Mallet: Molten Castle: Soul Black -- 王国兵重戦士：色①：両手戦槌：熔鉄城：ソウルブラック
+151200 Kingdom Soldier Warrior: Color (3): Two-Handed Battle Hammer: The Forest of Decayed Giants -- 王国兵重戦士：色③：両手戦槌：朽ちた巨人の森
+151208 Kingdom Soldier Warrior: Color (3): Two-Handed Mallet: Soul Black: Kiseki-gai Gerdra -- 王国兵重戦士：色③：両手戦槌：ソウルブラック：輝石街ジェルドラ
+151209 Kingdom Soldier Warrior: Color (3): Two-Handed Mallet: Soul Black: The Forest of Decaying Giants -- 王国兵重戦士：色③：両手戦槌：ソウルブラック：朽ちた巨人の森
+151210 Royal Warrior: Color (3): One-handed club -- 王国兵重戦士：色③：片手棍棒
+152000 Kingdom Soldier Warrior: Two-Handed Sword -- 王国兵戦士：両手剣
+152001 Kingdom Soldier Warrior: Two-Handed Sword: Infinite Springing Spirit -- 王国兵戦士：両手剣：無限湧き霊体
+152002 Kingdom Soldier Warrior: Two-Handed Sword: Prison of Oblivion -- 王国兵戦士：両手剣：忘却の牢
+152010 Kingdom Warrior: Crossbow -- 王国兵戦士：クロスボウ
+152011 Kingdom Soldier Warrior: Crossbow: Prison of Oblivion -- 王国兵戦士：クロスボウ：忘却の牢
+153000 Royal Guard: Axe Spear -- 王国兵護衛兵：斧槍
+153002 Royal Guard: Axe Spear: Altar of Amana -- 王国兵護衛兵：斧槍：アマナの祭壇
+153003 Royal Guard: Axe Spear: Immortal Mausoleum -- 王国兵護衛兵：斧槍：不死廟
+153010 Royal Guard: Oversized Sword -- 王国兵護衛兵：特大剣
+153012 Royal Guard: Oversized Sword: Altar of Amana -- 王国兵護衛兵：特大剣：アマナの祭壇
+153013 Royal Guard: Extra Large Sword: Tomb of Immortality -- 王国兵護衛兵：特大剣：不死廟
+154000 Skeleton Aristocracy: Axe Spear: Hunting Forest -- スケルトン貴族：斧槍：狩猟の森
+154010 Skeleton Aristocracy: Sickle: Hunting Forest -- スケルトン貴族：鎌：狩猟の森
+154020 Skeleton Aristocracy: Wand: Hunting Forest -- スケルトン貴族：杖：狩猟の森
+155000 Lizard Man -- トカゲ人
+156000 Helmet Skeleton: No Armor: Helmet: Swords x 2: Hunting Forest *Immortality -- 兜スケルトン：鎧なし：兜：曲剣×２：狩猟の森　※不死
+156001 Helmet Skeleton: No Armor: Helmet: Curved Sword x 2: Hunting Forest * Death -- 兜スケルトン：鎧なし：兜：曲剣×２：狩猟の森　※死亡する
+156010 Helmet Skeleton: No Armor: Helmet: Swords & Shields Hunting Forest *Immortality -- 兜スケルトン：鎧なし：兜：曲剣＆盾：狩猟の森　※不死
+156011 Helmet Skeleton Without Armor : Helmet : Swords & Shields - Hunting Forest * Death -- 兜スケルトン：鎧なし：兜：曲剣＆盾：狩猟の森　※死亡する
+156020 Helmet Skeleton: No Armor: Helmet: Stabbing Sword: Hunting Forest *Immortality -- 兜スケルトン：鎧なし：兜：刺突剣：狩猟の森　※不死
+156021 Helmet Skeleton: No Armor: Helmet: Stabbing Sword: Hunting Forest * Death -- 兜スケルトン：鎧なし：兜：刺突剣：狩猟の森　※死亡する
+156030 Helmet Skeleton: No Armor: Helmet: Two-Handed Bow: Hunting Forest *Immortality -- 兜スケルトン：鎧なし：兜：両手弓：狩猟の森　※不死
+156031 Helmet Skeleton: No Armor: Helmet: Two-Handed Bow: Hunting Forest * Death -- 兜スケルトン：鎧なし：兜：両手弓：狩猟の森　※死亡する
+157000 Armor Skeleton: No Armor: Head Equipment: Curved Sword x 2: Hunting Forest ※ Immortality -- 鎧スケルトン：鎧なし：頭装備なし：曲剣×２：狩猟の森　※不死
+157001 Armor Skeleton: No Armor: Bandana: Song Sword x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：バンダナ：曲剣×２：狩猟の森　※不死
+157002 Armor Skeleton: No Armor: Helmet: Song Sword x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：兜：曲剣×２：狩猟の森　※不死
+157003 Armor Skeleton: No Armor: Crown: Song Sword x 2: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：王冠：曲剣×２：狩猟の森　※不死
+157004 Armor Skeleton: Armor: Head Less Equipped: Curved Sword x 2: Hunting Forest ※Immortality -- 鎧スケルトン：鎧あり：頭装備なし：曲剣×２：狩猟の森　※不死
+157005 Armor Skeleton: Armor: Bandana: Song Sword x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：バンダナ：曲剣×２：狩猟の森　※不死
+157006 Armor Skeleton: Armor: Helmet: Swords x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：兜：曲剣×２：狩猟の森　※不死
+157007 Armor Skeleton: Armor: Crown: Song Sword x 2: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：王冠：曲剣×２：狩猟の森　※不死
+157010 Armor Skeleton: No Armor: Head Equipment: Song Sword & Shield: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：頭装備なし：曲剣＆盾：狩猟の森　※不死
+157011 Armor Skeleton: No Armor: Bandana: Song Sword & Shield: Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：バンダナ：曲剣＆盾：狩猟の森　※不死
+157012 Armor Skeleton: No Armor: Helmet: Song Sword & Shield : Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：兜：曲剣＆盾：狩猟の森　※不死
+157013 Armor Skeleton: No Armor: Crown: Song Sword & Shield: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：王冠：曲剣＆盾：狩猟の森　※不死
+157014 Armor Skeleton se armor: Head less equipped: Song sword & shield: Hunting forest ※ Immortality -- 鎧スケルトン：鎧あり：頭装備なし：曲剣＆盾：狩猟の森　※不死
+157015 Armor Skeleton: Armor: Bandana: Song Sword & Shield: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：バンダナ：曲剣＆盾：狩猟の森　※不死
+157016 Armor Skeleton S.A.M.E.D.A.Â-No-Swords-Swords-Shield-Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：兜：曲剣＆盾：狩猟の森　※不死
+157017 Armor Skeleton: Armor: Crown: Song Sword & Shield: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：王冠：曲剣＆盾：狩猟の森　※不死
+157020 Armor Skeleton: No Armor: Head Equipment: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：頭装備なし：刺突剣：狩猟の森　※不死
+157021 Armor Skeleton: No Armor: Bandana: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：バンダナ：刺突剣：狩猟の森　※不死
+157022 Armor Skeleton: No Armor: Helmet: Stabbing Sword: Hunting Forest *Immortality -- 鎧スケルトン：鎧なし：兜：刺突剣：狩猟の森　※不死
+157023 Armor Skeleton: No Armor: Crown: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：王冠：刺突剣：狩猟の森　※不死
+157024 Armor Skeleton: Armor: Head Less Equipped: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：頭装備なし：刺突剣：狩猟の森　※不死
+157025 Armor Skeleton: Armor: Bandana: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：バンダナ：刺突剣：狩猟の森　※不死
+157026 Armor Skeleton: Armor: Helmet: Stabbing Sword: Hunting Forest *Immortality -- 鎧スケルトン：鎧あり：兜：刺突剣：狩猟の森　※不死
+157027 Armor Skeleton: Armor: With Armor: Crown: Stabbing Sword: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：王冠：刺突剣：狩猟の森　※不死
+157030 Armor Skeleton: No Armor: Head Equipment: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：頭装備なし：両手弓：狩猟の森　※不死
+157031 Armor Skeleton: No Armor: Bandana: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：バンダナ：両手弓：狩猟の森　※不死
+157032 Armor Skeleton: No Armor: Helmet: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：兜：両手弓：狩猟の森　※不死
+157033 Armor Skeleton: No Armor: Crown: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧なし：王冠：両手弓：狩猟の森　※不死
+157034 Armor Skeleton: Armor: Head less equipped: two-handed bow: hunting forest ※ immortality -- 鎧スケルトン：鎧あり：頭装備なし：両手弓：狩猟の森　※不死
+157035 Armor Skeleton: Armor: Bandana: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：バンダナ：両手弓：狩猟の森　※不死
+157036 Armor Skeleton: Armor: Helmet: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：兜：両手弓：狩猟の森　※不死
+157037 Armor Skeleton: Armor With: Crown: Two-Handed Bow: Hunting Forest * Immortality -- 鎧スケルトン：鎧あり：王冠：両手弓：狩猟の森　※不死
+157050 Armor Skeleton: No Armor: Head Equipment: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧なし：頭装備なし：曲剣×２：狩猟の森　※死亡する
+157051 Armor Skeleton: No Armor: Bandana: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧なし：バンダナ：曲剣×２：狩猟の森　※死亡する
+157052 Armor Skeleton: No Armor: Helmet: Curved Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧なし：兜：曲剣×２：狩猟の森　※死亡する
+157053 Armor Skeleton: No Armor: Crown: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧なし：王冠：曲剣×２：狩猟の森　※死亡する
+157054 Armor Skeleton: Armor: Head Equipped: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧あり：頭装備なし：曲剣×２：狩猟の森　※死亡する
+157055 Armor Skeleton: Armor: Bandana: Song Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧あり：バンダナ：曲剣×２：狩猟の森　※死亡する
+157056 Armor Skeleton: Armor: Helmet: Swords x 2: Hunting Forest * Death -- 鎧スケルトン：鎧あり：兜：曲剣×２：狩猟の森　※死亡する
+157057 Armor Skeleton: Armor: Crown: Curved Sword x 2: Hunting Forest * Death -- 鎧スケルトン：鎧あり：王冠：曲剣×２：狩猟の森　※死亡する
+157058 Armor Skeleton: Armor: With Armor: Crown: Curved Sword × 2: Hunting Forest ※ Dead Skeleton Aristocratic War Edition -- 鎧スケルトン：鎧あり：王冠：曲剣×２：狩猟の森　※死亡する・スケルトン貴族戦版
+157060 Armor Skeleton : No Armor : Head Equipped : Song Sword & Shield : Hunting Forest * Death -- 鎧スケルトン：鎧なし：頭装備なし：曲剣＆盾：狩猟の森　※死亡する
+157061 Armor Skeleton: No Armor: Bandana: Song Sword & Shield: Hunting Forest * Death -- 鎧スケルトン：鎧なし：バンダナ：曲剣＆盾：狩猟の森　※死亡する
+157062 Armor Skeleton : No Armor : Helmet : Song Sword & Shield : Hunting Forest * Death -- 鎧スケルトン：鎧なし：兜：曲剣＆盾：狩猟の森　※死亡する
+157063 Armor Skeleton: No Armor: Crown: Song Sword & Shield: Hunting Forest * Death -- 鎧スケルトン：鎧なし：王冠：曲剣＆盾：狩猟の森　※死亡する
+157064 Armor Skeleton S.A.M.A.Â Head Equipped : Song Sword & Shield : Hunting Forest * Death -- 鎧スケルトン：鎧あり：頭装備なし：曲剣＆盾：狩猟の森　※死亡する
+157065 Armor Skeleton: Armor: Bandana: Song Sword & Shield: Hunting Forest * Death -- 鎧スケルトン：鎧あり：バンダナ：曲剣＆盾：狩猟の森　※死亡する
+157066 Armor Skeleton With Armor : Helmet : Swords & Shields - Hunting Forest * Death -- 鎧スケルトン：鎧あり：兜：曲剣＆盾：狩猟の森　※死亡する
+157067 Armor Skeleton: Armor: Crown: Song Sword & Shield: Hunting Forest * Death -- 鎧スケルトン：鎧あり：王冠：曲剣＆盾：狩猟の森　※死亡する
+157068 Armor Skeleton S.A.M.A.N.Â-Swords-Swords-Shield-Hunting Forest *Dead Skeleton Aristocratic War Edition -- 鎧スケルトン：鎧あり：兜：曲剣＆盾：狩猟の森　※死亡する・スケルトン貴族戦版
+157070 Armor Skeleton: No Armor: Head Equipment: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧なし：頭装備なし：刺突剣：狩猟の森　※死亡する
+157071 Armor Skeleton: No Armor: Bandana: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧なし：バンダナ：刺突剣：狩猟の森　※死亡する
+157072 Armor Skeleton: No Armor: Helmet: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧なし：兜：刺突剣：狩猟の森　※死亡する
+157073 Armor Skeleton: No Armor: Crown: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧なし：王冠：刺突剣：狩猟の森　※死亡する
+157074 Armor Skeleton: Armor: Head Less Equipped: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧あり：頭装備なし：刺突剣：狩猟の森　※死亡する
+157075 Armor Skeleton: Armor: Bandana: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧あり：バンダナ：刺突剣：狩猟の森　※死亡する
+157076 Armor Skeleton: Armor: Helmet: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧あり：兜：刺突剣：狩猟の森　※死亡する
+157077 Armor Skeleton: Armor: With Armor: Crown: Stabbing Sword: Hunting Forest * Death -- 鎧スケルトン：鎧あり：王冠：刺突剣：狩猟の森　※死亡する
+157080 Armor Skeleton: No Armor: Head Equipment: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧なし：頭装備なし：両手弓：狩猟の森　※死亡する
+157081 Armor Skeleton: No Armor: Bandana: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧なし：バンダナ：両手弓：狩猟の森　※死亡する
+157082 Armor Skeleton: No Armor: Helmet: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧なし：兜：両手弓：狩猟の森　※死亡する
+157083 Armor Skeleton: No Armor: Crown: Bow: Hunting Forest * Death -- 鎧スケルトン：鎧なし：王冠：両手弓：狩猟の森　※死亡する
+157084 Armor Skeleton: Armor: Head equipped: Two-handed bow: Hunting forest * Death -- 鎧スケルトン：鎧あり：頭装備なし：両手弓：狩猟の森　※死亡する
+157085 Armor Skeleton: Armor: Bandana: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧あり：バンダナ：両手弓：狩猟の森　※死亡する
+157086 Armor Skeleton: Armor: Helmet: Two-Handed Bow: Hunting Forest * Death -- 鎧スケルトン：鎧あり：兜：両手弓：狩猟の森　※死亡する
+157087 Armor Skeleton: Armor With: Crown: Bow: Hunting Forest * Death -- 鎧スケルトン：鎧あり：王冠：両手弓：狩猟の森　※死亡する
+201000 Slave Beasts: Volcanic Steel Works: With Melted Iron Vases -- 奴隷獣：火山の製鉄所：溶鉄壺有り
+201010 Slave Beasts: Volcanic Steel Works: No Melted Iron Vase -- 奴隷獣：火山の製鉄所：溶鉄壺無し
+201100 Slave Beast: Piglet Madura (also used in The Kiseki Town Gerdra) -- 奴隷獣：子豚マデューラ（輝石街ジェルドラ兼用）
+202000 Slave Beast (Wild) -- 奴隷獣（野生）
+202100 Slave Beast (Wild): For The Gerdra- A Ieishi Street -- 奴隷獣（野生）：輝石街ジェルドラ兼用
+203000 Parasite Spider: Kiseki Street Gerdra -- パラサイトスパイダー：輝石街ジェルドラ
+203001 Parasite Spider: Poison: Kiseki Street Gerdra -- パラサイトスパイダー：毒：輝石街ジェルドラ
+203002 Parasite Spider: Boss For War: Kiseki Street Gerdra -- パラサイトスパイダー：ボス戦用：輝石街ジェルドラ
+203009 Parasite Spider: Soul Black: Kiseki Street Gerdra -- パラサイトスパイダー：ソウルブラック：輝石街ジェルドラ
+204000 Great Moss -- グレートモス
+205000 Poison Horn: Poison: Fairy's Side -- 毒角虫：毒：妖精のほとり
+205001 Poison Horn: Poison: The City of Spiders -- 毒角虫：毒：蜘蛛の街
+205009 Poison Horn: Poison: The City of Spiders: Soul Black -- 毒角虫：毒：蜘蛛の街：ソウルブラック
+205100 Poison Hornworm: Acid: Kiseki Town Gerdra -- 毒角虫：酸：輝石街ジェルドラ
+205102 Poison Hornworm: Acid: Altar of Amana -- 毒角虫：酸：アマナの祭壇
+206000 Needle maggots -- 針ウジ虫
+206100 Needle maggots: different colors -- 針ウジ虫：色違い
+209000 Hunting Dogs: Color (1) -- 狩猟犬：色①
+209002 Hunting Dog: Color (1): Scum Bottom -- 狩猟犬：色①：クズ底
+209100 Hunting Dogs: Color (2) -- 狩猟犬：色②
+209200 Hunting Dogs: Color (3) -- 狩猟犬：色③
+210000 Basilisk: Color (1): Forest of Shadows -- バジリスク：色①：虚ろの影の森
+210001 Basilisk: Color (1): Scum Bottom -- バジリスク：色①：クズ底
+210002 Basilisk: Color (1): Anne Deal's House -- バジリスク：色①：アン・ディールの館
+210003 Basilisk: Color (1): The Tomb of the Saints -- バジリスク：色①：聖人墓所
+210010 Basilisk: Eyeball Crush: Kiseki Street Gerdra -- バジリスク：目玉潰れ：輝石街ジェルドラ
+210100 Basilrisk: Color (2) -- バジリスク：色②
+210200 Basilrisk: Color (3) -- バジリスク：色③
+212000 Wyvern -- ワイバーン
+212001 Wyburn: The Nest of The Guard Dragon (1) -- ワイバーン：守り竜の巣①
+212002 Wyburn: The Nest of The Guard Dragon (2) -- ワイバーン：守り竜の巣②
+212003 Wyburn: The Nest of The Guard Dragon (3) -- ワイバーン：守り竜の巣③
+213000 Stone Defense: A Bastion of Resistance (Modern) -- 石守：抵抗の砦（現代）
+213001 Stone Defense: The Edge of the Fairy -- 石守：妖精のほとり
+213002 Ishimori: The City of Spiders -- 石守：蜘蛛の街
+213003 Stone Defense: A Coal Mine Village -- 石守：炭鉱の村
+213004 Ishimori: Iwamine Castle -- 石守：岩峰城
+213005 Ishimori: Living Forest (past) -- 石守：生きている森（過去）
+213006 Ishimori: Submerged Castle: Half -Body (Past) -- 石守：水没城：半身（過去）
+213007 Stone Mori: Dragon's Shrine -- 石守：龍の祠祭場
+213008 Ishimori: DSuke village -- 石守：Dすけ村
+213009 Stone Defense: Submerged Castle: Full Water -- 石守：水没城：満水
+213010 Ishimori: Dragon Research Institute -- 石守：龍の研究所
+213100 Stone Defense: Explosion -- 石守：爆発
+213101 Stone Defense: Explosion: The Old Dark Hole -- 石守：爆発：古き闇の穴
+214000 Fang Beast -- 牙獣
+214100 Fang Beast (2) -- 牙獣②
+216000 Door possessed: Iwamine Castle -- 扉憑き：岩峰城
+216001 Door possession: Submerged Castle: Half-body (past) -- 扉憑き：水没城：半身（過去）
+216002 Door Possessed: Dragon's Shrine -- 扉憑き：龍の祠祭場
+216003 Door possessed: Submerged Castle: Full -- 扉憑き：水没城：全貌
+216004 Door Possessed: Submerged Castle: Dragon's Institute -- 扉憑き：水没城：龍の研究所
+217000 A hermit in the dark -- 闇に隠れし者
+218000 Humanity (enemy): Large -- 人間性（敵）：大
+218100 Humanity (enemy): Medium -- 人間性（敵）：中
+218200 Humanity (enemy): Small: Submerged: Half-body (past) -- 人間性（敵）：小：水没場：半身（過去）
+218201 Humanity (enemy): Small: Submerged: Full -- 人間性（敵）：小：水没場：全貌
+219000 Bay Grant Hawk -- ベイグラント鷹
+220000 Giant VenomOus Worm: Acid: Valley of Reservoirs -- 巨大毒角虫：酸：溜まりの谷
+220002 Giant VenomOus Worm: Acid: Altar of Amana -- 巨大毒角虫：酸：アマナの祭壇
+222000 Giant Basilisk: Color (2): Anne Deal's House -- 巨大バジリスク：色②：アン・ディールの館
+222001 Giant Basilisk: Color (2): Living Forest (Second Half) -- 巨大バジリスク：色②：生きている森（後半）
+223000 Corpse Asse Rat: Color (1) -- 死体あさりネズミ：色①
+223100 Corpse Asse Rat: Color (2) -- 死体あさりネズミ：色②
+223200 Corpse Asse Rat: Color (3) -- 死体あさりネズミ：色③
+223300 Corpse Asse Rat: Color (4) -- 死体あさりネズミ：色④
+224000 Coal tar -- コールタール
+225000 Light Worm -- 光虫
+226000 Dog Rat -- 犬ネズミ
+226001 Dog Rat: Boss War: Saint's Tomb -- 犬ネズミ：ボス戦用：聖人墓所
+226100 Dog Mouse: Color (2) -- 犬ネズミ：色②
+226200 The King of Rats -- ネズミの王
+226201 Rat King: Ghosts: Generic -- ネズミの王：幽霊：汎用
+226202 King of Rats: The Tomb of the Saints -- ネズミの王：聖人墓所
+227000 Stray dog -- 野犬
+227001 Stray Dog: Hidden Port -- 野犬：隠れ港
+227009 Wild Dog: Soul Black: Prison of Oblivion -- 野犬：ソウルブラック：忘却の牢
+300000 Auger :Color (1): Fossil Forest -- オーガ（生者）：色①：化石の森
+300001 Auger: Color (1): Fairy's Side -- オーガ（生者）：色①：妖精のほとり
+300002 Auger : Color (1): Anne Deal's House -- オーガ（生者）：色①：アン・ディールの館
+300100 Auger: Color (2) -- オーガ（生者）：色②
+301000 Wandering Knight (Dead): Head A -- 彷徨える騎士（亡者）：頭部A
+301001 Wandering Knight (Dead): One Hand Sword: The Forest of Decaying Giants -- 彷徨える騎士（亡者）：片手剣：朽ちた巨人の森
+301003 Wandering Knight (Dead): One Hand Sword: The Shadow of the Imaginary Forest -- 彷徨える騎士（亡者）：片手剣：虚ろの影の森
+301010 Wandering Knight (Dead): Spear A: Prison of Oblivion -- 彷徨える騎士（亡者）：槍A：忘却の牢
+301011 Wandering Knight (Dead): Spear A: Forest of Hunting -- 彷徨える騎士（亡者）：槍A：狩猟の森
+301020 Wandering Knight (Dead): Spear B: The Nest of the Guarded Dragon -- 彷徨える騎士（亡者）：槍B：守り竜の巣
+301030 Wandering Knight (Dead): Spear C: Altar of Amana -- 彷徨える騎士（亡者）：槍C：アマナの祭壇
+301031 Wandering Knight (Dead): Head D: The Last Dungeon -- 彷徨える騎士（亡者）：頭部D：ラストダンジョン
+302000 Prison man (deceased): Color (1): Two-handed sickle: Castle in ruins -- 獄吏（亡者）：色①：両手鎌：廃墟の城
+302001 Prison man (deceased): Color (1): Two-handed sickle: Iwamine Castle -- 獄吏（亡者）：色①：両手鎌：岩峰城
+302009 Prison Man (Deceased): Two-Handed Sickle: Prison of Oblivion: Soul Black -- 獄吏（亡者）：両手鎌：忘却の牢：ソウルブラック
+302010 Prison man (deceased): Color (1): Two-handed long axe: Castle in ruins -- 獄吏（亡者）：色①：両手長斧：廃墟の城
+302011 Prison man (deceased): Color (1) Two-handed long axe: Iwamine Castle -- 獄吏（亡者）：色①：両手長斧：岩峰城
+302020 Prison man (deceased): Color (1): Two-handed hammer: castle in ruins -- 獄吏（亡者）：色①：両手戦槌：廃墟の城
+302021 Prison man (deceased): Color (1) Two-handed hammer: Iwamine Castle -- 獄吏（亡者）：色①：両手戦槌：岩峰城
+302100 Prison man (deceased): Color (2): Two-handed sickle -- 獄吏（亡者）：色②：両手鎌
+302110 Prison man (deceased): Color (2): Two-handed long axe -- 獄吏（亡者）：色②：両手長斧
+302120 Prison man (deceased): Color (2): Two hands war mallet -- 獄吏（亡者）：色②：両手戦槌
+303300 Double-sided warrior: snake head -- 両面戦士：ヘビ頭
+303301 Two-sided warrior: Snake head: Forest of shadows in the shadows of the emptiness -- 両面戦士：ヘビ頭：虚ろの影の森
+304000 Banshee (Dead): Scary Face -- バンシー（亡者）：怖い顔
+304010 Banshee (Deceased): Beautiful Face -- バンシー（亡者）：美女顔
+305000 Damon Knight (Dead) -- デーモンナイト（亡者）
+305010 Damon Knight (Dead): Ignition -- デーモンナイト（亡者）：点火
+306000 Damon Armor (Dead): Sword: Molten Castle -- デーモン鎧（亡者）：刀：熔鉄城
+306001 Damon Armor (Dead): Sword: Molten Castle: Full-body flame -- デーモン鎧（亡者）：刀：熔鉄城：全身炎
+306008 Damon Armor (Deceased): Sword: Molten Castle: Full-Body Flame Soul Black -- デーモン鎧（亡者）：刀：熔鉄城：全身炎ソウルブラック
+306009 Damon Armor (Dead): Sword: Molten Castle: Soul Black -- デーモン鎧（亡者）：刀：熔鉄城：ソウルブラック
+306010 Damon Armor (Dead): Bow: Molten Castle -- デーモン鎧（亡者）：弓：熔鉄城
+306011 Damon Armor (Dead): Bow: King's Castle Drangreig -- デーモン鎧（亡者）：弓：王城ドラングレイグ
+307000 Durahan (deceased) -- デュラハン（亡者）
+307001 Durahan (deceased): Two-swords style: Kiseki-cho Gerdra -- デュラハン（亡者）：二刀流：輝石街ジェルドラ
+307100 Durahan (Raw) -- デュラハン（生者）
+307101 Durahan (Born): Ghost: The Forest of Shadows -- デュラハン（生者）：幽霊：虚ろの影の森
+307108 Durahan (Born): White Spirit: The Nest of the Guarded Dragon -- デュラハン（生者）：白霊：守り竜の巣
+307109 Durahan (born): White Spirit: King's Castle Drangreig -- デュラハン（生者）：白霊：王城ドラングレイグ
+307110 Durahan (born): Head only: Forest of shadows of emptiness -- デュラハン（生者）：頭だけ：虚ろの影の森
+308000 Lion Warrior -- 獅子戦士
+308100 Lion Warrior (2) -- 獅子戦士②
+309000 Giant Senior Soldier (Giant): 2 Swords -- 巨人上級兵士（巨人）：２刀流
+309001 Giant Senior Soldier (Giant): 2 Swords: Kuzbottom -- 巨人上級兵士（巨人）：２刀流：クズ底
+309600 New Giant Senior Soldier (Deceased) -- 新・巨人上級兵士（亡者）
+309601 New Giant Senior Soldier (for Debugging) -- 新・巨人上級兵士（デバッグ用）
+309700 New Giant Senior Soldier (Live) -- 新・巨人上級兵士（生者）
+311000 Cavalry: Cavalry Soldiers -- 騎人兵：騎乗兵士
+312000 Immortal Senior Soldier (Immortal): Sickle: Robe: The Nest of the Guarded Dragon -- イモータル上級兵士（イモータル）：鎌：ローブ：守り竜の巣
+312001 Immortal Senior Soldier (Immortal): Sickle: Robe: Immortal Mausoleum -- イモータル上級兵士（イモータル）：鎌：ローブ：不死廟
+312010 Immortal Senior Soldier (Immortal): Spear: Robe -- イモータル上級兵士（イモータル）：槍：ローブ
+312011 Immortal Senior Soldier (Immortal): Spear: Robe: Valley of The Reservoir -- イモータル上級兵士（イモータル）：槍：ローブ：溜まりの谷
+312020 Immortal Senior Soldier (Immortal): Sickle: Armor -- イモータル上級兵士（イモータル）：鎌：鎧
+312021 Immortal Senior Soldier (Immortal): Sickle: Armor: The Immortal Mausoleum -- イモータル上級兵士（イモータル）：鎌：鎧：不死廟
+312030 Immortal Senior Soldier (Immortal): Spear: Armor -- イモータル上級兵士（イモータル）：槍：鎧
+312031 Immortal Senior Soldier (Immortal): Spear: Armor: Valley of The Reservoir -- イモータル上級兵士（イモータル）：槍：鎧：溜まりの谷
+312032 Immortal Senior Soldier (Immortal): Spear: Armor: Immortal Mausoleum -- イモータル上級兵士（イモータル）：槍：鎧：不死廟
+312040 Immortal Senior Soldier (Immortal): Sickle: Naked -- イモータル上級兵士（イモータル）：鎌：裸
+312050 Immortal Senior Soldier (Immortal): Spear: Naked -- イモータル上級兵士（イモータル）：槍：裸
+313000 Falcon Warrior Swords - Shield : No Hawk -- 鷹匠戦士：直剣＆盾：鷹なし
+313010 Falcon Warrior Sashimi Sword Shield: No Hawk -- 鷹匠戦士：刺剣＆盾：鷹なし
+313020 Takataku Warrior: Sashimi Sword -- 鷹匠戦士：刺剣＆鷹
+313021 Takataku Warrior Sashimi & Hawk: Gap's Cave (Lap 2) -- 鷹匠戦士：刺剣＆鷹：隙間の洞（２周目）
+313030 Falcon Warrior: Bow: No Hawk -- 鷹匠戦士：弓：鷹なし
+313031 Falcon Warrior: Bow: No Hawk: Gap Cave (Lap 2) -- 鷹匠戦士：弓：鷹なし：隙間の洞（２周目）
+314000 Elephant Man (Dead): Spear Axe -- 象人（亡者）：槍斧
+315000 Elephant (Born) -- 象人（生者）
+316000 Captured Magician (Raw) -- 捕らわれた魔導士（生者）
+316001 Captured Magician (Live Man): Valley of The Reservoir -- 捕らわれた魔導士（生者）：溜まりの谷
+317000 Dragon Professor -- 龍の教授
+318000 Bay Grant: No luggage -- ベイグラント:荷物なし
+318010 Bay Grant: Luggage available -- ベイグラント:荷物あり
+318020 Bay Grant: Luggage available -- ベイグラント:荷物あり
+318030 Bay Grant (for debugging: Enhanced LV1) -- ベイグラント（デバッグ用：強化LV1）
+318040 Bay Grant (for debugging: Enhanced LV2) -- ベイグラント（デバッグ用：強化LV2）
+319000 Damon Armor (Deceased): Mass Production: Sword: Molten Castle -- デーモン鎧（亡者）：量産型：刀：熔鉄城
+319009 Damon Armor (Deceased): Mass Production: Sword: Molten Castle: Soul Black -- デーモン鎧（亡者）：量産型：刀：熔鉄城：ソウルブラック
+319010 Damon Armor (Deceased): Mass Production Type: Bow: Molten Iron Castle -- デーモン鎧（亡者）：量産型：弓：熔鉄城
+321000 []-Mimic: Wood -- ν－ミミック：木
+321001 [] Mimick: Wood: Scum Bottom -- ν－ミミック：木：クズ底
+321002 η-mimic: Tree: Altar of Amana -- ν－ミミック：木：アマナの祭壇
+321003 [] Mimic: Tree: Valley of The Reservoir -- ν－ミミック：木：溜まりの谷
+321004 η-mimic: Wood: The door way of Faros -- ν－ミミック：木：ファロスの扉道
+321010 []-Mimic: Iron -- ν－ミミック：鉄
+321011 []-Mimic:Iron:Molten Iron Castle -- ν－ミミック：鉄：熔鉄城
+321012 []-Mimic: Iron: The Tomb of Immortality -- ν－ミミック：鉄：不死廟
+324000 Gargoyle -- ガーゴイル
+325000 Warrior in the Mirror -- 鏡の中の戦士
+325010 Warrior in the Mirror: King's Castle D'Angreig -- 鏡の中の戦士：王城ドラングレイグ
+326000 Butcher -- ブッチャー
+326010 Butcher (for debugging) -- ブッチャー（デバッグ用）
+327000 Bone Dragon -- 骨ドラゴン
+330000 Ancient Warriors: Two-Handed Sword & Medium Shield: Heide Great Fire Tower -- 古代の戦士：両手剣＆中盾：ハイデ大火塔
+330010 Ancient Warriors: Oversized Sword: Heide Great Fire Tower -- 古代の戦士：特大剣：ハイデ大火塔
+330019 Ancient Warriors: Oversized Sword: Strong: Heide Great Fire Tower -- 古代の戦士：特大剣：強い：ハイデ大火塔
+330020 Ancient Warriors: Axe Spears & Great Shields: Heide Great Fire Tower -- 古代の戦士：斧槍＆大盾：ハイデ大火塔
+330030 Ancient Warrior: Two-Handed Long Axe: Heide Great Fire Tower -- 古代の戦士：両手長斧：ハイデ大火塔
+330040 Ancient Warriors: Two-Handed Mallet: Heide Great Fire Tower -- 古代の戦士：両手槌：ハイデ大火塔
+330049 Ancient Warriors: Two-Handed Mallet: Strong: Heide Great Fire Tower -- 古代の戦士：両手槌：強い：ハイデ大火塔
+331000 Demon Heavy Soldier: Two-Handed Sword & Medium Shield -- デーモン重兵士：両手剣＆中盾
+331002 Demon Heavy Soldier: Two-Handed Sword & Medium Shield: The Nest of The Guard Dragon -- デーモン重兵士：両手剣＆中盾：守り竜の巣
+331010 Damon Heavy Soldier: Oversized Sword -- デーモン重兵士：特大剣
+331011 Demon Heavy Soldier: Oversized Sword: The Nest of the Guarddragon -- デーモン重兵士：特大剣：守り竜の巣
+331020 Damon Heavy Soldier: Two-Handed Ax -- デーモン重兵士：両手長斧
+331021 Demon Heavy Soldier: Two-Handed Long Axe: The Nest of the Guard Dragon -- デーモン重兵士：両手長斧：守り竜の巣
+331030 Damon Heavy Soldier: Mallet -- デーモン重兵士：両手槌
+331031 Demon Heavy Soldier: Two-Handed Mallet: The Nest of the Guard Dragon -- デーモン重兵士：両手槌：守り竜の巣
+331040 Damon Heavy Soldier: One Hand Mallet -- デーモン重兵士：片手槌
+331041 Demon Heavy Soldier: One Hand Mallet: The Nest of the Guard Dragon -- デーモン重兵士：片手槌：守り竜の巣
+332000 Queen Knight A -- 王妃の騎士A
+332010 Queen Knight A (for debugging) -- 王妃の騎士A（デバッグ用）
+333000 Queen Knight B -- 王妃の騎士B
+334000 Queen Knight C -- 王妃の騎士C
+337000 Amazing Dead: Bare Hands -- すごい亡者：素手
+337001 Amazing Dead: Bare Hands: Valley of The Reservoir -- すごい亡者：素手：溜まりの谷
+337002 Amazing Dead: Bare Hands: Scum Bottom -- すごい亡者：素手：クズ底
+337003 Amazing Dead: Bare hands: The Tomb of the Saints -- すごい亡者：素手：聖人墓所
+337010 Amazing Dead: Torchi -- すごい亡者：松明
+337011 Amazing Dead: Torch: Scum Bottom -- すごい亡者：松明：クズ底
+337020 Amazing Dead: Sword -- すごい亡者：剣
+337022 Amazing Dead: Sword: Scum Bottom -- すごい亡者：剣：クズ底
+337023 Great Dead: Sword: The Tomb of the Saints -- すごい亡者：剣：聖人墓所
+500000 Javazahat -- ジャバザハット
+501000 Naga -- ナーガ
+502000 Manscorpion ♂ -- マンスコーピオン♂
+502001 Manscorpion ♂: Ghosts: The Shadow of the Hollow -- マンスコーピオン♂：幽霊：虚ろの影の森
+502009 Manscorpion ♂: The White Spirit: The Forest of Shadows of The Shadows -- マンスコーピオン♂：白霊：虚ろの影の森
+503000 Manscorpion ♀ -- マンスコーピオン♀
+503010 Manscorpion ♀ (for debugging) -- マンスコーピオン♀（デバッグ用）
+504000 Mirror Night -- ミラーナイト
+506100 Agaduran Stand -- アガドゥランのスタンド
+506101 Agaduran Stand (Alter): The Old Dark Hole -- アガドゥランのスタンド（分身）：古き闇の穴
+506200 Wormhole -- ワームホール
+506500 Grave guard -- 墓守
+506501 Tomb Guard: Ghosts: General -- 墓守：幽霊：汎用
+506509 Tomb Guard: White Spirit -- 墓守：白霊
+507000 Rich -- リッチ
+508000 Wraith -- レイス
+509000 Dark Bishop: Masked: The Tomb of Immortality -- ダークビショップ：仮面有り：不死廟
+509009 Dark Bishop: Masked: Tomb of Immortality: Soul Black -- ダークビショップ：仮面有り：不死廟：ソウルブラック
+511000 Phantom Knight -- ファントムナイト（霊体）
+512000 Phantom Mage (Spirit) -- ファントムメイジ（霊体）
+513000 King Van Clad (past) -- ヴァンクラッド王（過去）
+514000 King Van Clad (Hyundai) -- ヴァンクラッド王（現代）
+514500 Van Clad King (modern) for in-game -- ヴァンクラッド王（現代）＿インゲーム用
+514600 Old King -- 年老いた王
+600000 Old Dragon: 2nd -- 古の龍：２回目
+601000 Salamander -- サラマンダー
+601020 Salamander (after petrification) -- サラマンダー（石化後）
+602000 Beautiful Voice Frog -- 美声カエル
+602020 Beautiful Voice Frog -- 美声カエル（顔出し）
+603000 Spider Queen -- 蜘蛛の女王
+603100 Spider Queen (Cliff) -- 蜘蛛の女王（崖）
+607000 Molten iron daemon -- 熔鉄デーモン
+608000 Corrosive insects (outer shell) -- 腐食虫（外殻）
+609000 Leader of the Giants SS -- 巨人族親衛隊長
+609010 Leader of the Giants SS (after petrification) -- 巨人族親衛隊長（石化後）
+609100 Leader of the Giant SS (Phantom) -- 巨人族親衛隊長（幻影）
+611000 Heavy Cavalry: Soldiers Only -- 重騎馬兵：兵士のみ
+611010 Heavy Cavalry: Soldiers Only (Black): Bow: King's Castle DranGreig -- 重騎馬兵：兵士のみ（黒）：弓：王城ドラングレイグ
+611500 Heavy Cavalry: Soldiers Only (Red): King's Castle D'Angreig -- 重騎馬兵：兵士のみ（赤）：王城ドラングレイグ
+611510 Heavy Cavalry: Soldiers Only (Red): Heide Great Fire Tower -- 重騎馬兵：兵士のみ（赤）：ハイデ大火塔
+619100 Silver Chariot: Horse Only (for Deback) -- シルバーチャリオット：馬のみ（デバック用）
+619110 Silver Chariots: Coalescence -- シルバーチャリオット：合体
+621000 Bodhidharma -- 達磨
+622000 Corrosive insects (main body) -- 腐食虫（本体）
+623000 Corrosive insects (children) -- 腐食虫（子）
+624000 Giant King *Death -- 巨人王　※没
+624500 Giant King -- 巨人王
+625000 Ornstein -- オーンスタイン
+626000 Forgotten Sinner -- 忘れられた罪人
+627000 Queen's armor -- 王妃の鎧形態
+628000 Giant Rat -- 巨大ネズミ
+700000 Dragon's Shrine Maiden for Cut Scene -- 龍の巫女＿カットシーン用
+700500 Dragon's Shrine Maiden for In-Game -- 龍の巫女＿インゲーム用
+700501 Dragon's Shrine Maiden for In Game: Ghosts: Generic -- 龍の巫女＿インゲーム用：幽霊：汎用
+700502 Dragon's Shrine Maiden for In Game: King's Castle D'Angreig -- 龍の巫女＿インゲーム用：王城ドラングレイグ
+700503 Dragon's Shrine Maiden for In-Game: The Immortal Mausoleum -- 龍の巫女＿インゲーム用：不死廟
+701000 Dragon Shrine Maiden (Child) _ For Cut Scene -- 龍の巫女（子供）＿カットシーン用
+701500 Dragon Shrine Maiden (Child) For In-Game -- 龍の巫女（子供）＿インゲーム用
+702000 Queen (Modern) -- 王妃（現代）
+703000 Queen (past) for cut scenes -- 王妃（過去）＿カットシーン用
+703500 Queen (past)_for in-game -- 王妃（過去）＿インゲーム用
+703600 New Queen -- 新王妃
+704000 Ladder shop_for cut scene -- 梯子屋＿カットシーン用
+704500 Ladder shop_in for games -- 梯子屋＿インゲーム用
+704501 Ladder Shop for In Game: Ghosts: Generic -- 梯子屋＿インゲーム用：幽霊：汎用
+704510 Ladder shop_for the cut scene: The Valley of the Reservoir -- 梯子屋＿カットシーン用：溜まりの谷
+705000 For retired fire-proof woman 1_ cut scene -- 退役の火防女１＿カットシーン用
+705100 Retired Fire Protection Woman 2 -- 退役の火防女２
+705300 Retired Fire Protection Woman 3 -- 退役の火防女３
+705500 Retired Fire Protection Woman 1_For In-Game -- 退役の火防女１＿インゲーム用
+705501 Retired Fire Protection Woman 1_In For Game: Ghosts: Generic -- 退役の火防女１＿インゲーム用：幽霊：汎用
+705600 Retired Fire Protection Woman 2_In For Game -- 退役の火防女２＿インゲーム用
+705601 Retired Fire Protection Woman 2_In For Game: Ghosts: Generic -- 退役の火防女２＿インゲーム用：幽霊：汎用
+705800 Retired Fire Protection Woman 3_In For Game -- 退役の火防女３＿インゲーム用
+705801 Retired Fire Protection Woman 3_In For Game: Ghosts: Generic -- 退役の火防女３＿インゲーム用：幽霊：汎用
+721000 Kingdom Army Master (Modern) -- 王国軍師（現代）
+721100 Kingdom Army Master (Past) -- 王国軍師（過去）
+722000 tick researchers -- 刻の研究者
+723000 Housekeeper -- 家政婦
+723001 Housekeeper: Ghost: Generic -- 家政婦：幽霊：汎用
+723010 For the housekeeper_cut scene: gap cave -- 家政婦_カットシーン用：隙間の洞
+724000 Captain of the SS -- 親衛隊長
+724001 SS Captain: Ghosts: General -- 親衛隊長：幽霊：汎用
+724002 SS Leader: White Spirit -- 親衛隊長：白霊
+725000 Dragon's Shrine Festival Grandal -- 竜の祠祭　グランダル
+726000 Dwarf Gabalance: Gaping Cave -- ドワーフ・ガバランス：隙間の洞
+726001 Dwarf Gabalance: Ghosts: Generic -- ドワーフ・ガバランス：幽霊：汎用
+726002 Dwarf Gabalance: Valley of The Reservoir -- ドワーフ・ガバランス：溜まりの谷
+726003 Dwarf Gabalance: Hidden Port -- ドワーフ・ガバランス：隠れ港
+726004 Dwarf Gabalance: The Door way of Faros -- ドワーフ・ガバランス：ファロスの扉道
+726005 Dwarf Gabalance: The Bottom of The Scum -- ドワーフ・ガバランス：クズ底
+726006 Dwarf Gabalance: Altar of Amana -- ドワーフ・ガバランス：アマナの祭壇
+730000 I 1_ Oversized Sword Under Mirror Night -- ミラーナイトの下僕１_特大剣
+730001 Under Mirror Night 1_Oversized Sword: Anne Deal's House -- ミラーナイトの下僕１_特大剣：アン・ディールの館
+730010 I under the mirror night 1_two-handed long axe -- ミラーナイトの下僕１_両手長斧
+730020 I 1_One Hand Sword Under Mirror Night -- ミラーナイトの下僕１_片手剣
+731000 I 2_ Oversized Sword Under Mirror Night -- ミラーナイトの下僕２_特大剣
+731010 I 2_Two-Handed Axe Under Mirror Night -- ミラーナイトの下僕２_両手長斧
+731011 Mirror Night Under Me 2_Two-Handed Ax: Anne Deal's House -- ミラーナイトの下僕２_両手長斧：アン・ディールの館
+731020 I 2_One Hand Sword Under Mirror Night -- ミラーナイトの下僕２_片手剣
+732000 Sorcerer Sinner 1 -- 呪術師の罪人１
+733000 Sorcerer Sinner 2 -- 呪術師の罪人２
+740000 The person who is the person who is stamped -- 刻印の在りし者
+741000 A broken-hearted blue warrior -- 心折れた青教戦士
+741001 Heartbroken Blue Warrior: Ghosts: General -- 心折れた青教戦士：幽霊：汎用
+742000 Wandering Warrior One Hand Axe -- 放浪の戦士 片手斧
+742001 Wandering Warrior: Ghosts: Generic -- 放浪の戦士：幽霊：汎用
+742002 Wandering Warrior One Hand Axe: The Forest of Shadows of The Shadows -- 放浪の戦士 片手斧：虚ろの影の森
+742003 Wandering Warrior One Hand Axe: Hunting Forest -- 放浪の戦士 片手斧：狩猟の森
+742010 Wandering Warrior: The Great Sword -- 放浪の戦士：大剣
+743000 Tsukiko Ya: The Decaying Giant Forest -- 月光爺：朽ちた巨人の森
+743001 Moonlight: Ghosts: General Purpose -- 月光爺：幽霊：汎用
+743002 Tsukiko:The Forest of The Shadow of The Void -- 月光爺：虚ろの影の森
+743003 Tsukiko Grandfather: King's Castle Drangreig -- 月光爺：王城ドラングレイグ
+743004 Tsukiko Grandfather: The Memory of the Giant -- 月光爺：巨人の記憶
+743007 Tsukiko Ya: White Spirit: For Rasbos -- 月光爺：白霊：ラスボス用
+743008 Tsukiko Grandfather: The White Spirit: The Memory of the Giant -- 月光爺：白霊：巨人の記憶
+743009 Tsukiko Ya: White Spirit: Kiseki-gai Gerdra -- 月光爺：白霊：輝石街ジェルドラ
+744000 Patch: The Decaying Giant Forest -- パッチ：朽ちた巨人の森
+744001 Patch: Ghosts: Generic -- パッチ：幽霊：汎用
+744002 Patch: Kiseki Street Gerdra -- パッチ：輝石街ジェルドラ
+744003 Patch: Valley of The Reservoir -- パッチ：溜まりの谷
+744009 Patch: White Spirit -- パッチ：白霊
+746000 Chasing Warriors: The Castle of Ruins -- 追跡する戦士：廃墟の城
+751000 Map: The Decaying Giant Forest (also for Maduro) -- 地図書き：朽ちた巨人の森（マデューラ兼用）
+751001 Atlas: Ghosts: General -- 地図書き：幽霊：汎用
+752000 The Lady Knight Akertilla: The House of Anne Deal -- 女騎士アーケルティーラ：アン・ディールの館
+752001 Female Knight Akertilla: Ghosts: Generic -- 女騎士アーケルティーラ：幽霊：汎用
+752002 Female Knight Akertilla: Prison of Oblivion -- 女騎士アーケルティーラ：忘却の牢
+752003 Female Knight Akertilla: Valley of The Reservoir -- 女騎士アーケルティーラ：溜まりの谷
+752004 Female Knight Akertilla: Hidden Port -- 女騎士アーケルティーラ：隠れ港
+752005 Female Knight Akertilla: Kuzbottom -- 女騎士アーケルティーラ：クズ底
+752006 Female Knight Akertilla: White Spirit: Kuzbottom -- 女騎士アーケルティーラ：白霊：クズ底
+752007 Female Knight Akertilla: White Spirit: Molten Iron Castle -- 女騎士アーケルティーラ：白霊：熔鉄城
+752008 Female Knight Akertilla: White Spirit: Hidden Port -- 女騎士アーケルティーラ：白霊：隠れ港
+752009 Female Knight Akertilla: The White Spirit: The Prison of Oblivion -- 女騎士アーケルティーラ：白霊：忘却の牢
+753000 Bell Guard: Prison of Oblivion -- 鐘守：忘却の牢
+753001 Bell Guard: Ghosts: General Purpose -- 鐘守：幽霊：汎用
+753002 Bell Guard: Molten Iron Castle -- 鐘守：熔鉄城
+753003 Bell Guard: Zako: Prison of Oblivion -- 鐘守：ザコ：忘却の牢
+753004 Bell Guard: Zako: Molten Iron Castle -- 鐘守：ザコ：熔鉄城
+753008 Bell Guard: Dark Spirit: Molten Castle -- 鐘守：闇霊：熔鉄城
+753009 Bell Guard: Dark Spirit: Prison of Oblivion -- 鐘守：闇霊：忘却の牢
+754000 Yorozu Babaa -- よろずババア
+754001 Yorozu Babaa: Ghosts -- よろずババア：幽霊
+755000 Stalker Warrior -- ストーカー戦士
+755010 Stalker Warrior_ With Both Hands -- ストーカー戦士_両手持ち
+755020 Stalker Warrior_2 Sword -- ストーカー戦士_２刀
+760000 Girl 1 of the Bard  -- 吟遊詩人の少女１
+760001 Bard Girl 1: Ghosts: General -- 吟遊詩人の少女１：幽霊：汎用
+760100 Girl 2 of the Bard -- 吟遊詩人の少女２
+760101 The Girl of the Bard 2: Ghosts: General -- 吟遊詩人の少女２：幽霊：汎用
+760200 Captive Girl: King's Castle D'Angreig -- 虜囚の少女：王城ドラングレイグ
+760201 Captive Girl: Ghosts: General -- 虜囚の少女：幽霊：汎用
+760300 Banshee Bluff 2 -- バンシーのブラフ２
+760400 Banshee Bluff 3 -- バンシーのブラフ３
+761000 Armor shop: Madura (hyundai) -- 防具屋：マデューラ（現代）
+761001 Armor Shop: Ghosts: Generic -- 防具屋：幽霊：汎用
+761010 Armor shop: Fairy's side -- 防具屋：妖精のほとり
+762000 Material shop: Reservoir Valley (also for Maduro) -- 素材屋：溜まりの谷（マデューラ兼用）
+762001 Material Shop: Ghosts: Generic -- 素材屋：幽霊：汎用
+763000 Sorcerer: The Shadow of the Imaginary Forest (also for Maduro) -- 呪術屋：虚ろの影の森（マデューラ兼用）
+763001 Sorcerer: Ghosts: Generic -- 呪術屋：幽霊：汎用
+763010 Bookstore (Spider Town) -- 本屋（蜘蛛の街）
+764000 Weapon Blacksmith 1: Tonkachi & Fire Scissors -- 武器鍛冶屋１：トンカチ&火鋏
+764001 Weapon Blacksmith 1: Ghosts: Generic -- 武器鍛冶屋１：幽霊：汎用
+764010 Weapon Blacksmith 1: Otsuchi -- 武器鍛冶屋１：大槌
+764300 Armor Blacksmith 1: Prison of Oblivion -- 防具鍛冶屋１：忘却の牢
+764309 Armor Blacksmith 1: Ghosts: General Purpose -- 防具鍛冶屋１：幽霊：汎用
+764310 Armor Blacksmith 1: Castle in ruins -- 防具鍛冶屋１：廃墟の城
+765000 a tool shop -- 道具屋
+766000 Sorcerer: Hidden Port (maduro) -- 魔術師：隠れ港（マデューラ兼用）
+766001 Magician: Ghost: Generic -- 魔術師：幽霊：汎用
+766010 Spell shop 1&4 (Fort of Resistance: Modern) -- スペル屋１＆４（抵抗の砦：現代）
+767000 Spell Shop 2 & 3 (Hyundai) -- スペル屋２＆３（現代）
+768000 Spell Mania: Prison of Oblivion -- スペルマニア：忘却の牢
+768001 Spell Mania: Ghosts: Generic -- スペルマニア：幽霊：汎用
+769000 The Miracle Man Leash: The Heide Great Fire Tower (also for Maduro) -- 奇跡の人リーシュ：ハイデ大火塔（マデューラ兼用）
+769001 Miracle Man Leash: Ghosts: Generic -- 奇跡の人リーシュ：幽霊：汎用
+770000 Dark Man: Cane: Hunting Forest -- 闇術屋：杖：狩猟の森
+770001 Dark Man: Ghosts: General -- 闇術屋：幽霊：汎用
+770010 Dark Man: Swords -- 闇術屋：刺剣
+771000 Enclosed who: -- 封じられた人：
+771001 Enclosed: Ghosts -- 封じられた人：幽霊
+771004 Enclosed Man: Dark Spirit: Castle of the King D'Angreig -- 封じられた人：闇霊：王城ドラングレイグ
+771005 Enclosed Man: Dark Spirit: Scum Bottom -- 封じられた人：闇霊：クズ底
+771006 Enclosed Man: Dark Spirit: The Forest of Shadows of The Shadows -- 封じられた人：闇霊：虚ろの影の森
+771007 The Enclosed Man: The Dark Spirit: The House of Anne Deal -- 封じられた人：闇霊：アン・ディールの館
+771009 Enclosed Man: Dark Spirit: Jedra- Kiseki Street -- 封じられた人：闇霊：輝石街ジェルドラ
+772000 Risa: Ming-iron castle -- 珍品屋：熔鉄城
+772001 Curiosity: Ghosts: General -- 珍品屋：幽霊：汎用
+776000 Top Weapon: Bird Goal: Kiseki Street Gerdra -- 上位武器屋：バードゴール：輝石街ジェルドラ
+776001 Top Weapon: Bird Goal: Ghosts: Generic -- 上位武器屋：バードゴール：幽霊：汎用
+776002 Top Weapons Store: Bird Goal: Forest of Shadows -- 上位武器屋：バードゴール：虚ろの影の森
+777000 Cat: Madura (Hyundai) -- 猫：マデューラ（現代）
+778000 Yorozuya (Modern) -- よろず屋（現代）
+780000 Material shop (modern) -- 素材屋（現代）
+783000 Black Phantom Shop -- 黒ファントム屋
+783001 Black Phantom Shop: Ghost -- 黒ファントム屋：幽霊
+783100 Blue Phantom Shop -- 青ファントム屋
+784000 The Teacher of The Sin: Gerdra- Kiishi Street -- 免罪の教戒師：輝石街ジェルドラ
+784001 The Sin-Sin Teacher: Ghosts: General -- 免罪の教戒師：幽霊：汎用
+785000 Guardian Knight: Two-Handed Ax & Medium Shield -- 守護の騎士：両手長斧＆中盾
+785001 Guardian Knight: Ghosts: Generic -- 守護の騎士：幽霊：汎用
+785010 Guardian Knight: Two-Handed Axe & Bell -- 守護の騎士：両手長斧＆ベル
+786000 Glitter Girl -- キラキラ娘
+787000 The Fairy of the Dungeon of The Moment -- 刻のダンジョンの妖精
+800000 Current player (for poly play) -- 現在のプレイヤー（ポリ劇用）
+800100 Future Player (for Poly Play) -- 未来のプレイヤー（ポリ劇用）
+800300 Player (Phantom) -- プレイヤー（幻影）
+810000 NPC for Multi: Swordsman (Man): Red Phantom: Hunting Forest -- マルチ用NPC：剣士（男）：赤ファントム：狩猟の森
+810001 NPC for Multi: Swordsman (Man): White Spirit: Valley of The Reservoir -- マルチ用NPC：剣士（男）：白霊：溜まりの谷
+810002 NPC for Multi: Swordsman (Male): Bell Guard Area -- マルチ用NPC：剣士（男）：鐘守エリア
+810003 NPC for Multi: Swordsman (Male): White Spirit: Heide Great Fire Tower -- マルチ用NPC：剣士（男）：白霊：ハイデ大火塔
+811000 NPC for Multi: Archer (Man) -- マルチ用NPC：弓兵（男）
+812000 NPC for Multi: Sage (Female) -- マルチ用NPC：賢者（女）
+812001 NPC for Multi: Sage (Female): White Spirit: Kiseki Street Gerdra -- マルチ用NPC：賢者（女）：白霊：輝石街ジェルドラ
+813000 NPC for Multi: Lancer (Female) -- マルチ用NPC：ランサー（女）
+814000 NPC for Multi: Flesh-breaking (Female): White Spirit -- マルチ用NPC：肉断ち（女）：白霊
+814008 NPC for Multi: Breaking Flesh (Female): Dark Spirit: Castle of The King D'Angreig -- マルチ用NPC：肉断ち（女）：闇霊：王城ドラングレイグ
+814009 NPC for Multi: Breaking Meat (Female): Dark Spirit: Scum Bottom -- マルチ用NPC：肉断ち（女）：闇霊：クズ底
+820000 NPC for Multi: Spearman (Man) -- マルチ用NPC：槍兵（男）
+821000 NPC for Multi: Reaper (Woman): Dark Spirit: Hunting Forest -- マルチ用NPC：死神（女）：闇霊：狩猟の森
+821001 NPC for Multi: The God of Death (Woman): Dark Spirit: Anne Deal's House -- マルチ用NPC：死神（女）：闇霊：アン・ディールの館
+822000 NPC for Multi: The Magician (Man): Dark Spirit: The Door way of Faros -- マルチ用NPC：魔導士（男）：闇霊：ファロスの扉道
+822001 NPC for Multi: Magician (Male): Ashes: Saint's Tomb -- マルチ用NPC：魔導士（男）：灰霊：聖人墓所
+822002 NPC for Multi: Magician (Male): Dark Spirit: Tomb of Immortality -- マルチ用NPC：魔導士（男）：闇霊：不死廟
+822003 NPC for Multi: The Magician (Man): Dark Spirit: Altar of Amana -- マルチ用NPC：魔導士（男）：闇霊：アマナの祭壇
+823000 NPC for Multi: Koryu Swordsman (Man) -- マルチ用NPC：古龍剣士（男）
+824000 NPC for Multi: The Older Brother of a Female Swordsman -- マルチ用NPC：女剣士の兄
+831000 Saint's Tomb: Abandoned Saint -- 聖人墓所：捨てられた聖女
+831100 Saint's Tomb: Knight of the Saint -- 聖人墓所：聖女の騎士
+832000 Old Dark Hole: Abyss 1: Sniper -- 古き闇の穴：深淵霊１：スナイパー
+832100 The Old Dark Hole: The Abyss 2: Axeman -- 古き闇の穴：深淵霊２：アックスマン
+832200 The Old Dark Hole: The Abyss 3: Huang Yi -- 古き闇の穴：深淵霊３：黄衣夫
+832300 The Old Dark Hole: The Abyss 4: Huang Yi Wife -- 古き闇の穴：深淵霊４：黄衣妻
+832400 The Old Dark Hole: The Abyss 5: Traveler -- 古き闇の穴：深淵霊５：旅人
+832500 Old Dark Hole: Abyss 6: Knight -- 古き闇の穴：深淵霊６：騎士
+832600 Old Dark Hole: Abyss 7: Heavy Warrior -- 古き闇の穴：深淵霊７：重戦士
+832700 Old Dark Hole: Abyss 8: Queen -- 古き闇の穴：深淵霊８：女王様
+833000 Amana's Shrine: Cannibal -- アマナの祠：人食い番長
+834000 Prison of Oblivion: Sorcerer -- 忘却の牢：呪術師
+834100 Prison of Oblivion: The Dark Knight -- 忘却の牢：闇騎士
+835000 Ritual: Dragon Knight: Two-Sword Style -- 祭祀：竜騎士：二刀流
+835001 Anne Deal's House: The Charm of Painting (Woman) -- アン・ディールの館：絵画守（女）
+835100 Ritual: Dragon Knight: One-handed sword -- 祭祀：竜騎士：片手剣
+835200 Ritual: Dragon Knight: One Hand Mallet -- 祭祀：竜騎士：片手槌
+836000 Molten Castle: Samurai Saucer -- 熔鉄城：侍ソーサラー
+836100 Ming-iron castle:Bell Guard 1: -- 熔鉄城：鐘守１：
+836200 Ming-iron castle:Bell Guard 2: -- 熔鉄城：鐘守２：
+836300 Ming-iron castle:Bell Guard 3: -- 熔鉄城：鐘守３：
+836400 Molten Iron Castle: Light Heavy Soldiers -- 熔鉄城：軽快重兵士
+837000 Gap cave: second lap hunting -- 隙間の洞：２周目狩り
+837100 Creus sinus: proximity -- 隙間の洞：近接
+837200 Gap Sinus: Shooting -- 隙間の洞：射撃
+838000 Forest of Shadows: Phantom Enemy 1 -- 虚ろの影の森：幻影敵１
+838100 Forest of Shadows: Phantom Enemy 2 -- 虚ろの影の森：幻影敵２
+840000 Dummy NPC for the winner's contract -- 覇者の契約用ダミーNPC
+841000 Dummy NPC for solar contract -- 太陽の契約用ダミーNPC
+842000 Decaying Giant Forest: In Front of the King's Door: Week 2 Red Spirit 1 -- 朽ちた巨人の森：王の扉前：２週目赤霊１
+843000 Decaying Giant Forest: In Front of the King's Door: Week 2 Red Spirit 2 -- 朽ちた巨人の森：王の扉前：２週目赤霊２
+844000 Decayed Giant Forest: Ground Cracking Square: Week 2 Red Spirit 3 -- 朽ちた巨人の森：地割れ広場：２週目赤霊３
+845000 Decaying Giant Forest: The Second Week Dark Spirit -- 朽ちた巨人の森：２週目闇霊
+846000 Kiseki-gai Gerdra: The Dark Spirit -- 輝石街ジェルドラ：闇霊
+847000 Heide Great Fire Tower: Week 2 Dark Spirit 1 -- ハイデ大火塔：２週目闇霊１
+847100 Heide Great Fire Tower: Week 2 Dark Spirit 2 -- ハイデ大火塔：２週目闇霊２
+848000 Tomb of Immortality: Week 2 Dark Spirit 1 -- 不死廟：２週目闇霊１
+848100 Tomb of Immortality: Dark Spirit 2 (Ghost) -- 不死廟：闇霊２（亡霊）
+849000 King's Castle D'Angheig: Dark Spirit 1 (Ghost) -- 王城ドラングレイグ：闇霊１（亡霊）
+849100 King's Castle D'Angheig: The Dark Spirit 2 -- 王城ドラングレイグ：闇霊２
+849200 King's Castle D'Angheig: The Dark Spirit 3 -- 王城ドラングレイグ：闇霊３
+850000 Anne Deal's House: The Second Week Of Dark Spirits -- アン・ディールの館：２週目闇霊
+851000 Valley of The Reservoir: The Dark Spirit -- 溜まりの谷：闇霊
+852000 Hunting Forest: Red Spirit Level 3 -- 狩猟の森：赤霊レベル３
+853000 King's Castle D'Angheig: Two-Sword Avelin -- 王城ドラングレイグ：二刀流アヴェリン
+853100 King's Castle Drunegreig: Leroy -- 王城ドラングレイグ：リロイ
+853200 King's Castle D'Angheig: Week 2: Dark Spirit 1 -- 王城ドラングレイグ：２週目：闇霊１
+853300 King's Castle D'Angheig: Week 2: Dark Spirits 2 -- 王城ドラングレイグ：２週目：闇霊２
+853400 King's Castle D'Angheig: Week 2: Dark Spirit 3 -- 王城ドラングレイグ：２週目：闇霊３
+853500 King's Castle D'Angheig: The Dark Spirit Key -- 王城ドラングレイグ：闇霊鍵番
+854000 Hidden Port: Dark Spirit (Darth Mall) -- 隠れ港：闇霊（ダースモール）

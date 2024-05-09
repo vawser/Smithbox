@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>SPELL_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 spell_class" />
+    <Field Def="s8 Unk00" />
+    <Field Def="s8 spell_function" />
+    <Field Def="s16 Unk01" />
+    <Field Def="u16 int_requirement" />
+    <Field Def="u16 fth_requirement" />
+    <Field Def="s32 right_bullet_id" />
+    <Field Def="s32 right_damage_id" />
+    
+    <Field Def="f32 left_1h_startup_duration" />
+    <Field Def="f32 left_1h_unknown_duration" />
+    <Field Def="s32 left_1h_anim_startup" />
+    <Field Def="s32 left_1h_anim_cast" />
+    <Field Def="f32 left_1h_stamina_cost" />
+    
+    <Field Def="f32 right_1h_startup_duration" />
+    <Field Def="f32 right_1h_unknown_duration" />
+    <Field Def="s32 right_1h_anim_startup" />
+    <Field Def="s32 right_1h_anim_cast" />
+    <Field Def="f32 right_1h_stamina_cost" />
+    
+    <Field Def="f32 left_2h_startup_duration" />
+    <Field Def="f32 left_2h_unknown_duration" />
+    <Field Def="s32 left_2h_anim_startup" />
+    <Field Def="s32 left_2h_anim_cast" />
+    <Field Def="f32 left_2h_stamina_cost" />
+    
+    <Field Def="f32 right_2h_startup_duration" />
+    <Field Def="f32 right_2h_unknown_duration" />
+    <Field Def="s32 right_2h_anim_startup" />
+    <Field Def="s32 right_2h_anim_cast" />
+    <Field Def="f32 right_2h_stamina_cost" />
+    
+    <Field Def="f32 left_unkA_startup_duration" />
+    <Field Def="f32 left_unkA_unknown_duration" />
+    <Field Def="s32 left_unkA_anim_startup" />
+    <Field Def="s32 left_unkA_anim_cast" />
+    <Field Def="f32 left_unkA_stamina_cost" />
+    
+    <Field Def="f32 right_unkA_startup_duration" />
+    <Field Def="f32 right_unkA_unknown_duration" />
+    <Field Def="s32 right_unkA_anim_startup" />
+    <Field Def="s32 right_unkA_anim_cast" />
+    <Field Def="f32 right_unkA_stamina_cost" />
+    
+    <Field Def="f32 left_unkB_startup_duration" />
+    <Field Def="f32 left_unkB_unknown_duration" />
+    <Field Def="s32 left_unkB_anim_startup" />
+    <Field Def="s32 left_unkB_anim_cast" />
+    <Field Def="f32 left_unkB_stamina_cost" />
+    
+    <Field Def="f32 right_unkB_startup_duration" />
+    <Field Def="f32 right_unkB_unknown_duration" />
+    <Field Def="s32 right_unkB_anim_startup" />
+    <Field Def="s32 right_unkB_anim_cast" />
+    <Field Def="f32 right_unkB_stamina_cost" />
+    
+    <Field Def="f32 Unk29" />
+    <Field Def="u8 Unk30a" />
+    <Field Def="u8 is_area_of_effect_spell" />
+    <Field Def="u8 Unk30c" />
+    <Field Def="u8 Unk30d" />
+    <Field Def="s32 Unk31" />
+    
+    <Field Def="s32 staff_sfx" />
+    <Field Def="u8 is_spawn_on_body" />
+    <Field Def="u8 staff_sfx_dmy_poly_id_1" />
+    <Field Def="u8 staff_sfx_dmy_poly_id_2" />
+    <Field Def="u8 Unk32" />
+    <Field Def="f32 Unk33" />
+    <Field Def="s32 body_sfx" />
+    <Field Def="u8 is_spawn_on_weapon" />
+    <Field Def="u8 body_sfx_dmy_poly_id_1" />
+    <Field Def="u8 body_sfx_dmy_poly_id_2" />
+    <Field Def="u8 Unk34" />
+    <Field Def="f32 Unk35" />
+    <Field Def="f32 Unk36" />
+    <Field Def="f32 Unk37" />
+    <Field Def="f32 startup_speed" />
+    <Field Def="f32 cast_speed" />
+    <Field Def="f32 Unk38" />
+    <Field Def="f32 Unk39" />
+    <Field Def="u8 slots_used" />
+    <Field Def="u8 casts_tier_1" />
+    <Field Def="u8 casts_tier_2" />
+    <Field Def="u8 casts_tier_3" />
+    <Field Def="u8 casts_tier_4" />
+    <Field Def="u8 casts_tier_5" />
+    <Field Def="u8 casts_tier_6" />
+    <Field Def="u8 casts_tier_7" />
+    <Field Def="u8 casts_tier_8" />
+    <Field Def="u8 casts_tier_9" />
+    <Field Def="u8 casts_tier_10" />
+    <Field Def="u8 Unk40" />
+    <Field Def="s32 spell_soul_consume_id" />
+    <Field Def="s32 left_bullet_id" />
+    <Field Def="s32 left_damage_id" />
+  </Fields>
+</PARAMDEF>

@@ -1,0 +1,23 @@
+811 [GEN:811] Darklurker
+1000 [GEN:1000] Tenebrous Rogue
+1002 [GEN:1002] Underworld Deadeye
+1003 [GEN:1003] Tenebrous Rogue
+1004 [GEN:1004] A Chip Off the Ol Rock
+1005 [GEN:1005] Abyss Ironclad
+1006 [GEN:1006] Pretender to the Xanthous Throne
+1007 [GEN:1007] Pretender to the Xanthous Throne
+1008 [GEN:1008] Abyss Ironclad
+1009 [GEN:1009] The Ghost of Princes Past
+1012 [GEN:1012] Shadowveil Assasin
+2000 [GEN:2000] Darklurker (Clone)
+2001 [GEN:2001] Darklurker (Clone)
+2002 [GEN:2002] Darklurker (Clone)
+2003 [GEN:2003] Darklurker (Clone)
+2004 [GEN:2004] Darklurker (Clone)
+2005 [GEN:2005] Darklurker (Clone)
+2006 [GEN:2006] Darklurker (Clone)
+2100 [GEN:2100] Darklurker
+3000 [GEN:3000] Forest Spirit
+3100 [GEN:3100] Forest Spirit
+3200 [GEN:3200] Forest Spirit
+3210 [GEN:3210] Forest Spirit

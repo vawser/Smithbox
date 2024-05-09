@@ -107,23 +107,27 @@ public static class MapAliasBank
                     if (Bank.aliasType is AliasBankType.Map)
                     {
                         var _mapNames = new Dictionary<string, string>();
+                        var entries = Bank.AliasNames.GetEntries("Maps");
 
-                        foreach (var entry in Bank.AliasNames.GetEntries("Maps"))
+                        if (entries != null)
                         {
-                            if (!CFG.Current.MapNameAtlas_ShowUnused)
+                            foreach (var entry in Bank.AliasNames.GetEntries("Maps"))
                             {
-                                if (entry.tags[0] != "unused")
+                                if (!CFG.Current.MapNameAtlas_ShowUnused)
                                 {
-                                    _mapNames.Add(entry.id, entry.name);
-                                }
-                                else
-                                {
-                                    _mapNames.Add(entry.id, entry.name);
+                                    if (entry.tags[0] != "unused")
+                                    {
+                                        _mapNames.Add(entry.id, entry.name);
+                                    }
+                                    else
+                                    {
+                                        _mapNames.Add(entry.id, entry.name);
+                                    }
                                 }
                             }
-                        }
 
-                        MapNames = _mapNames;
+                            MapNames = _mapNames;
+                        }
                     }
                 }
             }

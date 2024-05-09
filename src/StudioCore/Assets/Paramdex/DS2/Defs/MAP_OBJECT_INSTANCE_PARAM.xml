@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="0">
+  <ParamType>MAP_OBJECT_INSTANCE_PARAM</ParamType>
+  <Unk06>0</Unk06>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <Version>201</Version>
+  <Fields>
+    <Field Def="s32 param_id" />
+    <Field Def="s32 obj_bullet_1" />
+    <Field Def="s32 obj_bullet_2" />
+    <Field Def="f32 Unk02" />
+    <Field Def="f32 Unk03" />
+    <Field Def="s32 map_obj_instance_type_id" />
+    <Field Def="u16 Unk04" />
+    <Field Def="u8 Unk05" />
+    <Field Def="u8 Unk06" />
+    <Field Def="u8 Unk07" />
+    <Field Def="u8 Unk08" />
+    <Field Def="u8 default_state" />
+    <Field Def="u8 Unk09" />
+    <Field Def="s32 Unk10" />
+    <Field Def="s32 itemlot_id" />
+  </Fields>
+</PARAMDEF>

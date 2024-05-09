@@ -895,12 +895,14 @@ public class ParamBank
             catch (Exception e)
             {
                 var message = $"Could not apply ParamDef for {fname}";
-                if (Project.Type == ProjectType.DS2S &&
-                    fname is "GENERATOR_DBG_LOCATION_PARAM")
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 {
-                    // Known cases that don't affect standard modmaking
-                    TaskLogs.AddLog(message,
-                        LogLevel.Warning, TaskLogs.LogPriority.Low);
+                    if (fname is "GENERATOR_DBG_LOCATION_PARAM")
+                    {
+                        // Known cases that don't affect standard modmaking
+                        TaskLogs.AddLog(message,
+                            LogLevel.Warning, TaskLogs.LogPriority.Low);
+                    }
                 }
                 else
                 {
@@ -1226,7 +1228,7 @@ public class ParamBank
                     PrimaryBank.LoadParamsDS1R();
                 }
 
-                if (Project.Type == ProjectType.DS2S)
+                if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                 {
                     PrimaryBank.LoadParamsDS2();
                 }
@@ -1274,7 +1276,7 @@ public class ParamBank
                             VanillaBank.LoadVParamsDS1R();
                         }
 
-                        if (Project.Type == ProjectType.DS2S)
+                        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
                         {
                             VanillaBank.LoadVParamsDS2();
                         }
@@ -1351,7 +1353,7 @@ public class ParamBank
         {
             newBank.LoadParamsBBSekiroFromFile(path);
         }
-        else if (Project.Type == ProjectType.DS2S)
+        else if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             List<string> looseParams = GetLooseParamsInDir(looseDir);
             newBank.LoadParamsDS2FromFile(looseParams, path, enemyPath);
@@ -2157,7 +2159,7 @@ public class ParamBank
             SaveParamsDES();
         }
 
-        if (Project.Type == ProjectType.DS2S)
+        if (Project.Type == ProjectType.DS2S || Project.Type == ProjectType.DS2)
         {
             SaveParamsDS2();
         }
