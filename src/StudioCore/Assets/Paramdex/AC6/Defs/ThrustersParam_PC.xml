@@ -6,7 +6,7 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
+    <Field Def="s32 dummyPolyId"></Field>
     <Field Def="s32 thrusterSfxParamId_1"></Field>
     <Field Def="s8 Unk0x08"></Field>
     <Field Def="s8 Unk0x09"></Field>

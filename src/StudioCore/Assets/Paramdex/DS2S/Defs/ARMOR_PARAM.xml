@@ -30,7 +30,8 @@
     <Field Def="f32 durability" />
     <Field Def="u32 repair_cost" />
     <Field Def="f32 poise" />
-    <Field Def="s16 control_parameters_blend_weight" />
+    <Field Def="u8 control_parameters_blend_weight_1h" />
+    <Field Def="u8 control_parameters_blend_weight_2h" />
     <Field Def="s16 item_discovery" />
     <Field Def="s32 Unk15" />
     <Field Def="s32 Unk16" />

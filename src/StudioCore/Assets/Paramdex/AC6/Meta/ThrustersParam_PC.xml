@@ -1,34 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <thrusterSfxParamId_1 AltName="Thruster SFX ID [1]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_2 AltName="Thruster SFX ID [2]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_3 AltName="Thruster SFX ID [3]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_4 AltName="Thruster SFX ID [4]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_5 AltName="Thruster SFX ID [5]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_6 AltName="Thruster SFX ID [6]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_7 AltName="Thruster SFX ID [7]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_8 AltName="Thruster SFX ID [8]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_9 AltName="Thruster SFX ID [9]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_10 AltName="Thruster SFX ID [10]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_11 AltName="Thruster SFX ID [11]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_12 AltName="Thruster SFX ID [12]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_13 AltName="Thruster SFX ID [13]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_14 AltName="Thruster SFX ID [14]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_15 AltName="Thruster SFX ID [15]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_16 AltName="Thruster SFX ID [16]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_17 AltName="Thruster SFX ID [17]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_18 AltName="Thruster SFX ID [18]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_19 AltName="Thruster SFX ID [19]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_20 AltName="Thruster SFX ID [20]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_21 AltName="Thruster SFX ID [21]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_22 AltName="Thruster SFX ID [22]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_23 AltName="Thruster SFX ID [23]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_24 AltName="Thruster SFX ID [24]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_25 AltName="Thruster SFX ID [25]" Refs="ThrustersSfxIdParam_PC" />
+    <dummyPolyId AltName="Dummy Polygon ID" />
+    <thrusterSfxParamId_1 AltName="Thruster SFX ID [1] - Omnidirectional Grounded Continuous Thrust" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_2 AltName="Thruster SFX ID [2] - Forward Continuous Thrust" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_3 AltName="Thruster SFX ID [3] - Backward Continuous Thrust" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_4 AltName="Thruster SFX ID [4] - Right Strafe Continuous Thrust" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_5 AltName="Thruster SFX ID [5] - Left Strafe Continuous Thrust" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_6 AltName="Thruster SFX ID [6] - Forward Quick Boost" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_7 AltName="Thruster SFX ID [7] - Backward Quick Boost" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_8 AltName="Thruster SFX ID [8] - Right Quick Boost" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_9 AltName="Thruster SFX ID [9] - Left Quick Boost" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_10 AltName="Thruster SFX ID [10] - Upwards Continuous Thrust" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_11 AltName="Thruster SFX ID [11] - Tank Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_12 AltName="Thruster SFX ID [12] - Tank Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_13 AltName="Thruster SFX ID [13] - Tank Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_14 AltName="Thruster SFX ID [14] - Tank Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_15 AltName="Thruster SFX ID [15] - Right Turn Quick Boost" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_16 AltName="Thruster SFX ID [16] - Left Turn Quick Boost" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_17 AltName="Thruster SFX ID [17] - Assault Boost Start" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_18 AltName="Thruster SFX ID [18] - Tetrapod Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_19 AltName="Thruster SFX ID [19] - Tetrapod Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_20 AltName="Thruster SFX ID [20] - Tetrapod Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_21 AltName="Thruster SFX ID [21] - Tetrapod Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_22 AltName="Thruster SFX ID [22] - Tetrapod Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_23 AltName="Thruster SFX ID [23] - Tetrapod Legs" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_24 AltName="Thruster SFX ID [24] - Quick Right Turn" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_25 AltName="Thruster SFX ID [25] - Quick Left Turn" Refs="ThrustersSfxIdParam_PC" />
     <thrusterSfxParamId_26 AltName="Thruster SFX ID [26]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_27 AltName="Thruster SFX ID [27]" Refs="ThrustersSfxIdParam_PC" />
-    <thrusterSfxParamId_28 AltName="Thruster SFX ID [28]" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_27 AltName="Thruster SFX ID [27] - Assault Boost End" Refs="ThrustersSfxIdParam_PC" />
+    <thrusterSfxParamId_28 AltName="Thruster SFX ID [28] - Low Power Continuous Thrust" Refs="ThrustersSfxIdParam_PC" Wiki="Occurs when the AC is falling without moving, or the AC is boosting backwards."/>
     <thrusterSfxParamId_29 AltName="Thruster SFX ID [29]" Refs="ThrustersSfxIdParam_PC" />
     <thrusterSfxParamId_30 AltName="Thruster SFX ID [30]" Refs="ThrustersSfxIdParam_PC" />
     <thrusterSfxParamId_31 AltName="Thruster SFX ID [31]" Refs="ThrustersSfxIdParam_PC" />

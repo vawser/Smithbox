@@ -26,7 +26,8 @@
     <durability AltName="Durability" />
     <repair_cost AltName="Repair Cost" />
     <poise AltName="Poise" />
-    <control_parameters_blend_weight AltName="Blend Weight - Hands Up" />
+    <control_parameters_blend_weight_1h AltName="Blend Weight - 1H - Hands Up" />
+    <control_parameters_blend_weight_2h AltName="Blend Weight - 2H - Hands Up" />
     <item_discovery AltName="Additional Item Discovery" />
     <Unk15 AltName="Damage Effect SE or Material" Refs="DamageEffectMaterialParam,DamageEffectSeParam"/>
     <Unk17 AltName="Damage Effect SFX" Refs="DamageEffectSfxParam" />
