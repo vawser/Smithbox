@@ -37,5 +37,12 @@
 324 ARM LOAD LIMIT - EN Recovery Delay
 325 ARM LOAD LIMIT - EN Depleted Recovery Delay
 982 MELEE SPECIALIZATION - Melee Weapon Damage
+600 QB EN Consumption
+610 EN Output
+620 EN Recharge Delay
+700 FCS - Softlock Strength
+701 FCS - Target Tracking (Arms)
+702 FCS - Hardlock Strength
+703 FCS - White Lock Strength (0 is 100%)
 991 ENERGY FIREARM SPECIALIZATION - Weapon Charge Speed
 992 ENERGY FIREARM SPECIALIZATION - Energy Weapon Damage
