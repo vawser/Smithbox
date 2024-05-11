@@ -1,0 +1,1612 @@
+{
+  "games": [
+    {
+      "name": "ds1"
+    },
+    {
+      "name": "bb"
+    },
+    {
+      "name": "ds3"
+    },
+    {
+      "name": "sekiro"
+    },
+    {
+      "name":  "er"
+    }
+  ],
+  "no_control_flow": [
+    // Mostly mutating commands, including most 'wait for' commands
+    // Only needs to be listed here if bank is <2000
+    "1000[09]",
+    "1001[00]",
+    "1001[01]",
+    "1001[02]",
+    "1001[03]",
+    "1001[04]",
+    "1001[05]",
+    "1001[06]",
+    "1001[08]",
+    "1003[00]",
+    "1005[00]"
+  ],
+  "conditions": [
+    // Unconditional
+    {
+      // The lack of a condition group in a control flow instruction.
+      "name": "Always",
+      "skip": "1000[03]",
+      "end": "1000[04]",
+      "goto": "1000[103]",
+      "hidden": true
+    },
+    // System
+    {
+      "name": "CompareConditionGroup",
+      "cond": "0[00]",
+      "wait": "1000[00]",
+      "skip": "1000[01]",
+      "end": "1000[02]",
+      "goto": "1000[101]",
+      "negate_field": "Desired Condition Group State",
+      "as_bool": {
+        "shortname": "ConditionGroup",
+        "true": "PASS"
+      },
+      "hidden": true
+    },
+    {
+      "name": "CompareCompiledConditionGroup",
+      "skip": "1000[07]",
+      "end": "1000[08]",
+      "goto": "1000[107]",
+      "negate_field": "Desired Condition Group State",
+      "as_bool": {
+        "shortname": "CompiledConditionGroup",
+        "true": "PASS"
+      },
+      "hidden": true
+    },
+    {
+      "name": "Compare",
+      "category": "cmp",
+      "games": ["ds1", "bb", "ds3", "sekiro"],
+      "cond": "0[01]",
+      "skip": "1000[05]",
+      "end": "1000[06]",
+      "goto": "1000[105]",
+      "as_compare": {
+        "shortname": "Op",
+        "lhs": "Left-hand Side",
+        "rhs": "Right-hand Side"
+      }
+    },
+    {
+      "name": "Compare",
+      "category": "cmp",
+      "games": ["er"],
+      "cond": "0[02]",
+      "skip": "1000[10]",
+      "end": "1000[11]",
+      "goto": "1000[108]",
+      "as_compare": {
+        "shortname": "Op",
+        "lhs": "Left-hand Side",
+        "rhs": "Right-hand Side"
+      }
+    },
+    {
+      "name": "CompareSigned",
+      "category": "cmp",
+      "games": ["er"],
+      "cond": "0[01]",
+      "skip": "1000[05]",
+      "end": "1000[06]",
+      "goto": "1000[105]",
+      "as_compare": {
+        "shortname": "Signed",
+        // "lhs": "Left-hand Side",
+        "rhs": "Right-hand Side"
+      }
+    },
+    // Timer
+    {
+      "name": "ElapsedSeconds",
+      "category": "time",
+      "cond": "1[00]"
+    },
+    {
+      "name": "ElapsedFrames",
+      "category": "time",
+      "cond": "1[01]"
+    },
+    {
+      "name": "RandomElapsedSeconds",
+      "category": "time",
+      "cond": "1[02]"
+    },
+    {
+      "name": "RandomElapsedFrames",
+      "category": "time",
+      "cond": "1[03]"
+    },
+    {
+      "name": "TimeOfDay",
+      "games": ["er"],
+      "category": "time",
+      "cond": "1[04]"
+    },
+    {
+      "name": "TimeOfDayInRange",
+      "games": ["er"],
+      "category": "time",
+      "cond": "1[05]"
+    },
+    // Event
+    {
+      "name": "EventFlagState",
+      "category": "flag",
+      "cond": "3[00]",
+      "skip": "1003[01]",
+      "end": "1003[02]",
+      "goto": "1003[101]",
+      "negate_field": "Desired Flag State",
+      "as_bools": [{
+        "shortname": "EventFlag",
+        "true": "ON",
+        "false": "OFF",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 0
+        }]
+      },
+      {
+        "shortname": "ThisEvent",
+        "true": "ON",
+        "false": "OFF",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 1
+        }, {
+          "field": "Target Event Flag ID",
+          "value": 0
+        }]
+      },
+      {
+        "shortname": "ThisEventSlot",
+        "true": "ON",
+        "false": "OFF",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 2
+        }, {
+          "field": "Target Event Flag ID",
+          "value": 0
+        }]
+      }]
+    },
+    {
+      "name": "BatchEventFlagsState",
+      "category": "flag",
+      "cond": "3[01]",
+      "skip": "1003[03]",
+      "end": "1003[04]",
+      "goto": "1003[103]",
+      "negate_field": "Desired Flag State",
+      "as_bools": [
+        {
+          "shortname": "AllBatchEventFlags",
+          "true": "All ON",
+          "false": "Not All ON",
+          "required": [{
+            "field": "Target Event Flag Type",
+            "value": 0
+          }]
+        },
+        {
+          "shortname": "AnyBatchEventFlags",
+          "true": "Not All OFF",
+          "false": "All OFF",
+          "required": [{
+            "field": "Target Event Flag Type",
+            "value": 0
+          }]
+        }
+      ]
+    },
+    {
+      "name": "InOutsideArea",
+      "category": "area",
+      "cond": "3[02]",
+      "goto": "1003[200]",
+      "end": "1003[201]",
+      "skip": "1003[202]",
+      "negate_field": "Desired State",
+      "opt_fields": ["Number of Target Characters"],
+      "as_bool": {
+        "shortname": "InArea",
+        "true": "Inside"
+      }
+    },
+    {
+      "name": "EntityInOutsideRadiusOfEntity",
+      "category": "area",
+      "cond": "3[03]",
+      "negate_field": "Desired State",
+      "as_bool": {
+        "shortname": "EntityInRadiusOfEntity",
+        "true": "Inside"
+      }
+    },
+    {
+      "name": "PlayerHasDoesntHaveItem",
+      "category": "item",
+      "cond": "3[04]",
+      "negate_field": "Desired Possession State",
+      "as_bool": {
+        "shortname": "PlayerHasItem",
+        "true": "Owns"
+      }
+    },
+    {
+      "name": "ActionButton",
+      "games": ["ds1", "bb", "ds3", "sekiro"],
+      "category": "act",
+      "cond": "3[05]"
+    },
+    {
+      "name": "HasMultiplayerState",
+      "category": "online",
+      "cond": "3[06]",
+      "skip": "1003[05]",
+      "end": "1003[06]",
+      "goto": "1003[105]"
+    },
+    {
+      "name": "AllPlayersInOutsideArea",
+      "category": "area",
+      "cond": "3[07]",
+      "negate_field": "Desired State",
+      "as_bool": {
+        "shortname": "AllPlayersInArea",
+        "true": "Inside"
+      }
+    },
+    {
+      "name": "PlayerInOutMap",
+      "category": "map",
+      "games": ["ds1", "bb", "ds3", "sekiro", "er"],
+      "cond": "3[08]",
+      "skip": "1003[07]",
+      "end": "1003[08]",
+      "goto": "1003[107]",
+      "negate_field": "Should Player Be Inside",
+      "as_bool": {
+        "shortname": "PlayerInMap"
+      }
+    },
+    {
+      "name": "CompareNumberOfCoopClients",
+      "category": "online",
+      "skip": "1003[09]",
+      "end": "1003[10]",
+      "goto": "1003[109]",
+      "as_compare": {
+        "shortname": "NumberOfCoopClients",
+        "rhs": "Target Number of Clients"
+      }
+    },
+    {
+      "name": "CompareNumberOfClientsOfType",
+      "category": "online",
+      "games": ["ds3", "sekiro"],
+      "skip": "1003[14]",
+      "goto": "1003[15]",
+      "end": "1003[16]",
+      "as_compare": {
+        "shortname": "NumberOfClientsOfType",
+        "rhs": "Target Number of Clients"
+      }
+    },
+    {
+      "name": "CompareNumberOfClientsOfType",
+      "category": "online",
+      "games": ["bb"],
+      "cond": "3[29]",
+      "skip": "1003[14]",
+      "goto": "1003[15]",
+      "end": "1003[16]",
+      "as_compare": {
+        "shortname": "NumberOfClientsOfType",
+        "rhs": "Target Number of Clients"
+      }
+    },
+    {
+      "name": "MultiplayerEvent",
+      "category": "online",
+      "cond": "3[09]"
+    },
+    {
+      "name": "CompareCountEventFlags",
+      "category": "flag",
+      "cond": "3[10]",
+      "negate_field": "Comparison Type",
+      "as_compare": {
+        "shortname": "CountEventFlags",
+        "rhs": "Count Threshold"
+      }
+    },
+    {
+      "name": "CompareWorldTendency",
+      "category": "game",
+      "cond": "3[11]",
+      "negate_field": "Comparison Type",
+      "as_compare": {
+        "shortname": "WorldTendency",
+        "rhs": "Tendency Threshold"
+      }
+    },
+    {
+      "name": "CompareEventValue",
+      "category": "flag",
+      "cond": "3[12]",
+      "negate_field": "Comparison Type",
+      "as_compare": {
+        "shortname": "EventValue",
+        "rhs": "Threshold Value"
+      }
+    },
+    {
+      "name": "ActionButtonBossFog",
+      "category": "act",
+      "cond": "3[13]"
+    },
+    {
+      "name": "DroppedItemsInArea",
+      "category": "item",
+      "cond": "3[14]"
+    },
+    {
+      "name": "DroppedItem",
+      "category": "item",
+      "cond": "3[15]"
+    },
+    {
+      "name": "PlayerHasDoesntHaveItemIncludingBBox",
+      "category": "item",
+      "cond": "3[16]",
+      "negate_field": "Desired Possession State",
+      "as_bool": {
+        "shortname": "PlayerHasItemIncludingBBox",
+        "true": "Owns"
+      }
+    },
+    {
+      "name": "CompareGameCycle",
+      "category": "game",
+      "cond": "3[17]",
+      "as_compare": {
+        "shortname": "GameCycle",
+        "rhs": "Completed Game Cycles Threshold"
+      }
+    },
+    {
+      "name": "ActionButtonLineSegment",
+      "category": "act",
+      "cond": "3[18]"
+    },
+    {
+      "name": "ActionButtonLineSegmentBossRoom",
+      "category": "act",
+      "cond": "3[19]"
+    },
+    {
+      "name": "CompareEventValues",
+      "category": "flag",
+      "cond": "3[20]",
+      "negate_field": "Comparison Type"
+    },
+    {
+      "name": "OwnsDLCState",
+      "category": "game",
+      "cond": "3[21]",
+      "negate_field": "Owns DLC",
+      "as_bool": {
+        "shortname": "OwnsDLC"
+      }
+    },
+    {
+      "name": "OnlineModeState",
+      "category": "online",
+      "cond": "3[22]",
+      "negate_field": "Online Mode",
+      "as_bool": {
+        "shortname": "IsOnline"
+      }      
+    },
+    {
+      "name": "HasDamageType",
+      "category": "dmg",
+      "games": ["bb", "ds3", "sekiro", "er"],
+      "cond": "3[23]"
+    },
+    {
+      "name": "ActionButtonInArea",
+      "category": "act",
+      "games": ["bb", "ds3", "sekiro", "er"],
+      "cond": "3[24]"
+    },
+    {
+      "name": "Unknown323",
+      "games": ["ds1"],
+      "cond": "3[23]"
+    },
+    {
+      "name": "MultiplayerCount",
+      "category": "online",
+      "games": ["ds1"],
+      "cond": "3[24]"
+    },
+    {
+      "name": "PlayerIsNotInOwnWorldState",
+      "category": "online",
+      "games": ["ds3", "sekiro"],
+      "cond": "3[26]",
+      "goto": "1003[12]",
+      "end": "1003[13]",
+      "negate_field": "Is Not In",
+      "as_bool": {
+        "shortname": "PlayerIsNotInOwnWorld"
+      }
+    },
+    {
+      "name": "PlayerIsInWorldType",
+      "category": "online",
+      "games": ["er"],
+      "cond": "3[26]",
+      "skip": "1003[12]",
+      "goto": "1003[13]",
+      "end": "1003[14]",
+      "negate_field": "World Type",
+      "as_bool": {
+        "shortname": "PlayerIsInOwnWorld",
+        "true": "Own World"
+      }
+    },
+    {
+      "name": "PlayerArmorType",
+      "category": "item",
+      "games": ["bb"],
+      "cond": "3[25]"
+    },
+    {
+      "name": "ComparePlayerInsightAmount",
+      "category": "chr",
+      "games": ["bb"],
+      "cond": "3[26]",
+      "as_compare": {
+        "shortname": "PlayerInsightAmount",
+        "rhs": "Target Insight Amount"
+      }
+    },
+    {
+      "name": "GenericDialogChoice",
+      "category": "act",
+      "games": ["bb"],
+      "cond": "3[27]"
+    },
+    {
+      "name": "HasPlayGoState",
+      "category": "game",
+      "games": ["bb"],
+      "cond": "3[28]"
+    },
+    {
+      "name": "MapCeremonyState",
+      "category": "map",
+      "games": ["ds3", "sekiro"],
+      "cond": "3[28]",
+      "negate_field": "Desired State",
+      "as_bool": {
+        "shortname": "MapCeremony",
+        "true": "Enabled"
+      }
+    },
+    {
+      "name": "MultiplayerNetworkPenalized",
+      "category": "online",
+      "games": ["ds3", "sekiro"],
+      "cond": "3[29]"
+    },
+    {
+      "name": "PlayerGender",
+      "category": "chr",
+      "games": ["ds3", "sekiro"],
+      "cond": "3[30]",
+      "negate_field": "Gender"
+    },
+    {
+      "name": "PlayerGender",
+      "category": "chr",
+      "games": ["bb"],
+      "cond": "3[30]",
+      "skip": "1003[11]",
+      "goto": "1003[12]",
+      "end": "1003[13]",
+      "negate_field": "Gender"
+    },
+    {
+      "name": "MapLoaded",
+      "games": ["er"],
+      "cond": "3[30]"
+    },
+    {
+      "name": "OngoingCutsceneFinished",
+      "games": ["ds3", "sekiro"],
+      "category": "act",
+      "cond": "3[31]"
+    },
+    {
+      "name": "WeatherActive",
+      "games": ["er"],
+      "cond": "3[31]"
+    },
+    {
+      "name": "MapHasPermissionToUpdateState",
+      "games": ["er"],
+      "category": "map",
+      "cond": "3[32]",
+      "skip": "1003[203]",
+      "goto": "1003[204]",
+      "end": "1003[205]",
+      "negate_field": "Has Permission",
+      "as_bool": {
+        "shortname": "MapHasPermissionToUpdate"
+      }
+    },
+    {
+      "name": "HollowArenaMatchReadyState",
+      "category": "online",
+      "games": ["ds3"],
+      "cond": "3[32]",
+      "negate_field": "Ready",
+      "as_bool": {
+        "shortname": "HollowArenaMatchReady"
+      }
+    },
+    {
+      "name": "HollowArenaSoloResults",
+      "category": "online",
+      "games": ["ds3"],
+      "cond": "3[33]"
+    },
+    {
+      "name": "FieldBattleBGMActiveState",
+      "games": ["er"],
+      "cond": "3[33]",
+      "negate_field": "Is Active",
+      "as_bool": {
+        "shortname": "FieldBattleBGMActive"
+      }
+    },
+    {
+      "name": "CompareHollowArenaSoloScore",
+      "category": "online",
+      "games": ["ds3"],
+      "cond": "3[34]",
+      "as_compare": {
+        "shortname": "HollowArenaSoloScore",
+        "rhs": "Target Score"
+      }
+    },
+    {
+      "name": "PlayerHasArmorEquipped",
+      "games": ["er"],
+      "cond": "3[34]"
+    },
+    {
+      "name": "HollowArenaTeamResults",
+      "category": "online",
+      "games": ["ds3"],
+      "cond": "3[35]"
+    },
+    {
+      "name": "CeremonyActiveState",
+      "games": ["er"],
+      "cond": "3[35]",
+      "skip": "1003[206]",
+      "goto": "1003[207]",
+      "end": "1003[208]",
+      "negate_field": "Is Active",
+      "as_bool": {
+        "shortname": "CeremonyActive"
+      }
+    },
+    {
+      "name": "HasHollowArenaMatchType",
+      "games": ["ds3"],
+      "category": "online",
+      "goto": "1003[211]"
+    },
+    {
+      "name": "PlayerHasItemEquippedState",
+      "category": "item",
+      "games": ["sekiro"],
+      "cond": "3[34]",
+      "negate_field": "Has Equipped",
+      "as_bool": {
+        "shortname": "PlayerHasItemEquipped"
+      }
+    },
+    {
+      "name": "WeatherLotActiveState",
+      "games": ["er"],
+      "cond": "3[37]",
+      "negate_field": "Is Active",
+      "as_bool": {
+        "shortname": "WeatherLotActive"
+      }
+    },
+    {
+      "name": "SteamDisconnectedState",
+      "games": ["ds3", "sekiro"],
+      "category": "online",
+      "cond": "3[38]",
+      "negate_field": "Disconnected",
+      "as_bool": {
+        "shortname": "SteamDisconnected"
+      }
+    },
+    {
+      "name": "PlayerGender",
+      "category": "chr",
+      "games": ["er"],
+      "cond": "3[38]",
+      "negate_field": "Gender"
+    },
+    {
+      "name": "CompareFriendlyPhantomCount",
+      "category": "online",
+      "games": ["ds3", "sekiro"],
+      "cond": "3[39]",
+      "as_compare": {
+        "shortname": "FriendlyPhantomCount",
+        "rhs": "Target Count"
+      }
+    },
+    {
+      "name": "ArenaMatchReadyState",
+      "category": "online",
+      "games": ["er"],
+      "cond": "3[39]",
+      "negate_field": "Ready",
+      "as_bool": {
+        "shortname": "ArenaMatchReady"
+      }
+    },
+    {
+      "name": "ArenaSoloResults",
+      "category": "online",
+      "games": ["er"],
+      "cond": "3[40]"
+    },
+    {
+      "name": "CompareArenaSoloScore",
+      "category": "online",
+      "games": ["er"],
+      "cond": "3[41]",
+      "as_compare": {
+        "shortname": "ArenaSoloScore",
+        "rhs": "Target Score"
+      }
+    },
+    {
+      "name": "ArenaTeamResults",
+      "category": "online",
+      "games": ["er"],
+      "cond": "3[42]"
+    },
+    {
+      "name": "CompareArenaTeamScore",
+      "category": "online",
+      "games": ["er"],
+      "cond": "3[43]",
+      "as_compare": {
+        "shortname": "ArenaTeamScore",
+        "rhs": "Target Score"
+      }
+    },
+    {
+      "name": "HasArenaMatchType",
+      "games": ["er"],
+      "category": "online",
+      "cond": "3[44]",
+      "skip": "1003[212]",
+      "goto": "1003[213]",
+      "end": "1003[214]"
+    },
+    {
+      "name": "PlayerRespawnedInArena",
+      "category": "online",
+      "games": ["er"],
+      "cond": "3[45]"
+    },
+    // Character
+    {
+      "name": "CharacterDeadAlive",
+      "category": "chr",
+      "cond": "4[00]",
+      "negate_field": "Desired Life State",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterDead",
+        "true": "Dead"
+      }
+    },
+    {
+      "name": "CharacterDamagedBy",
+      "category": "dmg",
+      "cond": "4[01]"
+    },
+    {
+      "name": "CompareHPRatio",
+      "category": "hp",
+      "cond": "4[02]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_compare": {
+        "shortname": "HPRatio",
+        "rhs": "Target HP Ratio"
+      }
+    },
+    {
+      "name": "CharacterType",
+      "category": "chr",
+      "cond": "4[03]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"]
+    },
+    {
+      "name": "CharacterTargetedByState",
+      "category": "chr",
+      "cond": "4[04]",
+      "negate_field": "Should Have",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterTargetedBy"
+      }
+    },
+    {
+      "name": "CharacterHasSpEffectState",
+      "category": "sp",
+      "games": ["ds1", "ds3", "sekiro"],
+      "cond": "4[05]",
+      "goto": "1003[11]",
+      "end": "1003[111]",
+      "skip": "1003[112]",
+      "negate_field": "Should Have",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterHasSpEffect"
+      }
+    },
+    {
+      "name": "CharacterHasSpEffectState",
+      "category": "sp",
+      "games": ["er"],
+      "cond": "4[05]",
+      "skip": "1004[00]",
+      "goto": "1004[01]",
+      "end": "1004[02]",
+      "negate_field": "Should Have",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterHasSpEffect"
+      }
+    },
+    {
+      "name": "CharacterHasSpEffectState",
+      "category": "sp",
+      "games": ["bb"],
+      "cond": "4[05]",
+      "end": "1003[111]",
+      "skip": "1003[112]",
+      "negate_field": "Should Have",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterHasSpEffect"
+      }
+    },
+    {
+      "name": "CompareNPCPartHP",
+      "category": "hp",
+      "cond": "4[06]",
+      "as_compare": {
+        "shortname": "NPCPartHP",
+        "rhs": "HP Threshold"
+      }
+    },
+    {
+      "name": "CharacterBackreadStatusState",
+      "category": "chr",
+      "cond": "4[07]",
+      "negate_field": "Is Backread",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterBackreadStatus"
+      }
+    },
+    {
+      "name": "CharacterHasEventMessageState",
+      "category": "chr",
+      "cond": "4[08]",
+      "negate_field": "Should Have",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterHasEventMessage"
+      }
+    },
+    {
+      "name": "CharacterAIState",
+      "category": "chr",
+      "cond": "4[09]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"]
+    },
+    {
+      "name": "PlayerUsingSkullLanternState",
+      "category": "chr",
+      "cond": "4[10]",
+      "negate_field": "Using Skull Lantern",
+      "as_bool": {
+        "shortname": "PlayerUsingSkullLantern"
+      }
+    },
+    {
+      "name": "PlayersClass",
+      "category": "chr",
+      "cond": "4[11]"
+    },
+    {
+      "name": "PlayersCovenant",
+      "category": "chr",
+      "cond": "4[12]"
+    },
+    {
+      "name": "ComparePlayersSoulLevel",
+      "category": "chr",
+      "cond": "4[13]",
+      "as_compare": {
+        "shortname": "PlayersSoulLevel",
+        "rhs": "Target Soul Level"
+      }
+    },
+    {
+      "name": "CompareCharacterHPValue",
+      "category": "hp",
+      "cond": "4[14]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_compare": {
+        "shortname": "CharacterHPValue",
+        "rhs": "Target HP"
+      }
+    },
+    {
+      "name": "CharacterDrawGroupState",
+      "category": "chr",
+      "games": ["bb", "ds3", "sekiro"],
+      "cond": "4[15]",
+      "negate_field": "Inside DrawGroup",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterInsideDrawGroup"
+      }
+    },
+    {
+      "name": "CharacterRatioDeadAlive",
+      "category": "chr",
+      "games": ["er"],
+      "cond": "4[15]",
+      "negate_field": "Desired Life State",
+      "opt_fields": ["Comparison Type", "Target Ratio"],
+      "as_bool": {
+        "shortname": "CharacterRatioDead",
+        "true": "Dead"
+      }
+    },
+    {
+      "name": "CompareHPRatioNew",
+      "category": "hp",
+      "games": ["sekiro"],
+      "cond": "4[16]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_compare": {
+        "shortname": "HPRatioNew",
+        "rhs": "Target Amount"
+      }
+    },
+    {
+      "name": "Unknown415",
+      "games": ["ds1"],
+      "cond": "4[15]"
+    },
+    {
+      "name": "Unknown416",
+      "games": ["ds1"],
+      "cond": "4[16]"
+    },
+    {
+      "name": "ArenaMatchmaking",
+      "category": "online",
+      "games": ["ds1"],
+      "cond": "4[17]"
+    },
+    {
+      "name": "CharacterRatioHasSpEffectState",
+      "games": ["er"],
+      "category": "sp",
+      "cond": "4[19]",
+      "negate_field": "Should Have",
+      "opt_fields": ["Comparison Type", "Target Ratio"],
+      "as_bool": {
+        "shortname": "CharacterRatioHasSpEffect"
+      }
+    },
+    {
+      "name": "CharacterHasEventMessageStateNew",
+      "games": ["sekiro"],
+      "category": "chr",
+      "cond": "4[21]",
+      "negate_field": "Should Have",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "CharacterHasEventMessageNew"
+      }
+    },
+    {
+      "name": "CharacterAIStateNew",
+      "games": ["sekiro"],
+      "category": "chr",
+      "cond": "4[22]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"]
+    },
+    {
+      "name": "CompareYoelLevelCount",
+      "category": "chr",
+      "cond": "4[26]",
+      "as_compare": {
+        "shortname": "YoelLevelCount",
+        "rhs": "Target Level Count"
+      }
+    },
+    {
+      "name": "CharacterInvadeType",
+      "category": "online",
+      "games": ["ds1", "bb", "ds3", "sekiro"],  // Narrow this down
+      "cond": "4[27]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"]
+    },
+    {
+      "name": "PlayerTargeted",
+      "category": "chr",
+      "games": ["er"],
+      "cond": "4[28]"
+    },
+    {
+      "name": "CharacterInvadeType",
+      "category": "online",
+      "games": ["er"],
+      "cond": "4[31]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"]
+    },
+    {
+      "name": "CharacterChameleonState",
+      "category": "chr",
+      "games": ["ds3"],
+      "cond": "4[28]",
+      "negate_field": "Is Transformed",
+      "as_bool": {
+        "shortname": "IsCharacterChameleon"
+      }
+    },
+    {
+      "name": "ComparePlayerSen",
+      "category": "chr",
+      "games": ["sekiro"],
+      "cond": "4[28]",
+      "as_compare": {
+        "shortname": "PlayerSen",
+        "rhs": "Target Amount"
+      }
+    },
+    {
+      "name": "NPCPartAttributeDamage",
+      "games": ["er"],
+      "category": "chr",
+      "cond": "4[30]"
+    },
+    {
+      "name": "CharacterRidingMountState",
+      "games": ["er"],
+      "category": "chr",
+      "cond": "4[32]",
+      "negate_field": "Is Mounted",
+      "as_bool": {
+        "shortname": "CharacterRidingMount"
+      }
+    },
+    {
+      "name": "PlayerSwimState",
+      "category": "chr",
+      "games": ["sekiro"],
+      "cond": "4[34]"
+    },
+    {
+      "name": "CharacterHasStateInfoState",
+      "category": "chr",
+      "games": ["er"],
+      "cond": "4[34]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "negate_field": "Should Have",
+      "as_bool": {
+        "shortname": "CharacterHasStateInfo"
+      }
+    },
+    {
+      "name": "ActionBitState",
+      "category": "chr",
+      "games": ["sekiro"],
+      "cond": "4[35]",
+      "negate_field": "Bit Set",
+      "as_bool": {
+        "shortname": "ActionBit"
+      }
+    },
+    {
+      "name": "SpecialStandbyEndedFlagState",
+      "games": ["er"],
+      "cond": "4[35]",
+      "skip": "1004[03]",
+      "goto": "1004[04]",
+      "end": "1004[05]",
+      "negate_field": "Desired Flag State",
+      "as_bool": {
+        "shortname": "SpecialStandbyEndedFlag",
+        "true": "ON",
+        "false": "OFF"
+      }
+    },
+    {
+      "name": "PlayerLockedOnState",
+      "category": "chr",
+      "cond": "4[36]",
+      "negate_field": "Locked On",
+      "as_bool": {
+        "shortname": "PlayerLockedOn"
+      }
+    },
+    {
+      "name": "CompareNumberOfCharacterHealthBars",
+      "category": "chr",
+      "cond": "4[37]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_compare": {
+        "shortname": "NumberOfCharacterHealthBars",
+        "rhs": "Target Number of Health Bars"
+      }
+    },
+    {
+      "name": "CompareNumberOfCharacterHealthBarsOther",
+      "category": "chr",
+      "cond": "4[38]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_compare": {
+        "shortname": "NumberOfCharacterHealthBarsOther",
+        "rhs": "Target Number of Health Bars"
+      }
+    },
+    {
+      "name": "CompareCharacterPostureRatio",
+      "category": "hp",
+      "cond": "4[39]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_compare": {
+        "shortname": "CharacterPostureRatio",
+        "rhs": "Target Posture Ratio"
+      }
+    },
+    {
+      "name": "CharacterInViewRangeState",
+      "category": "chr",
+      "cond": "4[43]",
+      "negate_field": "Desired State",
+      "as_bool": {
+        "shortname": "CharacterInViewRange",
+        "true": "Inside"
+      }
+    },
+    {
+      "name": "PlayerActionsEnabledState",
+      "category": "chr",
+      "cond": "4[44]",
+      "negate_field": "Disabled/Enabled",
+      "as_bool": {
+        "shortname": "PlayerActionsEnabled",
+        "true": "Enabled"
+      }
+    },
+    {
+      "name": "EntityLoadedState",
+      "category": "chr",
+      "cond": "4[45]",
+      "negate_field": "Is Loaded",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"],
+      "as_bool": {
+        "shortname": "EntityLoaded"
+      }
+    },
+    // Object
+    {
+      "name": "ObjectDestroyedState",
+      "games": ["ds1", "bb", "ds3", "sekiro"],
+      "category": "obj",
+      "cond": "5[00]",
+      "skip": "1005[01]",
+      "end": "1005[02]",
+      "goto": "1005[101]",
+      "negate_field": "Damage State",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_bool": {
+        "shortname": "ObjectDestroyed",
+        "true": "Destroyed"
+      }
+    },
+    {
+      "name": "AssetDestroyedState",
+      "games": ["er"],
+      "category": "asset",
+      "cond": "5[00]",
+      "skip": "1005[01]",
+      "end": "1005[02]",
+      "goto": "1005[101]",
+      "negate_field": "Damage State",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_bool": {
+        "shortname": "AssetDestroyed",
+        "true": "Destroyed"
+      }
+    },
+    {
+      "name": "ObjectHitBy",
+      "games": ["ds1", "bb", "ds3", "sekiro"],
+      "category": "obj",
+      "cond": "5[01]"
+    },
+    {
+      "name": "AssetHitBy",
+      "games": ["er"],
+      "category": "asset",
+      "cond": "5[01]"
+    },
+    {
+      "name": "ObjActEventFlag",
+      "category": "obj",
+      "cond": "5[02]"
+    },
+    {
+      "name": "CompareObjectHP",
+      "games": ["ds1", "bb", "ds3", "sekiro"],
+      "category": "obj",
+      "cond": "5[03]",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_compare": {
+        "shortname": "ObjectHP",
+        "rhs": "HP Threshold"
+      }
+    },
+    {
+      "name": "CompareAssetHP",
+      "games": ["er"],
+      "category": "asset",
+      "cond": "5[03]",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_compare": {
+        "shortname": "AssetHP",
+        "rhs": "HP Threshold"
+      }
+    },
+    {
+      "name": "AssetRatioDestroyedState",
+      "games": ["er"],
+      "category": "obj",
+      "cond": "5[06]",
+      "as_compare": {
+        "shortname": "AssetRatioDestroyed",
+        "rhs": "Target Ratio"
+      }
+    },
+    {
+      "name": "CompareObjectBurnState",
+      "games": ["ds1", "bb", "ds3", "sekiro"],
+      "category": "obj",
+      "cond": "5[09]",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_compare": {
+        "shortname": "ObjectBurnState",
+        "rhs": "Burn State (Unknown)"
+      }
+    },
+    {
+      "name": "CompareAssetBurnState",
+      "games": ["er"],
+      "category": "asset",
+      "cond": "5[09]",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_compare": {
+        "shortname": "AssetBurnState",
+        "rhs": "Burn State (Unknown)"
+      }
+    },
+    {
+      "name": "ObjectBackreadState",
+      "games": ["ds1", "bb", "ds3", "sekiro"],
+      "category": "obj",
+      "cond": "5[10]",
+      "negate_field": "Is Backread",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_bool": {
+        "shortname": "ObjectBackread"
+      }
+    },
+    {
+      "name": "AssetBackreadState",
+      "games": ["er"],
+      "category": "asset",
+      "cond": "5[10]",
+      "negate_field": "Is Backread",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_bool": {
+        "shortname": "AssetBackread"
+      }
+    },
+    {
+      "name": "ObjectBackreadStateOther",
+      "games": ["ds3", "sekiro"],
+      "category": "obj",
+      "cond": "5[11]",
+      "negate_field": "Is Backread",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"],
+      "as_bool": {
+        "shortname": "ObjectBackreadOther"
+      }
+    },
+    {
+      "name": "AssetRatioBackreadState",
+      "games": ["er"],
+      "category": "obj",
+      "cond": "5[11]",
+      "negate_field": "Is Backread",
+      "opt_fields": ["Comparison Type", "Target Ratio"],
+      "as_bool": {
+        "shortname": "AssetRatioBackread"
+      }
+    },
+    {
+      "name": "ObjectAnimationEnded",
+      "games": ["sekiro"],
+      "category": "obj",
+      "cond": "5[12]",
+      "opt_fields": ["Comparison Type", "Number of Target Objects"]
+    },
+    // Hit
+    {
+      "name": "PlayerMovingOnHit",
+      "category": "hit",
+      "cond": "11[00]"
+    },
+    {
+      "name": "PlayerAttackingOnHit",
+      "category": "hit",
+      "cond": "11[01]"
+    },
+    {
+      "name": "PlayerStandingOnHit",
+      "category": "hit",
+      "cond": "11[02]"
+    },
+    {
+      "name": "HitLoaded",
+      "category": "hit",
+      "cond": "11[03]"
+    },
+    // Map
+    {
+      "name": "MapAlertMusicState",
+      "category": "music",
+      "cond": "12[02]"
+    },
+    {
+      "name": "MusicTransitioningBetweenMaps",
+      "category": "music",
+      "cond": "12[03]"
+    },
+    {
+      "name": "PlayerHasChangedMap",
+      "category": "music",
+      "cond": "12[04]"
+    },
+    {
+      "name": "GameIsLoading",
+      "category": "game",
+      "cond": "12[05]"
+    },
+    // Advanced
+    {
+      "name": "PlayerIsLookingAtEntityState",
+      "category": "chr",
+      "cond": "13[01]",
+      "negate_field": "Looking",
+      "as_bool": {
+        "shortname": "PlayerIsLookingAtEntity"
+      }
+    }
+  ],
+  "shorts": [
+    // Enable/Disable variants
+    {
+      "games": ["er"],
+      "cmd": "2000[02]",
+      "enable": "NetworkSync"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2003[03]",
+      "enable": "Generator"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2003[06]",
+      "enable": "MapHit"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2003[07]",
+      "enable": "MapVisibility"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2003[26]",
+      "enable": "MessageVisibility"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2003[80]",
+      "enable": "TextOnLoadingScreen"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[01]",
+      "enable": "CharacterAI"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[05]",
+      "enable": "Character"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[10]",
+      "enable": "CharacterGravity"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[12]",
+      "enable": "CharacterImmortality"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[15]",
+      "enable": "CharacterInvincibility"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[30]",
+      "enable": "CharacterHPBarDisplay"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[35]",
+      "enable": "CharacterDefaultBackread"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[39]",
+      "enable": "CharacterCollision"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[50]",
+      "enable": "LockOnPoint"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[69]",
+      "enable": "CharacterDisableOnHitUnload"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[70]",
+      "enable": "DistancebasedNetworkUpdateAuthority"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[73]",
+      "enable": "CharacterFadeOnEnable"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2005[03]",
+      "enable": "Asset"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2005[04]",
+      "enable": "AssetTreasure"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2005[06]",
+      "enable": "ObjAct"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2005[13]",
+      "enable": "AssetInvunerability"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2005[14]",
+      "enable": "ObjActAssignIdx"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2011[01]",
+      "enable": "Hit"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2011[02]",
+      "enable": "HitBackreadMask"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2011[03]",
+      "enable": "Hitres"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2012[01]",
+      "enable": "MapPart"
+    },
+    {
+      "games": ["er"],
+      "cmd": "2012[08]",
+      "enable": "AreaWelcomeMessage"
+    },
+
+    // Optional/dummy arguments
+    {
+      "games": ["er"],
+      "cmd": "2000[03]",
+      "opt_fields": ["Dummy"]
+    },
+    {
+      "games": ["er"],
+      "cmd": "2000[05]",
+      "opt_fields": ["Dummy"]
+    },
+    {
+      "games": ["er"],
+      // ForceAnimationPlayback
+      "cmd": "2003[18]",
+      "opt_fields": ["Comparison Type", "Number of Target Characters"]
+    },
+    {
+      "games": ["er"],
+      "cmd": "2003[21]",
+      "opt_fields": ["Dummy"]
+    },
+    {
+      "games": ["er"],
+      "cmd": "2004[38]",
+      "opt_fields": ["Dummy"]
+    },
+    {
+      "games": ["er"],
+      "cmd": "2009[06]",
+      "opt_fields": ["Dummy"]
+    },
+    {
+      "games": ["er"],
+      "cmd": "2009[11]",
+      "opt_fields": ["Dummy"]
+    },
+    {
+      // Legacy name, mistakenly imported from DS3
+      "games": ["er"],
+      "cmd": "2003[70]",
+      "shorts": [{
+        "name": "EnableNetworkInteraction",
+        "hidden": true,
+        "required": [{
+          "field": "Ignore Is My World Check",
+          "value": 1
+        }]
+      }, {
+        "name": "DisableNetworkInteraction",
+        "hidden": true,
+        "required": [{
+          "field": "Ignore Is My World Check",
+          "value": 0
+        }]
+      }]
+    },
+    // Event flag boilerplate
+    {
+      "games": ["er"],
+      "cmd": "2003[66]",
+      "shorts": [{
+        "name": "SetEventFlagID",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 0
+        }]
+      }, {
+        "name": "SetThisEvent",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 1
+        }, {
+          "field": "Target Event Flag ID",
+          "value": 0
+        }]
+      }, {
+        "name": "SetThisEventSlot",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 2
+        }, {
+          "field": "Target Event Flag ID",
+          "value": 0
+        }]
+      }]
+    },
+    {
+      "games": ["er"],
+      "cmd": "2003[69]",
+      "shorts": [{
+        "name": "SetNetworkconnectedEventFlagID",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 0
+        }]
+      }, {
+        "name": "SetNetworkconnectedThisEvent",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 1
+        }, {
+          "field": "Target Event Flag ID",
+          "value": 0
+        }]
+      }, {
+        "name": "SetNetworkconnectedThisEventSlot",
+        "required": [{
+          "field": "Target Event Flag Type",
+          "value": 2
+        }, {
+          "field": "Target Event Flag ID",
+          "value": 0
+        }]
+      }]
+    }
+  ]
+}

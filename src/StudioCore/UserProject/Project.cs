@@ -814,26 +814,6 @@ public static class Project
             }
         }
 
-        if (FeatureFlags.EnablePartialParam && Config.GameType == ProjectType.ER)
-        {
-            ImGui.NewLine();
-            ImGui.AlignTextToFramePadding();
-            ImGui.Text(@"Save partial regulation:  ");
-            ImGui.SameLine();
-            Utils.ImGuiGenericHelpPopup("TODO (disbababled)", "##Help_PartialParam",
-                "TODO: why does this setting exist separately from loose params?");
-            ImGui.SameLine();
-            var partialReg = Config.PartialParams;
-            if (ImGui.Checkbox("##partialparams", ref partialReg))
-            {
-                Config.PartialParams = partialReg;
-            }
-
-            ImGui.SameLine();
-            ImGui.TextUnformatted(
-                "Warning: partial params require merging before use in game.\nRow names on unchanged rows will be forgotten between saves");
-        }
-
         ImGui.NewLine();
 
         ImGui.AlignTextToFramePadding();

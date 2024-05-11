@@ -11,14 +11,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Editors.CutsceneEditor.CutsceneBank;
-using static StudioCore.Editors.EmevdEditor.EventScriptBank;
+using static StudioCore.Editors.EmevdEditor.EmevdBank;
 
 namespace StudioCore.EmevdEditor;
 
-public class EventScriptEditorScreen : EditorScreen
+public class EmevdEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
@@ -30,12 +31,14 @@ public class EventScriptEditorScreen : EditorScreen
     private EMEVD _selectedScript;
     private string _selectedScriptKey;
 
-    public EventScriptEditorScreen(Sdl2Window window, GraphicsDevice device)
+    private EMEVD.Event _selectedEvent;
+
+    public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _propEditor = new PropertyEditor(EditorActionManager);
     }
 
-    public string EditorName => "Event Script Editor##EventScriptEditor";
+    public string EditorName => "EMEVD Editor##EventScriptEditor";
     public string CommandEndpoint => "emevd";
     public string SaveType => "EMEVD";
 
@@ -74,20 +77,17 @@ public class EventScriptEditorScreen : EditorScreen
         }
         else
         {
-            if (!EventScriptBank.IsLoaded)
+            if (!EmevdBank.IsLoaded)
             {
-                if (!CFG.Current.AutoLoadBank_EventScript)
-                {
-                    if (ImGui.Button("Load Event Script Editor"))
-                    {
-                        EventScriptBank.LoadEventScripts();
-                    }
-                }
+                EmevdBank.LoadEventScripts();
             }
 
-            if (EventScriptBank.IsLoaded)
+            if (EmevdBank.IsLoaded)
             {
                 EventScriptFileView();
+                EventScriptEventListView();
+                EventScriptEventInstructionView();
+                EventScriptEventParameterView();
             }
         }
 
@@ -95,15 +95,15 @@ public class EventScriptEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    public void EventScriptFileView()
+    private void EventScriptFileView()
     {
         // File List
         ImGui.Begin("Files##EventScriptFileList");
 
-        ImGui.Text($"File");
+        ImGui.Text($"Files");
         ImGui.Separator();
 
-        foreach (var (info, binder) in EventScriptBank.ScriptBank)
+        foreach (var (info, binder) in EmevdBank.ScriptBank)
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedScriptKey))
             {
@@ -116,24 +116,83 @@ public class EventScriptEditorScreen : EditorScreen
         ImGui.End();
     }
 
+    private void EventScriptEventListView()
+    {
+        ImGui.Begin("Events##EventListView");
+
+        if(_selectedScript != null)
+        {
+            foreach (var evt in _selectedScript.Events)
+            {
+                if (ImGui.Selectable($@" {evt.ID} - {evt.Name} - {evt.RestBehavior}", evt == _selectedEvent))
+                {
+                    _selectedEvent = evt;
+                }
+            }
+        }
+
+        ImGui.End();
+    }
+
+    private void EventScriptEventInstructionView()
+    {
+        ImGui.Begin("Event Instructions##EventInstructionView");
+
+        if(_selectedEvent != null)
+        {
+            foreach (var ins in _selectedEvent.Instructions)
+            {
+                var eventStr = $"{ins.Bank}[{ins.ID}]";
+
+                var eventArgs = "";
+
+                for (int i = 0; i < ins.ArgData.Length; i++)
+                {
+                    eventArgs = eventArgs + $"{ins.ArgData[i]} ";
+                }
+
+                ImGui.Text($"{eventStr} ({eventArgs})");
+            }
+        }
+
+        ImGui.End();
+    }
+
+    private void EventScriptEventParameterView()
+    {
+        ImGui.Begin("Event Paramters##EventParameterView");
+
+        if (_selectedEvent != null)
+        {
+            foreach (var para in _selectedEvent.Parameters)
+            {
+                ImGui.Text($"InstructionIndex: {para.InstructionIndex}");
+                ImGui.Text($"TargetStartByte: {para.TargetStartByte}");
+                ImGui.Text($"SourceStartByte: {para.SourceStartByte}");
+                ImGui.Text($"ByteCount: {para.ByteCount}");
+                ImGui.Text($"UnkID: {para.UnkID}");
+            }
+        }
+
+        ImGui.End();
+    }
+
     public void OnProjectChanged()
     {
-        if (CFG.Current.AutoLoadBank_EventScript)
-            EventScriptBank.LoadEventScripts();
+        EmevdBank.LoadEventScripts();
 
         ResetActionManager();
     }
 
     public void Save()
     {
-        if (EventScriptBank.IsLoaded)
-            EventScriptBank.SaveEventScript(_selectedFileInfo, _selectedScript);
+        EmevdBank.SaveEventScript(_selectedFileInfo, _selectedScript);
     }
 
     public void SaveAll()
     {
-        if (EventScriptBank.IsLoaded)
-            EventScriptBank.SaveEventScripts();
+        if (EmevdBank.IsLoaded)
+            EmevdBank.SaveEventScripts();
     }
 
     private void ResetActionManager()

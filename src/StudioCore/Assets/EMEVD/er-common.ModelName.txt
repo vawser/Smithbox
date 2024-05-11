@@ -1,0 +1,298 @@
+c0000 Human
+c0100 Patrol Dummy
+c0110 Caravan Dummy
+c0120 Bullet Dummy
+c0130 Balloon Dummy
+c1000 Talk Dummy
+c2010 Blaidd
+c2030 Rennala 1
+c2031 Rennala 2
+c2040 Rennala Student
+c2041 Kindred of Rot Larva
+c2050 Ranni
+c2060 The Two Fingers
+c2070 The Three Fingers
+c2100 Black Knife Assassin
+c2110 Beast Clergyman
+c2120 Malenia
+c2130 Margit
+c2131 Defeated Morgott
+c2140 Omen
+c2150 Wisp
+c2160 Finger Reader
+c2170 Finger Reader Enia
+c2180 Melina
+c2190 Radagon
+c2200 Elden Beast
+c2270 Large Crab
+c2271 Small Crab
+c2272 Large Crab 2
+c2273 Small Crab 2
+c2274 Large Crab 3
+c2275 Small Crab 3
+c2276 Large Crab 4
+c2277 Small Crab 4
+c2500 Crucible Knight
+c3000 Castle Guard
+c3010 Banished Knight
+c3020 Castle Guard
+c3050 Commander
+c3060 Grave Skeleton
+c3061 Undead Azula Beastman
+c3070 Dominula Celebrant
+c3080 Imp
+c3100 Bell Bearing Hunter
+c3150 Night's Cavalry
+c3160 Night's Cavalry Horse
+c3170 Albinauric Archer
+c3171 Apostate Albinauric Archer
+c3180 Big Wolf
+c3181 Red Wolf
+c3200 Merchant
+c3201 Frenzied Nomad
+c3210 Nomad Mule
+c3250 Draconic Tree Sentinel
+c3251 Tree Sentinel
+c3252 Loretta
+c3300 Nox Fighter
+c3320 Silver Tear
+c3330 Giant Ball
+c3350 Crystalian
+c3360 Ancestral Follower
+c3370 Ancestral Follower Shaman
+c3400 Grave Warden Duelist
+c3450 Misbegotten
+c3451 Scaly Misbegotten
+c3460 Leonine Misbegotten
+c3470 Albinauric
+c3471 Albinauric 2
+c3500 Skeleton
+c3510 Catacombs Skeleton
+c3550 Sanguine Noble
+c3560 Godskin Apostle
+c3570 Godskin Noble
+c3600 Onyx Lord
+c3610 Small Oracle Envoy
+c3620 Tall Oracle Envoy
+c3630 Fat Oracle Envoy
+c3650 Erdtree Guardian
+c3660 Commoner
+c3661 Putrid Corpse
+c3662 Putrid Corpse 2
+c3664 Cemetery Shade
+c3665 Gatekeeper Gostoc
+c3666 Goldmask
+c3670 Albinauric Lookout
+c3700 Depraved Perfumer
+c3701 Depraved Perfumer 2
+c3702 Raya Lucaria Scholar
+c3703 Page
+c3704 Battle Mage
+c3710 Azur
+c3720 Lusat
+c3730 Graven School
+c3750 Clayman
+c3800 Cleanrot Knight
+c3810 Kindred of Rot
+c3850 Marionette
+c3860 Avionette
+c3900 Fire Monk
+c3901 Godskin Monk
+c3910 Fire Prelate
+c3950 Man-Serpent
+c3970 Beastman of Farum Azula
+c4000 Revenant Follower
+c4020 Revenant
+c4040 Slug
+c4050 Kaiden Sellsword
+c4060 Kaiden Sellsword Horse
+c4070 Wolf
+c4071 Wolf Pack Leader
+c4080 Rat
+c4090 Giant Rat
+c4100 Demi-Human
+c4101 Large Demi-Human
+c4110 Demi-Human Shaman
+c4120 Demi-Human Beastman
+c4130 Demi-Human Queen
+c4140 Snail
+c4150 Basilisk
+c4160 Dog
+c4161 Smaller Dog
+c4162 Farum Azula Dog
+c4163 Farum Azula Dog 2
+c4164 Altus Dog
+c4165 Bleed Dog
+c4166 Caelid Dog
+c4167 Caelid Dog 2
+c4170 Living Mass
+c4171 Living Mass 2
+c4180 Spirit Jellyfish
+c4190 Large Scarab
+c4191 Scarab
+c4192 Extra Large Scarab
+c4200 Bat
+c4201 Old Woman Bat
+c4210 Bladed Talon Eagle
+c4220 Giant Octopus
+c4230 Octopus
+c4240 Fingercreeper
+c4241 Massive Fingercreeper
+c4250 Lesser Fingercreeper
+c4260 Erdtree Burial Watchdog
+c4270 Lion Guardian
+c4280 Giant Ant
+c4281 Giant Ant Sac
+c4290 Bloodhound Knight
+c4300 Wandering Noble
+c4310 Soldier
+c4311 Godrick Soldier
+c4312 Raya Lucaria Soldier
+c4313 Leyndell Soldier
+c4314 Radahn Soldier
+c4315 Mausoleum Soldier
+c4316 Haligtree Soldier
+c4321 Vulgar Militia
+c4340 Mad Pumpkin Head
+c4341 Lesser Pumpkin Head
+c4350 Castle Knight
+c4351 Godrick Knight
+c4352 Cuckoo Knight
+c4353 Leyndell Knight
+c4354 Redmane Knight
+c4355 Mausoleum Knight
+c4356 Haligtree Knight
+c4360 Knight's Horse
+c4361 Godrick Knight's Horse
+c4362 Cuckoo Knight's Horse
+c4363 Leyndell Knight's Horse
+c4364 Redmane Knight's Horse
+c4365 Mausoleum Knight's Horse
+c4366 Haligtree Knight's Horse
+c4370 Foot Soldier
+c4371 Godrick Foot Soldier
+c4372 Raya Lucaria Foot Soldier
+c4373 Leyndell Foot Soldier
+c4374 Radahn Foot Soldier
+c4375 Mausoleum Foot Soldier
+c4376 Haligtree Foot Soldier
+c4377 Highwayman
+c4380 Starcaller
+c4381 Thorn Sorcerer
+c4382 Tunnel Miner
+c4383 Glintstone Miner
+c4384 Big Glintstone Miner
+c4385 Fungal Sorcerer
+c4420 Giant Lobster
+c4430 Abnormal Stone Cluster
+c4440 Fungal Pod
+c4441 Giant Fungal Pod
+c4442 Giant Rotten Pod
+c4450 Walking Mausoleum
+c4460 Maneuverable Flamethrower
+c4470 Iron Virgin
+c4480 Giant Miranda Flower
+c4481 Miranda Flower
+c4482 Giant Miranda Rot Flower
+c4483 Miranda Rot Flower
+c4490 Living Pot
+c4491 Small Living Pot
+c4492 Large Living Pot
+c4500 Flying Dragon
+c4501 Decaying Ekzykes
+c4502 Glintstone Dragon
+c4503 Borealis the Freezing Fog
+c4504 Large Dragonbarrow Dragon
+c4505 Dragonbarrow Dragon
+c4510 Ancient Dragon
+c4511 Lichdragon Fortissax
+c4520 Dragonlord Placidusax
+c4550 Monstrous Dog
+c4560 Monstrous Crow
+c4561 Mohgwyn Monstrous Crow
+c4570 Wormface
+c4580 Wormface 2
+c4600 Troll
+c4601 Liurnia Troll
+c4602 Snow Troll
+c4603 Mine Troll
+c4604 Iji
+c4620 Malformed Star
+c4630 Runebear
+c4640 Ulcerated Tree Spirit
+c4650 Dragonkin Soldier
+c4660 Guardian Golem
+c4670 Ancestor Spirit
+c4680 Fallingstar Beast
+c4690 Grafted Scion
+c4710 God-Devouring Serpent
+c4711 Writhing Mass
+c4720 Godfrey
+c4721 Hoarah Loux
+c4730 Starscourge Radahn
+c4750 Godrick the Grafted
+c4751 Defeated Godrick
+c4760 Fire Giant
+c4770 Gargoyle
+c4800 Mohg
+c4810 Erdtree Avatar
+c4811 Putrid Avatar
+c4820 Omenkiller
+c4910 Magma Wyrm
+c4911 Great Wyrm Theodorix
+c4950 Tibia Mariner
+c4960 Giant Skeleton Torso
+c4980 Death Rite Bird
+c6001 Eagle
+c6010 Deer
+c6031 Bear
+c6040 Owl
+c6050 Boar
+c6060 Wild Mouflon
+c6070 Guillemot
+c6080 Giant Dragonfly
+c6081 Giant Dragonfly 2
+c6082 Aeonia Giant Dragonfly
+c6090 Turtle
+c6091 Giant Turtle
+c6100 Springhare
+c7000 Fallen Hawks Soldier
+c7100 Ancient Hero of Zamor
+c8000 Torrent
+c8100 Ballista
+c8101 Giant Ballista
+c8110 Dragon-Faced Flamethrower
+c8120 Merciless Chariot
+# Shiny Item = Invisible
+AEG003_316 Shiny Item
+AEG003_336 Unknown
+AEG007_706 Snowy Open Coffin
+AEG099_004 Book Imp
+AEG099_013 Chest with Chain
+AEG099_070 Map Pillar
+AEG099_072 Snowy Map Pillar
+AEG099_075 Crystal Tear Basin
+AEG099_090 Shiny Item
+AEG100_100 Greataxe Caravan Chest
+AEG100_101 Caravan Chest
+AEG099_371 Painting
+AEG099_377 Open Coffin
+AEG099_385 Painting
+AEG099_386 Painting
+AEG099_387 Painting
+AEG099_388 Painting
+AEG099_389 Painting
+AEG099_391 Painting
+AEG099_600 Smouldering Corpse
+AEG099_610 Corpse
+AEG099_620 Robed Corpse
+AEG099_630 Chest
+AEG099_631 Lidded River Chest
+AEG099_632 Lidded Farum Azula Chest
+AEG099_633 Stone Chest
+AEG099_635 Glowing Statue
+AEG099_641 Golden Veil Corpse
+AEG099_812 Unknown
+AEG099_990 Shiny Item
+AEG099_991 Great Rune
+AEG237_062 Horned Remains

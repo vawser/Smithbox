@@ -101,17 +101,6 @@ public class ProjectWindow
                         Project.Config.UseLooseParams = useLoose;
                     ImguiUtils.ShowHoverTooltip("Loose params means the .PARAM files will be saved outside of the regulation.bin file.\n\nFor Dark Souls II: Scholar of the First Sin, it is recommended that you enable this if add any additional rows.");
                 }
-
-                var usepartial = Project.Config.PartialParams;
-                if (FeatureFlags.EnablePartialParam || usepartial)
-                {
-                    if (Project.Config.GameType == ProjectType.ER &&
-                    ImGui.Checkbox("Partial params", ref usepartial))
-                        Project.Config.PartialParams = usepartial;
-                    ImguiUtils.ShowHoverTooltip("Partial params.");
-                }
-
-
             }
 
             ImGui.EndTabItem();

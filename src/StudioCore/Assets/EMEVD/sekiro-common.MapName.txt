@@ -1,0 +1,9 @@
+m10_00_00_00 Hirata Estate
+m11_00_00_00 Ashina Outskirts
+m11_01_00_00 Ashina Castle
+m11_02_00_00 Ashina Reservoir
+m13_00_00_00 Abandoned Dungeon
+m15_00_00_00 Mibu Village
+m17_00_00_00 Sunken Valley
+m20_00_00_00 Senpou Temple
+m25_00_00_00 Fountainhead Palace

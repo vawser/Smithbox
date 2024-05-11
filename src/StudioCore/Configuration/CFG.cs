@@ -242,8 +242,6 @@ public class CFG
     public bool AutoLoadBank_Material = false;
     public bool AutoLoadBank_Particle = true;
     public bool AutoLoadBank_EventScript = false;
-    public bool AutoLoadBank_TalkScript = false;
-    public bool AutoLoadBank_Textures = false;
     public bool AutoLoadBank_Behavior = false;
 
     //****************************

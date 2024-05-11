@@ -1,0 +1,20 @@
+m30_00_00_00 High Wall of Lothric
+m30_01_00_00 Lothric Castle
+m31_00_00_00 Undead Settlement
+m32_00_00_00 Archdragon Peak
+m33_00_00_00 Farron Keep
+m34_01_00_00 Grand Archives
+m35_00_00_00 Cathedral of the Deep
+m37_00_00_00 Irithyll of the Boreal Valley
+m38_00_00_00 Catacombs of Carthus, Smouldering Lake
+m39_00_00_00 Irithyll Dungeon, Profaned Capital
+m40_00_00_00 Firelink Shrine, Untended Graves
+m41_00_00_00 Kiln of the First Flame
+m45_00_00_00 Painted World of Ariandel
+m46_00_00_00 Arena - Grand Roof
+m47_00_00_00 Arena - Kiln of Flame
+m50_00_00_00 Dreg Heap
+m51_00_00_00 The Ringed City
+m51_01_00_00 Filianore's Rest
+m53_00_00_00 Arena - Dragon Ruins
+m54_00_00_00 Arena - Round Plaza

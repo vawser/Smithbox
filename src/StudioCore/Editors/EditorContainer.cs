@@ -30,8 +30,8 @@ public static class EditorContainer
     public static GparamEditorScreen GparamEditor { get; set; }
     public static MaterialEditorScreen MaterialEditor { get; set; }
     public static ParticleEditorScreen ParticleEditor { get; set; }
-    public static EventScriptEditorScreen ScriptEditor { get; set; }
-    public static TalkScriptEditorScreen TalkEditor { get; set; }
+    public static EmevdEditorScreen ScriptEditor { get; set; }
+    public static EsdEditorScreen TalkEditor { get; set; }
     public static TextureViewerScreen TextureViewer { get; set; }
     public static BehaviorEditorScreen BehaviorEditor { get; set; }
 }

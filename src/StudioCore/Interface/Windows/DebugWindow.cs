@@ -20,7 +20,7 @@ using StudioCore.Formats;
 
 namespace StudioCore.Interface.Windows;
 
-public class DebugWindow : IResourceEventListener
+public class DebugWindow
 {
     private bool MenuOpenState;
 
@@ -40,12 +40,7 @@ public class DebugWindow : IResourceEventListener
 
     private Task _loadingTask;
 
-    private unsafe void TestSection(GraphicsDevice gDevice)
-    {
-        
-    }
-
-    public void Display(GraphicsDevice gDevice)
+    public void Display()
     {
         var scale = Smithbox.GetUIScale();
 
@@ -62,124 +57,36 @@ public class DebugWindow : IResourceEventListener
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(20.0f, 10.0f) * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.IndentSpacing, 20.0f * scale);
 
-        
-        if (ImGui.Begin("Tests##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
+        if (ImGui.Begin("Debug##TestWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            TestSection(gDevice);
+            ImGui.BeginTabBar("##DebugTabs");
 
-            ImGui.Columns(4);
-
-            // Actions 
-            if (ImGui.Button("Read Layout File"))
+            if (ImGui.BeginTabItem("Actions"))
             {
-                string sourcePath = $@"F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game\\menu\\hi\01_common.sblytbnd.dcx";
+                DisplayActions();
 
-                ShoeboxLayoutContainer container = new ShoeboxLayoutContainer(sourcePath);
-                foreach(var layout in container.Layouts)
-                {
-                    foreach(var texAtlas in layout.Value.TextureAtlases)
-                    {
-                        foreach (var subText in texAtlas.SubTextures)
-                        {
-                            TaskLogs.AddLog($"{subText.Name}");
-                            TaskLogs.AddLog($"{subText.X}");
-                            TaskLogs.AddLog($"{subText.Y}");
-                            TaskLogs.AddLog($"{subText.Width}");
-                            TaskLogs.AddLog($"{subText.Height}");
-                            TaskLogs.AddLog($"{subText.Half}");
-                        }
-                    }
-                }
+                ImGui.EndTabItem();
+            }
+            if (ImGui.BeginTabItem("Tests"))
+            {
+                DisplayTests();
+
+                ImGui.EndTabItem();
+            }
+            if (ImGui.BeginTabItem("ImGui"))
+            {
+                DisplayImGuiDemo();
+
+                ImGui.EndTabItem();
+            }
+            if (ImGui.BeginTabItem("Soapstone"))
+            {
+                DisplayTasks();
+
+                ImGui.EndTabItem();
             }
 
-            if (ImGui.Button("Dump Uncompressed Files"))
-            {
-                string sourcePath = "F:\\SteamLibrary\\steamapps\\common\\ARMORED CORE VI FIRES OF RUBICON\\Game\\map\\msld";
-                string destPath = "C:\\Users\\benja\\Programming\\C#\\Smithbox\\Dump";
-                string ext = $"*.msld.dcx";
-
-                foreach(string path in Directory.GetFiles(sourcePath, ext) )
-                {
-                    TaskLogs.AddLog($"{path}");
-                    string name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-
-                    var bnd = BND4.Read(path);
-                    bnd.Files.Where(f => f.Name.EndsWith(".msld")).ToList().ForEach(f => File.WriteAllBytes($@"{destPath}\\msld\\{name}", f.Bytes.ToArray()));
-                }
-            }
-
-            if (ImGui.Button("Force Crash"))
-            {
-                var badArray = new int[2];
-                var crash = badArray[5];
-            }
-
-            if (ImGui.Button("Reset CFG.Current.Debug_FireOnce"))
-            {
-                CFG.Current.Debug_FireOnce = false;
-            }
-
-            if (ImGui.Button("Dump FLVER Layouts"))
-            {
-                DumpFlverLayouts();
-            }
-
-            // Imgui
-            ImGui.NextColumn();
-
-            if (ImGui.Button("Demo"))
-            {
-                _showImGuiDemoWindow = !_showImGuiDemoWindow;
-            }
-
-            if (ImGui.Button("Metrics"))
-            {
-                _showImGuiMetricsWindow = !_showImGuiMetricsWindow;
-            }
-
-            if (ImGui.Button("Debug Log"))
-            {
-                _showImGuiDebugLogWindow = !_showImGuiDebugLogWindow;
-            }
-
-            if (ImGui.Button("Stack Tool"))
-            {
-                _showImGuiStackToolWindow = !_showImGuiStackToolWindow;
-            }
-
-            // Tests
-            ImGui.NextColumn();
-
-            if (ImGui.Button("MSBE read/write test"))
-            {
-                MSBReadWrite.Run();
-            }
-
-            if (ImGui.Button("MSB_AC6 Read/Write Test"))
-            {
-                MSB_AC6_Read_Write.Run();
-            }
-
-            if (ImGui.Button("BTL read/write test"))
-            {
-                BTLReadWrite.Run();
-            }
-
-            if (ImGui.Button("Insert unique rows IDs into params"))
-            {
-                ParamUniqueRowFinder.Run();
-            }
-
-            // Live Tasks
-            ImGui.NextColumn();
-
-            if (TaskManager.GetLiveThreads().Count > 0)
-            {
-                foreach (var task in TaskManager.GetLiveThreads())
-                {
-                    ImGui.Text(task);
-                }
-            }
+            ImGui.EndTabBar();
         }
 
         ImGui.End();
@@ -188,206 +95,67 @@ public class DebugWindow : IResourceEventListener
         ImGui.PopStyleColor(5);
     }
 
-    private string sourceMap = "";
-    private string sourcePath = "";
-    private string destPath = "";
-
-    private void DumpFlverLayouts()
+    private void DisplayActions()
     {
-        if (PlatformUtils.Instance.SaveFileDialog("Save Flver layout dump", new[] { FilterStrings.TxtFilter },
-                out var path))
+        if (ImGui.Button("Action"))
         {
-            using (StreamWriter file = new(path))
-            {
-                foreach (KeyValuePair<string, FLVER2.BufferLayout> mat in FlverResource.MaterialLayouts)
-                {
-                    file.WriteLine(mat.Key + ":");
-                    foreach (FLVER.LayoutMember member in mat.Value)
-                    {
-                        file.WriteLine($@"{member.Index}: {member.Type.ToString()}: {member.Semantic.ToString()}");
-                    }
-
-                    file.WriteLine();
-                }
-            }
+            
         }
     }
 
-    private void AssignEntityGroupsForAllCharacters()
+    private void DisplayImGuiDemo()
     {
-        IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = MapEditorState.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
-
-        int printId = 400005300;
-
-        foreach (var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
+        if (ImGui.Button("Demo"))
         {
-            TaskLogs.AddLog($"{entry.id} - {entry.name} - {printId}");
-            printId = printId + 1;
+            _showImGuiDemoWindow = !_showImGuiDemoWindow;
         }
 
-        foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
+        if (ImGui.Button("Metrics"))
         {
-            var rootPath = $"{Project.GameRootDirectory}\\map\\MapStudio\\{lm.Key}.msb.dcx";
-            var filepath = $"{Project.GameModDirectory}\\map\\MapStudio\\{lm.Key}.msb.dcx";
+            _showImGuiMetricsWindow = !_showImGuiMetricsWindow;
+        }
 
-            if(!File.Exists(filepath)) 
-            { 
-                File.Copy(rootPath, filepath);
-            }
+        if (ImGui.Button("Debug Log"))
+        {
+            _showImGuiDebugLogWindow = !_showImGuiDebugLogWindow;
+        }
 
-            MSBE map = MSBE.Read(filepath);
-
-            // Enemies
-            foreach (var part in map.Parts.Enemies)
-            {
-                MSBE.Part.Enemy enemy = part;
-
-                int currentChrEntityID = 400005300;
-
-                foreach(var entry in ModelAliasBank.Bank.AliasNames.GetEntries("Characters"))
-                {
-                    if(entry.id == enemy.ModelName)
-                    {
-                        // Break out and then use the currentChrEntityID
-                        break;
-                    }
-
-                    currentChrEntityID = currentChrEntityID + 1;
-                }
-
-                if (!enemy.EntityGroupIDs.Any(x => x == currentChrEntityID))
-                {
-                    for (int i = 0; i < enemy.EntityGroupIDs.Length; i++)
-                    {
-                        if (enemy.EntityGroupIDs[i] == 0)
-                        {
-                            enemy.EntityGroupIDs[i] = (uint)currentChrEntityID;
-
-                            TaskLogs.AddLog($"Added new Entity Group ID {CFG.Current.Toolbar_EntityGroupID} to {enemy.Name}.");
-                            break;
-                        }
-                    }
-                }
-            }
-
-            map.Write(filepath);
+        if (ImGui.Button("Stack Tool"))
+        {
+            _showImGuiStackToolWindow = !_showImGuiStackToolWindow;
         }
     }
 
-    private void CollectTextures()
+    private void DisplayTasks()
     {
-        ImGui.Text("Collect Textures");
-
-        ImGui.InputText("Source Map:", ref sourceMap, 1024);
-
-        ImGui.InputText("Destination:", ref destPath, 1024);
-        ImGui.SameLine();
-        if (ImGui.Button("Select##destSelect"))
+        if (TaskManager.GetLiveThreads().Count > 0)
         {
-            if (PlatformUtils.Instance.OpenFolderDialog("Choose destination directory", out var path))
+            foreach (var task in TaskManager.GetLiveThreads())
             {
-                destPath = path;
+                ImGui.Text(task);
             }
         }
-
-        if (ImGui.Button("Collect"))
-        {
-            List<string> sourcePaths = new List<string>
-            {
-                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0000-tpfbhd",
-                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0001-tpfbhd",
-                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0002-tpfbhd",
-                $"{Project.GameRootDirectory}\\map\\{sourceMap}\\{sourceMap}_0003-tpfbhd"
-            };
-
-            List<string> witchyEntries = new List<string>();
-
-            foreach(var srcPath in sourcePaths)
-            {
-                List<string> newEntries = MoveTextures(srcPath, destPath);
-                foreach(var entry in newEntries)
-                {
-                    witchyEntries.Add(entry);
-                }
-            }
-
-            File.WriteAllLines(Path.Combine(destPath, "_entries.txt"), witchyEntries);
-        }
     }
-
-    private List<string> MoveTextures(string pSrcPath, string pDstPath)
+    private void DisplayTests()
     {
-        List<string> entries = new List<string>();
-
-        if (Directory.Exists(pSrcPath))
+        if (ImGui.Button("MSBE read/write test"))
         {
-            foreach (var entry in Directory.GetDirectories(pSrcPath))
-            {
-                TaskLogs.AddLog($"{entry}");
-
-                foreach (var fEntry in Directory.GetFiles(entry))
-                {
-                    var srcPath = fEntry;
-                    var filename = Path.GetFileName(fEntry);
-                    var dstPath = Path.Combine(pDstPath, filename);
-
-                    if (fEntry.Contains(".dds"))
-                    {
-                        TaskLogs.AddLog($"{fEntry}");
-
-                        var format = 0;
-                        // Color
-                        if (fEntry.Contains("_a.dds"))
-                        {
-                            TaskLogs.AddLog($"Color");
-                            format = 0;
-                        }
-                        // Metallic
-                        if (fEntry.Contains("_m.dds"))
-                        {
-                            TaskLogs.AddLog($"Metallic");
-                            format = 103;
-                        }
-                        // Reflectance
-                        if (fEntry.Contains("_r.dds"))
-                        {
-                            TaskLogs.AddLog($"Reflectance");
-                            format = 0;
-                        }
-                        // Normal
-                        if (fEntry.Contains("_n.dds"))
-                        {
-                            TaskLogs.AddLog($"Normal");
-                            format = 106;
-                        }
-                        // Normal
-                        if (fEntry.Contains("_v.dds"))
-                        {
-                            TaskLogs.AddLog($"Volume");
-                            format = 104;
-                        }
-
-                        if (File.Exists(srcPath))
-                        {
-                            entries.Add($"<texture>\r\n      <name>{filename}</name>\r\n      <format>{format}</format>\r\n      <flags1>0x00</flags1>\r\n    </texture>");
-
-                            File.Copy(srcPath, dstPath, true);
-                        }
-                    }
-                }
-            }
+            MSBReadWrite.Run();
         }
 
-        return entries;
-    }
+        if (ImGui.Button("MSB_AC6 Read/Write Test"))
+        {
+            MSB_AC6_Read_Write.Run();
+        }
 
-    public void OnResourceLoaded(IResourceHandle handle, int tag)
-    {
-        throw new NotImplementedException();
-    }
+        if (ImGui.Button("BTL read/write test"))
+        {
+            BTLReadWrite.Run();
+        }
 
-    public void OnResourceUnloaded(IResourceHandle handle, int tag)
-    {
-        throw new NotImplementedException();
+        if (ImGui.Button("Insert unique rows IDs into params"))
+        {
+            ParamUniqueRowFinder.Run();
+        }
     }
 }

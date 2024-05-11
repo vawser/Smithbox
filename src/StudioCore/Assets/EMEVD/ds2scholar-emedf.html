@@ -1,0 +1,1183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dark Souls II Scholar EMEDF for DarkScript3</title>
+
+<script>
+let hist = {};
+function showHide(clicked, show, hide, hidec) {
+    if (show) {
+        show.split(' ').forEach(c => {
+            Array.from(document.getElementsByClassName(c)).forEach(el => {
+                el.classList.remove(hidec);
+            });
+        });
+    }
+    if (hide) {
+        hide.split(' ').forEach(c => {
+            Array.from(document.getElementsByClassName(c)).forEach(el => {
+                el.classList.add(hidec);
+            });
+        });
+    }
+    Array.from(clicked.closest('.showhide').getElementsByClassName('showbutton')).forEach(button => {
+        button.classList.remove('showhighlight');
+    });
+    clicked.classList.add('showhighlight');
+    if (clicked.id) {
+        const last = parseInt(clicked.id.slice(-1));
+        if (clicked.id.indexOf('def') >= 0) {
+            delete hist[hidec];
+        } else if (!isNaN(last)) {
+            hist[hidec] = last;
+        }
+        const entries = Object.entries(hist);
+        if (entries.length == 0) {
+            window.history.replaceState(null, null, window.location.pathname);
+        } else {
+            window.history.replaceState(null, null, '?' + entries.map(([a, b]) => `${a}=${b}`).join('&'));
+        }
+    }
+}
+window.onload = function() {
+    const url = new URL(window.location.href);
+    ['hideunused', 'hideusageinfo', 'hidecond'].forEach(name => {
+        const val = url.searchParams.get(name);
+        if (val) {
+            const button = document.getElementById(name + val);
+            if (button) {
+                button.onclick();
+            }
+        }
+    });
+};
+</script>
+<style>
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0 20px;
+}
+
+a {
+    color: #4D4DFF;
+    text-decoration: none;
+}
+
+a:visited:not(.selfref) {
+    color: #4D4DFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.selfref, a.selfref:visited {
+    color: #000000;
+}
+
+code, pre {
+    font-family: 'Monospace Font Hack', monospace;
+}
+
+button.showbutton {
+    font-family: inherit!important;
+    background: none!important;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    padding: 0!important;
+}
+
+button.showhighlight {
+    font-weight: bold;
+}
+
+.bigsection {
+    background-color: #FDECF5;
+    margin-bottom: 25px;
+    padding: 5px 15px 15px 15px;
+}
+
+section {
+    background-color: #F1FAFD;
+}
+
+.instructions h3 {
+    background-color: #FFFFF0;
+    padding: 10px;
+}
+
+.condition_functions h3 {
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+.enums h3 {
+    background-color: #E9DBF3;
+    padding: 10px;
+}
+
+.sectioncontents {
+    padding: 0 10px 5px 10px;
+}
+
+.sectionusage {
+    color: #664A59;
+    font-size: 80%;
+}
+
+.enumusage {
+    color: #664A59;
+    font-size: 80%;
+    margin-left: 10px;
+}
+
+.sectionusage.sectionunused, .enumunused, .optarg {
+    color: #999;
+}
+
+.conddetails {
+    font-size: 90%;
+    display: inline-block;
+    margin: 5px 0 3px 15px;
+}
+
+.condcomp {
+    color: #888;
+    font-style: italic;
+}
+
+.simplelist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hideunused, .hideusageinfo, .hidecond {
+    display: none;
+}
+
+.sectioninfo {
+    font-size: 70%;
+    margin-left: 10px;
+}
+
+</style>
+</head>
+<body>
+<h1>Dark Souls II Scholar EMEDF for DarkScript3</h1>
+<p class="toc"><a href="#Instructions">Instructions</a> | <a href="#Enums">Enums</a></p>
+
+<p class="showhide">
+<button id="hideunused1" class="showbutton" onclick="showHide(this, '', 'unused', 'hideunused')">Hide unused</button> |
+<button id="hideunuseddef" class="showbutton showhighlight" onclick="showHide(this, 'unused', '', 'hideunused')">Show unused</button>
+</p>
+<p class="showhide">
+<button id="hideusageinfo1" class="showbutton" onclick="showHide(this, '', 'usageinfo', 'hideusageinfo')">Hide usage info</button> |
+<button id="hideusageinfodef" class="showbutton showhighlight" onclick="showHide(this, 'usageinfo', '', 'hideusageinfo')">Show usage info</button>
+</p>
+<div class="bigsection instructions"><h1 id="Instructions"><a href="#Instructions" class="selfref">Instructions</a></h1>
+<h2 id="1000_Character"><a href="#1000_Character" class="selfref">1000 - Character</a></h2>
+<section class="instr">
+<h3 id="ModifyStatAdditively"><a href="#ModifyStatAdditively" class="selfref"><code>ModifyStatAdditively</code></a> <span class="sectioninfo">Instruction 1000[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<pre>ModifyStatAdditively(
+    byte&lt;<a href="#AdditiveStatType">AdditiveStatType</a>&gt; statType, 
+    float duration, 
+    byte amount)</pre></div></section>
+<section class="instr">
+<h3 id="ModifyStatMultiplicatively"><a href="#ModifyStatMultiplicatively" class="selfref"><code>ModifyStatMultiplicatively</code></a> <span class="sectioninfo">Instruction 1000[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<pre>ModifyStatMultiplicatively(
+    byte&lt;<a href="#MultiplicativeStatType">MultiplicativeStatType</a>&gt; statType, 
+    float duration, 
+    float amount)</pre></div></section>
+<section class="instr">
+<h3 id="ApplyChameleonDisguise"><a href="#ApplyChameleonDisguise" class="selfref"><code>ApplyChameleonDisguise</code></a> <span class="sectioninfo">Instruction 1000[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell</p>
+<pre>ApplyChameleonDisguise(
+    int unknown1, 
+    int disguiseIndex, 
+    int unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="SetStateInfo"><a href="#SetStateInfo" class="selfref"><code>SetStateInfo</code></a> <span class="sectioninfo">Instruction 1000[03]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<pre>SetStateInfo(
+    int&lt;<a href="#StateInfoType">StateInfoType</a>&gt; stateInfo, 
+    float duration)</pre></div></section>
+<section class="instr">
+<h3 id="ModifyJump"><a href="#ModifyJump" class="selfref"><code>ModifyJump</code></a> <span class="sectioninfo">Instruction 1000[04]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectArmor</p>
+<pre>ModifyJump(
+    float unknown1, 
+    float unknown2, 
+    float unknown3, 
+    float unknown4, 
+    float unknown5, 
+    float unknown6, 
+    float unknown7)</pre></div></section>
+<section class="instr">
+<h3 id="ReplaceFistsWithAlternateWeapon"><a href="#ReplaceFistsWithAlternateWeapon" class="selfref"><code>ReplaceFistsWithAlternateWeapon</code></a> <span class="sectioninfo">Instruction 1000[05]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>ReplaceFistsWithAlternateWeapon(
+    int unknown, 
+    int righthandWeaponId, 
+    int lefthandWeaponId, 
+    int powerstancedWeaponId)</pre></div></section>
+<section class="instr">
+<h3 id="ModifyBowProperties"><a href="#ModifyBowProperties" class="selfref"><code>ModifyBowProperties</code></a> <span class="sectioninfo">Instruction 1000[06]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectWeapon</p>
+<pre>ModifyBowProperties(
+    short unknown1, 
+    short&lt;<a href="#BowType">BowType</a>&gt; bowType, 
+    float unknown3, 
+    float unknown4, 
+    float unknown5, 
+    float unknown6, 
+    float unknown7, 
+    float unknown8)</pre></div></section>
+<section class="instr">
+<h3 id="PlaySEWhenEnemiesNearbyPlayer"><a href="#PlaySEWhenEnemiesNearbyPlayer" class="selfref"><code>PlaySEWhenEnemiesNearbyPlayer</code></a> <span class="sectioninfo">Instruction 1000[07]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>PlaySEWhenEnemiesNearbyPlayer(
+    float unknown1, 
+    float unknown2, 
+    float unknown3, 
+    float unknown4, 
+    float unknown5, 
+    int soundId)</pre></div></section>
+<section class="instr">
+<h3 id="ModifyEnemyAggroToPlayer"><a href="#ModifyEnemyAggroToPlayer" class="selfref"><code>ModifyEnemyAggroToPlayer</code></a> <span class="sectioninfo">Instruction 1000[08]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>ModifyEnemyAggroToPlayer(
+    float unknown)</pre></div></section>
+<section class="instr">
+<h3 id="ModifyProperty"><a href="#ModifyProperty" class="selfref"><code>ModifyProperty</code></a> <span class="sectioninfo">Instruction 1000[09]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<pre>ModifyProperty(
+    byte&lt;<a href="#PlayerPropertyType">PlayerPropertyType</a>&gt; playerProperty, 
+    float duration, 
+    int amount)</pre></div></section>
+<section class="instr">
+<h3 id="RandomlySpawnBulletAfterTakingDamageDurabilitybasedRandomness"><a href="#RandomlySpawnBulletAfterTakingDamageDurabilitybasedRandomness" class="selfref"><code>RandomlySpawnBulletAfterTakingDamageDurabilitybasedRandomness</code></a> <span class="sectioninfo">Instruction 1000[10]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>RandomlySpawnBulletAfterTakingDamageDurabilitybasedRandomness(
+    float chanceAtMaxDurability, 
+    float chanceAtMinDurability, 
+    float consumedDurability, 
+    int bulletId, 
+    int damageparamId)</pre></div></section>
+<section class="instr">
+<h3 id="SpawnUnveilOrb"><a href="#SpawnUnveilOrb" class="selfref"><code>SpawnUnveilOrb</code></a> <span class="sectioninfo">Instruction 1000[11]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectSpell</p>
+<pre>SpawnUnveilOrb()</pre></div></section>
+<section class="instr">
+<h3 id="ApplyRandomSpEffect"><a href="#ApplyRandomSpEffect" class="selfref"><code>ApplyRandomSpEffect</code></a> <span class="sectioninfo">Instruction 1000[12]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell</p>
+<pre>ApplyRandomSpEffect(
+    int speffect1, 
+    int speffect2, 
+    int speffect3, 
+    int speffect4, 
+    int speffect5)</pre></div></section>
+<section class="instr">
+<h3 id="RandomlySpawnBulletAfterTakingDamageFlatRandomness"><a href="#RandomlySpawnBulletAfterTakingDamageFlatRandomness" class="selfref"><code>RandomlySpawnBulletAfterTakingDamageFlatRandomness</code></a> <span class="sectioninfo">Instruction 1000[13]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>RandomlySpawnBulletAfterTakingDamageFlatRandomness(
+    float chance, 
+    float unknown1, 
+    float unknown2, 
+    float unknown3, 
+    int bulletId, 
+    int damageparamId)</pre></div></section>
+<section class="instr">
+<h3 id="ApplySoulScalingToWeapon"><a href="#ApplySoulScalingToWeapon" class="selfref"><code>ApplySoulScalingToWeapon</code></a> <span class="sectioninfo">Instruction 1000[14]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectWeapon</p>
+<pre>ApplySoulScalingToWeapon(
+    int unknown, 
+    int entityId, 
+    int soulMax, 
+    float multiplierAtZero, 
+    float multiplierAtSoulMax, 
+    int unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="ApplySpecialScalingToWeapon"><a href="#ApplySpecialScalingToWeapon" class="selfref"><code>ApplySpecialScalingToWeapon</code></a> <span class="sectioninfo">Instruction 1000[15]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectWeapon</p>
+<pre>ApplySpecialScalingToWeapon(
+    short&lt;<a href="#SpecialScalingType">SpecialScalingType</a>&gt; specialScalingType, 
+    short specialStatMax, 
+    float scalingAtStatZero, 
+    float scalingAtStatMax, 
+    float duration)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand100016"><a href="#UnknownCommand100016" class="selfref"><code>UnknownCommand100016</code></a> <span class="sectioninfo">Instruction 1000[16]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectEnemy</p>
+<pre>UnknownCommand100016(
+    byte unknown1, 
+    int bulletId, 
+    int damageparamId, 
+    byte unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="ApplyNgScalingToWeapon"><a href="#ApplyNgScalingToWeapon" class="selfref"><code>ApplyNgScalingToWeapon</code></a> <span class="sectioninfo">Instruction 1000[17]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectWeapon</p>
+<pre>ApplyNgScalingToWeapon(
+    byte minGameCycle, 
+    byte maxGameCycle, 
+    float scalingAtMinGameCycle, 
+    float scalingAtMaxGameCycle, 
+    byte unknown)</pre></div></section>
+<section class="instr">
+<h3 id="ApplyEquipLoadbasedFlatDamageToWeapon"><a href="#ApplyEquipLoadbasedFlatDamageToWeapon" class="selfref"><code>ApplyEquipLoadbasedFlatDamageToWeapon</code></a> <span class="sectioninfo">Instruction 1000[18]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>ApplyEquipLoadbasedFlatDamageToWeapon(
+    float equipLoadBreakpoint1, 
+    float equipLoadBreakpoint2, 
+    float equipLoadBreakpoint3, 
+    float unknown, 
+    float flatDamageAtBreakpoint1, 
+    float flatDamageAtBreakpoint2, 
+    float flatDamageAtBreakpoint3)</pre></div></section>
+<section class="instr">
+<h3 id="ModifyAttributeBasedOnCurrentValue"><a href="#ModifyAttributeBasedOnCurrentValue" class="selfref"><code>ModifyAttributeBasedOnCurrentValue</code></a> <span class="sectioninfo">Instruction 1000[19]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectWeapon</p>
+<pre>ModifyAttributeBasedOnCurrentValue(
+    byte&lt;<a href="#AttributeType">AttributeType</a>&gt; attribute, 
+    byte attributeMin, 
+    byte attributeMax, 
+    sbyte attributeAddedAtMin, 
+    sbyte attributeAddedAtMax)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand100020"><a href="#UnknownCommand100020" class="selfref"><code>UnknownCommand100020</code></a> <span class="sectioninfo">Instruction 1000[20]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem</p>
+<pre>UnknownCommand100020(
+    int spEffectId)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand100021"><a href="#UnknownCommand100021" class="selfref"><code>UnknownCommand100021</code></a> <span class="sectioninfo">Instruction 1000[21]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem</p>
+<pre>UnknownCommand100021(
+    int unknown1, 
+    int unknown2, 
+    int unknown3)</pre></div></section>
+<h2 id="1010_Estus"><a href="#1010_Estus" class="selfref">1010 - Estus</a></h2>
+<section class="instr">
+<h3 id="ModifyEstusUsage"><a href="#ModifyEstusUsage" class="selfref"><code>ModifyEstusUsage</code></a> <span class="sectioninfo">Instruction 1010[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectRing</p>
+<pre>ModifyEstusUsage(
+    byte&lt;<a href="#EstusModificationType">EstusModificationType</a>&gt; modificationType, 
+    float duration)</pre></div></section>
+<h2 id="100040_Spells_and_SpEffects"><a href="#100040_Spells_and_SpEffects" class="selfref">100040 - Spells and SpEffects</a></h2>
+<section class="instr">
+<h3 id="ScaleSpEffectByAttribute"><a href="#ScaleSpEffectByAttribute" class="selfref"><code>ScaleSpEffectByAttribute</code></a> <span class="sectioninfo">Instruction 100040[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectEnemy, SpEffectSpell</p>
+<pre>ScaleSpEffectByAttribute(
+    byte&lt;<a href="#SpEffectScaleType">SpEffectScaleType</a>&gt; scaleType, 
+    byte&lt;<a href="#AttributeType">AttributeType</a>&gt; attribute, 
+    short minAttribute, 
+    short maxAttribute, 
+    float multiplierAtMinAttribute, 
+    float multiplierAtMaxAttribute, 
+    float unknown1, 
+    float unknown2, 
+    float unknown3, 
+    float unknown4)</pre></div></section>
+<section class="instr">
+<h3 id="SpawnSFX"><a href="#SpawnSFX" class="selfref"><code>SpawnSFX</code></a> <span class="sectioninfo">Instruction 100040[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in all but SpEffectMustSub and SpEffectPassiveItem</p>
+<pre>SpawnSFX(
+    int sfxId, 
+    byte unknown1, 
+    byte unknown2, 
+    byte unknown3, 
+    byte unknown4, 
+    float unknown5)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10004002"><a href="#UnknownCommand10004002" class="selfref"><code>UnknownCommand10004002</code></a> <span class="sectioninfo">Instruction 100040[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectEnemy, SpEffectRing, SpEffectWeapon</p>
+<pre>UnknownCommand10004002(
+    float unknown1, 
+    float unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10004004"><a href="#UnknownCommand10004004" class="selfref"><code>UnknownCommand10004004</code></a> <span class="sectioninfo">Instruction 100040[04]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectEnemy, SpEffectWeapon</p>
+<pre>UnknownCommand10004004(
+    int unknown1, 
+    float unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10004005"><a href="#UnknownCommand10004005" class="selfref"><code>UnknownCommand10004005</code></a> <span class="sectioninfo">Instruction 100040[05]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState</p>
+<pre>UnknownCommand10004005(
+    byte unknown)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10004006"><a href="#UnknownCommand10004006" class="selfref"><code>UnknownCommand10004006</code></a> <span class="sectioninfo">Instruction 100040[06]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectEnemy, SpEffectSpell</p>
+<pre>UnknownCommand10004006()</pre></div></section>
+<section class="instr">
+<h3 id="ModifySpellEffectLength"><a href="#ModifySpellEffectLength" class="selfref"><code>ModifySpellEffectLength</code></a> <span class="sectioninfo">Instruction 100040[07]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectArmor, SpEffectRing</p>
+<pre>ModifySpellEffectLength(
+    float durationMultiplier)</pre></div></section>
+<section class="instr">
+<h3 id="ApplyChrfullbodysfx"><a href="#ApplyChrfullbodysfx" class="selfref"><code>ApplyChrfullbodysfx</code></a> <span class="sectioninfo">Instruction 100040[08]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectSpell</p>
+<pre>ApplyChrfullbodysfx(
+    int chrfullbodysfxparamId, 
+    byte unknown)</pre></div></section>
+<h2 id="100050_Healing"><a href="#100050_Healing" class="selfref">100050 - Healing</a></h2>
+<section class="instr">
+<h3 id="CallMustSubEvent85x"><a href="#CallMustSubEvent85x" class="selfref"><code>CallMustSubEvent85x</code></a> <span class="sectioninfo">Instruction 100050[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in all but SpEffectCondition and SpEffectMustSub</p>
+<pre>CallMustSubEvent85x(
+    int unknown, 
+    uint mustsubEventId, 
+    int argument1, 
+    float argument2, 
+    int argument3)</pre></div></section>
+<section class="instr">
+<h3 id="CallMustSubEvent85xUnknown10005001"><a href="#CallMustSubEvent85xUnknown10005001" class="selfref"><code>CallMustSubEvent85xUnknown10005001</code></a> <span class="sectioninfo">Instruction 100050[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectEnemy, SpEffectWideUse</p>
+<pre>CallMustSubEvent85xUnknown10005001(
+    int unknown, 
+    uint mustsubEventId, 
+    int argument1, 
+    float argument2, 
+    int argument3)</pre></div></section>
+<section class="instr">
+<h3 id="RestoreHumanity"><a href="#RestoreHumanity" class="selfref"><code>RestoreHumanity</code></a> <span class="sectioninfo">Instruction 100050[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition, SpEffectWideUse</p>
+<pre>RestoreHumanity(
+    bool shouldShowBanner)</pre></div></section>
+<section class="instr">
+<h3 id="ApplySpEffectToFriendlyHost"><a href="#ApplySpEffectToFriendlyHost" class="selfref"><code>ApplySpEffectToFriendlyHost</code></a> <span class="sectioninfo">Instruction 100050[03]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem</p>
+<pre>ApplySpEffectToFriendlyHost(
+    int spEffectId)</pre></div></section>
+<h2 id="100060_Spell_Usage"><a href="#100060_Spell_Usage" class="selfref">100060 - Spell Usage</a></h2>
+<section class="instr">
+<h3 id="RestoreSpellUsage"><a href="#RestoreSpellUsage" class="selfref"><code>RestoreSpellUsage</code></a> <span class="sectioninfo">Instruction 100060[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectWideUse</p>
+<pre>RestoreSpellUsage(
+    float percentageRestored, 
+    uint unknown)</pre></div></section>
+<h2 id="100070_Status_Effect_Controller"><a href="#100070_Status_Effect_Controller" class="selfref">100070 - Status Effect Controller</a></h2>
+<section class="instr">
+<h3 id="CallMustSubEvent87x"><a href="#CallMustSubEvent87x" class="selfref"><code>CallMustSubEvent87x</code></a> <span class="sectioninfo">Instruction 100070[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectSpell, SpEffectWideUse</p>
+<pre>CallMustSubEvent87x(
+    int unknown, 
+    uint mustsubEventId, 
+    uint... evtarguments)</pre></div></section>
+<h2 id="100080_Character_Combat_Properties_I"><a href="#100080_Character_Combat_Properties_I" class="selfref">100080 - Character Combat Properties I</a></h2>
+<section class="instr">
+<h3 id="UnknownCommand10008000"><a href="#UnknownCommand10008000" class="selfref"><code>UnknownCommand10008000</code></a> <span class="sectioninfo">Instruction 100080[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition</p>
+<pre>UnknownCommand10008000(
+    int unknown1, 
+    int unknown2, 
+    int unknown3)</pre></div></section>
+<section class="instr">
+<h3 id="IncreaseDamageMultiplicatively"><a href="#IncreaseDamageMultiplicatively" class="selfref"><code>IncreaseDamageMultiplicatively</code></a> <span class="sectioninfo">Instruction 100080[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectCondition, SpEffectSpell, SpEffectWeapon</p>
+<pre>IncreaseDamageMultiplicatively(
+    float duration, 
+    ushort&lt;<a href="#BuffType">BuffType</a>&gt; buffType, 
+    float addedMultiplier)</pre></div></section>
+<h2 id="100090_Character_Combat_Properties_II"><a href="#100090_Character_Combat_Properties_II" class="selfref">100090 - Character Combat Properties II</a></h2>
+<section class="instr">
+<h3 id="ModifyStaminaRecovery"><a href="#ModifyStaminaRecovery" class="selfref"><code>ModifyStaminaRecovery</code></a> <span class="sectioninfo">Instruction 100090[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectRing, SpEffectWeapon</p>
+<pre>ModifyStaminaRecovery(
+    float duration, 
+    float multiplier)</pre></div></section>
+<section class="instr">
+<h3 id="ModifyDamageFlatToBaseAr"><a href="#ModifyDamageFlatToBaseAr" class="selfref"><code>ModifyDamageFlatToBaseAr</code></a> <span class="sectioninfo">Instruction 100090[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectRing, SpEffectSpell, SpEffectWeapon</p>
+<pre>ModifyDamageFlatToBaseAr(
+    float duration, 
+    ushort&lt;<a href="#BuffType">BuffType</a>&gt; buffType, 
+    ushort amount)</pre></div></section>
+<section class="instr">
+<h3 id="BuffDefense"><a href="#BuffDefense" class="selfref"><code>BuffDefense</code></a> <span class="sectioninfo">Instruction 100090[04]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<pre>BuffDefense(
+    float duration, 
+    ushort&lt;<a href="#BuffType">BuffType</a>&gt; buffType, 
+    ushort amount)</pre></div></section>
+<section class="instr">
+<h3 id="NerfDefense"><a href="#NerfDefense" class="selfref"><code>NerfDefense</code></a> <span class="sectioninfo">Instruction 100090[05]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectRing, SpEffectSpell, SpEffectWeapon</p>
+<pre>NerfDefense(
+    float duration, 
+    ushort&lt;<a href="#BuffType">BuffType</a>&gt; buffType, 
+    ushort amount)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10009006"><a href="#UnknownCommand10009006" class="selfref"><code>UnknownCommand10009006</code></a> <span class="sectioninfo">Instruction 100090[06]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectCondition, SpEffectEnemy, SpEffectSpell, SpEffectWeapon</p>
+<pre>UnknownCommand10009006(
+    float duration, 
+    float unknown1, 
+    byte unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10009007"><a href="#UnknownCommand10009007" class="selfref"><code>UnknownCommand10009007</code></a> <span class="sectioninfo">Instruction 100090[07]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectEnemy, SpEffectSpell, SpEffectWeapon</p>
+<pre>UnknownCommand10009007(
+    float duration, 
+    float unknown1, 
+    byte unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10009008"><a href="#UnknownCommand10009008" class="selfref"><code>UnknownCommand10009008</code></a> <span class="sectioninfo">Instruction 100090[08]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectWideUse</p>
+<pre>UnknownCommand10009008()</pre></div></section>
+<section class="instr">
+<h3 id="BuffDamageUnknown"><a href="#BuffDamageUnknown" class="selfref"><code>BuffDamageUnknown</code></a> <span class="sectioninfo">Instruction 100090[09]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectEnemy, SpEffectSpell</p>
+<pre>BuffDamageUnknown(
+    float duration, 
+    ushort&lt;<a href="#BuffType">BuffType</a>&gt; buffType, 
+    ushort amount)</pre></div></section>
+<h2 id="100110_Character_Items"><a href="#100110_Character_Items" class="selfref">100110 - Character Items</a></h2>
+<section class="instr">
+<h3 id="ForceArmor"><a href="#ForceArmor" class="selfref"><code>ForceArmor</code></a> <span class="sectioninfo">Instruction 100110[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem</p>
+<pre>ForceArmor(
+    uint headArmorId, 
+    uint chestArmorId, 
+    uint armArmorId, 
+    uint legArmorId)</pre></div></section>
+<section class="instr">
+<h3 id="ForceUnequipArmor"><a href="#ForceUnequipArmor" class="selfref"><code>ForceUnequipArmor</code></a> <span class="sectioninfo">Instruction 100110[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectEnemy</p>
+<pre>ForceUnequipArmor(
+    byte unknown1, 
+    byte unknown2, 
+    byte unknown3, 
+    byte unknown4, 
+    byte unknown5)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10011002"><a href="#UnknownCommand10011002" class="selfref"><code>UnknownCommand10011002</code></a> <span class="sectioninfo">Instruction 100110[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectWideUse</p>
+<pre>UnknownCommand10011002()</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10011003"><a href="#UnknownCommand10011003" class="selfref"><code>UnknownCommand10011003</code></a> <span class="sectioninfo">Instruction 100110[03]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>UnknownCommand10011003(
+    byte unknown1, 
+    byte unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="ForceWeapon"><a href="#ForceWeapon" class="selfref"><code>ForceWeapon</code></a> <span class="sectioninfo">Instruction 100110[04]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectWeapon</p>
+<pre>ForceWeapon(
+    uint righthandWeaponId, 
+    uint lefthandWeaponId)</pre></div></section>
+<h2 id="100120_Bullets"><a href="#100120_Bullets" class="selfref">100120 - Bullets</a></h2>
+<section class="instr">
+<h3 id="CreateBullet"><a href="#CreateBullet" class="selfref"><code>CreateBullet</code></a> <span class="sectioninfo">Instruction 100120[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<pre>CreateBullet(
+    int bulletId, 
+    int damageparamId, 
+    byte unknown1, 
+    float unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10012001"><a href="#UnknownCommand10012001" class="selfref"><code>UnknownCommand10012001</code></a> <span class="sectioninfo">Instruction 100120[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectSpell</p>
+<pre>UnknownCommand10012001(
+    float unknown1, 
+    byte unknown2, 
+    int unknown3, 
+    int unknown4, 
+    int unknown5, 
+    int unknown6)</pre></div></section>
+<section class="instr">
+<h3 id="ThrowPrismStone"><a href="#ThrowPrismStone" class="selfref"><code>ThrowPrismStone</code></a> <span class="sectioninfo">Instruction 100120[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem</p>
+<pre>ThrowPrismStone(
+    byte unknown1, 
+    int unknown2, 
+    int unknown3)</pre></div></section>
+<section class="instr">
+<h3 id="ApplySpEffectBasedOnIntelligence"><a href="#ApplySpEffectBasedOnIntelligence" class="selfref"><code>ApplySpEffectBasedOnIntelligence</code></a> <span class="sectioninfo">Instruction 100120[03]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectSpell</p>
+<pre>ApplySpEffectBasedOnIntelligence(
+    short breakpoint1, 
+    short breakpoint2, 
+    short breakpoint3, 
+    short breakpoint4, 
+    int baseSpEffectId)</pre></div></section>
+<section class="instr">
+<h3 id="BatchCreateBullets"><a href="#BatchCreateBullets" class="selfref"><code>BatchCreateBullets</code></a> <span class="sectioninfo">Instruction 100120[04]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectSpell</p>
+<pre>BatchCreateBullets(
+    float unknown1, 
+    int unknown2, 
+    int finalBulletId, 
+    int initialBulletId)</pre></div></section>
+<section class="instr">
+<h3 id="CreateBulletBasedOnAttribute"><a href="#CreateBulletBasedOnAttribute" class="selfref"><code>CreateBulletBasedOnAttribute</code></a> <span class="sectioninfo">Instruction 100120[06]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectSpell</p>
+<pre>CreateBulletBasedOnAttribute(
+    int bulletId, 
+    int damageparamId, 
+    byte&lt;<a href="#AttributeType">AttributeType</a>&gt; attribute, 
+    short breakpoint1, 
+    short breakpoint2, 
+    short breakpoint3, 
+    short breakpoint4)</pre></div></section>
+<h2 id="100130_Events"><a href="#100130_Events" class="selfref">100130 - Events</a></h2>
+<section class="instr">
+<h3 id="WarpPlayer"><a href="#WarpPlayer" class="selfref"><code>WarpPlayer</code></a> <span class="sectioninfo">Instruction 100130[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition, SpEffectPassiveItem, SpEffectSpell</p>
+<pre>WarpPlayer(
+    byte unknown, 
+    int mapId, 
+    int pointId)</pre></div></section>
+<section class="instr">
+<h3 id="CallMustSubEvent93x"><a href="#CallMustSubEvent93x" class="selfref"><code>CallMustSubEvent93x</code></a> <span class="sectioninfo">Instruction 100130[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectEnemy, SpEffectPassiveItem</p>
+<pre>CallMustSubEvent93x(
+    int unknown, 
+    uint mustsubEventId, 
+    uint... evtarguments)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10013002"><a href="#UnknownCommand10013002" class="selfref"><code>UnknownCommand10013002</code></a> <span class="sectioninfo">Instruction 100130[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectRing, SpEffectSpell, SpEffectWeapon</p>
+<pre>UnknownCommand10013002(
+    int unknown1, 
+    int unknown2, 
+    float unknown3)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10013003"><a href="#UnknownCommand10013003" class="selfref"><code>UnknownCommand10013003</code></a> <span class="sectioninfo">Instruction 100130[03]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectSpell, SpEffectWideUse</p>
+<pre>UnknownCommand10013003(
+    float duration, 
+    byte unknown1, 
+    int unknown2)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10013004"><a href="#UnknownCommand10013004" class="selfref"><code>UnknownCommand10013004</code></a> <span class="sectioninfo">Instruction 100130[04]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell, SpEffectWeapon</p>
+<pre>UnknownCommand10013004(
+    int unknown1, 
+    float unknown2, 
+    int unknown3, 
+    float unknown4, 
+    int unknown5, 
+    int unknown6)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10013005"><a href="#UnknownCommand10013005" class="selfref"><code>UnknownCommand10013005</code></a> <span class="sectioninfo">Instruction 100130[05]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>UnknownCommand10013005(
+    int unknown)</pre></div></section>
+<section class="instr">
+<h3 id="AddSpellDeflectChance"><a href="#AddSpellDeflectChance" class="selfref"><code>AddSpellDeflectChance</code></a> <span class="sectioninfo">Instruction 100130[06]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>AddSpellDeflectChance(
+    float chance, 
+    int deflectSFXId)</pre></div></section>
+<section class="instr">
+<h3 id="ApplySpEffectAndEndEventIfEventFlag"><a href="#ApplySpEffectAndEndEventIfEventFlag" class="selfref"><code>ApplySpEffectAndEndEventIfEventFlag</code></a> <span class="sectioninfo">Instruction 100130[07]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectArmor</p>
+<pre>ApplySpEffectAndEndEventIfEventFlag(
+    int eventFlagId, 
+    int spEffectId, 
+    byte unknown)</pre></div></section>
+<section class="instr">
+<h3 id="ApplySpEffectOnEnemyKillBasedOnEnemyGender"><a href="#ApplySpEffectOnEnemyKillBasedOnEnemyGender" class="selfref"><code>ApplySpEffectOnEnemyKillBasedOnEnemyGender</code></a> <span class="sectioninfo">Instruction 100130[08]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectArmor</p>
+<pre>ApplySpEffectOnEnemyKillBasedOnEnemyGender(
+    int spEffectIdWhenSameGenderAsPlayer, 
+    int spEffectIdWhenOppositeGenderAsPlayer)</pre></div></section>
+<h2 id="100140_Death"><a href="#100140_Death" class="selfref">100140 - Death</a></h2>
+<section class="instr">
+<h3 id="SetCharacterImmortality"><a href="#SetCharacterImmortality" class="selfref"><code>SetCharacterImmortality</code></a> <span class="sectioninfo">Instruction 100140[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectEnemy</p>
+<pre>SetCharacterImmortality(
+    bool isImmortal)</pre></div></section>
+<section class="instr">
+<h3 id="ApplySpEffectWhenCharacterDies"><a href="#ApplySpEffectWhenCharacterDies" class="selfref"><code>ApplySpEffectWhenCharacterDies</code></a> <span class="sectioninfo">Instruction 100140[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectSpell</p>
+<pre>ApplySpEffectWhenCharacterDies(
+    float duration, 
+    int spEffectId)</pre></div></section>
+<h2 id="100170_Character_SelfAttack"><a href="#100170_Character_SelfAttack" class="selfref">100170 - Character Self-Attack</a></h2>
+<section class="instr">
+<h3 id="SelfdamageCharacterAndNearbyEnemiesPeriodic"><a href="#SelfdamageCharacterAndNearbyEnemiesPeriodic" class="selfref"><code>SelfdamageCharacterAndNearbyEnemiesPeriodic</code></a> <span class="sectioninfo">Instruction 100170[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectArmor, SpEffectSpell, SpEffectWeapon</p>
+<pre>SelfdamageCharacterAndNearbyEnemiesPeriodic(
+    int damageparamId, 
+    float attackPeriod, 
+    float unknown)</pre></div></section>
+<section class="instr">
+<h3 id="SelfdamageCharacterOneoff"><a href="#SelfdamageCharacterOneoff" class="selfref"><code>SelfdamageCharacterOneoff</code></a> <span class="sectioninfo">Instruction 100170[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectEnemy, SpEffectSpell, SpEffectWeapon</p>
+<pre>SelfdamageCharacterOneoff(
+    int damageparamId)</pre></div></section>
+<h2 id="100180_Multiplayer"><a href="#100180_Multiplayer" class="selfref">100180 - Multiplayer</a></h2>
+<section class="instr">
+<h3 id="InitiateClientmediatedMultiplayerItem"><a href="#InitiateClientmediatedMultiplayerItem" class="selfref"><code>InitiateClientmediatedMultiplayerItem</code></a> <span class="sectioninfo">Instruction 100180[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition</p>
+<pre>InitiateClientmediatedMultiplayerItem(
+    byte&lt;<a href="#ClientItemType">ClientItemType</a>&gt; clientItemType)</pre></div></section>
+<section class="instr">
+<h3 id="InitiateServermediatedMultiplayerItem"><a href="#InitiateServermediatedMultiplayerItem" class="selfref"><code>InitiateServermediatedMultiplayerItem</code></a> <span class="sectioninfo">Instruction 100180[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition</p>
+<pre>InitiateServermediatedMultiplayerItem(
+    byte&lt;<a href="#ServerItemType">ServerItemType</a>&gt; serverItemType)</pre></div></section>
+<section class="instr">
+<h3 id="InitiatePassiveServermediatedMultiplayerItem"><a href="#InitiatePassiveServermediatedMultiplayerItem" class="selfref"><code>InitiatePassiveServermediatedMultiplayerItem</code></a> <span class="sectioninfo">Instruction 100180[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<pre>InitiatePassiveServermediatedMultiplayerItem(
+    byte&lt;<a href="#PassiveServerItemType">PassiveServerItemType</a>&gt; passiveServerItemType)</pre></div></section>
+<section class="instr">
+<h3 id="RequestMultiplayerSeparation"><a href="#RequestMultiplayerSeparation" class="selfref"><code>RequestMultiplayerSeparation</code></a> <span class="sectioninfo">Instruction 100180[03]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem</p>
+<pre>RequestMultiplayerSeparation()</pre></div></section>
+<section class="instr">
+<h3 id="ResetInvasionCooldownTimer"><a href="#ResetInvasionCooldownTimer" class="selfref"><code>ResetInvasionCooldownTimer</code></a> <span class="sectioninfo">Instruction 100180[04]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition, SpEffectRing</p>
+<pre>ResetInvasionCooldownTimer()</pre></div></section>
+<section class="instr">
+<h3 id="DisplayChampionRankings"><a href="#DisplayChampionRankings" class="selfref"><code>DisplayChampionRankings</code></a> <span class="sectioninfo">Instruction 100180[05]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectPassiveItem</p>
+<pre>DisplayChampionRankings()</pre></div></section>
+<section class="instr">
+<h3 id="RequestMultiplayerPenaltyErasure"><a href="#RequestMultiplayerPenaltyErasure" class="selfref"><code>RequestMultiplayerPenaltyErasure</code></a> <span class="sectioninfo">Instruction 100180[06]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem</p>
+<pre>RequestMultiplayerPenaltyErasure()</pre></div></section>
+<h2 id="100700_SpEffect_Meta"><a href="#100700_SpEffect_Meta" class="selfref">100700 - SpEffect Meta</a></h2>
+<section class="instr">
+<h3 id="UnknownCommand10070002"><a href="#UnknownCommand10070002" class="selfref"><code>UnknownCommand10070002</code></a> <span class="sectioninfo">Instruction 100700[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectEnemy, SpEffectSpell, SpEffectWideUse</p>
+<pre>UnknownCommand10070002()</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10070003"><a href="#UnknownCommand10070003" class="selfref"><code>UnknownCommand10070003</code></a> <span class="sectioninfo">Instruction 100700[03]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition</p>
+<pre>UnknownCommand10070003(
+    int spEffectId)</pre></div></section>
+<section class="instr">
+<h3 id="SetSpEffectLength"><a href="#SetSpEffectLength" class="selfref"><code>SetSpEffectLength</code></a> <span class="sectioninfo">Instruction 100700[04]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<pre>SetSpEffectLength(
+    float duration)</pre></div></section>
+<h2 id="101050_Heal_Over_Time"><a href="#101050_Heal_Over_Time" class="selfref">101050 - Heal Over Time</a></h2>
+<section class="instr">
+<h3 id="HealFlatAmountOverTime"><a href="#HealFlatAmountOverTime" class="selfref"><code>HealFlatAmountOverTime</code></a> <span class="sectioninfo">Instruction 101050[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectMustSub</p>
+<pre>HealFlatAmountOverTime(
+    int hpAmount, 
+    float timeTaken, 
+    byte unknown)</pre></div></section>
+<section class="instr">
+<h3 id="HealPercentageAmountOverTime"><a href="#HealPercentageAmountOverTime" class="selfref"><code>HealPercentageAmountOverTime</code></a> <span class="sectioninfo">Instruction 101050[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectMustSub</p>
+<pre>HealPercentageAmountOverTime(
+    float hpPercentage, 
+    float timeTaken, 
+    byte unknown)</pre></div></section>
+<section class="instr">
+<h3 id="UnknownCommand10105002"><a href="#UnknownCommand10105002" class="selfref"><code>UnknownCommand10105002</code></a> <span class="sectioninfo">Instruction 101050[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectMustSub</p>
+<pre>UnknownCommand10105002(
+    float unknown1, 
+    float unknown2, 
+    byte unknown3)</pre></div></section>
+<h2 id="101070_Status_Effect"><a href="#101070_Status_Effect" class="selfref">101070 - Status Effect</a></h2>
+<section class="instr">
+<h3 id="PreventStatusEffect"><a href="#PreventStatusEffect" class="selfref"><code>PreventStatusEffect</code></a> <span class="sectioninfo">Instruction 101070[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectMustSub</p>
+<pre>PreventStatusEffect(
+    byte&lt;<a href="#StatusEffectType">StatusEffectType</a>&gt; statusEffect, 
+    float duration)</pre></div></section>
+<section class="instr">
+<h3 id="ClearStatusEffect"><a href="#ClearStatusEffect" class="selfref"><code>ClearStatusEffect</code></a> <span class="sectioninfo">Instruction 101070[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectMustSub</p>
+<pre>ClearStatusEffect(
+    byte&lt;<a href="#StatusEffectType">StatusEffectType</a>&gt; statusEffect)</pre></div></section>
+<section class="instr">
+<h3 id="ApplyStatusEffect"><a href="#ApplyStatusEffect" class="selfref"><code>ApplyStatusEffect</code></a> <span class="sectioninfo">Instruction 101070[02]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectMustSub</p>
+<pre>ApplyStatusEffect(
+    byte&lt;<a href="#StatusEffectType">StatusEffectType</a>&gt; statusEffect, 
+    float duration, 
+    int attackparamId, 
+    int attackFrequency, 
+    int unknown1, 
+    byte unknown2)</pre></div></section>
+<h2 id="101130_Souls"><a href="#101130_Souls" class="selfref">101130 - Souls</a></h2>
+<section class="instr">
+<h3 id="ModifyPlayerSoulsAdditively"><a href="#ModifyPlayerSoulsAdditively" class="selfref"><code>ModifyPlayerSoulsAdditively</code></a> <span class="sectioninfo">Instruction 101130[00]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectMustSub</p>
+<pre>ModifyPlayerSoulsAdditively(
+    bool removeSoulsInstead, 
+    int soulAmount)</pre></div></section>
+<section class="instr">
+<h3 id="ModifyPlayerSoulsMultiplicatively"><a href="#ModifyPlayerSoulsMultiplicatively" class="selfref"><code>ModifyPlayerSoulsMultiplicatively</code></a> <span class="sectioninfo">Instruction 101130[01]</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectMustSub</p>
+<pre>ModifyPlayerSoulsMultiplicatively(
+    bool removeSoulsInstead, 
+    float multiplier)</pre></div></section>
+</div><div class="bigsection enums"><h1 id="Enums"><a href="#Enums" class="selfref">Enums</a></h1>
+<section class="enum">
+<h3 id="AdditiveStatType"><a href="#AdditiveStatType" class="selfref"><code>AdditiveStatType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<ul class="enumlist">
+<li><code>AdditiveStatType.Poise = 0</code> <span class="enumusage usageinfo">Used in SpEffectEnemy, SpEffectRing</span></li>
+<li><code>AdditiveStatType.Weight = 1</code> <span class="enumusage usageinfo">Used in SpEffectEnemy, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</span></li>
+<li><code>AdditiveStatType.AttackPoiseDamage = 2</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>AdditiveStatType.FallDamageProtectionModifier = 3</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectSpell</span></li>
+<li><code>AdditiveStatType.CurrentHPRatio = 4</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>AdditiveStatType.CurrentHPRatio2 = 5</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>AdditiveStatType.Vigor = 6</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Endurance = 7</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Vitality = 8</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Strength = 10</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectRing, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Dexterity = 11</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectRing, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Intelligence = 12</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectRing, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Faith = 13</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectRing, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Adaptability = 14</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Unknown17 = 17</code> <span class="enumusage usageinfo">Used in SpEffectAbnormalState</span></li>
+<li><code>AdditiveStatType.CurrentHP = 18</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectWeapon</span></li>
+<li><code>AdditiveStatType.Unknown19 = 19</code> <span class="enumusage usageinfo">Used in SpEffectAbnormalState, SpEffectEnemy, SpEffectSpell</span></li>
+<li><code>AdditiveStatType.AttunementSlots = 20</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing</span></li>
+<li><code>AdditiveStatType.AntiStabilityModifier = 21</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>AdditiveStatType.Unknown22 = 22</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="MultiplicativeStatType"><a href="#MultiplicativeStatType" class="selfref"><code>MultiplicativeStatType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<ul class="enumlist">
+<li><code>MultiplicativeStatType.PoisonBuildup = 0</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>MultiplicativeStatType.BleedBuildup = 1</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>MultiplicativeStatType.Unknown2 = 2</code> <span class="enumusage usageinfo">Used in SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>MultiplicativeStatType.CurseBuildup = 3</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>MultiplicativeStatType.IgniteBuildup = 4</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>MultiplicativeStatType.Unknown5 = 5</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>MultiplicativeStatType.PetrifyBuildup = 6</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>MultiplicativeStatType.MaxHP = 7</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.MaxStamina = 8</code> <span class="enumusage usageinfo">Used in SpEffectAbnormalState, SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.EquipLoad = 9</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.ThrustCounterattackDamageRate = 11</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.Unknown12 = 12</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown13 = 13</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown14 = 14</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown15 = 15</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown16 = 16</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown17 = 17</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown18 = 18</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown19 = 19</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown20 = 20</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.WeaponDegredationRate = 22</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.ArmorDegradationRate = 23</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.RingDegradationRate = 24</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.OutgoingDamageRate = 25</code> <span class="enumusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectEnemy, SpEffectWeapon</span></li>
+<li><code>MultiplicativeStatType.IncomingDamageRate = 26</code> <span class="enumusage usageinfo">Used in SpEffectAbnormalState, SpEffectEnemy, SpEffectRing, SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.OutgoingPhysicalDamageRate = 27</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.IncomingPhysicalDamageRate = 28</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.Unknown29 = 29</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.SoulGainRate = 30</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing</span></li>
+<li><code class="enumunused">MultiplicativeStatType.WeaponStability = 39</code></li>
+<li><code>MultiplicativeStatType.Unknown46 = 46</code> <span class="enumusage usageinfo">Used in SpEffectWeapon</span></li>
+<li><code>MultiplicativeStatType.Unknown49 = 49</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+<li><code>MultiplicativeStatType.MaxSpellUsages = 50</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectWeapon</span></li>
+<li><code>MultiplicativeStatType.SpellCastTime = 51</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.SorceryPower = 52</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>MultiplicativeStatType.MiraclePower = 53</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>MultiplicativeStatType.PyromancyPower = 54</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>MultiplicativeStatType.HexPowerStaff = 55</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>MultiplicativeStatType.HexPowerChime = 56</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>MultiplicativeStatType.ShieldStability = 57</code> <span class="enumusage usageinfo">Used in SpEffectRing, SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.OutgoingDamageRateII = 58</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+<li><code>MultiplicativeStatType.IncomingDamageRateII = 59</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectRing, SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown60 = 60</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>MultiplicativeStatType.Unknown61 = 61</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>MultiplicativeStatType.Unknown62 = 62</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="StateInfoType"><a href="#StateInfoType" class="selfref"><code>StateInfoType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<ul class="enumlist">
+<li><code>StateInfoType.Unknown0 = 0</code> <span class="enumusage usageinfo">Used in SpEffectArmor</span></li>
+<li><code>StateInfoType.Unknown1 = 1</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectRing</span></li>
+<li><code>StateInfoType.Unknown2 = 2</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>StateInfoType.Unknown3 = 3</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>StateInfoType.Unknown4 = 4</code> <span class="enumusage usageinfo">Used in SpEffectArmor</span></li>
+<li><code>StateInfoType.Unknown6 = 6</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>StateInfoType.Unknown10 = 10</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectSpell</span></li>
+<li><code>StateInfoType.Unknown15 = 15</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+<li><code>StateInfoType.Unknown17 = 17</code> <span class="enumusage usageinfo">Used in SpEffectRing, SpEffectSpell</span></li>
+<li><code>StateInfoType.Unknown18 = 18</code> <span class="enumusage usageinfo">Used in SpEffectRing, SpEffectSpell</span></li>
+<li><code>StateInfoType.Unknown19 = 19</code> <span class="enumusage usageinfo">Used in SpEffectWeapon</span></li>
+<li><code>StateInfoType.Unknown22 = 22</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+<li><code>StateInfoType.Unknown23 = 23</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>StateInfoType.Unknown24 = 24</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectSpell</span></li>
+<li><code>StateInfoType.Unknown25 = 25</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>StateInfoType.Unknown27 = 27</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>StateInfoType.Unknown28 = 28</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown29 = 29</code> <span class="enumusage usageinfo">Used in SpEffectArmor</span></li>
+<li><code>StateInfoType.Unknown31 = 31</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>StateInfoType.Unknown33 = 33</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown34 = 34</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown39 = 39</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown40 = 40</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown41 = 41</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown42 = 42</code> <span class="enumusage usageinfo">Used in SpEffectArmor</span></li>
+<li><code>StateInfoType.Unknown43 = 43</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown44 = 44</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown46 = 46</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown49 = 49</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown50 = 50</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown51 = 51</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown52 = 52</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown53 = 53</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown54 = 54</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown55 = 55</code> <span class="enumusage usageinfo">Used in SpEffectEnemy, SpEffectWideUse</span></li>
+<li><code>StateInfoType.Unknown56 = 56</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown57 = 57</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown58 = 58</code> <span class="enumusage usageinfo">Used in SpEffectArmor</span></li>
+<li><code>StateInfoType.Unknown59 = 59</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>StateInfoType.Unknown60 = 60</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>StateInfoType.Unknown61 = 61</code> <span class="enumusage usageinfo">Used in SpEffectWideUse</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="BowType"><a href="#BowType" class="selfref"><code>BowType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectWeapon</p>
+<ul class="enumlist">
+<li><code>BowType.RegularBows = 0</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing, SpEffectWeapon</span></li>
+<li><code class="enumunused">BowType.Greatbows = 1</code></li>
+<li><code class="enumunused">BowType.Crossbows = 2</code></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="PlayerPropertyType"><a href="#PlayerPropertyType" class="selfref"><code>PlayerPropertyType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</p>
+<ul class="enumlist">
+<li><code>PlayerPropertyType.HexSelfDamageStaff = 11</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>PlayerPropertyType.HexSelfDamageChime = 12</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>PlayerPropertyType.EquippedRightHandWeaponDurability = 13</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectEnemy, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</span></li>
+<li><code>PlayerPropertyType.EquippedLeftHandWeaponDurability = 14</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectEnemy, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</span></li>
+<li><code>PlayerPropertyType.EquippedWeaponsDurability = 15</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+<li><code>PlayerPropertyType.EquippedArmorDurability = 16</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectEnemy, SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>PlayerPropertyType.EquippedRingsDurability = 17</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectEnemy, SpEffectSpell, SpEffectWideUse</span></li>
+<li><code>PlayerPropertyType.Unknown18 = 18</code> <span class="enumusage usageinfo">Used in SpEffectEnemy, SpEffectRing</span></li>
+<li><code>PlayerPropertyType.Unknown19 = 19</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>PlayerPropertyType.Unknown20 = 20</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>PlayerPropertyType.Unknown21 = 21</code> <span class="enumusage usageinfo">Used in SpEffectAbnormalState, SpEffectArmor, SpEffectEnemy, SpEffectSpell</span></li>
+<li><code>PlayerPropertyType.Unknown22 = 22</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>PlayerPropertyType.Unknown23 = 23</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>PlayerPropertyType.Unknown25 = 25</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+<li><code>PlayerPropertyType.Unknown30 = 30</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>PlayerPropertyType.Unknown31 = 31</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>PlayerPropertyType.Unknown32 = 32</code> <span class="enumusage usageinfo">Used in SpEffectEnemy</span></li>
+<li><code>PlayerPropertyType.Unknown33 = 33</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="SpecialScalingType"><a href="#SpecialScalingType" class="selfref"><code>SpecialScalingType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectWeapon</p>
+<ul class="enumlist">
+<li><code>SpecialScalingType.Hollowing = 1</code></li>
+<li><code>SpecialScalingType.Sin = 2</code></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="AttributeType"><a href="#AttributeType" class="selfref"><code>AttributeType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</p>
+<ul class="enumlist">
+<li><code>AttributeType.Vigor = 1</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing</span></li>
+<li><code>AttributeType.Endurance = 2</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>AttributeType.Vitality = 3</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectRing</span></li>
+<li><code class="enumunused">AttributeType.Attunement = 4</code></li>
+<li><code class="enumunused">AttributeType.Strength = 5</code></li>
+<li><code>AttributeType.Dexterity = 6</code> <span class="enumusage usageinfo">Used in SpEffectWeapon</span></li>
+<li><code>AttributeType.Intelligence = 7</code> <span class="enumusage usageinfo">Used in SpEffectArmor, SpEffectEnemy, SpEffectSpell</span></li>
+<li><code>AttributeType.Faith = 8</code> <span class="enumusage usageinfo">Used in SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>AttributeType.Adaptability = 9</code> <span class="enumusage usageinfo">Used in SpEffectWeapon</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="EstusModificationType"><a href="#EstusModificationType" class="selfref"><code>EstusModificationType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectRing</p>
+<ul class="enumlist">
+<li><code>EstusModificationType.Boostby50 = 1</code> <span class="enumusage usageinfo">Used in SpEffectRing</span></li>
+<li><code>EstusModificationType.Reduceto0 = 2</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="SpEffectScaleType"><a href="#SpEffectScaleType" class="selfref"><code>SpEffectScaleType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectEnemy, SpEffectSpell</p>
+<ul class="enumlist">
+<li><code>SpEffectScaleType.Duration = 0</code> <span class="enumusage usageinfo">Used in SpEffectEnemy, SpEffectSpell</span></li>
+<li><code>SpEffectScaleType.Value = 1</code> <span class="enumusage usageinfo">Used in SpEffectSpell</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="BuffType"><a href="#BuffType" class="selfref"><code>BuffType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in all but SpEffectMustSub and SpEffectPassiveItem</p>
+<ul class="enumlist">
+<li><code>BuffType.AllPhysical = 0</code> <span class="enumusage usageinfo">Used in SpEffectEnemy, SpEffectRing, SpEffectSpell</span></li>
+<li><code>BuffType.Magic = 1</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>BuffType.Lightning = 2</code> <span class="enumusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>BuffType.Fire = 3</code> <span class="enumusage usageinfo">Used in SpEffectAbnormalState, SpEffectActiveItem, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>BuffType.Dark = 4</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>BuffType.Poison = 5</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectEnemy, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>BuffType.Bleed = 6</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectArmor, SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>BuffType.Unknown7 = 7</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectRing, SpEffectSpell</span></li>
+<li><code>BuffType.Curse = 8</code> <span class="enumusage usageinfo">Used in SpEffectRing, SpEffectSpell, SpEffectWeapon</span></li>
+<li><code>BuffType.Petrify = 9</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectRing, SpEffectSpell, SpEffectWeapon, SpEffectWideUse</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="ClientItemType"><a href="#ClientItemType" class="selfref"><code>ClientItemType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition</p>
+<ul class="enumlist">
+<li><code>ClientItemType.WhiteSignSoapstone = 0</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition</span></li>
+<li><code>ClientItemType.SmallWhiteSignSoapstone = 1</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+<li><code>ClientItemType.RedSignSoapstone = 2</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+<li><code>ClientItemType.DragonEye = 3</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="ServerItemType"><a href="#ServerItemType" class="selfref"><code>ServerItemType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition</p>
+<ul class="enumlist">
+<li><code>ServerItemType.CrackedBlueEyeOrb = 0</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem</span></li>
+<li><code>ServerItemType.CrackedRedEyeOrb = 1</code> <span class="enumusage usageinfo">Used in SpEffectActiveItem, SpEffectCondition</span></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="PassiveServerItemType"><a href="#PassiveServerItemType" class="selfref"><code>PassiveServerItemType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectRing</p>
+<ul class="enumlist">
+<li><code>PassiveServerItemType.GuardiansSeal = 0</code></li>
+<li><code>PassiveServerItemType.CrestoftheRat = 1</code></li>
+<li><code>PassiveServerItemType.BellKeepersSoul = 2</code></li>
+</ul>
+</div></section>
+<section class="enum">
+<h3 id="StatusEffectType"><a href="#StatusEffectType" class="selfref"><code>StatusEffectType</code></a> <span class="sectioninfo">Enum</span></h3>
+<div class="sectioncontents">
+<p class="sectionusage usageinfo">Used in SpEffectCondition, SpEffectMustSub</p>
+<ul class="enumlist">
+<li><code>StatusEffectType.Poison = 0</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Bleed = 1</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown2 = 2</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown3 = 3</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown4 = 4</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Silence = 5</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown6 = 6</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown7 = 7</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Toxic = 8</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown9 = 9</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown10 = 10</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown11 = 11</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown12 = 12</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown13 = 13</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+<li><code>StatusEffectType.Unknown14 = 14</code> <span class="enumusage usageinfo">Used in SpEffectCondition</span></li>
+</ul>
+</div></section>
+</div></body>

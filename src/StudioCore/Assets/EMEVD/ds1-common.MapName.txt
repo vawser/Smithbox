@@ -1,0 +1,17 @@
+m10_00_00_00 The Depths
+m10_01_00_00 Undead Burg
+m10_02_00_00 Firelink
+m11_00_00_00 Painted World
+m12_00_00_00 Darkroot Garden
+m12_01_00_00 Oolacile
+m13_00_00_00 Catacombs
+m13_01_00_00 Tomb of the Giants
+m13_02_00_00 Great Hollow
+m14_00_00_00 Blighttown
+m14_01_00_00 Demon Ruins
+m15_00_00_00 Sen's Fortress
+m15_01_00_00 Anor Londo
+m16_00_00_00 New Londo Ruins, Valley of Drakes
+m17_00_00_00 Duke's Archives
+m18_00_00_00 Kiln of the First Flame
+m18_01_00_00 Northern Undead Asylum

@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TalkEditor;
-public static class TalkScriptBank
+public static class EsdBank
 {
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }

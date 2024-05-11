@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor;
-public static class EventScriptBank
+public static class EmevdBank
 {
     public static bool IsLoaded { get; private set; }
     public static bool IsLoading { get; private set; }

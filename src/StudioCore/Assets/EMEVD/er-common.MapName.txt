@@ -1,0 +1,474 @@
+m10_00_00_00 Stormveil Castle
+m10_01_00_00 Chapel of Anticipation
+m11_00_00_00 Leyndell, Royal Capital
+m11_05_00_00 Leyndell, Ashen Capital
+m11_10_00_00 Roundtable Hold
+m11_71_00_00 Ending Cutscenes
+m12_01_00_00 Ainsel River
+m12_02_00_00 Siofra River
+m12_03_00_00 Deeproot Depths
+m12_04_00_00 Ainsel River - Boss
+m12_05_00_00 Mohgwyn Palace
+m12_07_00_00 Siofra River Start
+m12_08_00_00 Siofra River - Boss
+m12_09_00_00 Nokron, Eternal City - Boss
+m13_00_00_00 Crumbling Farum Azula
+m14_00_00_00 Academy of Raya Lucaria
+m15_00_00_00 Miquella's Haligtree
+m16_00_00_00 Volcano Manor
+m18_00_00_00 Stranded Graveyard
+m19_00_00_00 Stone Platform
+m30_00_00_00 Tombsward Catacombs
+m30_01_00_00 Impaler's Catacombs
+m30_02_00_00 Stormfoot Catacombs
+m30_03_00_00 Road's End Catacombs
+m30_04_00_00 Murkwater Catacombs
+m30_05_00_00 Black Knife Catacombs
+m30_06_00_00 Cliffbottom Catacombs
+m30_07_00_00 Wyndham Catacombs
+m30_08_00_00 Sainted Hero's Grave
+m30_09_00_00 Gelmir Hero's Grave
+m30_10_00_00 Auriza Hero's Grave
+m30_11_00_00 Deathtouched Catacombs
+m30_12_00_00 Unsightly Catacombs
+m30_13_00_00 Auriza Side Tomb
+m30_14_00_00 Minor Erdtree Catacombs
+m30_15_00_00 Caelid Catacombs
+m30_16_00_00 War-Dead Catacombs
+m30_17_00_00 Giant-Conquering Hero's Grave
+m30_18_00_00 Giants' Mountaintop Catacombs
+m30_19_00_00 Consecrated Snowfield Catacombs
+m30_20_00_00 Hidden Path to the Haligtree
+m31_00_00_00 Murkwater Cave
+m31_01_00_00 Earthbore Cave
+m31_02_00_00 Tombsward Cave
+m31_03_00_00 Groveside Cave
+m31_04_00_00 Stillwater Cave
+m31_05_00_00 Lakeside Crystal Cave
+m31_06_00_00 Academy Crystal Cave
+m31_07_00_00 Seethewater Cave
+m31_09_00_00 Volcano Cave
+m31_10_00_00 Dragonbarrow Cave
+m31_11_00_00 Sellia Hideaway
+m31_12_00_00 Cave of the Forlorn
+m31_15_00_00 Coastal Cave
+m31_17_00_00 Highroad Cave
+m31_18_00_00 Perfumer's Grotto
+m31_19_00_00 Sage's Cave
+m31_20_00_00 Abandoned Cave
+m31_21_00_00 Gaol Cave
+m31_22_00_00 Spiritcaller Cave
+m32_00_00_00 Morne Tunnel
+m32_01_00_00 Limgrave Tunnels
+m32_02_00_00 Raya Lucaria Crystal Tunnel
+m32_04_00_00 Old Altus Tunnel
+m32_05_00_00 Altus Tunnel
+m32_07_00_00 Gael Tunnel
+m32_08_00_00 Sellia Crystal Tunnel
+m32_11_00_00 Yelough Anix Tunnel
+m34_10_00_00 Divine Tower of Limgrave
+m34_11_00_00 Divine Tower of Liurnia
+m34_12_00_00 Divine Tower of West Altus
+m34_13_00_00 Divine Tower of Caelid
+m34_14_00_00 Divine Tower of East Altus
+m34_15_00_00 Isolated Divine Tower
+m35_00_00_00 Subterranean Shunning-Grounds
+m39_20_00_00 Ruin-Strewn Precipice
+m45_00_00_00 Royal Colosseum
+m45_01_00_00 Caelid Colosseum
+m45_02_00_00 Limgrave Colosseum
+m60_08_10_02 Southwest Liurnia
+m60_16_20_01 Southwest Moonlight Altar
+m60_33_40_00 Moonlight Altar - Altar South, Chelona's Rise
+m60_33_41_00 Moonlight Altar - West of Deep Ainsel Well
+m60_16_21_01 Northwest Moonlight Altar; Liurnia Minor Erdtree
+m60_33_42_00 Liurnia of the Lakes - Southwest of Converted Tower; Moonlight Altar - Ringleader's Evergaol
+m60_33_43_00 Liurnia of the Lakes - Minor Erdtree, Road's End Catacombs Entrance
+m60_17_20_01 Southeast Moonlight Altar
+m60_34_41_00 Moonlight Altar - Deep Ainsel Well
+m60_35_41_00 Moonlight Altar - Lunar Estate Ruins
+m60_17_21_01 Northeast Moonlight Altar; Liurnia Southwest Lake Shore
+m60_34_42_00 Liurnia of the Lakes - Village of the Albinaurics; Moonlight Altar - Moonfolk Ruins
+m60_34_43_00 Liurnia of the Lakes - Converted Tower
+m60_35_42_00 Liurnia of the Lakes - West Albinauric Village; Moonlight Altar - Cathedral of Manus Celes
+m60_35_43_00 Liurnia of the Lakes - Folly on the Lake, South Rose Church
+m60_08_11_02 West Liurnia
+m60_16_22_01 South of Four Belfries
+m60_33_44_00 Liurnia of the Lakes - Revenger's Shack
+m60_33_45_00 Liurnia of the Lakes - Cuckoo's Evergaol, West of Meeting Place
+m60_16_23_01 Four Belries
+m60_33_46_00 Liurnia of the Lakes - Foot of the Four Belfries
+m60_33_47_00 Liurnia of the Lakes - The Four Belfries, Giant's Caravan Below
+m60_17_22_01 South Raya Lucaria Outskirts
+m60_34_44_00 Liurnia of the Lakes - Temple Quarter
+m60_34_45_00 Liurnia of the Lakes - Meeting Place, Academy Crystal Cave Entrance
+m60_35_44_00 Liurnia of the Lakes - Far West Gate Town, North Rose Church
+m60_35_45_00 Liurnia of the Lakes - South Raya Lucaria Gate
+m60_17_23_01 North Raya Lucaria Outskirts
+m60_34_46_00 Liurnia of the Lakes - Crystalline Woods, Path to the Four Belfries
+m60_34_47_00 Liurnia of the Lakes - Sorcerer's Isle West, East Belfry
+m60_35_46_00 Liurnia of the Lakes - Main Academy Gate, Academy of Raya Lucaria Entrance
+m60_35_47_00 Liurnia of the Lakes - Testu's Rise, East Gate Bridge Trestle
+m60_08_12_02 Northwest Liurnia
+m60_17_24_01 South of Caria Manor
+m60_34_48_00 Liurnia of the Lakes - Northern Liurnia Lake Shore, Kingsrealm Ruins
+m60_34_49_00 Liurnia of the Lakes - Road to the Manor
+m60_35_48_00 Liurnia of the Lakes - North of Sorcerer's Isle
+m60_35_49_00 Liurnia of the Lakes - South of Caria Manor, West of Ravine Entrance
+m60_17_25_01 Caria Manor; Three Sisters
+m60_34_50_00 Liurnia of the Lakes - Ranni's Rise, Seluvis's Rise
+m60_34_51_00 Liurnia of the Lakes - Renna's Rise
+m60_35_50_00 Liurnia of the Lakes - Caria Manor
+m60_35_51_00 Liurnia of the Lakes - North of Caria Manor
+m60_08_13_02 Far West Altus Plateau
+m60_17_26_01 South of Fort Laiedd
+m60_35_52_00 Mt. Gelmir - Before Hermit Shack
+m60_35_53_00 Mt. Gelmir - Seethewater Terminus
+m60_17_27_01 Fort Laiedd
+m60_35_54_00 Mt. Gelmir - Fort Laiedd
+m60_09_09_02 Far West Limgrave
+m60_19_19_01 South of Liurnia Lake-Facing Cliffs
+m60_38_39_00 Liurnia of the Lakes - West of Church of Irith
+m60_39_39_00 Liurnia of the Lakes - Church of Irith
+m60_09_10_02 Southeast Liurnia
+m60_18_20_01 Liurnia Far South Cliffside
+m60_36_41_00 Liurnia of the Lakes - Slumbering Wolf's Shack, Lakeside Crystal Cave Entrance
+m60_37_41_00 Liurnia of the Lakes - South of Scenic Isle, East of Slumbering Wolf's Shack
+m60_18_21_01 South of Gate Town
+m60_36_42_00 Liurnia of the Lakes - West of Scenic Isle
+m60_36_43_00 Liurnia of the Lakes - Boilprawn Shack, Fallen Ruins of the Lake
+m60_37_42_00 Liurnia of the Lakes - Scenic Isle, Laskyar Ruins
+m60_37_43_00 Liurnia of the Lakes - North of Scenic Isle
+m60_19_20_01 Liurnia Highway South; Southeast Lake Shore
+m60_38_40_00 Liurnia of the Lakes - Liurnia Lake Shore
+m60_38_41_00 Liurnia of the Lakes - Laskyar Ruins, Malefactor's Evergaol
+m60_39_40_00 Liurnia of the Lakes - Lake-Facing Cliffs, Stormveil Castle Exit, Stillwater Cave Entrance
+m60_39_41_00 Liurnia of the Lakes - Liurnia Highway South, Purified Ruins, Cliffbottom Catacombs Entrance
+m60_19_21_01 Liurnia Highway North
+m60_38_42_00 Liurnia of the Lakes - Highway Lookout Tower
+m60_38_43_00 Liurnia of the Lakes - Gate Town Bridge
+m60_39_42_00 Liurnia of the Lakes - Liurnia Highway North
+m60_39_43_00 Liurnia of the Lakes - Liurnia Highway Far North
+m60_09_11_02 East Liurnia
+m60_18_22_01 Liurnia of the Lakes - Gate Town
+m60_36_44_00 Liurnia of the Lakes - Gate Town Southwest
+m60_36_45_00 Liurnia of the Lakes - Gate Town Northwest
+m60_37_44_00 Liurnia of the Lakes - Gate Town Southeast
+m60_37_45_00 Liurnia of the Lakes - Gate Town Northeast
+m60_18_23_01 Liurnia Lake Mausoleum; Church of Vows
+m60_36_46_00 Liurnia of the Lakes - West of Church of Vows
+m60_36_47_00 Liurnia of the Lakes - West of Raya Lucaria Crystal Tunnel; Bellum Highway - South of East Raya Lucaria Gate
+m60_37_46_00 Liurnia of the Lakes - Church of Vows
+m60_37_47_00 Liurnia of the Lakes - South of Mausoleum Compound, Raya Lucaria Crystal Tunnel Entrance
+m60_19_22_01 Liurnia Eastern Lake Shore
+m60_38_44_00 Liurnia of the Lakes - North of Gate Town Bridge
+m60_38_45_00 Liurnia of the Lakes - Artist's Shack, Eastern Liurnia Lake Shore
+m60_39_44_00 Liurnia of the Lakes - Jarburg, Divine Tower of Liurnia Entrance
+m60_39_45_00 Liurnia of the Lakes - Eastern Tableland Southeast Cliffside
+m60_19_23_01 Liurnia Eastern Tableland
+m60_38_46_00 Liurnia of the Lakes - Eastern Tableland, Ainsel River Well
+m60_38_47_00 Liurnia of the Lakes - Ruined Labyrinth, Uld Palace Ruins
+m60_39_46_00 Liurnia of the Lakes - Eastern Tableland Northeast Cliffside
+m60_09_12_02 Liurnia to Altus Plateau
+m60_18_24_01 Main Bellum Highway
+m60_36_48_00 Bellum Highway - East Raya Lucaria Gate
+m60_36_49_00 Liurnia of the Lakes - Southeast Ravine, Lake at Caria Manor Entrance; Bellum Highway - Bellum Church
+m60_37_48_00 Liurnia of the Lakes - Mausoleum Compound
+m60_37_49_00 Bellum Highway - Church of Inhibition, Southwest of Grand Lift of Dectus
+m60_18_25_01 Behind Caria Manor; Ruin-Strewn Precipice to Altus Plateau
+m60_36_50_00 Liurnia of the Lakes - Behind Caria Manor, Royal Grave Evergaol, Part of Ravine
+m60_36_51_00 Altus Plateau - Perfumer's Ruins, Unsightly Catacombs Entrance
+m60_37_50_00 Liurnia of the Lake - Northeast Ravine; Bellum Highway - West of Grand Lift of Dectus
+m60_37_51_00 Altus Plateau - Abandoned Coffin, Ruin-Strewn Precipice Exit
+m60_19_24_01 Frenzied Flame Village; Bellum Minor Erdtree
+m60_38_48_00 Bellum Highway - Frenzied Flame Village, Minor Erdtree
+m60_38_49_00 Bellum Highway - Frenzy-Flaming Tower
+m60_39_48_00 Bellum Highway - Converted Fringe Tower; Liurnia of the Lakes - Black Knife Catacombs Entrance
+m60_39_49_00 Bellum Highway - Converted Fringe Tower North Cliffside
+m60_19_25_01 Grand Lift of Dectus
+m60_38_50_00 Liurnia of the Lakes - Ravine-Veiled Village; Bellum Highway - Grand Lift of Dectus; Altus Plateau - Altus Plateau; Ruin-Strewn Precipice Entrance
+m60_38_51_00 Altus Plateau - Erdtree-Gazing Hill, Lux Ruins
+m60_39_50_00 Altus Plateau - Golden Lineage Evergaol
+m60_39_51_00 Altus Plateau - Altus Highway Junction
+m60_09_13_02 West Altus Plateau
+m60_18_26_01 Volano Manor Outskirts
+m60_36_52_00 Mt. Gelmir - Craftsman's Shack, Hermit's Shack
+m60_36_53_00 Mt. Gelmir - Outside Volcano Manor
+m60_37_52_00 Mt. Gelmir - Seethewater River, Hermit Village, Wyndham Catacombs Entrance, Sage's Cave Entrance, Abductor Virgins Exit
+m60_37_53_00 Mt. Gelmir - Primeval Sorcerer Azur, Gelmir Hero's Grave Entrance
+m60_18_27_01 North Mt. Gelmir
+m60_36_54_00 Mt. Gelmir - Ninth Mt. Gelmir Campsite, Road of Iniquity, Volcano Manor Entrance
+m60_37_54_00 Mt. Gelmir - Minor Erdtree, Seethewater Cave Entrance
+m60_37_55_00 Mt. Gelmir - Volcano Cave Entrance
+m60_19_26_01 Altus Plateau to Mt. Gelmir
+m60_38_52_00 Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance
+m60_38_53_00 Altus Plateau - Old Altus Tunnel Entrance
+m60_39_52_00 Altus Plateau - Second Church of Marika
+m60_39_53_00 Altus Plateau - Mirage Rise; Mt. Gelmir - Bridge of Iniquity
+m60_19_27_01 Shaded Castle; Northeast Mt. Gelmir
+m60_38_54_00 Mt. Gelmir - First Mt. Gelmir Campsite, Corpse-Stench Shack; Altus Plateau - West of Shaded Castle
+m60_39_54_00 Altus Plateau - Shaded Castle
+m60_10_07_02 South Weeping Peninsula
+m60_21_15_01 Castle Morne
+m60_43_30_00 Weeping Peninsula - Morne Moangrave
+m60_43_31_00 Weeping Peninsula - Castle Morne
+m60_10_08_02 West Weeping Peninsula
+m60_20_16_01 Weeping Peninsula West Shore
+m60_40_33_00 Weeping Peninsula - Far West Shore
+m60_41_32_00 Weeping Peninsula - Isolated Merchant's Shack
+m60_41_33_00 Weeping Peninsula - Fourth Church of Marika, Witchbane Ruins
+m60_20_17_01 Limgrave Dragon Church
+m60_41_34_00 Weeping Peninsula - North of Fourth Church of Marika
+m60_41_35_00 Limgrave - Church of Dragon Communion, Coastal Cave Exit
+m60_21_16_01 Central Weeping Peninsula
+m60_42_32_00 Weeping Peninsula - Tower of Return
+m60_42_33_00 Weeping Peninsula - Tombsward; Weeping Evergaol; Tombsward Cave Entrance
+m60_43_32_00 Weeping Peninsula - Castle Morne Approach Northwest Cliffside
+m60_43_33_00 Weeping Peninsula - Minor Erdtree, Tombsward Catacombs Entrance, Morne Tunnel Entrance
+m60_21_17_01 Weeping Peninsula Central North Shore
+m60_42_34_00 Weeping Peninsula - Tombsward Ruins
+m60_42_35_00 Limgrave - South of Stranded Graveyard Exit
+m60_43_34_00 Weeping Peninsula - Church of Pilgrimage, Demi-Human Forest Ruins
+m60_43_35_00 Limgrave - Seaside Ruins
+m60_10_09_02 West Limgrave
+m60_20_18_01 Limgrave West Coast
+m60_41_36_00 Limgrave - Coastal Cave Entrance
+m60_41_37_00 Limgrave - Stormfoot Catacombs Entrance
+m60_20_19_01 Stormveil Outskirts in Stormhill
+m60_40_38_00 Stormhill - Forested West Cliffside
+m60_40_39_00 Stormhill - Path to Liurnia
+m60_41_38_00 Stormhill - Stormhill Shack, Stormveil Castle Entrance
+m60_41_39_00 Stormhill - North of Stormhill Shack
+m60_21_18_01 Limgrave Start; Lake Agheel
+m60_42_36_00 Limgrave - Church of Elleh, Stranded Graveyard Exit
+m60_42_37_00 Limgrave - Gatefront, Stormhill Evergaol, Groveside Cave Entrance, Limgrave Tunnels Entrance
+m60_43_36_00 Limgrave - Agheel Lake, Dragon-Burnt Ruins
+m60_43_37_00 Limgrave - Agheel Lake North, Murkwater Cave Entrance
+m60_21_19_01 East Stormhill
+m60_42_38_00 Stormhill - Warmaster's Shack, Stormgate
+m60_42_39_00 Stormhill - North of Warmaster's Shack
+m60_43_38_00 Limgrave - Murkwater Coast, Murkwater Catacombs Entrance
+m60_43_39_00 Stormhill - Saintsbridge, Deathtouched Catacombs Entrance; Limgrave - Highroad Cave Entrance
+m60_10_10_02 Northwest Limgrave Coast
+m60_20_20_01 Far South Liurnia Highway
+m60_40_40_00 Liurnia - Liurnia Highway South Endpoint, Path to Stormhill
+m60_21_20_01 Stormhill North Cliffside
+m60_42_40_00 Stormhill - Northwest Cliffside, Limgrave Colosseum Entrance
+m60_43_40_00 Stormhill - Northeast Cliffside
+m60_10_12_02 South Altus Plateau
+m60_20_25_01 Altus Plateau to Capital Outskirts
+m60_40_50_00 Altus Plateau - Southwest of Tree Sentinel Duo
+m60_40_51_00 Altus Plateau - West of Tree Sentinel Duo, Stormcaller Church
+m60_41_50_00 Altus Plateau - South of Tree Sentinel Duo
+m60_41_51_00 Altus Plateau - Tree Sentinel Duo, Perfumer's Grotto Entrance
+m60_21_25_01 South Capital Outskirts
+m60_42_50_00 Capital Outskirts - South of Outer Wall Phantom Tree
+m60_42_51_00 Capital Outskirts - Outer Wall Phantom Tree
+m60_43_50_00 Capital Outskirts - Minor Erdtree Church, Sealed Tunnel Entrance
+m60_43_51_00 Capital Outskirts - East of Outer Wall Phantom Tree
+m60_10_13_02 North Altus Plateau
+m60_20_26_01 Altus Plateau South Forest
+m60_40_52_00 Altus Plateau - Forest-Spanning Greatbridge, St. Trina's Hideaway, Sainted Hero's Grave Entrance
+m60_40_53_00 Altus Plateau - Bower of Bounty, Writheblood Ruins
+m60_41_52_00 Altus Plateau - Rampartside Path, Altus Tunnel Entrance
+m60_41_53_00 Altus Plateau - Woodfolk Ruins, Minor Erdtree
+m60_20_27_01 Altus Plateau North Forest; West Windmill Village
+m60_40_54_00 Altus Plateau - Road of Iniquity Side Path
+m60_40_55_00 Altus Plateau - West Windmill Pasture
+m60_41_54_00 Altus Plateau - West Windmill Village
+m60_41_55_00 Altus Plateau - Village Windmill Pasture, East Windmill Pasture
+m60_21_26_01 Capital Outskirts Outer Wall Battleground
+m60_42_52_00 Capital Outskirts - Southwest Outer Wall Battleground
+m60_42_53_00 Capital Outskirts - Northwest Outer Wall Battleground
+m60_43_52_00 Capital Outskirts - Southeast Outer Wall Battleground
+m60_43_53_00 Capital Outskirts - Northeast Outer Wall Battleground, Hermit Merchant's Shack
+m60_21_27_01 Altus Plateau East Windmill Village
+m60_42_54_00 Altus Plateau - East Windmill Village, Highway Lookout Tower
+m60_42_55_00 Altus Plateau - Windmill Heights
+m60_43_54_00 Altus Plateau - Cliffside Northeast of Outer Wall Battlefield
+m60_11_07_02 Southeast Weeping Peninsula Coast
+m60_22_15_01 Weeping Peninsula Southern West Coast
+m60_44_31_00 Weeping Peninsula - Castle Morne Approach South
+m60_11_08_02 East Weeping Peninsula
+m60_22_16_01 Weeping Peninsula Road to Castle Morne
+m60_44_32_00 Weeping Peninsula - Castle Morne Approach North
+m60_44_33_00 Weeping Peninsula - Castle Morne Rampart, Ailing Village Outskirts
+m60_45_32_00 Weeping Peninsula - Castle Morne Approach Northeast Cliffside
+m60_45_33_00 Weeping Peninsula - Beside the Crater-Pocked Glade, Oridys's Rise
+m60_22_17_01 Limgrave to Weeping Peninsula
+m60_44_34_00 Weeping Peninsula - Bridge of Sacrifice, Forest Lookout Tower, Earthbore Cave Entrance
+m60_44_35_00 Limgrave - Agheel Lake South, Forlorn Hound Evergaol
+m60_45_34_00 Weeping Peninsula - Impaler's Catacombs Entrance
+m60_45_35_00 Limgrave - Southwest of Fort Haight
+m60_11_09_02 East Limgrave
+m60_11_09_12 East Limgrave (Meteored)
+m60_22_18_01 Limgrave Waypoint Fork; Mistwood
+m60_22_18_11 Limgrave Waypoint Fork; Mistwood (Meteored)
+m60_44_36_00 Limgrave - Waypoint Ruins
+m60_44_37_00 Limgrave - Mistwood Outskirts
+m60_45_36_00 Limgrave - Fort Haight West
+m60_45_36_10 Limgrave - Fort Haight West (Meteored)
+m60_45_37_00 Limgrave - Siofra River Well, Mistwood Ruins, Minor Erdtree, Nokron Entrance
+m60_22_19_01 Summonwater Village
+m60_44_38_00 Limgrave - Artist's Shack
+m60_44_39_00 Limgrave - Summonwater Village Outskirts
+m60_45_38_00 Limgrave - South of Summonwater Village
+m60_45_39_00 Limgrave - Summonwater Village
+m60_23_18_01 Fort Haight; Caelid Southwest Cliffside
+m60_46_36_00 Limgrave - Fort Haight
+m60_46_37_00 Limgrave - East of Siofra River Well
+m60_47_37_00 Caelid - West of Caelid Highway South
+m60_23_19_01 East Limgrave to Central West Caelid
+m60_46_38_00 Limgrave - Third Church of Marika, Gaol Cave Exit
+m60_46_39_00 Limgrave - Rear Gael Tunnel Entrance; Caelid - Gael Tunnel Entrance
+m60_47_38_00 Caelid - Fort Gael, Caelid Waypoint Ruins, Gaol Cave Entrance
+m60_47_39_00 Caelid - Fort Gael North
+m60_11_10_02 Northwest Caelid
+m60_22_20_01 North of Summonwater Village
+m60_45_40_00 Limgrave - North of Summonwater Village
+m60_23_20_01 Far Northwest Caelid
+m60_46_40_00 Caelid - Smoldering Church, Rotview Balcony
+m60_47_40_00 Caelid - Caelem Ruins, Forsaken Ruins, Minor Erdtree, Minor Erdtree Catacombs Entrance
+m60_47_41_00 Caelid - South Great-Jar Area
+m60_23_21_01 North of Great-Jar
+m60_47_42_00 Caelid - North Great-Jar Area, Caelid Colosseum Entrance
+m60_11_12_02 Southeast Altus Plateau
+m60_22_25_01 Capital Outskirts Southeast Cliffside
+m60_45_51_00 Capital Outskirts - Auriza Hero's Grave Entrance
+m60_23_25_01 Forbidden Lands Start
+m60_47_51_00 Leyndell - Divine Tower of East Altus Entrance; Mountaintops of the Giants - Forbidden Lands Start
+m60_11_13_02 Northeast Altus Plateau
+m60_11_13_12 Northeast Altus Plateau (Ashen)
+m60_22_26_01 Northeast Capital Outskirts
+m60_22_26_11 Northeast Capital Outskirts (Ashen)
+m60_44_52_00 Capital Outskirts - South of Minor Erdtree
+m60_44_53_00 Capital Outskirts - Minor Erdtree
+m60_45_52_00 Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance
+m60_45_52_10 Capital Outskirts - Capital Rampart, Auriza Side Tomb Entrance (Ashen)
+m60_45_53_00 Capital Outskirts - Capital Rampart North Cliffside
+m60_23_27_01 Consecrated Snowfield Southwest Cliffside
+m60_46_55_00 Consecrated Snowfield - Yelough Anix Ruins West Cliffside
+m60_47_55_00 Consecrated Snowfield - Yelough Anix Ruins, Yelough Anix Tunnel Entrance
+m60_11_14_02 West Consecrated Snowfield
+m60_23_28_01 Consecrated Snowfield West Cliffside
+m60_46_57_00 Consecrated Snowfield - Far West Cliffside
+m60_47_56_00 Consecrated Snowfield - North of Yelough Anix Ruins
+m60_47_57_00 Consecrated Snowfield - West of Ordina
+m60_23_29_01 Consecrated Snowfield Northwest Cliffside
+m60_47_58_00 Consecrated Snowfield - Apostate Derelict
+m60_12_08_02 Far South Caelid
+m60_25_17_01 Redmane Castle South Cliffside
+m60_51_35_00 Caelid - Redmane Castle South Cliffside
+m60_12_09_02 South Caelid
+m60_24_18_01 South of Aeonia Swamp
+m60_48_36_00 Caelid - Cathedral of Dragon Communion, Caelid Catacombs Entrance
+m60_48_37_00 Caelid - Caelid Highway South
+m60_49_36_00 Caelid - Southwest of Caelid Highway South
+m60_49_37_00 Caelid - Southern Aeonia Swamp Bank
+m60_24_19_01 Aeonia Swamp; West Sellia
+m60_48_38_00 Caelid - West Aeonia Swamp
+m60_48_39_00 Caelid - Smoldering Wall, Abandoned Cave Entrance
+m60_49_38_00 Caelid - East Aeonia Swamp
+m60_49_39_00 Caelid - West Sellia, Sellia Crystal Tunnel Entrance
+m60_25_18_01 Redmane Castle; Southwest Radahn Arena
+m60_50_36_00 Caelid - Impassable Greatbridge
+m60_50_37_00 Caelid - Far Southwest Radahn Arena, Aeonia Swamp Bank Southeast Cliffside
+m60_51_36_00 Caelid - Redmane Castle
+m60_51_37_00 Caelid - Southwest Radahn Arena
+m60_25_19_01 East Sellia; West Radahn Arena
+m60_50_38_00 Caelid - Gowry's Shack
+m60_50_39_00 Caelid - East Sellia, Church of the Plague, Sellia Hideaway Entrance
+m60_51_38_00 Caelid - West Radahn Arena
+m60_51_39_00 Greyoll's Dragonbarrow - Fort Faroth
+m60_12_10_02 North Caelid
+m60_24_20_01 West Dragonbarrow
+m60_48_40_00 Caelid - Deep Siofra Well; Greyoll's Dragonbarrow - Dragonbarrow West
+m60_48_41_00 Greyoll's Dragonbarrow - Isolated Merchant's Shack
+m60_49_40_00 Greyoll's Dragonbarrow - South of Divine Tower of Caelid, Deep Siofra Well
+m60_49_41_00 Greyoll's Dragonbarrow - Divine Tower of Caelid Entrance
+m60_25_20_01 Central Dragonbarrow
+m60_50_40_00 Greyoll's Dragonbarrow - Dragonbarrow Fork
+m60_50_41_00 Greyoll's Dragonbarrow - North of Dragonbarrow Fork
+m60_51_40_00 Greyoll's Dragonbarrow - Minor Erdtree, Dragonbarrow Cave Entrance
+m60_51_41_00 Greyoll's Dragonbarrow - Southwest Farum Greatbridge
+m60_25_21_01 Bestial Sanctum
+m60_51_42_00 Greyoll's Dragonbarrow - Northwest Farum Greatbridge
+m60_51_43_00 Greyoll's Dragonbarrow - Bestial Sanctum
+m60_12_12_02 Forbidden Lands
+m60_24_25_01 Forbidden Lands Midway
+m60_48_51_00 Mountaintops of the Giants - Forbidden Lands Midway
+m60_12_13_02 Southwest Mountaintops
+m60_24_26_01 Grand Lift of Rold; West Zamor Ruins
+m60_49_52_00 Mountaintops of the Giants - Before Grand Lift of Rold
+m60_49_53_00 Mountaintops of the Giants - West Zamor Ruins, Grand Lift of Rold
+m60_24_27_01 Consecrated Snowfield Foggy Area
+m60_48_54_00 Consecrated Snowfield - Southwest Foggy Area
+m60_48_55_00 Consecrated Snowfield - Northwest Foggy Area, East of Yelough Anix Ruins
+m60_49_54_00 Consecrated Snowfield - Hidden Path to the Haligtree, Southeast Foggy Area
+m60_49_55_00 Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield
+m60_25_26_01 Southwest Flame Peak; East Zamor Ruins
+m60_50_53_00 Mountaintops of the Giants - East Zamor Ruins; Flame Peak - Giant-Conquering Hero's Grave Entrance
+m60_51_52_00 Flame Peak - Giants' Gravepost South Cliffside
+m60_51_53_00 Flame Peak - Southwest Giants' Gravepost
+m60_25_27_01 Bridge to Snow Valley Ruins; Northwest Flame Peak
+m60_50_54_00 Mountaintops of the Giants - North of Zamor Ruins; Flame Peak - Hero's Grave North Cliffside
+m60_50_55_00 Consecrated Snowfield - Consecrated Snowfield Catacombs Entrance
+m60_51_54_00 Flame Peak - Northwest Giants' Gravepost
+m60_51_55_00 Mountaintops of the Giants - Before Ancient Snow Valley Ruins
+m60_12_14_02 Northwest Mountaintops
+m60_24_28_01 Ordina; Ordina Outskirts
+m60_48_56_00 Consecrated Snowfield - South of Ordina
+m60_48_57_00 Consecrated Snowfield - Ordina, Liturgical Town
+m60_49_56_00 Consecrated Snowfield - Southeast of Ordina
+m60_49_57_00 Consecrated Snowfield - East of Ordina
+m60_24_29_01 Apostate Derelict East Cliffside
+m60_48_58_00 Consecrated Snowfield - East of Apostate Derelict
+m60_25_28_01 Northwest Mountaintops; Eastern Consecrated Snowfield
+m60_50_56_00 Mountaintops of the Giants - Shack of the Lofty; Consecrated Snowfield - Minor Erdtree, Albinauric Rise, Cave of the Forlorn Entrance
+m60_50_57_00 Mountaintops of the Giants - West of Castle Sol; Consecrated Snowfield - North of Minor Erdtree
+m60_51_56_00 Mountaintops of the Giants - Ancient Snow Valley Ruins, Stargazers' Ruins
+m60_51_57_00 Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook
+m60_25_29_01 North Castle Sol
+m60_51_58_00 Mountaintops of the Giants - North Castle Sol
+m60_13_09_02 Southeast Caelid
+m60_26_18_01 Southeast Radahn Arena
+m60_52_37_00 Caelid - South Radahn Arena
+m60_26_19_01 East Radahn Arena
+m60_52_38_00 Caelid - Central Radahn Arena
+m60_52_39_00 Caelid - North Radahn Arena
+m60_53_38_00 Caelid - East Radahn Arena
+m60_53_39_00 Caelid - Northeast Radahn Arena
+m60_13_10_02 Northeast Caelid
+m60_26_20_01 North Radahn Arena; Southeast Dragonbarrow
+m60_52_40_00 Caelid - Far North Radahn Arena
+m60_52_41_00 Greyoll's Dragonbarrow - Southeast Farum Greatbridge, Lenne's Rise
+m60_26_21_01 Northeast Dragonbarrow
+m60_52_42_00 Greyoll's Dragonbarrow - Northeast Farum Greatbridge
+m60_52_43_00 Greyoll's Dragonbarrow - Northeast Cliffside
+m60_13_13_02 Southeast Mountaintops
+m60_26_26_01 Southeast Flame Peak
+m60_52_52_00 Flame Peak - Southwest Fire Giant Arena
+m60_52_53_00 Flame Peak - Northwest Fire Giant Arena, Foot of the Forge
+m60_53_52_00 Flame Peak - Southeast Fire Giant Arena
+m60_53_53_00 Flame Peak - Northeast Fire Giant Arena
+m60_26_27_01 Northeast Flame Peak
+m60_52_54_00 Flame Peak - Northeast Giants' Gravepost
+m60_52_55_00 Mountaintops of the Giants - Guardians' Garrison
+m60_53_54_00 Flame Peak - Giants' Gravepost Northeast Cliffside
+m60_53_55_00 Mountaintops of the Giants - West of First Church of Marika
+m60_27_26_01 Forge of the Giants
+m60_54_53_00 Flame Peak - Forge of the Giants
+m60_27_27_01 South of Freezing Lake
+m60_54_55_00 Mountaintops of the Giants - First Church of Marika
+m60_13_14_02 Northeast Mountaintops
+m60_26_28_01 Freezing Lake; Mountaintops Minor Erdtree
+m60_52_56_00 Mountaintops of the Giants - Whiteridge Road, Minor Erdtree
+m60_52_57_00 Mountaintops of the Giants - Before Freezing Lake, Heretical Rise
+m60_53_56_00 Mountaintops of the Giants - Southwest Freezing Lake, Lord Contender's Evergaol, Spiritcaller Cave Entrance
+m60_53_57_00 Mountaintops of the Giants - Northwest Freezing Lake
+m60_26_29_01 North of Freezing Lake
+m60_52_58_00 Mountaintops of the Giants - Northwest of Freezing Lake, East of Castle Sol
+m60_53_58_00 Mountaintops of the Giants - Freezing Lake North Cliffside
+m60_27_28_01 East Freezing Lake
+m60_54_56_00 Mountaintops of the Giants - Southeast Freezing Lake
+m60_54_57_00 Mountaintops of the Giants - Northeast Freezing Lake

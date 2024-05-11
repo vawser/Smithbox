@@ -132,12 +132,6 @@ public class SettingsWindow
                     ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
                 }
 
-                if (FeatureFlags.EnableEditor_Gparam)
-                {
-                    ImGui.Checkbox("Gparam Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Gparam);
-                    ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-                }
-
                 if (FeatureFlags.EnableEditor_Material)
                 {
                     ImGui.Checkbox("Material Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Material);
@@ -147,12 +141,6 @@ public class SettingsWindow
                 if (FeatureFlags.EnableEditor_Particle)
                 {
                     ImGui.Checkbox("Particle Editor - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Particle);
-                    ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
-                }
-
-                if (FeatureFlags.EnableEditor_TextureViewer)
-                {
-                    ImGui.Checkbox("Texture Viewer - Automatic Resource Loading", ref CFG.Current.AutoLoadBank_Textures);
                     ImguiUtils.ShowHoverTooltip("If enabled, the resource bank required for this editor will be loaded at startup.\n\nIf disabled, the user will have to press the Load button within the editor to load the resources.\n\nThe benefit if disabled is that the RAM usage and startup time of Smithbox will be decreased.");
                 }
             }

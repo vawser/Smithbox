@@ -15,12 +15,12 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Editors.CutsceneEditor.CutsceneBank;
-using static StudioCore.Editors.EmevdEditor.EventScriptBank;
-using static StudioCore.Editors.TalkEditor.TalkScriptBank;
+using static StudioCore.Editors.EmevdEditor.EmevdBank;
+using static StudioCore.Editors.TalkEditor.EsdBank;
 
 namespace StudioCore.TalkEditor;
 
-public class TalkScriptEditorScreen : EditorScreen
+public class EsdEditorScreen : EditorScreen
 {
     public bool FirstFrame { get; set; }
 
@@ -35,7 +35,7 @@ public class TalkScriptEditorScreen : EditorScreen
     private ESD _selectedTalkScript;
     private int _selectedTalkScriptKey;
 
-    public TalkScriptEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public EsdEditorScreen(Sdl2Window window, GraphicsDevice device)
     {
         _propEditor = new PropertyEditor(EditorActionManager);
     }
@@ -79,18 +79,12 @@ public class TalkScriptEditorScreen : EditorScreen
         }
         else
         {
-            if (!TalkScriptBank.IsLoaded)
+            if (!EsdBank.IsLoaded)
             {
-                if (!CFG.Current.AutoLoadBank_TalkScript)
-                {
-                    if (ImGui.Button("Load Talk Script Editor"))
-                    {
-                        TalkScriptBank.LoadTalkScripts();
-                    }
-                }
+                EsdBank.LoadTalkScripts();
             }
 
-            if (TalkScriptBank.IsLoaded)
+            if (EsdBank.IsLoaded)
             {
                 TalkScriptFileView();
             }
@@ -108,7 +102,7 @@ public class TalkScriptEditorScreen : EditorScreen
         ImGui.Text($"File");
         ImGui.Separator();
 
-        foreach (var (info, binder) in TalkScriptBank.TalkBank)
+        foreach (var (info, binder) in EsdBank.TalkBank)
         {
             if (ImGui.Selectable($@" {info.Name}", info.Name == _selectedBinderKey))
             {
@@ -147,22 +141,21 @@ public class TalkScriptEditorScreen : EditorScreen
 
     public void OnProjectChanged()
     {
-        if (CFG.Current.AutoLoadBank_TalkScript)
-            TalkScriptBank.LoadTalkScripts();
+        EsdBank.LoadTalkScripts();
 
         ResetActionManager();
     }
 
     public void Save()
     {
-        if (TalkScriptBank.IsLoaded)
-            TalkScriptBank.SaveTalkScript(_selectedFileInfo, _selectedBinder);
+        if (EsdBank.IsLoaded)
+            EsdBank.SaveTalkScript(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
-        if (TalkScriptBank.IsLoaded)
-            TalkScriptBank.SaveTalkScripts();
+        if (EsdBank.IsLoaded)
+            EsdBank.SaveTalkScripts();
     }
 
     private void ResetActionManager()

@@ -142,8 +142,8 @@ public class Smithbox
         EditorContainer.GparamEditor = new GparamEditorScreen(_context.Window, _context.Device);
         EditorContainer.MaterialEditor = new MaterialEditorScreen(_context.Window, _context.Device);
         EditorContainer.ParticleEditor = new ParticleEditorScreen(_context.Window, _context.Device);
-        EditorContainer.ScriptEditor = new EventScriptEditorScreen(_context.Window, _context.Device);
-        EditorContainer.TalkEditor = new TalkScriptEditorScreen(_context.Window, _context.Device);
+        EditorContainer.ScriptEditor = new EmevdEditorScreen(_context.Window, _context.Device);
+        EditorContainer.TalkEditor = new EsdEditorScreen(_context.Window, _context.Device);
         EditorContainer.TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
         EditorContainer.BehaviorEditor = new BehaviorEditorScreen(_context.Window, _context.Device);
 
@@ -175,10 +175,7 @@ public class Smithbox
             _editors.Add(EditorContainer.ParticleEditor);
         }
 
-        if (FeatureFlags.EnableEditor_Gparam)
-        {
-            _editors.Add(EditorContainer.GparamEditor);
-        }
+        _editors.Add(EditorContainer.GparamEditor);
 
         if (FeatureFlags.EnableEditor_EventScript)
         {
@@ -190,10 +187,7 @@ public class Smithbox
             _editors.Add(EditorContainer.TalkEditor);
         }
 
-        if (FeatureFlags.EnableEditor_TextureViewer)
-        {
-            _editors.Add(EditorContainer.TextureViewer);
-        }
+        _editors.Add(EditorContainer.TextureViewer);
 
         if (FeatureFlags.EnableEditor_BehaviorEditor)
         {
@@ -787,7 +781,7 @@ public class Smithbox
 
         WindowContainer.SettingsWindow.Display();
         WindowContainer.HelpWindow.Display();
-        WindowContainer.DebugWindow.Display(_graphicsDevice);
+        WindowContainer.DebugWindow.Display();
         WindowContainer.KeybindWindow.Display();
         WindowContainer.MemoryWindow.Display();
         WindowContainer.ProjectWindow.Display();

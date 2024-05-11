@@ -1,0 +1,16 @@
+m21_00_00_00 Hunter's Dream
+m21_01_00_00 Abandoned Old Workshop
+m22_00_00_00 Hemwick Charnel Lane
+m23_00_00_00 Old Yharnam
+m24_00_00_00 Cathedral Ward
+m24_01_00_00 Central Yharnam
+m24_02_00_00 Upper Cathedral Ward
+m25_00_00_00 Forsaken Castle Cainhurst
+m26_00_00_00 Nightmare of Mensis
+m27_00_00_00 Forbidden Woods
+m28_00_00_00 Yahar'gul, Unseen Village
+m32_00_00_00 Byrgenwerth
+m33_00_00_00 Nightmare Frontier
+m34_00_00_00 Hunter's Nightmare
+m35_00_00_00 Research Hall
+m36_00_00_00 Fishing Hamlet
