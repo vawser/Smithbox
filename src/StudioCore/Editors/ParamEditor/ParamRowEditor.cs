@@ -317,13 +317,18 @@ public class ParamRowEditor
 
             PropEditorParamRow_MainFields(meta, bank, row, vrow, auxRows, crow, cols, vcols, auxCols, ref imguiId,
                 activeParam, selection);
+
+            if (CFG.Current.Param_ShowGraphVisualisation)
+            {
+                if (meta.CalcCorrectDef != null || meta.SoulCostDef != null)
+                {
+                    EditorDecorations.DrawCalcCorrectGraph(_paramEditor, meta, row);
+                }
+            }
+
             ImGui.EndTable();
         }
 
-        if (meta.CalcCorrectDef != null || meta.SoulCostDef != null)
-        {
-            EditorDecorations.DrawCalcCorrectGraph(_paramEditor, meta, row);
-        }
     }
 
     // Many parameter options, which may be simplified.

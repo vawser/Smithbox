@@ -655,7 +655,9 @@ public class SettingsWindow
 
                 ImGui.Checkbox("Show color preview", ref CFG.Current.Param_ShowColorPreview);
                 ImguiUtils.ShowHoverTooltip("Show color preview in field column if applicable.");
-                
+
+                ImGui.Checkbox("Show graph visualisation", ref CFG.Current.Param_ShowGraphVisualisation);
+                ImguiUtils.ShowHoverTooltip("Show graph visualisation in field column if applicable.");
             }
 
             // Values
