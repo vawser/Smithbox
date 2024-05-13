@@ -117,7 +117,7 @@
     <Field Def="s32 Unk0xD4"></Field>
     <Field Def="s32 assetCreationAssetId"></Field>
     <Field Def="f32 lifeRandomRange"></Field>
-    <Field Def="f32 UnkFloat0xE0"></Field>
+    <Field Def="f32 unkSpeedModifier"></Field>
     <Field Def="f32 UnkFloat0xE4"></Field>
     <Field Def="f32 UnkFloat0xE8"></Field>
     <Field Def="s16 randomMoveAngle_Horizontal"></Field>
@@ -277,7 +277,7 @@
     <Field Def="f32 UnkFloat0x2D8"></Field>
     <Field Def="f32 UnkFloat0x2DC"></Field>
     <Field Def="f32 lifeHitDist"></Field>
-    <Field Def="s32 UnkInt0x2E4"></Field>
+    <Field Def="s32 childProjectileDist"></Field>
     <Field Def="f32 Unk0x2E8"></Field>
     <Field Def="f32 Unk0x2EC"></Field>
     <Field Def="f32 recoilShootAngleHorizontalStart"></Field>
@@ -290,8 +290,8 @@
     <Field Def="s8 UnkSbyte0x303"></Field>
     <Field Def="f32 lifeDist"></Field>
     <Field Def="f32 UnkFloat0x308"></Field>
-    <Field Def="f32 UnkFloat0x30C"></Field>
-    <Field Def="f32 UnkFloat0x310"></Field>
+    <Field Def="f32 bulletMomentum"></Field>
+    <Field Def="f32 bulletCircularOffset"></Field>
     <Field Def="f32 UnkFloat0x314"></Field>
     <Field Def="s32 cartridgeBehaviorParamId"></Field>
     <Field Def="f32 UnkFloat0x31C"></Field>

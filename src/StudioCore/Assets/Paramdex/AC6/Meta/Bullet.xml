@@ -282,6 +282,11 @@
     <padRumbleParamId AltName="Pad Rumble ID" Refs="PadRumble" />
     
     <UnkInt0x1E0 AltName="Unknown FFX ID" ParticleAlias=""/>
+    
+    <unkSpeedModifier AltName="Speed Modifier" />
+    <childProjectileDist AltName="Child Projectile Range" />
+    <bulletMomentum AltName="Projectile Momentum" Wiki="How long" />
+    <bulletCircularOffset AltName="Projectile Circular Offset" Wiki="Offsets the bullets out from the centre" />
   </Field>
   <Self />
 </PARAMMETA>

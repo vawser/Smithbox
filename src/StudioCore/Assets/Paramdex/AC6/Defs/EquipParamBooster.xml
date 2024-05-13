@@ -10,14 +10,10 @@
     <Field Def="s16 UnkSshort0x04"></Field>
     <Field Def="u16 equipModelId"></Field>
     <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="f32 weight">
-      <Description>Weight of the part.</Description>
-    </Field>
+    <Field Def="f32 weight"></Field>
     <Field Def="s32 UnkInt0x10"></Field>
     <Field Def="s32 UnkInt0x14"></Field>
-    <Field Def="s32 energyLoad">
-      <Description>EN load of the part.</Description>
-    </Field>
+    <Field Def="s32 energyLoad"></Field>
     <Field Def="f32 UnkFloat0x1C"></Field>
     <Field Def="f32 UnkFloat0x20"></Field>
     <Field Def="f32 UnkFloat0x24"></Field>
@@ -31,34 +27,20 @@
     <Field Def="f32 UnkFloat0x44"></Field>
     <Field Def="f32 UnkFloat0x48"></Field>
     <Field Def="f32 boostModeEnergyCost_Flying"></Field>
-    <Field Def="f32 upwardThrustEnergyCost">
-      <Description>EN consumed by ascending boost movement.</Description>
-    </Field>
-    <Field Def="s32 quickBoostEnergyCost">
-      <Description>EN consumed by Quick Boost.</Description>
-    </Field>
-    <Field Def="f32 quickBoostVelocity">
-      <Description>Velocity upon using Quick Boost.</Description>
-    </Field>
+    <Field Def="f32 upwardThrustEnergyCost"></Field>
+    <Field Def="s32 quickBoostEnergyCost"></Field>
+    <Field Def="f32 quickBoostVelocity"></Field>
     <Field Def="f32 boostModeDuration"></Field>
-    <Field Def="f32 boostModeMovementVelocity">
-      <Description>Velocity upon moving with boost movement.</Description>
-    </Field>
-    <Field Def="f32 boostModeJumpVelocity">
-      <Description>Velocity upon jumping with boost movement.</Description>
-    </Field>
-    <Field Def="f32 displayQuickBoostThrust">
-      <Description>Only affects value in UI.</Description>
-    </Field>
+    <Field Def="f32 boostModeMovementVelocity"></Field>
+    <Field Def="f32 boostModeJumpVelocity"></Field>
+    <Field Def="f32 displayQuickBoostThrust"></Field>
     <Field Def="f32 upwardThrustMomentum"></Field>
     <Field Def="f32 upwardThrustMaxVelocity_BoostMode"></Field>
     <Field Def="f32 UnkFloatBoostModeJumpVelocity0x74"></Field>
     <Field Def="f32 upwardThrustEnergyCost_BoostMode"></Field>
     <Field Def="s32 Unk0x7C"></Field>
     <Field Def="s32 Unk0x80"></Field>
-    <Field Def="f32 quickBoostReloadTime">
-      <Description>Reload time for Quick Boost.</Description>
-    </Field>
+    <Field Def="f32 quickBoostReloadTime"></Field>
     <Field Def="f32 boostModeGravity"></Field>
     <Field Def="f32 UnkFloat0x8C"></Field>
     <Field Def="f32 UnkFloat0x90"></Field>
@@ -86,25 +68,17 @@
     <Field Def="f32 upwardThrustVelocity_During_Walk"></Field>
     <Field Def="f32 UnkFloat0xEC"></Field>
     <Field Def="f32 UnkFloat0xF0"></Field>
-    <Field Def="f32 walkFlightVelocity0xF4"></Field>
-    <Field Def="f32 UnkFloat0xF8"></Field>
+    <Field Def="f32 walkFlightVelocity_During"></Field>
+    <Field Def="f32 walkFlightVelocity_DirectionShift"></Field>
     <Field Def="f32 UnkFloat0xFC"></Field>
-    <Field Def="f32 assaultBoostVelocity_Initial">
-      <Description>Initial velocity upon using Assault Boost.</Description>
-    </Field>
-    <Field Def="f32 assaultBoostVelocity_During">
-      <Description>Velocity after initial boost during an Assault Boost.</Description>
-    </Field>
+    <Field Def="f32 assaultBoostVelocity_Initial"></Field>
+    <Field Def="f32 assaultBoostVelocity_During"></Field>
     <Field Def="f32 assaultBoostGraceTimeEnd"></Field>
     <Field Def="f32 assaultBoostGraceTimeStart"></Field>
-    <Field Def="f32 assaultBoostReloadTime">
-      <Description>Duration after which Assault Boost will be available again.</Description>
-    </Field>
+    <Field Def="f32 assaultBoostReloadTime"></Field>
     <Field Def="u16 assaultBoostEnergyCost_Initial"></Field>
     <Field Def="s16 Unk0x116"></Field>
-    <Field Def="f32 assaultBoostEnergyCost_During">
-      <Description>EN consumed by Assault Boost.</Description>
-    </Field>
+    <Field Def="f32 assaultBoostEnergyCost_During"></Field>
     <Field Def="s16 Unk0x11C"></Field>
     <Field Def="u16 corporationTextureId"></Field>
     <Field Def="f32 meleeBoostVelocity_Initial"></Field>
@@ -117,9 +91,7 @@
     <Field Def="f32 upwardThrust_BoostMode"></Field>
     <Field Def="f32 UnkFloat0x13C"></Field>
     <Field Def="f32 UnkFloat0x140"></Field>
-    <Field Def="f32 quickBoostReloadIdealWeight">
-      <Description>Maximum tolerable AC weight before Quick Boost reload time is compromised.</Description>
-    </Field>
+    <Field Def="f32 quickBoostReloadIdealWeight"></Field>
     <Field Def="s32 inheritanceBoosterParamId"></Field>
     <Field Def="f32 assaultBoostDodgeVelocity_Initial"></Field>
     <Field Def="f32 assaultBoostDodgeVelocity_During"></Field>

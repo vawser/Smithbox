@@ -314,31 +314,62 @@ namespace SoulsFormats
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public int UnkE04 { get; set; }
+            public byte UsePartsDrawParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public int UnkE08 { get; set; }
+            public byte UnkE05 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public byte UnkE0C { get; set; }
+            public byte UnkE06 { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public byte UnkE0D { get; set; }
+            public byte UnkE07 { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            [MSBParamReference(ParamName = "PartsDrawParam")]
+            [IgnoreProperty]
+            public short PartsDrawParamID { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public byte UnkE0E { get; set; }
+            public sbyte IsPointLightShadowSrc { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            [IgnoreProperty]
+            public byte UnkE0B { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            [IgnoreProperty]
+            public bool IsShadowSrc { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            [IgnoreProperty]
+            public byte IsStaticShadowSrc { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            [IgnoreProperty]
+            public byte IsCascade3ShadowSrc { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -356,25 +387,37 @@ namespace SoulsFormats
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public byte UnkE11 { get; set; }
+            public bool IsShadowDest { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public byte UnkE14 { get; set; }
+            public bool IsShadowOnly { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public byte UnkE15 { get; set; }
+            public bool DrawByReflectCam { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
             [IgnoreProperty]
-            public byte UnkE16 { get; set; }
+            public bool DrawOnlyReflectCam { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            [IgnoreProperty]
+            public byte EnableOnAboveShadow { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            [IgnoreProperty]
+            public bool DisablePointLightEffect { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -411,7 +454,7 @@ namespace SoulsFormats
                 LayoutPath = "";
                 Scale = Vector3.One;
 
-                UnkE11 = (byte)1;
+                IsShadowDest = true;
                 EntityGroupIDs = new uint[8];
                 UnkE3C = (short)-1;
             }
@@ -529,18 +572,24 @@ namespace SoulsFormats
             private void ReadEntityData(BinaryReaderEx br)
             {
                 EntityID = br.ReadUInt32();
-                UnkE04 = br.ReadInt32();
-                UnkE08 = br.ReadInt32();
-                UnkE0C = br.ReadByte();
-                UnkE0D = br.ReadByte();
-                UnkE0E = br.ReadByte();
+                UsePartsDrawParamID = br.ReadByte();
+                UnkE05 = br.ReadByte();
+                UnkE06 = br.ReadByte();
+                UnkE07 = br.ReadByte();
+                PartsDrawParamID = br.ReadInt16();
+                IsPointLightShadowSrc = br.ReadSByte();
+                UnkE0B = br.ReadByte();
+                IsShadowSrc = br.ReadBoolean();
+                IsStaticShadowSrc = br.ReadByte();
+                IsCascade3ShadowSrc = br.ReadByte();
                 UnkE0F = br.ReadByte();
                 UnkE10 = br.ReadByte();
-                UnkE11 = br.ReadByte();
-                br.AssertInt16(new short[1]);
-                UnkE14 = br.ReadByte();
-                UnkE15 = br.ReadByte();
-                UnkE16 = br.ReadByte();
+                IsShadowDest = br.ReadBoolean();
+                IsShadowOnly = br.ReadBoolean();
+                DrawByReflectCam = br.ReadBoolean();
+                DrawOnlyReflectCam = br.ReadBoolean();
+                EnableOnAboveShadow = br.ReadByte();
+                DisablePointLightEffect = br.ReadBoolean();
                 UnkE17 = br.ReadByte();
                 UnkE18 = br.ReadInt32();
                 EntityGroupIDs = br.ReadUInt32s(8);
@@ -730,18 +779,24 @@ namespace SoulsFormats
             private void WriteEntityData(BinaryWriterEx bw)
             {
                 bw.WriteUInt32(EntityID);
-                bw.WriteInt32(UnkE04);
-                bw.WriteInt32(UnkE08);
-                bw.WriteByte(UnkE0C);
-                bw.WriteByte(UnkE0D);
-                bw.WriteByte(UnkE0E);
+                bw.WriteByte(UsePartsDrawParamID);
+                bw.WriteByte(UnkE05);
+                bw.WriteByte(UnkE06);
+                bw.WriteByte(UnkE07);
+                bw.WriteInt16(PartsDrawParamID);
+                bw.WriteSByte(IsPointLightShadowSrc);
+                bw.WriteByte(UnkE0B);
+                bw.WriteBoolean(IsShadowSrc);
+                bw.WriteByte(IsStaticShadowSrc);
+                bw.WriteByte(IsCascade3ShadowSrc);
                 bw.WriteByte(UnkE0F);
                 bw.WriteByte(UnkE10);
-                bw.WriteByte(UnkE11);
-                bw.WriteInt16((short)0);
-                bw.WriteByte(UnkE14);
-                bw.WriteByte(UnkE15);
-                bw.WriteByte(UnkE16);
+                bw.WriteBoolean(IsShadowDest);
+                bw.WriteBoolean(IsShadowOnly);
+                bw.WriteBoolean(DrawByReflectCam);
+                bw.WriteBoolean(DrawOnlyReflectCam);
+                bw.WriteByte(EnableOnAboveShadow);
+                bw.WriteBoolean(DisablePointLightEffect);
                 bw.WriteByte(UnkE17);
                 bw.WriteInt32(UnkE18);
                 bw.WriteUInt32s(EntityGroupIDs);

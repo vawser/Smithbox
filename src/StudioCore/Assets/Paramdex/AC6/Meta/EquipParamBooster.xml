@@ -43,26 +43,27 @@
     <upwardThrustMaxVelocity_BoostMode AltName="Boost Mode - Upward Thrust - Max Velocity" />
     <UnkFloatBoostModeJumpVelocity0x74 AltName="Boost Mode - Unknown Jump Velocity" />
     <upwardThrustEnergyCost_BoostMode AltName="Boost Mode - Energy Cost - Upward Thrust" />
-    <quickBoostReloadTime AltName="Quick Boost Reload Time" />
+    <quickBoostReloadTime AltName="Quick Boost Reload Time" Wiki="Reload time for Quick Boost." />
     <boostModeGravity AltName="Boost Mode - Gravity" />
     <upwardThrustMaxVelocity_Walk AltName="Walk: Upwards Thrust - Max Velocity" />
     <upwardThrustVelocity_Initial_Walk AltName="Walk: Upwards Thrust - Initial Velocity" />
     <upwardThrustVelocity_During_Walk AltName="Walk: Upwards Thrust - Continuous Velocity" />
-    <walkFlightVelocity0xF4 AltName="Walk: Flight - Continuous Velocity" />
-    <assaultBoostVelocity_Initial AltName="Assault Boost: Initial Velocity" />
-    <assaultBoostVelocity_During AltName="Assault Boost: Continuous Velocity" />
+    <walkFlightVelocity_During AltName="Walk: Flight - Continuous Velocity" />
+    <walkFlightVelocity_DirectionShift AltName="Walk: Flight - Direction Shift Side to Side Velocity" />
+    <assaultBoostVelocity_Initial AltName="Assault Boost: Initial Velocity" Wiki="Initial velocity upon using Assault Boost." />
+    <assaultBoostVelocity_During AltName="Assault Boost: Continuous Velocity" Wiki="Velocity after initial boost during an Assault Boost." />
     <assaultBoostGraceTimeStart AltName="Assault Boost: Grace Time Start" Wiki="Amount of time (in frames at 60fps) for assault boost to continue after losing all EN." />
     <assaultBoostGraceTimeEnd AltName="Assault Boost: Grace Time End" Wiki="Amount of time (in frames at 60fps) for assault boost to continue after losing all EN." />
-    <assaultBoostReloadTime AltName="Assault Boost Reload Time" />
+    <assaultBoostReloadTime AltName="Assault Boost Reload Time" Wiki="Duration after which Assault Boost will be available again."/>
     <assaultBoostEnergyCost_Initial AltName="Assault Boost: Initial Energy Cost" />
-    <assaultBoostEnergyCost_During AltName="Assault Boost: Continuous Energy Cost" />
+    <assaultBoostEnergyCost_During AltName="Assault Boost: Continuous Energy Cost" Wiki="EN consumed by Assault Boost." />
     <meleeBoostVelocity_Initial AltName="Melee Boost: Initial Velocity" />
     <meleeBoostVelocity_During AltName="Melee Boost: Continuous Velocity" />
     <meleeBoostDuration AltName="Melee Boost Duration" />
     <meleeBoostEnergyCost_Initial AltName="Melee Boost: Initial Energy Cost" />
     <meleeBoostEnergyCost_During AltName="Melee Boost: Continuous Energy Cost" />
     <upwardThrust_BoostMode AltName="Boost Mode: Upwards Thrust" />
-    <quickBoostReloadIdealWeight AltName="Quick Boost Reload: Ideal Weight" />
+    <quickBoostReloadIdealWeight AltName="Quick Boost Reload: Ideal Weight"  Wiki="Maximum tolerable AC weight before Quick Boost reload time is compromised." />
     <inheritanceBoosterParamId AltName="Booster Inheritance" Refs="EquipParamBooster" Wiki="Inherits fields from referenced booster." />
     <assaultBoostDodgeVelocity_Initial AltName="Assault Boost Dodge: Initial Velocity" />
     <assaultBoostDodgeVelocity_During AltName="Assault Boost Dodge: Continuous Velocity" />

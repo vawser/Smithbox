@@ -23,8 +23,8 @@
     <Field Def="f32 UnkFloat0x38"></Field>
     <Field Def="f32 UnkFloat0x3C"></Field>
     <Field Def="f32 deceleration_Grounded"></Field>
-    <Field Def="f32 UnkFloat0x44"></Field>
-    <Field Def="f32 UnkFloat0x48"></Field>
+    <Field Def="f32 noBoost_UpwardsInertia"></Field>
+    <Field Def="f32 noBoost_DownwardsInertia"></Field>
     <Field Def="f32 UnkFloat0x4C"></Field>
     <Field Def="f32 UnkFloat0x50"></Field>
     <Field Def="s32 UnkInt0x54"></Field>
@@ -48,7 +48,7 @@
     <Field Def="f32 UnkFloat0x9C"></Field>
     <Field Def="f32 UnkFloat0xA0"></Field>
     <Field Def="f32 inertiaChange_Grounded"></Field>
-    <Field Def="f32 UnkFloat0xA8"></Field>
+    <Field Def="f32 inertiaChange_Aerial"></Field>
     <Field Def="f32 UnkFloat0xAC"></Field>
     <Field Def="f32 UnkFloat0xB0"></Field>
     <Field Def="s32 UnkInt0xB4"></Field>

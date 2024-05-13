@@ -69,6 +69,7 @@
     <bulletEmit_ProjectileCurving AltName="Bullet Emit: Projectile Curve Angle" Wiki="Larger the value, the more aggressive the angle. Positive is right, negative is left.\nIgnores lock-on." />
     <bulletEmit_InitialEmitHeight AltName="Bullet Emit: Initial Height" Wiki="The initial height the bullet will go to after being emitted. Negative goes below, positive above." />
     <bulletEmit_BulletAccuracy AltName="Bullet Emit: Accuracy" Wiki="Assuming 0 is the target's location, positive values will land ahead of target, negative values will land behind." />
+    <postChargeFireDelay AltName="Delay after Charge Attack Fire" />
   </Field>
   <Self Row0Dummy="" />
 </PARAMMETA>
