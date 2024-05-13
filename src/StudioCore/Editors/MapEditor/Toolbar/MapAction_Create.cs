@@ -21,7 +21,7 @@ namespace StudioCore.Editors.MapEditor.Toolbar
         private static Type _createRegionSelectedType;
         private static Type _createEventSelectedType;
 
-        private static int _createEntityMapIndex;
+        private static (string, ObjectContainer) _targetMap;
 
         private static List<(string, Type)> _eventClasses = new();
         private static List<(string, Type)> _partsClasses = new();
@@ -50,123 +50,139 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImguiUtils.WrappedText("Create a new object within the target map.");
                 ImguiUtils.WrappedText("");
 
-                if (MapEditorState.LoadedMaps == null)
+                if (MapEditorState.Universe.LoadedObjectContainers == null)
                 {
                     ImguiUtils.WrappedText("No maps have been loaded yet.");
                     ImguiUtils.WrappedText("");
                 }
-                else if (MapEditorState.LoadedMaps != null && !MapEditorState.LoadedMaps.Any())
+                else if (MapEditorState.Universe.LoadedObjectContainers != null && !MapEditorState.Universe.LoadedObjectContainers.Any())
                 {
                     ImguiUtils.WrappedText("No maps have been loaded yet.");
                     ImguiUtils.WrappedText("");
                 }
                 else
                 {
-                    var map = (MapContainer)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
-
                     ImguiUtils.WrappedText("Target Map:");
-                    ImGui.Combo("##Target Map", ref _createEntityMapIndex, MapEditorState.LoadedMaps.Select(e => e.Name).ToArray(), MapEditorState.LoadedMaps.Count());
+                    if (ImGui.BeginCombo("##Targeted Map", _targetMap.Item1))
+                    {
+                        foreach (var obj in MapEditorState.Universe.LoadedObjectContainers)
+                        {
+                            if (obj.Value != null)
+                            {
+                                if (ImGui.Selectable(obj.Key))
+                                {
+                                    _targetMap = (obj.Key, obj.Value);
+                                    break;
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
                     ImguiUtils.WrappedText("");
 
-                    ImguiUtils.WrappedText("Target Type:");
-                    if (map.BTLParents.Any())
+                    if (_targetMap != (null, null))
                     {
-                        if (ImGui.Checkbox("BTL Light", ref CFG.Current.Toolbar_Create_Light))
+                        var map = (MapContainer)_targetMap.Item2;
+
+                        ImguiUtils.WrappedText("Target Type:");
+                        if (map.BTLParents.Any())
                         {
-                            CFG.Current.Toolbar_Create_Part = false;
+                            if (ImGui.Checkbox("BTL Light", ref CFG.Current.Toolbar_Create_Light))
+                            {
+                                CFG.Current.Toolbar_Create_Part = false;
+                                CFG.Current.Toolbar_Create_Region = false;
+                                CFG.Current.Toolbar_Create_Event = false;
+                            }
+                            ImguiUtils.ShowHoverTooltip("Create a BTL Light object.");
+                        }
+
+                        if (ImGui.Checkbox("Part", ref CFG.Current.Toolbar_Create_Part))
+                        {
+                            CFG.Current.Toolbar_Create_Light = false;
                             CFG.Current.Toolbar_Create_Region = false;
                             CFG.Current.Toolbar_Create_Event = false;
                         }
-                        ImguiUtils.ShowHoverTooltip("Create a BTL Light object.");
-                    }
+                        ImguiUtils.ShowHoverTooltip("Create a Part object.");
 
-                    if (ImGui.Checkbox("Part", ref CFG.Current.Toolbar_Create_Part))
-                    {
-                        CFG.Current.Toolbar_Create_Light = false;
-                        CFG.Current.Toolbar_Create_Region = false;
-                        CFG.Current.Toolbar_Create_Event = false;
-                    }
-                    ImguiUtils.ShowHoverTooltip("Create a Part object.");
-
-                    if (ImGui.Checkbox("Region", ref CFG.Current.Toolbar_Create_Region))
-                    {
-                        CFG.Current.Toolbar_Create_Light = false;
-                        CFG.Current.Toolbar_Create_Part = false;
-                        CFG.Current.Toolbar_Create_Event = false;
-                    }
-                    ImguiUtils.ShowHoverTooltip("Create a Region object.");
-
-                    if (ImGui.Checkbox("Event", ref CFG.Current.Toolbar_Create_Event))
-                    {
-                        CFG.Current.Toolbar_Create_Light = false;
-                        CFG.Current.Toolbar_Create_Region = false;
-                        CFG.Current.Toolbar_Create_Part = false;
-                    }
-                    ImguiUtils.ShowHoverTooltip("Create an Event object.");
-                    ImguiUtils.WrappedText("");
-
-                    if (CFG.Current.Toolbar_Create_Light)
-                    {
-                        // Nothing
-                    }
-
-                    if (CFG.Current.Toolbar_Create_Part)
-                    {
-                        ImguiUtils.WrappedText("Part Type:");
-                        ImGui.BeginChild("msb_part_selection", new Vector2((width - 10), (height / 4)));
-
-                        foreach ((string, Type) p in _partsClasses)
+                        if (ImGui.Checkbox("Region", ref CFG.Current.Toolbar_Create_Region))
                         {
-                            if (ImGui.RadioButton(p.Item1, p.Item2 == _createPartSelectedType))
+                            CFG.Current.Toolbar_Create_Light = false;
+                            CFG.Current.Toolbar_Create_Part = false;
+                            CFG.Current.Toolbar_Create_Event = false;
+                        }
+                        ImguiUtils.ShowHoverTooltip("Create a Region object.");
+
+                        if (ImGui.Checkbox("Event", ref CFG.Current.Toolbar_Create_Event))
+                        {
+                            CFG.Current.Toolbar_Create_Light = false;
+                            CFG.Current.Toolbar_Create_Region = false;
+                            CFG.Current.Toolbar_Create_Part = false;
+                        }
+                        ImguiUtils.ShowHoverTooltip("Create an Event object.");
+                        ImguiUtils.WrappedText("");
+
+                        if (CFG.Current.Toolbar_Create_Light)
+                        {
+                            // Nothing
+                        }
+
+                        if (CFG.Current.Toolbar_Create_Part)
+                        {
+                            ImguiUtils.WrappedText("Part Type:");
+                            ImGui.BeginChild("msb_part_selection", new Vector2((width - 10), (height / 4)));
+
+                            foreach ((string, Type) p in _partsClasses)
                             {
-                                _createPartSelectedType = p.Item2;
+                                if (ImGui.RadioButton(p.Item1, p.Item2 == _createPartSelectedType))
+                                {
+                                    _createPartSelectedType = p.Item2;
+                                }
+                            }
+
+                            ImGui.EndChild();
+                        }
+
+                        if (CFG.Current.Toolbar_Create_Region)
+                        {
+                            // MSB format that only have 1 region type
+                            if (_regionClasses.Count == 1)
+                            {
+                                _createRegionSelectedType = _regionClasses[0].Item2;
+                            }
+                            else
+                            {
+                                ImguiUtils.WrappedText("Region Type:");
+
+                                ImGui.BeginChild("msb_region_selection", new Vector2((width - 10), (height / 4)));
+
+                                foreach ((string, Type) p in _regionClasses)
+                                {
+                                    if (ImGui.RadioButton(p.Item1, p.Item2 == _createRegionSelectedType))
+                                    {
+                                        _createRegionSelectedType = p.Item2;
+                                    }
+                                }
+
+                                ImGui.EndChild();
                             }
                         }
 
-                        ImGui.EndChild();
-                    }
-
-                    if (CFG.Current.Toolbar_Create_Region)
-                    {
-                        // MSB format that only have 1 region type
-                        if (_regionClasses.Count == 1)
+                        if (CFG.Current.Toolbar_Create_Event)
                         {
-                            _createRegionSelectedType = _regionClasses[0].Item2;
-                        }
-                        else
-                        {
-                            ImguiUtils.WrappedText("Region Type:");
+                            ImguiUtils.WrappedText("Event Type:");
+                            ImGui.BeginChild("msb_event_selection", new Vector2((width - 10), (height / 4)));
 
-                            ImGui.BeginChild("msb_region_selection", new Vector2((width - 10), (height / 4)));
-
-                            foreach ((string, Type) p in _regionClasses)
+                            foreach ((string, Type) p in _eventClasses)
                             {
-                                if (ImGui.RadioButton(p.Item1, p.Item2 == _createRegionSelectedType))
+                                if (ImGui.RadioButton(p.Item1, p.Item2 == _createEventSelectedType))
                                 {
-                                    _createRegionSelectedType = p.Item2;
+                                    _createEventSelectedType = p.Item2;
                                 }
                             }
 
                             ImGui.EndChild();
                         }
                     }
-
-                    if (CFG.Current.Toolbar_Create_Event)
-                    {
-                        ImguiUtils.WrappedText("Event Type:");
-                        ImGui.BeginChild("msb_event_selection", new Vector2((width - 10), (height / 4)));
-
-                        foreach ((string, Type) p in _eventClasses)
-                        {
-                            if (ImGui.RadioButton(p.Item1, p.Item2 == _createEventSelectedType))
-                            {
-                                _createEventSelectedType = p.Item2;
-                            }
-                        }
-
-                        ImGui.EndChild();
-                    }
-
                 }
             }
         }
@@ -191,38 +207,41 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void ApplyObjectCreation(ViewportSelection _selection)
         {
-            if (!MapEditorState.LoadedMaps.Any())
+            if (!MapEditorState.Universe.LoadedObjectContainers.Any())
                 return;
 
-            var map = (MapContainer)MapEditorState.LoadedMaps.ElementAt(_createEntityMapIndex);
-
-            if (CFG.Current.Toolbar_Create_Light)
+            if (_targetMap != (null, null))
             {
-                foreach (Entity btl in map.BTLParents)
+                var map = (MapContainer)_targetMap.Item2;
+
+                if (CFG.Current.Toolbar_Create_Light)
                 {
-                    AddNewEntity(typeof(BTL.Light), MsbEntity.MsbEntityType.Light, map, btl);
+                    foreach (Entity btl in map.BTLParents)
+                    {
+                        AddNewEntity(typeof(BTL.Light), MsbEntity.MsbEntityType.Light, map, btl);
+                    }
                 }
-            }
-            if (CFG.Current.Toolbar_Create_Part)
-            {
-                if (_createPartSelectedType == null)
-                    return;
+                if (CFG.Current.Toolbar_Create_Part)
+                {
+                    if (_createPartSelectedType == null)
+                        return;
 
-                AddNewEntity(_createPartSelectedType, MsbEntity.MsbEntityType.Part, map);
-            }
-            if (CFG.Current.Toolbar_Create_Region)
-            {
-                if (_createRegionSelectedType == null)
-                    return;
+                    AddNewEntity(_createPartSelectedType, MsbEntity.MsbEntityType.Part, map);
+                }
+                if (CFG.Current.Toolbar_Create_Region)
+                {
+                    if (_createRegionSelectedType == null)
+                        return;
 
-                AddNewEntity(_createRegionSelectedType, MsbEntity.MsbEntityType.Region, map);
-            }
-            if (CFG.Current.Toolbar_Create_Event)
-            {
-                if (_createEventSelectedType == null)
-                    return;
+                    AddNewEntity(_createRegionSelectedType, MsbEntity.MsbEntityType.Region, map);
+                }
+                if (CFG.Current.Toolbar_Create_Event)
+                {
+                    if (_createEventSelectedType == null)
+                        return;
 
-                AddNewEntity(_createEventSelectedType, MsbEntity.MsbEntityType.Event, map);
+                    AddNewEntity(_createEventSelectedType, MsbEntity.MsbEntityType.Event, map);
+                }
             }
         }
 

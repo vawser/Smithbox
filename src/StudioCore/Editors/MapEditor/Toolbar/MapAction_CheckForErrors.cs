@@ -1,6 +1,7 @@
 ﻿using HKX2;
 using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.UserProject;
@@ -16,6 +17,9 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 {
     public static class MapAction_CheckForErrors
     {
+
+        private static (string, ObjectContainer) _targetMap;
+
         public static void Select(ViewportSelection _selection)
         {
             if (ImGui.RadioButton("Check Entity ID Errors##tool_Selection_Check_for_Errors", MapEditorState.SelectedAction == MapEditorAction.Selection_Check_for_Errors))
@@ -36,6 +40,37 @@ namespace StudioCore.Editors.MapEditor.Toolbar
                 ImguiUtils.WrappedText("This tool will check for any incorrect property assignments.");
                 ImguiUtils.WrappedText("Invalid assignments will be noted in the logger.");
                 ImguiUtils.WrappedText("");
+
+                if (MapEditorState.Universe.LoadedObjectContainers == null)
+                {
+                    ImguiUtils.WrappedText("No maps have been loaded yet.");
+                    ImguiUtils.WrappedText("");
+                }
+                else if (MapEditorState.Universe.LoadedObjectContainers != null && !MapEditorState.Universe.LoadedObjectContainers.Any())
+                {
+                    ImguiUtils.WrappedText("No maps have been loaded yet.");
+                    ImguiUtils.WrappedText("");
+                }
+                else
+                {
+                    ImguiUtils.WrappedText("Target Map:");
+                    if (ImGui.BeginCombo("##Targeted Map", _targetMap.Item1))
+                    {
+                        foreach (var obj in MapEditorState.Universe.LoadedObjectContainers)
+                        {
+                            if (obj.Value != null)
+                            {
+                                if (ImGui.Selectable(obj.Key))
+                                {
+                                    _targetMap = (obj.Key, obj.Value);
+                                    break;
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+                    ImguiUtils.WrappedText("");
+                }
             }
         }
 
@@ -59,17 +94,19 @@ namespace StudioCore.Editors.MapEditor.Toolbar
 
         public static void ApplyErrorCheck(ViewportSelection _selection)
         {
-            if (MapEditorState.LoadedMaps == null)
+            if (MapEditorState.Universe.LoadedObjectContainers == null)
                 return;
 
-            if (!MapEditorState.LoadedMaps.Any())
+            if (!MapEditorState.Universe.LoadedObjectContainers.Any())
                 return;
 
             HashSet<uint> vals = new();
             bool hasError = false;
 
-            foreach (var loadedMap in MapEditorState.LoadedMaps)
+            if(_targetMap != (null, null))
             {
+                var loadedMap = (MapContainer)_targetMap.Item2;
+
                 // Entity ID
                 foreach (var e in loadedMap?.Objects)
                 {

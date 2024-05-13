@@ -673,6 +673,8 @@ public class Universe
         }
 
         LoadMapAsync(mapid, selectOnLoad);
+
+
         return true;
     }
 

@@ -1871,6 +1871,7 @@ namespace SoulsFormats
                     Unk56 = (sbyte)-1;
                     PartsTokenParamID = -1;
 
+                    UnkEnemyStruct70 = new EnemyUnkStruct70();
                     UnkEnemyStruct78 = new EnemyUnkStruct78();
                 }
 

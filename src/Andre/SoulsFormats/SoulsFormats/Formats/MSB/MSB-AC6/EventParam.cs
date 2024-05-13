@@ -920,7 +920,7 @@ namespace SoulsFormats
                 /// Unknown.
                 /// </summary>
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string[] GroupPartsNames { get; private set; }
+                public string[] GroupPartsNames { get; set; }
                 public int[] GroupPartsIndices;
 
                 /// <summary>
@@ -931,6 +931,8 @@ namespace SoulsFormats
                     PlatoonScriptID = -1;
                     GroupPartsIndices = new int[32];
                     Array.Fill<int>(GroupPartsIndices, -1);
+                    GroupPartsNames = new string[32];
+                    Array.Fill<string>(GroupPartsNames, "");
                 }
 
                 private protected override void DeepCopyTo(Event evnt)
@@ -1003,6 +1005,8 @@ namespace SoulsFormats
                 {
                     WalkPointIndices = new short[24];
                     Array.Fill<short>(WalkPointIndices, (short)-1);
+                    WalkPointNames = new string[24];
+                    Array.Fill<string>(WalkPointNames, "");
                 }
 
                 private protected override void DeepCopyTo(Event evnt)
@@ -1081,7 +1085,7 @@ namespace SoulsFormats
                 /// </summary>
                 
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string[] PartNamesT0C { get; private set; }
+                public string[] PartNamesT0C { get; set; }
                 public short[] PartIndicesT0C;
 
                 /// <summary>
@@ -1089,7 +1093,7 @@ namespace SoulsFormats
                 /// </summary>
                 
                 [MSBReference(ReferenceType = typeof(Region))]
-                public string[] PointNamesT28 { get; private set; }
+                public string[] PointNamesT28 { get; set; }
                 public short[] PointIndicesT28;
 
                 /// <summary>
@@ -1102,10 +1106,16 @@ namespace SoulsFormats
                     PointIndexT04 = (short)-1;
                     UnkT06 = (short)-1;
                     PartIndexT08 = -1;
+
                     PartIndicesT0C = new short[14];
                     Array.Fill<short>(PartIndicesT0C, (short)-1);
+                    PartNamesT0C = new string[14];
+                    Array.Fill<string>(PartNamesT0C, "");
+
                     PointIndicesT28 = new short[16];
                     Array.Fill<short>(PointIndicesT28, (short)-1);
+                    PointNamesT28 = new string[16];
+                    Array.Fill<string>(PointNamesT28, "");
                 }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
@@ -1668,6 +1678,8 @@ namespace SoulsFormats
                 {
                     GroupPartsIndices = new short[24];
                     Array.Fill<short>(GroupPartsIndices, -1);
+                    GroupPartsNames = new string[24];
+                    Array.Fill<string>(GroupPartsNames, "");
                 }
 
                 private protected override void DeepCopyTo(Event evnt)

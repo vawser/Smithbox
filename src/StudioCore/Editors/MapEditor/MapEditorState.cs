@@ -49,8 +49,6 @@ namespace StudioCore.Editors.MapEditor
 
         public static MapEditorAction SelectedAction;
 
-        public static IEnumerable<ObjectContainer> LoadedMaps;
-
         public static Universe Universe;
 
         public static RenderScene Scene;
