@@ -11,11 +11,7 @@
     <Field Def="s32 UnkInt0x08"></Field>
     <Field Def="s8 compareType"></Field>
     <Field Def="u8 UnkByte0x0D"></Field>
-    <Field Def="u16 UnkUshort0x0E"></Field>
-    <Field Def="s32 Unk0x10"></Field>
-    <Field Def="s32 Unk0x14"></Field>
-    <Field Def="s32 Unk0x18"></Field>
-    <Field Def="s32 Unk0x1C"></Field>
+    <Field Def="fixstrW developerComment[9]"></Field>
     <Field Def="s32 DescriptionTextID"></Field>
     <Field Def="u8 UnkByte0x24"></Field>
     <Field Def="s8 UnkSbyte0x25"></Field>
@@ -32,10 +28,10 @@
     <Field Def="s32 UnkInt0x3C"></Field>
     <Field Def="s32 UnkInt0x40"></Field>
     <Field Def="u16 UnkUshort0x44"></Field>
-    <Field Def="u8 UnkByte0x46"></Field>
+    <Field Def="u8 UnkByte0x46"></Field> <!-- Retrieved Value Type? 5 (short), 6 (int),  -->
     <Field Def="u8 UnkByte0x47"></Field>
-    <Field Def="s32 UnkInt0x48"></Field>
-    <Field Def="f32 UnkFloat0x4C"></Field>
+    <Field Def="s32 UnkInt0x48"></Field> <!-- Retrieved Value ID? -->
+    <Field Def="f32 UnkFloat0x4C"></Field> <!-- Multiple to source value for display? -->
     <Field Def="f32 UnkFloat0x50"></Field>
     <Field Def="s32 Unk0x54"></Field>
     <Field Def="u16 UnkUshort0x58"></Field>

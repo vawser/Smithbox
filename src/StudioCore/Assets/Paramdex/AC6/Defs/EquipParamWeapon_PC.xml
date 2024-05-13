@@ -7,14 +7,10 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     <Field Def="s32 Unk0x00"></Field>
-    <Field Def="s32 variationId">
-      <Description>Used to link BehaviorParam_PC entries to the weapon.</Description>
-    </Field>
+    <Field Def="s32 variationId"></Field>
     <Field Def="s32 sortId"></Field>
     <Field Def="s32 wanderingEquipId"></Field>
-    <Field Def="f32 weight">
-      <Description>Weight of the part.</Description>
-    </Field>
+    <Field Def="f32 weight"></Field>
     <Field Def="f32 weaponWeightRate"></Field>
     <Field Def="s32 fixPrice"></Field>
     <Field Def="s32 basicPrice"></Field>
@@ -23,18 +19,10 @@
     <Field Def="s32 correctAgility"></Field>
     <Field Def="s32 corretMagic"></Field>
     <Field Def="s32 corretFaith"></Field>
-    <Field Def="f32 damageMitigation_Kinetic">
-      <Description>Ability to mitigate incoming Kinetic damage while performing a regular guard.</Description>
-    </Field>
-    <Field Def="f32 damageMitigation_Energy">
-      <Description>Ability to mitigate incoming Energy damage while performing a regular guard.</Description>
-    </Field>
-    <Field Def="f32 damageMitigation_Explosive">
-      <Description>Ability to mitigate incoming Explosive damage while performing a regular guard.</Description>
-    </Field>
-    <Field Def="f32 damageMitigation_Coral">
-      <Description>Ability to mitigate incoming Coral damage while performing a regular guard.</Description>
-    </Field>
+    <Field Def="f32 damageMitigation_Kinetic"></Field>
+    <Field Def="f32 damageMitigation_Energy"></Field>
+    <Field Def="f32 damageMitigation_Explosive"></Field>
+    <Field Def="f32 damageMitigation_Coral"></Field>
     <Field Def="s32 spEffectBehaviorId0"></Field>
     <Field Def="s32 spEffectBehaviorId1"></Field>
     <Field Def="s32 spEffectBehaviorId2"></Field>
@@ -271,11 +259,12 @@
     <Field Def="u8 isSoulParamIdChange_model3:1"></Field>
     <Field Def="s8 wepSeIdOffset"></Field>
     <Field Def="s32 baseChangePrice"></Field>
-    <Field Def="s32 Unk0x23C"></Field>
+    <Field Def="u8 Unk0x23C"></Field>
+    <Field Def="u8 Unk0x23D"></Field>
+    <Field Def="u8 Unk0x23E"></Field>
+    <Field Def="u8 Unk0x23F"></Field>
     <Field Def="s32 Unk0x240"></Field>
-    <Field Def="s32 magazineRounds">
-      <Description>Number of rounds loaded per magazine.</Description>
-    </Field>
+    <Field Def="s32 magazineRounds"></Field>
     <Field Def="f32 UnkFloat0x248"></Field>
     <Field Def="f32 Unk0x24C"></Field>
     <Field Def="s32 Unk0x250"></Field>
@@ -300,9 +289,7 @@
     <Field Def="s32 Unk0x29C"></Field>
     <Field Def="s32 Unk0x2A0"></Field>
     <Field Def="s32 Unk0x2A4"></Field>
-    <Field Def="s32 totalRounds">
-      <Description>Total number of rounds that can be fired.</Description>
-    </Field>
+    <Field Def="s32 totalRounds"></Field>
     <Field Def="s32 Unk0x2AC"></Field>
     <Field Def="f32 homingRequiredDist"></Field>
     <Field Def="f32 UnkFloat0x2B4"></Field>
@@ -314,15 +301,11 @@
     <Field Def="u8 Unk0x2C9"></Field>
     <Field Def="u8 Unk0x2CA"></Field>
     <Field Def="u8 sortGroupId"></Field>
-    <Field Def="s32 energyLoad">
-      <Description>EN Load of the part.</Description>
-    </Field>
+    <Field Def="s32 energyLoad"></Field>
     <Field Def="s32 menuTextID"></Field>
     <Field Def="s32 unkItemID0x2D4"></Field>
     <Field Def="u16 UnkUshort0x2D8"></Field>
-    <Field Def="u16 ammunitionCost">
-      <Description>Cost per round fired. At the end of each mission, the total number of rounds fired is used to calculate ammunition expenses.</Description>
-    </Field>
+    <Field Def="u16 ammunitionCost"></Field>
     <Field Def="f32 UnkFloat0x2DC"></Field>
     <Field Def="s32 UnkInt0x2E0"></Field>
     <Field Def="s32 Unk0x2E4"></Field>
@@ -383,15 +366,9 @@
     <Field Def="s16 shieldGuardAngleHorizontal"></Field>
     <Field Def="s16 shieldGuardAngleVertical"></Field>
     <Field Def="s16 Unk0x396"></Field>
-    <Field Def="s32 attackActionParamId">
-      <Description>References the AttackActionParam_PC</Description>
-    </Field>
-    <Field Def="f32 reloadTime">
-      <Description>Time from start to completion of reload.</Description>
-    </Field>
-    <Field Def="f32 chargeTime_Level1">
-      <Description>Time it takes to complete charging, for weapons that support charging.</Description>
-    </Field>
+    <Field Def="s32 attackActionParamId"></Field>
+    <Field Def="f32 reloadTime"></Field>
+    <Field Def="f32 chargeTime_Level1"></Field>
     <Field Def="f32 partialChargeDrainDelay"></Field>
     <Field Def="f32 partialChargeFullDrainTime"></Field>
     <Field Def="s32 UnkInt0x3AC"></Field>
@@ -430,19 +407,11 @@
     <Field Def="u8 unkIsSpecializationType_8:1"></Field>
     <Field Def="f32 chargeTime_Level2"></Field>
     <Field Def="s32 Unk0x408"></Field>
-    <Field Def="u16 corporationTextureId">
-      <Description>Determines which corporation icon is used for the weapon.</Description>
-    </Field>
-    <Field Def="u16 equipmentMenuManageCategoryParamId">
-      <Description>References the EquipmentMenuManageCategoryParam</Description>
-    </Field>
-    <Field Def="f32 initialGuardDuration">
-      <Description>Duration of the Initial Guard damage mitigation window.</Description>
-    </Field>
+    <Field Def="u16 corporationTextureId"></Field>
+    <Field Def="u16 equipmentMenuManageCategoryParamId"></Field>
+    <Field Def="f32 initialGuardDuration"></Field>
     <Field Def="f32 UnkFloat0x414"></Field>
-    <Field Def="f32 initialGuardImpactDampening">
-      <Description>Ability to mitigate ACS strain whileperforming an Initial Guard.</Description>
-    </Field>
+    <Field Def="f32 initialGuardImpactDampening"></Field>
     <Field Def="s32 Unk0x41C"></Field>
     <Field Def="s32 Unk0x420"></Field>
     <Field Def="s32 shieldFFX_Deployed"></Field>
@@ -462,9 +431,7 @@
     <Field Def="f32 unkCoreExpansion0x450"></Field>
     <Field Def="f32 UnkFloat0x454"></Field>
     <Field Def="f32 coreExpansionCooldownTime"></Field>
-    <Field Def="s32 chargingEnergyLoad">
-      <Description>EN Load when charging. EN is reduced if this value exceeds supply.</Description>
-    </Field>
+    <Field Def="s32 chargingEnergyLoad"></Field>
     <Field Def="s32 Unk0x460"></Field>
     <Field Def="s32 Unk0x464"></Field>
     <Field Def="s32 Unk0x468"></Field>
@@ -481,14 +448,10 @@
     <Field Def="s32 Unk0x494"></Field>
     <Field Def="s32 Unk0x498"></Field>
     <Field Def="s32 Unk0x49C"></Field>
-    <Field Def="u16 coreExpansionDecayRate">
-      <Description>How much expansion HP is lost per second.</Description>
-    </Field>
+    <Field Def="u16 coreExpansionDecayRate"></Field>
     <Field Def="u8 Unk0x4A2"></Field>
     <Field Def="u8 UnkByte0x4A3"></Field>
-    <Field Def="f32 impactDampeningRate">
-      <Description>Ability to mitigate incoming ACS burden while performing a regular guard.</Description>
-    </Field>
+    <Field Def="f32 impactDampeningRate"></Field>
     <Field Def="u8 UnkByte0x4A8"></Field>
     <Field Def="u8 Unk0x4A9"></Field>
     <Field Def="u8 Unk0x4AA"></Field>
@@ -548,25 +511,15 @@
     <Field Def="s32 projectedBarrierFFX_Id3"></Field>
     <Field Def="f32 UnkFloat0x570"></Field>
     <Field Def="f32 UnkInt0x574"></Field>
-    <Field Def="f32 initialGuardDamageMitigation_Kinetic">
-      <Description>Ability to mitigate incoming Kinetic damage while performing an Initial Guard.</Description>
-    </Field>
-    <Field Def="f32 initialGuardDamageMitigation_Energy">
-      <Description>Ability to mitigate incoming Energy damage while performing an Initial Guard.</Description>
-    </Field>
-    <Field Def="f32 initialGuardDamageMitigation_Explosive">
-      <Description>Ability to mitigate incoming Explosive damage while performing an Initial Guard.</Description>
-    </Field>
-    <Field Def="f32 initialGuardDamageMitigation_Coral">
-      <Description>Ability to mitigate incoming Coral damage while performing an Initial Guard.</Description>
-    </Field>
-    <Field Def="s8 UnkSbyte0x588"></Field>
-    <Field Def="u8 Unk0x589"></Field>
-    <Field Def="u8 Unk0x58A"></Field>
-    <Field Def="u8 Unk0x58B"></Field>
-    <Field Def="f32 weaponCoolingRate">
-      <Description>Speed at which heat buildup is reduced.</Description>
-    </Field>
+    <Field Def="f32 initialGuardDamageMitigation_Kinetic"></Field>
+    <Field Def="f32 initialGuardDamageMitigation_Energy"></Field>
+    <Field Def="f32 initialGuardDamageMitigation_Explosive"></Field>
+    <Field Def="f32 initialGuardDamageMitigation_Coral"></Field>
+    <Field Def="s8 initialGuardStatusMitigation_AcsAnomaly"></Field>
+    <Field Def="s8 initialGuardStatusMitigation_Stun"></Field>
+    <Field Def="s8 initialGuardStatusMitigation_CameraDisruption"></Field>
+    <Field Def="s8 initialGuardStatusMitigation_Unknown"></Field>
+    <Field Def="f32 weaponCoolingRate"></Field>
     <Field Def="f32 weaponOverheatedCoolingRate"></Field>
     <Field Def="f32 weaponCoolingDelay"></Field>
     <Field Def="f32 weaponOverheatedCoolingDelay"></Field>
@@ -577,9 +530,7 @@
     <Field Def="u8 menuBurstFire"></Field>
     <Field Def="u8 menuSecondaryDamageField"></Field>
     <Field Def="u8 UnkByte0x5A9"></Field>
-    <Field Def="u16 menuShootCount">
-      <Description>Determines the number of rounds shot per attack in the weapon . Purely visual, the actual count has to be changed within the weapon's Bullets.</Description>
-    </Field>
+    <Field Def="u16 menuShootCount"></Field>
     <Field Def="u8 menuSecondaryDirectHitAdjustment"></Field>
     <Field Def="u8 menuSecondaryImpact"></Field>
     <Field Def="u8 menuSecondaryAccumulativeImpact"></Field>
@@ -591,7 +542,7 @@
     <Field Def="u8 Unk0x5B4"></Field>
     <Field Def="s8 UnkSbyte0x5B5"></Field>
     <Field Def="s16 Unk0x5B6"></Field>
-    <Field Def="s8 UnkSbyte0x5B8"></Field>
+    <Field Def="s8 menuMeleeWeaponConsecutiveHits"></Field>
     <Field Def="u8 unkSecondaryDamageField"></Field>
     <Field Def="s16 menuChargeStateCategory"></Field>
     <Field Def="u8 menuSecondaryChargedAttackPower"></Field>
@@ -611,10 +562,11 @@
     <Field Def="s16 Unk0x5CC"></Field>
     <Field Def="u8 menuChargeTimeType"></Field>
     <Field Def="u8 Unk0x5CF"></Field>
-    <Field Def="s32 Unk0x5D0"></Field>
-    <Field Def="s32 demonstrationVideoBinkId">
-      <Description>Refers to the video filename in Game/movie/</Description>
-    </Field>
+    <Field Def="u8 Unk0x5D0"></Field>
+    <Field Def="u8 Unk0x5D1"></Field>
+    <Field Def="u8 Unk0x5D2"></Field>
+    <Field Def="u8 Unk0x5D3"></Field>
+    <Field Def="s32 demonstrationVideoBinkId"></Field>
     <Field Def="u8 UnkByte0x5D8"></Field>
     <Field Def="u8 Unk0x5D9"></Field>
     <Field Def="u16 UnkUshort0x5DA"></Field>

@@ -10,7 +10,11 @@
   
   <Field>
     <TitleTextID AltName="Title Text ID" FmgRef="Modern_MenuText" />
+    
     <compareType AltName="Compare Type" Enum="MENU_PROPERTY_CMP_TYPE" Wiki="Determines if a lower or higher value is considered beneficial when two values in UI are compared.\nExample: When comparing weapon stats (beneficial comparisons is blue, non-beneficial is red)." />
+    
+    <developerComment AltName="Comment" />
+    
     <DescriptionTextID AltName="Description Text ID" FmgRef="LineHelp" />
   </Field>
   <Self Wiki="Determines the configuration of menu interface elements, such as buttons, titles, descriptions, etc." />

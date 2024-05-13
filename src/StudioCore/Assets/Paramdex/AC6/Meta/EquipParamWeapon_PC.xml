@@ -26,6 +26,11 @@
         <Option Value="102" Name="Unused - RRI(旧)" />
         <Option Value="104" Name="Unused - オルマイ(本性)" />
     </Enum>
+    <Enum Name="MENU_CHARGE_STATE_CATEGORY" type="s16">
+        <Option Value="0" Name="Base Charge" />
+        <Option Value="100" Name="Full Charge" />
+        <Option Value="110" Name="Full Charge (Two-Stage)" />
+    </Enum>
   </Enums>
   <Field>
     <variationId AltName="Behavior Variation ID" Wiki="Used to link weapon with BehaviorParam, and from there projectiles/attacks. Corresponds with variationId in BehaviorParam." />
@@ -255,13 +260,13 @@
     <isSoulParamIdChange_model3 AltName="Apply Weapon VFX Parameters [3]" Wiki="Whether the vfx parameter Soul Param ID for Weapon Enchantment and Invisible Weapon for Weapon Enchantment settings are applied" IsBool="" />
     <wepSeIdOffset AltName="Weapon SE ID Offset" Wiki="SEID offset value" />
     <baseChangePrice AltName="Affinity Price" Wiki="Evolution price" />
-    <magazineRounds AltName="Magazine Rounds" />
-    <totalRounds AltName="Total Rounds" />
+    <magazineRounds AltName="Magazine Rounds" Wiki="Number of rounds loaded per magazine." />
+    <totalRounds AltName="Total Rounds" Wiki="Total number of rounds that can be fired." />
     <homingRequiredDist AltName="Homing: Required Distance" Wiki="Maximum distance to target when firing for homing to function." />
     <sortGroupId AltName="Sort Group ID" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."/>
-    <energyLoad AltName="Energy Load" />
+    <energyLoad AltName="Energy Load" Wiki="EN Load of the part." />
     <menuTextID AltName="Menu Text ID" FmgRef="Modern_MenuText" />
-    <ammunitionCost AltName="Ammunition Cost" />
+    <ammunitionCost AltName="Ammunition Cost" Wiki="Cost per round fired. At the end of each mission, the total number of rounds fired is used to calculate ammunition expenses." />
     <unkAttackAnimation AltName="Unknown Attack Animation" />
     <pulseArmorDamageReductionRate_Kinetic AltName="Pulse Armor Damage Mitigation: Kinetic" />
     <pulseArmorDamageReductionRate_Energy AltName="Pulse Armor Damage Mitigation: Energy" />
@@ -273,8 +278,8 @@
     <shieldGuardFacingAngleVerticalOffset AltName="Pulse Shield: Deployment Angle Offset (Vertical)" Wiki="Vertical offset for shield guard facing angle.\nPositive values = angle up, negative values = angle down." />
     <shieldGuardAngleHorizontal AltName="Pulse Shield: Deployment Range (Horizontal)" Wiki="Horizontal guard angle of shields. Value displayed in UI as Deployment Range (times 2)." />
     <shieldGuardAngleVertical AltName="Pulse Shield: Deployment Range (Vertical)" Wiki="Vertical guard angle of shields." />
-    <attackActionParamId AltName="Attack Action Param ID" Refs="AttackActionParam_PC" />
-    <reloadTime AltName="Reload Time" />
+    <attackActionParamId AltName="Attack Action Param ID" Refs="AttackActionParam_PC" Wiki="References the AttackActionParam_PC" />
+    <reloadTime AltName="Reload Time" Wiki="Time from start to completion of reload." />
     <chargeTime_Level1 AltName="Charge Time (Level 1)" Wiki="Amount of time (in seconds) it takes to fully charge to level 1." />
     <partialChargeDrainDelay AltName="Partial Charge: Drain Delay" />
     <partialChargeFullDrainTime AltName="Partial Charge: Full Drain Time" />
@@ -287,10 +292,10 @@
     <unkIsSpecializationType_7 AltName="Specialization Type: Unknown" IsBool="" />
     <unkIsSpecializationType_8 AltName="Specialization Type: Unknown" IsBool="" />
     <chargeTime_Level2 AltName="Charge Time (Level 2)" Wiki="Amount of time (in seconds) it takes to fully charge to level 2, for when weapon permits charging past level 1." />
-    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" />
-    <equipmentMenuManageCategoryParamId AltName="Equipment Menu Category" Refs="EquipmentMenuManageCategoryParam" />
-    <initialGuardDuration AltName="Initial Guard: Duration" />
-    <initialGuardImpactDampening AltName="Initial Guard: Impact Dampening" />
+    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" Wiki="Determines which corporation icon is used for the weapon." />
+    <equipmentMenuManageCategoryParamId AltName="Equipment Menu Category" Refs="EquipmentMenuManageCategoryParam" Wiki="References the EquipmentMenuManageCategoryParam" />
+    <initialGuardDuration AltName="Initial Guard: Duration" Wiki="Duration of the Initial Guard damage mitigation window." />
+    <initialGuardImpactDampening AltName="Initial Guard: Impact Dampening" Wiki="Ability to mitigate ACS strain whileperforming an Initial Guard." />
     <shieldFFX_Deployed AltName="Deployed Shield: SFX" ParticleAlias="" />
     <shieldDmypolyId_Deployed AltName="Deployed Shield: Dummy Poly" />
     <shieldFFX_Undeploying AltName="Sheathing Shield: SFX" ParticleAlias="" />
@@ -302,8 +307,8 @@
     <chargingEnergyLoad AltName="Charging Energy Load" Wiki="Additional energy load to apply when firing a charged shot." />
     <shoulderShootDelay AltName="Shoulder Fire Delay" Wiki="Affects the delay before a shoulder weapon fires." />
     <shoulderChargedShootDelay AltName="Shoulder Charged Fire Delay" Wiki="Affects the delay before a shoulder weapon charge fires." />
-    <coreExpansionDecayRate AltName="Core Expansion Decay Rate" />
-    <impactDampeningRate AltName="Impact Dampening Rate" />
+    <coreExpansionDecayRate AltName="Core Expansion Decay Rate" Wiki="How much expansion HP is lost per second." />
+    <impactDampeningRate AltName="Impact Dampening Rate" Wiki="Ability to mitigate incoming ACS burden while performing a regular guard." />
     <projectBarrierSizeCorrection AltName="Projected Barrier: Size Correction" />
     <projectedBarrierHealth AltName="Project Barrier: Health" />
     <projectedBarrierDecayRate AltName="Project Barrier: Decay Rate" />
@@ -311,36 +316,46 @@
     <projectedBarrierFFX_Id1 AltName="Projected Barrier SFX [1]" ParticleAlias="" />
     <projectedBarrierFFX_Id2 AltName="Projected Barrier SFX [2]" ParticleAlias="" />
     <projectedBarrierFFX_Id3 AltName="Projected Barrier SFX [3]" ParticleAlias="" />
-    <initialGuardDamageMitigation_Kinetic AltName="Initial Guard - Damage Mitigation: Kinetic" />
-    <initialGuardDamageMitigation_Energy AltName="Initial Guard - Damage Mitigation: Energy" />
-    <initialGuardDamageMitigation_Explosive AltName="Initial Guard - Damage Mitigation: Explosive" />
-    <initialGuardDamageMitigation_Coral AltName="Initial Guard - Damage Mitigation: Coral" />
-    <weaponCoolingRate AltName="Weapon Cooling Rate" />
-    <weaponOverheatedCoolingRate AltName="Overheated Weapon Cooling Rate" />
-    <weaponCoolingDelay AltName="Weapon Cooling Delay" />
-    <weaponOverheatedCoolingDelay AltName="Overheated Weapon Cooling Delay" />
+    
+    <initialGuardDamageMitigation_Kinetic AltName="Initial Guard - Damage Mitigation: Kinetic" Wiki="Ability to mitigate incoming Kinetic damage while performing an Initial Guard." />
+    <initialGuardDamageMitigation_Energy AltName="Initial Guard - Damage Mitigation: Energy" Wiki="Ability to mitigate incoming Energy damage while performing an Initial Guard." />
+    <initialGuardDamageMitigation_Explosive AltName="Initial Guard - Damage Mitigation: Explosive" Wiki="Ability to mitigate incoming Explosive damage while performing an Initial Guard." />
+    <initialGuardDamageMitigation_Coral AltName="Initial Guard - Damage Mitigation: Coral" Wiki="Ability to mitigate incoming Coral damage while performing an Initial Guard." />
+    
+    <initialGuardStatusMitigation_AcsAnomaly AltName="Initial Guard - Status Mitigation: ACS Anomaly" Wiki="Ability to mitigate incoming ACS Anomaly strain while performing an Initial Guard." />
+    <initialGuardStatusMitigation_Stun AltName="Initial Guard - Status Mitigation: Stun" Wiki="Ability to mitigate incoming Stun strain while performing an Initial Guard." />
+    <initialGuardStatusMitigation_CameraDisruption AltName="Initial Guard - Status Mitigation: Camera Disruption" Wiki="Ability to mitigate incoming Camera Disruption strain while performing an Initial Guard." />
+    <initialGuardStatusMitigation_Unknown AltName="Initial Guard - Status Mitigation: Unknown" Wiki="Ability to mitigate incoming Unknown strain while performing an Initial Guard." />
+    
+    <weaponCoolingRate AltName="Weapon Cooling Rate" Wiki="Speed at which heat buildup is reduced." />
+    <weaponOverheatedCoolingRate AltName="Overheated Weapon Cooling Rate" Wiki="Speed at which heat buildup is reduced if the weapon overheated." />
+    <weaponCoolingDelay AltName="Weapon Cooling Delay" Wiki="Delay before heat buildup start reducing." />
+    <weaponOverheatedCoolingDelay AltName="Overheated Weapon Cooling Delay" Wiki="Inherits fields from referenced weapon if the weapon overheated." />
     <inheritanceWeaponParamId AltName="Weapon Inheritance" Refs="EquipParamWeapon" Wiki="Inherits fields from referenced weapon." />
-    <menuShootCount AltName="Displayed Shoot Count" />
-    <menuChargeStateCategory AltName="Display Charged State Category" Wiki="Whether to show base charge or full charge values in menu. Value 100 for regular weapons, 110 for two stage weapons. Unknown if this value is derived or just an enum." />
+    
     <demonstrationVideoBinkId AltName="Demostration Video Bink ID" Wiki="Refers to the video filename in Game/movie/" MovieAlias="" />
     <pulseArmorRadius AltName="Pulse Armor: Radius" Wiki="Size of effective pulse armor (see pulseArmorVisualRadius for visual radius)." />
     <pulseArmorVisualRadius AltName="Pulse Armor: Visual Radius" Wiki="Size of pulse armor visuals (see pulseArmorRadius for effective radius)." />
-    <menuChargeTimeType AltName="Menu: Show Full Charge Time" Wiki="Determines if a weapon reports its Full Charge Time in the menu for weapons with multiple charge stages. No gameplay effect." />
-    <menuSecondaryChargedBlastRadius AltName="Menu: Show Secondary Charged Blast Radius" Wiki="Determines if a weapon reports Charged Blast Radius from secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuSecondaryAttackPower AltName="Menu: Show Secondary Attack Power" Wiki="Determines if a weapon reports Attack Power from secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuSecondaryDamageField AltName="Menu: Show Secondary Damage Field" Wiki="Determines if a weapon reports multiple ticks of damage from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
-    <menuSecondaryDirectHitAdjustment AltName="Menu: Show Secondary Direct Hit Adjustment" Wiki="Determines if a weapon reports Direct Hit Adjustment from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
-    <menuSecondaryImpact AltName="Menu: Show Secondary Impact" Wiki="Determines if a weapon reports Impact from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
-    <menuSecondaryAccumulativeImpact AltName="Menu: Show Secondary Accumulative Impact" Wiki="Determines if a weapon reports Accumulative Impact from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
-    <menuSecondaryBlastRadius AltName="Menu: Show Secondary Blast Radius" Wiki="Determines if a weapon reports Blast Radius from its secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <unkSecondaryDamageField AltName="Menu: Show Unk Secondary Damage Field" Wiki="Appears to relate to the same information as menuSecondaryDamageField. Why two fields do this is unknown but both seem required." />
-    <menuSecondaryChargedAttackPower AltName="Menu: Show Secondary Charged Attack Power" Wiki="Determines if a weapon reports Charged Attack Power from secondary bullets, such as a laser shotgun explosion. No gameplay effect." />
-    <menuSecondaryChargedDamageField AltName="Menu: Show Secondary Charged Damage Field" Wiki="Determines if a weapon reports multiple ticks of damage from its secondary charged bullets, such as plasma AoE fields. No gameplay effect." />
-    <unkSecondaryChargedDamageField AltName="Menu: Show Unk Secondary Charged Damage Field" Wiki="Appears to relate to the same information as menuSecondaryChargedDamageField. Why two fields do this is unknown but both seem required." />
-    <menuSecondaryChargedImpact AltName="Menu: Show Secondary Charged Impact" Wiki="Determines if a weapon reports Charged Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuSecondaryChargedAccumulativeImpact AltName="Menu: Show Secondary Charged Accumulative Impact" Wiki="Determines if a weapon reports Charged Accumulative Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
-    <menuBurstFire AltName="Menu: Show Burst Fire" Wiki="Determines if a weapon's standard fire reports its burst fire count to the menu, causing its displayed Attack Power, Impact, and Accumulative Impact to display said burst fire count. No gameplay effect." />
-    <menuChargedBurstFire AltName="Menu: Show Charged Burst Fire" Wiki="Determines if a weapon's charge fire reports its burst fire to the menu, causing its displayed Chg Attack Power, Chg Impact, and Chg Accum Impact to display said burst fire count. No gameplay effect." />
+    
+    <menuShootCount AltName="Assembly Menu: Displayed Shoot Count" Wiki="Determines the number of rounds shot per attack in the weapon . Purely visual, the actual count has to be changed within the weapon's Bullets." />
+    <menuChargeStateCategory AltName="Assembly Menu: Display Charged State Category" Wiki="Whether to show base charge or full charge values in menu. Value 100 for regular weapons, 110 for two stage weapons. Unknown if this value is derived or just an enum." Enum="MENU_CHARGE_STATE_CATEGORY"/>
+    <menuChargeTimeType AltName="Assembly Menu: Show Full Charge Time" Wiki="Determines if a weapon reports its Full Charge Time in the menu for weapons with multiple charge stages. No gameplay effect." />
+    <menuSecondaryChargedBlastRadius AltName="Assembly Menu: Show Secondary Charged Blast Radius" Wiki="Determines if a weapon reports Charged Blast Radius from secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuSecondaryAttackPower AltName="Assembly Menu: Show Secondary Attack Power" Wiki="Determines if a weapon reports Attack Power from secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuSecondaryDamageField AltName="Assembly Menu: Show Secondary Damage Field" Wiki="Determines if a weapon reports multiple ticks of damage from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
+    <menuSecondaryDirectHitAdjustment AltName="Assembly Menu: Show Secondary Direct Hit Adjustment" Wiki="Determines if a weapon reports Direct Hit Adjustment from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
+    <menuSecondaryImpact AltName="Assembly Menu: Show Secondary Impact" Wiki="Determines if a weapon reports Impact from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
+    <menuSecondaryAccumulativeImpact AltName="Assembly Menu: Show Secondary Accumulative Impact" Wiki="Determines if a weapon reports Accumulative Impact from its secondary bullets, such as plasma AoE fields. No gameplay effect." />
+    <menuSecondaryBlastRadius AltName="Assembly Menu: Show Secondary Blast Radius" Wiki="Determines if a weapon reports Blast Radius from its secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuMeleeWeaponConsecutiveHits AltName="Assembly Menu: Show Melee Consecutive Hits" />
+    <unkSecondaryDamageField AltName="Assembly Menu: Show Unk Secondary Damage Field" Wiki="Appears to relate to the same information as menuSecondaryDamageField. Why two fields do this is unknown but both seem required." />
+    <menuSecondaryChargedAttackPower AltName="Assembly Menu: Show Secondary Charged Attack Power" Wiki="Determines if a weapon reports Charged Attack Power from secondary bullets, such as a laser shotgun explosion. No gameplay effect." />
+    <menuSecondaryChargedDamageField AltName="Assembly Menu: Show Secondary Charged Damage Field" Wiki="Determines if a weapon reports multiple ticks of damage from its secondary charged bullets, such as plasma AoE fields. No gameplay effect." />
+    <unkSecondaryChargedDamageField AltName="Assembly Menu: Show Unk Secondary Charged Damage Field" Wiki="Appears to relate to the same information as menuSecondaryChargedDamageField. Why two fields do this is unknown but both seem required." />
+    <menuSecondaryChargedImpact AltName="Assembly Menu: Show Secondary Charged Impact" Wiki="Determines if a weapon reports Charged Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuSecondaryChargedAccumulativeImpact AltName="Assembly Menu: Show Secondary Charged Accumulative Impact" Wiki="Determines if a weapon reports Charged Accumulative Impact from secondary bullets, such as on-impact explosions. No gameplay effect." />
+    <menuBurstFire AltName="Assembly Menu: Show Burst Fire" Wiki="Determines if a weapon's standard fire reports its burst fire count to the menu, causing its displayed Attack Power, Impact, and Accumulative Impact to display said burst fire count. No gameplay effect." />
+    <menuChargedBurstFire AltName="Assembly Menu: Show Charged Burst Fire" Wiki="Determines if a weapon's charge fire reports its burst fire to the menu, causing its displayed Chg Attack Power, Chg Impact, and Chg Accum Impact to display said burst fire count. No gameplay effect." />
     
   </Field>
   <Self />
