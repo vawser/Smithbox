@@ -6,10 +6,15 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="s32 UnkInt0x00"></Field>
-    <Field Def="s32 UnkInt0x04"></Field>
-    <Field Def="s32 UnkInt0x08"></Field>
-    <Field Def="s32 UnkInt0x0C"></Field>
-    <Field Def="s32 UnkInt0x10"></Field>
+    <Field Def="s16 UnkInt0x00"></Field>
+    <Field Def="s16 UnkInt0x02"></Field>
+    <Field Def="s16 UnkInt0x04"></Field>
+    <Field Def="s16 UnkInt0x06"></Field>
+    <Field Def="s16 UnkInt0x08"></Field>
+    <Field Def="s16 UnkInt0x0A"></Field>
+    <Field Def="s16 UnkInt0x0C"></Field>
+    <Field Def="s16 UnkInt0x0E"></Field>
+    <Field Def="s16 UnkInt0x10"></Field>
+    <Field Def="s16 UnkInt0x12"></Field>
   </Fields>
 </PARAMDEF>

@@ -163,7 +163,7 @@ public class KeyBindings
         public KeyBind Param_GotoBack = new("Go to Back", KeybindCategory.ParamEditor, Key.Escape);
         public KeyBind Param_GotoRowID = new("Go to Row ID", KeybindCategory.ParamEditor, Key.G, true);
         public KeyBind Param_GotoSelectedRow = new("Go to Selected Row", KeybindCategory.ParamEditor, Key.G);
-        public KeyBind Param_HotReload = new("Hot Reload", KeybindCategory.ParamEditor, Key.F5);
+        public KeyBind Param_HotReload = new("Hot Reload", KeybindCategory.ParamEditor, Key.F5, true);
         public KeyBind Param_HotReloadAll = new("Hot Reload All", KeybindCategory.ParamEditor, Key.F5, false, false, true);
         public KeyBind Param_ImportCSV = new("Import CSV", KeybindCategory.ParamEditor);
         public KeyBind Param_MassEdit = new("Mass Edit", KeybindCategory.ParamEditor);

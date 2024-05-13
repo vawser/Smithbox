@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Field>
+    <UnkInt0x00 IsHidden="" />
+    <mercenaryRankIcon AltName="Hunter Class Icon ID" Wiki="Refers to SB_MercenaryRank.layout" />
+    
+    <Unk0x0A IsHidden="" />
+    <UnkInt0x0C IsHidden="" />
+  </Field>
+  <Self Wiki="Determines the configuration for LOGHUNT progress, which includes Hunter Class."/>
 </PARAMMETA>

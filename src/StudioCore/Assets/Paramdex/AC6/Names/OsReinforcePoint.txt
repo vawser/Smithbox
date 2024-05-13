@@ -1,0 +1,41 @@
+100 Arena Unlock: "Invincible" Rummy / MAD STOMP
+101 Arena Unlock: Index Dunham / BURN PICKAXE
+102 Arena Unlock: G6 Red / HERMIT
+103 Arena Unlock: Nosaac / BITTER PROMISE
+104 Arena Unlock: V.VI Maeterlinck / INFECTION
+105 Arena Unlock: Little Ziyi / YUE YU
+106 Arena Unlock: V.VII Swinburne / GUIDANCE
+107 Arena Unlock: G3 Wu Huahai / LI LONG
+108 Arena Unlock: Ring Freddie / CANDLE RING
+109 Arena Unlock: V.V Hawkins / RECONFIG
+110 Arena Unlock: G5 Iguazu / HEAD BRINGER
+111 Arena Unlock: Rokumonsen / SHINOBI
+112 Arena Unlock: G4 Volta / CANNON HEAD
+113 Arena Unlock: V.VIII Pater / DUAL NATURE
+114 Arena Unlock: Sulla / ENTANGLE
+115 Arena Unlock: "Chatty" Stick / CIRCUS
+116 Arena Unlock: Middle Flatwell / TSUBASA
+117 Arena Unlock: V.III O'Keeffe / BARREN FLOWER
+118 Arena Unlock: "Cinder" Carla / FULL COURSE
+119 Arena Unlock: Coldcall / DEADSLED
+120 Arena Unlock: V.IV Rusty / STEEL HAZE
+121 Arena Unlock: "Honest" Brute / MILK TOOTH
+122 Arena Unlock: G2 Nile / DEEP DOWN
+123 Arena Unlock: V.II Snail / OPEN FAITH
+124 Arena Unlock: Chartreuse / UMBER OX
+125 Arena Unlock: Thumb Dolmayan / ASTGHIK
+126 Arena Unlock: King / ASTER CROWN
+127 Arena Unlock: G1 Michigan / LIGER TAIL
+128 Arena Unlock: V.I Freud / LOCKSMITH
+200 Arena Unlock: 51-001 K / MIND ALPHA
+201 Arena Unlock: 51-011 AL / TRAINER
+202 Arena Unlock: 51-012 AL / TESTER
+203 Arena Unlock: 51-002 K / MIND BETA
+204 Arena Unlock: 51-013 BE / CORPORATION
+205 Arena Unlock: 51-014 BE / RUBICONIAN
+206 Arena Unlock: 51-003 K / MIND GAMMA
+207 Arena Unlock: 51-015 GA / INSTITUTE
+208 Arena Unlock: 51-016 GA / NIGHTFALL
+209 Arena Unlock: 51-101 R / STEEL HAZE ORTUS
+210 Arena Unlock: 51-201 W / IB-C03: HAL 826
+211 Arena Unlock: Ayre / ECHO (Classified Subject)

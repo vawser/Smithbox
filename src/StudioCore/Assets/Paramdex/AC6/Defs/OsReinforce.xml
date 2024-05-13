@@ -7,28 +7,28 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     <Field Def="s32 Unk0x00"></Field>
-    <Field Def="u8 osInstallCategory"></Field>
-    <Field Def="u8 osInstallIndex"></Field>
+    <Field Def="u8 osInstallLevels"></Field>
+    <Field Def="u8 osInstallImage"></Field>
     <Field Def="dummy8 Unk0x06[14]"></Field>
-    <Field Def="s32 installIncreaseValue"></Field>
-    <Field Def="s32 installOstChipCost"></Field>
-    <Field Def="s32 installUnlockTextId"></Field>
+    <Field Def="s32 osInstall_DisplayText_Effect"></Field>
+    <Field Def="s32 osInstall_DisplayText_OstChipCost"></Field>
+    <Field Def="s32 osInstall_DisplayText_Description"></Field>
     <Field Def="dummy8 Unk0x20[12]"></Field>
-    <Field Def="s32 updateOneIncreaseValue"></Field>
-    <Field Def="s32 updateOneOstChipCost"></Field>
-    <Field Def="s32 updateOneUnlockTextId"></Field>
+    <Field Def="s32 osUpgrade1_DisplayText_Effect"></Field>
+    <Field Def="s32 osUpgrade1_DisplayText_OstChipCost"></Field>
+    <Field Def="s32 osUpgrade1_DisplayText_Description"></Field>
     <Field Def="dummy8 Unk0x38[12]"></Field>
-    <Field Def="s32 updateTwoIncreaseValue"></Field>
-    <Field Def="s32 updateTwoOstChipCost"></Field>
-    <Field Def="s32 updateTwoUnlockTextId"></Field>
+    <Field Def="s32 osUpgrade2_DisplayText_Effect"></Field>
+    <Field Def="s32 osUpgrade2_DisplayText_OstChipCost"></Field>
+    <Field Def="s32 osUpgrade2_DisplayText_Description"></Field>
     <Field Def="dummy8 Unk0x50[12]"></Field>
-    <Field Def="s32 updateThreeIncreaseValue"></Field>
-    <Field Def="s32 updateThreeOstChipCost"></Field>
-    <Field Def="s32 updateThreeUnlockTextId"></Field>
+    <Field Def="s32 osUpgrade3_DisplayText_Effect"></Field>
+    <Field Def="s32 osUpgrade3_DisplayText_OstChipCost"></Field>
+    <Field Def="s32 osUpgrade3_DisplayText_Description"></Field>
     <Field Def="dummy8 Unk0x68[12]"></Field>
-    <Field Def="s32 updateFourIncreaseValue"></Field>
-    <Field Def="s32 updateFourOstChipCost"></Field>
-    <Field Def="s32 updateFourUnlockTextId"></Field>
+    <Field Def="s32 osUpgrade4_DisplayText_Effect"></Field>
+    <Field Def="s32 osUpgrade4_DisplayText_OstChipCost"></Field>
+    <Field Def="s32 osUpgrade4_DisplayText_Description"></Field>
     <Field Def="dummy8 Unk0x80[44]"></Field>
   </Fields>
 </PARAMDEF>

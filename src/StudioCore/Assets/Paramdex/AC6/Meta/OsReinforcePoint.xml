@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
-  <Self />
+  <Field>
+    <UnkInt0x00 IsHidden="" />
+    <osChipAmount AltName="OST Chip Amount" />
+    <Unk0x06 IsHidden="" />
+    <Unk0x07 IsHidden="" />
+  </Field>
+  <Self Wiki="Determines the number of OST chips given. Referenced by UnlockParam_OsPoint." />
 </PARAMMETA>

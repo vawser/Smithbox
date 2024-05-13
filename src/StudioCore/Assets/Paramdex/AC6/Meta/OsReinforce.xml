@@ -1,16 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Field>
-    <installUnlockTextId AltName="Unlock Text ID (Level 0)" FmgRef="Modern_MenuText" />
-    <updateOneUnlockTextId AltName="Unlock Text ID (Level 1)" FmgRef="Modern_MenuText" />
-    <updateTwoUnlockTextId AltName="Unlock Text ID (Level 2)" FmgRef="Modern_MenuText" />
-    <updateThreeUnlockTextId AltName="Unlock Text ID (Level 3)" FmgRef="Modern_MenuText" />
-    <updateFourUnlockTextId AltName="Unlock Text ID (Level 4)" FmgRef="Modern_MenuText" />
-    <installIncreaseValue AltName="OS Effect Value (Level 0)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
-    <updateOneIncreaseValue AltName="OS Effect Value (Level 1)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
-    <updateTwoIncreaseValue AltName="OS Effect Value (Level 2)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
-    <updatethreeIncreaseValue AltName="OS Effect Value (Level 3)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
-    <updateFourIncreaseValue AltName="OS Effect Value (Level 4)" Wiki="Determines effectiveness of OS upgrade and text in UI." />
+    <Unk0x00 IsHidden="" />
+    
+    <osInstallLevels AltName="OS Install - Number of Unlocks" Wiki="Number of unlocks that this OS tuning option has. 1 is Install, 2 and above are upgrades." />
+    <osInstallImage AltName="OS Install - Image Index" Wiki="Refers to the icon ID from SB_OsIcon.layout"/>
+    
+    
+    <osInstall_DisplayText_Effect AltName="OS Install - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    <osInstall_DisplayText_OstChipCost AltName="OS Install - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
+    <osInstall_DisplayText_Description AltName="OS Install - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    
+    <osUpgrade1_DisplayText_Effect AltName="OS Upgrade 1 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    <osUpgrade1_DisplayText_OstChipCost AltName="OS Upgrade 1 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
+    <osUpgrade1_DisplayText_Description AltName="OS Upgrade 1 - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    
+    <osUpgrade2_DisplayText_Effect AltName="OS Upgrade 2 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    <osUpgrade2_DisplayText_OstChipCost AltName="OS Upgrade 2 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
+    <osUpgrade2_DisplayText_Description AltName="OS Upgrade 2 - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    
+    <osUpgrade3_DisplayText_Effect AltName="OS Upgrade 3 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    <osUpgrade3_DisplayText_OstChipCost AltName="OS Upgrade 3 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
+    <osUpgrade3_DisplayText_Description AltName="OS Upgrade 3 - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    
+    <osUpgrade4_DisplayText_Effect AltName="OS Upgrade 4 - Effect Value" Wiki="The effectiveness string to display for the OS upgrade text in UI." />
+    <osUpgrade4_DisplayText_OstChipCost AltName="OS Upgrade 4 - OST Chip Cost" Wiki="The cost in OS chips for the upgrade." />
+    <osUpgrade4_DisplayText_Description AltName="OS Upgrade 4 - Effect Description" FmgRef="Modern_MenuText" Wiki="The description text that displays the effect. The effect value is placed within this FMG text." />
+    
+    <Unk0x06 IsHidden="" />
+    <Unk0x20 IsHidden="" />
+    <Unk0x38 IsHidden="" />
+    <Unk0x50 IsHidden="" />
+    <Unk0x68 IsHidden="" />
+    <Unk0x80 IsHidden="" />
   </Field>
-  <Self />
+  <Self Wiki="Determines the configuration for each OS Tuning install or upgrade." />
 </PARAMMETA>

@@ -95,11 +95,28 @@ public class DebugWindow
         ImGui.PopStyleColor(5);
     }
 
+    private string msbPropertyToFind = "";
+    private string msbValueToFind = "";
+
     private void DisplayActions()
     {
-        if (ImGui.Button("Action"))
+        if (ImGui.Button("Load MSB Data"))
         {
-            
+            DebugActions.LoadMsbData();
+        }
+
+        ImGui.InputText("##valueDistribution", ref msbPropertyToFind, 255);
+        ImGui.SameLine();
+        if (ImGui.Button("Log Value Distribution"))
+        {
+            DebugActions.LogValueDistribution(msbPropertyToFind);
+        }
+
+        ImGui.InputText("##valueSearch", ref msbValueToFind, 255);
+        ImGui.SameLine();
+        if (ImGui.Button("Find Value Instances"))
+        {
+            DebugActions.FindValueInstances(msbValueToFind);
         }
     }
 

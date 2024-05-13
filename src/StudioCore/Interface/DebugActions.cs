@@ -1,6 +1,8 @@
 ﻿using ImGuiNET;
 using SoulsFormats;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Formats;
+using StudioCore.Locators;
 using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.UserProject;
@@ -10,11 +12,53 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SoapstoneLib.SoulsObject;
 
 namespace StudioCore.Interface;
 
 public static class DebugActions
 {
+    public static List<MSB_AC6> maps = new List<MSB_AC6>();
+    public static List<ResourceDescriptor> resMaps = new List<ResourceDescriptor>();
+    private static MapPropertyCache _propCache;
+
+    public static void LogValueDistribution(string targetProperty)
+    {
+        foreach (var map in maps)
+        {
+            TaskLogs.AddLog($"{map.ToString()}");
+
+        }
+    }
+    public static void FindValueInstances(string targetValue)
+    {
+
+    }
+
+    public static void LoadMsbData()
+    {
+        var mapDir = $"{Project.GameRootDirectory}/map/mapstudio/";
+
+        foreach(var entry in Directory.EnumerateFiles(mapDir))
+        {
+            if (entry.Contains(".msb.dcx"))
+            {
+                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
+                ResourceDescriptor ad = ResourceMapLocator.GetMapMSB(name);
+                if (ad.AssetPath != null)
+                {
+                    resMaps.Add(ad);
+                }
+            }
+        }
+
+        foreach(var res in resMaps)
+        {
+            var msb = MSB_AC6.Read(res.AssetPath);
+            maps.Add(msb);
+        }
+    }
+
     public static void ForceCrash()
     {
         var badArray = new int[2];

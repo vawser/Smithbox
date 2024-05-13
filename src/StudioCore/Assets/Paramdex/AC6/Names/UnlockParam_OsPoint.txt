@@ -1,0 +1,41 @@
+100 OST Chips: "Invincible" Rummy / MAD STOMP
+101 OST Chips: Index Dunham / BURN PICKAXE
+102 OST Chips: G6 Red / HERMIT
+103 OST Chips: Nosaac / BITTER PROMISE
+104 OST Chips: V.VI Maeterlinck / INFECTION
+105 OST Chips: Little Ziyi / YUE YU
+106 OST Chips: V.VII Swinburne / GUIDANCE
+107 OST Chips: G3 Wu Huahai / LI LONG
+108 OST Chips: Ring Freddie / CANDLE RING
+109 OST Chips: V.V Hawkins / RECONFIG
+110 OST Chips: G5 Iguazu / HEAD BRINGER
+111 OST Chips: Rokumonsen / SHINOBI
+112 OST Chips: G4 Volta / CANNON HEAD
+113 OST Chips: V.VIII Pater / DUAL NATURE
+114 OST Chips: Sulla / ENTANGLE
+115 OST Chips: "Chatty" Stick / CIRCUS
+116 OST Chips: Middle Flatwell / TSUBASA
+117 OST Chips: V.III O'Keeffe / BARREN FLOWER
+118 OST Chips: "Cinder" Carla / FULL COURSE
+119 OST Chips: Coldcall / DEADSLED
+120 OST Chips: V.IV Rusty / STEEL HAZE
+121 OST Chips: "Honest" Brute / MILK TOOTH
+122 OST Chips: G2 Nile / DEEP DOWN
+123 OST Chips: V.II Snail / OPEN FAITH
+124 OST Chips: Chartreuse / UMBER OX
+125 OST Chips: Thumb Dolmayan / ASTGHIK
+126 OST Chips: King / ASTER CROWN
+127 OST Chips: G1 Michigan / LIGER TAIL
+128 OST Chips: V.I Freud / LOCKSMITH
+200 OST Chips: 51-001 K / MIND ALPHA
+201 OST Chips: 51-011 AL / TRAINER
+202 OST Chips: 51-012 AL / TESTER
+203 OST Chips: 51-002 K / MIND BETA
+204 OST Chips: 51-013 BE / CORPORATION
+205 OST Chips: 51-014 BE / RUBICONIAN
+206 OST Chips: 51-003 K / MIND GAMMA
+207 OST Chips: 51-015 GA / INSTITUTE
+208 OST Chips: 51-016 GA / NIGHTFALL
+209 OST Chips: 51-101 R / STEEL HAZE ORTUS
+210 OST Chips: 51-201 W / IB-C03: HAL 826
+211 OST Chips: Ayre / ECHO (Classified Subject)
