@@ -22,10 +22,10 @@
     <Field Def="f32 guardCutRate_Energy"></Field>
     <Field Def="f32 guardCutRate_Explosive"></Field>
     <Field Def="f32 guardCutRate_Coral"></Field>
-    <Field Def="f32 guardResistRate_Shock"></Field>
-    <Field Def="f32 guardResistRate_AcsFailure"></Field>
-    <Field Def="f32 guardResistRate_CameraDisruption"></Field>
-    <Field Def="f32 guardResistRate_UnkA"></Field>
+    <Field Def="f32 guardResistRate_AcsAnomaly"></Field>
+    <Field Def="f32 guardResistRate_ElecDischarge"></Field>
+    <Field Def="f32 guardResistRate_Plasma"></Field>
+    <Field Def="f32 guardResistRate_ElecDischargeType2"></Field>
     <Field Def="f32 guardDefRate_Stamina"></Field>
     <Field Def="u8 spEffectId1"></Field>
     <Field Def="u8 spEffectId2"></Field>
@@ -38,7 +38,7 @@
     <Field Def="f32 atkRate_Unknown"></Field>
     <Field Def="f32 guardCutRate_Unknown"></Field>
     <Field Def="f32 correctLuckRate"></Field>
-    <Field Def="f32 guardResistRate_UnkB"></Field>
+    <Field Def="f32 guardResistRate_Uranium"></Field>
     <Field Def="f32 reinforcePriceRate"></Field>
     <Field Def="f32 baseChangePriceRate"></Field>
     <Field Def="dummy8 endPadding[16]"></Field>

@@ -107,10 +107,10 @@
     <Field Def="u8 slashGuardCutRate"></Field>
     <Field Def="u8 blowGuardCutRate"></Field>
     <Field Def="u8 thrustGuardCutRate"></Field>
-    <Field Def="u8 guardResist_Shock"></Field>
-    <Field Def="u8 guardResist_AcsFailure"></Field>
-    <Field Def="u8 guardResist_CameraDisruption"></Field>
-    <Field Def="u8 guardResist_Curse_Unknown"></Field>
+    <Field Def="u8 guardResist_AcsAnomaly"></Field>
+    <Field Def="u8 guardResist_ElecDischarge"></Field>
+    <Field Def="u8 guardResist_Plasma"></Field>
+    <Field Def="u8 guardResist_ElecDischargeType2"></Field>
     <Field Def="u8 isDurabilityDivergence"></Field>
     <Field Def="u8 equipFrontRightSlot:1"></Field>
     <Field Def="u8 equipFrontLeftSlot:1"></Field>
@@ -200,7 +200,7 @@
     <Field Def="s8 Unk0x193"></Field>
     <Field Def="u8 Unk0x194"></Field>
     <Field Def="u8 properLuck"></Field>
-    <Field Def="s8 freezeGuardResist"></Field>
+    <Field Def="s8 guardResist_Uranium"></Field>
     <Field Def="u8 autoReplenishType"></Field>
     <Field Def="s32 swordArtsParamId"></Field>
     <Field Def="f32 correctLuck"></Field>
@@ -236,9 +236,9 @@
     <Field Def="f32 vsPlayerDmgCorrectRate_Fire"></Field>
     <Field Def="f32 vsPlayerDmgCorrectRate_Thunder"></Field>
     <Field Def="f32 vsPlayerDmgCorrectRate_Dark"></Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Poison"></Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Blood"></Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Freeze"></Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_AcsAnomaly"></Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Plasma"></Field>
+    <Field Def="f32 vsPlayerDmgCorrectRate_Uranium"></Field>
     <Field Def="s32 attainmentWepStatusStr"></Field>
     <Field Def="s32 attainmentWepStatusDex"></Field>
     <Field Def="s32 attainmentWepStatusMag"></Field>

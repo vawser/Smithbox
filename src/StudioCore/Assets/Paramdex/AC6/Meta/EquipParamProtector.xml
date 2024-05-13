@@ -46,8 +46,6 @@
   <Field>
     <sortId AltName="Sort ID" Wiki="Sort ID (7 digits is the limit for s32 because the enhancement level is added in the program)" />
     <wanderingEquipId AltName="Wandering Equip ID" Wiki="Replacement equipment ID for wandering ghosts." />
-    <resistSleep AltName="Resist - Sleep" Wiki="Difficulty in getting sleep abnormalities" />
-    <resistMadness AltName="Resist - Madness" Wiki="Difficulty in getting mad" />
     <saDurability AltName="Poise Durability" Wiki="Super armor endurance" />
     <toughnessCorrectRate AltName="Toughness Correction" Wiki="It is a magnification that corrects the basic value of toughness." />
     <fixPrice AltName="Repair Price" Wiki="Basic repair price" />
@@ -101,10 +99,10 @@
     <defenseSlash AltName="Defence - Slash" Wiki="Look at the attack type, and if it is a slashing attribute, reduce the defense power" />
     <defenseBlow AltName="Defence - Strike" Wiki="Look at the attack attribute, and if it is a hit attribute, reduce the defense power." />
     <defenseThrust AltName="Defence - Thrust" Wiki="Look at the attack attribute, and if it is a hit attribute, reduce the defense power." />
-    <resistPoison AltName="Resist - Poison" Wiki="Difficulty in getting poisonous" />
-    <resistDisease AltName="Resist - Scarlet Rot" Wiki="Difficulty in getting sick" />
-    <resistBlood AltName="Resist - Hemorrhage" Wiki="Difficulty in getting bleeding abnormalities" />
-    <resistCurse AltName="Resist - Blight" Wiki="Difficulty in getting a curse condition" />
+    <statusResist_AcsAnomaly AltName="Status Resist: ACS Anomaly" Wiki="Difficulty in getting poisonous" />
+    <statusResist_ElecDischarge AltName="Status Resist: Electric Discharge" Wiki="Difficulty in getting sick" />
+    <statusResist_Plasma AltName="Status Resist: Plasma" Wiki="Difficulty in getting bleeding abnormalities" />
+    <statusResist_ElecDischargeType2 AltName="Status Resist: Electric Discharge (Type 2)" Wiki="Difficulty in getting a curse condition" />
     <reinforceTypeId AltName="Reinforce Type ID" Wiki="Enhanced type ID" Refs="ReinforceParamProtector"/>
     <trophySGradeId AltName="Achievement ID" Wiki="Is it related to the trophy system?" />
     <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
@@ -193,7 +191,7 @@
     <postureControlId AltName="Posture Control ID" Wiki="Attitude control ID (torso)" />
     <pad2 AltName="" IsHidden=""/>
     <saleValue AltName="Shop Price" Wiki="Selling price" />
-    <resistFreeze AltName="Resist - Frost" Wiki="Difficulty in getting cold air condition abnormal" />
+    <statusResist_Uranium AltName="Status Resist: Uranium" Wiki="Difficulty in getting cold air condition abnormal" />
     <lockCamParamId AltName="Lock Camera Param ID" />
     <energyLoad AltName="Energy Load" />
     <armorPoints AltName="Armor Points" />

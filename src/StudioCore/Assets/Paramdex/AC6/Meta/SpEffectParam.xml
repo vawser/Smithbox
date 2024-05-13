@@ -46,14 +46,12 @@
         <Option Value="10000" Name="Apply First" />
         <Option Value="10001" Name="Apply First (Damage Level Change)" />
         <Option Value="10002" Name="Apply First" />
-        <Option Value="10003" Name="Apply First (Hemorrhage)" />
-        <Option Value="10004" Name="Apply First (Poison)" />
-        <Option Value="10005" Name="Apply First (Scarlet Rot)" />
+        <Option Value="10003" Name="Apply First (Plasma)" />
+        <Option Value="10004" Name="Apply First (ACS Anomaly)" />
+        <Option Value="10005" Name="Apply First (Electric Discharge)" />
         <Option Value="10006" Name="Apply First" />
-        <Option Value="10007" Name="Apply First (Frostbite)" />
-        <Option Value="10008" Name="Apply First (Death)" />
-        <Option Value="10009" Name="Apply First (Sleep)" />
-        <Option Value="10010" Name="Apply First (Madness)" />
+        <Option Value="10007" Name="Apply First (Uranium)" />
+        <Option Value="10008" Name="Apply First (Unused A)" />
     </Enum>
     <Enum Name="SP_EFFECT_SAVE_CATEGORY" type="s8">
         <Option Value="-1" Name="No Slot" />
@@ -94,104 +92,81 @@
         <Option Value="4" Name="Bullet" />
     </Enum>
     <Enum Name="ATKPARAM_SPATTR_TYPE" type="u8">
-        <Option Value="0" Name="None" />
-        <Option Value="10" Name="Energy" />
-        <Option Value="11" Name="Explosive" />
-        <Option Value="12" Name="Coral" />
-        <Option Value="13" Name="Unknown (Holy)" />
-        <Option Value="20" Name="ACS Anomaly" />
-        <Option Value="21" Name="Stun" />
-        <Option Value="22" Name="Camera Disruption" />
-        <Option Value="23" Name="Unknown (Frost)" />
-        <Option Value="26" Name="Unknown (Curse)" />
+        <Option Value="0" Name="Damage: None" />
+        <Option Value="10" Name="Damage: Energy" />
+        <Option Value="11" Name="Damage: Explosive" />
+        <Option Value="12" Name="Damage: Coral" />
+        <Option Value="13" Name="Damage: Unknown (Holy)" />
+        <Option Value="20" Name="Status: ACS Anomaly" />
+        <Option Value="21" Name="Status: Electric Discharge" />
+        <Option Value="22" Name="Status: Plasma" />
+        <Option Value="23" Name="Status: Uranium" />
+        <Option Value="26" Name="Status: Unused A" />
     </Enum>
     <Enum Name="SP_EFFECT_TYPE" type="u16">
         <Option Value="0" Name="None" />
-        <Option Value="2" Name="Poison" />
-        <Option Value="3" Name="Unknown" />
-        <Option Value="4" Name="Durability Damage" />
-        <Option Value="5" Name="Scarlet Rot" />
-        <Option Value="6" Name="Hemorrhage" />
-        <Option Value="7" Name="Ghost" />
-        <Option Value="8" Name="Enemy Sight Reduction" />
-        <Option Value="9" Name="Tranquil Walk of Peace" />
-        <Option Value="10" Name="Remove Poison" />
-        <Option Value="11" Name="Remove Scarlet Rot" />
-        <Option Value="12" Name="Remove Hemorrhage" />
-        <Option Value="13" Name="Remove All Status" />
-        <Option Value="14" Name="Humanity Stolen" />
-        <Option Value="15" Name="Telescope" />
-        <Option Value="16" Name="Warp to Grace" />
+        <Option Value="2" Name="Apply Status: ACS Anomaly" />
+        <Option Value="5" Name="Apply Status: Electric Discharge" />
+        <Option Value="6" Name="Apply Status: Plasma" />
+        <Option Value="8" Name="Enemy Adjustment: Sight Reduction" />
+        <Option Value="10" Name="Remove Status: ACS Anomaly" />
+        <Option Value="11" Name="Remove Status: Electric Discharge" />
+        <Option Value="12" Name="Remove Status: Plasma" />
+        <Option Value="13" Name="Remove Status: All" />
+        <Option Value="15" Name="Vision Adjustment: Zoom In" />
         <Option Value="17" Name="Revival" />
         <Option Value="19" Name="Dispel Black Phantom" />
-        <Option Value="22" Name="Unknown" />
         <Option Value="23" Name="OnReviveMagic" />
         <Option Value="24" Name="Disables Spell Usage" />
-        <Option Value="28" Name="Right-hand Buff VFX" />
-        <Option Value="29" Name="Body Buff VFX" />
+        <Option Value="28" Name="SFX: Right-hand Buff" />
+        <Option Value="29" Name="SFX: Body Buff" />
         <Option Value="31" Name="Ghost Parameter Change" />
         <Option Value="32" Name="Middle of Paralysis" />
         <Option Value="34" Name="Giant Slime Freezing" />
-        <Option Value="35" Name="Unknown" />
-        <Option Value="36" Name="Unknown" />
-        <Option Value="37" Name="Unknown" />
         <Option Value="39" Name="Sound Feed" />
-        <Option Value="40" Name="Greater Body Buff VFX" />
-        <Option Value="41" Name="Flash Sweat" />
-        <Option Value="42" Name="HP Recovery" />
-        <Option Value="43" Name="Unknown" />
-        <Option Value="44" Name="Unknown" />
-        <Option Value="45" Name="Unknown" />
+        <Option Value="40" Name="SFX: Greater Body Buff" />
+        <Option Value="41" Name="SFX: Flash Sweat" />
+        <Option Value="42" Name="SFX: HP Recovery" />
         <Option Value="46" Name="Modify Target Priority" />
         <Option Value="47" Name="Disable Fall Damage" />
-        <Option Value="48" Name="Increase Damage" />
-        <Option Value="49" Name="Increase Defense" />
-        <Option Value="50" Name="HP/FP/Stamina Recovery" />
+        <Option Value="48" Name="SFX: Increase Damage" />
+        <Option Value="49" Name="SFX: Increase Defense" />
+        <Option Value="50" Name="SFX: HP/FP/Stamina Recovery" />
         <Option Value="52" Name="Pledge Effect Test" />
         <Option Value="54" Name="Modify Enemy Listen Reduction" />
         <Option Value="55" Name="HostDeath" />
         <Option Value="58" Name="Point Light Source Equipped" />
         <Option Value="59" Name="Your Message Was Rated" />
-        <Option Value="60" Name="Magic Buff VFX" />
-        <Option Value="61" Name="Magic Weapon Buff VFX" />
-        <Option Value="62" Name="Fire Weapon Buff VFX" />
-        <Option Value="64" Name="Enchanted Weapon Buff VFX" />
-        <Option Value="65" Name="Unknown" />
+        <Option Value="60" Name="SFX: Magic Buff" />
+        <Option Value="61" Name="SFX: Magic Weapon Buff" />
+        <Option Value="62" Name="SFX: Fire Weapon Buff" />
+        <Option Value="64" Name="SFX: Enchanted Weapon Buff" />
         <Option Value="66" Name="Modify Item Discovery" />
-        <Option Value="69" Name="Tears of Denial VFX" />
+        <Option Value="69" Name="SFX: Tears of Denial" />
         <Option Value="70" Name="Is Dead Test Condition" />
         <Option Value="71" Name="Spell Power Boost" />
-        <Option Value="75" Name="Green Blossom VFX" />
+        <Option Value="75" Name="SFX: Green Blossom" />
         <Option Value="76" Name="Modify Rune Gain" />
-        <Option Value="78" Name="Unknown" />
-        <Option Value="79" Name="Unknown" />
-        <Option Value="91" Name="Unknown" />
-        <Option Value="95" Name="Applies Chamelon effect" />
+        <Option Value="95" Name="Applies Chameleon effect" />
         <Option Value="96" Name="Applies Dragon Form effect" />
-        <Option Value="98" Name="MP Detection" />
-        <Option Value="99" Name="MP Wait for Cooperation" />
-        <Option Value="100" Name="MP Cooperation" />
-        <Option Value="101" Name="MP Cooperation Sent" />
+        <Option Value="98" Name="Multiplayer Detection" />
+        <Option Value="99" Name="Multiplayer Wait for Cooperation" />
+        <Option Value="100" Name="Multiplayer Cooperation" />
+        <Option Value="101" Name="Multiplayer Cooperation Sent" />
         <Option Value="102" Name="Wax Slow Down" />
         <Option Value="103" Name="Used for Evil Eye effect" />
-        <Option Value="104" Name="MP Wait for Cooperation" />
-        <Option Value="105" Name="MP Cooperation LV 1" />
-        <Option Value="106" Name="MP Cooperation LV 2" />
-        <Option Value="107" Name="MP Cooperation LV 3" />
+        <Option Value="104" Name="Multiplayer Wait for Cooperation" />
+        <Option Value="105" Name="Multiplayer Cooperation LV 1" />
+        <Option Value="106" Name="Multiplayer Cooperation LV 2" />
+        <Option Value="107" Name="Multiplayer Cooperation LV 3" />
         <Option Value="108" Name="Used for Evil Eye effect (1)" />
         <Option Value="109" Name="Used for Evil Eye effect (2)" />
         <Option Value="110" Name="Counter Damage" />
-        <Option Value="112" Name="1409F7282_HKS" />
-        <Option Value="113" Name="Unknown" />
-        <Option Value="114" Name="Unknown" />
         <Option Value="115" Name="Backstep Animation Change" />
-        <Option Value="116" Name="Blight" />
-        <Option Value="117" Name="Instant Death animation" />
-        <Option Value="118" Name="Cure Blight" />
-        <Option Value="119" Name="Unknown" />
+        <Option Value="116" Name="Apply Status: Electric Discharge (Type 2)" />
+        <Option Value="118" Name="Remove Status: Electric Discharge (Type 2)" />
         <Option Value="120" Name="Damage Level Change before Poise Break" />
         <Option Value="121" Name="Damage Level Change" />
-        <Option Value="122" Name="Unknown" />
         <Option Value="123" Name="Trigger on Roll (Head)" />
         <Option Value="124" Name="Trigger on Roll (Body)" />
         <Option Value="125" Name="Trigger on Roll (Hands)" />
@@ -212,20 +187,17 @@
         <Option Value="141" Name="ResonanceLvl 4" />
         <Option Value="142" Name="NPC Behavior ID Change" />
         <Option Value="143" Name="Character Respawn" />
-        <Option Value="144" Name="Unknown" />
-        <Option Value="146" Name="Restore Durability" />
         <Option Value="147" Name="Cast Light" />
         <Option Value="148" Name="Unknown" />
         <Option Value="149" Name="White Relief Magic" />
         <Option Value="150" Name="Black Relief Magic" />
-        <Option Value="151" Name="Lightning Weapon Buff VFX" />
+        <Option Value="151" Name="SFX: Lightning Weapon Buff" />
         <Option Value="152" Name="Enable Attack Effect against Enemy" />
         <Option Value="153" Name="Enable Attack Effect against Player" />
         <Option Value="154" Name="Block Estus usage" />
         <Option Value="155" Name="Modify Poise" />
-        <Option Value="156" Name="Disable Durability" />
         <Option Value="157" Name="Transient Curse" />
-        <Option Value="158" Name="Left-hand Buff VFX" />
+        <Option Value="158" Name="SFX: Left-hand Buff" />
         <Option Value="159" Name="Destroy Accessory but Save Runes" />
         <Option Value="160" Name="Rare Ring of Sacrifice [DS1]" />
         <Option Value="161" Name="Warp to Grace" />
@@ -236,30 +208,20 @@
         <Option Value="166" Name="Pledge Discarded" />
         <Option Value="167" Name="Dragon Change VFX" />
         <Option Value="168" Name="Bow Distance Change" />
-        <Option Value="169" Name="Unknown" />
         <Option Value="170" Name="Karmic Justice Counter" />
         <Option Value="171" Name="Used for Behavior Change" />
         <Option Value="173" Name="Ritual" />
         <Option Value="174" Name="Power of Evil Spirits" />
         <Option Value="175" Name="Revival Production" />
         <Option Value="176" Name="Aural Decoy" />
-        <Option Value="177" Name="Unknown" />
         <Option Value="179" Name="DeathEffectLv1" />
         <Option Value="180" Name="DeathEffectLv2" />
         <Option Value="181" Name="DeathEffectLv3" />
         <Option Value="182" Name="DeathEffectLv4" />
         <Option Value="183" Name="BlueSignVisualization" />
         <Option Value="184" Name="Hide Weapon" />
-        <Option Value="185" Name="Unknown" />
-        <Option Value="186" Name="Unknown" />
-        <Option Value="188" Name="Unknown" />
-        <Option Value="189" Name="Unknown" />
-        <Option Value="190" Name="Unknown" />
-        <Option Value="191" Name="Unknown" />
-        <Option Value="192" Name="Unknown" />
         <Option Value="193" Name="Modify Effect Duration" />
         <Option Value="194" Name="CompareWith203" />
-        <Option Value="195" Name="Unknown" />
         <Option Value="196" Name="IfWorldChrManNull" />
         <Option Value="197" Name="Enhance Thrusting Counter Attacks" />
         <Option Value="198" Name="Cure Blight" />
@@ -270,31 +232,23 @@
         <Option Value="203" Name="CompareWith194" />
         <Option Value="204" Name="Great Magic Shield" />
         <Option Value="205" Name="Holy Weapon Buff VFX" />
-        <Option Value="206" Name="Unknown" />
         <Option Value="207" Name="Jailer HP Drain" />
         <Option Value="213" Name="Trigger on Enemy Backstab" />
-        <Option Value="221" Name="Unknown" />
         <Option Value="222" Name="ItemBan" />
-        <Option Value="223" Name="Unknown" />
-        <Option Value="224" Name="Unknown" />
         <Option Value="232" Name="DisableUseAtColiseum" />
         <Option Value="237" Name="Calamity Ring" />
         <Option Value="252" Name="Oil" />
         <Option Value="253" Name="Fire" />
-        <Option Value="258" Name="Unknown" />
         <Option Value="259" Name="Target Down" />
-        <Option Value="260" Name="Frostbite" />
+        <Option Value="260" Name="Apply Status: Uranium" />
         <Option Value="261" Name="Remove Effect If Torch In Hand" />
         <Option Value="262" Name="WormRecovery(Torch)" />
         <Option Value="264" Name="SetCultBool" />
         <Option Value="266" Name="FallDeathIsDisabled" />
         <Option Value="267" Name="AI Eye Angle" />
-        <Option Value="269" Name="Unknown" />
         <Option Value="270" Name="Follow and warp to player (Spirit Summon)" />
-        <Option Value="271" Name="Unknown" />
-        <Option Value="272" Name="Unknown" />
         <Option Value="275" Name="Player Behavior ID Change" />
-        <Option Value="276" Name="Cure Frostbite" />
+        <Option Value="276" Name="Remove Status: Uranium" />
         <Option Value="277" Name="Trigger Great Rune" />
         <Option Value="278" Name="DisableSpellEffect" />
         <Option Value="280" Name="WatchdogTriggerForHost" />
@@ -309,39 +263,33 @@
         <Option Value="289" Name="Trigger on Critical Hit (FP)" />
         <Option Value="290" Name="Extend Roll Invincibility" />
         <Option Value="291" Name="Grants roll invisibility" />
-        <Option Value="292" Name="Repair1" />
+        <Option Value="292" Name="Repair" />
         <Option Value="293" Name="Change Durability" />
-        <Option Value="294" Name="Unknown" />
-        <Option Value="295" Name="Unknown" />
-        <Option Value="296" Name="Unknown" />
         <Option Value="297" Name="Not in Multiplayer Session" />
         <Option Value="298" Name="Trigger on Player Backstab" />
         <Option Value="299" Name="Enemies attack Invaders" />
         <Option Value="300" Name="Enemies attack Invaders" />
-        <Option Value="301" Name="Law of Regression" />
+        <Option Value="301" Name="Remove All Lingering SpEffects" />
         <Option Value="302" Name="Warp to Grace" />
-        <Option Value="303" Name="Accumulator 1" />
-        <Option Value="304" Name="Accumulator 2" />
-        <Option Value="305" Name="Accumulator 3" />
-        <Option Value="306" Name="Accumulator 4" />
-        <Option Value="307" Name="Accumulator 5" />
-        <Option Value="308" Name="Accumulator 6" />
-        <Option Value="309" Name="Accumulator 7" />
-        <Option Value="310" Name="Accumulator 8" />
-        <Option Value="311" Name="Accumulator 9" />
+        <Option Value="303" Name="Add to Accumulator 1" />
+        <Option Value="304" Name="Add to Accumulator 2" />
+        <Option Value="305" Name="Add to Accumulator 3" />
+        <Option Value="306" Name="Add to Accumulator 4" />
+        <Option Value="307" Name="Add to Accumulator 5" />
+        <Option Value="308" Name="Add to Accumulator 6" />
+        <Option Value="309" Name="Add to Accumulator 7" />
+        <Option Value="310" Name="Add to Accumulator 8" />
+        <Option Value="311" Name="Add to Accumulator 9" />
         <Option Value="312" Name="Unknown" />
         <Option Value="313" Name="Seek Guidance" />
-        <Option Value="314" Name="All Active Accumulators" />
+        <Option Value="314" Name="Add to All Active Accumulators" />
         <Option Value="315" Name="Scale Attack Power with Equip Load" />
         <Option Value="316" Name="CalcCorrectGraph_33" />
         <Option Value="317" Name="Revoke Online Penalty" />
         <Option Value="318" Name="Dead Again" />
-        <Option Value="319" Name="Unknown" />
-        <Option Value="320" Name="Unknown" />
         <Option Value="321" Name="Reverse Hollowing" />
         <Option Value="322" Name="ChrAsmStyle_HKS_LEFTHAND" />
         <Option Value="323" Name="ChrAsmStyle_HKS_RIGHTHAND" />
-        <Option Value="324" Name="Unknown" />
         <Option Value="325" Name="Wet Aspect Param" />
         <Option Value="326" Name="Switch Animation Gender" />
         <Option Value="327" Name="Ember" />
@@ -355,6 +303,25 @@
         <Option Value="335" Name="Trigger during Critical Hit" />
         <Option Value="1000" Name="SkipSpCategoryCheck1" />
         <Option Value="1001" Name="SkipSpCategoryCheck2" />
+        <Option Value="1002" Name="Unknown" />
+        <Option Value="1003" Name="Unknown" />
+        <Option Value="1005" Name="Unknown" />
+        <Option Value="1006" Name="Unknown" />
+        <Option Value="1007" Name="Unknown" />
+        <Option Value="1008" Name="Unknown" />
+        <Option Value="1010" Name="Unknown" />
+        <Option Value="1100" Name="Unknown" />
+        <Option Value="1500" Name="Unknown" />
+        <Option Value="1501" Name="Unknown" />
+        <Option Value="1502" Name="Unknown" />
+        <Option Value="2000" Name="Unknown" />
+        <Option Value="2030" Name="Unknown" />
+        <Option Value="2040" Name="Unknown" />
+        <Option Value="2050" Name="Unknown" />
+        <Option Value="2060" Name="Unknown" />
+        <Option Value="2070" Name="Unknown" />
+        <Option Value="2080" Name="Unknown" />
+        <Option Value="2090" Name="Unknown" />
     </Enum>
     <Enum Name="SP_EFE_WEP_CHANGE_PARAM" type="u8">
         <Option Value="0" Name="None" />
@@ -461,9 +428,9 @@
     <maxDurability AltName="Max Durability" Wiki="Add the set value to the maximum value of the internal wear degree of durability." />
     <staminaAttackRate AltName="Attack %: Stamina" Wiki="Multiply the stamina attack power by a factor (1.0 1 times 0.5 half)" />
     <registStatus_AcsAnomaly AltName="Status Inflict +: ACS Anomaly" Wiki="A value to be added to the target's ACS Anomaly resistance when it hits\nRequires State Info 2" />
-    <registStatus_Stun AltName="Status Inflict +: Stun" Wiki="Numerical value to be added to the target Stun resistance when hit\nRequires State Info 5" />
-    <registStatus_CameraDisruption AltName="Status Inflict +: Camera Disruption" Wiki="A value to be added to the target's Camera resistance when it hits\nRequires State Info 6" />
-    <registStatus_Unknown_Curse AltName="Status Inflict +: Unknown" Wiki="A number to be added to the target Unknown resistance when hit\nRequires State Info 116" />
+    <registStatus_ElecDischarge AltName="Status Inflict +: Electric Discharge" Wiki="Numerical value to be added to the target Electric Discharge resistance when hit\nRequires State Info 5" />
+    <registStatus_Plasma AltName="Status Inflict +: Plasma" Wiki="A value to be added to the target's Plasma resistance when it hits\nRequires State Info 6" />
+    <registStatus_ElecDischargeType2 AltName="Status Inflict +: Electric Discharge (Type 2)" Wiki="A number to be added to the target Unknown resistance when hit\nRequires State Info 116" />
     <fallDamageRate AltName="Fall Damage %" Wiki="Multiply the damage calculation when falling" />
     <soulRate AltName="Rune Gain %" Wiki="The amount of soul acquired when defeating an enemy is added by the specified multiple.\nRequires State Info 76" />
     <equipWeightChangeRate AltName="Max Equip Load %" Wiki="Multiply the maximum equipment weight by the set magnification" />
@@ -476,9 +443,9 @@
     <hearingSearchEnemyCut AltName="Enemy Listen Adjustment" Wiki="Correct the loudness of the AI sound emitted by the magnification" />
     <grabityRate AltName="Gravity %" Wiki="Gravity rate" />
     <registStatusChangeRate_AcsAnomaly AltName="Status Resist %: ACS Anomaly" Wiki="Multiply the ACS Anomaly resistance value by the set multiplier" />
-    <registStatusChangeRate_Stun AltName="Status Resist %: Stun" Wiki="Multiply the Stun resistance value by the set magnification" />
-    <registStatusChangeRate_CameraDisruption AltName="Status Resist %: Camera Disruption" Wiki="Multiply the Camera Disruption resistance value by the set magnification" />
-    <registStatusChangeRate_Unknown AltName="Status Resist %: Unknown" Wiki="Multiply the Unknown resistance value by the set multiplier" />
+    <registStatusChangeRate_ElecDischarge AltName="Status Resist %: Electric Discharge" Wiki="Multiply the Electric Discharge resistance value by the set magnification" />
+    <registStatusChangeRate_Plasma AltName="Status Resist %: Plasma" Wiki="Multiply the Plasma resistance value by the set magnification" />
+    <registStatusChangeRate_ElecDischargeType2 AltName="Status Resist %: Electric Discharge (Type 2)" Wiki="Multiply the Unknown resistance value by the set multiplier" />
     <soulStealRate AltName="Soul Steal %" Wiki="Defense against HP robbed by NPCs in Soul Steel" />
     <lifeReductionRate AltName="Effect Duration %" Wiki="" />
     <hpRecoverRate AltName="AP Recovery Effectiveness %" Wiki="It doesn't work when HP decreases." />
@@ -500,7 +467,7 @@
     <heroPointDamage AltName="Humanity Damage" Wiki="Damage value given to human nature value" />
     <defFlickPower AltName="Weapon Repel Defence +" Wiki="Set a value that overwrites the repelling defense" />
     <flickDamageCutRate AltName="Weapon Repel Absorption %" Wiki="Set a value that overwrites the damage attenuation rate at the time of repelling" />
-    <bloodDamageRate AltName="Damage Correction %: Camera Disruption" Wiki="Point damage of state change type [bleeding], correction value used only when% damage" />
+    <bloodDamageRate AltName="Damage Correction %: Plasma" Wiki="Point damage of state change type [bleeding], correction value used only when% damage" />
     <dmgLv_None AltName="Damage Level: No Impact" Wiki="Specify the type to replace the damage Lv0" Enum="ATKPARAM_REP_DMGTYPE" />
     <dmgLv_S AltName="Damage Level: Small Impact" Wiki="Specify the type to replace the damage Lv1" Enum="ATKPARAM_REP_DMGTYPE" />
     <dmgLv_M AltName="Damage Level: Medium Impact" Wiki="Specify the type to replace the damage Lv2" Enum="ATKPARAM_REP_DMGTYPE" />
@@ -521,7 +488,7 @@
     <lifeReductionType AltName="Effect Duration Multiplier - State Info" Wiki="" Enum="SP_EFFECT_TYPE" />
     <throwCondition AltName="Throw Trigger" Wiki="Throwing conditions. Affects the throwing mask." Enum="SP_EFFECT_THROW_CONDITION_TYPE" />
     <addBehaviorJudgeId_condition AltName="Add Behavior Judge ID - Trigger" Wiki="Condition value to add a value to the action judgment ID (Def: -1)" />
-    <freezeDamageRate AltName="Damage Correction %: Frostbite" Wiki="Correction value used only for point damage and% damage of state change type [cold air]" />
+    <freezeDamageRate AltName="Damage Correction %: Unused B" Wiki="Correction value used only for point damage and% damage of state change type [cold air]" />
     <effectTargetSelf AltName="Target Self" Wiki="Only the target for which this judgment is checked is effective, the default is " IsBool="" />
     <effectTargetFriend AltName="Target Friend" Wiki="Only the target for which this judgment is checked is effective, the default is " IsBool="" />
     <effectTargetEnemy AltName="Target Enemy" Wiki="Only the target for which this judgment is checked is effective, the default is " IsBool="" />
@@ -556,11 +523,11 @@
     <fakeTargetIgnoreUndead AltName="Ignore Fake Human Targets" Wiki="You will not be caught by the fake target of the human system that occurred" IsBool="" />
     <fakeTargetIgnoreAnimal AltName="Ignore Fake Animal Targets" Wiki="You will not be caught by the fake target of the beast system that occurred" IsBool="" />
     <gravityIgnore AltName="Ignore Gravity Change" Wiki="Gravity effect disabled" IsBool="" />
-    <disableStatus_AcsAnomaly AltName="Disable ACS Anomaly" Wiki="If this effect is applied, it will not be poisoned." IsBool="" />
-    <disableStatus_Stun AltName="Disable Stun" Wiki="If this effect is applied, you will not get plague" IsBool="" />
-    <disableStatus_CameraDisruption AltName="Disable Camera Disruption" Wiki="With this effect, you won't get bleeding" IsBool="" />
-    <disableStatus_Unknown_Curse AltName="Disable Unknown Status" Wiki="With this effect, you won't be cursed" IsBool="" />
-    <disableStatus_Unknown_Freeze AltName="Disable Unknown Status" Wiki="With this effect, you won't be cursed" IsBool="" />
+    <disableStatus_AcsAnomaly AltName="Disable ACS Anomaly" Wiki="If this effect is applied, it will not be affected by ACS Anomaly." IsBool="" />
+    <disableStatus_ElecDischarge AltName="Disable Electric Discharge" Wiki="If this effect is applied, you will not be affected by Electric Discharge" IsBool="" />
+    <disableStatus_Plasma AltName="Disable Plasma" Wiki="With this effect, you will not be affected by Plasma" IsBool="" />
+    <disableStatus_ElecDischargeType2 AltName="Disable Electric Discharge (Type 2) Status" Wiki="With this effect, you won't be cursed" IsBool="" />
+    <disableStatus_Uranium AltName="Disable Uranium Status" Wiki="With this effect, you won't be cursed" IsBool="" />
     <enableCharm AltName="Enable Charm" Wiki="If this effect is applied, you will be fascinated." IsBool="" />
     <enableLifeTime AltName="Enable Lifetime" Wiki="Will the life be extended when the flag is set by TAE?" IsBool="" />
     <isFireDamageCancel AltName="Cancel on Explosive Damage" />
@@ -613,7 +580,7 @@
     <spEffectVfxParamId5 AltName="Effect VFX [5]" Wiki="Special effect VfxId5 (-1 invalid)" Refs="SpEffectVfxParam"/>
     <spEffectVfxParamId6 AltName="Effect VFX [6]" Wiki="Special effect VfxId6 (-1 invalid)" Refs="SpEffectVfxParam"/>
     <spEffectVfxParamId7 AltName="Effect VFX [7]" Wiki="Special effect VfxId7 (-1 invalid)" Refs="SpEffectVfxParam"/>
-    <registStatus_Unknown_Frost AltName="Status Inflict +: Unknown" Wiki="Numerical value to be added to the target Unknown resistance when hit. Requires State Info 260" />
+    <registStatus_Uranium AltName="Status Inflict +: Uranium" Wiki="Numerical value to be added to the target Unknown resistance when hit. Requires State Info 260" />
     <AppearAiSoundId AltName="Generated AI Sound ID" Wiki="Generates AI sound parameters with set values" Refs="AiSoundParam" />
     <addFootEffectSfxId AltName="Automatic Foot Effect - SFX ID Offset" Wiki="The identifier of the foot effect that is additionally generated during special effects. XYYZZZ ZZZ" Refs="FootSfxParam"/>
     <dexterityCancelSystemOnlyAddDexterity AltName="Cast Speed +" Wiki="Add this value when calculating the end timing of the TAE flag of Skill Cancel." />
@@ -638,10 +605,10 @@
     <itemDropRate AltName="Item Discovery %" Wiki="The set value is added to [Item Drop Correction]
 Requires State Info 66" />
     <changeStatusPoint_AcsAnomaly AltName="Status Resist +: ACS Anomaly" Wiki="Increase or decrease the state resistance value" />
-    <changeStatusPoint_Stun AltName="Status Resist +: Stun" Wiki="Increase or decrease the state resistance value" />
-    <changeStatusPoint_CameraDisruption AltName="Status Resist +: Camera Disruption" Wiki="Increase or decrease the state resistance value" />
-    <changeStatusPoint_Unknown_Curse AltName="Status Resist +: Unknown" Wiki="Increase or decrease the state resistance value" />
-    <changeStatusPoint_Unknown_Freeze AltName="Status Resist +: Unknown" Wiki="Increase or decrease the state resistance value" />
+    <changeStatusPoint_ElecDischarge AltName="Status Resist +: Stun" Wiki="Increase or decrease the state resistance value" />
+    <changeStatusPoint_Plasma AltName="Status Resist +: Plasma" Wiki="Increase or decrease the state resistance value" />
+    <changeStatusPoint_ElecDischargeType2 AltName="Status Resist +: Electric Discharge (Type 2)" Wiki="Increase or decrease the state resistance value" />
+    <changeStatusPoint_Uranium AltName="Status Resist +: Uranium" Wiki="Increase or decrease the state resistance value" />
     <slashAttackRate AltName="Attack %: Slash" Wiki="Slash damage ratio: Correct the calculated damage by XX times. 1 is normal." />
     <blowAttackRate AltName="Attack %: Strike" Wiki="Batter damage ratio: The calculated damage is corrected by XX times. 1 is normal." />
     <thrustAttackRate AltName="Attack %: Thrust" Wiki="Puncture damage ratio: Correct the calculated damage by XX times. 1 is normal." />
@@ -666,7 +633,6 @@ Requires State Info 66" />
     <isUseStatusAilmentAtkPowerCorrect AltName="Use Status Ailment Attack Power Correction" Wiki="If , the abnormal state attack power multiplier correction of the attack para is applied." IsBool="" />
     <isUseAtkParamAtkPowerCorrect AltName="Use AtkParam Attack Power Correction" Wiki="If , the attack power multiplier correction of the attack para is applied." IsBool="" />
     <dontDeleteOnDead AltName="Don't Delete on Dead" Wiki="If it is , it will not be deleted even if the character dies. Mainly used for death effects." IsBool="" />
-    <disableFreeze AltName="Disable Frostbite" Wiki="When this effect is applied, it will not be cold" IsBool="" />
     <isDisableNetSync AltName="Do not Sync in Multiplayer" Wiki="Do not synchronize with the net. It does not mean that you will be able to call it locally, but simply do not send it online. For example, a remote character does not activate locally, so nothing happens in that case." IsBool="" />
     <shamanParamChange AltName="Affects Pyromancy" Wiki="Set whether or not it is effective against spells" IsBool="" />
     <isStopSearchedNotify AltName="Stop Platoon Notifications" Wiki="Whether to stop notifications targeting your army (used by EventMaker decisions and buddy platoons)" IsBool="" />
@@ -694,7 +660,7 @@ Requires State Info 66" />
     <atkEnemyDmgCorrectRate_Explosive AltName="Damage %: Explosive" Wiki="Damage correction for the damage value given to the enemy." />
     <atkEnemyDmgCorrectRate_Coral AltName="Damage %: Coral" Wiki="Damage correction for the damage value given to the enemy." />
     <atkEnemyDmgCorrectRate_Dark AltName="Damage %: Unknown" Wiki="Damage correction for the damage value given to the enemy." />
-    <registStatusChangeRate_Unknown_Freeze AltName="Status Resist %: Unknown" Wiki="Multiply the cold resistance value by the set magnification" />
+    <registStatusChangeRate_Uranium AltName="Status Resist %: Uranium" Wiki="Multiply the cold resistance value by the set magnification" />
     <invocationConditionsStateChange1 AltName="Trigger on State Info [1]" Wiki="Trigger condition state change type 1" Enum="SP_EFFECT_TYPE" />
     <invocationConditionsStateChange2 AltName="Trigger on State Info [2]" Wiki="Trigger condition state change type 2" Enum="SP_EFFECT_TYPE" />
     <invocationConditionsStateChange3 AltName="Trigger on State Info [3]" Wiki="Trigger condition state change type 3" Enum="SP_EFFECT_TYPE" />

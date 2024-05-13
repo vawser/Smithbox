@@ -14,16 +14,16 @@
     <Field Def="f32 defRate_Slash"></Field>
     <Field Def="f32 defRate_Strike"></Field>
     <Field Def="f32 defRate_Thrust"></Field>
-    <Field Def="f32 resistRate_Shock"></Field>
-    <Field Def="f32 resistRate_AcsFailure"></Field>
-    <Field Def="f32 resistRate_CameraDisruption"></Field>
-    <Field Def="f32 resistRate_UnkA"></Field>
+    <Field Def="f32 resistRate_AcsAnomaly"></Field>
+    <Field Def="f32 resistRate_ElecDischarge"></Field>
+    <Field Def="f32 resistRate_Plasma"></Field>
+    <Field Def="f32 resistRate_ElecDischargeType2"></Field>
     <Field Def="u8 residentSpEffectId1"></Field>
     <Field Def="u8 residentSpEffectId2"></Field>
     <Field Def="u8 residentSpEffectId3"></Field>
     <Field Def="u8 materialSetId"></Field>
     <Field Def="f32 defRate_Unknown"></Field>
-    <Field Def="f32 resistRate_UnkB"></Field>
+    <Field Def="f32 resistRate_Uranium"></Field>
     <Field Def="f32 float_UnkC"></Field>
     <Field Def="s32 UnkInt0x40"></Field>
   </Fields>

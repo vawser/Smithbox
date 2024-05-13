@@ -69,10 +69,10 @@
     <Field Def="s16 defenseSlash"></Field>
     <Field Def="s16 defenseBlow"></Field>
     <Field Def="s16 defenseThrust"></Field>
-    <Field Def="u16 resistPoison"></Field>
-    <Field Def="u16 resistDisease"></Field>
-    <Field Def="u16 resistBlood"></Field>
-    <Field Def="u16 resistCurse"></Field>
+    <Field Def="u16 statusResist_AcsAnomaly"></Field>
+    <Field Def="u16 statusResist_ElecDischarge"></Field>
+    <Field Def="u16 statusResist_Plasma"></Field>
+    <Field Def="u16 statusResist_ElecDischargeType2"></Field>
     <Field Def="s16 reinforceTypeId"></Field>
     <Field Def="s16 trophySGradeId"></Field>
     <Field Def="s16 shopLv"></Field>
@@ -163,7 +163,7 @@
     <Field Def="u8 postureControlId"></Field>
     <Field Def="s32 Unk0x128"></Field>
     <Field Def="s32 saleValue"></Field>
-    <Field Def="u16 resistFreeze"></Field>
+    <Field Def="u16 statusResist_Uranium"></Field>
     <Field Def="u8 UnkByte0x132"></Field>
     <Field Def="u8 UnkByte0x133"></Field>
     <Field Def="u8 UnkByte0x134"></Field>

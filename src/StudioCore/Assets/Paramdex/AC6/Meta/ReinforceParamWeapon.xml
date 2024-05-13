@@ -18,10 +18,10 @@
     <guardCutRate_Energy AltName="Guard Absorption %: Energy" Wiki="Correction value of magic attack cut rate when guarding" />
     <guardCutRate_Explosive AltName="Guard Absorption %: Explosive" Wiki="Correction value of flame attack cut rate when guarding" />
     <guardCutRate_Coral AltName="Guard Absorption %: Coral" Wiki="Correction value of electric shock attack cut rate when guarding" />
-    <guardResistRate_Shock AltName="Guard Absorption %: Shock" Wiki="Correction value of poison attack cut rate when guarding" />
-    <guardResistRate_AcsFailure AltName="Guard Absorption %: ACS Failure" Wiki="Correction value of plague attack cut rate when guarding" />
-    <guardResistRate_CameraDisruption AltName="Guard Absorption %: Camera Disruption" Wiki="Correction value for bleeding attack cut rate when guarding" />
-    <guardResistRate_UnkA AltName="Guard Absorption %: Unknown" Wiki="Correction value of curse attack cut rate when guarding" />
+    <guardResistRate_AcsAnomaly AltName="Guard Absorption %: ACS Anomaly" Wiki="Correction value of poison attack cut rate when guarding" />
+    <guardResistRate_ElecDischarge AltName="Guard Absorption %: Electric Discharge" Wiki="Correction value of plague attack cut rate when guarding" />
+    <guardResistRate_Plasma AltName="Guard Absorption %: Plasma" Wiki="Correction value for bleeding attack cut rate when guarding" />
+    <guardResistRate_ElecDischargeType2 AltName="Guard Absorption %: Electric Discharge (Type 2)" Wiki="Correction value of curse attack cut rate when guarding" />
     <guardDefRate_Stamina AltName="Guard Absorption %: Stability" Wiki="Correction value of stamina defense power when guarding" />
     <spEffectId1 AltName="Behavior SpEffect [1] Offset" Wiki="Addition correction value for special effect ID1" />
     <spEffectId2 AltName="Behavior SpEffect [2] Offset" Wiki="Addition correction value for special effect ID2" />
@@ -34,7 +34,7 @@
     <atkRate_Unknown AltName="Damage %: Unknown" Wiki="Dark attack power correction value" />
     <guardCutRate_Unknown AltName="Guard Absorption %: Unknown" Wiki="Correction value of darkness attack cut rate when guarding" />
     <correctLuckRate AltName="Correction %: LCK" Wiki="Correction value of luck correction" />
-    <guardResistRate_UnkB AltName="Guard Absorption %: Unknown" Wiki="Correction value of cold air attack cut rate when guarding" />
+    <guardResistRate_Uranium AltName="Guard Absorption %: Uranium" Wiki="Correction value of cold air attack cut rate when guarding" />
     <reinforcePriceRate AltName="Reinforce Price Rate" Wiki="Correction value to multiply the enhancement price of the weapon parameter" />
     <baseChangePriceRate AltName="Base Change Price Rate" Wiki="Correction value to multiply the evolution price of the weapon parameter" />
     

@@ -124,10 +124,10 @@
     <slashGuardCutRate AltName="Guard Absorption: Slash" Wiki="Looking at the attack type, what percentage of the damage of the slashing attribute is cut? Specify" />
     <blowGuardCutRate AltName="Guard Absorption: Strike" Wiki="Looking at the attack type, what percentage of the damage of the hit attribute is cut? Specify" />
     <thrustGuardCutRate AltName="Guard Absorption: Thrust" Wiki="Looking at the attack type, what percentage of the damage of the piercing attribute is cut? Specify" />
-    <guardResist_Shock AltName="Guard Resist: Shock" Wiki="How much to cut the attack power to poison (set to the special effect parameter)" />
-    <guardResist_AcsFailure AltName="Guard Resist: ACS Failure" Wiki="How much to cut the attack power (set as a special effect parameter)" />
-    <guardResist_CameraDisruption AltName="Guard Resist: Camera Disruption" Wiki="How much to cut the attack power (set as a special effect parameter)" />
-    <guardResist_Curse_Unknown AltName="Guard Resist: Unknown" Wiki="How much to cut the attack power (set as a special effect parameter)" />
+    <guardResist_AcsAnomaly AltName="Guard Resist: ACS Anomaly" Wiki="How much to cut the attack power to poison (set to the special effect parameter)" />
+    <guardResist_ElecDischarge AltName="Guard Resist: Electric Discharge" Wiki="How much to cut the attack power (set as a special effect parameter)" />
+    <guardResist_Plasma AltName="Guard Resist: Plasma" Wiki="How much to cut the attack power (set as a special effect parameter)" />
+    <guardResist_ElecDischargeType2 AltName="Guard Resist: Electric Discharge (Type 2)" Wiki="How much to cut the attack power (set as a special effect parameter)" />
     <isDurabilityDivergence AltName="Is Durability Divergence" IsBool="" />
     <equipFrontRightSlot AltName="Equipped in Front Right Slot" IsBool="" />
     <equipFrontLeftSlot AltName="Equipped in Front Left Slot" IsBool="" />
@@ -214,7 +214,7 @@
     <sortGroupIdOld AltName="Sort Group ID (Obsolete)" Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group." />
     <atkAttribute2 AltName="Attack Attribute [2]" Wiki="Physical attribute 2" />
     <properLuck AltName="Requirement: LCK" Wiki="Equipment appropriate value." />
-    <freezeGuardResist AltName="Guard Resist: Unknown" Wiki="How much to cut the attack power (set to the special effect parameter) to cool down" />
+    <guardResist_Uranium AltName="Guard Resist: Uranium" Wiki="How much to cut the attack power (set to the special effect parameter) to cool down" />
     <autoReplenishType AltName="Auto Replenish Type" Wiki="Controls whether or not to automatically replenish and default settings" />
     <swordArtsParamId AltName="Sword Arts Param ID" Wiki="Arts parameter ID"/>
     <correctLuck AltName="Correction: LCK" Wiki="Charapara correction value." />
@@ -238,9 +238,9 @@
     <vsPlayerDmgCorrectRate_Fire AltName="Vs. Player - Explosive Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <vsPlayerDmgCorrectRate_Thunder AltName="Vs. Player - Coral Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <vsPlayerDmgCorrectRate_Dark AltName="Vs. Player - Dark Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <vsPlayerDmgCorrectRate_Poison AltName="Vs. Player - Shock Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <vsPlayerDmgCorrectRate_Blood AltName="Vs. Player - ACS Failure Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <vsPlayerDmgCorrectRate_Freeze AltName="Vs. Player - Unknown Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_AcsAnomaly AltName="Vs. Player - ACS Anomaly Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Plasma AltName="Vs. Player - Plasma Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Uranium AltName="Vs. Player - Uranium Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <attainmentWepStatusStr AltName="Unique R2 Attack - STR Requirement" Wiki="To change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
     <attainmentWepStatusDex AltName="Unique R2 Attack - DEX Requirement" Wiki="To change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
     <attainmentWepStatusMag AltName="Unique R2 Attack - INT Requirement" Wiki="To change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
@@ -323,7 +323,7 @@
     <initialGuardDamageMitigation_Coral AltName="Initial Guard - Damage Mitigation: Coral" Wiki="Ability to mitigate incoming Coral damage while performing an Initial Guard." />
     
     <initialGuardStatusMitigation_AcsAnomaly AltName="Initial Guard - Status Mitigation: ACS Anomaly" Wiki="Ability to mitigate incoming ACS Anomaly strain while performing an Initial Guard." />
-    <initialGuardStatusMitigation_Stun AltName="Initial Guard - Status Mitigation: Stun" Wiki="Ability to mitigate incoming Stun strain while performing an Initial Guard." />
+    <initialGuardStatusMitigation_ElecDischarge AltName="Initial Guard - Status Mitigation: Electric Discharge" Wiki="Ability to mitigate incoming Electric Discharge strain while performing an Initial Guard." />
     <initialGuardStatusMitigation_CameraDisruption AltName="Initial Guard - Status Mitigation: Camera Disruption" Wiki="Ability to mitigate incoming Camera Disruption strain while performing an Initial Guard." />
     <initialGuardStatusMitigation_Unknown AltName="Initial Guard - Status Mitigation: Unknown" Wiki="Ability to mitigate incoming Unknown strain while performing an Initial Guard." />
     
