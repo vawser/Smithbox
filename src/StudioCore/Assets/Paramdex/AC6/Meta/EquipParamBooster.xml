@@ -1,32 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-        <Enum Name="EQUIP_MAKER_TYPE" type="u16">
-            <Option Value="0" Name="None" />
-            <Option Value="1" Name="Overseer" />
-            <Option Value="2" Name="Rubicon Research Institute" />
-            <Option Value="3" Name="PCA" />
-            <Option Value="4" Name="ALLMIND" />
-            <Option Value="5" Name="Rubiconist" />
-            <Option Value="6" Name="RaD" />
-            <Option Value="7" Name="Arquebus" />
-            <Option Value="8" Name="Schneider" />
-            <Option Value="9" Name="VCPL" />
-            <Option Value="10" Name="Vesper" />
-            <Option Value="11" Name="Balam" />
-            <Option Value="12" Name="Dafeng" />
-            <Option Value="13" Name="Redgun" />
-            <Option Value="14" Name="Unused - 協商" />
-            <Option Value="15" Name="BAWS" />
-            <Option Value="16" Name="Furlong" />
-            <Option Value="17" Name="Takigawa Harmonics" />
-            <Option Value="18" Name="Melinite" />
-            <Option Value="19" Name="Elcano" />
-            <Option Value="20" Name="Arquebus ADD" />
-            <Option Value="102" Name="Unused - RRI(旧)" />
-            <Option Value="104" Name="Unused - オルマイ(本性)" />
-        </Enum>
-    </Enums>
   <Field>
     <equipModelId AltName="Equip Model ID" />
     <weight AltName="Weight" Wiki="Weight of the part." />
@@ -69,7 +42,7 @@
     <assaultBoostDodgeVelocity_During AltName="Assault Boost Dodge: Continuous Velocity" />
     <assaultBoostDodgeDuration AltName="Assault Boost Dodge Duration" />
     <assaultBoostDodgeEnergyCost AltName="Assault Boost Dodge: Energy Cost" />
-    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" />
+    <corporationTextureId AltName="Corporation Texture ID" TextureRef="01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" />
     <upwardThrustMomentum AltName="Boost Mode - Upwards Thrust - Momentum" Wiki="Determines the distance you will continue to rise after the end of upwards boosting." />
   </Field>
   <Self />

@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Field></Field>
+  <Field>
+    <value AltName="Value"/>
+    <textId AltName="Text ID" FmgRef="Modern_MenuText" />
+    <compareType AltName="Compare Type" />
+    <padding IsHidden="" />
+  </Field>
   <Self />
 </PARAMMETA>

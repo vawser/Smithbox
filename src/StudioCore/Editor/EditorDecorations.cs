@@ -1011,6 +1011,17 @@ public class EditorDecorations
     {
         try
         {
+            bool draw = true;
+
+            // Prevent draw for any rows that use inheritanceFcsParamId
+            if (row["inheritanceFcsParamId"] != null)
+            {
+                if(row["inheritanceFcsParamId"].Value.Value.ToString() != "-1")
+                {
+                    draw = false;
+                }
+            }
+
             ImGui.Separator();
             ImGui.NewLine();
             ImGui.Indent();
@@ -1020,19 +1031,23 @@ public class EditorDecorations
             int xOffset;
             float minY;
             float maxY;
-            if (scd != null && scd.cost_row == row.ID)
-            {
-                (values, maxY) = UICache.GetCached(screen, row, "soulCostData", () => ParamUtils.getSoulCostData(scd, row));
 
-                ImGui.PlotLines("##graph", ref values[0], values.Length, 0, "", 0, maxY, new Vector2(ImGui.GetColumnWidth(-1) - 30.0f, (ImGui.GetColumnWidth(-1) * 0.5625f) - 30.0f));
-            }
-            else if (ccd != null)
+            if (draw)
             {
-                (values, xOffset, minY, maxY) = UICache.GetCached(screen, row, "calcCorrectData",
-                    () => ParamUtils.getCalcCorrectedData(ccd, row));
-                ImGui.PlotLines("##graph", ref values[0], values.Length, 0,
-                    xOffset == 0 ? "" : $@"Note: add {xOffset} to x coordinate", minY, maxY,
-                    new Vector2(ImGui.GetColumnWidth(-1) - 30f, (ImGui.GetColumnWidth(-1) * 0.5625f) - 30f));
+                if (scd != null && scd.cost_row == row.ID)
+                {
+                    (values, maxY) = UICache.GetCached(screen, row, "soulCostData", () => ParamUtils.getSoulCostData(scd, row));
+
+                    ImGui.PlotLines("##graph", ref values[0], values.Length, 0, "", 0, maxY, new Vector2(ImGui.GetColumnWidth(-1) - 30.0f, (ImGui.GetColumnWidth(-1) * 0.5625f) - 30.0f));
+                }
+                else if (ccd != null)
+                {
+                    (values, xOffset, minY, maxY) = UICache.GetCached(screen, row, "calcCorrectData",
+                        () => ParamUtils.getCalcCorrectedData(ccd, row));
+                    ImGui.PlotLines("##graph", ref values[0], values.Length, 0,
+                        xOffset == 0 ? "" : $@"Note: add {xOffset} to x coordinate", minY, maxY,
+                        new Vector2(ImGui.GetColumnWidth(-1) - 30f, (ImGui.GetColumnWidth(-1) * 0.5625f) - 30f));
+                }
             }
         }
         catch (Exception e)

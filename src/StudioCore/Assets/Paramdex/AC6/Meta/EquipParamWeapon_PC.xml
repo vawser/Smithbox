@@ -292,7 +292,7 @@
     <unkIsSpecializationType_7 AltName="Specialization Type: Unknown" IsBool="" />
     <unkIsSpecializationType_8 AltName="Specialization Type: Unknown" IsBool="" />
     <chargeTime_Level2 AltName="Charge Time (Level 2)" Wiki="Amount of time (in seconds) it takes to fully charge to level 2, for when weapon permits charging past level 1." />
-    <corporationTextureId AltName="Corporation Texture ID" Enum="EQUIP_MAKER_TYPE" Wiki="Determines which corporation icon is used for the weapon." />
+    <corporationTextureId AltName="Corporation Texture ID" TextureRef="01_common/SB_MakerLogo/corporationTextureId/MakerLogo_" Wiki="Determines which corporation icon is used for the weapon." />
     <equipmentMenuManageCategoryParamId AltName="Equipment Menu Category" Refs="EquipmentMenuManageCategoryParam" Wiki="References the EquipmentMenuManageCategoryParam" />
     <initialGuardDuration AltName="Initial Guard: Duration" Wiki="Duration of the Initial Guard damage mitigation window." />
     <initialGuardImpactDampening AltName="Initial Guard: Impact Dampening" Wiki="Ability to mitigate ACS strain whileperforming an Initial Guard." />
