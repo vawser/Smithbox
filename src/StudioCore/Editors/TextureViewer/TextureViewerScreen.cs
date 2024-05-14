@@ -20,6 +20,7 @@ using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -110,6 +111,10 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
             shoeboxContainer = new ShoeboxLayoutContainer(sourcePath);
             shoeboxContainer.BuildTextureDictionary();
+        }
+        else
+        {
+            // TODO: add support for 'custom' Shoebox layouts to the older games to map out their icons for usage with the Image Preview feature
         }
 
         ResetTextureViewer();
@@ -216,33 +221,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             // e.g. "texture/view/01_common/SB_GarageTop_04"
             if (initcmd[0] == "view" && initcmd.Length >= 3)
             {
-                // Container
-                foreach (var (name, info) in TextureFolderBank.FolderBank)
-                {
-                    if (name == initcmd[1])
-                    {
-                        _selectedTextureContainerKey = name;
-                        SelectTextureContainer(info);
-                    }
-                }
-
-                // File
-                if (_selectedTextureContainer != null && _selectedTextureContainerKey != "")
-                {
-                    TextureViewInfo data = _selectedTextureContainer;
-
-                    if (data.Textures != null)
-                    {
-                        foreach (var tex in data.Textures)
-                        {
-                            if (tex.Name == initcmd[2])
-                            {
-                                _selectedTextureKey = tex.Name;
-                                _selectedTexture = tex;
-                            }
-                        }
-                    }
-                }
+                LoadTextureContainer(initcmd[1]);
+                LoadTextureFile(initcmd[2]);
             }
         }
 
@@ -640,33 +620,21 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         TextureViewWindowPosition = ImGui.GetWindowPos();
         TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
 
-        if (_selectedTexture != null)
+        ResourceHandle<TextureResource> resHandle = GetImageTextureHandle(_selectedTextureKey, _selectedTexture, _selectedAssetDescription);
+
+        if (resHandle != null)
         {
-            var path = _selectedAssetDescription.AssetVirtualPath;
+            TextureResource texRes = resHandle.Get();
 
-            if (_selectedAssetDescription.AssetArchiveVirtualPath != null)
+            CurrentTextureInView = texRes;
+            CurrentTextureName = _selectedTextureKey;
+
+            if (texRes != null)
             {
-                path = _selectedAssetDescription.AssetArchiveVirtualPath;
-            }
-            var virtName = $@"{path}/{_selectedTextureKey}".ToLower();
+                IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
+                Vector2 size = GetImageSize(texRes, true);
 
-            var resources = ResourceManager.GetResourceDatabase();
-
-            if (resources.ContainsKey(virtName))
-            {
-                ResourceHandle<TextureResource> resHandle = (ResourceHandle<TextureResource>)resources[virtName];
-                TextureResource texRes = resHandle.Get();
-
-                CurrentTextureInView = texRes;
-                CurrentTextureName = _selectedTextureKey;
-
-                if (texRes != null)
-                {
-                    IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
-                    Vector2 size = GetImageSize(texRes, true);
-
-                    ImGui.Image(handle, size);
-                }
+                ImGui.Image(handle, size);
             }
         }
 
@@ -692,24 +660,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 {
                     size = new Vector2(Width, Height);
                 }
-            }
-        }
-
-        return size;
-    }
-
-    private Vector2 GetScaledImageSize(TextureResource texRes, Vector2 scale)
-    {
-        Vector2 size = new Vector2(0, 0);
-
-        if (texRes.GPUTexture != null)
-        {
-            var Width = texRes.GPUTexture.Width;
-            var Height = texRes.GPUTexture.Height;
-
-            if (Height != 0 && Width != 0)
-            {
-                size = new Vector2((Width * scale.X), (Height * scale.Y));
             }
         }
 
@@ -891,9 +841,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         zoomFactor = new Vector2(1.0f, 1.0f);
     }
 
-    public void ShowImagePreview(string container, string filename, string imageIndex, string namePrepend)
+    public void LoadTextureContainer(string container)
     {
-        // Update Loaded Texture Container (if not already loaded)
         if (_selectedTextureContainerKey != container)
         {
             foreach (var (name, info) in TextureFolderBank.FolderBank)
@@ -905,8 +854,10 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                 }
             }
         }
+    }
 
-        // Update Loaded Texture (if not already loaded)
+    public void LoadTextureFile(string filename)
+    {
         if (_selectedTextureContainerKey != filename)
         {
             if (_selectedTextureContainer != null && _selectedTextureContainerKey != "")
@@ -923,96 +874,120 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
                             _selectedTexture = tex;
 
                             // Clear this when a new texture is loaded
-                            _cachedPreviewSubtexture = null; 
+                            _cachedPreviewSubtexture = null;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public ResourceHandle<TextureResource> GetImageTextureHandle(string key, TPF.Texture texture, ResourceDescriptor desc)
+    {
+        if (texture != null)
+        {
+            var path = desc.AssetVirtualPath;
+
+            if (desc.AssetArchiveVirtualPath != null)
+            {
+                path = desc.AssetArchiveVirtualPath;
+            }
+            var virtName = $@"{path}/{key}".ToLower();
+
+            var resources = ResourceManager.GetResourceDatabase();
+
+            if (resources.ContainsKey(virtName))
+            {
+                return (ResourceHandle<TextureResource>)resources[virtName];
+            }
+        }
+
+        return null;
+    }
+
+    public SubTexture GetMatchingSubTexture(string currentTextureName, string imageIndex, string namePrepend)
+    {
+        if (shoeboxContainer != null)
+        {
+            if (shoeboxContainer.Textures.ContainsKey(currentTextureName))
+            {
+                var subTexs = shoeboxContainer.Textures[currentTextureName];
+
+                int matchId;
+                var successMatch = int.TryParse(imageIndex, out matchId);
+
+                foreach (var entry in subTexs)
+                {
+                    var SubTexName = entry.Name.Replace(".png", "");
+
+                    Match contents = Regex.Match(SubTexName, $@"{namePrepend}([0-9]+)");
+                    if (contents.Success)
+                    {
+                        var id = contents.Groups[1].Value;
+
+                        int numId;
+                        var successNum = int.TryParse(id, out numId);
+
+                        if (successMatch && successNum && matchId == numId)
+                        {
+                            return entry;
                         }
                     }
                 }
             }
         }
 
+        return null;
+    }
+
+    public void ShowImagePreview(string container, string filename, string imageIndex, string namePrepend)
+    {
+        LoadTextureContainer(container);
+        LoadTextureFile(filename);
+        ResourceHandle<TextureResource> resHandle = GetImageTextureHandle(_selectedTextureKey, _selectedTexture, _selectedAssetDescription);
+
         // Display Image
-        if (_selectedTexture != null)
+        if (resHandle != null)
         {
-            var path = _selectedAssetDescription.AssetVirtualPath;
+            TextureResource texRes = resHandle.Get();
 
-            if (_selectedAssetDescription.AssetArchiveVirtualPath != null)
+            CurrentTextureInView = texRes;
+            CurrentTextureName = _selectedTextureKey;
+
+            // Get the SubTexture that matches the current field value
+            if (_cachedPreviewSubtexture == null)
             {
-                path = _selectedAssetDescription.AssetArchiveVirtualPath;
+                _cachedPreviewSubtexture = GetMatchingSubTexture(CurrentTextureName, imageIndex, namePrepend);
             }
-            var virtName = $@"{path}/{_selectedTextureKey}".ToLower();
 
-            var resources = ResourceManager.GetResourceDatabase();
-
-            if (resources.ContainsKey(virtName))
+            if (texRes != null && _cachedPreviewSubtexture != null)
             {
-                ResourceHandle<TextureResource> resHandle = (ResourceHandle<TextureResource>)resources[virtName];
-                TextureResource texRes = resHandle.Get();
+                IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
 
-                CurrentTextureInView = texRes;
-                CurrentTextureName = _selectedTextureKey;
+                // Get scaled image size vector
+                var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
 
-                // Get the SubTexture that matches the current field value
-                if (_cachedPreviewSubtexture == null)
-                {
-                    if (shoeboxContainer != null)
-                    {
-                        if (shoeboxContainer.Textures.ContainsKey(CurrentTextureName))
-                        {
-                            var subTexs = shoeboxContainer.Textures[CurrentTextureName];
+                // Get crop bounds
+                float Xmin = float.Parse(_cachedPreviewSubtexture.X);
+                float Xmax = Xmin + float.Parse(_cachedPreviewSubtexture.Width);
+                float Ymin = float.Parse(_cachedPreviewSubtexture.Y);
+                float Ymax = Ymin + float.Parse(_cachedPreviewSubtexture.Height);
 
-                            int matchId;
-                            var successMatch = int.TryParse(imageIndex, out matchId);
+                // Image size should be based on cropped image
+                Vector2 size = new Vector2(Xmax-Xmin, Ymax-Ymin) * scale;
 
-                            foreach (var entry in subTexs)
-                            {
-                                var SubTexName = entry.Name.Replace(".png", "");
+                // Get UV coordinates based on full image
+                float left = (Xmin) / texRes.GPUTexture.Width; 
+                float top = (Ymin) / texRes.GPUTexture.Height; 
+                float right = (Xmax) / texRes.GPUTexture.Width; 
+                float bottom = (Ymax) / texRes.GPUTexture.Height; 
 
-                                Match contents = Regex.Match(SubTexName, $@"{namePrepend}([0-9]+)");
-                                if (contents.Success)
-                                {
-                                    var id = contents.Groups[1].Value;
+                // Build UV coordinates
+                var UV0 = new Vector2(left, top);
+                var UV1 = new Vector2(right, bottom);
 
-                                    int numId;
-                                    var successNum = int.TryParse(id, out numId);
-
-                                    if (successMatch && successNum && matchId == numId)
-                                    {
-                                        _cachedPreviewSubtexture = entry;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (texRes != null && _cachedPreviewSubtexture != null)
-                {
-                    IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
-
-                    // Get scaled image size vector
-                    var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
-                    Vector2 size = GetScaledImageSize(texRes, new Vector2(scale, scale));
-
-                    // Get the Shoebox bounds for the current subtexture
-                    // Scaling them with the image size scale so they match
-                    float Xmin = float.Parse(_cachedPreviewSubtexture.X) * scale;
-                    float Xmax = Xmin + float.Parse(_cachedPreviewSubtexture.Width) * scale;
-                    float Ymin = float.Parse(_cachedPreviewSubtexture.Y) * scale;
-                    float Ymax = Ymin + float.Parse(_cachedPreviewSubtexture.Height) * scale;
-
-                    // Make the UV coordinates based off the Shoebox bound coordinates
-                    float Uv0_0 = Xmin / size.X;
-                    float Uv0_1 = Xmax / size.X;
-                    float Uv1_0 = Ymin / size.Y;
-                    float Uv1_1 = Ymax / size.Y;
-
-                    // Uv0_1 and Uv1_0 swapped to follow the UV coordinate convention
-                    // where bottom-left is 0,0 and top-right is 1,1
-                    var UV0 = new Vector2(Uv0_0, Uv1_0);
-                    var UV1 = new Vector2(Uv0_1, Uv1_1);
-
-                    ImGui.Image(handle, size, UV0, UV1);
-                }
+                // Display image
+                ImGui.Image(handle, size, UV0, UV1);
             }
         }
     }

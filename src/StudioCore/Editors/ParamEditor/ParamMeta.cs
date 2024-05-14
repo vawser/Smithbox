@@ -847,7 +847,7 @@ public class TexRef
 
     internal string getStringForm()
     {
-        return textureContainer + '/' + textureFile;
+        return textureFile;
     }
 }
 

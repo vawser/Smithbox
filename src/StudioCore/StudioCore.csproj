@@ -239,6 +239,7 @@
     <None Update="Assets\MassEditScripts\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\Themes\**" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Assets\EMEVD\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Assets\Shoebox\**" CopyToOutputDirectory="PreserveNewest" />
     
   </ItemGroup>
 

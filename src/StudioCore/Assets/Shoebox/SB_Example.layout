@@ -1,0 +1,5 @@
+<TextureAtlas imagePath="SB_Example.png" width="1024" height="1024">
+	<SubTexture name="Example_00000.png" x="0" width="128" y="0" height="128"/>
+	<SubTexture name="Example_00001.png" x="128" width="128" y="0" height="128"/>
+</TextureAtlas>
+

@@ -732,7 +732,7 @@ public class SettingsWindow
             {
 
                 ImGui.Text("Image Preview Scale:");
-                ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.05f, 0.05f, 1.0f);
+                ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
                 ImguiUtils.ShowHoverTooltip("Scale of the previewed image.");
 
                 ImGui.Checkbox("Display image preview in field content menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContentMenu);
