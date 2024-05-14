@@ -766,12 +766,20 @@ public class FMGRef
 {
     public string conditionField;
     public int conditionValue;
+    public int offset;
     public string fmg;
 
     internal FMGRef(string refString)
     {
         var conditionSplit = refString.Split('(', 2, StringSplitOptions.TrimEntries);
-        fmg = conditionSplit[0];
+        var offsetSplit = conditionSplit[0].Split('+', 2);
+        fmg = offsetSplit[0];
+        if (offsetSplit.Length > 1)
+        {
+            offset = int.Parse(offsetSplit[1]);
+            TaskLogs.AddLog($"{refString}: {offset}");
+        }
+
         if (conditionSplit.Length > 1 && conditionSplit[1].EndsWith(')'))
         {
             var condition = conditionSplit[1].Substring(0, conditionSplit[1].Length - 1)

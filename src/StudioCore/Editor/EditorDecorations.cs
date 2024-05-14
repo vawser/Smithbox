@@ -272,14 +272,37 @@ public class EditorDecorations
             return new List<(string, FMGBank.EntryGroup)>();
         }
 
-        return fmgRefs.Where(rf =>
+        List<(string, FMGBank.EntryGroup)> newFmgRefs = new();
+
+        foreach(var entry in fmgRefs)
+        {
+            Param.Cell? c = context?[entry.conditionField];
+
+            bool cont = true;
+
+            if (context != null && c != null)
             {
-                Param.Cell? c = context?[rf.conditionField];
-                return context == null || c == null || Convert.ToInt32(c.Value.Value) == rf.conditionValue;
-            }).Select(rf => FMGBank.FmgInfoBank.Find(x => x.Name == rf.fmg))
-            .Where(fmgi => fmgi != null)
-            .Select(fmgi => (fmgi.Name, FMGBank.GenerateEntryGroup((int)oldval, fmgi)))
-            .ToList();
+                if(Convert.ToInt32(c.Value.Value) != entry.conditionValue)
+                {
+                    cont = false;
+                }
+            }
+
+            if(cont)
+            {
+                var matchingFmgInfo = FMGBank.FmgInfoBank.Find(x => x.Name == entry.fmg);
+                if (matchingFmgInfo != null)
+                {
+                    var entryGroupId = (int)oldval + entry.offset;
+
+                    var newFmgInfo = (matchingFmgInfo.Name, FMGBank.GenerateEntryGroup(entryGroupId, matchingFmgInfo));
+
+                    newFmgRefs.Add(newFmgInfo);
+                }
+            }
+        }
+
+        return newFmgRefs;
     }
 
     public static void FmgRefSelectable(EditorScreen ownerScreen, List<FMGRef> fmgNames, Param.Row context,
