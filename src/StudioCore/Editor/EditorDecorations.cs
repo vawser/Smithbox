@@ -17,6 +17,8 @@ using Veldrid;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Utilities;
 using StudioCore.BanksMain;
+using StudioCore.Editors;
+using System.ComponentModel;
 
 namespace StudioCore.Editor;
 
@@ -150,6 +152,42 @@ public class EditorDecorations
             }
 
             ImGui.PopStyleColor();
+
+            ImGui.SameLine();
+            ImGui.TextUnformatted("]");
+            ImGui.PopStyleColor();
+            ImGui.PopStyleVar();
+        }
+    }
+
+    public static void TextureRefText(List<TexRef> textureRef, Param.Row context)
+    {
+        if (textureRef == null)
+        {
+            return;
+        }
+
+        if (CFG.Current.Param_HideReferenceRows == false) //Move preference
+        {
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, 0));
+            ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Default_Text_Color);
+            ImGui.TextUnformatted(@"   [");
+
+            var first = true;
+            foreach (TexRef r in textureRef)
+            {
+                if (first)
+                {
+                    ImGui.SameLine();
+                    ImGui.TextUnformatted(r.getStringForm());
+                }
+                else
+                {
+                    ImGui.TextUnformatted("    " + r.getStringForm());
+                }
+
+                first = false;
+            }
 
             ImGui.SameLine();
             ImGui.TextUnformatted("]");
@@ -360,6 +398,62 @@ public class EditorDecorations
         ImGui.PopStyleColor();
     }
 
+    private static List<(string, string, string, string)> resolveTextureRefs(List<TexRef> textureRefs, Param.Row context)
+    {
+        List<(string, string, string, string)> newTextureRefs = new();
+
+        foreach (var entry in textureRefs)
+        {
+            newTextureRefs.Add((entry.textureContainer, entry.textureFile, entry.field, entry.namePrepend));
+        }
+
+        return newTextureRefs;
+    }
+
+    public static void TextureRefSelectable(EditorScreen ownerScreen, List<TexRef> texRefs, Param.Row context,
+        dynamic oldval)
+    {
+        List<string> textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META TEXREF", () =>
+        {
+            List<(string, string, string, string)> refs = resolveTextureRefs(texRefs, context);
+
+            var fileNames = new List<string>();
+            foreach(var (container, file, field, prepend) in refs)
+            {
+                fileNames.Add(file);
+            }
+
+            return fileNames;
+        });
+
+        ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_FmgRef_Text);
+        foreach (var text in textsToPrint)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                ImGui.TextUnformatted("%null%");
+            }
+            else
+            {
+                ImGui.TextUnformatted(text);
+            }
+        }
+
+        List<(string, string, string, string)> refs = resolveTextureRefs(texRefs, context);
+        foreach (var (container, file, field, prepend) in refs)
+        {
+            if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
+            {
+                if (field != "" && context[field].Value.Value != null)
+                {
+                    EditorContainer.TextureViewer.ShowImagePreview(container, file, $"{context[field].Value.Value}", prepend);
+                }
+            }
+        }
+
+        ImGui.PopStyleColor();
+    }
+
     public static void EnumNameText(ParamEnum pEnum)
     {
         if (pEnum != null && pEnum.name != null && CFG.Current.Param_HideEnums == false) //Move preference
@@ -536,7 +630,7 @@ public class EditorDecorations
     }
 
     public static void ParamRefEnumQuickLink(ParamBank bank, object oldval, List<ParamRef> RefTypes,
-        Param.Row context, List<FMGRef> fmgRefs, ParamEnum Enum)
+        Param.Row context, List<FMGRef> fmgRefs, ParamEnum Enum, List<TexRef> textureRefs)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left) &&
             (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight)))
@@ -568,11 +662,18 @@ public class EditorDecorations
                     EditorCommandQueue.AddCommand($@"text/select/{primaryRef?.Item1}/{primaryRef?.Item2.ID}");
                 }
             }
+            else if (textureRefs != null)
+            {
+                TexRef primaryRef = textureRefs.FirstOrDefault();
+                if (primaryRef?.textureContainer != null && primaryRef?.textureFile != null)
+                {
+                    EditorCommandQueue.AddCommand($@"texture/view/{primaryRef?.textureContainer}/{primaryRef?.textureFile}");
+                }
+            }
         }
     }
 
-    public static bool ParamRefEnumContextMenuItems(ParamBank bank, object oldval, ref object newval,
-        List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, ParamEnum Enum, ActionManager executor, bool showParticleEnum = false, bool showSoundEnum = false, bool showFlagEnum = false, bool showCutsceneEnum = false, bool showMovieEnum = false)
+    public static bool ParamRefEnumContextMenuItems(ParamBank bank, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor, bool showParticleEnum = false, bool showSoundEnum = false, bool showFlagEnum = false, bool showCutsceneEnum = false, bool showMovieEnum = false)
     {
         var result = false;
         if (RefTypes != null)
@@ -583,6 +684,11 @@ public class EditorDecorations
         if (fmgRefs != null)
         {
             PropertyRowFMGRefsContextItems(fmgRefs, context, oldval, executor);
+        }
+
+        if(textureRefs != null)
+        {
+            PropertyRowTextureRefsContextItems(textureRefs, context, executor);
         }
 
         if (Enum != null)
@@ -754,6 +860,34 @@ public class EditorDecorations
                     executor.ExecuteAction(new PropertiesChangedAction(entry.GetType().GetProperty("Text"), entry,
                         context.Name));
                 }
+            }
+        }
+    }
+
+    public static void PropertyRowTextureRefsContextItems(List<TexRef> reftypes, Param.Row context, ActionManager executor)
+    {
+        // Add Goto statements
+        List<(string, string, string, string)> refs = resolveTextureRefs(reftypes, context);
+
+        var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
+        foreach(var (container, file, field, prepend) in refs)
+        {
+            if (ImGui.Selectable($@"View {file}"))
+            {
+                EditorCommandQueue.AddCommand($@"texture/view/{container}/{file}");
+            }
+
+            if(CFG.Current.Param_FieldContextMenu_ImagePreview_ContentMenu)
+            {
+                if (field != "" && context[field].Value.Value != null)
+                {
+                    EditorContainer.TextureViewer.ShowImagePreview(container, file, $"{context[field].Value.Value}", prepend);
+                }
+            }
+
+            if (context == null || executor == null)
+            {
+                continue;
             }
         }
     }

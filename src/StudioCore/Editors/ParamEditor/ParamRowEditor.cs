@@ -390,6 +390,8 @@ public class ParamRowEditor
         List<ParamRef> RefTypes = cellMeta?.RefTypes;
         List<FMGRef> FmgRef = cellMeta?.FmgRef;
         List<ExtRef> ExtRefs = cellMeta?.ExtRefs;
+        List<TexRef> TextureRef = cellMeta?.TextureRef;
+
         var VirtualRef = cellMeta?.VirtualRef;
 
         ParamEnum Enum = cellMeta?.EnumType;
@@ -399,6 +401,7 @@ public class ParamRowEditor
 
         var displayRefTypes = !CFG.Current.Param_HideReferenceRows && RefTypes != null;
         var displayFmgRef = !CFG.Current.Param_HideReferenceRows && FmgRef != null;
+        var displayTextureRef = !CFG.Current.Param_HideReferenceRows && TextureRef != null;
         var displayEnum = !CFG.Current.Param_HideEnums && Enum != null;
 
         bool showParticleEnum = false;
@@ -467,18 +470,26 @@ public class ParamRowEditor
 
             PropertyRowName(fieldOffset, ref internalName, cellMeta);
 
-            if (displayRefTypes || displayFmgRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum)
             {
                 ImGui.BeginGroup();
 
+                // Param Ref
                 if (displayRefTypes)
                 {
                     EditorDecorations.ParamRefText(RefTypes, row);
                 }
 
+                // Text Ref
                 if (displayFmgRef)
                 {
                     EditorDecorations.FmgRefText(FmgRef, row);
+                }
+
+                // Texture Ref
+                if (displayTextureRef)
+                {
+                    EditorDecorations.TextureRefText(TextureRef, row);
                 }
 
                 if (displayEnum)
@@ -532,6 +543,7 @@ public class ParamRowEditor
             }
         }
 
+        // Compare column
         var diffVanilla = ParamUtils.IsValueDiff(ref oldval, ref vanillaval, propType);
         var diffCompare = ParamUtils.IsValueDiff(ref oldval, ref compareval, propType);
         var diffAuxVanilla =
@@ -543,7 +555,7 @@ public class ParamRowEditor
         var conflict = (diffVanilla ? 1 : 0) + diffAuxPrimaryAndVanilla.Where(x => x).Count() > 1;
 
         var matchDefault = nullableCell?.Def.Default != null && nullableCell.Value.Def.Default.Equals(oldval);
-        var isRef = CFG.Current.Param_HideReferenceRows == false && (RefTypes != null || FmgRef != null) || CFG.Current.Param_HideEnums == false && Enum != null || VirtualRef != null || ExtRefs != null || CFG.Current.Param_HideEnums == false && showParticleEnum;
+        var isRef = CFG.Current.Param_HideReferenceRows == false && (RefTypes != null || FmgRef != null || TextureRef != null) || CFG.Current.Param_HideEnums == false && Enum != null || VirtualRef != null || ExtRefs != null || CFG.Current.Param_HideEnums == false && showParticleEnum;
 
         if (ImGui.TableNextColumn())
         {
@@ -585,18 +597,26 @@ public class ParamRowEditor
                 }
             }
 
-            if (displayRefTypes || displayFmgRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum)
             {
                 ImGui.BeginGroup();
 
+                // Param Ref
                 if (displayRefTypes)
                 {
                     EditorDecorations.ParamRefsSelectables(bank, RefTypes, row, oldval);
                 }
 
+                // Text Ref
                 if (displayFmgRef)
                 {
                     EditorDecorations.FmgRefSelectable(_paramEditor, FmgRef, row, oldval);
+                }
+
+                // Texture Ref
+                if (displayTextureRef)
+                {
+                    EditorDecorations.TextureRefSelectable(_paramEditor, TextureRef, row, oldval);
                 }
 
                 if (displayEnum)
@@ -630,7 +650,7 @@ public class ParamRowEditor
                 }
 
                 ImGui.EndGroup();
-                EditorDecorations.ParamRefEnumQuickLink(bank, oldval, RefTypes, row, FmgRef, Enum);
+                EditorDecorations.ParamRefEnumQuickLink(bank, oldval, RefTypes, row, FmgRef, Enum, TextureRef);
 
                 if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
                 {
@@ -661,7 +681,7 @@ public class ParamRowEditor
 
         if (CFG.Current.Param_ShowVanillaParams && ImGui.TableNextColumn())
         {
-            AdditionalColumnValue(vanillaval, propType, bank, RefTypes, FmgRef, row, Enum, "vanilla");
+            AdditionalColumnValue(vanillaval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "vanilla");
         }
 
         for (var i = 0; i < auxVals.Count; i++)
@@ -671,7 +691,7 @@ public class ParamRowEditor
                 if (!conflict && diffAuxVanilla[i])
                     ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_AuxVanilla_Background);
 
-                AdditionalColumnValue(auxVals[i], propType, bank, RefTypes, FmgRef, row, Enum, i.ToString());
+                AdditionalColumnValue(auxVals[i], propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, i.ToString());
                 if (!conflict && diffAuxVanilla[i])
                     ImGui.PopStyleColor();
             }
@@ -689,7 +709,7 @@ public class ParamRowEditor
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, CFG.Current.ImGui_Input_DiffCompare_Background);
             }
 
-            AdditionalColumnValue(compareval, propType, bank, RefTypes, FmgRef, row, Enum, "compRow");
+            AdditionalColumnValue(compareval, propType, bank, RefTypes, FmgRef, row, Enum, TextureRef, "compRow");
 
             if (diffCompare)
             {
@@ -704,7 +724,7 @@ public class ParamRowEditor
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, true);
             PropertyRowValueContextMenuItems(bank, row, internalName, VirtualRef, ExtRefs, oldval, ref newval,
-                RefTypes, FmgRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum);
+                RefTypes, FmgRef, TextureRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum);
 
             ImGui.EndPopup();
         }
@@ -722,7 +742,7 @@ public class ParamRowEditor
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, false);
             PropertyRowValueContextMenuItems(bank, row, internalName, VirtualRef, ExtRefs, oldval, ref newval,
-                RefTypes, FmgRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum);
+                RefTypes, FmgRef, TextureRef, Enum, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum);
 
             ImGui.EndPopup();
         }
@@ -737,7 +757,7 @@ public class ParamRowEditor
     }
 
     private void AdditionalColumnValue(object colVal, Type propType, ParamBank bank, List<ParamRef> RefTypes,
-        List<FMGRef> FmgRef, Param.Row context, ParamEnum Enum, string imguiSuffix)
+        List<FMGRef> FmgRef, Param.Row context, ParamEnum Enum, List<TexRef> TextureRef, string imguiSuffix)
     {
         if (colVal == null)
         {
@@ -766,6 +786,11 @@ public class ParamRowEditor
             if (CFG.Current.Param_HideReferenceRows == false && FmgRef != null)
             {
                 EditorDecorations.FmgRefSelectable(_paramEditor, FmgRef, context, colVal);
+            }
+
+            if (CFG.Current.Param_HideReferenceRows == false && TextureRef != null)
+            {
+                EditorDecorations.TextureRefSelectable(_paramEditor, TextureRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)
@@ -1045,7 +1070,7 @@ public class ParamRowEditor
 
     private void PropertyRowValueContextMenuItems(ParamBank bank, Param.Row row, string internalName,
         string VirtualRef, List<ExtRef> ExtRefs, dynamic oldval, ref object newval, List<ParamRef> RefTypes,
-        List<FMGRef> FmgRef, ParamEnum Enum, bool showParticleEnum, bool showSoundEnum, bool showFlagEnum, bool showCutsceneEnum, bool showMovieEnum)
+        List<FMGRef> FmgRef, List<TexRef> TextureRef, ParamEnum Enum, bool showParticleEnum, bool showSoundEnum, bool showFlagEnum, bool showCutsceneEnum, bool showMovieEnum)
     {
         if (CFG.Current.Param_FieldContextMenu_ReferenceSearch)
         {
@@ -1058,12 +1083,12 @@ public class ParamRowEditor
                 ImGui.PopStyleColor();
             }
 
-            if (RefTypes != null || FmgRef != null || Enum != null || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum)
+            if (RefTypes != null || FmgRef != null || TextureRef  != null || Enum != null || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum)
             {
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, CFG.Current.ImGui_Ref_Text);
 
-                if (EditorDecorations.ParamRefEnumContextMenuItems(bank, oldval, ref newval, RefTypes, row, FmgRef, Enum, ContextActionManager, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum))
+                if (EditorDecorations.ParamRefEnumContextMenuItems(bank, oldval, ref newval, RefTypes, row, FmgRef, TextureRef, Enum, ContextActionManager, showParticleEnum, showSoundEnum, showFlagEnum, showCutsceneEnum, showMovieEnum))
                 {
                     ParamEditorCommon.SetLastPropertyManual(newval);
                 }

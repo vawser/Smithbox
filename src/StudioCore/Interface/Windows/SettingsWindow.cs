@@ -727,6 +727,21 @@ public class SettingsWindow
                 ImguiUtils.ShowHoverTooltip("If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
             }
 
+            // Context Menu
+            if (ImGui.CollapsingHeader("Image Preview"))
+            {
+
+                ImGui.Text("Image Preview Scale:");
+                ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.05f, 0.05f, 1.0f);
+                ImguiUtils.ShowHoverTooltip("Scale of the previewed image.");
+
+                ImGui.Checkbox("Display image preview in field content menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContentMenu);
+                ImguiUtils.ShowHoverTooltip("Display image preview of any image index fields if possible within the field content menu.");
+
+                ImGui.Checkbox("Display image preview in field column", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
+                ImguiUtils.ShowHoverTooltip("Display image preview of any image index fields if possible at the bottom of the field column.");
+            }
+
             ImGui.EndTabItem();
         }
     }

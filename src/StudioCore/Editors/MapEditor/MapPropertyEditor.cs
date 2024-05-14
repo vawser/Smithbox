@@ -781,14 +781,14 @@ public class MapPropertyEditor
 
             ImGui.NextColumn();
             EditorDecorations.ParamRefsSelectables(ParamBank.PrimaryBank, refs, null, val);
-            EditorDecorations.ParamRefEnumQuickLink(ParamBank.PrimaryBank, val, refs, null, null, null);
+            EditorDecorations.ParamRefEnumQuickLink(ParamBank.PrimaryBank, val, refs, null, null, null, null);
 
             if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
             {
                 EditorDecorations.ImGui_DisplayPropertyInfo(propinfo);
 
                 var opened = EditorDecorations.ParamRefEnumContextMenuItems(ParamBank.PrimaryBank, val, ref newObj,
-                    refs, null, null, null, null);
+                    refs, null, null, null, null, null);
                 ImGui.EndPopup();
                 return opened;
             }

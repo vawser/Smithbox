@@ -444,6 +444,9 @@ public class CFG
     public bool Param_FieldContextMenu_ReferenceSearch = true;
     public bool Param_FieldContextMenu_MassEdit = true;
     public bool Param_FieldContextMenu_FullMassEdit = true;
+    public bool Param_FieldContextMenu_ImagePreview_ContentMenu = true;
+    public bool Param_FieldContextMenu_ImagePreview_FieldColumn = false;
+    public float Param_FieldContextMenu_ImagePreviewScale = 0.1f;
 
     public int Param_Toolbar_Duplicate_Amount = 1;
 

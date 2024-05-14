@@ -2,7 +2,7 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <fmgId AltName="FMG ID" Wiki="Base FMG ID in NPC名 for the range of 10 strings determining character name and AC name." FmgRef="TitleCharacters,TitleCharacters+3" />
-    <menuDecalId AltName="Menu Decal ID" Wiki="ID of the Menu Decal to use, refers to SB_DecalThumbnails.layout" />
+    <menuDecalId AltName="Menu Decal ID" Wiki="ID of the Menu Decal to use, refers to SB_DecalThumbnails.layout" TextureRef="01_common/SB_DecalThumbnails/menuDecalId/Decal_tmb_" />
     <pad08 IsHidden=""/>
   </Field>
   <Self />

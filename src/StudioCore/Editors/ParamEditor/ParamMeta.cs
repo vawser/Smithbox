@@ -488,6 +488,12 @@ public class FieldMetaData
             FmgRef = FMGRef.InnerText.Split(",").Select(x => new FMGRef(x)).ToList();
         }
 
+        XmlAttribute TexRef = fieldMeta.Attributes["TextureRef"];
+        if (TexRef != null)
+        {
+            TextureRef = TexRef.InnerText.Split(",").Select(x => new TexRef(x)).ToList();
+        }
+
         XmlAttribute Enum = fieldMeta.Attributes["Enum"];
         if (Enum != null)
         {
@@ -587,6 +593,11 @@ public class FieldMetaData
     public List<FMGRef> FmgRef { get; set; }
 
     /// <summary>
+    ///     Name of an Texture Container and File that a Field may refer to.
+    /// </summary>
+    public List<TexRef> TextureRef { get; set; }
+
+    /// <summary>
     ///     Set of generally acceptable values, named
     /// </summary>
     public ParamEnum EnumType { get; set; }
@@ -682,8 +693,8 @@ public class FieldMetaData
         ParamMetaData.SetStringListXmlProperty("Refs", RefTypes, x => x.getStringForm(), null, _parent._xml,
             "PARAMMETA", "Field", field);
         ParamMetaData.SetStringXmlProperty("VRef", VirtualRef, false, _parent._xml, "PARAMMETA", "Field", field);
-        ParamMetaData.SetStringListXmlProperty("FmgRef", FmgRef, x => x.getStringForm(), null, _parent._xml,
-            "PARAMMETA", "Field", field);
+        ParamMetaData.SetStringListXmlProperty("FmgRef", FmgRef, x => x.getStringForm(), null, _parent._xml, "PARAMMETA", "Field", field);
+        ParamMetaData.SetStringListXmlProperty("TextureRef", TextureRef, x => x.getStringForm(), null, _parent._xml, "PARAMMETA", "Field", field);
         ParamMetaData.SetEnumXmlProperty("Enum", EnumType, _parent._xml, "PARAMMETA", "Field", field);
         ParamMetaData.SetStringXmlProperty("AltName", AltName, false, _parent._xml, "PARAMMETA", "Field", field);
         ParamMetaData.SetStringXmlProperty("Wiki", Wiki, true, _parent._xml, "PARAMMETA", "Field", field);
@@ -777,7 +788,6 @@ public class FMGRef
         if (offsetSplit.Length > 1)
         {
             offset = int.Parse(offsetSplit[1]);
-            TaskLogs.AddLog($"{refString}: {offset}");
         }
 
         if (conditionSplit.Length > 1 && conditionSplit[1].EndsWith(')'))
@@ -792,6 +802,52 @@ public class FMGRef
     internal string getStringForm()
     {
         return conditionField != null ? fmg + '(' + conditionField + '=' + conditionValue + ')' : fmg;
+    }
+}
+
+public class TexRef
+{
+    /// <summary>
+    /// The name of the texture container.
+    /// </summary>
+    public string textureContainer = "";
+
+    /// <summary>
+    /// The name of the texture file within the texture container.
+    /// </summary>
+    public string textureFile = "";
+
+    /// <summary>
+    /// The param row field that the image index is taken from.
+    /// </summary>
+    public string field = "";
+
+    /// <summary>
+    /// The initial part of the subtexture filename to match with.
+    /// </summary>
+    public string namePrepend = "";
+
+    internal TexRef(string refString)
+    {
+        var refSplit = refString.Split('/');
+        textureContainer = refSplit[0];
+        if (refSplit.Length > 1)
+        {
+            textureFile = refSplit[1];
+        }
+        if (refSplit.Length > 2)
+        {
+            field = refSplit[2];
+        }
+        if (refSplit.Length > 3)
+        {
+            namePrepend = refSplit[3];
+        }
+    }
+
+    internal string getStringForm()
+    {
+        return textureContainer + '/' + textureFile;
     }
 }
 
