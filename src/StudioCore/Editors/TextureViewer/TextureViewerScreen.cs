@@ -6,6 +6,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.BanksMain;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors;
 using StudioCore.Editors.GparamEditor.Toolbar;
 using StudioCore.Editors.GraphicsEditor;
 using StudioCore.Editors.TextureViewer;
@@ -204,6 +205,43 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         if (!TextureFolderBank.IsLoaded)
         {
             TextureFolderBank.LoadTextureFolders();
+        }
+
+        // Commands
+        if (initcmd != null && initcmd.Length > 1)
+        {
+            // View Image:
+            // e.g. "texture/view/01_common/SB_GarageTop_04"
+            if (initcmd[0] == "view" && initcmd.Length >= 3)
+            {
+                // Container
+                foreach (var (name, info) in TextureFolderBank.FolderBank)
+                {
+                    if (name == initcmd[1])
+                    {
+                        _selectedTextureContainerKey = name;
+                        SelectTextureContainer(info);
+                    }
+                }
+
+                // File
+                if (_selectedTextureContainer != null && _selectedTextureContainerKey != "")
+                {
+                    TextureViewInfo data = _selectedTextureContainer;
+
+                    if (data.Textures != null)
+                    {
+                        foreach (var tex in data.Textures)
+                        {
+                            if (tex.Name == initcmd[2])
+                            {
+                                _selectedTextureKey = tex.Name;
+                                _selectedTexture = tex;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         TextureViewerShortcuts();

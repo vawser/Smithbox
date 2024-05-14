@@ -100,6 +100,16 @@ public class DebugWindow
 
     private void DisplayActions()
     {
+        if (ImGui.Button("Focus Gparam Editor"))
+        {
+            EditorCommandQueue.AddCommand($@"gparam/view/m00_00_0000/LightSet ParamEditor/Directional Light DiffColor0/100");
+        }
+
+        if (ImGui.Button("Focus Texture Viewer"))
+        {
+            EditorCommandQueue.AddCommand($@"texture/view/01_common/SB_GarageTop_04");
+        }
+
         if (ImGui.Button("Load MSB Data"))
         {
             DebugActions.LoadMsbData();

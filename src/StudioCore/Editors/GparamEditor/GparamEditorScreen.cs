@@ -192,6 +192,89 @@ public class GparamEditorScreen : EditorScreen
                 }
             }
 
+            // Commands
+            if (initcmd != null && initcmd.Length > 1)
+            {
+                // View Image:
+                // e.g. "gparam/view/m00_00_0000/LightSet ParamEditor/Directional Light DiffColor0/100"
+                if (initcmd[0] == "view" && initcmd.Length >= 2)
+                {
+                    // Gparam
+                    foreach (var (name, info) in GparamParamBank.ParamBank)
+                    {
+                        TaskLogs.AddLog($"{name}");
+                        if (initcmd[1] == name)
+                        {
+                            _selectedGparamKey = info.Name;
+                            _selectedGparamInfo = info;
+                            _selectedGparam = info.Gparam;
+                        }
+                    }
+
+                    // Param Group
+                    if(initcmd.Length >= 3)
+                    {
+                        if (_selectedGparam != null && _selectedGparamKey != "")
+                        {
+                            GPARAM data = _selectedGparam;
+
+                            for (int i = 0; i < data.Params.Count; i++)
+                            {
+                                GPARAM.Param entry = data.Params[i];
+
+                                if (initcmd[2] == entry.Key)
+                                {
+                                    _selectedParamGroup = entry;
+                                    _selectedParamGroupKey = i;
+                                }
+                            }
+                        }
+
+                        // Fields
+                        if(initcmd.Length >= 4)
+                        {
+                            if (_selectedParamGroup != null && _selectedParamGroupKey != -1)
+                            {
+                                GPARAM.Param data = _selectedParamGroup;
+
+                                for (int i = 0; i < data.Fields.Count; i++)
+                                {
+                                    GPARAM.IField entry = data.Fields[i];
+
+                                    if (initcmd[3] == entry.Key)
+                                    {
+                                        _selectedParamField = entry;
+                                        GparamQuickEdit.SelectedParamField = entry;
+                                        _selectedParamFieldKey = i;
+                                    }
+                                }
+                            }
+
+                            // Field Row
+                            if(initcmd.Length >= 5)
+                            {
+                                if (_selectedParamField != null && _selectedParamFieldKey != -1)
+                                {
+                                    GPARAM.IField field = _selectedParamField;
+
+                                    for (int i = 0; i < field.Values.Count; i++)
+                                    {
+                                        GPARAM.IFieldValue entry = field.Values[i];
+
+                                        if (initcmd[4] == entry.Id.ToString())
+                                        {
+                                            _selectedFieldValue = entry;
+                                            _selectedFieldValueKey = i;
+                                            _duplicateValueRowId = i;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             GparamShortcuts();
 
             if (GparamParamBank.IsLoaded)
